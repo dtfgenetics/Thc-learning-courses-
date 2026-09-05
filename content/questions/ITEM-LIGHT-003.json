@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-LIGHT-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LIGHT-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What does PPFD describe most directly?",
+  "choices": [
+    "The instantaneous photosynthetically active photon flux arriving at a surface",
+    "The total photons received over an entire day",
+    "Only fixture electrical efficiency",
+    "Only photoperiod length"
+  ],
+  "correct": 0,
+  "rationale": "PPFD is an instantaneous photon-flux measurement.",
+  "references": ["REF-LIGHT-001"]
+}

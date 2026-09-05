@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-LIGHT-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LIGHT-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Two rooms have the same PPFD but different photoperiods. Why can their daily photon exposure differ?",
+  "choices": [
+    "DLI depends on photon flux integrated over the duration of the light period",
+    "PPFD already includes time",
+    "DLI depends only on fixture price",
+    "Photoperiod does not affect DLI"
+  ],
+  "correct": 0,
+  "rationale": "DLI integrates photon flux over time.",
+  "references": ["REF-LIGHT-001"]
+}

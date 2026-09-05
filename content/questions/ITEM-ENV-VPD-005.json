@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-ENV-VPD-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which measurement pair is required for a basic VPD interpretation?",
+  "choices": [
+    "Temperature and relative humidity",
+    "EC and container color",
+    "Photoperiod and fertilizer brand",
+    "Plant height and pot size"
+  ],
+  "correct": 0,
+  "rationale": "VPD interpretation requires both temperature and humidity.",
+  "references": ["REF-VPD-002"]
+}
