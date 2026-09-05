@@ -6,21 +6,39 @@ Maintain separate local, development, staging, and production environments. Stag
 
 ## Curriculum releases
 
-Curriculum releases are explicit immutable snapshots such as `academy-2026.09`. Approved content is not automatically public; it must be included in a release candidate and pass validation before publication.
+Curriculum releases are explicit immutable snapshots such as `academy-2026.09`. Merging content to `main` does not publish it. Approved content must be included in an intentional release candidate and pass the production release workflow before publication.
+
+## Development merge gate
+
+Every pull request to `main` must pass the complete `npm test` suite. This is the repository integration gate for curriculum validation, development exam generation, credential regression tests, privacy projection tests, review-readiness reporting, and item-bank-readiness reporting.
+
+Passing the development merge gate means the repository is internally consistent; it does **not** mean the curriculum is production-certified or ready to issue real credentials.
 
 ## Production gates
 
-A production curriculum release must pass:
+A production curriculum release must pass both `npm test` and `npm run release:check`.
 
-- schema validation
-- referential integrity
-- no duplicate immutable IDs
-- no placeholder/unverified sources in published credential-bearing material
-- competency-to-objective coverage
-- objective-to-assessment coverage
-- accessibility checks for published media/interfaces
-- automated tests and application build
-- required human review approvals
+The production release check fails closed unless:
+
+- the release registry is no longer draft;
+- `publicationReady` is true;
+- every configured registry publication gate is true;
+- mapped course and lessons are published;
+- the final assessment is in an active/approved/published state;
+- every mapped lesson/version has approved scientific and editorial review records;
+- schema validation and referential integrity pass;
+- immutable IDs are not duplicated;
+- no placeholder/unverified sources are used by published credential-bearing material;
+- competency-to-objective and objective-to-assessment coverage is intact;
+- required human review approvals exist;
+- assessment item pools satisfy the configured active-item minimum before the approved-item-pool gate can be true;
+- privacy/security regression tests pass.
+
+Accessibility and legal/compliance approvals remain required where their configured review scope applies. The release gate may be strengthened as those machine-readable records are added; it must not be weakened merely to publish a draft.
+
+## Release channel
+
+Production release checks run only from an explicit `academy-*` tag or a manual invocation of the production release workflow. This keeps ordinary development merges separate from publication.
 
 ## Rollback
 

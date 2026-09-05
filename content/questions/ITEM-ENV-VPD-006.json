@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-ENV-VPD-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A room-level VPD chart based on air temperature appears acceptable, but measured leaf temperature is meaningfully lower than the air temperature. What is the best next interpretation step?",
+  "choices": [
+    "Verify which temperature basis the VPD method uses and recalculate consistently before changing the environment",
+    "Assume the air-temperature chart is exact for the leaf surface and make an immediate large humidity change",
+    "Ignore temperature because relative humidity alone determines VPD",
+    "Change nutrient concentration because VPD is controlled primarily by root-zone EC"
+  ],
+  "correct": 0,
+  "rationale": "Air-temperature and leaf-temperature approaches are not interchangeable. The learner should confirm the calculation method and measurement basis before making an environmental correction.",
+  "references": ["REF-VPD-002"]
+}

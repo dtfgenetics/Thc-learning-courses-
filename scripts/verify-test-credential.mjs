@@ -6,7 +6,9 @@ const root = process.cwd();
 const inputArg = process.argv.find((arg) => arg.startsWith('--input='));
 if (!inputArg) throw new Error('Usage: node scripts/verify-test-credential.mjs --input=<credential-record.json>');
 
-const record = JSON.parse(fs.readFileSync(path.join(root, inputArg.slice('--input='.length)), 'utf8'));
+const inputValue = inputArg.slice('--input='.length);
+const inputPath = path.isAbsolute(inputValue) ? inputValue : path.join(root, inputValue);
+const record = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 const expectedHash = crypto.createHash('sha256').update(JSON.stringify({ ...record, integrityHash: undefined })).digest('hex');
 const validHash = expectedHash === record.integrityHash;
 const recognizedStatus = ['test-issued', 'issued', 'valid'].includes(record.status);
