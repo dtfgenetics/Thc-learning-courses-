@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-curriculum.mjs",
+    "exam:form": "node scripts/generate-exam-form.mjs",
+    "exam:form:dev": "node scripts/generate-exam-form.mjs --allow-draft --seed=development",
     "test": "npm run validate"
   },
   "engines": {
