@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/registry.schema.json",
+  "title": "THC Academy Curriculum Registry",
+  "type": "object",
+  "required": ["release", "status", "courses", "modules", "lessons", "competencies", "learningObjectives", "assessments", "questions", "references"],
+  "properties": {
+    "release": {"type": "string", "minLength": 3},
+    "status": {"enum": ["draft", "candidate", "published", "superseded"]},
+    "courses": {"type": "array", "items": {"type": "string"}},
+    "modules": {"type": "array", "items": {"type": "string"}},
+    "lessons": {"type": "array", "items": {"type": "string"}},
+    "competencies": {"type": "array", "items": {"type": "string"}},
+    "learningObjectives": {"type": "array", "items": {"type": "string"}},
+    "assessments": {"type": "array", "items": {"type": "string"}},
+    "questions": {"type": "array", "items": {"type": "string"}},
+    "references": {"type": "array", "items": {"type": "string"}},
+    "credentials": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
