@@ -14,7 +14,8 @@
     "credential:issuance:test": "node scripts/test-credential-issuance.mjs",
     "credential:public": "node scripts/project-public-verification.mjs",
     "credential:public:test": "node scripts/test-public-verification-projection.mjs",
-    "test": "npm run validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test"
+    "review:readiness": "node scripts/report-review-readiness.mjs",
+    "test": "npm run validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness"
   },
   "engines": {
     "node": ">=20"
