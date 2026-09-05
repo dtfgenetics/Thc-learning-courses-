@@ -5,7 +5,35 @@
   "status": "draft",
   "competencies": ["COMP-PROP-001"],
   "learningObjectives": ["LO-PROP-001"],
-  "estimatedMinutes": 45,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 50,
+  "references": ["REF-PROP-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Propagation establishes the next crop from seeds or vegetative cuttings. Success depends on viable starting material, sanitation, moisture and oxygen balance, environmental stability, genotype response, and careful transition into normal growing conditions.",
+    "vocabulary": [
+      {"term":"Germination","definition":"The process in which a viable seed resumes growth and the embryo emerges to begin seedling development."},
+      {"term":"Cutting","definition":"A severed plant section used to produce a genetically matching vegetative propagule when it forms roots."},
+      {"term":"Adventitious root","definition":"A root that develops from non-root tissue such as the stem of a cutting."},
+      {"term":"Acclimatization","definition":"The gradual transition of newly rooted or protected propagules into the target growing environment."}
+    ],
+    "sections": [
+      {"title":"Start with viable, healthy material","body":"Seed and cutting performance begins with the condition of the starting material. Damaged, infected, poorly stored, or physiologically weak material can reduce success even when environmental conditions are otherwise appropriate.","references":["REF-PROP-001"]},
+      {"title":"Moisture must be balanced with oxygen","body":"Propagation requires adequate moisture without prolonged saturation. Seeds and new roots need access to oxygen, while unrooted cuttings have limited ability to replace water loss. The environment should therefore support hydration while avoiding conditions that encourage decay or oxygen limitation.","references":["REF-PROP-001"]},
+      {"title":"Sanitation protects vulnerable tissue","body":"Propagation involves young tissue and, for cuttings, fresh wounds that can provide entry points for pathogens. Clean tools, surfaces, hands, containers, and propagation material are important parts of a repeatable protocol.","references":["REF-PROP-001"]},
+      {"title":"Genotypes can respond differently","body":"Rooting speed and propagation success can vary among genotypes. A protocol that performs well with one cultivar may need adjustment for another, so cultivar-specific records are more useful than assuming every genotype responds identically.","references":["REF-PROP-001"]},
+      {"title":"Rooting is not the end of propagation","body":"Newly rooted material must transition into the normal crop environment. Acclimatization should reduce dependence on high-support humidity or other propagation conditions while allowing the root system and transpiration capacity to develop together.","references":["REF-PROP-001"]}
+    ],
+    "workedExamples": [
+      "If one cultivar roots consistently slower than another under the same clean protocol, record the genotype-specific response before changing every environmental variable at once.",
+      "If newly rooted cuttings wilt immediately after leaving a high-humidity environment, evaluate whether the transition was too abrupt rather than assuming rooting had failed."
+    ],
+    "commonMistakes": [
+      "Keeping propagation media saturated because more moisture is assumed to improve rooting.",
+      "Reusing tools or surfaces between plants without appropriate sanitation.",
+      "Treating a protocol optimized for one genotype as universally optimal.",
+      "Skipping acclimatization as soon as roots are visible."
+    ],
+    "practicalApplication": "Build a propagation checklist that records source material, sanitation, environmental conditions, moisture status, rooting or emergence timing, genotype, and acclimatization outcome. Compare batches using the same observations so protocol changes are based on evidence.",
+    "summary": "Successful propagation is a controlled biological transition. Healthy starting material, sanitation, balanced moisture and oxygen, genotype-aware protocols, and gradual acclimatization produce more reliable seedlings and rooted cuttings than any single product or technique alone."
+  }
 }
