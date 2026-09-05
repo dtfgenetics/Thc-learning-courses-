@@ -9,38 +9,44 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-function collectTargets() {
-  const directories = [
-    'content/competencies',
-    'content/learning-objectives',
-    'content/lessons',
-    'content/claims',
-    'content/assessments',
-    'content/questions',
-    'content/references',
-    'content/modules',
-    'content/courses',
-    'content/programs',
-    'content/credentials'
-  ];
-  const targets = new Map();
-  for (const rel of directories) {
-    const dir = path.join(root, rel);
-    if (!fs.existsSync(dir)) continue;
-    for (const name of fs.readdirSync(dir).filter((entry) => entry.endsWith('.json'))) {
-      const data = readJson(path.join(dir, name));
-      if (data.id) targets.set(data.id, data);
-    }
-  }
-  return targets;
+function readDirJson(rel, kind) {
+  const dir = path.join(root, rel);
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter((name) => name.endsWith('.json'))
+    .sort()
+    .map((name) => ({
+      file: path.join(rel, name),
+      kind,
+      data: readJson(path.join(dir, name))
+    }));
 }
 
-const targets = collectTargets();
+const collections = [
+  ...readDirJson('content/competencies', 'competency'),
+  ...readDirJson('content/learning-objectives', 'learning-objective'),
+  ...readDirJson('content/lessons', 'lesson'),
+  ...readDirJson('content/claims', 'claim'),
+  ...readDirJson('content/assessments', 'assessment'),
+  ...readDirJson('content/questions', 'question'),
+  ...readDirJson('content/references', 'reference'),
+  ...readDirJson('content/modules', 'module'),
+  ...readDirJson('content/courses', 'course'),
+  ...readDirJson('content/programs', 'program'),
+  ...readDirJson('content/credentials', 'credential')
+];
+
+const targets = new Map();
+for (const entry of collections) {
+  if (entry.data.id) targets.set(entry.data.id, entry);
+}
+
 const reviewFiles = fs.existsSync(reviewDir)
   ? fs.readdirSync(reviewDir).filter((name) => name.endsWith('.json')).sort()
   : [];
 
 const seenIds = new Set();
+const reviews = [];
 const allowedFields = new Set([
   'id',
   'objectId',
@@ -64,6 +70,8 @@ for (const name of reviewFiles) {
     errors.push(`${rel}: invalid JSON (${error.message})`);
     continue;
   }
+
+  reviews.push({ file: rel, data: review });
 
   for (const field of ['id', 'objectId', 'objectVersion', 'reviewType', 'status', 'reviewerId', 'reviewedAt']) {
     if (review[field] === undefined || review[field] === null || review[field] === '') {
@@ -102,8 +110,41 @@ for (const name of reviewFiles) {
   const target = targets.get(review.objectId);
   if (!target) {
     errors.push(`${rel}: reviewed object ${review.objectId} does not exist`);
-  } else if (String(target.version) !== String(review.objectVersion)) {
-    errors.push(`${rel}: objectVersion ${review.objectVersion} does not match ${review.objectId} current version ${target.version}`);
+  } else if (String(target.data.version) !== String(review.objectVersion)) {
+    errors.push(`${rel}: objectVersion ${review.objectVersion} does not match ${review.objectId} current version ${target.data.version}`);
+  }
+}
+
+function hasApprovedReview(objectId, objectVersion, reviewType) {
+  return reviews.some(({ data }) =>
+    data.objectId === objectId &&
+    String(data.objectVersion) === String(objectVersion) &&
+    data.reviewType === reviewType &&
+    data.status === 'approved'
+  );
+}
+
+for (const target of collections) {
+  const { data, file, kind } = target;
+
+  if (kind === 'lesson' && data.status === 'published') {
+    for (const reviewType of ['scientific', 'editorial']) {
+      if (!hasApprovedReview(data.id, data.version, reviewType)) {
+        errors.push(`${file}: published lesson ${data.id}@${data.version} is missing approved ${reviewType} review evidence`);
+      }
+    }
+  }
+
+  if (kind === 'question' && data.status === 'active') {
+    if (!hasApprovedReview(data.id, data.version, 'assessment')) {
+      errors.push(`${file}: active assessment item ${data.id}@${data.version} is missing an approved assessment review record`);
+    }
+  }
+
+  if (kind === 'assessment' && ['active', 'approved', 'published'].includes(data.status)) {
+    if (!hasApprovedReview(data.id, data.version, 'assessment')) {
+      errors.push(`${file}: production-eligible assessment ${data.id}@${data.version} is missing an approved assessment review record`);
+    }
   }
 }
 
@@ -113,4 +154,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Review-record validation passed. ${reviewFiles.length} review record(s) checked.`);
+console.log(`Review-record validation passed. ${reviewFiles.length} review record(s) checked; promotion evidence rules enforced.`);
