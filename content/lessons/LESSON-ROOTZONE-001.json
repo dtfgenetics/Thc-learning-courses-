@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-ROOTZONE-001"],
   "learningObjectives": ["LO-ROOTZONE-001"],
-  "estimatedMinutes": 40,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 45,
+  "references": ["REF-IRRIGATION-001"],
+  "assessment": null,
+  "content": {
+    "overview": "The root zone is where water, oxygen, dissolved nutrients, roots, and the physical medium interact. Media properties influence how quickly water drains, how much air remains after irrigation, and how roots can expand through the container.",
+    "vocabulary": [
+      {"term":"Air-filled porosity","definition":"The fraction of pore space occupied by air after excess irrigation water has drained."},
+      {"term":"Water-holding capacity","definition":"The amount of water a medium retains after drainage under the conditions being measured."},
+      {"term":"Bulk density","definition":"The mass of dry medium per unit bulk volume, including pore space."},
+      {"term":"Drainage","definition":"The movement of excess water out of the root-zone medium after irrigation."}
+    ],
+    "sections": [
+      {"title":"Roots need both water and oxygen","body":"Root performance depends on access to water without prolonged loss of gas-filled pore space. When a medium remains saturated too long, oxygen diffusion can be restricted even if nutrient concentration is otherwise appropriate.","references":["REF-IRRIGATION-001"]},
+      {"title":"Media properties shape irrigation behavior","body":"Particle size, porosity, bulk density, and container geometry influence water retention and drainage. This is why the same irrigation volume can create different root-zone conditions in different media or container systems.","references":["REF-IRRIGATION-001"]},
+      {"title":"Physical and chemical conditions interact","body":"Root-zone pH, EC, moisture, aeration, and nutrient availability can influence one another and can produce overlapping plant symptoms. A defensible diagnosis therefore separates physical constraints from chemical ones before recommending a correction.","references":["REF-IRRIGATION-001"]},
+      {"title":"Observe dryback and root response","body":"Useful root-zone monitoring follows how moisture changes between irrigations and how roots respond over time. Trends in saturation duration, container weight, drainage, and root appearance are more informative than a single isolated reading.","references":["REF-IRRIGATION-001"]}
+    ],
+    "workedExamples": [
+      "If a container stays wet much longer than neighboring containers, compare drainage, media structure, root establishment, and irrigation distribution before increasing nutrients.",
+      "If roots lose vigor while EC remains normal, investigate moisture and aeration rather than assuming the problem is purely nutritional."
+    ],
+    "commonMistakes": [
+      "Assuming more water always means better root hydration.",
+      "Diagnosing root-zone problems from nutrient measurements alone.",
+      "Ignoring media structure and drainage when comparing irrigation schedules."
+    ],
+    "practicalApplication": "Track irrigation volume together with drainage behavior, container moisture trends, root appearance, pH, and EC. Use the combined evidence to decide whether the next investigation should focus on water retention, aeration, chemistry, delivery, or root health.",
+    "summary": "A productive root zone balances water, air, chemistry, and physical structure. Media properties and irrigation practices must be interpreted together because either physical or chemical constraints can limit root function and create similar above-ground symptoms."
+  }
 }
