@@ -82,6 +82,15 @@ for (const { file, data } of collections.questions) {
   requireId(file, data.competency, 'competency');
   requireId(file, data.objective, 'learning objective');
   requireMany(file, data.references, 'reference');
+  if (['multiple-choice', 'scenario', 'case-study'].includes(data.type)) {
+    if (!Number.isInteger(data.correct)) errors.push(`${file}: ${data.type} correct answer must be an integer choice index`);
+    if (Number.isInteger(data.correct) && (data.correct < 0 || data.correct >= (data.choices?.length ?? 0))) {
+      errors.push(`${file}: correct answer index ${data.correct} is outside the choices array`);
+    }
+  }
+  if (data.type === 'multiple-response' && !Array.isArray(data.correct)) {
+    errors.push(`${file}: multiple-response correct answer must be an array of choice indexes`);
+  }
 }
 
 for (const { file, data } of collections.assessments) {
@@ -149,6 +158,21 @@ for (const competency of credentialCompetencies) {
   if (matchingItems.length === 0) errors.push(`credentialed competency ${competency}: no assessment items exist`);
 }
 
+const finalAssessment = objects.get('ASSESS-CULT-FOUNDATIONS-FINAL-001');
+if (finalAssessment?.blueprint) {
+  const minimumActive = finalAssessment.itemSelection?.minimumActiveItemsPerCompetency ?? 0;
+  const targetBank = finalAssessment.itemSelection?.targetBankItemsPerCompetency ?? 0;
+  console.log('Assessment bank coverage:');
+  for (const row of finalAssessment.blueprint) {
+    const competency = row.competency;
+    const allItems = collections.questions.filter(({ data }) => data.competency === competency);
+    const summativeItems = allItems.filter(({ data }) => ['summative', 'credential'].includes(data.purpose));
+    const activeItems = summativeItems.filter(({ data }) => data.status === 'active');
+    console.log(`- ${competency}: ${summativeItems.length} summative/credential item(s), ${activeItems.length} active; minimum active ${minimumActive}, target bank ${targetBank}`);
+    if (summativeItems.length === 0) errors.push(`${competency}: final-assessment blueprint has no summative or credential items`);
+  }
+}
+
 const foundationsRegistryPath = path.join(root, 'registry/cultivation-foundations.json');
 if (fs.existsSync(foundationsRegistryPath)) {
   const registry = readJson('registry/cultivation-foundations.json');
@@ -161,6 +185,20 @@ if (fs.existsSync(foundationsRegistryPath)) {
   const missingLessonMappings = (registry.domains ?? []).filter((domain) => !domain.module || !domain.lesson);
   if (registry.gates?.allDomainsHaveLessons === true && missingLessonMappings.length > 0) {
     errors.push('registry/cultivation-foundations.json: allDomainsHaveLessons is true but one or more domains lack module/lesson mappings');
+  }
+
+  if (registry.gates?.approvedItemPoolsComplete === true && finalAssessment?.blueprint) {
+    const minimumActive = finalAssessment.itemSelection?.minimumActiveItemsPerCompetency ?? 0;
+    for (const row of finalAssessment.blueprint) {
+      const activeItems = collections.questions.filter(({ data }) =>
+        data.competency === row.competency &&
+        ['summative', 'credential'].includes(data.purpose) &&
+        data.status === 'active'
+      );
+      if (activeItems.length < minimumActive) {
+        errors.push(`registry/cultivation-foundations.json: approvedItemPoolsComplete is true but ${row.competency} has ${activeItems.length}/${minimumActive} active items`);
+      }
+    }
   }
 }
 
