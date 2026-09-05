@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-NUTRITION-001"],
   "learningObjectives": ["LO-NUTRITION-001"],
-  "estimatedMinutes": 45,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 50,
+  "references": ["REF-NUTRITION-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Plant nutrition is a system of supply, availability, uptake, transport, and biological demand. Visual symptoms can help identify where to investigate, but they should be interpreted with pH, EC, developmental stage, root-zone condition, and nutrient interactions before assigning a cause.",
+    "vocabulary": [
+      {"term":"Macronutrient","definition":"An essential mineral element required by plants in relatively large amounts compared with micronutrients."},
+      {"term":"Micronutrient","definition":"An essential mineral element required in smaller quantities but still necessary for normal growth and metabolism."},
+      {"term":"Nutrient antagonism","definition":"An interaction in which the presence or abundance of one ion can reduce the uptake or use of another nutrient."},
+      {"term":"Availability","definition":"The fraction of a nutrient that is present in a chemical and root-zone context where the plant can acquire and use it."}
+    ],
+    "sections": [
+      {"title":"Essential nutrients have different biological roles","body":"Plants require a set of essential mineral elements for structural, metabolic, enzymatic, and regulatory functions. A nutrient program should therefore be evaluated as a balanced system rather than as a contest to maximize any single element.","references":["REF-NUTRITION-001"]},
+      {"title":"Supply does not guarantee availability","body":"A nutrient may be present in the solution yet remain poorly available because of root-zone pH, ionic interactions, precipitation, water status, or root health. This is why simply increasing fertilizer concentration can fail to correct a deficiency-like symptom.","references":["REF-NUTRITION-001"]},
+      {"title":"Symptoms are clues, not proof","body":"Leaf color, chlorosis, necrosis, distortion, and growth pattern can narrow a diagnosis, but many disorders overlap visually. Strong diagnosis combines symptom location and progression with pH, EC, irrigation history, developmental stage, and other evidence.","references":["REF-NUTRITION-001"]},
+      {"title":"Development changes nutrient context","body":"Nutrient demand and allocation patterns change as plants develop. A concentration or visual pattern that is acceptable in one developmental phase may need different interpretation in another, so stage should always be recorded during nutritional diagnosis.","references":["REF-NUTRITION-001"]}
+    ],
+    "workedExamples": [
+      "A plant shows deficiency-like symptoms while root-zone EC is already high. Before adding more fertilizer, check pH, irrigation behavior, root health, and possible nutrient interactions.",
+      "If older and younger leaves show different patterns, document where symptoms begin and how they progress because nutrient mobility and developmental context can help narrow the investigation."
+    ],
+    "commonMistakes": [
+      "Diagnosing a nutrient deficiency from leaf color alone.",
+      "Increasing all fertilizer components when root-zone EC is already elevated.",
+      "Ignoring pH, root health, and developmental stage when interpreting nutrient symptoms."
+    ],
+    "practicalApplication": "When a nutrition problem is suspected, record symptom location and progression, measure pH and EC with consistent methods, review irrigation and root-zone conditions, and compare the evidence before changing nutrient concentration. Make one deliberate correction at a time whenever practical so the crop response can be interpreted.",
+    "summary": "Nutrient diagnosis requires more than matching leaf symptoms to a chart. Supply, pH, EC, nutrient interactions, root-zone conditions, developmental stage, and crop response should be interpreted together before deciding whether the problem is true deficiency, excess, antagonism, or limited availability."
+  }
 }
