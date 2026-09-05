@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-POSTHARVEST-001"],
   "learningObjectives": ["LO-POSTHARVEST-001"],
-  "estimatedMinutes": 45,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 50,
+  "references": ["REF-POSTHARVEST-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Post-harvest handling continues to shape product quality after the plant is cut. Drying, curing, packaging, and storage should be treated as controlled processes because temperature, humidity, airflow, light, oxygen exposure, handling, and contamination risk can influence moisture behavior and chemical stability.",
+    "vocabulary": [
+      {"term":"Drying","definition":"The controlled removal of water from harvested plant material after harvest."},
+      {"term":"Curing","definition":"A controlled post-drying holding period used to stabilize moisture distribution and product characteristics."},
+      {"term":"Water activity","definition":"A measure related to how available water is for chemical reactions and microbial growth in a material."},
+      {"term":"Storage stability","definition":"The ability of harvested material to maintain quality and chemical characteristics over time under defined conditions."}
+    ],
+    "sections": [
+      {"title":"Drying is a controlled moisture-removal process","body":"Drying should remove water at a controlled rate rather than as quickly as possible. Temperature, relative humidity, airflow, flower density, and load size influence how moisture moves from internal tissues to the surrounding air.","references":["REF-POSTHARVEST-001"]},
+      {"title":"Curing follows initial drying","body":"After initial drying, moisture can continue to redistribute within harvested material. Curing uses managed storage conditions to allow equilibration while monitoring for excessive moisture, degradation, or contamination risk.","references":["REF-POSTHARVEST-001"]},
+      {"title":"Packaging creates a storage environment","body":"Packaging influences exposure to moisture, oxygen, light, and physical damage. The package should therefore be considered part of the storage system rather than a neutral container added after quality decisions are finished.","references":["REF-POSTHARVEST-001"]},
+      {"title":"Storage conditions affect stability","body":"Temperature, light, oxygen, and time can influence the stability of harvested cannabis constituents. Consistent storage conditions and documented handling are important when comparing quality changes over time.","references":["REF-POSTHARVEST-001"]}
+    ],
+    "workedExamples": [
+      "If outer flower surfaces feel dry while internal portions remain much wetter, avoid assuming the batch is uniformly dry; continue controlled monitoring before long-term packaging.",
+      "If material stored in different packages changes at different rates, compare oxygen, moisture, light exposure, and storage temperature rather than attributing the difference only to cultivar."
+    ],
+    "commonMistakes": [
+      "Maximizing airflow without considering overly rapid or uneven drying.",
+      "Treating curing as passive waiting without moisture and contamination monitoring.",
+      "Ignoring packaging and storage temperature after the initial dry is complete."
+    ],
+    "practicalApplication": "Document drying-room temperature, humidity, airflow pattern, batch density, and moisture observations using consistent methods. During curing and storage, record container conditions, inspection findings, and any quality changes so the process can be reproduced and improved.",
+    "summary": "Post-harvest quality depends on controlled moisture removal, stabilization, packaging, and storage. Drying and curing are active process-control stages, and the storage environment continues to influence harvested material after those stages are complete."
+  }
 }
