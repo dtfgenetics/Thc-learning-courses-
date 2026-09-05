@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/learning-objective.schema.json",
+  "title": "THC Academy Learning Objective",
+  "type": "object",
+  "required": ["id", "competency", "statement", "bloomLevel", "status", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^LO-[A-Z0-9-]+$"},
+    "competency": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"},
+    "statement": {"type": "string", "minLength": 10},
+    "bloomLevel": {"enum": ["remember", "understand", "apply", "analyze", "evaluate", "create"]},
+    "status": {"enum": ["draft", "review", "approved", "published", "superseded", "retired"]},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+  },
+  "additionalProperties": false
+}

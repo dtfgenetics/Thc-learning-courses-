@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/reference.schema.json",
+  "title": "THC Academy Reference",
+  "type": "object",
+  "required": ["id", "type", "title", "status", "evidenceLevel"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"},
+    "type": {"enum": ["journal", "standard", "government", "extension", "textbook", "industry", "other"]},
+    "title": {"type": "string", "minLength": 3},
+    "publisher": {"type": ["string", "null"]},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "year": {"type": ["integer", "null"]},
+    "doi": {"type": ["string", "null"]},
+    "url": {"type": ["string", "null"]},
+    "status": {"enum": ["needs-authoritative-source", "candidate", "reviewed", "superseded", "retracted"]},
+    "evidenceLevel": {"enum": ["unverified", "peer-reviewed", "university-extension", "standards-government", "textbook", "industry-technical", "experiential"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
