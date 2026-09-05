@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/question.schema.json",
+  "title": "THC Academy Assessment Item",
+  "type": "object",
+  "required": ["id", "version", "status", "purpose", "competency", "objective", "bloomLevel", "difficulty", "type", "stem", "choices", "correct", "rationale", "references"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ITEM-[A-Z0-9-]+$"},
+    "version": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["draft", "technical-review", "editorial-review", "pilot", "active", "flagged", "retired"]},
+    "purpose": {"enum": ["practice", "formative", "summative", "credential"]},
+    "competency": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"},
+    "objective": {"type": "string", "pattern": "^LO-[A-Z0-9-]+$"},
+    "bloomLevel": {"enum": ["remember", "understand", "apply", "analyze", "evaluate", "create"]},
+    "difficulty": {"enum": ["easy", "moderate", "hard", "expert"]},
+    "type": {"enum": ["multiple-choice", "multiple-response", "numeric", "ordering", "matching", "scenario", "case-study", "short-response"]},
+    "stem": {"type": "string", "minLength": 5},
+    "choices": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+    "correct": {},
+    "rationale": {"type": "string", "minLength": 5},
+    "references": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"}}
+  },
+  "additionalProperties": false
+}
