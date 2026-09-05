@@ -9,7 +9,10 @@
     "exam:form:dev": "node scripts/generate-exam-form.mjs --allow-draft --seed=development",
     "credential:eligibility": "node scripts/evaluate-credential-eligibility.mjs",
     "credential:test": "node scripts/test-credential-eligibility.mjs",
-    "test": "npm run validate && npm run exam:form:dev && npm run credential:test"
+    "credential:issue:test": "node scripts/issue-test-credential.mjs --test",
+    "credential:verify:test": "node scripts/verify-test-credential.mjs",
+    "credential:issuance:test": "node scripts/test-credential-issuance.mjs",
+    "test": "npm run validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test"
   },
   "engines": {
     "node": ">=20"
