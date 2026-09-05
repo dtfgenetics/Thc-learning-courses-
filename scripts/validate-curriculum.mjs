@@ -64,6 +64,17 @@ for (const { file, data } of collections.lessons) {
   requireId(file, data.assessment, 'assessment');
   if (!(data.learningObjectives?.length > 0)) errors.push(`${file}: lesson must map to at least one learning objective`);
   if (!(data.competencies?.length > 0)) errors.push(`${file}: lesson must map to at least one competency`);
+  if (data.content?.sections) {
+    for (const section of data.content.sections) requireMany(file, section.references, 'section reference');
+  }
+  if (data.status === 'published') {
+    if (!data.content) errors.push(`${file}: published lesson must include structured instructional content`);
+    if ((data.content?.sections?.length ?? 0) < 2) errors.push(`${file}: published lesson must include at least two instructional sections`);
+    if ((data.content?.vocabulary?.length ?? 0) < 1) errors.push(`${file}: published lesson must include vocabulary`);
+    if ((data.content?.commonMistakes?.length ?? 0) < 1) errors.push(`${file}: published lesson must include common mistakes`);
+    if (!data.content?.practicalApplication) errors.push(`${file}: published lesson must include practical application`);
+    if (!data.content?.summary) errors.push(`${file}: published lesson must include a summary`);
+  }
 }
 
 for (const { file, data } of collections.claims) {
