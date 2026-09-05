@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-LIGHT-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LIGHT-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two lighting setups use different fixtures but produce similar canopy-level photon exposure over the same photoperiod. Which conclusion is most scientifically defensible?",
+  "choices": [
+    "Fixture label alone is insufficient; intensity, spectrum, photoperiod and canopy distribution should be evaluated together",
+    "The more expensive fixture must produce the better biological response",
+    "Fixture wattage alone determines plant response regardless of spectrum or distribution",
+    "Photoperiod can be ignored whenever measured intensity is similar"
+  ],
+  "correct": 0,
+  "rationale": "Cannabis photobiology is influenced by interacting light intensity, spectrum and photoperiod, while fixture characteristics also affect spatial distribution at the canopy.",
+  "references": ["REF-LIGHT-001"]
+}

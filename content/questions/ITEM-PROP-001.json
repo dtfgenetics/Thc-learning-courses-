@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-PROP-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-PROP-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A propagation protocol works well for one cultivar but performs poorly for another under otherwise similar conditions. What is the best next interpretation?",
+  "choices": [
+    "Propagation response can be genotype-dependent, so cultivar-specific optimization and sanitation/environment checks are appropriate",
+    "The protocol must work identically for every genotype",
+    "Genotype cannot affect propagation response",
+    "The only valid response is to increase fertilizer strength"
+  ],
+  "correct": 0,
+  "rationale": "Cannabis propagation responses can vary among genotypes, and success also depends on material condition, sanitation, rooting environment and acclimatization.",
+  "references": ["REF-PROP-001"]
+}

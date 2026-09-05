@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-WATER-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-WATER-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two plants receive the same total irrigation volume but show different root-zone moisture patterns. What should be evaluated before assuming the plants have equivalent water availability?",
+  "choices": [
+    "Delivery method, moisture distribution, substrate properties and plant establishment",
+    "Only the total volume applied",
+    "Only the color of the leaves at the top of the canopy",
+    "Only the manufacturer's name on the irrigation system"
+  ],
+  "correct": 0,
+  "rationale": "Equivalent irrigation volume does not guarantee equivalent root-zone conditions; distribution, substrate and delivery characteristics affect water availability and use.",
+  "references": ["REF-IRRIGATION-001"]
+}
