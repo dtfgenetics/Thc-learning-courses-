@@ -16,6 +16,7 @@
     "credential:public:test": "node scripts/test-public-verification-projection.mjs",
     "review:readiness": "node scripts/report-review-readiness.mjs",
     "itembank:readiness": "node scripts/report-item-bank-readiness.mjs",
+    "release:check": "node scripts/check-release-readiness.mjs",
     "test": "npm run validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness"
   },
   "engines": {
