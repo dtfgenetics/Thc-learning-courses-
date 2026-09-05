@@ -17,11 +17,12 @@
     {"id":"DOMAIN-POSTHARVEST","module":"MOD-POSTHARVEST-001","lesson":"LESSON-POSTHARVEST-001","competencies":["COMP-POSTHARVEST-001"],"objectives":["LO-POSTHARVEST-001"]},
     {"id":"DOMAIN-GENETICS","module":"MOD-GENETICS-001","lesson":"LESSON-GENETICS-001","competencies":["COMP-GENETICS-001"],"objectives":["LO-GENETICS-001"]}
   ],
+  "summativeAssessment": "ASSESS-CULT-FOUNDATIONS-FINAL-001",
   "publicationReady": false,
   "gates": {
     "allDomainsHaveLessons": true,
     "allDomainsHaveReviewedReferences": false,
-    "summativeBlueprintComplete": false,
+    "summativeBlueprintComplete": true,
     "approvedItemPoolsComplete": false,
     "credentialEligibilityComplete": false
   }
