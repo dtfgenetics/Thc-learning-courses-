@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-IPM-001"],
   "learningObjectives": ["LO-IPM-001"],
-  "estimatedMinutes": 45,
+  "estimatedMinutes": 50,
   "references": ["REF-IPM-001"],
-  "assessment": null
+  "assessment": null,
+  "content": {
+    "overview": "Integrated pest management (IPM) is a decision system built around prevention, monitoring, diagnosis, thresholds, and proportionate control. The goal is not simply to apply a pesticide when damage appears; it is to reduce the chance of problems, detect them early, identify them correctly, and choose controls that fit the evidence and applicable rules.",
+    "vocabulary": [
+      {"term":"Scouting","definition":"A repeatable inspection process used to detect pests, diseases, damage, and changing crop conditions."},
+      {"term":"Sanitation","definition":"Practices that reduce the introduction, survival, or spread of pests and pathogens through cleaning and handling controls."},
+      {"term":"Diagnosis","definition":"The evidence-based process of identifying the most likely cause of a plant-health problem."},
+      {"term":"Integrated pest management","definition":"A prevention-first framework that combines monitoring and appropriate cultural, biological, physical, and chemical controls."}
+    ],
+    "sections": [
+      {"title":"Prevention comes before treatment","body":"Clean planting material, sanitation, controlled movement of tools and people, and appropriate environmental management can reduce the chance that a pest or pathogen becomes established. Preventive controls are usually easier to maintain than correcting a widespread problem later.","references":["REF-IPM-001"]},
+      {"title":"Scouting creates usable evidence","body":"Routine scouting should be consistent enough to reveal changes over time. Record location, symptom pattern, pest presence, severity, and environmental context so observations can be compared rather than relying on memory or isolated photographs.","references":["REF-IPM-001"]},
+      {"title":"Diagnosis should precede control choice","body":"Similar symptoms can have biological, environmental, nutritional, or mechanical causes. Before selecting a treatment, compare visible evidence with environmental conditions, root-zone information, crop history, and diagnostic observations so the response targets the actual problem.","references":["REF-IPM-001"]},
+      {"title":"Controls should be proportionate and lawful","body":"A control should fit the identified problem, crop context, risk level, and applicable product restrictions. IPM favors the least disruptive effective response and continued monitoring rather than automatic escalation to the strongest available treatment.","references":["REF-IPM-001"]}
+    ],
+    "workedExamples": [
+      "If several plants suddenly show spots after a humidity increase, document distribution and environmental history, isolate affected material where practical, and investigate disease and non-disease causes before choosing a treatment.",
+      "If one plant shows damage but surrounding plants do not, inspect the local root zone, handling history, and nearby pests before assuming a room-wide infestation."
+    ],
+    "commonMistakes": [
+      "Applying a control before establishing a defensible diagnosis.",
+      "Treating sanitation and scouting as optional once a crop looks healthy.",
+      "Assuming every pesticide or biological control is lawful or appropriate in every jurisdiction or production context."
+    ],
+    "practicalApplication": "Use a written scouting route and record findings by location. When a problem appears, document symptoms, environment, root-zone conditions, and pest or pathogen evidence; then select a prevention or control step that fits the diagnosis and continue monitoring to verify whether it worked.",
+    "summary": "IPM is a repeatable decision process: prevent problems, scout consistently, diagnose from evidence, choose proportionate controls, and verify outcomes. The quality of the diagnosis matters as much as the treatment choice."
+  }
 }
