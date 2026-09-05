@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/review-record.schema.json",
+  "title": "THC Academy Review Record",
+  "type": "object",
+  "required": ["id", "objectId", "objectVersion", "reviewType", "status", "reviewerId", "reviewedAt"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^REVIEW-[A-Z0-9-]+$"},
+    "objectId": {"type": "string", "minLength": 3},
+    "objectVersion": {"type": ["string", "integer"]},
+    "reviewType": {"enum": ["scientific", "editorial", "assessment", "accessibility", "legal-compliance"]},
+    "status": {"enum": ["approved", "changes-requested", "rejected"]},
+    "reviewerId": {"type": "string", "minLength": 3},
+    "reviewedAt": {"type": "string", "format": "date-time"},
+    "notes": {"type": "string"},
+    "evidenceChecked": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
