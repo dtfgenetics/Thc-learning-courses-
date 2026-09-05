@@ -1,0 +1,16 @@
+{
+  "id": "ITEM-ENV-VPD-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-SENSORS-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One humidity sensor near a dehumidifier outlet reads much drier than two canopy sensors. What is the best first interpretation?",
+  "choices": ["The outlet sensor may represent a local microclimate rather than the crop average", "The two canopy sensors must both be broken", "The entire room should immediately be humidified", "Sensor location never affects measurements"],
+  "correct": 0,
+  "rationale": "Sensor placement can create local bias, so location and calibration should be evaluated before changing set points.",
+  "references": ["REF-VPD-002"]
+}

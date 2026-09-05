@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-curriculum.mjs",
+    "registry:validate": "node scripts/validate-global-registry.mjs",
     "exam:form": "node scripts/generate-exam-form.mjs",
     "exam:form:dev": "node scripts/generate-exam-form.mjs --allow-draft --seed=development",
     "credential:eligibility": "node scripts/evaluate-credential-eligibility.mjs",
@@ -21,7 +22,7 @@
     "production:readiness": "node scripts/check-production-readiness.mjs",
     "release:check": "node scripts/check-release-readiness.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run validate && npm run review:validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run production:readiness"
+    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run production:readiness"
   },
   "engines": {
     "node": ">=20"

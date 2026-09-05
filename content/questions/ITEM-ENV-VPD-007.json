@@ -1,0 +1,16 @@
+{
+  "id": "ITEM-ENV-VPD-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "apply",
+  "difficulty": "easy",
+  "type": "multiple-choice",
+  "stem": "Why should temperature and relative humidity be interpreted together when evaluating atmospheric drying demand?",
+  "choices": ["Because saturation vapor pressure changes with temperature", "Because humidity has no relationship to water vapor", "Because temperature is only a lighting measurement", "Because VPD ignores humidity"],
+  "correct": 0,
+  "rationale": "VPD depends on the vapor-pressure relationship created by temperature and humidity together.",
+  "references": ["REF-VPD-002"]
+}
