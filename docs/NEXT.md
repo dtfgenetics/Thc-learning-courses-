@@ -1,12 +1,18 @@
-# Immediate Implementation Queue
+# Next Build Queue
 
-1. Add schemas for programs, modules, references, assessments, credentials, claims, media, and registry objects.
-2. Extend validation from referential integrity to full JSON Schema validation and publication gates.
-3. Build the complete Cultivation Foundations competency map across plant biology, environment, lighting, water, root zone, nutrition, propagation, IPM, flowering, harvest, drying, and curing.
-4. Replace all scaffold references with authoritative reviewed scientific sources before any production publication.
-5. Add claims/evidence provenance and source freshness review dates.
-6. Add a summative assessment blueprint and secure server-side assessment domain.
-7. Add deterministic credential eligibility rules and test issuance/verification objects.
-8. Add PostgreSQL schema/migrations for runtime learner, enrollment, mastery, attempt, credential, audit, and case data.
-9. Build learner, admin, verifier, and API applications as a modular monolith.
-10. Add QTI/Open Badges interoperability, accessibility tests, application security checks, backups, observability, release management, and production deployment controls.
+## Immediate
+
+1. Replace placeholder and empty references with authoritative evidence for all 12 foundation domains.
+2. Add first-class scientific claims for each domain and link them to lessons, competencies, and references.
+3. Complete schemas for module, competency, learning objective, assessment, credential, reference, program, and registry objects.
+4. Build summative assessment blueprints for every domain.
+5. Expand each domain from one foundation lesson into a sequenced lesson set with prerequisites and estimated study time.
+6. Create secure question pools with item lifecycle, cognitive level, difficulty, rationale, and source mappings.
+7. Implement deterministic credential eligibility rules for the Cultivation Foundations certificate.
+8. Add PostgreSQL runtime schema for learners, enrollments, progress, attempts, mastery, credentials, and audit events.
+9. Add learner, admin, API, and public verifier application shells.
+10. Add Open Badges 3.0-compatible credential representation and verification architecture.
+
+## Publication gates
+
+No certificate-bearing release may be marked production-ready until scientific evidence, lesson coverage, summative assessment coverage, item review, accessibility review, credential rules, and release validation are complete.

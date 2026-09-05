@@ -1,0 +1,28 @@
+{
+  "program": "PROGRAM-THC-FOUNDATIONS-001",
+  "course": "COURSE-CULT-FOUNDATIONS-001",
+  "version": "1.0.0",
+  "status": "draft",
+  "domains": [
+    {"id":"DOMAIN-PLANT-BIOLOGY","module":"MOD-PLANT-BIO-001","lesson":"LESSON-PLANT-BIO-001","competencies":["COMP-PLANT-BIO-001"],"objectives":["LO-PLANT-BIO-001"]},
+    {"id":"DOMAIN-ENVIRONMENT","module":"MOD-ENV-001","lesson":"LESSON-ENV-VPD-001","competencies":["COMP-ENV-VPD-001"],"objectives":["LO-ENV-VPD-001"]},
+    {"id":"DOMAIN-LIGHTING","module":"MOD-LIGHT-001","lesson":"LESSON-LIGHT-001","competencies":["COMP-LIGHT-001"],"objectives":["LO-LIGHT-001"]},
+    {"id":"DOMAIN-WATER","module":"MOD-WATER-001","lesson":"LESSON-WATER-001","competencies":["COMP-WATER-001"],"objectives":["LO-WATER-001"]},
+    {"id":"DOMAIN-ROOTZONE","module":"MOD-ROOTZONE-001","lesson":"LESSON-ROOTZONE-001","competencies":["COMP-ROOTZONE-001"],"objectives":["LO-ROOTZONE-001"]},
+    {"id":"DOMAIN-NUTRITION","module":"MOD-NUTRITION-001","lesson":"LESSON-NUTRITION-001","competencies":["COMP-NUTRITION-001"],"objectives":["LO-NUTRITION-001"]},
+    {"id":"DOMAIN-IPM","module":"MOD-IPM-001","lesson":"LESSON-IPM-001","competencies":["COMP-IPM-001"],"objectives":["LO-IPM-001"]},
+    {"id":"DOMAIN-PROPAGATION","module":"MOD-PROP-001","lesson":"LESSON-PROP-001","competencies":["COMP-PROP-001"],"objectives":["LO-PROP-001"]},
+    {"id":"DOMAIN-CANOPY","module":"MOD-CANOPY-001","lesson":"LESSON-CANOPY-001","competencies":["COMP-CANOPY-001"],"objectives":["LO-CANOPY-001"]},
+    {"id":"DOMAIN-FLOWERING","module":"MOD-FLOWER-001","lesson":"LESSON-FLOWER-001","competencies":["COMP-FLOWER-001"],"objectives":["LO-FLOWER-001"]},
+    {"id":"DOMAIN-POSTHARVEST","module":"MOD-POSTHARVEST-001","lesson":"LESSON-POSTHARVEST-001","competencies":["COMP-POSTHARVEST-001"],"objectives":["LO-POSTHARVEST-001"]},
+    {"id":"DOMAIN-GENETICS","module":"MOD-GENETICS-001","lesson":"LESSON-GENETICS-001","competencies":["COMP-GENETICS-001"],"objectives":["LO-GENETICS-001"]}
+  ],
+  "publicationReady": false,
+  "gates": {
+    "allDomainsHaveLessons": true,
+    "allDomainsHaveReviewedReferences": false,
+    "summativeBlueprintComplete": false,
+    "approvedItemPoolsComplete": false,
+    "credentialEligibilityComplete": false
+  }
+}

@@ -4,7 +4,33 @@
   "version": "1.0.0",
   "status": "draft",
   "credentialBearing": false,
-  "modules": ["MOD-ENV-001"],
-  "competencies": ["COMP-ENV-VPD-001"],
+  "modules": [
+    "MOD-PLANT-BIO-001",
+    "MOD-ENV-001",
+    "MOD-LIGHT-001",
+    "MOD-WATER-001",
+    "MOD-ROOTZONE-001",
+    "MOD-NUTRITION-001",
+    "MOD-IPM-001",
+    "MOD-PROP-001",
+    "MOD-CANOPY-001",
+    "MOD-FLOWER-001",
+    "MOD-POSTHARVEST-001",
+    "MOD-GENETICS-001"
+  ],
+  "competencies": [
+    "COMP-PLANT-BIO-001",
+    "COMP-ENV-VPD-001",
+    "COMP-LIGHT-001",
+    "COMP-WATER-001",
+    "COMP-ROOTZONE-001",
+    "COMP-NUTRITION-001",
+    "COMP-IPM-001",
+    "COMP-PROP-001",
+    "COMP-CANOPY-001",
+    "COMP-FLOWER-001",
+    "COMP-POSTHARVEST-001",
+    "COMP-GENETICS-001"
+  ],
   "finalAssessment": null
 }

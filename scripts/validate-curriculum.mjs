@@ -19,6 +19,7 @@ const collections = {
   competencies: readDirJson('content/competencies'),
   objectives: readDirJson('content/learning-objectives'),
   lessons: readDirJson('content/lessons'),
+  claims: readDirJson('content/claims'),
   assessments: readDirJson('content/assessments'),
   questions: readDirJson('content/questions'),
   references: readDirJson('content/references'),
@@ -65,6 +66,18 @@ for (const { file, data } of collections.lessons) {
   if (!(data.competencies?.length > 0)) errors.push(`${file}: lesson must map to at least one competency`);
 }
 
+for (const { file, data } of collections.claims) {
+  requireMany(file, data.references, 'reference');
+  requireMany(file, data.supportsCompetencies, 'competency');
+  requireMany(file, data.supportsLessons, 'lesson');
+  if (data.status === 'published' && data.evidenceStatus !== 'reviewed') {
+    errors.push(`${file}: published scientific claim must have reviewed evidence`);
+  }
+  if (data.evidenceStatus === 'needs-evidence') {
+    warnings.push(`${file}: scientific claim still needs reviewed evidence`);
+  }
+}
+
 for (const { file, data } of collections.questions) {
   requireId(file, data.competency, 'competency');
   requireId(file, data.objective, 'learning objective');
@@ -89,9 +102,7 @@ for (const { file, data } of collections.courses) {
   requireId(file, data.finalAssessment, 'final assessment');
 }
 
-for (const { file, data } of collections.programs) {
-  requireMany(file, data.courses, 'course');
-}
+for (const { file, data } of collections.programs) requireMany(file, data.courses, 'course');
 
 for (const { file, data } of collections.credentials) {
   requireId(file, data.course, 'course');
@@ -115,7 +126,7 @@ function assertPublishedDependencies(sourceFile, data) {
   }
   for (const itemId of data.items ?? []) {
     const item = objects.get(itemId);
-    if (item && item.status !== 'active' && item.status !== 'approved' && item.status !== 'published') {
+    if (item && !['active', 'approved', 'published'].includes(item.status)) {
       errors.push(`${sourceFile}: published assessment uses non-approved item ${itemId}`);
     }
   }
@@ -136,6 +147,21 @@ for (const { data } of collections.credentials) {
 for (const competency of credentialCompetencies) {
   const matchingItems = collections.questions.filter(({ data }) => data.competency === competency);
   if (matchingItems.length === 0) errors.push(`credentialed competency ${competency}: no assessment items exist`);
+}
+
+const foundationsRegistryPath = path.join(root, 'registry/cultivation-foundations.json');
+if (fs.existsSync(foundationsRegistryPath)) {
+  const registry = readJson('registry/cultivation-foundations.json');
+  for (const domain of registry.domains ?? []) {
+    requireId('registry/cultivation-foundations.json', domain.module, 'module');
+    requireId('registry/cultivation-foundations.json', domain.lesson, 'lesson');
+    requireMany('registry/cultivation-foundations.json', domain.competencies, 'competency');
+    requireMany('registry/cultivation-foundations.json', domain.objectives, 'learning objective');
+  }
+  const missingLessonMappings = (registry.domains ?? []).filter((domain) => !domain.module || !domain.lesson);
+  if (registry.gates?.allDomainsHaveLessons === true && missingLessonMappings.length > 0) {
+    errors.push('registry/cultivation-foundations.json: allDomainsHaveLessons is true but one or more domains lack module/lesson mappings');
+  }
 }
 
 for (const warning of warnings) console.warn(`WARN ${warning}`);
