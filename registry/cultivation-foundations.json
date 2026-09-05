@@ -1,0 +1,28 @@
+{
+  "program": "PROGRAM-THC-FOUNDATIONS-001",
+  "course": "COURSE-CULT-FOUNDATIONS-001",
+  "version": "1.0.0",
+  "status": "draft",
+  "domains": [
+    {"id":"DOMAIN-PLANT-BIOLOGY","competencies":["COMP-PLANT-BIO-001"],"objectives":["LO-PLANT-BIO-001"]},
+    {"id":"DOMAIN-ENVIRONMENT","competencies":["COMP-ENV-VPD-001"],"objectives":["LO-ENV-VPD-001"]},
+    {"id":"DOMAIN-LIGHTING","competencies":["COMP-LIGHT-001"],"objectives":["LO-LIGHT-001"]},
+    {"id":"DOMAIN-WATER","competencies":["COMP-WATER-001"],"objectives":["LO-WATER-001"]},
+    {"id":"DOMAIN-ROOTZONE","competencies":["COMP-ROOTZONE-001"],"objectives":["LO-ROOTZONE-001"]},
+    {"id":"DOMAIN-NUTRITION","competencies":["COMP-NUTRITION-001"],"objectives":["LO-NUTRITION-001"]},
+    {"id":"DOMAIN-IPM","competencies":["COMP-IPM-001"],"objectives":["LO-IPM-001"]},
+    {"id":"DOMAIN-PROPAGATION","competencies":["COMP-PROP-001"],"objectives":["LO-PROP-001"]},
+    {"id":"DOMAIN-CANOPY","competencies":["COMP-CANOPY-001"],"objectives":["LO-CANOPY-001"]},
+    {"id":"DOMAIN-FLOWERING","competencies":["COMP-FLOWER-001"],"objectives":["LO-FLOWER-001"]},
+    {"id":"DOMAIN-POSTHARVEST","competencies":["COMP-POSTHARVEST-001"],"objectives":["LO-POSTHARVEST-001"]},
+    {"id":"DOMAIN-GENETICS","competencies":["COMP-GENETICS-001"],"objectives":["LO-GENETICS-001"]}
+  ],
+  "publicationReady": false,
+  "gates": {
+    "allDomainsHaveLessons": false,
+    "allDomainsHaveReviewedReferences": false,
+    "summativeBlueprintComplete": false,
+    "approvedItemPoolsComplete": false,
+    "credentialEligibilityComplete": false
+  }
+}
