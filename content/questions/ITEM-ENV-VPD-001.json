@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-ENV-VPD-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "A grow environment changes in a way that materially shifts vapor pressure deficit away from the target range for the stated plant-development stage. What should the learner evaluate first?",
+  "choices": [
+    "The interaction of temperature and relative humidity",
+    "Only the fertilizer brand",
+    "Only container color",
+    "Only photoperiod label"
+  ],
+  "correct": 0,
+  "rationale": "VPD is driven by the vapor-pressure relationship between temperature and humidity, so those environmental variables must be evaluated together.",
+  "references": ["REF-VPD-001"]
+}
