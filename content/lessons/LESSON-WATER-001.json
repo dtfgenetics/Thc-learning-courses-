@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-WATER-001"],
   "learningObjectives": ["LO-WATER-001"],
-  "estimatedMinutes": 40,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 45,
+  "references": ["REF-IRRIGATION-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Water management requires more than tracking how much solution is applied. Source-water chemistry, pH, EC, delivery uniformity, substrate properties, and root-system development all affect the conditions that roots actually experience.",
+    "vocabulary": [
+      {"term":"pH","definition":"A logarithmic measure of hydrogen ion activity used to describe how acidic or basic a solution is."},
+      {"term":"EC","definition":"Electrical conductivity, a measure related to the total concentration of dissolved ions in a solution."},
+      {"term":"Irrigation uniformity","definition":"The degree to which an irrigation system delivers water consistently across the intended root zones."},
+      {"term":"Root-zone moisture","definition":"The amount and spatial distribution of water available in the medium occupied by roots."}
+    ],
+    "sections": [
+      {"title":"Source water sets the starting point","body":"Incoming water can contribute dissolved ions and alkalinity before fertilizer is added. Measuring source-water characteristics helps explain why the same nutrient recipe may behave differently when water sources change.","references":["REF-IRRIGATION-001"]},
+      {"title":"pH and EC answer different questions","body":"pH describes acidity or basicity, while EC reflects the overall ionic concentration of the solution. Neither value identifies every individual ion, and neither should be used as a complete diagnosis by itself.","references":["REF-IRRIGATION-001"]},
+      {"title":"Applied volume is not the same as root availability","body":"Two plants can receive the same total irrigation volume yet experience different root-zone conditions because media properties, emitter placement, drainage, and root-system size affect retention and distribution.","references":["REF-IRRIGATION-001"]},
+      {"title":"Measure trends, not isolated numbers","body":"Useful irrigation diagnosis compares source solution, applied solution, root-zone observations, and crop response over time. Sudden changes in pH, EC, moisture distribution, or runoff behavior can be more informative than a single reading taken without context.","references":["REF-IRRIGATION-001"]}
+    ],
+    "workedExamples": [
+      "If two containers receive equal volume but one remains saturated much longer, investigate media properties, drainage, and delivery pattern before assuming nutrient concentration is the cause.",
+      "If source-water EC rises unexpectedly, compare the new source measurement with previous baselines before changing the nutrient program."
+    ],
+    "commonMistakes": [
+      "Assuming identical irrigation volume creates identical root-zone moisture conditions.",
+      "Treating EC as a direct measurement of every individual nutrient concentration.",
+      "Adjusting fertilizer before confirming whether the water source or delivery system changed."
+    ],
+    "practicalApplication": "Create a repeatable water-check routine that records source pH and EC, applied-solution measurements, delivery uniformity, and root-zone moisture observations. Use trends from the same measurement method to decide what needs investigation next.",
+    "summary": "Water quality, pH, EC, irrigation delivery, and root-zone behavior are connected but distinct. Strong water management measures each part of the system and interprets the numbers together rather than relying on volume, pH, or EC alone."
+  }
 }
