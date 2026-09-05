@@ -12,7 +12,9 @@
     "credential:issue:test": "node scripts/issue-test-credential.mjs --test",
     "credential:verify:test": "node scripts/verify-test-credential.mjs",
     "credential:issuance:test": "node scripts/test-credential-issuance.mjs",
-    "test": "npm run validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test"
+    "credential:public": "node scripts/project-public-verification.mjs",
+    "credential:public:test": "node scripts/test-public-verification-projection.mjs",
+    "test": "npm run validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test"
   },
   "engines": {
     "node": ">=20"
