@@ -8,8 +8,9 @@ if (!process.argv.includes('--test') || !inputArg) {
   throw new Error('Test issuer requires --test and --input=<learner-evidence.json>. Production issuance is intentionally unavailable.');
 }
 
-const inputPath = inputArg.slice('--input='.length);
-const evidence = JSON.parse(fs.readFileSync(path.join(root, inputPath), 'utf8'));
+const inputValue = inputArg.slice('--input='.length);
+const inputPath = path.isAbsolute(inputValue) ? inputValue : path.join(root, inputValue);
+const evidence = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 const credential = JSON.parse(fs.readFileSync(path.join(root, 'content/credentials/CRED-CULT-FOUNDATIONS-001.json'), 'utf8'));
 
 const required = credential.eligibility.requiredAssessments ?? [];
