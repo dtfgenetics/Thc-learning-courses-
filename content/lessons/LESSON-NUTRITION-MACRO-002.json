@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-NUTRITION-MACRO-002",
+  "title":"Macronutrients: N, P, K, Ca, Mg and S",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-NUTRITION-001"],
+  "learningObjectives":["LO-NUTRITION-MACRO-002"],
+  "estimatedMinutes":45,
+  "references":["REF-NUTRITION-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Macronutrients support proteins, nucleic acids, energy transfer, osmotic regulation, cell walls, photosynthesis, and enzyme function. Their importance does not mean more is always better; balanced concentration and availability matter more than maximizing one nutrient.",
+    "vocabulary":[{"term":"Primary macronutrient","definition":"A mineral nutrient commonly required in relatively large amounts, including nitrogen, phosphorus, and potassium."},{"term":"Secondary macronutrient","definition":"A mineral nutrient required in substantial amounts, including calcium, magnesium, and sulfur."},{"term":"Antagonism","definition":"An interaction in which high abundance of one ion reduces uptake or use of another."}],
+    "sections":[{"title":"Nitrogen supports growth and metabolism","body":"Nitrogen is a component of amino acids, proteins, nucleic acids, and chlorophyll. Both insufficient and excessive nitrogen can alter plant growth and appearance, so developmental stage matters when interpreting supply.","references":["REF-NUTRITION-001"]},{"title":"Phosphorus and potassium serve different roles","body":"Phosphorus participates in energy transfer and cellular metabolism, while potassium is important in osmotic regulation and enzyme activation. Their functions should not be reduced to simplistic marketing labels such as root nutrient or flower nutrient.","references":["REF-NUTRITION-001"]},{"title":"Calcium, magnesium and sulfur remain essential","body":"Calcium contributes to cell-wall and membrane function, magnesium is central to chlorophyll and enzyme systems, and sulfur is part of amino acids and other metabolites. Interactions among cations make balanced supply important.","references":["REF-NUTRITION-001"]}],
+    "workedExamples":["If potassium is raised aggressively while magnesium-related symptoms appear, investigate cation balance and root-zone conditions instead of assuming the magnesium product is weak.","If vegetative plants receive very high nitrogen and become excessively lush, assess total nutrient balance and developmental goals rather than treating dark color as automatic success."],
+    "commonMistakes":["Calling phosphorus only a flowering nutrient.","Treating calcium and magnesium as optional additives rather than essential elements.","Increasing one nutrient without considering antagonism."],
+    "practicalApplication":"Review the complete nutrient formulation, compare major-element concentrations, document developmental stage, pH and EC, and change one component only when the evidence supports that adjustment.",
+    "summary":"Macronutrients have distinct but interacting functions. Cultivation nutrition works best when N, P, K, Ca, Mg, and S are managed as a balanced system rather than isolated boosters."
+  }
+}

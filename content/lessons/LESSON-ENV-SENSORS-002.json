@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-ENV-SENSORS-002",
+  "title":"Environmental Sensors, Placement, Calibration and Data Quality",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-ENV-VPD-001"],
+  "learningObjectives":["LO-ENV-SENSORS-002"],
+  "estimatedMinutes":35,
+  "references":["REF-VPD-002"],
+  "assessment":null,
+  "content":{
+    "overview":"Environmental numbers are only useful when the measurement represents the crop. Sensor location, shielding, calibration, airflow exposure, and logging interval can all change what a temperature or humidity reading means.",
+    "vocabulary":[{"term":"Calibration","definition":"Comparison and adjustment of a measuring instrument against a known reference or standard."},{"term":"Sensor bias","definition":"A systematic measurement error that consistently shifts readings away from the true condition."},{"term":"Representative location","definition":"A measurement position chosen to reflect the environment actually experienced by the crop rather than an atypical hot, cold, wet, or dry zone."}],
+    "sections":[{"title":"Placement determines relevance","body":"A sensor near a dehumidifier outlet, wall, lamp, intake, or wet surface may report a local microclimate rather than the average crop environment. Placement should be selected to answer a defined question about the canopy.","references":["REF-VPD-002"]},{"title":"Calibration protects trend quality","body":"Two sensors can drift apart over time. Periodic comparison with a reliable reference helps distinguish real environmental change from instrument error.","references":["REF-VPD-002"]},{"title":"Logging reveals dynamics","body":"Short-term peaks, nighttime transitions, irrigation events, and equipment cycling can disappear inside a daily average. Logged data should preserve enough time resolution to reveal biologically meaningful patterns.","references":["REF-VPD-002"]}],
+    "workedExamples":["If one humidity sensor reads much drier than the others, compare its location and calibration before changing the room set point.","A room average can look acceptable while a sensor inside a dense canopy shows prolonged high humidity; investigate the local microclimate rather than relying only on the wall controller."],
+    "commonMistakes":["Placing sensors where equipment exhaust directly affects them.","Assuming a new sensor cannot be biased.","Using a single daily average to evaluate short-term environmental stress."],
+    "practicalApplication":"Map sensor locations, compare readings under the same conditions, document calibration checks, and review logged temperature and humidity around important transitions such as lights-on, lights-off, irrigation, and equipment cycling.",
+    "summary":"Good environmental control starts with trustworthy measurements. Sensor placement, calibration, and logging context determine whether temperature, humidity, and VPD data actually describe the crop."
+  }
+}

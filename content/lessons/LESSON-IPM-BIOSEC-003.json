@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-IPM-BIOSEC-003",
+  "title":"Sanitation, Quarantine and Cultivation Biosecurity",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-IPM-001"],
+  "learningObjectives":["LO-IPM-BIOSEC-003"],
+  "estimatedMinutes":40,
+  "references":["REF-IPM-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Biosecurity reduces the chance that pests and pathogens enter, survive, or move through a cultivation space. The strongest program combines clean starting material, quarantine, sanitation, traffic control, tool management, waste handling, and environmental prevention.",
+    "vocabulary":[{"term":"Quarantine","definition":"Temporary separation and observation of incoming plant material before it enters the main crop."},{"term":"Sanitation","definition":"Cleaning and related practices used to reduce pest and pathogen survival or spread."},{"term":"Fomite","definition":"An inanimate object capable of carrying infectious material or pests between locations."},{"term":"Biosecurity","definition":"Practices designed to prevent introduction and movement of harmful biological agents."}],
+    "sections":[{"title":"Incoming plants are a major pathway","body":"New clones, mother plants, media, and reused equipment can introduce organisms that are difficult to remove later. Quarantine and inspection create a buffer between outside material and established crops.","references":["REF-IPM-001"]},{"title":"Tools and people can move problems","body":"Hands, scissors, carts, clothing, containers, and shared work surfaces can move pests or pathogens among plants and rooms. Cleaning sequence and dedicated tools can reduce cross-contamination.","references":["REF-IPM-001"]},{"title":"Sanitation works best with workflow design","body":"Cleaning after contamination is less effective than designing clean-to-dirty work flow, removing crop debris promptly, controlling standing water, and separating propagation from higher-risk areas.","references":["REF-IPM-001"]},{"title":"Environment is part of prevention","body":"Conditions that favor persistent leaf wetness, dense stagnant canopies, or stressed roots can increase disease risk. Biosecurity therefore includes environmental management, not just surface disinfection.","references":["REF-IPM-001"]}],
+    "workedExamples":["Incoming clones that look healthy can still be isolated and inspected before joining production plants because early pest stages or latent disease may be difficult to see.","When moving between rooms, work from the cleanest or youngest material toward known problem areas rather than reversing that sequence."],
+    "commonMistakes":["Using the same scissors across rooms without a sanitation protocol.","Bringing new plant material directly into production.","Treating biosecurity as chemical disinfection only."],
+    "practicalApplication":"Map entry points, quarantine flow, tool movement, staff movement, waste removal, and cleaning responsibilities. Define clean-to-dirty work order and document what happens when suspicious material is found.",
+    "summary":"Biosecurity is prevention by design. Clean material, controlled movement, sanitation, quarantine, and environmental management reduce the chance that plant-health problems become established or spread."
+  }
+}

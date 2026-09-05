@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-LIGHT-DLI-003",
+  "title":"Daily Light Integral, Photoperiod and Dose Interpretation",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-LIGHT-001"],
+  "learningObjectives":["LO-LIGHT-DLI-003"],
+  "estimatedMinutes":35,
+  "references":["REF-LIGHT-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Daily light integral combines photon intensity with time. It is useful for comparing daily exposure, but equal DLI does not guarantee identical plant response when intensity, spectrum, temperature, carbon dioxide, or photoperiod differ.",
+    "vocabulary":[{"term":"Daily light integral","definition":"The total photosynthetically active photon exposure accumulated per unit area over a day."},{"term":"Photoperiod","definition":"The duration of the daily light period."},{"term":"Photon dose","definition":"The integrated number of photons delivered over a defined time interval and area."}],
+    "sections":[{"title":"DLI links PPFD and time","body":"A common calculation multiplies PPFD by the number of illuminated seconds and converts micromoles to moles. This makes the time component explicit rather than assuming intensity alone describes exposure.","references":["REF-LIGHT-001"]},{"title":"Equal DLI can come from different schedules","body":"Different combinations of intensity and photoperiod can produce similar daily photon totals. Plants can still respond differently because instantaneous intensity and photoperiod have biological effects beyond the integrated total.","references":["REF-LIGHT-001"]},{"title":"Use DLI with the rest of the environment","body":"Increasing photon dose raises the need to consider temperature, water, nutrition, carbon dioxide availability, and plant developmental stage. Light should not be optimized in isolation.","references":["REF-LIGHT-001"]}],
+    "workedExamples":["A canopy receiving 600 PPFD for 18 hours accumulates more daily photons than the same PPFD for 12 hours.","Two schedules with similar DLI should still be evaluated for plant response if their intensity and photoperiod differ substantially."],
+    "commonMistakes":["Treating DLI as independent of photoperiod biology.","Calculating from one unusually bright point instead of representative PPFD.","Increasing light dose without checking water and environmental capacity."],
+    "practicalApplication":"Use representative PPFD data and the actual photoperiod to calculate DLI, record developmental stage and environmental context, and compare crop response before making further increases.",
+    "summary":"DLI is a useful daily exposure metric, but it should be interpreted alongside the intensity, photoperiod, spectrum, and environmental conditions that produced it."
+  }
+}

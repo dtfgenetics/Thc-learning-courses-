@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-WATER-PH-002",
+  "title":"pH Measurement, Buffering and Nutrient Availability Context",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-WATER-001"],
+  "learningObjectives":["LO-WATER-PH-002"],
+  "estimatedMinutes":35,
+  "references":["REF-IRRIGATION-001"],
+  "assessment":null,
+  "content":{
+    "overview":"pH describes acidity or basicity and influences chemical reactions and nutrient availability, but a pH number alone does not identify every root-zone problem. Sampling method, buffering, solution composition, and measurement quality all matter.",
+    "vocabulary":[{"term":"pH","definition":"A logarithmic measure related to hydrogen ion activity in a solution."},{"term":"Buffering","definition":"Resistance of a solution or medium to rapid pH change when acids or bases are added."},{"term":"Alkalinity","definition":"The acid-neutralizing capacity of water, commonly associated with bicarbonate and carbonate species."}],
+    "sections":[{"title":"pH and alkalinity are different","body":"Two water sources can have similar pH but very different buffering capacity. Alkalinity influences how strongly the water resists acidification and can affect long-term root-zone pH behavior.","references":["REF-IRRIGATION-001"]},{"title":"Measurement method matters","body":"Meters require calibration, clean probes, adequate sample volume, and enough time to stabilize. Poor handling can create false precision and lead to unnecessary correction.","references":["REF-IRRIGATION-001"]},{"title":"pH affects nutrient chemistry","body":"Nutrient solubility and ionic form can change with pH, but apparent deficiency symptoms should still be evaluated with EC, root health, irrigation history, and plant development.","references":["REF-IRRIGATION-001"]}],
+    "workedExamples":["If source-water pH appears stable but root-zone pH drifts upward over time, investigate alkalinity and irrigation behavior rather than only lowering the feed pH more aggressively.","If a meter suddenly shifts after storage, recalibrate before changing the crop solution."],
+    "commonMistakes":["Treating pH and alkalinity as the same property.","Adjusting pH from an uncalibrated meter.","Diagnosing nutrient deficiency from pH alone."],
+    "practicalApplication":"Calibrate the pH meter, measure source and feed water consistently, document alkalinity when available, compare root-zone trends, and interpret changes together with EC and plant observations.",
+    "summary":"pH is an important chemical-context measurement, but useful interpretation requires sound measurement technique and awareness of buffering, alkalinity, EC, and root-zone conditions."
+  }
+}

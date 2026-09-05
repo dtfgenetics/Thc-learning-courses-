@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-PLANT-BIO-SEX-003",
+  "title":"Sex Expression, Reproductive Morphology and Pollination Risk",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-PLANT-BIO-001"],
+  "learningObjectives":["LO-PLANT-BIO-SEX-003"],
+  "estimatedMinutes":35,
+  "references":["REF-PLANT-BIO-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Reproductive morphology must be interpreted from observable floral structures. Accurate sex-expression observations support crop planning, breeding, seed production, and pollination-risk management without relying on cultivar labels or assumptions about seed type.",
+    "vocabulary":[{"term":"Staminate","definition":"Bearing male reproductive structures that produce pollen."},{"term":"Pistillate","definition":"Bearing female reproductive structures associated with ovule-bearing flowers."},{"term":"Monoecious expression","definition":"Male and female reproductive structures occurring on the same individual plant."},{"term":"Pollination","definition":"Transfer of pollen to receptive female reproductive tissue, enabling fertilization when compatible."}],
+    "sections":[{"title":"Identify structures, not labels","body":"Sex expression should be documented from visible reproductive morphology. Marketing categories, seed source, or cultivar name do not replace inspection of actual floral structures.","references":["REF-PLANT-BIO-001"]},{"title":"Expression can change the crop objective","body":"Pollen-producing structures matter because they can alter whether a crop remains unseeded, produces seed intentionally, or requires isolation. Their significance depends on the cultivation objective and neighboring reproductive plants.","references":["REF-PLANT-BIO-001"]},{"title":"Inspection should be repeated","body":"Reproductive structures do not all appear at the same moment. Repeated observations at multiple nodes and developmental stages provide stronger evidence than a single early inspection.","references":["REF-PLANT-BIO-001"]}],
+    "workedExamples":["If a plant was grown from a seed sold as feminized but develops pollen-producing structures, record the observed morphology rather than treating the label as definitive.","If a breeding plant is intentionally producing pollen, document its location and separation strategy relative to receptive plants."],
+    "commonMistakes":["Assuming seed category guarantees later sex expression.","Making a permanent classification from one ambiguous early structure.","Ignoring pollen movement when reproductive plants share air or outdoor space."],
+    "practicalApplication":"Inspect representative nodes with adequate magnification, document the structure and date, repeat observations as flowering develops, and connect any pollen-producing tissue to the crop's pollination-control plan.",
+    "summary":"Reliable reproductive management begins with observable morphology. Sex expression should be monitored over time and connected directly to pollination risk, crop purpose, and breeding plans."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-CANOPY-LST-002",
+  "title":"Low-Stress Training, Trellising and SCROG Principles",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-CANOPY-001"],
+  "learningObjectives":["LO-CANOPY-LST-002"],
+  "estimatedMinutes":40,
+  "references":["REF-CANOPY-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Low-stress training reshapes plant architecture by positioning shoots rather than intentionally removing large amounts of tissue. Bending, tying, trellising, and screen-based training can redistribute dominance, improve access, and manage canopy height when applied gradually.",
+    "vocabulary":[{"term":"Low-stress training","definition":"Canopy manipulation that bends or positions shoots without deliberately causing major tissue damage."},{"term":"Trellis","definition":"A support structure used to position and support branches or shoots."},{"term":"SCROG","definition":"Screen-of-green training in which shoots are distributed through or beneath a support screen to shape the canopy."},{"term":"Apical dominance","definition":"Relative suppression of lateral growth by a dominant shoot apex."}],
+    "sections":[{"title":"Bending changes shoot position and dominance","body":"Repositioning the main shoot can reduce its vertical advantage and allow lateral branches to contribute more strongly to canopy development.","references":["REF-CANOPY-001"]},{"title":"Support structures create spatial control","body":"Trellises and screens can separate branches, maintain target height, and support reproductive weight. They also influence access for inspection, irrigation, and pruning.","references":["REF-CANOPY-001"]},{"title":"Training should respond to growth","body":"Plants continue changing after shoots are positioned. Repeated small adjustments are usually more controllable than forcing a mature rigid stem into a large bend at once.","references":["REF-CANOPY-001"]},{"title":"Uniform structure still requires measurement","body":"A visually flat canopy can still contain large light-intensity differences. Training outcomes should be checked with crop-level light and microclimate observations.","references":["REF-CANOPY-001"]}],
+    "workedExamples":["If one leader grows far above neighboring branches, gradual bending and support can redistribute height without removing the apex.","If a screen is overcrowded, adding more shoots may worsen shading; evaluate spacing rather than treating every empty opening as a target."],
+    "commonMistakes":["Making severe bends in rigid mature tissue.","Packing too many shoots into a screen.","Assuming a flat canopy automatically has uniform PPFD."],
+    "practicalApplication":"Define the desired canopy footprint and height, position vigorous shoots gradually, secure them without girdling stems, maintain inspection access, and verify the resulting light distribution and airflow.",
+    "summary":"Low-stress training uses positioning and support to shape architecture with relatively low tissue injury. Effective use depends on gradual adjustment, spacing, plant vigor, and measured canopy conditions."
+  }
+}
