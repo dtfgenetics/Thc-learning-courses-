@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/competency.schema.json",
+  "title": "THC Academy Competency",
+  "type": "object",
+  "required": ["id", "title", "domain", "description", "status", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "domain": {"type": "string", "minLength": 2},
+    "description": {"type": "string", "minLength": 10},
+    "status": {"enum": ["draft", "review", "approved", "published", "superseded", "retired"]},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+  },
+  "additionalProperties": false
+}
