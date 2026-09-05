@@ -7,7 +7,9 @@
     "validate": "node scripts/validate-curriculum.mjs",
     "exam:form": "node scripts/generate-exam-form.mjs",
     "exam:form:dev": "node scripts/generate-exam-form.mjs --allow-draft --seed=development",
-    "test": "npm run validate && npm run exam:form:dev"
+    "credential:eligibility": "node scripts/evaluate-credential-eligibility.mjs",
+    "credential:test": "node scripts/test-credential-eligibility.mjs",
+    "test": "npm run validate && npm run exam:form:dev && npm run credential:test"
   },
   "engines": {
     "node": ">=20"
