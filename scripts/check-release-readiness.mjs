@@ -18,8 +18,10 @@ function readDirJson(rel) {
 
 const registry = readJson('registry/cultivation-foundations.json');
 const lessons = new Map(readDirJson('content/lessons').map(({ data }) => [data.id, data]));
+const modules = new Map(readDirJson('content/modules').map(({ data }) => [data.id, data]));
 const courses = new Map(readDirJson('content/courses').map(({ data }) => [data.id, data]));
 const assessments = new Map(readDirJson('content/assessments').map(({ data }) => [data.id, data]));
+const questions = readDirJson('content/questions').map(({ data }) => data);
 const reviews = readDirJson('content/reviews').map(({ data }) => data);
 
 if (registry.status === 'draft') errors.push('registry/cultivation-foundations.json: release registry is still draft');
@@ -52,20 +54,85 @@ function hasApprovedReview(objectId, objectVersion, reviewType) {
   );
 }
 
+if (finalAssessment && !hasApprovedReview(finalAssessment.id, finalAssessment.version, 'assessment')) {
+  errors.push(`${finalAssessment.id}@${finalAssessment.version}: missing approved assessment review record`);
+}
+
+const checkedLessons = new Set();
+const checkedModuleAssessments = new Set();
 for (const domain of registry.domains ?? []) {
-  const lesson = lessons.get(domain.lesson);
-  if (!lesson) {
-    errors.push(`${domain.id}: mapped lesson ${domain.lesson} does not exist`);
+  const module = modules.get(domain.module);
+  if (!module) {
+    errors.push(`${domain.id}: mapped module ${domain.module} does not exist`);
     continue;
   }
 
-  if (lesson.status !== 'published') {
-    errors.push(`${lesson.id}: lesson status must be published for a production release`);
+  if (module.status !== 'published') {
+    errors.push(`${module.id}: module status must be published for a production release`);
   }
 
-  for (const reviewType of ['scientific', 'editorial']) {
-    if (!hasApprovedReview(lesson.id, lesson.version, reviewType)) {
-      errors.push(`${lesson.id}@${lesson.version}: missing approved ${reviewType} review record`);
+  for (const lessonId of module.lessons ?? []) {
+    if (checkedLessons.has(lessonId)) continue;
+    checkedLessons.add(lessonId);
+    const lesson = lessons.get(lessonId);
+    if (!lesson) {
+      errors.push(`${module.id}: mapped lesson ${lessonId} does not exist`);
+      continue;
+    }
+
+    if (lesson.status !== 'published') {
+      errors.push(`${lesson.id}: lesson status must be published for a production release`);
+    }
+
+    for (const reviewType of ['scientific', 'editorial']) {
+      if (!hasApprovedReview(lesson.id, lesson.version, reviewType)) {
+        errors.push(`${lesson.id}@${lesson.version}: missing approved ${reviewType} review record`);
+      }
+    }
+  }
+
+  if (module.assessment && !checkedModuleAssessments.has(module.assessment)) {
+    checkedModuleAssessments.add(module.assessment);
+    const assessment = assessments.get(module.assessment);
+    if (!assessment) {
+      errors.push(`${module.id}: module assessment ${module.assessment} does not exist`);
+    } else {
+      if (!['active', 'approved', 'published'].includes(assessment.status)) {
+        errors.push(`${assessment.id}: module assessment must be active, approved, or published for a production release`);
+      }
+      if (!hasApprovedReview(assessment.id, assessment.version, 'assessment')) {
+        errors.push(`${assessment.id}@${assessment.version}: missing approved assessment review record`);
+      }
+      for (const itemId of assessment.items ?? []) {
+        const item = questions.find((question) => question.id === itemId);
+        if (!item) {
+          errors.push(`${assessment.id}: assessment item ${itemId} does not exist`);
+          continue;
+        }
+        if (item.status !== 'active') errors.push(`${item.id}: module assessment item must be active for production`);
+        if (!hasApprovedReview(item.id, item.version, 'assessment')) {
+          errors.push(`${item.id}@${item.version}: missing approved assessment review record`);
+        }
+      }
+    }
+  }
+}
+
+if (finalAssessment?.blueprint) {
+  const minimumActive = Number(finalAssessment.itemSelection?.minimumActiveItemsPerCompetency ?? 0);
+  for (const row of finalAssessment.blueprint) {
+    const activeItems = questions.filter((item) =>
+      item.competency === row.competency &&
+      ['summative', 'credential'].includes(item.purpose) &&
+      item.status === 'active'
+    );
+    if (activeItems.length < minimumActive) {
+      errors.push(`${row.competency}: final assessment has ${activeItems.length}/${minimumActive} required active summative/credential items`);
+    }
+    for (const item of activeItems) {
+      if (!hasApprovedReview(item.id, item.version, 'assessment')) {
+        errors.push(`${item.id}@${item.version}: active credential item is missing approved assessment review evidence`);
+      }
     }
   }
 }
@@ -76,4 +143,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Production release readiness passed for ${registry.course} ${registry.version}.`);
+console.log(`Production release readiness passed for ${registry.course} ${registry.version}; ${checkedLessons.size} lessons and ${checkedModuleAssessments.size} module assessments verified.`);
