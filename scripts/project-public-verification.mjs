@@ -5,7 +5,9 @@ const root = process.cwd();
 const inputArg = process.argv.find((arg) => arg.startsWith('--input='));
 if (!inputArg) throw new Error('Usage: node scripts/project-public-verification.mjs --input=<issued-credential.json>');
 
-const record = JSON.parse(fs.readFileSync(path.join(root, inputArg.slice('--input='.length)), 'utf8'));
+const inputValue = inputArg.slice('--input='.length);
+const inputPath = path.isAbsolute(inputValue) ? inputValue : path.join(root, inputValue);
+const record = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 const definition = JSON.parse(fs.readFileSync(path.join(root, 'content/credentials/CRED-CULT-FOUNDATIONS-001.json'), 'utf8'));
 const valid = ['test-issued', 'issued', 'valid'].includes(record.status);
 
