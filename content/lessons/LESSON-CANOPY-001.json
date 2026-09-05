@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-CANOPY-001"],
   "learningObjectives": ["LO-CANOPY-001"],
-  "estimatedMinutes": 40,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 45,
+  "references": ["REF-CANOPY-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Canopy management changes plant architecture to improve space use, light distribution, access, and crop uniformity. Training methods should be chosen from the desired structural outcome, plant developmental stage, vigor, and expected recovery rather than applied as fixed rituals.",
+    "vocabulary": [
+      {"term":"Apical dominance","definition":"A growth pattern in which the main shoot suppresses or reduces the relative growth of lateral shoots."},
+      {"term":"Low-stress training","definition":"Canopy shaping that bends, positions, or supports shoots without intentionally causing major tissue damage."},
+      {"term":"High-stress training","definition":"Training that intentionally removes, cuts, or substantially damages tissue and therefore requires recovery."},
+      {"term":"Canopy architecture","definition":"The spatial arrangement of stems, branches, leaves, and reproductive sites within the plant canopy."}
+    ],
+    "sections": [
+      {"title":"Architecture changes the light environment","body":"Leaves and branches create self-shading and spatial gradients in photon exposure. Training can redistribute shoots and reduce severe differences between highly exposed and deeply shaded regions, but the result should be verified with canopy observations and measurements.","references":["REF-CANOPY-001"]},
+      {"title":"Training methods serve different goals","body":"Bending and repositioning shoots can alter structure with relatively little tissue damage, while topping or other high-stress methods change apical growth through tissue removal. The appropriate method depends on the structural goal rather than on a single preferred technique.","references":["REF-CANOPY-001"]},
+      {"title":"Plant stage and recovery matter","body":"Training creates a biological response. High-stress methods require sufficient vigor and recovery time, while aggressive intervention near sensitive developmental transitions can create costs that outweigh the intended architectural benefit.","references":["REF-CANOPY-001"]},
+      {"title":"Uniformity is a system outcome","body":"A flatter or more open canopy can improve access and light distribution, but canopy uniformity also depends on fixture layout, plant spacing, genetics, environment, and previous growth. Training should therefore be evaluated as one part of the complete production environment.","references":["REF-CANOPY-001"]}
+    ],
+    "workedExamples": [
+      "If the upper shoots dominate the fixture while interior branches remain shaded, repositioning or selectively training the dominant shoots may improve light distribution without assuming that every branch should be cut.",
+      "If a plant is weak or recently stressed, delay high-stress training until vigor and recovery capacity are sufficient for the intended intervention."
+    ],
+    "commonMistakes": [
+      "Choosing a training method because it is popular rather than because it solves a defined canopy problem.",
+      "Applying high-stress training without allowing adequate recovery time.",
+      "Assuming a flat canopy automatically has uniform light exposure without measuring or observing distribution."
+    ],
+    "practicalApplication": "Before training, define the desired canopy outcome, document plant stage and vigor, identify which shoots create crowding or dominance, choose the least disruptive method that can achieve the goal, and evaluate the plant's recovery and resulting light distribution before the next intervention.",
+    "summary": "Canopy management is applied plant architecture. Effective training links a defined structural goal with plant stage, vigor, recovery capacity, and measured canopy conditions rather than treating topping, bending, or other techniques as universal recipes."
+  }
 }
