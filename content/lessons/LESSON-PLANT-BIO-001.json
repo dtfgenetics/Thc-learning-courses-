@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-PLANT-BIO-001"],
   "learningObjectives": ["LO-PLANT-BIO-001"],
-  "estimatedMinutes": 35,
+  "estimatedMinutes": 40,
   "references": ["REF-PLANT-BIO-001"],
-  "assessment": null
+  "assessment": null,
+  "content": {
+    "overview": "Understanding cannabis begins with recognizing the plant's major organs and how their functions change across the lifecycle. Structure, development, and reproductive state provide the biological context needed for later lessons on environment, nutrition, propagation, training, and harvest.",
+    "vocabulary": [
+      {"term":"Node","definition":"The point on a stem where leaves, branches, or reproductive structures can arise."},
+      {"term":"Internode","definition":"The stem segment located between two adjacent nodes."},
+      {"term":"Vegetative growth","definition":"A developmental phase dominated by roots, stems, leaves, and branching rather than mature reproductive structures."},
+      {"term":"Reproductive development","definition":"The developmental transition in which floral structures form and mature."}
+    ],
+    "sections": [
+      {"title":"Roots, stems, leaves, and nodes","body":"Roots anchor the plant and acquire water and mineral nutrients. Stems provide support and transport pathways, while leaves are major sites of photosynthesis and gas exchange. Nodes organize branching and later reproductive development, making plant architecture easier to interpret when these structures are identified correctly.","references":["REF-PLANT-BIO-001"]},
+      {"title":"Development changes what structures mean","body":"A structure should not be interpreted without developmental context. Young vegetative plants allocate heavily to root, stem, and leaf expansion, while later developmental stages increasingly express reproductive structures. The same node therefore carries different diagnostic significance depending on plant age and phase.","references":["REF-PLANT-BIO-001"]},
+      {"title":"Reproductive morphology and sex expression","body":"Cannabis reproductive morphology is biologically important because sex expression and floral development affect propagation, breeding, crop planning, and harvest decisions. Learners should identify visible reproductive structures from morphology rather than relying on cultivar names or assumptions about the seed source.","references":["REF-PLANT-BIO-001"]},
+      {"title":"Morphology is evidence, not a complete diagnosis","body":"Leaf shape, branching, vigor, and floral development can provide useful observations, but morphology alone does not establish every cause of a plant condition. Environmental, genetic, nutritional, and pathological factors can produce overlapping visible effects, so later diagnostic work should combine plant structure with measurements and history.","references":["REF-PLANT-BIO-001"]}
+    ],
+    "workedExamples": [
+      "A plant with vigorous leaf and branch production but no developed floral structures is best described by its vegetative morphology rather than by chronological age alone.",
+      "When reproductive structures first appear at nodes, document their morphology and developmental progression instead of inferring sex or maturity from cultivar marketing information."
+    ],
+    "commonMistakes": [
+      "Using plant age alone to assign developmental stage without checking morphology.",
+      "Treating every visible leaf symptom as proof of a single nutrient problem.",
+      "Confusing a cultivar name with a reliable description of actual plant morphology or sex expression."
+    ],
+    "practicalApplication": "During routine observation, identify roots or root-zone condition where visible, stems, nodes, internodes, leaves, branches, and reproductive structures. Record developmental stage from observable morphology, then use that stage as context when interpreting later environmental or management data.",
+    "summary": "Plant structure provides the vocabulary for cultivation science. Correctly identifying major organs, nodes, developmental stage, and reproductive morphology allows later environmental, nutrition, training, propagation, and harvest decisions to be grounded in the actual biology of the plant."
+  }
 }
