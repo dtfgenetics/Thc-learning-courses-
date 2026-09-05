@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-ENV-VPD-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two rooms have the same relative humidity but different air temperatures. Why should their vapor pressure deficit not be assumed to be the same?",
+  "choices": [
+    "VPD depends on the combined temperature and humidity state, so changing temperature changes the vapor-pressure relationship even when RH is unchanged",
+    "Relative humidity alone determines VPD regardless of temperature",
+    "VPD depends only on photoperiod",
+    "VPD changes only when irrigation volume changes"
+  ],
+  "correct": 0,
+  "rationale": "VPD is derived from the relationship between saturation vapor pressure and actual vapor pressure, which means temperature and relative humidity must be interpreted together.",
+  "references": ["REF-VPD-002"]
+}
