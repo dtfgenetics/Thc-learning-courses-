@@ -5,7 +5,33 @@
   "status": "draft",
   "competencies": ["COMP-FLOWER-001"],
   "learningObjectives": ["LO-FLOWER-001"],
-  "estimatedMinutes": 45,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 50,
+  "references": ["REF-FLOWER-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Flowering is a developmental process, not a single calendar event. Harvest readiness should be interpreted from floral development, plant condition, genotype, environmental history, and multiple maturity observations rather than a universal week count or one trichome-color rule.",
+    "vocabulary": [
+      {"term":"Inflorescence","definition":"A reproductive shoot system bearing flowers and associated structures."},
+      {"term":"Glandular trichome","definition":"A specialized epidermal structure that produces and stores resin-associated metabolites on cannabis floral tissues."},
+      {"term":"Maturation","definition":"The progressive developmental changes that occur as reproductive tissues age and approach harvest."},
+      {"term":"Asynchronous development","definition":"A condition in which structures or tissues do not all develop or mature at exactly the same time."}
+    ],
+    "sections": [
+      {"title":"Flowering changes over time","body":"Floral structures expand and mature progressively. Development can vary among genotypes and among positions on the same plant, so calendar age should be treated as context rather than as a complete measure of readiness.","references":["REF-FLOWER-001"]},
+      {"title":"Trichomes provide useful but incomplete evidence","body":"Glandular trichome appearance changes during floral maturation, but trichomes can develop asynchronously and color distributions vary with genotype and plant age. A single percentage of clear, cloudy, or amber trichomes should not be treated as a universal harvest law.","references":["REF-FLOWER-001"]},
+      {"title":"Sample more than one location","body":"Observations from one bract or one top flower may not represent the entire plant. Maturity assessment is stronger when comparable structures are examined at several representative canopy positions and observations are repeated over time.","references":["REF-FLOWER-001"]},
+      {"title":"Harvest readiness is multi-factor","body":"A harvest decision should consider floral development, plant condition, trichome observations, intended quality goals, environmental history, and whether the crop is still changing meaningfully. Multiple lines of evidence reduce overconfidence in any single indicator.","references":["REF-FLOWER-001"]}
+    ],
+    "workedExamples": [
+      "If upper flowers show more amber trichomes than lower flowers, record representative samples from both positions instead of using the most mature top as the sole harvest signal.",
+      "If a cultivar reaches the breeder's advertised week count but maturity observations are still changing rapidly, use actual plant evidence rather than calendar age alone."
+    ],
+    "commonMistakes": [
+      "Using a fixed flowering week as an automatic harvest date.",
+      "Treating one trichome color percentage as universal across all genotypes.",
+      "Sampling only the most exposed flower and assuming it represents the whole crop."
+    ],
+    "practicalApplication": "Create a repeatable maturity log using the same sampling locations, magnification method, floral-development observations, and plant-condition notes. Compare trends across several observations before making a harvest decision.",
+    "summary": "Flowering and maturation are dynamic and can vary across genotypes and within a plant. Strong harvest-readiness decisions use repeated, representative observations and multiple indicators rather than a universal calendar or trichome-color threshold."
+  }
 }
