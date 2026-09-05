@@ -1,17 +1,26 @@
-name: Validate curriculum
+name: Curriculum quality gates
 
 on:
   push:
-    branches: [main, "feat/**", "fix/**", "content/**"]
+    branches: [main, "feat/**", "fix/**", "content/**", "chore/**"]
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: curriculum-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  validate:
+  quality-gates:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm run validate
+      - name: Run complete curriculum and credential test suite
+        run: npm test
