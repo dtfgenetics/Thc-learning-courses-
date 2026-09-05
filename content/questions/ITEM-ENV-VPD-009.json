@@ -1,0 +1,16 @@
+{
+  "id": "ITEM-ENV-VPD-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-LEAF-VPD-003",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Why can leaf-temperature measurement improve plant-level VPD interpretation?",
+  "choices": ["Leaves can be warmer or cooler than surrounding air because of radiation, airflow and transpiration", "Leaf temperature always equals root-zone temperature", "VPD is calculated from leaf color", "Air temperature is never useful"],
+  "correct": 0,
+  "rationale": "The vapor-pressure relationship at the leaf surface depends partly on actual leaf temperature, which can differ from air temperature.",
+  "references": ["REF-VPD-002"]
+}
