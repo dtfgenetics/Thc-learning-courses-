@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/assessment.schema.json",
+  "title": "THC Academy Assessment",
+  "type": "object",
+  "required": ["id", "title", "version", "status", "purpose", "competencies", "objectives", "items", "passingScorePercent", "feedbackMode"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ASSESS-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["draft", "review", "approved", "published", "superseded", "retired"]},
+    "purpose": {"enum": ["formative", "summative", "credential"]},
+    "competencies": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}},
+    "objectives": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^LO-[A-Z0-9-]+$"}},
+    "items": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^ITEM-[A-Z0-9-]+$"}},
+    "passingScorePercent": {"type": "number", "minimum": 0, "maximum": 100},
+    "maxAttempts": {"type": ["integer", "null"], "minimum": 1},
+    "feedbackMode": {"enum": ["immediate", "after-submit", "delayed", "none"]}
+  },
+  "additionalProperties": false
+}
