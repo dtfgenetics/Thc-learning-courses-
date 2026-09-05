@@ -1,0 +1,92 @@
+{
+  "system": "THC Academy",
+  "version": "0.1.0",
+  "updatedAt": "2026-09-05",
+  "productionReady": false,
+  "areas": {
+    "curriculum": {
+      "status": "in-review",
+      "gates": {
+        "substantiveContentComplete": true,
+        "scientificReviewComplete": false,
+        "editorialReviewComplete": false
+      }
+    },
+    "assessment": {
+      "status": "pilot-bank",
+      "gates": {
+        "blueprintComplete": true,
+        "developmentFormGeneration": true,
+        "minimumActivePoolComplete": false,
+        "humanAssessmentReviewComplete": false,
+        "pilotStatisticsComplete": false
+      }
+    },
+    "runtime": {
+      "status": "foundation",
+      "gates": {
+        "serverSideAttemptStateMachine": true,
+        "serverSideScoringCore": true,
+        "competencyResultCore": true,
+        "postgresSchemaDefined": true,
+        "productionPersistenceAdapter": false,
+        "authenticationIntegrated": false,
+        "authorizationIntegrated": false
+      }
+    },
+    "credentials": {
+      "status": "foundation",
+      "gates": {
+        "deterministicEligibility": true,
+        "testIssuance": true,
+        "stateMachine": true,
+        "privacySafeVerificationProjection": true,
+        "productionIssuerIdentity": false,
+        "productionSigning": false,
+        "revocationPersistence": false
+      }
+    },
+    "api": {
+      "status": "development",
+      "gates": {
+        "verificationContract": true,
+        "developmentHttpService": true,
+        "productionDatabaseIntegration": false,
+        "rateLimiting": false,
+        "authentication": false,
+        "observability": false
+      }
+    },
+    "security": {
+      "status": "design",
+      "gates": {
+        "piiExcludedFromGit": true,
+        "privateKeysExcludedFromGit": true,
+        "serverSideScoringBoundary": true,
+        "adminMfaEnforced": false,
+        "rowLevelAuthorization": false,
+        "securityReviewComplete": false
+      }
+    },
+    "accessibility": {
+      "status": "design",
+      "gates": {
+        "wcagTargetDefined": true,
+        "contentAccessibilityReviewComplete": false,
+        "assessmentAccessibilityReviewComplete": false,
+        "frontendAccessibilityTestingComplete": false
+      }
+    },
+    "operations": {
+      "status": "design",
+      "gates": {
+        "releasePolicyDefined": true,
+        "stagingEnvironment": false,
+        "productionEnvironment": false,
+        "backupRestoreTested": false,
+        "incidentResponseRunbook": false,
+        "monitoringAndAlerting": false
+      }
+    }
+  }
+}
