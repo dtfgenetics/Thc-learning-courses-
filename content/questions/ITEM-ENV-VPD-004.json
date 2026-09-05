@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-ENV-VPD-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Why can the same relative humidity be appropriate in one temperature range but not another?",
+  "choices": [
+    "Because the vapor-pressure relationship changes with temperature",
+    "Relative humidity has no interaction with temperature",
+    "Only irrigation determines atmospheric demand",
+    "VPD is fixed by cultivar name"
+  ],
+  "correct": 0,
+  "rationale": "Atmospheric moisture demand depends on the combined temperature-humidity state.",
+  "references": ["REF-VPD-002"]
+}

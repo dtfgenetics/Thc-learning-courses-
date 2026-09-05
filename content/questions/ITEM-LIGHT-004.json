@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-LIGHT-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LIGHT-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Why should canopy distribution be checked even when average PPFD is acceptable?",
+  "choices": [
+    "Uneven spatial distribution can create over- and under-exposed zones",
+    "Average PPFD guarantees uniformity",
+    "Canopy architecture has no effect on light",
+    "Only fixture brand affects distribution"
+  ],
+  "correct": 0,
+  "rationale": "Average values can hide spatial variation.",
+  "references": ["REF-LIGHT-001"]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-ENV-VPD-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-ENV-VPD-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "If temperature rises while relative humidity stays constant, what should happen before assuming VPD is unchanged?",
+  "choices": [
+    "Recalculate or reinterpret VPD because saturation vapor pressure changes with temperature",
+    "Use relative humidity alone",
+    "Ignore temperature",
+    "Change photoperiod instead"
+  ],
+  "correct": 0,
+  "rationale": "VPD depends on temperature and humidity together.",
+  "references": ["REF-VPD-002"]
+}
