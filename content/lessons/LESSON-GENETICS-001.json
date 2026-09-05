@@ -5,7 +5,35 @@
   "status": "draft",
   "competencies": ["COMP-GENETICS-001"],
   "learningObjectives": ["LO-GENETICS-001"],
-  "estimatedMinutes": 45,
-  "references": [],
-  "assessment": null
+  "estimatedMinutes": 50,
+  "references": ["REF-GENETICS-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Cultivation genetics connects inherited variation with the traits that growers actually observe. Genotype, environment, segregation, recombination, selection, and population structure all influence how consistently traits appear across individuals and generations.",
+    "vocabulary": [
+      {"term":"Genotype","definition":"The genetic constitution of an organism at one or more loci or across its genome."},
+      {"term":"Phenotype","definition":"The observable characteristics produced by the interaction of genotype, development, and environment."},
+      {"term":"Segregation","definition":"The separation of alleles during reproduction that contributes to genetic differences among offspring."},
+      {"term":"Selection","definition":"The process of choosing individuals to contribute disproportionately to the next generation based on defined traits or breeding goals."}
+    ],
+    "sections": [
+      {"title":"Genotype and phenotype are related but not identical","body":"Genotype contributes to trait potential, while phenotype is the observable result expressed under a particular developmental and environmental context. Similar-looking plants do not necessarily have identical genotypes, and genetically related plants can express different phenotypes.","references":["REF-GENETICS-001"]},
+      {"title":"Sexual reproduction creates variation","body":"Segregation and recombination reshuffle inherited variation among offspring. This is why siblings from the same cross can differ in morphology, vigor, flowering traits, chemistry, and other characteristics rather than reproducing the exact parental phenotype.","references":["REF-GENETICS-001"]},
+      {"title":"Environment influences expression","body":"The same genotype can express traits differently under different environments. Breeding observations therefore become stronger when plants are evaluated under documented conditions and when repeated performance is distinguished from one-environment expression.","references":["REF-GENETICS-001"]},
+      {"title":"Selection changes the next generation","body":"When breeders choose which individuals reproduce, they change which alleles and trait combinations contribute to later generations. Effective selection requires explicit goals, adequate population size, reliable records, and awareness that visible phenotype may include environmental effects.","references":["REF-GENETICS-001"]},
+      {"title":"Stability is built through repeated evaluation","body":"A trait seen once is not automatically fixed or stable. Repeated selection, progeny testing, and evaluation across generations are needed to understand how reliably desired traits are inherited and expressed.","references":["REF-GENETICS-001"]}
+    ],
+    "workedExamples": [
+      "If two sibling plants from the same cross differ strongly in aroma and structure, treat that variation as evidence of segregation and possible environmental interaction rather than assuming one plant was mislabeled.",
+      "If a selected parent performs well only in one environment, repeat evaluation before treating the phenotype as a reliably heritable breeding result."
+    ],
+    "commonMistakes": [
+      "Using genotype and phenotype as interchangeable terms.",
+      "Assuming siblings from a cross should be genetically or phenotypically identical.",
+      "Selecting from one observation without considering environmental effects or progeny performance.",
+      "Calling a trait stable because it appeared in a single generation."
+    ],
+    "practicalApplication": "For breeding records, document parent IDs, cross direction, generation, environment, phenotype observations, and selection reasons. Compare related offspring and later generations using the same trait definitions so apparent genetic progress can be separated from environmental noise.",
+    "summary": "Breeding begins with understanding that inherited genotype and observed phenotype are connected through development and environment. Segregation creates variation, selection changes future generations, and stability requires repeated evaluation rather than one attractive individual."
+  }
 }
