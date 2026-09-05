@@ -15,10 +15,28 @@
     "difficulty": {"enum": ["easy", "moderate", "hard", "expert"]},
     "type": {"enum": ["multiple-choice", "multiple-response", "numeric", "ordering", "matching", "scenario", "case-study", "short-response"]},
     "stem": {"type": "string", "minLength": 5},
-    "choices": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-    "correct": {},
+    "choices": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+    "correct": {
+      "oneOf": [
+        {"type": "integer", "minimum": 0},
+        {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+        {"type": "number"},
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}}
+      ]
+    },
     "rationale": {"type": "string", "minLength": 5},
-    "references": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"}}
+    "references": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"}}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"enum": ["multiple-choice", "scenario", "case-study"]}}, "required": ["type"]},
+      "then": {"properties": {"correct": {"type": "integer", "minimum": 0}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "multiple-response"}}, "required": ["type"]},
+      "then": {"properties": {"correct": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 0}}}}
+    }
+  ],
   "additionalProperties": false
 }
