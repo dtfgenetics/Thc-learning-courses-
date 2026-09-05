@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-POSTHARVEST-STORAGE-003",
+  "title":"Curing, Packaging and Storage Stability",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-POSTHARVEST-001"],
+  "learningObjectives":["LO-POSTHARVEST-STORAGE-003"],
+  "estimatedMinutes":40,
+  "references":["REF-POSTHARVEST-001"],
+  "assessment":null,
+  "content":{
+    "overview":"After initial drying, moisture can continue redistributing while exposure to oxygen, light, heat, and contamination can alter quality. Curing, packaging, and storage should therefore be managed as controlled environments rather than passive waiting.",
+    "vocabulary":[{"term":"Curing","definition":"A managed post-drying holding period during which moisture redistributes and product conditions are monitored."},{"term":"Headspace","definition":"The gas-filled volume inside a package above or around the stored product."},{"term":"Oxidation","definition":"Chemical reactions involving electron loss, often accelerated by oxygen, heat, light, or time."},{"term":"Barrier property","definition":"A package characteristic that limits transfer of gases, moisture, or light."}],
+    "sections":[{"title":"Curing continues moisture equilibration","body":"Material that is dry at the surface may still contain internal moisture. Controlled holding allows redistribution while inspections check for excessive moisture or microbial risk.","references":["REF-POSTHARVEST-001"]},{"title":"Packaging changes the microenvironment","body":"Package permeability and headspace influence moisture and oxygen exposure. Packaging therefore becomes part of the storage process rather than a neutral final step.","references":["REF-POSTHARVEST-001"]},{"title":"Light, heat and oxygen affect stability","body":"Chemical constituents can change during storage, with higher temperature, light exposure, oxygen, and long duration generally increasing degradation risk.","references":["REF-POSTHARVEST-001"]},{"title":"Storage needs traceability","body":"Lot identity, packaging date, conditions, and inspection history should remain connected so changes in quality can be traced to time and handling.","references":["REF-POSTHARVEST-001"]}],
+    "workedExamples":["If sealed material develops rising internal humidity, reopen the process investigation rather than assuming curing always improves with more time.","If two packages from the same lot age differently, compare barrier properties, storage temperature, light exposure, and seal integrity."],
+    "commonMistakes":["Sealing material before internal moisture has stabilized.","Storing clear packages in bright warm locations.","Treating curing as a fixed number of days regardless of product condition."],
+    "practicalApplication":"Track package type, fill weight, storage conditions, moisture or water-activity checks, opening or inspection events, and quality changes by lot. Use these records to define reproducible storage practices.",
+    "summary":"Curing and storage are controlled post-harvest environments. Moisture equilibration, packaging, oxygen, light, temperature, and traceability determine how well harvested material maintains quality."
+  }
+}

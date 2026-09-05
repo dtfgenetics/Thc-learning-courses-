@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-NUTRITION-MICRO-003",
+  "title":"Micronutrients, Availability and Nutrient Antagonism",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-NUTRITION-001"],
+  "learningObjectives":["LO-NUTRITION-MICRO-003"],
+  "estimatedMinutes":40,
+  "references":["REF-NUTRITION-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Micronutrients are required in smaller amounts but remain essential for enzymes, electron transport, structural processes, and metabolism. Deficiency-like symptoms can result from low supply, poor availability, antagonism, pH problems, or root damage.",
+    "vocabulary":[{"term":"Micronutrient","definition":"An essential mineral nutrient required in relatively small amounts compared with macronutrients."},{"term":"Chelation","definition":"Binding of a metal ion by an organic molecule that can affect solubility and availability."},{"term":"Availability","definition":"The fraction of a nutrient present in a form and location that roots can acquire."}],
+    "sections":[{"title":"Small requirement does not mean small importance","body":"Iron, manganese, zinc, copper, boron, molybdenum, chlorine, and nickel participate in essential plant processes. Their required quantities are lower, but absence can still limit growth.","references":["REF-NUTRITION-001"]},{"title":"pH strongly influences several micronutrients","body":"Changes in root-zone pH can alter solubility and chemical form, making a nutrient less available even when it is present in the solution or substrate.","references":["REF-NUTRITION-001"]},{"title":"Diagnosis requires multiple clues","body":"Symptom position, progression, root health, pH, EC, water quality, and recent fertilizer changes should be considered together. Visual similarity among disorders makes one-picture diagnosis unreliable.","references":["REF-NUTRITION-001"]}],
+    "workedExamples":["If new leaves show chlorosis while total fertilizer concentration is already high, check pH and root function before adding more micronutrients.","If a trace-element issue appears after a major nutrient-ratio change, consider antagonism as part of the investigation."],
+    "commonMistakes":["Treating every interveinal chlorosis pattern as the same deficiency.","Adding concentrated trace elements without checking pH and EC.","Ignoring source-water mineral contribution."],
+    "practicalApplication":"When micronutrient problems are suspected, record symptom location and progression, verify pH and EC, review source water and fertilizer composition, inspect root health, and make controlled corrections based on the combined evidence.",
+    "summary":"Micronutrient disorders are availability problems as often as supply problems. Strong diagnosis combines chemistry, roots, environment, and symptom progression rather than relying on visual charts alone."
+  }
+}

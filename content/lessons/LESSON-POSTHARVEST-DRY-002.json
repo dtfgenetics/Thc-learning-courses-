@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-POSTHARVEST-DRY-002",
+  "title":"Drying Dynamics, Moisture Control and Water Activity",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-POSTHARVEST-001"],
+  "learningObjectives":["LO-POSTHARVEST-DRY-002"],
+  "estimatedMinutes":45,
+  "references":["REF-POSTHARVEST-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Drying removes water from harvested tissue while quality and contamination risk continue to change. Temperature, relative humidity, airflow, flower density, load size, and internal moisture gradients all influence the process.",
+    "vocabulary":[{"term":"Moisture gradient","definition":"A difference in water content between regions of a material that drives redistribution or drying."},{"term":"Water activity","definition":"A measure related to the availability of water for microbial growth and chemical reactions."},{"term":"Equilibrium","definition":"A state in which net moisture exchange between material and the surrounding environment becomes small under stable conditions."}],
+    "sections":[{"title":"Drying is internal and external","body":"Surface tissue can dry faster than the flower interior. Air conditions control external moisture removal while internal diffusion controls how quickly water reaches the surface.","references":["REF-POSTHARVEST-001"]},{"title":"Airflow should remove moisture without creating extremes","body":"Air movement supports vapor removal but excessive direct airflow can increase uneven drying. Distribution across the room matters more than simply maximizing fan speed.","references":["REF-POSTHARVEST-001"]},{"title":"Density and load affect the process","body":"Large dense flowers and heavy room loading can retain moisture differently from small loose material. Drying plans should account for product geometry and total moisture load.","references":["REF-POSTHARVEST-001"]},{"title":"Measurement is stronger than feel alone","body":"Physical feel can be useful but is subjective. Weight trends, calibrated environmental data, moisture measurements, or water-activity measurements provide more repeatable quality control.","references":["REF-POSTHARVEST-001"]}],
+    "workedExamples":["If outer surfaces feel crisp while stems and internal flower remain wet, continue controlled drying rather than assuming the entire batch is ready for sealed storage.","If one rack dries much faster than another, map airflow and room position before changing the entire room set point."],
+    "commonMistakes":["Blowing strong air directly onto flowers.","Judging the whole batch from one small sample.","Using time alone as the endpoint."],
+    "practicalApplication":"Record room temperature and RH, airflow pattern, batch loading, sample weights or moisture indicators, and representative product observations. Use the trend to determine when material is ready for the next post-harvest stage.",
+    "summary":"Drying is controlled moisture transport. Uniform environment, representative measurement, and attention to internal moisture gradients produce more reliable outcomes than fixed time or surface feel alone."
+  }
+}

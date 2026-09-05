@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-GENETICS-INHERIT-002",
+  "title":"Segregation, Recombination and Breeding Generations",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-GENETICS-001"],
+  "learningObjectives":["LO-GENETICS-INHERIT-002"],
+  "estimatedMinutes":45,
+  "references":["REF-GENETICS-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Sexual reproduction reshuffles inherited variation. Segregation, recombination, heterozygosity, and population size explain why offspring from the same cross can differ and why generation labels should describe actual breeding history rather than quality claims.",
+    "vocabulary":[{"term":"Allele","definition":"An alternative version of a genetic locus."},{"term":"Heterozygosity","definition":"The presence of different alleles at a genetic locus within an individual."},{"term":"Segregation","definition":"Separation of alleles during reproduction, producing different combinations among offspring."},{"term":"Recombination","definition":"Formation of new combinations of inherited genetic material during meiosis and reproduction."}],
+    "sections":[{"title":"Siblings are not copies","body":"Offspring produced sexually receive different combinations of parental alleles. Even within the same family, segregation and recombination can create substantial differences in observable traits.","references":["REF-GENETICS-001"]},{"title":"Heterozygosity creates hidden variation","body":"Parents can carry alleles that are not obvious from their own phenotype. When those alleles segregate, later offspring may express unexpected combinations.","references":["REF-GENETICS-001"]},{"title":"Generation labels describe pedigree steps","body":"F1, F2, backcross, selfed, and later filial labels should be tied to documented parentage and mating structure. The label does not by itself guarantee uniformity or quality.","references":["REF-GENETICS-001"]},{"title":"Population size affects what can be observed","body":"Small populations sample only part of the possible variation. Larger populations improve the chance of observing rare combinations but require stronger records and selection discipline.","references":["REF-GENETICS-001"]}],
+    "workedExamples":["An F2 population can show wider variation than its F1 parents because alleles segregate into new combinations.","A backcross should record the recurrent parent explicitly; saying BX1 without parentage information leaves the breeding direction ambiguous."],
+    "commonMistakes":["Expecting every F1 or F2 seed to produce the same phenotype.","Using generation labels without documenting parentage.","Assuming a small population reveals all possible trait combinations."],
+    "practicalApplication":"For each cross, record parent IDs, cross direction, generation, number of offspring evaluated, major segregating traits, and any selected individuals. Keep generation labels tied to the actual pedigree.",
+    "summary":"Variation in breeding populations comes from inheritance, segregation, recombination, and sampling. Generation labels are useful only when supported by clear pedigree and population records."
+  }
+}

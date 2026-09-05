@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-FLOWER-PHOTO-002",
+  "title":"Photoperiod, Dark Periods and the Flowering Transition",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-FLOWER-001"],
+  "learningObjectives":["LO-FLOWER-PHOTO-002"],
+  "estimatedMinutes":35,
+  "references":["REF-LIGHT-001","REF-FLOWER-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Photoperiod-sensitive cannabis responds to the daily pattern of light and darkness. Flowering management therefore depends not only on total light but also on a stable schedule and awareness that unintended light during the dark interval can alter developmental signaling.",
+    "vocabulary":[{"term":"Photoperiod","definition":"The duration and timing of the daily light interval."},{"term":"Dark period","definition":"The uninterrupted interval without intended crop lighting."},{"term":"Floral transition","definition":"The developmental shift from primarily vegetative growth toward reproductive development."}],
+    "sections":[{"title":"Day length is a developmental signal","body":"Photoperiod-sensitive plants use recurring light-dark cycles as developmental information. A change in schedule can therefore influence flowering independently of daily photon total.","references":["REF-LIGHT-001"]},{"title":"Schedule consistency matters","body":"Timers, controller clocks, maintenance lights, doors, indicator lamps, or accidental outages can alter the intended cycle. Cultivation systems should be checked for actual rather than assumed schedule consistency.","references":["REF-LIGHT-001"]},{"title":"Transition is not instantaneous","body":"After the light schedule changes, plant architecture and reproductive structures develop progressively. Stretch, branch behavior, and flower formation should be monitored over time rather than treating the first day of the schedule as full flowering.","references":["REF-FLOWER-001"]}],
+    "workedExamples":["If a room's controller shows the correct schedule but staff routinely work under bright light during the dark interval, the actual photoperiod differs from the programmed one.","When transitioning a tall cultivar, canopy planning should account for continued shoot elongation after the schedule changes."],
+    "commonMistakes":["Treating photoperiod and DLI as interchangeable.","Assuming timer programming guarantees an uninterrupted dark period.","Calling the crop fully mature based on weeks since the light change."],
+    "practicalApplication":"Audit timers, lights, doors, indicator sources, and maintenance procedures across the full 24-hour cycle. Record the date of schedule change and monitor structural and reproductive development through the transition.",
+    "summary":"Flowering management depends on both light dose and developmental signaling from the light-dark schedule. Consistency and observation are essential through the transition."
+  }
+}

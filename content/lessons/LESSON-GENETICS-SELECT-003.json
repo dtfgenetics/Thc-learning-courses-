@@ -1,0 +1,20 @@
+{
+  "id":"LESSON-GENETICS-SELECT-003",
+  "title":"Selection, Phenotyping, Progeny Testing and Trait Stability",
+  "version":"1.0.0",
+  "status":"draft",
+  "competencies":["COMP-GENETICS-001"],
+  "learningObjectives":["LO-GENETICS-SELECT-003"],
+  "estimatedMinutes":45,
+  "references":["REF-GENETICS-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Selection changes a breeding population only when chosen individuals contribute to later generations. Strong selection requires defined traits, repeatable phenotyping, environmental records, adequate population size, and progeny evidence to distinguish attractive one-time expression from stable inheritance.",
+    "vocabulary":[{"term":"Phenotyping","definition":"Systematic measurement or description of observable traits."},{"term":"Selection pressure","definition":"The degree to which certain individuals are favored over others for reproduction."},{"term":"Progeny test","definition":"Evaluation of offspring to learn how reliably a parent's traits are transmitted."},{"term":"Stability","definition":"Consistency of trait inheritance or expression across relevant generations and environments."}],
+    "sections":[{"title":"Selection begins with a defined target","body":"Traits should be specified before choosing parents so the breeder is not simply selecting whichever individual looks most impressive at the end.","references":["REF-GENETICS-001"]},{"title":"Phenotype includes environment","body":"Observed traits reflect genotype, development, and environment. Replication or repeated evaluation helps prevent environmental advantage from being mistaken for superior inheritance.","references":["REF-GENETICS-001"]},{"title":"Progeny reveal inheritance","body":"A selected parent is valuable only if desirable traits are transmitted in useful combinations. Progeny testing provides stronger evidence than the parent's phenotype alone.","references":["REF-GENETICS-001"]},{"title":"Stability takes generations","body":"Uniform or repeated expression usually requires continued selection and evaluation. A trait observed once should not be called fixed without evidence from later generations.","references":["REF-GENETICS-001"]}],
+    "workedExamples":["If a plant has exceptional aroma but its offspring rarely express similar chemistry, the parent phenotype alone did not predict stable transmission.","If one candidate was grown in a brighter corner, compare environmental records before ranking it above genetically related plants."],
+    "commonMistakes":["Changing selection criteria after seeing the population.","Selecting from phenotype without environmental notes.","Calling a line stable after one generation.","Failing to keep rejected as well as selected records."],
+    "practicalApplication":"Create a selection sheet with trait definitions, measurement method, parentage, generation, environment, scores, selection decision, and later progeny results. Use the same definitions across generations.",
+    "summary":"Breeding selection is a recorded experiment. Defined traits, environmental context, progeny testing, and repeated generations are what turn attractive individuals into evidence of heritable progress."
+  }
+}
