@@ -73,6 +73,32 @@ create table if not exists learner_competencies (
   primary key (learner_id, competency_id, curriculum_version)
 );
 
+create table if not exists performance_assessment_results (
+  learner_id uuid not null references learners(id),
+  assessment_id text not null,
+  assessment_version text not null,
+  status text not null check (status in ('in-progress','passed','failed','voided')),
+  score_percent numeric(5,2),
+  critical_error_count integer not null default 0 check (critical_error_count >= 0),
+  evidence_json jsonb not null default '{}'::jsonb,
+  evaluator_id text,
+  evaluated_at timestamptz,
+  updated_at timestamptz not null default now(),
+  primary key (learner_id, assessment_id, assessment_version)
+);
+
+create table if not exists learner_portfolio_artifacts (
+  learner_id uuid not null references learners(id),
+  credential_definition_id text not null,
+  artifact_id text not null,
+  status text not null check (status in ('draft','submitted','accepted','verified','complete','rejected')),
+  evidence_json jsonb not null default '{}'::jsonb,
+  reviewer_id text,
+  reviewed_at timestamptz,
+  updated_at timestamptz not null default now(),
+  primary key (learner_id, credential_definition_id, artifact_id)
+);
+
 create table if not exists credentials (
   id uuid primary key,
   verification_id text not null unique,
@@ -120,9 +146,15 @@ create table if not exists audit_events (
 );
 
 create index if not exists idx_attempts_learner_assessment on assessment_attempts(learner_id, assessment_id, started_at desc);
+create index if not exists idx_performance_learner_assessment on performance_assessment_results(learner_id, assessment_id, updated_at desc);
+create index if not exists idx_portfolio_learner_credential on learner_portfolio_artifacts(learner_id, credential_definition_id, updated_at desc);
 create index if not exists idx_credentials_subject on credentials(subject_hash, issued_at desc);
 create index if not exists idx_audit_subject on audit_events(subject_type, subject_id, created_at desc);
 
 insert into academy_schema_migrations (version, description)
 values ('1', 'Initial THC Academy runtime schema')
+on conflict (version) do nothing;
+
+insert into academy_schema_migrations (version, description)
+values ('2', 'Learner performance assessment and portfolio evidence')
 on conflict (version) do nothing;
