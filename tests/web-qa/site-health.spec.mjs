@@ -41,11 +41,24 @@ for (const route of routes) {
     const hasMain = await page.locator('main, [role="main"], h1').count();
     if (!hasMain) failures.push('semantic-content: no main landmark, role=main, or h1 found');
 
+    const visualHealth = await page.evaluate(() => {
+      const brokenImages = [...document.images]
+        .filter((img) => img.currentSrc && img.complete && img.naturalWidth === 0)
+        .map((img) => img.currentSrc)
+        .slice(0, 20);
+      const overflow = Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0) - window.innerWidth;
+      return { brokenImages, overflow };
+    });
+
+    for (const src of visualHealth.brokenImages) failures.push(`broken-image: ${src}`);
+    if (visualHealth.overflow > 3) failures.push(`horizontal-overflow: ${visualHealth.overflow}px beyond viewport`);
+
     if (failures.length) {
-      const message = `Web QA findings for ${route}:\n${[...new Set(failures)].join('\n')}`;
+      const uniqueFailures = [...new Set(failures)];
+      const message = `Web QA findings for ${route}:\n${uniqueFailures.join('\n')}`;
       test.info().annotations.push({ type: 'web-qa-findings', description: message });
       console.error(message);
-      if (WEB_QA_ENFORCE) expect(failures, message).toEqual([]);
+      if (WEB_QA_ENFORCE) expect(uniqueFailures, message).toEqual([]);
     }
   });
 }
