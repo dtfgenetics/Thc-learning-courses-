@@ -51,8 +51,9 @@ jobs:
       WEB_QA_BASE_URL: https://dtfseeds.com
       WEB_QA_ARTIFACT_DIR: .artifacts/web-qa
       WEB_QA_ROUTE_FILE: .artifacts/web-qa/routes.json
-      WEB_QA_ENFORCE: ${{ (github.event_name == 'workflow_dispatch' && inputs.enforce) || github.ref == 'refs/heads/main' && '1' || '0' }}
+      WEB_QA_ENFORCE: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enforce) || github.ref == 'refs/heads/main') && '1' || '0' }}
       WEB_QA_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '80' || (github.event_name == 'workflow_dispatch' && inputs.max_routes) || '250' }}
+      WEB_QA_VISUAL_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '20' || '80' }}
       WEB_QA_VISUAL_MODE: capture
 
     steps:
@@ -82,8 +83,6 @@ jobs:
 
       - name: Capture responsive visual candidates
         if: always()
-        env:
-          WEB_QA_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '20' || '80' }}
         run: npx playwright test tests/web-qa/visual-regression.spec.mjs --project=mobile-412 --project=desktop-1366
 
       - name: Upload browser and visual evidence
@@ -103,7 +102,7 @@ jobs:
       WEB_QA_BASE_URL: https://dtfseeds.com
       WEB_QA_ARTIFACT_DIR: .artifacts/web-qa
       WEB_QA_ROUTE_FILE: .artifacts/web-qa/routes.json
-      WEB_QA_ENFORCE: ${{ (github.event_name == 'workflow_dispatch' && inputs.enforce) || github.ref == 'refs/heads/main' && '1' || '0' }}
+      WEB_QA_ENFORCE: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enforce) || github.ref == 'refs/heads/main') && '1' || '0' }}
       WEB_QA_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '20' || (github.event_name == 'workflow_dispatch' && inputs.max_routes) || '250' }}
       LHCI_RUNS: ${{ github.ref == 'refs/heads/main' && '3' || '1' }}
 
