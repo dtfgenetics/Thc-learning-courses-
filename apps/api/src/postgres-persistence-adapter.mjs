@@ -65,7 +65,7 @@ export async function createPersistenceAdapters({ env = process.env, poolFactory
   return {
     credentialStore: createPostgresCredentialStore({ query }),
     credentialWriter: createPostgresCredentialWriter({ withTransaction }),
-    learnerStore: createPostgresLearnerStore({ query }),
+    learnerStore: createPostgresLearnerStore({ query, withTransaction }),
     async close() {
       if (typeof pool.end === 'function') await pool.end();
     }
