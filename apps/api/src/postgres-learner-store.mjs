@@ -17,6 +17,16 @@ function enrollmentRow(row) {
   };
 }
 
+function performanceEvidenceVerified(row) {
+  return Boolean(
+    String(row?.evaluator_id ?? '').trim() &&
+    row?.evaluated_at &&
+    String(row?.rubric_id ?? '').trim() &&
+    String(row?.rubric_version ?? '').trim() &&
+    ['virtual-facility', 'supervised-lab', 'workplace-equivalent'].includes(String(row?.delivery_mode ?? ''))
+  );
+}
+
 export function createPostgresLearnerStore({ query } = {}) {
   if (typeof query !== 'function') throw new Error('PostgreSQL learner store requires a query(text, params) function');
 
@@ -171,7 +181,8 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       const performanceResult = await queryOrUnavailable(
         query,
-        `select assessment_id, assessment_version, status, score_percent, critical_error_count, evaluated_at, updated_at
+        `select assessment_id, assessment_version, status, score_percent, critical_error_count,
+                evaluator_id, rubric_id, rubric_version, delivery_mode, evaluated_at, updated_at
            from performance_assessment_results
           where learner_id = $1
           order by assessment_id, updated_at desc`,
@@ -183,6 +194,11 @@ export function createPostgresLearnerStore({ query } = {}) {
         status: row.status,
         scorePercent: row.score_percent == null ? null : Number(row.score_percent),
         criticalErrorCount: Number(row.critical_error_count ?? 0),
+        evidenceVerified: performanceEvidenceVerified(row),
+        evaluatorId: row.evaluator_id ?? null,
+        rubricId: row.rubric_id ?? null,
+        rubricVersion: row.rubric_version == null ? null : String(row.rubric_version),
+        deliveryMode: row.delivery_mode ?? null,
         evaluatedAt: row.evaluated_at ? new Date(row.evaluated_at).toISOString() : null,
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
       }));
