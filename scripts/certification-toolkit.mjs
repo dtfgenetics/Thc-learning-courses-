@@ -22,6 +22,8 @@ const TOOL_GROUPS = {
     "credential:test",
     "credential:tech2:test",
     "credential:progress:test",
+    "credential:issue:test",
+    "credential:verify:test",
     "credential:issuance:test",
     "credential:public:test",
     "credential:specialist:readiness",
