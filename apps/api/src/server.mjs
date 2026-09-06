@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { publicCredentialView } from '../../../packages/domain/credential-runtime.mjs';
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
+import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -15,6 +16,9 @@ export function createDevelopmentCredentialStore() {
   const records = new Map();
   return {
     kind: 'development-memory',
+    async ping() {
+      return true;
+    },
     getByVerificationId(verificationId) {
       return records.get(verificationId) ?? null;
     },
@@ -101,55 +105,87 @@ export function createHandler({
       });
     });
 
-    let url;
     try {
-      url = new URL(req.url, 'http://localhost');
-    } catch {
-      route = 'invalid-url';
-      return json(res, 400, { error: 'invalid-url', requestId });
-    }
-
-    if (req.method === 'GET' && url.pathname === '/healthz') {
-      route = 'GET /healthz';
-      return json(res, 200, { ok: true, requestId });
-    }
-
-    if (url.pathname.startsWith('/api/')) {
-      const rate = limiter.check(rateLimitKey(req));
-      applyRateLimitHeaders(res, rate);
-      if (!rate.allowed) {
-        route = 'rate-limited-api';
-        return json(res, 429, { error: 'rate-limit-exceeded', requestId }, { 'retry-after': String(rate.retryAfterSeconds) });
+      let url;
+      try {
+        url = new URL(req.url, 'http://localhost');
+      } catch {
+        route = 'invalid-url';
+        return json(res, 400, { error: 'invalid-url', requestId });
       }
-    }
 
-    const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
-    if (req.method === 'GET' && credentialMatch) {
-      route = 'GET /api/v1/credentials/:verificationId';
-      const record = await resolvedCredentialStore.getByVerificationId(credentialMatch[1]);
-      if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
-      return json(res, 200, publicCredentialView(record, credentialDefinition));
-    }
-
-    if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
-      route = 'GET /api/v1/admin/diagnostics';
-      const auth = authorize(req, 'admin:read');
-      if (!auth.ok) {
-        if (auth.status === 401) res.setHeader('www-authenticate', 'Bearer realm="thc-academy-api"');
-        return json(res, auth.status, { error: auth.error, requestId });
+      if (req.method === 'GET' && url.pathname === '/healthz') {
+        route = 'GET /healthz';
+        return json(res, 200, { ok: true, requestId });
       }
-      return json(res, 200, {
-        ok: true,
-        service: 'thc-academy-api',
-        storageAdapter: resolvedCredentialStore.kind ?? 'unknown',
-        credentialCount: typeof resolvedCredentialStore.count === 'function' ? await resolvedCredentialStore.count() : null,
-        authenticatedSubject: auth.subject,
-        requestId
+
+      if (req.method === 'GET' && url.pathname === '/readyz') {
+        route = 'GET /readyz';
+        if (typeof resolvedCredentialStore.ping !== 'function') {
+          return json(res, 503, { ok: false, error: 'readiness-check-unavailable', requestId });
+        }
+        const ready = await resolvedCredentialStore.ping();
+        return json(res, ready ? 200 : 503, ready
+          ? { ok: true, requestId }
+          : { ok: false, error: 'dependency-unavailable', requestId });
+      }
+
+      if (url.pathname.startsWith('/api/')) {
+        const rate = limiter.check(rateLimitKey(req));
+        applyRateLimitHeaders(res, rate);
+        if (!rate.allowed) {
+          route = 'rate-limited-api';
+          return json(res, 429, { error: 'rate-limit-exceeded', requestId }, { 'retry-after': String(rate.retryAfterSeconds) });
+        }
+      }
+
+      const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
+      if (req.method === 'GET' && credentialMatch) {
+        route = 'GET /api/v1/credentials/:verificationId';
+        const record = await resolvedCredentialStore.getByVerificationId(credentialMatch[1]);
+        if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
+        return json(res, 200, publicCredentialView(record, credentialDefinition));
+      }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
+        route = 'GET /api/v1/admin/diagnostics';
+        const auth = authorize(req, 'admin:read');
+        if (!auth.ok) {
+          if (auth.status === 401) res.setHeader('www-authenticate', 'Bearer realm="thc-academy-api"');
+          return json(res, auth.status, { error: auth.error, requestId });
+        }
+        return json(res, 200, {
+          ok: true,
+          service: 'thc-academy-api',
+          storageAdapter: resolvedCredentialStore.kind ?? 'unknown',
+          credentialCount: typeof resolvedCredentialStore.count === 'function' ? await resolvedCredentialStore.count() : null,
+          authenticatedSubject: auth.subject,
+          requestId
+        });
+      }
+
+      route = `${req.method ?? 'UNKNOWN'} unmatched`;
+      return json(res, 404, { error: 'not-found', requestId });
+    } catch (error) {
+      const dependencyUnavailable = isPersistenceUnavailableError(error);
+      logger({
+        level: 'error',
+        event: 'http.request.failed',
+        requestId,
+        method: req.method,
+        route,
+        statusCode: dependencyUnavailable ? 503 : 500,
+        errorType: error?.name ?? 'Error',
+        errorCode: error?.code ?? 'UNEXPECTED_ERROR'
       });
+      if (!res.headersSent) {
+        return json(res, dependencyUnavailable ? 503 : 500, {
+          error: dependencyUnavailable ? 'service-unavailable' : 'internal-error',
+          requestId
+        });
+      }
+      res.destroy();
     }
-
-    route = `${req.method ?? 'UNKNOWN'} unmatched`;
-    return json(res, 404, { error: 'not-found', requestId });
   };
 }
 

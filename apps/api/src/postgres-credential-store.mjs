@@ -1,3 +1,5 @@
+import { PersistenceUnavailableError } from './persistence-errors.mjs';
+
 function asIso(value) {
   if (value == null) return null;
   if (value instanceof Date) return value.toISOString();
@@ -8,6 +10,14 @@ function payloadObject(value) {
   if (!value) return {};
   if (typeof value === 'string') return JSON.parse(value);
   return value;
+}
+
+async function queryOrUnavailable(query, text, params) {
+  try {
+    return await query(text, params);
+  } catch (error) {
+    throw new PersistenceUnavailableError('persistence-unavailable', { cause: error });
+  }
 }
 
 export function mapCredentialRow(row) {
@@ -35,8 +45,13 @@ export function createPostgresCredentialStore({ query } = {}) {
 
   return {
     kind: 'postgres',
+    async ping() {
+      const result = await queryOrUnavailable(query, 'select 1 as ok', []);
+      return Number(result.rows?.[0]?.ok ?? 0) === 1;
+    },
     async getByVerificationId(verificationId) {
-      const result = await query(
+      const result = await queryOrUnavailable(
+        query,
         `select id, verification_id, subject_hash, credential_definition_id,
                 credential_definition_version, course_id, course_version, status,
                 issued_at, expires_at, payload_json, payload_hash
@@ -48,7 +63,7 @@ export function createPostgresCredentialStore({ query } = {}) {
       return mapCredentialRow(result.rows?.[0] ?? null);
     },
     async count() {
-      const result = await query('select count(*)::int as count from credentials', []);
+      const result = await queryOrUnavailable(query, 'select count(*)::int as count from credentials', []);
       return Number(result.rows?.[0]?.count ?? 0);
     }
   };
