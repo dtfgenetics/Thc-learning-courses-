@@ -22,10 +22,15 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
+      - name: Build expected curriculum registry
+        run: npm run registry:build
+      - name: Export generated registry during drift repair
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-curriculum-registry
+          path: registry/curriculum.json
+          if-no-files-found: error
       - name: Require committed curriculum registry to match source objects
-        run: |
-          npm run registry:build
-          cat registry/curriculum.json
-          git diff --exit-code -- registry/curriculum.json
+        run: git diff --exit-code -- registry/curriculum.json
       - name: Run complete curriculum and credential test suite
         run: npm test
