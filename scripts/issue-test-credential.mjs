@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { evaluateCredentialEligibility } from '../packages/domain/credential-eligibility.mjs';
+import { loadRequiredPerformanceDefinitions } from './lib/load-performance-definitions.mjs';
 
 const root = process.cwd();
 const inputArg = process.argv.find((arg) => arg.startsWith('--input='));
@@ -15,26 +17,17 @@ const evidence = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 const credentialId = credentialArg ? credentialArg.slice('--credential='.length) : 'CRED-CULT-FOUNDATIONS-001';
 if (!/^CRED-[A-Z0-9-]+$/.test(credentialId)) throw new Error(`Invalid credential ID ${credentialId}`);
 const credential = JSON.parse(fs.readFileSync(path.join(root, `content/credentials/${credentialId}.json`), 'utf8'));
+const performanceDefinitions = loadRequiredPerformanceDefinitions({ root, credential });
+const eligibility = evaluateCredentialEligibility({ credential, evidence, performanceDefinitions });
+if (!eligibility.eligible) {
+  const details = eligibility.missingRequirements.map((row) => `${row.id}:${row.reason}`).join(', ');
+  throw new Error(`Credential eligibility failed for required evidence: ${details}`);
+}
 
 const required = credential.eligibility.requiredAssessments ?? [];
 const passed = new Map((evidence.assessments ?? []).map((row) => [row.assessmentId, row]));
 const performance = new Map((evidence.performanceAssessments ?? []).map((row) => [row.assessmentId, row]));
 const artifacts = new Map((evidence.portfolioArtifacts ?? []).map((row) => [row.artifactId, row]));
-const missing = [];
-
-for (const id of required) {
-  const row = passed.get(id);
-  if (!row || row.status !== 'passed' || Number(row.scorePercent) < Number(credential.eligibility.minimumPassingScorePercent)) missing.push(id);
-}
-for (const id of credential.eligibility.requiredPerformanceAssessments ?? []) {
-  const row = performance.get(id);
-  if (!row || row.status !== 'passed' || (credential.eligibility.requireNoCriticalErrors === true && Number(row.criticalErrorCount ?? 0) > 0)) missing.push(id);
-}
-for (const id of credential.eligibility.requiredPortfolioArtifacts ?? []) {
-  const row = artifacts.get(id);
-  if (!row || !['accepted', 'verified', 'complete'].includes(row.status)) missing.push(id);
-}
-if (missing.length) throw new Error(`Credential eligibility failed for required evidence: ${missing.join(', ')}`);
 
 const subjectSource = String(evidence.learnerId ?? 'synthetic-subject');
 const subjectId = `SUBJECT-${crypto.createHash('sha256').update(subjectSource).digest('hex').slice(0, 16).toUpperCase()}`;
@@ -43,7 +36,8 @@ const performanceEvidence = (credential.eligibility.requiredPerformanceAssessmen
   assessmentId: id,
   scorePercent: performance.get(id)?.scorePercent == null ? null : Number(performance.get(id).scorePercent),
   status: 'passed',
-  criticalErrorCount: Number(performance.get(id)?.criticalErrorCount ?? 0)
+  criticalErrorCount: Number(performance.get(id)?.criticalErrorCount ?? 0),
+  evidenceVerified: performance.get(id)?.evidenceVerified === true
 }));
 const portfolioEvidence = (credential.eligibility.requiredPortfolioArtifacts ?? []).map((id) => ({ artifactId: id, status: artifacts.get(id).status }));
 

@@ -26,6 +26,7 @@ for (const name of fs.readdirSync(path.join(root, 'content/job-roles')).filter((
 
 const files = fs.existsSync(performanceDir) ? fs.readdirSync(performanceDir).filter((name) => name.endsWith('.json')).sort() : [];
 const seen = new Set();
+const performanceById = new Map();
 let validated = 0;
 
 for (const name of files) {
@@ -34,6 +35,7 @@ for (const name of files) {
   validated += 1;
   if (seen.has(data.id)) errors.push(`${rel}: duplicate performance assessment id ${data.id}`);
   seen.add(data.id);
+  performanceById.set(data.id, data);
 
   if (!roleIds.has(data.role)) errors.push(`${rel}: missing role ${data.role}`);
   const role = roleById.get(data.role);
@@ -51,10 +53,35 @@ for (const name of files) {
   if (total !== data.scoring?.totalPoints) errors.push(`${rel}: scoring domains total ${total}, expected ${data.scoring?.totalPoints}`);
 }
 
+const credentialDir = path.join(root, 'content/credentials');
+if (fs.existsSync(credentialDir)) {
+  for (const name of fs.readdirSync(credentialDir).filter((entry) => entry.endsWith('.json')).sort()) {
+    const rel = path.join('content/credentials', name);
+    const credential = readJson(rel);
+    const requiredPerformance = credential.eligibility?.requiredPerformanceAssessments ?? [];
+    if (requiredPerformance.length > 0 && credential.eligibility?.requireVerifiedPerformanceEvidence !== true) {
+      errors.push(`${rel}: credentials with performance requirements must set requireVerifiedPerformanceEvidence=true`);
+    }
+    for (const assessmentId of requiredPerformance) {
+      const definition = performanceById.get(assessmentId);
+      if (!definition) {
+        errors.push(`${rel}: required performance assessment does not exist: ${assessmentId}`);
+        continue;
+      }
+      if (credential.role && definition.role !== credential.role) {
+        errors.push(`${rel}: performance assessment ${assessmentId} belongs to ${definition.role}, expected ${credential.role}`);
+      }
+      if (definition.purpose !== 'credential') {
+        errors.push(`${rel}: required performance assessment ${assessmentId} must have purpose=credential`);
+      }
+    }
+  }
+}
+
 if (errors.length) {
   console.error('Performance assessment validation failed:');
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
 
-console.log(`Performance assessment validation passed for ${validated} object(s).`);
+console.log(`Performance assessment validation passed for ${validated} object(s), including credential cross-references.`);
