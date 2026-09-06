@@ -42,7 +42,6 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   const courses = new Map(readDirJson('content/courses').map((item) => [item.id, item]));
   const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
   const lessons = new Map(readDirJson('content/lessons').map((item) => [item.id, item]));
-
   const visibleCourses = [...courses.values()]
     .filter((course) => isVisible(course, previewDrafts))
     .sort((a, b) => String(a.title).localeCompare(String(b.title)))
@@ -53,30 +52,19 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       status: course.status,
       credentialBearing: Boolean(course.credentialBearing),
       description: course.description ?? course.summary ?? '',
-      modules: (course.modules ?? [])
-        .map((moduleId) => modules.get(moduleId))
-        .filter((module) => module && isVisible(module, previewDrafts))
-        .map((module) => ({
-          id: module.id,
-          title: module.title,
-          status: module.status,
-          lessons: (module.lessons ?? [])
-            .map((lessonId) => lessons.get(lessonId))
-            .filter((lesson) => lesson && isVisible(lesson, previewDrafts))
-            .map((lesson) => ({
-              id: lesson.id,
-              title: lesson.title,
-              status: lesson.status,
-              estimatedMinutes: lesson.estimatedMinutes ?? null
-            }))
+      modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts)).map((module) => ({
+        id: module.id,
+        title: module.title,
+        status: module.status,
+        lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts)).map((lesson) => ({
+          id: lesson.id,
+          title: lesson.title,
+          status: lesson.status,
+          estimatedMinutes: lesson.estimatedMinutes ?? null
         }))
+      }))
     }));
-
-  return {
-    mode: previewDrafts ? 'staging-preview' : 'published-only',
-    generatedAt: new Date().toISOString(),
-    courses: visibleCourses
-  };
+  return { mode: previewDrafts ? 'staging-preview' : 'published-only', generatedAt: new Date().toISOString(), courses: visibleCourses };
 }
 
 export function buildStagingGovernanceSummary() {
@@ -86,43 +74,24 @@ export function buildStagingGovernanceSummary() {
   const lessons = readDirJson('content/lessons');
   const assessments = readDirJson('content/assessments');
   const questions = readDirJson('content/questions');
-
   const approvedReviews = reviews.filter((review) => review.status === 'approved');
   const approvedByType = approvedReviews.reduce((counts, review) => {
     const type = review.reviewType ?? 'other';
     counts[type] = (counts[type] ?? 0) + 1;
     return counts;
   }, {});
-
   const productionBlockers = [];
   for (const [areaName, area] of Object.entries(readiness.areas ?? {})) {
     for (const [gateName, value] of Object.entries(area.gates ?? {})) {
       if (value !== true) productionBlockers.push(`${areaName}.${gateName}`);
     }
   }
-
   return {
-    generatedAt: new Date().toISOString(),
-    mode: 'staging-governance',
-    inventory: {
-      lessons: lessons.length,
-      assessments: assessments.length,
-      questions: questions.length
-    },
-    reviews: {
-      totalRecords: reviews.length,
-      approvedRecords: approvedReviews.length,
-      approvedByType
-    },
-    pilot: {
-      records: pilots.length,
-      completed: pilots.filter((record) => record.status === 'complete' || record.complete === true).length
-    },
-    readiness: {
-      productionReady: readiness.productionReady === true,
-      productionBlockerCount: productionBlockers.length,
-      productionBlockers
-    }
+    generatedAt: new Date().toISOString(), mode: 'staging-governance',
+    inventory: { lessons: lessons.length, assessments: assessments.length, questions: questions.length },
+    reviews: { totalRecords: reviews.length, approvedRecords: approvedReviews.length, approvedByType },
+    pilot: { records: pilots.length, completed: pilots.filter((record) => record.status === 'complete' || record.complete === true).length },
+    readiness: { productionReady: readiness.productionReady === true, productionBlockerCount: productionBlockers.length, productionBlockers }
   };
 }
 
@@ -142,79 +111,32 @@ function securityHeaders(res, contentType) {
   res.setHeader('permissions-policy', 'camera=(), microphone=(), geolocation=()');
   res.setHeader('content-security-policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
 }
-
-function json(res, status, body) {
-  securityHeaders(res, 'application/json; charset=utf-8');
-  res.setHeader('cache-control', 'no-store');
-  res.statusCode = status;
-  res.end(JSON.stringify(body));
-}
-
+function json(res, status, body) { securityHeaders(res, 'application/json; charset=utf-8'); res.setHeader('cache-control', 'no-store'); res.statusCode = status; res.end(JSON.stringify(body)); }
 function sendStatic(res, fileName, contentType) {
   const target = path.join(webRoot, fileName);
   if (!target.startsWith(webRoot) || !fs.existsSync(target)) return false;
-  securityHeaders(res, contentType);
-  res.setHeader('cache-control', fileName === 'index.html' ? 'no-cache' : 'public, max-age=300');
-  res.statusCode = 200;
-  res.end(fs.readFileSync(target));
-  return true;
+  securityHeaders(res, contentType); res.setHeader('cache-control', fileName === 'index.html' ? 'no-cache' : 'public, max-age=300'); res.statusCode = 200; res.end(fs.readFileSync(target)); return true;
 }
 
 export function createAcademyHandler({ env = process.env } = {}) {
   const previewDrafts = env.NODE_ENV !== 'production' && env.ACADEMY_PREVIEW_DRAFTS !== '0';
-
   return function handler(req, res) {
     let url;
-    try {
-      url = new URL(req.url, 'http://localhost');
-    } catch {
-      return json(res, 400, { error: 'invalid-url' });
-    }
-
-    if (req.method === 'GET' && url.pathname === '/healthz') {
-      return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
-    }
-
-    if (req.method === 'GET' && url.pathname === '/api/catalog') {
-      return json(res, 200, buildAcademyCatalog({ previewDrafts }));
-    }
-
-    if (req.method === 'GET' && url.pathname === '/api/staging/governance') {
-      return previewDrafts
-        ? json(res, 200, buildStagingGovernanceSummary())
-        : json(res, 404, { error: 'not-found' });
-    }
-
+    try { url = new URL(req.url, 'http://localhost'); } catch { return json(res, 400, { error: 'invalid-url' }); }
+    if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
+    if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
+    if (req.method === 'GET' && url.pathname === '/api/staging/governance') return previewDrafts ? json(res, 200, buildStagingGovernanceSummary()) : json(res, 404, { error: 'not-found' });
     const lessonMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)$/);
-    if (req.method === 'GET' && lessonMatch) {
-      const lesson = loadPublicLesson(lessonMatch[1], { previewDrafts });
-      return lesson ? json(res, 200, lesson) : json(res, 404, { error: 'lesson-not-found' });
-    }
-
-    if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/academy')) {
-      if (sendStatic(res, 'index.html', 'text/html; charset=utf-8')) return;
-    }
-    if (req.method === 'GET' && url.pathname === '/app.js') {
-      if (sendStatic(res, 'app.js', 'text/javascript; charset=utf-8')) return;
-    }
-    if (req.method === 'GET' && url.pathname === '/progress.js') {
-      if (sendStatic(res, 'progress.js', 'text/javascript; charset=utf-8')) return;
-    }
-    if (req.method === 'GET' && url.pathname === '/styles.css') {
-      if (sendStatic(res, 'styles.css', 'text/css; charset=utf-8')) return;
-    }
-
+    if (req.method === 'GET' && lessonMatch) { const lesson = loadPublicLesson(lessonMatch[1], { previewDrafts }); return lesson ? json(res, 200, lesson) : json(res, 404, { error: 'lesson-not-found' }); }
+    if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/academy')) { if (sendStatic(res, 'index.html', 'text/html; charset=utf-8')) return; }
+    if (req.method === 'GET' && url.pathname === '/app.js') { if (sendStatic(res, 'app.js', 'text/javascript; charset=utf-8')) return; }
+    if (req.method === 'GET' && url.pathname === '/progress.js') { if (sendStatic(res, 'progress.js', 'text/javascript; charset=utf-8')) return; }
+    if (req.method === 'GET' && url.pathname === '/governance.js') { if (sendStatic(res, 'governance.js', 'text/javascript; charset=utf-8')) return; }
+    if (req.method === 'GET' && url.pathname === '/styles.css') { if (sendStatic(res, 'styles.css', 'text/css; charset=utf-8')) return; }
     return json(res, 404, { error: 'not-found' });
   };
 }
 
-export function createAcademyWebServer(options = {}) {
-  return http.createServer(createAcademyHandler(options));
-}
-
+export function createAcademyWebServer(options = {}) { return http.createServer(createAcademyHandler(options)); }
 const isDirectExecution = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
-if (isDirectExecution) {
-  createAcademyWebServer().listen(port, () => {
-    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'academy.web.started', port, url: `http://localhost:${port}/academy` })}\n`);
-  });
-}
+if (isDirectExecution) createAcademyWebServer().listen(port, () => process.stdout.write(`${JSON.stringify({ level: 'info', event: 'academy.web.started', port, url: `http://localhost:${port}/academy` })}\n`));
