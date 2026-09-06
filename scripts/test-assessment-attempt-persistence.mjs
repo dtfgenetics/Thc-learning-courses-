@@ -7,10 +7,6 @@ const items = new Map();
 const transactionEvents = [];
 let learnerSequence = 0;
 
-function iso(value) {
-  return value == null ? null : new Date(value).toISOString();
-}
-
 function rowsForAttempt(attempt) {
   if (!attempt) return [];
   return [{
@@ -94,7 +90,7 @@ async function fakeQuery(text, params = []) {
   if (sql.startsWith('select position, item_id, item_version, competency_id, response_json, score, max_score from assessment_attempt_items')) {
     return { rows: [...(items.get(params[0]) ?? [])].sort((a, b) => a.position - b.position) };
   }
-  if (sql.startsWith('update assessment_attempts') && sql.includes("status = 'submitted'")) {
+  if (sql.startsWith('update assessment_attempts') && sql.includes("set status = 'submitted'")) {
     const [attemptId, learnerId, submittedAt] = params;
     const attempt = attempts.get(attemptId);
     if (!attempt || attempt.learnerId !== learnerId || attempt.status !== 'started') return { rowCount: 0, rows: [] };
@@ -116,7 +112,7 @@ async function fakeQuery(text, params = []) {
     row.score = score;
     return { rowCount: 1, rows: [] };
   }
-  if (sql.startsWith('update assessment_attempts') && sql.includes("status = 'scored'")) {
+  if (sql.startsWith('update assessment_attempts') && sql.includes("set status = 'scored'")) {
     const [attemptId, learnerId, scoredAt, scorePercent, passed] = params;
     const attempt = attempts.get(attemptId);
     if (!attempt || attempt.learnerId !== learnerId || attempt.status !== 'submitted') return { rowCount: 0, rows: [] };
