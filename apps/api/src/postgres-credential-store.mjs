@@ -49,6 +49,14 @@ export function createPostgresCredentialStore({ query } = {}) {
       const result = await queryOrUnavailable(query, 'select 1 as ok', []);
       return Number(result.rows?.[0]?.ok ?? 0) === 1;
     },
+    async schemaVersion() {
+      const result = await queryOrUnavailable(
+        query,
+        'select version from academy_schema_migrations order by applied_at desc, version desc limit 1',
+        []
+      );
+      return result.rows?.[0]?.version == null ? null : String(result.rows[0].version);
+    },
     async getByVerificationId(verificationId) {
       const result = await queryOrUnavailable(
         query,
