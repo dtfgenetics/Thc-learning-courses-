@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://academy.dtfseeds.com/schemas/encyclopedia-entry.schema.json",
+  "title":"THC Plant Science Encyclopedia Entry",
+  "type":"object",
+  "required":["id","title","slug","volume","domain","status","version","summary","sections","references","relatedLessons","relatedCompetencies"],
+  "properties":{
+    "id":{"type":"string","pattern":"^ENC-[A-Z0-9-]+$"},
+    "title":{"type":"string","minLength":3},
+    "slug":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "volume":{"type":"integer","minimum":1},
+    "domain":{"type":"string","minLength":2},
+    "status":{"enum":["draft","review","approved","published","superseded","retired"]},
+    "version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "summary":{"type":"string","minLength":80},
+    "sections":{"type":"array","minItems":3,"items":{"type":"object","required":["title","body","references"],"properties":{"title":{"type":"string","minLength":3},"body":{"type":"string","minLength":120},"references":{"type":"array","minItems":1,"items":{"type":"string","pattern":"^REF-"},"uniqueItems":true}},"additionalProperties":false}},
+    "references":{"type":"array","minItems":1,"items":{"type":"string","pattern":"^REF-"},"uniqueItems":true},
+    "relatedLessons":{"type":"array","items":{"type":"string","pattern":"^LESSON-"},"uniqueItems":true},
+    "relatedCompetencies":{"type":"array","items":{"type":"string","pattern":"^COMP-"},"uniqueItems":true}
+  },
+  "additionalProperties":false
+}
