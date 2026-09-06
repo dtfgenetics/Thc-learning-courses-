@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Teaching Healthy Cultivation Academy learning portal">
+  <title>THC Academy</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#lesson-view">Skip to lesson content</a>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Teaching Healthy Cultivation</p>
+      <h1>THC Academy</h1>
+      <p class="lede">Evidence-backed cultivation education, organized from foundations through specialist practice.</p>
+    </div>
+    <div id="mode-badge" class="mode-badge" aria-live="polite">Loading…</div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="catalog-panel" aria-label="Course catalog">
+      <label class="search-label" for="course-search">Find a course or lesson</label>
+      <input id="course-search" class="search" type="search" placeholder="Search topics…" autocomplete="off">
+      <div id="catalog-status" class="status" aria-live="polite">Loading Academy catalog…</div>
+      <nav id="catalog" class="catalog" aria-label="Academy courses"></nav>
+    </aside>
+
+    <section id="lesson-view" class="lesson-panel" tabindex="-1" aria-live="polite">
+      <div class="welcome-card">
+        <p class="eyebrow">Start here</p>
+        <h2>Choose a lesson</h2>
+        <p>Select a course and lesson from the catalog. Staging content is clearly labeled until scientific and editorial review is complete.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>THC Academy educational content does not replace legal, occupational, medical, pesticide-label, or jurisdiction-specific requirements.</p>
+  </footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
