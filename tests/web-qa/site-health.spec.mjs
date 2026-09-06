@@ -23,21 +23,16 @@ for (const route of routes) {
     });
     page.on('response', (response) => {
       const url = new URL(response.url());
-      if (url.origin === new URL(route).origin && response.status() >= 400) {
-        failures.push(`http ${response.status()}: ${response.url()}`);
-      }
+      if (url.origin === new URL(route).origin && response.status() >= 400) failures.push(`http ${response.status()}: ${response.url()}`);
     });
 
     const response = await page.goto(route, { waitUntil: 'commit', timeout: 30_000 });
     expect(response, 'navigation should return a response').not.toBeNull();
     expect(response.status(), `unexpected navigation status for ${route}`).toBeLessThan(400);
 
-    const domReady = await page.waitForLoadState('domcontentloaded', { timeout: 30_000 })
-      .then(() => true)
-      .catch(() => false);
-    if (!domReady) failures.push('lifecycle-timeout: DOMContentLoaded did not fire within 30s');
-
-    await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
+    const domReady = await page.waitForLoadState('domcontentloaded', { timeout: 10_000 }).then(() => true).catch(() => false);
+    if (!domReady) failures.push('lifecycle-timeout: DOMContentLoaded did not fire within 10s');
+    if (domReady) await page.waitForLoadState('networkidle', { timeout: 5_000 }).catch(() => {});
 
     const body = page.locator('body');
     const bodyVisible = await body.isVisible().catch(() => false);
