@@ -73,7 +73,10 @@ function assessmentAttemptRow(row, itemRows = [], externalSubject = null) {
 
 export function createPostgresLearnerStore({ query, withTransaction } = {}) {
   if (typeof query !== 'function') throw new Error('PostgreSQL learner store requires a query(text, params) function');
-  if (typeof withTransaction !== 'function') throw new Error('PostgreSQL learner store requires withTransaction(callback)');
+  function requireTransaction() {
+  if (typeof withTransaction !== 'function') throw new Error('Assessment attempt writes require withTransaction(callback)');
+  return withTransaction;
+}
 
   async function ensureLearner(externalSubject, runQuery = query) {
     if (!externalSubject) throw new Error('externalSubject required');
@@ -204,7 +207,7 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
       if (!item.itemId || item.itemVersion == null) throw new Error('assessment attempt item identity required');
       if (!String(item.competency ?? '').trim()) throw new Error('competency required');
     }
-    return withTransaction(async (runQuery) => {
+    return requireTransaction()(async (runQuery) => {
       const learner = await ensureLearner(externalSubject, runQuery);
       if (!learner?.id) throw new Error('learner-resolution-failed');
       await queryOrUnavailable(
@@ -237,7 +240,7 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
     if (!externalSubject) throw new Error('externalSubject required');
     if (!attempt?.id || attempt.status !== 'submitted' || !attempt.submittedAt) throw new Error('submitted assessment attempt required');
     if (!Array.isArray(attempt.items) || attempt.items.length === 0) throw new Error('assessment attempt items required');
-    return withTransaction(async (runQuery) => {
+    return requireTransaction()(async (runQuery) => {
       const learnerId = await learnerIdForSubject(externalSubject, runQuery);
       if (!learnerId) throw new Error('assessment-attempt-transition-conflict');
       const parent = await queryOrUnavailable(
@@ -270,7 +273,7 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
     const scorePercent = Number(attempt.scorePercent);
     if (!Number.isFinite(scorePercent) || scorePercent < 0 || scorePercent > 100) throw new Error('scorePercent must be between 0 and 100');
     if (typeof attempt.passed !== 'boolean') throw new Error('passed boolean required');
-    return withTransaction(async (runQuery) => {
+    return requireTransaction()(async (runQuery) => {
       const learnerId = await learnerIdForSubject(externalSubject, runQuery);
       if (!learnerId) throw new Error('assessment-attempt-transition-conflict');
       for (const item of attempt.items) {

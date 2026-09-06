@@ -220,6 +220,10 @@ await assert.rejects(() => store.createAssessmentAttempt('subject-alice', badAtt
 assert.equal(attempts.size, attemptsBeforeBadCreate, 'failed item insert must roll back parent attempt');
 assert.equal(transactionEvents.at(-1), 'rollback');
 
-assert.throws(() => createPostgresLearnerStore({ query: fakeQuery }), /withTransaction/);
+const readOnlyStore = createPostgresLearnerStore({ query: fakeQuery });
+await assert.rejects(
+  () => readOnlyStore.createAssessmentAttempt('subject-alice', started),
+  /withTransaction/
+);
 
 console.log('Atomic PostgreSQL assessment attempt persistence lifecycle passed.');
