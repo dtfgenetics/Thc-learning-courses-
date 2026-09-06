@@ -166,6 +166,17 @@ alter table performance_assessment_results add column if not exists rubric_id te
 alter table performance_assessment_results add column if not exists rubric_version text;
 alter table performance_assessment_results add column if not exists delivery_mode text;
 
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint where conname = 'performance_assessment_results_delivery_mode_check'
+  ) then
+    alter table performance_assessment_results
+      add constraint performance_assessment_results_delivery_mode_check
+      check (delivery_mode is null or delivery_mode in ('virtual-facility','supervised-lab','workplace-equivalent'));
+  end if;
+end $$;
+
 insert into academy_schema_migrations (version, description)
 values ('3', 'Performance assessment evaluator, rubric, and delivery provenance')
 on conflict (version) do nothing;
