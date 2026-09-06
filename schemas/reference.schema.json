@@ -9,6 +9,7 @@
     "type": {"enum": ["journal", "peer-reviewed-study", "peer-reviewed-review", "review", "standard", "government", "extension", "textbook", "industry", "other"]},
     "title": {"type": "string", "minLength": 3},
     "publisher": {"type": ["string", "null"]},
+    "journal": {"type": ["string", "null"]},
     "authors": {"type": "array", "items": {"type": "string"}},
     "year": {"type": ["integer", "null"]},
     "doi": {"type": ["string", "null"]},
