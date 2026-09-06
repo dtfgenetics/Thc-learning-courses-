@@ -1,0 +1,27 @@
+name: Foundations evidence report (temporary)
+
+on:
+  push:
+    branches:
+      - feat/foundations-evidence-audit
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Generate evidence audit
+        run: npm run evidence:foundations > foundations-evidence-audit.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: foundations-evidence-audit
+          path: foundations-evidence-audit.json
+          if-no-files-found: error
