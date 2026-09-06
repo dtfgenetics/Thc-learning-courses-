@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Teaching Healthy Cultivation Academy learning portal">
+  <meta name="description" content="Teaching Healthy Cultivation Academy learning portal with evidence-backed cultivation education from foundations through specialist practice.">
+  <meta property="og:title" content="THC Academy">
+  <meta property="og:description" content="Evidence-backed cultivation education, practice, learning tools, and credential verification.">
   <title>THC Academy</title>
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/governance.css">
+  <link rel="stylesheet" href="/portal.css">
 </head>
 <body>
   <a class="skip-link" href="#lesson-view">Skip to lesson content</a>
@@ -16,7 +19,14 @@
       <h1>THC Academy</h1>
       <p class="lede">Evidence-backed cultivation education, organized from foundations through specialist practice.</p>
     </div>
-    <div id="mode-badge" class="mode-badge" aria-live="polite">Loading…</div>
+    <div class="header-right">
+      <div id="mode-badge" class="mode-badge" aria-live="polite">Loading…</div>
+      <nav class="portal-nav" aria-label="Academy features">
+        <button type="button" id="tab-catalog" class="portal-tab active" aria-pressed="true">Curriculum</button>
+        <button type="button" id="tab-tools" class="portal-tab" aria-pressed="false">Learning Tools</button>
+        <button type="button" id="tab-verify" class="portal-tab" aria-pressed="false">Verify Credential</button>
+      </nav>
+    </div>
   </header>
 
   <section id="governance-dashboard" class="governance-dashboard" aria-live="polite">
@@ -45,5 +55,6 @@
   </footer>
   <script type="module" src="/app.js"></script>
   <script type="module" src="/governance.js"></script>
+  <script type="module" src="/portal.js"></script>
 </body>
 </html>
