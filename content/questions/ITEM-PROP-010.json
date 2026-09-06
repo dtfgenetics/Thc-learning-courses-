@@ -1,1 +1,21 @@
-{"id":"ITEM-PROP-010","version":1,"status":"draft","purpose":"summative","competency":"COMP-PROP-001","objective":"LO-PROP-001","bloomLevel":"apply","difficulty":"moderate","type":"multiple-choice","stem":"Why is sanitation especially important during propagation?","choices":["Many young plants are handled closely and can amplify pests or pathogens introduced through tools, stock or surfaces","Young plants cannot carry pathogens","Sanitation affects only mature flowers","Clean tools replace healthy stock"],"correct":0,"rationale":"Propagation concentrates susceptible plant material and repeated handling, making sanitation a key risk-control step.","references":["REF-PROP-001","REF-IPM-001"]}
+{
+  "id": "ITEM-PROP-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-PROP-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "A newly rooted propagule wilts after being moved abruptly from a high-humidity propagation environment into much drier air. What is the best corrective approach?",
+  "choices": [
+    "Return it to a protected transition environment and reduce humidity gradually while maintaining appropriate root-zone moisture",
+    "Increase fertilizer concentration immediately so the plant takes up more water",
+    "Allow the root zone to dry completely to force faster adaptation",
+    "Remove most of the new roots so shoot water demand falls"
+  ],
+  "correct": 0,
+  "rationale": "Newly rooted propagules benefit from gradual acclimatization as transpiration demand and root water uptake capacity rebalance; an abrupt humidity drop can produce wilting before the plant is adapted.",
+  "references": ["REF-PROP-001"]
+}
