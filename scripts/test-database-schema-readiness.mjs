@@ -1,6 +1,18 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { once } from 'node:events';
 import { createApiServer } from '../apps/api/src/server.mjs';
+
+const schemaSql = fs.readFileSync('database/schema.sql', 'utf8');
+for (const requiredFragment of [
+  'rubric_id text',
+  'rubric_version text',
+  'delivery_mode text',
+  'performance_assessment_results_delivery_mode_check',
+  "values ('3', 'Performance assessment evaluator, rubric, and delivery provenance')"
+]) {
+  assert.equal(schemaSql.includes(requiredFragment), true, `database/schema.sql missing schema v3 contract fragment: ${requiredFragment}`);
+}
 
 async function requestReadiness(schemaVersion) {
   const credentialStore = {
@@ -43,4 +55,4 @@ assert.equal(missing.status, 503);
 assert.equal(missing.body.error, 'database-schema-version-mismatch');
 assert.equal(missing.body.actualSchemaVersion, null);
 
-console.log('Database schema readiness gate passed.');
+console.log('Database schema v3 provenance and readiness gate passed.');
