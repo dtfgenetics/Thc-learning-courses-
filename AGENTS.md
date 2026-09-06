@@ -8,6 +8,8 @@ For broad GitHub repository health, branches, pull requests, merges, conflicts, 
 
 `skills/github-orchestrator/SKILL.md`
 
+Ordinary work must reach `dev` through a feature/content/fix/chore branch and pull request. Do not push ordinary commits directly to `dev`, `staging`, or `main`, even when server-side branch protection is absent. Direct integration-branch writes are reserved only for an explicitly documented emergency repair when the normal PR path is impossible; immediately run post-push cleanup and record the exception.
+
 Use specialist skills when the failure class is clear:
 
 - Application/source/runtime/browser defects, broken pages/routes/features/games/tools, production-vs-source drift, and end-to-end debugging coordination: `skills/dev-debugger/SKILL.md`
