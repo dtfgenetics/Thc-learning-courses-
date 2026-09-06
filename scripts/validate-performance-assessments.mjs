@@ -58,7 +58,11 @@ if (fs.existsSync(credentialDir)) {
   for (const name of fs.readdirSync(credentialDir).filter((entry) => entry.endsWith('.json')).sort()) {
     const rel = path.join('content/credentials', name);
     const credential = readJson(rel);
-    for (const assessmentId of credential.eligibility?.requiredPerformanceAssessments ?? []) {
+    const requiredPerformance = credential.eligibility?.requiredPerformanceAssessments ?? [];
+    if (requiredPerformance.length > 0 && credential.eligibility?.requireVerifiedPerformanceEvidence !== true) {
+      errors.push(`${rel}: credentials with performance requirements must set requireVerifiedPerformanceEvidence=true`);
+    }
+    for (const assessmentId of requiredPerformance) {
       const definition = performanceById.get(assessmentId);
       if (!definition) {
         errors.push(`${rel}: required performance assessment does not exist: ${assessmentId}`);
