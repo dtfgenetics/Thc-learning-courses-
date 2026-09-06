@@ -67,6 +67,19 @@ export function evaluateCredentialEligibility({ credential, evidence = {}, perfo
       continue;
     }
 
+    const requiredVersion = String(definition.version ?? '').trim();
+    const actualVersion = String(result.assessmentVersion ?? '').trim();
+    if (requiredVersion && actualVersion !== requiredVersion) {
+      missing.push({
+        type: 'performance-assessment',
+        id: requiredId,
+        reason: actualVersion ? 'performance-version-mismatch' : 'missing-performance-version',
+        required: requiredVersion,
+        actual: actualVersion || null
+      });
+      continue;
+    }
+
     const score = scorePercent(result);
     const minimum = Number(definition.passingStandard?.minimumPercent);
     if (score === null) {
