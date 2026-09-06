@@ -1,4 +1,4 @@
-import { courseProgress, readProgress, setLessonComplete, writeProgress } from './progress.js';
+import { courseProgress, createServerProgressClient, readProgress, setLessonComplete, writeProgress } from './progress.js';
 
 const catalogRoot = document.querySelector('#catalog');
 const catalogStatus = document.querySelector('#catalog-status');
@@ -8,7 +8,10 @@ const modeBadge = document.querySelector('#mode-badge');
 
 let catalog = null;
 let progress = readProgress();
+let progressMode = 'local';
+let accountSubject = null;
 let currentLesson = null;
+const progressClient = createServerProgressClient();
 
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
@@ -19,26 +22,25 @@ function text(tag, value, className = '') {
 
 function matchesQuery(course, query) {
   if (!query) return true;
-  const haystack = [
-    course.title,
-    course.description,
-    ...course.modules.flatMap((module) => [module.title, ...module.lessons.map((lesson) => lesson.title)])
-  ].join(' ').toLowerCase();
+  const haystack = [course.title, course.description, ...course.modules.flatMap((module) => [module.title, ...module.lessons.map((lesson) => lesson.title)])].join(' ').toLowerCase();
   return haystack.includes(query.toLowerCase());
+}
+
+function progressLabel() {
+  return progressMode === 'account' ? 'Account progress' : 'Local preview progress';
 }
 
 function renderCatalog() {
   catalogRoot.replaceChildren();
   const query = searchInput.value.trim();
   const courses = (catalog?.courses ?? []).filter((course) => matchesQuery(course, query));
-  catalogStatus.textContent = `${courses.length} course${courses.length === 1 ? '' : 's'} shown`;
+  catalogStatus.textContent = `${courses.length} course${courses.length === 1 ? '' : 's'} shown • ${progressLabel()}`;
   const completed = new Set(progress.completedLessons);
 
   for (const course of courses) {
     const details = document.createElement('details');
     details.className = 'course';
     if (query || courseProgress(course, progress).completed > 0) details.open = true;
-
     const summary = document.createElement('summary');
     summary.append(text('span', course.title));
     const courseState = courseProgress(course, progress);
@@ -51,7 +53,7 @@ function renderCatalog() {
     const progressTrack = document.createElement('div');
     progressTrack.className = 'progress-track';
     progressTrack.setAttribute('role', 'progressbar');
-    progressTrack.setAttribute('aria-label', `${course.title} local lesson progress`);
+    progressTrack.setAttribute('aria-label', `${course.title} ${progressLabel().toLowerCase()}`);
     progressTrack.setAttribute('aria-valuemin', '0');
     progressTrack.setAttribute('aria-valuemax', '100');
     progressTrack.setAttribute('aria-valuenow', String(courseState.percent));
@@ -67,7 +69,6 @@ function renderCatalog() {
       section.append(text('h3', module.title, 'module-title'));
       const list = document.createElement('ul');
       list.className = 'lesson-list';
-
       for (const lesson of module.lessons) {
         const item = document.createElement('li');
         const button = document.createElement('button');
@@ -104,26 +105,47 @@ function renderCompletionControl(article, lesson) {
   const section = document.createElement('section');
   section.className = 'completion-panel';
   const checked = progress.completedLessons.includes(lesson.id);
-
   const label = document.createElement('label');
   label.className = 'completion-label';
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.checked = checked;
-  checkbox.addEventListener('change', () => {
-    progress = writeProgress(setLessonComplete(progress, lesson.id, checkbox.checked));
+  const note = text('p', '', 'completion-note');
+
+  function setNote() {
+    if (progressMode === 'account') {
+      note.textContent = checkbox.checked
+        ? `Saved to your Academy account${accountSubject ? ` (${accountSubject})` : ''}. Lesson completion does not itself satisfy assessment or credential requirements.`
+        : 'Account progress is persisted. Lesson completion does not itself satisfy assessment or credential requirements.';
+    } else {
+      note.textContent = checkbox.checked
+        ? 'Marked complete on this device only.'
+        : 'Local preview progress only — this does not satisfy official assessment or credential requirements.';
+    }
+  }
+  setNote();
+
+  checkbox.addEventListener('change', async () => {
+    const requested = checkbox.checked;
+    checkbox.disabled = true;
+    if (progressMode === 'account') {
+      try {
+        await progressClient.setLesson({ lessonId: lesson.id, lessonVersion: lesson.version, complete: requested });
+        progress = setLessonComplete(progress, lesson.id, requested);
+      } catch (error) {
+        checkbox.checked = !requested;
+        note.textContent = `${error.message}. Your account progress was not changed.`;
+        checkbox.disabled = false;
+        return;
+      }
+    } else {
+      progress = writeProgress(setLessonComplete(progress, lesson.id, requested));
+    }
+    checkbox.disabled = false;
+    setNote();
     renderCatalog();
-    note.textContent = checkbox.checked
-      ? 'Marked complete on this device.'
-      : 'Completion removed from this device.';
   });
   label.append(checkbox, text('span', 'Mark this lesson complete'));
-
-  const note = text(
-    'p',
-    checked ? 'Marked complete on this device.' : 'Local progress only — this does not satisfy official assessment or credential requirements.',
-    'completion-note'
-  );
   section.append(label, note);
   article.append(section);
 }
@@ -134,12 +156,12 @@ function renderLesson(lesson) {
   article.className = 'lesson-article';
   article.append(text('p', 'THC Academy lesson', 'eyebrow'));
   article.append(text('h2', lesson.title));
-
   const meta = document.createElement('div');
   meta.className = 'lesson-meta';
   if (lesson.estimatedMinutes) meta.append(text('span', `${lesson.estimatedMinutes} min`, 'pill'));
   meta.append(text('span', `Version ${lesson.version}`, 'pill'));
   if (lesson.status !== 'published') meta.append(text('span', 'Staging preview — review pending', 'pill preview-pill'));
+  meta.append(text('span', progressLabel(), 'pill'));
   article.append(meta);
 
   const content = lesson.content ?? {};
@@ -149,7 +171,6 @@ function renderLesson(lesson) {
     intro.textContent = content.overview;
     article.append(intro);
   }
-
   if (Array.isArray(content.vocabulary) && content.vocabulary.length) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -166,7 +187,6 @@ function renderLesson(lesson) {
     section.append(grid);
     article.append(section);
   }
-
   for (const sectionData of content.sections ?? []) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -174,10 +194,8 @@ function renderLesson(lesson) {
     section.append(text('p', sectionData.body));
     article.append(section);
   }
-
   appendList(article, 'Worked examples', content.workedExamples);
   appendList(article, 'Common mistakes', content.commonMistakes);
-
   if (content.practicalApplication) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -185,7 +203,6 @@ function renderLesson(lesson) {
     section.append(text('p', content.practicalApplication, 'callout'));
     article.append(section);
   }
-
   if (content.summary) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -193,7 +210,6 @@ function renderLesson(lesson) {
     section.append(text('p', content.summary));
     article.append(section);
   }
-
   if (lesson.references?.length) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -201,7 +217,6 @@ function renderLesson(lesson) {
     section.append(text('p', lesson.references.join(', ')));
     article.append(section);
   }
-
   renderCompletionControl(article, lesson);
   lessonView.replaceChildren(article);
   lessonView.focus();
@@ -223,12 +238,28 @@ async function openLesson(id) {
   }
 }
 
+async function loadProgressMode() {
+  try {
+    const account = await progressClient.load();
+    progress = account.progress;
+    progressMode = 'account';
+    accountSubject = account.subject;
+  } catch {
+    progress = readProgress();
+    progressMode = 'local';
+    accountSubject = null;
+  }
+}
+
 async function start() {
   try {
     const response = await fetch('/api/catalog', { headers: { accept: 'application/json' } });
     if (!response.ok) throw new Error(`Catalog request failed (${response.status})`);
     catalog = await response.json();
-    modeBadge.textContent = catalog.mode === 'staging-preview' ? 'Staging preview' : 'Published content';
+    await loadProgressMode();
+    modeBadge.textContent = catalog.mode === 'staging-preview'
+      ? `Staging preview • ${progressLabel()}`
+      : `Published content • ${progressLabel()}`;
     renderCatalog();
   } catch (error) {
     modeBadge.textContent = 'Unavailable';

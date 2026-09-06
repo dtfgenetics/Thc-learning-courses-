@@ -29,6 +29,42 @@ export function setLessonComplete(progress, lessonId, complete = true) {
   return { completedLessons: [...current].sort() };
 }
 
+export function progressFromServerRows(rows = []) {
+  return {
+    completedLessons: [...new Set(
+      rows
+        .filter((row) => row?.status === 'completed' && typeof row.lessonId === 'string')
+        .map((row) => row.lessonId)
+    )].sort()
+  };
+}
+
+export function createServerProgressClient({ fetchImpl = globalThis.fetch, basePath = '/api/v1' } = {}) {
+  if (typeof fetchImpl !== 'function') throw new Error('Server progress client requires fetch');
+  return {
+    async load() {
+      const response = await fetchImpl(`${basePath}/me/progress`, {
+        method: 'GET',
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      });
+      if (!response.ok) throw Object.assign(new Error(`Account progress unavailable (${response.status})`), { status: response.status });
+      const body = await response.json();
+      return { progress: progressFromServerRows(body.progress), subject: body.learner?.subject ?? null };
+    },
+    async setLesson({ lessonId, lessonVersion, complete }) {
+      const response = await fetchImpl(`${basePath}/me/lessons/${encodeURIComponent(lessonId)}`, {
+        method: 'PUT',
+        headers: { accept: 'application/json', 'content-type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ lessonVersion: String(lessonVersion), status: complete ? 'completed' : 'not-started' })
+      });
+      if (!response.ok) throw Object.assign(new Error(`Account progress update failed (${response.status})`), { status: response.status });
+      return response.json();
+    }
+  };
+}
+
 export function courseProgress(course, progress) {
   const lessonIds = (course?.modules ?? []).flatMap((module) => (module.lessons ?? []).map((lesson) => lesson.id));
   const completed = new Set(progress?.completedLessons ?? []);
