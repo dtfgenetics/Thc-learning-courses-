@@ -40,8 +40,8 @@ export async function loadProductionApiOptions(env = process.env) {
     throw new Error('Production persistence adapter must provide credentialWriter.transitionById()');
   }
   const learnerStore = adapters?.learnerStore;
-  if (!learnerStore || typeof learnerStore.listProgress !== 'function' || typeof learnerStore.setLessonProgress !== 'function' || typeof learnerStore.listEnrollments !== 'function' || typeof learnerStore.enroll !== 'function' || typeof learnerStore.listCredentialEvidence !== 'function') {
-    throw new Error('Production persistence adapter must provide learnerStore progress, enrollment, and credential evidence methods');
+  if (!learnerStore || typeof learnerStore.listProgress !== 'function' || typeof learnerStore.setLessonProgress !== 'function' || typeof learnerStore.listEnrollments !== 'function' || typeof learnerStore.enroll !== 'function' || typeof learnerStore.listCredentialEvidence !== 'function' || typeof learnerStore.recordPerformanceAssessmentResult !== 'function') {
+    throw new Error('Production persistence adapter must provide learnerStore progress, enrollment, credential evidence, and performance result methods');
   }
 
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));

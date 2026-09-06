@@ -27,6 +27,7 @@ assert.equal(options.requiredSchemaVersion, '4');
 assert.equal(options.credentialWriter.kind, 'test-writer');
 assert.equal(typeof options.credentialWriter.transitionById, 'function');
 assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
+assert.equal(typeof options.learnerStore.recordPerformanceAssessmentResult, 'function');
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
 
@@ -40,4 +41,4 @@ assert.equal(authOk.ok, true);
 assert.equal(authOk.subject, 'external-user-001');
 assert.ok(authOk.scopes.includes('learner:read'));
 
-console.log('Production schema v4 persistence, lifecycle writer/history, learner evidence, and authentication adapter contract passed.');
+console.log('Production schema v4 persistence, lifecycle writer/history, learner evidence/performance writes, and authentication adapter contract passed.');
