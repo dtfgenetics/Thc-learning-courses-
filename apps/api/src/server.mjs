@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { publicCredentialView } from '../../../packages/domain/credential-runtime.mjs';
 import { evaluateCredentialEligibility } from '../../../packages/domain/credential-eligibility.mjs';
+import { isValidCurriculumVersion } from '../../../packages/domain/learning-completion.mjs';
 import { loadPerformanceDefinition, loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
@@ -15,6 +16,7 @@ const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
 const credentialDefinitions = new Map();
 const courseDefinitions = new Map();
+const lessonDefinitions = new Map();
 
 function loadCredentialDefinition(id) {
   if (!/^CRED-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
@@ -34,6 +36,17 @@ function loadCourseDefinition(id) {
   const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
   if (definition?.id !== id) return null;
   courseDefinitions.set(id, definition);
+  return definition;
+}
+
+function loadLessonDefinition(id) {
+  if (!/^LESSON-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (lessonDefinitions.has(id)) return lessonDefinitions.get(id);
+  const target = path.join(root, 'content/lessons', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (definition?.id !== id) return null;
+  lessonDefinitions.set(id, definition);
   return definition;
 }
 
@@ -272,8 +285,11 @@ export function createHandler({
         catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
         const lessonVersion = String(body.lessonVersion ?? '').trim();
         const status = String(body.status ?? '').trim();
-        if (!/^\d+$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
-        const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
+        if (!isValidCurriculumVersion(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
+        const lesson = loadLessonDefinition(lessonProgressMatch[1]);
+        if (!lesson) return json(res, 404, { error: 'lesson-not-found', requestId });
+        if (String(lesson.version) !== lessonVersion) return json(res, 409, { error: 'lesson-version-mismatch', currentVersion: String(lesson.version), requestId });
+        const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lesson.id, lessonVersion, status });
         return json(res, 200, { progress });
       }
 
