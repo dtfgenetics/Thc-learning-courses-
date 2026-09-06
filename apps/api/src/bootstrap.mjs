@@ -36,10 +36,7 @@ export async function loadProductionApiOptions(env = process.env) {
     throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
   }
   const learnerStore = adapters?.learnerStore;
-  const requiredLearnerMethods = [
-    'listProgress', 'setLessonProgress', 'listEnrollments', 'enroll',
-    'listCredentialProgress', 'addEvidence', 'listPortfolio', 'upsertPortfolioItem'
-  ];
+  const requiredLearnerMethods = ['listProgress', 'setLessonProgress', 'listEnrollments', 'enroll', 'listCredentialEvidence'];
   if (!learnerStore || requiredLearnerMethods.some((method) => typeof learnerStore[method] !== 'function')) {
     throw new Error(`Production persistence adapter must provide learnerStore methods: ${requiredLearnerMethods.join(', ')}`);
   }
@@ -49,12 +46,5 @@ export async function loadProductionApiOptions(env = process.env) {
   const authorize = await authModule.createRequestAuthorizer({ env });
   if (typeof authorize !== 'function') throw new Error('Authentication adapter must return an authorize(req, requiredScope) function');
 
-  return {
-    env,
-    credentialStore,
-    credentialWriter: adapters.credentialWriter ?? null,
-    learnerStore,
-    requiredSchemaVersion: config.requiredSchemaVersion,
-    authorize
-  };
+  return { env, credentialStore, credentialWriter: adapters.credentialWriter ?? null, learnerStore, requiredSchemaVersion: config.requiredSchemaVersion, authorize };
 }
