@@ -7,12 +7,13 @@ async function requestReadiness(schemaVersion) {
     kind: 'test-persistent',
     async ping() { return true; },
     async schemaVersion() { return schemaVersion; },
-    async getByVerificationId() { return null; }
+    async getByVerificationId() { return null; },
+    async listStatusHistoryByVerificationId() { return []; }
   };
   const server = createApiServer({
     env: { NODE_ENV: 'production' },
     credentialStore,
-    requiredSchemaVersion: '2',
+    requiredSchemaVersion: '3',
     authorize: () => ({ ok: false, status: 401, error: 'authentication-required' }),
     logger: () => {}
   });
@@ -27,16 +28,16 @@ async function requestReadiness(schemaVersion) {
   }
 }
 
-const matching = await requestReadiness('2');
+const matching = await requestReadiness('3');
 assert.equal(matching.status, 200);
 assert.equal(matching.body.ok, true);
-assert.equal(matching.body.schemaVersion, '2');
+assert.equal(matching.body.schemaVersion, '3');
 
-const stale = await requestReadiness('1');
+const stale = await requestReadiness('2');
 assert.equal(stale.status, 503);
 assert.equal(stale.body.error, 'database-schema-version-mismatch');
-assert.equal(stale.body.requiredSchemaVersion, '2');
-assert.equal(stale.body.actualSchemaVersion, '1');
+assert.equal(stale.body.requiredSchemaVersion, '3');
+assert.equal(stale.body.actualSchemaVersion, '2');
 
 const missing = await requestReadiness(null);
 assert.equal(missing.status, 503);
