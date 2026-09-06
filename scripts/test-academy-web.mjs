@@ -21,6 +21,16 @@ try {
   const homeHtml = await home.text();
   assert.match(homeHtml, /THC Academy/);
   assert.match(homeHtml, /governance-dashboard/);
+  assert.match(homeHtml, /credential-verification\.js/);
+
+  const verificationClient = await fetch(`${base}/credential-verification.js`);
+  assert.equal(verificationClient.status, 200);
+  const verificationText = await verificationClient.text();
+  assert.match(verificationText, /Issued credential version/);
+  assert.match(verificationText, /Current definition version/);
+  assert.match(verificationText, /Credential status history/);
+  assert.match(verificationText, /Credential limitations/);
+  assert.equal(/actorId|reason/.test(verificationText), false, 'employer verification UI must not depend on private lifecycle fields');
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
@@ -74,4 +84,4 @@ try {
   await once(production, 'close');
 }
 
-console.log('Academy learner web and staging governance tests passed.');
+console.log('Academy learner web, employer verification and staging governance tests passed.');
