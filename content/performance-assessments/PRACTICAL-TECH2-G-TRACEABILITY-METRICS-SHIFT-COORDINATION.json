@@ -1,0 +1,17 @@
+{
+  "id": "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION",
+  "title": "Technician II Practical G — Traceability, Metrics & Shift Coordination",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": ["TASK-CULT2-TRACE-001", "TASK-CULT2-METRICS-001", "TASK-CULT2-PEER-001"],
+  "competencies": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CROP-PLAN-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Traceability Reconciliation", "KPI worksheet", "Peer coaching note", "Senior Technician Shift Handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Reconciliation and genealogy","points":25},{"name":"KPI calculation and interpretation","points":25},{"name":"Data integrity","points":20},{"name":"Peer support and communication","points":15},{"name":"Final handoff","points":15}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Fabricates a record to force reconciliation.", "Overwrites planned history instead of preserving planned versus actual data.", "Changes a controlled record outside assigned authorization.", "Uses the wrong KPI denominator after the data definition is provided."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION.md"
+}

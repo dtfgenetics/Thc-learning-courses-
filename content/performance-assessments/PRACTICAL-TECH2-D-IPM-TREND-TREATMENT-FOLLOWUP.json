@@ -1,0 +1,17 @@
+{
+  "id": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+  "title": "Technician II Practical D — IPM Trend & Treatment Follow-Up",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": ["TASK-CULT2-IPM-001"],
+  "competencies": ["COMP-IPM-ADV-001", "COMP-PRO-QA-001", "COMP-SPACE-BIOSEC-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["IPM Trend & Treatment Follow-Up Report", "Annotated scouting map", "Next-round follow-up plan"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Sampling and data quality","points":15},{"name":"Trend and spatial interpretation","points":25},{"name":"Intervention follow-up reasoning","points":25},{"name":"Scope and escalation","points":20},{"name":"Documentation","points":15}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Takes an unauthorized pesticide or treatment action.", "Declares control success from isolated data contradicted by the trend.", "Erases or falsifies scouting observations.", "Breaks required quarantine or biosecurity handling."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP.md"
+}
