@@ -27,21 +27,27 @@ export function transitionCredential(credential, nextStatus, { actorId, reason =
 }
 
 export function publicCredentialView(credential, definition) {
+  if (!definition?.id) throw new Error('credential definition required');
+  const payload = credential.payloadJson ?? {};
   return {
     verificationId: credential.verificationId,
     status: credential.status,
     credential: {
       id: definition.id,
       title: definition.title,
-      version: credential.credentialDefinitionVersion
+      version: credential.credentialDefinitionVersion ?? credential.credentialVersion ?? definition.version,
+      role: definition.role ?? null,
+      description: definition.publicDescription ?? null
     },
     course: {
-      id: credential.courseId,
-      version: credential.courseVersion
+      id: credential.courseId ?? definition.course,
+      version: credential.courseVersion ?? null
     },
-    issuer: credential.issuer,
+    issuer: credential.issuer ?? payload.issuer ?? null,
     issuedAt: credential.issuedAt,
     expiresAt: credential.expiresAt ?? null,
-    disclaimer: 'This educational credential demonstrates successful completion of the specified THC Academy curriculum and assessment. It is not a state cannabis license, occupational license, government certification, or authorization to cultivate, manufacture, possess, distribute, or sell cannabis.'
+    evidenceSummary: payload.publicEvidenceSummary ?? null,
+    limitations: definition.limitations ?? [],
+    disclaimer: 'This educational credential demonstrates successful completion of the specified THC Academy curriculum and assessment requirements. It is not a state cannabis license, occupational license, government certification, or authorization to cultivate, manufacture, possess, distribute, or sell cannabis.'
   };
 }
