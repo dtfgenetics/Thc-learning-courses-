@@ -1,0 +1,17 @@
+{
+  "id": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+  "title": "Technician II Practical C — Fertigation & Root-Zone Troubleshooting",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": ["TASK-CULT2-FERTIGATION-001", "TASK-CULT2-ROOTZONE-001"],
+  "competencies": ["COMP-WATER-QUALITY-ADV-001", "COMP-IRRIGATION-ADV-001", "COMP-NUTRIENT-DIAG-001", "COMP-PRO-SOP-001", "COMP-SAFETY-WORK-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Completed batch record", "Measurement-verification record", "Root-zone and irrigation diagnostic memo", "Next-check or correction recommendation"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Batch preparation and verification","points":30},{"name":"Measurement quality","points":15},{"name":"Root-zone trend interpretation","points":20},{"name":"Distribution and scheduling reasoning","points":20},{"name":"Records and escalation","points":15}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Makes an unapproved recipe or chemical change.", "Ignores an incorrect or incompatible material identity.", "Uses unsafe chemical-handling practices.", "Acts on an abnormal measurement without required verification.", "Assumes a universal dryback target without crop and media context."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.md"
+}

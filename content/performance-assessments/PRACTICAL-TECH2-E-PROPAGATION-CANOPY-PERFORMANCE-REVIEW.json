@@ -1,0 +1,17 @@
+{
+  "id": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+  "title": "Technician II Practical E — Propagation / Canopy Performance Review",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": ["TASK-CULT2-PROP-001", "TASK-CULT2-CANOPY-001"],
+  "competencies": ["COMP-PROP-001", "COMP-CANOPY-ADV-001", "COMP-FLOWER-ADV-001", "COMP-IPM-ADV-001", "COMP-PRO-QA-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Propagation Performance Review or Canopy/Flowering Performance Review", "Supervisor handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Performance calculation and data use","points":20},{"name":"Pattern and evidence interpretation","points":25},{"name":"Troubleshooting workflow","points":25},{"name":"Role-boundary judgment","points":15},{"name":"Documentation","points":15}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Claims contamination or genotype effects without supporting evidence.", "Performs an unauthorized high-risk intervention.", "Ignores required sanitation or traceability controls.", "Alters original production records to remove contrary evidence."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW.md"
+}

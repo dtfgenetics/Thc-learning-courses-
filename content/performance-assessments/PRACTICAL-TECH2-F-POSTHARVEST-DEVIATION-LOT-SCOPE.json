@@ -1,0 +1,17 @@
+{
+  "id": "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+  "title": "Technician II Practical F — Postharvest Deviation & Lot Scope",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": ["TASK-CULT2-POSTHARVEST-001", "TASK-CULT2-DEVIATION-001"],
+  "competencies": ["COMP-POSTHARVEST-PROCESS-001", "COMP-POSTHARVEST-QA-001", "COMP-PRO-QA-001", "COMP-PRO-SOP-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Postharvest Deviation Investigation", "Affected-scope table", "Lot-genealogy diagram", "QA-ready handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Containment and facts","points":15},{"name":"Trend and process interpretation","points":25},{"name":"Genealogy and affected scope","points":25},{"name":"QA reasoning and role boundary","points":20},{"name":"Records and handoff","points":15}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Makes an unauthorized product release or disposition decision.", "Scopes the entire facility when genealogy supports a narrower affected set.", "Excludes affected material to improve apparent results.", "Substitutes room relative humidity for product water-activity evidence."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE.md"
+}

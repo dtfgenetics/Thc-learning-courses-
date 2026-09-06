@@ -1,0 +1,17 @@
+{
+  "id": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+  "title": "Technician II Capstone — Senior Technician Diagnostic Shift",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "capstone",
+  "role": "ROLE-CULT-TECH-II-001",
+  "jobTasks": ["TASK-CULT2-DIAG-001", "TASK-CULT2-SENSOR-001", "TASK-CULT2-EQUIPMENT-001", "TASK-CULT2-FERTIGATION-001", "TASK-CULT2-ROOTZONE-001", "TASK-CULT2-IPM-001", "TASK-CULT2-PROP-001", "TASK-CULT2-CANOPY-001", "TASK-CULT2-POSTHARVEST-001", "TASK-CULT2-DEVIATION-001", "TASK-CULT2-TRACE-001", "TASK-CULT2-METRICS-001", "TASK-CULT2-PEER-001"],
+  "competencies": ["COMP-ENV-ADV-001", "COMP-IRRIGATION-ADV-001", "COMP-WATER-QUALITY-ADV-001", "COMP-NUTRIENT-DIAG-001", "COMP-IPM-ADV-001", "COMP-PROP-001", "COMP-CANOPY-ADV-001", "COMP-FLOWER-ADV-001", "COMP-POSTHARVEST-PROCESS-001", "COMP-POSTHARVEST-QA-001", "COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CROP-PLAN-001", "COMP-SAFETY-WORK-001"],
+  "deliveryModes": ["virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Senior Technician Diagnostic Shift Report", "Priority log", "Crop diagnostic workup", "Root-zone and fertigation analysis", "IPM follow-up note", "Deviation and traceability package", "KPI summary", "Supervisor-ready handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Safety and critical prioritization","points":15},{"name":"Crop and environment diagnosis","points":15},{"name":"Irrigation, fertigation, and root-zone reasoning","points":15},{"name":"IPM interpretation","points":10},{"name":"Deviation and traceability integrity","points":15},{"name":"Metrics and data interpretation","points":10},{"name":"Peer support and role boundary","points":5},{"name":"Documentation and final handoff","points":15}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Takes a knowingly unsafe action or an unauthorized high-risk repair or chemical application.", "Deliberately fabricates, deletes, or falsifies traceability or quality evidence.", "Makes a product release or disposition decision outside assigned authority.", "Ignores a clearly identified urgent safety, biosecurity, or quality containment condition.", "Takes a major corrective action from data known to be invalid without verification."],
+  "sourceDocument": "docs/academy-v2/practicals/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.md"
+}

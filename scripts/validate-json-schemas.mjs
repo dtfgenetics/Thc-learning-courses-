@@ -15,6 +15,7 @@ const mappings = [
   ['content/learning-objectives', 'schemas/learning-objective.schema.json'],
   ['content/lessons', 'schemas/lesson.schema.json'],
   ['content/modules', 'schemas/module.schema.json'],
+  ['content/performance-assessments', 'schemas/performance-assessment.schema.json'],
   ['content/programs', 'schemas/program.schema.json'],
   ['content/questions', 'schemas/question.schema.json'],
   ['content/references', 'schemas/reference.schema.json']
