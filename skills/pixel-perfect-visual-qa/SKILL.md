@@ -132,6 +132,95 @@ For important components capture/inspect the states users actually see:
 - validation/error;
 - success/confirmation.
 
+## Surface profiles
+Do not audit every product surface identically. Apply additional checks by surface type.
+
+### Marketing, genetics, gallery, and landing pages
+Verify hero composition, CTA hierarchy, image quality/cropping, card-grid rhythm, section transitions, navigation/footer consistency, promotional banners, metadata-driven share previews when visible, and long-page spacing.
+
+### Academy, lessons, encyclopedia, and certification pages
+Verify reading width, heading hierarchy, lesson navigation, progress indicators, diagrams/infographics, tables, callouts, quiz controls, code/math/science blocks when present, printable/downloadable assets, sticky course navigation, and long-form mobile readability.
+
+### Games and canvas/WebGL surfaces
+Verify canvas fit, HUD safe areas, score/status readability, touch controls, keyboard focus, overlays, pause/restart/game-over states, orientation changes, aspect-ratio behavior, loading states, and no game UI hidden behind site chrome.
+
+### Interactive tools, calculators, forms, and dashboards
+Verify input sizing, labels, validation, results panels, dense tables/cards, filters, menus, empty/loading/error/success states, keyboard navigation, mobile stacking, and data visualization clipping.
+
+### Infographics, printables, image libraries, and document viewers
+Verify asset resolution, aspect ratio, zoom/readability, download controls, captions, thumbnail consistency, print-safe layout where applicable, and no low-resolution or stretched imagery.
+
+### Shared shell and design-system primitives
+Verify header, footer, nav, buttons, form controls, cards, badges, dialogs, spacing tokens, typography tokens, breakpoints, and shared container geometry across representative consumers before patching individual routes.
+
+## Executable repository implementation
+The repository implementation for this skill is intentionally shared with Playwright and Lighthouse:
+- `web-qa.config.mjs` defines base URL, route limits, enforcement mode, visual mode, and viewport matrix;
+- `scripts/discover-public-routes.mjs` builds the first-party route inventory;
+- `playwright.config.mjs` defines deterministic browser projects and evidence retention;
+- `tests/web-qa/site-health.spec.mjs` captures browser/runtime defects;
+- `tests/web-qa/visual-regression.spec.mjs` captures candidate screenshots or compares approved baselines;
+- `lighthouserc.cjs` audits Performance, Accessibility, Best Practices, and SEO;
+- `.github/workflows/web-quality.yml` runs PR, staging/main, scheduled, and manual quality passes.
+
+Use repository scripts when present. Install the pinned web-QA runtime with `npm run web:qa:install`, discover routes with `npm run web:routes`, then use `npm run web:qa:health`, `npm run web:qa:visual`, and `npm run web:qa:lighthouse` as appropriate.
+
+## Quality maturity modes
+The QA system has explicit maturity modes so existing site debt can be surfaced without being silently accepted.
+
+### Observe
+Use while first inventorying a legacy or under-tested surface. Capture findings and artifacts without pretending the current state is correct. Observation is not completion.
+
+### Repair
+Work through browser, visual, accessibility, SEO, and performance findings in priority order. Shared defects should be fixed at the shared layer.
+
+### Baseline
+After a surface has been reviewed and intentionally accepted, establish deterministic visual references. Do not auto-approve screenshots simply because they are current production.
+
+### Enforce
+Set hard failure behavior only after the relevant baseline and known defects have been resolved or explicitly approved. Enforced routes must fail on unexplained browser errors, broken requests, screenshot differences, or configured Lighthouse deductions.
+
+### Production watch
+Re-run scheduled and post-release audits so later deployments, CDN changes, fonts, dependencies, data, or third parties cannot quietly degrade previously approved surfaces.
+
+A route may never be promoted from Observe directly to "pixel-perfect" without the Repair and Baseline steps.
+
+## Evidence contract
+Every visual QA run should retain enough evidence to reproduce the result:
+- exact URL and environment;
+- commit/release SHA when applicable;
+- browser and viewport/project;
+- screenshot candidate or visual diff;
+- Playwright trace/video for behavioral failures when useful;
+- console/network failure details;
+- Lighthouse report for audited routes;
+- baseline identity/reference;
+- classification of intentional versus unintended change.
+
+Do not report a route as passing if evidence is missing for a required dimension.
+
+## Baseline governance
+Approved visual baselines are controlled test assets.
+- Candidate screenshots may be generated automatically.
+- Candidate generation is not baseline approval.
+- Review the candidate against the strongest approved design/reference first.
+- Commit or update a baseline only for an intentional accepted appearance.
+- Keep the CI rendering environment consistent with baseline generation.
+- If a baseline is invalid because the design itself is wrong, repair the design and create a new approved baseline; do not preserve a bad screenshot merely because it existed first.
+
+## Scale strategy for all future work
+As the DTF Seeds/THC system grows, protect quality without exploding test cost:
+- every customer-facing route participates in route discovery and health auditing;
+- shared shell/design-system changes receive broad regression coverage;
+- high-value and visually stable surfaces receive committed visual baselines;
+- interactive games/tools receive state-specific component or region screenshots in addition to page captures;
+- PRs run focused/representative checks;
+- staging/main promotion and scheduled production runs expand toward the full public route set;
+- expensive audits retain artifacts rather than being duplicated in unrelated fast curriculum jobs;
+- repeated defect classes should become reusable assertions/helpers instead of one-off manual checks.
+
+When new product categories appear, add a surface profile and reusable coverage rather than inventing a separate QA system.
+
 ## Design-system repair rule
 When the same visual defect appears across multiple pages, prefer fixing the shared token/component/layout primitive rather than patching every route separately. Re-run visual regression tests on all affected consumers after shared fixes.
 
