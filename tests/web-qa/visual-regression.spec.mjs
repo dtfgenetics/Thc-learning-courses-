@@ -1,12 +1,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { test, expect } from '@playwright/test';
-import { WEB_QA_ARTIFACT_DIR, WEB_QA_BASE_URL, WEB_QA_ROUTE_FILE, WEB_QA_VISUAL_MODE } from '../../web-qa.config.mjs';
+import {
+  WEB_QA_ARTIFACT_DIR,
+  WEB_QA_BASE_URL,
+  WEB_QA_ROUTE_FILE,
+  WEB_QA_VISUAL_MAX_ROUTES,
+  WEB_QA_VISUAL_MODE,
+} from '../../web-qa.config.mjs';
 
 function loadRoutes() {
   if (!fs.existsSync(WEB_QA_ROUTE_FILE)) return [WEB_QA_BASE_URL];
   const parsed = JSON.parse(fs.readFileSync(WEB_QA_ROUTE_FILE, 'utf8'));
-  return parsed.routes?.length ? parsed.routes : [WEB_QA_BASE_URL];
+  const routes = parsed.routes?.length ? parsed.routes : [WEB_QA_BASE_URL];
+  return routes.slice(0, WEB_QA_VISUAL_MAX_ROUTES);
 }
 
 function safeName(route) {
