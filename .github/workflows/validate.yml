@@ -24,8 +24,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Install validation dependencies
-        run: npm install --no-package-lock --no-audit --no-fund
+      - name: Install validation dependencies and generate lockfile
+        run: npm install --no-audit --no-fund
       - name: Build expected curriculum registry
         run: npm run registry:build
       - name: Upload generated curriculum registry
@@ -34,17 +34,17 @@ jobs:
           name: generated-curriculum-registry
           path: registry/curriculum.json
           if-no-files-found: error
-      - name: Synchronize generated curriculum registry on same-repo PRs
+      - name: Synchronize generated files on same-repo PRs
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         run: |
-          if ! git diff --quiet -- registry/curriculum.json; then
+          if ! git diff --quiet -- registry/curriculum.json package-lock.json; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add registry/curriculum.json
-            git commit -m "Sync generated curriculum registry"
+            git add registry/curriculum.json package-lock.json
+            git commit -m "Sync generated registry and dependency lock"
             git push origin HEAD:${{ github.head_ref }}
           fi
-      - name: Require committed curriculum registry to match source objects
-        run: git diff --exit-code -- registry/curriculum.json
+      - name: Require committed generated files to match source objects
+        run: git diff --exit-code -- registry/curriculum.json package-lock.json
       - name: Run complete curriculum and credential test suite
         run: npm test
