@@ -34,6 +34,21 @@
         "additionalProperties": false
       }
     },
+    "itemPools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "idPrefix", "items", "cognitiveTarget"],
+        "properties": {
+          "name": {"type": "string", "minLength": 3},
+          "idPrefix": {"type": "string", "pattern": "^ITEM-[A-Z0-9-]+-$"},
+          "items": {"type": "integer", "minimum": 1},
+          "cognitiveTarget": {"type": "string", "minLength": 3}
+        },
+        "additionalProperties": false
+      }
+    },
     "itemSelection": {
       "type": "object",
       "required": ["minimumActiveItemsPerCompetency", "targetBankItemsPerCompetency", "requireReferenceBackedItems", "requireHumanAssessmentReview"],
@@ -56,7 +71,7 @@
   },
   "allOf": [
     {
-      "if": {"required": ["blueprint"]},
+      "if": {"anyOf": [{"required": ["blueprint"]}, {"required": ["itemPools"]}]},
       "then": {"required": ["totalItems", "itemSelection"]}
     }
   ],
