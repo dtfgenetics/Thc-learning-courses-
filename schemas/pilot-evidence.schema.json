@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/pilot-evidence.schema.json",
+  "title": "THC Academy Assessment Item Pilot Evidence",
+  "type": "object",
+  "required": ["id", "itemId", "itemVersion", "status", "sampleSize", "percentCorrect", "discrimination", "distractorSelection", "omitRate", "medianResponseTimeSeconds", "responseTimeAnomalyRate", "challengeHistory", "analystId"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^PILOT-[A-Z0-9-]+$"},
+    "itemId": {"type": "string", "pattern": "^ITEM-[A-Z0-9-]+$"},
+    "itemVersion": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["draft", "complete", "invalidated"]},
+    "sampleSize": {"type": "integer", "minimum": 0},
+    "percentCorrect": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "discrimination": {
+      "type": ["object", "null"],
+      "properties": {
+        "method": {"enum": ["point-biserial", "upper-lower", "other"]},
+        "value": {"type": "number", "minimum": -1, "maximum": 1}
+      },
+      "required": ["method", "value"],
+      "additionalProperties": false
+    },
+    "distractorSelection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["choiceIndex", "count", "proportion"],
+        "properties": {
+          "choiceIndex": {"type": "integer", "minimum": 0},
+          "count": {"type": "integer", "minimum": 0},
+          "proportion": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "omitRate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "medianResponseTimeSeconds": {"type": ["number", "null"], "minimum": 0},
+    "responseTimeAnomalyRate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "challengeHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "summary"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["open", "resolved-upheld", "resolved-dismissed"]},
+          "summary": {"type": "string", "minLength": 1},
+          "resolution": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "analystId": {"type": "string", "minLength": 3},
+    "completedAt": {"type": ["string", "null"], "format": "date-time"},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
