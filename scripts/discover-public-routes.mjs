@@ -12,6 +12,7 @@ const base = new URL(process.env.WEB_QA_BASE_URL || WEB_QA_BASE_URL);
 const output = process.env.WEB_QA_ROUTE_FILE || WEB_QA_ROUTE_FILE;
 const maxRoutes = Number(process.env.WEB_QA_MAX_ROUTES || WEB_QA_MAX_ROUTES);
 const seen = new Set();
+const validHtmlRoutes = new Set();
 const queued = [];
 const sitemapVisited = new Set();
 
@@ -66,13 +67,28 @@ async function fetchText(url, accept = '*/*') {
       signal: controller.signal,
       headers: { 'user-agent': 'DTFSeeds-Web-QA/1.0', accept },
     });
-    if (!response.ok) return { ok: false, status: response.status, url: response.url, text: '' };
-    return { ok: true, status: response.status, url: response.url, text: await response.text() };
+    const contentType = response.headers.get('content-type') || '';
+    if (!response.ok) {
+      return { ok: false, status: response.status, url: response.url, contentType, text: '' };
+    }
+    return {
+      ok: true,
+      status: response.status,
+      url: response.url,
+      contentType,
+      text: await response.text(),
+    };
   } catch (error) {
-    return { ok: false, status: 0, url, text: '', error: String(error) };
+    return { ok: false, status: 0, url, contentType: '', text: '', error: String(error) };
   } finally {
     clearTimeout(timer);
   }
+}
+
+function isHtmlDocument(result) {
+  if (!result.ok) return false;
+  if (/\btext\/html\b/i.test(result.contentType)) return true;
+  return /<!doctype\s+html|<html[\s>]/i.test(result.text.slice(0, 5000));
 }
 
 async function readSitemap(url) {
@@ -93,13 +109,19 @@ await readSitemap(new URL('/sitemap_index.xml', base));
 
 for (let index = 0; index < queued.length && index < maxRoutes; index += 1) {
   const current = queued[index];
-  const result = await fetchText(current, 'text/html,*/*');
-  if (!result.ok || !/text\/html/i.test(result.text.slice(0, 5000)) && !/<html/i.test(result.text)) continue;
+  const result = await fetchText(current, 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.1');
+  if (!isHtmlDocument(result)) {
+    console.log(`Skipping non-HTML route: ${current} (${result.status || 'fetch-error'} ${result.contentType || 'unknown-type'})`);
+    continue;
+  }
+
+  const finalUrl = normalize(result.url || current);
+  if (finalUrl) validHtmlRoutes.add(finalUrl);
   for (const link of extractLinks(result.text, result.url || current)) add(link);
 }
 
-const routes = [...seen].sort();
+const routes = [...validHtmlRoutes].sort();
 await fs.mkdir(path.dirname(output), { recursive: true });
 await fs.writeFile(output, JSON.stringify({ baseUrl: base.origin, generatedAt: new Date().toISOString(), count: routes.length, routes }, null, 2) + '\n');
-console.log(`Discovered ${routes.length} public first-party routes for ${base.origin}`);
+console.log(`Discovered ${routes.length} public first-party HTML routes for ${base.origin}`);
 for (const route of routes) console.log(route);
