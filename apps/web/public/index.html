@@ -6,6 +6,7 @@
   <meta name="description" content="Teaching Healthy Cultivation Academy learning portal">
   <title>THC Academy</title>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/governance.css">
 </head>
 <body>
   <a class="skip-link" href="#lesson-view">Skip to lesson content</a>
@@ -17,6 +18,10 @@
     </div>
     <div id="mode-badge" class="mode-badge" aria-live="polite">Loading…</div>
   </header>
+
+  <section id="governance-dashboard" class="governance-dashboard" aria-live="polite">
+    <p class="status">Loading staging governance status…</p>
+  </section>
 
   <main class="app-shell">
     <aside class="catalog-panel" aria-label="Course catalog">
@@ -39,5 +44,6 @@
     <p>THC Academy educational content does not replace legal, occupational, medical, pesticide-label, or jurisdiction-specific requirements.</p>
   </footer>
   <script type="module" src="/app.js"></script>
+  <script type="module" src="/governance.js"></script>
 </body>
 </html>
