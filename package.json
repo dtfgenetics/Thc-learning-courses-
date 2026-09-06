@@ -25,6 +25,8 @@
     "review:packets:check": "node scripts/build-review-packets.mjs --summary-only",
     "review:readiness": "node scripts/report-review-readiness.mjs",
     "pilot:validate": "node scripts/validate-pilot-evidence.mjs",
+    "pilot:template": "node scripts/create-pilot-evidence-template.mjs",
+    "pilot:readiness": "node scripts/report-pilot-readiness.mjs",
     "itembank:readiness": "node scripts/report-item-bank-readiness.mjs",
     "runtime:test": "node scripts/test-runtime-core.mjs",
     "api:test": "node scripts/test-api-security.mjs",
@@ -37,7 +39,7 @@
     "release:check": "node scripts/check-release-readiness.mjs",
     "knowledge:validate": "node scripts/validate-knowledge-base.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run review:packets:check && npm run pilot:validate && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run credential:coverage && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run production:readiness"
+    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run review:packets:check && npm run pilot:validate && npm run pilot:readiness && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run credential:coverage && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run production:readiness"
   },
   "engines": {
     "node": ">=20"

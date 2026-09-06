@@ -15,3 +15,14 @@ Promotion rules enforced by `npm run pilot:validate`:
 - invalidated pilot records never satisfy the activation gate.
 
 A complete pilot record requires observed response statistics and a valid completion timestamp. The schema intentionally permits a `draft` record with incomplete/null statistics so a pilot can be registered before data collection begins.
+
+Operational commands:
+
+```bash
+npm run pilot:template -- --item=ITEM-WATER-009 --analyst=reviewer-01
+npm run pilot:template -- --item=ITEM-WATER-009 --analyst=reviewer-01 --write
+npm run pilot:readiness
+npm run pilot:validate
+```
+
+`pilot:template` creates a safe **draft** record only. It never generates completed statistics or changes item status. `pilot:readiness` reports how many summative/credential items have pilot records, complete pilot evidence, approved assessment review, and both activation prerequisites. It does not activate items automatically.
