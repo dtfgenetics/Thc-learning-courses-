@@ -7,7 +7,7 @@ assert.deepEqual(validateProductionEnvironment({ NODE_ENV: 'development' }), { m
 for (const env of [
   { NODE_ENV: 'production' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '1' },
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '2' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com' }
 ]) assert.throws(() => validateProductionEnvironment(env));
 
@@ -16,14 +16,15 @@ const productionEnv = {
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_REQUIRED_SCHEMA_VERSION: '1'
+  THC_REQUIRED_SCHEMA_VERSION: '2'
 };
 const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
 assert.equal(await options.credentialStore.ping(), true);
-assert.equal(await options.credentialStore.schemaVersion(), '1');
-assert.equal(options.requiredSchemaVersion, '1');
+assert.equal(await options.credentialStore.schemaVersion(), '2');
+assert.equal(options.requiredSchemaVersion, '2');
 assert.equal(options.credentialWriter.kind, 'test-writer');
+assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
 
@@ -37,4 +38,4 @@ assert.equal(authOk.ok, true);
 assert.equal(authOk.subject, 'external-user-001');
 assert.ok(authOk.scopes.includes('learner:read'));
 
-console.log('Production persistence, schema readiness, and authentication adapter contract passed.');
+console.log('Production persistence, schema readiness, learner evidence, and authentication adapter contract passed.');
