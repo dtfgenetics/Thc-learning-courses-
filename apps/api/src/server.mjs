@@ -5,7 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { publicCredentialView } from '../../../packages/domain/credential-runtime.mjs';
 import { evaluateCredentialEligibility } from '../../../packages/domain/credential-eligibility.mjs';
-import { isValidCurriculumVersion } from '../../../packages/domain/learning-completion.mjs';
+import { isValidCurriculumVersion, projectLearningCompletion } from '../../../packages/domain/learning-completion.mjs';
 import { loadPerformanceDefinition, loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
@@ -16,6 +16,7 @@ const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
 const credentialDefinitions = new Map();
 const courseDefinitions = new Map();
+const moduleDefinitions = new Map();
 const lessonDefinitions = new Map();
 
 function loadCredentialDefinition(id) {
@@ -36,6 +37,17 @@ function loadCourseDefinition(id) {
   const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
   if (definition?.id !== id) return null;
   courseDefinitions.set(id, definition);
+  return definition;
+}
+
+function loadModuleDefinition(id) {
+  if (!/^MOD-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (moduleDefinitions.has(id)) return moduleDefinitions.get(id);
+  const target = path.join(root, 'content/modules', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (definition?.id !== id) return null;
+  moduleDefinitions.set(id, definition);
   return definition;
 }
 
@@ -258,6 +270,34 @@ export function createHandler({
         const progress = await learnerStore.listProgress(auth.subject);
         return json(res, 200, { learner: { subject: auth.subject }, progress });
       }
+
+      const courseCompletionMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/completion$/);
+if (req.method === 'GET' && courseCompletionMatch) {
+  route = 'GET /api/v1/me/courses/:courseId/completion';
+  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+  if (!auth) return;
+  if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
+  const course = loadCourseDefinition(courseCompletionMatch[1]);
+  if (!course) return json(res, 404, { error: 'course-not-found', requestId });
+  const modules = [];
+  const lessons = [];
+  const seenLessons = new Set();
+  for (const moduleId of course.modules ?? []) {
+    const module = loadModuleDefinition(moduleId);
+    if (!module) return json(res, 500, { error: 'course-module-not-found', moduleId, requestId });
+    modules.push(module);
+    for (const lessonId of module.lessons ?? []) {
+      if (seenLessons.has(lessonId)) continue;
+      const lesson = loadLessonDefinition(lessonId);
+      if (!lesson) return json(res, 500, { error: 'course-lesson-not-found', lessonId, requestId });
+      seenLessons.add(lessonId);
+      lessons.push(lesson);
+    }
+  }
+  const progress = await learnerStore.listProgress(auth.subject);
+  const completion = projectLearningCompletion({ course, modules, lessons, progress });
+  return json(res, 200, { learner: { subject: auth.subject }, completion });
+}
 
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
       if (req.method === 'GET' && credentialProgressMatch) {
