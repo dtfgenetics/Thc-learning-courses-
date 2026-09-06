@@ -127,7 +127,9 @@ jobs:
 
       - name: Export Chromium path for Lighthouse
         shell: bash
-        run: echo "CHROME_PATH=$(node -e \"import('@playwright/test').then(m => process.stdout.write(m.chromium.executablePath()))\")" >> "$GITHUB_ENV"
+        run: |
+          CHROME_PATH=$(node --input-type=module -e "import { chromium } from '@playwright/test'; process.stdout.write(chromium.executablePath())")
+          echo "CHROME_PATH=$CHROME_PATH" >> "$GITHUB_ENV"
 
       - name: Discover public routes
         run: node scripts/discover-public-routes.mjs
