@@ -1,0 +1,162 @@
+{
+  "id": "PLAN-CULT-TECH-I-001",
+  "title": "Cultivation Technician I Production Plan",
+  "version": "1.0.0",
+  "role": "ROLE-CULT-TECH-I-001",
+  "pathway": [
+    "COURSE-SAFETY-RESPONSIBLE-001",
+    "COURSE-CULT-FOUNDATIONS-001",
+    "COURSE-CROP-SYSTEMS-001",
+    "COURSE-PRO-SOP-001"
+  ],
+  "writtenFinalTargetItems": 72,
+  "initialQuestionBankTarget": 300,
+  "integratedPracticalCount": 6,
+  "capstone": "One Cultivation Shift",
+  "tasks": [
+    {
+      "task": "TASK-CULT-SAFETY-001",
+      "reuse": ["MOD-SAFETY-WORK-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 10,
+      "workedExampleTarget": 3,
+      "guidedPracticeTarget": 3,
+      "scenarioTarget": 6,
+      "questionBankTarget": 30,
+      "practicals": ["A"],
+      "portfolioArtifacts": ["hazard checklist"]
+    },
+    {
+      "task": "TASK-CULT-SANITATION-001",
+      "reuse": ["MOD-SPACE-BIOSEC-001", "MOD-IPM-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 10,
+      "workedExampleTarget": 3,
+      "guidedPracticeTarget": 3,
+      "scenarioTarget": 6,
+      "questionBankTarget": 30,
+      "practicals": ["A", "C", "D", "E"],
+      "portfolioArtifacts": ["sanitation log"]
+    },
+    {
+      "task": "TASK-CULT-OBSERVE-001",
+      "reuse": ["MOD-PLANT-BIO-001", "MOD-IPM-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 15,
+      "workedExampleTarget": 4,
+      "guidedPracticeTarget": 4,
+      "scenarioTarget": 8,
+      "questionBankTarget": 20,
+      "practicals": ["A"],
+      "portfolioArtifacts": ["crop scouting report"]
+    },
+    {
+      "task": "TASK-CULT-ENV-001",
+      "reuse": ["MOD-ENV-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 10,
+      "workedExampleTarget": 6,
+      "guidedPracticeTarget": 4,
+      "scenarioTarget": 8,
+      "questionBankTarget": 25,
+      "practicals": ["A"],
+      "portfolioArtifacts": ["environment shift log"]
+    },
+    {
+      "task": "TASK-CULT-WATER-001",
+      "reuse": ["MOD-WATER-001", "MOD-NUTRITION-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 10,
+      "workedExampleTarget": 8,
+      "guidedPracticeTarget": 5,
+      "scenarioTarget": 8,
+      "questionBankTarget": 25,
+      "practicals": ["B"],
+      "portfolioArtifacts": ["pH EC measurement log"]
+    },
+    {
+      "task": "TASK-CULT-IRRIGATION-001",
+      "reuse": ["MOD-WATER-001", "MOD-ROOTZONE-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 12,
+      "workedExampleTarget": 6,
+      "guidedPracticeTarget": 4,
+      "scenarioTarget": 8,
+      "questionBankTarget": 25,
+      "practicals": ["B"],
+      "portfolioArtifacts": ["irrigation work-order record"]
+    },
+    {
+      "task": "TASK-CULT-IPM-001",
+      "reuse": ["MOD-IPM-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 20,
+      "workedExampleTarget": 5,
+      "guidedPracticeTarget": 5,
+      "scenarioTarget": 10,
+      "questionBankTarget": 30,
+      "practicals": ["C"],
+      "portfolioArtifacts": ["IPM scouting sheet"]
+    },
+    {
+      "task": "TASK-CULT-PROP-001",
+      "reuse": ["MOD-PROP-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 15,
+      "workedExampleTarget": 5,
+      "guidedPracticeTarget": 4,
+      "scenarioTarget": 8,
+      "questionBankTarget": 20,
+      "practicals": ["D"],
+      "portfolioArtifacts": ["propagation log"]
+    },
+    {
+      "task": "TASK-CULT-CANOPY-001",
+      "reuse": ["MOD-CANOPY-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 15,
+      "workedExampleTarget": 4,
+      "guidedPracticeTarget": 4,
+      "scenarioTarget": 8,
+      "questionBankTarget": 20,
+      "practicals": ["E"],
+      "portfolioArtifacts": ["canopy work record"]
+    },
+    {
+      "task": "TASK-CULT-HARVEST-001",
+      "reuse": ["MOD-FLOWER-001", "MOD-POSTHARVEST-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 12,
+      "workedExampleTarget": 4,
+      "guidedPracticeTarget": 3,
+      "scenarioTarget": 8,
+      "questionBankTarget": 20,
+      "practicals": ["F"],
+      "portfolioArtifacts": ["harvest traceability record"]
+    },
+    {
+      "task": "TASK-CULT-POSTHARVEST-001",
+      "reuse": ["MOD-POSTHARVEST-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 15,
+      "workedExampleTarget": 5,
+      "guidedPracticeTarget": 4,
+      "scenarioTarget": 8,
+      "questionBankTarget": 25,
+      "practicals": ["F"],
+      "portfolioArtifacts": ["dry-room and lot log"]
+    },
+    {
+      "task": "TASK-CULT-RECORDS-001",
+      "reuse": ["MOD-PRO-SOP-001", "MOD-PRO-QA-001"],
+      "newJobPracticeUnits": 1,
+      "visualTarget": 10,
+      "workedExampleTarget": 5,
+      "guidedPracticeTarget": 5,
+      "scenarioTarget": 10,
+      "questionBankTarget": 30,
+      "practicals": ["A", "B", "C", "D", "E", "F"],
+      "portfolioArtifacts": ["deviation record", "shift handoff"]
+    }
+  ]
+}
