@@ -195,7 +195,6 @@ export function createPostgresLearnerStore({ query } = {}) {
         scorePercent: row.score_percent == null ? null : Number(row.score_percent),
         criticalErrorCount: Number(row.critical_error_count ?? 0),
         evidenceVerified: performanceEvidenceVerified(row),
-        evaluatorId: row.evaluator_id ?? null,
         rubricId: row.rubric_id ?? null,
         rubricVersion: row.rubric_version == null ? null : String(row.rubric_version),
         deliveryMode: row.delivery_mode ?? null,
