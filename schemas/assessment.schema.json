@@ -10,12 +10,55 @@
     "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "status": {"enum": ["draft", "review", "approved", "published", "superseded", "retired"]},
     "purpose": {"enum": ["formative", "summative", "credential"]},
-    "competencies": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}},
-    "objectives": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^LO-[A-Z0-9-]+$"}},
-    "items": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^ITEM-[A-Z0-9-]+$"}},
+    "competencies": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}},
+    "objectives": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^LO-[A-Z0-9-]+$"}},
+    "items": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^ITEM-[A-Z0-9-]+$"}},
     "passingScorePercent": {"type": "number", "minimum": 0, "maximum": 100},
     "maxAttempts": {"type": ["integer", "null"], "minimum": 1},
-    "feedbackMode": {"enum": ["immediate", "after-submit", "delayed", "none"]}
+    "cooldownHours": {"type": "integer", "minimum": 0},
+    "feedbackMode": {"enum": ["immediate", "after-submit", "post-attempt-domain-level", "delayed", "none"]},
+    "totalItems": {"type": "integer", "minimum": 1},
+    "randomizeItems": {"type": "boolean"},
+    "randomizeChoices": {"type": "boolean"},
+    "blueprint": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["competency", "items", "cognitiveTarget"],
+        "properties": {
+          "competency": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"},
+          "items": {"type": "integer", "minimum": 1},
+          "cognitiveTarget": {"type": "string", "minLength": 3}
+        },
+        "additionalProperties": false
+      }
+    },
+    "itemSelection": {
+      "type": "object",
+      "required": ["minimumActiveItemsPerCompetency", "targetBankItemsPerCompetency", "requireReferenceBackedItems", "requireHumanAssessmentReview"],
+      "properties": {
+        "minimumActiveItemsPerCompetency": {"type": "integer", "minimum": 1},
+        "targetBankItemsPerCompetency": {"type": "integer", "minimum": 1},
+        "requireReferenceBackedItems": {"type": "boolean"},
+        "requireHumanAssessmentReview": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "accommodations": {
+      "type": "object",
+      "properties": {
+        "allowExtendedTime": {"type": "boolean"},
+        "allowAlternativeAccessiblePresentation": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    }
   },
+  "allOf": [
+    {
+      "if": {"required": ["blueprint"]},
+      "then": {"required": ["totalItems", "itemSelection"]}
+    }
+  ],
   "additionalProperties": false
 }
