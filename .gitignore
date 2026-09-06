@@ -1,0 +1,7 @@
+node_modules/
+.tmp/
+coverage/
+
+# Pilot participant-level exports are sensitive operational data and must never be committed.
+pilot-private/
+*.pilot-results.json
