@@ -8,9 +8,11 @@ For broad GitHub repository health, branches, pull requests, merges, conflicts, 
 
 `skills/github-orchestrator/SKILL.md`
 
-Use specialist GitHub skills when the failure class is clear:
+Use specialist skills when the failure class is clear:
 
-- Application/source/runtime/browser defects, broken pages/routes/features/games/tools, console/network failures, Playwright E2E, responsive QA, broken links, production-vs-source drift, and Lighthouse audits for every discoverable `dtfseeds.com` page: `skills/dev-debugger/SKILL.md`
+- Application/source/runtime/browser defects, broken pages/routes/features/games/tools, production-vs-source drift, and end-to-end debugging coordination: `skills/dev-debugger/SKILL.md`
+- Playwright E2E, real-browser reproduction, console/network failures, responsive QA, cross-browser testing, broken links, games/tools interaction testing: `skills/playwright-browser-qa/SKILL.md`
+- Lighthouse CI, performance/accessibility/best-practices/SEO auditing, and every discoverable public `dtfseeds.com` page: `skills/lighthouse-site-auditor/SKILL.md`
 - GitHub Actions failures, missing/stuck checks, logs, reruns, workflow configuration: `skills/github-actions-doctor/SKILL.md`
 - Conflicts, stale branches, wrong PR bases, duplicate/superseded work, difficult merges: `skills/github-branch-pr-surgery/SKILL.md`
 - `dev -> staging -> main` promotion, release gates, deployment verification: `skills/github-release-promotion-manager/SKILL.md`
@@ -23,6 +25,6 @@ A successful push is not completion. The agent must inspect the newest SHA, CI, 
 
 When Academy/product work and repository operations both apply, use the Academy builder for product/content decisions, the GitHub orchestrator for repository execution, the relevant specialist skill for the failure class, and post-push cleanup after every repository write.
 
-For customer-facing web changes, use the development debugger before declaring the work complete. The web quality target is 100 in Lighthouse Performance, Accessibility, Best Practices, and SEO on every audited public page, but valid failures must be repaired or explicitly documented rather than suppressed.
+For customer-facing web changes, use the development debugger before declaring the work complete. Use Playwright for real-browser verification and Lighthouse for site-wide quality measurement. The web quality target is 100 in Lighthouse Performance, Accessibility, Best Practices, and SEO on every audited public page, but valid failures must be repaired or explicitly documented rather than suppressed.
 
 The skills are the project workflow sources of truth. Keep this file short; update the skills/resources instead of duplicating detailed instructions here.
