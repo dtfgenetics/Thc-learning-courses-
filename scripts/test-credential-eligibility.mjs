@@ -34,8 +34,8 @@ const performanceCredential = {
 };
 
 const performanceDefinitions = new Map([
-  ['PRACTICAL-TEST-001', { id: 'PRACTICAL-TEST-001', passingStandard: { minimumPercent: 80, noCriticalErrors: true } }],
-  ['CAPSTONE-TEST-001', { id: 'CAPSTONE-TEST-001', passingStandard: { minimumPercent: 85, noCriticalErrors: true } }]
+  ['PRACTICAL-TEST-001', { id: 'PRACTICAL-TEST-001', version: '1.0.0', passingStandard: { minimumPercent: 80, noCriticalErrors: true } }],
+  ['CAPSTONE-TEST-001', { id: 'CAPSTONE-TEST-001', version: '1.0.0', passingStandard: { minimumPercent: 85, noCriticalErrors: true } }]
 ]);
 
 function makePerformanceEvidence() {
@@ -43,8 +43,8 @@ function makePerformanceEvidence() {
     learnerId: 'TEST-LEARNER-PERFORMANCE',
     assessments: [{ assessmentId: 'ASSESS-TEST-KNOWLEDGE-001', status: 'passed', scorePercent: 88 }],
     performanceAssessments: [
-      { assessmentId: 'PRACTICAL-TEST-001', status: 'passed', scorePercent: 86, criticalErrorCount: 0, evidenceVerified: true },
-      { assessmentId: 'CAPSTONE-TEST-001', status: 'passed', scorePercent: 90, criticalErrorCount: 0, evidenceVerified: true }
+      { assessmentId: 'PRACTICAL-TEST-001', assessmentVersion: '1.0.0', status: 'passed', scorePercent: 86, criticalErrorCount: 0, evidenceVerified: true },
+      { assessmentId: 'CAPSTONE-TEST-001', assessmentVersion: '1.0.0', status: 'passed', scorePercent: 90, criticalErrorCount: 0, evidenceVerified: true }
     ],
     portfolioArtifacts: []
   };
@@ -64,6 +64,18 @@ missingScoreEvidence.performanceAssessments[0].scorePercent = null;
 const missingScore = evaluateCredentialEligibility({ credential: performanceCredential, evidence: missingScoreEvidence, performanceDefinitions });
 assert(!missingScore.eligible, 'A performance result without a score must fail eligibility');
 assert(missingScore.missingRequirements.some((row) => row.id === 'PRACTICAL-TEST-001' && row.reason === 'missing-score'), 'Missing performance score reason was not reported');
+
+const versionMismatchEvidence = makePerformanceEvidence();
+versionMismatchEvidence.performanceAssessments[0].assessmentVersion = '0.9.0';
+const versionMismatch = evaluateCredentialEligibility({ credential: performanceCredential, evidence: versionMismatchEvidence, performanceDefinitions });
+assert(!versionMismatch.eligible, 'Outdated performance evidence must not satisfy the current practical definition');
+assert(versionMismatch.missingRequirements.some((row) => row.id === 'PRACTICAL-TEST-001' && row.reason === 'performance-version-mismatch'), 'Performance version mismatch reason was not reported');
+
+const missingVersionEvidence = makePerformanceEvidence();
+delete missingVersionEvidence.performanceAssessments[0].assessmentVersion;
+const missingVersion = evaluateCredentialEligibility({ credential: performanceCredential, evidence: missingVersionEvidence, performanceDefinitions });
+assert(!missingVersion.eligible, 'Performance evidence without an assessment version must fail when the definition is versioned');
+assert(missingVersion.missingRequirements.some((row) => row.id === 'PRACTICAL-TEST-001' && row.reason === 'missing-performance-version'), 'Missing performance version reason was not reported');
 
 const criticalErrorEvidence = makePerformanceEvidence();
 criticalErrorEvidence.performanceAssessments[0].criticalErrorCount = 1;

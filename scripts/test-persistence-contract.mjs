@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { createApiServer } from '../apps/api/src/server.mjs';
 import { createPostgresCredentialStore, mapCredentialRow } from '../apps/api/src/postgres-credential-store.mjs';
+import { createPostgresLearnerStore } from '../apps/api/src/postgres-learner-store.mjs';
 import { PersistenceUnavailableError } from '../apps/api/src/persistence-errors.mjs';
 
 assert.throws(
@@ -60,4 +61,64 @@ await assert.rejects(() => failingStore.ping(), PersistenceUnavailableError);
 await assert.rejects(() => failingStore.getByVerificationId('VERIFY-FAIL'), PersistenceUnavailableError);
 await assert.rejects(() => failingStore.count(), PersistenceUnavailableError);
 
-console.log('PostgreSQL credential persistence contract and production fail-closed tests passed');
+const learnerCalls = [];
+const learnerStore = createPostgresLearnerStore({
+  query: async (text, params) => {
+    learnerCalls.push({ text, params });
+    if (text.includes('select id from learners')) return { rows: [{ id: '11111111-1111-1111-1111-111111111111' }] };
+    if (text.includes('from assessment_attempts')) return { rows: [] };
+    if (text.includes('from learner_competencies')) return { rows: [] };
+    if (text.includes('from performance_assessment_results')) {
+      return {
+        rows: [
+          {
+            assessment_id: 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP',
+            assessment_version: '1.0.0',
+            status: 'passed',
+            score_percent: '88.00',
+            critical_error_count: 0,
+            evaluator_id: 'PRIVATE-EVALUATOR-001',
+            rubric_id: 'RUBRIC-TECH2-A-001',
+            rubric_version: '1.0.0',
+            delivery_mode: 'supervised-lab',
+            evaluated_at: new Date('2026-09-02T16:00:00.000Z'),
+            updated_at: new Date('2026-09-02T16:05:00.000Z')
+          },
+          {
+            assessment_id: 'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION',
+            assessment_version: '1.0.0',
+            status: 'passed',
+            score_percent: '90.00',
+            critical_error_count: 0,
+            evaluator_id: 'PRIVATE-EVALUATOR-002',
+            rubric_id: 'RUBRIC-TECH2-B-001',
+            rubric_version: null,
+            delivery_mode: 'supervised-lab',
+            evaluated_at: new Date('2026-09-02T17:00:00.000Z'),
+            updated_at: new Date('2026-09-02T17:05:00.000Z')
+          }
+        ]
+      };
+    }
+    if (text.includes('from learner_portfolio_artifacts')) return { rows: [] };
+    throw new Error(`unexpected learner query: ${text}`);
+  }
+});
+
+const learnerEvidence = await learnerStore.listCredentialEvidence('external-learner-001', { credentialDefinitionId: 'CRED-CULT-TECH-II-001' });
+assert.equal(learnerEvidence.performanceAssessments.length, 2);
+const verifiedPerformance = learnerEvidence.performanceAssessments.find((entry) => entry.assessmentId === 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP');
+assert.equal(verifiedPerformance.evidenceVerified, true);
+assert.equal(verifiedPerformance.rubricId, 'RUBRIC-TECH2-A-001');
+assert.equal(verifiedPerformance.rubricVersion, '1.0.0');
+assert.equal(verifiedPerformance.deliveryMode, 'supervised-lab');
+assert.equal(verifiedPerformance.evaluatedAt, '2026-09-02T16:00:00.000Z');
+assert.equal(Object.prototype.hasOwnProperty.call(verifiedPerformance, 'evaluatorId'), false, 'evaluator identity must not leave persistence adapter learner evidence');
+const incompletePerformance = learnerEvidence.performanceAssessments.find((entry) => entry.assessmentId === 'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION');
+assert.equal(incompletePerformance.evidenceVerified, false, 'missing rubric version must prevent verified evidence status');
+const performanceQuery = learnerCalls.find((call) => call.text.includes('from performance_assessment_results'));
+assert.equal(performanceQuery.text.includes('evaluator_id'), true);
+assert.equal(performanceQuery.text.includes('rubric_version'), true);
+assert.equal(performanceQuery.text.includes('delivery_mode'), true);
+
+console.log('PostgreSQL credential persistence, performance provenance, and production fail-closed tests passed');
