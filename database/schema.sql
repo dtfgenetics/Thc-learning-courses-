@@ -82,6 +82,9 @@ create table if not exists performance_assessment_results (
   critical_error_count integer not null default 0 check (critical_error_count >= 0),
   evidence_json jsonb not null default '{}'::jsonb,
   evaluator_id text,
+  rubric_id text,
+  rubric_version text,
+  delivery_mode text check (delivery_mode is null or delivery_mode in ('virtual-facility','supervised-lab','workplace-equivalent')),
   evaluated_at timestamptz,
   updated_at timestamptz not null default now(),
   primary key (learner_id, assessment_id, assessment_version)
@@ -157,4 +160,12 @@ on conflict (version) do nothing;
 
 insert into academy_schema_migrations (version, description)
 values ('2', 'Learner performance assessment and portfolio evidence')
+on conflict (version) do nothing;
+
+alter table performance_assessment_results add column if not exists rubric_id text;
+alter table performance_assessment_results add column if not exists rubric_version text;
+alter table performance_assessment_results add column if not exists delivery_mode text;
+
+insert into academy_schema_migrations (version, description)
+values ('3', 'Performance assessment evaluator, rubric, and delivery provenance')
 on conflict (version) do nothing;
