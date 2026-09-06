@@ -7,6 +7,7 @@ import { publicCredentialView } from '../../../packages/domain/credential-runtim
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
+import { loadProductionApiOptions } from './bootstrap.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -16,19 +17,10 @@ export function createDevelopmentCredentialStore() {
   const records = new Map();
   return {
     kind: 'development-memory',
-    async ping() {
-      return true;
-    },
-    getByVerificationId(verificationId) {
-      return records.get(verificationId) ?? null;
-    },
-    register(record) {
-      records.set(record.verificationId, record);
-      return record;
-    },
-    count() {
-      return records.size;
-    }
+    async ping() { return true; },
+    getByVerificationId(verificationId) { return records.get(verificationId) ?? null; },
+    register(record) { records.set(record.verificationId, record); return record; },
+    count() { return records.size; }
   };
 }
 
@@ -36,9 +28,7 @@ const developmentCredentialStore = createDevelopmentCredentialStore();
 
 function resolveCredentialStore(explicitStore, env = process.env) {
   if (explicitStore) return explicitStore;
-  if (env.NODE_ENV === 'production') {
-    throw new Error('Production API requires an explicit persistent credentialStore');
-  }
+  if (env.NODE_ENV === 'production') throw new Error('Production API requires an explicit persistent credentialStore');
   return developmentCredentialStore;
 }
 
@@ -63,29 +53,25 @@ function json(res, status, body, extraHeaders = {}) {
   res.end(JSON.stringify(body));
 }
 
-function rateLimitKey(req) {
-  return req.socket?.remoteAddress || 'unknown';
-}
-
+function rateLimitKey(req) { return req.socket?.remoteAddress || 'unknown'; }
 function applyRateLimitHeaders(res, result) {
   res.setHeader('ratelimit-limit', String(result.limit));
   res.setHeader('ratelimit-remaining', String(result.remaining));
   res.setHeader('ratelimit-reset', String(Math.ceil(result.resetAt / 1000)));
 }
-
-function defaultLogger(entry) {
-  process.stdout.write(`${JSON.stringify(entry)}\n`);
-}
+function defaultLogger(entry) { process.stdout.write(`${JSON.stringify(entry)}\n`); }
 
 export function createHandler({
   credentialStore = null,
   env = process.env,
   limiter = createFixedWindowRateLimiter(),
-  authorize = createServiceTokenAuthorizer({ tokens: serviceTokensFromEnvironment() }),
+  authorize = null,
   logger = defaultLogger,
   nowNs = () => process.hrtime.bigint()
 } = {}) {
   const resolvedCredentialStore = resolveCredentialStore(credentialStore, env);
+  const resolvedAuthorize = authorize ?? createServiceTokenAuthorizer({ tokens: serviceTokensFromEnvironment(env) });
+
   return async function handler(req, res) {
     const startedAt = nowNs();
     const requestId = crypto.randomUUID();
@@ -94,22 +80,12 @@ export function createHandler({
 
     res.once('finish', () => {
       const durationMs = Number(nowNs() - startedAt) / 1_000_000;
-      logger({
-        level: 'info',
-        event: 'http.request.completed',
-        requestId,
-        method: req.method,
-        route,
-        statusCode: res.statusCode,
-        durationMs: Number(durationMs.toFixed(3))
-      });
+      logger({ level: 'info', event: 'http.request.completed', requestId, method: req.method, route, statusCode: res.statusCode, durationMs: Number(durationMs.toFixed(3)) });
     });
 
     try {
       let url;
-      try {
-        url = new URL(req.url, 'http://localhost');
-      } catch {
+      try { url = new URL(req.url, 'http://localhost'); } catch {
         route = 'invalid-url';
         return json(res, 400, { error: 'invalid-url', requestId });
       }
@@ -121,13 +97,9 @@ export function createHandler({
 
       if (req.method === 'GET' && url.pathname === '/readyz') {
         route = 'GET /readyz';
-        if (typeof resolvedCredentialStore.ping !== 'function') {
-          return json(res, 503, { ok: false, error: 'readiness-check-unavailable', requestId });
-        }
+        if (typeof resolvedCredentialStore.ping !== 'function') return json(res, 503, { ok: false, error: 'readiness-check-unavailable', requestId });
         const ready = await resolvedCredentialStore.ping();
-        return json(res, ready ? 200 : 503, ready
-          ? { ok: true, requestId }
-          : { ok: false, error: 'dependency-unavailable', requestId });
+        return json(res, ready ? 200 : 503, ready ? { ok: true, requestId } : { ok: false, error: 'dependency-unavailable', requestId });
       }
 
       if (url.pathname.startsWith('/api/')) {
@@ -149,7 +121,7 @@ export function createHandler({
 
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
-        const auth = authorize(req, 'admin:read');
+        const auth = resolvedAuthorize(req, 'admin:read');
         if (!auth.ok) {
           if (auth.status === 401) res.setHeader('www-authenticate', 'Bearer realm="thc-academy-api"');
           return json(res, auth.status, { error: auth.error, requestId });
@@ -168,34 +140,19 @@ export function createHandler({
       return json(res, 404, { error: 'not-found', requestId });
     } catch (error) {
       const dependencyUnavailable = isPersistenceUnavailableError(error);
-      logger({
-        level: 'error',
-        event: 'http.request.failed',
-        requestId,
-        method: req.method,
-        route,
-        statusCode: dependencyUnavailable ? 503 : 500,
-        errorType: error?.name ?? 'Error',
-        errorCode: error?.code ?? 'UNEXPECTED_ERROR'
-      });
-      if (!res.headersSent) {
-        return json(res, dependencyUnavailable ? 503 : 500, {
-          error: dependencyUnavailable ? 'service-unavailable' : 'internal-error',
-          requestId
-        });
-      }
+      logger({ level: 'error', event: 'http.request.failed', requestId, method: req.method, route, statusCode: dependencyUnavailable ? 503 : 500, errorType: error?.name ?? 'Error', errorCode: error?.code ?? 'UNEXPECTED_ERROR' });
+      if (!res.headersSent) return json(res, dependencyUnavailable ? 503 : 500, { error: dependencyUnavailable ? 'service-unavailable' : 'internal-error', requestId });
       res.destroy();
     }
   };
 }
 
-export function createApiServer(options = {}) {
-  return http.createServer(createHandler(options));
-}
+export function createApiServer(options = {}) { return http.createServer(createHandler(options)); }
 
 const isDirectExecution = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (isDirectExecution) {
-  createApiServer().listen(port, () => {
-    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'api.started', port })}\n`);
+  const apiOptions = await loadProductionApiOptions(process.env);
+  createApiServer(apiOptions).listen(port, () => {
+    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'api.started', port, mode: process.env.NODE_ENV === 'production' ? 'production' : 'development' })}\n`);
   });
 }
