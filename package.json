@@ -7,7 +7,6 @@
     "validate": "node scripts/validate-curriculum.mjs",
     "registry:build": "node scripts/build-global-registry.mjs --write",
     "registry:validate": "node scripts/validate-global-registry.mjs",
-    "knowledge:validate": "node scripts/validate-knowledge-base.mjs",
     "exam:form": "node scripts/generate-exam-form.mjs",
     "exam:form:dev": "node scripts/generate-exam-form.mjs --allow-draft --seed=development",
     "credential:eligibility": "node scripts/evaluate-credential-eligibility.mjs",
@@ -17,6 +16,7 @@
     "credential:issuance:test": "node scripts/test-credential-issuance.mjs",
     "credential:public": "node scripts/project-public-verification.mjs",
     "credential:public:test": "node scripts/test-public-verification-projection.mjs",
+    "credential:specialist:readiness": "node scripts/report-specialist-credential-readiness.mjs",
     "review:validate": "node scripts/validate-reviews.mjs",
     "review:queue": "node scripts/build-review-queue.mjs",
     "review:queue:check": "node scripts/build-review-queue.mjs --summary-only",
@@ -31,8 +31,9 @@
     "ops:validate": "node scripts/validate-operational-controls.mjs",
     "production:readiness": "node scripts/check-production-readiness.mjs",
     "release:check": "node scripts/check-release-readiness.mjs",
+    "knowledge:validate": "node scripts/validate-knowledge-base.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run registry:build && npm run validate && npm run registry:validate && npm run knowledge:validate && npm run review:validate && npm run review:queue:check && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run production:readiness"
+    "test": "npm run registry:build && npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run production:readiness"
   },
   "engines": {
     "node": ">=20"
