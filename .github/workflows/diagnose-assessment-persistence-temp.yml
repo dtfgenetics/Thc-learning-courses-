@@ -1,0 +1,46 @@
+name: Diagnose assessment persistence (temporary)
+
+on:
+  push:
+    branches:
+      - feat/assessment-attempt-persistence
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Reapply exact persistence patch in working tree
+        shell: python
+        run: |
+          from pathlib import Path
+          workflow = Path('.github/workflows/patch-assessment-attempt-persistence-temp.yml').read_text()
+          marker = "      - name: Apply targeted persistence patch\n        shell: python\n        run: |\n"
+          tail = "\n      - run: npm run assessment:persistence:test\n"
+          block = workflow.split(marker, 1)[1].split(tail, 1)[0]
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in block.splitlines())
+          exec(compile(code, '<persistence-patch>', 'exec'))
+      - name: Capture focused test output
+        shell: bash
+        run: |
+          set +e
+          npm run assessment:persistence:test > assessment-persistence-output.txt 2>&1
+          code=$?
+          cat assessment-persistence-output.txt
+          echo "$code" > assessment-persistence-exit.txt
+          exit 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: assessment-persistence-diagnostic
+          path: |
+            assessment-persistence-output.txt
+            assessment-persistence-exit.txt
+          if-no-files-found: error
