@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { publicCredentialView } from '../../../packages/domain/credential-runtime.mjs';
 import { evaluateCredentialEligibility } from '../../../packages/domain/credential-eligibility.mjs';
+import { loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
@@ -104,7 +105,23 @@ function authorizeRequest(authorize, req, scope, res, requestId) {
   return null;
 }
 
-function credentialProgressView(credential, course, rawEvidence) {
+function learnerPerformanceView(row) {
+  return {
+    assessmentId: row.assessmentId,
+    assessmentVersion: row.assessmentVersion ?? null,
+    status: row.status,
+    scorePercent: row.scorePercent ?? null,
+    criticalErrorCount: Number(row.criticalErrorCount ?? 0),
+    evidenceVerified: row.evidenceVerified === true,
+    rubricId: row.rubricId ?? null,
+    rubricVersion: row.rubricVersion ?? null,
+    deliveryMode: row.deliveryMode ?? null,
+    evaluatedAt: row.evaluatedAt ?? null,
+    updatedAt: row.updatedAt ?? null
+  };
+}
+
+function credentialProgressView(credential, course, rawEvidence, performanceDefinitions) {
   const requiredAssessments = new Set(credential.eligibility.requiredAssessments ?? []);
   const requiredPerformance = credential.eligibility.requiredPerformanceAssessments ?? [];
   const requiredArtifacts = credential.eligibility.requiredPortfolioArtifacts ?? [];
@@ -115,7 +132,7 @@ function credentialProgressView(credential, course, rawEvidence) {
     performanceAssessments: (rawEvidence.performanceAssessments ?? []).filter((row) => requiredPerformance.includes(row.assessmentId)),
     portfolioArtifacts: (rawEvidence.portfolioArtifacts ?? []).filter((row) => requiredArtifacts.includes(row.artifactId))
   };
-  const eligibility = evaluateCredentialEligibility({ credential, evidence });
+  const eligibility = evaluateCredentialEligibility({ credential, evidence, performanceDefinitions });
   const performanceById = new Map(evidence.performanceAssessments.map((row) => [row.assessmentId, row]));
   const portfolioById = new Map(evidence.portfolioArtifacts.map((row) => [row.artifactId, row]));
   return {
@@ -130,7 +147,7 @@ function credentialProgressView(credential, course, rawEvidence) {
     eligibility,
     assessmentAttempts: (rawEvidence.assessmentAttempts ?? []).filter((row) => requiredAssessments.has(row.assessmentId)),
     competencies: (rawEvidence.competencies ?? []).filter((row) => requiredCompetencies.size === 0 || requiredCompetencies.has(row.competencyId)),
-    performanceAssessments: requiredPerformance.map((id) => performanceById.get(id) ?? { assessmentId: id, status: 'not-recorded', scorePercent: null, criticalErrorCount: 0 }),
+    performanceAssessments: requiredPerformance.map((id) => learnerPerformanceView(performanceById.get(id) ?? { assessmentId: id, status: 'not-recorded' })),
     portfolioArtifacts: requiredArtifacts.map((id) => portfolioById.get(id) ?? { artifactId: id, status: 'not-recorded' })
   };
 }
@@ -237,7 +254,8 @@ export function createHandler({
         const course = loadCourseDefinition(credential.course);
         if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
         const evidence = await learnerStore.listCredentialEvidence(auth.subject, { credentialDefinitionId: credential.id });
-        return json(res, 200, credentialProgressView(credential, course, evidence));
+        const performanceDefinitions = loadRequiredPerformanceDefinitions({ root, credential });
+        return json(res, 200, credentialProgressView(credential, course, evidence, performanceDefinitions));
       }
 
       const lessonProgressMatch = url.pathname.match(/^\/api\/v1\/me\/lessons\/(LESSON-[A-Z0-9-]+)$/);
