@@ -110,7 +110,7 @@ create table if not exists credentials (
   credential_definition_version text not null,
   course_id text not null,
   course_version text not null,
-  status text not null check (status in ('issued','valid','superseded','expired','revoked')),
+  status text not null check (status in ('issued','valid','suspended','superseded','expired','revoked')),
   issued_at timestamptz not null,
   expires_at timestamptz,
   payload_json jsonb not null,
@@ -120,7 +120,7 @@ create table if not exists credentials (
 create table if not exists credential_status_events (
   id bigserial primary key,
   credential_id uuid not null references credentials(id),
-  status text not null check (status in ('issued','valid','superseded','expired','revoked')),
+  status text not null check (status in ('issued','valid','suspended','superseded','expired','revoked')),
   reason text,
   actor_id text not null,
   created_at timestamptz not null default now()
@@ -152,6 +152,7 @@ create index if not exists idx_attempts_learner_assessment on assessment_attempt
 create index if not exists idx_performance_learner_assessment on performance_assessment_results(learner_id, assessment_id, updated_at desc);
 create index if not exists idx_portfolio_learner_credential on learner_portfolio_artifacts(learner_id, credential_definition_id, updated_at desc);
 create index if not exists idx_credentials_subject on credentials(subject_hash, issued_at desc);
+create index if not exists idx_status_events_credential on credential_status_events(credential_id, created_at asc, id asc);
 create index if not exists idx_audit_subject on audit_events(subject_type, subject_id, created_at desc);
 
 insert into academy_schema_migrations (version, description)
@@ -179,4 +180,16 @@ end $$;
 
 insert into academy_schema_migrations (version, description)
 values ('3', 'Performance assessment evaluator, rubric, and delivery provenance')
+on conflict (version) do nothing;
+
+-- Schema v4 adds the temporary suspension lifecycle state without losing prior data.
+alter table credentials drop constraint if exists credentials_status_check;
+alter table credentials add constraint credentials_status_check
+  check (status in ('issued','valid','suspended','superseded','expired','revoked'));
+alter table credential_status_events drop constraint if exists credential_status_events_status_check;
+alter table credential_status_events add constraint credential_status_events_status_check
+  check (status in ('issued','valid','suspended','superseded','expired','revoked'));
+
+insert into academy_schema_migrations (version, description)
+values ('4', 'Credential suspension and lifecycle history support')
 on conflict (version) do nothing;
