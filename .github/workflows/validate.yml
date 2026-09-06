@@ -24,19 +24,9 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Bootstrap dependency lock when absent
-        if: hashFiles('package-lock.json') == ''
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-      - name: Synchronize bootstrapped dependency lock on same-repo PRs
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && hashFiles('package-lock.json') != ''
-        run: |
-          if [[ -n "$(git status --porcelain -- package-lock.json)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add package-lock.json
-            git commit -m "Commit reproducible dependency lock"
-            git push origin HEAD:${{ github.head_ref }}
-          fi
+          cache: npm
+      - name: Require committed dependency lock
+        run: test -f package-lock.json
       - name: Install locked validation dependencies
         run: npm ci --no-audit --no-fund
       - name: Require dependency lock to remain unchanged
