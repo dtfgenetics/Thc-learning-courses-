@@ -9,6 +9,13 @@ function countCriticalErrors(result) {
   return Number.isFinite(count) && count > 0 ? count : 0;
 }
 
+function scorePercent(result) {
+  const raw = result?.scorePercent;
+  if (raw === null || raw === undefined || raw === '') return null;
+  const value = Number(raw);
+  return Number.isFinite(value) ? value : null;
+}
+
 export function evaluateCredentialEligibility({ credential, evidence = {}, performanceDefinitions = new Map() } = {}) {
   if (!credential?.id || !credential?.eligibility) throw new Error('credential definition with eligibility required');
   const missing = [];
@@ -28,9 +35,9 @@ export function evaluateCredentialEligibility({ credential, evidence = {}, perfo
       continue;
     }
 
-    const score = Number(result.scorePercent);
+    const score = scorePercent(result);
     const minimum = Number(credential.eligibility.minimumPassingScorePercent);
-    if (!Number.isFinite(score)) {
+    if (score === null) {
       missing.push({ type: 'assessment', id: requiredId, reason: 'missing-score' });
       continue;
     }
@@ -56,9 +63,9 @@ export function evaluateCredentialEligibility({ credential, evidence = {}, perfo
       continue;
     }
 
-    const score = Number(result.scorePercent);
+    const score = scorePercent(result);
     const minimum = Number(definition.passingStandard?.minimumPercent);
-    if (!Number.isFinite(score)) {
+    if (score === null) {
       missing.push({ type: 'performance-assessment', id: requiredId, reason: 'missing-score' });
       continue;
     }
