@@ -79,6 +79,53 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   };
 }
 
+export function buildStagingGovernanceSummary() {
+  const readiness = readJson('registry/system-readiness.json');
+  const reviews = readDirJson('content/reviews');
+  const pilots = readDirJson('content/pilot-evidence');
+  const lessons = readDirJson('content/lessons');
+  const assessments = readDirJson('content/assessments');
+  const questions = readDirJson('content/questions');
+
+  const approvedReviews = reviews.filter((review) => review.status === 'approved');
+  const approvedByType = approvedReviews.reduce((counts, review) => {
+    const type = review.reviewType ?? 'other';
+    counts[type] = (counts[type] ?? 0) + 1;
+    return counts;
+  }, {});
+
+  const productionBlockers = [];
+  for (const [areaName, area] of Object.entries(readiness.areas ?? {})) {
+    for (const [gateName, value] of Object.entries(area.gates ?? {})) {
+      if (value !== true) productionBlockers.push(`${areaName}.${gateName}`);
+    }
+  }
+
+  return {
+    generatedAt: new Date().toISOString(),
+    mode: 'staging-governance',
+    inventory: {
+      lessons: lessons.length,
+      assessments: assessments.length,
+      questions: questions.length
+    },
+    reviews: {
+      totalRecords: reviews.length,
+      approvedRecords: approvedReviews.length,
+      approvedByType
+    },
+    pilot: {
+      records: pilots.length,
+      completed: pilots.filter((record) => record.status === 'complete' || record.complete === true).length
+    },
+    readiness: {
+      productionReady: readiness.productionReady === true,
+      productionBlockerCount: productionBlockers.length,
+      productionBlockers
+    }
+  };
+}
+
 export function loadPublicLesson(id, { previewDrafts = true } = {}) {
   if (!/^LESSON-[A-Z0-9-]+$/.test(id)) return null;
   const target = path.join(root, 'content/lessons', `${id}.json`);
@@ -130,6 +177,12 @@ export function createAcademyHandler({ env = process.env } = {}) {
 
     if (req.method === 'GET' && url.pathname === '/api/catalog') {
       return json(res, 200, buildAcademyCatalog({ previewDrafts }));
+    }
+
+    if (req.method === 'GET' && url.pathname === '/api/staging/governance') {
+      return previewDrafts
+        ? json(res, 200, buildStagingGovernanceSummary())
+        : json(res, 404, { error: 'not-found' });
     }
 
     const lessonMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)$/);
