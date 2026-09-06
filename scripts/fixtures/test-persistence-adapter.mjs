@@ -10,7 +10,12 @@ export async function createPersistenceAdapters() {
       async listStatusHistoryByVerificationId() { return []; },
       async count() { return 0; }
     },
-    credentialWriter: { kind: 'test-writer' },
+    credentialWriter: {
+      kind: 'test-writer',
+      async transitionById(credentialId, nextStatus, options = {}) {
+        return { credential: { id: credentialId, status: nextStatus }, event: { credentialId, status: nextStatus, actorId: options.actorId ?? null, reason: options.reason ?? null } };
+      }
+    },
     learnerStore: {
       kind: 'test-learner-runtime',
       async listEnrollments(subject) { return [...(enrollments.get(subject) ?? [])]; },
