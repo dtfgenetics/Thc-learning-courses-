@@ -22,6 +22,7 @@
     "itembank:readiness": "node scripts/report-item-bank-readiness.mjs",
     "runtime:test": "node scripts/test-runtime-core.mjs",
     "api:test": "node scripts/test-api-security.mjs",
+    "api:failure:test": "node scripts/test-api-failure-handling.mjs",
     "persistence:test": "node scripts/test-persistence-contract.mjs",
     "credential:persistence:test": "node scripts/test-credential-persistence-writes.mjs",
     "rls:contract:test": "node scripts/test-rls-policy-contract.mjs",
@@ -29,7 +30,7 @@
     "production:readiness": "node scripts/check-production-readiness.mjs",
     "release:check": "node scripts/check-release-readiness.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run api:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run production:readiness"
+    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run production:readiness"
   },
   "engines": {
     "node": ">=20"
