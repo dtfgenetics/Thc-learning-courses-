@@ -52,9 +52,9 @@
         "verificationContract": true,
         "developmentHttpService": true,
         "productionDatabaseIntegration": false,
-        "rateLimiting": false,
-        "authentication": false,
-        "observability": false
+        "rateLimiting": true,
+        "authentication": true,
+        "observability": true
       }
     },
     "security": {
@@ -84,7 +84,7 @@
         "stagingEnvironment": false,
         "productionEnvironment": false,
         "backupRestoreTested": false,
-        "incidentResponseRunbook": false,
+        "incidentResponseRunbook": true,
         "monitoringAndAlerting": false
       }
     }
