@@ -26,6 +26,10 @@ alter table assessment_attempt_items enable row level security;
 alter table assessment_attempt_items force row level security;
 alter table learner_competencies enable row level security;
 alter table learner_competencies force row level security;
+alter table performance_assessment_results enable row level security;
+alter table performance_assessment_results force row level security;
+alter table learner_portfolio_artifacts enable row level security;
+alter table learner_portfolio_artifacts force row level security;
 
 create policy learner_self_read on learners
   for select
@@ -58,6 +62,15 @@ create policy learner_competency_self_read on learner_competencies
   for select
   using (learner_id = thc_app.current_learner_id());
 
+create policy performance_assessment_result_self_read on performance_assessment_results
+  for select
+  using (learner_id = thc_app.current_learner_id());
+
+create policy portfolio_artifact_self_read on learner_portfolio_artifacts
+  for select
+  using (learner_id = thc_app.current_learner_id());
+
 -- Deliberately no learner-facing INSERT/UPDATE/DELETE policies are defined here.
--- Progress, assessment scoring, mastery, and credential state changes are server-side operations.
+-- Progress, assessment scoring, mastery, performance evidence, portfolio review,
+-- and credential state changes are server-side operations.
 -- Production service/admin database roles and privileges must be designed and tested separately.
