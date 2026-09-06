@@ -116,6 +116,19 @@ for (const domain of registry.domains ?? []) {
 }
 
 const lessonReports = domainReports.flatMap((domain) => domain.lessons);
+const reviewedReferenceGateDerived =
+  domainReports.length === (registry.domains ?? []).length &&
+  domainReports.length > 0 &&
+  lessonReports.length > 0 &&
+  domainReports.every((domain) => domain.lessons.length > 0 && !domain.evidenceMetadataAttentionRequired);
+const reviewedReferenceGateDeclared = registry.gates?.allDomainsHaveReviewedReferences === true;
+
+if (reviewedReferenceGateDeclared !== reviewedReferenceGateDerived) {
+  structuralErrors.push(
+    `registry/cultivation-foundations.json: allDomainsHaveReviewedReferences=${reviewedReferenceGateDeclared} does not match derived evidence state ${reviewedReferenceGateDerived}`
+  );
+}
+
 const summary = {
   curriculum: registry.course,
   curriculumVersion: String(registry.version),
@@ -130,6 +143,8 @@ const summary = {
   weakEvidenceReferenceCount: lessonReports.reduce((sum, lesson) => sum + lesson.weakEvidenceReferences.length, 0),
   missingLocatorReferenceCount: lessonReports.reduce((sum, lesson) => sum + lesson.missingLocatorReferences.length, 0),
   supersededOrRetractedReferenceCount: lessonReports.reduce((sum, lesson) => sum + lesson.supersededOrRetracted.length, 0),
+  allDomainsHaveReviewedReferencesDeclared: reviewedReferenceGateDeclared,
+  allDomainsHaveReviewedReferencesDerived: reviewedReferenceGateDerived,
   structuralErrorCount: structuralErrors.length
 };
 
