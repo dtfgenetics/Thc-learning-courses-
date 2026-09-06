@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/occupation.schema.json",
+  "title": "THC Academy Occupation",
+  "type": "object",
+  "required": ["id", "title", "description", "roles", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^OCC-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "description": {"type": "string", "minLength": 10},
+    "roles": {"type": "array", "items": {"type": "string", "pattern": "^ROLE-[A-Z0-9-]+$"}, "uniqueItems": true},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "extensions": {"type": "object"}
+  },
+  "additionalProperties": false
+}
