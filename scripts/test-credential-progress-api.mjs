@@ -99,6 +99,7 @@ try {
   assert.equal(body.portfolioArtifacts.filter((row) => row.status === 'not-recorded').length, 8);
   assert.equal(body.eligibility.eligible, false);
   assert.equal(body.eligibility.missingRequirements.some((row) => row.type === 'performance-assessment' && row.reason === 'performance-evidence-unverified' && row.id === 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP'), false);
+  assert.equal(body.eligibility.missingRequirements.some((row) => row.type === 'performance-assessment' && row.reason === 'missing-performance-definition' && row.id === 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP'), false, 'progress API must load the canonical practical definition before evaluating eligibility');
   assert.equal(body.eligibility.missingRequirements.some((row) => row.type === 'performance-assessment'), true);
   assert.equal(body.eligibility.missingRequirements.some((row) => row.type === 'portfolio-artifact'), true);
   assert.equal(Object.prototype.hasOwnProperty.call(body, 'subjectId'), false);
