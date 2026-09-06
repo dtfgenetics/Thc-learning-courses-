@@ -1,0 +1,65 @@
+{
+  "id": "PRODUCTION-PLAN-TECH2-001",
+  "credentialTrack": "THC Cultivation Technician II",
+  "version": "1.0.0",
+  "status": "build",
+  "jobRole": "ROLE-CULT-TECH-II-001",
+  "prerequisite": {
+    "preferredCredential": "THC Cultivation Technician I",
+    "allowEquivalentPlacement": true
+  },
+  "jobPracticeUnits": [
+    {"task":"TASK-CULT2-DIAG-001","title":"Multi-Factor Crop Diagnosis","initialQuestionTarget":20,"workedExamples":8,"guidedCases":6,"scenarioTarget":12,"visualTarget":12},
+    {"task":"TASK-CULT2-SENSOR-001","title":"Sensors, Controls & Data Quality","initialQuestionTarget":20,"workedExamples":8,"guidedCases":6,"scenarioTarget":12,"visualTarget":12},
+    {"task":"TASK-CULT2-EQUIPMENT-001","title":"Cultivation Equipment Verification","initialQuestionTarget":15,"workedExamples":6,"guidedCases":5,"scenarioTarget":10,"visualTarget":10},
+    {"task":"TASK-CULT2-FERTIGATION-001","title":"Fertigation Batch Execution & Verification","initialQuestionTarget":20,"workedExamples":8,"guidedCases":6,"scenarioTarget":12,"visualTarget":12},
+    {"task":"TASK-CULT2-ROOTZONE-001","title":"Root-Zone & Irrigation Troubleshooting","initialQuestionTarget":20,"workedExamples":8,"guidedCases":6,"scenarioTarget":12,"visualTarget":14},
+    {"task":"TASK-CULT2-IPM-001","title":"Advanced IPM Trend Interpretation","initialQuestionTarget":20,"workedExamples":8,"guidedCases":6,"scenarioTarget":12,"visualTarget":18},
+    {"task":"TASK-CULT2-PROP-001","title":"Propagation Performance Troubleshooting","initialQuestionTarget":15,"workedExamples":6,"guidedCases":5,"scenarioTarget":10,"visualTarget":12},
+    {"task":"TASK-CULT2-CANOPY-001","title":"Advanced Canopy & Flowering Execution","initialQuestionTarget":15,"workedExamples":6,"guidedCases":5,"scenarioTarget":10,"visualTarget":16},
+    {"task":"TASK-CULT2-POSTHARVEST-001","title":"Postharvest Process Investigation","initialQuestionTarget":20,"workedExamples":8,"guidedCases":6,"scenarioTarget":12,"visualTarget":12},
+    {"task":"TASK-CULT2-DEVIATION-001","title":"Cultivation Deviation Investigation","initialQuestionTarget":15,"workedExamples":6,"guidedCases":5,"scenarioTarget":10,"visualTarget":8},
+    {"task":"TASK-CULT2-TRACE-001","title":"Traceability & Inventory Reconciliation","initialQuestionTarget":15,"workedExamples":6,"guidedCases":5,"scenarioTarget":10,"visualTarget":8},
+    {"task":"TASK-CULT2-METRICS-001","title":"Production Metrics & Trend Review","initialQuestionTarget":15,"workedExamples":8,"guidedCases":6,"scenarioTarget":10,"visualTarget":10},
+    {"task":"TASK-CULT2-PEER-001","title":"Peer Task Support & Handoff","initialQuestionTarget":10,"workedExamples":5,"guidedCases":5,"scenarioTarget":8,"visualTarget":6}
+  ],
+  "assessment": {
+    "initialBankTarget": 220,
+    "matureBankTarget": 400,
+    "credentialExamItems": 90,
+    "passingPercent": 80,
+    "targetCognitiveMix": {
+      "understand": 0.1,
+      "apply": 0.4,
+      "analyze": 0.35,
+      "evaluate": 0.15
+    },
+    "dataCalculationTargetPercent": [15, 20]
+  },
+  "practicals": [
+    "Crop Diagnostic Workup",
+    "Sensor & Equipment Verification",
+    "Fertigation & Root-Zone Troubleshooting",
+    "IPM Trend & Treatment Follow-Up",
+    "Propagation/Canopy Performance Review",
+    "Postharvest Deviation & Lot Scope",
+    "Traceability, Metrics & Shift Coordination"
+  ],
+  "capstone": {
+    "title": "Senior Technician Diagnostic Shift",
+    "multiArea": true,
+    "requiresPrioritization": true,
+    "requiresSupervisorReadyHandoff": true
+  },
+  "portfolioArtifacts": [
+    "crop-diagnostic-report",
+    "sensor-data-quality-investigation",
+    "fertigation-root-zone-analysis",
+    "ipm-treatment-follow-up",
+    "propagation-or-canopy-performance-review",
+    "postharvest-deviation-scope-report",
+    "traceability-reconciliation",
+    "production-kpi-analysis",
+    "senior-technician-shift-summary"
+  ]
+}
