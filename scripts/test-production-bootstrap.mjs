@@ -7,16 +7,15 @@ assert.deepEqual(validateProductionEnvironment({ NODE_ENV: 'development' }), { m
 for (const env of [
   { NODE_ENV: 'production' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_API_ADMIN_TOKEN: 'x'.repeat(40), THC_REQUIRED_SCHEMA_VERSION: '1' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com', THC_API_ADMIN_TOKEN: 'short', THC_REQUIRED_SCHEMA_VERSION: '1' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com', THC_API_ADMIN_TOKEN: 'x'.repeat(40) }
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '1' },
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com' }
 ]) assert.throws(() => validateProductionEnvironment(env));
 
 const productionEnv = {
   NODE_ENV: 'production',
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs',
+  THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_API_ADMIN_TOKEN: 'A'.repeat(48),
   THC_REQUIRED_SCHEMA_VERSION: '1'
 };
 const options = await loadProductionApiOptions(productionEnv);
@@ -33,7 +32,9 @@ assert.throws(() => createHandler({ env: { NODE_ENV: 'production' } }), /explici
 const authMissing = options.authorize({ headers: {} }, 'admin:read');
 assert.equal(authMissing.ok, false);
 assert.equal(authMissing.status, 401);
-const authOk = options.authorize({ headers: { authorization: `Bearer ${productionEnv.THC_API_ADMIN_TOKEN}` } }, 'admin:read');
+const authOk = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:read');
 assert.equal(authOk.ok, true);
+assert.equal(authOk.subject, 'external-user-001');
+assert.ok(authOk.scopes.includes('learner:read'));
 
-console.log('Production API bootstrap and schema readiness contract passed.');
+console.log('Production persistence, schema readiness, and authentication adapter contract passed.');
