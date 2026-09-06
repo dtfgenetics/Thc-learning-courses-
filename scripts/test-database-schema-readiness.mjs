@@ -9,9 +9,12 @@ for (const requiredFragment of [
   'rubric_version text',
   'delivery_mode text',
   'performance_assessment_results_delivery_mode_check',
-  "values ('3', 'Performance assessment evaluator, rubric, and delivery provenance')"
+  "values ('3', 'Performance assessment evaluator, rubric, and delivery provenance')",
+  "'issued','valid','suspended','superseded','expired','revoked'",
+  'idx_status_events_credential',
+  "values ('4', 'Credential suspension and lifecycle history support')"
 ]) {
-  assert.equal(schemaSql.includes(requiredFragment), true, `database/schema.sql missing schema v3 contract fragment: ${requiredFragment}`);
+  assert.equal(schemaSql.includes(requiredFragment), true, `database/schema.sql missing schema v4 contract fragment: ${requiredFragment}`);
 }
 
 async function requestReadiness(schemaVersion) {
@@ -24,7 +27,7 @@ async function requestReadiness(schemaVersion) {
   const server = createApiServer({
     env: { NODE_ENV: 'production' },
     credentialStore,
-    requiredSchemaVersion: '3',
+    requiredSchemaVersion: '4',
     authorize: () => ({ ok: false, status: 401, error: 'authentication-required' }),
     logger: () => {}
   });
@@ -39,20 +42,20 @@ async function requestReadiness(schemaVersion) {
   }
 }
 
-const matching = await requestReadiness('3');
+const matching = await requestReadiness('4');
 assert.equal(matching.status, 200);
 assert.equal(matching.body.ok, true);
-assert.equal(matching.body.schemaVersion, '3');
+assert.equal(matching.body.schemaVersion, '4');
 
-const stale = await requestReadiness('2');
+const stale = await requestReadiness('3');
 assert.equal(stale.status, 503);
 assert.equal(stale.body.error, 'database-schema-version-mismatch');
-assert.equal(stale.body.requiredSchemaVersion, '3');
-assert.equal(stale.body.actualSchemaVersion, '2');
+assert.equal(stale.body.requiredSchemaVersion, '4');
+assert.equal(stale.body.actualSchemaVersion, '3');
 
 const missing = await requestReadiness(null);
 assert.equal(missing.status, 503);
 assert.equal(missing.body.error, 'database-schema-version-mismatch');
 assert.equal(missing.body.actualSchemaVersion, null);
 
-console.log('Database schema v3 provenance and readiness gate passed.');
+console.log('Database schema v4 lifecycle and readiness gate passed.');
