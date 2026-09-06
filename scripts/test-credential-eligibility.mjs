@@ -1,7 +1,12 @@
 import { spawnSync } from 'node:child_process';
+import { evaluateCredentialEligibility } from '../packages/domain/credential-eligibility.mjs';
 
 function run(input) {
   return spawnSync(process.execPath, ['scripts/evaluate-credential-eligibility.mjs', `--input=${input}`], { encoding: 'utf8' });
+}
+
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
 }
 
 const pass = run('tests/fixtures/eligibility-pass.json');
@@ -14,5 +19,62 @@ if (fail.status !== 2) throw new Error(`Expected failing fixture to exit 2. Got 
 const failResult = JSON.parse(fail.stdout);
 if (failResult.eligible) throw new Error('Failing fixture returned eligible=true');
 if (!failResult.missingRequirements.some((row) => row.reason === 'below-minimum-score')) throw new Error('Failing fixture did not report below-minimum-score');
+
+const performanceCredential = {
+  id: 'CRED-TEST-PERFORMANCE-001',
+  version: '1.0.0',
+  eligibility: {
+    requiredAssessments: ['ASSESS-TEST-KNOWLEDGE-001'],
+    minimumPassingScorePercent: 80,
+    requiredPerformanceAssessments: ['PRACTICAL-TEST-001', 'CAPSTONE-TEST-001'],
+    requireNoCriticalErrors: true,
+    requireVerifiedPerformanceEvidence: true,
+    requiredPortfolioArtifacts: []
+  }
+};
+
+const performanceDefinitions = new Map([
+  ['PRACTICAL-TEST-001', { id: 'PRACTICAL-TEST-001', passingStandard: { minimumPercent: 80, noCriticalErrors: true } }],
+  ['CAPSTONE-TEST-001', { id: 'CAPSTONE-TEST-001', passingStandard: { minimumPercent: 85, noCriticalErrors: true } }]
+]);
+
+function makePerformanceEvidence() {
+  return {
+    learnerId: 'TEST-LEARNER-PERFORMANCE',
+    assessments: [{ assessmentId: 'ASSESS-TEST-KNOWLEDGE-001', status: 'passed', scorePercent: 88 }],
+    performanceAssessments: [
+      { assessmentId: 'PRACTICAL-TEST-001', status: 'passed', scorePercent: 86, criticalErrorCount: 0, evidenceVerified: true },
+      { assessmentId: 'CAPSTONE-TEST-001', status: 'passed', scorePercent: 90, criticalErrorCount: 0, evidenceVerified: true }
+    ],
+    portfolioArtifacts: []
+  };
+}
+
+const performancePass = evaluateCredentialEligibility({ credential: performanceCredential, evidence: makePerformanceEvidence(), performanceDefinitions });
+assert(performancePass.eligible, `Complete performance evidence should pass: ${JSON.stringify(performancePass.missingRequirements)}`);
+
+const lowScoreEvidence = makePerformanceEvidence();
+lowScoreEvidence.performanceAssessments[1].scorePercent = 80;
+const lowScore = evaluateCredentialEligibility({ credential: performanceCredential, evidence: lowScoreEvidence, performanceDefinitions });
+assert(!lowScore.eligible, 'A performance result below its encoded passing standard must fail even when status=passed');
+assert(lowScore.missingRequirements.some((row) => row.id === 'CAPSTONE-TEST-001' && row.reason === 'below-performance-minimum-score'), 'Low performance score reason was not reported');
+
+const criticalErrorEvidence = makePerformanceEvidence();
+criticalErrorEvidence.performanceAssessments[0].criticalErrorCount = 1;
+const criticalError = evaluateCredentialEligibility({ credential: performanceCredential, evidence: criticalErrorEvidence, performanceDefinitions });
+assert(!criticalError.eligible, 'A critical performance error must block eligibility');
+assert(criticalError.missingRequirements.some((row) => row.reason === 'critical-error'), 'Critical error reason was not reported');
+
+const unverifiedEvidence = makePerformanceEvidence();
+unverifiedEvidence.performanceAssessments[0].evidenceVerified = false;
+const unverified = evaluateCredentialEligibility({ credential: performanceCredential, evidence: unverifiedEvidence, performanceDefinitions });
+assert(!unverified.eligible, 'Unverified performance evidence must block eligibility when verification is required');
+assert(unverified.missingRequirements.some((row) => row.reason === 'performance-evidence-unverified'), 'Unverified performance evidence reason was not reported');
+
+const missingDefinition = new Map(performanceDefinitions);
+missingDefinition.delete('CAPSTONE-TEST-001');
+const missingDefinitionResult = evaluateCredentialEligibility({ credential: performanceCredential, evidence: makePerformanceEvidence(), performanceDefinitions: missingDefinition });
+assert(!missingDefinitionResult.eligible, 'Missing required performance definitions must fail closed');
+assert(missingDefinitionResult.missingRequirements.some((row) => row.id === 'CAPSTONE-TEST-001' && row.reason === 'missing-performance-definition'), 'Missing performance definition reason was not reported');
 
 console.log('Credential eligibility tests passed.');
