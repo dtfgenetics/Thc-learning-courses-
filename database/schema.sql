@@ -1,6 +1,12 @@
 -- THC Academy runtime schema (PostgreSQL)
 -- Curriculum source files remain in Git; learner/runtime records belong in the database.
 
+create table if not exists academy_schema_migrations (
+  version text primary key,
+  applied_at timestamptz not null default now(),
+  description text not null
+);
+
 create table if not exists learners (
   id uuid primary key,
   external_subject text not null unique,
@@ -116,3 +122,7 @@ create table if not exists audit_events (
 create index if not exists idx_attempts_learner_assessment on assessment_attempts(learner_id, assessment_id, started_at desc);
 create index if not exists idx_credentials_subject on credentials(subject_hash, issued_at desc);
 create index if not exists idx_audit_subject on audit_events(subject_type, subject_id, created_at desc);
+
+insert into academy_schema_migrations (version, description)
+values ('1', 'Initial THC Academy runtime schema')
+on conflict (version) do nothing;
