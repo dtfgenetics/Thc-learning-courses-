@@ -30,6 +30,14 @@ export function createDevelopmentCredentialStore() {
 
 const developmentCredentialStore = createDevelopmentCredentialStore();
 
+function resolveCredentialStore(explicitStore, env = process.env) {
+  if (explicitStore) return explicitStore;
+  if (env.NODE_ENV === 'production') {
+    throw new Error('Production API requires an explicit persistent credentialStore');
+  }
+  return developmentCredentialStore;
+}
+
 export function registerCredentialForDevelopment(record) {
   if (process.env.NODE_ENV === 'production') throw new Error('Development credential adapter is disabled in production');
   return developmentCredentialStore.register(record);
@@ -66,13 +74,15 @@ function defaultLogger(entry) {
 }
 
 export function createHandler({
-  credentialStore = developmentCredentialStore,
+  credentialStore = null,
+  env = process.env,
   limiter = createFixedWindowRateLimiter(),
   authorize = createServiceTokenAuthorizer({ tokens: serviceTokensFromEnvironment() }),
   logger = defaultLogger,
   nowNs = () => process.hrtime.bigint()
 } = {}) {
-  return function handler(req, res) {
+  const resolvedCredentialStore = resolveCredentialStore(credentialStore, env);
+  return async function handler(req, res) {
     const startedAt = nowNs();
     const requestId = crypto.randomUUID();
     let route = 'unmatched';
@@ -116,7 +126,7 @@ export function createHandler({
     const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
     if (req.method === 'GET' && credentialMatch) {
       route = 'GET /api/v1/credentials/:verificationId';
-      const record = credentialStore.getByVerificationId(credentialMatch[1]);
+      const record = await resolvedCredentialStore.getByVerificationId(credentialMatch[1]);
       if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
       return json(res, 200, publicCredentialView(record, credentialDefinition));
     }
@@ -131,8 +141,8 @@ export function createHandler({
       return json(res, 200, {
         ok: true,
         service: 'thc-academy-api',
-        storageAdapter: credentialStore.kind ?? 'unknown',
-        credentialCount: typeof credentialStore.count === 'function' ? credentialStore.count() : null,
+        storageAdapter: resolvedCredentialStore.kind ?? 'unknown',
+        credentialCount: typeof resolvedCredentialStore.count === 'function' ? await resolvedCredentialStore.count() : null,
         authenticatedSubject: auth.subject,
         requestId
       });
