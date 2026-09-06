@@ -6,7 +6,11 @@ const root = process.cwd();
 const args = new Set(process.argv.slice(2));
 const allowDraft = args.has('--allow-draft');
 const seedArg = process.argv.find((arg) => arg.startsWith('--seed='));
+const assessmentArg = process.argv.find((arg) => arg.startsWith('--assessment='));
 const seed = seedArg ? seedArg.slice('--seed='.length) : crypto.randomUUID();
+const assessmentId = assessmentArg ? assessmentArg.slice('--assessment='.length) : 'ASSESS-CULT-FOUNDATIONS-FINAL-001';
+
+if (!/^ASSESS-[A-Z0-9-]+$/.test(assessmentId)) throw new Error(`Invalid assessment ID ${assessmentId}`);
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -41,7 +45,7 @@ function shuffle(values, rand) {
   return result;
 }
 
-const assessment = readJson('content/assessments/ASSESS-CULT-FOUNDATIONS-FINAL-001.json');
+const assessment = readJson(`content/assessments/${assessmentId}.json`);
 const questions = readDirJson('content/questions');
 const eligibleStatuses = allowDraft
   ? new Set(['draft', 'technical-review', 'editorial-review', 'pilot', 'active'])
@@ -50,30 +54,62 @@ const eligibleStatuses = allowDraft
 const rand = mulberry32(hashToUint32(seed));
 const selected = [];
 const coverage = [];
+const selectedIds = new Set();
 
-for (const row of assessment.blueprint ?? []) {
-  const pool = questions.filter((item) =>
-    item.competency === row.competency &&
-    ['summative', 'credential'].includes(item.purpose) &&
-    eligibleStatuses.has(item.status)
-  );
-
-  if (pool.length < row.items) {
-    throw new Error(`${row.competency}: needs ${row.items} eligible item(s), found ${pool.length}. Production generation requires active items only.`);
+function chooseFromPool(pool, count, label) {
+  if (pool.length < count) {
+    throw new Error(`${label}: needs ${count} eligible item(s), found ${pool.length}. Production generation requires active items only.`);
   }
-
-  const chosen = shuffle(pool, rand).slice(0, row.items);
-  selected.push(...chosen.map((item) => ({ id: item.id, version: item.version })));
-  coverage.push({ competency: row.competency, count: chosen.length });
+  const chosen = shuffle(pool, rand).slice(0, count);
+  for (const item of chosen) {
+    const key = `${item.id}@${item.version}`;
+    if (selectedIds.has(key)) throw new Error(`Duplicate selected item ${key}`);
+    selectedIds.add(key);
+    selected.push(item);
+  }
+  return chosen;
 }
 
+if (Array.isArray(assessment.itemPools) && assessment.itemPools.length) {
+  for (const row of assessment.itemPools) {
+    const pool = questions.filter((item) =>
+      item.id.startsWith(row.idPrefix) &&
+      ['summative', 'credential'].includes(item.purpose) &&
+      eligibleStatuses.has(item.status)
+    );
+    const chosen = chooseFromPool(pool, row.items, row.name);
+    coverage.push({ pool: row.name, idPrefix: row.idPrefix, count: chosen.length });
+  }
+} else {
+  for (const row of assessment.blueprint ?? []) {
+    const pool = questions.filter((item) =>
+      item.competency === row.competency &&
+      ['summative', 'credential'].includes(item.purpose) &&
+      eligibleStatuses.has(item.status)
+    );
+    const chosen = chooseFromPool(pool, row.items, row.competency);
+    coverage.push({ competency: row.competency, count: chosen.length });
+  }
+}
+
+if (assessment.totalItems && selected.length !== assessment.totalItems) {
+  throw new Error(`${assessment.id}: blueprint selected ${selected.length} item(s), expected totalItems=${assessment.totalItems}`);
+}
+
+const formKey = assessment.id.replace(/^ASSESS-/, '').replace(/-001$/, '');
 const payload = {
-  id: `FORM-CULT-FOUNDATIONS-${crypto.createHash('sha256').update(seed).digest('hex').slice(0, 12).toUpperCase()}`,
+  id: `FORM-${formKey}-${crypto.createHash('sha256').update(`${assessment.id}:${seed}`).digest('hex').slice(0, 12).toUpperCase()}`,
   assessment: assessment.id,
   assessmentVersion: assessment.version,
-  algorithmVersion: '1.0.0',
+  algorithmVersion: '1.1.0',
   status: 'generated',
-  items: selected,
+  items: selected.map((item) => ({
+    id: item.id,
+    itemId: item.id,
+    version: item.version,
+    itemVersion: item.version,
+    competency: item.competency
+  })),
   coverage,
   seed,
   integrityHash: ''
