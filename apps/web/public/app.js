@@ -1,3 +1,5 @@
+import { courseProgress, readProgress, setLessonComplete, writeProgress } from './progress.js';
+
 const catalogRoot = document.querySelector('#catalog');
 const catalogStatus = document.querySelector('#catalog-status');
 const searchInput = document.querySelector('#course-search');
@@ -5,6 +7,8 @@ const lessonView = document.querySelector('#lesson-view');
 const modeBadge = document.querySelector('#mode-badge');
 
 let catalog = null;
+let progress = readProgress();
+let currentLesson = null;
 
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
@@ -28,17 +32,34 @@ function renderCatalog() {
   const query = searchInput.value.trim();
   const courses = (catalog?.courses ?? []).filter((course) => matchesQuery(course, query));
   catalogStatus.textContent = `${courses.length} course${courses.length === 1 ? '' : 's'} shown`;
+  const completed = new Set(progress.completedLessons);
 
   for (const course of courses) {
     const details = document.createElement('details');
     details.className = 'course';
-    if (query) details.open = true;
+    if (query || courseProgress(course, progress).completed > 0) details.open = true;
 
     const summary = document.createElement('summary');
     summary.append(text('span', course.title));
-    const meta = `${course.status}${course.credentialBearing ? ' • credential pathway' : ''}`;
-    summary.append(text('span', meta, 'course-meta'));
+    const courseState = courseProgress(course, progress);
+    const metaParts = [course.status];
+    if (course.credentialBearing) metaParts.push('credential pathway');
+    metaParts.push(`${courseState.completed}/${courseState.total} lessons • ${courseState.percent}%`);
+    summary.append(text('span', metaParts.join(' • '), 'course-meta'));
     details.append(summary);
+
+    const progressTrack = document.createElement('div');
+    progressTrack.className = 'progress-track';
+    progressTrack.setAttribute('role', 'progressbar');
+    progressTrack.setAttribute('aria-label', `${course.title} local lesson progress`);
+    progressTrack.setAttribute('aria-valuemin', '0');
+    progressTrack.setAttribute('aria-valuemax', '100');
+    progressTrack.setAttribute('aria-valuenow', String(courseState.percent));
+    const progressFill = document.createElement('div');
+    progressFill.className = 'progress-fill';
+    progressFill.style.width = `${courseState.percent}%`;
+    progressTrack.append(progressFill);
+    details.append(progressTrack);
 
     for (const module of course.modules) {
       const section = document.createElement('section');
@@ -52,7 +73,10 @@ function renderCatalog() {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'lesson-link';
-        button.textContent = `${lesson.title}${lesson.estimatedMinutes ? ` · ${lesson.estimatedMinutes} min` : ''}`;
+        if (completed.has(lesson.id)) button.classList.add('lesson-complete');
+        const completion = completed.has(lesson.id) ? '✓ ' : '';
+        button.textContent = `${completion}${lesson.title}${lesson.estimatedMinutes ? ` · ${lesson.estimatedMinutes} min` : ''}`;
+        button.setAttribute('aria-pressed', currentLesson?.id === lesson.id ? 'true' : 'false');
         button.addEventListener('click', () => openLesson(lesson.id));
         item.append(button);
         list.append(item);
@@ -76,7 +100,36 @@ function appendList(parent, heading, items) {
   parent.append(section);
 }
 
+function renderCompletionControl(article, lesson) {
+  const section = document.createElement('section');
+  section.className = 'completion-panel';
+  const checked = progress.completedLessons.includes(lesson.id);
+
+  const label = document.createElement('label');
+  label.className = 'completion-label';
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = checked;
+  checkbox.addEventListener('change', () => {
+    progress = writeProgress(setLessonComplete(progress, lesson.id, checkbox.checked));
+    renderCatalog();
+    note.textContent = checkbox.checked
+      ? 'Marked complete on this device.'
+      : 'Completion removed from this device.';
+  });
+  label.append(checkbox, text('span', 'Mark this lesson complete'));
+
+  const note = text(
+    'p',
+    checked ? 'Marked complete on this device.' : 'Local progress only — this does not satisfy official assessment or credential requirements.',
+    'completion-note'
+  );
+  section.append(label, note);
+  article.append(section);
+}
+
 function renderLesson(lesson) {
+  currentLesson = lesson;
   const article = document.createElement('article');
   article.className = 'lesson-article';
   article.append(text('p', 'THC Academy lesson', 'eyebrow'));
@@ -129,8 +182,7 @@ function renderLesson(lesson) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
     section.append(text('h3', 'Practical application'));
-    const box = text('p', content.practicalApplication, 'callout');
-    section.append(box);
+    section.append(text('p', content.practicalApplication, 'callout'));
     article.append(section);
   }
 
@@ -150,8 +202,10 @@ function renderLesson(lesson) {
     article.append(section);
   }
 
+  renderCompletionControl(article, lesson);
   lessonView.replaceChildren(article);
   lessonView.focus();
+  renderCatalog();
 }
 
 async function openLesson(id) {
@@ -161,6 +215,7 @@ async function openLesson(id) {
     if (!response.ok) throw new Error(`Lesson request failed (${response.status})`);
     renderLesson(await response.json());
   } catch (error) {
+    currentLesson = null;
     const card = text('div', '', 'welcome-card error');
     card.append(text('h2', 'Lesson unavailable'));
     card.append(text('p', error.message));
