@@ -23,6 +23,14 @@ function loadCredentialDefinition(id) {
   return definition;
 }
 
+function loadCourse(courseId) {
+  if (!/^COURSE-[A-Z0-9-]+$/.test(courseId)) return null;
+  const target = path.join(root, 'content/courses', `${courseId}.json`);
+  if (!fs.existsSync(target)) return null;
+  const course = JSON.parse(fs.readFileSync(target, 'utf8'));
+  return course?.id === courseId ? course : null;
+}
+
 export function createDevelopmentCredentialStore() {
   const records = new Map();
   return {
@@ -145,6 +153,34 @@ export function createHandler({
           route = 'rate-limited-api';
           return json(res, 429, { error: 'rate-limit-exceeded', requestId }, { 'retry-after': String(rate.retryAfterSeconds) });
         }
+      }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/enrollments') {
+        route = 'GET /api/v1/me/enrollments';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listEnrollments !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
+        const enrollments = await learnerStore.listEnrollments(auth.subject);
+        return json(res, 200, { learner: { subject: auth.subject }, enrollments });
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/me/enrollments') {
+        route = 'POST /api/v1/me/enrollments';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.enroll !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const courseId = String(body.courseId ?? '').trim();
+        const courseVersion = String(body.courseVersion ?? '').trim();
+        const course = loadCourse(courseId);
+        if (!course) return json(res, 404, { error: 'course-not-found', requestId });
+        if (String(course.version) !== courseVersion) {
+          return json(res, 409, { error: 'course-version-mismatch', currentVersion: String(course.version), requestId });
+        }
+        const enrollment = await learnerStore.enroll(auth.subject, { courseId, courseVersion });
+        return json(res, 200, { enrollment });
       }
 
       if (req.method === 'GET' && url.pathname === '/api/v1/me/progress') {
