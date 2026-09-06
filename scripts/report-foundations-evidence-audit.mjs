@@ -80,6 +80,14 @@ for (const domain of registry.domains ?? []) {
 
     if (allRefs.length === 0) structuralErrors.push(`${lesson.id}: lesson has no references`);
 
+    const evidenceMetadataAttentionRequired =
+      uncitedSections.length > 0 ||
+      missingReferences.length > 0 ||
+      unreviewedReferences.length > 0 ||
+      weakEvidenceReferences.length > 0 ||
+      missingLocatorReferences.length > 0 ||
+      supersededOrRetracted.length > 0;
+
     lessonReports.push({
       lessonId: lesson.id,
       lessonVersion: String(lesson.version),
@@ -93,13 +101,8 @@ for (const domain of registry.domains ?? []) {
       weakEvidenceReferences,
       missingLocatorReferences,
       supersededOrRetracted,
-      reviewerAttentionRequired:
-        uncitedSections.length > 0 ||
-        missingReferences.length > 0 ||
-        unreviewedReferences.length > 0 ||
-        weakEvidenceReferences.length > 0 ||
-        missingLocatorReferences.length > 0 ||
-        supersededOrRetracted.length > 0
+      evidenceMetadataAttentionRequired,
+      humanScientificReviewRequired: true
     });
   }
 
@@ -107,7 +110,8 @@ for (const domain of registry.domains ?? []) {
     domainId: domain.id,
     moduleId: domain.module,
     lessons: lessonReports,
-    reviewerAttentionRequired: lessonReports.some((lesson) => lesson.reviewerAttentionRequired)
+    evidenceMetadataAttentionRequired: lessonReports.some((lesson) => lesson.evidenceMetadataAttentionRequired),
+    humanScientificReviewRequired: true
   });
 }
 
@@ -117,7 +121,8 @@ const summary = {
   curriculumVersion: String(registry.version),
   domainCount: domainReports.length,
   lessonCount: lessonReports.length,
-  lessonsNeedingReviewerAttention: lessonReports.filter((lesson) => lesson.reviewerAttentionRequired).length,
+  lessonsNeedingEvidenceMetadataAttention: lessonReports.filter((lesson) => lesson.evidenceMetadataAttentionRequired).length,
+  lessonsRequiringHumanScientificReview: lessonReports.length,
   totalReferences: unique(lessonReports.flatMap((lesson) => lesson.references)).length,
   uncitedSectionCount: lessonReports.reduce((sum, lesson) => sum + lesson.uncitedSections.length, 0),
   missingReferenceCount: lessonReports.reduce((sum, lesson) => sum + lesson.missingReferences.length, 0),
