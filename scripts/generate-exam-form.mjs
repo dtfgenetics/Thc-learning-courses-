@@ -103,13 +103,7 @@ const payload = {
   assessmentVersion: assessment.version,
   algorithmVersion: '1.1.0',
   status: 'generated',
-  items: selected.map((item) => ({
-    id: item.id,
-    itemId: item.id,
-    version: item.version,
-    itemVersion: item.version,
-    competency: item.competency
-  })),
+  items: selected.map((item) => ({ id: item.id, version: item.version })),
   coverage,
   seed,
   integrityHash: ''
