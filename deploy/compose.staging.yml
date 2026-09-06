@@ -1,0 +1,26 @@
+services:
+  academy-web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      THC_SERVICE: web
+      NODE_ENV: staging
+      ACADEMY_PORT: 4173
+      ACADEMY_PREVIEW_DRAFTS: 1
+    ports:
+      - "4173:4173"
+    restart: unless-stopped
+
+  academy-api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      THC_SERVICE: api
+      NODE_ENV: staging
+      PORT: 8787
+      THC_API_ADMIN_TOKEN: ${THC_API_ADMIN_TOKEN:?set THC_API_ADMIN_TOKEN to a random value of at least 32 characters}
+    ports:
+      - "8787:8787"
+    restart: unless-stopped
