@@ -8,7 +8,9 @@ if (!inputArg) throw new Error('Usage: node scripts/project-public-verification.
 const inputValue = inputArg.slice('--input='.length);
 const inputPath = path.isAbsolute(inputValue) ? inputValue : path.join(root, inputValue);
 const record = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
-const definition = JSON.parse(fs.readFileSync(path.join(root, 'content/credentials/CRED-CULT-FOUNDATIONS-001.json'), 'utf8'));
+const definitionId = record.credentialDefinition ?? record.credentialDefinitionId;
+if (!/^CRED-[A-Z0-9-]+$/.test(String(definitionId ?? ''))) throw new Error('Issued credential is missing a valid credential definition ID');
+const definition = JSON.parse(fs.readFileSync(path.join(root, `content/credentials/${definitionId}.json`), 'utf8'));
 const valid = ['test-issued', 'issued', 'valid'].includes(record.status);
 
 const output = {
@@ -18,13 +20,17 @@ const output = {
   credential: {
     id: definition.id,
     title: definition.title,
-    version: record.credentialVersion
+    version: record.credentialVersion ?? record.credentialDefinitionVersion ?? definition.version,
+    role: definition.role ?? null,
+    description: definition.publicDescription ?? null
   },
   issuer: {
     name: record.issuer?.name ?? 'Teaching Healthy Cultivation',
     url: record.issuer?.url ?? 'https://dtfseeds.com/'
   },
   issuedAt: record.issuedAt ?? null,
+  evidenceSummary: record.publicEvidenceSummary ?? null,
+  limitations: definition.limitations ?? [],
   disclaimer: record.disclaimer ?? null
 };
 

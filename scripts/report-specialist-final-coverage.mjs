@@ -8,16 +8,42 @@ function readDirJson(rel) {
 }
 
 const assessments = readDirJson('content/assessments').filter((a) => a.purpose === 'credential');
-const questions = new Map(readDirJson('content/questions').map((q) => [q.id, q]));
+const questionList = readDirJson('content/questions');
+const questions = new Map(questionList.map((q) => [q.id, q]));
+
+function assessmentBankItems(assessment) {
+  const staticItems = (assessment.items ?? []).map((id) => questions.get(id)).filter(Boolean);
+  if (staticItems.length > 0) return { mode: 'static', items: staticItems };
+
+  if ((assessment.itemPools ?? []).length > 0) {
+    const prefixes = assessment.itemPools.map((row) => row.idPrefix);
+    return {
+      mode: 'domain-pools',
+      items: questionList.filter((q) => prefixes.some((prefix) => q.id.startsWith(prefix)) && ['summative','credential'].includes(q.purpose))
+    };
+  }
+
+  if ((assessment.blueprint ?? []).length > 0) {
+    const competencies = new Set(assessment.blueprint.map((row) => row.competency));
+    return {
+      mode: 'blueprint',
+      items: questionList.filter((q) => competencies.has(q.competency) && ['summative','credential'].includes(q.purpose))
+    };
+  }
+
+  return { mode: 'none', items: [] };
+}
 
 const rows = assessments.sort((a,b) => a.id.localeCompare(b.id)).map((assessment) => {
-  const items = (assessment.items ?? []).map((id) => questions.get(id)).filter(Boolean);
+  const bank = assessmentBankItems(assessment);
+  const items = bank.items;
   const objectiveCoverage = Object.fromEntries((assessment.objectives ?? []).map((objective) => [objective, items.filter((q) => q.objective === objective).length]));
   const competencyCoverage = Object.fromEntries((assessment.competencies ?? []).map((competency) => [competency, items.filter((q) => q.competency === competency).length]));
   const uncoveredObjectives = Object.entries(objectiveCoverage).filter(([,count]) => count === 0).map(([id]) => id);
   const underTwoObjectives = Object.entries(objectiveCoverage).filter(([,count]) => count < 2).map(([id]) => id);
   return {
     assessment: assessment.id,
+    selectionMode: bank.mode,
     itemCount: items.length,
     objectives: objectiveCoverage,
     competencies: competencyCoverage,

@@ -1,0 +1,26 @@
+{
+  "learnerId": "TEST-LEARNER-TECH2-FAIL",
+  "assessments": [
+    {"assessmentId":"ASSESS-CULT-TECH-II-CREDENTIAL-001","status":"passed","scorePercent":84}
+  ],
+  "performanceAssessments": [
+    {"assessmentId":"PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP","status":"passed","scorePercent":88,"criticalErrorCount":0},
+    {"assessmentId":"PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION","status":"passed","scorePercent":90,"criticalErrorCount":1},
+    {"assessmentId":"PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING","status":"passed","scorePercent":84,"criticalErrorCount":0},
+    {"assessmentId":"PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP","status":"passed","scorePercent":87,"criticalErrorCount":0},
+    {"assessmentId":"PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW","status":"passed","scorePercent":85,"criticalErrorCount":0},
+    {"assessmentId":"PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE","status":"passed","scorePercent":89,"criticalErrorCount":0},
+    {"assessmentId":"PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION","status":"passed","scorePercent":91,"criticalErrorCount":0},
+    {"assessmentId":"CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT","status":"passed","scorePercent":88,"criticalErrorCount":0}
+  ],
+  "portfolioArtifacts": [
+    {"artifactId":"crop-diagnostic-report","status":"verified"},
+    {"artifactId":"sensor-data-quality-investigation","status":"verified"},
+    {"artifactId":"fertigation-root-zone-analysis","status":"verified"},
+    {"artifactId":"ipm-treatment-follow-up","status":"verified"},
+    {"artifactId":"propagation-or-canopy-performance-review","status":"verified"},
+    {"artifactId":"postharvest-deviation-scope-report","status":"verified"},
+    {"artifactId":"traceability-reconciliation","status":"verified"},
+    {"artifactId":"production-kpi-analysis","status":"verified"}
+  ]
+}

@@ -16,9 +16,9 @@ export function createAttempt({ learnerId, assessment, form, now = new Date().to
     scoredAt: null,
     items: form.items.map((item, index) => ({
       position: index + 1,
-      itemId: item.itemId,
-      itemVersion: item.itemVersion,
-      competency: item.competency,
+      itemId: item.itemId ?? item.id,
+      itemVersion: item.itemVersion ?? item.version,
+      competency: item.competency ?? null,
       response: null,
       score: null,
       maxScore: 1
@@ -47,10 +47,13 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
       const expected = [...item.correct].sort((a,b) => a-b);
       const actual = Array.isArray(row.response) ? [...row.response].sort((a,b) => a-b) : [];
       score = JSON.stringify(expected) === JSON.stringify(actual) ? 1 : 0;
+    } else if (item.type === 'numeric') {
+      const actual = Number(row.response);
+      score = Number.isFinite(actual) && actual === Number(item.correct) ? 1 : 0;
     } else throw new Error(`Unsupported production scoring type ${item.type}`);
     earned += score;
     possible += 1;
-    return { ...row, score };
+    return { ...row, competency: row.competency ?? item.competency, score };
   });
   const scorePercent = possible ? Number(((earned / possible) * 100).toFixed(2)) : 0;
   return {
@@ -67,10 +70,11 @@ export function competencyResults(scoredAttempt) {
   if (scoredAttempt.status !== 'scored') throw new Error('Attempt must be scored');
   const groups = new Map();
   for (const row of scoredAttempt.items) {
-    const entry = groups.get(row.competency) ?? { earned: 0, possible: 0 };
+    const competency = row.competency ?? 'UNMAPPED';
+    const entry = groups.get(competency) ?? { earned: 0, possible: 0 };
     entry.earned += row.score ?? 0;
     entry.possible += row.maxScore ?? 1;
-    groups.set(row.competency, entry);
+    groups.set(competency, entry);
   }
   return [...groups.entries()].map(([competency, v]) => ({
     competency,

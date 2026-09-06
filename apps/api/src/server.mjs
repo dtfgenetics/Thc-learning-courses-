@@ -11,7 +11,17 @@ import { loadProductionApiOptions } from './bootstrap.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
-const credentialDefinition = JSON.parse(fs.readFileSync(path.join(root, 'content/credentials/CRED-CULT-FOUNDATIONS-001.json'), 'utf8'));
+const credentialDefinitions = new Map();
+
+function loadCredentialDefinition(id) {
+  if (!/^CRED-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (credentialDefinitions.has(id)) return credentialDefinitions.get(id);
+  const target = path.join(root, 'content/credentials', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  credentialDefinitions.set(id, definition);
+  return definition;
+}
 
 export function createDevelopmentCredentialStore() {
   const records = new Map();
@@ -173,7 +183,10 @@ export function createHandler({
         route = 'GET /api/v1/credentials/:verificationId';
         const record = await resolvedCredentialStore.getByVerificationId(credentialMatch[1]);
         if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
-        return json(res, 200, publicCredentialView(record, credentialDefinition));
+        const definitionId = record.credentialDefinitionId ?? record.credentialDefinition ?? (record.courseId === 'COURSE-CULT-FOUNDATIONS-001' ? 'CRED-CULT-FOUNDATIONS-001' : null);
+        const definition = loadCredentialDefinition(definitionId);
+        if (!definition) return json(res, 500, { error: 'credential-definition-not-found', requestId });
+        return json(res, 200, publicCredentialView(record, definition));
       }
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
