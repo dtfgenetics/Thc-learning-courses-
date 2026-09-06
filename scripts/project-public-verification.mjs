@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { publicCredentialView } from '../packages/domain/credential-runtime.mjs';
 
 const root = process.cwd();
 const inputArg = process.argv.find((arg) => arg.startsWith('--input='));
@@ -11,27 +12,20 @@ const record = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 const definitionId = record.credentialDefinition ?? record.credentialDefinitionId;
 if (!/^CRED-[A-Z0-9-]+$/.test(String(definitionId ?? ''))) throw new Error('Issued credential is missing a valid credential definition ID');
 const definition = JSON.parse(fs.readFileSync(path.join(root, `content/credentials/${definitionId}.json`), 'utf8'));
-const valid = ['test-issued', 'issued', 'valid'].includes(record.status);
+const statusHistory = Array.isArray(record.statusHistory) ? record.statusHistory : [];
+const projected = publicCredentialView({
+  ...record,
+  credentialDefinitionVersion: record.credentialDefinitionVersion ?? record.credentialVersion,
+  payloadJson: {
+    ...(record.payloadJson ?? {}),
+    issuer: record.issuer ?? record.payloadJson?.issuer ?? null,
+    publicEvidenceSummary: record.publicEvidenceSummary ?? record.payloadJson?.publicEvidenceSummary ?? null
+  }
+}, definition, { statusHistory });
 
 const output = {
-  verificationId: record.verificationId,
-  valid,
-  status: record.status,
-  credential: {
-    id: definition.id,
-    title: definition.title,
-    version: record.credentialVersion ?? record.credentialDefinitionVersion ?? definition.version,
-    role: definition.role ?? null,
-    description: definition.publicDescription ?? null
-  },
-  issuer: {
-    name: record.issuer?.name ?? 'Teaching Healthy Cultivation',
-    url: record.issuer?.url ?? 'https://dtfseeds.com/'
-  },
-  issuedAt: record.issuedAt ?? null,
-  evidenceSummary: record.publicEvidenceSummary ?? null,
-  limitations: definition.limitations ?? [],
-  disclaimer: record.disclaimer ?? null
+  ...projected,
+  valid: ['test-issued', 'issued', 'valid'].includes(record.status)
 };
 
 console.log(JSON.stringify(output, null, 2));
