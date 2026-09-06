@@ -1,7 +1,7 @@
 {
   "system": "THC Academy",
   "version": "0.1.0",
-  "updatedAt": "2026-09-05",
+  "updatedAt": "2026-09-06",
   "productionReady": false,
   "areas": {
     "curriculum": {
@@ -43,7 +43,7 @@
         "privacySafeVerificationProjection": true,
         "productionIssuerIdentity": false,
         "productionSigning": false,
-        "revocationPersistence": false
+        "revocationPersistence": true
       }
     },
     "api": {
