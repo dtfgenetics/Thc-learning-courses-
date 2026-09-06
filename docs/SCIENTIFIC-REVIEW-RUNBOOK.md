@@ -14,28 +14,88 @@ Automated tooling may prepare packets, identify claims/evidence, detect missing 
 
 ## Current Cultivation Foundations scientific queue
 
-Review the exact current lesson versions represented by these lesson IDs:
+The existing queue walks every lesson in each of the 12 Cultivation Foundations modules. The campaign therefore contains **36 lesson objects**, not only the 12 domain lead lessons.
 
-1. `LESSON-PLANT-BIO-001`
-2. `LESSON-ENV-VPD-001`
-3. `LESSON-LIGHT-001`
-4. `LESSON-WATER-001`
-5. `LESSON-ROOTZONE-001`
-6. `LESSON-NUTRITION-001`
-7. `LESSON-IPM-001`
-8. `LESSON-PROP-001`
-9. `LESSON-CANOPY-001`
-10. `LESSON-FLOWER-001`
-11. `LESSON-POSTHARVEST-001`
-12. `LESSON-GENETICS-001`
+### Plant biology
+- `LESSON-PLANT-BIO-001`
+- `LESSON-PLANT-BIO-ANATOMY-002`
+- `LESSON-PLANT-BIO-SEX-003`
 
-Do not rely on this list alone for version information. The reviewer packet and review record must use the exact version from the current lesson object.
+### Environment
+- `LESSON-ENV-VPD-001`
+- `LESSON-ENV-SENSORS-002`
+- `LESSON-ENV-LEAF-VPD-003`
+
+### Lighting
+- `LESSON-LIGHT-001`
+- `LESSON-LIGHT-PPFD-002`
+- `LESSON-LIGHT-DLI-003`
+
+### Water
+- `LESSON-WATER-001`
+- `LESSON-WATER-PH-002`
+- `LESSON-WATER-EC-003`
+
+### Root zone
+- `LESSON-ROOTZONE-001`
+- `LESSON-ROOTZONE-MEDIA-002`
+- `LESSON-ROOTZONE-DRYBACK-003`
+
+### Nutrition
+- `LESSON-NUTRITION-001`
+- `LESSON-NUTRITION-MACRO-002`
+- `LESSON-NUTRITION-MICRO-003`
+
+### IPM
+- `LESSON-IPM-001`
+- `LESSON-IPM-SCOUT-002`
+- `LESSON-IPM-BIOSEC-003`
+
+### Propagation
+- `LESSON-PROP-001`
+- `LESSON-PROP-SEED-002`
+- `LESSON-PROP-CLONE-003`
+
+### Canopy
+- `LESSON-CANOPY-001`
+- `LESSON-CANOPY-LST-002`
+- `LESSON-CANOPY-HST-003`
+
+### Flowering
+- `LESSON-FLOWER-001`
+- `LESSON-FLOWER-PHOTO-002`
+- `LESSON-FLOWER-MATURITY-003`
+
+### Postharvest
+- `LESSON-POSTHARVEST-001`
+- `LESSON-POSTHARVEST-DRY-002`
+- `LESSON-POSTHARVEST-STORAGE-003`
+
+### Genetics
+- `LESSON-GENETICS-001`
+- `LESSON-GENETICS-INHERIT-002`
+- `LESSON-GENETICS-SELECT-003`
+
+Do not rely on this list alone for version information. The reviewer packet and review record must use the exact version from the current lesson object, and the generated review queue remains the authoritative current scope.
+
+## Automation-safe evidence preflight
+
+Before assigning a lesson to a human reviewer, run:
+
+```bash
+npm run evidence:foundations
+npm run evidence:foundations:check
+```
+
+The evidence audit checks module/lesson resolution, lesson and section citation coverage, unresolved reference IDs, reference review-status metadata, weak evidence-level metadata, missing DOI/PMID/PMCID/URL locators, and superseded/retracted source states.
+
+The first full audit of Cultivation Foundations v1.0.0 found 12 domains, 36 lessons, and 11 unique references with zero unresolved references, zero uncited sections, zero unreviewed/weak source metadata, zero missing locators, and zero superseded/retracted sources. This means the source metadata is structurally ready for human review; it does **not** mean the scientific claims have been approved by a human reviewer.
 
 ## Reviewer qualification
 
 Use a reviewer whose education, professional work, research, extension, horticulture, plant science, controlled-environment agriculture, pathology, entomology, soil/root-zone science, genetics, postharvest science, or another relevant discipline is appropriate for the lesson being reviewed.
 
-A reviewer does not need to be the same person for all 12 lessons. Domain-matched review is preferred where claims cross specialized disciplines.
+A reviewer does not need to be the same person for all 36 lessons. Domain-matched review is preferred where claims cross specialized disciplines.
 
 Record only a stable reviewer identifier in Git. Do not commit reviewer contact details, signatures, private credentials, access tokens, personal records, or other sensitive information.
 
@@ -52,7 +112,11 @@ npm run review:readiness
 
 Confirm the lesson is still pending scientific review and note its current version. If the lesson changes during review, stop and review the new version instead of reusing the old decision.
 
-### 2. Build/read the reviewer packet
+### 2. Run the evidence preflight
+
+Run `npm run evidence:foundations` and inspect the target lesson. Resolve structural evidence defects before asking the reviewer to spend time on scientific judgment. A structurally clean evidence report is preparation only and must never be treated as approval.
+
+### 3. Build/read the reviewer packet
 
 Use the existing packet builder:
 
@@ -62,7 +126,7 @@ npm run review:packet
 
 The scientific packet should be treated as the working evidence map, not as approval. Review the lesson itself together with its claims, references, objectives, competency traceability, and any evidence notes included by the packet tooling.
 
-### 3. Perform scientific checks
+### 4. Perform scientific checks
 
 For each substantive claim, verify the following as applicable:
 
@@ -79,7 +143,7 @@ For each substantive claim, verify the following as applicable:
 - conflicting evidence is acknowledged when it materially changes the learner takeaway;
 - the lesson's learning objectives are actually supported by the reviewed content.
 
-### 4. Choose a decision
+### 5. Choose a decision
 
 Use only the review statuses allowed by `schemas/review-record.schema.json`.
 
@@ -89,7 +153,7 @@ Use only the review statuses allowed by `schemas/review-record.schema.json`.
 
 When changes are requested or rejected, keep the review record as audit history. Do not overwrite it after revision; the revised lesson version receives a new review record.
 
-### 5. Create the immutable review record
+### 6. Create the immutable review record
 
 Use the repository review-record workflow rather than hand-editing gate booleans:
 
@@ -108,11 +172,12 @@ The record must identify:
 - decision/status;
 - useful notes and evidence checked, without storing sensitive information.
 
-### 6. Re-run readiness
+### 7. Re-run readiness
 
 After the record is committed:
 
 ```bash
+npm run evidence:foundations:check
 npm run review:validate
 npm run review:queue:check
 npm run review:packets:check
@@ -126,9 +191,9 @@ A lesson is scientifically complete only when the validator/readiness tooling re
 
 The Cultivation Foundations scientific campaign is complete only when all of the following are true:
 
-- all 12 current lesson versions have valid human `scientific` review records with status `approved`;
+- all **36 current lesson versions** have valid human `scientific` review records with status `approved`;
 - `npm run review:validate` passes;
-- `npm run review:readiness` reports all 12 lessons scientifically reviewed;
+- `npm run review:readiness` reports **36/36** current Cultivation Foundations lessons scientifically reviewed;
 - no approved record points to a stale lesson version;
 - any changes-requested/rejected records remain preserved as audit history;
 - the curriculum registry gate can be derived/updated from real evidence;
@@ -156,6 +221,7 @@ Use GitHub issue #125 as the single campaign tracker for Cultivation Foundations
 Until human review decisions exist, automation should focus on reviewer preparation and remediation support:
 
 - keep review packets reproducible and current;
+- keep the 36-lesson scope derived from module membership rather than a hand-maintained lead-lesson list;
 - identify stale/missing references and claim-to-source gaps;
 - prepare targeted correction branches after a human `changes-requested` decision;
 - validate review-record shape and version alignment;
