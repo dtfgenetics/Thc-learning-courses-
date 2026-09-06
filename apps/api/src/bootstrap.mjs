@@ -35,6 +35,10 @@ export async function loadProductionApiOptions(env = process.env) {
   if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function' || typeof credentialStore.listStatusHistoryByVerificationId !== 'function') {
     throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), getByVerificationId(), and listStatusHistoryByVerificationId()');
   }
+  const credentialWriter = adapters?.credentialWriter;
+  if (!credentialWriter || typeof credentialWriter.transitionById !== 'function') {
+    throw new Error('Production persistence adapter must provide credentialWriter.transitionById()');
+  }
   const learnerStore = adapters?.learnerStore;
   if (!learnerStore || typeof learnerStore.listProgress !== 'function' || typeof learnerStore.setLessonProgress !== 'function' || typeof learnerStore.listEnrollments !== 'function' || typeof learnerStore.enroll !== 'function' || typeof learnerStore.listCredentialEvidence !== 'function') {
     throw new Error('Production persistence adapter must provide learnerStore progress, enrollment, and credential evidence methods');
@@ -48,7 +52,7 @@ export async function loadProductionApiOptions(env = process.env) {
   return {
     env,
     credentialStore,
-    credentialWriter: adapters.credentialWriter ?? null,
+    credentialWriter,
     learnerStore,
     requiredSchemaVersion: config.requiredSchemaVersion,
     authorize
