@@ -30,16 +30,20 @@ button, input { font: inherit; }
 .catalog-panel { padding: 1.25rem; border-right: 1px solid var(--line); background: rgba(255,255,255,.28); }
 .search-label { display: block; font-weight: 800; margin-bottom: .35rem; }
 .search { width: 100%; border: 1px solid var(--line); border-radius: .7rem; padding: .7rem .8rem; background: #fff; color: var(--ink); }
-.search:focus, .lesson-link:focus { outline: 3px solid rgba(36,95,61,.2); outline-offset: 2px; }
+.search:focus, .lesson-link:focus, .completion-label:focus-within { outline: 3px solid rgba(36,95,61,.2); outline-offset: 2px; }
 .status { margin: .65rem 0 1rem; color: var(--muted); font-size: .9rem; }
 .course { margin-bottom: .75rem; border: 1px solid var(--line); background: var(--panel); border-radius: .8rem; overflow: hidden; }
-.course summary { cursor: pointer; padding: .8rem .9rem; font-weight: 800; }
+.course summary { cursor: pointer; padding: .8rem .9rem .55rem; font-weight: 800; }
 .course-meta { color: var(--muted); display: block; font-size: .76rem; font-weight: 600; margin-top: .1rem; }
+.progress-track { height: .35rem; margin: 0 .9rem .8rem; background: #ebe6d9; border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--green); border-radius: inherit; }
 .module { border-top: 1px solid var(--line); padding: .7rem .9rem; }
 .module-title { font-weight: 800; font-size: .88rem; margin: 0 0 .35rem; }
 .lesson-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; }
 .lesson-link { width: 100%; text-align: left; border: 0; background: transparent; color: var(--green); padding: .38rem .2rem; cursor: pointer; border-radius: .35rem; }
 .lesson-link:hover { background: var(--green-soft); }
+.lesson-link.lesson-complete { font-weight: 750; }
+.lesson-link[aria-pressed="true"] { background: var(--green-soft); }
 
 .lesson-panel { padding: clamp(1.25rem, 4vw, 4rem); min-width: 0; }
 .welcome-card, .lesson-article { max-width: 920px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow); padding: clamp(1.25rem, 4vw, 3.25rem); }
@@ -56,6 +60,10 @@ button, input { font: inherit; }
 .callout { border-left: 4px solid var(--green); padding: .85rem 1rem; background: var(--green-soft); border-radius: 0 .55rem .55rem 0; }
 .list-clean { padding-left: 1.2rem; }
 .error { border-color: #b24a3b; color: #712f26; }
+.completion-panel { margin-top: 2.4rem; padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: #fff; }
+.completion-label { display: inline-flex; align-items: center; gap: .6rem; font-weight: 800; cursor: pointer; border-radius: .35rem; }
+.completion-label input { width: 1.15rem; height: 1.15rem; accent-color: var(--green); }
+.completion-note { margin: .45rem 0 0; color: var(--muted); font-size: .86rem; }
 
 .site-footer { padding: 1.2rem clamp(1rem, 4vw, 4rem) 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
 

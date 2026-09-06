@@ -144,6 +144,9 @@ export function createAcademyHandler({ env = process.env } = {}) {
     if (req.method === 'GET' && url.pathname === '/app.js') {
       if (sendStatic(res, 'app.js', 'text/javascript; charset=utf-8')) return;
     }
+    if (req.method === 'GET' && url.pathname === '/progress.js') {
+      if (sendStatic(res, 'progress.js', 'text/javascript; charset=utf-8')) return;
+    }
     if (req.method === 'GET' && url.pathname === '/styles.css') {
       if (sendStatic(res, 'styles.css', 'text/css; charset=utf-8')) return;
     }
