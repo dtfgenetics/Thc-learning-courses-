@@ -36,8 +36,12 @@ export async function loadProductionApiOptions(env = process.env) {
     throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
   }
   const learnerStore = adapters?.learnerStore;
-  if (!learnerStore || typeof learnerStore.listProgress !== 'function' || typeof learnerStore.setLessonProgress !== 'function' || typeof learnerStore.listEnrollments !== 'function' || typeof learnerStore.enroll !== 'function') {
-    throw new Error('Production persistence adapter must provide learnerStore progress and enrollment methods');
+  const requiredLearnerMethods = [
+    'listProgress', 'setLessonProgress', 'listEnrollments', 'enroll',
+    'listCredentialProgress', 'addEvidence', 'listPortfolio', 'upsertPortfolioItem'
+  ];
+  if (!learnerStore || requiredLearnerMethods.some((method) => typeof learnerStore[method] !== 'function')) {
+    throw new Error(`Production persistence adapter must provide learnerStore methods: ${requiredLearnerMethods.join(', ')}`);
   }
 
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
