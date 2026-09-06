@@ -26,6 +26,7 @@ for (const credential of credentials) {
 
     const staticItems = assessment.items ?? [];
     const blueprint = assessment.blueprint ?? [];
+    const itemPools = assessment.itemPools ?? [];
 
     if (staticItems.length > 0) {
       let activeItems = 0;
@@ -37,6 +38,23 @@ for (const credential of credentials) {
       const ready = staticItems.length > 0 && activeItems === staticItems.length;
       if (!ready) assessmentPoolsReady = false;
       assessmentSummaries.push(`${assessment.id}: static ${activeItems}/${staticItems.length} active`);
+      continue;
+    }
+
+    if (itemPools.length > 0) {
+      let totalEligible = 0;
+      let totalRequired = 0;
+      const deficient = [];
+      for (const row of itemPools) {
+        const pool = questionList.filter((item) => item.id.startsWith(row.idPrefix) && ['summative','credential'].includes(item.purpose));
+        const eligiblePool = pool.filter((item) => item.status === 'active' && (!assessment.itemSelection?.requireReferenceBackedItems || (item.references?.length ?? 0) > 0));
+        totalEligible += eligiblePool.length;
+        totalRequired += row.items;
+        if (eligiblePool.length < row.items) deficient.push(`${row.idPrefix} ${eligiblePool.length}/${row.items}`);
+      }
+      const ready = deficient.length === 0;
+      if (!ready) assessmentPoolsReady = false;
+      assessmentSummaries.push(`${assessment.id}: domain pools ${totalEligible}/${totalRequired} active required${deficient.length ? `; deficient=${deficient.join(', ')}` : ''}`);
       continue;
     }
 
@@ -63,7 +81,7 @@ for (const credential of credentials) {
       continue;
     }
 
-    console.error(`ERROR ${credential.id}: assessment ${assessment.id} has neither static items nor a blueprint`);
+    console.error(`ERROR ${credential.id}: assessment ${assessment.id} has neither static items, domain item pools, nor a blueprint`);
     errors++; structural = false; assessmentPoolsReady = false;
   }
 
