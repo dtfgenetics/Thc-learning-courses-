@@ -1,6 +1,7 @@
 export async function createPersistenceAdapters() {
   const progress = new Map();
   const enrollments = new Map();
+  const performanceResults = new Map();
   return {
     credentialStore: {
       kind: 'test-persistent',
@@ -51,6 +52,24 @@ export async function createPersistenceAdapters() {
         progress.set(subject, next);
         return stored;
       },
+      async recordPerformanceAssessmentResult(subject, record = {}) {
+        const key = `${subject}:${record.assessmentId}:${record.assessmentVersion}`;
+        const stored = {
+          assessmentId: record.assessmentId,
+          assessmentVersion: String(record.assessmentVersion),
+          status: record.status,
+          scorePercent: Number(record.scorePercent),
+          criticalErrorCount: Number(record.criticalErrorCount ?? 0),
+          evaluatorId: record.evaluatorId,
+          rubricId: record.rubricId,
+          rubricVersion: String(record.rubricVersion),
+          deliveryMode: record.deliveryMode,
+          evaluatedAt: record.evaluatedAt ?? new Date().toISOString(),
+          evidence: record.evidence ?? {}
+        };
+        performanceResults.set(key, stored);
+        return stored;
+      },
       async listCredentialEvidence(subject, { credentialDefinitionId } = {}) {
         return {
           learnerId: subject,
@@ -58,7 +77,9 @@ export async function createPersistenceAdapters() {
           assessmentAttempts: [],
           assessments: [],
           competencies: [],
-          performanceAssessments: [],
+          performanceAssessments: [...performanceResults.entries()]
+            .filter(([key]) => key.startsWith(`${subject}:`))
+            .map(([, value]) => value),
           portfolioArtifacts: []
         };
       }
