@@ -39,7 +39,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: web-quality-${{ github.ref }}
+  group: web-quality-v2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
