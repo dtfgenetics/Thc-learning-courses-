@@ -1,0 +1,98 @@
+{
+  "id": "PERFORMANCE-PLAN-TECH1-001",
+  "credentialTrack": "THC Cultivation Technician I",
+  "version": "1.0.0",
+  "status": "build",
+  "jobRole": "ROLE-CULT-TECH-I-001",
+  "knowledgeAssessment": {
+    "initialBankTarget": 300,
+    "currentFirstPassBank": 120,
+    "credentialFormItems": 72,
+    "passingPercent": 80,
+    "randomizedForms": true,
+    "reportCompetencyScores": true
+  },
+  "practicals": [
+    {
+      "id": "PRACTICAL-TECH1-A",
+      "title": "Safe Room Entry & Crop Inspection",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-A-SAFE-ROOM-ENTRY-CROP-INSPECTION.md",
+      "passingPercent": 80,
+      "tasks": ["TASK-CULT-SAFETY-001", "TASK-CULT-SANITATION-001", "TASK-CULT-OBSERVE-001", "TASK-CULT-ENV-001", "TASK-CULT-RECORDS-001"]
+    },
+    {
+      "id": "PRACTICAL-TECH1-B",
+      "title": "Water & Irrigation Shift",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-B-WATER-IRRIGATION-SHIFT.md",
+      "passingPercent": 80,
+      "tasks": ["TASK-CULT-WATER-001", "TASK-CULT-IRRIGATION-001", "TASK-CULT-RECORDS-001"]
+    },
+    {
+      "id": "PRACTICAL-TECH1-C",
+      "title": "IPM Scouting Route",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-C-IPM-SCOUTING-ROUTE.md",
+      "passingPercent": 80,
+      "tasks": ["TASK-CULT-IPM-001", "TASK-CULT-SANITATION-001", "TASK-CULT-OBSERVE-001", "TASK-CULT-RECORDS-001"]
+    },
+    {
+      "id": "PRACTICAL-TECH1-D",
+      "title": "Propagation Workstation",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-D-PROPAGATION-WORKSTATION.md",
+      "passingPercent": 80,
+      "tasks": ["TASK-CULT-PROP-001", "TASK-CULT-SANITATION-001", "TASK-CULT-RECORDS-001"]
+    },
+    {
+      "id": "PRACTICAL-TECH1-E",
+      "title": "Canopy Maintenance Work Order",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-E-CANOPY-MAINTENANCE-WORK-ORDER.md",
+      "passingPercent": 80,
+      "tasks": ["TASK-CULT-CANOPY-001", "TASK-CULT-SANITATION-001", "TASK-CULT-OBSERVE-001", "TASK-CULT-RECORDS-001"]
+    },
+    {
+      "id": "PRACTICAL-TECH1-F",
+      "title": "Harvest-to-Dry-Room Handoff",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-F-HARVEST-TO-DRY-ROOM-HANDOFF.md",
+      "passingPercent": 80,
+      "tasks": ["TASK-CULT-HARVEST-001", "TASK-CULT-POSTHARVEST-001", "TASK-CULT-SANITATION-001", "TASK-CULT-RECORDS-001"]
+    }
+  ],
+  "capstone": {
+    "id": "CAPSTONE-TECH1-SHIFT-001",
+    "title": "One Cultivation Shift",
+    "document": "docs/academy-v2/practicals/CAPSTONE-TECH1-ONE-CULTIVATION-SHIFT.md",
+    "maxPoints": 200,
+    "passingPoints": 160,
+    "recommendedMinutes": [120, 180],
+    "integratesAllRoleTasks": true,
+    "randomizedEquivalentForms": true
+  },
+  "portfolioArtifacts": [
+    "crop-inspection-room-map",
+    "water-irrigation-record",
+    "ipm-scouting-trend-report",
+    "propagation-batch-record",
+    "canopy-work-order-report",
+    "harvest-traceability-packet",
+    "dry-room-monitoring-report",
+    "cultivation-shift-performance-summary"
+  ],
+  "issuanceRecommendation": {
+    "requireLearningPathCompletion": true,
+    "requireKnowledgeAssessmentPass": true,
+    "requireAllPracticalsPass": true,
+    "requireCapstonePass": true,
+    "requireCompetencyTranscript": true,
+    "retryPolicy": "Remediate and retry the failed assessment component without restarting completed components."
+  },
+  "nextImplementationObjects": [
+    "practical-assessment schema",
+    "rubric schema",
+    "performance-evidence schema",
+    "capstone scenario/event schema",
+    "Technician I credential object",
+    "72-item credential exam generator",
+    "learner competency transcript",
+    "portfolio projection",
+    "public employer-facing credential summary"
+  ]
+}
