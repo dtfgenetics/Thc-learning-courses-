@@ -1,0 +1,43 @@
+{
+  "id": "certification-toolkit",
+  "version": "1.0.0",
+  "description": "Orchestrates certification course validation, assessment, credential, review, learner, platform, and release checks.",
+  "entrypoint": "scripts/certification-toolkit.mjs",
+  "modes": {
+    "author": {
+      "purpose": "Validate authored curriculum and knowledge content before review.",
+      "groups": ["content"]
+    },
+    "exam": {
+      "purpose": "Validate curriculum plus assessment and pilot readiness.",
+      "groups": ["content", "assessment"]
+    },
+    "certify": {
+      "purpose": "Validate the full certification evidence chain before learner delivery.",
+      "groups": ["content", "assessment", "credential", "review"]
+    },
+    "learner": {
+      "purpose": "Validate learner-facing academy behavior, progress, enrollment, and accessibility.",
+      "groups": ["content", "learner"]
+    },
+    "platform": {
+      "purpose": "Validate API, runtime, persistence, database, security, and operations controls.",
+      "groups": ["platform"]
+    },
+    "release": {
+      "purpose": "Run the complete production release gate including staging and production readiness.",
+      "groups": ["content", "assessment", "credential", "review", "learner", "platform", "release"]
+    },
+    "full": {
+      "purpose": "Run every registered certification toolkit group.",
+      "groups": ["content", "assessment", "credential", "review", "learner", "platform", "release"]
+    }
+  },
+  "behavior": {
+    "defaultMode": "full",
+    "failFast": true,
+    "continueFlag": "--continue",
+    "jsonFlag": "--json",
+    "listFlag": "--list"
+  }
+}
