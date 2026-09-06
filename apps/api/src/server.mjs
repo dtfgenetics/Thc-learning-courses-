@@ -5,7 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { publicCredentialView } from '../../../packages/domain/credential-runtime.mjs';
 import { evaluateCredentialEligibility } from '../../../packages/domain/credential-eligibility.mjs';
-import { loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
+import { loadPerformanceDefinition, loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
@@ -275,6 +275,54 @@ export function createHandler({
         if (!/^\d+$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
         const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
         return json(res, 200, { progress });
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/admin/performance-assessments/results') {
+        route = 'POST /api/v1/admin/performance-assessments/results';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'assessor:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.recordPerformanceAssessmentResult !== 'function') {
+          return json(res, 503, { error: 'performance-evidence-persistence-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+
+        const learnerSubject = String(body.learnerSubject ?? '').trim();
+        const assessmentId = String(body.assessmentId ?? '').trim();
+        const assessmentVersion = String(body.assessmentVersion ?? '').trim();
+        const deliveryMode = String(body.deliveryMode ?? '').trim();
+        const scorePercent = Number(body.scorePercent);
+        const criticalErrorCount = Number(body.criticalErrorCount ?? 0);
+        if (!learnerSubject) return json(res, 400, { error: 'learner-subject-required', requestId });
+        const definition = loadPerformanceDefinition({ root, assessmentId });
+        if (!definition) return json(res, 404, { error: 'performance-assessment-not-found', requestId });
+        if (assessmentVersion !== String(definition.version)) {
+          return json(res, 409, { error: 'performance-assessment-version-mismatch', currentVersion: String(definition.version), requestId });
+        }
+        if (!Number.isFinite(scorePercent) || scorePercent < 0 || scorePercent > 100) return json(res, 400, { error: 'invalid-performance-score', requestId });
+        if (!Number.isInteger(criticalErrorCount) || criticalErrorCount < 0) return json(res, 400, { error: 'invalid-critical-error-count', requestId });
+        if (!(definition.deliveryModes ?? []).includes(deliveryMode)) return json(res, 400, { error: 'unsupported-performance-delivery-mode', requestId });
+        if (body.evidence !== undefined && (!body.evidence || typeof body.evidence !== 'object' || Array.isArray(body.evidence))) {
+          return json(res, 400, { error: 'invalid-performance-evidence', requestId });
+        }
+
+        const minimum = Number(definition.passingStandard?.minimumPercent ?? 0);
+        const requiresNoCriticalErrors = definition.passingStandard?.noCriticalErrors === true;
+        const status = scorePercent >= minimum && (!requiresNoCriticalErrors || criticalErrorCount === 0) ? 'passed' : 'failed';
+        const result = await learnerStore.recordPerformanceAssessmentResult(learnerSubject, {
+          assessmentId: definition.id,
+          assessmentVersion: String(definition.version),
+          status,
+          scorePercent,
+          criticalErrorCount,
+          evidence: body.evidence ?? {},
+          evaluatorId: auth.subject,
+          rubricId: definition.id,
+          rubricVersion: String(definition.version),
+          deliveryMode
+        });
+        return json(res, 201, { result: learnerPerformanceView(result) });
       }
 
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
