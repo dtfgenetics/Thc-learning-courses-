@@ -18,6 +18,7 @@ export function createDevelopmentCredentialStore() {
   return {
     kind: 'development-memory',
     async ping() { return true; },
+    async schemaVersion() { return 'development'; },
     getByVerificationId(verificationId) { return records.get(verificationId) ?? null; },
     register(record) { records.set(record.verificationId, record); return record; },
     count() { return records.size; }
@@ -46,13 +47,11 @@ function setSecurityHeaders(res, requestId) {
   res.setHeader('permissions-policy', 'camera=(), microphone=(), geolocation=()');
   res.setHeader('x-request-id', requestId);
 }
-
 function json(res, status, body, extraHeaders = {}) {
   for (const [name, value] of Object.entries(extraHeaders)) res.setHeader(name, value);
   res.statusCode = status;
   res.end(JSON.stringify(body));
 }
-
 function rateLimitKey(req) { return req.socket?.remoteAddress || 'unknown'; }
 function applyRateLimitHeaders(res, result) {
   res.setHeader('ratelimit-limit', String(result.limit));
@@ -64,6 +63,7 @@ function defaultLogger(entry) { process.stdout.write(`${JSON.stringify(entry)}\n
 export function createHandler({
   credentialStore = null,
   env = process.env,
+  requiredSchemaVersion = null,
   limiter = createFixedWindowRateLimiter(),
   authorize = null,
   logger = defaultLogger,
@@ -77,7 +77,6 @@ export function createHandler({
     const requestId = crypto.randomUUID();
     let route = 'unmatched';
     setSecurityHeaders(res, requestId);
-
     res.once('finish', () => {
       const durationMs = Number(nowNs() - startedAt) / 1_000_000;
       logger({ level: 'info', event: 'http.request.completed', requestId, method: req.method, route, statusCode: res.statusCode, durationMs: Number(durationMs.toFixed(3)) });
@@ -89,19 +88,24 @@ export function createHandler({
         route = 'invalid-url';
         return json(res, 400, { error: 'invalid-url', requestId });
       }
-
       if (req.method === 'GET' && url.pathname === '/healthz') {
         route = 'GET /healthz';
         return json(res, 200, { ok: true, requestId });
       }
-
       if (req.method === 'GET' && url.pathname === '/readyz') {
         route = 'GET /readyz';
         if (typeof resolvedCredentialStore.ping !== 'function') return json(res, 503, { ok: false, error: 'readiness-check-unavailable', requestId });
-        const ready = await resolvedCredentialStore.ping();
-        return json(res, ready ? 200 : 503, ready ? { ok: true, requestId } : { ok: false, error: 'dependency-unavailable', requestId });
+        const connected = await resolvedCredentialStore.ping();
+        if (!connected) return json(res, 503, { ok: false, error: 'dependency-unavailable', requestId });
+        if (requiredSchemaVersion !== null) {
+          if (typeof resolvedCredentialStore.schemaVersion !== 'function') return json(res, 503, { ok: false, error: 'schema-readiness-unavailable', requestId });
+          const actualSchemaVersion = await resolvedCredentialStore.schemaVersion();
+          if (String(actualSchemaVersion ?? '') !== String(requiredSchemaVersion)) {
+            return json(res, 503, { ok: false, error: 'database-schema-version-mismatch', requiredSchemaVersion: String(requiredSchemaVersion), actualSchemaVersion: actualSchemaVersion == null ? null : String(actualSchemaVersion), requestId });
+          }
+        }
+        return json(res, 200, { ok: true, schemaVersion: requiredSchemaVersion === null ? null : String(requiredSchemaVersion), requestId });
       }
-
       if (url.pathname.startsWith('/api/')) {
         const rate = limiter.check(rateLimitKey(req));
         applyRateLimitHeaders(res, rate);
@@ -110,7 +114,6 @@ export function createHandler({
           return json(res, 429, { error: 'rate-limit-exceeded', requestId }, { 'retry-after': String(rate.retryAfterSeconds) });
         }
       }
-
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
       if (req.method === 'GET' && credentialMatch) {
         route = 'GET /api/v1/credentials/:verificationId';
@@ -118,7 +121,6 @@ export function createHandler({
         if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
         return json(res, 200, publicCredentialView(record, credentialDefinition));
       }
-
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
         const auth = resolvedAuthorize(req, 'admin:read');
@@ -135,7 +137,6 @@ export function createHandler({
           requestId
         });
       }
-
       route = `${req.method ?? 'UNKNOWN'} unmatched`;
       return json(res, 404, { error: 'not-found', requestId });
     } catch (error) {
@@ -148,7 +149,6 @@ export function createHandler({
 }
 
 export function createApiServer(options = {}) { return http.createServer(createHandler(options)); }
-
 const isDirectExecution = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (isDirectExecution) {
   const apiOptions = await loadProductionApiOptions(process.env);
