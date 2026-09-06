@@ -82,7 +82,7 @@ jobs:
         run: npx playwright test tests/web-qa/site-health.spec.mjs --project=desktop-1366
 
       - name: Capture responsive visual candidates
-        if: always()
+        if: ${{ !cancelled() }}
         run: npx playwright test tests/web-qa/visual-regression.spec.mjs --project=mobile-412 --project=desktop-1366
 
       - name: Upload browser and visual evidence
