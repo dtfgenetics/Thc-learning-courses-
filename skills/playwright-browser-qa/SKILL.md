@@ -12,6 +12,9 @@ Use this skill when:
 - a regression test should be added for a repaired UI defect;
 - the development debugger delegates browser validation.
 
+## Relationship to visual QA
+Playwright is also the execution engine for `skills/pixel-perfect-visual-qa/SKILL.md`. For customer-facing visual work, functional assertions alone are insufficient. Capture deterministic screenshots and run visual comparison at the required viewports/states so visible regressions are detected as test failures.
+
 ## Operating sequence
 1. Select the exact environment and base URL.
 2. Reproduce the issue in the narrowest relevant Playwright test.
@@ -22,7 +25,8 @@ Use this skill when:
 7. Run the relevant broader browser suite.
 8. Run Chromium plus Firefox/WebKit when compatibility risk exists.
 9. Run mobile/responsive projects for customer-facing layout changes.
-10. Return results to `skills/dev-debugger/SKILL.md` and then repository lifecycle handling.
+10. Run pixel-perfect screenshot comparison for stable changed surfaces.
+11. Return results to `skills/dev-debugger/SKILL.md` and then repository lifecycle handling.
 
 ## Required browser signals
 Every audited page should be observed for:
@@ -46,6 +50,29 @@ Do not globally suppress any of these. Allowlists must be narrow, documented, an
 - Add regression coverage for deterministic repaired bugs.
 - Capture traces/screenshots only as needed to make failure evidence useful and CI artifacts manageable.
 
+## Pixel-perfect screenshot rules
+For stable, high-value customer-facing surfaces:
+- use Playwright screenshot assertions or an equivalent deterministic image-diff workflow;
+- render reference and implementation at the same viewport, state, theme, and content conditions;
+- check full-page composition plus focused high-value components where appropriate;
+- target zero unexplained visual difference against the strongest approved reference;
+- use only minimal, documented tolerance for genuine cross-platform rasterization noise;
+- never raise a visual-diff threshold merely to make a real regression pass;
+- mask only truly nondeterministic regions, never broken UI or missing first-party content;
+- do not automatically accept/update baselines after failures;
+- investigate changed pixels first and approve a new baseline only for an intentional visual change.
+
+Visual comparison must cover, where relevant:
+- spacing, padding, gaps, margins, grids, and alignment;
+- typography family, weight, size, line-height, wrapping, and hierarchy;
+- button/control dimensions and icon alignment;
+- cards, containers, borders, radii, shadows, and separators;
+- image crop/aspect ratio/resolution;
+- headers, navigation, footers, modals, overlays, dropdowns, and tooltips;
+- clipping, overflow, stacking, accidental scrollbars, and sticky/fixed collisions;
+- loading, empty, error, selected, focused, expanded, and disabled states;
+- games/canvas/HUD safe areas and control placement.
+
 ## Browser matrix
 Default development pass:
 - Chromium desktop.
@@ -56,9 +83,13 @@ Expanded compatibility pass when relevant:
 - WebKit.
 
 Responsive pass for public/customer-facing surfaces:
-- representative mobile viewport/device;
-- representative desktop viewport;
-- tablet/small desktop when layout complexity warrants it.
+- narrow mobile around 360px;
+- common mobile around 390-430px;
+- tablet around 768px when breakpoint behavior exists;
+- laptop/desktop around 1280-1440px;
+- large desktop around 1920px for wide-layout, game, or tool surfaces.
+
+When the project has exact device profiles or CSS breakpoint values, use those and add checks immediately below/above risky breakpoints.
 
 ## Site crawling and link QA
 When performing a site-wide DTF Seeds audit:
@@ -79,10 +110,11 @@ For interactive games and tools, additionally verify:
 - reset/restart flows work;
 - state transitions complete without console errors;
 - core loop can progress beyond the first interaction;
-- navigation back to the hub/site remains functional.
+- navigation back to the hub/site remains functional;
+- screenshots at target viewport classes show intentional composition and readable safe areas.
 
 ## Production verification
-For `dtfseeds.com`, a green local/staging test is not proof of deployment. After promotion/release, re-run the critical production Playwright checks against the live URL and verify the actual deployed behavior.
+For `dtfseeds.com`, a green local/staging test is not proof of deployment. After promotion/release, re-run the critical production Playwright checks against the live URL and verify the actual deployed behavior and representative production screenshots.
 
 ## Suggested commands
 Use repository-defined scripts when available. Otherwise:
@@ -90,6 +122,7 @@ Use repository-defined scripts when available. Otherwise:
 - `npx playwright test --project=chromium`
 - `npx playwright test --project=firefox --project=webkit`
 - `npx playwright test --ui`
+- `npx playwright test --update-snapshots` only after an intentional visual change has been reviewed and approved;
 - `npx playwright install --with-deps` during supported bootstrap/CI setup when browser binaries are absent.
 
 ## Completion standard
@@ -99,5 +132,8 @@ Playwright QA is complete only when:
 - critical assertions pass;
 - repaired deterministic defects have regression coverage where practical;
 - required browser/device projects pass;
+- pixel-perfect visual QA passes for stable changed customer-facing surfaces;
+- no unexplained screenshot diff remains against approved references/baselines;
+- typography, spacing, alignment, responsive composition, clipping/overflow, and interactive states are visually correct;
 - failure artifacts are retained when useful;
 - results are handed back to the development debugger/orchestrator for the remaining repo lifecycle.
