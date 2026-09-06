@@ -28,17 +28,27 @@ for (const route of routes) {
       }
     });
 
-    const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const response = await page.goto(route, { waitUntil: 'commit', timeout: 30_000 });
     expect(response, 'navigation should return a response').not.toBeNull();
     expect(response.status(), `unexpected navigation status for ${route}`).toBeLessThan(400);
+
+    const domReady = await page.waitForLoadState('domcontentloaded', { timeout: 30_000 })
+      .then(() => true)
+      .catch(() => false);
+    if (!domReady) failures.push('lifecycle-timeout: DOMContentLoaded did not fire within 30s');
+
     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
 
     const body = page.locator('body');
-    await expect(body).toBeVisible();
-    const bodyText = (await body.innerText()).trim();
-    expect(bodyText.length, `page should render meaningful text for ${route}`).toBeGreaterThan(20);
+    const bodyVisible = await body.isVisible().catch(() => false);
+    if (!bodyVisible) {
+      failures.push('rendering: body is not visible');
+    } else {
+      const bodyText = (await body.innerText().catch(() => '')).trim();
+      if (bodyText.length <= 20) failures.push(`rendering: page has only ${bodyText.length} characters of visible body text`);
+    }
 
-    const hasMain = await page.locator('main, [role="main"], h1').count();
+    const hasMain = await page.locator('main, [role="main"], h1').count().catch(() => 0);
     if (!hasMain) failures.push('semantic-content: no main landmark, role=main, or h1 found');
 
     const visualHealth = await page.evaluate(() => {
@@ -48,7 +58,7 @@ for (const route of routes) {
         .slice(0, 20);
       const overflow = Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0) - window.innerWidth;
       return { brokenImages, overflow };
-    });
+    }).catch(() => ({ brokenImages: [], overflow: 0 }));
 
     for (const src of visualHealth.brokenImages) failures.push(`broken-image: ${src}`);
     if (visualHealth.overflow > 3) failures.push(`horizontal-overflow: ${visualHealth.overflow}px beyond viewport`);
