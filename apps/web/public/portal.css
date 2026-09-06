@@ -1,7 +1,8 @@
 .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
 .portal-nav { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: flex-end; }
 .portal-tab { border: 1px solid var(--line); background: var(--panel); color: var(--muted); border-radius: 999px; padding: .45rem .8rem; font-weight: 750; cursor: pointer; }
-.portal-tab:hover, .portal-tab:focus-visible { border-color: var(--green); color: var(--green); outline: none; }
+.portal-tab:hover { border-color: var(--green); color: var(--green); }
+.portal-tab:focus-visible { border-color: var(--green); color: var(--green); outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .portal-tab.active { background: var(--green); color: #fff; border-color: var(--green); }
 .portal-panel { max-width: 940px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow); padding: clamp(1.25rem, 4vw, 3.25rem); }
 .portal-panel h2 { margin: .2rem 0 .6rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.03em; }
@@ -16,6 +17,7 @@
 .portal-result-note { color: var(--muted); font-size: .86rem; }
 .portal-verify-form { display: flex; gap: .5rem; margin: 1.25rem 0; }
 .portal-verify-form button { border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .6rem; padding: .7rem 1rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.portal-verify-form button:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .portal-verify-result { margin-top: 1rem; }
 .portal-credential-card { border: 1px solid var(--green); background: #fff; border-radius: .8rem; padding: 1.25rem; }
 .portal-credential-card h3 { margin: .2rem 0 1rem; }
@@ -25,14 +27,42 @@
 .portal-credential-card dt { color: var(--muted); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
 .portal-credential-card dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
 .portal-error { border-left: 4px solid #b24a3b; background: #f8e4e1; padding: .8rem 1rem; color: #712f26; }
+.portal-progress-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: .8rem; margin: 1.5rem 0; }
+.portal-summary-card { display: grid; gap: .25rem; border: 1px solid var(--line); border-radius: .75rem; padding: .9rem; background: #fff; min-width: 0; }
+.portal-summary-label { color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+.portal-summary-value { color: var(--ink); font-size: 1.35rem; line-height: 1.1; overflow-wrap: anywhere; }
+.portal-summary-note { color: var(--muted); font-size: .78rem; line-height: 1.35; }
+.portal-blockers { border-left: 4px solid #9b6b22; background: #fbf2df; border-radius: .35rem; padding: 1rem 1.1rem; margin: 1.25rem 0; }
+.portal-blockers h3 { margin-top: 0; }
+.portal-blockers ul { margin-bottom: 0; padding-left: 1.25rem; }
+.portal-blockers li + li { margin-top: .4rem; }
+.portal-progress-section { margin-top: 1.75rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.portal-progress-section h3 { margin: 0 0 .8rem; }
+.portal-evidence-list { display: grid; gap: .55rem; }
+.portal-evidence-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 1px solid var(--line); border-radius: .7rem; padding: .75rem .85rem; background: #fff; }
+.portal-evidence-row > div { display: grid; gap: .2rem; min-width: 0; }
+.portal-evidence-row strong { overflow-wrap: anywhere; }
+.portal-evidence-meta { color: var(--muted); font-size: .78rem; }
+.portal-evidence-status { flex: 0 0 auto; border-radius: 999px; padding: .25rem .5rem; font-size: .72rem; font-weight: 850; text-transform: uppercase; letter-spacing: .04em; background: #eceeea; color: var(--muted); }
+.portal-evidence-status.status-passed, .portal-evidence-status.status-verified, .portal-evidence-status.status-accepted, .portal-evidence-status.status-complete, .portal-evidence-status.status-demonstrated { background: var(--green-soft); color: var(--green); }
+.portal-evidence-status.status-failed, .portal-evidence-status.status-not-passed, .portal-evidence-status.status-not-demonstrated { background: #f8e4e1; color: #712f26; }
+.portal-evidence-status.status-developing { background: #fbf2df; color: #735019; }
+.portal-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
+.portal-progress-table { width: 100%; min-width: 620px; border-collapse: collapse; }
+.portal-progress-table th, .portal-progress-table td { padding: .7rem .8rem; text-align: left; border-bottom: 1px solid var(--line); }
+.portal-progress-table th { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; background: var(--panel); }
+.portal-progress-table tbody tr:last-child td { border-bottom: 0; }
 .portal-practice { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
 .portal-practice > h3 { margin: .2rem 0 .4rem; }
 .portal-practice-item { border: 1px solid var(--line); border-radius: .75rem; padding: 1rem; background: #fff; margin-top: .9rem; }
 .portal-practice-stem { font-weight: 750; }
 .portal-practice-answers { display: grid; gap: .45rem; }
 .portal-practice-answers button { text-align: left; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: .55rem; padding: .65rem .75rem; cursor: pointer; }
-.portal-practice-answers button:hover:not(:disabled), .portal-practice-answers button:focus-visible { border-color: var(--green); outline: none; }
+.portal-practice-answers button:hover:not(:disabled) { border-color: var(--green); }
+.portal-practice-answers button:focus-visible { border-color: var(--green); outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .portal-practice-answers button.correct { border-color: var(--green); background: var(--green-soft); }
 .portal-practice-answers button.incorrect { border-color: #b24a3b; background: #f8e4e1; }
 .portal-practice-feedback { margin: .75rem 0 0; color: var(--muted); }
 @media (max-width: 840px) { .header-right { align-items: flex-start; width: 100%; } .portal-nav { justify-content: flex-start; } .portal-verify-form { flex-direction: column; } }
+@media (max-width: 620px) { .portal-progress-summary { grid-template-columns: 1fr 1fr; } .portal-evidence-row { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 420px) { .portal-progress-summary { grid-template-columns: 1fr; } }

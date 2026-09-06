@@ -35,9 +35,160 @@ function renderWelcome() {
   card.className = 'welcome-card';
   card.append(text('p', 'Start here', 'eyebrow'));
   card.append(text('h2', 'Choose a lesson'));
-  card.append(text('p', 'Select a course and lesson from the catalog. You can also use the learning calculators or verify an Academy credential.'));
+  card.append(text('p', 'Select a course and lesson from the catalog. You can also review credential progress, use the learning calculators, or verify an Academy credential.'));
   lessonView.replaceChildren(card);
   lessonView.focus();
+}
+
+function statusLabel(value) {
+  return String(value ?? 'not-recorded').replaceAll('-', ' ');
+}
+
+function summaryCard(label, value, note = '') {
+  const card = document.createElement('div');
+  card.className = 'portal-summary-card';
+  card.append(text('span', label, 'portal-summary-label'));
+  card.append(text('strong', value, 'portal-summary-value'));
+  if (note) card.append(text('span', note, 'portal-summary-note'));
+  return card;
+}
+
+function evidenceList(title, rows, idKey) {
+  const section = document.createElement('section');
+  section.className = 'portal-progress-section';
+  section.append(text('h3', title));
+  const list = document.createElement('div');
+  list.className = 'portal-evidence-list';
+  for (const row of rows) {
+    const item = document.createElement('div');
+    item.className = 'portal-evidence-row';
+    const identity = document.createElement('div');
+    identity.append(text('strong', row[idKey] ?? 'Unknown evidence'));
+    const details = [];
+    if (row.scorePercent != null) details.push(`${Number(row.scorePercent).toFixed(0)}%`);
+    if (Number(row.criticalErrorCount ?? 0) > 0) details.push(`${row.criticalErrorCount} critical error${Number(row.criticalErrorCount) === 1 ? '' : 's'}`);
+    if (details.length) identity.append(text('span', details.join(' • '), 'portal-evidence-meta'));
+    const state = text('span', statusLabel(row.status), `portal-evidence-status status-${String(row.status ?? 'not-recorded')}`);
+    item.append(identity, state);
+    list.append(item);
+  }
+  section.append(list);
+  return section;
+}
+
+async function renderCredentialProgress() {
+  setActive('tab-progress');
+  const panel = document.createElement('div');
+  panel.className = 'portal-panel';
+  panel.append(text('p', 'Private learner record', 'eyebrow'));
+  panel.append(text('h2', 'My Credential Progress'));
+  panel.append(text('p', 'Your exam, competency, practical, capstone, and portfolio evidence are evaluated together. Lesson completion alone does not issue a credential.', 'lede'));
+  panel.append(text('p', 'Loading Technician II credential evidence…', 'status'));
+  lessonView.replaceChildren(panel);
+  lessonView.focus();
+
+  try {
+    const response = await fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/progress', {
+      headers: { accept: 'application/json' },
+      credentials: 'same-origin'
+    });
+    if (!response.ok) {
+      if (response.status === 401 || response.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
+      throw new Error(`Credential progress unavailable (${response.status}).`);
+    }
+    const data = await response.json();
+    panel.querySelector('.status')?.remove();
+
+    const summary = document.createElement('section');
+    summary.className = 'portal-progress-summary';
+    const attempts = data.assessmentAttempts ?? [];
+    const bestScore = attempts.filter((row) => row.status === 'scored' && row.scorePercent != null).reduce((best, row) => Math.max(best, Number(row.scorePercent)), -1);
+    const demonstrated = (data.competencies ?? []).filter((row) => row.masteryLevel === 'demonstrated').length;
+    const performancePassed = (data.performanceAssessments ?? []).filter((row) => row.status === 'passed' && Number(row.criticalErrorCount ?? 0) === 0).length;
+    const portfolioComplete = (data.portfolioArtifacts ?? []).filter((row) => ['accepted','verified','complete'].includes(row.status)).length;
+    summary.append(
+      summaryCard('Credential status', data.eligibility?.eligible ? 'Eligible' : 'In progress', data.credential?.title ?? ''),
+      summaryCard('Best written exam', bestScore >= 0 ? `${bestScore.toFixed(0)}%` : 'Not attempted', `Pass ${data.credential?.minimumPassingScorePercent ?? 80}%`),
+      summaryCard('Competencies demonstrated', String(demonstrated), `${(data.competencies ?? []).length} transcript records`),
+      summaryCard('Performance evidence', `${performancePassed}/${(data.performanceAssessments ?? []).length}`, '7 practicals + capstone'),
+      summaryCard('Portfolio evidence', `${portfolioComplete}/${(data.portfolioArtifacts ?? []).length}`, 'Employment artifacts')
+    );
+    panel.append(summary);
+
+    if (!(data.eligibility?.eligible)) {
+      const blocker = document.createElement('section');
+      blocker.className = 'portal-blockers';
+      blocker.append(text('h3', 'What remains'));
+      const list = document.createElement('ul');
+      for (const row of data.eligibility?.missingRequirements ?? []) {
+        const humanType = row.type === 'assessment' ? 'Written assessment' : row.type === 'performance-assessment' ? 'Practical/capstone' : 'Portfolio artifact';
+        list.append(text('li', `${humanType}: ${row.id} — ${statusLabel(row.reason)}`));
+      }
+      if (!list.children.length) list.append(text('li', 'No unresolved requirement details are available.'));
+      blocker.append(list);
+      panel.append(blocker);
+    }
+
+    const attemptsSection = document.createElement('section');
+    attemptsSection.className = 'portal-progress-section';
+    attemptsSection.append(text('h3', 'Credential exam attempts'));
+    if (!attempts.length) {
+      attemptsSection.append(text('p', 'No official Technician II credential exam attempt is recorded yet.', 'portal-result-note'));
+    } else {
+      const tableWrap = document.createElement('div');
+      tableWrap.className = 'portal-table-wrap';
+      const table = document.createElement('table');
+      table.className = 'portal-progress-table';
+      const thead = document.createElement('thead');
+      const header = document.createElement('tr');
+      for (const label of ['Status', 'Score', 'Result', 'Started', 'Scored']) header.append(text('th', label));
+      thead.append(header);
+      const tbody = document.createElement('tbody');
+      for (const attempt of attempts) {
+        const row = document.createElement('tr');
+        const started = attempt.startedAt ? new Date(attempt.startedAt).toLocaleString() : '—';
+        const scored = attempt.scoredAt ? new Date(attempt.scoredAt).toLocaleString() : '—';
+        row.append(
+          text('td', statusLabel(attempt.status)),
+          text('td', attempt.scorePercent == null ? '—' : `${Number(attempt.scorePercent).toFixed(0)}%`),
+          text('td', attempt.passed == null ? 'Pending' : attempt.passed ? 'Passed' : 'Not passed'),
+          text('td', started),
+          text('td', scored)
+        );
+        tbody.append(row);
+      }
+      table.append(thead, tbody);
+      tableWrap.append(table);
+      attemptsSection.append(tableWrap);
+    }
+    panel.append(attemptsSection);
+
+    const transcript = document.createElement('section');
+    transcript.className = 'portal-progress-section';
+    transcript.append(text('h3', 'Competency transcript'));
+    if (!(data.competencies ?? []).length) {
+      transcript.append(text('p', 'No competency mastery records are available yet. Competency evidence is created by scored official assessments, not by opening lessons.', 'portal-result-note'));
+    } else {
+      const list = document.createElement('div');
+      list.className = 'portal-evidence-list';
+      for (const row of data.competencies) {
+        const item = document.createElement('div');
+        item.className = 'portal-evidence-row';
+        const identity = document.createElement('div');
+        identity.append(text('strong', row.competencyId));
+        identity.append(text('span', `Curriculum ${row.curriculumVersion}`, 'portal-evidence-meta'));
+        item.append(identity, text('span', statusLabel(row.masteryLevel), `portal-evidence-status status-${row.masteryLevel}`));
+        list.append(item);
+      }
+      transcript.append(list);
+    }
+    panel.append(transcript);
+    panel.append(evidenceList('Practical & capstone evidence', data.performanceAssessments ?? [], 'assessmentId'));
+    panel.append(evidenceList('Employment portfolio', data.portfolioArtifacts ?? [], 'artifactId'));
+  } catch (error) {
+    panel.querySelector('.status')?.remove();
+    panel.append(text('p', error.message, 'portal-error'));
+  }
 }
 
 function numberField(label, value, options = {}) {
@@ -152,6 +303,7 @@ function renderVerify() {
       const fields = [
         ['Verification ID', record.verificationId],
         ['Credential', record.credential?.id],
+        ['Role', record.credential?.role],
         ['Course', record.course?.id],
         ['Issuer', record.issuer?.name],
         ['Issued', record.issuedAt ? new Date(record.issuedAt).toLocaleDateString() : null],
@@ -164,6 +316,9 @@ function renderVerify() {
         dl.append(row);
       }
       card.append(dl);
+      if (record.evidenceSummary) {
+        card.append(text('p', `Verified evidence: ${record.evidenceSummary.writtenAssessments ?? 0} written assessment(s), ${record.evidenceSummary.performanceAssessments ?? 0} performance assessment(s), ${record.evidenceSummary.portfolioArtifacts ?? 0} portfolio artifact(s).`, 'portal-result-note'));
+      }
       if (record.disclaimer) card.append(text('p', record.disclaimer, 'portal-result-note'));
       result.replaceChildren(card);
     } catch (error) {
@@ -231,5 +386,6 @@ const observer = new MutationObserver(() => appendPractice(lessonView.querySelec
 observer.observe(lessonView, { childList: true });
 
 document.querySelector('#tab-catalog')?.addEventListener('click', () => { setActive('tab-catalog'); renderWelcome(); });
+document.querySelector('#tab-progress')?.addEventListener('click', renderCredentialProgress);
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);
