@@ -59,6 +59,12 @@ const lowScore = evaluateCredentialEligibility({ credential: performanceCredenti
 assert(!lowScore.eligible, 'A performance result below its encoded passing standard must fail even when status=passed');
 assert(lowScore.missingRequirements.some((row) => row.id === 'CAPSTONE-TEST-001' && row.reason === 'below-performance-minimum-score'), 'Low performance score reason was not reported');
 
+const missingScoreEvidence = makePerformanceEvidence();
+missingScoreEvidence.performanceAssessments[0].scorePercent = null;
+const missingScore = evaluateCredentialEligibility({ credential: performanceCredential, evidence: missingScoreEvidence, performanceDefinitions });
+assert(!missingScore.eligible, 'A performance result without a score must fail eligibility');
+assert(missingScore.missingRequirements.some((row) => row.id === 'PRACTICAL-TEST-001' && row.reason === 'missing-score'), 'Missing performance score reason was not reported');
+
 const criticalErrorEvidence = makePerformanceEvidence();
 criticalErrorEvidence.performanceAssessments[0].criticalErrorCount = 1;
 const criticalError = evaluateCredentialEligibility({ credential: performanceCredential, evidence: criticalErrorEvidence, performanceDefinitions });
