@@ -26,6 +26,11 @@
 .portal-credential-card dl div { border-top: 1px solid var(--line); padding-top: .55rem; }
 .portal-credential-card dt { color: var(--muted); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
 .portal-credential-card dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+.portal-verification-section { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.portal-verification-section h4 { margin: 0 0 .75rem; font-size: 1rem; }
+.portal-verification-section ul, .portal-status-history { margin: .45rem 0 0; padding-left: 1.25rem; color: var(--muted); }
+.portal-verification-section li + li { margin-top: .4rem; }
+.portal-status-history li::marker { font-weight: 800; color: var(--green); }
 .portal-error { border-left: 4px solid #b24a3b; background: #f8e4e1; padding: .8rem 1rem; color: #712f26; }
 .portal-progress-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: .8rem; margin: 1.5rem 0; }
 .portal-summary-card { display: grid; gap: .25rem; border: 1px solid var(--line); border-radius: .75rem; padding: .9rem; background: #fff; min-width: 0; }
@@ -64,5 +69,5 @@
 .portal-practice-answers button.incorrect { border-color: #b24a3b; background: #f8e4e1; }
 .portal-practice-feedback { margin: .75rem 0 0; color: var(--muted); }
 @media (max-width: 840px) { .header-right { align-items: flex-start; width: 100%; } .portal-nav { justify-content: flex-start; } .portal-verify-form { flex-direction: column; } }
-@media (max-width: 620px) { .portal-progress-summary { grid-template-columns: 1fr 1fr; } .portal-evidence-row { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 620px) { .portal-progress-summary { grid-template-columns: 1fr 1fr; } .portal-evidence-row { align-items: flex-start; flex-direction: column; } .portal-credential-card dl { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .portal-progress-summary { grid-template-columns: 1fr; } }
