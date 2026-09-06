@@ -27,11 +27,21 @@ const rows = assessments.sort((a,b) => a.id.localeCompare(b.id)).map((assessment
   };
 });
 
-console.log(JSON.stringify({
+const report = {
   summary: {
     specialistFinals: rows.length,
     finalsWithCompleteObjectiveCoverage: rows.filter((r) => r.uncoveredObjectives.length === 0).length,
     finalsWithTwoItemsPerObjective: rows.filter((r) => r.twoItemsPerObjectiveReady).length
   },
   assessments: rows
-}, null, 2));
+};
+
+console.log(JSON.stringify(report, null, 2));
+
+if (process.argv.includes('--check')) {
+  const failures = rows.filter((row) => !row.twoItemsPerObjectiveReady);
+  if (failures.length > 0) {
+    const detail = failures.map((row) => `${row.assessment}: ${row.objectivesBelowTwoItems.join(', ')}`).join('; ');
+    throw new Error(`Specialist final coverage gate failed for ${failures.length} assessment(s): ${detail}`);
+  }
+}
