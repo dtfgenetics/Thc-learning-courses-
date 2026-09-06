@@ -33,17 +33,15 @@ for (const route of loadRoutes()) {
     expect(response, 'visual navigation should return a response').not.toBeNull();
     expect(response.status(), `unexpected navigation status for ${route}`).toBeLessThan(400);
 
-    const domReady = await page.waitForLoadState('domcontentloaded', { timeout: 30_000 })
-      .then(() => true)
-      .catch(() => false);
+    const domReady = await page.waitForLoadState('domcontentloaded', { timeout: 10_000 }).then(() => true).catch(() => false);
     if (!domReady) {
-      const finding = `lifecycle-timeout: DOMContentLoaded did not fire within 30s for ${route}`;
+      const finding = `lifecycle-timeout: DOMContentLoaded did not fire within 10s for ${route}`;
       testInfo.annotations.push({ type: 'web-qa-findings', description: finding });
       console.error(finding);
       if (WEB_QA_ENFORCE) expect(domReady, finding).toBe(true);
     }
+    if (domReady) await page.waitForLoadState('networkidle', { timeout: 5_000 }).catch(() => {});
 
-    await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
     await page.evaluate(() => {
       document.documentElement.style.scrollBehavior = 'auto';
       for (const el of document.querySelectorAll('video, iframe')) el.setAttribute('data-web-qa-dynamic', 'true');
