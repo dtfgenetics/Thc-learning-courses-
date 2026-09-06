@@ -2,6 +2,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHandler as createApiHandler } from '../api/src/server.mjs';
 
 const root = process.cwd();
 const webRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'public');
@@ -73,13 +74,44 @@ export function loadPublicLesson(id, { previewDrafts = true } = {}) {
   if (!isVisible(lesson, previewDrafts)) return null;
   return safeLesson(lesson);
 }
+
+export function loadLessonPracticeItems(id, { previewDrafts = true } = {}) {
+  if (!/^LESSON-[A-Z0-9-]+$/.test(id)) return [];
+  const target = path.join(root, 'content/lessons', `${id}.json`);
+  if (!fs.existsSync(target)) return [];
+  const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (!isVisible(lesson, previewDrafts)) return [];
+  const competencies = new Set(lesson.competencies ?? []);
+  return readDirJson('content/questions')
+    .filter((item) => item.purpose === 'formative' && competencies.has(item.competency) && isVisible(item, previewDrafts))
+    .filter((item) => Array.isArray(item.choices) && Number.isInteger(item.correct))
+    .map((item) => ({ id: item.id, competency: item.competency, stem: item.stem, choices: item.choices, correct: item.correct, rationale: item.rationale, difficulty: item.difficulty }));
+}
+
 function securityHeaders(res, contentType) {
-  res.setHeader('content-type', contentType); res.setHeader('x-content-type-options', 'nosniff'); res.setHeader('referrer-policy', 'no-referrer'); res.setHeader('permissions-policy', 'camera=(), microphone=(), geolocation=()'); res.setHeader('content-security-policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+  res.setHeader('content-type', contentType);
+  res.setHeader('x-content-type-options', 'nosniff');
+  res.setHeader('referrer-policy', 'no-referrer');
+  res.setHeader('permissions-policy', 'camera=(), microphone=(), geolocation=()');
+  res.setHeader('content-security-policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
 }
 function json(res, status, body) { securityHeaders(res, 'application/json; charset=utf-8'); res.setHeader('cache-control', 'no-store'); res.statusCode = status; res.end(JSON.stringify(body)); }
-function sendStatic(res, fileName, contentType) { const target = path.join(webRoot, fileName); if (!target.startsWith(webRoot) || !fs.existsSync(target)) return false; securityHeaders(res, contentType); res.setHeader('cache-control', fileName === 'index.html' ? 'no-cache' : 'public, max-age=300'); res.statusCode = 200; res.end(fs.readFileSync(target)); return true; }
-export function createAcademyHandler({ env = process.env } = {}) {
+function sendStatic(res, fileName, contentType, method = 'GET') {
+  const target = path.join(webRoot, fileName);
+  if (!target.startsWith(webRoot) || !fs.existsSync(target)) return false;
+  securityHeaders(res, contentType);
+  res.setHeader('cache-control', fileName === 'index.html' ? 'no-cache' : 'public, max-age=300');
+  res.statusCode = 200;
+  if (method === 'HEAD') res.end(); else res.end(fs.readFileSync(target));
+  return true;
+}
+
+export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
   const previewDrafts = env.NODE_ENV !== 'production' && env.ACADEMY_PREVIEW_DRAFTS !== '0';
+  let api = apiHandler;
+  if (!api && env.NODE_ENV !== 'production') {
+    try { api = createApiHandler({ env }); } catch { api = null; }
+  }
   return function handler(req, res) {
     let url; try { url = new URL(req.url, 'http://localhost'); } catch { return json(res, 400, { error: 'invalid-url' }); }
     if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
@@ -87,15 +119,24 @@ export function createAcademyHandler({ env = process.env } = {}) {
     if (req.method === 'GET' && url.pathname === '/api/staging/governance') return previewDrafts ? json(res, 200, buildStagingGovernanceSummary()) : json(res, 404, { error: 'not-found' });
     const lessonMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)$/);
     if (req.method === 'GET' && lessonMatch) { const lesson = loadPublicLesson(lessonMatch[1], { previewDrafts }); return lesson ? json(res, 200, lesson) : json(res, 404, { error: 'lesson-not-found' }); }
-    if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/academy')) { if (sendStatic(res, 'index.html', 'text/html; charset=utf-8')) return; }
-    if (req.method === 'GET' && url.pathname === '/app.js') { if (sendStatic(res, 'app.js', 'text/javascript; charset=utf-8')) return; }
-    if (req.method === 'GET' && url.pathname === '/progress.js') { if (sendStatic(res, 'progress.js', 'text/javascript; charset=utf-8')) return; }
-    if (req.method === 'GET' && url.pathname === '/governance.js') { if (sendStatic(res, 'governance.js', 'text/javascript; charset=utf-8')) return; }
-    if (req.method === 'GET' && url.pathname === '/styles.css') { if (sendStatic(res, 'styles.css', 'text/css; charset=utf-8')) return; }
-    if (req.method === 'GET' && url.pathname === '/governance.css') { if (sendStatic(res, 'governance.css', 'text/css; charset=utf-8')) return; }
+    const practiceMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)\/practice$/);
+    if (req.method === 'GET' && practiceMatch) return json(res, 200, { lessonId: practiceMatch[1], items: loadLessonPracticeItems(practiceMatch[1], { previewDrafts }) });
+    if (api && (url.pathname.startsWith('/api/v1/') || url.pathname === '/readyz')) return api(req, res);
+
+    const staticFiles = new Map([
+      ['/', ['index.html', 'text/html; charset=utf-8']], ['/academy', ['index.html', 'text/html; charset=utf-8']],
+      ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/progress.js', ['progress.js', 'text/javascript; charset=utf-8']],
+      ['/governance.js', ['governance.js', 'text/javascript; charset=utf-8']], ['/portal.js', ['portal.js', 'text/javascript; charset=utf-8']],
+      ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/governance.css', ['governance.css', 'text/css; charset=utf-8']], ['/portal.css', ['portal.css', 'text/css; charset=utf-8']]
+    ]);
+    if ((req.method === 'GET' || req.method === 'HEAD') && staticFiles.has(url.pathname)) {
+      const [file, type] = staticFiles.get(url.pathname);
+      if (sendStatic(res, file, type, req.method)) return;
+    }
     return json(res, 404, { error: 'not-found' });
   };
 }
+
 export function createAcademyWebServer(options = {}) { return http.createServer(createAcademyHandler(options)); }
 const isDirectExecution = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
-if (isDirectExecution) createAcademyWebServer().listen(port, () => process.stdout.write(`${JSON.stringify({ level: 'info', event: 'academy.web.started', port, url: `http://localhost:${port}/academy` })}\n`));
+if (isDirectExecution) createAcademyWebServer().listen(port, '0.0.0.0', () => process.stdout.write(`${JSON.stringify({ level: 'info', event: 'academy.web.started', port, url: `http://0.0.0.0:${port}/academy` })}\n`));
