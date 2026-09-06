@@ -19,15 +19,14 @@ export function validateProductionEnvironment(env = process.env) {
   const adapterModule = required(env, 'THC_PERSISTENCE_ADAPTER_MODULE');
   const publicBaseUrl = required(env, 'THC_PUBLIC_BASE_URL');
   const adminToken = required(env, 'THC_API_ADMIN_TOKEN');
+  const requiredSchemaVersion = required(env, 'THC_REQUIRED_SCHEMA_VERSION');
 
   let parsed;
   try { parsed = new URL(publicBaseUrl); } catch { throw new Error('THC_PUBLIC_BASE_URL must be a valid URL'); }
   if (parsed.protocol !== 'https:') throw new Error('Production THC_PUBLIC_BASE_URL must use https');
-  if (adminToken.length < MIN_SERVICE_TOKEN_LENGTH) {
-    throw new Error(`THC_API_ADMIN_TOKEN must be at least ${MIN_SERVICE_TOKEN_LENGTH} characters`);
-  }
+  if (adminToken.length < MIN_SERVICE_TOKEN_LENGTH) throw new Error(`THC_API_ADMIN_TOKEN must be at least ${MIN_SERVICE_TOKEN_LENGTH} characters`);
 
-  return { mode: 'production', adapterModule, publicBaseUrl: parsed.toString() };
+  return { mode: 'production', adapterModule, publicBaseUrl: parsed.toString(), requiredSchemaVersion };
 }
 
 export async function loadProductionApiOptions(env = process.env) {
@@ -35,20 +34,19 @@ export async function loadProductionApiOptions(env = process.env) {
   if (config.mode !== 'production') return { env };
 
   const imported = await import(resolveModuleSpecifier(config.adapterModule));
-  if (typeof imported.createPersistenceAdapters !== 'function') {
-    throw new Error('Persistence adapter module must export createPersistenceAdapters({ env })');
-  }
+  if (typeof imported.createPersistenceAdapters !== 'function') throw new Error('Persistence adapter module must export createPersistenceAdapters({ env })');
 
   const adapters = await imported.createPersistenceAdapters({ env });
   const credentialStore = adapters?.credentialStore;
-  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.getByVerificationId !== 'function') {
-    throw new Error('Production persistence adapter must provide credentialStore.ping() and credentialStore.getByVerificationId()');
+  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function') {
+    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
   }
 
   return {
     env,
     credentialStore,
     credentialWriter: adapters.credentialWriter ?? null,
+    requiredSchemaVersion: config.requiredSchemaVersion,
     authorize: createServiceTokenAuthorizer({ tokens: serviceTokensFromEnvironment(env) })
   };
 }
