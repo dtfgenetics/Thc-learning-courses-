@@ -26,7 +26,8 @@
     "production:readiness": "node scripts/check-production-readiness.mjs",
     "release:check": "node scripts/check-release-readiness.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run api:test && npm run ops:validate && npm run production:readiness"
+    "persistence:test": "node scripts/test-persistence-contract.mjs",
+    "test": "npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run review:readiness && npm run itembank:readiness && npm run runtime:test && npm run api:test && npm run persistence:test && npm run ops:validate && npm run production:readiness"
   },
   "engines": {
     "node": ">=20"
