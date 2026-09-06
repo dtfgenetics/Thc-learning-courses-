@@ -25,11 +25,17 @@ const row = {
   payload_json: { issuer: { name: 'Teaching Healthy Cultivation', url: 'https://dtfseeds.com/' }, privateEvidence: true },
   payload_hash: 'payload-hash'
 };
+const statusRows = [
+  { status:'valid', reason:'initial-validation', actor_id:'SYSTEM', created_at:new Date('2026-09-05T12:01:00.000Z') },
+  { status:'suspended', reason:'manual-review', actor_id:'ADMIN-1', created_at:new Date('2026-09-06T12:01:00.000Z') },
+  { status:'valid', reason:'review-cleared', actor_id:'ADMIN-2', created_at:new Date('2026-09-06T13:01:00.000Z') }
+];
 
 const store = createPostgresCredentialStore({
   query: async (text, params) => {
     calls.push({ text, params });
     if (text === 'select 1 as ok') return { rows: [{ ok: 1 }] };
+    if (text.includes('join credential_status_events')) return { rows: statusRows };
     if (text.includes('where verification_id = $1')) return { rows: [row] };
     if (text.includes('count(*)')) return { rows: [{ count: 7 }] };
     throw new Error('unexpected query');
@@ -46,9 +52,16 @@ assert.equal(credential.issuer.name, 'Teaching Healthy Cultivation');
 assert.equal(credential.issuedAt, '2026-09-05T12:00:00.000Z');
 assert.equal(credential.expiresAt, null);
 assert.equal(credential.subjectHash, 'private-subject-hash');
-const verificationCall = calls.find((call) => call.text.includes('where verification_id = $1'));
+const verificationCall = calls.find((call) => call.text.includes('where verification_id = $1') && !call.text.includes('join credential_status_events'));
 assert.deepEqual(verificationCall.params, ['VERIFY-POSTGRES-001']);
 assert.equal(verificationCall.text.includes('VERIFY-POSTGRES-001'), false, 'verification id must be parameterized, not interpolated');
+
+const history = await store.listStatusHistoryByVerificationId('VERIFY-POSTGRES-001');
+assert.equal(history.length, 3);
+assert.deepEqual(history[1], { status:'suspended', reason:'manual-review', actorId:'ADMIN-1', createdAt:'2026-09-06T12:01:00.000Z' });
+const historyCall = calls.find((call) => call.text.includes('join credential_status_events'));
+assert.deepEqual(historyCall.params, ['VERIFY-POSTGRES-001']);
+assert.equal(historyCall.text.includes('VERIFY-POSTGRES-001'), false, 'history verification id must be parameterized');
 assert.equal(await store.count(), 7);
 
 assert.equal(mapCredentialRow(null), null);
@@ -59,6 +72,7 @@ assert.equal(mapCredentialRow(jsonPayloadRow).issuer.name, 'Teaching Healthy Cul
 const failingStore = createPostgresCredentialStore({ query: async () => { throw new Error('private database detail'); } });
 await assert.rejects(() => failingStore.ping(), PersistenceUnavailableError);
 await assert.rejects(() => failingStore.getByVerificationId('VERIFY-FAIL'), PersistenceUnavailableError);
+await assert.rejects(() => failingStore.listStatusHistoryByVerificationId('VERIFY-FAIL'), PersistenceUnavailableError);
 await assert.rejects(() => failingStore.count(), PersistenceUnavailableError);
 
 const learnerCalls = [];
@@ -121,4 +135,4 @@ assert.equal(performanceQuery.text.includes('evaluator_id'), true);
 assert.equal(performanceQuery.text.includes('rubric_version'), true);
 assert.equal(performanceQuery.text.includes('delivery_mode'), true);
 
-console.log('PostgreSQL credential persistence, performance provenance, and production fail-closed tests passed');
+console.log('PostgreSQL credential persistence, lifecycle history, performance provenance, and production fail-closed tests passed');
