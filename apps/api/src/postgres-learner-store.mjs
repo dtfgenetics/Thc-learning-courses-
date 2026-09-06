@@ -6,6 +6,17 @@ async function queryOrUnavailable(query, text, params) {
   catch (error) { throw new PersistenceUnavailableError('persistence-unavailable', { cause: error }); }
 }
 
+function enrollmentRow(row) {
+  if (!row) return null;
+  return {
+    courseId: row.course_id,
+    courseVersion: String(row.course_version),
+    status: row.status,
+    enrolledAt: row.enrolled_at ? new Date(row.enrolled_at).toISOString() : null,
+    completedAt: row.completed_at ? new Date(row.completed_at).toISOString() : null
+  };
+}
+
 export function createPostgresLearnerStore({ query } = {}) {
   if (typeof query !== 'function') throw new Error('PostgreSQL learner store requires a query(text, params) function');
 
@@ -33,7 +44,36 @@ export function createPostgresLearnerStore({ query } = {}) {
   }
 
   return {
-    kind: 'postgres-learner-progress',
+    kind: 'postgres-learner-runtime',
+    async listEnrollments(externalSubject) {
+      const result = await queryOrUnavailable(
+        query,
+        `select e.course_id, e.course_version, e.status, e.enrolled_at, e.completed_at
+           from learners l
+           join enrollments e on e.learner_id = l.id
+          where l.external_subject = $1
+          order by e.enrolled_at desc, e.course_id, e.course_version`,
+        [externalSubject]
+      );
+      return (result.rows ?? []).map(enrollmentRow);
+    },
+    async enroll(externalSubject, { courseId, courseVersion } = {}) {
+      if (!courseId) throw new Error('courseId required');
+      if (!courseVersion) throw new Error('courseVersion required');
+      const learner = await ensureLearner(externalSubject);
+      if (!learner?.id) throw new Error('learner-resolution-failed');
+      const enrollmentId = crypto.randomUUID();
+      const result = await queryOrUnavailable(
+        query,
+        `insert into enrollments (id, learner_id, course_id, course_version, status)
+         values ($1, $2, $3, $4, 'active')
+         on conflict (learner_id, course_id, course_version)
+         do update set course_id = excluded.course_id
+         returning course_id, course_version, status, enrolled_at, completed_at`,
+        [enrollmentId, learner.id, courseId, String(courseVersion)]
+      );
+      return enrollmentRow(result.rows?.[0] ?? null);
+    },
     async listProgress(externalSubject) {
       const result = await queryOrUnavailable(
         query,
