@@ -1,3 +1,5 @@
+import { loadRequiredPerformanceDefinitions } from './performance-definitions.mjs';
+
 function asMap(definitions) {
   if (definitions instanceof Map) return definitions;
   return new Map(Object.entries(definitions ?? {}));
@@ -16,13 +18,15 @@ function scorePercent(result) {
   return Number.isFinite(value) ? value : null;
 }
 
-export function evaluateCredentialEligibility({ credential, evidence = {}, performanceDefinitions = new Map() } = {}) {
+export function evaluateCredentialEligibility({ credential, evidence = {}, performanceDefinitions = null, root = process.cwd() } = {}) {
   if (!credential?.id || !credential?.eligibility) throw new Error('credential definition with eligibility required');
   const missing = [];
   const assessments = new Map((evidence.assessments ?? []).map((row) => [row.assessmentId, row]));
   const performance = new Map((evidence.performanceAssessments ?? []).map((row) => [row.assessmentId, row]));
   const artifacts = new Map((evidence.portfolioArtifacts ?? []).map((row) => [row.artifactId, row]));
-  const performanceById = asMap(performanceDefinitions);
+  const performanceById = performanceDefinitions == null
+    ? loadRequiredPerformanceDefinitions({ root, credential })
+    : asMap(performanceDefinitions);
 
   for (const requiredId of credential.eligibility.requiredAssessments ?? []) {
     const result = assessments.get(requiredId);
