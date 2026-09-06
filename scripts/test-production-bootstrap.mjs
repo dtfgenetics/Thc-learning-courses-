@@ -25,6 +25,7 @@ assert.equal(await options.credentialStore.schemaVersion(), '3');
 assert.equal(typeof options.credentialStore.listStatusHistoryByVerificationId, 'function');
 assert.equal(options.requiredSchemaVersion, '3');
 assert.equal(options.credentialWriter.kind, 'test-writer');
+assert.equal(typeof options.credentialWriter.transitionById, 'function');
 assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
@@ -38,5 +39,8 @@ const authOk = options.authorize({ headers: { authorization: 'Bearer external-te
 assert.equal(authOk.ok, true);
 assert.equal(authOk.subject, 'external-user-001');
 assert.ok(authOk.scopes.includes('learner:read'));
+const authWrite = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:write');
+assert.equal(authWrite.ok, true);
+assert.ok(authWrite.scopes.includes('admin:write'));
 
-console.log('Production persistence, schema readiness, lifecycle history, learner evidence, and authentication adapter contract passed.');
+console.log('Production persistence, schema readiness, lifecycle history/write, learner evidence, and authentication adapter contract passed.');
