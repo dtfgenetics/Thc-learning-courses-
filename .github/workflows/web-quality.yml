@@ -130,12 +130,18 @@ jobs:
         run: |
           CHROME_PATH=$(node --input-type=module -e "import { chromium } from '@playwright/test'; process.stdout.write(chromium.executablePath())")
           echo "CHROME_PATH=$CHROME_PATH" >> "$GITHUB_ENV"
+          echo "Resolved Chromium: $CHROME_PATH"
+          test -x "$CHROME_PATH"
 
       - name: Discover public routes
         run: node scripts/discover-public-routes.mjs
 
       - name: Run Lighthouse CI
-        run: npx lhci autorun --config=lighthouserc.cjs
+        shell: bash
+        run: |
+          mkdir -p "$WEB_QA_ARTIFACT_DIR"
+          set -o pipefail
+          npx lhci autorun --config=lighthouserc.cjs 2>&1 | tee "$WEB_QA_ARTIFACT_DIR/lhci.log"
 
       - name: Upload Lighthouse evidence
         if: always()
