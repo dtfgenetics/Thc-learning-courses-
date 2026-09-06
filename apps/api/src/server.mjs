@@ -13,6 +13,7 @@ import { loadProductionApiOptions } from './bootstrap.mjs';
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
 const credentialDefinitions = new Map();
+const courseDefinitions = new Map();
 
 function loadCredentialDefinition(id) {
   if (!/^CRED-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
@@ -24,12 +25,15 @@ function loadCredentialDefinition(id) {
   return definition;
 }
 
-function loadCourse(courseId) {
-  if (!/^COURSE-[A-Z0-9-]+$/.test(String(courseId ?? ''))) return null;
-  const target = path.join(root, 'content/courses', `${courseId}.json`);
+function loadCourseDefinition(id) {
+  if (!/^COURSE-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (courseDefinitions.has(id)) return courseDefinitions.get(id);
+  const target = path.join(root, 'content/courses', `${id}.json`);
   if (!fs.existsSync(target)) return null;
-  const course = JSON.parse(fs.readFileSync(target, 'utf8'));
-  return course?.id === courseId ? course : null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (definition?.id !== id) return null;
+  courseDefinitions.set(id, definition);
+  return definition;
 }
 
 export function createDevelopmentCredentialStore() {
@@ -206,7 +210,7 @@ export function createHandler({
         catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
         const courseId = String(body.courseId ?? '').trim();
         const courseVersion = String(body.courseVersion ?? '').trim();
-        const course = loadCourse(courseId);
+        const course = loadCourseDefinition(courseId);
         if (!course) return json(res, 404, { error: 'course-not-found', requestId });
         if (String(course.version) !== courseVersion) return json(res, 409, { error: 'course-version-mismatch', currentVersion: String(course.version), requestId });
         const enrollment = await learnerStore.enroll(auth.subject, { courseId, courseVersion });
@@ -230,7 +234,7 @@ export function createHandler({
         if (!learnerStore || typeof learnerStore.listCredentialEvidence !== 'function') return json(res, 503, { error: 'learner-evidence-persistence-unavailable', requestId });
         const credential = loadCredentialDefinition(credentialProgressMatch[1]);
         if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
-        const course = loadCourse(credential.course);
+        const course = loadCourseDefinition(credential.course);
         if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
         const evidence = await learnerStore.listCredentialEvidence(auth.subject, { credentialDefinitionId: credential.id });
         return json(res, 200, credentialProgressView(credential, course, evidence));
