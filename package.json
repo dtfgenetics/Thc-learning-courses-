@@ -23,6 +23,8 @@
     "review:validate": "node scripts/validate-reviews.mjs",
     "review:queue": "node scripts/build-review-queue.mjs",
     "review:queue:check": "node scripts/build-review-queue.mjs --summary-only",
+    "review:next": "node scripts/select-next-review-task.mjs",
+    "review:next:test": "node scripts/test-select-next-review-task.mjs",
     "review:packet": "node scripts/build-review-packets.mjs",
     "review:packets:check": "node scripts/build-review-packets.mjs --summary-only",
     "review:record": "node scripts/create-review-record.mjs",
@@ -53,7 +55,7 @@
     "academy:progress:test": "node scripts/test-learner-progress.mjs",
     "academy:accessibility:test": "node scripts/test-academy-accessibility.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run schema:validate && npm run validate && npm run registry:validate && npm run review:validate && npm run review:record:test && npm run review:queue:check && npm run review:packets:check && npm run pilot:validate && npm run pilot:readiness && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run credential:specialist:coverage && npm run credential:coverage && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run academy:web:test && npm run academy:progress:test && npm run academy:accessibility:test && npm run staging:smoke && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run staging:readiness && npm run status:check && npm run release:scope:test && npm run production:readiness"
+    "test": "npm run schema:validate && npm run validate && npm run registry:validate && npm run review:validate && npm run review:record:test && npm run review:next:test && npm run review:queue:check && npm run review:packets:check && npm run pilot:validate && npm run pilot:readiness && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run credential:specialist:coverage && npm run credential:coverage && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run academy:web:test && npm run academy:progress:test && npm run academy:accessibility:test && npm run staging:smoke && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run staging:readiness && npm run status:check && npm run release:scope:test && npm run production:readiness"
   },
   "dependencies": {
     "ajv": "8.20.0",
