@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/job-task.schema.json",
+  "title": "THC Academy Job Task",
+  "type": "object",
+  "required": ["id", "title", "description", "competencies", "proficiency", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^TASK-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "description": {"type": "string", "minLength": 10},
+    "competencies": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}, "uniqueItems": true},
+    "proficiency": {"type": "string", "pattern": "^PROF-[A-Z0-9-]+$"},
+    "safetyCritical": {"type": "boolean"},
+    "assessmentIdeas": {"type": "array", "items": {"type": "string"}},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "extensions": {"type": "object"}
+  },
+  "additionalProperties": false
+}
