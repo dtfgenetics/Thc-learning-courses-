@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { evaluateCredentialEligibility } from '../packages/domain/credential-eligibility.mjs';
-import { loadRequiredPerformanceDefinitions } from './lib/load-performance-definitions.mjs';
+import { loadRequiredPerformanceDefinitions } from '../packages/domain/performance-definitions.mjs';
 
 const root = process.cwd();
 const inputArg = process.argv.find((arg) => arg.startsWith('--input='));
