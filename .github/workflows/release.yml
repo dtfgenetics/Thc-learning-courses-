@@ -2,6 +2,16 @@ name: Production curriculum release gate
 
 on:
   workflow_dispatch:
+    inputs:
+      course_id:
+        description: Course ID to evaluate for production release
+        required: true
+        default: COURSE-CULT-FOUNDATIONS-001
+        type: string
+      credential_id:
+        description: Optional credential ID when a course maps to more than one credential
+        required: false
+        type: string
   push:
     tags:
       - "academy-*"
@@ -18,7 +28,44 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Resolve explicit release scope
+        id: scope
+        env:
+          INPUT_COURSE_ID: ${{ inputs.course_id }}
+          INPUT_CREDENTIAL_ID: ${{ inputs.credential_id }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            course="$INPUT_COURSE_ID"
+            credential="$INPUT_CREDENTIAL_ID"
+          else
+            tag="$GITHUB_REF_NAME"
+            if [[ "$tag" =~ ^academy-(COURSE-[A-Z0-9-]+)-v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              course="${BASH_REMATCH[1]}"
+              credential=""
+            else
+              echo "::error::Release tag must use academy-COURSE-...-vMAJOR.MINOR.PATCH so the course scope is explicit."
+              exit 1
+            fi
+          fi
+
+          if [[ ! "$course" =~ ^COURSE-[A-Z0-9-]+$ ]]; then
+            echo "::error::Invalid or missing release course ID: $course"
+            exit 1
+          fi
+          if [[ -n "$credential" && ! "$credential" =~ ^CRED-[A-Z0-9-]+$ ]]; then
+            echo "::error::Invalid release credential ID: $credential"
+            exit 1
+          fi
+
+          echo "course=$course" >> "$GITHUB_OUTPUT"
+          echo "credential=$credential" >> "$GITHUB_OUTPUT"
       - name: Run complete quality suite
         run: npm test
-      - name: Enforce production publication gates
+      - name: Enforce scoped production publication gates
+        env:
+          RELEASE_COURSE_ID: ${{ steps.scope.outputs.course }}
+          RELEASE_CREDENTIAL_ID: ${{ steps.scope.outputs.credential }}
         run: npm run release:check
