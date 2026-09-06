@@ -1,0 +1,36 @@
+name: Diagnose persistence adapter (temporary)
+
+on:
+  push:
+    branches:
+      - feat/production-persistence-adapter
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Run persistence adapter test
+        shell: bash
+        run: |
+          set +e
+          npm run production:persistence:test > persistence-test-output.txt 2>&1
+          code=$?
+          cat persistence-test-output.txt
+          echo "$code" > persistence-test-exit.txt
+          exit 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: persistence-test-diagnostic
+          path: |
+            persistence-test-output.txt
+            persistence-test-exit.txt
+          if-no-files-found: error
