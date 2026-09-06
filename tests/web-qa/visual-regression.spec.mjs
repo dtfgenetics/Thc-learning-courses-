@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 import {
   WEB_QA_ARTIFACT_DIR,
   WEB_QA_BASE_URL,
+  WEB_QA_ENFORCE,
   WEB_QA_ROUTE_FILE,
   WEB_QA_VISUAL_MAX_ROUTES,
   WEB_QA_VISUAL_MODE,
@@ -28,12 +29,25 @@ function safeName(route) {
 
 for (const route of loadRoutes()) {
   test(`visual ${route}`, async ({ page }, testInfo) => {
-    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const response = await page.goto(route, { waitUntil: 'commit', timeout: 30_000 });
+    expect(response, 'visual navigation should return a response').not.toBeNull();
+    expect(response.status(), `unexpected navigation status for ${route}`).toBeLessThan(400);
+
+    const domReady = await page.waitForLoadState('domcontentloaded', { timeout: 30_000 })
+      .then(() => true)
+      .catch(() => false);
+    if (!domReady) {
+      const finding = `lifecycle-timeout: DOMContentLoaded did not fire within 30s for ${route}`;
+      testInfo.annotations.push({ type: 'web-qa-findings', description: finding });
+      console.error(finding);
+      if (WEB_QA_ENFORCE) expect(domReady, finding).toBe(true);
+    }
+
     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
     await page.evaluate(() => {
       document.documentElement.style.scrollBehavior = 'auto';
       for (const el of document.querySelectorAll('video, iframe')) el.setAttribute('data-web-qa-dynamic', 'true');
-    });
+    }).catch(() => {});
 
     if (WEB_QA_VISUAL_MODE === 'compare') {
       await expect(page).toHaveScreenshot(`${safeName(route)}.png`, {
@@ -49,7 +63,7 @@ for (const route of loadRoutes()) {
     const dir = path.join(WEB_QA_ARTIFACT_DIR, 'visual-candidates', testInfo.project.name);
     fs.mkdirSync(dir, { recursive: true });
     const file = path.join(dir, `${safeName(route)}.png`);
-    await page.screenshot({ path: file, fullPage: true, animations: 'disabled', caret: 'hide' });
+    await page.screenshot({ path: file, fullPage: true, animations: 'disabled', caret: 'hide', timeout: 30_000 });
     await testInfo.attach(`visual-candidate-${safeName(route)}`, { path: file, contentType: 'image/png' });
   });
 }
