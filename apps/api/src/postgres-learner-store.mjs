@@ -118,13 +118,18 @@ export function createPostgresLearnerStore({ query } = {}) {
     async listCredentialEvidence(externalSubject, { credentialDefinitionId } = {}) {
       if (!credentialDefinitionId) throw new Error('credentialDefinitionId required');
       const learnerId = await learnerIdForSubject(externalSubject);
-      if (!learnerId) return { learnerId: externalSubject, assessmentAttempts: [], assessments: [], competencies: [], performanceAssessments: [], portfolioArtifacts: [] };
+      if (!learnerId) {
+        return { learnerId: externalSubject, assessmentAttempts: [], assessments: [], competencies: [], performanceAssessments: [], portfolioArtifacts: [] };
+      }
 
-      const attemptsResult = await queryOrUnavailable(query,
+      const attemptsResult = await queryOrUnavailable(
+        query,
         `select assessment_id, assessment_version, form_id, status, started_at, submitted_at, scored_at, score_percent, passed
            from assessment_attempts
           where learner_id = $1
-          order by started_at desc`, [learnerId]);
+          order by started_at desc`,
+        [learnerId]
+      );
       const assessmentAttempts = (attemptsResult.rows ?? []).map((row) => ({
         assessmentId: row.assessment_id,
         assessmentVersion: String(row.assessment_version),
@@ -142,13 +147,20 @@ export function createPostgresLearnerStore({ query } = {}) {
         const current = bestByAssessment.get(attempt.assessmentId);
         if (!current || Number(attempt.scorePercent ?? -1) > Number(current.scorePercent ?? -1)) bestByAssessment.set(attempt.assessmentId, attempt);
       }
-      const assessments = [...bestByAssessment.values()].map((attempt) => ({ assessmentId: attempt.assessmentId, status: attempt.passed ? 'passed' : 'failed', scorePercent: attempt.scorePercent }));
+      const assessments = [...bestByAssessment.values()].map((attempt) => ({
+        assessmentId: attempt.assessmentId,
+        status: attempt.passed ? 'passed' : 'failed',
+        scorePercent: attempt.scorePercent
+      }));
 
-      const competencyResult = await queryOrUnavailable(query,
+      const competencyResult = await queryOrUnavailable(
+        query,
         `select competency_id, curriculum_version, mastery_level, evidence_attempt_id, updated_at
            from learner_competencies
           where learner_id = $1
-          order by competency_id, curriculum_version desc`, [learnerId]);
+          order by competency_id, curriculum_version desc`,
+        [learnerId]
+      );
       const competencies = (competencyResult.rows ?? []).map((row) => ({
         competencyId: row.competency_id,
         curriculumVersion: String(row.curriculum_version),
@@ -157,11 +169,14 @@ export function createPostgresLearnerStore({ query } = {}) {
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
       }));
 
-      const performanceResult = await queryOrUnavailable(query,
+      const performanceResult = await queryOrUnavailable(
+        query,
         `select assessment_id, assessment_version, status, score_percent, critical_error_count, evaluated_at, updated_at
            from performance_assessment_results
           where learner_id = $1
-          order by assessment_id, updated_at desc`, [learnerId]);
+          order by assessment_id, updated_at desc`,
+        [learnerId]
+      );
       const performanceAssessments = (performanceResult.rows ?? []).map((row) => ({
         assessmentId: row.assessment_id,
         assessmentVersion: String(row.assessment_version),
@@ -172,11 +187,14 @@ export function createPostgresLearnerStore({ query } = {}) {
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
       }));
 
-      const portfolioResult = await queryOrUnavailable(query,
+      const portfolioResult = await queryOrUnavailable(
+        query,
         `select artifact_id, status, reviewed_at, updated_at
            from learner_portfolio_artifacts
           where learner_id = $1 and credential_definition_id = $2
-          order by artifact_id`, [learnerId, credentialDefinitionId]);
+          order by artifact_id`,
+        [learnerId, credentialDefinitionId]
+      );
       const portfolioArtifacts = (portfolioResult.rows ?? []).map((row) => ({
         artifactId: row.artifact_id,
         status: row.status,
