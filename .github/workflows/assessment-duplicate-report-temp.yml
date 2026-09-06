@@ -1,0 +1,27 @@
+name: Assessment duplicate report (temporary)
+
+on:
+  push:
+    branches:
+      - feat/assessment-duplicate-quality-gate
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Generate duplicate report
+        run: node scripts/report-assessment-duplicates.mjs > assessment-duplicate-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: assessment-duplicate-report
+          path: assessment-duplicate-report.json
+          if-no-files-found: error
