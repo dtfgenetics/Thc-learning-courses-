@@ -4,7 +4,7 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '1'; },
+      async schemaVersion() { return '2'; },
       async getByVerificationId() { return null; },
       async count() { return 0; }
     },
@@ -24,6 +24,17 @@ export async function createPersistenceAdapters() {
         next.push(stored);
         progress.set(subject, next);
         return stored;
+      },
+      async listCredentialEvidence(subject, { credentialDefinitionId } = {}) {
+        return {
+          learnerId: subject,
+          credentialDefinitionId,
+          assessmentAttempts: [],
+          assessments: [],
+          competencies: [],
+          performanceAssessments: [],
+          portfolioArtifacts: []
+        };
       }
     }
   };
