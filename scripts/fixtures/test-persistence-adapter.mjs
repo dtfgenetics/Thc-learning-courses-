@@ -1,5 +1,6 @@
 export async function createPersistenceAdapters() {
   const progress = new Map();
+  const enrollments = new Map();
   return {
     credentialStore: {
       kind: 'test-persistent',
@@ -10,7 +11,23 @@ export async function createPersistenceAdapters() {
     },
     credentialWriter: { kind: 'test-writer' },
     learnerStore: {
-      kind: 'test-learner-progress',
+      kind: 'test-learner-runtime',
+      async listEnrollments(subject) { return [...(enrollments.get(subject) ?? [])]; },
+      async enroll(subject, record) {
+        const rows = enrollments.get(subject) ?? [];
+        const existing = rows.find((row) => row.courseId === record.courseId && String(row.courseVersion) === String(record.courseVersion));
+        if (existing) return existing;
+        const stored = {
+          courseId: record.courseId,
+          courseVersion: String(record.courseVersion),
+          status: 'active',
+          enrolledAt: '2026-09-06T13:00:00.000Z',
+          completedAt: null
+        };
+        rows.push(stored);
+        enrollments.set(subject, rows);
+        return stored;
+      },
       async listProgress(subject) { return [...(progress.get(subject) ?? [])]; },
       async setLessonProgress(subject, record) {
         const rows = progress.get(subject) ?? [];
