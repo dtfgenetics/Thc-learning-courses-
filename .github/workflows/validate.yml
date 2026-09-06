@@ -25,6 +25,7 @@ jobs:
       - name: Require committed curriculum registry to match source objects
         run: |
           npm run registry:build
+          cat registry/curriculum.json
           git diff --exit-code -- registry/curriculum.json
       - name: Run complete curriculum and credential test suite
         run: npm test
