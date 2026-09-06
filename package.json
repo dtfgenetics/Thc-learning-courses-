@@ -38,6 +38,9 @@
     "rls:contract:test": "node scripts/test-rls-policy-contract.mjs",
     "ops:validate": "node scripts/validate-operational-controls.mjs",
     "staging:readiness": "node scripts/check-staging-readiness.mjs",
+    "status": "node scripts/report-system-status.mjs --human",
+    "status:json": "node scripts/report-system-status.mjs",
+    "status:check": "node scripts/report-system-status.mjs --check",
     "production:readiness": "node scripts/check-production-readiness.mjs",
     "release:check": "node scripts/check-release-readiness.mjs",
     "release:scope:test": "node scripts/test-release-scope.mjs",
@@ -45,7 +48,7 @@
     "academy:dev": "node apps/web/server.mjs",
     "academy:web:test": "node scripts/test-academy-web.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run schema:validate && npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run review:packets:check && npm run pilot:validate && npm run pilot:readiness && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run credential:specialist:coverage && npm run credential:coverage && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run academy:web:test && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run staging:readiness && npm run release:scope:test && npm run production:readiness"
+    "test": "npm run schema:validate && npm run validate && npm run registry:validate && npm run review:validate && npm run review:queue:check && npm run review:packets:check && npm run pilot:validate && npm run pilot:readiness && npm run exam:form:dev && npm run credential:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:specialist:readiness && npm run credential:specialist:coverage && npm run credential:coverage && npm run review:readiness && npm run itembank:readiness && npm run knowledge:validate && npm run academy:web:test && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate && npm run staging:readiness && npm run status:check && npm run release:scope:test && npm run production:readiness"
   },
   "dependencies": {
     "ajv": "8.20.0",
