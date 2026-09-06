@@ -70,6 +70,23 @@ export function createPostgresCredentialStore({ query } = {}) {
       );
       return mapCredentialRow(result.rows?.[0] ?? null);
     },
+    async listStatusHistoryByVerificationId(verificationId) {
+      const result = await queryOrUnavailable(
+        query,
+        `select e.status, e.reason, e.actor_id, e.created_at
+           from credentials c
+           join credential_status_events e on e.credential_id = c.id
+          where c.verification_id = $1
+          order by e.created_at asc, e.id asc`,
+        [verificationId]
+      );
+      return (result.rows ?? []).map((row) => ({
+        status: row.status,
+        reason: row.reason ?? null,
+        actorId: row.actor_id,
+        createdAt: asIso(row.created_at)
+      }));
+    },
     async count() {
       const result = await queryOrUnavailable(query, 'select count(*)::int as count from credentials', []);
       return Number(result.rows?.[0]?.count ?? 0);

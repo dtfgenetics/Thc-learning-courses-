@@ -5,7 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { publicCredentialView } from '../../../packages/domain/credential-runtime.mjs';
 import { evaluateCredentialEligibility } from '../../../packages/domain/credential-eligibility.mjs';
-import { loadPerformanceDefinition, loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
+import { loadRequiredPerformanceDefinitions } from '../../../packages/domain/performance-definitions.mjs';
 import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
@@ -44,6 +44,7 @@ export function createDevelopmentCredentialStore() {
     async ping() { return true; },
     async schemaVersion() { return 'development'; },
     getByVerificationId(verificationId) { return records.get(verificationId) ?? null; },
+    listStatusHistoryByVerificationId(verificationId) { return records.get(verificationId)?.statusHistory ?? []; },
     register(record) { records.set(record.verificationId, record); return record; },
     count() { return records.size; }
   };
@@ -142,6 +143,7 @@ function credentialProgressView(credential, course, rawEvidence, performanceDefi
       version: credential.version,
       role: credential.role ?? null,
       course: credential.course,
+      lifecycle: credential.lifecycle ?? null,
       minimumPassingScorePercent: credential.eligibility.minimumPassingScorePercent
     },
     eligibility,
@@ -154,6 +156,7 @@ function credentialProgressView(credential, course, rawEvidence, performanceDefi
 
 export function createHandler({
   credentialStore = null,
+  credentialWriter = null,
   learnerStore = null,
   env = process.env,
   requiredSchemaVersion = null,
@@ -274,54 +277,6 @@ export function createHandler({
         return json(res, 200, { progress });
       }
 
-      if (req.method === 'POST' && url.pathname === '/api/v1/admin/performance-assessments/results') {
-        route = 'POST /api/v1/admin/performance-assessments/results';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'assessor:write', res, requestId);
-        if (!auth) return;
-        if (!learnerStore || typeof learnerStore.recordPerformanceAssessmentResult !== 'function') {
-          return json(res, 503, { error: 'performance-evidence-persistence-unavailable', requestId });
-        }
-        let body;
-        try { body = await readJsonBody(req); }
-        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
-
-        const learnerSubject = String(body.learnerSubject ?? '').trim();
-        const assessmentId = String(body.assessmentId ?? '').trim();
-        const assessmentVersion = String(body.assessmentVersion ?? '').trim();
-        const deliveryMode = String(body.deliveryMode ?? '').trim();
-        const scorePercent = Number(body.scorePercent);
-        const criticalErrorCount = Number(body.criticalErrorCount ?? 0);
-        if (!learnerSubject) return json(res, 400, { error: 'learner-subject-required', requestId });
-        const definition = loadPerformanceDefinition({ root, assessmentId });
-        if (!definition) return json(res, 404, { error: 'performance-assessment-not-found', requestId });
-        if (assessmentVersion !== String(definition.version)) {
-          return json(res, 409, { error: 'performance-assessment-version-mismatch', currentVersion: String(definition.version), requestId });
-        }
-        if (!Number.isFinite(scorePercent) || scorePercent < 0 || scorePercent > 100) return json(res, 400, { error: 'invalid-performance-score', requestId });
-        if (!Number.isInteger(criticalErrorCount) || criticalErrorCount < 0) return json(res, 400, { error: 'invalid-critical-error-count', requestId });
-        if (!(definition.deliveryModes ?? []).includes(deliveryMode)) return json(res, 400, { error: 'unsupported-performance-delivery-mode', requestId });
-        if (body.evidence !== undefined && (!body.evidence || typeof body.evidence !== 'object' || Array.isArray(body.evidence))) {
-          return json(res, 400, { error: 'invalid-performance-evidence', requestId });
-        }
-
-        const minimum = Number(definition.passingStandard?.minimumPercent ?? 0);
-        const requiresNoCriticalErrors = definition.passingStandard?.noCriticalErrors === true;
-        const status = scorePercent >= minimum && (!requiresNoCriticalErrors || criticalErrorCount === 0) ? 'passed' : 'failed';
-        const result = await learnerStore.recordPerformanceAssessmentResult(learnerSubject, {
-          assessmentId: definition.id,
-          assessmentVersion: String(definition.version),
-          status,
-          scorePercent,
-          criticalErrorCount,
-          evidence: body.evidence ?? {},
-          evaluatorId: auth.subject,
-          rubricId: definition.id,
-          rubricVersion: String(definition.version),
-          deliveryMode
-        });
-        return json(res, 201, { result: learnerPerformanceView(result) });
-      }
-
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
       if (req.method === 'GET' && credentialMatch) {
         route = 'GET /api/v1/credentials/:verificationId';
@@ -330,8 +285,47 @@ export function createHandler({
         const definitionId = record.credentialDefinitionId ?? record.credentialDefinition ?? (record.courseId === 'COURSE-CULT-FOUNDATIONS-001' ? 'CRED-CULT-FOUNDATIONS-001' : null);
         const definition = loadCredentialDefinition(definitionId);
         if (!definition) return json(res, 500, { error: 'credential-definition-not-found', requestId });
-        return json(res, 200, publicCredentialView(record, definition));
+        const statusHistory = typeof resolvedCredentialStore.listStatusHistoryByVerificationId === 'function'
+          ? await resolvedCredentialStore.listStatusHistoryByVerificationId(credentialMatch[1])
+          : [];
+        return json(res, 200, publicCredentialView(record, definition, { statusHistory }));
       }
+
+      const adminCredentialHistoryMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/([A-Za-z0-9_-]+)\/history$/);
+      if (req.method === 'GET' && adminCredentialHistoryMatch) {
+        route = 'GET /api/v1/admin/credentials/:verificationId/history';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        if (!auth) return;
+        if (typeof resolvedCredentialStore.listStatusHistoryByVerificationId !== 'function') return json(res, 503, { error: 'credential-history-unavailable', requestId });
+        const record = await resolvedCredentialStore.getByVerificationId(adminCredentialHistoryMatch[1]);
+        if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
+        const history = await resolvedCredentialStore.listStatusHistoryByVerificationId(adminCredentialHistoryMatch[1]);
+        return json(res, 200, { verificationId: record.verificationId, credentialDefinitionId: record.credentialDefinitionId ?? null, status: record.status, history });
+      }
+
+      const adminCredentialStatusMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/([A-Za-z0-9_-]+)\/status$/);
+      if (req.method === 'POST' && adminCredentialStatusMatch) {
+        route = 'POST /api/v1/admin/credentials/:verificationId/status';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        if (!credentialWriter || typeof credentialWriter.transitionById !== 'function') return json(res, 503, { error: 'credential-writer-unavailable', requestId });
+        const record = await resolvedCredentialStore.getByVerificationId(adminCredentialStatusMatch[1]);
+        if (!record) return json(res, 404, { error: 'credential-not-found', requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const nextStatus = String(body.status ?? '').trim();
+        const reason = body.reason == null ? null : String(body.reason).trim();
+        if (!['valid','suspended','superseded','expired','revoked'].includes(nextStatus)) return json(res, 400, { error: 'invalid-credential-status', requestId });
+        try {
+          const transition = await credentialWriter.transitionById(record.id, nextStatus, { actorId: auth.subject, reason });
+          return json(res, 200, { verificationId: record.verificationId, credential: transition.credential, event: transition.event });
+        } catch (error) {
+          if (/Invalid credential transition/.test(String(error?.message ?? ''))) return json(res, 409, { error: 'invalid-credential-transition', requestId });
+          throw error;
+        }
+      }
+
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
         const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
