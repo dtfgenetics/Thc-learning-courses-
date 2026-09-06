@@ -1,0 +1,152 @@
+name: Web quality system
+
+on:
+  pull_request:
+    branches: [dev, staging, main]
+    paths:
+      - 'apps/web/**'
+      - 'public/**'
+      - 'deploy/**'
+      - 'scripts/discover-public-routes.mjs'
+      - 'tests/web-qa/**'
+      - 'playwright.config.mjs'
+      - 'web-qa.config.mjs'
+      - 'lighthouserc.cjs'
+      - '.github/workflows/web-quality.yml'
+      - 'skills/dev-debugger/**'
+      - 'skills/playwright-browser-qa/**'
+      - 'skills/pixel-perfect-visual-qa/**'
+      - 'skills/lighthouse-site-auditor/**'
+  push:
+    branches: [staging, main]
+  schedule:
+    - cron: '23 8 * * *'
+  workflow_dispatch:
+    inputs:
+      enforce:
+        description: 'Fail the run for browser/Lighthouse findings'
+        required: false
+        default: false
+        type: boolean
+      max_routes:
+        description: 'Maximum routes to audit'
+        required: false
+        default: '250'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-quality-v2-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-and-visual:
+    name: Browser and pixel-perfect audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      WEB_QA_BASE_URL: https://dtfseeds.com
+      WEB_QA_ARTIFACT_DIR: .artifacts/web-qa
+      WEB_QA_ROUTE_FILE: .artifacts/web-qa/routes.json
+      WEB_QA_ENFORCE: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enforce) || github.ref == 'refs/heads/main') && '1' || '0' }}
+      WEB_QA_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '80' || (github.event_name == 'workflow_dispatch' && inputs.max_routes) || '250' }}
+      WEB_QA_VISUAL_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '20' || '80' }}
+      WEB_QA_VISUAL_MODE: capture
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install repository dependencies
+        run: npm ci
+
+      - name: Install pinned web QA runtime without changing dependency lock
+        run: npm install --no-save --package-lock=false @playwright/test@1.62.1 @lhci/cli@0.15.1
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Discover public routes
+        run: node scripts/discover-public-routes.mjs
+
+      - name: Run browser health audit
+        run: npx playwright test tests/web-qa/site-health.spec.mjs --project=desktop-1366
+
+      - name: Capture responsive visual candidates
+        if: ${{ !cancelled() }}
+        run: npx playwright test tests/web-qa/visual-regression.spec.mjs --project=mobile-412 --project=desktop-1366
+
+      - name: Upload browser and visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-qa-browser-${{ github.run_id }}
+          path: .artifacts/web-qa
+          if-no-files-found: warn
+          retention-days: 30
+
+  lighthouse:
+    name: Lighthouse every discovered page
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      WEB_QA_BASE_URL: https://dtfseeds.com
+      WEB_QA_ARTIFACT_DIR: .artifacts/web-qa
+      WEB_QA_ROUTE_FILE: .artifacts/web-qa/routes.json
+      WEB_QA_ENFORCE: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enforce) || github.ref == 'refs/heads/main') && '1' || '0' }}
+      WEB_QA_MAX_ROUTES: ${{ github.event_name == 'pull_request' && '20' || (github.event_name == 'workflow_dispatch' && inputs.max_routes) || '250' }}
+      LHCI_RUNS: ${{ github.ref == 'refs/heads/main' && '3' || '1' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install repository dependencies
+        run: npm ci
+
+      - name: Install pinned Lighthouse and Playwright runtime without changing dependency lock
+        run: npm install --no-save --package-lock=false @playwright/test@1.62.1 @lhci/cli@0.15.1
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Export Chromium path for Lighthouse
+        shell: bash
+        run: |
+          CHROME_PATH=$(node --input-type=module -e "import { chromium } from '@playwright/test'; process.stdout.write(chromium.executablePath())")
+          echo "CHROME_PATH=$CHROME_PATH" >> "$GITHUB_ENV"
+          echo "Resolved Chromium: $CHROME_PATH"
+          test -x "$CHROME_PATH"
+
+      - name: Discover public routes
+        run: node scripts/discover-public-routes.mjs
+
+      - name: Run Lighthouse CI
+        shell: bash
+        run: |
+          mkdir -p "$WEB_QA_ARTIFACT_DIR"
+          set -o pipefail
+          npx lhci autorun --config=lighthouserc.cjs 2>&1 | tee "$WEB_QA_ARTIFACT_DIR/lhci.log"
+
+      - name: Upload Lighthouse evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-qa-lighthouse-${{ github.run_id }}
+          path: .artifacts/web-qa
+          if-no-files-found: warn
+          retention-days: 30

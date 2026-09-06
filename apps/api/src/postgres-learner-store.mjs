@@ -17,6 +17,33 @@ function enrollmentRow(row) {
   };
 }
 
+function performanceEvidenceVerified(row) {
+  return Boolean(
+    String(row?.evaluator_id ?? '').trim() &&
+    row?.evaluated_at &&
+    String(row?.rubric_id ?? '').trim() &&
+    String(row?.rubric_version ?? '').trim() &&
+    ['virtual-facility', 'supervised-lab', 'workplace-equivalent'].includes(String(row?.delivery_mode ?? ''))
+  );
+}
+
+function performanceRow(row) {
+  if (!row) return null;
+  return {
+    assessmentId: row.assessment_id,
+    assessmentVersion: String(row.assessment_version),
+    status: row.status,
+    scorePercent: row.score_percent == null ? null : Number(row.score_percent),
+    criticalErrorCount: Number(row.critical_error_count ?? 0),
+    evidenceVerified: performanceEvidenceVerified(row),
+    rubricId: row.rubric_id ?? null,
+    rubricVersion: row.rubric_version == null ? null : String(row.rubric_version),
+    deliveryMode: row.delivery_mode ?? null,
+    evaluatedAt: row.evaluated_at ? new Date(row.evaluated_at).toISOString() : null,
+    updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+  };
+}
+
 export function createPostgresLearnerStore({ query } = {}) {
   if (typeof query !== 'function') throw new Error('PostgreSQL learner store requires a query(text, params) function');
 
@@ -115,6 +142,57 @@ export function createPostgresLearnerStore({ query } = {}) {
         completedAt: row.completed_at ? new Date(row.completed_at).toISOString() : null
       };
     },
+    async recordPerformanceAssessmentResult(externalSubject, record = {}) {
+      if (!externalSubject) throw new Error('externalSubject required');
+      for (const field of ['assessmentId', 'assessmentVersion', 'status', 'evaluatorId', 'rubricId', 'rubricVersion', 'deliveryMode']) {
+        if (!String(record[field] ?? '').trim()) throw new Error(`${field} required`);
+      }
+      if (!['passed', 'failed'].includes(record.status)) throw new Error('performance result status must be passed or failed');
+      const scorePercent = Number(record.scorePercent);
+      const criticalErrorCount = Number(record.criticalErrorCount ?? 0);
+      if (!Number.isFinite(scorePercent) || scorePercent < 0 || scorePercent > 100) throw new Error('scorePercent must be between 0 and 100');
+      if (!Number.isInteger(criticalErrorCount) || criticalErrorCount < 0) throw new Error('criticalErrorCount must be a non-negative integer');
+      const learner = await ensureLearner(externalSubject);
+      if (!learner?.id) throw new Error('learner-resolution-failed');
+      const evaluatedAt = record.evaluatedAt ?? new Date().toISOString();
+      const evidence = record.evidence && typeof record.evidence === 'object' && !Array.isArray(record.evidence) ? record.evidence : {};
+      const result = await queryOrUnavailable(
+        query,
+        `insert into performance_assessment_results (
+           learner_id, assessment_id, assessment_version, status, score_percent, critical_error_count,
+           evidence_json, evaluator_id, rubric_id, rubric_version, delivery_mode, evaluated_at
+         ) values ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12)
+         on conflict (learner_id, assessment_id, assessment_version)
+         do update set
+           status = excluded.status,
+           score_percent = excluded.score_percent,
+           critical_error_count = excluded.critical_error_count,
+           evidence_json = excluded.evidence_json,
+           evaluator_id = excluded.evaluator_id,
+           rubric_id = excluded.rubric_id,
+           rubric_version = excluded.rubric_version,
+           delivery_mode = excluded.delivery_mode,
+           evaluated_at = excluded.evaluated_at,
+           updated_at = now()
+         returning assessment_id, assessment_version, status, score_percent, critical_error_count,
+                   evaluator_id, rubric_id, rubric_version, delivery_mode, evaluated_at, updated_at`,
+        [
+          learner.id,
+          record.assessmentId,
+          String(record.assessmentVersion),
+          record.status,
+          scorePercent,
+          criticalErrorCount,
+          JSON.stringify(evidence),
+          record.evaluatorId,
+          record.rubricId,
+          String(record.rubricVersion),
+          record.deliveryMode,
+          evaluatedAt
+        ]
+      );
+      return performanceRow(result.rows?.[0] ?? null);
+    },
     async listCredentialEvidence(externalSubject, { credentialDefinitionId } = {}) {
       if (!credentialDefinitionId) throw new Error('credentialDefinitionId required');
       const learnerId = await learnerIdForSubject(externalSubject);
@@ -171,21 +249,14 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       const performanceResult = await queryOrUnavailable(
         query,
-        `select assessment_id, assessment_version, status, score_percent, critical_error_count, evaluated_at, updated_at
+        `select assessment_id, assessment_version, status, score_percent, critical_error_count,
+                evaluator_id, rubric_id, rubric_version, delivery_mode, evaluated_at, updated_at
            from performance_assessment_results
           where learner_id = $1
           order by assessment_id, updated_at desc`,
         [learnerId]
       );
-      const performanceAssessments = (performanceResult.rows ?? []).map((row) => ({
-        assessmentId: row.assessment_id,
-        assessmentVersion: String(row.assessment_version),
-        status: row.status,
-        scorePercent: row.score_percent == null ? null : Number(row.score_percent),
-        criticalErrorCount: Number(row.critical_error_count ?? 0),
-        evaluatedAt: row.evaluated_at ? new Date(row.evaluated_at).toISOString() : null,
-        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
-      }));
+      const performanceAssessments = (performanceResult.rows ?? []).map(performanceRow);
 
       const portfolioResult = await queryOrUnavailable(
         query,

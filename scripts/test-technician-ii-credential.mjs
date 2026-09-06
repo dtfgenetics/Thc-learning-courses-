@@ -72,8 +72,23 @@ if (issued.status !== 0) throw new Error(`Technician II test issuance failed.\n$
 const record = JSON.parse(issued.stdout);
 if (record.credentialDefinition !== 'CRED-CULT-TECH-II-001') throw new Error('Issued Technician II record has wrong definition');
 if (record.performanceEvidence.length !== 8 || record.portfolioEvidence.length !== 9) throw new Error('Issued Technician II record did not preserve required performance evidence');
+if (!record.performanceEvidence.every((row) => row.evidenceVerified === true)) throw new Error('Issued Technician II record did not preserve verified performance evidence');
 
 const tempPath = path.join(os.tmpdir(), 'thc-tech2-public-projection.json');
+fs.writeFileSync(tempPath, JSON.stringify(record, null, 2));
+const verifiedRecord = run(['scripts/verify-test-credential.mjs', `--input=${tempPath}`]);
+if (verifiedRecord.status !== 0) throw new Error(`Issued Technician II record failed schema/integrity verification.\n${verifiedRecord.stdout}\n${verifiedRecord.stderr}`);
+const verifiedRecordResult = JSON.parse(verifiedRecord.stdout);
+if (!verifiedRecordResult.valid) throw new Error('Issued Technician II record verifier returned valid=false');
+
+const malformedRecord = JSON.parse(JSON.stringify(record));
+delete malformedRecord.performanceEvidence[0].evidenceVerified;
+fs.writeFileSync(tempPath, JSON.stringify(malformedRecord, null, 2));
+const malformedVerification = run(['scripts/verify-test-credential.mjs', `--input=${tempPath}`]);
+if (malformedVerification.status !== 2) throw new Error('Malformed Technician II performance evidence should fail credential verification');
+const malformedResult = JSON.parse(malformedVerification.stdout);
+if (malformedResult.reason !== 'invalid-record-schema') throw new Error(`Expected invalid-record-schema, got ${malformedResult.reason}`);
+
 fs.writeFileSync(tempPath, JSON.stringify(record, null, 2));
 const projected = run(['scripts/project-public-verification.mjs', `--input=${tempPath}`]);
 if (projected.status !== 0) throw new Error(`Technician II public projection failed.\n${projected.stdout}\n${projected.stderr}`);

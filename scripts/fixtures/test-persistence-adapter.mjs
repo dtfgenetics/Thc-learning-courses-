@@ -5,11 +5,20 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '2'; },
+      async schemaVersion() { return '4'; },
       async getByVerificationId() { return null; },
+      async listStatusHistoryByVerificationId() { return []; },
       async count() { return 0; }
     },
-    credentialWriter: { kind: 'test-writer' },
+    credentialWriter: {
+      kind: 'test-writer',
+      async transitionById(id, nextStatus, { actorId, reason = null, now = new Date().toISOString() } = {}) {
+        return {
+          credential: { id, status: nextStatus },
+          event: { credentialId: id, status: nextStatus, actorId, reason, createdAt: now }
+        };
+      }
+    },
     learnerStore: {
       kind: 'test-learner-runtime',
       async listEnrollments(subject) { return [...(enrollments.get(subject) ?? [])]; },
