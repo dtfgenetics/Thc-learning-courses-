@@ -1,0 +1,117 @@
+name: Patch learner course completion API (temporary)
+
+on:
+  push:
+    branches:
+      - feat/learner-course-completion-api
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: feat/learner-course-completion-api
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Apply targeted server/package patch
+        shell: python
+        run: |
+          from pathlib import Path
+
+          server_path = Path('apps/api/src/server.mjs')
+          text = server_path.read_text()
+          old_import = "import { isValidCurriculumVersion } from '../../../packages/domain/learning-completion.mjs';"
+          new_import = "import { isValidCurriculumVersion, projectLearningCompletion } from '../../../packages/domain/learning-completion.mjs';"
+          if old_import in text:
+              text = text.replace(old_import, new_import, 1)
+          elif new_import not in text:
+              raise SystemExit('learning completion import anchor missing')
+
+          course_cache = "const courseDefinitions = new Map();\n"
+          module_cache = "const moduleDefinitions = new Map();\n"
+          if module_cache not in text:
+              if course_cache not in text: raise SystemExit('course cache anchor missing')
+              text = text.replace(course_cache, course_cache + module_cache, 1)
+
+          lesson_loader_anchor = "function loadLessonDefinition(id) {"
+          module_loader = """function loadModuleDefinition(id) {
+            if (!/^MOD-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+            if (moduleDefinitions.has(id)) return moduleDefinitions.get(id);
+            const target = path.join(root, 'content/modules', `${id}.json`);
+            if (!fs.existsSync(target)) return null;
+            const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+            if (definition?.id !== id) return null;
+            moduleDefinitions.set(id, definition);
+            return definition;
+          }
+
+          """
+          if 'function loadModuleDefinition(id)' not in text:
+              if lesson_loader_anchor not in text: raise SystemExit('lesson loader anchor missing')
+              text = text.replace(lesson_loader_anchor, module_loader + lesson_loader_anchor, 1)
+
+          route_anchor = "      const credentialProgressMatch = url.pathname.match(/^\\/api\\/v1\\/me\\/credentials\\/(CRED-[A-Z0-9-]+)\\/progress$/);\n"
+          course_route = """      const courseCompletionMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/completion$/);
+          if (req.method === 'GET' && courseCompletionMatch) {
+            route = 'GET /api/v1/me/courses/:courseId/completion';
+            const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+            if (!auth) return;
+            if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
+            const course = loadCourseDefinition(courseCompletionMatch[1]);
+            if (!course) return json(res, 404, { error: 'course-not-found', requestId });
+            const modules = [];
+            const lessons = [];
+            const seenLessons = new Set();
+            for (const moduleId of course.modules ?? []) {
+              const module = loadModuleDefinition(moduleId);
+              if (!module) return json(res, 500, { error: 'course-module-not-found', moduleId, requestId });
+              modules.push(module);
+              for (const lessonId of module.lessons ?? []) {
+                if (seenLessons.has(lessonId)) continue;
+                const lesson = loadLessonDefinition(lessonId);
+                if (!lesson) return json(res, 500, { error: 'course-lesson-not-found', lessonId, requestId });
+                seenLessons.add(lessonId);
+                lessons.push(lesson);
+              }
+            }
+            const progress = await learnerStore.listProgress(auth.subject);
+            const completion = projectLearningCompletion({ course, modules, lessons, progress });
+            return json(res, 200, { learner: { subject: auth.subject }, completion });
+          }
+
+          """
+          if 'GET /api/v1/me/courses/:courseId/completion' not in text:
+              if route_anchor not in text: raise SystemExit('credential progress route anchor missing')
+              text = text.replace(route_anchor, course_route + route_anchor, 1)
+          server_path.write_text(text)
+
+          package_path = Path('package.json')
+          package_text = package_path.read_text()
+          script_anchor = '    "api:learner-progress:test": "node scripts/test-learner-progress-api.mjs",\n'
+          script_line = '    "api:course-completion:test": "node scripts/test-learner-course-completion-api.mjs",\n'
+          if script_line not in package_text:
+              if script_anchor not in package_text: raise SystemExit('package script anchor missing')
+              package_text = package_text.replace(script_anchor, script_anchor + script_line, 1)
+          test_anchor = 'npm run api:learner-progress:test && npm run api:learner-enrollment:test'
+          test_replacement = 'npm run api:learner-progress:test && npm run api:course-completion:test && npm run api:learner-enrollment:test'
+          if test_replacement not in package_text:
+              if test_anchor not in package_text: raise SystemExit('package test-chain anchor missing')
+              package_text = package_text.replace(test_anchor, test_replacement, 1)
+          package_path.write_text(package_text)
+
+          Path('.github/workflows/patch-course-completion-api-temp.yml').unlink()
+      - run: npm run api:course-completion:test
+      - name: Commit targeted API integration and remove helper
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/api/src/server.mjs package.json scripts/test-learner-course-completion-api.mjs .github/workflows/patch-course-completion-api-temp.yml
+          git commit -m "Expose learner course completion projection"
+          git push origin HEAD:feat/learner-course-completion-api
