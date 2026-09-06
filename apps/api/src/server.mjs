@@ -60,8 +60,30 @@ function applyRateLimitHeaders(res, result) {
 }
 function defaultLogger(entry) { process.stdout.write(`${JSON.stringify(entry)}\n`); }
 
+async function readJsonBody(req, { maxBytes = 16 * 1024 } = {}) {
+  let total = 0;
+  const chunks = [];
+  for await (const chunk of req) {
+    total += chunk.length;
+    if (total > maxBytes) throw new Error('request-body-too-large');
+    chunks.push(chunk);
+  }
+  if (chunks.length === 0) return {};
+  try { return JSON.parse(Buffer.concat(chunks).toString('utf8')); }
+  catch { throw new Error('invalid-json-body'); }
+}
+
+function authorizeRequest(authorize, req, scope, res, requestId) {
+  const auth = authorize(req, scope);
+  if (auth.ok) return auth;
+  if (auth.status === 401) res.setHeader('www-authenticate', 'Bearer realm="thc-academy-api"');
+  json(res, auth.status, { error: auth.error, requestId });
+  return null;
+}
+
 export function createHandler({
   credentialStore = null,
+  learnerStore = null,
   env = process.env,
   requiredSchemaVersion = null,
   limiter = createFixedWindowRateLimiter(),
@@ -114,6 +136,38 @@ export function createHandler({
           return json(res, 429, { error: 'rate-limit-exceeded', requestId }, { 'retry-after': String(rate.retryAfterSeconds) });
         }
       }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/progress') {
+        route = 'GET /api/v1/me/progress';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
+        const progress = await learnerStore.listProgress(auth.subject);
+        return json(res, 200, { learner: { subject: auth.subject }, progress });
+      }
+
+      const lessonProgressMatch = url.pathname.match(/^\/api\/v1\/me\/lessons\/(LESSON-[A-Z0-9-]+)$/);
+      if (req.method === 'PUT' && lessonProgressMatch) {
+        route = 'PUT /api/v1/me/lessons/:lessonId';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.setLessonProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const lessonVersion = String(body.lessonVersion ?? '').trim();
+        const status = String(body.status ?? '').trim();
+        if (!/^\d+$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) {
+          return json(res, 400, { error: 'invalid-lesson-progress', requestId });
+        }
+        const progress = await learnerStore.setLessonProgress(auth.subject, {
+          lessonId: lessonProgressMatch[1],
+          lessonVersion,
+          status
+        });
+        return json(res, 200, { progress });
+      }
+
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
       if (req.method === 'GET' && credentialMatch) {
         route = 'GET /api/v1/credentials/:verificationId';
@@ -123,15 +177,13 @@ export function createHandler({
       }
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
-        const auth = resolvedAuthorize(req, 'admin:read');
-        if (!auth.ok) {
-          if (auth.status === 401) res.setHeader('www-authenticate', 'Bearer realm="thc-academy-api"');
-          return json(res, auth.status, { error: auth.error, requestId });
-        }
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        if (!auth) return;
         return json(res, 200, {
           ok: true,
           service: 'thc-academy-api',
           storageAdapter: resolvedCredentialStore.kind ?? 'unknown',
+          learnerStorageAdapter: learnerStore?.kind ?? null,
           credentialCount: typeof resolvedCredentialStore.count === 'function' ? await resolvedCredentialStore.count() : null,
           authenticatedSubject: auth.subject,
           requestId
