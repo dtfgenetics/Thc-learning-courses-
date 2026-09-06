@@ -1,0 +1,26 @@
+name: Generate dependency lock (temporary)
+
+on:
+  push:
+    branches:
+      - feat/production-persistence-adapter
+
+permissions:
+  contents: read
+
+jobs:
+  generate-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+      - name: Generate exact package lock
+        run: npm install --package-lock-only --ignore-scripts
+      - name: Upload generated lock
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-package-lock
+          path: package-lock.json
+          if-no-files-found: error
