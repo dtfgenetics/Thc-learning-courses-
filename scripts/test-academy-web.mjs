@@ -24,6 +24,8 @@ try {
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
+  const governanceClientText = await governanceClient.text();
+  assert.match(governanceClientText, /Activation evidence complete/);
 
   const governanceResponse = await fetch(`${base}/api/staging/governance`);
   assert.equal(governanceResponse.status, 200);
@@ -33,8 +35,14 @@ try {
   assert.ok(governance.inventory.assessments > 0);
   assert.ok(governance.inventory.questions > 0);
   assert.ok(Array.isArray(governance.readiness.productionBlockers));
+  for (const key of ['credentialItems', 'itemsWithPilotRecord', 'itemsWithCompleteEvidence', 'itemsWithApprovedAssessmentReview', 'itemsWithActivationEvidenceComplete', 'activeItems']) {
+    assert.equal(typeof governance.pilot[key], 'number', `pilot.${key} must be numeric`);
+    assert.ok(governance.pilot[key] >= 0, `pilot.${key} must be non-negative`);
+  }
+  assert.ok(governance.pilot.itemsWithActivationEvidenceComplete <= governance.pilot.credentialItems);
+  assert.ok(governance.pilot.activeItems <= governance.pilot.credentialItems);
   const serializedGovernance = JSON.stringify(governance);
-  for (const forbidden of ['correctAnswer', 'answerKey', 'scoringKey', 'reviewer', 'reviewerId', 'subjectHash']) {
+  for (const forbidden of ['correctAnswer', 'answerKey', 'scoringKey', 'reviewer', 'reviewerId', 'subjectHash', 'participantId', 'selectedChoiceIndex']) {
     assert.equal(serializedGovernance.includes(forbidden), false, `governance summary leaked ${forbidden}`);
   }
 
