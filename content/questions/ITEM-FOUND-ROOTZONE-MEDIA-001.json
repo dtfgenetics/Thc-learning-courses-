@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FOUND-ROOTZONE-MEDIA-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-ROOTZONE-MEDIA-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two containers use the same substrate recipe, but the shallower container stays wetter for longer after irrigation. Which explanation is best supported by root-zone media principles?",
+  "choices": [
+    "Container geometry can change perched-water behavior even when the substrate recipe is unchanged",
+    "The substrate recipe guarantees identical drainage in containers of every shape",
+    "Only cultivar identity can explain the difference in dryback",
+    "Adding any amendment changes only nutrient concentration and never pore structure"
+  ],
+  "correct": 0,
+  "rationale": "Container height and geometry affect the proportion and distribution of perched water, so the same medium can drain and dry differently in different containers.",
+  "references": ["REF-IRRIGATION-001"]
+}
