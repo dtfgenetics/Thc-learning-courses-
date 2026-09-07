@@ -62,6 +62,14 @@ jobs:
 
           echo "course=$course" >> "$GITHUB_OUTPUT"
           echo "credential=$credential" >> "$GITHUB_OUTPUT"
+      - name: Require committed curriculum registry to match source objects
+        run: |
+          npm run registry:build
+          if ! git diff --exit-code -- registry/curriculum.json; then
+            echo "::error::Production release requires committed registry/curriculum.json to match all source objects."
+            echo "Run 'npm run registry:build', commit the registry, and create the release from that commit."
+            exit 1
+          fi
       - name: Run complete quality suite
         run: npm test
       - name: Enforce scoped production publication gates
