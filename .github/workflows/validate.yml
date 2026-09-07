@@ -37,6 +37,14 @@ jobs:
           name: generated-curriculum-registry
           path: registry/curriculum.json
           if-no-files-found: error
+      - name: Build Cultivation Foundations assessment review batch
+        run: node scripts/build-assessment-review-batches.mjs --batch-size=24 > assessment-review-batch.json
+      - name: Upload assessment review batch
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-assessment-review-batch
+          path: assessment-review-batch.json
+          if-no-files-found: error
       - name: Validate operational controls
         run: npm run ops:validate
       - name: Validate staging readiness contract
