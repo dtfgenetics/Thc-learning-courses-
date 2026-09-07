@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: foundations-active-pool-promotion
+  cancel-in-progress: true
+
 jobs:
   promote-reviewed-pool:
     if: github.actor != 'github-actions[bot]'
@@ -25,6 +29,8 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Generate and apply guarded promotion plan
         run: node scripts/promote-foundations-active-pool.mjs --write > assessment-promotion-manifest.json
+      - name: Rebuild curriculum registry from promoted source objects
+        run: npm run registry:build
       - name: Validate promoted curriculum and credential state
         run: npm test
       - name: Upload promotion manifest
@@ -35,12 +41,12 @@ jobs:
           if-no-files-found: error
       - name: Commit reviewed assessment activations
         run: |
-          if git diff --quiet -- content/questions registry/system-readiness.json registry/cultivation-foundations.json; then
+          if git diff --quiet -- content/questions registry/system-readiness.json registry/cultivation-foundations.json registry/curriculum.json; then
             echo 'No assessment item promotions were required.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add content/questions registry/system-readiness.json registry/cultivation-foundations.json
+          git add content/questions registry/system-readiness.json registry/cultivation-foundations.json registry/curriculum.json
           git commit -m 'Activate reviewed Cultivation Foundations assessment pool'
           git push origin HEAD:work/promote-foundations-active-pool
