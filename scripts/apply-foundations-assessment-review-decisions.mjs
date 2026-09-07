@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildReviewRecord } from './create-review-record.mjs';
 
 const root = process.cwd();
@@ -18,11 +19,6 @@ function parseArgs(argv) {
 function readJson(relOrAbs) {
   const file = path.isAbsolute(relOrAbs) ? relOrAbs : path.join(root, relOrAbs);
   return JSON.parse(fs.readFileSync(file, 'utf8'));
-}
-function readDirJson(rel) {
-  const dir = path.join(root, rel);
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir).filter((name) => name.endsWith('.json')).sort().map((name) => readJson(path.join(dir, name)));
 }
 
 export function pendingFoundationAssessmentItemIds(baseDir = root) {
@@ -69,29 +65,32 @@ export function buildDecisionRecords(input, {confirmApproved = false, baseDir = 
   });
 }
 
-const args = parseArgs(process.argv.slice(2));
-if (!args.decisions) {
-  console.error('Usage: node scripts/apply-foundations-assessment-review-decisions.mjs --decisions path/to/decisions.json [--confirm-approved] [--write]');
-  process.exit(64);
-}
-try {
-  const input = readJson(args.decisions);
-  const records = buildDecisionRecords(input, {confirmApproved: Boolean(args['confirm-approved'])});
-  const output = {
-    mode: args.write ? 'write' : 'preview',
-    reviewerId: input.reviewerId,
-    reviewedAt: input.reviewedAt ?? null,
-    decisions: records.map((record) => ({id: record.id, objectId: record.objectId, objectVersion: record.objectVersion, status: record.status}))
-  };
-  if (args.write) {
-    for (const record of records) {
-      const file = path.join(root, 'content/reviews', `${record.id}.json`);
-      if (fs.existsSync(file)) throw new Error(`Review record already exists: ${file}`);
-      fs.writeFileSync(file, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
-    }
+const isDirect = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isDirect) {
+  const args = parseArgs(process.argv.slice(2));
+  if (!args.decisions) {
+    console.error('Usage: node scripts/apply-foundations-assessment-review-decisions.mjs --decisions path/to/decisions.json [--confirm-approved] [--write]');
+    process.exit(64);
   }
-  console.log(JSON.stringify(output, null, 2));
-} catch (error) {
-  console.error(error.message);
-  process.exit(1);
+  try {
+    const input = readJson(args.decisions);
+    const records = buildDecisionRecords(input, {confirmApproved: Boolean(args['confirm-approved'])});
+    const output = {
+      mode: args.write ? 'write' : 'preview',
+      reviewerId: input.reviewerId,
+      reviewedAt: input.reviewedAt ?? null,
+      decisions: records.map((record) => ({id: record.id, objectId: record.objectId, objectVersion: record.objectVersion, status: record.status}))
+    };
+    if (args.write) {
+      for (const record of records) {
+        const file = path.join(root, 'content/reviews', `${record.id}.json`);
+        if (fs.existsSync(file)) throw new Error(`Review record already exists: ${file}`);
+        fs.writeFileSync(file, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
+      }
+    }
+    console.log(JSON.stringify(output, null, 2));
+  } catch (error) {
+    console.error(error.message);
+    process.exit(1);
+  }
 }
