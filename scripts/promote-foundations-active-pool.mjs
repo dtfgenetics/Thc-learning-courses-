@@ -3,9 +3,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { evaluateAssessmentItemPromotion } from './lib/assessment-item-promotion.mjs';
+import { loadPilotEvidencePolicy } from './pilot-evidence-quality.mjs';
 
 const root = process.cwd();
 const write = process.argv.includes('--write');
+const check = process.argv.includes('--check');
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -61,6 +63,8 @@ const registry = readJson(registryPath);
 const assessment = readJson(`content/assessments/${registry.summativeAssessment}.json`);
 const questions = readDirJson('content/questions');
 const reviews = readDirJson('content/reviews');
+const pilotRecords = readDirJson('content/pilot-evidence');
+const pilotPolicy = loadPilotEvidencePolicy(root);
 const referenceIds = new Set(readDirJson('content/references').map((reference) => reference.id));
 const minimumActive = assessment.itemSelection?.minimumActiveItemsPerCompetency ?? 0;
 
@@ -72,6 +76,10 @@ const questionById = new Map(questions.map((item) => [item.id, item]));
 const plan = [];
 const failures = [];
 
+function evaluate(item) {
+  return evaluateAssessmentItemPromotion({ item, reviews, referenceIds, pilotRecords, pilotPolicy });
+}
+
 for (const bp of assessment.blueprint ?? []) {
   const competencyItems = questions.filter((item) =>
     item.competency === bp.competency && ['summative', 'credential'].includes(item.purpose)
@@ -80,13 +88,13 @@ for (const bp of assessment.blueprint ?? []) {
   const needed = Math.max(0, minimumActive - active.length);
   const candidateEvaluations = competencyItems
     .filter((item) => item.status !== 'active')
-    .map((item) => ({ item, result: evaluateAssessmentItemPromotion({ item, reviews, referenceIds }) }))
+    .map((item) => ({ item, result: evaluate(item) }))
     .filter(({ result }) => result.eligible);
   const orderedCandidates = roundRobinByObjective(candidateEvaluations.map(({ item }) => item));
   const selected = orderedCandidates.slice(0, needed);
 
   if (selected.length < needed) {
-    failures.push(`${bp.competency}: needs ${needed} additional active item(s) but only ${selected.length} reviewed promotable item(s) are available`);
+    failures.push(`${bp.competency}: needs ${needed} additional active item(s) but only ${selected.length} pilot-qualified promotable item(s) are available`);
   }
 
   plan.push({
@@ -95,36 +103,40 @@ for (const bp of assessment.blueprint ?? []) {
     activeBefore: active.length,
     minimumActiveRequired: minimumActive,
     needed,
-    reviewedPromotableAvailable: orderedCandidates.length,
-    selected: selected.map((item) => ({
-      id: item.id,
-      version: item.version,
-      objective: item.objective,
-      difficulty: item.difficulty,
-      type: item.type,
-      fromStatus: item.status,
-      approvedReviewId: evaluateAssessmentItemPromotion({ item, reviews, referenceIds }).approvedReviewId
-    })),
+    pilotQualifiedPromotableAvailable: orderedCandidates.length,
+    selected: selected.map((item) => {
+      const result = evaluate(item);
+      return {
+        id: item.id,
+        version: item.version,
+        objective: item.objective,
+        difficulty: item.difficulty,
+        type: item.type,
+        fromStatus: item.status,
+        approvedReviewId: result.approvedReviewId,
+        qualifiedPilotEvidenceId: result.qualifiedPilotEvidenceId
+      };
+    }),
     activeAfter: active.length + selected.length
   });
-}
-
-if (failures.length) {
-  console.error('Cultivation Foundations active-pool promotion plan cannot satisfy the release minimum:');
-  for (const failure of failures) console.error(`- ${failure}`);
-  process.exit(1);
 }
 
 const selectedIds = plan.flatMap((row) => row.selected.map((item) => item.id));
 if (new Set(selectedIds).size !== selectedIds.length) throw new Error('Promotion plan selected a duplicate assessment item.');
 
-const allCompetenciesMeetMinimumAfter = plan.every((row) => row.activeAfter >= minimumActive);
-if (!allCompetenciesMeetMinimumAfter) throw new Error('Promotion plan does not satisfy the minimum active pool requirement.');
+const allCompetenciesMeetMinimumAfter = failures.length === 0 && plan.every((row) => row.activeAfter >= minimumActive);
+
+if ((write || check) && failures.length) {
+  console.error('Cultivation Foundations active-pool promotion is blocked by pilot qualification:');
+  for (const failure of failures) console.error(`- ${failure}`);
+  process.exit(1);
+}
 
 if (write) {
+  if (!allCompetenciesMeetMinimumAfter) throw new Error('Promotion plan does not satisfy the minimum active pool requirement.');
   for (const id of selectedIds) {
     const item = questionById.get(id);
-    const result = evaluateAssessmentItemPromotion({ item, reviews, referenceIds });
+    const result = evaluate(item);
     if (!result.eligible) throw new Error(`${id} became ineligible during promotion: ${result.failures.join('; ')}`);
     writeJson(path.join('content/questions', `${id}.json`), result.promoted);
   }
@@ -151,11 +163,10 @@ const summary = {
   selectedForPromotion: selectedIds.length,
   activeAfter: plan.reduce((sum, row) => sum + row.activeAfter, 0),
   allCompetenciesMeetMinimumAfter,
-  readinessFlagsAfterWrite: {
-    cultivationFoundationsApprovedItemPoolsComplete: write ? registry.gates?.approvedItemPoolsComplete === true : true,
-    systemMinimumActivePoolComplete: write ? readJson(systemReadinessPath).areas?.assessment?.gates?.minimumActivePoolComplete === true : true
-  },
-  write
+  blockedCompetencies: failures.length,
+  blockers: failures,
+  write,
+  check
 };
 
 console.log(JSON.stringify({ summary, competencies: plan }, null, 2));
