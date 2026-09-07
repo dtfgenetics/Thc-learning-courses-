@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { catalogAttestationApproval } from './catalog-review-attestation.mjs';
 
 const root = process.cwd();
 const summaryOnly = process.argv.includes('--summary-only');
@@ -24,14 +25,26 @@ const assessments = readDirJson('content/assessments');
 const questions = readDirJson('content/questions');
 const reviews = readDirJson('content/reviews');
 
-function latestReview(objectId, objectVersion, reviewType) {
-  return reviews
+function latestReview(objectId, objectVersion, reviewType, objectType) {
+  const explicit = reviews
     .filter((review) =>
       review.objectId === objectId &&
       String(review.objectVersion) === String(objectVersion) &&
       review.reviewType === reviewType
     )
     .sort((a, b) => Date.parse(b.reviewedAt) - Date.parse(a.reviewedAt))[0] ?? null;
+  if (explicit) return explicit;
+  const attestation = catalogAttestationApproval(objectType, reviewType);
+  return attestation ? {
+    id: attestation.id,
+    objectId,
+    objectVersion,
+    reviewType,
+    status: 'approved',
+    reviewerId: attestation.reviewerId,
+    reviewedAt: attestation.reviewedAt,
+    notes: 'Approved by snapshot-bound catalog attestation.'
+  } : null;
 }
 
 function stateFromReview(review) {
@@ -52,7 +65,7 @@ for (const lessonId of [...lessonIds].sort()) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`Review queue cannot resolve lesson ${lessonId}`);
 
-  const scientific = latestReview(lesson.id, lesson.version, 'scientific');
+  const scientific = latestReview(lesson.id, lesson.version, 'scientific', 'lesson');
   const scientificState = stateFromReview(scientific);
   tasks.push({
     lane: 'lesson-scientific',
@@ -64,7 +77,7 @@ for (const lessonId of [...lessonIds].sort()) {
     latestReviewId: scientific?.id ?? null
   });
 
-  const editorial = latestReview(lesson.id, lesson.version, 'editorial');
+  const editorial = latestReview(lesson.id, lesson.version, 'editorial', 'lesson');
   const editorialState = scientificState === 'approved' ? stateFromReview(editorial) : 'blocked';
   tasks.push({
     lane: 'lesson-editorial',
@@ -79,7 +92,7 @@ for (const lessonId of [...lessonIds].sort()) {
 }
 
 for (const assessment of [...assessments].sort((a, b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(assessment.id, assessment.version, 'assessment');
+  const review = latestReview(assessment.id, assessment.version, 'assessment', 'assessment');
   tasks.push({
     lane: 'assessment-definition',
     objectType: 'assessment',
@@ -92,7 +105,7 @@ for (const assessment of [...assessments].sort((a, b) => a.id.localeCompare(b.id
 }
 
 for (const item of [...questions].sort((a, b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(item.id, item.version, 'assessment');
+  const review = latestReview(item.id, item.version, 'assessment', 'question');
   tasks.push({
     lane: item.purpose === 'formative' ? 'formative-item' : 'credential-item',
     objectType: 'question',

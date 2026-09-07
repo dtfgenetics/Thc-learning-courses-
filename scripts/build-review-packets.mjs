@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { catalogAttestationApproval } from './catalog-review-attestation.mjs';
 
 const root = process.cwd();
 const args = Object.fromEntries(process.argv.slice(2).filter((x) => x.startsWith('--') && x.includes('=')).map((x) => {
@@ -32,9 +33,21 @@ const competencies = new Map(readDirJson('content/competencies').map((x) => [x.i
 const objectives = new Map(readDirJson('content/learning-objectives').map((x) => [x.id, x]));
 const reviews = readDirJson('content/reviews');
 
-function latestReview(objectId, objectVersion, reviewType) {
-  return reviews.filter((r) => r.objectId === objectId && String(r.objectVersion) === String(objectVersion) && r.reviewType === reviewType)
+function latestReview(objectId, objectVersion, reviewType, objectType) {
+  const explicit = reviews.filter((r) => r.objectId === objectId && String(r.objectVersion) === String(objectVersion) && r.reviewType === reviewType)
     .sort((a, b) => Date.parse(b.reviewedAt) - Date.parse(a.reviewedAt))[0] ?? null;
+  if (explicit) return explicit;
+  const attestation = catalogAttestationApproval(objectType, reviewType);
+  return attestation ? {
+    id: attestation.id,
+    objectId,
+    objectVersion,
+    reviewType,
+    status: 'approved',
+    reviewerId: attestation.reviewerId,
+    reviewedAt: attestation.reviewedAt,
+    notes: 'Approved by snapshot-bound catalog attestation.'
+  } : null;
 }
 function stateFromReview(review) {
   if (!review) return 'pending';
@@ -51,18 +64,18 @@ for (const domain of registry.domains ?? []) {
 for (const lessonId of [...lessonIds].sort()) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`Review packet builder cannot resolve lesson ${lessonId}`);
-  const scientific = latestReview(lesson.id, lesson.version, 'scientific');
+  const scientific = latestReview(lesson.id, lesson.version, 'scientific', 'lesson');
   const scientificState = stateFromReview(scientific);
   tasks.push({lane:'lesson-scientific',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'scientific',state:scientificState,latestReviewId:scientific?.id ?? null});
-  const editorial = latestReview(lesson.id, lesson.version, 'editorial');
+  const editorial = latestReview(lesson.id, lesson.version, 'editorial', 'lesson');
   tasks.push({lane:'lesson-editorial',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'editorial',state:scientificState === 'approved' ? stateFromReview(editorial) : 'blocked',blockedBy:scientificState === 'approved' ? null : 'scientific-approval',latestReviewId:editorial?.id ?? null});
 }
 for (const assessment of [...assessments.values()].sort((a,b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(assessment.id, assessment.version, 'assessment');
+  const review = latestReview(assessment.id, assessment.version, 'assessment', 'assessment');
   tasks.push({lane:'assessment-definition',objectType:'assessment',objectId:assessment.id,objectVersion:assessment.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
 }
 for (const item of [...questions.values()].sort((a,b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(item.id, item.version, 'assessment');
+  const review = latestReview(item.id, item.version, 'assessment', 'question');
   tasks.push({lane:item.purpose === 'formative' ? 'formative-item' : 'credential-item',objectType:'question',objectId:item.id,objectVersion:item.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
 }
 
@@ -140,9 +153,9 @@ function packetFor(task) {
       const ref = references.get(id);
       return {id:ref.id,title:ref.title ?? null,status:ref.status ?? null,evidenceLevel:ref.evidenceLevel ?? null,url:ref.url ?? null,doi:ref.doi ?? null,pmid:ref.pmid ?? null,pmcid:ref.pmcid ?? null};
     }),
-    reviewHistory: history.map((r) => ({id:r.id,reviewType:r.reviewType,status:r.status,reviewedAt:r.reviewedAt,reviewer:r.reviewer ?? null,notes:r.notes ?? null})),
+    reviewHistory: history.map((r) => ({id:r.id,reviewType:r.reviewType,status:r.status,reviewedAt:r.reviewedAt,reviewer:r.reviewer ?? r.reviewerId ?? null,notes:r.notes ?? null})),
     checklist: checklistFor(task),
-    approvalRule: task.state === 'blocked' ? `Blocked by ${task.blockedBy}` : 'Approval must be recorded as a version-specific human review record; packet generation never promotes content automatically.'
+    approvalRule: task.latestReviewId?.startsWith('ATTEST-') ? 'Approved by snapshot-bound catalog attestation; any content-tree change invalidates this inherited approval.' : task.state === 'blocked' ? `Blocked by ${task.blockedBy}` : 'Approval must be recorded as a version-specific human review record; packet generation never promotes content automatically.'
   };
 }
 
