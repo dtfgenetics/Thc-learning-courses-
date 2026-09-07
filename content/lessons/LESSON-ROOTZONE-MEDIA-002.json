@@ -1,20 +1,48 @@
 {
   "id":"LESSON-ROOTZONE-MEDIA-002",
   "title":"Soil, Peat, Coco and Soilless Media Properties",
-  "version":"1.0.0",
+  "version":"1.1.0",
   "status":"draft",
   "competencies":["COMP-ROOTZONE-001"],
   "learningObjectives":["LO-ROOTZONE-MEDIA-002"],
-  "estimatedMinutes":40,
+  "estimatedMinutes":55,
   "references":["REF-IRRIGATION-001"],
   "assessment":null,
   "content":{
-    "overview":"Root-zone media differ in particle structure, water retention, aeration, drainage, cation interactions, biological activity, and stability. A medium should be managed according to its actual physical and chemical behavior rather than its marketing category alone.",
-    "vocabulary":[{"term":"Soilless medium","definition":"A root substrate formulated without field soil, commonly using materials such as peat, coco coir, bark, perlite, or mineral components."},{"term":"Water-holding capacity","definition":"The amount of water retained by a medium after drainage under defined conditions."},{"term":"Air-filled porosity","definition":"The fraction of pore volume occupied by air after excess water has drained."}],
-    "sections":[{"title":"Particle structure controls pore space","body":"Large and small particles create different pore-size distributions. Those pores determine how quickly water drains, how much remains available, and how much air remains around roots after irrigation.","references":["REF-IRRIGATION-001"]},{"title":"Organic and inert media behave differently","body":"Peat, coco, bark, mineral aggregates, and field soils have different physical stability and chemical interactions. Management should account for these differences rather than applying one irrigation schedule to every substrate.","references":["REF-IRRIGATION-001"]},{"title":"Container geometry changes effective behavior","body":"The same medium can hold water differently in shallow and tall containers because gravitational drainage and the perched water region depend on container dimensions.","references":["REF-IRRIGATION-001"]}],
-    "workedExamples":["A peat-heavy mix and a coarse coco-perlite mix may require different irrigation frequencies even when plants are the same size.","If a shallow container stays wetter than expected, consider container geometry as well as the recipe."],
-    "commonMistakes":["Assuming all coco products or all soils behave identically.","Choosing irrigation frequency without observing actual dryback.","Ignoring compaction and media breakdown over time."],
-    "practicalApplication":"Record the media composition, container geometry, drainage behavior, saturation duration, and crop response. Use those observations to set irrigation frequency rather than copying a schedule from a different substrate system.",
-    "summary":"Media choice creates the physical environment around roots. Water retention, aeration, drainage, chemistry, and container geometry determine how that medium should be managed."
+    "overview":"Growing media differ in pore structure, drainage, water retention, chemical buffering, cation interactions, biological activity, and physical stability. Media labels such as soil, peat, or coco are broad categories; practical management should be based on measured behavior in the actual container and crop system.",
+    "vocabulary":[
+      {"term":"Soilless medium","definition":"A root substrate formulated without field soil, commonly using materials such as peat, coco coir, bark, perlite, or mineral components."},
+      {"term":"Water-holding capacity","definition":"The amount of water retained by a medium after drainage under defined conditions."},
+      {"term":"Air-filled porosity","definition":"The fraction of pore volume occupied by air after excess water has drained."},
+      {"term":"Cation exchange capacity","definition":"The capacity of negatively charged surfaces in a medium to retain and exchange positively charged ions."},
+      {"term":"Compaction","definition":"Reduction in pore volume caused by packing, settling, particle breakdown, or mechanical pressure."},
+      {"term":"Perched water","definition":"Water retained in lower portions of a container because capillary forces oppose gravitational drainage."}
+    ],
+    "sections":[
+      {"title":"Particle size creates pore-size distribution","body":"Large and small particles create different pore networks. Larger connected pores favor rapid drainage and aeration; smaller pores retain water more strongly. A useful mix balances enough water retention for crop demand with enough gas-filled pore space for roots.","references":["REF-IRRIGATION-001"]},
+      {"title":"Peat-based media can hold substantial water","body":"Peat is widely used because it can retain water while remaining relatively lightweight, but actual behavior depends on particle grade, decomposition, additives, compaction, and container geometry. Peat-heavy mixes should be managed from observed drainage and dryback rather than a generic schedule.","references":["REF-IRRIGATION-001"]},
+      {"title":"Coco requires attention to physical and chemical behavior","body":"Coco products vary in fiber, pith, chip content, washing, buffering, salt content, and particle size. These differences affect water retention, aeration, and cation behavior, so two coco products can require different irrigation and nutrient management.","references":["REF-IRRIGATION-001"]},
+      {"title":"Field soil and living mixes introduce additional complexity","body":"Mineral soil, compost, organic amendments, and biologically active media can have stronger buffering, aggregation, microbial activity, and heterogeneity than highly standardized soilless substrates. Management should account for slower-changing chemical and biological processes as well as physical water behavior.","references":["REF-IRRIGATION-001"]},
+      {"title":"Amendments change more than one property","body":"Perlite, bark, pumice, compost, and other amendments may affect bulk density, drainage, aeration, nutrient retention, and biological activity simultaneously. Adding an amendment should be understood as changing the root-zone system, not simply making a mix more or less wet.","references":["REF-IRRIGATION-001"]},
+      {"title":"Container geometry changes the same media recipe","body":"A shallow container can retain a larger proportion of perched water than a taller container filled with the same medium. Container height, width, drainage path, and fill depth therefore belong in any comparison of media performance.","references":["REF-IRRIGATION-001"]},
+      {"title":"Media can change during the crop cycle","body":"Settling, root growth, decomposition, salt accumulation, and repeated irrigation can change effective pore space and hydraulic behavior. A schedule that worked early may need adjustment later even when the original media recipe is unchanged.","references":["REF-IRRIGATION-001"]},
+      {"title":"Evaluate media with repeatable observations","body":"Useful comparisons include saturated weight, drained weight, time to target dryback, drainage fraction, root-zone EC and pH, root appearance, and crop response. Repeating the same measurements is more informative than relying on bag descriptions or visual feel alone.","references":["REF-IRRIGATION-001"]}
+    ],
+    "workedExamples":[
+      "A peat-heavy mix and a coarse coco-perlite mix receive the same irrigation volume. The peat remains wet much longer, showing why frequency should follow measured media behavior rather than plant age alone.",
+      "Two coco products from different suppliers show different drainage and EC behavior. Compare particle composition, pretreatment, baseline EC, and dryback before assuming the same schedule should work.",
+      "A grower moves the same media recipe from tall nursery pots into shallow containers and sees slower drainage. Container geometry is a plausible cause even though the substrate formulation did not change.",
+      "Media that performed well early in veg begins staying wetter later. Root mass, compaction, decomposition, and irrigation distribution should be checked before changing fertilizer strength."
+    ],
+    "commonMistakes":[
+      "Assuming all products sold as coco, soil, or peat behave identically.",
+      "Choosing irrigation frequency without observing actual dryback.",
+      "Ignoring container height and geometry.",
+      "Treating amendments as if they change only water retention.",
+      "Ignoring compaction, settling, and media breakdown over time.",
+      "Comparing media using different measurement methods and calling the numbers equivalent."
+    ],
+    "practicalApplication":"Build a media characterization sheet for each substrate/container combination. Record composition, container dimensions, saturated and drained weights, drainage fraction, time to defined moisture checkpoints, root-zone EC/pH, visible root condition, and crop response. Repeat after major crop-stage changes to determine whether the media is behaving differently over time.",
+    "summary":"Media categories are starting points, not management instructions. Particle structure, chemistry, amendments, container geometry, and crop development determine actual water, air, and nutrient behavior, so irrigation decisions should be based on repeated measurements of the real system."
   }
 }
