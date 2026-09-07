@@ -1,0 +1,21 @@
+name: Test assessment choice randomization temporary
+
+on:
+  push:
+    branches:
+      - feat/assessment-choice-randomization
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: feat/assessment-choice-randomization
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run assessment:delivery:test
+      - run: npm run api:learner-assessment:test
