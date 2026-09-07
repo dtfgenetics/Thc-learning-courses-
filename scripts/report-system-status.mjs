@@ -65,6 +65,10 @@ for (const question of questions) {
   if (!hasApprovedReview(question.id, question.version, 'assessment', 'question')) pendingAssessment += 1;
 }
 
+const actualHumanAssessmentReviewComplete = pendingAssessment === 0;
+const declaredHumanAssessmentReviewComplete = readiness.areas?.assessment?.gates?.humanAssessmentReviewComplete === true;
+const assessmentReviewReadinessDrift = declaredHumanAssessmentReviewComplete !== actualHumanAssessmentReviewComplete;
+
 const summativeQuestions = questions.filter((item) => ['summative', 'credential'].includes(item.purpose));
 const activeQuestions = summativeQuestions.filter((item) => item.status === 'active');
 const completedPilots = pilots.filter((record) => record.status === 'complete' || record.complete === true);
@@ -160,7 +164,16 @@ const report = {
     pendingScientific,
     pendingEditorial,
     pendingAssessment,
-    pendingTotal: pendingScientific + pendingEditorial + pendingAssessment
+    pendingTotal: pendingScientific + pendingEditorial + pendingAssessment,
+    humanAssessmentReviewComplete: actualHumanAssessmentReviewComplete
+  },
+  readinessConsistency: {
+    assessmentHumanReview: {
+      declared: declaredHumanAssessmentReviewComplete,
+      actual: actualHumanAssessmentReviewComplete,
+      drift: assessmentReviewReadinessDrift,
+      evidence: `${pendingAssessment} pending assessment/question review(s) after exact-version records and valid snapshot attestations`
+    }
   },
   pilot: {
     records: pilots.length,
@@ -183,6 +196,7 @@ if (human) {
   console.log(`Credentials: ${report.inventory.credentials} | Encyclopedia: ${report.inventory.encyclopediaEntries} | Glossary: ${report.inventory.glossaryTerms}`);
   console.log(`Catalog approval attestation: ${attestation.latestValidId ?? 'NONE'} | Valid records: ${attestation.validRecords}`);
   console.log(`Pending reviews: ${report.review.pendingTotal} (scientific ${pendingScientific}, editorial ${pendingEditorial}, assessment ${pendingAssessment})`);
+  console.log(`Assessment review readiness: declared ${declaredHumanAssessmentReviewComplete ? 'COMPLETE' : 'INCOMPLETE'} | actual ${actualHumanAssessmentReviewComplete ? 'COMPLETE' : 'INCOMPLETE'} | drift ${assessmentReviewReadinessDrift ? 'YES' : 'NO'}`);
   console.log(`Pilot records: ${report.pilot.records} | Completed: ${report.pilot.completed}`);
   console.log(`Production blockers: ${report.productionBlockerCount}`);
   for (const blocker of report.productionBlockers) console.log(`- ${blocker}`);
@@ -193,4 +207,8 @@ if (human) {
 if (check) {
   if (!report.stagingUsable) process.exit(1);
   if (report.inventory.courses < 1 || report.inventory.lessons < 1 || report.inventory.assessments < 1) process.exit(1);
+  if (assessmentReviewReadinessDrift) {
+    console.error(`Assessment review readiness drift: registry declares ${declaredHumanAssessmentReviewComplete}, live evidence resolves ${actualHumanAssessmentReviewComplete} with ${pendingAssessment} pending review(s).`);
+    process.exit(1);
+  }
 }
