@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "scope": "THC Academy summative and credential assessment items",
+  "activation": {
+    "minimumResponsesPerItem": 30,
+    "minimumDiscrimination": 0,
+    "requireApprovedAssessmentReview": true,
+    "requireCompletePilotEvidence": true,
+    "requireNoOpenChallenges": true,
+    "requireResponseAccountingConsistency": true
+  },
+  "reviewSignals": {
+    "targetResponsesPerItem": 100,
+    "percentCorrectLowerFlag": 0.30,
+    "percentCorrectUpperFlag": 0.95,
+    "discriminationLowerFlag": 0.10,
+    "highOmitRateFlag": 0.10,
+    "highResponseTimeAnomalyRateFlag": 0.10
+  },
+  "interpretation": {
+    "minimumResponsesPerItem": "Internal operational floor for activation, not a universal psychometric minimum. It prevents trivially small samples from satisfying production readiness; adequacy must still be judged in context.",
+    "minimumDiscrimination": "Negative discrimination blocks activation because it indicates performance opposite the intended ordering and requires investigation. Values below the review-signal floor still require human review even when nonnegative.",
+    "targetResponsesPerItem": "Internal stability target for classical item review. Smaller samples may support preliminary analysis but should be interpreted cautiously.",
+    "reviewSignals": "Flags trigger human psychometric/content review. They do not automatically prove an item is good or bad and do not replace content validity review."
+  },
+  "sources": [
+    {
+      "title": "Educational Measurement, Fifth Edition, Chapter 18: Assessment for Licensing and Certification",
+      "publisher": "National Council on Measurement in Education",
+      "url": "https://ncme.org/wp-content/uploads/2026/01/Educational-Measurement-Fifth-Edition-Chapter-18.pdf",
+      "use": "Supports the need for defensible validity, reliability and adequate samples in credentialing; notes that small candidate populations complicate field testing and parameter estimation."
+    },
+    {
+      "title": "NBME Item-Writing Guide, Chapter 4: Item Analysis and Interpretation of Results",
+      "publisher": "National Board of Medical Examiners",
+      "url": "https://www.nbme.org/sites/default/files/2021-02/NBME_Item%20Writing%20Guide_R_6.pdf",
+      "use": "Supports review of item difficulty and discrimination and treats extreme difficulty values as diagnostic signals requiring interpretation."
+    },
+    {
+      "title": "Alternative Methods for Item Parameter Estimation: From CTT to IRT",
+      "publisher": "Educational Testing Service",
+      "year": 2022,
+      "url": "https://www.ets.org/research/policy_research_reports/publications/report/2022/keql.html",
+      "use": "Supports caution when estimating item discrimination with small samples."
+    }
+  ]
+}
