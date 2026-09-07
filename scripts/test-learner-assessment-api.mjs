@@ -132,14 +132,14 @@ try {
 
   const newResponse = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, {
     method: 'POST',
-    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    headers: { authorization: 'Bearer bob', 'content-type': 'application/json' },
     body: '{}'
   });
   const second = await newResponse.json();
   const bad = [{ itemId: 'ITEM-NOT-IN-FORM', itemVersion: 1, response: 0 }];
   response = await fetch(`${base}/api/v1/me/assessment-attempts/${second.attempt.id}/submit`, {
     method: 'POST',
-    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    headers: { authorization: 'Bearer bob', 'content-type': 'application/json' },
     body: JSON.stringify({ responses: bad })
   });
   assert.equal(response.status, 400);
