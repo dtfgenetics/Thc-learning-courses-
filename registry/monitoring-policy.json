@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "requiredSignals": [
+    {"id":"api-health","source":"GET /healthz","condition":"non-2xx or probe timeout","severity":"critical"},
+    {"id":"api-readiness","source":"GET /readyz","condition":"non-2xx or dependency-not-ready","severity":"critical"},
+    {"id":"http-error-rate","source":"http.request.completed","condition":"5xx rate exceeds environment threshold","severity":"high"},
+    {"id":"http-latency","source":"http.request.completed","condition":"p95 latency exceeds environment threshold","severity":"medium"},
+    {"id":"database-connectivity","source":"readiness/database probe","condition":"database unavailable or schema mismatch","severity":"critical"},
+    {"id":"credential-worker-failure","source":"credential issuance worker","condition":"issuance/revocation worker failure","severity":"critical"}
+  ],
+  "requirements": {
+    "alertsMustIdentifyEnvironment": true,
+    "alertsMustIncludeTimestamp": true,
+    "alertsMustIncludeRunbookReference": true,
+    "noLearnerPiiInTelemetry": true,
+    "productionThresholdsConfiguredOutsideRepository": true
+  }
+}
