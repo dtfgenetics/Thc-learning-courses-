@@ -11,6 +11,10 @@ function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
 }
 
+function writeJson(rel, value) {
+  fs.writeFileSync(path.join(root, rel), `${JSON.stringify(value, null, 2)}\n`);
+}
+
 function readDirJson(rel) {
   const dir = path.join(root, rel);
   if (!fs.existsSync(dir)) return [];
@@ -51,7 +55,9 @@ function roundRobinByObjective(items) {
   return ordered;
 }
 
-const registry = readJson('registry/cultivation-foundations.json');
+const registryPath = 'registry/cultivation-foundations.json';
+const systemReadinessPath = 'registry/system-readiness.json';
+const registry = readJson(registryPath);
 const assessment = readJson(`content/assessments/${registry.summativeAssessment}.json`);
 const questions = readDirJson('content/questions');
 const reviews = readDirJson('content/reviews');
@@ -112,13 +118,27 @@ if (failures.length) {
 const selectedIds = plan.flatMap((row) => row.selected.map((item) => item.id));
 if (new Set(selectedIds).size !== selectedIds.length) throw new Error('Promotion plan selected a duplicate assessment item.');
 
+const allCompetenciesMeetMinimumAfter = plan.every((row) => row.activeAfter >= minimumActive);
+if (!allCompetenciesMeetMinimumAfter) throw new Error('Promotion plan does not satisfy the minimum active pool requirement.');
+
 if (write) {
   for (const id of selectedIds) {
     const item = questionById.get(id);
     const result = evaluateAssessmentItemPromotion({ item, reviews, referenceIds });
     if (!result.eligible) throw new Error(`${id} became ineligible during promotion: ${result.failures.join('; ')}`);
-    fs.writeFileSync(path.join(root, 'content/questions', `${id}.json`), `${JSON.stringify(result.promoted, null, 2)}\n`);
+    writeJson(path.join('content/questions', `${id}.json`), result.promoted);
   }
+
+  registry.gates ??= {};
+  registry.gates.approvedItemPoolsComplete = true;
+  writeJson(registryPath, registry);
+
+  const systemReadiness = readJson(systemReadinessPath);
+  systemReadiness.areas ??= {};
+  systemReadiness.areas.assessment ??= { status: 'review-in-progress', gates: {} };
+  systemReadiness.areas.assessment.gates ??= {};
+  systemReadiness.areas.assessment.gates.minimumActivePoolComplete = true;
+  writeJson(systemReadinessPath, systemReadiness);
 }
 
 const summary = {
@@ -130,7 +150,11 @@ const summary = {
   activeBefore: plan.reduce((sum, row) => sum + row.activeBefore, 0),
   selectedForPromotion: selectedIds.length,
   activeAfter: plan.reduce((sum, row) => sum + row.activeAfter, 0),
-  allCompetenciesMeetMinimumAfter: plan.every((row) => row.activeAfter >= minimumActive),
+  allCompetenciesMeetMinimumAfter,
+  readinessFlagsAfterWrite: {
+    cultivationFoundationsApprovedItemPoolsComplete: write ? registry.gates?.approvedItemPoolsComplete === true : true,
+    systemMinimumActivePoolComplete: write ? readJson(systemReadinessPath).areas?.assessment?.gates?.minimumActivePoolComplete === true : true
+  },
   write
 };
 
