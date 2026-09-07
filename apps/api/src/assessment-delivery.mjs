@@ -77,11 +77,11 @@ function buildForm({ assessment, questions, seed, allowDraft }) {
     throw new Error(`assessment-item-count-mismatch:${selected.length}:${assessment.totalItems}`);
   }
   const formKey = assessment.id.replace(/^ASSESS-/, '').replace(/-001$/, '');
-  const form = {
+  const payload = {
     id: `FORM-${formKey}-${crypto.createHash('sha256').update(`${assessment.id}:${seed}`).digest('hex').slice(0, 12).toUpperCase()}`,
     assessment: assessment.id,
     assessmentVersion: assessment.version,
-    algorithmVersion: '1.1.0',
+    algorithmVersion: '1.2.0',
     items: selected.map((item) => ({
       itemId: item.id,
       itemVersion: item.version,
@@ -90,21 +90,72 @@ function buildForm({ assessment, questions, seed, allowDraft }) {
     seed,
     integrityHash: ''
   };
-  form.integrityHash = crypto.createHash('sha256')
-    .update(JSON.stringify({ ...form, integrityHash: undefined }))
+  payload.integrityHash = crypto.createHash('sha256')
+    .update(JSON.stringify({ ...payload, integrityHash: undefined }))
     .digest('hex');
-  return { form, selected };
+  return { form: payload, selected };
 }
 
-function publicQuestion(item, position, response = null) {
+function choiceOrder(attempt, item, randomizeChoices) {
+  if (!randomizeChoices || !Array.isArray(item.choices) || item.choices.length < 2) {
+    return Array.from({ length: item.choices?.length ?? 0 }, (_, index) => index);
+  }
+  const rand = mulberry32(hashToUint32(`${attempt.formHash}:${item.id}@${item.version}:choices`));
+  return shuffle(Array.from({ length: item.choices.length }, (_, index) => index), rand);
+}
+
+function inverseChoiceOrder(order) {
+  const inverse = [];
+  order.forEach((canonicalIndex, displayedIndex) => { inverse[canonicalIndex] = displayedIndex; });
+  return inverse;
+}
+
+function validateDisplayedResponse(item, response) {
+  if (['multiple-choice', 'scenario', 'case-study'].includes(item.type)) {
+    const index = Number(response);
+    if (!Number.isInteger(index) || index < 0 || index >= (item.choices?.length ?? 0)) throw new Error('invalid-response-value');
+    return;
+  }
+  if (item.type === 'multiple-response') {
+    if (!Array.isArray(response) || response.length === 0) throw new Error('invalid-response-value');
+    const values = response.map(Number);
+    if (values.some((index) => !Number.isInteger(index) || index < 0 || index >= (item.choices?.length ?? 0))) throw new Error('invalid-response-value');
+    if (new Set(values).size !== values.length) throw new Error('invalid-response-value');
+    return;
+  }
+  if (item.type === 'numeric') {
+    if (!Number.isFinite(Number(response))) throw new Error('invalid-response-value');
+    return;
+  }
+  throw new Error(`unsupported-response-type:${item.type}`);
+}
+
+function canonicalResponse(attempt, item, response, randomizeChoices) {
+  validateDisplayedResponse(item, response);
+  if (item.type === 'numeric') return Number(response);
+  const order = choiceOrder(attempt, item, randomizeChoices);
+  if (item.type === 'multiple-response') return response.map((index) => order[Number(index)]);
+  return order[Number(response)];
+}
+
+function displayedResponse(attempt, item, response, randomizeChoices) {
+  if (response == null) return null;
+  if (item.type === 'numeric') return response;
+  const inverse = inverseChoiceOrder(choiceOrder(attempt, item, randomizeChoices));
+  if (item.type === 'multiple-response') return Array.isArray(response) ? response.map((index) => inverse[Number(index)]) : [];
+  return inverse[Number(response)];
+}
+
+function publicQuestion(attempt, item, position, response, randomizeChoices) {
+  const order = choiceOrder(attempt, item, randomizeChoices);
   return {
     position,
     itemId: item.id,
     itemVersion: item.version,
     type: item.type,
     stem: item.stem,
-    choices: Array.isArray(item.choices) ? item.choices : undefined,
-    response
+    choices: Array.isArray(item.choices) ? order.map((index) => item.choices[index]) : undefined,
+    response: displayedResponse(attempt, item, response, randomizeChoices)
   };
 }
 
@@ -167,9 +218,17 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
       return { attempt, assessment, selected };
     },
     submit({ attempt, responses }) {
-      requireAssessmentVersion(attempt);
+      const assessment = requireAssessmentVersion(attempt);
       validateResponses(attempt, responses);
-      return submitAttempt(attempt, responses ?? []);
+      const canonical = (responses ?? []).map((row) => {
+        const item = questionMap.get(`${row.itemId}@${row.itemVersion}`);
+        if (!item) throw new Error('response-item-mismatch');
+        return {
+          ...row,
+          response: canonicalResponse(attempt, item, row.response, assessment.randomizeChoices === true)
+        };
+      });
+      return submitAttempt(attempt, canonical);
     },
     score({ attempt }) {
       const assessment = requireAssessmentVersion(attempt);
@@ -183,8 +242,15 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
       return { submitted, scored, competencyResults: results };
     },
     publicView(attempt) {
+      const assessment = requireAssessmentVersion(attempt);
       const selected = requireSelectedItems(attempt);
-      const items = selected.map((item, index) => publicQuestion(item, index + 1, attempt.items[index]?.response ?? null));
+      const items = selected.map((item, index) => publicQuestion(
+        attempt,
+        item,
+        index + 1,
+        attempt.items[index]?.response ?? null,
+        assessment.randomizeChoices === true
+      ));
       const view = {
         id: attempt.id,
         assessmentId: attempt.assessmentId,
