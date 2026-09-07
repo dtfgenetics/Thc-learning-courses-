@@ -56,6 +56,7 @@ create table if not exists assessment_attempt_items (
   item_id text not null,
   item_version integer not null,
   competency_id text not null,
+  competency_version text,
   response_json jsonb,
   score numeric(8,4),
   max_score numeric(8,4) not null default 1,
@@ -194,4 +195,13 @@ alter table credential_status_events add constraint credential_status_events_sta
 
 insert into academy_schema_migrations (version, description)
 values ('4', 'Credential suspension and lifecycle history support')
+on conflict (version) do nothing;
+
+
+-- Schema v5: immutable competency-version provenance for scored assessment evidence.
+-- Legacy attempt rows remain NULL because their historical competency version cannot be reconstructed safely.
+alter table assessment_attempt_items add column if not exists competency_version text;
+
+insert into academy_schema_migrations (version, description)
+values ('5', 'Versioned competency evidence and mastery persistence')
 on conflict (version) do nothing;
