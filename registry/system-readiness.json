@@ -51,7 +51,7 @@
       "gates": {
         "verificationContract": true,
         "developmentHttpService": true,
-        "productionDatabaseIntegration": false,
+        "productionDatabaseIntegration": true,
         "rateLimiting": true,
         "authentication": true,
         "observability": true
