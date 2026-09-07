@@ -26,6 +26,10 @@ function runPayload(payload, ...extraArgs) {
   const file = writePayload(`payload-${Math.random().toString(16).slice(2)}.json`, payload);
   return spawnSync(process.execPath, ['scripts/build-pilot-evidence-from-results.mjs', '--input', file, ...extraArgs], { cwd: root, encoding: 'utf8' });
 }
+function preflightPayload(payload) {
+  const file = writePayload(`preflight-${Math.random().toString(16).slice(2)}.json`, payload);
+  return spawnSync(process.execPath, ['scripts/validate-private-pilot-results.mjs', '--input', file], { cwd: root, encoding: 'utf8' });
+}
 
 const payload = {
   cohortId: 'COHORT-TEST-001',
@@ -38,6 +42,13 @@ const payload = {
   ]
 };
 
+const preflight = preflightPayload(payload);
+assert.equal(preflight.status, 0, preflight.stderr);
+const preflightOutput = JSON.parse(preflight.stdout);
+assert.equal(preflightOutput.valid, true);
+assert.equal(preflightOutput.responses, 3);
+assert.equal(preflightOutput.participantLevelDataCommitted, false);
+
 const run = runPayload(payload, '--complete');
 assert.equal(run.status, 0, run.stderr);
 const output = JSON.parse(run.stdout);
@@ -45,6 +56,7 @@ assert.equal(output.records, 1);
 assert.equal(output.status, 'complete');
 assert.equal(output.wroteFiles, false);
 assert.equal(output.participantLevelDataCommitted, false);
+assert.equal(output.inputSchema, 'schemas/private-pilot-results.schema.json');
 assert.equal(output.discriminationMethod, 'point-biserial-item-rest');
 const evidence = output.evidence[0];
 assert.equal(evidence.itemId, sampleItem.id);
@@ -67,7 +79,19 @@ assert.equal(JSON.stringify(evidence).includes('participantId'), false);
 
 const missingCriterionRun = runPayload({ ...payload, responses: [{ ...payload.responses[0], criterionScoreExcludingItem: undefined }] });
 assert.notEqual(missingCriterionRun.status, 0);
-assert.match(missingCriterionRun.stderr, /criterionScoreExcludingItem must be between 0 and 1/);
+assert.match(missingCriterionRun.stderr, /criterionScoreExcludingItem|must have required property/);
+
+const extraFieldRun = preflightPayload({ ...payload, participantEmail: 'private@example.com' });
+assert.notEqual(extraFieldRun.status, 0);
+assert.match(extraFieldRun.stderr, /must NOT have additional properties/);
+
+const invalidTimestampRun = preflightPayload({ ...payload, completedAt: 'not-a-date' });
+assert.notEqual(invalidTimestampRun.status, 0);
+assert.match(invalidTimestampRun.stderr, /must match format "date-time"/);
+
+const invalidCohortRun = preflightPayload({ ...payload, cohortId: 'COHORT PRIVATE 001' });
+assert.notEqual(invalidCohortRun.status, 0);
+assert.match(invalidCohortRun.stderr, /must match pattern/);
 
 const unknownRun = runPayload({ ...payload, responses: [{ ...payload.responses[0], itemId: 'ITEM-NOT-REAL' }] });
 assert.notEqual(unknownRun.status, 0);
@@ -93,4 +117,4 @@ const outOfRangeRun = runPayload({ ...payload, responses: [{ ...payload.response
 assert.notEqual(outOfRangeRun.status, 0);
 assert.match(outOfRangeRun.stderr, /selectedChoiceIndex is outside item choices/);
 
-console.log(`Pilot evidence aggregation integrity tests passed for ${sampleItem.id}@${sampleItem.version}.`);
+console.log(`Private pilot input and aggregation integrity tests passed for ${sampleItem.id}@${sampleItem.version}.`);
