@@ -1,0 +1,73 @@
+name: Patch versioned competency evidence
+
+on:
+  push:
+    branches:
+      - feat/versioned-competency-evidence
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/versioned-competency-evidence
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply versioned competency evidence patch
+        run: node scripts/patch-versioned-competency-evidence.mjs
+
+      - name: Test secure assessment delivery
+        run: node scripts/test-assessment-delivery-service.mjs
+
+      - name: Test competency version snapshots
+        run: node scripts/test-versioned-competency-evidence.mjs
+
+      - name: Test competency mastery persistence
+        run: node scripts/test-competency-mastery-persistence.mjs
+
+      - name: Test atomic assessment persistence
+        run: node scripts/test-assessment-attempt-persistence.mjs
+
+      - name: Test schema v5 readiness
+        run: node scripts/test-database-schema-readiness.mjs
+
+      - name: Test production bootstrap
+        run: node scripts/test-production-bootstrap.mjs
+
+      - name: Test production persistence adapter
+        run: node scripts/test-production-persistence-adapter.mjs
+
+      - name: Test runtime core
+        run: node scripts/test-runtime-core.mjs
+
+      - name: Remove one-shot patch machinery
+        run: |
+          rm scripts/patch-versioned-competency-evidence.mjs
+          rm .github/workflows/patch-versioned-competency-evidence.yml
+
+      - name: Commit verified patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Persist versioned competency evidence"
+          git push origin HEAD:feat/versioned-competency-evidence
