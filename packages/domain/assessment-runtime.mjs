@@ -19,6 +19,7 @@ export function createAttempt({ learnerId, assessment, form, now = new Date().to
       itemId: item.itemId ?? item.id,
       itemVersion: item.itemVersion ?? item.version,
       competency: item.competency ?? null,
+      competencyVersion: item.competencyVersion ?? null,
       response: null,
       score: null,
       maxScore: 1
@@ -53,7 +54,12 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
     } else throw new Error(`Unsupported production scoring type ${item.type}`);
     earned += score;
     possible += 1;
-    return { ...row, competency: row.competency ?? item.competency, score };
+    return {
+      ...row,
+      competency: row.competency ?? item.competency,
+      competencyVersion: row.competencyVersion ?? null,
+      score
+    };
   });
   const scorePercent = possible ? Number(((earned / possible) * 100).toFixed(2)) : 0;
   return {
@@ -71,14 +77,17 @@ export function competencyResults(scoredAttempt) {
   const groups = new Map();
   for (const row of scoredAttempt.items) {
     const competency = row.competency ?? 'UNMAPPED';
-    const entry = groups.get(competency) ?? { earned: 0, possible: 0 };
+    const competencyVersion = row.competencyVersion ?? null;
+    const key = `${competency}@${competencyVersion ?? ''}`;
+    const entry = groups.get(key) ?? { competency, competencyVersion, earned: 0, possible: 0 };
     entry.earned += row.score ?? 0;
     entry.possible += row.maxScore ?? 1;
-    groups.set(competency, entry);
+    groups.set(key, entry);
   }
-  return [...groups.entries()].map(([competency, v]) => ({
-    competency,
-    scorePercent: Number(((v.earned / v.possible) * 100).toFixed(2)),
-    masteryLevel: v.earned === v.possible ? 'demonstrated' : v.earned > 0 ? 'developing' : 'not-demonstrated'
+  return [...groups.values()].map((entry) => ({
+    competency: entry.competency,
+    competencyVersion: entry.competencyVersion,
+    scorePercent: Number(((entry.earned / entry.possible) * 100).toFixed(2)),
+    masteryLevel: entry.earned === entry.possible ? 'demonstrated' : entry.earned > 0 ? 'developing' : 'not-demonstrated'
   }));
 }

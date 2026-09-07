@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
 import { PersistenceUnavailableError } from './persistence-errors.mjs';
+import { competencyResults } from '../../../packages/domain/assessment-runtime.mjs';
 
 async function queryOrUnavailable(query, text, params) {
   try { return await query(text, params); }
@@ -64,6 +65,7 @@ function assessmentAttemptRow(row, itemRows = [], externalSubject = null) {
       itemId: item.item_id,
       itemVersion: Number(item.item_version),
       competency: item.competency_id,
+      competencyVersion: item.competency_version == null ? null : String(item.competency_version),
       response: item.response_json ?? null,
       score: item.score == null ? null : Number(item.score),
       maxScore: Number(item.max_score ?? 1)
@@ -117,7 +119,7 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
     if (!row) return null;
     const itemResult = await queryOrUnavailable(
       runQuery,
-      `select position, item_id, item_version, competency_id, response_json, score, max_score
+      `select position, item_id, item_version, competency_id, competency_version, response_json, score, max_score
          from assessment_attempt_items
         where attempt_id = $1
         order by position asc`,
@@ -206,6 +208,7 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
     for (const item of attempt.items) {
       if (!item.itemId || item.itemVersion == null) throw new Error('assessment attempt item identity required');
       if (!String(item.competency ?? '').trim()) throw new Error('competency required');
+      if (!String(item.competencyVersion ?? '').trim()) throw new Error('competency version required');
     }
     return requireTransaction()(async (runQuery) => {
       const learner = await ensureLearner(externalSubject, runQuery);
@@ -253,9 +256,9 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
         await queryOrUnavailable(
           runQuery,
           `insert into assessment_attempt_items (
-             attempt_id, position, item_id, item_version, competency_id, response_json, score, max_score
-           ) values ($1, $2, $3, $4, $5, $6::jsonb, $7, $8)`,
-          [attempt.id, Number(item.position), item.itemId, Number(item.itemVersion), item.competency, item.response == null ? null : JSON.stringify(item.response), item.score ?? null, Number(item.maxScore ?? 1)]
+             attempt_id, position, item_id, item_version, competency_id, competency_version, response_json, score, max_score
+           ) values ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9)`,
+          [attempt.id, Number(item.position), item.itemId, Number(item.itemVersion), item.competency, String(item.competencyVersion), item.response == null ? null : JSON.stringify(item.response), item.score ?? null, Number(item.maxScore ?? 1)]
         );
       }
       return loadAssessmentAttempt(runQuery, externalSubject, attempt.id);
@@ -318,6 +321,9 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
     const scorePercent = Number(attempt.scorePercent);
     if (!Number.isFinite(scorePercent) || scorePercent < 0 || scorePercent > 100) throw new Error('scorePercent must be between 0 and 100');
     if (typeof attempt.passed !== 'boolean') throw new Error('passed boolean required');
+    for (const item of attempt.items) {
+      if (!String(item.competencyVersion ?? '').trim()) throw new Error(`competency version required:${item.competency ?? item.itemId}`);
+    }
     return requireTransaction()(async (runQuery) => {
       const learnerId = await learnerIdForSubject(externalSubject, runQuery);
       if (!learnerId) throw new Error('assessment-attempt-transition-conflict');
@@ -342,6 +348,24 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
         [attempt.id, learnerId, attempt.scoredAt, scorePercent, attempt.passed]
       );
       if (parent.rowCount !== 1) throw new Error('assessment-attempt-transition-conflict');
+      for (const mastery of competencyResults(attempt)) {
+        if (!mastery.competencyVersion) throw new Error(`competency version required:${mastery.competency}`);
+        await queryOrUnavailable(
+          runQuery,
+          `insert into learner_competencies (
+             learner_id, competency_id, curriculum_version, mastery_level, evidence_attempt_id, updated_at
+           ) values ($1, $2, $3, $4, $5, $6)
+           on conflict (learner_id, competency_id, curriculum_version)
+           do update set
+             mastery_level = excluded.mastery_level,
+             evidence_attempt_id = excluded.evidence_attempt_id,
+             updated_at = excluded.updated_at
+           where
+             (case excluded.mastery_level when 'demonstrated' then 2 when 'developing' then 1 else 0 end) >=
+             (case learner_competencies.mastery_level when 'demonstrated' then 2 when 'developing' then 1 else 0 end)`,
+          [learnerId, mastery.competency, String(mastery.competencyVersion), mastery.masteryLevel, attempt.id, attempt.scoredAt]
+        );
+      }
       return loadAssessmentAttempt(runQuery, externalSubject, attempt.id);
     });
   },

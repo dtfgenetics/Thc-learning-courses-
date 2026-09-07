@@ -82,6 +82,25 @@ try {
   assert.equal(body.attempt.status, 'started');
   assert.equal(body.attempt.assessmentId, assessmentId);
   assert.equal(body.attempt.items.length, 60);
+
+  response = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, { headers: { authorization: 'Bearer alice' } });
+  assert.equal(response.status, 200);
+  let history = await response.json();
+  assert.equal(history.assessment.id, assessmentId);
+  assert.equal(history.assessment.maxAttempts, 3);
+  assert.equal(history.assessment.cooldownHours, 24);
+  assert.equal(history.attempts.length, 1);
+  assert.equal(history.attempts[0].status, 'started');
+  assert.equal(Object.hasOwn(history.attempts[0], 'items'), false, 'history must not expose exam items');
+  assert.equal(history.policy.allowed, false);
+  assert.equal(history.policy.reason, 'active-attempt-exists');
+  assert.equal(history.policy.activeAttemptId, attemptId);
+
+  response = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, { headers: { authorization: 'Bearer bob' } });
+  assert.equal(response.status, 200);
+  history = await response.json();
+  assert.equal(history.attempts.length, 0, 'assessment history must be learner-isolated');
+  assert.equal(history.policy.allowed, true);
   for (const item of body.attempt.items) {
     assert.equal(Object.hasOwn(item, 'correct'), false);
     assert.equal(Object.hasOwn(item, 'rationale'), false);
@@ -113,6 +132,17 @@ try {
   assert.equal(typeof body.attempt.scorePercent, 'number');
   assert.equal(typeof body.attempt.passed, 'boolean');
   assert.equal(body.attempt.competencies.length, 12);
+
+  response = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, { headers: { authorization: 'Bearer alice' } });
+  assert.equal(response.status, 200);
+  history = await response.json();
+  assert.equal(history.attempts.length, 1);
+  assert.equal(history.attempts[0].status, 'scored');
+  assert.equal(history.attempts[0].scorePercent, body.attempt.scorePercent);
+  assert.equal(history.attempts[0].passed, body.attempt.passed);
+  assert.equal(history.policy.allowed, false);
+  assert.equal(history.policy.reason, 'cooldown-active');
+  assert.ok(history.policy.nextAllowedAt);
   for (const item of body.attempt.items) {
     assert.equal(Object.hasOwn(item, 'correct'), false);
     assert.equal(Object.hasOwn(item, 'rationale'), false);
