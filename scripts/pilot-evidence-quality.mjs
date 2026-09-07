@@ -59,6 +59,7 @@ export function activationEvidenceEvaluation(record, item, policy) {
   if (!Number.isInteger(record.sampleSize) || record.sampleSize < (activation.minimumResponsesPerItem ?? 1)) blockers.push('sample-below-activation-floor');
   if (activation.requireNoOpenChallenges && openChallenges > 0) blockers.push('open-item-challenge');
   if (activation.requireResponseAccountingConsistency && accountingIssues.length > 0) blockers.push('response-accounting-inconsistent');
+  if (activation.requiredDiscriminationMethod && record.discrimination?.method !== activation.requiredDiscriminationMethod) blockers.push('discrimination-method-not-qualified');
   if (typeof activation.minimumDiscrimination === 'number' && (typeof record.discrimination?.value !== 'number' || record.discrimination.value < activation.minimumDiscrimination)) blockers.push('discrimination-below-activation-floor');
   return {
     ready: blockers.length === 0,

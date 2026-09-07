@@ -32,9 +32,9 @@ const payload = {
   analystId: 'ANALYST-TEST',
   completedAt: '2026-09-06T12:00:00Z',
   responses: [
-    { participantId: 'P1', itemId: sampleItem.id, itemVersion: sampleItem.version, selectedChoiceIndex: correctChoice, correct: true, omitted: false, responseTimeSeconds: 32, responseTimeAnomaly: false, totalScore: 0.9 },
-    { participantId: 'P2', itemId: sampleItem.id, itemVersion: sampleItem.version, selectedChoiceIndex: wrongChoice, correct: false, omitted: false, responseTimeSeconds: 44, responseTimeAnomaly: false, totalScore: 0.5 },
-    { participantId: 'P3', itemId: sampleItem.id, itemVersion: sampleItem.version, selectedChoiceIndex: null, correct: false, omitted: true, responseTimeSeconds: 10, responseTimeAnomaly: true, totalScore: 0.3 }
+    { participantId: 'P1', itemId: sampleItem.id, itemVersion: sampleItem.version, selectedChoiceIndex: correctChoice, correct: true, omitted: false, responseTimeSeconds: 32, responseTimeAnomaly: false, criterionScoreExcludingItem: 0.9, totalScore: 0.95 },
+    { participantId: 'P2', itemId: sampleItem.id, itemVersion: sampleItem.version, selectedChoiceIndex: wrongChoice, correct: false, omitted: false, responseTimeSeconds: 44, responseTimeAnomaly: false, criterionScoreExcludingItem: 0.5, totalScore: 0.5 },
+    { participantId: 'P3', itemId: sampleItem.id, itemVersion: sampleItem.version, selectedChoiceIndex: null, correct: false, omitted: true, responseTimeSeconds: 10, responseTimeAnomaly: true, criterionScoreExcludingItem: 0.3, totalScore: 0.3 }
   ]
 };
 
@@ -45,6 +45,7 @@ assert.equal(output.records, 1);
 assert.equal(output.status, 'complete');
 assert.equal(output.wroteFiles, false);
 assert.equal(output.participantLevelDataCommitted, false);
+assert.equal(output.discriminationMethod, 'point-biserial-item-rest');
 const evidence = output.evidence[0];
 assert.equal(evidence.itemId, sampleItem.id);
 assert.equal(evidence.itemVersion, sampleItem.version);
@@ -54,7 +55,7 @@ assert.equal(evidence.omitRate, 1 / 3);
 assert.equal(evidence.responseTimeAnomalyRate, 1 / 3);
 assert.equal(evidence.medianResponseTimeSeconds, 32);
 assert.equal(evidence.status, 'complete');
-assert.ok(evidence.discrimination && evidence.discrimination.method === 'point-biserial');
+assert.ok(evidence.discrimination && evidence.discrimination.method === 'point-biserial-item-rest');
 assert.equal(evidence.distractorSelection.length, sampleItem.choices.length, 'all choices, including zero-count choices, must be represented');
 assert.equal(evidence.distractorSelection.reduce((sum, row) => sum + row.count, 0), 2, 'choice counts must exclude the omitted response');
 assert.equal(evidence.distractorSelection[correctChoice].count, 1);
@@ -63,6 +64,10 @@ assert.equal(evidence.distractorSelection[correctChoice].proportion, 0.5);
 assert.equal(evidence.distractorSelection[wrongChoice].proportion, 0.5);
 assert.equal(Object.hasOwn(evidence, 'participants'), false);
 assert.equal(JSON.stringify(evidence).includes('participantId'), false);
+
+const missingCriterionRun = runPayload({ ...payload, responses: [{ ...payload.responses[0], criterionScoreExcludingItem: undefined }] });
+assert.notEqual(missingCriterionRun.status, 0);
+assert.match(missingCriterionRun.stderr, /criterionScoreExcludingItem must be between 0 and 1/);
 
 const unknownRun = runPayload({ ...payload, responses: [{ ...payload.responses[0], itemId: 'ITEM-NOT-REAL' }] });
 assert.notEqual(unknownRun.status, 0);

@@ -22,7 +22,7 @@ const pilotFiles = fs.existsSync(pilotDir) ? fs.readdirSync(pilotDir).filter((n)
 const records = [];
 const seenIds = new Set();
 const allowedStatuses = new Set(['draft','complete','invalidated']);
-const allowedMethods = new Set(['point-biserial','upper-lower','other']);
+const allowedMethods = new Set(['point-biserial','point-biserial-item-rest','upper-lower','other']);
 
 for (const name of pilotFiles) {
   const rel = path.join('content/pilot-evidence', name);
@@ -84,7 +84,7 @@ for (const {file,data:item} of questionEntries) {
   if (item.status === 'pilot' && itemRecords.length === 0) errors.push(`${file}: pilot item ${item.id}@${item.version} is missing a pilot evidence record`);
   if (item.status === 'active') {
     const qualified = itemRecords.some((record) => activationEvidenceEvaluation(record.data, item, policy).ready);
-    if (!qualified) errors.push(`${file}: active item ${item.id}@${item.version} is missing policy-qualified pilot evidence (minimum ${policy.activation.minimumResponsesPerItem} responses, nonnegative discrimination, consistent response accounting, no open challenges)`);
+    if (!qualified) errors.push(`${file}: active item ${item.id}@${item.version} is missing policy-qualified pilot evidence (minimum ${policy.activation.minimumResponsesPerItem} responses, ${policy.activation.requiredDiscriminationMethod} discrimination at or above ${policy.activation.minimumDiscrimination}, consistent response accounting, no open challenges)`);
     if (!hasApprovedAssessmentReview(item)) errors.push(`${file}: active item ${item.id}@${item.version} is missing approved assessment review evidence`);
   }
 }

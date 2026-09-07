@@ -45,11 +45,11 @@ function median(values) {
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
-function pointBiserial(rows) {
-  const usable = rows.filter((row) => Number.isFinite(row.totalScore) && typeof row.correct === 'boolean');
+function pointBiserialItemRest(rows) {
+  const usable = rows.filter((row) => Number.isFinite(row.criterionScoreExcludingItem) && typeof row.correct === 'boolean');
   if (usable.length < 2) return null;
   const x = usable.map((row) => row.correct ? 1 : 0);
-  const y = usable.map((row) => Number(row.totalScore));
+  const y = usable.map((row) => Number(row.criterionScoreExcludingItem));
   const meanX = x.reduce((a, b) => a + b, 0) / x.length;
   const meanY = y.reduce((a, b) => a + b, 0) / y.length;
   const covariance = x.reduce((sum, value, i) => sum + (value - meanX) * (y[i] - meanY), 0) / x.length;
@@ -70,7 +70,8 @@ for (const [index, row] of payload.responses.entries()) {
   if (row.omitted !== undefined && typeof row.omitted !== 'boolean') throw new Error(`responses[${index}].omitted must be boolean when present`);
   if (row.selectedChoiceIndex !== null && row.selectedChoiceIndex !== undefined && (!Number.isInteger(row.selectedChoiceIndex) || row.selectedChoiceIndex < 0)) throw new Error(`responses[${index}].selectedChoiceIndex is invalid`);
   if (!Number.isFinite(row.responseTimeSeconds) || row.responseTimeSeconds < 0) throw new Error(`responses[${index}].responseTimeSeconds is invalid`);
-  if (!Number.isFinite(row.totalScore) || row.totalScore < 0 || row.totalScore > 1) throw new Error(`responses[${index}].totalScore must be between 0 and 1`);
+  if (!Number.isFinite(row.criterionScoreExcludingItem) || row.criterionScoreExcludingItem < 0 || row.criterionScoreExcludingItem > 1) throw new Error(`responses[${index}].criterionScoreExcludingItem must be between 0 and 1`);
+  if (row.totalScore !== undefined && (!Number.isFinite(row.totalScore) || row.totalScore < 0 || row.totalScore > 1)) throw new Error(`responses[${index}].totalScore must be between 0 and 1 when present`);
   if (row.responseTimeAnomaly !== undefined && typeof row.responseTimeAnomaly !== 'boolean') throw new Error(`responses[${index}].responseTimeAnomaly must be boolean when present`);
 
   const key = `${row.itemId}@${row.itemVersion}`;
@@ -107,7 +108,7 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
   const anomalyCount = rows.filter((row) => row.responseTimeAnomaly === true).length;
   const choiceCounts = new Map(Array.from({length:item.choices?.length ?? 0}, (_, choiceIndex) => [choiceIndex, 0]));
   for (const row of nonOmitted) choiceCounts.set(row.selectedChoiceIndex, (choiceCounts.get(row.selectedChoiceIndex) ?? 0) + 1);
-  const discriminationValue = pointBiserial(rows);
+  const discriminationValue = pointBiserialItemRest(rows);
   const evidence = {
     id: `PILOT-${payload.cohortId.replace(/[^A-Z0-9-]/gi, '-').toUpperCase()}-${itemId.replace(/^ITEM-/, '')}-V${itemVersion}`,
     itemId,
@@ -115,7 +116,7 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
     status: complete ? 'complete' : 'draft',
     sampleSize: rows.length,
     percentCorrect: rows.length ? correctCount / rows.length : null,
-    discrimination: discriminationValue === null ? null : { method: 'point-biserial', value: discriminationValue },
+    discrimination: discriminationValue === null ? null : { method: 'point-biserial-item-rest', value: discriminationValue },
     distractorSelection: [...choiceCounts.entries()].sort((a, b) => a[0] - b[0]).map(([choiceIndex, count]) => ({
       choiceIndex,
       count,
@@ -127,7 +128,7 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
     challengeHistory: [],
     analystId: payload.analystId,
     completedAt: complete ? (payload.completedAt ?? new Date().toISOString()) : null,
-    notes: `Aggregated from pseudonymous pilot cohort ${payload.cohortId}. Participant-level responses are not stored in the repository.`
+    notes: `Aggregated from pseudonymous pilot cohort ${payload.cohortId}. Discrimination uses a criterion score that excludes the item itself. Participant-level responses are not stored in the repository.`
   };
   output.push(evidence);
 }
@@ -148,5 +149,6 @@ console.log(JSON.stringify({
   status: complete ? 'complete' : 'draft',
   wroteFiles: write,
   participantLevelDataCommitted: false,
+  discriminationMethod: 'point-biserial-item-rest',
   evidence: output
 }, null, 2));
