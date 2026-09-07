@@ -53,14 +53,25 @@ function stateFromReview(review) {
   return 'revision-required';
 }
 
-const tasks = [];
 const lessonIds = new Set();
+const competencyIds = new Set();
+const assessmentIds = new Set([registry.summativeAssessment].filter(Boolean));
 for (const domain of registry.domains ?? []) {
   const module = modules.get(domain.module);
   if (!module) throw new Error(`Review queue cannot resolve module ${domain.module}`);
   for (const lessonId of module.lessons ?? []) lessonIds.add(lessonId);
+  for (const competencyId of domain.competencies ?? []) competencyIds.add(competencyId);
+  if (module.assessment) assessmentIds.add(module.assessment);
 }
 
+const scopedAssessments = assessments.filter((assessment) => assessmentIds.has(assessment.id));
+const explicitlyReferencedQuestionIds = new Set(scopedAssessments.flatMap((assessment) => assessment.items ?? []));
+const scopedQuestions = questions.filter((item) =>
+  explicitlyReferencedQuestionIds.has(item.id) ||
+  (competencyIds.has(item.competency) && ['summative', 'credential'].includes(item.purpose))
+);
+
+const tasks = [];
 for (const lessonId of [...lessonIds].sort()) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`Review queue cannot resolve lesson ${lessonId}`);
@@ -91,7 +102,7 @@ for (const lessonId of [...lessonIds].sort()) {
   });
 }
 
-for (const assessment of [...assessments].sort((a, b) => a.id.localeCompare(b.id))) {
+for (const assessment of [...scopedAssessments].sort((a, b) => a.id.localeCompare(b.id))) {
   const review = latestReview(assessment.id, assessment.version, 'assessment', 'assessment');
   tasks.push({
     lane: 'assessment-definition',
@@ -104,7 +115,7 @@ for (const assessment of [...assessments].sort((a, b) => a.id.localeCompare(b.id
   });
 }
 
-for (const item of [...questions].sort((a, b) => a.id.localeCompare(b.id))) {
+for (const item of [...scopedQuestions].sort((a, b) => a.id.localeCompare(b.id))) {
   const review = latestReview(item.id, item.version, 'assessment', 'question');
   tasks.push({
     lane: item.purpose === 'formative' ? 'formative-item' : 'credential-item',
@@ -138,6 +149,11 @@ const laneSummary = Object.fromEntries(
 const output = {
   curriculum: registry.course,
   curriculumVersion: registry.version,
+  releaseScope: {
+    competencies: competencyIds.size,
+    assessments: scopedAssessments.length,
+    questions: scopedQuestions.length
+  },
   generatedFromReviewRecords: reviews.length,
   summary: {
     totalTasks: tasks.length,

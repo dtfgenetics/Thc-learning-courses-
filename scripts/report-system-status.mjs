@@ -38,7 +38,9 @@ const pilots = readDir('content/pilot-evidence');
 const encyclopedia = readDir('content/encyclopedia');
 const glossary = readDir('content/glossary');
 const readiness = readJson('registry/system-readiness.json');
+const releaseRegistry = readJson('registry/cultivation-foundations.json');
 const assessmentIds = new Set(assessments.map((assessment) => assessment.id));
+const modulesById = new Map(modules.map((module) => [module.id, module]));
 const attestation = catalogAttestationStatus();
 
 function hasApprovedReview(objectId, objectVersion, reviewType, objectType) {
@@ -51,6 +53,20 @@ function hasApprovedReview(objectId, objectVersion, reviewType, objectType) {
   return explicit || Boolean(catalogAttestationApproval(objectType, reviewType));
 }
 
+const releaseCompetencyIds = new Set();
+const releaseAssessmentIds = new Set([releaseRegistry.summativeAssessment].filter(Boolean));
+for (const domain of releaseRegistry.domains ?? []) {
+  for (const competencyId of domain.competencies ?? []) releaseCompetencyIds.add(competencyId);
+  const module = modulesById.get(domain.module);
+  if (module?.assessment) releaseAssessmentIds.add(module.assessment);
+}
+const releaseAssessments = assessments.filter((assessment) => releaseAssessmentIds.has(assessment.id));
+const releaseReferencedQuestionIds = new Set(releaseAssessments.flatMap((assessment) => assessment.items ?? []));
+const releaseAssessmentQuestions = questions.filter((question) =>
+  releaseReferencedQuestionIds.has(question.id) ||
+  (releaseCompetencyIds.has(question.competency) && ['summative', 'credential'].includes(question.purpose))
+);
+
 let pendingScientific = 0;
 let pendingEditorial = 0;
 let pendingAssessment = 0;
@@ -58,10 +74,10 @@ for (const lesson of lessons) {
   if (!hasApprovedReview(lesson.id, lesson.version, 'scientific', 'lesson')) pendingScientific += 1;
   if (!hasApprovedReview(lesson.id, lesson.version, 'editorial', 'lesson')) pendingEditorial += 1;
 }
-for (const assessment of assessments) {
+for (const assessment of releaseAssessments) {
   if (!hasApprovedReview(assessment.id, assessment.version, 'assessment', 'assessment')) pendingAssessment += 1;
 }
-for (const question of questions) {
+for (const question of releaseAssessmentQuestions) {
   if (!hasApprovedReview(question.id, question.version, 'assessment', 'question')) pendingAssessment += 1;
 }
 
@@ -130,6 +146,13 @@ const report = {
   version: readiness.version,
   stagingUsable: stagingBlockers.length === 0,
   productionReady: readiness.productionReady === true && productionBlockers.length === 0,
+  releaseScope: {
+    course: releaseRegistry.course,
+    version: releaseRegistry.version,
+    competencies: releaseCompetencyIds.size,
+    assessments: releaseAssessments.length,
+    assessmentQuestions: releaseAssessmentQuestions.length
+  },
   inventory: {
     courses: courses.length,
     modules: modules.length,
@@ -165,14 +188,18 @@ const report = {
     pendingEditorial,
     pendingAssessment,
     pendingTotal: pendingScientific + pendingEditorial + pendingAssessment,
-    humanAssessmentReviewComplete: actualHumanAssessmentReviewComplete
+    humanAssessmentReviewComplete: actualHumanAssessmentReviewComplete,
+    assessmentReleaseScope: {
+      assessments: releaseAssessments.length,
+      questions: releaseAssessmentQuestions.length
+    }
   },
   readinessConsistency: {
     assessmentHumanReview: {
       declared: declaredHumanAssessmentReviewComplete,
       actual: actualHumanAssessmentReviewComplete,
       drift: assessmentReviewReadinessDrift,
-      evidence: `${pendingAssessment} pending assessment/question review(s) after exact-version records and valid snapshot attestations`
+      evidence: `${pendingAssessment} pending assessment/question review(s) in ${releaseRegistry.course}@${releaseRegistry.version} release scope after exact-version records and valid snapshot attestations`
     }
   },
   pilot: {
@@ -188,6 +215,7 @@ if (human) {
   console.log(`# ${report.system} status`);
   console.log(`Staging usable: ${report.stagingUsable ? 'YES' : 'NO'}`);
   console.log(`Production ready: ${report.productionReady ? 'YES' : 'NO'}`);
+  console.log(`Release scope: ${report.releaseScope.course}@${report.releaseScope.version} | Competencies ${report.releaseScope.competencies} | Assessments ${report.releaseScope.assessments} | Assessment questions ${report.releaseScope.assessmentQuestions}`);
   console.log(`Courses: ${report.inventory.courses} | Modules: ${report.inventory.modules} | Lessons: ${report.inventory.lessons}`);
   console.log(`Course finals: ${report.structure.coursesWithFinalAssessment}/${report.inventory.courses} (${report.structure.courseFinalCoveragePercent}%) | Module assessments: ${report.structure.modulesWithAssessment}/${report.inventory.modules} (${report.structure.moduleAssessmentCoveragePercent}%)`);
   for (const course of report.structure.coursesMissingFinalAssessment) console.log(`- Course structure gap: ${course.id} (${course.reason})`);
@@ -195,7 +223,7 @@ if (human) {
   console.log(`Assessments: ${report.inventory.assessments} | Questions: ${report.inventory.questions} | Summative/credential: ${report.inventory.summativeCredentialQuestions} | Active: ${report.inventory.activeSummativeCredentialQuestions}`);
   console.log(`Credentials: ${report.inventory.credentials} | Encyclopedia: ${report.inventory.encyclopediaEntries} | Glossary: ${report.inventory.glossaryTerms}`);
   console.log(`Catalog approval attestation: ${attestation.latestValidId ?? 'NONE'} | Valid records: ${attestation.validRecords}`);
-  console.log(`Pending reviews: ${report.review.pendingTotal} (scientific ${pendingScientific}, editorial ${pendingEditorial}, assessment ${pendingAssessment})`);
+  console.log(`Pending reviews: ${report.review.pendingTotal} (scientific ${pendingScientific}, editorial ${pendingEditorial}, assessment release-scope ${pendingAssessment})`);
   console.log(`Assessment review readiness: declared ${declaredHumanAssessmentReviewComplete ? 'COMPLETE' : 'INCOMPLETE'} | actual ${actualHumanAssessmentReviewComplete ? 'COMPLETE' : 'INCOMPLETE'} | drift ${assessmentReviewReadinessDrift ? 'YES' : 'NO'}`);
   console.log(`Pilot records: ${report.pilot.records} | Completed: ${report.pilot.completed}`);
   console.log(`Production blockers: ${report.productionBlockerCount}`);
@@ -208,7 +236,7 @@ if (check) {
   if (!report.stagingUsable) process.exit(1);
   if (report.inventory.courses < 1 || report.inventory.lessons < 1 || report.inventory.assessments < 1) process.exit(1);
   if (assessmentReviewReadinessDrift) {
-    console.error(`Assessment review readiness drift: registry declares ${declaredHumanAssessmentReviewComplete}, live evidence resolves ${actualHumanAssessmentReviewComplete} with ${pendingAssessment} pending review(s).`);
+    console.error(`Assessment review readiness drift: registry declares ${declaredHumanAssessmentReviewComplete}, release-scoped evidence resolves ${actualHumanAssessmentReviewComplete} with ${pendingAssessment} pending review(s).`);
     process.exit(1);
   }
 }
