@@ -81,9 +81,13 @@ assert.equal(typeof adapters.learnerStore.createAssessmentAttempt, 'function');
 assert.equal(typeof adapters.learnerStore.getAssessmentAttempt, 'function');
 assert.equal(typeof adapters.learnerStore.saveSubmittedAssessmentAttempt, 'function');
 assert.equal(typeof adapters.learnerStore.saveScoredAssessmentAttempt, 'function');
+assert.equal(typeof adapters.learnerStore.listAssessmentAttempts, 'function');
 assert.equal(await adapters.credentialStore.ping(), true);
 assert.equal(await adapters.credentialStore.schemaVersion(), '4');
 assert.deepEqual(await adapters.learnerStore.listEnrollments('learner-1'), []);
+assert.deepEqual(await adapters.learnerStore.listAssessmentAttempts('learner-1', 'ASSESS-CULT-FOUNDATIONS-FINAL-001'), []);
+const historyCall = poolCalls.find((entry) => String(entry.text).includes('join assessment_attempts'));
+assert.deepEqual(historyCall.params, ['learner-1', 'ASSESS-CULT-FOUNDATIONS-FINAL-001']);
 
 const transition = await adapters.credentialWriter.transitionById('cred-1', 'suspended', {
   actorId: 'admin-1',
