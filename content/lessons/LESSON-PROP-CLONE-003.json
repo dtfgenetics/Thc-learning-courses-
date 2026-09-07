@@ -1,20 +1,51 @@
 {
   "id":"LESSON-PROP-CLONE-003",
   "title":"Cloning, Adventitious Rooting and Acclimatization",
-  "version":"1.0.0",
+  "version":"1.1.0",
   "status":"draft",
   "competencies":["COMP-PROP-001"],
   "learningObjectives":["LO-PROP-CLONE-003"],
-  "estimatedMinutes":45,
+  "estimatedMinutes":60,
   "references":["REF-PROP-001","REF-IPM-001"],
   "assessment":null,
   "content":{
-    "overview":"Vegetative cuttings reproduce the donor genotype while creating a new root system from stem tissue. Cutting quality, sanitation, hydration, rooting environment, genotype, and acclimatization all influence success.",
-    "vocabulary":[{"term":"Mother plant","definition":"A donor plant maintained to supply vegetative cuttings."},{"term":"Adventitious root","definition":"A root that forms from tissue other than an existing root, such as a stem cutting."},{"term":"Transpirational demand","definition":"The atmospheric and plant conditions driving water loss from leaves."},{"term":"Acclimatization","definition":"Gradual transition from protected propagation conditions into the normal growing environment."}],
-    "sections":[{"title":"Donor quality sets the starting point","body":"Cuttings inherit the donor genotype and begin with the physiological condition of the selected shoot. Healthy, appropriately mature material provides a stronger starting point than stressed or diseased tissue.","references":["REF-PROP-001"]},{"title":"Fresh wounds increase sanitation importance","body":"Cutting tools and propagation surfaces can move pathogens into vulnerable tissue. Clean technique reduces one avoidable source of rooting failure.","references":["REF-IPM-001"]},{"title":"Unrooted cuttings have limited water replacement","body":"Before roots form, leaves can lose water faster than the cutting can replace it. Humidity, temperature, leaf area, and airflow should reduce excessive water loss without creating persistently stagnant conditions.","references":["REF-PROP-001"]},{"title":"Acclimatization reconnects roots and shoots","body":"Visible roots do not mean a cutting is ready for abrupt environmental exposure. The transition should progressively increase normal transpiration demand while the new root system expands.","references":["REF-PROP-001"]}],
-    "workedExamples":["If freshly rooted cuttings wilt immediately outside a dome, reduce the transition rate instead of assuming the roots are nonfunctional.","If one cultivar roots slower than another, track genotype-specific timing before making large environmental changes."],
-    "commonMistakes":["Taking cuttings from obviously stressed donor tissue.","Reusing blades without sanitation.","Keeping rooted cuttings indefinitely in extremely high humidity.","Assuming all cultivars root at the same rate."],
-    "practicalApplication":"Standardize donor selection, cutting size, sanitation, media, environmental conditions, rooting checks, and acclimatization steps. Track results by genotype and batch so improvements are based on evidence.",
-    "summary":"Cloning is controlled regeneration of a new root system from donor tissue. Healthy donors, sanitation, water-loss management, genotype-aware rooting, and gradual acclimatization make the process more repeatable."
+    "overview":"Vegetative propagation reproduces a donor genotype while forcing severed shoot tissue to survive water stress, heal and form a new root system. Repeatability depends on donor health, cutting selection, sanitation, water-loss management, rooting-zone conditions, genotype response, rooting-stage assessment and gradual acclimatization into normal crop demand.",
+    "vocabulary":[
+      {"term":"Mother plant","definition":"A donor plant maintained to supply vegetative propagation material."},
+      {"term":"Adventitious root","definition":"A root that develops from non-root tissue such as the stem of a cutting."},
+      {"term":"Transpirational demand","definition":"The combined environmental and plant conditions driving water loss from leaves."},
+      {"term":"Callus","definition":"Wound-response tissue that may form near a cut surface; its presence is not the same as a functional rooted cutting."},
+      {"term":"Rooting percentage","definition":"The proportion of cuttings that meet a predefined rooting criterion within a defined evaluation period."},
+      {"term":"Acclimatization","definition":"The controlled transition from protected propagation conditions into the intended growing environment."}
+    ],
+    "sections":[
+      {"title":"Donor health determines the starting condition","body":"Cuttings inherit the donor genotype and begin with the physiological state of the selected shoot. Disease, pest pressure, nutrient stress, water stress or weak growth can reduce consistency and can introduce problems into every daughter plant produced from that donor.","references":["REF-PROP-001","REF-IPM-001"]},
+      {"title":"Standardize what counts as a cutting","body":"Shoot position, node number, stem maturity, leaf area and cutting length can influence water loss and rooting behavior. Define the selection method so batch comparisons do not mix very different starting material.","references":["REF-PROP-001"]},
+      {"title":"Wounding raises sanitation risk","body":"Fresh cut surfaces are biologically vulnerable and shared tools can move pests or pathogens among donors and cuttings. Use a documented sanitation process for tools, hands, surfaces and propagation equipment instead of relying on visual cleanliness alone.","references":["REF-IPM-001"]},
+      {"title":"Unrooted cuttings must survive without normal water uptake","body":"Before adventitious roots become functional, a cutting has limited ability to replace water lost through leaves. Humidity, temperature, leaf area, airflow and light should reduce excessive water demand without maintaining chronically stagnant conditions that encourage biological problems.","references":["REF-PROP-001"]},
+      {"title":"The rooting zone needs moisture, oxygen and stable temperature","body":"The stem base should remain hydrated while the rooting medium maintains enough gas-filled pore space for developing tissues. Excessive saturation can reduce oxygen availability, while excessive drying interrupts the rooting process.","references":["REF-PROP-001"]},
+      {"title":"Rooting is a staged process","body":"Wound response, callus formation where present, root initials, visible roots and a transplant-ready root system are distinct milestones. Define the criterion used for rooting percentage and record time to each stage when evaluating protocols.","references":["REF-PROP-001"]},
+      {"title":"Genotypes can differ substantially","body":"Some genotypes root quickly and uniformly while others root slowly or inconsistently under the same protocol. Track results by genotype before concluding that the environment or operator is the primary cause of variation.","references":["REF-PROP-001"]},
+      {"title":"Acclimatization reconnects root capacity with shoot demand","body":"Newly rooted cuttings often develop under conditions that suppress transpiration. Transition humidity, airflow and light progressively so the expanding root system can support increasing shoot demand rather than moving immediately to mature-plant conditions.","references":["REF-PROP-001"]},
+      {"title":"Evaluate both survival and uniformity","body":"A batch can eventually root at a high percentage but still be operationally poor if rooting times are widely spread or if many plants stall during acclimatization. Record timing, uniformity, losses and post-transfer growth together.","references":["REF-PROP-001"]}
+    ],
+    "workedExamples":[
+      "A batch shows heavy callus but few visible roots. Do not count callus as successful rooting; continue evaluating root initiation, media moisture, temperature and genotype response.",
+      "Cuttings stay turgid in high humidity but collapse during transfer. The likely bottleneck is acclimatization or insufficient functional root capacity rather than initial cutting hydration.",
+      "One mother plant repeatedly produces weaker cuttings than other donors under the same protocol. Investigate donor health and shoot quality before redesigning the entire propagation environment.",
+      "A genotype reaches 90% rooting but over a ten-day window while another reaches 85% within three days. The second may be easier to schedule despite the slightly lower final percentage."
+    ],
+    "commonMistakes":[
+      "Taking propagation material from visibly stressed or suspect donor plants.",
+      "Changing cutting size and leaf area randomly within one batch.",
+      "Reusing blades or surfaces without a defined sanitation process.",
+      "Keeping rooting media saturated continuously.",
+      "Counting callus as equivalent to a functional root system.",
+      "Assuming every genotype should root on the same schedule.",
+      "Keeping rooted cuttings indefinitely in very high humidity.",
+      "Moving newly rooted cuttings directly into full production demand without a transition."
+    ],
+    "practicalApplication":"Create a cloning batch sheet covering donor identity and health, cutting position and size, sanitation, rooting medium, temperature, humidity, light, rooting-stage dates, rooting percentage, uniformity and acclimatization outcome. Compare two batches and identify whether the strongest improvement opportunity lies in donor selection, cutting standardization, rooting conditions, sanitation or transition management.",
+    "summary":"Cloning is not complete when a stem survives. Reliable vegetative propagation requires healthy donors, standardized cuttings, sanitation, controlled water loss, an aerated rooting zone, stage-specific rooting assessment, genotype-aware records and gradual acclimatization into normal crop demand."
   }
 }
