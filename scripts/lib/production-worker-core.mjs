@@ -12,8 +12,8 @@ export const AREA_PRIORITY = [
 export const GATE_TASKS = {
   scientificReviewComplete: { kind: 'review', mode: 'certify', action: 'complete scientific review evidence' },
   editorialReviewComplete: { kind: 'review', mode: 'certify', action: 'complete editorial review evidence' },
-  minimumActivePoolComplete: { kind: 'assessment', mode: 'exam', action: 'expand and activate the assessment item pool' },
   humanAssessmentReviewComplete: { kind: 'review', mode: 'certify', action: 'complete human assessment review' },
+  minimumActivePoolComplete: { kind: 'assessment', mode: 'exam', action: 'expand and activate the assessment item pool' },
   pilotStatisticsComplete: { kind: 'pilot', mode: 'certify', action: 'collect and validate pilot statistics' },
   productionPersistenceAdapter: { kind: 'platform', mode: 'platform', action: 'implement the production persistence adapter' },
   authenticationIntegrated: { kind: 'security', mode: 'platform', action: 'integrate production authentication' },
@@ -34,12 +34,33 @@ export const GATE_TASKS = {
   monitoringAndAlerting: { kind: 'operations', mode: 'release', action: 'implement monitoring and alerting' }
 };
 
+const AREA_GATE_PRIORITY = {
+  assessment: [
+    'humanAssessmentReviewComplete',
+    'minimumActivePoolComplete',
+    'pilotStatisticsComplete'
+  ]
+};
+
+function orderedGateEntries(area, gates) {
+  const entries = Object.entries(gates);
+  const priority = AREA_GATE_PRIORITY[area] ?? [];
+  if (!priority.length) return entries;
+  const rank = new Map(priority.map((gate, index) => [gate, index]));
+  return entries.sort(([a], [b]) => {
+    const aRank = rank.has(a) ? rank.get(a) : Number.MAX_SAFE_INTEGER;
+    const bRank = rank.has(b) ? rank.get(b) : Number.MAX_SAFE_INTEGER;
+    if (aRank !== bRank) return aRank - bRank;
+    return 0;
+  });
+}
+
 export function collectBlockers(registry) {
   const blockers = [];
   const areas = registry?.areas ?? {};
   for (const area of AREA_PRIORITY) {
     const gates = areas[area]?.gates ?? {};
-    for (const [gate, value] of Object.entries(gates)) {
+    for (const [gate, value] of orderedGateEntries(area, gates)) {
       if (value === true) continue;
       const task = GATE_TASKS[gate] ?? {
         kind: area,
