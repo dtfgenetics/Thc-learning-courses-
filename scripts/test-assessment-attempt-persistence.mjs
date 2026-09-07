@@ -221,9 +221,12 @@ assert.equal(attempts.size, attemptsBeforeBadCreate, 'failed item insert must ro
 assert.equal(transactionEvents.at(-1), 'rollback');
 
 const readOnlyStore = createPostgresLearnerStore({ query: fakeQuery });
+const readOnlyAttempt = await readOnlyStore.getAssessmentAttempt('subject-alice', started.id);
+assert.equal(readOnlyAttempt.id, started.id, 'read-only learner stores must retain assessment read access');
 await assert.rejects(
   () => readOnlyStore.createAssessmentAttempt('subject-alice', started),
-  /withTransaction/
+  /withTransaction/,
+  'assessment writes must fail closed when no transaction boundary is configured'
 );
 
 console.log('Atomic PostgreSQL assessment attempt persistence lifecycle passed.');
