@@ -37,6 +37,7 @@ const pilots = readDir('content/pilot-evidence');
 const encyclopedia = readDir('content/encyclopedia');
 const glossary = readDir('content/glossary');
 const readiness = readJson('registry/system-readiness.json');
+const assessmentIds = new Set(assessments.map((assessment) => assessment.id));
 
 function hasApprovedReview(objectId, objectVersion, reviewType) {
   return reviews.some((review) =>
@@ -64,6 +65,25 @@ for (const question of questions) {
 const summativeQuestions = questions.filter((item) => ['summative', 'credential'].includes(item.purpose));
 const activeQuestions = summativeQuestions.filter((item) => item.status === 'active');
 const completedPilots = pilots.filter((record) => record.status === 'complete' || record.complete === true);
+
+const coursesMissingFinalAssessment = courses
+  .filter((course) => !course.finalAssessment || !assessmentIds.has(course.finalAssessment))
+  .map((course) => ({
+    id: course.id,
+    credentialBearing: course.credentialBearing === true,
+    finalAssessment: course.finalAssessment ?? null,
+    reason: !course.finalAssessment ? 'missing-final-assessment' : 'unresolved-final-assessment'
+  }));
+const coursesWithFinalAssessment = courses.length - coursesMissingFinalAssessment.length;
+
+const modulesMissingAssessment = modules
+  .filter((module) => !module.assessment || !assessmentIds.has(module.assessment))
+  .map((module) => ({
+    id: module.id,
+    assessment: module.assessment ?? null,
+    reason: !module.assessment ? 'missing-module-assessment' : 'unresolved-module-assessment'
+  }));
+const modulesWithAssessment = modules.length - modulesMissingAssessment.length;
 
 const productionBlockers = [];
 for (const [areaName, area] of Object.entries(readiness.areas ?? {})) {
@@ -115,6 +135,14 @@ const report = {
     encyclopediaEntries: encyclopedia.length,
     glossaryTerms: glossary.length
   },
+  structure: {
+    coursesWithFinalAssessment,
+    coursesMissingFinalAssessment,
+    courseFinalCoveragePercent: courses.length ? Number(((coursesWithFinalAssessment / courses.length) * 100).toFixed(1)) : 100,
+    modulesWithAssessment,
+    modulesMissingAssessment,
+    moduleAssessmentCoveragePercent: modules.length ? Number(((modulesWithAssessment / modules.length) * 100).toFixed(1)) : 100
+  },
   statuses: {
     courses: statusCounts(courses),
     lessons: statusCounts(lessons),
@@ -144,6 +172,9 @@ if (human) {
   console.log(`Staging usable: ${report.stagingUsable ? 'YES' : 'NO'}`);
   console.log(`Production ready: ${report.productionReady ? 'YES' : 'NO'}`);
   console.log(`Courses: ${report.inventory.courses} | Modules: ${report.inventory.modules} | Lessons: ${report.inventory.lessons}`);
+  console.log(`Course finals: ${report.structure.coursesWithFinalAssessment}/${report.inventory.courses} (${report.structure.courseFinalCoveragePercent}%) | Module assessments: ${report.structure.modulesWithAssessment}/${report.inventory.modules} (${report.structure.moduleAssessmentCoveragePercent}%)`);
+  for (const course of report.structure.coursesMissingFinalAssessment) console.log(`- Course structure gap: ${course.id} (${course.reason})`);
+  for (const module of report.structure.modulesMissingAssessment) console.log(`- Module structure gap: ${module.id} (${module.reason})`);
   console.log(`Assessments: ${report.inventory.assessments} | Questions: ${report.inventory.questions} | Summative/credential: ${report.inventory.summativeCredentialQuestions} | Active: ${report.inventory.activeSummativeCredentialQuestions}`);
   console.log(`Credentials: ${report.inventory.credentials} | Encyclopedia: ${report.inventory.encyclopediaEntries} | Glossary: ${report.inventory.glossaryTerms}`);
   console.log(`Pending reviews: ${report.review.pendingTotal} (scientific ${pendingScientific}, editorial ${pendingEditorial}, assessment ${pendingAssessment})`);
