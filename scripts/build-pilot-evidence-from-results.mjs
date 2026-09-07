@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { readAndValidatePrivatePilotResults } from './private-pilot-results-input.mjs';
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -16,17 +17,7 @@ if (!inputPath) {
   process.exit(1);
 }
 
-const absoluteInput = path.resolve(root, inputPath);
-if (!fs.existsSync(absoluteInput)) {
-  console.error(`Pilot results file not found: ${inputPath}`);
-  process.exit(1);
-}
-
-const payload = JSON.parse(fs.readFileSync(absoluteInput, 'utf8'));
-if (!payload || typeof payload !== 'object') throw new Error('Pilot results payload must be an object');
-if (typeof payload.cohortId !== 'string' || payload.cohortId.length < 3) throw new Error('cohortId is required');
-if (typeof payload.analystId !== 'string' || payload.analystId.length < 3) throw new Error('analystId is required');
-if (!Array.isArray(payload.responses) || payload.responses.length === 0) throw new Error('responses must be a non-empty array');
+const payload = readAndValidatePrivatePilotResults(inputPath, {baseDir: root});
 
 const questionDir = path.join(root, 'content/questions');
 const questionMap = new Map(
@@ -62,18 +53,6 @@ function pointBiserialItemRest(rows) {
 const grouped = new Map();
 const participantItemKeys = new Set();
 for (const [index, row] of payload.responses.entries()) {
-  if (!row || typeof row !== 'object') throw new Error(`responses[${index}] must be an object`);
-  if (typeof row.participantId !== 'string' || row.participantId.length < 1) throw new Error(`responses[${index}].participantId is required`);
-  if (typeof row.itemId !== 'string' || !/^ITEM-[A-Z0-9-]+$/.test(row.itemId)) throw new Error(`responses[${index}].itemId is invalid`);
-  if (!Number.isInteger(row.itemVersion) || row.itemVersion < 1) throw new Error(`responses[${index}].itemVersion is invalid`);
-  if (typeof row.correct !== 'boolean') throw new Error(`responses[${index}].correct must be boolean`);
-  if (row.omitted !== undefined && typeof row.omitted !== 'boolean') throw new Error(`responses[${index}].omitted must be boolean when present`);
-  if (row.selectedChoiceIndex !== null && row.selectedChoiceIndex !== undefined && (!Number.isInteger(row.selectedChoiceIndex) || row.selectedChoiceIndex < 0)) throw new Error(`responses[${index}].selectedChoiceIndex is invalid`);
-  if (!Number.isFinite(row.responseTimeSeconds) || row.responseTimeSeconds < 0) throw new Error(`responses[${index}].responseTimeSeconds is invalid`);
-  if (!Number.isFinite(row.criterionScoreExcludingItem) || row.criterionScoreExcludingItem < 0 || row.criterionScoreExcludingItem > 1) throw new Error(`responses[${index}].criterionScoreExcludingItem must be between 0 and 1`);
-  if (row.totalScore !== undefined && (!Number.isFinite(row.totalScore) || row.totalScore < 0 || row.totalScore > 1)) throw new Error(`responses[${index}].totalScore must be between 0 and 1 when present`);
-  if (row.responseTimeAnomaly !== undefined && typeof row.responseTimeAnomaly !== 'boolean') throw new Error(`responses[${index}].responseTimeAnomaly must be boolean when present`);
-
   const key = `${row.itemId}@${row.itemVersion}`;
   const item = questionMap.get(key);
   if (!item) throw new Error(`Pilot results reference unknown item version ${key}`);
@@ -149,6 +128,7 @@ console.log(JSON.stringify({
   status: complete ? 'complete' : 'draft',
   wroteFiles: write,
   participantLevelDataCommitted: false,
+  inputSchema: 'schemas/private-pilot-results.schema.json',
   discriminationMethod: 'point-biserial-item-rest',
   evidence: output
 }, null, 2));
