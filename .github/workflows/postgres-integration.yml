@@ -10,6 +10,7 @@ on:
       - 'packages/domain/**'
       - 'database/**'
       - 'scripts/test-live-postgres-integration.mjs'
+      - 'scripts/test-live-rls-policy.mjs'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/postgres-integration.yml'
@@ -22,6 +23,7 @@ on:
       - 'packages/domain/**'
       - 'database/**'
       - 'scripts/test-live-postgres-integration.mjs'
+      - 'scripts/test-live-rls-policy.mjs'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/postgres-integration.yml'
@@ -64,3 +66,7 @@ jobs:
         run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f database/schema.sql
       - name: Run live production adapter integration
         run: node scripts/test-live-postgres-integration.mjs
+      - name: Apply RLS candidate policies for isolation validation
+        run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f database/rls-policies.sql
+      - name: Run live RLS learner-isolation validation
+        run: node scripts/test-live-rls-policy.mjs
