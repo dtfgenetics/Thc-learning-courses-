@@ -1,0 +1,66 @@
+name: PostgreSQL integration gate
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - staging
+    paths:
+      - 'apps/api/**'
+      - 'packages/domain/**'
+      - 'database/**'
+      - 'scripts/test-live-postgres-integration.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/postgres-integration.yml'
+  push:
+    branches:
+      - dev
+      - staging
+    paths:
+      - 'apps/api/**'
+      - 'packages/domain/**'
+      - 'database/**'
+      - 'scripts/test-live-postgres-integration.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/postgres-integration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-postgres:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: thc_test
+          POSTGRES_PASSWORD: thc_test_password
+          POSTGRES_DB: thc_academy_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U thc_test -d thc_academy_test"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=10
+    env:
+      DATABASE_URL: postgresql://thc_test:thc_test_password@127.0.0.1:5432/thc_academy_test
+      THC_DATABASE_SSL: disable
+      THC_REQUIRED_SCHEMA_VERSION: '5'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Apply runtime schema
+        run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f database/schema.sql
+      - name: Run live production adapter integration
+        run: node scripts/test-live-postgres-integration.mjs
