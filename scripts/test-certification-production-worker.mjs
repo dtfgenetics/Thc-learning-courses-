@@ -72,12 +72,26 @@ const assessmentRegistry = {
 const assessmentBlockers = collectBlockers(assessmentRegistry);
 assert.deepEqual(
   assessmentBlockers.slice(0, 3).map((row) => row.gate),
-  ['humanAssessmentReviewComplete', 'minimumActivePoolComplete', 'pilotStatisticsComplete']
+  ['humanAssessmentReviewComplete', 'pilotStatisticsComplete', 'minimumActivePoolComplete']
 );
 const assessmentNext = selectNextTask(assessmentRegistry, []);
 assert.equal(assessmentNext.gate, 'humanAssessmentReviewComplete');
 assert.equal(assessmentNext.mode, 'certify');
 assert.equal(assessmentNext.branch, 'work/assessment-human-assessment-review-complete');
+
+const postReviewRegistry = structuredClone(assessmentRegistry);
+postReviewRegistry.areas.assessment.gates.humanAssessmentReviewComplete = true;
+const postReviewNext = selectNextTask(postReviewRegistry, []);
+assert.equal(postReviewNext.gate, 'pilotStatisticsComplete');
+assert.equal(postReviewNext.mode, 'certify');
+assert.equal(postReviewNext.branch, 'work/assessment-pilot-statistics-complete');
+
+const postPilotRegistry = structuredClone(postReviewRegistry);
+postPilotRegistry.areas.assessment.gates.pilotStatisticsComplete = true;
+const postPilotNext = selectNextTask(postPilotRegistry, []);
+assert.equal(postPilotNext.gate, 'minimumActivePoolComplete');
+assert.equal(postPilotNext.mode, 'exam');
+assert.equal(postPilotNext.branch, 'work/assessment-minimum-active-pool-complete');
 
 const completeRegistry = {
   system: 'THC Academy',

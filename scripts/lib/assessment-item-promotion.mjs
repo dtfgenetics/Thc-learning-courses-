@@ -1,4 +1,12 @@
-export function evaluateAssessmentItemPromotion({ item, reviews = [], referenceIds = new Set() } = {}) {
+import { activationEvidenceEvaluation } from '../pilot-evidence-quality.mjs';
+
+export function evaluateAssessmentItemPromotion({
+  item,
+  reviews = [],
+  referenceIds = new Set(),
+  pilotRecords = [],
+  pilotPolicy = null
+} = {}) {
   const failures = [];
   if (!item || typeof item !== 'object') return { eligible: false, failures: ['assessment item is required'], promoted: null };
 
@@ -21,10 +29,24 @@ export function evaluateAssessmentItemPromotion({ item, reviews = [], referenceI
   const missingReferences = refs.filter((id) => !referenceIds.has(id));
   if (missingReferences.length) failures.push(`unresolved references: ${missingReferences.join(', ')}`);
 
+  let qualifiedPilot = null;
+  if (!pilotPolicy) {
+    failures.push('pilot evidence policy is required for activation');
+  } else {
+    const exactVersionPilotRecords = pilotRecords.filter((record) =>
+      record.itemId === item.id && String(record.itemVersion) === String(item.version)
+    );
+    qualifiedPilot = exactVersionPilotRecords.find((record) =>
+      activationEvidenceEvaluation(record, item, pilotPolicy).ready
+    ) ?? null;
+    if (!qualifiedPilot) failures.push('policy-qualified exact-version pilot evidence is required');
+  }
+
   return {
     eligible: failures.length === 0,
     failures,
     approvedReviewId: approvedReview?.id ?? null,
+    qualifiedPilotEvidenceId: qualifiedPilot?.id ?? null,
     promoted: failures.length === 0 ? { ...item, status: 'active' } : null
   };
 }
