@@ -2,30 +2,99 @@
   "id": "LESSON-NUTRITION-MACRO-002",
   "title": "Macronutrients: N, P, K, Ca, Mg and S",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-NUTRITION-001"],
-  "learningObjectives": ["LO-NUTRITION-MACRO-002"],
+  "status": "approved",
+  "competencies": [
+    "COMP-NUTRITION-001"
+  ],
+  "learningObjectives": [
+    "LO-NUTRITION-MACRO-002"
+  ],
   "estimatedMinutes": 55,
-  "references": ["REF-NUTRITION-001"],
+  "references": [
+    "REF-NUTRITION-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Macronutrients support proteins, nucleic acids, energy transfer, osmotic regulation, cell walls, photosynthesis, and enzyme function. Their importance does not mean more is always better. Plant response depends on balanced concentration, root-zone availability, developmental stage, water status, pH, EC, and interactions among ions.",
     "vocabulary": [
-      {"term": "Primary macronutrient", "definition": "A mineral nutrient commonly required in relatively large amounts, including nitrogen, phosphorus, and potassium."},
-      {"term": "Secondary macronutrient", "definition": "A mineral nutrient required in substantial amounts, including calcium, magnesium, and sulfur."},
-      {"term": "Antagonism", "definition": "An interaction in which high abundance of one ion reduces uptake, transport, or use of another."},
-      {"term": "Mobility", "definition": "The relative ability of a nutrient to be redistributed within the plant, which can influence where deficiency symptoms appear first."},
-      {"term": "Nutrient balance", "definition": "The relationship among supplied nutrient concentrations rather than the concentration of one element considered in isolation."}
+      {
+        "term": "Primary macronutrient",
+        "definition": "A mineral nutrient commonly required in relatively large amounts, including nitrogen, phosphorus, and potassium."
+      },
+      {
+        "term": "Secondary macronutrient",
+        "definition": "A mineral nutrient required in substantial amounts, including calcium, magnesium, and sulfur."
+      },
+      {
+        "term": "Antagonism",
+        "definition": "An interaction in which high abundance of one ion reduces uptake, transport, or use of another."
+      },
+      {
+        "term": "Mobility",
+        "definition": "The relative ability of a nutrient to be redistributed within the plant, which can influence where deficiency symptoms appear first."
+      },
+      {
+        "term": "Nutrient balance",
+        "definition": "The relationship among supplied nutrient concentrations rather than the concentration of one element considered in isolation."
+      }
     ],
     "sections": [
-      {"title": "Nitrogen supports growth and metabolism", "body": "Nitrogen is a component of amino acids, proteins, nucleic acids, chlorophyll, and many metabolic compounds. Supply should match developmental demand. Too little can limit growth and chlorophyll formation, while excessive supply can alter morphology, tissue characteristics, and nutrient balance.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Phosphorus participates in energy transfer and metabolism", "body": "Phosphorus is important in nucleic acids, phospholipids, and energy-transfer chemistry. It should not be reduced to a simple 'root' or 'flower' nutrient. Plant demand and availability depend on development, root-zone chemistry, and the whole nutrient program.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Potassium regulates osmotic and enzymatic processes", "body": "Potassium contributes to osmotic regulation, stomatal function, charge balance, and enzyme activation. Because potassium is a major cation, aggressive increases can alter relationships with other cations such as magnesium and calcium.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Calcium depends on supply and transport", "body": "Calcium supports cell-wall structure, membrane function, and signaling. Plant distribution is closely tied to water movement and transpiration, so deficiency-like symptoms can occur even when solution calcium is present if root uptake or transport conditions are poor.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Magnesium is central to chlorophyll and enzyme systems", "body": "Magnesium is part of the chlorophyll molecule and participates in many enzyme reactions. Its availability can be affected by root-zone conditions and by competition with other cations. Interpretation should therefore include potassium, calcium, EC, and pH rather than magnesium concentration alone.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Sulfur supports amino acids and metabolism", "body": "Sulfur is incorporated into sulfur-containing amino acids and other metabolites. It remains essential even though it often receives less attention than N, P, and K. Supply should be evaluated as part of the complete formulation rather than assumed adequate from product labels.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Nutrient mobility helps organize symptom observations", "body": "Some nutrient deficiencies tend to appear first on older tissues because the plant can redistribute the nutrient, while others more often affect new growth because internal mobility is limited. Mobility patterns are useful clues, but environmental stress, root damage, and multiple deficiencies can blur classic visual patterns.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Balance matters more than boosters", "body": "Increasing one nutrient can change EC and alter uptake relationships among ions. Nutrient programs should be assessed as complete formulations with attention to developmental stage, source water, root-zone trends, and plant response. Correcting an assumed deficiency by repeatedly adding one element can create a secondary imbalance.", "references": ["REF-NUTRITION-001"]}
+      {
+        "title": "Nitrogen supports growth and metabolism",
+        "body": "Nitrogen is a component of amino acids, proteins, nucleic acids, chlorophyll, and many metabolic compounds. Supply should match developmental demand. Too little can limit growth and chlorophyll formation, while excessive supply can alter morphology, tissue characteristics, and nutrient balance.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Phosphorus participates in energy transfer and metabolism",
+        "body": "Phosphorus is important in nucleic acids, phospholipids, and energy-transfer chemistry. It should not be reduced to a simple 'root' or 'flower' nutrient. Plant demand and availability depend on development, root-zone chemistry, and the whole nutrient program.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Potassium regulates osmotic and enzymatic processes",
+        "body": "Potassium contributes to osmotic regulation, stomatal function, charge balance, and enzyme activation. Because potassium is a major cation, aggressive increases can alter relationships with other cations such as magnesium and calcium.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Calcium depends on supply and transport",
+        "body": "Calcium supports cell-wall structure, membrane function, and signaling. Plant distribution is closely tied to water movement and transpiration, so deficiency-like symptoms can occur even when solution calcium is present if root uptake or transport conditions are poor.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Magnesium is central to chlorophyll and enzyme systems",
+        "body": "Magnesium is part of the chlorophyll molecule and participates in many enzyme reactions. Its availability can be affected by root-zone conditions and by competition with other cations. Interpretation should therefore include potassium, calcium, EC, and pH rather than magnesium concentration alone.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Sulfur supports amino acids and metabolism",
+        "body": "Sulfur is incorporated into sulfur-containing amino acids and other metabolites. It remains essential even though it often receives less attention than N, P, and K. Supply should be evaluated as part of the complete formulation rather than assumed adequate from product labels.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Nutrient mobility helps organize symptom observations",
+        "body": "Some nutrient deficiencies tend to appear first on older tissues because the plant can redistribute the nutrient, while others more often affect new growth because internal mobility is limited. Mobility patterns are useful clues, but environmental stress, root damage, and multiple deficiencies can blur classic visual patterns.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Balance matters more than boosters",
+        "body": "Increasing one nutrient can change EC and alter uptake relationships among ions. Nutrient programs should be assessed as complete formulations with attention to developmental stage, source water, root-zone trends, and plant response. Correcting an assumed deficiency by repeatedly adding one element can create a secondary imbalance.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      }
     ],
     "workedExamples": [
       "If potassium is raised aggressively while magnesium-related symptoms appear, investigate cation balance, root-zone EC, pH, and moisture conditions instead of assuming the magnesium product is weak.",

@@ -1,20 +1,128 @@
 {
-  "id":"LESSON-POSTHARVEST-STORAGE-003",
-  "title":"Curing, Packaging and Storage Stability",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-POSTHARVEST-001"],
-  "learningObjectives":["LO-POSTHARVEST-STORAGE-003"],
-  "estimatedMinutes":60,
-  "references":["REF-POSTHARVEST-001"],
-  "assessment":null,
-  "content":{
-    "overview":"After active drying, harvested material continues to equilibrate and change. Curing, packaging and storage should be treated as controlled environments with defined lot identity, moisture checks, package selection, seal verification, temperature/light management and inspection records. The goal is not to preserve material unchanged forever, but to slow avoidable degradation and detect conditions that threaten quality or safety.",
-    "vocabulary":[{"term":"Curing","definition":"A managed post-drying holding period during which moisture redistributes and product conditions are monitored."},{"term":"Headspace","definition":"The gas-filled volume inside a package around the stored product."},{"term":"Oxidation","definition":"Chemical reactions involving electron loss that can be influenced by oxygen exposure, heat, light and time."},{"term":"Barrier property","definition":"A package characteristic that limits transfer of gases, moisture or light."},{"term":"Seal integrity","definition":"The ability of a closed package to maintain its intended barrier without leaks or unintended exchange."},{"term":"Traceability","definition":"The ability to connect stored material to its lot, package, dates, conditions, inspections and handling events."}],
-    "sections":[{"title":"Curing is controlled moisture equilibration","body":"Material can leave active drying with moisture distributed unevenly between outer and inner tissues. Controlled holding allows redistribution while repeated inspections determine whether the batch is stabilizing normally or showing evidence that the initial dry was incomplete.","references":["REF-POSTHARVEST-001"]},{"title":"Package selection changes exposure","body":"Different packaging materials and closures differ in permeability to water vapor, oxygen and light. Select packaging based on the intended storage duration and quality objective rather than assuming every sealed container provides equivalent protection.","references":["REF-POSTHARVEST-001"]},{"title":"Headspace and fill condition matter","body":"Package fill, trapped air and repeated opening alter the internal microenvironment. Record fill condition and opening events when investigating lot-to-lot or package-to-package differences.","references":["REF-POSTHARVEST-001"]},{"title":"Seal integrity must be verified","body":"A package can appear closed while still allowing unintended exchange through damaged closures, poor seams or handling defects. Inspect and document package integrity instead of assuming seal quality from appearance alone.","references":["REF-POSTHARVEST-001"]},{"title":"Light, temperature and oxygen influence stability","body":"Higher heat exposure, light and oxygen generally increase degradation pressure over time. Storage controls should therefore minimize unnecessary exposure and document excursions so later quality changes have context.","references":["REF-POSTHARVEST-001"]},{"title":"Time is part of every storage condition","body":"Even well-controlled material changes as storage duration increases. Compare quality observations at defined intervals and avoid describing a package or condition as stable without considering how long the material has been stored.","references":["REF-POSTHARVEST-001"]},{"title":"Inspection frequency should match risk","body":"Newly packaged or previously uneven batches may need closer observation than material with established stable history. Inspection plans should focus on evidence of moisture imbalance, package damage, contamination or unexpected sensory changes without repeatedly opening every package unnecessarily.","references":["REF-POSTHARVEST-001"]},{"title":"Lot segregation supports investigation","body":"Maintain lot and package identity so suspect material can be isolated without affecting unrelated product. Mixing lots or relabeling containers without records destroys information needed to identify where a storage problem began.","references":["REF-POSTHARVEST-001"]},{"title":"Storage records create feedback to upstream stages","body":"If one lot repeatedly shows moisture rebound, rapid quality loss or packaging failures, trace findings back to drying uniformity, package selection, handling and storage conditions. Post-harvest should function as a closed learning loop, not as disconnected stages.","references":["REF-POSTHARVEST-001"]}],
-    "workedExamples":["Two containers from the same lot show different internal humidity trends. Compare fill amount, seal integrity, package material, opening history and initial moisture uniformity before blaming cultivar variability.","A clear package stored under bright warm conditions changes faster than material from the same lot stored protected from light and heat. Storage environment is a strong explanatory variable that should be recorded.","A sealed batch shows moisture rebound shortly after packaging. Return to drying/stabilization evidence and evaluate whether internal moisture was still redistributing when the material was packaged.","One package has a damaged closure while neighboring packages remain normal. Isolate the affected package and inspect related lots rather than assuming the whole batch failed."],
-    "commonMistakes":["Treating curing as a fixed number of days regardless of measured condition.","Assuming every sealed package has the same oxygen and moisture barrier.","Ignoring headspace, repeated opening and package fill.","Storing material in unnecessary heat or light.","Mixing lots and losing traceability.","Failing to record package damage or temperature excursions.","Assuming all quality change happened during cultivation rather than evaluating post-harvest handling."],
-    "practicalApplication":"Build a storage-control log with lot ID, package type, fill date, package condition, seal check, storage location, temperature/light exposure, moisture or water-activity observations where available, inspection dates, opening events and quality changes. Compare two simulated packages and identify which evidence most strongly explains any difference in stability.",
-    "summary":"Curing, packaging and storage are connected quality-control stages. Moisture equilibration, package barriers, headspace, seal integrity, light, temperature, oxygen, time and traceability determine how reliably harvested material maintains quality and how quickly problems can be detected and investigated."
+  "id": "LESSON-POSTHARVEST-STORAGE-003",
+  "title": "Curing, Packaging and Storage Stability",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-POSTHARVEST-001"
+  ],
+  "learningObjectives": [
+    "LO-POSTHARVEST-STORAGE-003"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "After active drying, harvested material continues to equilibrate and change. Curing, packaging and storage should be treated as controlled environments with defined lot identity, moisture checks, package selection, seal verification, temperature/light management and inspection records. The goal is not to preserve material unchanged forever, but to slow avoidable degradation and detect conditions that threaten quality or safety.",
+    "vocabulary": [
+      {
+        "term": "Curing",
+        "definition": "A managed post-drying holding period during which moisture redistributes and product conditions are monitored."
+      },
+      {
+        "term": "Headspace",
+        "definition": "The gas-filled volume inside a package around the stored product."
+      },
+      {
+        "term": "Oxidation",
+        "definition": "Chemical reactions involving electron loss that can be influenced by oxygen exposure, heat, light and time."
+      },
+      {
+        "term": "Barrier property",
+        "definition": "A package characteristic that limits transfer of gases, moisture or light."
+      },
+      {
+        "term": "Seal integrity",
+        "definition": "The ability of a closed package to maintain its intended barrier without leaks or unintended exchange."
+      },
+      {
+        "term": "Traceability",
+        "definition": "The ability to connect stored material to its lot, package, dates, conditions, inspections and handling events."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Curing is controlled moisture equilibration",
+        "body": "Material can leave active drying with moisture distributed unevenly between outer and inner tissues. Controlled holding allows redistribution while repeated inspections determine whether the batch is stabilizing normally or showing evidence that the initial dry was incomplete.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Package selection changes exposure",
+        "body": "Different packaging materials and closures differ in permeability to water vapor, oxygen and light. Select packaging based on the intended storage duration and quality objective rather than assuming every sealed container provides equivalent protection.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Headspace and fill condition matter",
+        "body": "Package fill, trapped air and repeated opening alter the internal microenvironment. Record fill condition and opening events when investigating lot-to-lot or package-to-package differences.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Seal integrity must be verified",
+        "body": "A package can appear closed while still allowing unintended exchange through damaged closures, poor seams or handling defects. Inspect and document package integrity instead of assuming seal quality from appearance alone.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Light, temperature and oxygen influence stability",
+        "body": "Higher heat exposure, light and oxygen generally increase degradation pressure over time. Storage controls should therefore minimize unnecessary exposure and document excursions so later quality changes have context.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Time is part of every storage condition",
+        "body": "Even well-controlled material changes as storage duration increases. Compare quality observations at defined intervals and avoid describing a package or condition as stable without considering how long the material has been stored.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Inspection frequency should match risk",
+        "body": "Newly packaged or previously uneven batches may need closer observation than material with established stable history. Inspection plans should focus on evidence of moisture imbalance, package damage, contamination or unexpected sensory changes without repeatedly opening every package unnecessarily.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Lot segregation supports investigation",
+        "body": "Maintain lot and package identity so suspect material can be isolated without affecting unrelated product. Mixing lots or relabeling containers without records destroys information needed to identify where a storage problem began.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Storage records create feedback to upstream stages",
+        "body": "If one lot repeatedly shows moisture rebound, rapid quality loss or packaging failures, trace findings back to drying uniformity, package selection, handling and storage conditions. Post-harvest should function as a closed learning loop, not as disconnected stages.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two containers from the same lot show different internal humidity trends. Compare fill amount, seal integrity, package material, opening history and initial moisture uniformity before blaming cultivar variability.",
+      "A clear package stored under bright warm conditions changes faster than material from the same lot stored protected from light and heat. Storage environment is a strong explanatory variable that should be recorded.",
+      "A sealed batch shows moisture rebound shortly after packaging. Return to drying/stabilization evidence and evaluate whether internal moisture was still redistributing when the material was packaged.",
+      "One package has a damaged closure while neighboring packages remain normal. Isolate the affected package and inspect related lots rather than assuming the whole batch failed."
+    ],
+    "commonMistakes": [
+      "Treating curing as a fixed number of days regardless of measured condition.",
+      "Assuming every sealed package has the same oxygen and moisture barrier.",
+      "Ignoring headspace, repeated opening and package fill.",
+      "Storing material in unnecessary heat or light.",
+      "Mixing lots and losing traceability.",
+      "Failing to record package damage or temperature excursions.",
+      "Assuming all quality change happened during cultivation rather than evaluating post-harvest handling."
+    ],
+    "practicalApplication": "Build a storage-control log with lot ID, package type, fill date, package condition, seal check, storage location, temperature/light exposure, moisture or water-activity observations where available, inspection dates, opening events and quality changes. Compare two simulated packages and identify which evidence most strongly explains any difference in stability.",
+    "summary": "Curing, packaging and storage are connected quality-control stages. Moisture equilibration, package barriers, headspace, seal integrity, light, temperature, oxygen, time and traceability determine how reliably harvested material maintains quality and how quickly problems can be detected and investigated."
   }
 }

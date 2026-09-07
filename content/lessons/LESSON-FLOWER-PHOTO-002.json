@@ -1,20 +1,104 @@
 {
-  "id":"LESSON-FLOWER-PHOTO-002",
-  "title":"Photoperiod, Dark Periods and the Flowering Transition",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-FLOWER-001"],
-  "learningObjectives":["LO-FLOWER-PHOTO-002"],
-  "estimatedMinutes":50,
-  "references":["REF-LIGHT-001","REF-FLOWER-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Photoperiod-sensitive cannabis uses recurring light-dark timing as developmental information. Flowering management therefore requires a stable 24-hour schedule, verification of the actual dark interval, and recognition that the transition is gradual. Photoperiod and DLI are related through time but they are not interchangeable biological concepts.",
-    "vocabulary":[{"term":"Photoperiod","definition":"The duration and timing of the daily light interval."},{"term":"Dark period","definition":"The interval without intended crop lighting in a recurring light-dark cycle."},{"term":"Floral transition","definition":"The developmental shift toward reproductive growth after appropriate signaling and plant readiness."},{"term":"Light leak","definition":"Unintended light exposure during the scheduled dark interval."},{"term":"Circadian rhythm","definition":"An internally generated approximately 24-hour biological rhythm synchronized by environmental cues including light and darkness."}],
-    "sections":[{"title":"Photoperiod is developmental information","body":"The recurring timing of light and darkness can influence reproductive development independently of total daily photon dose. Two schedules with similar DLI may not be developmentally equivalent if their day lengths differ substantially.","references":["REF-LIGHT-001","REF-FLOWER-001"]},{"title":"Audit the actual schedule, not just the timer setting","body":"Controller clocks, manual overrides, maintenance lights, indicator lamps, doors and outages can make the crop's real light-dark experience different from the programmed schedule. Verification should include the full 24-hour cycle.","references":["REF-LIGHT-001"]},{"title":"Dark-period interruptions should be treated as a system problem","body":"When unintended light occurs, document duration, intensity, location and recurrence instead of assuming every brief exposure has the same biological consequence. Correct the source and monitor development rather than relying on folklore thresholds.","references":["REF-LIGHT-001","REF-FLOWER-001"]},{"title":"Transition includes architectural change","body":"Shoot elongation and canopy reorganization often continue after the schedule changes. Training, spacing and light-distribution planning should account for the transition rather than assuming plant dimensions are fixed on the first flowering day.","references":["REF-FLOWER-001"]},{"title":"Development should be tracked by stage","body":"Record appearance of reproductive structures, transition progression and canopy changes. Stage-based notes make comparisons across genotypes and rooms more informative than week labels alone.","references":["REF-FLOWER-001"]},{"title":"Environmental consistency supports interpretation","body":"Large changes in temperature, humidity, irrigation or light intensity during the transition can confound interpretation of developmental response. Document major environmental changes so schedule effects are not considered in isolation.","references":["REF-FLOWER-001"]}],
-    "workedExamples":["A controller reports the intended schedule, but staff use bright work lights during part of the dark interval. The actual crop photoperiod differs from the programmed schedule and the work procedure should be corrected.","Two rooms deliver similar DLI using different photoperiods. Do not assume their reproductive response will be identical because DLI does not replace photoperiod signaling.","A tall genotype continues substantial elongation for several days after the schedule change. Canopy planning should account for transition growth rather than treating the plant as dimensionally finished.","A one-time light interruption is discovered. Document the event, correct the cause and monitor subsequent development rather than making an unsupported prediction from the event alone."],
-    "commonMistakes":["Treating photoperiod and DLI as interchangeable.","Assuming timer programming proves the crop experienced the intended dark interval.","Calling the crop fully in flower immediately after changing the schedule.","Making universal claims about one brief light interruption without considering intensity, duration or recurrence.","Ignoring transition stretch when planning final canopy spacing."],
-    "practicalApplication":"Perform a 24-hour photoperiod audit. Record programmed on/off times, actual fixture state, controller clock accuracy, manual overrides, doors, indicator lights and maintenance procedures. Then track transition milestones and canopy change for at least two observation points after the schedule change.",
-    "summary":"Photoperiod is both a lighting schedule and a developmental signal. Accurate flowering management verifies the real light-dark cycle, distinguishes photoperiod from DLI, documents interruptions, and tracks the gradual transition by plant development rather than calendar labels alone."
+  "id": "LESSON-FLOWER-PHOTO-002",
+  "title": "Photoperiod, Dark Periods and the Flowering Transition",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-FLOWER-001"
+  ],
+  "learningObjectives": [
+    "LO-FLOWER-PHOTO-002"
+  ],
+  "estimatedMinutes": 50,
+  "references": [
+    "REF-LIGHT-001",
+    "REF-FLOWER-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Photoperiod-sensitive cannabis uses recurring light-dark timing as developmental information. Flowering management therefore requires a stable 24-hour schedule, verification of the actual dark interval, and recognition that the transition is gradual. Photoperiod and DLI are related through time but they are not interchangeable biological concepts.",
+    "vocabulary": [
+      {
+        "term": "Photoperiod",
+        "definition": "The duration and timing of the daily light interval."
+      },
+      {
+        "term": "Dark period",
+        "definition": "The interval without intended crop lighting in a recurring light-dark cycle."
+      },
+      {
+        "term": "Floral transition",
+        "definition": "The developmental shift toward reproductive growth after appropriate signaling and plant readiness."
+      },
+      {
+        "term": "Light leak",
+        "definition": "Unintended light exposure during the scheduled dark interval."
+      },
+      {
+        "term": "Circadian rhythm",
+        "definition": "An internally generated approximately 24-hour biological rhythm synchronized by environmental cues including light and darkness."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Photoperiod is developmental information",
+        "body": "The recurring timing of light and darkness can influence reproductive development independently of total daily photon dose. Two schedules with similar DLI may not be developmentally equivalent if their day lengths differ substantially.",
+        "references": [
+          "REF-LIGHT-001",
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Audit the actual schedule, not just the timer setting",
+        "body": "Controller clocks, manual overrides, maintenance lights, indicator lamps, doors and outages can make the crop's real light-dark experience different from the programmed schedule. Verification should include the full 24-hour cycle.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Dark-period interruptions should be treated as a system problem",
+        "body": "When unintended light occurs, document duration, intensity, location and recurrence instead of assuming every brief exposure has the same biological consequence. Correct the source and monitor development rather than relying on folklore thresholds.",
+        "references": [
+          "REF-LIGHT-001",
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Transition includes architectural change",
+        "body": "Shoot elongation and canopy reorganization often continue after the schedule changes. Training, spacing and light-distribution planning should account for the transition rather than assuming plant dimensions are fixed on the first flowering day.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Development should be tracked by stage",
+        "body": "Record appearance of reproductive structures, transition progression and canopy changes. Stage-based notes make comparisons across genotypes and rooms more informative than week labels alone.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Environmental consistency supports interpretation",
+        "body": "Large changes in temperature, humidity, irrigation or light intensity during the transition can confound interpretation of developmental response. Document major environmental changes so schedule effects are not considered in isolation.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A controller reports the intended schedule, but staff use bright work lights during part of the dark interval. The actual crop photoperiod differs from the programmed schedule and the work procedure should be corrected.",
+      "Two rooms deliver similar DLI using different photoperiods. Do not assume their reproductive response will be identical because DLI does not replace photoperiod signaling.",
+      "A tall genotype continues substantial elongation for several days after the schedule change. Canopy planning should account for transition growth rather than treating the plant as dimensionally finished.",
+      "A one-time light interruption is discovered. Document the event, correct the cause and monitor subsequent development rather than making an unsupported prediction from the event alone."
+    ],
+    "commonMistakes": [
+      "Treating photoperiod and DLI as interchangeable.",
+      "Assuming timer programming proves the crop experienced the intended dark interval.",
+      "Calling the crop fully in flower immediately after changing the schedule.",
+      "Making universal claims about one brief light interruption without considering intensity, duration or recurrence.",
+      "Ignoring transition stretch when planning final canopy spacing."
+    ],
+    "practicalApplication": "Perform a 24-hour photoperiod audit. Record programmed on/off times, actual fixture state, controller clock accuracy, manual overrides, doors, indicator lights and maintenance procedures. Then track transition milestones and canopy change for at least two observation points after the schedule change.",
+    "summary": "Photoperiod is both a lighting schedule and a developmental signal. Accurate flowering management verifies the real light-dark cycle, distinguishes photoperiod from DLI, documents interruptions, and tracks the gradual transition by plant development rather than calendar labels alone."
   }
 }

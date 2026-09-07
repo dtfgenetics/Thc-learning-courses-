@@ -2,30 +2,99 @@
   "id": "LESSON-LIGHT-DLI-003",
   "title": "Daily Light Integral, Photoperiod and Dose Interpretation",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-LIGHT-001"],
-  "learningObjectives": ["LO-LIGHT-DLI-003"],
+  "status": "approved",
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "learningObjectives": [
+    "LO-LIGHT-DLI-003"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-LIGHT-001"],
+  "references": [
+    "REF-LIGHT-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Daily light integral (DLI) combines photon intensity with time to describe accumulated daily photosynthetically active photon exposure. It is a useful comparison metric, but equal DLI does not mean identical plant response because instantaneous intensity, photoperiod, spectrum, carbon dioxide availability, temperature, water status, and developmental stage can differ.",
     "vocabulary": [
-      {"term": "Daily light integral", "definition": "The total photosynthetically active photon exposure accumulated per unit area over a day, commonly expressed in moles per square meter per day."},
-      {"term": "Photoperiod", "definition": "The duration and timing of the daily light period."},
-      {"term": "Photon dose", "definition": "The integrated number of photons delivered over a defined time interval and area."},
-      {"term": "Instantaneous intensity", "definition": "Photon flux measured at a specific moment, such as PPFD at the canopy."},
-      {"term": "Light saturation", "definition": "A condition in which additional photon intensity produces progressively smaller gains in photosynthetic rate under the existing environmental and physiological conditions."}
+      {
+        "term": "Daily light integral",
+        "definition": "The total photosynthetically active photon exposure accumulated per unit area over a day, commonly expressed in moles per square meter per day."
+      },
+      {
+        "term": "Photoperiod",
+        "definition": "The duration and timing of the daily light period."
+      },
+      {
+        "term": "Photon dose",
+        "definition": "The integrated number of photons delivered over a defined time interval and area."
+      },
+      {
+        "term": "Instantaneous intensity",
+        "definition": "Photon flux measured at a specific moment, such as PPFD at the canopy."
+      },
+      {
+        "term": "Light saturation",
+        "definition": "A condition in which additional photon intensity produces progressively smaller gains in photosynthetic rate under the existing environmental and physiological conditions."
+      }
     ],
     "sections": [
-      {"title": "DLI links PPFD and time", "body": "A common DLI calculation multiplies representative PPFD by the number of illuminated seconds and converts micromoles to moles. This makes the time component explicit and prevents the common mistake of treating intensity alone as daily exposure.", "references": ["REF-LIGHT-001"]},
-      {"title": "Use representative PPFD in the calculation", "body": "A DLI calculated from one unusually bright or dim point can misrepresent crop exposure. The most useful estimate comes from a documented representative value derived from a measured canopy map or a defined sampling approach.", "references": ["REF-LIGHT-001"]},
-      {"title": "Equal DLI can come from different lighting schedules", "body": "Different combinations of intensity and duration can produce similar daily photon totals. A lower PPFD over a longer photoperiod can equal the DLI of a higher PPFD over a shorter photoperiod. The integrated dose may match while the biological experience of the plant does not.", "references": ["REF-LIGHT-001"]},
-      {"title": "Photoperiod has biological meaning beyond dose", "body": "Photoperiod can influence developmental signaling in addition to changing photon accumulation. For photoperiod-sensitive crops, light and dark timing are part of the developmental environment, so DLI should never be used to justify ignoring the biological role of the dark period.", "references": ["REF-LIGHT-001"]},
-      {"title": "Instantaneous intensity still matters", "body": "Two schedules with the same DLI can expose leaves to very different momentary photon flux. Photosynthesis does not increase linearly without limit, and high instantaneous intensity can interact with temperature, carbon dioxide, water status, and photoprotection. DLI is therefore a summary metric rather than a complete description of lighting stress or opportunity.", "references": ["REF-LIGHT-001"]},
-      {"title": "Increasing DLI raises system demand", "body": "More daily photons can increase demand on water transport, root-zone supply, nutrient availability, carbon dioxide, temperature management, and plant physiological capacity. When these supporting systems are limiting, increasing DLI may not produce the expected benefit and can worsen imbalance.", "references": ["REF-LIGHT-001"]},
-      {"title": "Compare DLI only when the measurement basis is clear", "body": "Useful comparisons state the PPFD sampling method, photoperiod, developmental stage, fixture state, canopy height, and relevant environmental conditions. A DLI value with no context is difficult to reproduce and can encourage false comparisons between different crops or rooms.", "references": ["REF-LIGHT-001"]},
-      {"title": "Use DLI as part of a controlled optimization cycle", "body": "Measure the canopy, calculate DLI consistently, assess plant and root-zone response, make a small justified change, then repeat the measurements. This turns DLI into a tool for evidence-based optimization instead of a target that is increased simply because a higher number appears possible.", "references": ["REF-LIGHT-001"]}
+      {
+        "title": "DLI links PPFD and time",
+        "body": "A common DLI calculation multiplies representative PPFD by the number of illuminated seconds and converts micromoles to moles. This makes the time component explicit and prevents the common mistake of treating intensity alone as daily exposure.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Use representative PPFD in the calculation",
+        "body": "A DLI calculated from one unusually bright or dim point can misrepresent crop exposure. The most useful estimate comes from a documented representative value derived from a measured canopy map or a defined sampling approach.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Equal DLI can come from different lighting schedules",
+        "body": "Different combinations of intensity and duration can produce similar daily photon totals. A lower PPFD over a longer photoperiod can equal the DLI of a higher PPFD over a shorter photoperiod. The integrated dose may match while the biological experience of the plant does not.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Photoperiod has biological meaning beyond dose",
+        "body": "Photoperiod can influence developmental signaling in addition to changing photon accumulation. For photoperiod-sensitive crops, light and dark timing are part of the developmental environment, so DLI should never be used to justify ignoring the biological role of the dark period.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Instantaneous intensity still matters",
+        "body": "Two schedules with the same DLI can expose leaves to very different momentary photon flux. Photosynthesis does not increase linearly without limit, and high instantaneous intensity can interact with temperature, carbon dioxide, water status, and photoprotection. DLI is therefore a summary metric rather than a complete description of lighting stress or opportunity.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Increasing DLI raises system demand",
+        "body": "More daily photons can increase demand on water transport, root-zone supply, nutrient availability, carbon dioxide, temperature management, and plant physiological capacity. When these supporting systems are limiting, increasing DLI may not produce the expected benefit and can worsen imbalance.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Compare DLI only when the measurement basis is clear",
+        "body": "Useful comparisons state the PPFD sampling method, photoperiod, developmental stage, fixture state, canopy height, and relevant environmental conditions. A DLI value with no context is difficult to reproduce and can encourage false comparisons between different crops or rooms.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Use DLI as part of a controlled optimization cycle",
+        "body": "Measure the canopy, calculate DLI consistently, assess plant and root-zone response, make a small justified change, then repeat the measurements. This turns DLI into a tool for evidence-based optimization instead of a target that is increased simply because a higher number appears possible.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      }
     ],
     "workedExamples": [
       "A canopy receiving 600 micromoles per square meter per second for 18 hours receives a larger daily photon dose than the same canopy receiving 600 for 12 hours because the illuminated duration is longer.",

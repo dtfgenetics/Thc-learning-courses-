@@ -1,20 +1,115 @@
 {
-  "id":"LESSON-FLOWER-001",
-  "title":"Flowering Development, Maturity and Harvest Readiness",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-FLOWER-001"],
-  "learningObjectives":["LO-FLOWER-001","LO-FLOWER-PHOTO-002","LO-FLOWER-MATURITY-003"],
-  "estimatedMinutes":65,
-  "references":["REF-FLOWER-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Flowering is a developmental sequence that includes transition, inflorescence expansion, resin-gland development, maturation and eventual harvest assessment. The crop does not mature uniformly across genotypes, plants or canopy positions, so strong decisions use developmental trends, representative sampling, plant condition and environmental history instead of one calendar date or one trichome-color rule.",
-    "vocabulary":[{"term":"Inflorescence","definition":"A reproductive shoot system bearing flowers and associated structures."},{"term":"Floral transition","definition":"The developmental shift from primarily vegetative growth toward reproductive development."},{"term":"Glandular trichome","definition":"A specialized epidermal structure that produces and stores resin-associated metabolites on floral tissues."},{"term":"Maturation","definition":"Progressive developmental changes as reproductive tissues age and approach harvest."},{"term":"Asynchronous development","definition":"Uneven developmental timing among tissues, flowers, canopy positions or plants."},{"term":"Representative sampling","definition":"Selecting observations that reflect the broader crop rather than only the most extreme or convenient location."}],
-    "sections":[{"title":"Flowering is a sequence, not a date","body":"A light-schedule change can initiate reproductive development, but transition, shoot elongation, flower initiation, expansion and maturation occur over time. Record developmental events rather than treating the first day of the schedule change as equivalent to mature flowering.","references":["REF-FLOWER-001"]},{"title":"Canopy position affects development","body":"Light exposure, temperature, airflow and branch position can differ within one plant. Upper and lower flowers can therefore progress at different rates, making representative multi-position observations necessary for whole-crop decisions.","references":["REF-FLOWER-001"]},{"title":"Genotypes mature differently","body":"Calendar expectations are useful for planning but should remain estimates. Genotype, crop history and environment influence developmental timing, architecture and maturity indicators.","references":["REF-FLOWER-001"]},{"title":"Plant condition remains part of harvest assessment","body":"Maturity observations should be interpreted with overall plant health, disease risk, environmental events and intended quality goals. A plant under acute stress may require a different decision process than an otherwise healthy crop at the same calendar age.","references":["REF-FLOWER-001"]},{"title":"Trichomes provide one line of evidence","body":"Trichome morphology and appearance change during development, but sampling tissue, genotype, observation method and canopy position affect what is seen. Use trichomes as part of a multi-factor maturity assessment rather than as a universal numeric trigger.","references":["REF-FLOWER-001"]},{"title":"Trend data are stronger than one observation","body":"Repeated observations reveal whether floral structures and trichome populations are still changing rapidly, stabilizing or showing senescence. A trend reduces the risk of overreacting to one atypical flower or one photograph.","references":["REF-FLOWER-001"]},{"title":"Define the harvest objective","body":"Harvest readiness is tied to the intended production and quality objective as well as plant development. The decision should be documented so future batches can compare timing, crop condition and postharvest outcomes.","references":["REF-FLOWER-001"]}],
-    "workedExamples":["A cultivar reaches its advertised flowering week but representative flowers are still changing rapidly. Treat the calendar as planning context and continue evaluating actual development.","Upper flowers appear more mature than the middle and lower canopy. Sample multiple positions rather than using the most advanced top flower as the sole signal.","Two rooms of the same genotype were exposed to different environmental stress histories. Compare actual development rather than assuming identical harvest timing.","A crop shows mature-looking trichomes on sugar leaves but less mature floral bracts. Standardize the tissue being sampled before comparing observations."],
-    "commonMistakes":["Using a fixed flowering week as an automatic harvest date.","Treating one trichome percentage as universal across genotypes.","Sampling only the most exposed flower.","Mixing sugar-leaf and floral-bract observations without documenting tissue type.","Ignoring plant health and environmental history in harvest decisions.","Making decisions from one observation rather than a repeated trend."],
-    "practicalApplication":"Create a flowering-development log that records schedule transition date, structural changes, floral expansion, representative canopy sampling locations, tissue type, trichome observations, plant condition and environmental events. Compare at least three observation dates and explain whether the crop appears to be rapidly changing, approaching stability or showing signs that alter the harvest decision.",
-    "summary":"Harvest readiness is the end of a developmental sequence, not a calendar appointment. Strong flowering management combines stage tracking, representative sampling, genotype context, plant condition and repeated maturity observations."
+  "id": "LESSON-FLOWER-001",
+  "title": "Flowering Development, Maturity and Harvest Readiness",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-FLOWER-001"
+  ],
+  "learningObjectives": [
+    "LO-FLOWER-001",
+    "LO-FLOWER-PHOTO-002",
+    "LO-FLOWER-MATURITY-003"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-FLOWER-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Flowering is a developmental sequence that includes transition, inflorescence expansion, resin-gland development, maturation and eventual harvest assessment. The crop does not mature uniformly across genotypes, plants or canopy positions, so strong decisions use developmental trends, representative sampling, plant condition and environmental history instead of one calendar date or one trichome-color rule.",
+    "vocabulary": [
+      {
+        "term": "Inflorescence",
+        "definition": "A reproductive shoot system bearing flowers and associated structures."
+      },
+      {
+        "term": "Floral transition",
+        "definition": "The developmental shift from primarily vegetative growth toward reproductive development."
+      },
+      {
+        "term": "Glandular trichome",
+        "definition": "A specialized epidermal structure that produces and stores resin-associated metabolites on floral tissues."
+      },
+      {
+        "term": "Maturation",
+        "definition": "Progressive developmental changes as reproductive tissues age and approach harvest."
+      },
+      {
+        "term": "Asynchronous development",
+        "definition": "Uneven developmental timing among tissues, flowers, canopy positions or plants."
+      },
+      {
+        "term": "Representative sampling",
+        "definition": "Selecting observations that reflect the broader crop rather than only the most extreme or convenient location."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Flowering is a sequence, not a date",
+        "body": "A light-schedule change can initiate reproductive development, but transition, shoot elongation, flower initiation, expansion and maturation occur over time. Record developmental events rather than treating the first day of the schedule change as equivalent to mature flowering.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Canopy position affects development",
+        "body": "Light exposure, temperature, airflow and branch position can differ within one plant. Upper and lower flowers can therefore progress at different rates, making representative multi-position observations necessary for whole-crop decisions.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Genotypes mature differently",
+        "body": "Calendar expectations are useful for planning but should remain estimates. Genotype, crop history and environment influence developmental timing, architecture and maturity indicators.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Plant condition remains part of harvest assessment",
+        "body": "Maturity observations should be interpreted with overall plant health, disease risk, environmental events and intended quality goals. A plant under acute stress may require a different decision process than an otherwise healthy crop at the same calendar age.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Trichomes provide one line of evidence",
+        "body": "Trichome morphology and appearance change during development, but sampling tissue, genotype, observation method and canopy position affect what is seen. Use trichomes as part of a multi-factor maturity assessment rather than as a universal numeric trigger.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Trend data are stronger than one observation",
+        "body": "Repeated observations reveal whether floral structures and trichome populations are still changing rapidly, stabilizing or showing senescence. A trend reduces the risk of overreacting to one atypical flower or one photograph.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Define the harvest objective",
+        "body": "Harvest readiness is tied to the intended production and quality objective as well as plant development. The decision should be documented so future batches can compare timing, crop condition and postharvest outcomes.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A cultivar reaches its advertised flowering week but representative flowers are still changing rapidly. Treat the calendar as planning context and continue evaluating actual development.",
+      "Upper flowers appear more mature than the middle and lower canopy. Sample multiple positions rather than using the most advanced top flower as the sole signal.",
+      "Two rooms of the same genotype were exposed to different environmental stress histories. Compare actual development rather than assuming identical harvest timing.",
+      "A crop shows mature-looking trichomes on sugar leaves but less mature floral bracts. Standardize the tissue being sampled before comparing observations."
+    ],
+    "commonMistakes": [
+      "Using a fixed flowering week as an automatic harvest date.",
+      "Treating one trichome percentage as universal across genotypes.",
+      "Sampling only the most exposed flower.",
+      "Mixing sugar-leaf and floral-bract observations without documenting tissue type.",
+      "Ignoring plant health and environmental history in harvest decisions.",
+      "Making decisions from one observation rather than a repeated trend."
+    ],
+    "practicalApplication": "Create a flowering-development log that records schedule transition date, structural changes, floral expansion, representative canopy sampling locations, tissue type, trichome observations, plant condition and environmental events. Compare at least three observation dates and explain whether the crop appears to be rapidly changing, approaching stability or showing signs that alter the harvest decision.",
+    "summary": "Harvest readiness is the end of a developmental sequence, not a calendar appointment. Strong flowering management combines stage tracking, representative sampling, genotype context, plant condition and repeated maturity observations."
   }
 }

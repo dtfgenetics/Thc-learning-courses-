@@ -98,18 +98,18 @@ for (const { data: item } of questions) {
     status: 'approved',
     reviewerId: attestation.reviewerId,
     reviewedAt: attestation.reviewedAt,
-    notes: `Durable exact-version approval generated from ${attestation.id}.`,
+    notes: `Durable exact-version approval generated from ${attestation.id}. Item lifecycle remains unchanged until observed pilot evidence exists.`,
     evidenceChecked: [...new Set(item.references ?? [])]
   });
 }
 
-const promotableQuestionStatuses = new Set(['draft', 'technical-review', 'editorial-review']);
+const reviewedQuestionsAwaitingPilot = questions.filter(({ data }) => !['pilot', 'active', 'retired'].includes(data.status)).length;
 const plan = {
   attestation: attestation.id,
   lessonsToApproved: lessons.filter(({ data }) => !['approved', 'published'].includes(data.status)).length,
   coursesToApproved: courses.filter(({ data }) => !['approved', 'published'].includes(data.status)).length,
   assessmentsToApproved: assessments.filter(({ data }) => !['approved', 'published'].includes(data.status)).length,
-  questionsToPilot: questions.filter(({ data }) => promotableQuestionStatuses.has(data.status)).length,
+  reviewedQuestionsAwaitingPilotEvidence: reviewedQuestionsAwaitingPilot,
   credentialsToApproved: credentials.filter(({ data }) => !['approved', 'published'].includes(data.status)).length,
   durableReviewRecordsToCreate: newReviews.length
 };
@@ -140,12 +140,6 @@ for (const entry of assessments) {
     writeJson(entry.path, entry.data);
   }
 }
-for (const entry of questions) {
-  if (promotableQuestionStatuses.has(entry.data.status)) {
-    entry.data.status = 'pilot';
-    writeJson(entry.path, entry.data);
-  }
-}
 for (const entry of credentials) {
   if (!['approved', 'published'].includes(entry.data.status)) {
     entry.data.status = 'approved';
@@ -169,10 +163,10 @@ if (fs.existsSync(readinessPath)) {
     readiness.areas.curriculum.gates.editorialReviewComplete = true;
   }
   if (readiness.areas?.assessment?.gates) {
-    readiness.areas.assessment.status = 'pilot-bank';
+    readiness.areas.assessment.status = 'review-approved-awaiting-pilot';
     readiness.areas.assessment.gates.humanAssessmentReviewComplete = true;
   }
   writeJson(readinessPath, readiness);
 }
 
-console.log('Catalog promotion written. Rebuild the global registry, run npm test, review the diff, and commit only if all gates remain green.');
+console.log('Catalog approval promotion written. Question statuses were intentionally preserved until real pilot evidence is recorded. Rebuild the global registry, run npm test, review the diff, and commit only if all gates remain green.');

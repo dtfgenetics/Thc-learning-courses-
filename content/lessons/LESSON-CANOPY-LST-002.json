@@ -1,39 +1,105 @@
 {
-  "id":"LESSON-CANOPY-LST-002",
-  "title":"Low-Stress Training, Trellising and SCROG Principles",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-CANOPY-001"],
-  "learningObjectives":["LO-CANOPY-LST-002"],
-  "estimatedMinutes":55,
-  "references":["REF-CANOPY-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Low-stress training reshapes canopy architecture primarily through gradual positioning and support rather than deliberate major tissue removal. Bending, tying, trellising and screen-based systems can redistribute shoot height and improve access, but successful use depends on tissue flexibility, anchor safety, spacing, repeated adjustment, plant response, and verification of the resulting canopy rather than on filling every available support position.",
-    "vocabulary":[
-      {"term":"Low-stress training","definition":"Canopy manipulation based mainly on gradual bending, positioning, or support without intentionally removing major tissue."},
-      {"term":"Trellis","definition":"A support system used to position, separate, and support shoots."},
-      {"term":"SCROG","definition":"Screen-of-green architecture in which shoots are distributed across a support plane to manage canopy position and spacing."},
-      {"term":"Anchor point","definition":"The location where a tie or support transfers force to a plant or support structure."},
-      {"term":"Girdling","definition":"Constriction damage caused when a tie or support compresses growing stem tissue."},
-      {"term":"Shoot spacing","definition":"The distance and distribution between active shoots within the managed canopy."}
+  "id": "LESSON-CANOPY-LST-002",
+  "title": "Low-Stress Training, Trellising and SCROG Principles",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-CANOPY-001"
+  ],
+  "learningObjectives": [
+    "LO-CANOPY-LST-002"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-CANOPY-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Low-stress training reshapes canopy architecture primarily through gradual positioning and support rather than deliberate major tissue removal. Bending, tying, trellising and screen-based systems can redistribute shoot height and improve access, but successful use depends on tissue flexibility, anchor safety, spacing, repeated adjustment, plant response, and verification of the resulting canopy rather than on filling every available support position.",
+    "vocabulary": [
+      {
+        "term": "Low-stress training",
+        "definition": "Canopy manipulation based mainly on gradual bending, positioning, or support without intentionally removing major tissue."
+      },
+      {
+        "term": "Trellis",
+        "definition": "A support system used to position, separate, and support shoots."
+      },
+      {
+        "term": "SCROG",
+        "definition": "Screen-of-green architecture in which shoots are distributed across a support plane to manage canopy position and spacing."
+      },
+      {
+        "term": "Anchor point",
+        "definition": "The location where a tie or support transfers force to a plant or support structure."
+      },
+      {
+        "term": "Girdling",
+        "definition": "Constriction damage caused when a tie or support compresses growing stem tissue."
+      },
+      {
+        "term": "Shoot spacing",
+        "definition": "The distance and distribution between active shoots within the managed canopy."
+      }
     ],
-    "sections":[
-      {"title":"Repositioning changes relative shoot advantage","body":"When a dominant shoot is lowered or redirected, its vertical advantage can be reduced while lateral shoots gain access to space and light. The response is gradual and depends on active growth rather than occurring instantly at the time of bending.","references":["REF-CANOPY-001"]},
-      {"title":"Tissue flexibility limits safe movement","body":"Young flexible shoots generally tolerate gradual repositioning better than older rigid tissue. Large forced bends can split or crush stems even when the intent is low stress, so adjustments should match tissue condition and be staged when necessary.","references":["REF-CANOPY-001"]},
-      {"title":"Anchors and ties must accommodate growth","body":"Ties should hold position without cutting into expanding tissue or creating unstable leverage. Inspect attachment points repeatedly and adjust them as stems enlarge.","references":["REF-CANOPY-001"]},
-      {"title":"A screen is a spacing tool, not a quota","body":"SCROG or trellis openings help distribute shoots, but filling every opening can create excessive density. The target is useful spatial distribution with enough access and separation for inspection, airflow and later support.","references":["REF-CANOPY-001"]},
-      {"title":"Training must preserve workflow access","body":"Branch placement should account for irrigation access, scouting, sanitation, pruning, harvest handling and support. A structurally flat canopy can still be operationally poor if workers cannot see or reach critical areas.","references":["REF-CANOPY-001"]},
-      {"title":"Reassess after continued growth","body":"Shoots change direction and length after positioning. Repeated small corrections are generally more interpretable than one extreme manipulation, and each round should be based on the canopy that exists now rather than the shape planned days earlier.","references":["REF-CANOPY-001"]},
-      {"title":"Verify the intended outcome","body":"Check whether height range, shoot spacing, crowding, access and exposure actually improved. If the canopy remains uneven, examine plant vigor, fixture geometry and spacing before assuming more bending is the answer.","references":["REF-CANOPY-001"]}
+    "sections": [
+      {
+        "title": "Repositioning changes relative shoot advantage",
+        "body": "When a dominant shoot is lowered or redirected, its vertical advantage can be reduced while lateral shoots gain access to space and light. The response is gradual and depends on active growth rather than occurring instantly at the time of bending.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Tissue flexibility limits safe movement",
+        "body": "Young flexible shoots generally tolerate gradual repositioning better than older rigid tissue. Large forced bends can split or crush stems even when the intent is low stress, so adjustments should match tissue condition and be staged when necessary.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Anchors and ties must accommodate growth",
+        "body": "Ties should hold position without cutting into expanding tissue or creating unstable leverage. Inspect attachment points repeatedly and adjust them as stems enlarge.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "A screen is a spacing tool, not a quota",
+        "body": "SCROG or trellis openings help distribute shoots, but filling every opening can create excessive density. The target is useful spatial distribution with enough access and separation for inspection, airflow and later support.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Training must preserve workflow access",
+        "body": "Branch placement should account for irrigation access, scouting, sanitation, pruning, harvest handling and support. A structurally flat canopy can still be operationally poor if workers cannot see or reach critical areas.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Reassess after continued growth",
+        "body": "Shoots change direction and length after positioning. Repeated small corrections are generally more interpretable than one extreme manipulation, and each round should be based on the canopy that exists now rather than the shape planned days earlier.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Verify the intended outcome",
+        "body": "Check whether height range, shoot spacing, crowding, access and exposure actually improved. If the canopy remains uneven, examine plant vigor, fixture geometry and spacing before assuming more bending is the answer.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      }
     ],
-    "workedExamples":[
+    "workedExamples": [
       "One leader rises far above neighboring shoots while the stem remains flexible. Gradually redirect it into available horizontal space, then watch whether laterals fill the new exposure before making another adjustment.",
       "A support screen looks sparse immediately after installation. Do not add unnecessary shoots simply to fill holes; account for expected growth and maintain enough spacing for later access.",
       "A tie that was loose a week ago begins pressing into an enlarging stem. Reposition or replace it before constriction damages tissue.",
       "The screen is level but lower leaves are hard to inspect and interior growth is congested. Reevaluate shoot density and access instead of treating height uniformity as the only success criterion."
     ],
-    "commonMistakes":[
+    "commonMistakes": [
       "Forcing large bends in rigid tissue.",
       "Using thin or fixed ties that constrict expanding stems.",
       "Treating every trellis opening as a required shoot location.",
@@ -42,7 +108,7 @@
       "Assuming flat height proves uniform exposure.",
       "Ignoring fixture and spacing limitations that training cannot fully correct."
     ],
-    "practicalApplication":"Mark the current canopy footprint, height range, flexible dominant shoots, open support positions and inspection pathways. Select one or two shoots for gradual repositioning, document tie/anchor placement, then reassess growth, constriction risk, spacing, access and canopy distribution after the plant responds. Explain whether the next step should be repositioning, branch selection, environmental correction or no further action.",
-    "summary":"Low-stress training is controlled spatial management. Gradual positioning, safe support, sensible shoot density, preserved access and repeated verification make it more useful than simply bending branches or filling a screen by habit."
+    "practicalApplication": "Mark the current canopy footprint, height range, flexible dominant shoots, open support positions and inspection pathways. Select one or two shoots for gradual repositioning, document tie/anchor placement, then reassess growth, constriction risk, spacing, access and canopy distribution after the plant responds. Explain whether the next step should be repositioning, branch selection, environmental correction or no further action.",
+    "summary": "Low-stress training is controlled spatial management. Gradual positioning, safe support, sensible shoot density, preserved access and repeated verification make it more useful than simply bending branches or filling a screen by habit."
   }
 }

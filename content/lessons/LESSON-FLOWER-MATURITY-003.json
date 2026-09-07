@@ -1,20 +1,110 @@
 {
-  "id":"LESSON-FLOWER-MATURITY-003",
-  "title":"Trichomes, Floral Maturity and Representative Harvest Assessment",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-FLOWER-001"],
-  "learningObjectives":["LO-FLOWER-MATURITY-003"],
-  "estimatedMinutes":55,
-  "references":["REF-FLOWER-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Harvest assessment is a sampling and interpretation problem. Glandular trichomes, floral structures and overall plant condition change during maturation, but development is asynchronous across genotypes, plants, canopy positions and tissues. Reliable decisions use standardized tissue selection, repeated observations, representative sampling and multiple indicators instead of a fixed week or one amber-percentage rule.",
-    "vocabulary":[{"term":"Glandular trichome","definition":"A specialized resin-producing epidermal structure found prominently on cannabis floral tissues."},{"term":"Representative sample","definition":"An observation selected to reflect the broader crop rather than an extreme or convenient location."},{"term":"Asynchronous maturation","definition":"Uneven maturation among tissues, flowers, canopy positions or plants."},{"term":"Sampling frame","definition":"The defined set of locations or units from which representative observations are selected."},{"term":"Observation bias","definition":"Systematic distortion caused by selecting or interpreting observations in a way that overrepresents certain outcomes."}],
-    "sections":[{"title":"Standardize the tissue being examined","body":"Trichomes on sugar leaves and floral bracts can differ in age and exposure. Choose a consistent floral tissue and document it so observations across dates and plants are comparable.","references":["REF-FLOWER-001"]},{"title":"Sample across the canopy","body":"Upper, middle and lower positions can differ in light, temperature and developmental timing. A representative sampling frame should include multiple comparable positions rather than only the most mature tops.","references":["REF-FLOWER-001"]},{"title":"Use the same observation method","body":"Magnification, lighting, camera exposure and observer interpretation can change apparent trichome color. Consistent equipment and viewing conditions improve trend comparisons and reduce false precision.","references":["REF-FLOWER-001"]},{"title":"Color categories are descriptive, not universal thresholds","body":"Clear, cloudy and amber appearance can be useful descriptive categories, but genotype, tissue age, position and method affect the distribution. Avoid treating one percentage as a universal biological law.","references":["REF-FLOWER-001"]},{"title":"Combine floral structure with trichome observations","body":"Bract development, pistil changes, flower expansion and plant condition provide additional context. Multi-indicator assessment is stronger than any one visual metric alone.","references":["REF-FLOWER-001"]},{"title":"Track trends over time","body":"Repeated observations show whether maturity indicators are still shifting rapidly, stabilizing or becoming more uneven. Trend direction often matters more than the apparent precision of a single count.","references":["REF-FLOWER-001"]},{"title":"Document the harvest decision and outcome","body":"Record the evidence used for harvest timing and connect it later with postharvest quality observations. This creates a feedback loop for future genotype-specific decisions instead of relying on memory.","references":["REF-FLOWER-001"]}],
-    "workedExamples":["Top flowers show more amber than mid-canopy flowers. The correct response is to document both positions rather than extrapolating from the top alone.","Two observers classify the same image differently. Standardize magnification and viewing conditions and treat subjective color categories with appropriate uncertainty.","A crop is at the expected calendar week but representative maturity observations are still shifting rapidly. Continue evaluating plant evidence rather than harvesting solely because the week number was reached.","A grower samples only sugar leaves because they are easy to access. The method may overrepresent more mature tissue, so future comparisons should use a defined floral tissue instead."],
-    "commonMistakes":["Sampling only sugar leaves instead of comparable floral tissues.","Using one magnified image to represent an entire plant or room.","Applying a universal amber percentage across cultivars.","Changing magnification or lighting between observation dates.","Ignoring canopy position and tissue type.","Reporting a precise percentage from a very small or biased sample.","Failing to connect the harvest decision to later quality outcomes."],
-    "practicalApplication":"Define a maturity sampling frame with upper, middle and lower canopy positions and a standardized floral tissue. Use the same magnification and lighting method on several dates. Record trichome categories, floral structure, plant condition and environmental notes, then explain how the trend supports or does not yet support harvest readiness.",
-    "summary":"Maturity assessment is strongest when sampling and observation methods are standardized. Representative tissues, multiple canopy positions, repeated trends and several developmental indicators produce a more defensible harvest decision than fixed calendar dates or universal trichome-color thresholds."
+  "id": "LESSON-FLOWER-MATURITY-003",
+  "title": "Trichomes, Floral Maturity and Representative Harvest Assessment",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-FLOWER-001"
+  ],
+  "learningObjectives": [
+    "LO-FLOWER-MATURITY-003"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-FLOWER-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest assessment is a sampling and interpretation problem. Glandular trichomes, floral structures and overall plant condition change during maturation, but development is asynchronous across genotypes, plants, canopy positions and tissues. Reliable decisions use standardized tissue selection, repeated observations, representative sampling and multiple indicators instead of a fixed week or one amber-percentage rule.",
+    "vocabulary": [
+      {
+        "term": "Glandular trichome",
+        "definition": "A specialized resin-producing epidermal structure found prominently on cannabis floral tissues."
+      },
+      {
+        "term": "Representative sample",
+        "definition": "An observation selected to reflect the broader crop rather than an extreme or convenient location."
+      },
+      {
+        "term": "Asynchronous maturation",
+        "definition": "Uneven maturation among tissues, flowers, canopy positions or plants."
+      },
+      {
+        "term": "Sampling frame",
+        "definition": "The defined set of locations or units from which representative observations are selected."
+      },
+      {
+        "term": "Observation bias",
+        "definition": "Systematic distortion caused by selecting or interpreting observations in a way that overrepresents certain outcomes."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Standardize the tissue being examined",
+        "body": "Trichomes on sugar leaves and floral bracts can differ in age and exposure. Choose a consistent floral tissue and document it so observations across dates and plants are comparable.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Sample across the canopy",
+        "body": "Upper, middle and lower positions can differ in light, temperature and developmental timing. A representative sampling frame should include multiple comparable positions rather than only the most mature tops.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Use the same observation method",
+        "body": "Magnification, lighting, camera exposure and observer interpretation can change apparent trichome color. Consistent equipment and viewing conditions improve trend comparisons and reduce false precision.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Color categories are descriptive, not universal thresholds",
+        "body": "Clear, cloudy and amber appearance can be useful descriptive categories, but genotype, tissue age, position and method affect the distribution. Avoid treating one percentage as a universal biological law.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Combine floral structure with trichome observations",
+        "body": "Bract development, pistil changes, flower expansion and plant condition provide additional context. Multi-indicator assessment is stronger than any one visual metric alone.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Track trends over time",
+        "body": "Repeated observations show whether maturity indicators are still shifting rapidly, stabilizing or becoming more uneven. Trend direction often matters more than the apparent precision of a single count.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Document the harvest decision and outcome",
+        "body": "Record the evidence used for harvest timing and connect it later with postharvest quality observations. This creates a feedback loop for future genotype-specific decisions instead of relying on memory.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Top flowers show more amber than mid-canopy flowers. The correct response is to document both positions rather than extrapolating from the top alone.",
+      "Two observers classify the same image differently. Standardize magnification and viewing conditions and treat subjective color categories with appropriate uncertainty.",
+      "A crop is at the expected calendar week but representative maturity observations are still shifting rapidly. Continue evaluating plant evidence rather than harvesting solely because the week number was reached.",
+      "A grower samples only sugar leaves because they are easy to access. The method may overrepresent more mature tissue, so future comparisons should use a defined floral tissue instead."
+    ],
+    "commonMistakes": [
+      "Sampling only sugar leaves instead of comparable floral tissues.",
+      "Using one magnified image to represent an entire plant or room.",
+      "Applying a universal amber percentage across cultivars.",
+      "Changing magnification or lighting between observation dates.",
+      "Ignoring canopy position and tissue type.",
+      "Reporting a precise percentage from a very small or biased sample.",
+      "Failing to connect the harvest decision to later quality outcomes."
+    ],
+    "practicalApplication": "Define a maturity sampling frame with upper, middle and lower canopy positions and a standardized floral tissue. Use the same magnification and lighting method on several dates. Record trichome categories, floral structure, plant condition and environmental notes, then explain how the trend supports or does not yet support harvest readiness.",
+    "summary": "Maturity assessment is strongest when sampling and observation methods are standardized. Representative tissues, multiple canopy positions, repeated trends and several developmental indicators produce a more defensible harvest decision than fixed calendar dates or universal trichome-color thresholds."
   }
 }

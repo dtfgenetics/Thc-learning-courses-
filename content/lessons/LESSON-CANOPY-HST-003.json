@@ -1,39 +1,105 @@
 {
-  "id":"LESSON-CANOPY-HST-003",
-  "title":"Topping, High-Stress Training and Recovery Management",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-CANOPY-001"],
-  "learningObjectives":["LO-CANOPY-HST-003"],
-  "estimatedMinutes":55,
-  "references":["REF-CANOPY-001"],
-  "assessment":null,
-  "content":{
-    "overview":"High-stress training intentionally removes or substantially damages tissue to change architecture. Topping and related interventions can redistribute shoot dominance and create new structural options, but they also create wounds and recovery costs. A defensible decision therefore balances the structural objective against plant vigor, developmental timing, sanitation, environmental stability, prior stress and the time available for recovery.",
-    "vocabulary":[
-      {"term":"Topping","definition":"Removal of an active shoot apex to alter apical dominance and subsequent branch development."},
-      {"term":"High-stress training","definition":"Canopy manipulation that intentionally removes, cuts, crushes, or substantially damages tissue to redirect growth."},
-      {"term":"Recovery interval","definition":"The observation period required for a plant to resume stable vigorous development after an intervention."},
-      {"term":"Wound","definition":"A site where tissue integrity has been disrupted by cutting or damage."},
-      {"term":"Branch selection","definition":"Deliberate retention or removal of shoots according to a defined canopy architecture goal."},
-      {"term":"Compounding stress","definition":"The combined burden created when multiple stressors or interventions occur before recovery from earlier stress."}
+  "id": "LESSON-CANOPY-HST-003",
+  "title": "Topping, High-Stress Training and Recovery Management",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-CANOPY-001"
+  ],
+  "learningObjectives": [
+    "LO-CANOPY-HST-003"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-CANOPY-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "High-stress training intentionally removes or substantially damages tissue to change architecture. Topping and related interventions can redistribute shoot dominance and create new structural options, but they also create wounds and recovery costs. A defensible decision therefore balances the structural objective against plant vigor, developmental timing, sanitation, environmental stability, prior stress and the time available for recovery.",
+    "vocabulary": [
+      {
+        "term": "Topping",
+        "definition": "Removal of an active shoot apex to alter apical dominance and subsequent branch development."
+      },
+      {
+        "term": "High-stress training",
+        "definition": "Canopy manipulation that intentionally removes, cuts, crushes, or substantially damages tissue to redirect growth."
+      },
+      {
+        "term": "Recovery interval",
+        "definition": "The observation period required for a plant to resume stable vigorous development after an intervention."
+      },
+      {
+        "term": "Wound",
+        "definition": "A site where tissue integrity has been disrupted by cutting or damage."
+      },
+      {
+        "term": "Branch selection",
+        "definition": "Deliberate retention or removal of shoots according to a defined canopy architecture goal."
+      },
+      {
+        "term": "Compounding stress",
+        "definition": "The combined burden created when multiple stressors or interventions occur before recovery from earlier stress."
+      }
     ],
-    "sections":[
-      {"title":"Start from the architectural objective","body":"Topping is useful only when changing shoot hierarchy serves a defined canopy goal. If height can be corrected by repositioning or spacing changes, a tissue-removing intervention may add recovery cost without a corresponding benefit.","references":["REF-CANOPY-001"]},
-      {"title":"Plant condition determines recovery capacity","body":"Vigorous actively growing plants generally have more capacity to recover from tissue removal than plants experiencing transplant stress, unstable root-zone conditions, disease pressure or major environmental stress. Evaluate the whole plant before deciding that a cut is timely.","references":["REF-CANOPY-001"]},
-      {"title":"Timing is biological, not merely calendrical","body":"A scheduled training day does not prove readiness. High-stress interventions should leave enough recovery time before important developmental transitions, and repeated late interventions may delay or destabilize canopy development.","references":["REF-CANOPY-001"]},
-      {"title":"Sanitation and cut quality matter","body":"Cuts create wounds. Tools should be clean and suitable for the tissue, and the intervention should avoid unnecessary crushing or tearing. If disease or contamination concerns are present, training workflow should account for movement between plants and sanitation procedures.","references":["REF-CANOPY-001"]},
-      {"title":"More shoots are not automatically better","body":"Removing one dominant apex can produce multiple competing shoots. Retaining every response shoot can recreate crowding and uneven exposure, so later branch selection should follow the target architecture and available canopy space.","references":["REF-CANOPY-001"]},
-      {"title":"Recovery should be measured before another intervention","body":"Track renewed extension growth, leaf posture, wound condition, root-zone stability and general plant vigor. A plant that has not clearly recovered should not receive another major stress solely because the next step appears on a schedule.","references":["REF-CANOPY-001"]},
-      {"title":"Separate intervention effects from other stressors","body":"If growth slows after topping while environment or irrigation also changed, the response is confounded. Preserve records of timing and other variables so recovery problems are not automatically attributed to the training event or to unrelated nutrition.","references":["REF-CANOPY-001"]}
+    "sections": [
+      {
+        "title": "Start from the architectural objective",
+        "body": "Topping is useful only when changing shoot hierarchy serves a defined canopy goal. If height can be corrected by repositioning or spacing changes, a tissue-removing intervention may add recovery cost without a corresponding benefit.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Plant condition determines recovery capacity",
+        "body": "Vigorous actively growing plants generally have more capacity to recover from tissue removal than plants experiencing transplant stress, unstable root-zone conditions, disease pressure or major environmental stress. Evaluate the whole plant before deciding that a cut is timely.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Timing is biological, not merely calendrical",
+        "body": "A scheduled training day does not prove readiness. High-stress interventions should leave enough recovery time before important developmental transitions, and repeated late interventions may delay or destabilize canopy development.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Sanitation and cut quality matter",
+        "body": "Cuts create wounds. Tools should be clean and suitable for the tissue, and the intervention should avoid unnecessary crushing or tearing. If disease or contamination concerns are present, training workflow should account for movement between plants and sanitation procedures.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "More shoots are not automatically better",
+        "body": "Removing one dominant apex can produce multiple competing shoots. Retaining every response shoot can recreate crowding and uneven exposure, so later branch selection should follow the target architecture and available canopy space.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Recovery should be measured before another intervention",
+        "body": "Track renewed extension growth, leaf posture, wound condition, root-zone stability and general plant vigor. A plant that has not clearly recovered should not receive another major stress solely because the next step appears on a schedule.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Separate intervention effects from other stressors",
+        "body": "If growth slows after topping while environment or irrigation also changed, the response is confounded. Preserve records of timing and other variables so recovery problems are not automatically attributed to the training event or to unrelated nutrition.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      }
     ],
-    "workedExamples":[
+    "workedExamples": [
       "A vigorous vegetative plant has excessive vertical dominance and ample recovery time. Topping may be justified if the target architecture requires multiple lateral leaders and simpler repositioning would not solve the height problem.",
       "A recently transplanted plant is tall but growth has slowed and root-zone moisture is unstable. Delay high-stress training and restore stable vigor before reconsidering the structural intervention.",
       "Several new leaders emerge after topping and begin crowding one another. Select branches according to target spacing rather than keeping every new shoot because it represents a 'top.'",
       "A plant shows poor recovery after a cut that coincided with a heat event. Evaluate the combined stress history rather than assuming the cut alone explains the response."
     ],
-    "commonMistakes":[
+    "commonMistakes": [
       "Topping because a calendar says it is time rather than because the plant and canopy are ready.",
       "Using high-stress training when a lower-stress architecture change would meet the same goal.",
       "Using contaminated, dull or crushing tools.",
@@ -42,7 +108,7 @@
       "Calling slowed growth a nutrient deficiency without considering the recent intervention and environmental history.",
       "Applying major training immediately before a developmental transition without allowing recovery time."
     ],
-    "practicalApplication":"Before a simulated high-stress intervention, write the architectural objective, plant stage, vigor evidence, current root-zone/environment status, proposed cut location, sanitation steps and minimum recovery observations required before another intervention. After the simulated response, decide which shoots to retain and explain what evidence would indicate recovery, excessive stress, or the need to stop training.",
-    "summary":"High-stress training is a cost-benefit decision, not a routine. The strongest use of topping and related techniques ties a clear structural objective to vigorous plant condition, clean technique, adequate recovery time and measured post-intervention response."
+    "practicalApplication": "Before a simulated high-stress intervention, write the architectural objective, plant stage, vigor evidence, current root-zone/environment status, proposed cut location, sanitation steps and minimum recovery observations required before another intervention. After the simulated response, decide which shoots to retain and explain what evidence would indicate recovery, excessive stress, or the need to stop training.",
+    "summary": "High-stress training is a cost-benefit decision, not a routine. The strongest use of topping and related techniques ties a clear structural objective to vigorous plant condition, clean technique, adequate recovery time and measured post-intervention response."
   }
 }

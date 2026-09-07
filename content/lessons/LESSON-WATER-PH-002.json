@@ -2,29 +2,92 @@
   "id": "LESSON-WATER-PH-002",
   "title": "pH Measurement, Buffering and Nutrient Availability Context",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-WATER-001"],
-  "learningObjectives": ["LO-WATER-PH-002"],
+  "status": "approved",
+  "competencies": [
+    "COMP-WATER-001"
+  ],
+  "learningObjectives": [
+    "LO-WATER-PH-002"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-IRRIGATION-001"],
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "pH describes acidity or basicity and strongly influences chemical reactions and nutrient availability, but a pH value alone cannot diagnose a root-zone problem. Reliable interpretation requires good sampling, calibrated instruments, an understanding of alkalinity and buffering, and comparison with EC, irrigation history, root health, and plant response.",
     "vocabulary": [
-      {"term": "pH", "definition": "A logarithmic measure related to hydrogen ion activity in a solution."},
-      {"term": "Buffering", "definition": "Resistance of a solution or medium to rapid pH change when acids or bases are added."},
-      {"term": "Alkalinity", "definition": "The acid-neutralizing capacity of water, commonly associated with bicarbonate and carbonate species."},
-      {"term": "Calibration", "definition": "Adjustment or verification of an instrument against known standards so its readings can be interpreted with confidence."},
-      {"term": "Root-zone pH", "definition": "The acidity or basicity measured or inferred in the plant root environment rather than only in the irrigation solution."}
+      {
+        "term": "pH",
+        "definition": "A logarithmic measure related to hydrogen ion activity in a solution."
+      },
+      {
+        "term": "Buffering",
+        "definition": "Resistance of a solution or medium to rapid pH change when acids or bases are added."
+      },
+      {
+        "term": "Alkalinity",
+        "definition": "The acid-neutralizing capacity of water, commonly associated with bicarbonate and carbonate species."
+      },
+      {
+        "term": "Calibration",
+        "definition": "Adjustment or verification of an instrument against known standards so its readings can be interpreted with confidence."
+      },
+      {
+        "term": "Root-zone pH",
+        "definition": "The acidity or basicity measured or inferred in the plant root environment rather than only in the irrigation solution."
+      }
     ],
     "sections": [
-      {"title": "pH and alkalinity describe different properties", "body": "Two water sources can have similar pH while having very different buffering capacity. Alkalinity describes acid-neutralizing capacity and can influence how strongly irrigation water resists pH adjustment and how root-zone pH behaves over repeated irrigations.", "references": ["REF-IRRIGATION-001"]},
-      {"title": "Measurement quality comes before correction", "body": "Meters require clean probes, correct storage, appropriate calibration solutions, adequate sample volume, and enough time to stabilize. Temperature, contamination, old standards, and dried probes can create misleading values. A surprising reading should be verified before crop-management changes are made.", "references": ["REF-IRRIGATION-001"]},
-      {"title": "Sampling method changes what the number means", "body": "Source water, mixed nutrient solution, runoff, drain water, and media extracts answer different questions. Results should identify where and how the sample was collected so readings are not compared as though they represented the same part of the system.", "references": ["REF-IRRIGATION-001"]},
-      {"title": "pH influences nutrient chemistry", "body": "The solubility, ionic form, and availability of nutrients can change with pH. However, apparent deficiency symptoms can also result from root damage, water stress, salinity, nutrient imbalance, temperature, or uptake limitations. pH is evidence to integrate, not a diagnosis by itself.", "references": ["REF-IRRIGATION-001"]},
-      {"title": "Root-zone trends are often more useful than isolated values", "body": "Repeated measurements can reveal whether pH is stable, drifting upward, or drifting downward. Trend direction should be interpreted with feed composition, source-water alkalinity, substrate properties, irrigation frequency, runoff behavior, and EC. A stable trend can be more informative than a single value that falls slightly outside a preferred range.", "references": ["REF-IRRIGATION-001"]},
-      {"title": "Avoid over-correction", "body": "Repeated aggressive pH adjustment can create oscillation, excessive acid or base addition, or unintended changes in solution chemistry. Make the smallest justified correction, allow the system to respond, and verify the result with repeat measurements rather than chasing every small fluctuation.", "references": ["REF-IRRIGATION-001"]},
-      {"title": "Document the full measurement context", "body": "A useful pH record includes date and time, sample source, meter identity, calibration status, solution temperature when relevant, EC, irrigation recipe, and observations of plant and root-zone condition. Context converts a number into evidence that can support troubleshooting and long-term management.", "references": ["REF-IRRIGATION-001"]}
+      {
+        "title": "pH and alkalinity describe different properties",
+        "body": "Two water sources can have similar pH while having very different buffering capacity. Alkalinity describes acid-neutralizing capacity and can influence how strongly irrigation water resists pH adjustment and how root-zone pH behaves over repeated irrigations.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Measurement quality comes before correction",
+        "body": "Meters require clean probes, correct storage, appropriate calibration solutions, adequate sample volume, and enough time to stabilize. Temperature, contamination, old standards, and dried probes can create misleading values. A surprising reading should be verified before crop-management changes are made.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Sampling method changes what the number means",
+        "body": "Source water, mixed nutrient solution, runoff, drain water, and media extracts answer different questions. Results should identify where and how the sample was collected so readings are not compared as though they represented the same part of the system.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "pH influences nutrient chemistry",
+        "body": "The solubility, ionic form, and availability of nutrients can change with pH. However, apparent deficiency symptoms can also result from root damage, water stress, salinity, nutrient imbalance, temperature, or uptake limitations. pH is evidence to integrate, not a diagnosis by itself.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Root-zone trends are often more useful than isolated values",
+        "body": "Repeated measurements can reveal whether pH is stable, drifting upward, or drifting downward. Trend direction should be interpreted with feed composition, source-water alkalinity, substrate properties, irrigation frequency, runoff behavior, and EC. A stable trend can be more informative than a single value that falls slightly outside a preferred range.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Avoid over-correction",
+        "body": "Repeated aggressive pH adjustment can create oscillation, excessive acid or base addition, or unintended changes in solution chemistry. Make the smallest justified correction, allow the system to respond, and verify the result with repeat measurements rather than chasing every small fluctuation.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Document the full measurement context",
+        "body": "A useful pH record includes date and time, sample source, meter identity, calibration status, solution temperature when relevant, EC, irrigation recipe, and observations of plant and root-zone condition. Context converts a number into evidence that can support troubleshooting and long-term management.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
     ],
     "workedExamples": [
       "If source-water pH appears stable but root-zone pH drifts upward over time, investigate alkalinity, irrigation frequency, substrate behavior, and feed chemistry rather than only lowering feed pH more aggressively.",

@@ -1,3 +1,121 @@
 {
-  "id":"LESSON-IPM-BIOSEC-003","title":"Sanitation, Quarantine and Cultivation Biosecurity","version":"1.1.0","status":"draft","competencies":["COMP-IPM-001"],"learningObjectives":["LO-IPM-BIOSEC-003"],"estimatedMinutes":55,"references":["REF-IPM-001"],"assessment":null,
-  "content":{"overview":"Cultivation biosecurity manages pathways by which pests and pathogens can enter, persist and move. Effective programs combine source control, quarantine, inspection, clean-to-dirty workflow, tool and personnel hygiene, waste handling, environmental prevention, documentation and a predefined response to suspicious material.","vocabulary":[{"term":"Quarantine","definition":"Temporary separation and observation of incoming or suspect biological material before movement into a lower-risk crop area."},{"term":"Sanitation","definition":"Cleaning and related practices used to reduce pest or pathogen survival and movement."},{"term":"Fomite","definition":"An inanimate object that can mechanically carry biological material between locations."},{"term":"Vector","definition":"A living organism capable of moving a pathogen or pest-related agent between hosts or locations."},{"term":"Biosecurity","definition":"A coordinated system intended to reduce biological introduction, establishment and spread."},{"term":"Clean-to-dirty workflow","definition":"A movement sequence that performs work in lower-risk areas before higher-risk or known-contaminated areas to reduce cross-transfer."}],"sections":[{"title":"Map introduction pathways","body":"Incoming clones, mother plants, seeds and media, reused containers, tools, clothing, carts, visitors, air movement, water and waste pathways can differ in risk. A biosecurity plan begins by mapping plausible entry and transfer routes rather than relying on one disinfectant step.","references":["REF-IPM-001"]},{"title":"Quarantine is a process, not a parking area","body":"Incoming material should remain physically and operationally separated while it is inspected through an appropriate observation period. Define who enters, which tools remain dedicated, how material is sampled, what findings trigger escalation and what criteria permit release.","references":["REF-IPM-001"]},{"title":"Cleaning and disinfection are different operations","body":"Physical removal of debris and organic material is often necessary before a disinfectant can contact the intended surface effectively. Product choice, concentration, contact time, surface compatibility and worker-safety requirements must follow the applicable label and safety information.","references":["REF-IPM-001"]},{"title":"Control tool and personnel movement","body":"Shared scissors, stakes, carts, gloves, clothing and hands can transfer material between plants and rooms. Dedicated tools, defined sanitation points and clean-to-dirty work order reduce opportunities for mechanical spread.","references":["REF-IPM-001"]},{"title":"Manage plant debris, standing water and waste flow","body":"Discarded tissue, spilled media, drainage areas and waste containers can provide persistence or transfer pathways. Removal schedules and routes should avoid carrying high-risk material back through cleaner production areas.","references":["REF-IPM-001"]},{"title":"Environment influences disease establishment","body":"Dense stagnant canopies, persistent surface moisture, stressed roots and poorly controlled humidity can make establishment more likely even when introduction cannot be completely prevented. Environmental management is therefore part of biosecurity rather than a separate topic.","references":["REF-IPM-001"]},{"title":"Respond to suspicious material consistently","body":"Predetermine how suspect plants are marked, isolated, sampled, documented and handled; who is notified; and how neighboring material is inspected. Improvised responses increase the chance that people and tools spread the problem during investigation.","references":["REF-IPM-001"]},{"title":"Audit the system after an event","body":"When an introduction occurs, reconstruct likely pathways and identify which barriers failed or were absent. Corrective action should improve the system rather than only removing the visibly affected plant.","references":["REF-IPM-001"]}],"workedExamples":["Incoming clones appear healthy. They still remain in quarantine because early pest stages, low populations or latent disease may not be apparent during one inspection.","Workers prune a known problem room and then enter propagation with the same tools. The movement sequence defeats otherwise good sanitation; reverse the workflow and use dedicated or properly processed tools.","A disinfectant is applied to benches covered with plant debris. Cleaning should occur first according to the sanitation procedure because debris can interfere with surface contact.","A recurring problem appears near a waste route. The corrective action includes redesigning waste movement and cleaning responsibilities, not merely treating nearby plants again."],"commonMistakes":["Bringing incoming plant material directly into production.","Calling a separated area quarantine without controlling tools, personnel or release criteria.","Using the same tools across rooms without a defined sanitation process.","Confusing cleaning with disinfection.","Ignoring waste, drainage and traffic pathways.","Treating biosecurity as chemical disinfection only.","Failing to document and investigate how an introduction likely occurred."],"practicalApplication":"Draw a biosecurity flow map covering receiving, quarantine, propagation, production, tools, staff, visitors, water/drainage and waste. Mark clean-to-dirty direction, dedicated equipment, sanitation points and isolation areas. Add a written suspect-material response with hold, inspection, sampling, escalation, release and disposal decisions.","summary":"Biosecurity works through layers. Source control and quarantine reduce introduction risk; controlled movement and sanitation reduce transfer; environmental management reduces establishment; and a predefined incident response limits spread and turns failures into system improvements."}}
+  "id": "LESSON-IPM-BIOSEC-003",
+  "title": "Sanitation, Quarantine and Cultivation Biosecurity",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-IPM-001"
+  ],
+  "learningObjectives": [
+    "LO-IPM-BIOSEC-003"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cultivation biosecurity manages pathways by which pests and pathogens can enter, persist and move. Effective programs combine source control, quarantine, inspection, clean-to-dirty workflow, tool and personnel hygiene, waste handling, environmental prevention, documentation and a predefined response to suspicious material.",
+    "vocabulary": [
+      {
+        "term": "Quarantine",
+        "definition": "Temporary separation and observation of incoming or suspect biological material before movement into a lower-risk crop area."
+      },
+      {
+        "term": "Sanitation",
+        "definition": "Cleaning and related practices used to reduce pest or pathogen survival and movement."
+      },
+      {
+        "term": "Fomite",
+        "definition": "An inanimate object that can mechanically carry biological material between locations."
+      },
+      {
+        "term": "Vector",
+        "definition": "A living organism capable of moving a pathogen or pest-related agent between hosts or locations."
+      },
+      {
+        "term": "Biosecurity",
+        "definition": "A coordinated system intended to reduce biological introduction, establishment and spread."
+      },
+      {
+        "term": "Clean-to-dirty workflow",
+        "definition": "A movement sequence that performs work in lower-risk areas before higher-risk or known-contaminated areas to reduce cross-transfer."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Map introduction pathways",
+        "body": "Incoming clones, mother plants, seeds and media, reused containers, tools, clothing, carts, visitors, air movement, water and waste pathways can differ in risk. A biosecurity plan begins by mapping plausible entry and transfer routes rather than relying on one disinfectant step.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Quarantine is a process, not a parking area",
+        "body": "Incoming material should remain physically and operationally separated while it is inspected through an appropriate observation period. Define who enters, which tools remain dedicated, how material is sampled, what findings trigger escalation and what criteria permit release.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Cleaning and disinfection are different operations",
+        "body": "Physical removal of debris and organic material is often necessary before a disinfectant can contact the intended surface effectively. Product choice, concentration, contact time, surface compatibility and worker-safety requirements must follow the applicable label and safety information.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Control tool and personnel movement",
+        "body": "Shared scissors, stakes, carts, gloves, clothing and hands can transfer material between plants and rooms. Dedicated tools, defined sanitation points and clean-to-dirty work order reduce opportunities for mechanical spread.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Manage plant debris, standing water and waste flow",
+        "body": "Discarded tissue, spilled media, drainage areas and waste containers can provide persistence or transfer pathways. Removal schedules and routes should avoid carrying high-risk material back through cleaner production areas.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Environment influences disease establishment",
+        "body": "Dense stagnant canopies, persistent surface moisture, stressed roots and poorly controlled humidity can make establishment more likely even when introduction cannot be completely prevented. Environmental management is therefore part of biosecurity rather than a separate topic.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Respond to suspicious material consistently",
+        "body": "Predetermine how suspect plants are marked, isolated, sampled, documented and handled; who is notified; and how neighboring material is inspected. Improvised responses increase the chance that people and tools spread the problem during investigation.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Audit the system after an event",
+        "body": "When an introduction occurs, reconstruct likely pathways and identify which barriers failed or were absent. Corrective action should improve the system rather than only removing the visibly affected plant.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Incoming clones appear healthy. They still remain in quarantine because early pest stages, low populations or latent disease may not be apparent during one inspection.",
+      "Workers prune a known problem room and then enter propagation with the same tools. The movement sequence defeats otherwise good sanitation; reverse the workflow and use dedicated or properly processed tools.",
+      "A disinfectant is applied to benches covered with plant debris. Cleaning should occur first according to the sanitation procedure because debris can interfere with surface contact.",
+      "A recurring problem appears near a waste route. The corrective action includes redesigning waste movement and cleaning responsibilities, not merely treating nearby plants again."
+    ],
+    "commonMistakes": [
+      "Bringing incoming plant material directly into production.",
+      "Calling a separated area quarantine without controlling tools, personnel or release criteria.",
+      "Using the same tools across rooms without a defined sanitation process.",
+      "Confusing cleaning with disinfection.",
+      "Ignoring waste, drainage and traffic pathways.",
+      "Treating biosecurity as chemical disinfection only.",
+      "Failing to document and investigate how an introduction likely occurred."
+    ],
+    "practicalApplication": "Draw a biosecurity flow map covering receiving, quarantine, propagation, production, tools, staff, visitors, water/drainage and waste. Mark clean-to-dirty direction, dedicated equipment, sanitation points and isolation areas. Add a written suspect-material response with hold, inspection, sampling, escalation, release and disposal decisions.",
+    "summary": "Biosecurity works through layers. Source control and quarantine reduce introduction risk; controlled movement and sanitation reduce transfer; environmental management reduces establishment; and a predefined incident response limits spread and turns failures into system improvements."
+  }
+}
