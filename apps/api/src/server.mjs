@@ -125,8 +125,8 @@ async function readJsonBody(req, { maxBytes = 16 * 1024 } = {}) {
   catch { throw new Error('invalid-json-body'); }
 }
 
-function authorizeRequest(authorize, req, scope, res, requestId) {
-  const auth = authorize(req, scope);
+async function authorizeRequest(authorize, req, scope, res, requestId) {
+  const auth = await authorize(req, scope);
   if (auth.ok) return auth;
   if (auth.status === 401) res.setHeader('www-authenticate', 'Bearer realm="thc-academy-api"');
   json(res, auth.status, { error: auth.error, requestId });
@@ -243,7 +243,7 @@ export function createHandler({
       const assessmentHistoryMatch = url.pathname.match(/^\/api\/v1\/me\/assessments\/(ASSESS-[A-Z0-9-]+)\/attempts$/);
       if (req.method === 'GET' && assessmentHistoryMatch) {
         route = 'GET /api/v1/me/assessments/:assessmentId/attempts';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.listAssessmentAttempts !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
         const policyDefinition = resolvedAssessmentDelivery.policyDefinition(assessmentHistoryMatch[1]);
@@ -275,7 +275,7 @@ export function createHandler({
       const assessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/assessments\/(ASSESS-[A-Z0-9-]+)\/attempts$/);
 if (req.method === 'POST' && assessmentStartMatch) {
   route = 'POST /api/v1/me/assessments/:assessmentId/attempts';
-  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+  const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
   if (!auth) return;
   if (!learnerStore || typeof learnerStore.createAssessmentAttempt !== 'function' || typeof learnerStore.listAssessmentAttempts !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
   try {
@@ -303,7 +303,7 @@ if (req.method === 'POST' && assessmentStartMatch) {
 const assessmentAttemptMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]+)$/);
 if (req.method === 'GET' && assessmentAttemptMatch) {
   route = 'GET /api/v1/me/assessment-attempts/:attemptId';
-  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+  const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
   if (!auth) return;
   if (!learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
   const attempt = await learnerStore.getAssessmentAttempt(auth.subject, assessmentAttemptMatch[1]);
@@ -314,7 +314,7 @@ if (req.method === 'GET' && assessmentAttemptMatch) {
 const assessmentSubmitMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]+)\/submit$/);
 if (req.method === 'POST' && assessmentSubmitMatch) {
   route = 'POST /api/v1/me/assessment-attempts/:attemptId/submit';
-  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+  const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
   if (!auth) return;
   if (!learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function' || typeof learnerStore.saveSubmittedAssessmentAttempt !== 'function' || typeof learnerStore.saveScoredAssessmentAttempt !== 'function') {
     return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
@@ -346,7 +346,7 @@ if (req.method === 'POST' && assessmentSubmitMatch) {
 
       if (req.method === 'GET' && url.pathname === '/api/v1/me/enrollments') {
         route = 'GET /api/v1/me/enrollments';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.listEnrollments !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         const enrollments = await learnerStore.listEnrollments(auth.subject);
@@ -355,7 +355,7 @@ if (req.method === 'POST' && assessmentSubmitMatch) {
 
       if (req.method === 'POST' && url.pathname === '/api/v1/me/enrollments') {
         route = 'POST /api/v1/me/enrollments';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.enroll !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         let body;
@@ -372,7 +372,7 @@ if (req.method === 'POST' && assessmentSubmitMatch) {
 
       if (req.method === 'GET' && url.pathname === '/api/v1/me/progress') {
         route = 'GET /api/v1/me/progress';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         const progress = await learnerStore.listProgress(auth.subject);
@@ -382,7 +382,7 @@ if (req.method === 'POST' && assessmentSubmitMatch) {
       const courseCompletionMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/completion$/);
 if (req.method === 'GET' && courseCompletionMatch) {
   route = 'GET /api/v1/me/courses/:courseId/completion';
-  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+  const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
   if (!auth) return;
   if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
   const course = loadCourseDefinition(courseCompletionMatch[1]);
@@ -410,7 +410,7 @@ if (req.method === 'GET' && courseCompletionMatch) {
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
       if (req.method === 'GET' && credentialProgressMatch) {
         route = 'GET /api/v1/me/credentials/:credentialId/progress';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.listCredentialEvidence !== 'function') return json(res, 503, { error: 'learner-evidence-persistence-unavailable', requestId });
         const credential = loadCredentialDefinition(credentialProgressMatch[1]);
@@ -425,7 +425,7 @@ if (req.method === 'GET' && courseCompletionMatch) {
       const lessonProgressMatch = url.pathname.match(/^\/api\/v1\/me\/lessons\/(LESSON-[A-Z0-9-]+)$/);
       if (req.method === 'PUT' && lessonProgressMatch) {
         route = 'PUT /api/v1/me/lessons/:lessonId';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.setLessonProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         let body;
@@ -443,7 +443,7 @@ if (req.method === 'GET' && courseCompletionMatch) {
 
       if (req.method === 'POST' && url.pathname === '/api/v1/admin/performance-assessments/results') {
         route = 'POST /api/v1/admin/performance-assessments/results';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'assessor:write', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'assessor:write', res, requestId);
         if (!auth) return;
         if (!learnerStore || typeof learnerStore.recordPerformanceAssessmentResult !== 'function') {
           return json(res, 503, { error: 'performance-evidence-persistence-unavailable', requestId });
@@ -506,7 +506,7 @@ if (req.method === 'GET' && courseCompletionMatch) {
       const adminCredentialHistoryMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/([A-Za-z0-9_-]+)\/history$/);
       if (req.method === 'GET' && adminCredentialHistoryMatch) {
         route = 'GET /api/v1/admin/credentials/:verificationId/history';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
         if (!auth) return;
         if (typeof resolvedCredentialStore.listStatusHistoryByVerificationId !== 'function') return json(res, 503, { error: 'credential-history-unavailable', requestId });
         const record = await resolvedCredentialStore.getByVerificationId(adminCredentialHistoryMatch[1]);
@@ -518,7 +518,7 @@ if (req.method === 'GET' && courseCompletionMatch) {
       const adminCredentialStatusMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/([A-Za-z0-9_-]+)\/status$/);
       if (req.method === 'POST' && adminCredentialStatusMatch) {
         route = 'POST /api/v1/admin/credentials/:verificationId/status';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
         if (!auth) return;
         if (!credentialWriter || typeof credentialWriter.transitionById !== 'function') return json(res, 503, { error: 'credential-writer-unavailable', requestId });
         const record = await resolvedCredentialStore.getByVerificationId(adminCredentialStatusMatch[1]);
@@ -540,7 +540,7 @@ if (req.method === 'GET' && courseCompletionMatch) {
 
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
-        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        const auth = await authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
         if (!auth) return;
         return json(res, 200, {
           ok: true,
