@@ -4,7 +4,7 @@ import { evaluateAssessmentItemPromotion } from './lib/assessment-item-promotion
 const item = {
   id: 'ITEM-TEST-001',
   version: 1,
-  status: 'draft',
+  status: 'pilot',
   purpose: 'summative',
   competency: 'COMP-TEST-001',
   objective: 'LO-TEST-001',
@@ -18,39 +18,114 @@ const item = {
   references: ['REF-TEST-001']
 };
 
-const noReview = evaluateAssessmentItemPromotion({ item, reviews: [], referenceIds: new Set(['REF-TEST-001']) });
+const approvedReview = { id: 'REVIEW-TEST-001', objectId: item.id, objectVersion: 1, reviewType: 'assessment', status: 'approved' };
+const pilotPolicy = {
+  activation: {
+    minimumResponsesPerItem: 30,
+    requiredDiscriminationMethod: 'point-biserial-item-rest',
+    minimumDiscrimination: 0,
+    requireNoOpenChallenges: true,
+    requireResponseAccountingConsistency: true
+  },
+  reviewSignals: {}
+};
+const qualifiedPilot = {
+  id: 'PILOT-ITEM-TEST-001-V1',
+  itemId: item.id,
+  itemVersion: 1,
+  status: 'complete',
+  sampleSize: 30,
+  percentCorrect: 0.6,
+  discrimination: { method: 'point-biserial-item-rest', value: 0.2 },
+  distractorSelection: [
+    { choiceIndex: 0, count: 18, proportion: 0.6 },
+    { choiceIndex: 1, count: 12, proportion: 0.4 }
+  ],
+  omitRate: 0,
+  medianResponseTimeSeconds: 20,
+  responseTimeAnomalyRate: 0,
+  challengeHistory: [],
+  analystId: 'tester',
+  completedAt: '2026-09-07T00:00:00Z'
+};
+
+const noReview = evaluateAssessmentItemPromotion({
+  item,
+  reviews: [],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [qualifiedPilot],
+  pilotPolicy
+});
 assert.equal(noReview.eligible, false);
 assert.ok(noReview.failures.includes('exact-version approved assessment review is required'));
 
 const wrongVersion = evaluateAssessmentItemPromotion({
   item,
-  reviews: [{ id: 'REVIEW-TEST-001', objectId: item.id, objectVersion: 2, reviewType: 'assessment', status: 'approved' }],
-  referenceIds: new Set(['REF-TEST-001'])
+  reviews: [{ ...approvedReview, objectVersion: 2 }],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [qualifiedPilot],
+  pilotPolicy
 });
 assert.equal(wrongVersion.eligible, false);
 
 const missingReference = evaluateAssessmentItemPromotion({
   item,
-  reviews: [{ id: 'REVIEW-TEST-001', objectId: item.id, objectVersion: 1, reviewType: 'assessment', status: 'approved' }],
-  referenceIds: new Set()
+  reviews: [approvedReview],
+  referenceIds: new Set(),
+  pilotRecords: [qualifiedPilot],
+  pilotPolicy
 });
 assert.equal(missingReference.eligible, false);
 assert.ok(missingReference.failures.some((failure) => failure.startsWith('unresolved references:')));
 
+const noPilot = evaluateAssessmentItemPromotion({
+  item,
+  reviews: [approvedReview],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [],
+  pilotPolicy
+});
+assert.equal(noPilot.eligible, false);
+assert.ok(noPilot.failures.includes('policy-qualified exact-version pilot evidence is required'));
+
+const weakPilot = evaluateAssessmentItemPromotion({
+  item,
+  reviews: [approvedReview],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [{ ...qualifiedPilot, sampleSize: 12 }],
+  pilotPolicy
+});
+assert.equal(weakPilot.eligible, false);
+assert.ok(weakPilot.failures.includes('policy-qualified exact-version pilot evidence is required'));
+
+const wrongPilotVersion = evaluateAssessmentItemPromotion({
+  item,
+  reviews: [approvedReview],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [{ ...qualifiedPilot, itemVersion: 2 }],
+  pilotPolicy
+});
+assert.equal(wrongPilotVersion.eligible, false);
+
 const eligible = evaluateAssessmentItemPromotion({
   item,
-  reviews: [{ id: 'REVIEW-TEST-001', objectId: item.id, objectVersion: 1, reviewType: 'assessment', status: 'approved' }],
-  referenceIds: new Set(['REF-TEST-001'])
+  reviews: [approvedReview],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [qualifiedPilot],
+  pilotPolicy
 });
 assert.equal(eligible.eligible, true);
 assert.equal(eligible.approvedReviewId, 'REVIEW-TEST-001');
+assert.equal(eligible.qualifiedPilotEvidenceId, 'PILOT-ITEM-TEST-001-V1');
 assert.equal(eligible.promoted.status, 'active');
-assert.equal(item.status, 'draft');
+assert.equal(item.status, 'pilot');
 
 const retired = evaluateAssessmentItemPromotion({
   item: { ...item, status: 'retired' },
-  reviews: [{ id: 'REVIEW-TEST-001', objectId: item.id, objectVersion: 1, reviewType: 'assessment', status: 'approved' }],
-  referenceIds: new Set(['REF-TEST-001'])
+  reviews: [approvedReview],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [qualifiedPilot],
+  pilotPolicy
 });
 assert.equal(retired.eligible, false);
 assert.ok(retired.failures.includes('item status retired cannot be promoted'));
