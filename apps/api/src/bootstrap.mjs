@@ -15,7 +15,8 @@ function resolveModuleSpecifier(value) {
 export function validateProductionEnvironment(env = process.env) {
   if (env.NODE_ENV !== 'production') return { mode: 'development' };
   const persistenceAdapterModule = required(env, 'THC_PERSISTENCE_ADAPTER_MODULE');
-  const authAdapterModule = required(env, 'THC_AUTH_ADAPTER_MODULE');
+  const authAdapterModule = String(env.THC_AUTH_ADAPTER_MODULE ?? './apps/api/src/oidc-auth-adapter.mjs').trim();
+  if (!authAdapterModule) throw new Error('Production configuration requires a non-empty THC_AUTH_ADAPTER_MODULE when overridden');
   const publicBaseUrl = required(env, 'THC_PUBLIC_BASE_URL');
   const requiredSchemaVersion = required(env, 'THC_REQUIRED_SCHEMA_VERSION');
   let parsed;
