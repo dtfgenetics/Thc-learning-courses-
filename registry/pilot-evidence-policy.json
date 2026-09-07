@@ -3,6 +3,7 @@
   "scope": "THC Academy summative and credential assessment items",
   "activation": {
     "minimumResponsesPerItem": 30,
+    "minimumDiscrimination": 0,
     "requireApprovedAssessmentReview": true,
     "requireCompletePilotEvidence": true,
     "requireNoOpenChallenges": true,
@@ -18,6 +19,7 @@
   },
   "interpretation": {
     "minimumResponsesPerItem": "Internal operational floor for activation, not a universal psychometric minimum. It prevents trivially small samples from satisfying production readiness; adequacy must still be judged in context.",
+    "minimumDiscrimination": "Negative discrimination blocks activation because it indicates performance opposite the intended ordering and requires investigation. Values below the review-signal floor still require human review even when nonnegative.",
     "targetResponsesPerItem": "Internal stability target for classical item review. Smaller samples may support preliminary analysis but should be interpreted cautiously.",
     "reviewSignals": "Flags trigger human psychometric/content review. They do not automatically prove an item is good or bad and do not replace content validity review."
   },
