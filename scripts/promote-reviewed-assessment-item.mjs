@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { evaluateAssessmentItemPromotion } from './lib/assessment-item-promotion.mjs';
+import { loadPilotEvidencePolicy } from './pilot-evidence-quality.mjs';
 
 const root = process.cwd();
 const args = Object.fromEntries(process.argv.slice(2).filter((arg) => arg.startsWith('--') && arg.includes('=')).map((arg) => {
@@ -24,7 +25,9 @@ if (!fs.existsSync(itemPath)) throw new Error(`Assessment item ${objectId} does 
 const item = JSON.parse(fs.readFileSync(itemPath, 'utf8'));
 const reviews = readDirJson('content/reviews');
 const referenceIds = new Set(readDirJson('content/references').map((reference) => reference.id));
-const result = evaluateAssessmentItemPromotion({ item, reviews, referenceIds });
+const pilotRecords = readDirJson('content/pilot-evidence');
+const pilotPolicy = loadPilotEvidencePolicy(root);
+const result = evaluateAssessmentItemPromotion({ item, reviews, referenceIds, pilotRecords, pilotPolicy });
 
 if (!result.eligible) {
   console.error(`Assessment item ${objectId}@${item.version} is not eligible for activation:`);
@@ -38,12 +41,13 @@ const output = {
   fromStatus: item.status,
   toStatus: 'active',
   approvedReviewId: result.approvedReviewId,
+  qualifiedPilotEvidenceId: result.qualifiedPilotEvidenceId,
   write
 };
 
 if (write) {
   fs.writeFileSync(itemPath, `${JSON.stringify(result.promoted, null, 2)}\n`);
-  output.message = 'Item activated. Run the full review, schema, duplicate, objective-coverage, item-bank, and curriculum quality gates before merge.';
+  output.message = 'Item activated from exact-version review and qualified pilot evidence. Run the full quality gates before merge.';
 } else {
   output.message = 'Dry run only. Re-run with --write after reviewing this promotion evidence.';
 }
