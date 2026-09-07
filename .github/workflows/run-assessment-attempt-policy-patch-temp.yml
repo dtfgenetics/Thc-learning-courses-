@@ -1,0 +1,35 @@
+name: Run assessment attempt policy patch temporary
+
+on:
+  push:
+    branches:
+      - feat/assessment-attempt-policy
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: feat/assessment-attempt-policy
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: python scripts/patch-assessment-attempt-policy-temp.py
+      - run: npm run assessment:policy:test
+      - run: npm run assessment:persistence:test
+      - run: npm run api:learner-assessment:test
+      - name: Commit permanent policy integration
+        run: |
+          rm .github/workflows/run-assessment-attempt-policy-patch-temp.yml
+          rm scripts/patch-assessment-attempt-policy-temp.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/domain/assessment-attempt-policy.mjs apps/api/src/assessment-delivery.mjs apps/api/src/postgres-learner-store.mjs apps/api/src/server.mjs scripts/test-assessment-attempt-policy.mjs scripts/test-assessment-attempt-persistence.mjs scripts/test-learner-assessment-api.mjs package.json .github/workflows/run-assessment-attempt-policy-patch-temp.yml scripts/patch-assessment-attempt-policy-temp.py
+          git commit -m "Enforce assessment attempt limits and cooldowns"
+          git push origin HEAD:feat/assessment-attempt-policy
