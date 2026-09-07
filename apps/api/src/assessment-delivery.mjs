@@ -159,6 +159,18 @@ function publicQuestion(attempt, item, position, response, randomizeChoices) {
   };
 }
 
+export function projectAssessmentFeedback({ assessment, scoredAttempt } = {}) {
+  if (!assessment?.id || scoredAttempt?.status !== 'scored') return {};
+  const feedback = {
+    scorePercent: scoredAttempt.scorePercent,
+    passed: scoredAttempt.passed
+  };
+  if (assessment.feedbackMode === 'post-attempt-domain-level') {
+    feedback.competencies = competencyResults(scoredAttempt);
+  }
+  return feedback;
+}
+
 export function createAssessmentDeliveryService({ root = process.cwd(), allowDraft = false } = {}) {
   const questions = loadQuestions(root);
   const questionMap = new Map(questions.map((item) => [`${item.id}@${item.version}`, item]));
@@ -262,11 +274,7 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
         scoredAt: attempt.scoredAt,
         items
       };
-      if (attempt.status === 'scored') {
-        view.scorePercent = attempt.scorePercent;
-        view.passed = attempt.passed;
-        view.competencies = competencyResults(attempt);
-      }
+      if (attempt.status === 'scored') Object.assign(view, projectAssessmentFeedback({ assessment, scoredAttempt: attempt }));
       return view;
     }
   };
