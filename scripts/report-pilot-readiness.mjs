@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const root = process.cwd();
 function readDirJson(rel) {
@@ -29,6 +30,16 @@ const rows = competencies.map((competency) => {
     activationEvidenceComplete: pool.filter((x) => completePilot(x) && approvedReview(x)).length
   };
 });
+
+let foundationsCandidates = null;
+try {
+  foundationsCandidates = JSON.parse(execFileSync(process.execPath, [path.join(root, 'scripts/build-foundations-pilot-candidates.mjs'), '--check'], {cwd: root, encoding: 'utf8'}));
+} catch (error) {
+  if (error.stdout) process.stdout.write(error.stdout);
+  if (error.stderr) process.stderr.write(error.stderr);
+  throw new Error('Foundations pilot candidate readiness failed.');
+}
+
 const output = {
   summary: {
     items: items.length,
@@ -37,8 +48,13 @@ const output = {
     itemsWithCompletePilotEvidence: items.filter(completePilot).length,
     itemsWithApprovedAssessmentReview: items.filter(approvedReview).length,
     itemsWithActivationEvidenceComplete: items.filter((x) => completePilot(x) && approvedReview(x)).length,
-    activeItems: items.filter((x) => x.status === 'active').length
+    activeItems: items.filter((x) => x.status === 'active').length,
+    foundationsPilotCandidatePoolsReady: foundationsCandidates.summary.candidatePoolsReady,
+    foundationsPilotCandidateCompetencies: foundationsCandidates.summary.competencies,
+    foundationsPilotCandidateItems: foundationsCandidates.summary.totalSelectedCandidates,
+    foundationsPilotCandidateReady: foundationsCandidates.summary.allCompetenciesPilotCandidateReady
   },
+  foundationsPilotCandidates: foundationsCandidates,
   competencies: rows
 };
 console.log(JSON.stringify(output, null, 2));
