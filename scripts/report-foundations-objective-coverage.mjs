@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const check = process.argv.includes('--check');
+const requireReviewed = process.argv.includes('--require-reviewed');
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -92,7 +93,7 @@ const summary = {
 
 console.log(JSON.stringify({ summary, objectives: rows }, null, 2));
 
-if (check) {
+if (check || requireReviewed) {
   const errors = [];
   if (policy.course !== registry.course) errors.push(`Policy course ${policy.course} does not match registry course ${registry.course}.`);
   if (policy.assessment !== registry.summativeAssessment) errors.push(`Policy assessment ${policy.assessment} does not match registry assessment ${registry.summativeAssessment}.`);
@@ -102,7 +103,7 @@ if (check) {
     const deficient = rows.filter((row) => !row.minimumCoverageReady).map((row) => `${row.objective} ${row.bankItems}/${row.minimumBankItems}`);
     errors.push(`Objectives without minimum summative coverage: ${deficient.join(', ')}`);
   }
-  if (!summary.reviewCoverageComplete) {
+  if (requireReviewed && !summary.reviewCoverageComplete) {
     const deficient = rows.filter((row) => !row.reviewCoverageReady).map((row) => `${row.objective} ${row.humanReviewedBankItems}/${row.minimumBankItems}`);
     errors.push(`Objectives without minimum human-reviewed summative coverage: ${deficient.join(', ')}`);
   }
