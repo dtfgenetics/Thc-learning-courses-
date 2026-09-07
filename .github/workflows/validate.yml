@@ -45,6 +45,14 @@ jobs:
           name: cultivation-foundations-assessment-review-batch
           path: assessment-review-batch.json
           if-no-files-found: error
+      - name: Dry-run reviewed Foundations active-pool promotion
+        run: node scripts/promote-foundations-active-pool.mjs > assessment-promotion-plan.json
+      - name: Upload assessment promotion plan
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-assessment-promotion-plan
+          path: assessment-promotion-plan.json
+          if-no-files-found: error
       - name: Validate operational controls
         run: npm run ops:validate
       - name: Validate staging readiness contract
