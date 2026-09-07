@@ -1,37 +1,48 @@
 {
-  "id": "LESSON-CANOPY-001",
-  "title": "Training Methods and Canopy Architecture",
-  "version": "1.0.1",
-  "status": "draft",
-  "competencies": ["COMP-CANOPY-001"],
-  "learningObjectives": ["LO-CANOPY-001", "LO-CANOPY-LST-002", "LO-CANOPY-HST-003"],
-  "estimatedMinutes": 45,
-  "references": ["REF-CANOPY-001"],
-  "assessment": null,
-  "content": {
-    "overview": "Canopy management changes plant architecture to improve space use, light distribution, access, and crop uniformity. Training methods should be chosen from the desired structural outcome, plant developmental stage, vigor, and expected recovery rather than applied as fixed rituals.",
-    "vocabulary": [
-      {"term":"Apical dominance","definition":"A growth pattern in which the main shoot suppresses or reduces the relative growth of lateral shoots."},
-      {"term":"Low-stress training","definition":"Canopy shaping that bends, positions, or supports shoots without intentionally causing major tissue damage."},
-      {"term":"High-stress training","definition":"Training that intentionally removes, cuts, or substantially damages tissue and therefore requires recovery."},
-      {"term":"Canopy architecture","definition":"The spatial arrangement of stems, branches, leaves, and reproductive sites within the plant canopy."}
+  "id":"LESSON-CANOPY-001",
+  "title":"Training Methods and Canopy Architecture",
+  "version":"1.1.0",
+  "status":"draft",
+  "competencies":["COMP-CANOPY-001"],
+  "learningObjectives":["LO-CANOPY-001","LO-CANOPY-LST-002","LO-CANOPY-HST-003"],
+  "estimatedMinutes":60,
+  "references":["REF-CANOPY-001"],
+  "assessment":null,
+  "content":{
+    "overview":"Canopy management is the deliberate control of plant architecture so light distribution, airflow, inspection access, support, and developmental uniformity better match the production environment. Training decisions should begin with a measured structural problem and account for plant vigor, developmental stage, recovery capacity, spacing, fixture geometry, and later workflow rather than treating any technique as universally beneficial.",
+    "vocabulary":[
+      {"term":"Apical dominance","definition":"A growth relationship in which an active shoot apex suppresses or reduces relative lateral-shoot growth."},
+      {"term":"Canopy architecture","definition":"The three-dimensional arrangement of stems, leaves, branches, and reproductive sites."},
+      {"term":"Canopy density","definition":"The amount and spatial concentration of foliage and shoots within a canopy volume."},
+      {"term":"Source-sink relationship","definition":"The allocation relationship between tissues that produce assimilates and tissues that consume or store them."},
+      {"term":"Recovery interval","definition":"The period required for normal vigorous development to resume after a training intervention."},
+      {"term":"Canopy uniformity","definition":"The degree to which structure, exposure, and developmental conditions are similar across the managed canopy."}
     ],
-    "sections": [
-      {"title":"Architecture changes the light environment","body":"Leaves and branches create self-shading and spatial gradients in photon exposure. Training can redistribute shoots and reduce severe differences between highly exposed and deeply shaded regions, but the result should be verified with canopy observations and measurements.","references":["REF-CANOPY-001"]},
-      {"title":"Training methods serve different goals","body":"Bending and repositioning shoots can alter structure with relatively little tissue damage, while topping or other high-stress methods change apical growth through tissue removal. The appropriate method depends on the structural goal rather than on a single preferred technique.","references":["REF-CANOPY-001"]},
-      {"title":"Plant stage and recovery matter","body":"Training creates a biological response. High-stress methods require sufficient vigor and recovery time, while aggressive intervention near sensitive developmental transitions can create costs that outweigh the intended architectural benefit.","references":["REF-CANOPY-001"]},
-      {"title":"Uniformity is a system outcome","body":"A flatter or more open canopy can improve access and light distribution, but canopy uniformity also depends on fixture layout, plant spacing, genetics, environment, and previous growth. Training should therefore be evaluated as one part of the complete production environment.","references":["REF-CANOPY-001"]}
+    "sections":[
+      {"title":"Define the canopy problem before selecting a technique","body":"Common structural problems include excessive height, strong apical dominance, crowded interior growth, poor access, uneven shoot distribution, and large exposure differences. The intervention should be selected because it addresses a defined problem, not because it is a popular training ritual.","references":["REF-CANOPY-001"]},
+      {"title":"Architecture changes light interception and distribution","body":"Leaves intercept incoming photons and shade other tissues. Repositioning or removing selected shoots can change where light is intercepted, but visual flatness alone does not prove uniform exposure. Canopy-level measurements and repeated observations are stronger evidence than appearance alone.","references":["REF-CANOPY-001"]},
+      {"title":"Density also changes airflow and inspection access","body":"Crowded plant material can create sheltered microenvironments and make inspection, sanitation, support, and irrigation access more difficult. Opening a canopy may improve workflow and local air movement, but excessive tissue removal can reduce productive leaf area and create unnecessary stress.","references":["REF-CANOPY-001"]},
+      {"title":"Training changes developmental priorities","body":"Bending, topping, branch selection, and support alter shoot competition and resource allocation. The response depends on genotype, vigor, stage, environment, and prior stress, so the same intervention can produce different outcomes among plants.","references":["REF-CANOPY-001"]},
+      {"title":"Recovery capacity is part of the decision","body":"High-stress interventions create wounds and temporarily change active growing tissue. Even low-stress manipulation can cause damage when rigid tissue is forced too quickly. Evaluate current growth rate, hydration, root-zone condition, and time available before the next developmental transition.","references":["REF-CANOPY-001"]},
+      {"title":"Canopy management is iterative","body":"Plants continue growing after each intervention. A useful workflow measures the initial condition, makes the smallest justified structural change, allows response, then reassesses height distribution, crowding, access, exposure, and recovery before the next decision.","references":["REF-CANOPY-001"]},
+      {"title":"Uniformity is a system outcome","body":"Training interacts with plant spacing, fixture placement, environment, irrigation, genetics, and support systems. If one part of the canopy remains underperforming after training, investigate the complete system rather than assuming another cut or bend is automatically the solution.","references":["REF-CANOPY-001"]}
     ],
-    "workedExamples": [
-      "If the upper shoots dominate the fixture while interior branches remain shaded, repositioning or selectively training the dominant shoots may improve light distribution without assuming that every branch should be cut.",
-      "If a plant is weak or recently stressed, delay high-stress training until vigor and recovery capacity are sufficient for the intended intervention."
+    "workedExamples":[
+      "A few leaders extend well above the rest of a vigorous canopy. First define whether the problem is height, exposure or access; repositioning dominant shoots may solve it without removing additional tissue.",
+      "A visually level canopy still has large measured exposure differences from center to edge. Adjust fixture/plant geometry and branch distribution rather than assuming more pruning alone will fix the pattern.",
+      "Interior growth becomes crowded and difficult to inspect. Remove or reposition only the material needed to restore access and airflow, then evaluate the response before further thinning.",
+      "A recently transplanted plant is structurally tall but has slowed growth and unstable root-zone moisture. Delay major high-stress training until vigor and root function recover."
     ],
-    "commonMistakes": [
-      "Choosing a training method because it is popular rather than because it solves a defined canopy problem.",
-      "Applying high-stress training without allowing adequate recovery time.",
-      "Assuming a flat canopy automatically has uniform light exposure without measuring or observing distribution."
+    "commonMistakes":[
+      "Selecting a technique before defining the structural problem.",
+      "Assuming more tops or more pruning always increases productive canopy area.",
+      "Judging uniformity only by visual height.",
+      "Ignoring airflow, inspection and support access when filling a trellis or screen.",
+      "Stacking multiple training stresses without observing recovery.",
+      "Using calendar age instead of vigor and developmental readiness.",
+      "Trying to correct fixture, spacing or irrigation problems only through plant training."
     ],
-    "practicalApplication": "Before training, define the desired canopy outcome, document plant stage and vigor, identify which shoots create crowding or dominance, choose the least disruptive method that can achieve the goal, and evaluate the plant's recovery and resulting light distribution before the next intervention.",
-    "summary": "Canopy management is applied plant architecture. Effective training links a defined structural goal with plant stage, vigor, recovery capacity, and measured canopy conditions rather than treating topping, bending, or other techniques as universal recipes."
+    "practicalApplication":"Create a canopy map before intervention. Record plant stage, vigor, canopy height range, crowded zones, access limitations and representative exposure observations. Define one structural goal, select the least disruptive technique likely to achieve it, document the intervention, then repeat the map after recovery and state whether the evidence supports another change.",
+    "summary":"Canopy management is evidence-driven architecture. The strongest decisions connect a measured structural problem to the least disruptive suitable intervention, then verify recovery, exposure, airflow and workflow outcomes before additional training."
   }
 }
