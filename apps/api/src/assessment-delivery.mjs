@@ -7,11 +7,19 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-function loadQuestions(root) {
-  const dir = path.join(root, 'content/questions');
+function loadDirectoryJson(root, directory) {
+  const dir = path.join(root, directory);
   return fs.readdirSync(dir)
     .filter((name) => name.endsWith('.json'))
     .map((name) => readJson(path.join(dir, name)));
+}
+
+function loadQuestions(root) {
+  return loadDirectoryJson(root, 'content/questions');
+}
+
+function loadCompetencies(root) {
+  return loadDirectoryJson(root, 'content/competencies');
 }
 
 function hashToUint32(value) {
@@ -37,7 +45,7 @@ function shuffle(values, rand) {
   return result;
 }
 
-function buildForm({ assessment, questions, seed, allowDraft }) {
+function buildForm({ assessment, questions, competencyMap, seed, allowDraft }) {
   const eligibleStatuses = allowDraft
     ? new Set(['draft', 'technical-review', 'editorial-review', 'pilot', 'active'])
     : new Set(['active']);
@@ -81,12 +89,17 @@ function buildForm({ assessment, questions, seed, allowDraft }) {
     id: `FORM-${formKey}-${crypto.createHash('sha256').update(`${assessment.id}:${seed}`).digest('hex').slice(0, 12).toUpperCase()}`,
     assessment: assessment.id,
     assessmentVersion: assessment.version,
-    algorithmVersion: '1.2.0',
-    items: selected.map((item) => ({
-      itemId: item.id,
-      itemVersion: item.version,
-      competency: item.competency
-    })),
+    algorithmVersion: '1.3.0',
+    items: selected.map((item) => {
+      const competency = competencyMap.get(item.competency);
+      if (!competency?.version) throw new Error(`missing-competency-version:${item.competency}`);
+      return {
+        itemId: item.id,
+        itemVersion: item.version,
+        competency: item.competency,
+        competencyVersion: String(competency.version)
+      };
+    }),
     seed,
     integrityHash: ''
   };
@@ -161,7 +174,9 @@ function publicQuestion(attempt, item, position, response, randomizeChoices) {
 
 export function createAssessmentDeliveryService({ root = process.cwd(), allowDraft = false } = {}) {
   const questions = loadQuestions(root);
+  const competencies = loadCompetencies(root);
   const questionMap = new Map(questions.map((item) => [`${item.id}@${item.version}`, item]));
+  const competencyMap = new Map(competencies.map((item) => [item.id, item]));
 
   function loadAssessment(assessmentId) {
     if (!/^ASSESS-[A-Z0-9-]+$/.test(String(assessmentId ?? ''))) return null;
@@ -213,7 +228,7 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
       const assessment = loadAssessment(assessmentId);
       if (!assessment) throw new Error('assessment-not-found');
       if (!allowDraft && assessment.status !== 'active') throw new Error('assessment-not-active');
-      const { form, selected } = buildForm({ assessment, questions, seed, allowDraft });
+      const { form, selected } = buildForm({ assessment, questions, competencyMap, seed, allowDraft });
       const attempt = createAttempt({ learnerId, assessment, form });
       return { attempt, assessment, selected };
     },
