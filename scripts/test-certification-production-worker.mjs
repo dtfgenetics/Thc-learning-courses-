@@ -45,6 +45,40 @@ assert.equal(resumed.disposition, 'resume');
 assert.equal(resumed.branch, 'reviews/curriculum');
 assert.equal(resumed.pr, 50);
 
+const assessmentRegistry = {
+  system: 'THC Academy',
+  version: 'test',
+  productionReady: false,
+  areas: {
+    curriculum: { gates: { substantiveContentComplete: true, scientificReviewComplete: true, editorialReviewComplete: true } },
+    assessment: {
+      gates: {
+        blueprintComplete: true,
+        developmentFormGeneration: true,
+        minimumActivePoolComplete: false,
+        humanAssessmentReviewComplete: false,
+        pilotStatisticsComplete: false
+      }
+    },
+    credentials: { gates: {} },
+    runtime: { gates: {} },
+    api: { gates: {} },
+    security: { gates: {} },
+    accessibility: { gates: {} },
+    operations: { gates: {} }
+  }
+};
+
+const assessmentBlockers = collectBlockers(assessmentRegistry);
+assert.deepEqual(
+  assessmentBlockers.slice(0, 3).map((row) => row.gate),
+  ['humanAssessmentReviewComplete', 'minimumActivePoolComplete', 'pilotStatisticsComplete']
+);
+const assessmentNext = selectNextTask(assessmentRegistry, []);
+assert.equal(assessmentNext.gate, 'humanAssessmentReviewComplete');
+assert.equal(assessmentNext.mode, 'certify');
+assert.equal(assessmentNext.branch, 'work/assessment-human-assessment-review-complete');
+
 const completeRegistry = {
   system: 'THC Academy',
   version: 'test',
