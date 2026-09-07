@@ -6,7 +6,7 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '4'; },
+      async schemaVersion() { return '5'; },
       async getByVerificationId() { return null; },
       async listStatusHistoryByVerificationId() { return []; },
       async count() { return 0; }

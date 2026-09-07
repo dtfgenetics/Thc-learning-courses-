@@ -65,7 +65,7 @@ async function fakeQuery(text, params = []) {
     return { rowCount: 1, rows: rowsForAttempt(row) };
   }
   if (sql.startsWith('insert into assessment_attempt_items')) {
-    const [attemptId, position, itemId, itemVersion, competencyId, responseJson, score, maxScore] = params;
+    const [attemptId, position, itemId, itemVersion, competencyId, competencyVersion, responseJson, score, maxScore] = params;
     const target = items.get(attemptId);
     if (!target) throw new Error('attempt-items-parent-missing');
     if (!competencyId) throw new Error('competency-required');
@@ -75,6 +75,7 @@ async function fakeQuery(text, params = []) {
       item_id: itemId,
       item_version: Number(itemVersion),
       competency_id: competencyId,
+      competency_version: competencyVersion,
       response_json: responseJson == null ? null : JSON.parse(responseJson),
       score,
       max_score: maxScore
@@ -87,7 +88,7 @@ async function fakeQuery(text, params = []) {
     const attempt = attempts.get(attemptId);
     return { rows: learner && attempt?.learnerId === learner.id ? rowsForAttempt(attempt) : [] };
   }
-  if (sql.startsWith('select position, item_id, item_version, competency_id, response_json, score, max_score from assessment_attempt_items')) {
+  if (sql.startsWith('select position, item_id, item_version, competency_id, competency_version, response_json, score, max_score from assessment_attempt_items')) {
     return { rows: [...(items.get(params[0]) ?? [])].sort((a, b) => a.position - b.position) };
   }
   if (sql.startsWith('update assessment_attempts') && sql.includes("set status = 'submitted'")) {
@@ -112,6 +113,7 @@ async function fakeQuery(text, params = []) {
     row.score = score;
     return { rowCount: 1, rows: [] };
   }
+  if (sql.startsWith('insert into learner_competencies')) return { rowCount: 1, rows: [] };
   if (sql.startsWith('update assessment_attempts') && sql.includes("set status = 'scored'")) {
     const [attemptId, learnerId, scoredAt, scorePercent, passed] = params;
     const attempt = attempts.get(attemptId);
@@ -162,8 +164,8 @@ const started = {
   submittedAt: null,
   scoredAt: null,
   items: [
-    { position: 1, itemId: 'ITEM-ENV-001', itemVersion: 1, competency: 'COMP-ENV-VPD-001', response: null, score: null, maxScore: 1 },
-    { position: 2, itemId: 'ITEM-WATER-001', itemVersion: 2, competency: 'COMP-WATER-001', response: null, score: null, maxScore: 1 }
+    { position: 1, itemId: 'ITEM-ENV-001', itemVersion: 1, competency: 'COMP-ENV-VPD-001', competencyVersion: '1.0.0', response: null, score: null, maxScore: 1 },
+    { position: 2, itemId: 'ITEM-WATER-001', itemVersion: 2, competency: 'COMP-WATER-001', competencyVersion: '1.0.0', response: null, score: null, maxScore: 1 }
   ]
 };
 
@@ -176,6 +178,7 @@ assert.deepEqual(transactionEvents.slice(-2), ['begin', 'commit']);
 stored = await store.getAssessmentAttempt('subject-alice', started.id);
 assert.equal(stored.id, started.id);
 assert.equal(stored.items[0].competency, 'COMP-ENV-VPD-001');
+assert.equal(stored.items[0].competencyVersion, '1.0.0');
 assert.equal(await store.getAssessmentAttempt('subject-bob', started.id), null, 'learner isolation must hide attempts owned by another subject');
 
 const submitted = {

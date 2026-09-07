@@ -55,7 +55,7 @@ const pool = {
   async query(text, params = []) {
     poolCalls.push({ text, params });
     if (String(text).includes('select 1 as ok')) return { rows: [{ ok: 1 }] };
-    if (String(text).includes('academy_schema_migrations')) return { rows: [{ version: '4' }] };
+    if (String(text).includes('academy_schema_migrations')) return { rows: [{ version: '5' }] };
     return { rows: [] };
   },
   async connect() { return client; },
@@ -82,7 +82,7 @@ assert.equal(typeof adapters.learnerStore.getAssessmentAttempt, 'function');
 assert.equal(typeof adapters.learnerStore.saveSubmittedAssessmentAttempt, 'function');
 assert.equal(typeof adapters.learnerStore.saveScoredAssessmentAttempt, 'function');
 assert.equal(await adapters.credentialStore.ping(), true);
-assert.equal(await adapters.credentialStore.schemaVersion(), '4');
+assert.equal(await adapters.credentialStore.schemaVersion(), '5');
 assert.deepEqual(await adapters.learnerStore.listEnrollments('learner-1'), []);
 
 const transition = await adapters.credentialWriter.transitionById('cred-1', 'suspended', {
