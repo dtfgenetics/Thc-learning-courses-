@@ -13,12 +13,15 @@ function httpsUrl(value, name) {
   return parsed;
 }
 
+function csvValues(value, fallback = '') {
+  return [...new Set(String(value ?? fallback).split(',').map((entry) => entry.trim()).filter(Boolean))];
+}
+
 function algorithmsFromEnvironment(env) {
-  const raw = String(env.THC_OIDC_ALGORITHMS ?? 'RS256').trim();
-  const algorithms = raw.split(',').map((value) => value.trim()).filter(Boolean);
+  const algorithms = csvValues(env.THC_OIDC_ALGORITHMS, 'RS256');
   if (algorithms.length === 0) throw new Error('THC_OIDC_ALGORITHMS must contain at least one JWS algorithm');
   if (algorithms.includes('none')) throw new Error('THC_OIDC_ALGORITHMS cannot include none');
-  return [...new Set(algorithms)];
+  return algorithms;
 }
 
 function clockToleranceFromEnvironment(env) {
@@ -43,6 +46,24 @@ function tokenScopes(payload) {
   return [...scopes];
 }
 
+function authenticationMethods(payload) {
+  if (Array.isArray(payload?.amr)) return payload.amr.map(String).map((value) => value.trim()).filter(Boolean);
+  if (typeof payload?.amr === 'string') return payload.amr.split(/\s+/).filter(Boolean);
+  return [];
+}
+
+function isPrivilegedScope(scope) {
+  const value = String(scope ?? '');
+  return value.startsWith('admin:') || value.startsWith('assessor:');
+}
+
+function hasPrivilegedMfa(payload, acceptedAmr, acceptedAcr) {
+  const methods = new Set(authenticationMethods(payload));
+  if (acceptedAmr.some((value) => methods.has(value))) return true;
+  const acr = String(payload?.acr ?? '').trim();
+  return Boolean(acr && acceptedAcr.includes(acr));
+}
+
 function bearerToken(req) {
   const header = String(req?.headers?.authorization ?? '');
   if (!header.startsWith('Bearer ')) return null;
@@ -56,6 +77,11 @@ export async function createRequestAuthorizer({ env = process.env, jwks = null }
   httpsUrl(issuer, 'THC_OIDC_ISSUER');
   const algorithms = algorithmsFromEnvironment(env);
   const clockTolerance = clockToleranceFromEnvironment(env);
+  const privilegedMfaAmrValues = csvValues(env.THC_OIDC_PRIVILEGED_MFA_AMR_VALUES, 'mfa');
+  const privilegedMfaAcrValues = csvValues(env.THC_OIDC_PRIVILEGED_MFA_ACR_VALUES);
+  if (privilegedMfaAmrValues.length === 0 && privilegedMfaAcrValues.length === 0) {
+    throw new Error('Privileged OIDC access requires at least one configured MFA amr or acr assurance value');
+  }
 
   let keySet = jwks;
   if (!keySet) {
@@ -85,7 +111,20 @@ export async function createRequestAuthorizer({ env = process.env, jwks = null }
       if (requiredScope && !scopes.includes(requiredScope)) {
         return { ok: false, status: 403, error: 'insufficient-scope' };
       }
-      return { ok: true, subject, scopes };
+      const privilegedMfa = hasPrivilegedMfa(payload, privilegedMfaAmrValues, privilegedMfaAcrValues);
+      if (isPrivilegedScope(requiredScope) && !privilegedMfa) {
+        return { ok: false, status: 403, error: 'privileged-mfa-required' };
+      }
+      return {
+        ok: true,
+        subject,
+        scopes,
+        assurance: {
+          mfa: privilegedMfa,
+          amr: authenticationMethods(payload),
+          acr: payload.acr == null ? null : String(payload.acr)
+        }
+      };
     } catch {
       return { ok: false, status: 401, error: 'invalid-authentication' };
     }
