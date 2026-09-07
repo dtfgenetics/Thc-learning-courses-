@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const root = process.cwd();
 const readiness = JSON.parse(fs.readFileSync(path.join(root, 'registry/system-readiness.json'), 'utf8'));
@@ -16,6 +17,9 @@ const security = requireFile('apps/api/src/security.mjs');
 const limiter = requireFile('apps/api/src/rate-limit.mjs');
 const apiTest = requireFile('scripts/test-api-security.mjs');
 const incident = requireFile('docs/INCIDENT-RESPONSE.md');
+requireFile('schemas/production-control-evidence.schema.json');
+requireFile('scripts/validate-production-control-evidence.mjs');
+requireFile('docs/PRODUCTION-CONTROL-EVIDENCE.md');
 
 if (readiness.areas?.api?.gates?.rateLimiting === true && !limiter.includes('createFixedWindowRateLimiter')) {
   failures.push('api.rateLimiting is true without the rate limiter implementation');
@@ -45,6 +49,15 @@ const requiredRunbookSections = [
 if (readiness.areas?.operations?.gates?.incidentResponseRunbook === true) {
   for (const heading of requiredRunbookSections) {
     if (!incident.includes(heading)) failures.push(`incident response runbook missing section: ${heading}`);
+  }
+}
+
+if (failures.length === 0) {
+  try {
+    execFileSync(process.execPath, ['scripts/validate-production-control-evidence.mjs'], { cwd: root, stdio: 'pipe' });
+  } catch (error) {
+    const stderr = error?.stderr?.toString?.() ?? error?.message ?? String(error);
+    failures.push(`production control evidence validation failed: ${stderr.trim()}`);
   }
 }
 

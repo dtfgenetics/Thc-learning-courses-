@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/production-control-evidence.schema.json",
+  "title": "THC Academy Production Control Evidence",
+  "type": "object",
+  "required": ["id", "version", "status", "gate", "environment", "verifiedAt", "verifiedBy", "evidenceType", "summary"],
+  "properties": {
+    "id": {"type":"string","pattern":"^EVIDENCE-[A-Z0-9-]+$"},
+    "version": {"type":"string","pattern":"^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum":["verified","expired","invalidated"]},
+    "gate": {"enum":[
+      "credentials.productionIssuerIdentity",
+      "credentials.productionSigning",
+      "security.adminMfaEnforced",
+      "security.rowLevelAuthorization",
+      "security.securityReviewComplete",
+      "accessibility.contentAccessibilityReviewComplete",
+      "accessibility.assessmentAccessibilityReviewComplete",
+      "accessibility.frontendAccessibilityTestingComplete",
+      "operations.stagingEnvironment",
+      "operations.productionEnvironment",
+      "operations.backupRestoreTested",
+      "operations.monitoringAndAlerting"
+    ]},
+    "environment": {"enum":["staging","production"]},
+    "verifiedAt": {"type":"string","format":"date-time"},
+    "validUntil": {"type":["string","null"],"format":"date-time"},
+    "verifiedBy": {"type":"string","minLength":3,"maxLength":160},
+    "evidenceType": {"enum":["deployment-test","security-review","accessibility-review","key-management-test","backup-restore-drill","monitoring-drill","environment-smoke-test","operator-attestation"]},
+    "summary": {"type":"string","minLength":20,"maxLength":4000},
+    "externalReference": {"type":["string","null"],"maxLength":1000},
+    "repositoryCommit": {"type":["string","null"],"pattern":"^[a-f0-9]{40}$"},
+    "limitations": {"type":"array","items":{"type":"string","minLength":1},"uniqueItems":true}
+  },
+  "additionalProperties": false
+}
