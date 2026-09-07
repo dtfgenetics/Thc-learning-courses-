@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FOUND-GENETICS-INHERIT-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-GENETICS-001",
+  "objective": "LO-GENETICS-INHERIT-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "An F2 family shows substantially more visible variation than the preceding F1. Which explanation is best supported?",
+  "choices": [
+    "Segregation and recombination can expose new allele combinations in descendants, so wider variation can appear in later generations",
+    "The F2 label guarantees every offspring will be genetically identical",
+    "Generation labels function as quality grades and determine phenotype uniformity by themselves",
+    "A small population must display exact expected genetic ratios in every family"
+  ],
+  "correct": 0,
+  "rationale": "Later generations can reveal allele combinations that were paired differently in the F1. The amount of variation depends on parental genetics, trait architecture, population size, and mating design rather than the generation label alone.",
+  "references": ["REF-GENETICS-001"]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FOUND-POSTHARVEST-STORAGE-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-001",
+  "objective": "LO-POSTHARVEST-STORAGE-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two packages from the same lot develop different storage conditions over time. Which investigation is most defensible?",
+  "choices": [
+    "Compare package barrier properties, seal integrity, fill condition, opening history, storage exposure, and initial moisture uniformity",
+    "Assume cultivar variation is the only possible cause because the packages contain the same lot",
+    "Ignore seal condition because all closed packages provide identical barriers",
+    "Combine both packages so the lot has one average condition"
+  ],
+  "correct": 0,
+  "rationale": "Packaging material, seal integrity, headspace, handling, storage environment, and starting moisture can all change the internal package environment and should be preserved through traceable records.",
+  "references": ["REF-POSTHARVEST-001"]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FOUND-GENETICS-SELECT-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-GENETICS-001",
+  "objective": "LO-GENETICS-SELECT-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One candidate plant ranks highest for vigor but grew in the brightest position in the room. What is the strongest next step before treating it as genetically superior breeding stock?",
+  "choices": [
+    "Compare environmental records or replicated/progeny performance so positional advantage is not mistaken for inherited superiority",
+    "Select it immediately because the highest observed phenotype always has the highest breeding value",
+    "Discard records for rejected plants because only winners matter in selection",
+    "Declare the line stable after this single observation"
+  ],
+  "correct": 0,
+  "rationale": "Environmental advantage can mimic genetic superiority. Repeatable phenotyping, environmental context, replication, population records, and progeny testing strengthen evidence that a selected phenotype has useful inherited value.",
+  "references": ["REF-GENETICS-001"]
+}
