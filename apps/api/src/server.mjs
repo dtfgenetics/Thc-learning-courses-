@@ -11,6 +11,7 @@ import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
+import { createAssessmentDeliveryService } from './assessment-delivery.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -183,6 +184,7 @@ export function createHandler({
   credentialStore = null,
   credentialWriter = null,
   learnerStore = null,
+  assessmentDeliveryService = null,
   env = process.env,
   requiredSchemaVersion = null,
   limiter = createFixedWindowRateLimiter(),
@@ -192,6 +194,7 @@ export function createHandler({
 } = {}) {
   const resolvedCredentialStore = resolveCredentialStore(credentialStore, env);
   const resolvedAuthorize = authorize ?? createServiceTokenAuthorizer({ tokens: serviceTokensFromEnvironment(env) });
+  const resolvedAssessmentDelivery = assessmentDeliveryService ?? createAssessmentDeliveryService({ root, allowDraft: env.NODE_ENV !== 'production' });
 
   return async function handler(req, res) {
     const startedAt = nowNs();
@@ -235,6 +238,68 @@ export function createHandler({
           return json(res, 429, { error: 'rate-limit-exceeded', requestId }, { 'retry-after': String(rate.retryAfterSeconds) });
         }
       }
+
+      const assessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/assessments\/(ASSESS-[A-Z0-9-]+)\/attempts$/);
+if (req.method === 'POST' && assessmentStartMatch) {
+  route = 'POST /api/v1/me/assessments/:assessmentId/attempts';
+  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+  if (!auth) return;
+  if (!learnerStore || typeof learnerStore.createAssessmentAttempt !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+  try {
+    const { attempt } = resolvedAssessmentDelivery.start({ learnerId: auth.subject, assessmentId: assessmentStartMatch[1] });
+    const saved = await learnerStore.createAssessmentAttempt(auth.subject, attempt);
+    return json(res, 201, { attempt: resolvedAssessmentDelivery.publicView(saved) });
+  } catch (error) {
+    const message = String(error?.message ?? '');
+    if (message === 'assessment-not-found') return json(res, 404, { error: 'assessment-not-found', requestId });
+    if (message === 'assessment-not-active' || message.startsWith('insufficient-active-items:')) return json(res, 409, { error: 'assessment-not-deliverable', requestId });
+    throw error;
+  }
+}
+
+const assessmentAttemptMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]+)$/);
+if (req.method === 'GET' && assessmentAttemptMatch) {
+  route = 'GET /api/v1/me/assessment-attempts/:attemptId';
+  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+  if (!auth) return;
+  if (!learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+  const attempt = await learnerStore.getAssessmentAttempt(auth.subject, assessmentAttemptMatch[1]);
+  if (!attempt) return json(res, 404, { error: 'assessment-attempt-not-found', requestId });
+  return json(res, 200, { attempt: resolvedAssessmentDelivery.publicView(attempt) });
+}
+
+const assessmentSubmitMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]+)\/submit$/);
+if (req.method === 'POST' && assessmentSubmitMatch) {
+  route = 'POST /api/v1/me/assessment-attempts/:attemptId/submit';
+  const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+  if (!auth) return;
+  if (!learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function' || typeof learnerStore.saveSubmittedAssessmentAttempt !== 'function' || typeof learnerStore.saveScoredAssessmentAttempt !== 'function') {
+    return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+  }
+  let attempt = await learnerStore.getAssessmentAttempt(auth.subject, assessmentSubmitMatch[1]);
+  if (!attempt) return json(res, 404, { error: 'assessment-attempt-not-found', requestId });
+  if (attempt.status === 'scored') return json(res, 200, { attempt: resolvedAssessmentDelivery.publicView(attempt) });
+  if (!['started', 'submitted'].includes(attempt.status)) return json(res, 409, { error: 'invalid-assessment-attempt-status', requestId });
+  if (attempt.status === 'started') {
+    let body;
+    try { body = await readJsonBody(req); }
+    catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+    if (!Array.isArray(body.responses)) return json(res, 400, { error: 'invalid-assessment-responses', requestId });
+    try {
+      const submitted = resolvedAssessmentDelivery.submit({ attempt, responses: body.responses });
+      attempt = await learnerStore.saveSubmittedAssessmentAttempt(auth.subject, submitted);
+    } catch (error) {
+      if (['response-item-mismatch', 'duplicate-response-item'].includes(String(error?.message ?? ''))) {
+        return json(res, 400, { error: 'invalid-assessment-responses', requestId });
+      }
+      if (String(error?.message ?? '').includes('Cannot submit attempt')) return json(res, 409, { error: 'invalid-assessment-attempt-status', requestId });
+      throw error;
+    }
+  }
+  const { scored } = resolvedAssessmentDelivery.score({ attempt });
+  const saved = await learnerStore.saveScoredAssessmentAttempt(auth.subject, scored);
+  return json(res, 200, { attempt: resolvedAssessmentDelivery.publicView(saved) });
+}
 
       if (req.method === 'GET' && url.pathname === '/api/v1/me/enrollments') {
         route = 'GET /api/v1/me/enrollments';
