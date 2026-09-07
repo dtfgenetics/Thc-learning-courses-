@@ -19,16 +19,21 @@ export function responseAccountingIssues(record, item) {
     if (!byChoice.has(index)) issues.push(`missing choice row ${index}`);
   }
   const countSum = record.distractorSelection.reduce((sum, row) => sum + (Number.isInteger(row.count) ? row.count : 0), 0);
-  if (Number.isInteger(record.sampleSize) && countSum !== record.sampleSize) issues.push(`choice counts sum to ${countSum}, sampleSize is ${record.sampleSize}`);
-  if (record.sampleSize > 0) {
+  const expectedNonOmitted = Number.isInteger(record.sampleSize) && typeof record.omitRate === 'number'
+    ? record.sampleSize * (1 - record.omitRate)
+    : null;
+  if (expectedNonOmitted !== null && !approximatelyEqual(countSum, expectedNonOmitted, 0.01)) {
+    issues.push(`choice counts sum to ${countSum}, expected non-omitted responses are ${expectedNonOmitted}`);
+  }
+  if (countSum > 0) {
     for (const row of record.distractorSelection) {
-      const expected = row.count / record.sampleSize;
-      if (!approximatelyEqual(row.proportion, expected)) issues.push(`choice ${row.choiceIndex} proportion ${row.proportion} does not match count/sampleSize ${expected}`);
+      const expected = row.count / countSum;
+      if (!approximatelyEqual(row.proportion, expected)) issues.push(`choice ${row.choiceIndex} proportion ${row.proportion} does not match count/non-omitted ${expected}`);
     }
-    if (Number.isInteger(item?.correct) && byChoice.has(item.correct) && typeof record.percentCorrect === 'number') {
-      const expectedCorrect = byChoice.get(item.correct).count / record.sampleSize;
-      if (!approximatelyEqual(record.percentCorrect, expectedCorrect)) issues.push(`percentCorrect ${record.percentCorrect} does not match keyed count/sampleSize ${expectedCorrect}`);
-    }
+  }
+  if (record.sampleSize > 0 && Number.isInteger(item?.correct) && byChoice.has(item.correct) && typeof record.percentCorrect === 'number') {
+    const expectedCorrect = byChoice.get(item.correct).count / record.sampleSize;
+    if (!approximatelyEqual(record.percentCorrect, expectedCorrect)) issues.push(`percentCorrect ${record.percentCorrect} does not match keyed count/sampleSize ${expectedCorrect}`);
   }
   return issues;
 }
