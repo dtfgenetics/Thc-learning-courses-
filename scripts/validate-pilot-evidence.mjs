@@ -1,9 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { activationEvidenceEvaluation, loadPilotEvidencePolicy, responseAccountingIssues } from './pilot-evidence-quality.mjs';
 
 const root = process.cwd();
 const errors = [];
 const pilotDir = path.join(root, 'content/pilot-evidence');
+const policy = loadPilotEvidencePolicy(root);
 
 function readJson(filePath) { return JSON.parse(fs.readFileSync(filePath, 'utf8')); }
 function readDirJson(rel) {
@@ -66,6 +68,9 @@ for (const name of pilotFiles) {
     if (typeof record.medianResponseTimeSeconds !== 'number' || !Number.isFinite(record.medianResponseTimeSeconds) || record.medianResponseTimeSeconds < 0) errors.push(`${rel}: complete pilot evidence requires non-negative medianResponseTimeSeconds`);
     if (!record.discrimination || !allowedMethods.has(record.discrimination.method) || typeof record.discrimination.value !== 'number' || record.discrimination.value < -1 || record.discrimination.value > 1) errors.push(`${rel}: complete pilot evidence requires a valid discrimination statistic`);
     if (!record.completedAt || !Number.isFinite(Date.parse(record.completedAt))) errors.push(`${rel}: complete pilot evidence requires valid completedAt`);
+    if (itemEntry) {
+      for (const issue of responseAccountingIssues(record, itemEntry.data)) errors.push(`${rel}: response accounting ${issue}`);
+    }
   }
 }
 
@@ -78,8 +83,8 @@ for (const {file,data:item} of questionEntries) {
   const itemRecords = recordsFor(item);
   if (item.status === 'pilot' && itemRecords.length === 0) errors.push(`${file}: pilot item ${item.id}@${item.version} is missing a pilot evidence record`);
   if (item.status === 'active') {
-    const complete = itemRecords.some((r) => r.data.status === 'complete');
-    if (!complete) errors.push(`${file}: active item ${item.id}@${item.version} is missing complete pilot evidence`);
+    const qualified = itemRecords.some((record) => activationEvidenceEvaluation(record.data, item, policy).ready);
+    if (!qualified) errors.push(`${file}: active item ${item.id}@${item.version} is missing policy-qualified pilot evidence (minimum ${policy.activation.minimumResponsesPerItem} responses, nonnegative discrimination, consistent response accounting, no open challenges)`);
     if (!hasApprovedAssessmentReview(item)) errors.push(`${file}: active item ${item.id}@${item.version} is missing approved assessment review evidence`);
   }
 }
@@ -89,4 +94,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`Pilot-evidence validation passed. ${pilotFiles.length} pilot evidence record(s) checked; pilot/active promotion evidence rules enforced.`);
+console.log(`Pilot-evidence validation passed. ${pilotFiles.length} pilot evidence record(s) checked; policy ${policy.version} activation evidence rules enforced.`);
