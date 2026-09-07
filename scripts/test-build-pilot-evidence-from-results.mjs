@@ -53,4 +53,12 @@ const invalidRun = spawnSync(process.execPath, ['scripts/build-pilot-evidence-fr
 assert.notEqual(invalidRun.status, 0);
 assert.match(invalidRun.stderr, /unknown item version/);
 
-console.log(`Pilot evidence aggregation tests passed for ${sampleItem.id}@${sampleItem.version}.`);
+const pilotPromotionWithoutRecord = spawnSync(process.execPath, ['scripts/promote-assessment-item.mjs', `--item=${sampleItem.id}`, '--to=pilot'], { cwd: root, encoding: 'utf8' });
+assert.notEqual(pilotPromotionWithoutRecord.status, 0, 'pilot promotion must fail without a registered pilot record');
+assert.match(pilotPromotionWithoutRecord.stdout + pilotPromotionWithoutRecord.stderr, /no registered pilot evidence record/i);
+
+const activePromotionWithoutCompletePilot = spawnSync(process.execPath, ['scripts/promote-assessment-item.mjs', `--item=${sampleItem.id}`, '--to=active'], { cwd: root, encoding: 'utf8' });
+assert.notEqual(activePromotionWithoutCompletePilot.status, 0, 'active promotion must fail without complete pilot evidence');
+assert.match(activePromotionWithoutCompletePilot.stdout + activePromotionWithoutCompletePilot.stderr, /no complete pilot evidence record/i);
+
+console.log(`Pilot evidence aggregation and fail-closed item-promotion tests passed for ${sampleItem.id}@${sampleItem.version}.`);
