@@ -43,8 +43,8 @@ if sig_new not in text:
 policy_anchor = "      const learner = await ensureLearner(externalSubject, runQuery);\n      if (!learner?.id) throw new Error('learner-resolution-failed');\n      await queryOrUnavailable(\n"
 policy_insert = """      const learner = await ensureLearner(externalSubject, runQuery);
       if (!learner?.id) throw new Error('learner-resolution-failed');
-      await queryOrUnavailable(runQuery, `select id from learners where id = $1 for update`, [learner.id]);
       if (policy) {
+        await queryOrUnavailable(runQuery, `select id from learners where id = $1 for update`, [learner.id]);
         const priorResult = await queryOrUnavailable(
           runQuery,
           `select id, assessment_id, assessment_version, status, started_at, submitted_at, scored_at
@@ -157,7 +157,7 @@ if "cooldown must block immediate retake" not in text:
     text = text.replace(retry_anchor, retry_insert, 1)
 p.write_text(text)
 
-# Add a PostgreSQL-focused race/policy assertion to persistence test by checking constructor method and policy failure contract.
+# Add a PostgreSQL-focused method assertion while preserving the existing fake SQL contract for non-policy writes.
 p = Path('scripts/test-assessment-attempt-persistence.mjs')
 text = p.read_text()
 if "listAssessmentAttempts" not in text:
