@@ -1,0 +1,46 @@
+name: Promote reviewed Foundations active pool
+
+on:
+  push:
+    branches:
+      - work/promote-foundations-active-pool
+
+permissions:
+  contents: write
+
+jobs:
+  promote-reviewed-pool:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate and apply guarded promotion plan
+        run: node scripts/promote-foundations-active-pool.mjs --write > assessment-promotion-manifest.json
+      - name: Validate promoted curriculum and credential state
+        run: npm test
+      - name: Upload promotion manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-assessment-promotion-manifest
+          path: assessment-promotion-manifest.json
+          if-no-files-found: error
+      - name: Commit reviewed assessment activations
+        run: |
+          if git diff --quiet -- content/questions; then
+            echo 'No assessment item promotions were required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/questions
+          git commit -m 'Activate reviewed Cultivation Foundations assessment pool'
+          git push origin HEAD:work/promote-foundations-active-pool
