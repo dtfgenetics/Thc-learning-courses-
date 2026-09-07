@@ -128,6 +128,24 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
     });
   }
 
+  function requireAssessmentVersion(attempt) {
+    const assessment = loadAssessment(attempt.assessmentId);
+    if (!assessment) throw new Error('assessment-not-found');
+    if (String(assessment.version) !== String(attempt.assessmentVersion)) throw new Error('assessment-version-mismatch');
+    return assessment;
+  }
+
+  function validateResponses(attempt, responses) {
+    const allowed = new Set(attempt.items.map((row) => `${row.itemId}@${row.itemVersion}`));
+    const seen = new Set();
+    for (const row of responses ?? []) {
+      const key = `${row.itemId}@${row.itemVersion}`;
+      if (!allowed.has(key)) throw new Error('response-item-mismatch');
+      if (seen.has(key)) throw new Error('duplicate-response-item');
+      seen.add(key);
+    }
+  }
+
   return {
     start({ learnerId, assessmentId, seed = crypto.randomUUID() }) {
       const assessment = loadAssessment(assessmentId);
@@ -137,22 +155,21 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
       const attempt = createAttempt({ learnerId, assessment, form });
       return { attempt, assessment, selected };
     },
+    submit({ attempt, responses }) {
+      requireAssessmentVersion(attempt);
+      validateResponses(attempt, responses);
+      return submitAttempt(attempt, responses ?? []);
+    },
+    score({ attempt }) {
+      const assessment = requireAssessmentVersion(attempt);
+      const selected = requireSelectedItems(attempt);
+      const scored = scoreAttempt(attempt, selected, Number(assessment.passingScorePercent));
+      return { scored, competencyResults: competencyResults(scored) };
+    },
     submitAndScore({ attempt, responses }) {
-      const assessment = loadAssessment(attempt.assessmentId);
-      if (!assessment) throw new Error('assessment-not-found');
-      if (String(assessment.version) !== String(attempt.assessmentVersion)) throw new Error('assessment-version-mismatch');
-      const allowed = new Set(attempt.items.map((row) => `${row.itemId}@${row.itemVersion}`));
-      const seen = new Set();
-      for (const row of responses ?? []) {
-        const key = `${row.itemId}@${row.itemVersion}`;
-        if (!allowed.has(key)) throw new Error('response-item-mismatch');
-        if (seen.has(key)) throw new Error('duplicate-response-item');
-        seen.add(key);
-      }
-      const submitted = submitAttempt(attempt, responses ?? []);
-      const selected = requireSelectedItems(submitted);
-      const scored = scoreAttempt(submitted, selected, Number(assessment.passingScorePercent));
-      return { submitted, scored, competencyResults: competencyResults(scored) };
+      const submitted = this.submit({ attempt, responses });
+      const { scored, competencyResults: results } = this.score({ attempt: submitted });
+      return { submitted, scored, competencyResults: results };
     },
     publicView(attempt) {
       const selected = requireSelectedItems(attempt);
