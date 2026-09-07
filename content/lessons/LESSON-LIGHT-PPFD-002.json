@@ -1,20 +1,48 @@
 {
-  "id":"LESSON-LIGHT-PPFD-002",
-  "title":"PPFD Mapping, Uniformity and Canopy Measurement",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-LIGHT-001"],
-  "learningObjectives":["LO-LIGHT-PPFD-002"],
-  "estimatedMinutes":35,
-  "references":["REF-LIGHT-001"],
-  "assessment":null,
-  "content":{
-    "overview":"PPFD is most useful when measured across the actual canopy. A grid of repeated measurements reveals intensity gradients and uniformity that a single center reading cannot show.",
-    "vocabulary":[{"term":"PPFD","definition":"Photosynthetic photon flux density, the photon flux in the photosynthetically active waveband reaching a surface."},{"term":"Uniformity","definition":"The degree to which measured light intensity is distributed consistently across a defined canopy area."},{"term":"Measurement grid","definition":"A repeatable set of canopy positions used to compare light distribution spatially."}],
-    "sections":[{"title":"One reading is not a canopy map","body":"Fixture geometry, hanging height, reflectance, plant spacing, and canopy shape create spatial differences. Multiple points are needed to characterize the distribution growers actually manage.","references":["REF-LIGHT-001"]},{"title":"Measure at the crop plane","body":"Measurements should be made at a defined height and orientation that represents the crop surface. Changing sensor angle or elevation can make repeated maps difficult to compare.","references":["REF-LIGHT-001"]},{"title":"Uniformity can matter as much as average intensity","body":"An acceptable average can conceal excessively bright and dim regions. Uniformity analysis helps determine whether fixture layout or canopy arrangement should change.","references":["REF-LIGHT-001"]}],
-    "workedExamples":["A nine-point grid averaging 700 can still contain a center at 1000 and corners at 450; the average alone hides the distribution problem.","After changing fixture height, repeat the same grid to determine whether uniformity improved rather than judging visually."],
-    "commonMistakes":["Using only the brightest center point.","Changing measurement height between maps.","Comparing meters without confirming their calibration or measurement method."],
-    "practicalApplication":"Define a canopy grid, measure PPFD at consistent height and orientation, calculate the average and range, map hot and dim zones, and repeat after major fixture or canopy changes.",
-    "summary":"PPFD mapping turns lighting from a fixture specification into a crop-level measurement. Repeatable spatial data reveal intensity and uniformity across the canopy."
+  "id": "LESSON-LIGHT-PPFD-002",
+  "title": "PPFD Mapping, Uniformity and Canopy Measurement",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-LIGHT-001"],
+  "learningObjectives": ["LO-LIGHT-PPFD-002"],
+  "estimatedMinutes": 50,
+  "references": ["REF-LIGHT-001"],
+  "assessment": null,
+  "content": {
+    "overview": "PPFD mapping converts lighting from a fixture specification into a crop-level measurement. A repeatable spatial map shows where photons actually reach the canopy, how evenly they are distributed, and whether changes to fixture position or canopy architecture improve the environment growers intend to create.",
+    "vocabulary": [
+      {"term": "PPFD", "definition": "Photosynthetic photon flux density, the photon flux in the photosynthetically active waveband reaching a surface."},
+      {"term": "Uniformity", "definition": "The degree to which measured light intensity is distributed consistently across a defined canopy area."},
+      {"term": "Measurement grid", "definition": "A repeatable set of canopy positions used to compare light distribution spatially."},
+      {"term": "Hot spot", "definition": "A canopy region receiving substantially higher PPFD than the surrounding measured area."},
+      {"term": "Coefficient of variation", "definition": "A normalized measure of spread that can be used to compare variability in a set of measurements."},
+      {"term": "Representative plane", "definition": "The defined height and orientation chosen to approximate the crop surface for repeatable measurements."}
+    ],
+    "sections": [
+      {"title": "One reading is not a canopy map", "body": "Fixture geometry, hanging height, overlap between fixtures, reflectance, plant spacing, and canopy shape create spatial differences. A center reading can be useful as one data point, but it cannot establish how the whole crop is lit. Multiple positions are needed to characterize the distribution growers actually manage.", "references": ["REF-LIGHT-001"]},
+      {"title": "Define the measurement plane before collecting data", "body": "Measurements should be made at a defined height and sensor orientation that represents the canopy being compared. If the crop is highly uneven, the measurement plan should state whether the goal is a fixed horizontal plane or measurements at local canopy tops. Consistency matters more than pretending one approach fits every crop.", "references": ["REF-LIGHT-001"]},
+      {"title": "Grid design determines what you can see", "body": "A sparse grid is fast but can miss local hot and dim zones. A denser grid gives better spatial resolution but requires more time. The grid should be sized to the fixture layout and canopy area, with points documented so the map can be repeated after changes.", "references": ["REF-LIGHT-001"]},
+      {"title": "Average intensity and uniformity answer different questions", "body": "The mean PPFD describes central tendency, while minimum, maximum, range, and variation describe distribution. Two canopies can have the same average but very different uniformity. Decisions should therefore consider both total intensity and how consistently that intensity is delivered.", "references": ["REF-LIGHT-001"]},
+      {"title": "Measure instruments, not just light", "body": "Meters can differ in calibration, cosine response, spectral response, cleanliness, and handling. Repeatable work requires using the same meter when possible, confirming its condition, keeping the sensor level and unobstructed, and documenting instrument identity when measurements are compared over time or between rooms.", "references": ["REF-LIGHT-001"]},
+      {"title": "Canopy architecture changes the light map", "body": "Plants are not flat laboratory surfaces. Height differences, leaves, branches, trellises, and neighboring plants create shading and change the photon distribution. A map should be interpreted with the current canopy structure in mind, and significant pruning, training, or stretch may justify remapping.", "references": ["REF-LIGHT-001"]},
+      {"title": "Use maps to test interventions", "body": "When fixture height, dimming, spacing, or canopy arrangement changes, repeat the same measurement grid. Comparing before-and-after maps shows whether the intervention improved the intended outcome rather than relying on visual impressions or a single brighter reading.", "references": ["REF-LIGHT-001"]},
+      {"title": "Document enough context to make the map reusable", "body": "A useful map records date, room or zone, fixture configuration, dimming setting, fixture height, canopy height, grid dimensions, meter used, and measurement values. Without context, the numbers are difficult to interpret later and cannot support reliable comparisons.", "references": ["REF-LIGHT-001"]}
+    ],
+    "workedExamples": [
+      "A nine-point grid averages 700, but the center is 1000 and corners are near 450. The average alone hides a large distribution problem, so examine fixture overlap and edge coverage before increasing overall output.",
+      "After raising a fixture, the peak PPFD decreases slightly while edge values increase. If the average remains similar and variation narrows, the change may have improved uniformity even though the single highest reading is lower.",
+      "Two rooms use identical fixtures and dimming settings, but one room has a taller, uneven canopy. Their light maps differ because crop architecture changes measurement height and shading. Measure each crop instead of assuming fixture settings create identical exposure.",
+      "A repeated map suddenly shows lower values at every point. Before changing the room, check meter cleanliness, battery condition, calibration status, and fixture settings to rule out a measurement-system problem."
+    ],
+    "commonMistakes": [
+      "Using only the brightest center point.",
+      "Changing measurement height or sensor angle between maps.",
+      "Reporting only an average and hiding the minimum and maximum values.",
+      "Comparing different meters without documenting their calibration or response characteristics.",
+      "Remapping after fixture changes but forgetting that the canopy architecture also changed.",
+      "Treating perfect numerical uniformity as the only goal without considering crop needs and fixture constraints."
+    ],
+    "practicalApplication": "Create a documented PPFD grid for one cultivation zone. Record fixture height, dimming level, canopy height, meter identity, and at least nine measurement points. Calculate mean, minimum, maximum, range, and a simple variation metric. Mark hot and dim zones on a sketch, make one justified lighting or canopy adjustment, then repeat the identical grid and compare the two maps.",
+    "summary": "PPFD mapping is a measurement discipline, not a single reading. Repeatable grids, representative measurement planes, instrument consistency, and basic uniformity analysis reveal how light is distributed across the real canopy and whether changes improve the intended crop environment."
   }
 }
