@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FOUND-POSTHARVEST-DRY-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-001",
+  "objective": "LO-POSTHARVEST-DRY-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A batch feels dry at the surface, but sealed representative samples later show rising internal humidity. Which explanation best fits drying science?",
+  "choices": [
+    "Internal moisture was still redistributing, so the initial endpoint was not proven uniform across the material",
+    "Surface feel always proves the entire batch has reached moisture equilibrium",
+    "Humidity rebound can only be caused by cultivar genetics",
+    "The correct response is to ignore representative samples and rely on elapsed drying time"
+  ],
+  "correct": 0,
+  "rationale": "Outer tissue can dry faster than the interior. Moisture rebound during stabilization indicates redistribution and can reveal that a drying endpoint was incomplete or uneven.",
+  "references": ["REF-POSTHARVEST-001"]
+}
