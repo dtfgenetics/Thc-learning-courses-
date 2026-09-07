@@ -16,23 +16,28 @@ const row = {
   payload_hash: 'payload-hash'
 };
 
-const calls = [];
-let transactionCount = 0;
-const writer = createPostgresCredentialWriter({
-  withTransaction: async (callback) => {
-    transactionCount += 1;
-    const query = async (text, params) => {
-      calls.push({ text, params });
-      if (text.includes('from credentials') && text.includes('for update')) return { rows: [row] };
-      if (text.startsWith('update credentials')) return { rowCount: 1, rows: [{ id: row.id }] };
-      if (text.startsWith('insert into credential_status_events')) return { rowCount: 1, rows: [] };
-      if (text.startsWith('insert into audit_events')) return { rowCount: 1, rows: [] };
-      throw new Error(`unexpected query: ${text}`);
-    };
-    return callback(query);
-  }
-});
+function createWriterForRow(currentRow, calls = []) {
+  let transactionCount = 0;
+  const writer = createPostgresCredentialWriter({
+    withTransaction: async (callback) => {
+      transactionCount += 1;
+      const query = async (text, params) => {
+        calls.push({ text, params });
+        if (text.includes('from credentials') && text.includes('for update')) return { rows: [currentRow] };
+        if (text.startsWith('update credentials')) return { rowCount: 1, rows: [{ id: currentRow.id }] };
+        if (text.startsWith('insert into credential_status_events')) return { rowCount: 1, rows: [] };
+        if (text.startsWith('insert into audit_events')) return { rowCount: 1, rows: [] };
+        throw new Error(`unexpected query: ${text}`);
+      };
+      return callback(query);
+    }
+  });
+  return { writer, transactionCount: () => transactionCount };
+}
 
+const calls = [];
+const primary = createWriterForRow(row, calls);
+const writer = primary.writer;
 const now = '2026-09-06T00:20:00.000Z';
 const result = await writer.transitionById(row.id, 'revoked', {
   actorId: 'admin-service',
@@ -40,7 +45,7 @@ const result = await writer.transitionById(row.id, 'revoked', {
   now
 });
 
-assert.equal(transactionCount, 1);
+assert.equal(primary.transactionCount(), 1);
 assert.equal(result.credential.status, 'revoked');
 assert.equal(result.event.persistence, 'transactional-postgres');
 assert.equal(calls.length, 4);
@@ -55,6 +60,41 @@ assert.deepEqual(JSON.parse(calls[3].params[4]), {
   fromStatus: 'valid',
   toStatus: 'revoked',
   reason: 'test-revocation'
+});
+
+const suspensionCalls = [];
+const suspension = createWriterForRow(row, suspensionCalls);
+const suspended = await suspension.writer.transitionById(row.id, 'suspended', {
+  actorId: 'credential-admin',
+  reason: 'evidence-review',
+  now: '2026-09-06T00:30:00.000Z'
+});
+assert.equal(suspended.credential.status, 'suspended');
+assert.equal(suspension.transactionCount(), 1);
+assert.deepEqual(suspensionCalls[1].params, ['suspended', row.id, 'valid']);
+assert.deepEqual(suspensionCalls[2].params, [row.id, 'suspended', 'evidence-review', 'credential-admin', '2026-09-06T00:30:00.000Z']);
+assert.deepEqual(JSON.parse(suspensionCalls[3].params[4]), {
+  fromStatus: 'valid',
+  toStatus: 'suspended',
+  reason: 'evidence-review'
+});
+
+const suspendedRow = { ...row, status: 'suspended' };
+const reinstatementCalls = [];
+const reinstatement = createWriterForRow(suspendedRow, reinstatementCalls);
+const reinstated = await reinstatement.writer.transitionById(row.id, 'valid', {
+  actorId: 'credential-admin',
+  reason: 'review-cleared',
+  now: '2026-09-06T00:40:00.000Z'
+});
+assert.equal(reinstated.credential.status, 'valid');
+assert.equal(reinstatement.transactionCount(), 1);
+assert.deepEqual(reinstatementCalls[1].params, ['valid', row.id, 'suspended']);
+assert.deepEqual(reinstatementCalls[2].params, [row.id, 'valid', 'review-cleared', 'credential-admin', '2026-09-06T00:40:00.000Z']);
+assert.deepEqual(JSON.parse(reinstatementCalls[3].params[4]), {
+  fromStatus: 'suspended',
+  toStatus: 'valid',
+  reason: 'review-cleared'
 });
 
 await assert.rejects(
@@ -80,4 +120,4 @@ await assert.rejects(
 );
 assert.equal(conflictQueries, 2);
 
-console.log('Transactional credential state-write contract tests passed');
+console.log('Transactional credential lifecycle state-write contract tests passed');
