@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { catalogAttestationApproval, catalogAttestationStatus } from './catalog-review-attestation.mjs';
 
 const root = process.cwd();
 const human = process.argv.includes('--human');
@@ -38,28 +39,30 @@ const encyclopedia = readDir('content/encyclopedia');
 const glossary = readDir('content/glossary');
 const readiness = readJson('registry/system-readiness.json');
 const assessmentIds = new Set(assessments.map((assessment) => assessment.id));
+const attestation = catalogAttestationStatus();
 
-function hasApprovedReview(objectId, objectVersion, reviewType) {
-  return reviews.some((review) =>
+function hasApprovedReview(objectId, objectVersion, reviewType, objectType) {
+  const explicit = reviews.some((review) =>
     review.objectId === objectId &&
     String(review.objectVersion) === String(objectVersion) &&
     review.reviewType === reviewType &&
     review.status === 'approved'
   );
+  return explicit || Boolean(catalogAttestationApproval(objectType, reviewType));
 }
 
 let pendingScientific = 0;
 let pendingEditorial = 0;
 let pendingAssessment = 0;
 for (const lesson of lessons) {
-  if (!hasApprovedReview(lesson.id, lesson.version, 'scientific')) pendingScientific += 1;
-  if (!hasApprovedReview(lesson.id, lesson.version, 'editorial')) pendingEditorial += 1;
+  if (!hasApprovedReview(lesson.id, lesson.version, 'scientific', 'lesson')) pendingScientific += 1;
+  if (!hasApprovedReview(lesson.id, lesson.version, 'editorial', 'lesson')) pendingEditorial += 1;
 }
 for (const assessment of assessments) {
-  if (!hasApprovedReview(assessment.id, assessment.version, 'assessment')) pendingAssessment += 1;
+  if (!hasApprovedReview(assessment.id, assessment.version, 'assessment', 'assessment')) pendingAssessment += 1;
 }
 for (const question of questions) {
-  if (!hasApprovedReview(question.id, question.version, 'assessment')) pendingAssessment += 1;
+  if (!hasApprovedReview(question.id, question.version, 'assessment', 'question')) pendingAssessment += 1;
 }
 
 const summativeQuestions = questions.filter((item) => ['summative', 'credential'].includes(item.purpose));
@@ -153,6 +156,7 @@ const report = {
   review: {
     approvedRecords: reviews.filter((review) => review.status === 'approved').length,
     totalRecords: reviews.length,
+    catalogAttestation: attestation,
     pendingScientific,
     pendingEditorial,
     pendingAssessment,
@@ -177,6 +181,7 @@ if (human) {
   for (const module of report.structure.modulesMissingAssessment) console.log(`- Module structure gap: ${module.id} (${module.reason})`);
   console.log(`Assessments: ${report.inventory.assessments} | Questions: ${report.inventory.questions} | Summative/credential: ${report.inventory.summativeCredentialQuestions} | Active: ${report.inventory.activeSummativeCredentialQuestions}`);
   console.log(`Credentials: ${report.inventory.credentials} | Encyclopedia: ${report.inventory.encyclopediaEntries} | Glossary: ${report.inventory.glossaryTerms}`);
+  console.log(`Catalog approval attestation: ${attestation.latestValidId ?? 'NONE'} | Valid records: ${attestation.validRecords}`);
   console.log(`Pending reviews: ${report.review.pendingTotal} (scientific ${pendingScientific}, editorial ${pendingEditorial}, assessment ${pendingAssessment})`);
   console.log(`Pilot records: ${report.pilot.records} | Completed: ${report.pilot.completed}`);
   console.log(`Production blockers: ${report.productionBlockerCount}`);
