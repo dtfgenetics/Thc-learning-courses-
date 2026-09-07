@@ -1,0 +1,53 @@
+{
+  "course": "COURSE-CULT-FOUNDATIONS-001",
+  "assessment": "ASSESS-CULT-FOUNDATIONS-FINAL-001",
+  "version": "1.0.0",
+  "policy": {
+    "minimumSummativeItemsPerObjective": 1,
+    "primaryTargetBankItems": 5,
+    "supportingTargetBankItems": 3,
+    "examSelectionRule": "The final form is competency-balanced. Objective coverage is enforced across the approved bank and monitored across generated forms; not every objective must appear on every 60-item form.",
+    "roleDefinitions": {
+      "summative-core": "Primary domain objective. Must have summative bank coverage and receives the deeper bank target.",
+      "summative-supporting": "Supporting domain objective. Must have summative bank coverage and contributes to domain-level evidence without requiring appearance on every form."
+    }
+  },
+  "objectives": [
+    {"domain":"DOMAIN-PLANT-BIOLOGY","objective":"LO-PLANT-BIO-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-PLANT-BIOLOGY","objective":"LO-PLANT-BIO-ANATOMY-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-PLANT-BIOLOGY","objective":"LO-PLANT-BIO-SEX-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-ENVIRONMENT","objective":"LO-ENV-VPD-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-ENVIRONMENT","objective":"LO-ENV-SENSORS-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-ENVIRONMENT","objective":"LO-ENV-LEAF-VPD-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-LIGHTING","objective":"LO-LIGHT-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-LIGHTING","objective":"LO-LIGHT-PPFD-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-LIGHTING","objective":"LO-LIGHT-DLI-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-WATER","objective":"LO-WATER-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-WATER","objective":"LO-WATER-PH-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-WATER","objective":"LO-WATER-EC-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-ROOTZONE","objective":"LO-ROOTZONE-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-ROOTZONE","objective":"LO-ROOTZONE-MEDIA-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-ROOTZONE","objective":"LO-ROOTZONE-DRYBACK-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-NUTRITION","objective":"LO-NUTRITION-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-NUTRITION","objective":"LO-NUTRITION-MACRO-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-NUTRITION","objective":"LO-NUTRITION-MICRO-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-IPM","objective":"LO-IPM-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-IPM","objective":"LO-IPM-SCOUT-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-IPM","objective":"LO-IPM-BIOSEC-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-PROPAGATION","objective":"LO-PROP-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-PROPAGATION","objective":"LO-PROP-SEED-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-PROPAGATION","objective":"LO-PROP-CLONE-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-CANOPY","objective":"LO-CANOPY-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-CANOPY","objective":"LO-CANOPY-LST-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-CANOPY","objective":"LO-CANOPY-HST-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-FLOWERING","objective":"LO-FLOWER-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-FLOWERING","objective":"LO-FLOWER-PHOTO-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-FLOWERING","objective":"LO-FLOWER-MATURITY-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-POSTHARVEST","objective":"LO-POSTHARVEST-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-POSTHARVEST","objective":"LO-POSTHARVEST-DRY-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-POSTHARVEST","objective":"LO-POSTHARVEST-STORAGE-003","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-GENETICS","objective":"LO-GENETICS-001","role":"summative-core","targetBankItems":5},
+    {"domain":"DOMAIN-GENETICS","objective":"LO-GENETICS-INHERIT-002","role":"summative-supporting","targetBankItems":3},
+    {"domain":"DOMAIN-GENETICS","objective":"LO-GENETICS-SELECT-003","role":"summative-supporting","targetBankItems":3}
+  ]
+}
