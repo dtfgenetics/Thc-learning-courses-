@@ -4,99 +4,13 @@
   "updatedAt": "2026-09-07",
   "productionReady": false,
   "areas": {
-    "curriculum": {
-      "status": "approved",
-      "gates": {
-        "substantiveContentComplete": true,
-        "scientificReviewComplete": true,
-        "editorialReviewComplete": true
-      }
-    },
-    "assessment": {
-      "status": "review-in-progress",
-      "gates": {
-        "blueprintComplete": true,
-        "developmentFormGeneration": true,
-        "minimumActivePoolComplete": false,
-        "humanAssessmentReviewComplete": false,
-        "pilotStatisticsComplete": false
-      }
-    },
-    "runtime": {
-      "status": "foundation",
-      "gates": {
-        "serverSideAttemptStateMachine": true,
-        "serverSideScoringCore": true,
-        "competencyResultCore": true,
-        "postgresSchemaDefined": true,
-        "productionPersistenceAdapter": true,
-        "authenticationIntegrated": true,
-        "authorizationIntegrated": true
-      }
-    },
-    "credentials": {
-      "status": "implementation-verified-awaiting-production-keys",
-      "gates": {
-        "deterministicEligibility": true,
-        "testIssuance": true,
-        "stateMachine": true,
-        "privacySafeVerificationProjection": true,
-        "issuerContractImplemented": true,
-        "signingImplementationTested": true,
-        "productionIssuerIdentity": false,
-        "productionSigning": false,
-        "revocationPersistence": true
-      }
-    },
-    "api": {
-      "status": "development",
-      "gates": {
-        "verificationContract": true,
-        "developmentHttpService": true,
-        "productionDatabaseIntegration": true,
-        "rateLimiting": true,
-        "authentication": true,
-        "observability": true
-      }
-    },
-    "security": {
-      "status": "implementation-verified-awaiting-deployment-review",
-      "gates": {
-        "piiExcludedFromGit": true,
-        "privateKeysExcludedFromGit": true,
-        "serverSideScoringBoundary": true,
-        "privilegedMfaEnforcementImplemented": true,
-        "privilegedMfaRegressionTested": true,
-        "rowLevelPoliciesDefined": true,
-        "rlsIsolationIntegrationTested": true,
-        "adminMfaEnforced": false,
-        "rowLevelAuthorization": false,
-        "securityReviewComplete": false
-      }
-    },
-    "accessibility": {
-      "status": "automated-regressions-ready-awaiting-human-runtime-review",
-      "gates": {
-        "wcagTargetDefined": true,
-        "staticAccessibilityRegressionComplete": true,
-        "contentAccessibilityReviewComplete": false,
-        "assessmentAccessibilityReviewComplete": false,
-        "frontendAccessibilityTestingComplete": false
-      }
-    },
-    "operations": {
-      "status": "deployment-tooling-ready-awaiting-environment-evidence",
-      "gates": {
-        "releasePolicyDefined": true,
-        "stagingStackDefinition": true,
-        "stagingSmokeTestImplemented": true,
-        "productionControlEvidenceContract": true,
-        "stagingEnvironment": false,
-        "productionEnvironment": false,
-        "backupRestoreTested": false,
-        "incidentResponseRunbook": true,
-        "monitoringAndAlerting": false
-      }
-    }
+    "curriculum": {"status":"approved","gates":{"substantiveContentComplete":true,"scientificReviewComplete":true,"editorialReviewComplete":true}},
+    "assessment": {"status":"review-in-progress","gates":{"blueprintComplete":true,"developmentFormGeneration":true,"minimumActivePoolComplete":false,"humanAssessmentReviewComplete":false,"pilotStatisticsComplete":false}},
+    "runtime": {"status":"foundation","gates":{"serverSideAttemptStateMachine":true,"serverSideScoringCore":true,"competencyResultCore":true,"postgresSchemaDefined":true,"productionPersistenceAdapter":true,"authenticationIntegrated":true,"authorizationIntegrated":true}},
+    "credentials": {"status":"implementation-verified-awaiting-production-keys","gates":{"deterministicEligibility":true,"testIssuance":true,"stateMachine":true,"privacySafeVerificationProjection":true,"issuerContractImplemented":true,"signingImplementationTested":true,"productionIssuerIdentity":false,"productionSigning":false,"revocationPersistence":true}},
+    "api": {"status":"development","gates":{"verificationContract":true,"developmentHttpService":true,"productionDatabaseIntegration":true,"rateLimiting":true,"authentication":true,"observability":true}},
+    "security": {"status":"implementation-verified-awaiting-deployment-review","gates":{"piiExcludedFromGit":true,"privateKeysExcludedFromGit":true,"serverSideScoringBoundary":true,"privilegedMfaEnforcementImplemented":true,"privilegedMfaRegressionTested":true,"rowLevelPoliciesDefined":true,"rlsIsolationIntegrationTested":true,"adminMfaEnforced":false,"rowLevelAuthorization":false,"securityReviewComplete":false}},
+    "accessibility": {"status":"automated-regressions-ready-awaiting-human-runtime-review","gates":{"wcagTargetDefined":true,"staticAccessibilityRegressionComplete":true,"contentAccessibilityReviewComplete":false,"assessmentAccessibilityReviewComplete":false,"frontendAccessibilityTestingComplete":false}},
+    "operations": {"status":"deployment-tooling-ready-awaiting-environment-evidence","gates":{"releasePolicyDefined":true,"stagingStackDefinition":true,"stagingSmokeTestImplemented":true,"productionControlEvidenceContract":true,"backupRestoreDrillImplemented":true,"backupRestoreDrillCiValidated":true,"monitoringPolicyDefined":true,"monitoringPolicyValidated":true,"monitoringDrillDefined":true,"stagingEnvironment":false,"productionEnvironment":false,"backupRestoreTested":false,"incidentResponseRunbook":true,"monitoringAndAlerting":false}}
   }
 }

@@ -37,5 +37,13 @@ jobs:
           name: generated-curriculum-registry
           path: registry/curriculum.json
           if-no-files-found: error
+      - name: Validate operational controls
+        run: npm run ops:validate
+      - name: Validate staging readiness contract
+        run: npm run staging:readiness
+      - name: Validate system readiness consistency
+        run: npm run status:check
+      - name: Validate production-readiness boundary
+        run: npm run production:readiness
       - name: Run complete curriculum and credential test suite against generated registry
         run: npm test
