@@ -240,6 +240,38 @@ export function createHandler({
         }
       }
 
+      const assessmentHistoryMatch = url.pathname.match(/^\/api\/v1\/me\/assessments\/(ASSESS-[A-Z0-9-]+)\/attempts$/);
+      if (req.method === 'GET' && assessmentHistoryMatch) {
+        route = 'GET /api/v1/me/assessments/:assessmentId/attempts';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listAssessmentAttempts !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+        const policyDefinition = resolvedAssessmentDelivery.policyDefinition(assessmentHistoryMatch[1]);
+        if (!policyDefinition) return json(res, 404, { error: 'assessment-not-found', requestId });
+        const attempts = await learnerStore.listAssessmentAttempts(auth.subject, assessmentHistoryMatch[1]);
+        const policy = evaluateAssessmentAttemptPolicy({ assessment: policyDefinition, attempts });
+        return json(res, 200, {
+          assessment: {
+            id: policyDefinition.id,
+            version: policyDefinition.version,
+            status: policyDefinition.status,
+            maxAttempts: policyDefinition.maxAttempts,
+            cooldownHours: policyDefinition.cooldownHours
+          },
+          policy,
+          attempts: attempts.map((attempt) => ({
+            id: attempt.id,
+            assessmentVersion: attempt.assessmentVersion,
+            status: attempt.status,
+            startedAt: attempt.startedAt,
+            submittedAt: attempt.submittedAt,
+            scoredAt: attempt.scoredAt,
+            scorePercent: attempt.scorePercent ?? null,
+            passed: attempt.passed ?? null
+          }))
+        });
+      }
+
       const assessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/assessments\/(ASSESS-[A-Z0-9-]+)\/attempts$/);
 if (req.method === 'POST' && assessmentStartMatch) {
   route = 'POST /api/v1/me/assessments/:assessmentId/attempts';
