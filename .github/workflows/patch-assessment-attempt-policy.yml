@@ -1,0 +1,64 @@
+name: Patch assessment attempt policy
+
+on:
+  push:
+    branches:
+      - feat/learner-assessment-attempt-api
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/learner-assessment-attempt-api
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply attempt policy patch
+        run: node scripts/patch-assessment-attempt-policy.mjs
+
+      - name: Test attempt policy domain
+        run: node scripts/test-assessment-attempt-policy.mjs
+
+      - name: Test attempt history persistence
+        run: node scripts/test-assessment-attempt-history.mjs
+
+      - name: Test learner assessment API
+        run: node scripts/test-learner-assessment-api.mjs
+
+      - name: Test production persistence composition
+        run: node scripts/test-production-persistence-adapter.mjs
+
+      - name: Test production bootstrap contract
+        run: node scripts/test-production-bootstrap.mjs
+
+      - name: Remove one-shot patch machinery
+        run: |
+          rm scripts/patch-assessment-attempt-policy.mjs
+          rm .github/workflows/patch-assessment-attempt-policy.yml
+
+      - name: Commit verified patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Enforce learner assessment attempt policy"
+          git push origin HEAD:feat/learner-assessment-attempt-api
