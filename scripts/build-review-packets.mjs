@@ -56,11 +56,23 @@ function stateFromReview(review) {
 
 const tasks = [];
 const lessonIds = new Set();
+const competencyIds = new Set();
+const assessmentIds = new Set([registry.summativeAssessment].filter(Boolean));
 for (const domain of registry.domains ?? []) {
   const module = modules.get(domain.module);
   if (!module) throw new Error(`Review packet builder cannot resolve module ${domain.module}`);
   for (const lessonId of module.lessons ?? []) lessonIds.add(lessonId);
+  for (const competencyId of domain.competencies ?? []) competencyIds.add(competencyId);
+  if (module.assessment) assessmentIds.add(module.assessment);
 }
+
+const scopedAssessments = [...assessments.values()].filter((assessment) => assessmentIds.has(assessment.id));
+const explicitlyReferencedQuestionIds = new Set(scopedAssessments.flatMap((assessment) => assessment.items ?? []));
+const scopedQuestions = [...questions.values()].filter((item) =>
+  explicitlyReferencedQuestionIds.has(item.id) ||
+  (competencyIds.has(item.competency) && ['summative', 'credential'].includes(item.purpose))
+);
+
 for (const lessonId of [...lessonIds].sort()) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`Review packet builder cannot resolve lesson ${lessonId}`);
@@ -70,11 +82,11 @@ for (const lessonId of [...lessonIds].sort()) {
   const editorial = latestReview(lesson.id, lesson.version, 'editorial', 'lesson');
   tasks.push({lane:'lesson-editorial',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'editorial',state:scientificState === 'approved' ? stateFromReview(editorial) : 'blocked',blockedBy:scientificState === 'approved' ? null : 'scientific-approval',latestReviewId:editorial?.id ?? null});
 }
-for (const assessment of [...assessments.values()].sort((a,b) => a.id.localeCompare(b.id))) {
+for (const assessment of [...scopedAssessments].sort((a,b) => a.id.localeCompare(b.id))) {
   const review = latestReview(assessment.id, assessment.version, 'assessment', 'assessment');
   tasks.push({lane:'assessment-definition',objectType:'assessment',objectId:assessment.id,objectVersion:assessment.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
 }
-for (const item of [...questions.values()].sort((a,b) => a.id.localeCompare(b.id))) {
+for (const item of [...scopedQuestions].sort((a,b) => a.id.localeCompare(b.id))) {
   const review = latestReview(item.id, item.version, 'assessment', 'question');
   tasks.push({lane:item.purpose === 'formative' ? 'formative-item' : 'credential-item',objectType:'question',objectId:item.id,objectVersion:item.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
 }
@@ -145,6 +157,7 @@ function packetFor(task) {
   const history = reviews.filter((r) => r.objectId === task.objectId && String(r.objectVersion) === String(task.objectVersion)).sort((a,b) => Date.parse(a.reviewedAt) - Date.parse(b.reviewedAt));
   return {
     packetVersion: '1.0.0',
+    releaseScope: { course: registry.course, version: registry.version },
     task,
     source,
     mappings,
@@ -167,6 +180,11 @@ const packets = selected.map(packetFor);
 const summary = {
   curriculum: registry.course,
   curriculumVersion: registry.version,
+  releaseScope: {
+    competencies: competencyIds.size,
+    assessments: scopedAssessments.length,
+    questions: scopedQuestions.length
+  },
   taskCount: selected.length,
   packetCount: packets.length,
   states: Object.fromEntries(['approved','pending','blocked','revision-required'].map((state) => [state, selected.filter((t) => t.state === state).length])),
@@ -176,7 +194,7 @@ const summary = {
 
 function markdown(packet) {
   const src = packet.source;
-  const lines = [`# Review packet: ${packet.task.objectId}`, '', `- Lane: ${packet.task.lane}`, `- Review type: ${packet.task.reviewType}`, `- Version: ${packet.task.objectVersion}`, `- Queue state: ${packet.task.state}`, ''];
+  const lines = [`# Review packet: ${packet.task.objectId}`, '', `- Release: ${packet.releaseScope.course}@${packet.releaseScope.version}`, `- Lane: ${packet.task.lane}`, `- Review type: ${packet.task.reviewType}`, `- Version: ${packet.task.objectVersion}`, `- Queue state: ${packet.task.state}`, ''];
   if (src.title) lines.push(`## ${src.title}`, '');
   lines.push('## Traceability', ...packet.mappings.competencies.map((x) => `- Competency: ${x.id}${x.title ? ` — ${x.title}` : ''}`), ...packet.mappings.objectives.map((x) => `- Objective: ${x.id}${x.statement ? ` — ${x.statement}` : ''}`), '');
   lines.push('## Evidence', ...packet.evidence.map((x) => `- ${x.id}: ${x.title ?? 'Untitled'} [${x.status ?? 'unknown'}; level ${x.evidenceLevel ?? 'n/a'}]${x.url ? ` — ${x.url}` : ''}`), '');
