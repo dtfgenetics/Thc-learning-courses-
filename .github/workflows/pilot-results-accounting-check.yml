@@ -1,0 +1,30 @@
+name: Pilot results accounting check
+
+on:
+  push:
+    branches: [fix/pilot-results-accounting]
+    paths:
+      - scripts/build-pilot-evidence-from-results.mjs
+      - scripts/test-build-pilot-evidence-from-results.mjs
+      - scripts/pilot-evidence-quality.mjs
+      - scripts/test-pilot-evidence-quality-policy.mjs
+      - .github/workflows/pilot-results-accounting-check.yml
+
+permissions:
+  contents: read
+
+jobs:
+  pilot-accounting:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: node scripts/test-build-pilot-evidence-from-results.mjs
+      - run: node scripts/test-pilot-evidence-quality-policy.mjs
+      - run: node scripts/validate-pilot-evidence.mjs
+      - run: node scripts/report-pilot-readiness.mjs
