@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { activationEvidenceEvaluation, loadPilotEvidencePolicy } from './pilot-evidence-quality.mjs';
 
 const root = process.cwd();
 function readDirJson(rel) {
@@ -11,10 +12,14 @@ function readDirJson(rel) {
 const items = readDirJson('content/questions').filter((x) => ['summative','credential'].includes(x.purpose));
 const pilot = readDirJson('content/pilot-evidence');
 const reviews = readDirJson('content/reviews');
+const policy = loadPilotEvidencePolicy(root);
 const competencies = [...new Set(items.map((x) => x.competency))].sort();
-function completePilot(item) { return pilot.some((p) => p.itemId === item.id && String(p.itemVersion) === String(item.version) && p.status === 'complete'); }
-function pilotRegistered(item) { return pilot.some((p) => p.itemId === item.id && String(p.itemVersion) === String(item.version) && p.status !== 'invalidated'); }
+function itemPilotRecords(item) { return pilot.filter((p) => p.itemId === item.id && String(p.itemVersion) === String(item.version)); }
+function completePilot(item) { return itemPilotRecords(item).some((p) => p.status === 'complete'); }
+function pilotRegistered(item) { return itemPilotRecords(item).some((p) => p.status !== 'invalidated'); }
+function activationReadyPilot(item) { return itemPilotRecords(item).some((record) => activationEvidenceEvaluation(record, item, policy).ready); }
 function approvedReview(item) { return reviews.some((r) => r.objectId === item.id && String(r.objectVersion) === String(item.version) && r.reviewType === 'assessment' && r.status === 'approved'); }
+function reviewFlagged(item) { return itemPilotRecords(item).some((record) => record.status === 'complete' && activationEvidenceEvaluation(record, item, policy).reviewFlags.length > 0); }
 const rows = competencies.map((competency) => {
   const pool = items.filter((x) => x.competency === competency);
   return {
@@ -26,8 +31,10 @@ const rows = competencies.map((competency) => {
     active: pool.filter((x) => x.status === 'active').length,
     pilotRecords: pool.filter(pilotRegistered).length,
     completePilotEvidence: pool.filter(completePilot).length,
+    policyQualifiedPilotEvidence: pool.filter(activationReadyPilot).length,
+    pilotEvidenceWithReviewFlags: pool.filter(reviewFlagged).length,
     approvedAssessmentReview: pool.filter(approvedReview).length,
-    activationEvidenceComplete: pool.filter((x) => completePilot(x) && approvedReview(x)).length
+    activationEvidenceComplete: pool.filter((x) => activationReadyPilot(x) && approvedReview(x)).length
   };
 });
 
@@ -41,13 +48,21 @@ try {
 }
 
 const output = {
+  policy: {
+    version: policy.version,
+    minimumResponsesPerItem: policy.activation.minimumResponsesPerItem,
+    minimumDiscrimination: policy.activation.minimumDiscrimination,
+    targetResponsesPerItem: policy.reviewSignals.targetResponsesPerItem
+  },
   summary: {
     items: items.length,
     pilotRecords: pilot.length,
     itemsWithPilotRecord: items.filter(pilotRegistered).length,
     itemsWithCompletePilotEvidence: items.filter(completePilot).length,
+    itemsWithPolicyQualifiedPilotEvidence: items.filter(activationReadyPilot).length,
+    itemsWithPilotReviewFlags: items.filter(reviewFlagged).length,
     itemsWithApprovedAssessmentReview: items.filter(approvedReview).length,
-    itemsWithActivationEvidenceComplete: items.filter((x) => completePilot(x) && approvedReview(x)).length,
+    itemsWithActivationEvidenceComplete: items.filter((x) => activationReadyPilot(x) && approvedReview(x)).length,
     activeItems: items.filter((x) => x.status === 'active').length,
     foundationsPilotCandidatePoolsReady: foundationsCandidates.summary.candidatePoolsReady,
     foundationsPilotCandidateCompetencies: foundationsCandidates.summary.competencies,
