@@ -1,0 +1,14 @@
+{
+  "course": "COURSE-CULT-FOUNDATIONS-001",
+  "assessment": "ASSESS-CULT-FOUNDATIONS-FINAL-001",
+  "version": "1.0.0",
+  "minimumCandidatesPerCompetency": 15,
+  "selection": {
+    "requireApprovedAssessmentReview": true,
+    "allowedPurposes": ["summative", "credential"],
+    "excludeStatuses": ["flagged", "retired"],
+    "preferObjectiveDiversity": true,
+    "deterministicOrder": "objective then item id"
+  },
+  "notes": "This plan selects candidate items for an observed pilot. It does not create pilot evidence, change item lifecycle status, or authorize activation."
+}
