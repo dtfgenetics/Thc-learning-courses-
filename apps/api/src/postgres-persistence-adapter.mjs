@@ -2,6 +2,7 @@ import { Pool } from 'pg';
 import { createPostgresCredentialStore } from './postgres-credential-store.mjs';
 import { createPostgresCredentialWriter } from './postgres-credential-writer.mjs';
 import { createPostgresLearnerStore } from './postgres-learner-store.mjs';
+import { createAssessmentAttemptHistoryReader } from './assessment-attempt-history.mjs';
 
 function requiredDatabaseUrl(env) {
   const value = String(env.THC_DATABASE_URL ?? env.DATABASE_URL ?? '').trim();
@@ -62,10 +63,13 @@ export async function createPersistenceAdapters({ env = process.env, poolFactory
     }
   };
 
+  const learnerStore = createPostgresLearnerStore({ query, withTransaction });
+  learnerStore.listAssessmentAttempts = createAssessmentAttemptHistoryReader({ query });
+
   return {
     credentialStore: createPostgresCredentialStore({ query }),
     credentialWriter: createPostgresCredentialWriter({ withTransaction }),
-    learnerStore: createPostgresLearnerStore({ query, withTransaction }),
+    learnerStore,
     async close() {
       if (typeof pool.end === 'function') await pool.end();
     }
