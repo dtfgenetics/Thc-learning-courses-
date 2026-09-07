@@ -11,6 +11,7 @@ on:
       - 'database/**'
       - 'scripts/test-live-postgres-integration.mjs'
       - 'scripts/test-live-rls-policy.mjs'
+      - 'scripts/test-backup-restore-drill.mjs'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/postgres-integration.yml'
@@ -24,6 +25,7 @@ on:
       - 'database/**'
       - 'scripts/test-live-postgres-integration.mjs'
       - 'scripts/test-live-rls-policy.mjs'
+      - 'scripts/test-backup-restore-drill.mjs'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/postgres-integration.yml'
@@ -70,3 +72,5 @@ jobs:
         run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f database/rls-policies.sql
       - name: Run live RLS learner-isolation validation
         run: node scripts/test-live-rls-policy.mjs
+      - name: Run disposable backup and restore drill
+        run: node scripts/test-backup-restore-drill.mjs
