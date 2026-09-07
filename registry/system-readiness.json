@@ -13,12 +13,12 @@
       }
     },
     "assessment": {
-      "status": "review-approved-awaiting-pilot",
+      "status": "review-in-progress",
       "gates": {
         "blueprintComplete": true,
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
-        "humanAssessmentReviewComplete": true,
+        "humanAssessmentReviewComplete": false,
         "pilotStatisticsComplete": false
       }
     },
