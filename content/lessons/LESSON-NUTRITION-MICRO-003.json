@@ -2,30 +2,99 @@
   "id": "LESSON-NUTRITION-MICRO-003",
   "title": "Micronutrients, Availability and Nutrient Antagonism",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-NUTRITION-001"],
-  "learningObjectives": ["LO-NUTRITION-MICRO-003"],
+  "status": "approved",
+  "competencies": [
+    "COMP-NUTRITION-001"
+  ],
+  "learningObjectives": [
+    "LO-NUTRITION-MICRO-003"
+  ],
   "estimatedMinutes": 55,
-  "references": ["REF-NUTRITION-001"],
+  "references": [
+    "REF-NUTRITION-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Micronutrients are required in smaller quantities than macronutrients but remain essential for enzymes, electron transport, structural processes, photosynthesis, hormone-related metabolism, and other plant functions. Deficiency-like symptoms can result from low supply, poor availability, antagonism, pH problems, salinity, damaged roots, or measurement error, so diagnosis must go beyond visual charts.",
     "vocabulary": [
-      {"term": "Micronutrient", "definition": "An essential mineral nutrient required in relatively small amounts compared with macronutrients."},
-      {"term": "Chelation", "definition": "Binding of a metal ion by an organic molecule that can affect solubility, transport, and availability."},
-      {"term": "Availability", "definition": "The fraction of a nutrient present in a form and location that roots can acquire and the plant can use."},
-      {"term": "Antagonism", "definition": "An interaction in which abundance of one ion can reduce acquisition or use of another."},
-      {"term": "Interveinal chlorosis", "definition": "Yellowing between leaf veins while veins remain relatively greener, a symptom pattern shared by multiple disorders."}
+      {
+        "term": "Micronutrient",
+        "definition": "An essential mineral nutrient required in relatively small amounts compared with macronutrients."
+      },
+      {
+        "term": "Chelation",
+        "definition": "Binding of a metal ion by an organic molecule that can affect solubility, transport, and availability."
+      },
+      {
+        "term": "Availability",
+        "definition": "The fraction of a nutrient present in a form and location that roots can acquire and the plant can use."
+      },
+      {
+        "term": "Antagonism",
+        "definition": "An interaction in which abundance of one ion can reduce acquisition or use of another."
+      },
+      {
+        "term": "Interveinal chlorosis",
+        "definition": "Yellowing between leaf veins while veins remain relatively greener, a symptom pattern shared by multiple disorders."
+      }
     ],
     "sections": [
-      {"title": "Small requirement does not mean small importance", "body": "Iron, manganese, zinc, copper, boron, molybdenum, chlorine, and nickel participate in essential plant processes. Required amounts are lower than for macronutrients, but insufficient availability can still constrain growth, photosynthesis, reproductive development, and metabolism.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Iron and manganese participate in electron-transfer and enzyme systems", "body": "Iron is important in electron transport and many enzymes, while manganese participates in photosynthetic and enzymatic reactions. Deficiency-like chlorosis can occur when root-zone chemistry limits availability even when total nutrient supply is not obviously low.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Zinc and copper support enzyme and regulatory processes", "body": "Zinc and copper are required in numerous enzymes and regulatory systems. Excessive addition can become toxic or interfere with other nutrients, which is why micronutrient correction should be evidence-based and measured rather than aggressive.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Boron, molybdenum, chlorine and nickel remain essential", "body": "Boron contributes to cell-wall and reproductive processes, molybdenum is involved in nitrogen metabolism, chlorine has roles in osmotic and photosynthetic function, and nickel is required for urease activity. Their low concentration requirements should not be confused with optional status.", "references": ["REF-NUTRITION-001"]},
-      {"title": "pH strongly influences micronutrient availability", "body": "Root-zone pH changes can alter solubility and chemical form, especially for several metal micronutrients. A nutrient can be present in the substrate or solution but poorly available to roots. This is why adding more nutrient without checking pH can fail to solve the problem and may create toxicity.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Chelation affects metal behavior", "body": "Chelating compounds can help keep some metal ions soluble and available over certain chemical conditions. Different chelates behave differently, so the presence of a chelated micronutrient does not remove the need to monitor pH, concentration, compatibility, and root-zone conditions.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Antagonism can mimic low supply", "body": "High concentrations of competing ions can reduce uptake or use of another nutrient. A deficiency-like symptom following a major ratio or EC change should trigger review of the entire formulation and root-zone chemistry, not just an increase in the nutrient associated with the symptom chart.", "references": ["REF-NUTRITION-001"]},
-      {"title": "Symptom pattern is evidence, not proof", "body": "Visual symptoms should be documented by leaf age, location, symmetry, progression, and relation to recent management changes. Root disease, environmental stress, salinity, pH, and multiple nutrient issues can produce overlapping visual patterns. Diagnosis improves when visual evidence is combined with measurements and history.", "references": ["REF-NUTRITION-001"]}
+      {
+        "title": "Small requirement does not mean small importance",
+        "body": "Iron, manganese, zinc, copper, boron, molybdenum, chlorine, and nickel participate in essential plant processes. Required amounts are lower than for macronutrients, but insufficient availability can still constrain growth, photosynthesis, reproductive development, and metabolism.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Iron and manganese participate in electron-transfer and enzyme systems",
+        "body": "Iron is important in electron transport and many enzymes, while manganese participates in photosynthetic and enzymatic reactions. Deficiency-like chlorosis can occur when root-zone chemistry limits availability even when total nutrient supply is not obviously low.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Zinc and copper support enzyme and regulatory processes",
+        "body": "Zinc and copper are required in numerous enzymes and regulatory systems. Excessive addition can become toxic or interfere with other nutrients, which is why micronutrient correction should be evidence-based and measured rather than aggressive.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Boron, molybdenum, chlorine and nickel remain essential",
+        "body": "Boron contributes to cell-wall and reproductive processes, molybdenum is involved in nitrogen metabolism, chlorine has roles in osmotic and photosynthetic function, and nickel is required for urease activity. Their low concentration requirements should not be confused with optional status.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "pH strongly influences micronutrient availability",
+        "body": "Root-zone pH changes can alter solubility and chemical form, especially for several metal micronutrients. A nutrient can be present in the substrate or solution but poorly available to roots. This is why adding more nutrient without checking pH can fail to solve the problem and may create toxicity.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Chelation affects metal behavior",
+        "body": "Chelating compounds can help keep some metal ions soluble and available over certain chemical conditions. Different chelates behave differently, so the presence of a chelated micronutrient does not remove the need to monitor pH, concentration, compatibility, and root-zone conditions.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Antagonism can mimic low supply",
+        "body": "High concentrations of competing ions can reduce uptake or use of another nutrient. A deficiency-like symptom following a major ratio or EC change should trigger review of the entire formulation and root-zone chemistry, not just an increase in the nutrient associated with the symptom chart.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Symptom pattern is evidence, not proof",
+        "body": "Visual symptoms should be documented by leaf age, location, symmetry, progression, and relation to recent management changes. Root disease, environmental stress, salinity, pH, and multiple nutrient issues can produce overlapping visual patterns. Diagnosis improves when visual evidence is combined with measurements and history.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      }
     ],
     "workedExamples": [
       "If new leaves show interveinal chlorosis while total fertilizer concentration is already high, verify pH, root health, and EC before adding more iron or other trace elements.",

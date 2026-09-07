@@ -2,31 +2,103 @@
   "id": "LESSON-ENV-LEAF-VPD-003",
   "title": "Leaf Temperature, Boundary Layers and Plant-Level VPD Context",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-ENV-VPD-001"],
-  "learningObjectives": ["LO-ENV-LEAF-VPD-003"],
+  "status": "approved",
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-ENV-LEAF-VPD-003"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-VPD-002"],
+  "references": [
+    "REF-VPD-002"
+  ],
   "assessment": null,
   "content": {
     "overview": "Room temperature and relative humidity describe the surrounding air, but plant exchange occurs at the leaf surface. Leaf temperature, radiation, transpiration, airflow, canopy position, and the boundary layer can make plant-level vapor-pressure conditions differ from a room-level estimate. This lesson develops the measurement and reasoning needed to interpret that difference without treating one calculated number as a universal crop target.",
     "vocabulary": [
-      {"term": "Leaf temperature", "definition": "The temperature of leaf tissue, which can differ from surrounding air because of radiation, transpiration, convection, and leaf position."},
-      {"term": "Boundary layer", "definition": "A thin region of air next to a leaf surface whose movement is reduced relative to the bulk room air and that influences heat, carbon-dioxide, and water-vapor exchange."},
-      {"term": "Radiative load", "definition": "Energy transferred to or from a leaf by radiation, including energy received from lighting and surrounding surfaces."},
-      {"term": "Transpirational cooling", "definition": "Cooling associated with evaporation of water from plant tissues during transpiration."},
-      {"term": "Emissivity", "definition": "A surface property describing how effectively it emits thermal radiation; infrared instruments depend on an emissivity assumption when estimating surface temperature."},
-      {"term": "Canopy microclimate", "definition": "The local temperature, humidity, radiation, and airflow conditions experienced within a particular part of a plant canopy."}
+      {
+        "term": "Leaf temperature",
+        "definition": "The temperature of leaf tissue, which can differ from surrounding air because of radiation, transpiration, convection, and leaf position."
+      },
+      {
+        "term": "Boundary layer",
+        "definition": "A thin region of air next to a leaf surface whose movement is reduced relative to the bulk room air and that influences heat, carbon-dioxide, and water-vapor exchange."
+      },
+      {
+        "term": "Radiative load",
+        "definition": "Energy transferred to or from a leaf by radiation, including energy received from lighting and surrounding surfaces."
+      },
+      {
+        "term": "Transpirational cooling",
+        "definition": "Cooling associated with evaporation of water from plant tissues during transpiration."
+      },
+      {
+        "term": "Emissivity",
+        "definition": "A surface property describing how effectively it emits thermal radiation; infrared instruments depend on an emissivity assumption when estimating surface temperature."
+      },
+      {
+        "term": "Canopy microclimate",
+        "definition": "The local temperature, humidity, radiation, and airflow conditions experienced within a particular part of a plant canopy."
+      }
     ],
     "sections": [
-      {"title": "Why leaf temperature can differ from air temperature", "body": "A leaf exchanges energy with its surroundings through radiation, convection, and evaporation. Strong radiation can add energy to leaf tissue, while transpiration and moving air can remove heat. The balance changes across the canopy and over time, so air temperature should not automatically be substituted for leaf temperature when the purpose is plant-level vapor-pressure interpretation.", "references": ["REF-VPD-002"]},
-      {"title": "The boundary layer is part of the exchange pathway", "body": "Air immediately adjacent to a leaf is not necessarily moving at the same speed as room air. This boundary layer creates resistance to heat and vapor transfer. Leaf size, orientation, surface characteristics, and air velocity influence its thickness. Increasing air movement can thin the boundary layer, but more airflow is not automatically better; the relevant question is whether air movement is reasonably distributed and appropriate for the canopy.", "references": ["REF-VPD-002"]},
-      {"title": "Radiation and transpiration change the energy balance", "body": "Two leaves in the same room can experience different energy loads because one is directly exposed to a fixture while another is shaded. A well-watered, actively transpiring leaf can also cool differently from a leaf whose water supply or stomatal behavior is constrained. A leaf-temperature difference is therefore evidence to investigate in context, not proof of a single cause.", "references": ["REF-VPD-002"]},
-      {"title": "Measuring leaf temperature well", "body": "Infrared measurements are useful when the instrument, distance, field of view, surface angle, and measurement location are used consistently. Spot measurements should sample representative leaves rather than only the easiest leaf to reach. Measurements should be paired with air temperature, relative humidity, canopy position, lighting state, and airflow notes so the value can be interpreted later.", "references": ["REF-VPD-002"]},
-      {"title": "Representative sampling matters", "body": "A canopy contains multiple microclimates. Top leaves may receive greater radiation and airflow than interior leaves, while edges may behave differently from the center. A useful survey samples defined canopy zones and looks for patterns. Repeated measurements at consistent locations are usually more informative than an isolated reading with no spatial or temporal context.", "references": ["REF-VPD-002"]},
-      {"title": "Air-based and leaf-based VPD answer related but different questions", "body": "An air-temperature VPD estimate describes atmospheric drying demand from room measurements. A calculation incorporating measured leaf temperature is intended to better represent the vapor-pressure relationship at the leaf surface. Reports, charts, calculators, and SOPs should state which method they use so values are not compared as though they were identical.", "references": ["REF-VPD-002"]},
-      {"title": "Use plant-level VPD as an interpretation tool", "body": "Plant-level VPD should be considered with root-zone water availability, plant developmental stage, canopy architecture, radiation, airflow, and visible crop response. When a reading is unexpected, first verify the measurement and determine whether the pattern is local or widespread. Correcting an unverified number can create a second environmental problem while leaving the original cause unresolved.", "references": ["REF-VPD-002"]},
-      {"title": "Build a repeatable diagnostic workflow", "body": "Start with calibrated room sensors and a defined leaf-temperature sampling method. Record representative leaf and air temperatures, relative humidity, canopy zone, lighting state, and airflow observations. Compare zones, repeat measurements when conditions are stable, calculate VPD using a clearly identified method, and then compare the environmental pattern with plant and root-zone observations before deciding whether intervention is justified.", "references": ["REF-VPD-002"]}
+      {
+        "title": "Why leaf temperature can differ from air temperature",
+        "body": "A leaf exchanges energy with its surroundings through radiation, convection, and evaporation. Strong radiation can add energy to leaf tissue, while transpiration and moving air can remove heat. The balance changes across the canopy and over time, so air temperature should not automatically be substituted for leaf temperature when the purpose is plant-level vapor-pressure interpretation.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "The boundary layer is part of the exchange pathway",
+        "body": "Air immediately adjacent to a leaf is not necessarily moving at the same speed as room air. This boundary layer creates resistance to heat and vapor transfer. Leaf size, orientation, surface characteristics, and air velocity influence its thickness. Increasing air movement can thin the boundary layer, but more airflow is not automatically better; the relevant question is whether air movement is reasonably distributed and appropriate for the canopy.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Radiation and transpiration change the energy balance",
+        "body": "Two leaves in the same room can experience different energy loads because one is directly exposed to a fixture while another is shaded. A well-watered, actively transpiring leaf can also cool differently from a leaf whose water supply or stomatal behavior is constrained. A leaf-temperature difference is therefore evidence to investigate in context, not proof of a single cause.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Measuring leaf temperature well",
+        "body": "Infrared measurements are useful when the instrument, distance, field of view, surface angle, and measurement location are used consistently. Spot measurements should sample representative leaves rather than only the easiest leaf to reach. Measurements should be paired with air temperature, relative humidity, canopy position, lighting state, and airflow notes so the value can be interpreted later.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Representative sampling matters",
+        "body": "A canopy contains multiple microclimates. Top leaves may receive greater radiation and airflow than interior leaves, while edges may behave differently from the center. A useful survey samples defined canopy zones and looks for patterns. Repeated measurements at consistent locations are usually more informative than an isolated reading with no spatial or temporal context.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Air-based and leaf-based VPD answer related but different questions",
+        "body": "An air-temperature VPD estimate describes atmospheric drying demand from room measurements. A calculation incorporating measured leaf temperature is intended to better represent the vapor-pressure relationship at the leaf surface. Reports, charts, calculators, and SOPs should state which method they use so values are not compared as though they were identical.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Use plant-level VPD as an interpretation tool",
+        "body": "Plant-level VPD should be considered with root-zone water availability, plant developmental stage, canopy architecture, radiation, airflow, and visible crop response. When a reading is unexpected, first verify the measurement and determine whether the pattern is local or widespread. Correcting an unverified number can create a second environmental problem while leaving the original cause unresolved.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Build a repeatable diagnostic workflow",
+        "body": "Start with calibrated room sensors and a defined leaf-temperature sampling method. Record representative leaf and air temperatures, relative humidity, canopy zone, lighting state, and airflow observations. Compare zones, repeat measurements when conditions are stable, calculate VPD using a clearly identified method, and then compare the environmental pattern with plant and root-zone observations before deciding whether intervention is justified.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
     ],
     "workedExamples": [
       "A room sensor reports stable temperature and humidity, but upper-canopy leaves measure warmer than interior leaves. Rather than changing the whole-room humidity immediately, document the temperature pattern and examine radiation exposure and airflow distribution across canopy zones.",

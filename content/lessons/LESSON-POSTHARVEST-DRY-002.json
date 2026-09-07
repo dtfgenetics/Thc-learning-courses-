@@ -1,20 +1,128 @@
 {
-  "id":"LESSON-POSTHARVEST-DRY-002",
-  "title":"Drying Dynamics, Moisture Control and Water Activity",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-POSTHARVEST-001"],
-  "learningObjectives":["LO-POSTHARVEST-DRY-002"],
-  "estimatedMinutes":60,
-  "references":["REF-POSTHARVEST-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Drying is controlled moisture transport through harvested tissue and the surrounding air. The surface and interior do not dry at the same rate, and different room positions or flower structures may progress differently. Strong process control therefore combines environmental logging, representative product sampling, airflow mapping, stage criteria and contamination-risk awareness instead of using time or touch alone.",
-    "vocabulary":[{"term":"Moisture gradient","definition":"A difference in water content between regions of harvested material that drives redistribution or drying."},{"term":"Water activity","definition":"A measure related to how available water is for microbial growth and chemical reactions."},{"term":"Equilibrium","definition":"A state in which net moisture exchange between material and the surrounding environment becomes small under stable conditions."},{"term":"Boundary layer","definition":"The thin layer of air adjacent to a surface that influences heat and moisture transfer."},{"term":"Representative sampling","definition":"Selecting product observations from defined locations that reflect the wider batch rather than one convenient point."},{"term":"Moisture rebound","definition":"An increase in measured or apparent surface moisture after internal water redistributes outward during stabilization or sealed holding."}],
-    "sections":[{"title":"Internal transport can limit drying","body":"Outer tissue can lose water faster than the interior. Once the surface dries, internal diffusion and redistribution can become the slower part of the process. This is why a dry-feeling surface does not prove the entire flower or batch is uniformly ready for packaging.","references":["REF-POSTHARVEST-001"]},{"title":"Room conditions must be interpreted spatially","body":"Temperature and relative humidity measurements at one sensor location may not represent racks, corners, dense loading zones or areas near supply and return airflow. Map the room and compare product progression across positions so environmental readings remain connected to actual material response.","references":["REF-POSTHARVEST-001"]},{"title":"Airflow distribution matters more than maximum fan speed","body":"Air movement helps remove vapor from product surfaces, but direct or uneven airflow can create fast-drying zones while poorly mixed areas remain wetter. Evaluate direction, obstruction, rack spacing and product load before simply increasing fan output.","references":["REF-POSTHARVEST-001"]},{"title":"Product geometry changes the rate","body":"Dense flowers, small flowers, intact branches and trimmed material can have different surface-area-to-volume relationships and internal moisture paths. Document the form being dried and avoid assuming one calendar schedule will produce identical outcomes across product types.","references":["REF-POSTHARVEST-001"]},{"title":"Load size affects the room moisture burden","body":"A heavily loaded room releases more water vapor and may behave differently from a lightly loaded room even with identical controls. Record batch mass or another consistent load indicator so environmental performance can be compared meaningfully across runs.","references":["REF-POSTHARVEST-001"]},{"title":"Use multiple measurement signals","body":"Physical feel and stem behavior can provide observations but are subjective and local. Weight trends, calibrated environmental data, moisture measurements or water-activity measurements where available provide more repeatable evidence when interpreted together.","references":["REF-POSTHARVEST-001"]},{"title":"Define a sampling frame","body":"Choose representative upper, middle and lower rack positions, airflow zones and product sizes before the batch starts. Revisit the same sampling frame over time so changes in the data reflect the process rather than changing the sampling method.","references":["REF-POSTHARVEST-001"]},{"title":"Watch for rebound during stabilization","body":"After material leaves active drying or enters a closed environment, internal moisture may redistribute toward drier outer regions. A rise in local humidity or moisture indicators can reveal that the product was not yet uniform when first assessed.","references":["REF-POSTHARVEST-001"]},{"title":"Contamination risk is part of the endpoint decision","body":"Material that remains too wet internally or is held in stagnant conditions can face increased microbial risk. Visual or odor changes, unusual temperature behavior or other suspect findings should trigger segregation and investigation rather than being normalized as part of curing.","references":["REF-POSTHARVEST-001"]}],
-    "workedExamples":["Outer flower surfaces feel crisp while larger internal sections remain pliable and heavier. The batch is not proven uniform; continue representative measurement rather than relying on the driest surface.","One corner reaches the target condition much earlier than the opposite side. Map airflow and loading pattern before changing the whole-room set point.","A large batch takes longer than the previous smaller batch even though controller settings are identical. Total moisture load and air distribution are plausible contributors that should be recorded and compared.","Material appears acceptable when first removed but sealed samples show increasing internal humidity. Moisture redistribution has exposed an incomplete or uneven endpoint."],
-    "commonMistakes":["Using one room sensor as proof of product condition everywhere.","Directing strong airflow at flowers without mapping the rest of the room.","Judging readiness only by elapsed time or surface feel.","Changing sampling locations between checks.","Ignoring batch load and flower geometry when comparing drying runs.","Treating moisture rebound as normal curing without evaluating whether the initial dry was complete.","Failing to isolate suspect material when contamination indicators appear."],
-    "practicalApplication":"Create a drying map showing environmental sensors, airflow direction, rack locations and representative sampling points. Track room temperature/RH trends, batch load, sample weight or moisture indicators, product observations and any rebound during stabilization. Use the data to identify the slowest and fastest drying zones and explain whether the process endpoint is supported across the batch.",
-    "summary":"Drying is governed by moisture gradients, environmental conditions, airflow distribution, product geometry and load. Representative repeated measurements and explicit stage criteria produce a more defensible endpoint than time, touch or one room average alone."
+  "id": "LESSON-POSTHARVEST-DRY-002",
+  "title": "Drying Dynamics, Moisture Control and Water Activity",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-POSTHARVEST-001"
+  ],
+  "learningObjectives": [
+    "LO-POSTHARVEST-DRY-002"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Drying is controlled moisture transport through harvested tissue and the surrounding air. The surface and interior do not dry at the same rate, and different room positions or flower structures may progress differently. Strong process control therefore combines environmental logging, representative product sampling, airflow mapping, stage criteria and contamination-risk awareness instead of using time or touch alone.",
+    "vocabulary": [
+      {
+        "term": "Moisture gradient",
+        "definition": "A difference in water content between regions of harvested material that drives redistribution or drying."
+      },
+      {
+        "term": "Water activity",
+        "definition": "A measure related to how available water is for microbial growth and chemical reactions."
+      },
+      {
+        "term": "Equilibrium",
+        "definition": "A state in which net moisture exchange between material and the surrounding environment becomes small under stable conditions."
+      },
+      {
+        "term": "Boundary layer",
+        "definition": "The thin layer of air adjacent to a surface that influences heat and moisture transfer."
+      },
+      {
+        "term": "Representative sampling",
+        "definition": "Selecting product observations from defined locations that reflect the wider batch rather than one convenient point."
+      },
+      {
+        "term": "Moisture rebound",
+        "definition": "An increase in measured or apparent surface moisture after internal water redistributes outward during stabilization or sealed holding."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Internal transport can limit drying",
+        "body": "Outer tissue can lose water faster than the interior. Once the surface dries, internal diffusion and redistribution can become the slower part of the process. This is why a dry-feeling surface does not prove the entire flower or batch is uniformly ready for packaging.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Room conditions must be interpreted spatially",
+        "body": "Temperature and relative humidity measurements at one sensor location may not represent racks, corners, dense loading zones or areas near supply and return airflow. Map the room and compare product progression across positions so environmental readings remain connected to actual material response.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Airflow distribution matters more than maximum fan speed",
+        "body": "Air movement helps remove vapor from product surfaces, but direct or uneven airflow can create fast-drying zones while poorly mixed areas remain wetter. Evaluate direction, obstruction, rack spacing and product load before simply increasing fan output.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Product geometry changes the rate",
+        "body": "Dense flowers, small flowers, intact branches and trimmed material can have different surface-area-to-volume relationships and internal moisture paths. Document the form being dried and avoid assuming one calendar schedule will produce identical outcomes across product types.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Load size affects the room moisture burden",
+        "body": "A heavily loaded room releases more water vapor and may behave differently from a lightly loaded room even with identical controls. Record batch mass or another consistent load indicator so environmental performance can be compared meaningfully across runs.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Use multiple measurement signals",
+        "body": "Physical feel and stem behavior can provide observations but are subjective and local. Weight trends, calibrated environmental data, moisture measurements or water-activity measurements where available provide more repeatable evidence when interpreted together.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Define a sampling frame",
+        "body": "Choose representative upper, middle and lower rack positions, airflow zones and product sizes before the batch starts. Revisit the same sampling frame over time so changes in the data reflect the process rather than changing the sampling method.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Watch for rebound during stabilization",
+        "body": "After material leaves active drying or enters a closed environment, internal moisture may redistribute toward drier outer regions. A rise in local humidity or moisture indicators can reveal that the product was not yet uniform when first assessed.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Contamination risk is part of the endpoint decision",
+        "body": "Material that remains too wet internally or is held in stagnant conditions can face increased microbial risk. Visual or odor changes, unusual temperature behavior or other suspect findings should trigger segregation and investigation rather than being normalized as part of curing.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Outer flower surfaces feel crisp while larger internal sections remain pliable and heavier. The batch is not proven uniform; continue representative measurement rather than relying on the driest surface.",
+      "One corner reaches the target condition much earlier than the opposite side. Map airflow and loading pattern before changing the whole-room set point.",
+      "A large batch takes longer than the previous smaller batch even though controller settings are identical. Total moisture load and air distribution are plausible contributors that should be recorded and compared.",
+      "Material appears acceptable when first removed but sealed samples show increasing internal humidity. Moisture redistribution has exposed an incomplete or uneven endpoint."
+    ],
+    "commonMistakes": [
+      "Using one room sensor as proof of product condition everywhere.",
+      "Directing strong airflow at flowers without mapping the rest of the room.",
+      "Judging readiness only by elapsed time or surface feel.",
+      "Changing sampling locations between checks.",
+      "Ignoring batch load and flower geometry when comparing drying runs.",
+      "Treating moisture rebound as normal curing without evaluating whether the initial dry was complete.",
+      "Failing to isolate suspect material when contamination indicators appear."
+    ],
+    "practicalApplication": "Create a drying map showing environmental sensors, airflow direction, rack locations and representative sampling points. Track room temperature/RH trends, batch load, sample weight or moisture indicators, product observations and any rebound during stabilization. Use the data to identify the slowest and fastest drying zones and explain whether the process endpoint is supported across the batch.",
+    "summary": "Drying is governed by moisture gradients, environmental conditions, airflow distribution, product geometry and load. Representative repeated measurements and explicit stage criteria produce a more defensible endpoint than time, touch or one room average alone."
   }
 }

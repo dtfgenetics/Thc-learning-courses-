@@ -1,20 +1,130 @@
 {
-  "id":"LESSON-POSTHARVEST-001",
-  "title":"Drying, Curing and Storage Quality Control",
-  "version":"1.1.0",
-  "status":"draft",
-  "competencies":["COMP-POSTHARVEST-001"],
-  "learningObjectives":["LO-POSTHARVEST-001","LO-POSTHARVEST-DRY-002","LO-POSTHARVEST-STORAGE-003"],
-  "estimatedMinutes":65,
-  "references":["REF-POSTHARVEST-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Post-harvest handling is a sequence of controlled transitions rather than one drying step. Water continues moving within harvested tissue while temperature, relative humidity, airflow, light, oxygen exposure, packaging, sanitation, handling and time influence quality and contamination risk. A defensible process uses representative measurements, defined stage criteria, lot traceability and documented deviations rather than relying only on elapsed days or surface feel.",
-    "vocabulary":[{"term":"Drying","definition":"Controlled removal of water from harvested plant material while monitoring process conditions and product response."},{"term":"Curing","definition":"A managed post-drying holding period used to allow moisture redistribution and continued quality-control observation."},{"term":"Water activity","definition":"A measurement related to how available water is for microbial growth and chemical reactions within a material."},{"term":"Moisture gradient","definition":"A difference in water content between regions of harvested material that drives internal redistribution."},{"term":"Lot traceability","definition":"The ability to connect harvested material to its source, handling history, process conditions, packaging and inspection records."},{"term":"Storage stability","definition":"The ability of harvested material to maintain defined quality characteristics over time under controlled conditions."}],
-    "sections":[{"title":"Post-harvest begins with controlled transfer","body":"Harvested material enters a new risk environment as soon as it is cut. Handling sequence, room cleanliness, load density, container or rack arrangement and time before controlled drying begins can affect later uniformity and contamination risk. The transfer into post-harvest should therefore be documented as part of the process rather than treated as an unmeasured gap.","references":["REF-POSTHARVEST-001"]},{"title":"Drying is moisture transport through a product and an environment","body":"Moisture moves from internal tissues toward surfaces and then into the surrounding air. Temperature, relative humidity, airflow distribution, flower size, branch structure and total room load all influence this transfer. A room can show acceptable average readings while individual positions dry very differently.","references":["REF-POSTHARVEST-001"]},{"title":"Uniformity must be measured across the batch","body":"Sampling only one flower, rack or corner can hide wet or overly dry zones. Use representative positions and repeat the same sampling method so the team can compare batch progression and locate spatial differences before packaging.","references":["REF-POSTHARVEST-001"]},{"title":"Stage criteria should be defined before the batch starts","body":"Elapsed time is context, not a complete endpoint. Define what evidence supports movement from active drying to stabilization, from stabilization to packaging, and from packaging to longer-term storage. Criteria should use repeatable observations or measurements and should include a response for material that falls outside the expected range.","references":["REF-POSTHARVEST-001"]},{"title":"Curing is controlled observation, not passive waiting","body":"Moisture can redistribute after initial drying. During curing or stabilization, monitor container conditions, product condition and contamination indicators. If evidence suggests excessive internal moisture or process drift, the correct response is to reopen the process investigation rather than assuming additional time will automatically solve the problem.","references":["REF-POSTHARVEST-001"]},{"title":"Packaging becomes part of the environment","body":"Package volume, barrier properties, seal quality, headspace and handling influence exposure to oxygen, moisture exchange, light and physical damage. Packaging choices should therefore be evaluated as process controls linked to the intended storage duration and quality objective.","references":["REF-POSTHARVEST-001"]},{"title":"Storage continues to change harvested material","body":"Temperature, light, oxygen exposure and time can influence chemical and sensory stability. Document storage conditions and inspection history so quality changes can be traced instead of attributed automatically to cultivar or harvest timing.","references":["REF-POSTHARVEST-001"]},{"title":"Sanitation and segregation remain active controls","body":"Post-harvest spaces, tools, gloves, racks, containers and packaging surfaces can move contaminants between lots. Define cleaning responsibilities, lot segregation and suspect-material handling so one questionable area does not silently spread through the workflow.","references":["REF-POSTHARVEST-001"]},{"title":"Deviations should create learning","body":"Uneven drying, unexpected moisture rebound, damaged seals, temperature excursions or contamination findings should be recorded with location, time, lot and response. Corrective-action records allow future batches to improve rather than repeating the same hidden process failure.","references":["REF-POSTHARVEST-001"]}],
-    "workedExamples":["One rack reaches the expected condition earlier than the rest of the room. Map airflow, flower density and room position before changing the entire room set point.","Outer surfaces feel dry but representative internal samples still show evidence of higher moisture. Do not package the batch as uniform; continue controlled evaluation and identify the wettest locations.","Two packages from the same lot age differently. Compare barrier properties, seal integrity, storage temperature, light exposure and handling history before concluding that the source material was inconsistent.","A batch shows rising package humidity after sealing. Treat this as evidence that moisture had not stabilized uniformly and investigate the process rather than assuming curing simply needs more time."],
-    "commonMistakes":["Using elapsed days as the only stage criterion.","Judging an entire room from one convenient sample.","Maximizing airflow without evaluating distribution or uneven drying.","Treating curing as passive waiting.","Ignoring sanitation once material leaves cultivation rooms.","Considering packaging a neutral container rather than part of the storage environment.","Failing to record excursions, wet zones or package failures by lot."],
-    "practicalApplication":"Build a post-harvest batch record that follows material from harvest transfer through drying, stabilization, packaging and storage. Include lot identity, room map, environmental trends, representative sample locations, moisture or water-activity observations where available, sanitation checks, stage-transition criteria, packaging details, storage conditions, deviations and corrective actions. Use a simulated batch to explain why it should or should not advance to the next stage.",
-    "summary":"Post-harvest quality depends on controlled transitions, representative measurement, sanitation, traceability and feedback. Drying manages moisture transport; curing monitors redistribution; packaging creates a microenvironment; and storage continues to influence stability long after the crop is cut."
+  "id": "LESSON-POSTHARVEST-001",
+  "title": "Drying, Curing and Storage Quality Control",
+  "version": "1.1.0",
+  "status": "approved",
+  "competencies": [
+    "COMP-POSTHARVEST-001"
+  ],
+  "learningObjectives": [
+    "LO-POSTHARVEST-001",
+    "LO-POSTHARVEST-DRY-002",
+    "LO-POSTHARVEST-STORAGE-003"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Post-harvest handling is a sequence of controlled transitions rather than one drying step. Water continues moving within harvested tissue while temperature, relative humidity, airflow, light, oxygen exposure, packaging, sanitation, handling and time influence quality and contamination risk. A defensible process uses representative measurements, defined stage criteria, lot traceability and documented deviations rather than relying only on elapsed days or surface feel.",
+    "vocabulary": [
+      {
+        "term": "Drying",
+        "definition": "Controlled removal of water from harvested plant material while monitoring process conditions and product response."
+      },
+      {
+        "term": "Curing",
+        "definition": "A managed post-drying holding period used to allow moisture redistribution and continued quality-control observation."
+      },
+      {
+        "term": "Water activity",
+        "definition": "A measurement related to how available water is for microbial growth and chemical reactions within a material."
+      },
+      {
+        "term": "Moisture gradient",
+        "definition": "A difference in water content between regions of harvested material that drives internal redistribution."
+      },
+      {
+        "term": "Lot traceability",
+        "definition": "The ability to connect harvested material to its source, handling history, process conditions, packaging and inspection records."
+      },
+      {
+        "term": "Storage stability",
+        "definition": "The ability of harvested material to maintain defined quality characteristics over time under controlled conditions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Post-harvest begins with controlled transfer",
+        "body": "Harvested material enters a new risk environment as soon as it is cut. Handling sequence, room cleanliness, load density, container or rack arrangement and time before controlled drying begins can affect later uniformity and contamination risk. The transfer into post-harvest should therefore be documented as part of the process rather than treated as an unmeasured gap.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Drying is moisture transport through a product and an environment",
+        "body": "Moisture moves from internal tissues toward surfaces and then into the surrounding air. Temperature, relative humidity, airflow distribution, flower size, branch structure and total room load all influence this transfer. A room can show acceptable average readings while individual positions dry very differently.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Uniformity must be measured across the batch",
+        "body": "Sampling only one flower, rack or corner can hide wet or overly dry zones. Use representative positions and repeat the same sampling method so the team can compare batch progression and locate spatial differences before packaging.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Stage criteria should be defined before the batch starts",
+        "body": "Elapsed time is context, not a complete endpoint. Define what evidence supports movement from active drying to stabilization, from stabilization to packaging, and from packaging to longer-term storage. Criteria should use repeatable observations or measurements and should include a response for material that falls outside the expected range.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Curing is controlled observation, not passive waiting",
+        "body": "Moisture can redistribute after initial drying. During curing or stabilization, monitor container conditions, product condition and contamination indicators. If evidence suggests excessive internal moisture or process drift, the correct response is to reopen the process investigation rather than assuming additional time will automatically solve the problem.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Packaging becomes part of the environment",
+        "body": "Package volume, barrier properties, seal quality, headspace and handling influence exposure to oxygen, moisture exchange, light and physical damage. Packaging choices should therefore be evaluated as process controls linked to the intended storage duration and quality objective.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Storage continues to change harvested material",
+        "body": "Temperature, light, oxygen exposure and time can influence chemical and sensory stability. Document storage conditions and inspection history so quality changes can be traced instead of attributed automatically to cultivar or harvest timing.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Sanitation and segregation remain active controls",
+        "body": "Post-harvest spaces, tools, gloves, racks, containers and packaging surfaces can move contaminants between lots. Define cleaning responsibilities, lot segregation and suspect-material handling so one questionable area does not silently spread through the workflow.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Deviations should create learning",
+        "body": "Uneven drying, unexpected moisture rebound, damaged seals, temperature excursions or contamination findings should be recorded with location, time, lot and response. Corrective-action records allow future batches to improve rather than repeating the same hidden process failure.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "One rack reaches the expected condition earlier than the rest of the room. Map airflow, flower density and room position before changing the entire room set point.",
+      "Outer surfaces feel dry but representative internal samples still show evidence of higher moisture. Do not package the batch as uniform; continue controlled evaluation and identify the wettest locations.",
+      "Two packages from the same lot age differently. Compare barrier properties, seal integrity, storage temperature, light exposure and handling history before concluding that the source material was inconsistent.",
+      "A batch shows rising package humidity after sealing. Treat this as evidence that moisture had not stabilized uniformly and investigate the process rather than assuming curing simply needs more time."
+    ],
+    "commonMistakes": [
+      "Using elapsed days as the only stage criterion.",
+      "Judging an entire room from one convenient sample.",
+      "Maximizing airflow without evaluating distribution or uneven drying.",
+      "Treating curing as passive waiting.",
+      "Ignoring sanitation once material leaves cultivation rooms.",
+      "Considering packaging a neutral container rather than part of the storage environment.",
+      "Failing to record excursions, wet zones or package failures by lot."
+    ],
+    "practicalApplication": "Build a post-harvest batch record that follows material from harvest transfer through drying, stabilization, packaging and storage. Include lot identity, room map, environmental trends, representative sample locations, moisture or water-activity observations where available, sanitation checks, stage-transition criteria, packaging details, storage conditions, deviations and corrective actions. Use a simulated batch to explain why it should or should not advance to the next stage.",
+    "summary": "Post-harvest quality depends on controlled transitions, representative measurement, sanitation, traceability and feedback. Drying manages moisture transport; curing monitors redistribution; packaging creates a microenvironment; and storage continues to influence stability long after the crop is cut."
   }
 }

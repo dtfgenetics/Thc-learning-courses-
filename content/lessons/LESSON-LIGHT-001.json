@@ -2,34 +2,120 @@
   "id": "LESSON-LIGHT-001",
   "title": "PPFD, DLI, Photoperiod and Photosynthesis",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-LIGHT-001"],
-  "learningObjectives": ["LO-LIGHT-001", "LO-LIGHT-PPFD-002", "LO-LIGHT-DLI-003"],
+  "status": "approved",
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "learningObjectives": [
+    "LO-LIGHT-001",
+    "LO-LIGHT-PPFD-002",
+    "LO-LIGHT-DLI-003"
+  ],
   "estimatedMinutes": 60,
-  "references": ["REF-LIGHT-001"],
+  "references": [
+    "REF-LIGHT-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Cultivation lighting should be evaluated as a system of photon quantity, duration, spectrum, spatial distribution, fixture geometry, and plant response. PPFD describes instantaneous photosynthetically active photon flux at a surface, while DLI integrates that exposure across the light period. Neither metric should be interpreted in isolation from canopy structure, photoperiod, measurement method, or crop condition.",
     "vocabulary": [
-      {"term": "PAR", "definition": "Photosynthetically active radiation, conventionally referring to light in the 400-700 nanometer waveband used in many plant-lighting measurements."},
-      {"term": "PPF", "definition": "Photosynthetic photon flux, the total number of photosynthetically active photons emitted by a source per unit time."},
-      {"term": "PPFD", "definition": "Photosynthetic photon flux density, the photosynthetically active photon flux arriving at a surface per unit area and per unit time."},
-      {"term": "DLI", "definition": "Daily light integral, the total photosynthetically active photon exposure accumulated per unit area over a day."},
-      {"term": "Photoperiod", "definition": "The duration of the daily light period experienced by the crop."},
-      {"term": "Spectrum", "definition": "The distribution of photon output across wavelengths reaching the plant."},
-      {"term": "Uniformity", "definition": "The degree to which photon flux is evenly distributed across the target canopy area."},
-      {"term": "Photosynthesis", "definition": "The biological process by which plants use light energy to support carbon fixation and the production of energy-rich compounds."}
+      {
+        "term": "PAR",
+        "definition": "Photosynthetically active radiation, conventionally referring to light in the 400-700 nanometer waveband used in many plant-lighting measurements."
+      },
+      {
+        "term": "PPF",
+        "definition": "Photosynthetic photon flux, the total number of photosynthetically active photons emitted by a source per unit time."
+      },
+      {
+        "term": "PPFD",
+        "definition": "Photosynthetic photon flux density, the photosynthetically active photon flux arriving at a surface per unit area and per unit time."
+      },
+      {
+        "term": "DLI",
+        "definition": "Daily light integral, the total photosynthetically active photon exposure accumulated per unit area over a day."
+      },
+      {
+        "term": "Photoperiod",
+        "definition": "The duration of the daily light period experienced by the crop."
+      },
+      {
+        "term": "Spectrum",
+        "definition": "The distribution of photon output across wavelengths reaching the plant."
+      },
+      {
+        "term": "Uniformity",
+        "definition": "The degree to which photon flux is evenly distributed across the target canopy area."
+      },
+      {
+        "term": "Photosynthesis",
+        "definition": "The biological process by which plants use light energy to support carbon fixation and the production of energy-rich compounds."
+      }
     ],
     "sections": [
-      {"title": "Start with photons at the canopy, not fixture wattage", "body": "Electrical wattage describes power consumption, not the amount or distribution of photosynthetically active photons reaching leaves. Fixture output, optical design, hanging height, spacing, reflectance, canopy geometry, and measurement location all influence delivered PPFD. Useful lighting decisions therefore begin with canopy measurements and documented fixture conditions rather than wattage alone.", "references": ["REF-LIGHT-001"]},
-      {"title": "PPFD is an instantaneous measurement", "body": "PPFD describes photon flux density at a particular place and time. It is useful for comparing canopy positions, mapping bright and dim zones, and checking fixture changes. A single PPFD reading does not describe daily exposure, does not represent the whole canopy, and does not guarantee a specific photosynthetic response.", "references": ["REF-LIGHT-001"]},
-      {"title": "DLI connects intensity with time", "body": "DLI integrates PPFD across the light period. Under a stable PPFD assumption, DLI can be estimated from PPFD multiplied by the number of light seconds in the photoperiod and converted to moles per square meter per day. The same DLI can arise from different combinations of intensity and duration, but those combinations are not automatically biologically equivalent because plant responses can depend on intensity, timing, and developmental context.", "references": ["REF-LIGHT-001"]},
-      {"title": "Photoperiod has both dose and developmental meaning", "body": "Photoperiod influences accumulated photon exposure and can also act as a developmental signal in photoperiod-sensitive plants. Increasing light hours changes DLI even when PPFD stays constant, while changing photoperiod can also affect flowering behavior. Lighting plans should therefore distinguish between manipulating photon dose and manipulating developmental timing.", "references": ["REF-LIGHT-001"]},
-      {"title": "Canopy mapping reveals what an average hides", "body": "A useful PPFD map samples a defined grid at a consistent canopy plane. Center points, edges, corners, overlaps, and shaded zones can differ substantially. Average PPFD is only meaningful when paired with information about range and distribution, because a crop can contain both overexposed and underexposed zones while the average appears acceptable.", "references": ["REF-LIGHT-001"]},
-      {"title": "Measurement method changes the quality of the conclusion", "body": "Sensor type, cosine response, orientation, sampling height, fixture warm-up state, reflective surfaces, and operator consistency can affect measurements. Comparing readings collected with different methods can create false trends. A lighting SOP should define the meter, canopy plane, grid, fixture state, and sampling procedure before numbers are compared over time.", "references": ["REF-LIGHT-001"]},
-      {"title": "Spectrum influences morphology and physiology", "body": "Photon quantity is not the only property of light that plants perceive. Spectral distribution can influence morphology, signaling, and physiological responses. Spectrum should be considered alongside PPFD, DLI, photoperiod, canopy temperature, and plant stage rather than treated as a substitute for photon-dose measurements.", "references": ["REF-LIGHT-001"]},
-      {"title": "Light interacts with the rest of the environment", "body": "Higher photon flux can increase photosynthetic opportunity, but crop response also depends on carbon-dioxide availability, temperature, water supply, nutrient status, leaf area, and plant health. Increasing light without considering these interacting factors can create imbalance. Lighting optimization is therefore an environmental systems problem, not a single-variable exercise.", "references": ["REF-LIGHT-001"]},
-      {"title": "Use trends and crop response, not target chasing", "body": "Published lighting targets can be useful starting references, but they should not replace measured canopy response. When changing fixture output, height, spacing, or photoperiod, document the change, re-map the canopy, calculate the resulting DLI, and observe plant response before making another major adjustment.", "references": ["REF-LIGHT-001"]}
+      {
+        "title": "Start with photons at the canopy, not fixture wattage",
+        "body": "Electrical wattage describes power consumption, not the amount or distribution of photosynthetically active photons reaching leaves. Fixture output, optical design, hanging height, spacing, reflectance, canopy geometry, and measurement location all influence delivered PPFD. Useful lighting decisions therefore begin with canopy measurements and documented fixture conditions rather than wattage alone.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "PPFD is an instantaneous measurement",
+        "body": "PPFD describes photon flux density at a particular place and time. It is useful for comparing canopy positions, mapping bright and dim zones, and checking fixture changes. A single PPFD reading does not describe daily exposure, does not represent the whole canopy, and does not guarantee a specific photosynthetic response.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "DLI connects intensity with time",
+        "body": "DLI integrates PPFD across the light period. Under a stable PPFD assumption, DLI can be estimated from PPFD multiplied by the number of light seconds in the photoperiod and converted to moles per square meter per day. The same DLI can arise from different combinations of intensity and duration, but those combinations are not automatically biologically equivalent because plant responses can depend on intensity, timing, and developmental context.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Photoperiod has both dose and developmental meaning",
+        "body": "Photoperiod influences accumulated photon exposure and can also act as a developmental signal in photoperiod-sensitive plants. Increasing light hours changes DLI even when PPFD stays constant, while changing photoperiod can also affect flowering behavior. Lighting plans should therefore distinguish between manipulating photon dose and manipulating developmental timing.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Canopy mapping reveals what an average hides",
+        "body": "A useful PPFD map samples a defined grid at a consistent canopy plane. Center points, edges, corners, overlaps, and shaded zones can differ substantially. Average PPFD is only meaningful when paired with information about range and distribution, because a crop can contain both overexposed and underexposed zones while the average appears acceptable.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Measurement method changes the quality of the conclusion",
+        "body": "Sensor type, cosine response, orientation, sampling height, fixture warm-up state, reflective surfaces, and operator consistency can affect measurements. Comparing readings collected with different methods can create false trends. A lighting SOP should define the meter, canopy plane, grid, fixture state, and sampling procedure before numbers are compared over time.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Spectrum influences morphology and physiology",
+        "body": "Photon quantity is not the only property of light that plants perceive. Spectral distribution can influence morphology, signaling, and physiological responses. Spectrum should be considered alongside PPFD, DLI, photoperiod, canopy temperature, and plant stage rather than treated as a substitute for photon-dose measurements.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Light interacts with the rest of the environment",
+        "body": "Higher photon flux can increase photosynthetic opportunity, but crop response also depends on carbon-dioxide availability, temperature, water supply, nutrient status, leaf area, and plant health. Increasing light without considering these interacting factors can create imbalance. Lighting optimization is therefore an environmental systems problem, not a single-variable exercise.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Use trends and crop response, not target chasing",
+        "body": "Published lighting targets can be useful starting references, but they should not replace measured canopy response. When changing fixture output, height, spacing, or photoperiod, document the change, re-map the canopy, calculate the resulting DLI, and observe plant response before making another major adjustment.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      }
     ],
     "workedExamples": [
       "Two rooms both average 700 micromoles per square meter per second, but one runs an 18-hour photoperiod and the other runs 12 hours. Their DLI values differ substantially, so PPFD alone does not describe total daily exposure.",

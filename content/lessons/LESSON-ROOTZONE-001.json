@@ -2,31 +2,105 @@
   "id": "LESSON-ROOTZONE-001",
   "title": "Media Properties, Aeration and Root-Zone Conditions",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-ROOTZONE-001"],
-  "learningObjectives": ["LO-ROOTZONE-001", "LO-ROOTZONE-MEDIA-002", "LO-ROOTZONE-DRYBACK-003"],
+  "status": "approved",
+  "competencies": [
+    "COMP-ROOTZONE-001"
+  ],
+  "learningObjectives": [
+    "LO-ROOTZONE-001",
+    "LO-ROOTZONE-MEDIA-002",
+    "LO-ROOTZONE-DRYBACK-003"
+  ],
   "estimatedMinutes": 60,
-  "references": ["REF-IRRIGATION-001"],
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "The root zone is a coupled physical, chemical, and biological system. Water content, oxygen diffusion, dissolved ions, pH, temperature, roots, microbes, media structure, and container geometry all affect whether roots can acquire resources efficiently. Strong diagnosis therefore treats the root zone as a system rather than reducing every problem to fertilizer strength or irrigation volume.",
     "vocabulary": [
-      {"term":"Air-filled porosity","definition":"The fraction of pore space occupied by air after excess irrigation water has drained."},
-      {"term":"Water-holding capacity","definition":"The amount of water a medium retains after drainage under the conditions being measured."},
-      {"term":"Bulk density","definition":"The mass of dry medium per unit bulk volume, including pore space."},
-      {"term":"Oxygen diffusion","definition":"Movement of oxygen through pore spaces and water films toward respiring roots and microorganisms."},
-      {"term":"Rhizosphere","definition":"The zone immediately influenced by living roots, exudates, microbes, water, and nutrient exchange."},
-      {"term":"Root-zone EC","definition":"Electrical conductivity of the solution associated with the root environment using a defined sampling method."}
+      {
+        "term": "Air-filled porosity",
+        "definition": "The fraction of pore space occupied by air after excess irrigation water has drained."
+      },
+      {
+        "term": "Water-holding capacity",
+        "definition": "The amount of water a medium retains after drainage under the conditions being measured."
+      },
+      {
+        "term": "Bulk density",
+        "definition": "The mass of dry medium per unit bulk volume, including pore space."
+      },
+      {
+        "term": "Oxygen diffusion",
+        "definition": "Movement of oxygen through pore spaces and water films toward respiring roots and microorganisms."
+      },
+      {
+        "term": "Rhizosphere",
+        "definition": "The zone immediately influenced by living roots, exudates, microbes, water, and nutrient exchange."
+      },
+      {
+        "term": "Root-zone EC",
+        "definition": "Electrical conductivity of the solution associated with the root environment using a defined sampling method."
+      }
     ],
     "sections": [
-      {"title":"Roots need water and oxygen at the same time","body":"Roots require water for transport and metabolism, but respiration also depends on oxygen. Water occupies pore space that might otherwise contain air, so prolonged saturation can slow gas exchange even while the container appears well supplied with water. Productive irrigation therefore seeks a dynamic balance rather than permanently maximizing moisture.","references":["REF-IRRIGATION-001"]},
-      {"title":"Pore architecture controls water and gas movement","body":"Particle size distribution, aggregation, compaction, decomposition, and container geometry determine the size and continuity of pores. Larger connected pores drain readily and refill with air, while smaller pores retain water more strongly. The same irrigation volume can therefore create very different oxygen and water conditions in different substrates.","references":["REF-IRRIGATION-001"]},
-      {"title":"Container geometry changes the effective root environment","body":"A substrate does not behave independently of its container. Height, width, drainage openings, fill depth, and root occupancy influence drainage, perched-water behavior, and the proportion of the container that remains wet after irrigation. Comparing recipes without container context can produce misleading conclusions.","references":["REF-IRRIGATION-001"]},
-      {"title":"Chemistry and moisture interact","body":"As water is removed from a root zone, dissolved ions can become more concentrated. Irrigation also redistributes ions, affects pH, and changes oxygen availability. Root-zone EC, pH, moisture, and drainage should therefore be interpreted together instead of as isolated values.","references":["REF-IRRIGATION-001"]},
-      {"title":"Temperature changes root demand and oxygen risk","body":"Root-zone temperature influences respiration, microbial activity, water uptake, and dissolved oxygen behavior. Warm, saturated media can be especially risky because respiration demand may rise while oxygen availability becomes more limited. Temperature belongs in root-zone troubleshooting alongside moisture and chemistry.","references":["REF-IRRIGATION-001"]},
-      {"title":"Root health can mimic nutrient problems","body":"Damaged or oxygen-limited roots may fail to acquire nutrients even when solution chemistry appears adequate. Above-ground chlorosis, slow growth, wilt, or reduced vigor can therefore result from impaired root function rather than insufficient fertilizer supply.","references":["REF-IRRIGATION-001"]},
-      {"title":"Use trends instead of snapshots","body":"Single readings are easy to overinterpret. Repeated measurements of container weight, sensor moisture, drainage, root-zone EC, pH, temperature, and plant response reveal trajectories that help separate temporary variation from persistent problems.","references":["REF-IRRIGATION-001"]},
-      {"title":"Root-zone diagnosis should be hypothesis driven","body":"A strong diagnostic sequence asks whether the dominant limitation is water availability, oxygen, delivery uniformity, chemistry, temperature, root health, or media structure. Change one variable when possible, document the intervention, and observe whether the predicted response occurs.","references":["REF-IRRIGATION-001"]}
+      {
+        "title": "Roots need water and oxygen at the same time",
+        "body": "Roots require water for transport and metabolism, but respiration also depends on oxygen. Water occupies pore space that might otherwise contain air, so prolonged saturation can slow gas exchange even while the container appears well supplied with water. Productive irrigation therefore seeks a dynamic balance rather than permanently maximizing moisture.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Pore architecture controls water and gas movement",
+        "body": "Particle size distribution, aggregation, compaction, decomposition, and container geometry determine the size and continuity of pores. Larger connected pores drain readily and refill with air, while smaller pores retain water more strongly. The same irrigation volume can therefore create very different oxygen and water conditions in different substrates.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Container geometry changes the effective root environment",
+        "body": "A substrate does not behave independently of its container. Height, width, drainage openings, fill depth, and root occupancy influence drainage, perched-water behavior, and the proportion of the container that remains wet after irrigation. Comparing recipes without container context can produce misleading conclusions.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Chemistry and moisture interact",
+        "body": "As water is removed from a root zone, dissolved ions can become more concentrated. Irrigation also redistributes ions, affects pH, and changes oxygen availability. Root-zone EC, pH, moisture, and drainage should therefore be interpreted together instead of as isolated values.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Temperature changes root demand and oxygen risk",
+        "body": "Root-zone temperature influences respiration, microbial activity, water uptake, and dissolved oxygen behavior. Warm, saturated media can be especially risky because respiration demand may rise while oxygen availability becomes more limited. Temperature belongs in root-zone troubleshooting alongside moisture and chemistry.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Root health can mimic nutrient problems",
+        "body": "Damaged or oxygen-limited roots may fail to acquire nutrients even when solution chemistry appears adequate. Above-ground chlorosis, slow growth, wilt, or reduced vigor can therefore result from impaired root function rather than insufficient fertilizer supply.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Use trends instead of snapshots",
+        "body": "Single readings are easy to overinterpret. Repeated measurements of container weight, sensor moisture, drainage, root-zone EC, pH, temperature, and plant response reveal trajectories that help separate temporary variation from persistent problems.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Root-zone diagnosis should be hypothesis driven",
+        "body": "A strong diagnostic sequence asks whether the dominant limitation is water availability, oxygen, delivery uniformity, chemistry, temperature, root health, or media structure. Change one variable when possible, document the intervention, and observe whether the predicted response occurs.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
     ],
     "workedExamples": [
       "A container remains heavy for much longer than neighboring containers while canopy vigor declines. Before increasing fertilizer concentration, compare drainage, media compaction, root establishment, irrigation distribution, and root-zone temperature.",

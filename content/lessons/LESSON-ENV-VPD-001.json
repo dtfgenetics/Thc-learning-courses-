@@ -2,33 +2,116 @@
   "id": "LESSON-ENV-VPD-001",
   "title": "Understanding Vapor Pressure Deficit",
   "version": "1.1.0",
-  "status": "draft",
-  "competencies": ["COMP-ENV-VPD-001"],
-  "learningObjectives": ["LO-ENV-VPD-001", "LO-ENV-SENSORS-002", "LO-ENV-LEAF-VPD-003"],
+  "status": "approved",
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-ENV-VPD-001",
+    "LO-ENV-SENSORS-002",
+    "LO-ENV-LEAF-VPD-003"
+  ],
   "estimatedMinutes": 55,
-  "references": ["REF-VPD-002"],
+  "references": [
+    "REF-VPD-002"
+  ],
   "assessment": "ASSESS-ENV-VPD-001",
   "content": {
     "overview": "Vapor pressure deficit (VPD) combines temperature and humidity into a description of atmospheric drying demand. It is more informative than relative humidity alone because saturation vapor pressure changes strongly with temperature. VPD is most useful when learners understand what is being calculated, where the measurements came from, whether air or leaf temperature is being used, and how the result relates to plant and root-zone observations.",
     "vocabulary": [
-      {"term": "Relative humidity", "definition": "The amount of water vapor in air expressed relative to the saturation amount possible at the same temperature."},
-      {"term": "Saturation vapor pressure", "definition": "The equilibrium vapor pressure of water at saturation for a given temperature; it increases as temperature rises."},
-      {"term": "Actual vapor pressure", "definition": "The partial pressure contributed by water vapor actually present in the air."},
-      {"term": "Vapor pressure deficit", "definition": "The difference between a saturation vapor pressure and the actual water-vapor pressure under the defined measurement conditions."},
-      {"term": "Transpiration", "definition": "The movement of water through a plant and loss of water vapor from plant surfaces, especially through stomata."},
-      {"term": "Stomatal conductance", "definition": "A measure related to how readily gases and water vapor move through stomata; it changes with plant physiology and environment."},
-      {"term": "Leaf-air temperature difference", "definition": "The difference between measured leaf-surface temperature and surrounding air temperature, which can affect plant-level vapor-pressure calculations."}
+      {
+        "term": "Relative humidity",
+        "definition": "The amount of water vapor in air expressed relative to the saturation amount possible at the same temperature."
+      },
+      {
+        "term": "Saturation vapor pressure",
+        "definition": "The equilibrium vapor pressure of water at saturation for a given temperature; it increases as temperature rises."
+      },
+      {
+        "term": "Actual vapor pressure",
+        "definition": "The partial pressure contributed by water vapor actually present in the air."
+      },
+      {
+        "term": "Vapor pressure deficit",
+        "definition": "The difference between a saturation vapor pressure and the actual water-vapor pressure under the defined measurement conditions."
+      },
+      {
+        "term": "Transpiration",
+        "definition": "The movement of water through a plant and loss of water vapor from plant surfaces, especially through stomata."
+      },
+      {
+        "term": "Stomatal conductance",
+        "definition": "A measure related to how readily gases and water vapor move through stomata; it changes with plant physiology and environment."
+      },
+      {
+        "term": "Leaf-air temperature difference",
+        "definition": "The difference between measured leaf-surface temperature and surrounding air temperature, which can affect plant-level vapor-pressure calculations."
+      }
     ],
     "sections": [
-      {"title": "Why relative humidity alone is incomplete", "body": "Relative humidity is a ratio tied to temperature. If temperature changes while the amount of water vapor remains similar, relative humidity can change because the saturation capacity of the air changed. Conversely, two spaces can show the same relative humidity while having different vapor-pressure conditions. Temperature and humidity therefore need to be interpreted together.", "references": ["REF-VPD-002"]},
-      {"title": "The physical idea behind VPD", "body": "At a given temperature there is a saturation vapor pressure. Actual vapor pressure can be estimated from saturation vapor pressure and relative humidity. VPD represents the remaining difference to saturation under the calculation's assumptions. A larger deficit describes greater atmospheric capacity to accept water vapor; a smaller deficit describes air closer to saturation.", "references": ["REF-VPD-002"]},
-      {"title": "VPD and plant water exchange", "body": "Atmospheric demand is one influence on transpiration, but plant water loss is not controlled by VPD alone. Stomatal behavior, radiation, airflow, leaf temperature, root-zone water availability, plant size, developmental stage, and plant health all affect the observed response. VPD should therefore be used as environmental context rather than as a complete physiological model.", "references": ["REF-VPD-002"]},
-      {"title": "Air VPD versus plant-level interpretation", "body": "Room-level calculations commonly use air temperature and relative humidity. Leaf surfaces can be warmer or cooler than room air, changing the saturation vapor pressure relevant at the leaf. More advanced plant-level interpretation can incorporate measured leaf temperature. Any chart, calculator, SOP, or dataset should identify which temperature basis it uses.", "references": ["REF-VPD-002"]},
-      {"title": "Measurement quality comes before calculation precision", "body": "A calculated value cannot be more trustworthy than the measurements feeding it. Sensor placement, calibration, response time, canopy height, local airflow, heat sources, and logging intervals can all influence readings. Before making environmental corrections from a surprising VPD value, verify that temperature and humidity measurements represent the crop environment.", "references": ["REF-VPD-002"]},
-      {"title": "Canopy averages can hide microclimates", "body": "A room may have an acceptable average while dense interior foliage experiences different humidity, temperature, and airflow. Multiple representative measurements can reveal gradients from top to bottom, center to edge, or inlet to exhaust. The goal is not to generate more numbers for their own sake but to understand whether the average accurately represents what leaves experience.", "references": ["REF-VPD-002"]},
-      {"title": "Avoid universal target thinking", "body": "Published VPD ranges and charts can be useful educational references, but a single target should not be treated as a universal biological law. Cultivar, developmental stage, radiation, irrigation strategy, root-zone properties, air movement, measurement method, and production goals can change how a crop responds. A target is best treated as a starting hypothesis that must be checked against plant response and operating context.", "references": ["REF-VPD-002"]},
-      {"title": "Change variables deliberately", "body": "Temperature and humidity controls interact. Changing one variable can affect VPD and other environmental conditions at the same time. When correction is justified, prefer controlled changes, document what changed, allow the environment and crop time to respond, and compare before-and-after measurements. This creates evidence for the next decision instead of producing a cycle of reactive adjustments.", "references": ["REF-VPD-002"]},
-      {"title": "A repeatable VPD reasoning workflow", "body": "Define the measurement locations and calculation method; verify sensors; record temperature and relative humidity together; note whether leaf temperature is available; calculate VPD consistently; compare spatial and temporal patterns; evaluate plant stage, root-zone water status, and visible response; identify plausible causes; then make the smallest justified correction and document the result.", "references": ["REF-VPD-002"]}
+      {
+        "title": "Why relative humidity alone is incomplete",
+        "body": "Relative humidity is a ratio tied to temperature. If temperature changes while the amount of water vapor remains similar, relative humidity can change because the saturation capacity of the air changed. Conversely, two spaces can show the same relative humidity while having different vapor-pressure conditions. Temperature and humidity therefore need to be interpreted together.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "The physical idea behind VPD",
+        "body": "At a given temperature there is a saturation vapor pressure. Actual vapor pressure can be estimated from saturation vapor pressure and relative humidity. VPD represents the remaining difference to saturation under the calculation's assumptions. A larger deficit describes greater atmospheric capacity to accept water vapor; a smaller deficit describes air closer to saturation.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "VPD and plant water exchange",
+        "body": "Atmospheric demand is one influence on transpiration, but plant water loss is not controlled by VPD alone. Stomatal behavior, radiation, airflow, leaf temperature, root-zone water availability, plant size, developmental stage, and plant health all affect the observed response. VPD should therefore be used as environmental context rather than as a complete physiological model.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Air VPD versus plant-level interpretation",
+        "body": "Room-level calculations commonly use air temperature and relative humidity. Leaf surfaces can be warmer or cooler than room air, changing the saturation vapor pressure relevant at the leaf. More advanced plant-level interpretation can incorporate measured leaf temperature. Any chart, calculator, SOP, or dataset should identify which temperature basis it uses.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Measurement quality comes before calculation precision",
+        "body": "A calculated value cannot be more trustworthy than the measurements feeding it. Sensor placement, calibration, response time, canopy height, local airflow, heat sources, and logging intervals can all influence readings. Before making environmental corrections from a surprising VPD value, verify that temperature and humidity measurements represent the crop environment.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Canopy averages can hide microclimates",
+        "body": "A room may have an acceptable average while dense interior foliage experiences different humidity, temperature, and airflow. Multiple representative measurements can reveal gradients from top to bottom, center to edge, or inlet to exhaust. The goal is not to generate more numbers for their own sake but to understand whether the average accurately represents what leaves experience.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Avoid universal target thinking",
+        "body": "Published VPD ranges and charts can be useful educational references, but a single target should not be treated as a universal biological law. Cultivar, developmental stage, radiation, irrigation strategy, root-zone properties, air movement, measurement method, and production goals can change how a crop responds. A target is best treated as a starting hypothesis that must be checked against plant response and operating context.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Change variables deliberately",
+        "body": "Temperature and humidity controls interact. Changing one variable can affect VPD and other environmental conditions at the same time. When correction is justified, prefer controlled changes, document what changed, allow the environment and crop time to respond, and compare before-and-after measurements. This creates evidence for the next decision instead of producing a cycle of reactive adjustments.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "A repeatable VPD reasoning workflow",
+        "body": "Define the measurement locations and calculation method; verify sensors; record temperature and relative humidity together; note whether leaf temperature is available; calculate VPD consistently; compare spatial and temporal patterns; evaluate plant stage, root-zone water status, and visible response; identify plausible causes; then make the smallest justified correction and document the result.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
     ],
     "workedExamples": [
       "Room A and Room B both read 60% relative humidity, but Room B is warmer. Do not assume equal atmospheric demand. Use each room's temperature because saturation vapor pressure changes with temperature.",
