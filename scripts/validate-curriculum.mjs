@@ -192,6 +192,20 @@ if (fs.existsSync(foundationsRegistryPath)) {
     requireId('registry/cultivation-foundations.json', domain.lesson, 'lesson');
     requireMany('registry/cultivation-foundations.json', domain.competencies, 'competency');
     requireMany('registry/cultivation-foundations.json', domain.objectives, 'learning objective');
+
+    const lesson = objects.get(domain.lesson);
+    if (lesson) {
+      for (const competency of domain.competencies ?? []) {
+        if (!(lesson.competencies ?? []).includes(competency)) {
+          errors.push(`registry/cultivation-foundations.json: ${domain.id} maps competency ${competency}, but ${domain.lesson} does not declare it`);
+        }
+      }
+      for (const objective of domain.objectives ?? []) {
+        if (!(lesson.learningObjectives ?? []).includes(objective)) {
+          errors.push(`registry/cultivation-foundations.json: ${domain.id} maps objective ${objective}, but ${domain.lesson} does not declare it`);
+        }
+      }
+    }
   }
   const missingLessonMappings = (registry.domains ?? []).filter((domain) => !domain.module || !domain.lesson);
   if (registry.gates?.allDomainsHaveLessons === true && missingLessonMappings.length > 0) {
