@@ -30,8 +30,8 @@
         "competencyResultCore": true,
         "postgresSchemaDefined": true,
         "productionPersistenceAdapter": true,
-        "authenticationIntegrated": false,
-        "authorizationIntegrated": false
+        "authenticationIntegrated": true,
+        "authorizationIntegrated": true
       }
     },
     "credentials": {
