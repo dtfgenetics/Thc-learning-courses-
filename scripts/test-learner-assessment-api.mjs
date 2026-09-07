@@ -10,6 +10,12 @@ function subjectAttempts(subject) {
 }
 const learnerStore = {
   kind: 'memory-assessment-test',
+  async listAssessmentAttempts(subject, assessmentId) {
+    return [...subjectAttempts(subject).values()]
+      .filter((row) => row.assessmentId === assessmentId)
+      .map((row) => structuredClone(row))
+      .sort((a, b) => String(b.startedAt).localeCompare(String(a.startedAt)));
+  },
   async createAssessmentAttempt(subject, attempt) {
     const map = subjectAttempts(subject);
     map.set(attempt.id, structuredClone(attempt));
@@ -84,6 +90,16 @@ try {
     assert.equal(Object.hasOwn(item, 'score'), false);
   }
 
+  response = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, {
+    method: 'POST',
+    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    body: '{}'
+  });
+  assert.equal(response.status, 409, 'a learner must not create a second simultaneous attempt');
+  body = await response.json();
+  assert.equal(body.error, 'assessment-attempt-in-progress');
+  assert.equal(body.attemptId, attemptId);
+
   response = await fetch(`${base}/api/v1/me/assessment-attempts/${attemptId}`, { headers: { authorization: 'Bearer bob' } });
   assert.equal(response.status, 404, 'cross-learner reads must not reveal attempt existence');
 
@@ -123,6 +139,17 @@ try {
   assert.equal(response.status, 200, 'scored submit retry should be idempotent');
   assert.equal((await response.json()).attempt.status, 'scored');
 
+  response = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, {
+    method: 'POST',
+    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    body: '{}'
+  });
+  assert.equal(response.status, 429, 'declared assessment cooldown must be enforced after a completed attempt');
+  body = await response.json();
+  assert.equal(body.error, 'assessment-attempt-cooldown');
+  assert.equal(typeof body.retryAt, 'string');
+  assert.ok(Number(response.headers.get('retry-after')) > 0);
+
   response = await fetch(`${base}/api/v1/me/assessments/ASSESS-NOT-REAL-001/attempts`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
@@ -132,14 +159,15 @@ try {
 
   const newResponse = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, {
     method: 'POST',
-    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    headers: { authorization: 'Bearer bob', 'content-type': 'application/json' },
     body: '{}'
   });
+  assert.equal(newResponse.status, 201, 'attempt policy must be scoped to the authenticated learner');
   const second = await newResponse.json();
   const bad = [{ itemId: 'ITEM-NOT-IN-FORM', itemVersion: 1, response: 0 }];
   response = await fetch(`${base}/api/v1/me/assessment-attempts/${second.attempt.id}/submit`, {
     method: 'POST',
-    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    headers: { authorization: 'Bearer bob', 'content-type': 'application/json' },
     body: JSON.stringify({ responses: bad })
   });
   assert.equal(response.status, 400);
@@ -149,4 +177,4 @@ try {
   await once(server, 'close');
 }
 
-console.log('Authenticated learner assessment API passed.');
+console.log('Authenticated learner assessment API and attempt policy passed.');
