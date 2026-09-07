@@ -62,7 +62,7 @@ try {
   progressBySubject.set('subject-alice', [
     {
       lessonId: 'LESSON-ENV-VPD-001',
-      lessonVersion: '1.0.1',
+      lessonVersion: '1.1.0',
       status: 'completed',
       completedAt: '2026-09-06T20:00:00.000Z'
     },

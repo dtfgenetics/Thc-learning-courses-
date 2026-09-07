@@ -1,20 +1,47 @@
 {
-  "id":"LESSON-NUTRITION-MICRO-003",
-  "title":"Micronutrients, Availability and Nutrient Antagonism",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-NUTRITION-001"],
-  "learningObjectives":["LO-NUTRITION-MICRO-003"],
-  "estimatedMinutes":40,
-  "references":["REF-NUTRITION-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Micronutrients are required in smaller amounts but remain essential for enzymes, electron transport, structural processes, and metabolism. Deficiency-like symptoms can result from low supply, poor availability, antagonism, pH problems, or root damage.",
-    "vocabulary":[{"term":"Micronutrient","definition":"An essential mineral nutrient required in relatively small amounts compared with macronutrients."},{"term":"Chelation","definition":"Binding of a metal ion by an organic molecule that can affect solubility and availability."},{"term":"Availability","definition":"The fraction of a nutrient present in a form and location that roots can acquire."}],
-    "sections":[{"title":"Small requirement does not mean small importance","body":"Iron, manganese, zinc, copper, boron, molybdenum, chlorine, and nickel participate in essential plant processes. Their required quantities are lower, but absence can still limit growth.","references":["REF-NUTRITION-001"]},{"title":"pH strongly influences several micronutrients","body":"Changes in root-zone pH can alter solubility and chemical form, making a nutrient less available even when it is present in the solution or substrate.","references":["REF-NUTRITION-001"]},{"title":"Diagnosis requires multiple clues","body":"Symptom position, progression, root health, pH, EC, water quality, and recent fertilizer changes should be considered together. Visual similarity among disorders makes one-picture diagnosis unreliable.","references":["REF-NUTRITION-001"]}],
-    "workedExamples":["If new leaves show chlorosis while total fertilizer concentration is already high, check pH and root function before adding more micronutrients.","If a trace-element issue appears after a major nutrient-ratio change, consider antagonism as part of the investigation."],
-    "commonMistakes":["Treating every interveinal chlorosis pattern as the same deficiency.","Adding concentrated trace elements without checking pH and EC.","Ignoring source-water mineral contribution."],
-    "practicalApplication":"When micronutrient problems are suspected, record symptom location and progression, verify pH and EC, review source water and fertilizer composition, inspect root health, and make controlled corrections based on the combined evidence.",
-    "summary":"Micronutrient disorders are availability problems as often as supply problems. Strong diagnosis combines chemistry, roots, environment, and symptom progression rather than relying on visual charts alone."
+  "id": "LESSON-NUTRITION-MICRO-003",
+  "title": "Micronutrients, Availability and Nutrient Antagonism",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-NUTRITION-001"],
+  "learningObjectives": ["LO-NUTRITION-MICRO-003"],
+  "estimatedMinutes": 55,
+  "references": ["REF-NUTRITION-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Micronutrients are required in smaller quantities than macronutrients but remain essential for enzymes, electron transport, structural processes, photosynthesis, hormone-related metabolism, and other plant functions. Deficiency-like symptoms can result from low supply, poor availability, antagonism, pH problems, salinity, damaged roots, or measurement error, so diagnosis must go beyond visual charts.",
+    "vocabulary": [
+      {"term": "Micronutrient", "definition": "An essential mineral nutrient required in relatively small amounts compared with macronutrients."},
+      {"term": "Chelation", "definition": "Binding of a metal ion by an organic molecule that can affect solubility, transport, and availability."},
+      {"term": "Availability", "definition": "The fraction of a nutrient present in a form and location that roots can acquire and the plant can use."},
+      {"term": "Antagonism", "definition": "An interaction in which abundance of one ion can reduce acquisition or use of another."},
+      {"term": "Interveinal chlorosis", "definition": "Yellowing between leaf veins while veins remain relatively greener, a symptom pattern shared by multiple disorders."}
+    ],
+    "sections": [
+      {"title": "Small requirement does not mean small importance", "body": "Iron, manganese, zinc, copper, boron, molybdenum, chlorine, and nickel participate in essential plant processes. Required amounts are lower than for macronutrients, but insufficient availability can still constrain growth, photosynthesis, reproductive development, and metabolism.", "references": ["REF-NUTRITION-001"]},
+      {"title": "Iron and manganese participate in electron-transfer and enzyme systems", "body": "Iron is important in electron transport and many enzymes, while manganese participates in photosynthetic and enzymatic reactions. Deficiency-like chlorosis can occur when root-zone chemistry limits availability even when total nutrient supply is not obviously low.", "references": ["REF-NUTRITION-001"]},
+      {"title": "Zinc and copper support enzyme and regulatory processes", "body": "Zinc and copper are required in numerous enzymes and regulatory systems. Excessive addition can become toxic or interfere with other nutrients, which is why micronutrient correction should be evidence-based and measured rather than aggressive.", "references": ["REF-NUTRITION-001"]},
+      {"title": "Boron, molybdenum, chlorine and nickel remain essential", "body": "Boron contributes to cell-wall and reproductive processes, molybdenum is involved in nitrogen metabolism, chlorine has roles in osmotic and photosynthetic function, and nickel is required for urease activity. Their low concentration requirements should not be confused with optional status.", "references": ["REF-NUTRITION-001"]},
+      {"title": "pH strongly influences micronutrient availability", "body": "Root-zone pH changes can alter solubility and chemical form, especially for several metal micronutrients. A nutrient can be present in the substrate or solution but poorly available to roots. This is why adding more nutrient without checking pH can fail to solve the problem and may create toxicity.", "references": ["REF-NUTRITION-001"]},
+      {"title": "Chelation affects metal behavior", "body": "Chelating compounds can help keep some metal ions soluble and available over certain chemical conditions. Different chelates behave differently, so the presence of a chelated micronutrient does not remove the need to monitor pH, concentration, compatibility, and root-zone conditions.", "references": ["REF-NUTRITION-001"]},
+      {"title": "Antagonism can mimic low supply", "body": "High concentrations of competing ions can reduce uptake or use of another nutrient. A deficiency-like symptom following a major ratio or EC change should trigger review of the entire formulation and root-zone chemistry, not just an increase in the nutrient associated with the symptom chart.", "references": ["REF-NUTRITION-001"]},
+      {"title": "Symptom pattern is evidence, not proof", "body": "Visual symptoms should be documented by leaf age, location, symmetry, progression, and relation to recent management changes. Root disease, environmental stress, salinity, pH, and multiple nutrient issues can produce overlapping visual patterns. Diagnosis improves when visual evidence is combined with measurements and history.", "references": ["REF-NUTRITION-001"]}
+    ],
+    "workedExamples": [
+      "If new leaves show interveinal chlorosis while total fertilizer concentration is already high, verify pH, root health, and EC before adding more iron or other trace elements.",
+      "If a trace-element issue appears after a major potassium or calcium ratio change, review antagonism and total ionic balance as part of the investigation.",
+      "If two plants show similar yellowing but one has damaged roots and the other has normal roots, do not assume the same nutrient deficiency is responsible for both.",
+      "If a grower repeatedly increases a micronutrient because symptoms persist, but root-zone pH remains outside the intended range, correct the availability problem before escalating dose."
+    ],
+    "commonMistakes": [
+      "Treating every interveinal chlorosis pattern as the same deficiency.",
+      "Adding concentrated trace elements without checking pH and EC.",
+      "Ignoring source-water mineral contribution.",
+      "Assuming a nutrient is unavailable only because total supply is low.",
+      "Using one symptom photo without tracking where symptoms started and how they progressed.",
+      "Correcting one micronutrient without reviewing antagonism and the complete formulation."
+    ],
+    "practicalApplication": "When a micronutrient disorder is suspected, document symptom location, leaf age, progression, and recent management changes. Verify pH and EC, review source-water and fertilizer composition, inspect root health, and identify any recent ratio changes. Build at least three plausible causes, rank them by evidence, choose the smallest diagnostic or corrective step that can distinguish among them, and record the plant response before making another change.",
+    "summary": "Micronutrient disorders are often availability or root-zone problems rather than simple shortages. Strong diagnosis integrates plant symptoms, pH, EC, formulation balance, source water, root health, and recent changes instead of relying on visual deficiency charts alone."
   }
 }
