@@ -1,20 +1,47 @@
 {
-  "id":"LESSON-WATER-EC-003",
-  "title":"EC, Dissolved Ions and Root-Zone Trend Analysis",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-WATER-001"],
-  "learningObjectives":["LO-WATER-EC-003"],
-  "estimatedMinutes":35,
-  "references":["REF-IRRIGATION-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Electrical conductivity provides a practical estimate of total dissolved ionic concentration. It is useful for comparing source water, nutrient solution, drainage, and root-zone extracts, but it does not reveal which specific ions are present.",
-    "vocabulary":[{"term":"Electrical conductivity","definition":"A measure of how readily a solution conducts electrical current, influenced by the concentration and mobility of dissolved ions."},{"term":"Root-zone EC","definition":"Electrical conductivity measured from the solution associated with the root environment using a defined sampling method."},{"term":"Trend","definition":"A directional pattern in repeated measurements over time rather than one isolated value."}],
-    "sections":[{"title":"EC measures total ionic concentration","body":"Different mixtures of ions can produce similar EC values. EC therefore helps track overall concentration but cannot substitute for nutrient-specific chemical analysis.","references":["REF-IRRIGATION-001"]},{"title":"Sampling method changes the number","body":"Feed solution, runoff, pore-water extracts, and saturated-media extracts are not directly interchangeable. Comparisons should use a consistent method and record where and when the sample was taken.","references":["REF-IRRIGATION-001"]},{"title":"Trends reveal accumulation or dilution","body":"Repeated EC data can help identify whether the root zone is concentrating salts, being diluted, or remaining relatively stable. Interpretation should include irrigation volume, dryback, plant demand, and source-water EC.","references":["REF-IRRIGATION-001"]}],
-    "workedExamples":["If feed EC remains steady while root-zone EC rises over several irrigations, investigate water removal, dryback, drainage, and plant uptake before simply increasing feed concentration.","If source-water EC changes seasonally, record the new baseline so nutrient-solution comparisons remain meaningful."],
-    "commonMistakes":["Assuming EC identifies individual nutrient concentrations.","Comparing runoff EC directly with a different extraction method.","Reacting to one measurement without checking the trend."],
-    "practicalApplication":"Measure source, feed, and root-zone EC using documented methods, record the timing relative to irrigation, graph repeated values, and interpret the trend with moisture and plant observations.",
-    "summary":"EC is a concentration and trend tool, not a nutrient-specific assay. Consistent sampling and repeated measurements make it useful for diagnosing root-zone accumulation and irrigation behavior."
+  "id": "LESSON-WATER-EC-003",
+  "title": "EC, Dissolved Ions and Root-Zone Trend Analysis",
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-WATER-001"],
+  "learningObjectives": ["LO-WATER-EC-003"],
+  "estimatedMinutes": 50,
+  "references": ["REF-IRRIGATION-001"],
+  "assessment": null,
+  "content": {
+    "overview": "Electrical conductivity (EC) provides a practical estimate of total dissolved ionic concentration. It is useful for comparing source water, nutrient solution, drainage, and root-zone extracts, but it cannot identify which ions are present. The strongest use of EC is as a repeatable trend signal interpreted with sampling method, irrigation behavior, substrate moisture, source-water quality, and plant response.",
+    "vocabulary": [
+      {"term": "Electrical conductivity", "definition": "A measure of how readily a solution conducts electrical current, influenced by the concentration and mobility of dissolved ions."},
+      {"term": "Root-zone EC", "definition": "Electrical conductivity measured from solution associated with the root environment using a defined sampling method."},
+      {"term": "Source-water EC", "definition": "The conductivity of irrigation water before nutrient additions, which establishes part of the baseline ionic load."},
+      {"term": "Concentration factor", "definition": "A comparison describing how much more concentrated one solution is relative to another under a defined sampling method."},
+      {"term": "Trend", "definition": "A directional pattern in repeated measurements over time rather than one isolated value."}
+    ],
+    "sections": [
+      {"title": "EC measures total ionic concentration, not nutrient identity", "body": "Different mixtures of ions can produce similar EC values. EC therefore helps track overall concentration but cannot tell whether nitrogen, potassium, calcium, sodium, chloride, or another ion is responsible for the reading. Nutrient-specific questions require chemistry beyond EC alone.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "Source-water EC establishes the baseline", "body": "The ionic concentration present before fertilizer is added contributes to the final feed EC. Seasonal or source changes can shift that baseline. Recording source-water EC prevents a changing water supply from being mistaken for a change in nutrient mixing.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "Sampling method changes the result", "body": "Feed solution, runoff, drain water, pore-water samples, and media extracts are not directly interchangeable. Each method samples a different part of the system and can produce a different value. Meaningful comparisons require a consistent method and documented timing relative to irrigation.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "Root-zone EC reflects a balance of inputs and removals", "body": "Root-zone concentration changes as water and ions enter, water is removed by transpiration and evaporation, ions are taken up selectively, and solution leaves through drainage. Dryback can concentrate dissolved ions even if the feed EC has not changed. EC should therefore be interpreted with moisture dynamics and irrigation history.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "Trends reveal accumulation, stability, or dilution", "body": "Repeated values are more useful than isolated readings. A rising trend may indicate concentration or accumulation; a falling trend may indicate dilution, changing uptake, or changed irrigation conditions. Stable values can indicate balance, but only when sampling and crop conditions are comparable.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "High EC is not automatically a fertilizer problem", "body": "Elevated root-zone EC can result from source-water minerals, excessive fertilizer concentration, insufficient drainage, strong dryback, uneven irrigation, or reduced plant uptake. Diagnosis should identify which mechanism best explains the pattern before changing the nutrient recipe.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "Low EC also needs context", "body": "A low reading can result from dilution, low feed concentration, measurement timing, high water content, or uptake patterns. Lower is not always better. Compare against the expected feed, moisture state, plant demand, and prior trend before deciding a correction is needed.", "references": ["REF-IRRIGATION-001"]},
+      {"title": "Instrument consistency matters", "body": "EC meters should be clean, calibrated or verified according to manufacturer guidance, and used at a consistent sampling temperature or with understood temperature compensation. Cross-checking an unexpected reading before acting reduces false corrections.", "references": ["REF-IRRIGATION-001"]}
+    ],
+    "workedExamples": [
+      "Feed EC stays constant while root-zone EC rises over several irrigations. Investigate dryback, irrigation volume, drainage fraction, distribution uniformity, and plant uptake before increasing or decreasing fertilizer concentration.",
+      "Source-water EC increases seasonally. Record the new baseline and determine how much of the feed EC now comes from the water itself before comparing current nutrient strength with historical data.",
+      "Runoff EC is much higher than feed EC after a long dryback. Repeat measurements under a consistent sampling schedule before assuming the result represents chronic accumulation.",
+      "A single root-zone sample reads unexpectedly low. Verify the meter, sampling location, substrate moisture, and timing relative to irrigation before changing the feeding program."
+    ],
+    "commonMistakes": [
+      "Assuming EC identifies individual nutrient concentrations.",
+      "Ignoring source-water EC when evaluating total feed strength.",
+      "Comparing runoff EC directly with a different extraction method.",
+      "Reacting to one measurement without checking the trend.",
+      "Ignoring substrate moisture and dryback when interpreting concentration.",
+      "Changing fertilizer strength before checking irrigation distribution and drainage."
+    ],
+    "practicalApplication": "Build a seven-day EC trend sheet for one crop zone. Record source-water EC, mixed-feed EC, one defined root-zone or drain EC method, irrigation timing, substrate moisture or dryback observation, and plant condition. Graph the three EC series, identify whether the root zone is accumulating, stable, or diluting relative to feed, and write the most likely mechanism before proposing a corrective action.",
+    "summary": "EC is a concentration and trend tool, not a nutrient-specific assay. Consistent instruments, consistent sampling, source-water baselines, and repeated measurements make EC useful for understanding root-zone accumulation, dilution, and irrigation behavior."
   }
 }
