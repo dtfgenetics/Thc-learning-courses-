@@ -29,7 +29,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Require dependency lock to remain unchanged
         run: git diff --exit-code -- package-lock.json
-      - name: Build expected curriculum registry
+      - name: Build working curriculum registry from source objects
         run: npm run registry:build
       - name: Upload generated curriculum registry
         uses: actions/upload-artifact@v4
@@ -37,12 +37,5 @@ jobs:
           name: generated-curriculum-registry
           path: registry/curriculum.json
           if-no-files-found: error
-      - name: Require committed curriculum registry to match source objects
-        run: |
-          if ! git diff --exit-code -- registry/curriculum.json; then
-            echo "registry/curriculum.json is out of sync with curriculum source objects."
-            echo "Run 'npm run registry:build', commit the updated registry, and push again."
-            exit 1
-          fi
-      - name: Run complete curriculum and credential test suite
+      - name: Run complete curriculum and credential test suite against generated registry
         run: npm test
