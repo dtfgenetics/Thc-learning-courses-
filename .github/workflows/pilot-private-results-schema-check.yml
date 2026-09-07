@@ -1,0 +1,32 @@
+name: Private pilot results schema check
+
+on:
+  push:
+    branches: [feat/pilot-private-results-schema]
+    paths:
+      - schemas/private-pilot-results.schema.json
+      - scripts/private-pilot-results-input.mjs
+      - scripts/validate-private-pilot-results.mjs
+      - scripts/build-pilot-evidence-from-results.mjs
+      - scripts/test-build-pilot-evidence-from-results.mjs
+      - docs/PILOT-PRIVATE-RESULTS.md
+      - .github/workflows/pilot-private-results-schema-check.yml
+
+permissions:
+  contents: read
+
+jobs:
+  private-pilot-input:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: node scripts/test-build-pilot-evidence-from-results.mjs
+      - run: npm run schema:validate
+      - run: node scripts/validate-pilot-evidence.mjs
+      - run: node scripts/report-pilot-readiness.mjs
