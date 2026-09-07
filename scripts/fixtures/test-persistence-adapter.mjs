@@ -52,6 +52,7 @@ export async function createPersistenceAdapters() {
         progress.set(subject, next);
         return stored;
       },
+      async listAssessmentAttempts() { return []; },
       async recordPerformanceAssessmentResult(subject, record = {}) {
         const key = `${subject}:${record.assessmentId}:${record.assessmentVersion}`;
         const stored = {
