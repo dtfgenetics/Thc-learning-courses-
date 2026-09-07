@@ -1,15 +1,15 @@
 {
   "system": "THC Academy",
   "version": "0.1.0",
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-07",
   "productionReady": false,
   "areas": {
     "curriculum": {
-      "status": "in-review",
+      "status": "approved",
       "gates": {
         "substantiveContentComplete": true,
-        "scientificReviewComplete": false,
-        "editorialReviewComplete": false
+        "scientificReviewComplete": true,
+        "editorialReviewComplete": true
       }
     },
     "assessment": {
@@ -18,7 +18,7 @@
         "blueprintComplete": true,
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
-        "humanAssessmentReviewComplete": false,
+        "humanAssessmentReviewComplete": true,
         "pilotStatisticsComplete": false
       }
     },
