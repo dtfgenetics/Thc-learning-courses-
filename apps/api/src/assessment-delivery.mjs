@@ -147,6 +147,17 @@ export function createAssessmentDeliveryService({ root = process.cwd(), allowDra
   }
 
   return {
+    policyDefinition(assessmentId) {
+      const assessment = loadAssessment(assessmentId);
+      if (!assessment) return null;
+      return {
+        id: assessment.id,
+        version: assessment.version,
+        status: assessment.status,
+        maxAttempts: assessment.maxAttempts ?? null,
+        cooldownHours: assessment.cooldownHours ?? 0
+      };
+    },
     start({ learnerId, assessmentId, seed = crypto.randomUUID() }) {
       const assessment = loadAssessment(assessmentId);
       if (!assessment) throw new Error('assessment-not-found');

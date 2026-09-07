@@ -198,7 +198,7 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
         completedAt: row.completed_at ? new Date(row.completed_at).toISOString() : null
       };
     },
-    async createAssessmentAttempt(externalSubject, attempt = {}) {
+    async createAssessmentAttempt(externalSubject, attempt = {}, policy = null) {
     if (!externalSubject) throw new Error('externalSubject required');
     if (!attempt?.id || !attempt.assessmentId || !attempt.assessmentVersion || !attempt.formId || !attempt.formHash) throw new Error('assessment attempt identity required');
     if (attempt.status !== 'started') throw new Error('new assessment attempt must be started');
@@ -210,6 +210,36 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
     return requireTransaction()(async (runQuery) => {
       const learner = await ensureLearner(externalSubject, runQuery);
       if (!learner?.id) throw new Error('learner-resolution-failed');
+      if (policy) {
+        await queryOrUnavailable(runQuery, `select id from learners where id = $1 for update`, [learner.id]);
+        const priorResult = await queryOrUnavailable(
+          runQuery,
+          `select id, assessment_id, assessment_version, status, started_at, submitted_at, scored_at
+             from assessment_attempts
+            where learner_id = $1 and assessment_id = $2 and assessment_version = $3
+            order by started_at desc, id`,
+          [learner.id, attempt.assessmentId, String(attempt.assessmentVersion)]
+        );
+        const nowMs = Date.parse(policy.now ?? attempt.startedAt ?? new Date().toISOString());
+        const active = (priorResult.rows ?? []).find((row) => ['started', 'submitted'].includes(row.status));
+        if (active) throw new Error('assessment-policy:active-attempt-exists');
+        const nonVoided = (priorResult.rows ?? []).filter((row) => row.status !== 'voided');
+        const maxAttempts = Number(policy.maxAttempts ?? 0);
+        if (Number.isInteger(maxAttempts) && maxAttempts > 0 && nonVoided.length >= maxAttempts) {
+          throw new Error('assessment-policy:max-attempts-reached');
+        }
+        const cooldownHours = Number(policy.cooldownHours ?? 0);
+        if (Number.isFinite(cooldownHours) && cooldownHours > 0) {
+          const completedTimes = nonVoided
+            .filter((row) => row.status === 'scored')
+            .map((row) => Date.parse(row.scored_at ?? row.submitted_at ?? row.started_at))
+            .filter(Number.isFinite);
+          if (completedTimes.length) {
+            const latest = Math.max(...completedTimes);
+            if (nowMs < latest + cooldownHours * 60 * 60 * 1000) throw new Error('assessment-policy:cooldown-active');
+          }
+        }
+      }
       await queryOrUnavailable(
         runQuery,
         `insert into assessment_attempts (
@@ -230,6 +260,21 @@ export function createPostgresLearnerStore({ query, withTransaction } = {}) {
       }
       return loadAssessmentAttempt(runQuery, externalSubject, attempt.id);
     });
+  },
+  async listAssessmentAttempts(externalSubject, assessmentId) {
+    if (!externalSubject) throw new Error('externalSubject required');
+    if (!assessmentId) throw new Error('assessmentId required');
+    const result = await queryOrUnavailable(
+      query,
+      `select a.id, a.assessment_id, a.assessment_version, a.form_id, a.form_hash, a.status,
+              a.started_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
+         from learners l
+         join assessment_attempts a on a.learner_id = l.id
+        where l.external_subject = $1 and a.assessment_id = $2
+        order by a.started_at desc, a.id`,
+      [externalSubject, assessmentId]
+    );
+    return (result.rows ?? []).map((row) => assessmentAttemptRow(row, [], externalSubject));
   },
   async getAssessmentAttempt(externalSubject, attemptId) {
     if (!externalSubject) throw new Error('externalSubject required');

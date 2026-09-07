@@ -10,6 +10,11 @@ function subjectAttempts(subject) {
 }
 const learnerStore = {
   kind: 'memory-assessment-test',
+  async listAssessmentAttempts(subject, assessmentId) {
+    return [...subjectAttempts(subject).values()]
+      .filter((attempt) => attempt.assessmentId === assessmentId)
+      .map((attempt) => structuredClone(attempt));
+  },
   async createAssessmentAttempt(subject, attempt) {
     const map = subjectAttempts(subject);
     map.set(attempt.id, structuredClone(attempt));
@@ -122,6 +127,16 @@ try {
   });
   assert.equal(response.status, 200, 'scored submit retry should be idempotent');
   assert.equal((await response.json()).attempt.status, 'scored');
+
+  response = await fetch(`${base}/api/v1/me/assessments/${assessmentId}/attempts`, {
+    method: 'POST',
+    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    body: '{}'
+  });
+  assert.equal(response.status, 409, 'cooldown must block immediate retake');
+  body = await response.json();
+  assert.equal(body.error, 'assessment-attempt-policy-blocked');
+  assert.equal(body.policy.reason, 'cooldown-active');
 
   response = await fetch(`${base}/api/v1/me/assessments/ASSESS-NOT-REAL-001/attempts`, {
     method: 'POST',

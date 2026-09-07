@@ -12,6 +12,7 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { createAssessmentDeliveryService } from './assessment-delivery.mjs';
+import { evaluateAssessmentAttemptPolicy } from '../../../packages/domain/assessment-attempt-policy.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -244,15 +245,25 @@ if (req.method === 'POST' && assessmentStartMatch) {
   route = 'POST /api/v1/me/assessments/:assessmentId/attempts';
   const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
   if (!auth) return;
-  if (!learnerStore || typeof learnerStore.createAssessmentAttempt !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+  if (!learnerStore || typeof learnerStore.createAssessmentAttempt !== 'function' || typeof learnerStore.listAssessmentAttempts !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
   try {
+    const policyDefinition = resolvedAssessmentDelivery.policyDefinition(assessmentStartMatch[1]);
+    if (!policyDefinition) return json(res, 404, { error: 'assessment-not-found', requestId });
+    const priorAttempts = await learnerStore.listAssessmentAttempts(auth.subject, assessmentStartMatch[1]);
+    const attemptPolicy = evaluateAssessmentAttemptPolicy({ assessment: policyDefinition, attempts: priorAttempts });
+    if (!attemptPolicy.allowed) return json(res, 409, { error: 'assessment-attempt-policy-blocked', policy: attemptPolicy, requestId });
     const { attempt } = resolvedAssessmentDelivery.start({ learnerId: auth.subject, assessmentId: assessmentStartMatch[1] });
-    const saved = await learnerStore.createAssessmentAttempt(auth.subject, attempt);
-    return json(res, 201, { attempt: resolvedAssessmentDelivery.publicView(saved) });
+    const saved = await learnerStore.createAssessmentAttempt(auth.subject, attempt, {
+      maxAttempts: policyDefinition.maxAttempts,
+      cooldownHours: policyDefinition.cooldownHours,
+      now: attempt.startedAt
+    });
+    return json(res, 201, { attempt: resolvedAssessmentDelivery.publicView(saved), policy: attemptPolicy });
   } catch (error) {
     const message = String(error?.message ?? '');
     if (message === 'assessment-not-found') return json(res, 404, { error: 'assessment-not-found', requestId });
     if (message === 'assessment-not-active' || message.startsWith('insufficient-active-items:')) return json(res, 409, { error: 'assessment-not-deliverable', requestId });
+    if (message.startsWith('assessment-policy:')) return json(res, 409, { error: 'assessment-attempt-policy-blocked', policy: { allowed: false, reason: message.slice('assessment-policy:'.length) }, requestId });
     throw error;
   }
 }
