@@ -12,6 +12,7 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { createAssessmentDeliveryService } from './assessment-delivery.mjs';
+import { evaluateAssessmentAttemptPolicy } from '../../../packages/domain/assessment-attempt-policy.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -244,9 +245,25 @@ if (req.method === 'POST' && assessmentStartMatch) {
   route = 'POST /api/v1/me/assessments/:assessmentId/attempts';
   const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
   if (!auth) return;
-  if (!learnerStore || typeof learnerStore.createAssessmentAttempt !== 'function') return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+  if (!learnerStore || typeof learnerStore.createAssessmentAttempt !== 'function' || typeof learnerStore.listAssessmentAttempts !== 'function') {
+    return json(res, 503, { error: 'assessment-persistence-unavailable', requestId });
+  }
   try {
-    const { attempt } = resolvedAssessmentDelivery.start({ learnerId: auth.subject, assessmentId: assessmentStartMatch[1] });
+    const { attempt, assessment } = resolvedAssessmentDelivery.start({ learnerId: auth.subject, assessmentId: assessmentStartMatch[1] });
+    const previousAttempts = await learnerStore.listAssessmentAttempts(auth.subject, assessment.id);
+    const policy = evaluateAssessmentAttemptPolicy({ assessment, attempts: previousAttempts });
+    if (!policy.allowed) {
+      if (policy.reason === 'active-attempt') {
+        return json(res, 409, { error: 'assessment-attempt-in-progress', attemptId: policy.attemptId, requestId });
+      }
+      if (policy.reason === 'max-attempts') {
+        return json(res, 409, { error: 'assessment-attempt-limit-reached', attemptsUsed: policy.attemptsUsed, maxAttempts: policy.maxAttempts, requestId });
+      }
+      if (policy.reason === 'cooldown') {
+        return json(res, 429, { error: 'assessment-attempt-cooldown', retryAt: policy.retryAt, requestId }, { 'retry-after': String(policy.retryAfterSeconds) });
+      }
+      return json(res, 409, { error: 'assessment-attempt-policy-blocked', requestId });
+    }
     const saved = await learnerStore.createAssessmentAttempt(auth.subject, attempt);
     return json(res, 201, { attempt: resolvedAssessmentDelivery.publicView(saved) });
   } catch (error) {
