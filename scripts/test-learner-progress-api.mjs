@@ -50,7 +50,7 @@ try {
   response = await fetch(`${base}/api/v1/me/lessons/LESSON-ENV-VPD-001`, {
     method: 'PUT',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ lessonVersion: '1.0.0', status: 'completed' })
+    body: JSON.stringify({ lessonVersion: '1.0.1', status: 'completed' })
   });
   assert.equal(response.status, 200);
   let body = await response.json();
@@ -72,7 +72,7 @@ try {
   response = await fetch(`${base}/api/v1/me/lessons/LESSON-ENV-VPD-001`, {
     method: 'PUT',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ lessonVersion: '1.0.0', status: 'passed' })
+    body: JSON.stringify({ lessonVersion: '1.0.1', status: 'passed' })
   });
   assert.equal(response.status, 400);
   assert.equal((await response.json()).error, 'invalid-lesson-progress');
@@ -80,12 +80,12 @@ try {
   response = await fetch(`${base}/api/v1/me/lessons/LESSON-ENV-VPD-001`, {
     method: 'PUT',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ lessonVersion: '1.0.1', status: 'completed' })
+    body: JSON.stringify({ lessonVersion: '1.0.0', status: 'completed' })
   });
   assert.equal(response.status, 409);
   let mismatch = await response.json();
   assert.equal(mismatch.error, 'lesson-version-mismatch');
-  assert.equal(mismatch.currentVersion, '1.0.0');
+  assert.equal(mismatch.currentVersion, '1.0.1');
 
   response = await fetch(`${base}/api/v1/me/lessons/LESSON-NOT-REAL-999`, {
     method: 'PUT',
