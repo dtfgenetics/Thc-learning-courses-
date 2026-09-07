@@ -60,6 +60,7 @@ function pointBiserial(rows) {
 }
 
 const grouped = new Map();
+const participantItemKeys = new Set();
 for (const [index, row] of payload.responses.entries()) {
   if (!row || typeof row !== 'object') throw new Error(`responses[${index}] must be an object`);
   if (typeof row.participantId !== 'string' || row.participantId.length < 1) throw new Error(`responses[${index}].participantId is required`);
@@ -73,7 +74,23 @@ for (const [index, row] of payload.responses.entries()) {
   if (row.responseTimeAnomaly !== undefined && typeof row.responseTimeAnomaly !== 'boolean') throw new Error(`responses[${index}].responseTimeAnomaly must be boolean when present`);
 
   const key = `${row.itemId}@${row.itemVersion}`;
-  if (!questionMap.has(key)) throw new Error(`Pilot results reference unknown item version ${key}`);
+  const item = questionMap.get(key);
+  if (!item) throw new Error(`Pilot results reference unknown item version ${key}`);
+  const participantItemKey = `${row.participantId}::${key}`;
+  if (participantItemKeys.has(participantItemKey)) throw new Error(`Duplicate participant/item response for ${row.participantId} and ${key}`);
+  participantItemKeys.add(participantItemKey);
+
+  const omitted = row.omitted === true;
+  if (omitted) {
+    if (row.selectedChoiceIndex !== null && row.selectedChoiceIndex !== undefined) throw new Error(`responses[${index}] is omitted but includes selectedChoiceIndex`);
+    if (row.correct !== false) throw new Error(`responses[${index}] is omitted but correct is true`);
+  } else {
+    if (!Number.isInteger(row.selectedChoiceIndex)) throw new Error(`responses[${index}] requires selectedChoiceIndex when not omitted`);
+    if (row.selectedChoiceIndex >= (item.choices?.length ?? 0)) throw new Error(`responses[${index}].selectedChoiceIndex is outside item choices`);
+    const expectedCorrect = row.selectedChoiceIndex === item.correct;
+    if (row.correct !== expectedCorrect) throw new Error(`responses[${index}].correct does not match the keyed answer for ${key}`);
+  }
+
   if (!grouped.has(key)) grouped.set(key, []);
   grouped.get(key).push(row);
 }
@@ -82,16 +99,14 @@ const output = [];
 for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeCompare(b))) {
   const [itemId, itemVersionRaw] = key.split('@');
   const itemVersion = Number(itemVersionRaw);
+  const item = questionMap.get(key);
   const nonOmitted = rows.filter((row) => row.omitted !== true);
   const correctCount = rows.filter((row) => row.correct === true).length;
   const omitCount = rows.filter((row) => row.omitted === true).length;
   const times = rows.map((row) => Number(row.responseTimeSeconds));
   const anomalyCount = rows.filter((row) => row.responseTimeAnomaly === true).length;
-  const choiceCounts = new Map();
-  for (const row of nonOmitted) {
-    if (row.selectedChoiceIndex === null || row.selectedChoiceIndex === undefined) continue;
-    choiceCounts.set(row.selectedChoiceIndex, (choiceCounts.get(row.selectedChoiceIndex) ?? 0) + 1);
-  }
+  const choiceCounts = new Map(Array.from({length:item.choices?.length ?? 0}, (_, choiceIndex) => [choiceIndex, 0]));
+  for (const row of nonOmitted) choiceCounts.set(row.selectedChoiceIndex, (choiceCounts.get(row.selectedChoiceIndex) ?? 0) + 1);
   const discriminationValue = pointBiserial(rows);
   const evidence = {
     id: `PILOT-${payload.cohortId.replace(/[^A-Z0-9-]/gi, '-').toUpperCase()}-${itemId.replace(/^ITEM-/, '')}-V${itemVersion}`,
