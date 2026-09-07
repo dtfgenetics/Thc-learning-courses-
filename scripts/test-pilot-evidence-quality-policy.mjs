@@ -22,6 +22,21 @@ const good = record();
 if (responseAccountingIssues(good, item).length) throw new Error('Valid pilot response accounting was rejected.');
 if (!activationEvidenceEvaluation(good, item, policy).ready) throw new Error('Policy-qualified pilot evidence should be activation ready.');
 
+const withOmissions = record({
+  sampleSize:30,
+  omitRate:0.1,
+  percentCorrect:18/30,
+  distractorSelection:[
+    {choiceIndex:0,count:18,proportion:18/27},
+    {choiceIndex:1,count:3,proportion:3/27},
+    {choiceIndex:2,count:3,proportion:3/27},
+    {choiceIndex:3,count:3,proportion:3/27}
+  ]
+});
+const omissionIssues = responseAccountingIssues(withOmissions, item);
+if (omissionIssues.length) throw new Error(`Valid omitted-response accounting was rejected: ${omissionIssues.join('; ')}`);
+if (!activationEvidenceEvaluation(withOmissions, item, policy).ready) throw new Error('A valid pilot with omissions should remain activation-ready when all policy conditions are met.');
+
 const tiny = activationEvidenceEvaluation(record({sampleSize:1,percentCorrect:1,distractorSelection:[
   {choiceIndex:0,count:1,proportion:1},{choiceIndex:1,count:0,proportion:0},{choiceIndex:2,count:0,proportion:0},{choiceIndex:3,count:0,proportion:0}
 ]}), item, policy);
