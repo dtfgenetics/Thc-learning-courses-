@@ -50,6 +50,12 @@ const plannerOutput = execFileSync(process.execPath, [path.join(root, 'scripts/b
 const planner = JSON.parse(plannerOutput);
 if (!planner.summary?.selectionComplete) throw new Error('Pilot cohort planner is not complete; staging is blocked.');
 
+const readiness = readJson('registry/system-readiness.json');
+const humanAssessmentReviewComplete = readiness.areas?.assessment?.gates?.humanAssessmentReviewComplete === true;
+if (write && !humanAssessmentReviewComplete) {
+  throw new Error('Pilot staging writes are blocked until registry/system-readiness.json records humanAssessmentReviewComplete=true from real review evidence.');
+}
+
 const questionEntries = readDirJson('content/questions');
 const questionsById = new Map(questionEntries.map((entry) => [entry.value.id, entry]));
 const pilotEntries = readDirJson('content/pilot-evidence');
@@ -104,6 +110,8 @@ const summary = {
   assessment: planner.summary.assessment,
   write,
   analystRequiredForWrite: true,
+  humanAssessmentReviewComplete,
+  writeBlockedByReviewGate: !humanAssessmentReviewComplete,
   selectedItems: actions.length,
   itemsWithExistingPilotEvidence: actions.filter((action) => !action.needsDraftEvidence).length,
   itemsNeedingDraftEvidence: actions.filter((action) => action.needsDraftEvidence).length,
@@ -116,6 +124,7 @@ const summary = {
   } : null,
   safeguards: [
     'cohort must come from the reviewed reference-clean Foundations planner',
+    'write mode remains blocked until human assessment review is complete',
     'write mode requires an explicit real analyst ID',
     'new pilot evidence is draft-only with zero responses and no fabricated statistics',
     'existing pilot evidence is never overwritten',
