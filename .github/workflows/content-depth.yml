@@ -1,0 +1,32 @@
+name: Course content depth report
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-depth-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Build course content depth report
+        run: node scripts/report-course-content-depth.mjs --json > course-content-depth.json
+      - name: Upload course content depth report
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-content-depth
+          path: course-content-depth.json
+          if-no-files-found: error
