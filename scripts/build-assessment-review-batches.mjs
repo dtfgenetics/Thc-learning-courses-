@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { activationEvidenceEvaluation, loadPilotEvidencePolicy } from './pilot-evidence-quality.mjs';
 
 const root = process.cwd();
 const batchSizeArg = process.argv.find((arg) => arg.startsWith('--batch-size='));
@@ -26,6 +27,8 @@ const finalAssessment = readJson(`content/assessments/${registry.summativeAssess
 const questions = readDirJson('content/questions');
 const reviews = readDirJson('content/reviews');
 const references = new Set(readDirJson('content/references').map((ref) => ref.id));
+const pilotRecords = readDirJson('content/pilot-evidence');
+const pilotPolicy = loadPilotEvidencePolicy(root);
 
 const releaseCompetencies = new Set((registry.domains ?? []).flatMap((domain) => domain.competencies ?? []));
 const minimumActive = finalAssessment.itemSelection?.minimumActiveItemsPerCompetency ?? 0;
@@ -44,6 +47,16 @@ function unresolvedReferences(item) {
   return (item.references ?? []).filter((id) => !references.has(id));
 }
 
+function qualifiedPilotEvidence(item) {
+  const record = pilotRecords.find((candidate) =>
+    candidate.itemId === item.id &&
+    String(candidate.itemVersion) === String(item.version)
+  );
+  if (!record) return null;
+  const evaluation = activationEvidenceEvaluation(record, item, pilotPolicy);
+  return evaluation.ready ? record : null;
+}
+
 const rows = (finalAssessment.blueprint ?? []).map((bp) => {
   const eligible = questions.filter((item) =>
     item.competency === bp.competency &&
@@ -54,7 +67,8 @@ const rows = (finalAssessment.blueprint ?? []).map((bp) => {
   const active = eligible.filter((item) => item.status === 'active');
   const reviewedNotActive = eligible.filter((item) => item.status !== 'active' && hasApprovedAssessmentReview(item));
   const pendingReview = eligible.filter((item) => item.status !== 'active' && !hasApprovedAssessmentReview(item));
-  const promotable = reviewedNotActive.filter((item) => unresolvedReferences(item).length === 0);
+  const reviewedReferenceClean = reviewedNotActive.filter((item) => unresolvedReferences(item).length === 0);
+  const pilotQualifiedPromotable = reviewedReferenceClean.filter((item) => qualifiedPilotEvidence(item));
 
   return {
     competency: bp.competency,
@@ -66,7 +80,8 @@ const rows = (finalAssessment.blueprint ?? []).map((bp) => {
     activeDeficit: Math.max(0, minimumActive - active.length),
     bankDeficit: Math.max(0, targetBank - eligible.length),
     reviewedNotActive: reviewedNotActive.length,
-    promotableItems: promotable.map((item) => item.id),
+    reviewedReferenceCleanItems: reviewedReferenceClean.map((item) => item.id),
+    pilotQualifiedPromotableItems: pilotQualifiedPromotable.map((item) => item.id),
     pendingReviewItems: pendingReview.map((item) => ({
       id: item.id,
       version: item.version,
@@ -119,7 +134,8 @@ const summary = {
   totalBankDeficit: rows.reduce((sum, row) => sum + row.bankDeficit, 0),
   pendingReviewItems: rows.reduce((sum, row) => sum + row.pendingReviewItems.length, 0),
   reviewedNotActiveItems: rows.reduce((sum, row) => sum + row.reviewedNotActive, 0),
-  promotableItems: rows.reduce((sum, row) => sum + row.promotableItems.length, 0),
+  reviewedReferenceCleanItems: rows.reduce((sum, row) => sum + row.reviewedReferenceCleanItems.length, 0),
+  pilotQualifiedPromotableItems: rows.reduce((sum, row) => sum + row.pilotQualifiedPromotableItems.length, 0),
   requestedBatchSize: batchSize,
   batchItems: batch.length
 };
