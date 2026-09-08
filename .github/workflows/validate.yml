@@ -69,6 +69,14 @@ jobs:
           name: cultivation-foundations-pilot-cohort
           path: foundations-pilot-cohort.json
           if-no-files-found: error
+      - name: Build Cultivation Foundations pilot staging plan
+        run: node scripts/stage-foundations-pilot-cohort.mjs > foundations-pilot-staging-plan.json
+      - name: Upload Cultivation Foundations pilot staging plan
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-pilot-staging-plan
+          path: foundations-pilot-staging-plan.json
+          if-no-files-found: error
       - name: Dry-run reviewed Foundations active-pool promotion
         run: node scripts/promote-foundations-active-pool.mjs > assessment-promotion-plan.json
       - name: Upload assessment promotion plan
