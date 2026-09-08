@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { highSeverityFoundationsItemFlags } from './lib/foundations-item-review-preflight.mjs';
 
 const root = process.cwd();
 const searchable = [
@@ -57,6 +58,13 @@ export function buildReviewRecord({ objectId, reviewType, reviewerId, status, no
   if (version === undefined || version === null || version === '') throw new Error(`review target has no version: ${objectId}`);
   if (reviewType === 'scientific' && status === 'approved' && evidenceChecked.length === 0) {
     throw new Error('approved scientific reviews require at least one --evidence reference id');
+  }
+  const isQuestion = target.file.includes(`${path.sep}content${path.sep}questions${path.sep}`);
+  if (isQuestion && reviewType === 'assessment' && status === 'approved') {
+    const blockers = highSeverityFoundationsItemFlags(target.data);
+    if (blockers.length > 0) {
+      throw new Error(`assessment approval blocked by high-severity item preflight: ${blockers.map((flag) => flag.code).join(', ')}`);
+    }
   }
 
   const stamp = String(reviewedAt).replace(/[-:.TZ]/g, '').slice(0, 14);
