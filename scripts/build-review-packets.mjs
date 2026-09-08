@@ -11,6 +11,11 @@ const summaryOnly = process.argv.includes('--summary-only');
 const format = args.format ?? 'json';
 const filterObject = args.object ?? null;
 const filterLane = args.lane ?? null;
+const filterState = args.state ?? null;
+const validStates = new Set(['approved', 'pending', 'blocked', 'revision-required']);
+if (filterState && !validStates.has(filterState)) {
+  throw new Error(`--state must be one of: ${[...validStates].join(', ')}`);
+}
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -175,11 +180,13 @@ function packetFor(task) {
 let selected = tasks;
 if (filterObject) selected = selected.filter((t) => t.objectId === filterObject);
 if (filterLane) selected = selected.filter((t) => t.lane === filterLane);
+if (filterState) selected = selected.filter((t) => t.state === filterState);
 if (filterObject && selected.length === 0) throw new Error(`No review task found for ${filterObject}`);
 const packets = selected.map(packetFor);
 const summary = {
   curriculum: registry.course,
   curriculumVersion: registry.version,
+  filters: { object: filterObject, lane: filterLane, state: filterState },
   releaseScope: {
     competencies: competencyIds.size,
     assessments: scopedAssessments.length,
