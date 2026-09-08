@@ -44,41 +44,52 @@ const rows = pending.map((item) => {
   for (const referenceId of item.references ?? []) {
     if (!references.has(referenceId)) flags.push({ code: 'unresolved-reference', severity: 'high', detail: referenceId });
   }
-  const high = flags.filter((flag) => flag.severity === 'high').length;
-  const medium = flags.filter((flag) => flag.severity === 'medium').length;
+  const highSeverity = flags.filter((flag) => flag.severity === 'high');
+  const mediumSeverity = flags.filter((flag) => flag.severity === 'medium');
   return {
     id: item.id,
     version: item.version,
     competency: item.competency,
     objective: item.objective,
-    type: item.type,
     difficulty: item.difficulty,
-    highSeverityFlags: high,
-    mediumSeverityFlags: medium,
-    flags
+    type: item.type,
+    status: item.status,
+    highSeverityFlags: highSeverity,
+    mediumSeverityWarnings: mediumSeverity,
+    reviewReady: highSeverity.length === 0
   };
-}).sort((a, b) =>
-  (b.highSeverityFlags - a.highSeverityFlags) ||
-  (b.mediumSeverityFlags - a.mediumSeverityFlags) ||
-  a.competency.localeCompare(b.competency) ||
-  a.id.localeCompare(b.id)
+});
+
+const competencyOrder = new Map((assessment.blueprint ?? []).map((row, index) => [row.competency, index]));
+const sortRows = (a, b) =>
+  ((competencyOrder.get(a.competency) ?? 999) - (competencyOrder.get(b.competency) ?? 999)) ||
+  String(a.objective ?? '').localeCompare(String(b.objective ?? '')) ||
+  a.id.localeCompare(b.id);
+
+const reviewReady = rows.filter((row) => row.reviewReady).sort(sortRows);
+const contentQaBlocked = rows.filter((row) => !row.reviewReady).sort((a, b) =>
+  (b.highSeverityFlags.length - a.highSeverityFlags.length) || sortRows(a, b)
 );
 
-const codeCounts = new Map();
-for (const row of rows) {
-  for (const flag of row.flags) codeCounts.set(flag.code, (codeCounts.get(flag.code) ?? 0) + 1);
-}
+const byCompetency = Object.fromEntries((assessment.blueprint ?? []).map((bp) => {
+  const scoped = rows.filter((row) => row.competency === bp.competency);
+  return [bp.competency, {
+    pending: scoped.length,
+    reviewReady: scoped.filter((row) => row.reviewReady).length,
+    contentQaBlocked: scoped.filter((row) => !row.reviewReady).length
+  }];
+}));
 
 const summary = {
   course: registry.course,
   releaseVersion: registry.version,
   assessment: assessment.id,
   pendingItems: rows.length,
-  itemsWithHighSeverityFlags: rows.filter((row) => row.highSeverityFlags > 0).length,
-  itemsWithMediumSeverityFlags: rows.filter((row) => row.mediumSeverityFlags > 0).length,
-  itemsWithoutFlags: rows.filter((row) => row.flags.length === 0).length,
-  flagCounts: Object.fromEntries([...codeCounts.entries()].sort()),
-  note: 'This is automated preflight only. It does not create, replace, or imply human assessment approval.'
+  reviewReadyItems: reviewReady.length,
+  contentQaBlockedItems: contentQaBlocked.length,
+  allPendingItemsReviewReady: contentQaBlocked.length === 0,
+  approvalGuard: 'Assessment approvals are blocked when high-severity automated preflight defects remain.',
+  humanBoundary: 'Review-ready means automated preflight passed. It does not imply or replace human assessment approval.'
 };
 
-console.log(JSON.stringify({ summary, items: rows }, null, 2));
+console.log(JSON.stringify({ summary, byCompetency, reviewReady, contentQaBlocked }, null, 2));
