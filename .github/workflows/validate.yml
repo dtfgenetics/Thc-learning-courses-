@@ -53,6 +53,14 @@ jobs:
           name: cultivation-foundations-pending-review-workset
           path: foundations-pending-review-workset.json
           if-no-files-found: error
+      - name: Report Cultivation Foundations answer-key balance
+        run: node scripts/rebalance-foundations-pending-answer-positions.mjs > foundations-answer-key-balance.json
+      - name: Upload Cultivation Foundations answer-key balance
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-answer-key-balance
+          path: foundations-answer-key-balance.json
+          if-no-files-found: error
       - name: Build Cultivation Foundations pilot cohort
         run: node scripts/build-foundations-pilot-cohort.mjs > foundations-pilot-cohort.json
       - name: Upload Cultivation Foundations pilot cohort
