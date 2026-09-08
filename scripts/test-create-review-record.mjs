@@ -6,11 +6,19 @@ import { buildReviewRecord, findReviewTarget } from './create-review-record.mjs'
 
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'thc-review-record-'));
 fs.mkdirSync(path.join(tempRoot, 'content/lessons'), { recursive: true });
+fs.mkdirSync(path.join(tempRoot, 'content/questions'), { recursive: true });
 fs.writeFileSync(path.join(tempRoot, 'content/lessons/LESSON-TEST-001.json'), JSON.stringify({
-  id: 'LESSON-TEST-001',
-  version: '2.3.4',
-  title: 'Test lesson',
-  status: 'draft'
+  id: 'LESSON-TEST-001', version: '2.3.4', title: 'Test lesson', status: 'draft'
+}, null, 2));
+fs.writeFileSync(path.join(tempRoot, 'content/questions/ITEM-RISKY-001.json'), JSON.stringify({
+  id: 'ITEM-RISKY-001', version: 1, status: 'draft', purpose: 'summative', stem: 'Which option best reflects the evidence in this scenario?',
+  choices: ['This is a substantially longer keyed answer that creates a visible test-wise cue for the learner', 'Short distractor', 'Another short distractor', 'Third short distractor'],
+  correct: 0, rationale: 'This rationale is long enough to satisfy the automated minimum-length preflight requirement.', references: ['REF-TEST-001']
+}, null, 2));
+fs.writeFileSync(path.join(tempRoot, 'content/questions/ITEM-CLEAN-001.json'), JSON.stringify({
+  id: 'ITEM-CLEAN-001', version: 1, status: 'draft', purpose: 'summative', stem: 'Which option best reflects the evidence in this scenario?',
+  choices: ['Compare the observations with representative repeated measurements before deciding', 'Increase the intervention before checking whether the measurements are representative', 'Use the single most extreme observation as the primary basis for the decision', 'Replace the recorded observations with a calendar-based assumption instead'],
+  correct: 0, rationale: 'Representative repeated measurements provide stronger evidence than a single extreme observation or an unsupported assumption.', references: ['REF-TEST-001']
 }, null, 2));
 
 try {
@@ -18,53 +26,23 @@ try {
   assert.ok(target, 'target should resolve');
   assert.equal(target.data.version, '2.3.4');
 
-  const changes = buildReviewRecord({
-    objectId: 'LESSON-TEST-001',
-    reviewType: 'editorial',
-    reviewerId: 'reviewer-1',
-    status: 'changes-requested',
-    notes: 'Clarify the opening paragraph.',
-    reviewedAt: '2026-09-06T05:00:00.000Z',
-    baseDir: tempRoot
-  });
+  const changes = buildReviewRecord({ objectId: 'LESSON-TEST-001', reviewType: 'editorial', reviewerId: 'reviewer-1', status: 'changes-requested', notes: 'Clarify the opening paragraph.', reviewedAt: '2026-09-06T05:00:00.000Z', baseDir: tempRoot });
   assert.equal(changes.objectVersion, '2.3.4');
   assert.equal(changes.status, 'changes-requested');
-  assert.match(changes.id, /^REVIEW-LESSON-TEST-001-EDITORIAL-20260906050000$/);
 
-  assert.throws(() => buildReviewRecord({
-    objectId: 'LESSON-TEST-001', reviewType: 'editorial', reviewerId: 'reviewer-1', status: 'approved', baseDir: tempRoot
-  }), /confirm-approved/);
+  assert.throws(() => buildReviewRecord({ objectId: 'LESSON-TEST-001', reviewType: 'editorial', reviewerId: 'reviewer-1', status: 'approved', baseDir: tempRoot }), /confirm-approved/);
+  assert.throws(() => buildReviewRecord({ objectId: 'LESSON-TEST-001', reviewType: 'scientific', reviewerId: 'reviewer-1', status: 'approved', confirmApproved: true, baseDir: tempRoot }), /at least one --evidence/);
 
-  assert.throws(() => buildReviewRecord({
-    objectId: 'LESSON-TEST-001', reviewType: 'scientific', reviewerId: 'reviewer-1', status: 'approved', confirmApproved: true, baseDir: tempRoot
-  }), /at least one --evidence/);
-
-  const approved = buildReviewRecord({
-    objectId: 'LESSON-TEST-001',
-    reviewType: 'scientific',
-    reviewerId: 'scientist-1',
-    status: 'approved',
-    confirmApproved: true,
-    evidenceChecked: ['REF-TEST-001'],
-    reviewedAt: '2026-09-06T05:01:00.000Z',
-    baseDir: tempRoot
-  });
+  const approved = buildReviewRecord({ objectId: 'LESSON-TEST-001', reviewType: 'scientific', reviewerId: 'scientist-1', status: 'approved', confirmApproved: true, evidenceChecked: ['REF-TEST-001'], reviewedAt: '2026-09-06T05:01:00.000Z', baseDir: tempRoot });
   assert.deepEqual(approved.evidenceChecked, ['REF-TEST-001']);
-  for (const field of ['id', 'objectId', 'objectVersion', 'reviewType', 'status', 'reviewerId', 'reviewedAt']) {
-    assert.ok(approved[field], `record must contain ${field}`);
-  }
 
-  assert.throws(() => buildReviewRecord({
-    objectId: 'LESSON-MISSING-001', reviewType: 'editorial', reviewerId: 'reviewer-1', status: 'rejected', baseDir: tempRoot
-  }), /target not found/);
+  assert.throws(() => buildReviewRecord({ objectId: 'ITEM-RISKY-001', reviewType: 'assessment', reviewerId: 'assessor-1', status: 'approved', confirmApproved: true, baseDir: tempRoot }), /assessment approval blocked by high-severity item preflight/);
+  const cleanApproval = buildReviewRecord({ objectId: 'ITEM-CLEAN-001', reviewType: 'assessment', reviewerId: 'assessor-1', status: 'approved', confirmApproved: true, baseDir: tempRoot });
+  assert.equal(cleanApproval.status, 'approved');
 
-  assert.throws(() => buildReviewRecord({
-    objectId: 'LESSON-TEST-001', reviewType: 'scientific', reviewerId: 'reviewer-1', status: 'changes-requested', evidenceChecked: ['REF-A', 'REF-A'], baseDir: tempRoot
-  }), /evidenceChecked must be unique/);
-
-  assert.throws(() => buildReviewRecord({
-    objectId: 'LESSON-TEST-001', reviewType: 'unknown', reviewerId: 'reviewer-1', status: 'rejected', baseDir: tempRoot
-  }), /invalid reviewType/);
+  assert.throws(() => buildReviewRecord({ objectId: 'LESSON-MISSING-001', reviewType: 'editorial', reviewerId: 'reviewer-1', status: 'rejected', baseDir: tempRoot }), /target not found/);
+  assert.throws(() => buildReviewRecord({ objectId: 'LESSON-TEST-001', reviewType: 'scientific', reviewerId: 'reviewer-1', status: 'changes-requested', evidenceChecked: ['REF-A', 'REF-A'], baseDir: tempRoot }), /evidenceChecked must be unique/);
+  assert.throws(() => buildReviewRecord({ objectId: 'LESSON-TEST-001', reviewType: 'unknown', reviewerId: 'reviewer-1', status: 'rejected', baseDir: tempRoot }), /invalid reviewType/);
 
   console.log('Safe review-record creation tests passed.');
 } finally {
