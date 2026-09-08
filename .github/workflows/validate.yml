@@ -45,6 +45,14 @@ jobs:
           name: cultivation-foundations-assessment-review-batch
           path: assessment-review-batch.json
           if-no-files-found: error
+      - name: Build pending Cultivation Foundations human-review workset
+        run: node scripts/build-review-packets.mjs --lane=credential-item --state=pending > foundations-pending-review-workset.json
+      - name: Upload pending Cultivation Foundations human-review workset
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-pending-review-workset
+          path: foundations-pending-review-workset.json
+          if-no-files-found: error
       - name: Build Cultivation Foundations pilot cohort
         run: node scripts/build-foundations-pilot-cohort.mjs > foundations-pilot-cohort.json
       - name: Upload Cultivation Foundations pilot cohort
