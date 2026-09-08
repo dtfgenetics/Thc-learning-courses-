@@ -45,6 +45,14 @@ jobs:
           name: cultivation-foundations-instructional-completeness
           path: foundations-instructional-completeness.json
           if-no-files-found: error
+      - name: Audit full course catalog completeness
+        run: node scripts/report-course-catalog-completeness.mjs --json > course-catalog-completeness.json
+      - name: Upload full course catalog completeness
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-catalog-completeness
+          path: course-catalog-completeness.json
+          if-no-files-found: error
       - name: Build Cultivation Foundations assessment review batch
         run: node scripts/build-assessment-review-batches.mjs --batch-size=24 > assessment-review-batch.json
       - name: Upload assessment review batch
