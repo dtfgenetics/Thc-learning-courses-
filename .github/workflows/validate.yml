@@ -61,6 +61,14 @@ jobs:
           name: cultivation-foundations-item-review-preflight
           path: foundations-item-review-preflight.json
           if-no-files-found: error
+      - name: Build Cultivation Foundations review handoff
+        run: node scripts/build-foundations-review-handoff.mjs > foundations-review-handoff.json
+      - name: Upload Cultivation Foundations review handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-review-handoff
+          path: foundations-review-handoff.json
+          if-no-files-found: error
       - name: Report Cultivation Foundations answer-key balance
         run: node scripts/rebalance-foundations-pending-answer-positions.mjs > foundations-answer-key-balance.json
       - name: Upload Cultivation Foundations answer-key balance
