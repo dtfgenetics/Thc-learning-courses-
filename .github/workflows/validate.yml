@@ -53,6 +53,14 @@ jobs:
           name: cultivation-foundations-pending-review-workset
           path: foundations-pending-review-workset.json
           if-no-files-found: error
+      - name: Build pending Cultivation Foundations item review preflight
+        run: node scripts/report-foundations-item-review-preflight.mjs > foundations-item-review-preflight.json
+      - name: Upload pending Cultivation Foundations item review preflight
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-item-review-preflight
+          path: foundations-item-review-preflight.json
+          if-no-files-found: error
       - name: Report Cultivation Foundations answer-key balance
         run: node scripts/rebalance-foundations-pending-answer-positions.mjs > foundations-answer-key-balance.json
       - name: Upload Cultivation Foundations answer-key balance
