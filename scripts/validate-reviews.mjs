@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = process.cwd();
 const reviewDir = path.join(root, 'content/reviews');
 const errors = [];
+let staleReviewCount = 0;
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -111,7 +112,11 @@ for (const name of reviewFiles) {
   if (!target) {
     errors.push(`${rel}: reviewed object ${review.objectId} does not exist`);
   } else if (String(target.data.version) !== String(review.objectVersion)) {
-    errors.push(`${rel}: objectVersion ${review.objectVersion} does not match ${review.objectId} current version ${target.data.version}`);
+    // Review records are immutable audit history. A content version bump makes an
+    // older review stale for promotion purposes, but does not make the historical
+    // record invalid. Exact-version checks below still fail closed for published
+    // lessons, active questions, and production-eligible assessments.
+    staleReviewCount += 1;
   }
 }
 
@@ -154,4 +159,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Review-record validation passed. ${reviewFiles.length} review record(s) checked; promotion evidence rules enforced.`);
+console.log(`Review-record validation passed. ${reviewFiles.length} review record(s) checked; ${staleReviewCount} historical review record(s) are stale for current-version promotion; promotion evidence rules enforced.`);

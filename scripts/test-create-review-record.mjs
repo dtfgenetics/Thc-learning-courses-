@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildReviewRecord, findReviewTarget } from './create-review-record.mjs';
 
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'thc-review-record-'));
@@ -47,4 +49,93 @@ try {
   console.log('Safe review-record creation tests passed.');
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
+}
+
+const validatorScript = fileURLToPath(new URL('./validate-reviews.mjs', import.meta.url));
+const historyRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'thc-review-history-'));
+const lessonDir = path.join(historyRoot, 'content/lessons');
+const reviewDir = path.join(historyRoot, 'content/reviews');
+fs.mkdirSync(lessonDir, { recursive: true });
+fs.mkdirSync(reviewDir, { recursive: true });
+
+function writeJson(filePath, data) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+function runReviewValidator() {
+  return spawnSync(process.execPath, [validatorScript], {
+    cwd: historyRoot,
+    encoding: 'utf8'
+  });
+}
+
+function reviewRecord({ id, objectVersion, reviewType, reviewerId }) {
+  return {
+    id,
+    objectId: 'LESSON-HISTORY-001',
+    objectVersion,
+    reviewType,
+    status: 'approved',
+    reviewerId,
+    reviewedAt: '2026-09-07T03:55:06.000Z',
+    ...(reviewType === 'scientific' ? { evidenceChecked: ['REF-HISTORY-001'] } : {})
+  };
+}
+
+try {
+  const lessonPath = path.join(lessonDir, 'LESSON-HISTORY-001.json');
+  writeJson(lessonPath, {
+    id: 'LESSON-HISTORY-001',
+    version: '1.0.2',
+    title: 'Versioned lesson review history test',
+    status: 'approved'
+  });
+  writeJson(path.join(reviewDir, 'REVIEW-HISTORY-EDITORIAL-OLD.json'), reviewRecord({
+    id: 'REVIEW-HISTORY-EDITORIAL-OLD',
+    objectVersion: '1.0.1',
+    reviewType: 'editorial',
+    reviewerId: 'editor-1'
+  }));
+  writeJson(path.join(reviewDir, 'REVIEW-HISTORY-SCIENTIFIC-OLD.json'), reviewRecord({
+    id: 'REVIEW-HISTORY-SCIENTIFIC-OLD',
+    objectVersion: '1.0.1',
+    reviewType: 'scientific',
+    reviewerId: 'scientist-1'
+  }));
+
+  const approvedWithHistory = runReviewValidator();
+  assert.equal(approvedWithHistory.status, 0, approvedWithHistory.stderr);
+  assert.match(approvedWithHistory.stdout, /2 historical review record\(s\) are stale for current-version promotion/);
+
+  writeJson(lessonPath, {
+    id: 'LESSON-HISTORY-001',
+    version: '1.0.2',
+    title: 'Versioned lesson review history test',
+    status: 'published'
+  });
+  const publishedWithoutCurrentReviews = runReviewValidator();
+  assert.equal(publishedWithoutCurrentReviews.status, 1, 'published content must fail closed without exact-version approvals');
+  assert.match(publishedWithoutCurrentReviews.stderr, /missing approved scientific review evidence/);
+  assert.match(publishedWithoutCurrentReviews.stderr, /missing approved editorial review evidence/);
+
+  writeJson(path.join(reviewDir, 'REVIEW-HISTORY-EDITORIAL-CURRENT.json'), reviewRecord({
+    id: 'REVIEW-HISTORY-EDITORIAL-CURRENT',
+    objectVersion: '1.0.2',
+    reviewType: 'editorial',
+    reviewerId: 'editor-2'
+  }));
+  writeJson(path.join(reviewDir, 'REVIEW-HISTORY-SCIENTIFIC-CURRENT.json'), reviewRecord({
+    id: 'REVIEW-HISTORY-SCIENTIFIC-CURRENT',
+    objectVersion: '1.0.2',
+    reviewType: 'scientific',
+    reviewerId: 'scientist-2'
+  }));
+
+  const publishedWithCurrentReviews = runReviewValidator();
+  assert.equal(publishedWithCurrentReviews.status, 0, publishedWithCurrentReviews.stderr);
+  assert.match(publishedWithCurrentReviews.stdout, /2 historical review record\(s\) are stale for current-version promotion/);
+
+  console.log('Historical review/version semantics tests passed.');
+} finally {
+  fs.rmSync(historyRoot, { recursive: true, force: true });
 }
