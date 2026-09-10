@@ -79,6 +79,22 @@ jobs:
           name: cultivation-foundations-item-review-preflight
           path: foundations-item-review-preflight.json
           if-no-files-found: error
+      - name: Build full Cultivation Foundations item-bank preflight
+        run: node scripts/report-foundations-item-bank-preflight.mjs > foundations-item-bank-preflight.json
+      - name: Upload full Cultivation Foundations item-bank preflight
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-item-bank-preflight
+          path: foundations-item-bank-preflight.json
+          if-no-files-found: error
+      - name: Report Cultivation Foundations item-bank readiness
+        run: node scripts/report-item-bank-readiness.mjs > foundations-item-bank-readiness.json
+      - name: Upload Cultivation Foundations item-bank readiness
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultivation-foundations-item-bank-readiness
+          path: foundations-item-bank-readiness.json
+          if-no-files-found: error
       - name: Build Cultivation Foundations review handoff
         run: node scripts/build-foundations-review-handoff.mjs > foundations-review-handoff.json
       - name: Upload Cultivation Foundations review handoff
