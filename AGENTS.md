@@ -1,36 +1,50 @@
 # Repository agent guidance
 
-For work involving THC Academy curriculum, occupational roles, course/module/lesson content, question banks, assessments, practicals, simulations, credentials, learner progress, employer-facing credential evidence, or requests to continue/expand the Academy, use:
+## Repository boundary
+
+`dtfgenetics/Thc-learning-courses-` is a **single-purpose THC Academy / certification repository**.
+
+It owns only work directly required to build, test, review, operate, and release the learning/certification system, including:
+
+- curriculum, programs, courses, modules, lessons, activities, simulations, and practicals;
+- competencies, objectives, occupational/job-task mappings, prerequisites, and learning pathways;
+- question banks, quizzes, exams, assessments, rubrics, pilot/quality evidence, and protected assessment delivery;
+- credentials/certificates, eligibility, issuance logic, competency transcripts, public verification, and related employer-facing evidence;
+- learner enrollment, progress, completion, assessment-attempt, portfolio/performance evidence, and persistence/API/UI needed for those education/credential workflows;
+- scientific/evidence references, review records, schemas, registries, validation, accessibility of Academy learning surfaces, staging, release, and rollback controls directly required for the Academy;
+- repository/CI/branch tooling needed to safely maintain this repository.
+
+Do **not** add or maintain unrelated DTF website, WordPress, genetics/shop, game, GrowLens, Grow Doc, general dtfseeds.com site-audit, site-wide Lighthouse, or cross-portfolio visual/debug tooling here. Those belong in their owning repositories, primarily `dtfgenetics/Thc` for the dtfseeds.com production/site/game integration layer.
+
+Before adding a new subsystem, ask one test: **Is this required to teach, assess, track, verify, or issue the Academy credential?** If not, do not put it in this repository.
+
+Run `npm run scope:validate` before broader validation. The scope guard must fail if known site/game/tool ownership paths are reintroduced.
+
+## Academy work
+
+For THC Academy curriculum, occupational roles, course/module/lesson content, question banks, assessments, practicals, simulations, credentials, learner progress, employer-facing credential evidence, or requests to continue/expand the Academy, use:
 
 `skills/thc-academy-builder/SKILL.md`
 
-For broad GitHub repository health, branches, pull requests, merges, conflicts, CI/CD, GitHub Actions, failed checks, stale branches, release promotion, repository cleanup, deployment flow, or requests to fix/manage/continue repository work, use:
+## Repository operations
+
+For this repository's branches, pull requests, merges, conflicts, CI/CD, GitHub Actions, stale branches, release promotion, cleanup, or Academy deployment flow, use:
 
 `skills/github-orchestrator/SKILL.md`
 
-Ordinary work must reach `dev` through a feature/content/fix/chore branch and pull request. Do not push ordinary commits directly to `dev`, `staging`, or `main`, even when server-side branch protection is absent. Direct integration-branch writes are reserved only for an explicitly documented emergency repair when the normal PR path is impossible; immediately run post-push cleanup and record the exception.
+Ordinary work must reach `dev` through a feature/content/fix/chore branch and pull request. Do not push ordinary commits directly to `dev`, `staging`, or `main`, even when server-side branch protection is absent.
 
-Use specialist skills when the failure class is clear:
+Use specialist repository skills when appropriate:
 
-- Application/source/runtime defects, broken pages/routes/features/games/tools, production-vs-source drift, deterministic route/asset checks, and end-to-end debugging coordination: `skills/dev-debugger/SKILL.md`
-- Pixel-perfect visual fidelity, reference/image-diff validation, spacing/typography/alignment, responsive composition, visual state coverage, and design-system consistency: `skills/pixel-perfect-visual-qa/SKILL.md`
-- Lighthouse CI, performance/accessibility/best-practices/SEO auditing, and every discoverable public `dtfseeds.com` page: `skills/lighthouse-site-auditor/SKILL.md`
-- GitHub Actions failures, missing/stuck checks, logs, reruns, workflow configuration: `skills/github-actions-doctor/SKILL.md`
-- Conflicts, stale branches, wrong PR bases, duplicate/superseded work, difficult merges: `skills/github-branch-pr-surgery/SKILL.md`
-- `dev -> staging -> main` promotion, release gates, deployment verification: `skills/github-release-promotion-manager/SKILL.md`
+- GitHub Actions failures: `skills/github-actions-doctor/SKILL.md`
+- conflicts/stale branches/PR reconciliation: `skills/github-branch-pr-surgery/SKILL.md`
+- `dev -> staging -> main` Academy release promotion: `skills/github-release-promotion-manager/SKILL.md`
+- post-write convergence: `skills/github-post-push-cleanup/SKILL.md`
 
-After any push, bot-generated commit, conflict-resolution push, merge, or promotion, immediately run:
-
-`skills/github-post-push-cleanup/SKILL.md`
-
-A successful push is not completion. Inspect the newest SHA, CI, PR targeting, mergeability, generated-file drift, review blockers, post-merge target health, and duplicate/superseded work before considering the push cycle complete.
+After any repository write, verify the newest SHA, CI, PR targeting, mergeability, generated-file drift, review blockers, target health, and duplicate/superseded work before considering the cycle complete.
 
 ## QA policy
 
-Routine development and repository QA must use deterministic Node-based tests, static route/package validation, build/runtime checks, targeted API/persistence tests, reference-image inspection where applicable, and Lighthouse. Do not add a browser automation framework to routine development, CI, project skills, or dependencies.
+Routine Academy QA uses deterministic Node-based tests, schema/content validation, assessment/credential tests, API/persistence tests, accessibility checks for Academy learner surfaces, and staging/release verification directly related to certification. Do not add a browser automation framework to the routine Academy toolchain.
 
-A final-release browser check may be considered only when explicitly requested for that release. It must remain isolated from the normal toolchain and must not become a required dependency or routine workflow.
-
-For customer-facing web changes, use the development debugger before declaring work complete. Run deterministic route/asset validation, use Pixel-Perfect Visual QA against the strongest approved reference, and use Lighthouse for site-wide quality measurement. The target remains 100 in Lighthouse Performance, Accessibility, Best Practices, and SEO on every audited public page; valid failures must be repaired or explicitly documented rather than suppressed.
-
-The skills are the project workflow sources of truth. Keep this file short; update the skills/resources instead of duplicating detailed instructions here.
+Do not run or own a site-wide dtfseeds.com QA program from this repository. Site-wide route crawling, game/tool QA, visual regression across the whole site, and Lighthouse auditing belong in `dtfgenetics/Thc`.

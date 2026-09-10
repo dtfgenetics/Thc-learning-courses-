@@ -64,7 +64,7 @@ try {
   response = await fetch(`${base}/api/v1/me/lessons/LESSON-PLANT-BIO-001`, {
     method: 'PUT',
     headers: { authorization: 'Bearer integration', 'content-type': 'application/json' },
-    body: JSON.stringify({ lessonVersion: '1.0.1', status: 'completed' })
+    body: JSON.stringify({ lessonVersion: '1.0.2', status: 'completed' })
   });
   assert.equal(response.status, 200);
   body = await response.json();
