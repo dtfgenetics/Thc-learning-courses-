@@ -1,127 +1,133 @@
 {
   "id": "LESSON-PLANT-BIO-ANATOMY-002",
   "title": "Cannabis Anatomy: Roots, Stems, Leaves, Nodes and Flowers",
-  "version": "1.1.0",
-  "status": "approved",
-  "competencies": [
-    "COMP-PLANT-BIO-001"
-  ],
-  "learningObjectives": [
-    "LO-PLANT-BIO-ANATOMY-002"
-  ],
-  "estimatedMinutes": 50,
-  "references": [
-    "REF-PLANT-BIO-001"
-  ],
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": ["COMP-PLANT-BIO-001"],
+  "learningObjectives": ["LO-PLANT-BIO-ANATOMY-002"],
+  "estimatedMinutes": 65,
+  "references": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001","REF-TRICHOME-BIOLOGY-2021-001"],
   "assessment": null,
   "content": {
-    "overview": "Cannabis anatomy provides the structural vocabulary needed to understand cultivation decisions. Roots, stems, leaves, nodes, internodes, meristems, vascular tissues, stomata, trichomes, and reproductive structures each contribute different functions. Accurate identification matters because structural observations become evidence used later in propagation, irrigation, environmental control, training, diagnosis, breeding, and harvest planning.",
+    "overview": "Cannabis anatomy is the structural language used to describe where growth, transport, gas exchange and reproduction occur. Roots, stems, vascular tissues, nodes, internodes, meristems, leaves, stomata, bracts, flowers and glandular trichomes are functionally connected. Cultivation observations become more useful when the learner identifies the structure precisely before assigning a cause or management response.",
+    "whyItMatters": "Propagation cuts at nodes, training changes meristem dominance, irrigation affects roots, environmental control changes leaf gas exchange and reproductive management depends on floral structures. Anatomical errors therefore propagate into later cultivation decisions.",
+    "prerequisites": ["Recognize basic plant organs and distinguish direct observation from diagnosis."],
+    "priorKnowledgeRetrieval": [
+      "Explain the difference among a node, internode and meristem.",
+      "Name the major transport tissues and describe the kinds of materials they move through the plant."
+    ],
     "vocabulary": [
-      {
-        "term": "Meristem",
-        "definition": "A region of actively dividing plant cells that produces new growth."
-      },
-      {
-        "term": "Node",
-        "definition": "A point on a stem where leaves, branches, or reproductive structures arise."
-      },
-      {
-        "term": "Internode",
-        "definition": "The stem segment located between two neighboring nodes."
-      },
-      {
-        "term": "Xylem",
-        "definition": "Vascular tissue that transports water and dissolved mineral nutrients primarily from roots toward aerial tissues."
-      },
-      {
-        "term": "Phloem",
-        "definition": "Vascular tissue that transports sugars and other organic compounds between source and sink tissues."
-      },
-      {
-        "term": "Stoma",
-        "definition": "A microscopic pore, usually bordered by guard cells, that regulates gas exchange and water-vapor loss."
-      },
-      {
-        "term": "Glandular trichome",
-        "definition": "A specialized epidermal structure associated with secretion and accumulation of resin-related compounds on cannabis tissues."
-      },
-      {
-        "term": "Inflorescence",
-        "definition": "A reproductive shoot system bearing flowers and associated structures."
-      }
+      {"term":"Meristem","definition":"A region of actively dividing plant cells that produces new growth."},
+      {"term":"Node","definition":"A point on a stem where leaves, branches or reproductive structures arise."},
+      {"term":"Internode","definition":"The stem segment between neighboring nodes."},
+      {"term":"Xylem","definition":"Vascular tissue that conducts water and dissolved mineral nutrients and also contributes to structural support."},
+      {"term":"Phloem","definition":"Vascular tissue that distributes sugars and other organic compounds among source and sink tissues."},
+      {"term":"Stoma","definition":"A microscopic epidermal pore controlled by guard cells that regulates carbon-dioxide entry and water-vapor loss."},
+      {"term":"Bract","definition":"A modified leaf associated with a flower or inflorescence."},
+      {"term":"Glandular trichome","definition":"A specialized epidermal structure that produces and stores secreted metabolites in cannabis tissues."},
+      {"term":"Inflorescence","definition":"A reproductive shoot system bearing flowers and associated structures."}
     ],
     "sections": [
       {
-        "title": "Roots are absorptive and structural organs",
-        "body": "Roots anchor the plant, explore the root zone, acquire water and mineral nutrients, and exchange signals with above-ground tissues. Fine roots and developing root tips are especially important for resource acquisition. Root condition can therefore influence leaf expansion, water status, nutrient symptoms, and whole-plant vigor even when the visible problem appears above ground.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "title": "Roots connect resource acquisition with whole-plant behavior",
+        "body": "Roots anchor the plant, explore the growing medium, absorb water and mineral nutrients and participate in signaling with shoots. Fine roots and active root tips are especially important for acquisition. Because root condition influences water status and nutrient supply, an above-ground symptom can originate from a root-zone problem even when roots are not directly visible.",
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
-        "title": "Stems connect support with transport",
-        "body": "Stems support leaves, branches, and reproductive structures while containing vascular tissues that move water, dissolved minerals, sugars, and signaling compounds through the plant. Mechanical strength and transport capacity both matter as plants increase in size and reproductive mass.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "title": "Stems support architecture and long-distance transport",
+        "body": "Stems position leaves and reproductive structures while containing xylem and phloem. Xylem conducts water and dissolved minerals through the plant, while phloem redistributes photosynthetically produced sugars and other organic compounds between source and sink tissues. Local stem damage can therefore affect tissues beyond the visible injury site.",
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
-        "title": "Nodes, internodes and meristems organize architecture",
-        "body": "Nodes define repeated structural units where leaves, branches, and reproductive structures can arise. Internode length contributes strongly to overall architecture, while apical and axillary meristems generate new shoot growth. Correctly identifying these structures is essential when taking cuttings, topping, training, or documenting developmental changes.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "title": "Nodes, internodes and meristems explain where architecture changes",
+        "body": "Nodes organize repeated structural units, internodes determine spacing between them and apical or axillary meristems generate new shoot growth. These distinctions matter during cutting selection, topping, low-stress training, pruning and crop observation because the biological response depends on which structure is altered.",
+        "references": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "title": "Xylem and phloem link root and shoot function",
-        "body": "Xylem and phloem form the plant's major long-distance transport tissues. Xylem carries water and mineral nutrients upward from the root system, while phloem redistributes photosynthetically produced sugars and other organic compounds among growing, storage, and reproductive tissues. Damage or stress affecting transport can therefore create symptoms far from the original site.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "title": "Leaves couple light capture, carbon gain and water loss",
+        "body": "Leaves intercept light for photosynthesis and exchange gases with the atmosphere through stomata. Carbon dioxide enters while water vapor exits during transpiration, linking leaf behavior to light, temperature, humidity, air movement and root-zone water supply. A leaf should therefore be interpreted as part of an integrated plant-atmosphere system rather than an isolated diagnostic surface.",
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
-        "title": "Leaves integrate light capture, gas exchange and transpiration",
-        "body": "Leaves are major sites of photosynthesis and gas exchange. Their orientation and distribution influence light interception, while stomata regulate carbon-dioxide entry and water-vapor loss. Leaf behavior therefore connects lighting, atmospheric conditions, root-zone water supply, and plant energy balance.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "title": "Reproductive anatomy has specialized structures",
+        "body": "Cannabis reproductive shoots contain flowers and associated bracts whose form changes during development. Accurate naming matters because bracts, stigmas, anthers and other structures carry different information about developmental state, pollination risk and sampling location. Morphological staging should remain tied to observed structures rather than calendar assumptions.",
+        "references": ["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "title": "Trichomes are specialized epidermal structures",
-        "body": "Cannabis produces several trichome types, including glandular forms associated with resin production on reproductive and nearby tissues. Trichome presence and development are biologically important, but visible density alone should not be treated as a complete measurement of chemical composition or maturity.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
-      },
-      {
-        "title": "Reproductive structures change the cultivation context",
-        "body": "As plants enter reproductive development, floral structures become increasingly important for sex identification, pollination risk, maturity assessment, and harvest planning. Reproductive morphology should be interpreted from actual structures and developmental stage rather than from cultivar labels or plant age alone.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
-      },
-      {
-        "title": "Structure should be documented systematically",
-        "body": "Anatomy becomes useful when observations are repeatable. Record node position, internode length, branching pattern, leaf condition, visible root condition, reproductive structures, and notable changes over time. These records create a structural baseline that can later be compared with environmental or management data.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "title": "Glandular trichomes are metabolite-producing structures, not a potency meter",
+        "body": "Cannabis produces several glandular trichome forms, including stalked and sessile types. Stalked glandular trichomes are abundant on mature female inflorescence tissues and contain secretory cells and a storage cavity for specialized metabolites. Visible trichome abundance or color is useful morphology, but it does not by itself quantify cannabinoid or terpene concentration and should not be presented as a complete chemical measurement.",
+        "references": ["REF-TRICHOME-BIOLOGY-2021-001"]
       }
     ],
     "workedExamples": [
-      "When selecting a cutting, identify a healthy stem section with intact nodes and suitable vegetative tissue rather than choosing material only by total length.",
-      "When one branch wilts while the rest of the plant remains turgid, inspect that branch's stem and vascular continuity before assuming the entire root system has failed.",
-      "When comparing two plants with different heights, record node count and internode spacing before concluding that one simply grew faster; architecture can differ even when total biomass is similar.",
-      "When evaluating floral maturity, sample comparable reproductive structures from representative canopy positions instead of using leaf appearance or plant height as a proxy."
+      "A cutting selected only for total stem length may lack useful node placement. The learner instead identifies intact nodes and vegetative tissue before deciding where a cutting would be made under an approved propagation SOP.",
+      "One branch wilts while neighboring branches remain turgid. Before assuming whole-root-system failure, inspect the affected branch's stem continuity and compare the spatial pattern with the rest of the plant.",
+      "Two plants have the same height but different node counts. Measuring internode spacing reveals distinct architecture that total height alone concealed.",
+      "A flower sample appears heavily frosted. The learner records trichome morphology but does not convert visual density into an unsupported potency estimate."
+    ],
+    "guidedPractice": [
+      {
+        "prompt": "Annotate a cannabis specimen or image with the major organs and structures used in cultivation records, then connect each structure to one function and one cultivation decision that depends on identifying it correctly.",
+        "steps": ["Locate roots/root zone, stem, nodes and internodes.","Identify apical and visible axillary growth points.","Identify leaves and describe orientation/condition.","Identify reproductive structures when present.","Identify glandular-trichome-bearing tissue at the appropriate scale."],
+        "expectedEvidence": "A labeled anatomy map plus a structure-function-decision table.",
+        "feedbackGuidance": "Strong work distinguishes structures that are often conflated, such as node versus meristem and bract versus the entire inflorescence."
+      },
+      {
+        "prompt": "Given four symptom-location descriptions, identify which anatomical observations should be made before selecting a cultivation diagnosis.",
+        "steps": ["Identify affected organ and tissue age.","Describe spatial distribution.","Check connected stem/root structures where relevant.","State which environmental or root-zone measurements would be paired with the anatomy observation."],
+        "expectedEvidence": "A short differential-observation plan for each case.",
+        "feedbackGuidance": "The learner should use anatomy to choose the next observation, not claim that anatomy alone proves a causal diagnosis."
+      }
+    ],
+    "decisionScenarios": [
+      {
+        "scenario": "A lower leaf is chlorotic while the newest shoot tissues appear normal. A second plant shows damage localized around a wounded branch junction.",
+        "prompt": "Why should the two observations not be treated as the same anatomical evidence?",
+        "expectedReasoning": "Tissue age, organ identity and local vascular continuity differ. Those anatomical facts alter the plausible next checks and prevent a single generic nutrient diagnosis from being applied to both plants."
+      },
+      {
+        "scenario": "A learner says a flower is more potent because it visibly has more glandular trichomes than another sample.",
+        "prompt": "What can be concluded from the observation and what requires measurement?",
+        "expectedReasoning": "The learner can describe visible trichome abundance/morphology, but chemical potency requires validated analytical measurement; visual trichome appearance alone is not a quantitative cannabinoid assay."
+      }
     ],
     "commonMistakes": [
-      "Calling every stem junction a meristem.",
-      "Treating roots as separate from above-ground plant behavior.",
-      "Using leaf shape alone to identify cultivar, sex, or plant health.",
-      "Assuming visible trichome density directly measures potency or maturity.",
-      "Ignoring node position and developmental stage when comparing plant structures."
+      "Calling every stem junction or growing point a meristem without identifying the structure precisely.",
+      "Treating roots as biologically separate from above-ground water, nutrient and growth responses.",
+      "Using leaf shape alone to infer cultivar identity, sex or diagnosis.",
+      "Treating visible trichome density or color as a direct quantitative measurement of potency.",
+      "Comparing plant height without also considering node count, internode spacing and developmental state."
     ],
-    "practicalApplication": "During plant inspection, identify the major organs and record node spacing, branching pattern, leaf orientation and condition, visible root observations where available, stem integrity, and reproductive structures. Use those structural notes as context for later environmental, irrigation, nutrition, propagation, training, and diagnostic measurements.",
-    "summary": "Cannabis anatomy is an integrated system rather than a collection of isolated parts. Roots acquire resources, stems support and transport, meristems generate new growth, leaves manage photosynthesis and gas exchange, vascular tissues connect source and sink regions, and reproductive structures change crop priorities. Correct anatomical identification makes later cultivation decisions more precise and defensible."
+    "workplaceConnections": [
+      "Anatomical terms should be standardized in scouting, propagation, training and harvest records so different workers describe the same structure consistently.",
+      "Photographs used in crop records should identify plant/lot, date and anatomical location so images remain traceable evidence rather than unlabeled examples."
+    ],
+    "safetyComplianceNotes": [
+      "Use authorized sanitation and tool procedures during hands-on anatomy work, and do not perform destructive sampling or plant manipulation outside the assigned task or facility authorization."
+    ],
+    "practicalApplication": "Inspect a representative plant and create a structured anatomy record naming the major organs, node and internode positions, growth points, leaf condition, reproductive structures and visible trichome-bearing tissues. Link each observation to the next measurement or cultivation task it informs without converting morphology into an unsupported diagnosis.",
+    "practicalActivities": [
+      {
+        "title": "Structure-function cultivation map",
+        "instructions": "Using an approved specimen, high-resolution image set or simulation, identify key cannabis anatomical structures and produce a map showing how each structure connects to propagation, environment, irrigation, training, reproductive management or harvest decisions.",
+        "evidenceToProduce": ["annotated anatomy map","structure-function-decision table"],
+        "deliveryModes": ["simulation","supervised-lab","workplace","paper-data-exercise"]
+      }
+    ],
+    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-MODULE-001"],
+    "portfolioEvidence": ["An accessible, sanitized cannabis anatomy map demonstrating correct structural terminology and function-based reasoning."],
+    "spacedRetrieval": [
+      "One day later, explain the functional differences among roots, xylem, phloem, stomata and glandular trichomes.",
+      "One week later, identify node, internode, meristem, bract and inflorescence from a new written or visual specimen description."
+    ],
+    "furtherReading": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001","REF-TRICHOME-BIOLOGY-2021-001"],
+    "evidenceDisclosure": "The lesson combines general botanical functions with cannabis-specific morphology. The cited cannabis life-cycle study should not be treated as universal timing across genotypes, and visible glandular-trichome morphology is intentionally separated from claims requiring chemical analysis.",
+    "accessibility": {
+      "readingOrderNotes": "Present anatomy from roots and stems through leaves and reproductive/trichome structures before the integrated scenarios.",
+      "alternativeTextNotes": "Any anatomy image must describe structure location and spatial relationship in text rather than relying on arrows, color or labels embedded only in the image.",
+      "transcriptRequired": false,
+      "nonVisualAlternative": "Provide a hierarchical text description of the specimen from root zone to shoot tip, including node positions and reproductive structures, so the structure-function exercise can be completed nonvisually."
+    },
+    "summary": "Cannabis anatomy is an integrated functional system. Precise identification of roots, vascular tissues, nodes, meristems, leaves, reproductive structures and trichomes makes cultivation observations more repeatable and prevents visible morphology from being overinterpreted as a causal or chemical measurement."
   }
 }
