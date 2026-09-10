@@ -1,1 +1,21 @@
-{"id":"ITEM-TECH1-IPM-007","version":1,"status":"draft","purpose":"credential","competency":"COMP-IPM-001","objective":"LO-IPM-SCOUT-002","bloomLevel":"analyze","difficulty":"moderate","type":"multiple-choice","stem":"Why is one dramatic close-up photo not enough to describe a room-wide IPM condition?","choices":["Close-up photos are never useful","The image may show one affected tissue without showing incidence, severity distribution or spatial pattern across the crop","Photos can only be used after harvest","Room maps are not useful for scouting"],"correct":1,"rationale":"A close-up can document a sign or symptom, but representative sampling and spatial data are needed to determine how widely the condition occurs.","references":["REF-IPM-001"]}
+{
+  "id": "ITEM-TECH1-IPM-007",
+  "version": 2,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-SCOUT-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Why is one dramatic close-up photo not enough to describe a room-wide IPM condition?",
+  "choices": [
+    "A close-up from the most damaged plant can estimate room-wide incidence when the photographed symptom is clear and well focused",
+    "The image may show one affected tissue without showing incidence, severity distribution or spatial pattern across the crop",
+    "A high-resolution image can substitute for repeatable room sampling when the photographed tissue shows a distinctive symptom pattern",
+    "A close-up provides stronger distribution evidence than a location map because image detail captures the relevant spatial context"
+  ],
+  "correct": 1,
+  "rationale": "A close-up can document a sign or symptom, but representative sampling and spatial data are needed to determine how widely the condition occurs.",
+  "references": ["REF-IPM-001"]
+}
