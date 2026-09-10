@@ -1,0 +1,740 @@
+openapi: 3.1.0
+info:
+  title: THC Academy Runtime API
+  version: 0.2.0
+  description: >-
+    Canonical runtime contract for THC Academy learner progress, assessment delivery,
+    applied-performance evidence, credential verification, and credential lifecycle
+    administration. Human curriculum review, pilot approval, and credential issuance
+    authorization remain separate governed processes.
+servers:
+  - url: https://dtfseeds.com
+    description: Production host when the Academy API is deployed
+  - url: http://localhost:8787
+    description: Local development
+
+tags:
+  - name: Health
+  - name: Learner assessments
+  - name: Learner progress
+  - name: Performance assessment
+  - name: Credentials
+  - name: Administration
+
+paths:
+  /healthz:
+    get:
+      tags: [Health]
+      operationId: getHealth
+      summary: Process health check
+      responses:
+        '200':
+          description: API process is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+  /readyz:
+    get:
+      tags: [Health]
+      operationId: getReadiness
+      summary: Dependency and schema readiness check
+      responses:
+        '200':
+          description: Required dependencies are ready
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReadinessResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/assessments/{assessmentId}/attempts:
+    get:
+      tags: [Learner assessments]
+      operationId: listMyAssessmentAttempts
+      summary: List the authenticated learner's attempts and current attempt policy
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:read
+      parameters:
+        - $ref: '#/components/parameters/AssessmentId'
+      responses:
+        '200':
+          description: Assessment attempt history and policy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags: [Learner assessments]
+      operationId: startMyAssessmentAttempt
+      summary: Start a new assessment attempt when policy and delivery gates allow it
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:write
+      parameters:
+        - $ref: '#/components/parameters/AssessmentId'
+      responses:
+        '201':
+          description: Assessment attempt created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/assessment-attempts/{attemptId}:
+    get:
+      tags: [Learner assessments]
+      operationId: getMyAssessmentAttempt
+      summary: Read one authenticated learner assessment attempt
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:read
+      parameters:
+        - $ref: '#/components/parameters/AttemptId'
+      responses:
+        '200':
+          description: Learner-safe assessment attempt projection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/assessment-attempts/{attemptId}/submit:
+    post:
+      tags: [Learner assessments]
+      operationId: submitMyAssessmentAttempt
+      summary: Submit learner responses and score the attempt under the assessment feedback policy
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:write
+      parameters:
+        - $ref: '#/components/parameters/AttemptId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssessmentSubmissionRequest'
+      responses:
+        '200':
+          description: Submitted or scored learner-safe assessment attempt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          description: Request body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/enrollments:
+    get:
+      tags: [Learner progress]
+      operationId: listMyEnrollments
+      summary: List current learner enrollments
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:read
+      responses:
+        '200':
+          description: Learner enrollment list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags: [Learner progress]
+      operationId: enrollMeInCourse
+      summary: Enroll the authenticated learner in an exact course version
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:write
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnrollmentRequest'
+      responses:
+        '200':
+          description: Enrollment record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/progress:
+    get:
+      tags: [Learner progress]
+      operationId: listMyProgress
+      summary: List persisted learner progress records
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:read
+      responses:
+        '200':
+          description: Learner progress records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/courses/{courseId}/completion:
+    get:
+      tags: [Learner progress]
+      operationId: getMyCourseCompletion
+      summary: Project lesson, module, and course completion for an exact course definition
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:read
+      parameters:
+        - $ref: '#/components/parameters/CourseId'
+      responses:
+        '200':
+          description: Projected course completion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          description: Referenced curriculum object is missing from the deployed build
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/credentials/{credentialId}/progress:
+    get:
+      tags: [Learner progress, Credentials]
+      operationId: getMyCredentialProgress
+      summary: Evaluate written, competency, applied-performance, and portfolio evidence for one credential
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:read
+      parameters:
+        - $ref: '#/components/parameters/CredentialId'
+      responses:
+        '200':
+          description: Credential progress and missing requirements
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CredentialProgressResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          description: Credential references a missing course definition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/me/lessons/{lessonId}:
+    put:
+      tags: [Learner progress]
+      operationId: setMyLessonProgress
+      summary: Persist progress against an exact lesson version
+      security:
+        - bearerAuth: []
+      x-required-scope: learner:write
+      parameters:
+        - $ref: '#/components/parameters/LessonId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LessonProgressRequest'
+      responses:
+        '200':
+          description: Persisted lesson progress
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/admin/performance-assessments/results:
+    post:
+      tags: [Performance assessment, Administration]
+      operationId: recordPerformanceAssessmentResult
+      summary: Record assessor-evaluated applied-performance evidence
+      description: >-
+        Requires assessor authorization. This records evidence and a rubric-derived result;
+        it does not approve curriculum, create human scientific review, or issue a credential.
+      security:
+        - bearerAuth: []
+      x-required-scope: assessor:write
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PerformanceAssessmentResultRequest'
+      responses:
+        '201':
+          description: Performance assessment result persisted
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [result]
+                properties:
+                  result:
+                    $ref: '#/components/schemas/LearnerPerformanceResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/credentials/{verificationId}:
+    get:
+      tags: [Credentials]
+      operationId: verifyCredential
+      summary: Read the public verification projection for a credential
+      parameters:
+        - $ref: '#/components/parameters/VerificationId'
+      responses:
+        '200':
+          description: Public credential verification projection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          description: Stored credential references a missing credential definition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/admin/credentials/{verificationId}/history:
+    get:
+      tags: [Credentials, Administration]
+      operationId: getCredentialStatusHistory
+      summary: Read credential lifecycle history
+      security:
+        - bearerAuth: []
+      x-required-scope: admin:read
+      parameters:
+        - $ref: '#/components/parameters/VerificationId'
+      responses:
+        '200':
+          description: Credential lifecycle history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/admin/credentials/{verificationId}/status:
+    post:
+      tags: [Credentials, Administration]
+      operationId: transitionCredentialStatus
+      summary: Apply a governed credential lifecycle status transition
+      security:
+        - bearerAuth: []
+      x-required-scope: admin:write
+      parameters:
+        - $ref: '#/components/parameters/VerificationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CredentialStatusTransitionRequest'
+      responses:
+        '200':
+          description: Credential transition applied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /api/v1/admin/diagnostics:
+    get:
+      tags: [Administration]
+      operationId: getAdminDiagnostics
+      summary: Read safe API persistence and readiness diagnostics
+      security:
+        - bearerAuth: []
+      x-required-scope: admin:read
+      responses:
+        '200':
+          description: Safe diagnostics without secrets
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT or configured service token
+
+  parameters:
+    AssessmentId:
+      name: assessmentId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^ASSESS-[A-Z0-9-]+$'
+    AttemptId:
+      name: attemptId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9a-fA-F-]+$'
+    CourseId:
+      name: courseId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^COURSE-[A-Z0-9-]+$'
+    CredentialId:
+      name: credentialId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^CRED-[A-Z0-9-]+$'
+    LessonId:
+      name: lessonId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^LESSON-[A-Z0-9-]+$'
+    VerificationId:
+      name: verificationId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9_-]+$'
+
+  responses:
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication required or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Forbidden:
+      description: Authenticated principal lacks the required scope
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Conflict:
+      description: Current version, state, or policy blocks the requested transition
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ServiceUnavailable:
+      description: Required persistence or dependency is unavailable
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+        requestId:
+          type: string
+    HealthResponse:
+      type: object
+      required: [ok, requestId]
+      properties:
+        ok:
+          const: true
+        requestId:
+          type: string
+    ReadinessResponse:
+      type: object
+      required: [ok, requestId]
+      properties:
+        ok:
+          const: true
+        schemaVersion:
+          type: [string, 'null']
+        requestId:
+          type: string
+    EnrollmentRequest:
+      type: object
+      additionalProperties: false
+      required: [courseId, courseVersion]
+      properties:
+        courseId:
+          type: string
+          pattern: '^COURSE-[A-Z0-9-]+$'
+        courseVersion:
+          type: string
+          pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'
+    LessonProgressRequest:
+      type: object
+      additionalProperties: false
+      required: [lessonVersion, status]
+      properties:
+        lessonVersion:
+          type: string
+          pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'
+        status:
+          type: string
+          enum: [not-started, in-progress, completed]
+    AssessmentSubmissionRequest:
+      type: object
+      additionalProperties: false
+      required: [responses]
+      properties:
+        responses:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    PerformanceAssessmentResultRequest:
+      type: object
+      additionalProperties: false
+      required: [learnerSubject, assessmentId, assessmentVersion, deliveryMode, scorePercent]
+      properties:
+        learnerSubject:
+          type: string
+          minLength: 1
+        assessmentId:
+          type: string
+          pattern: '^(PRACTICAL|CAPSTONE)-[A-Z0-9-]+$'
+        assessmentVersion:
+          type: string
+          pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'
+        deliveryMode:
+          type: string
+          enum: [simulation, virtual-facility, supervised-lab, workplace-equivalent]
+        scorePercent:
+          type: number
+          minimum: 0
+          maximum: 100
+        criticalErrorCount:
+          type: integer
+          minimum: 0
+          default: 0
+        evidence:
+          type: object
+          additionalProperties: true
+    LearnerPerformanceResult:
+      type: object
+      required: [assessmentId, status, criticalErrorCount, evidenceVerified]
+      properties:
+        assessmentId:
+          type: string
+        assessmentVersion:
+          type: [string, 'null']
+        status:
+          type: string
+          enum: [passed, failed, not-recorded]
+        scorePercent:
+          type: [number, 'null']
+        criticalErrorCount:
+          type: integer
+          minimum: 0
+        evidenceVerified:
+          type: boolean
+        rubricId:
+          type: [string, 'null']
+        rubricVersion:
+          type: [string, 'null']
+        deliveryMode:
+          type: [string, 'null']
+        evaluatedAt:
+          type: [string, 'null']
+        updatedAt:
+          type: [string, 'null']
+    CredentialStatusTransitionRequest:
+      type: object
+      additionalProperties: false
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [valid, suspended, superseded, expired, revoked]
+        reason:
+          type: [string, 'null']
+    CredentialProgressResponse:
+      type: object
+      required: [credential, eligibility, assessmentAttempts, competencies, performanceAssessments, portfolioArtifacts]
+      properties:
+        credential:
+          type: object
+          additionalProperties: true
+        eligibility:
+          type: object
+          additionalProperties: true
+        assessmentAttempts:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        competencies:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        performanceAssessments:
+          type: array
+          items:
+            $ref: '#/components/schemas/LearnerPerformanceResult'
+        portfolioArtifacts:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
