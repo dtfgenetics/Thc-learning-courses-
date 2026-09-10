@@ -1,1 +1,21 @@
-{"id":"ITEM-IPM-010","version":1,"status":"draft","purpose":"summative","competency":"COMP-IPM-001","objective":"LO-IPM-001","bloomLevel":"apply","difficulty":"moderate","type":"multiple-choice","stem":"Which scouting practice best supports trend comparison over time?","choices":["Use a consistent route, sampling effort and recording method","Change the route and number of plants every visit","Record only positive findings","Scout only after severe damage"],"correct":0,"rationale":"Repeatable sampling methods make counts and observations more comparable through time.","references":["REF-IPM-001"]}
+{
+  "id": "ITEM-IPM-010",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Which scouting practice best supports trend comparison over time?",
+  "choices": [
+    "Use a consistent route, sampling effort and recording method",
+    "Use a different route each round so more areas are visited, while keeping approximately the same total scouting time",
+    "Prioritize plants with visible symptoms during each round and compare the number of positive findings from visit to visit",
+    "Adjust the number of plants inspected as workload changes, then compare the raw pest counts collected during each scouting round"
+  ],
+  "correct": 0,
+  "rationale": "Repeatable routes, sampling effort, and recording methods make scouting observations more comparable through time and reduce the chance that a method change is mistaken for a biological trend.",
+  "references": ["REF-IPM-001"]
+}
