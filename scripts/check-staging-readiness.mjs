@@ -28,6 +28,10 @@ for (const file of [
   'apps/web/public/styles.css',
   'apps/api/src/server.mjs',
   'database/schema.sql',
+  'openapi/academy-api.yaml',
+  'scripts/build-staging-candidate.mjs',
+  'scripts/verify-staging-candidate.mjs',
+  '.github/workflows/staging-candidate.yml',
   'docs/STAGING-LEARNER-APP.md',
   'docs/INCIDENT-RESPONSE.md',
   'registry/system-readiness.json'
