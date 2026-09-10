@@ -1,69 +1,132 @@
 {
   "id": "LESSON-RESPONSIBLE-RECORDS-003",
   "title": "Responsible Cultivation Records, Traceability and Corrective Action",
-  "version": "1.0.0",
-  "status": "approved",
-  "competencies": [
-    "COMP-RESPONSIBLE-LEGAL-001"
-  ],
-  "learningObjectives": [
-    "LO-RESPONSIBLE-RECORDS-003"
-  ],
-  "estimatedMinutes": 40,
-  "references": [
-    "REF-LEGAL-USDA-001",
-    "REF-SAFETY-OSHA-001"
-  ],
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-RESPONSIBLE-LEGAL-001"],
+  "learningObjectives": ["LO-RESPONSIBLE-RECORDS-003"],
+  "estimatedMinutes": 60,
+  "references": ["REF-LEGAL-USDA-001","REF-SAFETY-OSHA-001"],
   "assessment": null,
   "content": {
-    "overview": "Good cultivation records connect decisions to outcomes. Site, plant, input, irrigation, scouting, training, harvest, safety and compliance records support traceability and learning while also making it easier to identify what changed when a problem occurs.",
+    "overview": "Cultivation records turn work history into evidence. Useful records preserve identity, time, place, responsible person, measurements, actions, exceptions and changes so a crop event can be reconstructed later. Traceability is not simply collecting forms: records should support safe handoff, diagnosis, compliance review and corrective action while preserving the original history when a record must be corrected.",
+    "whyItMatters": "When crop quality, safety or compliance is questioned, decisions often depend on whether the team can reconstruct what actually happened. Vague, altered or disconnected records can make a correct technical process impossible to verify.",
+    "prerequisites": ["Understand basic cultivation room/lot identifiers and the workplace expectation that records are completed contemporaneously or according to controlled procedure."],
+    "priorKnowledgeRetrieval": [
+      "List the fields you would need to reconstruct an irrigation or scouting action several weeks after it occurred.",
+      "Explain why correcting a record should preserve evidence of the original entry rather than silently replacing history."
+    ],
     "vocabulary": [
-      {
-        "term": "Traceability",
-        "definition": "Ability to connect a crop or decision to its source, history and relevant records."
-      },
-      {
-        "term": "Corrective action",
-        "definition": "A documented response intended to correct a problem and reduce the chance of recurrence."
-      },
-      {
-        "term": "Audit trail",
-        "definition": "A chronological record showing important actions, changes and responsible actors."
+      {"term":"Traceability","definition":"The ability to connect a crop, material, action or decision to its source, history, location and relevant records."},
+      {"term":"Audit trail","definition":"A chronological record that preserves significant actions, changes, timestamps and responsible actors."},
+      {"term":"Contemporaneous record","definition":"A record created at the time of the activity or as close to it as the controlled process requires, reducing reliance on later memory."},
+      {"term":"Deviation","definition":"A documented departure from an approved procedure, expected condition or specified requirement that requires evaluation."},
+      {"term":"Corrective action","definition":"A documented response that corrects a problem and addresses its cause or recurrence risk when appropriate."},
+      {"term":"Effectiveness check","definition":"Follow-up evidence used to determine whether a correction or corrective action actually solved the intended problem."
       }
     ],
     "sections": [
       {
-        "title": "Records should answer who, what, where and when",
-        "body": "A useful record identifies the crop or location, action, date/time, responsible person and relevant measurements rather than only a vague note that work was completed.",
-        "references": [
-          "REF-LEGAL-USDA-001"
-        ]
+        "title": "A useful record reconstructs the event",
+        "body": "At minimum, records should make clear what crop, room, lot, tool or input was involved; what occurred; where and when it occurred; who performed or verified the action; and which measurements, work orders or source documents supported the decision. A note such as 'plants watered' is weak evidence if the affected zone, time, volume or operator cannot be reconstructed when those details matter.",
+        "references": ["REF-LEGAL-USDA-001"]
       },
       {
-        "title": "Records make diagnosis stronger",
-        "body": "Environmental, irrigation, scouting and input histories help distinguish sudden events from long trends and can reveal changes that visual symptoms alone cannot explain.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Identity must remain stable across handoffs",
+        "body": "Room, batch, plant-group, lot and material identifiers should be carried consistently through cultivation and postharvest workflows. When materials move or responsibility changes, the receiving record should preserve the connection to the prior identity rather than creating an unexplained new name. This reduces mix-ups and makes later investigation possible.",
+        "references": ["REF-LEGAL-USDA-001"]
       },
       {
-        "title": "Corrective action should close the loop",
-        "body": "When a failure occurs, document the immediate correction, root cause when known, verification that the fix worked and any procedural change needed to prevent recurrence.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Correct records without erasing history",
+        "body": "Controlled records should not be silently rewritten after the fact. When a correction is necessary, follow the applicable paper or electronic procedure so the original value, corrected value, responsible person, date/time and reason remain traceable. The exact correction method depends on the site's record-control system and applicable requirements.",
+        "references": ["REF-LEGAL-USDA-001"]
+      },
+      {
+        "title": "Records strengthen diagnosis and deviation investigation",
+        "body": "Environmental, irrigation, sanitation, scouting and input histories can distinguish a one-time event from a developing trend. When an abnormal condition occurs, compare records across the relevant time window before changing multiple variables. Document the immediate containment or correction separately from the investigation of why the event occurred.",
+        "references": ["REF-SAFETY-OSHA-001"]
+      },
+      {
+        "title": "Corrective action needs verification",
+        "body": "A record is not complete merely because an action was assigned. Define what was corrected, who owns follow-up, when it is due and what evidence will show that the response worked. Repeated failures after a closed action indicate that the cause, control or effectiveness check may have been inadequate.",
+        "references": ["REF-SAFETY-OSHA-001"]
       }
     ],
     "workedExamples": [
-      "A disease event is easier to investigate when scouting, humidity, irrigation and sanitation records are available for the preceding weeks.",
-      "A spill response should document what happened, the immediate control, exposure evaluation and the prevention change made afterward."
+      "A disease-like pattern appears in one room. Scouting maps, humidity records, irrigation events and sanitation logs from the prior two weeks are aligned by room and date, allowing the team to identify which change preceded the pattern instead of guessing from symptoms alone.",
+      "A handwritten pH value is entered incorrectly. The worker follows the site's controlled correction method so the original value remains legible, the corrected value is identified and the reason/date/initials preserve the audit trail.",
+      "A recurring leak is repeatedly marked 'cleaned.' The corrective-action record instead assigns repair ownership and a later verification check, distinguishing spill cleanup from prevention of recurrence."
+    ],
+    "guidedPractice": [
+      {
+        "prompt": "Reconstruct a cultivation event from a mixed packet of room logs, environmental readings, work orders and handoff notes, then identify which missing or ambiguous fields prevent a complete reconstruction.",
+        "steps": ["Establish the crop/room/lot identity.","Build a chronological timeline.","Link measurements and actions to responsible people.","Mark missing identifiers or timestamps.","State what can and cannot be concluded from the available evidence."],
+        "expectedEvidence": "A timeline plus a data-quality gap list that separates verified facts from assumptions.",
+        "feedbackGuidance": "The learner should not invent missing events or values. Strong work makes uncertainty visible and identifies the record field needed to resolve it."
+      },
+      {
+        "prompt": "Given a deviation scenario, write the immediate correction, investigation question, corrective action owner and effectiveness check as separate record elements.",
+        "steps": ["State the observed deviation.","Record immediate containment/correction.","State the cause question without assuming an answer.","Assign follow-up action and owner.","Define evidence and timing for effectiveness verification."],
+        "expectedEvidence": "A concise deviation/corrective-action record with distinct correction, cause and verification fields.",
+        "feedbackGuidance": "Strong responses do not call an immediate cleanup a root-cause corrective action and define an observable check for closure."
+      }
+    ],
+    "decisionScenarios": [
+      {
+        "scenario": "A technician notices that an irrigation log from yesterday lists the wrong room. The intended room can be verified from the work order and system event history.",
+        "prompt": "How should the record be corrected?",
+        "expectedReasoning": "Follow the controlled correction procedure so the original entry and the corrected room identity remain traceable, with responsible person, date/time and reason as required. Do not silently overwrite history."
+      },
+      {
+        "scenario": "A recurring contamination indicator has appeared three times, and each prior event was closed after the affected surface was cleaned.",
+        "prompt": "What does the repeat pattern suggest about corrective action?",
+        "expectedReasoning": "The immediate correction addressed the observed condition but may not have addressed recurrence. Review linked records, investigate contributing causes, define a stronger corrective action and verify effectiveness over a suitable follow-up period."
+      }
     ],
     "commonMistakes": [
-      "Writing records too vaguely to reconstruct the decision.",
-      "Changing logs after the fact without preserving history.",
-      "Collecting data without reviewing it for corrective action."
+      "Writing records so vaguely that the crop, location, time, person or decision cannot be reconstructed.",
+      "Backfilling data from memory without identifying the delayed entry or following the controlled procedure.",
+      "Silently changing an electronic or paper record and destroying the original history.",
+      "Treating immediate cleanup or containment as proof that the cause has been corrected.",
+      "Collecting measurements without linking them to decisions, trends or follow-up review."
     ],
-    "practicalApplication": "Use consistent IDs for sites, rooms, lots and plant groups. Define required fields for each log and schedule review of records so they drive decisions instead of becoming unused paperwork.",
-    "summary": "Traceability turns cultivation history into usable evidence. Good records support diagnosis, compliance, safety, learning and corrective action without replacing the legal authorization itself."
+    "workplaceConnections": [
+      "Room, lot and work-order identifiers should remain consistent across crop care, scouting, irrigation, harvest, postharvest and shift-handoff systems.",
+      "Deviation and corrective-action records should link to the source event and later effectiveness evidence rather than living as isolated paperwork."
+    ],
+    "safetyComplianceNotes": [
+      "Required records vary by jurisdiction, license type, employer and activity. Follow the current controlled procedure and applicable regulatory requirements for the actual operation.",
+      "Never falsify, fabricate, backdate or erase required records to make a process appear compliant; unresolved data gaps should be documented and escalated."
+    ],
+    "practicalApplication": "Complete one cultivation record and one deviation/corrective-action exercise using stable room/lot identifiers, timestamps, measurements and responsible-person fields. Then exchange records with another learner or reviewer and test whether the event can be reconstructed without verbal explanation.",
+    "practicalActivities": [
+      {
+        "title": "Traceability reconstruction and handoff",
+        "instructions": "Use a simulated cultivation record packet to reconstruct a shift event, identify data gaps and create a corrected handoff record that preserves identity and uncertainty without inventing missing information.",
+        "evidenceToProduce": ["event timeline","data-quality gap list","shift handoff record"],
+        "deliveryModes": ["simulation","paper-data-exercise","supervised-lab","workplace"]
+      },
+      {
+        "title": "Deviation and effectiveness check",
+        "instructions": "Document a simulated process deviation, separate immediate correction from cause investigation, assign a corrective action and define the evidence that will be reviewed later to determine effectiveness.",
+        "evidenceToProduce": ["deviation record","corrective-action record","effectiveness-check plan"],
+        "deliveryModes": ["simulation","paper-data-exercise"]
+      }
+    ],
+    "formativeAssessmentIds": ["ASSESS-RESPONSIBLE-LEGAL-MODULE-001"],
+    "portfolioEvidence": ["Sanitized traceability reconstruction and deviation record demonstrating controlled corrections and evidence-based follow-up."],
+    "spacedRetrieval": [
+      "One day later, list the fields required to reconstruct who did what, where and when, then add the measurement/source fields needed to explain why.",
+      "One week later, explain the difference among immediate correction, root-cause investigation, corrective action and effectiveness verification."
+    ],
+    "furtherReading": ["REF-LEGAL-USDA-001","REF-SAFETY-OSHA-001"],
+    "evidenceDisclosure": "The specific legal record set varies by jurisdiction and operation. This lesson teaches general traceability, record integrity and corrective-action principles; learners must use current site procedures and applicable official requirements for regulated records.",
+    "accessibility": {
+      "readingOrderNotes": "Teach event reconstruction and record integrity before the deviation/corrective-action exercise.",
+      "alternativeTextNotes": "Any traceability diagram must also provide the complete identity and event sequence as text.",
+      "transcriptRequired": false,
+      "nonVisualAlternative": "Supply record packets as accessible structured tables with labeled fields and chronological entries so the exercise does not depend on a visual flowchart."
+    },
+    "summary": "Responsible cultivation records preserve identity, chronology, decisions and changes so work can be reconstructed. Strong traceability keeps original history visible, makes uncertainty explicit and connects deviations to corrective action and later effectiveness verification."
   }
 }
