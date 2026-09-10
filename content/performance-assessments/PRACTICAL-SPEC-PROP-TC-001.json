@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-PROP-TC-001",
+  "title":"Advanced Propagation and Tissue Culture Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-PROP-001","TASK-CULT2-TRACE-001","TASK-CULT2-DEVIATION-001","TASK-CULT2-METRICS-001"],
+  "competencies":["COMP-TC-ASEPTIC-001","COMP-TC-REGEN-001"],
+  "deliveryModes":["simulation","supervised-lab","workplace-equivalent"],
+  "evidenceOutputs":["Aseptic workflow map","Contamination investigation","Culture establishment record","Multiplication and rooting metrics","Acclimatization and loss analysis","Identity and fidelity plan"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Aseptic workflow and contamination control","points":20},{"name":"Establishment and explant handling","points":15},{"name":"Multiplication and regeneration interpretation","points":20},{"name":"Rooting and acclimatization decisions","points":15},{"name":"Identity passage and fidelity controls","points":20},{"name":"Records metrics and handoff","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Continues normal culture transfer after a known contamination event without segregation or appropriate response.","Allows source-line identity or passage history to become irretrievable.","Claims genetic fidelity or disease-free status from visual appearance alone without appropriate supporting evidence.","Falsifies contamination, multiplication, rooting, loss, identity, or passage records."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-PROP-TC-001.md"
+}

@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-SOP-QA-001",
+  "title":"Professional SOP and Quality Systems Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-DEVIATION-001","TASK-CULT2-TRACE-001","TASK-CULT2-METRICS-001","TASK-CULT2-PEER-001"],
+  "competencies":["COMP-PRO-SOP-001","COMP-PRO-QA-001"],
+  "deliveryModes":["simulation","virtual-facility","workplace-equivalent"],
+  "evidenceOutputs":["Executable SOP revision","Training and qualification plan","Controlled change record","Deviation investigation","CAPA effectiveness plan","Internal audit summary"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"SOP design and executability","points":20},{"name":"Training and qualification controls","points":15},{"name":"Change control","points":15},{"name":"Deviation investigation","points":20},{"name":"CAPA design and effectiveness checks","points":20},{"name":"Audit evidence and communication","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Approves or recommends an undocumented process change that bypasses required change control for a controlled procedure.","Closes a deviation or CAPA without preserving the original evidence or defining effectiveness verification.","Uses training attendance alone as proof of task competence when performance qualification is required by the supplied case.","Falsifies, deletes, or obscures audit, deviation, training, or change-control evidence."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-SOP-QA-001.md"
+}
