@@ -48,7 +48,10 @@ const plannerOutput = execFileSync(process.execPath, [path.join(root, 'scripts/b
   encoding: 'utf8'
 });
 const planner = JSON.parse(plannerOutput);
-if (!planner.summary?.selectionComplete) throw new Error('Pilot cohort planner is not complete; staging is blocked.');
+const cohortSelectionComplete = planner.summary?.selectionComplete === true;
+if (write && !cohortSelectionComplete) {
+  throw new Error(`Pilot staging writes are blocked because the current-QA-clean cohort is incomplete: ${(planner.summary?.errors ?? []).join('; ')}`);
+}
 
 const readiness = readJson('registry/system-readiness.json');
 const humanAssessmentReviewComplete = readiness.areas?.assessment?.gates?.humanAssessmentReviewComplete === true;
@@ -110,7 +113,12 @@ const summary = {
   assessment: planner.summary.assessment,
   write,
   analystRequiredForWrite: true,
+  cohortSelectionComplete,
+  cohortBlockers: planner.summary?.errors ?? [],
+  currentHighSeverityQaExclusions: planner.summary?.currentHighSeverityQaExclusions ?? 0,
   humanAssessmentReviewComplete,
+  stageable: cohortSelectionComplete && humanAssessmentReviewComplete,
+  writeBlockedByCohortGate: !cohortSelectionComplete,
   writeBlockedByReviewGate: !humanAssessmentReviewComplete,
   selectedItems: actions.length,
   itemsWithExistingPilotEvidence: actions.filter((action) => !action.needsDraftEvidence).length,
@@ -123,7 +131,9 @@ const summary = {
     itemsMovedToPilot: actions.filter((action) => action.needsPilotStatus).length
   } : null,
   safeguards: [
-    'cohort must come from the reviewed reference-clean Foundations planner',
+    'cohort candidates must have an exact-version approved assessment review',
+    'cohort candidates must be reference-clean and free of current high-severity item-construction flags',
+    'an incomplete cohort is reportable in dry-run mode but can never be staged in write mode',
     'write mode remains blocked until human assessment review is complete',
     'write mode requires an explicit real analyst ID',
     'new pilot evidence is draft-only with zero responses and no fabricated statistics',

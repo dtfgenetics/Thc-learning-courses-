@@ -34,6 +34,10 @@ export function foundationsItemReviewFlags(item) {
   return flags;
 }
 
-export function highSeverityFoundationsItemFlags(item) {
+export function highSeverityAssessmentItemFlags(item) {
   return foundationsItemReviewFlags(item).filter((flag) => flag.severity === 'high');
+}
+
+export function highSeverityFoundationsItemFlags(item) {
+  return highSeverityAssessmentItemFlags(item);
 }

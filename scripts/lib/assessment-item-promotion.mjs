@@ -1,4 +1,5 @@
 import { activationEvidenceEvaluation } from '../pilot-evidence-quality.mjs';
+import { highSeverityAssessmentItemFlags } from './foundations-item-review-preflight.mjs';
 
 export function evaluateAssessmentItemPromotion({
   item,
@@ -29,6 +30,11 @@ export function evaluateAssessmentItemPromotion({
   const missingReferences = refs.filter((id) => !referenceIds.has(id));
   if (missingReferences.length) failures.push(`unresolved references: ${missingReferences.join(', ')}`);
 
+  const highSeverityFlags = highSeverityAssessmentItemFlags(item);
+  if (highSeverityFlags.length) {
+    failures.push(`current item QA has high-severity construction flags: ${highSeverityFlags.map((flag) => flag.code).join(', ')}`);
+  }
+
   let qualifiedPilot = null;
   if (!pilotPolicy) {
     failures.push('pilot evidence policy is required for activation');
@@ -47,6 +53,7 @@ export function evaluateAssessmentItemPromotion({
     failures,
     approvedReviewId: approvedReview?.id ?? null,
     qualifiedPilotEvidenceId: qualifiedPilot?.id ?? null,
+    highSeverityFlags,
     promoted: failures.length === 0 ? { ...item, status: 'active' } : null
   };
 }

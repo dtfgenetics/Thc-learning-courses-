@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { evaluateFoundationsPilotCandidate } from './lib/foundations-pilot-candidate.mjs';
 
 const root = process.cwd();
+const check = process.argv.includes('--check');
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -53,55 +55,50 @@ const references = new Set(readDirJson('content/references').map((reference) => 
 const pilotEvidence = readDirJson('content/pilot-evidence');
 const targetPerCompetency = assessment.itemSelection?.minimumActiveItemsPerCompetency ?? 0;
 
-function approvedReview(item) {
-  return reviews.find((review) =>
-    review.objectId === item.id &&
-    String(review.objectVersion) === String(item.version) &&
-    review.reviewType === 'assessment' &&
-    review.status === 'approved'
-  ) ?? null;
-}
-
 function evidenceRecord(item) {
   return pilotEvidence.find((record) =>
     record.itemId === item.id && String(record.itemVersion) === String(item.version)
   ) ?? null;
 }
 
-function isReferenceClean(item) {
-  return Array.isArray(item.references) && item.references.length > 0 && item.references.every((id) => references.has(id));
-}
-
 const rows = [];
 const errors = [];
 for (const bp of assessment.blueprint ?? []) {
-  const candidates = questions.filter((item) =>
+  const scopedItems = questions.filter((item) =>
     item.competency === bp.competency &&
-    ['summative', 'credential'].includes(item.purpose) &&
-    !['flagged', 'retired'].includes(item.status) &&
-    approvedReview(item) &&
-    isReferenceClean(item)
+    ['summative', 'credential'].includes(item.purpose)
   );
-  const ordered = roundRobinByObjective(candidates);
+  const evaluations = scopedItems.map((item) => ({
+    item,
+    result: evaluateFoundationsPilotCandidate({ item, reviews, referenceIds: references })
+  }));
+  const eligibleEvaluations = evaluations.filter(({ result }) => result.eligible);
+  const ordered = roundRobinByObjective(eligibleEvaluations.map(({ item }) => item));
   const selected = ordered.slice(0, targetPerCompetency);
   if (selected.length < targetPerCompetency) {
-    errors.push(`${bp.competency}: requires ${targetPerCompetency} reviewed reference-clean pilot candidates but only ${selected.length} are available`);
+    errors.push(`${bp.competency}: requires ${targetPerCompetency} current-QA-clean, reviewed, reference-clean pilot candidates but only ${selected.length} are available`);
   }
   rows.push({
     competency: bp.competency,
     targetItems: targetPerCompetency,
-    reviewedReferenceCleanCandidates: ordered.length,
-    selected: selected.map((item) => ({
-      id: item.id,
-      version: item.version,
-      status: item.status,
-      objective: item.objective,
-      difficulty: item.difficulty,
-      type: item.type,
-      approvedReviewId: approvedReview(item)?.id ?? null,
-      existingPilotEvidenceId: evidenceRecord(item)?.id ?? null,
-      existingPilotEvidenceStatus: evidenceRecord(item)?.status ?? null
-    }))
+    scopedCandidates: scopedItems.length,
+    pilotEligibleCandidates: ordered.length,
+    excludedByCurrentHighSeverityQa: evaluations.filter(({ result }) => result.highSeverityFlags.length > 0).length,
+    excludedForEligibilityReasons: evaluations.filter(({ result }) => !result.eligible).length,
+    selected: selected.map((item) => {
+      const result = evaluateFoundationsPilotCandidate({ item, reviews, referenceIds: references });
+      return {
+        id: item.id,
+        version: item.version,
+        status: item.status,
+        objective: item.objective,
+        difficulty: item.difficulty,
+        type: item.type,
+        approvedReviewId: result.approvedReviewId,
+        existingPilotEvidenceId: evidenceRecord(item)?.id ?? null,
+        existingPilotEvidenceStatus: evidenceRecord(item)?.status ?? null
+      };
+    })
   });
 }
 
@@ -125,12 +122,15 @@ const summary = {
   selectedItems: cohort.length,
   expectedSelectedItems: targetPerCompetency * rows.length,
   selectionComplete: errors.length === 0,
+  currentHighSeverityQaExclusions: rows.reduce((sum, row) => sum + row.excludedByCurrentHighSeverityQa, 0),
   itemsWithExistingPilotEvidence: cohort.filter((item) => item.existingPilotEvidenceId).length,
   itemsNeedingPilotEvidenceTemplate: cohort.filter((item) => !item.existingPilotEvidenceId).length,
   objectiveRepresentation: Object.fromEntries([...objectives.entries()].sort()),
   difficultyRepresentation: Object.fromEntries([...difficulties.entries()].sort()),
-  errors
+  errors,
+  check,
+  note: 'Report mode may describe an incomplete cohort without exiting nonzero. --check and all staging writes remain fail-closed.'
 };
 
 console.log(JSON.stringify({ summary, competencies: rows, cohort }, null, 2));
-if (errors.length) process.exit(1);
+if (check && errors.length) process.exit(1);
