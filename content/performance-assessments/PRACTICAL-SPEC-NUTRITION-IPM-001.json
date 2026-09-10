@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-NUTRITION-IPM-001",
+  "title":"Advanced Nutrition Diagnostics and IPM Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-FERTIGATION-001","TASK-CULT2-IPM-001","TASK-CULT2-DIAG-001","TASK-CULT2-ROOTZONE-001"],
+  "competencies":["COMP-NUTRIENT-DIAG-001","COMP-IPM-ADV-001"],
+  "deliveryModes":["simulation","supervised-lab","workplace-equivalent"],
+  "evidenceOutputs":["Plant-health differential","Root-zone and feed trend analysis","Scouting incidence/severity summary","Pest/disease evidence map","Integrated correction plan","Follow-up verification schedule"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Evidence collection and symptom classification","points":15},{"name":"Nutrition and root-zone diagnosis","points":20},{"name":"IPM scouting and pressure interpretation","points":20},{"name":"Differential diagnosis and competing hypotheses","points":20},{"name":"Integrated response and risk control","points":15},{"name":"Verification documentation and handoff","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Recommends an unauthorized pesticide or chemical action outside supplied legal and procedural constraints.","Treats visual symptoms alone as proof of a nutrient deficiency or pest diagnosis when contradictory evidence is provided.","Ignores a supplied biosecurity or quarantine condition that could spread plant-health risk.","Falsifies scouting counts, nutrient measurements, root-zone data, or treatment history."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-NUTRITION-IPM-001.md"
+}

@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-GENETICS-BREEDING-001",
+  "title":"Advanced Genetics and Breeding Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-TRACE-001","TASK-CULT2-METRICS-001","TASK-CULT2-DIAG-001"],
+  "competencies":["COMP-BREED-POP-001","COMP-BREED-GENOMICS-001"],
+  "deliveryModes":["simulation","virtual-facility","workplace-equivalent"],
+  "evidenceOutputs":["Pedigree and identity reconstruction","Population selection plan","Segregation and progeny interpretation","GxE comparison","Marker-evidence evaluation","Breeding decision report"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Pedigree identity and traceability","points":15},{"name":"Population design and selection logic","points":20},{"name":"Segregation and progeny interpretation","points":20},{"name":"Genotype by environment reasoning","points":15},{"name":"Genomic or marker evidence evaluation","points":15},{"name":"Decision report and uncertainty communication","points":15}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Declares a segregating individual genetically fixed or breeding true without progeny or equivalent evidence.","Reconstructs or changes pedigree identity without traceable source evidence.","Uses a marker association as universal proof across unrelated germplasm without validation evidence.","Falsifies phenotype, pedigree, progeny, or marker data."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-GENETICS-BREEDING-001.md"
+}
