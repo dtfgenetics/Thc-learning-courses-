@@ -10,6 +10,8 @@ Rules:
 - `approved` means the named human reviewer actually completed that review type for the exact object version.
 - `changes-requested` and `rejected` records are retained as audit history; do not overwrite them.
 - A changed lesson or assessment version requires a new review record for the new version.
+- For assessment items that already have an approved assessment review, substantive edits to purpose, competency, objective, Bloom level, difficulty, type, stem, choices, answer key, rationale, or evidence references must advance the item version. Status-only promotion does not require a version change.
+- CI enforces this rule against the prior/base revision so an approved review cannot silently carry forward after assessment content changes.
 - Do not store reviewer secrets, signatures, personal contact information, learner data, or production credentials here.
 - File names should use the review ID, for example `REVIEW-LESSON-ENV-VPD-001-SCI-001.json`.
 
