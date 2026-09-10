@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { evaluateAssessmentItemPromotion } from './lib/assessment-item-promotion.mjs';
+import { evaluateFoundationsPilotCandidate } from './lib/foundations-pilot-candidate.mjs';
 
 const item = {
   id: 'ITEM-TEST-001',
@@ -129,5 +130,43 @@ const retired = evaluateAssessmentItemPromotion({
 });
 assert.equal(retired.eligible, false);
 assert.ok(retired.failures.includes('item status retired cannot be promoted'));
+
+const cueDefectiveItem = {
+  ...item,
+  id: 'ITEM-TEST-002',
+  status: 'pilot',
+  stem: 'A reviewed assessment item has four answer choices. Which current response should remain eligible for activation?',
+  choices: [
+    'The correct response is intentionally much longer and more detailed than every distractor, creating a strong test-wise cue that can reveal the key without demonstrating the competency',
+    'A short distractor',
+    'Another short distractor',
+    'A final short distractor'
+  ],
+  correct: 0,
+  rationale: 'This fixture deliberately makes the keyed answer a high-severity length outlier so current item QA must block it.'
+};
+const cueDefectiveReview = { ...approvedReview, id: 'REVIEW-TEST-002', objectId: cueDefectiveItem.id };
+const cueDefectivePilot = { ...qualifiedPilot, id: 'PILOT-ITEM-TEST-002-V1', itemId: cueDefectiveItem.id };
+
+const legacyReviewedPilotCandidate = evaluateFoundationsPilotCandidate({
+  item: cueDefectiveItem,
+  reviews: [cueDefectiveReview],
+  referenceIds: new Set(['REF-TEST-001'])
+});
+assert.equal(legacyReviewedPilotCandidate.eligible, false);
+assert.ok(legacyReviewedPilotCandidate.highSeverityFlags.some((flag) => flag.code === 'keyed-choice-uniquely-longest'));
+assert.ok(legacyReviewedPilotCandidate.failures.some((failure) => failure.startsWith('current item QA has high-severity construction flags:')));
+
+const legacyReviewedActivation = evaluateAssessmentItemPromotion({
+  item: cueDefectiveItem,
+  reviews: [cueDefectiveReview],
+  referenceIds: new Set(['REF-TEST-001']),
+  pilotRecords: [cueDefectivePilot],
+  pilotPolicy
+});
+assert.equal(legacyReviewedActivation.eligible, false);
+assert.ok(legacyReviewedActivation.highSeverityFlags.some((flag) => flag.code === 'keyed-choice-uniquely-longest'));
+assert.ok(legacyReviewedActivation.failures.some((failure) => failure.startsWith('current item QA has high-severity construction flags:')));
+assert.equal(legacyReviewedActivation.promoted, null);
 
 console.log('Guarded assessment item promotion tests passed.');
