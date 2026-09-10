@@ -1,0 +1,34 @@
+name: Academy API OpenAPI parity
+
+on:
+  pull_request:
+    paths:
+      - 'apps/api/src/**'
+      - 'openapi/**'
+      - 'scripts/test-api-openapi-parity.mjs'
+      - '.github/workflows/api-openapi-parity.yml'
+  push:
+    branches:
+      - dev
+      - staging
+      - main
+    paths:
+      - 'apps/api/src/**'
+      - 'openapi/**'
+      - 'scripts/test-api-openapi-parity.mjs'
+      - '.github/workflows/api-openapi-parity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  api-openapi-parity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Compare implemented routes with canonical OpenAPI operations
+        run: node scripts/test-api-openapi-parity.mjs
