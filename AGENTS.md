@@ -26,6 +26,18 @@ For THC Academy curriculum, occupational roles, course/module/lesson content, qu
 
 `skills/thc-academy-builder/SKILL.md`
 
+## Continuous authoring policy
+
+The Academy is an actively expanding curriculum until the project owner explicitly declares the requested catalog/content scope complete.
+
+- Do not stop curriculum or assessment authoring merely because review, pilot, publication, staging, credential-signing, or production-readiness gates are unresolved.
+- Ordinary edits and version bumps must remain possible while content is being built. Historical review records may become stale and remain valid history; stale review evidence must not block authoring-mode validation.
+- Structural integrity, schema validity, source/reference existence, assessment answer correctness, security boundaries, and deterministic runtime tests remain required during authoring.
+- Review/readiness reports are information for later release preparation. They are not permission checks for creating, expanding, correcting, or reorganizing course material.
+- The worker must prioritize unfinished substantive content and catalog expansion before post-authoring review work.
+- Never mark substantive content or catalog expansion complete merely because a current batch is internally complete. Completion means the intended Academy scope has actually been built.
+- The project owner may request changes at any time; make the correction in the canonical source objects and let derived registries/reports update from those sources.
+
 ## Repository operations
 
 For this repository's branches, pull requests, merges, conflicts, CI/CD, GitHub Actions, stale branches, release promotion, cleanup, or Academy deployment flow, use:
@@ -41,7 +53,7 @@ Use specialist repository skills when appropriate:
 - `dev -> staging -> main` Academy release promotion: `skills/github-release-promotion-manager/SKILL.md`
 - post-write convergence: `skills/github-post-push-cleanup/SKILL.md`
 
-After any repository write, verify the newest SHA, CI, PR targeting, mergeability, generated-file drift, review blockers, target health, and duplicate/superseded work before considering the cycle complete.
+After any repository write, verify the newest SHA, CI, PR targeting, mergeability, generated-file drift, release blockers, target health, and duplicate/superseded work before considering the cycle complete.
 
 ## QA policy
 
