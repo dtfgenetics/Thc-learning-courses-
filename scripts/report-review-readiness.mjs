@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const registry = JSON.parse(fs.readFileSync(path.join(root, 'registry/cultivation-foundations.json'), 'utf8'));
+const globalRegistry = JSON.parse(fs.readFileSync(path.join(root, 'registry/curriculum.json'), 'utf8'));
+const foundationsRegistry = JSON.parse(fs.readFileSync(path.join(root, 'registry/cultivation-foundations.json'), 'utf8'));
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -13,10 +14,16 @@ function readDirJson(rel) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter((name) => name.endsWith('.json'))
+    .sort()
     .map((name) => readJson(path.join(rel, name)));
 }
 
+const courses = new Map(readDirJson('content/courses').map((data) => [data.id, data]));
+const modules = new Map(readDirJson('content/modules').map((data) => [data.id, data]));
+const lessons = new Map(readDirJson('content/lessons').map((data) => [data.id, data]));
+const references = new Map(readDirJson('content/references').map((data) => [data.id, data]));
 const reviews = readDirJson('content/reviews');
+
 function hasApprovedReview(objectId, objectVersion, reviewType) {
   return reviews.some((review) =>
     review.objectId === objectId &&
@@ -26,86 +33,112 @@ function hasApprovedReview(objectId, objectVersion, reviewType) {
   );
 }
 
-const rows = [];
-const seenLessons = new Set();
-for (const domain of registry.domains ?? []) {
-  const module = readJson(path.join('content/modules', `${domain.module}.json`));
-  for (const lessonId of module.lessons ?? []) {
-    if (seenLessons.has(lessonId)) continue;
-    seenLessons.add(lessonId);
+function lessonRow(lesson) {
+  const substantive = Boolean(
+    lesson.content?.overview &&
+    (lesson.content?.vocabulary?.length ?? 0) > 0 &&
+    (lesson.content?.sections?.length ?? 0) >= 2 &&
+    (lesson.content?.commonMistakes?.length ?? 0) > 0 &&
+    lesson.content?.practicalApplication &&
+    lesson.content?.summary
+  );
 
-    const lesson = readJson(path.join('content/lessons', `${lessonId}.json`));
-    const substantive = Boolean(
-      lesson.content?.overview &&
-      (lesson.content?.vocabulary?.length ?? 0) > 0 &&
-      (lesson.content?.sections?.length ?? 0) >= 2 &&
-      (lesson.content?.commonMistakes?.length ?? 0) > 0 &&
-      lesson.content?.practicalApplication &&
-      lesson.content?.summary
-    );
+  const referenceStatuses = (lesson.references ?? []).map((id) => {
+    const ref = references.get(id);
+    if (!ref) throw new Error(`Review readiness cannot resolve reference ${id} for ${lesson.id}`);
+    return { id, status: ref.status, evidenceLevel: ref.evidenceLevel };
+  });
+  const referencesReady = referenceStatuses.length > 0 && referenceStatuses.every((ref) => ref.status !== 'needs-authoritative-source' && ref.evidenceLevel !== 'unverified');
 
-    const referenceStatuses = (lesson.references ?? []).map((id) => {
-      const ref = readJson(path.join('content/references', `${id}.json`));
-      return { id, status: ref.status, evidenceLevel: ref.evidenceLevel };
-    });
-    const referencesReady = referenceStatuses.length > 0 && referenceStatuses.every((ref) => ref.status !== 'needs-authoritative-source' && ref.evidenceLevel !== 'unverified');
-    const scientificApproved = hasApprovedReview(lesson.id, lesson.version, 'scientific');
-    const editorialApproved = hasApprovedReview(lesson.id, lesson.version, 'editorial');
-
-    rows.push({
-      domain: domain.id,
-      module: module.id,
-      lesson: lesson.id,
-      lessonVersion: lesson.version,
-      lessonStatus: lesson.status,
-      substantiveContent: substantive,
-      referencesReady,
-      scientificApproved,
-      editorialApproved,
-      references: referenceStatuses
-    });
-  }
+  return {
+    lesson: lesson.id,
+    lessonVersion: lesson.version,
+    lessonStatus: lesson.status,
+    substantiveContent: substantive,
+    referencesReady,
+    scientificApproved: hasApprovedReview(lesson.id, lesson.version, 'scientific'),
+    editorialApproved: hasApprovedReview(lesson.id, lesson.version, 'editorial'),
+    references: referenceStatuses
+  };
 }
 
-const domainSummary = (registry.domains ?? []).map((domain) => {
-  const domainRows = rows.filter((row) => row.domain === domain.id);
+const registeredLessonIds = new Set(globalRegistry.lessons ?? []);
+const rows = [...registeredLessonIds].sort().map((lessonId) => {
+  const lesson = lessons.get(lessonId);
+  if (!lesson) throw new Error(`Review readiness cannot resolve registered lesson ${lessonId}`);
+  return lessonRow(lesson);
+});
+
+function lessonsForCourse(courseId) {
+  const course = courses.get(courseId);
+  if (!course) throw new Error(`Review readiness cannot resolve course ${courseId}`);
+  const ids = new Set();
+  for (const moduleId of course.modules ?? []) {
+    const module = modules.get(moduleId);
+    if (!module) throw new Error(`Review readiness cannot resolve module ${moduleId} for ${courseId}`);
+    for (const lessonId of module.lessons ?? []) ids.add(lessonId);
+  }
+  return ids;
+}
+
+const courseSummary = (globalRegistry.courses ?? []).map((courseId) => {
+  const ids = lessonsForCourse(courseId);
+  const courseRows = rows.filter((row) => ids.has(row.lesson));
   return {
-    domain: domain.id,
-    lessons: domainRows.length,
-    substantiveLessons: domainRows.filter((row) => row.substantiveContent).length,
-    referenceReadyLessons: domainRows.filter((row) => row.referencesReady).length,
-    scientificallyReviewedLessons: domainRows.filter((row) => row.scientificApproved).length,
-    editoriallyReviewedLessons: domainRows.filter((row) => row.editorialApproved).length
+    course: courseId,
+    lessons: courseRows.length,
+    substantiveLessons: courseRows.filter((row) => row.substantiveContent).length,
+    referenceReadyLessons: courseRows.filter((row) => row.referencesReady).length,
+    scientificallyReviewedLessons: courseRows.filter((row) => row.scientificApproved).length,
+    editoriallyReviewedLessons: courseRows.filter((row) => row.editorialApproved).length
   };
 });
 
+const foundationsLessonIds = new Set();
+for (const domain of foundationsRegistry.domains ?? []) {
+  const module = modules.get(domain.module);
+  if (!module) throw new Error(`Review readiness cannot resolve Foundations module ${domain.module}`);
+  for (const lessonId of module.lessons ?? []) foundationsLessonIds.add(lessonId);
+}
+const foundationsRows = rows.filter((row) => foundationsLessonIds.has(row.lesson));
+const foundationsScientificApproved = foundationsRows.filter((row) => row.scientificApproved).length;
+const foundationsEditorialApproved = foundationsRows.filter((row) => row.editorialApproved).length;
+const foundationsScientificGate = foundationsRows.length > 0 && foundationsScientificApproved === foundationsRows.length;
+const foundationsEditorialGate = foundationsRows.length > 0 && foundationsEditorialApproved === foundationsRows.length;
+
 const scientificApprovedCount = rows.filter((row) => row.scientificApproved).length;
 const editorialApprovedCount = rows.filter((row) => row.editorialApproved).length;
-const actualScientificGate = rows.length > 0 && scientificApprovedCount === rows.length;
-const actualEditorialGate = rows.length > 0 && editorialApprovedCount === rows.length;
-
 const summary = {
-  domains: domainSummary.length,
+  scope: 'global',
+  release: globalRegistry.release,
+  courses: courseSummary.length,
   lessons: rows.length,
   substantiveLessons: rows.filter((row) => row.substantiveContent).length,
   referencesReadyLessons: rows.filter((row) => row.referencesReady).length,
   scientificallyReviewedLessons: scientificApprovedCount,
   editoriallyReviewedLessons: editorialApprovedCount,
-  scientificReviewGate: actualScientificGate,
-  editorialReviewGate: actualEditorialGate,
-  registryScientificReviewGate: registry.gates?.allLessonsScientificallyReviewed ?? false,
-  registryEditorialReviewGate: registry.gates?.allLessonsEditoriallyReviewed ?? false,
-  publicationReady: registry.publicationReady === true
+  scientificReviewGate: rows.length > 0 && scientificApprovedCount === rows.length,
+  editorialReviewGate: rows.length > 0 && editorialApprovedCount === rows.length,
+  foundations: {
+    lessons: foundationsRows.length,
+    scientificallyReviewedLessons: foundationsScientificApproved,
+    editoriallyReviewedLessons: foundationsEditorialApproved,
+    scientificReviewGate: foundationsScientificGate,
+    editorialReviewGate: foundationsEditorialGate,
+    registryScientificReviewGate: foundationsRegistry.gates?.allLessonsScientificallyReviewed ?? false,
+    registryEditorialReviewGate: foundationsRegistry.gates?.allLessonsEditoriallyReviewed ?? false,
+    publicationReady: foundationsRegistry.publicationReady === true
+  }
 };
 
-console.log(JSON.stringify({ summary, domainSummary, lessons: rows }, null, 2));
+console.log(JSON.stringify({ summary, courseSummary, lessons: rows }, null, 2));
 
-if (registry.gates?.allLessonsHaveSubstantiveContent === true && summary.substantiveLessons !== rows.length) {
-  throw new Error(`Registry claims all lessons have substantive content, but report found ${summary.substantiveLessons}/${rows.length}.`);
+if (foundationsRegistry.gates?.allLessonsHaveSubstantiveContent === true && foundationsRows.filter((row) => row.substantiveContent).length !== foundationsRows.length) {
+  throw new Error(`Foundations registry claims all lessons have substantive content, but the report found ${foundationsRows.filter((row) => row.substantiveContent).length}/${foundationsRows.length}.`);
 }
-if (registry.gates?.allLessonsScientificallyReviewed === true && !actualScientificGate) {
-  throw new Error(`Registry claims scientific review is complete, but approved records exist for ${scientificApprovedCount}/${rows.length} lessons.`);
+if (foundationsRegistry.gates?.allLessonsScientificallyReviewed === true && !foundationsScientificGate) {
+  throw new Error(`Foundations registry claims scientific review is complete, but approved records exist for ${foundationsScientificApproved}/${foundationsRows.length} lessons.`);
 }
-if (registry.gates?.allLessonsEditoriallyReviewed === true && !actualEditorialGate) {
-  throw new Error(`Registry claims editorial review is complete, but approved records exist for ${editorialApprovedCount}/${rows.length} lessons.`);
+if (foundationsRegistry.gates?.allLessonsEditoriallyReviewed === true && !foundationsEditorialGate) {
+  throw new Error(`Foundations registry claims editorial review is complete, but approved records exist for ${foundationsEditorialApproved}/${foundationsRows.length} lessons.`);
 }

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { catalogAttestationApproval } from './catalog-review-attestation.mjs';
+import { execFileSync } from 'node:child_process';
 
 const root = process.cwd();
 const args = Object.fromEntries(process.argv.slice(2).filter((x) => x.startsWith('--') && x.includes('=')).map((x) => {
@@ -12,6 +12,7 @@ const format = args.format ?? 'json';
 const filterObject = args.object ?? null;
 const filterLane = args.lane ?? null;
 const filterState = args.state ?? null;
+const scope = args.scope ?? 'global';
 const validStates = new Set(['approved', 'pending', 'blocked', 'revision-required']);
 if (filterState && !validStates.has(filterState)) {
   throw new Error(`--state must be one of: ${[...validStates].join(', ')}`);
@@ -27,8 +28,16 @@ function readDirJson(rel) {
 }
 function uniq(values) { return [...new Set(values.filter(Boolean))]; }
 
-const registry = readJson('registry/cultivation-foundations.json');
-const modules = new Map(readDirJson('content/modules').map((x) => [x.id, x]));
+function loadQueue() {
+  const stdout = execFileSync(
+    process.execPath,
+    [path.join(root, 'scripts/build-review-queue.mjs'), `--scope=${scope}`],
+    { cwd: root, encoding: 'utf8' }
+  );
+  return JSON.parse(stdout);
+}
+
+const queue = loadQueue();
 const lessons = new Map(readDirJson('content/lessons').map((x) => [x.id, x]));
 const assessments = new Map(readDirJson('content/assessments').map((x) => [x.id, x]));
 const questions = new Map(readDirJson('content/questions').map((x) => [x.id, x]));
@@ -37,64 +46,7 @@ const references = new Map(readDirJson('content/references').map((x) => [x.id, x
 const competencies = new Map(readDirJson('content/competencies').map((x) => [x.id, x]));
 const objectives = new Map(readDirJson('content/learning-objectives').map((x) => [x.id, x]));
 const reviews = readDirJson('content/reviews');
-
-function latestReview(objectId, objectVersion, reviewType, objectType) {
-  const explicit = reviews.filter((r) => r.objectId === objectId && String(r.objectVersion) === String(objectVersion) && r.reviewType === reviewType)
-    .sort((a, b) => Date.parse(b.reviewedAt) - Date.parse(a.reviewedAt))[0] ?? null;
-  if (explicit) return explicit;
-  const attestation = catalogAttestationApproval(objectType, reviewType);
-  return attestation ? {
-    id: attestation.id,
-    objectId,
-    objectVersion,
-    reviewType,
-    status: 'approved',
-    reviewerId: attestation.reviewerId,
-    reviewedAt: attestation.reviewedAt,
-    notes: 'Approved by snapshot-bound catalog attestation.'
-  } : null;
-}
-function stateFromReview(review) {
-  if (!review) return 'pending';
-  return review.status === 'approved' ? 'approved' : 'revision-required';
-}
-
-const tasks = [];
-const lessonIds = new Set();
-const competencyIds = new Set();
-const assessmentIds = new Set([registry.summativeAssessment].filter(Boolean));
-for (const domain of registry.domains ?? []) {
-  const module = modules.get(domain.module);
-  if (!module) throw new Error(`Review packet builder cannot resolve module ${domain.module}`);
-  for (const lessonId of module.lessons ?? []) lessonIds.add(lessonId);
-  for (const competencyId of domain.competencies ?? []) competencyIds.add(competencyId);
-  if (module.assessment) assessmentIds.add(module.assessment);
-}
-
-const scopedAssessments = [...assessments.values()].filter((assessment) => assessmentIds.has(assessment.id));
-const explicitlyReferencedQuestionIds = new Set(scopedAssessments.flatMap((assessment) => assessment.items ?? []));
-const scopedQuestions = [...questions.values()].filter((item) =>
-  explicitlyReferencedQuestionIds.has(item.id) ||
-  (competencyIds.has(item.competency) && ['summative', 'credential'].includes(item.purpose))
-);
-
-for (const lessonId of [...lessonIds].sort()) {
-  const lesson = lessons.get(lessonId);
-  if (!lesson) throw new Error(`Review packet builder cannot resolve lesson ${lessonId}`);
-  const scientific = latestReview(lesson.id, lesson.version, 'scientific', 'lesson');
-  const scientificState = stateFromReview(scientific);
-  tasks.push({lane:'lesson-scientific',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'scientific',state:scientificState,latestReviewId:scientific?.id ?? null});
-  const editorial = latestReview(lesson.id, lesson.version, 'editorial', 'lesson');
-  tasks.push({lane:'lesson-editorial',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'editorial',state:scientificState === 'approved' ? stateFromReview(editorial) : 'blocked',blockedBy:scientificState === 'approved' ? null : 'scientific-approval',latestReviewId:editorial?.id ?? null});
-}
-for (const assessment of [...scopedAssessments].sort((a,b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(assessment.id, assessment.version, 'assessment', 'assessment');
-  tasks.push({lane:'assessment-definition',objectType:'assessment',objectId:assessment.id,objectVersion:assessment.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
-}
-for (const item of [...scopedQuestions].sort((a,b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(item.id, item.version, 'assessment', 'question');
-  tasks.push({lane:item.purpose === 'formative' ? 'formative-item' : 'credential-item',objectType:'question',objectId:item.id,objectVersion:item.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
-}
+const tasks = queue.tasks ?? [];
 
 function sourceFor(task) {
   if (task.objectType === 'lesson') return lessons.get(task.objectId);
@@ -161,8 +113,12 @@ function packetFor(task) {
   const matchedClaims = claimMatches(task, competencyIds, refIds);
   const history = reviews.filter((r) => r.objectId === task.objectId && String(r.objectVersion) === String(task.objectVersion)).sort((a,b) => Date.parse(a.reviewedAt) - Date.parse(b.reviewedAt));
   return {
-    packetVersion: '1.0.0',
-    releaseScope: { course: registry.course, version: registry.version },
+    packetVersion: '1.1.0',
+    releaseScope: {
+      scope: queue.scope,
+      curriculum: queue.curriculum,
+      version: queue.curriculumVersion
+    },
     task,
     source,
     mappings,
@@ -184,14 +140,11 @@ if (filterState) selected = selected.filter((t) => t.state === filterState);
 if (filterObject && selected.length === 0) throw new Error(`No review task found for ${filterObject}`);
 const packets = selected.map(packetFor);
 const summary = {
-  curriculum: registry.course,
-  curriculumVersion: registry.version,
+  scope: queue.scope,
+  curriculum: queue.curriculum,
+  curriculumVersion: queue.curriculumVersion,
   filters: { object: filterObject, lane: filterLane, state: filterState },
-  releaseScope: {
-    competencies: competencyIds.size,
-    assessments: scopedAssessments.length,
-    questions: scopedQuestions.length
-  },
+  releaseScope: queue.releaseScope,
   taskCount: selected.length,
   packetCount: packets.length,
   states: Object.fromEntries(['approved','pending','blocked','revision-required'].map((state) => [state, selected.filter((t) => t.state === state).length])),
@@ -201,7 +154,7 @@ const summary = {
 
 function markdown(packet) {
   const src = packet.source;
-  const lines = [`# Review packet: ${packet.task.objectId}`, '', `- Release: ${packet.releaseScope.course}@${packet.releaseScope.version}`, `- Lane: ${packet.task.lane}`, `- Review type: ${packet.task.reviewType}`, `- Version: ${packet.task.objectVersion}`, `- Queue state: ${packet.task.state}`, ''];
+  const lines = [`# Review packet: ${packet.task.objectId}`, '', `- Scope: ${packet.releaseScope.scope}`, `- Curriculum: ${packet.releaseScope.curriculum}@${packet.releaseScope.version}`, `- Lane: ${packet.task.lane}`, `- Review type: ${packet.task.reviewType}`, `- Version: ${packet.task.objectVersion}`, `- Queue state: ${packet.task.state}`, ''];
   if (src.title) lines.push(`## ${src.title}`, '');
   lines.push('## Traceability', ...packet.mappings.competencies.map((x) => `- Competency: ${x.id}${x.title ? ` — ${x.title}` : ''}`), ...packet.mappings.objectives.map((x) => `- Objective: ${x.id}${x.statement ? ` — ${x.statement}` : ''}`), '');
   lines.push('## Evidence', ...packet.evidence.map((x) => `- ${x.id}: ${x.title ?? 'Untitled'} [${x.status ?? 'unknown'}; level ${x.evidenceLevel ?? 'n/a'}]${x.url ? ` — ${x.url}` : ''}`), '');
