@@ -20,6 +20,7 @@ expect(/<aside[^>]*aria-label="Course catalog"/i, html, 'course catalog must hav
 expect(/<nav[^>]*aria-label="Academy courses"/i, html, 'course navigation must have an accessible name');
 expect(/<nav[^>]*aria-label="Academy features"/i, html, 'Academy feature navigation must have an accessible name');
 expect(/id="tab-progress"[^>]*aria-pressed="false"/i, html, 'credential progress tab must expose pressed state');
+expect(/id="tab-assessor"[^>]*aria-pressed="false"/i, html, 'assessor practical tab must expose pressed state');
 expect(/<label[^>]*for="course-search"/i, html, 'search field needs an explicit label');
 expect(/id="course-search"[^>]*type="search"/i, html, 'search input must use search semantics');
 expect(/id="lesson-view"[^>]*tabindex="-1"[^>]*aria-live="polite"/i, html, 'lesson panel must be focusable and announce updates');
@@ -30,12 +31,20 @@ expect(/\.search:focus[^\{]*\{/i, styles, 'interactive search focus styling requ
 expect(/\.lesson-link:focus[^\{]*\{/i, styles, 'lesson links need focus styling');
 expect(/@media\s*\(max-width:\s*700px\)/i, governanceStyles, 'governance dashboard needs narrow-screen treatment');
 expect(/\.portal-tab:focus-visible[^\{]*\{/i, portalStyles, 'feature tabs need visible keyboard focus');
+expect(/\.portal-form-field input:focus[^\{]*\{/i, portalStyles, 'credential and assessor form fields need visible focus styling');
+expect(/\.portal-primary-action:focus-visible[^\{]*\{/i, portalStyles, 'assessor submit action needs visible focus styling');
 expect(/\.portal-table-wrap\s*\{[^}]*overflow-x:\s*auto/i, portalStyles, 'credential attempt table must remain horizontally scrollable on narrow screens');
 expect(/@media\s*\(max-width:\s*620px\)/i, portalStyles, 'credential progress view needs narrow-screen treatment');
 expect(/button\.type\s*=\s*'button'/, app, 'dynamic lesson controls must use explicit button type');
 expect(/aria-pressed/, app, 'lesson completion state must expose pressed state');
 expect(/setAttribute\('aria-pressed'/, portal, 'feature tab state must be updated accessibly');
-expect(/credentials:\s*'same-origin'/, portal, 'private learner evidence requests must preserve same-origin authentication');
+expect(/credentials:\s*'same-origin'/, portal, 'private learner and assessor evidence requests must preserve same-origin authentication');
+expect(/credential-progress-select/, portal, 'credential progress must provide a credential selector');
+expect(/renderAssessorWorkspace/, portal, 'assessor workspace must be wired to the portal');
+expect(/result\.setAttribute\('aria-live',\s*'polite'\)/, portal, 'assessor result updates must be announced');
+expect(/learner\.required\s*=\s*true/, portal, 'assessor learner identifier must be required');
+expect(/score\.min\s*=\s*'0'/, portal, 'assessor score must enforce a lower bound');
+expect(/score\.max\s*=\s*'100'/, portal, 'assessor score must enforce an upper bound');
 
 for (const forbidden of [
   /outline\s*:\s*none/i,

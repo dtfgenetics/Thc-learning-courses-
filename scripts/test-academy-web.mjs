@@ -21,6 +21,8 @@ try {
   const homeHtml = await home.text();
   assert.match(homeHtml, /THC Academy/);
   assert.match(homeHtml, /governance-dashboard/);
+  assert.match(homeHtml, /id="tab-progress"/);
+  assert.match(homeHtml, /id="tab-assessor"/);
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
@@ -49,9 +51,22 @@ try {
   const catalogResponse = await fetch(`${base}/api/catalog`);
   assert.equal(catalogResponse.status, 200);
   const catalog = await catalogResponse.json();
+  assert.equal(catalog.mode, 'staging-preview');
   assert.ok(Array.isArray(catalog.courses) && catalog.courses.length > 0);
+  assert.ok(Array.isArray(catalog.credentials) && catalog.credentials.length > 0, 'staging catalog must expose credential definitions');
+  assert.ok(Array.isArray(catalog.assessorPerformanceAssessments) && catalog.assessorPerformanceAssessments.length > 0, 'staging catalog must expose assessor performance definitions');
+  const specialistCredential = catalog.credentials.find((credential) => credential.id === 'CRED-CANOPY-FLOWERING-ADVANCED-001');
+  assert.ok(specialistCredential, 'specialist credential must be discoverable in staging');
+  assert.equal(specialistCredential.status, 'draft');
+  assert.deepEqual(specialistCredential.eligibility.requiredPerformanceAssessments, ['PRACTICAL-SPEC-CANOPY-FLOWERING-001']);
+  assert.equal(specialistCredential.eligibility.requireVerifiedPerformanceEvidence, true);
+  const specialistPractical = catalog.assessorPerformanceAssessments.find((definition) => definition.id === 'PRACTICAL-SPEC-CANOPY-FLOWERING-001');
+  assert.ok(specialistPractical, 'specialist practical must be discoverable in assessor staging catalog');
+  assert.ok(Array.isArray(specialistPractical.deliveryModes) && specialistPractical.deliveryModes.length > 0);
+  assert.ok(Array.isArray(specialistPractical.scoring?.domains) && specialistPractical.scoring.domains.length > 0);
+  assert.ok(Array.isArray(specialistPractical.criticalErrors) && specialistPractical.criticalErrors.length > 0);
   const serializedCatalog = JSON.stringify(catalog);
-  for (const forbidden of ['correctAnswer', 'answerKey', 'scoringKey', 'content/questions']) assert.equal(serializedCatalog.includes(forbidden), false, `catalog leaked ${forbidden}`);
+  for (const forbidden of ['correctAnswer', 'answerKey', 'scoringKey', 'content/questions', 'selectedChoiceIndex', 'subjectHash']) assert.equal(serializedCatalog.includes(forbidden), false, `catalog leaked ${forbidden}`);
 
   const lessonId = catalog.courses.flatMap((course) => course.modules).flatMap((module) => module.lessons).map((lesson) => lesson.id).find(Boolean);
   const lessonResponse = await fetch(`${base}/api/lessons/${lessonId}`);
@@ -69,9 +84,18 @@ try {
   const base = `http://127.0.0.1:${production.address().port}`;
   const governanceResponse = await fetch(`${base}/api/staging/governance`);
   assert.equal(governanceResponse.status, 404, 'staging governance endpoint must disappear in production');
+
+  const catalogResponse = await fetch(`${base}/api/catalog`);
+  assert.equal(catalogResponse.status, 200);
+  const catalog = await catalogResponse.json();
+  assert.equal(catalog.mode, 'published-only');
+  assert.ok(Array.isArray(catalog.credentials));
+  assert.ok(catalog.credentials.every((credential) => credential.status === 'published'), 'production catalog may expose only published credentials');
+  assert.deepEqual(catalog.assessorPerformanceAssessments, [], 'assessor rubric definitions must not be exposed through the public production catalog');
+  assert.equal(catalog.credentials.some((credential) => credential.id === 'CRED-CANOPY-FLOWERING-ADVANCED-001'), false, 'draft specialist credential must not leak into production catalog');
 } finally {
   production.close();
   await once(production, 'close');
 }
 
-console.log('Academy learner web and staging governance tests passed.');
+console.log('Academy learner web, credential catalog, assessor staging, and governance tests passed.');
