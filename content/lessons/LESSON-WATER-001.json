@@ -1,7 +1,7 @@
 {
   "id": "LESSON-WATER-001",
   "title": "Water Quality, pH, EC and Irrigation Context",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "status": "approved",
   "competencies": [
     "COMP-WATER-001"
@@ -34,6 +34,10 @@
       {
         "term": "Root-zone moisture",
         "definition": "The amount and spatial distribution of water available in the medium occupied by roots."
+      },
+      {
+        "term": "Alkalinity",
+        "definition": "The acid-neutralizing capacity of water, which influences how strongly source water resists a change in pH."
       }
     ],
     "sections": [
@@ -64,16 +68,25 @@
         "references": [
           "REF-IRRIGATION-001"
         ]
+      },
+      {
+        "title": "Alkalinity affects how pH behaves over time",
+        "body": "Two water sources can show similar measured pH but respond differently when acid, fertilizer, or substrate buffering is introduced because their alkalinity differs. For management decisions, pH should therefore be interpreted together with source-water history and acid-neutralizing capacity rather than treated as a complete description of water chemistry.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
       }
     ],
     "workedExamples": [
       "If two containers receive equal volume but one remains saturated much longer, investigate media properties, drainage, and delivery pattern before assuming nutrient concentration is the cause.",
-      "If source-water EC rises unexpectedly, compare the new source measurement with previous baselines before changing the nutrient program."
+      "If source-water EC rises unexpectedly, compare the new source measurement with previous baselines before changing the nutrient program.",
+      "If a familiar pH adjustment suddenly requires a different amount of acid after the water source changes, compare source alkalinity and other water-quality records before changing the irrigation target."
     ],
     "commonMistakes": [
       "Assuming identical irrigation volume creates identical root-zone moisture conditions.",
       "Treating EC as a direct measurement of every individual nutrient concentration.",
-      "Adjusting fertilizer before confirming whether the water source or delivery system changed."
+      "Adjusting fertilizer before confirming whether the water source or delivery system changed.",
+      "Treating pH alone as a complete description of source-water chemistry without considering alkalinity or dissolved-ion history."
     ],
     "practicalApplication": "Create a repeatable water-check routine that records source pH and EC, applied-solution measurements, delivery uniformity, and root-zone moisture observations. Use trends from the same measurement method to decide what needs investigation next.",
     "summary": "Water quality, pH, EC, irrigation delivery, and root-zone behavior are connected but distinct. Strong water management measures each part of the system and interprets the numbers together rather than relying on volume, pH, or EC alone."

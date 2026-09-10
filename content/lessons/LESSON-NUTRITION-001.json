@@ -1,7 +1,7 @@
 {
   "id": "LESSON-NUTRITION-001",
   "title": "Essential Nutrients, Availability and Diagnostic Context",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "status": "approved",
   "competencies": [
     "COMP-NUTRITION-001"
@@ -34,6 +34,10 @@
       {
         "term": "Availability",
         "definition": "The fraction of a nutrient that is present in a chemical and root-zone context where the plant can acquire and use it."
+      },
+      {
+        "term": "Nutrient mobility",
+        "definition": "The relative ability of a nutrient to be redistributed within the plant from older tissues toward developing or actively growing tissues."
       }
     ],
     "sections": [
@@ -64,16 +68,25 @@
         "references": [
           "REF-NUTRITION-001"
         ]
+      },
+      {
+        "title": "Symptom position can help organize a diagnosis",
+        "body": "Where a symptom begins can provide useful context because nutrients differ in how readily they are redistributed within the plant. Patterns that begin on older tissue may suggest a different diagnostic pathway than symptoms first appearing on newer growth, but mobility patterns are not proof by themselves and must still be interpreted with root-zone measurements, plant stage, and symptom progression.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
       }
     ],
     "workedExamples": [
       "A plant shows deficiency-like symptoms while root-zone EC is already high. Before adding more fertilizer, check pH, irrigation behavior, root health, and possible nutrient interactions.",
-      "If older and younger leaves show different patterns, document where symptoms begin and how they progress because nutrient mobility and developmental context can help narrow the investigation."
+      "If older and younger leaves show different patterns, document where symptoms begin and how they progress because nutrient mobility and developmental context can help narrow the investigation.",
+      "If new growth develops a symptom while older leaves remain relatively normal, use tissue age as one piece of evidence, then verify pH, EC, root-zone condition, and recent nutrient changes before choosing a corrective action."
     ],
     "commonMistakes": [
       "Diagnosing a nutrient deficiency from leaf color alone.",
       "Increasing all fertilizer components when root-zone EC is already elevated.",
-      "Ignoring pH, root health, and developmental stage when interpreting nutrient symptoms."
+      "Ignoring pH, root health, and developmental stage when interpreting nutrient symptoms.",
+      "Treating the location of a symptom on old or new growth as definitive proof of one nutrient disorder without confirming the broader root-zone and management context."
     ],
     "practicalApplication": "When a nutrition problem is suspected, record symptom location and progression, measure pH and EC with consistent methods, review irrigation and root-zone conditions, and compare the evidence before changing nutrient concentration. Make one deliberate correction at a time whenever practical so the crop response can be interpreted.",
     "summary": "Nutrient diagnosis requires more than matching leaf symptoms to a chart. Supply, pH, EC, nutrient interactions, root-zone conditions, developmental stage, and crop response should be interpreted together before deciding whether the problem is true deficiency, excess, antagonism, or limited availability."
