@@ -46,8 +46,12 @@ export function taskInstructions(task) {
   };
 }
 
-function loadQueue() {
-  const stdout = execFileSync(process.execPath, [path.join(root, 'scripts/build-review-queue.mjs')], { cwd: root, encoding: 'utf8' });
+function loadQueue(scope = 'global') {
+  const stdout = execFileSync(
+    process.execPath,
+    [path.join(root, 'scripts/build-review-queue.mjs'), `--scope=${scope}`],
+    { cwd: root, encoding: 'utf8' }
+  );
   return JSON.parse(stdout);
 }
 
@@ -55,7 +59,7 @@ const isDirect = process.argv[1] && path.resolve(process.argv[1]) === fileURLToP
 if (isDirect) {
   try {
     const args = parseArgs(process.argv.slice(2));
-    const result = taskInstructions(selectNextReviewTask(loadQueue(), { lane: args.lane ?? null, state: args.state ?? null }));
+    const result = taskInstructions(selectNextReviewTask(loadQueue(args.scope ?? 'global'), { lane: args.lane ?? null, state: args.state ?? null }));
     if (!result) {
       console.log(JSON.stringify({ task: null, message: 'No actionable review task matches the requested filters.' }, null, 2));
     } else {
