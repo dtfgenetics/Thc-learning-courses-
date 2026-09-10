@@ -1,10 +1,10 @@
 {
   "system": "THC Academy",
   "version": "0.1.0",
-  "updatedAt": "2026-09-07",
+  "updatedAt": "2026-09-10",
   "productionReady": false,
   "areas": {
-    "curriculum": {"status":"approved","gates":{"substantiveContentComplete":true,"scientificReviewComplete":true,"editorialReviewComplete":true}},
+    "curriculum": {"status":"authoring-complete-awaiting-human-review","gates":{"substantiveContentComplete":true,"scientificReviewComplete":false,"editorialReviewComplete":false}},
     "assessment": {"status":"review-in-progress","gates":{"blueprintComplete":true,"developmentFormGeneration":true,"minimumActivePoolComplete":false,"humanAssessmentReviewComplete":false,"pilotStatisticsComplete":false}},
     "runtime": {"status":"foundation","gates":{"serverSideAttemptStateMachine":true,"serverSideScoringCore":true,"competencyResultCore":true,"postgresSchemaDefined":true,"productionPersistenceAdapter":true,"authenticationIntegrated":true,"authorizationIntegrated":true}},
     "credentials": {"status":"implementation-verified-awaiting-production-keys","gates":{"deterministicEligibility":true,"testIssuance":true,"stateMachine":true,"privacySafeVerificationProjection":true,"issuerContractImplemented":true,"signingImplementationTested":true,"productionIssuerIdentity":false,"productionSigning":false,"revocationPersistence":true}},
