@@ -10,10 +10,10 @@
   "type": "scenario",
   "stem": "A flowering room is programmed for a consistent light-dark schedule, but a door is repeatedly opened during the intended dark interval. Which conclusion is best supported?",
   "choices": [
-    "The programmed timer is the only information that matters",
-    "Door openings can only affect root-zone moisture",
-    "The actual light environment no longer matches the intended photoperiod, so the interruption should be investigated and corrected",
-    "Any brief light exposure guarantees permanent crop failure"
+    "Rely on the timer record because scheduled shutoff is sufficient evidence that the intended photoperiod was maintained",
+    "Treat the door openings mainly as airflow disturbances because low-duration light exposure is unlikely to affect photoperiod signaling",
+    "Treat the actual dark interval as interrupted, then identify, correct, and document the unintended light exposure",
+    "Classify the crop as irreversibly damaged by the dark-period exposure and plan harvest based on that assumption"
   ],
   "correct": 2,
   "rationale": "Photoperiod-sensitive development responds to the light environment the plant actually experiences, not merely the timer setting. Unintended light during the intended dark interval warrants investigation without assuming a single exposure guarantees a specific outcome.",
