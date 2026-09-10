@@ -5,6 +5,7 @@ import { catalogAttestationApproval, catalogAttestationStatus } from './catalog-
 const root = process.cwd();
 const human = process.argv.includes('--human');
 const check = process.argv.includes('--check');
+const authoringCheck = process.argv.includes('--authoring-check');
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -232,9 +233,13 @@ if (human) {
   console.log(JSON.stringify(report, null, 2));
 }
 
-if (check) {
-  if (!report.stagingUsable) process.exit(1);
+if (check || authoringCheck) {
   if (report.inventory.courses < 1 || report.inventory.lessons < 1 || report.inventory.assessments < 1) process.exit(1);
+  if (report.structure.coursesMissingFinalAssessment.length > 0 || report.structure.modulesMissingAssessment.length > 0) process.exit(1);
+}
+
+if (check && !authoringCheck) {
+  if (!report.stagingUsable) process.exit(1);
   if (assessmentReviewReadinessDrift) {
     console.error(`Assessment review readiness drift: registry declares ${declaredHumanAssessmentReviewComplete}, release-scoped evidence resolves ${actualHumanAssessmentReviewComplete} with ${pendingAssessment} pending review(s).`);
     process.exit(1);
