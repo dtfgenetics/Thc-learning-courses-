@@ -1,288 +1,107 @@
 # Development Debugger Skill
 
 ## Purpose
-Use this skill to diagnose, reproduce, repair, and verify development defects in this repository and the deployed DTF Seeds web experience. It is the source/runtime/browser-quality specialist that complements the GitHub Orchestrator and GitHub Actions Doctor.
+Use this skill to diagnose, reproduce, repair, and verify source, runtime, route, API, deployment, asset, accessibility, performance, and visual defects in the DTF Seeds repositories and deployed web experience.
 
-Use it for:
-- application build or runtime failures;
-- broken pages, routes, links, forms, tools, games, or interactive features;
-- browser console errors and unhandled exceptions;
-- failed or malformed network requests;
-- layout/rendering regressions;
-- responsive/mobile defects;
-- accessibility failures;
-- performance regressions;
-- SEO or best-practice regressions;
-- flaky UI behavior;
-- visual regressions;
-- production-vs-repository mismatches;
-- requests to debug, test, audit, or improve dtfseeds.com.
+## Required QA policy
+Routine QA is deterministic and lightweight. Prefer Node-based tests, static/package validation, build checks, API and persistence tests, HTTP/HTML route checks, asset validation, approved-reference image inspection, and Lighthouse.
 
-## Relationship to other repository skills
+Do not add a browser automation framework to routine development, repository dependencies, project skills, or CI. A final-release browser check is optional only when explicitly requested for that release and must remain isolated from the normal toolchain.
 
-- `skills/github-orchestrator/SKILL.md` owns repository lifecycle, branch/PR convergence, merges, promotion, and broad repo execution.
-- `skills/github-actions-doctor/SKILL.md` owns GitHub Actions workflow diagnosis, jobs, logs, reruns, permissions, triggers, and CI plumbing.
-- `skills/dev-debugger/SKILL.md` owns source/runtime/browser reproduction and product-quality diagnosis.
-- `skills/github-post-push-cleanup/SKILL.md` must run after every repository write.
-
-When a CI failure is caused by a real application defect, Actions Doctor identifies the failing job and Dev Debugger reproduces and repairs the application defect. When Dev Debugger changes repository files, return control to the Orchestrator and run post-push cleanup.
+## Relationship to other skills
+- `skills/github-orchestrator/SKILL.md` owns branch, PR, merge, promotion, and repository lifecycle.
+- `skills/github-actions-doctor/SKILL.md` owns GitHub Actions diagnosis and CI plumbing.
+- `skills/pixel-perfect-visual-qa/SKILL.md` owns visual fidelity and reference comparison.
+- `skills/lighthouse-site-auditor/SKILL.md` owns Lighthouse measurement.
+- `skills/github-post-push-cleanup/SKILL.md` runs after every repository write.
 
 ## Core debugging loop
-
-1. Identify the exact failing surface: commit, branch, route, component, API, game, page, device, or deployment.
-2. Reproduce before changing code whenever practical.
-3. Capture evidence: error text, stack trace, console output, failed request, DOM state, screenshot, trace, Lighthouse audit, or test failure.
-4. Reduce the failure to the smallest deterministic reproduction.
-5. Classify the root cause.
-6. Repair the source of the defect, not the symptom.
-7. Add or improve regression coverage.
-8. Re-run the narrow test first.
-9. Run the wider relevant suite.
-10. Run browser and Lighthouse verification when web-facing behavior changed.
-11. Push only coherent fixes to the canonical branch/PR.
-12. Invoke post-push cleanup and validate the newest SHA.
+1. Identify the exact failing commit, route, component, API, game, page, asset, or deployment.
+2. Reproduce with the smallest deterministic test practical.
+3. Capture concrete evidence: error text, stack trace, HTTP response, failed asset, test output, screenshot/reference mismatch, or Lighthouse audit.
+4. Classify the root cause before editing.
+5. Repair the causal layer rather than suppressing the symptom.
+6. Add the smallest stable regression test that would have caught the defect.
+7. Run the narrow test, then the wider relevant suite.
+8. For web-facing work, run route/asset health checks and Lighthouse; perform visual-reference review when appearance changed.
+9. Push only coherent fixes through the normal branch/PR flow.
+10. Run post-push cleanup and verify the newest SHA.
 
 ## Failure classes
-
 Classify defects as one or more of:
-- syntax/type/module error;
-- build/bundle error;
+- syntax/type/module or build error;
 - dependency/runtime mismatch;
-- route/navigation error;
-- hydration/rendering error;
-- state-management bug;
-- event/interaction bug;
-- async/race/timing defect;
-- API contract or data-shape mismatch;
-- authentication/authorization/session defect;
+- route/navigation or broken-link error;
+- rendering/hydration/state/interaction defect;
+- API/data-shape/auth/session defect;
 - persistence/database contract defect;
-- browser compatibility defect;
 - responsive/layout/overflow defect;
 - visual asset/font/image defect;
 - accessibility defect;
 - performance/Core Web Vitals defect;
 - SEO/metadata/crawlability defect;
-- broken link or missing asset;
-- console warning/error;
-- network failure or unexpected status;
-- caching/service-worker/CDN defect;
-- environment/configuration mismatch;
+- failed first-party request or missing asset;
+- caching/CDN/environment mismatch;
 - production-vs-source drift;
-- flaky test or unstable external dependency.
+- flaky or unstable test/dependency.
 
-## Playwright is the default browser debugger
+## Site-wide deterministic route audit
+For `https://dtfseeds.com`, build the route inventory from sitemap data, repository routes, server-returned internal links, navigation/footer links, known game/tool/content registries, canonical URLs, and intentional redirects.
 
-Use Playwright for real-browser validation. Prefer Playwright locators and web-first assertions over arbitrary sleeps. Run the same critical user journeys on Chromium, Firefox, and WebKit when browser compatibility matters, and include mobile emulation for responsive surfaces.
+Use `scripts/discover-public-routes.mjs` followed by `scripts/check-public-route-health.mjs`.
 
-Playwright duties:
-- load every audited page;
-- fail on uncaught page errors;
-- record browser console errors;
-- detect failed document/script/style/image/font/fetch/XHR requests;
-- verify HTTP navigation status where observable;
-- verify major headings and primary content render;
-- exercise navigation, forms, controls, games, and tools;
-- detect links that lead to 4xx/5xx or broken internal routes;
-- capture traces/screenshots/videos on failures where configured;
-- test desktop and mobile layouts;
-- test critical flows across Chromium, Firefox, and WebKit;
-- add regression tests for every repaired browser defect that can be automated.
+The deterministic health pass should detect at minimum:
+- failed navigation/status responses;
+- non-HTML responses where HTML is expected;
+- empty or implausibly thin server output;
+- missing `main`, `role=main`, or `h1` semantics in server HTML;
+- failed first-party image/script/style/source assets;
+- accidental public 4xx/5xx routes.
 
-Do not treat a page as healthy merely because it returns HTTP 200. A page that throws client-side exceptions, fails key requests, renders blank content, or cannot complete its primary task is broken.
+Do not call a page healthy merely because the top-level request returned HTTP 200.
 
-## DTF Seeds site-wide route discovery
+## Lighthouse
+Run Lighthouse against the normalized public route inventory. Required categories are Performance, Accessibility, Best Practices, and SEO. The project target is 100 in every category on every audited public page, but results must be reported truthfully. Never disable a valid audit to manufacture a score.
 
-For `https://dtfseeds.com`, audit every discoverable first-party page, not only the homepage.
-
-Build the route inventory from all available sources:
-1. XML sitemap and sitemap indexes;
-2. repository route definitions;
-3. rendered internal links discovered by Playwright crawling;
-4. navigation/footer links;
-5. known game/tool/content registries;
-6. canonical URLs referenced by the site;
-7. redirects that intentionally resolve to another first-party route.
-
-Normalize URLs before auditing:
-- same-origin only unless explicitly testing an external integration;
-- remove fragments;
-- deduplicate equivalent trailing-slash forms;
-- avoid logout/destructive/account mutation URLs;
-- do not recursively crawl query-string explosions, calendars, faceted navigation, or infinite pagination;
-- preserve meaningful canonical query routes only when they represent distinct product surfaces.
-
-The final audit report must include the discovered route count and identify any route that could not be audited.
-
-## Lighthouse on every page
-
-Run Lighthouse against every normalized public page in the DTF Seeds route inventory. Use Lighthouse CI where practical so results can be asserted and compared over time.
-
-Required categories:
-- Performance;
-- Accessibility;
-- Best Practices;
-- SEO.
-
-Target score: **100 in every Lighthouse category on every audited public page.**
-
-The target is aspirational but enforcement must remain truthful:
-- never hide or disable a valid Lighthouse audit simply to show 100;
-- never remove meaningful functionality solely to raise a score;
-- never label a run "100" unless the actual report is 100;
-- if a third-party dependency makes 100 impossible, document the exact audit, route, dependency, measured score, and remediation path;
-- fix deterministic first-party issues before accepting exceptions;
-- compare against previous results and treat material regressions as defects even when a score remains high.
-
-For performance, also inspect the underlying metrics and opportunities rather than relying only on the category number. Address avoidable render blocking, image inefficiency, JavaScript cost, layout shift, long tasks, caching, unused code, and slow server response where applicable.
-
-## 100-score improvement order
-
-When scores are below 100, prioritize:
-1. broken functionality, console exceptions, failed requests, or missing assets;
-2. accessibility violations that block users;
+Prioritize repairs in this order:
+1. broken functionality, failed requests, and missing assets;
+2. accessibility blockers;
 3. security/best-practice defects;
-4. severe performance bottlenecks and Core Web Vitals risk;
+4. severe performance/Core Web Vitals risks;
 5. SEO/crawlability defects;
 6. remaining deterministic Lighthouse deductions;
-7. third-party or environment-limited deductions with explicit evidence.
+7. documented third-party/environment limitations.
 
-Do not chase a cosmetic score while the page's primary task is broken.
-
-## Accessibility standard
-
-Treat automated accessibility checks as a floor, not complete proof of accessibility. Verify at minimum:
-- semantic landmarks and heading structure;
-- accessible names for interactive controls;
-- keyboard operability and visible focus;
-- labels and error messaging for forms;
-- color contrast;
-- image alternatives where meaningful;
-- dialog/menu focus behavior;
-- responsive zoom/reflow behavior;
-- no obvious keyboard traps.
-
-Use Lighthouse findings plus Playwright behavior tests. Add axe or another dedicated accessibility engine when the repository adopts it.
+## Accessibility
+Automated checks are a floor. Review semantic landmarks/headings, accessible names, form labels and errors, keyboard/focus behavior when a final interactive check is explicitly authorized, contrast, meaningful image alternatives, and responsive zoom/reflow behavior.
 
 ## Visual and responsive QA
+Use the strongest approved reference available. Inspect mobile, tablet when relevant, laptop, and wide desktop layouts for clipping, overflow, typography, spacing, image crop/aspect ratio, hidden actions, HUD/canvas collisions, touch targets, and layout shifts.
 
-For every web-facing change, inspect at representative viewport classes:
-- mobile phone;
-- tablet/small desktop when relevant;
-- desktop.
+Use deterministic image comparison or overlay when stable captures are available. Never approve a baseline change solely because a diff exists; understand the changed region first.
 
-Check:
-- clipping/overflow;
-- unreadable text;
-- overlapping controls;
-- broken images/aspect ratios;
-- misplaced modals/tooltips;
-- hidden primary actions;
-- game canvas/HUD collisions;
-- layout shifts;
-- unusable touch targets.
-
-Use screenshot comparisons for stable, high-value surfaces. Do not create brittle visual snapshots for highly dynamic content without masking/stabilizing expected variability.
-
-## Network and console policy
-
-A browser test should capture and classify:
-- `pageerror`/uncaught exceptions;
-- `console.error`;
-- failed network requests;
-- unexpected 4xx/5xx for first-party resources;
-- CORS/CSP/mixed-content failures;
-- missing source assets;
-- API responses that violate expected contracts.
-
-Allowlists must be narrow, documented, and justified. Do not globally ignore console errors or failed requests.
-
-## Broken-link policy
-
-Every internal navigation link discovered during the audit should resolve intentionally:
-- 2xx success;
-- a documented redirect to the correct canonical page;
-- or an intentionally unavailable/authenticated route that the public page should not expose.
-
-Public links to accidental 404/410/5xx pages are defects. Validate image/script/style/font assets as well as document links.
-
-## Production-vs-repository verification
-
-When a defect is reported on dtfseeds.com:
-1. reproduce on production;
-2. identify the repository source expected to own the surface;
-3. determine whether the defect exists in source, deployment, cache/CDN, environment, or routing;
-4. validate the fix against the development/staging target;
-5. promote through the repository lifecycle;
-6. re-run the production Playwright/Lighthouse audit after deployment;
-7. verify the deployed version actually contains the intended fix.
+## Production verification
+When a defect is reported on production:
+1. confirm the production symptom with available HTTP, content, asset, Lighthouse, or supplied visual evidence;
+2. identify the repository source expected to own it;
+3. distinguish source, deployment, cache/CDN, environment, and routing causes;
+4. validate the repair on the development/staging target;
+5. promote through repository lifecycle;
+6. rerun deterministic production route/asset checks and Lighthouse;
+7. confirm the deployed version contains the intended fix.
 
 Never assume a merged commit is live merely because GitHub is green.
 
-## Regression-test requirement
-
-For each repaired deterministic defect, add the smallest stable automated regression test that would have caught it, unless automation is genuinely impractical. If no automated test is added, record why and provide a repeatable manual verification procedure.
-
-## Debugging discipline
-
+## Discipline
 - Prefer evidence over guesses.
-- Change one causal layer at a time when narrowing a defect.
-- Do not "fix" flaky tests by adding arbitrary long sleeps.
-- Do not suppress exceptions, warnings, or failed assertions without proving they are invalid.
-- Do not disable accessibility, Lighthouse, or browser checks to get green CI.
-- Do not broadly upgrade unrelated dependencies during a focused defect repair.
+- Do not suppress warnings or failed assertions without proving they are invalid.
+- Do not broadly upgrade unrelated dependencies during a focused repair.
 - Do not modify generated artifacts by hand when a generator exists.
-- Do not test only Chromium when the defect could be browser-specific.
-- Do not test only desktop when the surface is customer-facing and responsive.
-
-## Suggested execution commands
-
-Use repository-provided scripts when present. Otherwise the expected toolchain is:
-- `npx playwright test` for E2E/browser suites;
-- `npx playwright test --ui` for interactive local diagnosis;
-- `npx playwright test --project=chromium` for a narrow browser pass;
-- `npx playwright test --project=firefox --project=webkit` for compatibility follow-up;
-- `npx playwright install --with-deps` in CI/bootstrap when browsers are not already installed;
-- Lighthouse CI (`lhci autorun`) for repeatable Lighthouse collection/assertions.
-
-Follow the exact repository config once Playwright/Lighthouse files exist; do not invent parallel test frameworks.
-
-## CI expectations
-
-The long-term CI architecture should have separable jobs for:
-- fast source/unit/schema validation;
-- browser smoke/E2E validation;
-- site-wide route/link/console/network audit;
-- Lighthouse CI;
-- release/deployment verification.
-
-Keep expensive full-site audits controllable so ordinary iteration remains practical, but require them before staging/main promotion and after production releases. PRs that change shared layout, navigation, routing, games/tools, or global assets should trigger the relevant browser/Lighthouse suite.
+- Do not replace a failing quality gate with a weaker check merely to get green CI.
+- Keep final-release interactive/browser checking separate from routine development unless the user explicitly authorizes it.
 
 ## Completion standard
-
-Debugging is complete only when:
-- the failure is reproduced or its evidence is understood;
-- root cause is identified;
-- the repair is implemented at the correct layer;
-- regression coverage exists where practical;
-- relevant local/source tests pass;
-- relevant Playwright browser tests pass;
-- affected public pages have been included in Lighthouse/site-wide QA;
-- new console/network/broken-link failures are absent;
-- the newest pushed SHA passes required checks;
-- post-push cleanup has completed;
-- when production was affected, the deployed site is re-verified.
+Debugging is complete only when the root cause is identified, the correct layer is repaired, regression coverage exists where practical, relevant deterministic tests pass, web-facing route/asset and Lighthouse checks pass or have explicit findings, the newest pushed SHA is verified, post-push cleanup is complete, and production is rechecked when affected.
 
 ## Report format
-
-Report factual results:
-- defect/root cause;
-- files or systems changed;
-- regression tests added;
-- Playwright coverage and browsers run;
-- route count audited;
-- Lighthouse scores by route or summarized with attached artifacts;
-- remaining pages below 100 and exact reasons;
-- unresolved external/admin/third-party blockers;
-- next highest-priority defect.
-
-Never report "all pages are 100" without actual per-page Lighthouse evidence.
+Report the defect/root cause, files or systems changed, regression coverage added, deterministic route count and findings when relevant, Lighthouse results, remaining blockers, production verification state, and the next highest-priority defect.
