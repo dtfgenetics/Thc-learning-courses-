@@ -1,13 +1,13 @@
 {
   "id": "LESSON-PLANT-BIO-SEX-003",
   "title": "Sex Expression, Reproductive Morphology and Pollination Risk",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "status": "draft",
   "competencies": ["COMP-PLANT-BIO-001"],
   "learningObjectives": ["LO-PLANT-BIO-SEX-003"],
   "estimatedMinutes": 65,
   "references": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001","REF-SEX-2026-001"],
-  "assessment": null,
+  "assessment": "ASSESS-PLANT-BIO-SEX-003",
   "content": {
     "overview": "Cannabis is predominantly dioecious, but actual reproductive expression must be established from observed floral morphology and repeated through development. Pistillate and staminate structures, mixed or unstable sex expression, pollen release, receptive floral tissue and timing affect breeding, seed production and unintended-pollination risk. Genetics, development, hormonal signaling, treatment and environmental context can all influence sex expression, so a single stressor or seed label should not be presented as a universal predictor.",
     "whyItMatters": "A missed pollen-producing structure can change the outcome of an unseeded-flower crop, while the same structure may be intentional in a breeding program. Correct identification and traceable observation therefore matter more than assumptions about seed type or cultivar reputation.",
@@ -24,8 +24,7 @@
       {"term":"Anther","definition":"The pollen-producing portion of a stamen."},
       {"term":"Stigma","definition":"Pollen-receptive tissue of the pistillate reproductive structure."},
       {"term":"Pollination","definition":"Transfer of pollen to receptive female reproductive tissue."},
-      {"term":"Fertilization","definition":"Fusion of compatible gametes after successful pollination, initiating seed development."
-      }
+      {"term":"Fertilization","definition":"Fusion of compatible gametes after successful pollination, initiating seed development."}
     ],
     "sections": [
       {
@@ -116,7 +115,7 @@
         "deliveryModes": ["simulation","supervised-lab","workplace","paper-data-exercise"]
       }
     ],
-    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-MODULE-001"],
+    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-SEX-003"],
     "portfolioEvidence": ["Sanitized reproductive scouting record demonstrating morphology-based classification, uncertainty handling and pollination-risk reasoning."],
     "spacedRetrieval": [
       "One day later, explain why feminized seed changes probability but does not eliminate the need for reproductive scouting.",

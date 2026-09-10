@@ -1,9 +1,55 @@
 {
   "id": "COURSE-CULT-FOUNDATIONS-001",
   "title": "THC Cultivation Foundations",
-  "version": "1.0.0",
-  "status": "approved",
+  "version": "1.1.0",
+  "status": "draft",
   "credentialBearing": true,
+  "description": "THC Cultivation Foundations is an academic-facing, workforce-oriented introduction to cannabis plant science and cultivation reasoning. The course develops a common evidence-based language for plant biology, environment, lighting, water, root-zone management, nutrition, integrated pest management, propagation, canopy development, flowering, postharvest quality, and genetics. Learners are trained to distinguish direct observation from interpretation, use measurements and traceable records, respect evidence limits, and escalate decisions that exceed an entry-level role.",
+  "academicLevel": "foundational",
+  "intendedAudience": [
+    "Entry-level cultivation technicians and cultivation support staff",
+    "Learners preparing for more advanced THC Academy cultivation coursework",
+    "Adult learners seeking a structured, evidence-based foundation in cannabis cultivation science"
+  ],
+  "prerequisites": [
+    "No prior cannabis cultivation credential is required.",
+    "Learners should be able to read basic tables, record measurements with units, and follow written procedures.",
+    "Before supervised plant handling or workplace practical activities, learners must complete the applicable safety, responsible-practice, facility, and jurisdictional orientation required for that setting."
+  ],
+  "deliveryModes": ["self-paced-online", "instructor-led", "simulation", "supervised-lab", "workplace-practice", "paper-data-exercise"],
+  "learningOutcomes": [
+    "Describe major cannabis structures, developmental stages, and reproductive morphology using evidence-based botanical terminology.",
+    "Interpret temperature, humidity, leaf-temperature context, airflow, and vapor-pressure concepts without treating a single environmental metric as a complete diagnosis.",
+    "Interpret basic lighting measurements and distinguish instantaneous light intensity from accumulated daily light exposure.",
+    "Use water-quality, pH, EC, and irrigation observations as measured evidence while recognizing their limits for causal diagnosis.",
+    "Compare common root-zone media and interpret root-zone moisture and dryback observations in relation to plant water supply and aeration.",
+    "Explain essential plant-nutrition concepts and use symptom location, measurements, and crop context before assigning a nutrient diagnosis.",
+    "Apply foundational integrated-pest-management and biosecurity reasoning using prevention, scouting, identification, thresholds or action criteria, documentation, and escalation.",
+    "Explain seed and clonal propagation fundamentals and identify the records and environmental controls needed for repeatable establishment.",
+    "Describe foundational canopy-development and training concepts using node, branch, meristem, light-distribution, and airflow observations.",
+    "Describe flowering and maturation as observable developmental processes while separating morphology from unsupported calendar or potency claims.",
+    "Explain foundational harvest, drying, storage, sanitation, traceability, and postharvest quality concepts.",
+    "Explain genotype, phenotype, inheritance, selection, and basic breeding terminology without overstating what can be inferred from appearance or a single generation."
+  ],
+  "assessmentPolicy": {
+    "formative": "Lessons use retrieval prompts, guided practice, scenarios, data interpretation, and formative checks to provide feedback before high-stakes assessment. Formative performance is used for learning and remediation rather than credential issuance by itself.",
+    "module": "Each domain includes a module-level assessment mapped to the domain competency and its learning objectives. Module assessments emphasize understanding and application, use source-backed rationales, and should sample more than one narrow recall fact before a learner advances.",
+    "summative": "The course culminates in ASSESS-CULT-FOUNDATIONS-FINAL-001, a randomized 60-item summative assessment sampling five items from each of twelve competencies. The configured passing score is 80 percent, with a maximum of three attempts and a 24-hour cooldown between attempts.",
+    "productionActivation": "Summative and credential-purpose items are not production-ready merely because they exist. Production activation requires reference-backed items, human assessment review, the configured minimum active pool depth, accessibility review, pilot evidence, and release-gate approval.",
+    "credential": "Course completion and formative work do not independently authorize professional practice. Any THC Academy credential is issued only when the credential eligibility configuration and production controls are satisfied; it is an educational/workforce credential and is not a government license."
+  },
+  "sourcePolicy": {
+    "standard": "Scientific claims should be linked to canonical reference records and written at the strength supported by the evidence. Lessons should prefer cannabis-specific evidence when available while using established plant science for general mechanisms that are not unique to cannabis.",
+    "evidenceHierarchy": [
+      "Peer-reviewed systematic reviews and high-quality review literature for established scientific synthesis",
+      "Peer-reviewed primary research for specific measured relationships and cannabis-specific observations",
+      "Government, standards-body, university-extension, and other primary institutional sources for safety, regulatory, measurement, and practice guidance",
+      "Secondary educational sources only when their role and limitations are explicit"
+    ],
+    "citationPractice": "Claims with scientific or operational significance should cite REF records that preserve title, authorship or institutional source, year, journal or publisher when applicable, DOI or PMID/PMCID when available, and a stable source URL. Student-facing rendering should expose a readable reference list and source links without exposing assessment answer keys.",
+    "scopeLimitations": "The curriculum must distinguish study findings from universal rules. Cultivar-specific, environment-specific, jurisdiction-specific, and observational evidence must be labeled accordingly, and uncertainty should be preserved when evidence does not justify a single causal conclusion."
+  },
+  "credentialStatement": "Successful completion may contribute to eligibility for the THC Cultivation Foundations Academy credential when all configured assessment, review, identity, issuance, and release requirements are active. The credential documents educational achievement; it does not replace employer authorization, state or local licensing, regulated-worker requirements, or jurisdiction-specific legal obligations.",
   "modules": [
     "MOD-PLANT-BIO-001",
     "MOD-ENV-001",
