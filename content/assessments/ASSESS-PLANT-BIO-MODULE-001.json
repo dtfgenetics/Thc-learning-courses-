@@ -1,23 +1,32 @@
 {
   "id": "ASSESS-PLANT-BIO-MODULE-001",
-  "title": "Plant Biology Module Knowledge Check",
-  "version": "1.0.0",
-  "status": "approved",
+  "title": "Plant Biology Module Assessment",
+  "version": "1.1.0",
+  "status": "draft",
   "purpose": "formative",
-  "competencies": [
-    "COMP-PLANT-BIO-001"
-  ],
-  "objectives": [
-    "LO-PLANT-BIO-001",
-    "LO-PLANT-BIO-ANATOMY-002",
-    "LO-PLANT-BIO-SEX-003"
-  ],
+  "competencies": ["COMP-PLANT-BIO-001"],
+  "objectives": ["LO-PLANT-BIO-001", "LO-PLANT-BIO-ANATOMY-002", "LO-PLANT-BIO-SEX-003"],
   "items": [
     "ITEM-PLANT-BIO-006",
+    "ITEM-PLANT-BIO-MOD-001",
+    "ITEM-PLANT-BIO-MOD-002",
+    "ITEM-PLANT-BIO-MOD-003",
     "ITEM-PLANT-BIO-007",
-    "ITEM-PLANT-BIO-008"
+    "ITEM-PLANT-BIO-MOD-004",
+    "ITEM-PLANT-BIO-MOD-005",
+    "ITEM-PLANT-BIO-MOD-006",
+    "ITEM-PLANT-BIO-008",
+    "ITEM-PLANT-BIO-MOD-007",
+    "ITEM-PLANT-BIO-MOD-008",
+    "ITEM-PLANT-BIO-MOD-009"
   ],
   "passingScorePercent": 80,
   "maxAttempts": null,
-  "feedbackMode": "immediate"
+  "feedbackMode": "immediate",
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  }
 }
