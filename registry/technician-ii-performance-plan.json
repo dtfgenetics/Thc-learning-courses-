@@ -1,0 +1,58 @@
+{
+  "id": "PERFORMANCE-PLAN-TECH2-001",
+  "credentialTrack": "THC Cultivation Technician II",
+  "version": "1.0.0",
+  "status": "content-build-complete",
+  "jobRole": "ROLE-CULT-TECH-II-001",
+  "knowledgeAssessment": {
+    "initialBankTarget": 220,
+    "currentFirstPassBank": 220,
+    "matureBankTarget": 400,
+    "credentialFormItems": 90,
+    "assessment": "ASSESS-CULT-TECH-II-CREDENTIAL-001",
+    "passingPercent": 80,
+    "randomizedForms": true,
+    "reportCompetencyScores": true,
+    "dataCalculationTargetPercent": [15, 20]
+  },
+  "practicals": [
+    {"id":"PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP","title":"Crop Diagnostic Workup","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP.md","passingPercent":80},
+    {"id":"PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION","title":"Sensor & Equipment Verification","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION.md","passingPercent":80},
+    {"id":"PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING","title":"Fertigation & Root-Zone Troubleshooting","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.md","passingPercent":80},
+    {"id":"PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP","title":"IPM Trend & Treatment Follow-Up","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP.md","passingPercent":80},
+    {"id":"PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW","title":"Propagation/Canopy Performance Review","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW.md","passingPercent":80},
+    {"id":"PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE","title":"Postharvest Deviation & Lot Scope","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE.md","passingPercent":80},
+    {"id":"PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION","title":"Traceability, Metrics & Shift Coordination","document":"docs/academy-v2/practicals/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION.md","passingPercent":80}
+  ],
+  "capstone": {
+    "id": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+    "title": "Senior Technician Diagnostic Shift",
+    "document": "docs/academy-v2/practicals/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.md",
+    "passingPercent": 80,
+    "multiArea": true,
+    "requiresPrioritization": true,
+    "requiresSupervisorReadyHandoff": true
+  },
+  "credential": "CRED-CULT-TECH-II-001",
+  "course": "COURSE-CULT-TECH-II-001",
+  "portfolioArtifacts": [
+    "crop-diagnostic-report",
+    "sensor-data-quality-investigation",
+    "fertigation-root-zone-analysis",
+    "ipm-treatment-follow-up",
+    "propagation-or-canopy-performance-review",
+    "postharvest-deviation-scope-report",
+    "traceability-reconciliation",
+    "production-kpi-analysis",
+    "senior-technician-shift-summary"
+  ],
+  "buildCompletion": {
+    "writtenBank": true,
+    "credentialExamDefinition": true,
+    "aggregateCourse": true,
+    "credentialObject": true,
+    "structuredPracticals": true,
+    "structuredCapstone": true,
+    "jobPracticeUnits": true
+  }
+}
