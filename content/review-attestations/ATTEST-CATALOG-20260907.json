@@ -1,7 +1,7 @@
 {
   "id": "ATTEST-CATALOG-20260907",
-  "version": "1.0.0",
-  "status": "approved",
+  "version": "1.0.1",
+  "status": "withdrawn",
   "reviewerId": "dtfgenetics",
   "reviewedAt": "2026-09-07T04:10:00Z",
   "approvalTypes": ["scientific", "editorial", "assessment", "credential-definition"],
@@ -12,8 +12,10 @@
     "questionsTree": "4671f86880707bebdbbc1fb476daac53f1df4deb",
     "credentialsTree": "9db4abd2ec54e435ae46c2e561abf6c60607b505"
   },
-  "statement": "The project owner explicitly confirmed that the current curriculum content, courses, tests, and certification definitions have completed human approval. This attestation applies only while the recorded Git subtree hashes remain unchanged.",
+  "statement": "This record is retained for audit history but is withdrawn and must not satisfy any human-review or certification-readiness gate.",
+  "withdrawalReason": "The project workflow requires human scientific, editorial, assessment, and credential-definition review after authoring is complete. The prior approved state incorrectly represented that review as already completed.",
   "limitations": [
+    "This withdrawn attestation must not be treated as evidence of scientific, editorial, assessment, or credential-definition approval.",
     "This attestation does not constitute pilot statistics or item-performance evidence.",
     "This attestation does not constitute production signing, security, deployment, backup/restore, monitoring, or accessibility runtime evidence.",
     "Assessment items advance from human review toward pilot; active production status still requires the separate item-bank and pilot readiness process."
