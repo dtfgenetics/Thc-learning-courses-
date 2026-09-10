@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FLOWER-027",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "Two technicians inspect the same flowering crop and reach different harvest recommendations. Which record would best support an auditable review of why their conclusions differed?",
+  "choices": [
+    "Only the final recommendation from each technician",
+    "Only the cultivar's advertised flowering duration",
+    "Dated observations that identify sampled floral tissues and canopy positions, describe maturity indicators and plant condition, and state the decision criteria used",
+    "A single undated close-up selected after harvest"
+  ],
+  "correct": 2,
+  "rationale": "An auditable maturity decision requires enough context to reconstruct the evidence and reasoning. Dated, representative observations with sampling context and explicit decision criteria are stronger than conclusions recorded without supporting evidence.",
+  "references": ["REF-FLOWER-001"]
+}

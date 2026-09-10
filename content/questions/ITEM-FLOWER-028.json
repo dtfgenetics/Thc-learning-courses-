@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FLOWER-028",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-MATURITY-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A facility wants one amber-trichome percentage to define harvest readiness for every cultivar it grows. Which response best matches the evidence?",
+  "choices": [
+    "Use the same percentage because genotype does not affect trichome development",
+    "Do not treat one universal percentage as definitive; validate maturity using repeated representative observations for the cultivar and production objective",
+    "Replace direct observations with a fixed number of flowering days",
+    "Use only the most mature-looking flower from each crop"
+  ],
+  "correct": 1,
+  "rationale": "Research shows genotype- and age-dependent trichome development and asynchronous maturation. A single universal color percentage should therefore not be treated as a definitive harvest rule across cultivars.",
+  "references": ["REF-FLOWER-001"]
+}
