@@ -1,1 +1,21 @@
-{"id":"ITEM-TECH1-IPM-009","version":1,"status":"draft","purpose":"credential","competency":"COMP-IPM-001","objective":"LO-IPM-SCOUT-002","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A sticky-card count is much higher than the previous round. What should the technician verify and record?","choices":["Trap ID/location, count method and change from the prior round","Only the room temperature","Only the cultivar name","Nothing, because trap counts are never trended"],"correct":0,"rationale":"Monitoring devices are useful when identity, location and repeated counts are preserved so changes can be compared over time.","references":["REF-IPM-001"]}
+{
+  "id": "ITEM-TECH1-IPM-009",
+  "version": 2,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-SCOUT-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A sticky-card count is much higher than the previous round. What should the technician verify and record?",
+  "choices": [
+    "Trap identity and location, the count method, and the change from the prior comparable round",
+    "Room temperature, recent irrigation events, and cultivar name while leaving the individual trap identity out of the trend record",
+    "The highest trap count in the room and whether visible crop damage is present, without confirming that the prior count used the same method",
+    "A room-wide average across all cards, because combining locations provides a more stable trend than preserving each trap's identity and position"
+  ],
+  "correct": 0,
+  "rationale": "Monitoring devices support trend interpretation when trap identity, location, counting method, and repeated observations are preserved so changes can be compared consistently over time.",
+  "references": ["REF-IPM-001"]
+}
