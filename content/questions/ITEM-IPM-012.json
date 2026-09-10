@@ -1,1 +1,21 @@
-{"id":"ITEM-IPM-012","version":1,"status":"draft","purpose":"summative","competency":"COMP-IPM-001","objective":"LO-IPM-001","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"Pest counts fall after a control action, but scouting effort also dropped by half. Why is efficacy uncertain?","choices":["The measurement method changed, so lower observed counts may reflect reduced sampling rather than true control","Any lower count proves control","Scouting effort never affects counts","Only plant height matters"],"correct":0,"rationale":"Outcome verification requires comparable monitoring effort; otherwise apparent improvement may be a sampling artifact.","references":["REF-IPM-001"]}
+{
+  "id": "ITEM-IPM-012",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Monitoring counts fall after an IPM action, but the second scouting round inspects only half as many plants and sites. Why is the result uncertain?",
+  "choices": [
+    "The sampling method changed, so the lower observed count may reflect reduced observation effort rather than a real change in pressure",
+    "The lower count can be accepted because the management action occurred before the second round, even though fewer locations were inspected",
+    "The lower count most likely reflects movement within the room, so reduced scouting effort has little effect on interpreting the trend",
+    "The rounds remain directly comparable because they occurred in the same room, which provides enough consistency for trend interpretation"
+  ],
+  "correct": 0,
+  "rationale": "Outcome verification requires comparable monitoring effort. When sampling intensity changes, an apparent reduction can come from the measurement process instead of a true change in pest pressure.",
+  "references": ["REF-IPM-001"]
+}

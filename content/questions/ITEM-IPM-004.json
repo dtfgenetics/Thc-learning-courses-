@@ -1,6 +1,6 @@
 {
   "id": "ITEM-IPM-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-001",
@@ -11,11 +11,11 @@
   "stem": "Why should environmental conditions be reviewed during a disease investigation?",
   "choices": [
     "Temperature, humidity and moisture conditions can influence disease development",
-    "Environment cannot affect disease",
-    "Only genetics matter",
-    "Only fertilizer brand matters"
+    "Environmental readings mainly show whether plants are growing quickly enough, so disease risk can be estimated from vigor without examining other evidence",
+    "Environmental records are most useful after treatment, because conditions before symptoms appeared contribute little to a disease differential",
+    "Environmental data primarily determine fertilizer concentration, which is a more direct explanation for disease-like symptoms than moisture or humidity"
   ],
   "correct": 0,
-  "rationale": "Disease risk is shaped by host, pathogen and environment.",
+  "rationale": "Disease development reflects interactions among the host, causal organism, and environment. Reviewing moisture, humidity, temperature, and related conditions helps test whether the observed pattern is biologically plausible.",
   "references": ["REF-IPM-001"]
 }

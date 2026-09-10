@@ -1,1 +1,21 @@
-{"id":"ITEM-TECH1-SANITATION-001","version":1,"status":"draft","purpose":"credential","competency":"COMP-IPM-001","objective":"LO-IPM-BIOSEC-003","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A new tray of clones arrives and appears healthy on visual inspection. What practice best protects the established crop?","choices":["Place the clones directly in production because no symptoms are visible","Quarantine and inspect the incoming material according to facility procedure before joining the established crop","Spray the clones immediately and place them beside mother plants","Remove all labels so the clones can be mixed evenly into production"],"correct":1,"rationale":"Incoming plant material can carry pests or pathogens that are difficult to detect immediately. Quarantine and inspection create separation before exposure to established crops.","references":["REF-IPM-001"]}
+{
+  "id": "ITEM-TECH1-SANITATION-001",
+  "version": 2,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-BIOSEC-003",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A new tray of clones arrives and appears healthy on visual inspection. What practice best protects the established crop?",
+  "choices": [
+    "Place the clones into production after a second visual inspection, using symptom-free appearance as the main intake criterion",
+    "Quarantine and inspect the incoming material according to facility procedure before joining the established crop",
+    "Apply a routine preventive treatment at intake and move the clones into the mother area once the application has dried",
+    "Hold the incoming tray beside established plants but mark it for closer scouting during the first several production rounds"
+  ],
+  "correct": 1,
+  "rationale": "Incoming plant material can carry pests or pathogens that are difficult to detect immediately. Quarantine and inspection create separation while source risk and plant health are evaluated before exposure to established crops.",
+  "references": ["REF-IPM-001"]
+}

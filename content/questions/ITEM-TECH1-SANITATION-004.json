@@ -1,1 +1,21 @@
-{"id":"ITEM-TECH1-SANITATION-004","version":1,"status":"draft","purpose":"credential","competency":"COMP-IPM-001","objective":"LO-IPM-BIOSEC-003","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Which room condition should be treated as part of biosecurity rather than only as a housekeeping issue?","choices":["Standing water and accumulated crop debris","A whiteboard with yesterday's task list","A sealed box of clean gloves","A labeled shelf of unused pots"],"correct":0,"rationale":"Standing water and crop debris can support pest or pathogen persistence and should be managed as part of preventive biosecurity.","references":["REF-IPM-001"]}
+{
+  "id": "ITEM-TECH1-SANITATION-004",
+  "version": 2,
+  "status": "draft",
+  "purpose": "credential",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-BIOSEC-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which room condition should be treated as part of biosecurity rather than only as a housekeeping issue?",
+  "choices": [
+    "Standing water and accumulated crop debris",
+    "A whiteboard holding yesterday's completed task list in a dry area separated from plant material and work surfaces",
+    "A sealed container of clean gloves stored at the designated room-entry station for use during routine crop work",
+    "A labeled shelf of sanitized unused pots kept off the floor and separated from crop debris and incoming plant material"
+  ],
+  "correct": 0,
+  "rationale": "Standing water and accumulated crop debris can support pest or pathogen persistence and movement, so they are preventive biosecurity concerns rather than merely appearance or housekeeping concerns.",
+  "references": ["REF-IPM-001"]
+}
