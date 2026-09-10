@@ -4,6 +4,11 @@ import { catalogAttestationApproval } from './catalog-review-attestation.mjs';
 
 const root = process.cwd();
 const summaryOnly = process.argv.includes('--summary-only');
+const scopeArg = process.argv.find((arg) => arg.startsWith('--scope='))?.split('=')[1] ?? 'global';
+const validScopes = new Set(['global', 'foundations']);
+if (!validScopes.has(scopeArg)) {
+  throw new Error(`--scope must be one of: ${[...validScopes].join(', ')}`);
+}
 
 function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
@@ -18,11 +23,12 @@ function readDirJson(rel) {
     .map((name) => readJson(path.join(rel, name)));
 }
 
-const registry = readJson('registry/cultivation-foundations.json');
+const globalRegistry = readJson('registry/curriculum.json');
+const foundationsRegistry = readJson('registry/cultivation-foundations.json');
 const modules = new Map(readDirJson('content/modules').map((data) => [data.id, data]));
 const lessons = new Map(readDirJson('content/lessons').map((data) => [data.id, data]));
-const assessments = readDirJson('content/assessments');
-const questions = readDirJson('content/questions');
+const assessments = new Map(readDirJson('content/assessments').map((data) => [data.id, data]));
+const questions = new Map(readDirJson('content/questions').map((data) => [data.id, data]));
 const reviews = readDirJson('content/reviews');
 
 function latestReview(objectId, objectVersion, reviewType, objectType) {
@@ -53,26 +59,73 @@ function stateFromReview(review) {
   return 'revision-required';
 }
 
-const lessonIds = new Set();
-const competencyIds = new Set();
-const assessmentIds = new Set([registry.summativeAssessment].filter(Boolean));
-for (const domain of registry.domains ?? []) {
-  const module = modules.get(domain.module);
-  if (!module) throw new Error(`Review queue cannot resolve module ${domain.module}`);
-  for (const lessonId of module.lessons ?? []) lessonIds.add(lessonId);
-  for (const competencyId of domain.competencies ?? []) competencyIds.add(competencyId);
-  if (module.assessment) assessmentIds.add(module.assessment);
+function requireObjects(ids, map, label) {
+  for (const id of ids) {
+    if (!map.has(id)) throw new Error(`Review queue cannot resolve ${label} ${id}`);
+  }
 }
 
-const scopedAssessments = assessments.filter((assessment) => assessmentIds.has(assessment.id));
-const explicitlyReferencedQuestionIds = new Set(scopedAssessments.flatMap((assessment) => assessment.items ?? []));
-const scopedQuestions = questions.filter((item) =>
-  explicitlyReferencedQuestionIds.has(item.id) ||
-  (competencyIds.has(item.competency) && ['summative', 'credential'].includes(item.purpose))
-);
+function foundationsScope() {
+  const lessonIds = new Set();
+  const competencyIds = new Set();
+  const assessmentIds = new Set([foundationsRegistry.summativeAssessment].filter(Boolean));
+  for (const domain of foundationsRegistry.domains ?? []) {
+    const module = modules.get(domain.module);
+    if (!module) throw new Error(`Review queue cannot resolve module ${domain.module}`);
+    for (const lessonId of module.lessons ?? []) lessonIds.add(lessonId);
+    for (const competencyId of domain.competencies ?? []) competencyIds.add(competencyId);
+    if (module.assessment) assessmentIds.add(module.assessment);
+  }
+
+  const scopedAssessments = [...assessmentIds].map((id) => assessments.get(id)).filter(Boolean);
+  const explicitlyReferencedQuestionIds = new Set(scopedAssessments.flatMap((assessment) => assessment.items ?? []));
+  const questionIds = new Set(
+    [...questions.values()]
+      .filter((item) =>
+        explicitlyReferencedQuestionIds.has(item.id) ||
+        (competencyIds.has(item.competency) && ['summative', 'credential'].includes(item.purpose))
+      )
+      .map((item) => item.id)
+  );
+
+  return {
+    name: 'foundations',
+    curriculum: foundationsRegistry.course,
+    curriculumVersion: foundationsRegistry.version,
+    courseIds: new Set([foundationsRegistry.course]),
+    lessonIds,
+    assessmentIds,
+    questionIds,
+    competencyIds
+  };
+}
+
+function globalScope() {
+  const courseIds = new Set(globalRegistry.courses ?? []);
+  const lessonIds = new Set(globalRegistry.lessons ?? []);
+  const assessmentIds = new Set(globalRegistry.assessments ?? []);
+  const questionIds = new Set(globalRegistry.questions ?? []);
+  requireObjects(lessonIds, lessons, 'lesson');
+  requireObjects(assessmentIds, assessments, 'assessment');
+  requireObjects(questionIds, questions, 'question');
+  return {
+    name: 'global',
+    curriculum: globalRegistry.release,
+    curriculumVersion: globalRegistry.release,
+    courseIds,
+    lessonIds,
+    assessmentIds,
+    questionIds,
+    competencyIds: new Set(globalRegistry.competencies ?? [])
+  };
+}
+
+const scope = scopeArg === 'foundations' ? foundationsScope() : globalScope();
+const scopedAssessments = [...scope.assessmentIds].map((id) => assessments.get(id)).filter(Boolean);
+const scopedQuestions = [...scope.questionIds].map((id) => questions.get(id)).filter(Boolean);
 
 const tasks = [];
-for (const lessonId of [...lessonIds].sort()) {
+for (const lessonId of [...scope.lessonIds].sort()) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`Review queue cannot resolve lesson ${lessonId}`);
 
@@ -115,10 +168,16 @@ for (const assessment of [...scopedAssessments].sort((a, b) => a.id.localeCompar
   });
 }
 
+function questionLane(item) {
+  if (item.purpose === 'practice') return 'practice-item';
+  if (item.purpose === 'formative') return 'formative-item';
+  return 'credential-item';
+}
+
 for (const item of [...scopedQuestions].sort((a, b) => a.id.localeCompare(b.id))) {
   const review = latestReview(item.id, item.version, 'assessment', 'question');
   tasks.push({
-    lane: item.purpose === 'formative' ? 'formative-item' : 'credential-item',
+    lane: questionLane(item),
     objectType: 'question',
     objectId: item.id,
     objectVersion: item.version,
@@ -147,10 +206,13 @@ const laneSummary = Object.fromEntries(
 );
 
 const output = {
-  curriculum: registry.course,
-  curriculumVersion: registry.version,
+  scope: scope.name,
+  curriculum: scope.curriculum,
+  curriculumVersion: scope.curriculumVersion,
   releaseScope: {
-    competencies: competencyIds.size,
+    courses: scope.courseIds.size,
+    competencies: scope.competencyIds.size,
+    lessons: scope.lessonIds.size,
     assessments: scopedAssessments.length,
     questions: scopedQuestions.length
   },
