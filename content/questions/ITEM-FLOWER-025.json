@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FLOWER-025",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-PHOTO-002",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A flowering room's timer is consistent, but staff occasionally perform maintenance under white light during the intended dark interval. Which corrective approach best protects the validity of the flowering schedule?",
+  "choices": [
+    "Keep the practice because timer consistency is sufficient",
+    "Increase daytime irrigation to compensate",
+    "Shorten the next light period by an arbitrary amount",
+    "Eliminate or tightly control unintended dark-period illumination and verify the actual room light conditions"
+  ],
+  "correct": 3,
+  "rationale": "Photoperiod-sensitive flowering depends on the light-dark environment actually experienced by the plant. Operational controls should therefore protect the intended dark interval and verify real conditions rather than relying only on timer settings.",
+  "references": ["REF-LIGHT-001"]
+}
