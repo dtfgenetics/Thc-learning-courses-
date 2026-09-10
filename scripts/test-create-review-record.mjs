@@ -62,8 +62,8 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
-function runReviewValidator() {
-  return spawnSync(process.execPath, [validatorScript], {
+function runReviewValidator(...args) {
+  return spawnSync(process.execPath, [validatorScript, ...args], {
     cwd: historyRoot,
     encoding: 'utf8'
   });
@@ -105,7 +105,7 @@ try {
 
   const approvedWithHistory = runReviewValidator();
   assert.equal(approvedWithHistory.status, 0, approvedWithHistory.stderr);
-  assert.match(approvedWithHistory.stdout, /2 historical review record\(s\) are stale for current-version promotion/);
+  assert.match(approvedWithHistory.stdout, /2 stale historical review record\(s\) retained without blocking edits/);
 
   writeJson(lessonPath, {
     id: 'LESSON-HISTORY-001',
@@ -113,8 +113,13 @@ try {
     title: 'Versioned lesson review history test',
     status: 'published'
   });
-  const publishedWithoutCurrentReviews = runReviewValidator();
-  assert.equal(publishedWithoutCurrentReviews.status, 1, 'published content must fail closed without exact-version approvals');
+
+  const publishedAuthoringMode = runReviewValidator();
+  assert.equal(publishedAuthoringMode.status, 0, 'published status must not freeze continued authoring');
+  assert.match(publishedAuthoringMode.stdout, /authoring mode/);
+
+  const publishedWithoutCurrentReviews = runReviewValidator('--release');
+  assert.equal(publishedWithoutCurrentReviews.status, 1, 'release mode must fail closed without exact-version approvals');
   assert.match(publishedWithoutCurrentReviews.stderr, /missing approved scientific review evidence/);
   assert.match(publishedWithoutCurrentReviews.stderr, /missing approved editorial review evidence/);
 
@@ -131,9 +136,9 @@ try {
     reviewerId: 'scientist-2'
   }));
 
-  const publishedWithCurrentReviews = runReviewValidator();
+  const publishedWithCurrentReviews = runReviewValidator('--release');
   assert.equal(publishedWithCurrentReviews.status, 0, publishedWithCurrentReviews.stderr);
-  assert.match(publishedWithCurrentReviews.stdout, /2 historical review record\(s\) are stale for current-version promotion/);
+  assert.match(publishedWithCurrentReviews.stdout, /2 historical review record\(s\) are stale for current-version release approval/);
 
   console.log('Historical review/version semantics tests passed.');
 } finally {
