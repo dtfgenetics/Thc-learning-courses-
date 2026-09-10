@@ -10,11 +10,13 @@ export const AREA_PRIORITY = [
 ];
 
 export const GATE_TASKS = {
-  scientificReviewComplete: { kind: 'review', mode: 'certify', action: 'complete scientific review evidence' },
-  editorialReviewComplete: { kind: 'review', mode: 'certify', action: 'complete editorial review evidence' },
-  humanAssessmentReviewComplete: { kind: 'review', mode: 'certify', action: 'complete human assessment review' },
+  substantiveContentComplete: { kind: 'authoring', mode: 'author', action: 'continue building substantive curriculum content' },
+  catalogExpansionComplete: { kind: 'authoring', mode: 'author', action: 'continue expanding the course, lesson, activity, and assessment catalog' },
+  scientificReviewComplete: { kind: 'review', mode: 'certify', action: 'audit scientific accuracy after authoring is complete' },
+  editorialReviewComplete: { kind: 'review', mode: 'certify', action: 'audit editorial quality after authoring is complete' },
+  humanAssessmentReviewComplete: { kind: 'review', mode: 'certify', action: 'audit assessment quality after item-bank authoring is complete' },
   pilotStatisticsComplete: { kind: 'pilot', mode: 'certify', action: 'collect and validate pilot statistics' },
-  minimumActivePoolComplete: { kind: 'assessment', mode: 'exam', action: 'activate the pilot-qualified assessment item pool' },
+  minimumActivePoolComplete: { kind: 'assessment', mode: 'exam', action: 'expand and activate the assessment item pool' },
   productionPersistenceAdapter: { kind: 'platform', mode: 'platform', action: 'implement the production persistence adapter' },
   authenticationIntegrated: { kind: 'security', mode: 'platform', action: 'integrate production authentication' },
   authorizationIntegrated: { kind: 'security', mode: 'platform', action: 'integrate production authorization' },
@@ -35,10 +37,16 @@ export const GATE_TASKS = {
 };
 
 const AREA_GATE_PRIORITY = {
+  curriculum: [
+    'substantiveContentComplete',
+    'catalogExpansionComplete',
+    'scientificReviewComplete',
+    'editorialReviewComplete'
+  ],
   assessment: [
+    'minimumActivePoolComplete',
     'humanAssessmentReviewComplete',
-    'pilotStatisticsComplete',
-    'minimumActivePoolComplete'
+    'pilotStatisticsComplete'
   ]
 };
 
