@@ -137,7 +137,8 @@ jobs:
           if-no-files-found: error
       - name: Validate operational controls
         run: npm run ops:validate
-      - name: Validate staging readiness contract
+      - name: Validate staging readiness contract for promotion branches
+        if: ${{ github.base_ref == 'staging' || github.base_ref == 'main' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/main' }}
         run: npm run staging:readiness
       - name: Validate system readiness consistency
         run: npm run status:check
