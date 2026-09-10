@@ -1,36 +1,13 @@
 {
-  "id": "ASSESS-NUTRITION-IPM-ADVANCED-FINAL-001",
-  "title": "THC Advanced Nutrition, Diagnostics and Plant Health Credential Assessment",
-  "version": "1.0.0",
-  "status": "approved",
-  "purpose": "credential",
-  "competencies": [
-    "COMP-NUTRIENT-DIAG-001",
-    "COMP-IPM-ADV-001"
-  ],
-  "objectives": [
-    "LO-NUTRIENT-INTERACT-001",
-    "LO-NUTRIENT-DIAG-002",
-    "LO-NUTRIENT-EC-003",
-    "LO-IPM-SCOUT-ADV-001",
-    "LO-IPM-DIAG-ADV-002",
-    "LO-IPM-INTEGRATE-003"
-  ],
-  "items": [
-    "ITEM-CRED-NIPM-001",
-    "ITEM-CRED-NIPM-002",
-    "ITEM-CRED-NIPM-003",
-    "ITEM-CRED-NIPM-004",
-    "ITEM-CRED-NIPM-005",
-    "ITEM-CRED-NIPM-006",
-    "ITEM-CRED-NIPM-007",
-    "ITEM-CRED-NIPM-008",
-    "ITEM-CRED-NIPM-009",
-    "ITEM-CRED-NIPM-010",
-    "ITEM-CRED-NIPM-011",
-    "ITEM-CRED-NIPM-012"
-  ],
-  "passingScorePercent": 80,
-  "maxAttempts": 3,
-  "feedbackMode": "delayed"
+  "id":"ASSESS-NUTRITION-IPM-ADVANCED-FINAL-001",
+  "title":"THC Advanced Nutrition, Diagnostics and Plant Health Credential Assessment",
+  "version":"1.1.0",
+  "status":"approved",
+  "purpose":"credential",
+  "competencies":["COMP-NUTRIENT-DIAG-001","COMP-IPM-ADV-001"],
+  "objectives":["LO-NUTRIENT-INTERACT-001","LO-NUTRIENT-DIAG-002","LO-NUTRIENT-EC-003","LO-IPM-SCOUT-ADV-001","LO-IPM-DIAG-ADV-002","LO-IPM-INTEGRATE-003"],
+  "items":["ITEM-CRED-NIPM-001","ITEM-CRED-NIPM-002","ITEM-CRED-NIPM-003","ITEM-CRED-NIPM-004","ITEM-CRED-NIPM-005","ITEM-CRED-NIPM-006","ITEM-CRED-NIPM-007","ITEM-CRED-NIPM-008","ITEM-CRED-NIPM-009","ITEM-CRED-NIPM-010","ITEM-CRED-NIPM-011","ITEM-CRED-NIPM-012","ITEM-CRED-NIPM-013","ITEM-CRED-NIPM-014","ITEM-CRED-NIPM-015","ITEM-CRED-NIPM-016","ITEM-CRED-NIPM-017","ITEM-CRED-NIPM-018","ITEM-CRED-NIPM-019","ITEM-CRED-NIPM-020","ITEM-CRED-NIPM-021","ITEM-CRED-NIPM-022","ITEM-CRED-NIPM-023","ITEM-CRED-NIPM-024","ITEM-CRED-NIPM-025","ITEM-CRED-NIPM-026","ITEM-CRED-NIPM-027","ITEM-CRED-NIPM-028","ITEM-CRED-NIPM-029","ITEM-CRED-NIPM-030"],
+  "passingScorePercent":80,
+  "maxAttempts":3,
+  "feedbackMode":"delayed"
 }
