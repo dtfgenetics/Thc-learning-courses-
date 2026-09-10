@@ -10,10 +10,10 @@
   "type": "scenario",
   "stem": "A technician records maturity observations once, then makes a harvest recommendation several days later without collecting new evidence. What is the main weakness in that approach?",
   "choices": [
-    "Maturity observations never change after they are first recorded",
-    "The recommendation may rely on stale evidence because flowering development continues over time",
-    "Only the cultivar name should be recorded",
-    "Repeated observations make decisions less reliable"
+    "Use the original observation because developmental stage should remain comparable for several days when room conditions are stable",
+    "Collect current observations because flowering development continues and the earlier evidence may no longer represent the crop",
+    "Replace new observations with the cultivar's expected flowering duration because calendar timing is more repeatable than resampling",
+    "Avoid repeated observations because changing sample locations can introduce more variation than crop development over time"
   ],
   "correct": 1,
   "rationale": "Flowering maturity is dynamic. Repeated observations provide a current trend and reduce the risk of basing a harvest decision on evidence that no longer represents the crop's condition.",
