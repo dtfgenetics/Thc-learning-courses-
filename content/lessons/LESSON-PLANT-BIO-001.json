@@ -1,7 +1,7 @@
 {
   "id": "LESSON-PLANT-BIO-001",
   "title": "Cannabis Plant Structure and Lifecycle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "status": "approved",
   "competencies": [
     "COMP-PLANT-BIO-001"
@@ -34,6 +34,10 @@
       {
         "term": "Reproductive development",
         "definition": "The developmental transition in which floral structures form and mature."
+      },
+      {
+        "term": "Apical meristem",
+        "definition": "A region of actively dividing tissue near a shoot tip that produces new stem, leaf, and branch growth."
       }
     ],
     "sections": [
@@ -64,16 +68,25 @@
         "references": [
           "REF-PLANT-BIO-001"
         ]
+      },
+      {
+        "title": "Growth patterns become more useful when tracked over time",
+        "body": "Plant architecture is easier to interpret when repeated observations are compared. Node production, internode length, branching position, leaf expansion, and the appearance of reproductive structures can be recorded over time to distinguish a developmental trend from a one-time observation. Longitudinal notes also provide a stronger baseline for later environmental or crop-management diagnosis.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
       }
     ],
     "workedExamples": [
       "A plant with vigorous leaf and branch production but no developed floral structures is best described by its vegetative morphology rather than by chronological age alone.",
-      "When reproductive structures first appear at nodes, document their morphology and developmental progression instead of inferring sex or maturity from cultivar marketing information."
+      "When reproductive structures first appear at nodes, document their morphology and developmental progression instead of inferring sex or maturity from cultivar marketing information.",
+      "If internode length increases over several observation dates while node production continues, record the trend and compare it with environmental history before treating the architecture as a fixed genetic characteristic."
     ],
     "commonMistakes": [
       "Using plant age alone to assign developmental stage without checking morphology.",
       "Treating every visible leaf symptom as proof of a single nutrient problem.",
-      "Confusing a cultivar name with a reliable description of actual plant morphology or sex expression."
+      "Confusing a cultivar name with a reliable description of actual plant morphology or sex expression.",
+      "Treating one unusual growth pattern as a permanent genetic trait without comparing development over time or environmental context."
     ],
     "practicalApplication": "During routine observation, identify roots or root-zone condition where visible, stems, nodes, internodes, leaves, branches, and reproductive structures. Record developmental stage from observable morphology, then use that stage as context when interpreting later environmental or management data.",
     "summary": "Plant structure provides the vocabulary for cultivation science. Correctly identifying major organs, nodes, developmental stage, and reproductive morphology allows later environmental, nutrition, training, propagation, and harvest decisions to be grounded in the actual biology of the plant."
