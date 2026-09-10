@@ -29,6 +29,8 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Require dependency lock to remain unchanged
         run: git diff --exit-code -- package-lock.json
+      - name: Enforce deterministic routine QA policy
+        run: node scripts/check-routine-qa-policy.mjs
       - name: Build working curriculum registry from source objects
         run: npm run registry:build
       - name: Upload generated curriculum registry

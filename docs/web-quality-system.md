@@ -1,107 +1,110 @@
 # DTF Seeds Web Quality System
 
-This repository uses one coordinated web-quality system for source/runtime debugging, browser behavior, pixel-perfect visual QA, accessibility/performance/SEO measurement, and production verification.
+This repository uses a coordinated, deterministic web-quality system for source/runtime debugging, route and asset health, visual fidelity, accessibility/performance/SEO measurement, and production verification.
 
 ## Goals
 
 - Discover every public first-party route on `dtfseeds.com` without crawling destructive or unbounded URLs.
-- Detect browser exceptions, console errors, failed first-party requests, broken navigation responses, blank/incomplete rendering, and missing semantic primary content.
-- Capture repeatable responsive visual evidence and compare approved stable surfaces pixel-for-pixel.
+- Detect navigation failures, unexpected non-HTML responses, blank/incomplete server output, missing semantic primary content, and broken first-party assets.
+- Compare customer-facing surfaces against approved visual references with deterministic image-diff or overlay methods when stable captures are available.
 - Audit Lighthouse Performance, Accessibility, Best Practices, and SEO with a target of 100/100/100/100.
-- Preserve artifacts so defects can be reproduced instead of argued from memory.
-- Scale across marketing/genetics pages, THC Academy and encyclopedia content, games, tools, dashboards, infographics, document viewers, and future product surfaces.
+- Preserve artifacts so defects can be reproduced from evidence.
+- Keep routine QA lightweight enough to run frequently across Academy, genetics pages, games, tools, dashboards, infographics, and future surfaces.
+
+## Routine QA policy
+
+Routine development, CI, project skills, and repository dependencies use deterministic Node/static/build/API/persistence/HTTP/HTML checks plus Lighthouse. A separate browser automation framework is not part of the normal toolchain.
+
+An interactive browser check may be considered only as an isolated final-release verification when explicitly requested for that release. It must not become a repository dependency, project skill, or normal CI requirement.
 
 ## Files
 
-- `web-qa.config.mjs` — shared target, route limits, viewport matrix, enforcement and visual modes.
-- `scripts/discover-public-routes.mjs` — sitemap plus same-origin rendered-link inventory.
-- `playwright.config.mjs` — Chromium projects for 360, 412, 768, 1366, and 1920 pixel widths.
-- `tests/web-qa/site-health.spec.mjs` — browser/runtime health checks.
-- `tests/web-qa/visual-regression.spec.mjs` — screenshot candidate capture and approved-baseline comparison.
-- `lighthouserc.cjs` — per-route Lighthouse collection and 100-score assertions.
-- `.github/workflows/web-quality.yml` — PR, staging/main, scheduled, and manual orchestration.
+- `web-qa.config.mjs` — shared target, route limits, artifact locations, and enforcement mode.
+- `scripts/discover-public-routes.mjs` — sitemap plus same-origin server-returned link inventory.
+- `scripts/check-public-route-health.mjs` — deterministic HTTP/HTML, semantic-content, and first-party asset validation.
+- `lighthouserc.cjs` — per-route Lighthouse collection and category assertions.
+- `.github/workflows/web-quality.yml` — deterministic health and Lighthouse orchestration for PRs, staging/main, scheduled, and manual runs.
+- `scripts/check-routine-qa-policy.mjs` — fail-closed guard preventing the removed browser-automation toolchain from being reintroduced into routine project files.
 
 ## Local execution
 
 1. `npm ci`
 2. `npm run web:qa:install`
-3. `npx playwright install --with-deps chromium`
-4. `npm run web:routes`
-5. `npm run web:qa:health`
-6. `npm run web:qa:visual`
-7. `npm run web:qa:lighthouse`
+3. `npm run web:routes`
+4. `npm run web:qa:health`
+5. `npm run web:qa:lighthouse`
 
-`npm run web:qa:install` deliberately uses pinned, no-save packages with `--package-lock=false` so this specialist runtime can execute without creating dependency-lock drift in the curriculum repository. The pinned versions must be reviewed periodically and upgraded intentionally.
+`npm run web:qa:install` installs only the pinned Lighthouse CI runtime without changing the dependency lock. Chrome required by Lighthouse should be installed independently by the environment or CI workflow.
 
 ## Modes
 
 ### Observation
 
-Default PR mode. Existing production defects are reported and retained as evidence while the system is being established. Observation is not approval and must not be described as a pass for pixel-perfect quality.
+During active repair, findings may be collected without making every current production defect a hard failure. Observation is evidence collection, not approval.
 
-### Visual candidate capture
+### Deterministic health enforcement
 
-`WEB_QA_VISUAL_MODE=capture` saves responsive screenshots into the artifact directory. Candidate screenshots are evidence for review and baseline selection; they are not automatically approved references.
+`WEB_QA_ENFORCE=1` converts route-health findings into failures. The health checker validates navigation responses, expected HTML, meaningful server content, primary semantics, and first-party assets.
 
-### Visual comparison
+### Lighthouse enforcement
 
-`WEB_QA_VISUAL_MODE=compare` uses Playwright screenshot assertions against committed approved baselines. The default comparison policy is zero differing pixels. Non-zero tolerances are allowed only for documented renderer noise and must not hide real defects.
+Lighthouse assertions remain independent of route-health checks. Category deductions and critical audits must be reported truthfully. Never suppress a valid audit merely to manufacture a perfect score.
 
-### Enforcement
+### Visual-reference review
 
-`WEB_QA_ENFORCE=1` converts browser findings and Lighthouse category deductions into hard failures. Main/manual enforcement should only be treated as trustworthy after the relevant current-state debt is repaired and stable visual baselines are approved.
+Approved screenshots, mockups, or known-good renders may be compared using deterministic image-diff or overlay tools. Baselines are accepted only after intentional review; current production is not automatically a correct baseline.
 
 ## Route strategy
 
-Route discovery combines sitemap sources and same-origin links reachable from discovered pages. URLs are normalized, marketing tracking parameters are stripped, destructive paths are excluded, static assets are excluded, fragments are removed, and a maximum route count prevents infinite crawl growth.
+Route discovery combines sitemap sources and same-origin links returned by discovered HTML pages. URLs are normalized, tracking parameters are stripped, destructive paths and static assets are excluded, fragments are removed, and a maximum route count prevents unbounded crawl growth.
 
-The route inventory is a build artifact and should be inspected when counts unexpectedly rise or fall. Future route sources can be added for framework route manifests, game/tool registries, Academy registries, canonical-link maps, or authenticated test fixtures.
+The route inventory is a build artifact and should be inspected when counts unexpectedly rise or fall. Additional deterministic sources may include framework route manifests, game/tool registries, Academy registries, canonical-link maps, and controlled authenticated fixtures.
 
 ## CI scope strategy
 
-Pull requests keep feedback practical: broad desktop health over a bounded route inventory, responsive visual candidates over a smaller representative set, and a bounded Lighthouse sample. Staging/main and scheduled runs expand the route count. This prevents expensive browser audits from slowing unrelated curriculum-only validation while still giving promotion/release work a broad quality gate.
+Pull requests use bounded deterministic route-health and Lighthouse coverage for practical feedback. Staging/main and scheduled runs expand route counts. When route counts grow significantly, shard jobs by route hash or product category rather than permanently reducing declared coverage.
 
-When route counts or runtime grow significantly, shard jobs by route hash/category rather than reducing coverage permanently.
+The curriculum quality workflow also runs the routine-QA policy guard so prohibited browser-automation dependencies, configs, skills, or stale references fail before the rest of certification validation proceeds.
 
-## Baseline approval workflow
+## Visual baseline workflow
 
-1. Generate candidate screenshots in the same CI/browser environment used for future comparisons.
-2. Review candidates against the strongest approved design reference and the pixel-perfect skill checklist.
-3. Repair visible defects before baseline approval.
-4. Commit approved screenshot baselines only after intentional acceptance.
-5. Switch protected stable surfaces to compare mode.
-6. Review every later baseline diff; never auto-update because a test failed.
+1. Obtain a stable current render or approved supplied reference using an authorized rendering path.
+2. Review it against the strongest approved design reference and the pixel-perfect skill checklist.
+3. Repair visible defects before accepting it as a baseline.
+4. Store only intentionally approved reference evidence.
+5. Compare later stable captures using deterministic image diff or overlay.
+6. Investigate every changed region before approving a baseline update.
 
-Current production is not automatically a correct baseline.
+Do not auto-approve a changed baseline because a comparison failed.
 
 ## Surface-specific expansion
 
 ### Marketing/genetics/gallery
-Add hero, navigation, CTA, product/card grid, imagery, promotional state, and footer snapshots.
+Review hero, navigation, CTA, product/card grids, imagery, promotional states, and footer composition.
 
 ### Academy/encyclopedia/certification
-Add long-form reading, lesson nav, progress, quizzes, tables, callouts, infographics, download/print controls, and credential-state snapshots.
+Review long-form reading surfaces, lesson navigation, progress, quizzes, tables, callouts, infographics, download/print controls, and credential states.
 
 ### Games
-Add boot/loading, active play, HUD, touch/keyboard controls, pause, win/loss/game-over, restart, modal/overlay, and responsive/orientation snapshots. Test the core loop, not only the opening screen.
+Review boot/loading, active play, HUD, controls, pause, win/loss/game-over, restart, modal/overlay, and responsive/orientation states. Validate the underlying game loop through deterministic game/state tests wherever practical rather than relying on opening-screen appearance.
 
 ### Tools/forms/dashboards
-Add input, validation, loading, results, empty, error, success, filter/menu, dense-data, and mobile stacking states.
+Review input, validation, loading, result, empty, error, success, filtering, dense-data, and mobile stacking states.
 
 ### Infographics/print/document viewers
-Add thumbnail, full-view, zoom/readability, aspect ratio, resolution, captions, download/print controls, and mobile handling.
+Review thumbnails, full-view readability, aspect ratio, resolution, captions, download/print controls, and mobile handling.
 
 ## Defect priority
 
-1. Broken functionality, page exceptions, navigation failures, first-party 4xx/5xx, missing assets.
+1. Broken functionality, navigation failures, first-party 4xx/5xx, and missing assets.
 2. Accessibility blockers and unusable controls.
-3. Severe visual corruption, overlap, clipping, unreadable content, canvas/HUD collisions.
-4. Security/best-practice failures.
+3. Severe visual corruption, overlap, clipping, unreadable content, or canvas/HUD collisions.
+4. Security/Best Practices failures.
 5. Performance/Core Web Vitals risks.
 6. SEO/crawlability failures.
 7. Remaining deterministic visual or Lighthouse deductions.
-8. External/third-party limitations with evidence and remediation path.
+8. External/third-party limitations with evidence and a remediation path.
 
 ## Definition of done
 
-A changed customer-facing surface is not complete merely because code merged. Completion requires appropriate source tests, real-browser verification, pixel-perfect evidence for stable visual surfaces, Lighthouse coverage, no unexplained browser/network failures, post-push repository convergence, and production re-verification after release when production is affected.
+A changed customer-facing surface is not complete merely because code merged. Completion requires the relevant source/unit/build/API tests, deterministic route and asset validation, appropriate approved-reference visual evidence, Lighthouse coverage, post-push repository convergence, and production re-verification after release when production is affected. An isolated final interactive browser check is optional only when explicitly requested for that release.
