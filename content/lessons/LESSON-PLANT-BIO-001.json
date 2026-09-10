@@ -1,117 +1,105 @@
 {
   "id": "LESSON-PLANT-BIO-001",
   "title": "Cannabis Plant Structure and Lifecycle",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "competencies": ["COMP-PLANT-BIO-001"],
-  "learningObjectives": ["LO-PLANT-BIO-001","LO-PLANT-BIO-ANATOMY-002","LO-PLANT-BIO-SEX-003"],
-  "estimatedMinutes": 60,
-  "references": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001","REF-SEX-2026-001"],
-  "assessment": null,
+  "learningObjectives": ["LO-PLANT-BIO-001"],
+  "estimatedMinutes": 75,
+  "references": ["REF-PLANT-BIO-001", "REF-FLOWER-MORPH-2023-001", "REF-FLOROGENESIS-2019-001", "REF-SEX-2026-001"],
+  "assessment": "ASSESS-PLANT-BIO-LESSON-001",
   "content": {
-    "overview": "Cultivation decisions become more reliable when the learner can identify what part of the plant is being observed, determine the plant's developmental context and separate direct observations from assumptions. Cannabis is an annual flowering plant whose visible architecture changes across juvenile, vegetative and reproductive development, but calendar age alone does not reliably define developmental state across genotypes and environments.",
-    "whyItMatters": "Nearly every later cultivation task—propagation, irrigation, environmental control, training, diagnosis, breeding and harvest—depends on correctly identifying plant structures and developmental state before interpreting symptoms or measurements.",
-    "prerequisites": ["No plant-science prerequisite; learners should be able to record observations using stable plant or crop identifiers."],
-    "priorKnowledgeRetrieval": [
-      "Name the major root, stem, leaf and reproductive structures you would record during a crop inspection.",
-      "Explain why plant age in days is useful context but not sufficient by itself to classify every developmental transition."
-    ],
+    "overview": "This opening session establishes the observation framework used throughout THC Cultivation Foundations. Learners identify major cannabis structures, describe developmental state from visible morphology, separate observation from interpretation, and build repeatable records that can later be compared with environmental, irrigation, nutrition, IPM, propagation, and production data. Calendar age remains useful context, but cannabis development varies with genotype and production conditions, so a competent observer records both chronology and morphology rather than forcing every plant into a schedule label.",
+    "whyItMatters": "Nearly every later cultivation decision depends on knowing what structure is being observed and what developmental context the plant is expressing. Poor structural identification can turn a normal developmental feature into a false diagnosis, hide a genuine deviation, or make later crop records impossible to interpret.",
+    "prerequisites": ["No prior cannabis-science coursework is required.", "Learners should be able to use a stable plant, room, crop, or batch identifier in an observation record."],
+    "priorKnowledgeRetrieval": ["Before reading the lesson, list the plant structures you would inspect if asked to describe a cannabis plant without diagnosing it.", "Explain in one sentence why chronological age and developmental stage are related but are not the same measurement."],
     "vocabulary": [
-      {"term":"Node","definition":"The point on a stem where leaves, branches or reproductive structures can arise."},
-      {"term":"Internode","definition":"The stem segment between two adjacent nodes."},
-      {"term":"Apical meristem","definition":"Actively dividing tissue near a shoot tip that produces new shoot structures."},
-      {"term":"Vegetative growth","definition":"Development dominated by roots, stems, leaves and branching rather than mature reproductive structures."},
-      {"term":"Reproductive development","definition":"Development in which floral structures form, expand and mature."},
-      {"term":"Phyllotaxy","definition":"The arrangement of leaves or other repeated organs around a stem."}
+      {"term": "Node", "definition": "A point on a stem where leaves, branches, buds, or reproductive structures can arise."},
+      {"term": "Internode", "definition": "The stem segment between two adjacent nodes."},
+      {"term": "Apical meristem", "definition": "Actively dividing tissue near a shoot tip that produces new shoot structures."},
+      {"term": "Axillary bud", "definition": "A bud located in the angle between a leaf or leaf-associated structure and the stem that can develop into a lateral shoot or reproductive structure."},
+      {"term": "Phyllotaxy", "definition": "The arrangement of leaves or other repeated organs around a stem."},
+      {"term": "Vegetative growth", "definition": "Development dominated by roots, stems, leaves, and branching rather than mature inflorescence development."},
+      {"term": "Reproductive development", "definition": "Development in which floral structures form, expand, and mature."},
+      {"term": "Inflorescence", "definition": "A reproductive shoot system bearing flowers and associated structures."},
+      {"term": "Morphology", "definition": "The observable form and structural features of an organism or organ."},
+      {"term": "Longitudinal observation", "definition": "Repeated observation of the same plant, crop, or defined sampling unit across time."}
     ],
     "sections": [
       {
-        "title": "Organ identity comes before interpretation",
-        "body": "Roots, stems, leaves, nodes, internodes, meristems and reproductive structures perform different biological functions. A symptom on an older leaf, a new shoot tip and a root tip should not be interpreted as equivalent evidence. Accurate structural identification narrows what measurements and follow-up observations are relevant.",
+        "title": "1. Structure is the language of plant observation",
+        "body": "A cultivation record becomes scientifically useful only when the observer identifies what is being described. Roots and root-zone evidence, stems, nodes, internodes, shoot tips, leaves, branches, buds, and reproductive structures are not interchangeable observations. The location and developmental age of an organ change what a symptom or growth pattern can mean. Session 1 therefore begins with organ identity before diagnosis. Detailed internal anatomy is taught in the next session; here the goal is to recognize the major structural units well enough to describe a plant consistently.",
         "references": ["REF-PLANT-BIO-001"]
       },
       {
-        "title": "Development is a sequence of observable changes",
-        "body": "Cannabis morphology changes through germination, seedling establishment, juvenile and mature vegetative growth, reproductive transition, flowering and senescence. Research describing a complete cannabis life cycle documents changes in leaf arrangement, nodes, bracts and flowers, but timing from one study or cultivar should not be treated as universal for every genotype or production environment.",
+        "title": "2. Cannabis architecture is modular",
+        "body": "Cannabis shoots are built from repeated units that include nodes, internodes, leaves, axillary structures, and meristems. Research on cannabis florogenesis describes this repeated organization as a phytomer-based architecture. Thinking in repeated structural units helps a learner compare positions on the same plant, distinguish apical from lateral development, and document where a change first appears. It also prepares the learner for later training, propagation, and flowering lessons where node position and branch order become operationally important.",
+        "references": ["REF-FLOROGENESIS-2019-001"]
+      },
+      {
+        "title": "3. Developmental stage is inferred from observable change",
+        "body": "Cannabis progresses through germination, seedling establishment, juvenile and mature vegetative development, reproductive transition, flowering, and senescence, but the exact timing of those transitions is not universal. A 2023 complete-life-cycle study documented changes in leaf complexity, phyllotaxy, node-associated structures, bracts, flowers, and trichomes across development in one cultivar. Those observations are useful for learning what changes can occur, but the study's exact node numbers and timing must not be converted into a rule for every genotype or facility.",
         "references": ["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "title": "Morphology and calendar time answer different questions",
-        "body": "Calendar age helps reconstruct crop history, while morphology describes what the plant is actually expressing. A technician should record both. When morphology and the expected schedule disagree, the discrepancy becomes a diagnostic clue that can be compared with genetics, photoperiod, environment, root-zone conditions or other crop history rather than forcing the plant into a calendar label.",
-        "references": ["REF-FLOWER-MORPH-2023-001","REF-PLANT-BIO-001"]
+        "title": "4. Calendar time and morphology answer different questions",
+        "body": "Chronological age answers when an event occurred; morphology answers what the plant is expressing now. Both belong in a high-quality record. When a crop schedule predicts a stage that the plant has not visibly reached, the correct response is to record the scheduled expectation and the observed state as separate facts. The mismatch can later be investigated using genetics, photoperiod, environment, root-zone conditions, propagation history, or other crop data rather than being erased by a label.",
+        "references": ["REF-FLOWER-MORPH-2023-001", "REF-FLOROGENESIS-2019-001"]
       },
       {
-        "title": "Reproductive state must be observed directly",
-        "body": "Cannabis is predominantly dioecious, but reproductive expression can be more complex and can vary with genotype, development and other influences. Visible floral morphology—not seed marketing category or cultivar name—is the evidence used to document reproductive expression in the crop. Ambiguous structures should be re-observed rather than permanently classified too early.",
+        "title": "5. Reproductive morphology changes the meaning of an observation",
+        "body": "Reproductive structures introduce new biological and production consequences. Cannabis is predominantly dioecious, yet sex expression can be more complex and can vary with genetic, developmental, hormonal, treatment, and environmental context. In this opening session, learners are not expected to perform advanced reproductive diagnosis. They are expected to recognize that visible reproductive morphology is stronger evidence than cultivar reputation or seed marketing category and that uncertain structures should be documented for follow-up rather than forced into an early classification.",
         "references": ["REF-SEX-2026-001"]
       },
       {
-        "title": "Repeated observations create a biological baseline",
-        "body": "A single inspection is a snapshot. Tracking node production, internode length, branching, leaf expansion, root-zone observations and reproductive structures over time creates a longitudinal baseline. That baseline helps distinguish normal development from a new deviation and prevents one unusual observation from being misclassified as a fixed genetic trait or a specific deficiency.",
+        "title": "6. A single snapshot cannot establish a trend",
+        "body": "One inspection can describe the current state but cannot by itself show whether internode length is increasing, whether branching is accelerating, whether a structure is newly appearing, or whether a deviation is spreading. Longitudinal records convert isolated observations into patterns. Repeated node counts, internode measurements, branching descriptions, leaf observations, and reproductive notes can reveal direction and rate of change. This principle is foundational to later diagnostic work because many causal hypotheses become stronger or weaker when the time course is known.",
         "references": ["REF-FLOWER-MORPH-2023-001"]
-      }
-    ],
-    "workedExamples": [
-      "A plant is 28 days from emergence but still shows vigorous shoot and leaf development without mature floral structures. Record both chronological age and observed morphology instead of labeling the crop stage from days alone.",
-      "Internode length increases across three inspections. The technician records the trend and compares it with lighting and environmental history before concluding that the architecture is purely genetic.",
-      "An early structure at a node is not clearly pistillate or staminate. The technician photographs and maps the location, then repeats the observation as the structure develops rather than forcing an immediate classification."
-    ],
-    "guidedPractice": [
-      {
-        "prompt": "Use a live plant, approved photographs or a simulated specimen to identify major organs and assign a developmental description based only on observable evidence.",
-        "steps": ["Identify root/root-zone evidence where available.","Identify stem, node, internode and shoot-tip structures.","Describe leaf arrangement and branching.","Identify any reproductive structures without inferring from the cultivar name.","Record chronological age separately from morphological stage."],
-        "expectedEvidence": "A labeled observation record separating direct observations, stage interpretation and unresolved uncertainty.",
-        "feedbackGuidance": "Strong work uses precise structural terms and does not turn age, cultivar name or one ambiguous structure into unsupported biological certainty."
-      }
-    ],
-    "decisionScenarios": [
-      {
-        "scenario": "Two plants are the same chronological age. One has short internodes and dense branching; the other has longer internodes and a different leaf arrangement. Both appear healthy.",
-        "prompt": "What should be recorded before deciding that one plant is abnormal?",
-        "expectedReasoning": "Record morphology, node count, internode spacing, branching, developmental structures, genetics and environmental history. Same age does not require identical architecture, and morphology alone does not identify a causal problem."
       },
       {
-        "scenario": "A crop schedule predicts reproductive transition, but the observed plants do not yet show the expected floral development.",
-        "prompt": "Should the technician record the schedule stage or the observed plant state?",
-        "expectedReasoning": "Record both the scheduled expectation and observed morphology, flag the mismatch and investigate relevant crop history rather than rewriting the observation to match the schedule."
-      }
-    ],
-    "commonMistakes": [
-      "Using chronological age as the only evidence for developmental stage.",
-      "Treating cultivar or seed-category labels as proof of actual morphology or sex expression.",
-      "Calling every visible leaf abnormality a nutrient deficiency without considering structure, age, distribution and other evidence.",
-      "Treating a one-time architecture observation as a fixed genetic trait without longitudinal comparison."
-    ],
-    "workplaceConnections": [
-      "Crop-inspection records should use the same plant, room or batch identifiers as environmental, irrigation, IPM and production records so morphology can be compared with later measurements.",
-      "Stage descriptions should support work scheduling but should never replace direct observation when the crop differs from the expected schedule."
-    ],
-    "safetyComplianceNotes": [
-      "Use only authorized plant-handling and sanitation procedures during inspection; observation does not authorize destructive sampling or movement of regulated plant material."
-    ],
-    "practicalApplication": "Create a baseline morphology record for representative plants that documents organ identity, node count or position, internode pattern, branching, leaf condition, visible root-zone condition, reproductive structures, chronological age and uncertainty. Repeat the same observations later and compare change over time.",
-    "practicalActivities": [
+        "title": "7. Observation and interpretation must remain separate",
+        "body": "A disciplined record distinguishes what was directly observed from what the observer thinks it may mean. 'Lower leaf is pale between veins' is an observation; 'magnesium deficiency' is an interpretation that requires additional evidence. 'Internodes are longer than last week' is an observation; 'light intensity is too low' is a causal hypothesis. Keeping these layers separate prevents confirmation bias and allows another technician, instructor, or reviewer to reconstruct the reasoning from the original evidence.",
+        "references": ["REF-PLANT-BIO-001", "REF-FLOWER-MORPH-2023-001"]
+      },
       {
-        "title": "Morphology baseline and repeat inspection",
-        "instructions": "Inspect a simulated, photographed, supervised-lab or approved workplace plant at two time points and produce a structured comparison that separates observed change from causal interpretation.",
-        "evidenceToProduce": ["baseline morphology record","repeat observation comparison","uncertainty/escalation note"],
-        "deliveryModes": ["simulation","supervised-lab","workplace","paper-data-exercise"]
+        "title": "8. Academic evidence has scope and limits",
+        "body": "Cannabis science is expanding, but studies differ in genotype, production system, sample size, environment, and purpose. A scientifically literate learner should ask what a source actually measured before applying it. The sources in this session support morphology, architecture, reproductive biology, and developmental reasoning; they do not justify universal claims about exact days to stage, exact node numbers, potency from appearance, or a single cause of sex-expression instability. Academic-facing cultivation education should make those boundaries explicit rather than hiding uncertainty.",
+        "references": ["REF-PLANT-BIO-001", "REF-FLOWER-MORPH-2023-001", "REF-FLOROGENESIS-2019-001", "REF-SEX-2026-001"]
       }
     ],
-    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-MODULE-001"],
-    "portfolioEvidence": ["Sanitized two-time-point morphology record demonstrating accurate plant-part identification and developmental observation."],
-    "spacedRetrieval": [
-      "One day later, explain the difference between chronological age and morphological developmental state.",
-      "One week later, review a new plant image and list the observations required before interpreting an unusual growth pattern as a diagnosis."
+    "figures": [
+      {"id": "FIG-PLANT-BIO-001", "title": "Major external structures of a cannabis shoot", "caption": "Instructional figure should label shoot tip, node, internode, leaf, petiole, axillary position, branch, and representative reproductive location without implying cultivar identity from leaf shape.", "altText": "Text description of a cannabis shoot identifying the shoot tip at the top, repeated nodes along the stem, internodes between nodes, leaves attached at nodes, lateral branches arising from axillary positions, and reproductive structures associated with node and branch positions.", "assetRef": null, "references": ["REF-FLOROGENESIS-2019-001", "REF-FLOWER-MORPH-2023-001"]},
+      {"id": "FIG-PLANT-BIO-002", "title": "Chronological age versus morphological stage", "caption": "Concept figure should show two plants of the same chronological age expressing different architecture or developmental features and emphasize recording both age and morphology.", "altText": "Two same-age plant records are compared. Plant A has shorter internodes and denser branching; Plant B has longer internodes and different leaf arrangement. The diagram states that equal age does not require identical morphology and that both chronology and observed structure should be recorded.", "assetRef": null, "references": ["REF-FLOWER-MORPH-2023-001"]}
     ],
-    "furtherReading": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001","REF-SEX-2026-001"],
-    "evidenceDisclosure": "Cannabis morphology and reproductive expression vary across genotype, environment and development. The cited life-cycle study provides useful morphological observations but should not be generalized into universal timing rules, and current sex-expression evidence supports a context-dependent rather than single-trigger model.",
-    "accessibility": {
-      "readingOrderNotes": "Teach organ identity and developmental observation before reproductive-state scenarios.",
-      "alternativeTextNotes": "Plant images should identify the location and relationship of nodes, internodes, leaves, shoot tips and reproductive structures in text rather than using arrows or color alone.",
-      "transcriptRequired": false,
-      "nonVisualAlternative": "Provide structured text descriptions of each specimen's stem, node, leaf and reproductive morphology so the developmental reasoning exercise can be completed without an image."
-    },
-    "summary": "Plant biology begins with disciplined observation. Identify the structure, describe developmental state, record chronology separately, track changes over time and preserve uncertainty until the evidence supports a stronger interpretation."
+    "workedExamples": [
+      "A plant is 28 days from emergence and is producing vigorous leaves and lateral branches without developed inflorescences. Record 28 days from emergence as chronology and describe the observed vegetative morphology separately instead of treating day 28 as a universal stage definition.",
+      "Two plants from the same room are the same age, but one has six visible nodes and shorter internodes while the other has five visible nodes and longer internodes. Record the structural difference before proposing genetics, lighting, or another cause.",
+      "A crop schedule says flowering should have begun, but the inspected plants show only early node-associated reproductive structures and no developed apical inflorescence. Record the schedule expectation and actual morphology as separate facts, then escalate the mismatch for appropriate follow-up.",
+      "One older leaf is pale while new growth and neighboring plants appear normal. Document the organ, plant position, distribution, and date rather than naming a nutrient deficiency from one isolated observation."
+    ],
+    "guidedPractice": [
+      {"prompt": "Using a live plant, approved photograph set, or accessible written specimen description, create a morphology record that another learner could use to reconstruct what you saw without seeing the original specimen.", "steps": ["Record plant or crop identifier and observation date.", "Identify shoot tip, stem, nodes, internodes, leaves, and branches.", "Describe visible developmental and reproductive features without relying on cultivar name.", "Record chronological age separately if known.", "Mark any uncertain structure as unresolved rather than guessing.", "Separate direct observations from interpretations or hypotheses."], "expectedEvidence": "A structured observation record with identifiers, chronology, organ/location terms, developmental description, uncertainty, and a clearly separated interpretation field.", "feedbackGuidance": "Strong work is reproducible: another person can tell what was observed, where it was observed, what remains uncertain, and which statements are interpretation rather than direct evidence."}
+    ],
+    "decisionScenarios": [
+      {"scenario": "Two plants are the same chronological age. One has short internodes and dense lateral branching; the other has longer internodes and a different leaf arrangement. Both otherwise appear vigorous.", "prompt": "What should be recorded before deciding that either plant is abnormal?", "expectedReasoning": "Record node count, internode pattern, branching, leaf arrangement, developmental structures, genotype or source identity if known, and relevant environment/history. Same age does not require identical architecture, and morphology alone does not identify a causal problem."},
+      {"scenario": "A production calendar predicts reproductive transition this week, but the inspected crop does not yet show the expected inflorescence development.", "prompt": "Should the technician record the scheduled stage or the observed plant state?", "expectedReasoning": "Record both as separate data: the schedule expectation and the observed morphology. Flag the mismatch for follow-up rather than rewriting the observation to match the calendar."}
+    ],
+    "dataExercises": [
+      {"prompt": "Compare two weekly observations of the same representative plant and identify which statements are direct observations, which are trends, and which are hypotheses.", "data": ["Day 21: 5 visible nodes; mean of three measured internodes 2.8 cm; no developed apical inflorescence; lower leaves uniformly green.", "Day 28: 7 visible nodes; mean of the same relative internode positions 4.1 cm; lateral branches elongated; no developed apical inflorescence.", "Room note: lighting fixture height changed between Day 21 and Day 28."], "calculation": "Internode change for the measured positions: 4.1 cm - 2.8 cm = 1.3 cm increase in the sample mean.", "answerGuidance": "Direct observations include node count, measured internode values, branch elongation, and inflorescence observation. The increase across dates is a trend. The lighting change is contextual evidence, but concluding that it caused the internode change is a hypothesis requiring additional measurement and comparison."}
+    ],
+    "commonMistakes": ["Using chronological age as the only evidence for developmental stage.", "Treating cultivar or seed-category labels as proof of actual morphology or reproductive expression.", "Naming a nutrient, pest, pathogen, or environmental cause from a single nonspecific visual feature.", "Treating one architecture observation as a fixed genetic trait without longitudinal comparison.", "Copying exact node numbers or timing from one published cultivar study and presenting them as universal cannabis rules.", "Mixing observations and causal interpretations in the same record so later reviewers cannot distinguish evidence from inference."],
+    "workplaceConnections": ["Crop-inspection records should use the same plant, room, crop, or batch identifiers used by environmental, irrigation, IPM, and production records so later comparisons are possible.", "Stage descriptions can support scheduling, but direct plant observation should be preserved when the crop differs from the expected schedule.", "A repeatable morphology baseline gives technicians a defensible starting point for later deviation, diagnostic, and handoff records."],
+    "safetyComplianceNotes": ["Use only authorized plant-handling, sanitation, photography, and recordkeeping procedures during inspection.", "Observation training does not authorize destructive sampling, movement of regulated plant material, breeding decisions, pesticide applications, or other actions outside the learner's assigned role and jurisdiction."],
+    "practicalApplication": "Create a baseline morphology record for one representative plant or an approved simulated specimen. Include organ identity, node count or mapped node positions, internode pattern, branching, leaf condition, visible root-zone evidence where available, reproductive structures, chronological age if known, developmental description, uncertainty, and a separate interpretation field. Repeat the observation at a later time point and compare what changed before proposing causes.",
+    "practicalActivities": [
+      {"title": "Morphology baseline and repeat inspection", "instructions": "Inspect a simulated, photographed, supervised-lab, or approved workplace plant at two time points. Produce a structured comparison that distinguishes direct observation, longitudinal trend, uncertainty, and any proposed follow-up measurement. Do not score the learner on diagnosing a cause that the supplied evidence cannot establish.", "evidenceToProduce": ["baseline morphology record", "repeat observation comparison", "observation-versus-interpretation table", "uncertainty or escalation note"], "deliveryModes": ["simulation", "supervised-lab", "workplace", "paper-data-exercise"]}
+    ],
+    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-LESSON-001"],
+    "portfolioEvidence": ["Sanitized two-time-point morphology record demonstrating accurate plant-part identification, developmental observation, separation of evidence from inference, and appropriate uncertainty handling."],
+    "spacedRetrieval": ["One day later, explain the difference between chronological age and morphological developmental state without looking at the lesson.", "Three days later, list five observations required before interpreting an unusual architecture pattern as a diagnosis.", "One week later, review a new plant image or written specimen and separate four direct observations from two plausible but unconfirmed causal hypotheses."],
+    "furtherReading": ["REF-PLANT-BIO-001", "REF-FLOWER-MORPH-2023-001", "REF-FLOROGENESIS-2019-001", "REF-SEX-2026-001"],
+    "evidenceDisclosure": "The session uses peer-reviewed cannabis literature to establish morphology, developmental change, architecture, and reproductive context. Important limits are explicit: the 2023 life-cycle study is cultivar- and condition-specific; the 2019 florogenesis study focuses on female plants under defined conditions; the 2026 sex-expression review supports a multicausal model rather than a single universal trigger; and the 2021 review notes genotype-specific limitations across cannabis research. Learners should therefore use these sources to improve observation and reasoning, not to invent universal timing or appearance rules.",
+    "accessibility": {"readingOrderNotes": "Present vocabulary before the numbered sections, then worked examples, guided practice, data exercise, assessment, and retrieval activities in that order.", "alternativeTextNotes": "All plant figures must identify structures through text labels and relational descriptions rather than color or arrows alone. Photographs used for assessment require equivalent nonvisual descriptions when the learning objective is not inherently visual identification.", "transcriptRequired": false, "nonVisualAlternative": "Provide structured written specimen descriptions listing stem organization, node count, internode pattern, leaf arrangement, branching, reproductive features, chronology, and changes over time so the reasoning tasks can be completed without an image."},
+    "summary": "Session 1 establishes the core scientific habit for the entire curriculum: identify the structure, describe the plant's developmental state, record chronology separately, compare repeated observations, distinguish evidence from interpretation, and preserve uncertainty until additional data justify a stronger conclusion."
   }
 }
