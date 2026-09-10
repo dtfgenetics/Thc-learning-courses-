@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-CANOPY-FLOWERING-001",
+  "title":"Advanced Canopy and Flowering Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-CANOPY-001","TASK-CULT2-DIAG-001","TASK-CULT2-METRICS-001"],
+  "competencies":["COMP-CANOPY-ADV-001","COMP-FLOWER-ADV-001"],
+  "deliveryModes":["simulation","supervised-lab","workplace-equivalent"],
+  "evidenceOutputs":["Canopy architecture map","Uniformity and microclimate interpretation","Flowering-stage risk assessment","Representative maturity sampling plan","Corrective-work recommendation","Specialist handoff report"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Canopy evidence collection and mapping","points":20},{"name":"Architecture and uniformity diagnosis","points":20},{"name":"Flowering and reproductive risk interpretation","points":20},{"name":"Maturity sampling and harvest decision logic","points":15},{"name":"Corrective action and tradeoff reasoning","points":15},{"name":"Documentation and handoff","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Makes an irreversible canopy or harvest recommendation without verifying crop identity, stage, or representative evidence.","Treats a single flower or single sensor position as conclusive evidence for the entire crop when contradictory spatial evidence is provided.","Fails to identify a supplied reproductive or contamination risk that requires immediate isolation or escalation.","Alters or fabricates measurement, maturity, or crop-observation evidence."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-CANOPY-FLOWERING-001.md"
+}

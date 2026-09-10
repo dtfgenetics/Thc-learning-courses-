@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-WATER-IRRIGATION-001",
+  "title":"Advanced Water Quality and Irrigation Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-FERTIGATION-001","TASK-CULT2-ROOTZONE-001","TASK-CULT2-SENSOR-001","TASK-CULT2-DIAG-001"],
+  "competencies":["COMP-WATER-QUALITY-ADV-001","COMP-IRRIGATION-ADV-001"],
+  "deliveryModes":["simulation","supervised-lab","workplace-equivalent"],
+  "evidenceOutputs":["Source-water interpretation","Meter verification record","Irrigation uniformity calculation","Root-zone trend analysis","Water and solute mass-balance worksheet","Corrective irrigation plan"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Source water and alkalinity interpretation","points":15},{"name":"Measurement and meter quality","points":15},{"name":"Irrigation uniformity and delivery analysis","points":20},{"name":"Scheduling and root-zone response","points":20},{"name":"Mass balance and recirculating-system reasoning","points":20},{"name":"Corrective plan and documentation","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Uses a knowingly unverified pH EC or flow measurement to justify a major corrective action.","Recommends a chemical or nutrient change outside supplied authorization or without considering source-water and root-zone evidence.","Ignores a confirmed delivery failure while representing irrigation as uniform or successful.","Falsifies source-water, meter, flow, drain, reservoir, or root-zone records."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-WATER-IRRIGATION-001.md"
+}

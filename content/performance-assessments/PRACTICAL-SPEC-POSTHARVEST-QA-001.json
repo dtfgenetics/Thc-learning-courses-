@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-POSTHARVEST-QA-001",
+  "title":"Post-Harvest Quality Assurance Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-POSTHARVEST-001","TASK-CULT2-DEVIATION-001","TASK-CULT2-TRACE-001","TASK-CULT2-METRICS-001"],
+  "competencies":["COMP-POSTHARVEST-PROCESS-001","COMP-POSTHARVEST-QA-001"],
+  "deliveryModes":["simulation","supervised-lab","workplace-equivalent"],
+  "evidenceOutputs":["Harvest maturity sampling plan","Drying trend analysis","Lot genealogy reconstruction","Sampling and hold decision","Deviation/CAPA workup","Disposition and release recommendation"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Maturity and process sampling","points":15},{"name":"Drying and storage trend interpretation","points":20},{"name":"Traceability and lot genealogy","points":20},{"name":"Quality sampling and hold controls","points":15},{"name":"Deviation root-cause and CAPA reasoning","points":20},{"name":"Disposition documentation and communication","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Releases or blends material whose identity, hold status, or product-protection condition is unresolved.","Deletes, obscures, or rewrites deviation evidence rather than preserving traceability.","Uses a nonrepresentative sample as conclusive evidence for an entire lot despite known heterogeneity.","Falsifies drying, storage, sampling, transfer, or disposition records."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-POSTHARVEST-QA-001.md"
+}

@@ -1,0 +1,17 @@
+{
+  "id":"PRACTICAL-SPEC-CROP-SYSTEMS-001",
+  "title":"Grow-Space Systems and Crop Planning Specialist Practical",
+  "version":"1.0.0",
+  "status":"draft",
+  "purpose":"credential",
+  "assessmentType":"practical",
+  "role":"ROLE-CULT-TECH-II-001",
+  "jobTasks":["TASK-CULT2-EQUIPMENT-001","TASK-CULT2-TRACE-001","TASK-CULT2-METRICS-001","TASK-CULT2-DEVIATION-001"],
+  "competencies":["COMP-SPACE-BIOSEC-001","COMP-CROP-PLAN-001"],
+  "deliveryModes":["simulation","virtual-facility","workplace-equivalent"],
+  "evidenceOutputs":["Grow-space zoning plan","Biosecurity flow map","Capacity worksheet","Crop schedule","Lot genealogy and record plan","Constraint and deviation response"],
+  "scoring":{"totalPoints":100,"domains":[{"name":"Space zoning and biosecurity design","points":20},{"name":"Capacity and constraint analysis","points":20},{"name":"Genetic material and crop scheduling","points":20},{"name":"Workflow and resource coordination","points":15},{"name":"Traceability and record architecture","points":15},{"name":"Deviation response and communication","points":10}]},
+  "passingStandard":{"minimumPercent":80,"noCriticalErrors":true},
+  "criticalErrors":["Designs material or personnel flow that knowingly creates an uncontrolled clean-to-dirty or quarantine-to-production contamination pathway.","Builds a crop schedule that exceeds a supplied hard capacity or environmental constraint without identifying the conflict.","Allows genetic-source or lot identity to become irretrievable during planned transfers.","Alters supplied capacity, inventory, or schedule evidence to make the plan appear feasible."],
+  "sourceDocument":"docs/academy-v2/practicals/PRACTICAL-SPEC-CROP-SYSTEMS-001.md"
+}
