@@ -1,6 +1,6 @@
 {
   "id": "ITEM-IPM-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-001",
@@ -11,11 +11,11 @@
   "stem": "Why is clean planting stock important in disease prevention?",
   "choices": [
     "It reduces the chance of introducing pathogens into the production system",
-    "It guarantees no disease can ever occur",
-    "It replaces environmental management",
-    "It only affects cultivar naming"
+    "It lowers visible stress at intake, so symptom-free plants can move into production after a brief visual check instead of a risk-based isolation process",
+    "It standardizes early crop vigor, making environmental disease controls less important once the incoming plants establish in the production room",
+    "It reduces the need for routine scouting because healthy-looking stock has already been visually screened for the most important biological hazards"
   ],
   "correct": 0,
-  "rationale": "Clean material is a core preventive measure.",
+  "rationale": "Clean planting material reduces one major introduction pathway for pathogens and pests, but it does not replace quarantine, scouting, sanitation, or environmental disease management.",
   "references": ["REF-IPM-001"]
 }
