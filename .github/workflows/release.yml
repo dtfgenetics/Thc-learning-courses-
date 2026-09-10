@@ -70,8 +70,8 @@ jobs:
             echo "Run 'npm run registry:build', commit the registry, and create the release from that commit."
             exit 1
           fi
-      - name: Run complete quality suite
-        run: npm test
+      - name: Run strict release quality suite
+        run: npm run test:release
       - name: Enforce scoped production publication gates
         env:
           RELEASE_COURSE_ID: ${{ steps.scope.outputs.course }}
