@@ -89,10 +89,10 @@ function listBaseReviews(base) {
 export function evaluateReviewedItemChange(baseItem, headItem, baseReviews) {
   if (!baseItem || !headItem) return null;
   if (!hasApprovedAssessmentReview(baseItem, baseReviews)) return null;
-  if (!substantiveItemChanged(baseItem, headItem)) return null;
   if (baseItem.id !== headItem.id) {
     return `reviewed item identity changed in place (${baseItem.id} -> ${headItem.id}); create a new item instead`;
   }
+  if (!substantiveItemChanged(baseItem, headItem)) return null;
   if (!isVersionAdvanced(baseItem.version, headItem.version)) {
     return `reviewed assessment content changed without advancing version ${baseItem.version}`;
   }
