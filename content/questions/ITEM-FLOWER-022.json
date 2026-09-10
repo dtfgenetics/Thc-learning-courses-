@@ -10,10 +10,10 @@
   "type": "scenario",
   "stem": "A controller log shows the flowering lights switching off on schedule, yet a low-intensity service light remains on in the room during part of the intended dark interval. What should the technician conclude first?",
   "choices": [
-    "The actual dark interval is not fully dark and the unintended light source should be corrected and documented",
-    "The controller log proves the plants experienced complete darkness",
-    "Only light intensity during the main photoperiod matters to flowering development",
-    "The service light automatically means the crop must be discarded"
+    "The actual dark interval is interrupted, so the unintended light source should be corrected, documented, and its exposure pattern investigated",
+    "The controller record is sufficient evidence of complete darkness because the main fixtures followed their programmed shutoff schedule",
+    "The service light can be treated as operationally irrelevant because flowering response is determined mainly by the daytime light level",
+    "The exposure should be treated as proof of crop failure, with harvest timing changed before additional observations are collected"
   ],
   "correct": 0,
   "rationale": "A programmed schedule does not by itself verify the plant's actual light environment. Unintended illumination during the intended dark interval should be identified, corrected, and documented without assuming a predetermined crop outcome.",
