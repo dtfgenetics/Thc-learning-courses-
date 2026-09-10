@@ -1,18 +1,23 @@
 const lessonView = document.querySelector('#lesson-view');
 const tabs = [...document.querySelectorAll('.portal-tab')];
 const lessonIdByTitle = new Map();
-let catalogIndexPromise = null;
+let catalogPromise = null;
+
+async function loadCatalog() {
+  if (!catalogPromise) {
+    catalogPromise = fetch('/api/catalog', { headers: { accept: 'application/json' } })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error(`catalog unavailable (${response.status})`)));
+  }
+  return catalogPromise;
+}
 
 async function ensureCatalogIndex() {
-  if (!catalogIndexPromise) {
-    catalogIndexPromise = fetch('/api/catalog', { headers: { accept: 'application/json' } })
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error('catalog unavailable')))
-      .then((catalog) => {
-        for (const course of catalog.courses ?? []) for (const module of course.modules ?? []) for (const lesson of module.lessons ?? []) lessonIdByTitle.set(lesson.title, lesson.id);
-      })
-      .catch(() => {});
+  const catalog = await loadCatalog();
+  for (const course of catalog.courses ?? []) {
+    for (const module of course.modules ?? []) {
+      for (const lesson of module.lessons ?? []) lessonIdByTitle.set(lesson.title, lesson.id);
+    }
   }
-  await catalogIndexPromise;
 }
 
 function text(tag, value, className = '') {
@@ -59,6 +64,10 @@ function evidenceList(title, rows, idKey) {
   section.append(text('h3', title));
   const list = document.createElement('div');
   list.className = 'portal-evidence-list';
+  if (!rows.length) {
+    section.append(text('p', 'No evidence is required for this credential.', 'portal-result-note'));
+    return section;
+  }
   for (const row of rows) {
     const item = document.createElement('div');
     item.className = 'portal-evidence-row';
@@ -67,6 +76,7 @@ function evidenceList(title, rows, idKey) {
     const details = [];
     if (row.scorePercent != null) details.push(`${Number(row.scorePercent).toFixed(0)}%`);
     if (Number(row.criticalErrorCount ?? 0) > 0) details.push(`${row.criticalErrorCount} critical error${Number(row.criticalErrorCount) === 1 ? '' : 's'}`);
+    if (row.evidenceVerified === true) details.push('evidence verified');
     if (details.length) identity.append(text('span', details.join(' • '), 'portal-evidence-meta'));
     const state = text('span', statusLabel(row.status), `portal-evidence-status status-${String(row.status ?? 'not-recorded')}`);
     item.append(identity, state);
@@ -76,19 +86,19 @@ function evidenceList(title, rows, idKey) {
   return section;
 }
 
-async function renderCredentialProgress() {
-  setActive('tab-progress');
-  const panel = document.createElement('div');
-  panel.className = 'portal-panel';
-  panel.append(text('p', 'Private learner record', 'eyebrow'));
-  panel.append(text('h2', 'My Credential Progress'));
-  panel.append(text('p', 'Your exam, competency, practical, capstone, and portfolio evidence are evaluated together. Lesson completion alone does not issue a credential.', 'lede'));
-  panel.append(text('p', 'Loading Technician II credential evidence…', 'status'));
-  lessonView.replaceChildren(panel);
-  lessonView.focus();
+function labeledControl(labelText, control, hint = '') {
+  const label = document.createElement('label');
+  label.className = 'portal-form-field';
+  label.append(text('span', labelText, 'portal-form-label'));
+  if (hint) label.append(text('span', hint, 'portal-form-hint'));
+  label.append(control);
+  return label;
+}
 
+async function loadCredentialProgress(container, credential) {
+  container.replaceChildren(text('p', `Loading ${credential.title} evidence…`, 'status'));
   try {
-    const response = await fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/progress', {
+    const response = await fetch(`/api/v1/me/credentials/${encodeURIComponent(credential.id)}/progress`, {
       headers: { accept: 'application/json' },
       credentials: 'same-origin'
     });
@@ -97,23 +107,25 @@ async function renderCredentialProgress() {
       throw new Error(`Credential progress unavailable (${response.status}).`);
     }
     const data = await response.json();
-    panel.querySelector('.status')?.remove();
+    const fragment = document.createDocumentFragment();
 
     const summary = document.createElement('section');
     summary.className = 'portal-progress-summary';
     const attempts = data.assessmentAttempts ?? [];
     const bestScore = attempts.filter((row) => row.status === 'scored' && row.scorePercent != null).reduce((best, row) => Math.max(best, Number(row.scorePercent)), -1);
     const demonstrated = (data.competencies ?? []).filter((row) => row.masteryLevel === 'demonstrated').length;
-    const performancePassed = (data.performanceAssessments ?? []).filter((row) => row.status === 'passed' && Number(row.criticalErrorCount ?? 0) === 0).length;
-    const portfolioComplete = (data.portfolioArtifacts ?? []).filter((row) => ['accepted','verified','complete'].includes(row.status)).length;
+    const performancePassed = (data.performanceAssessments ?? []).filter((row) => row.status === 'passed' && Number(row.criticalErrorCount ?? 0) === 0 && (row.evidenceVerified !== false)).length;
+    const portfolioComplete = (data.portfolioArtifacts ?? []).filter((row) => ['accepted', 'verified', 'complete'].includes(row.status)).length;
+    const requiredPerformance = data.performanceAssessments ?? [];
+    const requiredPortfolio = data.portfolioArtifacts ?? [];
     summary.append(
-      summaryCard('Credential status', data.eligibility?.eligible ? 'Eligible' : 'In progress', data.credential?.title ?? ''),
-      summaryCard('Best written exam', bestScore >= 0 ? `${bestScore.toFixed(0)}%` : 'Not attempted', `Pass ${data.credential?.minimumPassingScorePercent ?? 80}%`),
+      summaryCard('Credential status', data.eligibility?.eligible ? 'Eligible' : 'In progress', data.credential?.title ?? credential.title),
+      summaryCard('Best written exam', bestScore >= 0 ? `${bestScore.toFixed(0)}%` : 'Not attempted', `Pass ${data.credential?.minimumPassingScorePercent ?? credential.eligibility?.minimumPassingScorePercent ?? 80}%`),
       summaryCard('Competencies demonstrated', String(demonstrated), `${(data.competencies ?? []).length} transcript records`),
-      summaryCard('Performance evidence', `${performancePassed}/${(data.performanceAssessments ?? []).length}`, '7 practicals + capstone'),
-      summaryCard('Portfolio evidence', `${portfolioComplete}/${(data.portfolioArtifacts ?? []).length}`, 'Employment artifacts')
+      summaryCard('Performance evidence', `${performancePassed}/${requiredPerformance.length}`, `${requiredPerformance.length} required practical/capstone record${requiredPerformance.length === 1 ? '' : 's'}`),
+      summaryCard('Portfolio evidence', `${portfolioComplete}/${requiredPortfolio.length}`, `${requiredPortfolio.length} required artifact${requiredPortfolio.length === 1 ? '' : 's'}`)
     );
-    panel.append(summary);
+    fragment.append(summary);
 
     if (!(data.eligibility?.eligible)) {
       const blocker = document.createElement('section');
@@ -126,14 +138,14 @@ async function renderCredentialProgress() {
       }
       if (!list.children.length) list.append(text('li', 'No unresolved requirement details are available.'));
       blocker.append(list);
-      panel.append(blocker);
+      fragment.append(blocker);
     }
 
     const attemptsSection = document.createElement('section');
     attemptsSection.className = 'portal-progress-section';
     attemptsSection.append(text('h3', 'Credential exam attempts'));
     if (!attempts.length) {
-      attemptsSection.append(text('p', 'No official Technician II credential exam attempt is recorded yet.', 'portal-result-note'));
+      attemptsSection.append(text('p', 'No official credential exam attempt is recorded yet.', 'portal-result-note'));
     } else {
       const tableWrap = document.createElement('div');
       tableWrap.className = 'portal-table-wrap';
@@ -161,7 +173,7 @@ async function renderCredentialProgress() {
       tableWrap.append(table);
       attemptsSection.append(tableWrap);
     }
-    panel.append(attemptsSection);
+    fragment.append(attemptsSection);
 
     const transcript = document.createElement('section');
     transcript.className = 'portal-progress-section';
@@ -182,12 +194,223 @@ async function renderCredentialProgress() {
       }
       transcript.append(list);
     }
-    panel.append(transcript);
-    panel.append(evidenceList('Practical & capstone evidence', data.performanceAssessments ?? [], 'assessmentId'));
-    panel.append(evidenceList('Employment portfolio', data.portfolioArtifacts ?? [], 'artifactId'));
+    fragment.append(transcript);
+    fragment.append(evidenceList('Practical & capstone evidence', requiredPerformance, 'assessmentId'));
+    fragment.append(evidenceList('Employment portfolio', requiredPortfolio, 'artifactId'));
+    container.replaceChildren(fragment);
   } catch (error) {
-    panel.querySelector('.status')?.remove();
-    panel.append(text('p', error.message, 'portal-error'));
+    container.replaceChildren(text('p', error.message, 'portal-error'));
+  }
+}
+
+async function renderCredentialProgress() {
+  setActive('tab-progress');
+  const panel = document.createElement('div');
+  panel.className = 'portal-panel';
+  panel.append(text('p', 'Private learner record', 'eyebrow'));
+  panel.append(text('h2', 'My Credential Progress'));
+  panel.append(text('p', 'Choose any credential currently visible in this Academy environment. Written assessment, practical/capstone, competency, and portfolio evidence are evaluated together; lesson completion alone does not issue a credential.', 'lede'));
+  const controls = document.createElement('div');
+  controls.className = 'portal-selector-row';
+  const detail = document.createElement('div');
+  detail.className = 'portal-progress-detail';
+  panel.append(controls, detail);
+  lessonView.replaceChildren(panel);
+  lessonView.focus();
+
+  try {
+    const catalog = await loadCatalog();
+    const credentials = catalog.credentials ?? [];
+    if (!credentials.length) {
+      detail.replaceChildren(text('p', 'No credential definitions are currently available in this environment.', 'portal-result-note'));
+      return;
+    }
+    const select = document.createElement('select');
+    select.id = 'credential-progress-select';
+    for (const credential of credentials) {
+      const option = document.createElement('option');
+      option.value = credential.id;
+      option.textContent = `${credential.title} — ${statusLabel(credential.status)}`;
+      select.append(option);
+    }
+    const defaultCredential = credentials.find((credential) => credential.id === 'CRED-CULT-TECH-II-001') ?? credentials[0];
+    select.value = defaultCredential.id;
+    controls.replaceChildren(labeledControl('Credential', select, catalog.mode === 'staging-preview' ? 'Draft/review credentials are shown in staging preview.' : 'Only published credentials are shown.'));
+    const renderSelected = () => {
+      const credential = credentials.find((candidate) => candidate.id === select.value);
+      if (credential) loadCredentialProgress(detail, credential);
+    };
+    select.addEventListener('change', renderSelected);
+    renderSelected();
+  } catch (error) {
+    detail.replaceChildren(text('p', error.message, 'portal-error'));
+  }
+}
+
+function renderAssessmentDefinition(container, definition) {
+  const card = document.createElement('section');
+  card.className = 'portal-assessor-definition';
+  card.append(text('p', `${definition.assessmentType ?? 'practical'} • ${statusLabel(definition.status)} • v${definition.version}`, 'course-meta'));
+  card.append(text('h3', definition.title));
+  card.append(text('p', `Passing standard: ${definition.passingStandard?.minimumPercent ?? 80}%${definition.passingStandard?.noCriticalErrors ? ' with no critical errors' : ''}.`, 'portal-result-note'));
+
+  const domains = document.createElement('div');
+  domains.className = 'portal-rubric-grid';
+  for (const domain of definition.scoring?.domains ?? []) {
+    const row = document.createElement('div');
+    row.className = 'portal-rubric-row';
+    row.append(text('span', domain.name), text('strong', `${domain.points} pts`));
+    domains.append(row);
+  }
+  if (domains.children.length) {
+    card.append(text('h4', `Scoring rubric • ${definition.scoring?.totalPoints ?? 0} points`));
+    card.append(domains);
+  }
+
+  if ((definition.evidenceOutputs ?? []).length) {
+    card.append(text('h4', 'Required evidence outputs'));
+    const list = document.createElement('ul');
+    for (const item of definition.evidenceOutputs) list.append(text('li', item));
+    card.append(list);
+  }
+  if ((definition.criticalErrors ?? []).length) {
+    card.append(text('h4', 'Critical errors'));
+    const list = document.createElement('ul');
+    for (const item of definition.criticalErrors) list.append(text('li', item));
+    card.append(list);
+  }
+  container.replaceChildren(card);
+}
+
+async function renderAssessorWorkspace() {
+  setActive('tab-assessor');
+  const panel = document.createElement('div');
+  panel.className = 'portal-panel';
+  panel.append(text('p', 'Restricted assessment workflow', 'eyebrow'));
+  panel.append(text('h2', 'Assessor Practical Workspace'));
+  panel.append(text('p', 'Use the approved practical definition and rubric to record a learner result. This workspace records evidence only; it does not approve curriculum or issue credentials.', 'lede'));
+  const body = document.createElement('div');
+  body.append(text('p', 'Loading practical definitions…', 'status'));
+  panel.append(body);
+  lessonView.replaceChildren(panel);
+  lessonView.focus();
+
+  try {
+    const catalog = await loadCatalog();
+    const definitions = catalog.assessorPerformanceAssessments ?? [];
+    if (catalog.mode !== 'staging-preview' || !definitions.length) {
+      body.replaceChildren(text('p', 'The assessor rubric catalog is available only in the controlled Academy staging preview. Production assessor delivery requires the secured deployment environment.', 'portal-result-note'));
+      return;
+    }
+
+    const form = document.createElement('form');
+    form.className = 'portal-assessor-form';
+    const learner = document.createElement('input');
+    learner.type = 'text';
+    learner.required = true;
+    learner.autocomplete = 'off';
+    learner.placeholder = 'Authenticated learner subject';
+
+    const assessment = document.createElement('select');
+    assessment.required = true;
+    for (const definition of definitions) {
+      const option = document.createElement('option');
+      option.value = definition.id;
+      option.textContent = `${definition.title} — v${definition.version}`;
+      assessment.append(option);
+    }
+
+    const deliveryMode = document.createElement('select');
+    deliveryMode.required = true;
+    const score = document.createElement('input');
+    score.type = 'number';
+    score.min = '0';
+    score.max = '100';
+    score.step = '0.1';
+    score.required = true;
+    const criticalErrors = document.createElement('input');
+    criticalErrors.type = 'number';
+    criticalErrors.min = '0';
+    criticalErrors.step = '1';
+    criticalErrors.value = '0';
+    criticalErrors.required = true;
+    const notes = document.createElement('textarea');
+    notes.rows = 5;
+    notes.placeholder = 'Evidence notes, artifact references, assessor observations, or verification context';
+
+    const definitionView = document.createElement('div');
+    definitionView.className = 'portal-assessor-definition-wrap';
+    const result = document.createElement('div');
+    result.className = 'portal-assessor-result';
+    result.setAttribute('aria-live', 'polite');
+
+    function selectedDefinition() {
+      return definitions.find((definition) => definition.id === assessment.value) ?? definitions[0];
+    }
+    function refreshDefinition() {
+      const definition = selectedDefinition();
+      deliveryMode.replaceChildren();
+      for (const mode of definition.deliveryModes ?? []) {
+        const option = document.createElement('option');
+        option.value = mode;
+        option.textContent = statusLabel(mode);
+        deliveryMode.append(option);
+      }
+      renderAssessmentDefinition(definitionView, definition);
+      result.replaceChildren();
+    }
+    assessment.addEventListener('change', refreshDefinition);
+
+    const grid = document.createElement('div');
+    grid.className = 'portal-assessor-grid';
+    grid.append(
+      labeledControl('Learner subject', learner, 'Use the authenticated learner identifier required by the Academy identity provider.'),
+      labeledControl('Performance assessment', assessment),
+      labeledControl('Delivery mode', deliveryMode),
+      labeledControl('Score percent', score, 'Record the rubric-derived percentage from 0 to 100.'),
+      labeledControl('Critical error count', criticalErrors, 'Any critical error can make the practical ineligible to pass.'),
+      labeledControl('Evidence notes', notes, 'Do not enter passwords, access tokens, or unrelated sensitive information.')
+    );
+    const submit = document.createElement('button');
+    submit.type = 'submit';
+    submit.className = 'portal-primary-action';
+    submit.textContent = 'Record practical result';
+    form.append(grid, submit);
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const definition = selectedDefinition();
+      result.replaceChildren(text('p', 'Recording assessor result…', 'status'));
+      try {
+        const response = await fetch('/api/v1/admin/performance-assessments/results', {
+          method: 'POST',
+          headers: { accept: 'application/json', 'content-type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({
+            learnerSubject: learner.value.trim(),
+            assessmentId: definition.id,
+            assessmentVersion: definition.version,
+            deliveryMode: deliveryMode.value,
+            scorePercent: Number(score.value),
+            criticalErrorCount: Number(criticalErrors.value),
+            evidence: { notes: notes.value.trim(), source: 'academy-assessor-workspace' }
+          })
+        });
+        const responseBody = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          if (response.status === 401 || response.status === 403) throw new Error('Recording practical results requires an authenticated assessor account with assessor:write permission.');
+          throw new Error(responseBody.error ? `Practical result rejected: ${responseBody.error}` : `Practical result could not be recorded (${response.status}).`);
+        }
+        result.replaceChildren(text('p', `${responseBody.assessmentId ?? definition.id}: ${statusLabel(responseBody.status)} • ${Number(responseBody.scorePercent ?? score.value).toFixed(0)}% • ${Number(responseBody.criticalErrorCount ?? criticalErrors.value)} critical errors.`, responseBody.status === 'passed' ? 'portal-success' : 'portal-warning'));
+      } catch (error) {
+        result.replaceChildren(text('p', error.message, 'portal-error'));
+      }
+    });
+
+    body.replaceChildren(form, definitionView, result);
+    refreshDefinition();
+  } catch (error) {
+    body.replaceChildren(text('p', error.message, 'portal-error'));
   }
 }
 
@@ -387,5 +610,6 @@ observer.observe(lessonView, { childList: true });
 
 document.querySelector('#tab-catalog')?.addEventListener('click', () => { setActive('tab-catalog'); renderWelcome(); });
 document.querySelector('#tab-progress')?.addEventListener('click', renderCredentialProgress);
+document.querySelector('#tab-assessor')?.addEventListener('click', renderAssessorWorkspace);
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);
