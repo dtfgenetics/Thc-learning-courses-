@@ -1,0 +1,21 @@
+{
+  "id": "ITEM-FLOWER-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "case-study",
+  "stem": "A crop has reached its expected flowering duration, but representative floral observations still show substantial developmental variation and plant condition remains acceptable. Which decision rule is strongest?",
+  "choices": [
+    "Harvest because the calendar date overrides all other evidence",
+    "Delay indefinitely because calendars have no informational value",
+    "Use whichever single flower most closely matches the desired appearance",
+    "Treat the calendar as context and base the decision on repeated representative maturity observations, plant condition, and the defined harvest objective"
+  ],
+  "correct": 3,
+  "rationale": "Expected flowering duration can provide context, but it should not replace direct evidence. A defensible harvest decision integrates representative observations with plant condition and the intended outcome.",
+  "references": ["REF-FLOWER-001"]
+}
