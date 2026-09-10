@@ -45,6 +45,6 @@ After any repository write, verify the newest SHA, CI, PR targeting, mergeabilit
 
 ## QA policy
 
-Routine Academy QA uses deterministic Node-based tests, schema/content validation, assessment/credential tests, API/persistence tests, accessibility checks for Academy learner surfaces, and staging/release verification directly related to certification. Do not add Playwright or another browser automation framework to the routine Academy toolchain.
+Routine Academy QA uses deterministic Node-based tests, schema/content validation, assessment/credential tests, API/persistence tests, accessibility checks for Academy learner surfaces, and staging/release verification directly related to certification. Do not add a browser automation framework to the routine Academy toolchain.
 
 Do not run or own a site-wide dtfseeds.com QA program from this repository. Site-wide route crawling, game/tool QA, visual regression across the whole site, and Lighthouse auditing belong in `dtfgenetics/Thc`.
