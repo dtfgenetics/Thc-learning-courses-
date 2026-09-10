@@ -1,13 +1,13 @@
 {
   "id": "LESSON-PLANT-BIO-ANATOMY-002",
   "title": "Cannabis Anatomy: Roots, Stems, Leaves, Nodes and Flowers",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "status": "draft",
   "competencies": ["COMP-PLANT-BIO-001"],
   "learningObjectives": ["LO-PLANT-BIO-ANATOMY-002"],
   "estimatedMinutes": 65,
   "references": ["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001","REF-TRICHOME-BIOLOGY-2021-001"],
-  "assessment": null,
+  "assessment": "ASSESS-PLANT-BIO-ANATOMY-002",
   "content": {
     "overview": "Cannabis anatomy is the structural language used to describe where growth, transport, gas exchange and reproduction occur. Roots, stems, vascular tissues, nodes, internodes, meristems, leaves, stomata, bracts, flowers and glandular trichomes are functionally connected. Cultivation observations become more useful when the learner identifies the structure precisely before assigning a cause or management response.",
     "whyItMatters": "Propagation cuts at nodes, training changes meristem dominance, irrigation affects roots, environmental control changes leaf gas exchange and reproductive management depends on floral structures. Anatomical errors therefore propagate into later cultivation decisions.",
@@ -114,7 +114,7 @@
         "deliveryModes": ["simulation","supervised-lab","workplace","paper-data-exercise"]
       }
     ],
-    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-MODULE-001"],
+    "formativeAssessmentIds": ["ASSESS-PLANT-BIO-ANATOMY-002"],
     "portfolioEvidence": ["An accessible, sanitized cannabis anatomy map demonstrating correct structural terminology and function-based reasoning."],
     "spacedRetrieval": [
       "One day later, explain the functional differences among roots, xylem, phloem, stomata and glandular trichomes.",
