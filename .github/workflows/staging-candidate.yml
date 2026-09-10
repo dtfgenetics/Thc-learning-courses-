@@ -1,0 +1,44 @@
+name: Academy staging candidate
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - staging
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  staging-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run complete deterministic quality suite
+        run: npm test
+      - name: Build staging candidate bundle
+        env:
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+        run: node scripts/build-staging-candidate.mjs
+      - name: Verify staging candidate integrity
+        run: node scripts/verify-staging-candidate.mjs
+      - name: Upload staging candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: academy-staging-${{ github.sha }}
+          path: dist/staging-candidate
+          if-no-files-found: error
+          retention-days: 14
