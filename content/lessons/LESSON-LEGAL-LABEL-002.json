@@ -1,69 +1,125 @@
 {
   "id": "LESSON-LEGAL-LABEL-002",
   "title": "Input and Pesticide Compliance: Verify Before Use",
-  "version": "1.0.0",
-  "status": "approved",
-  "competencies": [
-    "COMP-RESPONSIBLE-LEGAL-001"
-  ],
-  "learningObjectives": [
-    "LO-LEGAL-LABEL-002"
-  ],
-  "estimatedMinutes": 40,
-  "references": [
-    "REF-SAFETY-OSHA-001",
-    "REF-LEGAL-USDA-001"
-  ],
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-RESPONSIBLE-LEGAL-001"],
+  "learningObjectives": ["LO-LEGAL-LABEL-002"],
+  "estimatedMinutes": 60,
+  "references": ["REF-SAFETY-EPA-LABEL-001","REF-SAFETY-EPA-WPS-001","REF-LEGAL-USDA-001"],
   "assessment": null,
   "content": {
-    "overview": "A cultivation input should be checked for crop/site authorization, label directions, worker-protection requirements and jurisdiction-specific restrictions before use. The safest educational rule is verify first rather than compiling a universal list that can become outdated or wrong across jurisdictions.",
+    "overview": "Responsible input use requires a documented verification process before application. For pesticides, the exact product labeling establishes federally enforceable conditions of use, while state, tribal, local and cannabis-program requirements can impose additional restrictions. The technician's job is to verify the evidence and authorization chain—not to build a permanent universal list of products that may become wrong when labels or rules change.",
+    "whyItMatters": "An incorrect input decision can create worker exposure, crop contamination, residues, failed compliance records and product loss. Verification before use is faster and safer than reconstructing an undocumented decision after a problem occurs.",
+    "prerequisites": ["Complete or understand the jurisdiction-verification method and workplace chemical-authorization process."],
+    "priorKnowledgeRetrieval": [
+      "List five pieces of information you would extract from pesticide labeling before deciding whether a proposed use matches the label.",
+      "Explain why a federally registered pesticide label and a state cannabis program must both be considered when applicable."
+    ],
     "vocabulary": [
-      {
-        "term": "Label use",
-        "definition": "The crop, site, rate, method and other conditions authorized or directed by a product label."
-      },
-      {
-        "term": "Reentry",
-        "definition": "Entry into a treated area after application, subject to applicable safety and regulatory restrictions."
-      },
-      {
-        "term": "Recordkeeping",
-        "definition": "Documentation of product, date, location, amount, operator and other required application information."
+      {"term":"Label use","definition":"The sites, pests, rates, methods, timing, precautions and other conditions described or required by pesticide labeling."},
+      {"term":"Use site","definition":"The crop, location, structure or other site for which pesticide labeling describes an authorized use."},
+      {"term":"Reentry","definition":"Entry into a treated area after application, subject to applicable labeling, restricted-entry and workplace requirements."},
+      {"term":"Recordkeeping","definition":"Documentation that preserves product identity, application details, authorization and other information needed for traceability and review."},
+      {"term":"Verification record","definition":"A documented trail showing what source was checked, what use was proposed, what requirements applied and who authorized the action."
       }
     ],
     "sections": [
       {
-        "title": "Availability is not authorization",
-        "body": "A product sold online or in a garden store may not be approved for every crop, production system or jurisdiction. Verify the actual label and current agency guidance.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Availability and registration are not a universal use approval",
+        "body": "A pesticide may be legally marketed yet still have labeling that limits where, how, how much or how often it can be used. EPA explains that pesticide labeling is legally enforceable and defines conditions of use. The proposed crop/site and application method must match the current labeling, and separate jurisdiction-specific restrictions must also be checked.",
+        "references": ["REF-SAFETY-EPA-LABEL-001"]
       },
       {
-        "title": "Worker rules are part of product use",
-        "body": "PPE, notification, reentry and decontamination requirements can affect how and when work occurs around an application.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Read the label as a decision document",
+        "body": "Verify product identity and registration information, directions for use, use site, target pest where applicable, application method and rate, precautionary statements, PPE, restricted-use classification when present, agricultural-use requirements and other restrictions relevant to the proposed task. Do not rely on a product nickname, active ingredient alone or an old downloaded label when the exact product/version can be verified.",
+        "references": ["REF-SAFETY-EPA-LABEL-001"]
       },
       {
-        "title": "Keep evidence of the decision",
-        "body": "Application and label records support traceability, worker communication and later review. Recordkeeping also helps prevent repeated mistakes when rules or products change.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Worker-protection requirements affect scheduling and access",
+        "body": "When the Agricultural Worker Protection Standard applies, application notification, treated-area access, restricted-entry intervals, handler protection and decontamination requirements can change when workers may enter and what protections are required. These requirements should be integrated into work orders and room-status communication rather than treated as information only the applicator needs.",
+        "references": ["REF-SAFETY-EPA-WPS-001"]
+      },
+      {
+        "title": "Jurisdiction and facility authorization remain separate gates",
+        "body": "A use that appears consistent with federal pesticide labeling may still be restricted by a state, tribal, local or cannabis-specific program, and a facility may impose stricter authorization or product controls. If any required layer is unresolved, the technician should stop the use decision and escalate rather than infer permission.",
+        "references": ["REF-LEGAL-USDA-001","REF-SAFETY-EPA-LABEL-001"]
+      },
+      {
+        "title": "Preserve the evidence used for the decision",
+        "body": "A traceable pre-use record should identify the exact product, labeling source/version, proposed use, crop/site, relevant restrictions, worker-protection controls, facility approval and responsible person. Keeping the evidence associated with the decision makes later review possible when products, labels or rules change.",
+        "references": ["REF-SAFETY-EPA-LABEL-001","REF-SAFETY-EPA-WPS-001"]
       }
     ],
     "workedExamples": [
-      "Before using a pest-control product recommended in a forum, check the current label and applicable agricultural/cannabis rules for the specific crop and site.",
-      "If a label changes between seasons, retain the version associated with each historical application record."
+      "A grower recommends a pesticide by active ingredient. The technician verifies the exact registered product rather than assuming every formulation with that active ingredient has identical labeling or approved uses.",
+      "A product label appears to allow an agricultural use, but the facility's cannabis compliance list has not approved the product. The technician stops and escalates instead of treating federal labeling as facility authorization.",
+      "A room treated yesterday is scheduled for canopy work. The technician checks the exact application record, labeling and applicable reentry requirement before assigning work."
+    ],
+    "guidedPractice": [
+      {
+        "prompt": "Review an instructor-provided pesticide label and proposed cultivation use, then complete a pre-use verification checklist.",
+        "steps": ["Verify exact product identity.","Locate the proposed use site and directions.","Extract rate/method restrictions and precautionary requirements.","Identify worker-protection/reentry information when applicable.","List jurisdiction and facility authorization still required."],
+        "expectedEvidence": "A checklist with label section citations and a final proceed/stop/escalate recommendation.",
+        "feedbackGuidance": "The recommendation must follow the supplied evidence; the learner should not infer cannabis authorization from product availability or generic agricultural use."
+      },
+      {
+        "prompt": "Compare two label versions or two similar product labels and identify differences that would change a cultivation work order.",
+        "steps": ["Confirm the products/versions being compared.","Identify changes in use site, rate, PPE, reentry or other restrictions.","State which existing SOP or work-order field would need updating."],
+        "expectedEvidence": "A change-impact note linking the label difference to an operational control or record.",
+        "feedbackGuidance": "Strong work identifies exact differences and avoids assuming that product family or active ingredient makes the labels interchangeable."
+      }
+    ],
+    "decisionScenarios": [
+      {
+        "scenario": "A product is sold as natural and is commonly mentioned in cultivation communities, but the proposed use cannot be found on the current labeling and the facility approval record is blank.",
+        "prompt": "What should the technician conclude?",
+        "expectedReasoning": "Natural or common use does not establish authorization. The technician should not use the product for the proposed task and should escalate for label and jurisdiction/facility verification."
+      },
+      {
+        "scenario": "A technician finds an application record but the product name is abbreviated and the label version used for the decision cannot be identified.",
+        "prompt": "Why is the record insufficient for a new use or reentry decision?",
+        "expectedReasoning": "The exact product and labeling conditions cannot be verified reliably. Resolve product identity and current applicable labeling before using the record as authorization evidence."
+      }
     ],
     "commonMistakes": [
-      "Assuming natural or organic means unrestricted.",
-      "Using a product on a crop not listed or otherwise allowed by the applicable rules.",
-      "Discarding application records."
+      "Assuming natural, organic or commonly used products are unrestricted.",
+      "Checking only the active ingredient instead of the exact product and labeling.",
+      "Treating federal pesticide registration as automatic permission under every cannabis jurisdiction or facility policy.",
+      "Failing to connect worker-protection and reentry information to room scheduling and work orders.",
+      "Discarding the label/version evidence associated with an application decision."
     ],
-    "practicalApplication": "Create a pre-use checklist covering product identity, label version, crop/site, intended use, PPE, reentry, worker communication, disposal and required records. Stop if authorization is unclear.",
-    "summary": "Responsible input use is verification-driven. Product label, worker protection, jurisdiction and documentation all have to agree before application."
+    "workplaceConnections": [
+      "The pre-use checklist should connect product inventory, approved-input controls, application work orders, worker notification, room status and historical application records.",
+      "Label or regulatory changes should trigger controlled review of affected SOPs and approved-product lists rather than informal verbal updates."
+    ],
+    "safetyComplianceNotes": [
+      "This course does not authorize pesticide application or substitute for applicator licensing/certification, employer authorization or jurisdiction-specific cannabis requirements.",
+      "When the evidence does not establish that a proposed use is permitted, stop and escalate; do not convert uncertainty into permission."
+    ],
+    "practicalApplication": "Create a pre-use verification record for a simulated cultivation input. Document product identity, current labeling, proposed site/task, relevant directions and restrictions, worker-protection controls, jurisdiction/facility authorization and the evidence retained with the decision.",
+    "practicalActivities": [
+      {
+        "title": "Input authorization preflight",
+        "instructions": "Using a simulated product, label and facility authorization record, determine whether the proposed use can proceed and produce a traceable preflight record identifying every checked authority layer and unresolved issue.",
+        "evidenceToProduce": ["input pre-use checklist","source/version record","proceed-stop-escalate decision"],
+        "deliveryModes": ["simulation","paper-data-exercise","supervised-lab"]
+      }
+    ],
+    "formativeAssessmentIds": ["ASSESS-RESPONSIBLE-LEGAL-MODULE-001"],
+    "portfolioEvidence": ["Sanitized input-authorization preflight demonstrating exact-product and multi-layer compliance verification."],
+    "spacedRetrieval": [
+      "One day later, list the authority layers that may need to agree before pesticide use: exact labeling, worker-protection requirements, jurisdiction and facility authorization.",
+      "One week later, explain why two pesticides with the same active ingredient cannot automatically be treated as having identical permitted uses."
+    ],
+    "furtherReading": ["REF-SAFETY-EPA-LABEL-001","REF-SAFETY-EPA-WPS-001","REF-LEGAL-USDA-001"],
+    "evidenceDisclosure": "Federal pesticide-label principles and Worker Protection Standard content are based on current EPA guidance. USDA material is used only as an example of jurisdiction-dependent regulatory structure. Cannabis-specific pesticide legality must be verified in the applicable jurisdiction.",
+    "accessibility": {
+      "readingOrderNotes": "Teach exact-product identification before the multi-layer authorization exercise.",
+      "alternativeTextNotes": "Any label image used in practice must include a text transcription of the exact fields required to answer the exercise.",
+      "transcriptRequired": false,
+      "nonVisualAlternative": "Provide the sample product label and facility approval record as structured text with headings so the verification activity does not depend on reading an image."
+    },
+    "summary": "Responsible pesticide and input use requires exact-product verification, current labeling, worker-protection checks, jurisdiction and facility authorization, and a retained decision record. Availability, reputation and active ingredient alone are not permission."
   }
 }

@@ -1,68 +1,125 @@
 {
   "id": "LESSON-SAFETY-CHEMICAL-003",
   "title": "Chemical Labels, Pesticide Worker Protection and Decontamination",
-  "version": "1.0.0",
-  "status": "approved",
-  "competencies": [
-    "COMP-SAFETY-WORK-001"
-  ],
-  "learningObjectives": [
-    "LO-SAFETY-CHEMICAL-003"
-  ],
-  "estimatedMinutes": 45,
-  "references": [
-    "REF-SAFETY-OSHA-001"
-  ],
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-SAFETY-WORK-001"],
+  "learningObjectives": ["LO-SAFETY-CHEMICAL-003"],
+  "estimatedMinutes": 65,
+  "references": ["REF-SAFETY-OSHA-001","REF-SAFETY-EPA-LABEL-001","REF-SAFETY-EPA-WPS-001"],
   "assessment": null,
   "content": {
-    "overview": "Chemical handling should begin with identification, label instructions, hazard communication and applicable worker-protection requirements. Agricultural pesticide work can involve PPE, notification, restricted-entry intervals, decontamination and emergency-assistance requirements.",
+    "overview": "Chemical and pesticide work begins with exact product identification, current labeling, hazard information, authorization and worker-protection requirements. For pesticides used in agricultural settings, EPA labeling and the Agricultural Worker Protection Standard can govern training, notification, restricted-entry intervals, decontamination, emergency assistance and handler protections. A cultivation technician must verify requirements before use or entry and must not treat product availability or another grower's practice as authorization.",
+    "whyItMatters": "Chemical errors can expose workers, contaminate crops, violate pesticide labeling and create traceability failures that affect an entire production area. The safest routine is verification before handling, application, reentry or cleanup.",
+    "prerequisites": ["Know the workplace chemical-authorization chain, emergency communication procedure and location of safety information and decontamination supplies."],
+    "priorKnowledgeRetrieval": [
+      "Explain why a pesticide being sold legally does not mean every crop, site or application method is authorized.",
+      "List the information you would verify before entering an area that recently received a pesticide application."
+    ],
     "vocabulary": [
-      {
-        "term": "Restricted-entry interval",
-        "definition": "A period after a pesticide application during which entry into a treated area is restricted except under applicable rules."
-      },
-      {
-        "term": "Safety Data Sheet",
-        "definition": "A document describing chemical hazards, handling, first aid and other safety information."
-      },
-      {
-        "term": "Decontamination",
-        "definition": "Removal or reduction of hazardous contamination from skin, clothing, equipment or work areas."
+      {"term":"Pesticide labeling","definition":"The legally enforceable label and associated labeling that defines conditions, directions, precautions and restrictions for a pesticide product."},
+      {"term":"Restricted-entry interval","definition":"A period after an agricultural pesticide application during which entry into the treated area is restricted except under applicable provisions."},
+      {"term":"Safety Data Sheet","definition":"A hazard-communication document describing chemical hazards, safe handling, exposure controls and emergency information."},
+      {"term":"Decontamination","definition":"Removal or reduction of hazardous contamination from skin, clothing, equipment or work areas using the required procedure and supplies."},
+      {"term":"Application exclusion zone","definition":"An area surrounding pesticide application equipment from which workers and other people may need to be excluded under applicable Worker Protection Standard requirements."
       }
     ],
     "sections": [
       {
-        "title": "The label is a control document",
-        "body": "Chemical products must be identified and used according to applicable label and legal requirements. A product being available for sale does not automatically make every crop or site use lawful or safe.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Verify the exact product and labeling before use",
+        "body": "EPA pesticide labels describe how a registered pesticide may be legally and safely used, including use sites, application methods, rates, precautions and restrictions. Before work, verify the product identity and registration information, current labeling, intended crop/site and task. State, tribal or cannabis-program rules can be more restrictive, so a federally registered use is not automatically permission for every cannabis operation.",
+        "references": ["REF-SAFETY-EPA-LABEL-001"]
       },
       {
-        "title": "Worker protection continues after application",
-        "body": "Agricultural pesticide rules can include training, notification, PPE, decontamination supplies and restricted-entry requirements for handlers and workers.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Worker protection extends beyond the application itself",
+        "body": "Where the Agricultural Worker Protection Standard applies, employer duties can include pesticide-safety training, access to labeling and application information, notification of treated areas, restricted-entry intervals, decontamination supplies, emergency assistance and protections for handlers. Applicability and exemptions must be verified for the establishment and activity rather than assumed from this lesson.",
+        "references": ["REF-SAFETY-EPA-WPS-001"]
       },
       {
-        "title": "Emergency information must be accessible",
-        "body": "Workers need to know how to respond to spills or exposure, where washing supplies are located and how to obtain medical assistance and product information.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "PPE must match the actual hazard and label",
+        "body": "Required PPE should be selected, used, maintained and removed according to the pesticide labeling, workplace hazard assessment and applicable rules. When a pesticide label requires a respirator, Worker Protection Standard duties can include medical evaluation, fit testing and respirator training for covered handlers. A technician should never improvise PPE substitutions or remove required protection because an application seems brief.",
+        "references": ["REF-SAFETY-EPA-WPS-001","REF-SAFETY-OSHA-001"]
+      },
+      {
+        "title": "Reentry is a verification decision",
+        "body": "Before entering a treated area, verify the application record, product labeling, restricted-entry interval and site procedure. Some early-entry situations have specific conditions and protections; ordinary production pressure is not a reason to ignore a restricted-entry interval. If the worker cannot establish that entry is authorized, the correct action is to stop and escalate.",
+        "references": ["REF-SAFETY-EPA-WPS-001","REF-SAFETY-EPA-LABEL-001"]
+      },
+      {
+        "title": "Prepare for contamination and emergency response before handling",
+        "body": "Workers should know where required decontamination supplies and emergency information are located before exposure occurs. Spill, splash, contaminated PPE and suspected exposure events should be managed through the product labeling, Safety Data Sheet, facility response plan and applicable worker-protection requirements rather than a generic cleanup routine.",
+        "references": ["REF-SAFETY-EPA-WPS-001","REF-SAFETY-OSHA-001"]
       }
     ],
     "workedExamples": [
-      "If a worker is asked to reenter a treated area, the application record and applicable restricted-entry requirement should be checked before entry.",
-      "If a product label does not include the intended crop/site use, do not assume a social-media recommendation makes that use acceptable."
+      "A pest-control product is recommended in a cultivation forum. Before anyone mixes it, the technician verifies the exact product label, intended use site and facility authorization and escalates if cannabis-specific legality or site authorization is unclear.",
+      "A worker is assigned to enter a recently treated room. The technician checks the application record and labeling for the applicable restricted-entry interval and does not rely on odor, elapsed intuition or a coworker's memory.",
+      "A handler's label-required respirator is unavailable in the correct fit-tested configuration. The job is delayed and escalated rather than substituting an unapproved respirator or working without the required protection."
+    ],
+    "guidedPractice": [
+      {
+        "prompt": "Using a training pesticide label supplied by the instructor, extract the information that must be checked before an authorized application or reentry decision.",
+        "steps": ["Confirm product identity and registration information.","Locate use site and directions.","Identify PPE and precautionary requirements.","Locate agricultural-use and restricted-entry information when applicable.","List any facility or jurisdiction checks still required."],
+        "expectedEvidence": "A completed label-verification worksheet citing the exact label sections used for each decision.",
+        "feedbackGuidance": "The learner should distinguish information found on the label from separate facility or jurisdiction authorization that still requires verification."
+      },
+      {
+        "prompt": "Build a pre-entry decision for a room with a documented pesticide application using the application time, product labeling and worker task supplied in the scenario.",
+        "steps": ["Verify application identity and time.","Determine the applicable reentry restriction from the supplied labeling.","Check whether the planned task is ordinary entry or requires a specific exception.","Identify PPE, notification or escalation requirements."],
+        "expectedEvidence": "A written enter/do-not-enter decision with the evidence used and any unresolved authorization question.",
+        "feedbackGuidance": "A correct answer does not infer safety from appearance or odor and does not invent an exception to a restricted-entry requirement."
+      }
+    ],
+    "decisionScenarios": [
+      {
+        "scenario": "A supervisor asks a technician to use a pesticide because another licensed cannabis facility reportedly uses the same product. The technician has not verified the current label or local program requirements.",
+        "prompt": "What is the defensible next step?",
+        "expectedReasoning": "Pause the pesticide-use decision and verify the exact labeling, site/crop directions, facility authorization and applicable jurisdictional requirements. Another facility's use is not evidence that this use is lawful or authorized."
+      },
+      {
+        "scenario": "A treated room needs urgent irrigation maintenance before the stated restricted-entry interval has ended. The worker has ordinary work clothing and no documented early-entry authorization.",
+        "prompt": "How should the technician respond?",
+        "expectedReasoning": "Do not enter based on production urgency alone. Escalate the maintenance need and have an authorized person determine whether a lawful early-entry provision applies and what specific protections are required."
+      }
     ],
     "commonMistakes": [
-      "Using a product because another grower uses it without verifying the label and jurisdiction.",
-      "Removing PPE early because an application seems small.",
-      "Failing to provide decontamination supplies."
+      "Assuming a pesticide is authorized because it is sold online, labeled organic or used by another grower.",
+      "Using a broad OSHA source as the legal authority for EPA Worker Protection Standard requirements.",
+      "Entering a treated area based on smell, plant appearance or elapsed guesswork instead of verified application and labeling information.",
+      "Substituting or removing label-required PPE without authorization.",
+      "Failing to prepare decontamination and emergency-response information before chemical handling begins."
     ],
-    "practicalApplication": "Maintain accessible labels and safety information, document application and reentry information, verify required PPE and decontamination supplies, and train workers on exposure response before handling begins.",
-    "summary": "Chemical safety combines label compliance with worker protection. Handling, application, reentry and emergency response all require preparation and records."
+    "workplaceConnections": [
+      "Chemical authorization should connect product inventory, current label/SDS access, application records, room status, worker notification and reentry controls.",
+      "Technicians should document unresolved label or jurisdiction questions and escalate them to the person responsible for pesticide compliance rather than making an independent legal interpretation."
+    ],
+    "safetyComplianceNotes": [
+      "Pesticide use must follow current labeling and all applicable federal, state, tribal, local and cannabis-program requirements; this lesson is education, not pesticide-applicator authorization.",
+      "Worker Protection Standard coverage and exemptions depend on the establishment, people and task. Verify applicability rather than assuming every cultivation activity is covered identically."
+    ],
+    "practicalApplication": "Complete a pre-use or pre-entry verification packet for a simulated pesticide event. Record the exact product, labeling source/version, intended site/task, PPE, restricted-entry information, worker notification, decontamination/emergency resources and any jurisdiction or facility authorization that still requires confirmation.",
+    "practicalActivities": [
+      {
+        "title": "Pesticide label and reentry verification",
+        "instructions": "Using instructor-provided pesticide labeling and a simulated application record, determine whether a proposed worker task may proceed, identify required protections and produce a traceable verification record without performing an actual pesticide application.",
+        "evidenceToProduce": ["label-verification worksheet","reentry decision record","escalation note when authorization is unresolved"],
+        "deliveryModes": ["simulation","supervised-lab","paper-data-exercise"]
+      }
+    ],
+    "formativeAssessmentIds": ["ASSESS-SAFETY-WORK-MODULE-001"],
+    "portfolioEvidence": ["Sanitized pesticide-label and reentry verification exercise demonstrating source-based decision making."],
+    "spacedRetrieval": [
+      "One day later, list the evidence you would verify before entering a pesticide-treated area and explain why odor is not part of the authorization decision.",
+      "One week later, explain the difference between pesticide labeling requirements, EPA Worker Protection Standard duties and separate state/cannabis-program restrictions."
+    ],
+    "furtherReading": ["REF-SAFETY-EPA-LABEL-001","REF-SAFETY-EPA-WPS-001","REF-SAFETY-OSHA-001"],
+    "evidenceDisclosure": "Pesticide-label claims in this lesson are grounded in current EPA labeling guidance, while Worker Protection Standard claims are grounded in EPA WPS guidance. OSHA material is used for broader workplace hazard context. State, tribal and cannabis-specific pesticide restrictions require separate current verification.",
+    "accessibility": {
+      "readingOrderNotes": "Present product-label verification before Worker Protection Standard scenarios so the learner can distinguish the two authority layers.",
+      "alternativeTextNotes": "Any sample label graphic must have a text transcription of the relevant directions, PPE, warning and restricted-entry fields.",
+      "transcriptRequired": false,
+      "nonVisualAlternative": "Supply the training pesticide label and application record as structured text with headings and field values so all decisions can be completed without viewing a label image."
+    },
+    "summary": "Safe pesticide work is verification-driven: confirm the exact product and labeling, determine applicable worker-protection and reentry requirements, use required PPE, prepare decontamination and emergency resources, document the decision and stop when authorization is unclear."
   }
 }

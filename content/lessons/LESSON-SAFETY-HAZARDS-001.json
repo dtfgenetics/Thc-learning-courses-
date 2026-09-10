@@ -1,68 +1,118 @@
 {
   "id": "LESSON-SAFETY-HAZARDS-001",
   "title": "Cultivation Hazards: Tools, Machinery, Electrical and Work Areas",
-  "version": "1.0.0",
-  "status": "approved",
-  "competencies": [
-    "COMP-SAFETY-WORK-001"
-  ],
-  "learningObjectives": [
-    "LO-SAFETY-HAZARDS-001"
-  ],
-  "estimatedMinutes": 40,
-  "references": [
-    "REF-SAFETY-OSHA-001"
-  ],
+  "version": "1.1.0",
+  "status": "draft",
+  "competencies": ["COMP-SAFETY-WORK-001"],
+  "learningObjectives": ["LO-SAFETY-HAZARDS-001"],
+  "estimatedMinutes": 55,
+  "references": ["REF-SAFETY-OSHA-001"],
   "assessment": null,
   "content": {
-    "overview": "Cultivation work combines agricultural tools, powered equipment, wet floors, electricity, lifting and repetitive tasks. Safety starts by identifying the hazard, controlling it at the source where possible, using safe procedures and PPE, and keeping work areas maintained.",
+    "overview": "Cultivation work combines agricultural tools, powered equipment, wet floors, electricity, lifting, repetitive tasks and changing room layouts. Safe work begins by recognizing the hazard before exposure, choosing the strongest practical control, verifying that the control is actually in place and documenting unresolved conditions for correction or escalation.",
+    "whyItMatters": "A cultivation technician moves through wet, powered and physically demanding work areas repeatedly. A small layout or equipment defect can become a predictable injury pathway when it is encountered across an entire shift.",
+    "prerequisites": ["No technical prerequisite; learners should know their workplace emergency and stop-work procedures."],
+    "priorKnowledgeRetrieval": [
+      "Name one hazard you have seen where changing the workspace would be safer than simply warning people to be careful.",
+      "Explain the difference between noticing a hazard and verifying that the hazard has been controlled."
+    ],
     "vocabulary": [
-      {
-        "term": "Hazard",
-        "definition": "A condition or activity with potential to cause injury, illness or damage."
-      },
-      {
-        "term": "Engineering control",
-        "definition": "A physical change that reduces exposure to a hazard without relying only on worker behavior."
-      },
-      {
-        "term": "PPE",
-        "definition": "Personal protective equipment worn to reduce exposure when other controls do not fully remove the hazard."
-      }
+      {"term":"Hazard","definition":"A condition or activity with potential to cause injury, illness or damage."},
+      {"term":"Engineering control","definition":"A physical change that reduces exposure to a hazard without relying only on worker behavior."},
+      {"term":"Administrative control","definition":"A rule, schedule, procedure or work-practice change used to reduce exposure to a hazard."},
+      {"term":"PPE","definition":"Personal protective equipment worn to reduce exposure when other controls do not fully remove the hazard."},
+      {"term":"Stop-work escalation","definition":"Pausing work and notifying the authorized person when a condition cannot be made acceptably safe within the worker's role."}
     ],
     "sections": [
       {
-        "title": "Tools require condition and technique",
-        "body": "Cutting tools, ladders and powered equipment can cause serious injuries when damaged, unguarded or used incorrectly. Inspection, maintenance and manufacturer instructions are basic controls.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Recognize the energy and exposure pathway",
+        "body": "Do not reduce hazard recognition to a checklist of objects. Ask what can move, cut, crush, shock, burn, fall, spill, obstruct or overload the worker. A wet floor beside energized equipment is more than two separate checklist items: the conditions can interact, so the worker should control access, stop the source when authorized and escalate electrical defects rather than improvise a repair.",
+        "references": ["REF-SAFETY-OSHA-001"]
       },
       {
-        "title": "Wet cultivation spaces increase slip and electrical risk",
-        "body": "Irrigation leaks, cords and equipment can create overlapping hazards. Clear walkways, appropriate electrical protection and prompt cleanup reduce preventable incidents.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Inspect tools and equipment before use",
+        "body": "Cutting tools, ladders, carts, cords and powered equipment should be checked for obvious damage, missing guards, unstable setup or other unsafe conditions before use. A technician should remove defective equipment from service or follow the site's lockout/tagout or escalation procedure as authorized; the lesson does not authorize electrical or mechanical repair beyond the worker's training and role.",
+        "references": ["REF-SAFETY-OSHA-001"]
       },
       {
-        "title": "Control hierarchy is stronger than PPE alone",
-        "body": "Removing a hazard, separating workers from it or redesigning the task is generally stronger than relying solely on protective equipment or attention.",
-        "references": [
-          "REF-SAFETY-OSHA-001"
-        ]
+        "title": "Use the hierarchy of controls instead of defaulting to PPE",
+        "body": "A stronger response changes the hazard or exposure pathway before relying on attention or protective equipment. Eliminating an unnecessary obstruction, guarding a hazard, rerouting a hose or separating pedestrians from moving equipment is generally more dependable than repeating a warning. Administrative controls and PPE remain important when higher-level controls do not fully remove exposure.",
+        "references": ["REF-SAFETY-OSHA-001"]
+      },
+      {
+        "title": "Close the loop after the immediate correction",
+        "body": "Temporary cleanup is not the same as preventing recurrence. A useful hazard record identifies location, condition, immediate control, responsible follow-up and verification status. Repeated leaks, damaged cords or blocked aisles should be treated as recurring process problems rather than isolated worker mistakes.",
+        "references": ["REF-SAFETY-OSHA-001"]
       }
     ],
     "workedExamples": [
-      "A damaged extension cord near irrigation water should be removed from service rather than covered with tape and left in use.",
-      "A repeated trip hazard from hoses is better addressed by routing and securing them than by telling workers to step carefully."
+      "A damaged extension cord is found beside an irrigation zone. The technician keeps people away, removes or isolates the cord from service according to site procedure and escalates the electrical defect instead of covering the damage with tape and continuing work.",
+      "A hose repeatedly crosses the same pedestrian path. Wiping up water after each trip hazard is only a temporary correction; routing and securing the hose changes the exposure pathway and should be verified after the change.",
+      "A rolling cart blocks access to an emergency exit during harvest staging. The immediate action is to restore access; the follow-up is to change the staging layout so the obstruction does not recur."
+    ],
+    "guidedPractice": [
+      {
+        "prompt": "Review a cultivation-room sketch or your authorized work area and identify at least five hazards. For each one, state the exposure pathway and propose the strongest control that is within your role.",
+        "steps": ["Identify the hazard source.","Identify who or what could be exposed.","Choose elimination, engineering, administrative or PPE controls as appropriate.","State what must be escalated rather than repaired by the technician."],
+        "expectedEvidence": "A five-row hazard-control table with location, exposure pathway, control and escalation owner.",
+        "feedbackGuidance": "Strong answers distinguish immediate controls from permanent corrective action and do not assign unauthorized electrical or equipment repair to an entry-level technician."
+      },
+      {
+        "prompt": "Perform a pre-task inspection of one authorized hand tool, cart, ladder or powered device using the manufacturer/site checklist and document whether it is ready for use.",
+        "steps": ["Verify identity and intended task.","Inspect condition and required guards or safety features.","Check the surrounding work area.","Record ready-for-use, remove-from-service or escalation disposition."],
+        "expectedEvidence": "Completed pre-use inspection record with disposition and any escalation note.",
+        "feedbackGuidance": "The learner should demonstrate that uncertainty or visible damage triggers removal from service or escalation rather than improvisation."
+      }
+    ],
+    "decisionScenarios": [
+      {
+        "scenario": "A worker notices condensation on the floor beneath a cultivation bench while a portable electrical device is connected nearby. Production is behind schedule and the device appears to be functioning normally.",
+        "prompt": "What should the technician do before continuing work, and what information should be escalated?",
+        "expectedReasoning": "Treat the interacting wet-floor and electrical conditions as a safety issue, control access and the water source when authorized, avoid manipulating suspect electrical equipment beyond training, and escalate the location, equipment and observed condition for qualified evaluation."
+      },
+      {
+        "scenario": "A harvest crew keeps moving a hose out of the aisle after people trip over it, but the hose returns to the same position each cycle.",
+        "prompt": "Which response shows stronger hazard control than another reminder to watch where people step?",
+        "expectedReasoning": "Redesign or secure the hose route so it no longer crosses the pedestrian path, then verify the change and document the recurring condition if process correction is needed."
+      }
     ],
     "commonMistakes": [
-      "Using damaged tools until failure.",
-      "Treating PPE as the only safety control.",
-      "Leaving wet floors or blocked aisles for later cleanup."
+      "Using damaged tools or equipment until they fail instead of removing them from service or escalating them.",
+      "Treating PPE as the first and only safety control when the hazard can be eliminated, isolated or redesigned.",
+      "Fixing a wet floor or blocked aisle once without addressing the source of a recurring condition.",
+      "Attempting electrical or mechanical repair outside the worker's training and authorization."
     ],
-    "practicalApplication": "Walk the workspace looking for cutting, electrical, trip, lifting and machinery hazards. Document the hazard, control, responsible person and correction status rather than relying on memory.",
-    "summary": "Safe cultivation work is designed, not improvised. Equipment condition, layout and source controls should reduce hazards before PPE becomes the final layer."
+    "workplaceConnections": [
+      "Pre-task inspections, housekeeping rounds, hazard reports and shift handoffs should use the same location and equipment identifiers used by the facility.",
+      "Recurring hazards should feed the site's corrective-action process instead of being normalized as routine inconvenience."
+    ],
+    "safetyComplianceNotes": [
+      "Site procedures, equipment instructions and applicable occupational-safety requirements control the actual task; this lesson does not authorize work outside a learner's training or workplace role.",
+      "Emergency exits, electrical hazards and defective powered equipment should never be bypassed to maintain production speed."
+    ],
+    "practicalApplication": "Complete a structured hazard walk before or during an authorized shift. For each observed condition, record the location, hazard, exposure pathway, immediate control, longer-term correction owner and verification status. Escalate any condition that cannot be safely controlled within the technician's role.",
+    "practicalActivities": [
+      {
+        "title": "Hazard recognition and control walk",
+        "instructions": "Using a simulated cultivation room, supervised lab or approved workplace area, identify hazards, apply only authorized immediate controls, document remaining risk and produce a handoff for unresolved items.",
+        "evidenceToProduce": ["hazard-control checklist","escalation/handoff note"],
+        "deliveryModes": ["simulation","supervised-lab","workplace"]
+      }
+    ],
+    "formativeAssessmentIds": ["ASSESS-SAFETY-WORK-MODULE-001"],
+    "portfolioEvidence": ["Sanitized hazard-control checklist demonstrating recognition, control selection and escalation."],
+    "spacedRetrieval": [
+      "One day later, classify three workplace controls as engineering, administrative or PPE and explain which is more dependable for the stated hazard.",
+      "One week later, review a new room layout and identify one interacting hazard that would be missed by looking at each object in isolation."
+    ],
+    "furtherReading": ["REF-SAFETY-OSHA-001"],
+    "evidenceDisclosure": "This lesson uses current OSHA agricultural hazard-control guidance as a federal safety reference. Specific standards and employer duties depend on the workplace, jurisdiction, workforce and task, so facility procedures and applicable law must be verified locally.",
+    "accessibility": {
+      "readingOrderNotes": "Present the hazard-control hierarchy before the scenarios and practical activity.",
+      "alternativeTextNotes": "Any room diagram should describe hazard location, equipment relationship and travel path rather than relying on color alone.",
+      "transcriptRequired": false,
+      "nonVisualAlternative": "Provide a text-based room description listing locations, equipment, surfaces and worker routes so the hazard exercise can be completed without an image."
+    },
+    "summary": "Safe cultivation work depends on recognizing exposure pathways, selecting controls stronger than reminders or PPE alone, staying within authorization boundaries and verifying that recurring hazards are actually corrected."
   }
 }
