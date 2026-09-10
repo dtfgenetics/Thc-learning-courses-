@@ -18,11 +18,48 @@ function isVisible(object, previewDrafts) { return object?.status === 'published
 function safeLesson(lesson) {
   return { id: lesson.id, title: lesson.title, version: lesson.version, status: lesson.status, competencies: lesson.competencies ?? [], learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [], estimatedMinutes: lesson.estimatedMinutes ?? null, references: lesson.references ?? [], content: lesson.content ?? {} };
 }
+function safeCredential(credential) {
+  const eligibility = credential.eligibility ?? {};
+  return {
+    id: credential.id,
+    title: credential.title,
+    version: credential.version,
+    status: credential.status,
+    course: credential.course,
+    role: credential.role ?? null,
+    publicDescription: credential.publicDescription ?? '',
+    eligibility: {
+      requiredAssessments: eligibility.requiredAssessments ?? [],
+      requiredPerformanceAssessments: eligibility.requiredPerformanceAssessments ?? [],
+      requiredPortfolioArtifacts: eligibility.requiredPortfolioArtifacts ?? [],
+      minimumPassingScorePercent: eligibility.minimumPassingScorePercent ?? null,
+      requireNoCriticalErrors: eligibility.requireNoCriticalErrors === true,
+      requireVerifiedPerformanceEvidence: eligibility.requireVerifiedPerformanceEvidence === true
+    }
+  };
+}
+function assessorPerformanceView(definition) {
+  return {
+    id: definition.id,
+    title: definition.title,
+    version: definition.version,
+    status: definition.status,
+    assessmentType: definition.assessmentType,
+    role: definition.role,
+    deliveryModes: definition.deliveryModes ?? [],
+    evidenceOutputs: definition.evidenceOutputs ?? [],
+    scoring: definition.scoring ?? { totalPoints: 0, domains: [] },
+    passingStandard: definition.passingStandard ?? { minimumPercent: 0, noCriticalErrors: true },
+    criticalErrors: definition.criticalErrors ?? []
+  };
+}
 
 export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   const courses = new Map(readDirJson('content/courses').map((item) => [item.id, item]));
   const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
   const lessons = new Map(readDirJson('content/lessons').map((item) => [item.id, item]));
+  const credentials = readDirJson('content/credentials');
+  const performanceAssessments = readDirJson('content/performance-assessments');
   const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
     id: course.id, title: course.title, version: course.version, status: course.status, credentialBearing: Boolean(course.credentialBearing), description: course.description ?? course.summary ?? '',
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts)).map((module) => ({
@@ -30,7 +67,20 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts)).map((lesson) => ({ id: lesson.id, title: lesson.title, status: lesson.status, estimatedMinutes: lesson.estimatedMinutes ?? null }))
     }))
   }));
-  return { mode: previewDrafts ? 'staging-preview' : 'published-only', generatedAt: new Date().toISOString(), courses: visibleCourses };
+  const visibleCredentials = credentials
+    .filter((credential) => isVisible(credential, previewDrafts))
+    .sort((a, b) => String(a.title).localeCompare(String(b.title)))
+    .map(safeCredential);
+  const assessorPerformanceAssessments = previewDrafts
+    ? performanceAssessments.filter((definition) => isVisible(definition, true)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map(assessorPerformanceView)
+    : [];
+  return {
+    mode: previewDrafts ? 'staging-preview' : 'published-only',
+    generatedAt: new Date().toISOString(),
+    courses: visibleCourses,
+    credentials: visibleCredentials,
+    assessorPerformanceAssessments
+  };
 }
 
 export function buildStagingGovernanceSummary() {
