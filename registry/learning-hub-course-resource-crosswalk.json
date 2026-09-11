@@ -1,0 +1,12 @@
+{
+  "version":"1.0.0",
+  "status":"draft",
+  "courses":[
+    {
+      "courseId":"COURSE-LH-TECH1-001",
+      "legacyResourceIds":["THC-C024","THC-C025","THC-C026","THC-C027","THC-C028","THC-C029","THC-C030","THC-C031","THC-C032","THC-C033","THC-C034","THC-C035","THC-C037","THC-C038","THC-C039","THC-C058","THC-C059","THC-C062"],
+      "relationship":"supporting-resource",
+      "notes":"These legacy 420-catalog IDs are supporting Comprehensive Educational Resources during migration. They do not replace the occupational sequence, activities, practical or course test in COURSE-LH-TECH1-001. Mappings must be converted to RES-* IDs as each resource is migrated."
+    }
+  ]
+}
