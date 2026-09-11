@@ -1,4 +1,5 @@
 import { courseProgress, createServerProgressClient, readProgress, setLessonComplete, writeProgress } from './progress.js';
+import { renderRichBlocks } from './rich-content.js';
 
 const catalogRoot = document.querySelector('#catalog');
 const catalogStatus = document.querySelector('#catalog-status');
@@ -217,6 +218,32 @@ function renderCompletionControl(article, lesson) {
   article.append(section);
 }
 
+function renderLegacyLessonContent(article, content) {
+  for (const sectionData of content.sections ?? []) {
+    const section = document.createElement('section');
+    section.className = 'lesson-section';
+    section.append(text('h3', sectionData.title));
+    section.append(text('p', sectionData.body));
+    article.append(section);
+  }
+  appendList(article, 'Worked examples', content.workedExamples);
+  appendList(article, 'Common mistakes', content.commonMistakes);
+  if (content.practicalApplication) {
+    const section = document.createElement('section');
+    section.className = 'lesson-section';
+    section.append(text('h3', 'Practical application'));
+    section.append(text('p', content.practicalApplication, 'callout'));
+    article.append(section);
+  }
+  if (content.summary) {
+    const section = document.createElement('section');
+    section.className = 'lesson-section';
+    section.append(text('h3', 'Summary'));
+    section.append(text('p', content.summary));
+    article.append(section);
+  }
+}
+
 function renderLesson(lesson) {
   currentLesson = lesson;
   const article = document.createElement('article');
@@ -253,29 +280,10 @@ function renderLesson(lesson) {
     section.append(grid);
     article.append(section);
   }
-  for (const sectionData of content.sections ?? []) {
-    const section = document.createElement('section');
-    section.className = 'lesson-section';
-    section.append(text('h3', sectionData.title));
-    section.append(text('p', sectionData.body));
-    article.append(section);
-  }
-  appendList(article, 'Worked examples', content.workedExamples);
-  appendList(article, 'Common mistakes', content.commonMistakes);
-  if (content.practicalApplication) {
-    const section = document.createElement('section');
-    section.className = 'lesson-section';
-    section.append(text('h3', 'Practical application'));
-    section.append(text('p', content.practicalApplication, 'callout'));
-    article.append(section);
-  }
-  if (content.summary) {
-    const section = document.createElement('section');
-    section.className = 'lesson-section';
-    section.append(text('h3', 'Summary'));
-    section.append(text('p', content.summary));
-    article.append(section);
-  }
+
+  const renderedRich = renderRichBlocks(article, content.blocks);
+  if (!renderedRich) renderLegacyLessonContent(article, content);
+
   if (lesson.references?.length) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
