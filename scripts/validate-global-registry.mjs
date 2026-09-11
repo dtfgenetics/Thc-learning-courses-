@@ -35,7 +35,7 @@ function actualIds(directory) {
   const full = path.join(root, directory);
   if (!fs.existsSync(full)) return [];
   return fs.readdirSync(full)
-    .filter((name) => name.endsWith('.json'))
+    .filter((name) => name.endsWith('.json') && !(directory === 'content/credential-programs' && name === 'registry.json'))
     .map((name) => {
       const data = JSON.parse(fs.readFileSync(path.join(full, name), 'utf8'));
       if (!data.id) errors.push(`${path.join(directory, name)}: missing id while building global registry coverage`);
