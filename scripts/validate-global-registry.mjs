@@ -23,6 +23,8 @@ const mappings = {
   references: 'content/references',
   programs: 'content/programs',
   credentials: 'content/credentials',
+  credentialPrograms: 'content/credential-programs',
+  resources: 'content/resources',
   issuers: 'content/issuer'
 };
 

@@ -9,6 +9,7 @@ const mappings = [
   ['content/claims', 'schemas/claim.schema.json'],
   ['content/competencies', 'schemas/competency.schema.json'],
   ['content/courses', 'schemas/course.schema.json'],
+  ['content/credential-programs', 'schemas/credential-program.schema.json'],
   ['content/credentials', 'schemas/credential.schema.json'],
   ['content/encyclopedia', 'schemas/encyclopedia-entry.schema.json'],
   ['content/glossary', 'schemas/glossary-entry.schema.json'],
@@ -18,7 +19,8 @@ const mappings = [
   ['content/performance-assessments', 'schemas/performance-assessment.schema.json'],
   ['content/programs', 'schemas/program.schema.json'],
   ['content/questions', 'schemas/question.schema.json'],
-  ['content/references', 'schemas/reference.schema.json']
+  ['content/references', 'schemas/reference.schema.json'],
+  ['content/resources', 'schemas/resource.schema.json']
 ];
 
 const ajv = new Ajv2020({allErrors: true, strict: false});
