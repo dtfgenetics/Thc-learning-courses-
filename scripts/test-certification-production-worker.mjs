@@ -17,24 +17,24 @@ const registry = {
     assessment: {
       gates: {
         blueprintComplete: true,
-        minimumActivePoolComplete: false
+        minimumActivePoolComplete: false,
+        humanAssessmentReviewComplete: false,
+        pilotStatisticsComplete: false
       }
     },
     runtime: { gates: { productionPersistenceAdapter: false } },
-    api: { gates: {} },
-    credentials: { gates: {} },
-    security: { gates: {} },
-    accessibility: { gates: {} },
-    operations: { gates: {} }
+    api: { gates: { productionDatabaseIntegration: false } },
+    credentials: { gates: { productionIssuerIdentity: false, productionSigning: false } },
+    security: { gates: { securityReviewComplete: false } },
+    accessibility: { gates: { contentAccessibilityReviewComplete: false } },
+    operations: { gates: { stagingEnvironment: false, productionEnvironment: false } }
   }
 };
 
 const blockers = collectBlockers(registry);
-assert.equal(blockers.length, 6);
-assert.equal(blockers[0].gate, 'substantiveContentComplete');
-assert.equal(blockers[0].mode, 'author');
-assert.equal(blockers[1].gate, 'catalogExpansionComplete');
-assert.equal(blockers[1].mode, 'author');
+assert.equal(blockers.length, 2);
+assert.deepEqual(blockers.map((row) => row.gate), ['substantiveContentComplete', 'catalogExpansionComplete']);
+assert.ok(blockers.every((row) => row.mode === 'author'));
 
 const next = selectNextTask(registry, []);
 assert.equal(next.disposition, 'start');
@@ -48,66 +48,13 @@ assert.equal(resumed.disposition, 'resume');
 assert.equal(resumed.branch, 'content/catalog-expansion');
 assert.equal(resumed.pr, 50);
 
-const assessmentRegistry = {
-  system: 'THC Academy',
-  version: 'test',
-  productionReady: false,
-  areas: {
-    curriculum: { gates: { substantiveContentComplete: true, catalogExpansionComplete: true, scientificReviewComplete: true, editorialReviewComplete: true } },
-    assessment: {
-      gates: {
-        blueprintComplete: true,
-        developmentFormGeneration: true,
-        minimumActivePoolComplete: false,
-        humanAssessmentReviewComplete: false,
-        pilotStatisticsComplete: false
-      }
-    },
-    credentials: { gates: {} },
-    runtime: { gates: {} },
-    api: { gates: {} },
-    security: { gates: {} },
-    accessibility: { gates: {} },
-    operations: { gates: {} }
-  }
-};
+const curriculumComplete = structuredClone(registry);
+curriculumComplete.areas.curriculum.gates.substantiveContentComplete = true;
+curriculumComplete.areas.curriculum.gates.catalogExpansionComplete = true;
+const unrestricted = buildWorkerReport(curriculumComplete, []);
+assert.equal(unrestricted.blockerCount, 0);
+assert.equal(unrestricted.nextTask.disposition, 'release-check');
+assert.equal(unrestricted.nextTask.mode, 'release');
+assert.match(unrestricted.nextTask.reason, /No unfinished curriculum-content blockers remain/);
 
-const assessmentBlockers = collectBlockers(assessmentRegistry);
-assert.deepEqual(
-  assessmentBlockers.slice(0, 3).map((row) => row.gate),
-  ['minimumActivePoolComplete', 'humanAssessmentReviewComplete', 'pilotStatisticsComplete']
-);
-const assessmentNext = selectNextTask(assessmentRegistry, []);
-assert.equal(assessmentNext.gate, 'minimumActivePoolComplete');
-assert.equal(assessmentNext.mode, 'exam');
-assert.equal(assessmentNext.branch, 'work/assessment-minimum-active-pool-complete');
-
-const postPoolRegistry = structuredClone(assessmentRegistry);
-postPoolRegistry.areas.assessment.gates.minimumActivePoolComplete = true;
-const postPoolNext = selectNextTask(postPoolRegistry, []);
-assert.equal(postPoolNext.gate, 'humanAssessmentReviewComplete');
-assert.equal(postPoolNext.mode, 'certify');
-assert.equal(postPoolNext.branch, 'work/assessment-human-assessment-review-complete');
-
-const postReviewRegistry = structuredClone(postPoolRegistry);
-postReviewRegistry.areas.assessment.gates.humanAssessmentReviewComplete = true;
-const postReviewNext = selectNextTask(postReviewRegistry, []);
-assert.equal(postReviewNext.gate, 'pilotStatisticsComplete');
-assert.equal(postReviewNext.mode, 'certify');
-assert.equal(postReviewNext.branch, 'work/assessment-pilot-statistics-complete');
-
-const completeRegistry = {
-  system: 'THC Academy',
-  version: 'test',
-  productionReady: true,
-  areas: Object.fromEntries(
-    ['curriculum', 'assessment', 'credentials', 'runtime', 'api', 'security', 'accessibility', 'operations']
-      .map((area) => [area, { gates: {} }])
-  )
-};
-const complete = buildWorkerReport(completeRegistry, []);
-assert.equal(complete.blockerCount, 0);
-assert.equal(complete.nextTask.disposition, 'release-check');
-assert.equal(complete.nextTask.mode, 'release');
-
-console.log('Certification production worker tests passed.');
+console.log('Certification production worker tests passed with review, pilot, item-pool, infrastructure, and publication gates non-blocking.');
