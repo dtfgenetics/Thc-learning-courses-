@@ -160,6 +160,27 @@ try {
     assert.deepEqual([...item.choices].sort(), [...source.choices].sort(), `${item.id} presentation must preserve the source choice set`);
     assert.equal(item.choices[item.correct], source.choices[source.correct], `${item.id} remapped key must identify the source correct answer`);
   }
+
+  const visualPracticeCoverage = [
+    ['LESSON-LH-TECH1-001-01', 'ITEM-LH-TECH1-001-M01-001', '/assets/course1/cultivation-work-area-hazard-scan.svg'],
+    ['LESSON-LH-TECH1-001-04', 'ITEM-LH-TECH1-001-M02-001', '/assets/course1/biosecurity-pathway-map.svg'],
+    ['LESSON-LH-TECH1-001-07', 'ITEM-LH-TECH1-001-M03-001', '/assets/course1/controlled-document-anatomy.svg'],
+    ['LESSON-LH-TECH1-001-10', 'ITEM-LH-TECH1-001-M04-001', '/assets/course1/material-genealogy.svg'],
+    ['LESSON-LH-TECH1-001-13', 'ITEM-LH-TECH1-001-M05-001', '/assets/course1/operator-care-servicing-boundary.svg'],
+    ['LESSON-LH-TECH1-001-17', 'ITEM-LH-TECH1-001-M06-012', '/assets/course1/shift-handoff-model.svg']
+  ];
+  for (const [practiceLessonId, expectedItemId, expectedAsset] of visualPracticeCoverage) {
+    const response = await fetch(`${base}/api/lessons/${practiceLessonId}/practice?seed=visual-coverage`);
+    assert.equal(response.status, 200, `${practiceLessonId} practice endpoint should be available`);
+    const payload = await response.json();
+    const visualItem = payload.items.find((item) => item.id === expectedItemId);
+    assert.ok(visualItem, `${practiceLessonId} should deliver ${expectedItemId}`);
+    assert.ok(Array.isArray(visualItem.stimulus) && visualItem.stimulus.length > 0, `${expectedItemId} should include evidence stimulus`);
+    const image = visualItem.stimulus.find((block) => block.type === 'image');
+    assert.ok(image, `${expectedItemId} should include an image evidence block`);
+    assert.equal(image.src, expectedAsset, `${expectedItemId} should use its module-aligned visual`);
+    assert.ok(typeof image.alt === 'string' && image.alt.trim().length > 0, `${expectedItemId} should include accessible image text`);
+  }
 } finally {
   staging.close();
   await once(staging, 'close');
