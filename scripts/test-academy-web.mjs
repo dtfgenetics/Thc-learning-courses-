@@ -2,13 +2,31 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { once } from 'node:events';
-import { createAcademyWebServer } from '../apps/web/server.mjs';
+import { createAcademyWebServer, sanitizeAssessmentStimulus } from '../apps/web/server.mjs';
 
 async function startServer(env) {
   const server = createAcademyWebServer({ env });
   server.listen(0, '127.0.0.1');
   await once(server, 'listening');
   return server;
+}
+
+const sanitizedProbe = sanitizeAssessmentStimulus([
+  {
+    type: 'image',
+    src: '/assets/course1/cultivation-work-area-hazard-scan.svg',
+    alt: 'Assessment evidence image',
+    caption: 'Visible learner context',
+    answer: 'SECRET-ANSWER',
+    correct: 2,
+    scoringKey: 'SECRET-KEY'
+  },
+  { type: 'unsupported-secret-type', answer: 'ANOTHER-SECRET' }
+]);
+assert.equal(sanitizedProbe.length, 1, 'assessment stimulus sanitizer should drop unsupported block types');
+const serializedProbe = JSON.stringify(sanitizedProbe);
+for (const forbidden of ['SECRET-ANSWER', 'SECRET-KEY', 'ANOTHER-SECRET', '"correct"', 'scoringKey']) {
+  assert.equal(serializedProbe.includes(forbidden), false, `assessment stimulus sanitizer leaked ${forbidden}`);
 }
 
 const staging = await startServer({ ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' });
@@ -31,6 +49,9 @@ try {
   const richStylesResponse = await fetch(`${base}/rich-content.css`);
   assert.equal(richStylesResponse.status, 200);
   assert.match(await richStylesResponse.text(), /rich-scenario/, 'rich lesson styles should include scenario presentation');
+  const appResponse = await fetch(`${base}/app.js`);
+  assert.equal(appResponse.status, 200);
+  assert.match(await appResponse.text(), /renderRichBlocks\(fieldset, item\.stimulus\)/, 'practice UI should render sanitized rich evidence stimuli before choices');
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
@@ -89,6 +110,10 @@ try {
         assert.match(block.src ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${richLessonId} image blocks should use controlled Course 1 asset paths`);
         assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${richLessonId} image blocks should include learner-facing alt text`);
       }
+      if (block.type === 'steps') {
+        assert.ok(Array.isArray(block.items) && block.items.length > 0, `${richLessonId} step blocks should use the canonical non-empty items array`);
+        assert.equal(Object.hasOwn(block, 'steps'), false, `${richLessonId} step blocks should not use the legacy steps alias`);
+      }
     }
   }
   for (const requiredType of ['text', 'callout', 'image', 'steps', 'comparison', 'table', 'scenario', 'activity', 'document']) {
@@ -121,6 +146,15 @@ try {
   assert.ok(practice.items.length > 0, 'Course 1 lesson practice should expose researched formative items in staging');
   assert.ok(practice.items.every((item) => item.objective === 'LO-LH-TECH1-001-01'), 'lesson practice must be objective-aligned, not only competency-aligned');
   assert.ok(new Set(practice.items.map((item) => item.correct)).size > 1, 'choice presentation must not lock every keyed answer to one position');
+  const visualPracticeItem = practice.items.find((item) => item.id === 'ITEM-LH-TECH1-001-M01-001');
+  assert.ok(visualPracticeItem, 'visual Course 1 safety practice item should be returned');
+  assert.ok(Array.isArray(visualPracticeItem.stimulus) && visualPracticeItem.stimulus.length === 1, 'visual practice item should expose a sanitized evidence stimulus');
+  assert.equal(visualPracticeItem.stimulus[0].type, 'image');
+  assert.equal(visualPracticeItem.stimulus[0].src, '/assets/course1/cultivation-work-area-hazard-scan.svg');
+  assert.ok(typeof visualPracticeItem.stimulus[0].alt === 'string' && visualPracticeItem.stimulus[0].alt.length > 0, 'assessment image stimulus should include alt text');
+  for (const forbidden of ['answer', 'correct', 'scoringKey', 'extensions']) {
+    assert.equal(Object.hasOwn(visualPracticeItem.stimulus[0], forbidden), false, `visual assessment stimulus should not expose ${forbidden}`);
+  }
   for (const item of practice.items) {
     const source = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/questions', `${item.id}.json`), 'utf8'));
     assert.deepEqual([...item.choices].sort(), [...source.choices].sort(), `${item.id} presentation must preserve the source choice set`);
