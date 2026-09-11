@@ -13,12 +13,50 @@ const pass = run('tests/fixtures/eligibility-pass.json');
 if (pass.status !== 0) throw new Error(`Expected passing fixture to be eligible.\n${pass.stdout}\n${pass.stderr}`);
 const passResult = JSON.parse(pass.stdout);
 if (!passResult.eligible) throw new Error('Passing fixture returned eligible=false');
+if (passResult.requirementSummary.courseCompletion !== 1) throw new Error('Foundations credential should require course completion evidence');
 
 const fail = run('tests/fixtures/eligibility-fail.json');
 if (fail.status !== 2) throw new Error(`Expected failing fixture to exit 2. Got ${fail.status}.\n${fail.stdout}\n${fail.stderr}`);
 const failResult = JSON.parse(fail.stdout);
 if (failResult.eligible) throw new Error('Failing fixture returned eligible=true');
 if (!failResult.missingRequirements.some((row) => row.reason === 'below-minimum-score')) throw new Error('Failing fixture did not report below-minimum-score');
+
+const courseCredential = {
+  id: 'CRED-TEST-COURSE-001',
+  version: '1.0.0',
+  course: 'COURSE-TEST-001',
+  courseVersion: '2.0.0',
+  eligibility: {
+    requireCourseCompletion: true,
+    requiredAssessments: ['ASSESS-TEST-KNOWLEDGE-001'],
+    minimumPassingScorePercent: 80
+  }
+};
+const courseAssessmentEvidence = [{ assessmentId: 'ASSESS-TEST-KNOWLEDGE-001', status: 'passed', scorePercent: 90 }];
+const missingCourse = evaluateCredentialEligibility({ credential: courseCredential, evidence: { assessments: courseAssessmentEvidence }, performanceDefinitions: new Map() });
+assert(!missingCourse.eligible, 'Missing required course completion must block eligibility');
+assert(missingCourse.missingRequirements.some((row) => row.reason === 'missing-course-completion'), 'Missing course completion reason was not reported');
+
+const staleCourse = evaluateCredentialEligibility({
+  credential: courseCredential,
+  evidence: {
+    courseCompletions: [{ courseId: 'COURSE-TEST-001', courseVersion: '1.9.0', status: 'completed' }],
+    assessments: courseAssessmentEvidence
+  },
+  performanceDefinitions: new Map()
+});
+assert(!staleCourse.eligible, 'Completion of a stale course version must not satisfy a version-pinned credential');
+assert(staleCourse.missingRequirements.some((row) => row.reason === 'course-version-mismatch'), 'Course version mismatch reason was not reported');
+
+const currentCourse = evaluateCredentialEligibility({
+  credential: courseCredential,
+  evidence: {
+    courseCompletions: [{ courseId: 'COURSE-TEST-001', courseVersion: '2.0.0', status: 'completed' }],
+    assessments: courseAssessmentEvidence
+  },
+  performanceDefinitions: new Map()
+});
+assert(currentCourse.eligible, `Current completed course plus passing assessment should satisfy eligibility: ${JSON.stringify(currentCourse.missingRequirements)}`);
 
 const performanceCredential = {
   id: 'CRED-TEST-PERFORMANCE-001',
