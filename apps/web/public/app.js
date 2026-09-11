@@ -135,6 +135,7 @@ function renderPracticeSection(article, lesson) {
         const legend = document.createElement('legend');
         legend.textContent = `${itemIndex + 1}. ${item.stem}`;
         fieldset.append(legend);
+        renderRichBlocks(fieldset, item.stimulus);
         const options = document.createElement('div');
         options.className = 'practice-options';
         const name = `practice-${lesson.id}-${item.id}`;

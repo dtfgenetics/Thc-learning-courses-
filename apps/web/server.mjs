@@ -63,6 +63,67 @@ function seededRandom(seed) {
   };
 }
 
+function stringValue(value) { return typeof value === 'string' ? value : undefined; }
+function referenceList(value) { return Array.isArray(value) ? value.filter((entry) => typeof entry === 'string') : undefined; }
+function safeStepItems(value) {
+  if (!Array.isArray(value)) return undefined;
+  return value.filter((item) => item && typeof item === 'object' && typeof item.body === 'string').map((item) => ({
+    ...(typeof item.title === 'string' ? { title: item.title } : {}),
+    body: item.body
+  }));
+}
+function safeComparisonSide(value) {
+  if (!value || typeof value !== 'object' || typeof value.label !== 'string' || typeof value.body !== 'string') return undefined;
+  const side = { label: value.label, body: value.body };
+  if (typeof value.image === 'string' && value.image.startsWith('/assets/')) side.image = value.image;
+  if (typeof value.alt === 'string') side.alt = value.alt;
+  return side;
+}
+function safeDocumentFields(value) {
+  if (!Array.isArray(value)) return undefined;
+  return value.filter((field) => field && typeof field === 'object' && typeof field.label === 'string' && typeof field.value === 'string').map((field) => ({ label: field.label, value: field.value }));
+}
+
+export function sanitizeAssessmentStimulus(blocks) {
+  if (!Array.isArray(blocks)) return [];
+  const sanitized = [];
+  for (const block of blocks) {
+    if (!block || typeof block !== 'object' || typeof block.type !== 'string') continue;
+    const references = referenceList(block.references);
+    if (block.type === 'text' && typeof block.body === 'string') {
+      sanitized.push({ type: 'text', ...(stringValue(block.title) ? { title: block.title } : {}), body: block.body, ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'callout' && typeof block.body === 'string') {
+      sanitized.push({ type: 'callout', ...(stringValue(block.title) ? { title: block.title } : {}), body: block.body, ...(typeof block.tone === 'string' ? { tone: block.tone } : {}), ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'image' && typeof block.src === 'string' && block.src.startsWith('/assets/') && typeof block.alt === 'string') {
+      sanitized.push({ type: 'image', src: block.src, alt: block.alt, ...(stringValue(block.assetId) ? { assetId: block.assetId } : {}), ...(stringValue(block.caption) ? { caption: block.caption } : {}), ...(stringValue(block.credit) ? { credit: block.credit } : {}), ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'steps' && typeof block.title === 'string') {
+      const items = safeStepItems(block.items ?? block.steps);
+      if (items?.length) sanitized.push({ type: 'steps', title: block.title, items, ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'comparison') {
+      const left = safeComparisonSide(block.left);
+      const right = safeComparisonSide(block.right);
+      if (left && right) sanitized.push({ type: 'comparison', ...(stringValue(block.title) ? { title: block.title } : {}), left, right, ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'table' && Array.isArray(block.columns) && Array.isArray(block.rows)) {
+      const columns = block.columns.filter((column) => typeof column === 'string');
+      const rows = block.rows.filter(Array.isArray).map((row) => row.map((cell) => String(cell ?? '')));
+      if (columns.length) sanitized.push({ type: 'table', ...(stringValue(block.title) ? { title: block.title } : {}), ...(stringValue(block.caption) ? { caption: block.caption } : {}), columns, rows, ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'document' && typeof block.title === 'string') {
+      const fields = safeDocumentFields(block.fields);
+      if (fields?.length) sanitized.push({ type: 'document', title: block.title, fields, ...(stringValue(block.description) ? { description: block.description } : {}), ...(stringValue(block.note) ? { note: block.note } : {}), ...(references?.length ? { references } : {}) });
+    } else if (block.type === 'resource' && typeof block.title === 'string') {
+      const resource = { type: 'resource', title: block.title };
+      if (typeof block.body === 'string') resource.body = block.body;
+      if (typeof block.href === 'string') resource.href = block.href;
+      if (typeof block.label === 'string') resource.label = block.label;
+      if (references?.length) resource.references = references;
+      sanitized.push(resource);
+    } else if (block.type === 'divider') {
+      sanitized.push({ type: 'divider' });
+    }
+  }
+  return sanitized;
+}
+
 export function presentPracticeItem(item, seed) {
   const pairs = item.choices.map((choice, index) => ({ choice, sourceIndex: index }));
   const random = seededRandom(`${seed}:${item.id}`);
@@ -71,11 +132,13 @@ export function presentPracticeItem(item, seed) {
     [pairs[index], pairs[swapIndex]] = [pairs[swapIndex], pairs[index]];
   }
   const correct = pairs.findIndex((pair) => pair.sourceIndex === item.correct);
+  const stimulus = sanitizeAssessmentStimulus(item.stimulus);
   return {
     id: item.id,
     competency: item.competency,
     objective: item.objective ?? null,
     stem: item.stem,
+    ...(stimulus.length ? { stimulus } : {}),
     choices: pairs.map((pair) => pair.choice),
     correct,
     rationale: item.rationale,
