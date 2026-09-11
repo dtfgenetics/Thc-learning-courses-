@@ -1,15 +1,15 @@
-# Course 1 Controlled Human Review Handoff
+# Course 1 Review and Improvement Handoff
 
 **Course:** `COURSE-LH-TECH1-001 — Safety, Responsible Practice & Cultivation Workflows`  
-**State:** build-side complete; formal human review and pilot gates open
+**State:** public-facing, editable, and under continuous improvement
 
-## Why this handoff exists
+## Purpose
 
-Course 1 has passed deterministic curriculum, schema, registry, learner-web, accessibility-regression, and Learning Hub item-bank checks. Those checks remove structural/mechanical defects; they do not replace qualified review of scientific accuracy, instructional clarity, assessment validity, accessibility, or legal/compliance boundaries.
+Course 1 has deterministic curriculum, schema, registry, learner-web, accessibility-regression, and Learning Hub item-bank checks available. These checks help identify structural and mechanical defects while scientific, instructional, assessment, accessibility, and compliance review can continue alongside normal editing and publication.
 
-## Controlled review inventory
+## Review inventory
 
-When there are no prior Course 1 review records, the course-scoped queue contains **154 tasks**:
+The Course 1 review tooling can organize up to **154 review tasks** when no prior review notes exist:
 
 | Lane | Tasks |
 |---|---:|
@@ -23,47 +23,40 @@ When there are no prior Course 1 review records, the course-scoped queue contain
 | Course legal/compliance review | 1 |
 | **Total** | **154** |
 
-Editorial lesson review is intentionally blocked until scientific review of that exact lesson version is approved.
+These tasks are optional quality-improvement work. No lane blocks another lane, and no task blocks editing or public learner access.
 
-## Generate the queue
+## Generate the optional queue
 
 ```bash
 npm run review:lh:course1
-npm run review:lh:course1:check
 ```
 
-The queue is generated only from Course 1 objects. It does not mix Course 1 summative items with secure THC Cultivation Technician I credential-exam items.
+The queue is scoped to Course 1 objects and can be used as a checklist for further improvement.
 
-## Recommended review order
+## Suggested review areas
 
-### Phase 1 — scientific and boundary review
+### Scientific and boundary review
 
-1. Review the 18 canonical lessons for factual accuracy and source scope.
-2. Complete the course legal/compliance review, focusing on occupational-safety, pesticide, access-control, equipment-authority, recordkeeping, and jurisdiction-neutral traceability boundaries.
-3. Request corrections before proceeding when the evidence or role boundary is wrong.
+Review the 18 canonical lessons for factual accuracy, source scope, occupational boundaries, and current evidence. Apply corrections directly as they are identified.
 
-### Phase 2 — editorial/instructional review
+### Editorial and instructional review
 
-After each lesson's scientific approval, review clarity, vocabulary, examples, learner sequence, workload, misconceptions, and whether the expanded learner module preserves the approved scientific meaning.
+Review clarity, vocabulary, examples, learner sequence, workload, misconceptions, and consistency across the learner modules. Editorial work may happen before, during, or after scientific review.
 
-### Phase 3 — assessment review
+### Assessment review
 
-1. Review the 7 assessment definitions.
-2. Review all 72 formative items.
-3. Review all 36 final course-test items.
-4. Review `PRACTICAL-LH-TECH1-001-WORKFLOW`, both candidate forms, the assessor guide, and the critical-error rules.
-5. Mechanical QA passing does not approve an item; reviewers still judge one-best-answer defensibility, distractor quality, cognitive demand, fairness, and occupational authenticity.
+Review the 7 assessment definitions, all 72 formative items, all 36 final-course items, and the integrated practical. Focus on one-best-answer defensibility, distractor quality, cognitive demand, fairness, occupational authenticity, and objective coverage.
 
-### Phase 4 — accessibility review
+### Accessibility review
 
-Review the rendered learner experience, workbook/job aids, practice interactions, assessment presentation, and practical materials using the Course 1 review packet. Manual keyboard, screen-reader, zoom/reflow, contrast, and accommodation checks remain required.
+Review the rendered learner experience, workbook/job aids, practice interactions, assessment presentation, and practical materials for keyboard operation, screen-reader compatibility, zoom/reflow, contrast, readable structure, and equivalent access.
 
-## Recording real reviews
+## Review notes
 
-Review outcomes must use immutable version-specific records in `content/reviews/` conforming to `schemas/review-record.schema.json`. Use real reviewer IDs and timestamps. Valid results are `approved`, `changes-requested`, or `rejected`.
+Optional review observations may be stored in `content/reviews/` using `schemas/review-record.schema.json`. Notes are editable metadata and may be revised, replaced, reorganized, or removed as the project evolves.
 
-Do not pre-create approval records. If an object changes after review, the changed version requires a new review record.
+Review notes do not approve, reject, lock, publish, unpublish, or otherwise control course content.
 
-## After review
+## Continuous improvement
 
-Human review completion does not by itself make the course production-ready. Remaining gates include practical assessor calibration, controlled learner pilot evidence, assessment-item behavior analysis, standard-setting/cut-score review, correction of pilot findings, and a final versioned release approval.
+Learner data, pilot observations, item analysis, assessor calibration, accessibility findings, source updates, and standard-setting work may all be used to improve Course 1 over time. None of these activities prevents the course from remaining public or editable.
