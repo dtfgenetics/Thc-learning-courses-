@@ -1,0 +1,53 @@
+name: Promote Course 1 Public Release
+
+on:
+  push:
+    branches:
+      - release/course1-finalize
+    paths:
+      - scripts/promote-course1-public-release.mjs
+      - docs/learning-hub/tech1/course-001/student/INTEGRATED-PRACTICAL.md
+      - .github/workflows/course1-public-release-promotion.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course1-public-release-promotion
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/course1-finalize
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Promote only Course 1 public learner objects
+        run: node scripts/promote-course1-public-release.mjs
+      - name: Validate schemas and Course 1 item bank
+        run: |
+          npm ci
+          npm run registry:build
+          npm run schema:validate
+          node scripts/check-learning-hub-item-quality.mjs --course=COURSE-LH-TECH1-001
+          npm run academy:web:test
+          npm run academy:accessibility:test
+      - name: Commit generated release state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content docs registry
+          if git diff --cached --quiet; then
+            echo "Course 1 release state already current."
+            exit 0
+          fi
+          git commit -m "Publish Course 1 learner content [skip ci]"
+          git push origin HEAD:release/course1-finalize
