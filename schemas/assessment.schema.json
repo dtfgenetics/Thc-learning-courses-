@@ -67,7 +67,8 @@
         "allowAlternativeAccessiblePresentation": {"type": "boolean"}
       },
       "additionalProperties": false
-    }
+    },
+    "extensions": {"type": "object"}
   },
   "allOf": [
     {

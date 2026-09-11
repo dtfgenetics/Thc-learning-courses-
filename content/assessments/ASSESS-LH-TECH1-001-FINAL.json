@@ -23,5 +23,19 @@
     {"competency":"COMP-PRO-QA-001","items":5,"cognitiveTarget":"Data-integrity, documentation and reconstructable-record decisions"}
   ],
   "itemSelection":{"minimumActiveItemsPerCompetency":1,"targetBankItemsPerCompetency":12,"requireReferenceBackedItems":true,"requireHumanAssessmentReview":true},
-  "accommodations":{"allowExtendedTime":true,"allowAlternativeAccessiblePresentation":true}
+  "accommodations":{"allowExtendedTime":true,"allowAlternativeAccessiblePresentation":true},
+  "extensions":{
+    "courseId":"COURSE-LH-TECH1-001",
+    "linkedPerformanceAssessment":"PRACTICAL-LH-TECH1-001-WORKFLOW",
+    "qualityTargets":{
+      "minimumItemsPerObjective":2,
+      "minimumAppliedOrHigherPercent":80,
+      "minimumAnalyzeOrHigherItems":12,
+      "minimumEvidenceStimulusItems":7,
+      "requireStimulusCompetencyCoverage":true,
+      "requireControlledImagePaths":true,
+      "requireAccessibleImageAlt":true
+    },
+    "completionModel":"Course-level evidence combines the knowledge assessment with the linked performance practical; passing the written assessment alone is not treated as demonstrated practical performance."
+  }
 }
