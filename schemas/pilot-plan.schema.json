@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/pilot-plan.schema.json",
+  "title": "THC Academy Controlled Course Pilot Plan",
+  "type": "object",
+  "required": ["id", "course", "courseVersion", "version", "status", "knowledgeAssessment", "performanceAssessment", "decisionPolicy", "documents"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^PILOTPLAN-[A-Z0-9-]+$"},
+    "course": {"type": "string", "pattern": "^COURSE-[A-Z0-9-]+$"},
+    "courseVersion": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["draft", "approved-for-pilot", "pilot-open", "pilot-complete", "superseded"]},
+    "knowledgeAssessment": {
+      "type": "object",
+      "required": ["formativeItems", "summativeItems", "targetUsableResponsesPerItem", "minimumUsableResponsesForPreliminaryReview", "participantDataRepositoryPolicy"],
+      "properties": {
+        "formativeItems": {"type": "integer", "minimum": 0},
+        "summativeItems": {"type": "integer", "minimum": 1},
+        "targetUsableResponsesPerItem": {"type": "integer", "minimum": 1},
+        "minimumUsableResponsesForPreliminaryReview": {"type": "integer", "minimum": 1},
+        "participantDataRepositoryPolicy": {"const": "participant-level-data-must-not-be-committed"},
+        "flagRules": {
+          "type": "object",
+          "properties": {
+            "difficultyReviewBelow": {"type": "number", "minimum": 0, "maximum": 1},
+            "difficultyReviewAbove": {"type": "number", "minimum": 0, "maximum": 1},
+            "discriminationUrgentBelow": {"type": "number", "minimum": -1, "maximum": 1},
+            "discriminationReviewBelow": {"type": "number", "minimum": -1, "maximum": 1},
+            "omitRateReviewAbove": {"type": "number", "minimum": 0, "maximum": 1},
+            "responseTimeAnomalyReviewAbove": {"type": "number", "minimum": 0, "maximum": 1},
+            "automaticDisposition": {"const": false}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "performanceAssessment": {
+      "type": "object",
+      "required": ["assessmentIds", "minimumCalibrationAssessors", "minimumCalibrationSamples", "minimumCandidatePerformances", "formsRequired", "criticalErrorAgreementRequired"],
+      "properties": {
+        "assessmentIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^(PRACTICAL|CAPSTONE)-[A-Z0-9-]+$"}},
+        "minimumCalibrationAssessors": {"type": "integer", "minimum": 2},
+        "minimumCalibrationSamples": {"type": "integer", "minimum": 3},
+        "minimumCandidatePerformances": {"type": "integer", "minimum": 1},
+        "formsRequired": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "criticalErrorAgreementRequired": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "decisionPolicy": {
+      "type": "object",
+      "required": ["statisticsAreDiagnostic", "humanDispositionRequired", "standardSettingRequired", "accessibilityReviewRequired", "legalComplianceReviewRequired"],
+      "properties": {
+        "statisticsAreDiagnostic": {"const": true},
+        "humanDispositionRequired": {"const": true},
+        "standardSettingRequired": {"const": true},
+        "accessibilityReviewRequired": {"const": true},
+        "legalComplianceReviewRequired": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^docs/.+\\.md$"}
+    }
+  },
+  "additionalProperties": false
+}
