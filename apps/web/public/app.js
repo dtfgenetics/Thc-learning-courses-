@@ -28,7 +28,7 @@ function matchesQuery(course, query) {
 }
 
 function progressLabel() {
-  return progressMode === 'account' ? 'Account progress' : 'Device progress';
+  return progressMode === 'account' ? 'Account lesson progress' : 'Device lesson progress';
 }
 
 function renderCatalog() {
@@ -47,14 +47,14 @@ function renderCatalog() {
     const courseState = courseProgress(course, progress);
     const metaParts = [];
     if (course.credentialBearing) metaParts.push('credential pathway');
-    metaParts.push(`${courseState.completed}/${courseState.total} lessons • ${courseState.percent}%`);
+    metaParts.push(`${courseState.completed}/${courseState.total} lessons • ${courseState.percent}% lesson progress`);
     summary.append(text('span', metaParts.join(' • '), 'course-meta'));
     details.append(summary);
 
     const progressTrack = document.createElement('div');
     progressTrack.className = 'progress-track';
     progressTrack.setAttribute('role', 'progressbar');
-    progressTrack.setAttribute('aria-label', `${course.title} ${progressLabel().toLowerCase()}`);
+    progressTrack.setAttribute('aria-label', `${course.title} lesson progress`);
     progressTrack.setAttribute('aria-valuemin', '0');
     progressTrack.setAttribute('aria-valuemax', '100');
     progressTrack.setAttribute('aria-valuenow', String(courseState.percent));
@@ -63,6 +63,10 @@ function renderCatalog() {
     progressFill.style.width = `${courseState.percent}%`;
     progressTrack.append(progressFill);
     details.append(progressTrack);
+
+    if (course.credentialBearing) {
+      details.append(text('p', 'Lesson progress only. Course and credential completion also depend on the required assessment and practical-performance evidence, which are tracked separately from lesson checkmarks.', 'course-meta'));
+    }
 
     for (const module of course.modules) {
       const section = document.createElement('section');
@@ -184,12 +188,12 @@ function renderCompletionControl(article, lesson) {
   function setNote() {
     if (progressMode === 'account') {
       note.textContent = checkbox.checked
-        ? `Saved to your Academy account${accountSubject ? ` (${accountSubject})` : ''}. Lesson completion does not itself satisfy assessment or credential requirements.`
-        : 'Account progress is persisted. Lesson completion does not itself satisfy assessment or credential requirements.';
+        ? `Saved to your Academy account${accountSubject ? ` (${accountSubject})` : ''}. Lesson completion does not itself satisfy assessment, practical, or credential requirements.`
+        : 'Account lesson progress is persisted. Lesson completion does not itself satisfy assessment, practical, or credential requirements.';
     } else {
       note.textContent = checkbox.checked
-        ? 'Saved on this device.'
-        : 'Device progress is separate from official assessment and credential records.';
+        ? 'Saved on this device as lesson progress only. Assessment, practical, and credential records are tracked separately.'
+        : 'Device lesson progress is separate from official assessment, practical, and credential records.';
     }
   }
   setNote();
@@ -203,7 +207,7 @@ function renderCompletionControl(article, lesson) {
         progress = setLessonComplete(progress, lesson.id, requested);
       } catch (error) {
         checkbox.checked = !requested;
-        note.textContent = `${error.message}. Your account progress was not changed.`;
+        note.textContent = `${error.message}. Your account lesson progress was not changed.`;
         checkbox.disabled = false;
         return;
       }
