@@ -15,9 +15,32 @@ function readDirJson(rel) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((name) => name.endsWith('.json')).sort().map((name) => readJson(path.join(rel, name)));
 }
-function isVisible(object, previewDrafts) { return object?.status === 'published' || previewDrafts; }
-function safeLesson(lesson) {
-  return { id: lesson.id, title: lesson.title, version: lesson.version, status: lesson.status, competencies: lesson.competencies ?? [], learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [], estimatedMinutes: lesson.estimatedMinutes ?? null, references: lesson.references ?? [], content: lesson.content ?? {} };
+function buildPublicReleaseIds({ modules, assessments }) {
+  const ids = new Set();
+  const releases = readDirJson('content/public-releases').filter((release) => release.publicationState === 'published');
+  for (const release of releases) {
+    if (release.courseId) ids.add(release.courseId);
+    for (const moduleId of release.publicScope?.modules ?? []) {
+      ids.add(moduleId);
+      const module = modules.get(moduleId);
+      for (const lessonId of module?.lessons ?? []) ids.add(lessonId);
+    }
+    for (const assessmentId of release.publicScope?.assessments ?? []) {
+      ids.add(assessmentId);
+      const assessment = assessments.get(assessmentId);
+      for (const itemId of assessment?.items ?? []) ids.add(itemId);
+    }
+  }
+  return ids;
+}
+function isVisible(object, previewDrafts, publicReleaseIds = new Set()) {
+  return object?.status === 'published' || publicReleaseIds.has(object?.id) || previewDrafts;
+}
+function publicStatus(object, publicReleaseIds = new Set()) {
+  return publicReleaseIds.has(object?.id) ? 'published' : object?.status;
+}
+function safeLesson(lesson, publicReleaseIds = new Set()) {
+  return { id: lesson.id, title: lesson.title, version: lesson.version, status: publicStatus(lesson, publicReleaseIds), competencies: lesson.competencies ?? [], learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [], estimatedMinutes: lesson.estimatedMinutes ?? null, references: lesson.references ?? [], content: lesson.content ?? {} };
 }
 
 function hashSeed(value) {
@@ -69,11 +92,13 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   const courses = new Map(readDirJson('content/courses').map((item) => [item.id, item]));
   const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
   const lessons = new Map(readDirJson('content/lessons').map((item) => [item.id, item]));
-  const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
-    id: course.id, title: course.title, version: course.version, status: course.status, credentialBearing: Boolean(course.credentialBearing), description: course.description ?? course.summary ?? '',
-    modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts)).map((module) => ({
-      id: module.id, title: module.title, status: module.status,
-      lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts)).map((lesson) => ({ id: lesson.id, title: lesson.title, status: lesson.status, estimatedMinutes: lesson.estimatedMinutes ?? null }))
+  const assessments = new Map(readDirJson('content/assessments').map((item) => [item.id, item]));
+  const publicReleaseIds = buildPublicReleaseIds({ modules, assessments });
+  const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts, publicReleaseIds)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
+    id: course.id, title: course.title, version: course.version, status: publicStatus(course, publicReleaseIds), credentialBearing: Boolean(course.credentialBearing), description: course.description ?? course.summary ?? '',
+    modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
+      id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds),
+      lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts, publicReleaseIds)).map((lesson) => ({ id: lesson.id, title: lesson.title, status: publicStatus(lesson, publicReleaseIds), estimatedMinutes: lesson.estimatedMinutes ?? null }))
     }))
   }));
   return { mode: previewDrafts ? 'staging-preview' : 'published-only', generatedAt: new Date().toISOString(), courses: visibleCourses };
@@ -116,21 +141,27 @@ export function loadPublicLesson(id, { previewDrafts = true } = {}) {
   if (!/^LESSON-[A-Z0-9-]+$/.test(id)) return null;
   const target = path.join(root, 'content/lessons', `${id}.json`);
   if (!fs.existsSync(target)) return null;
+  const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
+  const assessments = new Map(readDirJson('content/assessments').map((item) => [item.id, item]));
+  const publicReleaseIds = buildPublicReleaseIds({ modules, assessments });
   const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
-  if (!isVisible(lesson, previewDrafts)) return null;
-  return safeLesson(lesson);
+  if (!isVisible(lesson, previewDrafts, publicReleaseIds)) return null;
+  return safeLesson(lesson, publicReleaseIds);
 }
 
 export function loadLessonPracticeItems(id, { previewDrafts = true, seed = 'practice' } = {}) {
   if (!/^LESSON-[A-Z0-9-]+$/.test(id)) return [];
   const target = path.join(root, 'content/lessons', `${id}.json`);
   if (!fs.existsSync(target)) return [];
+  const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
+  const assessments = new Map(readDirJson('content/assessments').map((item) => [item.id, item]));
+  const publicReleaseIds = buildPublicReleaseIds({ modules, assessments });
   const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
-  if (!isVisible(lesson, previewDrafts)) return [];
+  if (!isVisible(lesson, previewDrafts, publicReleaseIds)) return [];
   const competencies = new Set(lesson.competencies ?? []);
   const objectives = new Set(lesson.learningObjectives ?? lesson.objectives ?? []);
   return readDirJson('content/questions')
-    .filter((item) => item.purpose === 'formative' && competencies.has(item.competency) && isVisible(item, previewDrafts))
+    .filter((item) => item.purpose === 'formative' && competencies.has(item.competency) && isVisible(item, previewDrafts, publicReleaseIds))
     .filter((item) => objectives.size === 0 || !item.objective || objectives.has(item.objective))
     .filter((item) => Array.isArray(item.choices) && item.choices.length >= 2 && Number.isInteger(item.correct) && item.correct >= 0 && item.correct < item.choices.length)
     .map((item) => presentPracticeItem(item, seed));
