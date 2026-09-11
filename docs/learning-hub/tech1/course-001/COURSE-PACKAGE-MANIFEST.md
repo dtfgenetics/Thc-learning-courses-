@@ -17,13 +17,18 @@
 - 6 operational job aids
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
+- rendered objective-aligned lesson practice with shuffled choices and rationale feedback
 
-## Instructor support
+## Instructor/assessor support
 
 - instructor guide
 - source/evidence boundaries
 - remediation and assessment-use guidance
 - accessibility delivery requirements
+- practical assessor guide
+- practical calibration protocol
+- equivalent practical Candidate Forms A and B
+- human review packet
 
 ## Course assessment
 
@@ -35,18 +40,19 @@
 
 The public course assessments are not the secure THC Cultivation Technician I certification exam.
 
-## Release state
+## Build-side status
 
-Structurally complete as a draft production package after repository validation. It remains non-production until human technical/curriculum review, assessment-item review, accessibility review of rendered delivery, practical assessor calibration, pilot evidence/standard-setting review, and final approval/release record are completed.
+The Course 1 package is content-complete and structurally testable as a draft production package after repository validation. Source verification, learner/instructor materials, assessment banks, practical forms, and delivery safeguards are present.
 
-## Definition of done before learner release
+## Human/pilot gates still required before learner production release
 
-1. Every source URL/version checked for currency.
-2. Scientific/regulatory statements reviewed within source scope.
-3. All 108 course-test items human-reviewed before activation.
-4. Practical rubric calibrated using representative sample performances.
-5. Rendered course checked for WCAG 2.2 AA target requirements.
-6. Instructional graphics/job aids reviewed for accuracy, text alternatives, and reading order.
-7. Pilot learner data reviewed for confusing items, weak distractors, timing, and unintended barriers.
-8. Development cut scores replaced or confirmed through documented standard-setting/review.
-9. Release version and approval record created.
+1. qualified technical/curriculum review;
+2. human review of all 108 public course-test items;
+3. multi-assessor calibration of the practical rubric/critical-error rules;
+4. manual rendered WCAG 2.2 AA target review;
+5. instructional graphic/job-aid review for accuracy, text alternatives, and reading order;
+6. controlled pilot learner data review for item behavior, timing, usability, and unintended barriers;
+7. documented standard-setting decision replacing or confirming development cut scores;
+8. explicit final approval/release record and release version.
+
+Do not mark the course production-ready until those gates are complete.

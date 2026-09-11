@@ -30,7 +30,7 @@ button, input { font: inherit; }
 .catalog-panel { padding: 1.25rem; border-right: 1px solid var(--line); background: rgba(255,255,255,.28); }
 .search-label { display: block; font-weight: 800; margin-bottom: .35rem; }
 .search { width: 100%; border: 1px solid var(--line); border-radius: .7rem; padding: .7rem .8rem; background: #fff; color: var(--ink); }
-.search:focus, .lesson-link:focus, .completion-label:focus-within { outline: 3px solid rgba(36,95,61,.2); outline-offset: 2px; }
+.search:focus, .lesson-link:focus, .completion-label:focus-within, .practice-choice:focus-within { outline: 3px solid rgba(36,95,61,.2); outline-offset: 2px; }
 .status { margin: .65rem 0 1rem; color: var(--muted); font-size: .9rem; }
 .course { margin-bottom: .75rem; border: 1px solid var(--line); background: var(--panel); border-radius: .8rem; overflow: hidden; }
 .course summary { cursor: pointer; padding: .8rem .9rem .55rem; font-weight: 800; }
@@ -60,6 +60,17 @@ button, input { font: inherit; }
 .callout { border-left: 4px solid var(--green); padding: .85rem 1rem; background: var(--green-soft); border-radius: 0 .55rem .55rem 0; }
 .list-clean { padding-left: 1.2rem; }
 .error { border-color: #b24a3b; color: #712f26; }
+.practice-section { border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.practice-item { margin: 1rem 0; border: 1px solid var(--line); border-radius: .8rem; padding: 1rem; background: #fff; }
+.practice-item legend { padding: 0 .3rem; font-weight: 800; max-width: 70ch; }
+.practice-options { display: grid; gap: .55rem; margin-top: .7rem; }
+.practice-choice { display: flex; align-items: flex-start; gap: .6rem; border: 1px solid var(--line); border-radius: .65rem; padding: .7rem .75rem; cursor: pointer; }
+.practice-choice:hover { background: var(--green-soft); }
+.practice-choice input { margin-top: .28rem; accent-color: var(--green); }
+.practice-choice:has(input:disabled) { cursor: default; }
+.practice-feedback { min-height: 1.6rem; margin: .75rem 0 0; font-weight: 650; }
+.practice-feedback[data-state="correct"] { border-left: 4px solid var(--green); padding-left: .65rem; }
+.practice-feedback[data-state="incorrect"] { border-left: 4px solid #8b5b24; padding-left: .65rem; }
 .completion-panel { margin-top: 2.4rem; padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: #fff; }
 .completion-label { display: inline-flex; align-items: center; gap: .6rem; font-weight: 800; cursor: pointer; border-radius: .35rem; }
 .completion-label input { width: 1.15rem; height: 1.15rem; accent-color: var(--green); }

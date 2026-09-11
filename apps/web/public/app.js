@@ -101,6 +101,73 @@ function appendList(parent, heading, items) {
   parent.append(section);
 }
 
+function practiceSeed() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function renderPracticeSection(article, lesson) {
+  const section = document.createElement('section');
+  section.className = 'lesson-section practice-section';
+  section.append(text('h3', 'Practice check'));
+  section.append(text('p', 'Use these low-stakes questions to retrieve the lesson ideas before moving on. Feedback appears after each response.'));
+  const status = text('p', 'Loading practice…', 'status');
+  section.append(status);
+  article.append(section);
+
+  const seed = practiceSeed();
+  fetch(`/api/lessons/${encodeURIComponent(lesson.id)}/practice?seed=${encodeURIComponent(seed)}`, { headers: { accept: 'application/json' } })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Practice request failed (${response.status})`);
+      return response.json();
+    })
+    .then((payload) => {
+      const items = payload.items ?? [];
+      if (items.length === 0) {
+        status.textContent = 'No lesson-specific practice items are available yet.';
+        return;
+      }
+      status.remove();
+      items.forEach((item, itemIndex) => {
+        const fieldset = document.createElement('fieldset');
+        fieldset.className = 'practice-item';
+        const legend = document.createElement('legend');
+        legend.textContent = `${itemIndex + 1}. ${item.stem}`;
+        fieldset.append(legend);
+        const options = document.createElement('div');
+        options.className = 'practice-options';
+        const name = `practice-${lesson.id}-${item.id}`;
+        item.choices.forEach((choice, choiceIndex) => {
+          const label = document.createElement('label');
+          label.className = 'practice-choice';
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = name;
+          input.value = String(choiceIndex);
+          input.addEventListener('change', () => {
+            const inputs = [...fieldset.querySelectorAll('input[type="radio"]')];
+            inputs.forEach((control) => { control.disabled = true; });
+            const isCorrect = choiceIndex === item.correct;
+            feedback.dataset.state = isCorrect ? 'correct' : 'incorrect';
+            feedback.textContent = isCorrect
+              ? `Correct. ${item.rationale ?? ''}`
+              : `Not quite. The best answer is: ${item.choices[item.correct]}. ${item.rationale ?? ''}`;
+          });
+          label.append(input, text('span', choice));
+          options.append(label);
+        });
+        const feedback = text('p', 'Choose one answer.', 'practice-feedback');
+        feedback.setAttribute('aria-live', 'polite');
+        fieldset.append(options, feedback);
+        section.append(fieldset);
+      });
+    })
+    .catch((error) => {
+      status.textContent = `Practice unavailable: ${error.message}`;
+      status.classList.add('error');
+    });
+}
+
 function renderCompletionControl(article, lesson) {
   const section = document.createElement('section');
   section.className = 'completion-panel';
@@ -217,6 +284,7 @@ function renderLesson(lesson) {
     section.append(text('p', lesson.references.join(', ')));
     article.append(section);
   }
+  renderPracticeSection(article, lesson);
   renderCompletionControl(article, lesson);
   lessonView.replaceChildren(article);
   lessonView.focus();
