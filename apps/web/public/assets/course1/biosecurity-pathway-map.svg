@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Biosecurity contamination pathway map</title>
+  <desc id="desc">A cultivation-facility pathway diagram showing cleaner and higher-risk zones connected by worker travel, shared tools, carts, hose ends, incoming plants, and waste movement. The diagram emphasizes controlled movement, sanitation at boundaries, and avoiding unnecessary backward travel from higher-risk areas into cleaner or more sensitive areas.</desc>
+  <rect width="1200" height="820" rx="28" fill="#fffdf7"/>
+  <text x="600" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#163122">Biosecurity Pathways: Follow Movement, Not Appearance</text>
+  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5a6b60">Clean status can be lost when people or objects cross an uncontrolled contamination route</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5a6b60"/></marker>
+    <marker id="warnArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9b5229"/></marker>
+  </defs>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="150" width="300" height="500" rx="24" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+    <text x="220" y="192" text-anchor="middle" font-size="25" font-weight="700" fill="#163122">Cleaner / sensitive zone</text>
+    <text x="220" y="222" text-anchor="middle" font-size="16" fill="#5a6b60">Example: propagation or clean-stock area</text>
+    <g fill="#ffffff" stroke="#d9d3c4" stroke-width="2">
+      <rect x="110" y="270" width="220" height="75" rx="14"/>
+      <rect x="110" y="375" width="220" height="75" rx="14"/>
+      <rect x="110" y="480" width="220" height="75" rx="14"/>
+    </g>
+    <text x="220" y="302" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Room-specific tools</text>
+    <text x="220" y="330" text-anchor="middle" font-size="15" fill="#5a6b60">Keep assigned where required</text>
+    <text x="220" y="407" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Clean surfaces</text>
+    <text x="220" y="435" text-anchor="middle" font-size="15" fill="#5a6b60">Protected from dirty contact</text>
+    <text x="220" y="512" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Sensitive material</text>
+    <text x="220" y="540" text-anchor="middle" font-size="15" fill="#5a6b60">Movement controlled by SOP</text>
+
+    <rect x="450" y="150" width="300" height="500" rx="24" fill="#ffffff" stroke="#a57a2b" stroke-width="3"/>
+    <text x="600" y="192" text-anchor="middle" font-size="25" font-weight="700" fill="#163122">Boundary / transition</text>
+    <text x="600" y="222" text-anchor="middle" font-size="16" fill="#5a6b60">Where movement rules prevent cross-zone transfer</text>
+    <g fill="#fbf2df" stroke="#8b5b24" stroke-width="2">
+      <rect x="490" y="265" width="220" height="78" rx="14"/>
+      <rect x="490" y="370" width="220" height="78" rx="14"/>
+      <rect x="490" y="475" width="220" height="78" rx="14"/>
+    </g>
+    <text x="600" y="297" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Worker / PPE rule</text>
+    <text x="600" y="325" text-anchor="middle" font-size="15" fill="#5a6b60">Change or sanitize as required</text>
+    <text x="600" y="402" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Tool / cart sanitation</text>
+    <text x="600" y="430" text-anchor="middle" font-size="15" fill="#5a6b60">Approved process before crossing</text>
+    <text x="600" y="507" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Material release check</text>
+    <text x="600" y="535" text-anchor="middle" font-size="15" fill="#5a6b60">Identity and status preserved</text>
+
+    <rect x="830" y="150" width="300" height="500" rx="24" fill="#fff0e7" stroke="#9b5229" stroke-width="3"/>
+    <text x="980" y="192" text-anchor="middle" font-size="25" font-weight="700" fill="#163122">Higher-risk / unresolved zone</text>
+    <text x="980" y="222" text-anchor="middle" font-size="16" fill="#5a6b60">Example: quarantine, waste route, dirty return</text>
+    <g fill="#ffffff" stroke="#d9d3c4" stroke-width="2">
+      <rect x="870" y="270" width="220" height="75" rx="14"/>
+      <rect x="870" y="375" width="220" height="75" rx="14"/>
+      <rect x="870" y="480" width="220" height="75" rx="14"/>
+    </g>
+    <text x="980" y="302" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Incoming plants / media</text>
+    <text x="980" y="330" text-anchor="middle" font-size="15" fill="#5a6b60">Status may be unresolved</text>
+    <text x="980" y="407" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Waste / debris</text>
+    <text x="980" y="435" text-anchor="middle" font-size="15" fill="#5a6b60">Remove by defined route</text>
+    <text x="980" y="512" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Shared tools / hose ends</text>
+    <text x="980" y="540" text-anchor="middle" font-size="15" fill="#5a6b60">Can reconnect zones if uncontrolled</text>
+
+    <path d="M370 315 H450" stroke="#245f3d" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M750 315 H830" stroke="#245f3d" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="600" y="685" text-anchor="middle" font-size="19" font-weight="700" fill="#245f3d">Planned clean-to-higher-risk workflow reduces avoidable backward travel</text>
+
+    <path d="M830 590 C750 720, 450 720, 370 590" stroke="#9b5229" stroke-width="5" stroke-dasharray="12 10" fill="none" marker-end="url(#warnArrow)"/>
+    <text x="600" y="748" text-anchor="middle" font-size="18" font-weight="700" fill="#9b5229">Uncontrolled backward movement can reconnect contamination pathways</text>
+    <text x="600" y="778" text-anchor="middle" font-size="16" fill="#5a6b60">Workers • gloves/clothing • tools • carts • containers • hose ends • plants • debris</text>
+  </g>
+</svg>

@@ -11,9 +11,9 @@ Canonical asset status and learner paths are tracked in `visuals/ASSET-REGISTRY.
 1. **Produced** — Hazard-control decision flow: routine control → stop/isolate where authorized → escalate. Learner asset: `/assets/course1/hazard-control-decision-flow.svg`.
 2. **Produced** — PPE/HazCom information map linking task, hazard assessment, label, SDS, site procedure, restrictions, and PPE decision. Learner asset: `/assets/course1/ppe-hazcom-decision-map.svg`.
 3. **Produced** — Cultivation work-area hazard scan showing representative electrical, water, pathway, ladder/tool, lighting, gas-alarm, and cultivation-exposure concerns without implying equal risk in every facility. Learner asset: `/assets/course1/cultivation-work-area-hazard-scan.svg`.
-4. **Planned** — Biosecurity pathway map showing workers, tools, carts, hose ends, plants, debris, and zone transitions.
-5. **Planned** — Cleaning-versus-disinfection process diagram emphasizing removal of debris/organic matter before the approved disinfection step where applicable.
-6. **Planned** — Quarantine / hold / pesticide restricted-entry comparison table with explicit legal-context warning.
+4. **Produced** — Biosecurity pathway map showing cleaner/sensitive areas, controlled transition boundaries, higher-risk/unresolved areas, and worker/tool/cart/hose/plant/debris movement. Learner asset: `/assets/course1/biosecurity-pathway-map.svg`.
+5. **Produced** — Cleaning-before-disinfection sequence showing material control, debris removal, cleaning, product verification, approved application/contact conditions, finish step, inspection, and documentation. Learner asset: `/assets/course1/cleaning-disinfection-sequence.svg`.
+6. **Produced** — Quarantine / hold / pesticide restricted-entry comparison that keeps plant-health, operational-status, and worker-protection controls conceptually separate. Learner asset: `/assets/course1/quarantine-hold-rei-comparison.svg`.
 7. **Planned** — Controlled-document anatomy graphic: ID, revision, effective status, prerequisites, sequence, acceptance criteria, records, escalation.
 8. **Planned** — Material genealogy diagram from source plant/lot through movement, harvest container, sample, and disposition.
 9. **Planned** — Inventory reconciliation flow showing physical count, record count, verification, discrepancy preservation, and escalation.

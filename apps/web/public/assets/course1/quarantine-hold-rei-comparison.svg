@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Quarantine, hold, and restricted-entry comparison</title>
+  <desc id="desc">Three-column comparison. Quarantine separates plant material or an area because of unresolved biological risk. Hold prevents movement, use, release, or processing while an authorized decision is pending. A pesticide restricted-entry interval is a separate label-based worker-protection restriction tied to a pesticide application. The controls can coexist but should not be treated as interchangeable.</desc>
+  <rect width="1200" height="780" rx="28" fill="#fffdf7"/>
+  <text x="600" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#163122">Quarantine, Hold &amp; Restricted Entry Are Not the Same Control</text>
+  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5a6b60">They may overlap in one situation, but their purpose and controlling information differ</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="145" width="330" height="470" rx="22" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+    <rect x="435" y="145" width="330" height="470" rx="22" fill="#fbf2df" stroke="#8b5b24" stroke-width="3"/>
+    <rect x="810" y="145" width="330" height="470" rx="22" fill="#eef3f7" stroke="#47637a" stroke-width="3"/>
+
+    <g text-anchor="middle" fill="#163122">
+      <text x="225" y="195" font-size="27" font-weight="700">Quarantine</text>
+      <text x="600" y="195" font-size="27" font-weight="700">Hold</text>
+      <text x="975" y="195" font-size="27" font-weight="700">Restricted entry</text>
+    </g>
+
+    <g fill="#5a6b60" font-size="17">
+      <text x="92" y="245">Purpose</text><text x="92" y="275" fill="#163122" font-weight="700">Separate unresolved biological risk</text>
+      <text x="92" y="315">Examples</text><text x="92" y="345" fill="#163122">Incoming material, suspected pest</text><text x="92" y="370" fill="#163122">or disease concern, isolation area</text>
+      <text x="92" y="420">Technician behavior</text><text x="92" y="450" fill="#163122">Preserve identity and separation;</text><text x="92" y="475" fill="#163122">do not self-release material</text>
+      <text x="92" y="525">Release</text><text x="92" y="555" fill="#163122">Authorized by the facility process</text>
+
+      <text x="467" y="245">Purpose</text><text x="467" y="275" fill="#163122" font-weight="700">Pause movement/use pending review</text>
+      <text x="467" y="315">Examples</text><text x="467" y="345" fill="#163122">Identity uncertainty, discrepancy,</text><text x="467" y="370" fill="#163122">quality or other controlled issue</text>
+      <text x="467" y="420">Technician behavior</text><text x="467" y="450" fill="#163122">Keep status intact; document and</text><text x="467" y="475" fill="#163122">escalate to the authorized role</text>
+      <text x="467" y="525">Release</text><text x="467" y="555" fill="#163122">Authorized decision clears the hold</text>
+
+      <text x="842" y="245">Purpose</text><text x="842" y="275" fill="#163122" font-weight="700">Protect workers after pesticide use</text>
+      <text x="842" y="315">Control source</text><text x="842" y="345" fill="#163122">Pesticide label and applicable</text><text x="842" y="370" fill="#163122">worker-protection requirements</text>
+      <text x="842" y="420">Technician behavior</text><text x="842" y="450" fill="#163122">Verify entry status and authority;</text><text x="842" y="475" fill="#163122">do not enter because work is urgent</text>
+      <text x="842" y="525">Clearance</text><text x="842" y="555" fill="#163122">Based on the controlling restriction</text>
+    </g>
+
+    <rect x="135" y="655" width="930" height="76" rx="18" fill="#ffffff" stroke="#d9d3c4" stroke-width="2"/>
+    <text x="600" y="686" text-anchor="middle" font-size="19" font-weight="700" fill="#163122">One tray or room can have more than one status at the same time.</text>
+    <text x="600" y="714" text-anchor="middle" font-size="16" fill="#5a6b60">Do not use one status to cancel another. Verify each applicable control before movement, entry, use, or release.</text>
+  </g>
+</svg>

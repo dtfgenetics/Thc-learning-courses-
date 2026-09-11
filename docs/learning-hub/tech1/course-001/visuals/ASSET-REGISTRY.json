@@ -38,20 +38,35 @@
     {
       "id": "VIS-LH-TECH1-001-004",
       "title": "Biosecurity Pathway Map",
-      "status": "planned",
-      "purpose": "Map worker, tool, cart, hose, plant, debris, and zone-transition contamination pathways."
+      "status": "produced",
+      "path": "/assets/course1/biosecurity-pathway-map.svg",
+      "purpose": "Map worker, tool, cart, hose, plant, debris, and zone-transition contamination pathways and reinforce controlled movement across boundaries.",
+      "linkedLessons": ["LESSON-LH-TECH1-001-04"],
+      "objectives": ["LO-LH-TECH1-001-03"],
+      "altText": "Cultivation facility pathway diagram showing a cleaner or sensitive zone, a controlled transition boundary, and a higher-risk or unresolved zone connected by workers, tools, carts, hose ends, incoming materials, and waste movement. It emphasizes controlled sanitation before crossing and avoiding unnecessary backward travel.",
+      "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"]
     },
     {
       "id": "VIS-LH-TECH1-001-005",
       "title": "Cleaning Before Disinfection Sequence",
-      "status": "planned",
-      "purpose": "Show debris removal, cleaning, approved disinfection, verification, and documentation in order."
+      "status": "produced",
+      "path": "/assets/course1/cleaning-disinfection-sequence.svg",
+      "purpose": "Show debris removal, cleaning, approved disinfection, verification, and documentation in a controlled sequence.",
+      "linkedLessons": ["LESSON-LH-TECH1-001-05"],
+      "objectives": ["LO-LH-TECH1-001-03"],
+      "altText": "Nine-step sanitation workflow showing secure or remove material, remove debris and gross soil, physically clean, verify the approved product and preparation, apply as directed, maintain required contact conditions, complete the required finish step, inspect the result, and document completion or exceptions.",
+      "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-OSHA-1910-1200-HAZCOM"]
     },
     {
       "id": "VIS-LH-TECH1-001-006",
       "title": "Quarantine, Hold, and Restricted-Entry Comparison",
-      "status": "planned",
-      "purpose": "Differentiate operational hold concepts from pesticide restricted-entry requirements without collapsing distinct legal contexts."
+      "status": "produced",
+      "path": "/assets/course1/quarantine-hold-rei-comparison.svg",
+      "purpose": "Differentiate plant-health quarantine, operational hold status, and pesticide restricted-entry requirements without collapsing distinct control systems.",
+      "linkedLessons": ["LESSON-LH-TECH1-001-06"],
+      "objectives": ["LO-LH-TECH1-001-04"],
+      "altText": "Three-column comparison showing quarantine as separation for unresolved biological risk, hold as a status preventing movement or use pending an authorized decision, and pesticide restricted entry as a separate label-based worker-protection restriction. It notes that the statuses can coexist and do not cancel one another.",
+      "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION", "REF-EPA-WPS-APPLICATION-RESTRICTIONS"]
     },
     {
       "id": "VIS-LH-TECH1-001-007",
