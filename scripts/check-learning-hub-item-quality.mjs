@@ -19,7 +19,9 @@ const objectives = new Set(readDirJson('content/learning-objectives').map((item)
 const competencies = new Set(readDirJson('content/competencies').map((item) => item.id));
 const courses = new Set(readDirJson('content/courses').map((item) => item.id));
 
-const expected = new Map([
+// These are quality-floor baselines, never content ceilings. Course banks may grow
+// beyond them whenever additional valid instruction or assessment coverage is useful.
+const minimumBaselines = new Map([
   ['TECH1-001', { assessments: 7, formative: 72, summative: 36, total: 108 }]
 ]);
 
@@ -134,16 +136,16 @@ for (const [key, group] of [...groups.entries()].sort(([a], [b]) => a.localeComp
   }
 
   const formatCount = (purpose) => group.questions.filter((item) => item.purpose === purpose).length;
-  const expectation = expected.get(key);
-  if (expectation) {
+  const baseline = minimumBaselines.get(key);
+  if (baseline) {
     const actual = {
       assessments: group.assessments.length,
       formative: formatCount('formative'),
       summative: formatCount('summative'),
       total: group.questions.length
     };
-    for (const [metric, expectedValue] of Object.entries(expectation)) {
-      if (actual[metric] !== expectedValue) failures.push(`${label}: expected ${expectedValue} ${metric}, found ${actual[metric]}`);
+    for (const [metric, minimumValue] of Object.entries(baseline)) {
+      if (actual[metric] < minimumValue) failures.push(`${label}: minimum baseline is ${minimumValue} ${metric}, found ${actual[metric]}`);
     }
   }
 
