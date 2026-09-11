@@ -1,48 +1,51 @@
 # THC Academy Review Workflow
 
-Credential-bearing content must move through explicit human review rather than relying on the existence of a source or an AI-generated draft.
+Review is an optional quality-improvement activity used while courses, lessons, assessments, and certification materials are continuously edited and expanded.
+
+Review does not control whether content may be edited, displayed, published, tested, or revised. Content remains editable at all times.
 
 ## Review types
 
 ### Scientific review
-Confirms that factual claims, scope, terminology, citations, uncertainty, and practical conclusions are supported by the cited evidence. A source being marked `reviewed-source` does not mean a lesson using that source has passed scientific review.
+Checks factual claims, scope, terminology, citations, uncertainty, and practical conclusions against available evidence.
 
 ### Editorial review
-Confirms clarity, plain language, instructional sequence, consistency, grammar, definitions, and learner usability without changing the scientific meaning.
+Checks clarity, plain language, instructional sequence, consistency, grammar, definitions, and learner usability.
 
 ### Assessment review
-Confirms item-objective alignment, defensible answer keys, distractor quality, cognitive level, evidence support, fairness, and security classification.
+Checks item-objective alignment, answer keys, distractor quality, cognitive level, evidence support, and fairness.
 
 ### Accessibility review
-Confirms that content and assessments have an equivalent usable path without dependence on color, inaccessible media, pointer-only interactions, or unnecessary timing barriers.
+Checks that content and assessments provide usable alternatives and do not unnecessarily depend on color, inaccessible media, pointer-only interactions, or timing barriers.
 
 ### Legal/compliance review
-Used where a lesson or credential could be interpreted as authorizing regulated activity, describing pesticide/legal requirements, or making claims about licensure/accreditation.
+May be used when material discusses regulated activity, pesticide/legal requirements, licensure, accreditation, or jurisdiction-specific rules.
 
-## Rule: source review is not lesson review
+## Editing model
 
-Reference status answers whether a source is appropriate evidence. Lesson scientific review answers whether the lesson uses that evidence accurately and within scope. These are separate gates.
+There is no required review sequence and no status-based editing lock.
 
-## Required sequence for a lesson
+Authors and agents may update lessons, assessments, questions, references, modules, courses, and related materials whenever improvements are identified. Review can happen before, during, or after those edits.
 
-`draft -> scientific review -> editorial review -> approved -> published`
+Review notes are context, not approval gates. Previous notes may be retained, edited, replaced, reorganized, or removed as useful to the project.
 
-Changes requested at either review return the lesson to draft/revision work. Published versions are immutable; later corrections produce a new version.
+## Review notes
 
-## Review records
+Optional review notes may use `schemas/review-record.schema.json` and can include any useful combination of:
 
-Each review is recorded using `schemas/review-record.schema.json`. The record must identify:
+- object or topic being reviewed;
+- version or revision context;
+- review type;
+- descriptive status;
+- reviewer or contributor identifier when useful;
+- date/time when useful;
+- notes and recommendations;
+- evidence checked.
 
-- reviewed object and exact version
-- review type
-- decision
-- reviewer identity or internal reviewer ID
-- review date/time
-- optional notes
-- evidence checked when applicable
+No field in a review note controls publication or editing.
 
-The author of credential-bearing content should not be the sole final approver.
+## Publication and iteration
 
-## Publication rules
+Learner-facing publication and ongoing editing are separate from review metadata. A course may remain public while its content, examples, sources, assessments, visuals, and UX continue to improve.
 
-A credential-bearing lesson cannot be treated as publication-ready merely because it contains substantive content. Publication readiness additionally requires the configured scientific, editorial, assessment, accessibility, evidence, and credential gates.
+Automated checks should identify broken JSON, missing referenced objects, invalid data structures, inaccessible interfaces, security problems, or runtime failures. They should not require review approval as a condition for editing or public visibility unless the project owner explicitly adds such a requirement later.
