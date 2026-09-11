@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Cleaning before disinfection sequence</title>
+  <desc id="desc">A nine-step sanitation workflow: secure or remove material as required, remove debris and gross soil, physically clean, verify the approved product and preparation, apply as directed, maintain required contact or wet conditions, complete the required rinse dry or finish step, inspect the result, and document completion or exceptions. A warning states that exact instructions come from the product label, equipment limitations, and facility procedure.</desc>
+  <rect width="1200" height="760" rx="28" fill="#fffdf7"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#163122">Cleaning Before Disinfection</text>
+  <text x="600" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5a6b60">A controlled sanitation sequence—not a spray-and-walk-away step</text>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5a6b60"/></marker></defs>
+  <g font-family="Arial, sans-serif">
+    <g fill="#ffffff" stroke="#d9d3c4" stroke-width="2">
+      <rect x="70" y="140" width="300" height="105" rx="18"/><rect x="450" y="140" width="300" height="105" rx="18"/><rect x="830" y="140" width="300" height="105" rx="18"/>
+      <rect x="830" y="315" width="300" height="105" rx="18"/><rect x="450" y="315" width="300" height="105" rx="18"/><rect x="70" y="315" width="300" height="105" rx="18"/>
+      <rect x="70" y="490" width="300" height="105" rx="18"/><rect x="450" y="490" width="300" height="105" rx="18"/><rect x="830" y="490" width="300" height="105" rx="18"/>
+    </g>
+    <g fill="#245f3d" font-size="17" font-weight="700">
+      <text x="95" y="173">1</text><text x="475" y="173">2</text><text x="855" y="173">3</text><text x="855" y="348">4</text><text x="475" y="348">5</text><text x="95" y="348">6</text><text x="95" y="523">7</text><text x="475" y="523">8</text><text x="855" y="523">9</text>
+    </g>
+    <g text-anchor="middle" fill="#163122" font-size="19" font-weight="700">
+      <text x="220" y="185">Secure / remove material</text><text x="220" y="215" fill="#5a6b60" font-size="15" font-weight="400">as the procedure requires</text>
+      <text x="600" y="185">Remove debris &amp; gross soil</text><text x="600" y="215" fill="#5a6b60" font-size="15" font-weight="400">roots, media, residues, plant matter</text>
+      <text x="980" y="185">Physically clean</text><text x="980" y="215" fill="#5a6b60" font-size="15" font-weight="400">prepare the surface or item</text>
+      <text x="980" y="360">Verify approved product</text><text x="980" y="390" fill="#5a6b60" font-size="15" font-weight="400">label, preparation, compatibility</text>
+      <text x="600" y="360">Apply as directed</text><text x="600" y="390" fill="#5a6b60" font-size="15" font-weight="400">do not invent concentration or use</text>
+      <text x="220" y="360">Maintain required conditions</text><text x="220" y="390" fill="#5a6b60" font-size="15" font-weight="400">contact / wet time where applicable</text>
+      <text x="220" y="535">Complete finish step</text><text x="220" y="565" fill="#5a6b60" font-size="15" font-weight="400">rinse, dry, or finish if required</text>
+      <text x="600" y="535">Inspect / verify result</text><text x="600" y="565" fill="#5a6b60" font-size="15" font-weight="400">look for missed areas or failure</text>
+      <text x="980" y="535">Document completion</text><text x="980" y="565" fill="#5a6b60" font-size="15" font-weight="400">record exceptions honestly</text>
+    </g>
+    <g stroke="#5a6b60" stroke-width="4" fill="none" marker-end="url(#arrow)">
+      <path d="M370 192 H440"/><path d="M750 192 H820"/><path d="M980 245 V305"/><path d="M830 367 H760"/><path d="M450 367 H380"/><path d="M220 420 V480"/><path d="M370 542 H440"/><path d="M750 542 H820"/>
+    </g>
+    <rect x="210" y="640" width="780" height="70" rx="16" fill="#fbf2df" stroke="#8b5b24" stroke-width="2"/>
+    <text x="600" y="672" text-anchor="middle" font-size="18" font-weight="700" fill="#163122">Exact method comes from the current product label, equipment constraints, and facility SOP.</text>
+    <text x="600" y="698" text-anchor="middle" font-size="16" fill="#5a6b60">“Looks clean” does not by itself prove that the controlled sanitation process was completed.</text>
+  </g>
+</svg>
