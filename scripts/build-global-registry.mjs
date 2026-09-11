@@ -15,6 +15,8 @@ const mappings = {
   references: 'content/references',
   programs: 'content/programs',
   credentials: 'content/credentials',
+  credentialPrograms: 'content/credential-programs',
+  resources: 'content/resources',
   issuers: 'content/issuer'
 };
 
@@ -22,7 +24,7 @@ function idsIn(directory) {
   const full = path.join(root, directory);
   if (!fs.existsSync(full)) return [];
   return fs.readdirSync(full)
-    .filter((name) => name.endsWith('.json'))
+    .filter((name) => name.endsWith('.json') && !(directory === 'content/credential-programs' && name === 'registry.json'))
     .map((name) => JSON.parse(fs.readFileSync(path.join(full, name), 'utf8')).id)
     .filter(Boolean)
     .sort();

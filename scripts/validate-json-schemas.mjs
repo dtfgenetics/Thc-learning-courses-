@@ -9,6 +9,7 @@ const mappings = [
   ['content/claims', 'schemas/claim.schema.json'],
   ['content/competencies', 'schemas/competency.schema.json'],
   ['content/courses', 'schemas/course.schema.json'],
+  ['content/credential-programs', 'schemas/credential-program.schema.json', new Set(['registry.json'])],
   ['content/credentials', 'schemas/credential.schema.json'],
   ['content/encyclopedia', 'schemas/encyclopedia-entry.schema.json'],
   ['content/glossary', 'schemas/glossary-entry.schema.json'],
@@ -18,7 +19,8 @@ const mappings = [
   ['content/performance-assessments', 'schemas/performance-assessment.schema.json'],
   ['content/programs', 'schemas/program.schema.json'],
   ['content/questions', 'schemas/question.schema.json'],
-  ['content/references', 'schemas/reference.schema.json']
+  ['content/references', 'schemas/reference.schema.json'],
+  ['content/resources', 'schemas/resource.schema.json']
 ];
 
 const ajv = new Ajv2020({allErrors: true, strict: false});
@@ -27,7 +29,7 @@ addFormats(ajv);
 const failures = [];
 let validatedFiles = 0;
 
-for (const [directory, schemaPath] of mappings) {
+for (const [directory, schemaPath, excludedNames = new Set()] of mappings) {
   const fullDir = path.join(root, directory);
   const fullSchema = path.join(root, schemaPath);
   if (!fs.existsSync(fullDir)) continue;
@@ -45,7 +47,9 @@ for (const [directory, schemaPath] of mappings) {
     continue;
   }
 
-  const files = fs.readdirSync(fullDir).filter((name) => name.endsWith('.json')).sort();
+  const files = fs.readdirSync(fullDir)
+    .filter((name) => name.endsWith('.json') && !excludedNames.has(name))
+    .sort();
   for (const name of files) {
     const rel = path.join(directory, name);
     let data;
