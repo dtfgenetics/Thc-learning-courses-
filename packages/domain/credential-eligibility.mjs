@@ -24,9 +24,31 @@ export function evaluateCredentialEligibility({ credential, evidence = {}, perfo
   const assessments = new Map((evidence.assessments ?? []).map((row) => [row.assessmentId, row]));
   const performance = new Map((evidence.performanceAssessments ?? []).map((row) => [row.assessmentId, row]));
   const artifacts = new Map((evidence.portfolioArtifacts ?? []).map((row) => [row.artifactId, row]));
+  const courseCompletions = new Map((evidence.courseCompletions ?? []).map((row) => [row.courseId, row]));
   const performanceById = performanceDefinitions == null
     ? loadRequiredPerformanceDefinitions({ root, credential })
     : asMap(performanceDefinitions);
+
+  if (credential.eligibility.requireCourseCompletion === true) {
+    const result = courseCompletions.get(credential.course);
+    if (!result) {
+      missing.push({ type: 'course-completion', id: credential.course, reason: 'missing-course-completion' });
+    } else if (result.status !== 'completed') {
+      missing.push({ type: 'course-completion', id: credential.course, reason: 'course-not-completed' });
+    } else if (credential.courseVersion) {
+      const actualVersion = String(result.courseVersion ?? '').trim();
+      const requiredVersion = String(credential.courseVersion).trim();
+      if (actualVersion !== requiredVersion) {
+        missing.push({
+          type: 'course-completion',
+          id: credential.course,
+          reason: actualVersion ? 'course-version-mismatch' : 'missing-course-version',
+          required: requiredVersion,
+          actual: actualVersion || null
+        });
+      }
+    }
+  }
 
   for (const requiredId of credential.eligibility.requiredAssessments ?? []) {
     const result = assessments.get(requiredId);
@@ -118,6 +140,7 @@ export function evaluateCredentialEligibility({ credential, evidence = {}, perfo
     learnerId: evidence.learnerId ?? null,
     eligible: missing.length === 0,
     requirementSummary: {
+      courseCompletion: credential.eligibility.requireCourseCompletion === true ? 1 : 0,
       writtenAssessments: (credential.eligibility.requiredAssessments ?? []).length,
       performanceAssessments: (credential.eligibility.requiredPerformanceAssessments ?? []).length,
       portfolioArtifacts: (credential.eligibility.requiredPortfolioArtifacts ?? []).length
