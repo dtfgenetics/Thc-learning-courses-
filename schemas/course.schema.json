@@ -10,6 +10,35 @@
     "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "status": {"enum": ["draft", "review", "approved", "published", "superseded", "retired"]},
     "credentialBearing": {"type": "boolean"},
+    "description": {"type": "string", "minLength": 40},
+    "academicLevel": {"enum": ["foundational", "intermediate", "advanced", "professional"]},
+    "intendedAudience": {"type": "array", "items": {"type": "string", "minLength": 3}},
+    "prerequisites": {"type": "array", "items": {"type": "string", "minLength": 3}},
+    "deliveryModes": {"type": "array", "uniqueItems": true, "items": {"enum": ["self-paced-online", "instructor-led", "simulation", "supervised-lab", "workplace-practice", "paper-data-exercise"]}},
+    "learningOutcomes": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 10}},
+    "assessmentPolicy": {
+      "type": "object",
+      "required": ["formative", "module", "summative", "credential"],
+      "properties": {
+        "formative": {"type": "string", "minLength": 20},
+        "module": {"type": "string", "minLength": 20},
+        "summative": {"type": "string", "minLength": 20},
+        "credential": {"type": "string", "minLength": 20}
+      },
+      "additionalProperties": false
+    },
+    "sourcePolicy": {
+      "type": "object",
+      "required": ["standard", "evidenceHierarchy", "citationPractice", "scopeLimitations"],
+      "properties": {
+        "standard": {"type": "string", "minLength": 20},
+        "evidenceHierarchy": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 5}},
+        "citationPractice": {"type": "string", "minLength": 20},
+        "scopeLimitations": {"type": "string", "minLength": 20}
+      },
+      "additionalProperties": false
+    },
+    "credentialStatement": {"type": "string", "minLength": 20},
     "modules": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^MOD-[A-Z0-9-]+$"}},
     "competencies": {"type": "array", "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}},
     "finalAssessment": {"type": ["string", "null"]}
