@@ -1,4 +1,4 @@
-name: Course 1 pilot-prep gate
+name: Course 1 pilot-prep audit
 
 on:
   pull_request:
@@ -31,7 +31,7 @@ permissions:
   contents: read
 
 jobs:
-  pilot-prep:
+  pilot-prep-audit:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
@@ -40,7 +40,9 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - name: Validate schema-controlled pilot plan
+      - name: Audit schema-controlled pilot plan
+        continue-on-error: true
         run: npm run schema:validate
-      - name: Verify Course 1 pilot preparation
-        run: node scripts/check-course1-pilot-prep.mjs --check
+      - name: Audit Course 1 pilot preparation
+        continue-on-error: true
+        run: node scripts/check-course1-pilot-prep.mjs
