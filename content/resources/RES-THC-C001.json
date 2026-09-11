@@ -1,0 +1,50 @@
+{
+  "id": "RES-THC-C001",
+  "legacyCatalogId": "THC-C001",
+  "title": "Cannabis as a Plant: Origins, Uses, and Study",
+  "version": "0.3.0",
+  "status": "review",
+  "domain": {
+    "id": "THC-A01",
+    "title": "Plant Science Foundations",
+    "sequence": 1
+  },
+  "resourceTypes": [
+    "scientific-explainer",
+    "reference-article",
+    "research-summary"
+  ],
+  "audienceLevels": [
+    "beginner",
+    "foundational",
+    "professional"
+  ],
+  "purpose": "Establish a scientifically careful foundation for understanding Cannabis as a living plant, the limits of naming and origin claims, domestication and human selection, material identity, provenance, and responsible interpretation of evidence.",
+  "scopeNotes": [
+    "Treat Cannabis sativa as a living vascular seed plant rather than beginning from consumer product categories.",
+    "Separate taxonomy, accession, line, clone, individual plant, organ, sample, cultivar, trade label, legal category, phenotype and chemotype.",
+    "Explain domestication and selection without overstating a single geographic-origin narrative.",
+    "Teach learners to evaluate ancestry, landrace, strain and provenance claims against the available evidence.",
+    "Separate plant-science conclusions from medical, legal and safety conclusions outside the resource scope.",
+    "Preserve uncertainty where evidence does not justify a stronger claim."
+  ],
+  "evidenceStatus": "partial-verified",
+  "evidenceClaims": [],
+  "lastScienceReviewDate": null,
+  "accessibilityStatus": "partial",
+  "relatedResources": [],
+  "competencyMappings": [],
+  "certificationCourseMappings": [],
+  "assetRefs": [],
+  "migration": {
+    "legacyType": "course-package",
+    "legacyPackageVersion": "0.2.1",
+    "migrationStatus": "content-review",
+    "notes": [
+      "Legacy package contains ten lessons, a 20-question final, practical, worksheet, glossary, instructor notes and visual briefs.",
+      "These components must be reviewed under the resource model; course-only assessment components should not automatically remain attached to the resource.",
+      "The five external references previously left open for bibliographic/access verification have now been checked; bibliographic normalization is recorded in the resource audit. Independent science review and claim-object completion remain open before publication.",
+      "Legacy THC-C001 remains a permanent alias and historical identifier."
+    ]
+  }
+}

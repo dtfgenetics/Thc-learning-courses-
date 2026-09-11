@@ -1,0 +1,145 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "architecture": "docs/THC_ACADEMY_SYSTEM_ARCHITECTURE.md",
+  "resourceLibraryCount": 420,
+  "professionalCredentialCount": 8,
+  "foundationalCertificates": [
+    "THC Safety & Responsible Practice Certificate",
+    "THC Cultivation Foundations Certificate"
+  ],
+  "programs": [
+    {
+      "id": "CREDPROG-CULT-TECH-I-001",
+      "title": "THC Cultivation Technician I",
+      "plannedCourses": [
+        {"id": "COURSE-LH-TECH1-001", "title": "Safety, Responsible Practice & Cultivation Workflows"},
+        {"id": "COURSE-LH-TECH1-002", "title": "Plant Observation, Growth Stages & Crop Records"},
+        {"id": "COURSE-LH-TECH1-003", "title": "Environmental, Light & Sensor Fundamentals"},
+        {"id": "COURSE-LH-TECH1-004", "title": "Water, Root Zone, Nutrition & Irrigation Fundamentals"},
+        {"id": "COURSE-LH-TECH1-005", "title": "Propagation, Canopy, IPM Scouting & Crop Care"},
+        {"id": "COURSE-LH-TECH1-006", "title": "Harvest, Postharvest, Traceability & Shift Handoff"},
+        {"id": "COURSE-LH-TECH1-007", "title": "Integrated Cultivation Technician Practice Lab"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-TECH1-001",
+      "capstone": "CAPSTONE-CRED-TECH1-SHIFT-001"
+    },
+    {
+      "id": "CREDPROG-CULT-TECH-II-001",
+      "title": "THC Cultivation Technician II",
+      "plannedCourses": [
+        {"id": "COURSE-LH-TECH2-001", "title": "Advanced Crop Observation & Diagnostic Reasoning"},
+        {"id": "COURSE-LH-TECH2-002", "title": "Environmental Data, Sensors & Equipment Response"},
+        {"id": "COURSE-LH-TECH2-003", "title": "Fertigation Execution, Verification & Root-Zone Interpretation"},
+        {"id": "COURSE-LH-TECH2-004", "title": "Plant Health, IPM & Biosecurity Troubleshooting"},
+        {"id": "COURSE-LH-TECH2-005", "title": "Production Records, Traceability & Inventory Reconciliation"},
+        {"id": "COURSE-LH-TECH2-006", "title": "Harvest/Postharvest Deviations & Quality Response"},
+        {"id": "COURSE-LH-TECH2-007", "title": "Production Metrics, Shift Coordination & Peer Support"},
+        {"id": "COURSE-LH-TECH2-008", "title": "Integrated Technician II Simulation Lab"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-TECH2-001",
+      "capstone": "CAPSTONE-CRED-TECH2-SHIFT-001"
+    },
+    {
+      "id": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+      "title": "THC Plant Health, IPM & Biosecurity Specialist",
+      "plannedCourses": [
+        {"id": "COURSE-LH-PHIB-001", "title": "Scouting Systems & Diagnostic Reasoning"},
+        {"id": "COURSE-LH-PHIB-002", "title": "Nutrient, Root-Zone & Environmental Disorder Differentials"},
+        {"id": "COURSE-LH-PHIB-003", "title": "Arthropod Pest Biology, Identification & IPM"},
+        {"id": "COURSE-LH-PHIB-004", "title": "Plant Disease, HLVd & Biosecurity"},
+        {"id": "COURSE-LH-PHIB-005", "title": "Biological/Cultural Controls, Thresholds & Resistance Management"},
+        {"id": "COURSE-LH-PHIB-006", "title": "Outbreak Containment, CAPA & Crop Recovery"},
+        {"id": "COURSE-LH-PHIB-007", "title": "Diagnostic Case Laboratory"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-PHIB-001",
+      "capstone": "CAPSTONE-CRED-PHIB-DIAGNOSTIC-001"
+    },
+    {
+      "id": "CREDPROG-ENV-IRR-FERT-001",
+      "title": "THC Environmental, Irrigation & Fertigation Systems Specialist",
+      "concentrations": [
+        "Environmental Controls & Lighting",
+        "Water, Irrigation & Fertigation"
+      ],
+      "plannedCourses": [
+        {"id": "COURSE-LH-EIFS-001", "title": "Plant-Environment Measurement & Crop Response"},
+        {"id": "COURSE-LH-EIFS-002", "title": "Lighting, PPFD, DLI, Photoperiod & Canopy Uniformity"},
+        {"id": "COURSE-LH-EIFS-003", "title": "HVAC, Dehumidification, Airflow, CO2 & Dew-Point Concepts"},
+        {"id": "COURSE-LH-EIFS-004", "title": "Sensors, Controllers, Alarms, Calibration & Data Quality"},
+        {"id": "COURSE-LH-EIFS-005", "title": "Water Quality, Alkalinity, pH, EC & Solution Preparation"},
+        {"id": "COURSE-LH-EIFS-006", "title": "Irrigation Design, Flow, Pressure, Uniformity & Maintenance"},
+        {"id": "COURSE-LH-EIFS-007", "title": "Root-Zone Water Content, Dryback, Runoff & Crop Steering"},
+        {"id": "COURSE-LH-EIFS-008", "title": "Automation, Commissioning, Reliability & Failure Response"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-EIFS-001",
+      "capstone": "CAPSTONE-CRED-EIFS-SYSTEMS-001"
+    },
+    {
+      "id": "CREDPROG-PROP-CLEAN-STOCK-001",
+      "title": "THC Propagation & Clean Stock Specialist",
+      "plannedCourses": [
+        {"id": "COURSE-LH-PCS-001", "title": "Seed Biology, Germination & Seedling Establishment"},
+        {"id": "COURSE-LH-PCS-002", "title": "Mother/Donor Plant Management & Plant Identity"},
+        {"id": "COURSE-LH-PCS-003", "title": "Cloning, Rooting Environment & Acclimation"},
+        {"id": "COURSE-LH-PCS-004", "title": "Propagation Sanitation, Biosecurity & Traceability"},
+        {"id": "COURSE-LH-PCS-005", "title": "Clean Stock & Tissue-Culture Fundamentals"},
+        {"id": "COURSE-LH-PCS-006", "title": "Propagation Production Planning & Troubleshooting"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-PCS-001",
+      "capstone": "CAPSTONE-CRED-PCS-PROPAGATION-001"
+    },
+    {
+      "id": "CREDPROG-POSTHARVEST-QA-001",
+      "title": "THC Postharvest Quality Specialist",
+      "plannedCourses": [
+        {"id": "COURSE-LH-PHQ-001", "title": "Harvest Readiness, Sanitary Handling & Lot Integrity"},
+        {"id": "COURSE-LH-PHQ-002", "title": "Drying Science, Moisture Migration, Water Activity & Environment"},
+        {"id": "COURSE-LH-PHQ-003", "title": "Curing, Storage, Packaging & Quality Preservation"},
+        {"id": "COURSE-LH-PHQ-004", "title": "Postharvest Defects, Mold Risk & Deviation Investigation"},
+        {"id": "COURSE-LH-PHQ-005", "title": "Sampling, Laboratory/COA Literacy & Quality Records"},
+        {"id": "COURSE-LH-PHQ-006", "title": "Postharvest QA, Traceability & Recall/Disposition Concepts"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-PHQ-001",
+      "capstone": "CAPSTONE-CRED-PHQ-QUALITY-001"
+    },
+    {
+      "id": "CREDPROG-GEN-BREED-PRES-001",
+      "title": "THC Genetics, Breeding & Preservation Specialist",
+      "concentrations": [
+        "Genetics & Selection",
+        "Breeding Practice",
+        "Germplasm & Preservation"
+      ],
+      "plannedCourses": [
+        {"id": "COURSE-LH-GBP-001", "title": "Cannabis Genetics, Inheritance & Quantitative Traits"},
+        {"id": "COURSE-LH-GBP-002", "title": "Genotype-by-Environment, Phenotyping & Selection"},
+        {"id": "COURSE-LH-GBP-003", "title": "Population Design, F1/F2 Segregation & Selection Pressure"},
+        {"id": "COURSE-LH-GBP-004", "title": "Backcrossing, Line Breeding, Selfing & Progeny Testing"},
+        {"id": "COURSE-LH-GBP-005", "title": "Controlled Pollination, Seed Production & Breeding Records"},
+        {"id": "COURSE-LH-GBP-006", "title": "Seed Quality, Storage, Accessions & Genetic Preservation"},
+        {"id": "COURSE-LH-GBP-007", "title": "Clean Stock, Tissue Culture & Preservation Concepts"},
+        {"id": "COURSE-LH-GBP-008", "title": "Multi-Generation Breeding Program Lab"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-GBP-001",
+      "capstone": "CAPSTONE-CRED-GBP-BREEDING-001"
+    },
+    {
+      "id": "CREDPROG-CULT-LEAD-OPS-001",
+      "title": "THC Cultivation Lead & Operations Professional",
+      "plannedCourses": [
+        {"id": "COURSE-LH-CLOP-001", "title": "Production Planning, Capacity & Crop Scheduling"},
+        {"id": "COURSE-LH-CLOP-002", "title": "Workforce Coordination, Shift Systems & Human Performance"},
+        {"id": "COURSE-LH-CLOP-003", "title": "Integrated Environmental, Irrigation & Crop-Health Oversight"},
+        {"id": "COURSE-LH-CLOP-004", "title": "Production Metrics, Yield Variance & Cultivation Economics"},
+        {"id": "COURSE-LH-CLOP-005", "title": "SOPs, Document Control, Training & Traceability Systems"},
+        {"id": "COURSE-LH-CLOP-006", "title": "Quality Systems, Deviations, Root Cause & CAPA"},
+        {"id": "COURSE-LH-CLOP-007", "title": "Equipment Reliability, Calibration, Maintenance Planning & Downtime"},
+        {"id": "COURSE-LH-CLOP-008", "title": "Audit Readiness, Incident Response & Continuous Improvement"},
+        {"id": "COURSE-LH-CLOP-009", "title": "Cultivation Operations Capstone Lab"}
+      ],
+      "credentialAssessment": "ASSESS-CRED-CLOP-001",
+      "capstone": "CAPSTONE-CRED-CLOP-OPS-001"
+    }
+  ]
+}
