@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/resource.schema.json",
+  "title": "THC Learning Academy Comprehensive Educational Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "legacyCatalogId",
+    "title",
+    "version",
+    "status",
+    "domain",
+    "resourceTypes",
+    "purpose",
+    "evidenceStatus",
+    "accessibilityStatus"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^RES-[A-Z0-9-]+$"},
+    "legacyCatalogId": {"type": "string", "pattern": "^THC-C[0-9]{3}$"},
+    "title": {"type": "string", "minLength": 3},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["planned", "draft", "review", "approved", "published", "superseded", "retired"]},
+    "domain": {
+      "type": "object",
+      "required": ["id", "title", "sequence"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^THC-A(0[1-9]|1[0-9]|20)$"},
+        "title": {"type": "string", "minLength": 3},
+        "sequence": {"type": "integer", "minimum": 1, "maximum": 20}
+      },
+      "additionalProperties": false
+    },
+    "resourceTypes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "scientific-explainer",
+          "illustrated-guide",
+          "reference-article",
+          "diagnostic-atlas",
+          "visual-identification-guide",
+          "interactive-calculator",
+          "decision-tree",
+          "data-exercise",
+          "case-study",
+          "troubleshooting-flow",
+          "reference-chart",
+          "glossary-reference",
+          "sop-reference",
+          "research-summary",
+          "comparison-tool",
+          "virtual-experiment",
+          "worksheet",
+          "dataset",
+          "infographic-visual-reference"
+        ]
+      }
+    },
+    "audienceLevels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["beginner", "foundational", "intermediate", "advanced", "professional"]}
+    },
+    "purpose": {"type": "string", "minLength": 20},
+    "scopeNotes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 5}},
+    "evidenceStatus": {"enum": ["unverified", "partial-verified", "verified", "review-due"]},
+    "evidenceClaims": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^CLAIM-[A-Z0-9-]+$"}
+    },
+    "lastScienceReviewDate": {"type": ["string", "null"], "format": "date"},
+    "accessibilityStatus": {"enum": ["not-started", "partial", "review", "conformant"]},
+    "relatedResources": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^RES-[A-Z0-9-]+$"}
+    },
+    "competencyMappings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}
+    },
+    "certificationCourseMappings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^COURSE-LH-[A-Z0-9-]+$"}
+    },
+    "assetRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 3}
+    },
+    "migration": {
+      "type": "object",
+      "properties": {
+        "legacyType": {"type": "string"},
+        "legacyPackageVersion": {"type": ["string", "null"]},
+        "migrationStatus": {"enum": ["not-started", "mapped", "content-review", "complete"]},
+        "notes": {"type": "array", "items": {"type": "string", "minLength": 3}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
