@@ -208,12 +208,20 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     const staticFiles = new Map([
       ['/', ['index.html', 'text/html; charset=utf-8']], ['/academy', ['index.html', 'text/html; charset=utf-8']],
       ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/progress.js', ['progress.js', 'text/javascript; charset=utf-8']],
+      ['/rich-content.js', ['rich-content.js', 'text/javascript; charset=utf-8']],
       ['/governance.js', ['governance.js', 'text/javascript; charset=utf-8']], ['/portal.js', ['portal.js', 'text/javascript; charset=utf-8']],
-      ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/governance.css', ['governance.css', 'text/css; charset=utf-8']], ['/portal.css', ['portal.css', 'text/css; charset=utf-8']]
+      ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/rich-content.css', ['rich-content.css', 'text/css; charset=utf-8']],
+      ['/governance.css', ['governance.css', 'text/css; charset=utf-8']], ['/portal.css', ['portal.css', 'text/css; charset=utf-8']]
     ]);
     if ((req.method === 'GET' || req.method === 'HEAD') && staticFiles.has(url.pathname)) {
       const [file, type] = staticFiles.get(url.pathname);
       if (sendStatic(res, file, type, req.method)) return;
+    }
+
+    const courseOneAssetMatch = url.pathname.match(/^\/assets\/course1\/([A-Za-z0-9._-]+\.svg)$/);
+    if ((req.method === 'GET' || req.method === 'HEAD') && courseOneAssetMatch) {
+      const assetFile = path.join('assets', 'course1', courseOneAssetMatch[1]);
+      if (sendStatic(res, assetFile, 'image/svg+xml; charset=utf-8', req.method)) return;
     }
     return json(res, 404, { error: 'not-found' });
   };

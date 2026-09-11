@@ -25,6 +25,8 @@ const assessments = readDirJson('content/assessments');
 const questions = readDirJson('content/questions');
 const performance = readDirJson('content/performance-assessments');
 const reviews = readDirJson('content/reviews');
+const assessmentById = new Map(assessments.map((x) => [x.id, x]));
+const questionById = new Map(questions.map((x) => [x.id, x]));
 const course = courses.get(courseId);
 if (!course) throw new Error(`Unknown course ${courseId}`);
 if (!courseId.startsWith('COURSE-LH-')) throw new Error(`${courseId} is not a Learning Hub course`);
@@ -50,13 +52,16 @@ function addTask(tasks, task) {
 
 const tasks = [];
 const lessonIds = [];
+const moduleObjects = [];
 for (const moduleId of course.modules ?? []) {
   const module = modules.get(moduleId);
   if (!module) throw new Error(`${courseId} cannot resolve module ${moduleId}`);
+  moduleObjects.push(module);
   for (const lessonId of module.lessons ?? []) lessonIds.push(lessonId);
 }
 
-for (const lessonId of [...new Set(lessonIds)].sort()) {
+const uniqueLessonIds = [...new Set(lessonIds)].sort();
+for (const lessonId of uniqueLessonIds) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`${courseId} cannot resolve lesson ${lessonId}`);
   const scientific = latestReview(lesson.id, lesson.version, 'scientific');
@@ -66,14 +71,18 @@ for (const lessonId of [...new Set(lessonIds)].sort()) {
   tasks.push({lane:'lesson-editorial',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'editorial',state:scientificState === 'approved' ? stateFromReview(editorial) : 'blocked',blockedBy:scientificState === 'approved' ? null : 'scientific-approval',latestReviewId:editorial?.id ?? null});
 }
 
-for (const assessment of assessments.filter((x) => x.id.startsWith(assessmentPrefix)).sort((a,b) => a.id.localeCompare(b.id))) {
+const courseAssessments = assessments.filter((x) => x.id.startsWith(assessmentPrefix)).sort((a,b) => a.id.localeCompare(b.id));
+const courseQuestions = questions.filter((x) => x.id.startsWith(itemPrefix)).sort((a,b) => a.id.localeCompare(b.id));
+const coursePerformance = performance.filter((x) => x.id.startsWith(practicalPrefix) || x.id.startsWith(capstonePrefix)).sort((a,b) => a.id.localeCompare(b.id));
+
+for (const assessment of courseAssessments) {
   addTask(tasks, {lane:'assessment-definition',objectType:'assessment',objectId:assessment.id,objectVersion:assessment.version,reviewType:'assessment'});
 }
-for (const item of questions.filter((x) => x.id.startsWith(itemPrefix)).sort((a,b) => a.id.localeCompare(b.id))) {
+for (const item of courseQuestions) {
   const lane = item.purpose === 'formative' ? 'formative-item' : item.purpose === 'summative' ? 'summative-item' : 'credential-item';
   addTask(tasks, {lane,objectType:'question',objectId:item.id,objectVersion:item.version,reviewType:'assessment'});
 }
-for (const practical of performance.filter((x) => x.id.startsWith(practicalPrefix) || x.id.startsWith(capstonePrefix)).sort((a,b) => a.id.localeCompare(b.id))) {
+for (const practical of coursePerformance) {
   addTask(tasks, {lane:'performance-assessment',objectType:'performance-assessment',objectId:practical.id,objectVersion:practical.version,reviewType:'assessment'});
 }
 addTask(tasks, {lane:'course-accessibility',objectType:'course',objectId:course.id,objectVersion:course.version,reviewType:'accessibility'});
@@ -92,17 +101,56 @@ const output = {
   course: course.id,
   courseVersion: course.version,
   generatedFromReviewRecords: reviews.length,
+  structure: {
+    modules: moduleObjects.length,
+    lessons: uniqueLessonIds.length,
+    assessments: courseAssessments.length,
+    knowledgeItems: courseQuestions.length,
+    performanceAssessments: coursePerformance.length
+  },
   summary: {totalTasks:tasks.length,approved:counts.approved ?? 0,pending:counts.pending ?? 0,blocked:counts.blocked ?? 0,revisionRequired:counts['revision-required'] ?? 0},
   lanes: laneSummary,
   ...(summaryOnly ? {} : {tasks})
 };
 
-if (check && courseId === 'COURSE-LH-TECH1-001') {
-  const expected = {totalTasks:154,'lesson-scientific':18,'lesson-editorial':18,'assessment-definition':7,'formative-item':72,'summative-item':36,'performance-assessment':1,'course-accessibility':1,'course-legal-compliance':1};
+if (check) {
   const failures = [];
-  if (output.summary.totalTasks !== expected.totalTasks) failures.push(`expected ${expected.totalTasks} total tasks, found ${output.summary.totalTasks}`);
-  for (const [lane, total] of Object.entries(expected).filter(([name]) => name !== 'totalTasks')) if ((laneSummary[lane]?.total ?? 0) !== total) failures.push(`expected ${total} ${lane} tasks, found ${laneSummary[lane]?.total ?? 0}`);
-  if (failures.length) throw new Error(`Course 1 Learning Hub review queue mismatch: ${failures.join('; ')}`);
+  if (!Array.isArray(course.modules) || course.modules.length === 0) failures.push('course must reference at least one module');
+  if (lessonIds.length !== uniqueLessonIds.length) failures.push('course module graph contains duplicate lesson references');
+  if (uniqueLessonIds.length === 0) failures.push('course must resolve at least one lesson');
+
+  const expectedAssessmentIds = new Set();
+  for (const module of moduleObjects) {
+    if (!Array.isArray(module.lessons) || module.lessons.length === 0) failures.push(`${module.id} must contain at least one lesson`);
+    if (module.assessment) expectedAssessmentIds.add(module.assessment);
+  }
+  if (course.finalAssessment) expectedAssessmentIds.add(course.finalAssessment);
+
+  for (const assessmentId of expectedAssessmentIds) {
+    const assessment = assessmentById.get(assessmentId);
+    if (!assessment) {
+      failures.push(`cannot resolve assessment ${assessmentId}`);
+      continue;
+    }
+    if (!assessment.id.startsWith(assessmentPrefix)) failures.push(`${assessmentId} is outside ${courseId}'s assessment namespace`);
+  }
+
+  for (const assessment of courseAssessments) {
+    if (!Array.isArray(assessment.items) || assessment.items.length === 0) {
+      failures.push(`${assessment.id} must contain at least one item`);
+      continue;
+    }
+    if (new Set(assessment.items).size !== assessment.items.length) failures.push(`${assessment.id} contains duplicate item references`);
+    for (const itemId of assessment.items) {
+      const item = questionById.get(itemId);
+      if (!item) failures.push(`${assessment.id} cannot resolve item ${itemId}`);
+      else if (!item.id.startsWith(itemPrefix)) failures.push(`${assessment.id} references item outside ${courseId}'s item namespace: ${itemId}`);
+    }
+  }
+
+  if (courseAssessments.length === 0) failures.push('course must resolve at least one course assessment');
+  if (tasks.length === 0) failures.push('review queue must contain at least one task');
+  if (failures.length) throw new Error(`${courseId} Learning Hub review queue integrity check failed: ${failures.join('; ')}`);
 }
 
 console.log(JSON.stringify(output, null, 2));

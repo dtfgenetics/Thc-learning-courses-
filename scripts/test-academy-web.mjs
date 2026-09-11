@@ -23,6 +23,14 @@ try {
   const homeHtml = await home.text();
   assert.match(homeHtml, /THC Academy/);
   assert.match(homeHtml, /governance-dashboard/);
+  assert.match(homeHtml, /rich-content\.css/, 'Academy shell should load the rich-content stylesheet');
+
+  const richRendererResponse = await fetch(`${base}/rich-content.js`);
+  assert.equal(richRendererResponse.status, 200);
+  assert.match(await richRendererResponse.text(), /renderRichBlocks/, 'rich lesson renderer should be publicly served');
+  const richStylesResponse = await fetch(`${base}/rich-content.css`);
+  assert.equal(richStylesResponse.status, 200);
+  assert.match(await richStylesResponse.text(), /rich-scenario/, 'rich lesson styles should include scenario presentation');
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
@@ -61,6 +69,19 @@ try {
   const lesson = await lessonResponse.json();
   assert.equal(Object.hasOwn(lesson, 'assessment'), false);
   assert.equal(Object.hasOwn(lesson, 'questions'), false);
+
+  const richLessonResponse = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01`);
+  assert.equal(richLessonResponse.status, 200);
+  const richLesson = await richLessonResponse.json();
+  assert.ok(Array.isArray(richLesson.content?.blocks) && richLesson.content.blocks.length > 0, 'Course 1 lesson 1 should expose ordered rich content blocks');
+  const richTypes = new Set(richLesson.content.blocks.map((block) => block.type));
+  for (const requiredType of ['image', 'steps', 'callout', 'comparison', 'scenario', 'activity']) assert.ok(richTypes.has(requiredType), `Course 1 lesson 1 should exercise rich block type ${requiredType}`);
+
+  for (const assetPath of ['/assets/course1/hazard-control-decision-flow.svg', '/assets/course1/ppe-hazcom-decision-map.svg', '/assets/course1/cultivation-work-area-hazard-scan.svg']) {
+    const assetResponse = await fetch(`${base}${assetPath}`);
+    assert.equal(assetResponse.status, 200, `${assetPath} should be served`);
+    assert.match(await assetResponse.text(), /<svg[\s>]/, `${assetPath} should contain SVG markup`);
+  }
 
   const courseOnePractice = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01/practice?seed=qa-seed`);
   assert.equal(courseOnePractice.status, 200);

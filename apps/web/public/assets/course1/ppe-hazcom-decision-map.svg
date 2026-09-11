@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">PPE and hazard communication information map</title>
+  <desc id="desc">A diagram showing that a technician should combine the assigned task, employer hazard assessment, current product label and Safety Data Sheet, site SOP or work order, and applicable restrictions before confirming required PPE and whether work is authorized to proceed.</desc>
+  <rect width="1200" height="760" rx="28" fill="#fffdf7"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#163122">PPE &amp; Hazard Communication Information Map</text>
+  <text x="600" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5a6b60">PPE comes from the assessed task and controlled information—not habit</text>
+
+  <g font-family="Arial, sans-serif">
+    <g>
+      <rect x="70" y="150" width="260" height="120" rx="18" fill="#ffffff" stroke="#245f3d" stroke-width="3"/>
+      <text x="200" y="190" text-anchor="middle" font-size="22" font-weight="700" fill="#163122">Assigned task</text>
+      <text x="200" y="220" text-anchor="middle" font-size="17" fill="#5a6b60">Work area, tools, material</text>
+      <text x="200" y="246" text-anchor="middle" font-size="17" fill="#5a6b60">and expected exposure</text>
+    </g>
+    <g>
+      <rect x="365" y="150" width="260" height="120" rx="18" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+      <text x="495" y="190" text-anchor="middle" font-size="22" font-weight="700" fill="#163122">Hazard assessment</text>
+      <text x="495" y="220" text-anchor="middle" font-size="17" fill="#5a6b60">Employer-selected controls</text>
+      <text x="495" y="246" text-anchor="middle" font-size="17" fill="#5a6b60">and required PPE</text>
+    </g>
+    <g>
+      <rect x="660" y="150" width="260" height="120" rx="18" fill="#eef3f7" stroke="#47637a" stroke-width="3"/>
+      <text x="790" y="190" text-anchor="middle" font-size="22" font-weight="700" fill="#163122">Label + SDS</text>
+      <text x="790" y="220" text-anchor="middle" font-size="17" fill="#5a6b60">Hazards, precautions, first aid</text>
+      <text x="790" y="246" text-anchor="middle" font-size="17" fill="#5a6b60">storage and exposure controls</text>
+    </g>
+    <g>
+      <rect x="955" y="150" width="180" height="120" rx="18" fill="#fbf2df" stroke="#8b5b24" stroke-width="3"/>
+      <text x="1045" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#163122">Restrictions</text>
+      <text x="1045" y="220" text-anchor="middle" font-size="16" fill="#5a6b60">REI, site rules,</text>
+      <text x="1045" y="244" text-anchor="middle" font-size="16" fill="#5a6b60">applicable requirements</text>
+    </g>
+
+    <path d="M200 270 V350 H565" stroke="#5a6b60" stroke-width="4" fill="none"/>
+    <path d="M495 270 V350" stroke="#5a6b60" stroke-width="4" fill="none"/>
+    <path d="M790 270 V350 H635" stroke="#5a6b60" stroke-width="4" fill="none"/>
+    <path d="M1045 270 V350 H635" stroke="#5a6b60" stroke-width="4" fill="none"/>
+    <path d="M600 350 V410" stroke="#5a6b60" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="330" y="420" width="540" height="130" rx="20" fill="#e8f1ea" stroke="#245f3d" stroke-width="4"/>
+    <text x="600" y="462" text-anchor="middle" font-size="24" font-weight="700" fill="#163122">Current SOP / work order decision</text>
+    <text x="600" y="494" text-anchor="middle" font-size="18" fill="#5a6b60">Confirm the correct product, controls, PPE, entry status, and task authority</text>
+    <text x="600" y="524" text-anchor="middle" font-size="18" fill="#5a6b60">Resolve conflicts or missing information before proceeding</text>
+
+    <path d="M600 550 V610" stroke="#5a6b60" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+    <rect x="405" y="620" width="390" height="85" rx="18" fill="#ffffff" stroke="#a57a2b" stroke-width="3"/>
+    <text x="600" y="655" text-anchor="middle" font-size="22" font-weight="700" fill="#163122">Proceed only when requirements align</text>
+    <text x="600" y="682" text-anchor="middle" font-size="17" fill="#5a6b60">If they do not, stop and verify—do not substitute from memory</text>
+  </g>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6b60"/>
+    </marker>
+  </defs>
+</svg>
