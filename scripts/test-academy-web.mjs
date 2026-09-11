@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
 import { once } from 'node:events';
 import { createAcademyWebServer } from '../apps/web/server.mjs';
 
@@ -59,6 +61,19 @@ try {
   const lesson = await lessonResponse.json();
   assert.equal(Object.hasOwn(lesson, 'assessment'), false);
   assert.equal(Object.hasOwn(lesson, 'questions'), false);
+
+  const courseOnePractice = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01/practice?seed=qa-seed`);
+  assert.equal(courseOnePractice.status, 200);
+  const practice = await courseOnePractice.json();
+  assert.equal(practice.presentationSeed, 'qa-seed');
+  assert.ok(practice.items.length > 0, 'Course 1 lesson practice should expose researched formative items in staging');
+  assert.ok(practice.items.every((item) => item.objective === 'LO-LH-TECH1-001-01'), 'lesson practice must be objective-aligned, not only competency-aligned');
+  assert.ok(new Set(practice.items.map((item) => item.correct)).size > 1, 'choice presentation must not lock every keyed answer to one position');
+  for (const item of practice.items) {
+    const source = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/questions', `${item.id}.json`), 'utf8'));
+    assert.deepEqual([...item.choices].sort(), [...source.choices].sort(), `${item.id} presentation must preserve the source choice set`);
+    assert.equal(item.choices[item.correct], source.choices[source.correct], `${item.id} remapped key must identify the source correct answer`);
+  }
 } finally {
   staging.close();
   await once(staging, 'close');

@@ -1,4 +1,5 @@
 import http from 'node:http';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,6 +18,51 @@ function readDirJson(rel) {
 function isVisible(object, previewDrafts) { return object?.status === 'published' || previewDrafts; }
 function safeLesson(lesson) {
   return { id: lesson.id, title: lesson.title, version: lesson.version, status: lesson.status, competencies: lesson.competencies ?? [], learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [], estimatedMinutes: lesson.estimatedMinutes ?? null, references: lesson.references ?? [], content: lesson.content ?? {} };
+}
+
+function hashSeed(value) {
+  let hash = 2166136261;
+  for (const character of String(value)) {
+    hash ^= character.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function seededRandom(seed) {
+  let state = hashSeed(seed) || 0x6d2b79f5;
+  return () => {
+    state = (state + 0x6d2b79f5) >>> 0;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+export function presentPracticeItem(item, seed) {
+  const pairs = item.choices.map((choice, index) => ({ choice, sourceIndex: index }));
+  const random = seededRandom(`${seed}:${item.id}`);
+  for (let index = pairs.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(random() * (index + 1));
+    [pairs[index], pairs[swapIndex]] = [pairs[swapIndex], pairs[index]];
+  }
+  const correct = pairs.findIndex((pair) => pair.sourceIndex === item.correct);
+  return {
+    id: item.id,
+    competency: item.competency,
+    objective: item.objective ?? null,
+    stem: item.stem,
+    choices: pairs.map((pair) => pair.choice),
+    correct,
+    rationale: item.rationale,
+    difficulty: item.difficulty
+  };
+}
+
+function normalizePracticeSeed(value) {
+  if (typeof value === 'string' && /^[A-Za-z0-9._-]{1,64}$/.test(value)) return value;
+  return crypto.randomUUID();
 }
 
 export function buildAcademyCatalog({ previewDrafts = true } = {}) {
@@ -75,17 +121,19 @@ export function loadPublicLesson(id, { previewDrafts = true } = {}) {
   return safeLesson(lesson);
 }
 
-export function loadLessonPracticeItems(id, { previewDrafts = true } = {}) {
+export function loadLessonPracticeItems(id, { previewDrafts = true, seed = 'practice' } = {}) {
   if (!/^LESSON-[A-Z0-9-]+$/.test(id)) return [];
   const target = path.join(root, 'content/lessons', `${id}.json`);
   if (!fs.existsSync(target)) return [];
   const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
   if (!isVisible(lesson, previewDrafts)) return [];
   const competencies = new Set(lesson.competencies ?? []);
+  const objectives = new Set(lesson.learningObjectives ?? lesson.objectives ?? []);
   return readDirJson('content/questions')
     .filter((item) => item.purpose === 'formative' && competencies.has(item.competency) && isVisible(item, previewDrafts))
-    .filter((item) => Array.isArray(item.choices) && Number.isInteger(item.correct))
-    .map((item) => ({ id: item.id, competency: item.competency, stem: item.stem, choices: item.choices, correct: item.correct, rationale: item.rationale, difficulty: item.difficulty }));
+    .filter((item) => objectives.size === 0 || !item.objective || objectives.has(item.objective))
+    .filter((item) => Array.isArray(item.choices) && item.choices.length >= 2 && Number.isInteger(item.correct) && item.correct >= 0 && item.correct < item.choices.length)
+    .map((item) => presentPracticeItem(item, seed));
 }
 
 function securityHeaders(res, contentType) {
@@ -120,7 +168,10 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     const lessonMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)$/);
     if (req.method === 'GET' && lessonMatch) { const lesson = loadPublicLesson(lessonMatch[1], { previewDrafts }); return lesson ? json(res, 200, lesson) : json(res, 404, { error: 'lesson-not-found' }); }
     const practiceMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)\/practice$/);
-    if (req.method === 'GET' && practiceMatch) return json(res, 200, { lessonId: practiceMatch[1], items: loadLessonPracticeItems(practiceMatch[1], { previewDrafts }) });
+    if (req.method === 'GET' && practiceMatch) {
+      const presentationSeed = normalizePracticeSeed(url.searchParams.get('seed'));
+      return json(res, 200, { lessonId: practiceMatch[1], presentationSeed, items: loadLessonPracticeItems(practiceMatch[1], { previewDrafts, seed: presentationSeed }) });
+    }
     if (api && (url.pathname.startsWith('/api/v1/') || url.pathname === '/readyz')) return api(req, res);
 
     const staticFiles = new Map([
