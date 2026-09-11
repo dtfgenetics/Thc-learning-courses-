@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "PUBLIC-RELEASE-LH-TECH1-001",
+  "courseId": "COURSE-LH-TECH1-001",
+  "title": "Safety, Responsible Practice & Cultivation Workflows",
+  "publicationState": "published",
+  "publicScope": {
+    "modules": [
+      "MOD-LH-TECH1-001-SAFETY",
+      "MOD-LH-TECH1-001-BIOSEC",
+      "MOD-LH-TECH1-001-WORKFLOW",
+      "MOD-LH-TECH1-001-TRACEABILITY",
+      "MOD-LH-TECH1-001-EQUIPMENT",
+      "MOD-LH-TECH1-001-RECORDS"
+    ],
+    "assessments": [
+      "ASSESS-LH-TECH1-001-M01",
+      "ASSESS-LH-TECH1-001-M02",
+      "ASSESS-LH-TECH1-001-M03",
+      "ASSESS-LH-TECH1-001-M04",
+      "ASSESS-LH-TECH1-001-M05",
+      "ASSESS-LH-TECH1-001-M06",
+      "ASSESS-LH-TECH1-001-FINAL"
+    ],
+    "publicCourseItems": 108,
+    "practicalId": "PRACTICAL-LH-TECH1-001-WORKFLOW",
+    "studentSources": [
+      "docs/learning-hub/tech1/course-001/student/MODULE-01-APPLIED-WORKPLACE-SAFETY.md",
+      "docs/learning-hub/tech1/course-001/student/MODULE-02-BIOSECURITY.md",
+      "docs/learning-hub/tech1/course-001/student/MODULE-03-SOPS-AUTHORITY.md",
+      "docs/learning-hub/tech1/course-001/student/MODULE-04-TRACEABILITY-INVENTORY-WASTE.md",
+      "docs/learning-hub/tech1/course-001/student/MODULE-05-EQUIPMENT-CARE.md",
+      "docs/learning-hub/tech1/course-001/student/MODULE-06-RECORDS-HANDOFF-INTEGRATION.md",
+      "docs/learning-hub/tech1/course-001/student/STUDENT-WORKBOOK.md",
+      "docs/learning-hub/tech1/course-001/student/WORKBOOK-TEMPLATES.md",
+      "docs/learning-hub/tech1/course-001/student/INTEGRATED-PRACTICAL.md"
+    ]
+  },
+  "publicationBoundary": {
+    "learnerPackage": "released",
+    "courseTests": "released-for-learning",
+    "credentialExam": "restricted",
+    "credentialDecision": "restricted-governance"
+  },
+  "excludedFromPublicRelease": [
+    "credential-purpose exam items and answer data",
+    "human review records and reviewer queues",
+    "pilot participant records and psychometric evidence",
+    "assessor calibration records",
+    "credential issuance secrets and signing material"
+  ],
+  "boundary": "This manifest authorizes public release of the finished learner-facing Course 1 package and its course-learning assessments. It does not assert completion of the separate professional-credential validation process and does not publish the secure THC Cultivation Technician I certification examination."
+}
