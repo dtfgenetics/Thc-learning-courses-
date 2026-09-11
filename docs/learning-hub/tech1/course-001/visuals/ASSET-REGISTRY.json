@@ -1,0 +1,93 @@
+{
+  "courseId": "COURSE-LH-TECH1-001",
+  "policy": "Instructional visuals are continuously editable and expandable. This registry does not impose a maximum asset count.",
+  "assets": [
+    {
+      "id": "VIS-LH-TECH1-001-001",
+      "title": "Hazard Control and Escalation Decision Flow",
+      "status": "produced",
+      "path": "/assets/course1/hazard-control-decision-flow.svg",
+      "purpose": "Teach the boundary between routine control, stop/isolate, escalation, and emergency response.",
+      "linkedLessons": ["LESSON-LH-TECH1-001-01"],
+      "objectives": ["LO-LH-TECH1-001-01"],
+      "altText": "Flowchart showing a technician observing a hazard, checking for an authorized routine control, applying and verifying that control when permitted, or stopping, isolating where authorized, and escalating when the task cannot proceed safely. Life-safety alarms direct the worker to the posted emergency procedure.",
+      "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024", "REF-OSHA-1910-22-WALKING"]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-002",
+      "title": "PPE and Hazard Communication Information Map",
+      "status": "produced",
+      "path": "/assets/course1/ppe-hazcom-decision-map.svg",
+      "purpose": "Show how task, hazard assessment, label/SDS information, site procedures, and restrictions combine before PPE and work authorization are confirmed.",
+      "linkedLessons": ["LESSON-LH-TECH1-001-02"],
+      "objectives": ["LO-LH-TECH1-001-02"],
+      "altText": "Diagram linking the assigned task, employer hazard assessment, product label and Safety Data Sheet, and applicable restrictions to the current SOP or work-order decision and required PPE.",
+      "references": ["REF-OSHA-1910-132-PPE", "REF-OSHA-1910-1200-HAZCOM", "REF-EPA-WPS"]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-003",
+      "title": "Cultivation Work-Area Hazard Scan",
+      "status": "produced",
+      "path": "/assets/course1/cultivation-work-area-hazard-scan.svg",
+      "purpose": "Give learners a visual workplace scan containing multiple hazard categories without implying the same risk level in every facility.",
+      "linkedLessons": ["LESSON-LH-TECH1-001-01", "LESSON-LH-TECH1-001-03"],
+      "objectives": ["LO-LH-TECH1-001-01", "LO-LH-TECH1-001-02"],
+      "altText": "Simplified cultivation room showing irrigation water approaching damaged electrical equipment, a blocked aisle, an unstable ladder, an exposed cutting tool, high-intensity lighting, and a carbon-dioxide life-safety alarm, with a reminder to scan for other task-specific exposures.",
+      "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024", "REF-NIOSH-CANNABIS-ALLERGIES-2023"]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-004",
+      "title": "Biosecurity Pathway Map",
+      "status": "planned",
+      "purpose": "Map worker, tool, cart, hose, plant, debris, and zone-transition contamination pathways."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-005",
+      "title": "Cleaning Before Disinfection Sequence",
+      "status": "planned",
+      "purpose": "Show debris removal, cleaning, approved disinfection, verification, and documentation in order."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-006",
+      "title": "Quarantine, Hold, and Restricted-Entry Comparison",
+      "status": "planned",
+      "purpose": "Differentiate operational hold concepts from pesticide restricted-entry requirements without collapsing distinct legal contexts."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-007",
+      "title": "Controlled Document Anatomy",
+      "status": "planned",
+      "purpose": "Annotate document ID, revision, effective status, prerequisites, sequence, acceptance criteria, records, and escalation."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-008",
+      "title": "Material Genealogy Through Cultivation",
+      "status": "planned",
+      "purpose": "Show source plant or lot through movement, harvest container, sample, and disposition."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-009",
+      "title": "Inventory Reconciliation Flow",
+      "status": "planned",
+      "purpose": "Show physical count, record count, verification, discrepancy preservation, and escalation."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-010",
+      "title": "Operator Care Versus Servicing Boundary",
+      "status": "planned",
+      "purpose": "Differentiate normal operator checks and care from repairs or hazardous-energy servicing outside Technician I authority."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-011",
+      "title": "Maintenance-Ready Fault Report",
+      "status": "planned",
+      "purpose": "Annotate observation, permitted check, result, impact, uncertainty, and escalation details."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-012",
+      "title": "Professional Shift Handoff Model",
+      "status": "planned",
+      "purpose": "Show outgoing preparation, written record, two-way exchange, incoming cross-check, and ownership of open conditions."
+    }
+  ]
+}
