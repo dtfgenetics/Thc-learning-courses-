@@ -16,15 +16,26 @@ Review notes, pilot evidence, calibration work, and validity studies are quality
 - external reference objects and evidence dossier
 - 1 course pilot plan for optional evidence collection
 
+## Current lesson-depth snapshot
+
+The 18 canonical lessons currently total **945 estimated minutes (15.75 hours)** before separate module tests, the integrated practical, and the final course assessment.
+
+This duration is a descriptive snapshot of the current lesson versions, not a seat-time cap, publication gate, or restriction on adding/revising content.
+
+The current canonical lessons use richer instructional structures including evidence-backed explanations, visuals, comparisons, process/decision tables, multiple applied scenarios where appropriate, practical learner artifacts, remediation cues, controlled-document models, and explicit evidence/authorization boundaries. Future revisions may add, reorganize, replace, or remove instructional blocks when supported by better evidence or learning design.
+
 ## Learner instruction
 
 - 6 expanded learner modules
+- 18 canonical learner lessons rendered from structured lesson objects
 - student workbook with 8 applied activities
 - workbook form/templates
 - 6 operational job aids
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
+- lesson-level guided activities producing additional simulated workplace artifacts
+- integrated multi-stage Technician I shift simulation in Lesson 18
 
 ## Instructor/assessor support
 
