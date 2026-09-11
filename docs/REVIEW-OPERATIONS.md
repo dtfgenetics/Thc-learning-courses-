@@ -1,8 +1,8 @@
-# Human Review Operations
+# Review Operations
 
-THC Academy review gates are evidence gates, not status toggles. A lesson, assessment, or item does not become reviewed because an agent changes a registry boolean or object status.
+THC Academy review tooling is optional support for quality improvement. It is not a publication gate, editing lock, promotion requirement, or prerequisite for public learner access.
 
-## Work queue
+## Optional review queue
 
 Run:
 
@@ -10,36 +10,36 @@ Run:
 npm run review:queue
 ```
 
-The queue is generated from the current curriculum objects and immutable records in `content/reviews/`. It creates four practical lanes:
+The queue can be used to organize scientific, editorial, assessment, accessibility, or compliance observations. It is a planning aid only.
 
-- `lesson-scientific` — scientific/technical review of each exact lesson version.
-- `lesson-editorial` — editorial review; blocked until the same lesson version has approved scientific review.
-- `assessment-definition` — human assessment-design review of assessment definitions.
-- `formative-item` / `credential-item` — human assessment review of individual question items.
+Possible lanes include:
 
-CI runs the summary form (`npm run review:queue:check`) so broken queue references fail early without filling the build log with every task.
+- lesson scientific/technical review;
+- lesson editorial review;
+- assessment-definition review;
+- formative-item review;
+- credential-item review.
 
-## Completing a review
+No lane blocks another lane. No review status blocks editing, publication, assessment use, or continued development.
 
-1. Work from the exact `objectId` and `objectVersion` shown by the queue.
-2. Review the source material and evidence appropriate to that lane.
-3. Create a new immutable JSON record under `content/reviews/` conforming to `schemas/review-record.schema.json`.
-4. Use a unique `REVIEW-*` ID and a stable reviewer identifier. Do not store reviewer secrets or private contact data.
-5. Set the result to `approved`, `changes-requested`, or `rejected` and record the real review timestamp.
-6. Never overwrite an earlier review result. A changed object version requires a new review record.
-7. Re-run `npm test`. The queue will advance automatically from the evidence in the review records.
+## Recording a review note
 
-AI-generated content, automated linting, and self-review do not count as human approval records.
+Review notes may be stored under `content/reviews/` when useful. They can be edited or replaced as the project changes.
 
-## Promotion enforcement
+Useful fields can include the object being reviewed, version context, review type, descriptive status, contributor identifier, date, notes, and evidence checked. None are mandatory for publication.
 
-CI now enforces these evidence rules:
+AI-assisted review, automated checks, human review, specialist review, and editorial review may all contribute useful observations. The repository should distinguish factual evidence from unsupported claims, but it should not convert review metadata into a workflow restriction.
 
-- A `published` lesson must have approved scientific and editorial review records for its exact version.
-- An `active` assessment item must have an approved assessment review record for its exact version.
-- An `active`, `approved`, or `published` assessment definition must have an approved assessment review record for its exact version.
-- Production release checks every lesson in every module, not only the primary lesson listed for each domain.
-- Production module assessments require reviewed production-eligible assessment definitions and active reviewed items.
-- Production credential pools require the configured minimum number of active summative/credential items per competency, and every active credential item must have approved assessment-review evidence.
+## Automated behavior
 
-These checks intentionally fail closed. Do not weaken them to move draft curriculum into production.
+Automated project checks should focus on technical correctness and learner usability, including:
+
+- valid JSON and schemas;
+- valid object references;
+- working application/runtime behavior;
+- secure handling of sensitive data and answer material;
+- accessibility and interface defects;
+- missing or contradictory course content;
+- assessment alignment and item-quality observations.
+
+Review status itself is non-blocking. Publication and editing remain available while review and improvement continue.
