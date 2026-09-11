@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "policy": {
+    "expandable": true,
+    "maximumAssetCount": null,
+    "requiredAccessibility": ["title", "description", "learner text alternative"],
+    "statusValues": ["planned", "in-production", "produced", "retired"]
+  },
+  "assets": [
+    {
+      "id": "VIS-LH-TECH1-001-001",
+      "status": "produced",
+      "title": "Hazard-control decision flow",
+      "learnerPath": "/assets/course1/hazard-control-decision-flow.svg",
+      "sourcePath": "apps/web/public/assets/course1/hazard-control-decision-flow.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-01"],
+      "purpose": "Show the decision sequence from routine control through authorized isolation/stop-work and escalation."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-002",
+      "status": "produced",
+      "title": "PPE and HazCom decision map",
+      "learnerPath": "/assets/course1/ppe-hazcom-decision-map.svg",
+      "sourcePath": "apps/web/public/assets/course1/ppe-hazcom-decision-map.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-02"],
+      "purpose": "Connect task, hazard assessment, label/SDS information, site procedure, restrictions, and PPE decisions."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-003",
+      "status": "produced",
+      "title": "Cultivation work-area hazard scan",
+      "learnerPath": "/assets/course1/cultivation-work-area-hazard-scan.svg",
+      "sourcePath": "apps/web/public/assets/course1/cultivation-work-area-hazard-scan.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-03"],
+      "purpose": "Practice scanning a cultivation work area for representative physical, electrical, access, and exposure concerns."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-004",
+      "status": "produced",
+      "title": "Biosecurity pathway map",
+      "learnerPath": "/assets/course1/biosecurity-pathway-map.svg",
+      "sourcePath": "apps/web/public/assets/course1/biosecurity-pathway-map.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-04"],
+      "purpose": "Show how people, tools, carts, hoses, plants, and debris can create contamination pathways across controlled transitions."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-005",
+      "status": "produced",
+      "title": "Cleaning and disinfection sequence",
+      "learnerPath": "/assets/course1/cleaning-disinfection-sequence.svg",
+      "sourcePath": "apps/web/public/assets/course1/cleaning-disinfection-sequence.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-05"],
+      "purpose": "Teach the ordered distinction between material control, debris removal, cleaning, product verification, application/contact conditions, finish steps, inspection, and documentation."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-006",
+      "status": "produced",
+      "title": "Quarantine, hold, and restricted-entry comparison",
+      "learnerPath": "/assets/course1/quarantine-hold-rei-comparison.svg",
+      "sourcePath": "apps/web/public/assets/course1/quarantine-hold-rei-comparison.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-06"],
+      "purpose": "Keep plant-health isolation, operational material status, and pesticide worker-entry controls conceptually separate."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-007",
+      "status": "produced",
+      "title": "Controlled-document anatomy",
+      "learnerPath": "/assets/course1/controlled-document-anatomy.svg",
+      "sourcePath": "apps/web/public/assets/course1/controlled-document-anatomy.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-07"],
+      "purpose": "Show the fields a technician must read in a controlled SOP or work order before acting."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-008",
+      "status": "produced",
+      "title": "Material genealogy",
+      "learnerPath": "/assets/course1/material-genealogy.svg",
+      "sourcePath": "apps/web/public/assets/course1/material-genealogy.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-10"],
+      "purpose": "Visualize how controlled identity and genealogy persist through propagation, movement, harvest, sampling, and disposition."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-009",
+      "status": "produced",
+      "title": "Inventory reconciliation flow",
+      "learnerPath": "/assets/course1/inventory-reconciliation-flow.svg",
+      "sourcePath": "apps/web/public/assets/course1/inventory-reconciliation-flow.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12"],
+      "purpose": "Show how physical and recorded counts are compared, verified, preserved when discrepant, and escalated without forced balancing."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-010",
+      "status": "produced",
+      "title": "Operator-care versus servicing boundary",
+      "learnerPath": "/assets/course1/operator-care-servicing-boundary.svg",
+      "sourcePath": "apps/web/public/assets/course1/operator-care-servicing-boundary.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-13", "LESSON-LH-TECH1-001-14"],
+      "purpose": "Separate assigned operator cleaning/checks from disassembly, protected access, jam clearing, and hazardous-energy servicing."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-011",
+      "status": "produced",
+      "title": "Maintenance-ready fault report",
+      "learnerPath": "/assets/course1/maintenance-fault-report.svg",
+      "sourcePath": "apps/web/public/assets/course1/maintenance-fault-report.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-15"],
+      "purpose": "Teach the difference between observations, permitted checks, results, operational impact, and unsupported root-cause claims."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-012",
+      "status": "produced",
+      "title": "Professional shift-handoff model",
+      "learnerPath": "/assets/course1/shift-handoff-model.svg",
+      "sourcePath": "apps/web/public/assets/course1/shift-handoff-model.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-17", "LESSON-LH-TECH1-001-18"],
+      "purpose": "Show outgoing preparation, written status, two-way exchange, incoming cross-check, and ownership of open conditions."
+    }
+  ]
+}

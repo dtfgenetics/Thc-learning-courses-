@@ -14,12 +14,12 @@ Canonical asset status and learner paths are tracked in `visuals/ASSET-REGISTRY.
 4. **Produced** — Biosecurity pathway map showing cleaner/sensitive areas, controlled transition boundaries, higher-risk/unresolved areas, and worker/tool/cart/hose/plant/debris movement. Learner asset: `/assets/course1/biosecurity-pathway-map.svg`.
 5. **Produced** — Cleaning-before-disinfection sequence showing material control, debris removal, cleaning, product verification, approved application/contact conditions, finish step, inspection, and documentation. Learner asset: `/assets/course1/cleaning-disinfection-sequence.svg`.
 6. **Produced** — Quarantine / hold / pesticide restricted-entry comparison that keeps plant-health, operational-status, and worker-protection controls conceptually separate. Learner asset: `/assets/course1/quarantine-hold-rei-comparison.svg`.
-7. **Planned** — Controlled-document anatomy graphic: ID, revision, effective status, prerequisites, sequence, acceptance criteria, records, escalation.
-8. **Planned** — Material genealogy diagram from source plant/lot through movement, harvest container, sample, and disposition.
-9. **Planned** — Inventory reconciliation flow showing physical count, record count, verification, discrepancy preservation, and escalation.
-10. **Planned** — Operator-care versus servicing boundary diagram with machine guarding and hazardous-energy examples.
-11. **Planned** — Maintenance-ready fault report annotated example separating observation, permitted check, result, impact, and hypothesis.
-12. **Planned** — High-quality shift-handoff model showing outgoing preparation, written record, two-way exchange, incoming cross-check, and open-condition ownership.
+7. **Produced** — Controlled-document anatomy graphic showing identity, revision/effective status, prerequisites, sequence, acceptance criteria, records, and escalation. Learner asset: `/assets/course1/controlled-document-anatomy.svg`.
+8. **Produced** — Material genealogy diagram from source material through propagation/movement, harvest container, sample, and later disposition links. Learner asset: `/assets/course1/material-genealogy.svg`.
+9. **Produced** — Inventory reconciliation flow showing physical count, record count, verification, discrepancy preservation, and escalation. Learner asset: `/assets/course1/inventory-reconciliation-flow.svg`.
+10. **Produced** — Operator-care versus servicing boundary diagram separating assigned routine care from protected access, disassembly, and hazardous-energy servicing. Learner asset: `/assets/course1/operator-care-servicing-boundary.svg`.
+11. **Produced** — Maintenance-ready fault report example separating observation, permitted check, result, operational impact, and unsupported hypothesis. Learner asset: `/assets/course1/maintenance-fault-report.svg`.
+12. **Produced** — Shift-handoff model showing outgoing preparation, written record, two-way exchange, incoming cross-check, and open-condition ownership. Learner asset: `/assets/course1/shift-handoff-model.svg`.
 
 ## Rich-content delivery
 

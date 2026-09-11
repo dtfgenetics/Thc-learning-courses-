@@ -70,36 +70,48 @@ try {
   assert.equal(Object.hasOwn(lesson, 'assessment'), false);
   assert.equal(Object.hasOwn(lesson, 'questions'), false);
 
-  const expectedRichLessons = [
-    ['LESSON-LH-TECH1-001-01', ['image', 'steps', 'callout', 'comparison', 'scenario', 'activity']],
-    ['LESSON-LH-TECH1-001-04', ['image', 'steps', 'comparison', 'scenario', 'activity', 'callout']],
-    ['LESSON-LH-TECH1-001-05', ['image', 'steps', 'callout', 'comparison', 'scenario', 'activity']],
-    ['LESSON-LH-TECH1-001-06', ['image', 'table', 'steps', 'callout', 'scenario', 'document', 'activity']]
-  ];
-  for (const [richLessonId, requiredTypes] of expectedRichLessons) {
+  const courseOne = catalog.courses.find((course) => course.id === 'COURSE-LH-TECH1-001');
+  assert.ok(courseOne, 'Course 1 should be present in the staging catalog');
+  const courseOneLessonIds = courseOne.modules.flatMap((module) => module.lessons).map((lessonEntry) => lessonEntry.id).filter(Boolean);
+  assert.ok(courseOneLessonIds.length >= 18, 'Course 1 should retain at least the current 18-lesson curriculum while remaining extensible');
+  assert.equal(new Set(courseOneLessonIds).size, courseOneLessonIds.length, 'Course 1 lesson graph should not contain duplicate lesson ids');
+
+  const observedRichTypes = new Set();
+  for (const richLessonId of courseOneLessonIds) {
     const richLessonResponse = await fetch(`${base}/api/lessons/${richLessonId}`);
     assert.equal(richLessonResponse.status, 200, `${richLessonId} should be available`);
     const richLesson = await richLessonResponse.json();
     assert.ok(Array.isArray(richLesson.content?.blocks) && richLesson.content.blocks.length > 0, `${richLessonId} should expose ordered rich content blocks`);
-    const richTypes = new Set(richLesson.content.blocks.map((block) => block.type));
-    for (const requiredType of requiredTypes) assert.ok(richTypes.has(requiredType), `${richLessonId} should exercise rich block type ${requiredType}`);
+    for (const block of richLesson.content.blocks) {
+      assert.equal(typeof block.type, 'string', `${richLessonId} rich blocks should declare a type`);
+      observedRichTypes.add(block.type);
+      if (block.type === 'image') {
+        assert.match(block.src ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${richLessonId} image blocks should use controlled Course 1 asset paths`);
+        assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${richLessonId} image blocks should include learner-facing alt text`);
+      }
+    }
+  }
+  for (const requiredType of ['text', 'callout', 'image', 'steps', 'comparison', 'table', 'scenario', 'activity', 'document']) {
+    assert.ok(observedRichTypes.has(requiredType), `Course 1 rich curriculum should exercise ${requiredType} blocks`);
   }
 
-  const courseOneAssets = [
-    '/assets/course1/hazard-control-decision-flow.svg',
-    '/assets/course1/ppe-hazcom-decision-map.svg',
-    '/assets/course1/cultivation-work-area-hazard-scan.svg',
-    '/assets/course1/biosecurity-pathway-map.svg',
-    '/assets/course1/cleaning-disinfection-sequence.svg',
-    '/assets/course1/quarantine-hold-rei-comparison.svg'
-  ];
-  for (const assetPath of courseOneAssets) {
-    const assetResponse = await fetch(`${base}${assetPath}`);
-    assert.equal(assetResponse.status, 200, `${assetPath} should be served`);
+  const visualRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'visuals/ASSET-REGISTRY.json'), 'utf8'));
+  assert.equal(visualRegistry.courseId, 'COURSE-LH-TECH1-001');
+  assert.equal(visualRegistry.policy?.expandable, true, 'visual registry should remain explicitly expandable');
+  assert.equal(visualRegistry.policy?.maximumAssetCount, null, 'visual registry must not impose an artificial asset maximum');
+  const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
+  assert.ok(producedAssets.length >= 12, 'the first 12 core Course 1 visuals should be produced');
+  assert.equal(new Set(producedAssets.map((asset) => asset.id)).size, producedAssets.length, 'produced visual ids should be unique');
+  assert.equal(new Set(producedAssets.map((asset) => asset.learnerPath)).size, producedAssets.length, 'produced learner asset paths should be unique');
+
+  for (const asset of producedAssets) {
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 1 learner path`);
+    const assetResponse = await fetch(`${base}${asset.learnerPath}`);
+    assert.equal(assetResponse.status, 200, `${asset.learnerPath} should be served`);
     const svg = await assetResponse.text();
-    assert.match(svg, /<svg[\s>]/, `${assetPath} should contain SVG markup`);
-    assert.match(svg, /<title[\s>]/, `${assetPath} should include an accessible title`);
-    assert.match(svg, /<desc[\s>]/, `${assetPath} should include an accessible description`);
+    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
+    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
+    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
   }
 
   const courseOnePractice = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01/practice?seed=qa-seed`);
