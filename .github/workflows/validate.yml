@@ -51,5 +51,7 @@ jobs:
           fi
       - name: Require committed curriculum registry to match source objects
         run: git diff --exit-code -- registry/curriculum.json
+      - name: Check Learning Hub assessment item quality
+        run: node scripts/check-learning-hub-item-quality.mjs
       - name: Run complete curriculum and credential test suite
         run: npm test
