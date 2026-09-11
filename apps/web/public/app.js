@@ -27,7 +27,7 @@ function matchesQuery(course, query) {
 }
 
 function progressLabel() {
-  return progressMode === 'account' ? 'Account progress' : 'Local preview progress';
+  return progressMode === 'account' ? 'Account progress' : 'Device progress';
 }
 
 function renderCatalog() {
@@ -44,7 +44,7 @@ function renderCatalog() {
     const summary = document.createElement('summary');
     summary.append(text('span', course.title));
     const courseState = courseProgress(course, progress);
-    const metaParts = [course.status];
+    const metaParts = [];
     if (course.credentialBearing) metaParts.push('credential pathway');
     metaParts.push(`${courseState.completed}/${courseState.total} lessons • ${courseState.percent}%`);
     summary.append(text('span', metaParts.join(' • '), 'course-meta'));
@@ -124,7 +124,7 @@ function renderPracticeSection(article, lesson) {
     .then((payload) => {
       const items = payload.items ?? [];
       if (items.length === 0) {
-        status.textContent = 'No lesson-specific practice items are available yet.';
+        status.textContent = 'Lesson practice is being expanded. Continue with the worked examples and practical application below.';
         return;
       }
       status.remove();
@@ -186,8 +186,8 @@ function renderCompletionControl(article, lesson) {
         : 'Account progress is persisted. Lesson completion does not itself satisfy assessment or credential requirements.';
     } else {
       note.textContent = checkbox.checked
-        ? 'Marked complete on this device only.'
-        : 'Local preview progress only — this does not satisfy official assessment or credential requirements.';
+        ? 'Saved on this device.'
+        : 'Device progress is separate from official assessment and credential records.';
     }
   }
   setNote();
@@ -227,7 +227,6 @@ function renderLesson(lesson) {
   meta.className = 'lesson-meta';
   if (lesson.estimatedMinutes) meta.append(text('span', `${lesson.estimatedMinutes} min`, 'pill'));
   meta.append(text('span', `Version ${lesson.version}`, 'pill'));
-  if (lesson.status !== 'published') meta.append(text('span', 'Staging preview — review pending', 'pill preview-pill'));
   meta.append(text('span', progressLabel(), 'pill'));
   article.append(meta);
 
@@ -326,8 +325,8 @@ async function start() {
     catalog = await response.json();
     await loadProgressMode();
     modeBadge.textContent = catalog.mode === 'staging-preview'
-      ? `Staging preview • ${progressLabel()}`
-      : `Published content • ${progressLabel()}`;
+      ? `Development preview • ${progressLabel()}`
+      : `Public learning content • ${progressLabel()}`;
     renderCatalog();
   } catch (error) {
     modeBadge.textContent = 'Unavailable';
