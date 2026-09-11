@@ -1,0 +1,46 @@
+name: Course 1 pilot-prep gate
+
+on:
+  pull_request:
+    paths:
+      - 'content/pilot-plans/**'
+      - 'content/questions/**'
+      - 'content/performance-assessments/**'
+      - 'content/reviews/**'
+      - 'docs/learning-hub/tech1/course-001/pilot/**'
+      - 'docs/learning-hub/tech1/course-001/practical/**'
+      - 'scripts/check-course1-pilot-prep.mjs'
+      - 'scripts/validate-json-schemas.mjs'
+      - 'schemas/pilot-plan.schema.json'
+      - '.github/workflows/course1-pilot-prep.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'content/pilot-plans/**'
+      - 'content/questions/**'
+      - 'content/performance-assessments/**'
+      - 'content/reviews/**'
+      - 'docs/learning-hub/tech1/course-001/pilot/**'
+      - 'docs/learning-hub/tech1/course-001/practical/**'
+      - 'scripts/check-course1-pilot-prep.mjs'
+      - 'scripts/validate-json-schemas.mjs'
+      - 'schemas/pilot-plan.schema.json'
+      - '.github/workflows/course1-pilot-prep.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  pilot-prep:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Validate schema-controlled pilot plan
+        run: npm run schema:validate
+      - name: Verify Course 1 pilot preparation
+        run: node scripts/check-course1-pilot-prep.mjs --check
