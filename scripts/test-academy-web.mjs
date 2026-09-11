@@ -70,17 +70,36 @@ try {
   assert.equal(Object.hasOwn(lesson, 'assessment'), false);
   assert.equal(Object.hasOwn(lesson, 'questions'), false);
 
-  const richLessonResponse = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01`);
-  assert.equal(richLessonResponse.status, 200);
-  const richLesson = await richLessonResponse.json();
-  assert.ok(Array.isArray(richLesson.content?.blocks) && richLesson.content.blocks.length > 0, 'Course 1 lesson 1 should expose ordered rich content blocks');
-  const richTypes = new Set(richLesson.content.blocks.map((block) => block.type));
-  for (const requiredType of ['image', 'steps', 'callout', 'comparison', 'scenario', 'activity']) assert.ok(richTypes.has(requiredType), `Course 1 lesson 1 should exercise rich block type ${requiredType}`);
+  const expectedRichLessons = [
+    ['LESSON-LH-TECH1-001-01', ['image', 'steps', 'callout', 'comparison', 'scenario', 'activity']],
+    ['LESSON-LH-TECH1-001-04', ['image', 'steps', 'comparison', 'scenario', 'activity', 'callout']],
+    ['LESSON-LH-TECH1-001-05', ['image', 'steps', 'callout', 'comparison', 'scenario', 'activity']],
+    ['LESSON-LH-TECH1-001-06', ['image', 'table', 'steps', 'callout', 'scenario', 'document', 'activity']]
+  ];
+  for (const [richLessonId, requiredTypes] of expectedRichLessons) {
+    const richLessonResponse = await fetch(`${base}/api/lessons/${richLessonId}`);
+    assert.equal(richLessonResponse.status, 200, `${richLessonId} should be available`);
+    const richLesson = await richLessonResponse.json();
+    assert.ok(Array.isArray(richLesson.content?.blocks) && richLesson.content.blocks.length > 0, `${richLessonId} should expose ordered rich content blocks`);
+    const richTypes = new Set(richLesson.content.blocks.map((block) => block.type));
+    for (const requiredType of requiredTypes) assert.ok(richTypes.has(requiredType), `${richLessonId} should exercise rich block type ${requiredType}`);
+  }
 
-  for (const assetPath of ['/assets/course1/hazard-control-decision-flow.svg', '/assets/course1/ppe-hazcom-decision-map.svg', '/assets/course1/cultivation-work-area-hazard-scan.svg']) {
+  const courseOneAssets = [
+    '/assets/course1/hazard-control-decision-flow.svg',
+    '/assets/course1/ppe-hazcom-decision-map.svg',
+    '/assets/course1/cultivation-work-area-hazard-scan.svg',
+    '/assets/course1/biosecurity-pathway-map.svg',
+    '/assets/course1/cleaning-disinfection-sequence.svg',
+    '/assets/course1/quarantine-hold-rei-comparison.svg'
+  ];
+  for (const assetPath of courseOneAssets) {
     const assetResponse = await fetch(`${base}${assetPath}`);
     assert.equal(assetResponse.status, 200, `${assetPath} should be served`);
-    assert.match(await assetResponse.text(), /<svg[\s>]/, `${assetPath} should contain SVG markup`);
+    const svg = await assetResponse.text();
+    assert.match(svg, /<svg[\s>]/, `${assetPath} should contain SVG markup`);
+    assert.match(svg, /<title[\s>]/, `${assetPath} should include an accessible title`);
+    assert.match(svg, /<desc[\s>]/, `${assetPath} should include an accessible description`);
   }
 
   const courseOnePractice = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01/practice?seed=qa-seed`);
