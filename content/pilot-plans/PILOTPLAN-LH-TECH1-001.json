@@ -1,0 +1,46 @@
+{
+  "id": "PILOTPLAN-LH-TECH1-001",
+  "course": "COURSE-LH-TECH1-001",
+  "courseVersion": "1.0.0",
+  "version": "1.0.0",
+  "status": "draft",
+  "knowledgeAssessment": {
+    "formativeItems": 72,
+    "summativeItems": 36,
+    "targetUsableResponsesPerItem": 50,
+    "minimumUsableResponsesForPreliminaryReview": 30,
+    "participantDataRepositoryPolicy": "participant-level-data-must-not-be-committed",
+    "flagRules": {
+      "difficultyReviewBelow": 0.2,
+      "difficultyReviewAbove": 0.95,
+      "discriminationUrgentBelow": 0.1,
+      "discriminationReviewBelow": 0.2,
+      "omitRateReviewAbove": 0.05,
+      "responseTimeAnomalyReviewAbove": 0.1,
+      "automaticDisposition": false
+    }
+  },
+  "performanceAssessment": {
+    "assessmentIds": ["PRACTICAL-LH-TECH1-001-WORKFLOW"],
+    "minimumCalibrationAssessors": 2,
+    "minimumCalibrationSamples": 3,
+    "minimumCandidatePerformances": 12,
+    "formsRequired": ["A", "B"],
+    "criticalErrorAgreementRequired": true
+  },
+  "decisionPolicy": {
+    "statisticsAreDiagnostic": true,
+    "humanDispositionRequired": true,
+    "standardSettingRequired": true,
+    "accessibilityReviewRequired": true,
+    "legalComplianceReviewRequired": true
+  },
+  "documents": [
+    "docs/learning-hub/tech1/course-001/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech1/course-001/pilot/PRIVATE-RESULTS-IMPORT-SPEC.md",
+    "docs/learning-hub/tech1/course-001/pilot/PARTICIPANT-FEEDBACK-INSTRUMENT.md",
+    "docs/learning-hub/tech1/course-001/pilot/PRACTICAL-CALIBRATION-RECORD-TEMPLATE.md",
+    "docs/learning-hub/tech1/course-001/pilot/STANDARD-SETTING-WORKSHEET.md",
+    "docs/learning-hub/tech1/course-001/pilot/PILOT-DECISION-RULES.md"
+  ]
+}
