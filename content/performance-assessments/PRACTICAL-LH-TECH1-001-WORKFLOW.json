@@ -1,0 +1,73 @@
+{
+  "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
+  "title": "Course 1 Integrated Cultivation Workflow Practical",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "summative",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-I-001",
+  "jobTasks": [
+    "TASK-CULT-SAFETY-001",
+    "TASK-CULT-SANITATION-001",
+    "TASK-CULT-IRRIGATION-001",
+    "TASK-CULT-RECORDS-001"
+  ],
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "deliveryModes": [
+    "simulation",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidenceOutputs": [
+    "Pre-task hazard brief",
+    "Sanitation and biosecurity movement record",
+    "Controlled-instruction review",
+    "Traceability movement and reconciliation record",
+    "Equipment readiness and fault report",
+    "Corrected record preserving original history",
+    "Professional shift handoff"
+  ],
+  "scoring": {
+    "totalPoints": 100,
+    "domains": [
+      {"name": "Safety, PPE and stop-work judgment", "points": 18},
+      {"name": "Sanitation and biosecurity", "points": 14},
+      {"name": "SOP and work-order execution", "points": 12},
+      {"name": "Identity and traceability", "points": 16},
+      {"name": "Inventory and discrepancy reasoning", "points": 10},
+      {"name": "Equipment readiness and operator-care boundary", "points": 10},
+      {"name": "Data integrity and documentation", "points": 12},
+      {"name": "Shift handoff and communication", "points": 8}
+    ]
+  },
+  "passingStandard": {
+    "minimumPercent": 80,
+    "noCriticalErrors": true
+  },
+  "criticalErrors": [
+    "Deliberately falsifies, fabricates, or forces a cultivation, identity, inventory, or traceability record.",
+    "Bypasses an explicit hold, quarantine, restricted-entry, or other supplied access-control instruction.",
+    "Attempts protected equipment servicing, energized technical work, or repair outside the stated Technician I authority.",
+    "Knowingly continues an explicit unsafe condition after the supplied procedure requires stopping or escalation.",
+    "Causes avoidable unrecoverable plant or material identity loss by ignoring a detected identity discrepancy."
+  ],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-LH-TECH1-001-WORKFLOW.md",
+  "extensions": {
+    "course": "COURSE-LH-TECH1-001",
+    "candidateForms": [
+      "docs/learning-hub/tech1/course-001/practical/CANDIDATE-PACKET-FORM-A.md",
+      "docs/learning-hub/tech1/course-001/practical/CANDIDATE-PACKET-FORM-B.md"
+    ],
+    "assessorGuide": "docs/learning-hub/tech1/course-001/practical/ASSESSOR-GUIDE.md",
+    "calibrationProtocol": "docs/learning-hub/tech1/course-001/practical/CALIBRATION-PROTOCOL.md",
+    "standardSettingStatus": "development-threshold-only",
+    "operationalUseBlockedUntilCalibration": true
+  }
+}
