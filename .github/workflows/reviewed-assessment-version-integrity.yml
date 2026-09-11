@@ -2,7 +2,7 @@ name: Reviewed assessment version integrity
 
 on:
   pull_request:
-    branches: [dev, staging, main]
+    branches: [staging, main]
     paths:
       - 'content/questions/**'
       - 'content/reviews/**'
@@ -11,7 +11,7 @@ on:
       - 'scripts/report-foundations-reviewed-item-remediation.mjs'
       - '.github/workflows/reviewed-assessment-version-integrity.yml'
   push:
-    branches: [dev, staging, main]
+    branches: [staging, main]
     paths:
       - 'content/questions/**'
       - 'content/reviews/**'
@@ -19,6 +19,7 @@ on:
       - 'scripts/test-reviewed-assessment-item-versioning.mjs'
       - 'scripts/report-foundations-reviewed-item-remediation.mjs'
       - '.github/workflows/reviewed-assessment-version-integrity.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

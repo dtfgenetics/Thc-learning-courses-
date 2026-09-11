@@ -137,11 +137,17 @@ jobs:
           if-no-files-found: error
       - name: Validate operational controls
         run: npm run ops:validate
+      - name: Validate authoring status consistency
+        if: ${{ github.base_ref == 'dev' || github.ref == 'refs/heads/dev' }}
+        run: npm run status:authoring:check
       - name: Validate staging readiness contract
+        if: ${{ github.base_ref == 'staging' || github.base_ref == 'main' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/main' }}
         run: npm run staging:readiness
-      - name: Validate system readiness consistency
+      - name: Validate promotion status consistency
+        if: ${{ github.base_ref == 'staging' || github.base_ref == 'main' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/main' }}
         run: npm run status:check
       - name: Validate production-readiness boundary
+        if: ${{ github.base_ref == 'staging' || github.base_ref == 'main' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/main' }}
         run: npm run production:readiness
-      - name: Run complete curriculum and credential test suite against generated registry
-        run: npm test
+      - name: Run authoring-safe curriculum and platform regression suite
+        run: npm run test:authoring

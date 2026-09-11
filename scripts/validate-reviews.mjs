@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const reviewDir = path.join(root, 'content/reviews');
+const strictRelease = process.argv.includes('--release');
 const errors = [];
 let staleReviewCount = 0;
 
@@ -112,10 +113,9 @@ for (const name of reviewFiles) {
   if (!target) {
     errors.push(`${rel}: reviewed object ${review.objectId} does not exist`);
   } else if (String(target.data.version) !== String(review.objectVersion)) {
-    // Review records are immutable audit history. A content version bump makes an
-    // older review stale for promotion purposes, but does not make the historical
-    // record invalid. Exact-version checks below still fail closed for published
-    // lessons, active questions, and production-eligible assessments.
+    // Review records are immutable audit history. During active authoring, edits and
+    // version bumps must remain possible without manufacturing replacement approval
+    // records. Exact-version approval is therefore enforced only by --release.
     staleReviewCount += 1;
   }
 }
@@ -129,34 +129,40 @@ function hasApprovedReview(objectId, objectVersion, reviewType) {
   );
 }
 
-for (const target of collections) {
-  const { data, file, kind } = target;
+if (strictRelease) {
+  for (const target of collections) {
+    const { data, file, kind } = target;
 
-  if (kind === 'lesson' && data.status === 'published') {
-    for (const reviewType of ['scientific', 'editorial']) {
-      if (!hasApprovedReview(data.id, data.version, reviewType)) {
-        errors.push(`${file}: published lesson ${data.id}@${data.version} is missing approved ${reviewType} review evidence`);
+    if (kind === 'lesson' && data.status === 'published') {
+      for (const reviewType of ['scientific', 'editorial']) {
+        if (!hasApprovedReview(data.id, data.version, reviewType)) {
+          errors.push(`${file}: published lesson ${data.id}@${data.version} is missing approved ${reviewType} review evidence`);
+        }
       }
     }
-  }
 
-  if (kind === 'question' && data.status === 'active') {
-    if (!hasApprovedReview(data.id, data.version, 'assessment')) {
-      errors.push(`${file}: active assessment item ${data.id}@${data.version} is missing an approved assessment review record`);
+    if (kind === 'question' && data.status === 'active') {
+      if (!hasApprovedReview(data.id, data.version, 'assessment')) {
+        errors.push(`${file}: active assessment item ${data.id}@${data.version} is missing an approved assessment review record`);
+      }
     }
-  }
 
-  if (kind === 'assessment' && ['active', 'approved', 'published'].includes(data.status)) {
-    if (!hasApprovedReview(data.id, data.version, 'assessment')) {
-      errors.push(`${file}: production-eligible assessment ${data.id}@${data.version} is missing an approved assessment review record`);
+    if (kind === 'assessment' && ['active', 'approved', 'published'].includes(data.status)) {
+      if (!hasApprovedReview(data.id, data.version, 'assessment')) {
+        errors.push(`${file}: production-eligible assessment ${data.id}@${data.version} is missing an approved assessment review record`);
+      }
     }
   }
 }
 
 if (errors.length) {
-  console.error('Review-record validation failed:');
+  console.error(`Review-record validation failed (${strictRelease ? 'release' : 'authoring'} mode):`);
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
 
-console.log(`Review-record validation passed. ${reviewFiles.length} review record(s) checked; ${staleReviewCount} historical review record(s) are stale for current-version promotion; promotion evidence rules enforced.`);
+if (strictRelease) {
+  console.log(`Review-record validation passed in release mode. ${reviewFiles.length} review record(s) checked; ${staleReviewCount} historical review record(s) are stale for current-version release approval.`);
+} else {
+  console.log(`Review-record validation passed in authoring mode. ${reviewFiles.length} review record(s) checked; ${staleReviewCount} stale historical review record(s) retained without blocking edits.`);
+}

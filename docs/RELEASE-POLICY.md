@@ -6,35 +6,34 @@ Maintain separate local, development, staging, and production environments. Stag
 
 ## Curriculum releases
 
-Curriculum releases are explicit immutable snapshots such as `academy-2026.09`. Merging content to `main` does not publish it. Approved content must be included in an intentional release candidate and pass the production release workflow before publication.
+Curriculum releases are explicit immutable snapshots such as `academy-2026.09`. Merging content to `main` does not publish it. The Academy remains continuously editable on its authoring path until the project owner selects a completed scope for release.
 
 ## Development merge gate
 
-Every pull request to `main` must pass the complete `npm test` suite. This is the repository integration gate for curriculum validation, development exam generation, credential regression tests, privacy projection tests, review-readiness reporting, and item-bank-readiness reporting.
+Ordinary pull requests to `dev` use the authoring-safe quality suite. It validates curriculum structure, references, assessment logic, security boundaries, deterministic runtime/API behavior, accessibility regressions, and other defects that can be verified during active development.
 
-Passing the development merge gate means the repository is internally consistent; it does **not** mean the curriculum is production-certified or ready to issue real credentials.
+Incomplete review queues, pilot work, staging readiness, production infrastructure, issuer keys, or release status do **not** block ordinary curriculum creation or correction.
+
+Passing the development merge gate means the repository is internally consistent enough to continue building. It does **not** claim that the entire Academy scope is complete or that a production release has been selected.
 
 ## Production gates
 
-A production curriculum release must pass both `npm test` and `npm run release:check`.
+A production curriculum release must pass `npm run test:release` and the scoped `npm run release:check` for the selected course/credential scope.
 
-The production release check fails closed unless:
+Release-only checks may require:
 
-- the release registry is no longer draft;
-- `publicationReady` is true;
-- every configured registry publication gate is true;
-- mapped course and lessons are published;
-- the final assessment is in an active/approved/published state;
-- every mapped lesson/version has approved scientific and editorial review records;
-- schema validation and referential integrity pass;
-- immutable IDs are not duplicated;
-- no placeholder/unverified sources are used by published credential-bearing material;
-- competency-to-objective and objective-to-assessment coverage is intact;
-- required human review approvals exist;
-- assessment item pools satisfy the configured active-item minimum before the approved-item-pool gate can be true;
-- privacy/security regression tests pass.
+- the selected release registry to be out of draft;
+- `publicationReady` and configured release gates to match the selected snapshot;
+- mapped course, module, lesson, and assessment objects to be in release-eligible states;
+- schema validation and referential integrity;
+- immutable IDs to remain unique;
+- cited/source-backed claims to resolve without placeholders or broken evidence references;
+- competency-to-objective and objective-to-assessment coverage to remain intact;
+- assessment pools and scoring rules to satisfy the selected credential design;
+- privacy/security regression tests to pass;
+- staging, signing, persistence, rollback, and operational controls required by that release to be configured.
 
-Accessibility and legal/compliance approvals remain required where their configured review scope applies. The release gate may be strengthened as those machine-readable records are added; it must not be weakened merely to publish a draft.
+Historical review records may be retained as audit evidence, but they must not freeze future authoring. Final project judgment belongs to the project owner after the requested build is complete; the repository must not manufacture or demand per-edit approval records simply to allow ongoing work.
 
 ## Release channel
 

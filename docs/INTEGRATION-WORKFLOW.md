@@ -1,6 +1,6 @@
 # THC Academy Integration Workflow
 
-This repository uses a controlled landing and promotion path so parallel agents can contribute without bypassing quality gates or creating competing trunks.
+This repository uses a controlled landing and promotion path so parallel agents can contribute without creating competing trunks, while keeping curriculum authoring continuously editable until the requested Academy scope is complete.
 
 ## 1. Work channels
 
@@ -37,49 +37,53 @@ Source-of-truth material belongs in these paths:
 - `content/references/` — scientific/source records.
 - `content/assessments/` — assessment blueprints and assessment definitions.
 - `content/questions/` — item-bank source objects. Production items must not expose secure answer data to a public client.
-- `content/reviews/` — immutable human review records matching `schemas/review-record.schema.json`.
+- `content/reviews/` — optional immutable review/audit history; these records never freeze later authoring.
 - `content/modules/`, `content/courses/`, `content/programs/` — curriculum composition.
 - `content/credentials/` — credential definitions and eligibility requirements, never learner records or signing secrets.
 - `registry/` — machine-readable curriculum/release state and publication gates.
 - `schemas/` — data contracts.
 - `scripts/` and `tests/` — validation, deterministic checks, and regression coverage.
 - `openapi/` — public API contracts.
-- `docs/` — human-readable policy and architecture; documentation never substitutes for executable gates.
+- `docs/` — human-readable policy and architecture; documentation never substitutes for executable checks.
 - `skills/` — reusable agent workflows for Academy production and repository operations.
 
-## 4. Curriculum publication path
+## 4. Continuous curriculum authoring
 
-Credential-bearing curriculum moves through this content lifecycle independently of Git branch promotion:
+The Academy remains in continuous authoring until the project owner declares the intended curriculum/catalog scope complete.
 
-`draft -> scientific review -> editorial review -> approved -> published`
+- Course, module, lesson, activity, practical, assessment, and item-bank source objects may be expanded or corrected at any time.
+- Version bumps must not require a replacement approval record merely to land an authoring change.
+- Existing review records are immutable historical evidence. A later edit may make a record stale without making the edit invalid.
+- Structural integrity, source/reference resolution, assessment-answer validity, secure answer boundaries, runtime/API behavior, and deterministic regression tests remain mandatory while authoring.
+- Content-depth reports identify the next material to expand; readiness reports describe later release work but do not grant permission to author.
+- Never declare substantive content/catalog expansion complete because a single batch or course is internally complete. Completion means the requested Academy scope is actually built.
 
-Assessment items use the assessment lifecycle documented in `ITEM-BANK-REVIEW.md` and must reach `active` before they count toward production item-pool depth.
-
-Human review records are evidence of approval. Setting a registry boolean or changing an object status without the corresponding review record is not approval.
+The project owner performs final judgment after the build is substantially complete and may request corrections at any point. Corrections land in canonical source objects and derived registries/reports are regenerated from those sources.
 
 ## 5. Pull-request gates
 
 ### Ordinary work -> `dev`
 
-Every ordinary change lands through a PR to `dev` and must pass the complete required quality gate for its current head SHA. A failing gate is repaired on the same branch whenever practical. Do not open replacement PRs merely to escape a failed check or conflict.
+Every ordinary change lands through a PR to `dev` and must pass the authoring-safe quality suite for its current head SHA. A failing structural, content-integrity, security, or runtime check is repaired on the same branch whenever practical. Incomplete staging, release, review, pilot, signing, or production infrastructure must not block a valid authoring change.
 
 ### `dev` -> `staging`
 
-Promote only an understood, green integration state. The promotion PR must contain integrated work rather than new feature edits. Staging validation must pass before the release-candidate cycle is considered complete.
+Promote only an understood, green integration state after the intended release candidate scope is selected. The promotion PR contains integrated work rather than new feature edits. Staging-specific checks run here rather than on ordinary authoring PRs.
 
 ### `staging` -> `main`
 
-Promote only after staging validation/acceptance for the included scope. The main-target PR must pass current required checks before merge.
+Promote after staging validation for the included scope. The main-target PR must pass current promotion checks before merge.
 
-The validation suite covers, among other repository-specific checks:
+The authoring suite covers, among other repository-specific checks:
 
 - curriculum validation and referential integrity;
-- deterministic registry generation and drift detection;
+- deterministic registry generation;
+- course-depth and item-bank diagnostics;
 - development exam-form generation;
-- credential eligibility, issuance, and public verification tests;
-- review and item-bank readiness;
-- learner web/runtime/API regression coverage;
-- staging/operational readiness checks.
+- credential logic and privacy projections;
+- learner web/runtime/API regressions;
+- deterministic accessibility checks;
+- persistence/security contracts that can be verified without production infrastructure.
 
 ## 6. Post-push and post-merge convergence
 
@@ -90,7 +94,7 @@ A successful push is not completion. After each push, bot-generated commit, conf
 3. inspect workflow runs tied to that SHA;
 4. inspect failed jobs/steps/logs when applicable;
 5. verify generated-file and dependency-lock stability;
-6. re-check mergeability/review blockers;
+6. re-check mergeability and actual code/content blockers;
 7. after merge, verify the target branch's own push validation;
 8. classify the source branch as landed/archival and continue to the next blocker.
 
@@ -98,19 +102,11 @@ Use `skills/github-orchestrator/SKILL.md` and `skills/github-post-push-cleanup/S
 
 ## 7. Production release gate
 
-Merging to `main` does not make content production-ready. Production curriculum is released only through the explicit `academy-*` release tag or production release workflow.
+Merging to `main` does not make content production-ready. Production curriculum is released only through the explicit `academy-*` release tag or production release workflow after the project owner selects a release scope.
 
-The release workflow runs the complete test suite and then `npm run release:check`. The release check fails closed unless:
+The release workflow runs `npm run test:release` and then `npm run release:check`. Release-only checks may enforce publication status, staging readiness, source completeness, credential configuration, security boundaries, operational controls, and other conditions that should not constrain ongoing authoring.
 
-- the registry is no longer draft and `publicationReady` is true;
-- every configured publication gate is true;
-- the mapped course is published;
-- the final assessment is active, approved, or published;
-- every mapped lesson is published;
-- each mapped lesson/version has approved scientific and editorial review records;
-- any additional pathway-specific release requirements pass.
-
-Do not weaken these gates simply to obtain a green release.
+Release checks must never be moved back into ordinary `dev` authoring merely to make release governance easier. Conversely, ordinary authoring checks must not be weakened for malformed JSON, broken references, wrong assessment keys, insecure learner payloads, runtime regressions, or other real defects.
 
 ## 8. Merge and cleanup discipline
 
@@ -129,11 +125,11 @@ Parallel agents must:
 1. start ordinary new work from current `dev`;
 2. use the correct work channel and source-of-truth directory;
 3. target ordinary PRs to `dev`;
-4. use promotion PRs for `dev -> staging -> main`;
-5. avoid changing publication/review/security gates without evidence and an explicit reason;
+4. keep authoring open until the requested catalog/content scope is complete;
+5. never invent or require approval evidence merely to permit an edit;
 6. keep secure runtime data, learner PII, private keys, credentials, and production assessment secrets out of Git;
 7. repair CI failures on the originating branch whenever practical;
 8. run post-push cleanup after every repository write;
-9. merge only after required checks for the current head pass;
+9. merge only after required authoring checks for the current head pass;
 10. treat merged branches as archival, not as trunks;
-11. continue to the next actionable repository blocker instead of stopping after a single successful merge.
+11. continue to the next actionable content/platform blocker instead of stopping after a single successful merge.

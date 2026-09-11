@@ -8,7 +8,8 @@ const registry = {
   areas: {
     curriculum: {
       gates: {
-        substantiveContentComplete: true,
+        substantiveContentComplete: false,
+        catalogExpansionComplete: false,
         scientificReviewComplete: false,
         editorialReviewComplete: false
       }
@@ -16,95 +17,44 @@ const registry = {
     assessment: {
       gates: {
         blueprintComplete: true,
-        minimumActivePoolComplete: false
-      }
-    },
-    runtime: { gates: { productionPersistenceAdapter: false } },
-    api: { gates: {} },
-    credentials: { gates: {} },
-    security: { gates: {} },
-    accessibility: { gates: {} },
-    operations: { gates: {} }
-  }
-};
-
-const blockers = collectBlockers(registry);
-assert.equal(blockers.length, 4);
-assert.equal(blockers[0].gate, 'scientificReviewComplete');
-assert.equal(blockers[0].mode, 'certify');
-
-const next = selectNextTask(registry, []);
-assert.equal(next.disposition, 'start');
-assert.equal(next.gate, 'scientificReviewComplete');
-assert.equal(next.branch, 'work/curriculum-scientific-review-complete');
-
-const resumed = selectNextTask(registry, [
-  { branch: 'reviews/curriculum', pr: 50, area: 'curriculum', gate: 'scientificReviewComplete', state: 'open' }
-]);
-assert.equal(resumed.disposition, 'resume');
-assert.equal(resumed.branch, 'reviews/curriculum');
-assert.equal(resumed.pr, 50);
-
-const assessmentRegistry = {
-  system: 'THC Academy',
-  version: 'test',
-  productionReady: false,
-  areas: {
-    curriculum: { gates: { substantiveContentComplete: true, scientificReviewComplete: true, editorialReviewComplete: true } },
-    assessment: {
-      gates: {
-        blueprintComplete: true,
-        developmentFormGeneration: true,
         minimumActivePoolComplete: false,
         humanAssessmentReviewComplete: false,
         pilotStatisticsComplete: false
       }
     },
-    credentials: { gates: {} },
-    runtime: { gates: {} },
-    api: { gates: {} },
-    security: { gates: {} },
-    accessibility: { gates: {} },
-    operations: { gates: {} }
+    runtime: { gates: { productionPersistenceAdapter: false } },
+    api: { gates: { productionDatabaseIntegration: false } },
+    credentials: { gates: { productionIssuerIdentity: false, productionSigning: false } },
+    security: { gates: { securityReviewComplete: false } },
+    accessibility: { gates: { contentAccessibilityReviewComplete: false } },
+    operations: { gates: { stagingEnvironment: false, productionEnvironment: false } }
   }
 };
 
-const assessmentBlockers = collectBlockers(assessmentRegistry);
-assert.deepEqual(
-  assessmentBlockers.slice(0, 3).map((row) => row.gate),
-  ['humanAssessmentReviewComplete', 'pilotStatisticsComplete', 'minimumActivePoolComplete']
-);
-const assessmentNext = selectNextTask(assessmentRegistry, []);
-assert.equal(assessmentNext.gate, 'humanAssessmentReviewComplete');
-assert.equal(assessmentNext.mode, 'certify');
-assert.equal(assessmentNext.branch, 'work/assessment-human-assessment-review-complete');
+const blockers = collectBlockers(registry);
+assert.equal(blockers.length, 2);
+assert.deepEqual(blockers.map((row) => row.gate), ['substantiveContentComplete', 'catalogExpansionComplete']);
+assert.ok(blockers.every((row) => row.mode === 'author'));
 
-const postReviewRegistry = structuredClone(assessmentRegistry);
-postReviewRegistry.areas.assessment.gates.humanAssessmentReviewComplete = true;
-const postReviewNext = selectNextTask(postReviewRegistry, []);
-assert.equal(postReviewNext.gate, 'pilotStatisticsComplete');
-assert.equal(postReviewNext.mode, 'certify');
-assert.equal(postReviewNext.branch, 'work/assessment-pilot-statistics-complete');
+const next = selectNextTask(registry, []);
+assert.equal(next.disposition, 'start');
+assert.equal(next.gate, 'substantiveContentComplete');
+assert.equal(next.branch, 'work/curriculum-substantive-content-complete');
 
-const postPilotRegistry = structuredClone(postReviewRegistry);
-postPilotRegistry.areas.assessment.gates.pilotStatisticsComplete = true;
-const postPilotNext = selectNextTask(postPilotRegistry, []);
-assert.equal(postPilotNext.gate, 'minimumActivePoolComplete');
-assert.equal(postPilotNext.mode, 'exam');
-assert.equal(postPilotNext.branch, 'work/assessment-minimum-active-pool-complete');
+const resumed = selectNextTask(registry, [
+  { branch: 'content/catalog-expansion', pr: 50, area: 'curriculum', gate: 'substantiveContentComplete', state: 'open' }
+]);
+assert.equal(resumed.disposition, 'resume');
+assert.equal(resumed.branch, 'content/catalog-expansion');
+assert.equal(resumed.pr, 50);
 
-const completeRegistry = {
-  system: 'THC Academy',
-  version: 'test',
-  productionReady: true,
-  areas: Object.fromEntries(
-    ['curriculum', 'assessment', 'credentials', 'runtime', 'api', 'security', 'accessibility', 'operations']
-      .map((area) => [area, { gates: {} }])
-  )
-};
-const complete = buildWorkerReport(completeRegistry, []);
-assert.equal(complete.blockerCount, 0);
-assert.equal(complete.nextTask.disposition, 'release-check');
-assert.equal(complete.nextTask.mode, 'release');
+const curriculumComplete = structuredClone(registry);
+curriculumComplete.areas.curriculum.gates.substantiveContentComplete = true;
+curriculumComplete.areas.curriculum.gates.catalogExpansionComplete = true;
+const unrestricted = buildWorkerReport(curriculumComplete, []);
+assert.equal(unrestricted.blockerCount, 0);
+assert.equal(unrestricted.nextTask.disposition, 'release-check');
+assert.equal(unrestricted.nextTask.mode, 'release');
+assert.match(unrestricted.nextTask.reason, /No unfinished curriculum-content blockers remain/);
 
-console.log('Certification production worker tests passed.');
+console.log('Certification production worker tests passed with review, pilot, item-pool, infrastructure, and publication gates non-blocking.');

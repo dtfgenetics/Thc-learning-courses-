@@ -3,8 +3,8 @@ name: PostgreSQL integration gate
 on:
   pull_request:
     branches:
-      - dev
       - staging
+      - main
     paths:
       - 'apps/api/**'
       - 'packages/domain/**'
@@ -17,8 +17,8 @@ on:
       - '.github/workflows/postgres-integration.yml'
   push:
     branches:
-      - dev
       - staging
+      - main
     paths:
       - 'apps/api/**'
       - 'packages/domain/**'

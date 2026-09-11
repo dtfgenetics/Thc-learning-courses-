@@ -10,49 +10,21 @@ export const AREA_PRIORITY = [
 ];
 
 export const GATE_TASKS = {
-  scientificReviewComplete: { kind: 'review', mode: 'certify', action: 'complete scientific review evidence' },
-  editorialReviewComplete: { kind: 'review', mode: 'certify', action: 'complete editorial review evidence' },
-  humanAssessmentReviewComplete: { kind: 'review', mode: 'certify', action: 'complete human assessment review' },
-  pilotStatisticsComplete: { kind: 'pilot', mode: 'certify', action: 'collect and validate pilot statistics' },
-  minimumActivePoolComplete: { kind: 'assessment', mode: 'exam', action: 'activate the pilot-qualified assessment item pool' },
-  productionPersistenceAdapter: { kind: 'platform', mode: 'platform', action: 'implement the production persistence adapter' },
-  authenticationIntegrated: { kind: 'security', mode: 'platform', action: 'integrate production authentication' },
-  authorizationIntegrated: { kind: 'security', mode: 'platform', action: 'integrate production authorization' },
-  productionIssuerIdentity: { kind: 'credential', mode: 'certify', action: 'configure the production credential issuer identity' },
-  productionSigning: { kind: 'credential', mode: 'certify', action: 'implement production credential signing' },
-  revocationPersistence: { kind: 'credential', mode: 'certify', action: 'persist credential revocation state' },
-  productionDatabaseIntegration: { kind: 'platform', mode: 'platform', action: 'connect the API to the production database' },
-  adminMfaEnforced: { kind: 'security', mode: 'platform', action: 'enforce administrator MFA' },
-  rowLevelAuthorization: { kind: 'security', mode: 'platform', action: 'enforce row-level authorization' },
-  securityReviewComplete: { kind: 'review', mode: 'platform', action: 'complete the security review' },
-  contentAccessibilityReviewComplete: { kind: 'accessibility', mode: 'learner', action: 'complete content accessibility review' },
-  assessmentAccessibilityReviewComplete: { kind: 'accessibility', mode: 'learner', action: 'complete assessment accessibility review' },
-  frontendAccessibilityTestingComplete: { kind: 'accessibility', mode: 'learner', action: 'complete frontend accessibility testing' },
-  stagingEnvironment: { kind: 'operations', mode: 'release', action: 'establish and validate staging' },
-  productionEnvironment: { kind: 'operations', mode: 'release', action: 'establish and validate production environment' },
-  backupRestoreTested: { kind: 'operations', mode: 'release', action: 'test backup and restore' },
-  monitoringAndAlerting: { kind: 'operations', mode: 'release', action: 'implement monitoring and alerting' }
+  substantiveContentComplete: { kind: 'authoring', mode: 'author', action: 'continue building substantive curriculum content' },
+  catalogExpansionComplete: { kind: 'authoring', mode: 'author', action: 'continue expanding the course, lesson, activity, and assessment catalog' }
 };
 
-const AREA_GATE_PRIORITY = {
-  assessment: [
-    'humanAssessmentReviewComplete',
-    'pilotStatisticsComplete',
-    'minimumActivePoolComplete'
-  ]
-};
+const BLOCKING_GATES = new Set([
+  'substantiveContentComplete',
+  'catalogExpansionComplete'
+]);
 
 function orderedGateEntries(area, gates) {
-  const entries = Object.entries(gates);
-  const priority = AREA_GATE_PRIORITY[area] ?? [];
-  if (!priority.length) return entries;
+  const entries = Object.entries(gates).filter(([gate]) => BLOCKING_GATES.has(gate));
+  if (area !== 'curriculum') return entries;
+  const priority = ['substantiveContentComplete', 'catalogExpansionComplete'];
   const rank = new Map(priority.map((gate, index) => [gate, index]));
-  return entries.sort(([a], [b]) => {
-    const aRank = rank.has(a) ? rank.get(a) : Number.MAX_SAFE_INTEGER;
-    const bRank = rank.has(b) ? rank.get(b) : Number.MAX_SAFE_INTEGER;
-    if (aRank !== bRank) return aRank - bRank;
-    return 0;
-  });
+  return entries.sort(([a], [b]) => (rank.get(a) ?? Number.MAX_SAFE_INTEGER) - (rank.get(b) ?? Number.MAX_SAFE_INTEGER));
 }
 
 export function collectBlockers(registry) {
@@ -62,11 +34,8 @@ export function collectBlockers(registry) {
     const gates = areas[area]?.gates ?? {};
     for (const [gate, value] of orderedGateEntries(area, gates)) {
       if (value === true) continue;
-      const task = GATE_TASKS[gate] ?? {
-        kind: area,
-        mode: area === 'curriculum' ? 'author' : 'full',
-        action: `resolve ${gate}`
-      };
+      const task = GATE_TASKS[gate];
+      if (!task) continue;
       blockers.push({ area, gate, ...task });
     }
   }
@@ -108,8 +77,8 @@ export function selectNextTask(registry, activeWork = []) {
     return {
       disposition: 'release-check',
       mode: 'release',
-      action: 'run the full production release gate',
-      reason: 'No unresolved readiness gates remain'
+      action: 'run certification integrity and release checks',
+      reason: 'No unfinished curriculum-content blockers remain'
     };
   }
 
@@ -118,7 +87,7 @@ export function selectNextTask(registry, activeWork = []) {
     disposition: 'start',
     branch: `work/${blocker.area}-${blocker.gate.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`,
     pr: null,
-    reason: `Highest-priority unresolved gate is ${blocker.area}.${blocker.gate}`
+    reason: `Highest-priority unfinished content area is ${blocker.area}.${blocker.gate}`
   };
 }
 
