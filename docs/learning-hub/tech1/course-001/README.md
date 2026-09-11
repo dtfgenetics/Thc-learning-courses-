@@ -2,9 +2,11 @@
 
 **Credential path:** THC Cultivation Technician I  
 **Status:** Draft production package  
-**Instructional target:** approximately 8–10 hours plus applied work and the course practical  
+**Current canonical lesson time:** 945 minutes (15.75 hours) across 18 lessons, before separate module tests, the integrated practical, and the final course assessment  
 **Course assessment:** `ASSESS-LH-TECH1-001-FINAL`  
 **Course practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`
+
+The lesson-time total is a descriptive estimate for the current version, not a content cap or immutable seat-time requirement. Lessons, activities, examples, assessments and practical work may be expanded, revised, reorganized or replaced as evidence and instructional design improve.
 
 ## Purpose
 
@@ -27,9 +29,25 @@ By the end of the course, the learner should be able to demonstrate the 12 contr
 7. Integrated course practical
 8. Course-level summative assessment
 
+## Current instructional depth standard
+
+Each canonical lesson is intended to train workplace judgment, not only topic recognition. The current lesson set uses combinations of:
+
+- evidence-backed explanation and vocabulary;
+- worked examples and common failure modes;
+- visual process or decision aids;
+- tables, comparisons and controlled-document models;
+- at least one applied scenario, with additional scenarios where the task benefits from contrasting conditions;
+- guided activities that produce a learner artifact;
+- explicit stop-work, escalation, authorization or documentation boundaries where applicable;
+- remediation cues that target common weak reasoning patterns; and
+- source/evidence boundaries so transferable standards are not misrepresented as universal cannabis law.
+
+This is a quality baseline, not a maximum structure. Additional blocks and activities may be added whenever they improve learning or assessment alignment.
+
 ## Learner evidence
 
-The course should produce more than quiz scores. Expected learner artifacts include a hazard-response worksheet, sanitation movement map, controlled-instruction review, traceability/movement packet, equipment fault report, corrected record set, and professional shift handoff. Selected simulated artifacts can later be included in the Technician I portfolio.
+The course should produce more than quiz scores. Expected learner artifacts now include hazard-response and authority-boundary worksheets, chemical-task decision records, biosecurity movement and breach maps, sanitation verification records, controlled-instruction reviews, traceability/genealogy and reconciliation packets, equipment-readiness and fault reports, corrected record sets, deviation timelines, professional shift handoffs, and the integrated shift-simulation packet. Selected simulated artifacts can later be included in the Technician I portfolio.
 
 ## Evidence rule
 
