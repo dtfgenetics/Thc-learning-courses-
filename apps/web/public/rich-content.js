@@ -63,7 +63,7 @@ function renderSteps(parent, block) {
   section.append(text('h3', block.title));
   const list = document.createElement('ol');
   list.className = 'rich-step-list';
-  for (const item of block.items ?? []) {
+  for (const item of block.items ?? block.steps ?? []) {
     const li = document.createElement('li');
     if (item.title) li.append(text('strong', item.title));
     li.append(text('p', item.body));
