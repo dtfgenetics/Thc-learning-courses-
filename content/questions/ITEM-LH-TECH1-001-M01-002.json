@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M01-002","version":1,"status":"draft","purpose":"formative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-02","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"The task instruction requires chemical-resistant gloves, but only general work gloves are available. What should the technician do?","choices":["Delay the task and obtain the required PPE through the approved process","Wear two pairs of general work gloves","Perform only half the task without the required gloves","Use bare hands if exposure time will be short"],"correct":0,"rationale":"Required PPE comes from the hazard assessment, label, and controlled procedure. A technician should not substitute unapproved PPE based on convenience.","references":["REF-OSHA-1910-132-PPE","REF-OSHA-1910-1200-HAZCOM"]}
+{
+  "id": "ITEM-LH-TECH1-001-M01-002",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "The task instruction requires chemical-resistant gloves, but only general work gloves are available. What should the technician do?",
+  "choices": [
+    "Delay the task and obtain the required PPE through the approved process",
+    "Wear two pairs of general work gloves",
+    "Perform only half the task without the required gloves",
+    "Use bare hands if exposure time will be short"
+  ],
+  "correct": 0,
+  "rationale": "Required PPE comes from the hazard assessment, label, and controlled procedure. A technician should not substitute unapproved PPE based on convenience.",
+  "references": [
+    "REF-OSHA-1910-132-PPE",
+    "REF-OSHA-1910-1200-HAZCOM"
+  ]
+}

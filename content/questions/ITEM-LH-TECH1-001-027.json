@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-027","version":1,"status":"draft","purpose":"summative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-08","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A technician cannot determine why a tracked count changed overnight. Which action best preserves the investigation?","choices":["Correct the count to the expected number","Delete the earlier entry","Document the observed discrepancy, preserve available evidence, and escalate according to procedure","Wait several days and then reconstruct the event from memory"],"correct":2,"rationale":"Preserving the discrepancy and evidence enables investigation; silent correction destroys useful information.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-027",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-08",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician cannot determine why a tracked count changed overnight. Which action best preserves the investigation?",
+  "choices": [
+    "Correct the count to the expected number",
+    "Delete the earlier entry",
+    "Document the observed discrepancy, preserve available evidence, and escalate according to procedure",
+    "Wait several days and then reconstruct the event from memory"
+  ],
+  "correct": 2,
+  "rationale": "Preserving the discrepancy and evidence enables investigation; silent correction destroys useful information.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

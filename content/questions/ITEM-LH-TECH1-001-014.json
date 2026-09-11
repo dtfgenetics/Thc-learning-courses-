@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-014","version":1,"status":"draft","purpose":"summative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-04","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A tray from a quarantine area is found in general production. What should the technician do first?","choices":["Return it quietly and say nothing","Stop further movement, preserve its identity, and report the breach under procedure","Dispose of it immediately without a record","Relabel it as general production"],"correct":1,"rationale":"A biosecurity breach should be contained and documented before more movement obscures the exposure history.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-UMASS-GREENHOUSE-SANITATION"]}
+{
+  "id": "ITEM-LH-TECH1-001-014",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A tray from a quarantine area is found in general production. What should the technician do first?",
+  "choices": [
+    "Return it quietly and say nothing",
+    "Stop further movement, preserve its identity, and report the breach under procedure",
+    "Dispose of it immediately without a record",
+    "Relabel it as general production"
+  ],
+  "correct": 1,
+  "rationale": "A biosecurity breach should be contained and documented before more movement obscures the exposure history.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ]
+}

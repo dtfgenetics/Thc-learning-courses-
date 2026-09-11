@@ -2,7 +2,7 @@
   "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
   "title": "Course 1 Integrated Cultivation Workflow Practical",
   "version": "1.0.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "summative",
   "assessmentType": "practical",
   "role": "ROLE-CULT-TECH-I-001",
@@ -37,14 +37,38 @@
   "scoring": {
     "totalPoints": 100,
     "domains": [
-      {"name": "Safety, PPE and stop-work judgment", "points": 18},
-      {"name": "Sanitation and biosecurity", "points": 14},
-      {"name": "SOP and work-order execution", "points": 12},
-      {"name": "Identity and traceability", "points": 16},
-      {"name": "Inventory and discrepancy reasoning", "points": 10},
-      {"name": "Equipment readiness and operator-care boundary", "points": 10},
-      {"name": "Data integrity and documentation", "points": 12},
-      {"name": "Shift handoff and communication", "points": 8}
+      {
+        "name": "Safety, PPE and stop-work judgment",
+        "points": 18
+      },
+      {
+        "name": "Sanitation and biosecurity",
+        "points": 14
+      },
+      {
+        "name": "SOP and work-order execution",
+        "points": 12
+      },
+      {
+        "name": "Identity and traceability",
+        "points": 16
+      },
+      {
+        "name": "Inventory and discrepancy reasoning",
+        "points": 10
+      },
+      {
+        "name": "Equipment readiness and operator-care boundary",
+        "points": 10
+      },
+      {
+        "name": "Data integrity and documentation",
+        "points": 12
+      },
+      {
+        "name": "Shift handoff and communication",
+        "points": 8
+      }
     ]
   },
   "passingStandard": {

@@ -1,1 +1,62 @@
-{"id":"LESSON-LH-TECH1-001-12","title":"Discrepancies, Waste and Destruction Documentation","version":"1.0.0","status":"draft","competencies":["COMP-CULT-TRACEABILITY-001","COMP-PRO-QA-001"],"learningObjectives":["LO-LH-TECH1-001-07","LO-LH-TECH1-001-08"],"estimatedMinutes":35,"references":["REF-MHRA-GXP-DATA-INTEGRITY"],"assessment":null,"content":{"overview":"Inventory discrepancies and waste workflows must remain reconstructable. The technician preserves evidence and identity instead of hiding mismatches or assuming a universal destruction method.","vocabulary":[{"term":"discrepancy","definition":"A difference between expected and observed identity, quantity, status, location or record information."},{"term":"disposition","definition":"The authorized decision about what happens to material, such as use, transfer, hold, return or destruction."},{"term":"reconstruction","definition":"The ability to use records to understand what happened to material over time."}],"sections":[{"title":"Investigate without concealing","body":"A mismatch may result from counting, delayed entry, wrong identity, unrecorded movement or another control failure. Technicians gather permitted facts, preserve the current state and escalate when the difference cannot be reconciled under procedure.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},{"title":"Waste remains identified","body":"Material designated as waste remains tied to the identity and quantity information required by the facility and jurisdiction until the authorized waste or destruction workflow is complete. Final disposition may belong to another role.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}],"workedExamples":["A waste container lacks a batch identifier, so it is not combined with other waste until identity is resolved.","A system shows destruction complete while the physical material remains; the mismatch is reported rather than ignored."],"commonMistakes":["Discarding questionable material before identity and status are documented.","Changing records to eliminate an unexplained discrepancy."],"practicalApplication":"Investigate a mock inventory discrepancy and complete a supplied waste/destruction record while identifying which steps require higher authorization.","summary":"Traceable waste handling requires preserved identity, honest discrepancy records and local authorization for disposition or destruction."}}
+{
+  "id": "LESSON-LH-TECH1-001-12",
+  "title": "Discrepancies, Waste and Destruction Documentation",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-07",
+    "LO-LH-TECH1-001-08"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Inventory discrepancies and waste workflows must remain reconstructable. The technician preserves evidence and identity instead of hiding mismatches or assuming a universal destruction method.",
+    "vocabulary": [
+      {
+        "term": "discrepancy",
+        "definition": "A difference between expected and observed identity, quantity, status, location or record information."
+      },
+      {
+        "term": "disposition",
+        "definition": "The authorized decision about what happens to material, such as use, transfer, hold, return or destruction."
+      },
+      {
+        "term": "reconstruction",
+        "definition": "The ability to use records to understand what happened to material over time."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Investigate without concealing",
+        "body": "A mismatch may result from counting, delayed entry, wrong identity, unrecorded movement or another control failure. Technicians gather permitted facts, preserve the current state and escalate when the difference cannot be reconciled under procedure.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Waste remains identified",
+        "body": "Material designated as waste remains tied to the identity and quantity information required by the facility and jurisdiction until the authorized waste or destruction workflow is complete. Final disposition may belong to another role.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A waste container lacks a batch identifier, so it is not combined with other waste until identity is resolved.",
+      "A system shows destruction complete while the physical material remains; the mismatch is reported rather than ignored."
+    ],
+    "commonMistakes": [
+      "Discarding questionable material before identity and status are documented.",
+      "Changing records to eliminate an unexplained discrepancy."
+    ],
+    "practicalApplication": "Investigate a mock inventory discrepancy and complete a supplied waste/destruction record while identifying which steps require higher authorization.",
+    "summary": "Traceable waste handling requires preserved identity, honest discrepancy records and local authorization for disposition or destruction."
+  }
+}

@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M06-003","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Why is entering a value hours later from memory weaker than recording it when observed?","choices":["Delayed memory entry reduces contemporaneity and can introduce recall error or missing context","Later entries are always legally invalid","Memory entries are acceptable if the value seems reasonable","Timing matters only for equipment failures"],"correct":0,"rationale":"Contemporaneous recording improves reliability and preserves context. Delayed reconstruction increases uncertainty.","references":["REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-003",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why is entering a value hours later from memory weaker than recording it when observed?",
+  "choices": [
+    "Delayed memory entry reduces contemporaneity and can introduce recall error or missing context",
+    "Later entries are always legally invalid",
+    "Memory entries are acceptable if the value seems reasonable",
+    "Timing matters only for equipment failures"
+  ],
+  "correct": 0,
+  "rationale": "Contemporaneous recording improves reliability and preserves context. Delayed reconstruction increases uncertainty.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

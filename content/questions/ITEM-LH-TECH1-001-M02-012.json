@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M02-012","version":1,"status":"draft","purpose":"formative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-03","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A surface was disinfected correctly, then a dirty hose end was placed on it. What is the best interpretation?","choices":["The clean status may have been compromised and the approved sanitation process should be repeated as required","The earlier disinfection permanently protects the surface","Only visible soil would matter","The hose end cannot transfer plant pathogens"],"correct":0,"rationale":"Clean status can be lost when a surface reconnects to a contamination pathway. Dirty tools, hose ends, and equipment can recontaminate cleaned areas.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-UMASS-GREENHOUSE-SANITATION"]}
+{
+  "id": "ITEM-LH-TECH1-001-M02-012",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A surface was disinfected correctly, then a dirty hose end was placed on it. What is the best interpretation?",
+  "choices": [
+    "The clean status may have been compromised and the approved sanitation process should be repeated as required",
+    "The earlier disinfection permanently protects the surface",
+    "Only visible soil would matter",
+    "The hose end cannot transfer plant pathogens"
+  ],
+  "correct": 0,
+  "rationale": "Clean status can be lost when a surface reconnects to a contamination pathway. Dirty tools, hose ends, and equipment can recontaminate cleaned areas.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ]
+}

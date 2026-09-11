@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-030","version":1,"status":"draft","purpose":"summative","competency":"COMP-CULT-EQUIPMENT-CARE-001","objective":"LO-LH-TECH1-001-10","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A pump alarm appears, and the SOP allows checking tank level and visible leaks only. Those checks do not explain the alarm. What next?","choices":["Keep resetting the alarm","Record the fault context and escalate for further diagnosis","Open the electrical control box","Change controller settings until the alarm stops"],"correct":1,"rationale":"After permitted operator checks are exhausted, the technician should preserve fault context and escalate.","references":["REF-OSHA-1910-147-LOTO","REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-030",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-001-10",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A pump alarm appears, and the SOP allows checking tank level and visible leaks only. Those checks do not explain the alarm. What next?",
+  "choices": [
+    "Keep resetting the alarm",
+    "Record the fault context and escalate for further diagnosis",
+    "Open the electrical control box",
+    "Change controller settings until the alarm stops"
+  ],
+  "correct": 1,
+  "rationale": "After permitted operator checks are exhausted, the technician should preserve fault context and escalate.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

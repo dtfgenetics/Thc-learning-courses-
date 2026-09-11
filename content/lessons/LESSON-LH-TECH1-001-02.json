@@ -1,1 +1,63 @@
-{"id":"LESSON-LH-TECH1-001-02","title":"PPE, Chemical Labels and Safety Data Sheets","version":"1.0.0","status":"draft","competencies":["COMP-SAFETY-WORK-001"],"learningObjectives":["LO-LH-TECH1-001-02"],"estimatedMinutes":40,"references":["REF-OSHA-1910-132-PPE","REF-OSHA-1910-1200-HAZCOM","REF-EPA-WPS"],"assessment":null,"content":{"overview":"This lesson teaches learners to use supplied PPE requirements, labels, safety data sheets, and pesticide-worker restrictions without inventing their own controls or exceeding authorization.","vocabulary":[{"term":"PPE","definition":"Personal protective equipment used to reduce exposure when other controls do not fully eliminate a hazard."},{"term":"SDS","definition":"Safety Data Sheet containing standardized information about a hazardous chemical, including hazards and precautions."},{"term":"restricted-entry interval","definition":"A pesticide-related interval during which entry into a treated area may be restricted except under specified conditions."}],"sections":[{"title":"PPE follows the hazard and task","body":"PPE selection follows the employer's hazard assessment, work instruction, product label and applicable requirements. Workers inspect required PPE and report missing, damaged or unsuitable equipment rather than substituting based on preference.","references":["REF-OSHA-1910-132-PPE"]},{"title":"Use current chemical information","body":"Hazard Communication requires access to chemical hazard information. Technicians should locate product identity, hazard and precautionary statements, first-aid information, storage guidance and relevant PPE information in the supplied label and SDS. Agricultural pesticide restrictions may also control whether a worker may enter or perform a task.","references":["REF-OSHA-1910-1200-HAZCOM","REF-EPA-WPS"]}],"workedExamples":["A technician checks the current label and SDS before using a cleaning chemical instead of relying on memory from a different product.","A treated-area restriction conflicts with the task schedule, so entry is verified before work begins."],"commonMistakes":["Choosing PPE based only on comfort or habit.","Assuming cultivation training grants pesticide-handler authority."],"practicalApplication":"Use a mock label, SDS excerpt and work order to identify hazards, required supplied PPE, precautions and any condition that blocks the task.","summary":"Chemical and PPE decisions are controlled by current product information, workplace procedures and applicable rules. Technician I learners must know how to find and follow those controls."}}
+{
+  "id": "LESSON-LH-TECH1-001-02",
+  "title": "PPE, Chemical Labels and Safety Data Sheets",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-SAFETY-WORK-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-02"
+  ],
+  "estimatedMinutes": 40,
+  "references": [
+    "REF-OSHA-1910-132-PPE",
+    "REF-OSHA-1910-1200-HAZCOM",
+    "REF-EPA-WPS"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "This lesson teaches learners to use supplied PPE requirements, labels, safety data sheets, and pesticide-worker restrictions without inventing their own controls or exceeding authorization.",
+    "vocabulary": [
+      {
+        "term": "PPE",
+        "definition": "Personal protective equipment used to reduce exposure when other controls do not fully eliminate a hazard."
+      },
+      {
+        "term": "SDS",
+        "definition": "Safety Data Sheet containing standardized information about a hazardous chemical, including hazards and precautions."
+      },
+      {
+        "term": "restricted-entry interval",
+        "definition": "A pesticide-related interval during which entry into a treated area may be restricted except under specified conditions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "PPE follows the hazard and task",
+        "body": "PPE selection follows the employer's hazard assessment, work instruction, product label and applicable requirements. Workers inspect required PPE and report missing, damaged or unsuitable equipment rather than substituting based on preference.",
+        "references": [
+          "REF-OSHA-1910-132-PPE"
+        ]
+      },
+      {
+        "title": "Use current chemical information",
+        "body": "Hazard Communication requires access to chemical hazard information. Technicians should locate product identity, hazard and precautionary statements, first-aid information, storage guidance and relevant PPE information in the supplied label and SDS. Agricultural pesticide restrictions may also control whether a worker may enter or perform a task.",
+        "references": [
+          "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A technician checks the current label and SDS before using a cleaning chemical instead of relying on memory from a different product.",
+      "A treated-area restriction conflicts with the task schedule, so entry is verified before work begins."
+    ],
+    "commonMistakes": [
+      "Choosing PPE based only on comfort or habit.",
+      "Assuming cultivation training grants pesticide-handler authority."
+    ],
+    "practicalApplication": "Use a mock label, SDS excerpt and work order to identify hazards, required supplied PPE, precautions and any condition that blocks the task.",
+    "summary": "Chemical and PPE decisions are controlled by current product information, workplace procedures and applicable rules. Technician I learners must know how to find and follow those controls."
+  }
+}

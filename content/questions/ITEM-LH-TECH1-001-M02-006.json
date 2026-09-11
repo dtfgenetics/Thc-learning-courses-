@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M02-006","version":1,"status":"draft","purpose":"formative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-03","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A facility uses a clean-to-dirty work sequence. Which schedule best supports that control?","choices":["Complete lower-risk propagation work before entering quarantine, then follow required change/sanitation steps before any return","Visit quarantine first because it is the most urgent room, then move directly to propagation","Alternate between quarantine and propagation to save walking time","Use the same gloves in every room if they look clean"],"correct":0,"rationale":"Clean-to-dirty sequencing reduces avoidable movement from higher-risk areas into cleaner or more sensitive areas.","references":["REF-UMASS-GREENHOUSE-SANITATION","REF-PSU-GREENHOUSE-DISEASE-SOURCES"]}
+{
+  "id": "ITEM-LH-TECH1-001-M02-006",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A facility uses a clean-to-dirty work sequence. Which schedule best supports that control?",
+  "choices": [
+    "Complete lower-risk propagation work before entering quarantine, then follow required change/sanitation steps before any return",
+    "Visit quarantine first because it is the most urgent room, then move directly to propagation",
+    "Alternate between quarantine and propagation to save walking time",
+    "Use the same gloves in every room if they look clean"
+  ],
+  "correct": 0,
+  "rationale": "Clean-to-dirty sequencing reduces avoidable movement from higher-risk areas into cleaner or more sensitive areas.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION",
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+  ]
+}

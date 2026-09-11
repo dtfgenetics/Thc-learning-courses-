@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M03-008","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Which action best preserves quality-system control when an unexpected condition occurs during a routine task?","choices":["Pause at the defined boundary, document the condition, and use the escalation/deviation process","Modify the process quietly so production can continue","Finish the task and rewrite the record to match the SOP","Ignore the condition if the output looks acceptable"],"correct":0,"rationale":"Unexpected conditions should be made visible and handled through the controlled process, not hidden through undocumented improvisation.","references":["REF-EPA-SOP-QAG6","REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M03-008",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which action best preserves quality-system control when an unexpected condition occurs during a routine task?",
+  "choices": [
+    "Pause at the defined boundary, document the condition, and use the escalation/deviation process",
+    "Modify the process quietly so production can continue",
+    "Finish the task and rewrite the record to match the SOP",
+    "Ignore the condition if the output looks acceptable"
+  ],
+  "correct": 0,
+  "rationale": "Unexpected conditions should be made visible and handled through the controlled process, not hidden through undocumented improvisation.",
+  "references": [
+    "REF-EPA-SOP-QAG6",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

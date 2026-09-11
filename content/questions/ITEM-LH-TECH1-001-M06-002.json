@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M06-002","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A paper record contains an incorrect value. What is the strongest correction method?","choices":["Use the approved correction process so the original entry remains readable and the change is attributable","Erase the original value completely","Cover the original entry with correction fluid","Rewrite the entire page and discard the first copy"],"correct":0,"rationale":"Data-integrity principles favor corrections that preserve history and attribution rather than hiding the original entry.","references":["REF-WHO-DATA-INTEGRITY-2021","REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-002",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A paper record contains an incorrect value. What is the strongest correction method?",
+  "choices": [
+    "Use the approved correction process so the original entry remains readable and the change is attributable",
+    "Erase the original value completely",
+    "Cover the original entry with correction fluid",
+    "Rewrite the entire page and discard the first copy"
+  ],
+  "correct": 0,
+  "rationale": "Data-integrity principles favor corrections that preserve history and attribution rather than hiding the original entry.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

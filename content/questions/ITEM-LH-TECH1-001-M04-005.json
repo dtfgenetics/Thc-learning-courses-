@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M04-005","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-07","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"Which information is most important in a vendor-neutral movement record?","choices":["What moved, source, destination, time, identity, quantity where relevant, and responsible person/system","Only cultivar name and destination","Only the employee name","Only the software transaction number"],"correct":0,"rationale":"Technology-neutral traceability relies on identifying the object and the event context, not any single software field or vendor interface.","references":["REF-GS1-GLOBAL-TRACEABILITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-M04-005",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-07",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which information is most important in a vendor-neutral movement record?",
+  "choices": [
+    "What moved, source, destination, time, identity, quantity where relevant, and responsible person/system",
+    "Only cultivar name and destination",
+    "Only the employee name",
+    "Only the software transaction number"
+  ],
+  "correct": 0,
+  "rationale": "Technology-neutral traceability relies on identifying the object and the event context, not any single software field or vendor interface.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}

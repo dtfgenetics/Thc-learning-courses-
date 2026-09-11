@@ -1,7 +1,7 @@
 # COURSE-LH-TECH1-001 — Safety, Responsible Practice & Cultivation Workflows
 
 **Credential path:** THC Cultivation Technician I  
-**Status:** Draft production package  
+**Status:** Published learner course package  
 **Instructional target:** approximately 8–10 hours plus applied work and the course practical  
 **Course assessment:** `ASSESS-LH-TECH1-001-FINAL`  
 **Course practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`

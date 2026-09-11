@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-036","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-12","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A handoff contains an unresolved inventory discrepancy and an equipment alarm. What should it make clear?","choices":["Only which worker caused the problems","The exact affected identities/assets, factual status, controls taken, who was notified, and next required actions","Only that management has been told","Only the total number of completed tasks"],"correct":1,"rationale":"Open issues need precise status, identity, notification and next-action information so the next shift can continue safely.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-036",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-12",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A handoff contains an unresolved inventory discrepancy and an equipment alarm. What should it make clear?",
+  "choices": [
+    "Only which worker caused the problems",
+    "The exact affected identities/assets, factual status, controls taken, who was notified, and next required actions",
+    "Only that management has been told",
+    "Only the total number of completed tasks"
+  ],
+  "correct": 1,
+  "rationale": "Open issues need precise status, identity, notification and next-action information so the next shift can continue safely.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

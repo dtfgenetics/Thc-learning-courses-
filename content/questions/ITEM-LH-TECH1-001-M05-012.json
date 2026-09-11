@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M05-012","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-EQUIPMENT-CARE-001","objective":"LO-LH-TECH1-001-10","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Which behavior shows the strongest Technician I equipment competence?","choices":["Recognizing an abnormal condition, completing permitted checks, protecting safeguards, documenting evidence, and escalating beyond scope","Successfully improvising a repair without authorization","Resetting alarms until production resumes","Removing guards to improve access"],"correct":0,"rationale":"Technician I competence is safe, evidence-based execution within role boundaries, not unauthorized maintenance success.","references":["REF-OSHA-MACHINE-GUARDING","REF-OSHA-1910-147-LOTO"]}
+{
+  "id": "ITEM-LH-TECH1-001-M05-012",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-001-10",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which behavior shows the strongest Technician I equipment competence?",
+  "choices": [
+    "Recognizing an abnormal condition, completing permitted checks, protecting safeguards, documenting evidence, and escalating beyond scope",
+    "Successfully improvising a repair without authorization",
+    "Resetting alarms until production resumes",
+    "Removing guards to improve access"
+  ],
+  "correct": 0,
+  "rationale": "Technician I competence is safe, evidence-based execution within role boundaries, not unauthorized maintenance success.",
+  "references": [
+    "REF-OSHA-MACHINE-GUARDING",
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

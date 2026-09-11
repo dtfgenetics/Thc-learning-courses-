@@ -1,1 +1,63 @@
-{"id":"LESSON-LH-TECH1-001-09","title":"Deviations, Incomplete Work and Honest Status","version":"1.0.0","status":"draft","competencies":["COMP-PRO-SOP-001","COMP-PRO-QA-001"],"learningObjectives":["LO-LH-TECH1-001-05","LO-LH-TECH1-001-11","LO-LH-TECH1-001-12"],"estimatedMinutes":30,"references":["REF-MHRA-GXP-DATA-INTEGRITY"],"assessment":null,"content":{"overview":"Cultivation work can deviate from plan. Technicians must preserve factual status, record incomplete work honestly and hand unresolved conditions forward without inventing data or completion.","vocabulary":[{"term":"deviation","definition":"A documented departure from an approved instruction, expected condition, specification or planned process."},{"term":"exception","definition":"A condition anticipated by a procedure that requires a defined alternate action or approval."},{"term":"status integrity","definition":"Accurately representing what was done, what was not done and what remains unresolved."}],"sections":[{"title":"Deviations are operational information","body":"Equipment faults, identity mismatches, alarms, material shortages, contamination concerns and other conditions can interrupt work. The technician preserves what actually happened rather than forcing the record to appear normal.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},{"title":"Never manufacture completion","body":"A task is complete only when required steps and acceptance criteria are met or an authorized exception is documented. Missed observations remain missing; they are not reconstructed from guesses or memory and presented as contemporaneous data.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}],"workedExamples":["An interrupted sanitation cycle is documented as incomplete instead of being signed complete.","A missed measurement is recorded according to the missing-data procedure rather than invented later."],"commonMistakes":["Hiding deviations because they feel like personal failure.","Marking work complete simply because the shift ended."],"practicalApplication":"Review a partially completed work packet, identify deviations and incomplete steps, decide what can continue or must stop, and write the handoff status.","summary":"Reliable operations depend on truthful status. Technicians document deviations and incomplete work as they occurred and make unresolved conditions visible."}}
+{
+  "id": "LESSON-LH-TECH1-001-09",
+  "title": "Deviations, Incomplete Work and Honest Status",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-05",
+    "LO-LH-TECH1-001-11",
+    "LO-LH-TECH1-001-12"
+  ],
+  "estimatedMinutes": 30,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cultivation work can deviate from plan. Technicians must preserve factual status, record incomplete work honestly and hand unresolved conditions forward without inventing data or completion.",
+    "vocabulary": [
+      {
+        "term": "deviation",
+        "definition": "A documented departure from an approved instruction, expected condition, specification or planned process."
+      },
+      {
+        "term": "exception",
+        "definition": "A condition anticipated by a procedure that requires a defined alternate action or approval."
+      },
+      {
+        "term": "status integrity",
+        "definition": "Accurately representing what was done, what was not done and what remains unresolved."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Deviations are operational information",
+        "body": "Equipment faults, identity mismatches, alarms, material shortages, contamination concerns and other conditions can interrupt work. The technician preserves what actually happened rather than forcing the record to appear normal.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Never manufacture completion",
+        "body": "A task is complete only when required steps and acceptance criteria are met or an authorized exception is documented. Missed observations remain missing; they are not reconstructed from guesses or memory and presented as contemporaneous data.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "An interrupted sanitation cycle is documented as incomplete instead of being signed complete.",
+      "A missed measurement is recorded according to the missing-data procedure rather than invented later."
+    ],
+    "commonMistakes": [
+      "Hiding deviations because they feel like personal failure.",
+      "Marking work complete simply because the shift ended."
+    ],
+    "practicalApplication": "Review a partially completed work packet, identify deviations and incomplete steps, decide what can continue or must stop, and write the handoff status.",
+    "summary": "Reliable operations depend on truthful status. Technicians document deviations and incomplete work as they occurred and make unresolved conditions visible."
+  }
+}

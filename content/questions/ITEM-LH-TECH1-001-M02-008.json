@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M02-008","version":1,"status":"draft","purpose":"formative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-04","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A held plant group has completed the technician's assigned observations, but no authorized release decision has been documented. What is the best action?","choices":["Keep the group in its controlled status and escalate for authorized release","Return it to production because the technician found no symptoms","Remove the hold label to avoid delaying workflow","Move only the healthiest-looking plants"],"correct":0,"rationale":"Technician observations do not automatically equal release authority. Controlled status remains until the authorized release process is complete.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES"]}
+{
+  "id": "ITEM-LH-TECH1-001-M02-008",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A held plant group has completed the technician's assigned observations, but no authorized release decision has been documented. What is the best action?",
+  "choices": [
+    "Keep the group in its controlled status and escalate for authorized release",
+    "Return it to production because the technician found no symptoms",
+    "Remove the hold label to avoid delaying workflow",
+    "Move only the healthiest-looking plants"
+  ],
+  "correct": 0,
+  "rationale": "Technician observations do not automatically equal release authority. Controlled status remains until the authorized release process is complete.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+  ]
+}

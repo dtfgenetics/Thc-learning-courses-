@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M06-009","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-12","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A shift handoff mentions a plant movement but not the destination room or final count. What is the main weakness?","choices":["The event is not sufficiently reconstructable or verifiable for the incoming shift","The handoff is too short","The cultivar name was not repeated three times","The technician should never mention movements in handoff"],"correct":0,"rationale":"Traceability and handoff both depend on enough identity/event context for another person to understand what occurred and what remains true.","references":["REF-GS1-GLOBAL-TRACEABILITY","REF-HSE-SHIFT-HANDOVER"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-009",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-12",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A shift handoff mentions a plant movement but not the destination room or final count. What is the main weakness?",
+  "choices": [
+    "The event is not sufficiently reconstructable or verifiable for the incoming shift",
+    "The handoff is too short",
+    "The cultivar name was not repeated three times",
+    "The technician should never mention movements in handoff"
+  ],
+  "correct": 0,
+  "rationale": "Traceability and handoff both depend on enough identity/event context for another person to understand what occurred and what remains true.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-HSE-SHIFT-HANDOVER"
+  ]
+}

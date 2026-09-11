@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M03-003","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A supervisor verbally tells a technician to skip a required documented step 'just this once.' What is the strongest response?","choices":["Request the authorized deviation/change process rather than silently bypassing the controlled step","Skip the step because a supervisor said so","Do the step but leave it off the record","Ask another technician to sign for the skipped step"],"correct":0,"rationale":"Controlled procedures should not be silently bypassed. Exceptions should follow an authorized deviation or change process that preserves accountability.","references":["REF-EPA-SOP-QAG6","REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M03-003",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A supervisor verbally tells a technician to skip a required documented step 'just this once.' What is the strongest response?",
+  "choices": [
+    "Request the authorized deviation/change process rather than silently bypassing the controlled step",
+    "Skip the step because a supervisor said so",
+    "Do the step but leave it off the record",
+    "Ask another technician to sign for the skipped step"
+  ],
+  "correct": 0,
+  "rationale": "Controlled procedures should not be silently bypassed. Exceptions should follow an authorized deviation or change process that preserves accountability.",
+  "references": [
+    "REF-EPA-SOP-QAG6",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

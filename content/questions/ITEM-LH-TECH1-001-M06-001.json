@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M06-001","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"understand","difficulty":"easy","type":"scenario","stem":"Which record best supports reconstructability?","choices":["Room 3, irrigation check, 14:20, EC 2.1 mS/cm, technician initials, result recorded at time of observation","2.1","Room okay","Checked earlier; details added later from memory"],"correct":0,"rationale":"A reconstructable record connects the measurement or action to identity, location, time, person, and context rather than leaving an isolated value.","references":["REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-001",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "understand",
+  "difficulty": "easy",
+  "type": "scenario",
+  "stem": "Which record best supports reconstructability?",
+  "choices": [
+    "Room 3, irrigation check, 14:20, EC 2.1 mS/cm, technician initials, result recorded at time of observation",
+    "2.1",
+    "Room okay",
+    "Checked earlier; details added later from memory"
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable record connects the measurement or action to identity, location, time, person, and context rather than leaving an isolated value.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

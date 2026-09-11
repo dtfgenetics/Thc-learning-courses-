@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M04-007","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-08","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"The system shows a batch as destroyed, but the physical waste container is still present. What is the best response?","choices":["Preserve the discrepancy and material/status, report it, and follow the controlled reconciliation process","Dispose of the container immediately so reality matches the system","Delete the destruction record","Relabel the waste as another batch"],"correct":0,"rationale":"Destroying or relabeling the evidence would hide the discrepancy. The record/material conflict should remain visible until resolved.","references":["REF-WHO-DATA-INTEGRITY-2021","REF-GS1-GLOBAL-TRACEABILITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-M04-007",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-08",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "The system shows a batch as destroyed, but the physical waste container is still present. What is the best response?",
+  "choices": [
+    "Preserve the discrepancy and material/status, report it, and follow the controlled reconciliation process",
+    "Dispose of the container immediately so reality matches the system",
+    "Delete the destruction record",
+    "Relabel the waste as another batch"
+  ],
+  "correct": 0,
+  "rationale": "Destroying or relabeling the evidence would hide the discrepancy. The record/material conflict should remain visible until resolved.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}

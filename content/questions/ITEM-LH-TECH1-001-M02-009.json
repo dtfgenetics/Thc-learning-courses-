@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M02-009","version":1,"status":"draft","purpose":"formative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-03","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Which sanitation plan is strongest for a tool shared between rooms?","choices":["Use the room-specific or approved shared-tool process, including cleaning/disinfection at the defined transition points","Wipe the tool only when visible residue appears","Sanitize it once at the beginning of the week","Rinse it with irrigation water between rooms"],"correct":0,"rationale":"A controlled shared-tool process addresses contamination at the points where movement can connect zones; visible residue alone is not a reliable indicator of risk.","references":["REF-UMASS-GREENHOUSE-SANITATION","REF-PSU-GREENHOUSE-DISEASE-SOURCES"]}
+{
+  "id": "ITEM-LH-TECH1-001-M02-009",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which sanitation plan is strongest for a tool shared between rooms?",
+  "choices": [
+    "Use the room-specific or approved shared-tool process, including cleaning/disinfection at the defined transition points",
+    "Wipe the tool only when visible residue appears",
+    "Sanitize it once at the beginning of the week",
+    "Rinse it with irrigation water between rooms"
+  ],
+  "correct": 0,
+  "rationale": "A controlled shared-tool process addresses contamination at the points where movement can connect zones; visible residue alone is not a reliable indicator of risk.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION",
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+  ]
+}

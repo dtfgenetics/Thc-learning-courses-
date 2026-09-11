@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M06-010","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A digital record allows an authorized correction with audit history. What should the technician avoid?","choices":["Deleting or overwriting the original value outside the controlled correction function","Adding the correction reason","Using the system's attribution controls","Recording the corrected value after verification"],"correct":0,"rationale":"Controlled corrections should preserve audit history and attribution; bypassing that mechanism weakens data integrity.","references":["REF-WHO-DATA-INTEGRITY-2021","REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-010",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A digital record allows an authorized correction with audit history. What should the technician avoid?",
+  "choices": [
+    "Deleting or overwriting the original value outside the controlled correction function",
+    "Adding the correction reason",
+    "Using the system's attribution controls",
+    "Recording the corrected value after verification"
+  ],
+  "correct": 0,
+  "rationale": "Controlled corrections should preserve audit history and attribution; bypassing that mechanism weakens data integrity.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

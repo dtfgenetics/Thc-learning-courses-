@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M02-003","version":1,"status":"draft","purpose":"formative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-03","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Which item can reconnect a clean area to a contaminated pathway even when no plant is moved?","choices":["A hose end or shared tool moved between zones without the required sanitation step","A sealed clean notebook kept outside the production area","A newly printed room map","A closed cabinet that never crosses zones"],"correct":0,"rationale":"Greenhouse disease guidance identifies tools, equipment, surfaces, and hose ends as possible routes for moving contamination.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-UMASS-GREENHOUSE-SANITATION"]}
+{
+  "id": "ITEM-LH-TECH1-001-M02-003",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which item can reconnect a clean area to a contaminated pathway even when no plant is moved?",
+  "choices": [
+    "A hose end or shared tool moved between zones without the required sanitation step",
+    "A sealed clean notebook kept outside the production area",
+    "A newly printed room map",
+    "A closed cabinet that never crosses zones"
+  ],
+  "correct": 0,
+  "rationale": "Greenhouse disease guidance identifies tools, equipment, surfaces, and hose ends as possible routes for moving contamination.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ]
+}

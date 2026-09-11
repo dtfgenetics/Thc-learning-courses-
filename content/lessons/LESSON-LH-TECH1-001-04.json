@@ -1,1 +1,62 @@
-{"id":"LESSON-LH-TECH1-001-04","title":"Contamination Routes and Zone Discipline","version":"1.0.0","status":"draft","competencies":["COMP-SPACE-BIOSEC-001"],"learningObjectives":["LO-LH-TECH1-001-03"],"estimatedMinutes":35,"references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-UMASS-GREENHOUSE-SANITATION"],"assessment":null,"content":{"overview":"Biosecurity starts with understanding how pests and plant pathogens can move through people, tools, media, water, containers, carts, plant material and work zones.","vocabulary":[{"term":"biosecurity","definition":"Practices that reduce the introduction and spread of pests and plant pathogens."},{"term":"vector","definition":"A person, tool, material, organism or process that can move contamination between locations."},{"term":"clean-to-dirty workflow","definition":"A movement sequence intended to reduce transfer from higher-risk areas into cleaner areas."}],"sections":[{"title":"Contamination has many routes","body":"Greenhouse disease sources can include plant debris, contaminated soil or media, tools, hose ends, containers, carts, water, incoming plants and worker movement. Clean material can be recontaminated when it contacts dirty surfaces or implements.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-UMASS-GREENHOUSE-SANITATION"]},{"title":"Respect movement controls","body":"Facilities may use clean, general, quarantine or restricted zones. Whatever the naming system, workers follow the specified movement direction, tool/PPE change rules and sanitation steps rather than carrying material backward across a biosecurity boundary.","references":["REF-UMASS-GREENHOUSE-SANITATION"]}],"workedExamples":["A hose nozzle that falls onto a dirty floor is treated according to the sanitation procedure before reuse.","A cart leaving quarantine is cleaned and released under the defined process before entering propagation."],"commonMistakes":["Assuming contamination only moves on visibly diseased plants.","Moving tools between rooms without following zone-specific rules."],"practicalApplication":"Map contamination routes on a mock facility plan and select the safest worker, tool and cart movement sequence using supplied zone rules.","summary":"People, tools, water, media, containers and plants can all move contamination. Zone discipline and controlled movement are core Technician I behaviors."}}
+{
+  "id": "LESSON-LH-TECH1-001-04",
+  "title": "Contamination Routes and Zone Discipline",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-03"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Biosecurity starts with understanding how pests and plant pathogens can move through people, tools, media, water, containers, carts, plant material and work zones.",
+    "vocabulary": [
+      {
+        "term": "biosecurity",
+        "definition": "Practices that reduce the introduction and spread of pests and plant pathogens."
+      },
+      {
+        "term": "vector",
+        "definition": "A person, tool, material, organism or process that can move contamination between locations."
+      },
+      {
+        "term": "clean-to-dirty workflow",
+        "definition": "A movement sequence intended to reduce transfer from higher-risk areas into cleaner areas."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Contamination has many routes",
+        "body": "Greenhouse disease sources can include plant debris, contaminated soil or media, tools, hose ends, containers, carts, water, incoming plants and worker movement. Clean material can be recontaminated when it contacts dirty surfaces or implements.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "title": "Respect movement controls",
+        "body": "Facilities may use clean, general, quarantine or restricted zones. Whatever the naming system, workers follow the specified movement direction, tool/PPE change rules and sanitation steps rather than carrying material backward across a biosecurity boundary.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A hose nozzle that falls onto a dirty floor is treated according to the sanitation procedure before reuse.",
+      "A cart leaving quarantine is cleaned and released under the defined process before entering propagation."
+    ],
+    "commonMistakes": [
+      "Assuming contamination only moves on visibly diseased plants.",
+      "Moving tools between rooms without following zone-specific rules."
+    ],
+    "practicalApplication": "Map contamination routes on a mock facility plan and select the safest worker, tool and cart movement sequence using supplied zone rules.",
+    "summary": "People, tools, water, media, containers and plants can all move contamination. Zone discipline and controlled movement are core Technician I behaviors."
+  }
+}

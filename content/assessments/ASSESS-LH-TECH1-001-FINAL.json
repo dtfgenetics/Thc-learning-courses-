@@ -1,27 +1,116 @@
 {
-  "id":"ASSESS-LH-TECH1-001-FINAL",
-  "title":"Safety, Responsible Practice & Cultivation Workflows — Course Assessment",
-  "version":"1.0.0",
-  "status":"draft",
-  "purpose":"summative",
-  "competencies":["COMP-SAFETY-WORK-001","COMP-SPACE-BIOSEC-001","COMP-PRO-SOP-001","COMP-PRO-QA-001","COMP-CULT-TRACEABILITY-001","COMP-CULT-EQUIPMENT-CARE-001"],
-  "objectives":["LO-LH-TECH1-001-01","LO-LH-TECH1-001-02","LO-LH-TECH1-001-03","LO-LH-TECH1-001-04","LO-LH-TECH1-001-05","LO-LH-TECH1-001-06","LO-LH-TECH1-001-07","LO-LH-TECH1-001-08","LO-LH-TECH1-001-09","LO-LH-TECH1-001-10","LO-LH-TECH1-001-11","LO-LH-TECH1-001-12"],
-  "items":["ITEM-LH-TECH1-001-001","ITEM-LH-TECH1-001-002","ITEM-LH-TECH1-001-003","ITEM-LH-TECH1-001-004","ITEM-LH-TECH1-001-005","ITEM-LH-TECH1-001-006","ITEM-LH-TECH1-001-007","ITEM-LH-TECH1-001-008","ITEM-LH-TECH1-001-009","ITEM-LH-TECH1-001-010","ITEM-LH-TECH1-001-011","ITEM-LH-TECH1-001-012","ITEM-LH-TECH1-001-013","ITEM-LH-TECH1-001-014","ITEM-LH-TECH1-001-015","ITEM-LH-TECH1-001-016","ITEM-LH-TECH1-001-017","ITEM-LH-TECH1-001-018","ITEM-LH-TECH1-001-019","ITEM-LH-TECH1-001-020","ITEM-LH-TECH1-001-021","ITEM-LH-TECH1-001-022","ITEM-LH-TECH1-001-023","ITEM-LH-TECH1-001-024","ITEM-LH-TECH1-001-025","ITEM-LH-TECH1-001-026","ITEM-LH-TECH1-001-027","ITEM-LH-TECH1-001-028","ITEM-LH-TECH1-001-029","ITEM-LH-TECH1-001-030","ITEM-LH-TECH1-001-031","ITEM-LH-TECH1-001-032","ITEM-LH-TECH1-001-033","ITEM-LH-TECH1-001-034","ITEM-LH-TECH1-001-035","ITEM-LH-TECH1-001-036"],
-  "passingScorePercent":80,
-  "maxAttempts":null,
-  "cooldownHours":0,
-  "feedbackMode":"post-attempt-domain-level",
-  "totalItems":36,
-  "randomizeItems":true,
-  "randomizeChoices":true,
-  "blueprint":[
-    {"competency":"COMP-SAFETY-WORK-001","items":9,"cognitiveTarget":"Essential knowledge plus applied hazard, PPE, HazCom and escalation decisions"},
-    {"competency":"COMP-SPACE-BIOSEC-001","items":6,"cognitiveTarget":"Applied sanitation, contamination-route, quarantine and breach decisions"},
-    {"competency":"COMP-PRO-SOP-001","items":5,"cognitiveTarget":"Controlled instruction, authority, deviation and handoff decisions"},
-    {"competency":"COMP-CULT-TRACEABILITY-001","items":7,"cognitiveTarget":"Applied identity, movement, inventory, waste and discrepancy reasoning"},
-    {"competency":"COMP-CULT-EQUIPMENT-CARE-001","items":4,"cognitiveTarget":"Operator-care boundaries, readiness checks and fault escalation"},
-    {"competency":"COMP-PRO-QA-001","items":5,"cognitiveTarget":"Data-integrity, documentation and reconstructable-record decisions"}
+  "id": "ASSESS-LH-TECH1-001-FINAL",
+  "title": "Safety, Responsible Practice & Cultivation Workflows — Course Assessment",
+  "version": "1.0.0",
+  "status": "published",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
   ],
-  "itemSelection":{"minimumActiveItemsPerCompetency":1,"targetBankItemsPerCompetency":12,"requireReferenceBackedItems":true,"requireHumanAssessmentReview":true},
-  "accommodations":{"allowExtendedTime":true,"allowAlternativeAccessiblePresentation":true}
+  "objectives": [
+    "LO-LH-TECH1-001-01",
+    "LO-LH-TECH1-001-02",
+    "LO-LH-TECH1-001-03",
+    "LO-LH-TECH1-001-04",
+    "LO-LH-TECH1-001-05",
+    "LO-LH-TECH1-001-06",
+    "LO-LH-TECH1-001-07",
+    "LO-LH-TECH1-001-08",
+    "LO-LH-TECH1-001-09",
+    "LO-LH-TECH1-001-10",
+    "LO-LH-TECH1-001-11",
+    "LO-LH-TECH1-001-12"
+  ],
+  "items": [
+    "ITEM-LH-TECH1-001-001",
+    "ITEM-LH-TECH1-001-002",
+    "ITEM-LH-TECH1-001-003",
+    "ITEM-LH-TECH1-001-004",
+    "ITEM-LH-TECH1-001-005",
+    "ITEM-LH-TECH1-001-006",
+    "ITEM-LH-TECH1-001-007",
+    "ITEM-LH-TECH1-001-008",
+    "ITEM-LH-TECH1-001-009",
+    "ITEM-LH-TECH1-001-010",
+    "ITEM-LH-TECH1-001-011",
+    "ITEM-LH-TECH1-001-012",
+    "ITEM-LH-TECH1-001-013",
+    "ITEM-LH-TECH1-001-014",
+    "ITEM-LH-TECH1-001-015",
+    "ITEM-LH-TECH1-001-016",
+    "ITEM-LH-TECH1-001-017",
+    "ITEM-LH-TECH1-001-018",
+    "ITEM-LH-TECH1-001-019",
+    "ITEM-LH-TECH1-001-020",
+    "ITEM-LH-TECH1-001-021",
+    "ITEM-LH-TECH1-001-022",
+    "ITEM-LH-TECH1-001-023",
+    "ITEM-LH-TECH1-001-024",
+    "ITEM-LH-TECH1-001-025",
+    "ITEM-LH-TECH1-001-026",
+    "ITEM-LH-TECH1-001-027",
+    "ITEM-LH-TECH1-001-028",
+    "ITEM-LH-TECH1-001-029",
+    "ITEM-LH-TECH1-001-030",
+    "ITEM-LH-TECH1-001-031",
+    "ITEM-LH-TECH1-001-032",
+    "ITEM-LH-TECH1-001-033",
+    "ITEM-LH-TECH1-001-034",
+    "ITEM-LH-TECH1-001-035",
+    "ITEM-LH-TECH1-001-036"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 36,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-SAFETY-WORK-001",
+      "items": 9,
+      "cognitiveTarget": "Essential knowledge plus applied hazard, PPE, HazCom and escalation decisions"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 6,
+      "cognitiveTarget": "Applied sanitation, contamination-route, quarantine and breach decisions"
+    },
+    {
+      "competency": "COMP-PRO-SOP-001",
+      "items": 5,
+      "cognitiveTarget": "Controlled instruction, authority, deviation and handoff decisions"
+    },
+    {
+      "competency": "COMP-CULT-TRACEABILITY-001",
+      "items": 7,
+      "cognitiveTarget": "Applied identity, movement, inventory, waste and discrepancy reasoning"
+    },
+    {
+      "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+      "items": 4,
+      "cognitiveTarget": "Operator-care boundaries, readiness checks and fault escalation"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 5,
+      "cognitiveTarget": "Data-integrity, documentation and reconstructable-record decisions"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 1,
+    "targetBankItemsPerCompetency": 12,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  }
 }

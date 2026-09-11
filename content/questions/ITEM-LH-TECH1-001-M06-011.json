@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M06-011","version":1,"status":"draft","purpose":"formative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-12","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"At shift change, there is an unresolved wet-floor hazard near equipment, an identity mismatch, and a routine pruning task still incomplete. What should be emphasized first in the handoff?","choices":["The unresolved safety hazard and identity-control issue before routine unfinished production work","The pruning task because it is on the schedule","Only the identity mismatch","Only tasks that were completed"],"correct":0,"rationale":"Handoff should prioritize safety-critical and control-critical open conditions so the incoming shift can manage immediate risk before routine production work.","references":["REF-HSE-SHIFT-HANDOVER","REF-NIOSH-CANNABIS-HAZARDS-2024"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-011",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-12",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "At shift change, there is an unresolved wet-floor hazard near equipment, an identity mismatch, and a routine pruning task still incomplete. What should be emphasized first in the handoff?",
+  "choices": [
+    "The unresolved safety hazard and identity-control issue before routine unfinished production work",
+    "The pruning task because it is on the schedule",
+    "Only the identity mismatch",
+    "Only tasks that were completed"
+  ],
+  "correct": 0,
+  "rationale": "Handoff should prioritize safety-critical and control-critical open conditions so the incoming shift can manage immediate risk before routine production work.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ]
+}

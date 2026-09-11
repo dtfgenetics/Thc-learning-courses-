@@ -1,1 +1,62 @@
-{"id":"LESSON-LH-TECH1-001-01","title":"Hazard Recognition and Control Boundaries","version":"1.0.0","status":"draft","competencies":["COMP-SAFETY-WORK-001"],"learningObjectives":["LO-LH-TECH1-001-01"],"estimatedMinutes":35,"references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-OSHA-1910-22-WALKING"],"assessment":null,"content":{"overview":"Technician I workers must recognize common cultivation hazards, apply routine controls within their authority, and stop or escalate work when a condition cannot be controlled safely.","vocabulary":[{"term":"hazard","definition":"A source or condition with the potential to cause injury, illness, damage, or loss."},{"term":"risk","definition":"The combination of likelihood and severity of harm from a hazard."},{"term":"stop-work","definition":"A deliberate pause in work when conditions are unsafe, prohibited, or outside the worker's authority."}],"sections":[{"title":"Recognize the real work environment","body":"NIOSH identifies chemical, biological, ergonomic, physical, electrical, fire, cut, slip, trip, fall, heat, noise and ultraviolet-light hazards in cannabis work. A technician should notice obvious hazards instead of normalizing them because they are common.","references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-OSHA-1910-22-WALKING"]},{"title":"Control or escalate","body":"The preferred response is to remove or reduce a hazard through the strongest authorized control. Workers should not bypass safeguards or improvise repairs. If the assigned procedure cannot control the hazard, the correct response is to stop or isolate the task where authorized and escalate.","references":["REF-NIOSH-CANNABIS-HAZARDS-2024"]}],"workedExamples":["A hose crossing a main aisle is rerouted or secured under procedure rather than left as a repeated trip hazard.","Visible electrical damage near a wet area is taken out of use and escalated rather than investigated live by an unqualified worker."],"commonMistakes":["Treating a familiar hazard as acceptable because no injury has occurred yet.","Attempting a repair outside training or authorization."],"practicalApplication":"Inspect a mock cultivation room, identify hazards, and classify each response as routine control, stop/isolate, or escalation.","summary":"Safe cultivation work requires hazard recognition, proportionate control, and clear authority boundaries. Correct escalation is part of competent performance."}}
+{
+  "id": "LESSON-LH-TECH1-001-01",
+  "title": "Hazard Recognition and Control Boundaries",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-SAFETY-WORK-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-01"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-22-WALKING"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Technician I workers must recognize common cultivation hazards, apply routine controls within their authority, and stop or escalate work when a condition cannot be controlled safely.",
+    "vocabulary": [
+      {
+        "term": "hazard",
+        "definition": "A source or condition with the potential to cause injury, illness, damage, or loss."
+      },
+      {
+        "term": "risk",
+        "definition": "The combination of likelihood and severity of harm from a hazard."
+      },
+      {
+        "term": "stop-work",
+        "definition": "A deliberate pause in work when conditions are unsafe, prohibited, or outside the worker's authority."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Recognize the real work environment",
+        "body": "NIOSH identifies chemical, biological, ergonomic, physical, electrical, fire, cut, slip, trip, fall, heat, noise and ultraviolet-light hazards in cannabis work. A technician should notice obvious hazards instead of normalizing them because they are common.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING"
+        ]
+      },
+      {
+        "title": "Control or escalate",
+        "body": "The preferred response is to remove or reduce a hazard through the strongest authorized control. Workers should not bypass safeguards or improvise repairs. If the assigned procedure cannot control the hazard, the correct response is to stop or isolate the task where authorized and escalate.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A hose crossing a main aisle is rerouted or secured under procedure rather than left as a repeated trip hazard.",
+      "Visible electrical damage near a wet area is taken out of use and escalated rather than investigated live by an unqualified worker."
+    ],
+    "commonMistakes": [
+      "Treating a familiar hazard as acceptable because no injury has occurred yet.",
+      "Attempting a repair outside training or authorization."
+    ],
+    "practicalApplication": "Inspect a mock cultivation room, identify hazards, and classify each response as routine control, stop/isolate, or escalation.",
+    "summary": "Safe cultivation work requires hazard recognition, proportionate control, and clear authority boundaries. Correct escalation is part of competent performance."
+  }
+}

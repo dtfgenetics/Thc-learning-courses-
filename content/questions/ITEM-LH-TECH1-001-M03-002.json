@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M03-002","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A work order tells the technician to perform a task, but the referenced SOP contains a prerequisite that has not been met. What is the best response?","choices":["Stop and resolve the missing prerequisite through the authorized process before continuing","Ignore the prerequisite because the work order is newer","Complete the task and document the problem later","Ask a coworker whether the prerequisite usually matters"],"correct":0,"rationale":"A work order does not erase controlled prerequisites. The conflict or unmet condition should be resolved before execution.","references":["REF-EPA-SOP-QAG6"]}
+{
+  "id": "ITEM-LH-TECH1-001-M03-002",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A work order tells the technician to perform a task, but the referenced SOP contains a prerequisite that has not been met. What is the best response?",
+  "choices": [
+    "Stop and resolve the missing prerequisite through the authorized process before continuing",
+    "Ignore the prerequisite because the work order is newer",
+    "Complete the task and document the problem later",
+    "Ask a coworker whether the prerequisite usually matters"
+  ],
+  "correct": 0,
+  "rationale": "A work order does not erase controlled prerequisites. The conflict or unmet condition should be resolved before execution.",
+  "references": [
+    "REF-EPA-SOP-QAG6"
+  ]
+}

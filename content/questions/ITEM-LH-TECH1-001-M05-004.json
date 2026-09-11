@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M05-004","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-EQUIPMENT-CARE-001","objective":"LO-LH-TECH1-001-10","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A pump alarm appears. Tank level is normal, no visible leak is present, and the assigned zone has no flow. Which maintenance note is strongest?","choices":["Pump P-12 alarmed at 14:10; tank level normal; no visible leak; Zone 3 no flow; operator checks complete; task affected; maintenance notified","Pump is broken","Probably a bad motor; replace it","I reset it several times but did not record when"],"correct":0,"rationale":"A useful escalation separates observable facts, permitted checks, time, impact, and notification from unsupported diagnosis.","references":["REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M05-004",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-001-10",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A pump alarm appears. Tank level is normal, no visible leak is present, and the assigned zone has no flow. Which maintenance note is strongest?",
+  "choices": [
+    "Pump P-12 alarmed at 14:10; tank level normal; no visible leak; Zone 3 no flow; operator checks complete; task affected; maintenance notified",
+    "Pump is broken",
+    "Probably a bad motor; replace it",
+    "I reset it several times but did not record when"
+  ],
+  "correct": 0,
+  "rationale": "A useful escalation separates observable facts, permitted checks, time, impact, and notification from unsupported diagnosis.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

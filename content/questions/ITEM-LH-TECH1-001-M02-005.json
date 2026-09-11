@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M02-005","version":1,"status":"draft","purpose":"formative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-04","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"What is the key difference between plant quarantine and a pesticide restricted-entry interval?","choices":["Quarantine manages biological/material movement risk, while restricted-entry is a worker-protection control tied to pesticide use and applicable requirements","They are the same control with different names","Restricted-entry applies only to visibly diseased plants","Quarantine is always a legal pesticide requirement"],"correct":0,"rationale":"The controls can coexist but serve different purposes. Restricted-entry requirements are tied to pesticide worker protection; quarantine is a biosecurity/material status control.","references":["REF-EPA-WPS-APPLICATION-RESTRICTIONS","REF-PSU-GREENHOUSE-DISEASE-SOURCES"]}
+{
+  "id": "ITEM-LH-TECH1-001-M02-005",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What is the key difference between plant quarantine and a pesticide restricted-entry interval?",
+  "choices": [
+    "Quarantine manages biological/material movement risk, while restricted-entry is a worker-protection control tied to pesticide use and applicable requirements",
+    "They are the same control with different names",
+    "Restricted-entry applies only to visibly diseased plants",
+    "Quarantine is always a legal pesticide requirement"
+  ],
+  "correct": 0,
+  "rationale": "The controls can coexist but serve different purposes. Restricted-entry requirements are tied to pesticide worker protection; quarantine is a biosecurity/material status control.",
+  "references": [
+    "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+  ]
+}

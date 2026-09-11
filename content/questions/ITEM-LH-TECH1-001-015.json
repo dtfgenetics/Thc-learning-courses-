@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-015","version":1,"status":"draft","purpose":"summative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-04","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A held batch looks completely healthy. Who should release the hold?","choices":["Any technician who inspected it","The worker who needs the space","The role authorized by the controlled procedure","Whoever created the original label"],"correct":2,"rationale":"Visual appearance does not replace the controlled release decision; hold release belongs to the authorized role.","references":["REF-UMASS-GREENHOUSE-SANITATION"]}
+{
+  "id": "ITEM-LH-TECH1-001-015",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A held batch looks completely healthy. Who should release the hold?",
+  "choices": [
+    "Any technician who inspected it",
+    "The worker who needs the space",
+    "The role authorized by the controlled procedure",
+    "Whoever created the original label"
+  ],
+  "correct": 2,
+  "rationale": "Visual appearance does not replace the controlled release decision; hold release belongs to the authorized role.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ]
+}

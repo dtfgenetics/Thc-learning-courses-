@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M06-007","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"Which statement correctly separates observation from interpretation?","choices":["Observation: leaves in Row B are wilted; interpretation: irrigation or root-zone stress may be involved, not yet confirmed","Observation: plants are overwatered","Observation: roots are diseased because leaves wilted","Observation: sensor is wrong because the reading is unexpected"],"correct":0,"rationale":"Reliable records distinguish what was actually observed from hypotheses or diagnoses that require additional evidence.","references":["REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-007",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which statement correctly separates observation from interpretation?",
+  "choices": [
+    "Observation: leaves in Row B are wilted; interpretation: irrigation or root-zone stress may be involved, not yet confirmed",
+    "Observation: plants are overwatered",
+    "Observation: roots are diseased because leaves wilted",
+    "Observation: sensor is wrong because the reading is unexpected"
+  ],
+  "correct": 0,
+  "rationale": "Reliable records distinguish what was actually observed from hypotheses or diagnoses that require additional evidence.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

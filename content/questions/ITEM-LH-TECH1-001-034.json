@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-034","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-12","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"Which handoff is strongest?","choices":["Room 2 okay","Finished most stuff","Irrigation problem maybe","Zone 2 emitters 5–8 showed no flow at 16:20; operator checks completed; maintenance ticket M-44 opened; plants remain in place; next shift verify response before next event"],"correct":3,"rationale":"Precise handoffs identify location, observation, time, actions, open status and next step.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-034",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-12",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which handoff is strongest?",
+  "choices": [
+    "Room 2 okay",
+    "Finished most stuff",
+    "Irrigation problem maybe",
+    "Zone 2 emitters 5–8 showed no flow at 16:20; operator checks completed; maintenance ticket M-44 opened; plants remain in place; next shift verify response before next event"
+  ],
+  "correct": 3,
+  "rationale": "Precise handoffs identify location, observation, time, actions, open status and next step.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

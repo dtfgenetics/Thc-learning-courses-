@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M05-010","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-EQUIPMENT-CARE-001","objective":"LO-LH-TECH1-001-10","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A small leak appears at a connection during operation. The operator SOP allows shutdown and external inspection but not component replacement. What should the technician do?","choices":["Use the permitted shutdown/inspection steps, document the leak, and escalate repair beyond operator scope","Tighten or replace components until the leak stops regardless of authorization","Keep running because the leak is small","Wrap the connection temporarily with any available material"],"correct":0,"rationale":"The technician should act within the operator procedure and escalate repair beyond that boundary.","references":["REF-NIOSH-CANNABIS-HAZARDS-2024"]}
+{
+  "id": "ITEM-LH-TECH1-001-M05-010",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-001-10",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A small leak appears at a connection during operation. The operator SOP allows shutdown and external inspection but not component replacement. What should the technician do?",
+  "choices": [
+    "Use the permitted shutdown/inspection steps, document the leak, and escalate repair beyond operator scope",
+    "Tighten or replace components until the leak stops regardless of authorization",
+    "Keep running because the leak is small",
+    "Wrap the connection temporarily with any available material"
+  ],
+  "correct": 0,
+  "rationale": "The technician should act within the operator procedure and escalate repair beyond that boundary.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ]
+}

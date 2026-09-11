@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-024","version":1,"status":"draft","purpose":"summative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-07","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"Which information is most important for a vendor-neutral movement record?","choices":["Only the cultivar nickname","Only the destination room","Only the worker's initials","Material identity plus source, destination, applicable quantity/count, time, and responsible person/system"],"correct":3,"rationale":"These fields support reconstruction independent of a specific software vendor.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-024",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-07",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which information is most important for a vendor-neutral movement record?",
+  "choices": [
+    "Only the cultivar nickname",
+    "Only the destination room",
+    "Only the worker's initials",
+    "Material identity plus source, destination, applicable quantity/count, time, and responsible person/system"
+  ],
+  "correct": 3,
+  "rationale": "These fields support reconstruction independent of a specific software vendor.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

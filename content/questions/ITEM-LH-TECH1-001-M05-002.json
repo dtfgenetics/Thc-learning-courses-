@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-M05-002","version":1,"status":"draft","purpose":"formative","competency":"COMP-CULT-EQUIPMENT-CARE-001","objective":"LO-LH-TECH1-001-09","bloomLevel":"apply","difficulty":"easy","type":"scenario","stem":"Which action best fits a routine operator pre-use check?","choices":["Verify asset identity, visible condition, guards, leaks, connections, and required readiness status","Open an electrical cabinet to inspect wiring","Bypass an interlock to verify motion","Disassemble a pressurized filter housing"],"correct":0,"rationale":"Operator pre-use checks focus on assigned observable readiness conditions. Opening protected systems or bypassing safeguards moves into servicing.","references":["REF-OSHA-MACHINE-GUARDING","REF-NIOSH-CANNABIS-HAZARDS-2024"]}
+{
+  "id": "ITEM-LH-TECH1-001-M05-002",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-001-09",
+  "bloomLevel": "apply",
+  "difficulty": "easy",
+  "type": "scenario",
+  "stem": "Which action best fits a routine operator pre-use check?",
+  "choices": [
+    "Verify asset identity, visible condition, guards, leaks, connections, and required readiness status",
+    "Open an electrical cabinet to inspect wiring",
+    "Bypass an interlock to verify motion",
+    "Disassemble a pressurized filter housing"
+  ],
+  "correct": 0,
+  "rationale": "Operator pre-use checks focus on assigned observable readiness conditions. Opening protected systems or bypassing safeguards moves into servicing.",
+  "references": [
+    "REF-OSHA-MACHINE-GUARDING",
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ]
+}

@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-018","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A routine equipment check is allowed, but the next troubleshooting step requires opening a guarded panel. What should Technician I do?","choices":["Open it if the alarm is urgent","Stop at the authorized boundary and refer the condition to qualified personnel","Ask another technician to open it","Disable the alarm and continue"],"correct":1,"rationale":"Technician I covers routine operator checks, not protected servicing or hazardous-energy work outside authorization.","references":["REF-OSHA-1910-147-LOTO"]}
+{
+  "id": "ITEM-LH-TECH1-001-018",
+  "version": 1,
+  "status": "active",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A routine equipment check is allowed, but the next troubleshooting step requires opening a guarded panel. What should Technician I do?",
+  "choices": [
+    "Open it if the alarm is urgent",
+    "Stop at the authorized boundary and refer the condition to qualified personnel",
+    "Ask another technician to open it",
+    "Disable the alarm and continue"
+  ],
+  "correct": 1,
+  "rationale": "Technician I covers routine operator checks, not protected servicing or hazardous-energy work outside authorization.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

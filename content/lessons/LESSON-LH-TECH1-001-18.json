@@ -1,1 +1,86 @@
-{"id":"LESSON-LH-TECH1-001-18","title":"Integrated Technician Workflow Case","version":"1.0.0","status":"draft","competencies":["COMP-SAFETY-WORK-001","COMP-SPACE-BIOSEC-001","COMP-PRO-SOP-001","COMP-PRO-QA-001","COMP-CULT-TRACEABILITY-001","COMP-CULT-EQUIPMENT-CARE-001"],"learningObjectives":["LO-LH-TECH1-001-01","LO-LH-TECH1-001-02","LO-LH-TECH1-001-03","LO-LH-TECH1-001-04","LO-LH-TECH1-001-05","LO-LH-TECH1-001-06","LO-LH-TECH1-001-07","LO-LH-TECH1-001-08","LO-LH-TECH1-001-09","LO-LH-TECH1-001-10","LO-LH-TECH1-001-11","LO-LH-TECH1-001-12"],"estimatedMinutes":60,"references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-OSHA-1910-1200-HAZCOM","REF-OSHA-1910-132-PPE","REF-EPA-WPS","REF-UMASS-GREENHOUSE-SANITATION","REF-PSU-GREENHOUSE-DISEASE-SOURCES","REF-MHRA-GXP-DATA-INTEGRITY","REF-OSHA-1910-147-LOTO"],"assessment":null,"content":{"overview":"The final lesson combines safety, biosecurity, controlled instructions, traceability, equipment care, records and handoff into one realistic Technician I workflow.","vocabulary":[{"term":"work packet","definition":"The collection of current instructions, assignments, records, identifiers and supporting information used to complete a task or shift."},{"term":"triage","definition":"Prioritization of conditions so urgent safety, biosecurity, identity or process risks are addressed first."},{"term":"integrated performance","definition":"Demonstrating multiple competencies together in a realistic workflow rather than as isolated facts."}],"sections":[{"title":"Read the whole situation before acting","body":"The case contains competing priorities: a planned movement, a safety concern, a sanitation entry requirement, a hold, an inventory mismatch, an equipment alarm and incomplete prior-shift documentation. Learners identify which conditions block downstream work before beginning the first task on the list.","references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-UMASS-GREENHOUSE-SANITATION","REF-MHRA-GXP-DATA-INTEGRITY"]},{"title":"Sequence, document and hand off","body":"The learner follows supplied SOPs, completes routine actions within authority, preserves identity, records what actually occurs and escalates unresolved conditions. The case is complete only when the resulting records show what was done, what could not be done, why, who was notified and what the next shift must address.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-OSHA-1910-147-LOTO"]}],"workedExamples":["A plant move is delayed because the destination is held and one identifier mismatches; both controls are resolved through the proper authorities before movement.","An equipment alarm receives only the permitted external check and a maintenance-ready escalation, not an unauthorized repair."],"commonMistakes":["Starting the first assigned task before checking restrictions and identity.","Treating documentation as optional because the physical work was completed."],"practicalApplication":"Complete the integrated course case by prioritizing a work packet, identifying hazards and restrictions, preparing PPE and sanitation, resolving or escalating identity issues, performing an operator-level equipment check, documenting a deviation and writing the final handoff.","summary":"Course 1 culminates in integrated performance: work safely, protect biosecurity and identity, follow controlled instructions, stay within authority, create trustworthy records and communicate unresolved conditions clearly."}}
+{
+  "id": "LESSON-LH-TECH1-001-18",
+  "title": "Integrated Technician Workflow Case",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-01",
+    "LO-LH-TECH1-001-02",
+    "LO-LH-TECH1-001-03",
+    "LO-LH-TECH1-001-04",
+    "LO-LH-TECH1-001-05",
+    "LO-LH-TECH1-001-06",
+    "LO-LH-TECH1-001-07",
+    "LO-LH-TECH1-001-08",
+    "LO-LH-TECH1-001-09",
+    "LO-LH-TECH1-001-10",
+    "LO-LH-TECH1-001-11",
+    "LO-LH-TECH1-001-12"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-1200-HAZCOM",
+    "REF-OSHA-1910-132-PPE",
+    "REF-EPA-WPS",
+    "REF-UMASS-GREENHOUSE-SANITATION",
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-OSHA-1910-147-LOTO"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The final lesson combines safety, biosecurity, controlled instructions, traceability, equipment care, records and handoff into one realistic Technician I workflow.",
+    "vocabulary": [
+      {
+        "term": "work packet",
+        "definition": "The collection of current instructions, assignments, records, identifiers and supporting information used to complete a task or shift."
+      },
+      {
+        "term": "triage",
+        "definition": "Prioritization of conditions so urgent safety, biosecurity, identity or process risks are addressed first."
+      },
+      {
+        "term": "integrated performance",
+        "definition": "Demonstrating multiple competencies together in a realistic workflow rather than as isolated facts."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Read the whole situation before acting",
+        "body": "The case contains competing priorities: a planned movement, a safety concern, a sanitation entry requirement, a hold, an inventory mismatch, an equipment alarm and incomplete prior-shift documentation. Learners identify which conditions block downstream work before beginning the first task on the list.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Sequence, document and hand off",
+        "body": "The learner follows supplied SOPs, completes routine actions within authority, preserves identity, records what actually occurs and escalates unresolved conditions. The case is complete only when the resulting records show what was done, what could not be done, why, who was notified and what the next shift must address.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A plant move is delayed because the destination is held and one identifier mismatches; both controls are resolved through the proper authorities before movement.",
+      "An equipment alarm receives only the permitted external check and a maintenance-ready escalation, not an unauthorized repair."
+    ],
+    "commonMistakes": [
+      "Starting the first assigned task before checking restrictions and identity.",
+      "Treating documentation as optional because the physical work was completed."
+    ],
+    "practicalApplication": "Complete the integrated course case by prioritizing a work packet, identifying hazards and restrictions, preparing PPE and sanitation, resolving or escalating identity issues, performing an operator-level equipment check, documenting a deviation and writing the final handoff.",
+    "summary": "Course 1 culminates in integrated performance: work safely, protect biosecurity and identity, follow controlled instructions, stay within authority, create trustworthy records and communicate unresolved conditions clearly."
+  }
+}

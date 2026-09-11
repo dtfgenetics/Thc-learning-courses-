@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M01-005","version":1,"status":"draft","purpose":"formative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-01","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A life-safety alarm activates in a carbon-dioxide-enriched room. The technician is not assigned emergency-response duties. What is the best action?","choices":["Follow the posted emergency response and do not enter just to inspect the controller","Enter briefly to see whether the room feels normal","Silence the alarm and continue work","Ask another technician to enter first"],"correct":0,"rationale":"A life-safety alarm should trigger the facility emergency process. An unassigned technician should not enter to diagnose the alarm.","references":["REF-NIOSH-CANNABIS-HAZARDS-2024"]}
+{
+  "id": "ITEM-LH-TECH1-001-M01-005",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A life-safety alarm activates in a carbon-dioxide-enriched room. The technician is not assigned emergency-response duties. What is the best action?",
+  "choices": [
+    "Follow the posted emergency response and do not enter just to inspect the controller",
+    "Enter briefly to see whether the room feels normal",
+    "Silence the alarm and continue work",
+    "Ask another technician to enter first"
+  ],
+  "correct": 0,
+  "rationale": "A life-safety alarm should trigger the facility emergency process. An unassigned technician should not enter to diagnose the alarm.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ]
+}

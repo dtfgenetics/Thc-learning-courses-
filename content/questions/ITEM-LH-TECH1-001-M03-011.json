@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M03-011","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A controlled procedure and equipment manual disagree about a safety-critical operating step. What should Technician I do?","choices":["Stop and escalate the conflict for authorized resolution before operating the equipment","Choose the document with the newest print date","Follow whichever instruction is more convenient","Average the two instructions"],"correct":0,"rationale":"A safety-critical conflict between controlled sources requires authorized resolution; Technician I should not decide by convenience.","references":["REF-EPA-SOP-QAG6"]}
+{
+  "id": "ITEM-LH-TECH1-001-M03-011",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A controlled procedure and equipment manual disagree about a safety-critical operating step. What should Technician I do?",
+  "choices": [
+    "Stop and escalate the conflict for authorized resolution before operating the equipment",
+    "Choose the document with the newest print date",
+    "Follow whichever instruction is more convenient",
+    "Average the two instructions"
+  ],
+  "correct": 0,
+  "rationale": "A safety-critical conflict between controlled sources requires authorized resolution; Technician I should not decide by convenience.",
+  "references": [
+    "REF-EPA-SOP-QAG6"
+  ]
+}

@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-M06-006","version":1,"status":"draft","purpose":"formative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A technician did not observe a required value because the sensor was unavailable. What should the record contain?","choices":["The fact that the value was unavailable/missing, the reason if known, actions taken, and required escalation—not a guessed number","The expected value based on yesterday","A copied value from a nearby room","A blank field with no explanation"],"correct":0,"rationale":"Missing data should remain visible and contextualized rather than replaced with guesses that make the record appear complete.","references":["REF-WHO-DATA-INTEGRITY-2021"]}
+{
+  "id": "ITEM-LH-TECH1-001-M06-006",
+  "version": 1,
+  "status": "active",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A technician did not observe a required value because the sensor was unavailable. What should the record contain?",
+  "choices": [
+    "The fact that the value was unavailable/missing, the reason if known, actions taken, and required escalation—not a guessed number",
+    "The expected value based on yesterday",
+    "A copied value from a nearby room",
+    "A blank field with no explanation"
+  ],
+  "correct": 0,
+  "rationale": "Missing data should remain visible and contextualized rather than replaced with guesses that make the record appear complete.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ]
+}

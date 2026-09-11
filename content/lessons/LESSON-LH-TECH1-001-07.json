@@ -1,1 +1,60 @@
-{"id":"LESSON-LH-TECH1-001-07","title":"Reading Controlled SOPs and Work Orders","version":"1.0.0","status":"draft","competencies":["COMP-PRO-SOP-001"],"learningObjectives":["LO-LH-TECH1-001-05"],"estimatedMinutes":35,"references":["REF-MHRA-GXP-DATA-INTEGRITY"],"assessment":null,"content":{"overview":"Technician I workers must identify the current controlled instruction, reconcile it with the specific work order, and recognize acceptance criteria, exceptions and escalation points before acting.","vocabulary":[{"term":"SOP","definition":"A controlled standard operating procedure describing how an activity is performed within its defined scope."},{"term":"work order","definition":"An instruction assigning a specific task, location, material, timing or quantity under a controlled procedure."},{"term":"acceptance criteria","definition":"Defined conditions that indicate whether a step, result or completed task meets requirements."}],"sections":[{"title":"Use the current instruction","body":"A technician verifies the current approved SOP, work order or digital instruction supplied by the facility. Memory does not replace the controlled version when the task is governed by one.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},{"title":"Reconcile procedure and assignment","body":"The SOP defines the standard method while the work order applies it to a specific room, batch, quantity or shift. A conflict between the two, or between the instructions and actual conditions, is escalated rather than resolved by choosing the more convenient instruction.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}],"workedExamples":["An older printed SOP is found beside a current controlled digital revision; the technician follows document-control procedure before working.","A room assignment conflicts with the listed batch identifier, so movement pauses until the mismatch is resolved."],"commonMistakes":["Following an obsolete procedure because it is familiar.","Ignoring acceptance criteria once the physical task appears complete."],"practicalApplication":"Review a mock SOP and work order, identify prerequisites, steps, acceptance criteria, required records and escalation points, and flag a planted revision conflict.","summary":"Controlled work begins with the right instruction. Technicians verify current procedures, reconcile the assignment and escalate conflicts rather than improvising."}}
+{
+  "id": "LESSON-LH-TECH1-001-07",
+  "title": "Reading Controlled SOPs and Work Orders",
+  "version": "1.0.0",
+  "status": "published",
+  "competencies": [
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-05"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Technician I workers must identify the current controlled instruction, reconcile it with the specific work order, and recognize acceptance criteria, exceptions and escalation points before acting.",
+    "vocabulary": [
+      {
+        "term": "SOP",
+        "definition": "A controlled standard operating procedure describing how an activity is performed within its defined scope."
+      },
+      {
+        "term": "work order",
+        "definition": "An instruction assigning a specific task, location, material, timing or quantity under a controlled procedure."
+      },
+      {
+        "term": "acceptance criteria",
+        "definition": "Defined conditions that indicate whether a step, result or completed task meets requirements."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use the current instruction",
+        "body": "A technician verifies the current approved SOP, work order or digital instruction supplied by the facility. Memory does not replace the controlled version when the task is governed by one.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Reconcile procedure and assignment",
+        "body": "The SOP defines the standard method while the work order applies it to a specific room, batch, quantity or shift. A conflict between the two, or between the instructions and actual conditions, is escalated rather than resolved by choosing the more convenient instruction.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "An older printed SOP is found beside a current controlled digital revision; the technician follows document-control procedure before working.",
+      "A room assignment conflicts with the listed batch identifier, so movement pauses until the mismatch is resolved."
+    ],
+    "commonMistakes": [
+      "Following an obsolete procedure because it is familiar.",
+      "Ignoring acceptance criteria once the physical task appears complete."
+    ],
+    "practicalApplication": "Review a mock SOP and work order, identify prerequisites, steps, acceptance criteria, required records and escalation points, and flag a planted revision conflict.",
+    "summary": "Controlled work begins with the right instruction. Technicians verify current procedures, reconcile the assignment and escalate conflicts rather than improvising."
+  }
+}
