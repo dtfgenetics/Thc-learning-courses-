@@ -66,9 +66,10 @@
     "academy:dev": "node apps/web/server.mjs",
     "academy:web:test": "node scripts/test-academy-web.mjs",
     "academy:progress:test": "node scripts/test-learner-progress.mjs",
+    "academy:progress-semantics:test": "node scripts/test-course-progress-semantics.mjs",
     "academy:accessibility:test": "node scripts/test-academy-accessibility.mjs",
     "api:dev": "node apps/api/src/server.mjs",
-    "test": "npm run schema:validate && npm run validate && npm run occupational:validate && npm run performance:validate && npm run registry:validate && npm run review:validate && npm run exam:form:dev && npm run course1:final:audit && npm run credential:test && npm run credential:tech2:test && npm run credential:progress:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:coverage && npm run knowledge:validate && npm run academy:web:test && npm run academy:progress:test && npm run academy:accessibility:test && npm run staging:smoke && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run api:bootstrap:test && npm run api:learner-progress:test && npm run api:learner-enrollment:test && npm run db:schema:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate"
+    "test": "npm run schema:validate && npm run validate && npm run occupational:validate && npm run performance:validate && npm run registry:validate && npm run review:validate && npm run exam:form:dev && npm run course1:final:audit && npm run credential:test && npm run credential:tech2:test && npm run credential:progress:test && npm run credential:issuance:test && npm run credential:public:test && npm run credential:coverage && npm run knowledge:validate && npm run academy:web:test && npm run academy:progress:test && npm run academy:progress-semantics:test && npm run academy:accessibility:test && npm run staging:smoke && npm run runtime:test && npm run api:test && npm run api:failure:test && npm run api:bootstrap:test && npm run api:learner-progress:test && npm run api:learner-enrollment:test && npm run db:schema:test && npm run persistence:test && npm run credential:persistence:test && npm run rls:contract:test && npm run ops:validate"
   },
   "dependencies": {
     "ajv": "8.20.0",
