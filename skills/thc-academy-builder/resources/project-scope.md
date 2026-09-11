@@ -13,58 +13,98 @@ A credential should answer an employer:
 - What evidence supports the instruction?
 - Is the credential authentic/current?
 
+## Three-layer education architecture
+
+### 1. THC Learning Academy
+
+The comprehensive knowledge system containing **420 Comprehensive Educational Resources** across the controlled 20-domain catalog.
+
+These resources are not certification courses. They may be scientific explainers, illustrated guides, diagnostic references, calculators, decision trees, research summaries, case studies, datasets, charts, SOP references, worksheets, interactive tools, or other educational objects appropriate to the topic.
+
+### 2. THC Learning Hub
+
+The structured learning environment containing the **purpose-built certification courses** required by THC Academy credentials.
+
+Certification courses are designed from occupational job tasks and competencies. They may reference and assign relevant Comprehensive Educational Resources, but the 420-resource catalog itself is not the credential curriculum.
+
+### 3. THC Academy credentials
+
+The credentialing system controls eligibility, competency definitions, secure summative assessment, practical/performance requirements, passing standards, retakes/remediation, issuance, verification, maintenance, appeals, governance, and quality assurance.
+
+A course test is not the same as a secure credential assessment.
+
 ## Connected systems
 
-1. **Knowledge Base** — encyclopedia, glossary, claims, references, evidence, visuals, SOP reference material.
+1. **Comprehensive Educational Resource Library** — 420 resources, encyclopedia-style knowledge, glossary, claims, references, evidence, visuals, SOP reference material, diagnostic and interactive educational tools.
 2. **Occupational Competency** — occupations, job roles, tasks, competencies, proficiency.
-3. **Academy** — programs, courses, modules, lessons, activities, practice.
-4. **Assessment** — knowledge, scenario, calculation, image/data interpretation, practical, capstone.
-5. **Virtual Cultivation Facility** — simulated propagation, veg, flower, irrigation/fertigation, environmental, IPM, harvest, postharvest, QA, traceability and shift workflows.
+3. **Learning Hub** — certification programs, dedicated courses, modules, lessons, activities, and practice.
+4. **Assessment** — formative checks, course tests, secure credential knowledge/scenario/calculation/image/data assessments, practicals, and capstones.
+5. **Virtual Cultivation Facility** — simulated propagation, veg, flower, irrigation/fertigation, environmental, IPM, harvest, postharvest, QA, traceability, equipment-response and shift workflows.
 6. **Work-Based Learning** — supervised labs, practicums, internships, workplace evidence.
-7. **Credentials** — requirements, eligibility, issuance, competency transcript, portfolio, public verification.
-8. **Employer/Workforce** — job crosswalks, employer validation, hiring partners, practicum/employment pathways and outcome data.
-9. **Quality/Governance** — evidence review, accessibility, assessment quality, standards/accreditation readiness and version control.
+7. **Credentials** — requirements, eligibility, issuance, competency transcript, portfolio, public verification, maintenance.
+8. **Employer/Workforce** — job-task crosswalks, employer validation, hiring partners, practicum/employment pathways and outcome data.
+9. **Quality/Governance** — evidence review, accessibility, assessment quality, standards/accreditation readiness, version control, appeals and continuous improvement.
 
-## Credential ladder
+## Controlled professional credential catalog
 
-Core employment progression:
+The initial catalog is limited to **eight professional credentials**:
 
-- THC Academy Orientation / Safety & Responsible Practice
+1. **THC Cultivation Technician I**
+2. **THC Cultivation Technician II**
+3. **THC Plant Health, IPM & Biosecurity Specialist**
+4. **THC Environmental, Irrigation & Fertigation Systems Specialist**
+5. **THC Propagation & Clean Stock Specialist**
+6. **THC Postharvest Quality Specialist**
+7. **THC Genetics, Breeding & Preservation Specialist**
+8. **THC Cultivation Lead & Operations Professional**
+
+Do not expand the professional credential count simply because additional subject areas exist. A new credential requires evidence of independent occupational value and job-task/employer validation.
+
+### Foundational certificates
+
+The following may be issued as prerequisite learning certificates, but they are not part of the eight professional credential count:
+
+- THC Safety & Responsible Practice Certificate
 - THC Cultivation Foundations Certificate
-- THC Cultivation Technician I
-- THC Cultivation Technician II
-- THC Cultivation Lead
-- THC Cultivation Supervisor / Operations pathway
-- THC Cultivation Operations Professional
-- THC Cultivation Systems Professional
 
-Technical specialist paths should include, as the content matures:
+### Endorsements
 
-- Environmental Controls
-- Lighting & Crop Measurement
-- Irrigation & Fertigation
-- Root-Zone & Substrate
-- Plant Nutrition & Diagnostics
-- IPM & Biosecurity
-- Propagation
+Advanced specialization should generally be expressed as endorsements attached to an appropriate professional credential rather than additional certifications. Candidate endorsements include:
+
 - Tissue Culture
-- Canopy & Flowering
-- Postharvest Quality
-- Genetics & Breeding
-- Outdoor & Greenhouse
-- SOP / Quality Systems
-- Crop Systems
+- Outdoor Production
+- Greenhouse Production
+- Advanced Crop Steering
+- Advanced Lighting
+- Automation & Controls
+- Living Soil / Biological Systems
+- Commercial Hydroponics
+- Advanced Diagnostics
+- Cannabis Traceability Systems
+- Research & Cultivar Trials
+- Quality Systems / SOP Administration
 
-Maintain separate home-grow and deeper plant-science pathways that reuse canonical science without forcing commercial operations content onto every learner.
+## Required value areas
+
+Credential development must deliberately include, where occupationally relevant:
+
+- occupational health and safety;
+- traceability and vendor-neutral seed-to-sale workflow literacy;
+- equipment reliability, calibration, commissioning and maintenance boundaries;
+- production economics, KPIs, efficiency, forecast-versus-actual and crop-loss reasoning;
+- laboratory/COA, sampling, quality and retained-sample literacy;
+- human leadership, shift coordination, training verification and communication;
+- high-volume diagnostic cases including ambiguous and multi-factor conditions;
+- practical/work-sample evidence rather than knowledge testing alone.
 
 ## Proficiency scale
 
-1. Awareness — recognizes terminology, hazards and concepts.
-2. Foundational — explains principle and standard workflow.
-3. Applied — uses the competency in routine situations.
-4. Operational — reliably performs defined workplace tasks.
-5. Diagnostic — troubleshoots abnormal conditions and justifies next actions.
-6. Lead — plans, verifies, coordinates, improves, and coaches within scope.
+1. **Awareness** — recognizes terminology, hazards and concepts.
+2. **Foundational** — explains principles and standard workflows.
+3. **Applied** — uses the competency in routine situations.
+4. **Operational** — reliably performs defined workplace tasks.
+5. **Diagnostic** — troubleshoots abnormal conditions and justifies next actions.
+6. **Lead** — plans, verifies, coordinates, improves, and coaches within scope.
 
 ## Role boundary shorthand
 
@@ -72,15 +112,19 @@ Maintain separate home-grow and deeper plant-science pathways that reuse canonic
 
 **Technician II:** verify, interpret, troubleshoot, reconcile, support peers.
 
-**Lead:** coordinate people/tasks, coach execution, manage assigned schedules/targets, own defined operational decisions.
-
-**Operations Professional:** design/manage integrated cultivation systems, capacity, quality, production and cross-department operations.
+**Lead / Operations Professional:** coordinate people/tasks, manage defined production systems and targets, interpret operational performance, maintain controlled records/quality systems, and own defined operational decisions within scope.
 
 **Specialist:** deeper technical competence in a defined domain; not automatically a people manager.
 
-## Current architectural direction
+## Canonical architecture
 
-The canonical project-direction document is `docs/THC_ACADEMY_V2_PROJECT_DIRECTION.md`. Treat it as the long-form architecture baseline, but verify current repository/PR state because implementation moves continuously.
+Read these documents before changing project scope or generating additional credential curricula:
+
+- `docs/THC_ACADEMY_SYSTEM_ARCHITECTURE.md`
+- `docs/academy-v2/EIGHT_CREDENTIAL_MASTER_BLUEPRINT.md`
+- `docs/THC_ACADEMY_V2_PROJECT_DIRECTION.md` for earlier detailed V2 direction that remains applicable where it does not conflict with the newer controlled architecture.
+
+When documents conflict, `docs/THC_ACADEMY_SYSTEM_ARCHITECTURE.md` controls terminology and the current resource/course/credential separation.
 
 ## Prestige strategy
 
