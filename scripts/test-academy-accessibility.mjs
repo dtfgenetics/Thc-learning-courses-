@@ -28,6 +28,10 @@ expect(/@media\s*\(prefers-reduced-motion:\s*reduce\)/i, styles, 'reduced-motion
 expect(/\.skip-link:focus\s*\{/i, styles, 'skip link needs visible focus behavior');
 expect(/\.search:focus[^\{]*\{/i, styles, 'interactive search focus styling required');
 expect(/\.lesson-link:focus[^\{]*\{/i, styles, 'lesson links need focus styling');
+expect(/\.practice-choice:focus-within[^\{]*\{/i, styles, 'practice choices need visible keyboard focus');
+expect(/createElement\('fieldset'\)/, app, 'practice questions must use fieldset grouping');
+expect(/createElement\('legend'\)/, app, 'practice questions must use legends for question prompts');
+expect(/setAttribute\('aria-live',\s*'polite'\)/, app, 'practice feedback must be announced to assistive technology');
 expect(/@media\s*\(max-width:\s*700px\)/i, governanceStyles, 'governance dashboard needs narrow-screen treatment');
 expect(/\.portal-tab:focus-visible[^\{]*\{/i, portalStyles, 'feature tabs need visible keyboard focus');
 expect(/\.portal-table-wrap\s*\{[^}]*overflow-x:\s*auto/i, portalStyles, 'credential attempt table must remain horizontally scrollable on narrow screens');
