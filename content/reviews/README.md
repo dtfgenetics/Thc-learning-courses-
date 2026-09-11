@@ -1,16 +1,16 @@
-# Human Review Records
+# Review Notes
 
-This directory is the source of truth for immutable human review records used by curriculum publication gates.
+This directory is optional workspace for editable review notes, comments, evidence checks, and revision ideas.
 
-Each JSON record must conform to `schemas/review-record.schema.json` and identify the exact reviewed object ID and version. Supported review types are scientific, editorial, assessment, accessibility, and legal/compliance.
+Review notes are informational only. They do not control publication, editing, assessment availability, learner access, release status, or credential-course visibility.
 
-Rules:
+Guidelines:
 
-- Do not create approval records for AI/self-review alone.
-- `approved` means the named human reviewer actually completed that review type for the exact object version.
-- `changes-requested` and `rejected` records are retained as audit history; do not overwrite them.
-- A changed lesson or assessment version requires a new review record for the new version.
-- Do not store reviewer secrets, signatures, personal contact information, learner data, or production credentials here.
-- File names should use the review ID, for example `REVIEW-LESSON-ENV-VPD-001-SCI-001.json`.
+- Notes may be created, edited, replaced, reorganized, or removed as the project evolves.
+- A review note does not need to match the current object version to remain useful as historical context.
+- Human, AI-assisted, technical, editorial, assessment, accessibility, and compliance observations may all be stored here when useful.
+- Status labels are descriptive only and do not trigger or block any workflow.
+- Do not store secrets, private learner data, production credentials, or other sensitive data in repository review notes.
+- Review notes are optional; content may be edited or published without a corresponding review note.
 
-The automated review validator checks record shape, target existence, exact-version alignment, enum values, reviewer ID presence, and review timestamps. Production release checks separately require the configured approved review types before publication.
+The review validator checks only that review JSON files can be parsed. It does not enforce approvals, reviewer identity, version matching, workflow order, or promotion gates.
