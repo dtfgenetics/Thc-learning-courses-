@@ -1,0 +1,80 @@
+{
+  "id": "CREDPROG-CULT-TECH-I-001",
+  "title": "THC Cultivation Technician I",
+  "version": "1.0.0",
+  "status": "draft",
+  "credentialType": "professional-credential",
+  "occupationalClaim": "The credential holder can safely execute routine commercial cultivation work under established SOPs, make required observations and measurements, preserve plant/material identity and traceability, document work accurately, perform permitted operator-level equipment care, and escalate abnormal or unauthorized conditions appropriately.",
+  "targetRoles": [
+    "Cultivation Technician",
+    "Garden Technician",
+    "Grow Technician",
+    "Entry Cultivator"
+  ],
+  "proficiencyTarget": [
+    "applied",
+    "operational"
+  ],
+  "requiredCourses": [
+    "COURSE-LH-TECH1-001",
+    "COURSE-LH-TECH1-002",
+    "COURSE-LH-TECH1-003",
+    "COURSE-LH-TECH1-004",
+    "COURSE-LH-TECH1-005",
+    "COURSE-LH-TECH1-006",
+    "COURSE-LH-TECH1-007"
+  ],
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PLANT-BIO-001",
+    "COMP-ENV-VPD-001",
+    "COMP-WATER-001",
+    "COMP-NUTRITION-001",
+    "COMP-ROOTZONE-001",
+    "COMP-IPM-001",
+    "COMP-PROP-001",
+    "COMP-CANOPY-001",
+    "COMP-FLOWER-001",
+    "COMP-POSTHARVEST-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "resourceMappings": [
+    "RES-THC-C001"
+  ],
+  "assessmentModel": {
+    "courseTests": true,
+    "credentialAssessment": "ASSESS-CRED-TECH1-001",
+    "performanceEvidence": [
+      "PRACTICAL-TECH1-A",
+      "PRACTICAL-TECH1-B",
+      "PRACTICAL-TECH1-C",
+      "PRACTICAL-TECH1-D",
+      "PRACTICAL-TECH1-E",
+      "PRACTICAL-TECH1-F"
+    ],
+    "capstone": "CAPSTONE-TECH1-SHIFT-001",
+    "passingRule": "Development rule only: candidate must meet the provisional written/scenario standard, satisfy all required practical performance criteria, complete the integrated shift capstone, and have no unresolved critical safety failure. Final cut scores require formal standard setting before release.",
+    "standardSettingStatus": "provisional",
+    "noCriticalErrorsRequired": true
+  },
+  "validation": {
+    "jobTaskAnalysis": "draft",
+    "smeEmployerValidation": "not-started",
+    "assessmentReview": "draft",
+    "accessibilityReview": "not-started"
+  },
+  "maintenance": {
+    "renewalRequired": false,
+    "renewalPeriodMonths": null,
+    "continuingEducationRequired": false
+  },
+  "limitations": [
+    "Does not confer government licensure, pesticide-applicator authority, or authorization to perform regulated work outside applicable law and facility policy.",
+    "Does not certify independent facility design, advanced crop diagnosis, supervisory authority, breeding-program leadership, or engineering-level maintenance.",
+    "Platform-specific seed-to-sale proficiency requires the employer or jurisdiction-specific implementation training used by the facility."
+  ]
+}
