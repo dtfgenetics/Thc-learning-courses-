@@ -18,16 +18,22 @@ assert.ok(html.includes('src="/assessor.js"'), 'Academy must load assessor clien
 for (const marker of [
   '/api/v1/evaluator/capabilities',
   '/api/v1/evaluator/courses/${COURSE_ID}/practical-evaluation',
+  '/api/v1/evaluator/courses/${COURSE_ID}/practical-assignment',
   'loadAssessorQueue',
   'Search learner',
   'All statuses',
-  'Follow-up open',
+  'Assigned to me',
+  'Unassigned',
+  'Previous page',
+  'Next page',
+  'Claim assignment',
+  'Release assignment',
   "input.dataset.domain = domain.name",
   "input.dataset.criticalIndex = String(index)",
   'collectEvidenceOutputs',
   'practical.evidenceOutputs',
   'evidenceOutputStatuses',
-  'Evidence reference',
+  'Controlled evidence reference',
   'followUpStatus',
   'reassessmentTargetDate',
   'Start equivalent reassessment',
@@ -37,6 +43,8 @@ for (const marker of [
   'learnerFeedback',
   'Save in-progress evaluation',
   'Finalize evaluation',
+  'Practical follow-up',
+  'Reassessment target:',
   'I confirm the domain scores, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.',
   'Server result is authoritative.'
 ]) assert.ok(js.includes(marker), `assessor UI missing contract: ${marker}`);
@@ -52,6 +60,9 @@ assert.equal(js.includes("status: 'passed'"), false, 'browser must not set the a
 for (const marker of [
   '.assessor-queue-metrics',
   '.assessor-queue-list',
+  '.assessor-queue-actions',
+  '.assessor-pager',
+  '.assessor-assignment-card',
   '.assessor-domain-grid',
   '.assessor-evidence-grid',
   '.assessor-evidence-row',
@@ -60,6 +71,7 @@ for (const marker of [
   '.assessor-critical',
   '.assessor-confirm',
   'min-height: 44px',
+  '@media (max-width: 900px)',
   '@media (max-width: 760px)',
   '@media (max-width: 620px)',
   ':focus-visible'
@@ -68,4 +80,4 @@ for (const marker of [
 assert.ok(webServer.includes("['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']]"), 'Academy web server must serve assessor JS');
 assert.ok(webServer.includes("['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]"), 'Academy web server must serve assessor CSS');
 
-console.log('Course 1 assessor role-gating, queue/search, dynamic evidence tracking, reassessment history, safe DOM, responsive, accessibility, and static-serving contracts passed.');
+console.log('Course 1 assessor role-gating, server-side queue filtering/pagination, ownership controls, dynamic evidence tracking, reassessment history, learner follow-up, safe DOM, responsive, accessibility, and static-serving contracts passed.');
