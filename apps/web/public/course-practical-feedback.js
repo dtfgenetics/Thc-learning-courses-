@@ -22,7 +22,7 @@ async function loadFeedback() {
     const key = `${practical.updatedAt ?? ''}:${feedback}`;
     if (key === lastKey && host.querySelector('.course-practical-evaluator-feedback')) return;
     lastKey = key;
-    const card = el('aside', '', 'course-practical-evaluator-feedback');
+    const card = el('aside', '', 'course-practical-remediation course-practical-evaluator-feedback');
     card.setAttribute('aria-label', 'Assessor feedback and remediation');
     card.append(el('strong', 'Assessor feedback / remediation'), el('p', feedback));
     host.append(card);
