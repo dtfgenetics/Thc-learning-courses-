@@ -42,14 +42,20 @@ Workbook/practical activity counts describe the current package and are not maxi
 
 ## Instructor/assessor support
 
-- instructor guide
+- expanded instructor guide with module facilitation, coaching, accessibility, evidence-boundary, and remediation rules
+- **12-objective remediation matrix** mapping misconceptions, diagnostic prompts, targeted practice, and equivalent reassessment
+- **response exemplar set** contrasting weak versus stronger workplace reasoning and records
+- **18 instructor scenario variants** for guided practice, oral questioning, remediation, and equivalent reassessment
+- remediation record template capturing objective, misconception, targeted practice, learner evidence, and equivalent reassessment
 - source/evidence boundaries
-- remediation and assessment-use guidance
+- retrieval/spaced-practice guidance aligned to the remediation model
 - accessibility delivery requirements
 - practical assessor guide
 - practical calibration protocol
 - equivalent practical Candidate Forms A and B
 - review packet for optional quality review
+
+Instructor-resource counts describe the current support package, not content ceilings. Additional misconception patterns, exemplars, scenario variants, prompts, or remediation methods may be added or reorganized when they preserve the controlled objectives and evidence boundaries.
 
 ## Course assessment
 
@@ -62,6 +68,19 @@ Workbook/practical activity counts describe the current package and are not maxi
 The 84/36/120 counts are the current published inventory, not content ceilings. Additional valid items may be added, retired, replaced, or reorganized as objectives, evidence, instructional depth, and pilot findings evolve. Automated QA enforces minimum quality baselines and internal consistency rather than freezing the bank at an exact size.
 
 The public course assessments are separate from the THC Cultivation Technician I certification examination.
+
+## Remediation evidence model
+
+A missed item or weak performance should not trigger an automatic same-item retry. Course 1 remediation is objective-linked:
+
+1. identify the controlled objective and learner reasoning/performance gap;
+2. diagnose the misconception before reteaching;
+3. assign the smallest useful lesson/workbook/exemplar practice;
+4. require active learner-generated evidence;
+5. reassess using a changed but equivalent context;
+6. record the result when a controlled remediation record is appropriate.
+
+Successful remediation means the learner can apply the objective in a new context. Viewing the correct answer or rereading a page is not sufficient evidence by itself.
 
 ## Ongoing validity improvement
 
@@ -83,6 +102,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.
