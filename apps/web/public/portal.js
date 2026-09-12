@@ -1,19 +1,10 @@
 const lessonView = document.querySelector('#lesson-view');
 const tabs = [...document.querySelectorAll('.portal-tab')];
-const lessonIdByTitle = new Map();
-let catalogIndexPromise = null;
-
-async function ensureCatalogIndex() {
-  if (!catalogIndexPromise) {
-    catalogIndexPromise = fetch('/api/catalog', { headers: { accept: 'application/json' } })
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error('catalog unavailable')))
-      .then((catalog) => {
-        for (const course of catalog.courses ?? []) for (const module of course.modules ?? []) for (const lesson of module.lessons ?? []) lessonIdByTitle.set(lesson.title, lesson.id);
-      })
-      .catch(() => {});
-  }
-  await catalogIndexPromise;
-}
+const catalogPanel = document.querySelector('#catalog-panel');
+const catalogToggle = document.querySelector('#catalog-toggle');
+const catalogBody = document.querySelector('#catalog-body');
+const catalogToggleState = document.querySelector('#catalog-toggle-state');
+const compactCatalog = globalThis.matchMedia?.('(max-width: 840px)');
 
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
@@ -28,6 +19,20 @@ function setActive(id) {
     tab.classList.toggle('active', active);
     tab.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
+}
+
+function setCatalogExpanded(expanded) {
+  if (!catalogToggle || !catalogBody || !catalogPanel) return;
+  const isCompact = Boolean(compactCatalog?.matches);
+  const effectiveExpanded = isCompact ? Boolean(expanded) : true;
+  catalogToggle.setAttribute('aria-expanded', effectiveExpanded ? 'true' : 'false');
+  catalogPanel.dataset.expanded = effectiveExpanded ? 'true' : 'false';
+  catalogBody.hidden = isCompact && !effectiveExpanded;
+  if (catalogToggleState) catalogToggleState.textContent = effectiveExpanded ? 'Hide' : 'Show';
+}
+
+function syncCatalogViewport() {
+  setCatalogExpanded(!compactCatalog?.matches);
 }
 
 function renderWelcome() {
@@ -78,6 +83,7 @@ function evidenceList(title, rows, idKey) {
 
 async function renderCredentialProgress() {
   setActive('tab-progress');
+  if (compactCatalog?.matches) setCatalogExpanded(false);
   const panel = document.createElement('div');
   panel.className = 'portal-panel';
   panel.append(text('p', 'Private learner record', 'eyebrow'));
@@ -205,6 +211,7 @@ function numberField(label, value, options = {}) {
 
 function renderTools() {
   setActive('tab-tools');
+  if (compactCatalog?.matches) setCatalogExpanded(false);
   const panel = document.createElement('div');
   panel.className = 'portal-panel';
   panel.append(text('p', 'Cultivation learning tools', 'eyebrow'));
@@ -264,6 +271,7 @@ function renderTools() {
 
 function renderVerify() {
   setActive('tab-verify');
+  if (compactCatalog?.matches) setCatalogExpanded(false);
   const panel = document.createElement('div');
   panel.className = 'portal-panel';
   panel.append(text('p', 'Trust & verification', 'eyebrow'));
@@ -332,60 +340,26 @@ function renderVerify() {
   lessonView.focus();
 }
 
-async function appendPractice(article) {
-  if (!article || article.dataset.practiceLoaded === 'true') return;
-  const heading = article.querySelector('h2');
-  if (!heading) return;
-  await ensureCatalogIndex();
-  const lessonId = lessonIdByTitle.get(heading.textContent.trim());
-  if (!lessonId) return;
-  article.dataset.practiceLoaded = 'true';
-  try {
-    const response = await fetch(`/api/lessons/${encodeURIComponent(lessonId)}/practice`, { headers: { accept: 'application/json' } });
-    if (!response.ok) return;
-    const { items = [] } = await response.json();
-    if (!items.length) return;
-    const section = document.createElement('section');
-    section.className = 'portal-practice';
-    section.append(text('p', 'Formative assessment', 'eyebrow'));
-    section.append(text('h3', 'Check your understanding'));
-    section.append(text('p', 'Practice items give immediate rationale feedback and do not count as a credential attempt.', 'portal-tool-copy'));
-    for (const [index, item] of items.entries()) {
-      if (!Array.isArray(item.choices) || !Number.isInteger(item.correct)) continue;
-      const card = document.createElement('div');
-      card.className = 'portal-practice-item';
-      card.append(text('p', `Question ${index + 1} • ${item.difficulty ?? 'moderate'}`, 'course-meta'));
-      card.append(text('p', item.stem, 'portal-practice-stem'));
-      const answers = document.createElement('div');
-      answers.className = 'portal-practice-answers';
-      const feedback = document.createElement('p');
-      feedback.className = 'portal-practice-feedback';
-      const buttons = item.choices.map((choice, choiceIndex) => {
-        const answer = document.createElement('button');
-        answer.type = 'button';
-        answer.textContent = `${String.fromCharCode(65 + choiceIndex)}. ${choice}`;
-        answer.addEventListener('click', () => {
-          for (const candidate of buttons) candidate.disabled = true;
-          answer.classList.add(choiceIndex === item.correct ? 'correct' : 'incorrect');
-          if (choiceIndex !== item.correct) buttons[item.correct]?.classList.add('correct');
-          feedback.replaceChildren(text('strong', choiceIndex === item.correct ? 'Correct. ' : 'Key concept. '), document.createTextNode(item.rationale ?? ''));
-        });
-        answers.append(answer);
-        return answer;
-      });
-      card.append(answers, feedback);
-      section.append(card);
-    }
-    article.append(section);
-  } catch {
-    article.dataset.practiceLoaded = 'false';
-  }
-}
+catalogToggle?.addEventListener('click', () => {
+  const expanded = catalogToggle.getAttribute('aria-expanded') === 'true';
+  setCatalogExpanded(!expanded);
+});
 
-const observer = new MutationObserver(() => appendPractice(lessonView.querySelector('.lesson-article')));
-observer.observe(lessonView, { childList: true });
+compactCatalog?.addEventListener?.('change', syncCatalogViewport);
+syncCatalogViewport();
 
-document.querySelector('#tab-catalog')?.addEventListener('click', () => { setActive('tab-catalog'); renderWelcome(); });
+document.addEventListener('click', (event) => {
+  const lessonLink = event.target instanceof Element ? event.target.closest('.lesson-link') : null;
+  if (!lessonLink) return;
+  setActive('tab-catalog');
+  if (compactCatalog?.matches) setCatalogExpanded(false);
+});
+
+document.querySelector('#tab-catalog')?.addEventListener('click', () => {
+  setActive('tab-catalog');
+  if (compactCatalog?.matches) setCatalogExpanded(true);
+  renderWelcome();
+});
 document.querySelector('#tab-progress')?.addEventListener('click', renderCredentialProgress);
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);
