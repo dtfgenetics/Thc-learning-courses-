@@ -35,6 +35,10 @@ export async function createPersistenceAdapters({ env }) {
       async claimEvaluator() {},
       async releaseEvaluator() {},
       async setEvaluatorAssignment() {}
+    },
+    enrollmentCompletionStore: {
+      async setEnrollmentAcademicStatus() {},
+      async listEnrollmentAcademicHistory() {}
     }
   };
 }
@@ -42,7 +46,11 @@ export async function createPersistenceAdapters({ env }) {
 
 `credentialStore.ping()` and `credentialStore.schemaVersion()` are used by `/readyz`. Production traffic should not be routed to the service until the database is reachable and its recorded schema version matches `THC_REQUIRED_SCHEMA_VERSION`.
 
-Schema version 3 adds `practical_evaluation_assignments`, which keeps evaluator ownership separate from practical score/evidence records. That separation allows an evaluator to be assigned before an evaluation record exists and prevents ownership metadata from being hidden inside learner evidence JSON.
+Schema version 3 adds `practical_evaluation_assignments`, which keeps evaluator ownership separate from practical score/evidence records. The academic enrollment-completion layer does **not** add another database table or schema version. It uses the existing `enrollments` table for current state and existing `audit_events` for immutable completion/reopen transition history.
+
+`enrollmentCompletionStore.setEnrollmentAcademicStatus()` must update the current enrollment state and write its audit event atomically. The repository-provided `createPostgresEnrollmentCompletionStore({ query })` does this with one PostgreSQL statement and refuses to automate a `withdrawn` enrollment. `listEnrollmentAcademicHistory()` returns only minimal academic transition metadata; it does not expose assessment responses, private practical evidence, evaluator notes, or credential decisions.
+
+Production bootstrap wraps the learner and practical-evaluator stores with automatic academic enrollment reconciliation. Reconciliation is triggered after enrollment, lesson-progress writes, course-final scoring, practical-evaluation writes, and authenticated enrollment reads. The read-time reconciliation is intentional: it catches a curriculum revision that changes the current canonical requirement set even when the learner has not just submitted new evidence.
 
 ## Authentication adapter contract
 
@@ -68,7 +76,7 @@ The application deliberately does not prescribe a specific identity vendor. A de
 2. Apply `database/schema.sql` through the controlled migration process.
 3. Verify `academy_schema_migrations` contains version `3`.
 4. Verify the `practical_evaluation_assignments` table and its evaluator index exist.
-5. Configure the deployment-specific persistence adapter and database secrets.
+5. Configure the deployment-specific persistence adapter and database secrets, including the enrollment-completion store.
 6. Configure the identity-provider authentication adapter and provider secrets/keys through the deployment secret manager.
 7. Set `THC_REQUIRED_SCHEMA_VERSION=3` and the HTTPS public base URL.
 8. Start the API with `NODE_ENV=production`.
@@ -76,8 +84,9 @@ The application deliberately does not prescribe a specific identity vendor. A de
 10. Treat `database-schema-version-mismatch` from `/readyz` as a deployment-blocking migration error.
 11. Confirm protected endpoints reject missing/invalid credentials, reject insufficient scopes, and accept only correctly verified identities.
 12. Confirm evaluator assignment/reassignment and report export are audited and privacy-tested before production use.
-13. Run the staging/production smoke checklist before changing any system-readiness gate.
+13. Confirm academic enrollment transitions produce `course-enrollment-academic-completed` / `course-enrollment-academic-reopened` audit events and never override administrative withdrawal.
+14. Run the staging/production smoke checklist before changing any system-readiness gate.
 
 ## Readiness semantics
 
-Passing the bootstrap, authentication-adapter, and schema-readiness tests proves the application fails closed and has explicit integration boundaries for persistence and identity. It does **not** prove that a live database, real identity provider, MFA, TLS endpoint, backups, monitoring, credential signing keys, or operational review processes are working in a deployed environment. Those readiness flags remain false until verified in the deployed environment.
+Passing the bootstrap, authentication-adapter, schema-readiness, and enrollment-completion contract tests proves the application fails closed and has explicit integration boundaries for persistence, identity, and academic enrollment synchronization. It does **not** prove that a live database, real identity provider, MFA, TLS endpoint, backups, monitoring, credential signing keys, or operational review processes are working in a deployed environment. Those readiness flags remain false until verified in the deployed environment.
