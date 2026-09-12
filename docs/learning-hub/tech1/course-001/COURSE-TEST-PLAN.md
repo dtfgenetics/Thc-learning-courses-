@@ -3,14 +3,18 @@
 ## Assessment layers
 
 1. Lesson retrieval checks — low-stakes learning practice.
-2. Six module tests — 12 items each, immediate feedback, 72 formative items total.
+2. Six module tests — currently 14 items each, immediate feedback, **84 formative items total**.
 3. Integrated course practical — performance evidence across the workflow.
 4. Final course test — 36-item summative development form mapped to all 12 course objectives.
 5. THC Cultivation Technician I certification examination — separate secure assessment outside this public course package.
 
+The current module-test counts describe the live bank; they are not maximums. Valid items may be added, revised, replaced, reorganized, or retired as the course changes. QA checks bank integrity and minimum quality floors rather than enforcing a fixed ceiling.
+
 ## Module-test intent
 
 The six module tests emphasize application and routine workplace decisions rather than trivia. Distractors represent realistic errors: working around hazards, using memory instead of current instructions, crossing contamination boundaries, forcing inventory reconciliation, unauthorized repair, and rewriting records.
+
+The expanded v1.2-aligned formative bank also samples dynamic hazard reassessment, pesticide-entry status, source-route-receiver contamination reasoning, stacked quarantine/hold/REI controls, instruction and identity conflicts, alternate escalation, split/merge genealogy, physical-versus-record disposition mismatch, stored-energy cues, recurring-fault timelines, late-entry integrity, and closed-loop handoff.
 
 ## Feedback rule
 
