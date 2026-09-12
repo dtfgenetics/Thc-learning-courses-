@@ -10,7 +10,15 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { startOrResumeCourseAssessment, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
-import { getCoursePracticalEvaluation, saveCoursePracticalEvaluation, loadCourse1PracticalForEvaluation } from './course-practical-evaluator-service.mjs';
+import {
+  getCoursePracticalEvaluation,
+  saveCoursePracticalEvaluation,
+  loadCourse1PracticalForEvaluation,
+  claimCoursePracticalEvaluation,
+  setCoursePracticalAssignment,
+  buildCoursePracticalReport,
+  coursePracticalReportCsv
+} from './course-practical-evaluator-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -89,6 +97,12 @@ function json(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
   res.end(JSON.stringify(body));
 }
+function text(res, status, body, contentType, extraHeaders = {}) {
+  res.setHeader('content-type', contentType);
+  for (const [name, value] of Object.entries(extraHeaders)) res.setHeader(name, value);
+  res.statusCode = status;
+  res.end(body);
+}
 function rateLimitKey(req) { return req.socket?.remoteAddress || 'unknown'; }
 function applyRateLimitHeaders(res, result) {
   res.setHeader('ratelimit-limit', String(result.limit));
@@ -153,22 +167,12 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
   const attempts = (rawEvidence.assessmentAttempts ?? []).filter((row) => row.assessmentId === assessment.id);
   const scoredAttempts = attempts.filter((row) => row.status === 'scored');
   const passedAttempts = scoredAttempts.filter((row) => row.passed === true);
-  const bestScorePercent = scoredAttempts.length
-    ? Math.max(...scoredAttempts.map((row) => Number(row.scorePercent ?? 0)))
-    : null;
+  const bestScorePercent = scoredAttempts.length ? Math.max(...scoredAttempts.map((row) => Number(row.scorePercent ?? 0))) : null;
   const latestAttempt = attempts[0] ?? null;
   const latestAttemptActive = latestAttempt?.status === 'started' || latestAttempt?.status === 'submitted';
-  const writtenOutcome = passedAttempts.length
-    ? 'passed'
-    : latestAttemptActive
-      ? 'in-progress'
-      : scoredAttempts.length
-        ? 'not-passed'
-        : 'not-attempted';
+  const writtenOutcome = passedAttempts.length ? 'passed' : latestAttemptActive ? 'in-progress' : scoredAttempts.length ? 'not-passed' : 'not-attempted';
   const linkedPerformanceAssessment = assessment.extensions?.linkedPerformanceAssessment ?? null;
-  const performance = rawEvidence.performanceAssessment && rawEvidence.performanceAssessment.assessmentId === linkedPerformanceAssessment
-    ? rawEvidence.performanceAssessment
-    : null;
+  const performance = rawEvidence.performanceAssessment && rawEvidence.performanceAssessment.assessmentId === linkedPerformanceAssessment ? rawEvidence.performanceAssessment : null;
 
   return {
     course: { id: course.id, title: course.title, version: course.version },
@@ -190,7 +194,9 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
       criticalErrorCount: Number(performance?.criticalErrorCount ?? 0),
       evaluatedAt: performance?.evaluatedAt ?? null,
       updatedAt: performance?.updatedAt ?? null,
-      remediationSummary: performance?.remediationSummary ?? null
+      remediationSummary: performance?.remediationSummary ?? null,
+      followUpStatus: performance?.followUpStatus ?? 'none',
+      reassessmentTargetDate: performance?.reassessmentTargetDate ?? null
     } : null,
     completionModel: assessment.extensions?.completionModel ?? null
   };
@@ -269,7 +275,15 @@ export function createHandler({
         const result = await getCoursePracticalEvaluation({
           store: practicalEvaluatorStore,
           courseId: evaluatorPracticalMatch[1],
-          externalSubject: url.searchParams.get('learnerSubject')
+          externalSubject: url.searchParams.get('learnerSubject'),
+          evaluatorId: auth.subject,
+          queue: {
+            search: url.searchParams.get('search') ?? '',
+            practicalStatus: url.searchParams.get('practicalStatus') ?? '',
+            assignment: url.searchParams.get('assignment') ?? '',
+            page: url.searchParams.get('page') ?? 1,
+            pageSize: url.searchParams.get('pageSize') ?? 25
+          }
         });
         return json(res, result.status, { ...result.body, requestId });
       }
@@ -288,6 +302,18 @@ export function createHandler({
           evaluatorId: auth.subject,
           input: body
         });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const evaluatorAssignmentMatch = url.pathname.match(/^\/api\/v1\/evaluator\/courses\/(COURSE-[A-Z0-9-]+)\/practical-assignment$/);
+      if (req.method === 'PUT' && evaluatorAssignmentMatch) {
+        route = 'PUT /api/v1/evaluator/courses/:courseId/practical-assignment';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'evaluator:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await claimCoursePracticalEvaluation({ store: practicalEvaluatorStore, courseId: evaluatorAssignmentMatch[1], externalSubject: body.learnerSubject, evaluatorId: auth.subject, action: body.action ?? 'claim' });
         return json(res, result.status, { ...result.body, requestId });
       }
 
@@ -342,9 +368,14 @@ export function createHandler({
         if (performanceAssessmentId && practicalEvaluatorStore && typeof practicalEvaluatorStore.getEvaluation === 'function') {
           const practical = loadCourse1PracticalForEvaluation(course.id);
           if (practical?.id === performanceAssessmentId) {
-            const evaluatorRecord = await practicalEvaluatorStore.getEvaluation(auth.subject, { assessmentId: practical.id, assessmentVersion: practical.version });
-            const feedback = evaluatorRecord?.evaluation?.evidence?.learnerFeedback;
-            if (evidence.performanceAssessment && typeof feedback === 'string' && feedback.trim()) evidence.performanceAssessment.remediationSummary = feedback.trim();
+            const evaluatorRecord = await practicalEvaluatorStore.getEvaluation(auth.subject, { courseId: course.id, assessmentId: practical.id, assessmentVersion: practical.version });
+            const privateEvidence = evaluatorRecord?.evaluation?.evidence ?? {};
+            if (evidence.performanceAssessment) {
+              const feedback = privateEvidence.learnerFeedback;
+              if (typeof feedback === 'string' && feedback.trim()) evidence.performanceAssessment.remediationSummary = feedback.trim();
+              evidence.performanceAssessment.followUpStatus = privateEvidence.followUpStatus ?? 'none';
+              evidence.performanceAssessment.reassessmentTargetDate = privateEvidence.reassessmentTargetDate || null;
+            }
           }
         }
         return json(res, 200, courseEvidenceView(course, assessment, evidence));
@@ -423,6 +454,32 @@ export function createHandler({
         if (!definition) return json(res, 500, { error: 'credential-definition-not-found', requestId });
         return json(res, 200, publicCredentialView(record, definition));
       }
+
+      const adminAssignmentMatch = url.pathname.match(/^\/api\/v1\/admin\/courses\/(COURSE-[A-Z0-9-]+)\/practical-assignment$/);
+      if (req.method === 'PUT' && adminAssignmentMatch) {
+        route = 'PUT /api/v1/admin/courses/:courseId/practical-assignment';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await setCoursePracticalAssignment({ store: practicalEvaluatorStore, courseId: adminAssignmentMatch[1], externalSubject: body.learnerSubject, evaluatorId: body.evaluatorId ?? null, adminId: auth.subject });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminReportMatch = url.pathname.match(/^\/api\/v1\/admin\/courses\/(COURSE-[A-Z0-9-]+)\/practical-report$/);
+      if (req.method === 'GET' && adminReportMatch) {
+        route = 'GET /api/v1/admin/courses/:courseId/practical-report';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        if (!auth) return;
+        const result = await buildCoursePracticalReport({ store: practicalEvaluatorStore, courseId: adminReportMatch[1] });
+        if (result.status !== 200) return json(res, result.status, { ...result.body, requestId });
+        if (url.searchParams.get('format') === 'csv') {
+          return text(res, 200, coursePracticalReportCsv(result.body), 'text/csv; charset=utf-8', { 'content-disposition': 'attachment; filename="course1-practical-report.csv"' });
+        }
+        return json(res, 200, { ...result.body, requestId });
+      }
+
       if (req.method === 'GET' && url.pathname === '/api/v1/admin/diagnostics') {
         route = 'GET /api/v1/admin/diagnostics';
         const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
