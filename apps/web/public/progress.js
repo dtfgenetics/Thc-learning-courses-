@@ -93,12 +93,25 @@ function adminFollowUpLabel(value) {
   return ({ none: 'No follow-up', 'remediation-assigned': 'Remediation assigned', 'remediation-in-progress': 'Remediation in progress', 'ready-for-reassessment': 'Ready for reassessment', 'reassessment-scheduled': 'Reassessment scheduled', closed: 'Closed' })[value] ?? String(value || 'none').replaceAll('-', ' ');
 }
 
+function adminEnrollmentLabel(value) {
+  return ({ active: 'Academic requirements open', completed: 'Academic complete', withdrawn: 'Withdrawn' })[value] ?? String(value || 'unknown').replaceAll('-', ' ');
+}
+
+function adminAcademicHistoryLabel(row) {
+  const transitions = Number(row.academicTransitionCount ?? 0);
+  const reopens = Number(row.academicReopenCount ?? 0);
+  if (!transitions) return 'No automatic transitions';
+  const latest = row.latestAcademicTransitionType === 'course-enrollment-academic-reopened' ? 'Reopened' : 'Completed';
+  const latestAt = row.latestAcademicTransitionAt ? new Date(row.latestAcademicTransitionAt).toLocaleString() : 'time unavailable';
+  return `${transitions} transition${transitions === 1 ? '' : 's'} • ${reopens} reopen${reopens === 1 ? '' : 's'} • latest ${latest} ${latestAt}`;
+}
+
 function injectAdminStyles() {
   if (document.querySelector('#course1-admin-dashboard-styles')) return;
   const style = document.createElement('style');
   style.id = 'course1-admin-dashboard-styles';
   style.textContent = `
-    .admin-panel{max-width:1320px}.admin-runtime{display:grid;gap:1rem}.admin-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:.65rem}.admin-metric{display:grid;gap:.2rem;padding:.85rem;border:1px solid var(--line);border-radius:.75rem;background:#fff}.admin-metric strong{font-size:1.5rem}.admin-metric span,.admin-status{color:var(--muted)}.admin-toolbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}.admin-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}.admin-field{display:grid;gap:.35rem;font-weight:750}.admin-field input,.admin-field select,.admin-assignment input{width:100%;min-height:44px;border:1px solid var(--line);border-radius:.6rem;padding:.65rem .7rem;background:#fff;color:var(--ink);font:inherit}.admin-button{min-height:44px;border:1px solid var(--green);border-radius:.65rem;padding:.65rem .85rem;background:#fff;color:var(--green);font:inherit;font-weight:800;cursor:pointer}.admin-button.primary{background:var(--green);color:#fff}.admin-button:disabled{opacity:.55;cursor:not-allowed}.admin-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:.75rem;background:#fff}.admin-table{width:100%;min-width:980px;border-collapse:collapse}.admin-table th,.admin-table td{padding:.75rem;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}.admin-table th{background:var(--panel);white-space:nowrap}.admin-assignment{display:grid;grid-template-columns:minmax(175px,1fr) auto auto;gap:.4rem;min-width:325px}.admin-button:focus-visible,.admin-field input:focus-visible,.admin-field select:focus-visible,.admin-assignment input:focus-visible,.admin-table-wrap:focus-visible{outline:3px solid rgba(36,95,61,.22);outline-offset:2px}@media(max-width:960px){.admin-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.admin-filters{grid-template-columns:1fr}.admin-toolbar{display:grid}.admin-button{width:100%}}@media print{#tab-admin,.admin-toolbar,.admin-filters,.admin-assignment button{display:none!important}.admin-table{min-width:0;font-size:9pt}.admin-table-wrap{overflow:visible;border:0}}
+    .admin-panel{max-width:1320px}.admin-runtime{display:grid;gap:1rem}.admin-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:.65rem}.admin-metric{display:grid;gap:.2rem;padding:.85rem;border:1px solid var(--line);border-radius:.75rem;background:#fff}.admin-metric strong{font-size:1.5rem}.admin-metric span,.admin-status{color:var(--muted)}.admin-toolbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}.admin-filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.75rem}.admin-field{display:grid;gap:.35rem;font-weight:750}.admin-field input,.admin-field select,.admin-assignment input{width:100%;min-height:44px;border:1px solid var(--line);border-radius:.6rem;padding:.65rem .7rem;background:#fff;color:var(--ink);font:inherit}.admin-button{min-height:44px;border:1px solid var(--green);border-radius:.65rem;padding:.65rem .85rem;background:#fff;color:var(--green);font:inherit;font-weight:800;cursor:pointer}.admin-button.primary{background:var(--green);color:#fff}.admin-button:disabled{opacity:.55;cursor:not-allowed}.admin-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:.75rem;background:#fff}.admin-table{width:100%;min-width:1180px;border-collapse:collapse}.admin-table th,.admin-table td{padding:.75rem;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}.admin-table th{background:var(--panel);white-space:nowrap}.admin-assignment{display:grid;grid-template-columns:minmax(175px,1fr) auto auto;gap:.4rem;min-width:325px}.admin-button:focus-visible,.admin-field input:focus-visible,.admin-field select:focus-visible,.admin-assignment input:focus-visible,.admin-table-wrap:focus-visible{outline:3px solid rgba(36,95,61,.22);outline-offset:2px}@media(max-width:960px){.admin-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.admin-filters{grid-template-columns:1fr}.admin-toolbar{display:grid}.admin-button{width:100%}}@media print{#tab-admin,.admin-toolbar,.admin-filters,.admin-assignment button{display:none!important}.admin-table{min-width:0;font-size:9pt}.admin-table-wrap{overflow:visible;border:0}}
   `;
   document.head.append(style);
 }
@@ -109,15 +122,20 @@ function adminMetric(label, value) {
   return card;
 }
 
-function filterAdminRows(rows, { search, status, assignment, followUp }) {
+function filterAdminRows(rows, { search, status, assignment, followUp, academic }) {
   const query = search.trim().toLowerCase();
   return rows.filter((row) => {
     const text = `${row.learnerSubject ?? ''} ${row.assignedEvaluatorId ?? ''}`.toLowerCase();
     const follow = row.followUpStatus ?? 'none';
+    const academicMatches = !academic
+      || (academic === 'transitioned' && Number(row.academicTransitionCount ?? 0) > 0)
+      || (academic === 'ever-reopened' && Number(row.academicReopenCount ?? 0) > 0)
+      || row.enrollmentStatus === academic;
     return (!query || text.includes(query))
       && (!status || (row.practicalStatus ?? 'not-recorded') === status)
       && (!assignment || (assignment === 'unassigned' ? !row.assignedEvaluatorId : assignment === 'assigned' ? Boolean(row.assignedEvaluatorId) : row.assignedEvaluatorId === assignment))
-      && (!followUp || (followUp === 'open' ? !['none', 'closed'].includes(follow) : follow === followUp));
+      && (!followUp || (followUp === 'open' ? !['none', 'closed'].includes(follow) : follow === followUp))
+      && academicMatches;
   });
 }
 
@@ -150,14 +168,14 @@ function adminAssignmentControl(row, refresh, statusNode) {
 }
 
 function adminTable(rows, refresh, statusNode) {
-  const wrap = adminElement('div', '', 'admin-table-wrap'); wrap.tabIndex = 0; wrap.setAttribute('aria-label', 'Course 1 practical operations table');
+  const wrap = adminElement('div', '', 'admin-table-wrap'); wrap.tabIndex = 0; wrap.setAttribute('aria-label', 'Course 1 practical and academic operations table');
   const table = document.createElement('table'); table.className = 'admin-table';
   const thead = document.createElement('thead'); const head = document.createElement('tr');
-  for (const label of ['Learner','Practical','Score','Critical','Follow-up','Reassessment','Evaluator assignment','Updated']) { const th = document.createElement('th'); th.scope = 'col'; th.textContent = label; head.append(th); }
+  for (const label of ['Learner','Academic enrollment','Academic history','Practical','Score','Critical','Follow-up','Reassessment','Evaluator assignment','Updated']) { const th = document.createElement('th'); th.scope = 'col'; th.textContent = label; head.append(th); }
   thead.append(head); table.append(thead); const tbody = document.createElement('tbody');
   for (const row of rows) {
     const tr = document.createElement('tr');
-    const cells = [row.learnerSubject ?? '', adminStatusLabel(row.practicalStatus), row.scorePercent == null ? '—' : `${Number(row.scorePercent).toFixed(1)}%`, String(Number(row.criticalErrorCount ?? 0)), adminFollowUpLabel(row.followUpStatus), row.reassessmentTargetDate || '—'];
+    const cells = [row.learnerSubject ?? '', adminEnrollmentLabel(row.enrollmentStatus), adminAcademicHistoryLabel(row), adminStatusLabel(row.practicalStatus), row.scorePercent == null ? '—' : `${Number(row.scorePercent).toFixed(1)}%`, String(Number(row.criticalErrorCount ?? 0)), adminFollowUpLabel(row.followUpStatus), row.reassessmentTargetDate || '—'];
     for (const value of cells) { const td = document.createElement('td'); td.textContent = value; tr.append(td); }
     const assignment = document.createElement('td'); assignment.append(adminAssignmentControl(row, refresh, statusNode)); tr.append(assignment);
     const updated = document.createElement('td'); updated.textContent = row.updatedAt ? new Date(row.updatedAt).toLocaleString() : (row.enrolledAt ? new Date(row.enrolledAt).toLocaleDateString() : '—'); tr.append(updated); tbody.append(tr);
@@ -179,7 +197,7 @@ export async function initializeAdminDashboard() {
   tab.addEventListener('click', async () => {
     for (const item of document.querySelectorAll('.portal-tab')) { const active = item.id === 'tab-admin'; item.classList.toggle('active', active); item.setAttribute('aria-pressed', active ? 'true' : 'false'); }
     const panel = adminElement('article', '', 'portal-panel admin-panel');
-    panel.append(adminElement('p', 'Authorized Course 1 operations', 'eyebrow'), adminElement('h2', 'Course 1 Operations Dashboard'), adminElement('p', 'Manage practical workload, evaluator ownership, remediation and reassessment follow-up, and privacy-bounded cohort reporting. This dashboard does not alter public academic content or issue professional credentials.', 'lede'));
+    panel.append(adminElement('p', 'Authorized Course 1 operations', 'eyebrow'), adminElement('h2', 'Course 1 Operations Dashboard'), adminElement('p', 'Manage academic completion transitions, practical workload, evaluator ownership, remediation and reassessment follow-up, and privacy-bounded cohort reporting. This dashboard does not alter public academic content or issue professional credentials.', 'lede'));
     const statusNode = adminElement('p', 'Loading Course 1 operations…', 'admin-status'); statusNode.setAttribute('aria-live', 'polite'); panel.append(statusNode); lessonView.replaceChildren(panel); lessonView.focus();
     let payload = null;
     async function refresh() {
@@ -188,10 +206,13 @@ export async function initializeAdminDashboard() {
     function render() {
       panel.querySelector('.admin-runtime')?.remove();
       const rows = Array.isArray(payload?.rows) ? payload.rows : []; const summary = payload?.summary ?? {};
+      const academicCompleted = rows.filter((row) => row.enrollmentStatus === 'completed').length;
+      const academicEverReopened = rows.filter((row) => Number(row.academicReopenCount ?? 0) > 0).length;
+      const academicTransitions = rows.reduce((total, row) => total + Number(row.academicTransitionCount ?? 0), 0);
       statusNode.textContent = `${rows.length} learner operational record${rows.length === 1 ? '' : 's'} loaded.`;
       const runtime = adminElement('div', '', 'admin-runtime');
-      const metrics = adminElement('section', '', 'admin-metrics'); metrics.setAttribute('aria-label', 'Course 1 practical cohort summary');
-      metrics.append(adminMetric('Learners', summary.total ?? rows.length), adminMetric('Not evaluated', summary.notRecorded ?? 0), adminMetric('In progress', summary.inProgress ?? 0), adminMetric('Not passed', summary.failed ?? 0), adminMetric('Passed', summary.passed ?? 0), adminMetric('Follow-up open', summary.followUpOpen ?? 0), adminMetric('Unassigned', summary.unassigned ?? 0)); runtime.append(metrics);
+      const metrics = adminElement('section', '', 'admin-metrics'); metrics.setAttribute('aria-label', 'Course 1 academic and practical cohort summary');
+      metrics.append(adminMetric('Learners', summary.total ?? rows.length), adminMetric('Academic complete', academicCompleted), adminMetric('Ever reopened', academicEverReopened), adminMetric('Academic transitions', academicTransitions), adminMetric('Not evaluated', summary.notRecorded ?? 0), adminMetric('In progress', summary.inProgress ?? 0), adminMetric('Not passed', summary.failed ?? 0), adminMetric('Passed', summary.passed ?? 0), adminMetric('Follow-up open', summary.followUpOpen ?? 0), adminMetric('Unassigned', summary.unassigned ?? 0)); runtime.append(metrics);
       const toolbar = adminElement('section', '', 'admin-toolbar'); const csv = adminElement('button', 'Export CSV', 'admin-button primary'); csv.type = 'button'; csv.addEventListener('click', () => { const link = document.createElement('a'); link.href = `/api/v1/admin/courses/${ADMIN_COURSE_ID}/practical-report?format=csv`; link.download = 'course-1-practical-report.csv'; document.body.append(link); link.click(); link.remove(); }); const reload = adminElement('button', 'Refresh report', 'admin-button'); reload.type = 'button'; reload.addEventListener('click', refresh); toolbar.append(csv, reload); runtime.append(toolbar);
       const filters = adminElement('section', '', 'admin-filters');
       const field = (labelText, control) => { const label = adminElement('label', '', 'admin-field'); label.append(adminElement('span', labelText), control); return label; };
@@ -199,10 +220,11 @@ export async function initializeAdminDashboard() {
       const practical = document.createElement('select'); for (const [value,label] of [['','All practical states'],['not-recorded','Not evaluated'],['in-progress','In progress'],['failed','Not passed'],['passed','Passed'],['voided','Voided']]) { const option = document.createElement('option'); option.value = value; option.textContent = label; practical.append(option); }
       const assignment = document.createElement('select'); for (const [value,label] of [['','All assignments'],['unassigned','Unassigned'],['assigned','Any assigned']]) { const option = document.createElement('option'); option.value = value; option.textContent = label; assignment.append(option); } for (const evaluator of [...new Set(rows.map((row) => row.assignedEvaluatorId).filter(Boolean))].sort()) { const option = document.createElement('option'); option.value = evaluator; option.textContent = evaluator; assignment.append(option); }
       const follow = document.createElement('select'); for (const [value,label] of [['','All follow-up states'],['open','Any open follow-up'],['remediation-assigned','Remediation assigned'],['remediation-in-progress','Remediation in progress'],['ready-for-reassessment','Ready for reassessment'],['reassessment-scheduled','Reassessment scheduled'],['closed','Closed']]) { const option = document.createElement('option'); option.value = value; option.textContent = label; follow.append(option); }
-      filters.append(field('Search', search), field('Practical status', practical), field('Assignment', assignment), field('Follow-up', follow)); runtime.append(filters);
+      const academic = document.createElement('select'); for (const [value,label] of [['','All academic states'],['completed','Currently complete'],['active','Requirements open'],['transitioned','Has completion history'],['ever-reopened','Ever reopened'],['withdrawn','Withdrawn']]) { const option = document.createElement('option'); option.value = value; option.textContent = label; academic.append(option); }
+      filters.append(field('Search', search), field('Academic status', academic), field('Practical status', practical), field('Assignment', assignment), field('Follow-up', follow)); runtime.append(filters);
       const results = adminElement('p', '', 'admin-status'); results.setAttribute('aria-live', 'polite'); const host = adminElement('div'); runtime.append(results, host);
-      function applyFilters() { const visible = filterAdminRows(rows, { search: search.value, status: practical.value, assignment: assignment.value, followUp: follow.value }); results.textContent = `${visible.length} of ${rows.length} learner${rows.length === 1 ? '' : 's'} shown.`; host.replaceChildren(adminTable(visible, refresh, statusNode)); }
-      search.addEventListener('input', applyFilters); practical.addEventListener('change', applyFilters); assignment.addEventListener('change', applyFilters); follow.addEventListener('change', applyFilters); applyFilters(); panel.append(runtime);
+      function applyFilters() { const visible = filterAdminRows(rows, { search: search.value, status: practical.value, assignment: assignment.value, followUp: follow.value, academic: academic.value }); results.textContent = `${visible.length} of ${rows.length} learner${rows.length === 1 ? '' : 's'} shown.`; host.replaceChildren(adminTable(visible, refresh, statusNode)); }
+      search.addEventListener('input', applyFilters); academic.addEventListener('change', applyFilters); practical.addEventListener('change', applyFilters); assignment.addEventListener('change', applyFilters); follow.addEventListener('change', applyFilters); applyFilters(); panel.append(runtime);
     }
     await refresh();
   });
@@ -218,6 +240,28 @@ function recordIso(value) {
 function latestRecordDate(values = []) {
   const valid = values.map(recordIso).filter(Boolean).sort();
   return valid.length ? valid.at(-1) : null;
+}
+
+function academicTransitionRecord(event, fallbackVersion) {
+  const snapshot = event?.academicSnapshot && typeof event.academicSnapshot === 'object' ? event.academicSnapshot : {};
+  return {
+    eventType: event?.eventType ?? null,
+    fromStatus: event?.fromStatus ?? null,
+    toStatus: event?.toStatus ?? null,
+    reason: event?.reason ?? null,
+    courseVersion: String(event?.courseVersion ?? fallbackVersion ?? ''),
+    completedAt: recordIso(event?.completedAt),
+    previousCompletedAt: recordIso(event?.previousCompletedAt),
+    occurredAt: recordIso(event?.occurredAt),
+    academicSnapshot: {
+      requiredLessonCount: Number(snapshot.requiredLessonCount ?? 0),
+      completedLessonCount: Number(snapshot.completedLessonCount ?? 0),
+      finalAssessmentStatus: snapshot.finalAssessmentStatus ?? null,
+      performanceAssessmentStatus: snapshot.performanceAssessmentStatus ?? null,
+      performanceCriticalErrorCount: Number(snapshot.performanceCriticalErrorCount ?? 0),
+      missingRequirements: Array.isArray(snapshot.missingRequirements) ? snapshot.missingRequirements.filter((item) => typeof item === 'string') : []
+    }
+  };
 }
 
 export function buildAcademicCourseRecord({ course, progressRows = [], enrollments = [], evidence = {} } = {}) {
@@ -255,8 +299,10 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
     courseVersion: String(row.courseVersion),
     status: row.status,
     enrolledAt: recordIso(row.enrolledAt),
-    completedAt: recordIso(row.completedAt)
+    completedAt: recordIso(row.completedAt),
+    academicStatusHistory: (row.academicStatusHistory ?? []).map((event) => academicTransitionRecord(event, row.courseVersion))
   })).sort((a, b) => String(a.enrolledAt ?? '').localeCompare(String(b.enrolledAt ?? '')));
+  const academicStatusHistory = versionHistory.flatMap((row) => row.academicStatusHistory).sort((a, b) => String(a.occurredAt ?? '').localeCompare(String(b.occurredAt ?? '')));
   return {
     recordType: 'academic-course-record',
     course: { id: course.id, title: course.title, currentVersion: String(evidence.course?.version ?? course.version ?? ''), publicationStatus: course.status ?? 'published' },
@@ -289,6 +335,7 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
       reassessmentTargetDate: practical.reassessmentTargetDate || null,
       learnerFeedback: practical.remediationSummary || null
     },
+    academicStatusHistory,
     courseVersionHistory: versionHistory
   };
 }
@@ -308,8 +355,20 @@ function transcriptFollowUpLabel(value) {
   return ({ none: 'No follow-up', closed: 'Closed', 'remediation-assigned': 'Remediation assigned', 'remediation-in-progress': 'Remediation in progress', 'ready-for-reassessment': 'Ready for reassessment', 'reassessment-scheduled': 'Reassessment scheduled' })[value] ?? String(value ?? 'none').replaceAll('-', ' ');
 }
 
+function transcriptAcademicEventLabel(value) {
+  return value === 'course-enrollment-academic-reopened' ? 'Academic requirements reopened' : value === 'course-enrollment-academic-completed' ? 'Academic course completed' : String(value ?? 'Transition').replaceAll('-', ' ');
+}
+
 function transcriptDate(value) {
   return value ? new Date(value).toLocaleString() : '—';
+}
+
+function transcriptAcademicSnapshot(snapshot = {}) {
+  const lessonCount = `${Number(snapshot.completedLessonCount ?? 0)}/${Number(snapshot.requiredLessonCount ?? 0)} lessons`;
+  const finalStatus = `final ${snapshot.finalAssessmentStatus ?? 'unknown'}`;
+  const practicalStatus = `practical ${snapshot.performanceAssessmentStatus ?? 'unknown'}`;
+  const critical = `${Number(snapshot.performanceCriticalErrorCount ?? 0)} critical error${Number(snapshot.performanceCriticalErrorCount ?? 0) === 1 ? '' : 's'}`;
+  return [lessonCount, finalStatus, practicalStatus, critical].join(' • ');
 }
 
 function injectTranscriptStyles() {
@@ -397,6 +456,24 @@ function renderAcademicRecord(panel, record) {
     const feedback = transcriptElement('aside', '', 'record-warning'); feedback.append(transcriptElement('strong', 'Current assessor feedback / remediation'), transcriptElement('p', record.performanceAssessment.learnerFeedback)); assessments.append(feedback);
   }
   panel.append(assessments);
+
+  const transitions = transcriptElement('section', '', 'record-section');
+  transitions.append(transcriptElement('h3', 'Academic completion transition history'), transcriptElement('p', 'This timeline records automatic Course 1 enrollment completion and reopening decisions. It does not change or represent professional credential status.', 'record-meta'));
+  if (!record.academicStatusHistory.length) {
+    transitions.append(transcriptElement('p', 'No automatic academic completion or reopening transitions are recorded yet.', 'record-meta'));
+  } else {
+    const wrap = transcriptElement('div', '', 'record-version-history'); wrap.tabIndex = 0; wrap.setAttribute('aria-label', 'Academic completion transition history');
+    const table = document.createElement('table'); table.className = 'record-table'; const head = document.createElement('thead'); const hr = document.createElement('tr');
+    for (const label of ['Transition','Course version','From','To','Requirement snapshot','Occurred']) { const th = document.createElement('th'); th.scope = 'col'; th.textContent = label; hr.append(th); } head.append(hr); table.append(head);
+    const body = document.createElement('tbody');
+    for (const event of record.academicStatusHistory) {
+      const tr = document.createElement('tr');
+      for (const value of [transcriptAcademicEventLabel(event.eventType), event.courseVersion, event.fromStatus ?? '—', event.toStatus ?? '—', transcriptAcademicSnapshot(event.academicSnapshot), transcriptDate(event.occurredAt)]) { const td = document.createElement('td'); td.textContent = value; tr.append(td); }
+      body.append(tr);
+    }
+    table.append(body); wrap.append(table); transitions.append(wrap);
+  }
+  panel.append(transitions);
 
   const versions = transcriptElement('section', '', 'record-section'); versions.append(transcriptElement('h3', 'Course-version history'));
   if (!record.courseVersionHistory.length) {
