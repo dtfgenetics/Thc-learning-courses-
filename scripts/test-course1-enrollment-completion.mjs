@@ -84,6 +84,7 @@ const completionStore = {
         completedAt: input.status === 'completed' ? (enrollment.completedAt ?? input.completedAt) : null
       };
       history.push({
+        learnerSubject: subject,
         eventType: input.status === 'completed' ? 'course-enrollment-academic-completed' : 'course-enrollment-academic-reopened',
         fromStatus: previousStatus,
         toStatus: input.status,
@@ -98,10 +99,27 @@ const completionStore = {
     }
     return { enrollment: structuredClone(enrollment), changed, auditEventId: changed ? history.length : null };
   },
-  async listEnrollmentAcademicHistory() { return structuredClone(history); }
+  async listEnrollmentAcademicHistory() { return structuredClone(history.map(({ learnerSubject, ...row }) => row)); },
+  async listCourseAcademicHistory(courseId) { return structuredClone(history.filter((row) => row.courseId === courseId)); }
 };
 const practicalEvaluatorStore = {
   kind: 'memory-practical',
+  async listCourseReportRows() {
+    return [{
+      learnerSubject: subject,
+      enrollmentStatus: enrollment.status,
+      enrolledAt: enrollment.enrolledAt,
+      practicalStatus: currentEvidence.performanceAssessment?.status ?? 'not-recorded',
+      scorePercent: 94,
+      criticalErrorCount: currentEvidence.performanceAssessment?.criticalErrorCount ?? 0,
+      followUpStatus: 'none',
+      reassessmentTargetDate: '',
+      assignedEvaluatorId: null,
+      assignedAt: null,
+      evaluatedAt: currentEvidence.performanceAssessment?.evaluatedAt ?? null,
+      updatedAt: currentEvidence.performanceAssessment?.evaluatedAt ?? null
+    }];
+  },
   async saveEvaluation(_subject, record) {
     currentEvidence.performanceAssessment = {
       assessmentId: record.assessmentId,
@@ -137,6 +155,13 @@ assert.equal(rows[0].academicStatusHistory.length, 2);
 assert.equal(rows[0].academicStatusHistory.at(-1).eventType, 'course-enrollment-academic-reopened');
 assert.equal(history.at(-1).academicSnapshot.completedLessonCount, 17);
 
+let reportRows = await wrapped.practicalEvaluatorStore.listCourseReportRows({ courseId: COURSE_ID, assessmentId: bundle.performanceAssessmentId, assessmentVersion: '1.0.0' });
+assert.equal(reportRows[0].academicTransitionCount, 2);
+assert.equal(reportRows[0].academicReopenCount, 1);
+assert.equal(reportRows[0].latestAcademicTransitionType, 'course-enrollment-academic-reopened');
+assert.equal(reportRows[0].latestAcademicTransitionAt, history.at(-1).occurredAt);
+assert.equal(Object.hasOwn(reportRows[0], 'academicStatusHistory'), false, 'admin report must expose transition metadata rather than the full audit history payload');
+
 await wrapped.learnerStore.setLessonProgress(subject, {
   lessonId: bundle.lessons[0].id,
   lessonVersion: String(bundle.lessons[0].version),
@@ -146,6 +171,10 @@ rows = await wrapped.learnerStore.listEnrollments(subject);
 assert.equal(rows[0].status, 'completed', 'lesson completion should automatically restore academic enrollment completion');
 assert.ok(rows[0].completedAt);
 assert.equal(rows[0].academicStatusHistory.length, 3);
+reportRows = await wrapped.practicalEvaluatorStore.listCourseReportRows({ courseId: COURSE_ID, assessmentId: bundle.performanceAssessmentId, assessmentVersion: '1.0.0' });
+assert.equal(reportRows[0].academicTransitionCount, 3);
+assert.equal(reportRows[0].academicReopenCount, 1);
+assert.equal(reportRows[0].latestAcademicTransitionType, 'course-enrollment-academic-completed');
 
 const completedBeforeWithdrawal = rows[0].completedAt;
 enrollment = { ...enrollment, status: 'withdrawn', completedAt: completedBeforeWithdrawal };
@@ -155,4 +184,4 @@ assert.equal(sync.status, 'withdrawn');
 assert.equal(enrollment.status, 'withdrawn', 'academic reconciliation must not override an administrative withdrawal');
 assert.equal(history.length, 3);
 
-console.log('Course 1 automatic academic enrollment completion, reopening, idempotency, withdrawal protection, and history projection passed.');
+console.log('Course 1 automatic academic enrollment completion, reopening, idempotency, admin report transition metadata, withdrawal protection, and history projection passed.');

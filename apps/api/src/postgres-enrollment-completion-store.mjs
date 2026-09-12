@@ -108,6 +108,20 @@ export function createPostgresEnrollmentCompletionStore({ query } = {}) {
         [externalSubject, courseId]
       );
       return (result.rows ?? []).map(historyView);
+    },
+    async listCourseAcademicHistory(courseId) {
+      if (!courseId) throw new Error('courseId required');
+      const result = await queryOrUnavailable(
+        query,
+        `select subject_id, event_type, metadata, created_at
+           from audit_events
+          where subject_type = 'learner'
+            and event_type in ('course-enrollment-academic-completed','course-enrollment-academic-reopened')
+            and metadata ->> 'courseId' = $1
+          order by subject_id, created_at asc, id asc`,
+        [courseId]
+      );
+      return (result.rows ?? []).map((row) => ({ learnerSubject: row.subject_id, ...historyView(row) }));
     }
   };
 }

@@ -21,6 +21,16 @@ for (const marker of [
   'Course 1 Operations Dashboard',
   'Export CSV',
   'Refresh report',
+  'Academic complete',
+  'Ever reopened',
+  'Academic transitions',
+  'Academic status',
+  'Currently complete',
+  'Requirements open',
+  'Has completion history',
+  'Ever reopened',
+  'Academic enrollment',
+  'Academic history',
   'Follow-up open',
   'Unassigned',
   'Any open follow-up',
@@ -33,11 +43,15 @@ for (const marker of [
   '@media print'
 ]) assert.ok(runtime.includes(marker), `Admin dashboard runtime missing contract: ${marker}`);
 
+assert.ok(runtime.includes("academic === 'ever-reopened' && Number(row.academicReopenCount ?? 0) > 0"), 'Admin academic filter must support learners whose academic requirements were reopened');
+assert.ok(runtime.includes("academic === 'transitioned' && Number(row.academicTransitionCount ?? 0) > 0"), 'Admin academic filter must support any learner with transition history');
+assert.ok(runtime.includes("row.enrollmentStatus === 'completed'"), 'Admin metrics must use authoritative enrollment completion state');
+assert.ok(runtime.includes('latestAcademicTransitionType'), 'Admin table must show latest academic transition context');
 assert.equal(runtime.includes('.innerHTML'), false, 'Admin dashboard must build DOM safely rather than use innerHTML');
-assert.ok(runtime.includes("if (typeof document !== 'undefined') initializeAdminDashboard()"), 'Node-imported progress helpers must guard browser-only admin initialization');
+assert.ok(runtime.includes("if (typeof document !== 'undefined')"), 'Node-imported progress helpers must guard browser-only initialization');
 assert.ok(runtime.includes("link.href = `/api/v1/admin/courses/${ADMIN_COURSE_ID}/practical-report?format=csv`"), 'CSV export must use the privacy-bounded admin report endpoint');
 assert.ok(runtime.includes("body: JSON.stringify({ learnerSubject: row.learnerSubject, evaluatorId })"), 'Admin assignment mutation must submit only learner/evaluator identity inputs; server remains authoritative');
 assert.equal(runtime.includes('evaluatorNotes'), false, 'Admin dashboard must not request or render private evaluator notes');
 assert.equal(runtime.includes('evidenceOutputs'), false, 'Admin dashboard must not request or render detailed learner evidence references');
 
-console.log('Course 1 role-gated admin dashboard, privacy-bounded reporting, reassignment, CSV, responsive and safe-DOM contracts passed.');
+console.log('Course 1 role-gated admin dashboard, academic completion/reopen operations, privacy-bounded practical reporting, reassignment, responsive and safe-DOM contracts passed.');

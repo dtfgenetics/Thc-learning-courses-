@@ -6,6 +6,7 @@ const query = async (text, params) => {
   calls.push({ text, params });
   if (text.includes("event_type in ('course-enrollment-academic-completed','course-enrollment-academic-reopened')")) {
     return { rows: [{
+      subject_id: 'subject-learner-1',
       event_type: 'course-enrollment-academic-completed',
       metadata: {
         fromStatus: 'active', toStatus: 'completed', reason: 'academic-requirements-satisfied',
@@ -57,10 +58,20 @@ assert.equal(calls[1].params[1], 'COURSE-LH-TECH1-001');
 assert.match(calls[1].text, /subject_type = 'learner'/);
 assert.match(calls[1].text, /metadata ->> 'courseId' = \$2/);
 
+const cohortHistory = await store.listCourseAcademicHistory('COURSE-LH-TECH1-001');
+assert.equal(cohortHistory.length, 1);
+assert.equal(cohortHistory[0].learnerSubject, 'subject-learner-1');
+assert.equal(cohortHistory[0].eventType, 'course-enrollment-academic-completed');
+assert.equal(cohortHistory[0].academicSnapshot.completedLessonCount, 18);
+assert.deepEqual(calls[2].params, ['COURSE-LH-TECH1-001']);
+assert.match(calls[2].text, /select subject_id, event_type, metadata, created_at/i);
+assert.match(calls[2].text, /metadata ->> 'courseId' = \$1/);
+assert.equal(calls[2].text.includes('subject-learner-1'), false, 'cohort history query must remain parameterized');
+
 assert.throws(() => createPostgresEnrollmentCompletionStore(), /requires a query/);
 await assert.rejects(
   () => store.setEnrollmentAcademicStatus('subject-learner-1', { courseId: 'COURSE-LH-TECH1-001', courseVersion: '1.0.0', status: 'withdrawn', reason: 'bad' }),
   /must be active or completed/
 );
 
-console.log('Audited PostgreSQL academic enrollment completion persistence contract passed.');
+console.log('Audited PostgreSQL academic enrollment completion and cohort-history persistence contracts passed.');
