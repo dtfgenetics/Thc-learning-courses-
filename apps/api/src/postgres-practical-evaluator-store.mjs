@@ -19,17 +19,10 @@ function rowView(row) {
     updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
   };
 }
-
 function assignmentView(row) {
   if (!row?.assigned_evaluator_id) return null;
-  return {
-    evaluatorId: row.assigned_evaluator_id,
-    assignedBy: row.assigned_by ?? null,
-    assignedAt: row.assigned_at ? new Date(row.assigned_at).toISOString() : null,
-    updatedAt: row.assignment_updated_at ? new Date(row.assignment_updated_at).toISOString() : null
-  };
+  return { evaluatorId: row.assigned_evaluator_id, assignedBy: row.assigned_by ?? null, assignedAt: row.assigned_at ? new Date(row.assigned_at).toISOString() : null, updatedAt: row.assignment_updated_at ? new Date(row.assignment_updated_at).toISOString() : null };
 }
-
 function queueRow(row) {
   return {
     learnerSubject: row.external_subject,
@@ -47,7 +40,6 @@ function queueRow(row) {
     updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
   };
 }
-
 function assignmentFilterSql(filter) {
   if (filter === 'mine') return 'a.evaluator_id = $7';
   if (filter === 'unassigned') return 'a.evaluator_id is null';
@@ -94,6 +86,8 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
            on a.learner_id = l.id and a.course_id = $1 and a.assessment_id = $2 and a.assessment_version = $3
         where ($4 = '' or l.external_subject ilike ('%' || $4 || '%'))
           and ($5 = '' or coalesce(p.status, 'not-recorded') = $5)
+          and $6::text is not null
+          and $7::text is not null
           and ${assignmentSql}
         order by p.updated_at desc nulls last, e.enrolled_at desc, l.external_subject
         ${pagination}`,
@@ -119,32 +113,24 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
       if (!externalSubject || !assessmentId || !assessmentVersion) throw new Error('externalSubject, assessmentId and assessmentVersion required');
       const learnerId = await learnerIdForSubject(externalSubject);
       if (!learnerId) return { learnerExists: false, evaluation: null, assignment: null };
-      const result = await queryOrUnavailable(
-        query,
+      const result = await queryOrUnavailable(query,
         `select p.assessment_id, p.assessment_version, p.status, p.score_percent, p.critical_error_count,
                 p.evidence_json, p.evaluator_id, p.evaluated_at, p.updated_at,
                 a.evaluator_id as assigned_evaluator_id, a.assigned_by, a.assigned_at, a.updated_at as assignment_updated_at
            from learners l
-           left join performance_assessment_results p
-             on p.learner_id = l.id and p.assessment_id = $2 and p.assessment_version = $3
-           left join practical_evaluation_assignments a
-             on a.learner_id = l.id and a.assessment_id = $2 and a.assessment_version = $3
-            and ($4::text is null or a.course_id = $4)
-          where l.id = $1
-          limit 1`,
-        [learnerId, assessmentId, String(assessmentVersion), courseId]
-      );
+           left join performance_assessment_results p on p.learner_id = l.id and p.assessment_id = $2 and p.assessment_version = $3
+           left join practical_evaluation_assignments a on a.learner_id = l.id and a.assessment_id = $2 and a.assessment_version = $3 and ($4::text is null or a.course_id = $4)
+          where l.id = $1 limit 1`,
+        [learnerId, assessmentId, String(assessmentVersion), courseId]);
       const row = result.rows?.[0] ?? null;
       return { learnerExists: true, evaluation: row?.assessment_id ? rowView(row) : null, assignment: assignmentView(row) };
     },
     async claimEvaluator(externalSubject, { courseId, assessmentId, assessmentVersion, evaluatorId, assignedBy = evaluatorId } = {}) {
       const learnerId = await learnerIdForSubject(externalSubject);
       if (!learnerId) return { learnerExists: false, assignment: null };
-      const result = await queryOrUnavailable(
-        query,
+      const result = await queryOrUnavailable(query,
         `with assigned as (
-           insert into practical_evaluation_assignments
-             (learner_id, course_id, assessment_id, assessment_version, evaluator_id, assigned_by, assigned_at, updated_at)
+           insert into practical_evaluation_assignments (learner_id, course_id, assessment_id, assessment_version, evaluator_id, assigned_by, assigned_at, updated_at)
            values ($1,$2,$3,$4,$5,$6,now(),now())
            on conflict (learner_id, course_id, assessment_id, assessment_version)
            do update set evaluator_id = excluded.evaluator_id, assigned_by = excluded.assigned_by, assigned_at = now(), updated_at = now()
@@ -153,13 +139,9 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
          ), audited as (
            insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
            select 'course-practical-assignment-claimed', $6, 'learner', $7,
-                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'assignedEvaluatorId',$5)
-             from assigned
-           returning id
-         )
-         select assigned.* from assigned cross join audited`,
-        [learnerId, courseId, assessmentId, String(assessmentVersion), evaluatorId, assignedBy, externalSubject]
-      );
+                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'assignedEvaluatorId',$5) from assigned returning id
+         ) select assigned.* from assigned cross join audited`,
+        [learnerId, courseId, assessmentId, String(assessmentVersion), evaluatorId, assignedBy, externalSubject]);
       if (!result.rows?.[0]) return { learnerExists: true, conflict: true, assignment: null };
       return { learnerExists: true, conflict: false, assignment: assignmentView(result.rows[0]) };
     },
@@ -167,26 +149,18 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
       const learnerId = await learnerIdForSubject(externalSubject);
       if (!learnerId) return { learnerExists: false, assignment: null };
       if (!evaluatorId) {
-        await queryOrUnavailable(
-          query,
+        await queryOrUnavailable(query,
           `with removed as (
-             delete from practical_evaluation_assignments
-              where learner_id=$1 and course_id=$2 and assessment_id=$3 and assessment_version=$4
-              returning evaluator_id
-           )
-           insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
-           select 'course-practical-assignment-cleared', $5, 'learner', $6,
-                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'previousEvaluatorId',removed.evaluator_id)
-             from removed`,
-          [learnerId, courseId, assessmentId, String(assessmentVersion), assignedBy, externalSubject]
-        );
+             delete from practical_evaluation_assignments where learner_id=$1 and course_id=$2 and assessment_id=$3 and assessment_version=$4 returning evaluator_id
+           ) insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
+             select 'course-practical-assignment-cleared', $5, 'learner', $6,
+                    jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'previousEvaluatorId',removed.evaluator_id) from removed`,
+          [learnerId, courseId, assessmentId, String(assessmentVersion), assignedBy, externalSubject]);
         return { learnerExists: true, assignment: null };
       }
-      const result = await queryOrUnavailable(
-        query,
+      const result = await queryOrUnavailable(query,
         `with assigned as (
-           insert into practical_evaluation_assignments
-             (learner_id, course_id, assessment_id, assessment_version, evaluator_id, assigned_by, assigned_at, updated_at)
+           insert into practical_evaluation_assignments (learner_id, course_id, assessment_id, assessment_version, evaluator_id, assigned_by, assigned_at, updated_at)
            values ($1,$2,$3,$4,$5,$6,now(),now())
            on conflict (learner_id, course_id, assessment_id, assessment_version)
            do update set evaluator_id=excluded.evaluator_id, assigned_by=excluded.assigned_by, assigned_at=now(), updated_at=now()
@@ -194,70 +168,44 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
          ), audited as (
            insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
            select 'course-practical-assignment-set', $6, 'learner', $7,
-                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'assignedEvaluatorId',$5)
-             from assigned
-           returning id
-         )
-         select assigned.* from assigned cross join audited`,
-        [learnerId, courseId, assessmentId, String(assessmentVersion), evaluatorId, assignedBy, externalSubject]
-      );
+                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'assignedEvaluatorId',$5) from assigned returning id
+         ) select assigned.* from assigned cross join audited`,
+        [learnerId, courseId, assessmentId, String(assessmentVersion), evaluatorId, assignedBy, externalSubject]);
       return { learnerExists: true, assignment: assignmentView(result.rows?.[0] ?? null) };
     },
     async releaseEvaluator(externalSubject, { courseId, assessmentId, assessmentVersion, evaluatorId } = {}) {
       const learnerId = await learnerIdForSubject(externalSubject);
       if (!learnerId) return { learnerExists: false, released: false };
-      const result = await queryOrUnavailable(
-        query,
+      const result = await queryOrUnavailable(query,
         `with removed as (
-           delete from practical_evaluation_assignments
-            where learner_id=$1 and course_id=$2 and assessment_id=$3 and assessment_version=$4 and evaluator_id=$5
-            returning evaluator_id
+           delete from practical_evaluation_assignments where learner_id=$1 and course_id=$2 and assessment_id=$3 and assessment_version=$4 and evaluator_id=$5 returning evaluator_id
          ), audited as (
            insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
            select 'course-practical-assignment-released', $5, 'learner', $6,
-                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'previousEvaluatorId',removed.evaluator_id)
-             from removed
-           returning id
-         )
-         select removed.evaluator_id from removed cross join audited`,
-        [learnerId, courseId, assessmentId, String(assessmentVersion), evaluatorId, externalSubject]
-      );
+                  jsonb_build_object('courseId',$2,'assessmentId',$3,'assessmentVersion',$4,'previousEvaluatorId',removed.evaluator_id) from removed returning id
+         ) select removed.evaluator_id from removed cross join audited`,
+        [learnerId, courseId, assessmentId, String(assessmentVersion), evaluatorId, externalSubject]);
       return { learnerExists: true, released: Boolean(result.rows?.[0]) };
     },
     async saveEvaluation(externalSubject, record = {}) {
       if (!externalSubject || !record.assessmentId || !record.assessmentVersion || !record.status || !record.evaluatorId) throw new Error('complete practical evaluation record required');
       const learnerId = await learnerIdForSubject(externalSubject);
       if (!learnerId) return { learnerExists: false, evaluation: null };
-      const result = await queryOrUnavailable(
-        query,
+      const result = await queryOrUnavailable(query,
         `with saved as (
-           insert into performance_assessment_results
-             (learner_id, assessment_id, assessment_version, status, score_percent, critical_error_count,
-              evidence_json, evaluator_id, evaluated_at, updated_at)
+           insert into performance_assessment_results (learner_id, assessment_id, assessment_version, status, score_percent, critical_error_count, evidence_json, evaluator_id, evaluated_at, updated_at)
            values ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, now())
            on conflict (learner_id, assessment_id, assessment_version)
-           do update set status = excluded.status,
-                         score_percent = excluded.score_percent,
-                         critical_error_count = excluded.critical_error_count,
-                         evidence_json = excluded.evidence_json,
-                         evaluator_id = excluded.evaluator_id,
-                         evaluated_at = excluded.evaluated_at,
-                         updated_at = now()
-           returning assessment_id, assessment_version, status, score_percent, critical_error_count,
-                     evidence_json, evaluator_id, evaluated_at, updated_at
+           do update set status = excluded.status, score_percent = excluded.score_percent, critical_error_count = excluded.critical_error_count,
+                         evidence_json = excluded.evidence_json, evaluator_id = excluded.evaluator_id, evaluated_at = excluded.evaluated_at, updated_at = now()
+           returning assessment_id, assessment_version, status, score_percent, critical_error_count, evidence_json, evaluator_id, evaluated_at, updated_at
          ), audited as (
            insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
            values ('course-practical-evaluation-saved', $8, 'learner', $10,
-                   jsonb_build_object('assessmentId', $2, 'assessmentVersion', $3, 'status', $4,
-                                      'scorePercent', $5, 'criticalErrorCount', $6,
-                                      'followUpStatus', $7::jsonb ->> 'followUpStatus'))
+                   jsonb_build_object('assessmentId', $2, 'assessmentVersion', $3, 'status', $4, 'scorePercent', $5, 'criticalErrorCount', $6, 'followUpStatus', $7::jsonb ->> 'followUpStatus'))
            returning id
-         )
-         select saved.* from saved cross join audited`,
-        [learnerId, record.assessmentId, String(record.assessmentVersion), record.status,
-          record.scorePercent == null ? null : Number(record.scorePercent), Number(record.criticalErrorCount ?? 0),
-          JSON.stringify(record.evidence ?? {}), record.evaluatorId, record.evaluatedAt ?? null, externalSubject]
-      );
+         ) select saved.* from saved cross join audited`,
+        [learnerId, record.assessmentId, String(record.assessmentVersion), record.status, record.scorePercent == null ? null : Number(record.scorePercent), Number(record.criticalErrorCount ?? 0), JSON.stringify(record.evidence ?? {}), record.evaluatorId, record.evaluatedAt ?? null, externalSubject]);
       return { learnerExists: true, evaluation: rowView(result.rows?.[0] ?? null) };
     }
   };
