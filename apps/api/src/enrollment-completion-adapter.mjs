@@ -13,6 +13,18 @@ async function synchronizeSafely({ learnerStore, completionStore, subject, cours
   return results;
 }
 
+async function withAcademicHistory(completionStore, subject, rows = []) {
+  if (typeof completionStore.listEnrollmentAcademicHistory !== 'function') return rows;
+  const cache = new Map();
+  const projected = [];
+  for (const row of rows) {
+    if (!cache.has(row.courseId)) cache.set(row.courseId, await completionStore.listEnrollmentAcademicHistory(subject, { courseId: row.courseId }));
+    const history = (cache.get(row.courseId) ?? []).filter((event) => String(event.courseVersion) === String(row.courseVersion));
+    projected.push({ ...row, academicStatusHistory: history });
+  }
+  return projected;
+}
+
 export function addAutomaticEnrollmentCompletion({ learnerStore, practicalEvaluatorStore, completionStore } = {}) {
   if (!learnerStore || !practicalEvaluatorStore || !completionStore) {
     throw new Error('learner, practical evaluator, and enrollment completion stores are required');
@@ -23,12 +35,12 @@ export function addAutomaticEnrollmentCompletion({ learnerStore, practicalEvalua
     async listEnrollments(subject) {
       const current = await learnerStore.listEnrollments(subject);
       await synchronizeSafely({ learnerStore, completionStore, subject, courseIds: current.map((row) => row.courseId) });
-      return learnerStore.listEnrollments(subject);
+      return withAcademicHistory(completionStore, subject, await learnerStore.listEnrollments(subject));
     },
     async enroll(subject, record) {
       const enrollment = await learnerStore.enroll(subject, record);
       await synchronizeSafely({ learnerStore, completionStore, subject, courseIds: [record.courseId] });
-      const refreshed = await learnerStore.listEnrollments(subject);
+      const refreshed = await withAcademicHistory(completionStore, subject, await learnerStore.listEnrollments(subject));
       return refreshed.find((row) => row.courseId === record.courseId && String(row.courseVersion) === String(record.courseVersion)) ?? enrollment;
     },
     async setLessonProgress(subject, record) {
