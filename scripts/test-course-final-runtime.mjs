@@ -15,6 +15,8 @@ const assessment = read('content/assessments/ASSESS-LH-TECH1-001-FINAL.json');
 const itemBank = assessment.items.map((id) => read(`content/questions/${id}.json`));
 
 assert.equal(itemBank.length, 36);
+assert.equal(assessment.extensions?.gradingPolicy?.algorithmVersion, 'course-grader-2.0.0');
+assert.equal(assessment.extensions?.gradingPolicy?.requireCompetencyMinimums, true);
 for (const item of itemBank) {
   assert.equal(item.purpose, 'summative');
   assert.ok(['multiple-choice', 'scenario', 'case-study', 'multiple-response', 'numeric'].includes(item.type), `${item.id} uses unsupported learner runtime type ${item.type}`);
@@ -57,10 +59,67 @@ const scored = scorePersistedCourseAssessment({ assessment, attempt, itemBank, n
 assert.equal(scored.attempt.status, 'scored');
 assert.equal(scored.attempt.scorePercent, 100);
 assert.equal(scored.attempt.passed, true);
+assert.equal(scored.algorithmVersion, 'course-grader-2.0.0');
 assert.equal(scored.competencyResults.length, 6);
-assert.ok(scored.competencyResults.every((row) => row.scorePercent === 100));
+assert.equal(scored.objectiveResults.length, 12);
+assert.equal(scored.failedCompetencyMinimums.length, 0);
+assert.ok(scored.competencyResults.every((row) => row.scorePercent === 100 && row.masteryLevel === 'demonstrated'));
 
 const incomplete = createCourseAssessmentAttempt({ learnerId: 'incomplete', assessment, itemBank, seed: 'incomplete' });
 assert.throws(() => scorePersistedCourseAssessment({ assessment, attempt: incomplete, itemBank }), /unanswered item/);
 
-console.log('Course 1 final assessment runtime security, shuffle, non-disclosure, and scoring tests passed.');
+const syntheticAssessment = {
+  id: 'ASSESS-SYNTHETIC-COURSE-GRADER',
+  version: '1.0.0',
+  passingScorePercent: 80,
+  extensions: {
+    gradingPolicy: {
+      multipleResponseMethod: 'partial-credit',
+      multipleResponseIncorrectPenalty: 0.5,
+      requireCompetencyMinimums: true,
+      masteryBands: { demonstratedPercent: 80, developingPercent: 60 },
+      competencyMinimums: { 'COMP-SAFETY-WORK-001': 70 }
+    }
+  }
+};
+const syntheticBank = [
+  { id: 'ITEM-SYN-SAFETY', version: 1, type: 'multiple-choice', competency: 'COMP-SAFETY-WORK-001', objective: 'LO-SYN-01', choices: ['Stop', 'Continue'], correct: 0, extensions: { grading: { weight: 1 } } },
+  { id: 'ITEM-SYN-WEIGHTED', version: 1, type: 'multiple-choice', competency: 'COMP-PRO-QA-001', objective: 'LO-SYN-02', choices: ['A', 'B'], correct: 0, extensions: { grading: { weight: 9 } } }
+];
+const floorAttempt = {
+  id: 'ATTEMPT-FLOOR', learnerId: 'learner', assessmentId: syntheticAssessment.id, assessmentVersion: syntheticAssessment.version,
+  formId: 'FORM-FLOOR', status: 'started', startedAt: '2026-09-12T10:00:00.000Z', submittedAt: null, scoredAt: null,
+  items: [
+    { position: 1, itemId: 'ITEM-SYN-SAFETY', itemVersion: 1, competency: 'COMP-SAFETY-WORK-001', response: 1, score: null, maxScore: 1 },
+    { position: 2, itemId: 'ITEM-SYN-WEIGHTED', itemVersion: 1, competency: 'COMP-PRO-QA-001', response: 0, score: null, maxScore: 1 }
+  ]
+};
+const floorScored = scorePersistedCourseAssessment({ assessment: syntheticAssessment, attempt: floorAttempt, itemBank: syntheticBank });
+assert.equal(floorScored.attempt.scorePercent, 90);
+assert.equal(floorScored.overallScorePassed, true);
+assert.equal(floorScored.competencyMinimumsPassed, false);
+assert.equal(floorScored.attempt.passed, false, 'overall score must not hide a failed configured competency minimum');
+assert.deepEqual(floorScored.failedCompetencyMinimums, [{ competency: 'COMP-SAFETY-WORK-001', scorePercent: 0, minimumPercent: 70 }]);
+
+const partialAssessment = {
+  id: 'ASSESS-SYNTHETIC-PARTIAL', version: '1.0.0', passingScorePercent: 0,
+  extensions: { gradingPolicy: { multipleResponseMethod: 'partial-credit', multipleResponseIncorrectPenalty: 0.5, requireCompetencyMinimums: false } }
+};
+const partialBank = [
+  { id: 'ITEM-SYN-MR', version: 1, type: 'multiple-response', competency: 'COMP-PRO-QA-001', objective: 'LO-SYN-03', choices: ['A','B','C','D'], correct: [0,1] },
+  { id: 'ITEM-SYN-NUM', version: 1, type: 'numeric', competency: 'COMP-PRO-QA-001', objective: 'LO-SYN-04', correct: 10, extensions: { grading: { absoluteTolerance: 0.5 } } }
+];
+const partialAttempt = {
+  id: 'ATTEMPT-PARTIAL', learnerId: 'learner', assessmentId: partialAssessment.id, assessmentVersion: partialAssessment.version,
+  formId: 'FORM-PARTIAL', status: 'started', startedAt: '2026-09-12T10:00:00.000Z', submittedAt: null, scoredAt: null,
+  items: [
+    { position: 1, itemId: 'ITEM-SYN-MR', itemVersion: 1, competency: 'COMP-PRO-QA-001', response: [0], score: null, maxScore: 1 },
+    { position: 2, itemId: 'ITEM-SYN-NUM', itemVersion: 1, competency: 'COMP-PRO-QA-001', response: 10.4, score: null, maxScore: 1 }
+  ]
+};
+const partialScored = scorePersistedCourseAssessment({ assessment: partialAssessment, attempt: partialAttempt, itemBank: partialBank });
+assert.equal(partialScored.attempt.items[0].score, 0.5, 'one of two correct selections earns partial credit without an incorrect selection');
+assert.equal(partialScored.attempt.items[1].score, 1, 'numeric response inside configured tolerance receives credit');
+assert.equal(partialScored.attempt.scorePercent, 75);
+
+console.log('Course 1 final runtime, non-disclosure, grader-v2 partial credit, numeric tolerance, objective results, and competency-floor tests passed.');
