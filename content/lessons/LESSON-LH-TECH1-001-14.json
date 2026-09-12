@@ -2,24 +2,61 @@
   "id": "LESSON-LH-TECH1-001-14",
   "title": "Routine Operator Care versus Skilled Maintenance",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-CULT-EQUIPMENT-CARE-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-09"],
+  "status": "published",
+  "competencies": [
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-09"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"],
+  "references": [
+    "REF-OSHA-1910-147-LOTO",
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ],
   "assessment": null,
   "content": {
     "overview": "Operator care supports reliable equipment, but technicians must recognize the exact point where routine external cleaning, inspection or adjustment becomes servicing, protected access, disassembly or hazardous-energy work that belongs to an authorized role.",
     "vocabulary": [
-      {"term": "operator care", "definition": "Routine cleaning, observation, setup, simple checks or other actions explicitly assigned to the equipment operator by controlled instructions."},
-      {"term": "servicing", "definition": "Work on equipment such as adjustment, repair, jam clearing, inspection or replacement that can create exposure to machine or energy hazards."},
-      {"term": "hazardous energy", "definition": "Electrical, mechanical, hydraulic, pneumatic, chemical, thermal, gravitational or other energy that can injure workers if unexpectedly released or restored."},
-      {"term": "stored energy", "definition": "Energy remaining or capable of reaccumulating after equipment is stopped, such as pressure, gravity, spring force, heat or electrical charge."}
+      {
+        "term": "operator care",
+        "definition": "Routine cleaning, observation, setup, simple checks or other actions explicitly assigned to the equipment operator by controlled instructions."
+      },
+      {
+        "term": "servicing",
+        "definition": "Work on equipment such as adjustment, repair, jam clearing, inspection or replacement that can create exposure to machine or energy hazards."
+      },
+      {
+        "term": "hazardous energy",
+        "definition": "Electrical, mechanical, hydraulic, pneumatic, chemical, thermal, gravitational or other energy that can injure workers if unexpectedly released or restored."
+      },
+      {
+        "term": "stored energy",
+        "definition": "Energy remaining or capable of reaccumulating after equipment is stopped, such as pressure, gravity, spring force, heat or electrical charge."
+      }
     ],
     "sections": [
-      {"title": "Operator care is explicitly assigned", "body": "Accessible cleaning, observation, setup, simple checks or consumable replacement may belong to the operator only when equipment instructions and facility SOPs assign those actions. The boundary does not move because the technician has prior repair experience or because the next step appears easy.", "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"title": "A stopped machine can still contain hazardous energy", "body": "Stopping equipment with its normal control is not the same as completing an energy-isolation procedure. OSHA's hazardous-energy standard addresses unexpected energization, startup and release of stored energy during covered servicing/maintenance. Technicians should treat protected access, guard removal, disassembly and energy-release tasks as clear signals to stop at the operator boundary unless the employer has explicitly trained and authorized them for that work.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"title": "Normal production and servicing are not the same category", "body": "OSHA generally distinguishes normal production operations from servicing/maintenance, while certain servicing during production becomes covered when guards or safety devices must be removed/bypassed or a worker enters a danger zone. Course learners use the employer's procedure to determine the actual boundary rather than assuming every adjustment is either always allowed or always lockout/tagout work.", "references": ["REF-OSHA-1910-147-LOTO"]}
+      {
+        "title": "Operator care is explicitly assigned",
+        "body": "Accessible cleaning, observation, setup, simple checks or consumable replacement may belong to the operator only when equipment instructions and facility SOPs assign those actions. The boundary does not move because the technician has prior repair experience or because the next step appears easy.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "title": "A stopped machine can still contain hazardous energy",
+        "body": "Stopping equipment with its normal control is not the same as completing an energy-isolation procedure. OSHA's hazardous-energy standard addresses unexpected energization, startup and release of stored energy during covered servicing/maintenance. Technicians should treat protected access, guard removal, disassembly and energy-release tasks as clear signals to stop at the operator boundary unless the employer has explicitly trained and authorized them for that work.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "title": "Normal production and servicing are not the same category",
+        "body": "OSHA generally distinguishes normal production operations from servicing/maintenance, while certain servicing during production becomes covered when guards or safety devices must be removed/bypassed or a worker enters a danger zone. Course learners use the employer's procedure to determine the actual boundary rather than assuming every adjustment is either always allowed or always lockout/tagout work.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      }
     ],
     "workedExamples": [
       "An operator performs the approved external emitter check but escalates a blockage that requires powered disassembly.",
@@ -39,30 +76,176 @@
     "practicalApplication": "Review a set of equipment-care workflows and mark the last action still inside the supplied operator procedure, the first action that crosses into servicing/maintenance, the energy or protected-access cue that drives the boundary, and the safe status that must be preserved for handoff.",
     "summary": "Technician I workers support reliability through assigned routine care while recognizing when protected access, guard removal, disassembly or hazardous-energy exposure transfers the job to authorized servicing personnel.",
     "blocks": [
-      {"type": "text", "title": "Operator care is a defined assignment, not a sliding scale", "body": "A task does not become operator care simply because it is mechanically simple, quick, familiar or urgently needed. The controlled equipment instructions and employer procedure establish what the operator may do.", "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-010", "src": "/assets/course1/operator-care-servicing-boundary.svg", "alt": "Two-column visual distinguishing explicitly assigned routine operator care from servicing and technical maintenance that may involve guards, hazardous motion, protected electrical components, powered disassembly, pressure, stored energy, or other hazards requiring the employer-defined authorized role.", "caption": "Use the controlled operator procedure to find the boundary. Do not move the boundary yourself because the next step looks easy.", "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "table", "title": "Signals that work may have crossed into servicing", "columns": ["Signal", "Potential hazard", "Technician I response"], "rows": [
-        ["Guard or safety device must be removed/bypassed", "Hazardous motion or protected components", "Stop at the operator boundary and refer under procedure"],
-        ["Body part must enter a danger zone", "Unexpected motion/startup", "Do not enter without the employer-defined servicing/energy-control process"],
-        ["Electrical enclosure must be opened", "Electrical exposure", "Refer to the qualified/authorized role"],
-        ["Pressure, gravity, spring force, heat or another stored energy must be released", "Unexpected energy release", "Do not expand routine care into energy-control work"],
-        ["Powered component must be disassembled", "Unexpected startup or stored energy", "Use the servicing/maintenance pathway"],
-        ["Operator SOP does not assign the action", "Authorization not established", "Stop and clarify rather than improvise"]
-      ], "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"type": "comparison", "title": "The same symptom can lead to different authority boundaries", "left": {"label": "Within operator procedure", "body": "An irrigation emitter is checked externally using the assigned operator method. The observable condition is recorded and the defined routine action is completed if the SOP explicitly allows it."}, "right": {"label": "Servicing boundary", "body": "The blockage can only be reached by disassembling a powered component, removing protection or entering an area with unexpected-startup/stored-energy risk. The technician stops and refers the condition."}},
-      {"type": "scenario", "title": "A jam appears easy to reach", "setting": "Material is visibly jammed just inside a guarded area. The equipment has stopped, but it can restart automatically after a fault clears. The operator SOP does not authorize reaching past the guard.", "prompt": "What should the technician do?", "options": ["Reach in quickly while the equipment is stopped", "Hold the stop button while another worker removes the material", "Stop at the operator-care boundary and follow the authorized servicing/energy-control process", "Remove the guard because the jam is visible"], "answer": "Stop at the operator-care boundary and follow the authorized servicing/energy-control process.", "feedback": "A stopped condition is not proof that hazardous energy is controlled. The action requires protected access beyond the assigned operator procedure.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"type": "scenario", "title": "Pressure remains after shutdown", "setting": "An irrigation component is shut off using the normal control, but the gauge still shows pressure. The blocked part can only be removed by loosening a fitting. The operator procedure does not authorize pressure release or disassembly.", "prompt": "What is the correct boundary decision?", "options": ["Loosen the fitting slowly because the pump is off", "Tap the gauge until the reading drops", "Preserve the equipment status and refer the condition to the authorized servicing process", "Ask a coworker to hold the hose while the fitting is removed"], "answer": "Preserve the equipment status and refer the condition to the authorized servicing process.", "feedback": "Stored pressure is an energy hazard. Normal shutdown does not establish that the system is safe for disassembly.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"type": "document", "title": "Operator-to-maintenance boundary handoff", "description": "The handoff should explain the last permitted operator action and the exact reason the work transferred to servicing.", "fields": [
-        {"label": "Asset / location", "value": "Exact equipment and work area"},
-        {"label": "Observed condition", "value": "Fault, blockage, damage, leak, alarm or other symptom"},
-        {"label": "Operator actions completed", "value": "Only the routine actions explicitly allowed by procedure"},
-        {"label": "Boundary cue", "value": "Guard removal, danger-zone entry, protected electrical access, disassembly, pressure/stored energy or unassigned action"},
-        {"label": "Current controlled status", "value": "Out of service, paused, held or other safe status under procedure"},
-        {"label": "Receiving role / ticket", "value": "Authorized maintenance/servicing pathway"}
-      ]},
-      {"type": "activity", "title": "Find the exact boundary", "instructions": "Review equipment-care scenarios and mark the last action that remains inside the supplied operator procedure and the first action that requires maintenance or another authorized role.", "prompts": ["External cleaning becomes partial disassembly.", "Visible hose inspection becomes internal pump access.", "Operator reset becomes repeated reset of an unresolved fault.", "Consumable replacement becomes protected electrical access.", "Routine jam observation becomes guarded-area entry.", "Normal shutdown leaves stored hydraulic or pneumatic pressure."], "artifact": "Operator-care versus servicing boundary worksheet plus one maintenance handoff", "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your argument is 'the machine is off,' 'the repair is simple,' or 'I have done this before,' identify the actual protected-access or energy-control requirement. Simplicity and familiarity do not prove safe isolation or current authorization."},
-      {"type": "callout", "title": "Key takeaway", "tone": "safety", "body": "Routine care supports equipment reliability. It does not grant hazardous-energy, electrical, mechanical or skilled-maintenance authority. When the controlled operator procedure ends, competent performance is to preserve the status and refer the work."}
+      {
+        "type": "text",
+        "title": "Operator care is a defined assignment, not a sliding scale",
+        "body": "A task does not become operator care simply because it is mechanically simple, quick, familiar or urgently needed. The controlled equipment instructions and employer procedure establish what the operator may do.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-010",
+        "src": "/assets/course1/operator-care-servicing-boundary.svg",
+        "alt": "Two-column visual distinguishing explicitly assigned routine operator care from servicing and technical maintenance that may involve guards, hazardous motion, protected electrical components, powered disassembly, pressure, stored energy, or other hazards requiring the employer-defined authorized role.",
+        "caption": "Use the controlled operator procedure to find the boundary. Do not move the boundary yourself because the next step looks easy.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Signals that work may have crossed into servicing",
+        "columns": [
+          "Signal",
+          "Potential hazard",
+          "Technician I response"
+        ],
+        "rows": [
+          [
+            "Guard or safety device must be removed/bypassed",
+            "Hazardous motion or protected components",
+            "Stop at the operator boundary and refer under procedure"
+          ],
+          [
+            "Body part must enter a danger zone",
+            "Unexpected motion/startup",
+            "Do not enter without the employer-defined servicing/energy-control process"
+          ],
+          [
+            "Electrical enclosure must be opened",
+            "Electrical exposure",
+            "Refer to the qualified/authorized role"
+          ],
+          [
+            "Pressure, gravity, spring force, heat or another stored energy must be released",
+            "Unexpected energy release",
+            "Do not expand routine care into energy-control work"
+          ],
+          [
+            "Powered component must be disassembled",
+            "Unexpected startup or stored energy",
+            "Use the servicing/maintenance pathway"
+          ],
+          [
+            "Operator SOP does not assign the action",
+            "Authorization not established",
+            "Stop and clarify rather than improvise"
+          ]
+        ],
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "The same symptom can lead to different authority boundaries",
+        "left": {
+          "label": "Within operator procedure",
+          "body": "An irrigation emitter is checked externally using the assigned operator method. The observable condition is recorded and the defined routine action is completed if the SOP explicitly allows it."
+        },
+        "right": {
+          "label": "Servicing boundary",
+          "body": "The blockage can only be reached by disassembling a powered component, removing protection or entering an area with unexpected-startup/stored-energy risk. The technician stops and refers the condition."
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "A jam appears easy to reach",
+        "setting": "Material is visibly jammed just inside a guarded area. The equipment has stopped, but it can restart automatically after a fault clears. The operator SOP does not authorize reaching past the guard.",
+        "prompt": "What should the technician do?",
+        "options": [
+          "Reach in quickly while the equipment is stopped",
+          "Hold the stop button while another worker removes the material",
+          "Stop at the operator-care boundary and follow the authorized servicing/energy-control process",
+          "Remove the guard because the jam is visible"
+        ],
+        "answer": "Stop at the operator-care boundary and follow the authorized servicing/energy-control process.",
+        "feedback": "A stopped condition is not proof that hazardous energy is controlled. The action requires protected access beyond the assigned operator procedure.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Pressure remains after shutdown",
+        "setting": "An irrigation component is shut off using the normal control, but the gauge still shows pressure. The blocked part can only be removed by loosening a fitting. The operator procedure does not authorize pressure release or disassembly.",
+        "prompt": "What is the correct boundary decision?",
+        "options": [
+          "Loosen the fitting slowly because the pump is off",
+          "Tap the gauge until the reading drops",
+          "Preserve the equipment status and refer the condition to the authorized servicing process",
+          "Ask a coworker to hold the hose while the fitting is removed"
+        ],
+        "answer": "Preserve the equipment status and refer the condition to the authorized servicing process.",
+        "feedback": "Stored pressure is an energy hazard. Normal shutdown does not establish that the system is safe for disassembly.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Operator-to-maintenance boundary handoff",
+        "description": "The handoff should explain the last permitted operator action and the exact reason the work transferred to servicing.",
+        "fields": [
+          {
+            "label": "Asset / location",
+            "value": "Exact equipment and work area"
+          },
+          {
+            "label": "Observed condition",
+            "value": "Fault, blockage, damage, leak, alarm or other symptom"
+          },
+          {
+            "label": "Operator actions completed",
+            "value": "Only the routine actions explicitly allowed by procedure"
+          },
+          {
+            "label": "Boundary cue",
+            "value": "Guard removal, danger-zone entry, protected electrical access, disassembly, pressure/stored energy or unassigned action"
+          },
+          {
+            "label": "Current controlled status",
+            "value": "Out of service, paused, held or other safe status under procedure"
+          },
+          {
+            "label": "Receiving role / ticket",
+            "value": "Authorized maintenance/servicing pathway"
+          }
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Find the exact boundary",
+        "instructions": "Review equipment-care scenarios and mark the last action that remains inside the supplied operator procedure and the first action that requires maintenance or another authorized role.",
+        "prompts": [
+          "External cleaning becomes partial disassembly.",
+          "Visible hose inspection becomes internal pump access.",
+          "Operator reset becomes repeated reset of an unresolved fault.",
+          "Consumable replacement becomes protected electrical access.",
+          "Routine jam observation becomes guarded-area entry.",
+          "Normal shutdown leaves stored hydraulic or pneumatic pressure."
+        ],
+        "artifact": "Operator-care versus servicing boundary worksheet plus one maintenance handoff",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your argument is 'the machine is off,' 'the repair is simple,' or 'I have done this before,' identify the actual protected-access or energy-control requirement. Simplicity and familiarity do not prove safe isolation or current authorization."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "safety",
+        "body": "Routine care supports equipment reliability. It does not grant hazardous-energy, electrical, mechanical or skilled-maintenance authority. When the controlled operator procedure ends, competent performance is to preserve the status and refer the work."
+      }
     ]
   }
 }

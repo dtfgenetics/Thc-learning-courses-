@@ -2,24 +2,63 @@
   "id": "LESSON-LH-TECH1-001-17",
   "title": "Professional Shift Handoff",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-12"],
+  "status": "published",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-12"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-HSE-SHIFT-HANDOVER"],
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
   "assessment": null,
   "content": {
     "overview": "Shift handoff transfers factual work status, active controls, open risks and time-sensitive next actions so operations remain continuous when individual workers leave. Learners practice preparation, two-way exchange, incoming cross-check and explicit ownership of unresolved work.",
     "vocabulary": [
-      {"term": "handoff", "definition": "A structured transfer of task-relevant status, risk, observations and priorities from one worker, shift or function to another."},
-      {"term": "open item", "definition": "A task, deviation, alarm, hold, restriction or decision that remains unresolved at handoff."},
-      {"term": "cross-check", "definition": "Incoming verification of critical handoff information using available records, displays, physical status or clarifying questions."},
-      {"term": "closed-loop communication", "definition": "A communication process in which the receiving person confirms understanding and responsibility for the next action is clear."}
+      {
+        "term": "handoff",
+        "definition": "A structured transfer of task-relevant status, risk, observations and priorities from one worker, shift or function to another."
+      },
+      {
+        "term": "open item",
+        "definition": "A task, deviation, alarm, hold, restriction or decision that remains unresolved at handoff."
+      },
+      {
+        "term": "cross-check",
+        "definition": "Incoming verification of critical handoff information using available records, displays, physical status or clarifying questions."
+      },
+      {
+        "term": "closed-loop communication",
+        "definition": "A communication process in which the receiving person confirms understanding and responsibility for the next action is clear."
+      }
     ],
     "sections": [
-      {"title": "Prepare before the exchange", "body": "HSE shift-handover guidance describes effective handover as preparation by outgoing personnel, information exchange between outgoing and incoming personnel, and cross-checking by the incoming personnel. The outgoing technician should identify the small set of conditions that the next shift must understand to work safely and effectively.", "references": ["REF-HSE-SHIFT-HANDOVER"]},
-      {"title": "Lead with abnormal and restricted conditions", "body": "Safety controls, restricted entry, holds, quarantine, identity discrepancies, equipment out-of-service status, maintenance in progress and incomplete tasks can be more important than a long list of routine work that was completed normally. Handoffs should make operational risk visible rather than bury it.", "references": ["REF-HSE-SHIFT-HANDOVER", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "The incoming worker must be able to act", "body": "A useful handoff identifies the exact object/location, factual condition, current status, action already taken, notifications, next action and timing. Two-way questions and cross-checks confirm that the incoming worker understands the state rather than merely receiving a note.", "references": ["REF-HSE-SHIFT-HANDOVER"]}
+      {
+        "title": "Prepare before the exchange",
+        "body": "HSE shift-handover guidance describes effective handover as preparation by outgoing personnel, information exchange between outgoing and incoming personnel, and cross-checking by the incoming personnel. The outgoing technician should identify the small set of conditions that the next shift must understand to work safely and effectively.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "title": "Lead with abnormal and restricted conditions",
+        "body": "Safety controls, restricted entry, holds, quarantine, identity discrepancies, equipment out-of-service status, maintenance in progress and incomplete tasks can be more important than a long list of routine work that was completed normally. Handoffs should make operational risk visible rather than bury it.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "The incoming worker must be able to act",
+        "body": "A useful handoff identifies the exact object/location, factual condition, current status, action already taken, notifications, next action and timing. Two-way questions and cross-checks confirm that the incoming worker understands the state rather than merely receiving a note.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
     ],
     "workedExamples": [
       "A held batch is handed off with exact identifier, location, reason/status, person notified and the next authorized decision path.",
@@ -39,41 +78,227 @@
     "practicalApplication": "Convert a mixed shift log into a prioritized handoff, then conduct a two-way handoff role-play. The incoming learner must ask clarifying questions, cross-check selected high-risk items against the supplied records/status displays, and repeat back ownership and timing for unresolved actions.",
     "summary": "A strong handoff is prepared, prioritized, factual and two-way. It exposes active controls and unresolved work, identifies exact objects and next actions, and confirms incoming understanding through cross-check and read-back.",
     "blocks": [
-      {"type": "text", "title": "Handoff is a controlled transfer of operational understanding", "body": "A shift change is not a note dump. The outgoing worker prepares task-relevant information, outgoing and incoming personnel exchange it, and the incoming worker cross-checks critical information as responsibility transfers. HSE identifies these as core elements of effective handover.", "references": ["REF-HSE-SHIFT-HANDOVER"]},
-      {"type": "image", "title": "Professional shift handoff model", "src": "/assets/course1/shift-handoff-model.svg", "alt": "Diagram showing outgoing preparation, two-way handoff exchange, incoming cross-check, and ownership of unresolved actions.", "caption": "A strong handoff moves from preparation to exchange to cross-check, with unresolved work clearly assigned rather than merely mentioned.", "references": ["REF-HSE-SHIFT-HANDOVER"]},
-      {"type": "steps", "title": "Build and verify the handoff", "items": [
-        {"title": "Prepare the open-item list", "body": "Separate routine completed work from unresolved, abnormal, restricted or time-sensitive conditions before the exchange begins."},
-        {"title": "Lead with safety and restrictions", "body": "Identify active safety controls, restricted entry, holds, quarantine, out-of-service equipment and other conditions that can block work."},
-        {"title": "Name the exact object and location", "body": "Use room, zone, asset, plant, batch, lot, sample, ticket or other controlled identifiers rather than vague descriptions."},
-        {"title": "State factual current status", "body": "Separate observation from diagnosis and mark work as complete, incomplete, held, escalated, restricted or awaiting decision."},
-        {"title": "Expose time-sensitive next actions", "body": "Show deadlines, scheduled events, pending checks and consequences if an item is not addressed."},
-        {"title": "Confirm ownership", "body": "Identify who has been notified and who is expected to act next under the controlled process."},
-        {"title": "Cross-check and read back", "body": "The incoming worker verifies selected critical items and repeats back the highest-risk status/next actions before responsibility is considered transferred."}
-      ], "references": ["REF-HSE-SHIFT-HANDOVER", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "table", "title": "Prioritize what the incoming shift needs", "columns": ["Priority", "Examples", "Handoff requirement"], "rows": [
-        ["Immediate safety / access control", "Life-safety alarm, restricted entry, unsafe asset", "State first; exact status and required response"],
-        ["Held / quarantined / identity-controlled material", "Batch hold, quarantine, unresolved tag mismatch", "Exact identity/location and who controls release"],
-        ["Maintenance / equipment continuity", "Out-of-service equipment, open fault/ticket, maintenance in progress", "Current safe status, prohibited actions, ticket/owner and next event"],
-        ["Incomplete / deviated work", "Missed measurement, interrupted sanitation, incomplete movement", "Last confirmed completed step and what remains open"],
-        ["Time-sensitive routine work", "Upcoming irrigation/check/transfer", "Timing and dependencies that could block execution"],
-        ["Routine completed work", "Normal tasks with no open issues", "Summarize only as needed for continuity"]
-      ], "references": ["REF-HSE-SHIFT-HANDOVER"]},
-      {"type": "comparison", "title": "Actionable handoff versus vague handoff", "left": {"label": "Actionable", "body": "Room F2 north row, Batch B17: four plants showed reduced turgor at 16:10. Irrigation event is recorded. No diagnosis assigned. Lead notified. Recheck before the 18:00 irrigation and document status."}, "right": {"label": "Vague", "body": "Plants looked bad. Irrigation might be messed up. Someone should check later."}},
-      {"type": "scenario", "title": "The outgoing shift found a no-flow condition", "setting": "At 16:20, emitters 5–8 in Zone 2 show no flow. The permitted operator checks are complete. Maintenance ticket M-44 is open. The next scheduled irrigation is 18:00.", "prompt": "Which handoff is strongest?", "options": ["Irrigation broken. Maintenance knows.", "Zone 2 emitters 5–8 had no flow at 16:20; permitted checks complete; ticket M-44 open; next irrigation 18:00; incoming shift should verify ticket status and zone condition before that event.", "Reset the controller again before shift change so the next crew does not need the details.", "Leave the item out because maintenance owns the repair."], "answer": "Zone 2 emitters 5–8 had no flow at 16:20; permitted checks complete; ticket M-44 open; next irrigation 18:00; incoming shift should verify ticket status and zone condition before that event.", "feedback": "The strongest handoff identifies exact location, observation, completed checks, escalation, time-sensitive next event and required follow-up without pretending root cause is known.", "references": ["REF-HSE-SHIFT-HANDOVER", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "Maintenance continues across the shift change", "setting": "Asset P-12 is out of service with maintenance work in progress. The outgoing technician knows the asset must not be operated, but the incoming technician sees normal indicator lights and asks whether it can be used for a quick task.", "prompt": "What must the handoff make clear?", "options": ["Normal indicator lights mean the incoming shift can test it", "Only the maintenance worker needs to know the status", "The exact asset remains out of service; current maintenance/controlled status, ticket/owner and conditions for authorized return to service must be transferred and cross-checked", "The outgoing technician should remove the status marker so the new shift can decide"], "answer": "The exact asset remains out of service; current maintenance/controlled status, ticket/owner and conditions for authorized return to service must be transferred and cross-checked.", "feedback": "Maintenance extending across handover is a high-risk communication condition. The next shift must understand the safe status and not infer release from appearances.", "references": ["REF-HSE-SHIFT-HANDOVER"]},
-      {"type": "document", "title": "Open-item handoff record", "description": "A compact structure for transferring unresolved operational work without hiding it beneath routine completed tasks.", "fields": [
-        {"label": "Identity / location", "value": "Exact room, asset, batch, plant group, ticket or other controlled identifier"},
-        {"label": "Observed condition", "value": "Factual observation, alarm, discrepancy, hold, restriction or incomplete work"},
-        {"label": "Current status", "value": "Complete, incomplete, held, escalated, restricted, out of service or awaiting authorization"},
-        {"label": "Action already taken", "value": "Permitted checks, containment, documentation or notification already completed"},
-        {"label": "Person / function notified", "value": "Supervisor, maintenance, safety, IPM, quality or other responsible role"},
-        {"label": "Next action and timing", "value": "What must happen next, by whom if known, and before what event/deadline"},
-        {"label": "Incoming cross-check", "value": "Critical status or record verified during handoff"},
-        {"label": "Ownership confirmation", "value": "Who accepts the next operational action or monitoring responsibility"}
-      ], "note": "Use the employer's controlled handoff method. This model identifies the information quality needed for continuity; it does not replace site-specific forms."},
-      {"type": "activity", "title": "Compress and transfer a messy shift log", "instructions": "Convert a mixed page of completed tasks, observations, holds, equipment faults, traceability issues and routine notes into a prioritized handoff, then perform a two-way exchange.", "prompts": ["Separate completed work from open items.", "Rank safety, entry restrictions, holds, identity problems and maintenance-in-progress first.", "Replace vague wording with exact identifiers and factual observations.", "Mark each unresolved item's current status, owner and next action/timing.", "As the incoming technician, ask at least three clarifying questions.", "Cross-check at least two high-risk items against supplied records/status displays.", "Repeat back the highest-risk open items and ownership before accepting the shift."], "artifact": "Prioritized written handoff plus incoming cross-check/read-back record", "references": ["REF-HSE-SHIFT-HANDOVER", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If the handoff only says 'maintenance knows,' 'on hold,' or 'check later,' it is not enough. Add the exact object, current controlled status, action already taken, owner, next action and timing—and confirm the receiver understands it."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "A handoff succeeds when the incoming shift can state what is true now, what is restricted or unresolved, who has been notified, what must happen next, and what they now own. Preparation, two-way exchange and cross-checking matter more than length.", "references": ["REF-HSE-SHIFT-HANDOVER"]}
+      {
+        "type": "text",
+        "title": "Handoff is a controlled transfer of operational understanding",
+        "body": "A shift change is not a note dump. The outgoing worker prepares task-relevant information, outgoing and incoming personnel exchange it, and the incoming worker cross-checks critical information as responsibility transfers. HSE identifies these as core elements of effective handover.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "type": "image",
+        "title": "Professional shift handoff model",
+        "src": "/assets/course1/shift-handoff-model.svg",
+        "alt": "Diagram showing outgoing preparation, two-way handoff exchange, incoming cross-check, and ownership of unresolved actions.",
+        "caption": "A strong handoff moves from preparation to exchange to cross-check, with unresolved work clearly assigned rather than merely mentioned.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build and verify the handoff",
+        "items": [
+          {
+            "title": "Prepare the open-item list",
+            "body": "Separate routine completed work from unresolved, abnormal, restricted or time-sensitive conditions before the exchange begins."
+          },
+          {
+            "title": "Lead with safety and restrictions",
+            "body": "Identify active safety controls, restricted entry, holds, quarantine, out-of-service equipment and other conditions that can block work."
+          },
+          {
+            "title": "Name the exact object and location",
+            "body": "Use room, zone, asset, plant, batch, lot, sample, ticket or other controlled identifiers rather than vague descriptions."
+          },
+          {
+            "title": "State factual current status",
+            "body": "Separate observation from diagnosis and mark work as complete, incomplete, held, escalated, restricted or awaiting decision."
+          },
+          {
+            "title": "Expose time-sensitive next actions",
+            "body": "Show deadlines, scheduled events, pending checks and consequences if an item is not addressed."
+          },
+          {
+            "title": "Confirm ownership",
+            "body": "Identify who has been notified and who is expected to act next under the controlled process."
+          },
+          {
+            "title": "Cross-check and read back",
+            "body": "The incoming worker verifies selected critical items and repeats back the highest-risk status/next actions before responsibility is considered transferred."
+          }
+        ],
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Prioritize what the incoming shift needs",
+        "columns": [
+          "Priority",
+          "Examples",
+          "Handoff requirement"
+        ],
+        "rows": [
+          [
+            "Immediate safety / access control",
+            "Life-safety alarm, restricted entry, unsafe asset",
+            "State first; exact status and required response"
+          ],
+          [
+            "Held / quarantined / identity-controlled material",
+            "Batch hold, quarantine, unresolved tag mismatch",
+            "Exact identity/location and who controls release"
+          ],
+          [
+            "Maintenance / equipment continuity",
+            "Out-of-service equipment, open fault/ticket, maintenance in progress",
+            "Current safe status, prohibited actions, ticket/owner and next event"
+          ],
+          [
+            "Incomplete / deviated work",
+            "Missed measurement, interrupted sanitation, incomplete movement",
+            "Last confirmed completed step and what remains open"
+          ],
+          [
+            "Time-sensitive routine work",
+            "Upcoming irrigation/check/transfer",
+            "Timing and dependencies that could block execution"
+          ],
+          [
+            "Routine completed work",
+            "Normal tasks with no open issues",
+            "Summarize only as needed for continuity"
+          ]
+        ],
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Actionable handoff versus vague handoff",
+        "left": {
+          "label": "Actionable",
+          "body": "Room F2 north row, Batch B17: four plants showed reduced turgor at 16:10. Irrigation event is recorded. No diagnosis assigned. Lead notified. Recheck before the 18:00 irrigation and document status."
+        },
+        "right": {
+          "label": "Vague",
+          "body": "Plants looked bad. Irrigation might be messed up. Someone should check later."
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "The outgoing shift found a no-flow condition",
+        "setting": "At 16:20, emitters 5–8 in Zone 2 show no flow. The permitted operator checks are complete. Maintenance ticket M-44 is open. The next scheduled irrigation is 18:00.",
+        "prompt": "Which handoff is strongest?",
+        "options": [
+          "Irrigation broken. Maintenance knows.",
+          "Zone 2 emitters 5–8 had no flow at 16:20; permitted checks complete; ticket M-44 open; next irrigation 18:00; incoming shift should verify ticket status and zone condition before that event.",
+          "Reset the controller again before shift change so the next crew does not need the details.",
+          "Leave the item out because maintenance owns the repair."
+        ],
+        "answer": "Zone 2 emitters 5–8 had no flow at 16:20; permitted checks complete; ticket M-44 open; next irrigation 18:00; incoming shift should verify ticket status and zone condition before that event.",
+        "feedback": "The strongest handoff identifies exact location, observation, completed checks, escalation, time-sensitive next event and required follow-up without pretending root cause is known.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Maintenance continues across the shift change",
+        "setting": "Asset P-12 is out of service with maintenance work in progress. The outgoing technician knows the asset must not be operated, but the incoming technician sees normal indicator lights and asks whether it can be used for a quick task.",
+        "prompt": "What must the handoff make clear?",
+        "options": [
+          "Normal indicator lights mean the incoming shift can test it",
+          "Only the maintenance worker needs to know the status",
+          "The exact asset remains out of service; current maintenance/controlled status, ticket/owner and conditions for authorized return to service must be transferred and cross-checked",
+          "The outgoing technician should remove the status marker so the new shift can decide"
+        ],
+        "answer": "The exact asset remains out of service; current maintenance/controlled status, ticket/owner and conditions for authorized return to service must be transferred and cross-checked.",
+        "feedback": "Maintenance extending across handover is a high-risk communication condition. The next shift must understand the safe status and not infer release from appearances.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Open-item handoff record",
+        "description": "A compact structure for transferring unresolved operational work without hiding it beneath routine completed tasks.",
+        "fields": [
+          {
+            "label": "Identity / location",
+            "value": "Exact room, asset, batch, plant group, ticket or other controlled identifier"
+          },
+          {
+            "label": "Observed condition",
+            "value": "Factual observation, alarm, discrepancy, hold, restriction or incomplete work"
+          },
+          {
+            "label": "Current status",
+            "value": "Complete, incomplete, held, escalated, restricted, out of service or awaiting authorization"
+          },
+          {
+            "label": "Action already taken",
+            "value": "Permitted checks, containment, documentation or notification already completed"
+          },
+          {
+            "label": "Person / function notified",
+            "value": "Supervisor, maintenance, safety, IPM, quality or other responsible role"
+          },
+          {
+            "label": "Next action and timing",
+            "value": "What must happen next, by whom if known, and before what event/deadline"
+          },
+          {
+            "label": "Incoming cross-check",
+            "value": "Critical status or record verified during handoff"
+          },
+          {
+            "label": "Ownership confirmation",
+            "value": "Who accepts the next operational action or monitoring responsibility"
+          }
+        ],
+        "note": "Use the employer's controlled handoff method. This model identifies the information quality needed for continuity; it does not replace site-specific forms."
+      },
+      {
+        "type": "activity",
+        "title": "Compress and transfer a messy shift log",
+        "instructions": "Convert a mixed page of completed tasks, observations, holds, equipment faults, traceability issues and routine notes into a prioritized handoff, then perform a two-way exchange.",
+        "prompts": [
+          "Separate completed work from open items.",
+          "Rank safety, entry restrictions, holds, identity problems and maintenance-in-progress first.",
+          "Replace vague wording with exact identifiers and factual observations.",
+          "Mark each unresolved item's current status, owner and next action/timing.",
+          "As the incoming technician, ask at least three clarifying questions.",
+          "Cross-check at least two high-risk items against supplied records/status displays.",
+          "Repeat back the highest-risk open items and ownership before accepting the shift."
+        ],
+        "artifact": "Prioritized written handoff plus incoming cross-check/read-back record",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If the handoff only says 'maintenance knows,' 'on hold,' or 'check later,' it is not enough. Add the exact object, current controlled status, action already taken, owner, next action and timing—and confirm the receiver understands it."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "A handoff succeeds when the incoming shift can state what is true now, what is restricted or unresolved, who has been notified, what must happen next, and what they now own. Preparation, two-way exchange and cross-checking matter more than length.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
     ]
   }
 }

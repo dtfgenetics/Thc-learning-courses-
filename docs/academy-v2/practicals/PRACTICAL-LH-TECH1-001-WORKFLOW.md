@@ -2,7 +2,7 @@
 
 **Course:** `COURSE-LH-TECH1-001`  
 **Practical ID:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
-**Status:** Draft / requires assessor calibration before operational use  
+**Status:** Public academic practical — continuously improvable  
 **Mode:** simulated facility, supervised lab, or approved workplace-equivalent simulation
 
 ## Purpose

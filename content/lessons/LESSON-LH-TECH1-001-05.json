@@ -2,24 +2,64 @@
   "id": "LESSON-LH-TECH1-001-05",
   "title": "Cleaning, Disinfection and Sanitation Verification",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-SPACE-BIOSEC-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-03"],
+  "status": "published",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-03"
+  ],
   "estimatedMinutes": 55,
-  "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-OSHA-1910-1200-HAZCOM"],
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION",
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-OSHA-1910-1200-HAZCOM"
+  ],
   "assessment": null,
   "content": {
     "overview": "Effective sanitation is a controlled sequence: remove debris, clean, verify the exact approved product and preparation, complete disinfection under the required conditions, inspect the result, protect the item from recontamination, and document exceptions honestly.",
     "vocabulary": [
-      {"term": "cleaning", "definition": "Physical removal of soil, debris, organic matter and residues from a surface or item."},
-      {"term": "disinfection", "definition": "Use of an approved process to reduce or inactivate specified microorganisms on an appropriate cleaned surface or item."},
-      {"term": "contact condition", "definition": "The label- or procedure-defined conditions needed during a disinfection step, such as concentration, application method, coverage, time, wetness, temperature or finish step where applicable."},
-      {"term": "recontamination", "definition": "Loss of controlled sanitary status after a cleaned/disinfected item contacts an uncontrolled surface, tool, person, material or route."}
+      {
+        "term": "cleaning",
+        "definition": "Physical removal of soil, debris, organic matter and residues from a surface or item."
+      },
+      {
+        "term": "disinfection",
+        "definition": "Use of an approved process to reduce or inactivate specified microorganisms on an appropriate cleaned surface or item."
+      },
+      {
+        "term": "contact condition",
+        "definition": "The label- or procedure-defined conditions needed during a disinfection step, such as concentration, application method, coverage, time, wetness, temperature or finish step where applicable."
+      },
+      {
+        "term": "recontamination",
+        "definition": "Loss of controlled sanitary status after a cleaned/disinfected item contacts an uncontrolled surface, tool, person, material or route."
+      }
     ],
     "sections": [
-      {"title": "Cleaning comes before disinfection", "body": "UMass greenhouse guidance emphasizes physical removal of soil, plant debris and organic matter before disinfection because residues can protect pathogens from contact with the disinfectant or reduce product effectiveness. A dirty surface is not controlled merely because disinfectant was sprayed over it.", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES"]},
-      {"title": "The exact product and process matter", "body": "Disinfectants differ in labeled use, preparation, contact conditions, worker hazards and material compatibility. Technicians use the exact approved product and current instructions, and they stop when the label, SOP, product identity or preparation information does not agree.", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-OSHA-1910-1200-HAZCOM"]},
-      {"title": "Verification includes what happens after disinfection", "body": "A completed sanitation step can be undone if the tool, hose, cart, tray or work surface is placed back onto an uncontrolled floor or handled through a contaminated route. Verification therefore includes both completion of the process and protection from immediate recontamination.", "references": ["REF-UMASS-GREENHOUSE-SANITATION"]}
+      {
+        "title": "Cleaning comes before disinfection",
+        "body": "UMass greenhouse guidance emphasizes physical removal of soil, plant debris and organic matter before disinfection because residues can protect pathogens from contact with the disinfectant or reduce product effectiveness. A dirty surface is not controlled merely because disinfectant was sprayed over it.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+        ]
+      },
+      {
+        "title": "The exact product and process matter",
+        "body": "Disinfectants differ in labeled use, preparation, contact conditions, worker hazards and material compatibility. Technicians use the exact approved product and current instructions, and they stop when the label, SOP, product identity or preparation information does not agree.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "title": "Verification includes what happens after disinfection",
+        "body": "A completed sanitation step can be undone if the tool, hose, cart, tray or work surface is placed back onto an uncontrolled floor or handled through a contaminated route. Verification therefore includes both completion of the process and protection from immediate recontamination.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      }
     ],
     "workedExamples": [
       "Root debris is physically removed from a bench before the approved disinfectant is applied.",
@@ -38,45 +78,246 @@
     "practicalApplication": "Sequence a sanitation work order from material control through debris removal, physical cleaning, product/label verification, preparation, disinfection, required contact conditions, finish step, inspection, protection from recontamination and documentation. Then identify failure points that would make the task incomplete.",
     "summary": "Sanitation is not cosmetic. Technicians clean first, use the exact approved product and preparation, meet the required conditions, verify the result, prevent recontamination and document incomplete work rather than hiding it.",
     "blocks": [
-      {"type": "text", "title": "Cleaning and disinfection are different operations", "body": "Cleaning physically removes soil, media, plant debris, organic matter and residues. Disinfection is a separate approved process used on suitable cleaned surfaces or equipment. UMass notes that organic matter can reduce disinfectant effectiveness and interfere with contact.", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-005", "src": "/assets/course1/cleaning-disinfection-sequence.svg", "alt": "Nine-step sanitation workflow showing secure or remove material, remove debris and gross soil, physically clean, verify the approved product and preparation, apply as directed, maintain required contact conditions, complete the required finish step, inspect the result, and document completion or exceptions.", "caption": "A generic learning sequence; the exact product preparation, application, contact conditions, rinse/dry requirements and compatibility rules come from the current label and facility SOP.", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-OSHA-1910-1200-HAZCOM"]},
-      {"type": "steps", "title": "Nine sanitation decision points", "items": [
-        {"title": "Control the work area", "body": "Secure or remove plants/material as required and prevent uncontrolled traffic through the sanitation task."},
-        {"title": "Remove gross debris", "body": "Remove roots, media, leaves, algae, soil and other material that can block cleaning or disinfectant contact."},
-        {"title": "Clean physically", "body": "Use the defined cleaning method for the surface or equipment before disinfection."},
-        {"title": "Confirm exact product identity", "body": "Match the product to the current label and SOP. Stop if identity or approval is uncertain."},
-        {"title": "Verify preparation", "body": "Use the controlled dilution, preparation or ready-to-use instruction; do not make the product stronger by intuition."},
-        {"title": "Verify worker and material precautions", "body": "Check current hazard information, PPE, ventilation and compatibility requirements."},
-        {"title": "Apply and maintain the required conditions", "body": "Complete the label/SOP-defined coverage, contact/wetness/time or other conditions that apply."},
-        {"title": "Finish and inspect", "body": "Complete any required rinse, dry or finish step and inspect the result for missed debris, residue or incomplete areas."},
-        {"title": "Protect and document", "body": "Prevent recontamination, restore the area/item to the controlled location, and record completion or exceptions honestly."}
-      ], "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-OSHA-1910-1200-HAZCOM"]},
-      {"type": "table", "title": "What counts as sanitation evidence", "columns": ["Question", "Useful evidence", "Weak evidence"], "rows": [
-        ["Was gross contamination removed?", "Debris/soil removed using the required cleaning step", "The surface was sprayed"],
-        ["Was the correct product used?", "Exact product identity matched to current label/SOP", "Same brand or similar container"],
-        ["Was it prepared correctly?", "Controlled preparation/dilution completed as instructed", "Worker guessed a stronger mix"],
-        ["Were required contact conditions met?", "Required time/wetness/coverage/finish step completed", "Surface looked wet or smelled clean"],
-        ["Was the result protected?", "Item stored or released through the clean route", "Item placed back on the floor or uncontrolled cart"],
-        ["Can the task be reconstructed?", "Completion, exception and corrective action recorded", "Checklist marked complete despite missing steps"]
-      ], "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-OSHA-1910-1200-HAZCOM"]},
-      {"type": "callout", "title": "Do not strengthen, combine or substitute by intuition", "tone": "safety", "body": "Disinfectants and cleaners differ in labeled use, concentration, contact conditions, hazards and material compatibility. Technician I workers follow the current label and SOP instead of making a stronger mix, combining unknown products or substituting a similar-looking product."},
-      {"type": "comparison", "title": "Controlled sanitation versus cosmetic sanitation", "left": {"label": "Controlled process", "body": "Debris is removed, the surface is cleaned, the exact approved product and preparation are verified, required contact conditions are completed, the result is inspected, protected from recontamination and documented."}, "right": {"label": "Cosmetic shortcut", "body": "Disinfectant is sprayed over organic debris and the area is marked complete because it looks wet and smells clean."}},
-      {"type": "scenario", "title": "Same brand, different product", "setting": "The SOP names one sanitizer, but the container on the cart is from the same manufacturer with a different active ingredient and different label directions.", "prompt": "What is the best first response?", "options": ["Use it because the brand is the same", "Double-check the color and use it if it looks similar", "Stop and verify the approved product and current instructions before proceeding", "Use a stronger mix so the substitution is more effective"], "answer": "Stop and verify the approved product and current instructions before proceeding.", "feedback": "Brand similarity is not evidence that products are interchangeable. The controlling label and facility procedure determine the approved use and preparation.", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-OSHA-1910-1200-HAZCOM"]},
-      {"type": "scenario", "title": "Contact conditions were not completed", "setting": "A technician applies the correct approved disinfectant, but the required contact condition is interrupted before completion. The next room is waiting for the cart.", "prompt": "How should the task be recorded?", "options": ["Complete because the correct product was used", "Complete if the surface still smells like disinfectant", "Incomplete until the controlled process is completed or corrected according to procedure", "Complete if production cannot wait"], "answer": "Incomplete until the controlled process is completed or corrected according to procedure.", "feedback": "Using the correct product does not replace the required process conditions. Verification is based on the controlled method, not production pressure or appearance."},
-      {"type": "document", "title": "Sanitation verification record", "description": "A useful completion record shows enough process evidence to distinguish a verified task from a cosmetic wipe-down.", "fields": [
-        {"label": "Area / asset", "value": "Exact bench, cart, tool, tray, room or other item cleaned"},
-        {"label": "Gross debris removal", "value": "Completed / not completed / exception"},
-        {"label": "Cleaning step", "value": "Method completed under the SOP"},
-        {"label": "Product identity", "value": "Exact approved product used"},
-        {"label": "Preparation / concentration", "value": "Controlled preparation method or ready-to-use status"},
-        {"label": "Required contact conditions", "value": "Time, wetness, coverage or other label/SOP condition as applicable"},
-        {"label": "Finish / inspection", "value": "Rinse, dry, inspection or other finish step where required"},
-        {"label": "Recontamination protection", "value": "How the item/area was kept controlled after sanitation"},
-        {"label": "Exception / corrective action", "value": "Anything incomplete, failed or repeated and who was notified"}
-      ], "note": "Exact fields depend on the facility process. This training model emphasizes reconstructable evidence of completion."},
-      {"type": "activity", "title": "Sequence, verify and error-hunt", "instructions": "Arrange a supplied sanitation task into the controlled sequence, then audit a second completed record for hidden failures.", "prompts": ["Place valid steps from work-area control through final documentation in order.", "Flag any action that disinfects over heavy debris.", "Flag any preparation that changes concentration without the controlling instruction.", "Flag any product substitution or combination that is not authorized.", "Identify where required contact conditions were not completed.", "Identify where an item was recontaminated after sanitation.", "Rewrite the final record so incomplete work is visible instead of marked complete."], "artifact": "Sanitation sequence worksheet plus corrected verification record", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-OSHA-1910-1200-HAZCOM"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your evidence is 'it looked clean,' 'it smelled strong,' or 'we used more product,' you have not demonstrated a controlled sanitation process. Recheck debris removal, exact product identity, preparation, required contact conditions, finish steps and protection from recontamination."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "Sanitation is a verifiable process, not an appearance. Clean first, use the exact approved product and preparation, complete the required conditions, inspect the result, protect the controlled state and document exceptions rather than hiding incomplete work.", "references": ["REF-UMASS-GREENHOUSE-SANITATION"]}
+      {
+        "type": "text",
+        "title": "Cleaning and disinfection are different operations",
+        "body": "Cleaning physically removes soil, media, plant debris, organic matter and residues. Disinfection is a separate approved process used on suitable cleaned surfaces or equipment. UMass notes that organic matter can reduce disinfectant effectiveness and interfere with contact.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-005",
+        "src": "/assets/course1/cleaning-disinfection-sequence.svg",
+        "alt": "Nine-step sanitation workflow showing secure or remove material, remove debris and gross soil, physically clean, verify the approved product and preparation, apply as directed, maintain required contact conditions, complete the required finish step, inspect the result, and document completion or exceptions.",
+        "caption": "A generic learning sequence; the exact product preparation, application, contact conditions, rinse/dry requirements and compatibility rules come from the current label and facility SOP.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Nine sanitation decision points",
+        "items": [
+          {
+            "title": "Control the work area",
+            "body": "Secure or remove plants/material as required and prevent uncontrolled traffic through the sanitation task."
+          },
+          {
+            "title": "Remove gross debris",
+            "body": "Remove roots, media, leaves, algae, soil and other material that can block cleaning or disinfectant contact."
+          },
+          {
+            "title": "Clean physically",
+            "body": "Use the defined cleaning method for the surface or equipment before disinfection."
+          },
+          {
+            "title": "Confirm exact product identity",
+            "body": "Match the product to the current label and SOP. Stop if identity or approval is uncertain."
+          },
+          {
+            "title": "Verify preparation",
+            "body": "Use the controlled dilution, preparation or ready-to-use instruction; do not make the product stronger by intuition."
+          },
+          {
+            "title": "Verify worker and material precautions",
+            "body": "Check current hazard information, PPE, ventilation and compatibility requirements."
+          },
+          {
+            "title": "Apply and maintain the required conditions",
+            "body": "Complete the label/SOP-defined coverage, contact/wetness/time or other conditions that apply."
+          },
+          {
+            "title": "Finish and inspect",
+            "body": "Complete any required rinse, dry or finish step and inspect the result for missed debris, residue or incomplete areas."
+          },
+          {
+            "title": "Protect and document",
+            "body": "Prevent recontamination, restore the area/item to the controlled location, and record completion or exceptions honestly."
+          }
+        ],
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "What counts as sanitation evidence",
+        "columns": [
+          "Question",
+          "Useful evidence",
+          "Weak evidence"
+        ],
+        "rows": [
+          [
+            "Was gross contamination removed?",
+            "Debris/soil removed using the required cleaning step",
+            "The surface was sprayed"
+          ],
+          [
+            "Was the correct product used?",
+            "Exact product identity matched to current label/SOP",
+            "Same brand or similar container"
+          ],
+          [
+            "Was it prepared correctly?",
+            "Controlled preparation/dilution completed as instructed",
+            "Worker guessed a stronger mix"
+          ],
+          [
+            "Were required contact conditions met?",
+            "Required time/wetness/coverage/finish step completed",
+            "Surface looked wet or smelled clean"
+          ],
+          [
+            "Was the result protected?",
+            "Item stored or released through the clean route",
+            "Item placed back on the floor or uncontrolled cart"
+          ],
+          [
+            "Can the task be reconstructed?",
+            "Completion, exception and corrective action recorded",
+            "Checklist marked complete despite missing steps"
+          ]
+        ],
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Do not strengthen, combine or substitute by intuition",
+        "tone": "safety",
+        "body": "Disinfectants and cleaners differ in labeled use, concentration, contact conditions, hazards and material compatibility. Technician I workers follow the current label and SOP instead of making a stronger mix, combining unknown products or substituting a similar-looking product."
+      },
+      {
+        "type": "comparison",
+        "title": "Controlled sanitation versus cosmetic sanitation",
+        "left": {
+          "label": "Controlled process",
+          "body": "Debris is removed, the surface is cleaned, the exact approved product and preparation are verified, required contact conditions are completed, the result is inspected, protected from recontamination and documented."
+        },
+        "right": {
+          "label": "Cosmetic shortcut",
+          "body": "Disinfectant is sprayed over organic debris and the area is marked complete because it looks wet and smells clean."
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "Same brand, different product",
+        "setting": "The SOP names one sanitizer, but the container on the cart is from the same manufacturer with a different active ingredient and different label directions.",
+        "prompt": "What is the best first response?",
+        "options": [
+          "Use it because the brand is the same",
+          "Double-check the color and use it if it looks similar",
+          "Stop and verify the approved product and current instructions before proceeding",
+          "Use a stronger mix so the substitution is more effective"
+        ],
+        "answer": "Stop and verify the approved product and current instructions before proceeding.",
+        "feedback": "Brand similarity is not evidence that products are interchangeable. The controlling label and facility procedure determine the approved use and preparation.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Contact conditions were not completed",
+        "setting": "A technician applies the correct approved disinfectant, but the required contact condition is interrupted before completion. The next room is waiting for the cart.",
+        "prompt": "How should the task be recorded?",
+        "options": [
+          "Complete because the correct product was used",
+          "Complete if the surface still smells like disinfectant",
+          "Incomplete until the controlled process is completed or corrected according to procedure",
+          "Complete if production cannot wait"
+        ],
+        "answer": "Incomplete until the controlled process is completed or corrected according to procedure.",
+        "feedback": "Using the correct product does not replace the required process conditions. Verification is based on the controlled method, not production pressure or appearance."
+      },
+      {
+        "type": "document",
+        "title": "Sanitation verification record",
+        "description": "A useful completion record shows enough process evidence to distinguish a verified task from a cosmetic wipe-down.",
+        "fields": [
+          {
+            "label": "Area / asset",
+            "value": "Exact bench, cart, tool, tray, room or other item cleaned"
+          },
+          {
+            "label": "Gross debris removal",
+            "value": "Completed / not completed / exception"
+          },
+          {
+            "label": "Cleaning step",
+            "value": "Method completed under the SOP"
+          },
+          {
+            "label": "Product identity",
+            "value": "Exact approved product used"
+          },
+          {
+            "label": "Preparation / concentration",
+            "value": "Controlled preparation method or ready-to-use status"
+          },
+          {
+            "label": "Required contact conditions",
+            "value": "Time, wetness, coverage or other label/SOP condition as applicable"
+          },
+          {
+            "label": "Finish / inspection",
+            "value": "Rinse, dry, inspection or other finish step where required"
+          },
+          {
+            "label": "Recontamination protection",
+            "value": "How the item/area was kept controlled after sanitation"
+          },
+          {
+            "label": "Exception / corrective action",
+            "value": "Anything incomplete, failed or repeated and who was notified"
+          }
+        ],
+        "note": "Exact fields depend on the facility process. This training model emphasizes reconstructable evidence of completion."
+      },
+      {
+        "type": "activity",
+        "title": "Sequence, verify and error-hunt",
+        "instructions": "Arrange a supplied sanitation task into the controlled sequence, then audit a second completed record for hidden failures.",
+        "prompts": [
+          "Place valid steps from work-area control through final documentation in order.",
+          "Flag any action that disinfects over heavy debris.",
+          "Flag any preparation that changes concentration without the controlling instruction.",
+          "Flag any product substitution or combination that is not authorized.",
+          "Identify where required contact conditions were not completed.",
+          "Identify where an item was recontaminated after sanitation.",
+          "Rewrite the final record so incomplete work is visible instead of marked complete."
+        ],
+        "artifact": "Sanitation sequence worksheet plus corrected verification record",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your evidence is 'it looked clean,' 'it smelled strong,' or 'we used more product,' you have not demonstrated a controlled sanitation process. Recheck debris removal, exact product identity, preparation, required contact conditions, finish steps and protection from recontamination."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Sanitation is a verifiable process, not an appearance. Clean first, use the exact approved product and preparation, complete the required conditions, inspect the result, protect the controlled state and document exceptions rather than hiding incomplete work.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      }
     ]
   }
 }

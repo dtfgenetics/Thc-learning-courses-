@@ -2,24 +2,63 @@
   "id": "LESSON-LH-TECH1-001-08",
   "title": "Working Within Authorization and Escalation Boundaries",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-PRO-SOP-001", "COMP-SAFETY-WORK-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-05", "LO-LH-TECH1-001-01"],
+  "status": "published",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-SAFETY-WORK-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-05",
+    "LO-LH-TECH1-001-01"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"],
+  "references": [
+    "REF-OSHA-1910-147-LOTO",
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ],
   "assessment": null,
   "content": {
     "overview": "Competent technicians know what they are trained and assigned to do, how to recognize a boundary condition, how to preserve safe status, and how to use the site's alternate escalation path when the usual decision-maker is unavailable.",
     "vocabulary": [
-      {"term": "authorization", "definition": "Formal permission based on role, training, procedure and assignment to perform a defined action."},
-      {"term": "affected employee", "definition": "Under OSHA lockout/tagout terminology, an employee who operates or uses equipment being serviced or works where covered servicing occurs."},
-      {"term": "authorized employee", "definition": "Under OSHA lockout/tagout terminology, an employee who applies energy-control devices to perform servicing or maintenance covered by the standard."},
-      {"term": "alternate escalation", "definition": "The defined backup route used when the usual supervisor, lead or decision-maker cannot be reached without transferring that person's authority to the technician."}
+      {
+        "term": "authorization",
+        "definition": "Formal permission based on role, training, procedure and assignment to perform a defined action."
+      },
+      {
+        "term": "affected employee",
+        "definition": "Under OSHA lockout/tagout terminology, an employee who operates or uses equipment being serviced or works where covered servicing occurs."
+      },
+      {
+        "term": "authorized employee",
+        "definition": "Under OSHA lockout/tagout terminology, an employee who applies energy-control devices to perform servicing or maintenance covered by the standard."
+      },
+      {
+        "term": "alternate escalation",
+        "definition": "The defined backup route used when the usual supervisor, lead or decision-maker cannot be reached without transferring that person's authority to the technician."
+      }
     ],
     "sections": [
-      {"title": "Capability, confidence and authorization are different", "body": "Recognizing a pesticide restriction, equipment fault, environmental problem or biosecurity hold does not give a technician authority to clear it. Past experience, personal confidence or knowledge of how a repair is performed also does not create current workplace authorization.", "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"title": "Know when operator work becomes servicing", "body": "OSHA's hazardous-energy standard applies to servicing and maintenance where unexpected energization, startup or release of stored energy can cause injury. Covered servicing during normal production can include work that requires removing or bypassing a guard or placing part of the body into a danger zone. Technician I workers do not cross that boundary merely because a jam or repair appears simple.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"title": "Absence does not transfer authority", "body": "If the usual lead, supervisor, maintenance contact or quality decision-maker is unavailable, the technician uses the site's alternate escalation, hold or emergency process. The decision-maker's absence does not expand the technician's role.", "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024"]}
+      {
+        "title": "Capability, confidence and authorization are different",
+        "body": "Recognizing a pesticide restriction, equipment fault, environmental problem or biosecurity hold does not give a technician authority to clear it. Past experience, personal confidence or knowledge of how a repair is performed also does not create current workplace authorization.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "title": "Know when operator work becomes servicing",
+        "body": "OSHA's hazardous-energy standard applies to servicing and maintenance where unexpected energization, startup or release of stored energy can cause injury. Covered servicing during normal production can include work that requires removing or bypassing a guard or placing part of the body into a danger zone. Technician I workers do not cross that boundary merely because a jam or repair appears simple.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "title": "Absence does not transfer authority",
+        "body": "If the usual lead, supervisor, maintenance contact or quality decision-maker is unavailable, the technician uses the site's alternate escalation, hold or emergency process. The decision-maker's absence does not expand the technician's role.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      }
     ],
     "workedExamples": [
       "A pump alarm permits a defined external tank-level and visible-leak check, but not opening an electrical panel.",
@@ -38,33 +77,195 @@
     "practicalApplication": "Using a supplied role matrix, equipment SOPs and escalation tree, classify a set of routine actions, abnormal conditions, maintenance requests, status-release decisions and emergencies. For every non-routine case, state what the technician may do immediately, what must remain untouched or held, and which alternate escalation path applies.",
     "summary": "Professional performance includes stopping at the correct boundary and preserving the condition while help is obtained. Technicians complete assigned routine work confidently, but they do not convert knowledge, urgency or an unavailable decision-maker into authority they were not given.",
     "blocks": [
-      {"type": "text", "title": "Capability is not authorization", "body": "A worker may understand a controller, recognize a likely pump problem, know how a guard is removed or have repaired similar equipment elsewhere. None of those facts alone create current workplace authorization. Technician I performance is defined by the assigned role, current training, controlled procedure and site authority structure.", "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-010", "src": "/assets/course1/operator-care-servicing-boundary.svg", "alt": "Two-sided diagram showing routine operator care such as assigned external inspection, cleaning, setup, visible checks, consumable replacement, and readings on one side, and servicing such as removing guards, entering hazardous motion areas, opening protected electrical components, disassembling powered equipment, or releasing stored energy on the other.", "caption": "The boundary is defined by equipment instructions, the site SOP, worker role and authorization—not by how easy a repair looks.", "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "table", "title": "Classify the decision before acting", "columns": ["Situation", "Technician I first response", "Who owns the next decision"], "rows": [
-        ["Routine action explicitly assigned in the current SOP", "Perform the defined action and record it as required", "Technician within assigned role"],
-        ["Unsafe condition with an authorized routine control", "Apply the defined control and verify the condition", "Technician if the procedure grants that authority"],
-        ["Unsafe condition outside routine control", "Stop or isolate where authorized; preserve status and escalate", "Safety/lead/other designated role"],
-        ["Equipment fault requiring guard removal, protected access or covered servicing", "Do not enter the servicing task; refer the equipment", "Authorized servicing/maintenance process"],
-        ["Hold, quarantine, restricted-entry or release decision", "Preserve the status and route the decision", "Role or rule that controls the status"],
-        ["Abnormal process condition with primary lead unavailable", "Complete permitted checks, keep the condition open and use alternate escalation", "Backup role defined by site procedure"],
-        ["Life-safety emergency or alarm", "Follow the posted emergency response", "Emergency/safety response structure"]
-      ], "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "callout", "title": "OSHA terminology has a specific meaning", "tone": "safety", "body": "Under OSHA's hazardous-energy framework for covered servicing, affected and authorized employees have different roles. Lockout/tagout energy isolation is performed by authorized employees. A cultivation course certificate does not itself make a worker an authorized employee for covered hazardous-energy servicing.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"type": "callout", "title": "Never bypass a lock or tag", "tone": "warning", "body": "OSHA requires employees to understand the restrictions and prohibitions of energy-control procedures. A lockout or tagout condition is not an invitation to restart, bypass or test equipment because the production task is urgent.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"type": "scenario", "title": "The controller value is abnormal and the lead is unavailable", "setting": "A room value is outside the expected range. The Technician I work instruction tells you to verify the reading and notify the lead, but it does not authorize controller programming. The lead cannot be reached immediately.", "prompt": "What should happen next?", "options": ["Change the controller because you understand the setpoint", "Keep adjusting until the reading looks normal", "Complete the permitted verification, preserve the abnormal status, use the defined alternate escalation or hold process, and do not expand your authority", "Ignore the condition until the lead returns"], "answer": "Complete the permitted verification, preserve the abnormal status, use the defined alternate escalation or hold process, and do not expand your authority.", "feedback": "The absence of the usual decision-maker does not transfer their authority to the technician. A controlled operation needs a backup escalation path or a safe open/held state.", "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "scenario", "title": "The jam looks easy to clear", "setting": "A conveyor or processing component stops because plant material is visibly jammed just behind a fixed guard. A coworker says the machine is off and removing two screws will take less than a minute.", "prompt": "What is the strongest Technician I response?", "options": ["Remove the guard because the machine is currently off", "Reach through an opening without removing the guard", "Do not cross the servicing/guarding boundary; follow the out-of-service and authorized maintenance/energy-control process", "Have a coworker stand by the start button while you clear the jam"], "answer": "Do not cross the servicing/guarding boundary; follow the out-of-service and authorized maintenance/energy-control process.", "feedback": "A simple-looking jam can still involve unexpected energization or stored energy. Turning a machine off is not the same as completing the employer's energy-control procedure.", "references": ["REF-OSHA-1910-147-LOTO"]},
-      {"type": "document", "title": "Boundary and escalation note", "description": "When the technician reaches an authority boundary, the handoff should show what is safe now and what remains unresolved.", "fields": [
-        {"label": "Condition / asset / area", "value": "Exact abnormal condition and controlled identifier"},
-        {"label": "Permitted checks completed", "value": "Only checks/actions explicitly allowed by the operator procedure"},
-        {"label": "Boundary reached", "value": "Action that would exceed role, require protected access, release status or require higher authority"},
-        {"label": "Safe / held state", "value": "Out-of-service, stopped, isolated where authorized, held, restricted or otherwise preserved status"},
-        {"label": "Primary escalation", "value": "Role/person normally responsible"},
-        {"label": "Alternate escalation", "value": "Backup route used if the primary contact is unavailable"},
-        {"label": "Open next action", "value": "What decision or work remains and who owns it"}
-      ], "note": "The technician records the boundary and preserves the condition; the note does not create new authority."},
-      {"type": "activity", "title": "Authority-boundary and fallback-escalation sort", "instructions": "Using a supplied role description, SOP excerpts and escalation tree, classify each action and state what must remain controlled while the decision is transferred.", "prompts": ["External pre-use check specified in the equipment SOP", "Removing a guard to clear a jam", "Releasing a held batch", "Verifying an alarm reading without opening protected equipment", "Changing controller programming not included in the operator procedure", "Primary lead unavailable during an unresolved abnormal condition", "Restart request while equipment is locked/tagged out", "Responding to a life-safety alarm"], "artifact": "Authorization-boundary decision sheet plus two boundary/escalation notes", "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your reasoning says 'I know how,' 'it will only take a minute,' 'the lead is not here,' or 'the machine is off,' you may be substituting confidence for authorization. Recheck the controlled role, guarding/energy boundary, safe state and alternate escalation path."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "Professional competence includes knowing where to stop and how to preserve the operation while the decision moves to the correct authority. Complete assigned routine work confidently, but do not turn knowledge, urgency or availability into permission that the role and controlled procedure do not grant."}
+      {
+        "type": "text",
+        "title": "Capability is not authorization",
+        "body": "A worker may understand a controller, recognize a likely pump problem, know how a guard is removed or have repaired similar equipment elsewhere. None of those facts alone create current workplace authorization. Technician I performance is defined by the assigned role, current training, controlled procedure and site authority structure.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-010",
+        "src": "/assets/course1/operator-care-servicing-boundary.svg",
+        "alt": "Two-sided diagram showing routine operator care such as assigned external inspection, cleaning, setup, visible checks, consumable replacement, and readings on one side, and servicing such as removing guards, entering hazardous motion areas, opening protected electrical components, disassembling powered equipment, or releasing stored energy on the other.",
+        "caption": "The boundary is defined by equipment instructions, the site SOP, worker role and authorization—not by how easy a repair looks.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Classify the decision before acting",
+        "columns": [
+          "Situation",
+          "Technician I first response",
+          "Who owns the next decision"
+        ],
+        "rows": [
+          [
+            "Routine action explicitly assigned in the current SOP",
+            "Perform the defined action and record it as required",
+            "Technician within assigned role"
+          ],
+          [
+            "Unsafe condition with an authorized routine control",
+            "Apply the defined control and verify the condition",
+            "Technician if the procedure grants that authority"
+          ],
+          [
+            "Unsafe condition outside routine control",
+            "Stop or isolate where authorized; preserve status and escalate",
+            "Safety/lead/other designated role"
+          ],
+          [
+            "Equipment fault requiring guard removal, protected access or covered servicing",
+            "Do not enter the servicing task; refer the equipment",
+            "Authorized servicing/maintenance process"
+          ],
+          [
+            "Hold, quarantine, restricted-entry or release decision",
+            "Preserve the status and route the decision",
+            "Role or rule that controls the status"
+          ],
+          [
+            "Abnormal process condition with primary lead unavailable",
+            "Complete permitted checks, keep the condition open and use alternate escalation",
+            "Backup role defined by site procedure"
+          ],
+          [
+            "Life-safety emergency or alarm",
+            "Follow the posted emergency response",
+            "Emergency/safety response structure"
+          ]
+        ],
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "OSHA terminology has a specific meaning",
+        "tone": "safety",
+        "body": "Under OSHA's hazardous-energy framework for covered servicing, affected and authorized employees have different roles. Lockout/tagout energy isolation is performed by authorized employees. A cultivation course certificate does not itself make a worker an authorized employee for covered hazardous-energy servicing.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Never bypass a lock or tag",
+        "tone": "warning",
+        "body": "OSHA requires employees to understand the restrictions and prohibitions of energy-control procedures. A lockout or tagout condition is not an invitation to restart, bypass or test equipment because the production task is urgent.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The controller value is abnormal and the lead is unavailable",
+        "setting": "A room value is outside the expected range. The Technician I work instruction tells you to verify the reading and notify the lead, but it does not authorize controller programming. The lead cannot be reached immediately.",
+        "prompt": "What should happen next?",
+        "options": [
+          "Change the controller because you understand the setpoint",
+          "Keep adjusting until the reading looks normal",
+          "Complete the permitted verification, preserve the abnormal status, use the defined alternate escalation or hold process, and do not expand your authority",
+          "Ignore the condition until the lead returns"
+        ],
+        "answer": "Complete the permitted verification, preserve the abnormal status, use the defined alternate escalation or hold process, and do not expand your authority.",
+        "feedback": "The absence of the usual decision-maker does not transfer their authority to the technician. A controlled operation needs a backup escalation path or a safe open/held state.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The jam looks easy to clear",
+        "setting": "A conveyor or processing component stops because plant material is visibly jammed just behind a fixed guard. A coworker says the machine is off and removing two screws will take less than a minute.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Remove the guard because the machine is currently off",
+          "Reach through an opening without removing the guard",
+          "Do not cross the servicing/guarding boundary; follow the out-of-service and authorized maintenance/energy-control process",
+          "Have a coworker stand by the start button while you clear the jam"
+        ],
+        "answer": "Do not cross the servicing/guarding boundary; follow the out-of-service and authorized maintenance/energy-control process.",
+        "feedback": "A simple-looking jam can still involve unexpected energization or stored energy. Turning a machine off is not the same as completing the employer's energy-control procedure.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Boundary and escalation note",
+        "description": "When the technician reaches an authority boundary, the handoff should show what is safe now and what remains unresolved.",
+        "fields": [
+          {
+            "label": "Condition / asset / area",
+            "value": "Exact abnormal condition and controlled identifier"
+          },
+          {
+            "label": "Permitted checks completed",
+            "value": "Only checks/actions explicitly allowed by the operator procedure"
+          },
+          {
+            "label": "Boundary reached",
+            "value": "Action that would exceed role, require protected access, release status or require higher authority"
+          },
+          {
+            "label": "Safe / held state",
+            "value": "Out-of-service, stopped, isolated where authorized, held, restricted or otherwise preserved status"
+          },
+          {
+            "label": "Primary escalation",
+            "value": "Role/person normally responsible"
+          },
+          {
+            "label": "Alternate escalation",
+            "value": "Backup route used if the primary contact is unavailable"
+          },
+          {
+            "label": "Open next action",
+            "value": "What decision or work remains and who owns it"
+          }
+        ],
+        "note": "The technician records the boundary and preserves the condition; the note does not create new authority."
+      },
+      {
+        "type": "activity",
+        "title": "Authority-boundary and fallback-escalation sort",
+        "instructions": "Using a supplied role description, SOP excerpts and escalation tree, classify each action and state what must remain controlled while the decision is transferred.",
+        "prompts": [
+          "External pre-use check specified in the equipment SOP",
+          "Removing a guard to clear a jam",
+          "Releasing a held batch",
+          "Verifying an alarm reading without opening protected equipment",
+          "Changing controller programming not included in the operator procedure",
+          "Primary lead unavailable during an unresolved abnormal condition",
+          "Restart request while equipment is locked/tagged out",
+          "Responding to a life-safety alarm"
+        ],
+        "artifact": "Authorization-boundary decision sheet plus two boundary/escalation notes",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your reasoning says 'I know how,' 'it will only take a minute,' 'the lead is not here,' or 'the machine is off,' you may be substituting confidence for authorization. Recheck the controlled role, guarding/energy boundary, safe state and alternate escalation path."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Professional competence includes knowing where to stop and how to preserve the operation while the decision moves to the correct authority. Complete assigned routine work confidently, but do not turn knowledge, urgency or availability into permission that the role and controlled procedure do not grant."
+      }
     ]
   }
 }

@@ -2,24 +2,61 @@
   "id": "LESSON-LH-TECH1-001-04",
   "title": "Contamination Routes and Zone Discipline",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-SPACE-BIOSEC-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-03"],
+  "status": "published",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-03"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"],
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ],
   "assessment": null,
   "content": {
     "overview": "Biosecurity starts with understanding how a source can connect to a receiving area through workers, tools, media, water, containers, carts, hose ends, plant material, debris and other movement pathways. Learners practice reconstructing routes and breaking them before contamination is carried into a more sensitive zone.",
     "vocabulary": [
-      {"term": "biosecurity", "definition": "Practices that reduce the introduction and spread of pests and plant pathogens."},
-      {"term": "contamination route", "definition": "A path by which a pest, pathogen, infested material or contaminated soil/water can move from one place or object to another."},
-      {"term": "vector", "definition": "A person, tool, material, organism or process that can move contamination between locations."},
-      {"term": "zone transition", "definition": "A controlled boundary between work areas where movement, PPE, tool, sanitation or material rules can change."}
+      {
+        "term": "biosecurity",
+        "definition": "Practices that reduce the introduction and spread of pests and plant pathogens."
+      },
+      {
+        "term": "contamination route",
+        "definition": "A path by which a pest, pathogen, infested material or contaminated soil/water can move from one place or object to another."
+      },
+      {
+        "term": "vector",
+        "definition": "A person, tool, material, organism or process that can move contamination between locations."
+      },
+      {
+        "term": "zone transition",
+        "definition": "A controlled boundary between work areas where movement, PPE, tool, sanitation or material rules can change."
+      }
     ],
     "sections": [
-      {"title": "Think source → route → receiving area", "body": "Penn State identifies greenhouse disease sources that can include infested soil or media, water, incoming plant material, tools, hose ends, machinery, containers and worker movement. The technician's job is to identify the possible source, the objects or people that could carry it, and the cleaner or more sensitive area that could receive it.", "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES"]},
-      {"title": "Clean appearance is not controlled status", "body": "An apparently clean cart, hose end, glove or tray can still connect two areas if its movement history crosses a higher-risk or uncontrolled zone. Facilities use zone rules, dedicated tools, hand/footwear controls, sanitation steps and movement direction to interrupt those routes.", "references": ["REF-UMASS-GREENHOUSE-SANITATION"]},
-      {"title": "Prevent recontamination after sanitation", "body": "UMass guidance emphasizes that sanitation is followed by protection from recontamination. A cleaned object can lose that status if it is placed on a dirty floor, handled with contaminated gloves, or moved back through an uncontrolled route before use.", "references": ["REF-UMASS-GREENHOUSE-SANITATION"]}
+      {
+        "title": "Think source → route → receiving area",
+        "body": "Penn State identifies greenhouse disease sources that can include infested soil or media, water, incoming plant material, tools, hose ends, machinery, containers and worker movement. The technician's job is to identify the possible source, the objects or people that could carry it, and the cleaner or more sensitive area that could receive it.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+        ]
+      },
+      {
+        "title": "Clean appearance is not controlled status",
+        "body": "An apparently clean cart, hose end, glove or tray can still connect two areas if its movement history crosses a higher-risk or uncontrolled zone. Facilities use zone rules, dedicated tools, hand/footwear controls, sanitation steps and movement direction to interrupt those routes.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "title": "Prevent recontamination after sanitation",
+        "body": "UMass guidance emphasizes that sanitation is followed by protection from recontamination. A cleaned object can lose that status if it is placed on a dirty floor, handled with contaminated gloves, or moved back through an uncontrolled route before use.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      }
     ],
     "workedExamples": [
       "A hose nozzle that falls onto a greenhouse floor is handled under the sanitation procedure before reuse instead of being assumed safe because only the outside touched the floor.",
@@ -37,37 +74,219 @@
     "practicalApplication": "Use a mock facility map and movement log to identify at least eight potential contamination routes, reconstruct how a higher-risk source could reach a sensitive area, and redesign the worker/tool/cart/material sequence to break the routes using the supplied facility rules.",
     "summary": "Biosecurity is a pathway-control discipline. Technicians protect sensitive areas by identifying source-route-receiver connections, following facility zone transitions, preserving sanitized status, and preventing people or objects from reconnecting higher-risk pathways.",
     "blocks": [
-      {"type": "text", "title": "Think in pathways, not appearances", "body": "A healthy-looking plant or apparently clean cart can still participate in a contamination route. Ask what the source could be, what can carry it, where that carrier has traveled, and what cleaner or more sensitive area it could contact next.", "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-004", "src": "/assets/course1/biosecurity-pathway-map.svg", "alt": "Cultivation facility pathway diagram showing a cleaner or sensitive zone, a controlled transition boundary, and a higher-risk or unresolved zone connected by workers, tools, carts, hose ends, incoming materials, and waste movement. It emphasizes controlled sanitation before crossing and avoiding unnecessary backward travel.", "caption": "Follow the route: a controlled object can become uncontrolled again if it crosses the wrong boundary or contacts the wrong surface.", "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"]},
-      {"type": "table", "title": "Source-route-receiver examples", "columns": ["Potential source", "Possible route", "Receiving area / object", "Break point"], "rows": [
-        ["Infested soil or media", "Worker footwear or cart wheels", "Propagation floor or clean work area", "Use the facility's footwear/cart transition and sanitation controls"],
-        ["Contaminated floor", "Hose nozzle or hand tool placed on the floor", "Irrigation or propagation task", "Keep hose ends/tools off the floor and sanitize after uncontrolled contact"],
-        ["Incoming plant material", "Shared hands, gloves, tools or carts", "Established crop", "Maintain receiving/quarantine workflow and tool/hand controls"],
-        ["Plant debris / waste", "Open cart or repeated worker travel", "Cleaner production zone", "Use the defined waste route and contain movement"],
-        ["Potentially contaminated water or splash", "Irrigation or wet surface contact", "Media, roots, benches or tools", "Follow water-management and sanitation controls defined by the site"]
-      ], "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"]},
-      {"type": "steps", "title": "Build a controlled movement sequence", "items": [
-        {"title": "Confirm zone status", "body": "Use the facility's actual zone names, current risk status and controlled procedure rather than inventing universal labels."},
-        {"title": "Identify what crosses the boundary", "body": "People, clothing, footwear, gloves, tools, carts, hoses, plant material, containers and waste can all create a route."},
-        {"title": "Plan direction and timing", "body": "Where the site uses cleaner-to-higher-risk sequencing, complete sensitive work before higher-risk work and avoid unnecessary backward travel."},
-        {"title": "Apply the required transition controls", "body": "Follow site rules for hand hygiene, PPE changes, dedicated tools, cart sanitation, containment or release before crossing."},
-        {"title": "Protect the clean status afterward", "body": "Keep sanitized tools, containers and hose ends away from uncontrolled floors, carts or surfaces so the transition is not undone."},
-        {"title": "Document a breach instead of hiding it", "body": "If the wrong object or person crosses a boundary, stop further movement where authorized and record the route for follow-up."}
-      ], "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES"]},
-      {"type": "comparison", "title": "Controlled status versus visual cleanliness", "left": {"label": "Controlled status", "body": "A cart used in quarantine completes the approved cleaning/disinfection and release process, then is protected from recontamination before entering a more sensitive zone."}, "right": {"label": "Looks clean", "body": "A worker wipes the one visible dirty spot and assumes the cart is safe to move between zones because no debris remains."}},
-      {"type": "scenario", "title": "Quarantine cart urgently needed in propagation", "setting": "A cart has just been used in a quarantine area. Propagation needs it immediately, and no visible plant debris remains on the top shelf.", "prompt": "What should determine whether the cart crosses into propagation?", "options": ["Visible cleanliness alone", "Production urgency", "The approved cleaning/disinfection and release workflow for crossing the boundary", "Whether the plants in quarantine looked healthy"], "answer": "The approved cleaning/disinfection and release workflow for crossing the boundary.", "feedback": "Biosecurity controls are based on routes and defined status, not only visible dirt or crop appearance. Urgency does not erase the cross-zone pathway.", "references": ["REF-UMASS-GREENHOUSE-SANITATION", "REF-PSU-GREENHOUSE-DISEASE-SOURCES"]},
-      {"type": "scenario", "title": "The gloves are clean-looking but the route is wrong", "setting": "A technician finishes work in a higher-risk room and walks directly into propagation wearing the same gloves. The gloves have no visible soil or plant residue.", "prompt": "What is the main problem?", "options": ["No problem because the gloves look clean", "The zone-transition process was bypassed, so the gloves and hands remain part of a possible contamination route", "Only footwear matters in propagation", "The technician should spray the gloves with any available disinfectant"], "answer": "The zone-transition process was bypassed, so the gloves and hands remain part of a possible contamination route.", "feedback": "Visual cleanliness does not replace the site's transition procedure. The important issue is the route and status history, not whether contamination is visible.", "references": ["REF-UMASS-GREENHOUSE-SANITATION"]},
-      {"type": "document", "title": "Biosecurity route reconstruction", "description": "When a boundary is crossed incorrectly, reconstruct the confirmed route before cleaning or movement erases useful information.", "fields": [
-        {"label": "Starting zone / source", "value": "Where the worker, tool, cart, material or waste came from"},
-        {"label": "Carrier", "value": "Person, glove, footwear, tool, cart, hose, container, material or other route"},
-        {"label": "Boundary crossed", "value": "Transition point and rule that applied"},
-        {"label": "Receiving zone / contacts", "value": "Where the carrier went and what it contacted"},
-        {"label": "Control completed / missed", "value": "Sanitation, PPE change, containment or release step that was done or bypassed"},
-        {"label": "Immediate action", "value": "Movement stopped, object held, area protected or supervisor notified under procedure"}
-      ], "note": "Record confirmed movement separately from assumptions about whether a pathogen was actually present."},
-      {"type": "activity", "title": "Draw and break the contamination routes", "instructions": "On a supplied facility map, draw the possible routes created by technician travel, gloves/footwear, shared tools, carts, irrigation hose ends, incoming plants, water/splash and waste/debris removal. Then redesign the work sequence to break the routes.", "prompts": ["Mark every point where a person or object crosses a zone boundary.", "Identify the source, carrier and receiving area for each route.", "Identify what must be cleaned, changed, contained, dedicated or verified before crossing.", "Mark where recontamination could occur after sanitation.", "Choose a work order that reduces avoidable backward travel.", "Complete one route-reconstruction record for a deliberate breach inserted into the scenario."], "artifact": "Biosecurity movement map plus route-reconstruction record", "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your decision depends on whether something 'looks clean,' you may be missing the route. Recheck where the object came from, what it contacted, what boundary rule applied, and whether the transition process was actually completed."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "Biosecurity is a movement-control problem as much as a cleaning problem. A technician protects cleaner or more sensitive areas by identifying source-route-receiver connections, following transition controls, protecting sanitized status and documenting boundary failures instead of hiding them.", "references": ["REF-PSU-GREENHOUSE-DISEASE-SOURCES", "REF-UMASS-GREENHOUSE-SANITATION"]}
+      {
+        "type": "text",
+        "title": "Think in pathways, not appearances",
+        "body": "A healthy-looking plant or apparently clean cart can still participate in a contamination route. Ask what the source could be, what can carry it, where that carrier has traveled, and what cleaner or more sensitive area it could contact next.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-004",
+        "src": "/assets/course1/biosecurity-pathway-map.svg",
+        "alt": "Cultivation facility pathway diagram showing a cleaner or sensitive zone, a controlled transition boundary, and a higher-risk or unresolved zone connected by workers, tools, carts, hose ends, incoming materials, and waste movement. It emphasizes controlled sanitation before crossing and avoiding unnecessary backward travel.",
+        "caption": "Follow the route: a controlled object can become uncontrolled again if it crosses the wrong boundary or contacts the wrong surface.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Source-route-receiver examples",
+        "columns": [
+          "Potential source",
+          "Possible route",
+          "Receiving area / object",
+          "Break point"
+        ],
+        "rows": [
+          [
+            "Infested soil or media",
+            "Worker footwear or cart wheels",
+            "Propagation floor or clean work area",
+            "Use the facility's footwear/cart transition and sanitation controls"
+          ],
+          [
+            "Contaminated floor",
+            "Hose nozzle or hand tool placed on the floor",
+            "Irrigation or propagation task",
+            "Keep hose ends/tools off the floor and sanitize after uncontrolled contact"
+          ],
+          [
+            "Incoming plant material",
+            "Shared hands, gloves, tools or carts",
+            "Established crop",
+            "Maintain receiving/quarantine workflow and tool/hand controls"
+          ],
+          [
+            "Plant debris / waste",
+            "Open cart or repeated worker travel",
+            "Cleaner production zone",
+            "Use the defined waste route and contain movement"
+          ],
+          [
+            "Potentially contaminated water or splash",
+            "Irrigation or wet surface contact",
+            "Media, roots, benches or tools",
+            "Follow water-management and sanitation controls defined by the site"
+          ]
+        ],
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build a controlled movement sequence",
+        "items": [
+          {
+            "title": "Confirm zone status",
+            "body": "Use the facility's actual zone names, current risk status and controlled procedure rather than inventing universal labels."
+          },
+          {
+            "title": "Identify what crosses the boundary",
+            "body": "People, clothing, footwear, gloves, tools, carts, hoses, plant material, containers and waste can all create a route."
+          },
+          {
+            "title": "Plan direction and timing",
+            "body": "Where the site uses cleaner-to-higher-risk sequencing, complete sensitive work before higher-risk work and avoid unnecessary backward travel."
+          },
+          {
+            "title": "Apply the required transition controls",
+            "body": "Follow site rules for hand hygiene, PPE changes, dedicated tools, cart sanitation, containment or release before crossing."
+          },
+          {
+            "title": "Protect the clean status afterward",
+            "body": "Keep sanitized tools, containers and hose ends away from uncontrolled floors, carts or surfaces so the transition is not undone."
+          },
+          {
+            "title": "Document a breach instead of hiding it",
+            "body": "If the wrong object or person crosses a boundary, stop further movement where authorized and record the route for follow-up."
+          }
+        ],
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Controlled status versus visual cleanliness",
+        "left": {
+          "label": "Controlled status",
+          "body": "A cart used in quarantine completes the approved cleaning/disinfection and release process, then is protected from recontamination before entering a more sensitive zone."
+        },
+        "right": {
+          "label": "Looks clean",
+          "body": "A worker wipes the one visible dirty spot and assumes the cart is safe to move between zones because no debris remains."
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "Quarantine cart urgently needed in propagation",
+        "setting": "A cart has just been used in a quarantine area. Propagation needs it immediately, and no visible plant debris remains on the top shelf.",
+        "prompt": "What should determine whether the cart crosses into propagation?",
+        "options": [
+          "Visible cleanliness alone",
+          "Production urgency",
+          "The approved cleaning/disinfection and release workflow for crossing the boundary",
+          "Whether the plants in quarantine looked healthy"
+        ],
+        "answer": "The approved cleaning/disinfection and release workflow for crossing the boundary.",
+        "feedback": "Biosecurity controls are based on routes and defined status, not only visible dirt or crop appearance. Urgency does not erase the cross-zone pathway.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The gloves are clean-looking but the route is wrong",
+        "setting": "A technician finishes work in a higher-risk room and walks directly into propagation wearing the same gloves. The gloves have no visible soil or plant residue.",
+        "prompt": "What is the main problem?",
+        "options": [
+          "No problem because the gloves look clean",
+          "The zone-transition process was bypassed, so the gloves and hands remain part of a possible contamination route",
+          "Only footwear matters in propagation",
+          "The technician should spray the gloves with any available disinfectant"
+        ],
+        "answer": "The zone-transition process was bypassed, so the gloves and hands remain part of a possible contamination route.",
+        "feedback": "Visual cleanliness does not replace the site's transition procedure. The important issue is the route and status history, not whether contamination is visible.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Biosecurity route reconstruction",
+        "description": "When a boundary is crossed incorrectly, reconstruct the confirmed route before cleaning or movement erases useful information.",
+        "fields": [
+          {
+            "label": "Starting zone / source",
+            "value": "Where the worker, tool, cart, material or waste came from"
+          },
+          {
+            "label": "Carrier",
+            "value": "Person, glove, footwear, tool, cart, hose, container, material or other route"
+          },
+          {
+            "label": "Boundary crossed",
+            "value": "Transition point and rule that applied"
+          },
+          {
+            "label": "Receiving zone / contacts",
+            "value": "Where the carrier went and what it contacted"
+          },
+          {
+            "label": "Control completed / missed",
+            "value": "Sanitation, PPE change, containment or release step that was done or bypassed"
+          },
+          {
+            "label": "Immediate action",
+            "value": "Movement stopped, object held, area protected or supervisor notified under procedure"
+          }
+        ],
+        "note": "Record confirmed movement separately from assumptions about whether a pathogen was actually present."
+      },
+      {
+        "type": "activity",
+        "title": "Draw and break the contamination routes",
+        "instructions": "On a supplied facility map, draw the possible routes created by technician travel, gloves/footwear, shared tools, carts, irrigation hose ends, incoming plants, water/splash and waste/debris removal. Then redesign the work sequence to break the routes.",
+        "prompts": [
+          "Mark every point where a person or object crosses a zone boundary.",
+          "Identify the source, carrier and receiving area for each route.",
+          "Identify what must be cleaned, changed, contained, dedicated or verified before crossing.",
+          "Mark where recontamination could occur after sanitation.",
+          "Choose a work order that reduces avoidable backward travel.",
+          "Complete one route-reconstruction record for a deliberate breach inserted into the scenario."
+        ],
+        "artifact": "Biosecurity movement map plus route-reconstruction record",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your decision depends on whether something 'looks clean,' you may be missing the route. Recheck where the object came from, what it contacted, what boundary rule applied, and whether the transition process was actually completed."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Biosecurity is a movement-control problem as much as a cleaning problem. A technician protects cleaner or more sensitive areas by identifying source-route-receiver connections, following transition controls, protecting sanitized status and documenting boundary failures instead of hiding them.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      }
     ]
   }
 }

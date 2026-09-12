@@ -2,24 +2,60 @@
   "id": "LESSON-LH-TECH1-001-16",
   "title": "Contemporaneous Records and Data Integrity",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-PRO-QA-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-11"],
+  "status": "published",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-11"
+  ],
   "estimatedMinutes": 55,
-  "references": ["REF-MHRA-GXP-DATA-INTEGRITY"],
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
   "assessment": null,
   "content": {
     "overview": "Cultivation records must be trustworthy enough for another qualified person to reconstruct what happened without relying on the original worker's memory. Learners practice timely recording, sufficient context, attributable entries, controlled corrections, late-entry handling and honest missing-data status.",
     "vocabulary": [
-      {"term": "contemporaneous", "definition": "Recorded when the activity or observation occurs, or handled through a controlled process that preserves the true timing when immediate entry was not possible."},
-      {"term": "attributable", "definition": "Linked clearly to the person or controlled system responsible for creating or changing the record."},
-      {"term": "data integrity", "definition": "The degree to which records remain complete, consistent, accurate, attributable and reconstructable across their lifecycle."},
-      {"term": "record context", "definition": "The identity, location, unit, time, task, equipment or other information needed to interpret a value or observation correctly."}
+      {
+        "term": "contemporaneous",
+        "definition": "Recorded when the activity or observation occurs, or handled through a controlled process that preserves the true timing when immediate entry was not possible."
+      },
+      {
+        "term": "attributable",
+        "definition": "Linked clearly to the person or controlled system responsible for creating or changing the record."
+      },
+      {
+        "term": "data integrity",
+        "definition": "The degree to which records remain complete, consistent, accurate, attributable and reconstructable across their lifecycle."
+      },
+      {
+        "term": "record context",
+        "definition": "The identity, location, unit, time, task, equipment or other information needed to interpret a value or observation correctly."
+      }
     ],
     "sections": [
-      {"title": "Capture reality while it is still knowable", "body": "Timely records reduce dependence on memory and preserve sequence. When immediate recording is not possible, technicians follow the facility's late-entry or exception process so the record shows the true observation/activity time and the later entry time rather than pretending the entry was contemporaneous.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "A number without context can be unusable", "body": "A value such as '2.1' is not reconstructable unless the task requires no additional context. Measurements commonly need the measurement type, unit, identified material/sample or asset, location, time and responsible person/system so another worker can tell what the value actually represents.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "Corrections preserve history", "body": "Paper and digital corrections follow the facility's controlled method so the original entry and change history remain understandable. Missing data remain identified as missing; a planned value, estimate or remembered approximation is not substituted as though it were the original measurement.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "title": "Capture reality while it is still knowable",
+        "body": "Timely records reduce dependence on memory and preserve sequence. When immediate recording is not possible, technicians follow the facility's late-entry or exception process so the record shows the true observation/activity time and the later entry time rather than pretending the entry was contemporaneous.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "A number without context can be unusable",
+        "body": "A value such as '2.1' is not reconstructable unless the task requires no additional context. Measurements commonly need the measurement type, unit, identified material/sample or asset, location, time and responsible person/system so another worker can tell what the value actually represents.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Corrections preserve history",
+        "body": "Paper and digital corrections follow the facility's controlled method so the original entry and change history remain understandable. Missing data remain identified as missing; a planned value, estimate or remembered approximation is not substituted as though it were the original measurement.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ],
     "workedExamples": [
       "An incorrect paper value is corrected using the supplied method so the original value remains legible and the corrected value is attributable.",
@@ -39,40 +75,217 @@
     "practicalApplication": "Audit and repair a flawed cultivation record set containing missing units, ambiguous identities, a late entry, silent overwrite, guessed value, vague status statement and attribution problem. Preserve original history and document which information cannot legitimately be reconstructed.",
     "summary": "Trustworthy records preserve reality rather than appearance. Technicians record facts with enough timing, identity, context and attribution to be reconstructed; corrections preserve history; missing information remains visibly missing instead of being invented.",
     "blocks": [
-      {"type": "text", "title": "The goal is reconstructability, not perfect-looking paperwork", "body": "A reliable record allows another qualified person to understand what was observed or done, to which material or asset, where and when it happened, who recorded it, and what later corrections occurred. A neat record that hides missing or changed information is weaker than an honest record that preserves the true history.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "table", "title": "Record-quality questions", "columns": ["Quality question", "Good practice", "Failure pattern"], "rows": [
-        ["Who recorded or changed it?", "Person or controlled system is attributable", "Anonymous/shared identity with no reliable attribution"],
-        ["When did it happen?", "Observation/activity time reflects reality; later entry is identified when applicable", "Backfilled from memory as though entered live"],
-        ["What exactly was measured or observed?", "Identity, location, measurement type, unit and context are present where needed", "Context-free number or vague note"],
-        ["What is the original record?", "Original source/history remains preserved under the facility method", "Record recopied or replaced with no controlled relationship to the original"],
-        ["Can a correction be reconstructed?", "Original entry and correction/change history remain understandable", "Silent overwrite or erased original"],
-        ["What is missing?", "Missing data or incomplete work is identified honestly", "Target, average or remembered estimate inserted as fact"]
-      ], "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "comparison", "title": "Controlled correction versus silent overwrite", "left": {"label": "Controlled correction", "body": "The facility method preserves the original entry and shows the corrected value, attribution, timing and any required reason so the change can be reconstructed."}, "right": {"label": "Silent overwrite", "body": "The original entry is erased or replaced so the record appears to have always contained the corrected value, hiding what actually happened."}},
-      {"type": "steps", "title": "Build a reconstructable observation record", "items": [
-        {"title": "Identify the object", "body": "Record the controlled plant/material/sample/asset identity required by the task."},
-        {"title": "Identify the observation or action", "body": "State exactly what was measured, inspected, moved, corrected or completed."},
-        {"title": "Include units and relevant context", "body": "Add the unit, location, instrument, process point or other context needed to interpret the result."},
-        {"title": "Preserve real timing", "body": "Record when the activity/observation occurred and use the controlled late-entry process when necessary."},
-        {"title": "Preserve attribution", "body": "Ensure the record/change is tied to the responsible person or controlled system."},
-        {"title": "Correct transparently", "body": "Use the controlled correction method rather than deleting the original history."},
-        {"title": "Leave missing information missing", "body": "Document the missing or unknown status and route it appropriately instead of manufacturing a value."}
-      ], "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "A measurement was missed one hour ago", "setting": "A required measurement was not recorded during the task. The technician now remembers approximately what the display showed but did not write it down or save a system record.", "prompt": "What is the strongest response?", "options": ["Enter the remembered value with the original time so the record looks complete", "Enter an average value from nearby readings", "Follow the facility's missing-data or late-entry process and do not represent a guess as contemporaneous measurement data", "Leave the entire record blank with no explanation"], "answer": "Follow the facility's missing-data or late-entry process and do not represent a guess as contemporaneous measurement data.", "feedback": "A remembered estimate is not equivalent to a measurement record captured at the time. The record should preserve the missing or late status honestly.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "A worksheet must be recopied after damage", "setting": "A paper worksheet becomes wet and difficult to use, but several original entries remain readable. A clean replacement form is available.", "prompt": "What principle should govern the response?", "options": ["Destroy the damaged page after copying the values so only the clean version remains", "Follow the facility's controlled damaged-record/transcription process so the relationship to the original and any transcription can be reconstructed", "Rewrite the entries from memory and use the original times", "Photograph the sheet privately and discard the controlled record"], "answer": "Follow the facility's controlled damaged-record/transcription process so the relationship to the original and any transcription can be reconstructed.", "feedback": "Replacing a damaged working copy should not silently erase the original record history or create an untraceable transcription.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "document", "title": "Context-rich cultivation record example", "description": "A measurement becomes more useful when enough context is present to understand what was measured, where, when and by whom.", "fields": [
-        {"label": "Measurement / observation", "value": "Specify pH, EC, temperature, count, condition or other defined observation"},
-        {"label": "Value / result", "value": "Actual result with correct unit/status where applicable"},
-        {"label": "Material / sample / asset identity", "value": "Controlled identifier that ties the record to the correct object"},
-        {"label": "Location / process point", "value": "Room, zone, reservoir, work area or other required context"},
-        {"label": "Observation/activity time", "value": "When the observation or action actually occurred"},
-        {"label": "Entry time if later", "value": "When a permitted late entry was actually made, where applicable"},
-        {"label": "Attribution", "value": "Person or controlled system responsible for the entry"},
-        {"label": "Correction history", "value": "Preserved using the facility's controlled method when a change is needed"}
-      ], "note": "Exact fields depend on the task and facility process; the principle is that the data remain meaningful and reconstructable."},
-      {"type": "activity", "title": "Repair a flawed record set without erasing history", "instructions": "Audit a packet containing missing units, ambiguous identities, late entries, overwritten values, guessed data, vague status statements, attribution problems and one legitimate correction.", "prompts": ["Identify which entries cannot be interpreted without more context.", "Separate missing data from incorrect data.", "Apply the supplied correction method while preserving the original entry.", "Flag every guessed or target value represented as actual data.", "Identify where observation time and entry time have been confused.", "Determine which attribution issue prevents reliable reconstruction.", "Explain what the next shift can and cannot reconstruct from the corrected packet."], "artifact": "Corrected record set and data-integrity audit", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Evidence boundary", "tone": "evidence", "body": "MHRA GxP data-integrity guidance is used as a transferable quality framework for trustworthy records. It is not presented as a claim that UK pharmaceutical GxP regulations govern U.S. cannabis cultivation.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "The goal is a trustworthy record of reality. Preserve timing, identity, context, attribution, correction history and missing information so another qualified person can reconstruct what actually occurred.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "type": "text",
+        "title": "The goal is reconstructability, not perfect-looking paperwork",
+        "body": "A reliable record allows another qualified person to understand what was observed or done, to which material or asset, where and when it happened, who recorded it, and what later corrections occurred. A neat record that hides missing or changed information is weaker than an honest record that preserves the true history.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Record-quality questions",
+        "columns": [
+          "Quality question",
+          "Good practice",
+          "Failure pattern"
+        ],
+        "rows": [
+          [
+            "Who recorded or changed it?",
+            "Person or controlled system is attributable",
+            "Anonymous/shared identity with no reliable attribution"
+          ],
+          [
+            "When did it happen?",
+            "Observation/activity time reflects reality; later entry is identified when applicable",
+            "Backfilled from memory as though entered live"
+          ],
+          [
+            "What exactly was measured or observed?",
+            "Identity, location, measurement type, unit and context are present where needed",
+            "Context-free number or vague note"
+          ],
+          [
+            "What is the original record?",
+            "Original source/history remains preserved under the facility method",
+            "Record recopied or replaced with no controlled relationship to the original"
+          ],
+          [
+            "Can a correction be reconstructed?",
+            "Original entry and correction/change history remain understandable",
+            "Silent overwrite or erased original"
+          ],
+          [
+            "What is missing?",
+            "Missing data or incomplete work is identified honestly",
+            "Target, average or remembered estimate inserted as fact"
+          ]
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Controlled correction versus silent overwrite",
+        "left": {
+          "label": "Controlled correction",
+          "body": "The facility method preserves the original entry and shows the corrected value, attribution, timing and any required reason so the change can be reconstructed."
+        },
+        "right": {
+          "label": "Silent overwrite",
+          "body": "The original entry is erased or replaced so the record appears to have always contained the corrected value, hiding what actually happened."
+        }
+      },
+      {
+        "type": "steps",
+        "title": "Build a reconstructable observation record",
+        "items": [
+          {
+            "title": "Identify the object",
+            "body": "Record the controlled plant/material/sample/asset identity required by the task."
+          },
+          {
+            "title": "Identify the observation or action",
+            "body": "State exactly what was measured, inspected, moved, corrected or completed."
+          },
+          {
+            "title": "Include units and relevant context",
+            "body": "Add the unit, location, instrument, process point or other context needed to interpret the result."
+          },
+          {
+            "title": "Preserve real timing",
+            "body": "Record when the activity/observation occurred and use the controlled late-entry process when necessary."
+          },
+          {
+            "title": "Preserve attribution",
+            "body": "Ensure the record/change is tied to the responsible person or controlled system."
+          },
+          {
+            "title": "Correct transparently",
+            "body": "Use the controlled correction method rather than deleting the original history."
+          },
+          {
+            "title": "Leave missing information missing",
+            "body": "Document the missing or unknown status and route it appropriately instead of manufacturing a value."
+          }
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "A measurement was missed one hour ago",
+        "setting": "A required measurement was not recorded during the task. The technician now remembers approximately what the display showed but did not write it down or save a system record.",
+        "prompt": "What is the strongest response?",
+        "options": [
+          "Enter the remembered value with the original time so the record looks complete",
+          "Enter an average value from nearby readings",
+          "Follow the facility's missing-data or late-entry process and do not represent a guess as contemporaneous measurement data",
+          "Leave the entire record blank with no explanation"
+        ],
+        "answer": "Follow the facility's missing-data or late-entry process and do not represent a guess as contemporaneous measurement data.",
+        "feedback": "A remembered estimate is not equivalent to a measurement record captured at the time. The record should preserve the missing or late status honestly.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "A worksheet must be recopied after damage",
+        "setting": "A paper worksheet becomes wet and difficult to use, but several original entries remain readable. A clean replacement form is available.",
+        "prompt": "What principle should govern the response?",
+        "options": [
+          "Destroy the damaged page after copying the values so only the clean version remains",
+          "Follow the facility's controlled damaged-record/transcription process so the relationship to the original and any transcription can be reconstructed",
+          "Rewrite the entries from memory and use the original times",
+          "Photograph the sheet privately and discard the controlled record"
+        ],
+        "answer": "Follow the facility's controlled damaged-record/transcription process so the relationship to the original and any transcription can be reconstructed.",
+        "feedback": "Replacing a damaged working copy should not silently erase the original record history or create an untraceable transcription.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Context-rich cultivation record example",
+        "description": "A measurement becomes more useful when enough context is present to understand what was measured, where, when and by whom.",
+        "fields": [
+          {
+            "label": "Measurement / observation",
+            "value": "Specify pH, EC, temperature, count, condition or other defined observation"
+          },
+          {
+            "label": "Value / result",
+            "value": "Actual result with correct unit/status where applicable"
+          },
+          {
+            "label": "Material / sample / asset identity",
+            "value": "Controlled identifier that ties the record to the correct object"
+          },
+          {
+            "label": "Location / process point",
+            "value": "Room, zone, reservoir, work area or other required context"
+          },
+          {
+            "label": "Observation/activity time",
+            "value": "When the observation or action actually occurred"
+          },
+          {
+            "label": "Entry time if later",
+            "value": "When a permitted late entry was actually made, where applicable"
+          },
+          {
+            "label": "Attribution",
+            "value": "Person or controlled system responsible for the entry"
+          },
+          {
+            "label": "Correction history",
+            "value": "Preserved using the facility's controlled method when a change is needed"
+          }
+        ],
+        "note": "Exact fields depend on the task and facility process; the principle is that the data remain meaningful and reconstructable."
+      },
+      {
+        "type": "activity",
+        "title": "Repair a flawed record set without erasing history",
+        "instructions": "Audit a packet containing missing units, ambiguous identities, late entries, overwritten values, guessed data, vague status statements, attribution problems and one legitimate correction.",
+        "prompts": [
+          "Identify which entries cannot be interpreted without more context.",
+          "Separate missing data from incorrect data.",
+          "Apply the supplied correction method while preserving the original entry.",
+          "Flag every guessed or target value represented as actual data.",
+          "Identify where observation time and entry time have been confused.",
+          "Determine which attribution issue prevents reliable reconstruction.",
+          "Explain what the next shift can and cannot reconstruct from the corrected packet."
+        ],
+        "artifact": "Corrected record set and data-integrity audit",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Evidence boundary",
+        "tone": "evidence",
+        "body": "MHRA GxP data-integrity guidance is used as a transferable quality framework for trustworthy records. It is not presented as a claim that UK pharmaceutical GxP regulations govern U.S. cannabis cultivation.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "The goal is a trustworthy record of reality. Preserve timing, identity, context, attribution, correction history and missing information so another qualified person can reconstruct what actually occurred.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ]
   }
 }

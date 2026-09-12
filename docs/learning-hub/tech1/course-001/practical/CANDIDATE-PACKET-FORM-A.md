@@ -3,7 +3,7 @@
 **Course:** `COURSE-LH-TECH1-001`  
 **Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
 **Form:** A — routine cultivation shift with controlled discrepancies  
-**Use:** pilot/calibration only until approved
+**Use:** Public academic practical form; may also support calibration and equivalent-form review
 
 ## Candidate instructions
 

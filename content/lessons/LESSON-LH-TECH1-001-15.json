@@ -2,24 +2,64 @@
   "id": "LESSON-LH-TECH1-001-15",
   "title": "Alarms, Fault Context and Maintenance Escalation",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-CULT-EQUIPMENT-CARE-001", "COMP-PRO-QA-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-10"],
+  "status": "published",
+  "competencies": [
+    "COMP-CULT-EQUIPMENT-CARE-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-10"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024", "REF-OSHA-1910-147-LOTO", "REF-MHRA-GXP-DATA-INTEGRITY"],
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-147-LOTO",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
   "assessment": null,
   "content": {
     "overview": "Technicians do not need to diagnose every failure, but they must make faults legible. Learners practice building a time-ordered fault context, comparing current condition to expected baseline, performing only permitted operator checks, recognizing when resets are masking recurrence, and escalating without converting hypotheses into facts.",
     "vocabulary": [
-      {"term": "alarm", "definition": "A system indication that a measured or controlled condition met a defined alert or fault condition."},
-      {"term": "symptom", "definition": "An observed effect of a problem that does not by itself establish the root cause."},
-      {"term": "fault context", "definition": "Information about what, where, when, under what conditions and with what operational impact an equipment problem occurred."},
-      {"term": "recurrence", "definition": "Return of an alarm or abnormal symptom after it has cleared, reset or temporarily disappeared."}
+      {
+        "term": "alarm",
+        "definition": "A system indication that a measured or controlled condition met a defined alert or fault condition."
+      },
+      {
+        "term": "symptom",
+        "definition": "An observed effect of a problem that does not by itself establish the root cause."
+      },
+      {
+        "term": "fault context",
+        "definition": "Information about what, where, when, under what conditions and with what operational impact an equipment problem occurred."
+      },
+      {
+        "term": "recurrence",
+        "definition": "Return of an alarm or abnormal symptom after it has cleared, reset or temporarily disappeared."
+      }
     ],
     "sections": [
-      {"title": "An alarm is evidence, not a diagnosis", "body": "A displayed alarm, abnormal sound, missing flow, high/low reading or leak is useful evidence. Similar symptoms can have different causes. Technicians capture the exact observation and context instead of assigning a root cause without supporting evidence.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "A timeline often matters more than a single snapshot", "body": "Useful fault context includes the asset/location, baseline or prior status, first alarm time, recurrence, readings, permitted checks, process impact and safe actions taken. A time sequence helps the receiving maintenance or technical role reproduce the condition and distinguish intermittent from persistent faults.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "A reset is not a repair", "body": "If a reset is explicitly permitted, completing it can be an operator action. When the same alarm returns, production impact continues or the procedure's retry limit is reached, repeated resetting can hide the persistent condition. Technicians preserve the alarm history and escalate rather than normalizing recurrence.", "references": ["REF-OSHA-1910-147-LOTO", "REF-NIOSH-CANNABIS-HAZARDS-2024"]}
+      {
+        "title": "An alarm is evidence, not a diagnosis",
+        "body": "A displayed alarm, abnormal sound, missing flow, high/low reading or leak is useful evidence. Similar symptoms can have different causes. Technicians capture the exact observation and context instead of assigning a root cause without supporting evidence.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "A timeline often matters more than a single snapshot",
+        "body": "Useful fault context includes the asset/location, baseline or prior status, first alarm time, recurrence, readings, permitted checks, process impact and safe actions taken. A time sequence helps the receiving maintenance or technical role reproduce the condition and distinguish intermittent from persistent faults.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "A reset is not a repair",
+        "body": "If a reset is explicitly permitted, completing it can be an operator action. When the same alarm returns, production impact continues or the procedure's retry limit is reached, repeated resetting can hide the persistent condition. Technicians preserve the alarm history and escalate rather than normalizing recurrence.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      }
     ],
     "workedExamples": [
       "A pump alarm and dry zone are documented with asset, location, time and permitted checks before escalation rather than repeatedly reset.",
@@ -39,43 +79,218 @@
     "practicalApplication": "Create a maintenance escalation from a simulated alarm packet containing equipment identity, prior status, time-sequenced alarms, controller readings, local observations, permitted operator checks and crop/process impact. Separate confirmed facts from hypotheses and identify the exact point where further work becomes servicing.",
     "summary": "Good fault reporting converts observations into actionable evidence. Technicians preserve the timeline, capture baseline changes and recurrence, complete only permitted checks, identify operational impact, and transfer unresolved diagnosis/repair to the authorized role.",
     "blocks": [
-      {"type": "text", "title": "Make the fault reproducible", "body": "The receiving technical role needs more than 'pump broken.' A strong escalation describes the exact asset, location, operating state, first symptom, recurrence, readings, permitted checks, affected process and controlled status. That context can be investigated without requiring the technician to guess the cause.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-011", "src": "/assets/course1/maintenance-fault-report.svg", "alt": "Annotated maintenance-ready fault report showing asset and location, time, alarm or observation, permitted checks and results, process or crop impact, safe action and notification, with a warning against vague statements such as 'pump broken' and unsupported root-cause claims.", "caption": "A useful maintenance escalation gives the next qualified person enough context to reproduce and investigate the condition.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-OSHA-1910-147-LOTO"]},
-      {"type": "table", "title": "Observation, check, impact and hypothesis are different", "columns": ["Type", "Example", "How to record it"], "rows": [
-        ["Observation", "Zone 3 shows no flow at 14:10", "Record directly with asset, location, time and relevant condition"],
-        ["Baseline change", "Normal operating sound changed to intermittent grinding", "State the comparison and when the change was noticed"],
-        ["Permitted operator check", "Reservoir level verified normal under the operator SOP", "Record the check and result without implying deeper diagnosis"],
-        ["Recurrence", "Alarm reset at 14:12 and returned at 14:17", "Preserve the sequence rather than recording only the latest alarm"],
-        ["Impact", "Scheduled Zone 3 irrigation did not occur", "State the affected process/crop area"],
-        ["Hypothesis", "Possible internal pump or valve problem", "Label as unconfirmed if useful and allowed"],
-        ["Root cause", "Confirmed failed component/control logic", "Belongs to the authorized investigation when evidence supports it"]
-      ], "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "steps", "title": "Build a maintenance-ready fault timeline", "items": [
-        {"title": "Identify asset and location", "body": "Use the exact equipment identifier, room/zone and affected process."},
-        {"title": "Record prior/baseline status", "body": "Note relevant normal condition, prior fault, maintenance status or recent change known from controlled records."},
-        {"title": "Capture first occurrence", "body": "Record time, exact alarm/symptom, readings and operating state."},
-        {"title": "Perform only permitted checks", "body": "Complete the operator checks explicitly allowed and record their results."},
-        {"title": "Capture recurrence or change", "body": "Record if the condition clears, returns, spreads or changes after an allowed response."},
-        {"title": "State process/crop impact", "body": "Identify what service, room, zone, material or schedule was affected."},
-        {"title": "Preserve safe status and escalate", "body": "Keep the asset controlled under procedure and hand the evidence to the authorized receiving role."}
-      ]},
-      {"type": "scenario", "title": "The reset clears the alarm for five minutes", "setting": "A pump alarm appears. One permitted operator reset clears it, but the alarm returns twice and one irrigation zone remains dry. The SOP does not authorize opening the pump or panel.", "prompt": "What should happen next?", "options": ["Keep resetting until the irrigation event finishes", "Open the pump because the recurring alarm proves an internal blockage", "Capture the recurring alarm and zone impact, complete only permitted checks, leave the asset/status controlled under procedure, and escalate with the fault timeline", "Delete the alarm history after the reset succeeds"], "answer": "Capture the recurring alarm and zone impact, complete only permitted checks, leave the asset/status controlled under procedure, and escalate with the fault timeline.", "feedback": "Repeatedly masking an alarm can hide a persistent condition. The technician should preserve recurrence evidence and stop at the operator boundary.", "references": ["REF-OSHA-1910-147-LOTO", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "Two indicators disagree", "setting": "The controller reports high pressure, but a permitted local gauge shows a normal reading. No leak is visible. The operator SOP allows verifying both readings but not opening the system.", "prompt": "What is the strongest escalation?", "options": ["Assume the controller is wrong and continue", "Assume the gauge is wrong and shut down every related system", "Record both identified readings, time and operating context, complete the allowed checks, preserve the unresolved discrepancy, and escalate", "Open the pressure system to determine which instrument is correct"], "answer": "Record both identified readings, time and operating context, complete the allowed checks, preserve the unresolved discrepancy, and escalate.", "feedback": "Conflicting indicators are themselves useful fault context. The technician should not pick a root cause without evidence or cross into protected servicing."},
-      {"type": "document", "title": "Maintenance-ready escalation record", "description": "Capture facts that help the qualified receiving role reproduce and investigate the condition without requiring the technician to diagnose the system.", "fields": [
-        {"label": "Asset / location", "value": "Exact equipment identifier, zone, room or work area"},
-        {"label": "Baseline / prior status", "value": "Relevant expected state, prior fault or maintenance status"},
-        {"label": "Timeline", "value": "First occurrence, resets/changes and recurrence times"},
-        {"label": "Alarm / symptoms", "value": "Exact displayed alarm, sound, reading, no-flow condition, leak or other observed effect"},
-        {"label": "Relevant readings", "value": "Permitted values/indicators including instrument identity when useful"},
-        {"label": "Permitted checks", "value": "Operator checks performed and results"},
-        {"label": "Process / crop impact", "value": "What work, zone, material or schedule was affected"},
-        {"label": "Safe action / status", "value": "Pause, out-of-service status, isolation where authorized or other controlled response"},
-        {"label": "Notification / ticket", "value": "Receiving role and maintenance/deviation record"},
-        {"label": "Hypothesis", "value": "Optional unconfirmed idea clearly separated from observed fact"}
-      ]},
-      {"type": "activity", "title": "Turn a fault sequence into an actionable escalation", "instructions": "Use a simulated controller history, equipment ID, room map, readings and operator observations to create a maintenance-ready timeline.", "prompts": ["Extract only facts directly supported by the packet.", "Identify the baseline condition and first meaningful change.", "List operator checks explicitly permitted by the SOP.", "Show alarm recurrence and any reset history in order.", "Identify the production/crop impact.", "Separate reasonable hypotheses from confirmed observations.", "State the exact point where further work crosses into servicing or hazardous access."], "artifact": "Maintenance fault timeline and escalation report", "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-OSHA-1910-147-LOTO"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If the report says only 'broken,' 'probably the pump,' or 'reset fixed it,' it is too weak. Add the asset, place, time sequence, exact symptom, permitted checks, recurrence and impact before claiming a cause."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "Good technicians do not need to guess every root cause. They make the fault legible: what changed, where and when it occurred, whether it recurred, what was checked, what was affected, what safe status was preserved, and what remains for the authorized investigator."}
+      {
+        "type": "text",
+        "title": "Make the fault reproducible",
+        "body": "The receiving technical role needs more than 'pump broken.' A strong escalation describes the exact asset, location, operating state, first symptom, recurrence, readings, permitted checks, affected process and controlled status. That context can be investigated without requiring the technician to guess the cause.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-011",
+        "src": "/assets/course1/maintenance-fault-report.svg",
+        "alt": "Annotated maintenance-ready fault report showing asset and location, time, alarm or observation, permitted checks and results, process or crop impact, safe action and notification, with a warning against vague statements such as 'pump broken' and unsupported root-cause claims.",
+        "caption": "A useful maintenance escalation gives the next qualified person enough context to reproduce and investigate the condition.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Observation, check, impact and hypothesis are different",
+        "columns": [
+          "Type",
+          "Example",
+          "How to record it"
+        ],
+        "rows": [
+          [
+            "Observation",
+            "Zone 3 shows no flow at 14:10",
+            "Record directly with asset, location, time and relevant condition"
+          ],
+          [
+            "Baseline change",
+            "Normal operating sound changed to intermittent grinding",
+            "State the comparison and when the change was noticed"
+          ],
+          [
+            "Permitted operator check",
+            "Reservoir level verified normal under the operator SOP",
+            "Record the check and result without implying deeper diagnosis"
+          ],
+          [
+            "Recurrence",
+            "Alarm reset at 14:12 and returned at 14:17",
+            "Preserve the sequence rather than recording only the latest alarm"
+          ],
+          [
+            "Impact",
+            "Scheduled Zone 3 irrigation did not occur",
+            "State the affected process/crop area"
+          ],
+          [
+            "Hypothesis",
+            "Possible internal pump or valve problem",
+            "Label as unconfirmed if useful and allowed"
+          ],
+          [
+            "Root cause",
+            "Confirmed failed component/control logic",
+            "Belongs to the authorized investigation when evidence supports it"
+          ]
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build a maintenance-ready fault timeline",
+        "items": [
+          {
+            "title": "Identify asset and location",
+            "body": "Use the exact equipment identifier, room/zone and affected process."
+          },
+          {
+            "title": "Record prior/baseline status",
+            "body": "Note relevant normal condition, prior fault, maintenance status or recent change known from controlled records."
+          },
+          {
+            "title": "Capture first occurrence",
+            "body": "Record time, exact alarm/symptom, readings and operating state."
+          },
+          {
+            "title": "Perform only permitted checks",
+            "body": "Complete the operator checks explicitly allowed and record their results."
+          },
+          {
+            "title": "Capture recurrence or change",
+            "body": "Record if the condition clears, returns, spreads or changes after an allowed response."
+          },
+          {
+            "title": "State process/crop impact",
+            "body": "Identify what service, room, zone, material or schedule was affected."
+          },
+          {
+            "title": "Preserve safe status and escalate",
+            "body": "Keep the asset controlled under procedure and hand the evidence to the authorized receiving role."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The reset clears the alarm for five minutes",
+        "setting": "A pump alarm appears. One permitted operator reset clears it, but the alarm returns twice and one irrigation zone remains dry. The SOP does not authorize opening the pump or panel.",
+        "prompt": "What should happen next?",
+        "options": [
+          "Keep resetting until the irrigation event finishes",
+          "Open the pump because the recurring alarm proves an internal blockage",
+          "Capture the recurring alarm and zone impact, complete only permitted checks, leave the asset/status controlled under procedure, and escalate with the fault timeline",
+          "Delete the alarm history after the reset succeeds"
+        ],
+        "answer": "Capture the recurring alarm and zone impact, complete only permitted checks, leave the asset/status controlled under procedure, and escalate with the fault timeline.",
+        "feedback": "Repeatedly masking an alarm can hide a persistent condition. The technician should preserve recurrence evidence and stop at the operator boundary.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Two indicators disagree",
+        "setting": "The controller reports high pressure, but a permitted local gauge shows a normal reading. No leak is visible. The operator SOP allows verifying both readings but not opening the system.",
+        "prompt": "What is the strongest escalation?",
+        "options": [
+          "Assume the controller is wrong and continue",
+          "Assume the gauge is wrong and shut down every related system",
+          "Record both identified readings, time and operating context, complete the allowed checks, preserve the unresolved discrepancy, and escalate",
+          "Open the pressure system to determine which instrument is correct"
+        ],
+        "answer": "Record both identified readings, time and operating context, complete the allowed checks, preserve the unresolved discrepancy, and escalate.",
+        "feedback": "Conflicting indicators are themselves useful fault context. The technician should not pick a root cause without evidence or cross into protected servicing."
+      },
+      {
+        "type": "document",
+        "title": "Maintenance-ready escalation record",
+        "description": "Capture facts that help the qualified receiving role reproduce and investigate the condition without requiring the technician to diagnose the system.",
+        "fields": [
+          {
+            "label": "Asset / location",
+            "value": "Exact equipment identifier, zone, room or work area"
+          },
+          {
+            "label": "Baseline / prior status",
+            "value": "Relevant expected state, prior fault or maintenance status"
+          },
+          {
+            "label": "Timeline",
+            "value": "First occurrence, resets/changes and recurrence times"
+          },
+          {
+            "label": "Alarm / symptoms",
+            "value": "Exact displayed alarm, sound, reading, no-flow condition, leak or other observed effect"
+          },
+          {
+            "label": "Relevant readings",
+            "value": "Permitted values/indicators including instrument identity when useful"
+          },
+          {
+            "label": "Permitted checks",
+            "value": "Operator checks performed and results"
+          },
+          {
+            "label": "Process / crop impact",
+            "value": "What work, zone, material or schedule was affected"
+          },
+          {
+            "label": "Safe action / status",
+            "value": "Pause, out-of-service status, isolation where authorized or other controlled response"
+          },
+          {
+            "label": "Notification / ticket",
+            "value": "Receiving role and maintenance/deviation record"
+          },
+          {
+            "label": "Hypothesis",
+            "value": "Optional unconfirmed idea clearly separated from observed fact"
+          }
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Turn a fault sequence into an actionable escalation",
+        "instructions": "Use a simulated controller history, equipment ID, room map, readings and operator observations to create a maintenance-ready timeline.",
+        "prompts": [
+          "Extract only facts directly supported by the packet.",
+          "Identify the baseline condition and first meaningful change.",
+          "List operator checks explicitly permitted by the SOP.",
+          "Show alarm recurrence and any reset history in order.",
+          "Identify the production/crop impact.",
+          "Separate reasonable hypotheses from confirmed observations.",
+          "State the exact point where further work crosses into servicing or hazardous access."
+        ],
+        "artifact": "Maintenance fault timeline and escalation report",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If the report says only 'broken,' 'probably the pump,' or 'reset fixed it,' it is too weak. Add the asset, place, time sequence, exact symptom, permitted checks, recurrence and impact before claiming a cause."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Good technicians do not need to guess every root cause. They make the fault legible: what changed, where and when it occurred, whether it recurred, what was checked, what was affected, what safe status was preserved, and what remains for the authorized investigator."
+      }
     ]
   }
 }
