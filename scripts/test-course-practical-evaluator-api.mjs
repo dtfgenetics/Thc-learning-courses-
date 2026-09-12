@@ -5,10 +5,27 @@ import { createApiServer } from '../apps/api/src/server.mjs';
 
 const practical = JSON.parse(fs.readFileSync('content/performance-assessments/PRACTICAL-LH-TECH1-001-WORKFLOW.json', 'utf8'));
 const evaluationRecords = new Map();
-const knownLearners = new Set(['learner-001']);
+const knownLearners = new Set(['learner-001', 'learner-002']);
 
 const practicalEvaluatorStore = {
   kind: 'test-practical-evaluator',
+  async listCourseLearners({ assessmentId, assessmentVersion } = {}) {
+    return [...knownLearners].map((subject) => {
+      const record = evaluationRecords.get(`${subject}:${assessmentId}:${assessmentVersion}`) ?? null;
+      return {
+        learnerSubject: subject,
+        enrollmentStatus: 'active',
+        enrolledAt: '2026-09-10T09:00:00.000Z',
+        practicalStatus: record?.status ?? 'not-recorded',
+        scorePercent: record?.scorePercent ?? null,
+        criticalErrorCount: record?.criticalErrorCount ?? 0,
+        followUpStatus: record?.evidence?.followUpStatus ?? 'none',
+        reassessmentTargetDate: record?.evidence?.reassessmentTargetDate ?? '',
+        evaluatedAt: record?.evaluatedAt ?? null,
+        updatedAt: record?.updatedAt ?? null
+      };
+    });
+  },
   async getEvaluation(subject, { assessmentId, assessmentVersion }) {
     if (!knownLearners.has(subject)) return { learnerExists: false, evaluation: null };
     return { learnerExists: true, evaluation: structuredClone(evaluationRecords.get(`${subject}:${assessmentId}:${assessmentVersion}`) ?? null) };
@@ -78,6 +95,14 @@ try {
   assert.equal(capability.status, 200);
   assert.equal(capability.body.coursePracticalEvaluation, true);
 
+  const queue = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', { token: 'evaluatorRead' });
+  assert.equal(queue.status, 200);
+  assert.equal(queue.body.learners.length, 2);
+  assert.equal(queue.body.learners.every((row) => row.practicalStatus === 'not-recorded'), true);
+  assert.equal(queue.body.practical.id, practical.id);
+  const learnerQueueDenied = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', { token: 'learner' });
+  assert.equal(learnerQueueDenied.status, 403, 'learner role must not read evaluator roster');
+
   const missing = await request(`/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation?learnerSubject=${encodeURIComponent('missing')}`, { token: 'evaluatorRead' });
   assert.equal(missing.status, 404);
 
@@ -85,11 +110,16 @@ try {
   assert.equal(initial.status, 200);
   assert.equal(initial.body.evaluation, null);
   assert.equal(initial.body.practical.scoring.domains.length, 8);
+  assert.deepEqual(initial.body.practical.evidenceOutputs, practical.evidenceOutputs);
+  assert.ok(initial.body.practical.followUpStatuses.includes('ready-for-reassessment'));
 
+  const partialEvidence = practical.evidenceOutputs.slice(0, 2).map((name, index) => ({ name, status: index === 0 ? 'verified' : 'received', reference: `packet-${index + 1}`, note: 'Observed during simulation.' }));
   const partial = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', {
     method: 'PUT', token: 'evaluator', body: {
       learnerSubject: 'learner-001', mode: 'save',
       domainScores: practical.scoring.domains.slice(0, 2).map((domain) => ({ name: domain.name, score: domain.points })),
+      evidenceOutputs: partialEvidence,
+      followUpStatus: 'remediation-in-progress',
       evaluatorNotes: 'PRIVATE-EVALUATOR-NOTE', learnerFeedback: 'Review the traceability event chain.',
       evaluatorId: 'forged-client-evaluator', status: 'passed', scorePercent: 100
     }
@@ -98,6 +128,8 @@ try {
   assert.equal(partial.body.evaluation.status, 'in-progress');
   assert.equal(partial.body.evaluation.scorePercent, null);
   assert.equal(partial.body.evaluation.evaluatorId, 'assessor-authoritative-001', 'evaluator identity must come from authentication, not client input');
+  assert.equal(partial.body.evaluation.evidenceOutputs.length, practical.evidenceOutputs.length);
+  assert.equal(partial.body.evaluation.followUpStatus, 'remediation-in-progress');
 
   const readOnlyWrite = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', {
     method: 'PUT', token: 'evaluatorRead', body: { learnerSubject: 'learner-001', mode: 'save', domainScores: [] }
@@ -105,16 +137,25 @@ try {
   assert.equal(readOnlyWrite.status, 403);
 
   const fullScores = practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points }));
+  const allEvidence = practical.evidenceOutputs.map((name, index) => ({ name, status: 'verified', reference: `artifact-${index + 1}`, note: 'Verified against evaluated practical evidence.' }));
   const criticalFail = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', {
     method: 'PUT', token: 'evaluator', body: {
-      learnerSubject: 'learner-001', mode: 'finalize', domainScores: fullScores,
-      criticalErrorIndexes: [0], evaluatorNotes: 'PRIVATE-FINAL-NOTE', learnerFeedback: 'Equivalent reassessment: preserve record history and stop at the identity conflict.'
+      learnerSubject: 'learner-001', mode: 'finalize', domainScores: fullScores, evidenceOutputs: allEvidence,
+      criticalErrorIndexes: [0], followUpStatus: 'reassessment-scheduled', reassessmentTargetDate: '2026-09-20',
+      evaluatorNotes: 'PRIVATE-FINAL-NOTE', learnerFeedback: 'Equivalent reassessment: preserve record history and stop at the identity conflict.'
     }
   });
   assert.equal(criticalFail.status, 200);
   assert.equal(criticalFail.body.evaluation.scorePercent, 100);
   assert.equal(criticalFail.body.evaluation.status, 'failed');
   assert.equal(criticalFail.body.evaluation.criticalErrorCount, 1);
+  assert.equal(criticalFail.body.evaluation.followUpStatus, 'reassessment-scheduled');
+  assert.equal(criticalFail.body.evaluation.reassessmentTargetDate, '2026-09-20');
+
+  const queueAfter = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', { token: 'evaluatorRead' });
+  const queuedLearner = queueAfter.body.learners.find((row) => row.learnerSubject === 'learner-001');
+  assert.equal(queuedLearner.practicalStatus, 'failed');
+  assert.equal(queuedLearner.followUpStatus, 'reassessment-scheduled');
 
   const incomplete = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', {
     method: 'PUT', token: 'evaluator', body: {
@@ -124,17 +165,30 @@ try {
   assert.equal(incomplete.status, 400);
   assert.match(incomplete.body.error, /all practical scoring domains are required/);
 
+  const reassessmentDraft = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', {
+    method: 'PUT', token: 'evaluator', body: {
+      learnerSubject: 'learner-001', mode: 'save', startReassessment: true,
+      domainScores: [{ name: practical.scoring.domains[0].name, score: practical.scoring.domains[0].points }],
+      evidenceOutputs: practical.evidenceOutputs.map((name) => ({ name, status: 'not-reviewed', reference: '', note: '' })),
+      followUpStatus: 'remediation-in-progress', learnerFeedback: 'Reassessment evidence collection started.'
+    }
+  });
+  assert.equal(reassessmentDraft.status, 200);
+  assert.equal(reassessmentDraft.body.evaluation.status, 'in-progress');
+  assert.equal(reassessmentDraft.body.evaluation.historyCount, 1);
+
   const learnerEvidence = await request('/api/v1/me/courses/COURSE-LH-TECH1-001/evidence', { token: 'learner' });
   assert.equal(learnerEvidence.status, 200);
-  assert.equal(learnerEvidence.body.performanceAssessment.status, 'failed');
-  assert.match(learnerEvidence.body.performanceAssessment.remediationSummary, /Equivalent reassessment/);
+  assert.equal(learnerEvidence.body.performanceAssessment.status, 'in-progress');
+  assert.match(learnerEvidence.body.performanceAssessment.remediationSummary, /Reassessment evidence collection/);
   const serialized = JSON.stringify(learnerEvidence.body);
   assert.equal(serialized.includes('PRIVATE-FINAL-NOTE'), false, 'private evaluator notes must not appear in learner evidence');
   assert.equal(serialized.includes('evaluatorId'), false, 'evaluator identity must not appear in learner evidence');
   assert.equal(serialized.includes('domainScores'), false, 'full evaluator evidence must not appear in learner evidence');
+  assert.equal(serialized.includes('evidenceOutputs'), false, 'evaluator evidence references must not appear in learner evidence');
 } finally {
   server.close();
   await once(server, 'close');
 }
 
-console.log('Course 1 practical evaluator API authorization, trusted scoring, anti-forgery, and learner privacy contracts passed.');
+console.log('Course 1 evaluator roster, evidence tracking, reassessment, trusted scoring, authorization, anti-forgery, and learner privacy contracts passed.');

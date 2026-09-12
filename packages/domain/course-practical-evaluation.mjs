@@ -3,6 +3,9 @@ function cleanText(value, maxLength) {
   return text.slice(0, maxLength);
 }
 
+const EVIDENCE_OUTPUT_STATUSES = new Set(['not-reviewed', 'received', 'verified', 'needs-revision']);
+const FOLLOW_UP_STATUSES = new Set(['none', 'remediation-assigned', 'remediation-in-progress', 'ready-for-reassessment', 'reassessment-scheduled', 'closed']);
+
 function normalizeDomainScores(practical, rows = [], { requireComplete = false } = {}) {
   if (!Array.isArray(rows)) throw new Error('domainScores must be an array');
   const domains = practical?.scoring?.domains ?? [];
@@ -35,6 +38,55 @@ function normalizeCriticalErrors(practical, indexes = []) {
   return unique.map((index) => ({ index, description: source[index] }));
 }
 
+function normalizeEvidenceOutputs(practical, rows = []) {
+  if (!Array.isArray(rows)) throw new Error('evidenceOutputs must be an array');
+  const canonical = practical?.evidenceOutputs ?? [];
+  const allowed = new Set(canonical);
+  const seen = new Set();
+  const normalized = [];
+
+  for (const row of rows) {
+    const name = String(row?.name ?? '').trim();
+    if (!allowed.has(name)) throw new Error(`unknown practical evidence output: ${name}`);
+    if (seen.has(name)) throw new Error(`duplicate practical evidence output: ${name}`);
+    const status = String(row?.status ?? 'not-reviewed').trim();
+    if (!EVIDENCE_OUTPUT_STATUSES.has(status)) throw new Error(`invalid evidence output status for ${name}`);
+    seen.add(name);
+    normalized.push({
+      name,
+      status,
+      reference: cleanText(row?.reference, 500),
+      note: cleanText(row?.note, 1000)
+    });
+  }
+
+  return canonical.map((name) => normalized.find((row) => row.name === name) ?? {
+    name,
+    status: 'not-reviewed',
+    reference: '',
+    note: ''
+  });
+}
+
+function normalizeFollowUpStatus(value, { finalStatus = null } = {}) {
+  const raw = String(value ?? '').trim();
+  if (!raw) {
+    if (finalStatus === 'passed') return 'closed';
+    if (finalStatus === 'failed') return 'remediation-assigned';
+    return 'none';
+  }
+  if (!FOLLOW_UP_STATUSES.has(raw)) throw new Error(`invalid practical follow-up status: ${raw}`);
+  if (finalStatus === 'passed' && !['none', 'closed'].includes(raw)) throw new Error('passed practical cannot require remediation or reassessment');
+  return raw;
+}
+
+function normalizeTargetDate(value) {
+  const text = String(value ?? '').trim();
+  if (!text) return '';
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text) || Number.isNaN(Date.parse(`${text}T00:00:00Z`))) throw new Error('reassessmentTargetDate must use YYYY-MM-DD');
+  return text;
+}
+
 function historyFromExisting(existing) {
   const history = Array.isArray(existing?.evidence?.history) ? structuredClone(existing.evidence.history) : [];
   if (!existing || !['passed', 'failed', 'voided'].includes(existing.status)) return history;
@@ -45,6 +97,10 @@ function historyFromExisting(existing) {
     evaluatorId: existing.evaluatorId ?? null,
     evaluatedAt: existing.evaluatedAt ?? null,
     domainScores: Array.isArray(existing.evidence?.domainScores) ? structuredClone(existing.evidence.domainScores) : [],
+    criticalErrors: Array.isArray(existing.evidence?.criticalErrors) ? structuredClone(existing.evidence.criticalErrors) : [],
+    evidenceOutputs: Array.isArray(existing.evidence?.evidenceOutputs) ? structuredClone(existing.evidence.evidenceOutputs) : [],
+    followUpStatus: existing.evidence?.followUpStatus ?? 'none',
+    reassessmentTargetDate: existing.evidence?.reassessmentTargetDate ?? '',
     learnerFeedback: existing.evidence?.learnerFeedback ?? '',
     evaluatorNotes: existing.evidence?.evaluatorNotes ?? ''
   });
@@ -59,6 +115,8 @@ export function practicalEvaluatorView(practical, existing = null) {
       version: practical.version,
       status: practical.status,
       evidenceOutputs: [...(practical.evidenceOutputs ?? [])],
+      evidenceOutputStatuses: [...EVIDENCE_OUTPUT_STATUSES],
+      followUpStatuses: [...FOLLOW_UP_STATUSES],
       scoring: {
         totalPoints: Number(practical.scoring?.totalPoints ?? 0),
         domains: (practical.scoring?.domains ?? []).map((domain) => ({ name: domain.name, points: Number(domain.points) }))
@@ -78,8 +136,12 @@ export function practicalEvaluatorView(practical, existing = null) {
       updatedAt: existing.updatedAt ?? null,
       domainScores: Array.isArray(existing.evidence?.domainScores) ? structuredClone(existing.evidence.domainScores) : [],
       criticalErrors: Array.isArray(existing.evidence?.criticalErrors) ? structuredClone(existing.evidence.criticalErrors) : [],
+      evidenceOutputs: normalizeEvidenceOutputs(practical, existing.evidence?.evidenceOutputs ?? []),
+      followUpStatus: existing.evidence?.followUpStatus ?? 'none',
+      reassessmentTargetDate: existing.evidence?.reassessmentTargetDate ?? '',
       evaluatorNotes: existing.evidence?.evaluatorNotes ?? '',
       learnerFeedback: existing.evidence?.learnerFeedback ?? '',
+      history: Array.isArray(existing.evidence?.history) ? structuredClone(existing.evidence.history) : [],
       historyCount: Array.isArray(existing.evidence?.history) ? existing.evidence.history.length : 0
     } : null
   };
@@ -90,14 +152,18 @@ export function buildPracticalEvaluation({ practical, existing = null, input = {
   if (!evaluatorId) throw new Error('evaluatorId required');
   const mode = input.mode === 'finalize' ? 'finalize' : input.mode === 'save' ? 'save' : null;
   if (!mode) throw new Error('evaluation mode must be save or finalize');
-  if (mode === 'save' && existing && ['passed', 'failed', 'voided'].includes(existing.status)) {
-    throw new Error('finalized practical evaluations can only be replaced by a new finalized evaluation');
+  const existingFinal = Boolean(existing && ['passed', 'failed', 'voided'].includes(existing.status));
+  const startingReassessment = mode === 'save' && existingFinal && input.startReassessment === true;
+  if (mode === 'save' && existingFinal && !startingReassessment) {
+    throw new Error('finalized practical evaluations can only be reopened through an explicit reassessment');
   }
 
   const domainScores = normalizeDomainScores(practical, input.domainScores ?? [], { requireComplete: mode === 'finalize' });
   const criticalErrors = normalizeCriticalErrors(practical, input.criticalErrorIndexes ?? []);
+  const evidenceOutputs = normalizeEvidenceOutputs(practical, input.evidenceOutputs ?? existing?.evidence?.evidenceOutputs ?? []);
   const evaluatorNotes = cleanText(input.evaluatorNotes, 4000);
   const learnerFeedback = cleanText(input.learnerFeedback, 2500);
+  const reassessmentTargetDate = normalizeTargetDate(input.reassessmentTargetDate);
   const history = historyFromExisting(existing);
 
   let status = 'in-progress';
@@ -114,6 +180,9 @@ export function buildPracticalEvaluation({ practical, existing = null, input = {
     finalEvaluatedAt = evaluatedAt;
   }
 
+  const followUpStatus = normalizeFollowUpStatus(input.followUpStatus, { finalStatus: mode === 'finalize' ? status : null });
+  if (followUpStatus === 'reassessment-scheduled' && !reassessmentTargetDate) throw new Error('reassessmentTargetDate is required when reassessment is scheduled');
+
   return {
     assessmentId: practical.id,
     assessmentVersion: String(practical.version),
@@ -125,6 +194,9 @@ export function buildPracticalEvaluation({ practical, existing = null, input = {
     evidence: {
       domainScores,
       criticalErrors,
+      evidenceOutputs,
+      followUpStatus,
+      reassessmentTargetDate,
       evaluatorNotes,
       learnerFeedback,
       history,

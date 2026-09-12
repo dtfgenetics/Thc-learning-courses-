@@ -20,6 +20,21 @@ function rowView(row) {
   };
 }
 
+function queueRow(row) {
+  return {
+    learnerSubject: row.external_subject,
+    enrollmentStatus: row.enrollment_status,
+    enrolledAt: row.enrolled_at ? new Date(row.enrolled_at).toISOString() : null,
+    practicalStatus: row.practical_status ?? 'not-recorded',
+    scorePercent: row.score_percent == null ? null : Number(row.score_percent),
+    criticalErrorCount: Number(row.critical_error_count ?? 0),
+    followUpStatus: row.follow_up_status ?? 'none',
+    reassessmentTargetDate: row.reassessment_target_date ?? '',
+    evaluatedAt: row.evaluated_at ? new Date(row.evaluated_at).toISOString() : null,
+    updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+  };
+}
+
 export function createPostgresPracticalEvaluatorStore({ query } = {}) {
   if (typeof query !== 'function') throw new Error('PostgreSQL practical evaluator store requires a query(text, params) function');
 
@@ -30,6 +45,32 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
 
   return {
     kind: 'postgres-practical-evaluator',
+    async listCourseLearners({ courseId, assessmentId, assessmentVersion, search = '', practicalStatus = '', limit = 50 } = {}) {
+      if (!courseId || !assessmentId || !assessmentVersion) throw new Error('courseId, assessmentId and assessmentVersion required');
+      const result = await queryOrUnavailable(
+        query,
+        `select l.external_subject,
+                e.status as enrollment_status,
+                e.enrolled_at,
+                p.status as practical_status,
+                p.score_percent,
+                p.critical_error_count,
+                p.evidence_json ->> 'followUpStatus' as follow_up_status,
+                p.evidence_json ->> 'reassessmentTargetDate' as reassessment_target_date,
+                p.evaluated_at,
+                p.updated_at
+           from learners l
+           join enrollments e on e.learner_id = l.id and e.course_id = $1
+           left join performance_assessment_results p
+             on p.learner_id = l.id and p.assessment_id = $2 and p.assessment_version = $3
+          where ($4 = '' or l.external_subject ilike ('%' || $4 || '%'))
+            and ($5 = '' or coalesce(p.status, 'not-recorded') = $5)
+          order by p.updated_at desc nulls last, e.enrolled_at desc, l.external_subject
+          limit $6`,
+        [courseId, assessmentId, String(assessmentVersion), search, practicalStatus, Number(limit)]
+      );
+      return (result.rows ?? []).map(queueRow);
+    },
     async getEvaluation(externalSubject, { assessmentId, assessmentVersion } = {}) {
       if (!externalSubject || !assessmentId || !assessmentVersion) throw new Error('externalSubject, assessmentId and assessmentVersion required');
       const learnerId = await learnerIdForSubject(externalSubject);
@@ -70,7 +111,8 @@ export function createPostgresPracticalEvaluatorStore({ query } = {}) {
            insert into audit_events (event_type, actor_id, subject_type, subject_id, metadata)
            values ('course-practical-evaluation-saved', $8, 'learner', $10,
                    jsonb_build_object('assessmentId', $2, 'assessmentVersion', $3, 'status', $4,
-                                      'scorePercent', $5, 'criticalErrorCount', $6))
+                                      'scorePercent', $5, 'criticalErrorCount', $6,
+                                      'followUpStatus', $7::jsonb ->> 'followUpStatus'))
            returning id
          )
          select saved.* from saved cross join audited`,
