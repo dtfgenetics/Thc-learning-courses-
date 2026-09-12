@@ -87,6 +87,18 @@ create table if not exists performance_assessment_results (
   primary key (learner_id, assessment_id, assessment_version)
 );
 
+create table if not exists practical_evaluation_assignments (
+  learner_id uuid not null references learners(id),
+  course_id text not null,
+  assessment_id text not null,
+  assessment_version text not null,
+  evaluator_id text not null,
+  assigned_by text not null,
+  assigned_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (learner_id, course_id, assessment_id, assessment_version)
+);
+
 create table if not exists learner_portfolio_artifacts (
   learner_id uuid not null references learners(id),
   credential_definition_id text not null,
@@ -147,6 +159,7 @@ create table if not exists audit_events (
 
 create index if not exists idx_attempts_learner_assessment on assessment_attempts(learner_id, assessment_id, started_at desc);
 create index if not exists idx_performance_learner_assessment on performance_assessment_results(learner_id, assessment_id, updated_at desc);
+create index if not exists idx_practical_assignment_evaluator on practical_evaluation_assignments(course_id, assessment_id, evaluator_id, updated_at desc);
 create index if not exists idx_portfolio_learner_credential on learner_portfolio_artifacts(learner_id, credential_definition_id, updated_at desc);
 create index if not exists idx_credentials_subject on credentials(subject_hash, issued_at desc);
 create index if not exists idx_audit_subject on audit_events(subject_type, subject_id, created_at desc);
@@ -157,4 +170,8 @@ on conflict (version) do nothing;
 
 insert into academy_schema_migrations (version, description)
 values ('2', 'Learner performance assessment and portfolio evidence')
+on conflict (version) do nothing;
+
+insert into academy_schema_migrations (version, description)
+values ('3', 'Course practical evaluator assignment and ownership')
 on conflict (version) do nothing;
