@@ -14,7 +14,7 @@ The learner-facing record is derived from existing authoritative Academy records
 
 - the published Academy catalog for the current Course 1/module/lesson structure;
 - authenticated lesson-progress records from `/api/v1/me/progress`;
-- authenticated enrollment/version history from `/api/v1/me/enrollments`;
+- authenticated enrollment/version and academic-transition history from `/api/v1/me/enrollments`;
 - authenticated public-course final and course-practical evidence from `/api/v1/me/courses/COURSE-LH-TECH1-001/evidence`.
 
 The rendered record can therefore be regenerated from the controlled curriculum plus the learner's existing records.
@@ -43,7 +43,23 @@ Synchronization runs after enrollment, lesson-progress writes, course-final scor
 
 Every real `active → completed` or `completed → active` transition writes an immutable `audit_events` entry. The event stores only the previous/current enrollment state, reason, course/version and a minimal academic-requirements snapshot. It does not store learner assessment responses, private evaluator notes, practical evidence references, or credential decisions.
 
-The learner enrollment projection may include `academicStatusHistory` for the matching course version so the completion/reopen sequence can be reconstructed without overwriting prior transitions.
+The learner enrollment projection includes version-matched `academicStatusHistory` so a sequence such as **Completed → Reopened → Completed** can be shown without overwriting prior transitions.
+
+## Academic completion transition timeline
+
+The Course Record renders the learner-safe enrollment transition history as its own timeline/table.
+
+Each learner-visible transition may show:
+
+- whether the event completed or reopened academic requirements;
+- course version;
+- prior and resulting enrollment state;
+- event timestamp;
+- the minimal academic snapshot recorded with the event: completed/required lesson count, public course-final status, practical status and practical critical-error count.
+
+The transition timeline is chronological and historical. A learner who is currently complete may still have a previous reopening event, and that history remains visible after the requirements are satisfied again.
+
+The timeline is academic enrollment history only. It is not a credential-status history and does not contain credential issuance, revocation, renewal or eligibility decisions.
 
 ## Lesson version preservation
 
@@ -98,7 +114,7 @@ They must not expose evaluator identity, private evaluator notes, domain-score e
 
 ## Course-version history
 
-Course enrollment records are displayed separately from lesson progress. The learner may see each recorded Course 1 enrollment version, enrollment state, enrollment date and any current enrollment completion timestamp. The underlying academic transition history preserves prior completion/reopen events even when the current row has returned to `active`.
+Course enrollment records are displayed separately from lesson progress. The learner may see each recorded Course 1 enrollment version, enrollment state, enrollment date and any current enrollment completion timestamp. The separate academic transition timeline preserves prior completion/reopen events even when the current row has returned to `active`.
 
 This is historical context, not a rule that prevents content from being edited or expanded.
 
@@ -112,6 +128,8 @@ The Academy `Course Record` surface includes:
 - practical status and follow-up;
 - expandable module/lesson completion history;
 - recorded lesson version/date information;
+- chronological academic completion/reopen transition history;
+- minimal requirement snapshot for each transition;
 - course-version enrollment history;
 - a print-friendly rendering.
 
@@ -126,6 +144,7 @@ The course record is private to the authenticated learner. It must not expose:
 - private evaluator notes;
 - detailed practical evidence references;
 - assessment answer keys or raw response payloads;
+- audit actor identity or unrelated audit events;
 - credential-exam secure material;
 - credential signing or issuance records unrelated to this academic course view.
 
