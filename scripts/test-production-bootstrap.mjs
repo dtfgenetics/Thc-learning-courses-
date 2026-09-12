@@ -24,6 +24,7 @@ assert.equal(await options.credentialStore.ping(), true);
 assert.equal(await options.credentialStore.schemaVersion(), '2');
 assert.equal(options.requiredSchemaVersion, '2');
 assert.equal(options.credentialWriter.kind, 'test-writer');
+assert.equal(typeof options.learnerStore.listCourseEvidence, 'function');
 assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
@@ -38,4 +39,4 @@ assert.equal(authOk.ok, true);
 assert.equal(authOk.subject, 'external-user-001');
 assert.ok(authOk.scopes.includes('learner:read'));
 
-console.log('Production persistence, schema readiness, learner evidence, and authentication adapter contract passed.');
+console.log('Production persistence, schema readiness, course/credential learner evidence, and authentication adapter contract passed.');

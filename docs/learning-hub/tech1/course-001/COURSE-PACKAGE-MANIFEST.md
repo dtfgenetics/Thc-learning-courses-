@@ -37,6 +37,8 @@ The current canonical lessons use richer instructional structures including evid
 - module-level and lesson-level quick-access links to the aligned field reference
 - targeted field-reference remediation links after an incorrect lesson-practice response
 - responsive reference cards with print/save mode and mobile touch targets
+- responsive learner shell with a sticky desktop course outline, compact mobile outline control, readable lesson measure, touch-sized lesson/practice controls, and single canonical formative-practice rendering
+- authenticated Course 1 card status showing official **course final** and **course practical** evidence separately from lesson checkmarks
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
@@ -49,6 +51,8 @@ The six current field references cover hazard response/PPE/HazCom; biosecurity/s
 Workbook, practical and field-reference counts describe the current package and are not maximums. Additional guided labs, field references, role-specific variants, translated/accessibility formats, artifacts, or equivalent practice formats may be added or reorganized as the course improves.
 
 The field-reference learner runtime is a navigation and remediation aid. Opening or printing a field reference does not create assessment, practical, completion, or credential evidence.
+
+The Course 1 card reads official learner evidence from the named course final assessment and linked course practical only. It does not treat lesson percentage as course completion, does not substitute for Technician I credential evidence, and does not invent an overall course-complete or credential-eligible state.
 
 ## Instructor/assessor support
 
@@ -112,6 +116,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.

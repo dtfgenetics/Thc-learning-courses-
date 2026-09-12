@@ -4,7 +4,11 @@ const catalogPanel = document.querySelector('#catalog-panel');
 const catalogToggle = document.querySelector('#catalog-toggle');
 const catalogBody = document.querySelector('#catalog-body');
 const catalogToggleState = document.querySelector('#catalog-toggle-state');
+const catalogRoot = document.querySelector('#catalog');
 const compactCatalog = globalThis.matchMedia?.('(max-width: 840px)');
+const COURSE1_ID = 'COURSE-LH-TECH1-001';
+const COURSE1_TITLE = 'Safety, Responsible Practice & Cultivation Workflows';
+let course1EvidencePromise = null;
 
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
@@ -47,6 +51,92 @@ function renderWelcome() {
 
 function statusLabel(value) {
   return String(value ?? 'not-recorded').replaceAll('-', ' ');
+}
+
+function courseEvidenceLabel(value, kind) {
+  if (kind === 'written') {
+    return ({ passed: 'Passed', 'not-passed': 'Not passed', 'in-progress': 'In progress', 'not-attempted': 'Not attempted' })[value] ?? statusLabel(value);
+  }
+  return ({ passed: 'Passed', failed: 'Not passed', 'in-progress': 'In progress', 'not-recorded': 'Not evaluated', voided: 'Voided' })[value] ?? statusLabel(value);
+}
+
+function courseEvidenceBadge(value, kind) {
+  return text('span', courseEvidenceLabel(value, kind), `course-evidence-status status-${String(value ?? 'not-recorded')}`);
+}
+
+function courseEvidenceRow(label, status, kind, detail = '') {
+  const row = document.createElement('div');
+  row.className = 'course-evidence-row';
+  const copy = document.createElement('div');
+  copy.append(text('strong', label));
+  if (detail) copy.append(text('span', detail, 'course-evidence-detail'));
+  row.append(copy, courseEvidenceBadge(status, kind));
+  return row;
+}
+
+function loadCourse1Evidence() {
+  if (!course1EvidencePromise) {
+    course1EvidencePromise = fetch(`/api/v1/me/courses/${COURSE1_ID}/evidence`, {
+      headers: { accept: 'application/json' },
+      credentials: 'same-origin'
+    }).then(async (response) => {
+      if (response.status === 401 || response.status === 403) return { state: 'authentication-required' };
+      if (!response.ok) return { state: 'unavailable', status: response.status };
+      return { state: 'loaded', data: await response.json() };
+    }).catch(() => ({ state: 'unavailable' }));
+  }
+  return course1EvidencePromise;
+}
+
+function buildCourseEvidencePanel(result) {
+  const panel = document.createElement('section');
+  panel.className = 'course-evidence-panel';
+  panel.setAttribute('aria-label', 'Official Course 1 assessment and practical status');
+  panel.append(text('p', 'Official course evidence', 'course-evidence-heading'));
+
+  if (result.state === 'authentication-required') {
+    panel.append(text('p', 'Sign in to view your official Course 1 final-assessment and practical status. Device lesson checkmarks are separate from official evidence.', 'course-evidence-note'));
+    return panel;
+  }
+  if (result.state !== 'loaded') {
+    panel.append(text('p', 'Official Course 1 assessment and practical status is temporarily unavailable. Lesson progress remains separate.', 'course-evidence-note'));
+    return panel;
+  }
+
+  const data = result.data ?? {};
+  const written = data.writtenAssessment ?? {};
+  const practical = data.performanceAssessment ?? {};
+  const writtenDetail = [];
+  if (written.bestScorePercent != null) writtenDetail.push(`${Number(written.bestScorePercent).toFixed(0)}% best`);
+  if (written.passingScorePercent != null) writtenDetail.push(`pass ${Number(written.passingScorePercent).toFixed(0)}%`);
+  if (Number(written.attemptCount ?? 0) > 0) writtenDetail.push(`${written.attemptCount} attempt${Number(written.attemptCount) === 1 ? '' : 's'}`);
+  const practicalDetail = [];
+  if (practical.scorePercent != null) practicalDetail.push(`${Number(practical.scorePercent).toFixed(0)}% recorded`);
+  if (Number(practical.criticalErrorCount ?? 0) > 0) practicalDetail.push(`${practical.criticalErrorCount} critical error${Number(practical.criticalErrorCount) === 1 ? '' : 's'}`);
+
+  const rows = document.createElement('div');
+  rows.className = 'course-evidence-rows';
+  rows.append(
+    courseEvidenceRow('Course final', written.outcome ?? 'not-attempted', 'written', writtenDetail.join(' • ')),
+    courseEvidenceRow('Course practical', practical.status ?? 'not-recorded', 'practical', practicalDetail.join(' • '))
+  );
+  panel.append(rows);
+  panel.append(text('p', data.completionModel || 'Lesson progress, the course final, and practical-performance evidence are tracked separately.', 'course-evidence-note'));
+  return panel;
+}
+
+async function injectCourse1Evidence() {
+  if (!catalogRoot) return;
+  const target = [...catalogRoot.querySelectorAll('details.course')].find((course) => course.querySelector('summary > span')?.textContent?.trim() === COURSE1_TITLE);
+  if (!target || target.querySelector('.course-evidence-panel, .course-evidence-loading')) return;
+  const marker = document.createElement('div');
+  marker.className = 'course-evidence-loading';
+  marker.append(text('p', 'Loading official course evidence…', 'course-evidence-note'));
+  const firstModule = target.querySelector('.module');
+  if (firstModule) firstModule.before(marker); else target.append(marker);
+  const result = await loadCourse1Evidence();
+  if (!marker.isConnected) return;
+  marker.replaceWith(buildCourseEvidencePanel(result));
 }
 
 function summaryCard(label, value, note = '') {
@@ -347,6 +437,10 @@ catalogToggle?.addEventListener('click', () => {
 
 compactCatalog?.addEventListener?.('change', syncCatalogViewport);
 syncCatalogViewport();
+
+const catalogEvidenceObserver = catalogRoot ? new MutationObserver(() => injectCourse1Evidence()) : null;
+catalogEvidenceObserver?.observe(catalogRoot, { childList: true, subtree: true });
+injectCourse1Evidence();
 
 document.addEventListener('click', (event) => {
   const lessonLink = event.target instanceof Element ? event.target.closest('.lesson-link') : null;
