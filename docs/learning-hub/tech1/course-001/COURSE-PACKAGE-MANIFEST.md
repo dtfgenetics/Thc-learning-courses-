@@ -44,7 +44,12 @@ The current canonical lessons use richer instructional structures including evid
 - public academic **Course 1 practical** learner surface available without authentication
 - practical learner surface includes preparation steps, five workflow stages, current evidence outputs, the 100-point scoring model, critical-error boundaries, support resources, responsive mobile layout and print mode
 - private assessor-recorded practical status is shown only when authenticated and remains separate from the public academic practical content
-- learner-safe assessor feedback/remediation, controlled follow-up state, and reassessment target date can be projected into the authenticated practical status without exposing private evaluator notes, evaluator identity, assignment metadata, or the detailed evidence payload
+- learner-safe assessor feedback/remediation, controlled follow-up state, reassessment target date, and privacy-filtered reassessment history can be projected into authenticated learner records without exposing private evaluator notes, evaluator identity, assignment metadata, domain-scoring evidence, evidence references, or the detailed evidence payload
+- authenticated **Course Record** surface combining authoritative lesson completion, public course-final evidence, course-practical evidence, recorded lesson versions/dates and Course 1 enrollment-version history
+- academic completion is derived only when all canonical lesson IDs have a completed account record, the public Course 1 final has a passing outcome, and the course practical has passed without disqualifying critical errors
+- completed lesson evidence is preserved by canonical lesson identity with its recorded version/date when later lesson revisions are published; content revision does not automatically erase a prior completion record
+- the Course Record is explicitly an academic learning record, not a professional credential, license, certification, or credential-eligibility decision
+- print-friendly Course Record rendering for learner reference; printing does not create a separately verifiable credential
 - canonical practical-to-runtime synchronization audit prevents the learner practical view from drifting away from the published practical object
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
@@ -59,7 +64,7 @@ Workbook, practical and field-reference counts describe the current package and 
 
 The field-reference learner runtime is a navigation and remediation aid. Opening or printing a field reference does not create assessment, practical, completion, or credential evidence.
 
-The Course 1 card reads official learner evidence from the named course final assessment and linked course practical only. It does not treat lesson percentage as course completion, does not substitute for Technician I credential evidence, and does not invent an overall course-complete or credential-eligible state.
+The Course 1 card reads official learner evidence from the named course final assessment and linked course practical only. Lesson percentage by itself is never treated as academic completion and never substitutes for Technician I credential evidence. The separate Course Record may derive **academic Course 1 completion** only from the controlled combination of completed canonical instruction, a passed public Course 1 final, and a passed Course 1 practical. That academic state is not credential eligibility and does not issue a credential.
 
 The Course 1 practical framework itself is public academic content. Authentication is only used to add the learner's private assessor-recorded result and learner-safe follow-up to that public study view; no evaluator identity, assignment metadata, private notes, or detailed practical evidence payload is exposed by the learner runtime.
 
@@ -129,7 +134,17 @@ A missed item or weak performance should not trigger an automatic same-item retr
 
 Successful remediation means the learner can apply the objective in a new context. Viewing the correct answer or rereading a page is not sufficient evidence by itself. The learner final therefore returns domain-level performance and remediation direction without exposing the answer key after submission.
 
-For the integrated practical, authorized evaluators may record learner-facing remediation separately from private evaluator notes. The learner can also see the controlled follow-up state and reassessment target when applicable. Equivalent reassessment can replace a finalized result while preserving previous finalized snapshots in evaluation history.
+For the integrated practical, authorized evaluators may record learner-facing remediation separately from private evaluator notes. The learner can also see the controlled follow-up state and reassessment target when applicable. Equivalent reassessment can replace a finalized result while preserving previous finalized snapshots in evaluation history. The learner-facing projection filters that history to status/result/follow-up information and learner-facing feedback only.
+
+## Academic course record
+
+The authenticated Course Record derives one academic view from existing learner progress, enrollment and course-evidence records. It does not create another source of truth.
+
+Academic completion requires completed canonical instruction plus a passed public Course 1 final plus a passed Course 1 practical with no disqualifying critical errors. The derived completion date reflects the latest timestamp among the completion evidence used by the record.
+
+Lesson progress remains versioned. The record preserves the version and date actually completed and can show other recorded lesson versions. A later course-content revision does not by itself revoke the learner's historical academic completion evidence.
+
+Course-version enrollment history is displayed separately so historical enrollments remain visible as the public course evolves. See `ACADEMIC-COURSE-RECORD.md` for the complete record and privacy contract.
 
 ## Operational reporting and evidence storage
 
@@ -159,6 +174,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, public academic practical viewing, private practical-result projection, trusted role-gated practical evaluation, server-side evaluator queue pagination, assignment ownership, learner-safe follow-up/reassessment state, practical evidence references, revision history, administrator reporting/export, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, public academic practical viewing, private practical-result projection, learner-safe reassessment history, trusted role-gated practical evaluation, server-side evaluator queue pagination, assignment ownership, learner-safe follow-up/reassessment state, practical evidence references, revision history, administrator reporting/export, an authenticated academic Course Record, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.
