@@ -25,6 +25,34 @@ async function withAcademicHistory(completionStore, subject, rows = []) {
   return projected;
 }
 
+function academicReportFields(history = []) {
+  const ordered = [...history].sort((a, b) => String(a.occurredAt ?? '').localeCompare(String(b.occurredAt ?? '')));
+  const latest = ordered.at(-1) ?? null;
+  return {
+    academicTransitionCount: ordered.length,
+    academicReopenCount: ordered.filter((event) => event.eventType === 'course-enrollment-academic-reopened').length,
+    latestAcademicTransitionType: latest?.eventType ?? null,
+    latestAcademicTransitionAt: latest?.occurredAt ?? null
+  };
+}
+
+async function withAcademicReportHistory(completionStore, courseId, rows = []) {
+  if (!rows.length || typeof completionStore.listEnrollmentAcademicHistory !== 'function') return rows;
+  const histories = new Map();
+  if (typeof completionStore.listCourseAcademicHistory === 'function') {
+    for (const event of await completionStore.listCourseAcademicHistory(courseId)) {
+      const list = histories.get(event.learnerSubject) ?? [];
+      list.push(event);
+      histories.set(event.learnerSubject, list);
+    }
+  } else {
+    await Promise.all(rows.map(async (row) => {
+      histories.set(row.learnerSubject, await completionStore.listEnrollmentAcademicHistory(row.learnerSubject, { courseId }));
+    }));
+  }
+  return rows.map((row) => ({ ...row, ...academicReportFields(histories.get(row.learnerSubject) ?? []) }));
+}
+
 export function addAutomaticEnrollmentCompletion({ learnerStore, practicalEvaluatorStore, completionStore } = {}) {
   if (!learnerStore || !practicalEvaluatorStore || !completionStore) {
     throw new Error('learner, practical evaluator, and enrollment completion stores are required');
@@ -57,6 +85,10 @@ export function addAutomaticEnrollmentCompletion({ learnerStore, practicalEvalua
 
   const wrappedPracticalEvaluatorStore = {
     ...practicalEvaluatorStore,
+    async listCourseReportRows(options = {}) {
+      const rows = await practicalEvaluatorStore.listCourseReportRows(options);
+      return withAcademicReportHistory(completionStore, options.courseId, rows);
+    },
     async saveEvaluation(subject, record) {
       const saved = await practicalEvaluatorStore.saveEvaluation(subject, record);
       await synchronizeSafely({ learnerStore, completionStore, subject, courseIds: [courseIdForPerformanceAssessment(record.assessmentId)] });
