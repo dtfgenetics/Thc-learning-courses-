@@ -163,6 +163,19 @@ function credentialProgressView(credential, course, rawEvidence) {
   };
 }
 
+function learnerSafePracticalHistory(rows = []) {
+  if (!Array.isArray(rows)) return [];
+  return rows.map((row) => ({
+    status: row?.status ?? 'not-recorded',
+    scorePercent: row?.scorePercent == null ? null : Number(row.scorePercent),
+    criticalErrorCount: Number(row?.criticalErrorCount ?? 0),
+    evaluatedAt: row?.evaluatedAt ?? null,
+    followUpStatus: row?.followUpStatus ?? 'none',
+    reassessmentTargetDate: row?.reassessmentTargetDate || null,
+    learnerFeedback: typeof row?.learnerFeedback === 'string' && row.learnerFeedback.trim() ? row.learnerFeedback.trim() : null
+  }));
+}
+
 export function courseEvidenceView(course, assessment, rawEvidence) {
   const attempts = (rawEvidence.assessmentAttempts ?? []).filter((row) => row.assessmentId === assessment.id);
   const scoredAttempts = attempts.filter((row) => row.status === 'scored');
@@ -196,7 +209,8 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
       updatedAt: performance?.updatedAt ?? null,
       remediationSummary: performance?.remediationSummary ?? null,
       followUpStatus: performance?.followUpStatus ?? 'none',
-      reassessmentTargetDate: performance?.reassessmentTargetDate ?? null
+      reassessmentTargetDate: performance?.reassessmentTargetDate ?? null,
+      history: learnerSafePracticalHistory(performance?.history)
     } : null,
     completionModel: assessment.extensions?.completionModel ?? null
   };
@@ -375,6 +389,7 @@ export function createHandler({
               if (typeof feedback === 'string' && feedback.trim()) evidence.performanceAssessment.remediationSummary = feedback.trim();
               evidence.performanceAssessment.followUpStatus = privateEvidence.followUpStatus ?? 'none';
               evidence.performanceAssessment.reassessmentTargetDate = privateEvidence.reassessmentTargetDate || null;
+              evidence.performanceAssessment.history = learnerSafePracticalHistory(privateEvidence.history);
             }
           }
         }
@@ -439,7 +454,7 @@ export function createHandler({
         catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
         const lessonVersion = String(body.lessonVersion ?? '').trim();
         const status = String(body.status ?? '').trim();
-        if (!/^\d+$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
+        if (!/^\d+(?:\.\d+){0,3}$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
         const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
         return json(res, 200, { progress });
       }
