@@ -14,6 +14,7 @@ const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
 const credentialDefinitions = new Map();
 const courseDefinitions = new Map();
+const assessmentDefinitions = new Map();
 
 function loadCredentialDefinition(id) {
   if (!/^CRED-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
@@ -33,6 +34,17 @@ function loadCourseDefinition(id) {
   const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
   if (definition?.id !== id) return null;
   courseDefinitions.set(id, definition);
+  return definition;
+}
+
+function loadAssessmentDefinition(id) {
+  if (!/^ASSESS-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (assessmentDefinitions.has(id)) return assessmentDefinitions.get(id);
+  const target = path.join(root, 'content/assessments', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (definition?.id !== id) return null;
+  assessmentDefinitions.set(id, definition);
   return definition;
 }
 
@@ -135,6 +147,51 @@ function credentialProgressView(credential, course, rawEvidence) {
   };
 }
 
+export function courseEvidenceView(course, assessment, rawEvidence) {
+  const attempts = (rawEvidence.assessmentAttempts ?? []).filter((row) => row.assessmentId === assessment.id);
+  const scoredAttempts = attempts.filter((row) => row.status === 'scored');
+  const passedAttempts = scoredAttempts.filter((row) => row.passed === true);
+  const bestScorePercent = scoredAttempts.length
+    ? Math.max(...scoredAttempts.map((row) => Number(row.scorePercent ?? 0)))
+    : null;
+  const latestAttempt = attempts[0] ?? null;
+  const writtenOutcome = passedAttempts.length
+    ? 'passed'
+    : scoredAttempts.length
+      ? 'not-passed'
+      : attempts.some((row) => row.status === 'started' || row.status === 'submitted')
+        ? 'in-progress'
+        : 'not-attempted';
+  const linkedPerformanceAssessment = assessment.extensions?.linkedPerformanceAssessment ?? null;
+  const performance = rawEvidence.performanceAssessment && rawEvidence.performanceAssessment.assessmentId === linkedPerformanceAssessment
+    ? rawEvidence.performanceAssessment
+    : null;
+
+  return {
+    course: { id: course.id, title: course.title, version: course.version },
+    writtenAssessment: {
+      assessmentId: assessment.id,
+      title: assessment.title,
+      passingScorePercent: Number(assessment.passingScorePercent ?? 0),
+      outcome: writtenOutcome,
+      recordStatus: latestAttempt?.status ?? 'not-recorded',
+      attemptCount: attempts.length,
+      bestScorePercent,
+      latestStartedAt: latestAttempt?.startedAt ?? null,
+      latestScoredAt: latestAttempt?.scoredAt ?? null
+    },
+    performanceAssessment: linkedPerformanceAssessment ? {
+      assessmentId: linkedPerformanceAssessment,
+      status: performance?.status ?? 'not-recorded',
+      scorePercent: performance?.scorePercent ?? null,
+      criticalErrorCount: Number(performance?.criticalErrorCount ?? 0),
+      evaluatedAt: performance?.evaluatedAt ?? null,
+      updatedAt: performance?.updatedAt ?? null
+    } : null,
+    completionModel: assessment.extensions?.completionModel ?? null
+  };
+}
+
 export function createHandler({
   credentialStore = null,
   learnerStore = null,
@@ -224,6 +281,22 @@ export function createHandler({
         if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         const progress = await learnerStore.listProgress(auth.subject);
         return json(res, 200, { learner: { subject: auth.subject }, progress });
+      }
+
+      const courseEvidenceMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/evidence$/);
+      if (req.method === 'GET' && courseEvidenceMatch) {
+        route = 'GET /api/v1/me/courses/:courseId/evidence';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listCourseEvidence !== 'function') return json(res, 503, { error: 'learner-course-evidence-persistence-unavailable', requestId });
+        const course = loadCourseDefinition(courseEvidenceMatch[1]);
+        if (!course) return json(res, 404, { error: 'course-not-found', requestId });
+        if (!course.finalAssessment) return json(res, 404, { error: 'course-evidence-not-configured', requestId });
+        const assessment = loadAssessmentDefinition(course.finalAssessment);
+        if (!assessment) return json(res, 500, { error: 'course-final-assessment-not-found', requestId });
+        const performanceAssessmentId = assessment.extensions?.linkedPerformanceAssessment ?? null;
+        const evidence = await learnerStore.listCourseEvidence(auth.subject, { assessmentId: assessment.id, performanceAssessmentId });
+        return json(res, 200, courseEvidenceView(course, assessment, evidence));
       }
 
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
