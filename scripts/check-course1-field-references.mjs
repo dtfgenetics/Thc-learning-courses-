@@ -10,31 +10,43 @@ const base = ['docs', 'learning-hub', 'tech1', 'course-001', 'student', 'job-aid
 const aids = [
   {
     file: '01-HAZARD-RESPONSE-GUIDE.md',
+    runtimeId: 'FR-LH-TECH1-001-HAZARD',
+    moduleId: 'MOD-LH-TECH1-001-SAFETY',
     objectives: ['LO-LH-TECH1-001-01', 'LO-LH-TECH1-001-02'],
     workbook: ['Activities 1, 8 and 9']
   },
   {
     file: '02-BIOSECURITY-SANITATION-GUIDE.md',
+    runtimeId: 'FR-LH-TECH1-001-BIOSEC',
+    moduleId: 'MOD-LH-TECH1-001-BIOSEC',
     objectives: ['LO-LH-TECH1-001-03', 'LO-LH-TECH1-001-04'],
     workbook: ['Activities 2, 8 and 9']
   },
   {
     file: '03-CONTROLLED-WORK-INSTRUCTION-CHECKLIST.md',
+    runtimeId: 'FR-LH-TECH1-001-SOP',
+    moduleId: 'MOD-LH-TECH1-001-WORKFLOW',
     objectives: ['LO-LH-TECH1-001-05'],
     workbook: ['Activities 3 and 8']
   },
   {
     file: '04-TRACEABILITY-RECONCILIATION-GUIDE.md',
+    runtimeId: 'FR-LH-TECH1-001-TRACE',
+    moduleId: 'MOD-LH-TECH1-001-TRACEABILITY',
     objectives: ['LO-LH-TECH1-001-06', 'LO-LH-TECH1-001-07', 'LO-LH-TECH1-001-08'],
     workbook: ['Activities 4, 8 and 10']
   },
   {
     file: '05-EQUIPMENT-READINESS-FAULT-GUIDE.md',
+    runtimeId: 'FR-LH-TECH1-001-EQUIP',
+    moduleId: 'MOD-LH-TECH1-001-EQUIPMENT',
     objectives: ['LO-LH-TECH1-001-09', 'LO-LH-TECH1-001-10'],
     workbook: ['Activities 5, 8 and 11']
   },
   {
     file: '06-DATA-INTEGRITY-HANDOFF-GUIDE.md',
+    runtimeId: 'FR-LH-TECH1-001-RECORDS',
+    moduleId: 'MOD-LH-TECH1-001-RECORDS',
     objectives: ['LO-LH-TECH1-001-11', 'LO-LH-TECH1-001-12'],
     workbook: ['Activities 6, 7, 8 and 12']
   }
@@ -91,10 +103,45 @@ else {
   requireText('COURSE-PACKAGE-MANIFEST.md', manifest, 'not maximums');
 }
 
+const indexHtml = read('apps', 'web', 'public', 'index.html');
+const runtime = read('apps', 'web', 'public', 'governance.js');
+const portalCss = read('apps', 'web', 'public', 'portal.css');
+
+requireText('index.html', indexHtml, 'id="tab-field-references"');
+requireText('index.html', indexHtml, '>Field References<');
+for (const aid of aids) {
+  requireText('governance.js', runtime, aid.runtimeId);
+  requireText('governance.js', runtime, aid.moduleId);
+  for (const objective of aid.objectives) requireText('governance.js', runtime, objective);
+}
+for (const runtimeContract of [
+  'renderFieldReferenceLibrary',
+  'renderFieldReferenceDetail',
+  'injectCatalogReferenceLinks',
+  'injectLessonReferenceLink',
+  'injectPracticeRemediation',
+  "practice-feedback[data-state=\"incorrect\"]",
+  'window.print()',
+  'MutationObserver'
+]) requireText('governance.js', runtime, runtimeContract);
+
+if (runtime.includes('.innerHTML')) failures.push('governance.js: field-reference runtime must use DOM construction rather than innerHTML');
+
+for (const cssContract of [
+  '.field-reference-grid',
+  '.lesson-field-reference',
+  '.field-reference-remediation',
+  '.field-reference-comparison',
+  '@media print',
+  'min-height: 44px',
+  '.catalog-panel',
+  '.field-reference-detail'
+]) requireText('portal.css', portalCss, cssContract);
+
 if (failures.length) {
   console.error(`Course 1 field-reference contract failed with ${failures.length} issue(s):`);
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
 
-console.log(`Course 1 field-reference contract passed for ${aids.length} field aids plus index, production spec, workbook integration, and package manifest.`);
+console.log(`Course 1 field-reference contract passed for ${aids.length} field aids plus index, production spec, workbook integration, learner runtime navigation/remediation, responsive styling, print behavior, and package manifest.`);
