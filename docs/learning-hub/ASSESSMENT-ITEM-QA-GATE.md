@@ -21,7 +21,9 @@ The checker fails when it finds:
 - invalid keyed-answer indexes;
 - overly short stems or rationales that are not review-ready;
 - assessment `totalItems` values that disagree with listed item IDs;
-- a controlled expected Course 1 inventory that drifts from 7 assessments / 72 formative items / 36 summative items / 108 total items.
+- a Course 1 bank that falls below its controlled minimum baseline of 7 assessment definitions / 72 formative items / 36 summative items / 108 total items.
+
+The minimum baseline is a quality floor, **not a content ceiling**. Course 1 currently exceeds that floor with 84 formative items and 36 summative items (120 public knowledge items total). Additional valid items may be added without changing the QA architecture.
 
 ## Human-review warnings
 

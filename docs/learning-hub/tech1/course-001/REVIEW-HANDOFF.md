@@ -9,19 +9,21 @@ Course 1 has deterministic curriculum, schema, registry, learner-web, accessibil
 
 ## Review inventory
 
-The Course 1 review tooling can organize up to **154 review tasks** when no prior review notes exist:
+At the current Course 1 bank size, the review tooling can organize **166 review tasks** when no prior review notes exist:
 
-| Lane | Tasks |
+| Lane | Current tasks |
 |---|---:|
 | Lesson scientific review | 18 |
 | Lesson editorial review | 18 |
 | Assessment-definition review | 7 |
-| Formative module-test item review | 72 |
+| Formative module-test item review | 84 |
 | Summative final-course item review | 36 |
 | Integrated performance-assessment review | 1 |
 | Course accessibility review | 1 |
 | Course legal/compliance review | 1 |
-| **Total** | **154** |
+| **Current total** | **166** |
+
+These counts are generated from the current course package and are not review-task ceilings. Adding, replacing, retiring, or reorganizing lessons, items, assessments, or other reviewable objects should change the queue dynamically rather than require the course to stay at a historical count.
 
 These tasks are optional quality-improvement work. No lane blocks another lane, and no task blocks editing or public learner access.
 
@@ -45,7 +47,7 @@ Review clarity, vocabulary, examples, learner sequence, workload, misconceptions
 
 ### Assessment review
 
-Review the 7 assessment definitions, all 72 formative items, all 36 final-course items, and the integrated practical. Focus on one-best-answer defensibility, distractor quality, cognitive demand, fairness, occupational authenticity, and objective coverage.
+Review the 7 assessment definitions, all 84 current formative items, all 36 final-course items, and the integrated practical. Focus on one-best-answer defensibility, distractor quality, cognitive demand, fairness, occupational authenticity, and objective coverage. The formative bank may continue to expand; review scope should follow the live bank rather than a fixed item count.
 
 ### Accessibility review
 

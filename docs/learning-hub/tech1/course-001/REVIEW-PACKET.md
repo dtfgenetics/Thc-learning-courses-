@@ -19,11 +19,13 @@ Determine whether Course 1 is ready to enter controlled learner pilot use. Revie
 
 ### Assessment
 
-- 6 formative module assessments / 72 items;
+- 6 formative module assessments / **84 current items**;
 - final course assessment / 36 items;
 - integrated practical;
 - practical candidate Forms A and B;
 - assessor guide and calibration protocol.
+
+The formative bank is intentionally extensible. Review the live item inventory rather than treating 84 as a maximum or permanent target.
 
 ### Delivery/accessibility
 

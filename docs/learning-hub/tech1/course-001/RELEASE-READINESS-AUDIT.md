@@ -11,7 +11,7 @@
 - student workbook and reusable forms;
 - 6 operational job aids;
 - retrieval/spaced-practice schedule;
-- 72 formative module-test items;
+- **84 formative module-test items** across six 14-item module assessments;
 - 36-item final course-test development form;
 - integrated 100-point practical with critical-error rules;
 - practical candidate Forms A and B;
@@ -21,6 +21,8 @@
 - objective-aligned formative practice delivery with choice shuffling/remapped keys;
 - deterministic curriculum, web, accessibility, registry, and credential quality gates.
 
+The current 84-item formative bank may continue to expand or change. Its size is a current inventory, not a release cap.
+
 ## Gates that cannot be truthfully closed by code/content generation alone
 
 ### 1. Human technical/curriculum review — OPEN
@@ -29,7 +31,7 @@ A qualified reviewer must verify factual accuracy, source-role boundaries, job-t
 
 ### 2. Human assessment-item review — OPEN
 
-All 108 public Course 1 knowledge-test items require item-level review before learner activation. Automated schema/coverage checks do not establish item validity.
+All **120 current public Course 1 knowledge-test items** (84 formative + 36 summative) require item-level review before operational learner use. Automated schema/coverage checks do not establish item validity. Future added or revised items enter the same review scope.
 
 ### 3. Practical assessor calibration — OPEN
 

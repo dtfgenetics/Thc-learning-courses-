@@ -33,7 +33,9 @@ The internal Course 1 pilot target is **50 usable responses per knowledge item**
 
 These values are project planning thresholds, not universal psychometric standards and not evidence by themselves that an item or test is valid. Items below the minimum are marked **insufficient evidence** rather than passed or failed.
 
-The pilot should collect response-level data privately for all 72 formative items and all 36 final course-test items. Participant-level response data must not be committed to GitHub.
+The current pilot inventory includes **84 formative items and 36 final course-test items**. The pilot should collect response-level data privately for every item in the exact version being piloted. Participant-level response data must not be committed to GitHub.
+
+The bank is intentionally extensible. If items are added, replaced, retired, or revised before a pilot version is frozen, the pilot plan and analysis should follow that exact version rather than a historical item count.
 
 ## Required item-level analysis
 
