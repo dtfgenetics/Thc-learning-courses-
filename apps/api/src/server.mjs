@@ -10,6 +10,7 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { startOrResumeCourseAssessment, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { getCoursePracticalEvaluation, saveCoursePracticalEvaluation, loadCourse1PracticalForEvaluation } from './course-practical-evaluator-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -188,7 +189,8 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
       scorePercent: performance?.scorePercent ?? null,
       criticalErrorCount: Number(performance?.criticalErrorCount ?? 0),
       evaluatedAt: performance?.evaluatedAt ?? null,
-      updatedAt: performance?.updatedAt ?? null
+      updatedAt: performance?.updatedAt ?? null,
+      remediationSummary: performance?.remediationSummary ?? null
     } : null,
     completionModel: assessment.extensions?.completionModel ?? null
   };
@@ -197,6 +199,7 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
 export function createHandler({
   credentialStore = null,
   learnerStore = null,
+  practicalEvaluatorStore = null,
   env = process.env,
   requiredSchemaVersion = null,
   limiter = createFixedWindowRateLimiter(),
@@ -250,6 +253,44 @@ export function createHandler({
         }
       }
 
+      if (req.method === 'GET' && url.pathname === '/api/v1/evaluator/capabilities') {
+        route = 'GET /api/v1/evaluator/capabilities';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'evaluator:read', res, requestId);
+        if (!auth) return;
+        const available = Boolean(practicalEvaluatorStore && typeof practicalEvaluatorStore.getEvaluation === 'function' && typeof practicalEvaluatorStore.saveEvaluation === 'function');
+        return json(res, 200, { evaluator: { subject: auth.subject }, coursePracticalEvaluation: available, requestId });
+      }
+
+      const evaluatorPracticalMatch = url.pathname.match(/^\/api\/v1\/evaluator\/courses\/(COURSE-[A-Z0-9-]+)\/practical-evaluation$/);
+      if (req.method === 'GET' && evaluatorPracticalMatch) {
+        route = 'GET /api/v1/evaluator/courses/:courseId/practical-evaluation';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'evaluator:read', res, requestId);
+        if (!auth) return;
+        const result = await getCoursePracticalEvaluation({
+          store: practicalEvaluatorStore,
+          courseId: evaluatorPracticalMatch[1],
+          externalSubject: url.searchParams.get('learnerSubject')
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      if (req.method === 'PUT' && evaluatorPracticalMatch) {
+        route = 'PUT /api/v1/evaluator/courses/:courseId/practical-evaluation';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'evaluator:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 64 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await saveCoursePracticalEvaluation({
+          store: practicalEvaluatorStore,
+          courseId: evaluatorPracticalMatch[1],
+          externalSubject: body.learnerSubject,
+          evaluatorId: auth.subject,
+          input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
       if (req.method === 'GET' && url.pathname === '/api/v1/me/enrollments') {
         route = 'GET /api/v1/me/enrollments';
         const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
@@ -298,6 +339,14 @@ export function createHandler({
         if (!assessment) return json(res, 500, { error: 'course-final-assessment-not-found', requestId });
         const performanceAssessmentId = assessment.extensions?.linkedPerformanceAssessment ?? null;
         const evidence = await learnerStore.listCourseEvidence(auth.subject, { assessmentId: assessment.id, performanceAssessmentId });
+        if (performanceAssessmentId && practicalEvaluatorStore && typeof practicalEvaluatorStore.getEvaluation === 'function') {
+          const practical = loadCourse1PracticalForEvaluation(course.id);
+          if (practical?.id === performanceAssessmentId) {
+            const evaluatorRecord = await practicalEvaluatorStore.getEvaluation(auth.subject, { assessmentId: practical.id, assessmentVersion: practical.version });
+            const feedback = evaluatorRecord?.evaluation?.evidence?.learnerFeedback;
+            if (evidence.performanceAssessment && typeof feedback === 'string' && feedback.trim()) evidence.performanceAssessment.remediationSummary = feedback.trim();
+          }
+        }
         return json(res, 200, courseEvidenceView(course, assessment, evidence));
       }
 
@@ -383,6 +432,7 @@ export function createHandler({
           service: 'thc-academy-api',
           storageAdapter: resolvedCredentialStore.kind ?? 'unknown',
           learnerStorageAdapter: learnerStore?.kind ?? null,
+          practicalEvaluatorStorageAdapter: practicalEvaluatorStore?.kind ?? null,
           credentialCount: typeof resolvedCredentialStore.count === 'function' ? await resolvedCredentialStore.count() : null,
           authenticatedSubject: auth.subject,
           requestId
