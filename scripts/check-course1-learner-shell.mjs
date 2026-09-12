@@ -1,3 +1,4 @@
+import './check-course1-content-assets.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -58,4 +59,4 @@ expect(/\.rich-reveal\s+summary\s*\{[^}]*min-height:\s*44px/is, richStyles, 'ric
 
 expect(/field-reference-remediation/, governance, 'incorrect practice responses must retain targeted field-reference remediation');
 
-console.log('Course 1 learner shell audit passed: one practice renderer, responsive outline/navigation, touch targets, readable prose, field-reference remediation, and rich-content reflow are protected.');
+console.log('Course 1 learner shell audit passed: one practice renderer, responsive outline/navigation, touch targets, readable prose, field-reference remediation, rich-content reflow, and Course 1 content/visual completeness are protected.');
