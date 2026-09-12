@@ -17,6 +17,33 @@ function enrollmentRow(row) {
   };
 }
 
+function assessmentAttemptRow(row) {
+  return {
+    assessmentId: row.assessment_id,
+    assessmentVersion: String(row.assessment_version),
+    formId: row.form_id,
+    status: row.status,
+    startedAt: row.started_at ? new Date(row.started_at).toISOString() : null,
+    submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null,
+    scoredAt: row.scored_at ? new Date(row.scored_at).toISOString() : null,
+    scorePercent: row.score_percent == null ? null : Number(row.score_percent),
+    passed: row.passed == null ? null : Boolean(row.passed)
+  };
+}
+
+function performanceAssessmentRow(row) {
+  if (!row) return null;
+  return {
+    assessmentId: row.assessment_id,
+    assessmentVersion: String(row.assessment_version),
+    status: row.status,
+    scorePercent: row.score_percent == null ? null : Number(row.score_percent),
+    criticalErrorCount: Number(row.critical_error_count ?? 0),
+    evaluatedAt: row.evaluated_at ? new Date(row.evaluated_at).toISOString() : null,
+    updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+  };
+}
+
 export function createPostgresLearnerStore({ query } = {}) {
   if (typeof query !== 'function') throw new Error('PostgreSQL learner store requires a query(text, params) function');
 
@@ -115,6 +142,39 @@ export function createPostgresLearnerStore({ query } = {}) {
         completedAt: row.completed_at ? new Date(row.completed_at).toISOString() : null
       };
     },
+    async listCourseEvidence(externalSubject, { assessmentId, performanceAssessmentId = null } = {}) {
+      if (!assessmentId) throw new Error('assessmentId required');
+      const learnerId = await learnerIdForSubject(externalSubject);
+      if (!learnerId) {
+        return { learnerId: externalSubject, assessmentAttempts: [], performanceAssessment: null };
+      }
+
+      const attemptsResult = await queryOrUnavailable(
+        query,
+        `select assessment_id, assessment_version, form_id, status, started_at, submitted_at, scored_at, score_percent, passed
+           from assessment_attempts
+          where learner_id = $1 and assessment_id = $2
+          order by started_at desc`,
+        [learnerId, assessmentId]
+      );
+      const assessmentAttempts = (attemptsResult.rows ?? []).map(assessmentAttemptRow);
+
+      let performanceAssessment = null;
+      if (performanceAssessmentId) {
+        const performanceResult = await queryOrUnavailable(
+          query,
+          `select assessment_id, assessment_version, status, score_percent, critical_error_count, evaluated_at, updated_at
+             from performance_assessment_results
+            where learner_id = $1 and assessment_id = $2
+            order by updated_at desc
+            limit 1`,
+          [learnerId, performanceAssessmentId]
+        );
+        performanceAssessment = performanceAssessmentRow(performanceResult.rows?.[0] ?? null);
+      }
+
+      return { learnerId: externalSubject, assessmentAttempts, performanceAssessment };
+    },
     async listCredentialEvidence(externalSubject, { credentialDefinitionId } = {}) {
       if (!credentialDefinitionId) throw new Error('credentialDefinitionId required');
       const learnerId = await learnerIdForSubject(externalSubject);
@@ -130,17 +190,7 @@ export function createPostgresLearnerStore({ query } = {}) {
           order by started_at desc`,
         [learnerId]
       );
-      const assessmentAttempts = (attemptsResult.rows ?? []).map((row) => ({
-        assessmentId: row.assessment_id,
-        assessmentVersion: String(row.assessment_version),
-        formId: row.form_id,
-        status: row.status,
-        startedAt: row.started_at ? new Date(row.started_at).toISOString() : null,
-        submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null,
-        scoredAt: row.scored_at ? new Date(row.scored_at).toISOString() : null,
-        scorePercent: row.score_percent == null ? null : Number(row.score_percent),
-        passed: row.passed == null ? null : Boolean(row.passed)
-      }));
+      const assessmentAttempts = (attemptsResult.rows ?? []).map(assessmentAttemptRow);
       const bestByAssessment = new Map();
       for (const attempt of assessmentAttempts) {
         if (attempt.status !== 'scored') continue;
@@ -177,15 +227,7 @@ export function createPostgresLearnerStore({ query } = {}) {
           order by assessment_id, updated_at desc`,
         [learnerId]
       );
-      const performanceAssessments = (performanceResult.rows ?? []).map((row) => ({
-        assessmentId: row.assessment_id,
-        assessmentVersion: String(row.assessment_version),
-        status: row.status,
-        scorePercent: row.score_percent == null ? null : Number(row.score_percent),
-        criticalErrorCount: Number(row.critical_error_count ?? 0),
-        evaluatedAt: row.evaluated_at ? new Date(row.evaluated_at).toISOString() : null,
-        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
-      }));
+      const performanceAssessments = (performanceResult.rows ?? []).map(performanceAssessmentRow);
 
       const portfolioResult = await queryOrUnavailable(
         query,
