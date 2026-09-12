@@ -28,14 +28,17 @@ The current canonical lessons use richer instructional structures including evid
 
 - 6 expanded learner modules
 - 18 canonical learner lessons rendered from structured lesson objects
-- student workbook with 8 applied activities
-- workbook form/templates
+- student workbook with **12 applied activities**, including 4 deeper challenge labs for status stacking, traceability events, recurring equipment faults/servicing boundaries, and late-entry/closed-loop handoff
+- expanded workbook form/templates supporting pathway reconstruction, status-control matrices, transformation/event records, fault timelines, and handoff cross-checks
 - 6 operational job aids
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
 - lesson-level guided activities producing additional simulated workplace artifacts
 - integrated multi-stage Technician I shift simulation in Lesson 18
+- learner-facing integrated practical with staged mid-shift event injects while preserving the existing seven evidence outputs and competency framework
+
+Workbook/practical activity counts describe the current package and are not maximums. Additional guided labs, artifacts, or equivalent practice formats may be added or reorganized as the course improves.
 
 ## Instructor/assessor support
 
