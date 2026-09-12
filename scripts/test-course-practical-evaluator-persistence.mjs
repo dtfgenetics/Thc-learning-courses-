@@ -1,5 +1,14 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { createPostgresPracticalEvaluatorStore } from '../apps/api/src/postgres-practical-evaluator-store.mjs';
+
+const schema = fs.readFileSync('database/schema.sql', 'utf8');
+for (const marker of [
+  'create table if not exists practical_evaluation_assignments',
+  'primary key (learner_id, course_id, assessment_id, assessment_version)',
+  'idx_practical_assignment_evaluator',
+  "values ('3', 'Course practical evaluator assignment and ownership')"
+]) assert.ok(schema.includes(marker), `schema v3 missing ${marker}`);
 
 const calls = [];
 let learnerExists = true;
@@ -21,8 +30,10 @@ async function query(text, params) {
   if (text.includes('join enrollments e')) return { rows: [queueDbRow] };
   if (text.includes('select id from learners')) return { rows: learnerExists ? [{ id: learnerId }] : [] };
   if (text.includes('from learners l') && text.includes('left join performance_assessment_results')) return { rows: [storedRow] };
-  if (text.startsWith('insert into practical_evaluation_assignments')) return { rows: [{ assigned_evaluator_id: params[4], assigned_by: params[5], assigned_at: new Date('2026-09-12T13:00:00.000Z'), assignment_updated_at: new Date('2026-09-12T13:00:00.000Z') }] };
-  if (text.startsWith('delete from practical_evaluation_assignments')) return { rows: [{ evaluator_id: 'assessor-001' }] };
+  if (text.includes("'course-practical-assignment-claimed'")) return { rows: [{ assigned_evaluator_id: params[4], assigned_by: params[5], assigned_at: new Date('2026-09-12T13:00:00.000Z'), assignment_updated_at: new Date('2026-09-12T13:00:00.000Z') }] };
+  if (text.includes("'course-practical-assignment-set'")) return { rows: [{ assigned_evaluator_id: params[4], assigned_by: params[5], assigned_at: new Date('2026-09-12T13:00:00.000Z'), assignment_updated_at: new Date('2026-09-12T13:00:00.000Z') }] };
+  if (text.includes("'course-practical-assignment-cleared'")) return { rows: [] };
+  if (text.includes("'course-practical-assignment-released'")) return { rows: [{ evaluator_id: 'assessor-001' }] };
   if (text.includes('insert into performance_assessment_results')) return { rows: [storedRow] };
   throw new Error(`unexpected query: ${text}`);
 }
@@ -47,13 +58,25 @@ assert.equal(fetched.learnerExists, true); assert.equal(fetched.evaluation.evide
 
 const claimed = await store.claimEvaluator('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-001' });
 assert.equal(claimed.conflict, false); assert.equal(claimed.assignment.evaluatorId, 'assessor-001');
-const claimCall = calls.find((call) => call.text.startsWith('insert into practical_evaluation_assignments'));
+const claimCall = calls.find((call) => call.text.includes("'course-practical-assignment-claimed'"));
 assert.ok(claimCall.text.includes('where practical_evaluation_assignments.evaluator_id = excluded.evaluator_id'), 'evaluator claim must not overwrite another evaluator');
+assert.ok(claimCall.text.includes('insert into audit_events'), 'claims must be audited atomically');
+assert.deepEqual(claimCall.params, [learnerId, 'COURSE-LH-TECH1-001', storedRow.assessment_id, storedRow.assessment_version, 'assessor-001', 'assessor-001', 'learner-external-001']);
 
 const reassigned = await store.setEvaluatorAssignment('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-002', assignedBy: 'admin-001' });
 assert.equal(reassigned.assignment.evaluatorId, 'assessor-002');
+const adminSetCall = calls.find((call) => call.text.includes("'course-practical-assignment-set'"));
+assert.ok(adminSetCall.text.includes('insert into audit_events'));
+assert.equal(adminSetCall.text.includes('Private evaluator note'), false);
+
 const released = await store.releaseEvaluator('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-001' });
 assert.equal(released.released, true);
+const releaseCall = calls.find((call) => call.text.includes("'course-practical-assignment-released'"));
+assert.ok(releaseCall.text.includes('insert into audit_events'));
+
+await store.setEvaluatorAssignment('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: null, assignedBy: 'admin-001' });
+const clearCall = calls.find((call) => call.text.includes("'course-practical-assignment-cleared'"));
+assert.ok(clearCall.text.includes('insert into audit_events'));
 
 const writeRecord = { assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, status: 'failed', scorePercent: 92, criticalErrorCount: 1, evidence: storedRow.evidence_json, evaluatorId: 'assessor-001', evaluatedAt: '2026-09-12T12:00:00.000Z' };
 const saved = await store.saveEvaluation('learner-external-001', writeRecord);
@@ -69,4 +92,4 @@ assert.deepEqual(missing, { learnerExists: false, evaluation: null, assignment: 
 const missingClaim = await store.claimEvaluator('missing-learner', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-001' });
 assert.equal(missingClaim.learnerExists, false);
 
-console.log('Course 1 evaluator PostgreSQL pagination, assignment ownership, reporting, audit-event, parameterization, and privacy contracts passed.');
+console.log('Course 1 evaluator schema v3, PostgreSQL pagination, assignment audit/ownership, reporting, parameterization, and privacy contracts passed.');
