@@ -34,7 +34,7 @@ function queueStatus(value) {
   return status;
 }
 
-export async function listCoursePracticalQueue({ store, courseId, search = '', practicalStatus = '', limit = 50 } = {}) {
+export async function listCoursePracticalQueue({ store, courseId, search = '', practicalStatus = '', limit = 100 } = {}) {
   const practical = loadCourse1PracticalForEvaluation(courseId);
   if (!practical) return { status: 404, body: { error: 'course-practical-not-found' } };
   if (!store || typeof store.listCourseLearners !== 'function') return { status: 503, body: { error: 'practical-evaluator-persistence-unavailable' } };
@@ -46,7 +46,7 @@ export async function listCoursePracticalQueue({ store, courseId, search = '', p
   } catch (error) {
     return { status: 400, body: { error: error.message } };
   }
-  const normalizedLimit = Math.min(100, Math.max(1, Number.isFinite(Number(limit)) ? Math.trunc(Number(limit)) : 50));
+  const normalizedLimit = Math.min(200, Math.max(1, Number.isFinite(Number(limit)) ? Math.trunc(Number(limit)) : 100));
   const learners = await store.listCourseLearners({
     courseId,
     assessmentId: practical.id,
@@ -59,7 +59,7 @@ export async function listCoursePracticalQueue({ store, courseId, search = '', p
     status: 200,
     body: {
       course: { id: COURSE_ID },
-      practical: { id: practical.id, version: practical.version },
+      practical: { id: practical.id, title: practical.title, version: practical.version },
       filters: { search: normalizedSearch, practicalStatus: normalizedStatus },
       learners
     }
@@ -67,6 +67,9 @@ export async function listCoursePracticalQueue({ store, courseId, search = '', p
 }
 
 export async function getCoursePracticalEvaluation({ store, courseId, externalSubject } = {}) {
+  if (externalSubject == null || String(externalSubject).trim() === '') {
+    return listCoursePracticalQueue({ store, courseId });
+  }
   const practical = loadCourse1PracticalForEvaluation(courseId);
   if (!practical) return { status: 404, body: { error: 'course-practical-not-found' } };
   if (!store || typeof store.getEvaluation !== 'function') return { status: 503, body: { error: 'practical-evaluator-persistence-unavailable' } };
