@@ -9,6 +9,7 @@ import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
+import { startOrResumeCourseAssessment, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -298,6 +299,39 @@ export function createHandler({
         const performanceAssessmentId = assessment.extensions?.linkedPerformanceAssessment ?? null;
         const evidence = await learnerStore.listCourseEvidence(auth.subject, { assessmentId: assessment.id, performanceAssessmentId });
         return json(res, 200, courseEvidenceView(course, assessment, evidence));
+      }
+
+      const courseAssessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/assessment-attempts$/);
+      if (req.method === 'POST' && courseAssessmentStartMatch) {
+        route = 'POST /api/v1/me/courses/:courseId/assessment-attempts';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || ['findOpenAssessmentAttempt','createAssessmentAttempt'].some((method) => typeof learnerStore[method] !== 'function')) return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        const result = await startOrResumeCourseAssessment({ learnerStore, subject: auth.subject, courseId: courseAssessmentStartMatch[1] });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const assessmentResponsesMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]{36})\/responses$/);
+      if (req.method === 'PUT' && assessmentResponsesMatch) {
+        route = 'PUT /api/v1/me/assessment-attempts/:attemptId/responses';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || ['getAssessmentAttempt','saveAssessmentResponses'].some((method) => typeof learnerStore[method] !== 'function')) return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 32 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await saveCourseAssessmentResponses({ learnerStore, subject: auth.subject, attemptId: assessmentResponsesMatch[1], responses: body.responses });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const assessmentSubmitMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]{36})\/submit$/);
+      if (req.method === 'POST' && assessmentSubmitMatch) {
+        route = 'POST /api/v1/me/assessment-attempts/:attemptId/submit';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || ['getAssessmentAttempt','saveAssessmentScore'].some((method) => typeof learnerStore[method] !== 'function')) return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        const result = await submitCourseAssessment({ learnerStore, subject: auth.subject, attemptId: assessmentSubmitMatch[1] });
+        return json(res, result.status, { ...result.body, requestId });
       }
 
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
