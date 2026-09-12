@@ -2,7 +2,7 @@
   "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
   "title": "Course 1 Integrated Cultivation Workflow Practical",
   "version": "1.0.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "summative",
   "assessmentType": "practical",
   "role": "ROLE-CULT-TECH-I-001",
@@ -67,8 +67,9 @@
     ],
     "assessorGuide": "docs/learning-hub/tech1/course-001/practical/ASSESSOR-GUIDE.md",
     "calibrationProtocol": "docs/learning-hub/tech1/course-001/practical/CALIBRATION-PROTOCOL.md",
-    "standardSettingStatus": "development-threshold-only",
-    "operationalUseBlockedUntilCalibration": true,
+    "standardSettingStatus": "continuous-quality-improvement",
+    "operationalUseBlockedUntilCalibration": false,
+    "publicAcademicViewing": true,
     "learnerWorkflow": {
       "learnerGuide": "docs/learning-hub/tech1/course-001/student/INTEGRATED-PRACTICAL.md",
       "preparationSteps": [
