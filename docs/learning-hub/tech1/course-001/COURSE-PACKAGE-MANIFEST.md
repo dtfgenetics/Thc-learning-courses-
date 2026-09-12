@@ -30,7 +30,9 @@ The current canonical lessons use richer instructional structures including evid
 - 18 canonical learner lessons rendered from structured lesson objects
 - student workbook with **12 applied activities**, including 4 deeper challenge labs for status stacking, traceability events, recurring equipment faults/servicing boundaries, and late-entry/closed-loop handoff
 - expanded workbook form/templates supporting pathway reconstruction, status-control matrices, transformation/event records, fault timelines, and handoff cross-checks
-- 6 operational job aids
+- **6 expanded field-ready operational job aids**, each mapped to Course 1 objectives and workbook practice
+- learner-facing field-reference index covering when to use each aid and how to combine them during multi-problem situations
+- field-reference production specification for mobile, print, accessibility, visual hierarchy and version maintenance
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
@@ -38,7 +40,9 @@ The current canonical lessons use richer instructional structures including evid
 - integrated multi-stage Technician I shift simulation in Lesson 18
 - learner-facing integrated practical with staged mid-shift event injects while preserving the existing seven evidence outputs and competency framework
 
-Workbook/practical activity counts describe the current package and are not maximums. Additional guided labs, artifacts, or equivalent practice formats may be added or reorganized as the course improves.
+The six current field references cover hazard response/PPE/HazCom; biosecurity/sanitation/status control; controlled work instructions/authority; traceability/event genealogy/reconciliation; equipment readiness/operator-care boundaries/fault escalation; and data integrity/record correction/shift handoff.
+
+Workbook, practical and field-reference counts describe the current package and are not maximums. Additional guided labs, field references, role-specific variants, translated/accessibility formats, artifacts, or equivalent practice formats may be added or reorganized as the course improves.
 
 ## Instructor/assessor support
 
@@ -102,6 +106,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.
