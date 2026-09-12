@@ -61,8 +61,7 @@ function courseEvidenceLabel(value, kind) {
 }
 
 function courseEvidenceBadge(value, kind) {
-  const badge = text('span', courseEvidenceLabel(value, kind), `course-evidence-status status-${String(value ?? 'not-recorded')}`);
-  return badge;
+  return text('span', courseEvidenceLabel(value, kind), `course-evidence-status status-${String(value ?? 'not-recorded')}`);
 }
 
 function courseEvidenceRow(label, status, kind, detail = '') {
@@ -129,7 +128,7 @@ function buildCourseEvidencePanel(result) {
 async function injectCourse1Evidence() {
   if (!catalogRoot) return;
   const target = [...catalogRoot.querySelectorAll('details.course')].find((course) => course.querySelector('summary > span')?.textContent?.trim() === COURSE1_TITLE);
-  if (!target || target.querySelector('.course-evidence-panel')) return;
+  if (!target || target.querySelector('.course-evidence-panel, .course-evidence-loading')) return;
   const marker = document.createElement('div');
   marker.className = 'course-evidence-loading';
   marker.append(text('p', 'Loading official course evidence…', 'course-evidence-note'));
