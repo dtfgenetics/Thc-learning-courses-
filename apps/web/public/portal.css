@@ -63,6 +63,52 @@
 .portal-practice-answers button.correct { border-color: var(--green); background: var(--green-soft); }
 .portal-practice-answers button.incorrect { border-color: #b24a3b; background: #f8e4e1; }
 .portal-practice-feedback { margin: .75rem 0 0; color: var(--muted); }
+
+.field-reference-search { margin-top: 1.25rem; }
+.field-reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .9rem; margin-top: 1rem; }
+.field-reference-card { display: flex; flex-direction: column; gap: .55rem; border: 1px solid var(--line); border-radius: .8rem; padding: 1rem; background: #fff; min-width: 0; }
+.field-reference-card h3 { margin: 0; line-height: 1.2; }
+.field-reference-module { margin: 0; color: var(--gold); font-weight: 850; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
+.field-reference-summary { color: var(--muted); margin: 0; flex: 1; }
+.field-reference-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+.field-reference-tag { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: .2rem .45rem; font-size: .7rem; font-weight: 750; color: var(--muted); background: var(--panel); }
+.field-reference-button, .field-reference-print, .field-reference-back { border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .55rem; padding: .55rem .75rem; font-weight: 800; cursor: pointer; }
+.field-reference-back { background: transparent; color: var(--green); margin-bottom: 1rem; }
+.field-reference-button:hover, .field-reference-print:hover { filter: brightness(.94); }
+.field-reference-button:focus-visible, .field-reference-print:focus-visible, .field-reference-back:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
+.field-reference-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+.field-reference-section { margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.field-reference-section h3 { margin: 0 0 .65rem; }
+.field-reference-section ol, .field-reference-section ul { padding-left: 1.3rem; }
+.field-reference-section li + li { margin-top: .4rem; }
+.field-reference-stop { border-left: 4px solid #9b6b22; padding-left: 1rem; background: #fbf2df; border-top: 0; border-radius: .35rem; padding-bottom: .8rem; padding-right: .8rem; }
+.field-reference-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.field-reference-example { border: 1px solid var(--line); border-radius: .7rem; padding: .9rem; background: #fff; }
+.field-reference-example p { margin: .35rem 0 0; }
+.field-reference-example.weak { border-left: 4px solid #b24a3b; }
+.field-reference-example.strong { border-left: 4px solid var(--green); }
+.field-reference-formula { border-left: 4px solid var(--green); padding: .8rem 1rem; background: var(--green-soft); border-radius: 0 .45rem .45rem 0; font-weight: 700; }
+.field-reference-boundary { margin-top: 1.8rem; padding: 1rem; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
+.field-reference-boundary p { margin: .35rem 0 0; color: var(--muted); }
+.field-reference-quick { margin-top: .45rem; }
+.field-reference-quick .field-reference-button { width: 100%; text-align: left; background: transparent; color: var(--green); border-color: var(--line); font-size: .76rem; padding: .42rem .55rem; }
+.field-reference-quick .field-reference-button:hover { background: var(--green-soft); border-color: var(--green); }
+.lesson-field-reference { display: grid; gap: .55rem; margin: 1rem 0 1.5rem; padding: .85rem 1rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: .55rem; background: #fff; }
+.lesson-field-reference > span { color: var(--muted); }
+.lesson-field-reference .field-reference-button { justify-self: start; }
+.field-reference-remediation { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .75rem; padding-top: .75rem; border-top: 1px dashed var(--line); color: var(--muted); }
+.field-reference-remediation .field-reference-button { padding: .4rem .6rem; font-size: .8rem; }
+
 @media (max-width: 840px) { .header-right { align-items: flex-start; width: 100%; } .portal-nav { justify-content: flex-start; } .portal-verify-form { flex-direction: column; } }
-@media (max-width: 620px) { .portal-progress-summary { grid-template-columns: 1fr 1fr; } .portal-evidence-row { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 620px) { .portal-progress-summary { grid-template-columns: 1fr 1fr; } .portal-evidence-row { align-items: flex-start; flex-direction: column; } .field-reference-grid, .field-reference-comparison { grid-template-columns: 1fr; } .field-reference-button, .field-reference-print { min-height: 44px; } }
 @media (max-width: 420px) { .portal-progress-summary { grid-template-columns: 1fr; } }
+
+@media print {
+  .site-header, .governance-dashboard, .catalog-panel, .site-footer, .field-reference-back, .field-reference-actions, .lesson-field-reference, .field-reference-remediation { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .app-shell { display: block; min-height: 0; }
+  .lesson-panel { padding: 0; }
+  .portal-panel.field-reference-detail { max-width: none; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: #fff; }
+  .field-reference-section, .field-reference-boundary, .field-reference-example { break-inside: avoid; }
+  .field-reference-tag { border-color: #888; color: #000; background: #fff; }
+}
