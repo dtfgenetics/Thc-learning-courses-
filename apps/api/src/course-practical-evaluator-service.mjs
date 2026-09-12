@@ -1,0 +1,57 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { buildPracticalEvaluation, practicalEvaluatorView } from '../../../packages/domain/course-practical-evaluation.mjs';
+
+const root = process.cwd();
+const COURSE_ID = 'COURSE-LH-TECH1-001';
+const PRACTICAL_ID = 'PRACTICAL-LH-TECH1-001-WORKFLOW';
+
+function readJson(rel) { return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8')); }
+
+export function loadCourse1PracticalForEvaluation(courseId) {
+  if (courseId !== COURSE_ID) return null;
+  const practical = readJson(`content/performance-assessments/${PRACTICAL_ID}.json`);
+  if (practical.id !== PRACTICAL_ID || practical.status !== 'published') return null;
+  return practical;
+}
+
+function learnerSubject(value) {
+  const subject = String(value ?? '').trim();
+  if (!subject || subject.length > 256 || /[\u0000-\u001f]/.test(subject)) throw new Error('invalid-learner-subject');
+  return subject;
+}
+
+export async function getCoursePracticalEvaluation({ store, courseId, externalSubject } = {}) {
+  const practical = loadCourse1PracticalForEvaluation(courseId);
+  if (!practical) return { status: 404, body: { error: 'course-practical-not-found' } };
+  if (!store || typeof store.getEvaluation !== 'function') return { status: 503, body: { error: 'practical-evaluator-persistence-unavailable' } };
+  let subject;
+  try { subject = learnerSubject(externalSubject); }
+  catch (error) { return { status: 400, body: { error: error.message } }; }
+  const current = await store.getEvaluation(subject, { assessmentId: practical.id, assessmentVersion: practical.version });
+  if (!current?.learnerExists) return { status: 404, body: { error: 'learner-not-found' } };
+  return { status: 200, body: { learner: { subject }, ...practicalEvaluatorView(practical, current.evaluation) } };
+}
+
+export async function saveCoursePracticalEvaluation({ store, courseId, externalSubject, evaluatorId, input } = {}) {
+  const practical = loadCourse1PracticalForEvaluation(courseId);
+  if (!practical) return { status: 404, body: { error: 'course-practical-not-found' } };
+  if (!store || typeof store.getEvaluation !== 'function' || typeof store.saveEvaluation !== 'function') return { status: 503, body: { error: 'practical-evaluator-persistence-unavailable' } };
+  let subject;
+  try { subject = learnerSubject(externalSubject); }
+  catch (error) { return { status: 400, body: { error: error.message } }; }
+
+  const current = await store.getEvaluation(subject, { assessmentId: practical.id, assessmentVersion: practical.version });
+  if (!current?.learnerExists) return { status: 404, body: { error: 'learner-not-found' } };
+
+  let record;
+  try {
+    record = buildPracticalEvaluation({ practical, existing: current.evaluation, input, evaluatorId });
+  } catch (error) {
+    return { status: 400, body: { error: error.message } };
+  }
+
+  const saved = await store.saveEvaluation(subject, record);
+  if (!saved?.learnerExists || !saved.evaluation) return { status: 409, body: { error: 'practical-evaluation-write-conflict' } };
+  return { status: 200, body: { learner: { subject }, ...practicalEvaluatorView(practical, saved.evaluation) } };
+}
