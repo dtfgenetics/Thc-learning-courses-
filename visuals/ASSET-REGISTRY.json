@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "courseId": "COURSE-LH-TECH1-001",
   "policy": {
     "expandable": true,
@@ -95,8 +95,8 @@
       "title": "Operator-care versus servicing boundary",
       "learnerPath": "/assets/course1/operator-care-servicing-boundary.svg",
       "sourcePath": "apps/web/public/assets/course1/operator-care-servicing-boundary.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-001-13", "LESSON-LH-TECH1-001-14"],
-      "purpose": "Separate assigned operator cleaning/checks from disassembly, protected access, jam clearing, and hazardous-energy servicing."
+      "primaryLessons": ["LESSON-LH-TECH1-001-08", "LESSON-LH-TECH1-001-13", "LESSON-LH-TECH1-001-14"],
+      "purpose": "Separate assigned operator cleaning/checks from disassembly, protected access, jam clearing, and hazardous-energy servicing, and reinforce authorization boundaries."
     },
     {
       "id": "VIS-LH-TECH1-001-011",
@@ -115,6 +115,24 @@
       "sourcePath": "apps/web/public/assets/course1/shift-handoff-model.svg",
       "primaryLessons": ["LESSON-LH-TECH1-001-17", "LESSON-LH-TECH1-001-18"],
       "purpose": "Show outgoing preparation, written status, two-way exchange, incoming cross-check, and ownership of open conditions."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-013",
+      "status": "produced",
+      "title": "Deviation and incomplete-work status decision map",
+      "learnerPath": "/assets/course1/deviation-status-decision-map.svg",
+      "sourcePath": "apps/web/public/assets/course1/deviation-status-decision-map.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-09"],
+      "purpose": "Help learners classify complete work, planned exceptions, deviations, incomplete work, and unknown or unverified status without manufacturing completion."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-014",
+      "status": "produced",
+      "title": "Data-integrity record lifecycle",
+      "learnerPath": "/assets/course1/data-integrity-record-lifecycle.svg",
+      "sourcePath": "apps/web/public/assets/course1/data-integrity-record-lifecycle.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-16"],
+      "purpose": "Show the lifecycle from controlled identity and contemporaneous observation through attributable entry, transparent correction, late or missing-data handling, and reconstructable handoff."
     }
   ]
 }
