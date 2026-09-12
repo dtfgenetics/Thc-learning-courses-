@@ -42,6 +42,8 @@ try {
   assert.match(homeHtml, /THC Academy/);
   assert.match(homeHtml, /governance-dashboard/);
   assert.match(homeHtml, /rich-content\.css/, 'Academy shell should load the rich-content stylesheet');
+  assert.match(homeHtml, /course-assessment\.css/, 'Academy shell should load the Course 1 final stylesheet');
+  assert.match(homeHtml, /course-assessment\.js/, 'Academy shell should load the Course 1 final client');
 
   const richRendererResponse = await fetch(`${base}/rich-content.js`);
   assert.equal(richRendererResponse.status, 200);
@@ -52,6 +54,15 @@ try {
   const appResponse = await fetch(`${base}/app.js`);
   assert.equal(appResponse.status, 200);
   assert.match(await appResponse.text(), /renderRichBlocks\(fieldset, item\.stimulus\)/, 'practice UI should render sanitized rich evidence stimuli before choices');
+
+  const assessmentClient = await fetch(`${base}/course-assessment.js`);
+  assert.equal(assessmentClient.status, 200);
+  const assessmentClientText = await assessmentClient.text();
+  assert.match(assessmentClientText, /assessment-attempts/, 'Course 1 final client should expose the authenticated assessment workflow');
+  assert.match(assessmentClientText, /restricted Technician I certification examination/, 'Course 1 final client must state the credential-exam boundary');
+  const assessmentStyles = await fetch(`${base}/course-assessment.css`);
+  assert.equal(assessmentStyles.status, 200);
+  assert.match(await assessmentStyles.text(), /course-assessment-choice/, 'Course 1 final styles should include assessment controls');
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
@@ -196,4 +207,4 @@ try {
   await once(production, 'close');
 }
 
-console.log('Academy learner web and staging governance tests passed.');
+console.log('Academy learner web, Course 1 final assets, and staging governance tests passed.');
