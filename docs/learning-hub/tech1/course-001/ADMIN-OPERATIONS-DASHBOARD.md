@@ -23,10 +23,10 @@ The dashboard consumes the privacy-bounded Course 1 practical report, enriched w
 - evaluator-assignment filtering;
 - follow-up/reassessment filtering;
 - evaluator assignment/reassignment controls;
-- privacy-bounded CSV export for the existing practical report fields;
+- privacy-bounded CSV export including academic completion/reopen dates and transition counts;
 - refreshable cohort state.
 
-The academic-history column shows only transition count, reopen count and the latest academic transition/time. It does not expose the full learner audit event payload in the administrator table.
+The academic-history column shows transition count, reopen count and the latest academic transition/time. It does not expose the full learner audit event payload in the administrator table.
 
 These are runtime operational views. They do not impose a maximum cohort size, practical count, content count or curriculum ceiling.
 
@@ -46,6 +46,8 @@ Operational filters therefore answer distinct questions:
 
 A learner may appear as currently complete and also ever reopened. That represents a valid historical sequence such as Completed → Reopened → Completed.
 
+The server-side operational report summary also returns `academicCompleted`, `academicEverReopened`, and `academicTransitions` so administrative metrics do not have to infer those values from private audit payloads.
+
 ## Assignment authority
 
 Assignment changes use the server-side administrator practical-assignment endpoint. The browser supplies only the learner subject and target evaluator subject. The server remains responsible for authorization, persistence and assignment audit events.
@@ -64,13 +66,28 @@ The admin dashboard intentionally works from the privacy-bounded operational rep
 - credential-exam answer keys;
 - credential signing or issuance data.
 
-The academic report enrichment is limited to current enrollment status, transition count, reopen count and latest transition type/time. Detailed learner academic history remains in the authenticated learner Course Record and underlying controlled audit system.
+The academic report enrichment is limited to current enrollment status plus compact transition/completion fields. Detailed learner academic history remains in the authenticated learner Course Record and underlying controlled audit system.
 
 Detailed evaluation evidence remains in the authorized assessor workflow. Public Course 1 academic content remains public independently of this dashboard.
 
 ## Export
 
-CSV export uses the existing administrator report endpoint with `format=csv`. The existing CSV remains privacy-bounded and does not add hidden evaluator evidence. Academic metrics and filters are calculated from the JSON operational report rows in the role-gated dashboard; they do not require a second admin endpoint.
+CSV export uses the existing administrator report endpoint with `format=csv`. No second administrator report endpoint is required.
+
+The privacy-bounded CSV now includes:
+
+- learner subject and current academic enrollment state;
+- academic transition count;
+- academic reopen count;
+- first recorded academic completion date;
+- latest recorded academic completion date;
+- latest academic reopening date;
+- latest academic transition type/time;
+- current practical status, score and critical-error count;
+- follow-up/reassessment state;
+- evaluator assignment and evaluation/update timestamps.
+
+These dates are derived from the minimal academic transition history already produced by the enrollment-completion system. The export intentionally excludes full audit metadata, assessment responses, private evaluator notes, detailed evidence references, credential-exam content and credential signing/issuance data.
 
 ## Accessibility and responsive behavior
 
@@ -78,19 +95,20 @@ The dashboard uses semantic labels and tables, keyboard-focusable horizontal tab
 
 ## Quality gate
 
-`scripts/test-course1-admin-dashboard.mjs` is part of the root test chain. It checks:
+`scripts/test-course1-admin-dashboard.mjs` and `scripts/test-course1-completion-documents.mjs` are part of the root test chain. Together they check:
 
 - hidden-by-default Admin navigation;
 - admin authorization boundary;
 - Course 1 practical report and assignment endpoints;
 - academic completion/reopen metrics and filters;
 - transition/reopen metadata rendering;
-- privacy-bounded CSV export;
+- completion/reopen date fields in the privacy-bounded CSV;
 - absence of private evaluator-note/evidence-detail rendering;
 - safe DOM construction without `innerHTML`;
 - same-origin authenticated requests;
 - responsive/touch/print contracts;
-- Node-safe browser initialization guard.
+- Node-safe browser initialization guard;
+- deterministic serving of the learner academic-download runtime.
 
 The Course 1 enrollment-completion runtime and PostgreSQL persistence tests separately verify the audit-backed transition metadata that feeds the dashboard.
 

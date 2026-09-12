@@ -135,6 +135,21 @@ The Academy `Course Record` surface includes:
 
 Printing is a learner convenience. A printed page is not a cryptographically verifiable professional credential.
 
+## Downloadable academic record
+
+The Course Record also exposes learner-controlled downloads generated from the same learner-safe academic record model already used on screen.
+
+Two formats are available:
+
+- **Academic transcript / completion statement (`.txt`)** — a human-readable record containing course identity/version, current academic status, instruction completion, public course-final result, practical result, learner-facing practical follow-up, academic completion/reopen history, and course-version enrollment history. When the learner is currently complete the control is labeled as a completion transcript; when requirements remain open it is labeled as an academic transcript.
+- **Academic record data (`.json`)** — a machine-readable export of the same learner-facing record plus export timestamp and an explicit academic-only boundary statement.
+
+The download code does not create a second completion decision and does not persist a separate transcript database. It reads the same authenticated lesson-progress, enrollment/history and course-evidence sources used to build the Course Record, then creates the file locally in the learner's browser.
+
+Both exports explicitly state that they are academic learning records and are **not** professional credentials, licenses, certifications, credential-eligibility decisions, or substitutes for the separate credential system. They are not cryptographically signed credential artifacts.
+
+The download projection intentionally excludes evaluator identity, private evaluator notes, detailed practical evidence locators, raw learner assessment responses, answer keys, secure credential-exam material, credential signing data and unrelated audit events.
+
 ## Privacy boundary
 
 The course record is private to the authenticated learner. It must not expose:
