@@ -7,6 +7,7 @@ import {
   normalizePresentedResponse,
   scorePersistedCourseAssessment
 } from '../../../packages/domain/course-assessment-runtime.mjs';
+import { deriveCourseAssessmentResults } from '../../../packages/domain/course-grader-v2.mjs';
 
 const root = process.cwd();
 
@@ -71,7 +72,12 @@ export function loadPublishedCourseAssessment(courseId) {
     const competency = loadById('competencies', competencyId);
     competencyTitles.set(competencyId, competency?.title ?? competencyId);
   }
-  return { course, assessment, itemBank, competencyTitles, release };
+  const objectiveTitles = new Map();
+  for (const objectiveId of assessment.objectives ?? []) {
+    const objective = loadById('learning-objectives', objectiveId);
+    objectiveTitles.set(objectiveId, objective?.title ?? objective?.statement ?? objectiveId);
+  }
+  return { course, assessment, itemBank, competencyTitles, objectiveTitles, release };
 }
 
 function ensureAttemptMatchesPackage(attempt, bundle) {
@@ -139,14 +145,35 @@ export async function saveCourseAssessmentResponses({ learnerStore, subject, att
   return { status: 200, body: { attemptId, saved: normalized.length } };
 }
 
-function resultView(bundle, attempt, competencyRows) {
+function resultView(bundle, attempt) {
+  const results = deriveCourseAssessmentResults({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank });
+  const competencyResults = results.competencyResults.map((row) => ({
+    competencyId: row.competency,
+    title: bundle.competencyTitles.get(row.competency) ?? row.competency,
+    scorePercent: row.scorePercent,
+    masteryLevel: row.masteryLevel,
+    itemCount: row.itemCount,
+    minimumPercent: Object.hasOwn(results.policy.competencyMinimums, row.competency) ? results.policy.competencyMinimums[row.competency] : null,
+    minimumMet: !Object.hasOwn(results.policy.competencyMinimums, row.competency) || row.scorePercent >= results.policy.competencyMinimums[row.competency]
+  }));
+  const objectiveResults = results.objectiveResults.map((row) => ({
+    objectiveId: row.objective,
+    title: bundle.objectiveTitles.get(row.objective) ?? row.objective,
+    scorePercent: row.scorePercent,
+    masteryLevel: row.masteryLevel,
+    itemCount: row.itemCount
+  }));
+  const weakestCompetencies = [...competencyResults].sort((a, b) => a.scorePercent - b.scorePercent).slice(0, 3).map((row) => ({ competencyId: row.competencyId, title: row.title, scorePercent: row.scorePercent }));
+  const weakestObjectives = [...objectiveResults].sort((a, b) => a.scorePercent - b.scorePercent).slice(0, 4).map((row) => ({ objectiveId: row.objectiveId, title: row.title, scorePercent: row.scorePercent }));
   return {
     course: { id: bundle.course.id, title: bundle.course.title },
     assessment: {
       id: bundle.assessment.id,
       title: bundle.assessment.title,
       passingScorePercent: Number(bundle.assessment.passingScorePercent ?? 0),
-      feedbackMode: bundle.assessment.feedbackMode ?? null
+      feedbackMode: bundle.assessment.feedbackMode ?? null,
+      gradingAlgorithmVersion: results.algorithmVersion,
+      gradingPolicyVersion: bundle.assessment.extensions?.gradingPolicy?.policyVersion ?? null
     },
     attempt: {
       id: attempt.id,
@@ -157,33 +184,20 @@ function resultView(bundle, attempt, competencyRows) {
       scorePercent: Number(attempt.scorePercent),
       passed: Boolean(attempt.passed)
     },
-    competencyResults: competencyRows.map((row) => ({
-      competencyId: row.competency,
-      title: bundle.competencyTitles.get(row.competency) ?? row.competency,
-      scorePercent: row.scorePercent,
-      masteryLevel: row.masteryLevel
-    })),
+    gradingDecision: {
+      overallScorePassed: results.overallScorePassed,
+      competencyMinimumsPassed: results.competencyMinimumsPassed,
+      failedCompetencyMinimums: results.failedCompetencyMinimums
+    },
+    competencyResults,
+    objectiveResults,
     remediation: attempt.passed ? null : {
-      message: 'Review the weakest competency areas, return to the aligned lessons and field references, then begin a new equivalent course-final attempt when ready.',
+      message: 'Review the weakest competency and objective areas, return to the aligned lessons and Field References, complete targeted practice, then begin a new equivalent course-final attempt when ready.',
+      weakestCompetencies,
+      weakestObjectives,
       answerReviewAvailable: false
     }
   };
-}
-
-function competencyRowsFromScoredAttempt(attempt) {
-  const groups = new Map();
-  for (const item of attempt.items ?? []) {
-    const key = item.competency ?? 'UNMAPPED';
-    const row = groups.get(key) ?? { earned: 0, possible: 0 };
-    row.earned += Number(item.score ?? 0);
-    row.possible += Number(item.maxScore ?? 1);
-    groups.set(key, row);
-  }
-  return [...groups.entries()].map(([competency, row]) => ({
-    competency,
-    scorePercent: row.possible ? Number(((row.earned / row.possible) * 100).toFixed(2)) : 0,
-    masteryLevel: row.possible && row.earned === row.possible ? 'demonstrated' : row.earned > 0 ? 'developing' : 'not-demonstrated'
-  }));
 }
 
 export async function submitCourseAssessment({ learnerStore, subject, attemptId, now = new Date().toISOString() }) {
@@ -194,12 +208,12 @@ export async function submitCourseAssessment({ learnerStore, subject, attemptId,
   const bundle = loadPublishedCourseAssessment(assessment.extensions.courseId);
   if (bundle.error) return { status: 409, body: { error: bundle.error } };
   ensureAttemptMatchesPackage(attempt, bundle);
-  if (attempt.status === 'scored') return { status: 200, body: resultView(bundle, attempt, competencyRowsFromScoredAttempt(attempt)) };
+  if (attempt.status === 'scored') return { status: 200, body: resultView(bundle, attempt) };
   if (attempt.status !== 'started') return { status: 409, body: { error: 'assessment-attempt-not-submittable', status: attempt.status } };
   try {
     const scored = scorePersistedCourseAssessment({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank, now });
     const saved = await learnerStore.saveAssessmentScore(subject, { attempt: scored.attempt });
-    return { status: 200, body: resultView(bundle, saved, scored.competencyResults) };
+    return { status: 200, body: resultView(bundle, saved) };
   } catch (error) {
     if (/unanswered item/.test(error.message)) return { status: 409, body: { error: 'assessment-incomplete', detail: error.message } };
     throw error;
