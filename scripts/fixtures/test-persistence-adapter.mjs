@@ -1,6 +1,7 @@
 export async function createPersistenceAdapters() {
   const progress = new Map();
   const enrollments = new Map();
+  const attempts = new Map();
   return {
     credentialStore: {
       kind: 'test-persistent',
@@ -42,12 +43,51 @@ export async function createPersistenceAdapters() {
         progress.set(subject, next);
         return stored;
       },
+      async findOpenAssessmentAttempt(subject, { assessmentId } = {}) {
+        return [...attempts.values()].find((row) => row.learnerId === subject && row.assessmentId === assessmentId && ['started', 'submitted'].includes(row.status)) ?? null;
+      },
+      async getAssessmentAttempt(subject, { attemptId } = {}) {
+        const row = attempts.get(attemptId);
+        return row?.learnerId === subject ? structuredClone(row) : null;
+      },
+      async createAssessmentAttempt(subject, { attempt } = {}) {
+        const stored = structuredClone({ ...attempt, learnerId: subject });
+        attempts.set(stored.id, stored);
+        return structuredClone(stored);
+      },
+      async saveAssessmentResponses(subject, { attemptId, responses } = {}) {
+        const row = attempts.get(attemptId);
+        if (!row || row.learnerId !== subject || row.status !== 'started') throw new Error('assessment-response-write-mismatch');
+        for (const response of responses) {
+          const item = row.items.find((entry) => entry.itemId === response.itemId && Number(entry.itemVersion) === Number(response.itemVersion));
+          if (!item) throw new Error('assessment-response-write-mismatch');
+          item.response = structuredClone(response.response);
+        }
+        return { attemptId, saved: responses.length };
+      },
+      async saveAssessmentScore(subject, { attempt } = {}) {
+        const current = attempts.get(attempt.id);
+        if (!current || current.learnerId !== subject || current.status !== 'started') throw new Error('assessment-score-write-conflict');
+        const stored = structuredClone({ ...attempt, learnerId: subject });
+        attempts.set(stored.id, stored);
+        return structuredClone(stored);
+      },
       async listCourseEvidence(subject, { assessmentId, performanceAssessmentId = null } = {}) {
         return {
           learnerId: subject,
           assessmentId,
           performanceAssessmentId,
-          assessmentAttempts: [],
+          assessmentAttempts: [...attempts.values()].filter((row) => row.learnerId === subject && row.assessmentId === assessmentId).map((row) => ({
+            assessmentId: row.assessmentId,
+            assessmentVersion: row.assessmentVersion,
+            formId: row.formId,
+            status: row.status,
+            startedAt: row.startedAt,
+            submittedAt: row.submittedAt,
+            scoredAt: row.scoredAt,
+            scorePercent: row.scorePercent,
+            passed: row.passed
+          })),
           performanceAssessment: null
         };
       },

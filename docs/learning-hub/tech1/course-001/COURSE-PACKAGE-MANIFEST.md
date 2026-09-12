@@ -39,6 +39,8 @@ The current canonical lessons use richer instructional structures including evid
 - responsive reference cards with print/save mode and mobile touch targets
 - responsive learner shell with a sticky desktop course outline, compact mobile outline control, readable lesson measure, touch-sized lesson/practice controls, and single canonical formative-practice rendering
 - authenticated Course 1 card status showing official **course final** and **course practical** evidence separately from lesson checkmarks
+- authenticated learner-facing Course 1 final workflow with start/resume, restored saved responses, per-item autosave, server-side scoring and domain-level results
+- explicit learner-facing boundary between the public Course 1 final and the restricted THC Cultivation Technician I certification examination
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
@@ -78,10 +80,14 @@ Instructor-resource counts describe the current support package, not content cei
 - 1 integrated practical with analytic rubric/critical-error rules
 - 1 final course assessment = **36 summative items**
 - total public Course 1 knowledge-test item inventory = **120 items**
+- current final-assessment runtime builds its form from the assessment's controlled item list rather than an application-level fixed item count
+- final item/choice presentation may be randomized deterministically per attempt while scoring remains against immutable canonical item versions
+- learner responses are stored in the learner attempt record; correct-answer keys and rationales are not returned in the live final-assessment payload
+- final submission is scored server-side and returns score/pass status plus competency/domain results consistent with the configured post-attempt domain-level feedback mode
 
 The 84/36/120 counts are the current published inventory, not content ceilings. Additional valid items may be added, retired, replaced, or reorganized as objectives, evidence, instructional depth, and pilot findings evolve. Automated QA enforces minimum quality baselines and internal consistency rather than freezing the bank at an exact size.
 
-The public course assessments are separate from the THC Cultivation Technician I certification examination.
+The public course assessments are separate from the THC Cultivation Technician I certification examination. The learner final runtime resolves only a summative course assessment explicitly included in the published Course 1 release; it does not accept an arbitrary credential-assessment identifier from the learner browser.
 
 ## Remediation evidence model
 
@@ -94,7 +100,7 @@ A missed item or weak performance should not trigger an automatic same-item retr
 5. reassess using a changed but equivalent context;
 6. record the result when a controlled remediation record is appropriate.
 
-Successful remediation means the learner can apply the objective in a new context. Viewing the correct answer or rereading a page is not sufficient evidence by itself.
+Successful remediation means the learner can apply the objective in a new context. Viewing the correct answer or rereading a page is not sufficient evidence by itself. The learner final therefore returns domain-level performance and remediation direction without exposing the answer key after submission.
 
 ## Ongoing validity improvement
 
@@ -116,6 +122,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.
