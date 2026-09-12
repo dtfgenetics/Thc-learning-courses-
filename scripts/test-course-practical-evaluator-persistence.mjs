@@ -12,15 +12,31 @@ const storedRow = {
   evidence_json: {
     evaluatorNotes: 'Private evaluator note',
     learnerFeedback: 'Practice identity discrepancy escalation.',
+    followUpStatus: 'remediation-assigned',
+    reassessmentTargetDate: '2026-09-20',
+    evidenceOutputs: [],
     domainScores: [], criticalErrors: [], history: []
   },
   evaluator_id: 'assessor-001',
   evaluated_at: new Date('2026-09-12T12:00:00.000Z'),
   updated_at: new Date('2026-09-12T12:01:00.000Z')
 };
+const queueDbRow = {
+  external_subject: 'learner-external-001',
+  enrollment_status: 'active',
+  enrolled_at: new Date('2026-09-10T09:00:00.000Z'),
+  practical_status: 'failed',
+  score_percent: '92.00',
+  critical_error_count: 1,
+  follow_up_status: 'remediation-assigned',
+  reassessment_target_date: '2026-09-20',
+  evaluated_at: new Date('2026-09-12T12:00:00.000Z'),
+  updated_at: new Date('2026-09-12T12:01:00.000Z')
+};
 
 async function query(text, params) {
   calls.push({ text, params });
+  if (text.includes('join enrollments e')) return { rows: [queueDbRow] };
   if (text.includes('select id from learners')) return { rows: learnerExists ? [{ id: '00000000-0000-0000-0000-000000000001' }] : [] };
   if (text.includes('from performance_assessment_results') && text.includes('select assessment_id')) return { rows: [storedRow] };
   if (text.includes('insert into performance_assessment_results')) return { rows: [storedRow] };
@@ -28,6 +44,25 @@ async function query(text, params) {
 }
 
 const store = createPostgresPracticalEvaluatorStore({ query });
+const queue = await store.listCourseLearners({
+  courseId: 'COURSE-LH-TECH1-001',
+  assessmentId: storedRow.assessment_id,
+  assessmentVersion: storedRow.assessment_version,
+  search: 'learner',
+  practicalStatus: 'failed',
+  limit: 25
+});
+assert.equal(queue.length, 1);
+assert.equal(queue[0].learnerSubject, 'learner-external-001');
+assert.equal(queue[0].practicalStatus, 'failed');
+assert.equal(queue[0].followUpStatus, 'remediation-assigned');
+assert.equal(queue[0].reassessmentTargetDate, '2026-09-20');
+const queueCall = calls.find((call) => call.text.includes('join enrollments e'));
+assert.deepEqual(queueCall.params, ['COURSE-LH-TECH1-001', storedRow.assessment_id, storedRow.assessment_version, 'learner', 'failed', 25]);
+assert.ok(queueCall.text.includes("coalesce(p.status, 'not-recorded')"));
+assert.ok(queueCall.text.includes("evidence_json ->> 'followUpStatus'"));
+assert.equal(queueCall.text.includes('learner-external-001'), false, 'queue learner search must remain parameterized');
+
 const fetched = await store.getEvaluation('learner-external-001', {
   assessmentId: storedRow.assessment_id,
   assessmentVersion: storedRow.assessment_version
@@ -58,12 +93,14 @@ const write = calls.find((call) => call.text.includes('insert into performance_a
 assert.ok(write, 'evaluation UPSERT query must run');
 assert.ok(write.text.includes('on conflict (learner_id, assessment_id, assessment_version)'));
 assert.ok(write.text.includes("'course-practical-evaluation-saved'"), 'authoritative evaluation saves must create an audit event');
+assert.ok(write.text.includes("'followUpStatus'"), 'audit metadata may retain the controlled follow-up workflow state');
 assert.equal(write.text.includes('Private evaluator note'), false, 'private evaluator text must never be interpolated into SQL text');
 assert.equal(write.text.includes('learner-external-001'), false, 'learner identity must be parameterized');
 assert.equal(write.params[6], JSON.stringify(storedRow.evidence_json));
 assert.equal(write.params[7], 'assessor-001');
 assert.equal(write.params[9], 'learner-external-001');
 assert.equal(write.text.includes('evaluatorNotes'), false, 'audit SQL metadata must not copy private evaluator notes');
+assert.equal(write.text.includes('learnerFeedback'), false, 'audit SQL metadata must not copy learner remediation text');
 
 learnerExists = false;
 const missing = await store.getEvaluation('missing-learner', {
@@ -74,4 +111,4 @@ assert.deepEqual(missing, { learnerExists: false, evaluation: null });
 const writeMissing = await store.saveEvaluation('missing-learner', writeRecord);
 assert.deepEqual(writeMissing, { learnerExists: false, evaluation: null });
 
-console.log('Course 1 practical evaluator PostgreSQL parameterization, audit-event, privacy, and learner-resolution contracts passed.');
+console.log('Course 1 practical evaluator queue, PostgreSQL parameterization, audit-event, privacy, and learner-resolution contracts passed.');
