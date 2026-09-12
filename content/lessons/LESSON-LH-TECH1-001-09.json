@@ -2,24 +2,63 @@
   "id": "LESSON-LH-TECH1-001-09",
   "title": "Deviations, Incomplete Work and Honest Status",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-05", "LO-LH-TECH1-001-11", "LO-LH-TECH1-001-12"],
+  "status": "published",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-05",
+    "LO-LH-TECH1-001-11",
+    "LO-LH-TECH1-001-12"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-MHRA-GXP-DATA-INTEGRITY"],
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
   "assessment": null,
   "content": {
     "overview": "Cultivation work can deviate from plan. Technicians must distinguish a planned exception from an unplanned deviation, preserve the actual sequence of events, record incomplete work honestly, avoid backfilling missing data as if it were contemporaneous, and hand unresolved conditions forward for authorized impact assessment and disposition.",
     "vocabulary": [
-      {"term": "deviation", "definition": "An unplanned departure from an approved instruction, expected condition, specification or planned process that must be documented and evaluated under the facility process."},
-      {"term": "exception", "definition": "A condition anticipated by a procedure that has a defined alternate action, approval or decision path."},
-      {"term": "incomplete work", "definition": "Assigned work for which one or more required steps, records, measurements or acceptance criteria have not been completed or verified."},
-      {"term": "status integrity", "definition": "Accurately representing what was done, what was not done, what is known, what is unknown and what remains unresolved."}
+      {
+        "term": "deviation",
+        "definition": "An unplanned departure from an approved instruction, expected condition, specification or planned process that must be documented and evaluated under the facility process."
+      },
+      {
+        "term": "exception",
+        "definition": "A condition anticipated by a procedure that has a defined alternate action, approval or decision path."
+      },
+      {
+        "term": "incomplete work",
+        "definition": "Assigned work for which one or more required steps, records, measurements or acceptance criteria have not been completed or verified."
+      },
+      {
+        "term": "status integrity",
+        "definition": "Accurately representing what was done, what was not done, what is known, what is unknown and what remains unresolved."
+      }
     ],
     "sections": [
-      {"title": "A deviation is operational information", "body": "Equipment faults, identity mismatches, missing material, sanitation interruptions, alarms, access restrictions and other abnormal conditions occur in real operations. The technician records what happened and preserves the condition rather than editing the story to make the shift appear normal.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "Separate occurrence facts from impact decisions", "body": "The technician can document the affected task, identifiers, expected condition, actual condition, sequence, immediate controls and notifications. Determining root cause, product/crop impact, formal disposition, release or corrective action may belong to a supervisor, quality, maintenance, plant-health or other authorized process. Recording facts does not require the technician to make decisions outside the role.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "Never manufacture completion or missing data", "body": "A task is complete only when required steps and acceptance criteria are met or an authorized exception is documented. A missed observation remains missing unless a controlled late-entry or correction process permits a clearly identified later record. A planned value, remembered estimate or neighboring reading is not a substitute for the original measurement.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "title": "A deviation is operational information",
+        "body": "Equipment faults, identity mismatches, missing material, sanitation interruptions, alarms, access restrictions and other abnormal conditions occur in real operations. The technician records what happened and preserves the condition rather than editing the story to make the shift appear normal.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Separate occurrence facts from impact decisions",
+        "body": "The technician can document the affected task, identifiers, expected condition, actual condition, sequence, immediate controls and notifications. Determining root cause, product/crop impact, formal disposition, release or corrective action may belong to a supervisor, quality, maintenance, plant-health or other authorized process. Recording facts does not require the technician to make decisions outside the role.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Never manufacture completion or missing data",
+        "body": "A task is complete only when required steps and acceptance criteria are met or an authorized exception is documented. A missed observation remains missing unless a controlled late-entry or correction process permits a clearly identified later record. A planned value, remembered estimate or neighboring reading is not a substitute for the original measurement.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ],
     "workedExamples": [
       "An interrupted sanitation cycle is documented as incomplete, including the last confirmed completed step, instead of being signed complete.",
@@ -39,42 +78,239 @@
     "practicalApplication": "Audit a partially completed work packet containing an equipment interruption, missed measurement, identity discrepancy, planned exception and incomplete acceptance check. Build the event timeline, classify each issue, state what is actually complete, and prepare a handoff that separates facts, immediate controls, open decisions and next ownership.",
     "summary": "Reliable operations depend on truthful status. Technicians preserve the real sequence of events, distinguish planned exceptions from deviations, keep incomplete work open, never invent missing data, and transfer impact or disposition decisions to the authorized process.",
     "blocks": [
-      {"type": "text", "title": "A deviation is information, not a confession", "body": "Abnormal conditions occur in real operations. The quality problem becomes worse when records are changed to make the shift appear normal. The technician's job is to preserve the true sequence and current state so the next decision can be made from reliable facts.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "table", "title": "Classify the status before closing the work", "columns": ["Status", "Meaning", "Technician response"], "rows": [
-        ["Complete", "Required steps and acceptance criteria are satisfied and required records are present", "Close under the normal procedure"],
-        ["Planned exception", "The procedure anticipated the condition and defines an alternate action/approval", "Follow the defined exception path and record it"],
-        ["Deviation", "An unplanned departure from expected instruction or condition occurred", "Preserve facts, control the immediate condition and initiate the required deviation/escalation path"],
-        ["Incomplete", "Required work, evidence or acceptance criteria remain unfinished", "Keep the work open and hand off what remains"],
-        ["Unknown / unverified", "A required fact cannot currently be established", "Do not guess; record the uncertainty and route it for resolution"]
-      ], "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "comparison", "title": "Truthful closeout versus manufactured completion", "left": {"label": "Truthful status", "body": "The sanitation cycle stopped before the required final step. The record shows the last completed step, interruption time, factual reason, immediate control, notification and that the task remains incomplete."}, "right": {"label": "Manufactured completion", "body": "The technician signs the sanitation task complete because most steps were finished and the shift is ending, leaving the next worker to assume the controlled process is closed."}},
-      {"type": "steps", "title": "Build a defensible deviation timeline", "items": [
-        {"title": "Anchor the affected identity", "body": "Record the work order, room, plant/material, lot/batch, asset or other exact identifiers involved."},
-        {"title": "State the expected condition", "body": "Identify the instruction, step, acceptance criterion or planned state that applied."},
-        {"title": "State what actually happened", "body": "Record factual observations and completed actions without adding unsupported diagnosis or motive."},
-        {"title": "Capture the sequence", "body": "Identify the last confirmed normal/completed step and when the abnormal condition or missing work was discovered."},
-        {"title": "Record immediate controls", "body": "Document what was stopped, held, isolated, preserved or left unchanged under the procedure."},
-        {"title": "Preserve missing or unknown information", "body": "Mark data or facts as missing/unknown instead of replacing them with estimates."},
-        {"title": "Transfer the open decisions", "body": "Record who was notified, what remains unresolved and which authorized role owns impact assessment, disposition or next action."}
-      ], "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "document", "title": "Deviation / incomplete-work handoff", "description": "A useful record shows what was expected, what actually happened and what remains open without turning hypotheses into facts.", "fields": [
-        {"label": "Affected task / ID", "value": "Work order, room, plant/material, asset or process identifier"},
-        {"label": "Status classification", "value": "Complete, planned exception, deviation, incomplete or unknown/unverified"},
-        {"label": "Expected condition", "value": "What the current instruction or acceptance criterion required"},
-        {"label": "Actual condition", "value": "What was observed or completed, stated factually"},
-        {"label": "Time / sequence point", "value": "When the deviation was discovered and the last confirmed completed/normal step"},
-        {"label": "Immediate control", "value": "What was safely stopped, isolated, held, preserved or left unchanged under procedure"},
-        {"label": "Missing / unknown information", "value": "Data or facts that cannot be established without guessing"},
-        {"label": "Notification", "value": "Who or what role was notified and when"},
-        {"label": "Open decision / owner", "value": "What remains unresolved and which role or process owns the next decision"}
-      ], "note": "Do not backfill a missed measurement as though it were contemporaneous, sign a missed step as complete, or hide an unresolved condition inside general shift notes."},
-      {"type": "scenario", "title": "The irrigation task is incomplete when the shift ends", "setting": "A scheduled irrigation task stops after an equipment fault. Only two of three assigned zones received the planned event. The next shift starts in 15 minutes.", "prompt": "Which closeout best preserves status integrity?", "options": ["Mark the whole task complete because most of it occurred", "Enter the planned values for the missed zone so the record is consistent", "Record which zones were completed, identify the missed zone and fault context, preserve the open status, and hand off the required next action", "Delete the task so the next shift can recreate it"], "answer": "Record which zones were completed, identify the missed zone and fault context, preserve the open status, and hand off the required next action.", "feedback": "A shift boundary does not convert incomplete work into completed work. The next worker needs an accurate starting state.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "The measurement was missed but the display is remembered", "setting": "A required measurement was not recorded at 14:00. At 15:00 the technician remembers the display was approximately 2.1 but cannot verify the exact value or preserve the original timing.", "prompt": "What is the strongest documentation response?", "options": ["Enter 2.1 at 14:00 because that is probably correct", "Copy the nearest later reading into the missing field", "Use the facility's missing-data or controlled late-entry process and do not represent an estimate as the original contemporaneous measurement", "Leave the record looking complete by averaging nearby values"], "answer": "Use the facility's missing-data or controlled late-entry process and do not represent an estimate as the original contemporaneous measurement.", "feedback": "A remembered approximation is not equivalent to the missing original measurement. Honest missing status preserves data integrity better than invented precision.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "Physical work completed, acceptance check missed", "setting": "A transfer task is physically finished and the material is in the destination area, but the SOP-required post-transfer identity verification was never completed.", "prompt": "How should the technician describe the task?", "options": ["Complete because the movement itself is finished", "Incomplete/open because the required acceptance verification is missing", "Complete if the labels look similar", "Complete if no one reported a problem"], "answer": "Incomplete/open because the required acceptance verification is missing.", "feedback": "Physical activity and controlled completion are not the same. Required acceptance criteria are part of the defined task.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "activity", "title": "Close a partially completed work packet", "instructions": "Audit a supplied work packet containing one equipment interruption, one missed observation, one planned exception, one completed physical step with a missing acceptance check and one unresolved identity issue. Produce a truthful end-of-shift state.", "prompts": ["Classify every item as complete, planned exception, deviation, incomplete or unknown/unverified.", "Mark what is actually complete and identify the evidence for completion.", "Build the timeline around each abnormal condition.", "Identify every missing fact without guessing a replacement value.", "Separate observation from proposed diagnosis/root cause.", "Write the minimum useful handoff for each open item and name the role/process that owns the next decision.", "Identify which open item blocks downstream work until an authorized decision occurs."], "artifact": "Deviation timeline and incomplete-work handoff packet", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your closeout makes every line look finished, ask what evidence proves each acceptance criterion. If a value was missed, do not recreate certainty from memory. If the cause is unknown, keep it unknown rather than turning a guess into the official record."},
-      {"type": "callout", "title": "Evidence boundary", "tone": "evidence", "body": "MHRA GxP data-integrity guidance is used here as a transferable framework for trustworthy records and reconstructability. It is not presented as a claim that UK pharmaceutical GxP rules govern U.S. cannabis cultivation.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "A trustworthy operation can work with an honest deviation. It cannot reliably work with a false normal record. Preserve what actually happened, what did not happen, what is unknown and who owns the unresolved decision.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "type": "text",
+        "title": "A deviation is information, not a confession",
+        "body": "Abnormal conditions occur in real operations. The quality problem becomes worse when records are changed to make the shift appear normal. The technician's job is to preserve the true sequence and current state so the next decision can be made from reliable facts.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Classify the status before closing the work",
+        "columns": [
+          "Status",
+          "Meaning",
+          "Technician response"
+        ],
+        "rows": [
+          [
+            "Complete",
+            "Required steps and acceptance criteria are satisfied and required records are present",
+            "Close under the normal procedure"
+          ],
+          [
+            "Planned exception",
+            "The procedure anticipated the condition and defines an alternate action/approval",
+            "Follow the defined exception path and record it"
+          ],
+          [
+            "Deviation",
+            "An unplanned departure from expected instruction or condition occurred",
+            "Preserve facts, control the immediate condition and initiate the required deviation/escalation path"
+          ],
+          [
+            "Incomplete",
+            "Required work, evidence or acceptance criteria remain unfinished",
+            "Keep the work open and hand off what remains"
+          ],
+          [
+            "Unknown / unverified",
+            "A required fact cannot currently be established",
+            "Do not guess; record the uncertainty and route it for resolution"
+          ]
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Truthful closeout versus manufactured completion",
+        "left": {
+          "label": "Truthful status",
+          "body": "The sanitation cycle stopped before the required final step. The record shows the last completed step, interruption time, factual reason, immediate control, notification and that the task remains incomplete."
+        },
+        "right": {
+          "label": "Manufactured completion",
+          "body": "The technician signs the sanitation task complete because most steps were finished and the shift is ending, leaving the next worker to assume the controlled process is closed."
+        }
+      },
+      {
+        "type": "steps",
+        "title": "Build a defensible deviation timeline",
+        "items": [
+          {
+            "title": "Anchor the affected identity",
+            "body": "Record the work order, room, plant/material, lot/batch, asset or other exact identifiers involved."
+          },
+          {
+            "title": "State the expected condition",
+            "body": "Identify the instruction, step, acceptance criterion or planned state that applied."
+          },
+          {
+            "title": "State what actually happened",
+            "body": "Record factual observations and completed actions without adding unsupported diagnosis or motive."
+          },
+          {
+            "title": "Capture the sequence",
+            "body": "Identify the last confirmed normal/completed step and when the abnormal condition or missing work was discovered."
+          },
+          {
+            "title": "Record immediate controls",
+            "body": "Document what was stopped, held, isolated, preserved or left unchanged under the procedure."
+          },
+          {
+            "title": "Preserve missing or unknown information",
+            "body": "Mark data or facts as missing/unknown instead of replacing them with estimates."
+          },
+          {
+            "title": "Transfer the open decisions",
+            "body": "Record who was notified, what remains unresolved and which authorized role owns impact assessment, disposition or next action."
+          }
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Deviation / incomplete-work handoff",
+        "description": "A useful record shows what was expected, what actually happened and what remains open without turning hypotheses into facts.",
+        "fields": [
+          {
+            "label": "Affected task / ID",
+            "value": "Work order, room, plant/material, asset or process identifier"
+          },
+          {
+            "label": "Status classification",
+            "value": "Complete, planned exception, deviation, incomplete or unknown/unverified"
+          },
+          {
+            "label": "Expected condition",
+            "value": "What the current instruction or acceptance criterion required"
+          },
+          {
+            "label": "Actual condition",
+            "value": "What was observed or completed, stated factually"
+          },
+          {
+            "label": "Time / sequence point",
+            "value": "When the deviation was discovered and the last confirmed completed/normal step"
+          },
+          {
+            "label": "Immediate control",
+            "value": "What was safely stopped, isolated, held, preserved or left unchanged under procedure"
+          },
+          {
+            "label": "Missing / unknown information",
+            "value": "Data or facts that cannot be established without guessing"
+          },
+          {
+            "label": "Notification",
+            "value": "Who or what role was notified and when"
+          },
+          {
+            "label": "Open decision / owner",
+            "value": "What remains unresolved and which role or process owns the next decision"
+          }
+        ],
+        "note": "Do not backfill a missed measurement as though it were contemporaneous, sign a missed step as complete, or hide an unresolved condition inside general shift notes."
+      },
+      {
+        "type": "scenario",
+        "title": "The irrigation task is incomplete when the shift ends",
+        "setting": "A scheduled irrigation task stops after an equipment fault. Only two of three assigned zones received the planned event. The next shift starts in 15 minutes.",
+        "prompt": "Which closeout best preserves status integrity?",
+        "options": [
+          "Mark the whole task complete because most of it occurred",
+          "Enter the planned values for the missed zone so the record is consistent",
+          "Record which zones were completed, identify the missed zone and fault context, preserve the open status, and hand off the required next action",
+          "Delete the task so the next shift can recreate it"
+        ],
+        "answer": "Record which zones were completed, identify the missed zone and fault context, preserve the open status, and hand off the required next action.",
+        "feedback": "A shift boundary does not convert incomplete work into completed work. The next worker needs an accurate starting state.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The measurement was missed but the display is remembered",
+        "setting": "A required measurement was not recorded at 14:00. At 15:00 the technician remembers the display was approximately 2.1 but cannot verify the exact value or preserve the original timing.",
+        "prompt": "What is the strongest documentation response?",
+        "options": [
+          "Enter 2.1 at 14:00 because that is probably correct",
+          "Copy the nearest later reading into the missing field",
+          "Use the facility's missing-data or controlled late-entry process and do not represent an estimate as the original contemporaneous measurement",
+          "Leave the record looking complete by averaging nearby values"
+        ],
+        "answer": "Use the facility's missing-data or controlled late-entry process and do not represent an estimate as the original contemporaneous measurement.",
+        "feedback": "A remembered approximation is not equivalent to the missing original measurement. Honest missing status preserves data integrity better than invented precision.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Physical work completed, acceptance check missed",
+        "setting": "A transfer task is physically finished and the material is in the destination area, but the SOP-required post-transfer identity verification was never completed.",
+        "prompt": "How should the technician describe the task?",
+        "options": [
+          "Complete because the movement itself is finished",
+          "Incomplete/open because the required acceptance verification is missing",
+          "Complete if the labels look similar",
+          "Complete if no one reported a problem"
+        ],
+        "answer": "Incomplete/open because the required acceptance verification is missing.",
+        "feedback": "Physical activity and controlled completion are not the same. Required acceptance criteria are part of the defined task.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Close a partially completed work packet",
+        "instructions": "Audit a supplied work packet containing one equipment interruption, one missed observation, one planned exception, one completed physical step with a missing acceptance check and one unresolved identity issue. Produce a truthful end-of-shift state.",
+        "prompts": [
+          "Classify every item as complete, planned exception, deviation, incomplete or unknown/unverified.",
+          "Mark what is actually complete and identify the evidence for completion.",
+          "Build the timeline around each abnormal condition.",
+          "Identify every missing fact without guessing a replacement value.",
+          "Separate observation from proposed diagnosis/root cause.",
+          "Write the minimum useful handoff for each open item and name the role/process that owns the next decision.",
+          "Identify which open item blocks downstream work until an authorized decision occurs."
+        ],
+        "artifact": "Deviation timeline and incomplete-work handoff packet",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your closeout makes every line look finished, ask what evidence proves each acceptance criterion. If a value was missed, do not recreate certainty from memory. If the cause is unknown, keep it unknown rather than turning a guess into the official record."
+      },
+      {
+        "type": "callout",
+        "title": "Evidence boundary",
+        "tone": "evidence",
+        "body": "MHRA GxP data-integrity guidance is used here as a transferable framework for trustworthy records and reconstructability. It is not presented as a claim that UK pharmaceutical GxP rules govern U.S. cannabis cultivation.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "A trustworthy operation can work with an honest deviation. It cannot reliably work with a false normal record. Preserve what actually happened, what did not happen, what is unknown and who owns the unresolved decision.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ]
   }
 }

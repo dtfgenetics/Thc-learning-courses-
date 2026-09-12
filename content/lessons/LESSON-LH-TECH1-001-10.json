@@ -2,24 +2,62 @@
   "id": "LESSON-LH-TECH1-001-10",
   "title": "Identity Through the Cultivation Workflow",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-CULT-TRACEABILITY-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-06"],
+  "status": "published",
+  "competencies": [
+    "COMP-CULT-TRACEABILITY-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-06"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-GS1-GLOBAL-TRACEABILITY"],
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
   "assessment": null,
   "content": {
     "overview": "Plant and material identity must remain reconstructable through propagation, movement, transformation, harvest, sampling, storage, transfer and disposition. Learners practice treating each meaningful transition as an event that links the old identity, new identity, location, time and responsible record.",
     "vocabulary": [
-      {"term": "identity", "definition": "Controlled information that distinguishes one plant, batch, lot, container, room, sample or material from another."},
-      {"term": "genealogy", "definition": "The documented relationships linking source material to derived plants, batches, lots, containers or samples."},
-      {"term": "traceable object", "definition": "A physical or digital object whose history, application or location needs to be reconstructable through controlled records."},
-      {"term": "traceability event", "definition": "A meaningful movement, transformation, aggregation, separation, receipt, transfer or disposition step whose key facts are recorded."}
+      {
+        "term": "identity",
+        "definition": "Controlled information that distinguishes one plant, batch, lot, container, room, sample or material from another."
+      },
+      {
+        "term": "genealogy",
+        "definition": "The documented relationships linking source material to derived plants, batches, lots, containers or samples."
+      },
+      {
+        "term": "traceable object",
+        "definition": "A physical or digital object whose history, application or location needs to be reconstructable through controlled records."
+      },
+      {
+        "term": "traceability event",
+        "definition": "A meaningful movement, transformation, aggregation, separation, receipt, transfer or disposition step whose key facts are recorded."
+      }
     ],
     "sections": [
-      {"title": "Identity connects later facts to the correct material", "body": "Measurements, observations, treatments, movements, harvest records, samples and disposition decisions only remain useful when they are linked to the correct plant or material. Accurate data attached to the wrong identity is still unreliable traceability.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "Trace events, not just labels", "body": "GS1's technology-neutral traceability model emphasizes identifying traceable objects and recording important lifecycle events with key data such as what was involved, where and when it occurred, who or what system was responsible, and what happened. In cultivation, this logic can be applied to cloning, transplanting, room movement, harvest, sampling, storage and disposition without assuming one software platform.", "references": ["REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"title": "Transformations must link inputs to outputs", "body": "When one identity becomes several identities, several inputs become one batch, or material changes container/status, the new record should extend the genealogy rather than erase the source relationship. Split, merge and transformation points deserve deliberate verification because they can create permanent ambiguity if recorded poorly.", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "title": "Identity connects later facts to the correct material",
+        "body": "Measurements, observations, treatments, movements, harvest records, samples and disposition decisions only remain useful when they are linked to the correct plant or material. Accurate data attached to the wrong identity is still unreliable traceability.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Trace events, not just labels",
+        "body": "GS1's technology-neutral traceability model emphasizes identifying traceable objects and recording important lifecycle events with key data such as what was involved, where and when it occurred, who or what system was responsible, and what happened. In cultivation, this logic can be applied to cloning, transplanting, room movement, harvest, sampling, storage and disposition without assuming one software platform.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Transformations must link inputs to outputs",
+        "body": "When one identity becomes several identities, several inputs become one batch, or material changes container/status, the new record should extend the genealogy rather than erase the source relationship. Split, merge and transformation points deserve deliberate verification because they can create permanent ambiguity if recorded poorly.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ],
     "workedExamples": [
       "A plant tag does not match the room-move order, so movement stops before identity can be lost.",
@@ -38,39 +76,219 @@
     "practicalApplication": "Reconstruct a mock source-plant-to-harvest genealogy containing cloning, a split into two groups, room movement, harvest containers and samples. Identify every traceability event, the minimum event data needed to reconstruct it, and the point where a planted identity break would make later records ambiguous.",
     "summary": "Traceability begins with disciplined identity control and event relationships. Technicians verify identifiers before transitions, link new identities to their sources, and preserve enough event context to reconstruct what moved, changed or was created.",
     "blocks": [
-      {"type": "text", "title": "Identity is operational infrastructure", "body": "A traceability record is not valuable because it contains many labels. It is valuable because each important observation or event can be connected to the correct material, source, location and time.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-008", "src": "/assets/course1/material-genealogy.svg", "alt": "Genealogy chain showing source plant, clone tray, transplant batch, flowering room, harvest container, and sample or disposition, with a reminder to preserve source and new identity, location, time, quantity where relevant, responsible record, and the relationship between identifiers at each transition.", "caption": "A new identifier should extend the genealogy. It should not erase the relationship to the source material.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"type": "table", "title": "Five questions for a traceability event", "columns": ["Question", "Cultivation example", "Failure pattern"], "rows": [
-        ["What?", "Exact plant, batch, tray, container, sample or material identity", "Cultivar nickname or appearance used instead of controlled identity"],
-        ["Where?", "Source and destination room, zone, storage or process location", "Movement recorded without a reliable location relationship"],
-        ["When?", "Event date/time or controlled sequence point", "Event entered later with ambiguous timing"],
-        ["Who / system?", "Responsible operator, approver or controlled system attribution", "No reliable attribution for the event"],
-        ["What happened / why in process?", "Move, split, merge, harvest, sample, hold, release or disposition context", "New identifier exists but the relationship/event that created it is missing"]
-      ], "references": ["REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"type": "steps", "title": "Protect identity at every transition", "items": [
-        {"title": "Verify the source object", "body": "Match the physical identifier to the controlled work order or record before movement, transformation, sampling or container change."},
-        {"title": "Verify destination or output identity", "body": "Confirm the intended room, location, container, batch, lot or new identifier before the event is finalized."},
-        {"title": "Preserve input-output relationships", "body": "For splits, merges and transformations, explicitly link each new output to the source input(s) required by the facility process."},
-        {"title": "Record the event facts", "body": "Capture the required identities, source/destination, quantity/count where applicable, time, responsible role/system and event context."},
-        {"title": "Reconcile after the event", "body": "Check that the physical state and controlled record now describe the same identified material, quantity/status and location."},
-        {"title": "Stop on ambiguity", "body": "If identity cannot be established, preserve the current state and resolve the mismatch before another movement or transformation makes reconstruction harder."}
-      ], "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "comparison", "title": "Extending genealogy versus replacing history", "left": {"label": "Traceable transition", "body": "A harvest container receives a new identifier that is recorded as derived from the identified source plants or batch, with the harvest event linking input to output."}, "right": {"label": "Broken genealogy", "body": "The old identifier is removed, a new label is applied, and no controlled record links the output container to the source material."}},
-      {"type": "scenario", "title": "The tag and room-move order disagree", "setting": "A plant group is ready to move, but the physical tag does not match the batch identifier on the work order. The destination room has space and the schedule is already behind.", "prompt": "What is the correct first action?", "options": ["Move the plants and correct the record later", "Use cultivar appearance to decide which identity is probably correct", "Pause the affected movement and resolve the identity mismatch through the controlled process before genealogy is lost", "Remove both identifiers and issue a new one"], "answer": "Pause the affected movement and resolve the identity mismatch through the controlled process before genealogy is lost.", "feedback": "Once an identity transition occurs, reconstructing the correct source can become harder or impossible. The mismatch should be resolved before movement.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "One tray becomes two transplant groups", "setting": "A clone tray with one controlled source identity is split into two transplant groups assigned to different rooms. New group identifiers have been printed.", "prompt": "What must be preserved before the split is closed?", "options": ["Only the two new room locations", "Only the cultivar name on the new labels", "The relationship from the source tray to both new group identities plus the required event/location/time information", "Nothing from the original tray once the new labels are attached"], "answer": "The relationship from the source tray to both new group identities plus the required event/location/time information.", "feedback": "A split creates new traceable outputs. The new identities should extend the source genealogy rather than replace it.", "references": ["REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"type": "document", "title": "Transformation / split event record", "description": "Use this model to reason about events that create new identities from existing material.", "fields": [
-        {"label": "Input identity or identities", "value": "Exact source plant, tray, batch, lot or container"},
-        {"label": "Event type", "value": "Split, merge, transplant, harvest, sample, repack or other controlled transformation"},
-        {"label": "Output identity or identities", "value": "Every new controlled identifier created by the event"},
-        {"label": "Source / destination location", "value": "Where the material came from and where outputs were placed"},
-        {"label": "Quantity / count", "value": "Required input/output quantity or count where applicable"},
-        {"label": "Time", "value": "When the event occurred"},
-        {"label": "Responsible person/system", "value": "Attribution required by the controlled workflow"},
-        {"label": "Reconciliation result", "value": "Confirmation that physical outputs and controlled records agree after the event"}
-      ], "note": "Exact fields are facility- and jurisdiction-specific; this model teaches the stable traceability relationship."},
-      {"type": "activity", "title": "Build and stress-test a cultivation genealogy", "instructions": "Use mock source-plant, clone-tray, transplant-group, room-movement, harvest-container and sample records to reconstruct one complete lineage, including a split event and one planted identity conflict.", "prompts": ["Identify every traceable object in sequence.", "Mark each movement or transformation event.", "Show how every new identifier links to its input identity or identities.", "Check what/where/when/who/event-context data are available for each transition.", "Find the planted break or ambiguity and stop the reconstruction at the first point that cannot be defended.", "Write the minimum evidence needed to resolve the break before another transition occurs."], "artifact": "Material genealogy and traceability-event map", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your genealogy can only say what label exists now, it is incomplete. Ask what source created that identity, what event changed it, where and when that happened, and whether the physical material and record still agree."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "Traceability is a reconstructable chain of identified objects and events. Verify before transitions, link inputs to outputs, and preserve the event context that explains how the current identity came to exist.", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "type": "text",
+        "title": "Identity is operational infrastructure",
+        "body": "A traceability record is not valuable because it contains many labels. It is valuable because each important observation or event can be connected to the correct material, source, location and time.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-008",
+        "src": "/assets/course1/material-genealogy.svg",
+        "alt": "Genealogy chain showing source plant, clone tray, transplant batch, flowering room, harvest container, and sample or disposition, with a reminder to preserve source and new identity, location, time, quantity where relevant, responsible record, and the relationship between identifiers at each transition.",
+        "caption": "A new identifier should extend the genealogy. It should not erase the relationship to the source material.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Five questions for a traceability event",
+        "columns": [
+          "Question",
+          "Cultivation example",
+          "Failure pattern"
+        ],
+        "rows": [
+          [
+            "What?",
+            "Exact plant, batch, tray, container, sample or material identity",
+            "Cultivar nickname or appearance used instead of controlled identity"
+          ],
+          [
+            "Where?",
+            "Source and destination room, zone, storage or process location",
+            "Movement recorded without a reliable location relationship"
+          ],
+          [
+            "When?",
+            "Event date/time or controlled sequence point",
+            "Event entered later with ambiguous timing"
+          ],
+          [
+            "Who / system?",
+            "Responsible operator, approver or controlled system attribution",
+            "No reliable attribution for the event"
+          ],
+          [
+            "What happened / why in process?",
+            "Move, split, merge, harvest, sample, hold, release or disposition context",
+            "New identifier exists but the relationship/event that created it is missing"
+          ]
+        ],
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Protect identity at every transition",
+        "items": [
+          {
+            "title": "Verify the source object",
+            "body": "Match the physical identifier to the controlled work order or record before movement, transformation, sampling or container change."
+          },
+          {
+            "title": "Verify destination or output identity",
+            "body": "Confirm the intended room, location, container, batch, lot or new identifier before the event is finalized."
+          },
+          {
+            "title": "Preserve input-output relationships",
+            "body": "For splits, merges and transformations, explicitly link each new output to the source input(s) required by the facility process."
+          },
+          {
+            "title": "Record the event facts",
+            "body": "Capture the required identities, source/destination, quantity/count where applicable, time, responsible role/system and event context."
+          },
+          {
+            "title": "Reconcile after the event",
+            "body": "Check that the physical state and controlled record now describe the same identified material, quantity/status and location."
+          },
+          {
+            "title": "Stop on ambiguity",
+            "body": "If identity cannot be established, preserve the current state and resolve the mismatch before another movement or transformation makes reconstruction harder."
+          }
+        ],
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Extending genealogy versus replacing history",
+        "left": {
+          "label": "Traceable transition",
+          "body": "A harvest container receives a new identifier that is recorded as derived from the identified source plants or batch, with the harvest event linking input to output."
+        },
+        "right": {
+          "label": "Broken genealogy",
+          "body": "The old identifier is removed, a new label is applied, and no controlled record links the output container to the source material."
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "The tag and room-move order disagree",
+        "setting": "A plant group is ready to move, but the physical tag does not match the batch identifier on the work order. The destination room has space and the schedule is already behind.",
+        "prompt": "What is the correct first action?",
+        "options": [
+          "Move the plants and correct the record later",
+          "Use cultivar appearance to decide which identity is probably correct",
+          "Pause the affected movement and resolve the identity mismatch through the controlled process before genealogy is lost",
+          "Remove both identifiers and issue a new one"
+        ],
+        "answer": "Pause the affected movement and resolve the identity mismatch through the controlled process before genealogy is lost.",
+        "feedback": "Once an identity transition occurs, reconstructing the correct source can become harder or impossible. The mismatch should be resolved before movement.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "One tray becomes two transplant groups",
+        "setting": "A clone tray with one controlled source identity is split into two transplant groups assigned to different rooms. New group identifiers have been printed.",
+        "prompt": "What must be preserved before the split is closed?",
+        "options": [
+          "Only the two new room locations",
+          "Only the cultivar name on the new labels",
+          "The relationship from the source tray to both new group identities plus the required event/location/time information",
+          "Nothing from the original tray once the new labels are attached"
+        ],
+        "answer": "The relationship from the source tray to both new group identities plus the required event/location/time information.",
+        "feedback": "A split creates new traceable outputs. The new identities should extend the source genealogy rather than replace it.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Transformation / split event record",
+        "description": "Use this model to reason about events that create new identities from existing material.",
+        "fields": [
+          {
+            "label": "Input identity or identities",
+            "value": "Exact source plant, tray, batch, lot or container"
+          },
+          {
+            "label": "Event type",
+            "value": "Split, merge, transplant, harvest, sample, repack or other controlled transformation"
+          },
+          {
+            "label": "Output identity or identities",
+            "value": "Every new controlled identifier created by the event"
+          },
+          {
+            "label": "Source / destination location",
+            "value": "Where the material came from and where outputs were placed"
+          },
+          {
+            "label": "Quantity / count",
+            "value": "Required input/output quantity or count where applicable"
+          },
+          {
+            "label": "Time",
+            "value": "When the event occurred"
+          },
+          {
+            "label": "Responsible person/system",
+            "value": "Attribution required by the controlled workflow"
+          },
+          {
+            "label": "Reconciliation result",
+            "value": "Confirmation that physical outputs and controlled records agree after the event"
+          }
+        ],
+        "note": "Exact fields are facility- and jurisdiction-specific; this model teaches the stable traceability relationship."
+      },
+      {
+        "type": "activity",
+        "title": "Build and stress-test a cultivation genealogy",
+        "instructions": "Use mock source-plant, clone-tray, transplant-group, room-movement, harvest-container and sample records to reconstruct one complete lineage, including a split event and one planted identity conflict.",
+        "prompts": [
+          "Identify every traceable object in sequence.",
+          "Mark each movement or transformation event.",
+          "Show how every new identifier links to its input identity or identities.",
+          "Check what/where/when/who/event-context data are available for each transition.",
+          "Find the planted break or ambiguity and stop the reconstruction at the first point that cannot be defended.",
+          "Write the minimum evidence needed to resolve the break before another transition occurs."
+        ],
+        "artifact": "Material genealogy and traceability-event map",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your genealogy can only say what label exists now, it is incomplete. Ask what source created that identity, what event changed it, where and when that happened, and whether the physical material and record still agree."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Traceability is a reconstructable chain of identified objects and events. Verify before transitions, link inputs to outputs, and preserve the event context that explains how the current identity came to exist.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ]
   }
 }

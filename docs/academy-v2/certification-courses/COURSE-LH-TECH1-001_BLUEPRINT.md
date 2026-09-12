@@ -1,7 +1,7 @@
 # COURSE-LH-TECH1-001 — Safety, Responsible Practice & Cultivation Workflows
 
 **Program:** THC Cultivation Technician I  
-**Status:** Draft certification-course blueprint  
+**Status:** Public academic curriculum blueprint  
 **Course type:** Dedicated THC Learning Hub certification course  
 **Credential program:** `CREDPROG-CULT-TECH-I-001`
 

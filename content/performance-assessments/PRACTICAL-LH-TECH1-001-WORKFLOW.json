@@ -2,7 +2,7 @@
   "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
   "title": "Course 1 Integrated Cultivation Workflow Practical",
   "version": "1.0.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "summative",
   "assessmentType": "practical",
   "role": "ROLE-CULT-TECH-I-001",
@@ -37,14 +37,38 @@
   "scoring": {
     "totalPoints": 100,
     "domains": [
-      {"name": "Safety, PPE and stop-work judgment", "points": 18},
-      {"name": "Sanitation and biosecurity", "points": 14},
-      {"name": "SOP and work-order execution", "points": 12},
-      {"name": "Identity and traceability", "points": 16},
-      {"name": "Inventory and discrepancy reasoning", "points": 10},
-      {"name": "Equipment readiness and operator-care boundary", "points": 10},
-      {"name": "Data integrity and documentation", "points": 12},
-      {"name": "Shift handoff and communication", "points": 8}
+      {
+        "name": "Safety, PPE and stop-work judgment",
+        "points": 18
+      },
+      {
+        "name": "Sanitation and biosecurity",
+        "points": 14
+      },
+      {
+        "name": "SOP and work-order execution",
+        "points": 12
+      },
+      {
+        "name": "Identity and traceability",
+        "points": 16
+      },
+      {
+        "name": "Inventory and discrepancy reasoning",
+        "points": 10
+      },
+      {
+        "name": "Equipment readiness and operator-care boundary",
+        "points": 10
+      },
+      {
+        "name": "Data integrity and documentation",
+        "points": 12
+      },
+      {
+        "name": "Shift handoff and communication",
+        "points": 8
+      }
     ]
   },
   "passingStandard": {
@@ -67,7 +91,46 @@
     ],
     "assessorGuide": "docs/learning-hub/tech1/course-001/practical/ASSESSOR-GUIDE.md",
     "calibrationProtocol": "docs/learning-hub/tech1/course-001/practical/CALIBRATION-PROTOCOL.md",
-    "standardSettingStatus": "development-threshold-only",
-    "operationalUseBlockedUntilCalibration": true
+    "standardSettingStatus": "continuous-quality-improvement",
+    "operationalUseBlockedUntilCalibration": false,
+    "publicAcademicViewing": true,
+    "learnerWorkflow": {
+      "learnerGuide": "docs/learning-hub/tech1/course-001/student/INTEGRATED-PRACTICAL.md",
+      "preparationSteps": [
+        "Complete the Course 1 lessons, workbook activities, and low-stakes practice before attempting an evaluated practical.",
+        "Review the six Course 1 Field References and know which one applies to hazards, biosecurity, controlled work, traceability, equipment, and records/handoff.",
+        "Practice producing all seven required evidence outputs using the Course 1 workbook templates without inventing missing facts.",
+        "Be ready to explain when work must stop, what can proceed within Technician I authority, and what must be escalated to another role.",
+        "Expect conditions to change during the simulated shift and reassess earlier decisions when new status, identity, sanitation, equipment, or record information appears."
+      ],
+      "stages": [
+        {
+          "title": "1. Pre-task review",
+          "summary": "Recognize hazards, access restrictions, work-order limits, identity risks, PPE needs, and operator authority before work begins."
+        },
+        {
+          "title": "2. Status and sanitation change",
+          "summary": "Reassess work when one restriction changes but another remains active, and verify exact sanitation-product authorization before substitution."
+        },
+        {
+          "title": "3. Recurring equipment fault",
+          "summary": "Stay inside the operator-care boundary, record the fault timeline, and escalate repeated unresolved conditions without unsupported diagnosis."
+        },
+        {
+          "title": "4. Record integrity",
+          "summary": "Correct records while preserving original history and distinguish observation time from later entry time without backdating."
+        },
+        {
+          "title": "5. Closed-loop handoff",
+          "summary": "Transfer unresolved holds, identity discrepancies, equipment status, sanitation status, and next actions using two-way read-back and source cross-checking."
+        }
+      ],
+      "supportResources": [
+        "Course 1 Field References",
+        "Course 1 Student Workbook",
+        "Course 1 Workbook Templates",
+        "Course 1 remediation matrix and instructor coaching when assigned"
+      ]
+    }
   }
 }

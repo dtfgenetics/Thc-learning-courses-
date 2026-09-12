@@ -1,7 +1,7 @@
 # COURSE-LH-TECH1-001 — Safety, Responsible Practice & Cultivation Workflows
 
 **Credential path:** THC Cultivation Technician I  
-**Status:** Draft production package  
+**Status:** Public academic course package  
 **Current canonical lesson time:** 945 minutes (15.75 hours) across 18 lessons, before separate module tests, the integrated practical, and the final course assessment  
 **Course assessment:** `ASSESS-LH-TECH1-001-FINAL`  
 **Course practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`

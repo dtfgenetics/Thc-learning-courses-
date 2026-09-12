@@ -3,7 +3,7 @@
 **Course:** `COURSE-LH-TECH1-001`  
 **Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
 **Form:** B — equivalent alternate form  
-**Use:** pilot/calibration only until approved
+**Use:** Public academic practical alternate form; may also support calibration and equivalent-form review
 
 ## Candidate instructions
 

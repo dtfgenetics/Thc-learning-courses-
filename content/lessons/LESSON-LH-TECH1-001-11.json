@@ -2,24 +2,63 @@
   "id": "LESSON-LH-TECH1-001-11",
   "title": "Movement, Inventory and Vendor-Neutral Tracking Records",
   "version": "1.2.0",
-  "status": "draft",
-  "competencies": ["COMP-CULT-TRACEABILITY-001", "COMP-PRO-QA-001"],
-  "learningObjectives": ["LO-LH-TECH1-001-07"],
+  "status": "published",
+  "competencies": [
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-001-07"
+  ],
   "estimatedMinutes": 55,
-  "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-GS1-GLOBAL-TRACEABILITY"],
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
   "assessment": null,
   "content": {
     "overview": "This lesson teaches the stable data and reconciliation logic behind plant/material movements without assuming a universal seed-to-sale platform. Learners compare the physical state to the controlled record, verify recent events and identifiers, and preserve discrepancies instead of forcing one side to match the other.",
     "vocabulary": [
-      {"term": "inventory reconciliation", "definition": "Comparison of physical material with the corresponding controlled record to identify, explain and resolve differences through the authorized process."},
-      {"term": "movement record", "definition": "A record showing an authorized event in which identified material changes location, status or custody."},
-      {"term": "vendor-neutral workflow", "definition": "A process taught by its required evidence and controls rather than by assuming one software platform."},
-      {"term": "discrepancy", "definition": "A difference between expected and observed identity, quantity, location, status or event history that has not yet been resolved."}
+      {
+        "term": "inventory reconciliation",
+        "definition": "Comparison of physical material with the corresponding controlled record to identify, explain and resolve differences through the authorized process."
+      },
+      {
+        "term": "movement record",
+        "definition": "A record showing an authorized event in which identified material changes location, status or custody."
+      },
+      {
+        "term": "vendor-neutral workflow",
+        "definition": "A process taught by its required evidence and controls rather than by assuming one software platform."
+      },
+      {
+        "term": "discrepancy",
+        "definition": "A difference between expected and observed identity, quantity, location, status or event history that has not yet been resolved."
+      }
     ],
     "sections": [
-      {"title": "Record the real event", "body": "A movement record should correspond to a real authorized physical movement and preserve the required identity, source, destination, quantity/count where applicable, time, event context and responsible person or system. GS1 traceability concepts reinforce that the event data should describe what actually happened to the traceable object.", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "Reconciliation compares evidence; it does not choose a winner", "body": "When physical material differs from the record, neither the physical count nor the screen is automatically correct. The technician verifies permitted facts—recount, identifiers, source/destination and recent confirmed events—then preserves the unresolved difference for authorized investigation or correction.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title": "Corrections need a basis", "body": "A controlled count or location should not be edited solely to make a discrepancy disappear. A correction is made under the facility's authorized process when reliable evidence establishes what should change and the change history remains reconstructable.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "title": "Record the real event",
+        "body": "A movement record should correspond to a real authorized physical movement and preserve the required identity, source, destination, quantity/count where applicable, time, event context and responsible person or system. GS1 traceability concepts reinforce that the event data should describe what actually happened to the traceable object.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Reconciliation compares evidence; it does not choose a winner",
+        "body": "When physical material differs from the record, neither the physical count nor the screen is automatically correct. The technician verifies permitted facts—recount, identifiers, source/destination and recent confirmed events—then preserves the unresolved difference for authorized investigation or correction.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Corrections need a basis",
+        "body": "A controlled count or location should not be edited solely to make a discrepancy disappear. A correction is made under the facility's authorized process when reliable evidence establishes what should change and the change history remains reconstructable.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ],
     "workedExamples": [
       "A work order expects 48 plants but the physical count is 47; the mismatch is recounted, identifiers are checked, and the unresolved difference is escalated before finalizing the movement.",
@@ -39,42 +78,224 @@
     "practicalApplication": "Complete a normal room-to-room movement, then reconcile two discrepancy cases: one count mismatch and one physical movement with uncertain record status. For each case, preserve both physical and recorded evidence, build the event timeline, and identify what can be verified by the technician versus what requires authorized correction or investigation.",
     "summary": "Good tracking follows real events and preserves uncertainty when evidence disagrees. Technicians verify identity and movement facts, compare physical and recorded state, and escalate unresolved discrepancies without forcing a convenient balance.",
     "blocks": [
-      {"type": "text", "title": "Teach the event relationship, not one software screen", "body": "Tracking platforms differ, but a reliable movement still requires the same underlying logic: the correct identified material actually moves from a known source to an authorized destination, with the required quantity/count, time, event context and responsible record. Platform-specific clicks belong to employer or jurisdiction training.", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "image", "assetId": "VIS-LH-TECH1-001-009", "src": "/assets/course1/inventory-reconciliation-flow.svg", "alt": "Flowchart comparing physical verification with the controlled record. Matching evidence is documented as verified; a mismatch triggers recounting, identifier and recent-event checks, preservation of the discrepancy, and escalation rather than changing a value merely to force agreement.", "caption": "Reconciliation compares evidence. It does not make one side automatically correct.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "table", "title": "Stable movement-event fields", "columns": ["Field", "Question the record should answer", "Why it matters"], "rows": [
-        ["Identity", "What exact plant, batch, lot, container or material moved?", "Connects the event to the correct genealogy"],
-        ["Source", "Where or from what status did it leave?", "Establishes the pre-event state"],
-        ["Destination", "Where or into what status did it go?", "Establishes the post-event state"],
-        ["Quantity / count", "How much moved, where applicable?", "Supports inventory reconciliation"],
-        ["Time", "When did the event occur?", "Places the movement in the event sequence"],
-        ["Event context", "What happened and under what work order/process?", "Distinguishes a real move from an unexplained location change"],
-        ["Responsible person/system", "Who or what recorded/executed the event?", "Supports attribution and investigation"]
-      ], "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "steps", "title": "Reconcile without forcing agreement", "items": [
-        {"title": "Freeze the comparison point", "body": "Avoid unnecessary additional movement while the discrepancy is being checked, according to the facility process."},
-        {"title": "Verify physical identity and state", "body": "Recount where applicable and confirm the exact identifiers, location and status of the material."},
-        {"title": "Verify the controlled record", "body": "Confirm the recorded identity, source/destination, quantity/status and the event being compared."},
-        {"title": "Review permitted recent events", "body": "Check known movements, splits/merges, delayed entries, returns or other authorized events that could explain the difference."},
-        {"title": "Separate confirmed facts from possible causes", "body": "Do not label a cause as proven simply because it seems plausible."},
-        {"title": "Preserve unresolved difference", "body": "Keep the discrepancy open if evidence still disagrees; do not edit either side just to make it balance."},
-        {"title": "Escalate for authorized correction or investigation", "body": "Transfer the evidence packet to the role allowed to determine the correction, adjustment or further investigation."}
-      ], "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "The work order says 48; the physical count is 47", "setting": "A movement order expects 48 identified plants. You count 47. The system also shows 48 at the source location. The receiving room is waiting.", "prompt": "What is the strongest Technician I response?", "options": ["Change the system to 47 so it matches the physical count", "Add one to the physical count because the system is controlled", "Verify the count and identifiers within procedure, preserve the discrepancy, and escalate if it cannot be reconciled before finalizing the movement", "Move the 47 and close the order as 48"], "answer": "Verify the count and identifiers within procedure, preserve the discrepancy, and escalate if it cannot be reconciled before finalizing the movement.", "feedback": "The physical state and the record are both evidence. The technician should not force either one to match the expected number without a controlled basis for correction.", "references": ["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "scenario", "title": "The plants moved, but the event record is uncertain", "setting": "A group is physically in the destination room with correct identifiers. The source record still shows the group in the previous room, and it is unclear whether the original movement event failed to post or was never entered.", "prompt": "What should the technician avoid?", "options": ["Preserving the physical state while checking the permitted event history", "Documenting that the record and physical state disagree", "Creating a new movement immediately without determining whether that would duplicate the original event", "Escalating the unresolved record state"], "answer": "Creating a new movement immediately without determining whether that would duplicate the original event.", "feedback": "A second event can create a false history if the issue is a delayed or failed record of the original movement. Preserve the mismatch and resolve the event history through the controlled process.", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "document", "title": "Inventory discrepancy evidence packet", "description": "Record enough context for the authorized reviewer to see both sides of the comparison and the event history already checked.", "fields": [
-        {"label": "Material / location", "value": "Exact controlled identity and observed physical location/status"},
-        {"label": "Expected record", "value": "Recorded identity, quantity/count, location/status and relevant event"},
-        {"label": "Observed physical state", "value": "Verified count, identifiers, location and condition"},
-        {"label": "Checks performed", "value": "Recount, identifier verification and other permitted checks"},
-        {"label": "Recent confirmed events", "value": "Movements, split/merge, returns, delayed entries or other relevant history actually verified"},
-        {"label": "Possible explanations", "value": "Plausible causes clearly labeled as hypotheses, not facts"},
-        {"label": "Unresolved difference", "value": "What still does not reconcile"},
-        {"label": "Immediate status", "value": "Movement completed, paused, held or otherwise controlled under procedure"},
-        {"label": "Escalation / correction owner", "value": "Role notified and next authorized action"}
-      ]},
-      {"type": "activity", "title": "Reconcile three mock movements", "instructions": "Complete one normal movement, investigate one count mismatch and investigate one physical-versus-record location mismatch without relying on any named seed-to-sale platform.", "prompts": ["Record the stable event fields for the normal case.", "Compare physical and recorded state in each discrepancy case.", "Build the recent-event sequence before proposing a correction.", "Separate confirmed facts from hypotheses.", "Identify whether a new record would correct the history or accidentally duplicate an event.", "Write the escalation packet without altering either side merely to make the record balance."], "artifact": "Movement-event and reconciliation packet", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type": "callout", "title": "Remediation cue", "tone": "warning", "body": "If your first instinct is to edit the screen, recount until the number matches, or create another movement to make the location look right, stop. Reconciliation begins by preserving both sources of evidence and reconstructing the event history."},
-      {"type": "callout", "title": "Key takeaway", "tone": "evidence", "body": "Good tracking follows physical reality and reconstructable events while preserving uncertainty when evidence disagrees. Record the real movement, reconcile deliberately, and escalate unresolved differences without pretending one software platform defines the profession.", "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "type": "text",
+        "title": "Teach the event relationship, not one software screen",
+        "body": "Tracking platforms differ, but a reliable movement still requires the same underlying logic: the correct identified material actually moves from a known source to an authorized destination, with the required quantity/count, time, event context and responsible record. Platform-specific clicks belong to employer or jurisdiction training.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-009",
+        "src": "/assets/course1/inventory-reconciliation-flow.svg",
+        "alt": "Flowchart comparing physical verification with the controlled record. Matching evidence is documented as verified; a mismatch triggers recounting, identifier and recent-event checks, preservation of the discrepancy, and escalation rather than changing a value merely to force agreement.",
+        "caption": "Reconciliation compares evidence. It does not make one side automatically correct.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Stable movement-event fields",
+        "columns": [
+          "Field",
+          "Question the record should answer",
+          "Why it matters"
+        ],
+        "rows": [
+          [
+            "Identity",
+            "What exact plant, batch, lot, container or material moved?",
+            "Connects the event to the correct genealogy"
+          ],
+          [
+            "Source",
+            "Where or from what status did it leave?",
+            "Establishes the pre-event state"
+          ],
+          [
+            "Destination",
+            "Where or into what status did it go?",
+            "Establishes the post-event state"
+          ],
+          [
+            "Quantity / count",
+            "How much moved, where applicable?",
+            "Supports inventory reconciliation"
+          ],
+          [
+            "Time",
+            "When did the event occur?",
+            "Places the movement in the event sequence"
+          ],
+          [
+            "Event context",
+            "What happened and under what work order/process?",
+            "Distinguishes a real move from an unexplained location change"
+          ],
+          [
+            "Responsible person/system",
+            "Who or what recorded/executed the event?",
+            "Supports attribution and investigation"
+          ]
+        ],
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Reconcile without forcing agreement",
+        "items": [
+          {
+            "title": "Freeze the comparison point",
+            "body": "Avoid unnecessary additional movement while the discrepancy is being checked, according to the facility process."
+          },
+          {
+            "title": "Verify physical identity and state",
+            "body": "Recount where applicable and confirm the exact identifiers, location and status of the material."
+          },
+          {
+            "title": "Verify the controlled record",
+            "body": "Confirm the recorded identity, source/destination, quantity/status and the event being compared."
+          },
+          {
+            "title": "Review permitted recent events",
+            "body": "Check known movements, splits/merges, delayed entries, returns or other authorized events that could explain the difference."
+          },
+          {
+            "title": "Separate confirmed facts from possible causes",
+            "body": "Do not label a cause as proven simply because it seems plausible."
+          },
+          {
+            "title": "Preserve unresolved difference",
+            "body": "Keep the discrepancy open if evidence still disagrees; do not edit either side just to make it balance."
+          },
+          {
+            "title": "Escalate for authorized correction or investigation",
+            "body": "Transfer the evidence packet to the role allowed to determine the correction, adjustment or further investigation."
+          }
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The work order says 48; the physical count is 47",
+        "setting": "A movement order expects 48 identified plants. You count 47. The system also shows 48 at the source location. The receiving room is waiting.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Change the system to 47 so it matches the physical count",
+          "Add one to the physical count because the system is controlled",
+          "Verify the count and identifiers within procedure, preserve the discrepancy, and escalate if it cannot be reconciled before finalizing the movement",
+          "Move the 47 and close the order as 48"
+        ],
+        "answer": "Verify the count and identifiers within procedure, preserve the discrepancy, and escalate if it cannot be reconciled before finalizing the movement.",
+        "feedback": "The physical state and the record are both evidence. The technician should not force either one to match the expected number without a controlled basis for correction.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The plants moved, but the event record is uncertain",
+        "setting": "A group is physically in the destination room with correct identifiers. The source record still shows the group in the previous room, and it is unclear whether the original movement event failed to post or was never entered.",
+        "prompt": "What should the technician avoid?",
+        "options": [
+          "Preserving the physical state while checking the permitted event history",
+          "Documenting that the record and physical state disagree",
+          "Creating a new movement immediately without determining whether that would duplicate the original event",
+          "Escalating the unresolved record state"
+        ],
+        "answer": "Creating a new movement immediately without determining whether that would duplicate the original event.",
+        "feedback": "A second event can create a false history if the issue is a delayed or failed record of the original movement. Preserve the mismatch and resolve the event history through the controlled process.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "document",
+        "title": "Inventory discrepancy evidence packet",
+        "description": "Record enough context for the authorized reviewer to see both sides of the comparison and the event history already checked.",
+        "fields": [
+          {
+            "label": "Material / location",
+            "value": "Exact controlled identity and observed physical location/status"
+          },
+          {
+            "label": "Expected record",
+            "value": "Recorded identity, quantity/count, location/status and relevant event"
+          },
+          {
+            "label": "Observed physical state",
+            "value": "Verified count, identifiers, location and condition"
+          },
+          {
+            "label": "Checks performed",
+            "value": "Recount, identifier verification and other permitted checks"
+          },
+          {
+            "label": "Recent confirmed events",
+            "value": "Movements, split/merge, returns, delayed entries or other relevant history actually verified"
+          },
+          {
+            "label": "Possible explanations",
+            "value": "Plausible causes clearly labeled as hypotheses, not facts"
+          },
+          {
+            "label": "Unresolved difference",
+            "value": "What still does not reconcile"
+          },
+          {
+            "label": "Immediate status",
+            "value": "Movement completed, paused, held or otherwise controlled under procedure"
+          },
+          {
+            "label": "Escalation / correction owner",
+            "value": "Role notified and next authorized action"
+          }
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Reconcile three mock movements",
+        "instructions": "Complete one normal movement, investigate one count mismatch and investigate one physical-versus-record location mismatch without relying on any named seed-to-sale platform.",
+        "prompts": [
+          "Record the stable event fields for the normal case.",
+          "Compare physical and recorded state in each discrepancy case.",
+          "Build the recent-event sequence before proposing a correction.",
+          "Separate confirmed facts from hypotheses.",
+          "Identify whether a new record would correct the history or accidentally duplicate an event.",
+          "Write the escalation packet without altering either side merely to make the record balance."
+        ],
+        "artifact": "Movement-event and reconciliation packet",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If your first instinct is to edit the screen, recount until the number matches, or create another movement to make the location look right, stop. Reconciliation begins by preserving both sources of evidence and reconstructing the event history."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Good tracking follows physical reality and reconstructable events while preserving uncertainty when evidence disagrees. Record the real movement, reconcile deliberately, and escalate unresolved differences without pretending one software platform defines the profession.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ]
   }
 }
