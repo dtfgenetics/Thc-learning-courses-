@@ -14,6 +14,26 @@ export async function createPersistenceAdapters() {
     credentialWriter: { kind: 'test-writer' },
     practicalEvaluatorStore: {
       kind: 'test-practical-evaluator',
+      async listCourseLearners({ courseId } = {}) {
+        const rows = [];
+        for (const [subject, subjectEnrollments] of enrollments) {
+          const enrollment = subjectEnrollments.find((row) => row.courseId === courseId);
+          if (!enrollment) continue;
+          rows.push({
+            learnerSubject: subject,
+            enrollmentStatus: enrollment.status,
+            enrolledAt: enrollment.enrolledAt,
+            practicalStatus: 'not-recorded',
+            scorePercent: null,
+            criticalErrorCount: 0,
+            followUpStatus: 'none',
+            reassessmentTargetDate: '',
+            evaluatedAt: null,
+            updatedAt: null
+          });
+        }
+        return rows;
+      },
       async getEvaluation(subject, { assessmentId, assessmentVersion } = {}) {
         const key = `${subject}:${assessmentId}:${assessmentVersion}`;
         return { learnerExists: true, evaluation: practicalResults.get(key) ? structuredClone(practicalResults.get(key)) : null };
