@@ -29,6 +29,9 @@ assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
 for (const method of ['findOpenAssessmentAttempt', 'getAssessmentAttempt', 'createAssessmentAttempt', 'saveAssessmentResponses', 'saveAssessmentScore']) {
   assert.equal(typeof options.learnerStore[method], 'function', `production learner store must provide ${method}()`);
 }
+assert.equal(options.practicalEvaluatorStore.kind, 'test-practical-evaluator');
+assert.equal(typeof options.practicalEvaluatorStore.getEvaluation, 'function');
+assert.equal(typeof options.practicalEvaluatorStore.saveEvaluation, 'function');
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
 
@@ -42,5 +45,9 @@ assert.equal(authOk.ok, true);
 assert.equal(authOk.subject, 'external-user-001');
 assert.ok(authOk.scopes.includes('learner:read'));
 assert.ok(authOk.scopes.includes('learner:write'));
+assert.ok(authOk.scopes.includes('evaluator:read'));
+assert.ok(authOk.scopes.includes('evaluator:write'));
+const evaluatorAuth = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'evaluator:write');
+assert.equal(evaluatorAuth.ok, true);
 
-console.log('Production persistence, schema readiness, learner assessment/evidence, and authentication adapter contract passed.');
+console.log('Production persistence, schema readiness, learner assessment/evidence, practical evaluator, and authentication adapter contracts passed.');
