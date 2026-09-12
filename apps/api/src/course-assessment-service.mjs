@@ -114,7 +114,7 @@ export async function saveCourseAssessmentResponses({ learnerStore, subject, att
   const bundle = loadPublishedCourseAssessment(assessment.extensions.courseId);
   if (bundle.error) return { status: 409, body: { error: bundle.error } };
   ensureAttemptMatchesPackage(attempt, bundle);
-  if (!Array.isArray(responses) || responses.length < 1 || responses.length > 36) return { status: 400, body: { error: 'invalid-assessment-responses' } };
+  if (!Array.isArray(responses) || responses.length < 1 || responses.length > attempt.items.length) return { status: 400, body: { error: 'invalid-assessment-responses' } };
 
   const attemptItems = new Map(attempt.items.map((row) => [`${row.itemId}@${row.itemVersion}`, row]));
   const bank = new Map(bundle.itemBank.map((item) => [`${item.id}@${item.version}`, item]));
@@ -127,11 +127,10 @@ export async function saveCourseAssessmentResponses({ learnerStore, subject, att
       seen.add(key);
       if (!attemptItems.has(key) || !bank.has(key)) throw new Error('response item mismatch');
       const item = bank.get(key);
-      normalized.push({
-        itemId: item.id,
-        itemVersion: item.version,
-        response: normalizePresentedResponse(item, { formId: attempt.formId, response: row.response, randomizeChoices: bundle.assessment.randomizeChoices !== false })
-      });
+      const response = row.response == null
+        ? null
+        : normalizePresentedResponse(item, { formId: attempt.formId, response: row.response, randomizeChoices: bundle.assessment.randomizeChoices !== false });
+      normalized.push({ itemId: item.id, itemVersion: item.version, response });
     }
   } catch (error) {
     return { status: 400, body: { error: 'invalid-assessment-response', detail: error.message } };
