@@ -16,6 +16,8 @@
 .assessor-current, .assessor-section { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
 .assessor-current h3, .assessor-section h3 { margin-top: 0; }
 .assessor-current-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(155px,1fr)); align-items: center; gap: .7rem; padding: .85rem; border: 1px solid var(--line); border-radius: .75rem; background: #fff; }
+.assessor-assignment-card { margin-top: 1rem; padding: .9rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--panel); }
+.assessor-assignment-card h3 { margin-top: 0; }
 .assessor-domain-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: .7rem; }
 .assessor-domain-row { display: grid; grid-template-columns: minmax(0,1fr) 92px; align-items: center; gap: .75rem; padding: .85rem; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
 .assessor-domain-copy { display: grid; gap: .2rem; }
@@ -33,11 +35,15 @@
 .assessor-queue-metric { display: grid; gap: .15rem; padding: .8rem; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
 .assessor-queue-metric strong { font-size: 1.45rem; line-height: 1; }
 .assessor-queue-metric span { color: var(--muted); font-size: .9rem; }
-.assessor-queue-controls, .assessor-follow-grid, .assessor-evidence-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; }
+.assessor-queue-controls { display: grid; grid-template-columns: minmax(220px,1.4fr) minmax(170px,1fr) minmax(170px,1fr) auto; gap: .8rem; align-items: end; }
+.assessor-follow-grid, .assessor-evidence-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; }
 .assessor-queue-list { display: grid; gap: .55rem; }
 .assessor-queue-row { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: .8rem; padding: .85rem; border: 1px solid var(--line); border-radius: .75rem; background: #fff; }
 .assessor-queue-identity { display: grid; gap: .2rem; min-width: 0; overflow-wrap: anywhere; }
-.assessor-queue-open { white-space: nowrap; }
+.assessor-queue-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .45rem; }
+.assessor-queue-open, .assessor-assignment-action { white-space: nowrap; }
+.assessor-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .7rem; margin-top: 1rem; }
+.assessor-pager span { font-weight: 750; color: var(--muted); }
 .assessor-manual-lookup, .assessor-history { margin-top: 1rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--panel); }
 .assessor-manual-lookup > summary, .assessor-history > summary { cursor: pointer; min-height: 44px; padding: .8rem 1rem; font-weight: 800; }
 .assessor-manual-lookup .assessor-lookup { padding: 0 1rem 1rem; }
@@ -52,20 +58,24 @@
 .assessor-history-card h4 { margin: 0 0 .35rem; }
 .assessor-history-card p { margin: .35rem 0 0; overflow-wrap: anywhere; }
 
+@media (max-width: 900px) {
+  .assessor-queue-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
 @media (max-width: 760px) {
   .assessor-queue-controls, .assessor-follow-grid, .assessor-evidence-fields { grid-template-columns: 1fr; }
   .assessor-queue-row { grid-template-columns: 1fr; }
-  .assessor-queue-open { width: 100%; }
+  .assessor-queue-actions { justify-content: stretch; display: grid; }
+  .assessor-queue-open, .assessor-assignment-action { width: 100%; }
 }
-
 @media (max-width: 620px) {
   .assessor-domain-grid { grid-template-columns: 1fr; }
   .assessor-domain-row { grid-template-columns: 1fr; }
   .assessor-domain-row input { width: 100%; }
   .assessor-actions { display: grid; }
   .assessor-primary, .assessor-secondary { width: 100%; }
+  .assessor-pager { display: grid; grid-template-columns: 1fr; text-align: center; }
 }
 
 @media print {
-  #tab-assessor, .assessor-lookup, .assessor-actions, .assessor-confirm, .assessor-queue-controls, .assessor-manual-lookup { display: none !important; }
+  #tab-assessor, .assessor-lookup, .assessor-actions, .assessor-confirm, .assessor-queue-controls, .assessor-manual-lookup, .assessor-pager, .assessor-assignment-action { display: none !important; }
 }
