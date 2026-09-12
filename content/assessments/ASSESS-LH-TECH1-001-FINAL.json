@@ -116,6 +116,27 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH1-001",
     "linkedPerformanceAssessment": "PRACTICAL-LH-TECH1-001-WORKFLOW",
+    "gradingPolicy": {
+      "policyVersion": "course1-academic-1.0.0",
+      "algorithmVersion": "course-grader-2.0.0",
+      "purpose": "Academic course-final grading safeguard; this is not the Technician I credential cut-score model.",
+      "multipleResponseMethod": "partial-credit",
+      "multipleResponseIncorrectPenalty": 0.5,
+      "masteryBands": {
+        "demonstratedPercent": 80,
+        "developingPercent": 60
+      },
+      "requireCompetencyMinimums": true,
+      "competencyMinimums": {
+        "COMP-SAFETY-WORK-001": 70,
+        "COMP-SPACE-BIOSEC-001": 60,
+        "COMP-PRO-SOP-001": 60,
+        "COMP-PRO-QA-001": 65,
+        "COMP-CULT-TRACEABILITY-001": 65,
+        "COMP-CULT-EQUIPMENT-CARE-001": 60
+      },
+      "decisionRule": "Pass requires the overall 80% course-final standard and every configured competency minimum. A competency floor prevents a severe domain weakness from being hidden by stronger performance elsewhere."
+    },
     "qualityTargets": {
       "minimumItemsPerObjective": 2,
       "minimumAppliedOrHigherPercent": 80,
