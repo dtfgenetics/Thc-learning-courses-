@@ -37,38 +37,14 @@
   "scoring": {
     "totalPoints": 100,
     "domains": [
-      {
-        "name": "Safety, PPE and stop-work judgment",
-        "points": 18
-      },
-      {
-        "name": "Sanitation and biosecurity",
-        "points": 14
-      },
-      {
-        "name": "SOP and work-order execution",
-        "points": 12
-      },
-      {
-        "name": "Identity and traceability",
-        "points": 16
-      },
-      {
-        "name": "Inventory and discrepancy reasoning",
-        "points": 10
-      },
-      {
-        "name": "Equipment readiness and operator-care boundary",
-        "points": 10
-      },
-      {
-        "name": "Data integrity and documentation",
-        "points": 12
-      },
-      {
-        "name": "Shift handoff and communication",
-        "points": 8
-      }
+      {"name": "Safety, PPE and stop-work judgment", "points": 18},
+      {"name": "Sanitation and biosecurity", "points": 14},
+      {"name": "SOP and work-order execution", "points": 12},
+      {"name": "Identity and traceability", "points": 16},
+      {"name": "Inventory and discrepancy reasoning", "points": 10},
+      {"name": "Equipment readiness and operator-care boundary", "points": 10},
+      {"name": "Data integrity and documentation", "points": 12},
+      {"name": "Shift handoff and communication", "points": 8}
     ]
   },
   "passingStandard": {
@@ -94,6 +70,99 @@
     "standardSettingStatus": "continuous-quality-improvement",
     "operationalUseBlockedUntilCalibration": false,
     "publicAcademicViewing": true,
+    "gradingRubric": {
+      "version": "course1-practical-rubric-1.0.0",
+      "levels": [
+        {
+          "id": "strong",
+          "label": "Strong",
+          "minimumPercent": 90,
+          "description": "Consistently complete, accurate, independent and well controlled. Decisions are supported by the supplied procedure/evidence and open conditions are transferred clearly."
+        },
+        {
+          "id": "competent",
+          "label": "Competent",
+          "minimumPercent": 75,
+          "description": "Meets the expected Course 1 performance standard with only minor non-critical omissions that do not compromise safety, identity, traceability or record integrity."
+        },
+        {
+          "id": "developing",
+          "label": "Developing",
+          "minimumPercent": 50,
+          "description": "Partially meets the standard but needs correction, prompting, stronger evidence or more reliable execution before independent course-level performance is demonstrated."
+        },
+        {
+          "id": "insufficient",
+          "label": "Insufficient",
+          "minimumPercent": 0,
+          "description": "Does not yet demonstrate the required performance or leaves important controls, records, identity, authorization or handoff elements unresolved."
+        }
+      ],
+      "requireDomainMinimums": true,
+      "domainMinimumPercents": {
+        "Safety, PPE and stop-work judgment": 70,
+        "Sanitation and biosecurity": 60,
+        "SOP and work-order execution": 60,
+        "Identity and traceability": 65,
+        "Inventory and discrepancy reasoning": 60,
+        "Equipment readiness and operator-care boundary": 60,
+        "Data integrity and documentation": 65,
+        "Shift handoff and communication": 60
+      },
+      "requireAllEvidenceReviewed": true,
+      "requireAllEvidenceVerifiedForPass": true,
+      "requireCriticalErrorDocumentation": true,
+      "domainAnchors": {
+        "Safety, PPE and stop-work judgment": {
+          "strong": "Identifies seeded hazards and restrictions, uses supplied PPE/HazCom information correctly, preserves stop-work boundaries and escalates without unauthorized repair or release.",
+          "competent": "Recognizes and controls the material hazards within role authority, stops or escalates when required, and avoids unsafe workarounds.",
+          "developing": "Recognizes many hazards but misses or delays a non-critical control, needs prompting, or incompletely explains the authority boundary.",
+          "insufficient": "Normalizes a material hazard, bypasses a required control, or cannot reliably distinguish routine work from stop/escalate conditions."
+        },
+        "Sanitation and biosecurity": {
+          "strong": "Maintains clean-to-dirty movement logic, distinguishes sanitation from plant-health and worker-entry controls, and verifies product/process conditions before proceeding.",
+          "competent": "Executes the supplied sanitation and movement controls correctly and preserves active restrictions.",
+          "developing": "Completes most steps but misses a verification, sequence detail, or contamination pathway without creating a critical breach.",
+          "insufficient": "Cannot reliably maintain movement/status controls or treats incompatible restrictions as interchangeable."
+        },
+        "SOP and work-order execution": {
+          "strong": "Verifies current revision, task identity, scope, acceptance criteria and exceptions; identifies conflicts and transfers decisions cleanly without inventing authority.",
+          "competent": "Works from the supplied controlled instruction and follows required stop, exception and escalation points.",
+          "developing": "Follows the main sequence but needs help identifying a revision/scope/acceptance or exception boundary.",
+          "insufficient": "Proceeds from an uncontrolled, conflicting or incomplete instruction without appropriate stop/escalation."
+        },
+        "Identity and traceability": {
+          "strong": "Preserves physical and record identity through every movement, split/merge or handoff and blocks discrepant movement until resolution.",
+          "competent": "Correctly verifies and records the required identifiers, movement context and destination/source relationships.",
+          "developing": "Preserves core identity but misses a non-critical event/context field or needs prompting during reconciliation.",
+          "insufficient": "Cannot reliably link physical material to the controlled record or attempts to force a mismatch to balance."
+        },
+        "Inventory and discrepancy reasoning": {
+          "strong": "Separates confirmed from unresolved facts, preserves evidence and builds a defensible discrepancy/disposition trail without unsupported conclusions.",
+          "competent": "Detects, records and escalates discrepancies while preserving the actual physical and recorded state.",
+          "developing": "Finds the discrepancy but incompletely documents context, evidence or next ownership.",
+          "insufficient": "Forces reconciliation, obscures the mismatch or cannot identify what remains unknown."
+        },
+        "Equipment readiness and operator-care boundary": {
+          "strong": "Completes all permitted external readiness checks, identifies recurrence and operational impact, and escalates without unsupported diagnosis or protected servicing.",
+          "competent": "Performs the supplied operator checks and stays within the stated operator-care boundary.",
+          "developing": "Completes most checks but needs prompting on recurrence, documentation or the servicing boundary.",
+          "insufficient": "Attempts or recommends unauthorized servicing or cannot produce a usable equipment-status record."
+        },
+        "Data integrity and documentation": {
+          "strong": "Produces contemporaneous, attributable, context-rich records; corrections preserve original history and missing information remains visibly missing.",
+          "competent": "Creates reconstructable records and uses the supplied correction/late-entry process correctly.",
+          "developing": "Records the core facts but misses context, timing, attribution or correction detail that requires remediation.",
+          "insufficient": "Backfills, silently overwrites, guesses missing data or produces records that cannot be reliably reconstructed."
+        },
+        "Shift handoff and communication": {
+          "strong": "Prioritizes safety/status, completed work, open deviations, ownership and time-sensitive next actions with two-way confirmation and source cross-checking.",
+          "competent": "Communicates the required open/closed state and next ownership clearly enough for the incoming worker to act safely.",
+          "developing": "Transfers most information but leaves a non-critical ambiguity, weak priority, or incomplete read-back.",
+          "insufficient": "Omits material open conditions, presents hypotheses as facts, or fails to identify ownership/next action."
+        }
+      }
+    },
     "learnerWorkflow": {
       "overview": "Apply Course 1 as one connected cultivation workflow while conditions change during a simulated shift. Learners must preserve safety, identity, traceability, authorization boundaries, record integrity, and handoff quality as new information appears.",
       "academicUse": "The practical framework is public academic course content. It may be studied without authentication and used for simulation, supervised-lab, or workplace-equivalent learning and evaluation. Personal assessor results remain private learner records.",
@@ -106,26 +175,11 @@
         "Expect conditions to change during the simulated shift and reassess earlier decisions when new status, identity, sanitation, equipment, or record information appears."
       ],
       "stages": [
-        {
-          "title": "1. Pre-task review",
-          "summary": "Recognize hazards, access restrictions, work-order limits, identity risks, PPE needs, and operator authority before work begins."
-        },
-        {
-          "title": "2. Status and sanitation change",
-          "summary": "Reassess work when one restriction changes but another remains active, and verify exact sanitation-product authorization before substitution."
-        },
-        {
-          "title": "3. Recurring equipment fault",
-          "summary": "Stay inside the operator-care boundary, record the fault timeline, and escalate repeated unresolved conditions without unsupported diagnosis."
-        },
-        {
-          "title": "4. Record integrity",
-          "summary": "Correct records while preserving original history and distinguish observation time from later entry time without backdating."
-        },
-        {
-          "title": "5. Closed-loop handoff",
-          "summary": "Transfer unresolved holds, identity discrepancies, equipment status, sanitation status, and next actions using two-way read-back and source cross-checking."
-        }
+        {"title": "1. Pre-task review", "summary": "Recognize hazards, access restrictions, work-order limits, identity risks, PPE needs, and operator authority before work begins."},
+        {"title": "2. Status and sanitation change", "summary": "Reassess work when one restriction changes but another remains active, and verify exact sanitation-product authorization before substitution."},
+        {"title": "3. Recurring equipment fault", "summary": "Stay inside the operator-care boundary, record the fault timeline, and escalate repeated unresolved conditions without unsupported diagnosis."},
+        {"title": "4. Record integrity", "summary": "Correct records while preserving original history and distinguish observation time from later entry time without backdating."},
+        {"title": "5. Closed-loop handoff", "summary": "Transfer unresolved holds, identity discrepancies, equipment status, sanitation status, and next actions using two-way read-back and source cross-checking."}
       ],
       "supportResources": [
         "Course 1 Field References",
