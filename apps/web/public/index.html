@@ -37,11 +37,17 @@
   </section>
 
   <main class="app-shell">
-    <aside class="catalog-panel" aria-label="Course catalog">
-      <label class="search-label" for="course-search">Find a course or lesson</label>
-      <input id="course-search" class="search" type="search" placeholder="Search topics…" autocomplete="off">
-      <div id="catalog-status" class="status" aria-live="polite">Loading Academy catalog…</div>
-      <nav id="catalog" class="catalog" aria-label="Academy courses"></nav>
+    <aside id="catalog-panel" class="catalog-panel" aria-label="Course catalog" data-expanded="true">
+      <button type="button" id="catalog-toggle" class="catalog-toggle" aria-expanded="true" aria-controls="catalog-body">
+        <span>Course outline</span>
+        <span id="catalog-toggle-state" aria-hidden="true">Hide</span>
+      </button>
+      <div id="catalog-body" class="catalog-body">
+        <label class="search-label" for="course-search">Find a course or lesson</label>
+        <input id="course-search" class="search" type="search" placeholder="Search topics…" autocomplete="off">
+        <div id="catalog-status" class="status" aria-live="polite">Loading Academy catalog…</div>
+        <nav id="catalog" class="catalog" aria-label="Academy courses"></nav>
+      </div>
     </aside>
 
     <section id="lesson-view" class="lesson-panel" tabindex="-1" aria-live="polite">

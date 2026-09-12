@@ -1,22 +1,23 @@
-.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
-.portal-nav { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: flex-end; }
-.portal-tab { border: 1px solid var(--line); background: var(--panel); color: var(--muted); border-radius: 999px; padding: .45rem .8rem; font-weight: 750; cursor: pointer; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; min-width: 0; }
+.portal-nav { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: flex-end; max-width: 100%; }
+.portal-tab { min-height: 44px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); border-radius: 999px; padding: .5rem .85rem; font-weight: 750; line-height: 1.2; cursor: pointer; white-space: nowrap; }
 .portal-tab:hover { border-color: var(--green); color: var(--green); }
 .portal-tab:focus-visible { border-color: var(--green); color: var(--green); outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .portal-tab.active { background: var(--green); color: #fff; border-color: var(--green); }
 .portal-panel { max-width: 940px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow); padding: clamp(1.25rem, 4vw, 3.25rem); }
-.portal-panel h2 { margin: .2rem 0 .6rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.03em; }
+.portal-panel h2 { margin: .2rem 0 .6rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.03em; text-wrap: balance; }
+.portal-panel > p, .portal-tool-copy, .portal-result-note { max-width: 72ch; }
 .portal-tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .portal-tool-card { border: 1px solid var(--line); border-radius: .8rem; padding: 1.1rem; background: #fff; }
 .portal-tool-card h3 { margin: 0 0 .35rem; }
 .portal-tool-copy { color: var(--muted); margin: .2rem 0 1rem; }
 .portal-input-row { display: grid; gap: .3rem; margin: .75rem 0; font-weight: 750; font-size: .86rem; color: var(--muted); }
-.portal-input-row input, .portal-verify-form input { width: 100%; border: 1px solid var(--line); border-radius: .6rem; padding: .7rem .8rem; background: var(--panel); color: var(--ink); }
+.portal-input-row input, .portal-verify-form input { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: .6rem; padding: .7rem .8rem; background: var(--panel); color: var(--ink); }
 .portal-input-row input:focus, .portal-verify-form input:focus { outline: 3px solid rgba(36,95,61,.18); border-color: var(--green); }
 .portal-result { display: block; margin-top: 1rem; color: var(--green); font-size: 1.5rem; }
 .portal-result-note { color: var(--muted); font-size: .86rem; }
 .portal-verify-form { display: flex; gap: .5rem; margin: 1.25rem 0; }
-.portal-verify-form button { border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .6rem; padding: .7rem 1rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.portal-verify-form button { min-height: 44px; border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .6rem; padding: .7rem 1rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
 .portal-verify-form button:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .portal-verify-result { margin-top: 1rem; }
 .portal-credential-card { border: 1px solid var(--green); background: #fff; border-radius: .8rem; padding: 1.25rem; }
@@ -47,22 +48,11 @@
 .portal-evidence-status.status-passed, .portal-evidence-status.status-verified, .portal-evidence-status.status-accepted, .portal-evidence-status.status-complete, .portal-evidence-status.status-demonstrated { background: var(--green-soft); color: var(--green); }
 .portal-evidence-status.status-failed, .portal-evidence-status.status-not-passed, .portal-evidence-status.status-not-demonstrated { background: #f8e4e1; color: #712f26; }
 .portal-evidence-status.status-developing { background: #fbf2df; color: #735019; }
-.portal-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
+.portal-table-wrap { overflow-x: auto; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
 .portal-progress-table { width: 100%; min-width: 620px; border-collapse: collapse; }
 .portal-progress-table th, .portal-progress-table td { padding: .7rem .8rem; text-align: left; border-bottom: 1px solid var(--line); }
 .portal-progress-table th { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; background: var(--panel); }
 .portal-progress-table tbody tr:last-child td { border-bottom: 0; }
-.portal-practice { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-.portal-practice > h3 { margin: .2rem 0 .4rem; }
-.portal-practice-item { border: 1px solid var(--line); border-radius: .75rem; padding: 1rem; background: #fff; margin-top: .9rem; }
-.portal-practice-stem { font-weight: 750; }
-.portal-practice-answers { display: grid; gap: .45rem; }
-.portal-practice-answers button { text-align: left; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: .55rem; padding: .65rem .75rem; cursor: pointer; }
-.portal-practice-answers button:hover:not(:disabled) { border-color: var(--green); }
-.portal-practice-answers button:focus-visible { border-color: var(--green); outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
-.portal-practice-answers button.correct { border-color: var(--green); background: var(--green-soft); }
-.portal-practice-answers button.incorrect { border-color: #b24a3b; background: #f8e4e1; }
-.portal-practice-feedback { margin: .75rem 0 0; color: var(--muted); }
 
 .field-reference-search { margin-top: 1.25rem; }
 .field-reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .9rem; margin-top: 1rem; }
@@ -72,7 +62,7 @@
 .field-reference-summary { color: var(--muted); margin: 0; flex: 1; }
 .field-reference-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
 .field-reference-tag { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: .2rem .45rem; font-size: .7rem; font-weight: 750; color: var(--muted); background: var(--panel); }
-.field-reference-button, .field-reference-print, .field-reference-back { border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .55rem; padding: .55rem .75rem; font-weight: 800; cursor: pointer; }
+.field-reference-button, .field-reference-print, .field-reference-back { min-height: 44px; border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .55rem; padding: .55rem .75rem; font-weight: 800; cursor: pointer; }
 .field-reference-back { background: transparent; color: var(--green); margin-bottom: 1rem; }
 .field-reference-button:hover, .field-reference-print:hover { filter: brightness(.94); }
 .field-reference-button:focus-visible, .field-reference-print:focus-visible, .field-reference-back:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
@@ -91,17 +81,33 @@
 .field-reference-boundary { margin-top: 1.8rem; padding: 1rem; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
 .field-reference-boundary p { margin: .35rem 0 0; color: var(--muted); }
 .field-reference-quick { margin-top: .45rem; }
-.field-reference-quick .field-reference-button { width: 100%; text-align: left; background: transparent; color: var(--green); border-color: var(--line); font-size: .76rem; padding: .42rem .55rem; }
+.field-reference-quick .field-reference-button { width: 100%; text-align: left; background: transparent; color: var(--green); border-color: var(--line); font-size: .76rem; padding: .5rem .55rem; }
 .field-reference-quick .field-reference-button:hover { background: var(--green-soft); border-color: var(--green); }
 .lesson-field-reference { display: grid; gap: .55rem; margin: 1rem 0 1.5rem; padding: .85rem 1rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: .55rem; background: #fff; }
-.lesson-field-reference > span { color: var(--muted); }
+.lesson-field-reference > span { color: var(--muted); max-width: 72ch; }
 .lesson-field-reference .field-reference-button { justify-self: start; }
 .field-reference-remediation { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .75rem; padding-top: .75rem; border-top: 1px dashed var(--line); color: var(--muted); }
-.field-reference-remediation .field-reference-button { padding: .4rem .6rem; font-size: .8rem; }
+.field-reference-remediation .field-reference-button { padding: .5rem .65rem; font-size: .8rem; }
 
-@media (max-width: 840px) { .header-right { align-items: flex-start; width: 100%; } .portal-nav { justify-content: flex-start; } .portal-verify-form { flex-direction: column; } }
-@media (max-width: 620px) { .portal-progress-summary { grid-template-columns: 1fr 1fr; } .portal-evidence-row { align-items: flex-start; flex-direction: column; } .field-reference-grid, .field-reference-comparison { grid-template-columns: 1fr; } .field-reference-button, .field-reference-print { min-height: 44px; } }
-@media (max-width: 420px) { .portal-progress-summary { grid-template-columns: 1fr; } }
+@media (max-width: 840px) {
+  .header-right { align-items: flex-start; width: 100%; }
+  .portal-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; padding: .1rem .05rem .45rem; scroll-snap-type: x proximity; }
+  .portal-tab { flex: 0 0 auto; scroll-snap-align: start; }
+  .portal-verify-form { flex-direction: column; }
+}
+
+@media (max-width: 620px) {
+  .portal-panel { border-radius: .8rem; padding: 1rem; }
+  .portal-progress-summary { grid-template-columns: 1fr 1fr; }
+  .portal-evidence-row { align-items: flex-start; flex-direction: column; }
+  .field-reference-grid, .field-reference-comparison { grid-template-columns: 1fr; }
+  .field-reference-actions, .field-reference-actions .field-reference-print { width: 100%; }
+  .lesson-field-reference .field-reference-button { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .portal-progress-summary { grid-template-columns: 1fr; }
+}
 
 @media print {
   .site-header, .governance-dashboard, .catalog-panel, .site-footer, .field-reference-back, .field-reference-actions, .lesson-field-reference, .field-reference-remediation { display: none !important; }
