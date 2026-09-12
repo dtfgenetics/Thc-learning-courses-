@@ -5,6 +5,7 @@ import { buildPracticalEvaluation, practicalEvaluatorView } from '../../../packa
 const root = process.cwd();
 const COURSE_ID = 'COURSE-LH-TECH1-001';
 const PRACTICAL_ID = 'PRACTICAL-LH-TECH1-001-WORKFLOW';
+const PRACTICAL_QUEUE_STATUSES = new Set(['', 'not-recorded', 'in-progress', 'passed', 'failed', 'voided']);
 
 function readJson(rel) { return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8')); }
 
@@ -19,6 +20,50 @@ function learnerSubject(value) {
   const subject = String(value ?? '').trim();
   if (!subject || subject.length > 256 || /[\u0000-\u001f]/.test(subject)) throw new Error('invalid-learner-subject');
   return subject;
+}
+
+function queueSearch(value) {
+  const query = String(value ?? '').trim();
+  if (query.length > 100 || /[\u0000-\u001f]/.test(query)) throw new Error('invalid-queue-search');
+  return query;
+}
+
+function queueStatus(value) {
+  const status = String(value ?? '').trim();
+  if (!PRACTICAL_QUEUE_STATUSES.has(status)) throw new Error('invalid-practical-status-filter');
+  return status;
+}
+
+export async function listCoursePracticalQueue({ store, courseId, search = '', practicalStatus = '', limit = 50 } = {}) {
+  const practical = loadCourse1PracticalForEvaluation(courseId);
+  if (!practical) return { status: 404, body: { error: 'course-practical-not-found' } };
+  if (!store || typeof store.listCourseLearners !== 'function') return { status: 503, body: { error: 'practical-evaluator-persistence-unavailable' } };
+  let normalizedSearch;
+  let normalizedStatus;
+  try {
+    normalizedSearch = queueSearch(search);
+    normalizedStatus = queueStatus(practicalStatus);
+  } catch (error) {
+    return { status: 400, body: { error: error.message } };
+  }
+  const normalizedLimit = Math.min(100, Math.max(1, Number.isFinite(Number(limit)) ? Math.trunc(Number(limit)) : 50));
+  const learners = await store.listCourseLearners({
+    courseId,
+    assessmentId: practical.id,
+    assessmentVersion: practical.version,
+    search: normalizedSearch,
+    practicalStatus: normalizedStatus,
+    limit: normalizedLimit
+  });
+  return {
+    status: 200,
+    body: {
+      course: { id: COURSE_ID },
+      practical: { id: practical.id, version: practical.version },
+      filters: { search: normalizedSearch, practicalStatus: normalizedStatus },
+      learners
+    }
+  };
 }
 
 export async function getCoursePracticalEvaluation({ store, courseId, externalSubject } = {}) {
