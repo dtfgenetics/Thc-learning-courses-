@@ -33,7 +33,10 @@ assert.ok(js.includes("input.type = 'checkbox'"), 'multiple-response assessment 
 assert.ok(js.includes("input.type = 'number'"), 'numeric assessment items need numeric controls');
 assert.ok(js.includes('renderRichBlocks(fieldset, item.stimulus)'), 'assessment evidence stimuli must use the accessible rich renderer');
 assert.ok(js.includes('pendingSaves'), 'submission must account for in-flight autosaves');
-assert.ok(js.includes("submit.disabled = answered !== total || pendingSaves.size > 0"), 'submit must stay disabled until every item is answered and saved');
+assert.ok(js.includes('saveChains'), 'rapid updates for one item must be serialized');
+assert.ok(js.includes("fieldset.dataset.saved = 'false'"), 'changed responses must become unsaved until persistence succeeds');
+assert.ok(js.includes("fieldset.dataset.saved = 'true'"), 'successful autosave must mark the item saved');
+assert.ok(js.includes('submit.disabled = !allAnsweredAndSaved(panel) || pendingSaves.size > 0'), 'submit must stay disabled until every item is answered and saved');
 assert.equal(js.includes('.innerHTML'), false, 'assessment UI must use DOM construction rather than innerHTML');
 assert.equal(/\bcorrect\b/.test(js), false, 'learner assessment UI must not depend on a correct-answer field');
 assert.equal(/\brationale\b/.test(js), false, 'learner assessment UI must not depend on rationale data');
