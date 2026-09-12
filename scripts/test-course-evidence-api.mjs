@@ -35,10 +35,20 @@ const active = courseEvidenceView(course, finalAssessment, {
   ],
   performanceAssessment: { assessmentId: 'PRACTICAL-LH-TECH1-001-WORKFLOW', status: 'in-progress', scorePercent: null, criticalErrorCount: 0 }
 });
-assert.equal(active.writtenAssessment.outcome, 'not-passed', 'a scored failed attempt remains a not-passed outcome even if a later attempt is still pending');
+assert.equal(active.writtenAssessment.outcome, 'in-progress', 'a newer active attempt must be shown as in progress even when an earlier scored attempt was not passed');
 assert.equal(active.writtenAssessment.recordStatus, 'submitted');
 assert.equal(active.writtenAssessment.bestScorePercent, 74);
 assert.equal(active.performanceAssessment.status, 'in-progress');
+
+const failed = courseEvidenceView(course, finalAssessment, {
+  assessmentAttempts: [
+    { assessmentId: finalAssessment.id, status: 'scored', formId: 'FORM-A', startedAt: '2026-09-09T13:00:00.000Z', scoredAt: '2026-09-09T14:00:00.000Z', passed: false, scorePercent: 74 }
+  ],
+  performanceAssessment: { assessmentId: 'PRACTICAL-LH-TECH1-001-WORKFLOW', status: 'failed', scorePercent: 76, criticalErrorCount: 1 }
+});
+assert.equal(failed.writtenAssessment.outcome, 'not-passed');
+assert.equal(failed.performanceAssessment.status, 'failed');
+assert.equal(failed.performanceAssessment.criticalErrorCount, 1);
 
 const passed = courseEvidenceView(course, finalAssessment, {
   assessmentAttempts: [
