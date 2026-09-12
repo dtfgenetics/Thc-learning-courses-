@@ -23,9 +23,26 @@ const progressRows = [
   { lessonId: 'L2', lessonVersion: '3', status: 'completed', completedAt: '2026-09-02T10:00:00Z' },
   { lessonId: 'L3', lessonVersion: '1', status: 'completed', completedAt: '2026-09-03T10:00:00Z' }
 ];
+const academicStatusHistory = [
+  {
+    eventType: 'course-enrollment-academic-completed', fromStatus: 'active', toStatus: 'completed', reason: 'academic-requirements-satisfied', courseId: course.id, courseVersion: '1.0.0',
+    previousCompletedAt: null, completedAt: '2026-09-05T12:00:00Z', occurredAt: '2026-09-05T12:00:01Z',
+    academicSnapshot: { requiredLessonCount: 3, completedLessonCount: 3, finalAssessmentStatus: 'passed', performanceAssessmentStatus: 'passed', performanceCriticalErrorCount: 0, missingRequirements: [] }
+  },
+  {
+    eventType: 'course-enrollment-academic-reopened', fromStatus: 'completed', toStatus: 'active', reason: 'academic-requirements-reopened', courseId: course.id, courseVersion: '1.0.0',
+    previousCompletedAt: '2026-09-05T12:00:00Z', completedAt: null, occurredAt: '2026-09-08T12:00:01Z',
+    academicSnapshot: { requiredLessonCount: 4, completedLessonCount: 3, finalAssessmentStatus: 'passed', performanceAssessmentStatus: 'passed', performanceCriticalErrorCount: 0, missingRequirements: ['instruction'] }
+  },
+  {
+    eventType: 'course-enrollment-academic-completed', fromStatus: 'active', toStatus: 'completed', reason: 'academic-requirements-satisfied', courseId: course.id, courseVersion: '1.0.0',
+    previousCompletedAt: null, completedAt: '2026-09-10T12:00:00Z', occurredAt: '2026-09-10T12:00:01Z',
+    academicSnapshot: { requiredLessonCount: 4, completedLessonCount: 4, finalAssessmentStatus: 'passed', performanceAssessmentStatus: 'passed', performanceCriticalErrorCount: 0, missingRequirements: [] }
+  }
+];
 const enrollments = [
-  { courseId: course.id, courseVersion: '0.9.0', status: 'active', enrolledAt: '2026-08-01T10:00:00Z', completedAt: null },
-  { courseId: course.id, courseVersion: '1.0.0', status: 'active', enrolledAt: '2026-09-01T10:00:00Z', completedAt: null },
+  { courseId: course.id, courseVersion: '0.9.0', status: 'active', enrolledAt: '2026-08-01T10:00:00Z', completedAt: null, academicStatusHistory: [] },
+  { courseId: course.id, courseVersion: '1.0.0', status: 'completed', enrolledAt: '2026-09-01T10:00:00Z', completedAt: '2026-09-10T12:00:00Z', academicStatusHistory },
   { courseId: 'COURSE-OTHER-001', courseVersion: '1.0.0', status: 'active', enrolledAt: '2026-09-01T10:00:00Z', completedAt: null }
 ];
 const evidence = {
@@ -47,6 +64,10 @@ assert.equal(record.writtenAssessment.outcome, 'passed');
 assert.equal(record.performanceAssessment.status, 'passed');
 assert.equal(record.performanceAssessment.learnerFeedback, 'Maintain the same identity-check sequence.');
 assert.deepEqual(record.courseVersionHistory.map((row) => row.courseVersion), ['0.9.0', '1.0.0']);
+assert.equal(record.academicStatusHistory.length, 3);
+assert.deepEqual(record.academicStatusHistory.map((row) => row.eventType), ['course-enrollment-academic-completed', 'course-enrollment-academic-reopened', 'course-enrollment-academic-completed']);
+assert.equal(record.academicStatusHistory[1].academicSnapshot.completedLessonCount, 3);
+assert.deepEqual(record.academicStatusHistory[1].academicSnapshot.missingRequirements, ['instruction']);
 assert.match(record.academicCompletion.statement, /not a professional credential/i);
 assert.equal(Object.hasOwn(record.academicCompletion, 'credentialEligible'), false);
 assert.equal(Object.hasOwn(record, 'credential'), false);
@@ -68,6 +89,9 @@ for (const marker of [
   'Academic course status',
   'Instruction record',
   'Course assessment evidence',
+  'Academic completion transition history',
+  'This timeline records automatic Course 1 enrollment completion and reopening decisions.',
+  'Requirement snapshot',
   'Course-version history',
   'Print academic record',
   'This is an academic Course 1 completion record. It is not a professional credential, license, or certification.',
@@ -77,7 +101,7 @@ for (const marker of [
 const recordStart = source.indexOf('export function buildAcademicCourseRecord');
 const recordEnd = source.indexOf('function transcriptElement', recordStart);
 const recordSource = source.slice(recordStart, recordEnd);
-for (const forbidden of ['evaluatorId', 'evidenceOutputs', 'domainScores', 'correctAnswer', 'answerKey', 'credentialEligible']) {
+for (const forbidden of ['evaluatorId', 'evidenceOutputs', 'domainScores', 'correctAnswer', 'answerKey', 'credentialEligible', 'actorId']) {
   assert.equal(recordSource.includes(forbidden), false, `academic learner record projection must not use ${forbidden}`);
 }
 assert.equal(source.includes('.innerHTML'), false, 'shared progress/admin/academic-record runtime must construct DOM without innerHTML');
@@ -85,4 +109,4 @@ assert.ok(source.includes('@media(max-width:620px)'), 'academic record must pres
 assert.ok(source.includes('@media print'), 'academic record must provide a print view');
 assert.ok(source.includes('min-height:44px'), 'academic record controls must preserve touch target sizing');
 
-console.log('Course 1 academic completion record, lesson-version preservation, credential separation, privacy, responsive and print contracts passed.');
+console.log('Course 1 academic completion record, transition timeline, lesson-version preservation, credential separation, privacy, responsive and print contracts passed.');
