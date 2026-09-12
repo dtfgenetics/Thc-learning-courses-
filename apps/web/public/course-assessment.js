@@ -7,6 +7,115 @@ const pendingSaves = new Set();
 const saveChains = new Map();
 let currentAttempt = null;
 
+/* COURSE1_PRACTICAL_PUBLIC_DATA_START */
+const COURSE_PRACTICAL_PUBLIC = {
+  "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
+  "title": "Course 1 Integrated Cultivation Workflow Practical",
+  "version": "1.0.0",
+  "status": "published",
+  "deliveryModes": [
+    "simulation",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidenceOutputs": [
+    "Pre-task hazard brief",
+    "Sanitation and biosecurity movement record",
+    "Controlled-instruction review",
+    "Traceability movement and reconciliation record",
+    "Equipment readiness and fault report",
+    "Corrected record preserving original history",
+    "Professional shift handoff"
+  ],
+  "scoring": {
+    "totalPoints": 100,
+    "domains": [
+      {
+        "name": "Safety, PPE and stop-work judgment",
+        "points": 18
+      },
+      {
+        "name": "Sanitation and biosecurity",
+        "points": 14
+      },
+      {
+        "name": "SOP and work-order execution",
+        "points": 12
+      },
+      {
+        "name": "Identity and traceability",
+        "points": 16
+      },
+      {
+        "name": "Inventory and discrepancy reasoning",
+        "points": 10
+      },
+      {
+        "name": "Equipment readiness and operator-care boundary",
+        "points": 10
+      },
+      {
+        "name": "Data integrity and documentation",
+        "points": 12
+      },
+      {
+        "name": "Shift handoff and communication",
+        "points": 8
+      }
+    ]
+  },
+  "passingStandard": {
+    "minimumPercent": 80,
+    "noCriticalErrors": true
+  },
+  "criticalErrors": [
+    "Deliberately falsifies, fabricates, or forces a cultivation, identity, inventory, or traceability record.",
+    "Bypasses an explicit hold, quarantine, restricted-entry, or other supplied access-control instruction.",
+    "Attempts protected equipment servicing, energized technical work, or repair outside the stated Technician I authority.",
+    "Knowingly continues an explicit unsafe condition after the supplied procedure requires stopping or escalation.",
+    "Causes avoidable unrecoverable plant or material identity loss by ignoring a detected identity discrepancy."
+  ],
+  "overview": "Apply Course 1 as one connected cultivation workflow while conditions change during a simulated shift. Learners must preserve safety, identity, traceability, authorization boundaries, record integrity, and handoff quality as new information appears.",
+  "academicUse": "The practical framework is public academic course content. It may be studied without authentication and used for simulation, supervised-lab, or workplace-equivalent learning and evaluation. Personal assessor results remain private learner records.",
+  "preparationSteps": [
+    "Complete the Course 1 lessons, workbook activities, and low-stakes practice before attempting an evaluated practical.",
+    "Review the six Course 1 Field References and know which one applies to hazards, biosecurity, controlled work, traceability, equipment, and records/handoff.",
+    "Practice producing all seven required evidence outputs using the Course 1 workbook templates without inventing missing facts.",
+    "Be ready to explain when work must stop, what can proceed within Technician I authority, and what must be escalated to another role.",
+    "Expect conditions to change during the simulated shift and reassess earlier decisions when new status, identity, sanitation, equipment, or record information appears."
+  ],
+  "stages": [
+    {
+      "title": "1. Pre-task review",
+      "summary": "Recognize hazards, access restrictions, work-order limits, identity risks, PPE needs, and operator authority before work begins."
+    },
+    {
+      "title": "2. Status and sanitation change",
+      "summary": "Reassess work when one restriction changes but another remains active, and verify exact sanitation-product authorization before substitution."
+    },
+    {
+      "title": "3. Recurring equipment fault",
+      "summary": "Stay inside the operator-care boundary, record the fault timeline, and escalate repeated unresolved conditions without unsupported diagnosis."
+    },
+    {
+      "title": "4. Record integrity",
+      "summary": "Correct records while preserving original history and distinguish observation time from later entry time without backdating."
+    },
+    {
+      "title": "5. Closed-loop handoff",
+      "summary": "Transfer unresolved holds, identity discrepancies, equipment status, sanitation status, and next actions using two-way read-back and source cross-checking."
+    }
+  ],
+  "supportResources": [
+    "Course 1 Field References",
+    "Course 1 Student Workbook",
+    "Course 1 Workbook Templates",
+    "Course 1 remediation matrix and instructor coaching when assigned"
+  ],
+  "boundary": "This is Course 1 practical learning and performance evidence. It is separate from the Technician I credential examination and does not by itself issue a professional credential."
+};
+/* COURSE1_PRACTICAL_PUBLIC_DATA_END */
+
 function el(tag, value = '', className = '') {
   const node = document.createElement(tag);
   if (value !== '') node.textContent = value;
@@ -40,41 +149,200 @@ function courseActionLabel(outcome) {
 
 function updateEvidenceRow(panel, evidence) {
   const written = evidence?.writtenAssessment;
-  if (!written) return;
-  const row = [...panel.querySelectorAll('.course-evidence-row')].find((entry) => entry.querySelector('strong')?.textContent === 'Course final');
-  if (!row) return;
-  const badge = row.querySelector('.course-evidence-status');
-  if (badge) {
-    const labels = { passed: 'Passed', 'not-passed': 'Not passed', 'in-progress': 'In progress', 'not-attempted': 'Not attempted' };
-    badge.textContent = labels[written.outcome] ?? String(written.outcome ?? '').replaceAll('-', ' ');
-    badge.className = `course-evidence-status status-${written.outcome ?? 'not-attempted'}`;
+  const practical = evidence?.performanceAssessment;
+  if (written) {
+    const row = [...panel.querySelectorAll('.course-evidence-row')].find((entry) => entry.querySelector('strong')?.textContent === 'Course final');
+    if (row) {
+      const badge = row.querySelector('.course-evidence-status');
+      if (badge) {
+        const labels = { passed: 'Passed', 'not-passed': 'Not passed', 'in-progress': 'In progress', 'not-attempted': 'Not attempted' };
+        badge.textContent = labels[written.outcome] ?? String(written.outcome ?? '').replaceAll('-', ' ');
+        badge.className = `course-evidence-status status-${written.outcome ?? 'not-attempted'}`;
+      }
+      const detail = row.querySelector('.course-evidence-detail');
+      const parts = [];
+      if (written.bestScorePercent != null) parts.push(`${Number(written.bestScorePercent).toFixed(0)}% best`);
+      if (written.passingScorePercent != null) parts.push(`pass ${Number(written.passingScorePercent).toFixed(0)}%`);
+      if (Number(written.attemptCount ?? 0) > 0) parts.push(`${written.attemptCount} attempt${Number(written.attemptCount) === 1 ? '' : 's'}`);
+      if (detail) detail.textContent = parts.join(' • ');
+    }
   }
-  const detail = row.querySelector('.course-evidence-detail');
-  const parts = [];
-  if (written.bestScorePercent != null) parts.push(`${Number(written.bestScorePercent).toFixed(0)}% best`);
-  if (written.passingScorePercent != null) parts.push(`pass ${Number(written.passingScorePercent).toFixed(0)}%`);
-  if (Number(written.attemptCount ?? 0) > 0) parts.push(`${written.attemptCount} attempt${Number(written.attemptCount) === 1 ? '' : 's'}`);
-  if (detail) detail.textContent = parts.join(' • ');
+  if (practical) {
+    const row = [...panel.querySelectorAll('.course-evidence-row')].find((entry) => entry.querySelector('strong')?.textContent === 'Course practical');
+    if (row) {
+      const badge = row.querySelector('.course-evidence-status');
+      if (badge) {
+        const labels = { passed: 'Passed', failed: 'Not passed', 'in-progress': 'In progress', 'not-recorded': 'Not evaluated', voided: 'Voided' };
+        badge.textContent = labels[practical.status] ?? String(practical.status ?? 'not-recorded').replaceAll('-', ' ');
+        badge.className = `course-evidence-status status-${practical.status ?? 'not-recorded'}`;
+      }
+      const detail = row.querySelector('.course-evidence-detail');
+      const parts = [];
+      if (practical.scorePercent != null) parts.push(`${Number(practical.scorePercent).toFixed(0)}% recorded`);
+      if (Number(practical.criticalErrorCount ?? 0) > 0) parts.push(`${practical.criticalErrorCount} critical error${Number(practical.criticalErrorCount) === 1 ? '' : 's'}`);
+      if (detail) detail.textContent = parts.join(' • ');
+    }
+  }
 }
 
 async function enhanceEvidencePanel(panel) {
   if (!panel || panel.dataset.assessmentEnhanced === 'true') return;
   panel.dataset.assessmentEnhanced = 'true';
   const result = await courseEvidence().catch(() => ({ state: 'unavailable' }));
-  if (!panel.isConnected || result.state !== 'loaded') return;
-  updateEvidenceRow(panel, result.data);
-  const written = result.data?.writtenAssessment ?? {};
+  if (!panel.isConnected) return;
+  if (result.state === 'loaded') updateEvidenceRow(panel, result.data);
+
   const actions = el('div', '', 'course-assessment-actions');
-  const button = el('button', courseActionLabel(written.outcome), 'course-assessment-launch');
-  button.type = 'button';
-  button.addEventListener('click', () => openCourseAssessment(button));
-  actions.append(button);
+  const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary course-practical-launch');
+  practicalButton.type = 'button';
+  practicalButton.addEventListener('click', () => openCoursePractical(practicalButton));
+  actions.append(practicalButton);
+
+  if (result.state === 'loaded') {
+    const written = result.data?.writtenAssessment ?? {};
+    const finalButton = el('button', courseActionLabel(written.outcome), 'course-assessment-launch');
+    finalButton.type = 'button';
+    finalButton.addEventListener('click', () => openCourseAssessment(finalButton));
+    actions.prepend(finalButton);
+  }
   panel.append(actions);
 }
 
 function observeEvidencePanel() {
   const panel = catalogRoot?.querySelector('.course-evidence-panel');
   if (panel) enhanceEvidencePanel(panel);
+}
+
+function practicalStatusLabel(status) {
+  return ({ passed: 'Passed', failed: 'Not passed', 'in-progress': 'In progress', 'not-recorded': 'Not evaluated', voided: 'Voided' })[status] ?? String(status ?? 'not-recorded').replaceAll('-', ' ');
+}
+
+function renderPracticalPersonalStatus(panel, evidenceResult) {
+  const section = el('section', '', 'course-practical-personal-status');
+  section.append(el('h3', 'Your assessor-recorded practical status'));
+  if (evidenceResult.state === 'authentication-required') {
+    section.append(el('p', 'The practical is public academic content. Sign in only if you want to view your private assessor-recorded practical result.', 'course-assessment-note'));
+  } else if (evidenceResult.state !== 'loaded') {
+    section.append(el('p', 'Personal practical status is temporarily unavailable. The academic practical below remains fully viewable.', 'course-assessment-note'));
+  } else {
+    const practical = evidenceResult.data?.performanceAssessment ?? { status: 'not-recorded' };
+    const line = el('div', '', 'course-practical-status-line');
+    line.append(el('strong', practicalStatusLabel(practical.status), `course-evidence-status status-${practical.status ?? 'not-recorded'}`));
+    const details = [];
+    if (practical.scorePercent != null) details.push(`${Number(practical.scorePercent).toFixed(0)}% recorded`);
+    if (Number(practical.criticalErrorCount ?? 0) > 0) details.push(`${practical.criticalErrorCount} critical error${Number(practical.criticalErrorCount) === 1 ? '' : 's'}`);
+    line.append(el('span', details.length ? details.join(' • ') : 'No scored practical result is recorded yet.'));
+    section.append(line);
+    if (practical.status === 'failed') {
+      section.append(el('p', 'Use the Course 1 workbook, Field References, and instructor remediation to practice the weak performance areas before an equivalent reassessment.', 'course-practical-remediation'));
+    } else if (practical.status === 'voided') {
+      section.append(el('p', 'This practical record is voided. Review the recorded next step with the instructor or assessor before another evaluated attempt.', 'course-practical-remediation'));
+    }
+  }
+  panel.append(section);
+}
+
+function appendNumberedList(parent, items, className = '') {
+  const list = document.createElement('ol');
+  if (className) list.className = className;
+  for (const item of items) list.append(el('li', item));
+  parent.append(list);
+}
+
+function appendBulletList(parent, items, className = '') {
+  const list = document.createElement('ul');
+  if (className) list.className = className;
+  for (const item of items) list.append(el('li', item));
+  parent.append(list);
+}
+
+async function openCoursePractical(sourceButton) {
+  sourceButton.disabled = true;
+  const original = sourceButton.textContent;
+  sourceButton.textContent = 'Opening practical…';
+  const evidenceResult = await courseEvidence().catch(() => ({ state: 'unavailable' }));
+  renderCoursePractical(evidenceResult);
+  sourceButton.textContent = original;
+  sourceButton.disabled = false;
+}
+
+function renderCoursePractical(evidenceResult) {
+  setCurriculumTabActive();
+  const practical = COURSE_PRACTICAL_PUBLIC;
+  const panel = el('article', '', 'portal-panel course-practical-panel');
+  panel.append(el('p', 'Course 1 public academic practical', 'eyebrow'));
+  panel.append(el('h2', practical.title));
+  panel.append(el('p', practical.overview, 'lede'));
+
+  const meta = el('div', '', 'course-practical-meta');
+  meta.append(el('span', 'Published', 'course-practical-pill'));
+  for (const mode of practical.deliveryModes) meta.append(el('span', mode.replaceAll('-', ' '), 'course-practical-pill subtle'));
+  panel.append(meta);
+  panel.append(el('p', practical.academicUse, 'course-assessment-note'));
+  renderPracticalPersonalStatus(panel, evidenceResult);
+
+  const prep = el('section', '', 'course-practical-section');
+  prep.append(el('h3', 'Preparation'));
+  appendNumberedList(prep, practical.preparationSteps, 'course-practical-list');
+  panel.append(prep);
+
+  const stages = el('section', '', 'course-practical-section');
+  stages.append(el('h3', 'Five-stage workflow'));
+  const stageGrid = el('div', '', 'course-practical-stage-grid');
+  for (const stage of practical.stages) {
+    const card = el('article', '', 'course-practical-stage');
+    card.append(el('h4', stage.title), el('p', stage.summary));
+    stageGrid.append(card);
+  }
+  stages.append(stageGrid);
+  panel.append(stages);
+
+  const evidence = el('section', '', 'course-practical-section');
+  evidence.append(el('h3', 'Seven required evidence outputs'));
+  appendNumberedList(evidence, practical.evidenceOutputs, 'course-practical-list');
+  panel.append(evidence);
+
+  const scoring = el('section', '', 'course-practical-section');
+  scoring.append(el('h3', '100-point scoring model'));
+  const scoreGrid = el('div', '', 'course-practical-score-grid');
+  for (const domain of practical.scoring.domains) {
+    const card = el('div', '', 'course-practical-score-domain');
+    card.append(el('strong', `${domain.points} pts`), el('span', domain.name));
+    scoreGrid.append(card);
+  }
+  scoring.append(scoreGrid);
+  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% minimum score`, 'course-practical-pass');
+  if (practical.passingStandard.noCriticalErrors) pass.append(document.createTextNode(' • no critical errors'));
+  scoring.append(pass);
+  panel.append(scoring);
+
+  const critical = el('section', '', 'course-practical-section course-practical-critical');
+  critical.append(el('h3', 'Critical-error boundaries'));
+  critical.append(el('p', 'These boundaries protect the integrity of the practical. They define actions that cannot be offset by points earned elsewhere.'));
+  appendBulletList(critical, practical.criticalErrors, 'course-practical-list');
+  panel.append(critical);
+
+  const resources = el('section', '', 'course-practical-section');
+  resources.append(el('h3', 'Study and preparation resources'));
+  appendBulletList(resources, practical.supportResources, 'course-practical-list');
+  panel.append(resources);
+  panel.append(el('p', practical.boundary, 'course-assessment-note course-practical-boundary'));
+
+  const actions = el('div', '', 'course-practical-page-actions');
+  const printButton = el('button', 'Print practical', 'course-assessment-secondary');
+  printButton.type = 'button';
+  printButton.addEventListener('click', () => window.print());
+  const referencesButton = el('button', 'Open Field References', 'course-assessment-secondary');
+  referencesButton.type = 'button';
+  referencesButton.addEventListener('click', () => document.querySelector('#tab-field-references')?.click());
+  const back = el('button', 'Return to Course 1', 'course-assessment-secondary');
+  back.type = 'button';
+  back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
+  actions.append(printButton, referencesButton, back);
+  panel.append(actions);
+
+  lessonView.replaceChildren(panel);
+  lessonView.focus();
 }
 
 async function openCourseAssessment(sourceButton) {
@@ -224,7 +492,7 @@ function renderAssessment(payload) {
   const panel = el('article', '', 'portal-panel course-assessment-panel');
   panel.append(el('p', 'Course 1 summative assessment', 'eyebrow'));
   panel.append(el('h2', payload.assessment.title));
-  panel.append(el('p', `This is the public Course 1 final, not the restricted Technician I certification examination. Passing score: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
+  panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Passing score: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
   const toolbar = el('div', '', 'course-assessment-toolbar');
   toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('span', 'Responses saved.', 'course-assessment-save-status'));
@@ -295,9 +563,14 @@ function renderAssessmentResult(result) {
     referenceButton.type = 'button'; referenceButton.addEventListener('click', () => document.querySelector('#tab-field-references')?.click());
     remediation.append(referenceButton); panel.append(remediation);
   }
+  const actions = el('div', '', 'course-practical-page-actions');
+  const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary');
+  practicalButton.type = 'button';
+  practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
   const back = el('button', 'Return to Course 1', 'course-assessment-secondary');
   back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
-  panel.append(back);
+  actions.append(practicalButton, back);
+  panel.append(actions);
   lessonView.replaceChildren(panel); lessonView.focus();
 }
 
