@@ -4,7 +4,7 @@ import { buildPracticalEvaluation } from '../packages/domain/course-practical-ev
 
 const practical = JSON.parse(fs.readFileSync('content/performance-assessments/PRACTICAL-LH-TECH1-001-WORKFLOW.json', 'utf8'));
 const fullScores = practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points }));
-const eightyScores = practical.scoring.domains.map((domain, index) => ({ name: domain.name, score: index === 0 ? 0 : domain.points }));
+const belowThresholdScores = practical.scoring.domains.map((domain, index) => ({ name: domain.name, score: index < 2 ? 0 : domain.points }));
 const evaluatorId = 'assessor-001';
 const now = '2026-09-12T12:00:00.000Z';
 
@@ -36,7 +36,7 @@ assert.equal(criticalFail.scorePercent, 100);
 assert.equal(criticalFail.criticalErrorCount, 1);
 
 const scoreFail = buildPracticalEvaluation({ practical, evaluatorId, evaluatedAt: now, input: {
-  mode: 'finalize', domainScores: eightyScores, criticalErrorIndexes: []
+  mode: 'finalize', domainScores: belowThresholdScores, criticalErrorIndexes: []
 } });
 assert.equal(scoreFail.status, 'failed');
 assert.ok(scoreFail.scorePercent < practical.passingStandard.minimumPercent);
