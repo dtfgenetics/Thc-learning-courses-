@@ -271,6 +271,7 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     const staticFiles = new Map([
       ['/', ['index.html', 'text/html; charset=utf-8']], ['/academy', ['index.html', 'text/html; charset=utf-8']],
       ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/progress.js', ['progress.js', 'text/javascript; charset=utf-8']],
+      ['/completion-documents.js', ['completion-documents.js', 'text/javascript; charset=utf-8']],
       ['/rich-content.js', ['rich-content.js', 'text/javascript; charset=utf-8']],
       ['/governance.js', ['governance.js', 'text/javascript; charset=utf-8']], ['/portal.js', ['portal.js', 'text/javascript; charset=utf-8']],
       ['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']], ['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']],
