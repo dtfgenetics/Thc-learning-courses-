@@ -2,6 +2,7 @@ export async function createPersistenceAdapters() {
   const progress = new Map();
   const enrollments = new Map();
   const attempts = new Map();
+  const practicalResults = new Map();
   return {
     credentialStore: {
       kind: 'test-persistent',
@@ -11,6 +12,19 @@ export async function createPersistenceAdapters() {
       async count() { return 0; }
     },
     credentialWriter: { kind: 'test-writer' },
+    practicalEvaluatorStore: {
+      kind: 'test-practical-evaluator',
+      async getEvaluation(subject, { assessmentId, assessmentVersion } = {}) {
+        const key = `${subject}:${assessmentId}:${assessmentVersion}`;
+        return { learnerExists: true, evaluation: practicalResults.get(key) ? structuredClone(practicalResults.get(key)) : null };
+      },
+      async saveEvaluation(subject, record = {}) {
+        const key = `${subject}:${record.assessmentId}:${record.assessmentVersion}`;
+        const stored = structuredClone({ ...record, updatedAt: new Date().toISOString() });
+        practicalResults.set(key, stored);
+        return { learnerExists: true, evaluation: structuredClone(stored) };
+      }
+    },
     learnerStore: {
       kind: 'test-learner-runtime',
       async listEnrollments(subject) { return [...(enrollments.get(subject) ?? [])]; },
@@ -73,6 +87,8 @@ export async function createPersistenceAdapters() {
         return structuredClone(stored);
       },
       async listCourseEvidence(subject, { assessmentId, performanceAssessmentId = null } = {}) {
+        const practicalKey = performanceAssessmentId ? `${subject}:${performanceAssessmentId}:1.0.0` : null;
+        const practical = practicalKey ? practicalResults.get(practicalKey) : null;
         return {
           learnerId: subject,
           assessmentId,
@@ -88,7 +104,15 @@ export async function createPersistenceAdapters() {
             scorePercent: row.scorePercent,
             passed: row.passed
           })),
-          performanceAssessment: null
+          performanceAssessment: practical ? {
+            assessmentId: practical.assessmentId,
+            assessmentVersion: practical.assessmentVersion,
+            status: practical.status,
+            scorePercent: practical.scorePercent,
+            criticalErrorCount: practical.criticalErrorCount,
+            evaluatedAt: practical.evaluatedAt,
+            updatedAt: practical.updatedAt
+          } : null
         };
       },
       async listCredentialEvidence(subject, { credentialDefinitionId } = {}) {
