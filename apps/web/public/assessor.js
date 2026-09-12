@@ -3,6 +3,7 @@ const tab = document.querySelector('#tab-assessor');
 const lessonView = document.querySelector('#lesson-view');
 let currentPayload = null;
 let currentLearnerSubject = '';
+let learnerFeedbackKey = '';
 
 function el(tag, value = '', className = '') {
   const node = document.createElement(tag);
@@ -266,4 +267,30 @@ async function initializeAssessorCapability() {
   if (allowed) tab.addEventListener('click', renderAssessorHome);
 }
 
+async function injectLearnerPracticalFeedback() {
+  const host = lessonView?.querySelector('.course-practical-personal-status');
+  if (!host || host.querySelector('.course-practical-evaluator-feedback')) return;
+  try {
+    const response = await fetch(`/api/v1/me/courses/${COURSE_ID}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' });
+    if (!response.ok) return;
+    const body = await response.json();
+    const practical = body.performanceAssessment ?? {};
+    const feedback = String(practical.remediationSummary ?? '').trim();
+    if (!feedback) return;
+    const key = `${practical.updatedAt ?? ''}:${feedback}`;
+    if (key === learnerFeedbackKey && host.querySelector('.course-practical-evaluator-feedback')) return;
+    learnerFeedbackKey = key;
+    const card = el('aside', '', 'course-practical-remediation course-practical-evaluator-feedback');
+    card.setAttribute('aria-label', 'Assessor feedback and remediation');
+    card.append(el('strong', 'Assessor feedback / remediation'), el('p', feedback));
+    host.append(card);
+  } catch {
+    // Public academic practical remains fully usable when private learner evidence is unavailable.
+  }
+}
+
 initializeAssessorCapability();
+if (lessonView) {
+  new MutationObserver(() => injectLearnerPracticalFeedback()).observe(lessonView, { childList: true, subtree: true });
+  injectLearnerPracticalFeedback();
+}
