@@ -33,6 +33,10 @@ The current canonical lessons use richer instructional structures including evid
 - **6 expanded field-ready operational job aids**, each mapped to Course 1 objectives and workbook practice
 - learner-facing field-reference index covering when to use each aid and how to combine them during multi-problem situations
 - field-reference production specification for mobile, print, accessibility, visual hierarchy and version maintenance
+- searchable **Field References** surface in the Academy learner runtime
+- module-level and lesson-level quick-access links to the aligned field reference
+- targeted field-reference remediation links after an incorrect lesson-practice response
+- responsive reference cards with print/save mode and mobile touch targets
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
@@ -43,6 +47,8 @@ The current canonical lessons use richer instructional structures including evid
 The six current field references cover hazard response/PPE/HazCom; biosecurity/sanitation/status control; controlled work instructions/authority; traceability/event genealogy/reconciliation; equipment readiness/operator-care boundaries/fault escalation; and data integrity/record correction/shift handoff.
 
 Workbook, practical and field-reference counts describe the current package and are not maximums. Additional guided labs, field references, role-specific variants, translated/accessibility formats, artifacts, or equivalent practice formats may be added or reorganized as the course improves.
+
+The field-reference learner runtime is a navigation and remediation aid. Opening or printing a field reference does not create assessment, practical, completion, or credential evidence.
 
 ## Instructor/assessor support
 
@@ -106,6 +112,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.
