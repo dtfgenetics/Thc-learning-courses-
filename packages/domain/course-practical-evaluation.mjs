@@ -152,8 +152,10 @@ export function buildPracticalEvaluation({ practical, existing = null, input = {
   if (!evaluatorId) throw new Error('evaluatorId required');
   const mode = input.mode === 'finalize' ? 'finalize' : input.mode === 'save' ? 'save' : null;
   if (!mode) throw new Error('evaluation mode must be save or finalize');
-  if (mode === 'save' && existing && ['passed', 'failed', 'voided'].includes(existing.status)) {
-    throw new Error('finalized practical evaluations can only be replaced by a new finalized evaluation');
+  const existingFinal = Boolean(existing && ['passed', 'failed', 'voided'].includes(existing.status));
+  const startingReassessment = mode === 'save' && existingFinal && input.startReassessment === true;
+  if (mode === 'save' && existingFinal && !startingReassessment) {
+    throw new Error('finalized practical evaluations can only be reopened through an explicit reassessment');
   }
 
   const domainScores = normalizeDomainScores(practical, input.domainScores ?? [], { requireComplete: mode === 'finalize' });
