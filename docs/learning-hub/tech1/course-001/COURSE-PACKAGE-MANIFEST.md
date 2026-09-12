@@ -51,10 +51,12 @@ The current canonical lessons use richer instructional structures including evid
 ## Course assessment
 
 - lesson retrieval checks embedded in instruction
-- 6 formative module tests × 12 items = **72 items**
+- 6 formative module tests × 14 items = **84 formative items**
 - 1 integrated practical with analytic rubric/critical-error rules
-- 1 final course assessment = **36 items**
-- total public Course 1 knowledge-test item inventory = **108 items**
+- 1 final course assessment = **36 summative items**
+- total public Course 1 knowledge-test item inventory = **120 items**
+
+The 84/36/120 counts are the current published inventory, not content ceilings. Additional valid items may be added, retired, replaced, or reorganized as objectives, evidence, instructional depth, and pilot findings evolve. Automated QA enforces minimum quality baselines and internal consistency rather than freezing the bank at an exact size.
 
 The public course assessments are separate from the THC Cultivation Technician I certification examination.
 
