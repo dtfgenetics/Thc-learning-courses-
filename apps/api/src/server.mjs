@@ -155,12 +155,13 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
     ? Math.max(...scoredAttempts.map((row) => Number(row.scorePercent ?? 0)))
     : null;
   const latestAttempt = attempts[0] ?? null;
+  const latestAttemptActive = latestAttempt?.status === 'started' || latestAttempt?.status === 'submitted';
   const writtenOutcome = passedAttempts.length
     ? 'passed'
-    : scoredAttempts.length
-      ? 'not-passed'
-      : attempts.some((row) => row.status === 'started' || row.status === 'submitted')
-        ? 'in-progress'
+    : latestAttemptActive
+      ? 'in-progress'
+      : scoredAttempts.length
+        ? 'not-passed'
         : 'not-attempted';
   const linkedPerformanceAssessment = assessment.extensions?.linkedPerformanceAssessment ?? null;
   const performance = rawEvidence.performanceAssessment && rawEvidence.performanceAssessment.assessmentId === linkedPerformanceAssessment
@@ -369,6 +370,6 @@ const isDirectExecution = process.argv[1] && path.resolve(process.argv[1]) === f
 if (isDirectExecution) {
   const apiOptions = await loadProductionApiOptions(process.env);
   createApiServer(apiOptions).listen(port, () => {
-    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'api.started', port, mode: process.env.NODE_ENV === 'production' ? 'production' : 'development' })}\n`);
+    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'api.started', port, mode: process.env.NODE_ENV === 'production' ? 'production' : 'development' })}\n`));
   });
 }
