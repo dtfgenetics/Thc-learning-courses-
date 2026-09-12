@@ -1,10 +1,10 @@
 import { renderRichBlocks } from './rich-content.js';
 
 const COURSE_ID = 'COURSE-LH-TECH1-001';
-const COURSE_TITLE = 'Safety, Responsible Practice & Cultivation Workflows';
 const lessonView = document.querySelector('#lesson-view');
 const catalogRoot = document.querySelector('#catalog');
 const pendingSaves = new Set();
+const saveChains = new Map();
 let currentAttempt = null;
 
 function el(tag, value = '', className = '') {
@@ -100,13 +100,18 @@ function answerCount(panel) {
   return [...panel.querySelectorAll('.course-assessment-item')].filter((item) => item.dataset.answered === 'true').length;
 }
 
+function allAnsweredAndSaved(panel) {
+  const items = [...panel.querySelectorAll('.course-assessment-item')];
+  return items.length > 0 && items.every((item) => item.dataset.answered === 'true' && item.dataset.saved === 'true');
+}
+
 function updateAssessmentProgress(panel) {
   const total = panel.querySelectorAll('.course-assessment-item').length;
   const answered = answerCount(panel);
   const progress = panel.querySelector('.course-assessment-progress');
   if (progress) progress.textContent = `${answered}/${total} answered`;
   const submit = panel.querySelector('.course-assessment-submit');
-  if (submit) submit.disabled = answered !== total || pendingSaves.size > 0;
+  if (submit) submit.disabled = !allAnsweredAndSaved(panel) || pendingSaves.size > 0;
 }
 
 function responseForFieldset(fieldset, type) {
@@ -124,35 +129,39 @@ function isAnswered(response, type) {
   return response !== null && response !== undefined && response !== '';
 }
 
-async function persistResponse(panel, item, fieldset) {
+function persistResponse(panel, item, fieldset) {
   const responseValue = responseForFieldset(fieldset, item.type);
   fieldset.dataset.answered = isAnswered(responseValue, item.type) ? 'true' : 'false';
+  fieldset.dataset.saved = 'false';
   const status = panel.querySelector('.course-assessment-save-status');
-  if (!isAnswered(responseValue, item.type)) {
-    updateAssessmentProgress(panel);
-    return;
-  }
-  const request = fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses`, {
-    method: 'PUT',
-    headers: { accept: 'application/json', 'content-type': 'application/json' },
-    credentials: 'same-origin',
-    body: JSON.stringify({ responses: [{ itemId: item.id, itemVersion: item.version, response: responseValue }] })
-  }).then(async (response) => {
+  const key = `${item.id}@${item.version}`;
+  const previous = saveChains.get(key) ?? Promise.resolve();
+  let request;
+  request = previous.catch(() => {}).then(async () => {
+    const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses`, {
+      method: 'PUT',
+      headers: { accept: 'application/json', 'content-type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ responses: [{ itemId: item.id, itemVersion: item.version, response: responseValue }] })
+    });
     if (!response.ok) {
       const body = await response.json().catch(() => ({}));
       throw new Error(body.error || `Save failed (${response.status}).`);
     }
-    if (status) status.textContent = 'Responses saved.';
+    fieldset.dataset.saved = 'true';
+    if (status) { status.textContent = 'Responses saved.'; status.classList.remove('error'); }
   }).catch((error) => {
+    fieldset.dataset.saved = 'false';
     if (status) {
       status.textContent = `Save problem: ${error.message}`;
       status.classList.add('error');
     }
-    throw error;
   }).finally(() => {
     pendingSaves.delete(request);
+    if (saveChains.get(key) === request) saveChains.delete(key);
     updateAssessmentProgress(panel);
   });
+  saveChains.set(key, request);
   pendingSaves.add(request);
   if (status) { status.textContent = 'Saving…'; status.classList.remove('error'); }
   updateAssessmentProgress(panel);
@@ -182,6 +191,7 @@ function renderAssessmentItem(item, index, panel) {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'course-assessment-item';
   fieldset.dataset.answered = isAnswered(item.response, item.type) ? 'true' : 'false';
+  fieldset.dataset.saved = 'true';
   const legend = document.createElement('legend');
   legend.textContent = `${index + 1}. ${item.stem}`;
   fieldset.append(legend);
@@ -209,6 +219,7 @@ function renderAssessmentItem(item, index, panel) {
 function renderAssessment(payload) {
   currentAttempt = payload;
   pendingSaves.clear();
+  saveChains.clear();
   setCurriculumTabActive();
   const panel = el('article', '', 'portal-panel course-assessment-panel');
   panel.append(el('p', 'Course 1 summative assessment', 'eyebrow'));
@@ -242,6 +253,7 @@ async function submitAssessment(panel) {
   submit.disabled = true; submit.textContent = 'Submitting…';
   try {
     await Promise.all([...pendingSaves]);
+    if (!allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.');
     const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit`, {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
@@ -250,7 +262,8 @@ async function submitAssessment(panel) {
     renderAssessmentResult(body);
     refreshCourseEvidenceCard();
   } catch (error) {
-    submit.textContent = 'Submit course final'; submit.disabled = false;
+    submit.textContent = 'Submit course final';
+    updateAssessmentProgress(panel);
     const existing = panel.querySelector('.course-assessment-submit-error');
     existing?.remove();
     const errorNode = el('p', error.message, 'portal-error course-assessment-submit-error');
@@ -283,7 +296,7 @@ function renderAssessmentResult(result) {
     remediation.append(referenceButton); panel.append(remediation);
   }
   const back = el('button', 'Return to Course 1', 'course-assessment-secondary');
-  back.type = 'button'; back.addEventListener('click', () => { document.querySelector('#tab-catalog')?.click(); document.querySelector('#catalog-toggle')?.click(); });
+  back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
   panel.append(back);
   lessonView.replaceChildren(panel); lessonView.focus();
 }
