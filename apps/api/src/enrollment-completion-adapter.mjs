@@ -27,10 +27,15 @@ async function withAcademicHistory(completionStore, subject, rows = []) {
 
 function academicReportFields(history = []) {
   const ordered = [...history].sort((a, b) => String(a.occurredAt ?? '').localeCompare(String(b.occurredAt ?? '')));
+  const completed = ordered.filter((event) => event.eventType === 'course-enrollment-academic-completed');
+  const reopened = ordered.filter((event) => event.eventType === 'course-enrollment-academic-reopened');
   const latest = ordered.at(-1) ?? null;
   return {
     academicTransitionCount: ordered.length,
-    academicReopenCount: ordered.filter((event) => event.eventType === 'course-enrollment-academic-reopened').length,
+    academicReopenCount: reopened.length,
+    firstAcademicCompletedAt: completed[0]?.completedAt ?? completed[0]?.occurredAt ?? null,
+    latestAcademicCompletedAt: completed.at(-1)?.completedAt ?? completed.at(-1)?.occurredAt ?? null,
+    latestAcademicReopenedAt: reopened.at(-1)?.occurredAt ?? null,
     latestAcademicTransitionType: latest?.eventType ?? null,
     latestAcademicTransitionAt: latest?.occurredAt ?? null
   };
