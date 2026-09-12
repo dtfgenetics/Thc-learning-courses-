@@ -22,7 +22,7 @@ for (const marker of [
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit',
   'Responses save to your learner record as you answer.',
   'Post-attempt feedback is domain-level; answer keys are not displayed.',
-  'This is the public Course 1 final, not the restricted Technician I certification examination.',
+  'This is the public Course 1 final, separate from the Technician I credential examination.',
   'Course 1 knowledge evidence only',
   'Open Field References'
 ]) assert.ok(js.includes(marker), `assessment UI missing contract: ${marker}`);
