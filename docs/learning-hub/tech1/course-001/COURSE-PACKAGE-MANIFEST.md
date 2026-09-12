@@ -40,7 +40,11 @@ The current canonical lessons use richer instructional structures including evid
 - responsive learner shell with a sticky desktop course outline, compact mobile outline control, readable lesson measure, touch-sized lesson/practice controls, and single canonical formative-practice rendering
 - authenticated Course 1 card status showing official **course final** and **course practical** evidence separately from lesson checkmarks
 - authenticated learner-facing Course 1 final workflow with start/resume, restored saved responses, per-item autosave, server-side scoring and domain-level results
-- explicit learner-facing boundary between the public Course 1 final and the restricted THC Cultivation Technician I certification examination
+- explicit learner-facing boundary between the public Course 1 final and the separate THC Cultivation Technician I credential examination
+- public academic **Course 1 practical** learner surface available without authentication
+- practical learner surface includes preparation steps, five workflow stages, seven required evidence outputs, the 100-point scoring model, critical-error boundaries, support resources, responsive mobile layout and print mode
+- private assessor-recorded practical status is shown only when authenticated and remains separate from the public academic practical content
+- canonical practical-to-runtime synchronization audit prevents the learner practical view from drifting away from the published practical object
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
 - rendered objective-aligned lesson practice with shuffled choices and rationale feedback
@@ -55,6 +59,8 @@ Workbook, practical and field-reference counts describe the current package and 
 The field-reference learner runtime is a navigation and remediation aid. Opening or printing a field reference does not create assessment, practical, completion, or credential evidence.
 
 The Course 1 card reads official learner evidence from the named course final assessment and linked course practical only. It does not treat lesson percentage as course completion, does not substitute for Technician I credential evidence, and does not invent an overall course-complete or credential-eligible state.
+
+The Course 1 practical framework itself is public academic content. Authentication is only used to add the learner's private assessor-recorded result to that public study view; no evaluator identity or practical evidence payload is exposed by the learner runtime.
 
 ## Instructor/assessor support
 
@@ -122,6 +128,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, public academic practical viewing, private practical-result projection, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.

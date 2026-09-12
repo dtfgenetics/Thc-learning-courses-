@@ -51,7 +51,8 @@ function assertNoPublicationRestriction(rel, text) {
     /\bDraft\s*\/\s*requires assessor calibration before operational use\b/i,
     /\bpilot\/calibration only until approved\b/i,
     /\boperational use blocked until calibration\b/i,
-    /\bpreparation only\b/i
+    /\bpreparation only\b/i,
+    /\brestricted THC Cultivation Technician I certification examination\b/i
   ];
   for (const pattern of forbidden) if (pattern.test(text)) errors.push(`${rel}: learner/public academic document contains obsolete restriction language: ${pattern}`);
 }
@@ -98,6 +99,9 @@ const docs = new Map([
   ['docs/learning-hub/tech1/course-001/README.md', [
     [/\*\*Status:\*\* Draft production package/g, '**Status:** Public academic course package'],
     [/draft production package/gi, 'public academic course package']
+  ]],
+  ['docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md', [
+    [/restricted THC Cultivation Technician I certification examination/gi, 'separate THC Cultivation Technician I credential examination']
   ]],
   ['docs/academy-v2/certification-courses/COURSE-LH-TECH1-001_BLUEPRINT.md', [
     [/\*\*Status:\*\* Draft certification-course blueprint/g, '**Status:** Public academic curriculum blueprint'],
