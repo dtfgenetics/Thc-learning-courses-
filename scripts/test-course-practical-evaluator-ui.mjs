@@ -18,28 +18,49 @@ assert.ok(html.includes('src="/assessor.js"'), 'Academy must load assessor clien
 for (const marker of [
   '/api/v1/evaluator/capabilities',
   '/api/v1/evaluator/courses/${COURSE_ID}/practical-evaluation',
+  'loadAssessorQueue',
+  'Search learner',
+  'All statuses',
+  'Follow-up open',
   "input.dataset.domain = domain.name",
   "input.dataset.criticalIndex = String(index)",
-  "evaluatorNotes",
-  "learnerFeedback",
-  "Save in-progress evaluation",
-  "Finalize evaluation",
-  "I confirm the domain scores and critical-error findings reflect the evaluated practical evidence.",
-  "Server result is authoritative."
+  'collectEvidenceOutputs',
+  'practical.evidenceOutputs',
+  'evidenceOutputStatuses',
+  'Evidence reference',
+  'followUpStatus',
+  'reassessmentTargetDate',
+  'Start equivalent reassessment',
+  'Save reassessment in progress',
+  'Evaluation history',
+  'evaluatorNotes',
+  'learnerFeedback',
+  'Save in-progress evaluation',
+  'Finalize evaluation',
+  'I confirm the domain scores, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.',
+  'Server result is authoritative.'
 ]) assert.ok(js.includes(marker), `assessor UI missing contract: ${marker}`);
 
 assert.ok(js.includes("credentials: 'same-origin'"), 'assessor requests must use the authenticated same-origin session');
 assert.ok(js.includes('practical.scoring.domains'), 'domain controls must be generated from the server-provided practical definition');
 assert.ok(js.includes('practical.criticalErrors'), 'critical-error controls must be generated from the server-provided canonical list');
+assert.ok(js.includes('practical.evidenceOutputs ?? []'), 'evidence controls must follow the canonical practical definition rather than a hard-coded output count');
 assert.equal(js.includes('.innerHTML'), false, 'assessor UI must construct DOM safely rather than use innerHTML');
 assert.equal(js.includes('evaluatorId:'), false, 'browser must not choose or submit evaluator identity');
-assert.equal(js.includes('status: \'passed\''), false, 'browser must not set the authoritative pass result');
+assert.equal(js.includes("status: 'passed'"), false, 'browser must not set the authoritative pass result');
 
 for (const marker of [
+  '.assessor-queue-metrics',
+  '.assessor-queue-list',
   '.assessor-domain-grid',
+  '.assessor-evidence-grid',
+  '.assessor-evidence-row',
+  '.assessor-follow-up',
+  '.assessor-history',
   '.assessor-critical',
   '.assessor-confirm',
   'min-height: 44px',
+  '@media (max-width: 760px)',
   '@media (max-width: 620px)',
   ':focus-visible'
 ]) assert.ok(css.includes(marker), `assessor CSS missing ${marker}`);
@@ -47,4 +68,4 @@ for (const marker of [
 assert.ok(webServer.includes("['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']]"), 'Academy web server must serve assessor JS');
 assert.ok(webServer.includes("['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]"), 'Academy web server must serve assessor CSS');
 
-console.log('Course 1 assessor role-gating, canonical dynamic controls, safe DOM, responsive, accessibility, and static-serving contracts passed.');
+console.log('Course 1 assessor role-gating, queue/search, dynamic evidence tracking, reassessment history, safe DOM, responsive, accessibility, and static-serving contracts passed.');
