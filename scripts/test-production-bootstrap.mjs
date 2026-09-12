@@ -30,8 +30,9 @@ for (const method of ['findOpenAssessmentAttempt', 'getAssessmentAttempt', 'crea
   assert.equal(typeof options.learnerStore[method], 'function', `production learner store must provide ${method}()`);
 }
 assert.equal(options.practicalEvaluatorStore.kind, 'test-practical-evaluator');
-assert.equal(typeof options.practicalEvaluatorStore.getEvaluation, 'function');
-assert.equal(typeof options.practicalEvaluatorStore.saveEvaluation, 'function');
+for (const method of ['listCourseLearners', 'getEvaluation', 'saveEvaluation']) {
+  assert.equal(typeof options.practicalEvaluatorStore[method], 'function', `production practical evaluator store must provide ${method}()`);
+}
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
 
@@ -50,4 +51,4 @@ assert.ok(authOk.scopes.includes('evaluator:write'));
 const evaluatorAuth = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'evaluator:write');
 assert.equal(evaluatorAuth.ok, true);
 
-console.log('Production persistence, schema readiness, learner assessment/evidence, practical evaluator, and authentication adapter contracts passed.');
+console.log('Production persistence, schema readiness, learner assessment/evidence, practical evaluator queue/write, and authentication adapter contracts passed.');
