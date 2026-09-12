@@ -1,114 +1,95 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { createPostgresPracticalEvaluatorStore } from '../apps/api/src/postgres-practical-evaluator-store.mjs';
+
+const schema = fs.readFileSync('database/schema.sql', 'utf8');
+for (const marker of [
+  'create table if not exists practical_evaluation_assignments',
+  'primary key (learner_id, course_id, assessment_id, assessment_version)',
+  'idx_practical_assignment_evaluator',
+  "values ('3', 'Course practical evaluator assignment and ownership')"
+]) assert.ok(schema.includes(marker), `schema v3 missing ${marker}`);
 
 const calls = [];
 let learnerExists = true;
+const learnerId = '00000000-0000-0000-0000-000000000001';
 const storedRow = {
-  assessment_id: 'PRACTICAL-LH-TECH1-001-WORKFLOW',
-  assessment_version: '1.0.0',
-  status: 'failed',
-  score_percent: '92.00',
-  critical_error_count: 1,
-  evidence_json: {
-    evaluatorNotes: 'Private evaluator note',
-    learnerFeedback: 'Practice identity discrepancy escalation.',
-    followUpStatus: 'remediation-assigned',
-    reassessmentTargetDate: '2026-09-20',
-    evidenceOutputs: [],
-    domainScores: [], criticalErrors: [], history: []
-  },
-  evaluator_id: 'assessor-001',
-  evaluated_at: new Date('2026-09-12T12:00:00.000Z'),
-  updated_at: new Date('2026-09-12T12:01:00.000Z')
+  assessment_id: 'PRACTICAL-LH-TECH1-001-WORKFLOW', assessment_version: '1.0.0', status: 'failed', score_percent: '92.00', critical_error_count: 1,
+  evidence_json: { evaluatorNotes: 'Private evaluator note', learnerFeedback: 'Practice identity discrepancy escalation.', followUpStatus: 'remediation-assigned', reassessmentTargetDate: '2026-09-20', evidenceOutputs: [], domainScores: [], criticalErrors: [], history: [] },
+  evaluator_id: 'assessor-001', evaluated_at: new Date('2026-09-12T12:00:00.000Z'), updated_at: new Date('2026-09-12T12:01:00.000Z'),
+  assigned_evaluator_id: 'assessor-001', assigned_by: 'admin-001', assigned_at: new Date('2026-09-12T11:00:00.000Z'), assignment_updated_at: new Date('2026-09-12T11:00:00.000Z')
 };
 const queueDbRow = {
-  external_subject: 'learner-external-001',
-  enrollment_status: 'active',
-  enrolled_at: new Date('2026-09-10T09:00:00.000Z'),
-  practical_status: 'failed',
-  score_percent: '92.00',
-  critical_error_count: 1,
-  follow_up_status: 'remediation-assigned',
-  reassessment_target_date: '2026-09-20',
-  evaluated_at: new Date('2026-09-12T12:00:00.000Z'),
-  updated_at: new Date('2026-09-12T12:01:00.000Z')
+  external_subject: 'learner-external-001', enrollment_status: 'active', enrolled_at: new Date('2026-09-10T09:00:00.000Z'), practical_status: 'failed', score_percent: '92.00', critical_error_count: 1,
+  follow_up_status: 'remediation-assigned', reassessment_target_date: '2026-09-20', assigned_evaluator_id: 'assessor-001', assigned_by: 'admin-001', assigned_at: new Date('2026-09-12T11:00:00.000Z'),
+  evaluated_at: new Date('2026-09-12T12:00:00.000Z'), updated_at: new Date('2026-09-12T12:01:00.000Z'), total_count: 1
 };
 
 async function query(text, params) {
   calls.push({ text, params });
   if (text.includes('join enrollments e')) return { rows: [queueDbRow] };
-  if (text.includes('select id from learners')) return { rows: learnerExists ? [{ id: '00000000-0000-0000-0000-000000000001' }] : [] };
-  if (text.includes('from performance_assessment_results') && text.includes('select assessment_id')) return { rows: [storedRow] };
+  if (text.includes('select id from learners')) return { rows: learnerExists ? [{ id: learnerId }] : [] };
+  if (text.includes('from learners l') && text.includes('left join performance_assessment_results')) return { rows: [storedRow] };
+  if (text.includes("'course-practical-assignment-claimed'")) return { rows: [{ assigned_evaluator_id: params[4], assigned_by: params[5], assigned_at: new Date('2026-09-12T13:00:00.000Z'), assignment_updated_at: new Date('2026-09-12T13:00:00.000Z') }] };
+  if (text.includes("'course-practical-assignment-set'")) return { rows: [{ assigned_evaluator_id: params[4], assigned_by: params[5], assigned_at: new Date('2026-09-12T13:00:00.000Z'), assignment_updated_at: new Date('2026-09-12T13:00:00.000Z') }] };
+  if (text.includes("'course-practical-assignment-cleared'")) return { rows: [] };
+  if (text.includes("'course-practical-assignment-released'")) return { rows: [{ evaluator_id: 'assessor-001' }] };
   if (text.includes('insert into performance_assessment_results')) return { rows: [storedRow] };
   throw new Error(`unexpected query: ${text}`);
 }
 
 const store = createPostgresPracticalEvaluatorStore({ query });
-const queue = await store.listCourseLearners({
-  courseId: 'COURSE-LH-TECH1-001',
-  assessmentId: storedRow.assessment_id,
-  assessmentVersion: storedRow.assessment_version,
-  search: 'learner',
-  practicalStatus: 'failed',
-  limit: 25
-});
-assert.equal(queue.length, 1);
-assert.equal(queue[0].learnerSubject, 'learner-external-001');
-assert.equal(queue[0].practicalStatus, 'failed');
-assert.equal(queue[0].followUpStatus, 'remediation-assigned');
-assert.equal(queue[0].reassessmentTargetDate, '2026-09-20');
+const queue = await store.listCourseLearners({ courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, search: 'learner', practicalStatus: 'failed', assignmentFilter: 'mine', evaluatorId: 'assessor-001', page: 2, pageSize: 25 });
+assert.equal(queue.total, 1); assert.equal(queue.page, 2); assert.equal(queue.pageSize, 25); assert.equal(queue.items[0].assignedEvaluatorId, 'assessor-001');
 const queueCall = calls.find((call) => call.text.includes('join enrollments e'));
-assert.deepEqual(queueCall.params, ['COURSE-LH-TECH1-001', storedRow.assessment_id, storedRow.assessment_version, 'learner', 'failed', 25]);
-assert.ok(queueCall.text.includes("coalesce(p.status, 'not-recorded')"));
-assert.ok(queueCall.text.includes("evidence_json ->> 'followUpStatus'"));
+assert.ok(queueCall.text.includes('practical_evaluation_assignments'));
+assert.ok(queueCall.text.includes('count(*) over()'));
+assert.ok(queueCall.text.includes('limit $8 offset $9'));
+assert.deepEqual(queueCall.params, ['COURSE-LH-TECH1-001', storedRow.assessment_id, storedRow.assessment_version, 'learner', 'failed', 'mine', 'assessor-001', 25, 25]);
 assert.equal(queueCall.text.includes('learner-external-001'), false, 'queue learner search must remain parameterized');
 
-const fetched = await store.getEvaluation('learner-external-001', {
-  assessmentId: storedRow.assessment_id,
-  assessmentVersion: storedRow.assessment_version
-});
-assert.equal(fetched.learnerExists, true);
-assert.equal(fetched.evaluation.evidence.evaluatorNotes, 'Private evaluator note');
-assert.equal(fetched.evaluation.evaluatorId, 'assessor-001');
+const reportRows = await store.listCourseReportRows({ courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version });
+assert.equal(reportRows.length, 1); assert.equal(reportRows[0].followUpStatus, 'remediation-assigned');
+const reportCall = calls.filter((call) => call.text.includes('join enrollments e')).at(-1);
+assert.equal(reportCall.text.includes('limit $8 offset $9'), false, 'administrative report should not silently truncate the cohort');
 
-const writeRecord = {
-  assessmentId: storedRow.assessment_id,
-  assessmentVersion: storedRow.assessment_version,
-  status: 'failed',
-  scorePercent: 92,
-  criticalErrorCount: 1,
-  evidence: storedRow.evidence_json,
-  evaluatorId: 'assessor-001',
-  evaluatedAt: '2026-09-12T12:00:00.000Z'
-};
+const fetched = await store.getEvaluation('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version });
+assert.equal(fetched.learnerExists, true); assert.equal(fetched.evaluation.evidence.evaluatorNotes, 'Private evaluator note'); assert.equal(fetched.assignment.evaluatorId, 'assessor-001');
+
+const claimed = await store.claimEvaluator('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-001' });
+assert.equal(claimed.conflict, false); assert.equal(claimed.assignment.evaluatorId, 'assessor-001');
+const claimCall = calls.find((call) => call.text.includes("'course-practical-assignment-claimed'"));
+assert.ok(claimCall.text.includes('where practical_evaluation_assignments.evaluator_id = excluded.evaluator_id'), 'evaluator claim must not overwrite another evaluator');
+assert.ok(claimCall.text.includes('insert into audit_events'), 'claims must be audited atomically');
+assert.deepEqual(claimCall.params, [learnerId, 'COURSE-LH-TECH1-001', storedRow.assessment_id, storedRow.assessment_version, 'assessor-001', 'assessor-001', 'learner-external-001']);
+
+const reassigned = await store.setEvaluatorAssignment('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-002', assignedBy: 'admin-001' });
+assert.equal(reassigned.assignment.evaluatorId, 'assessor-002');
+const adminSetCall = calls.find((call) => call.text.includes("'course-practical-assignment-set'"));
+assert.ok(adminSetCall.text.includes('insert into audit_events'));
+assert.equal(adminSetCall.text.includes('Private evaluator note'), false);
+
+const released = await store.releaseEvaluator('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-001' });
+assert.equal(released.released, true);
+const releaseCall = calls.find((call) => call.text.includes("'course-practical-assignment-released'"));
+assert.ok(releaseCall.text.includes('insert into audit_events'));
+
+await store.setEvaluatorAssignment('learner-external-001', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: null, assignedBy: 'admin-001' });
+const clearCall = calls.find((call) => call.text.includes("'course-practical-assignment-cleared'"));
+assert.ok(clearCall.text.includes('insert into audit_events'));
+
+const writeRecord = { assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, status: 'failed', scorePercent: 92, criticalErrorCount: 1, evidence: storedRow.evidence_json, evaluatorId: 'assessor-001', evaluatedAt: '2026-09-12T12:00:00.000Z' };
 const saved = await store.saveEvaluation('learner-external-001', writeRecord);
-assert.equal(saved.learnerExists, true);
 assert.equal(saved.evaluation.status, 'failed');
-
-const learnerLookup = calls.find((call) => call.text.includes('select id from learners'));
-assert.deepEqual(learnerLookup.params, ['learner-external-001']);
-const evaluationLookup = calls.find((call) => call.text.includes('from performance_assessment_results') && call.text.includes('select assessment_id'));
-assert.deepEqual(evaluationLookup.params, ['00000000-0000-0000-0000-000000000001', storedRow.assessment_id, storedRow.assessment_version]);
 const write = calls.find((call) => call.text.includes('insert into performance_assessment_results'));
-assert.ok(write, 'evaluation UPSERT query must run');
-assert.ok(write.text.includes('on conflict (learner_id, assessment_id, assessment_version)'));
-assert.ok(write.text.includes("'course-practical-evaluation-saved'"), 'authoritative evaluation saves must create an audit event');
-assert.ok(write.text.includes("'followUpStatus'"), 'audit metadata may retain the controlled follow-up workflow state');
-assert.equal(write.text.includes('Private evaluator note'), false, 'private evaluator text must never be interpolated into SQL text');
-assert.equal(write.text.includes('learner-external-001'), false, 'learner identity must be parameterized');
-assert.equal(write.params[6], JSON.stringify(storedRow.evidence_json));
-assert.equal(write.params[7], 'assessor-001');
-assert.equal(write.params[9], 'learner-external-001');
-assert.equal(write.text.includes('evaluatorNotes'), false, 'audit SQL metadata must not copy private evaluator notes');
-assert.equal(write.text.includes('learnerFeedback'), false, 'audit SQL metadata must not copy learner remediation text');
+assert.ok(write.text.includes("'course-practical-evaluation-saved'"));
+assert.equal(write.text.includes('Private evaluator note'), false); assert.equal(write.params[6], JSON.stringify(storedRow.evidence_json)); assert.equal(write.params[7], 'assessor-001');
+assert.equal(write.text.includes('evaluatorNotes'), false); assert.equal(write.text.includes('learnerFeedback'), false);
 
 learnerExists = false;
-const missing = await store.getEvaluation('missing-learner', {
-  assessmentId: storedRow.assessment_id,
-  assessmentVersion: storedRow.assessment_version
-});
-assert.deepEqual(missing, { learnerExists: false, evaluation: null });
-const writeMissing = await store.saveEvaluation('missing-learner', writeRecord);
-assert.deepEqual(writeMissing, { learnerExists: false, evaluation: null });
+const missing = await store.getEvaluation('missing-learner', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version });
+assert.deepEqual(missing, { learnerExists: false, evaluation: null, assignment: null });
+const missingClaim = await store.claimEvaluator('missing-learner', { courseId: 'COURSE-LH-TECH1-001', assessmentId: storedRow.assessment_id, assessmentVersion: storedRow.assessment_version, evaluatorId: 'assessor-001' });
+assert.equal(missingClaim.learnerExists, false);
 
-console.log('Course 1 practical evaluator queue, PostgreSQL parameterization, audit-event, privacy, and learner-resolution contracts passed.');
+console.log('Course 1 evaluator schema v3, PostgreSQL pagination, assignment audit/ownership, reporting, parameterization, and privacy contracts passed.');

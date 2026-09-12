@@ -51,7 +51,7 @@ export function serviceTokensFromEnvironment(env = process.env) {
     tokens.push({
       token: env.THC_API_ADMIN_TOKEN,
       subject: 'admin-service',
-      scopes: ['admin:read']
+      scopes: ['admin:read', 'admin:write']
     });
   }
   if (env.THC_API_EVALUATOR_TOKEN) {
