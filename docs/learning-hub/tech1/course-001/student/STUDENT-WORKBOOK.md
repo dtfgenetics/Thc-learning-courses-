@@ -4,6 +4,12 @@ Complete these activities using the supplied mock records, site procedures, labe
 
 The workbook is designed for evidence-producing practice. Do not invent missing facts to make an activity look complete. Preserve uncertainty, record what is actually known, and identify the role or process that must resolve conditions outside Technician I authority.
 
+## Field references
+
+Use the [Course 1 Field Reference Index](job-aids/FIELD-REFERENCE-INDEX.md) during workbook practice. The six quick references are designed to support decision-making without replacing the current controlled workplace source. Use them to reconstruct the decision rule, then verify the actual SOP/work order, label/SDS, equipment instruction, status control, or other current source that governs the scenario.
+
+The references are especially useful during Activities 8–12, where more than one control or competency may apply at the same time.
+
 ## Activity 1 — Pre-task hazard brief
 Record the task, work area, hazards, controls, required PPE, stop-work conditions, escalation contacts, and any restricted-entry or alarm status. Explain one condition that you can correct routinely and one that requires escalation. Then identify one condition that would require you to reassess the brief after work has already started.
 
