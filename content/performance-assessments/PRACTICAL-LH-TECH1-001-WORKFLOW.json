@@ -95,6 +95,8 @@
     "operationalUseBlockedUntilCalibration": false,
     "publicAcademicViewing": true,
     "learnerWorkflow": {
+      "overview": "Apply Course 1 as one connected cultivation workflow while conditions change during a simulated shift. Learners must preserve safety, identity, traceability, authorization boundaries, record integrity, and handoff quality as new information appears.",
+      "academicUse": "The practical framework is public academic course content. It may be studied without authentication and used for simulation, supervised-lab, or workplace-equivalent learning and evaluation. Personal assessor results remain private learner records.",
       "learnerGuide": "docs/learning-hub/tech1/course-001/student/INTEGRATED-PRACTICAL.md",
       "preparationSteps": [
         "Complete the Course 1 lessons, workbook activities, and low-stakes practice before attempting an evaluated practical.",
@@ -130,7 +132,8 @@
         "Course 1 Student Workbook",
         "Course 1 Workbook Templates",
         "Course 1 remediation matrix and instructor coaching when assigned"
-      ]
+      ],
+      "boundary": "This is Course 1 practical learning and performance evidence. It is separate from the Technician I credential examination and does not by itself issue a professional credential."
     }
   }
 }
