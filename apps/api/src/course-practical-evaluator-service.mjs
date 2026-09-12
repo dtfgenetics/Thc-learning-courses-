@@ -174,10 +174,25 @@ export async function buildCoursePracticalReport({ store, courseId } = {}) {
   if (!practical) return { status: 404, body: { error: 'course-practical-not-found' } };
   if (!store || typeof store.listCourseReportRows !== 'function') return { status: 503, body: { error: 'practical-report-persistence-unavailable' } };
   const rows = await store.listCourseReportRows({ courseId, assessmentId: practical.id, assessmentVersion: practical.version });
-  const summary = { total: rows.length, notRecorded: 0, inProgress: 0, passed: 0, failed: 0, voided: 0, unassigned: 0, followUpOpen: 0 };
+  const summary = {
+    total: rows.length,
+    academicCompleted: 0,
+    academicEverReopened: 0,
+    academicTransitions: 0,
+    notRecorded: 0,
+    inProgress: 0,
+    passed: 0,
+    failed: 0,
+    voided: 0,
+    unassigned: 0,
+    followUpOpen: 0
+  };
   for (const row of rows) {
     const key = row.practicalStatus === 'not-recorded' ? 'notRecorded' : row.practicalStatus === 'in-progress' ? 'inProgress' : row.practicalStatus;
     if (Object.hasOwn(summary, key)) summary[key] += 1;
+    if (row.enrollmentStatus === 'completed') summary.academicCompleted += 1;
+    if (Number(row.academicReopenCount ?? 0) > 0) summary.academicEverReopened += 1;
+    summary.academicTransitions += Number(row.academicTransitionCount ?? 0);
     if (!row.assignedEvaluatorId) summary.unassigned += 1;
     if (!['none', 'closed'].includes(row.followUpStatus ?? 'none')) summary.followUpOpen += 1;
   }
@@ -190,7 +205,26 @@ function csvCell(value) {
 }
 
 export function coursePracticalReportCsv(report) {
-  const headers = ['learnerSubject','enrollmentStatus','practicalStatus','scorePercent','criticalErrorCount','followUpStatus','reassessmentTargetDate','assignedEvaluatorId','assignedAt','evaluatedAt','updatedAt'];
+  const headers = [
+    'learnerSubject',
+    'enrollmentStatus',
+    'academicTransitionCount',
+    'academicReopenCount',
+    'firstAcademicCompletedAt',
+    'latestAcademicCompletedAt',
+    'latestAcademicReopenedAt',
+    'latestAcademicTransitionType',
+    'latestAcademicTransitionAt',
+    'practicalStatus',
+    'scorePercent',
+    'criticalErrorCount',
+    'followUpStatus',
+    'reassessmentTargetDate',
+    'assignedEvaluatorId',
+    'assignedAt',
+    'evaluatedAt',
+    'updatedAt'
+  ];
   const lines = [headers.join(',')];
   for (const row of report.rows ?? []) lines.push(headers.map((key) => csvCell(row[key])).join(','));
   return `${lines.join('\n')}\n`;
