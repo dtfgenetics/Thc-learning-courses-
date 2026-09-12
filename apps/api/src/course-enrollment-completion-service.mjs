@@ -48,6 +48,23 @@ export function loadCourseAcademicCompletionBundle(courseId) {
   };
 }
 
+export function coursesContainingLesson(lessonId) {
+  const courseDir = path.join(root, 'content', 'courses');
+  if (!fs.existsSync(courseDir)) return [];
+  const matches = [];
+  for (const name of fs.readdirSync(courseDir).filter((entry) => entry.endsWith('.json'))) {
+    const course = JSON.parse(fs.readFileSync(path.join(courseDir, name), 'utf8'));
+    if (course.status !== 'published') continue;
+    let found = false;
+    for (const moduleId of course.modules ?? []) {
+      const module = readById('modules', moduleId);
+      if ((module?.lessons ?? []).includes(lessonId)) { found = true; break; }
+    }
+    if (found) matches.push(course.id);
+  }
+  return matches;
+}
+
 export function evaluateCourseAcademicCompletion({ bundle, progress = [], evidence = {}, now = new Date().toISOString() } = {}) {
   if (!bundle?.course?.id || !bundle?.assessment?.id) throw new Error('course academic completion bundle required');
   const requiredLessonIds = [...new Set(bundle.lessons.map((lesson) => lesson.id))];
@@ -98,12 +115,15 @@ export function evaluateCourseAcademicCompletion({ bundle, progress = [], eviden
   };
 }
 
-export async function synchronizeCourseEnrollmentCompletion({ learnerStore, subject, courseId, now = new Date().toISOString() } = {}) {
+export async function synchronizeCourseEnrollmentCompletion({ learnerStore, completionStore, subject, courseId, now = new Date().toISOString() } = {}) {
   const bundle = loadCourseAcademicCompletionBundle(courseId);
   if (!bundle) return { status: 'not-configured', courseId };
-  const requiredMethods = ['listEnrollments', 'listProgress', 'listCourseEvidence', 'setEnrollmentAcademicStatus'];
-  if (!learnerStore || requiredMethods.some((method) => typeof learnerStore[method] !== 'function')) {
-    throw new Error('learner enrollment completion persistence unavailable');
+  const learnerMethods = ['listEnrollments', 'listProgress', 'listCourseEvidence'];
+  if (!learnerStore || learnerMethods.some((method) => typeof learnerStore[method] !== 'function')) {
+    throw new Error('learner academic evidence persistence unavailable');
+  }
+  if (!completionStore || typeof completionStore.setEnrollmentAcademicStatus !== 'function') {
+    throw new Error('enrollment completion persistence unavailable');
   }
 
   const enrollments = await learnerStore.listEnrollments(subject);
@@ -123,7 +143,7 @@ export async function synchronizeCourseEnrollmentCompletion({ learnerStore, subj
       ? 'academic-requirements-reopened'
       : 'academic-requirements-incomplete';
 
-  const synchronized = await learnerStore.setEnrollmentAcademicStatus(subject, {
+  const synchronized = await completionStore.setEnrollmentAcademicStatus(subject, {
     courseId,
     courseVersion: String(bundle.course.version),
     status: academic.desiredEnrollmentStatus,
@@ -132,8 +152,8 @@ export async function synchronizeCourseEnrollmentCompletion({ learnerStore, subj
     academicSnapshot: academic.snapshot
   });
 
-  const history = typeof learnerStore.listEnrollmentAcademicHistory === 'function'
-    ? await learnerStore.listEnrollmentAcademicHistory(subject, { courseId })
+  const history = typeof completionStore.listEnrollmentAcademicHistory === 'function'
+    ? await completionStore.listEnrollmentAcademicHistory(subject, { courseId })
     : [];
 
   return {
