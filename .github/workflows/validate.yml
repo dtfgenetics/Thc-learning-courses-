@@ -27,6 +27,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
+      - name: Normalize Course 1 public academic publication
+        run: npm run course1:publication:sync
       - name: Build expected curriculum registry
         continue-on-error: true
         run: npm run registry:build
@@ -38,17 +40,19 @@ jobs:
           name: generated-curriculum-registry
           path: registry/curriculum.json
           if-no-files-found: ignore
-      - name: Synchronize generated curriculum registry on same-repo PRs
+      - name: Synchronize public Course 1 and generated registry on same-repo PRs
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         continue-on-error: true
         run: |
-          if ! git diff --quiet -- registry/curriculum.json; then
+          if ! git diff --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add registry/curriculum.json
-            git commit -m "Sync generated curriculum registry" || true
+            git add -A
+            git commit -m "Sync public Course 1 publication and generated registry" || true
             git push origin HEAD:${{ github.head_ref }} || true
           fi
+      - name: Audit Course 1 public academic publication
+        run: npm run course1:publication:audit
       - name: Audit Learning Hub assessment item quality
         continue-on-error: true
         run: node scripts/check-learning-hub-item-quality.mjs
