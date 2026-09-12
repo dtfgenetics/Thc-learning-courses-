@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
-import { createAttempt, scoreAttempt, competencyResults } from './assessment-runtime.mjs';
+import { createAttempt } from './assessment-runtime.mjs';
+import { scoreCourseAssessmentAttempt } from './course-grader-v2.mjs';
 
 function hashToUint32(value) {
   return Number.parseInt(crypto.createHash('sha256').update(String(value)).digest('hex').slice(0, 8), 16) >>> 0;
@@ -132,9 +133,9 @@ export function normalizePresentedResponse(item, { formId, response, randomizeCh
     return unique.map((index) => pairs[index].sourceIndex).sort((a, b) => a - b);
   }
   if (item.type === 'numeric') {
-    const numeric = Number(response);
-    if (!Number.isFinite(numeric)) throw new Error(`Response for ${item.id} must be numeric`);
-    return numeric;
+    const numericResponse = Number(response);
+    if (!Number.isFinite(numericResponse)) throw new Error(`Response for ${item.id} must be numeric`);
+    return numericResponse;
   }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
@@ -169,10 +170,5 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
 }
 
 export function scorePersistedCourseAssessment({ assessment, attempt, itemBank, now = new Date().toISOString() }) {
-  if (attempt.status !== 'started') throw new Error(`Cannot score attempt in status ${attempt.status}`);
-  const unanswered = attempt.items.filter((row) => row.response == null || (Array.isArray(row.response) && row.response.length === 0));
-  if (unanswered.length) throw new Error(`Assessment has ${unanswered.length} unanswered item(s)`);
-  const submitted = { ...attempt, status: 'submitted', submittedAt: now };
-  const scored = scoreAttempt(submitted, itemBank, Number(assessment.passingScorePercent ?? 0), now);
-  return { attempt: scored, competencyResults: competencyResults(scored) };
+  return scoreCourseAssessmentAttempt({ assessment, attempt, itemBank, now });
 }
