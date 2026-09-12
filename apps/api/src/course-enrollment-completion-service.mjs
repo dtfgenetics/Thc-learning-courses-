@@ -11,6 +11,16 @@ function readById(directory, id) {
   return object?.id === id ? object : null;
 }
 
+function publishedCourseIds() {
+  const courseDir = path.join(root, 'content', 'courses');
+  if (!fs.existsSync(courseDir)) return [];
+  return fs.readdirSync(courseDir)
+    .filter((entry) => entry.endsWith('.json'))
+    .map((name) => JSON.parse(fs.readFileSync(path.join(courseDir, name), 'utf8')))
+    .filter((course) => course?.status === 'published' && course?.id)
+    .map((course) => course.id);
+}
+
 function iso(value) {
   if (!value) return null;
   const parsed = Date.parse(value);
@@ -49,20 +59,28 @@ export function loadCourseAcademicCompletionBundle(courseId) {
 }
 
 export function coursesContainingLesson(lessonId) {
-  const courseDir = path.join(root, 'content', 'courses');
-  if (!fs.existsSync(courseDir)) return [];
   const matches = [];
-  for (const name of fs.readdirSync(courseDir).filter((entry) => entry.endsWith('.json'))) {
-    const course = JSON.parse(fs.readFileSync(path.join(courseDir, name), 'utf8'));
-    if (course.status !== 'published') continue;
-    let found = false;
-    for (const moduleId of course.modules ?? []) {
-      const module = readById('modules', moduleId);
-      if ((module?.lessons ?? []).includes(lessonId)) { found = true; break; }
-    }
-    if (found) matches.push(course.id);
+  for (const courseId of publishedCourseIds()) {
+    const bundle = loadCourseAcademicCompletionBundle(courseId);
+    if (bundle?.lessons.some((lesson) => lesson.id === lessonId)) matches.push(courseId);
   }
   return matches;
+}
+
+export function courseIdForFinalAssessment(assessmentId) {
+  for (const courseId of publishedCourseIds()) {
+    const bundle = loadCourseAcademicCompletionBundle(courseId);
+    if (bundle?.assessment.id === assessmentId) return courseId;
+  }
+  return null;
+}
+
+export function courseIdForPerformanceAssessment(assessmentId) {
+  for (const courseId of publishedCourseIds()) {
+    const bundle = loadCourseAcademicCompletionBundle(courseId);
+    if (bundle?.performanceAssessmentId === assessmentId) return courseId;
+  }
+  return null;
 }
 
 export function evaluateCourseAcademicCompletion({ bundle, progress = [], evidence = {}, now = new Date().toISOString() } = {}) {
