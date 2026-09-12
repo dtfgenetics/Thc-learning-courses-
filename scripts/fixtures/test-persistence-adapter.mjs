@@ -42,6 +42,15 @@ export async function createPersistenceAdapters() {
         progress.set(subject, next);
         return stored;
       },
+      async listCourseEvidence(subject, { assessmentId, performanceAssessmentId = null } = {}) {
+        return {
+          learnerId: subject,
+          assessmentId,
+          performanceAssessmentId,
+          assessmentAttempts: [],
+          performanceAssessment: null
+        };
+      },
       async listCredentialEvidence(subject, { credentialDefinitionId } = {}) {
         return {
           learnerId: subject,
