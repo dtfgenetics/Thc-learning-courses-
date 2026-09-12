@@ -44,6 +44,9 @@ try {
   assert.match(homeHtml, /rich-content\.css/, 'Academy shell should load the rich-content stylesheet');
   assert.match(homeHtml, /course-assessment\.css/, 'Academy shell should load the Course 1 final stylesheet');
   assert.match(homeHtml, /course-assessment\.js/, 'Academy shell should load the Course 1 final client');
+  assert.match(homeHtml, /assessor\.css/, 'Academy shell should load assessor styles');
+  assert.match(homeHtml, /assessor\.js/, 'Academy shell should load the assessor client');
+  assert.match(homeHtml, /id="tab-assessor"[^>]*hidden/, 'assessor navigation must default hidden');
 
   const richRendererResponse = await fetch(`${base}/rich-content.js`);
   assert.equal(richRendererResponse.status, 200);
@@ -59,10 +62,20 @@ try {
   assert.equal(assessmentClient.status, 200);
   const assessmentClientText = await assessmentClient.text();
   assert.match(assessmentClientText, /assessment-attempts/, 'Course 1 final client should expose the authenticated assessment workflow');
-  assert.match(assessmentClientText, /restricted Technician I certification examination/, 'Course 1 final client must state the credential-exam boundary');
+  assert.match(assessmentClientText, /separate from the Technician I credential examination/, 'Course 1 final client must state the separate credential-exam boundary without labeling academic course content restricted');
   const assessmentStyles = await fetch(`${base}/course-assessment.css`);
   assert.equal(assessmentStyles.status, 200);
   assert.match(await assessmentStyles.text(), /course-assessment-choice/, 'Course 1 final styles should include assessment controls');
+
+  const assessorClient = await fetch(`${base}/assessor.js`);
+  assert.equal(assessorClient.status, 200);
+  const assessorClientText = await assessorClient.text();
+  assert.match(assessorClientText, /evaluator\/capabilities/, 'assessor client should require evaluator capability');
+  assert.match(assessorClientText, /Finalize evaluation/, 'assessor client should expose trusted finalization workflow');
+  assert.match(assessorClientText, /remediationSummary/, 'assessor runtime should project learner-safe remediation feedback');
+  const assessorStyles = await fetch(`${base}/assessor.css`);
+  assert.equal(assessorStyles.status, 200);
+  assert.match(await assessorStyles.text(), /assessor-domain-grid/, 'assessor styles should include the scoring grid');
 
   const governanceClient = await fetch(`${base}/governance.js`);
   assert.equal(governanceClient.status, 200);
@@ -207,4 +220,4 @@ try {
   await once(production, 'close');
 }
 
-console.log('Academy learner web, Course 1 final assets, and staging governance tests passed.');
+console.log('Academy learner web, Course 1 final/practical assessor assets, and staging governance tests passed.');

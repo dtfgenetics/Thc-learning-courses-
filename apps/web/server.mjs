@@ -273,10 +273,10 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/progress.js', ['progress.js', 'text/javascript; charset=utf-8']],
       ['/rich-content.js', ['rich-content.js', 'text/javascript; charset=utf-8']],
       ['/governance.js', ['governance.js', 'text/javascript; charset=utf-8']], ['/portal.js', ['portal.js', 'text/javascript; charset=utf-8']],
-      ['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']],
+      ['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']], ['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']],
       ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/rich-content.css', ['rich-content.css', 'text/css; charset=utf-8']],
       ['/governance.css', ['governance.css', 'text/css; charset=utf-8']], ['/portal.css', ['portal.css', 'text/css; charset=utf-8']],
-      ['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']]
+      ['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']], ['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]
     ]);
     if ((req.method === 'GET' || req.method === 'HEAD') && staticFiles.has(url.pathname)) {
       const [file, type] = staticFiles.get(url.pathname);

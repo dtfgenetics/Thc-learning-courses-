@@ -54,5 +54,12 @@ export function serviceTokensFromEnvironment(env = process.env) {
       scopes: ['admin:read']
     });
   }
+  if (env.THC_API_EVALUATOR_TOKEN) {
+    tokens.push({
+      token: env.THC_API_EVALUATOR_TOKEN,
+      subject: 'course-practical-evaluator',
+      scopes: ['evaluator:read', 'evaluator:write']
+    });
+  }
   return tokens;
 }

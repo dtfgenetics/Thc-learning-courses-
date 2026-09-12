@@ -45,6 +45,10 @@ export async function loadProductionApiOptions(env = process.env) {
   if (!learnerStore || requiredLearnerMethods.some((method) => typeof learnerStore[method] !== 'function')) {
     throw new Error('Production persistence adapter must provide learnerStore progress, enrollment, course/credential evidence, and assessment attempt methods');
   }
+  const practicalEvaluatorStore = adapters?.practicalEvaluatorStore;
+  if (!practicalEvaluatorStore || typeof practicalEvaluatorStore.getEvaluation !== 'function' || typeof practicalEvaluatorStore.saveEvaluation !== 'function') {
+    throw new Error('Production persistence adapter must provide practicalEvaluatorStore.getEvaluation() and saveEvaluation()');
+  }
 
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
   if (typeof authModule.createRequestAuthorizer !== 'function') throw new Error('Authentication adapter module must export createRequestAuthorizer({ env })');
@@ -56,6 +60,7 @@ export async function loadProductionApiOptions(env = process.env) {
     credentialStore,
     credentialWriter: adapters.credentialWriter ?? null,
     learnerStore,
+    practicalEvaluatorStore,
     requiredSchemaVersion: config.requiredSchemaVersion,
     authorize
   };
