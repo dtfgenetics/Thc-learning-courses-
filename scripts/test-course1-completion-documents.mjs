@@ -10,11 +10,12 @@ import {
   buildCoursePracticalReport,
   coursePracticalReportCsv
 } from '../apps/api/src/course-practical-evaluator-service.mjs';
+import { createAcademyWebServer } from '../apps/web/server.mjs';
 
 const runtimePath = 'apps/web/public/completion-documents.js';
 const runtime = fs.readFileSync(runtimePath, 'utf8');
 const html = fs.readFileSync('apps/web/public/index.html', 'utf8');
-const webServer = fs.readFileSync('apps/web/server.mjs', 'utf8');
+const webServerSource = fs.readFileSync('apps/web/server.mjs', 'utf8');
 const syntax = spawnSync(process.execPath, ['--check', runtimePath], { encoding: 'utf8' });
 assert.equal(syntax.status, 0, syntax.stderr || syntax.stdout);
 
@@ -86,7 +87,23 @@ for (const marker of [
 ]) assert.ok(runtime.includes(marker), `completion download runtime missing: ${marker}`);
 assert.equal(runtime.includes('.innerHTML'), false, 'completion downloads must not use innerHTML');
 assert.match(html, /<script type="module" src="\/completion-documents\.js"><\/script>/);
-assert.ok(webServer.includes("['/completion-documents.js', ['completion-documents.js', 'text/javascript; charset=utf-8']]"), 'Academy web server must serve completion download module');
+assert.ok(webServerSource.includes("['/completion-documents.js', ['completion-documents.js', 'text/javascript; charset=utf-8']]"), 'Academy web server must serve completion download module');
+
+const server = createAcademyWebServer({ env: { NODE_ENV: 'test', ACADEMY_PREVIEW_DRAFTS: '0' }, apiHandler: null });
+await new Promise((resolve, reject) => {
+  server.once('error', reject);
+  server.listen(0, '127.0.0.1', resolve);
+});
+try {
+  const address = server.address();
+  const response = await fetch(`http://127.0.0.1:${address.port}/completion-documents.js`);
+  assert.equal(response.status, 200, 'Academy server must serve academic download runtime');
+  assert.match(response.headers.get('content-type') ?? '', /text\/javascript/);
+  const served = await response.text();
+  assert.ok(served.includes('buildAcademicTranscriptText'));
+} finally {
+  await new Promise((resolve) => server.close(resolve));
+}
 
 const reportStore = {
   async listCourseReportRows() {
@@ -120,4 +137,4 @@ assert.ok(csv.includes('2026-09-22T12:00:00.000Z'));
 assert.equal(csv.includes('evaluatorNotes'), false);
 assert.equal(csv.includes('evidenceOutputs'), false);
 
-console.log('Course 1 learner academic transcript/data downloads and privacy-bounded admin completion/reopen exports passed.');
+console.log('Course 1 learner academic transcript/data downloads, HTTP serving, and privacy-bounded admin completion/reopen exports passed.');
