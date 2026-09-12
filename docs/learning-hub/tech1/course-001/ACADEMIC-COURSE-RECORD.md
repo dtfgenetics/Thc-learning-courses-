@@ -29,6 +29,22 @@ Course 1 academic completion is derived only when all three course-level require
 
 This derived academic status does not issue, imply, or modify a professional credential.
 
+## Enrollment completion synchronization
+
+The current Course 1 enrollment record is synchronized to that same academic model instead of maintaining a second, unrelated completion decision.
+
+- When all three academic requirements are satisfied, an `active` Course 1 enrollment becomes `completed` and receives a completion timestamp derived from the latest required academic evidence.
+- If a completed enrollment no longer satisfies the current canonical academic requirements, it returns to `active` and its current `completed_at` value is cleared.
+- A later return to completion records a new completion timestamp from the evidence that restored the requirements.
+- An administrative `withdrawn` enrollment is never changed by academic automation.
+- Reconciliation is idempotent: reading or recalculating an already-correct status does not create duplicate transition events.
+
+Synchronization runs after enrollment, lesson-progress writes, course-final scoring and practical-evaluation writes. It also runs when authenticated enrollment state is read. Read-time reconciliation is how a published curriculum change can reopen a requirement without waiting for the learner to submit some unrelated new record.
+
+Every real `active → completed` or `completed → active` transition writes an immutable `audit_events` entry. The event stores only the previous/current enrollment state, reason, course/version and a minimal academic-requirements snapshot. It does not store learner assessment responses, private evaluator notes, practical evidence references, or credential decisions.
+
+The learner enrollment projection may include `academicStatusHistory` for the matching course version so the completion/reopen sequence can be reconstructed without overwriting prior transitions.
+
 ## Lesson version preservation
 
 Course content remains continuously editable. A later lesson revision must not erase valid historical completion evidence.
@@ -41,6 +57,8 @@ For each canonical lesson, the record preserves:
 - all lesson versions represented in the learner's progress history.
 
 Academic completion is therefore associated with the canonical lesson identity while preserving the actual version history. Updating a lesson from, for example, `1.2.0` to a later version does not automatically revoke a previously recorded completion.
+
+Adding a new canonical lesson is different from revising an already-completed lesson identity: the new lesson becomes a current academic requirement and may reopen the current Course 1 enrollment until that requirement is satisfied. This preserves historical completion evidence without pretending the learner has completed newly added work.
 
 The authoritative progress API accepts the numeric semantic lesson-version format used by Course 1, including versions such as `1.2.0`.
 
@@ -80,7 +98,7 @@ They must not expose evaluator identity, private evaluator notes, domain-score e
 
 ## Course-version history
 
-Course enrollment records are displayed separately from lesson progress. The learner may see each recorded Course 1 enrollment version, enrollment state, enrollment date and any recorded enrollment completion timestamp.
+Course enrollment records are displayed separately from lesson progress. The learner may see each recorded Course 1 enrollment version, enrollment state, enrollment date and any current enrollment completion timestamp. The underlying academic transition history preserves prior completion/reopen events even when the current row has returned to `active`.
 
 This is historical context, not a rule that prevents content from being edited or expanded.
 
@@ -111,8 +129,10 @@ The course record is private to the authenticated learner. It must not expose:
 - credential-exam secure material;
 - credential signing or issuance records unrelated to this academic course view.
 
+Academic enrollment audit snapshots are intentionally minimal and must remain separate from professional credential audit/issuance records.
+
 ## Extensibility
 
 This record does not create a content ceiling. Course modules, lessons, supporting materials, assessments and instructional design may continue to be added, revised, reorganized or replaced.
 
-The record should follow the current canonical Course 1 structure while preserving historical learner evidence by stable object identity and recorded versions. Quality gates should protect privacy, data integrity and semantic correctness rather than freeze the course at today's lesson count or version set.
+The record should follow the current canonical Course 1 structure while preserving historical learner evidence by stable object identity, recorded versions and audited enrollment-state transitions. Quality gates should protect privacy, data integrity and semantic correctness rather than freeze the course at today's lesson count or version set.

@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { addAutomaticEnrollmentCompletion } from './enrollment-completion-adapter.mjs';
 
 function required(env, name) {
   const value = String(env[name] ?? '').trim();
@@ -35,24 +36,34 @@ export async function loadProductionApiOptions(env = process.env) {
   if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function') {
     throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
   }
-  const learnerStore = adapters?.learnerStore;
+  const rawLearnerStore = adapters?.learnerStore;
   const requiredLearnerMethods = [
     'listProgress', 'setLessonProgress', 'listEnrollments', 'enroll',
     'listCredentialEvidence', 'listCourseEvidence',
     'findOpenAssessmentAttempt', 'getAssessmentAttempt', 'createAssessmentAttempt',
     'saveAssessmentResponses', 'saveAssessmentScore'
   ];
-  if (!learnerStore || requiredLearnerMethods.some((method) => typeof learnerStore[method] !== 'function')) {
+  if (!rawLearnerStore || requiredLearnerMethods.some((method) => typeof rawLearnerStore[method] !== 'function')) {
     throw new Error('Production persistence adapter must provide learnerStore progress, enrollment, course/credential evidence, and assessment attempt methods');
   }
-  const practicalEvaluatorStore = adapters?.practicalEvaluatorStore;
+  const rawPracticalEvaluatorStore = adapters?.practicalEvaluatorStore;
   const requiredPracticalEvaluatorMethods = [
     'listCourseLearners', 'listCourseReportRows', 'getEvaluation', 'saveEvaluation',
     'claimEvaluator', 'releaseEvaluator', 'setEvaluatorAssignment'
   ];
-  if (!practicalEvaluatorStore || requiredPracticalEvaluatorMethods.some((method) => typeof practicalEvaluatorStore[method] !== 'function')) {
+  if (!rawPracticalEvaluatorStore || requiredPracticalEvaluatorMethods.some((method) => typeof rawPracticalEvaluatorStore[method] !== 'function')) {
     throw new Error('Production persistence adapter must provide practical evaluator queue, assignment, reporting, read, and write methods');
   }
+  const completionStore = adapters?.enrollmentCompletionStore;
+  const requiredCompletionMethods = ['setEnrollmentAcademicStatus', 'listEnrollmentAcademicHistory'];
+  if (!completionStore || requiredCompletionMethods.some((method) => typeof completionStore[method] !== 'function')) {
+    throw new Error('Production persistence adapter must provide audited enrollment completion synchronization methods');
+  }
+  const wrapped = addAutomaticEnrollmentCompletion({
+    learnerStore: rawLearnerStore,
+    practicalEvaluatorStore: rawPracticalEvaluatorStore,
+    completionStore
+  });
 
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
   if (typeof authModule.createRequestAuthorizer !== 'function') throw new Error('Authentication adapter module must export createRequestAuthorizer({ env })');
@@ -63,8 +74,9 @@ export async function loadProductionApiOptions(env = process.env) {
     env,
     credentialStore,
     credentialWriter: adapters.credentialWriter ?? null,
-    learnerStore,
-    practicalEvaluatorStore,
+    learnerStore: wrapped.learnerStore,
+    practicalEvaluatorStore: wrapped.practicalEvaluatorStore,
+    enrollmentCompletionStore: completionStore,
     requiredSchemaVersion: config.requiredSchemaVersion,
     authorize
   };

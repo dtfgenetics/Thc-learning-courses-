@@ -6,14 +6,14 @@ assert.deepEqual(validateProductionEnvironment({ NODE_ENV: 'development' }), { m
 
 for (const env of [
   { NODE_ENV: 'production' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '3' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com' }
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs' },
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '3' },
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com' }
 ]) assert.throws(() => validateProductionEnvironment(env));
 
 const productionEnv = {
   NODE_ENV: 'production',
-  THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter.mjs',
+  THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
   THC_REQUIRED_SCHEMA_VERSION: '3'
@@ -33,6 +33,10 @@ assert.equal(options.practicalEvaluatorStore.kind, 'test-practical-evaluator');
 for (const method of ['listCourseLearners', 'listCourseReportRows', 'getEvaluation', 'saveEvaluation', 'claimEvaluator', 'releaseEvaluator', 'setEvaluatorAssignment']) {
   assert.equal(typeof options.practicalEvaluatorStore[method], 'function', `production practical evaluator store must provide ${method}()`);
 }
+assert.equal(options.enrollmentCompletionStore.kind, 'test-enrollment-completion');
+for (const method of ['setEnrollmentAcademicStatus', 'listEnrollmentAcademicHistory']) {
+  assert.equal(typeof options.enrollmentCompletionStore[method], 'function', `production enrollment completion store must provide ${method}()`);
+}
 assert.equal(typeof options.authorize, 'function');
 assert.doesNotThrow(() => createHandler(options));
 
@@ -50,4 +54,4 @@ assert.equal(evaluatorAuth.ok, true);
 const adminWrite = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:write');
 assert.equal(adminWrite.ok, true);
 
-console.log('Production persistence, schema v3 readiness, learner assessment/evidence, practical evaluator queue/assignment/reporting, and authentication adapter contracts passed.');
+console.log('Production persistence, schema v3 readiness, automatic academic enrollment completion, learner assessment/evidence, practical evaluator queue/assignment/reporting, and authentication adapter contracts passed.');
