@@ -44,6 +44,7 @@ The current canonical lessons use richer instructional structures including evid
 - public academic **Course 1 practical** learner surface available without authentication
 - practical learner surface includes preparation steps, five workflow stages, seven required evidence outputs, the 100-point scoring model, critical-error boundaries, support resources, responsive mobile layout and print mode
 - private assessor-recorded practical status is shown only when authenticated and remains separate from the public academic practical content
+- learner-safe assessor feedback/remediation can be projected into the authenticated practical status without exposing private evaluator notes, evaluator identity, or the underlying evidence payload
 - canonical practical-to-runtime synchronization audit prevents the learner practical view from drifting away from the published practical object
 - retrieval/spaced-practice schedule
 - visual/accessibility production plan
@@ -75,9 +76,18 @@ The Course 1 practical framework itself is public academic content. Authenticati
 - practical assessor guide
 - practical calibration protocol
 - equivalent practical Candidate Forms A and B
+- role-gated **Practical Assessor Workspace** available only when evaluator capability is authorized
+- all eight practical scoring domains rendered from the canonical published practical definition, with score bounds enforced again by the server
+- canonical critical-error checklist with server-side critical-error override of the point score
+- separate private evaluator notes and learner-facing feedback/remediation fields
+- save-in-progress support plus explicit confirmation before finalizing an official practical result
+- server-calculated practical status and score written to the authoritative `performance_assessment_results` record rather than accepted from browser-supplied status fields
+- prior finalized practical revisions preserved in controlled evidence history when an authorized replacement evaluation is recorded
+- practical-evaluation writes create a minimal audit event without copying private evaluator notes into audit metadata
+- evaluator identity comes from the authenticated evaluator session and cannot be supplied or overridden by the browser
 - review packet for optional quality review
 
-Instructor-resource counts describe the current support package, not content ceilings. Additional misconception patterns, exemplars, scenario variants, prompts, or remediation methods may be added or reorganized when they preserve the controlled objectives and evidence boundaries.
+Instructor-resource counts describe the current support package, not content ceilings. Additional misconception patterns, exemplars, scenario variants, prompts, scoring guidance, assessor support, or remediation methods may be added or reorganized when they preserve the controlled objectives and evidence boundaries.
 
 ## Course assessment
 
@@ -90,6 +100,7 @@ Instructor-resource counts describe the current support package, not content cei
 - final item/choice presentation may be randomized deterministically per attempt while scoring remains against immutable canonical item versions
 - learner responses are stored in the learner attempt record; correct-answer keys and rationales are not returned in the live final-assessment payload
 - final submission is scored server-side and returns score/pass status plus competency/domain results consistent with the configured post-attempt domain-level feedback mode
+- practical finalization requires a complete set of canonical domain scores; passing requires both the configured point threshold and the configured critical-error rule
 
 The 84/36/120 counts are the current published inventory, not content ceilings. Additional valid items may be added, retired, replaced, or reorganized as objectives, evidence, instructional depth, and pilot findings evolve. Automated QA enforces minimum quality baselines and internal consistency rather than freezing the bank at an exact size.
 
@@ -107,6 +118,8 @@ A missed item or weak performance should not trigger an automatic same-item retr
 6. record the result when a controlled remediation record is appropriate.
 
 Successful remediation means the learner can apply the objective in a new context. Viewing the correct answer or rereading a page is not sufficient evidence by itself. The learner final therefore returns domain-level performance and remediation direction without exposing the answer key after submission.
+
+For the integrated practical, authorized evaluators may record learner-facing remediation separately from private evaluator notes. Only the learner-facing feedback is projected back into the learner's practical view. Equivalent reassessment can replace a finalized result while preserving the previous finalized snapshot in evaluation history.
 
 ## Ongoing validity improvement
 
@@ -128,6 +141,6 @@ Statistics, reviews, and pilot findings should guide revisions. They do not auto
 
 ## Current status
 
-The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, public academic practical viewing, private practical-result projection, objective-linked remediation support, and supporting evidence materials are present.
+The Course 1 learner package is public-facing and structurally testable. Source verification, learner/instructor materials, assessment banks, practical forms, learner practice, field-ready reference aids, learner-facing field-reference navigation/remediation, responsive learner navigation, official course-level evidence status, authenticated final-assessment start/resume/autosave/scoring, public academic practical viewing, private practical-result projection, trusted role-gated practical evaluation, learner-safe assessor remediation, objective-linked remediation support, and supporting evidence materials are present.
 
 The course should continue to improve as new evidence, learner data, accessibility findings, technical review, or better instructional design becomes available. No review or pilot state makes the content immutable.
