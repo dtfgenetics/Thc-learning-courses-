@@ -38,6 +38,7 @@ const collections = {
   credentials: readDirJson('content/credentials'),
   reviews: readDirJson('content/reviews')
 };
+const publicReleases = readDirJson('content/public-releases');
 
 // Build comprehensive ID index and review index
 const ids = new Map(); // id -> file path
@@ -61,6 +62,23 @@ for (const { data } of collections.reviews) {
     reviewsByTargetId.set(targetId, []);
   }
   reviewsByTargetId.get(targetId).push(data);
+}
+
+// Public academic release is intentionally distinct from certification approval.
+// These sets let development validation keep learner-facing academic material public
+// while the production/release gates still require human review and validation evidence.
+const modulesById = new Map(collections.modules.map(({ data }) => [data.id, data]));
+const publicAcademicLessonIds = new Set();
+const publicAcademicAssessmentIds = new Set();
+for (const { data: release } of publicReleases) {
+  if (release.publicationState !== 'published' || release.publicationBoundary?.learnerPackage !== 'released') continue;
+  for (const moduleId of release.publicScope?.modules ?? []) {
+    const module = modulesById.get(moduleId);
+    for (const lessonId of module?.lessons ?? []) publicAcademicLessonIds.add(lessonId);
+  }
+  if (release.publicationBoundary?.courseTests === 'released-for-learning') {
+    for (const assessmentId of release.publicScope?.assessments ?? []) publicAcademicAssessmentIds.add(assessmentId);
+  }
 }
 
 const indexTime = performance.now() - startIndexTime;
@@ -132,7 +150,9 @@ for (const { file, data } of collections.lessons) {
     }
   }
   
-  // Published lessons must be complete and have review records
+  // Published lessons must be instructionally complete. Human approval remains a
+  // production/certification requirement unless the object is explicitly published
+  // only as part of a public academic learning package.
   if (data.status === 'published') {
     if (!data.content) {
       addError('publication-gate', `${file}: published lesson must include structured instructional content`);
@@ -153,11 +173,14 @@ for (const { file, data } of collections.lessons) {
       addError('completeness', `${file}: published lesson must include a summary`);
     }
     
-    // Check for review records
     const lessonReviews = reviewsByTargetId.get(data.id) || [];
     const hasApprovedReview = lessonReviews.some((r) => r.status === 'approved' || r.status === 'passed');
     if (!hasApprovedReview) {
-      addError('review-requirement', `${file}: published lesson ${data.id} must have an approval review record`);
+      if (publicAcademicLessonIds.has(data.id)) {
+        warnings.push(`${file}: public academic lesson ${data.id} has no approval review record; certification/production release remains blocked`);
+      } else {
+        addError('review-requirement', `${file}: published lesson ${data.id} must have an approval review record`);
+      }
     }
   }
 }
@@ -276,11 +299,19 @@ function assertPublishedDependencies(sourceFile, data) {
       addError('publication-gate', `${sourceFile}: published object depends on unverified reference ${refId}`);
     }
   }
-  
+
+  const nonApprovedItems = [];
   for (const itemId of data.items ?? []) {
     const item = objects.get(itemId);
-    if (item && !['active', 'approved', 'published'].includes(item.status)) {
-      addError('publication-gate', `${sourceFile}: published assessment uses non-approved item ${itemId}`);
+    if (item && !['active', 'approved', 'published'].includes(item.status)) nonApprovedItems.push(itemId);
+  }
+  if (nonApprovedItems.length > 0) {
+    if (publicAcademicAssessmentIds.has(data.id)) {
+      warnings.push(`${sourceFile}: public academic assessment contains ${nonApprovedItems.length} non-approved development item(s); certification/production release remains blocked`);
+    } else {
+      for (const itemId of nonApprovedItems) {
+        addError('publication-gate', `${sourceFile}: published assessment uses non-approved item ${itemId}`);
+      }
     }
   }
 }
