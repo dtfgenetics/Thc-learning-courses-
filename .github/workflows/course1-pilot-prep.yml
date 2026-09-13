@@ -43,4 +43,4 @@ jobs:
       - name: Audit schema-controlled pilot plan
         run: npm run schema:validate
       - name: Audit Course 1 pilot preparation
-        run: node scripts/check-course1-pilot-prep.mjs
+        run: node scripts/check-course1-pilot-prep.mjs --check
