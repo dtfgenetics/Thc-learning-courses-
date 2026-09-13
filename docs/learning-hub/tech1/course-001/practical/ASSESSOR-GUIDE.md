@@ -1,78 +1,92 @@
 # Course 1 Practical — Assessor Guide
 
-**Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`
+**Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
+**Rubric version:** `course1-practical-rubric-1.0.0`
 
 ## Purpose
 
-This guide standardizes scoring for the Course 1 integrated practical. It does not declare the rubric calibrated; calibration must occur with multiple assessors and representative performances before operational use.
+Use this guide with the canonical practical definition. The practical JSON remains authoritative for points, domain minimums, evidence requirements, critical errors, and pass/fail calculation. Evaluators score observable performance; the server calculates the official result.
 
 ## Administration rules
 
-- Use one approved candidate form without altering the construct mid-attempt.
-- Provide only the prompts permitted by the form.
-- Record every prompt or clarification given.
-- Score observable decisions, records, and boundaries; do not score personality, confidence, speed, accent, handwriting style, or unsupported impressions.
-- If an accessibility accommodation changes presentation but not the skill being measured, do not penalize the learner for using it.
-- Stop the simulation if continuing would create an actual safety risk in a live training environment.
+- Use an approved equivalent practical form without changing the construct during an attempt.
+- Record prompts and clarifications.
+- Score observable decisions, records, evidence, and authority boundaries rather than confidence, personality, accent, speed, or handwriting style.
+- Do not penalize an approved accessibility accommodation that changes presentation but not the skill being measured.
+- Stop a live simulation if continuing would create an actual safety risk.
+- Record observations before assigning points or a performance level.
 
-## Rubric anchors
+## Performance levels
 
-### 1. Safety / PPE / stop-work judgment — 18 points
+The canonical rubric uses four levels in every domain:
 
-**Strong performance:** identifies all seeded blocking hazards, uses supplied PPE/chemical information correctly, distinguishes routine controls from special-authority work, and escalates the damaged/guarded/energized-equipment issue without attempting repair.
+- **Strong — 90–100%:** consistently complete, accurate, independent, and well controlled.
+- **Competent — 75–<90%:** meets the expected Course 1 performance standard with only minor non-critical omissions.
+- **Developing — 50–<75%:** partially meets the standard and requires correction, prompting, stronger evidence, or more reliable execution.
+- **Insufficient — 0–<50%:** does not yet demonstrate the required performance or leaves important controls, records, identity, authorization, or handoff elements unresolved.
 
-**Partial performance:** identifies most hazards but misses one lower-severity control or needs a permitted prompt.
+Do not use the retired `partial` or `weak` labels.
 
-**Weak performance:** normalizes an explicit hazard, works around missing required controls, or exceeds stated authority.
+## Domain anchors and minimums
 
-### 2. Sanitation / biosecurity — 14 points
+### Safety, PPE and stop-work judgment — 18 points — minimum 70%
+Strong performance identifies seeded hazards and restrictions, uses supplied PPE/HazCom information correctly, preserves stop-work boundaries, and escalates without unauthorized repair or release. Competent performance controls material hazards within role authority and stops or escalates when required. Developing performance misses or delays a non-critical control or needs prompting. Insufficient performance normalizes a material hazard, bypasses a required control, or cannot distinguish routine work from stop/escalate conditions.
 
-Strong performance distinguishes cleaning/sanitation workflow from plant-health holds and pesticide restricted-entry controls, respects movement restrictions, and follows the supplied sequence without inventing chemical directions.
+### Sanitation and biosecurity — 14 points — minimum 60%
+Strong performance maintains clean-to-dirty movement logic, distinguishes sanitation from plant-health and worker-entry controls, and verifies process conditions before proceeding. Competent performance executes the supplied controls and preserves active restrictions. Developing performance misses a non-critical verification, sequence detail, or pathway. Insufficient performance cannot reliably maintain movement/status controls.
 
-### 3. SOP / work-order execution — 12 points
+### SOP and work-order execution — 12 points — minimum 60%
+Strong performance verifies revision, task identity, scope, acceptance criteria and exceptions, and handles conflicts without inventing authority. Competent performance follows the controlled instruction and required stop/exception/escalation points. Developing performance needs help identifying a boundary. Insufficient performance proceeds from an uncontrolled, conflicting, or incomplete instruction.
 
-Strong performance verifies task/revision/scope, identifies acceptance and stop conditions, and escalates missing/conflicting instructions instead of selecting an unauthorized workaround.
+### Identity and traceability — 16 points — minimum 65%
+Strong performance preserves physical and record identity through movement, split/merge, and handoff and blocks discrepant movement until resolution. Competent performance verifies and records required identifiers and relationships. Developing performance misses non-critical context or needs prompting. Insufficient performance cannot reliably link physical material to the controlled record or forces a mismatch to balance.
 
-### 4. Identity / traceability — 16 points
+### Inventory and discrepancy reasoning — 10 points — minimum 60%
+Strong performance separates confirmed from unresolved facts, preserves evidence, and builds a defensible discrepancy trail. Competent performance detects, records, and escalates discrepancies while preserving actual state. Developing performance incompletely documents context, evidence, or ownership. Insufficient performance forces reconciliation or obscures the mismatch.
 
-Strong performance verifies physical identity before movement, preserves source/destination/time/context, blocks discrepant movements, and does not relabel material merely to match a record.
+### Equipment readiness and operator-care boundary — 10 points — minimum 60%
+Strong performance completes permitted checks, identifies recurrence and impact, and escalates without unsupported diagnosis or protected servicing. Competent performance performs supplied checks within the operator-care boundary. Developing performance needs prompting on recurrence, documentation, or the servicing boundary. Insufficient performance attempts or recommends unauthorized servicing or cannot produce a usable status record.
 
-### 5. Inventory / waste / discrepancy reasoning — 10 points
+### Data integrity and documentation — 12 points — minimum 65%
+Strong performance produces contemporaneous, attributable, context-rich records; corrections preserve original history and missing information remains visibly missing. Competent performance creates reconstructable records and uses the supplied correction/late-entry process correctly. Developing performance misses context, timing, attribution, or correction detail. Insufficient performance backfills, silently overwrites, guesses missing data, or produces non-reconstructable records.
 
-Strong performance separates confirmed facts from unresolved facts, preserves evidence, and creates an escalation trail rather than forcing reconciliation.
+### Shift handoff and communication — 8 points — minimum 60%
+Strong performance prioritizes safety/status, completed work, open deviations, ownership, and time-sensitive actions with two-way confirmation. Competent performance communicates open/closed state and ownership clearly enough for safe continuation. Developing performance leaves a non-critical ambiguity or incomplete read-back. Insufficient performance omits material open conditions, presents hypotheses as facts, or fails to identify ownership/next action.
 
-### 6. Equipment readiness / operator-care boundary — 10 points
+## Required evidence
 
-Strong performance completes only the permitted external checks, records findings, and escalates persistent alarms/faults without protected servicing.
+Before finalization, review all seven canonical outputs:
 
-### 7. Data integrity / documentation — 12 points
+1. Pre-task hazard brief
+2. Sanitation and biosecurity movement record
+3. Controlled-instruction review
+4. Traceability movement and reconciliation record
+5. Equipment readiness and fault report
+6. Corrected record preserving original history
+7. Professional shift handoff
 
-Strong performance records facts contemporaneously and performs corrections in a way that preserves the original history, reason, author, and timing.
+`not-reviewed` blocks finalization. Under the current rubric, every required output must be `verified` for a passing decision. `received` means present but not yet verified; `needs-revision` means reviewed but not acceptable yet.
 
-### 8. Handoff / communication — 8 points
+## Passing rule
 
-Strong performance communicates completed work, open hazards/holds/discrepancies, notifications, ownership, and next actions without presenting hypotheses as confirmed facts.
+A passing Course 1 practical requires all of the following:
 
-## Critical-error decision rule
+- at least 80% overall;
+- every configured domain minimum met;
+- zero canonical critical errors;
+- every required output reviewed; and
+- every required output verified.
 
-Do not infer a critical error from an ordinary knowledge mistake. Apply a critical error only when the candidate performs or clearly commits to a prohibited behavior defined in the practical, including deliberate falsification, bypassing an explicit hold/restricted-entry control, unauthorized protected servicing, knowingly continuing an explicit unsafe condition, or causing avoidable unrecoverable identity loss.
+A high total score does not override a failed domain minimum, unverified required evidence, or a critical error.
 
-Every critical-error decision must record:
+## Critical errors
 
-- the exact candidate action/statement;
-- the controlling instruction that was violated;
-- why the failure is construct-relevant;
-- whether a prompt occurred beforehand;
-- assessor name/ID and time.
+Apply a critical error only to a prohibited behavior defined in the canonical practical. Each finding must be supported by evaluator documentation describing the learner action or statement, the violated instruction or boundary, why the finding matters, and any prompt or clarification that occurred. The authorized system records evaluator identity and time. The server rejects finalization when a critical-error finding lacks sufficient evaluator context.
 
 ## Scoring record
 
-For each dimension record:
+For each domain record the points awarded, observed evidence, relevant artifact or evidence reference, prompts used, any form ambiguity, and remediation target when below standard. The resulting record preserves the rubric version so future rubric revisions do not erase the basis of the original decision.
 
-- points awarded;
-- observed evidence;
-- prompts used;
-- ambiguity in the form, if any;
-- remediation target if below standard.
+## Reassessment and calibration
 
-Do not convert the development 80/100 pilot threshold into a production claim until the standard-setting/calibration record authorizes it.
+A finalized result is not edited back into an in-progress result. An equivalent reassessment starts explicitly while preserving prior finalized history. Calibration should compare representative strong, competent, developing/borderline, and insufficient performances across multiple evaluators. Do not claim inter-rater reliability or psychometric validity until sufficient real calibration evidence exists.
