@@ -93,12 +93,80 @@ function safeAttemptView(bundle, attempt, { resumed = false } = {}) {
   };
 }
 
+function latestCompletedTimestamp(attempts) {
+  let latest = null;
+  for (const attempt of attempts) {
+    if (attempt?.status !== 'scored') continue;
+    const value = attempt.scoredAt ?? attempt.submittedAt ?? attempt.startedAt;
+    if (!value) continue;
+    const time = Date.parse(value);
+    if (!Number.isFinite(time)) continue;
+    if (latest == null || time > latest) latest = time;
+  }
+  return latest;
+}
+
+export function evaluateCourseAssessmentAttemptPolicy({ assessment, attempts = [], now = new Date().toISOString() } = {}) {
+  if (!assessment) throw new Error('assessment required');
+  const completed = attempts.filter((attempt) => attempt?.status === 'scored');
+  const maxAttempts = assessment.maxAttempts == null ? null : Number(assessment.maxAttempts);
+  const cooldownHours = Number(assessment.cooldownHours ?? 0);
+  const base = {
+    attemptsUsed: completed.length,
+    maxAttempts,
+    cooldownHours,
+    retryAfter: null
+  };
+
+  if (Number.isInteger(maxAttempts) && maxAttempts > 0 && completed.length >= maxAttempts) {
+    return { allowed: false, reason: 'assessment-max-attempts-reached', ...base };
+  }
+
+  if (Number.isFinite(cooldownHours) && cooldownHours > 0 && completed.length > 0) {
+    const latest = latestCompletedTimestamp(completed);
+    const nowMs = Date.parse(now);
+    if (latest != null && Number.isFinite(nowMs)) {
+      const retryMs = latest + (cooldownHours * 60 * 60 * 1000);
+      if (nowMs < retryMs) {
+        return {
+          allowed: false,
+          reason: 'assessment-cooldown-active',
+          ...base,
+          retryAfter: new Date(retryMs).toISOString()
+        };
+      }
+    }
+  }
+
+  return { allowed: true, reason: null, ...base };
+}
+
 export async function startOrResumeCourseAssessment({ learnerStore, subject, courseId, now = new Date().toISOString() }) {
   const bundle = loadPublishedCourseAssessment(courseId);
   if (bundle.error) return { status: bundle.error === 'course-not-found' ? 404 : 409, body: { error: bundle.error } };
   let attempt = await learnerStore.findOpenAssessmentAttempt(subject, { assessmentId: bundle.assessment.id });
   const resumed = Boolean(attempt);
   if (!attempt) {
+    const needsAttemptHistory = bundle.assessment.maxAttempts != null || Number(bundle.assessment.cooldownHours ?? 0) > 0;
+    if (needsAttemptHistory) {
+      if (typeof learnerStore.listCourseEvidence !== 'function') {
+        return { status: 503, body: { error: 'assessment-attempt-policy-unavailable' } };
+      }
+      const evidence = await learnerStore.listCourseEvidence(subject, { assessmentId: bundle.assessment.id });
+      const policy = evaluateCourseAssessmentAttemptPolicy({ assessment: bundle.assessment, attempts: evidence?.assessmentAttempts ?? [], now });
+      if (!policy.allowed) {
+        return {
+          status: 409,
+          body: {
+            error: policy.reason,
+            attemptsUsed: policy.attemptsUsed,
+            maxAttempts: policy.maxAttempts,
+            cooldownHours: policy.cooldownHours,
+            retryAfter: policy.retryAfter
+          }
+        };
+      }
+    }
     attempt = createCourseAssessmentAttempt({ learnerId: subject, assessment: bundle.assessment, itemBank: bundle.itemBank, now, seed: crypto.randomUUID() });
     await learnerStore.createAssessmentAttempt(subject, { attempt });
   }
