@@ -526,6 +526,6 @@ const isDirectExecution = process.argv[1] && path.resolve(process.argv[1]) === f
 if (isDirectExecution) {
   const apiOptions = await loadProductionApiOptions(process.env);
   createApiServer(apiOptions).listen(port, () => {
-    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'api.started', port, mode: process.env.NODE_ENV === 'production' ? 'production' : 'development' })}\n`));
+    process.stdout.write(`${JSON.stringify({ level: 'info', event: 'api.started', port, mode: process.env.NODE_ENV === 'production' ? 'production' : 'development' })}\n`);
   });
 }
