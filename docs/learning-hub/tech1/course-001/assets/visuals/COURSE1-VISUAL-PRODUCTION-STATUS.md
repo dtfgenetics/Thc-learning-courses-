@@ -22,6 +22,12 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 | `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v2.png` | `1_B6wDEDncxScM7EYMII0_1qo67M29XVL` | Lesson 1.2 | alternate draft; QA required |
 | `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v3.png` | `1YRcBp_sqp6V3J0PGHeI1Wz-xTjZWdw42` | Lesson 1.2 | alternate draft; QA required |
 | `VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES` | `VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES-v1.png` | `1Avc5t_cgqmJPMQ_BK9nlj7AXEIvpoTAu` | Lesson 2.1 | draft produced; QA required |
+| `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW` | `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-v1.png` | `1OzXSIZ_aOIGFBBmCeYa8NOKQcO3dKAAY` | Lesson 2.1 | individual draft extracted from approved production board; QA required |
+| `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE` | `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE-v1.png` | `1T7gKEaK-qoITKdONkBjM5esnpBOXlxCx` | Lesson 2.2 | individual draft extracted from approved production board; QA required |
+| `VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION` | `VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION-v1.png` | `1iR_FpEphYPXZaGTcrZqevidKiUTe_TSK` | Lesson 3.2 | individual draft extracted from approved production board; QA required |
+| `VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT` | `VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT-v1.png` | `17WzIksjZx4_DvTgxpb99xlPc00gTSu3B` | Lesson 3.1 | individual draft extracted from approved production board; QA required |
+| `VIS-LH-TECH1-001-10-GENEALOGY` | `VIS-LH-TECH1-001-10-GENEALOGY-v1.png` | `1SH8COg-YC7-_nZcwdmTFAy88AcnwfRl7` | Lesson 4.1 | individual draft extracted from approved production board; QA required |
+| `VIS-LH-TECH1-001-11-MOVEMENT-RECORD` | `VIS-LH-TECH1-001-11-MOVEMENT-RECORD-v1.png` | `1Z9pXFzOTypX9i2WKBTjONidquLh-WxMf` | Lesson 4.2 | individual draft extracted from approved production board; QA required |
 
 ## Additional reference boards
 
@@ -38,18 +44,12 @@ The learner-facing repository already serves canonical Course 1 SVG assets from 
 
 ## Next production order
 
-1. `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW`
-2. `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE`
-3. `VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION`
-4. `VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT`
-5. `VIS-LH-TECH1-001-10-GENEALOGY`
-6. `VIS-LH-TECH1-001-11-MOVEMENT-RECORD`
-7. `VIS-LH-TECH1-001-12-RECONCILIATION`
-8. `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE`
-9. `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE`
-10. `VIS-LH-TECH1-001-15-FAULT-REPORT`
-11. `VIS-LH-TECH1-001-16-RECORD-CORRECTION`
-12. `VIS-LH-TECH1-001-17-SHIFT-HANDOFF`
-13. `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW`
+1. `VIS-LH-TECH1-001-12-RECONCILIATION`
+2. `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE`
+3. `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE`
+4. `VIS-LH-TECH1-001-15-FAULT-REPORT`
+5. `VIS-LH-TECH1-001-16-RECORD-CORRECTION`
+6. `VIS-LH-TECH1-001-17-SHIFT-HANDOFF`
+7. `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW`
 
 Generated-image text is not authoritative instructional copy. Before learner publication, every graphic must be reconciled against canonical lesson text, authoritative sources, Course 1 authorization boundaries, and WCAG-oriented text alternatives.
