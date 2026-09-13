@@ -54,8 +54,6 @@ jobs:
       - name: Audit Course 1 public academic publication
         run: npm run course1:publication:audit
       - name: Audit Learning Hub assessment item quality
-        continue-on-error: true
         run: node scripts/check-learning-hub-item-quality.mjs
       - name: Run complete curriculum and credential audit suite
-        continue-on-error: true
         run: npm test
