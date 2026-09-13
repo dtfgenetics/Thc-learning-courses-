@@ -64,7 +64,7 @@ if (writeMode) {
   release.publicationBoundary ??= {};
   release.publicationBoundary.learnerPackage = 'released';
   release.publicationBoundary.courseTests = 'released-for-learning';
-  release.boundary = 'This manifest publishes the complete Course 1 learner-facing academic package, including lessons, learning assessments, practical preparation/evaluation materials, job aids and learner resources. Content remains continuously editable and improvable. The separate secure professional credential examination, credential decision records and signing material are not learner course content and remain outside the public academic package.';
+  release.boundary = 'This manifest publishes the complete Course 1 learner-facing academic package, including the course, modules, lessons, learning objectives, competency definitions, learning assessments, practical preparation/evaluation materials, job aids and learner resources. Content remains continuously editable and improvable. The separate secure professional credential examination, credential decision records and signing material are not learner course content and remain outside the public academic package.';
   writeJson(RELEASE_PATH, release);
 } else {
   if (release.publicationState !== 'published') errors.push(`${RELEASE_PATH}: publicationState must be published`);
@@ -72,16 +72,34 @@ if (writeMode) {
   if (release.publicationBoundary?.courseTests !== 'released-for-learning') errors.push(`${RELEASE_PATH}: courseTests must be released-for-learning`);
 }
 
-ensurePublished(`content/courses/${COURSE_ID}.json`, COURSE_ID);
-
+const course = ensurePublished(`content/courses/${COURSE_ID}.json`, COURSE_ID);
 const lessonIds = new Set();
+const competencyIds = new Set(course.competencies ?? []);
+const objectiveIds = new Set();
+
 for (const moduleId of release.publicScope?.modules ?? []) {
   const rel = `content/modules/${moduleId}.json`;
   const module = ensurePublished(rel, moduleId);
   for (const lessonId of module.lessons ?? []) lessonIds.add(lessonId);
 }
-for (const lessonId of lessonIds) ensurePublished(`content/lessons/${lessonId}.json`, lessonId);
-for (const assessmentId of release.publicScope?.assessments ?? []) ensurePublished(`content/assessments/${assessmentId}.json`, assessmentId);
+
+for (const lessonId of lessonIds) {
+  const lesson = ensurePublished(`content/lessons/${lessonId}.json`, lessonId);
+  for (const competencyId of lesson.competencies ?? []) competencyIds.add(competencyId);
+  for (const objectiveId of lesson.learningObjectives ?? lesson.objectives ?? []) objectiveIds.add(objectiveId);
+}
+
+for (const assessmentId of release.publicScope?.assessments ?? []) {
+  const assessment = ensurePublished(`content/assessments/${assessmentId}.json`, assessmentId);
+  for (const competencyId of assessment.competencies ?? []) competencyIds.add(competencyId);
+  for (const objectiveId of assessment.objectives ?? []) objectiveIds.add(objectiveId);
+}
+
+for (const competencyId of competencyIds) ensurePublished(`content/competencies/${competencyId}.json`, competencyId);
+for (const objectiveId of objectiveIds) ensurePublished(`content/learning-objectives/${objectiveId}.json`, objectiveId);
+
+// Individual question/item lifecycle states are assessment-quality metadata and are intentionally not normalized here.
+// Publishing Course 1 curriculum must never falsely mark an unvalidated item active or otherwise bypass pilot/review evidence.
 
 const practical = ensurePublished(PRACTICAL_PATH, release.publicScope?.practicalId ?? 'PRACTICAL-LH-TECH1-001-WORKFLOW');
 practical.extensions ??= {};
@@ -125,11 +143,7 @@ for (const [rel, replacements] of docs) {
 }
 
 if (!writeMode) {
-  const learnerVisibleRoots = [
-    'docs/learning-hub/tech1/course-001/student',
-    'docs/learning-hub/tech1/course-001/job-aids'
-  ];
-  for (const directory of learnerVisibleRoots) {
+  for (const directory of ['docs/learning-hub/tech1/course-001/student', 'docs/learning-hub/tech1/course-001/job-aids']) {
     const dir = absolute(directory);
     if (!fs.existsSync(dir)) continue;
     for (const file of fs.readdirSync(dir).filter((name) => name.endsWith('.md'))) {
@@ -149,4 +163,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`Course 1 public academic publication audit passed: 1 course, ${release.publicScope?.modules?.length ?? 0} modules, ${lessonIds.size} lessons, ${release.publicScope?.assessments?.length ?? 0} assessments, and the integrated practical are published; obsolete learner-facing draft/blocking language is absent.`);
+console.log(`Course 1 public academic publication audit passed: 1 course, ${release.publicScope?.modules?.length ?? 0} modules, ${lessonIds.size} lessons, ${competencyIds.size} competencies, ${objectiveIds.size} learning objectives, ${release.publicScope?.assessments?.length ?? 0} assessments, and the integrated practical are published; question lifecycle states remain governed separately.`);
