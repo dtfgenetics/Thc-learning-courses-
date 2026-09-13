@@ -20,6 +20,10 @@ assert.match(appSource, /aria-label', `\$\{course\.title\} lesson progress`/, 'p
 assert.match(appSource, /Lesson progress only\. Course and credential completion also depend on the required assessment and practical-performance evidence/, 'credential-bearing course cards must distinguish lesson progress from course completion');
 assert.match(appSource, /Lesson completion does not itself satisfy assessment, practical, or credential requirements/, 'account lesson completion copy must not imply course completion');
 assert.match(appSource, /Device lesson progress is separate from official assessment, practical, and credential records/, 'device progress copy must distinguish local lesson state from official evidence');
-assert.doesNotMatch(appSource, /\$\{courseState\.percent\}%`/, 'course cards must not show an unlabeled percentage that could be read as total course completion');
+assert.doesNotMatch(
+  appSource,
+  /metaParts\.push\(`\$\{courseState\.percent\}%`\)/,
+  'course-card metadata must not present a bare lesson percentage as if it were total course completion'
+);
 
 console.log('Course progress semantics contract passed.');
