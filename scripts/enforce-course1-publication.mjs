@@ -43,18 +43,13 @@ function replaceDoc(rel, replacements) {
   }
   return text;
 }
-function assertNoPublicationRestriction(rel, text) {
+function assertNoAcademicPublicationRestriction(rel, text) {
   if (typeof text !== 'string') text = fs.readFileSync(absolute(rel), 'utf8');
   const forbidden = [
     /\bDraft production package\b/i,
-    /\bDraft certification-course blueprint\b/i,
-    /\bDraft\s*\/\s*requires assessor calibration before operational use\b/i,
-    /\bpilot\/calibration only until approved\b/i,
-    /\boperational use blocked until calibration\b/i,
-    /\bpreparation only\b/i,
-    /\brestricted THC Cultivation Technician I certification examination\b/i
+    /\bDraft certification-course blueprint\b/i
   ];
-  for (const pattern of forbidden) if (pattern.test(text)) errors.push(`${rel}: learner/public academic document contains obsolete restriction language: ${pattern}`);
+  for (const pattern of forbidden) if (pattern.test(text)) errors.push(`${rel}: public academic document contains obsolete publication-state language: ${pattern}`);
 }
 
 const release = readJson(RELEASE_PATH);
@@ -64,7 +59,7 @@ if (writeMode) {
   release.publicationBoundary ??= {};
   release.publicationBoundary.learnerPackage = 'released';
   release.publicationBoundary.courseTests = 'released-for-learning';
-  release.boundary = 'This manifest publishes the complete Course 1 learner-facing academic package, including lessons, learning assessments, practical preparation/evaluation materials, job aids and learner resources. Content remains continuously editable and improvable. The separate secure professional credential examination, credential decision records and signing material are not learner course content and remain outside the public academic package.';
+  release.boundary = 'This manifest publishes the complete Course 1 learner-facing academic package, including lessons, learning assessments, practical preparation/evaluation materials, job aids and learner resources. Content remains continuously editable and improvable. Academic publication does not by itself establish validated certification use. The separate secure professional credential examination, credential decision records, signing material, assessor-calibration evidence, pilot evidence, standard-setting decisions and final credential-release approvals remain outside the public academic package.';
   writeJson(RELEASE_PATH, release);
 } else {
   if (release.publicationState !== 'published') errors.push(`${RELEASE_PATH}: publicationState must be published`);
@@ -86,13 +81,10 @@ for (const assessmentId of release.publicScope?.assessments ?? []) ensurePublish
 const practical = ensurePublished(PRACTICAL_PATH, release.publicScope?.practicalId ?? 'PRACTICAL-LH-TECH1-001-WORKFLOW');
 practical.extensions ??= {};
 if (writeMode) {
-  practical.extensions.operationalUseBlockedUntilCalibration = false;
-  practical.extensions.standardSettingStatus = 'continuous-quality-improvement';
   practical.extensions.publicAcademicViewing = true;
   writeJson(PRACTICAL_PATH, practical);
-} else {
-  if (practical.extensions.operationalUseBlockedUntilCalibration === true) errors.push(`${PRACTICAL_PATH}: public academic practical must not be calibration-blocked`);
-  if (practical.extensions.publicAcademicViewing !== true) errors.push(`${PRACTICAL_PATH}: publicAcademicViewing must be true`);
+} else if (practical.extensions.publicAcademicViewing !== true) {
+  errors.push(`${PRACTICAL_PATH}: publicAcademicViewing must be true`);
 }
 
 const docs = new Map([
@@ -100,28 +92,15 @@ const docs = new Map([
     [/\*\*Status:\*\* Draft production package/g, '**Status:** Public academic course package'],
     [/draft production package/gi, 'public academic course package']
   ]],
-  ['docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md', [
-    [/restricted THC Cultivation Technician I certification examination/gi, 'separate THC Cultivation Technician I credential examination']
-  ]],
   ['docs/academy-v2/certification-courses/COURSE-LH-TECH1-001_BLUEPRINT.md', [
     [/\*\*Status:\*\* Draft certification-course blueprint/g, '**Status:** Public academic curriculum blueprint'],
     [/Draft certification-course blueprint/gi, 'Public academic curriculum blueprint']
-  ]],
-  ['docs/academy-v2/practicals/PRACTICAL-LH-TECH1-001-WORKFLOW.md', [
-    [/\*\*Status:\*\* Draft \/ requires assessor calibration before operational use/g, '**Status:** Public academic practical — continuously improvable'],
-    [/operational use blocked until calibration/gi, 'calibration retained as continuous quality improvement']
-  ]],
-  ['docs/learning-hub/tech1/course-001/practical/CANDIDATE-PACKET-FORM-A.md', [
-    [/\*\*Use:\*\* pilot\/calibration only until approved/g, '**Use:** Public academic practical form; may also support calibration and equivalent-form review']
-  ]],
-  ['docs/learning-hub/tech1/course-001/practical/CANDIDATE-PACKET-FORM-B.md', [
-    [/\*\*Use:\*\* pilot\/calibration only until approved/g, '**Use:** Public academic practical alternate form; may also support calibration and equivalent-form review']
   ]]
 ]);
 
 for (const [rel, replacements] of docs) {
   const text = replaceDoc(rel, replacements);
-  assertNoPublicationRestriction(rel, text);
+  assertNoAcademicPublicationRestriction(rel, text);
 }
 
 if (!writeMode) {
@@ -134,7 +113,7 @@ if (!writeMode) {
     if (!fs.existsSync(dir)) continue;
     for (const file of fs.readdirSync(dir).filter((name) => name.endsWith('.md'))) {
       const rel = path.join(directory, file);
-      assertNoPublicationRestriction(rel, fs.readFileSync(absolute(rel), 'utf8'));
+      assertNoAcademicPublicationRestriction(rel, fs.readFileSync(absolute(rel), 'utf8'));
     }
   }
 }
@@ -149,4 +128,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`Course 1 public academic publication audit passed: 1 course, ${release.publicScope?.modules?.length ?? 0} modules, ${lessonIds.size} lessons, ${release.publicScope?.assessments?.length ?? 0} assessments, and the integrated practical are published; obsolete learner-facing draft/blocking language is absent.`);
+console.log(`Course 1 public academic publication audit passed: 1 course, ${release.publicScope?.modules?.length ?? 0} modules, ${lessonIds.size} lessons, ${release.publicScope?.assessments?.length ?? 0} assessments, and the integrated practical are published for academic use without overriding separate certification-validation gates.`);
