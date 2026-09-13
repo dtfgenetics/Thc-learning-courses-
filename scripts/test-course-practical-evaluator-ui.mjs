@@ -46,13 +46,25 @@ for (const marker of [
   'Practical follow-up',
   'Reassessment target:',
   'I confirm the domain scores, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.',
-  'Server result is authoritative.'
+  'Server result is authoritative.',
+  'practical.gradingRubric?.levels',
+  'domain.minimumPercent',
+  'domain.anchors',
+  'Derived level:',
+  'domain floor',
+  'evidence review incomplete',
+  'required evidence not fully verified',
+  'requireAllEvidenceReviewed',
+  'requireAllEvidenceVerifiedForPass',
+  'requireCriticalErrorDocumentation',
+  'Review the behavioral anchors before assigning points'
 ]) assert.ok(js.includes(marker), `assessor UI missing contract: ${marker}`);
 
 assert.ok(js.includes("credentials: 'same-origin'"), 'assessor requests must use the authenticated same-origin session');
 assert.ok(js.includes('practical.scoring.domains'), 'domain controls must be generated from the server-provided practical definition');
 assert.ok(js.includes('practical.criticalErrors'), 'critical-error controls must be generated from the server-provided canonical list');
 assert.ok(js.includes('practical.evidenceOutputs ?? []'), 'evidence controls must follow the canonical practical definition rather than a hard-coded output count');
+assert.match(js, /projectedPass\s*=\s*complete[\s\S]*failedFloors\.length\s*===\s*0[\s\S]*critical\s*===\s*0[\s\S]*requireAllEvidenceReviewed[\s\S]*requireAllEvidenceVerifiedForPass/, 'client preview must reflect domain floors, critical errors, and canonical evidence rules');
 assert.equal(js.includes('.innerHTML'), false, 'assessor UI must construct DOM safely rather than use innerHTML');
 assert.equal(js.includes('evaluatorId:'), false, 'browser must not choose or submit evaluator identity');
 assert.equal(js.includes("status: 'passed'"), false, 'browser must not set the authoritative pass result');
@@ -80,4 +92,4 @@ for (const marker of [
 assert.ok(webServer.includes("['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']]"), 'Academy web server must serve assessor JS');
 assert.ok(webServer.includes("['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]"), 'Academy web server must serve assessor CSS');
 
-console.log('Course 1 assessor role-gating, server-side queue filtering/pagination, ownership controls, dynamic evidence tracking, reassessment history, learner follow-up, safe DOM, responsive, accessibility, and static-serving contracts passed.');
+console.log('Course 1 assessor UI protects role-gating, queue/ownership controls, anchored rubric visibility, domain-floor and evidence-aware previews, reassessment history, safe DOM, responsive behavior, accessibility, and static-serving contracts.');
