@@ -11,10 +11,7 @@ const server = fs.readFileSync('apps/web/server.mjs', 'utf8');
 const syntax = spawnSync(process.execPath, ['--check', jsPath], { encoding: 'utf8' });
 assert.equal(syntax.status, 0, syntax.stderr || syntax.stdout);
 
-for (const marker of [
-  'course-assessment.css',
-  'course-assessment.js'
-]) assert.ok(html.includes(marker), `index must load ${marker}`);
+for (const marker of ['course-assessment.css', 'course-assessment.js']) assert.ok(html.includes(marker), `index must load ${marker}`);
 
 for (const marker of [
   '/api/v1/me/courses/${COURSE_ID}/assessment-attempts',
@@ -24,9 +21,25 @@ for (const marker of [
   'Post-attempt feedback is domain-level; answer keys are not displayed.',
   'This is the public Course 1 final, separate from the Technician I credential examination.',
   'Course 1 knowledge evidence only',
-  'Open Field References'
+  'Open Field References',
+  'Competency results',
+  'Learning-objective results',
+  'Required minimum',
+  'Overall score met, competency standard not yet met',
+  'Targeted remediation',
+  'Weakest competency areas',
+  'Weakest learning objectives',
+  'gradingAlgorithmVersion',
+  'gradingPolicyVersion',
+  'Answer keys and item rationales are not displayed after the attempt.'
 ]) assert.ok(js.includes(marker), `assessment UI missing contract: ${marker}`);
 
+assert.ok(js.includes('result.gradingDecision'), 'result UI must use the server-provided grading decision');
+assert.ok(js.includes('result.objectiveResults'), 'result UI must render objective-level performance');
+assert.ok(js.includes('row.minimumPercent'), 'competency result UI must render configured competency floors');
+assert.ok(js.includes('row.minimumMet'), 'competency result UI must state whether each floor was met');
+assert.ok(js.includes('result.remediation.weakestCompetencies'), 'remediation must identify weakest competencies');
+assert.ok(js.includes('result.remediation.weakestObjectives'), 'remediation must identify weakest objectives');
 assert.ok(js.includes("credentials: 'same-origin'"), 'assessment requests must use same-origin authentication');
 assert.ok(js.includes("input.type = 'radio'"), 'single-choice assessment items need radio controls');
 assert.ok(js.includes("input.type = 'checkbox'"), 'multiple-response assessment items need checkbox controls');
@@ -41,15 +54,9 @@ assert.equal(js.includes('.innerHTML'), false, 'assessment UI must use DOM const
 assert.equal(/\bcorrect\b/.test(js), false, 'learner assessment UI must not depend on a correct-answer field');
 assert.equal(/\brationale\b/.test(js), false, 'learner assessment UI must not depend on rationale data');
 
-for (const marker of [
-  '.course-assessment-toolbar',
-  '.course-assessment-choice',
-  'min-height: 44px',
-  '@media (max-width: 620px)',
-  '.course-assessment-domain-grid'
-]) assert.ok(css.includes(marker), `assessment CSS missing ${marker}`);
+for (const marker of ['.course-assessment-toolbar', '.course-assessment-choice', 'min-height: 44px', '@media (max-width: 620px)', '.course-assessment-domain-grid']) assert.ok(css.includes(marker), `assessment CSS missing ${marker}`);
 
 assert.ok(server.includes("['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']]"), 'web server must serve assessment JS');
 assert.ok(server.includes("['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']]"), 'web server must serve assessment CSS');
 
-console.log('Course 1 final learner UI autosave, accessibility, non-disclosure, responsive, and static-serving contracts passed.');
+console.log('Course 1 final learner UI protects autosave, objective and competency-floor feedback, targeted remediation, non-disclosure, accessibility, responsive behavior, and static serving.');
