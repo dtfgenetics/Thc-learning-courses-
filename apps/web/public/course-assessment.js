@@ -57,6 +57,51 @@ const COURSE_PRACTICAL_PUBLIC = {
 };
 /* COURSE1_PRACTICAL_PUBLIC_DATA_END */
 
+const COURSE_GUIDE = {
+  id: 'COURSE-LH-TECH1-001',
+  title: 'Safety, Responsible Practice & Cultivation Workflows',
+  version: '1.0.0',
+  status: 'Published',
+  workload: '18 lessons • 945 minutes / 15.75 hours of current lesson time • separate practical and course final',
+  audience: 'Entry-level or aspiring cultivation technicians, employees who need structured controlled-work foundations, and learners preparing for later Technician I credential requirements.',
+  preparation: 'No prior THC Academy professional credential or professional cultivation employment is required to study the public course. Learners should be able to read workplace instructions, interpret basic tables and labels, enter simple records, and use a modern web browser.',
+  outcomes: [
+    ['LO-LH-TECH1-001-01', 'Identify common cultivation workplace hazards and select the correct routine response: control within authorization, stop, isolate where authorized, or escalate.'],
+    ['LO-LH-TECH1-001-02', 'Use supplied PPE requirements, chemical labels, and safety data sheet information to prepare for an assigned cultivation task without exceeding training or authorization.'],
+    ['LO-LH-TECH1-001-03', 'Execute sanitation and controlled-movement procedures that reduce cross-contamination risk between plants, rooms, tools, and work zones.'],
+    ['LO-LH-TECH1-001-04', 'Recognize quarantine, restricted-entry, hold, and isolation conditions and apply the response defined by the supplied procedure.'],
+    ['LO-LH-TECH1-001-05', 'Identify the correct controlled SOP or work order for a task and distinguish required steps, acceptance criteria, exceptions, and escalation points.'],
+    ['LO-LH-TECH1-001-06', 'Preserve plant, batch, lot, room, and material identity during routine cultivation movements, transfers, and handoffs.'],
+    ['LO-LH-TECH1-001-07', 'Complete routine inventory, movement, and waste or destruction records accurately under a supplied vendor-neutral workflow.'],
+    ['LO-LH-TECH1-001-08', 'Detect and report a mismatch between physical material and a paper or digital record without falsifying or forcing reconciliation.'],
+    ['LO-LH-TECH1-001-09', 'Perform permitted pre-use, readiness, cleaning, and operator-care checks on assigned cultivation or irrigation equipment using the supplied procedure.'],
+    ['LO-LH-TECH1-001-10', 'Recognize obvious equipment faults, alarms, leaks, clogs, or unsafe conditions and produce a useful escalation record without unauthorized repair.'],
+    ['LO-LH-TECH1-001-11', 'Create contemporaneous, legible, and attributable cultivation records and correct errors while preserving the original record history.'],
+    ['LO-LH-TECH1-001-12', 'Produce a concise shift handoff that accurately communicates completed work, observations, deviations, unresolved conditions, and priorities.']
+  ],
+  modules: [
+    ['Module 1 — Applied Cultivation Workplace Safety', 'Hazard recognition, PPE/HazCom, control hierarchy, authorization boundaries, and escalation.'],
+    ['Module 2 — Sanitation, Biosecurity & Controlled Movement', 'Contamination pathways, sanitation sequence, quarantine/hold/restricted-entry distinctions, and controlled movement.'],
+    ['Module 3 — SOPs, Work Orders, Authority & Escalation', 'Controlled revisions, task identity, acceptance criteria, exceptions, deviations, incomplete work, and truthful status.'],
+    ['Module 4 — Traceability, Material Movement, Inventory & Waste', 'Identity, genealogy, movement events, reconciliation, waste/disposition records, and discrepancy handling.'],
+    ['Module 5 — Equipment Readiness, Operator Care & Fault Reporting', 'Pre-use readiness, operator-care boundaries, recurring faults, observation versus diagnosis, and escalation records.'],
+    ['Module 6 — Records, Shift Handoff & Integrated Workflow', 'Data integrity, corrections, late entries, reconstructable records, closed-loop handoff, and integrated workflow reasoning.']
+  ],
+  competencyMinimums: [
+    ['Cultivation Workplace Safety', 70],
+    ['Cultivation Biosecurity', 60],
+    ['SOP and Work Instruction Execution', 60],
+    ['Professional Quality and Documentation', 65],
+    ['Cultivation Traceability and Inventory', 65],
+    ['Cultivation Equipment Readiness and Operator Care', 60]
+  ],
+  completion: [
+    'Complete all 18 canonical Course 1 lesson IDs.',
+    'Pass the public Course 1 final with at least 80% overall and every configured competency minimum.',
+    'Pass the integrated Course 1 practical under its overall, domain-floor, critical-error, and required-evidence rules.'
+  ]
+};
+
 function el(tag, value = '', className = '') {
   const node = document.createElement(tag);
   if (value !== '') node.textContent = value;
@@ -64,13 +109,14 @@ function el(tag, value = '', className = '') {
   return node;
 }
 
-function setCurriculumTabActive() {
+function setPortalTabActive(id) {
   for (const tab of document.querySelectorAll('.portal-tab')) {
-    const active = tab.id === 'tab-catalog';
+    const active = tab.id === id;
     tab.classList.toggle('active', active);
     tab.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
 }
+function setCurriculumTabActive() { setPortalTabActive('tab-catalog'); }
 
 async function courseEvidence() {
   const response = await fetch(`/api/v1/me/courses/${COURSE_ID}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' });
@@ -161,6 +207,49 @@ function renderPracticalPersonalStatus(panel, evidenceResult) {
 function appendNumberedList(parent, items, className = '') { const list = document.createElement('ol'); if (className) list.className = className; for (const item of items) list.append(el('li', item)); parent.append(list); }
 function appendBulletList(parent, items, className = '') { const list = document.createElement('ul'); if (className) list.className = className; for (const item of items) list.append(el('li', item)); parent.append(list); }
 
+function renderCourseGuide() {
+  setPortalTabActive('tab-course-guide');
+  const guide = COURSE_GUIDE;
+  const panel = el('article', '', 'portal-panel course-practical-panel course-guide-panel');
+  panel.append(el('p', 'Course 1 academic syllabus', 'eyebrow'), el('h2', guide.title), el('p', 'Use this guide to understand what the course teaches, how performance is assessed, what counts as academic completion, and what remains separate from professional credential issuance.', 'lede'));
+  const meta = el('div', '', 'course-practical-meta');
+  for (const item of [guide.id, `Version ${guide.version}`, guide.status, guide.workload]) meta.append(el('span', item, 'course-practical-pill subtle'));
+  panel.append(meta);
+
+  const overview = el('section', '', 'course-practical-section'); overview.append(el('h3', 'Audience and preparation'), el('p', guide.audience), el('p', guide.preparation)); panel.append(overview);
+
+  const outcomes = el('section', '', 'course-practical-section'); outcomes.append(el('h3', 'Twelve learning outcomes'));
+  const outcomeList = document.createElement('ol'); outcomeList.className = 'course-practical-list';
+  for (const [id, statement] of guide.outcomes) { const item = document.createElement('li'); item.append(el('strong', `${id} — `), document.createTextNode(statement)); outcomeList.append(item); }
+  outcomes.append(outcomeList); panel.append(outcomes);
+
+  const sequence = el('section', '', 'course-practical-section'); sequence.append(el('h3', 'Six-module sequence'));
+  const moduleGrid = el('div', '', 'course-practical-stage-grid');
+  for (const [title, summary] of guide.modules) { const card = el('article', '', 'course-practical-stage'); card.append(el('h4', title), el('p', summary)); moduleGrid.append(card); }
+  sequence.append(moduleGrid); panel.append(sequence);
+
+  const grading = el('section', '', 'course-practical-section'); grading.append(el('h3', 'Assessment and grading'));
+  grading.append(el('p', 'The Course 1 final is server-scored. Passing requires at least 80% overall plus every configured competency floor; answer keys are not released in post-attempt feedback.'));
+  const floorList = document.createElement('ul'); floorList.className = 'course-practical-list'; for (const [name, minimum] of guide.competencyMinimums) floorList.append(el('li', `${name} — ${minimum}% minimum`)); grading.append(floorList);
+  grading.append(el('p', 'The integrated practical is 100 points across eight domains. Passing requires at least 80% overall, every practical domain minimum, zero critical errors, all required evidence reviewed, and all required evidence verified. Evaluators use Strong, Competent, Developing, and Insufficient behavioral anchors; the server calculates the official decision.'));
+  panel.append(grading);
+
+  const completion = el('section', '', 'course-practical-section'); completion.append(el('h3', 'Academic completion')); appendNumberedList(completion, guide.completion, 'course-practical-list'); completion.append(el('p', 'Lesson percentage alone is not course completion. Historical completion is preserved if later curriculum changes reopen current requirements.')); panel.append(completion);
+
+  const retakes = el('section', '', 'course-practical-section'); retakes.append(el('h3', 'Retakes and remediation'), el('p', 'Course 1 has no artificial lifetime attempt maximum. The current course final has no fixed attempt cap or cooldown. Learners who miss the standard should use objective/competency feedback, aligned lessons, Field References, workbook practice, and assigned remediation before an equivalent retake. A finalized practical reassessment starts explicitly and preserves prior finalized history.')); panel.append(retakes);
+
+  const integrity = el('section', '', 'course-practical-section'); integrity.append(el('h3', 'Academic integrity'), el('p', 'Assessed responses and practical evidence must represent the learner’s own performance unless collaboration is explicitly allowed. Impersonation, fabricated observations, falsified records, unauthorized answer-key use, and presenting invented values as contemporaneous observations are inconsistent with Course 1 academic and operational integrity. Legitimate study groups, instructor coaching, accessibility support, and public practice materials remain allowed when they do not substitute for the performance being assessed.')); panel.append(integrity);
+
+  const access = el('section', '', 'course-practical-section'); access.append(el('h3', 'Accessibility, technology, and learner support'), el('p', 'The course uses keyboard-accessible web controls, responsive layouts, readable rich content, and text alternatives for instructional visuals. The final permits extended time and alternative accessible presentation when the construct is unchanged. Online study requires a modern browser with JavaScript enabled; printing is optional. Field References, workbook activities, remediation cues, assessment feedback, Course Record, and practical feedback are built into the package. A delivery organization should identify its actual instructor contact, accommodation process, assessment scheduling, and technical-help path rather than inventing one in the public curriculum.')); panel.append(access);
+
+  const evidence = el('section', '', 'course-practical-section'); evidence.append(el('h3', 'Evidence and source policy'), el('p', 'Course 1 uses OSHA and NIOSH occupational-safety guidance, EPA Worker Protection Standard material where pesticide worker-entry concepts apply, university-extension sanitation/biosecurity guidance, GS1 traceability concepts, HSE handoff/human-factors guidance, and MHRA data-integrity guidance explicitly as transferable quality guidance rather than as U.S. cannabis law. Facility SOPs, labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific.')); panel.append(evidence);
+
+  const boundary = el('section', '', 'course-practical-section course-practical-critical'); boundary.append(el('h3', 'Credential and authority boundary'), el('p', 'Passing Course 1 creates academic course evidence only. It does not automatically award THC Cultivation Technician I, a government license, pesticide-applicator status, respirator clearance, protected equipment servicing authority, or another role-specific authorization. The professional credential uses separate eligibility, secure assessment, governance, issuance, and verification processes.')); panel.append(boundary);
+
+  const actions = el('div', '', 'course-practical-page-actions'); const print = el('button', 'Print Course Guide', 'course-assessment-secondary'); print.type = 'button'; print.addEventListener('click', () => window.print()); const curriculum = el('button', 'Open Course 1 curriculum', 'course-assessment-secondary'); curriculum.type = 'button'; curriculum.addEventListener('click', () => document.querySelector('#tab-catalog')?.click()); actions.append(print, curriculum); panel.append(actions);
+  lessonView.replaceChildren(panel); lessonView.focus();
+}
+
 async function openCoursePractical(sourceButton) {
   sourceButton.disabled = true; const original = sourceButton.textContent; sourceButton.textContent = 'Opening practical…';
   const evidenceResult = await courseEvidence().catch(() => ({ state: 'unavailable' })); renderCoursePractical(evidenceResult); sourceButton.textContent = original; sourceButton.disabled = false;
@@ -187,29 +276,18 @@ async function openCourseAssessment(sourceButton) {
     const body = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(body.error === 'authentication-required' ? 'Sign in to start the official course final.' : body.error || `Assessment unavailable (${response.status}).`);
     renderAssessment(body);
-  } catch (error) {
-    sourceButton.textContent = original; sourceButton.disabled = false; const note = el('p', error.message, 'portal-error'); sourceButton.closest('.course-assessment-actions')?.append(note);
-  }
+  } catch (error) { sourceButton.textContent = original; sourceButton.disabled = false; const note = el('p', error.message, 'portal-error'); sourceButton.closest('.course-assessment-actions')?.append(note); }
 }
 
 function answerCount(panel) { return [...panel.querySelectorAll('.course-assessment-item')].filter((item) => item.dataset.answered === 'true').length; }
 function allAnsweredAndSaved(panel) { const items = [...panel.querySelectorAll('.course-assessment-item')]; return items.length > 0 && items.every((item) => item.dataset.answered === 'true' && item.dataset.saved === 'true'); }
 function updateAssessmentProgress(panel) { const total = panel.querySelectorAll('.course-assessment-item').length; const answered = answerCount(panel); const progress = panel.querySelector('.course-assessment-progress'); if (progress) progress.textContent = `${answered}/${total} answered`; const submit = panel.querySelector('.course-assessment-submit'); if (submit) submit.disabled = !allAnsweredAndSaved(panel) || pendingSaves.size > 0; }
-
-function responseForFieldset(fieldset, type) {
-  if (type === 'multiple-response') return [...fieldset.querySelectorAll('input[type="checkbox"]:checked')].map((input) => Number(input.value)).sort((a, b) => a - b);
-  if (type === 'numeric') { const value = fieldset.querySelector('input[type="number"]')?.value; return value === '' || value == null ? null : Number(value); }
-  const selected = fieldset.querySelector('input[type="radio"]:checked'); return selected ? Number(selected.value) : null;
-}
+function responseForFieldset(fieldset, type) { if (type === 'multiple-response') return [...fieldset.querySelectorAll('input[type="checkbox"]:checked')].map((input) => Number(input.value)).sort((a, b) => a - b); if (type === 'numeric') { const value = fieldset.querySelector('input[type="number"]')?.value; return value === '' || value == null ? null : Number(value); } const selected = fieldset.querySelector('input[type="radio"]:checked'); return selected ? Number(selected.value) : null; }
 function isAnswered(response, type) { if (type === 'multiple-response') return Array.isArray(response) && response.length > 0; return response !== null && response !== undefined && response !== ''; }
 
 function persistResponse(panel, item, fieldset) {
   const responseValue = responseForFieldset(fieldset, item.type); fieldset.dataset.answered = isAnswered(responseValue, item.type) ? 'true' : 'false'; fieldset.dataset.saved = 'false'; const status = panel.querySelector('.course-assessment-save-status'); const key = `${item.id}@${item.version}`; const previous = saveChains.get(key) ?? Promise.resolve(); let request;
-  request = previous.catch(() => {}).then(async () => {
-    const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses`, { method: 'PUT', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ responses: [{ itemId: item.id, itemVersion: item.version, response: responseValue }] }) });
-    if (!response.ok) { const body = await response.json().catch(() => ({})); throw new Error(body.error || `Save failed (${response.status}).`); }
-    fieldset.dataset.saved = 'true'; if (status) { status.textContent = 'Responses saved.'; status.classList.remove('error'); }
-  }).catch((error) => { fieldset.dataset.saved = 'false'; if (status) { status.textContent = `Save problem: ${error.message}`; status.classList.add('error'); } }).finally(() => { pendingSaves.delete(request); if (saveChains.get(key) === request) saveChains.delete(key); updateAssessmentProgress(panel); });
+  request = previous.catch(() => {}).then(async () => { const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses`, { method: 'PUT', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ responses: [{ itemId: item.id, itemVersion: item.version, response: responseValue }] }) }); if (!response.ok) { const body = await response.json().catch(() => ({})); throw new Error(body.error || `Save failed (${response.status}).`); } fieldset.dataset.saved = 'true'; if (status) { status.textContent = 'Responses saved.'; status.classList.remove('error'); } }).catch((error) => { fieldset.dataset.saved = 'false'; if (status) { status.textContent = `Save problem: ${error.message}`; status.classList.add('error'); } }).finally(() => { pendingSaves.delete(request); if (saveChains.get(key) === request) saveChains.delete(key); updateAssessmentProgress(panel); });
   saveChains.set(key, request); pendingSaves.add(request); if (status) { status.textContent = 'Saving…'; status.classList.remove('error'); } updateAssessmentProgress(panel);
 }
 
@@ -218,9 +296,8 @@ function multipleChoiceControl(item, choice, index, fieldset, panel) { const lab
 
 function renderAssessmentItem(item, index, panel) {
   const fieldset = document.createElement('fieldset'); fieldset.className = 'course-assessment-item'; fieldset.dataset.answered = isAnswered(item.response, item.type) ? 'true' : 'false'; fieldset.dataset.saved = 'true'; const legend = document.createElement('legend'); legend.textContent = `${index + 1}. ${item.stem}`; fieldset.append(legend); renderRichBlocks(fieldset, item.stimulus);
-  if (['multiple-choice', 'scenario', 'case-study', 'multiple-response'].includes(item.type)) {
-    const choices = el('div', '', 'course-assessment-choices'); item.choices.forEach((choice, choiceIndex) => choices.append(item.type === 'multiple-response' ? multipleChoiceControl(item, choice, choiceIndex, fieldset, panel) : singleChoiceControl(item, choice, choiceIndex, fieldset, panel))); fieldset.append(choices); if (item.type === 'multiple-response') fieldset.append(el('p', 'Select all that apply.', 'course-assessment-hint'));
-  } else if (item.type === 'numeric') { const input = document.createElement('input'); input.type = 'number'; input.className = 'course-assessment-number'; input.inputMode = 'decimal'; input.value = item.response ?? ''; input.addEventListener('change', () => persistResponse(panel, item, fieldset)); fieldset.append(input); }
+  if (['multiple-choice', 'scenario', 'case-study', 'multiple-response'].includes(item.type)) { const choices = el('div', '', 'course-assessment-choices'); item.choices.forEach((choice, choiceIndex) => choices.append(item.type === 'multiple-response' ? multipleChoiceControl(item, choice, choiceIndex, fieldset, panel) : singleChoiceControl(item, choice, choiceIndex, fieldset, panel))); fieldset.append(choices); if (item.type === 'multiple-response') fieldset.append(el('p', 'Select all that apply.', 'course-assessment-hint')); }
+  else if (item.type === 'numeric') { const input = document.createElement('input'); input.type = 'number'; input.className = 'course-assessment-number'; input.inputMode = 'decimal'; input.value = item.response ?? ''; input.addEventListener('change', () => persistResponse(panel, item, fieldset)); fieldset.append(input); }
   return fieldset;
 }
 
@@ -233,67 +310,30 @@ function renderAssessment(payload) {
 
 async function submitAssessment(panel) {
   const submit = panel.querySelector('.course-assessment-submit'); if (!submit || submit.disabled) return; submit.disabled = true; submit.textContent = 'Submitting…';
-  try {
-    await Promise.all([...pendingSaves]); if (!allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.');
-    const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit`, { method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin' }); const body = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(body.error === 'assessment-incomplete' ? 'Every item must have a saved response before submission.' : body.error || `Submission failed (${response.status}).`);
-    renderAssessmentResult(body); refreshCourseEvidenceCard();
-  } catch (error) { submit.textContent = 'Submit course final'; updateAssessmentProgress(panel); panel.querySelector('.course-assessment-submit-error')?.remove(); submit.closest('.course-assessment-submit-area')?.append(el('p', error.message, 'portal-error course-assessment-submit-error')); }
+  try { await Promise.all([...pendingSaves]); if (!allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.'); const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit`, { method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin' }); const body = await response.json().catch(() => ({})); if (!response.ok) throw new Error(body.error === 'assessment-incomplete' ? 'Every item must have a saved response before submission.' : body.error || `Submission failed (${response.status}).`); renderAssessmentResult(body); refreshCourseEvidenceCard(); }
+  catch (error) { submit.textContent = 'Submit course final'; updateAssessmentProgress(panel); panel.querySelector('.course-assessment-submit-error')?.remove(); submit.closest('.course-assessment-submit-area')?.append(el('p', error.message, 'portal-error course-assessment-submit-error')); }
 }
 
 function resultCard(row, { showMinimum = false } = {}) {
-  const card = el('div', '', 'course-assessment-domain');
-  card.append(el('strong', row.title), el('span', `${Number(row.scorePercent).toFixed(0)}%`, 'course-assessment-domain-score'), el('span', String(row.masteryLevel ?? '').replaceAll('-', ' '), 'course-assessment-domain-state'));
+  const card = el('div', '', 'course-assessment-domain'); card.append(el('strong', row.title), el('span', `${Number(row.scorePercent).toFixed(0)}%`, 'course-assessment-domain-score'), el('span', String(row.masteryLevel ?? '').replaceAll('-', ' '), 'course-assessment-domain-state'));
   if (showMinimum && row.minimumPercent != null) card.append(el('small', `Required minimum ${Number(row.minimumPercent).toFixed(0)}% • ${row.minimumMet ? 'met' : 'not met'}`, row.minimumMet ? 'course-assessment-minimum met' : 'course-assessment-minimum not-met'));
   return card;
 }
-
-function resultList(title, rows, options = {}) {
-  const section = el('section', '', 'course-assessment-domains'); section.append(el('h3', title)); const grid = el('div', '', 'course-assessment-domain-grid');
-  [...rows].sort((a, b) => Number(a.scorePercent) - Number(b.scorePercent)).forEach((row) => grid.append(resultCard(row, options))); section.append(grid); return section;
-}
-
-function appendTargetList(parent, title, rows, idKey) {
-  if (!rows?.length) return;
-  parent.append(el('h4', title)); const list = document.createElement('ul'); list.className = 'course-assessment-target-list';
-  for (const row of rows) list.append(el('li', `${row.title} — ${Number(row.scorePercent).toFixed(0)}% (${row[idKey]})`)); parent.append(list);
-}
+function resultList(title, rows, options = {}) { const section = el('section', '', 'course-assessment-domains'); section.append(el('h3', title)); const grid = el('div', '', 'course-assessment-domain-grid'); [...rows].sort((a, b) => Number(a.scorePercent) - Number(b.scorePercent)).forEach((row) => grid.append(resultCard(row, options))); section.append(grid); return section; }
+function appendTargetList(parent, title, rows, idKey) { if (!rows?.length) return; parent.append(el('h4', title)); const list = document.createElement('ul'); list.className = 'course-assessment-target-list'; for (const row of rows) list.append(el('li', `${row.title} — ${Number(row.scorePercent).toFixed(0)}% (${row[idKey]})`)); parent.append(list); }
 
 function renderAssessmentResult(result) {
   const panel = el('article', '', 'portal-panel course-assessment-result'); panel.append(el('p', 'Course 1 final result', 'eyebrow'), el('h2', result.attempt.passed ? 'Course final passed' : 'Course final not passed yet'));
-  const score = el('div', '', `course-assessment-score ${result.attempt.passed ? 'passed' : 'not-passed'}`); score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Passing score ${Number(result.assessment.passingScorePercent).toFixed(0)}%`)); panel.append(score);
-  panel.append(el('p', 'This result is Course 1 knowledge evidence only. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
-
+  const score = el('div', '', `course-assessment-score ${result.attempt.passed ? 'passed' : 'not-passed'}`); score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Passing score ${Number(result.assessment.passingScorePercent).toFixed(0)}%`)); panel.append(score, el('p', 'This result is Course 1 knowledge evidence only. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
   const decision = result.gradingDecision ?? {};
-  if (!result.attempt.passed && decision.overallScorePassed === true && decision.competencyMinimumsPassed === false) {
-    const notice = el('aside', '', 'course-assessment-remediation'); notice.append(el('strong', 'Overall score met, competency standard not yet met'), el('p', 'Your overall percentage reached the course threshold, but one or more required competency minimums were below the Course 1 standard. Those minimums prevent a broad score from masking a critical weak area.')); panel.append(notice);
-  }
-
-  panel.append(resultList('Competency results', result.competencyResults ?? [], { showMinimum: true }));
-  panel.append(resultList('Learning-objective results', result.objectiveResults ?? []));
-
-  if (result.remediation) {
-    const remediation = el('section', '', 'course-assessment-remediation'); remediation.append(el('h3', 'Targeted remediation'), el('p', result.remediation.message));
-    appendTargetList(remediation, 'Weakest competency areas', result.remediation.weakestCompetencies, 'competencyId');
-    appendTargetList(remediation, 'Weakest learning objectives', result.remediation.weakestObjectives, 'objectiveId');
-    remediation.append(el('p', 'Answer keys and item rationales are not displayed after the attempt. Use these objective and competency results to return to the aligned lessons, activities, and Field References before an equivalent retake.', 'course-assessment-note'));
-    const referenceButton = el('button', 'Open Field References', 'course-assessment-secondary'); referenceButton.type = 'button'; referenceButton.addEventListener('click', () => document.querySelector('#tab-field-references')?.click()); remediation.append(referenceButton); panel.append(remediation);
-  }
-
-  if (result.assessment.gradingAlgorithmVersion || result.assessment.gradingPolicyVersion) {
-    const versions = [result.assessment.gradingAlgorithmVersion ? `grader ${result.assessment.gradingAlgorithmVersion}` : '', result.assessment.gradingPolicyVersion ? `policy ${result.assessment.gradingPolicyVersion}` : ''].filter(Boolean).join(' • ');
-    panel.append(el('p', `Scoring record: ${versions}.`, 'course-assessment-note'));
-  }
-
-  const actions = el('div', '', 'course-practical-page-actions'); const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary'); practicalButton.type = 'button'; practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' })))); const back = el('button', 'Return to Course 1', 'course-assessment-secondary'); back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click()); actions.append(practicalButton, back); panel.append(actions);
-  lessonView.replaceChildren(panel); lessonView.focus();
+  if (!result.attempt.passed && decision.overallScorePassed === true && decision.competencyMinimumsPassed === false) { const notice = el('aside', '', 'course-assessment-remediation'); notice.append(el('strong', 'Overall score met, competency standard not yet met'), el('p', 'Your overall percentage reached the course threshold, but one or more required competency minimums were below the Course 1 standard. Those minimums prevent a broad score from masking a critical weak area.')); panel.append(notice); }
+  panel.append(resultList('Competency results', result.competencyResults ?? [], { showMinimum: true }), resultList('Learning-objective results', result.objectiveResults ?? []));
+  if (result.remediation) { const remediation = el('section', '', 'course-assessment-remediation'); remediation.append(el('h3', 'Targeted remediation'), el('p', result.remediation.message)); appendTargetList(remediation, 'Weakest competency areas', result.remediation.weakestCompetencies, 'competencyId'); appendTargetList(remediation, 'Weakest learning objectives', result.remediation.weakestObjectives, 'objectiveId'); remediation.append(el('p', 'Answer keys and item rationales are not displayed after the attempt. Use these objective and competency results to return to the aligned lessons, activities, and Field References before an equivalent retake.', 'course-assessment-note')); const referenceButton = el('button', 'Open Field References', 'course-assessment-secondary'); referenceButton.type = 'button'; referenceButton.addEventListener('click', () => document.querySelector('#tab-field-references')?.click()); remediation.append(referenceButton); panel.append(remediation); }
+  if (result.assessment.gradingAlgorithmVersion || result.assessment.gradingPolicyVersion) { const versions = [result.assessment.gradingAlgorithmVersion ? `grader ${result.assessment.gradingAlgorithmVersion}` : '', result.assessment.gradingPolicyVersion ? `policy ${result.assessment.gradingPolicyVersion}` : ''].filter(Boolean).join(' • '); panel.append(el('p', `Scoring record: ${versions}.`, 'course-assessment-note')); }
+  const actions = el('div', '', 'course-practical-page-actions'); const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary'); practicalButton.type = 'button'; practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' })))); const back = el('button', 'Return to Course 1', 'course-assessment-secondary'); back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click()); actions.append(practicalButton, back); panel.append(actions); lessonView.replaceChildren(panel); lessonView.focus();
 }
 
-async function refreshCourseEvidenceCard() {
-  const panel = catalogRoot?.querySelector('.course-evidence-panel'); if (!panel) return; const result = await courseEvidence().catch(() => ({ state: 'unavailable' })); if (result.state !== 'loaded') return; updateEvidenceRow(panel, result.data); const button = panel.querySelector('.course-assessment-launch'); if (button) button.textContent = courseActionLabel(result.data?.writtenAssessment?.outcome);
-}
+async function refreshCourseEvidenceCard() { const panel = catalogRoot?.querySelector('.course-evidence-panel'); if (!panel) return; const result = await courseEvidence().catch(() => ({ state: 'unavailable' })); if (result.state !== 'loaded') return; updateEvidenceRow(panel, result.data); const button = panel.querySelector('.course-assessment-launch'); if (button) button.textContent = courseActionLabel(result.data?.writtenAssessment?.outcome); }
 
-if (catalogRoot) {
-  new MutationObserver(observeEvidencePanel).observe(catalogRoot, { childList: true, subtree: true });
-  observeEvidencePanel();
-}
+document.querySelector('#tab-course-guide')?.addEventListener('click', renderCourseGuide);
+if (catalogRoot) { new MutationObserver(observeEvidencePanel).observe(catalogRoot, { childList: true, subtree: true }); observeEvidencePanel(); }
