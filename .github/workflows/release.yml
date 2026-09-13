@@ -31,7 +31,7 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Resolve audit scope without blocking
+      - name: Resolve audit scope
         id: scope
         shell: bash
         env:
@@ -45,11 +45,14 @@ jobs:
           fi
           echo "course=$course" >> "$GITHUB_OUTPUT"
           echo "credential=$credential" >> "$GITHUB_OUTPUT"
-      - name: Run project quality suite as advisory audit
-        continue-on-error: true
+      - name: Run complete project quality suite
         run: npm test
-      - name: Run non-blocking release structure audit
-        continue-on-error: true
+      - name: Run production readiness gate
+        env:
+          RELEASE_COURSE_ID: ${{ steps.scope.outputs.course }}
+          RELEASE_CREDENTIAL_ID: ${{ steps.scope.outputs.credential }}
+        run: npm run production:readiness
+      - name: Run release readiness gate
         env:
           RELEASE_COURSE_ID: ${{ steps.scope.outputs.course }}
           RELEASE_CREDENTIAL_ID: ${{ steps.scope.outputs.credential }}
