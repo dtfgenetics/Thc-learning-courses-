@@ -15,6 +15,7 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 | `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v1.png` | `186v7si3R8PtBr6CRyPl0DEgcjSsCXwb0` | Lesson 1.1 | draft produced; requires factual, copy, visual, accessibility and responsive QA |
 | `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v2.png` | `1PCXp2mPmEDjdpX3WNqxGsm0yXa6kBlle` | Lesson 1.1 | alternate production draft; requires factual, copy, visual, accessibility and responsive QA |
 | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS` | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v1.png` | `1hVqPMcTdmk-Da0x-Wm_vCC92DaAie3ji` | Lesson 1.1 | draft produced; requires factual, copy, visual, accessibility and responsive QA |
+| `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS` | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v2.png` | `129VLviv9YGuY2YZ_6JDBbRqw5LO4gmzf` | Lesson 1.1 | alternate production draft; requires factual, copy, visual, accessibility and responsive QA |
 | `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v1.png` | `1ISNtmRWV_-8m7WJWLwUeTBhhUS7CLoah` | Lesson 1.2 | draft produced; requires factual, copy, visual, accessibility and responsive QA |
 | `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v2.png` | `1buuiraoXw7tAcIM3VLzBDvgEVTXFWEWF` | Lesson 1.2 | alternate production draft; requires factual, copy, visual, accessibility and responsive QA |
 
