@@ -11,7 +11,15 @@
     "status": {"enum": ["draft", "review", "approved", "published", "superseded", "retired"]},
     "lessons": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^LESSON-[A-Z0-9-]+$"}},
     "competencies": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}},
-    "assessment": {"type": ["string", "null"]}
+    "assessment": {"type": ["string", "null"]},
+    "description": {"type": "string", "minLength": 1},
+    "estimatedMinutes": {"type": "integer", "minimum": 1},
+    "learningOutcomes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "extensions": {
+      "type": "object",
+      "description": "Open namespaced metadata for future instructional, delivery, localization, visual, assessment, or platform needs while preserving validation of the core module contract.",
+      "additionalProperties": true
+    }
   },
   "additionalProperties": false
 }
