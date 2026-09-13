@@ -172,7 +172,12 @@ try {
   assert.equal(report.body.rows.find((row) => row.learnerSubject === 'learner-001').assignedEvaluatorId, 'assessor-authoritative-001');
   assert.equal(JSON.stringify(report.body).includes('PRIVATE-FINAL-NOTE'), false);
   const csv = await request('/api/v1/admin/courses/COURSE-LH-TECH1-001/practical-report?format=csv', { token: 'admin', text: true });
-  assert.equal(csv.status, 200); assert.match(csv.headers.get('content-type'), /text\/csv/); assert.match(csv.body, /learnerSubject,enrollmentStatus,practicalStatus/); assert.match(csv.body, /learner-001/); assert.equal(csv.body.includes('PRIVATE-FINAL-NOTE'), false);
+  assert.equal(csv.status, 200); assert.match(csv.headers.get('content-type'), /text\/csv/);
+  const csvHeaders = csv.body.split('\n', 1)[0].split(',');
+  for (const requiredHeader of ['learnerSubject', 'enrollmentStatus', 'academicTransitionCount', 'practicalStatus', 'scorePercent', 'criticalErrorCount']) {
+    assert.equal(csvHeaders.includes(requiredHeader), true, `CSV report missing required header ${requiredHeader}`);
+  }
+  assert.match(csv.body, /learner-001/); assert.equal(csv.body.includes('PRIVATE-FINAL-NOTE'), false);
 } finally {
   server.close(); await once(server, 'close');
 }
