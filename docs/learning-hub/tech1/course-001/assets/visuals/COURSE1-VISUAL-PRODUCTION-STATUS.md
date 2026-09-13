@@ -13,8 +13,16 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 | Asset ID | File | Drive file ID | Lesson | Production state |
 |---|---|---|---|---|
 | `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v1.png` | `186v7si3R8PtBr6CRyPl0DEgcjSsCXwb0` | Lesson 1.1 | draft produced; requires factual, copy, visual, accessibility and responsive QA |
+| `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v2.png` | `1PCXp2mPmEDjdpX3WNqxGsm0yXa6kBlle` | Lesson 1.1 | alternate production draft; requires factual, copy, visual, accessibility and responsive QA |
 | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS` | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v1.png` | `1hVqPMcTdmk-Da0x-Wm_vCC92DaAie3ji` | Lesson 1.1 | draft produced; requires factual, copy, visual, accessibility and responsive QA |
 | `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v1.png` | `1ISNtmRWV_-8m7WJWLwUeTBhhUS7CLoah` | Lesson 1.2 | draft produced; requires factual, copy, visual, accessibility and responsive QA |
+| `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v2.png` | `1buuiraoXw7tAcIM3VLzBDvgEVTXFWEWF` | Lesson 1.2 | alternate production draft; requires factual, copy, visual, accessibility and responsive QA |
+
+## Additional visual reference board
+
+| Reference file | Drive file ID | Coverage |
+|---|---|---|
+| `course1-module1-2-visual-reference-board-v4.png` | `1yKI6kY3EuDvINylo139TFxokslKTFeSZ` | combined visual reference for hazard recognition, hierarchy of controls, PPE, SDS, contamination routes, clean-to-dirty movement, sanitation sequence and authority/escalation |
 
 ## Next production order
 
