@@ -13,10 +13,21 @@ for (const [areaName, area] of Object.entries(registry.areas ?? {})) {
   }
 }
 
+const productionReadyClaim = registry.productionReady === true;
+const ready = productionReadyClaim && observations.length === 0;
+
 console.log(JSON.stringify({
-  mode: 'informational-readiness-report',
-  blocking: false,
-  productionReadyClaim: registry.productionReady === true,
+  mode: 'production-readiness-gate',
+  blocking: true,
+  ready,
+  productionReadyClaim,
   openObservationCount: observations.length,
   observations
 }, null, 2));
+
+if (!ready) {
+  console.error('Production readiness gate failed: unresolved production gates remain.');
+  process.exit(1);
+}
+
+console.log('Production readiness gate passed.');
