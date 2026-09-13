@@ -331,6 +331,10 @@
               "type": "string",
               "minLength": 1
             },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
             "src": {
               "type": "string",
               "minLength": 1
