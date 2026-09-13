@@ -19,6 +19,12 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 | `VIS-LH-TECH1-001-REF-02` | `course1-visual-learning-board-v2.png` | `1Kp8QsWq7GxUAxbIRrBqUm77Lz9Vnpq8p` | numbered production reference board for Course 1 lesson visual development |
 | `VIS-LH-TECH1-001-REF-03` | `course1-visual-learning-board-v3.png` | `1NH2FjiKSfuMi2CsEe5incPB61_f4xbG0` | Course 1 visual-learning library board with workflow and recordkeeping emphasis |
 
+## Produced individual assets
+
+| Asset ID | File | Drive file ID | Lesson placement | Status |
+|---|---|---|---|---|
+| `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v1.png` | `186v7si3R8PtBr6CRyPl0DEgcjSsCXwb0` | Lesson 1.1 — Hazard Recognition and Control Boundaries | production draft; visual/factual/text/accessibility QA required before learner publication |
+
 ## Curriculum placement map
 
 These boards are source references. Their individual concepts should be rebuilt/exported as dedicated accessible lesson graphics and linked to the canonical lesson object that teaches the concept.
@@ -63,7 +69,7 @@ Each production lesson graphic derived from these references must:
 
 Priority individual assets to create next:
 
-1. `VIS-LH-TECH1-001-01-HAZARD-SCAN` — hazard recognition room scene
+1. `VIS-LH-TECH1-001-01-HAZARD-SCAN` — hazard recognition room scene — **draft produced**
 2. `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS` — hierarchy of controls
 3. `VIS-LH-TECH1-001-03-PPE-TASK` — task/PPE decision reference
 4. `VIS-LH-TECH1-001-04-SDS-ANATOMY` — SDS navigation
