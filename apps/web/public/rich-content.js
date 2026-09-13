@@ -52,6 +52,7 @@ function renderCallout(parent, block) {
 function renderImageBlock(parent, block) {
   const section = document.createElement('section');
   section.className = 'lesson-section rich-block rich-image-block';
+  if (block.title) section.append(text('h3', block.title));
   appendImage(section, block);
   appendReferences(section, block.references);
   parent.append(section);
