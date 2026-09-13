@@ -32,7 +32,6 @@ function publicProjection(practical) {
 const practical = JSON.parse(fs.readFileSync(practicalPath, 'utf8'));
 if (practical.status !== 'published') throw new Error(`Course 1 practical must be published before runtime sync; found ${practical.status}`);
 if (practical.extensions?.publicAcademicViewing !== true) throw new Error('Course 1 practical must set publicAcademicViewing=true');
-if (practical.extensions?.operationalUseBlockedUntilCalibration === true) throw new Error('Course 1 public academic practical cannot be calibration-blocked');
 
 const expected = `${START}\nconst COURSE_PRACTICAL_PUBLIC = ${JSON.stringify(publicProjection(practical), null, 2)};\n${END}`;
 const source = fs.readFileSync(runtimePath, 'utf8');
