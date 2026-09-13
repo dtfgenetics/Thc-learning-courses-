@@ -29,6 +29,7 @@ try {
   });
   assert.equal(changes.objectVersion, '2.3.4');
   assert.equal(changes.status, 'changes-requested');
+  assert.equal(changes.targetId, changes.objectId, 'legacy targetId alias must identify the same reviewed object');
   assert.match(changes.id, /^REVIEW-LESSON-TEST-001-EDITORIAL-20260906050000$/);
 
   assert.throws(() => buildReviewRecord({
@@ -50,7 +51,8 @@ try {
     baseDir: tempRoot
   });
   assert.deepEqual(approved.evidenceChecked, ['REF-TEST-001']);
-  for (const field of ['id', 'objectId', 'objectVersion', 'reviewType', 'status', 'reviewerId', 'reviewedAt']) {
+  assert.equal(approved.targetId, approved.objectId, 'review target compatibility alias must remain synchronized');
+  for (const field of ['id', 'objectId', 'targetId', 'objectVersion', 'reviewType', 'status', 'reviewerId', 'reviewedAt']) {
     assert.ok(approved[field], `record must contain ${field}`);
   }
 
