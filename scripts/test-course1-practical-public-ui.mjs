@@ -13,9 +13,10 @@ assert.equal(syntax.status, 0, syntax.stderr || syntax.stdout);
 const sync = spawnSync(process.execPath, ['scripts/sync-course1-practical-public.mjs'], { encoding: 'utf8' });
 assert.equal(sync.status, 0, sync.stderr || sync.stdout);
 
-assert.equal(practical.status, 'published', 'Course 1 practical must remain published');
+assert.equal(practical.status, 'published', 'Course 1 practical must remain published as academic content');
 assert.equal(practical.extensions?.publicAcademicViewing, true, 'Course 1 practical must remain public academic content');
-assert.equal(practical.extensions?.operationalUseBlockedUntilCalibration, false, 'Course 1 practical must not regain a calibration publication block');
+assert.equal(practical.extensions?.operationalUseBlockedUntilCalibration, true, 'Course 1 certification-use practical must remain blocked until calibration evidence exists');
+assert.equal(practical.extensions?.certificationUseStatus, 'validation-pending', 'Course 1 must distinguish academic publication from certification-use approval');
 assert.ok(practical.extensions?.learnerWorkflow?.overview, 'public practical needs an academic overview');
 assert.ok(practical.extensions?.learnerWorkflow?.academicUse, 'public practical needs an academic-use statement');
 assert.ok(practical.extensions?.learnerWorkflow?.boundary, 'public practical needs a course/credential boundary statement');
@@ -65,4 +66,4 @@ for (const marker of [
 assert.ok(css.includes('min-height: 44px'), 'public practical actions must retain accessible touch-target sizing');
 assert.ok(css.includes('.course-practical-personal-status'), 'private result status needs a distinct visual region');
 
-console.log('Course 1 public academic practical learner UI, privacy, synchronization, responsive, and print contracts passed.');
+console.log('Course 1 public academic practical learner UI, privacy, synchronization, responsive, certification-boundary, and print contracts passed.');
