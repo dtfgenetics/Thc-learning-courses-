@@ -20,13 +20,17 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 | `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v2.png` | `1buuiraoXw7tAcIM3VLzBDvgEVTXFWEWF` | Lesson 1.2 | alternate draft; QA required |
 | `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v1.png` | `1BjmEd9Iayt7RaZpSedHYpCdYxHmsMRJ3` | Lesson 1.2 | draft produced; QA required |
 | `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v2.png` | `1_B6wDEDncxScM7EYMII0_1qo67M29XVL` | Lesson 1.2 | alternate draft; QA required |
+| `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v3.png` | `1YRcBp_sqp6V3J0PGHeI1Wz-xTjZWdw42` | Lesson 1.2 | alternate draft; QA required |
 | `VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES` | `VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES-v1.png` | `1Avc5t_cgqmJPMQ_BK9nlj7AXEIvpoTAu` | Lesson 2.1 | draft produced; QA required |
 
-## Additional reference board
+## Additional reference boards
 
 | Reference file | Drive file ID | Coverage |
 |---|---|---|
 | `course1-module1-2-visual-reference-board-v4.png` | `1yKI6kY3EuDvINylo139TFxokslKTFeSZ` | hazard recognition, hierarchy of controls, PPE, SDS, contamination routes, clean-to-dirty movement, sanitation sequence and authority/escalation |
+| `course1-lessons-06-09-reference-board-v1.png` | `1Yrwl38dyiY0_y6YbzmCjuES7NRREqU6a` | clean-to-dirty movement, sanitation sequence, authority/escalation and controlled-document anatomy |
+| `course1-lessons-06-09-reference-board-v2.png` | `1lZB65QXTPVU6lp5V2XrK2gdcMBUpeGch` | alternate composition for clean-to-dirty movement, sanitation sequence, authority/escalation and controlled-document anatomy |
+| `course1-lessons-04-07-reference-board-v3.png` | `1z-Nd_vSOFf1YiLU8MQJtHwy0zZmgEFb7` | SDS anatomy, contamination routes, clean-to-dirty movement and sanitation sequence |
 
 ## Live/public mapping
 
