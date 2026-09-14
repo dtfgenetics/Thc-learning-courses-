@@ -281,6 +281,15 @@
       },
       {
         "type": "callout",
+        "title": "Remediation cue",
+        "tone": "evidence",
+        "body": "If a data-integrity response is missed, return to the record-quality table and the controlled-correction comparison. Re-check whether the record preserves identity, real timing, context, attribution, original history and an honest missing-data status before trying the concept again in a changed scenario.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
         "title": "Evidence boundary",
         "tone": "evidence",
         "body": "MHRA GxP data-integrity guidance is used as a transferable quality framework for trustworthy records. It is not presented as a claim that UK pharmaceutical GxP regulations govern U.S. cannabis cultivation.",
