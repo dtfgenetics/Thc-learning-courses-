@@ -1,0 +1,80 @@
+name: Deploy Course 1 PNG candidates
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/course1-png-deploy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download controlled Course 1 PNG masters
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p apps/web/public/assets/course1
+
+          download_png() {
+            local id="$1"
+            local out="$2"
+            curl --fail --location --retry 3 --retry-delay 2 \
+              "https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t" \
+              --output "$out"
+            magic="$(head -c 8 "$out" | od -An -tx1 | tr -d ' \n')"
+            if [ "$magic" != "89504e470d0a1a0a" ]; then
+              echo "ERROR: $out is not a valid PNG (magic=$magic)"
+              exit 1
+            fi
+          }
+
+          download_png '1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv' 'apps/web/public/assets/course1/equipment-preuse-v3.png'
+          download_png '1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2' 'apps/web/public/assets/course1/operator-vs-maintenance-v3.png'
+          download_png '17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv' 'apps/web/public/assets/course1/fault-report-v3.png'
+          download_png '1FPA-1ygokBNPOl-6R2POSamkNENUpwEX' 'apps/web/public/assets/course1/record-correction-v3.png'
+          download_png '1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY' 'apps/web/public/assets/course1/shift-handoff-v3.png'
+          download_png '1o8suJoL6YbubrwZLArXSBGb2dKYlbyey' 'apps/web/public/assets/course1/integrated-workflow-v3.png'
+
+      - name: Deterministic asset checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in \
+            apps/web/public/assets/course1/equipment-preuse-v3.png \
+            apps/web/public/assets/course1/operator-vs-maintenance-v3.png \
+            apps/web/public/assets/course1/fault-report-v3.png \
+            apps/web/public/assets/course1/record-correction-v3.png \
+            apps/web/public/assets/course1/shift-handoff-v3.png \
+            apps/web/public/assets/course1/integrated-workflow-v3.png
+          do
+            test -s "$f"
+            bytes="$(wc -c < "$f")"
+            if [ "$bytes" -lt 100000 ]; then
+              echo "ERROR: $f is unexpectedly small ($bytes bytes)"
+              exit 1
+            fi
+            echo "verified $f ($bytes bytes)"
+          done
+
+      - name: Commit public PNG assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- apps/web/public/assets/course1; then
+            echo 'No asset changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add apps/web/public/assets/course1/*.png
+          git commit -m 'assets: publish Course 1 PNG candidates 13-18'
+          git push
