@@ -2,6 +2,7 @@
 
 **Course:** `COURSE-LH-TECH1-001`  
 **Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
+**Practical rubric version:** `1.1.0`  
 **Form:** A — routine cultivation shift with controlled discrepancies  
 **Use:** Public academic practical form; may also support calibration and equivalent-form review
 
