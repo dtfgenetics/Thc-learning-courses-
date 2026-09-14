@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { once } from 'node:events';
 import { createApiServer } from '../apps/api/src/server.mjs';
+
+const foundationsCourse = JSON.parse(
+  fs.readFileSync(new URL('../content/courses/COURSE-CULT-FOUNDATIONS-001.json', import.meta.url), 'utf8')
+);
+const CURRENT_FOUNDATIONS_VERSION = foundationsCourse.version;
 
 const enrollments = new Map();
 const learnerStore = {
@@ -59,12 +65,12 @@ try {
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: '1.0.0' })
+    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: CURRENT_FOUNDATIONS_VERSION })
   });
   assert.equal(response.status, 200);
   let body = await response.json();
   assert.equal(body.enrollment.courseId, 'COURSE-CULT-FOUNDATIONS-001');
-  assert.equal(body.enrollment.courseVersion, '1.0.0');
+  assert.equal(body.enrollment.courseVersion, CURRENT_FOUNDATIONS_VERSION);
   assert.equal(body.enrollment.status, 'active');
   assert.equal(Object.hasOwn(body.enrollment, 'passed'), false);
   assert.equal(Object.hasOwn(body.enrollment, 'credential'), false);
@@ -78,7 +84,7 @@ try {
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: '1.0.0' })
+    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: CURRENT_FOUNDATIONS_VERSION })
   });
   assert.equal(response.status, 200, 'enrollment should be idempotent');
   response = await fetch(`${base}/api/v1/me/enrollments`, { headers: { authorization: 'Bearer alice' } });
@@ -103,10 +109,8 @@ try {
   assert.equal(response.status, 409);
   body = await response.json();
   assert.equal(body.error, 'course-version-mismatch');
-  assert.equal(body.currentVersion, '1.0.0');
+  assert.equal(body.currentVersion, CURRENT_FOUNDATIONS_VERSION);
 } finally {
   server.close();
   await once(server, 'close');
 }
-
-console.log('Authenticated learner enrollment API passed.');
