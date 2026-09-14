@@ -50,5 +50,7 @@ jobs:
         run: npm run course1:publication:audit
       - name: Audit Learning Hub assessment item quality
         run: node scripts/check-learning-hub-item-quality.mjs
+      - name: Enforce public credential-bank security boundary
+        run: node scripts/test-public-credential-bank-boundary.mjs
       - name: Run complete curriculum and credential audit suite
         run: npm test
