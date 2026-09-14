@@ -22,8 +22,18 @@ function copyTree(rel) {
   const source = path.join(root, rel);
   const target = path.join(runtimeDir, rel);
   if (!fs.existsSync(source)) throw new Error(`missing staging candidate input: ${rel}`);
+  const stat = fs.statSync(source);
+  if (stat.isDirectory()) {
+    fs.mkdirSync(target, { recursive: true });
+    for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
+      const sourceEntry = path.join(source, entry.name);
+      const targetEntry = path.join(target, entry.name);
+      fs.cpSync(sourceEntry, targetEntry, { recursive: true, force: true });
+    }
+    return;
+  }
   fs.mkdirSync(path.dirname(target), { recursive: true });
-  fs.cpSync(source, target, { recursive: true, force: true });
+  fs.copyFileSync(source, target);
 }
 
 function walk(dir, base = dir, rows = []) {
