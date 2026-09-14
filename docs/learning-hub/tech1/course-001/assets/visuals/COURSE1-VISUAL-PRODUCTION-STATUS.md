@@ -12,6 +12,14 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 
 The primary Course 1 visual-production set `VIS-LH-TECH1-001-01` through `VIS-LH-TECH1-001-18` has at least one produced PNG draft in controlled Drive storage. Duplicate review drafts exist for hazard scan, hierarchy of controls, PPE and SDS anatomy.
 
+A corrected blocker-rebuild reference board is also stored in the controlled Course 1 Drive folder:
+
+- `course1-visual-blocker-rebuild-board-v1.png`
+- Drive file ID: `1qzh2JHuHuIemiKktd-tLWw8XhWqpL4Lt`
+- Coverage: `06-CLEAN-DIRTY-FLOW`, `07-SANITATION-SEQUENCE`, `12-RECONCILIATION`
+
+The rebuild board corrects the three major conceptual conflicts identified in the first QA pass: movement language is explicitly facility/SOP dependent, sanitation depends on the approved product and controlled label/SOP conditions, and reconciliation preserves discrepancies and permits record correction only through the authorized process. It is a production reference candidate, not yet a learner-facing replacement.
+
 ## QA gate
 
 Detailed QA findings are controlled in:
@@ -20,13 +28,11 @@ Detailed QA findings are controlled in:
 
 No PNG production draft should replace an existing learner-facing SVG solely because it is visually richer. The existing public SVG remains the baseline until the replacement passes factual, copy, authorization-boundary, accessibility and responsive QA.
 
-### Blocked from learner publication
+### Rebuild candidates still awaiting learner-publication QA
 
-The first content QA pass identified three material conflicts that require rebuild before public use:
-
-1. `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW` — current draft presents clean-to-dirty / no-backtracking as a universal rule; canonical Lesson 2.1 requires the facility's actual zone map, current risk status and controlled transition procedure.
-2. `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE` — current draft compresses sanitation into a universal rinse/dry sequence; canonical Lesson 2.2 requires exact approved product/preparation, label/SOP-defined contact conditions, finish steps only where required, inspection, recontamination protection and truthful documentation.
-3. `VIS-LH-TECH1-001-12-RECONCILIATION` — current draft uses language that can imply discrepancies should be 'fixed' or forced to balance; canonical Course 1 requires preservation of the discrepancy, evidence verification, factual documentation and escalation without inventing a balancing transaction.
+1. `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW` — rebuild candidate now uses facility-specific movement language; final learner asset must retain the canonical rule that actual zone names, risk status, movement direction and transition controls come from the facility map and current procedure.
+2. `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE` — rebuild candidate now separates cleaning from sanitizing/disinfection and uses product/SOP-dependent conditions; final learner asset must preserve exact-product verification, applicable contact conditions, finish/inspection, recontamination protection and documentation.
+3. `VIS-LH-TECH1-001-12-RECONCILIATION` — rebuild candidate now preserves the discrepancy and limits record correction to authorized process; final learner asset must not imply forced balancing or deletion/overwrite of original records.
 
 ### Preferred duplicate review candidates
 
@@ -43,7 +49,7 @@ The learner-facing repository currently serves canonical Course 1 SVG assets fro
 
 ## Current work order
 
-1. Rebuild the three blocked assets (`06`, `07`, `12`) using canonical lesson language.
+1. Complete copy/accessibility/responsive QA for the `06`, `07`, `12` rebuild candidates.
 2. Correct preferred duplicate candidates (`01`–`04`) and mark alternates as non-public references.
 3. QA `05`, `08`–`11`, `13`–`18` against canonical lesson text and source boundaries.
 4. Write final captions and learner text alternatives outside the image.
