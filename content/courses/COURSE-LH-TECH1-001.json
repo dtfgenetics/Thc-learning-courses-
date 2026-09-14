@@ -4,6 +4,42 @@
   "version": "1.0.0",
   "status": "published",
   "credentialBearing": true,
+  "description": "Prepares an entry cultivation technician to execute assigned work safely and reliably inside a controlled cultivation operation by recognizing hazards, using supplied PPE and chemical information, protecting sanitation and biosecurity boundaries, following current controlled instructions, preserving plant and material identity, maintaining traceable inventory and records, performing permitted operator-level equipment checks, and escalating conditions outside Technician I authority.",
+  "level": "Entry cultivation technician / Technician I foundation",
+  "intendedAudience": [
+    "Entry-level or aspiring cultivation technicians",
+    "Cultivation employees who need a structured foundation in controlled work practices",
+    "Learners preparing for later Technician I credential requirements",
+    "Instructors or employers using the public academic material for structured training"
+  ],
+  "prerequisites": [
+    "No prior THC Academy professional credential is required for public study",
+    "Learners should be able to read workplace instructions, interpret basic tables and labels, and enter simple records",
+    "A workplace, supervised lab, or jurisdiction may impose its own eligibility, age, employment, PPE, medical-clearance, pesticide, equipment, or access requirements"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "estimatedMinutes": 945,
+  "learningOutcomes": [
+    "Identify common cultivation workplace hazards and select the correct routine response: control within authorization, stop, isolate where authorized, or escalate.",
+    "Use supplied PPE requirements, chemical labels, and safety data sheet information to prepare for an assigned cultivation task without exceeding training or authorization.",
+    "Execute sanitation and controlled-movement procedures that reduce cross-contamination risk between plants, rooms, tools, and work zones.",
+    "Recognize quarantine, restricted-entry, hold, and isolation conditions and apply the response defined by the supplied procedure.",
+    "Identify the correct controlled SOP or work order for a task and distinguish required steps, acceptance criteria, exceptions, and escalation points.",
+    "Preserve plant, batch, lot, room, and material identity during routine cultivation movements, transfers, and handoffs.",
+    "Complete routine inventory, movement, and waste or destruction records accurately under a supplied vendor-neutral workflow.",
+    "Detect and report a mismatch between physical material and a paper or digital record without falsifying or forcing reconciliation.",
+    "Perform permitted pre-use, readiness, cleaning, and operator-care checks on assigned cultivation or irrigation equipment using the supplied procedure.",
+    "Recognize obvious equipment faults, alarms, leaks, clogs, or unsafe conditions and produce a useful escalation record without unauthorized repair.",
+    "Create contemporaneous, legible, and attributable cultivation records and correct errors while preserving the original record history.",
+    "Produce a concise shift handoff that accurately communicates completed work, observations, deviations, unresolved conditions, and priorities."
+  ],
+  "evidencePolicy": "Occupational-health and regulatory concepts use controlled authoritative sources where applicable; sanitation and biosecurity use appropriate extension or standards sources; traceability, data-integrity, and handoff frameworks are labeled according to their source role. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control where they are more specific or impose additional requirements.",
+  "assessmentPolicy": "Lesson and module checks are low-stakes formative learning. The public 36-item Course 1 final and integrated practical create academic course evidence under current provisional development thresholds pending human review, pilot evidence, calibration, accessibility review, and documented standard setting. They are separate from the secure Technician I credential assessment and do not by themselves issue a professional credential.",
   "modules": [
     "MOD-LH-TECH1-001-SAFETY",
     "MOD-LH-TECH1-001-BIOSEC",
@@ -20,5 +56,12 @@
     "COMP-CULT-TRACEABILITY-001",
     "COMP-CULT-EQUIPMENT-CARE-001"
   ],
-  "finalAssessment": "ASSESS-LH-TECH1-001-FINAL"
+  "finalAssessment": "ASSESS-LH-TECH1-001-FINAL",
+  "extensions": {
+    "credentialPath": "CREDPROG-CULT-TECH-I-001",
+    "integratedPractical": "PRACTICAL-LH-TECH1-001-WORKFLOW",
+    "academicCompletionModel": "Complete the current canonical lessons plus pass the public Course 1 final and integrated practical under the applicable versioned academic policy. This academic completion state is not professional credential eligibility or issuance.",
+    "contentCeiling": null,
+    "continuousImprovement": true
+  }
 }
