@@ -1,7 +1,7 @@
 {
   "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
   "title": "Course 1 Integrated Cultivation Workflow Practical",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "published",
   "purpose": "summative",
   "assessmentType": "practical",
@@ -39,35 +39,307 @@
     "domains": [
       {
         "name": "Safety, PPE and stop-work judgment",
-        "points": 18
+        "points": 18,
+        "criteria": [
+          {
+            "id": "hazard-recognition",
+            "title": "Recognize seeded hazards and immediate controls",
+            "points": 6,
+            "fullCredit": "Identifies all seeded blocking hazards and applies the supplied immediate controls without normalizing or bypassing them.",
+            "partialCredit": "Identifies the major hazard pattern but misses one lower-severity control, needs a permitted prompt, or records an incomplete control rationale.",
+            "noCredit": "Misses a blocking hazard, treats an explicit unsafe condition as acceptable, or proposes continuing without the required control."
+          },
+          {
+            "id": "ppe-hazcom-use",
+            "title": "Use supplied PPE and chemical safety information",
+            "points": 4,
+            "fullCredit": "Uses the supplied task, label, SDS, and employer PPE information correctly and does not invent protection requirements or chemical directions.",
+            "partialCredit": "Locates the correct information but needs a permitted prompt to connect one requirement to the task or omits a non-blocking detail.",
+            "noCredit": "Selects PPE or chemical handling from guesswork, ignores supplied requirements, or proceeds when required information is missing."
+          },
+          {
+            "id": "authority-stop-work",
+            "title": "Stay inside authority and use stop-work/escalation",
+            "points": 5,
+            "fullCredit": "Correctly distinguishes routine technician controls from protected work and stops or escalates the seeded condition without attempting unauthorized repair.",
+            "partialCredit": "Recognizes the authority boundary after a permitted prompt or escalates correctly but gives an incomplete explanation of why work cannot continue.",
+            "noCredit": "Attempts protected servicing, bypasses an explicit stop condition, or continues work after the supplied procedure requires escalation."
+          },
+          {
+            "id": "safety-record",
+            "title": "Create a useful safety decision record",
+            "points": 3,
+            "fullCredit": "Records the hazard, immediate control, affected task or area, notification, and open next action accurately enough for another worker to reconstruct the decision.",
+            "partialCredit": "Records the main condition and response but omits one useful context element such as time, affected identity, notification, or open action.",
+            "noCredit": "Creates a misleading or unusable record, omits the unsafe condition, or documents completion when the safety decision remains open."
+          }
+        ]
       },
       {
         "name": "Sanitation and biosecurity",
-        "points": 14
+        "points": 14,
+        "criteria": [
+          {
+            "id": "contamination-pathway",
+            "title": "Recognize contamination and movement pathways",
+            "points": 4,
+            "fullCredit": "Identifies the seeded people, tool, material, or room movement pathway that could spread contamination and chooses the supplied control sequence.",
+            "partialCredit": "Recognizes the main pathway but misses one secondary transfer point or needs a permitted prompt to complete the movement-control reasoning.",
+            "noCredit": "Fails to identify the relevant pathway or proposes movement that defeats the supplied contamination-control boundary."
+          },
+          {
+            "id": "cleaning-sanitation-sequence",
+            "title": "Execute the supplied cleaning and sanitation sequence",
+            "points": 4,
+            "fullCredit": "Follows the supplied cleaning/sanitation sequence in order, distinguishes debris removal from sanitation, and verifies the defined completion condition.",
+            "partialCredit": "Completes the core sequence but needs one permitted prompt, omits one noncritical verification step, or gives an incomplete explanation of sequence purpose.",
+            "noCredit": "Skips a required blocking step, reverses the sequence in a way that defeats the process, or invents an unsupported chemical procedure."
+          },
+          {
+            "id": "status-boundaries",
+            "title": "Respect quarantine, hold, REI, and movement restrictions",
+            "points": 4,
+            "fullCredit": "Correctly distinguishes the supplied plant-health hold/quarantine status from pesticide restricted-entry status and respects every active movement or access restriction.",
+            "partialCredit": "Respects the restriction but needs a permitted prompt to name the controlling status or to explain which separate restriction remains active.",
+            "noCredit": "Bypasses an explicit hold or restricted-entry control, treats different statuses as interchangeable, or moves material through a prohibited boundary."
+          },
+          {
+            "id": "sanitation-authority",
+            "title": "Stay inside product and procedure authorization",
+            "points": 2,
+            "fullCredit": "Uses only the supplied authorized product and procedure information and escalates when a substitution or instruction is not explicitly supported.",
+            "partialCredit": "Recognizes that authorization is required but needs a permitted prompt to stop before selecting an unsupported substitute.",
+            "noCredit": "Invents chemical directions, substitutes a product without supplied authorization, or treats a general practice as a facility-specific instruction."
+          }
+        ]
       },
       {
         "name": "SOP and work-order execution",
-        "points": 12
+        "points": 12,
+        "criteria": [
+          {
+            "id": "instruction-verification",
+            "title": "Verify the current controlled instruction",
+            "points": 3,
+            "fullCredit": "Confirms the correct task, document identity, revision, scope, prerequisites, and applicable work order before acting.",
+            "partialCredit": "Finds the correct instruction but needs a permitted prompt to verify one control element such as revision, scope, or prerequisite.",
+            "noCredit": "Uses an obsolete, wrong-scope, or otherwise uncontrolled instruction when the current controlled source is available."
+          },
+          {
+            "id": "procedure-execution",
+            "title": "Execute required steps and acceptance criteria",
+            "points": 4,
+            "fullCredit": "Performs the supplied required steps in the controlled sequence and verifies the defined acceptance criteria before declaring the task complete.",
+            "partialCredit": "Completes the main steps but misses one noncritical acceptance detail or requires a permitted prompt to verify completion evidence.",
+            "noCredit": "Skips a required blocking step, changes the procedure without authority, or declares completion without required acceptance evidence."
+          },
+          {
+            "id": "instruction-conflict",
+            "title": "Handle missing or conflicting instructions",
+            "points": 3,
+            "fullCredit": "Recognizes missing, conflicting, or unclear instructions and stops or escalates rather than selecting an unsupported workaround.",
+            "partialCredit": "Recognizes the conflict after a permitted prompt or escalates correctly but does not fully identify the unresolved instruction question.",
+            "noCredit": "Chooses an unauthorized workaround, invents a requirement, or continues despite a controlling instruction conflict."
+          },
+          {
+            "id": "work-status-record",
+            "title": "Document deviations and incomplete work honestly",
+            "points": 2,
+            "fullCredit": "Records what was completed, what remains open, the deviation or exception status, and the next authorized action without manufacturing completion.",
+            "partialCredit": "Preserves the open status but omits one context element or needs a permitted prompt to distinguish a planned exception from an unplanned deviation.",
+            "noCredit": "Marks incomplete work complete, hides a deviation, or backfills missing status information as though it were contemporaneous."
+          }
+        ]
       },
       {
         "name": "Identity and traceability",
-        "points": 16
+        "points": 16,
+        "criteria": [
+          {
+            "id": "identity-verification",
+            "title": "Verify physical identity before movement",
+            "points": 5,
+            "fullCredit": "Verifies the controlled physical identity against the supplied record before movement and detects the seeded mismatch before identity can be lost.",
+            "partialCredit": "Performs the identity check but needs a permitted prompt to resolve one label/record comparison or to identify a secondary mismatch cue.",
+            "noCredit": "Moves material without the required identity check, ignores an obvious mismatch, or relies on appearance instead of controlled identity."
+          },
+          {
+            "id": "movement-event",
+            "title": "Preserve source, destination, time, and event context",
+            "points": 4,
+            "fullCredit": "Records the source, destination, material identity, quantity or status as applicable, time, and responsible event context needed to reconstruct the movement.",
+            "partialCredit": "Captures the core movement but omits one reconstructability element or needs a permitted prompt to connect the event to the correct controlled record.",
+            "noCredit": "Creates an ambiguous movement record that cannot identify what moved, from where, to where, or under which controlled identity."
+          },
+          {
+            "id": "discrepancy-control",
+            "title": "Block and preserve identity discrepancies",
+            "points": 4,
+            "fullCredit": "Stops the discrepant movement, preserves both physical and record evidence, and escalates without relabeling or forcing a match.",
+            "partialCredit": "Stops the movement but needs a permitted prompt to preserve one piece of evidence or to identify the proper escalation owner.",
+            "noCredit": "Forces the physical material to match the record, relabels without authorization, or continues movement through an unresolved discrepancy."
+          },
+          {
+            "id": "genealogy-handoff",
+            "title": "Maintain genealogy through handoff",
+            "points": 3,
+            "fullCredit": "Preserves enough linked identity/event information that another worker can reconstruct the material genealogy and current unresolved status at handoff.",
+            "partialCredit": "Preserves the main identity chain but omits one noncritical link or needs a permitted prompt to connect an open event to the handoff.",
+            "noCredit": "Breaks the identity chain, loses the relationship between source and resulting material, or hands off an unresolved identity issue without controlled identifiers."
+          }
+        ]
       },
       {
         "name": "Inventory and discrepancy reasoning",
-        "points": 10
+        "points": 10,
+        "criteria": [
+          {
+            "id": "physical-record-comparison",
+            "title": "Compare physical evidence with the controlled record",
+            "points": 3,
+            "fullCredit": "Performs the supplied physical-versus-record comparison using the correct identifiers and quantities without forcing either side to match the other.",
+            "partialCredit": "Completes the comparison but needs a permitted prompt to verify one identifier, unit, or source record before interpreting the difference.",
+            "noCredit": "Skips the comparison, substitutes an estimate for physical evidence, or changes a record solely to eliminate the discrepancy."
+          },
+          {
+            "id": "fact-separation",
+            "title": "Separate confirmed facts from unresolved facts",
+            "points": 2,
+            "fullCredit": "Clearly distinguishes observed counts/identities/events from hypotheses, missing information, and decisions that remain unresolved.",
+            "partialCredit": "Mostly separates fact from hypothesis but uses one ambiguous statement or needs a permitted prompt to identify what is still unknown.",
+            "noCredit": "Presents a guess as a confirmed fact or invents a cause, count, identity, or disposition to make the records reconcile."
+          },
+          {
+            "id": "discrepancy-evidence",
+            "title": "Preserve discrepancy evidence",
+            "points": 2,
+            "fullCredit": "Preserves the relevant record, physical status, identifiers, timing, and observations needed for an authorized follow-up decision.",
+            "partialCredit": "Preserves the main evidence but omits one context element that can still be recovered from the controlled packet.",
+            "noCredit": "Destroys, overwrites, or obscures evidence needed to reconstruct the discrepancy."
+          },
+          {
+            "id": "disposition-boundary",
+            "title": "Escalate disposition decisions to the authorized process",
+            "points": 3,
+            "fullCredit": "Routes the discrepancy to the correct supplied role/process and does not independently release, destroy, relabel, or adjust material outside Technician I authority.",
+            "partialCredit": "Recognizes that escalation is required but needs a permitted prompt to identify the correct decision owner or required supporting information.",
+            "noCredit": "Makes an unauthorized disposition or inventory adjustment, or treats reconciliation as permission to erase the unresolved event."
+          }
+        ]
       },
       {
         "name": "Equipment readiness and operator-care boundary",
-        "points": 10
+        "points": 10,
+        "criteria": [
+          {
+            "id": "preuse-checks",
+            "title": "Complete permitted pre-use readiness checks",
+            "points": 3,
+            "fullCredit": "Completes the supplied external readiness checks, verifies the defined ready/not-ready conditions, and records the relevant observations before use.",
+            "partialCredit": "Completes the major checks but misses one noncritical supplied check or needs a permitted prompt to verify a readiness condition.",
+            "noCredit": "Uses the equipment without required readiness checks or ignores an explicit not-ready condition."
+          },
+          {
+            "id": "operator-care-boundary",
+            "title": "Stay inside the operator-care boundary",
+            "points": 3,
+            "fullCredit": "Performs only explicitly assigned operator-level cleaning, inspection, or routine care and stops before protected servicing, repair, or energized technical work.",
+            "partialCredit": "Recognizes the boundary after a permitted prompt or correctly stops but gives an incomplete explanation of which task requires qualified service.",
+            "noCredit": "Attempts protected servicing, removes guards, defeats safety controls, or undertakes repair outside the supplied Technician I authority."
+          },
+          {
+            "id": "fault-observation",
+            "title": "Describe faults without unsupported diagnosis",
+            "points": 2,
+            "fullCredit": "Records observable symptoms, timing, alarms, conditions, and recurrence without presenting an unsupported root-cause diagnosis as fact.",
+            "partialCredit": "Records the main symptom but omits one useful observation or uses tentative diagnostic language that is clearly labeled as unconfirmed.",
+            "noCredit": "Invents a confirmed cause, changes the record to fit a guess, or omits the observable fault condition."
+          },
+          {
+            "id": "fault-escalation",
+            "title": "Escalate recurring or unsafe faults appropriately",
+            "points": 2,
+            "fullCredit": "Stops or limits use as required, preserves the recurring-fault timeline, and routes the equipment to the supplied authorized maintenance/escalation process.",
+            "partialCredit": "Escalates correctly but needs a permitted prompt to preserve the recurrence history or identify the exact affected asset/status.",
+            "noCredit": "Repeatedly resets or works around the fault, continues unsafe operation, or fails to communicate the unresolved equipment status."
+          }
+        ]
       },
       {
         "name": "Data integrity and documentation",
-        "points": 12
+        "points": 12,
+        "criteria": [
+          {
+            "id": "contemporaneous-context",
+            "title": "Create timely, context-rich records",
+            "points": 4,
+            "fullCredit": "Records observations/actions with the identity, unit, location, time, and other task context needed for another qualified person to reconstruct the event.",
+            "partialCredit": "Records the core fact but omits one useful context element or needs a permitted prompt to distinguish observation time from later entry time.",
+            "noCredit": "Backdates, creates a context-free value that cannot be interpreted, or represents remembered information as a contemporaneous record."
+          },
+          {
+            "id": "attribution-legibility",
+            "title": "Preserve attribution and readable meaning",
+            "points": 2,
+            "fullCredit": "Ensures the record/change is attributable to the responsible person or controlled system and is readable and unambiguous for the intended workflow.",
+            "partialCredit": "Record meaning is clear but attribution or one contextual label needs a permitted correction before the packet can be considered complete.",
+            "noCredit": "Creates an anonymous, ambiguous, or otherwise non-reconstructable entry when controlled attribution is required."
+          },
+          {
+            "id": "correction-history",
+            "title": "Correct records while preserving original history",
+            "points": 3,
+            "fullCredit": "Uses the supplied correction method so the original entry remains understandable and the correction, author, timing, and required reason can be reconstructed.",
+            "partialCredit": "Recognizes the need for a controlled correction but needs a permitted prompt to preserve one history element or complete the correction context.",
+            "noCredit": "Silently overwrites, erases, destroys, or replaces the original record history."
+          },
+          {
+            "id": "missing-late-data",
+            "title": "Handle missing and late data honestly",
+            "points": 3,
+            "fullCredit": "Keeps missing data visibly missing and uses the supplied late-entry or exception process without substituting targets, averages, or remembered estimates as original facts.",
+            "partialCredit": "Recognizes the missing/late-data issue but needs a permitted prompt to document the true timing or to separate an estimate from controlled data.",
+            "noCredit": "Fabricates a missing value, assigns it the original time, or hides the fact that required data were not captured."
+          }
+        ]
       },
       {
         "name": "Shift handoff and communication",
-        "points": 8
+        "points": 8,
+        "criteria": [
+          {
+            "id": "completed-work",
+            "title": "Communicate completed work accurately",
+            "points": 2,
+            "fullCredit": "States what was completed and the current verified status without overstating incomplete work or requiring the receiver to infer what happened.",
+            "partialCredit": "Communicates the main completed work but omits one useful status detail or needs a permitted prompt to distinguish completion from pending verification.",
+            "noCredit": "Misrepresents incomplete work as complete or omits a completed action that materially changes the next shift's starting state."
+          },
+          {
+            "id": "open-conditions",
+            "title": "Transfer open hazards, holds, faults, and discrepancies",
+            "points": 2,
+            "fullCredit": "Clearly communicates every seeded unresolved hazard, hold, identity discrepancy, equipment fault, or sanitation status that constrains the next shift.",
+            "partialCredit": "Transfers the major open conditions but omits one lower-risk context element or needs a permitted prompt to state the current restriction clearly.",
+            "noCredit": "Fails to communicate an open condition that could cause unsafe work, prohibited movement, identity loss, or invalid downstream action."
+          },
+          {
+            "id": "ownership-next-action",
+            "title": "Identify ownership and next actions",
+            "points": 2,
+            "fullCredit": "Names the next required action, current owner or notified role, and any condition that must be satisfied before work resumes or closes.",
+            "partialCredit": "Names the next action but needs a permitted prompt to identify ownership or the condition for resuming/closing the work.",
+            "noCredit": "Hands off an unresolved condition with no clear next action or assigns decision authority to a role that does not have it in the supplied scenario."
+          },
+          {
+            "id": "closed-loop-communication",
+            "title": "Use closed-loop, fact-based communication",
+            "points": 2,
+            "fullCredit": "Uses the supplied read-back/cross-check method and separates confirmed facts from hypotheses so sender and receiver share the same controlled starting state.",
+            "partialCredit": "Handoff is understandable but needs one permitted prompt to confirm read-back, source cross-check, or fact-versus-hypothesis wording.",
+            "noCredit": "Relies on one-way ambiguous communication, presents an unconfirmed hypothesis as fact, or leaves the receiver with conflicting starting information."
+          }
+        ]
       }
     ]
   },
@@ -95,6 +367,13 @@
     "operationalUseBlockedUntilCalibration": true,
     "certificationUseStatus": "validation-pending",
     "publicAcademicViewing": true,
+    "scoringAnchorPolicy": {
+      "method": "criterion-referenced-domain-sum",
+      "criterionLevels": ["full", "partial", "none"],
+      "partialCreditRule": "Partial credit means one-half of the criterion's available points. The domain score is the sum of criterion points; these anchors improve scoring consistency but do not create a separate domain pass/fail standard.",
+      "requiresObservedEvidence": true,
+      "requiresCalibration": true
+    },
     "learnerWorkflow": {
       "overview": "Apply Course 1 as one connected cultivation workflow while conditions change during a simulated shift. Learners must preserve safety, identity, traceability, authorization boundaries, record integrity, and handoff quality as new information appears.",
       "academicUse": "The practical framework is public academic course content. It may be studied without authentication and used for simulation, supervised-lab, or workplace-equivalent learning and evaluation. Personal assessor results remain private learner records.",
