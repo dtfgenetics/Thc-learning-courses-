@@ -14,12 +14,12 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 
 | Asset | Canonical lesson | Preferred file | Drive file ID | Review status |
 |---|---|---|---|---|
-| `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE` | Lesson 5.1 — Pre-Use and Readiness Checks | `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png` | `1gnbgOEjRG4UGdlLK3D63Z3SQnP8ey5Bu` | preferred-review-candidate |
-| `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE` | Lesson 5.2 — Routine Operator Care | `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png` | `1TrVkl3-1xMoycBSLUrOOHdxF-mOah3nz` | preferred-review-candidate; role-boundary wording must remain controlled by SOP/training/authorization |
-| `VIS-LH-TECH1-001-15-FAULT-REPORT` | Lesson 5.3 — Alarms, Fault Context and Maintenance Escalation | `VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png` | `1E5EatHD-0SufvUi2oIITI68Z468R20rE` | preferred-review-candidate |
-| `VIS-LH-TECH1-001-16-RECORD-CORRECTION` | Lesson 6.1 — Contemporaneous Records and Data Integrity | `VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png` | `1hOP1e0R89nM09kz-1d-b538t7scT8Zla` | preferred-review-candidate; correction method must be framed as an example and defer to the approved record system/SOP |
-| `VIS-LH-TECH1-001-17-SHIFT-HANDOFF` | Lesson 6.2 — Professional Shift Handoff | `VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png` | `1dg-4hlUFXxmqZUEjaBv_1mUZZBr6X0oP` | preferred-review-candidate |
-| `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW` | Lesson 6.3 — Integrated Technician Workflow Case | `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png` | `1gGp8Q0nEYc4IRITZQ_P8bzsQxyqTD_w_` | preferred-review-candidate; system-context tasks must not imply authority outside Technician I scope |
+| `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE` | Lesson 5.1 — Pre-Use and Readiness Checks | `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png` | `1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv` | preferred-review-candidate |
+| `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE` | Lesson 5.2 — Routine Operator Care | `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png` | `1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2` | preferred-review-candidate; role-boundary wording must remain controlled by SOP/training/authorization |
+| `VIS-LH-TECH1-001-15-FAULT-REPORT` | Lesson 5.3 — Alarms, Fault Context and Maintenance Escalation | `VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png` | `17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv` | preferred-review-candidate |
+| `VIS-LH-TECH1-001-16-RECORD-CORRECTION` | Lesson 6.1 — Contemporaneous Records and Data Integrity | `VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png` | `1FPA-1ygokBNPOl-6R2POSamkNENUpwEX` | preferred-review-candidate; correction method must be framed as an example and defer to the approved record system/SOP |
+| `VIS-LH-TECH1-001-17-SHIFT-HANDOFF` | Lesson 6.2 — Professional Shift Handoff | `VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png` | `1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY` | preferred-review-candidate |
+| `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW` | Lesson 6.3 — Integrated Technician Workflow Case | `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png` | `1o8suJoL6YbubrwZLArXSBGb2dKYlbyey` | preferred-review-candidate; system-context tasks must not imply authority outside Technician I scope |
 
 ## Required learner text alternatives
 
