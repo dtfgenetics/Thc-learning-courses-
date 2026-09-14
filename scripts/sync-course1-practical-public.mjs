@@ -8,6 +8,16 @@ const writeMode = process.argv.includes('--write');
 const START = '/* COURSE1_PRACTICAL_PUBLIC_DATA_START */';
 const END = '/* COURSE1_PRACTICAL_PUBLIC_DATA_END */';
 
+function publicScoring(scoring = {}) {
+  return {
+    totalPoints: Number(scoring.totalPoints ?? 0),
+    domains: (scoring.domains ?? []).map((domain) => ({
+      name: domain.name,
+      points: Number(domain.points)
+    }))
+  };
+}
+
 function publicProjection(practical) {
   const workflow = practical.extensions?.learnerWorkflow ?? {};
   return {
@@ -17,8 +27,8 @@ function publicProjection(practical) {
     status: practical.status,
     deliveryModes: practical.deliveryModes ?? [],
     evidenceOutputs: practical.evidenceOutputs ?? [],
-    scoring: practical.scoring ?? { totalPoints: 0, domains: [] },
-    passingStandard: practical.passingStandard ?? { minimumPercent: 0, noCriticalErrors: true },
+    scoring: publicScoring(practical.scoring),
+    passingStandard: practical.passingStandard ?? { totalPoints: 0, minimumPercent: 0, noCriticalErrors: true },
     criticalErrors: practical.criticalErrors ?? [],
     overview: workflow.overview ?? '',
     academicUse: workflow.academicUse ?? '',
