@@ -8,6 +8,10 @@
 
 The lesson-time total is a descriptive estimate for the current version, not a content cap or immutable seat-time requirement. Lessons, activities, examples, assessments and practical work may be expanded, revised, reorganized or replaced as evidence and instructional design improve.
 
+## Current audit
+
+Use `FULL-AUDIT-2026-09-14.md` as the current Course 1 audit/status record. Earlier dated audits are retained as historical repair evidence and should not be used as the current blocker list.
+
 ## Purpose
 
 This course prepares an entry cultivation technician to execute assigned work safely and reliably inside a controlled cultivation operation. The learner is expected to recognize hazards, use supplied PPE and chemical information, follow sanitation and biosecurity controls, work from current SOPs and work orders, preserve plant/material identity, complete routine tracking and documentation, perform permitted operator-level equipment checks, and escalate conditions outside Technician I authority.
