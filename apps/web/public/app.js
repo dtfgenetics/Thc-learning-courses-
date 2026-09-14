@@ -88,6 +88,14 @@ function renderCatalog() {
         list.append(item);
       }
       section.append(list);
+      if (module.assessment) {
+        const checkpoint = document.createElement('button');
+        checkpoint.type = 'button';
+        checkpoint.className = 'lesson-link module-checkpoint-link';
+        checkpoint.textContent = 'Module checkpoint · formative test';
+        checkpoint.addEventListener('click', () => openModuleAssessment(module.id));
+        section.append(checkpoint);
+      }
       details.append(section);
     }
     catalogRoot.append(details);
@@ -172,6 +180,95 @@ function renderPracticeSection(article, lesson) {
       status.textContent = `Practice unavailable: ${error.message}`;
       status.classList.add('error');
     });
+}
+
+function renderModuleAssessment(payload) {
+  currentLesson = null;
+  const article = document.createElement('article');
+  article.className = 'lesson-article module-assessment';
+  article.append(text('p', 'Low-stakes module checkpoint', 'eyebrow'));
+  article.append(text('h2', payload.assessment.title));
+  article.append(text('p', `This ${payload.assessment.totalItems}-item checkpoint is formative learning practice. The current ${Number(payload.assessment.passingScorePercent).toFixed(0)}% mastery target is a development target for feedback and remediation, not a credential cut score or certification decision.`, 'callout'));
+  const progressNote = text('p', `0/${payload.assessment.totalItems} answered`, 'status');
+  progressNote.setAttribute('aria-live', 'polite');
+  article.append(progressNote);
+
+  let answered = 0;
+  let correct = 0;
+  const updateSummary = () => {
+    const total = Number(payload.assessment.totalItems ?? payload.items.length);
+    if (answered < total) {
+      progressNote.textContent = `${answered}/${total} answered • ${correct} correct so far`;
+      return;
+    }
+    const percent = total ? Math.round((correct / total) * 100) : 0;
+    const target = Number(payload.assessment.passingScorePercent ?? 0);
+    progressNote.textContent = `${correct}/${total} correct • ${percent}%. ${percent >= target ? 'Development mastery target met for this checkpoint.' : 'Review the missed items and aligned lessons, then try another shuffled checkpoint.'}`;
+  };
+
+  for (const [itemIndex, item] of (payload.items ?? []).entries()) {
+    const fieldset = document.createElement('fieldset');
+    fieldset.className = 'practice-item';
+    const legend = document.createElement('legend');
+    legend.textContent = `${itemIndex + 1}. ${item.stem}`;
+    fieldset.append(legend);
+    renderRichBlocks(fieldset, item.stimulus);
+    const options = document.createElement('div');
+    options.className = 'practice-options';
+    const name = `module-${payload.module.id}-${item.id}`;
+    item.choices.forEach((choice, choiceIndex) => {
+      const label = document.createElement('label');
+      label.className = 'practice-choice';
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = name;
+      input.value = String(choiceIndex);
+      input.addEventListener('change', () => {
+        if (fieldset.dataset.answered === 'true') return;
+        fieldset.dataset.answered = 'true';
+        [...fieldset.querySelectorAll('input[type="radio"]')].forEach((control) => { control.disabled = true; });
+        answered += 1;
+        const isCorrect = choiceIndex === item.correct;
+        if (isCorrect) correct += 1;
+        feedback.dataset.state = isCorrect ? 'correct' : 'incorrect';
+        feedback.textContent = isCorrect
+          ? `Correct. ${item.rationale ?? ''}`
+          : `Not quite. The best answer is: ${item.choices[item.correct]}. ${item.rationale ?? ''}`;
+        updateSummary();
+      });
+      label.append(input, text('span', choice));
+      options.append(label);
+    });
+    const feedback = text('p', 'Choose one answer.', 'practice-feedback');
+    feedback.setAttribute('aria-live', 'polite');
+    fieldset.append(options, feedback);
+    article.append(fieldset);
+  }
+
+  const retry = document.createElement('button');
+  retry.type = 'button';
+  retry.className = 'lesson-link module-checkpoint-link';
+  retry.textContent = 'Try another shuffled checkpoint';
+  retry.addEventListener('click', () => openModuleAssessment(payload.module.id));
+  article.append(retry);
+  lessonView.replaceChildren(article);
+  lessonView.focus();
+  renderCatalog();
+}
+
+async function openModuleAssessment(moduleId) {
+  lessonView.replaceChildren(text('p', 'Loading module checkpoint…', 'status'));
+  try {
+    const seed = practiceSeed();
+    const response = await fetch(`/api/modules/${encodeURIComponent(moduleId)}/assessment?seed=${encodeURIComponent(seed)}`, { headers: { accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Module checkpoint request failed (${response.status})`);
+    renderModuleAssessment(await response.json());
+  } catch (error) {
+    const card = text('div', '', 'welcome-card error');
+    card.append(text('h2', 'Module checkpoint unavailable'));
+    card.append(text('p', error.message));
+    lessonView.replaceChildren(card);
+  }
 }
 
 function renderCompletionControl(article, lesson) {
