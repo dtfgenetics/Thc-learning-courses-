@@ -61,7 +61,7 @@ These outcomes map to the six controlled Course 1 competency areas: cultivation 
 7. **Integrated Course 1 practical**.
 8. **Course 1 summative final**.
 
-Six 14-item formative module-assessment banks are also authored and controlled in the curriculum package. They are intended as low-stakes retrieval/remediation checkpoints. Their dedicated learner-runtime launch flow is still being integrated; they are not required professional credential evidence.
+Six formative module assessments are authored and learner-accessible as low-stakes retrieval and remediation checkpoints. The current forms contain 14 items each, but the item inventory and future form depth remain expandable rather than capped at 14. They provide immediate explanatory feedback and are not professional credential evidence.
 
 ## Learning materials
 
@@ -72,7 +72,7 @@ The current Course 1 package includes:
 - six Field References for safety, biosecurity, controlled work, traceability, equipment, and records/handoff;
 - the Course 1 Student Workbook and reusable workbook templates;
 - low-stakes lesson practice;
-- authored module-assessment banks pending dedicated learner-runtime integration;
+- learner-accessible low-stakes module checkpoints backed by the controlled module-assessment banks;
 - public practical preparation materials and two candidate forms for calibration/pilot use;
 - learner remediation resources and instructor/assessor guidance; and
 - the public Course 1 final assessment.
@@ -87,7 +87,7 @@ Lesson practice is low stakes and designed for retrieval, immediate feedback and
 
 ### Module assessments
 
-Course 1 contains six 14-item formative module assessments, one per module. They are designed to provide broader retrieval practice across each module. The dedicated learner-runtime flow remains an implementation item; until that flow is complete, their existence in the curriculum package must not be presented as completed learner functionality.
+Course 1 contains six learner-accessible formative module assessments, one per module. Current forms contain 14 items, while the underlying item inventory and future form depth remain expandable. The learner runtime presents these as shuffled low-stakes checkpoints with immediate explanatory feedback, remediation guidance and retry support. Module results support learning and readiness for later course-level assessment; they do not independently count as professional credential evidence.
 
 ### Course final
 
@@ -117,7 +117,7 @@ Lesson percentage alone is not course completion. Course academic completion is 
 
 The current public Course 1 final is configured with no fixed attempt cap and no cooldown. A learner who does not meet the current academic threshold should use competency/objective feedback, aligned lessons, Field References, workbook practice and assigned remediation before beginning another attempt.
 
-The platform data model supports future `maxAttempts` and `cooldownHours` policy fields, but those controls must not be relied on until runtime enforcement is completed and tested.
+The platform now enforces configured `maxAttempts` and `cooldownHours` values and fails closed when required attempt history is unavailable. Course 1 itself remains intentionally unlimited/no-cooldown under its current configuration (`maxAttempts: null`, `cooldownHours: 0`). Any future restriction must be versioned, configured and validated rather than implied by documentation alone.
 
 A finalized practical is not silently edited back into an in-progress result. Practical reassessment begins explicitly, uses equivalent performance evidence and preserves prior finalized history.
 
