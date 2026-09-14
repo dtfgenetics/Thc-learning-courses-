@@ -91,7 +91,7 @@ const manifest = {
     curriculumRegistry: sha256(path.join(runtimeDir, 'registry/curriculum.json')),
     systemReadiness: sha256(path.join(runtimeDir, 'registry/system-readiness.json')),
     databaseSchema: sha256(path.join(runtimeDir, 'database/schema.sql')),
-    academyOpenApi: sha256(path.join(runtimeDir, 'openapi/academy-api.yaml')),
+    credentialVerifierOpenApi: sha256(path.join(runtimeDir, 'openapi/credential-verifier.yaml')),
     dependencyLock: sha256(path.join(runtimeDir, 'package-lock.json'))
   },
   boundaries: {
