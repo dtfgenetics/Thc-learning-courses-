@@ -12,12 +12,12 @@ const changed = [];
 function absolute(rel) { return path.join(root, rel); }
 function readJson(rel) { return JSON.parse(fs.readFileSync(absolute(rel), 'utf8')); }
 function writeJson(rel, value) {
-  const next = `${JSON.stringify(value, null, 2)}\n`;
-  const current = fs.readFileSync(absolute(rel), 'utf8');
-  if (current !== next) {
-    fs.writeFileSync(absolute(rel), next);
-    changed.push(rel);
-  }
+  const currentText = fs.readFileSync(absolute(rel), 'utf8');
+  let currentValue = null;
+  try { currentValue = JSON.parse(currentText); } catch { /* invalid JSON must be rewritten by an explicit semantic update */ }
+  if (currentValue !== null && JSON.stringify(currentValue) === JSON.stringify(value)) return;
+  fs.writeFileSync(absolute(rel), `${JSON.stringify(value, null, 2)}\n`);
+  changed.push(rel);
 }
 function ensurePublished(rel, expectedId) {
   const value = readJson(rel);
