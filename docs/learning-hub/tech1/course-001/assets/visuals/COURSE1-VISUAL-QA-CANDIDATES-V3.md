@@ -33,7 +33,20 @@ The corrected boards were split into individual full-size lesson PNG derivatives
 - `VIS-LH-TECH1-001-11-MOVEMENT-RECORD-v2.png`
 - `VIS-LH-TECH1-001-04-SDS-ANATOMY-v5.png`
 
-The controlled Drive boards above remain the persistent source references for these derived candidates.
+## Final corrected candidates 13-18
+
+These six individual PNG masters are now stored in the controlled Course 1 Drive folder and supersede the earlier v1 review drafts for QA purposes:
+
+| Asset | Drive file ID | QA intent |
+|---|---|---|
+| `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v2.png` | `17Q_OlobSmRD1hgtUjrw9EP5OlrmFh40Z` | emphasize visual/readiness checks, safe-use boundary, reporting and no unauthorized repair |
+| `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v2.png` | `1Imzn09iraxzJGVnPJbz9RYVMfOYw-HOb` | separate routine operator care from trained/authorized servicing and repair |
+| `VIS-LH-TECH1-001-15-FAULT-REPORT-v2.png` | `1qGhlX7nd4kdTUJsFdhwLkOvCzdqZa_k4` | report observed facts, permitted immediate action and escalation without unsupported root-cause claims |
+| `VIS-LH-TECH1-001-16-RECORD-CORRECTION-v2.png` | `1-j0pqBkm1oFug7rCqllRYXhLYYBGxK-E` | preserve original data and audit trail; correction method remains controlled by the approved record system/SOP |
+| `VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v2.png` | `18qN3fInmc51yWOcT7rm6tSVQbHn3x3iE` | communicate open conditions, ownership, equipment/plant status and unresolved risk |
+| `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v2.png` | `1zHhEVnYFi2hLighTfMc4miq2FYT3GmKU` | synthesize safety, SOP, biosecurity, traceability, equipment boundaries, escalation and truthful records without expanding Technician I authority |
+
+The controlled Drive boards above remain the persistent source references for earlier derived candidates; the six final candidates above are persistent individual masters.
 
 ## QA direction locked by this candidate set
 
@@ -45,6 +58,13 @@ The controlled Drive boards above remain the persistent source references for th
 6. **SDS** examples must be clearly training examples and must not represent fictional product data, QR codes, emergency contacts or chemical concentrations as real.
 7. **Authority/escalation** roles must be framed as examples controlled by the facility's actual chain of command.
 8. **Genealogy and movement records** must be presented as traceability models rather than one universal form or jurisdiction-specific compliance rule.
+9. **Equipment pre-use/operator care** must not imply that Technician I workers perform servicing, calibration, internal troubleshooting or repair unless trained and authorized.
+10. **Record correction** must preserve source data/auditability and follow the approved record system rather than teaching one universal paper correction method.
+11. **Integrated workflow** must reinforce Technician I boundaries rather than assigning management, compliance, maintenance or technical decision authority to the learner.
+
+## Production milestone
+
+The corrected visual-candidate library now covers the complete primary Course 1 visual set `01` through `18`, including corrected individual masters for the final six concepts. Remaining work is release QA and public integration, not visual concept production.
 
 ## Public deployment rule
 
