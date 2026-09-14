@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-001-16",
   "title": "Contemporaneous Records and Data Integrity",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "status": "published",
   "competencies": [
     "COMP-PRO-QA-001"
@@ -293,6 +293,15 @@
         "title": "Evidence boundary",
         "tone": "evidence",
         "body": "MHRA GxP data-integrity guidance is used as a transferable quality framework for trustworthy records. It is not presented as a claim that UK pharmaceutical GxP regulations govern U.S. cannabis cultivation.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Remediation cue",
+        "tone": "warning",
+        "body": "If a record hides when an entry was made, who made it, what object it belongs to, what unit or context applies, or what changed during correction, it is not yet reconstructable. Restore the missing context through the authorized record process; do not invent values, backdate entries, erase the original, or silently overwrite history.",
         "references": [
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]
