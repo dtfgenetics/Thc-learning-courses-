@@ -1,31 +1,58 @@
 {
   "courseId": "COURSE-LH-TECH1-001",
-  "version": 1,
-  "purpose": "Machine-readable map of lesson-level embedded formative practice to cumulative module assessments. The lesson object's assessment field remains reserved for a dedicated assessment object and may be null when the lesson uses embedded scenario/activity practice.",
-  "practicePolicy": {
-    "lessonPractice": "Embedded scenario, activity, comparison, document, steps and remediation blocks in the canonical lesson object provide low-stakes formative practice with immediate instructional feedback where applicable.",
-    "moduleAssessment": "Each three-lesson module culminates in its published 14-item formative module assessment.",
-    "courseAssessment": "The public Course 1 final and integrated practical remain separate summative/performance evidence and are not substituted by lesson practice.",
-    "noDuplicationRule": "Do not duplicate module-bank items into lesson files merely to populate the lesson assessment pointer. Create a dedicated lesson assessment object only when a distinct item bank provides additional instructional value."
+  "version": 2,
+  "purpose": "Machine-readable alignment of Course 1 lesson-level knowledge checks, cumulative module assessments, course final and practical evidence. This map documents the learner runtime that already serves objective-aligned formative items after each lesson while preserving the distinction between formative learning checks and summative or credential decisions.",
+  "architecture": {
+    "lessonKnowledgeCheck": {
+      "label": "Lesson Knowledge Check",
+      "runtimePattern": "/api/lessons/{lessonId}/practice?seed={seed}",
+      "purpose": "Low-stakes retrieval, application and scenario practice aligned to the lesson learning objective(s), with immediate explanatory feedback.",
+      "retryable": true,
+      "shufflePresentation": true,
+      "itemCountPolicy": "Expandable. Use enough reviewed items to test the lesson objective meaningfully; do not impose an artificial maximum item count.",
+      "recommendedActiveDepth": "Normally 5-10 reviewed items per lesson as the bank matures, with count driven by objective coverage rather than a fixed ceiling.",
+      "remediation": "Missed responses should point learners back to the relevant concept, worked example, visual, scenario or activity and then reassess the idea in a changed context.",
+      "credentialEffect": "None by itself. Lesson knowledge checks are formative and do not independently award a course or professional credential."
+    },
+    "moduleAssessment": {
+      "label": "Module Assessment",
+      "purpose": "Cumulative formative mastery check across the three lessons in each module.",
+      "currentFormSize": 14,
+      "formSizeIsCeiling": false,
+      "credentialEffect": "None by itself. Module results support learning feedback, remediation and readiness for later course-level assessment."
+    },
+    "courseFinal": {
+      "purpose": "Course-level summative knowledge assessment across Course 1 objectives.",
+      "separateFromCredentialExam": true
+    },
+    "integratedPractical": {
+      "purpose": "Performance evidence that the learner can integrate safety, controlled work, traceability, equipment boundaries and records in realistic workflow conditions."
+    },
+    "credentialBoundary": "Course completion and the Technician I professional credential remain separate decisions. Course 1 completion alone must not be represented as the full Technician I credential."
+  },
+  "canonicalLessonFieldPolicy": {
+    "assessmentField": "The lesson object's assessment field may remain null until a dedicated persistent lesson-assessment object is introduced. The runtime knowledge-check relationship is authoritative through this map plus the lesson practice endpoint and objective-aligned question bank.",
+    "noDuplicationRule": "Do not copy module-bank questions into lesson JSON merely to populate the assessment field. Maintain one governed question source and expose appropriate items through the lesson practice runtime.",
+    "futureMigration": "When dedicated lesson assessment objects are introduced, populate lesson.assessment with stable assessment IDs and keep this map as the cross-course audit/index layer."
   },
   "lessons": [
-    {"lessonId":"LESSON-LH-TECH1-001-01","module":1,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
-    {"lessonId":"LESSON-LH-TECH1-001-02","module":1,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
-    {"lessonId":"LESSON-LH-TECH1-001-03","module":1,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
-    {"lessonId":"LESSON-LH-TECH1-001-04","module":2,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
-    {"lessonId":"LESSON-LH-TECH1-001-05","module":2,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
-    {"lessonId":"LESSON-LH-TECH1-001-06","module":2,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
-    {"lessonId":"LESSON-LH-TECH1-001-07","module":3,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
-    {"lessonId":"LESSON-LH-TECH1-001-08","module":3,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
-    {"lessonId":"LESSON-LH-TECH1-001-09","module":3,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
-    {"lessonId":"LESSON-LH-TECH1-001-10","module":4,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
-    {"lessonId":"LESSON-LH-TECH1-001-11","module":4,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
-    {"lessonId":"LESSON-LH-TECH1-001-12","module":4,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
-    {"lessonId":"LESSON-LH-TECH1-001-13","module":5,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
-    {"lessonId":"LESSON-LH-TECH1-001-14","module":5,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
-    {"lessonId":"LESSON-LH-TECH1-001-15","module":5,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
-    {"lessonId":"LESSON-LH-TECH1-001-16","module":6,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"},
-    {"lessonId":"LESSON-LH-TECH1-001-17","module":6,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"},
-    {"lessonId":"LESSON-LH-TECH1-001-18","module":6,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"}
+    {"lessonId":"LESSON-LH-TECH1-001-01","module":1,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
+    {"lessonId":"LESSON-LH-TECH1-001-02","module":1,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
+    {"lessonId":"LESSON-LH-TECH1-001-03","module":1,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
+    {"lessonId":"LESSON-LH-TECH1-001-04","module":2,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
+    {"lessonId":"LESSON-LH-TECH1-001-05","module":2,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
+    {"lessonId":"LESSON-LH-TECH1-001-06","module":2,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
+    {"lessonId":"LESSON-LH-TECH1-001-07","module":3,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
+    {"lessonId":"LESSON-LH-TECH1-001-08","module":3,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
+    {"lessonId":"LESSON-LH-TECH1-001-09","module":3,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
+    {"lessonId":"LESSON-LH-TECH1-001-10","module":4,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
+    {"lessonId":"LESSON-LH-TECH1-001-11","module":4,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
+    {"lessonId":"LESSON-LH-TECH1-001-12","module":4,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
+    {"lessonId":"LESSON-LH-TECH1-001-13","module":5,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
+    {"lessonId":"LESSON-LH-TECH1-001-14","module":5,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
+    {"lessonId":"LESSON-LH-TECH1-001-15","module":5,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
+    {"lessonId":"LESSON-LH-TECH1-001-16","module":6,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"},
+    {"lessonId":"LESSON-LH-TECH1-001-17","module":6,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"},
+    {"lessonId":"LESSON-LH-TECH1-001-18","module":6,"knowledgeCheck":"runtime-objective-aligned","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"}
   ]
 }
