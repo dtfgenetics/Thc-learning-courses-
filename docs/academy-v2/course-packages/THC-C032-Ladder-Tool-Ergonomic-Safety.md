@@ -48,11 +48,11 @@ Learners will be able to:
 - hand/powered tool decisions: 6 items;
 - ergonomics/material handling: 7 items.
 
-Passing target: 80%. The final is a content assessment and does not replace the applied practical.
+Provisional development threshold: 80%. This value is an academic testing target only and has not been validated as a certification cut score. It remains subject to human item review, pilot evidence, and formal standard setting. The final is a content assessment and does not replace the applied practical.
 
 ## Applied practical
 
-`PRACTICAL-THC-C032-SAFETY-WALKTHROUGH` is a 100-point integrated safety walkthrough with ladder, tool, and ergonomic stations. Passing requires at least 80% and zero critical errors.
+`PRACTICAL-THC-C032-SAFETY-WALKTHROUGH` is a 100-point integrated safety walkthrough with ladder, tool, and ergonomic stations. Its current development standard is at least 80% and zero critical errors. That standard is provisional and is not authorized for certification use until assessor calibration, pilot evidence, accessibility review, and formal standard setting are complete.
 
 ## Learner worksheet
 

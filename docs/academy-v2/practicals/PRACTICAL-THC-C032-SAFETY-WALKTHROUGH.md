@@ -8,7 +8,8 @@
 **Job-task anchor:** `TASK-CULT-SAFETY-001`  
 **Purpose:** Summative applied performance assessment  
 **Score:** 100 points  
-**Pass:** 80% and zero critical errors
+**Provisional development standard:** 80% and zero critical errors  
+**Certification status:** Not authorized for certification use; assessor calibration, pilot evidence, accessibility review, and formal standard setting remain required
 
 ## Candidate scenario
 
