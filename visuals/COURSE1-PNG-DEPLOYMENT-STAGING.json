@@ -1,0 +1,75 @@
+{
+  "courseId": "COURSE-LH-TECH1-001",
+  "purpose": "Stage high-resolution PNG replacements without breaking the existing learner-facing SVG baseline.",
+  "publicAssetRoot": "apps/web/public/assets/course1/",
+  "currentPublicRegistry": "visuals/ASSET-REGISTRY.json",
+  "qaGate": "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
+  "deploymentWorkflow": ".github/workflows/course1-png-deploy.yml",
+  "latestDeploymentRun": 34873948740,
+  "transferState": "blocked-drive-auth",
+  "transferFinding": "GitHub Actions received an HTML Drive permission page instead of PNG bytes. No public assets were replaced and the SVG baseline remains intact.",
+  "rules": {
+    "replaceOnlyAfterBinaryExists": true,
+    "preserveCurrentSvgUntilVerified": true,
+    "requireMeaningfulTextAlternative": true,
+    "requireResponsiveReadability": true,
+    "requireCanonicalLessonMatch": true,
+    "requireTechnicianAuthorityBoundary": true
+  },
+  "candidates": [
+    {
+      "assetId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
+      "lessonId": "LESSON-LH-TECH1-001-13",
+      "candidateFile": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
+      "driveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv",
+      "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
+      "status": "staged-drive-master-transfer-blocked",
+      "releaseNote": "Use as an example readiness model controlled by manufacturer instructions, facility SOP and worker authorization."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
+      "lessonId": "LESSON-LH-TECH1-001-14",
+      "candidateFile": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
+      "driveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2",
+      "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
+      "status": "staged-drive-master-transfer-blocked",
+      "releaseNote": "Operator care must remain separated from repair, servicing, hazardous-energy work and technical maintenance unless trained and authorized."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
+      "lessonId": "LESSON-LH-TECH1-001-15",
+      "candidateFile": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
+      "driveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv",
+      "targetPublicPath": "/assets/course1/fault-report-v3.png",
+      "status": "staged-drive-master-transfer-blocked",
+      "releaseNote": "Keep observed facts separate from unsupported diagnosis and unauthorized repair."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
+      "lessonId": "LESSON-LH-TECH1-001-16",
+      "candidateFile": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
+      "driveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX",
+      "targetPublicPath": "/assets/course1/record-correction-v3.png",
+      "status": "staged-drive-master-transfer-blocked",
+      "releaseNote": "Example correction only; approved paper or digital record system and SOP control the correction method."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
+      "lessonId": "LESSON-LH-TECH1-001-17",
+      "candidateFile": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
+      "driveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY",
+      "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
+      "status": "staged-drive-master-transfer-blocked",
+      "releaseNote": "Use as a model; exact handoff fields and sign-off requirements remain facility-specific."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
+      "lessonId": "LESSON-LH-TECH1-001-18",
+      "candidateFile": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
+      "driveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey",
+      "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
+      "status": "staged-drive-master-transfer-blocked",
+      "releaseNote": "System-context tasks must not imply Technician I authority beyond assigned, trained and authorized work."
+    }
+  ]
+}
