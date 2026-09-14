@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import Ajv from 'ajv';
+import Ajv2020 from 'ajv/dist/2020.js';
 
 const schema = JSON.parse(fs.readFileSync('schemas/lesson.schema.json', 'utf8'));
-const ajv = new Ajv({ allErrors: true, strict: false });
+const ajv = new Ajv2020({ allErrors: true, strict: false });
 const validate = ajv.compile(schema);
 
 const extensibleLesson = {
