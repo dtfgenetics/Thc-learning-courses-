@@ -11,7 +11,7 @@ let currentAttempt = null;
 const COURSE_PRACTICAL_PUBLIC = {
   "id": "PRACTICAL-LH-TECH1-001-WORKFLOW",
   "title": "Course 1 Integrated Cultivation Workflow Practical",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "published",
   "deliveryModes": [
     "simulation",
@@ -162,7 +162,7 @@ function updateEvidenceRow(panel, evidence) {
       const detail = row.querySelector('.course-evidence-detail');
       const parts = [];
       if (written.bestScorePercent != null) parts.push(`${Number(written.bestScorePercent).toFixed(0)}% best`);
-      if (written.passingScorePercent != null) parts.push(`pass ${Number(written.passingScorePercent).toFixed(0)}%`);
+      if (written.passingScorePercent != null) parts.push(`current threshold ${Number(written.passingScorePercent).toFixed(0)}%`);
       if (Number(written.attemptCount ?? 0) > 0) parts.push(`${written.attemptCount} attempt${Number(written.attemptCount) === 1 ? '' : 's'}`);
       if (detail) detail.textContent = parts.join(' • ');
     }
@@ -275,7 +275,7 @@ function renderCoursePractical(evidenceResult) {
   panel.append(el('p', practical.overview, 'lede'));
 
   const meta = el('div', '', 'course-practical-meta');
-  meta.append(el('span', 'Published', 'course-practical-pill'));
+  meta.append(el('span', `Published v${practical.version}`, 'course-practical-pill'));
   for (const mode of practical.deliveryModes) meta.append(el('span', mode.replaceAll('-', ' '), 'course-practical-pill subtle'));
   panel.append(meta);
   panel.append(el('p', practical.academicUse, 'course-assessment-note'));
@@ -311,9 +311,10 @@ function renderCoursePractical(evidenceResult) {
     scoreGrid.append(card);
   }
   scoring.append(scoreGrid);
-  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% minimum score`, 'course-practical-pass');
+  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% provisional academic development threshold`, 'course-practical-pass');
   if (practical.passingStandard.noCriticalErrors) pass.append(document.createTextNode(' • no critical errors'));
   scoring.append(pass);
+  scoring.append(el('p', 'This threshold remains provisional pending pilot evidence and documented standard setting; it is not a Technician I credential cut score.', 'course-assessment-note'));
   panel.append(scoring);
 
   const critical = el('section', '', 'course-practical-section course-practical-critical');
@@ -492,7 +493,7 @@ function renderAssessment(payload) {
   const panel = el('article', '', 'portal-panel course-assessment-panel');
   panel.append(el('p', 'Course 1 summative assessment', 'eyebrow'));
   panel.append(el('h2', payload.assessment.title));
-  panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Passing score: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
+  panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%. This threshold is provisional pending pilot evidence and documented standard setting.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
   const toolbar = el('div', '', 'course-assessment-toolbar');
   toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('span', 'Responses saved.', 'course-assessment-save-status'));
@@ -542,11 +543,11 @@ async function submitAssessment(panel) {
 function renderAssessmentResult(result) {
   const panel = el('article', '', 'portal-panel course-assessment-result');
   panel.append(el('p', 'Course 1 final result', 'eyebrow'));
-  panel.append(el('h2', result.attempt.passed ? 'Course final passed' : 'Course final not passed yet'));
+  panel.append(el('h2', result.attempt.passed ? 'Course final passed under the current academic threshold' : 'Course final not passed under the current academic threshold'));
   const score = el('div', '', `course-assessment-score ${result.attempt.passed ? 'passed' : 'not-passed'}`);
-  score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Passing score ${Number(result.assessment.passingScorePercent).toFixed(0)}%`));
+  score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Current provisional threshold ${Number(result.assessment.passingScorePercent).toFixed(0)}%`));
   panel.append(score);
-  panel.append(el('p', 'This result is Course 1 knowledge evidence only. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
+  panel.append(el('p', 'This is Course 1 academic knowledge evidence under a provisional development threshold pending pilot evidence and documented standard setting. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
   const domains = el('section', '', 'course-assessment-domains');
   domains.append(el('h3', 'Domain results'));
   const list = el('div', '', 'course-assessment-domain-grid');
