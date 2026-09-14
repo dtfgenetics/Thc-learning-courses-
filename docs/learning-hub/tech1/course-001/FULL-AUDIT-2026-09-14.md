@@ -1,7 +1,7 @@
 # Course 1 Full Audit — 2026-09-14
 
 **Course:** `COURSE-LH-TECH1-001 — Safety, Responsible Practice & Cultivation Workflows`  
-**Audited baseline:** current `main` after PRs #324 and #327  
+**Audited baseline:** current `main` after PRs #324, #327 and #330  
 **Disposition:** **public academic package functional; certification validation intentionally not complete**
 
 This document supersedes the 2026-09-13 snapshot for current status. The older audit remains historical evidence of what was found and repaired.
@@ -38,8 +38,9 @@ Course 1 no longer has the core runtime and learner-flow failures found at the s
 
 ## Current machine status
 
-- Latest verified current-main predecessor `b90be5f2...`: `Curriculum quality audit` completed successfully.
+- Current-main quality checks have passed on the recent Course 1 repair and documentation heads before merge.
 - PR #327 exact head `3b1015fa...`: `Curriculum quality audit` and `Course 1 pilot-prep audit` both completed successfully before merge.
+- PR #330 exact head `dc172a38...`: `Curriculum quality audit` completed successfully before merge.
 - A green CI result is evidence of deterministic package integrity only. It is not certification approval.
 
 ## Remaining blockers
@@ -60,7 +61,7 @@ No synthetic review records should be created to close these gates.
 
 The public Course 1 question source files contain answer keys/rationales. The learner API correctly omits them, but API non-disclosure does not create item secrecy when source is public. Therefore the current Course 1 final is appropriate as an open academic/development assessment. If it is ever used as high-integrity summative evidence, protected item/key material must move to a non-public assessment store or protected delivery system.
 
-The separate Technician I credential bank remains outside the public repository and must stay separate.
+A broader credential-bank exposure was also confirmed during branch reconciliation: the public repository already contains `purpose: "credential"` development items such as `ITEM-TECH1-*`, and those source files contain authored `correct` keys/rationales. They must be treated as public development blueprints, not secure operational credential items. The Technician I credential program currently references `ASSESS-CRED-TECH1-001`, which is not present in `main`; however, the exposed credential-purpose items themselves must never be promoted to active high-integrity use. Production credential-form generation from this public repository is being fail-closed, and any future operational credential bank must live in an approved private assessment store/delivery service with newly secured item material.
 
 ### Practical equivalence — OPEN
 
@@ -76,7 +77,7 @@ DTFSeeds' general Teaching Healthy Cultivation learning system is public, but ex
 
 ### Repository lifecycle — OPEN
 
-`dev`, `staging`, and `main` are materially diverged. PR #326 is a deliberate reconciliation branch based on current `main`, but GitHub reports it non-mergeable into `dev`; conflicts must be resolved without force-pushing away unique history. Independent dev PRs #279, #274 and #273 must remain recoverable.
+`dev`, `staging`, and `main` are materially diverged. PR #326 is a deliberate reconciliation branch based on current `main`, but GitHub reports it non-mergeable into `dev`; conflicts must be resolved without force-pushing away unique history. Independent dev PRs #279, #274 and #273 must remain recoverable. The dev-side history also contains useful curriculum/runtime work mixed with older release-governance decisions that conflict with the current fail-closed certification model, so it must not be merged wholesale.
 
 ### Branch protection — OPEN
 
@@ -94,23 +95,24 @@ The repository currently has no rulesets and `main` is unprotected. Workflow YAM
 
 ### Validated Course 1 certification evidence
 
-**NOT YET VALIDATED.** Human review, calibration, rendered accessibility, pilot evidence, standard setting, high-integrity assessment handling where required, and final versioned approval remain open.
+**NOT YET VALIDATED.** Human review, calibration, rendered accessibility, pilot evidence, standard setting, protected operational assessment material, and final versioned approval remain open.
 
 ### THC Cultivation Technician I credential
 
-**SEPARATE PROGRAM DECISION.** Course 1 is one component of the Technician I pathway and does not itself issue that credential.
+**SEPARATE PROGRAM DECISION.** Course 1 is one component of the Technician I pathway and does not itself issue that credential. Public credential-purpose development items are not acceptable as the operational credential exam bank.
 
 ## Priority order from here
 
-1. Reconcile `dev`/`staging`/`main` without discarding unique work.
-2. Enable branch protection/rulesets and required checks (#328).
-3. Verify and expose the public Course 1 production route/navigation (#329).
-4. Complete visual QA/deployment for any remaining learner visuals that are approved for replacement.
-5. Run human technical/editorial/assessment review and record real review evidence.
-6. Complete rendered accessibility review.
-7. Calibrate practical v1.1.0 across qualified assessors and compare Forms A/B.
-8. Run controlled pilot and analyze knowledge/practical evidence.
-9. Conduct formal standard setting and update provisional thresholds only if the evidence supports a change.
-10. Create explicit certification-release approval only after all required validation evidence is accepted.
+1. Fail-close production credential-form generation from the public item repository and move future operational credential material to a private assessment store.
+2. Reconcile `dev`/`staging`/`main` without discarding unique work or reopening obsolete release-governance behavior.
+3. Enable branch protection/rulesets and required checks (#328).
+4. Verify and expose the public Course 1 production route/navigation (#329).
+5. Complete visual QA/deployment for any remaining learner visuals that are approved for replacement.
+6. Run human technical/editorial/assessment review and record real review evidence.
+7. Complete rendered accessibility review.
+8. Calibrate practical v1.1.0 across qualified assessors and compare Forms A/B.
+9. Run controlled pilot and analyze knowledge/practical evidence.
+10. Conduct formal standard setting and update provisional thresholds only if the evidence supports a change.
+11. Create explicit certification-release approval only after all required validation evidence is accepted.
 
 This priority list is a risk sequence, not a content ceiling. The course remains editable and extensible throughout validation.
