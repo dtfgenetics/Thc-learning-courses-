@@ -10,57 +10,46 @@ Folder ID: `1cRDJn8stRWOKkcmsbjD12qjvt5g031oN`
 
 ## Current produced drafts
 
-| Asset ID | File | Drive file ID | Lesson | Production state |
-|---|---|---|---|---|
-| `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v1.png` | `186v7si3R8PtBr6CRyPl0DEgcjSsCXwb0` | Lesson 1.1 | draft produced; QA required |
-| `VIS-LH-TECH1-001-01-HAZARD-SCAN` | `VIS-LH-TECH1-001-01-HAZARD-SCAN-v2.png` | `1PCXp2mPmEDjdpX3WNqxGsm0yXa6kBlle` | Lesson 1.1 | alternate draft; QA required |
-| `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS` | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v1.png` | `1hVqPMcTdmk-Da0x-Wm_vCC92DaAie3ji` | Lesson 1.1 | draft produced; QA required |
-| `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS` | `VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v2.png` | `129VLviv9YGuY2YZ_6JDBbRqw5LO4gmzf` | Lesson 1.1 | alternate draft; QA required |
-| `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v1.png` | `1ISNtmRWV_-8m7WJWLwUeTBhhUS7CLoah` | Lesson 1.2 | draft produced; QA required |
-| `VIS-LH-TECH1-001-03-PPE-TASK` | `VIS-LH-TECH1-001-03-PPE-TASK-v2.png` | `1buuiraoXw7tAcIM3VLzBDvgEVTXFWEWF` | Lesson 1.2 | alternate draft; QA required |
-| `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v1.png` | `1BjmEd9Iayt7RaZpSedHYpCdYxHmsMRJ3` | Lesson 1.2 | draft produced; QA required |
-| `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v2.png` | `1_B6wDEDncxScM7EYMII0_1qo67M29XVL` | Lesson 1.2 | alternate draft; QA required |
-| `VIS-LH-TECH1-001-04-SDS-ANATOMY` | `VIS-LH-TECH1-001-04-SDS-ANATOMY-v3.png` | `1YRcBp_sqp6V3J0PGHeI1Wz-xTjZWdw42` | Lesson 1.2 | alternate draft; QA required |
-| `VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES` | `VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES-v1.png` | `1Avc5t_cgqmJPMQ_BK9nlj7AXEIvpoTAu` | Lesson 2.1 | draft produced; QA required |
-| `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW` | `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-v1.png` | `1OzXSIZ_aOIGFBBmCeYa8NOKQcO3dKAAY` | Lesson 2.1 | individual draft; QA required |
-| `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE` | `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE-v1.png` | `1T7gKEaK-qoITKdONkBjM5esnpBOXlxCx` | Lesson 2.2 | individual draft; QA required |
-| `VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION` | `VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION-v1.png` | `1iR_FpEphYPXZaGTcrZqevidKiUTe_TSK` | Lesson 3.2 | individual draft; QA required |
-| `VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT` | `VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT-v1.png` | `17WzIksjZx4_DvTgxpb99xlPc00gTSu3B` | Lesson 3.1 | individual draft; QA required |
-| `VIS-LH-TECH1-001-10-GENEALOGY` | `VIS-LH-TECH1-001-10-GENEALOGY-v1.png` | `1SH8COg-YC7-_nZcwdmTFAy88AcnwfRl7` | Lesson 4.1 | individual draft; QA required |
-| `VIS-LH-TECH1-001-11-MOVEMENT-RECORD` | `VIS-LH-TECH1-001-11-MOVEMENT-RECORD-v1.png` | `1Z9pXFzOTypX9i2WKBTjONidquLh-WxMf` | Lesson 4.2 | individual draft; QA required |
-| `VIS-LH-TECH1-001-12-RECONCILIATION` | `VIS-LH-TECH1-001-12-RECONCILIATION-v1.png` | `1qbxFeb6uHkrUva-_SqdPf4iCwDRa_yCZ` | Lesson 4.3 | individual draft; QA required |
-| `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE` | `VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v1.png` | `1EEC7z2w7Cv5oosuUc8I8Gjv0w_H51kME` | Lesson 5.1 | individual draft; QA required |
-| `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE` | `VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v1.png` | `1z8j7WGwzngPFECyk4Vu3Yt5xw_-XN8Pe` | Lesson 5.2 | individual draft; QA required |
-| `VIS-LH-TECH1-001-15-FAULT-REPORT` | `VIS-LH-TECH1-001-15-FAULT-REPORT-v1.png` | `1GCqifhuGnTTk4Pk8QX6aYZUpyI92ybNl` | Lesson 5.3 | individual draft; QA required |
-| `VIS-LH-TECH1-001-16-RECORD-CORRECTION` | `VIS-LH-TECH1-001-16-RECORD-CORRECTION-v1.png` | `17U3cgAalW953yfUxSLkxxGngfglpnii6` | Lesson 6.1 | individual draft; QA required |
-| `VIS-LH-TECH1-001-17-SHIFT-HANDOFF` | `VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v1.png` | `1mCVdqPBmjaX5Qd39o3Y0qK_t0aCIInKE` | Lesson 6.2 | individual draft; QA required |
-| `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW` | `VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v1.png` | `1FJ-rLbZJRMGx6Ng0KmPfGvP7lqQKxjOx` | Lesson 6.3 | individual draft; QA required |
+The primary Course 1 visual-production set `VIS-LH-TECH1-001-01` through `VIS-LH-TECH1-001-18` has at least one produced PNG draft in controlled Drive storage. Duplicate review drafts exist for hazard scan, hierarchy of controls, PPE and SDS anatomy.
 
-## Additional reference boards
+## QA gate
 
-| Reference file | Drive file ID | Coverage |
-|---|---|---|
-| `course1-module1-2-visual-reference-board-v4.png` | `1yKI6kY3EuDvINylo139TFxokslKTFeSZ` | hazard recognition, hierarchy of controls, PPE, SDS, contamination routes, clean-to-dirty movement, sanitation sequence and authority/escalation |
-| `course1-lessons-06-09-reference-board-v1.png` | `1Yrwl38dyiY0_y6YbzmCjuES7NRREqU6a` | clean-to-dirty movement, sanitation sequence, authority/escalation and controlled-document anatomy |
-| `course1-lessons-06-09-reference-board-v2.png` | `1lZB65QXTPVU6lp5V2XrK2gdcMBUpeGch` | alternate composition for clean-to-dirty movement, sanitation sequence, authority/escalation and controlled-document anatomy |
-| `course1-lessons-04-07-reference-board-v3.png` | `1z-Nd_vSOFf1YiLU8MQJtHwy0zZmgEFb7` | SDS anatomy, contamination routes, clean-to-dirty movement and sanitation sequence |
+Detailed QA findings are controlled in:
 
-## Production milestone
+`docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md`
 
-The primary Course 1 visual-production set `VIS-LH-TECH1-001-01` through `VIS-LH-TECH1-001-18` now has at least one produced PNG draft in controlled Drive storage. Visual production is no longer the blocking step. The next blocking step is QA and learner-facing integration.
+No PNG production draft should replace an existing learner-facing SVG solely because it is visually richer. The existing public SVG remains the baseline until the replacement passes factual, copy, authorization-boundary, accessibility and responsive QA.
+
+### Blocked from learner publication
+
+The first content QA pass identified three material conflicts that require rebuild before public use:
+
+1. `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW` — current draft presents clean-to-dirty / no-backtracking as a universal rule; canonical Lesson 2.1 requires the facility's actual zone map, current risk status and controlled transition procedure.
+2. `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE` — current draft compresses sanitation into a universal rinse/dry sequence; canonical Lesson 2.2 requires exact approved product/preparation, label/SOP-defined contact conditions, finish steps only where required, inspection, recontamination protection and truthful documentation.
+3. `VIS-LH-TECH1-001-12-RECONCILIATION` — current draft uses language that can imply discrepancies should be 'fixed' or forced to balance; canonical Course 1 requires preservation of the discrepancy, evidence verification, factual documentation and escalation without inventing a balancing transaction.
+
+### Preferred duplicate review candidates
+
+- `01-HAZARD-SCAN`: `v2`
+- `02-HIERARCHY-CONTROLS`: `v2` after authorization-language correction
+- `03-PPE-TASK`: `v2` after replacing universal task-PPE claims with the canonical task + hazard assessment + label/SDS + site-procedure decision model
+- `04-SDS-ANATOMY`: `v3` after clearly marking fictional/example data and reconciling all text to canonical instruction
+
+Alternate versions remain controlled Drive references and are not public candidates unless they resolve a documented QA problem better than the preferred review candidate.
 
 ## Live/public mapping
 
-The learner-facing repository already serves canonical Course 1 SVG assets from `apps/web/public/assets/course1/`. New PNG masters remain review candidates until factual, copy, accessibility and responsive QA is complete. Approved replacements should be published under that same public asset directory, registered in `visuals/ASSET-REGISTRY.json`, and referenced by the canonical lesson JSON.
+The learner-facing repository currently serves canonical Course 1 SVG assets from `apps/web/public/assets/course1/`. Approved PNG replacements should be published under that same public asset directory, registered in `visuals/ASSET-REGISTRY.json`, and referenced by the canonical lesson JSON only after QA passes.
 
-## Next work order
+## Current work order
 
-1. Run factual/content QA across all 18 primary visual concepts against canonical lesson text and authoritative sources.
-2. Select the preferred version for concepts with duplicate drafts and mark alternates accordingly.
-3. Create corrected learner-facing versions where generated text, numbering, facility-specific statements or accessibility issues exist.
-4. Add approved assets to `apps/web/public/assets/course1/`.
-5. Update `visuals/ASSET-REGISTRY.json` with learner paths, source paths, linked lessons, objectives, alt text and references.
-6. Update canonical lesson JSON image blocks to point at the approved assets.
-7. Verify no broken paths, responsive rendering, readable mobile presentation and meaningful text alternatives.
+1. Rebuild the three blocked assets (`06`, `07`, `12`) using canonical lesson language.
+2. Correct preferred duplicate candidates (`01`–`04`) and mark alternates as non-public references.
+3. QA `05`, `08`–`11`, `13`–`18` against canonical lesson text and source boundaries.
+4. Write final captions and learner text alternatives outside the image.
+5. Publish only approved assets to `apps/web/public/assets/course1/`.
+6. Update `visuals/ASSET-REGISTRY.json` with public path, lesson, objective, references, version and accessibility metadata.
+7. Update canonical lesson JSON image blocks.
+8. Verify public raw URLs, no broken paths, mobile readability and responsive rendering.
 
-Generated-image text is not authoritative instructional copy. Before learner publication, every graphic must be reconciled against canonical lesson text, authoritative sources, Course 1 authorization boundaries, and WCAG-oriented text alternatives.
+Generated-image text is not authoritative instructional copy. Before learner publication, every graphic must be reconciled against canonical lesson text, authoritative sources, Course 1 authorization boundaries and WCAG-oriented text alternatives.
