@@ -22,16 +22,26 @@ The course does **not** grant pesticide-applicator status, respirator clearance,
 
 By the end of the course, the learner should be able to demonstrate the 12 controlled objectives `LO-LH-TECH1-001-01` through `LO-LH-TECH1-001-12` and the six primary competencies mapped in the canonical course object.
 
-## Production sequence
+## Current learner sequence
+
+The current package uses a low-stakes checkpoint after each module. These checkpoints support retrieval, feedback and remediation; they are not the secure Technician I credential examination.
 
 1. Module 1 — Applied Cultivation Workplace Safety
-2. Module 2 — Sanitation, Biosecurity & Controlled Movement
-3. Module 3 — SOPs, Work Orders, Authority & Escalation
-4. Module 4 — Traceability, Material Movement, Inventory & Waste
-5. Module 5 — Equipment Readiness, Operator Care & Fault Reporting
-6. Module 6 — Records, Shift Handoff & Integrated Workflow
-7. Integrated course practical
-8. Course-level summative assessment
+2. Module 1 formative checkpoint
+3. Module 2 — Sanitation, Biosecurity & Controlled Movement
+4. Module 2 formative checkpoint
+5. Module 3 — SOPs, Work Orders, Authority & Escalation
+6. Module 3 formative checkpoint
+7. Module 4 — Traceability, Material Movement, Inventory & Waste
+8. Module 4 formative checkpoint
+9. Module 5 — Equipment Readiness, Operator Care & Fault Reporting
+10. Module 5 formative checkpoint
+11. Module 6 — Records, Shift Handoff & Integrated Workflow
+12. Module 6 formative checkpoint
+13. Integrated course practical
+14. Course-level summative assessment
+
+This sequence describes the current package; it is not a permanent limit on future modules, checkpoints, activities or evidence stages.
 
 ## Current instructional depth standard
 
