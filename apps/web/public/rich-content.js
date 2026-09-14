@@ -52,6 +52,7 @@ function renderCallout(parent, block) {
 function renderImageBlock(parent, block) {
   const section = document.createElement('section');
   section.className = 'lesson-section rich-block rich-image-block';
+  if (block.title) section.append(text('h3', block.title));
   appendImage(section, block);
   appendReferences(section, block.references);
   parent.append(section);
@@ -206,6 +207,18 @@ function renderResource(parent, block) {
   parent.append(section);
 }
 
+function renderExtension(parent, block) {
+  const section = document.createElement('section');
+  section.className = 'lesson-section rich-block rich-extension';
+  section.dataset.extensionNamespace = block.namespace;
+  if (block.renderer) section.dataset.extensionRenderer = block.renderer;
+  section.append(text('p', 'Extended learning block', 'rich-kicker'));
+  if (block.title) section.append(text('h3', block.title));
+  section.append(text('p', block.body));
+  appendReferences(section, block.references);
+  parent.append(section);
+}
+
 function renderDivider(parent) {
   const divider = document.createElement('hr');
   divider.className = 'rich-divider';
@@ -226,6 +239,7 @@ export function renderRichBlocks(parent, blocks) {
       case 'activity': renderActivity(parent, block); break;
       case 'document': renderDocument(parent, block); break;
       case 'resource': renderResource(parent, block); break;
+      case 'extension': renderExtension(parent, block); break;
       case 'divider': renderDivider(parent); break;
       default: {
         const warning = text('p', `Unsupported lesson block: ${block.type ?? 'unknown'}`, 'rich-block-error');

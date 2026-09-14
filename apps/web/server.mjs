@@ -160,7 +160,7 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts, publicReleaseIds)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
     id: course.id, title: course.title, version: course.version, status: publicStatus(course, publicReleaseIds), credentialBearing: Boolean(course.credentialBearing), description: course.description ?? course.summary ?? '',
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
-      id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds),
+      id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds), assessment: module.assessment ?? null,
       lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts, publicReleaseIds)).map((lesson) => ({ id: lesson.id, title: lesson.title, status: publicStatus(lesson, publicReleaseIds), estimatedMinutes: lesson.estimatedMinutes ?? null }))
     }))
   }));
@@ -230,6 +230,40 @@ export function loadLessonPracticeItems(id, { previewDrafts = true, seed = 'prac
     .map((item) => presentPracticeItem(item, seed));
 }
 
+export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-checkpoint' } = {}) {
+  if (!/^MOD-[A-Z0-9-]+$/.test(id)) return null;
+  const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
+  const assessments = new Map(readDirJson('content/assessments').map((item) => [item.id, item]));
+  const publicReleaseIds = buildPublicReleaseIds({ modules, assessments });
+  const module = modules.get(id);
+  if (!module || !isVisible(module, previewDrafts, publicReleaseIds) || !module.assessment) return null;
+  const assessment = assessments.get(module.assessment);
+  if (!assessment || assessment.purpose !== 'formative' || !isVisible(assessment, previewDrafts, publicReleaseIds)) return null;
+  const questions = new Map(readDirJson('content/questions').map((item) => [item.id, item]));
+  const items = [];
+  for (const itemId of assessment.items ?? []) {
+    const item = questions.get(itemId);
+    if (!item || item.purpose !== 'formative' || !isVisible(item, previewDrafts, publicReleaseIds)) return null;
+    if (!Array.isArray(item.choices) || item.choices.length < 2 || !Number.isInteger(item.correct) || item.correct < 0 || item.correct >= item.choices.length) return null;
+    items.push(presentPracticeItem(item, seed));
+  }
+  return {
+    module: { id: module.id, title: module.title, version: module.version, status: publicStatus(module, publicReleaseIds) },
+    assessment: {
+      id: assessment.id,
+      title: assessment.title,
+      version: assessment.version,
+      status: publicStatus(assessment, publicReleaseIds),
+      purpose: assessment.purpose,
+      passingScorePercent: Number(assessment.passingScorePercent ?? 0),
+      feedbackMode: assessment.feedbackMode ?? 'immediate',
+      totalItems: items.length
+    },
+    presentationSeed: seed,
+    items
+  };
+}
+
 function securityHeaders(res, contentType) {
   res.setHeader('content-type', contentType);
   res.setHeader('x-content-type-options', 'nosniff');
@@ -265,6 +299,12 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     if (req.method === 'GET' && practiceMatch) {
       const presentationSeed = normalizePracticeSeed(url.searchParams.get('seed'));
       return json(res, 200, { lessonId: practiceMatch[1], presentationSeed, items: loadLessonPracticeItems(practiceMatch[1], { previewDrafts, seed: presentationSeed }) });
+    }
+    const moduleAssessmentMatch = url.pathname.match(/^\/api\/modules\/(MOD-[A-Z0-9-]+)\/assessment$/);
+    if (req.method === 'GET' && moduleAssessmentMatch) {
+      const presentationSeed = normalizePracticeSeed(url.searchParams.get('seed'));
+      const payload = loadModuleAssessment(moduleAssessmentMatch[1], { previewDrafts, seed: presentationSeed });
+      return payload ? json(res, 200, payload) : json(res, 404, { error: 'module-assessment-not-found' });
     }
     if (api && (url.pathname.startsWith('/api/v1/') || url.pathname === '/readyz')) return api(req, res);
 

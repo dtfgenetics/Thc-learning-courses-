@@ -32,7 +32,7 @@ const credentials = readDirJson('content/credentials').map(({ data }) => data);
 const observations = [];
 const course = requestedCourseId ? courses.get(requestedCourseId) : null;
 
-if (!requestedCourseId) observations.push('No course scope supplied; pass --course=COURSE-... for a focused audit.');
+if (!requestedCourseId) observations.push('No course scope supplied; pass --course=COURSE-... for a focused release gate.');
 if (requestedCourseId && !course) observations.push(`Course ${requestedCourseId} was not found.`);
 
 let moduleCount = 0;
@@ -45,6 +45,9 @@ if (course) {
   const seenAssessments = new Set();
   const seenItems = new Set();
 
+  if (!Array.isArray(course.modules) || course.modules.length === 0) observations.push(`${course.id}: no modules are mapped.`);
+  if (!course.finalAssessment) observations.push(`${course.id}: final assessment is not configured.`);
+
   for (const moduleId of course.modules ?? []) {
     const module = modules.get(moduleId);
     if (!module) {
@@ -53,6 +56,7 @@ if (course) {
     }
     moduleCount += 1;
 
+    if (!Array.isArray(module.lessons) || module.lessons.length === 0) observations.push(`${module.id}: no lessons are mapped.`);
     for (const lessonId of module.lessons ?? []) {
       if (seenLessons.has(lessonId)) continue;
       seenLessons.add(lessonId);
@@ -67,6 +71,7 @@ if (course) {
         observations.push(`${module.id}: assessment ${module.assessment} does not exist.`);
       } else {
         assessmentCount += 1;
+        if (!Array.isArray(assessment.items) || assessment.items.length === 0) observations.push(`${assessment.id}: no items are mapped.`);
         for (const itemId of assessment.items ?? []) {
           if (seenItems.has(itemId)) continue;
           seenItems.add(itemId);
@@ -82,6 +87,7 @@ if (course) {
     if (!assessment) observations.push(`${course.id}: final assessment ${course.finalAssessment} does not exist.`);
     else if (!seenAssessments.has(assessment.id)) {
       assessmentCount += 1;
+      if (!Array.isArray(assessment.items) || assessment.items.length === 0) observations.push(`${assessment.id}: no items are mapped.`);
       for (const itemId of assessment.items ?? []) {
         if (seenItems.has(itemId)) continue;
         seenItems.add(itemId);
@@ -93,10 +99,12 @@ if (course) {
 }
 
 const mappedCredentials = course ? credentials.filter((credential) => credential.course === course.id).map((credential) => credential.id) : [];
+const ready = Boolean(course) && observations.length === 0;
 
 console.log(JSON.stringify({
-  mode: 'informational-release-audit',
-  blocking: false,
+  mode: 'release-readiness-gate',
+  blocking: true,
+  ready,
   courseId: course?.id ?? requestedCourseId,
   courseVersion: course?.version ?? null,
   modules: moduleCount,
@@ -106,3 +114,10 @@ console.log(JSON.stringify({
   mappedCredentials,
   observations
 }, null, 2));
+
+if (!ready) {
+  console.error('Release readiness gate failed: structural release blockers remain.');
+  process.exit(1);
+}
+
+console.log('Release readiness structural gate passed.');

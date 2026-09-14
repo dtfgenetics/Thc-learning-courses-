@@ -12,7 +12,21 @@
     "credentialBearing": {"type": "boolean"},
     "modules": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^MOD-[A-Z0-9-]+$"}},
     "competencies": {"type": "array", "items": {"type": "string", "pattern": "^COMP-[A-Z0-9-]+$"}},
-    "finalAssessment": {"type": ["string", "null"]}
+    "finalAssessment": {"type": ["string", "null"]},
+    "description": {"type": "string", "minLength": 1},
+    "level": {"type": "string", "minLength": 1},
+    "intendedAudience": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "prerequisites": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "deliveryModes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "estimatedMinutes": {"type": "integer", "minimum": 1},
+    "learningOutcomes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "evidencePolicy": {"type": "string", "minLength": 1},
+    "assessmentPolicy": {"type": "string", "minLength": 1},
+    "extensions": {
+      "type": "object",
+      "description": "Open namespaced metadata for future academic, delivery, localization, research, visual, employer, or platform needs without changing the core schema for every new field.",
+      "additionalProperties": true
+    }
   },
   "additionalProperties": false
 }

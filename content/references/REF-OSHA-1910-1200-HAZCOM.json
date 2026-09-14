@@ -1,1 +1,31 @@
-{"id":"REF-OSHA-1910-1200-HAZCOM","type":"government","title":"29 CFR 1910.1200 — Hazard Communication","publisher":"Occupational Safety and Health Administration","journal":null,"authors":[],"year":null,"doi":null,"pmcid":null,"pmid":null,"url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1200","status":"reviewed-source","evidenceLevel":"standards-government","supportsDomains":["safety-responsible-practice"],"notes":"Authoritative U.S. federal general-industry Hazard Communication standard. Applicability and employer obligations must be interpreted in the actual workplace/jurisdiction."}
+{
+  "id": "REF-OSHA-1910-1200-HAZCOM",
+  "type": "government",
+  "title": "29 CFR 1910.1200 — Hazard Communication",
+  "publisher": "Occupational Safety and Health Administration",
+  "journal": null,
+  "authors": [],
+  "year": null,
+  "doi": null,
+  "pmcid": null,
+  "pmid": null,
+  "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1200",
+  "status": "reviewed-source",
+  "evidenceLevel": "standards-government",
+  "supportsDomains": [
+    "safety-responsible-practice"
+  ],
+  "notes": "Authoritative U.S. federal general-industry Hazard Communication standard. Applicability and employer obligations must be interpreted in the actual workplace/jurisdiction. Course 1 teaches durable worker-level HazCom behaviors while facility training must track the active OSHA transition schedule.",
+  "lastVerifiedAt": "2026-09-13T21:36:00Z",
+  "extensions": {
+    "hazcomTransition": {
+      "finalRuleDate": "2024-05-20",
+      "extensionNoticeDate": "2026-01-15",
+      "substanceManufacturerImporterDistributorDeadline": "2026-05-19",
+      "substanceEmployerUpdateDeadline": "2026-11-20",
+      "mixtureManufacturerImporterDistributorDeadline": "2027-11-19",
+      "mixtureEmployerUpdateDeadline": "2028-05-19",
+      "courseUse": "Use current workplace labels, SDS information, employer HazCom program, task procedure and required PPE; escalate missing or conflicting information. Transition dates are maintenance metadata, not learner memorization targets."
+    }
+  }
+}

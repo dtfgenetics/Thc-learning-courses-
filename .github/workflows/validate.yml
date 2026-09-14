@@ -7,7 +7,7 @@ on:
     branches: [dev, staging, main]
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: curriculum-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -30,7 +30,6 @@ jobs:
       - name: Normalize Course 1 public academic publication
         run: npm run course1:publication:sync
       - name: Build expected curriculum registry
-        continue-on-error: true
         run: npm run registry:build
       - name: Upload generated curriculum registry when available
         if: always()
@@ -40,22 +39,16 @@ jobs:
           name: generated-curriculum-registry
           path: registry/curriculum.json
           if-no-files-found: ignore
-      - name: Synchronize public Course 1 and generated registry on same-repo PRs
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-        continue-on-error: true
+      - name: Verify generated publication and registry are committed
         run: |
           if ! git diff --quiet; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "Sync public Course 1 publication and generated registry" || true
-            git push origin HEAD:${{ github.head_ref }} || true
+            echo "::error::Generated Course 1 publication or curriculum registry differs from the committed source. Run the canonical sync/build commands and commit the result."
+            git --no-pager diff -- . ':(exclude)node_modules'
+            exit 1
           fi
       - name: Audit Course 1 public academic publication
         run: npm run course1:publication:audit
       - name: Audit Learning Hub assessment item quality
-        continue-on-error: true
         run: node scripts/check-learning-hub-item-quality.mjs
       - name: Run complete curriculum and credential audit suite
-        continue-on-error: true
         run: npm test

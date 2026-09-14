@@ -135,6 +135,16 @@ for (const [key, group] of [...groups.entries()].sort(([a], [b]) => a.localeComp
     if (count < 3) warnings.push(`${label}: objective ${objective} has only ${count} bank items`);
   }
 
+  const keyedItemCount = [...sourceKeyPositions.values()].reduce((sum, count) => sum + count, 0);
+  if (keyedItemCount >= 20 && sourceKeyPositions.size > 1) {
+    const sortedPositions = [...sourceKeyPositions.entries()].sort(([a], [b]) => a - b);
+    const [maxPosition, maxCount] = sortedPositions.reduce((max, entry) => entry[1] > max[1] ? entry : max, sortedPositions[0]);
+    const maxShare = maxCount / keyedItemCount;
+    if (maxShare > 0.4) {
+      warnings.push(`${label}: authored keyed-answer position ${maxPosition} contains ${maxCount}/${keyedItemCount} items (${(maxShare * 100).toFixed(1)}%). Runtime choice shuffling reduces learner cueing, but the source bank should be rebalanced/reviewed before validation.`);
+    }
+  }
+
   const formatCount = (purpose) => group.questions.filter((item) => item.purpose === purpose).length;
   const baseline = minimumBaselines.get(key);
   if (baseline) {

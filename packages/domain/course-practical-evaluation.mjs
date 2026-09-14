@@ -6,26 +6,48 @@ function cleanText(value, maxLength) {
 const EVIDENCE_OUTPUT_STATUSES = new Set(['not-reviewed', 'received', 'verified', 'needs-revision']);
 const FOLLOW_UP_STATUSES = new Set(['none', 'remediation-assigned', 'remediation-in-progress', 'ready-for-reassessment', 'reassessment-scheduled', 'closed']);
 
+function publicCriteria(domain) {
+  return (domain?.criteria ?? []).map((criterion) => ({
+    id: criterion.id,
+    title: criterion.title,
+    points: Number(criterion.points),
+    fullCredit: criterion.fullCredit,
+    partialCredit: criterion.partialCredit,
+    noCredit: criterion.noCredit
+  }));
+}
+
 function normalizeDomainScores(practical, rows = [], { requireComplete = false } = {}) {
   if (!Array.isArray(rows)) throw new Error('domainScores must be an array');
   const domains = practical?.scoring?.domains ?? [];
-  const limits = new Map(domains.map((domain) => [domain.name, Number(domain.points)]));
+  const definitions = new Map(domains.map((domain) => [domain.name, domain]));
   const seen = new Set();
   const normalized = [];
+  const evidenceRequired = practical?.extensions?.scoringAnchorPolicy?.requiresObservedEvidence === true;
 
   for (const row of rows) {
     const name = String(row?.name ?? '').trim();
-    if (!limits.has(name)) throw new Error(`unknown practical scoring domain: ${name}`);
+    const domain = definitions.get(name);
+    if (!domain) throw new Error(`unknown practical scoring domain: ${name}`);
     if (seen.has(name)) throw new Error(`duplicate practical scoring domain: ${name}`);
     const score = Number(row?.score);
-    const maximum = limits.get(name);
-    if (!Number.isFinite(score) || score < 0 || score > maximum) throw new Error(`invalid score for ${name}`);
+    const maximum = Number(domain.points);
+    if (!Number.isFinite(score) || score < 0 || score > maximum || Math.round(score * 2) !== score * 2) throw new Error(`invalid score for ${name}`);
+    const observedEvidence = cleanText(row?.observedEvidence, 1500);
+    const promptNote = cleanText(row?.promptNote, 750);
+    if (requireComplete && evidenceRequired && !observedEvidence) throw new Error(`observed evidence is required for finalized domain: ${name}`);
     seen.add(name);
-    normalized.push({ name, score, points: maximum });
+    normalized.push({ name, score, points: maximum, observedEvidence, promptNote });
   }
 
   if (requireComplete && seen.size !== domains.length) throw new Error('all practical scoring domains are required for finalization');
-  return domains.map((domain) => normalized.find((row) => row.name === domain.name) ?? { name: domain.name, score: null, points: Number(domain.points) });
+  return domains.map((domain) => normalized.find((row) => row.name === domain.name) ?? {
+    name: domain.name,
+    score: null,
+    points: Number(domain.points),
+    observedEvidence: '',
+    promptNote: ''
+  });
 }
 
 function normalizeCriticalErrors(practical, indexes = []) {
@@ -119,8 +141,13 @@ export function practicalEvaluatorView(practical, existing = null) {
       followUpStatuses: [...FOLLOW_UP_STATUSES],
       scoring: {
         totalPoints: Number(practical.scoring?.totalPoints ?? 0),
-        domains: (practical.scoring?.domains ?? []).map((domain) => ({ name: domain.name, points: Number(domain.points) }))
+        domains: (practical.scoring?.domains ?? []).map((domain) => ({
+          name: domain.name,
+          points: Number(domain.points),
+          criteria: publicCriteria(domain)
+        }))
       },
+      scoringAnchorPolicy: practical.extensions?.scoringAnchorPolicy ? structuredClone(practical.extensions.scoringAnchorPolicy) : null,
       passingStandard: {
         minimumPercent: Number(practical.passingStandard?.minimumPercent ?? 0),
         noCriticalErrors: practical.passingStandard?.noCriticalErrors === true

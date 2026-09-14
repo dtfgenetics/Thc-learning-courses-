@@ -143,6 +143,8 @@ try {
   const initial = await request(`/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation?learnerSubject=learner-001`, { token: 'evaluator' });
   assert.equal(initial.status, 200); assert.equal(initial.body.assignment.evaluatorId, 'assessor-authoritative-001');
   assert.deepEqual(initial.body.practical.evidenceOutputs, practical.evidenceOutputs);
+  assert.equal(initial.body.practical.scoring.domains.every((domain) => Array.isArray(domain.criteria) && domain.criteria.length > 0), true, 'authorized evaluator API must expose canonical observable scoring anchors');
+  assert.equal(initial.body.practical.scoringAnchorPolicy.requiresObservedEvidence, true);
 
   const partialEvidence = practical.evidenceOutputs.slice(0, 2).map((name, index) => ({ name, status: index === 0 ? 'verified' : 'received', reference: `packet-${index + 1}`, note: 'Observed during simulation.' }));
   const partial = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', { method: 'PUT', token: 'evaluator', body: {
@@ -151,13 +153,19 @@ try {
   } });
   assert.equal(partial.status, 200); assert.equal(partial.body.evaluation.evaluatorId, 'assessor-authoritative-001');
 
-  const fullScores = practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points }));
+  const fullScores = practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points, observedEvidence: `Observed evidence for ${domain.name}.`, promptNote: '' }));
+  const missingEvidence = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', { method: 'PUT', token: 'evaluator', body: {
+    learnerSubject: 'learner-001', mode: 'finalize', domainScores: practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points })), evidenceOutputs: practical.evidenceOutputs.map((name) => ({ name, status: 'verified', reference: 'probe', note: 'Verified.' })), criticalErrorIndexes: []
+  } });
+  assert.equal(missingEvidence.status, 400); assert.match(missingEvidence.body.error ?? missingEvidence.body.detail ?? '', /observed evidence|required/i);
+
   const allEvidence = practical.evidenceOutputs.map((name, index) => ({ name, status: 'verified', reference: `artifact-${index + 1}`, note: 'Verified.' }));
   const failed = await request('/api/v1/evaluator/courses/COURSE-LH-TECH1-001/practical-evaluation', { method: 'PUT', token: 'evaluator', body: {
     learnerSubject: 'learner-001', mode: 'finalize', domainScores: fullScores, evidenceOutputs: allEvidence, criticalErrorIndexes: [0],
     followUpStatus: 'reassessment-scheduled', reassessmentTargetDate: '2026-09-20', evaluatorNotes: 'PRIVATE-FINAL-NOTE', learnerFeedback: 'Equivalent reassessment required.'
   } });
   assert.equal(failed.status, 200); assert.equal(failed.body.evaluation.status, 'failed');
+  assert.match(failed.body.evaluation.domainScores[0].observedEvidence, /Observed evidence/);
 
   const learnerEvidence = await request('/api/v1/me/courses/COURSE-LH-TECH1-001/evidence', { token: 'learner' });
   assert.equal(learnerEvidence.status, 200);
@@ -165,16 +173,21 @@ try {
   assert.equal(learnerEvidence.body.performanceAssessment.reassessmentTargetDate, '2026-09-20');
   assert.match(learnerEvidence.body.performanceAssessment.remediationSummary, /Equivalent reassessment/);
   const serialized = JSON.stringify(learnerEvidence.body);
-  for (const forbidden of ['PRIVATE-FINAL-NOTE', 'evaluatorId', 'domainScores', 'evidenceOutputs', 'artifact-1']) assert.equal(serialized.includes(forbidden), false, `learner projection leaked ${forbidden}`);
+  for (const forbidden of ['PRIVATE-FINAL-NOTE', 'evaluatorId', 'domainScores', 'observedEvidence', 'evidenceOutputs', 'artifact-1']) assert.equal(serialized.includes(forbidden), false, `learner projection leaked ${forbidden}`);
 
   const report = await request('/api/v1/admin/courses/COURSE-LH-TECH1-001/practical-report', { token: 'admin' });
   assert.equal(report.status, 200); assert.equal(report.body.summary.total, 3); assert.equal(report.body.summary.failed, 1);
   assert.equal(report.body.rows.find((row) => row.learnerSubject === 'learner-001').assignedEvaluatorId, 'assessor-authoritative-001');
   assert.equal(JSON.stringify(report.body).includes('PRIVATE-FINAL-NOTE'), false);
   const csv = await request('/api/v1/admin/courses/COURSE-LH-TECH1-001/practical-report?format=csv', { token: 'admin', text: true });
-  assert.equal(csv.status, 200); assert.match(csv.headers.get('content-type'), /text\/csv/); assert.match(csv.body, /learnerSubject,enrollmentStatus,practicalStatus/); assert.match(csv.body, /learner-001/); assert.equal(csv.body.includes('PRIVATE-FINAL-NOTE'), false);
+  assert.equal(csv.status, 200); assert.match(csv.headers.get('content-type'), /text\/csv/);
+  const csvHeaders = csv.body.split('\n', 1)[0].split(',');
+  for (const requiredHeader of ['learnerSubject', 'enrollmentStatus', 'academicTransitionCount', 'practicalStatus', 'scorePercent', 'criticalErrorCount']) {
+    assert.equal(csvHeaders.includes(requiredHeader), true, `CSV report missing required header ${requiredHeader}`);
+  }
+  assert.match(csv.body, /learner-001/); assert.equal(csv.body.includes('PRIVATE-FINAL-NOTE'), false);
 } finally {
   server.close(); await once(server, 'close');
 }
 
-console.log('Course 1 practical queue pagination, evaluator ownership, admin reassignment/reporting, learner follow-up, trusted scoring, and privacy contracts passed.');
+console.log('Course 1 practical queue, ownership, anchored scoring evidence, reporting, learner privacy, and trusted evaluator API contracts passed.');

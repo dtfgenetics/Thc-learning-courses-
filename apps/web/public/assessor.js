@@ -125,7 +125,7 @@ async function renderAssessorHome() {
   const panel = el('article', '', 'portal-panel assessor-panel');
   panel.append(el('p', 'Authorized Course 1 evaluation', 'eyebrow'));
   panel.append(el('h2', 'Practical Assessor Workspace'));
-  panel.append(el('p', 'Review enrolled learners, claim assigned work, track practical evidence, score the canonical performance domains, document remediation, and manage equivalent reassessment. Official results are calculated and saved by the server; this workspace does not issue a professional credential.', 'lede'));
+  panel.append(el('p', 'Review enrolled learners, claim assigned work, track practical evidence, score the canonical performance domains from observable anchors, document remediation, and manage equivalent reassessment. Official results are calculated and saved by the server; this workspace does not issue a professional credential.', 'lede'));
 
   const controls = el('form', '', 'assessor-queue-controls');
   const searchLabel = el('label', '', 'assessor-field');
@@ -204,19 +204,83 @@ async function loadEvaluation(statusNode = null) {
   currentPayload = body; reassessmentMode = false; renderEvaluationForm(body);
 }
 
-function inputRow(domain, existingScore, updatePreview) {
-  const label = el('label', '', 'assessor-domain-row');
-  const copy = el('span', '', 'assessor-domain-copy'); copy.append(el('strong', domain.name), el('small', `0–${domain.points} points`));
-  const input = document.createElement('input'); input.type = 'number'; input.min = '0'; input.max = String(domain.points); input.step = '0.5'; input.inputMode = 'decimal'; input.dataset.domain = domain.name; input.dataset.points = String(domain.points); if (existingScore != null) input.value = String(existingScore); input.addEventListener('input', updatePreview);
-  label.append(copy, input); return label;
+function criterionCard(criterion) {
+  const card = el('article', '', 'assessor-domain-criterion');
+  const heading = el('div', '', 'assessor-domain-criterion-heading');
+  heading.append(el('strong', criterion.title), el('span', `${Number(criterion.points).toFixed(1).replace('.0', '')} pts`));
+  card.append(heading);
+  const levels = document.createElement('dl');
+  levels.className = 'assessor-domain-anchor-levels';
+  const half = Number(criterion.points) / 2;
+  for (const [label, value, description] of [
+    ['Full', criterion.points, criterion.fullCredit],
+    ['Partial', half, criterion.partialCredit],
+    ['None', 0, criterion.noCredit]
+  ]) {
+    levels.append(el('dt', `${label} (${Number(value).toFixed(1).replace('.0', '')})`), el('dd', description));
+  }
+  card.append(levels);
+  return card;
 }
-function collectDomainScores(form) { return [...form.querySelectorAll('input[data-domain]')].filter((input) => input.value !== '').map((input) => ({ name: input.dataset.domain, score: Number(input.value) })); }
+
+function inputRow(domain, existing, updatePreview) {
+  const row = el('article', '', 'assessor-domain-row');
+  const copy = el('div', '', 'assessor-domain-copy');
+  copy.append(el('strong', domain.name), el('small', `0–${domain.points} points`));
+  if (Array.isArray(domain.criteria) && domain.criteria.length) {
+    const details = document.createElement('details');
+    details.className = 'assessor-domain-anchors';
+    const summary = document.createElement('summary');
+    summary.textContent = `Observable scoring anchors (${domain.criteria.length} criteria)`;
+    details.append(summary);
+    const criteria = el('div', '', 'assessor-domain-criteria');
+    for (const criterion of domain.criteria) criteria.append(criterionCard(criterion));
+    details.append(criteria, el('p', 'Score each criterion at full points, one-half for partial evidence, or zero for absent/contradictory evidence; sum the criterion points for the domain. These anchors do not create a separate domain pass/fail floor.', 'assessor-help'));
+    copy.append(details);
+  }
+
+  const scoreLabel = el('label', '', 'assessor-field');
+  scoreLabel.append(el('span', 'Domain score'));
+  const input = document.createElement('input');
+  input.type = 'number'; input.min = '0'; input.max = String(domain.points); input.step = '0.5'; input.inputMode = 'decimal'; input.dataset.domain = domain.name; input.dataset.points = String(domain.points);
+  if (existing?.score != null) input.value = String(existing.score);
+  input.addEventListener('input', updatePreview);
+  scoreLabel.append(input);
+
+  const evidenceLabel = el('label', '', 'assessor-field assessor-domain-evidence');
+  evidenceLabel.append(el('span', 'Observed evidence supporting this score'));
+  const evidence = document.createElement('textarea');
+  evidence.rows = 3; evidence.maxLength = 1500; evidence.dataset.domainEvidence = 'true'; evidence.placeholder = 'Record the candidate actions, records, statements, and other observable evidence used to assign this domain score.'; evidence.value = existing?.observedEvidence ?? '';
+  evidenceLabel.append(evidence);
+
+  const promptLabel = el('label', '', 'assessor-field assessor-domain-prompts');
+  promptLabel.append(el('span', 'Prompts or clarifications used (if any)'));
+  const prompt = document.createElement('textarea');
+  prompt.rows = 2; prompt.maxLength = 750; prompt.dataset.domainPrompt = 'true'; prompt.placeholder = 'Record permitted prompts/clarifications that affected the observed performance; leave blank if none.'; prompt.value = existing?.promptNote ?? '';
+  promptLabel.append(prompt);
+
+  row.append(copy, scoreLabel, evidenceLabel, promptLabel);
+  return row;
+}
+
+function collectDomainScores(form) {
+  return [...form.querySelectorAll('.assessor-domain-row')].map((row) => {
+    const input = row.querySelector('input[data-domain]');
+    if (!input || input.value === '') return null;
+    return {
+      name: input.dataset.domain,
+      score: Number(input.value),
+      observedEvidence: row.querySelector('[data-domain-evidence]')?.value ?? '',
+      promptNote: row.querySelector('[data-domain-prompt]')?.value ?? ''
+    };
+  }).filter(Boolean);
+}
 function collectCriticalIndexes(form) { return [...form.querySelectorAll('input[data-critical-index]:checked')].map((input) => Number(input.dataset.criticalIndex)); }
 function collectEvidenceOutputs(form) { return [...form.querySelectorAll('.assessor-evidence-row')].map((row) => ({ name: row.dataset.evidenceName, status: row.querySelector('[data-evidence-status]').value, reference: row.querySelector('[data-evidence-reference]').value, note: row.querySelector('[data-evidence-note]').value })); }
 function updatePreview(form, practical) {
   const output = form.querySelector('.assessor-score-preview'); if (!output) return;
   const scores = collectDomainScores(form); const earned = scores.reduce((sum, row) => sum + Number(row.score), 0); const total = Number(practical.scoring.totalPoints || 100); const percent = total > 0 ? earned / total * 100 : 0; const critical = collectCriticalIndexes(form).length; const complete = scores.length === practical.scoring.domains.length;
-  const projected = complete ? (percent >= Number(practical.passingStandard.minimumPercent) && critical === 0 ? 'Projected pass' : 'Projected not passed') : 'Incomplete scoring';
+  const projected = complete ? (percent >= Number(practical.passingStandard.minimumPercent) && critical === 0 ? 'Projected pass under current provisional academic threshold' : 'Projected not passed under current provisional academic threshold') : 'Incomplete scoring';
   output.textContent = `${earned.toFixed(1)}/${total} points • ${percent.toFixed(1)}% • ${critical} critical error${critical === 1 ? '' : 's'} • ${projected}. Server result is authoritative.`;
 }
 
@@ -268,12 +332,12 @@ function evidenceOutputRow(output, existing, statuses) {
 
 function renderEvaluationForm(payload) {
   setAssessorTabActive(); const practical = payload.practical; const current = payload.evaluation;
-  const panel = el('article', '', 'portal-panel assessor-panel'); panel.append(el('p', reassessmentMode ? 'Equivalent Course 1 reassessment' : 'Authorized Course 1 evaluation', 'eyebrow')); panel.append(el('h2', practical.title)); panel.append(el('p', `Learner: ${payload.learner.subject}`, 'assessor-learner')); panel.append(el('p', `Passing standard: ${Number(practical.passingStandard.minimumPercent).toFixed(0)}%${practical.passingStandard.noCriticalErrors ? ' and no critical errors' : ''}. Evidence references point to controlled storage; files themselves are not copied into curriculum Git or learner-facing JSON.`, 'lede'));
+  const panel = el('article', '', 'portal-panel assessor-panel'); panel.append(el('p', reassessmentMode ? 'Equivalent Course 1 reassessment' : 'Authorized Course 1 evaluation', 'eyebrow')); panel.append(el('h2', practical.title)); panel.append(el('p', `Learner: ${payload.learner.subject}`, 'assessor-learner')); panel.append(el('p', `Current academic development threshold: ${Number(practical.passingStandard.minimumPercent).toFixed(0)}%${practical.passingStandard.noCriticalErrors ? ' and no critical errors' : ''}. The threshold remains provisional pending pilot evidence and documented standard setting. Domain scores must be grounded in observable evidence and the published scoring anchors.`, 'lede'));
   renderAssignment(panel, payload); renderExistingSummary(panel, payload); renderHistory(panel, current);
   const ownedByOther = payload.assignment?.evaluatorId && payload.assignment.evaluatorId !== evaluatorSubject;
 
-  const form = el('form', '', 'assessor-form'); const existingByName = reassessmentMode ? new Map() : new Map((current?.domainScores ?? []).map((row) => [row.name, row.score]));
-  const scoreSection = el('section', '', 'assessor-section'); scoreSection.append(el('h3', 'Performance scoring domains')); const domainGrid = el('div', '', 'assessor-domain-grid'); const refresh = () => updatePreview(form, practical); for (const domain of practical.scoring.domains) domainGrid.append(inputRow(domain, existingByName.get(domain.name), refresh)); scoreSection.append(domainGrid, el('p', '', 'assessor-score-preview')); form.append(scoreSection);
+  const form = el('form', '', 'assessor-form'); const existingByName = reassessmentMode ? new Map() : new Map((current?.domainScores ?? []).map((row) => [row.name, row]));
+  const scoreSection = el('section', '', 'assessor-section'); scoreSection.append(el('h3', 'Performance scoring domains')); scoreSection.append(el('p', 'Open each domain’s observable anchors, assign the summed criterion score in 0.5-point increments, and record the observable evidence supporting that score. Finalization is blocked when a scored domain has no observed-evidence note.', 'assessor-help')); const domainGrid = el('div', '', 'assessor-domain-grid'); const refresh = () => updatePreview(form, practical); for (const domain of practical.scoring.domains) domainGrid.append(inputRow(domain, existingByName.get(domain.name), refresh)); scoreSection.append(domainGrid, el('p', '', 'assessor-score-preview')); form.append(scoreSection);
 
   const evidenceSection = el('section', '', 'assessor-section assessor-evidence'); evidenceSection.append(el('h3', 'Required practical evidence outputs')); evidenceSection.append(el('p', 'References identify approved evidence locations while the actual files remain in controlled storage. The runtime follows the current practical definition dynamically.', 'assessor-help'));
   const existingEvidence = new Map((reassessmentMode ? [] : current?.evidenceOutputs ?? []).map((row) => [row.name, row])); const evidenceGrid = el('div', '', 'assessor-evidence-grid'); const evidenceStatuses = practical.evidenceOutputStatuses ?? ['not-reviewed', 'received', 'verified', 'needs-revision']; for (const output of practical.evidenceOutputs ?? []) evidenceGrid.append(evidenceOutputRow(output, existingEvidence.get(output), evidenceStatuses)); evidenceSection.append(evidenceGrid); form.append(evidenceSection);
@@ -288,7 +352,7 @@ function renderEvaluationForm(payload) {
   const privateLabel = el('label', '', 'assessor-field'); privateLabel.append(el('span', 'Evaluator notes (private)')); const privateNotes = document.createElement('textarea'); privateNotes.name = 'evaluatorNotes'; privateNotes.maxLength = 4000; privateNotes.rows = 5; privateNotes.value = reassessmentMode ? '' : current?.evaluatorNotes ?? ''; privateLabel.append(privateNotes);
   const learnerLabel = el('label', '', 'assessor-field'); learnerLabel.append(el('span', 'Learner feedback / remediation')); const learnerFeedback = document.createElement('textarea'); learnerFeedback.name = 'learnerFeedback'; learnerFeedback.maxLength = 2500; learnerFeedback.rows = 5; learnerFeedback.value = reassessmentMode ? '' : current?.learnerFeedback ?? ''; learnerLabel.append(learnerFeedback); notes.append(privateLabel, learnerLabel); form.append(notes);
 
-  const confirmation = el('label', '', 'assessor-confirm'); const confirmInput = document.createElement('input'); confirmInput.type = 'checkbox'; confirmation.append(confirmInput, el('span', 'I confirm the domain scores, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.')); form.append(confirmation);
+  const confirmation = el('label', '', 'assessor-confirm'); const confirmInput = document.createElement('input'); confirmInput.type = 'checkbox'; confirmation.append(confirmInput, el('span', 'I confirm the domain scores, observed-evidence notes, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.')); form.append(confirmation);
   const actions = el('div', '', 'assessor-actions'); const save = el('button', reassessmentMode ? 'Save reassessment in progress' : 'Save in-progress evaluation', 'assessor-secondary'); save.type = 'button'; const finalize = el('button', reassessmentMode ? 'Finalize reassessment' : 'Finalize evaluation', 'assessor-primary'); finalize.type = 'button';
   if (ownedByOther) { save.disabled = true; finalize.disabled = true; }
   const back = el('button', 'Return to evaluator queue', 'assessor-secondary'); back.type = 'button'; back.addEventListener('click', renderAssessorHome);

@@ -20,6 +20,14 @@ OSHA 29 CFR 1910.22 remains the authoritative general requirement for clean/orde
 
 Course use remains limited to workplace-safety principles and role boundaries; exact applicability depends on the workplace and jurisdiction.
 
+### OSHA — Hazard Communication Standard transition
+
+OSHA 29 CFR 1910.1200 remains the controlling federal Hazard Communication Standard used by Course 1 for label/SDS, workplace-labeling, written-program and employee-information/training concepts. OSHA's May 20, 2024 final rule updated the standard, and OSHA extended the phase-in dates again on January 15, 2026.
+
+As verified on September 13, 2026, OSHA's current regulatory text provides that chemical manufacturers, importers and distributors evaluating substances were required to comply with the modified provisions by May 19, 2026. Employers must, as necessary, update alternative workplace labeling, their hazard communication program and additional employee training for newly identified hazards associated with substances by November 20, 2026. The corresponding mixture deadlines extend to November 19, 2027 for manufacturers/importers/distributors and May 19, 2028 for employer labeling/program/training updates. During the applicable transition period, OSHA permits use of the previous HCS, the updated HCS, or both.
+
+Course 1 intentionally teaches durable worker-level HazCom behaviors rather than memorizing transition dates: identify the product and task, use current workplace labels and SDS information, follow the employer's current HazCom program and task procedure, use required PPE, and escalate missing/conflicting information. Facility training materials must nevertheless be checked against the HCS version and transition obligations that apply at the time of delivery.
+
 ### EPA — Worker Protection Standard
 
 EPA's Agricultural Worker Protection Standard pages remain current in 2026 and continue to describe restricted-entry intervals, application restrictions, early-entry protections, labeling/PPE requirements, and employer/handler duties. The course correctly teaches these as pesticide-worker-protection controls distinct from plant-health quarantine.
@@ -66,15 +74,16 @@ WCAG 2.2 remains a W3C Recommendation. Course 1's delivery/accessibility plan co
 
 ## Verification result
 
-No principal Course 1 source was found to be retracted or superseded in a way that invalidates the current instructional claims. The evidence dossier's source-role boundaries remain appropriate.
+No principal Course 1 source was found to be retracted or superseded in a way that invalidates the current instructional claims. The evidence dossier's source-role boundaries remain appropriate. The active OSHA Hazard Communication transition is now explicitly tracked because employer labeling/program/training obligations can change during the life of this course even when the worker-level teaching principles remain stable.
 
 ## Maintenance triggers
 
 Re-verify this source set when any of the following occurs:
 
 1. OSHA/EPA/NIOSH publishes a material rule or guidance change affecting taught worker-safety decisions;
-2. ASTM publishes a revision replacing D8556-25;
-3. a source URL is removed/redirected to a materially different document;
-4. course claims expand beyond the presently verified source role;
-5. jurisdiction-specific training is added to the otherwise vendor/jurisdiction-neutral core;
-6. Course 1 moves from draft/review to learner production release.
+2. an OSHA Hazard Communication phase-in deadline passes or OSHA changes the current transition schedule;
+3. ASTM publishes a revision replacing D8556-25;
+4. a source URL is removed/redirected to a materially different document;
+5. course claims expand beyond the presently verified source role;
+6. jurisdiction-specific training is added to the otherwise vendor/jurisdiction-neutral core;
+7. Course 1 moves from public academic use toward validated certification release.

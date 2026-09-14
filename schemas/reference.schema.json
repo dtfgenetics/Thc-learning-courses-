@@ -19,7 +19,16 @@
     "status": {"enum": ["needs-authoritative-source", "candidate", "reviewed", "reviewed-source", "superseded", "retracted"]},
     "evidenceLevel": {"enum": ["unverified", "peer-reviewed", "university-extension", "standards-government", "standard", "textbook", "industry-technical", "experiential", "A", "B", "C"]},
     "supportsDomains": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-    "notes": {"type": ["string", "null"]}
+    "notes": {"type": ["string", "null"]},
+    "retrievedAt": {"type": ["string", "null"], "format": "date-time"},
+    "lastVerifiedAt": {"type": ["string", "null"], "format": "date-time"},
+    "sourceRevisionDate": {"type": ["string", "null"], "format": "date"},
+    "supersedes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"}},
+    "extensions": {
+      "type": "object",
+      "description": "Open namespaced provenance, jurisdiction, maintenance, archive, evidence-role, or publisher metadata that does not belong in the stable core reference contract.",
+      "additionalProperties": true
+    }
   },
   "additionalProperties": false
 }

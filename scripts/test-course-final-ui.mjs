@@ -13,8 +13,10 @@ assert.equal(syntax.status, 0, syntax.stderr || syntax.stdout);
 
 for (const marker of [
   'course-assessment.css',
-  'course-assessment.js'
-]) assert.ok(html.includes(marker), `index must load ${marker}`);
+  'course-assessment.js',
+  'Course 1 academic threshold notice:',
+  'pending pilot evidence and documented standard setting'
+]) assert.ok(html.includes(marker), `index must expose final-assessment asset/boundary contract: ${marker}`);
 
 for (const marker of [
   '/api/v1/me/courses/${COURSE_ID}/assessment-attempts',
@@ -23,7 +25,10 @@ for (const marker of [
   'Responses save to your learner record as you answer.',
   'Post-attempt feedback is domain-level; answer keys are not displayed.',
   'This is the public Course 1 final, separate from the Technician I credential examination.',
-  'Course 1 knowledge evidence only',
+  'Current academic development threshold:',
+  'provisional pending pilot evidence and documented standard setting',
+  'This is Course 1 academic knowledge evidence under a provisional development threshold',
+  'this is not a Technician I credential decision',
   'Open Field References'
 ]) assert.ok(js.includes(marker), `assessment UI missing contract: ${marker}`);
 
@@ -52,4 +57,4 @@ for (const marker of [
 assert.ok(server.includes("['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']]"), 'web server must serve assessment JS');
 assert.ok(server.includes("['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']]"), 'web server must serve assessment CSS');
 
-console.log('Course 1 final learner UI autosave, accessibility, non-disclosure, responsive, and static-serving contracts passed.');
+console.log('Course 1 final learner UI autosave, accessibility, non-disclosure, provisional-threshold, credential-boundary, responsive, and static-serving contracts passed.');

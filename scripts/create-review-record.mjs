@@ -63,6 +63,10 @@ export function buildReviewRecord({ objectId, reviewType, reviewerId, status, no
   return {
     id: `REVIEW-${safeToken(objectId)}-${safeToken(reviewType)}-${stamp}`,
     objectId,
+    // Compatibility alias for older validators that indexed review targets as targetId.
+    // New review/reporting code should use objectId; both fields intentionally identify
+    // the exact same immutable curriculum object.
+    targetId: objectId,
     objectVersion: version,
     reviewType,
     status,
