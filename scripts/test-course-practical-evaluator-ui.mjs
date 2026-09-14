@@ -28,6 +28,14 @@ for (const marker of [
   'Next page',
   'Claim assignment',
   'Release assignment',
+  'Observable scoring anchors',
+  'Full',
+  'Partial',
+  'None',
+  'Observed evidence supporting this score',
+  'Prompts or clarifications used',
+  'data-domain-evidence',
+  'data-domain-prompt',
   "input.dataset.domain = domain.name",
   "input.dataset.criticalIndex = String(index)",
   'collectEvidenceOutputs',
@@ -45,12 +53,14 @@ for (const marker of [
   'Finalize evaluation',
   'Practical follow-up',
   'Reassessment target:',
-  'I confirm the domain scores, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.',
+  'provisional pending pilot evidence and documented standard setting',
+  'I confirm the domain scores, observed-evidence notes, evidence review statuses, and critical-error findings reflect the evaluated practical evidence.',
   'Server result is authoritative.'
 ]) assert.ok(js.includes(marker), `assessor UI missing contract: ${marker}`);
 
 assert.ok(js.includes("credentials: 'same-origin'"), 'assessor requests must use the authenticated same-origin session');
 assert.ok(js.includes('practical.scoring.domains'), 'domain controls must be generated from the server-provided practical definition');
+assert.ok(js.includes('domain.criteria'), 'observable anchor controls must be generated from the server-provided practical definition');
 assert.ok(js.includes('practical.criticalErrors'), 'critical-error controls must be generated from the server-provided canonical list');
 assert.ok(js.includes('practical.evidenceOutputs ?? []'), 'evidence controls must follow the canonical practical definition rather than a hard-coded output count');
 assert.equal(js.includes('.innerHTML'), false, 'assessor UI must construct DOM safely rather than use innerHTML');
@@ -64,6 +74,11 @@ for (const marker of [
   '.assessor-pager',
   '.assessor-assignment-card',
   '.assessor-domain-grid',
+  '.assessor-domain-anchors',
+  '.assessor-domain-criteria',
+  '.assessor-domain-criterion',
+  '.assessor-domain-anchor-levels',
+  '.assessor-domain-evidence',
   '.assessor-evidence-grid',
   '.assessor-evidence-row',
   '.assessor-follow-up',
@@ -80,4 +95,4 @@ for (const marker of [
 assert.ok(webServer.includes("['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']]"), 'Academy web server must serve assessor JS');
 assert.ok(webServer.includes("['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]"), 'Academy web server must serve assessor CSS');
 
-console.log('Course 1 assessor role-gating, server-side queue filtering/pagination, ownership controls, dynamic evidence tracking, reassessment history, learner follow-up, safe DOM, responsive, accessibility, and static-serving contracts passed.');
+console.log('Course 1 assessor role-gating, anchored scoring evidence, queue/ownership controls, reassessment history, learner privacy, responsive layout, accessibility, and static-serving contracts passed.');
