@@ -3,8 +3,14 @@ import fs from 'node:fs';
 import { buildPracticalEvaluation, practicalEvaluatorView } from '../packages/domain/course-practical-evaluation.mjs';
 
 const practical = JSON.parse(fs.readFileSync('content/performance-assessments/PRACTICAL-LH-TECH1-001-WORKFLOW.json', 'utf8'));
-const fullScores = practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points }));
-const belowThresholdScores = practical.scoring.domains.map((domain, index) => ({ name: domain.name, score: index < 2 ? 0 : domain.points }));
+const scoredRow = (domain, score = domain.points) => ({
+  name: domain.name,
+  score,
+  observedEvidence: `Observed evidence supporting ${domain.name}.`,
+  promptNote: ''
+});
+const fullScores = practical.scoring.domains.map((domain) => scoredRow(domain));
+const belowThresholdScores = practical.scoring.domains.map((domain, index) => scoredRow(domain, index < 2 ? 0 : domain.points));
 const evidenceOutputs = practical.evidenceOutputs.map((name, index) => ({
   name,
   status: index === 0 ? 'verified' : 'received',
@@ -13,6 +19,18 @@ const evidenceOutputs = practical.evidenceOutputs.map((name, index) => ({
 }));
 const evaluatorId = 'assessor-001';
 const now = '2026-09-12T12:00:00.000Z';
+
+assert.equal(practical.version, '1.1.0', 'anchored Course 1 practical should be versioned as 1.1.0');
+assert.equal(practical.scoring.domains.reduce((sum, domain) => sum + Number(domain.points), 0), practical.scoring.totalPoints, 'domain maximums must reconcile to total practical points');
+for (const domain of practical.scoring.domains) {
+  assert.ok(Array.isArray(domain.criteria) && domain.criteria.length > 0, `${domain.name} must contain observable criteria`);
+  assert.equal(domain.criteria.reduce((sum, criterion) => sum + Number(criterion.points), 0), Number(domain.points), `${domain.name} criterion points must reconcile to the domain maximum`);
+  for (const criterion of domain.criteria) {
+    assert.ok(criterion.fullCredit.length >= 20);
+    assert.ok(criterion.partialCredit.length >= 20);
+    assert.ok(criterion.noCredit.length >= 20);
+  }
+}
 
 const saved = buildPracticalEvaluation({ practical, evaluatorId, evaluatedAt: now, input: {
   mode: 'save',
@@ -27,6 +45,7 @@ assert.equal(saved.scorePercent, null);
 assert.equal(saved.evaluatedAt, null);
 assert.equal(saved.evidence.domainScores.length, practical.scoring.domains.length);
 assert.equal(saved.evidence.domainScores.filter((row) => row.score != null).length, 3);
+assert.match(saved.evidence.domainScores[0].observedEvidence, /Observed evidence/);
 assert.equal(saved.evidence.evidenceOutputs.length, practical.evidenceOutputs.length, 'evidence review model must follow the canonical practical output list');
 assert.equal(saved.evidence.evidenceOutputs[0].status, 'verified');
 assert.equal(saved.evidence.evidenceOutputs[2].status, 'not-reviewed');
@@ -56,10 +75,16 @@ assert.equal(scoreFail.status, 'failed');
 assert.ok(scoreFail.scorePercent < practical.passingStandard.minimumPercent);
 
 assert.throws(() => buildPracticalEvaluation({ practical, evaluatorId, input: {
-  mode: 'finalize', domainScores: fullScores.slice(0, 7)
+  mode: 'finalize', domainScores: fullScores.slice(0, practical.scoring.domains.length - 1)
 } }), /all practical scoring domains are required/);
 assert.throws(() => buildPracticalEvaluation({ practical, evaluatorId, input: {
+  mode: 'finalize', domainScores: practical.scoring.domains.map((domain) => ({ name: domain.name, score: domain.points, observedEvidence: '' }))
+} }), /observed evidence is required/);
+assert.throws(() => buildPracticalEvaluation({ practical, evaluatorId, input: {
   mode: 'save', domainScores: [{ name: practical.scoring.domains[0].name, score: practical.scoring.domains[0].points + 1 }]
+} }), /invalid score/);
+assert.throws(() => buildPracticalEvaluation({ practical, evaluatorId, input: {
+  mode: 'save', domainScores: [{ name: practical.scoring.domains[0].name, score: 1.25 }]
 } }), /invalid score/);
 assert.throws(() => buildPracticalEvaluation({ practical, evaluatorId, input: {
   mode: 'save', domainScores: [{ name: 'Invented scoring domain', score: 1 }]
@@ -118,6 +143,9 @@ const view = practicalEvaluatorView(practical, { ...reassessmentDraft, updatedAt
 assert.equal(view.evaluation.evidenceOutputs.length, practical.evidenceOutputs.length);
 assert.equal(view.evaluation.followUpStatus, 'remediation-in-progress');
 assert.equal(view.evaluation.history.length, 2);
+assert.equal(view.practical.scoring.domains.length, practical.scoring.domains.length);
+assert.equal(view.practical.scoring.domains.every((domain) => Array.isArray(domain.criteria) && domain.criteria.length > 0), true, 'authorized evaluator view must include the canonical scoring anchors');
+assert.equal(view.practical.scoringAnchorPolicy.requiresObservedEvidence, true);
 assert.deepEqual(view.practical.evidenceOutputStatuses.sort(), ['needs-revision', 'not-reviewed', 'received', 'verified'].sort());
 assert.ok(view.practical.followUpStatuses.includes('ready-for-reassessment'));
 
@@ -127,4 +155,4 @@ const truncated = buildPracticalEvaluation({ practical, evaluatorId, input: { mo
 assert.equal(truncated.evidence.evaluatorNotes.length, 4000);
 assert.equal(truncated.evidence.learnerFeedback.length, 2500);
 
-console.log('Course 1 practical evaluation scoring, evidence-output review, follow-up, reassessment history, and validation contracts passed.');
+console.log('Course 1 practical anchored scoring, observed-evidence, evidence-output review, follow-up, reassessment history, and validation contracts passed.');
