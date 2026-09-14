@@ -48,6 +48,10 @@ jobs:
           fi
       - name: Audit Course 1 public academic publication
         run: npm run course1:publication:audit
+      - name: Enforce Course 1 project alignment
+        run: node scripts/check-course1-project-alignment.mjs
+      - name: Enforce Course 1 visual concept coverage
+        run: node scripts/check-course1-visual-concept-coverage.mjs
       - name: Audit Learning Hub assessment item quality
         run: node scripts/check-learning-hub-item-quality.mjs
       - name: Enforce public credential-bank security boundary
