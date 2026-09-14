@@ -46,6 +46,15 @@ function shuffle(values, rand) {
 }
 
 const assessment = readJson(`content/assessments/${assessmentId}.json`);
+
+if (assessment.purpose === 'credential' && !allowDraft) {
+  throw new Error(
+    `${assessment.id}: production credential form generation is prohibited from this public repository. ` +
+    'Credential-purpose items stored here are public development blueprints and cannot provide high-integrity item secrecy. ' +
+    'Use an approved private assessment store/delivery service for operational credential forms.'
+  );
+}
+
 const questions = readDirJson('content/questions');
 const eligibleStatuses = allowDraft
   ? new Set(['draft', 'technical-review', 'editorial-review', 'pilot', 'active'])
