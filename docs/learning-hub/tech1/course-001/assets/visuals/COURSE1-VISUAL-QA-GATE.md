@@ -20,13 +20,13 @@ This gate separates production drafts from learner-facing assets. A visually pol
 | `03-PPE-TASK` | 1.2 | revise-before-publication | Do not publish a universal PPE-by-task matrix. Canonical lesson requires task hazard assessment, product label/SDS, site procedure and restrictions to control PPE selection. Respirator use must not imply clearance, fit testing or authorization is automatic. |
 | `04-SDS-ANATOMY` | 1.2 | preferred-review-candidate | Use only as a training example after copy reconciliation. Fictional product/company data must be clearly labeled fictional. Do not imply the example SDS replaces the actual product SDS or facility HazCom program. |
 | `05-CONTAMINATION-ROUTES` | 2.1 | revise-before-publication | Preserve source → route → receiving-area reasoning. Remove absolute clean/dirty claims and any universal zone hierarchy. Zone names and transition rules are facility-specific. |
-| `06-CLEAN-DIRTY-FLOW` | 2.1 | blocked | Draft says to always move clean → dirty and never backtrack. Canonical Lesson 2.1 explicitly warns against a universal clean-to-dirty rule and requires use of the facility's actual zone map, current risk status and transition procedure. Rebuild before public use. |
-| `07-SANITATION-SEQUENCE` | 2.2 | blocked | Draft uses a simplified universal rinse/dry sequence. Canonical sanitation lesson requires exact product identity/preparation, label/SOP-defined contact conditions, finish steps only where required, inspection, protection from recontamination and documentation. Rebuild to match the nine decision points. |
+| `06-CLEAN-DIRTY-FLOW` | 2.1 | preferred-review-candidate | `v2` corrects the main blocker by stating that movement patterns depend on facility design and site SOP/zone rules. Before publication, soften the remaining generic lower-risk→higher-risk phrasing so it is clearly an example sequencing model, not a universal zone hierarchy. Drive candidate: `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-v2.png` (`1EV14mtSJv5x4vlKGGupkslj1UEsQgPjN`). |
+| `07-SANITATION-SEQUENCE` | 2.2 | revise-before-publication | `v2` is materially improved: it adds preparation, label/SOP review, cleaning before sanitizer, contact time, finish-as-applicable, inspection, recontamination protection and documentation. Final learner version still needs explicit exact-product identity/preparation and worker/material precaution language aligned to the canonical nine decision points. Drive candidate: `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE-v2.png` (`1u1dGn59M77EBXf0xXsX_EsaJErNRQ-Tl`). |
 | `08-AUTHORITY-ESCALATION` | 3.2 | revise-before-publication | Generic escalation roles can be shown only as examples. The worker must follow the facility's actual escalation chain and role authority. Do not imply every facility uses the same supervisor/manager/compliance ladder. |
 | `09-CONTROLLED-DOCUMENT` | 3.1 | preferred-review-candidate | Structure is useful. Example document identifiers/dates/approval fields must remain clearly illustrative. Emphasize current controlled version and official source rather than a universal SOP format. |
 | `10-GENEALOGY` | 4.1 | revise-before-publication | Keep identity continuity concept. Remove universal claims such as 'required for compliance' unless the statement is tied to a specific jurisdiction or controlling program. Example strain/batch data must be labeled illustrative. |
 | `11-MOVEMENT-RECORD` | 4.2 | revise-before-publication | Keep reconstructable movement fields. Do not imply one universal movement form or data set applies everywhere. Compliance claims must be jurisdiction/program-specific. |
-| `12-RECONCILIATION` | 4.3 | blocked | Draft language such as 'find and fix discrepancies' can encourage forced balancing. Canonical course requires preserving the discrepancy, verifying evidence, documenting confirmed facts and escalating without inventing a balancing transaction. Rebuild. |
+| `12-RECONCILIATION` | 4.3 | preferred-review-candidate | `v2` removes the forced-balancing implication and explicitly says to investigate, document findings, correct records only if authorized, keep original records visible, and never guess or force a balance. Final learner copy still needs direct alignment to the canonical discrepancy/escalation wording and facility/jurisdiction controls. Drive candidate: `VIS-LH-TECH1-001-12-RECONCILIATION-v2.png` (`1nrPaFR2ux24m6URSFL-jDritNesb2Zs-`). |
 | `13-EQUIPMENT-PREUSE` | 5.1 | revise-before-publication | Keep pre-use/readiness concept. Checklist items must be presented as examples controlled by manufacturer instructions, site SOP and worker authorization; not every Technician I performs every listed equipment check. |
 | `14-OPERATOR-VS-MAINTENANCE` | 5.2 | revise-before-publication | Clarify operator care versus servicing boundary. Avoid implying that adjusting settings, calibrating systems, electrical/plumbing/HVAC work or internal troubleshooting is permitted unless specifically trained and authorized. |
 | `15-FAULT-REPORT` | 5.3 | preferred-review-candidate | Preserve observation → permitted checks → operational impact → escalation. Avoid unsupported root-cause diagnosis. Fault records should distinguish observed facts from assumptions. |
@@ -34,13 +34,15 @@ This gate separates production drafts from learner-facing assets. A visually pol
 | `17-SHIFT-HANDOFF` | 6.2 | preferred-review-candidate | Structure is useful if framed as a model. Exact fields and sign-off rules remain facility-specific. Include open conditions, ownership and unresolved risk rather than only routine status. |
 | `18-INTEGRATED-WORKFLOW` | 6.3 | revise-before-publication | Keep cross-domain synthesis. Remove tasks outside the Technician I role or frame them as system context rather than worker authority. Integrated workflow must reinforce safety, SOP, biosecurity, traceability, equipment boundaries and truthful records. |
 
-## Immediate rebuild priority
+## Rebuild progress
 
-The following drafts are blocked from learner publication and should be corrected first:
+The original blocker drafts remain archived as production history but are no longer the preferred review candidates:
 
-1. `VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW`
-2. `VIS-LH-TECH1-001-07-SANITATION-SEQUENCE`
-3. `VIS-LH-TECH1-001-12-RECONCILIATION`
+- `06-CLEAN-DIRTY-FLOW v1` — superseded by `v2` for QA review.
+- `07-SANITATION-SEQUENCE v1` — superseded by `v2` for QA review; further copy correction still required.
+- `12-RECONCILIATION v1` — superseded by `v2` for QA review.
+
+No PNG has replaced the current learner-facing SVG baseline yet.
 
 ## Preferred duplicate review candidates
 
@@ -50,6 +52,9 @@ Where multiple drafts exist, use these as the current review starting points rat
 - `02-HIERARCHY-CONTROLS`: review `v2` first, but revise authorization wording.
 - `03-PPE-TASK`: review `v2` first, but rebuild task-specific PPE claims around the canonical decision model.
 - `04-SDS-ANATOMY`: review `v3` first, with fictional-example labeling and source/copy reconciliation.
+- `06-CLEAN-DIRTY-FLOW`: review `v2` first.
+- `07-SANITATION-SEQUENCE`: review `v2` first; one more copy-alignment pass is required.
+- `12-RECONCILIATION`: review `v2` first.
 
 Alternates remain in Drive for comparison but are not public candidates unless they solve a documented QA issue better than the preferred version.
 
