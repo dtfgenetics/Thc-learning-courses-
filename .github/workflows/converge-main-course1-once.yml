@@ -1,0 +1,98 @@
+name: Converge main Course1 once
+
+on:
+  push:
+    branches:
+      - fix/staging-main-convergence-course1
+
+permissions:
+  contents: write
+
+jobs:
+  converge:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Port newer canonical main tooling and repair Lesson 16
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout origin/main -- \
+            .github/workflows/course1-png-deploy.yml \
+            .github/workflows/validate.yml \
+            apps/web/public/assets/course1/data-integrity-record-lifecycle.svg \
+            apps/web/public/assets/course1/maintenance-fault-report.svg \
+            apps/web/public/assets/course1/operator-care-servicing-boundary.svg \
+            apps/web/public/assets/course1/shift-handoff-model.svg \
+            docs/learning-hub/tech1/course-001/COURSE1-LESSON-PRACTICE-MAP.json \
+            docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-FINAL-CANDIDATES-13-18.md \
+            scripts/check-course1-project-alignment.mjs \
+            scripts/check-course1-visual-concept-coverage.mjs \
+            visuals/COURSE1-PNG-DEPLOYMENT-STAGING.json \
+            visuals/COURSE1-VISUAL-CONCEPT-COVERAGE.json
+
+          node <<'NODE'
+          const fs = require('node:fs');
+          const p = 'content/lessons/LESSON-LH-TECH1-001-16.json';
+          const lesson = JSON.parse(fs.readFileSync(p, 'utf8'));
+          const blocks = lesson.content?.blocks;
+          if (!Array.isArray(blocks)) throw new Error('Lesson 16 rich blocks missing');
+          if (!blocks.some((block) => block.type === 'callout' && /remediation/i.test(block.title ?? ''))) {
+            const insertion = {
+              type: 'callout',
+              title: 'Remediation cue',
+              tone: 'warning',
+              body: 'If a record hides when an entry was made, who made it, what object it belongs to, what unit or context applies, or what changed during correction, it is not yet reconstructable. Restore the missing context through the authorized record process; do not invent values, backdate entries, erase the original, or silently overwrite history.',
+              references: ['REF-MHRA-GXP-DATA-INTEGRITY']
+            };
+            const keyIndex = blocks.findIndex((block) => block.type === 'callout' && /key takeaway/i.test(block.title ?? ''));
+            blocks.splice(keyIndex >= 0 ? keyIndex : blocks.length, 0, insertion);
+          }
+          lesson.version = '1.2.2';
+          fs.writeFileSync(p, JSON.stringify(lesson, null, 2) + '\n');
+          NODE
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Synchronize generated state
+        run: |
+          npm run course1:publication:sync
+          npm run registry:build
+      - name: Run new project alignment gates
+        run: |
+          node scripts/check-course1-project-alignment.mjs
+          node scripts/check-course1-visual-concept-coverage.mjs
+      - name: Run complete deterministic suite
+        run: npm test
+      - name: Commit converged tree and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/converge-main-course1-once.yml
+          git add .github/workflows/course1-png-deploy.yml \
+            .github/workflows/validate.yml \
+            apps/web/public/assets/course1/data-integrity-record-lifecycle.svg \
+            apps/web/public/assets/course1/maintenance-fault-report.svg \
+            apps/web/public/assets/course1/operator-care-servicing-boundary.svg \
+            apps/web/public/assets/course1/shift-handoff-model.svg \
+            content/lessons/LESSON-LH-TECH1-001-16.json \
+            docs/learning-hub/tech1/course-001/COURSE1-LESSON-PRACTICE-MAP.json \
+            docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-FINAL-CANDIDATES-13-18.md \
+            scripts/check-course1-project-alignment.mjs \
+            scripts/check-course1-visual-concept-coverage.mjs \
+            visuals/COURSE1-PNG-DEPLOYMENT-STAGING.json \
+            visuals/COURSE1-VISUAL-CONCEPT-COVERAGE.json \
+            registry/curriculum.json
+          git commit -m 'Converge Course 1 main tooling and repair Lesson 16 remediation'
+          git push origin HEAD:fix/staging-main-convergence-course1
