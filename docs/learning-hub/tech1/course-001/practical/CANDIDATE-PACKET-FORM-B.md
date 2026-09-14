@@ -2,6 +2,7 @@
 
 **Course:** `COURSE-LH-TECH1-001`  
 **Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
+**Practical rubric version:** `1.1.0`  
 **Form:** B — equivalent alternate form  
 **Use:** Public academic practical alternate form; may also support calibration and equivalent-form review
 
