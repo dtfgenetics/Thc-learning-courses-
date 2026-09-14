@@ -1,0 +1,31 @@
+{
+  "courseId": "COURSE-LH-TECH1-001",
+  "version": 1,
+  "purpose": "Machine-readable map of lesson-level embedded formative practice to cumulative module assessments. The lesson object's assessment field remains reserved for a dedicated assessment object and may be null when the lesson uses embedded scenario/activity practice.",
+  "practicePolicy": {
+    "lessonPractice": "Embedded scenario, activity, comparison, document, steps and remediation blocks in the canonical lesson object provide low-stakes formative practice with immediate instructional feedback where applicable.",
+    "moduleAssessment": "Each three-lesson module culminates in its published 14-item formative module assessment.",
+    "courseAssessment": "The public Course 1 final and integrated practical remain separate summative/performance evidence and are not substituted by lesson practice.",
+    "noDuplicationRule": "Do not duplicate module-bank items into lesson files merely to populate the lesson assessment pointer. Create a dedicated lesson assessment object only when a distinct item bank provides additional instructional value."
+  },
+  "lessons": [
+    {"lessonId":"LESSON-LH-TECH1-001-01","module":1,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
+    {"lessonId":"LESSON-LH-TECH1-001-02","module":1,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
+    {"lessonId":"LESSON-LH-TECH1-001-03","module":1,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M01"},
+    {"lessonId":"LESSON-LH-TECH1-001-04","module":2,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
+    {"lessonId":"LESSON-LH-TECH1-001-05","module":2,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
+    {"lessonId":"LESSON-LH-TECH1-001-06","module":2,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M02"},
+    {"lessonId":"LESSON-LH-TECH1-001-07","module":3,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
+    {"lessonId":"LESSON-LH-TECH1-001-08","module":3,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
+    {"lessonId":"LESSON-LH-TECH1-001-09","module":3,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M03"},
+    {"lessonId":"LESSON-LH-TECH1-001-10","module":4,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
+    {"lessonId":"LESSON-LH-TECH1-001-11","module":4,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
+    {"lessonId":"LESSON-LH-TECH1-001-12","module":4,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M04"},
+    {"lessonId":"LESSON-LH-TECH1-001-13","module":5,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
+    {"lessonId":"LESSON-LH-TECH1-001-14","module":5,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
+    {"lessonId":"LESSON-LH-TECH1-001-15","module":5,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M05"},
+    {"lessonId":"LESSON-LH-TECH1-001-16","module":6,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"},
+    {"lessonId":"LESSON-LH-TECH1-001-17","module":6,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"},
+    {"lessonId":"LESSON-LH-TECH1-001-18","module":6,"practiceSource":"embedded-rich-blocks","objectiveSource":"lesson.learningObjectives","cumulativeAssessmentId":"ASSESS-LH-TECH1-001-M06"}
+  ]
+}
