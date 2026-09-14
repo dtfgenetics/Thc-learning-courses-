@@ -1,8 +1,12 @@
 # Course 1 Practical — Assessor Calibration Protocol
 
+**Practical:** `PRACTICAL-LH-TECH1-001-WORKFLOW`  
+**Rubric version under calibration:** `1.1.0`  
+**Candidate forms:** Form A v1.1.0 and Form B v1.1.0
+
 ## Goal
 
-Establish whether assessors apply the practical rubric and critical-error rules consistently enough for pilot use, then identify rubric/form revisions before operational release.
+Establish whether assessors apply the v1.1.0 practical rubric, observable scoring criteria, evidence-note requirements, and critical-error rules consistently enough for pilot use, then identify rubric/form revisions before operational release.
 
 ## Required participants
 
@@ -20,22 +24,24 @@ Sample performances may be scripted video, live simulation, or complete written/
 
 ## Procedure
 
-1. Review the rubric, role boundaries, prompt rules, and critical-error definitions.
-2. Assessors score the first sample independently.
-3. Compare total scores and dimension scores without changing them after the fact.
-4. Record disagreements of more than 2 points on any dimension and every disagreement on critical-error status.
-5. Discuss which observable evidence produced the difference.
-6. Revise ambiguous anchor wording or form details if the disagreement is caused by the instrument rather than the assessor.
-7. Repeat with the remaining samples.
-8. Re-score one sample after discussion to check whether interpretation has converged.
+1. Confirm every assessor is using `PRACTICAL-LH-TECH1-001-WORKFLOW` rubric version `1.1.0` and one of the version-matched candidate forms.
+2. Review the rubric, observable criterion anchors, role boundaries, prompt rules, evidence-note requirements, and critical-error definitions.
+3. Assessors score the first sample independently and record observed evidence for every scored domain.
+4. Compare total scores, domain scores, criterion interpretations, and evidence notes without changing the original records after the fact.
+5. Record disagreements of more than 2 points on any domain and every disagreement on critical-error status.
+6. Discuss which observable evidence and criterion anchor produced the difference.
+7. Revise ambiguous anchor wording or form details if the disagreement is caused by the instrument rather than the assessor; any material revision requires a new rubric/form version before additional calibration evidence is combined with the prior version.
+8. Repeat with the remaining samples.
+9. Re-score one sample after discussion to check whether interpretation has converged.
 
 ## Initial pilot acceptance targets
 
 These are development targets, not claims of formal psychometric validation:
 
 - no unresolved assessor disagreement on whether an explicit critical error occurred;
-- dimension-score differences generally within 2 points after calibration;
-- no dimension whose wording produces repeated contradictory interpretations;
+- domain-score differences generally within 2 points after calibration;
+- no criterion or domain whose wording produces repeated contradictory interpretations;
+- observed-evidence notes support the awarded score rather than unsupported impressions;
 - prompt rules applied consistently;
 - accommodations do not change the construct being scored.
 
@@ -43,13 +49,16 @@ These are development targets, not claims of formal psychometric validation:
 
 Record:
 
-- practical version/form version;
+- practical ID and rubric version;
+- candidate form and form version;
 - assessor IDs/qualifications;
 - sample-performance IDs;
-- original scores by dimension;
+- original scores by domain;
+- criterion-level interpretations where disagreements occur;
+- observed-evidence notes supporting the awarded scores;
 - critical-error decisions;
 - disagreements and resolution;
 - rubric/form revisions made;
 - date and approval status.
 
-A completed calibration record is required before the practical can move from draft to operational pilot status.
+Do not combine calibration evidence from different rubric versions as though it came from one instrument. A completed calibration record for the current rubric version is required before the practical can be authorized for an operational pilot or certification-use decision.
