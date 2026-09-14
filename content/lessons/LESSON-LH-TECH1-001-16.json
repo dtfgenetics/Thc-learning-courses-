@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-001-16",
   "title": "Contemporaneous Records and Data Integrity",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "status": "published",
   "competencies": [
     "COMP-PRO-QA-001"
@@ -123,6 +123,17 @@
             "Target, average or remembered estimate inserted as fact"
           ]
         ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-014",
+        "title": "A trustworthy record preserves the whole lifecycle",
+        "src": "/assets/course1/data-integrity-record-lifecycle.svg",
+        "alt": "Record-lifecycle diagram showing controlled identity and observation, attributable contemporaneous recording, transparent correction, late or missing data handling, and reconstructable handoff while preserving the original history.",
+        "caption": "Data integrity is not just neat data entry. The record must preserve identity, timing, attribution, corrections, missing information and handoff context so another qualified person can reconstruct what actually happened.",
         "references": [
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]
