@@ -106,20 +106,23 @@ Instructor-resource counts describe the current support package, not content cei
 
 ## Course assessment
 
-- lesson retrieval checks embedded in instruction
-- 6 formative module tests × 14 items = **84 formative items**
+- objective-aligned formative lesson practice embedded in canonical lesson rich blocks
+- machine-readable lesson-to-practice/module mapping at `COURSE1-LESSON-PRACTICE-MAP.json`
+- 6 formative module tests × 14 items = **84 formative module-test items**
 - 1 integrated practical with analytic rubric/critical-error rules
 - 1 final course assessment = **36 summative items**
-- total public Course 1 knowledge-test item inventory = **120 items**
+- current scored public Course 1 knowledge-test inventory = **120 module/final items**, plus embedded lesson practice
 - current final-assessment runtime builds its form from the assessment's controlled item list rather than an application-level fixed item count
 - final item/choice presentation may be randomized deterministically per attempt while scoring remains against immutable canonical item versions
 - learner responses are stored in the learner attempt record; correct-answer keys and rationales are not returned in the live final-assessment payload
 - final submission is scored server-side and returns score/pass status plus competency/domain results consistent with the configured post-attempt domain-level feedback mode
 - practical finalization requires a complete set of canonical domain scores; passing requires both the configured point threshold and the configured critical-error rule
 
-The 84/36/120 counts are the current published inventory, not content ceilings. Additional valid items may be added, retired, replaced, or reorganized as objectives, evidence, instructional depth, and pilot findings evolve. Automated QA enforces minimum quality baselines and internal consistency rather than freezing the bank at an exact size.
+The optional `lesson.assessment` field points to a dedicated assessment object. Course 1 currently uses embedded lesson practice, so a null pointer does not mean the lesson lacks a knowledge check or formative activity. Do not duplicate module-bank questions solely to populate that field; create a standalone lesson assessment only when it adds distinct instructional value.
 
-The public course assessments are separate from the THC Cultivation Technician I certification examination. The learner final runtime resolves only a summative course assessment explicitly included in the published Course 1 release; it does not accept an arbitrary credential-assessment identifier from the learner browser.
+The 84/36/120 counts describe the current scored module/final inventory, not content ceilings. Additional valid items may be added, retired, replaced, or reorganized as objectives, evidence, instructional depth, and pilot findings evolve. Automated QA enforces minimum quality baselines and internal consistency rather than freezing the bank at an exact size.
+
+The public course assessments are separate from the THC Cultivation Technician I credential examination. The learner final runtime resolves only a summative course assessment explicitly included in the published Course 1 release; it does not accept an arbitrary credential-assessment identifier from the learner browser.
 
 ## Remediation evidence model
 
