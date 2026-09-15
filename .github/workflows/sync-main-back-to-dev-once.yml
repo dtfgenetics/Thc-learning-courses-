@@ -1,0 +1,44 @@
+name: Sync main back to dev once
+
+on:
+  push:
+    branches: [sync/main-back-to-dev-20260914]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Merge current main into dev-derived branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main:refs/remotes/origin/main
+          git merge --no-ff --no-edit origin/main
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Rebuild generated curriculum state
+        run: npm run registry:build
+      - name: Verify generated state is committed-equivalent
+        run: |
+          if ! git diff --quiet -- registry/curriculum.json; then
+            git add registry/curriculum.json
+          fi
+      - name: Run complete deterministic suite
+        run: npm test
+      - name: Remove one-shot workflow and publish tested merge
+        run: |
+          git rm .github/workflows/sync-main-back-to-dev-once.yml
+          git add -A
+          git commit -m "chore: converge current main back into dev"
+          git push origin HEAD:sync/main-back-to-dev-20260914
