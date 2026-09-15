@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "competencies": [
     "COMP-PLANT-BIO-001",
@@ -83,6 +83,8 @@
     "linkedCredentialPractical": "PRACTICAL-TECH1-A",
     "bankStatus": "development-seed",
     "bankExpansionTarget": 30,
-    "completionModel": "The course assessment is development evidence only while the course remains draft. Credential performance still requires the mapped Technician I practical and program-level release gates."
+    "completionModel": "The course assessment is development evidence only while the course remains draft. Credential performance still requires the mapped Technician I practical and program-level release gates.",
+    "distinctFormativeBank": true,
+    "formativeAssessment": "ASSESS-LH-TECH1-002-M01"
   }
 }

@@ -11,11 +11,11 @@
   "stem": "A technician suspects disease spread but the task does not authorize diagnosis or treatment selection. What is the best response?",
   "choices": [
     "Choose a pesticide based on the symptom",
-    "Document location and evidence, preserve supplied quarantine boundaries and escalate according to procedure",
     "Move affected plants through clean areas for closer viewing",
-    "Record a confirmed disease name so the next shift acts faster"
+    "Record a confirmed disease name so the next shift acts faster",
+    "Document location and evidence, preserve supplied quarantine boundaries and escalate according to procedure"
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "The technician preserves evidence and containment boundaries while escalating work outside their diagnostic or treatment authority.",
   "references": [
     "REF-PLANT-BIO-001"

@@ -11,11 +11,11 @@
   "stem": "A technician later realizes a photo was linked to the wrong plant ID. What should happen?",
   "choices": [
     "Silently replace the ID so the record appears correct from the start",
-    "Use the controlled correction method so the original history and corrected identity remain reconstructable",
     "Delete the entire crop walk",
-    "Keep the wrong ID because corrections are never allowed"
+    "Keep the wrong ID because corrections are never allowed",
+    "Use the controlled correction method so the original history and corrected identity remain reconstructable"
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "Corrections should preserve the true record history rather than silently rewriting it.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"

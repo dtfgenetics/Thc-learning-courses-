@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -57,6 +57,9 @@
     "mappedPractical": "PRACTICAL-TECH1-A",
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
-    "assessmentBankExpansionTarget": 30
+    "assessmentBankExpansionTarget": 30,
+    "dedicatedItemCount": 32,
+    "formativeItemCount": 12,
+    "summativeItemCount": 20
   }
 }

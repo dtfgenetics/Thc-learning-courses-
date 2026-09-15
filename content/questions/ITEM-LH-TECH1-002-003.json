@@ -11,11 +11,11 @@
   "stem": "A technician inspected 12 plants but did not record where they were located. What is the main evidence problem?",
   "choices": [
     "The sample is automatically too small",
-    "The observations cannot be reliably reconstructed or interpreted spatially",
     "The plants must be reinspected only at night",
+    "The observations cannot be reliably reconstructed or interpreted spatially",
     "Location never matters when photographs exist"
   ],
-  "correct": 1,
+  "correct": 2,
   "rationale": "Without location context, another person cannot determine the spatial distribution or reproduce the observation route.",
   "references": [
     "REF-PLANT-BIO-001"

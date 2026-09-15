@@ -23,7 +23,7 @@ The course trains a Technician I to perform representative crop walks, describe 
 
 ## Assessment design
 
-The initial dedicated bank contains 20 Course 002 items across plant observation, developmental morphology, record/photo quality and escalation/handoff decisions. It is a development seed bank, not a production-ready credential bank. The course assessment remains draft and retains a bank-expansion target of 30 items plus human assessment review and practical-performance evidence.
+The dedicated bank contains 32 Course 002 items: 12 formative items and 20 summative-development items across plant observation, developmental morphology, record/photo quality and escalation/handoff decisions. The formative and summative item sets are non-overlapping, and authored answer-key positions are balanced. It remains a development bank, not a production-ready credential bank. The course assessment remains draft and retains a bank-expansion target of 30 items plus human assessment review and practical-performance evidence.
 
 ## Validation performed by the build workflow
 

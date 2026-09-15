@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A routine crop walk begins at the room entrance where one plant is badly wilted. What is the best next step before describing the room-level condition?",
   "choices": [
-    "Use the wilted plant as the room sample because it is obvious",
     "Follow the supplied representative route and compare multiple locations before describing the room-level pattern",
+    "Use the wilted plant as the room sample because it is obvious",
     "Diagnose the room as under-watered and water every plant",
     "Remove the plant so the record is not biased"
   ],
-  "correct": 1,
+  "correct": 0,
   "rationale": "One conspicuous plant does not establish the distribution of a condition. A representative route is needed before a room-level statement.",
   "references": [
     "REF-PLANT-BIO-001"

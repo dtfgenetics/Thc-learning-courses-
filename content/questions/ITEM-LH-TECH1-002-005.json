@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A room schedule says flower week two, but several plants show less reproductive development than the rest. What is the best record?",
   "choices": [
-    "All plants are flower week two because the schedule controls biology",
     "Record the visible developmental distribution and keep the schedule as separate context",
+    "All plants are flower week two because the schedule controls biology",
     "Change the cultivar name for the lagging plants",
     "Ignore the lagging plants because they are a minority"
   ],
-  "correct": 1,
+  "correct": 0,
   "rationale": "Developmental stage should be supported by observable morphology; schedule timing is useful context but not proof that every plant is biologically identical.",
   "references": [
     "REF-FLOWER-MORPH-2023-001"
