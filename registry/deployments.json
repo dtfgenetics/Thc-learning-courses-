@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "updated": "2026-09-15",
+  "purpose": "Machine-readable record of verified public deployments for certification-course learner surfaces. Deployment evidence does not authorize professional credential issuance.",
+  "deployments": [
+    {
+      "id": "DEPLOY-COURSE-LH-TECH1-001-2026-09-15",
+      "courseId": "COURSE-LH-TECH1-001",
+      "environment": "production",
+      "site": "https://dtfseeds.com",
+      "catalogRoute": "/courses/",
+      "courseRoute": "/learn/learning-hub/cultivation-technician-i/safety-responsible-practice-cultivation-workflows/",
+      "siteRepository": "dtfgenetics/Thc",
+      "siteCommit": "2cda770033a6e8d126c7457805dd2c86e7098d6f",
+      "workflow": "Publish Learning Hub Course 1",
+      "workflowRunId": 34982604835,
+      "workflowRunNumber": 30,
+      "completedAt": "2026-09-15T14:37:56Z",
+      "result": "success",
+      "verification": {
+        "authenticatedWordPressReadback": true,
+        "freshAnonymousCatalogVerification": true,
+        "freshAnonymousRepresentativeLessonVerification": true,
+        "catalogVersion": 4,
+        "credentialOfferingCount": 10,
+        "falseIssuanceClaimsDetected": false,
+        "coursePublicScoredItemCount": 120,
+        "moduleTestItemCount": 84,
+        "finalCourseTestItemCount": 36
+      },
+      "boundary": "This deployment verifies the public professional training and catalog surfaces only. It does not satisfy human review, pilot, calibration, standard-setting, secure credential-exam, or credential-issuance release gates."
+    }
+  ]
+}
