@@ -367,7 +367,7 @@ export function createPostgresLearnerStore({ query } = {}) {
       if (!credentialDefinitionId) throw new Error('credentialDefinitionId required');
       const learnerId = await learnerIdForSubject(externalSubject);
       if (!learnerId) {
-        return { learnerId: externalSubject, assessmentAttempts: [], assessments: [], competencies: [], performanceAssessments: [], portfolioArtifacts: [] };
+        return { learnerId: externalSubject, courseCompletions: [], assessmentAttempts: [], assessments: [], competencies: [], performanceAssessments: [], portfolioArtifacts: [] };
       }
 
       const attemptsResult = await queryOrUnavailable(
@@ -390,6 +390,16 @@ export function createPostgresLearnerStore({ query } = {}) {
         status: attempt.passed ? 'passed' : 'failed',
         scorePercent: attempt.scorePercent
       }));
+
+      const enrollmentResult = await queryOrUnavailable(
+        query,
+        `select course_id, course_version, status, enrolled_at, completed_at
+           from enrollments
+          where learner_id = $1
+          order by enrolled_at desc, course_id, course_version`,
+        [learnerId]
+      );
+      const courseCompletions = (enrollmentResult.rows ?? []).map(enrollmentRow);
 
       const competencyResult = await queryOrUnavailable(
         query,
@@ -432,7 +442,7 @@ export function createPostgresLearnerStore({ query } = {}) {
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
       }));
 
-      return { learnerId: externalSubject, assessmentAttempts, assessments, competencies, performanceAssessments, portfolioArtifacts };
+      return { learnerId: externalSubject, courseCompletions, assessmentAttempts, assessments, competencies, performanceAssessments, portfolioArtifacts };
     }
   };
 }
