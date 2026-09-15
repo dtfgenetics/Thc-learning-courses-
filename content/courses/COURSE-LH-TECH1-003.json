@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "level": "Cultivation Technician I / entry occupational pathway",
+  "intendedAudience": [
+    "Learners progressing through the THC Cultivation Technician I pathway",
+    "Entry-level cultivation employees developing supervised operational competency"
+  ],
+  "deliveryModes": ["self-directed-web", "instructor-facilitated", "supervised-lab", "workplace-equivalent"],
+  "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
+  "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
+  "finalAssessment": null,
+  "id": "COURSE-LH-TECH1-003",
+  "title": "Environmental, Light & Sensor Fundamentals",
+  "description": "Builds entry-level skill in reading cultivation environmental and light measurements, preserving sensor context, recognizing obvious alarms or suspect readings, completing permitted verification steps, and escalating rather than independently redesigning control strategy.",
+  "modules": ["MOD-ENV-001", "MOD-LIGHT-001", "MOD-LH-TECH1-001-EQUIPMENT", "MOD-LH-TECH1-001-RECORDS"],
+  "competencies": ["COMP-ENV-VPD-001", "COMP-LIGHT-001", "COMP-CULT-EQUIPMENT-CARE-001", "COMP-PRO-QA-001"],
+  "learningOutcomes": [
+    "Read and record routine temperature, relative-humidity, VPD, photoperiod, PPFD, and related facility measurements with correct context and units.",
+    "Distinguish an environmental target, an observed measurement, an alarm condition, and an unsupported diagnosis.",
+    "Perform only permitted sensor or equipment readiness checks and preserve the evidence needed for escalation.",
+    "Recognize obvious outliers, missing context, or non-representative measurements and route them through the supplied procedure."
+  ],
+  "extensions": {
+    "credentialPath": "CREDPROG-CULT-TECH-I-001",
+    "jtaDomains": [4, 12, 13],
+    "maturity": "structure-mapped",
+    "developmentDependencies": ["MOD-ENV-001", "MOD-LIGHT-001", "MOD-LH-TECH1-001-EQUIPMENT", "MOD-LH-TECH1-001-RECORDS"],
+    "dedicatedCourseAssessmentRequired": true,
+    "contentCeiling": null
+  }
+}
