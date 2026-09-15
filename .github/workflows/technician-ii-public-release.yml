@@ -37,6 +37,16 @@ jobs:
       - name: Validate Technician II learner release
         run: node scripts/test-tech2-public-release.mjs
       - name: Re-run Technician II program structure
-        run: node scripts/test-technician-ii-program.mjs
+        run: node scripts/test-tech2-program-structure.mjs
+      - name: Re-run Technician II course regressions
+        run: |
+          node scripts/test-tech2-course1.mjs
+          node scripts/test-tech2-course2.mjs
+          node scripts/test-tech2-course3.mjs
+          node scripts/test-tech2-course4.mjs
+          node scripts/test-tech2-course5.mjs
+          node scripts/test-tech2-course6.mjs
+          node scripts/test-tech2-course7.mjs
+          node scripts/test-tech2-course8.mjs
       - name: Validate curriculum references
         run: node scripts/validate-curriculum-references.mjs
