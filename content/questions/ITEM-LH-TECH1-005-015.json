@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-005-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-005-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A tool crosses a quarantine boundary without the required sanitation step. What is the correct record response?",
+  "choices": [
+    "Silently sanitize later",
+    "Delete the tool from inventory",
+    "Treat it as a biosecurity breach, follow the supplied containment/correction procedure and document it",
+    "Assume no problem because no pest is visible"
+  ],
+  "correct": 2,
+  "rationale": "Treat it as a biosecurity breach, follow the supplied containment/correction procedure and document it. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-v1"
+  }
+}
