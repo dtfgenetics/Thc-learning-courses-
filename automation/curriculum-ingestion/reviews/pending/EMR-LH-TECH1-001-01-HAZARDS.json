@@ -5,10 +5,10 @@
   "claimId": "CLAIM-LH-TECH1-001-01-HAZARDS",
   "statement": "Cannabis production workplaces can involve chemical, biological, ergonomic or physical, and safety hazards, including chemical exposures, allergenic biological materials, heat or noise, electrical hazards, and slips, trips, or falls.",
   "domain": "workplace-safety",
-  "lessonIds": ["LESSON-LH-TECH1-001-01"],
+  "lessonIds": ["LESSON-LH-TECH1-001-01", "LESSON-LH-TECH1-001-13"],
   "referenceIds": ["REF-NIOSH-CANNABIS-HAZARDS-2024"],
-  "competencyIds": ["COMP-SAFETY-WORK-001"],
-  "objectiveIds": ["LO-LH-TECH1-001-01"],
+  "competencyIds": ["COMP-SAFETY-WORK-001", "COMP-CULT-EQUIPMENT-CARE-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-01", "LO-LH-TECH1-001-09"],
   "version": "0.1.0",
   "claimStatus": "draft",
   "reviewDueAt": "2027-03-15",
@@ -18,7 +18,7 @@
     "scientificReviewer": "Pending human scientific reviewer",
     "approvedAt": null,
     "aiAssisted": true,
-    "rationale": "Drafted from a reviewed NIOSH cannabis workplace-hazards source and cross-checked against the current NIOSH page on September 15, 2026. The statement stays at hazard-category level and avoids unsupported frequency or risk estimates.",
+    "rationale": "Drafted from a reviewed NIOSH cannabis workplace-hazards source and cross-checked against the current NIOSH page on September 15, 2026. The statement stays at hazard-category level and avoids unsupported frequency or risk estimates. Lesson 13 is included only for pre-use hazard recognition; this claim does not establish maintenance authorization or lockout/tagout requirements.",
     "notes": "Human scientific review is required before promotion."
   },
   "sourceContext": [
@@ -27,6 +27,12 @@
       "referenceId": "REF-NIOSH-CANNABIS-HAZARDS-2024",
       "jsonPath": "$.content.sections[0].references",
       "contextTitle": "Recognize the real work environment"
+    },
+    {
+      "lessonId": "LESSON-LH-TECH1-001-13",
+      "referenceId": "REF-NIOSH-CANNABIS-HAZARDS-2024",
+      "jsonPath": "$.content.blocks[0].references",
+      "contextTitle": "Pre-use checks protect safety and process reliability"
     }
   ]
 }
