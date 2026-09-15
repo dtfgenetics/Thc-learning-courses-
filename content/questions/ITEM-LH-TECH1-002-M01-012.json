@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-M01-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "A crop observation was linked to the wrong plant ID and must be corrected. What is the strongest record practice?",
+  "choices": [
+    "Silently overwrite the original ID",
+    "Delete the whole observation",
+    "Keep the wrong ID because records cannot be corrected",
+    "Use the controlled correction process so the original entry and corrected identity remain reconstructable"
+  ],
+  "correct": 3,
+  "rationale": "Use the controlled correction process so the original entry and corrected identity remain reconstructable. This response preserves the Course 002 evidence, identity, role-boundary or documentation principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-module1-formative"
+  }
+}

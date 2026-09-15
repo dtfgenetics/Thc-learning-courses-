@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-002-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-LH-TECH1-002-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Unexpected reproductive structures are observed on one identified plant. What is the strongest Technician I action?",
+  "choices": [
+    "Declare the entire cultivar genetically unstable",
+    "Remove every plant without documentation",
+    "Record plant identity, location and clear morphology evidence and escalate according to procedure",
+    "Change the record to match the expected schedule"
+  ],
+  "correct": 2,
+  "rationale": "Unexpected reproductive morphology should be documented as observed and escalated without turning limited evidence into a broad causal claim.",
+  "references": [
+    "REF-PLANT-BIO-001",
+    "REF-FLOWER-MORPH-2023-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

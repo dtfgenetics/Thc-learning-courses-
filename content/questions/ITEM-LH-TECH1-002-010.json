@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PLANT-BIO-001",
+  "objective": "LO-LH-TECH1-002-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One plant is wilted while adjacent plants on the same bench remain upright. What is the most useful interpretation at this stage?",
+  "choices": [
+    "The whole room needs more water",
+    "The finding is currently isolated and should be documented and compared before a broader cause is claimed",
+    "The cultivar cannot tolerate the room",
+    "All irrigation emitters have failed"
+  ],
+  "correct": 1,
+  "rationale": "An isolated pattern supports a different investigation path than a room-wide pattern; it does not establish a room-wide cause.",
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}
