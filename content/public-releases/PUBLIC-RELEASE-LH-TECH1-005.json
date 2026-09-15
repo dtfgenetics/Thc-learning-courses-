@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "PUBLIC-RELEASE-LH-TECH1-005",
+  "courseId": "COURSE-LH-TECH1-005",
+  "title": "Propagation, Canopy, IPM Scouting & Crop Care",
+  "publicationState": "published",
+  "publicScope": {
+    "modules": ["MOD-LH-TECH1-005-CROPCARE"],
+    "assessments": ["ASSESS-LH-TECH1-005-M01", "ASSESS-LH-TECH1-005-FINAL"],
+    "publicCourseItems": 36,
+    "practicalIds": ["PRACTICAL-TECH1-C", "PRACTICAL-TECH1-D", "PRACTICAL-TECH1-E"],
+    "studentSources": [
+      "content/lessons/LESSON-LH-TECH1-005-01.json",
+      "content/lessons/LESSON-LH-TECH1-005-02.json",
+      "content/lessons/LESSON-LH-TECH1-005-03.json",
+      "content/lessons/LESSON-LH-TECH1-005-04.json"
+    ]
+  },
+  "publicationBoundary": {"learnerPackage":"released","courseTests":"released-for-learning","credentialExam":"restricted","credentialDecision":"restricted-governance"},
+  "excludedFromPublicRelease": ["credential-purpose exam items and answer data","human review records and reviewer queues","pilot participant records and psychometric evidence","assessor calibration records","credential issuance secrets and signing material"],
+  "boundary": "This manifest authorizes the learner-facing academic training package for public study. It does not confer pesticide-applicator authority, treatment-selection authority, validated certification use, or professional credential issuance readiness."
+}
