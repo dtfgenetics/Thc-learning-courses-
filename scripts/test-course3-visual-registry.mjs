@@ -12,9 +12,11 @@ assert.equal(registry.policy?.maximumAssetCount, null);
 assert.equal(registry.driveStorage?.folderId, '1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU');
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.ok(produced.length >= 3, 'Course 3 visual foundation requires at least three produced learner assets');
+assert.ok(produced.length >= 6, 'Course 3 complete learner-asset layer requires at least six produced learner assets');
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
+assert.ok(produced.filter((asset) => asset.deliveryType === 'embedded-visual').length >= 4, 'Course 3 requires visual support in all four lessons');
+assert.ok(produced.filter((asset) => asset.deliveryType === 'downloadable-practice').length >= 2, 'Course 3 requires at least two downloadable practice assets');
 
 const registryById = new Map(produced.map((asset) => [asset.id, asset]));
 const usedAssetIds = new Set();
@@ -48,6 +50,8 @@ for (const asset of produced) {
 
 for (const lessonNumber of ['01', '02', '03', '04']) {
   const lesson = readJson(`content/lessons/LESSON-LH-TECH1-003-${lessonNumber}.json`);
+  const lessonImages = (lesson.content?.blocks ?? []).filter((block) => block.type === 'image' && block.assetId);
+  assert.ok(lessonImages.length >= 1, `${lesson.id}: every Course 3 lesson requires embedded visual support`);
   for (const block of lesson.content?.blocks ?? []) {
     if (block.type === 'image' && block.assetId) {
       const asset = registryById.get(block.assetId);
@@ -77,4 +81,4 @@ for (const asset of produced) {
   }
 }
 
-console.log(`Course 3 learner-asset contract passed for ${produced.length} public, accessible, Drive-mirrored and lesson-reachable assets.`);
+console.log(`Course 3 learner-asset contract passed for ${produced.length} public, accessible, Drive-mirrored and lesson-reachable assets across all four lessons.`);
