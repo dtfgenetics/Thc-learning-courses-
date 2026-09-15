@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Morphology-based developmental staging with calendar timing as context</title>
+  <desc id="desc">A four-stage teaching diagram showing observable vegetative structure, transition into reproductive growth, inflorescence development, and later maturation features. A separate timeline bar is labeled as context only, emphasizing that timing varies with genotype, history, and environment.</desc>
+  <rect width="1200" height="720" rx="32" fill="#f7f4e8"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#173d2b">Stage the plant from morphology, not the calendar alone</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="20" fill="#365b48">Describe the structures actually present; keep schedule timing as supporting context.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="150" width="255" height="390" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="188" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#173d2b">1. Vegetative structure</text>
+    <g stroke="#365b48" stroke-width="7" stroke-linecap="round" fill="none">
+      <line x1="188" y1="420" x2="188" y2="250"/>
+      <line x1="188" y1="300" x2="135" y2="270"/><line x1="188" y1="330" x2="240" y2="300"/><line x1="188" y1="360" x2="130" y2="340"/><line x1="188" y1="390" x2="245" y2="370"/>
+    </g>
+    <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+      <ellipse cx="125" cy="262" rx="34" ry="17" transform="rotate(-20 125 262)"/><ellipse cx="250" cy="292" rx="34" ry="17" transform="rotate(20 250 292)"/>
+      <ellipse cx="120" cy="334" rx="34" ry="17" transform="rotate(-15 120 334)"/><ellipse cx="255" cy="364" rx="34" ry="17" transform="rotate(15 255 364)"/>
+    </g>
+    <text x="88" y="465" font-size="17" fill="#365b48">Observe:</text>
+    <text x="88" y="492" font-size="16" fill="#365b48">• nodes and branching</text>
+    <text x="88" y="518" font-size="16" fill="#365b48">• leaf and shoot development</text>
+
+    <rect x="335" y="150" width="255" height="390" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="463" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#173d2b">2. Reproductive transition</text>
+    <g stroke="#365b48" stroke-width="7" stroke-linecap="round" fill="none">
+      <line x1="463" y1="420" x2="463" y2="245"/>
+      <line x1="463" y1="305" x2="412" y2="282"/><line x1="463" y1="345" x2="517" y2="320"/>
+    </g>
+    <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+      <ellipse cx="402" cy="276" rx="32" ry="16" transform="rotate(-18 402 276)"/><ellipse cx="527" cy="315" rx="32" ry="16" transform="rotate(18 527 315)"/>
+    </g>
+    <g fill="#d9b06b" stroke="#6d3c18" stroke-width="2"><circle cx="463" cy="255" r="12"/><circle cx="449" cy="288" r="9"/><circle cx="477" cy="288" r="9"/></g>
+    <text x="363" y="465" font-size="17" fill="#365b48">Observe:</text>
+    <text x="363" y="492" font-size="16" fill="#365b48">• emerging reproductive structures</text>
+    <text x="363" y="518" font-size="16" fill="#365b48">• distribution across sampled plants</text>
+
+    <rect x="610" y="150" width="255" height="390" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="738" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#173d2b">3. Inflorescence development</text>
+    <g stroke="#365b48" stroke-width="7" stroke-linecap="round" fill="none"><line x1="738" y1="420" x2="738" y2="300"/></g>
+    <g fill="#a8c8ae" stroke="#365b48" stroke-width="2">
+      <ellipse cx="738" cy="274" rx="42" ry="64"/><ellipse cx="700" cy="326" rx="28" ry="42"/><ellipse cx="776" cy="326" rx="28" ry="42"/>
+    </g>
+    <g stroke="#f4f0dd" stroke-width="3" fill="none"><path d="M720 255 q18 -24 36 0"/><path d="M707 305 q18 -20 32 0"/><path d="M746 305 q18 -20 32 0"/></g>
+    <text x="638" y="465" font-size="17" fill="#365b48">Observe:</text>
+    <text x="638" y="492" font-size="16" fill="#365b48">• visible flower/inflorescence change</text>
+    <text x="638" y="518" font-size="16" fill="#365b48">• crop uniformity and exceptions</text>
+
+    <rect x="885" y="150" width="255" height="390" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="1013" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#173d2b">4. Later maturation</text>
+    <g stroke="#365b48" stroke-width="7" stroke-linecap="round" fill="none"><line x1="1013" y1="420" x2="1013" y2="310"/></g>
+    <g fill="#7fa58a" stroke="#365b48" stroke-width="2">
+      <ellipse cx="1013" cy="270" rx="52" ry="72"/><ellipse cx="970" cy="330" rx="32" ry="46"/><ellipse cx="1056" cy="330" rx="32" ry="46"/>
+    </g>
+    <g fill="#d9b06b"><circle cx="993" cy="260" r="5"/><circle cx="1015" cy="244" r="5"/><circle cx="1033" cy="274" r="5"/><circle cx="982" cy="313" r="4"/><circle cx="1048" cy="318" r="4"/></g>
+    <text x="913" y="465" font-size="17" fill="#365b48">Observe:</text>
+    <text x="913" y="492" font-size="16" fill="#365b48">• later floral changes</text>
+    <text x="913" y="518" font-size="16" fill="#365b48">• distribution, not one feature alone</text>
+  </g>
+
+  <rect x="60" y="575" width="1080" height="95" rx="20" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+  <text x="90" y="612" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#173d2b">Calendar / schedule = context</text>
+  <line x1="330" y1="610" x2="930" y2="610" stroke="#b36b32" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="410" cy="610" r="9" fill="#b36b32"/><circle cx="590" cy="610" r="9" fill="#b36b32"/><circle cx="770" cy="610" r="9" fill="#b36b32"/>
+  <text x="330" y="646" font-family="Arial, sans-serif" font-size="17" fill="#365b48">Timing can differ with genotype, plant history, and environment.</text>
+  <text x="935" y="618" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#6d3c18">Do not force morphology to match the calendar.</text>
+
+  <text x="60" y="703" font-family="Arial, sans-serif" font-size="15" fill="#56685e">Teaching diagram — morphological evidence supports stage description; it does not define universal timing or harvest readiness.</text>
+</svg>

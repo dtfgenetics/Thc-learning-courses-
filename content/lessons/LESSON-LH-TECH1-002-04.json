@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-002-04",
   "title": "Crop Observation Records, Photographs and Shift Handoff",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "competencies": ["COMP-PRO-QA-001", "COMP-PRO-SOP-001"],
   "learningObjectives": ["LO-LH-TECH1-002-04", "LO-LH-TECH1-002-05"],
@@ -97,6 +97,15 @@
           {"title":"Identity and time","body":"Link the image set to the correct crop, location and observation time instead of relying on an unlabeled camera roll."}
         ],
         "extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}
+      },
+      {
+        "type":"image",
+        "assetId":"VIS-LH-TECH1-002-003",
+        "title":"Diagnostic photo evidence set",
+        "src":"/assets/course2/diagnostic-photo-evidence-set.svg",
+        "alt":"Three-panel diagram showing a context view of the crop area, a representative whole-plant view, and a close-detail view, followed by record fields for identity and time and reminders to use consistent lighting, retake misleading photos when possible, and avoid filters that materially change appearance.",
+        "caption":"Build image evidence from context to detail, link it to crop identity and time, and protect color fidelity so another person can reconstruct the observation.",
+        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-PLANT-BIO-001"]
       },
       {
         "type":"table",

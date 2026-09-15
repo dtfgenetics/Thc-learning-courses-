@@ -60,3 +60,5 @@ for (const itemId of formative.items) {
 }
 assert.equal(final.extensions?.linkedCredentialPractical, 'PRACTICAL-TECH1-A');
 console.log('Course 002 production slice passed: four lessons, five objectives, 12 distinct formative items and 20 balanced summative items are wired while release remains draft-gated.');
+
+await import('./test-course2-visual-registry.mjs');

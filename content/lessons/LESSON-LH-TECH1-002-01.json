@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-002-01",
   "title": "Structured Crop Walks and Representative Observation",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "competencies": ["COMP-PLANT-BIO-001"],
   "learningObjectives": ["LO-LH-TECH1-002-01", "LO-LH-TECH1-002-03"],
@@ -75,6 +75,15 @@
           {"title":"Inspect structures","body":"Describe relevant leaves, stems, nodes, roots or media when visible, and reproductive structures."},
           {"title":"Preserve pattern and context","body":"Record whether findings are isolated, zonal, edge-associated, widespread or otherwise spatially organized."}
         ],
+        "references":["REF-PLANT-BIO-001"]
+      },
+      {
+        "type":"image",
+        "assetId":"VIS-LH-TECH1-002-001",
+        "title":"Representative crop-walk route and sample context",
+        "src":"/assets/course2/representative-crop-walk-route.svg",
+        "alt":"Simplified crop-room map showing a repeatable route through edge, center and process zones, numbered observation points, and an example record of four affected plants out of twenty-four inspected, with a note that the exact route and sample size follow the facility plan.",
+        "caption":"A room-level statement needs representative coverage plus location and denominator context; the exact route and sample size remain facility-specific.",
         "references":["REF-PLANT-BIO-001"]
       },
       {

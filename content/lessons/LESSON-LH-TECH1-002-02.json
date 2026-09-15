@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-002-02",
   "title": "Growth Stage and Reproductive Morphology in Crop Records",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "competencies": [
     "COMP-PLANT-BIO-001",
@@ -73,6 +73,15 @@
           ["Maturation","Observable floral maturation features and their distribution across the sampled crop","That one visible feature alone establishes harvest readiness"]
         ],
         "references":["REF-FLOWER-MORPH-2023-001"]
+      },
+      {
+        "type":"image",
+        "assetId":"VIS-LH-TECH1-002-002",
+        "title":"Morphology-based developmental staging",
+        "src":"/assets/course2/morphology-stage-evidence.svg",
+        "alt":"Four-panel developmental diagram showing vegetative structure, reproductive transition, inflorescence development and later maturation features, with a separate calendar line labeled as context only and a warning that timing varies with genotype, plant history and environment.",
+        "caption":"Use observable structures to support a stage description; treat calendar timing as context rather than a universal rule.",
+        "references":["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001"]
       },
       {
         "type":"comparison",

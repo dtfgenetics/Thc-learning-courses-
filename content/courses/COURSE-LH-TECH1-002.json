@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -44,7 +44,7 @@
       4,
       13
     ],
-    "maturity": "instruction-assessment-draft",
+    "maturity": "instruction-assessment-visual-draft",
     "developmentDependencies": [
       "MOD-PLANT-BIO-001",
       "MOD-FLOWER-001",
@@ -61,6 +61,9 @@
     "dedicatedItemCount": 32,
     "formativeItemCount": 12,
     "summativeItemCount": 20,
-    "sourceDepthPass": 1
+    "sourceDepthPass": 1,
+    "visualLearningBatch": 1,
+    "producedVisualCount": 3,
+    "visualRegistry": "visuals/COURSE2-ASSET-REGISTRY.json"
   }
 }

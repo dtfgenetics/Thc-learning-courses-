@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Diagnostic photo evidence set for crop records</title>
+  <desc id="desc">A three-panel teaching diagram showing context view, representative whole-plant view, and close-detail view, plus a comparison example and record fields for crop identity and time. The diagram advises consistent lighting and avoiding filters that materially change appearance.</desc>
+  <rect width="1200" height="720" rx="32" fill="#f7f4e8"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#173d2b">Photo evidence: context → whole plant → close detail</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="20" fill="#365b48">A useful image set lets another qualified person reconstruct what was photographed, where, and when.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="150" width="330" height="320" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="225" y="188" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">1. Context view</text>
+    <rect x="90" y="215" width="270" height="175" rx="14" fill="#eaf1ec" stroke="#5c7d69" stroke-width="2"/>
+    <line x1="180" y1="215" x2="180" y2="390" stroke="#d0dbd3" stroke-width="2"/><line x1="270" y1="215" x2="270" y2="390" stroke="#d0dbd3" stroke-width="2"/>
+    <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+      <circle cx="130" cy="270" r="20"/><circle cx="220" cy="270" r="20"/><circle cx="310" cy="270" r="20"/>
+      <circle cx="130" cy="340" r="20"/><circle cx="220" cy="340" r="20"/><circle cx="310" cy="340" r="20"/>
+    </g>
+    <circle cx="310" cy="340" r="30" fill="none" stroke="#b36b32" stroke-width="5"/>
+    <text x="92" y="425" font-size="17" fill="#365b48">Show room/zone and distribution.</text>
+    <text x="92" y="451" font-size="16" fill="#56685e">Do not start with an isolated close-up only.</text>
+
+    <rect x="435" y="150" width="330" height="320" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="600" y="188" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">2. Whole-plant view</text>
+    <rect x="465" y="215" width="270" height="175" rx="14" fill="#eef4ef" stroke="#5c7d69" stroke-width="2"/>
+    <g stroke="#365b48" stroke-width="7" stroke-linecap="round" fill="none">
+      <line x1="600" y1="370" x2="600" y2="250"/>
+      <line x1="600" y1="280" x2="545" y2="250"/><line x1="600" y1="305" x2="655" y2="274"/><line x1="600" y1="330" x2="545" y2="310"/><line x1="600" y1="352" x2="655" y2="332"/>
+    </g>
+    <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+      <ellipse cx="532" cy="243" rx="34" ry="17" transform="rotate(-20 532 243)"/><ellipse cx="668" cy="267" rx="34" ry="17" transform="rotate(20 668 267)"/>
+      <ellipse cx="532" cy="304" rx="34" ry="17" transform="rotate(-15 532 304)"/><ellipse cx="668" cy="327" rx="34" ry="17" transform="rotate(15 668 327)"/>
+    </g>
+    <text x="467" y="425" font-size="17" fill="#365b48">Show overall architecture and pattern.</text>
+    <text x="467" y="451" font-size="16" fill="#56685e">Link the plant to its room/zone identity.</text>
+
+    <rect x="810" y="150" width="330" height="320" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="975" y="188" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">3. Close detail</text>
+    <rect x="840" y="215" width="270" height="175" rx="14" fill="#eef4ef" stroke="#5c7d69" stroke-width="2"/>
+    <path d="M975 360 C900 315 900 245 975 230 C1050 245 1050 315 975 360 Z" fill="#8db79b" stroke="#365b48" stroke-width="3"/>
+    <line x1="975" y1="240" x2="975" y2="350" stroke="#365b48" stroke-width="3"/>
+    <path d="M975 275 C945 262 920 263 898 278" stroke="#d9b06b" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="908" cy="279" r="11" fill="none" stroke="#b36b32" stroke-width="4"/>
+    <text x="842" y="425" font-size="17" fill="#365b48">Show the relevant structure sharply.</text>
+    <text x="842" y="451" font-size="16" fill="#56685e">Include scale or comparison when useful.</text>
+  </g>
+
+  <rect x="60" y="505" width="520" height="150" rx="22" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+  <text x="90" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#173d2b">Record context with the image set</text>
+  <text x="90" y="578" font-family="Arial, sans-serif" font-size="17" fill="#365b48">• Room / zone / plant or bench ID</text>
+  <text x="90" y="608" font-family="Arial, sans-serif" font-size="17" fill="#365b48">• Date and observation time</text>
+  <text x="330" y="578" font-family="Arial, sans-serif" font-size="17" fill="#365b48">• Developmental context</text>
+  <text x="330" y="608" font-family="Arial, sans-serif" font-size="17" fill="#365b48">• Observation / pattern note</text>
+  <text x="90" y="638" font-family="Arial, sans-serif" font-size="17" fill="#365b48">• Comparison image when it improves interpretation</text>
+
+  <rect x="620" y="505" width="520" height="150" rx="22" fill="#fffaf0" stroke="#b36b32" stroke-width="3"/>
+  <text x="650" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#6d3c18">Protect image fidelity</text>
+  <text x="650" y="578" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">• Prefer natural or otherwise consistent lighting</text>
+  <text x="650" y="608" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">• Retake a misleading image when conditions allow</text>
+  <text x="650" y="638" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">• Do not use filters or edits that materially change appearance</text>
+
+  <text x="60" y="700" font-family="Arial, sans-serif" font-size="15" fill="#56685e">Teaching diagram — photographs support evidence collection; they do not by themselves establish a diagnosis.</text>
+</svg>
