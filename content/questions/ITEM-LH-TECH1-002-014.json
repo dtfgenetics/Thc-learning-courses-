@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -8,21 +8,20 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "scenario",
-  "stem": "A symptom photo is strongly color-shifted by lighting. What is the best evidence action when conditions allow?",
+  "stem": "A crop photograph is strongly color-shifted by the room lighting, and color is part of the observation being documented. What is the strongest evidence action when conditions allow?",
   "choices": [
-    "Increase saturation until the symptom is obvious",
-    "Retake under more consistent or neutral lighting and preserve crop identity",
-    "Use the image and omit the lighting issue",
-    "Convert it to a stylized filter"
+    "Keep the original image, document the lighting issue, and rely on the written color description instead of taking another image",
+    "Retake the image under more consistent or neutral lighting while preserving the same crop identity and observation context",
+    "Adjust white balance and saturation until the image matches the technician's memory of the plant's color",
+    "Take a sharper close-up under the same colored fixture because image sharpness matters more than color fidelity"
   ],
   "correct": 1,
-  "rationale": "When color is part of the observation, a more faithful image is preferable to editing that can change symptom appearance.",
-  "references": [
-    "REF-PLANT-BIO-001",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "rationale": "When color is part of the evidence, a new image captured under more consistent lighting is stronger than relying on a known color-shifted image or editing the image to match memory. Identity and context still need to remain linked to the retake.",
+  "references": ["REF-PLANT-BIO-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2",
+    "publicSourceUrl": "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers",
+    "sourceScope": "Transferable diagnostic-photo guidance; not cannabis-specific."
   }
 }
