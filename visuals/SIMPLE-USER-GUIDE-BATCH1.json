@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "thc-simple-user-guide-batch1",
+  "title": "THC Simple User Guide — Batch 1",
+  "brandHeader": "THC Simple User Guide",
+  "purpose": "Simple beginner infographic guide for lawful home cannabis cultivation.",
+  "readerPath": "What stage they are in → what the plant needs → what to do → what to avoid → what comes next",
+  "scope": "Starter path from setup to cure.",
+  "termsPolicy": "Terms come after the first 10 pages and should be derived from words actually used in the set.",
+  "designRules": {
+    "style": [
+      "Clean educational infographic.",
+      "Simple beginner publication style.",
+      "Not cartoon overload.",
+      "Not cluttered.",
+      "Not fake textbook.",
+      "Not “stoner poster.”",
+      "Not random AI art."
+    ],
+    "layout": {
+      "top": ["THC Simple User Guide", "Main page title"],
+      "middle": "One clear educational illustration.",
+      "bottomOrSidePanels": ["What it means", "What to do", "Avoid", "Simple rule"]
+    },
+    "textMaximum": ["1 short title", "3–5 key points", "1 avoid box", "1 simple rule"],
+    "readingLevel": "Beginner. Plain language. No advanced science."
+  },
+  "productionRule": [
+    "Build the exact page script.",
+    "Build the visual prompt.",
+    "Generate or design the page.",
+    "QA the text.",
+    "Fix errors before moving on."
+  ],
+  "batchGoal": ["Same brand.", "Same layout.", "Same reading level.", "Same structure.", "Same visual quality."],
+  "pages": [
+    {
+      "number": 1,
+      "slug": "setup",
+      "title": "Setup",
+      "goal": "Show that the grow space must be ready before starting seeds.",
+      "information": "- Set up first\n- Have the basics ready\n- Keep it clean and safe\n- Plan drying and curing before harvest",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Setup**\n\n**Get ready before you start seeds.**\n\n**Have ready:**\n- Light or sun\n- Pot with drainage\n- Simple grow mix\n- Water\n- Airflow\n- Drying and curing space\n\n**Avoid:**\nStarting seeds with no plan.\n\n**Simple rule:**  \nSet up first. Start seeds second.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Setup.” Use a simple premium educational layout with a cream background, green accents, large readable text, and clean icons. Show a simple grow setup: light or sun, pot with drainage, soil/grow mix, water, airflow, and a drying/cure reminder. Do not overcrowd the page. Use only this wording: “Get ready before you start seeds.” “Have ready: Light or sun, Pot with drainage, Simple grow mix, Water, Airflow, Drying and curing space.” “Avoid: Starting seeds with no plan.” “Simple rule: Set up first. Start seeds second.” Make it look like a professional beginner education page, not a poster, not a cartoon scene, not a dense manual."
+    },
+    {
+      "number": 2,
+      "slug": "seeds",
+      "title": "Seeds",
+      "goal": "Teach how the grow begins.",
+      "information": "- Seeds need moisture, warmth, and patience\n- Do not drown or overhandle the seed\n- Move on when the root appears",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Seeds**\n\n**A seed wakes up with moisture and warmth.**\n\n**Needs:**\n- Moisture\n- Warmth\n- Gentle handling\n- Time\n\n**Avoid:**\nDrowning it or checking too much.\n\n**Move on when:**  \nThe first white root appears.\n\n**Simple rule:**  \nMoist. Warm. Gentle. Patient.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Seeds.” Use a cream background, green natural accents, and large readable text. Show a simple seed beginning to open with a small white root, using a clean educational diagram style. Do not show clutter. Do not add extra scientific labels. Use only this wording: “A seed wakes up with moisture and warmth.” “Needs: Moisture, Warmth, Gentle handling, Time.” “Avoid: Drowning it or checking too much.” “Move on when: The first white root appears.” “Simple rule: Moist. Warm. Gentle. Patient.” Make it simple enough for a new grower."
+    },
+    {
+      "number": 3,
+      "slug": "seedling",
+      "title": "Seedling",
+      "goal": "Teach gentle baby plant care.",
+      "information": "- Seedlings are fragile\n- Use gentle light and light watering\n- Avoid overwatering and heavy feeding",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Seedling**\n\n**A seedling is a baby plant.**\n\n**Needs:**\n- Gentle light\n- Light watering\n- Clean air\n- Time to grow roots\n\n**Avoid:**\nToo much water, food, or strong light.\n\n**Move on when:**  \nIt has several healthy leaves.\n\n**Simple rule:**  \nBaby plants need gentle care.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Seedling.” Use a calm cream background, green accents, large readable text, and a central simple illustration of a small healthy seedling in a pot. Keep the design soft and beginner-friendly. Use only this wording: “A seedling is a baby plant.” “Needs: Gentle light, Light watering, Clean air, Time to grow roots.” “Avoid: Too much water, food, or strong light.” “Move on when: It has several healthy leaves.” “Simple rule: Baby plants need gentle care.” Do not add extra details."
+    },
+    {
+      "number": 4,
+      "slug": "veg",
+      "title": "Veg",
+      "goal": "Teach that veg is the plant-building stage.",
+      "information": "- Veg builds roots, stems, leaves, and branches\n- Water carefully\n- Keep airflow moving\n- Do not overfeed or overwater",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Veg**\n\n**Veg is when the plant grows bigger.**\n\n**The plant builds:**\n- Roots\n- Stems\n- Leaves\n- Branches\n\n**Do:**\nWater when the pot starts to dry.\n\n**Avoid:**\nOverwatering and overfeeding.\n\n**Simple rule:**  \nVeg builds the plant’s body.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Veg.” Use a premium simple education layout with cream background, green accents, and large readable text. Show a healthy young plant getting bigger, with simple visual emphasis on roots, stems, leaves, and branches. Use only this wording: “Veg is when the plant grows bigger.” “The plant builds: Roots, Stems, Leaves, Branches.” “Do: Water when the pot starts to dry.” “Avoid: Overwatering and overfeeding.” “Simple rule: Veg builds the plant’s body.” Do not add advanced terms."
+    },
+    {
+      "number": 5,
+      "slug": "flower",
+      "title": "Flower",
+      "goal": "Teach that flower is bud-forming stage and patience matters.",
+      "information": "- Buds form\n- Airflow matters\n- Do not interrupt dark period for photoperiod plants\n- Watch moisture and mold risk",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Flower**\n\n**Flower is when buds begin to form.**\n\n**Needs:**\n- Steady light schedule\n- Good airflow\n- Careful watering\n- Patience\n\n**Avoid:**\nWet, stale air around buds.\n\n**Watch for:**\nBuds getting bigger and smell getting stronger.\n\n**Simple rule:**  \nPatience protects quality.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Flower.” Use a cream background, green accents, large readable text, and a central educational illustration of a cannabis plant beginning to form buds. Keep it simple and not overly detailed. Use only this wording: “Flower is when buds begin to form.” “Needs: Steady light schedule, Good airflow, Careful watering, Patience.” “Avoid: Wet, stale air around buds.” “Watch for: Buds getting bigger and smell getting stronger.” “Simple rule: Patience protects quality.” Do not add extra claims."
+    },
+    {
+      "number": 6,
+      "slug": "harvest",
+      "title": "Harvest",
+      "goal": "Teach not to harvest too early.",
+      "information": "- Buds should look mature\n- Use clean tools\n- Prepare drying space first",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Harvest**\n\n**Harvest means cutting the plant when buds are ready.**\n\n**Look for:**\n- Full buds\n- Strong smell\n- Darker curled hairs\n- Mature trichomes\n\n**Do:**\nUse clean tools.\n\n**Avoid:**\nCutting early because you are excited.\n\n**Simple rule:**  \nHarvest when the plant is ready.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Harvest.” Use a simple premium layout with cream background, green accents, and large readable text. Show clean scissors near a mature branch with full buds, in an educational illustration style. Use only this wording: “Harvest means cutting the plant when buds are ready.” “Look for: Full buds, Strong smell, Darker curled hairs, Mature trichomes.” “Do: Use clean tools.” “Avoid: Cutting early because you are excited.” “Simple rule: Harvest when the plant is ready.” Do not overcrowd."
+    },
+    {
+      "number": 7,
+      "slug": "dry",
+      "title": "Dry",
+      "goal": "Teach drying as a critical step, not an afterthought.",
+      "information": "- Dry slowly\n- No heat rushing\n- Gentle airflow, not direct fan blast\n- Watch for mold",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Dry**\n\n**Drying slowly removes moisture after harvest.**\n\n**Needs:**\n- Darkness\n- Gentle airflow\n- Moderate temperature\n- Time\n\n**Avoid:**\nHeat, bright light, and direct fan blast.\n\n**Move on when:**  \nBuds feel dry outside and small stems bend or snap.\n\n**Simple rule:**  \nFast drying can ruin good flower.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Dry.” Use a cream background, green accents, large readable text, and a central simple illustration of harvested branches hanging in a clean drying space. Use only this wording: “Drying slowly removes moisture after harvest.” “Needs: Darkness, Gentle airflow, Moderate temperature, Time.” “Avoid: Heat, bright light, and direct fan blast.” “Move on when: Buds feel dry outside and small stems bend or snap.” “Simple rule: Fast drying can ruin good flower.” Make it clean and practical."
+    },
+    {
+      "number": 8,
+      "slug": "cure",
+      "title": "Cure",
+      "goal": "Teach cure as the final finishing and storage step.",
+      "information": "- Cure happens after drying\n- Use clean containers\n- Do not jar wet buds\n- Store cool and dark",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Cure**\n\n**Curing is the final step after drying.**\n\n**Needs:**\n- Clean jars or containers\n- Cool storage\n- Darkness\n- Mold checks\n\n**Do:**\nOpen containers early if moisture builds up.\n\n**Avoid:**\nJarring wet buds.\n\n**Simple rule:**  \nDry first. Cure second.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Cure.” Use a cream background, green accents, large readable text, and a central simple illustration of clean jars or containers holding dried flower in a cool dark storage setting. Use only this wording: “Curing is the final step after drying.” “Needs: Clean jars or containers, Cool storage, Darkness, Mold checks.” “Do: Open containers early if moisture builds up.” “Avoid: Jarring wet buds.” “Simple rule: Dry first. Cure second.” Do not add extra details."
+    },
+    {
+      "number": 9,
+      "slug": "pests",
+      "title": "Pests",
+      "goal": "Teach early pest spotting without turning it into pest science.",
+      "information": "- Check under leaves\n- Look for bugs, spots, webs, eggs, damage\n- Keep the space clean\n- Do not spray random products on buds",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Pests**\n\n**Pests are problems that can damage plants.**\n\n**Check for:**\n- Tiny bugs\n- Eggs\n- Webbing\n- Leaf spots\n- Chewed leaves\n\n**Do:**\nLook under leaves often.\n\n**Avoid:**\nSpraying random products on buds.\n\n**Simple rule:**  \nCatch pests early.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Pests.” Use a cream background, green accents, large readable text, and a simple educational illustration of a grower checking the underside of leaves with a magnifier. Show small generic pest warning icons, not horror-style bugs. Use only this wording: “Pests are problems that can damage plants.” “Check for: Tiny bugs, Eggs, Webbing, Leaf spots, Chewed leaves.” “Do: Look under leaves often.” “Avoid: Spraying random products on buds.” “Simple rule: Catch pests early.” Keep it calm and beginner-friendly."
+    },
+    {
+      "number": 10,
+      "slug": "tips",
+      "title": "Tips",
+      "goal": "Give the new grower survival rules.",
+      "information": "- Start small\n- Do not overwater or overfeed\n- Keep air moving\n- Keep clean\n- Change one thing at a time\n- Be patient",
+      "onPageMarkdown": "**THC Simple User Guide**  \n**Tips**\n\n**Beginner rules that matter most:**\n\n- Start small\n- Check before watering\n- Feed lightly\n- Keep air moving\n- Keep it clean\n- Change one thing at a time\n- Take pictures\n- Be patient\n\n**Simple rule:**  \nHealthy basics beat complicated tricks.",
+      "productionPrompt": "Create a clean vertical educational infographic page for a beginner cannabis cultivation guide. Brand header: “THC Simple User Guide.” Page title: “Tips.” Use a cream background, green accents, large readable text, and a clean checklist-style layout with simple icons. Make it feel like the final page of a beginner education set. Use only this wording: “Beginner rules that matter most:” “Start small, Check before watering, Feed lightly, Keep air moving, Keep it clean, Change one thing at a time, Take pictures, Be patient.” “Simple rule: Healthy basics beat complicated tricks.” Do not add extra text."
+    }
+  ],
+  "assetState": {
+    "sourceText": "migrated",
+    "pageScripts": 10,
+    "productionPrompts": 10,
+    "finalInfographicImages": 0,
+    "termsPage": "planned-after-batch1"
+  }
+}
