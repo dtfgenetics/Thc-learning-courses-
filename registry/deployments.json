@@ -29,6 +29,39 @@
         "finalCourseTestItemCount": 36
       },
       "boundary": "This deployment verifies the public professional training and catalog surfaces only. It does not satisfy human review, pilot, calibration, standard-setting, secure credential-exam, or credential-issuance release gates."
+    },
+    {
+      "id": "DEPLOY-COURSE-LH-TECH1-001-VISUALS-2026-09-15",
+      "courseId": "COURSE-LH-TECH1-001",
+      "environment": "production",
+      "site": "https://dtfseeds.com",
+      "courseRoute": "/learn/learning-hub/cultivation-technician-i/safety-responsible-practice-cultivation-workflows/",
+      "siteRepository": "dtfgenetics/Thc",
+      "siteCommit": "7cffef779ee5ab3fe4249ea9b8428521e703db27",
+      "workflow": "Publish Learning Hub Course 1",
+      "workflowRunId": 34988643494,
+      "workflowRunNumber": 44,
+      "completedAt": "2026-09-15T15:32:03Z",
+      "result": "success",
+      "verification": {
+        "canonicalVisualMapBuilt": true,
+        "guidedLessonUiVerified": true,
+        "completeCanonicalVisualDeliveryVerified": true,
+        "freshAnonymousCatalogVerification": true,
+        "freshAnonymousRepresentativeLessonVerification": true,
+        "lessonCount": 18,
+        "lessonsWithCanonicalVisuals": 18,
+        "canonicalVisualPlacements": 19,
+        "uniqueCanonicalAssets": 14,
+        "canonicalCoverageFallbackPlacements": 2,
+        "unreviewedPngReplacementCandidatesPublished": false
+      },
+      "visualAuthority": [
+        "content/lessons/LESSON-LH-TECH1-001-*.json",
+        "visuals/COURSE1-VISUAL-CONCEPT-COVERAGE.json",
+        "visuals/ASSET-REGISTRY.json"
+      ],
+      "boundary": "This deployment closes the machine/public SVG visual-delivery gap only. Factual/copy review of replacement candidates, rendered accessibility review, responsive/manual learner review, and all certification-release gates remain open."
     }
   ]
 }
