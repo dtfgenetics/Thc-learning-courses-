@@ -17,7 +17,7 @@ Folder: **Course 2 — Visual Learning Boards**
 - folder ID: `1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 - folder URL: `https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 
-All eight produced Course 2 learner assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
+All nine produced Course 2 learner assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
 
 ## Embedded teaching visuals
 
@@ -26,24 +26,18 @@ All eight produced Course 2 learner assets are mirrored and recorded in `visuals
 3. `VIS-LH-TECH1-002-003` — Diagnostic photo evidence set — Lesson 4
 4. `VIS-LH-TECH1-002-004` — Spatial pattern comparison — Lesson 1
 5. `VIS-LH-TECH1-002-005` — Reconstructable crop-record and shift-handoff chain — Lesson 4
-6. `VIS-LH-TECH1-002-008` — **Observation, interpretation, and diagnostic-boundary workflow** — Lesson 3
-   - public path: `/assets/course2/observation-interpretation-diagnosis-boundary.svg`
-   - Drive file: `1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw`
-   - purpose: separate direct observation, pattern/context, provisional interpretation and confirmation/escalation
-   - public source support: Penn State Extension, `Overview of Plant Diagnostics`
+6. `VIS-LH-TECH1-002-008` — Observation, interpretation, and diagnostic-boundary workflow — Lesson 3
+7. `VIS-LH-TECH1-002-009` — **Reproductive morphology reference** — Lesson 2
+   - public path: `/assets/course2/reproductive-morphology-reference.svg`
+   - Drive file: `12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa`
+   - purpose: original schematic for documenting visible pistillate and staminate structures and unexpected/mixed expression without unsupported causal inference
+   - source support: existing `REF-FLOWER-MORPH-2023-001` plus an open-access review on Cannabis sexual-expression plasticity
+   - copyright control: original teaching schematic; no published source figure reproduced
 
 ## Downloadable practice assets
 
-7. `VIS-LH-TECH1-002-006` — **Crop-walk room-map practice worksheet**
-   - lesson: `LESSON-LH-TECH1-002-01`
-   - public path: `/assets/course2/crop-walk-room-map-practice.svg`
-   - Drive file: `19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX`
-   - practice: route design, observation points, denominator, spatial pattern, direct observation, context, uncertainty, escalation
-8. `VIS-LH-TECH1-002-007` — **Observation record and handoff practice worksheet**
-   - lesson: `LESSON-LH-TECH1-002-04`
-   - public path: `/assets/course2/observation-handoff-practice.svg`
-   - Drive file: `15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA`
-   - practice: identity/timing, direct evidence, photo checks, context, action, uncertainty, escalation, next check, cross-check and correction history
+8. `VIS-LH-TECH1-002-006` — Crop-walk room-map practice worksheet — Lesson 1
+9. `VIS-LH-TECH1-002-007` — Observation record and handoff practice worksheet — Lesson 4
 
 ## Delivery contract
 
@@ -61,20 +55,21 @@ The contract is imported by `scripts/test-tech1-course2.mjs` and runs through th
 
 ## Source and scope controls
 
-These assets teach evidence collection, reasoning boundaries and record quality. They do not replace facility procedures, diagnostic authority, jurisdiction-specific requirements or human technical review.
+These assets teach evidence collection, reproductive/developmental morphology, reasoning boundaries and record quality. They do not replace facility procedures, diagnostic authority, jurisdiction-specific requirements or human technical review.
 
 - sample routes and sizes remain facility/purpose-specific;
 - spatial pattern describes distribution and does not prove cause;
 - developmental timing is context, not a universal cultivar rule;
 - photographs support documentation and do not prove diagnosis;
 - symptoms, timing, environment and work history can narrow a diagnostic differential without independently confirming one cause;
+- visible pistillate or staminate structures establish what was observed, not why sexual expression occurred;
+- the reproductive-morphology schematic is not to scale and must not be used to predict sex from vegetative appearance;
 - exact handoff forms, roles, escalation paths and correction controls remain facility-specific.
 
 ## Remaining Course 2 learner-asset priorities
 
-- reproductive morphology comparison references after source/copyright review;
 - photo-evidence practice packet with example image sets and accessible text alternatives;
 - optional printable/PDF exports derived from the canonical SVG worksheets after layout/accessibility review;
 - human technical and accessibility review before any draft-to-release status change.
 
-Lesson 3 now has a normal connector-safe visual and source-depth improvement. No bypass of connector or safety controls was used.
+All four Course 2 lessons now have dedicated visual support. Course 2 remains draft-gated pending human review and any additional performance-validation work required by the program.

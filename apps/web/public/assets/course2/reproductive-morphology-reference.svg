@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cannabis reproductive morphology reference</title>
+  <desc id="desc">Original teaching schematic comparing visible pistillate and staminate cannabis flower structures and a mixed-expression documentation example. The diagram emphasizes recording the structures actually present, not assigning cause from morphology alone.</desc>
+  <rect width="1200" height="720" rx="32" fill="#f7f4e8"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#173d2b">Reproductive morphology: record the structures actually present</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="20" fill="#365b48">Use visible reproductive structures as evidence; do not infer genetic or environmental cause from one observation.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="155" width="330" height="420" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="225" y="198" text-anchor="middle" font-size="25" font-weight="700" fill="#173d2b">Pistillate morphology</text>
+    <text x="225" y="226" text-anchor="middle" font-size="15" fill="#56685e">simplified flower/bract view</text>
+    <path d="M225 450 C170 410 170 320 225 285 C280 320 280 410 225 450 Z" fill="#8db79b" stroke="#365b48" stroke-width="3"/>
+    <ellipse cx="225" cy="365" rx="42" ry="62" fill="#cbd9ce" stroke="#365b48" stroke-width="3"/>
+    <path d="M220 318 C210 270 195 250 178 238" stroke="#f4f0dd" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M230 318 C240 270 255 250 272 238" stroke="#f4f0dd" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <text x="92" y="485" font-size="16" fill="#365b48">Observe and record:</text>
+    <text x="92" y="515" font-size="16" fill="#365b48">• enclosing bract / floral tissue</text>
+    <text x="92" y="543" font-size="16" fill="#365b48">• ovary region</text>
+    <text x="92" y="571" font-size="16" fill="#365b48">• paired stigma branches when visible</text>
+
+    <rect x="435" y="155" width="330" height="420" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <text x="600" y="198" text-anchor="middle" font-size="25" font-weight="700" fill="#173d2b">Staminate morphology</text>
+    <text x="600" y="226" text-anchor="middle" font-size="15" fill="#56685e">simplified open-flower view</text>
+    <g transform="translate(600 350)">
+      <g fill="#cbd9ce" stroke="#365b48" stroke-width="3">
+        <ellipse cx="0" cy="-70" rx="34" ry="65"/>
+        <ellipse cx="66" cy="-20" rx="34" ry="65" transform="rotate(72 66 -20)"/>
+        <ellipse cx="41" cy="58" rx="34" ry="65" transform="rotate(144 41 58)"/>
+        <ellipse cx="-41" cy="58" rx="34" ry="65" transform="rotate(216 -41 58)"/>
+        <ellipse cx="-66" cy="-20" rx="34" ry="65" transform="rotate(288 -66 -20)"/>
+      </g>
+      <g stroke="#6d3c18" stroke-width="4" fill="#d9b06b">
+        <line x1="0" y1="0" x2="0" y2="-55"/><ellipse cx="0" cy="-70" rx="10" ry="18"/>
+        <line x1="0" y1="0" x2="52" y2="-16"/><ellipse cx="66" cy="-20" rx="10" ry="18" transform="rotate(72 66 -20)"/>
+        <line x1="0" y1="0" x2="32" y2="45"/><ellipse cx="41" cy="58" rx="10" ry="18" transform="rotate(144 41 58)"/>
+        <line x1="0" y1="0" x2="-32" y2="45"/><ellipse cx="-41" cy="58" rx="10" ry="18" transform="rotate(216 -41 58)"/>
+        <line x1="0" y1="0" x2="-52" y2="-16"/><ellipse cx="-66" cy="-20" rx="10" ry="18" transform="rotate(288 -66 -20)"/>
+      </g>
+    </g>
+    <text x="467" y="485" font-size="16" fill="#365b48">Observe and record:</text>
+    <text x="467" y="515" font-size="16" fill="#365b48">• segmented floral envelope</text>
+    <text x="467" y="543" font-size="16" fill="#365b48">• visible stamens / anthers</text>
+    <text x="467" y="571" font-size="16" fill="#365b48">• location and distribution on the plant</text>
+
+    <rect x="810" y="155" width="330" height="420" rx="24" fill="#ffffff" stroke="#b36b32" stroke-width="3"/>
+    <text x="975" y="198" text-anchor="middle" font-size="25" font-weight="700" fill="#173d2b">Mixed / unexpected expression</text>
+    <text x="975" y="226" text-anchor="middle" font-size="15" fill="#56685e">document first; explain later</text>
+    <g transform="translate(920 345)">
+      <path d="M0 100 C-42 65 -42 -15 0 -45 C42 -15 42 65 0 100 Z" fill="#8db79b" stroke="#365b48" stroke-width="3"/>
+      <path d="M-5 -20 C-14 -55 -27 -70 -39 -80" stroke="#f4f0dd" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M5 -20 C14 -55 27 -70 39 -80" stroke="#f4f0dd" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1035 345)">
+      <circle cx="0" cy="0" r="48" fill="#cbd9ce" stroke="#365b48" stroke-width="3"/>
+      <g stroke="#6d3c18" stroke-width="4" fill="#d9b06b">
+        <line x1="0" y1="0" x2="0" y2="-42"/><ellipse cx="0" cy="-52" rx="8" ry="14"/>
+        <line x1="0" y1="0" x2="36" y2="-12"/><ellipse cx="46" cy="-16" rx="8" ry="14"/>
+        <line x1="0" y1="0" x2="23" y2="34"/><ellipse cx="29" cy="43" rx="8" ry="14"/>
+      </g>
+    </g>
+    <text x="840" y="485" font-size="16" fill="#365b48">Record:</text>
+    <text x="840" y="515" font-size="16" fill="#365b48">• plant / location identity</text>
+    <text x="840" y="543" font-size="16" fill="#365b48">• which structures are visible</text>
+    <text x="840" y="571" font-size="16" fill="#365b48">• clear context/detail photos + escalation</text>
+  </g>
+
+  <rect x="60" y="610" width="1080" height="72" rx="20" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+  <text x="90" y="640" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#173d2b">Evidence boundary</text>
+  <text x="90" y="666" font-family="Arial, sans-serif" font-size="16" fill="#365b48">This schematic is not to scale, does not predict sex from vegetative appearance, and does not identify why mixed expression occurred.</text>
+
+  <text x="60" y="708" font-family="Arial, sans-serif" font-size="14" fill="#56685e">Original teaching schematic derived from public peer-reviewed morphology descriptions; no source figure is reproduced.</text>
+</svg>

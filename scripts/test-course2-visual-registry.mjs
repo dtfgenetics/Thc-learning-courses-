@@ -12,7 +12,7 @@ assert.equal(registry.policy?.maximumAssetCount, null);
 assert.ok(registry.driveStorage?.folderId);
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.ok(produced.length >= 8, 'Course 2 diagnostic-boundary batch requires at least eight produced learner assets');
+assert.ok(produced.length >= 9, 'Course 2 reproductive-morphology batch requires at least nine produced learner assets');
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
 
