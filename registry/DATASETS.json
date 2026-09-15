@@ -1,4 +1,37 @@
 {
   "version": 1,
-  "datasets": []
+  "datasets": [
+    {
+      "id": "DATASET-TECH1-TRACEABILITY-EXERCISE",
+      "title": "Course 1 Synthetic Traceability and Reconciliation Exercise",
+      "description": "Synthetic instructional event records for identity preservation, movement genealogy, reconciliation, discrepancy handling, and shift handoff. No real facility, crop, person, or regulatory record is represented.",
+      "status": "approved",
+      "publisher": "THC Academy / DTF Genetics",
+      "sourceUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/content/datasets/COURSE1-TRACEABILITY-EXERCISE.json",
+      "landingPage": "https://github.com/dtfgenetics/Thc-learning-courses-/blob/main/content/datasets/COURSE1-TRACEABILITY-EXERCISE.json",
+      "license": null,
+      "formats": ["JSON"],
+      "lessonIds": ["LESSON-LH-TECH1-001-10", "LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12", "LESSON-LH-TECH1-001-18"],
+      "claimIds": [],
+      "retrievedAt": "2026-09-15T17:20:00Z",
+      "lastVerifiedAt": "2026-09-15T17:20:00Z",
+      "sourceModifiedAt": "2026-09-15T17:20:00Z",
+      "provenance": {
+        "sourceType": "internal",
+        "sourceId": "content/datasets/COURSE1-TRACEABILITY-EXERCISE.json",
+        "catalogUrl": null,
+        "identifier": "COURSE1-TRACEABILITY-EXERCISE-v1.0.0",
+        "methodologyUrl": null,
+        "reviewNotes": "Purpose-built synthetic training data. Approved for instructional use because all identities, events, timestamps, quantities, and discrepancies are fictional and deterministic; it must never be presented as empirical or regulatory data."
+      },
+      "dataFiles": [
+        {
+          "url": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/content/datasets/COURSE1-TRACEABILITY-EXERCISE.json",
+          "format": "JSON",
+          "title": "Synthetic traceability event dataset"
+        }
+      ],
+      "notes": "Designed to exercise record genealogy and reconciliation without importing an unrelated external dataset merely to satisfy a count target."
+    }
+  ]
 }
