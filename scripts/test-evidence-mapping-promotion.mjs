@@ -24,7 +24,7 @@ const base = {
   statement: 'This test-only claim verifies that reviewed lesson evidence can pass the dry-run promotion gate without writing course content.',
   domain: 'ci-test',
   lessonIds: ['LESSON-LH-TECH1-001-06'],
-  referenceIds: ['REF-EPA-WPS'],
+  referenceIds: ['REF-EPA-WPS-REI-2026'],
   competencyIds: [],
   objectiveIds: [],
   version: '1.0.0',
