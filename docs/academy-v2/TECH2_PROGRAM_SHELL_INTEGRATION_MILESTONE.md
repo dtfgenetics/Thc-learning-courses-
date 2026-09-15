@@ -8,9 +8,9 @@ The eight-course THC Cultivation Technician II Learning Hub pathway has been ins
 2. `COURSE-LH-TECH2-002` — Environmental Data, Sensors & Equipment Response
 3. `COURSE-LH-TECH2-003` — Fertigation Execution, Verification & Root-Zone Interpretation
 4. `COURSE-LH-TECH2-004` — Plant Health, IPM & Biosecurity Troubleshooting
-5. `COURSE-LH-TECH2-005` — Production Records, Traceability & Inventory Reconciliation
+5. `COURSE-LH-TECH2-005` — Propagation & Canopy Performance Troubleshooting
 6. `COURSE-LH-TECH2-006` — Harvest/Postharvest Deviations & Quality Response
-7. `COURSE-LH-TECH2-007` — Production Metrics, Shift Coordination & Peer Support
+7. `COURSE-LH-TECH2-007` — Traceability, Production Metrics, Shift Coordination & Peer Support
 8. `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab
 
 The pathway is mapped by `CREDPROG-CULT-TECH-II-001` and preserves the existing `COURSE-CULT-TECH-II-001` monolithic source course, `ASSESS-CULT-TECH-II-CREDENTIAL-001`, Technician II development items, Practicals A–G, capstone, portfolio requirements, and credential runtime tests.

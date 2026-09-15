@@ -1,0 +1,101 @@
+{
+  "id": "ASSESS-LH-TECH2-005-FINAL",
+  "title": "Propagation & Canopy Performance Troubleshooting — Course Assessment",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-TECH2-005-01",
+    "LO-LH-TECH2-005-02",
+    "LO-LH-TECH2-005-03",
+    "LO-LH-TECH2-005-04",
+    "LO-LH-TECH2-005-05",
+    "LO-LH-TECH2-005-06"
+  ],
+  "items": [
+    "ITEM-LH-TECH2-005-001",
+    "ITEM-LH-TECH2-005-002",
+    "ITEM-LH-TECH2-005-003",
+    "ITEM-LH-TECH2-005-004",
+    "ITEM-LH-TECH2-005-005",
+    "ITEM-LH-TECH2-005-006",
+    "ITEM-LH-TECH2-005-007",
+    "ITEM-LH-TECH2-005-008",
+    "ITEM-LH-TECH2-005-009",
+    "ITEM-LH-TECH2-005-010",
+    "ITEM-LH-TECH2-005-011",
+    "ITEM-LH-TECH2-005-012",
+    "ITEM-LH-TECH2-005-013",
+    "ITEM-LH-TECH2-005-014",
+    "ITEM-LH-TECH2-005-015",
+    "ITEM-LH-TECH2-005-016",
+    "ITEM-LH-TECH2-005-017",
+    "ITEM-LH-TECH2-005-018",
+    "ITEM-LH-TECH2-005-019",
+    "ITEM-LH-TECH2-005-020",
+    "ITEM-LH-TECH2-005-021",
+    "ITEM-LH-TECH2-005-022",
+    "ITEM-LH-TECH2-005-023",
+    "ITEM-LH-TECH2-005-024"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 24,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-PROP-001",
+      "items": 8,
+      "cognitiveTarget": "Propagation performance calculation, stratification and underperformance differential reasoning"
+    },
+    {
+      "competency": "COMP-CANOPY-ADV-001",
+      "items": 4,
+      "cognitiveTarget": "Canopy work-order interpretation, spatial uniformity and recovery evidence"
+    },
+    {
+      "competency": "COMP-FLOWER-ADV-001",
+      "items": 4,
+      "cognitiveTarget": "Flowering-stage/cultivar response interpretation without unsupported genotype claims"
+    },
+    {
+      "competency": "COMP-IPM-ADV-001",
+      "items": 4,
+      "cognitiveTarget": "Plant-health, sanitation, quarantine and biosecurity evidence in performance review"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 4,
+      "cognitiveTarget": "Data integrity, role-boundary judgment and reconstructable supervisor handoff"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 1,
+    "targetBankItemsPerCompetency": 12,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-TECH2-005",
+    "linkedCredentialPractical": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 48,
+    "distinctFormativeBank": true,
+    "formativeAssessment": "ASSESS-LH-TECH2-005-M01",
+    "publicCredentialItemsExcluded": true
+  }
+}

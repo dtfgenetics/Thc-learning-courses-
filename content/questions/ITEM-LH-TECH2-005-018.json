@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-005-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-005-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A proposed corrective action is outside the technician’s assigned authority but the evidence for it is strong. What should the technician do?",
+  "choices": [
+    "Perform the action because confidence is high.",
+    "Document the evidence and recommendation, then escalate the decision to the authorized role.",
+    "Hide the recommendation to avoid delay.",
+    "Alter the work order locally."
+  ],
+  "correct": 1,
+  "rationale": "Document the evidence and recommendation, then escalate the decision to the authorized role.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
