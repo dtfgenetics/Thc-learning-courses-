@@ -1,0 +1,50 @@
+name: Build Technician I Course 007 once
+
+on:
+  push:
+    branches: [feat/tech1-course-007-integrated-lab]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build Course 007 integrated lab source
+        run: node scripts/build-tech1-course7.mjs
+      - name: Rebuild curriculum registry
+        run: npm run registry:build
+      - name: Validate Course 007 integrated lab
+        run: |
+          node scripts/check-learning-hub-item-quality.mjs
+          npm run schema:validate
+          npm run validate
+          npm run registry:validate
+          npm run tech1:program:test
+          npm run tech1:course2:test
+          npm run tech1:course3:test
+          npm run tech1:course4:test
+          npm run tech1:course5:test
+          npm run tech1:course6:test
+          npm run tech1:course7:test
+      - name: Run complete deterministic suite
+        run: npm test
+      - name: Commit validated Course 007 source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/build-tech1-course7-once.yml scripts/build-tech1-course7.mjs
+          git add content package.json registry scripts docs
+          git commit -m "feat: build Technician I Course 007 integrated lab"
+          git push origin HEAD:feat/tech1-course-007-integrated-lab
