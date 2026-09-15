@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-006-01",
+  "title": "Postharvest Deviation Containment, Facts and Process Timeline",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-006-01",
+    "LO-LH-TECH2-006-06"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "A postharvest deviation investigation begins by protecting material and evidence. Technician II establishes lot identity, location, timeline, product condition, room/process history and what was actually observed before deciding what caused the condition or what should happen to the product.",
+    "vocabulary": [
+      {
+        "term": "Containment",
+        "definition": "A controlled action that prevents uncertain or potentially affected material from being mixed, moved or released while evidence is evaluated."
+      },
+      {
+        "term": "Fact baseline",
+        "definition": "The documented observations, measurements, identities and events known before causal interpretation."
+      },
+      {
+        "term": "Deviation timeline",
+        "definition": "A chronological record connecting process events, movements, measurements and observations."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Contain first when identity or condition is uncertain",
+        "body": "Protect affected or potentially affected material using the authorized hold/segregation process. Do not blend uncertain material into normal product to make the exception disappear.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Build the chronology before the cause story",
+        "body": "Record harvest/transfer times, rack or container identity, room history, product observations, sampling and movements. Facts that contradict the leading hypothesis remain part of the record.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Do not convert containment into disposition",
+        "body": "Holding material protects evidence and product while the authorized role evaluates release, rework, destruction or other disposition. Technician II does not gain disposition authority from recognizing the deviation.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A suspect rack is placed on hold and identified without moving neighboring unaffected racks into the same status until genealogy and process evidence are checked.",
+      "An unusual product condition is documented with time, position and original measurements before staff speculate about a room excursion."
+    ],
+    "commonMistakes": [
+      "Declaring the entire facility affected before tracing scope.",
+      "Blending questionable material into normal lots.",
+      "Writing the cause into the record before the facts are assembled.",
+      "Treating a hold as authorization to dispose product."
+    ],
+    "practicalApplication": "Create a deviation fact sheet containing lot/rack identity, location, process timeline, product observations, room data, current containment and a separate hypotheses section.",
+    "summary": "Containment protects product and evidence; chronology and facts come before causal and disposition conclusions."
+  }
+}
