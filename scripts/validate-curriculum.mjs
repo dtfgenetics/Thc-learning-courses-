@@ -36,6 +36,7 @@ const collections = {
   courses: readDirJson('content/courses'),
   programs: readDirJson('content/programs'),
   credentials: readDirJson('content/credentials'),
+  credentialPrograms: readDirJson('content/credential-programs'),
   reviews: readDirJson('content/reviews')
 };
 const publicReleases = readDirJson('content/public-releases');
@@ -277,6 +278,16 @@ for (const { file, data } of collections.credentials) {
   requireMany(file, data.eligibility?.requiredAssessments, 'required assessment');
 }
 const credentialTime = performance.now() - startCredentialTime;
+
+// 9A. PROFESSIONAL CREDENTIAL PROGRAM VALIDATION
+const startCredentialProgramTime = performance.now();
+for (const { file, data } of collections.credentialPrograms) {
+  if (!data.id?.startsWith('CREDPROG-')) continue;
+  requireMany(file, data.requiredCourses, 'required course');
+  requireMany(file, data.competencies, 'competency');
+  requireId(file, data.assessmentModel?.credentialAssessment, 'credential assessment');
+}
+const credentialProgramTime = performance.now() - startCredentialProgramTime;
 
 // 10. REFERENCE VALIDATION
 const startRefTime = performance.now();
