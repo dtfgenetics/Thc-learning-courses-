@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/evidence-mapping-review.schema.json",
+  "title": "THC Academy Evidence Mapping Review",
+  "type": "object",
+  "required": [
+    "id",
+    "mappingCandidateId",
+    "action",
+    "claimId",
+    "statement",
+    "domain",
+    "lessonIds",
+    "referenceIds",
+    "status",
+    "review",
+    "version"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^EMR-[A-Z0-9-]+$"},
+    "mappingCandidateId": {"type": "string", "minLength": 3},
+    "action": {"enum": ["create", "update"]},
+    "claimId": {"type": "string", "pattern": "^CLAIM-[A-Z0-9-]+$"},
+    "statement": {"type": "string", "minLength": 20},
+    "domain": {"type": "string", "minLength": 2},
+    "lessonIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^LESSON-[A-Z0-9-]+$"}
+    },
+    "referenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"}
+    },
+    "competencyIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "objectiveIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "claimStatus": {"enum": ["draft", "review", "approved", "published"]},
+    "reviewDueAt": {"type": ["string", "null"], "format": "date"},
+    "status": {"enum": ["draft", "needs-scientific-review", "approved", "rejected", "superseded"]},
+    "review": {
+      "type": "object",
+      "required": ["editor", "scientificReviewer", "approvedAt", "aiAssisted", "rationale"],
+      "properties": {
+        "editor": {"type": "string", "minLength": 2},
+        "scientificReviewer": {"type": "string", "minLength": 2},
+        "approvedAt": {"type": ["string", "null"], "format": "date-time"},
+        "aiAssisted": {"type": "boolean"},
+        "rationale": {"type": "string", "minLength": 10},
+        "notes": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "sourceContext": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lessonId", "referenceId"],
+        "properties": {
+          "lessonId": {"type": "string"},
+          "referenceId": {"type": "string"},
+          "jsonPath": {"type": ["string", "null"]},
+          "contextTitle": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "approved"}}},
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {"approvedAt": {"type": "string", "format": "date-time"}}
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

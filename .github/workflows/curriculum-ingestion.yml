@@ -43,10 +43,15 @@ on:
       - 'schemas/dependency-manifest.schema.json'
       - 'schemas/link-record.schema.json'
       - 'schemas/dataset-record.schema.json'
+      - 'schemas/evidence-mapping-review.schema.json'
       - 'scripts/audit-curriculum-dependencies.mjs'
       - 'scripts/audit-existing-evidence-coverage.mjs'
       - 'scripts/build-evidence-mapping-inbox.mjs'
       - 'scripts/build-ingestion-plan.mjs'
+      - 'scripts/check-approved-evidence-mappings.mjs'
+      - 'scripts/promote-evidence-mapping.mjs'
+      - 'scripts/test-evidence-mapping-promotion.mjs'
+      - 'scripts/validate-evidence-mapping-reviews.mjs'
       - 'scripts/validate-dependency-manifests.mjs'
       - 'scripts/validate-ingestion-registries.mjs'
       - 'scripts/check-external-links.mjs'
@@ -54,6 +59,8 @@ on:
       - 'content/claims/**'
       - 'content/references/**'
       - 'content/lessons/**'
+      - 'content/competencies/**'
+      - 'content/learning-objectives/**'
       - 'visuals/ASSET-REGISTRY.json'
       - 'registry/LINKS.json'
       - 'registry/DATASETS.json'
@@ -79,10 +86,14 @@ jobs:
             scripts/audit-existing-evidence-coverage.mjs \
             scripts/build-evidence-mapping-inbox.mjs \
             scripts/build-ingestion-plan.mjs \
+            scripts/check-approved-evidence-mappings.mjs \
             scripts/check-external-links.mjs \
             scripts/collect-government-datasets.mjs \
             scripts/collect-research-metadata.mjs \
             scripts/collect-wikimedia-media.mjs \
+            scripts/promote-evidence-mapping.mjs \
+            scripts/test-evidence-mapping-promotion.mjs \
+            scripts/validate-evidence-mapping-reviews.mjs \
             scripts/validate-ingestion-registries.mjs; do
             node --check "$file"
           done
@@ -90,6 +101,12 @@ jobs:
         run: node scripts/validate-dependency-manifests.mjs
       - name: Validate link and dataset registries
         run: node scripts/validate-ingestion-registries.mjs
+      - name: Validate evidence mapping reviews
+        run: node scripts/validate-evidence-mapping-reviews.mjs
+      - name: Test evidence mapping promotion safeguards
+        run: node scripts/test-evidence-mapping-promotion.mjs
+      - name: Verify approved evidence mappings remain promotable
+        run: node scripts/check-approved-evidence-mappings.mjs
       - name: Audit Course 1 dependencies
         run: node scripts/audit-curriculum-dependencies.mjs --write-report=automation/curriculum-ingestion/reports/course1-latest.json
       - name: Audit existing direct evidence coverage
