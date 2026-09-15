@@ -1,0 +1,22 @@
+name: Technician I program structure
+
+on:
+  push:
+    branches: [dev, staging, main]
+  pull_request:
+    branches: [dev, staging, main]
+
+permissions:
+  contents: read
+
+jobs:
+  structure-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Validate Technician I course structure
+        run: node scripts/test-tech1-program-structure.mjs
