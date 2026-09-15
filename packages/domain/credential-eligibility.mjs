@@ -16,13 +16,21 @@ function credentialReleaseBlockers(credential) {
       actual: credential.status ?? null
     });
   }
-  if (credential.governance.certificationUseStatus !== 'authorized') {
-    blockers.push({
-      type: 'credential-release',
-      id: credential.id,
-      reason: 'certification-use-not-authorized',
-      actual: credential.governance.certificationUseStatus ?? null
-    });
+  const requiredComplete = [
+    ['humanReviewStatus', 'human-review-incomplete'],
+    ['accessibilityReviewStatus', 'accessibility-review-incomplete'],
+    ['pilotStatus', 'pilot-incomplete'],
+    ['standardSettingStatus', 'standard-setting-incomplete']
+  ];
+  for (const [field, reason] of requiredComplete) {
+    if (credential.governance[field] !== 'complete') {
+      blockers.push({
+        type: 'credential-release',
+        id: credential.id,
+        reason,
+        actual: credential.governance[field] ?? null
+      });
+    }
   }
   if (credential.governance.releaseApprovalStatus !== 'approved') {
     blockers.push({
@@ -30,6 +38,14 @@ function credentialReleaseBlockers(credential) {
       id: credential.id,
       reason: 'release-approval-missing',
       actual: credential.governance.releaseApprovalStatus ?? null
+    });
+  }
+  if (credential.governance.certificationUseStatus !== 'authorized') {
+    blockers.push({
+      type: 'credential-release',
+      id: credential.id,
+      reason: 'certification-use-not-authorized',
+      actual: credential.governance.certificationUseStatus ?? null
     });
   }
   return blockers;
