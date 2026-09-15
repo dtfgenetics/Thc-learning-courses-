@@ -23,3 +23,5 @@ for(const id of final.items){const q=read(`content/questions/${id}.json`);assert
 for(const [id,n] of objectives)assert.equal(n,4,`${id} should have four summative items; found ${n}`);assert.ok(high>=22);assert.ok(Math.max(...keys)<=6,`unbalanced key positions: ${keys}`);
 for(const id of formative.items){const q=read(`content/questions/${id}.json`);assert.equal(q.purpose,'formative');}
 console.log('Course 004 production slice passed: four lessons, six objectives, 12 distinct formative items and 24 balanced summative items are draft-wired with PRACTICAL-TECH1-B mapping.');
+
+await import('./test-course4-practical-crosswalk.mjs');

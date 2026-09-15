@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -43,13 +43,8 @@
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-I-001",
-    "jtaDomains": [
-      5,
-      6,
-      12,
-      13
-    ],
-    "maturity": "instruction-assessment-draft",
+    "jtaDomains": [5, 6, 12, 13],
+    "maturity": "instruction-assessment-practical-mapping-draft",
     "developmentDependencies": [
       "MOD-WATER-001",
       "MOD-ROOTZONE-001",
@@ -62,6 +57,9 @@
     "contentCeiling": null,
     "dedicatedPerformanceValidationRequired": true,
     "mappedPractical": "PRACTICAL-TECH1-B",
+    "practicalCrosswalk": "registry/course4-practical-b-crosswalk.json",
+    "practicalCrosswalkStatus": "development",
+    "learnerAssetLayerBuilt": false,
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
     "assessmentBankExpansionTarget": 36,
