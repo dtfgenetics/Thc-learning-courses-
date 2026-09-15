@@ -1,5 +1,5 @@
 {
-  "version": "0.2.1",
+  "version": "0.3.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -13,7 +13,7 @@
     "supervised-lab",
     "workplace-equivalent"
   ],
-  "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
+  "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Public authoritative and peer-reviewed sources may be used directly to create and improve instructional content when claims remain within source scope and provenance is preserved. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
   "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
   "finalAssessment": "ASSESS-LH-TECH1-002-FINAL",
   "id": "COURSE-LH-TECH1-002",
@@ -60,6 +60,7 @@
     "assessmentBankExpansionTarget": 30,
     "dedicatedItemCount": 32,
     "formativeItemCount": 12,
-    "summativeItemCount": 20
+    "summativeItemCount": 20,
+    "sourceDepthPass": 1
   }
 }
