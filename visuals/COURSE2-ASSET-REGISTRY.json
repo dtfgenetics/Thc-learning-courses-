@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-002",
+  "policy": {
+    "expandable": true,
+    "maximumAssetCount": null,
+    "requiredAccessibility": [
+      "title",
+      "description",
+      "learner text alternative"
+    ],
+    "statusValues": [
+      "planned",
+      "in-production",
+      "produced",
+      "retired"
+    ],
+    "publicDelivery": "Produced Course 2 learner assets live in the public repository and may be viewed or downloaded directly from their raw GitHub URL. Full-resolution production masters and alternate review drafts may also be retained in controlled Drive storage when available."
+  },
+  "assets": [
+    {
+      "id": "VIS-LH-TECH1-002-001",
+      "status": "produced",
+      "title": "Representative crop-walk route and sample context",
+      "learnerPath": "/assets/course2/representative-crop-walk-route.svg",
+      "sourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/representative-crop-walk-route.svg",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-01",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management"
+      ],
+      "purpose": "Teach why a crop walk needs a representative route, location context and a denominator before the learner makes a room-level statement.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-002-002",
+      "status": "produced",
+      "title": "Morphology-based developmental staging",
+      "learnerPath": "/assets/course2/morphology-stage-evidence.svg",
+      "sourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/morphology-stage-evidence.svg",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-02"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-02",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-FLOWER-MORPH-2023-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Separate observable developmental morphology from calendar-only staging and reinforce that published timing is context rather than a universal production rule.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-002-003",
+      "status": "produced",
+      "title": "Diagnostic photo evidence set",
+      "learnerPath": "/assets/course2/diagnostic-photo-evidence-set.svg",
+      "sourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-04",
+        "LO-LH-TECH1-002-05"
+      ],
+      "references": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [
+        "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"
+      ],
+      "purpose": "Teach the context-view, whole-plant-view and close-detail image sequence while preserving identity, time and color fidelity for reconstructable crop records.",
+      "version": "1.0.0"
+    }
+  ]
+}
