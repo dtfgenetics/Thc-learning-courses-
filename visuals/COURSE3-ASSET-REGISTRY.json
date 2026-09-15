@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-003",
+  "policy": {
+    "expandable": true,
+    "maximumAssetCount": null,
+    "requiredAccessibility": ["title", "description", "learner text alternative"],
+    "statusValues": ["planned", "in-production", "produced", "retired"],
+    "publicDelivery": "Produced Course 3 learner assets live in the public repository and may be viewed or downloaded directly from their raw GitHub URL. Google Drive is a controlled production/reference mirror and does not replace the canonical repository asset."
+  },
+  "driveStorage": {
+    "folderId": "1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU",
+    "folderUrl": "https://drive.google.com/drive/folders/1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU",
+    "folderName": "Course 3 — Environmental & Light Learning Boards"
+  },
+  "assets": [
+    {
+      "id": "VIS-LH-TECH1-003-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Temperature, relative humidity and VPD measurement context",
+      "learnerPath": "/assets/course3/environment-measurement-context.svg",
+      "sourcePath": "apps/web/public/assets/course3/environment-measurement-context.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-context.svg",
+      "driveFileId": "1XgNkzqjJFx9bxJ54jdj7TOBeziQnOUsw",
+      "driveFileUrl": "https://drive.google.com/file/d/1XgNkzqjJFx9bxJ54jdj7TOBeziQnOUsw/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-003-01"],
+      "objectiveIds": ["LO-LH-TECH1-003-01", "LO-LH-TECH1-003-05"],
+      "references": ["REF-VPD-002", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "publicSourceLinks": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC12666426/"],
+      "purpose": "Show why temperature and relative humidity are recorded together for VPD context while target, measured value and alarm remain distinct record roles with sensor, location, time and unit context.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-003-002",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Repeatable canopy PPFD grid measurement",
+      "learnerPath": "/assets/course3/ppfd-grid-measurement.svg",
+      "sourcePath": "apps/web/public/assets/course3/ppfd-grid-measurement.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-grid-measurement.svg",
+      "driveFileId": "19V-hi5oJs07ygw35zAxaLxRfzMpzRF8i",
+      "driveFileUrl": "https://drive.google.com/file/d/19V-hi5oJs07ygw35zAxaLxRfzMpzRF8i/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-003-02"],
+      "objectiveIds": ["LO-LH-TECH1-003-02", "LO-LH-TECH1-003-05"],
+      "references": ["REF-LIGHT-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "publicSourceLinks": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC6455078/"],
+      "purpose": "Teach a repeatable canopy PPFD grid with consistent measurement plane and preservation of spatial distribution instead of substituting one bright point, fixture setting or average for canopy-level evidence.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-003-003",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Sensor placement and representativeness triage",
+      "learnerPath": "/assets/course3/sensor-representativeness-triage.svg",
+      "sourcePath": "apps/web/public/assets/course3/sensor-representativeness-triage.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/sensor-representativeness-triage.svg",
+      "driveFileId": "1PkxPswkVjL4sCJk_fco-zKzwrbdZfgOF",
+      "driveFileUrl": "https://drive.google.com/file/d/1PkxPswkVjL4sCJk_fco-zKzwrbdZfgOF/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-003-03"],
+      "objectiveIds": ["LO-LH-TECH1-003-03", "LO-LH-TECH1-003-04"],
+      "references": ["REF-VPD-002"],
+      "publicSourceLinks": ["https://www.hort.cornell.edu/expo/pdf/Dunn_Mattson_Envir_Control.pdf"],
+      "purpose": "Teach that placement can make a locally valid reading non-representative for the crop question and provide an outlier-verification sequence before unauthorized repair or control redesign.",
+      "version": "1.0.0"
+    }
+  ]
+}
