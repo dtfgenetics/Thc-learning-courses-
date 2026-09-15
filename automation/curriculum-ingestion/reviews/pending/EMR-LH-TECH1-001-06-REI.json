@@ -1,0 +1,32 @@
+{
+  "id": "EMR-LH-TECH1-001-06-REI",
+  "mappingCandidateId": "MAP-LH-TECH1-001-06-EPA-WPS-REI-2026",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-06-REI",
+  "statement": "Under EPA's Worker Protection Standard, a restricted-entry interval is the period immediately after a pesticide application when entry into the treated area is restricted; when multiple pesticides are applied at the same time with different REIs, the longer REI must be followed.",
+  "domain": "pesticide-worker-safety",
+  "lessonIds": ["LESSON-LH-TECH1-001-06"],
+  "referenceIds": ["REF-EPA-WPS-REI-2026"],
+  "competencyIds": ["COMP-SPACE-BIOSEC-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-04"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2026-12-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed EPA WPS REI source and cross-checked against the current EPA worker-protection page on September 15, 2026. The statement is limited to EPA's WPS REI definition and simultaneous-application rule and does not imply that quarantine or internal quality holds are the same legal control.",
+    "notes": "Human pesticide-regulatory review is required before promotion."
+  },
+  "sourceContext": [
+    {
+      "lessonId": "LESSON-LH-TECH1-001-06",
+      "referenceId": "REF-EPA-WPS-REI-2026",
+      "jsonPath": "$.content.sections[0].references",
+      "contextTitle": "Different controls answer different questions"
+    }
+  ]
+}
