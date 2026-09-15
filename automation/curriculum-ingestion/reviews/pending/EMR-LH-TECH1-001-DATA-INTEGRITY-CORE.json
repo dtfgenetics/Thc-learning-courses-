@@ -1,0 +1,37 @@
+{
+  "id": "EMR-LH-TECH1-001-DATA-INTEGRITY-CORE",
+  "mappingCandidateId": "MAP-LH-TECH1-001-07-MHRA-GXP-DATA-INTEGRITY",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-DATA-INTEGRITY-CORE",
+  "statement": "Data integrity is the degree to which data remain complete, consistent, accurate, trustworthy, and reliable throughout the data lifecycle, with records collected and maintained so they are attributable, legible, contemporaneously recorded, original or a true copy, and accurate.",
+  "domain": "data-integrity",
+  "lessonIds": [
+    "LESSON-LH-TECH1-001-07",
+    "LESSON-LH-TECH1-001-09",
+    "LESSON-LH-TECH1-001-10",
+    "LESSON-LH-TECH1-001-11",
+    "LESSON-LH-TECH1-001-12"
+  ],
+  "referenceIds": ["REF-MHRA-GXP-DATA-INTEGRITY"],
+  "competencyIds": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CULT-TRACEABILITY-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-05", "LO-LH-TECH1-001-06", "LO-LH-TECH1-001-07", "LO-LH-TECH1-001-08", "LO-LH-TECH1-001-11", "LO-LH-TECH1-001-12"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2027-09-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed MHRA GxP data-integrity guidance and cross-checked against the current GOV.UK guidance on September 15, 2026. This is used as a general record-integrity principle; it is not represented as cannabis-specific law or as a legal requirement imposed on a cannabis facility by MHRA.",
+    "notes": "Human data-governance review is required before promotion; preserve the cross-industry scope limitation."
+  },
+  "sourceContext": [
+    {"lessonId": "LESSON-LH-TECH1-001-07", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[1].references", "contextTitle": "Current status matters more than familiarity"},
+    {"lessonId": "LESSON-LH-TECH1-001-09", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[2].references", "contextTitle": "Never manufacture completion or missing data"},
+    {"lessonId": "LESSON-LH-TECH1-001-10", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[0].references", "contextTitle": "Identity connects later facts to the correct material"},
+    {"lessonId": "LESSON-LH-TECH1-001-11", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[0].references", "contextTitle": "Record the real event"},
+    {"lessonId": "LESSON-LH-TECH1-001-12", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[0].references", "contextTitle": "A discrepancy remains evidence until it is resolved"}
+  ]
+}
