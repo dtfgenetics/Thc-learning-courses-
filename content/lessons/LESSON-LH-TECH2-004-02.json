@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-004-02",
+  "title": "Spatial and Temporal Trend Interpretation",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-004-02",
+    "LO-LH-TECH2-004-04"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "content": {
+    "overview": "A plant-health trend has location, time and movement context. Technician II maps where findings occur, how incidence and severity change, whether new sites appear, and whether the pattern follows batches, airflow, irrigation, traffic or propagation pathways.",
+    "vocabulary": [
+      {
+        "term": "Spatial spread",
+        "definition": "Expansion of findings into new mapped locations or epidemiologically connected units."
+      },
+      {
+        "term": "Contraction",
+        "definition": "Reduction in affected scope or pressure across comparable observations."
+      },
+      {
+        "term": "Sentinel location",
+        "definition": "A deliberately monitored location chosen for early detection or recurring risk."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Map scope, not just totals",
+        "body": "The same total count can represent one contained cluster or widespread low-level findings. Plot affected and unaffected zones, crop/batch identity and relevant movement pathways.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Separate incidence from severity",
+        "body": "Fewer affected plants with more severe symptoms is not the same outcome as lower incidence and lower severity. Track both when the case requires it.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Biosecurity follows plausible spread pathways",
+        "body": "Clean stock, sanitation, quarantine, movement control and environmental management reduce opportunities for plant-health problems to move. Escalate when evidence crosses defined containment boundaries.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A pest count is unchanged overall but has moved from one edge bench to four distant zones; spatial scope worsened despite a flat total.",
+      "Repeated symptoms remain confined to one propagation batch, strengthening the need for source tracing and movement control."
+    ],
+    "commonMistakes": [
+      "Averaging the whole facility until clusters disappear.",
+      "Treating severity as incidence.",
+      "Moving tools or plants from suspect to clean areas because symptoms look minor."
+    ],
+    "practicalApplication": "Annotate three scouting rounds on the same map, marking new, persistent and resolved locations plus likely movement pathways and containment priorities.",
+    "summary": "Trend interpretation combines counts with mapped scope, severity, chronology and biosecurity context."
+  }
+}
