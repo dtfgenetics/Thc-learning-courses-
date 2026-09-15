@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "catalogRoute": "/courses/",
+  "expectedFoundationalCertificates": 2,
+  "expectedProfessionalCredentials": 8,
+  "expectedVisibleOfferings": 10,
+  "currentlyAvailableAcademicCourses": [
+    "COURSE-LH-TECH1-001"
+  ],
+  "credentialIssuanceEnabled": [],
+  "sourceOfTruth": "registry/credential-public-status.json",
+  "publicationContract": "docs/CERTIFICATION-CATALOG-PUBLICATION-CONTRACT.md"
+}
