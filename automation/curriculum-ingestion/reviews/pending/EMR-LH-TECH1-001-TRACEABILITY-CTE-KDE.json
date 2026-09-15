@@ -5,7 +5,7 @@
   "claimId": "CLAIM-LH-TECH1-001-TRACEABILITY-CTE-KDE",
   "statement": "GS1 traceability uses Critical Tracking Events to represent important lifecycle events involving traceable objects and Key Data Elements to describe the actual instances of those events, commonly capturing who, what, where, when, and why.",
   "domain": "traceability",
-  "lessonIds": ["LESSON-LH-TECH1-001-10", "LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12"],
+  "lessonIds": ["LESSON-LH-TECH1-001-10", "LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12", "LESSON-LH-TECH1-001-18"],
   "referenceIds": ["REF-GS1-GLOBAL-TRACEABILITY"],
   "competencyIds": ["COMP-CULT-TRACEABILITY-001", "COMP-PRO-QA-001"],
   "objectiveIds": ["LO-LH-TECH1-001-06", "LO-LH-TECH1-001-07", "LO-LH-TECH1-001-08"],
@@ -24,6 +24,7 @@
   "sourceContext": [
     {"lessonId": "LESSON-LH-TECH1-001-10", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[1].references", "contextTitle": "Trace events, not just labels"},
     {"lessonId": "LESSON-LH-TECH1-001-11", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[0].references", "contextTitle": "Record the real event"},
-    {"lessonId": "LESSON-LH-TECH1-001-12", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[1].references", "contextTitle": "Waste still has genealogy"}
+    {"lessonId": "LESSON-LH-TECH1-001-12", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[1].references", "contextTitle": "Waste still has genealogy"},
+    {"lessonId": "LESSON-LH-TECH1-001-18", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.blocks[6].references", "contextTitle": "Phase 3 — reconcile physical and recorded reality"}
   ]
 }
