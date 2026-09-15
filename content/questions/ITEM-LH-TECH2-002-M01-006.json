@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: What is the safest way to handle an inconvenient outlier that may be real?",
+  "choices": [
+    "Delete it immediately.",
+    "Preserve it, verify data quality and document the disposition.",
+    "Replace it with the average.",
+    "Hide it from the trend display permanently."
+  ],
+  "correct": 1,
+  "rationale": "Preserve it, verify data quality and document the disposition. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

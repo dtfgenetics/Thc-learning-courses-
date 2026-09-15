@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician believes a sensor is wrong and changes its recorded values to match a nearby instrument. What is the primary problem?",
+  "choices": [
+    "Nearby instruments can never be used as references.",
+    "Sensor values may only be recorded once per day.",
+    "The original evidence was altered instead of preserved and dispositioned through a documented data-quality process.",
+    "The technician should have changed the setpoint too."
+  ],
+  "correct": 2,
+  "rationale": "The original evidence was altered instead of preserved and dispositioned through a documented data-quality process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

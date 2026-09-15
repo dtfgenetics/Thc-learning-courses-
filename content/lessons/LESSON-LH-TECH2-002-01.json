@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-002-01",
+  "title": "Representative Sensors, Calibration and Data-Quality Verification",
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-002-01",
+    "LO-LH-TECH2-002-06"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Technician II troubleshooting starts by asking whether the data deserve to drive a decision. Placement, shielding, crop plane, response time, calibration history, maintenance history and agreement with independent measurements all affect whether a sensor represents the condition under investigation.",
+    "vocabulary": [
+      {
+        "term": "Representativeness",
+        "definition": "How well a measurement describes the location, crop zone or process condition relevant to the decision."
+      },
+      {
+        "term": "Colocation check",
+        "definition": "Temporary comparison of sensors at the same location to determine whether disagreement follows the instrument or the environment."
+      },
+      {
+        "term": "Data-quality flag",
+        "definition": "A documented reason a value may be unreliable, incomplete, unrepresentative or unsuitable for a specific decision."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Placement is part of the measurement",
+        "body": "Wall, return-air and canopy sensors can describe different microenvironments. Record exact position, height, shielding and crop context before treating disagreement as instrument failure.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Use comparison before conclusion",
+        "body": "Colocated comparison with a verified instrument helps distinguish a spatial gradient from sensor bias or drift. A comparison should use enough stabilization time and the same exposure conditions.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Preserve questionable data instead of hiding it",
+        "body": "If a sensor is suspected, flag the value, record why, preserve the original data and document the comparison or calibration evidence. Do not change setpoints or records merely to make the dashboard look normal.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A wall sensor and canopy probe disagree; moving a verified reference beside each sensor shows the difference follows location, supporting a real spatial gradient.",
+      "A probe remains offset from a verified reference when colocated, so the reading is flagged and the instrument is routed through the authorized calibration/maintenance process."
+    ],
+    "commonMistakes": [
+      "Calling every disagreement a calibration failure.",
+      "Comparing sensors in different locations and treating the comparison as a calibration test.",
+      "Deleting or overwriting data after deciding a sensor is suspect."
+    ],
+    "practicalApplication": "Create a sensor-verification record including device ID, exact location, comparison instrument, stabilization period, paired readings, calibration status, data-quality disposition and escalation decision.",
+    "summary": "Reliable troubleshooting starts by verifying that sensor data are representative, comparable and documented well enough to support the decision being made."
+  }
+}

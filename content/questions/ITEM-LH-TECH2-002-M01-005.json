@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH2-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: The pump is off but a line remains pressurized. What hazard remains relevant?",
+  "choices": [
+    "Stored pressure energy.",
+    "No energy remains once the pump stops.",
+    "Only electrical energy can remain.",
+    "Only chemical exposure matters."
+  ],
+  "correct": 0,
+  "rationale": "Stored pressure energy. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

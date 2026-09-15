@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LH-TECH2-002-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A PPFD map shows one consistent low region. What is the strongest next step within Technician II scope?",
+  "choices": [
+    "Increase all fixtures without verification.",
+    "Verify repeatability and relevant fixture/obstruction/context evidence, then escalate adjustment or repair according to authorization.",
+    "Assume the plants in that region need more fertilizer.",
+    "Discard the low readings because the room average is acceptable."
+  ],
+  "correct": 1,
+  "rationale": "Verify repeatability and relevant fixture/obstruction/context evidence, then escalate adjustment or repair according to authorization. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-LIGHT-001"
+  ]
+}

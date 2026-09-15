@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH2-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "An operator procedure permits one reset, but the fault returns immediately. What should happen next?",
+  "choices": [
+    "Stop repeated resets, document the recurring condition and escalate under the servicing/maintenance pathway.",
+    "Repeat the reset until the equipment stays on.",
+    "Bypass the fault input.",
+    "Lower the setpoint so the fault does not trigger."
+  ],
+  "correct": 0,
+  "rationale": "Stop repeated resets, document the recurring condition and escalate under the servicing/maintenance pathway. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LH-TECH2-002-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: Why should repeated PPFD measurements use the same sensor orientation and canopy plane?",
+  "choices": [
+    "Because orientation changes nutrient uptake directly.",
+    "To make the measurements comparable and reduce geometry-driven differences.",
+    "Because PPFD is a room-average value only.",
+    "Because all sensors auto-correct any geometry change."
+  ],
+  "correct": 1,
+  "rationale": "To make the measurements comparable and reduce geometry-driven differences. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-LIGHT-001"
+  ]
+}

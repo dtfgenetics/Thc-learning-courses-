@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What belongs in a maintenance handoff after a verification stops at an authority boundary?",
+  "choices": [
+    "Only the technician’s guess at root cause.",
+    "Only the alarm code.",
+    "Only a note that maintenance was called.",
+    "Exact asset/location, observed condition, evidence, operator actions, boundary cue, current safe status and receiving role."
+  ],
+  "correct": 3,
+  "rationale": "Exact asset/location, observed condition, evidence, operator actions, boundary cue, current safe status and receiving role. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}
