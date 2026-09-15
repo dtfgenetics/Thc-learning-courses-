@@ -1,7 +1,7 @@
 {
   "id": "COURSE-LH-TECH2-005",
-  "title": "Production Records, Traceability & Inventory Reconciliation",
-  "version": "0.1.0",
+  "title": "Propagation & Canopy Performance Troubleshooting",
+  "version": "0.2.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
@@ -20,39 +20,51 @@
   ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.",
   "assessmentPolicy": "This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.",
-  "description": "Develops reconstructable records, discrepancy investigation, traceability reconciliation, controlled-document use, and defensible handoff of unresolved data-quality conditions.",
+  "description": "Develops propagation performance analysis, donor/batch troubleshooting, advanced canopy and flowering response review, biosecurity-aware evidence interpretation, and supervisor-ready handoff without conferring independent high-risk intervention authority.",
   "modules": [
-    "MOD-PRO-SOP-001",
+    "MOD-PROP-001",
+    "MOD-CANOPY-ADV-001",
+    "MOD-FLOWER-ADV-001",
+    "MOD-IPM-ADV-001",
     "MOD-PRO-QA-001",
-    "MOD-CROP-PLAN-001"
+    "MOD-LH-TECH2-005-PERFORMANCE"
   ],
   "competencies": [
-    "COMP-PRO-SOP-001",
-    "COMP-PRO-QA-001",
-    "COMP-CROP-PLAN-001"
+    "COMP-PROP-001",
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
   ],
-  "finalAssessment": null,
+  "finalAssessment": "ASSESS-LH-TECH2-005-FINAL",
   "learningOutcomes": [
-    "Reconcile physical observations and controlled records without forcing false agreement.",
-    "Identify data-integrity, identity, count, movement, and document-control discrepancies requiring escalation.",
-    "Produce a reconstructable investigation and shift handoff for unresolved traceability conditions."
+    "Calculate and compare propagation performance using traceable donors, batches, denominators, time points and loss distributions.",
+    "Troubleshoot propagation underperformance using donor, sanitation, environment, handling, timing and plant-health evidence without unsupported contamination or genotype claims.",
+    "Evaluate canopy and flowering work using planned-versus-actual scope, spatial uniformity, recovery and cultivar/stage context.",
+    "Produce a reconstructable performance review and supervisor handoff while maintaining sanitation, traceability, role and authorization boundaries."
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-II-001",
-    "maturity": "course-shell-draft",
+    "maturity": "instruction-assessment-draft",
     "developmentDependencies": [
-      "MOD-PRO-SOP-001",
-      "MOD-PRO-QA-001",
-      "MOD-CROP-PLAN-001"
+      "MOD-PROP-001",
+      "MOD-CANOPY-ADV-001",
+      "MOD-FLOWER-ADV-001",
+      "MOD-IPM-ADV-001",
+      "MOD-PRO-QA-001"
     ],
     "contentCeiling": null,
-    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedCourseAssessmentRequired": false,
     "dedicatedLabModuleRequired": false,
     "integratedPerformanceValidationRequired": false,
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
     "legacySourceCourse": "COURSE-CULT-TECH-II-001",
     "publicCredentialItemsAreDevelopmentOnly": true,
-    "operationalCredentialBankMustBePrivate": true
+    "operationalCredentialBankMustBePrivate": true,
+    "dedicatedPerformanceValidationRequired": true,
+    "mappedPractical": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+    "independentHighRiskInterventionAuthorityConferred": false,
+    "architectureCorrection": "Course 205 aligns Technician II curriculum Units 06–07 and Practical E; traceability/metrics/peer-support scope is consolidated into Course 207 / Practical G."
   }
 }
