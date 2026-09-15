@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-001-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "During a workup, a new measurement conflicts with the favored diagnosis. What is the correct record action?",
+  "choices": [
+    "Delete it because it is probably noise.",
+    "Change the recorded value to match the trend.",
+    "Preserve the conflicting result, verify its quality, and update the hypothesis ranking if warranted.",
+    "Keep the diagnosis unchanged regardless of verified evidence."
+  ],
+  "correct": 2,
+  "rationale": "Data integrity requires preserving and evaluating conflicting evidence, not rewriting it to fit a conclusion.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-001-04",
+  "title": "Confirmation, Next-Test Selection, Escalation and Diagnostic Reporting",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-IPM-ADV-001",
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-ENV-ADV-001",
+    "COMP-ROOTZONE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-001-01",
+    "LO-LH-TECH2-001-02",
+    "LO-LH-TECH2-001-03",
+    "LO-LH-TECH2-001-04",
+    "LO-LH-TECH2-001-05",
+    "LO-LH-TECH2-001-07"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-VPD-002"
+  ],
+  "content": {
+    "overview": "The goal of a diagnostic workup is not to sound certain; it is to choose a safe, informative next step and leave a reconstructable record. Technician II should prefer discriminating checks, preserve before/after evidence, change only what is authorized, and escalate when consequence or uncertainty exceeds role limits.",
+    "vocabulary": [
+      {
+        "term": "Next-test value",
+        "definition": "How much a proposed observation or test is expected to reduce uncertainty between competing explanations."
+      },
+      {
+        "term": "Escalation trigger",
+        "definition": "A condition requiring a more qualified role, stronger confirmation, containment or formal deviation process."
+      },
+      {
+        "term": "Reconstructable record",
+        "definition": "Documentation that allows another qualified person to understand what was observed, what evidence was used, what decision was made and what remains unresolved."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Choose the test that separates hypotheses",
+        "body": "Prefer a check whose possible results would change the ranking of plausible causes. Repeating low-value measurements without a decision purpose adds data without necessarily adding evidence.",
+        "references": [
+          "REF-NUTRIENT-DEFICIENCY-001"
+        ]
+      },
+      {
+        "title": "Verify data quality before high-consequence action",
+        "body": "Unexpected sensor or measurement patterns should be checked for representativeness, calibration, sampling method or other data-quality problems before major changes are made.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Escalate consequence, uncertainty and authority boundaries",
+        "body": "Suspected contagious disease, unsafe equipment, regulated treatment decisions, product disposition or unresolved high-impact uncertainty require appropriate escalation rather than independent action.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Write what the evidence supports",
+        "body": "A diagnostic report should distinguish confirmed facts, leading hypotheses, alternative hypotheses, actions taken, response observed and unresolved questions. Never back-edit observations to create a cleaner story."
+      }
+    ],
+    "workedExamples": [
+      "If a single probe drives a major HVAC hypothesis, colocate a verified sensor before recommending a setpoint change.",
+      "If disease remains plausible and the consequence of spread is high, containment and qualified confirmation take priority over an unapproved treatment experiment."
+    ],
+    "commonMistakes": [
+      "Choosing the easiest measurement instead of the most discriminating one.",
+      "Using certainty language that exceeds the evidence.",
+      "Omitting failed hypotheses or unresolved data from the handoff."
+    ],
+    "practicalApplication": "Complete a supervisor-ready diagnostic report containing problem statement, map/timeline, data-quality checks, ranked hypotheses, next test, authorized action, escalation decision, outcome and unresolved conditions.",
+    "summary": "A high-quality workup reduces uncertainty safely, respects authority boundaries and leaves evidence another qualified person can audit."
+  }
+}

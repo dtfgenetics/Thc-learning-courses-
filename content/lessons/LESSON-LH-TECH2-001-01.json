@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-001-01",
+  "title": "Diagnostic Problem Framing and Evidence Hierarchy",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-PLANT-BIO-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-001-01",
+    "LO-LH-TECH2-001-07"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "content": {
+    "overview": "Advanced crop diagnosis begins by defining what is actually known. A symptom, sensor value or worker report is evidence, not automatically a cause. Technician II work should preserve the original observations, build testable hypotheses and state uncertainty explicitly.",
+    "vocabulary": [
+      {
+        "term": "Observation",
+        "definition": "A directly recorded feature, measurement or event that can be distinguished from its interpretation."
+      },
+      {
+        "term": "Hypothesis",
+        "definition": "A plausible causal explanation that remains provisional until evidence supports or rejects it."
+      },
+      {
+        "term": "Discriminating evidence",
+        "definition": "An observation or test whose result meaningfully changes the relative plausibility of competing hypotheses."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Separate evidence from interpretation",
+        "body": "Record symptoms, distribution, chronology, measurements, crop stage and recent events before writing a causal label. Preserve conflicting evidence rather than editing it away.",
+        "references": [
+          "REF-NUTRIENT-DEFICIENCY-001"
+        ]
+      },
+      {
+        "title": "Rank hypotheses instead of naming one cause too early",
+        "body": "Visible crop responses can arise from nutrition, roots, environment, pests, disease or development. Ranking at least several plausible causes reduces premature treatment decisions.",
+        "references": [
+          "REF-NUTRIENT-DEFICIENCY-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Match confirmation effort to consequence",
+        "body": "A low-consequence reversible decision may need less confirmation than a diagnosis that would trigger containment, crop destruction, chemical treatment or major equipment changes.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Yellowing in one bench is recorded as a pattern first; nutrient deficiency, localized irrigation, root injury and spatial environment remain hypotheses until evidence separates them.",
+      "A suspected contagious disease with propagation-source implications requires stronger confirmation than a minor isolated cosmetic symptom."
+    ],
+    "commonMistakes": [
+      "Writing a diagnosis where the record should contain an observation.",
+      "Discarding measurements that conflict with the preferred hypothesis.",
+      "Changing several major inputs before a diagnostic baseline is captured."
+    ],
+    "practicalApplication": "Build a four-column workup: observed facts; relevant context; ranked hypotheses; next discriminating evidence. Add an explicit confidence statement and escalation trigger.",
+    "summary": "Defensible diagnosis preserves evidence, ranks hypotheses and uses targeted confirmation instead of converting the first clue into a cause."
+  }
+}
