@@ -1,12 +1,12 @@
 # Technician I Course 005 development readiness
 
 Course: `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care  
-Course version: `0.3.0`  
+Course version: `0.4.0`  
 Release status: `draft`
 
 ## Automated development completed
 
-Course 005 has dedicated instruction, assessment and development-stage practical evidence across three integrated work stations.
+Course 005 now has a complete automated instruction, assessment, development-practical and learner-asset layer.
 
 - dedicated module: `MOD-LH-TECH1-005-CROPCARE`;
 - six measurable Course 005 learning objectives;
@@ -16,10 +16,32 @@ Course 005 has dedicated instruction, assessment and development-stage practical
 - draft summative course assessment `ASSESS-LH-TECH1-005-FINAL`;
 - mapped development practicals: `PRACTICAL-TECH1-C`, `PRACTICAL-TECH1-D`, `PRACTICAL-TECH1-E`;
 - multi-practical crosswalk: `registry/course5-practical-cde-crosswalk.json`;
-- explicit clean-to-dirty and isolation/quarantine evidence now exists in scouting, propagation and canopy work contexts;
-- IPM scouting requires escalation without unauthorized pesticide or treatment selection;
-- deterministic crosswalk validation runs through the normal Course 005 regression;
+- explicit clean-to-dirty and isolation/quarantine evidence in scouting, propagation and canopy work contexts;
+- six embedded teaching visuals plus three downloadable practice worksheets;
+- governed asset registry: `visuals/COURSE5-ASSET-REGISTRY.json`;
+- canonical learner assets: `apps/web/public/assets/course5/`;
+- Drive production/reference mirror folder: `1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo`;
+- deterministic crosswalk and learner-asset validation run through the normal Course 005 regression;
 - Course 005 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
+
+## Learner asset layer
+
+Embedded teaching visuals:
+
+1. propagation identity and traceability workflow;
+2. canopy work-order scope and stop boundary;
+3. IPM scouting route and spatial-pattern evidence;
+4. sign-versus-symptom evidence layers;
+5. clean-to-dirty / biosecurity / quarantine workflow;
+6. integrated crop-care handoff workflow.
+
+Downloadable practice tools:
+
+1. propagation workstation practice worksheet;
+2. IPM scouting route practice worksheet;
+3. canopy maintenance work-order practice worksheet.
+
+Every produced learner asset is public, accessible as SVG with title/description metadata, mirrored to Drive, registered with a stable asset ID, and reachable from a canonical Course 005 lesson.
 
 ## Instructional emphasis
 
@@ -32,22 +54,6 @@ The course trains Technician I learners to preserve donor/lot/tray/plant identit
 - Practical E: canopy work-order interpretation, plant/tissue protection, sanitation, quarantine/isolation, stop conditions, consistency and handoff.
 
 The three practicals remain `development`. Course 005 does not confer pesticide-applicator or independent treatment-selection authority.
-
-## Current automated-development gap
-
-The next major gap is the Course 005 learner visual/practice layer. Priority assets are:
-
-1. propagation donor/lot/tray identity and count-traceability workflow;
-2. repeatable IPM scouting route and spatial-pattern visual;
-3. sign-versus-symptom / evidence-boundary visual;
-4. canopy work-order / least-disruptive action / stop-condition visual;
-5. clean-to-dirty, tool-control and quarantine/isolation workflow spanning all crop-care contexts;
-6. cross-task crop-care record and shift-handoff visual;
-7. downloadable propagation batch worksheet;
-8. downloadable IPM scouting worksheet;
-9. downloadable canopy work-order worksheet.
-
-These assets should be public, accessible, lesson-linked, Drive-mirrored and governed by a deterministic Course 005 asset registry.
 
 ## Remaining human/empirical validation gates
 
@@ -62,4 +68,4 @@ These assets should be public, accessible, lesson-linked, Drive-mirrored and gov
 
 ## Boundary
 
-Public-source research, instruction, assessments, diagrams, worksheets, practical mappings and deterministic QA may continue before these gates are complete. Human/pilot gates control validated credential evidence and release status; they do not block source-backed course development.
+Public-source research, instruction, assessments, diagrams, worksheets, practical mappings and deterministic QA are complete at the planned automated-development layer for Course 005. Human/pilot gates control validated credential evidence and release status; they do not retroactively convert green CI or generated assets into human approval.
