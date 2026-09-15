@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -8,20 +8,18 @@
   "bloomLevel": "analyze",
   "difficulty": "moderate",
   "type": "scenario",
-  "stem": "One plant is wilted while adjacent plants on the same bench remain upright. What is the most useful interpretation at this stage?",
+  "stem": "One plant is visibly wilted while adjacent plants on the same bench remain upright. What is the strongest interpretation at this stage?",
   "choices": [
-    "The whole room needs more water",
-    "The finding is currently isolated and should be documented and compared before a broader cause is claimed",
-    "The cultivar cannot tolerate the room",
-    "All irrigation emitters have failed"
+    "The finding is currently isolated; document it, compare additional representative locations, and avoid a broader causal conclusion until the pattern is established",
+    "Because adjacent plants are upright, the issue can be treated as plant-specific and no broader comparison is needed",
+    "The local contrast makes an irrigation-delivery problem the leading confirmed cause even before other locations are checked",
+    "The bench should be classified as affected because one confirmed abnormal plant is sufficient to define the bench-level pattern"
   ],
-  "correct": 1,
-  "rationale": "An isolated pattern supports a different investigation path than a room-wide pattern; it does not establish a room-wide cause.",
-  "references": [
-    "REF-PLANT-BIO-001"
-  ],
+  "correct": 0,
+  "rationale": "The current evidence supports an isolated observation, not a room-, bench-, or cause-level conclusion. Additional representative comparison determines whether the finding remains isolated or belongs to a larger spatial pattern.",
+  "references": ["REF-PLANT-BIO-001"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2"
   }
 }
