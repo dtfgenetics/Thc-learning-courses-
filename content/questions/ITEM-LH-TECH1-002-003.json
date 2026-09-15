@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PLANT-BIO-001",
+  "objective": "LO-LH-TECH1-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A technician inspected 12 plants but did not record where they were located. What is the main evidence problem?",
+  "choices": [
+    "The sample is automatically too small",
+    "The observations cannot be reliably reconstructed or interpreted spatially",
+    "The plants must be reinspected only at night",
+    "Location never matters when photographs exist"
+  ],
+  "correct": 1,
+  "rationale": "Without location context, another person cannot determine the spatial distribution or reproduce the observation route.",
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

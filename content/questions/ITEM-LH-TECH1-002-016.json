@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician later realizes a photo was linked to the wrong plant ID. What should happen?",
+  "choices": [
+    "Silently replace the ID so the record appears correct from the start",
+    "Use the controlled correction method so the original history and corrected identity remain reconstructable",
+    "Delete the entire crop walk",
+    "Keep the wrong ID because corrections are never allowed"
+  ],
+  "correct": 1,
+  "rationale": "Corrections should preserve the true record history rather than silently rewriting it.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

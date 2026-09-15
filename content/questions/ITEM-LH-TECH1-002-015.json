@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A crop note says only “plants look bad today.” What makes the record inadequate?",
+  "choices": [
+    "It is too short and lacks objective condition, identity, distribution and useful context",
+    "It contains no diagnosis",
+    "It does not name a fertilizer",
+    "It is written in present tense"
+  ],
+  "correct": 0,
+  "rationale": "Vague wording does not allow another person to reconstruct what was actually observed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

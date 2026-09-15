@@ -1,0 +1,142 @@
+{
+  "id": "LESSON-LH-TECH1-002-04",
+  "title": "Crop Observation Records, Photographs and Shift Handoff",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-002-04",
+    "LO-LH-TECH1-002-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-PLANT-BIO-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Observation only becomes operational evidence when another qualified person can reconstruct what was inspected and what remains unresolved. Learners build crop records that preserve identity, time, sample route, objective descriptions, photographs, available context, actions and escalation. Photography is treated as evidence: images retain plant and location identity and avoid edits that can materially change symptom appearance.",
+    "vocabulary": [
+      {
+        "term": "reconstructable record",
+        "definition": "A record containing enough identity, timing, context and history for another qualified person to understand what occurred."
+      },
+      {
+        "term": "photo context",
+        "definition": "The identity, location, scale or scene information needed to interpret a crop image correctly."
+      },
+      {
+        "term": "handoff",
+        "definition": "A structured transfer of completed work, observations, deviations, unresolved conditions and priorities to the next responsible person or shift."
+      },
+      {
+        "term": "uncertainty",
+        "definition": "A clearly stated limit in what the available evidence supports, preserved rather than hidden by an invented conclusion."
+      }
+    ],
+    "sections": [
+      {
+        "title": "A crop note needs identity and timing",
+        "body": "A useful record identifies the room or zone, crop or batch, plant or bench when relevant, date/time, developmental context and the person or controlled system responsible for the entry. A technically correct observation attached to the wrong location or time can mislead later decisions.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Photographs preserve both detail and context",
+        "body": "When photos are required, capture an overall plant or area view plus a close view of the relevant structure when practical. Link the image to crop identity and time. Avoid filters or edits that materially alter color or appearance; retake under more consistent lighting when the image is not reliable enough for comparison.",
+        "references": [
+          "REF-PLANT-BIO-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoffs distinguish done, observed and unresolved",
+        "body": "The receiving person should be able to tell what was completed, what was observed, what actions were taken, what conditions remain unresolved, what was escalated and what should be checked next. Missing or uncertain information remains clearly identified instead of being filled with a guess.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Corrections preserve the observation history",
+        "body": "If an observation record is corrected, use the supplied record-control method so the original history remains understandable. Do not silently replace a plant identity, timestamp or finding in a way that makes the record appear to have always contained the corrected information.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A photo set includes a whole-plant image and a close image of the affected leaf, both tied to Room 2, Zone C, Plant 2C-17, date/time and the corresponding written observation.",
+      "A shift handoff states that Zone B was rechecked, documents the remaining pattern, notes that the cause is unresolved, records who was notified and specifies the next required observation rather than writing only “watch plants.”"
+    ],
+    "commonMistakes": [
+      "Saving symptom photographs without plant, room or zone identity.",
+      "Using color filters, enhancement or inconsistent lighting as the primary evidence for a color-related symptom.",
+      "Writing a handoff that lists completed tasks but omits unresolved abnormalities or uncertainty.",
+      "Silently overwriting the original observation when correcting an identity or timestamp error."
+    ],
+    "practicalApplication": "Complete a simulated crop observation report from a room map, image set and environmental/work-history packet. The report must identify the sample route, preserve crop and photo identity, separate observation from interpretation, document escalation and produce a shift handoff that another learner can reconstruct without seeing the original room.",
+    "summary": "Crop records turn observation into transferable evidence. Preserve identity, timing, sample context, objective wording, photographs, actions, uncertainty and follow-up so the next qualified person can reconstruct the crop state and continue the work without guessing.",
+    "blocks": [
+      {
+        "type": "document",
+        "title": "Minimum crop-observation record",
+        "description": "Exact fields vary by facility, but the record should preserve enough context for reconstruction.",
+        "fields": [
+          {
+            "label": "Crop identity",
+            "value": "Room/zone plus cultivar, lot, batch, bench, tray or plant ID as required"
+          },
+          {
+            "label": "Date/time",
+            "value": "When the observation actually occurred"
+          },
+          {
+            "label": "Purpose and route",
+            "value": "Why the crop was inspected and how representative points were selected"
+          },
+          {
+            "label": "Developmental context",
+            "value": "Observed stage/morphology with schedule context when relevant"
+          },
+          {
+            "label": "Observation and pattern",
+            "value": "Objective findings plus sample size, distribution and severity terms defined by procedure"
+          },
+          {
+            "label": "Photo evidence",
+            "value": "Context and close views linked to identity and time when required"
+          },
+          {
+            "label": "Available context",
+            "value": "Relevant measurements or work history kept distinct from confirmed cause"
+          },
+          {
+            "label": "Action/escalation",
+            "value": "What was done, who was notified and what remains unresolved"
+          },
+          {
+            "label": "Handoff/follow-up",
+            "value": "Next check, hold, priority or open question for the receiving role"
+          }
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Evidence boundary",
+        "tone": "evidence",
+        "body": "Data-integrity principles are used here as a transferable quality framework for trustworthy cultivation records. They are not presented as a claim that pharmaceutical GxP regulations automatically govern every cannabis cultivation record.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ]
+  }
+}
