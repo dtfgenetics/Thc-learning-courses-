@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-007-06",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What makes an end-of-shift handoff reconstructable to a qualified person who was not present?",
+  "choices": [
+    "Only a list of completed tasks",
+    "A verbal summary with no written record",
+    "Only problems that were fully resolved",
+    "Completed and incomplete work, key measurements/observations, movements, deviations, holds, unresolved conditions, owners and next priorities"
+  ],
+  "correct": 3,
+  "rationale": "A handoff must preserve both completed work and open conditions so the next person can reconstruct the operational state.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

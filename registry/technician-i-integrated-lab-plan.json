@@ -1,0 +1,184 @@
+{
+  "id": "LABPLAN-TECH1-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "courseId": "COURSE-LH-TECH1-007",
+  "credentialProgram": "CREDPROG-CULT-TECH-I-001",
+  "purpose": "Development blueprint for integrated Technician I practical and capstone evidence. This file does not approve a live credential form or final cut score.",
+  "prerequisites": [
+    "COURSE-LH-TECH1-001",
+    "COURSE-LH-TECH1-002",
+    "COURSE-LH-TECH1-003",
+    "COURSE-LH-TECH1-004",
+    "COURSE-LH-TECH1-005",
+    "COURSE-LH-TECH1-006"
+  ],
+  "practicals": [
+    {
+      "id": "PRACTICAL-TECH1-A",
+      "title": "Safe Room Entry & Crop Inspection",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-A-SAFE-ROOM-ENTRY-CROP-INSPECTION.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "status": "development"
+    },
+    {
+      "id": "PRACTICAL-TECH1-B",
+      "title": "Water & Irrigation Shift",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-B-WATER-IRRIGATION-SHIFT.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "status": "development"
+    },
+    {
+      "id": "PRACTICAL-TECH1-C",
+      "title": "IPM Scouting Route",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-C-IPM-SCOUTING-ROUTE.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "status": "development"
+    },
+    {
+      "id": "PRACTICAL-TECH1-D",
+      "title": "Propagation Workstation",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-D-PROPAGATION-WORKSTATION.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "status": "development"
+    },
+    {
+      "id": "PRACTICAL-TECH1-E",
+      "title": "Canopy Maintenance Work Order",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-E-CANOPY-MAINTENANCE-WORK-ORDER.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "status": "development"
+    },
+    {
+      "id": "PRACTICAL-TECH1-F",
+      "title": "Harvest-to-Dry-Room Handoff",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH1-F-HARVEST-TO-DRY-ROOM-HANDOFF.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "status": "development"
+    }
+  ],
+  "capstone": {
+    "id": "CAPSTONE-TECH1-SHIFT-001",
+    "document": "docs/academy-v2/practicals/CAPSTONE-TECH1-ONE-CULTIVATION-SHIFT.md",
+    "totalPoints": 200,
+    "developmentTargetPassPoints": 160,
+    "scoreDomains": [
+      {
+        "id": "safety-biosecurity",
+        "title": "Safety and biosecurity",
+        "points": 30
+      },
+      {
+        "id": "crop-environment",
+        "title": "Crop observation and environment",
+        "points": 25
+      },
+      {
+        "id": "water-irrigation",
+        "title": "Water and irrigation",
+        "points": 25
+      },
+      {
+        "id": "ipm-scouting",
+        "title": "IPM scouting",
+        "points": 25
+      },
+      {
+        "id": "production-execution",
+        "title": "Propagation/canopy production execution",
+        "points": 25
+      },
+      {
+        "id": "harvest-traceability",
+        "title": "Harvest/postharvest/traceability",
+        "points": 25
+      },
+      {
+        "id": "documentation-integrity",
+        "title": "Documentation and data integrity",
+        "points": 25
+      },
+      {
+        "id": "priority-escalation-handoff",
+        "title": "Prioritization, escalation and handoff",
+        "points": 20
+      }
+    ],
+    "secureCredentialFormApproved": false
+  },
+  "evidenceRequired": [
+    "task decisions and timestamps",
+    "work-order selections",
+    "identified measurements with units/context",
+    "crop and scouting observations",
+    "traceability events and movement records",
+    "deviations, holds and escalation decisions",
+    "practical outputs",
+    "final shift log",
+    "final receiving/next-shift handoff"
+  ],
+  "criticalFailureRules": [
+    {
+      "id": "CF-SAFETY-001",
+      "rule": "Knowingly continue through an unresolved life-safety or serious uncontrolled hazard when stop/emergency procedure is required.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-IDENTITY-001",
+      "rule": "Knowingly move, merge, relabel or transform material after an unresolved identity conflict in a way that breaks genealogy.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-INTEGRITY-001",
+      "rule": "Falsify, overwrite or force a measurement, count, weight or record to hide a discrepancy.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-AUTHORITY-001",
+      "rule": "Perform an unauthorized pesticide/treatment selection, technical repair/bypass, or product-release decision outside the supplied Technician I authority.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-HOLD-001",
+      "rule": "Knowingly move or release material from an active contamination/quality hold without the required authorization.",
+      "blocksCredentialEvidence": true
+    }
+  ],
+  "evaluatorControls": {
+    "rubricTrainingRequired": true,
+    "evidenceBasedScoringRequired": true,
+    "pilotDoubleScoringRequired": true,
+    "interRaterAgreementTarget": "to-be-set-from-pilot-evidence",
+    "conflictResolutionProcessRequired": true
+  },
+  "formControls": {
+    "equivalentFormsRequired": true,
+    "secureCredentialFormsPublic": false,
+    "practiceFormMayExposeFeedback": true,
+    "readinessFormMayExposePostStationFeedback": true,
+    "credentialFormHintsAllowed": false
+  },
+  "retestPolicy": {
+    "status": "development",
+    "remediationBeforeRetest": true,
+    "equivalentFormRequired": true,
+    "criticalFailureRequiresAffectedDomainReevaluation": true,
+    "finalPolicyRequiresHumanApproval": true
+  },
+  "releaseGates": [
+    "human technical review",
+    "accessibility review",
+    "pilot evidence",
+    "item/form equivalence evidence where applicable",
+    "evaluator calibration evidence",
+    "standard setting",
+    "approved retention/privacy policy for candidate evidence",
+    "program release approval"
+  ]
+}

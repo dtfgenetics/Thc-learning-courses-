@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-LH-TECH1-007-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A scouting route finds direct pest evidence concentrated near one intake. What best preserves useful evidence?",
+  "choices": [
+    "Record only the pest name",
+    "Record the identified locations, incidence/severity or counts, direct evidence and prior-round comparison, then protect biosecurity and escalate as required",
+    "Treat the whole room immediately without authorization",
+    "Remove the affected leaves and omit the finding"
+  ],
+  "correct": 1,
+  "rationale": "Spatial pattern and comparable evidence make the finding actionable without granting independent treatment authority.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

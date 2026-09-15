@@ -1,0 +1,155 @@
+{
+  "id": "LESSON-LH-TECH1-007-02",
+  "title": "Room Inspection, Measurement and Irrigation Integration",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PLANT-BIO-001",
+    "COMP-ENV-VPD-001",
+    "COMP-WATER-001",
+    "COMP-ROOTZONE-001",
+    "COMP-NUTRITION-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-007-02",
+    "LO-LH-TECH1-007-03"
+  ],
+  "estimatedMinutes": 80,
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-IRRIGATION-001",
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRITION-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "This lab segment combines Practical A and Practical B reasoning. Learners enter a room safely, protect sanitation boundaries, inspect crop and environmental evidence, verify sensor or sample context, perform assigned pH/EC work, execute an authorized irrigation task, check representative delivery and document actual-versus-planned conditions. The learner is evaluated on evidence quality and response boundaries, not on guessing a diagnosis from one reading.",
+    "vocabulary": [
+      {
+        "term": "representative observation",
+        "definition": "An observation or measurement collected from an identified location and method that reasonably represents the condition being evaluated."
+      },
+      {
+        "term": "measurement context",
+        "definition": "The units, instrument, calibration or verification state, sample identity, location and timing needed to interpret a reading."
+      },
+      {
+        "term": "delivery verification",
+        "definition": "A check that the assigned irrigation or solution reached representative intended locations and that obvious distribution faults are identified."
+      },
+      {
+        "term": "actual-versus-planned",
+        "definition": "The comparison between the authorized work order and what was physically delivered or observed during execution."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Room entry is an evidence checkpoint",
+        "body": "Before crop observations begin, verify the room identity, entry hazards, sanitation sequence and any posted restrictions. A questionable sensor, leak, damaged cord or blocked route is documented in context rather than normalized because the room is familiar.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "title": "Record environmental and crop evidence together",
+        "body": "Temperature, humidity, airflow, light context and crop appearance should be linked to identified zones and times. A single reading can be useful, but it should not be stretched into a complete causal diagnosis without spatial, temporal and plant context.",
+        "references": [
+          "REF-ROOTZONE-NUTRIENT-002",
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "pH and EC are measurements, not diagnoses",
+        "body": "Verify sample identity, instrument readiness, units and method before recording pH or EC. Use the values with root-zone, irrigation and crop context. Do not infer a specific nutrient deficiency, toxicity or product identity from EC alone.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Irrigation execution includes verification",
+        "body": "Match the work order, execute only the authorized settings or sequence, inspect representative delivery points, record actual-versus-planned conditions, and escalate localized faults or unresolved dryback patterns rather than silently compensating outside the work order.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-ROOTZONE-NUTRIENT-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A room sensor shows an unusual value but a reference measurement at the crop zone disagrees. The learner records both locations and escalates the discrepancy rather than adjusting environmental equipment without authority.",
+      "An irrigation zone is scheduled correctly but one representative emitter has no delivery. The learner preserves the programmed work order, documents the localized fault and escalates rather than increasing the entire zone duration to compensate."
+    ],
+    "commonMistakes": [
+      "Recording pH or EC without sample identity or units.",
+      "Using one environmental reading as proof of a room-wide condition.",
+      "Changing irrigation duration to compensate for a local delivery fault without authorization.",
+      "Diagnosing a named deficiency from EC or leaf color alone."
+    ],
+    "practicalApplication": "Run a combined room-inspection and irrigation station with one entry hazard, one sensor-location discrepancy, one pH/EC sample, one root-zone pattern and one delivery fault. Produce a single work record that preserves all relevant identities, readings, observations and escalations.",
+    "summary": "Integrated room and irrigation work connects safety, sanitation, crop observation, environmental context, measurement discipline and delivery verification. Competence is shown by reconstructable evidence and correct boundaries, not by unsupported certainty.",
+    "blocks": [
+      {
+        "type": "table",
+        "title": "Evidence needed before interpretation",
+        "columns": [
+          "Evidence",
+          "Minimum context",
+          "Do not conclude from it alone"
+        ],
+        "rows": [
+          [
+            "Temperature / RH",
+            "identified room or zone, time, sensor or reference location",
+            "that the entire canopy experienced the same condition"
+          ],
+          [
+            "pH",
+            "identified sample, meter/method context, time",
+            "a complete nutrient diagnosis"
+          ],
+          [
+            "EC",
+            "identified sample/root-zone location, units, trend context",
+            "which specific ions caused a plant symptom"
+          ],
+          [
+            "Dryback observation",
+            "identified container/zone, comparable timing and prior state",
+            "that elapsed clock time alone defines irrigation need"
+          ],
+          [
+            "Delivery check",
+            "identified emitter/zone and actual observation",
+            "that one failed point means every emitter failed"
+          ]
+        ],
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-ROOTZONE-NUTRIENT-002",
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "One failed emitter",
+        "setting": "The assigned irrigation cycle completed, but one representative emitter has no delivery while neighboring emitters are normal.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Increase the entire zone duration until that location is wet",
+          "Document the localized fault, protect the current work-order record and escalate or service only within authorized procedure",
+          "Assume the plant does not need water",
+          "Delete the failed reading because most emitters worked"
+        ],
+        "answer": "Document the localized fault, protect the current work-order record and escalate or service only within authorized procedure",
+        "feedback": "A local delivery fault should not be hidden by a broad unauthorized process change.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-ROOTZONE-NUTRIENT-002"
+        ]
+      }
+    ]
+  }
+}
