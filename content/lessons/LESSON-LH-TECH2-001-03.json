@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-001-03",
+  "title": "Multi-Factor Differential Diagnosis: Nutrition, Root Zone, Environment and Plant Health",
+  "competencies": [
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-ROOTZONE-001",
+    "COMP-ENV-ADV-001",
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-001-02",
+    "LO-LH-TECH2-001-03",
+    "LO-LH-TECH2-001-04",
+    "LO-LH-TECH2-001-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001",
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-CANNABIS-NPK-RSM-2024-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "content": {
+    "overview": "Crop symptoms can be produced by interacting nutritional, root-zone, environmental and biotic mechanisms. Technician II reasoning combines multiple evidence streams, recognizes nutrient interactions and avoids treating EC, tissue values, photographs or pest observations as complete diagnoses by themselves.",
+    "vocabulary": [
+      {
+        "term": "Differential diagnosis",
+        "definition": "A structured comparison of plausible causes followed by evidence that changes their relative likelihood."
+      },
+      {
+        "term": "Interaction effect",
+        "definition": "A response in which the effect of one factor depends on the level or state of another factor."
+      },
+      {
+        "term": "Root-zone context",
+        "definition": "The moisture, aeration, chemical and biological conditions surrounding roots that influence uptake and plant response."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Visual symptoms are not one-to-one labels",
+        "body": "Cannabis nutrient-deficiency research shows that visible onset and foliar elemental status do not always align simply. Symptom distribution should be combined with tissue, root-zone and production context.",
+        "references": [
+          "REF-NUTRIENT-DEFICIENCY-001"
+        ]
+      },
+      {
+        "title": "Nutrients interact",
+        "body": "Cannabis response-surface research identified significant interactions among primary macronutrients for multiple vegetative growth attributes. This supports multi-factor reasoning and cautions against universalizing one-factor recipes from a specific cultivar or system.",
+        "references": [
+          "REF-CANNABIS-NPK-RSM-2024-001"
+        ]
+      },
+      {
+        "title": "EC and root-zone data are clues, not complete causes",
+        "body": "EC describes ionic concentration and cannot identify which ions changed. Moisture, drainage, uptake, pH, roots and irrigation history are needed to interpret accumulation or uptake problems.",
+        "references": [
+          "REF-ROOTZONE-NUTRIENT-002",
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Keep biotic and abiotic look-alikes in the same differential",
+        "body": "Pests and pathogens can resemble environmental, nutritional or root problems. Confirmation should be proportional to the consequence of acting on the diagnosis.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Interveinal chlorosis limited to one wet irrigation zone supports checking root condition, pH/EC and delivery before adding a micronutrient.",
+      "A rising root-zone EC with stable input EC prompts a water-balance and accumulation investigation rather than an automatic meter-failure conclusion."
+    ],
+    "commonMistakes": [
+      "Using EC as a direct meter for each nutrient.",
+      "Responding to a tissue value without sampling context.",
+      "Treating a pest observation elsewhere in the facility as proof of the current symptom cause."
+    ],
+    "practicalApplication": "For a case with at least three evidence streams, construct a ranked differential that includes nutritional/root-zone, environmental and biotic alternatives. State evidence for, evidence against and the most discriminating next check for each.",
+    "summary": "Advanced crop diagnosis is a multi-factor evidence problem. Strong decisions triangulate symptom pattern, roots, chemistry, environment, plant health and crop history."
+  }
+}

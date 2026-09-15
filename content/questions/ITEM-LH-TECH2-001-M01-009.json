@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-001-M01-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative diagnostic check 9: A single canopy sensor suddenly differs from two colocated verified sensors after maintenance. What should happen before changing room controls?",
+  "choices": [
+    "Verify the suspect sensor’s placement, condition and calibration/data quality.",
+    "Change HVAC settings to match the outlier.",
+    "Average all three values and call the issue resolved.",
+    "Ignore all sensor data for the rest of the crop cycle."
+  ],
+  "correct": 0,
+  "rationale": "A conflicting outlier should trigger data-quality verification before high-consequence control changes.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-001-M01-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-TECH2-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A pest is detected on a trap in another zone, while the symptomatic crop has no pest signs. What is the strongest interpretation?",
+  "choices": [
+    "The pest automatically explains all symptoms facility-wide.",
+    "The detection raises pest plausibility but does not prove it caused the symptomatic crop; inspect and compare evidence in the affected zone.",
+    "Pests can be ruled out because they were not seen on the first plant.",
+    "Apply treatment to the symptomatic crop without authorization or confirmation."
+  ],
+  "correct": 1,
+  "rationale": "Facility detection is relevant context, but diagnosis still requires evidence linking the causal agent to the affected crop.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ]
+}

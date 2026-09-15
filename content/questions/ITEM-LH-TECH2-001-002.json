@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-001-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One wall sensor shows normal RH while affected plants cluster inside a dense canopy. Which next step has the highest diagnostic value?",
+  "choices": [
+    "Average the wall reading with yesterday’s room target.",
+    "Map temperature/RH at representative canopy positions and compare affected with unaffected locations.",
+    "Raise the dehumidifier setpoint immediately.",
+    "Assume the affected plants have a nutrient disorder because room RH is normal."
+  ],
+  "correct": 1,
+  "rationale": "Spatial mapping tests whether the controller reading represents the conditions experienced by affected plants.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-001-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-TECH2-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Root-zone EC is elevated in one irrigation zone while input EC is unchanged. What interpretation is most defensible first?",
+  "choices": [
+    "The nutrient formulation is definitely too strong for the whole room.",
+    "The EC meter is definitely broken.",
+    "Investigate moisture delivery, drainage, water use, pH and root condition before assigning a single cause.",
+    "High EC proves a specific nutrient toxicity."
+  ],
+  "correct": 2,
+  "rationale": "Root-zone EC is a concentration signal affected by water balance, uptake and accumulation; it does not identify a single cause or ion.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRITION-001"
+  ]
+}

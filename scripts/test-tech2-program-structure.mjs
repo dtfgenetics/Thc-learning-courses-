@@ -11,15 +11,31 @@ assert.equal(program.prerequisiteCredentials.includes('CREDPROG-CULT-TECH-I-001'
 assert.equal(program.assessmentModel.credentialAssessment, 'ASSESS-CULT-TECH-II-CREDENTIAL-001');
 assert.equal(program.assessmentModel.performanceEvidence.length, 7);
 assert.equal(program.assessmentModel.capstone, 'CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT');
+
 for (const id of expected) {
   const course = read('content/courses/' + id + '.json');
-  assert.equal(course.status, 'draft', id + ' must remain draft');
+  assert.equal(course.status, 'draft', id + ' must remain draft until validation evidence supports promotion');
   assert.equal(course.credentialBearing, true);
-  assert.equal(course.finalAssessment, null);
   assert.equal(course.extensions.credentialPath, program.id);
   assert.equal(course.extensions.legacySourceCourse, 'COURSE-CULT-TECH-II-001');
   assert.ok(course.modules.length > 0 && course.competencies.length > 0);
+
+  if (id === 'COURSE-LH-TECH2-001') {
+    assert.equal(course.finalAssessment, 'ASSESS-LH-TECH2-001-FINAL');
+    assert.equal(course.extensions.dedicatedCourseAssessmentRequired, false);
+    assert.equal(course.extensions.dedicatedPerformanceValidationRequired, true);
+    assert.equal(course.extensions.mappedPractical, 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP');
+    assert.ok(fs.existsSync(path.join('content/assessments', course.finalAssessment + '.json')), 'Course 201 final assessment must resolve');
+  } else if (id === 'COURSE-LH-TECH2-008') {
+    assert.equal(course.finalAssessment, null);
+    assert.equal(course.extensions.dedicatedLabModuleRequired, true);
+    assert.equal(course.extensions.integratedPerformanceValidationRequired, true);
+  } else {
+    assert.equal(course.finalAssessment, null);
+    assert.equal(course.extensions.dedicatedCourseAssessmentRequired, true, id + ' must retain an explicit assessment build gate');
+  }
 }
+
 for (const id of program.assessmentModel.performanceEvidence) assert.ok(fs.existsSync(path.join('content/performance-assessments', id + '.json')), 'missing ' + id);
 assert.ok(fs.existsSync(path.join('content/performance-assessments', program.assessmentModel.capstone + '.json')), 'missing capstone');
 assert.ok(fs.existsSync('content/courses/COURSE-CULT-TECH-II-001.json'), 'legacy Technician II source course must be preserved');
@@ -29,4 +45,4 @@ const exam = read('content/assessments/ASSESS-CULT-TECH-II-CREDENTIAL-001.json')
 assert.equal(exam.status, 'draft');
 assert.equal(exam.purpose, 'credential');
 assert.equal(exam.items.length, 0, 'public credential definition must not contain an operational selected form');
-console.log('Technician II eight-course program shell and legacy-preservation contract passed.');
+console.log('Technician II program structure, Course 201 advancement, remaining build gates, and legacy-preservation contract passed.');
