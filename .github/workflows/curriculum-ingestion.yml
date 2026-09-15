@@ -90,7 +90,7 @@ jobs:
       - name: Build collection plan
         run: node scripts/build-ingestion-plan.mjs --output=automation/curriculum-ingestion/reports/collection-plan.json
       - name: Upload dependency reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: course1-ingestion-plan
           path: |
@@ -108,7 +108,7 @@ jobs:
       - name: Check canonical external links
         run: node scripts/check-external-links.mjs --output=automation/curriculum-ingestion/reports/link-health.json
       - name: Upload link health report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: external-link-health
           path: automation/curriculum-ingestion/reports/link-health.json
@@ -133,7 +133,7 @@ jobs:
             --limit="$LIMIT" \
             --output=automation/curriculum-ingestion/inbox/research-candidates.json
       - name: Upload research candidates
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: research-candidates
           path: automation/curriculum-ingestion/inbox/research-candidates.json
@@ -161,7 +161,7 @@ jobs:
             --limit="$LIMIT" \
             --output=automation/curriculum-ingestion/inbox/dataset-candidates.json
       - name: Upload dataset candidates
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dataset-candidates
           path: automation/curriculum-ingestion/inbox/dataset-candidates.json
@@ -186,7 +186,7 @@ jobs:
             --limit="$LIMIT" \
             --output=automation/curriculum-ingestion/inbox/media-candidates.json
       - name: Upload media candidates
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: media-candidates
           path: automation/curriculum-ingestion/inbox/media-candidates.json
