@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-004-01",
+  "title": "Comparable Scouting Design, Sampling Effort and Data Quality",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-004-01",
+    "LO-LH-TECH2-004-05"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Advanced IPM decisions depend on repeated observations that can actually be compared. Routes, sample counts, locations, traps, severity categories and crop identifiers should be stable or documented when they change. Negative findings are evidence only when the sampling effort is known.",
+    "vocabulary": [
+      {
+        "term": "Incidence",
+        "definition": "Count or proportion of sampled units with the defined pest, sign, disease or symptom."
+      },
+      {
+        "term": "Severity",
+        "definition": "Degree of damage or symptom expression on affected units."
+      },
+      {
+        "term": "Sampling effort",
+        "definition": "How many units, locations or traps were examined and by what repeatable method."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Scouting is a measurement system",
+        "body": "Use repeatable zones, minimum sample counts, fixed or traceable trap IDs and consistent observation categories. A changing route or denominator can create apparent trends that are only method changes.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Record negatives with their denominator",
+        "body": "A no-detection round has different meaning when 5 plants were checked than when 100 representative plants and fixed traps were checked. Preserve what was inspected and where.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Do not clean the data story after the fact",
+        "body": "Original observations, corrections, exclusions and reasons for method changes remain part of the reconstructable record. Conflicting findings should be explained, not erased.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Trap counts fall after an intervention, but the number of active traps also fell; normalize the comparison before declaring improvement.",
+      "A room shows no visible symptoms, but only doorway plants were checked; the round is insufficient evidence for facility-wide absence."
+    ],
+    "commonMistakes": [
+      "Recording only positive findings.",
+      "Changing sample size without noting it.",
+      "Using a different severity scale between rounds.",
+      "Deleting observations that complicate the trend."
+    ],
+    "practicalApplication": "Build a scouting-round worksheet with route, zones, sample denominator, trap IDs, incidence, severity, crop/batch identity, observer, date/time and any method deviation.",
+    "summary": "Comparable scouting requires stable methods, known denominators and preserved original evidence."
+  }
+}
