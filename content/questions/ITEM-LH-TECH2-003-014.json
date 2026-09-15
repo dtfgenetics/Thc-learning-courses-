@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH2-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "The batch calculation conflicts with the controlled target final volume. What is the best action?",
+  "choices": [
+    "Choose the larger number to avoid deficiency.",
+    "Stop and reconcile the calculation/instruction before adding materials.",
+    "Average the two values.",
+    "Use yesterday’s volume from memory."
+  ],
+  "correct": 1,
+  "rationale": "Stop and reconcile the calculation/instruction before adding materials.",
+  "references": [
+    "REF-ASTM-E2659-001"
+  ]
+}

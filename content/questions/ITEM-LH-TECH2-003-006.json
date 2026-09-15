@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-003-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-TECH2-003-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Root-zone EC rises while input EC remains stable. Which interpretation is most defensible?",
+  "choices": [
+    "The input recipe is automatically too strong.",
+    "Investigate water balance, accumulation, selective uptake and delivery before changing nutrient concentration.",
+    "The EC meter is automatically defective.",
+    "The crop is proven deficient in one specific element."
+  ],
+  "correct": 1,
+  "rationale": "Investigate water balance, accumulation, selective uptake and delivery before changing nutrient concentration.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRITION-001"
+  ]
+}

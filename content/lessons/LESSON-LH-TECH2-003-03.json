@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-003-03",
+  "title": "Irrigation Distribution, Root-Zone Trends and Dryback Context",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-ROOTZONE-001",
+    "COMP-NUTRIENT-DIAG-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-003-04",
+    "LO-LH-TECH2-003-05",
+    "LO-LH-TECH2-003-06"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-NUTRIENT-UPTAKE-2026-001",
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRITION-001"
+  ],
+  "content": {
+    "overview": "Root-zone troubleshooting is a connected-system problem. Irrigation volume and timing, distribution uniformity, media/container properties, crop stage, environment, water use, pH and EC all influence what the roots experience. Dryback and EC trends are useful only when interpreted in that context.",
+    "vocabulary": [
+      {
+        "term": "Distribution uniformity",
+        "definition": "How evenly irrigation delivery is measured among representative locations."
+      },
+      {
+        "term": "Dryback",
+        "definition": "Decline in root-zone water content between irrigation events."
+      },
+      {
+        "term": "Mass-balance context",
+        "definition": "Interpretation of what enters, leaves, accumulates in or is taken up from the root-zone system."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Measure delivery before blaming plant demand",
+        "body": "Representative emitter output, pressure/filtration condition and location comparisons help distinguish irrigation distribution problems from crop or root-zone causes.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "There is no universal dryback target",
+        "body": "Dryback depends on media, container, rooting, plant size, stage, light, VPD and irrigation strategy. Use verified trends and crop response rather than copying a single percentage across systems.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-NUTRIENT-UPTAKE-2026-001"
+        ]
+      },
+      {
+        "title": "Root-zone EC needs water-balance and composition context",
+        "body": "A rising root-zone EC can reflect reduced water volume, accumulation, selective uptake or delivery changes. EC does not identify which ions changed, so formulation and element-specific evidence may be needed.",
+        "references": [
+          "REF-ROOTZONE-NUTRIENT-002",
+          "REF-NUTRITION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Only far-end containers dry faster; catch volumes show lower delivery there, so distribution becomes a stronger hypothesis than a room-wide nutrient deficiency.",
+      "Root-zone EC rises while input EC is stable and drainage volume has fallen; investigate water balance and accumulation before changing nutrient concentration."
+    ],
+    "commonMistakes": [
+      "Using one dryback percentage for every media and stage.",
+      "Assuming nominal emitter flow proves installed delivery.",
+      "Treating root-zone EC as an element-specific nutrient assay."
+    ],
+    "practicalApplication": "Trend representative irrigation timestamps/volumes, emitter output, root-zone moisture, pH/EC, crop stage, environment and plant observations. Annotate which evidence supports delivery, scheduling, accumulation or plant-demand hypotheses.",
+    "summary": "Root-zone interpretation is strongest when measured irrigation performance, crop demand and chemical trends are analyzed as one system."
+  }
+}

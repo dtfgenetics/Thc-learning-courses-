@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-M01-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-TECH2-003-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A pH/EC sample label is missing. What is the strongest response?",
+  "choices": [
+    "Assume it came from the latest batch.",
+    "Use whichever batch result is closest.",
+    "Relabel it from memory and continue.",
+    "Do not use the result for disposition until sample identity is resolved under procedure."
+  ],
+  "correct": 3,
+  "rationale": "Do not use the result for disposition until sample identity is resolved under procedure.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
