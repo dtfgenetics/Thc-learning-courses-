@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -8,21 +8,20 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "multiple-choice",
-  "stem": "Which photo record is strongest for a color-related leaf observation?",
+  "stem": "Which image record gives the reviewer the strongest evidence for a color-related leaf observation?",
   "choices": [
-    "A whole-plant context image plus a clear close image linked to plant/location identity and time",
-    "A filtered close-up with no plant ID",
-    "A social-media screenshot with unknown lighting",
-    "Any image is sufficient if the technician remembers the plant"
+    "A whole-plant context image plus a clear close image, both linked to plant/location identity and observation time",
+    "A sharp close image linked to plant ID and time, but with no whole-plant or area context",
+    "A whole-plant context image linked to identity and time, but no detailed image of the observed leaf feature",
+    "A context and close image after manual color adjustment to match how the technician remembers the plant appearing"
   ],
   "correct": 0,
-  "rationale": "Context and identity make the image reconstructable, while filters or unknown provenance can undermine comparison.",
-  "references": [
-    "REF-PLANT-BIO-001",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "rationale": "The strongest set preserves both context and detail, links the images to identity and time, and avoids appearance-changing edits. A close-up alone or a context view alone leaves important interpretive information missing.",
+  "references": ["REF-PLANT-BIO-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2",
+    "publicSourceUrl": "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers",
+    "sourceScope": "Transferable diagnostic-photo and context guidance; not cannabis-specific."
   }
 }

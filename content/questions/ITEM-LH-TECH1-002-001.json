@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -8,20 +8,20 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "scenario",
-  "stem": "A routine crop walk begins at the room entrance where one plant is badly wilted. What is the best next step before describing the room-level condition?",
+  "stem": "A routine crop walk begins at the room entrance where one plant is visibly abnormal. What is the strongest next step before describing the room-level condition?",
   "choices": [
     "Follow the supplied representative route and compare multiple locations before describing the room-level pattern",
-    "Use the wilted plant as the room sample because it is obvious",
-    "Diagnose the room as under-watered and water every plant",
-    "Remove the plant so the record is not biased"
+    "Inspect the rest of the doorway row first and use that row to represent the room if no second abnormal plant appears",
+    "Document the plant and its two nearest neighbors, then make a room-level statement from that local comparison",
+    "Focus the walk on plants that appear different so the technician captures the most important abnormalities efficiently"
   ],
   "correct": 0,
-  "rationale": "One conspicuous plant does not establish the distribution of a condition. A representative route is needed before a room-level statement.",
-  "references": [
-    "REF-PLANT-BIO-001"
-  ],
+  "rationale": "A conspicuous entry-point plant and a small local comparison do not establish room-level distribution. The planned representative route preserves broader sampling context before a room-level statement is made.",
+  "references": ["REF-PLANT-BIO-001"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2",
+    "publicSourceUrl": "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management",
+    "sourceScope": "Transferable greenhouse scouting and recordkeeping guidance; not a universal cannabis sampling prescription."
   }
 }
