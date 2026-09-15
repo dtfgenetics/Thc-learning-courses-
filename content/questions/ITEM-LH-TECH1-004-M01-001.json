@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-M01-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-LH-TECH1-004-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "What should be confirmed before attaching a pH or EC value to the crop record?",
+  "choices": [
+    "The sample identity and required measurement context",
+    "The likely deficiency",
+    "The harvest date",
+    "The fertilizer advertisement"
+  ],
+  "correct": 0,
+  "rationale": "The sample identity and required measurement context. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-module1-formative"
+  }
+}

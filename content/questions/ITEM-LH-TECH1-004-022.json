@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-004-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-004-06",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One zone missed irrigation before shift end because a fault remained unresolved. What should the handoff say?",
+  "choices": [
+    "Irrigation complete",
+    "Identify the missed zone, actual delivery status, checks performed, unresolved fault, escalation and next action",
+    "No note until the fault is diagnosed",
+    "Copy the planned completion status"
+  ],
+  "correct": 1,
+  "rationale": "Identify the missed zone, actual delivery status, checks performed, unresolved fault, escalation and next action. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}

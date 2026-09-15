@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-004-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Why is a representative delivery check required after routine system execution?",
+  "choices": [
+    "It is only for estimating yield",
+    "A controller or pump status does not prove solution actually reached every required crop location",
+    "It replaces the work order",
+    "It identifies exact nutrient composition"
+  ],
+  "correct": 1,
+  "rationale": "A controller or pump status does not prove solution actually reached every required crop location. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}

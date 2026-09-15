@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-LH-TECH1-004-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A technician has two cups: one is source water and one is prepared feed, but the labels were removed. What is the strongest response?",
+  "choices": [
+    "Do not measure and assign results until sample identity can be verified under the supplied process",
+    "Measure both and guess which is which from EC",
+    "Use the lower pH cup as source water",
+    "Combine the samples and take one reading"
+  ],
+  "correct": 0,
+  "rationale": "Do not measure and assign results until sample identity can be verified under the supplied process. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}

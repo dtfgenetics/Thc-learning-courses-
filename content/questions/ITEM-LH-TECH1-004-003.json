@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-LH-TECH1-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A pH meter suddenly reads far differently after storage. What should occur before crop solution is changed?",
+  "choices": [
+    "Assume the crop chemistry changed",
+    "Adjust solution immediately",
+    "Follow the supplied meter verification or calibration procedure and confirm sample context",
+    "Average the new reading with yesterday’s value"
+  ],
+  "correct": 2,
+  "rationale": "Follow the supplied meter verification or calibration procedure and confirm sample context. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}

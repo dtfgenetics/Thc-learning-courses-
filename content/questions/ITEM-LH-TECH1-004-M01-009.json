@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-M01-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-004-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "What is the correct response to a fault outside Technician I repair authority?",
+  "choices": [
+    "Perform only permitted safe/operator steps, document context and escalate",
+    "Repair it anyway",
+    "Hide the fault",
+    "Change unrelated process settings"
+  ],
+  "correct": 0,
+  "rationale": "Perform only permitted safe/operator steps, document context and escalate. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-module1-formative"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-004-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One irrigation zone repeatedly shows clogged emitters beyond the routine correction allowed by procedure. What should Technician I do?",
+  "choices": [
+    "Disassemble protected components without authorization",
+    "Increase pressure beyond the work order",
+    "Stop documenting after the first occurrence",
+    "Document recurrence and affected zone and escalate the unresolved equipment/delivery fault"
+  ],
+  "correct": 3,
+  "rationale": "Document recurrence and affected zone and escalate the unresolved equipment/delivery fault. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}
