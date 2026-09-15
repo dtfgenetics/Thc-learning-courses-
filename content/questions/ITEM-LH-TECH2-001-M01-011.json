@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-001-M01-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-TECH2-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative diagnostic check 11: Why is a one-factor nutrient explanation often weak when several mineral inputs changed together?",
+  "choices": [
+    "Plants cannot respond to individual nutrients.",
+    "All mineral deficiencies have identical symptoms.",
+    "Nutrients can interact, so plant response may depend on combinations rather than one input acting independently.",
+    "EC identifies every ion concentration separately."
+  ],
+  "correct": 2,
+  "rationale": "Cannabis response-surface work found interaction effects among N, P and K on multiple growth attributes.",
+  "references": [
+    "REF-CANNABIS-NPK-RSM-2024-001"
+  ]
+}

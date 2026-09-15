@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-001-M01-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-TECH2-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative diagnostic check 4: A tissue result is outside a published range, but sampled leaf position and crop stage were not recorded. What is the strongest conclusion?",
+  "choices": [
+    "The crop is definitively deficient.",
+    "The crop is definitively toxic.",
+    "Tissue testing is never useful for cannabis diagnosis.",
+    "The result is potentially useful but cannot be interpreted confidently until sampling context and other evidence are resolved."
+  ],
+  "correct": 3,
+  "rationale": "Tissue interpretation depends on sampling context, stage and comparison with other evidence.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-001-02",
+  "title": "Spatial, Temporal and Cohort Pattern Analysis",
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-PLANT-BIO-001",
+    "COMP-FLOWER-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-001-02",
+    "LO-LH-TECH2-001-06",
+    "LO-LH-TECH2-001-07"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001",
+    "REF-FLOWER-MORPH-2023-001"
+  ],
+  "content": {
+    "overview": "Where and when a problem occurs often discriminates causes better than symptom color alone. Advanced observation compares locations, irrigation zones, cultivars, developmental stages and event timing while checking whether the measurements represent crop conditions.",
+    "vocabulary": [
+      {
+        "term": "Cohort",
+        "definition": "A comparison group sharing a relevant condition such as cultivar, batch, age, zone or treatment."
+      },
+      {
+        "term": "Spatial gradient",
+        "definition": "A systematic change in conditions or symptoms across physical positions."
+      },
+      {
+        "term": "Chronology",
+        "definition": "The ordered sequence of crop observations, measurements and operational events."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Map the problem before averaging it away",
+        "body": "A room controller can look normal while canopy locations differ. Compare affected and unaffected positions, canopy levels and equipment or irrigation zones.",
+        "references": [
+          "REF-VPD-002",
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Use event timing to test causal stories",
+        "body": "Relate symptom onset to irrigation changes, environmental excursions, maintenance, transplanting, sanitation events and crop-stage transitions. Temporal association is evidence but not proof.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Developmental stage is a diagnostic variable",
+        "body": "Flowering progression is expressed through morphology and can vary among cultivars. Calendar week alone should not be used to label a biological abnormality.",
+        "references": [
+          "REF-FLOWER-MORPH-2023-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Symptoms following one irrigation manifold suggest checking that zone before making a room-wide nutrient change.",
+      "Two cultivars flipped on the same date may differ in reproductive morphology without either being abnormal."
+    ],
+    "commonMistakes": [
+      "Using only the room average.",
+      "Treating correlation in time as proof of cause.",
+      "Comparing plants at different developmental stages as if they were identical cohorts."
+    ],
+    "practicalApplication": "Create a crop map and timeline with affected/unaffected cohorts, canopy position, irrigation zone, stage and recent operational events. Mark which patterns support or weaken each hypothesis.",
+    "summary": "Spatial, temporal and cohort structure turns scattered observations into diagnostic evidence while exposing false assumptions created by averages or calendar labels."
+  }
+}

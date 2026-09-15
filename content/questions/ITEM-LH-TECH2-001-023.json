@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-001-023",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A room average looks acceptable but a symptom map follows the perimeter near exterior walls. What is the most useful interpretation?",
+  "choices": [
+    "The room average disproves an environmental role.",
+    "The perimeter pattern proves nutrient deficiency.",
+    "The spatial association supports investigating local environmental gradients and perimeter conditions rather than relying on the room average.",
+    "The symptom map should be discarded because sensors report an average."
+  ],
+  "correct": 2,
+  "rationale": "Spatial gradients can be hidden by averages and should drive targeted environmental verification.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}
