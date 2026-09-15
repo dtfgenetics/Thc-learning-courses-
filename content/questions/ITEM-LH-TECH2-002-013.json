@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH2-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A pressurized irrigation component is shut off, but the gauge still shows pressure. What is the correct boundary decision?",
+  "choices": [
+    "Preserve safe status and refer the pressure-release/disassembly work to the authorized servicing process.",
+    "Loosen the fitting slowly.",
+    "Tap the gauge until pressure appears to fall.",
+    "Have a coworker hold the hose while opening it."
+  ],
+  "correct": 0,
+  "rationale": "Preserve safe status and refer the pressure-release/disassembly work to the authorized servicing process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

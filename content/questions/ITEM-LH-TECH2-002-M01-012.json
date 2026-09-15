@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: After authorized maintenance, what should happen before closing the verification record?",
+  "choices": [
+    "Close it when maintenance leaves.",
+    "Erase the pre-repair data.",
+    "Change the original fault classification to “normal.”",
+    "Repeat the relevant performance measurement and document whether intended response was restored."
+  ],
+  "correct": 3,
+  "rationale": "Repeat the relevant performance measurement and document whether intended response was restored. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ]
+}

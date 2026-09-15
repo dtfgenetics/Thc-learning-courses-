@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const read=(p)=>JSON.parse(fs.readFileSync(p,'utf8'));
+const course=read('content/courses/COURSE-LH-TECH2-002.json');
+const program=read('content/credential-programs/CREDPROG-CULT-TECH-II-001.json');
+const finalA=read('content/assessments/ASSESS-LH-TECH2-002-FINAL.json');
+const formA=read('content/assessments/ASSESS-LH-TECH2-002-M01.json');
+assert.equal(course.version,'0.2.0'); assert.equal(course.status,'draft'); assert.equal(course.finalAssessment,finalA.id);
+assert.ok(course.modules.includes('MOD-LH-TECH2-002-VERIFICATION'));
+assert.equal(course.extensions.mappedPractical,'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION');
+assert.equal(finalA.items.length,24); assert.equal(formA.items.length,12);
+assert.equal(new Set([...finalA.items,...formA.items]).size,36);
+for(const id of [...finalA.items,...formA.items]) assert.ok(id.startsWith('ITEM-LH-TECH2-002-'));
+const counts=[0,0,0,0]; for(const id of finalA.items) counts[read('content/questions/'+id+'.json').correct]++; assert.deepEqual(counts,[6,6,6,6]);
+const fcounts=[0,0,0,0]; for(const id of formA.items) fcounts[read('content/questions/'+id+'.json').correct]++; assert.deepEqual(fcounts,[3,3,3,3]);
+const practical=read('content/performance-assessments/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION.json');
+for(const comp of practical.competencies){assert.ok(course.competencies.includes(comp),'Practical B competency not mapped: '+comp);assert.ok(program.competencies.includes(comp),'Program missing Practical B competency: '+comp);}
+for(const comp of ['COMP-LIGHT-ADV-001','COMP-CULT-EQUIPMENT-CARE-001']) assert.ok(course.competencies.includes(comp));
+const bpTotal=finalA.blueprint.reduce((s,r)=>s+r.items,0); assert.equal(bpTotal,24);
+console.log('Technician II Course 002 instruction, bank isolation, safety boundary and Practical B alignment passed.');

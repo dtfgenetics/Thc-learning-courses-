@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH2-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: A task requires guard removal to reach the fault. What is the key boundary cue?",
+  "choices": [
+    "The guard is inconvenient.",
+    "The equipment is old.",
+    "Protected access to a hazard that may require the authorized servicing/energy-control process.",
+    "The fault has happened before."
+  ],
+  "correct": 2,
+  "rationale": "Protected access to a hazard that may require the authorized servicing/energy-control process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

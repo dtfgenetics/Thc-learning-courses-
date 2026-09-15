@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH2-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which condition most clearly signals that routine verification may have crossed into servicing?",
+  "choices": [
+    "The task takes more than five minutes.",
+    "The equipment is expensive.",
+    "The task requires protected access, guard removal, disassembly or control of hazardous/stored energy.",
+    "A supervisor is not standing nearby."
+  ],
+  "correct": 2,
+  "rationale": "The task requires protected access, guard removal, disassembly or control of hazardous/stored energy. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH2-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A blocked powered component can only be cleared by removing a guard. The operator SOP does not authorize guard removal. What should the technician do?",
+  "choices": [
+    "Remove the guard because the blockage is visible.",
+    "Hold the stop button while reaching in.",
+    "Ask another technician to remove the guard.",
+    "Stop at the operator-care boundary and route the work through the authorized servicing process."
+  ],
+  "correct": 3,
+  "rationale": "Stop at the operator-care boundary and route the work through the authorized servicing process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

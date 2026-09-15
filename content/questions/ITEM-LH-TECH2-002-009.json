@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-TECH2-002-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A nominal 2-L/h emitter is installed at every site. What does that prove about current distribution?",
+  "choices": [
+    "It proves the nominal rating only; representative measured output is still required to evaluate installed performance.",
+    "Every emitter currently delivers exactly 2 L/h.",
+    "Pressure and filtration cannot affect delivery.",
+    "Only the first emitter on each line needs measurement."
+  ],
+  "correct": 0,
+  "rationale": "It proves the nominal rating only; representative measured output is still required to evaluate installed performance. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}

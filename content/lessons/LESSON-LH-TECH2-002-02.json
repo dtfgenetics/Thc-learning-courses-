@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-002-02",
+  "title": "Trends, Controllers, Alarms and Fault Classification",
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-LIGHT-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-002-01",
+    "LO-LH-TECH2-002-02",
+    "LO-LH-TECH2-002-06"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001",
+    "REF-LIGHT-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "An alarm is a signal to investigate, not a diagnosis. Advanced verification compares commanded state, measured response, independent evidence, spatial pattern and time-series behavior before classifying a condition as sensor, control, equipment, distribution or process-related.",
+    "vocabulary": [
+      {
+        "term": "Commanded state",
+        "definition": "The controller or automation state the system is requesting, such as on, off, open, closed or a target output."
+      },
+      {
+        "term": "Observed response",
+        "definition": "The measured physical response that should follow a command if the sensor, controller and equipment chain is working as expected."
+      },
+      {
+        "term": "Fault classification",
+        "definition": "A bounded evidence-based category describing where a problem is most likely located without claiming an unverified root cause."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Separate command from response",
+        "body": "A controller display can show a command without proving the equipment produced the intended physical response. Compare independent process measurements, equipment indicators and trends.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Use trend shape and spatial pattern",
+        "body": "Step changes, flatlined values, repeated cycling, delayed response and location-specific deviations can suggest different verification paths. The pattern narrows hypotheses but does not replace direct checks.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Lighting measurements need repeatable geometry",
+        "body": "PPFD comparisons should use consistent canopy plane, sensor orientation and sampling locations. A single convenient point should not stand in for a spatial lighting map.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Classify without overstating root cause",
+        "body": "Technician II may document a likely sensor/data-quality fault, control-response mismatch or equipment-response failure while escalating repairs or engineering decisions that exceed assigned authority.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A dehumidifier command changes but room and local humidity trends do not respond; the condition is classified as a response mismatch pending authorized equipment verification.",
+      "A PPFD complaint is tested with a repeatable map rather than one handheld reading near the aisle."
+    ],
+    "commonMistakes": [
+      "Assuming commanded state proves physical response.",
+      "Resetting repeated alarms until they disappear.",
+      "Using one light reading to characterize the whole canopy."
+    ],
+    "practicalApplication": "Annotate a trend showing commands, alarms, independent measurements and relevant work events. Assign a provisional fault class and list the next safe check that would distinguish sensor, controller, equipment or spatial-process causes.",
+    "summary": "Good fault classification connects commands to real response, uses spatial and temporal evidence, and stops short of claiming a repair diagnosis without adequate verification."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: A canopy sensor reads higher humidity than the wall controller. What should be documented before deciding which is “correct”?",
+  "choices": [
+    "Exact location, height, shielding, time, crop context and comparison method.",
+    "Only the higher number.",
+    "Only the controller target.",
+    "Only the sensor brand."
+  ],
+  "correct": 0,
+  "rationale": "Exact location, height, shielding, time, crop context and comparison method. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-VPD-002"
+  ]
+}

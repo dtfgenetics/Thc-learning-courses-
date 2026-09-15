@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-024",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which comparison best distinguishes a local microclimate from sensor bias?",
+  "choices": [
+    "Compare readings taken in different rooms on different days.",
+    "Compare only target setpoints.",
+    "Compare equipment model numbers.",
+    "Compare the suspect and verified sensors while colocated, then compare representative locations under matched conditions."
+  ],
+  "correct": 3,
+  "rationale": "Compare the suspect and verified sensors while colocated, then compare representative locations under matched conditions. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

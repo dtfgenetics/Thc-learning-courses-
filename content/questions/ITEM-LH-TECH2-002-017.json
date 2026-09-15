@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A verified reference shows the room sensor is offset only during lights-on periods. What should the technician investigate before assuming permanent calibration drift?",
+  "choices": [
+    "Radiant exposure, shielding, placement and other condition-dependent measurement effects.",
+    "Replace all room sensors immediately.",
+    "Ignore the lights-off data.",
+    "Change the HVAC target to match the offset."
+  ],
+  "correct": 0,
+  "rationale": "Radiant exposure, shielding, placement and other condition-dependent measurement effects. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ]
+}

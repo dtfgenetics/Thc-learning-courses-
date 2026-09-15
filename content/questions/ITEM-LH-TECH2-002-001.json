@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A wall sensor and a canopy sensor disagree by several points of RH. What is the strongest first interpretation?",
+  "choices": [
+    "The disagreement may reflect location or sensor error; verify placement and use a colocated comparison before deciding.",
+    "The canopy sensor is definitely wrong.",
+    "Average the two readings and change the setpoint.",
+    "Delete the higher value because it is inconvenient."
+  ],
+  "correct": 0,
+  "rationale": "The disagreement may reflect location or sensor error; verify placement and use a colocated comparison before deciding. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

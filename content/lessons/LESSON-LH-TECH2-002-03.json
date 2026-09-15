@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-002-03",
+  "title": "Irrigation and Equipment Response Verification within Safe Authority",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-CULT-EQUIPMENT-CARE-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-002-03",
+    "LO-LH-TECH2-002-04",
+    "LO-LH-TECH2-002-05",
+    "LO-LH-TECH2-002-06"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-OSHA-1910-147-LOTO",
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ],
+  "content": {
+    "overview": "Equipment verification means checking whether the system performs as intended within an assigned procedure. It does not turn the technician into an electrician, mechanic or hazardous-energy authorized employee. Irrigation verification therefore combines measured delivery and pressure/filtration evidence with a strict operator-care boundary.",
+    "vocabulary": [
+      {
+        "term": "Distribution uniformity",
+        "definition": "How evenly an irrigation system delivers water among representative locations."
+      },
+      {
+        "term": "Operator-care boundary",
+        "definition": "The last action explicitly assigned to the operator before servicing, protected access or hazardous-energy controls require another authorized role."
+      },
+      {
+        "term": "Stored energy",
+        "definition": "Energy such as pressure, gravity, spring force, heat or electrical charge that can remain after normal shutdown."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Measure installed irrigation performance",
+        "body": "Representative catch volumes, line position, pressure and filtration condition reveal distribution problems that nominal emitter ratings cannot prove.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "A normal stop is not energy isolation",
+        "body": "Normal controls do not by themselves establish that unexpected startup or stored energy is controlled for servicing. Protected access, disassembly, guard removal or pressure release are strong boundary cues.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "title": "Do not expand authority because the repair looks simple",
+        "body": "The equipment procedure and employer authorization determine what the technician may inspect, reset, clean or adjust. Familiarity or previous experience does not create current authorization.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A far-end irrigation zone tests low; the technician records catch-volume and pressure evidence but escalates a repair that requires powered disassembly.",
+      "A faulted fan may be visually inspected under the operator procedure, but opening an electrical enclosure is routed to the qualified role."
+    ],
+    "commonMistakes": [
+      "Trusting nominal emitter flow without field verification.",
+      "Loosening a pressurized fitting because the pump is off.",
+      "Using prior maintenance experience as proof of current authorization."
+    ],
+    "practicalApplication": "Run a representative irrigation/equipment verification exercise, identify the last permitted operator action, document any energy/protected-access cue, preserve safe status and create the maintenance handoff.",
+    "summary": "Technician II verifies performance deeply but does not cross servicing, hazardous-energy or protected-access boundaries without explicit authorization."
+  }
+}
