@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-008-07",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A physical count and controlled record disagree, and the correct movement history is not yet known. What should Technician II do?",
+  "choices": [
+    "Document the discrepancy and route the correction process without inventing a transaction.",
+    "Create a movement that makes the totals match.",
+    "Overwrite the controlled record with the physical count.",
+    "Delete the older record."
+  ],
+  "correct": 0,
+  "rationale": "Reconciliation preserves the discrepancy until evidence and authorized correction resolve it; fabricated history is a critical integrity failure.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

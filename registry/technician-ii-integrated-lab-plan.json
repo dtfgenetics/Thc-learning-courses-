@@ -1,0 +1,357 @@
+{
+  "id": "LABPLAN-TECH2-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "courseId": "COURSE-LH-TECH2-008",
+  "credentialProgram": "CREDPROG-CULT-TECH-II-001",
+  "purpose": "Development blueprint for integrated Technician II practical and capstone evidence. This file does not approve a live credential form, final cut score, personnel certification claim, supervisory authority or release of the Technician II credential.",
+  "prerequisites": [
+    "COURSE-LH-TECH2-001",
+    "COURSE-LH-TECH2-002",
+    "COURSE-LH-TECH2-003",
+    "COURSE-LH-TECH2-004",
+    "COURSE-LH-TECH2-005",
+    "COURSE-LH-TECH2-006",
+    "COURSE-LH-TECH2-007"
+  ],
+  "readinessAssessment": {
+    "id": "ASSESS-LH-TECH2-008-M01",
+    "purpose": "formative",
+    "credentialEvidence": false,
+    "mayProvideImmediateFeedback": true,
+    "doesNotReplacePerformanceEvidence": true
+  },
+  "practicals": [
+    {
+      "id": "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+      "title": "Technician II Practical A — Crop Diagnostic Workup",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "Crop Diagnostic Workup",
+        "Ranked-hypothesis table",
+        "Next-verification plan",
+        "Supervisor-ready summary"
+      ]
+    },
+    {
+      "id": "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+      "title": "Technician II Practical B — Sensor & Equipment Verification",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "Sensor & Equipment Verification Report",
+        "Annotated trend or data table",
+        "Fault classification",
+        "Maintenance handoff"
+      ]
+    },
+    {
+      "id": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+      "title": "Technician II Practical C — Fertigation & Root-Zone Troubleshooting",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "Completed batch record",
+        "Measurement-verification record",
+        "Root-zone and irrigation diagnostic memo",
+        "Next-check or correction recommendation"
+      ]
+    },
+    {
+      "id": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+      "title": "Technician II Practical D — IPM Trend & Treatment Follow-Up",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "IPM Trend & Treatment Follow-Up Report",
+        "Annotated scouting map",
+        "Next-round follow-up plan"
+      ]
+    },
+    {
+      "id": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+      "title": "Technician II Practical E — Propagation / Canopy Performance Review",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "Propagation Performance Review or Canopy/Flowering Performance Review",
+        "Supervisor handoff"
+      ]
+    },
+    {
+      "id": "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+      "title": "Technician II Practical F — Postharvest Deviation & Lot Scope",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "Postharvest Deviation Investigation",
+        "Affected-scope table",
+        "Lot-genealogy diagram",
+        "QA-ready handoff"
+      ]
+    },
+    {
+      "id": "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION",
+      "title": "Technician II Practical G — Traceability, Metrics & Shift Coordination",
+      "document": "docs/academy-v2/practicals/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION.md",
+      "totalPoints": 100,
+      "targetPassPoints": 80,
+      "noCriticalErrors": true,
+      "status": "development",
+      "evidenceOutputs": [
+        "Traceability Reconciliation",
+        "KPI worksheet",
+        "Peer coaching note",
+        "Senior Technician Shift Handoff"
+      ]
+    }
+  ],
+  "stationIntegration": [
+    {
+      "id": "STATION-GROUP-TECH2-01",
+      "title": "Diagnostic triage and data quality",
+      "assessments": [
+        "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+        "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION"
+      ],
+      "focus": [
+        "priority triage",
+        "measurement validity",
+        "ranked hypotheses",
+        "safe troubleshooting boundary"
+      ]
+    },
+    {
+      "id": "STATION-GROUP-TECH2-02",
+      "title": "Root-zone and plant-health troubleshooting",
+      "assessments": [
+        "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+        "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+        "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW"
+      ],
+      "focus": [
+        "approved process execution",
+        "root-zone trends",
+        "IPM follow-up",
+        "propagation/canopy performance",
+        "biosecurity and treatment authority"
+      ]
+    },
+    {
+      "id": "STATION-GROUP-TECH2-03",
+      "title": "Postharvest, records and shift coordination",
+      "assessments": [
+        "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+        "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION"
+      ],
+      "focus": [
+        "product evidence",
+        "genealogy and affected scope",
+        "reconciliation",
+        "KPI definitions",
+        "peer support",
+        "handoff"
+      ]
+    },
+    {
+      "id": "STATION-GROUP-TECH2-04",
+      "title": "Senior Technician Diagnostic Shift",
+      "assessments": [
+        "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT"
+      ],
+      "focus": [
+        "cross-domain prioritization",
+        "data verification",
+        "bounded correction",
+        "evidence packet",
+        "supervisor-ready handoff"
+      ]
+    }
+  ],
+  "capstone": {
+    "id": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+    "document": "docs/academy-v2/practicals/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.md",
+    "totalPoints": 100,
+    "developmentTargetPassPoints": 80,
+    "noCriticalErrors": true,
+    "scoreDomains": [
+      {
+        "id": "domain-01",
+        "title": "Safety and critical prioritization",
+        "points": 15
+      },
+      {
+        "id": "domain-02",
+        "title": "Crop and environment diagnosis",
+        "points": 15
+      },
+      {
+        "id": "domain-03",
+        "title": "Irrigation, fertigation, and root-zone reasoning",
+        "points": 15
+      },
+      {
+        "id": "domain-04",
+        "title": "IPM interpretation",
+        "points": 10
+      },
+      {
+        "id": "domain-05",
+        "title": "Deviation and traceability integrity",
+        "points": 15
+      },
+      {
+        "id": "domain-06",
+        "title": "Metrics and data interpretation",
+        "points": 10
+      },
+      {
+        "id": "domain-07",
+        "title": "Peer support and role boundary",
+        "points": 5
+      },
+      {
+        "id": "domain-08",
+        "title": "Documentation and final handoff",
+        "points": 15
+      }
+    ],
+    "secureCredentialFormApproved": false
+  },
+  "completionLogic": {
+    "status": "development",
+    "allSevenPracticalsRequired": true,
+    "minimumPercentPerPractical": 80,
+    "capstoneRequired": true,
+    "minimumCapstonePercent": 80,
+    "noCriticalErrorsOnAnyRequiredEvidence": true,
+    "compensatoryAveragingAllowed": false,
+    "readinessAssessmentIsCredentialEvidence": false,
+    "evaluatorEvidenceRequired": true,
+    "courseCompletionDoesNotAuthorizeCredentialIssuance": true
+  },
+  "evidenceRequired": [
+    "candidate priority log and timestamps",
+    "verified measurement/data-quality records",
+    "ranked diagnostic hypotheses and next-check plans",
+    "fertigation/root-zone analysis",
+    "IPM follow-up evidence",
+    "propagation/canopy performance review",
+    "postharvest deviation and affected-scope package",
+    "traceability reconciliation and genealogy evidence",
+    "KPI worksheet with definitions",
+    "peer-support note",
+    "practical scoring/evaluator observation records",
+    "critical-error determinations",
+    "accommodation record when applicable",
+    "Senior Technician Diagnostic Shift Report",
+    "supervisor-ready final handoff"
+  ],
+  "criticalFailureRules": [
+    {
+      "id": "CF-TECH2-SAFETY-001",
+      "rule": "Knowingly takes an unsafe action or bypasses a required safety boundary during a condition that requires stop, isolation or qualified escalation.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-TECH2-AUTHORITY-001",
+      "rule": "Performs an unauthorized high-risk repair, pesticide or chemical-treatment action, unapproved recipe change, or other intervention outside assigned authority.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-TECH2-INTEGRITY-001",
+      "rule": "Fabricates, deletes, falsifies or silently overwrites traceability, quality, measurement, genealogy or production evidence to force agreement or hide a discrepancy.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-TECH2-DISPOSITION-001",
+      "rule": "Makes an unauthorized product release or disposition decision or knowingly moves material from an active hold without required authorization.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-TECH2-CONTAINMENT-001",
+      "rule": "Ignores a clearly identified urgent biosecurity, identity, safety or quality-containment condition or breaks required quarantine handling.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-TECH2-DATA-001",
+      "rule": "Takes a major corrective action from data known to be invalid, unverified or materially contradictory without completing the required verification.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-TECH2-SCOPE-001",
+      "rule": "Knowingly breaks genealogy or manipulates affected scope, sampling effort or KPI denominator to improve the apparent result after the governing definition is known.",
+      "blocksCredentialEvidence": true
+    }
+  ],
+  "evaluatorControls": {
+    "rubricTrainingRequired": true,
+    "evidenceBasedScoringRequired": true,
+    "pilotDoubleScoringRequired": true,
+    "interRaterAgreementTarget": "to-be-set-from-pilot-evidence",
+    "conflictResolutionProcessRequired": true,
+    "criticalErrorEvidenceRequired": true,
+    "evaluatorIdentityAndTimestampRequired": true
+  },
+  "formControls": {
+    "equivalentFormsRequired": true,
+    "secureCredentialFormsPublic": false,
+    "practiceFormMayExposeFeedback": true,
+    "readinessFormMayExposeImmediateFeedback": true,
+    "credentialFormHintsAllowed": false,
+    "publicDevelopmentExamplesCannotServeAsSecureOperationalCredentialForms": true
+  },
+  "accessibilityControls": {
+    "humanAccessibilityReviewRequired": true,
+    "allowExtendedTimeWhenSpeedIsNotTheConstruct": true,
+    "allowAlternativeAccessiblePresentation": true,
+    "allowAssistiveInputWhenCompetencyConstructIsPreserved": true,
+    "allowEquivalentEquipmentInterfaceWhenCompetencyConstructIsPreserved": true,
+    "accommodationMustBeDocumented": true,
+    "accommodationMayNotLowerRequiredEvidenceStandard": true,
+    "accommodationMayNotRemoveCriticalFailureRules": true,
+    "accommodationMayNotLowerPassingThreshold": true
+  },
+  "retestPolicy": {
+    "status": "development",
+    "remediationBeforeRetest": true,
+    "equivalentFormRequired": true,
+    "failedPracticalMustBeRepassedIndividually": true,
+    "criticalFailureRequiresAffectedDomainReevaluation": true,
+    "capstoneCriticalFailureRequiresCapstoneReevaluation": true,
+    "finalPolicyRequiresHumanApproval": true
+  },
+  "releaseGates": [
+    "human technical review",
+    "human assessment review",
+    "accessibility review",
+    "job-task/employer validation",
+    "pilot evidence",
+    "practical and capstone performance evidence",
+    "equivalent-form evidence where applicable",
+    "evaluator calibration/inter-rater evidence",
+    "secure private operational credential forms",
+    "formal standard setting",
+    "approved retention/privacy policy for candidate evidence",
+    "program release approval"
+  ]
+}

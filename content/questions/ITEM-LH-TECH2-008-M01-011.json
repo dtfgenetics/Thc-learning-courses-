@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-TECH2-008-06",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A dry-room deviation occurred, but only room relative humidity is available. Can that value substitute for required product water-activity evidence?",
+  "choices": [
+    "Yes, the two measurements are interchangeable.",
+    "Yes, whenever RH is below the facility target.",
+    "No; room RH provides environmental context but does not replace product water-activity evidence.",
+    "Only if the lot is visually dry."
+  ],
+  "correct": 2,
+  "rationale": "Room conditions and product water activity answer different questions; the investigation must not substitute one measurement for the other.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ]
+}

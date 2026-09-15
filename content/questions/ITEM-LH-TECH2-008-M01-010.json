@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-TECH2-008-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A propagation batch underperforms and the technician suspects contamination, but no confirming evidence exists. What should the report say?",
+  "choices": [
+    "Declare contamination as the cause.",
+    "Document the performance pattern, retain contamination as an unconfirmed hypothesis and select the next check.",
+    "Discard the batch records so the failure is not counted.",
+    "Select a pesticide without authorization."
+  ],
+  "correct": 1,
+  "rationale": "The performance review must distinguish measured outcome from unconfirmed cause and remain inside treatment and diagnostic authority boundaries.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

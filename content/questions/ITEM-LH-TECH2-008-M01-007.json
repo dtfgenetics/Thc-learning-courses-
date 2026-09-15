@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-TECH2-008-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A fertigation batch measures outside the expected range. Which response best fits the integrated lab?",
+  "choices": [
+    "Immediately change the approved recipe.",
+    "Assume the crop needs the opposite concentration.",
+    "Verify sample identity and measurement readiness before recommending an authorized correction.",
+    "Discard the measurement without recording it."
+  ],
+  "correct": 2,
+  "rationale": "The troubleshooting workflow verifies identity and measurement quality before changing a controlled process or drawing a nutrient conclusion.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

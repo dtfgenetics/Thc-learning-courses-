@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-008-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A crop symptom appears beside one abnormal environmental reading, but a nearby reference sensor disagrees. What is the best next diagnostic action?",
+  "choices": [
+    "Change several environmental setpoints immediately.",
+    "Record the first reading as a confirmed cause.",
+    "Verify measurement quality and local context before treating the abnormal reading as the cause.",
+    "Ignore both sensors and diagnose from leaf appearance alone."
+  ],
+  "correct": 2,
+  "rationale": "Conflicting measurements create a data-quality question; verification is required before a consequential correction or causal claim is defensible.",
+  "references": [
+    "REF-VPD-002",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
