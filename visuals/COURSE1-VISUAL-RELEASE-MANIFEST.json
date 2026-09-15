@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "courseId": "COURSE-LH-TECH1-001",
   "purpose": "Fail-closed release control for the 18 primary Course 1 visual concepts. Review candidates remain separate from the verified learner-facing SVG baseline until factual, accessibility, responsive, binary, registry and lesson-cutover checks all pass.",
   "canonicalSources": {
@@ -137,49 +137,49 @@
     {
       "conceptId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
       "lessonIds": ["LESSON-LH-TECH1-001-13"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-010", "publicAsset": "/assets/course1/operator-care-servicing-boundary.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv", "targetPublicPath": "/assets/course1/equipment-preuse-v3.png", "binaryState": "drive-transfer-blocked-not-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Technician pre-use readiness model; exact checks are controlled by manufacturer instructions, facility SOP and worker authorization.", "learnerTextAlternative": "Visual summary of a technician pre-use readiness check that emphasizes visible condition, guards and safety devices, cables, hoses and connections, cleanliness, unusual noise or loose parts, and the rule to stop and report unsafe equipment rather than perform unauthorized repair. Exact checks remain controlled by manufacturer instructions, facility SOP and worker authorization."},
+      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-015", "publicAsset": "/assets/course1/equipment-preuse-readiness.svg"},
+      "candidate": {"fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv", "targetPublicPath": "/assets/course1/equipment-preuse-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
+      "accessibility": {"caption": "Pre-use readiness verifies controlled status and assigned checks without expanding the technician's repair authority.", "learnerTextAlternative": "Five-step equipment pre-use readiness model: confirm exact asset and assignment, check controlled status, inspect only assigned external readiness points, review indicators permitted by the operator procedure, and classify the result as ready, approved routine correction, hold or escalation, or emergency response."},
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
       "lessonIds": ["LESSON-LH-TECH1-001-14"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-010", "publicAsset": "/assets/course1/operator-care-servicing-boundary.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2", "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png", "binaryState": "drive-transfer-blocked-not-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Routine operator care versus trained and authorized maintenance or servicing responsibilities.", "learnerTextAlternative": "Comparison showing routine operator responsibilities on one side and maintenance or servicing responsibilities on the other. Technicians perform only assigned, trained and authorized checks or routine care and escalate repair, internal servicing, hazardous-energy work, calibration or technical maintenance to qualified personnel."},
+      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-016", "publicAsset": "/assets/course1/operator-vs-maintenance-boundary.svg"},
+      "candidate": {"fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2", "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
+      "accessibility": {"caption": "Routine operator care remains limited to actions explicitly assigned, trained and authorized by the current procedure.", "learnerTextAlternative": "Two-column decision visual separating routine operator care explicitly assigned, trained and authorized by current procedure from maintenance or servicing involving guarded access, electrical components, powered disassembly, pressure, stored energy, diagnosis, calibration or other unassigned work."},
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
       "lessonIds": ["LESSON-LH-TECH1-001-15"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-011", "publicAsset": "/assets/course1/maintenance-fault-report.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv", "targetPublicPath": "/assets/course1/fault-report-v3.png", "binaryState": "drive-transfer-blocked-not-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Maintenance-ready fault reporting separates observed facts and permitted immediate actions from unsupported diagnosis.", "learnerTextAlternative": "Example fault-report workflow separating observed facts, equipment and location, immediate permitted actions and escalation from unsupported root-cause diagnosis. The technician records what was seen or heard, protects safety, follows the approved reporting channel and does not perform unauthorized repair."},
+      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-017", "publicAsset": "/assets/course1/fault-context-escalation.svg"},
+      "candidate": {"fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv", "targetPublicPath": "/assets/course1/fault-report-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
+      "accessibility": {"caption": "Fault context separates verified observations and permitted checks from unsupported diagnosis while using the applicable reporting procedure.", "learnerTextAlternative": "Maintenance-ready fault context model recording exact asset and location, first occurrence, exact alarm or symptom, permitted operator checks and results, recurrence, process impact, controlled status and notification while keeping verified facts separate from hypotheses."},
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
       "lessonIds": ["LESSON-LH-TECH1-001-16"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-014", "publicAsset": "/assets/course1/data-integrity-record-lifecycle.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX", "targetPublicPath": "/assets/course1/record-correction-v3.png", "binaryState": "drive-transfer-blocked-not-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Record-correction example emphasizing preservation of original information and the audit trail; the approved record system controls the actual correction method.", "learnerTextAlternative": "Example showing that a record correction must preserve the original information or audit trail, identify the corrected information and follow the approved paper or digital correction process. The illustration is not a universal correction method; the controlling record system, SOP and applicable requirements determine how corrections are made."},
+      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-018", "publicAsset": "/assets/course1/record-correction-controls.svg"},
+      "candidate": {"fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX", "targetPublicPath": "/assets/course1/record-correction-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
+      "accessibility": {"caption": "Paper and digital correction methods are controlled by the governing record system and must preserve original information or audit trail.", "learnerTextAlternative": "Record-correction model showing that paper and digital changes follow the governing record system and facility procedure, preserve the original information or audit trail, retain attribution and timing, and never silently overwrite, erase, backdate or replace missing data with an invented value."},
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
       "lessonIds": ["LESSON-LH-TECH1-001-17"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-012", "publicAsset": "/assets/course1/shift-handoff-model.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY", "targetPublicPath": "/assets/course1/shift-handoff-v3.png", "binaryState": "drive-transfer-blocked-not-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Model shift handoff communicating current status, open work, unresolved risk and ownership for follow-up.", "learnerTextAlternative": "Model shift-handoff checklist showing current crop or material status, open tasks, equipment condition, environmental conditions, safety concerns, inventory or traceability updates, unresolved issues and ownership for follow-up. Exact fields and sign-off requirements are facility-specific."},
+      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-019", "publicAsset": "/assets/course1/shift-handoff-control.svg"},
+      "candidate": {"fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY", "targetPublicPath": "/assets/course1/shift-handoff-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
+      "accessibility": {"caption": "Professional handoff transfers exact status, cross-checks critical conditions and confirms ownership without improvising new authority.", "learnerTextAlternative": "Four-stage shift handoff model showing outgoing preparation, two-way information exchange, incoming cross-check, and explicit ownership of unresolved work, with safety and access controls, holds and identity problems, equipment status, incomplete work and time-sensitive next actions prioritized."},
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
       "lessonIds": ["LESSON-LH-TECH1-001-18"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-012", "publicAsset": "/assets/course1/shift-handoff-model.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey", "targetPublicPath": "/assets/course1/integrated-workflow-v3.png", "binaryState": "drive-transfer-blocked-not-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Integrated Technician I workflow connecting preparation, authorized execution, monitoring, documentation, communication and follow-up without expanding role authority.", "learnerTextAlternative": "Circular workflow illustrating how a technician connects planning and context, preparation, authorized execution, monitoring, truthful documentation, communication and continuous improvement. It reinforces that safety, SOPs, biosecurity, traceability, equipment boundaries and accurate records operate as one system."},
+      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-020", "publicAsset": "/assets/course1/integrated-technician-workflow.svg"},
+      "candidate": {"fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey", "targetPublicPath": "/assets/course1/integrated-workflow-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
+      "accessibility": {"caption": "Integrated Technician I workflow connects assigned work review, readiness, authorized execution, monitoring, truthful documentation and follow-up without expanding role authority.", "learnerTextAlternative": "Integrated workflow connecting review of assigned work and current controlled instructions, readiness and dependency checks, authorized routine execution, monitoring and response to change, truthful documentation, and communication or follow-up while keeping unresolved or unauthorized work visibly open."},
       "releaseApproved": false
     }
   ]
