@@ -1,0 +1,81 @@
+{
+  "id": "CREDPROG-CULT-TECH-II-001",
+  "title": "THC Cultivation Technician II",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialType": "professional-credential",
+  "occupationalClaim": "The credential holder can verify routine cultivation systems, interpret crop, environmental, root-zone and production information, troubleshoot common deviations within scope, reconcile records, support peer execution, and escalate conditions that exceed assigned authority or competence.",
+  "targetRoles": [
+    "Senior Cultivation Technician",
+    "Cultivation Technician II",
+    "Advanced Grow Technician"
+  ],
+  "proficiencyTarget": [
+    "operational",
+    "diagnostic"
+  ],
+  "prerequisiteCredentials": [
+    "CREDPROG-CULT-TECH-I-001"
+  ],
+  "requiredCourses": [
+    "COURSE-LH-TECH2-001",
+    "COURSE-LH-TECH2-002",
+    "COURSE-LH-TECH2-003",
+    "COURSE-LH-TECH2-004",
+    "COURSE-LH-TECH2-005",
+    "COURSE-LH-TECH2-006",
+    "COURSE-LH-TECH2-007",
+    "COURSE-LH-TECH2-008"
+  ],
+  "competencies": [
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-IPM-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-ENV-ADV-001",
+    "COMP-LIGHT-ADV-001",
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CROP-PLAN-001",
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "resourceMappings": [
+    "RES-THC-C001"
+  ],
+  "assessmentModel": {
+    "courseTests": true,
+    "credentialAssessment": "ASSESS-CULT-TECH-II-CREDENTIAL-001",
+    "performanceEvidence": [
+      "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+      "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+      "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+      "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+      "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+      "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+      "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION"
+    ],
+    "capstone": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+    "passingRule": "Development rule only: complete the eight-course pathway, satisfy the provisional written/scenario blueprint, pass all required practical evidence and the integrated capstone without unresolved critical errors, and satisfy portfolio evidence requirements. Final cut scores and operational credential forms require validation and formal standard setting before release.",
+    "standardSettingStatus": "not-started",
+    "noCriticalErrorsRequired": true
+  },
+  "validation": {
+    "jobTaskAnalysis": "draft",
+    "smeEmployerValidation": "not-started",
+    "assessmentReview": "draft",
+    "accessibilityReview": "not-started"
+  },
+  "maintenance": {
+    "renewalRequired": false,
+    "renewalPeriodMonths": null,
+    "continuingEducationRequired": false
+  },
+  "limitations": [
+    "Does not confer government licensure or independent pesticide, electrical, refrigerant, engineering, product-disposition, supervisory, or management authority.",
+    "Public Technician II credential-purpose items in this repository are development blueprints and are not an operational secure credential bank.",
+    "Facility-specific procedures, equipment authorizations, seed-to-sale systems, and jurisdiction-specific requirements require implementation training and employer authorization."
+  ]
+}

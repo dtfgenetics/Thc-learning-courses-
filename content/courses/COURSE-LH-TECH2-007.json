@@ -1,0 +1,58 @@
+{
+  "id": "COURSE-LH-TECH2-007",
+  "title": "Production Metrics, Shift Coordination & Peer Support",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "level": "Cultivation Technician II / advanced occupational pathway",
+  "intendedAudience": [
+    "Learners who have completed or can demonstrate the Technician I prerequisite pathway",
+    "Cultivation technicians developing supervised troubleshooting, verification, reconciliation, and peer-support capability"
+  ],
+  "prerequisites": [
+    "THC Cultivation Technician I pathway or approved equivalent prerequisite evidence"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.",
+  "assessmentPolicy": "This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.",
+  "description": "Develops production-metric interpretation, task coordination, peer verification, deviation communication, and shift-level prioritization within a senior technician role.",
+  "modules": [
+    "MOD-CROP-PLAN-001",
+    "MOD-PRO-QA-001",
+    "MOD-PRO-SOP-001"
+  ],
+  "competencies": [
+    "COMP-CROP-PLAN-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "finalAssessment": null,
+  "learningOutcomes": [
+    "Calculate and interpret routine production metrics without overstating what the data prove.",
+    "Prioritize and communicate work using risk, crop stage, dependencies, and unresolved deviations.",
+    "Support peer execution while preserving role, approval, and escalation boundaries."
+  ],
+  "extensions": {
+    "credentialPath": "CREDPROG-CULT-TECH-II-001",
+    "maturity": "course-shell-draft",
+    "developmentDependencies": [
+      "MOD-CROP-PLAN-001",
+      "MOD-PRO-QA-001",
+      "MOD-PRO-SOP-001"
+    ],
+    "contentCeiling": null,
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedLabModuleRequired": false,
+    "integratedPerformanceValidationRequired": false,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "legacySourceCourse": "COURSE-CULT-TECH-II-001",
+    "publicCredentialItemsAreDevelopmentOnly": true,
+    "operationalCredentialBankMustBePrivate": true
+  }
+}
