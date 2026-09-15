@@ -96,4 +96,5 @@ for (const asset of produced) {
 
 console.log(`Course 1 visual delivery contract passed for ${produced.length} produced learner assets: public download metadata, source files, file-format integrity, accessibility, registry mapping, and canonical/controlled learner usage are consistent.`);
 
+await import('./test-course1-svg-drive-provenance.mjs');
 await import('./test-course1-visual-release-manifest.mjs');
