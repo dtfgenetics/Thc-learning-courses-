@@ -24,12 +24,15 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
+      - name: Synchronize Technician II program registry
+        run: node scripts/sync-tech2-program-registry.mjs --write
       - name: Build Technician II release-readiness source
         run: node scripts/build-tech2-release-readiness.mjs
       - name: Rebuild curriculum registry
         run: npm run registry:build
       - name: Validate release-readiness contracts
         run: |
+          node scripts/sync-tech2-program-registry.mjs
           node scripts/check-learning-hub-item-quality.mjs
           npm run schema:validate
           npm run validate
