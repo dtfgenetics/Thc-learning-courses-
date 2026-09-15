@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "courseId": "COURSE-LH-TECH1-001",
   "policy": {
     "expandable": true,
@@ -106,8 +106,8 @@
       "learnerPath": "/assets/course1/operator-care-servicing-boundary.svg",
       "sourcePath": "apps/web/public/assets/course1/operator-care-servicing-boundary.svg",
       "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/operator-care-servicing-boundary.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-001-13", "LESSON-LH-TECH1-001-14"],
-      "purpose": "Separate assigned operator cleaning/checks from disassembly, protected access, jam clearing, and hazardous-energy servicing."
+      "primaryLessons": ["LESSON-LH-TECH1-001-08"],
+      "purpose": "Preserve the general authority and escalation model for assigned operator work versus protected servicing and hazardous-energy boundaries."
     },
     {
       "id": "VIS-LH-TECH1-001-011",
@@ -117,7 +117,7 @@
       "sourcePath": "apps/web/public/assets/course1/maintenance-fault-report.svg",
       "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/maintenance-fault-report.svg",
       "primaryLessons": ["LESSON-LH-TECH1-001-15"],
-      "purpose": "Teach the difference between observations, permitted checks, results, operational impact, and unsupported root-cause claims."
+      "purpose": "Retain the prior fault-report baseline as a supporting public asset while the more explicit controlled escalation visual is used for the primary Lesson 5.3 presentation."
     },
     {
       "id": "VIS-LH-TECH1-001-012",
@@ -127,7 +127,7 @@
       "sourcePath": "apps/web/public/assets/course1/shift-handoff-model.svg",
       "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/shift-handoff-model.svg",
       "primaryLessons": ["LESSON-LH-TECH1-001-17", "LESSON-LH-TECH1-001-18"],
-      "purpose": "Show outgoing preparation, written status, two-way exchange, incoming cross-check, and ownership of open conditions."
+      "purpose": "Retain the prior handoff model as a supporting public asset while the controlled handoff and integrated workflow visuals provide the primary Lesson 6.2 and 6.3 teaching views."
     },
     {
       "id": "VIS-LH-TECH1-001-013",
@@ -147,7 +147,67 @@
       "sourcePath": "apps/web/public/assets/course1/data-integrity-record-lifecycle.svg",
       "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/data-integrity-record-lifecycle.svg",
       "primaryLessons": ["LESSON-LH-TECH1-001-16"],
-      "purpose": "Show the lifecycle from controlled identity and observation through attributable recording, transparent correction, late or missing data handling, and reconstructable handoff."
+      "purpose": "Retain the broader data-integrity lifecycle as a supporting public asset while the controlled correction visual provides the primary Lesson 6.1 correction teaching view."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-015",
+      "status": "produced",
+      "title": "Equipment pre-use readiness",
+      "learnerPath": "/assets/course1/equipment-preuse-readiness.svg",
+      "sourcePath": "apps/web/public/assets/course1/equipment-preuse-readiness.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/equipment-preuse-readiness.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-13"],
+      "purpose": "Teach an evidence-based pre-use readiness scan, controlled status review, result classification and the boundary that a failed readiness criterion does not authorize repair."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-016",
+      "status": "produced",
+      "title": "Operator care versus maintenance boundary",
+      "learnerPath": "/assets/course1/operator-vs-maintenance-boundary.svg",
+      "sourcePath": "apps/web/public/assets/course1/operator-vs-maintenance-boundary.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/operator-vs-maintenance-boundary.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-14"],
+      "purpose": "Separate routine actions explicitly assigned, trained and authorized to an operator from protected servicing, repair, hazardous-energy work, diagnosis and other maintenance responsibilities."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-017",
+      "status": "produced",
+      "title": "Fault context and escalation",
+      "learnerPath": "/assets/course1/fault-context-escalation.svg",
+      "sourcePath": "apps/web/public/assets/course1/fault-context-escalation.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/fault-context-escalation.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-15"],
+      "purpose": "Teach a time-ordered, maintenance-ready fault context that separates verified observations and permitted checks from unsupported diagnosis and defers reporting timing or channel to the applicable procedure."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-018",
+      "status": "produced",
+      "title": "Controlled record correction",
+      "learnerPath": "/assets/course1/record-correction-controls.svg",
+      "sourcePath": "apps/web/public/assets/course1/record-correction-controls.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/record-correction-controls.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-16"],
+      "purpose": "Teach that correction methods are controlled by the record system and facility procedure while preserving original information or audit trail, attribution, timing and honest missing-data status."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-019",
+      "status": "produced",
+      "title": "Professional shift handoff control",
+      "learnerPath": "/assets/course1/shift-handoff-control.svg",
+      "sourcePath": "apps/web/public/assets/course1/shift-handoff-control.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/shift-handoff-control.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-17"],
+      "purpose": "Teach preparation, two-way exchange, incoming cross-check and ownership of unresolved work while requiring transferred instructions and priorities to remain current, controlled and within receiver authority."
+    },
+    {
+      "id": "VIS-LH-TECH1-001-020",
+      "status": "produced",
+      "title": "Integrated Technician I workflow",
+      "learnerPath": "/assets/course1/integrated-technician-workflow.svg",
+      "sourcePath": "apps/web/public/assets/course1/integrated-technician-workflow.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/integrated-technician-workflow.svg",
+      "primaryLessons": ["LESSON-LH-TECH1-001-18"],
+      "purpose": "Connect review of assigned work and current controlled instructions with prerequisites, authorized execution, monitoring, truthful documentation, communication and follow-up without implying independent production-planning authority."
     }
   ]
 }
