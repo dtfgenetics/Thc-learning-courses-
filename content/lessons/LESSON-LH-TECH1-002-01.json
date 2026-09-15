@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-002-01",
   "title": "Structured Crop Walks and Representative Observation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "competencies": [
     "COMP-PLANT-BIO-001"
@@ -10,9 +10,10 @@
     "LO-LH-TECH1-002-01",
     "LO-LH-TECH1-002-03"
   ],
-  "estimatedMinutes": 55,
+  "estimatedMinutes": 60,
   "references": [
-    "REF-PLANT-BIO-001"
+    "REF-PLANT-BIO-001",
+    "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
   ],
   "assessment": null,
   "content": {
@@ -33,6 +34,10 @@
       {
         "term": "observation route",
         "definition": "A repeatable sequence of crop locations used to reduce omissions and make comparisons over time more meaningful."
+      },
+      {
+        "term": "denominator",
+        "definition": "The number of plants, sites or other units actually inspected, which gives meaning to a count of affected units."
       }
     ],
     "sections": [
@@ -40,14 +45,15 @@
         "title": "Start with purpose and identity",
         "body": "Before inspecting plants, confirm why the walk is being performed and which room, zone, cultivar or lot, bench or tray, developmental stage and time apply. These identifiers prevent a technically accurate note from being attached to the wrong crop or process context.",
         "references": [
-          "REF-PLANT-BIO-001"
+          "REF-PLANT-BIO-001",
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
         ]
       },
       {
         "title": "Sample the crop instead of the problem",
-        "body": "A representative route commonly includes center and edge positions, different irrigation or environmental zones, multiple canopy positions where relevant, and any defined high-risk or follow-up locations. The exact route is facility specific; the transferable rule is to avoid drawing room-wide conclusions from one convenient or visibly abnormal plant.",
+        "body": "A representative route commonly includes more than one part of the production area and should prevent the observer from selecting only convenient or visibly abnormal plants. Greenhouse extension scouting guidance uses repeated inspection locations and records both location and the number of plants inspected. The exact route and sample size remain facility- and purpose-specific; the transferable rule is to document what was inspected and avoid room-wide conclusions from one conspicuous plant.",
         "references": [
-          "REF-PLANT-BIO-001"
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
         ]
       },
       {
@@ -56,19 +62,28 @@
         "references": [
           "REF-PLANT-BIO-001"
         ]
+      },
+      {
+        "title": "Consistency makes observations comparable",
+        "body": "Repeated crop walks become more useful when the route, observation categories, plant or site count and location conventions remain consistent enough to compare one walk with another. Greenhouse scouting records are used to follow trends over time and evaluate whether conditions are increasing, decreasing or remaining stable. A technician should therefore record the denominator and route context rather than writing only a count of abnormal plants.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
+        ]
       }
     ],
     "workedExamples": [
       "One wilted plant among otherwise upright neighbors is documented as an isolated observation and compared with nearby plants rather than recorded as proof that the entire room needs irrigation.",
-      "An edge-only difference in plant height is recorded with exact locations and representative comparison points before environmental, light, irrigation or genetic causes are considered."
+      "An edge-only difference in plant height is recorded with exact locations and representative comparison points before environmental, light, irrigation or genetic causes are considered.",
+      "A scout records 4 affected plants out of 24 inspected across a defined route, rather than writing only '4 plants affected,' so the next observer can compare the finding with later walks."
     ],
     "commonMistakes": [
       "Inspecting only the most damaged plants and calling the result representative of the whole room.",
       "Recording a finding without the room, zone, plant, bench or other identity needed to reconstruct where it occurred.",
-      "Zooming immediately to one leaf and missing whether the same pattern is isolated, zonal or widespread."
+      "Zooming immediately to one leaf and missing whether the same pattern is isolated, zonal or widespread.",
+      "Recording a count of affected plants without recording how many plants or sites were actually inspected."
     ],
-    "practicalApplication": "Given a room map with 120 plants, design and execute a simulated observation route that includes representative edges, center positions and defined process zones. Record sample size, route, whole-crop pattern and three detailed plant observations without assigning unsupported causes.",
-    "summary": "Technician I observation begins with a defined purpose, correct identity and a representative route. Whole-crop pattern comes before close-up detail, and every finding retains enough location and sample context to support comparison, escalation and later diagnosis.",
+    "practicalApplication": "Given a room map with 120 plants, design and execute a simulated observation route that includes representative edges, center positions and defined process zones. Record sample size, route, whole-crop pattern and three detailed plant observations without assigning unsupported causes. Repeat the exercise with a second simulated walk and identify which differences are real changes versus differences caused by inconsistent sampling.",
+    "summary": "Technician I observation begins with a defined purpose, correct identity and a representative route. Whole-crop pattern comes before close-up detail, and every finding retains enough location, denominator and sample context to support comparison, escalation and later diagnosis.",
     "blocks": [
       {
         "type": "steps",
@@ -87,6 +102,10 @@
             "body": "Use the supplied or justified representative route instead of selecting only obvious problem plants."
           },
           {
+            "title": "Record the denominator",
+            "body": "Preserve how many plants, sites or observation points were actually inspected so later counts have context."
+          },
+          {
             "title": "Scan whole-crop pattern",
             "body": "Note uniformity, posture, architecture, color and developmental distribution before close inspection."
           },
@@ -100,7 +119,56 @@
           }
         ],
         "references": [
-          "REF-PLANT-BIO-001"
+          "REF-PLANT-BIO-001",
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Representative observation versus convenience sampling",
+        "columns": [
+          "Practice",
+          "Stronger evidence",
+          "Weak evidence"
+        ],
+        "rows": [
+          [
+            "Route",
+            "Defined or justified route covering meaningful production areas",
+            "Only plants nearest the door or aisle"
+          ],
+          [
+            "Plant selection",
+            "Representative plants plus separately identified abnormal follow-up plants",
+            "Only the worst-looking plants"
+          ],
+          [
+            "Counts",
+            "Affected count plus number inspected",
+            "Affected count with no denominator"
+          ],
+          [
+            "Location",
+            "Room/zone/bench or comparable spatial identity",
+            "No location or a vague note such as 'back area'"
+          ],
+          [
+            "Repeatability",
+            "Enough route context to make later walks comparable",
+            "A different informal path each time with no record of what changed"
+          ]
+        ],
+        "references": [
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Transferable scouting principle, not a universal sample size",
+        "tone": "evidence",
+        "body": "Greenhouse extension sources support systematic scouting, location-aware records and recording the number of plants inspected. They do not establish one universal cannabis sample size or route. Follow the facility sampling plan when it is more specific.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
         ]
       },
       {
@@ -117,7 +185,7 @@
         "answer": "Follow the representative route and compare multiple locations before describing room-level pattern",
         "feedback": "A conspicuous plant can be important, but it does not establish the distribution of a condition. Representative observation is needed before making a room-level statement.",
         "references": [
-          "REF-PLANT-BIO-001"
+          "REF-UMASS-GREENHOUSE-IPM-SCOUTING"
         ]
       }
     ]
