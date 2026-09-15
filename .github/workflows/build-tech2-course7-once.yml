@@ -1,0 +1,60 @@
+name: Build Technician II Course 007 once
+
+on:
+  push:
+    branches:
+      - feat/tech2-course-007-instruction-assessment
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: feat/tech2-course-007-instruction-assessment
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build Technician II Course 007 source
+        run: node scripts/build-tech2-course7.mjs
+      - name: Rebuild curriculum registry
+        run: npm run registry:build
+      - name: Validate Course 207 item quality
+        run: node scripts/check-learning-hub-item-quality.mjs
+      - name: Validate Course 207 contracts
+        run: |
+          npm run schema:validate
+          npm run validate
+          npm run registry:validate
+          npm run tech2:program:test
+          npm run tech2:course1:test
+          npm run tech2:course2:test
+          npm run tech2:course3:test
+          npm run tech2:course4:test
+          npm run tech2:course5:test
+          npm run tech2:course6:test
+          npm run tech2:course7:test
+          npm run credential:tech2:test
+      - name: Run complete deterministic suite
+        run: npm test
+      - name: Commit validated Course 207 source
+        run: |
+          rm -f .github/workflows/build-tech2-course7-once.yml scripts/build-tech2-course7.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "feat: build Technician II Course 007 traceability metrics coordination"
+          git push origin HEAD:feat/tech2-course-007-instruction-assessment
