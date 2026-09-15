@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-007-04",
+  "title": "Shift Prioritization, Planned-vs-Actual Records and Supervisor-Ready Handoff",
+  "competencies": [
+    "COMP-CROP-PLAN-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-007-01",
+    "LO-LH-TECH2-007-02",
+    "LO-LH-TECH2-007-03",
+    "LO-LH-TECH2-007-04",
+    "LO-LH-TECH2-007-05",
+    "LO-LH-TECH2-007-06"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001"
+  ],
+  "content": {
+    "overview": "A senior-technician shift handoff converts many records into an ordered operational picture. Priorities should reflect safety, crop/lot risk, unresolved deviations, timing dependencies, traceability gaps and work that blocks downstream tasks. The handoff preserves what was planned, what actually occurred, what remains unresolved and who owns the next decision.",
+    "vocabulary": [
+      {
+        "term": "Dependency",
+        "definition": "A task, decision, material or condition that must be resolved before downstream work can proceed safely or correctly."
+      },
+      {
+        "term": "Planned versus actual",
+        "definition": "Separate preservation of the intended schedule or quantity and what actually occurred."
+      },
+      {
+        "term": "Decision owner",
+        "definition": "The authorized role responsible for an unresolved approval, disposition, change or escalation decision."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Prioritize by consequence and dependency, not convenience",
+        "body": "Safety, quarantine, identity/traceability breaks, time-sensitive crop needs and blocked downstream work generally outrank low-risk administrative cleanup.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Keep planned history intact",
+        "body": "When actual dates, quantities or task outcomes differ from plan, retain both and document the variance. Do not overwrite the plan to make execution appear on schedule.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff should identify next action and owner",
+        "body": "For each unresolved issue, state current evidence, impact, containment or interim action, next check or decision, deadline/dependency and the role responsible.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A traceability mismatch blocking harvest movement outranks a routine report formatting task because downstream identity would otherwise become uncertain.",
+      "A planned transplant moved three days late; the handoff preserves both dates, notes the downstream schedule impact and identifies the next planning decision."
+    ],
+    "commonMistakes": [
+      "Overwriting planned dates with actual dates.",
+      "Listing every task as equally urgent.",
+      "Handing off a problem without the next action or decision owner.",
+      "Treating KPI movement as a cause rather than a signal."
+    ],
+    "practicalApplication": "Produce a senior-technician handoff with reconciled identities, selected KPIs and definitions, priority-ranked work, unresolved deviations, dependencies, peer-support actions and decision owners.",
+    "summary": "Good shift coordination preserves historical truth and turns operational evidence into clear priorities, dependencies and owned next decisions."
+  }
+}

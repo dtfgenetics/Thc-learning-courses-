@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One source batch is split into two flowering rooms. What should happen to genealogy?",
+  "choices": [
+    "Each room gets an unrelated identity with no source link.",
+    "The source batch record is deleted.",
+    "Both downstream lots retain their source relationship and the split/move event.",
+    "Only the larger downstream lot keeps the source identity."
+  ],
+  "correct": 2,
+  "rationale": "Both downstream lots retain their source relationship and the split/move event.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}

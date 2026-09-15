@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-M01-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why preserve the original value during a controlled correction?",
+  "choices": [
+    "To make the record harder to read.",
+    "Because corrected values are never allowed.",
+    "To avoid attribution.",
+    "To maintain the audit trail and historical evidence."
+  ],
+  "correct": 3,
+  "rationale": "To maintain the audit trail and historical evidence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
