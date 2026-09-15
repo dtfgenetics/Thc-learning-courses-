@@ -1,0 +1,32 @@
+{
+  "id": "EMR-LH-TECH1-001-14-NIOSH-HAZARDOUS-ENERGY",
+  "mappingCandidateId": "MAP-LH-TECH1-001-14-NIOSH-LOTO-2011-156",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-NIOSH-HAZARDOUS-ENERGY",
+  "statement": "NIOSH reports that machine maintenance and servicing can expose workers to severe injury or death from hazardous energy when effective lockout/tagout controls are not followed, and recommends a hazardous-energy control program that includes lockout/tagout procedures and worker training.",
+  "domain": "hazardous-energy",
+  "lessonIds": ["LESSON-LH-TECH1-001-14"],
+  "referenceIds": ["REF-NIOSH-LOTO-2011-156"],
+  "competencyIds": ["COMP-CULT-EQUIPMENT-CARE-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-09"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2027-09-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from NIOSH Publication 2011-156 and cross-checked against the current CDC/NIOSH publication page on September 15, 2026. It provides an independent occupational-safety evidence source for the servicing/hazardous-energy boundary without asserting that the NIOSH recommendation itself determines legal applicability in every cultivation workplace.",
+    "notes": "Human occupational-safety review is required before promotion. Keep legal applicability and employer-specific authorization separate from this NIOSH recommendation."
+  },
+  "sourceContext": [
+    {
+      "lessonId": "LESSON-LH-TECH1-001-14",
+      "referenceId": "REF-NIOSH-LOTO-2011-156",
+      "jsonPath": "$.references",
+      "contextTitle": "Routine Operator Care versus Skilled Maintenance"
+    }
+  ]
+}
