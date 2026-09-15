@@ -26,6 +26,8 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Build Technician II Course 007 source
         run: node scripts/build-tech2-course7.mjs
+      - name: Expand Course 207 assessment rationales
+        run: node scripts/repair-tech2-course7-rationales.mjs
       - name: Rebuild curriculum registry
         run: npm run registry:build
       - name: Validate Course 207 item quality
@@ -48,7 +50,7 @@ jobs:
         run: npm test
       - name: Commit validated Course 207 source
         run: |
-          rm -f .github/workflows/build-tech2-course7-once.yml scripts/build-tech2-course7.mjs
+          rm -f .github/workflows/build-tech2-course7-once.yml scripts/build-tech2-course7.mjs scripts/repair-tech2-course7-rationales.mjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
