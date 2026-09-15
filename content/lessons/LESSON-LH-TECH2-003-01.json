@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-003-01",
+  "title": "Approved Batch Readiness, Material Identity and Controlled Execution",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-WATER-QUALITY-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-003-01",
+    "LO-LH-TECH2-003-02",
+    "LO-LH-TECH2-003-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-SAFETY-OSHA-001",
+    "REF-ASTM-E2659-001"
+  ],
+  "content": {
+    "overview": "Technician II fertigation work is controlled execution, not independent recipe design. Before mixing begins, the technician verifies the effective recipe, source water, material identity, target volume, calculation inputs, sequence, measuring tools, PPE and facility authorization. Any mismatch is held and resolved rather than corrected by improvisation.",
+    "vocabulary": [
+      {
+        "term": "Controlled recipe",
+        "definition": "The currently authorized formulation and instructions that govern batch preparation."
+      },
+      {
+        "term": "Material identity",
+        "definition": "Verified product or ingredient identity matched to the approved record before use."
+      },
+      {
+        "term": "Batch hold",
+        "definition": "A documented status that prevents use or release while an unresolved discrepancy is evaluated."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Verify the effective instruction before touching materials",
+        "body": "Confirm the correct recipe/version, target final volume, source-water condition, material identities and required sequence. A familiar prior batch is not authority to substitute a different material or concentration.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Chemical handling begins with identification and hazard controls",
+        "body": "Labels, SDS information, required PPE, decontamination/spill response and facility handling rules must be available and understood before work proceeds. An unidentified, damaged or incompatible material is a stop-and-escalate condition.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Source water is an input, not empty background",
+        "body": "Alkalinity, dissolved ions and other source-water characteristics can affect pH behavior and nutrient formulation. Verify the source and relevant measurements before interpreting final batch response.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A container label does not match the approved material code; the technician places the batch on hold instead of substituting based on appearance.",
+      "A recipe calls for a target final volume, so the technician uses the controlled calculation and sequence rather than scaling by memory from yesterday’s batch."
+    ],
+    "commonMistakes": [
+      "Treating a familiar-looking material as verified identity.",
+      "Changing a concentration to chase a preferred EC without recipe authority.",
+      "Beginning mixing before PPE or spill response requirements are established."
+    ],
+    "practicalApplication": "Complete a pre-batch readiness checklist documenting effective recipe/version, source water, each material identity, target volume, calculations, sequence, meter status, PPE and any hold/escalation condition.",
+    "summary": "Controlled fertigation starts with verified identity, effective instructions, safe handling and authority boundaries before any nutrient is added."
+  }
+}

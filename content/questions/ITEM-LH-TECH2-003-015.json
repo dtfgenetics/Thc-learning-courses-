@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-TECH2-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should source-water identity be verified before comparing two fertigation batches?",
+  "choices": [
+    "Source water never affects final solution chemistry.",
+    "Only final volume matters.",
+    "Different source-water chemistry can alter pH behavior and ionic contribution, changing the interpretation.",
+    "Source identity matters only for outdoor crops."
+  ],
+  "correct": 2,
+  "rationale": "Different source-water chemistry can alter pH behavior and ionic contribution, changing the interpretation.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}

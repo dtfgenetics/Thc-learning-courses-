@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-003-07",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspect meter reading is later shown to be biased. What should happen to the original record?",
+  "choices": [
+    "Replace it with the corrected value only.",
+    "Delete the entire batch record.",
+    "Preserve it with the verification evidence and documented disposition rather than erasing history.",
+    "Backdate a new value to the original timestamp."
+  ],
+  "correct": 2,
+  "rationale": "Preserve it with the verification evidence and documented disposition rather than erasing history.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-003-04",
+  "title": "Fertigation and Root-Zone Differential Reasoning, Authorized Correction and Handoff",
+  "competencies": [
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-PRO-SOP-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-003-02",
+    "LO-LH-TECH2-003-03",
+    "LO-LH-TECH2-003-04",
+    "LO-LH-TECH2-003-06",
+    "LO-LH-TECH2-003-07"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001",
+    "REF-IRRIGATION-001",
+    "REF-SAFETY-OSHA-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "The end product of troubleshooting is a bounded next decision, not a dramatic recipe change. Technician II compares measurement, delivery, timing, accumulation, nutrient-supply, root and plant-demand hypotheses, chooses a discriminating check, completes only authorized corrections and leaves a reconstructable record for the next role or shift.",
+    "vocabulary": [
+      {
+        "term": "Discriminating check",
+        "definition": "A targeted observation or test whose result changes the ranking of competing explanations."
+      },
+      {
+        "term": "Authorized correction",
+        "definition": "A corrective action explicitly permitted by the controlled procedure and worker role."
+      },
+      {
+        "term": "Escalation boundary",
+        "definition": "A condition where uncertainty, risk, chemical decision, equipment work or authorization requires transfer to another qualified role."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Keep multiple causal categories alive until evidence separates them",
+        "body": "Visible crop symptoms can overlap among nutrition, roots, irrigation, environment and disease. Use pattern, chronology and measurements to rank causes rather than treating one symptom as proof.",
+        "references": [
+          "REF-NUTRIENT-DEFICIENCY-001",
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Prefer the next check that can change the decision",
+        "body": "If distribution, measurement and accumulation remain plausible, choose the check most likely to distinguish them rather than collecting more low-value data.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Correction authority is not diagnostic confidence",
+        "body": "Even a strong hypothesis does not authorize an unapproved recipe or chemical change. Follow the controlled instruction and chemical-safety requirements, or hold/escalate.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Preserve before/after evidence and unresolved conditions",
+        "body": "Record the original condition, verification steps, selected action, post-action response and what remains uncertain. Do not rewrite the record to make a hypothesis appear confirmed.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A verified irrigation distribution fault is corrected under the authorized procedure and catch volumes are repeated before the issue is closed.",
+      "A nutrient-related hypothesis remains plausible, but changing the recipe is outside role authority; the technician documents evidence and escalates with a recommended next check."
+    ],
+    "commonMistakes": [
+      "Changing multiple systems at once.",
+      "Confusing a plausible diagnosis with authority to change the formulation.",
+      "Closing the case without post-action verification or unresolved-condition documentation."
+    ],
+    "practicalApplication": "Produce a root-zone/irrigation diagnostic memo with ranked hypotheses, evidence for/against, next check, authorized correction or escalation, post-action verification and a supervisor-ready handoff.",
+    "summary": "Technician II troubleshooting reduces uncertainty, respects chemical and SOP boundaries, and leaves evidence that another qualified person can reconstruct."
+  }
+}
