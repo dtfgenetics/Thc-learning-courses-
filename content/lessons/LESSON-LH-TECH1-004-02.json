@@ -1,73 +1,26 @@
 {
   "id": "LESSON-LH-TECH1-004-02",
   "title": "Root-Zone Moisture, Dryback and EC Trend Context",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": [
-    "COMP-ROOTZONE-001",
-    "COMP-WATER-001",
-    "COMP-NUTRITION-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-004-02",
-    "LO-LH-TECH1-004-03"
-  ],
+  "competencies": ["COMP-ROOTZONE-001", "COMP-WATER-001", "COMP-NUTRITION-001"],
+  "learningObjectives": ["LO-LH-TECH1-004-02", "LO-LH-TECH1-004-03"],
   "estimatedMinutes": 60,
-  "references": [
-    "REF-IRRIGATION-001",
-    "REF-NUTRITION-001"
-  ],
+  "references": ["REF-IRRIGATION-001", "REF-NUTRITION-001"],
   "assessment": null,
   "content": {
     "overview": "Root-zone behavior changes over time. Learners practice describing saturation, drainage, moisture loss, dryback and EC trends using repeated observations rather than elapsed hours or one spot reading. The course keeps interpretation at Technician I scope: document what the root zone is doing, connect it with crop and environmental context, and escalate when evidence suggests a meaningful deviation without prescribing an advanced crop-steering or nutrient strategy.",
     "vocabulary": [
-      {
-        "term": "dryback",
-        "definition": "The reduction in root-zone water content between irrigation events."
-      },
-      {
-        "term": "container capacity",
-        "definition": "A practical moisture state after a saturated container has drained excess gravitational water."
-      },
-      {
-        "term": "root-zone EC",
-        "definition": "Electrical conductivity measured from solution associated with the root environment using a defined sampling method."
-      },
-      {
-        "term": "trend",
-        "definition": "A directional pattern in repeated measurements over time rather than one isolated value."
-      }
+      {"term":"dryback","definition":"The reduction in root-zone water content between irrigation events."},
+      {"term":"container capacity","definition":"A practical moisture state after a saturated container has drained excess gravitational water."},
+      {"term":"root-zone EC","definition":"Electrical conductivity measured from solution associated with the root environment using a defined sampling method."},
+      {"term":"trend","definition":"A directional pattern in repeated measurements over time rather than one isolated value."}
     ],
     "sections": [
-      {
-        "title": "Dryback is a trajectory",
-        "body": "One moisture reading or a fixed number of hours does not describe how quickly the root zone is changing. Repeated weight, sensor or other defined observations reveal the moisture trajectory between irrigations and allow comparison with previous crop behavior.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "Crop demand and environment can change the curve",
-        "body": "Canopy size, roots, light, temperature, humidity, media properties and container size can alter water use. A schedule that was adequate earlier may require review when measured dryback behavior changes; Technician I documents the shift and routes it through the authorized process.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "Too wet and too dry are different observations",
-        "body": "Prolonged saturation can restrict root-zone gas exchange, while excessive drying can limit water availability and concentrate dissolved ions. The acceptable operating range depends on the system and supplied strategy, so technicians describe the observed condition and trend rather than applying a universal moisture target.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "Nutrition evidence stays contextual",
-        "body": "Deficiency-like or excess-like plant symptoms can overlap with pH, EC, water status, root health and developmental effects. Root-zone and plant observations should be combined before a qualified person assigns cause. Technician I does not solve every nutrition case by increasing or decreasing fertilizer concentration.",
-        "references": [
-          "REF-NUTRITION-001",
-          "REF-IRRIGATION-001"
-        ]
-      }
+      {"title":"Dryback is a trajectory","body":"One moisture reading or a fixed number of hours does not describe how quickly the root zone is changing. Repeated weight, sensor or other defined observations reveal the moisture trajectory between irrigations and allow comparison with previous crop behavior.","references":["REF-IRRIGATION-001"]},
+      {"title":"Crop demand and environment can change the curve","body":"Canopy size, roots, light, temperature, humidity, media properties and container size can alter water use. A schedule that was adequate earlier may require review when measured dryback behavior changes; Technician I documents the shift and routes it through the authorized process.","references":["REF-IRRIGATION-001"]},
+      {"title":"Too wet and too dry are different observations","body":"Prolonged saturation can restrict root-zone gas exchange, while excessive drying can limit water availability and concentrate dissolved ions. The acceptable operating range depends on the system and supplied strategy, so technicians describe the observed condition and trend rather than applying a universal moisture target.","references":["REF-IRRIGATION-001"]},
+      {"title":"Nutrition evidence stays contextual","body":"Deficiency-like or excess-like plant symptoms can overlap with pH, EC, water status, root health and developmental effects. Root-zone and plant observations should be combined before a qualified person assigns cause. Technician I does not solve every nutrition case by increasing or decreasing fertilizer concentration.","references":["REF-NUTRITION-001","REF-IRRIGATION-001"]}
     ],
     "workedExamples": [
       "Containers that previously reached the supplied next-irrigation condition in two days now reach it in one day. The technician records the faster dryback trend and crop/environment context and escalates for authorized schedule review.",
@@ -79,61 +32,14 @@
       "Assuming the same irrigation frequency is correct for the entire crop lifecycle.",
       "Adding more fertilizer because leaves look deficient even though root-zone EC is already elevated."
     ],
-    "practicalApplication": "Review a simulated seven-day root-zone log containing irrigation times, comparable moisture observations, EC results and crop notes. Identify the meaningful trend, separate measurement evidence from possible explanations, and write an escalation note that does not prescribe a strategy outside Technician I authority.",
+    "practicalApplication": "Use the downloadable irrigation/root-zone verification worksheet with a simulated seven-day log containing irrigation times, comparable moisture observations, EC results and crop notes. Identify the meaningful trend, separate measurement evidence from possible explanations, record symptom/stage context where provided, and write an escalation note without prescribing a strategy outside Technician I authority.",
     "summary": "Root-zone work is trend work. Repeated moisture and EC observations, consistent methods and crop context reveal whether the root zone is changing. Technician I preserves that evidence and avoids converting one reading or leaf pattern into an unsupported diagnosis.",
     "blocks": [
-      {
-        "type": "table",
-        "title": "Root-zone evidence versus overreach",
-        "columns": [
-          "Evidence",
-          "Useful Technician I statement",
-          "Unsupported leap"
-        ],
-        "rows": [
-          [
-            "Repeated moisture observations",
-            "Dryback is occurring faster than the previous comparable period",
-            "The crop definitely needs a new advanced steering strategy"
-          ],
-          [
-            "Comparable root-zone EC trend",
-            "Root-zone EC has increased across repeated measurements",
-            "A specific nutrient is definitely excessive"
-          ],
-          [
-            "Persistent saturation",
-            "Defined containers remain saturated longer than the supplied expectation",
-            "Roots are definitely diseased"
-          ],
-          [
-            "Leaf symptom plus high EC",
-            "Record symptom pattern, EC, pH and root-zone context for review",
-            "Add more fertilizer because the leaf resembles a deficiency chart"
-          ]
-        ],
-        "references": [
-          "REF-IRRIGATION-001",
-          "REF-NUTRITION-001"
-        ]
-      },
-      {
-        "type": "scenario",
-        "title": "Faster dryback",
-        "setting": "The same crop area now reaches the facility-defined next-irrigation moisture condition in about half the time observed earlier.",
-        "prompt": "What is the strongest Technician I response?",
-        "options": [
-          "Keep the old interval because schedules should never change",
-          "Document the faster measured dryback trend and relevant crop/environment context, then route it for authorized irrigation review",
-          "Double nutrient concentration",
-          "Diagnose root disease"
-        ],
-        "answer": "Document the faster measured dryback trend and relevant crop/environment context, then route it for authorized irrigation review",
-        "feedback": "Dryback is measured behavior. A changed trajectory is useful evidence for authorized schedule review, not permission for independent advanced strategy changes.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      }
+      {"type":"table","title":"Root-zone evidence versus overreach","columns":["Evidence","Useful Technician I statement","Unsupported leap"],"rows":[["Repeated moisture observations","Dryback is occurring faster than the previous comparable period","The crop definitely needs a new advanced steering strategy"],["Comparable root-zone EC trend","Root-zone EC has increased across repeated measurements","A specific nutrient is definitely excessive"],["Persistent saturation","Defined containers remain saturated longer than the supplied expectation","Roots are definitely diseased"],["Leaf symptom plus high EC","Record symptom pattern, EC, pH and root-zone context for review","Add more fertilizer because the leaf resembles a deficiency chart"]],"references":["REF-IRRIGATION-001","REF-NUTRITION-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-004-002","title":"Root-zone moisture and dryback as a trend","src":"/assets/course4/root-zone-dryback-trend.svg","alt":"Conceptual repeated root-zone moisture curve showing irrigation, drainage and dryback over time, contrasted with a single isolated reading and paired with comparable EC, crop, media and environment context.","caption":"Dryback is a measured trajectory. Compare repeated observations made with a consistent method rather than applying a universal time or moisture target.","references":["REF-IRRIGATION-001","REF-NUTRITION-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-004-003","title":"Nutrition-context differential","src":"/assets/course4/nutrition-context-differential.svg","alt":"A central plant symptom observation surrounded by developmental stage, symptom pattern, pH and sample method, EC and method, root-zone condition, irrigation history and environmental context before bounded interpretation and escalation.","caption":"A visible symptom is evidence, not a diagnosis. Combine stage, pH/EC method, root-zone, irrigation and environmental context before assigning cause.","references":["REF-NUTRITION-001","REF-IRRIGATION-001"]},
+      {"type":"resource","title":"Downloadable practice: irrigation and root-zone verification","body":"Use this printable worksheet to practice representative delivery checks, repeated root-zone trend description, bounded nutrition-context reasoning, deviation handling and handoff without inventing universal targets or unsupported causes.","href":"/assets/course4/irrigation-verification-practice.svg","label":"Open irrigation / root-zone verification practice sheet","extensions":{"assetId":"VIS-LH-TECH1-004-007","downloadable":true}},
+      {"type":"scenario","title":"Faster dryback","setting":"The same crop area now reaches the facility-defined next-irrigation moisture condition in about half the time observed earlier.","prompt":"What is the strongest Technician I response?","options":["Keep the old interval because schedules should never change","Document the faster measured dryback trend and relevant crop/environment context, then route it for authorized irrigation review","Double nutrient concentration","Diagnose root disease"],"answer":"Document the faster measured dryback trend and relevant crop/environment context, then route it for authorized irrigation review","feedback":"Dryback is measured behavior. A changed trajectory is useful evidence for authorized schedule review, not permission for independent advanced strategy changes.","references":["REF-IRRIGATION-001"]}
     ]
   }
 }
