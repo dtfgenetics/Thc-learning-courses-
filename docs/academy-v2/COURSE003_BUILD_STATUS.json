@@ -1,21 +1,10 @@
 {
   "courseId": "COURSE-LH-TECH1-003",
-  "courseVersion": "0.3.0",
+  "courseVersion": "0.4.0",
   "status": "development-readiness",
   "module": "MOD-LH-TECH1-003-MONITORING",
-  "objectives": [
-    "LO-LH-TECH1-003-01",
-    "LO-LH-TECH1-003-02",
-    "LO-LH-TECH1-003-03",
-    "LO-LH-TECH1-003-04",
-    "LO-LH-TECH1-003-05"
-  ],
-  "lessons": [
-    "LESSON-LH-TECH1-003-01",
-    "LESSON-LH-TECH1-003-02",
-    "LESSON-LH-TECH1-003-03",
-    "LESSON-LH-TECH1-003-04"
-  ],
+  "objectives": ["LO-LH-TECH1-003-01", "LO-LH-TECH1-003-02", "LO-LH-TECH1-003-03", "LO-LH-TECH1-003-04", "LO-LH-TECH1-003-05"],
+  "lessons": ["LESSON-LH-TECH1-003-01", "LESSON-LH-TECH1-003-02", "LESSON-LH-TECH1-003-03", "LESSON-LH-TECH1-003-04"],
   "formativeAssessment": "ASSESS-LH-TECH1-003-M01",
   "summativeAssessment": "ASSESS-LH-TECH1-003-FINAL",
   "formativeItems": 12,
@@ -25,6 +14,12 @@
   "practicalCrosswalk": "registry/course3-practical-a-crosswalk.json",
   "practicalCrosswalkStatus": "development",
   "objectiveCoverageMappedToPractical": true,
+  "visualRegistry": "visuals/COURSE3-ASSET-REGISTRY.json",
+  "visualDriveFolderId": "1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU",
+  "producedVisualCount": 3,
+  "downloadablePracticeAssetCount": 0,
+  "totalLearnerAssetCount": 3,
+  "learnerAssetFoundationBuilt": true,
   "learnerAssetLayerBuilt": false,
   "releaseStatus": "draft",
   "completedDevelopmentWork": [
@@ -34,10 +29,14 @@
     "20 distinct summative-development items",
     "Practical A environmental/sensor/PPFD development station coverage",
     "all five objectives crosswalked to canonical Practical A tasks, evidence, scoring categories and deliverables",
-    "public release manifest points to Practical A as development-stage performance evidence"
+    "public release manifest points to Practical A as development-stage performance evidence",
+    "three public accessible lesson-linked learner visuals mirrored to the Course 3 Drive folder",
+    "deterministic Course 3 learner-asset registry and reachability contract"
   ],
   "remainingDevelopmentPriorities": [
-    "Course 3 learner visual/practice asset layer",
+    "Lesson 4 alarm/trend/verification/handoff visual",
+    "printable environmental measurement practice worksheet",
+    "printable PPFD and sensor-verification practice worksheet",
     "rendered accessibility review preparation",
     "human technical and assessment review packets",
     "pilot-ready equivalent practical form details"
@@ -52,5 +51,5 @@
     "formal standard setting",
     "program release approval"
   ],
-  "boundary": "Practical mapping and deterministic tests demonstrate development coverage only. They do not constitute human approval, practical validation, pilot evidence, inter-rater evidence or release approval."
+  "boundary": "Practical mapping, produced learner assets and deterministic tests demonstrate development coverage only. They do not constitute human approval, practical validation, pilot evidence, inter-rater evidence or release approval."
 }
