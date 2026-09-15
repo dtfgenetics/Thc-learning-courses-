@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.1",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -15,14 +15,15 @@
   ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
   "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
-  "finalAssessment": null,
+  "finalAssessment": "ASSESS-LH-TECH1-002-FINAL",
   "id": "COURSE-LH-TECH1-002",
   "title": "Plant Observation, Growth Stages & Crop Records",
   "description": "Develops a Technician I observation workflow for describing crop condition and developmental stage without over-diagnosing, preserving location and identity context, and producing records that another qualified person can reconstruct.",
   "modules": [
     "MOD-PLANT-BIO-001",
     "MOD-FLOWER-001",
-    "MOD-LH-TECH1-001-RECORDS"
+    "MOD-LH-TECH1-001-RECORDS",
+    "MOD-LH-TECH1-002-OBSERVATION"
   ],
   "competencies": [
     "COMP-PLANT-BIO-001",
@@ -31,21 +32,34 @@
     "COMP-PRO-QA-001"
   ],
   "learningOutcomes": [
-    "Identify major cannabis structures and observable developmental stages using controlled terminology rather than unsupported causal claims.",
-    "Execute a repeatable crop-observation route and preserve plant, room, zone, time, and observation context.",
-    "Separate direct observation from interpretation and identify when additional evidence or escalation is required.",
-    "Create contemporaneous crop records and shift-ready observation summaries that preserve uncertainty and exceptions."
+    "Execute a repeatable crop-observation route and preserve plant, room, zone, time and sample context.",
+    "Describe cannabis developmental and reproductive stage from observable morphology while keeping schedule timing as context rather than proof.",
+    "Separate direct observation, population or spatial pattern, contextual evidence and unsupported causal diagnosis.",
+    "Create reconstructable crop records and image evidence that preserve identity, timing, uncertainty, escalation and shift-handoff needs."
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-I-001",
-    "jtaDomains": [3, 4, 13],
-    "maturity": "structure-mapped",
+    "jtaDomains": [
+      3,
+      4,
+      13
+    ],
+    "maturity": "instruction-assessment-draft",
     "developmentDependencies": [
       "MOD-PLANT-BIO-001",
       "MOD-FLOWER-001",
-      "MOD-LH-TECH1-001-RECORDS"
+      "MOD-LH-TECH1-001-RECORDS",
+      "MOD-LH-TECH1-002-OBSERVATION"
     ],
-    "dedicatedCourseAssessmentRequired": true,
-    "contentCeiling": null
+    "dedicatedCourseAssessmentRequired": false,
+    "contentCeiling": null,
+    "dedicatedPerformanceValidationRequired": true,
+    "mappedPractical": "PRACTICAL-TECH1-A",
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "assessmentBankExpansionTarget": 30,
+    "dedicatedItemCount": 32,
+    "formativeItemCount": 12,
+    "summativeItemCount": 20
   }
 }
