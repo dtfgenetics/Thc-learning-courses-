@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-005-M01-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-005-06",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A scouting finding is uncertain. What should the record do?",
+  "choices": [
+    "Choose the most likely diagnosis",
+    "Delete the observation",
+    "Record treatment before review",
+    "Preserve the objective evidence and uncertainty and document escalation rather than converting uncertainty into a confirmed diagnosis"
+  ],
+  "correct": 3,
+  "rationale": "Preserve the objective evidence and uncertainty and document escalation rather than converting uncertainty into a confirmed diagnosis. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-module1-formative"
+  }
+}

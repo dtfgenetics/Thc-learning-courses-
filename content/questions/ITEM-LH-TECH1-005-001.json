@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-005-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-TECH1-005-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two propagation trays lose their labels before movement. What should the technician do?",
+  "choices": [
+    "Stop movement and resolve identity through approved records or discrepancy procedure before relabeling",
+    "Guess cultivar from leaf shape",
+    "Combine the trays",
+    "Use the most common cultivar name"
+  ],
+  "correct": 0,
+  "rationale": "Stop movement and resolve identity through approved records or discrepancy procedure before relabeling. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-PROP-001",
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-v1"
+  }
+}
