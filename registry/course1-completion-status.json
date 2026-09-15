@@ -47,7 +47,7 @@
         "visuals/ASSET-REGISTRY.json"
       ],
       "humanGateRequired": true,
-      "note": "18 concepts have production drafts; public learner registry was last audited with 14 deployed SVG assets. Replacement candidates still require factual/copy/accessibility/responsive QA."
+      "note": "18 concepts have production drafts; the public learner registry contains 14 produced SVG assets, but only a subset is currently approved in the guided lesson UI. Replacement candidates still require factual/copy/accessibility/responsive QA."
     },
     {
       "id": "module-assessment-review",
@@ -100,13 +100,14 @@
     },
     {
       "id": "public-deployment-verification",
-      "state": "in-progress",
+      "state": "verified",
       "evidence": [
         "docs/CERTIFICATION-CATALOG-PUBLICATION-CONTRACT.md",
-        "registry/credential-public-status.json"
+        "registry/credential-public-status.json",
+        "registry/deployments.json"
       ],
       "humanGateRequired": false,
-      "note": "Catalog visibility implementation is active on feat/certification-catalog-visibility / PR #409. Production route/build verification still remains after promotion/deployment."
+      "note": "Verified 2026-09-15 on dtfseeds.com. DTFSeeds production SHA 2cda770033a6e8d126c7457805dd2c86e7098d6f, Publish Learning Hub Course 1 run 34982604835 (#30), completed successfully at 2026-09-15T14:37:56Z. Fresh anonymous verification confirmed Certification Catalog V4 with 10 offerings, no issuance-available=true claims, and a representative Course 1 lesson; authenticated readback confirmed the canonical 120-item public Course 1 package."
     },
     {
       "id": "controlled-pilot",
@@ -130,8 +131,7 @@
     }
   ],
   "nextMachineActions": [
-    "land certification catalog visibility and record deployed SHA/route",
-    "finish public visual asset QA/deployment tracking",
+    "finish public visual asset QA/deployment tracking and guided-lesson approval coverage",
     "generate a final review queue for all 18 lessons and 120 public scored knowledge items",
     "verify every objective has instruction, practice, assessment and remediation evidence",
     "prepare the rendered accessibility/manual UX review checklist"
