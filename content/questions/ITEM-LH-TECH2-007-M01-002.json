@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-M01-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A record mismatch lacks evidence for the correct value. What should happen?",
+  "choices": [
+    "Estimate the missing value.",
+    "Document and escalate the discrepancy rather than inventing a correction.",
+    "Delete the record.",
+    "Choose whichever value makes counts match."
+  ],
+  "correct": 1,
+  "rationale": "Document and escalate the discrepancy rather than inventing a correction.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

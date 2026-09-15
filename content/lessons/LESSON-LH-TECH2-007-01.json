@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-007-01",
+  "title": "Traceability Reconciliation, Genealogy and Controlled Corrections",
+  "competencies": [
+    "COMP-CROP-PLAN-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-007-01",
+    "LO-LH-TECH2-007-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-POSTHARVEST-001"
+  ],
+  "content": {
+    "overview": "Technician II reconciliation compares physical identity and status against controlled records without forcing agreement. Split, move, transplant, harvest and downstream lot events should extend genealogy. When records disagree, the discrepancy itself is evidence and must be corrected through the authorized process rather than invented away.",
+    "vocabulary": [
+      {
+        "term": "Reconciliation",
+        "definition": "A documented comparison of physical evidence and records used to identify and resolve differences without fabricating history."
+      },
+      {
+        "term": "Genealogy",
+        "definition": "The traceable relationship linking source crop or material to later identities, locations, splits, moves, harvests and downstream lots."
+      },
+      {
+        "term": "Controlled correction",
+        "definition": "An authorized record correction that preserves the original evidence, reason, attribution and audit trail."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Start with identity, status and location",
+        "body": "Compare physical labels or counts to the expected crop/lot identity, current status and recorded location. A mismatch is investigated; it is not silently edited into agreement.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Transitions extend rather than erase genealogy",
+        "body": "When one crop batch is split across rooms or a harvest becomes downstream lots, the new identities remain linked to their source. New IDs do not replace source history.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Preserve discrepancies during correction",
+        "body": "Missing, duplicate or conflicting records should be documented and routed through the authorized correction process. Do not invent a transaction or overwrite the original record to make counts match.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A physical plant is present in Room B while the controlled record still lists Room A; document the mismatch, verify movement evidence and route the record correction instead of inventing a move timestamp.",
+      "A source batch was split into two flowering lots; both downstream identities retain the source relationship rather than becoming unrelated records."
+    ],
+    "commonMistakes": [
+      "Fabricating a movement record to force reconciliation.",
+      "Creating a new ID that breaks source genealogy.",
+      "Overwriting the old status with no correction history.",
+      "Treating a physical count mismatch as permission to change controlled records."
+    ],
+    "practicalApplication": "Reconcile a mixed packet of physical counts, crop/lot identities, locations and transition records. Mark matches, discrepancies, missing evidence and the authorized correction path.",
+    "summary": "Traceability reconciliation preserves identity and history while resolving discrepancies through controlled evidence and correction processes."
+  }
+}

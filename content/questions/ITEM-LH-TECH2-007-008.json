@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A count mismatch is discovered during reconciliation. Which action is prohibited?",
+  "choices": [
+    "Documenting the discrepancy.",
+    "Checking source and movement records.",
+    "Routing a controlled correction.",
+    "Fabricating a transaction so physical and recorded counts agree."
+  ],
+  "correct": 3,
+  "rationale": "Fabricating a transaction so physical and recorded counts agree.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

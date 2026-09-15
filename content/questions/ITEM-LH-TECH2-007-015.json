@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A yield-per-area KPI is supplied with a denominator of 20 square meters and output of 10 kilograms. What is the result?",
+  "choices": [
+    "2 kg per square meter.",
+    "10 kg per square meter.",
+    "0.5 kg per square meter.",
+    "200 kg per square meter."
+  ],
+  "correct": 2,
+  "rationale": "0.5 kg per square meter. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

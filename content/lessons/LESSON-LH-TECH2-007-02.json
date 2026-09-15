@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-007-02",
+  "title": "Production KPI Definitions, Denominators and Trend Interpretation",
+  "competencies": [
+    "COMP-CROP-PLAN-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-007-03",
+    "LO-LH-TECH2-007-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-POSTHARVEST-001"
+  ],
+  "content": {
+    "overview": "A KPI is only as meaningful as its definition. Technician II records the eligible population, numerator, denominator, time window and exclusions before calculation, then compares like with like across cycles. One-cycle movement is a signal to investigate, not automatic proof of process improvement or decline.",
+    "vocabulary": [
+      {
+        "term": "Denominator",
+        "definition": "The defined eligible population or opportunity count used as the base of a rate or percentage."
+      },
+      {
+        "term": "KPI definition",
+        "definition": "The controlled statement of numerator, denominator, time window, unit and inclusion/exclusion rules for a metric."
+      },
+      {
+        "term": "Trend",
+        "definition": "A recurring direction or pattern across comparable observations rather than a single isolated value."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use the provided denominator exactly",
+        "body": "If a metric is defined as rooted units divided by eligible starting cuttings, discarded failures cannot be removed from the denominator unless the definition contains a documented exclusion rule.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Compare only compatible definitions and windows",
+        "body": "A rate calculated from different eligibility rules or time windows is not directly comparable even if both are labeled with the same KPI name.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "One cycle is context, not a trend",
+        "body": "Use repeated comparable periods, planned-versus-actual context and known operational changes before treating a metric movement as a stable process signal.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A rooting KPI improves after failed units were excluded from the denominator; the apparent improvement is invalid until calculated under the original definition.",
+      "Harvest throughput drops in one cycle during an equipment outage; record the value and context rather than declaring a long-term decline."
+    ],
+    "commonMistakes": [
+      "Changing the denominator after seeing the result.",
+      "Comparing metrics with different windows or eligibility rules.",
+      "Calling a single cycle a trend.",
+      "Using a KPI result without its definition and source records."
+    ],
+    "practicalApplication": "Calculate three provided KPIs, write the numerator/denominator/time window beside each, then compare multiple cycles and identify which apparent changes are truly comparable.",
+    "summary": "Correct KPI reasoning begins with stable definitions and ends with cautious, context-aware trend interpretation."
+  }
+}

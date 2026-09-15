@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-007-03",
+  "title": "SOP-Based Peer Support, Task Verification and Role Boundaries",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-CROP-PLAN-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-007-05",
+    "LO-LH-TECH2-007-06"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Technician II may help peers execute routine work by demonstrating the approved method, clarifying the current SOP and identifying observable execution differences. Peer support does not create formal supervisory, disciplinary, policy-change or approval authority.",
+    "vocabulary": [
+      {
+        "term": "Peer support",
+        "definition": "Task-level assistance that clarifies or demonstrates approved work without creating formal supervisory authority."
+      },
+      {
+        "term": "Execution difference",
+        "definition": "An observable difference between the current controlled instruction and how a task is being performed."
+      },
+      {
+        "term": "Escalation",
+        "definition": "Transfer of an unresolved decision or authority question to the qualified role defined by the organization."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Anchor coaching to the current controlled instruction",
+        "body": "Demonstrate and explain the current effective SOP or work instruction rather than personal preference. If the procedure seems wrong or incomplete, use the change/escalation process rather than locally rewriting it.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Describe observable differences before assigning blame",
+        "body": "State what step, value, identity or sequence differs from the instruction and verify the applicable version before concluding that a peer made an error.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Peer support stops at authority boundaries",
+        "body": "Technician II may communicate priorities and verify routine execution, but formal discipline, staffing changes, policy approval and controlled-record authorization remain with designated roles.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A peer skips a documented verification step; Technician II points to the effective SOP, demonstrates the step and records/escalates the unresolved deviation if needed.",
+      "A peer asks whether a controlled record can be edited to fix a mismatch; Technician II explains the correction path instead of authorizing the change personally."
+    ],
+    "commonMistakes": [
+      "Teaching personal preference as if it were the SOP.",
+      "Assuming peer support creates disciplinary authority.",
+      "Editing a controlled record for another worker without authorization.",
+      "Correcting execution without verifying the current procedure version."
+    ],
+    "practicalApplication": "Write a peer-coaching note that states the task, applicable SOP/version, observable execution difference, coaching provided, verification result and any escalation required.",
+    "summary": "Peer support strengthens execution when it is evidence-based, SOP-anchored and bounded by the technician’s actual authority."
+  }
+}

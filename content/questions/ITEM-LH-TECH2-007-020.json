@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A missing transaction cannot be reconstructed from reliable evidence. What is the defensible action?",
+  "choices": [
+    "Estimate a plausible transaction.",
+    "Copy a transaction from another lot.",
+    "Erase the downstream record.",
+    "Document the gap and escalate it rather than inventing the missing transaction."
+  ],
+  "correct": 3,
+  "rationale": "Document the gap and escalate it rather than inventing the missing transaction.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
