@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "updated": "2026-09-15",
   "academicPublication": "published",
+  "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
+  "machineCompletionBoundary": "All currently identified Course 1 work that can be completed from repository/public-deployment evidence without fabricating human judgments is complete. Remaining Course 1 closure gates require real technical/editorial/assessment/accessibility/legal review, practical calibration, controlled pilot evidence, formal standard setting, and versioned human approval.",
   "domains": [
     {
       "id": "canonical-content-audit",
       "state": "substantial-needs-final-review",
       "evidence": [
         "docs/learning-hub/tech1/course-001/FULL-AUDIT-2026-09-14.md",
-        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true
     },
@@ -19,23 +22,28 @@
       "id": "evidence-and-source-audit",
       "state": "substantial-needs-final-review",
       "evidence": [
-        "docs/learning-hub/tech1/course-001/EVIDENCE-DOSSIER.md"
+        "docs/learning-hub/tech1/course-001/EVIDENCE-DOSSIER.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true
     },
     {
       "id": "objective-instruction-practice-assessment-alignment",
-      "state": "machine-structured-needs-final-review",
+      "state": "machine-verified-human-review-open",
       "evidence": [
+        "scripts/audit-course1-objective-coverage.mjs",
+        "docs/learning-hub/tech1/course-001/instructor/OBJECTIVE-REMEDIATION-MATRIX.md",
         "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
       ],
-      "humanGateRequired": true
+      "humanGateRequired": true,
+      "note": "The finish audit now fails unless every controlled Course 1 objective has canonical instruction, applied practice evidence, scored assessment coverage referenced by a Course 1 assessment definition, and a complete corrective-coaching/return-to-practice/reassessment remediation section. Human instructional and assessment quality review remains required."
     },
     {
       "id": "learner-activity-quality-review",
       "state": "built-needs-final-review",
       "evidence": [
-        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true
     },
@@ -47,7 +55,8 @@
         "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
         "visuals/COURSE1-VISUAL-CONCEPT-COVERAGE.json",
         "visuals/ASSET-REGISTRY.json",
-        "registry/deployments.json"
+        "registry/deployments.json",
+        "docs/learning-hub/tech1/course-001/accessibility/COURSE1-RENDERED-ACCESSIBILITY-UX-REVIEW.md"
       ],
       "humanGateRequired": true,
       "note": "Verified in DTFSeeds production run 34988643494 (#44) at site SHA 7cffef779ee5ab3fe4249ea9b8428521e703db27. All 18 Course 1 lessons resolve canonical reviewed public SVG teaching visuals, with 19 lesson-level visual placements across 14 unique produced assets. Two lesson mappings are supplied by the canonical visual-concept coverage and asset registry because those lesson JSON files do not contain an explicit image block. Higher-resolution PNG replacement candidates remain quarantined and must not replace the reviewed SVG baseline until factual, copy, authorization-boundary, rendered accessibility, and responsive/manual QA pass."
@@ -56,25 +65,28 @@
       "id": "module-assessment-review",
       "state": "built-human-review-open",
       "evidence": [
-        "docs/learning-hub/tech1/course-001/REVIEW-PACKET.md"
+        "docs/learning-hub/tech1/course-001/REVIEW-PACKET.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true,
-      "note": "84 public module-test items require human assessment review."
+      "note": "84 public module-test items are present and structurally inventoried in the authoritative dynamic review queue; human assessment review remains open."
     },
     {
       "id": "course-final-assessment-review",
       "state": "built-human-review-open",
       "evidence": [
-        "docs/learning-hub/tech1/course-001/REVIEW-PACKET.md"
+        "docs/learning-hub/tech1/course-001/REVIEW-PACKET.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true,
-      "note": "36-item academic course final exists; threshold remains provisional."
+      "note": "The 36-item academic Course 1 final exists and is structurally inventoried in the review queue; the threshold remains provisional pending human review and later standard setting."
     },
     {
       "id": "integrated-practical-validation",
       "state": "built-calibration-open",
       "evidence": [
-        "docs/academy-v2/practicals/PRACTICAL-LH-TECH1-001-WORKFLOW.md"
+        "docs/academy-v2/practicals/PRACTICAL-LH-TECH1-001-WORKFLOW.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true
     },
@@ -82,22 +94,29 @@
       "id": "instructor-and-assessor-package-qa",
       "state": "built-needs-final-review",
       "evidence": [
-        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md",
+        "docs/learning-hub/tech1/course-001/FINAL-HUMAN-REVIEW-WORKLIST.md"
       ],
       "humanGateRequired": true
     },
     {
       "id": "rendered-accessibility-review",
-      "state": "not-started-human-review",
-      "evidence": [],
-      "humanGateRequired": true
+      "state": "review-packet-ready-human-review-open",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/accessibility/COURSE1-RENDERED-ACCESSIBILITY-UX-REVIEW.md",
+        "scripts/test-academy-accessibility.mjs",
+        "scripts/test-academy-web.mjs"
+      ],
+      "humanGateRequired": true,
+      "note": "A WCAG 2.2 Level AA rendered review packet now defines required surface coverage, browser/device/assistive-technology evidence, all 19 canonical visual placements, assessment interaction checks, responsive review and closure rules. Machine checks remain supporting evidence only."
     },
     {
       "id": "responsive-learner-ux-review",
-      "state": "machine-tested-manual-review-open",
+      "state": "machine-tested-review-packet-ready-human-review-open",
       "evidence": [
         "scripts/test-academy-accessibility.mjs",
-        "scripts/test-academy-web.mjs"
+        "scripts/test-academy-web.mjs",
+        "docs/learning-hub/tech1/course-001/accessibility/COURSE1-RENDERED-ACCESSIBILITY-UX-REVIEW.md"
       ],
       "humanGateRequired": true
     },
@@ -133,17 +152,14 @@
       "humanGateRequired": true
     }
   ],
-  "nextMachineActions": [
-    "generate a final review queue for all 18 lessons and 120 public scored knowledge items",
-    "verify every objective has instruction, practice, assessment and remediation evidence",
-    "prepare the rendered accessibility/manual UX review checklist",
-    "compile the visual factual/copy/accessibility review packet while keeping unapproved PNG replacements quarantined"
-  ],
+  "nextMachineActions": [],
   "nextHumanActions": [
+    "complete the authoritative 166-task current-baseline review queue using real versioned review records; the queue expands automatically if course objects are added",
     "technical/curriculum review",
     "assessment review",
-    "rendered visual/accessibility review",
+    "rendered WCAG 2.2 AA visual/accessibility review",
     "responsive/manual learner UX review",
+    "legal/compliance review",
     "practical calibration and form-equivalence study",
     "controlled learner/item pilot",
     "formal standard setting",
