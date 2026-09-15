@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-006-M01-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-TECH2-006-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What does a downstream lot ID do to source genealogy?",
+  "choices": [
+    "It erases the source.",
+    "It extends the chain while source identity remains retrievable.",
+    "It makes traceability unnecessary.",
+    "It authorizes release."
+  ],
+  "correct": 1,
+  "rationale": "It extends the chain while source identity remains retrievable.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}

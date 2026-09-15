@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-006-02",
+  "title": "Drying Trends, Product Measurements and Spatial Process Interpretation",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-006-02",
+    "LO-LH-TECH2-006-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "content": {
+    "overview": "Drying is a time- and position-dependent process. Room temperature/RH, airflow, loading, flower size and rack position influence drying, but room conditions do not directly substitute for representative product measurements. Moisture content and water activity answer different questions and should not be treated as interchangeable.",
+    "vocabulary": [
+      {
+        "term": "Water activity",
+        "definition": "A thermodynamic measure related to water availability for microbial growth and chemical reactions."
+      },
+      {
+        "term": "Moisture content",
+        "definition": "The amount or fraction of water contained in material."
+      },
+      {
+        "term": "Spatial gradient",
+        "definition": "A repeatable difference in product/process condition by rack, position, room zone or other mapped location."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Room setpoints do not prove product state",
+        "body": "Room temperature and RH describe the surrounding environment; they do not prove that every product location has the same internal condition or water activity.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Water activity is not room relative humidity",
+        "body": "Water activity is a product measurement with different meaning from room RH. Never substitute the room RH display for product water-activity evidence.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      },
+      {
+        "title": "Representative position matters",
+        "body": "Compare predefined rack/lot positions and repeated time points when investigating uniformity. One convenient sample cannot establish whole-lot condition.",
+        "references": [
+          "REF-POSTHARVEST-DRY-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Room RH stayed stable, but lower rack positions show different product measurements; investigate airflow/loading/position before calling the lot uniform.",
+      "Two samples have similar moisture content but different water activity, showing why the measurements cannot be substituted for each other."
+    ],
+    "commonMistakes": [
+      "Using room RH as product water activity.",
+      "Using one sample to represent a large load.",
+      "Treating drying as a universal fixed-day countdown.",
+      "Assuming fastest drying is automatically the best quality outcome."
+    ],
+    "practicalApplication": "Plot room conditions and representative product measurements by rack position and time; mark where spatial or temporal divergence begins.",
+    "summary": "Postharvest trend interpretation combines environmental history with representative product measurements and location context."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-006-04",
+  "title": "Controlled Deviation Review, QA Boundaries and Disposition Handoff",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-006-04",
+    "LO-LH-TECH2-006-05",
+    "LO-LH-TECH2-006-06"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "content": {
+    "overview": "A strong deviation investigation preserves the procedure/version that governed the work, separates planned versus actual execution, states what is known and unknown, and hands the evidence to the authorized disposition role. Technician II can investigate and recommend verification without silently changing history or making independent release decisions.",
+    "vocabulary": [
+      {
+        "term": "Governing version",
+        "definition": "The controlled procedure version effective for the work at the time it occurred."
+      },
+      {
+        "term": "Planned versus actual",
+        "definition": "A preserved comparison between the authorized process and the execution/events that actually occurred."
+      },
+      {
+        "term": "Disposition",
+        "definition": "The authorized decision governing release, rework, hold, destruction or another final product status."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use the version that governed the event",
+        "body": "Investigations must be able to retrieve the effective SOP/work instruction that applied at the time rather than judging past work only against a later revision.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Do not repair history by overwriting it",
+        "body": "Corrections preserve original entries and explain the change. Planned values, actual values, deviations and later verification remain distinct.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Investigation evidence supports but does not replace disposition authority",
+        "body": "The technician can summarize risk, scope and verification needs while the authorized QA/management role makes product release or disposition decisions.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "The current SOP differs from the version active during the drying event; the investigation uses the historical effective version and documents the later change separately.",
+      "Evidence narrows the affected scope to two lots, but release remains pending; the technician hands off the genealogy, measurements and unresolved disposition question."
+    ],
+    "commonMistakes": [
+      "Using the newest SOP to rewrite historical execution.",
+      "Overwriting planned values with actual values.",
+      "Releasing material because the technician believes risk is low.",
+      "Hiding contrary measurements from QA."
+    ],
+    "practicalApplication": "Create a QA-ready deviation package with governing procedure/version, facts, timeline, genealogy, affected scope, measurements, hypotheses, completed authorized actions and unresolved disposition questions.",
+    "summary": "Controlled deviation work preserves historical truth and provides decision-ready evidence without exceeding release/disposition authority."
+  }
+}

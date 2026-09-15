@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-006-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-TECH2-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Conflicting product observations are found within the same lot. What should the investigator do?",
+  "choices": [
+    "Delete the conflicting values.",
+    "Average them and discard location information.",
+    "Preserve the conflicting observations and map their positions instead of selecting only the values that support one theory.",
+    "Declare one observer wrong without verification."
+  ],
+  "correct": 2,
+  "rationale": "Preserve the conflicting observations and map their positions instead of selecting only the values that support one theory.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

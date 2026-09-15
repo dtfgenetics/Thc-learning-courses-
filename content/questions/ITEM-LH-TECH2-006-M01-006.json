@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-006-M01-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-006-06",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Who makes the final release/disposition decision?",
+  "choices": [
+    "Any technician who investigated it.",
+    "The authorized role defined by the quality/facility system, not Technician II by default.",
+    "The person who first observed the deviation.",
+    "Whoever entered the room data."
+  ],
+  "correct": 1,
+  "rationale": "The authorized role defined by the quality/facility system, not Technician II by default.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
