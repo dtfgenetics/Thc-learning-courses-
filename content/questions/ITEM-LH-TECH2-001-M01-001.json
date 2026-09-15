@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-001-M01-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-TECH2-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A feed sheet matches the target recipe, but plants show a pattern consistent with uptake stress. What should the technician conclude?",
+  "choices": [
+    "Correct formulation does not prove correct uptake; root-zone, water, environment and plant-health evidence still require evaluation.",
+    "Nutrient causes are impossible.",
+    "The recipe must be changed immediately.",
+    "The symptom is definitely genetic."
+  ],
+  "correct": 0,
+  "rationale": "Nutrients may be present while root-zone or environmental conditions limit uptake; diagnosis must include system context.",
+  "references": [
+    "REF-NUTRITION-001",
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ]
+}

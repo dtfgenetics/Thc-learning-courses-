@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-001-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician sees pale upper leaves and writes “iron deficiency confirmed” before checking any other evidence. What is the best correction to the workup?",
+  "choices": [
+    "Record the pale upper leaves as an observation and keep iron deficiency as one hypothesis pending discriminating evidence.",
+    "Immediately increase iron because the symptom name is specific.",
+    "Delete older normal observations so the record is consistent.",
+    "Treat the feed chart as confirmation of the plant cause."
+  ],
+  "correct": 0,
+  "rationale": "A visible symptom is evidence, not proof of one cause; the record should preserve observation separately from hypothesis.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ]
+}
