@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-004-04",
+  "title": "Containment, Treatment Authority, Escalation and IPM Handoff",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-004-03",
+    "LO-LH-TECH2-004-04",
+    "LO-LH-TECH2-004-05",
+    "LO-LH-TECH2-004-06"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-IPM-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Technician II can interpret trends and verify outcomes without gaining independent pesticide or regulated-treatment authority. Strong performance preserves quarantine and sanitation controls, identifies when the evidence exceeds role limits, and hands off a clear affected scope, trend, intervention history and next verification need.",
+    "vocabulary": [
+      {
+        "term": "Treatment authority",
+        "definition": "Role-specific authorization to select, mix, apply or direct a control under applicable law, label and facility procedures."
+      },
+      {
+        "term": "Quarantine boundary",
+        "definition": "Defined control limiting movement from suspect or affected material/areas into clean production."
+      },
+      {
+        "term": "Escalation packet",
+        "definition": "Reconstructable evidence supplied to the authorized role for a higher-consequence decision."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Evidence does not create authorization",
+        "body": "A strong diagnosis or trend does not by itself authorize pesticide selection, mixing, application or another regulated treatment. Product legality, label requirements and facility authorization remain separate controls.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Do not break containment to collect convenience data",
+        "body": "Sampling and follow-up must preserve quarantine, sanitation and clean-to-dirty workflow boundaries. If a needed action conflicts with containment, escalate the method rather than bypassing the boundary.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Handoff should preserve both confidence and uncertainty",
+        "body": "State affected scope, sampling quality, trend, intervention history, outcome evidence, unresolved alternatives, containment status and the next decision required. Never rewrite prior observations to make the case look cleaner.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Trend evidence suggests failure of an authorized control, but a new pesticide is not selected by the technician; the case is escalated with the measured outcome and next-round recommendation.",
+      "A suspect propagation batch remains quarantined while confirmation is pending even though adjacent clean plants look normal."
+    ],
+    "commonMistakes": [
+      "Treating diagnosis competence as applicator authority.",
+      "Moving suspect material to improve access for scouting.",
+      "Omitting negative or conflicting findings from the handoff."
+    ],
+    "practicalApplication": "Produce an IPM follow-up report with sampling quality, annotated map, trend classification, intervention history, outcome evidence, biosecurity status, authority boundary, escalation trigger and next-round plan.",
+    "summary": "Advanced IPM competence means defensible evidence, intact containment and clear escalation—not unauthorized treatment."
+  }
+}

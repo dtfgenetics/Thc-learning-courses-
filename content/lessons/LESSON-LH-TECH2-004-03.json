@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-004-03",
+  "title": "Intervention Follow-Up, Outcome Evidence and Confounding",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-004-02",
+    "LO-LH-TECH2-004-03",
+    "LO-LH-TECH2-004-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-IPM-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "An intervention is not successful because it was completed. Follow-up compares comparable pre/post evidence, expected response timing, new spread, incidence, severity and relevant confounders. Where evidence is incomplete, the correct conclusion may be unresolved rather than success or failure.",
+    "vocabulary": [
+      {
+        "term": "Baseline",
+        "definition": "Pre-intervention observation set used for a defensible comparison."
+      },
+      {
+        "term": "Confounder",
+        "definition": "A changing factor that can distort attribution of an observed outcome to the intervention."
+      },
+      {
+        "term": "Outcome measure",
+        "definition": "Defined evidence used to judge whether the intended response occurred."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Define what improvement would look like",
+        "body": "Before evaluating response, identify the intended measurable outcome: reduced new detections, lower incidence, lower severity, reduced trap counts, constrained spread, or another authorized program metric.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Use repeated comparable rounds",
+        "body": "One clean leaf or one low trap is not control evidence when the multi-round trend disagrees. Evaluate enough comparable locations and rounds to support the scope of the conclusion.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Document confounding instead of forcing attribution",
+        "body": "Sanitation changes, environmental corrections, crop removal, altered sampling effort or overlapping controls can affect the apparent outcome. Record them and limit causal language to what the evidence supports.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Trap counts fall 60%, but half the traps were removed; the apparent improvement cannot be interpreted without correcting for sampling effort.",
+      "Incidence falls after an authorized biological release, while affected crop is also removed and humidity is corrected; report improvement but do not attribute the whole effect to one intervention without evidence."
+    ],
+    "commonMistakes": [
+      "Calling control success from one observation.",
+      "Ignoring simultaneous environmental or sanitation changes.",
+      "Moving the follow-up date until the numbers look better."
+    ],
+    "practicalApplication": "For an intervention record, define baseline, expected outcome, follow-up schedule, comparable measures, confounders and the criteria for continue/hold/escalate review.",
+    "summary": "Treatment follow-up measures outcomes against a comparable baseline and makes uncertainty visible."
+  }
+}
