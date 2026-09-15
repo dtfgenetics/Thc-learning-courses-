@@ -40,15 +40,18 @@ for (const [prefix, count] of expectedPools) {
   if (actual !== count) throw new Error(`${prefix} expected ${count} item(s), got ${actual}`);
 }
 
-const eligible = run([
+const requirementsMet = run([
   'scripts/evaluate-credential-eligibility.mjs',
   '--input=tests/fixtures/tech2-eligibility-pass.json',
   '--credential=CRED-CULT-TECH-II-001'
 ]);
-if (eligible.status !== 0) throw new Error(`Passing Technician II evidence was rejected.\n${eligible.stdout}\n${eligible.stderr}`);
-const eligibleResult = JSON.parse(eligible.stdout);
-if (!eligibleResult.eligible) throw new Error('Passing Technician II fixture returned eligible=false');
-if (eligibleResult.requirementSummary.writtenAssessments !== 1 || eligibleResult.requirementSummary.performanceAssessments !== 8 || eligibleResult.requirementSummary.portfolioArtifacts !== 9) {
+if (requirementsMet.status !== 2) throw new Error(`Draft Technician II credential must remain release-blocked, got ${requirementsMet.status}.\n${requirementsMet.stdout}\n${requirementsMet.stderr}`);
+const requirementsResult = JSON.parse(requirementsMet.stdout);
+if (!requirementsResult.requirementsSatisfied) throw new Error('Passing Technician II learner evidence should satisfy learner requirements');
+if (requirementsResult.releaseAuthorized || requirementsResult.eligible) throw new Error('Draft Technician II credential must not report release authorization or issuance eligibility');
+if (!requirementsResult.releaseBlockers.some((row) => row.reason === 'credential-definition-not-approved')) throw new Error('Draft Technician II definition did not block release');
+if (!requirementsResult.releaseBlockers.some((row) => row.reason === 'standard-setting-incomplete')) throw new Error('Technician II incomplete standard setting did not block release');
+if (requirementsResult.requirementSummary.courseCompletion !== 1 || requirementsResult.requirementSummary.writtenAssessments !== 1 || requirementsResult.requirementSummary.performanceAssessments !== 8 || requirementsResult.requirementSummary.portfolioArtifacts !== 9) {
   throw new Error('Technician II eligibility requirement summary is incorrect');
 }
 
@@ -59,6 +62,7 @@ const ineligible = run([
 ]);
 if (ineligible.status !== 2) throw new Error(`Failing Technician II evidence should exit 2, got ${ineligible.status}.\n${ineligible.stdout}\n${ineligible.stderr}`);
 const ineligibleResult = JSON.parse(ineligible.stdout);
+if (ineligibleResult.requirementsSatisfied) throw new Error('Failing Technician II evidence incorrectly satisfied learner requirements');
 if (!ineligibleResult.missingRequirements.some((row) => row.reason === 'critical-error')) throw new Error('Critical performance error did not block Technician II eligibility');
 if (!ineligibleResult.missingRequirements.some((row) => row.reason === 'missing-artifact')) throw new Error('Missing portfolio artifact did not block Technician II eligibility');
 
@@ -68,21 +72,22 @@ const issued = run([
   '--input=tests/fixtures/tech2-eligibility-pass.json',
   '--credential=CRED-CULT-TECH-II-001'
 ]);
-if (issued.status !== 0) throw new Error(`Technician II test issuance failed.\n${issued.stdout}\n${issued.stderr}`);
+if (issued.status !== 0) throw new Error(`Technician II synthetic test-record generation failed.\n${issued.stdout}\n${issued.stderr}`);
 const record = JSON.parse(issued.stdout);
-if (record.credentialDefinition !== 'CRED-CULT-TECH-II-001') throw new Error('Issued Technician II record has wrong definition');
-if (record.performanceEvidence.length !== 8 || record.portfolioEvidence.length !== 9) throw new Error('Issued Technician II record did not preserve required performance evidence');
+if (record.status !== 'test-issued') throw new Error('Technician II test issuer must only create explicitly synthetic test-issued records');
+if (record.credentialDefinition !== 'CRED-CULT-TECH-II-001') throw new Error('Issued Technician II test record has wrong definition');
+if (record.performanceEvidence.length !== 8 || record.portfolioEvidence.length !== 9) throw new Error('Issued Technician II test record did not preserve required performance evidence');
 
 const tempPath = path.join(os.tmpdir(), 'thc-tech2-public-projection.json');
 fs.writeFileSync(tempPath, JSON.stringify(record, null, 2));
 const projected = run(['scripts/project-public-verification.mjs', `--input=${tempPath}`]);
-if (projected.status !== 0) throw new Error(`Technician II public projection failed.\n${projected.stdout}\n${projected.stderr}`);
+if (projected.status !== 0) throw new Error(`Technician II test-record public projection failed.\n${projected.stdout}\n${projected.stderr}`);
 const publicResult = JSON.parse(projected.stdout);
-if (publicResult.credential?.id !== 'CRED-CULT-TECH-II-001' || publicResult.credential?.role !== 'ROLE-CULT-TECH-II-001') throw new Error('Public Technician II projection resolved the wrong definition or role');
+if (publicResult.credential?.id !== 'CRED-CULT-TECH-II-001' || publicResult.credential?.role !== 'ROLE-CULT-TECH-II-001') throw new Error('Public Technician II test projection resolved the wrong definition or role');
 for (const forbidden of ['subjectId', 'assessmentEvidence', 'performanceEvidence', 'portfolioEvidence', 'integrityHash']) {
   if (Object.prototype.hasOwnProperty.call(publicResult, forbidden)) throw new Error(`Public Technician II projection leaked ${forbidden}`);
 }
-if (publicResult.evidenceSummary?.performanceAssessments !== 8 || publicResult.evidenceSummary?.portfolioArtifacts !== 9) throw new Error('Public Technician II evidence summary is incomplete');
+if (publicResult.evidenceSummary?.performanceAssessments !== 8 || publicResult.evidenceSummary?.portfolioArtifacts !== 9) throw new Error('Public Technician II test evidence summary is incomplete');
 
 const numericAssessment = { id: 'ASSESS-NUMERIC-CONTRACT', version: '1.0.0' };
 const numericForm = { id: 'FORM-NUMERIC-CONTRACT', integrityHash: 'contract-hash', items: [{ id: 'ITEM-NUMERIC-CONTRACT', version: 1 }] };
@@ -91,4 +96,4 @@ const submitted = submitAttempt(started, [{ itemId: 'ITEM-NUMERIC-CONTRACT', ite
 const scored = scoreAttempt(submitted, [{ id: 'ITEM-NUMERIC-CONTRACT', version: 1, competency: 'COMP-WATER-001', type: 'numeric', correct: 42 }], 80);
 if (!scored.passed || scored.scorePercent !== 100 || scored.items[0].competency !== 'COMP-WATER-001') throw new Error('Numeric scoring/form compatibility contract failed');
 
-console.log('Technician II credential lifecycle contract passed.');
+console.log('Technician II learner-requirement, release-governance, synthetic test-record, and assessment runtime contracts passed.');

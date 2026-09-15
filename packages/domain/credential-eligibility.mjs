@@ -6,8 +6,16 @@ function scorePercent(result) {
 }
 
 function credentialReleaseBlockers(credential) {
-  if (!credential?.governance) return [];
   const blockers = [];
+  if (!credential?.governance) {
+    blockers.push({
+      type: 'credential-release',
+      id: credential?.id ?? null,
+      reason: 'credential-governance-missing',
+      actual: null
+    });
+    return blockers;
+  }
   if (!['approved', 'published'].includes(credential.status)) {
     blockers.push({
       type: 'credential-release',
