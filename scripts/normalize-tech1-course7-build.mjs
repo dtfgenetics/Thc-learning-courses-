@@ -11,7 +11,9 @@ const generatedJson = [
 ];
 
 for (const rel of generatedJson) {
-  const text = fs.readFileSync(path.join(root, rel), 'utf8').replaceAll('REF-WATER-001', 'REF-IRRIGATION-001');
+  const text = fs.readFileSync(path.join(root, rel), 'utf8')
+    .replaceAll('REF-WATER-001', 'REF-IRRIGATION-001')
+    .replaceAll('REF-ROOTZONE-001', 'REF-ROOTZONE-NUTRIENT-002');
   fs.writeFileSync(path.join(root, rel), text);
 }
 
