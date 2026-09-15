@@ -1,0 +1,93 @@
+{
+  "id": "CROSSWALK-LH-TECH1-003-PRACTICAL-A",
+  "version": "1.0.0",
+  "status": "development",
+  "courseId": "COURSE-LH-TECH1-003",
+  "practicalId": "PRACTICAL-TECH1-A",
+  "practicalDocument": "docs/academy-v2/practicals/PRACTICAL-TECH1-A-SAFE-ROOM-ENTRY-CROP-INSPECTION.md",
+  "purpose": "Development crosswalk showing where Course 3 environmental, lighting, sensor-verification and record objectives can be observed in Practical A. Mapping coverage does not constitute practical validation, evaluator calibration, inter-rater evidence, standard setting or release approval.",
+  "validationBoundary": {
+    "practicalValidated": false,
+    "humanApprovalImplied": false,
+    "pilotEvidenceImplied": false,
+    "interRaterEvidenceImplied": false
+  },
+  "objectiveMappings": [
+    {
+      "objectiveId": "LO-LH-TECH1-003-01",
+      "statement": "Read and record routine temperature, relative humidity and VPD information with correct units, location, time and sensor context while keeping facility targets separate from observed values.",
+      "practicalTasks": [
+        "Read environmental values and distinguish a normal reading, a questionable sensor reading and a condition requiring follow-up.",
+        "Complete the crop-inspection record and shift handoff."
+      ],
+      "scoringCategories": ["environmental interpretation", "documentation/traceability"],
+      "expectedEvidence": ["environmental interpretation", "completed inspection record"],
+      "deliverables": ["environmental interpretation note", "shift handoff"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-003-02",
+      "statement": "Read and document photoperiod, PPFD and basic canopy light-map information using consistent measurement position and orientation without treating one point as representative of an entire canopy.",
+      "practicalTasks": [
+        "When assigned, perform a repeatable canopy light verification using the supplied grid, measurement height and sensor orientation; preserve all PPFD points instead of substituting one reading for the canopy.",
+        "Record supplied photoperiod information and the PPFD verification with units, location, time, instrument/context and any unresolved spatial difference; compare against the supplied scenario target or limit without independently redesigning lighting strategy."
+      ],
+      "scoringCategories": ["environmental interpretation", "documentation/traceability"],
+      "expectedEvidence": [
+        "completed canopy light-verification grid or simulated measurement record",
+        "PPFD units, measurement location/height/orientation and instrument/context",
+        "photoperiod record and comparison with the supplied scenario target or limit"
+      ],
+      "deliverables": ["canopy light-verification grid or supplied simulation record", "environmental interpretation note"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-003-03",
+      "statement": "Evaluate whether an environmental reading is representative, suspect or incomplete by checking sensor placement, agreement, calibration status, logging context and crop location.",
+      "practicalTasks": [
+        "Read environmental values and distinguish a normal reading, a questionable sensor reading and a condition requiring follow-up.",
+        "Use the supplied sensor placement, comparison readings, calibration/verification status, logging context and crop location to judge whether a selected reading is representative, suspect or incomplete."
+      ],
+      "scoringCategories": ["environmental interpretation", "observation quality"],
+      "expectedEvidence": [
+        "environmental interpretation",
+        "sensor representativeness decision using placement, comparison, verification/calibration and logging context"
+      ],
+      "deliverables": ["environmental interpretation note", "sensor verification/readiness note"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-003-04",
+      "statement": "Perform permitted operator-level sensor and environmental-equipment readiness checks and escalate faults, alarms or conditions that require unauthorized repair or control redesign.",
+      "practicalTasks": [
+        "Perform only the supplied operator-level sensor/equipment readiness checks and escalate any fault, alarm or condition that would require unauthorized repair, calibration or control redesign."
+      ],
+      "scoringCategories": ["environmental interpretation", "handoff/escalation"],
+      "expectedEvidence": ["operator-level readiness check and escalation decision where applicable", "escalation choices"],
+      "deliverables": ["sensor verification/readiness note", "shift handoff"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-003-05",
+      "statement": "Create reconstructable environmental and light records that distinguish target, measured value, alarm, verification action, unresolved condition and escalation status.",
+      "practicalTasks": [
+        "Record supplied photoperiod information and the PPFD verification with units, location, time, instrument/context and any unresolved spatial difference; compare against the supplied scenario target or limit without independently redesigning lighting strategy.",
+        "Complete the crop-inspection record and shift handoff."
+      ],
+      "scoringCategories": ["documentation/traceability", "handoff/escalation"],
+      "expectedEvidence": [
+        "photoperiod record and comparison with the supplied scenario target or limit",
+        "completed inspection record",
+        "final verbal or written handoff"
+      ],
+      "deliverables": ["environmental interpretation note", "canopy light-verification grid or supplied simulation record", "shift handoff"]
+    }
+  ],
+  "courseSpecificReadiness": {
+    "objectiveCoverageMapped": true,
+    "lessonContentBuilt": true,
+    "assessmentDevelopmentBankBuilt": true,
+    "practicalMappingBuilt": true,
+    "learnerAssetLayerBuilt": false,
+    "humanTechnicalReview": "not-started",
+    "renderedAccessibilityReview": "not-started",
+    "practicalValidation": "not-started",
+    "controlledPilotEvidence": "not-started"
+  }
+}
