@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-008-08",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A candidate earns 92 on the capstone but makes an unauthorized product-release decision. What is the correct result?",
+  "choices": [
+    "Pass because the numeric score is high enough.",
+    "Subtract a few points but keep the pass.",
+    "Ignore the decision because it occurred late in the shift.",
+    "The capstone does not pass because a defined critical error is non-compensatory."
+  ],
+  "correct": 3,
+  "rationale": "The capstone requires both the minimum score and zero critical errors; unauthorized disposition is explicitly a blocking critical error.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001"
+  ]
+}

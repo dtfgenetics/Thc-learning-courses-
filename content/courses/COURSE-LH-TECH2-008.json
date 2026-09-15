@@ -1,7 +1,7 @@
 {
   "id": "COURSE-LH-TECH2-008",
   "title": "Integrated Technician II Simulation Lab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
@@ -20,41 +20,60 @@
   ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.",
   "assessmentPolicy": "This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.",
-  "description": "Integrates Technician II diagnostic reasoning, sensor/equipment verification, fertigation/root-zone troubleshooting, IPM follow-up, production reconciliation, postharvest deviation response, and shift coordination through supervised performance evidence.",
+  "description": "Integrates the seven Technician II performance practicals and Senior Technician Diagnostic Shift capstone through supervised, evidence-based performance preparation. Readiness knowledge checks are formative only; completion requires each mapped practical and the capstone to independently meet its performance standard with no critical errors.",
   "modules": [
     "MOD-ENV-ADV-001",
     "MOD-IRRIGATION-ADV-001",
     "MOD-IPM-ADV-001",
     "MOD-POSTHARVEST-QA-001",
-    "MOD-PRO-QA-001"
+    "MOD-PRO-QA-001",
+    "MOD-PRO-SOP-001",
+    "MOD-CROP-PLAN-001",
+    "MOD-LH-TECH2-008-LAB"
   ],
   "competencies": [
     "COMP-ENV-ADV-001",
     "COMP-IRRIGATION-ADV-001",
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-NUTRIENT-DIAG-001",
     "COMP-IPM-ADV-001",
+    "COMP-PROP-001",
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-POSTHARVEST-PROCESS-001",
     "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-SOP-001",
     "COMP-PRO-QA-001",
-    "COMP-CROP-PLAN-001"
+    "COMP-CROP-PLAN-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001"
   ],
   "finalAssessment": null,
   "learningOutcomes": [
-    "Integrate evidence across crop, environment, root zone, plant health, postharvest, and records.",
-    "Choose safe next actions while identifying actions that require escalation or additional evidence.",
-    "Produce defensible performance artifacts and a senior-technician shift summary without unresolved critical errors."
+    "Prioritize competing Technician II deviations by immediate safety, containment, data-validity, crop or lot consequence, timing dependency and assigned authority before selecting a next action.",
+    "Integrate crop pattern, environmental context and measurement quality into a ranked diagnostic workup that separates verified observations, hypotheses and required next checks.",
+    "Verify sensor and equipment evidence before acting, classify safe operator checks versus authorized maintenance escalation, and reject major corrective action based on data known to be invalid.",
+    "Integrate approved fertigation execution, water and measurement verification, irrigation delivery, root-zone trend and crop context into a bounded troubleshooting recommendation.",
+    "Integrate IPM trend evidence with propagation and canopy performance while protecting biosecurity, treatment-authority limits, cultivar or stage context and uncertainty.",
+    "Investigate postharvest deviations by preserving product measurements, lot genealogy, affected-scope evidence, holds and product-disposition authority boundaries.",
+    "Reconcile traceability, planned-versus-actual records and KPI definitions while providing SOP-based peer support and a priority-ranked shift handoff without unauthorized record changes.",
+    "Assemble a reconstructable Senior Technician Diagnostic Shift evidence packet that supports evaluator scoring, remediation decisions and supervisor handoff without unresolved critical errors."
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-II-001",
-    "maturity": "course-shell-draft",
+    "maturity": "integrated-lab-draft",
     "developmentDependencies": [
-      "MOD-ENV-ADV-001",
-      "MOD-IRRIGATION-ADV-001",
-      "MOD-IPM-ADV-001",
-      "MOD-POSTHARVEST-QA-001",
-      "MOD-PRO-QA-001"
+      "COURSE-LH-TECH2-001",
+      "COURSE-LH-TECH2-002",
+      "COURSE-LH-TECH2-003",
+      "COURSE-LH-TECH2-004",
+      "COURSE-LH-TECH2-005",
+      "COURSE-LH-TECH2-006",
+      "COURSE-LH-TECH2-007"
     ],
     "contentCeiling": null,
     "dedicatedCourseAssessmentRequired": false,
-    "dedicatedLabModuleRequired": true,
+    "dedicatedLabModuleRequired": false,
     "integratedPerformanceValidationRequired": true,
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
@@ -70,6 +89,29 @@
       "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
       "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION",
       "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT"
-    ]
+    ],
+    "dedicatedLabModule": "MOD-LH-TECH2-008-LAB",
+    "formativeReadinessAssessment": "ASSESS-LH-TECH2-008-M01",
+    "labPlan": "LABPLAN-TECH2-001",
+    "credentialPracticalSetRequired": [
+      "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+      "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+      "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+      "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+      "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+      "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+      "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION"
+    ],
+    "capstoneRequired": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+    "pilotEvidenceRequired": true,
+    "evaluatorCalibrationRequired": true,
+    "standardSettingRequired": true,
+    "candidateEvidenceRetentionPolicyRequired": true,
+    "liveCredentialFormApproved": false,
+    "independentPesticideTreatmentAuthorityConferred": false,
+    "independentProductReleaseAuthorityConferred": false,
+    "independentHighRiskRepairAuthorityConferred": false,
+    "controlledRecordEditAuthorityExpanded": false,
+    "formalSupervisoryAuthorityConferred": false
   }
 }

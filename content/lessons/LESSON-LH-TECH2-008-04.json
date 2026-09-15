@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-008-04",
+  "title": "Senior Technician Diagnostic Shift, Evidence Portfolio and Remediation",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-ENV-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-IPM-ADV-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CROP-PLAN-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-008-01",
+    "LO-LH-TECH2-008-02",
+    "LO-LH-TECH2-008-03",
+    "LO-LH-TECH2-008-04",
+    "LO-LH-TECH2-008-05",
+    "LO-LH-TECH2-008-06",
+    "LO-LH-TECH2-008-07",
+    "LO-LH-TECH2-008-08"
+  ],
+  "estimatedMinutes": 90,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-ASTM-E2659-001"
+  ],
+  "content": {
+    "overview": "The capstone is an integrated shift, not an average of isolated quiz scores. The candidate must prioritize competing deviations, verify data before consequential action, preserve evidence across processes, stay within authority and produce a supervisor-ready report. A failed practical or critical error remains failed evidence; stronger performance elsewhere cannot average it away.",
+    "vocabulary": [
+      {
+        "term": "Evidence packet",
+        "definition": "The attributable set of candidate work products, evaluator observations, scores, critical-error findings, accommodations and handoff records supporting a performance decision."
+      },
+      {
+        "term": "Non-compensatory requirement",
+        "definition": "A completion rule in which one required station or critical-error condition cannot be offset by a higher score elsewhere."
+      },
+      {
+        "term": "Equivalent form",
+        "definition": "A different scenario or station version designed to measure the same competency construct at comparable difficulty and evidence requirements."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Every practical stands on its own",
+        "body": "Each required practical must meet its minimum standard and contain no critical error. The readiness assessment supports preparation but is not credential evidence and cannot replace a practical.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Critical errors are non-compensatory",
+        "body": "Unsafe action, falsification, unauthorized high-risk intervention or release decision, ignored urgent containment, knowingly invalid-data action and other defined station critical errors block the affected evidence regardless of total points.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Evaluator evidence must be reconstructable",
+        "body": "Scoring should point to observed behavior or submitted artifacts, identify the rubric domain, record critical-error decisions and document any accommodation used. Pilot double-scoring and disagreement resolution support later evaluator calibration.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Handoff closes the simulated shift",
+        "body": "The final report ranks unresolved conditions, identifies completed containment or verification, preserves planned-versus-actual history, states next decisions and names the authorized owner. It does not convert Technician II into a formal supervisor.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A candidate earns 92 overall but makes an unauthorized product-release decision; the capstone does not pass because the critical error is non-compensatory.",
+      "A candidate fails Practical C at 76 but scores 95 on Practical G; Course 208 completion remains blocked until Practical C is remediated and passed on an equivalent form."
+    ],
+    "commonMistakes": [
+      "Averaging a failed station into a passing overall score.",
+      "Treating the readiness quiz as credential evidence.",
+      "Retesting with the identical secure scenario after feedback.",
+      "Recording a score without the evaluator evidence that supports it."
+    ],
+    "practicalApplication": "Assemble a mock Senior Technician Diagnostic Shift packet with priority log, station artifacts, evaluator evidence index, accommodation record when applicable, critical-error check, remediation decision and final handoff.",
+    "summary": "The integrated lab is completed through independently sufficient practical evidence, a passing capstone, controlled evaluator evidence and preserved release gates."
+  }
+}
