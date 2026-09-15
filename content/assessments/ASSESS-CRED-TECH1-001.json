@@ -1,0 +1,61 @@
+{
+  "id": "ASSESS-CRED-TECH1-001",
+  "title": "THC Cultivation Technician I Credential Assessment Blueprint",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "credential",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PLANT-BIO-001",
+    "COMP-ENV-VPD-001",
+    "COMP-WATER-001",
+    "COMP-NUTRITION-001",
+    "COMP-ROOTZONE-001",
+    "COMP-IPM-001",
+    "COMP-PROP-001",
+    "COMP-CANOPY-001",
+    "COMP-FLOWER-001",
+    "COMP-POSTHARVEST-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "objectives": [
+    "LO-LH-TECH1-007-01",
+    "LO-LH-TECH1-007-02",
+    "LO-LH-TECH1-007-03",
+    "LO-LH-TECH1-007-04",
+    "LO-LH-TECH1-007-05",
+    "LO-LH-TECH1-007-06"
+  ],
+  "items": [],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "feedbackMode": "none",
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "developmentOnly": true,
+    "operationalUseAuthorized": false,
+    "configuredScoreIsProvisional": true,
+    "blueprintWeightsStatus": "not-finalized",
+    "secureOperationalItemBankRequired": true,
+    "secureOperationalItemBankStatus": "not-built",
+    "secureAssessmentStoreRequired": true,
+    "secureAssessmentStoreStatus": "not-approved",
+    "publicRepositoryItemsMayBeUsedForOperationalCredentialForms": false,
+    "publicDevelopmentItemsAreSecureCredentialEvidence": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotEvidenceRequired": true,
+    "standardSettingRequired": true,
+    "equivalentSecureFormsRequired": true,
+    "releaseApprovalRequired": true,
+    "note": "This public object defines the credential-assessment contract only. It intentionally contains no operational secure exam items or answer keys. Future operational forms must use newly secured material from an approved private assessment store/delivery system after review, pilot evidence and formal standard setting."
+  }
+}
