@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "purpose": "Canonical Google Drive provenance for the deterministic public SVG baseline upgrades used by Course 1 concepts 13 through 18. These SVG masters are separate from the rejected 384x512 PNG review binaries recorded in COURSE1-PNG-QA-13-18.json.",
+  "driveFolderId": "1cRDJn8stRWOKkcmsbjD12qjvt5g031oN",
+  "publicBaselineCommit": "e05a3c4a18152ad747000dfd8308c91b5ec64bab",
+  "assets": [
+    {
+      "conceptId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
+      "registryAssetId": "VIS-LH-TECH1-001-015",
+      "fileName": "equipment-preuse-readiness.svg",
+      "repositoryPath": "apps/web/public/assets/course1/equipment-preuse-readiness.svg",
+      "driveFileId": "1ihw1VG9InlRGdF8v6P8ahfyHWThbKmFq",
+      "sha256": "fd3f2c7137579f2c9b66eaa34ddfc4cd4c551f28dc8fc00e0f03c12b3a3bafcf",
+      "state": "public-svg-baseline"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
+      "registryAssetId": "VIS-LH-TECH1-001-016",
+      "fileName": "operator-vs-maintenance-boundary.svg",
+      "repositoryPath": "apps/web/public/assets/course1/operator-vs-maintenance-boundary.svg",
+      "driveFileId": "1YHIWOkP5Bw9Lb78436E8UWxT6LFtJ3BD",
+      "sha256": "6b772d65683026d466655922fe03eed7681b5777bbcea8a91416ca89b0eece37",
+      "state": "public-svg-baseline"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
+      "registryAssetId": "VIS-LH-TECH1-001-017",
+      "fileName": "fault-context-escalation.svg",
+      "repositoryPath": "apps/web/public/assets/course1/fault-context-escalation.svg",
+      "driveFileId": "1bHRHUNPvcZcdRembpjoY8Obe7UkzyKiz",
+      "sha256": "07083afaa11030f377c8ec26942eee257f0be3911aec1c6821f8b9c913389206",
+      "state": "public-svg-baseline"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
+      "registryAssetId": "VIS-LH-TECH1-001-018",
+      "fileName": "record-correction-controls.svg",
+      "repositoryPath": "apps/web/public/assets/course1/record-correction-controls.svg",
+      "driveFileId": "1Uw2XkpVOq3fLLZan5v57rizyEKbWdXXo",
+      "sha256": "a8fcf5217eb9ff672620d9653ff4f414014b9b8bb9e6abcc07389c34c8e87219",
+      "state": "public-svg-baseline"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
+      "registryAssetId": "VIS-LH-TECH1-001-019",
+      "fileName": "shift-handoff-control.svg",
+      "repositoryPath": "apps/web/public/assets/course1/shift-handoff-control.svg",
+      "driveFileId": "1PIVm02gpDnyu3vcZa44xasc4ET9NdsMZ",
+      "sha256": "447ea0fc963d11cb76cd58ef8bb2f96a36c28c63f231451c95e23e2d0c80ad01",
+      "state": "public-svg-baseline"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
+      "registryAssetId": "VIS-LH-TECH1-001-020",
+      "fileName": "integrated-technician-workflow.svg",
+      "repositoryPath": "apps/web/public/assets/course1/integrated-technician-workflow.svg",
+      "driveFileId": "18ec-cfGZQjqkmWNfxBCKSkevOQW470OY",
+      "sha256": "df0c099179cd3f7674af9a616a33a1d453bafd2a2c4b17cb9cef0e22072a3c10",
+      "state": "public-svg-baseline"
+    }
+  ]
+}
