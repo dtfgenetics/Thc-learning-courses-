@@ -10,13 +10,15 @@ on:
       - content/learning-objectives/**
       - content/assessments/**
       - content/questions/**
+      - content/public-releases/PUBLIC-RELEASE-LH-TECH1-00[2-7].json
       - registry/technician-i-performance-plan.json
       - registry/technician-i-integrated-lab-plan.json
       - docs/LEARNING-HUB-COURSE-PACKAGE-CONTRACT.md
       - scripts/audit-tech1-course-package-source.mjs
+      - scripts/audit-tech1-public-releases.mjs
       - .github/workflows/tech1-course-package-contract.yml
   push:
-    branches: [dev, staging, main, 'feat/tech1-*', 'chore/advance-active-work-*']
+    branches: [dev, staging, main, 'feat/tech1-*', 'feat/public-tech1-*', 'chore/advance-active-work-*']
     paths:
       - content/courses/COURSE-LH-TECH1-00[2-7].json
       - content/modules/**
@@ -24,10 +26,12 @@ on:
       - content/learning-objectives/**
       - content/assessments/**
       - content/questions/**
+      - content/public-releases/PUBLIC-RELEASE-LH-TECH1-00[2-7].json
       - registry/technician-i-performance-plan.json
       - registry/technician-i-integrated-lab-plan.json
       - docs/LEARNING-HUB-COURSE-PACKAGE-CONTRACT.md
       - scripts/audit-tech1-course-package-source.mjs
+      - scripts/audit-tech1-public-releases.mjs
       - .github/workflows/tech1-course-package-contract.yml
 
 permissions:
@@ -43,3 +47,5 @@ jobs:
           node-version: 20
       - name: Audit Technician I Courses 2–7 source packages
         run: node scripts/audit-tech1-course-package-source.mjs
+      - name: Audit Technician I Courses 2–7 public academic release boundary
+        run: node scripts/audit-tech1-public-releases.mjs

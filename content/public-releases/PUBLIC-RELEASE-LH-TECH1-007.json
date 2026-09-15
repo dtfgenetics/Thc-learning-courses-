@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "PUBLIC-RELEASE-LH-TECH1-007",
+  "courseId": "COURSE-LH-TECH1-007",
+  "title": "Integrated Cultivation Technician Practice Lab",
+  "publicationState": "published",
+  "publicScope": {
+    "modules": ["MOD-LH-TECH1-007-LAB"],
+    "assessments": ["ASSESS-LH-TECH1-007-M01"],
+    "publicCourseItems": 12,
+    "practicalIds": ["PRACTICAL-TECH1-A", "PRACTICAL-TECH1-B", "PRACTICAL-TECH1-C", "PRACTICAL-TECH1-D", "PRACTICAL-TECH1-E", "PRACTICAL-TECH1-F"],
+    "capstoneId": "CAPSTONE-TECH1-SHIFT-001",
+    "studentSources": [
+      "content/lessons/LESSON-LH-TECH1-007-01.json",
+      "content/lessons/LESSON-LH-TECH1-007-02.json",
+      "content/lessons/LESSON-LH-TECH1-007-03.json",
+      "content/lessons/LESSON-LH-TECH1-007-04.json"
+    ]
+  },
+  "publicationBoundary": {"learnerPackage":"released","courseTests":"released-for-learning","credentialExam":"restricted","credentialDecision":"restricted-governance","secureCredentialForms":"restricted"},
+  "excludedFromPublicRelease": ["secure credential forms and operational answer keys","credential-purpose exam items and answer data","human review records and reviewer queues","pilot participant records and psychometric evidence","assessor calibration records","credential issuance secrets and signing material"],
+  "boundary": "This manifest authorizes public training and practice-lab preparation materials only. Practical and capstone materials remain development/training evidence and do not become secure credential forms or validated certification evidence by being public."
+}
