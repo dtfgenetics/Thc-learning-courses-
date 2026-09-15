@@ -1,14 +1,14 @@
-# Course 2 Visual Production Status
+# Course 2 Visual & Practice Asset Production Status
 
 **Course:** `COURSE-LH-TECH1-002 — Plant Observation, Growth Stages & Crop Records`
 
 ## Canonical learner delivery
 
-Course 2 learner visuals are responsive, accessible SVG files published from the canonical repository path:
+Course 2 learner assets are responsive, accessible SVG files published from:
 
 `apps/web/public/assets/course2/`
 
-The repository/public web asset is the learner-delivery source of truth. Google Drive is a controlled production/reference mirror and does not replace the canonical repo asset.
+The repository/public web asset is the learner-delivery source of truth. Google Drive is a controlled production/reference mirror.
 
 ## Controlled Drive mirror
 
@@ -17,82 +17,58 @@ Folder: **Course 2 — Visual Learning Boards**
 - folder ID: `1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 - folder URL: `https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 
-Verified mirrored files:
+All seven produced Course 2 learner assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
 
-- `VIS-LH-TECH1-002-001` → Drive file `1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be`
-- `VIS-LH-TECH1-002-002` → Drive file `1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza`
-- `VIS-LH-TECH1-002-003` → Drive file `1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq`
-- `VIS-LH-TECH1-002-004` → Drive file `1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7`
-- `VIS-LH-TECH1-002-005` → Drive file `1R64EMjV4jtRsGJD3JWptXOF_murzcLU8`
+## Embedded teaching visuals
 
-All five produced Course 2 visuals are now mirrored and their Drive IDs are recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
+1. `VIS-LH-TECH1-002-001` — Representative crop-walk route and sample context — Lesson 1
+2. `VIS-LH-TECH1-002-002` — Morphology-based developmental staging — Lesson 2
+3. `VIS-LH-TECH1-002-003` — Diagnostic photo evidence set — Lesson 4
+4. `VIS-LH-TECH1-002-004` — Spatial pattern comparison — Lesson 1
+5. `VIS-LH-TECH1-002-005` — Reconstructable crop-record and shift-handoff chain — Lesson 4
 
-## Produced learner visuals
+## Downloadable practice assets
 
-### Batch 1
-
-1. `VIS-LH-TECH1-002-001` — **Representative crop-walk route and sample context**
+6. `VIS-LH-TECH1-002-006` — **Crop-walk room-map practice worksheet**
    - lesson: `LESSON-LH-TECH1-002-01`
-   - purpose: representative route, spatial coverage, denominator and room-level inference boundaries
-   - public path: `/assets/course2/representative-crop-walk-route.svg`
-2. `VIS-LH-TECH1-002-002` — **Morphology-based developmental staging**
-   - lesson: `LESSON-LH-TECH1-002-02`
-   - purpose: separate observable developmental morphology from calendar-only staging
-   - public path: `/assets/course2/morphology-stage-evidence.svg`
-3. `VIS-LH-TECH1-002-003` — **Diagnostic photo evidence set**
+   - public path: `/assets/course2/crop-walk-room-map-practice.svg`
+   - Drive file: `19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX`
+   - practice: route design, observation points, denominator, spatial pattern, direct observation, context, uncertainty, escalation
+7. `VIS-LH-TECH1-002-007` — **Observation record and handoff practice worksheet**
    - lesson: `LESSON-LH-TECH1-002-04`
-   - purpose: context view, whole-plant view, close detail, image identity and color-fidelity principles
-   - public path: `/assets/course2/diagnostic-photo-evidence-set.svg`
-
-### Batch 2
-
-4. `VIS-LH-TECH1-002-004` — **Spatial pattern comparison**
-   - lesson: `LESSON-LH-TECH1-002-01`
-   - purpose: distinguish isolated, edge-associated, zonal/clustered and widespread distributions while keeping pattern separate from causal interpretation
-   - public path: `/assets/course2/spatial-pattern-comparison.svg`
-5. `VIS-LH-TECH1-002-005` — **Reconstructable crop-record and shift-handoff chain**
-   - lesson: `LESSON-LH-TECH1-002-04`
-   - purpose: connect observation, record, action/escalation, handoff and recheck so another qualified person can reconstruct what happened and what remains open
-   - public path: `/assets/course2/reconstructable-handoff-chain.svg`
+   - public path: `/assets/course2/observation-handoff-practice.svg`
+   - Drive file: `15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA`
+   - practice: identity/timing, direct evidence, photo checks, context, action, uncertainty, escalation, next check, cross-check and correction history
 
 ## Delivery contract
 
-`visuals/COURSE2-ASSET-REGISTRY.json` is the Course 2 learner-visual registry. The registry is intentionally expandable and has no artificial asset-count ceiling.
+`scripts/test-course2-visual-registry.mjs` now validates both asset delivery types:
 
-`scripts/test-course2-visual-registry.mjs` requires at least five produced Course 2 visuals and enforces that produced assets:
+- `embedded-visual` assets must appear as canonical lesson image blocks with matching public paths, meaningful alt text and captions;
+- `downloadable-practice` assets must appear as lesson resource blocks with matching learner download paths and learner-facing descriptions/labels;
+- all produced assets must exist in the public Course 2 directory;
+- all SVGs must include `<title>`, `<desc>` and `viewBox` accessibility/responsive metadata;
+- all produced assets must have canonical raw GitHub download URLs;
+- all produced assets must be mirrored to Drive with file ID and URL metadata;
+- no produced asset may remain orphaned from its canonical lesson.
 
-- use stable Course 2 visual IDs;
-- exist in the canonical public asset directory;
-- include SVG `<title>` and `<desc>` accessibility metadata;
-- include a `viewBox` for responsive rendering;
-- have canonical raw GitHub download URLs;
-- are mapped into canonical Course 2 lesson image blocks;
-- use lesson image paths that match the registry;
-- include meaningful learner-facing alt text and captions;
-- are not left as orphaned produced assets;
-- explicitly track Drive mirror state; and
-- include a Drive file ID/URL when marked `mirrored`.
+The contract is imported by `scripts/test-tech1-course2.mjs` and runs through the normal deterministic Technician I CI path.
 
-The visual contract is imported by `scripts/test-tech1-course2.mjs`, so the normal Course 2 deterministic CI path validates the visual layer automatically.
+## Scope controls
 
-## Source and scope controls
+These assets teach evidence collection and record quality. They do not replace facility procedures, diagnostic authority, jurisdiction-specific requirements or human technical review.
 
-Visuals are teaching diagrams. They do not replace canonical lesson text, facility procedures or authoritative sources.
+- sample routes and sizes remain facility/purpose-specific;
+- spatial pattern describes distribution and does not prove cause;
+- developmental timing is context, not a universal cultivar rule;
+- photographs support documentation and do not prove diagnosis;
+- exact handoff forms, roles, escalation paths and correction controls remain facility-specific.
 
-- The crop-walk diagram is an example; actual route/sample size follows the facility plan.
-- The spatial-pattern diagram describes distribution and does not claim that a particular pattern proves a cause.
-- The developmental-stage diagram treats published timing as context and does not define universal cultivar timing or harvest readiness.
-- The photo-evidence diagram supports documentation quality and does not represent photographs as proof of diagnosis.
-- The handoff-chain diagram is a continuity model; exact forms, roles, escalation paths and correction methods remain facility-specific.
+## Remaining Course 2 learner-asset priorities
 
-## Remaining visual priorities
-
-Course 2 still needs additional support, especially:
-
-- observation vs interpretation vs diagnosis boundary;
+- observation vs interpretation vs diagnosis boundary visual for Lesson 3 when a normal connector-safe edit path is available;
 - reproductive morphology comparison references after source/copyright review;
-- learner activity worksheets and downloadable room-map practice sheets;
-- a photo-evidence practice packet with accessible text alternatives;
-- a future Lesson 3 visual when its connector-safe editing path is resolved.
+- photo-evidence practice packet with example image sets and accessible text alternatives;
+- optional printable/PDF exports derived from the canonical SVG worksheets after layout/accessibility review.
 
-Lesson 3 remains the largest visual gap. It should not be force-edited through a workaround that bypasses normal connector/safety controls.
+Lesson 3 remains the largest visual gap and should not be force-edited through a workaround that bypasses normal connector/safety controls.
