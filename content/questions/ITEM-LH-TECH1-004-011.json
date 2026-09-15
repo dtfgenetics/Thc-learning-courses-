@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-004-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRITION-001",
+  "objective": "LO-LH-TECH1-004-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A technician sees marginal necrosis on several plants. What belongs in the initial record?",
+  "choices": [
+    "A confirmed nutrient-toxicity diagnosis",
+    "A new fertilizer recipe",
+    "Objective symptom location/distribution plus stage and available pH, EC, irrigation and root-zone context",
+    "A claim that genetics caused it"
+  ],
+  "correct": 2,
+  "rationale": "Objective symptom location/distribution plus stage and available pH, EC, irrigation and root-zone context. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-NUTRITION-001",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-004-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "The controller reports an event completed, but a required representative emitter is dry. What is the correct completion status?",
+  "choices": [
+    "Complete because the controller ran",
+    "Complete if other emitters are wet",
+    "The delivery deviation must be documented and handled under procedure; the affected delivery should not be falsely marked complete",
+    "Delete the representative check"
+  ],
+  "correct": 2,
+  "rationale": "The delivery deviation must be documented and handled under procedure; the affected delivery should not be falsely marked complete. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}

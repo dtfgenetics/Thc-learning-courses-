@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-004-M01-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-004-06",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "What belongs in a reconstructable irrigation handoff?",
+  "choices": [
+    "Only the planned schedule",
+    "Only a diagnosis",
+    "Actual completion/delivery status, deviations, checks, unresolved conditions and next action",
+    "Only the technician name"
+  ],
+  "correct": 2,
+  "rationale": "Actual completion/delivery status, deviations, checks, unresolved conditions and next action. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-module1-formative"
+  }
+}

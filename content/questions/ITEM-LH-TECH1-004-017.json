@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-004-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A line leak appears during irrigation and the supplied procedure allows the technician to stop the event but not repair the line. What should happen?",
+  "choices": [
+    "Use the permitted stop/isolation step, document the affected zone and escalate for qualified repair",
+    "Repair the line without authorization",
+    "Let the leak continue until the event ends",
+    "Mark the task complete and omit the leak"
+  ],
+  "correct": 0,
+  "rationale": "Use the permitted stop/isolation step, document the affected zone and escalate for qualified repair. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}
