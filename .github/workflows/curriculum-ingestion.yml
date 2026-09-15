@@ -44,6 +44,8 @@ on:
       - 'schemas/link-record.schema.json'
       - 'schemas/dataset-record.schema.json'
       - 'scripts/audit-curriculum-dependencies.mjs'
+      - 'scripts/audit-existing-evidence-coverage.mjs'
+      - 'scripts/build-evidence-mapping-inbox.mjs'
       - 'scripts/build-ingestion-plan.mjs'
       - 'scripts/validate-dependency-manifests.mjs'
       - 'scripts/validate-ingestion-registries.mjs'
@@ -51,6 +53,7 @@ on:
       - 'scripts/collect-*.mjs'
       - 'content/claims/**'
       - 'content/references/**'
+      - 'content/lessons/**'
       - 'visuals/ASSET-REGISTRY.json'
       - 'registry/LINKS.json'
       - 'registry/DATASETS.json'
@@ -73,6 +76,8 @@ jobs:
       - name: Syntax-check ingestion scripts
         run: |
           for file in \
+            scripts/audit-existing-evidence-coverage.mjs \
+            scripts/build-evidence-mapping-inbox.mjs \
             scripts/build-ingestion-plan.mjs \
             scripts/check-external-links.mjs \
             scripts/collect-government-datasets.mjs \
@@ -87,15 +92,21 @@ jobs:
         run: node scripts/validate-ingestion-registries.mjs
       - name: Audit Course 1 dependencies
         run: node scripts/audit-curriculum-dependencies.mjs --write-report=automation/curriculum-ingestion/reports/course1-latest.json
+      - name: Audit existing direct evidence coverage
+        run: node scripts/audit-existing-evidence-coverage.mjs --output=automation/curriculum-ingestion/reports/existing-evidence.json
+      - name: Build evidence mapping recovery inbox
+        run: node scripts/build-evidence-mapping-inbox.mjs --output=automation/curriculum-ingestion/inbox/evidence-mapping-candidates.json
       - name: Build collection plan
         run: node scripts/build-ingestion-plan.mjs --output=automation/curriculum-ingestion/reports/collection-plan.json
-      - name: Upload dependency reports
+      - name: Upload dependency and evidence reports
         uses: actions/upload-artifact@v7
         with:
           name: course1-ingestion-plan
           path: |
             automation/curriculum-ingestion/reports/course1-latest.json
+            automation/curriculum-ingestion/reports/existing-evidence.json
             automation/curriculum-ingestion/reports/collection-plan.json
+            automation/curriculum-ingestion/inbox/evidence-mapping-candidates.json
 
   link-health:
     if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.collector == 'links')
