@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-004",
+  "policy": {
+    "expandable": true,
+    "maximumAssetCount": null,
+    "requiredAccessibility": ["title", "description", "learner text alternative"],
+    "statusValues": ["planned", "in-production", "produced", "retired"],
+    "publicDelivery": "Produced Course 4 learner assets live in the public repository and may be viewed or downloaded directly from their raw GitHub URL. Google Drive is a controlled production/reference mirror and does not replace the canonical repository asset."
+  },
+  "driveStorage": {
+    "folderId": "13su1HkrSjWqhMtssQos3cju9BkgeqGBv",
+    "folderUrl": "https://drive.google.com/drive/folders/13su1HkrSjWqhMtssQos3cju9BkgeqGBv",
+    "folderName": "Course 4 — Water, Root Zone & Irrigation Learning Boards"
+  },
+  "assets": [
+    {
+      "id": "VIS-LH-TECH1-004-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Sample identity, pH and EC measurement context",
+      "learnerPath": "/assets/course4/sample-ph-ec-context.svg",
+      "sourcePath": "apps/web/public/assets/course4/sample-ph-ec-context.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/sample-ph-ec-context.svg",
+      "driveFileId": "1MwRqTECACZiVtoHnF6J6mv0Rb9cijClG",
+      "driveFileUrl": "https://drive.google.com/file/d/1MwRqTECACZiVtoHnF6J6mv0Rb9cijClG/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-01"],
+      "objectiveIds": ["LO-LH-TECH1-004-01", "LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
+      "references": ["REF-IRRIGATION-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "publicSourceLinks": [
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/fact-sheets/how-to-use-ph-ec-pens-to-monitor-greenhouse-crop-nutrition",
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/fact-sheets/soil-testing"
+      ],
+      "purpose": "Teach sample identity, meter readiness, method/units/context and the boundary between useful pH/EC evidence and unsupported nutrient-specific diagnosis.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-002",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Root-zone moisture, drainage and dryback trend",
+      "learnerPath": "/assets/course4/root-zone-dryback-trend.svg",
+      "sourcePath": "apps/web/public/assets/course4/root-zone-dryback-trend.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/root-zone-dryback-trend.svg",
+      "driveFileId": "1WFJ_KMPeJdu-Ci5-VL_vVzlLWaDclmng",
+      "driveFileUrl": "https://drive.google.com/file/d/1WFJ_KMPeJdu-Ci5-VL_vVzlLWaDclmng/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-02"],
+      "objectiveIds": ["LO-LH-TECH1-004-02", "LO-LH-TECH1-004-03"],
+      "references": ["REF-IRRIGATION-001", "REF-NUTRITION-001"],
+      "publicSourceLinks": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12247431/",
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/fact-sheets/soluble-salts-electrical-conductivity-ec-for-greenhouse-crops"
+      ],
+      "purpose": "Show root-zone moisture as repeated saturation, drainage and dryback behavior that must be interpreted with comparable EC, crop, media, environment and irrigation context rather than one reading or elapsed interval.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-003",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Nutrition-context differential without unsupported diagnosis",
+      "learnerPath": "/assets/course4/nutrition-context-differential.svg",
+      "sourcePath": "apps/web/public/assets/course4/nutrition-context-differential.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/nutrition-context-differential.svg",
+      "driveFileId": "1ymiZh-c8Fs2NcEF2PCzr2wQY7-XNbj9s",
+      "driveFileUrl": "https://drive.google.com/file/d/1ymiZh-c8Fs2NcEF2PCzr2wQY7-XNbj9s/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-02", "LESSON-LH-TECH1-004-04"],
+      "objectiveIds": ["LO-LH-TECH1-004-03"],
+      "references": ["REF-NUTRITION-001", "REF-IRRIGATION-001"],
+      "publicSourceLinks": [
+        "https://pubmed.ncbi.nlm.nih.gov/39691480/",
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-updates-march-24-2023"
+      ],
+      "purpose": "Teach that symptom pattern must be combined with developmental stage, pH/EC method, root-zone condition, irrigation and environment before any nutrient-specific conclusion is supported.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-004",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Irrigation work order and representative delivery verification",
+      "learnerPath": "/assets/course4/irrigation-work-order-delivery.svg",
+      "sourcePath": "apps/web/public/assets/course4/irrigation-work-order-delivery.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/irrigation-work-order-delivery.svg",
+      "driveFileId": "1dGXYlEdWcfEO90gHhc6DMpV8TsgmdpcN",
+      "driveFileUrl": "https://drive.google.com/file/d/1dGXYlEdWcfEO90gHhc6DMpV8TsgmdpcN/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-03"],
+      "objectiveIds": ["LO-LH-TECH1-004-04", "LO-LH-TECH1-004-05"],
+      "references": ["REF-IRRIGATION-001"],
+      "publicSourceLinks": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC12247431/"],
+      "purpose": "Teach controlled work-order execution and representative delivery checks so controller status is not substituted for verified crop delivery.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-005",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Irrigation fault, verification and shift handoff workflow",
+      "learnerPath": "/assets/course4/irrigation-fault-handoff-workflow.svg",
+      "sourcePath": "apps/web/public/assets/course4/irrigation-fault-handoff-workflow.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/irrigation-fault-handoff-workflow.svg",
+      "driveFileId": "1d-K-dr9RGtAKapiTmIf6hu0t8dSKOmKi",
+      "driveFileUrl": "https://drive.google.com/file/d/1d-K-dr9RGtAKapiTmIf6hu0t8dSKOmKi/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-04"],
+      "objectiveIds": ["LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
+      "references": ["REF-IRRIGATION-001", "REF-NUTRITION-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "publicSourceLinks": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC12247431/"],
+      "purpose": "Teach verification, truthful status recording, escalation and reconstructable handoff for suspect meters, delivery faults, abnormal root-zone trends or unresolved symptom context.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-006",
+      "status": "produced",
+      "deliveryType": "downloadable-practice",
+      "title": "Water and nutrient-solution measurement practice worksheet",
+      "learnerPath": "/assets/course4/water-solution-measurement-practice.svg",
+      "sourcePath": "apps/web/public/assets/course4/water-solution-measurement-practice.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/water-solution-measurement-practice.svg",
+      "driveFileId": "1iIfHRXZzBMSU-Iun3ADIcb2_3F33j7BG",
+      "driveFileUrl": "https://drive.google.com/file/d/1iIfHRXZzBMSU-Iun3ADIcb2_3F33j7BG/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-01", "LESSON-LH-TECH1-004-04"],
+      "objectiveIds": ["LO-LH-TECH1-004-01", "LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
+      "references": ["REF-IRRIGATION-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "publicSourceLinks": ["https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/fact-sheets/how-to-use-ph-ec-pens-to-monitor-greenhouse-crop-nutrition"],
+      "purpose": "Provide printable practice for sample identity, meter readiness, pH/EC method and units, repeat verification, evidence limits and escalation.",
+      "version": "1.0.0"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-007",
+      "status": "produced",
+      "deliveryType": "downloadable-practice",
+      "title": "Irrigation delivery and root-zone verification practice worksheet",
+      "learnerPath": "/assets/course4/irrigation-verification-practice.svg",
+      "sourcePath": "apps/web/public/assets/course4/irrigation-verification-practice.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/irrigation-verification-practice.svg",
+      "driveFileId": "1HQKLMBlM97xlHJn6DSPGj_mJY-nOErkR",
+      "driveFileUrl": "https://drive.google.com/file/d/1HQKLMBlM97xlHJn6DSPGj_mJY-nOErkR/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": ["LESSON-LH-TECH1-004-02", "LESSON-LH-TECH1-004-03", "LESSON-LH-TECH1-004-04"],
+      "objectiveIds": ["LO-LH-TECH1-004-02", "LO-LH-TECH1-004-03", "LO-LH-TECH1-004-04", "LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
+      "references": ["REF-IRRIGATION-001", "REF-NUTRITION-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "publicSourceLinks": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12247431/",
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/fact-sheets/soluble-salts-electrical-conductivity-ec-for-greenhouse-crops"
+      ],
+      "purpose": "Provide printable practice for representative delivery verification, root-zone trend description, bounded nutrition context, deviation handling and shift handoff.",
+      "version": "1.0.0"
+    }
+  ]
+}

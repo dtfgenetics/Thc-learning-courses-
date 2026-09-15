@@ -39,19 +39,10 @@ for (const mapping of crosswalk.objectiveMappings) {
   assert.ok(mapping.scoringCategories.length > 0, `${mapping.objectiveId}: scoring mapping required`);
   assert.ok(mapping.expectedEvidence.length > 0, `${mapping.objectiveId}: evidence mapping required`);
   assert.ok(mapping.deliverables.length > 0, `${mapping.objectiveId}: deliverable mapping required`);
-
-  for (const task of mapping.practicalTasks) {
-    assert.ok(practicalText.includes(task), `${mapping.objectiveId}: mapped task is not present in Practical B: ${task}`);
-  }
-  for (const category of mapping.scoringCategories) {
-    assert.ok(practicalText.includes(category), `${mapping.objectiveId}: mapped scoring category is not present in Practical B: ${category}`);
-  }
-  for (const evidence of mapping.expectedEvidence) {
-    assert.ok(practicalText.includes(evidence), `${mapping.objectiveId}: mapped evidence is not present in Practical B: ${evidence}`);
-  }
-  for (const deliverable of mapping.deliverables) {
-    assert.ok(practicalText.includes(deliverable), `${mapping.objectiveId}: mapped deliverable is not present in Practical B: ${deliverable}`);
-  }
+  for (const task of mapping.practicalTasks) assert.ok(practicalText.includes(task), `${mapping.objectiveId}: mapped task is not present in Practical B: ${task}`);
+  for (const category of mapping.scoringCategories) assert.ok(practicalText.includes(category), `${mapping.objectiveId}: mapped scoring category is not present in Practical B: ${category}`);
+  for (const evidence of mapping.expectedEvidence) assert.ok(practicalText.includes(evidence), `${mapping.objectiveId}: mapped evidence is not present in Practical B: ${evidence}`);
+  for (const deliverable of mapping.deliverables) assert.ok(practicalText.includes(deliverable), `${mapping.objectiveId}: mapped deliverable is not present in Practical B: ${deliverable}`);
 }
 
 assert.equal(crosswalk.validationBoundary?.practicalValidated, false);
@@ -60,7 +51,7 @@ assert.equal(crosswalk.validationBoundary?.pilotEvidenceImplied, false);
 assert.equal(crosswalk.validationBoundary?.interRaterEvidenceImplied, false);
 assert.equal(crosswalk.courseSpecificReadiness?.objectiveCoverageMapped, true);
 assert.equal(crosswalk.courseSpecificReadiness?.practicalMappingBuilt, true);
-assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, false);
+assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, true);
 assert.equal(crosswalk.courseSpecificReadiness?.humanTechnicalReview, 'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.renderedAccessibilityReview, 'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.practicalValidation, 'not-started');
@@ -71,4 +62,4 @@ assert.notEqual(releaseEvidence.gates?.renderedAccessibilityReview, 'approved');
 assert.notEqual(releaseEvidence.gates?.practicalValidation, 'validated');
 assert.notEqual(releaseEvidence.gates?.controlledPilotEvidence, 'accepted');
 
-console.log('Course 4 Practical B crosswalk passed: all six objectives map to canonical development-stage tasks/evidence while human, pilot and validation gates remain open.');
+console.log('Course 4 Practical B crosswalk passed: all six objectives map to canonical development-stage tasks/evidence, learner assets are built, and human/pilot/validation gates remain open.');

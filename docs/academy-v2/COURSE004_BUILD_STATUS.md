@@ -1,12 +1,12 @@
 # Technician I Course 004 development readiness
 
 Course: `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals  
-Course version: `0.3.0`  
+Course version: `0.4.0`  
 Release status: `draft`
 
 ## Automated development completed
 
-Course 004 has a dedicated occupational instruction, assessment and development-stage practical-evidence layer.
+Course 004 now has a dedicated occupational instruction, assessment, development-stage practical-evidence and learner-asset layer.
 
 - dedicated module: `MOD-LH-TECH1-004-IRRIGATION`;
 - six measurable Course 004 learning objectives;
@@ -16,8 +16,10 @@ Course 004 has a dedicated occupational instruction, assessment and development-
 - draft summative assessment `ASSESS-LH-TECH1-004-FINAL`;
 - mapped development practical: `PRACTICAL-TECH1-B — Water & Irrigation Shift`;
 - objective/practical crosswalk: `registry/course4-practical-b-crosswalk.json`;
-- Practical B now includes bounded nutrition-context interpretation using symptom pattern, developmental stage, pH/EC, root-zone and irrigation evidence without unsupported deficiency/excess/antagonism diagnosis;
-- deterministic crosswalk validation runs through the normal Course 004 regression;
+- Practical B includes bounded nutrition-context interpretation using symptom pattern, developmental stage, pH/EC, root-zone and irrigation evidence without unsupported deficiency/excess/antagonism diagnosis;
+- five embedded teaching visuals plus two downloadable practice worksheets governed by `visuals/COURSE4-ASSET-REGISTRY.json`;
+- all seven learner assets are public, lesson-linked, accessibility-tagged SVGs and mirrored to Drive folder `13su1HkrSjWqhMtssQos3cju9BkgeqGBv`;
+- deterministic practical-crosswalk and learner-asset contracts run through the normal Course 004 regression;
 - Course 004 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
 
 ## Instructional emphasis
@@ -26,7 +28,7 @@ The course trains Technician I learners to confirm sample identity, obtain and r
 
 ## Practical B coverage
 
-Practical B now contains development-stage observations that can directly exercise all six Course 004 objectives:
+Practical B contains development-stage observations that can directly exercise all six Course 004 objectives:
 
 - verify sample/work-order/solution identity;
 - inspect and prepare pH/EC equipment, verify calibration status and obtain representative measurements;
@@ -40,18 +42,30 @@ Practical B now contains development-stage observations that can directly exerci
 
 This mapping is development coverage only. Practical B remains `development` in the integrated lab plan.
 
-## Current automated-development gap
+## Learner asset layer
 
-The next major Course 004 gap is the learner visual and practice asset layer. Priority assets are:
+The planned Course 004 learner layer for the current design is complete and remains extensible without an asset-count ceiling.
 
-1. pH/EC sample identity and measurement-context visual;
-2. root-zone moisture, saturation, drainage and dryback trend visual;
-3. nutrition-context differential visual that separates observations from unsupported nutrient diagnosis;
-4. irrigation work-order and representative-delivery verification visual;
-5. irrigation/equipment fault escalation and handoff visual;
-6. printable water/solution measurement and irrigation verification worksheets.
+Embedded visuals:
+1. `VIS-LH-TECH1-004-001` — sample identity, pH and EC measurement context;
+2. `VIS-LH-TECH1-004-002` — root-zone moisture, drainage and dryback trend;
+3. `VIS-LH-TECH1-004-003` — nutrition-context differential without unsupported diagnosis;
+4. `VIS-LH-TECH1-004-004` — irrigation work order and representative delivery verification;
+5. `VIS-LH-TECH1-004-005` — irrigation fault, verification and shift-handoff workflow.
 
-These assets should be public, accessible, lesson-linked, downloadable where appropriate, Drive-mirrored and governed by a deterministic Course 004 asset registry.
+Downloadable practice assets:
+6. `VIS-LH-TECH1-004-006` — water and nutrient-solution measurement practice worksheet;
+7. `VIS-LH-TECH1-004-007` — irrigation delivery and root-zone verification practice worksheet.
+
+The repository/public web asset is the learner-delivery source of truth. Google Drive is the controlled production/reference mirror.
+
+## Remaining automated-development priorities
+
+The planned learner content and asset package is complete for the current Course 004 design. Remaining useful preparation work is:
+
+- rendered accessibility review preparation;
+- human technical and assessment review packets;
+- pilot-ready equivalent Practical B form details.
 
 ## Remaining human/empirical validation gates
 

@@ -1,78 +1,26 @@
 {
   "id": "LESSON-LH-TECH1-004-04",
   "title": "Nutrition Context, Irrigation Deviations and Shift Handoff",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": [
-    "COMP-NUTRITION-001",
-    "COMP-CULT-EQUIPMENT-CARE-001",
-    "COMP-PRO-QA-001",
-    "COMP-PRO-SOP-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-004-03",
-    "LO-LH-TECH1-004-05",
-    "LO-LH-TECH1-004-06"
-  ],
+  "competencies": ["COMP-NUTRITION-001", "COMP-CULT-EQUIPMENT-CARE-001", "COMP-PRO-QA-001", "COMP-PRO-SOP-001"],
+  "learningObjectives": ["LO-LH-TECH1-004-03", "LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
   "estimatedMinutes": 60,
-  "references": [
-    "REF-NUTRITION-001",
-    "REF-IRRIGATION-001",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "references": ["REF-NUTRITION-001", "REF-IRRIGATION-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
   "assessment": null,
   "content": {
     "overview": "The final Course 004 lesson combines crop evidence, irrigation exceptions and trustworthy records. Learners practice documenting nutrition-like symptoms without claiming a cause, preserving pH/EC and root-zone context, distinguishing planned targets from actual measurements, recording failed or partial irrigation events, and producing shift handoffs that make unresolved conditions visible to the next qualified person.",
     "vocabulary": [
-      {
-        "term": "nutrient availability",
-        "definition": "The portion of a nutrient present in a chemical and root-zone context in which the plant can acquire and use it."
-      },
-      {
-        "term": "antagonism",
-        "definition": "An interaction in which the presence or abundance of one ion can reduce uptake or use of another nutrient."
-      },
-      {
-        "term": "reconstructable record",
-        "definition": "A record with enough identity, time, context, attribution and change history for another qualified person to understand what occurred."
-      },
-      {
-        "term": "unresolved condition",
-        "definition": "A documented abnormality, discrepancy or question that has not yet been verified, corrected or assigned a supported root cause."
-      }
+      {"term":"nutrient availability","definition":"The portion of a nutrient present in a chemical and root-zone context in which the plant can acquire and use it."},
+      {"term":"antagonism","definition":"An interaction in which the presence or abundance of one ion can reduce uptake or use of another nutrient."},
+      {"term":"reconstructable record","definition":"A record with enough identity, time, context, attribution and change history for another qualified person to understand what occurred."},
+      {"term":"unresolved condition","definition":"A documented abnormality, discrepancy or question that has not yet been verified, corrected or assigned a supported root cause."}
     ],
     "sections": [
-      {
-        "title": "Symptoms start an investigation; they do not finish it",
-        "body": "Chlorosis, necrosis, distortion and growth changes can be important observations, but many nutrition, water, root-zone and environmental problems overlap visually. Record symptom location and progression together with stage, pH, EC, irrigation history and root-zone condition before escalating for diagnosis.",
-        "references": [
-          "REF-NUTRITION-001"
-        ]
-      },
-      {
-        "title": "Targets and actuals stay separate",
-        "body": "A work-order target, recipe value or expected irrigation event is not the same as an actual measured pH/EC result or verified delivery. Records preserve both so the next person can see whether execution matched the instruction.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY",
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "Partial completion is not completion",
-        "body": "If one zone misses delivery, a sample is invalid, a meter remains suspect or an equipment fault interrupts the event, the record should show the incomplete or unresolved state. Backfilling, guessing or marking complete to make the record look clean undermines troubleshooting and crop protection.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY",
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "Handoff transfers evidence and priority",
-        "body": "A useful handoff states the affected room/zone, work order, measured or observed evidence, permitted checks or corrections, unresolved issue, who was notified and what needs follow-up. The handoff does not invent a nutrient or equipment diagnosis simply because one explanation seems likely.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY",
-          "REF-NUTRITION-001"
-        ]
-      }
+      {"title":"Symptoms start an investigation; they do not finish it","body":"Chlorosis, necrosis, distortion and growth changes can be important observations, but many nutrition, water, root-zone and environmental problems overlap visually. Record symptom location and progression together with stage, pH, EC, irrigation history and root-zone condition before escalating for diagnosis.","references":["REF-NUTRITION-001"]},
+      {"title":"Targets and actuals stay separate","body":"A work-order target, recipe value or expected irrigation event is not the same as an actual measured pH/EC result or verified delivery. Records preserve both so the next person can see whether execution matched the instruction.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-IRRIGATION-001"]},
+      {"title":"Partial completion is not completion","body":"If one zone misses delivery, a sample is invalid, a meter remains suspect or an equipment fault interrupts the event, the record should show the incomplete or unresolved state. Backfilling, guessing or marking complete to make the record look clean undermines troubleshooting and crop protection.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-IRRIGATION-001"]},
+      {"title":"Handoff transfers evidence and priority","body":"A useful handoff states the affected room/zone, work order, measured or observed evidence, permitted checks or corrections, unresolved issue, who was notified and what needs follow-up. The handoff does not invent a nutrient or equipment diagnosis simply because one explanation seems likely.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-NUTRITION-001"]}
     ],
     "workedExamples": [
       "Older leaves show discoloration while root-zone EC is elevated. The technician records the symptom pattern, pH/EC method, irrigation history and root-zone condition and escalates rather than adding more fertilizer based on appearance alone.",
@@ -84,63 +32,15 @@
       "Marking an irrigation work order complete despite an unresolved missed zone.",
       "Hiding or silently replacing a suspect measurement instead of documenting the verification status."
     ],
-    "practicalApplication": "Complete a shift packet containing pH/EC measurements, a root-zone trend, one symptom report and an interrupted irrigation event. Build a handoff that distinguishes targets from actuals, observations from diagnoses, completed from incomplete work and verified from unresolved conditions.",
+    "practicalApplication": "Complete a simulated shift packet using the downloadable measurement and irrigation-verification worksheets. Combine pH/EC measurements, a root-zone trend, one symptom report and an interrupted irrigation event; build a handoff that distinguishes targets from actuals, observations from diagnoses, completed from incomplete work and verified from unresolved conditions.",
     "summary": "Course 004 ends with evidence discipline. Measurements, root-zone behavior, plant symptoms and irrigation events are recorded as they actually occurred. Technician I follows the work order, verifies delivery, recognizes limits in the evidence and transfers unresolved conditions clearly instead of inventing diagnoses or completion.",
     "blocks": [
-      {
-        "type": "document",
-        "title": "Irrigation and nutrition handoff record",
-        "description": "The handoff should preserve enough evidence for the next qualified person to continue the work without guessing.",
-        "fields": [
-          {
-            "label": "Work order / room / zone",
-            "value": "Current controlled instruction and affected crop location"
-          },
-          {
-            "label": "Planned target or task",
-            "value": "What the work order required"
-          },
-          {
-            "label": "Actual measurement or delivery",
-            "value": "Observed pH/EC, moisture state, delivery result or completion status"
-          },
-          {
-            "label": "Sample / method context",
-            "value": "Sample identity and method needed to interpret the measurement"
-          },
-          {
-            "label": "Crop/root-zone observation",
-            "value": "Objective symptom, moisture or root-zone pattern without unsupported diagnosis"
-          },
-          {
-            "label": "Verification/correction",
-            "value": "Permitted checks or routine actions actually completed"
-          },
-          {
-            "label": "Unresolved condition",
-            "value": "What remains unknown, incomplete or outside technician authority"
-          },
-          {
-            "label": "Escalation and next action",
-            "value": "Who was notified and what follow-up the receiving role must complete"
-          }
-        ],
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY",
-          "REF-IRRIGATION-001",
-          "REF-NUTRITION-001"
-        ]
-      },
-      {
-        "type": "callout",
-        "title": "Key boundary",
-        "tone": "evidence",
-        "body": "Course 004 trains measurement, controlled execution, verification and escalation. It does not certify independent nutrient-formulation design, advanced crop steering, root-cause diagnosis or unauthorized equipment repair.",
-        "references": [
-          "REF-IRRIGATION-001",
-          "REF-NUTRITION-001"
-        ]
-      }
+      {"type":"document","title":"Irrigation and nutrition handoff record","description":"The handoff should preserve enough evidence for the next qualified person to continue the work without guessing.","fields":[{"label":"Work order / room / zone","value":"Current controlled instruction and affected crop location"},{"label":"Planned target or task","value":"What the work order required"},{"label":"Actual measurement or delivery","value":"Observed pH/EC, moisture state, delivery result or completion status"},{"label":"Sample / method context","value":"Sample identity and method needed to interpret the measurement"},{"label":"Crop/root-zone observation","value":"Objective symptom, moisture or root-zone pattern without unsupported diagnosis"},{"label":"Verification/correction","value":"Permitted checks or routine actions actually completed"},{"label":"Unresolved condition","value":"What remains unknown, incomplete or outside technician authority"},{"label":"Escalation and next action","value":"Who was notified and what follow-up the receiving role must complete"}],"references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-IRRIGATION-001","REF-NUTRITION-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-004-003","title":"Nutrition-context differential","src":"/assets/course4/nutrition-context-differential.svg","alt":"Plant symptom observation surrounded by developmental stage, symptom pattern, pH and sample method, EC and method, root-zone condition, irrigation history and environmental context before bounded interpretation and escalation.","caption":"Symptoms begin the investigation. Combine pH/EC, method, stage, root-zone, irrigation and environment before a qualified person assigns nutrient cause.","references":["REF-NUTRITION-001","REF-IRRIGATION-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-004-005","title":"Irrigation fault, verification and handoff workflow","src":"/assets/course4/irrigation-fault-handoff-workflow.svg","alt":"Workflow from an observed meter, delivery, root-zone or symptom issue through permitted verification, evidence recording, authorized correction or escalation, and a reconstructable receiving-shift handoff.","caption":"Keep observed evidence, verification, resolved actions and unresolved conditions distinct so the receiving shift can continue without guessing.","references":["REF-IRRIGATION-001","REF-NUTRITION-001","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"type":"resource","title":"Downloadable practice: water / solution measurement record","body":"Use this printable worksheet to preserve sample identity, pH/EC method and units, verification status and evidence boundaries when a shift packet contains a suspect or contextual measurement.","href":"/assets/course4/water-solution-measurement-practice.svg","label":"Open water / solution measurement practice sheet","extensions":{"assetId":"VIS-LH-TECH1-004-006","downloadable":true}},
+      {"type":"resource","title":"Downloadable practice: irrigation and root-zone verification","body":"Use this printable worksheet to preserve representative delivery checks, root-zone trends, bounded symptom context, incomplete work, permitted actions and receiving-shift follow-up.","href":"/assets/course4/irrigation-verification-practice.svg","label":"Open irrigation / root-zone verification practice sheet","extensions":{"assetId":"VIS-LH-TECH1-004-007","downloadable":true}},
+      {"type":"callout","title":"Key boundary","tone":"evidence","body":"Course 004 trains measurement, controlled execution, verification and escalation. It does not certify independent nutrient-formulation design, advanced crop steering, root-cause diagnosis or unauthorized equipment repair.","references":["REF-IRRIGATION-001","REF-NUTRITION-001"]}
     ]
   }
 }
