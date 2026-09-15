@@ -25,3 +25,4 @@ for(const id of formative.items){const q=read(`content/questions/${id}.json`);as
 console.log('Course 004 production slice passed: four lessons, six objectives, 12 distinct formative items and 24 balanced summative items are draft-wired with PRACTICAL-TECH1-B mapping.');
 
 await import('./test-course4-practical-crosswalk.mjs');
+await import('./test-course4-visual-registry.mjs');
