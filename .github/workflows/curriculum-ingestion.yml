@@ -1,0 +1,79 @@
+name: Curriculum ingestion
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: Optional research query to collect from PubMed and Crossref
+        required: false
+        type: string
+      lesson_id:
+        description: Optional lesson ID to attach to collected candidates
+        required: false
+        type: string
+      limit:
+        description: Maximum records per external source
+        required: false
+        default: '8'
+        type: string
+  pull_request:
+    paths:
+      - 'automation/curriculum-ingestion/**'
+      - 'schemas/dependency-manifest.schema.json'
+      - 'scripts/audit-curriculum-dependencies.mjs'
+      - 'scripts/validate-dependency-manifests.mjs'
+      - 'content/claims/**'
+      - 'content/references/**'
+      - 'visuals/ASSET-REGISTRY.json'
+      - 'registry/LINKS.json'
+      - 'registry/DATASETS.json'
+  schedule:
+    - cron: '17 8 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validate dependency manifests
+        run: node scripts/validate-dependency-manifests.mjs
+      - name: Audit Course 1 dependencies
+        run: node scripts/audit-curriculum-dependencies.mjs --write-report=automation/curriculum-ingestion/reports/course1-latest.json
+      - name: Upload dependency report
+        uses: actions/upload-artifact@v4
+        with:
+          name: course1-dependency-report
+          path: automation/curriculum-ingestion/reports/course1-latest.json
+
+  collect-research:
+    if: github.event_name == 'workflow_dispatch' && inputs.query != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Collect research candidates
+        env:
+          QUERY: ${{ inputs.query }}
+          LESSON_ID: ${{ inputs.lesson_id }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          node scripts/collect-research-metadata.mjs \
+            --query="$QUERY" \
+            --lesson="$LESSON_ID" \
+            --limit="$LIMIT" \
+            --output=automation/curriculum-ingestion/inbox/research-candidates.json
+      - name: Upload research candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-candidates
+          path: automation/curriculum-ingestion/inbox/research-candidates.json

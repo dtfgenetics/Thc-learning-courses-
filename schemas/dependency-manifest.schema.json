@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dtfseeds.com/schemas/dependency-manifest.schema.json",
+  "title": "THC Academy Curriculum Dependency Manifest",
+  "type": "object",
+  "required": ["version", "courseId", "status", "requirements"],
+  "properties": {
+    "version": {"type": "integer", "minimum": 1},
+    "courseId": {"type": "string", "minLength": 3},
+    "status": {"enum": ["baseline", "active", "publication-gate"]},
+    "publicationGate": {"type": "boolean", "default": false},
+    "description": {"type": ["string", "null"]},
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "lessonIds", "topic", "needs"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^DEP-[A-Z0-9-]+$"},
+          "lessonIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 3}
+          },
+          "topic": {"type": "string", "minLength": 3},
+          "queries": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 3}
+          },
+          "preferredSources": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"enum": ["pubmed", "crossref", "usda", "osha", "university-extension", "government", "standards", "wikimedia", "internal"]}
+          },
+          "needs": {
+            "type": "object",
+            "required": ["reviewedReferences", "approvedAssets", "datasets", "verifiedLinks"],
+            "properties": {
+              "reviewedReferences": {"type": "integer", "minimum": 0},
+              "approvedAssets": {"type": "integer", "minimum": 0},
+              "datasets": {"type": "integer", "minimum": 0},
+              "verifiedLinks": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": false
+          },
+          "freshnessDays": {"type": "integer", "minimum": 1},
+          "notes": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
