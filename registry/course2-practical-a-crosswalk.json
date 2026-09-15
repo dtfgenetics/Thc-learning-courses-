@@ -1,0 +1,84 @@
+{
+  "id": "CROSSWALK-LH-TECH1-002-PRACTICAL-A",
+  "version": "1.0.0",
+  "status": "development",
+  "courseId": "COURSE-LH-TECH1-002",
+  "practicalId": "PRACTICAL-TECH1-A",
+  "practicalDocument": "docs/academy-v2/practicals/PRACTICAL-TECH1-A-SAFE-ROOM-ENTRY-CROP-INSPECTION.md",
+  "purpose": "Development crosswalk showing where Course 2 learning objectives can be observed in Practical A. Mapping coverage does not constitute practical validation, evaluator calibration, inter-rater evidence, standard setting, or release approval.",
+  "validationBoundary": {
+    "practicalValidated": false,
+    "humanApprovalImplied": false,
+    "pilotEvidenceImplied": false,
+    "interRaterEvidenceImplied": false
+  },
+  "objectiveMappings": [
+    {
+      "objectiveId": "LO-LH-TECH1-002-01",
+      "statement": "Execute a repeatable crop-observation route that samples representative locations and preserves room, zone, plant or bench identity.",
+      "practicalTasks": [
+        "Verify room/batch identity before inspection.",
+        "Follow a repeatable inspection route."
+      ],
+      "scoringCategories": ["systematic crop inspection", "documentation/traceability"],
+      "expectedEvidence": ["inspection route", "crop observations", "completed inspection record"],
+      "deliverables": ["crop inspection/scouting record", "annotated room map"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-002-02",
+      "statement": "Describe cannabis developmental and reproductive stage from observable morphology while distinguishing biological stage from calendar timing.",
+      "practicalTasks": [
+        "Record plant stage, vigor, morphology, visible stress and abnormalities."
+      ],
+      "scoringCategories": ["systematic crop inspection", "observation quality"],
+      "expectedEvidence": ["crop observations"],
+      "deliverables": ["crop inspection/scouting record"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-002-03",
+      "statement": "Differentiate direct observation, spatial or population pattern, contextual evidence and unsupported causal diagnosis during routine crop inspection.",
+      "practicalTasks": [
+        "Follow a repeatable inspection route.",
+        "Record plant stage, vigor, morphology, visible stress and abnormalities.",
+        "Read environmental values and distinguish a normal reading, a questionable sensor reading and a condition requiring follow-up."
+      ],
+      "scoringCategories": ["observation quality", "environmental interpretation"],
+      "expectedEvidence": ["crop observations", "environmental interpretation", "escalation choices"],
+      "deliverables": ["crop inspection/scouting record", "environmental interpretation note"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-002-04",
+      "statement": "Create a reconstructable crop-observation record with sample context, objective wording, useful photographs, timing, identity and unresolved uncertainty.",
+      "practicalTasks": [
+        "Verify room/batch identity before inspection.",
+        "Photograph or mark supplied findings where required.",
+        "Complete the crop-inspection record and shift handoff."
+      ],
+      "scoringCategories": ["observation quality", "documentation/traceability"],
+      "expectedEvidence": ["crop observations", "completed inspection record", "final verbal or written handoff"],
+      "deliverables": ["crop inspection/scouting record", "annotated room map", "shift handoff"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-002-05",
+      "statement": "Follow supplied observation and escalation procedures, documenting abnormal conditions and handing off unresolved findings without exceeding Technician I authority.",
+      "practicalTasks": [
+        "Read environmental values and distinguish a normal reading, a questionable sensor reading and a condition requiring follow-up.",
+        "Complete the crop-inspection record and shift handoff."
+      ],
+      "scoringCategories": ["documentation/traceability", "handoff/escalation"],
+      "expectedEvidence": ["escalation choices", "completed inspection record", "final verbal or written handoff"],
+      "deliverables": ["crop inspection/scouting record", "shift handoff"]
+    }
+  ],
+  "courseSpecificReadiness": {
+    "objectiveCoverageMapped": true,
+    "lessonContentBuilt": true,
+    "assessmentDevelopmentBankBuilt": true,
+    "learnerAssetsBuilt": true,
+    "practicalMappingBuilt": true,
+    "humanTechnicalReview": "not-started",
+    "renderedAccessibilityReview": "not-started",
+    "practicalValidation": "not-started",
+    "controlledPilotEvidence": "not-started"
+  }
+}
