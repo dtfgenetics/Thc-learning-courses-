@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-001",
@@ -8,21 +8,18 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "scenario",
-  "stem": "Unexpected reproductive structures are observed on one identified plant. What is the strongest Technician I action?",
+  "stem": "Unexpected reproductive structures are observed on one identified plant in a crop expected to show a different reproductive pattern. What is the strongest Technician I action?",
   "choices": [
-    "Declare the entire cultivar genetically unstable",
-    "Remove every plant without documentation",
-    "Record plant identity, location and clear morphology evidence and escalate according to procedure",
-    "Change the record to match the expected schedule"
+    "Record the plant as a confirmed genetic outlier and use that conclusion in the room summary",
+    "Document the plant identity, location and clear morphology evidence, note the finding as unexpected, and escalate according to the supplied procedure without assigning an unverified cause",
+    "Record the structures but delay escalation until the same morphology appears on multiple plants",
+    "Use the scheduled crop stage and cultivar expectation as the primary record and note the observed structures only if a supervisor confirms they are significant"
   ],
-  "correct": 2,
-  "rationale": "Unexpected reproductive morphology should be documented as observed and escalated without turning limited evidence into a broad causal claim.",
-  "references": [
-    "REF-PLANT-BIO-001",
-    "REF-FLOWER-MORPH-2023-001"
-  ],
+  "correct": 1,
+  "rationale": "The observation is important, but one plant does not establish a genetic or room-wide cause. The technician should preserve identity and morphology evidence and escalate the unexpected finding without over-interpreting it.",
+  "references": ["REF-PLANT-BIO-001", "REF-FLOWER-MORPH-2023-001"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2"
   }
 }
