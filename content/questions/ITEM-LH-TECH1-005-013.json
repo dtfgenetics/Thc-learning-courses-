@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-005-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-005-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Fresh pest signs are found while a pruning team is moving through rooms. What should happen?",
+  "choices": [
+    "Apply the supplied stop/isolation and sanitation controls before continuing movement, and escalate the finding",
+    "Continue through clean rooms with the same tools",
+    "Move suspect plants through clean areas",
+    "Prune off evidence and omit the record"
+  ],
+  "correct": 0,
+  "rationale": "Apply the supplied stop/isolation and sanitation controls before continuing movement, and escalate the finding. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-v1"
+  }
+}

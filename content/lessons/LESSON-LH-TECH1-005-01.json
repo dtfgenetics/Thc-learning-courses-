@@ -1,0 +1,142 @@
+{
+  "id": "LESSON-LH-TECH1-005-01",
+  "title": "Propagation, Transplant Identity and Sanitation Control",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-005-01",
+    "LO-LH-TECH1-005-04",
+    "LO-LH-TECH1-005-06"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-IPM-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Propagation work multiplies both desired genetics and preventable errors. Technician I learners practice confirming donor, lot, tray and work-order identity before cutting or transplanting; preparing a clean work area; following the supplied cutting, rooting or transplant sequence; protecting labels and counts through movement; observing rooting or seedling condition; and documenting losses or exceptions without guessing identity or changing the propagation method outside authorization.",
+    "vocabulary": [
+      {
+        "term": "donor identity",
+        "definition": "The controlled plant or lot identity from which vegetative propagation material is taken."
+      },
+      {
+        "term": "adventitious root",
+        "definition": "A root that develops from tissue other than an existing root, such as the stem of a vegetative cutting."
+      },
+      {
+        "term": "acclimatization",
+        "definition": "A controlled transition from protected propagation conditions toward the normal production environment."
+      },
+      {
+        "term": "traceability break",
+        "definition": "A loss or uncertainty in the documented relationship between plant material and its required donor, lot, tray or plant identity."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identity is verified before plant material moves",
+        "body": "Before taking cuttings, sowing assigned seed, transplanting or moving trays, verify the controlled donor or source, lot or batch, tray and destination required by the work order. If labels are missing or conflicting, stop movement and resolve identity from approved records; leaf shape or memory is not a valid substitute.",
+        "references": [
+          "REF-PROP-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Fresh tissue increases sanitation consequence",
+        "body": "Cut surfaces and young propagation material are vulnerable to contamination and water stress. Use the supplied tool, glove, surface and movement sanitation steps, and do not carry a blade or other contact tool from suspect material into clean material without the required control step.",
+        "references": [
+          "REF-IPM-001",
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Follow the method; record biological variation",
+        "body": "Genotype, donor condition, cutting quality and environment can change rooting behavior. Technician I follows the assigned method and records rooting, loss or acclimatization differences by identified batch rather than changing humidity, rooting treatment or handling strategy independently because one cultivar is slower.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Counts and labels stay attached to reality",
+        "body": "Propagation records should preserve starting quantity, losses, usable plants and movement or transplant status with the correct identity. Missing or uncertain material is documented as an exception instead of being relabeled to make the count reconcile.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two freshly cut trays are found without labels. The technician stops movement and uses the approved discrepancy process rather than guessing cultivar identity from appearance.",
+      "One identified cultivar roots more slowly than the rest under the same supplied procedure. The technician records the genotype-specific trend and escalates if it exceeds the defined expectation instead of changing the entire propagation environment without authorization."
+    ],
+    "commonMistakes": [
+      "Taking material before donor identity is confirmed.",
+      "Reusing contact tools across suspect and clean material without the required sanitation step.",
+      "Guessing the identity of an unlabeled tray.",
+      "Changing propagation conditions independently because one batch roots more slowly."
+    ],
+    "practicalApplication": "Complete a simulated propagation work order that includes one donor-label mismatch, a sanitation checkpoint, a tray-count discrepancy and a slower-rooting identified batch. Preserve identity, make only authorized decisions, and produce a record another technician can reconstruct.",
+    "summary": "Propagation quality depends on identity control, sanitation, controlled execution and truthful records. Technician I protects the donor-to-tray chain, follows the supplied method, records biological variation and escalates exceptions rather than guessing or improvising.",
+    "blocks": [
+      {
+        "type": "steps",
+        "title": "Controlled propagation sequence",
+        "items": [
+          {
+            "title": "Verify the work order",
+            "body": "Confirm donor/source, lot or batch, requested quantity, tray or destination and current instructions."
+          },
+          {
+            "title": "Prepare the clean workstation",
+            "body": "Complete the required surface, tool, glove and material sanitation steps before handling propagation material."
+          },
+          {
+            "title": "Protect identity during handling",
+            "body": "Keep labels and counts associated with the correct donor, tray or plant through cutting, rooting, transplant and movement."
+          },
+          {
+            "title": "Follow the authorized method",
+            "body": "Use the supplied preparation, rooting or transplant sequence without independent process redesign."
+          },
+          {
+            "title": "Observe and count",
+            "body": "Record rooting/seedling condition, losses, usable material and meaningful exceptions by identity."
+          },
+          {
+            "title": "Escalate discrepancies",
+            "body": "Stop and route label, count, contamination or abnormal-condition problems that cannot be resolved within procedure."
+          }
+        ],
+        "references": [
+          "REF-PROP-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Unlabeled propagation trays",
+        "setting": "Two trays of fresh cuttings become separated from their labels before movement to the propagation area.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Guess identity from leaf shape",
+          "Stop movement and resolve identity through the approved record/discrepancy process",
+          "Combine the trays because they were cut on the same shift",
+          "Relabel both as the most common cultivar"
+        ],
+        "answer": "Stop movement and resolve identity through the approved record/discrepancy process",
+        "feedback": "Propagation traceability depends on preserving donor and batch identity. An uncertain identity remains a discrepancy until it is resolved through approved evidence.",
+        "references": [
+          "REF-PROP-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ]
+  }
+}

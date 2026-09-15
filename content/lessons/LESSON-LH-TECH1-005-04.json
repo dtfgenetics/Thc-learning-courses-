@@ -1,0 +1,152 @@
+{
+  "id": "LESSON-LH-TECH1-005-04",
+  "title": "Integrated Crop Care Records, Exceptions and Shift Handoff",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-CANOPY-001",
+    "COMP-IPM-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-005-01",
+    "LO-LH-TECH1-005-02",
+    "LO-LH-TECH1-005-03",
+    "LO-LH-TECH1-005-04",
+    "LO-LH-TECH1-005-05",
+    "LO-LH-TECH1-005-06"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANOPY-001",
+    "REF-IPM-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Crop-care shifts combine plant handling, scouting, sanitation, identity and records. The final Course 005 lesson integrates the three practical work areas—IPM scouting, propagation workstation and canopy maintenance—into a single evidence and handoff workflow. Learners distinguish work completed from work held, preserve labels and quarantine status, document plant or batch exceptions, and transfer unresolved observations without inventing a diagnosis or completion record.",
+    "vocabulary": [
+      {
+        "term": "hold",
+        "definition": "A controlled status that pauses movement, processing or routine work until an identified condition is reviewed or released under procedure."
+      },
+      {
+        "term": "exception record",
+        "definition": "A record of a deviation, abnormal condition, incomplete task or discrepancy requiring explicit follow-up."
+      },
+      {
+        "term": "handoff",
+        "definition": "A structured transfer of completed work, observations, deviations, unresolved conditions and priorities to the next responsible role."
+      },
+      {
+        "term": "reconstructability",
+        "definition": "The ability of another qualified person to understand what happened, to which plant or material, when, by whom and what remained unresolved."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identity survives every task transition",
+        "body": "Propagation, scouting and canopy records should retain room, zone, donor, lot, tray, plant or work-order identity as required. A correct crop observation attached to the wrong plant or a clean tray with uncertain donor identity is still a quality failure.",
+        "references": [
+          "REF-PROP-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Work status is factual",
+        "body": "Record what was completed, held, skipped under procedure or left incomplete. Do not mark a canopy block complete when plants were held for scouting, and do not reconcile propagation counts by inventing an identity for missing or uncertain material.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Sanitation and quarantine actions belong in the record",
+        "body": "When the supplied workflow requires tool sanitation, clean-to-dirty movement, quarantine, isolation or a hold, preserve those actions and any breach in the record so the next shift understands contamination risk and movement restrictions.",
+        "references": [
+          "REF-IPM-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff preserves uncertainty and authority",
+        "body": "The next person should know the observation, distribution, actions completed, notification or escalation, current hold/quarantine status and required follow-up. A handoff should not replace an unresolved pest, disease or plant-health question with a guessed diagnosis simply to make the record look complete.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A propagation tray is held because identity cannot be verified. The handoff records tray location, physical count, the unresolved identity issue, movement restriction and who was notified rather than assigning a cultivar name from memory.",
+      "Canopy work stops in one zone after suspicious pest signs. The record identifies completed plants, the held area, sanitation step, scouting evidence and escalation so the next shift does not unknowingly resume through the suspect zone."
+    ],
+    "commonMistakes": [
+      "Marking held or incomplete crop work as complete.",
+      "Losing plant or tray identity when transferring work between teams.",
+      "Leaving quarantine status only in verbal communication.",
+      "Turning an unresolved scouting observation into a confirmed diagnosis in the handoff."
+    ],
+    "practicalApplication": "Complete an integrated shift packet with three stations: propagation workstation, IPM scouting route and canopy-maintenance work order. Each station contains one exception. Produce records and a final handoff showing identity, sanitation, work status, evidence, holds, escalation and next actions.",
+    "summary": "Reliable crop care is coordinated work, not isolated technique. Technician I protects identity and biosecurity, follows the assigned plant task, records scouting evidence and actual completion, and hands unresolved conditions to the correct role without guessing or exceeding authority.",
+    "blocks": [
+      {
+        "type": "document",
+        "title": "Integrated crop-care handoff",
+        "description": "The receiving role should be able to reconstruct each affected plant, tray, zone or task and know what remains open.",
+        "fields": [
+          {
+            "label": "Work area / identity",
+            "value": "Room, zone, donor, lot, tray, plant or work-order identifiers required by the task"
+          },
+          {
+            "label": "Task status",
+            "value": "Completed, partially completed, held or not started"
+          },
+          {
+            "label": "Observed evidence",
+            "value": "Propagation condition, canopy exception, scouting sign/symptom, incidence/severity or other objective finding"
+          },
+          {
+            "label": "Sanitation/quarantine status",
+            "value": "Required cleaning, isolation, hold or movement control and any breach"
+          },
+          {
+            "label": "Action completed",
+            "value": "Only the authorized response actually taken"
+          },
+          {
+            "label": "Escalation",
+            "value": "Person or role notified and reason"
+          },
+          {
+            "label": "Unresolved condition",
+            "value": "What remains unknown, incomplete or outside Technician I authority"
+          },
+          {
+            "label": "Next action",
+            "value": "Required follow-up or review for the receiving shift/role"
+          }
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Three-practical mapping",
+        "tone": "evidence",
+        "body": "Course 005 instruction supports PRACTICAL-TECH1-C (IPM Scouting Route), PRACTICAL-TECH1-D (Propagation Workstation) and PRACTICAL-TECH1-E (Canopy Maintenance Work Order). Passing a written course assessment does not substitute for those performance demonstrations.",
+        "references": [
+          "REF-PROP-001",
+          "REF-CANOPY-001",
+          "REF-IPM-001"
+        ]
+      }
+    ]
+  }
+}

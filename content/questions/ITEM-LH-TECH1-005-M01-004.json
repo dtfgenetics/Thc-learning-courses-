@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-005-M01-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CANOPY-001",
+  "objective": "LO-LH-TECH1-005-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A plant is already damaged before assigned canopy work begins. What should the technician do?",
+  "choices": [
+    "Ignore existing damage",
+    "Remove tissue to hide it",
+    "Assume genetics caused it",
+    "Document/inspect the condition and follow the supplied hold or escalation rule before adding more stress if required"
+  ],
+  "correct": 3,
+  "rationale": "Document/inspect the condition and follow the supplied hold or escalation rule before adding more stress if required. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-CANOPY-001",
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-module1-formative"
+  }
+}
