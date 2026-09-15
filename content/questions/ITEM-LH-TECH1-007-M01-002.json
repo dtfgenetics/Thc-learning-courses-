@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which opening-shift plan is most defensible when one task has a missing limit or threshold?",
+  "choices": [
+    "Guess the missing value from yesterday",
+    "Mark the task for clarification before execution and continue unrelated authorized work by priority",
+    "Skip all work until the next shift",
+    "Use the most aggressive value to avoid delay"
+  ],
+  "correct": 1,
+  "rationale": "Ambiguous limits are clarified before affected execution while unrelated authorized work can continue.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

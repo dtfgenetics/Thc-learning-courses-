@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-007-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Outgoing harvest weight and receiving weight do not match. Which record action is acceptable?",
+  "choices": [
+    "Change one value to match the other",
+    "Preserve both original values and document the discrepancy and controlled reconciliation steps",
+    "Average the readings",
+    "Delete the earlier reading"
+  ],
+  "correct": 1,
+  "rationale": "Reconciliation must not destroy original evidence or force a false match.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

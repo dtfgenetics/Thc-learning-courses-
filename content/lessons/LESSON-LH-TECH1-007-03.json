@@ -1,0 +1,129 @@
+{
+  "id": "LESSON-LH-TECH1-007-03",
+  "title": "IPM, Propagation and Canopy Workstation Integration",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-001",
+    "COMP-PROP-001",
+    "COMP-CANOPY-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-007-04",
+    "LO-LH-TECH1-007-06"
+  ],
+  "estimatedMinutes": 80,
+  "references": [
+    "REF-IPM-001",
+    "REF-PROP-001",
+    "REF-CANOPY-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "This segment integrates Practicals C, D and E. Learners follow a repeatable scouting route, distinguish symptoms from direct signs, document incidence and spatial pattern, protect sanitation boundaries, and then execute either a propagation or canopy work order as the primary station. The non-primary production domain appears as a shorter decision event. The lab reinforces that Technician I can observe and execute authorized crop-care work without independently selecting pesticide treatments or inventing production thresholds.",
+    "vocabulary": [
+      {
+        "term": "scouting route",
+        "definition": "A repeatable inspection path and method used to collect comparable plant-health evidence across locations and time."
+      },
+      {
+        "term": "incidence",
+        "definition": "The number or proportion of plants or sites showing a defined condition."
+      },
+      {
+        "term": "production exception",
+        "definition": "A plant, tray, tool, label or work-order condition that prevents normal execution until it is controlled or escalated."
+      },
+      {
+        "term": "treatment authority",
+        "definition": "The facility- and jurisdiction-specific authorization required to select or apply a pest-control treatment; the integrated Technician I lab does not grant that authority."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Scout before naming a cause",
+        "body": "Follow the supplied route, record location and plant identity, distinguish symptoms from direct signs, estimate incidence/severity using the supplied method and compare prior observations. A close-up image or one affected plant should not be treated as room-wide proof.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Biosecurity connects scouting and production work",
+        "body": "Tool sanitation, movement order, suspect-material handling and clean/dirty boundaries remain active when switching from scouting to propagation or canopy tasks. The learner should not turn a work crew into a spread pathway.",
+        "references": [
+          "REF-IPM-001",
+          "REF-PROP-001",
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Propagation execution protects identity and donor status",
+        "body": "Verify donor or source identity, sanitation readiness, tray labels and the supplied procedure before cutting, sticking, transplanting or counting. Separate abnormal or unidentified material rather than averaging it into the batch record.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Canopy execution follows the supplied threshold",
+        "body": "Confirm plant identity, developmental stage, vigor and the assigned canopy outcome. Do not remove extra tissue because it seems efficient, and stop when damage, stress or an ambiguous threshold makes the supplied instruction unsafe or unclear.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Observation does not confer pesticide authority",
+        "body": "The lab can require the learner to recognize, map, isolate, record and escalate a pest condition. It does not authorize independent pesticide selection, rate choice or application unless a separate facility/jurisdiction credential explicitly grants that authority.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A sticky-card count increases only near one intake. The learner maps the pattern and escalates with prior-round evidence rather than treating the whole room as uniformly infested.",
+      "A canopy work order says to remove lower growth to a supplied mark, but one plant is visibly stressed. The learner documents the exception and escalates rather than forcing the same intervention onto the stressed plant."
+    ],
+    "commonMistakes": [
+      "Naming a pest or disease from an ambiguous symptom without evidence.",
+      "Moving from a suspect zone into propagation without sanitation controls.",
+      "Guessing a missing propagation label from plant appearance.",
+      "Applying a canopy rule uniformly despite a documented exception.",
+      "Selecting a pesticide because the learner recognized a likely pest."
+    ],
+    "practicalApplication": "Complete a scouting route and one assigned production workstation. The packet includes a spatial pest pattern, one biosecurity transition, one identity conflict and one crop-condition exception. Build an evidence record and choose which conditions can be completed, held or escalated.",
+    "summary": "Integrated crop-care performance combines repeatable scouting, sanitation, identity control and faithful work-order execution. Technician I observes and escalates beyond scope rather than turning uncertain evidence into unauthorized treatment or production decisions.",
+    "blocks": [
+      {
+        "type": "comparison",
+        "title": "Observation authority versus treatment authority",
+        "left": {
+          "label": "Technician I evidence role",
+          "body": "Observe, count, map, photograph, isolate or hold where procedure allows, preserve biosecurity and escalate with traceable evidence."
+        },
+        "right": {
+          "label": "Separate treatment-selection authority",
+          "body": "Select pesticide or biological product, rate, timing, application method or regulatory compliance decision only when separately authorized."
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "Pest evidence during canopy work",
+        "setting": "Fresh feeding damage and several insects are found while a pruning crew is moving through a room. The work order does not authorize treatment decisions.",
+        "prompt": "What demonstrates the correct integrated response?",
+        "options": [
+          "Choose a pesticide from memory and keep pruning",
+          "Protect biosecurity, document the identified location/evidence, stop or isolate affected work as required and escalate treatment decisions",
+          "Prune away the damaged leaves so the issue is less visible",
+          "Move affected plants through clean rooms for comparison"
+        ],
+        "answer": "Protect biosecurity, document the identified location/evidence, stop or isolate affected work as required and escalate treatment decisions",
+        "feedback": "The technician controls spread and evidence while treatment selection remains with the authorized role.",
+        "references": [
+          "REF-IPM-001",
+          "REF-CANOPY-001"
+        ]
+      }
+    ]
+  }
+}
