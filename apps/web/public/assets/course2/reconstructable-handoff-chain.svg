@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Reconstructable crop-record and shift-handoff chain</title>
+  <desc id="desc">A five-step flow from observe, record, act or escalate, hand off, and recheck. Each step lists the information needed for another qualified person to reconstruct what was inspected, what happened, what remains unresolved, and what should happen next.</desc>
+  <rect width="1200" height="720" rx="32" fill="#f7f4e8"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#173d2b">A strong record lets the next person reconstruct the work</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="20" fill="#365b48">The handoff is not just a note — it connects evidence, actions, uncertainty, and the next check.</text>
+
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(55 175)">
+      <rect width="205" height="290" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <circle cx="103" cy="62" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+      <text x="103" y="72" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">1</text>
+      <text x="103" y="122" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Observe</text>
+      <text x="26" y="162" font-size="16" fill="#365b48">• what changed</text>
+      <text x="26" y="190" font-size="16" fill="#365b48">• where it occurred</text>
+      <text x="26" y="218" font-size="16" fill="#365b48">• how broadly it appears</text>
+      <text x="26" y="246" font-size="16" fill="#365b48">• what remains uncertain</text>
+    </g>
+
+    <g transform="translate(285 175)">
+      <rect width="205" height="290" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <circle cx="103" cy="62" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+      <text x="103" y="72" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">2</text>
+      <text x="103" y="122" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Record</text>
+      <text x="26" y="162" font-size="16" fill="#365b48">• room / zone / plant ID</text>
+      <text x="26" y="190" font-size="16" fill="#365b48">• date and actual time</text>
+      <text x="26" y="218" font-size="16" fill="#365b48">• sample route / denominator</text>
+      <text x="26" y="246" font-size="16" fill="#365b48">• photo and context links</text>
+    </g>
+
+    <g transform="translate(515 175)">
+      <rect width="205" height="290" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <circle cx="103" cy="62" r="34" fill="#fff2df" stroke="#b36b32" stroke-width="3"/>
+      <text x="103" y="72" text-anchor="middle" font-size="30" font-weight="700" fill="#6d3c18">3</text>
+      <text x="103" y="122" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Act / escalate</text>
+      <text x="26" y="162" font-size="16" fill="#365b48">• what was checked</text>
+      <text x="26" y="190" font-size="16" fill="#365b48">• what was changed</text>
+      <text x="26" y="218" font-size="16" fill="#365b48">• who was notified</text>
+      <text x="26" y="246" font-size="16" fill="#365b48">• what remains unresolved</text>
+    </g>
+
+    <g transform="translate(745 175)">
+      <rect width="205" height="290" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <circle cx="103" cy="62" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+      <text x="103" y="72" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">4</text>
+      <text x="103" y="122" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Hand off</text>
+      <text x="26" y="162" font-size="16" fill="#365b48">• completed work</text>
+      <text x="26" y="190" font-size="16" fill="#365b48">• open conditions</text>
+      <text x="26" y="218" font-size="16" fill="#365b48">• priority and next check</text>
+      <text x="26" y="246" font-size="16" fill="#365b48">• questions / cross-check</text>
+    </g>
+
+    <g transform="translate(975 175)">
+      <rect width="170" height="290" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <circle cx="85" cy="62" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+      <text x="85" y="72" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">5</text>
+      <text x="85" y="122" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Recheck</text>
+      <text x="20" y="162" font-size="16" fill="#365b48">• verify status</text>
+      <text x="20" y="190" font-size="16" fill="#365b48">• compare pattern</text>
+      <text x="20" y="218" font-size="16" fill="#365b48">• close or continue</text>
+      <text x="20" y="246" font-size="16" fill="#365b48">• document outcome</text>
+    </g>
+  </g>
+
+  <g stroke="#b36b32" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M260 320 H280"/><path d="M490 320 H510"/><path d="M720 320 H740"/><path d="M950 320 H970"/>
+  </g>
+  <g fill="#b36b32">
+    <path d="M280 320 l-12 -9 v18 z"/><path d="M510 320 l-12 -9 v18 z"/><path d="M740 320 l-12 -9 v18 z"/><path d="M970 320 l-12 -9 v18 z"/>
+  </g>
+
+  <rect x="60" y="505" width="510" height="130" rx="22" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+  <text x="90" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#173d2b">Reconstructable means another qualified person can tell:</text>
+  <text x="90" y="580" font-family="Arial, sans-serif" font-size="17" fill="#365b48">what was inspected • what was observed • what was done</text>
+  <text x="90" y="610" font-family="Arial, sans-serif" font-size="17" fill="#365b48">what remains unresolved • who owns the next action • when to recheck</text>
+
+  <rect x="610" y="505" width="530" height="130" rx="22" fill="#fffaf0" stroke="#b36b32" stroke-width="3"/>
+  <text x="640" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#6d3c18">Avoid broken handoffs</text>
+  <text x="640" y="580" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">“Done,” “watch plants,” or a corrected timestamp with no history is not enough.</text>
+  <text x="640" y="610" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">Preserve uncertainty and the correction trail instead of filling gaps with guesses.</text>
+
+  <text x="60" y="690" font-family="Arial, sans-serif" font-size="15" fill="#56685e">Teaching diagram — exact forms, roles, escalation paths, and record-control methods remain facility-specific.</text>
+</svg>
