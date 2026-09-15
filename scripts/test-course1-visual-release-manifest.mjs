@@ -8,6 +8,8 @@ const readJson = (relativePath) => JSON.parse(fs.readFileSync(path.join(root, re
 const manifest = readJson('visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json');
 const coverage = readJson('visuals/COURSE1-VISUAL-CONCEPT-COVERAGE.json');
 const registry = readJson('visuals/ASSET-REGISTRY.json');
+const pngQaPath = path.join(root, 'visuals/COURSE1-PNG-QA-13-18.json');
+const pngQa = fs.existsSync(pngQaPath) ? JSON.parse(fs.readFileSync(pngQaPath, 'utf8')) : null;
 
 const courseId = 'COURSE-LH-TECH1-001';
 assert.equal(manifest.courseId, courseId, 'visual release manifest must belong to Course 1');
@@ -27,11 +29,33 @@ assert.deepEqual([...manifestIds].sort(), [...coverageIds].sort(), 'visual relea
 
 const coverageById = new Map(coverage.concepts.map((concept) => [concept.conceptId, concept]));
 const registryById = new Map((registry.assets ?? []).map((asset) => [asset.id, asset]));
+const manifestById = new Map(manifest.concepts.map((concept) => [concept.conceptId, concept]));
 const allowedQaStatuses = new Set(['preferred-review-candidate', 'revise-before-publication', 'pending-review', 'public-approved']);
 const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
 const sorted = (values) => [...values].sort();
 const learnerToSourcePath = (learnerPath) => `apps/web/public/${learnerPath.replace(/^\//, '')}`;
+
+if (pngQa) {
+  assert.equal(pngQa.courseId, courseId, 'authenticated PNG QA record must belong to Course 1');
+  assert.ok(Array.isArray(pngQa.assets) && pngQa.assets.length > 0, 'authenticated PNG QA record must contain reviewed assets');
+  assert.equal(new Set(pngQa.assets.map((asset) => asset.conceptId)).size, pngQa.assets.length, 'authenticated PNG QA concept IDs must be unique');
+
+  for (const qaAsset of pngQa.assets) {
+    const concept = manifestById.get(qaAsset.conceptId);
+    assert.ok(concept, `${qaAsset.conceptId}: authenticated PNG QA record references an unknown release concept`);
+    assert.equal(qaAsset.qaStatus, 'revise-before-publication', `${qaAsset.conceptId}: current authenticated v3 QA evidence must remain revise-before-publication until a corrected binary is reviewed`);
+    assert.equal(concept.releaseApproved, false, `${qaAsset.conceptId}: a binary with revise-before-publication QA evidence cannot be release-approved`);
+    assert.notEqual(concept.candidate.qaStatus, 'public-approved', `${qaAsset.conceptId}: rejected authenticated binary cannot be marked public-approved in the release manifest`);
+    assert.equal(concept.candidate.sourceDriveFileId, qaAsset.driveFileId, `${qaAsset.conceptId}: QA evidence must identify the same controlled Drive master as the release manifest`);
+    assert.match(qaAsset.sha256 ?? '', /^[a-f0-9]{64}$/, `${qaAsset.conceptId}: authenticated binary QA requires a SHA-256 digest`);
+    assert.ok(Number.isInteger(qaAsset.bytes) && qaAsset.bytes > 0, `${qaAsset.conceptId}: authenticated binary QA requires byte size`);
+    assert.ok(Number.isInteger(qaAsset.width) && qaAsset.width > 0, `${qaAsset.conceptId}: authenticated binary QA requires image width`);
+    assert.ok(Number.isInteger(qaAsset.height) && qaAsset.height > 0, `${qaAsset.conceptId}: authenticated binary QA requires image height`);
+    assert.equal(qaAsset.mimeType, 'image/png', `${qaAsset.conceptId}: authenticated QA record must identify the current v3 master as PNG`);
+    assert.ok(Array.isArray(qaAsset.findings) && qaAsset.findings.length > 0, `${qaAsset.conceptId}: rejected binary must record actionable QA findings`);
+  }
+}
 
 for (const concept of manifest.concepts) {
   assert.match(concept.conceptId ?? '', /^VIS-LH-TECH1-001-[0-9]{2}-[A-Z0-9-]+$/, `${concept.conceptId ?? '<missing>'}: invalid concept ID`);
@@ -111,4 +135,5 @@ for (const concept of manifest.concepts) {
 }
 
 const approvedCount = manifest.concepts.filter((concept) => concept.releaseApproved).length;
-console.log(`Course 1 visual release gate passed for ${manifest.concepts.length} primary concepts; ${approvedCount} replacement candidate(s) are approved and all remaining candidates fail closed behind the verified SVG baseline.`);
+const authenticatedRejectedCount = pngQa?.assets?.length ?? 0;
+console.log(`Course 1 visual release gate passed for ${manifest.concepts.length} primary concepts; ${approvedCount} replacement candidate(s) are approved, ${authenticatedRejectedCount} authenticated PNG candidate(s) are explicitly blocked by QA, and all remaining candidates fail closed behind the verified SVG baseline.`);
