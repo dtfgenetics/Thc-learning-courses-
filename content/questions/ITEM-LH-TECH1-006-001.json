@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-006-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-006-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A hose and harvest cart block part of the designated aisle before movement begins. What should Technician I do?",
+  "choices": [
+    "Apply the supplied routine control to restore the path and verify it is clear before movement begins",
+    "Work around the obstruction",
+    "Move faster to reduce exposure",
+    "Ignore it because harvest is scheduled"
+  ],
+  "correct": 0,
+  "rationale": "Apply the supplied routine control to restore the path and verify it is clear before movement begins. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-22-WALKING"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-006",
+    "itemSet": "course6-v1"
+  }
+}

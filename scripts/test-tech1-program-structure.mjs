@@ -28,11 +28,6 @@ for (const courseId of program.requiredCourses) {
     assert.equal(exposesGate, true, `${courseId} must expose the missing completion gate`);
   }
 }
-for (const courseId of ['COURSE-LH-TECH1-006']) {
-  const c = read(`content/courses/${courseId}.json`);
-  assert.equal(c.finalAssessment, null);
-  assert.equal(c.extensions?.dedicatedCourseAssessmentRequired, true);
-}
 const course2 = read('content/courses/COURSE-LH-TECH1-002.json');
 assert.equal(course2.finalAssessment, 'ASSESS-LH-TECH1-002-FINAL');
 assert.equal(course2.extensions?.dedicatedCourseAssessmentRequired, false);
@@ -48,9 +43,14 @@ assert.equal(course5.finalAssessment, 'ASSESS-LH-TECH1-005-FINAL');
 assert.equal(course5.extensions?.dedicatedCourseAssessmentRequired, false);
 assert.deepEqual(course5.extensions?.mappedPracticals, ['PRACTICAL-TECH1-C','PRACTICAL-TECH1-D','PRACTICAL-TECH1-E']);
 assert.equal(course5.extensions?.pesticideApplicatorAuthorityConferred, false);
+const course6 = read('content/courses/COURSE-LH-TECH1-006.json');
+assert.equal(course6.finalAssessment, 'ASSESS-LH-TECH1-006-FINAL');
+assert.equal(course6.extensions?.dedicatedCourseAssessmentRequired, false);
+assert.equal(course6.extensions?.mappedPractical, 'PRACTICAL-TECH1-F');
+assert.equal(course6.extensions?.independentProductReleaseAuthorityConferred, false);
 const integrated = read('content/courses/COURSE-LH-TECH1-007.json');
 assert.equal(integrated.extensions?.dedicatedLabModuleRequired, true);
 assert.equal(integrated.extensions?.credentialPracticalSetRequired.length, 6);
 assert.equal(new Set(integrated.extensions.credentialPracticalSetRequired).size, 6);
 assert.equal(integrated.extensions?.capstoneRequired, 'CAPSTONE-TECH1-SHIFT-001');
-console.log('Technician I program structure passed: all seven courses resolve; Courses 002-005 have advanced to draft instruction/assessment while Courses 006-007 retain explicit completion gates.');
+console.log('Technician I program structure passed: all seven courses resolve; Courses 002-006 have advanced to draft instruction/assessment while Course 007 retains explicit integrated lab/practical/capstone gates.');

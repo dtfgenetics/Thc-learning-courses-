@@ -1,0 +1,142 @@
+{
+  "id": "LESSON-LH-TECH1-006-01",
+  "title": "Harvest Authorization, Safety and Clean-Work Readiness",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-006-01",
+    "LO-LH-TECH1-006-04",
+    "LO-LH-TECH1-006-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-22-WALKING",
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest begins before the first cut. Technician I learners verify the current authorization, room and batch identity, destination, tools, labels, carts, pathways, PPE and sanitation condition before material moves. They reassess hazards and contamination risks as work changes, use only authorized routine controls, and stop or escalate when the task becomes unsafe, identity is uncertain, receiving equipment is dirty, or the assigned destination is unavailable.",
+    "vocabulary": [
+      {
+        "term": "harvest authorization",
+        "definition": "The controlled work order or release that identifies the material, location, task and destination approved for harvest activity."
+      },
+      {
+        "term": "pre-task verification",
+        "definition": "The deliberate check that identity, instruction, people, tools, pathways, equipment and receiving conditions are suitable before work begins."
+      },
+      {
+        "term": "stop-work",
+        "definition": "A deliberate pause when conditions are unsafe, prohibited, uncontrolled or outside the worker’s authorization."
+      },
+      {
+        "term": "sanitary receiving surface",
+        "definition": "A cart, rack, container, tool or work surface prepared according to the supplied sanitation procedure before contact with harvested material."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Match authorization to physical reality",
+        "body": "Verify the room, plant or batch identity, harvest work order and intended dry-room or receiving destination before cutting begins. A schedule or verbal expectation does not replace the current controlled authorization. Identity or destination conflicts are resolved before the transition.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "title": "Prepare the movement path and receiving equipment",
+        "body": "Harvest creates carts, cutting tools, wet plant material, repetitive handling and movement through work areas. Confirm clear pathways, required PPE, clean tools and carts, correct labels and a receiving location prepared for the identified lot. A dirty cart or rack is a contamination-control problem, not a reason to hurry.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Reassess when conditions change",
+        "body": "A safe task can become unsafe when a spill develops, an aisle becomes blocked, a tool is damaged, an alarm activates or the receiving destination becomes unavailable. The original work order does not authorize continuing through a new uncontrolled hazard or process conflict.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING"
+        ]
+      },
+      {
+        "title": "Recognition does not expand repair authority",
+        "body": "Technicians may apply the routine controls and isolation steps explicitly permitted by procedure. Damaged electrical equipment, technical faults, failed safeguards or other conditions requiring qualified repair are stopped or escalated rather than opened, bypassed or repaired without authorization.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "The assigned dry rack is unavailable when harvest begins. The technician pauses the affected movement and obtains an authorized destination rather than staging unlabeled material in an improvised location.",
+      "A dirty cart is discovered before loaded branches are transferred. The cart is removed from service or cleaned through the supplied sanitation workflow before harvest material contacts it."
+    ],
+    "commonMistakes": [
+      "Beginning harvest before the batch and destination are verified.",
+      "Treating a dirty cart or receiving rack as acceptable because harvest is behind schedule.",
+      "Continuing after a pathway or electrical condition becomes unsafe.",
+      "Improvising a destination or technical repair outside authorization."
+    ],
+    "practicalApplication": "Run a harvest-readiness simulation containing a clean cart, a dirty cart, a blocked aisle, one identity mismatch and an unavailable destination. Classify each issue as routine control, stop/hold or escalation, and document which conditions must be resolved before cutting or movement can begin.",
+    "summary": "Competent harvest starts with verified authorization, identity, destination, safe pathways, clean equipment and appropriate PPE. Technician I reassesses changed conditions and treats stop-work, sanitation and escalation as part of successful execution.",
+    "blocks": [
+      {
+        "type": "steps",
+        "title": "Harvest readiness sequence",
+        "items": [
+          {
+            "title": "Verify authorization and identity",
+            "body": "Match the current work order to the physical room, plant or batch and intended receiving destination."
+          },
+          {
+            "title": "Check people and pathways",
+            "body": "Confirm PPE, ergonomic setup, clear walking routes and any task-specific hazards before movement begins."
+          },
+          {
+            "title": "Prepare clean tools and receiving equipment",
+            "body": "Use only tools, carts, containers and racks that meet the supplied sanitation and readiness procedure."
+          },
+          {
+            "title": "Stage labels before material moves",
+            "body": "Ensure the required output/container identifiers are ready so material never needs to sit unidentified."
+          },
+          {
+            "title": "Reassess during work",
+            "body": "Respond to spills, damage, blocked routes, alarms or destination changes rather than assuming the original pre-task check remains valid."
+          },
+          {
+            "title": "Stop on unresolved conflict",
+            "body": "Preserve the current state and escalate identity, safety, sanitation or destination problems outside the routine procedure."
+          }
+        ],
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Assigned rack is unavailable",
+        "setting": "The harvest work order identifies a specific dry-room rack, but another lot is occupying it when the first cart is ready to move.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Stage the harvested material in an unlabeled corner until space opens",
+          "Pause the affected transfer and obtain an authorized receiving destination while preserving material identity",
+          "Use any empty rack and update the record later",
+          "Mix the lot with the material already on the assigned rack"
+        ],
+        "answer": "Pause the affected transfer and obtain an authorized receiving destination while preserving material identity",
+        "feedback": "The controlled destination is part of the harvest transition. Improvised placement can break identity, sanitation and receiving records.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      }
+    ]
+  }
+}

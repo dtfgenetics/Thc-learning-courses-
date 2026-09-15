@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "objectives": [
+    "LO-LH-TECH1-006-01",
+    "LO-LH-TECH1-006-02",
+    "LO-LH-TECH1-006-03",
+    "LO-LH-TECH1-006-04",
+    "LO-LH-TECH1-006-05",
+    "LO-LH-TECH1-006-06"
+  ],
+  "passingScorePercent": 80,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "id": "ASSESS-LH-TECH1-006-FINAL",
+  "title": "Harvest, Postharvest, Traceability & Shift Handoff — Course Assessment",
+  "purpose": "summative",
+  "items": [
+    "ITEM-LH-TECH1-006-001",
+    "ITEM-LH-TECH1-006-002",
+    "ITEM-LH-TECH1-006-003",
+    "ITEM-LH-TECH1-006-004",
+    "ITEM-LH-TECH1-006-005",
+    "ITEM-LH-TECH1-006-006",
+    "ITEM-LH-TECH1-006-007",
+    "ITEM-LH-TECH1-006-008",
+    "ITEM-LH-TECH1-006-009",
+    "ITEM-LH-TECH1-006-010",
+    "ITEM-LH-TECH1-006-011",
+    "ITEM-LH-TECH1-006-012",
+    "ITEM-LH-TECH1-006-013",
+    "ITEM-LH-TECH1-006-014",
+    "ITEM-LH-TECH1-006-015",
+    "ITEM-LH-TECH1-006-016",
+    "ITEM-LH-TECH1-006-017",
+    "ITEM-LH-TECH1-006-018",
+    "ITEM-LH-TECH1-006-019",
+    "ITEM-LH-TECH1-006-020",
+    "ITEM-LH-TECH1-006-021",
+    "ITEM-LH-TECH1-006-022",
+    "ITEM-LH-TECH1-006-023",
+    "ITEM-LH-TECH1-006-024"
+  ],
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 24,
+  "blueprint": [
+    {
+      "competency": "COMP-SAFETY-WORK-001",
+      "items": 4,
+      "cognitiveTarget": "Harvest hazard recognition, changing-condition decisions and stop-work boundaries"
+    },
+    {
+      "competency": "COMP-POSTHARVEST-001",
+      "items": 4,
+      "cognitiveTarget": "Controlled harvest/receiving, contamination concerns and drying-process interpretation"
+    },
+    {
+      "competency": "COMP-CULT-TRACEABILITY-001",
+      "items": 4,
+      "cognitiveTarget": "Source-to-output genealogy, label control and transformation-event reasoning"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 4,
+      "cognitiveTarget": "Sanitation, hold/isolation and lot-separation decisions"
+    },
+    {
+      "competency": "COMP-PRO-SOP-001",
+      "items": 4,
+      "cognitiveTarget": "Authorization, destination/hold conflicts and scope boundaries"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 4,
+      "cognitiveTarget": "Quantity reconciliation, partial completion and reconstructable handoff records"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 1,
+    "targetBankItemsPerCompetency": 10,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-006",
+    "linkedCredentialPractical": "PRACTICAL-TECH1-F",
+    "distinctFormativeBank": true,
+    "formativeAssessment": "ASSESS-LH-TECH1-006-M01",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 36,
+    "completionModel": "Course 006 remains draft. Written evidence does not replace PRACTICAL-TECH1-F, the integrated capstone, human review, pilot evidence or program release gates."
+  }
+}
