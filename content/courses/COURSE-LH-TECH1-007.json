@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": true,
+  "level": "Cultivation Technician I / entry occupational pathway",
+  "intendedAudience": [
+    "Learners progressing through the THC Cultivation Technician I pathway",
+    "Entry-level cultivation employees developing supervised operational competency"
+  ],
+  "deliveryModes": ["self-directed-web", "instructor-facilitated", "supervised-lab", "workplace-equivalent"],
+  "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
+  "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
+  "finalAssessment": null,
+  "id": "COURSE-LH-TECH1-007",
+  "title": "Integrated Cultivation Technician Practice Lab",
+  "description": "Provides the development container for an integrated Technician I shift simulation spanning safety, sanitation, observation, measurement, irrigation, crop care, harvest/postharvest handoff, traceability, equipment boundaries, records, and escalation. Current mapped modules are prerequisite refreshers; a dedicated lab module and credential practical/capstone evidence remain required before release.",
+  "modules": ["MOD-LH-TECH1-001-SAFETY", "MOD-LH-TECH1-001-BIOSEC", "MOD-LH-TECH1-001-WORKFLOW", "MOD-LH-TECH1-001-TRACEABILITY", "MOD-LH-TECH1-001-EQUIPMENT", "MOD-LH-TECH1-001-RECORDS"],
+  "competencies": ["COMP-SAFETY-WORK-001", "COMP-SPACE-BIOSEC-001", "COMP-PLANT-BIO-001", "COMP-ENV-VPD-001", "COMP-WATER-001", "COMP-NUTRITION-001", "COMP-ROOTZONE-001", "COMP-IPM-001", "COMP-PROP-001", "COMP-CANOPY-001", "COMP-FLOWER-001", "COMP-POSTHARVEST-001", "COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CULT-TRACEABILITY-001", "COMP-CULT-EQUIPMENT-CARE-001"],
+  "learningOutcomes": [
+    "Execute a multi-stage technician shift simulation while preserving safety, sanitation, identity, authorization boundaries, and record integrity.",
+    "Collect and interpret routine crop, environmental, water/root-zone, equipment, and traceability evidence without inventing unsupported causes.",
+    "Prioritize and escalate abnormal conditions according to consequence, authorization, supplied procedures, and unresolved uncertainty.",
+    "Produce an integrated work record and shift handoff that allows another qualified person to reconstruct what occurred and what remains open."
+  ],
+  "extensions": {
+    "credentialPath": "CREDPROG-CULT-TECH-I-001",
+    "jtaDomains": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "maturity": "lab-container-mapped",
+    "developmentDependencies": ["COURSE-LH-TECH1-001", "COURSE-LH-TECH1-002", "COURSE-LH-TECH1-003", "COURSE-LH-TECH1-004", "COURSE-LH-TECH1-005", "COURSE-LH-TECH1-006"],
+    "dedicatedLabModuleRequired": true,
+    "credentialPracticalSetRequired": ["PRACTICAL-TECH1-A", "PRACTICAL-TECH1-B", "PRACTICAL-TECH1-C", "PRACTICAL-TECH1-D", "PRACTICAL-TECH1-E", "PRACTICAL-TECH1-F"],
+    "capstoneRequired": "CAPSTONE-TECH1-SHIFT-001",
+    "contentCeiling": null
+  }
+}
