@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Spatial pattern comparison for crop observations</title>
+  <desc id="desc">Four simplified crop-room grids compare isolated, edge-associated, zonal, and widespread observation patterns. Highlighted plants show how the same type of visible observation can have different spatial distributions. The diagram states that pattern describes distribution and does not prove cause.</desc>
+  <rect width="1200" height="720" rx="32" fill="#f7f4e8"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#173d2b">Describe the spatial pattern before explaining the cause</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="20" fill="#365b48">The distribution of an observation changes the investigation, even when the visible feature looks similar.</text>
+
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(60 155)">
+      <rect width="255" height="405" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <text x="128" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">Isolated</text>
+      <text x="128" y="68" text-anchor="middle" font-size="15" fill="#56685e">one or a few separated units</text>
+      <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+        <circle cx="55" cy="125" r="17"/><circle cx="105" cy="125" r="17"/><circle cx="155" cy="125" r="17"/><circle cx="205" cy="125" r="17"/>
+        <circle cx="55" cy="180" r="17"/><circle cx="105" cy="180" r="17"/><circle cx="155" cy="180" r="17"/><circle cx="205" cy="180" r="17"/>
+        <circle cx="55" cy="235" r="17"/><circle cx="105" cy="235" r="17"/><circle cx="155" cy="235" r="17"/><circle cx="205" cy="235" r="17"/>
+        <circle cx="55" cy="290" r="17"/><circle cx="105" cy="290" r="17"/><circle cx="155" cy="290" r="17"/><circle cx="205" cy="290" r="17"/>
+      </g>
+      <circle cx="155" cy="235" r="24" fill="#d9b06b" stroke="#6d3c18" stroke-width="4"/>
+      <text x="128" y="342" text-anchor="middle" font-size="16" fill="#365b48">Record the exact identity/location.</text>
+      <text x="128" y="370" text-anchor="middle" font-size="16" fill="#365b48">Compare nearby units.</text>
+    </g>
+
+    <g transform="translate(335 155)">
+      <rect width="255" height="405" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <text x="128" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">Edge-associated</text>
+      <text x="128" y="68" text-anchor="middle" font-size="15" fill="#56685e">concentrated near a boundary</text>
+      <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+        <circle cx="55" cy="125" r="17"/><circle cx="105" cy="125" r="17"/><circle cx="155" cy="125" r="17"/><circle cx="205" cy="125" r="17"/>
+        <circle cx="55" cy="180" r="17"/><circle cx="105" cy="180" r="17"/><circle cx="155" cy="180" r="17"/><circle cx="205" cy="180" r="17"/>
+        <circle cx="55" cy="235" r="17"/><circle cx="105" cy="235" r="17"/><circle cx="155" cy="235" r="17"/><circle cx="205" cy="235" r="17"/>
+        <circle cx="55" cy="290" r="17"/><circle cx="105" cy="290" r="17"/><circle cx="155" cy="290" r="17"/><circle cx="205" cy="290" r="17"/>
+      </g>
+      <g fill="#d9b06b" stroke="#6d3c18" stroke-width="4"><circle cx="55" cy="125" r="23"/><circle cx="55" cy="180" r="23"/><circle cx="55" cy="235" r="23"/><circle cx="55" cy="290" r="23"/></g>
+      <text x="128" y="342" text-anchor="middle" font-size="16" fill="#365b48">Preserve the boundary relationship.</text>
+      <text x="128" y="370" text-anchor="middle" font-size="16" fill="#365b48">Compare interior points.</text>
+    </g>
+
+    <g transform="translate(610 155)">
+      <rect width="255" height="405" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <text x="128" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">Zonal / clustered</text>
+      <text x="128" y="68" text-anchor="middle" font-size="15" fill="#56685e">concentrated in a defined area</text>
+      <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+        <circle cx="55" cy="125" r="17"/><circle cx="105" cy="125" r="17"/><circle cx="155" cy="125" r="17"/><circle cx="205" cy="125" r="17"/>
+        <circle cx="55" cy="180" r="17"/><circle cx="105" cy="180" r="17"/><circle cx="155" cy="180" r="17"/><circle cx="205" cy="180" r="17"/>
+        <circle cx="55" cy="235" r="17"/><circle cx="105" cy="235" r="17"/><circle cx="155" cy="235" r="17"/><circle cx="205" cy="235" r="17"/>
+        <circle cx="55" cy="290" r="17"/><circle cx="105" cy="290" r="17"/><circle cx="155" cy="290" r="17"/><circle cx="205" cy="290" r="17"/>
+      </g>
+      <g fill="#d9b06b" stroke="#6d3c18" stroke-width="4"><circle cx="105" cy="180" r="23"/><circle cx="155" cy="180" r="23"/><circle cx="105" cy="235" r="23"/><circle cx="155" cy="235" r="23"/></g>
+      <rect x="78" y="150" width="105" height="112" rx="18" fill="none" stroke="#b36b32" stroke-width="3" stroke-dasharray="8 6"/>
+      <text x="128" y="342" text-anchor="middle" font-size="16" fill="#365b48">Record the zone/cluster boundary.</text>
+      <text x="128" y="370" text-anchor="middle" font-size="16" fill="#365b48">Compare adjacent zones.</text>
+    </g>
+
+    <g transform="translate(885 155)">
+      <rect width="255" height="405" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+      <text x="128" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#173d2b">Widespread</text>
+      <text x="128" y="68" text-anchor="middle" font-size="15" fill="#56685e">distributed across many areas</text>
+      <g fill="#8db79b" stroke="#365b48" stroke-width="2">
+        <circle cx="55" cy="125" r="17"/><circle cx="105" cy="125" r="17"/><circle cx="155" cy="125" r="17"/><circle cx="205" cy="125" r="17"/>
+        <circle cx="55" cy="180" r="17"/><circle cx="105" cy="180" r="17"/><circle cx="155" cy="180" r="17"/><circle cx="205" cy="180" r="17"/>
+        <circle cx="55" cy="235" r="17"/><circle cx="105" cy="235" r="17"/><circle cx="155" cy="235" r="17"/><circle cx="205" cy="235" r="17"/>
+        <circle cx="55" cy="290" r="17"/><circle cx="105" cy="290" r="17"/><circle cx="155" cy="290" r="17"/><circle cx="205" cy="290" r="17"/>
+      </g>
+      <g fill="#d9b06b" stroke="#6d3c18" stroke-width="4"><circle cx="55" cy="125" r="22"/><circle cx="155" cy="125" r="22"/><circle cx="105" cy="180" r="22"/><circle cx="205" cy="180" r="22"/><circle cx="55" cy="235" r="22"/><circle cx="155" cy="235" r="22"/><circle cx="105" cy="290" r="22"/><circle cx="205" cy="290" r="22"/></g>
+      <text x="128" y="342" text-anchor="middle" font-size="16" fill="#365b48">Record the sampled proportion.</text>
+      <text x="128" y="370" text-anchor="middle" font-size="16" fill="#365b48">Confirm broad coverage.</text>
+    </g>
+  </g>
+
+  <rect x="60" y="600" width="1080" height="78" rx="20" fill="#fffaf0" stroke="#b36b32" stroke-width="3"/>
+  <text x="90" y="635" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#6d3c18">Pattern describes distribution — not cause.</text>
+  <text x="90" y="662" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">Keep the observation, sample size, location, and spatial pattern separate from any later interpretation or diagnosis.</text>
+  <text x="60" y="708" font-family="Arial, sans-serif" font-size="14" fill="#56685e">Teaching diagram — simplified examples for observation practice.</text>
+</svg>

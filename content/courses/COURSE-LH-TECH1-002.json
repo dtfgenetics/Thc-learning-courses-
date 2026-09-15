@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -39,11 +39,7 @@
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-I-001",
-    "jtaDomains": [
-      3,
-      4,
-      13
-    ],
+    "jtaDomains": [3, 4, 13],
     "maturity": "instruction-assessment-visual-draft",
     "developmentDependencies": [
       "MOD-PLANT-BIO-001",
@@ -62,8 +58,9 @@
     "formativeItemCount": 12,
     "summativeItemCount": 20,
     "sourceDepthPass": 1,
-    "visualLearningBatch": 1,
-    "producedVisualCount": 3,
-    "visualRegistry": "visuals/COURSE2-ASSET-REGISTRY.json"
+    "visualLearningBatch": 2,
+    "producedVisualCount": 5,
+    "visualRegistry": "visuals/COURSE2-ASSET-REGISTRY.json",
+    "visualDriveFolderId": "1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o"
   }
 }

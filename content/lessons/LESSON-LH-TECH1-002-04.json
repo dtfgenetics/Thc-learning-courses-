@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-002-04",
   "title": "Crop Observation Records, Photographs and Shift Handoff",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "draft",
   "competencies": ["COMP-PRO-QA-001", "COMP-PRO-SOP-001"],
   "learningObjectives": ["LO-LH-TECH1-002-04", "LO-LH-TECH1-002-05"],
@@ -120,6 +120,15 @@
           ["Cross-check","Questions or confirmation needed to ensure the handoff was understood"]
         ],
         "references":["REF-HSE-SHIFT-HANDOVER"]
+      },
+      {
+        "type":"image",
+        "assetId":"VIS-LH-TECH1-002-005",
+        "title":"Reconstructable crop-record and shift-handoff chain",
+        "src":"/assets/course2/reconstructable-handoff-chain.svg",
+        "alt":"Five-step flow from observe to record, act or escalate, hand off, and recheck, listing the identity, timing, sample, observation, action, unresolved-condition, next-check and cross-check information another qualified person needs to reconstruct the work.",
+        "caption":"A strong handoff connects what was observed, what was done, what remains unresolved, and what the receiving person must check next.",
+        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]
       },
       {
         "type":"callout",

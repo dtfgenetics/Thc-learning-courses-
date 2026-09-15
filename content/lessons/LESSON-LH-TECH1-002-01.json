@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-002-01",
   "title": "Structured Crop Walks and Representative Observation",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "draft",
   "competencies": ["COMP-PLANT-BIO-001"],
   "learningObjectives": ["LO-LH-TECH1-002-01", "LO-LH-TECH1-002-03"],
@@ -84,6 +84,15 @@
         "src":"/assets/course2/representative-crop-walk-route.svg",
         "alt":"Simplified crop-room map showing a repeatable route through edge, center and process zones, numbered observation points, and an example record of four affected plants out of twenty-four inspected, with a note that the exact route and sample size follow the facility plan.",
         "caption":"A room-level statement needs representative coverage plus location and denominator context; the exact route and sample size remain facility-specific.",
+        "references":["REF-PLANT-BIO-001"]
+      },
+      {
+        "type":"image",
+        "assetId":"VIS-LH-TECH1-002-004",
+        "title":"Spatial pattern comparison",
+        "src":"/assets/course2/spatial-pattern-comparison.svg",
+        "alt":"Four simplified crop-room grids comparing isolated, edge-associated, zonal or clustered, and widespread observation patterns, with highlighted plants showing different distributions and a reminder that spatial pattern describes distribution rather than proving cause.",
+        "caption":"Record where and how broadly an observation appears before interpreting why it happened; pattern is evidence about distribution, not proof of cause.",
         "references":["REF-PLANT-BIO-001"]
       },
       {
