@@ -18,6 +18,7 @@ assert.equal(course.status,'draft');
 assert.equal(course.extensions?.practicalCrosswalk,'registry/course5-practical-cde-crosswalk.json');
 assert.equal(course.extensions?.practicalCrosswalkStatus,'development');
 assert.equal(course.extensions?.pesticideApplicatorAuthorityConferred,false);
+assert.equal(course.extensions?.treatmentSelectionAuthorityConferred,false);
 assert.equal(crosswalk.validationBoundary?.pesticideApplicatorAuthorityConferred,false);
 assert.equal(crosswalk.validationBoundary?.treatmentSelectionAuthorityConferred,false);
 
@@ -63,7 +64,12 @@ assert.equal(crosswalk.validationBoundary?.pilotEvidenceImplied,false);
 assert.equal(crosswalk.validationBoundary?.interRaterEvidenceImplied,false);
 assert.equal(crosswalk.courseSpecificReadiness?.objectiveCoverageMapped,true);
 assert.equal(crosswalk.courseSpecificReadiness?.practicalMappingBuilt,true);
-assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt,false);
+assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt,true);
+assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetCount,9);
+assert.equal(crosswalk.courseSpecificReadiness?.visualRegistry,'visuals/COURSE5-ASSET-REGISTRY.json');
+assert.equal(course.extensions?.learnerAssetLayerBuilt,true);
+assert.equal(course.extensions?.totalLearnerAssetCount,9);
+assert.equal(course.extensions?.visualRegistry,'visuals/COURSE5-ASSET-REGISTRY.json');
 assert.equal(crosswalk.courseSpecificReadiness?.humanTechnicalReview,'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.renderedAccessibilityReview,'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.practicalValidation,'not-started');
@@ -73,4 +79,4 @@ assert.notEqual(releaseEvidence.gates?.renderedAccessibilityReview,'approved');
 assert.notEqual(releaseEvidence.gates?.practicalValidation,'validated');
 assert.notEqual(releaseEvidence.gates?.controlledPilotEvidence,'accepted');
 
-console.log('Course 5 C/D/E crosswalk passed: all six objectives have literal development-stage practical evidence, biosecurity spans all three contexts, and pesticide/treatment authority remains excluded.');
+console.log('Course 5 C/D/E crosswalk passed: all six objectives have literal development-stage practical evidence, the nine-asset learner layer is built, biosecurity spans all three contexts, and pesticide/treatment authority remains excluded.');

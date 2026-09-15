@@ -12,3 +12,4 @@ const objectives=new Map(final.objectives.map(x=>[x,0]));const keys=[0,0,0,0];le
 console.log('Course 005 production slice passed: four lessons, six objectives, 12 distinct formative items and 24 balanced summative items are draft-wired with PRACTICAL-TECH1-C/D/E mapping and no pesticide-applicator claim.');
 
 await import('./test-course5-practical-crosswalk.mjs');
+await import('./test-course5-visual-registry.mjs');
