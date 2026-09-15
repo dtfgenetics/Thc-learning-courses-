@@ -1,0 +1,45 @@
+name: Fix Technician I Course 002 item quality once
+
+on:
+  push:
+    branches: [feat/tech1-course-002-instruction-assessment]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Apply Course 002 item-quality repair
+        run: node scripts/fix-tech1-course2-item-quality.mjs
+      - name: Rebuild curriculum registry
+        run: npm run registry:build
+      - name: Run item-quality and Course 002 checks
+        run: |
+          node scripts/check-learning-hub-item-quality.mjs
+          npm run schema:validate
+          npm run validate
+          npm run registry:validate
+          npm run tech1:program:test
+          npm run tech1:course2:test
+      - name: Run complete deterministic suite
+        run: npm test
+      - name: Commit validated repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/fix-tech1-course2-item-quality-once.yml scripts/build-tech1-course2.mjs scripts/fix-tech1-course2-item-quality.mjs
+          git add content docs package.json registry scripts
+          git commit -m "fix: separate and rebalance Course 002 assessment banks"
+          git push origin HEAD:feat/tech1-course-002-instruction-assessment
