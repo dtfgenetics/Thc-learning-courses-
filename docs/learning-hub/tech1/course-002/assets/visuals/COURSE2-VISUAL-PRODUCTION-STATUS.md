@@ -17,13 +17,15 @@ Folder: **Course 2 — Visual Learning Boards**
 - folder ID: `1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 - folder URL: `https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 
-Verified mirrored batch-1 files:
+Verified mirrored files:
 
 - `VIS-LH-TECH1-002-001` → Drive file `1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be`
 - `VIS-LH-TECH1-002-002` → Drive file `1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza`
 - `VIS-LH-TECH1-002-003` → Drive file `1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq`
+- `VIS-LH-TECH1-002-004` → Drive file `1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7`
+- `VIS-LH-TECH1-002-005` → Drive file `1R64EMjV4jtRsGJD3JWptXOF_murzcLU8`
 
-Batch-2 files are tracked as `pending-upload` in the asset registry until their exact canonical SVG bytes are mirrored and the resulting Drive IDs are written back to the registry.
+All five produced Course 2 visuals are now mirrored and their Drive IDs are recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
 
 ## Produced learner visuals
 
@@ -57,7 +59,7 @@ Batch-2 files are tracked as `pending-upload` in the asset registry until their 
 
 `visuals/COURSE2-ASSET-REGISTRY.json` is the Course 2 learner-visual registry. The registry is intentionally expandable and has no artificial asset-count ceiling.
 
-`scripts/test-course2-visual-registry.mjs` now requires at least five produced Course 2 visuals and enforces that produced assets:
+`scripts/test-course2-visual-registry.mjs` requires at least five produced Course 2 visuals and enforces that produced assets:
 
 - use stable Course 2 visual IDs;
 - exist in the canonical public asset directory;
@@ -69,7 +71,7 @@ Batch-2 files are tracked as `pending-upload` in the asset registry until their 
 - include meaningful learner-facing alt text and captions;
 - are not left as orphaned produced assets;
 - explicitly track Drive mirror state; and
-- include a Drive file ID/URL once the asset is marked `mirrored`.
+- include a Drive file ID/URL when marked `mirrored`.
 
 The visual contract is imported by `scripts/test-tech1-course2.mjs`, so the normal Course 2 deterministic CI path validates the visual layer automatically.
 
