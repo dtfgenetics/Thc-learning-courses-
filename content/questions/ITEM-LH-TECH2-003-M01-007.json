@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-M01-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-003-07",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why preserve an original abnormal reading after later verification finds meter bias?",
+  "choices": [
+    "It should be hidden to avoid confusion.",
+    "It should be replaced with the target value.",
+    "It is part of the reconstructable history and should be linked to the verification/disposition evidence.",
+    "It is irrelevant once the meter is serviced."
+  ],
+  "correct": 2,
+  "rationale": "It is part of the reconstructable history and should be linked to the verification/disposition evidence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

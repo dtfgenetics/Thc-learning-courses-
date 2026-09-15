@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-TECH2-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A pH meter passes yesterday’s calibration but gives an implausible value today. What is the best reasoning?",
+  "choices": [
+    "Yesterday’s calibration makes the value unquestionable.",
+    "The batch must be discarded without another check.",
+    "Change the recipe until the meter value looks familiar.",
+    "Current measurement fitness should be verified; prior calibration alone does not prove today’s reading is valid."
+  ],
+  "correct": 3,
+  "rationale": "Current measurement fitness should be verified; prior calibration alone does not prove today’s reading is valid.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-003-02",
+  "title": "Measurement Quality, Final-Batch Verification and Accept/Hold Decisions",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-003-01",
+    "LO-LH-TECH2-003-02",
+    "LO-LH-TECH2-003-07"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "A digital value is not automatically decision-grade evidence. pH and EC instruments can drift, foul or be used with the wrong sample method. Final-batch verification therefore checks device identity/status, standards or reference checks, sample identity, stabilization, expected range and the controlled accept/hold/escalate rule.",
+    "vocabulary": [
+      {
+        "term": "Verification",
+        "definition": "A check that confirms a measuring system performs acceptably for its intended use without necessarily changing calibration."
+      },
+      {
+        "term": "Out-of-tolerance",
+        "definition": "A measurement or instrument result outside an established acceptance or verification criterion."
+      },
+      {
+        "term": "Original observation",
+        "definition": "The initially recorded value or fact preserved even when later evidence shows it was affected by error."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Verify unexpected readings before changing the batch",
+        "body": "When pH or EC changes unexpectedly, check sample identity, instrument status, standards/reference solution, probe condition and a second verified measurement before making a chemistry decision.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Expected range is not permission to manipulate records",
+        "body": "If a verified measurement is outside the controlled range, preserve the value and use the approved hold/escalation or adjustment instruction. Do not retest selectively until a preferred number appears.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Record the measurement chain",
+        "body": "A reconstructable record includes meter/device ID, verification or calibration status, sample identity, timestamp, result, relevant standard/reference and the decision made from the evidence.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A final EC is unexpectedly high; a reference check shows the meter is reading high, so the original result is preserved and the batch is remeasured with a verified instrument before disposition.",
+      "Two repeated pH results agree and the instrument passes verification but the batch is outside the authorized range; the technician holds and escalates instead of inventing an adjustment."
+    ],
+    "commonMistakes": [
+      "Changing chemistry before checking the meter.",
+      "Deleting a suspect measurement after a device problem is found.",
+      "Repeating measurements without documenting why the repeat was performed."
+    ],
+    "practicalApplication": "Complete a final-batch verification record with device/sample identity, verification evidence, result, expected range, disposition and any authorized correction or escalation.",
+    "summary": "Measurement quality is part of batch quality. Verify the tool and sample before acting, then preserve both the original evidence and the final disposition."
+  }
+}

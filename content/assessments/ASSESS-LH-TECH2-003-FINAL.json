@@ -1,0 +1,114 @@
+{
+  "id": "ASSESS-LH-TECH2-003-FINAL",
+  "title": "Fertigation Execution, Verification & Root-Zone Interpretation — Course Assessment",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-ROOTZONE-001",
+    "COMP-PRO-SOP-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-TECH2-003-01",
+    "LO-LH-TECH2-003-02",
+    "LO-LH-TECH2-003-03",
+    "LO-LH-TECH2-003-04",
+    "LO-LH-TECH2-003-05",
+    "LO-LH-TECH2-003-06",
+    "LO-LH-TECH2-003-07"
+  ],
+  "items": [
+    "ITEM-LH-TECH2-003-001",
+    "ITEM-LH-TECH2-003-002",
+    "ITEM-LH-TECH2-003-003",
+    "ITEM-LH-TECH2-003-004",
+    "ITEM-LH-TECH2-003-005",
+    "ITEM-LH-TECH2-003-006",
+    "ITEM-LH-TECH2-003-007",
+    "ITEM-LH-TECH2-003-008",
+    "ITEM-LH-TECH2-003-009",
+    "ITEM-LH-TECH2-003-010",
+    "ITEM-LH-TECH2-003-011",
+    "ITEM-LH-TECH2-003-012",
+    "ITEM-LH-TECH2-003-013",
+    "ITEM-LH-TECH2-003-014",
+    "ITEM-LH-TECH2-003-015",
+    "ITEM-LH-TECH2-003-016",
+    "ITEM-LH-TECH2-003-017",
+    "ITEM-LH-TECH2-003-018",
+    "ITEM-LH-TECH2-003-019",
+    "ITEM-LH-TECH2-003-020",
+    "ITEM-LH-TECH2-003-021",
+    "ITEM-LH-TECH2-003-022",
+    "ITEM-LH-TECH2-003-023",
+    "ITEM-LH-TECH2-003-024"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 24,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-WATER-QUALITY-ADV-001",
+      "items": 4,
+      "cognitiveTarget": "Source water, sample identity, meter readiness and final-batch measurement verification"
+    },
+    {
+      "competency": "COMP-IRRIGATION-ADV-001",
+      "items": 4,
+      "cognitiveTarget": "Measured distribution, scheduling and delivery-response troubleshooting"
+    },
+    {
+      "competency": "COMP-NUTRIENT-DIAG-001",
+      "items": 3,
+      "cognitiveTarget": "Multi-factor nutrient/root-zone differential reasoning and next-check selection"
+    },
+    {
+      "competency": "COMP-ROOTZONE-001",
+      "items": 4,
+      "cognitiveTarget": "Contextual dryback, moisture, pH and EC trend interpretation"
+    },
+    {
+      "competency": "COMP-PRO-SOP-001",
+      "items": 4,
+      "cognitiveTarget": "Controlled recipe execution, material identity and authority boundaries"
+    },
+    {
+      "competency": "COMP-SAFETY-WORK-001",
+      "items": 3,
+      "cognitiveTarget": "Chemical handling, PPE, spill/exposure and stop-work decisions"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 2,
+      "cognitiveTarget": "Reconstructable batch/troubleshooting records and escalation handoff"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 1,
+    "targetBankItemsPerCompetency": 12,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-TECH2-003",
+    "linkedCredentialPractical": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 48,
+    "distinctFormativeBank": true,
+    "formativeAssessment": "ASSESS-LH-TECH2-003-M01",
+    "publicCredentialItemsExcluded": true
+  }
+}

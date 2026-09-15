@@ -1,7 +1,7 @@
 {
   "id": "COURSE-LH-TECH2-003",
   "title": "Fertigation Execution, Verification & Root-Zone Interpretation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
@@ -24,35 +24,52 @@
   "modules": [
     "MOD-WATER-QUALITY-ADV-001",
     "MOD-IRRIGATION-ADV-001",
-    "MOD-NUTRIENT-DIAG-001"
+    "MOD-NUTRIENT-DIAG-001",
+    "MOD-ROOTZONE-001",
+    "MOD-PRO-SOP-001",
+    "MOD-PRO-QA-001",
+    "MOD-SAFETY-WORK-001",
+    "MOD-LH-TECH2-003-FERTIGATION"
   ],
   "competencies": [
     "COMP-WATER-QUALITY-ADV-001",
     "COMP-IRRIGATION-ADV-001",
-    "COMP-NUTRIENT-DIAG-001"
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-ROOTZONE-001",
+    "COMP-PRO-SOP-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-PRO-QA-001"
   ],
-  "finalAssessment": null,
+  "finalAssessment": "ASSESS-LH-TECH2-003-FINAL",
   "learningOutcomes": [
-    "Verify source water, batch, meter, and irrigation information before interpreting crop response.",
-    "Interpret irrigation and root-zone evidence as a connected system rather than isolated readings.",
-    "Escalate chemistry, equipment, or crop-risk conditions that exceed Technician II authority."
+    "Execute approved fertigation batches with verified material identity, calculations, measurement quality and chemical-safety controls without independently redesigning the recipe.",
+    "Interpret irrigation delivery, root-zone moisture/dryback, pH and EC as a connected system using crop, media, container, stage and environmental context.",
+    "Build ranked fertigation/root-zone differentials and select discriminating verification steps before corrective action.",
+    "Produce reconstructable batch and diagnostic records and escalate chemistry, safety, equipment or crop-risk decisions that exceed Technician II authority."
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-II-001",
-    "maturity": "course-shell-draft",
+    "maturity": "instruction-assessment-draft",
     "developmentDependencies": [
       "MOD-WATER-QUALITY-ADV-001",
       "MOD-IRRIGATION-ADV-001",
-      "MOD-NUTRIENT-DIAG-001"
+      "MOD-NUTRIENT-DIAG-001",
+      "MOD-ROOTZONE-001",
+      "MOD-PRO-SOP-001",
+      "MOD-PRO-QA-001",
+      "MOD-SAFETY-WORK-001"
     ],
     "contentCeiling": null,
-    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedCourseAssessmentRequired": false,
     "dedicatedLabModuleRequired": false,
     "integratedPerformanceValidationRequired": false,
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
     "legacySourceCourse": "COURSE-CULT-TECH-II-001",
     "publicCredentialItemsAreDevelopmentOnly": true,
-    "operationalCredentialBankMustBePrivate": true
+    "operationalCredentialBankMustBePrivate": true,
+    "dedicatedPerformanceValidationRequired": true,
+    "mappedPractical": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+    "independentRecipeDesignAuthorityConferred": false
   }
 }
