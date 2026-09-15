@@ -1,0 +1,45 @@
+name: Temporary Course 1 registry sync
+
+on:
+  push:
+    branches:
+      - content/course1-final-evidence-sources
+
+permissions:
+  contents: write
+
+jobs:
+  sync-registry:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v7
+        with:
+          ref: content/course1-final-evidence-sources
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Rebuild canonical curriculum registry
+        run: npm run registry:build
+
+      - name: Commit exact generated registry when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- registry/curriculum.json; then
+            echo "Registry already canonical."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/curriculum.json
+          git commit -m "Sync generated curriculum registry"
+          git push origin HEAD:content/course1-final-evidence-sources
