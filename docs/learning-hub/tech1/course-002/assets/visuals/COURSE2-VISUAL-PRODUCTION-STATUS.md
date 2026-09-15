@@ -4,11 +4,7 @@
 
 ## Canonical learner delivery
 
-Course 2 learner assets are responsive, accessible SVG files published from:
-
-`apps/web/public/assets/course2/`
-
-The repository/public web asset is the learner-delivery source of truth. Google Drive is a controlled production/reference mirror.
+Course 2 learner assets are responsive, accessible SVG files published from `apps/web/public/assets/course2/`. The repository/public web asset is the learner-delivery source of truth. Google Drive is a controlled production/reference mirror.
 
 ## Controlled Drive mirror
 
@@ -17,7 +13,7 @@ Folder: **Course 2 — Visual Learning Boards**
 - folder ID: `1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 - folder URL: `https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 
-All nine produced Course 2 learner assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
+All ten produced Course 2 learner assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
 
 ## Embedded teaching visuals
 
@@ -27,17 +23,17 @@ All nine produced Course 2 learner assets are mirrored and recorded in `visuals/
 4. `VIS-LH-TECH1-002-004` — Spatial pattern comparison — Lesson 1
 5. `VIS-LH-TECH1-002-005` — Reconstructable crop-record and shift-handoff chain — Lesson 4
 6. `VIS-LH-TECH1-002-008` — Observation, interpretation, and diagnostic-boundary workflow — Lesson 3
-7. `VIS-LH-TECH1-002-009` — **Reproductive morphology reference** — Lesson 2
-   - public path: `/assets/course2/reproductive-morphology-reference.svg`
-   - Drive file: `12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa`
-   - purpose: original schematic for documenting visible pistillate and staminate structures and unexpected/mixed expression without unsupported causal inference
-   - source support: existing `REF-FLOWER-MORPH-2023-001` plus an open-access review on Cannabis sexual-expression plasticity
-   - copyright control: original teaching schematic; no published source figure reproduced
+7. `VIS-LH-TECH1-002-009` — Reproductive morphology reference — Lesson 2
 
 ## Downloadable practice assets
 
 8. `VIS-LH-TECH1-002-006` — Crop-walk room-map practice worksheet — Lesson 1
 9. `VIS-LH-TECH1-002-007` — Observation record and handoff practice worksheet — Lesson 4
+10. `VIS-LH-TECH1-002-010` — **Photo evidence audit practice worksheet** — Lesson 4
+    - public path: `/assets/course2/photo-evidence-audit-practice.svg`
+    - Drive file: `1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO`
+    - practice: audit synthetic example image sets for context, whole-plant coverage, close detail, identity/time, comparison value, lighting consistency, material image edits, original-file preservation and retake/additional-image needs
+    - evidence boundary: learners evaluate documentation quality rather than diagnosing the plant shown in the synthetic examples
 
 ## Delivery contract
 
@@ -55,21 +51,21 @@ The contract is imported by `scripts/test-tech1-course2.mjs` and runs through th
 
 ## Source and scope controls
 
-These assets teach evidence collection, reproductive/developmental morphology, reasoning boundaries and record quality. They do not replace facility procedures, diagnostic authority, jurisdiction-specific requirements or human technical review.
+These assets teach evidence collection, reproductive/developmental morphology, diagnostic-reasoning boundaries and record quality. They do not replace facility procedures, diagnostic authority, jurisdiction-specific requirements or human technical review.
 
 - sample routes and sizes remain facility/purpose-specific;
 - spatial pattern describes distribution and does not prove cause;
 - developmental timing is context, not a universal cultivar rule;
 - photographs support documentation and do not prove diagnosis;
+- synthetic photo-practice examples teach evidence quality and do not depict confirmed plant disorders;
 - symptoms, timing, environment and work history can narrow a diagnostic differential without independently confirming one cause;
 - visible pistillate or staminate structures establish what was observed, not why sexual expression occurred;
-- the reproductive-morphology schematic is not to scale and must not be used to predict sex from vegetative appearance;
 - exact handoff forms, roles, escalation paths and correction controls remain facility-specific.
 
 ## Remaining Course 2 learner-asset priorities
 
-- photo-evidence practice packet with example image sets and accessible text alternatives;
-- optional printable/PDF exports derived from the canonical SVG worksheets after layout/accessibility review;
-- human technical and accessibility review before any draft-to-release status change.
+- optional printable/PDF exports derived from canonical SVG worksheets after layout/accessibility review;
+- human technical and accessibility review before any draft-to-release status change;
+- any additional performance-validation artifacts identified by the Technician I credential/practical audit.
 
-All four Course 2 lessons now have dedicated visual support. Course 2 remains draft-gated pending human review and any additional performance-validation work required by the program.
+All four Course 2 lessons have dedicated visual support, and the planned observation, morphology, diagnostic-boundary, photo-evidence, room-map and handoff practice layers now have learner-facing assets. Course 2 remains draft-gated pending human review and required performance validation.

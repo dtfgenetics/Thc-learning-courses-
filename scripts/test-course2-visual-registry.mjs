@@ -12,7 +12,7 @@ assert.equal(registry.policy?.maximumAssetCount, null);
 assert.ok(registry.driveStorage?.folderId);
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.ok(produced.length >= 9, 'Course 2 reproductive-morphology batch requires at least nine produced learner assets');
+assert.ok(produced.length >= 10, 'Course 2 photo-evidence practice batch requires at least ten produced learner assets');
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
 
@@ -31,11 +31,9 @@ for (const asset of produced) {
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
   assert.equal(asset.driveMirrorStatus, 'mirrored', `${asset.id}: produced assets must be mirrored before merge`);
   assert.ok(asset.driveFileId && asset.driveFileUrl, `${asset.id}: mirrored asset requires Drive metadata`);
-
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
   assert.equal(asset.learnerPath, `/${asset.sourcePath.replace(/^apps\/web\/public\//, '')}`);
-
   const source = path.join(root, asset.sourcePath);
   assert.ok(fs.existsSync(source), `${asset.id}: public source asset missing`);
   const svg = fs.readFileSync(source, 'utf8');
@@ -45,7 +43,7 @@ for (const asset of produced) {
   assert.match(svg, /viewBox=/);
 }
 
-for (const lessonNumber of ['01', '02', '03', '04']) {
+for (const lessonNumber of ['01','02','03','04']) {
   const lesson = readJson(`content/lessons/LESSON-LH-TECH1-002-${lessonNumber}.json`);
   for (const block of lesson.content?.blocks ?? []) {
     if (block.type === 'image' && block.assetId) {
@@ -71,9 +69,7 @@ for (const lessonNumber of ['01', '02', '03', '04']) {
 
 for (const asset of produced) {
   assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced asset is not reachable from a canonical lesson`);
-  for (const lessonId of asset.primaryLessons) {
-    assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)));
-  }
+  for (const lessonId of asset.primaryLessons) assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)));
 }
 
 console.log(`Course 2 learner-asset contract passed for ${produced.length} assets, including embedded visuals and downloadable practice worksheets.`);
