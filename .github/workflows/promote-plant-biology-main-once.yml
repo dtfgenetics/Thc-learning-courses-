@@ -1,0 +1,63 @@
+name: Promote Plant Biology main once
+
+on:
+  push:
+    branches: [promote/plant-biology-to-main]
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Port exact validated Plant Biology delta from staging
+        run: |
+          git fetch origin staging:refs/remotes/origin/staging
+          git checkout origin/staging -- \
+            content/assessments/ASSESS-PLANT-BIO-ANATOMY-002.json \
+            content/assessments/ASSESS-PLANT-BIO-SEX-003.json \
+            content/courses/COURSE-CULT-FOUNDATIONS-001.json \
+            content/lessons/LESSON-PLANT-BIO-ANATOMY-002.json \
+            content/lessons/LESSON-PLANT-BIO-SEX-003.json \
+            content/questions/ITEM-PLANT-BIO-A2-001.json \
+            content/questions/ITEM-PLANT-BIO-A2-002.json \
+            content/questions/ITEM-PLANT-BIO-A2-003.json \
+            content/questions/ITEM-PLANT-BIO-A2-004.json \
+            content/questions/ITEM-PLANT-BIO-A2-005.json \
+            content/questions/ITEM-PLANT-BIO-A2-006.json \
+            content/questions/ITEM-PLANT-BIO-A2-007.json \
+            content/questions/ITEM-PLANT-BIO-A2-008.json \
+            content/questions/ITEM-PLANT-BIO-S3-001.json \
+            content/questions/ITEM-PLANT-BIO-S3-002.json \
+            content/questions/ITEM-PLANT-BIO-S3-003.json \
+            content/questions/ITEM-PLANT-BIO-S3-004.json \
+            content/questions/ITEM-PLANT-BIO-S3-005.json \
+            content/questions/ITEM-PLANT-BIO-S3-006.json \
+            content/questions/ITEM-PLANT-BIO-S3-007.json \
+            content/questions/ITEM-PLANT-BIO-S3-008.json \
+            content/references/REF-FLOROGENESIS-2019-001.json \
+            content/references/REF-TRICHOME-BIOLOGY-2021-001.json \
+            scripts/test-learner-enrollment-api.mjs
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Rebuild generated curriculum registry
+        run: npm run registry:build
+      - name: Verify complete deterministic suite on current main plus Plant Biology
+        run: npm test
+      - name: Commit exact promotion and remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/promote-plant-biology-main-once.yml
+          git add -A
+          git commit -m "content: promote validated Plant Biology enrichment to main"
+          git push origin HEAD:promote/plant-biology-to-main
