@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-005-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-FLOWER-ADV-001",
+  "objective": "LO-LH-TECH2-005-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One cultivar appears slower to recover after canopy work, but it was at a different flowering stage than the comparison group. What is the best conclusion?",
+  "choices": [
+    "The cultivar is proven genetically intolerant.",
+    "Recovery timing can be ignored.",
+    "The slower group should be removed from the record.",
+    "Stage is a confounder, so genotype causation is not established from this comparison."
+  ],
+  "correct": 3,
+  "rationale": "Stage is a confounder, so genotype causation is not established from this comparison.",
+  "references": [
+    "REF-FLOWER-001",
+    "REF-CANOPY-DEFOL-2025-001"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-005-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-005-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician later finds that one tray count in the source record was entered incorrectly. What is the correct response?",
+  "choices": [
+    "Overwrite the original count with no note.",
+    "Use the controlled correction process while preserving the original entry, correction reason and attribution.",
+    "Delete the entire tray from the analysis.",
+    "Change neighboring records so the batch appears consistent."
+  ],
+  "correct": 1,
+  "rationale": "Use the controlled correction process while preserving the original entry, correction reason and attribution.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

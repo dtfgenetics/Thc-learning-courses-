@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-005-04",
+  "title": "Integrated Propagation/Canopy Review, Biosecurity Boundaries and Supervisor Handoff",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-005-01",
+    "LO-LH-TECH2-005-02",
+    "LO-LH-TECH2-005-03",
+    "LO-LH-TECH2-005-04",
+    "LO-LH-TECH2-005-05",
+    "LO-LH-TECH2-005-06"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANOPY-001",
+    "REF-FLOWER-001",
+    "REF-IPM-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "The Technician II performance review converts production data into a bounded next decision. Strong work preserves sanitation and traceability, separates facts from hypotheses, avoids unauthorized high-risk intervention, and hands off the affected scope, evidence, uncertainty and next verification need to the authorized role.",
+    "vocabulary": [
+      {
+        "term": "Affected scope",
+        "definition": "The traceable donor, batch, cultivar, zone, work order or time period plausibly involved in the observed deviation."
+      },
+      {
+        "term": "Role boundary",
+        "definition": "The limit between evidence review or authorized routine action and a decision requiring another qualified role."
+      },
+      {
+        "term": "Supervisor handoff",
+        "definition": "A reconstructable summary of condition, evidence, action, uncertainty and next decision required."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Sanitation and traceability remain active during troubleshooting",
+        "body": "Do not move questionable propagation material, share tools across biosecurity boundaries or detach observations from donor/batch identity merely to make review easier.",
+        "references": [
+          "REF-IPM-001",
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Performance evidence does not authorize high-risk intervention",
+        "body": "A strong hypothesis may support escalation or an authorized next check; it does not independently authorize a high-risk canopy action, treatment, destruction decision or controlled-program change outside the role.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Preserve contrary evidence",
+        "body": "A review should include measurements and observations that disagree with the leading hypothesis. Do not alter original production records to make the final explanation appear more certain.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff should be decision-ready",
+        "body": "State the affected scope, comparable performance metrics, leading and alternative explanations, evidence gaps, biosecurity status, completed authorized actions and the next decision or verification required.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A propagation batch remains below target with evidence pointing toward one donor, but sanitation and environment checks are not yet complete; the handoff ranks the donor hypothesis without claiming genotype causation.",
+      "A canopy zone shows poor recovery after authorized work; the technician documents mapped response and escalates a proposed high-risk intervention instead of performing it independently."
+    ],
+    "commonMistakes": [
+      "Breaking quarantine to improve access.",
+      "Deleting contrary production records.",
+      "Converting a hypothesis into a confirmed contamination or genotype claim.",
+      "Performing a high-risk intervention because the technician believes it will help."
+    ],
+    "practicalApplication": "Produce either a Propagation Performance Review or Canopy/Flowering Performance Review with calculations, mapped evidence, differential, role-boundary decision, biosecurity status and supervisor handoff.",
+    "summary": "Integrated performance review turns production evidence into a clear, traceable, bounded next action without overstating causation or authority."
+  }
+}

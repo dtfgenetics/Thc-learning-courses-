@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-005-03",
+  "title": "Advanced Canopy Work Orders, Spatial Uniformity and Recovery Evidence",
+  "competencies": [
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-005-03",
+    "LO-LH-TECH2-005-04",
+    "LO-LH-TECH2-005-06"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-CANOPY-001",
+    "REF-CANOPY-DEFOL-2025-001",
+    "REF-FLOWER-001"
+  ],
+  "content": {
+    "overview": "Advanced canopy work should be judged by controlled work-order intent and measured crop response, not by whether a named technique was performed. Technician II connects canopy height, density, spatial light conditions, recovery, flower position and cultivar/stage context to the actual outcome.",
+    "vocabulary": [
+      {
+        "term": "Canopy uniformity",
+        "definition": "The degree to which defined architecture or production conditions are consistent across mapped crop positions."
+      },
+      {
+        "term": "Recovery assessment",
+        "definition": "A planned post-work comparison of plant condition and growth after a canopy intervention."
+      },
+      {
+        "term": "Planned versus actual",
+        "definition": "A controlled comparison between the authorized work instruction and what was actually completed or observed."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Interpret the work order before judging the result",
+        "body": "Record target area, crop stage, authorized action, completion extent and exceptions. A technique name alone does not specify intensity, timing or intended outcome.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Map response instead of relying on a center-room impression",
+        "body": "Use predefined spatial observations such as canopy height, gaps, density, flower position or light measurements when the question is uniformity. Representative mapped evidence is stronger than one photograph.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Cultivar and stage may modify response without proving genotype causation",
+        "body": "Published work shows cultivar- and environment-dependent responses to canopy practices. Compare repeated or replicated evidence before attributing a performance difference to genotype alone.",
+        "references": [
+          "REF-CANOPY-DEFOL-2025-001",
+          "REF-FLOWER-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A room average looks acceptable, but mapped edge positions recover poorly; the spatial pattern requires investigation rather than declaring the whole canopy uniform.",
+      "Cultivar A appears slower to recover than cultivar B in one room, but the groups also differed in stage and starting canopy density; genotype remains only one hypothesis."
+    ],
+    "commonMistakes": [
+      "Judging success from the technique name.",
+      "Using one center-room photo as a uniformity assessment.",
+      "Attributing one observed difference to genotype without controlling context.",
+      "Changing the work plan outside assigned authority."
+    ],
+    "practicalApplication": "Complete a planned-versus-actual canopy review with mapped pre/post observations, crop stage, cultivar, authorized work, exceptions, recovery timing and unresolved factors.",
+    "summary": "Canopy performance is an evidence question: what was authorized, what occurred, where the response differed and what evidence explains it."
+  }
+}

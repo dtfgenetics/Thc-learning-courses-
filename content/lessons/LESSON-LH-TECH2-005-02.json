@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-005-02",
+  "title": "Propagation Underperformance Differential and Verification Workflow",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-005-02",
+    "LO-LH-TECH2-005-05",
+    "LO-LH-TECH2-005-06"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-IPM-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Poor propagation performance can arise from donor condition, handling, sanitation, media, environment, timing, localized pests or disease, or normal cultivar timing differences. Technician II ranks these explanations with evidence and chooses the next check that can separate them rather than claiming contamination or genotype effects from one pattern.",
+    "vocabulary": [
+      {
+        "term": "Differential",
+        "definition": "A ranked set of plausible explanations tested against the available evidence."
+      },
+      {
+        "term": "Discriminating check",
+        "definition": "A targeted observation or measurement whose result changes the ranking of competing explanations."
+      },
+      {
+        "term": "Confounder",
+        "definition": "A changing factor associated with both the apparent cause and outcome that can distort attribution."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Separate pattern from cause",
+        "body": "A donor-linked or tray-linked cluster is evidence about where to investigate, not proof that genetics, contamination or one operator caused the outcome.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Use sanitation and plant-health history as evidence",
+        "body": "Review donor observations, tool and surface sanitation records, pest/disease scouting, movement history and any quarantine status before ruling plant-health pathways in or out.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Choose the next check that reduces uncertainty",
+        "body": "If environment, handling and donor condition remain plausible, choose a check that differentiates them rather than changing multiple process variables at once.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Losses cluster by one propagation zone across multiple donors, making localized environment or handling stronger than a genotype-only explanation.",
+      "One cultivar roots more slowly but reaches the same success by the validated later observation point; timing differs, but poor final performance is not established."
+    ],
+    "commonMistakes": [
+      "Calling a problem genetic because one cultivar is involved.",
+      "Calling contamination without corroborating observations or tests.",
+      "Changing humidity, media and handling simultaneously.",
+      "Ignoring donor and sanitation history."
+    ],
+    "practicalApplication": "Create a propagation differential table with evidence for/against donor, sanitation, environment, handling, media and timing hypotheses, then identify one next discriminating check and the role responsible.",
+    "summary": "Advanced propagation troubleshooting narrows uncertainty with traceable evidence instead of turning patterns into unsupported causes."
+  }
+}
