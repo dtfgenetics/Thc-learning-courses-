@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A rooting-success KPI is defined as successful rooted units divided by eligible starting cuttings. There were 84 successful units from 100 eligible starts. What is the KPI?",
+  "choices": [
+    "16%.",
+    "100% after excluding failures.",
+    "84%.",
+    "The KPI cannot be calculated because failures occurred."
+  ],
+  "correct": 2,
+  "rationale": "84%. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

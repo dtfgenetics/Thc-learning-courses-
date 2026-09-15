@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A failure rate is defined as failed eligible units divided by 80 eligible units. Twelve failed. What is the rate?",
+  "choices": [
+    "15%.",
+    "12%.",
+    "68%.",
+    "85%."
+  ],
+  "correct": 0,
+  "rationale": "15%. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

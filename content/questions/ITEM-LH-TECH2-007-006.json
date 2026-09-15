@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which item should rank highest in a shift handoff?",
+  "choices": [
+    "A low-risk formatting task with no dependency.",
+    "An unresolved identity/traceability mismatch that blocks downstream harvest movement.",
+    "A completed task with no exception.",
+    "A metric already reviewed and closed."
+  ],
+  "correct": 1,
+  "rationale": "An unresolved identity/traceability mismatch that blocks downstream harvest movement.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}
