@@ -139,6 +139,7 @@ function credentialProgressView(credential, course, rawEvidence) {
   const requiredCompetencies = new Set(course?.competencies ?? []);
   const evidence = {
     learnerId: rawEvidence.learnerId ?? null,
+    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => row.courseId === credential.course),
     assessments: (rawEvidence.assessments ?? []).filter((row) => requiredAssessments.has(row.assessmentId)),
     performanceAssessments: (rawEvidence.performanceAssessments ?? []).filter((row) => requiredPerformance.includes(row.assessmentId)),
     portfolioArtifacts: (rawEvidence.portfolioArtifacts ?? []).filter((row) => requiredArtifacts.includes(row.artifactId))
@@ -151,8 +152,12 @@ function credentialProgressView(credential, course, rawEvidence) {
       id: credential.id,
       title: credential.title,
       version: credential.version,
+      status: credential.status,
       role: credential.role ?? null,
       course: credential.course,
+      courseVersion: credential.courseVersion ?? null,
+      certificationUseStatus: credential.governance?.certificationUseStatus ?? null,
+      releaseApprovalStatus: credential.governance?.releaseApprovalStatus ?? null,
       minimumPassingScorePercent: credential.eligibility.minimumPassingScorePercent
     },
     eligibility,
