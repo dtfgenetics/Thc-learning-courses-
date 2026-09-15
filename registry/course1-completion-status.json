@@ -1,0 +1,148 @@
+{
+  "courseId": "COURSE-LH-TECH1-001",
+  "version": "1.0.0",
+  "updated": "2026-09-15",
+  "academicPublication": "published",
+  "goldStandardPackageComplete": false,
+  "certificationEvidenceValidated": false,
+  "domains": [
+    {
+      "id": "canonical-content-audit",
+      "state": "substantial-needs-final-review",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/FULL-AUDIT-2026-09-14.md",
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "evidence-and-source-audit",
+      "state": "substantial-needs-final-review",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/EVIDENCE-DOSSIER.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "objective-instruction-practice-assessment-alignment",
+      "state": "machine-structured-needs-final-review",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "learner-activity-quality-review",
+      "state": "built-needs-final-review",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "visual-and-asset-completion",
+      "state": "partial",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-PRODUCTION-STATUS.md",
+        "visuals/ASSET-REGISTRY.json"
+      ],
+      "humanGateRequired": true,
+      "note": "18 concepts have production drafts; public learner registry was last audited with 14 deployed SVG assets. Replacement candidates still require factual/copy/accessibility/responsive QA."
+    },
+    {
+      "id": "module-assessment-review",
+      "state": "built-human-review-open",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/REVIEW-PACKET.md"
+      ],
+      "humanGateRequired": true,
+      "note": "84 public module-test items require human assessment review."
+    },
+    {
+      "id": "course-final-assessment-review",
+      "state": "built-human-review-open",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/REVIEW-PACKET.md"
+      ],
+      "humanGateRequired": true,
+      "note": "36-item academic course final exists; threshold remains provisional."
+    },
+    {
+      "id": "integrated-practical-validation",
+      "state": "built-calibration-open",
+      "evidence": [
+        "docs/academy-v2/practicals/PRACTICAL-LH-TECH1-001-WORKFLOW.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "instructor-and-assessor-package-qa",
+      "state": "built-needs-final-review",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/COURSE-PACKAGE-MANIFEST.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "rendered-accessibility-review",
+      "state": "not-started-human-review",
+      "evidence": [],
+      "humanGateRequired": true
+    },
+    {
+      "id": "responsive-learner-ux-review",
+      "state": "machine-tested-manual-review-open",
+      "evidence": [
+        "scripts/test-academy-accessibility.mjs",
+        "scripts/test-academy-web.mjs"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "public-deployment-verification",
+      "state": "in-progress",
+      "evidence": [
+        "docs/CERTIFICATION-CATALOG-PUBLICATION-CONTRACT.md",
+        "registry/credential-public-status.json"
+      ],
+      "humanGateRequired": false,
+      "note": "Catalog visibility implementation is active on feat/certification-catalog-visibility / PR #409. Production route/build verification still remains after promotion/deployment."
+    },
+    {
+      "id": "controlled-pilot",
+      "state": "not-started",
+      "evidence": [
+        "docs/learning-hub/tech1/course-001/pilot/PILOT-PROTOCOL.md"
+      ],
+      "humanGateRequired": true
+    },
+    {
+      "id": "course-standard-setting",
+      "state": "provisional",
+      "evidence": [],
+      "humanGateRequired": true
+    },
+    {
+      "id": "versioned-final-course-approval",
+      "state": "not-requested",
+      "evidence": [],
+      "humanGateRequired": true
+    }
+  ],
+  "nextMachineActions": [
+    "land certification catalog visibility and record deployed SHA/route",
+    "finish public visual asset QA/deployment tracking",
+    "generate a final review queue for all 18 lessons and 120 public scored knowledge items",
+    "verify every objective has instruction, practice, assessment and remediation evidence",
+    "prepare the rendered accessibility/manual UX review checklist"
+  ],
+  "nextHumanActions": [
+    "technical/curriculum review",
+    "assessment review",
+    "rendered accessibility review",
+    "practical calibration and form-equivalence study",
+    "controlled learner/item pilot",
+    "formal standard setting",
+    "versioned final approval"
+  ]
+}
