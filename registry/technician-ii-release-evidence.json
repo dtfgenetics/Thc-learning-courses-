@@ -1,0 +1,62 @@
+{
+  "id": "RELEASE-EVIDENCE-TECH2-001",
+  "version": "1.0.0",
+  "status": "draft",
+  "credentialProgram": "CREDPROG-CULT-TECH-II-001",
+  "releaseReady": false,
+  "evidencePolicy": "Only completed human review, employer/job-task validation, pilot/performance evidence, evaluator calibration, formal standard-setting evidence, approved security/privacy controls and explicit release approval may advance a release gate. Finished curriculum files, passing CI, generated development forms, synthetic test records or course completion alone must never authorize credential issuance.",
+  "structuralState": {
+    "curriculumSequenceBuilt": true,
+    "requiredCourses": 8,
+    "practicalsMapped": 7,
+    "capstoneMapped": true,
+    "integratedLabBuilt": true,
+    "publicCredentialBlueprintOperationalUseAuthorized": false
+  },
+  "gates": {
+    "humanTechnicalReview": "not-started",
+    "humanAssessmentReview": "not-started",
+    "renderedAccessibilityReview": "not-started",
+    "jobTaskAnalysisValidation": "draft",
+    "smeEmployerValidation": "not-started",
+    "controlledPilotEvidence": "not-started",
+    "practicalValidation": "not-started",
+    "capstoneValidation": "not-started",
+    "evaluatorCalibration": "not-started",
+    "interRaterEvidence": "not-started",
+    "blueprintWeightsFinalization": "not-started",
+    "secureOperationalItemBank": "not-built",
+    "secureAssessmentStore": "not-approved",
+    "equivalentSecureForms": "not-built",
+    "formalStandardSetting": "not-started",
+    "candidateEvidenceRetentionPrivacyPolicy": "not-approved",
+    "credentialIssuanceWorkflowApproval": "not-approved",
+    "finalProgramReleaseApproval": "not-requested"
+  },
+  "requiredEvidence": [
+    "versioned human technical/curriculum review approval",
+    "versioned human assessment review approval",
+    "rendered accessibility review evidence",
+    "validated Technician II job-task analysis",
+    "SME/employer validation evidence",
+    "controlled learner/item pilot evidence",
+    "validated Practical A-G performance evidence",
+    "validated Senior Technician Diagnostic Shift capstone evidence",
+    "evaluator calibration and inter-rater evidence",
+    "final written credential blueprint weights",
+    "new secure operational item bank in an approved private assessment store",
+    "equivalent secure credential forms",
+    "formal standard-setting study and approval",
+    "approved candidate-evidence retention/privacy policy",
+    "approved credential issuance workflow",
+    "explicit versioned final Technician II program release approval"
+  ],
+  "prohibitedShortcuts": [
+    "Do not treat green CI, complete course files, or the integrated lab build as certification approval.",
+    "Do not use public ITEM-TECH2 development items as a secure operational credential bank.",
+    "Do not create synthetic human review, pilot, employer-validation, calibration, standard-setting or approval evidence to close gates.",
+    "Do not expose secure operational answer keys, selected forms or delivery material in the public repository.",
+    "Do not average away a failed Technician II practical or capstone critical error.",
+    "Do not issue the Technician II credential while any required release gate remains unresolved."
+  ]
+}
