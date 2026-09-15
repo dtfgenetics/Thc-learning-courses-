@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A sensor value is plausible but its required verification interval is overdue. How should the reading be handled?",
+  "choices": [
+    "Present it as fully verified because the number looks normal",
+    "Preserve the reading but document the verification-status limitation and follow the supplied process",
+    "Delete the reading",
+    "Adjust protected calibration settings without authorization"
+  ],
+  "correct": 1,
+  "rationale": "Preserve the reading but document the verification-status limitation and follow the supplied process. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

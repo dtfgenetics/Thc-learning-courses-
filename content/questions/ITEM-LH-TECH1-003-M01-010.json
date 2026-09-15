@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-M01-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "An alarm cleared after an allowed check, but the cause is unknown. What is the honest handoff status?",
+  "choices": [
+    "Root cause fixed",
+    "Alarm cleared; cause unresolved; checks and follow-up documented",
+    "No handoff needed",
+    "Cause confirmed by alarm clearance"
+  ],
+  "correct": 1,
+  "rationale": "Alarm cleared; cause unresolved; checks and follow-up documented. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-module1-formative"
+  }
+}
