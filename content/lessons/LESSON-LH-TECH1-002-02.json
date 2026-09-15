@@ -14,67 +14,38 @@
   "estimatedMinutes": 60,
   "references": [
     "REF-PLANT-BIO-001",
-    "REF-FLOWER-MORPH-2023-001",
-    "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023"
+    "REF-FLOWER-MORPH-2023-001"
   ],
   "assessment": null,
   "content": {
     "overview": "Developmental stage is a biological description supported by visible morphology, not simply the number of days since germination, transplant or a photoperiod change. Learners practice using plant structures and reproductive development as evidence, documenting mixed-stage populations honestly, and escalating unexpected reproductive morphology without turning cultivar labels or schedules into proof.",
     "vocabulary": [
-      {
-        "term": "developmental stage",
-        "definition": "A biological phase described by observable plant development rather than by calendar time alone."
-      },
-      {
-        "term": "reproductive morphology",
-        "definition": "Observable structures associated with sexual and flowering development that can be documented directly."
-      },
-      {
-        "term": "inflorescence",
-        "definition": "A reproductive shoot system bearing flowers and associated structures."
-      },
-      {
-        "term": "phenology",
-        "definition": "The study or description of recurring biological developmental events and their timing in relation to conditions."
-      },
-      {
-        "term": "morphological marker",
-        "definition": "An observable plant feature used as evidence that a developmental transition or stage is occurring."
-      }
+      {"term":"developmental stage","definition":"A biological phase described by observable plant development rather than by calendar time alone."},
+      {"term":"reproductive morphology","definition":"Observable structures associated with sexual and flowering development that can be documented directly."},
+      {"term":"inflorescence","definition":"A reproductive shoot system bearing flowers and associated structures."},
+      {"term":"phenology","definition":"The study or description of recurring biological developmental events and their timing in relation to conditions."},
+      {"term":"morphological marker","definition":"An observable plant feature used as evidence that a developmental transition or stage is occurring."}
     ],
     "sections": [
       {
-        "title": "Morphology supports stage assignment",
-        "body": "Cannabis changes structurally through vegetative and reproductive development. Peer-reviewed life-cycle descriptions document changes in branching, leaf form, inflorescence emergence, stigma appearance, bract development and later floral maturation under defined study conditions. Schedule information is useful context, but stage records are stronger when they identify the structures actually observed.",
-        "references": [
-          "REF-PLANT-BIO-001",
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023"
-        ]
+        "title":"Morphology supports stage assignment",
+        "body":"Cannabis changes structurally through vegetative and reproductive development. Peer-reviewed life-cycle descriptions document changes in branching, leaf form, inflorescence emergence, stigma appearance, bract development and later floral maturation under defined study conditions. Schedule information is useful context, but stage records are stronger when they identify the structures actually observed.",
+        "references":["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "title": "Calendar time is context, not a universal stage rule",
-        "body": "Development varies with genotype, plant history and environment. Published studies describe the sequence and timing observed in specific plants under specific conditions, but those observations should not be converted into a universal rule that every crop reaches the same biological stage on the same day. Record the schedule and the morphology separately when both matter.",
-        "references": [
-          "REF-FLOWER-MORPH-2023-001",
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023"
-        ]
+        "title":"Calendar time is context, not a universal stage rule",
+        "body":"Development varies with genotype, plant history and environment. Published studies describe the sequence and timing observed in specific plants under specific conditions, but those observations should not be converted into a universal rule that every crop reaches the same biological stage on the same day. Record the schedule and the morphology separately when both matter.",
+        "references":["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "title": "Record the structure, not just the stage label",
-        "body": "A useful stage note names the evidence behind the label: branch and node development, the appearance and distribution of reproductive structures, visible inflorescence development, stigma condition, bract or floral development, and other morphology defined by the facility's crop-stage standard. This makes the record reviewable when a schedule label and the observed crop do not match.",
-        "references": [
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023",
-          "REF-FLOWER-MORPH-2023-001"
-        ]
+        "title":"Record the structure, not just the stage label",
+        "body":"A useful stage note names the evidence behind the label: branch and node development, the appearance and distribution of reproductive structures, visible inflorescence development, stigma condition, bract or floral development, and other morphology defined by the facility's crop-stage standard. This makes the record reviewable when a schedule label and the observed crop do not match.",
+        "references":["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "title": "Mixed development is data",
-        "body": "When a crop is not developmentally uniform, record the distribution rather than forcing every plant into one label. Unexpected staminate structures within a crop expected to be pistillate, atypical development or meaningful stage differences should be photographed and escalated according to crop and genetics procedures without assigning a genetic or environmental cause that has not been verified.",
-        "references": [
-          "REF-PLANT-BIO-001",
-          "REF-FLOWER-MORPH-2023-001",
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023"
-        ]
+        "title":"Mixed development is data",
+        "body":"When a crop is not developmentally uniform, record the distribution rather than forcing every plant into one label. Unexpected staminate structures within a crop expected to be pistillate, atypical development or meaningful stage differences should be photographed and escalated according to crop and genetics procedures without assigning a genetic or environmental cause that has not been verified.",
+        "references":["REF-PLANT-BIO-001","REF-FLOWER-MORPH-2023-001"]
       }
     ],
     "workedExamples": [
@@ -88,86 +59,49 @@
       "Ignoring mixed-stage plants because the room schedule contains only one stage label.",
       "Using one study's week-by-week observations as a universal production calendar for all genetics and environments."
     ],
-    "practicalApplication": "Review a simulated crop containing vegetative plants, plants entering reproductive development and a smaller group with delayed or unexpected morphology. Record the dominant stage, exceptions, supporting visible features and escalation needs without using schedule timing as the sole evidence. For each stage label, state the morphological evidence that makes the label reviewable.",
-    "summary": "Growth-stage records are strongest when morphology and schedule context are kept distinct. Technicians describe what structures are present, document developmental distribution, preserve uncertainty and escalate unexpected reproductive findings rather than forcing the crop to match a calendar label.",
+    "practicalApplication":"Review a simulated crop containing vegetative plants, plants entering reproductive development and a smaller group with delayed or unexpected morphology. Record the dominant stage, exceptions, supporting visible features and escalation needs without using schedule timing as the sole evidence. For each stage label, state the morphological evidence that makes the label reviewable.",
+    "summary":"Growth-stage records are strongest when morphology and schedule context are kept distinct. Technicians describe what structures are present, document developmental distribution, preserve uncertainty and escalate unexpected reproductive findings rather than forcing the crop to match a calendar label.",
     "blocks": [
       {
-        "type": "table",
-        "title": "Observable evidence for developmental records",
-        "columns": [
-          "Observation area",
-          "What to describe",
-          "What not to assume"
+        "type":"table",
+        "title":"Observable evidence for developmental records",
+        "columns":["Observation area","What to describe","What not to assume"],
+        "rows":[
+          ["Vegetative structure","Node, branch and leaf development that can be observed directly","That plant age alone proves a specific stage"],
+          ["Transition to reproductive growth","Appearance and distribution of reproductive structures and compacting reproductive shoots","That days since a lighting change prove the same transition in every plant"],
+          ["Inflorescence development","Visible flower, stigma, bract and inflorescence changes defined by the observation standard","That one cultivar's published timing applies universally"],
+          ["Maturation","Observable floral maturation features and their distribution across the sampled crop","That one visible feature alone establishes harvest readiness"]
         ],
-        "rows": [
-          [
-            "Vegetative structure",
-            "Node, branch and leaf development that can be observed directly",
-            "That plant age alone proves a specific stage"
-          ],
-          [
-            "Transition to reproductive growth",
-            "Appearance and distribution of reproductive structures and compacting reproductive shoots",
-            "That days since a lighting change prove the same transition in every plant"
-          ],
-          [
-            "Inflorescence development",
-            "Visible flower, stigma, bract and inflorescence changes defined by the observation standard",
-            "That one cultivar's published timing applies universally"
-          ],
-          [
-            "Maturation",
-            "Observable floral maturation features and their distribution across the sampled crop",
-            "That one visible feature alone establishes harvest readiness"
-          ]
-        ],
-        "references": [
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023",
-          "REF-FLOWER-MORPH-2023-001"
-        ]
+        "references":["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "type": "comparison",
-        "title": "Morphology versus calendar-only staging",
-        "left": {
-          "label": "Evidence-based stage note",
-          "body": "Describes visible developmental structures and distribution, with schedule timing retained as context."
-        },
-        "right": {
-          "label": "Calendar-only stage note",
-          "body": "Assigns stage solely from days since germination, transplant or photoperiod change, even when plant morphology differs."
-        },
-        "references": [
-          "REF-FLOWER-MORPH-2023-001",
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023"
-        ]
+        "type":"comparison",
+        "title":"Morphology versus calendar-only staging",
+        "left":{"label":"Evidence-based stage note","body":"Describes visible developmental structures and distribution, with schedule timing retained as context."},
+        "right":{"label":"Calendar-only stage note","body":"Assigns stage solely from days since germination, transplant or photoperiod change, even when plant morphology differs."},
+        "references":["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "type": "scenario",
-        "title": "Schedule says flower week three, morphology is mixed",
-        "setting": "The room schedule says flower week three. Most sampled plants show clear reproductive development, while a smaller group shows less advanced morphology.",
-        "prompt": "What is the strongest crop record?",
-        "options": [
+        "type":"scenario",
+        "title":"Schedule says flower week three, morphology is mixed",
+        "setting":"The room schedule says flower week three. Most sampled plants show clear reproductive development, while a smaller group shows less advanced morphology.",
+        "prompt":"What is the strongest crop record?",
+        "options":[
           "Record every plant as identical because the schedule has one label",
           "Record the scheduled week as context, describe the dominant morphology and document the less-developed subgroup and locations",
           "Change the cultivar identity to explain the difference",
           "Omit the exceptions so the record matches the production plan"
         ],
-        "answer": "Record the scheduled week as context, describe the dominant morphology and document the less-developed subgroup and locations",
-        "feedback": "The schedule is useful context, but the crop record should preserve observable developmental distribution rather than forcing morphology to match the calendar.",
-        "references": [
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023"
-        ]
+        "answer":"Record the scheduled week as context, describe the dominant morphology and document the less-developed subgroup and locations",
+        "feedback":"The schedule is useful context, but the crop record should preserve observable developmental distribution rather than forcing morphology to match the calendar.",
+        "references":["REF-FLOWER-MORPH-2023-001"]
       },
       {
-        "type": "callout",
-        "title": "Evidence boundary",
-        "tone": "evidence",
-        "body": "Peer-reviewed life-cycle studies support using visible morphology to characterize development. Their day-by-day or week-by-week observations describe the studied genetics and conditions; they are not universal timing specifications for every cannabis crop.",
-        "references": [
-          "REF-CANNABIS-MORPHOLOGY-LIFECYCLE-2023",
-          "REF-FLOWER-MORPH-2023-001"
-        ]
+        "type":"callout",
+        "title":"Evidence boundary",
+        "tone":"evidence",
+        "body":"Peer-reviewed life-cycle studies support using visible morphology to characterize development. Their day-by-day or week-by-week observations describe the studied genetics and conditions; they are not universal timing specifications for every cannabis crop.",
+        "references":["REF-FLOWER-MORPH-2023-001"]
       }
     ]
   }
