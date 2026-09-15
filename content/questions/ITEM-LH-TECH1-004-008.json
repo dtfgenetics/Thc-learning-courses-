@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-004-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-TECH1-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One container remains saturated much longer than neighboring comparable containers. What should the technician do?",
+  "choices": [
+    "Assume the entire room is overwatered",
+    "Add fertilizer",
+    "Wait until the next crop cycle without recording it",
+    "Document the localized pattern, verify assigned delivery/root-zone context and escalate unresolved abnormality"
+  ],
+  "correct": 3,
+  "rationale": "Document the localized pattern, verify assigned delivery/root-zone context and escalate unresolved abnormality. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-004",
+    "itemSet": "course4-v1"
+  }
+}
