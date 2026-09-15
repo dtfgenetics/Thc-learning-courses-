@@ -1,7 +1,7 @@
 {
   "id": "COURSE-LH-TECH2-002",
   "title": "Environmental Data, Sensors & Equipment Response",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
@@ -19,37 +19,57 @@
     "workplace-equivalent"
   ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.",
-  "assessmentPolicy": "This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.",
+  "assessmentPolicy": "Course-specific formative and summative items are separate from the public Technician II credential-development bank. Course completion remains draft/development evidence and does not replace Practical B, private operational credential forms, program validation, standard setting or final release approval.",
   "description": "Builds advanced interpretation of environmental and lighting data, sensor validity, spatial patterns, alarms, and safe equipment-response boundaries.",
   "modules": [
     "MOD-ENV-ADV-001",
-    "MOD-LIGHT-ADV-001"
+    "MOD-LIGHT-ADV-001",
+    "MOD-IRRIGATION-ADV-001",
+    "MOD-PRO-QA-001",
+    "MOD-SAFETY-WORK-001",
+    "MOD-LH-TECH1-001-EQUIPMENT",
+    "MOD-LH-TECH2-002-VERIFICATION"
   ],
   "competencies": [
     "COMP-ENV-ADV-001",
-    "COMP-LIGHT-ADV-001"
+    "COMP-LIGHT-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-CULT-EQUIPMENT-CARE-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-PRO-QA-001"
   ],
-  "finalAssessment": null,
+  "finalAssessment": "ASSESS-LH-TECH2-002-FINAL",
   "learningOutcomes": [
-    "Evaluate whether environmental data are representative and fit for a decision.",
-    "Interpret spatial and time-series environmental and lighting patterns in crop context.",
-    "Differentiate operator-level verification from repairs or adjustments requiring authorized technical staff."
+    "Verify whether environmental, lighting and equipment measurements are representative and fit for decisions before changing controls.",
+    "Interpret commands, alarms, spatial maps and time-series response to classify likely sensor, control, equipment or distribution faults without overstating root cause.",
+    "Verify irrigation/equipment performance using measured output and process evidence while respecting operator-care, servicing and hazardous-energy boundaries.",
+    "Produce a reconstructable verification report, safe maintenance handoff and post-action confirmation plan."
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-II-001",
-    "maturity": "course-shell-draft",
+    "maturity": "instruction-assessment-draft",
     "developmentDependencies": [
       "MOD-ENV-ADV-001",
-      "MOD-LIGHT-ADV-001"
+      "MOD-LIGHT-ADV-001",
+      "MOD-IRRIGATION-ADV-001",
+      "MOD-PRO-QA-001",
+      "MOD-SAFETY-WORK-001",
+      "MOD-LH-TECH1-001-EQUIPMENT",
+      "MOD-LH-TECH2-002-VERIFICATION"
     ],
     "contentCeiling": null,
-    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedCourseAssessmentRequired": false,
     "dedicatedLabModuleRequired": false,
     "integratedPerformanceValidationRequired": false,
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
     "legacySourceCourse": "COURSE-CULT-TECH-II-001",
     "publicCredentialItemsAreDevelopmentOnly": true,
-    "operationalCredentialBankMustBePrivate": true
+    "operationalCredentialBankMustBePrivate": true,
+    "dedicatedPerformanceValidationRequired": true,
+    "mappedPractical": "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+    "dedicatedItemCount": 36,
+    "formativeItemCount": 12,
+    "summativeItemCount": 24
   }
 }

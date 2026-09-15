@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: A controller says “ON,” but there is no physical process response. How should the condition be recorded?",
+  "choices": [
+    "As a confirmed motor failure.",
+    "As a confirmed sensor failure.",
+    "As normal because the command is ON.",
+    "As a command-response mismatch pending further verification."
+  ],
+  "correct": 3,
+  "rationale": "As a command-response mismatch pending further verification. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

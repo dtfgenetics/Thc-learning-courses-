@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH2-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician previously repaired similar equipment at another employer. Does that create authorization here?",
+  "choices": [
+    "Yes, experience automatically transfers authorization.",
+    "No; current employer procedure, training and authorization define the permitted work boundary.",
+    "Yes, if the repair seems simple.",
+    "Yes, whenever production is delayed."
+  ],
+  "correct": 1,
+  "rationale": "No; current employer procedure, training and authorization define the permitted work boundary. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

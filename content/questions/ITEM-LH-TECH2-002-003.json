@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two probes disagree when separated but agree when colocated. What does that result most strongly support?",
+  "choices": [
+    "Both sensors need replacement.",
+    "The controller is necessarily defective.",
+    "The original difference was likely spatial rather than an instrument offset.",
+    "The room average is sufficient for all crop decisions."
+  ],
+  "correct": 2,
+  "rationale": "The original difference was likely spatial rather than an instrument offset. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

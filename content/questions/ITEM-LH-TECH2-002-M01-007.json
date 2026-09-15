@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: Two colocated sensors remain consistently offset after stabilization. What does this most strongly justify?",
+  "choices": [
+    "A room-wide HVAC change.",
+    "Deleting both sensors.",
+    "A documented sensor comparison/calibration investigation.",
+    "Assuming the crop caused the offset."
+  ],
+  "correct": 2,
+  "rationale": "A documented sensor comparison/calibration investigation. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-ENV-TEMP-2025-001"
+  ]
+}

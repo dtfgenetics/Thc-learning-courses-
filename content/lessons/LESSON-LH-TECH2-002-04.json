@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-002-04",
+  "title": "Verification Reports, Maintenance Handoffs and Post-Action Confirmation",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-ENV-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-SAFETY-WORK-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-002-01",
+    "LO-LH-TECH2-002-03",
+    "LO-LH-TECH2-002-05",
+    "LO-LH-TECH2-002-06"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001",
+    "REF-OSHA-1910-147-LOTO"
+  ],
+  "content": {
+    "overview": "A verification is incomplete until another qualified person can reconstruct what was checked, what evidence was observed, what action was authorized, what remains unresolved and whether the process response after the action supports closure.",
+    "vocabulary": [
+      {
+        "term": "Maintenance handoff",
+        "definition": "A structured transfer of an equipment condition, evidence, current safe status and boundary information to the authorized maintenance or technical role."
+      },
+      {
+        "term": "Post-action verification",
+        "definition": "A defined check confirming whether an authorized intervention produced the intended process response without creating another problem."
+      },
+      {
+        "term": "Closure evidence",
+        "definition": "Documented evidence sufficient to support that a reported condition is resolved or safely dispositioned under the applicable procedure."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Report exact evidence and current status",
+        "body": "Record asset or sensor ID, location, timestamps, commands, readings, comparison method, operator actions, fault classification and current controlled status. Preserve uncertainty explicitly.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoffs include the boundary cue",
+        "body": "A useful maintenance handoff identifies why the technician stopped: recurring fault, protected access, stored energy, electrical enclosure, disassembly, pressure or an action not assigned by procedure.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "title": "Verify response after authorized work",
+        "body": "When an authorized correction is completed, repeat the relevant measurement or performance check using comparable conditions. Closure should be evidence-based, not assumed because an alarm cleared.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "After an authorized emitter correction, representative catch volumes are repeated to show whether distribution improved.",
+      "After a sensor replacement, the new device is compared with a verified reference before its data are used for control decisions."
+    ],
+    "commonMistakes": [
+      "Closing a deviation because the alarm disappeared.",
+      "Omitting the exact operator boundary from a maintenance ticket.",
+      "Rewriting old data after an equipment fault is confirmed."
+    ],
+    "practicalApplication": "Produce a complete Sensor & Equipment Verification Report with annotated trend/data table, provisional fault classification, safe-status/authority boundary, receiving role and post-action verification plan.",
+    "summary": "High-quality verification ends with a reconstructable report, safe handoff and evidence that the authorized action actually restored intended performance."
+  }
+}

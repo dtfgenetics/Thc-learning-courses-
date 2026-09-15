@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "An alarm disappeared after a reset, but the underlying trend still shows abnormal cycling. What is the best disposition?",
+  "choices": [
+    "Close it because the alarm cleared.",
+    "Delete the cycling data.",
+    "Keep the condition open and document the continuing abnormal response for further verification/escalation.",
+    "Raise the alarm threshold."
+  ],
+  "correct": 2,
+  "rationale": "Keep the condition open and document the continuing abnormal response for further verification/escalation. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

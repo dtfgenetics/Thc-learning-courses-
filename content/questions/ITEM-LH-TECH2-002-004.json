@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LH-TECH2-002-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician compares PPFD this week with last week but changes sensor height and orientation. What is the main problem?",
+  "choices": [
+    "PPFD never requires consistent geometry.",
+    "Only lamp wattage matters.",
+    "The newer reading automatically replaces the older one.",
+    "The measurement geometry changed, so the values are not a clean repeatable comparison."
+  ],
+  "correct": 3,
+  "rationale": "The measurement geometry changed, so the values are not a clean repeatable comparison. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-LIGHT-001"
+  ]
+}

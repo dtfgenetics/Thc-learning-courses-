@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-022",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH2-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is a normal stop button insufficient proof that equipment is safe to service?",
+  "choices": [
+    "Stop buttons never affect equipment.",
+    "Hazardous or stored energy and unexpected startup may remain unless the employer-defined energy-control procedure is completed.",
+    "Only hydraulic systems contain energy.",
+    "Servicing safety depends only on how long the equipment has been off."
+  ],
+  "correct": 1,
+  "rationale": "Hazardous or stored energy and unexpected startup may remain unless the employer-defined energy-control procedure is completed. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}
