@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/link-record.schema.json",
+  "title": "THC Academy External Link Record",
+  "type": "object",
+  "required": ["id", "url", "sourceType", "status", "lessonIds", "verified"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^LINK-[A-Z0-9-]+$"},
+    "url": {"type": "string", "format": "uri"},
+    "canonicalUrl": {"type": ["string", "null"], "format": "uri"},
+    "title": {"type": ["string", "null"]},
+    "publisher": {"type": ["string", "null"]},
+    "sourceType": {"enum": ["government", "academic", "standards", "research", "dataset", "media", "internal", "other"]},
+    "jurisdiction": {"type": ["string", "null"]},
+    "status": {"enum": ["candidate", "verified", "redirected", "broken", "retired"]},
+    "verified": {"type": "boolean"},
+    "httpStatus": {"type": ["integer", "null"], "minimum": 100, "maximum": 599},
+    "contentType": {"type": ["string", "null"]},
+    "lessonIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "claimIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "lastCheckedAt": {"type": ["string", "null"], "format": "date-time"},
+    "contentHash": {"type": ["string", "null"]},
+    "redirectTarget": {"type": ["string", "null"], "format": "uri"},
+    "freshnessDays": {"type": ["integer", "null"], "minimum": 1},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
