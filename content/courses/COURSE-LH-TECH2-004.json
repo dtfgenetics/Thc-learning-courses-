@@ -1,7 +1,7 @@
 {
   "id": "COURSE-LH-TECH2-004",
   "title": "Plant Health, IPM & Biosecurity Troubleshooting",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
@@ -23,33 +23,41 @@
   "description": "Develops advanced scouting, trend interpretation, containment reasoning, treatment follow-up, and biosecurity escalation within approved IPM programs.",
   "modules": [
     "MOD-IPM-ADV-001",
-    "MOD-SPACE-BIOSEC-001"
+    "MOD-SPACE-BIOSEC-001",
+    "MOD-PRO-QA-001",
+    "MOD-LH-TECH2-004-IPM"
   ],
   "competencies": [
     "COMP-IPM-ADV-001",
-    "COMP-SPACE-BIOSEC-001"
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
   ],
-  "finalAssessment": null,
+  "finalAssessment": "ASSESS-LH-TECH2-004-FINAL",
   "learningOutcomes": [
-    "Evaluate plant-health observations using distribution, severity, timing, and trend evidence.",
-    "Verify whether authorized IPM actions produced the intended response without inventing treatment authority.",
-    "Protect containment, sanitation, and movement boundaries while escalating uncertain or high-risk findings."
+    "Produce comparable scouting datasets and interpret incidence, severity, spatial scope and multi-round trend evidence.",
+    "Evaluate authorized IPM intervention follow-up against baseline while identifying confounding, missing evidence and unresolved risk.",
+    "Maintain quarantine, sanitation and movement controls while escalating high-risk or uncertain plant-health findings.",
+    "Document scope, data quality, outcome evidence and next-round priorities without altering observations or assuming treatment authority."
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-II-001",
-    "maturity": "course-shell-draft",
+    "maturity": "instruction-assessment-draft",
     "developmentDependencies": [
       "MOD-IPM-ADV-001",
-      "MOD-SPACE-BIOSEC-001"
+      "MOD-SPACE-BIOSEC-001",
+      "MOD-PRO-QA-001"
     ],
     "contentCeiling": null,
-    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedCourseAssessmentRequired": false,
     "dedicatedLabModuleRequired": false,
     "integratedPerformanceValidationRequired": false,
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
     "legacySourceCourse": "COURSE-CULT-TECH-II-001",
     "publicCredentialItemsAreDevelopmentOnly": true,
-    "operationalCredentialBankMustBePrivate": true
+    "operationalCredentialBankMustBePrivate": true,
+    "dedicatedPerformanceValidationRequired": true,
+    "mappedPractical": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+    "pesticideApplicatorAuthorityConferred": false
   }
 }
