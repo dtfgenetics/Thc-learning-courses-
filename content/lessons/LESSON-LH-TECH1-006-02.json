@@ -1,0 +1,122 @@
+{
+  "id": "LESSON-LH-TECH1-006-02",
+  "title": "Controlled Harvest, Material Protection and Dry-Room Receiving",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-006-02",
+    "LO-LH-TECH1-006-04",
+    "LO-LH-TECH1-006-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest changes living crop material into a postharvest lot that remains biologically and physically vulnerable. Learners practice executing the authorized cut and transfer sequence, minimizing unnecessary handling damage, preventing dirty or suspect material from entering normal flow, receiving material into the identified dry-room location, and recognizing that drying is a controlled moisture-removal process rather than a fixed-day countdown.",
+    "vocabulary": [
+      {
+        "term": "postharvest lot",
+        "definition": "An identified quantity of harvested material managed as a controlled unit through receiving, drying, storage or other authorized postharvest steps."
+      },
+      {
+        "term": "hold",
+        "definition": "A controlled status that prevents normal movement or processing until an identified condition is reviewed or released under procedure."
+      },
+      {
+        "term": "dry-room receiving",
+        "definition": "The controlled transfer of harvested material into its assigned postharvest location with identity, quantity and condition records preserved."
+      },
+      {
+        "term": "controlled drying",
+        "definition": "Managed moisture removal in which temperature, humidity, airflow, load density and product condition are monitored rather than assumed from elapsed time alone."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Cut and movement preserve product condition",
+        "body": "Follow the supplied harvest sequence, tool sanitation and handling standard. Avoid placing harvested material on dirty surfaces, crushing or overpacking it, or leaving it exposed in uncontrolled staging areas merely to keep the line moving.",
+        "references": [
+          "REF-POSTHARVEST-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Suspect material stays out of normal flow",
+        "body": "Visible mold-like growth, contamination concerns or other hold conditions are documented and isolated according to the supplied procedure. Technician I does not blend suspect material into the lot or independently release it because the affected portion appears small.",
+        "references": [
+          "REF-IPM-001",
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Receiving verifies lot and destination",
+        "body": "At the dry room, verify the incoming identity against the receiving location or rack, record the required quantity and condition information, and keep separate lots or cultivars physically and digitally distinguishable. A new receiving identifier must extend rather than erase source identity.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Drying is monitored, not predicted by calendar alone",
+        "body": "Drying rate depends on material density, temperature, relative humidity, airflow and load conditions. Technicians record the assigned environmental and product-condition information and escalate meaningful deviations instead of declaring material complete after a universal number of days.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "One plant contains visible mold-like material. The technician uses the supplied hold/isolation process and prevents that material from being blended into the normal harvest lot.",
+      "One dry-room rack shows visibly different material condition than adjacent racks. The technician records the identified rack and environmental/product evidence and escalates rather than assuming the entire room is uniformly dry."
+    ],
+    "commonMistakes": [
+      "Placing cut material on an unverified or dirty surface.",
+      "Blending suspect material into a clean lot to avoid a quantity discrepancy.",
+      "Receiving two identified lots onto one location without preserving separation and records.",
+      "Treating drying as a fixed-day rule without product and environmental evidence."
+    ],
+    "practicalApplication": "Complete a simulated harvest-to-dry-room transfer containing one suspect plant, two nearby cultivars, a dirty receiving rack and one dry-room condition requiring follow-up. Preserve lot separation, use the supplied hold process, record receiving status and identify what remains unresolved.",
+    "summary": "Harvest execution protects material quality, identity and contamination control through the transfer into postharvest. Technician I follows the authorized sequence, keeps suspect material out of normal flow, verifies receiving location and treats drying as a monitored process.",
+    "blocks": [
+      {
+        "type": "comparison",
+        "title": "Controlled receiving versus uncontrolled staging",
+        "left": {
+          "label": "Controlled receiving",
+          "body": "Identified material moves to a verified clean destination, quantity and condition are recorded, and any hold remains visible to the receiving role."
+        },
+        "right": {
+          "label": "Uncontrolled staging",
+          "body": "Material is parked in an improvised location, labels or lot separation become uncertain, and receiving records are reconstructed later from memory."
+        },
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Suspect material during harvest",
+        "setting": "Visible mold-like growth is found on material from one identified plant while the rest of the lot is being harvested.",
+        "prompt": "What is the strongest Technician I action?",
+        "options": [
+          "Blend the material into the lot if the affected area is small",
+          "Follow the supplied hold/isolation process, preserve identity and escalate before normal flow continues for the suspect material",
+          "Remove the visible area and record the plant as clean",
+          "Discard the entire room without authorization"
+        ],
+        "answer": "Follow the supplied hold/isolation process, preserve identity and escalate before normal flow continues for the suspect material",
+        "feedback": "Suspect contamination is an exception requiring controlled isolation and review. Technician I does not independently release or conceal it.",
+        "references": [
+          "REF-IPM-001",
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ]
+  }
+}
