@@ -7,6 +7,7 @@ on:
 permissions:
   contents: write
 
+# Re-run after canonical irrigation/root-zone reference normalization.
 jobs:
   build:
     runs-on: ubuntu-latest
