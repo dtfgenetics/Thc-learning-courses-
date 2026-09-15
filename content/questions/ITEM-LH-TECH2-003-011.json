@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-TECH2-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A moisture sensor is moved into a different substrate. What should happen before its raw value is treated as an absolute target?",
+  "choices": [
+    "Reuse the old substrate target unchanged.",
+    "Increase irrigation until the raw number matches the previous media.",
+    "Verify installation and substrate-specific behavior/reference so the trend has appropriate context.",
+    "Ignore crop stage because sensor output is universal."
+  ],
+  "correct": 2,
+  "rationale": "Verify installation and substrate-specific behavior/reference so the trend has appropriate context.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}

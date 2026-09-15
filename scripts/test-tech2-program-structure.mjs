@@ -5,13 +5,17 @@ import path from 'node:path';
 const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const program = read('content/credential-programs/CREDPROG-CULT-TECH-II-001.json');
 const expected = ["COURSE-LH-TECH2-001","COURSE-LH-TECH2-002","COURSE-LH-TECH2-003","COURSE-LH-TECH2-004","COURSE-LH-TECH2-005","COURSE-LH-TECH2-006","COURSE-LH-TECH2-007","COURSE-LH-TECH2-008"];
+const built = {
+  'COURSE-LH-TECH2-001': { final:'ASSESS-LH-TECH2-001-FINAL', practical:'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP' },
+  'COURSE-LH-TECH2-002': { final:'ASSESS-LH-TECH2-002-FINAL', practical:'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION' },
+  'COURSE-LH-TECH2-003': { final:'ASSESS-LH-TECH2-003-FINAL', practical:'PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING' }
+};
 assert.deepEqual(program.requiredCourses, expected);
 assert.equal(program.status, 'draft');
 assert.equal(program.prerequisiteCredentials.includes('CREDPROG-CULT-TECH-I-001'), true);
 assert.equal(program.assessmentModel.credentialAssessment, 'ASSESS-CULT-TECH-II-CREDENTIAL-001');
 assert.equal(program.assessmentModel.performanceEvidence.length, 7);
 assert.equal(program.assessmentModel.capstone, 'CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT');
-
 for (const id of expected) {
   const course = read('content/courses/' + id + '.json');
   assert.equal(course.status, 'draft', id + ' must remain draft until validation evidence supports promotion');
@@ -19,14 +23,11 @@ for (const id of expected) {
   assert.equal(course.extensions.credentialPath, program.id);
   assert.equal(course.extensions.legacySourceCourse, 'COURSE-CULT-TECH-II-001');
   assert.ok(course.modules.length > 0 && course.competencies.length > 0);
-
-  if (id === 'COURSE-LH-TECH2-001' || id === 'COURSE-LH-TECH2-002') {
-    const expectedFinal = id === 'COURSE-LH-TECH2-001' ? 'ASSESS-LH-TECH2-001-FINAL' : 'ASSESS-LH-TECH2-002-FINAL';
-    const expectedPractical = id === 'COURSE-LH-TECH2-001' ? 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP' : 'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION';
-    assert.equal(course.finalAssessment, expectedFinal);
+  if (built[id]) {
+    assert.equal(course.finalAssessment, built[id].final);
     assert.equal(course.extensions.dedicatedCourseAssessmentRequired, false);
     assert.equal(course.extensions.dedicatedPerformanceValidationRequired, true);
-    assert.equal(course.extensions.mappedPractical, expectedPractical);
+    assert.equal(course.extensions.mappedPractical, built[id].practical);
     assert.ok(fs.existsSync(path.join('content/assessments', course.finalAssessment + '.json')), id + ' final assessment must resolve');
   } else if (id === 'COURSE-LH-TECH2-008') {
     assert.equal(course.finalAssessment, null);
@@ -37,7 +38,6 @@ for (const id of expected) {
     assert.equal(course.extensions.dedicatedCourseAssessmentRequired, true, id + ' must retain an explicit assessment build gate');
   }
 }
-
 for (const id of program.assessmentModel.performanceEvidence) assert.ok(fs.existsSync(path.join('content/performance-assessments', id + '.json')), 'missing ' + id);
 assert.ok(fs.existsSync(path.join('content/performance-assessments', program.assessmentModel.capstone + '.json')), 'missing capstone');
 assert.ok(fs.existsSync('content/courses/COURSE-CULT-TECH-II-001.json'), 'legacy Technician II source course must be preserved');
@@ -47,4 +47,4 @@ const exam = read('content/assessments/ASSESS-CULT-TECH-II-CREDENTIAL-001.json')
 assert.equal(exam.status, 'draft');
 assert.equal(exam.purpose, 'credential');
 assert.equal(exam.items.length, 0, 'public credential definition must not contain an operational selected form');
-console.log('Technician II program structure, Course 201 advancement, remaining build gates, and legacy-preservation contract passed.');
+console.log('Technician II program structure, built-course advancement map, remaining gates, and legacy-preservation contract passed.');

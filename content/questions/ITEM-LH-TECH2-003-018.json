@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-003-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-TECH2-003-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A tissue value is outside a published range. Why should it not automatically trigger a recipe change?",
+  "choices": [
+    "Tissue testing is never useful.",
+    "Sampling position, stage, symptom pattern, root-zone and environmental context affect interpretation and causality.",
+    "Published ranges always apply only to soil.",
+    "The value proves the meter is wrong."
+  ],
+  "correct": 1,
+  "rationale": "Sampling position, stage, symptom pattern, root-zone and environmental context affect interpretation and causality.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ]
+}
