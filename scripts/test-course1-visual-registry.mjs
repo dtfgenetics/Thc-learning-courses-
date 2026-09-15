@@ -17,12 +17,42 @@ assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.
 
 const registryById = new Map(produced.map((asset) => [asset.id, asset]));
 const usedAssetIds = new Set();
+const supportedExtension = /\.(?:svg|png|jpe?g|webp)$/i;
+const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+
+function verifyAssetFile(asset, absoluteSource) {
+  const extension = path.extname(asset.sourcePath).toLowerCase();
+  if (extension === '.svg') {
+    const svg = fs.readFileSync(absoluteSource, 'utf8');
+    assert.match(svg, /<svg[\s>]/, `${asset.id}: source asset must contain SVG markup`);
+    assert.match(svg, /<title[\s>]/, `${asset.id}: SVG source asset must include an accessible <title>`);
+    assert.match(svg, /<desc[\s>]/, `${asset.id}: SVG source asset must include an accessible <desc>`);
+    return;
+  }
+
+  const buffer = fs.readFileSync(absoluteSource);
+  assert.ok(buffer.length > 12, `${asset.id}: raster source asset is unexpectedly small`);
+  if (extension === '.png') {
+    assert.ok(buffer.subarray(0, 8).equals(pngSignature), `${asset.id}: PNG source asset has an invalid signature`);
+    return;
+  }
+  if (extension === '.jpg' || extension === '.jpeg') {
+    assert.ok(buffer[0] === 0xff && buffer[1] === 0xd8 && buffer[2] === 0xff, `${asset.id}: JPEG source asset has an invalid signature`);
+    return;
+  }
+  if (extension === '.webp') {
+    assert.equal(buffer.subarray(0, 4).toString('ascii'), 'RIFF', `${asset.id}: WebP source asset is missing RIFF signature`);
+    assert.equal(buffer.subarray(8, 12).toString('ascii'), 'WEBP', `${asset.id}: WebP source asset is missing WEBP signature`);
+  }
+}
 
 for (const asset of produced) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-001-[0-9]{3}$/, `${asset.id ?? '<missing>'}: invalid visual id`);
-  assert.match(asset.learnerPath ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${asset.id}: invalid learnerPath`);
-  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${asset.id}: invalid sourcePath`);
+  assert.match(asset.learnerPath ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.(?:svg|png|jpe?g|webp)$/i, `${asset.id}: invalid learnerPath`);
+  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course1\/[A-Za-z0-9._-]+\.(?:svg|png|jpe?g|webp)$/i, `${asset.id}: invalid sourcePath`);
+  assert.ok(supportedExtension.test(asset.sourcePath), `${asset.id}: unsupported learner visual format`);
   assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0, `${asset.id}: primaryLessons must be non-empty`);
+  assert.ok(typeof asset.title === 'string' && asset.title.trim().length > 0, `${asset.id}: title is required`);
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim().length > 0, `${asset.id}: purpose is required`);
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
@@ -30,10 +60,7 @@ for (const asset of produced) {
 
   const absoluteSource = path.join(root, asset.sourcePath);
   assert.ok(fs.existsSync(absoluteSource), `${asset.id}: source asset does not exist at ${asset.sourcePath}`);
-  const svg = fs.readFileSync(absoluteSource, 'utf8');
-  assert.match(svg, /<svg[\s>]/, `${asset.id}: source asset must contain SVG markup`);
-  assert.match(svg, /<title[\s>]/, `${asset.id}: source asset must include an accessible <title>`);
-  assert.match(svg, /<desc[\s>]/, `${asset.id}: source asset must include an accessible <desc>`);
+  verifyAssetFile(asset, absoluteSource);
 
   assert.equal(asset.learnerPath, `/${asset.sourcePath.replace(/^apps\/web\/public\//, '')}`, `${asset.id}: learnerPath and sourcePath must resolve to the same public asset`);
 }
@@ -59,4 +86,6 @@ for (const asset of produced) {
   }
 }
 
-console.log(`Course 1 visual delivery contract passed for ${produced.length} produced learner assets: public download metadata, source files, SVG accessibility, registry mapping, and canonical lesson usage are consistent.`);
+console.log(`Course 1 visual delivery contract passed for ${produced.length} produced learner assets: public download metadata, source files, file-format integrity, accessibility, registry mapping, and canonical lesson usage are consistent.`);
+
+await import('./test-course1-visual-release-manifest.mjs');
