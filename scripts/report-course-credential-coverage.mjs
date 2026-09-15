@@ -52,14 +52,20 @@ for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
   let ok = true;
   const explicitDraftCompletionGate = course.status === 'draft' && !course.finalAssessment && (
     course.extensions?.dedicatedCourseAssessmentRequired === true ||
-    course.extensions?.dedicatedLabModuleRequired === true
+    course.extensions?.dedicatedLabModuleRequired === true ||
+    course.extensions?.integratedPerformanceValidationRequired === true
   );
 
   if (!course.finalAssessment) {
     if (explicitDraftCompletionGate) {
       draftIncomplete++;
       ok = false;
-      console.log(`${course.id}: draft credential-path course; final assessment/lab evidence is explicitly still required before pathway completion`);
+      const gateType = course.extensions?.integratedPerformanceValidationRequired === true
+        ? 'integrated practical/capstone validation'
+        : course.extensions?.dedicatedLabModuleRequired === true
+          ? 'dedicated lab evidence'
+          : 'dedicated final assessment';
+      console.log(`${course.id}: draft credential-path course; ${gateType} is explicitly still required before pathway completion`);
     } else {
       console.error(`ERROR ${course.id}: credentialBearing=true but finalAssessment is missing without an explicit draft completion gate`);
       errors++; ok = false;

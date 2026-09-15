@@ -24,7 +24,7 @@ for (const courseId of program.requiredCourses) {
     const a = read(`content/assessments/${c.finalAssessment}.json`);
     assert.ok(['summative','credential'].includes(a.purpose));
   } else if (courseId !== 'COURSE-LH-TECH1-001') {
-    const exposesGate = c.extensions?.dedicatedCourseAssessmentRequired === true || c.extensions?.dedicatedLabModuleRequired === true;
+    const exposesGate = c.extensions?.dedicatedCourseAssessmentRequired === true || c.extensions?.dedicatedLabModuleRequired === true || c.extensions?.integratedPerformanceValidationRequired === true;
     assert.equal(exposesGate, true, `${courseId} must expose the missing completion gate`);
   }
 }
@@ -49,8 +49,12 @@ assert.equal(course6.extensions?.dedicatedCourseAssessmentRequired, false);
 assert.equal(course6.extensions?.mappedPractical, 'PRACTICAL-TECH1-F');
 assert.equal(course6.extensions?.independentProductReleaseAuthorityConferred, false);
 const integrated = read('content/courses/COURSE-LH-TECH1-007.json');
-assert.equal(integrated.extensions?.dedicatedLabModuleRequired, true);
+assert.equal(integrated.extensions?.dedicatedLabModuleRequired, false);
+assert.equal(integrated.extensions?.dedicatedLabModule, 'MOD-LH-TECH1-007-LAB');
+assert.equal(integrated.extensions?.labPlan, 'LABPLAN-TECH1-001');
+assert.equal(integrated.extensions?.integratedPerformanceValidationRequired, true);
+assert.equal(integrated.extensions?.liveCredentialFormApproved, false);
 assert.equal(integrated.extensions?.credentialPracticalSetRequired.length, 6);
 assert.equal(new Set(integrated.extensions.credentialPracticalSetRequired).size, 6);
 assert.equal(integrated.extensions?.capstoneRequired, 'CAPSTONE-TECH1-SHIFT-001');
-console.log('Technician I program structure passed: all seven courses resolve; Courses 002-006 have advanced to draft instruction/assessment while Course 007 retains explicit integrated lab/practical/capstone gates.');
+console.log('Technician I program structure passed: all seven courses resolve; Courses 002-006 contain draft instruction/assessment and Course 007 now contains the dedicated integrated lab while practical/capstone validation and release gates remain explicit.');
