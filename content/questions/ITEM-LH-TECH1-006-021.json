@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-006-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-006-06",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Outgoing harvest weight is 18.4 kg and receiving weight is 17.9 kg. What is the strongest action?",
+  "choices": [
+    "Preserve both attributable values and reconcile the discrepancy before closing the affected handoff",
+    "Change receiving to 18.4 kg",
+    "Average the values",
+    "Delete the outgoing record"
+  ],
+  "correct": 0,
+  "rationale": "Preserve both attributable values and reconcile the discrepancy before closing the affected handoff. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-006",
+    "itemSet": "course6-v1"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-006-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-006-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A harvest task now requires a technical repair outside Technician I training. What should happen?",
+  "choices": [
+    "Attempt the repair because harvest is time-sensitive",
+    "Bypass the fault",
+    "Record the repair as complete",
+    "Stop the affected work and escalate the repair need rather than improvising"
+  ],
+  "correct": 3,
+  "rationale": "Stop the affected work and escalate the repair need rather than improvising. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-006",
+    "itemSet": "course6-v1"
+  }
+}

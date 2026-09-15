@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-006-017",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-006-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "The assigned dry-room destination is unavailable, and no alternate is authorized. What should Technician I do?",
+  "choices": [
+    "Pause the affected transfer and obtain controlled destination authorization before movement",
+    "Use any open rack",
+    "Leave material unlabeled in the hallway",
+    "Change the work order after the fact"
+  ],
+  "correct": 0,
+  "rationale": "Pause the affected transfer and obtain controlled destination authorization before movement. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-006",
+    "itemSet": "course6-v1"
+  }
+}

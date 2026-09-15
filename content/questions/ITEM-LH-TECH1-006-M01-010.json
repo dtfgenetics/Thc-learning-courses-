@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-006-M01-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-006-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A hold is still active but someone asks for release without controlled approval. What should Technician I do?",
+  "choices": [
+    "Release it verbally",
+    "Maintain the hold and resolve release authority through the supplied process",
+    "Remove the record",
+    "Move it into normal flow temporarily"
+  ],
+  "correct": 1,
+  "rationale": "Maintain the hold and resolve release authority through the supplied process. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-006",
+    "itemSet": "course6-module1-formative"
+  }
+}
