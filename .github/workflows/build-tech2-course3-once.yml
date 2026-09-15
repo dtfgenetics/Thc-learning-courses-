@@ -21,6 +21,8 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Normalize Course 203 formative feedback mode
+        run: sed -i "s/feedbackMode:'immediate-with-rationale'/feedbackMode:'immediate'/g" scripts/build-tech2-course3.mjs
       - name: Build Technician II Course 003 source
         run: node scripts/build-tech2-course3.mjs
       - name: Rebuild curriculum registry
