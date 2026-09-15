@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "sources": [
+    {"id":"pubmed","kind":"research","authority":"primary","baseUrl":"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/","supports":["journal","peer-reviewed-study","peer-reviewed-review"],"reviewRequired":true},
+    {"id":"crossref","kind":"metadata","authority":"primary","baseUrl":"https://api.crossref.org/","supports":["doi-metadata","journal-metadata"],"reviewRequired":true},
+    {"id":"usda","kind":"government","authority":"primary","baseUrl":"https://www.nal.usda.gov/","supports":["agriculture","datasets","technical-guidance"],"reviewRequired":true},
+    {"id":"osha","kind":"government","authority":"primary","baseUrl":"https://www.osha.gov/","supports":["workplace-safety","regulatory-guidance","datasets"],"reviewRequired":true},
+    {"id":"university-extension","kind":"academic-guidance","authority":"secondary","baseUrl":null,"supports":["horticulture","plant-health","ipm","cultivation-practice"],"reviewRequired":true},
+    {"id":"wikimedia","kind":"media","authority":"candidate","baseUrl":"https://commons.wikimedia.org/","supports":["reference-images","licensed-media"],"reviewRequired":true,"licenseCheckRequired":true},
+    {"id":"internal","kind":"internal","authority":"canonical","baseUrl":null,"supports":["approved-assets","course-content","encyclopedia","job-aids"],"reviewRequired":false}
+  ],
+  "rules": {
+    "neverAutoPublishExternalContent": true,
+    "requireProvenance": true,
+    "requireLicenseMetadataForExternalMedia": true,
+    "preferExistingApprovedInternalAssets": true,
+    "deduplicateBy": ["doi", "pmid", "canonicalUrl", "contentHash"]
+  }
+}
