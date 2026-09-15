@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-008-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspected equipment fault would require opening a guarded electrical panel beyond the technician’s authorization. What is the correct boundary?",
+  "choices": [
+    "Open the panel if the technician is confident.",
+    "Stop at authorized checks and hand the suspected fault to the qualified maintenance role.",
+    "Bypass the guard temporarily to confirm the fault.",
+    "Change unrelated setpoints so the alarm stops."
+  ],
+  "correct": 1,
+  "rationale": "Diagnostic competence does not create maintenance authorization; safe troubleshooting ends where the assigned repair boundary begins.",
+  "references": [
+    "REF-ASTM-E2659-001"
+  ]
+}

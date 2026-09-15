@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-008-08",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A candidate scores above 80 on every practical except Practical C, where the score is 76 with no critical error. Is the integrated lab complete?",
+  "choices": [
+    "Yes, average all practical scores together.",
+    "Yes, if the capstone is above 90.",
+    "No; Practical C must be remediated and passed because required stations are non-compensatory.",
+    "Yes, because there was no critical error."
+  ],
+  "correct": 2,
+  "rationale": "Each practical is required evidence with its own minimum standard; higher scores elsewhere cannot compensate for a failed required station.",
+  "references": [
+    "REF-ASTM-E2659-001"
+  ]
+}

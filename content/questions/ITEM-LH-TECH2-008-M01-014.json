@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-008-07",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A KPI improves only after failed units are removed from a denominator that originally included all eligible starts. How should the result be treated?",
+  "choices": [
+    "Accept it because the percentage is higher.",
+    "It is not comparable until recalculated using the defined denominator and eligibility rule.",
+    "Use the new denominator for historical cycles without documentation.",
+    "Treat the single value as a confirmed trend."
+  ],
+  "correct": 1,
+  "rationale": "KPI interpretation requires a stable definition; changing the eligible population after seeing results destroys comparability and can misstate performance.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

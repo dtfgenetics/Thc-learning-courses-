@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-008-02",
+  "title": "Root-Zone, IPM, Propagation and Canopy Troubleshooting Stations",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PROP-001",
+    "COMP-CANOPY-ADV-001",
+    "COMP-FLOWER-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-008-04",
+    "LO-LH-TECH2-008-05"
+  ],
+  "estimatedMinutes": 90,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "content": {
+    "overview": "These stations require Technician II to combine process execution with troubleshooting discipline. Fertigation and irrigation evidence must retain recipe identity, measurement verification and crop/media context; IPM, propagation and canopy evidence must preserve sampling quality, sanitation, cultivar or stage context and treatment-authority boundaries.",
+    "vocabulary": [
+      {
+        "term": "Context-bounded recommendation",
+        "definition": "A recommendation limited to the verified crop, media, process, authorization and evidence conditions supplied by the case."
+      },
+      {
+        "term": "Treatment-authority boundary",
+        "definition": "The separation between interpreting plant-health evidence and having legal or facility authorization to select, mix or apply a regulated treatment."
+      },
+      {
+        "term": "Performance review",
+        "definition": "Comparison of outcome evidence against defined process, batch, cultivar or stage context without assuming a cause that the evidence does not establish."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Execute the approved batch before troubleshooting it",
+        "body": "Verify material identity, approved recipe, sequence, measurement readiness and actual results. An abnormal pH, EC or root-zone value requires the verification steps defined by the process before major correction.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Dryback and root-zone trends are contextual",
+        "body": "Trend meaning depends on crop stage, media, irrigation history, distribution and plant demand. The lab prohibits universal dryback assumptions detached from those variables.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "IPM outcome evidence is multi-round evidence",
+        "body": "Comparable sampling effort, mapped scope, incidence, severity, trap evidence and intervention timing are evaluated together. A single favorable observation does not override a contradictory trend.",
+        "references": [
+          "REF-IPM-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Propagation and canopy performance need comparison groups",
+        "body": "Donor, batch, cultivar, stage, sanitation and environmental history help bound a performance problem. Technician II may identify the next verification step without claiming contamination, genotype effect or treatment need without support.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A fertigation value is out of expected range; verify meter readiness and sample identity before altering the approved recipe.",
+      "A propagation batch roots poorly while another batch under the same room conditions performs normally; compare donor, handling, sanitation and batch records before assigning an environmental cause."
+    ],
+    "commonMistakes": [
+      "Changing an approved recipe without authority.",
+      "Using one root-zone target across all media and stages.",
+      "Declaring IPM success from an isolated low count.",
+      "Claiming genetics or contamination without comparative evidence."
+    ],
+    "practicalApplication": "Rotate through Practical C, D and E preparation cases and produce one bounded troubleshooting memo per station with verified facts, uncertainty, next check and escalation boundary.",
+    "summary": "Advanced production troubleshooting preserves process identity, comparable evidence and authority boundaries across root-zone, IPM, propagation and canopy work."
+  }
+}

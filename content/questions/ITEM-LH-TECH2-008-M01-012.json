@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-TECH2-008-06",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Genealogy shows that a deviation overlaps two linked lots rather than the entire facility. What affected scope should Technician II document?",
+  "choices": [
+    "The entire facility automatically.",
+    "Only the best-looking lot.",
+    "Exclude suspect material if that improves the result.",
+    "The evidence-supported linked lots, with any uncertainty and containment clearly stated."
+  ],
+  "correct": 3,
+  "rationale": "Affected scope follows genealogy and evidence; over-scoping and under-scoping both weaken a defensible deviation investigation.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-POSTHARVEST-001"
+  ]
+}
