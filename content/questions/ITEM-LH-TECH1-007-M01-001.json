@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-007-01",
+  "bloomLevel": "apply",
+  "difficulty": "easy",
+  "type": "scenario",
+  "stem": "A work order is routine, but the opening handoff shows an unresolved life-safety alarm in the same area. What should control the first action?",
+  "choices": [
+    "Follow the posted alarm/emergency process and keep the affected work stopped until the condition is controlled",
+    "Begin the routine task because it was scheduled",
+    "Silence the alarm if possible and continue",
+    "Move the task to another worker without documenting the alarm"
+  ],
+  "correct": 0,
+  "rationale": "Shift priority is driven by consequence and controlled procedures; scheduled work does not override an unresolved life-safety condition.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

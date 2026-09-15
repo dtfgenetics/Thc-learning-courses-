@@ -1,0 +1,150 @@
+{
+  "id": "LESSON-LH-TECH1-007-04",
+  "title": "Harvest Transition, Dynamic Events and End-of-Shift Handoff",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-007-05",
+    "LO-LH-TECH1-007-06"
+  ],
+  "estimatedMinutes": 90,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The final integrated segment combines Practical F, a dynamic-event inject and end-of-shift reconciliation. Learners protect harvest genealogy and receiving identity, handle contamination or label exceptions, reconcile outgoing and incoming quantity, respond to one unexpected event, and close the shift with a handoff that preserves completed work, unresolved conditions, holds, deviations and next priorities. The learner is not granted independent product-release authority.",
+    "vocabulary": [
+      {
+        "term": "dynamic event inject",
+        "definition": "An unexpected simulated condition introduced during the shift to evaluate reprioritization, safe action, documentation and escalation."
+      },
+      {
+        "term": "shift reconciliation",
+        "definition": "The end-of-shift comparison of planned work, completed work, physical state, records, movements, deviations and open issues."
+      },
+      {
+        "term": "receiving handoff",
+        "definition": "The controlled transfer of material and information to the next location, role or shift with identity, condition and unresolved issues preserved."
+      },
+      {
+        "term": "critical failure",
+        "definition": "A serious safety, identity, integrity or authority-boundary violation that prevents the performance evidence from being accepted until remediation and reevaluation occur."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Harvest is an identity transformation",
+        "body": "Verify source identity, authorization and destination before material moves. Link new harvest or receiving identifiers to their source, preserve lot separation and document quantity and location. A missing or conflicting label is controlled before another transition makes reconstruction harder.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Dynamic events test reprioritization",
+        "body": "The learner may encounter a leak, alarm, damaged tool, pest finding, missing label, irrigation failure, count shortage, dry-room excursion or handoff discrepancy. The required response is to reassess consequence and authority, take the immediate safe action, preserve evidence and identify downstream work affected.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Reconcile without falsifying",
+        "body": "End-of-shift records should preserve the original planned and actual values, unresolved discrepancies, holds and corrections through the controlled process. The learner never changes a number solely to make two records match.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff is a continuity control",
+        "body": "A useful handoff tells the receiving person what is complete, what is incomplete, what was measured or observed, what changed, what is on hold, what requires follow-up and what should happen next. It should stand on its own without relying on the outgoing learner being present.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Completion is not product release authority",
+        "body": "The integrated lab can show that a learner followed hold, reconciliation and handoff procedures. It does not authorize independent release of held material, override quality review, or replace facility/jurisdiction requirements for product disposition.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Outgoing harvest weight and receiving weight differ. The learner preserves both readings, checks the controlled reconciliation steps and hands off the unresolved discrepancy if it cannot be resolved before shift end.",
+      "A wet-floor event occurs during a time-sensitive transfer. The learner controls or isolates the hazard within authorization, documents the interruption and updates the downstream task sequence rather than continuing because the material is already in motion."
+    ],
+    "commonMistakes": [
+      "Treating a dynamic event as a distraction instead of reprioritizing the shift.",
+      "Changing a weight or count to close a discrepancy.",
+      "Removing a hold because the material looks acceptable.",
+      "Writing a handoff that lists tasks but omits unresolved conditions and next actions."
+    ],
+    "practicalApplication": "Complete a simulated harvest-to-dry-room transition followed by a randomized event inject and end-of-shift reconciliation. Produce the final shift log, movement chain, discrepancy/hold record and receiving handoff.",
+    "summary": "The integrated lab closes with controlled transitions, reprioritization under change, truthful reconciliation and a reconstructable handoff. Strong performance protects safety, identity, evidence and authorization even when the shift does not go as planned.",
+    "blocks": [
+      {
+        "type": "steps",
+        "title": "Dynamic-event response sequence",
+        "items": [
+          {
+            "title": "Recognize and stabilize",
+            "body": "Identify the changed condition and take the immediate safe action permitted by procedure."
+          },
+          {
+            "title": "Reprioritize",
+            "body": "Determine which active or downstream tasks are affected and what must pause."
+          },
+          {
+            "title": "Preserve evidence",
+            "body": "Record identity, location, time, measurement or observation before information is lost."
+          },
+          {
+            "title": "Escalate within role boundaries",
+            "body": "Send the unresolved decision to the correct qualified role rather than inventing authority."
+          },
+          {
+            "title": "Reconcile the shift",
+            "body": "Update actual-versus-planned status, deviations, holds and incomplete work."
+          },
+          {
+            "title": "Hand off next action",
+            "body": "Make the remaining owner, priority and required follow-up clear to the receiving shift."
+          }
+        ],
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Weight mismatch at shift close",
+        "setting": "The outgoing harvest record shows 18.4 kg and the receiving record shows 17.9 kg. The shift is ending and no approved explanation has been established yet.",
+        "prompt": "What should the learner do?",
+        "options": [
+          "Change the receiving weight to 18.4 kg so the handoff closes cleanly",
+          "Preserve both values, document the discrepancy and controlled checks performed, escalate or hand off the unresolved reconciliation",
+          "Average the two numbers",
+          "Delete the outgoing measurement because receiving is later"
+        ],
+        "answer": "Preserve both values, document the discrepancy and controlled checks performed, escalate or hand off the unresolved reconciliation",
+        "feedback": "Data integrity requires the discrepancy to remain visible until resolved through the controlled process.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ]
+  }
+}

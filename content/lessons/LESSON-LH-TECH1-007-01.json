@@ -1,0 +1,137 @@
+{
+  "id": "LESSON-LH-TECH1-007-01",
+  "title": "Integrated Shift Planning, Evidence and Authority Control",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-PRO-QA-001",
+    "COMP-SAFETY-WORK-001",
+    "COMP-CULT-TRACEABILITY-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-007-01",
+    "LO-LH-TECH1-007-06"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The integrated lab begins with a shift packet, not a blank checklist. Learners review the previous handoff, room status, work orders, crop timing, traceability identities, known deviations and role boundaries, then build a defensible sequence for the shift. Priority is based on consequence and timing: life-safety and uncontrolled identity problems outrank routine production pressure, while ambiguous or unauthorized work is clarified before execution.",
+    "vocabulary": [
+      {
+        "term": "shift packet",
+        "definition": "The controlled set of handoff information, work orders, maps, records and role boundaries used to plan the simulated shift."
+      },
+      {
+        "term": "priority decision",
+        "definition": "A documented choice about what must happen now, next, later, or only after clarification based on consequence, timing and authorization."
+      },
+      {
+        "term": "evidence package",
+        "definition": "The combined work records, measurements, observations, traceability events, deviations and handoff information used to evaluate performance."
+      },
+      {
+        "term": "authority boundary",
+        "definition": "The limit of actions the learner is trained and authorized to perform before escalation or qualified review is required."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Read the handoff before touching the work",
+        "body": "A strong shift begins by reconstructing what is already known: incomplete work, active holds, recent measurements, abnormal conditions, material locations and time-sensitive commitments. The learner should not repeat work simply because it appears on a task list when the handoff shows that the underlying condition has changed.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Prioritize by consequence and timing",
+        "body": "Immediate hazards, active identity loss and conditions that can worsen quickly deserve priority over routine tasks. Time-sensitive plant work is important, but it does not override a life-safety condition or justify acting outside authorization.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "title": "Plan evidence before execution",
+        "body": "Each workstation should have a clear record target before work begins: what identity is involved, what observation or measurement will be captured, what decision is authorized, and what must be handed off if unresolved. This prevents a technically correct action from becoming unauditable later.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Clarification is a valid operational outcome",
+        "body": "If a work order conflicts with physical identity, a limit is missing, or the requested action would exceed Technician I authority, the correct response can be to preserve the state and escalate rather than invent a solution. Completing the wrong task faster is not competent performance.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A blocked emergency route and a routine canopy work order appear at shift start. The route is addressed first because the safety consequence is immediate.",
+      "A propagation count shortage is noted in the handoff. The learner verifies the physical count and record before planning replacement work rather than editing the expected quantity to match the shortage."
+    ],
+    "commonMistakes": [
+      "Treating the task list as a fixed order regardless of hazards or holds.",
+      "Starting work before checking the previous-shift handoff.",
+      "Assuming escalation means the task was failed.",
+      "Planning actions without planning what evidence must be recorded."
+    ],
+    "practicalApplication": "Given a mock opening packet, rank eight tasks as immediate, time-sensitive, routine, defer, or clarify-before-execution. State the observation, consequence, authorization boundary and evidence record supporting each ranking.",
+    "summary": "Integrated technician performance begins with reconstruction, prioritization, evidence planning and role discipline. A defensible shift plan explains not only what will be done, but why the order is appropriate and what must be preserved if work cannot be completed.",
+    "blocks": [
+      {
+        "type": "steps",
+        "title": "Five-step shift triage",
+        "items": [
+          {
+            "title": "Reconstruct current state",
+            "body": "Read the handoff, active holds, recent deviations, room status and work orders."
+          },
+          {
+            "title": "Identify immediate hazards and identity risks",
+            "body": "Place life-safety and uncontrolled traceability conditions ahead of routine production."
+          },
+          {
+            "title": "Identify time-sensitive crop work",
+            "body": "Protect biological timing where it can be done safely and within authorization."
+          },
+          {
+            "title": "Mark clarification dependencies",
+            "body": "Do not improvise missing limits, destinations, labels or technical authority."
+          },
+          {
+            "title": "Define required evidence",
+            "body": "Know what record, measurement, observation or handoff artifact must exist after each station."
+          }
+        ],
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Schedule pressure versus identity control",
+        "setting": "The shift is behind schedule. A harvest container is ready to move, but its label does not match the work order and a routine pruning task is also waiting.",
+        "prompt": "What is the strongest first decision?",
+        "options": [
+          "Move the container and fix the label later",
+          "Resolve or hold the identity conflict before movement, then continue the remaining authorized work by priority",
+          "Ignore the mismatch because the cultivar appears correct",
+          "Cancel all work for the day"
+        ],
+        "answer": "Resolve or hold the identity conflict before movement, then continue the remaining authorized work by priority",
+        "feedback": "An identity transition can permanently damage genealogy. The conflict is controlled before movement, while unrelated authorized work can continue according to priority.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ]
+  }
+}

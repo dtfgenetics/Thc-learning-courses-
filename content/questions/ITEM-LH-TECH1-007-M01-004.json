@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-LH-TECH1-007-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One representative irrigation emitter has no delivery after the assigned cycle, while neighboring emitters are normal. What should happen next?",
+  "choices": [
+    "Increase the entire zone duration",
+    "Assume that plant needs no water",
+    "Change the work order after the fact",
+    "Document the localized fault and follow the authorized service/escalation process without hiding it through a broad process change"
+  ],
+  "correct": 3,
+  "rationale": "Localized delivery failure is evidence to preserve and address within authorization, not a reason for an unapproved room-wide correction.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

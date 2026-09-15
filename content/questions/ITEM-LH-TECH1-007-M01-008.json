@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CANOPY-001",
+  "objective": "LO-LH-TECH1-007-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A canopy work order is clear for most plants, but one identified plant is visibly stressed and would exceed the supplied intervention threshold. What should the learner do?",
+  "choices": [
+    "Apply the same work to every plant for consistency",
+    "Remove extra tissue to finish faster",
+    "Rewrite the threshold",
+    "Document the exception and hold/escalate the affected plant while completing authorized work that still meets the supplied standard"
+  ],
+  "correct": 3,
+  "rationale": "Uniform execution does not justify ignoring a condition that falls outside the supplied work standard.",
+  "references": [
+    "REF-CANOPY-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

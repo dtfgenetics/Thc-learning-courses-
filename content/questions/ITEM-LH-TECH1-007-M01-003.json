@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-007-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A room sensor and an identified reference measurement disagree substantially. What is the strongest Technician I response?",
+  "choices": [
+    "Adjust the controller until both values match",
+    "Delete the less convenient value",
+    "Record both measurements with locations and instrument context, then escalate the discrepancy within procedure",
+    "Average them and record only the average"
+  ],
+  "correct": 2,
+  "rationale": "Conflicting measurements should remain traceable; the technician preserves context rather than inventing a technical correction.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}

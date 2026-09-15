@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-007-M01-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-007-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A harvest container label conflicts with the source batch record before movement to the dry room. What is the strongest response?",
+  "choices": [
+    "Hold the affected transition, preserve the current identifiers and resolve the mismatch through the controlled process",
+    "Move it and reconcile later",
+    "Use cultivar appearance to choose the likely identity",
+    "Replace both identifiers with a new one"
+  ],
+  "correct": 0,
+  "rationale": "Identity conflict must be controlled before a transition makes genealogy harder to reconstruct.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "itemSet": "course7-readiness-v1"
+  }
+}
