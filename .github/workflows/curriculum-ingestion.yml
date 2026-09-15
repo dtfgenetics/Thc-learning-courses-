@@ -70,6 +70,17 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Syntax-check ingestion scripts
+        run: |
+          for file in \
+            scripts/build-ingestion-plan.mjs \
+            scripts/check-external-links.mjs \
+            scripts/collect-government-datasets.mjs \
+            scripts/collect-research-metadata.mjs \
+            scripts/collect-wikimedia-media.mjs \
+            scripts/validate-ingestion-registries.mjs; do
+            node --check "$file"
+          done
       - name: Validate dependency manifests
         run: node scripts/validate-dependency-manifests.mjs
       - name: Validate link and dataset registries
