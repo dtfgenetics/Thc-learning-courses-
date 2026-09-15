@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/dataset-record.schema.json",
+  "title": "THC Academy Dataset Record",
+  "type": "object",
+  "required": ["id", "title", "status", "publisher", "sourceUrl", "lessonIds", "provenance"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^DATASET-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "description": {"type": ["string", "null"]},
+    "status": {"enum": ["candidate", "reviewed", "approved", "verified", "published", "superseded", "retired"]},
+    "publisher": {"type": "string", "minLength": 2},
+    "sourceUrl": {"type": "string", "format": "uri"},
+    "landingPage": {"type": ["string", "null"], "format": "uri"},
+    "license": {"type": ["string", "null"]},
+    "formats": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "lessonIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "claimIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "retrievedAt": {"type": ["string", "null"], "format": "date-time"},
+    "lastVerifiedAt": {"type": ["string", "null"], "format": "date-time"},
+    "sourceModifiedAt": {"type": ["string", "null"], "format": "date-time"},
+    "provenance": {
+      "type": "object",
+      "required": ["sourceType", "sourceId"],
+      "properties": {
+        "sourceType": {"enum": ["government-catalog", "government-direct", "academic", "internal", "other"]},
+        "sourceId": {"type": "string", "minLength": 1},
+        "catalogUrl": {"type": ["string", "null"], "format": "uri"},
+        "identifier": {"type": ["string", "null"]},
+        "methodologyUrl": {"type": ["string", "null"], "format": "uri"},
+        "reviewNotes": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "dataFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "format": {"type": ["string", "null"]},
+          "title": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
