@@ -1,0 +1,51 @@
+name: Course 1 finish audit
+
+on:
+  pull_request:
+    branches: [dev, staging, main]
+    paths:
+      - content/courses/COURSE-LH-TECH1-001.json
+      - content/modules/MOD-LH-TECH1-001-*.json
+      - content/lessons/LESSON-LH-TECH1-001-*.json
+      - content/learning-objectives/LO-LH-TECH1-001-*.json
+      - content/assessments/ASSESS-LH-TECH1-001-*.json
+      - content/questions/ITEM-LH-TECH1-001-*.json
+      - content/performance-assessments/**
+      - content/reviews/**
+      - scripts/build-learning-hub-review-queue.mjs
+      - scripts/audit-course1-objective-coverage.mjs
+      - scripts/audit-course1-review-inventory.mjs
+      - .github/workflows/course1-finish-audit.yml
+  push:
+    branches: [dev, staging, main, 'feat/course1-finish-*']
+    paths:
+      - content/courses/COURSE-LH-TECH1-001.json
+      - content/modules/MOD-LH-TECH1-001-*.json
+      - content/lessons/LESSON-LH-TECH1-001-*.json
+      - content/learning-objectives/LO-LH-TECH1-001-*.json
+      - content/assessments/ASSESS-LH-TECH1-001-*.json
+      - content/questions/ITEM-LH-TECH1-001-*.json
+      - content/performance-assessments/**
+      - content/reviews/**
+      - scripts/build-learning-hub-review-queue.mjs
+      - scripts/audit-course1-objective-coverage.mjs
+      - scripts/audit-course1-review-inventory.mjs
+      - .github/workflows/course1-finish-audit.yml
+
+permissions:
+  contents: read
+
+jobs:
+  course1-finish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify objective coverage
+        run: node scripts/audit-course1-objective-coverage.mjs
+      - name: Verify complete human-review inventory
+        run: node scripts/audit-course1-review-inventory.mjs
+      - name: Verify Learning Hub review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-001 --summary-only --check
