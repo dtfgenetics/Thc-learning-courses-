@@ -1,6 +1,6 @@
 {
   "courseId": "COURSE-LH-TECH1-003",
-  "courseVersion": "0.4.0",
+  "courseVersion": "0.5.0",
   "status": "development-readiness",
   "module": "MOD-LH-TECH1-003-MONITORING",
   "objectives": ["LO-LH-TECH1-003-01", "LO-LH-TECH1-003-02", "LO-LH-TECH1-003-03", "LO-LH-TECH1-003-04", "LO-LH-TECH1-003-05"],
@@ -16,11 +16,11 @@
   "objectiveCoverageMappedToPractical": true,
   "visualRegistry": "visuals/COURSE3-ASSET-REGISTRY.json",
   "visualDriveFolderId": "1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU",
-  "producedVisualCount": 3,
-  "downloadablePracticeAssetCount": 0,
-  "totalLearnerAssetCount": 3,
+  "producedVisualCount": 4,
+  "downloadablePracticeAssetCount": 2,
+  "totalLearnerAssetCount": 6,
   "learnerAssetFoundationBuilt": true,
-  "learnerAssetLayerBuilt": false,
+  "learnerAssetLayerBuilt": true,
   "releaseStatus": "draft",
   "completedDevelopmentWork": [
     "four dedicated course lessons",
@@ -30,16 +30,16 @@
     "Practical A environmental/sensor/PPFD development station coverage",
     "all five objectives crosswalked to canonical Practical A tasks, evidence, scoring categories and deliverables",
     "public release manifest points to Practical A as development-stage performance evidence",
-    "three public accessible lesson-linked learner visuals mirrored to the Course 3 Drive folder",
+    "four public accessible embedded lesson visuals covering every Course 3 lesson",
+    "two public downloadable practice worksheets linked from their relevant lessons",
+    "all six learner assets mirrored to the dedicated Course 3 Drive folder",
     "deterministic Course 3 learner-asset registry and reachability contract"
   ],
   "remainingDevelopmentPriorities": [
-    "Lesson 4 alarm/trend/verification/handoff visual",
-    "printable environmental measurement practice worksheet",
-    "printable PPFD and sensor-verification practice worksheet",
     "rendered accessibility review preparation",
     "human technical and assessment review packets",
-    "pilot-ready equivalent practical form details"
+    "pilot-ready equivalent practical form details",
+    "optional PDF exports derived from canonical SVG worksheets after layout/accessibility review"
   ],
   "remainingValidationGates": [
     "human technical review",
@@ -51,5 +51,5 @@
     "formal standard setting",
     "program release approval"
   ],
-  "boundary": "Practical mapping, produced learner assets and deterministic tests demonstrate development coverage only. They do not constitute human approval, practical validation, pilot evidence, inter-rater evidence or release approval."
+  "boundary": "Practical mapping, complete planned learner assets and deterministic tests demonstrate development coverage only. They do not constitute human approval, practical validation, pilot evidence, inter-rater evidence or release approval."
 }

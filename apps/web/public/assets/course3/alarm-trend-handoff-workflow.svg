@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Alarm, trend, verification and handoff workflow</title>
+<desc id="desc">Educational diagram comparing an instantaneous value, an average and a time trend, then showing the workflow from alarm event to evidence capture, permitted verification, escalation, unresolved condition and receiving-shift handoff.</desc>
+<style>
+text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#17352b}.h1{font-size:34px;font-weight:800}.h2{font-size:22px;font-weight:750}.body{font-size:18px}.small{font-size:15px}.label{font-size:16px;font-weight:750}.card{fill:#fffdf7;stroke:#355f50;stroke-width:2}.soft{fill:#eef5ed}.warn{fill:#f6efe0;stroke:#9a7e47;stroke-width:2}.accent{fill:#dcebdd;stroke:#355f50;stroke-width:2}.line{stroke:#355f50;stroke-width:3;fill:none}.trend{stroke:#527d6b;stroke-width:4;fill:none}.avg{stroke:#8b7d5a;stroke-width:3;stroke-dasharray:9 7}.axis{stroke:#7c8c84;stroke-width:2}
+</style>
+<rect width="1200" height="760" fill="#f7f3e8"/>
+<text x="60" y="64" class="h1">Alarm ≠ diagnosis; average ≠ trend</text>
+<text x="60" y="98" class="body">Preserve the event, verification and unresolved condition so the next shift can continue the work.</text>
+<rect x="60" y="135" width="500" height="300" rx="24" class="card"/>
+<text x="90" y="175" class="h2">Different data views answer different questions</text>
+<line x1="110" y1="360" x2="520" y2="360" class="axis"/><line x1="110" y1="220" x2="110" y2="360" class="axis"/>
+<path d="M120 330 C160 320 180 315 210 320 S260 335 292 318 S325 250 350 246 S382 318 410 320 S455 330 510 312" class="trend"/>
+<line x1="120" y1="312" x2="510" y2="312" class="avg"/><circle cx="350" cy="246" r="8" fill="#9a7e47"/>
+<text x="365" y="250" class="small">repeated transition spike</text><text x="125" y="390" class="small">Trend preserves timing and recurrence.</text><text x="305" y="305" class="small">period average</text><text x="90" y="420" class="small">A current value, average and trend are not interchangeable records.</text>
+<rect x="610" y="135" width="530" height="300" rx="24" class="card"/><text x="640" y="175" class="h2">When an alarm occurs</text>
+<g transform="translate(645 208)">
+<rect x="0" y="0" width="205" height="60" rx="14" class="warn"/><text x="18" y="27" class="label">1 · Capture alarm event</text><text x="18" y="48" class="small">identity · time · room/asset</text>
+<path d="M210 30 H250" class="line"/><path d="M240 22 l12 8 -12 8" fill="#355f50"/>
+<rect x="255" y="0" width="205" height="60" rx="14" class="accent"/><text x="273" y="27" class="label">2 · Preserve evidence</text><text x="273" y="48" class="small">reading · target/limit · trend</text>
+<path d="M358 65 V95" class="line"/><path d="M350 85 l8 12 8-12" fill="#355f50"/>
+<rect x="255" y="100" width="205" height="60" rx="14" class="accent"/><text x="273" y="127" class="label">3 · Verify within role</text><text x="273" y="148" class="small">only permitted checks</text>
+<path d="M250 130 H210" class="line"/><path d="M220 122 l-12 8 12 8" fill="#355f50"/>
+<rect x="0" y="100" width="205" height="60" rx="14" class="warn"/><text x="18" y="127" class="label">4 · Escalate / hand off</text><text x="18" y="148" class="small">state what remains unresolved</text>
+</g>
+<text x="60" y="490" class="h2">A reconstructable receiving-shift handoff</text>
+<rect x="60" y="520" width="1080" height="155" rx="22" class="card"/>
+<g transform="translate(85 545)">
+<rect x="0" y="0" width="145" height="82" rx="14" class="soft"/><text x="18" y="30" class="label">WHERE / WHEN</text><text x="18" y="58" class="small">room · asset · time</text>
+<rect x="165" y="0" width="145" height="82" rx="14" class="soft"/><text x="183" y="30" class="label">EVIDENCE</text><text x="183" y="58" class="small">measured · trend · alarm</text>
+<rect x="330" y="0" width="145" height="82" rx="14" class="soft"/><text x="348" y="30" class="label">TARGET / LIMIT</text><text x="348" y="58" class="small">kept separate</text>
+<rect x="495" y="0" width="145" height="82" rx="14" class="soft"/><text x="513" y="30" class="label">CHECKS DONE</text><text x="513" y="58" class="small">authorized verification</text>
+<rect x="660" y="0" width="145" height="82" rx="14" class="warn"/><text x="678" y="30" class="label">UNRESOLVED</text><text x="678" y="58" class="small">unknown / open issue</text>
+<rect x="825" y="0" width="145" height="82" rx="14" class="accent"/><text x="843" y="30" class="label">NEXT ACTION</text><text x="843" y="58" class="small">owner · follow-up</text>
+</g>
+<rect x="60" y="700" width="1080" height="42" rx="15" class="accent"/>
+<text x="84" y="727" class="label">Boundary:</text><text x="170" y="727" class="small">Acknowledging an alarm or seeing a trend does not prove biological damage, root cause or authorization to redesign controls.</text>
+</svg>
