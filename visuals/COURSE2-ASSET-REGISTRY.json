@@ -4,17 +4,8 @@
   "policy": {
     "expandable": true,
     "maximumAssetCount": null,
-    "requiredAccessibility": [
-      "title",
-      "description",
-      "learner text alternative"
-    ],
-    "statusValues": [
-      "planned",
-      "in-production",
-      "produced",
-      "retired"
-    ],
+    "requiredAccessibility": ["title", "description", "learner text alternative"],
+    "statusValues": ["planned", "in-production", "produced", "retired"],
     "publicDelivery": "Produced Course 2 learner assets live in the public repository and may be viewed or downloaded directly from their raw GitHub URL. Google Drive is a controlled mirror for production/reference copies and does not replace the canonical repository asset."
   },
   "driveStorage": {
@@ -36,9 +27,7 @@
       "primaryLessons": ["LESSON-LH-TECH1-002-01"],
       "objectiveIds": ["LO-LH-TECH1-002-01", "LO-LH-TECH1-002-03"],
       "references": ["REF-PLANT-BIO-001"],
-      "publicSourceLinks": [
-        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management"
-      ],
+      "publicSourceLinks": ["https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management"],
       "purpose": "Teach why a crop walk needs a representative route, location context and a denominator before the learner makes a room-level statement.",
       "version": "1.0.0"
     },
@@ -72,9 +61,7 @@
       "primaryLessons": ["LESSON-LH-TECH1-002-04"],
       "objectiveIds": ["LO-LH-TECH1-002-04", "LO-LH-TECH1-002-05"],
       "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-PLANT-BIO-001"],
-      "publicSourceLinks": [
-        "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"
-      ],
+      "publicSourceLinks": ["https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"],
       "purpose": "Teach the context-view, whole-plant-view and close-detail image sequence while preserving identity, time and color fidelity for reconstructable crop records.",
       "version": "1.0.0"
     },
@@ -85,7 +72,9 @@
       "learnerPath": "/assets/course2/spatial-pattern-comparison.svg",
       "sourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.svg",
       "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/spatial-pattern-comparison.svg",
-      "driveMirrorStatus": "pending-upload",
+      "driveFileId": "1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7",
+      "driveFileUrl": "https://drive.google.com/file/d/1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7/view",
+      "driveMirrorStatus": "mirrored",
       "primaryLessons": ["LESSON-LH-TECH1-002-01"],
       "objectiveIds": ["LO-LH-TECH1-002-01", "LO-LH-TECH1-002-03"],
       "references": ["REF-PLANT-BIO-001"],
@@ -100,7 +89,9 @@
       "learnerPath": "/assets/course2/reconstructable-handoff-chain.svg",
       "sourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
       "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
-      "driveMirrorStatus": "pending-upload",
+      "driveFileId": "1R64EMjV4jtRsGJD3JWptXOF_murzcLU8",
+      "driveFileUrl": "https://drive.google.com/file/d/1R64EMjV4jtRsGJD3JWptXOF_murzcLU8/view",
+      "driveMirrorStatus": "mirrored",
       "primaryLessons": ["LESSON-LH-TECH1-002-04"],
       "objectiveIds": ["LO-LH-TECH1-002-04", "LO-LH-TECH1-002-05"],
       "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-HSE-SHIFT-HANDOVER"],
