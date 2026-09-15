@@ -1,0 +1,38 @@
+{
+  "id": "COURSE1-TRACEABILITY-EXERCISE",
+  "title": "Course 1 Synthetic Traceability and Reconciliation Exercise",
+  "version": "1.0.0",
+  "synthetic": true,
+  "description": "Synthetic instructional records for practicing identity preservation, movement-event reconstruction, physical-versus-record reconciliation, discrepancy handling, and shift handoff. The records do not describe a real facility, crop, person, or regulatory system.",
+  "fields": {
+    "eventId": "Unique synthetic event identifier",
+    "timestamp": "Synthetic event time in ISO 8601 format",
+    "eventType": "Receive, move, split, hold, count, reconcile, or handoff",
+    "objectId": "Synthetic traceable-object identifier",
+    "sourceLocation": "Location before the event when applicable",
+    "destinationLocation": "Location after the event when applicable",
+    "quantity": "Synthetic count associated with the event",
+    "status": "Current event/status label",
+    "recordedBy": "Synthetic operator identifier",
+    "notes": "Factual event context; may intentionally contain an unresolved discrepancy for learner analysis"
+  },
+  "events": [
+    {"eventId":"EVT-001","timestamp":"2026-09-01T08:00:00Z","eventType":"receive","objectId":"LOT-A100","sourceLocation":"INTAKE","destinationLocation":"ROOM-A","quantity":12,"status":"available","recordedBy":"OP-01","notes":"Intake identity and count confirmed at receipt."},
+    {"eventId":"EVT-002","timestamp":"2026-09-01T09:15:00Z","eventType":"move","objectId":"LOT-A100","sourceLocation":"ROOM-A","destinationLocation":"ROOM-B","quantity":12,"status":"available","recordedBy":"OP-01","notes":"Movement completed under work order WO-1001."},
+    {"eventId":"EVT-003","timestamp":"2026-09-02T10:00:00Z","eventType":"split","objectId":"LOT-A100","sourceLocation":"ROOM-B","destinationLocation":"ROOM-B","quantity":8,"status":"available","recordedBy":"OP-02","notes":"Eight units retained under source identity; four units assigned child identity LOT-A100-S1."},
+    {"eventId":"EVT-004","timestamp":"2026-09-02T10:02:00Z","eventType":"split","objectId":"LOT-A100-S1","sourceLocation":"ROOM-B","destinationLocation":"ROOM-C","quantity":4,"status":"available","recordedBy":"OP-02","notes":"Child identity created from LOT-A100 and moved to ROOM-C."},
+    {"eventId":"EVT-005","timestamp":"2026-09-03T07:45:00Z","eventType":"hold","objectId":"LOT-A100-S1","sourceLocation":"ROOM-C","destinationLocation":"ROOM-C","quantity":4,"status":"hold","recordedBy":"OP-03","notes":"Hold applied pending identity review; no movement authorized while hold remains active."},
+    {"eventId":"EVT-006","timestamp":"2026-09-03T08:10:00Z","eventType":"count","objectId":"LOT-A100","sourceLocation":"ROOM-B","destinationLocation":"ROOM-B","quantity":8,"status":"available","recordedBy":"OP-03","notes":"Physical count agrees with post-split record."},
+    {"eventId":"EVT-007","timestamp":"2026-09-03T08:12:00Z","eventType":"count","objectId":"LOT-A100-S1","sourceLocation":"ROOM-C","destinationLocation":"ROOM-C","quantity":3,"status":"hold","recordedBy":"OP-03","notes":"Physical count is three while the recorded split quantity is four; discrepancy remains unresolved."},
+    {"eventId":"EVT-008","timestamp":"2026-09-03T08:20:00Z","eventType":"reconcile","objectId":"LOT-A100-S1","sourceLocation":"ROOM-C","destinationLocation":"ROOM-C","quantity":3,"status":"hold","recordedBy":"OP-03","notes":"No adjustment made. Physical count, recorded quantity, hold status, and discrepancy are preserved for authorized investigation."},
+    {"eventId":"EVT-009","timestamp":"2026-09-03T08:30:00Z","eventType":"handoff","objectId":"LOT-A100-S1","sourceLocation":"ROOM-C","destinationLocation":"ROOM-C","quantity":3,"status":"hold","recordedBy":"OP-03","notes":"Incoming shift receives exact object ID, physical count, recorded count, active hold, open discrepancy, and next review action."}
+  ],
+  "learnerTasks": [
+    "Reconstruct the event genealogy for LOT-A100 and LOT-A100-S1.",
+    "Identify the first event at which the child identity exists.",
+    "Compare the recorded and physical states for both identities.",
+    "Identify which work remains blocked by the active hold.",
+    "Describe what must remain unresolved rather than being silently corrected.",
+    "Prepare a factual handoff containing identity, location, status, discrepancy, actions already taken, and next authorized action."
+  ]
+}
