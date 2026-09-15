@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Five canopy RH sensors agree closely while one wall sensor near an air outlet reads much drier. What is the strongest interpretation?",
+  "choices": [
+    "The outlier requires placement/data-quality verification before it is treated as representative of the room",
+    "The whole room must be drier than the canopy sensors show",
+    "The wall sensor is definitely broken",
+    "Move all sensors to the wall"
+  ],
+  "correct": 0,
+  "rationale": "The outlier requires placement/data-quality verification before it is treated as representative of the room. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

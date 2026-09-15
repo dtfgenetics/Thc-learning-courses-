@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-M01-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-TECH1-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A canopy average appears acceptable but corners are much dimmer. What information should be retained?",
+  "choices": [
+    "Only the average",
+    "Only the maximum",
+    "Only the fixture model",
+    "The spatial grid/distribution as well as any summary"
+  ],
+  "correct": 3,
+  "rationale": "The spatial grid/distribution as well as any summary. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-module1-formative"
+  }
+}
