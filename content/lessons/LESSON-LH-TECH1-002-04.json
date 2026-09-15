@@ -1,149 +1,31 @@
 {
   "id": "LESSON-LH-TECH1-002-04",
   "title": "Crop Observation Records, Photographs and Shift Handoff",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "draft",
   "competencies": ["COMP-PRO-QA-001", "COMP-PRO-SOP-001"],
   "learningObjectives": ["LO-LH-TECH1-002-04", "LO-LH-TECH1-002-05"],
   "estimatedMinutes": 65,
   "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-PLANT-BIO-001", "REF-HSE-SHIFT-HANDOVER"],
   "assessment": null,
-  "extensions": {
-    "publicSources": [
-      {
-        "title": "Diagnostic Help for Fruit and Vegetable Farmers",
-        "publisher": "University of Minnesota Extension",
-        "url": "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers",
-        "scope": "Transferable diagnostic-photo and context guidance; not cannabis-specific."
-      }
-    ]
-  },
+  "extensions": {"publicSources":[{"title":"Diagnostic Help for Fruit and Vegetable Farmers","publisher":"University of Minnesota Extension","url":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers","scope":"Transferable diagnostic-photo and context guidance; not cannabis-specific."}]},
   "content": {
-    "overview": "Observation only becomes operational evidence when another qualified person can reconstruct what was inspected and what remains unresolved. Learners build crop records that preserve identity, time, sample route, objective descriptions, photographs, available context, actions and escalation. Photography is treated as evidence: images retain plant and location identity, include both context and detail, and avoid edits that can materially change appearance.",
-    "vocabulary": [
-      {"term":"reconstructable record","definition":"A record containing enough identity, timing, context and history for another qualified person to understand what occurred."},
-      {"term":"photo context","definition":"The identity, location, scale or scene information needed to interpret a crop image correctly."},
-      {"term":"handoff","definition":"A structured transfer of completed work, observations, deviations, unresolved conditions and priorities to the next responsible person or shift."},
-      {"term":"uncertainty","definition":"A clearly stated limit in what the available evidence supports, preserved rather than hidden by an invented conclusion."}
-    ],
-    "sections": [
-      {
-        "title":"A crop note needs identity and timing",
-        "body":"A useful record identifies the room or zone, crop or batch, plant or bench when relevant, date/time, developmental context and the person or controlled system responsible for the entry. A technically correct observation attached to the wrong location or time can mislead later decisions.",
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY"]
-      },
-      {
-        "title":"Photographs preserve both detail and context",
-        "body":"Current university diagnostic guidance recommends photographs that show the overall setting as well as closer views of relevant plant features. Natural or otherwise consistent lighting, useful comparison views, and inclusion of relevant structures when needed can make an image set more interpretable. Link each image set to crop identity and time, and retake images that are blurred, misleading or too context-poor to support review.",
-        "references":["REF-PLANT-BIO-001"],
-        "extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}
-      },
-      {
-        "title":"Photo evidence should support comparison",
-        "body":"A strong image set often includes an overall crop or area view, a whole-plant or representative view, and a close detail of the feature being documented. When practical, comparison images of a more typical plant help the reviewer understand what differs. Avoid color filters or edits that materially alter the evidence.",
-        "extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}
-      },
-      {
-        "title":"Handoffs distinguish done, observed and unresolved",
-        "body":"The receiving person should be able to tell what was completed, what was observed, what actions were taken, what conditions remain unresolved, what was escalated and what should be checked next. Human-factors guidance on shift handover emphasizes preparation, two-way exchange and cross-checking rather than treating handoff as a one-direction note dump.",
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]
-      },
-      {
-        "title":"Corrections preserve the observation history",
-        "body":"If an observation record is corrected, use the supplied record-control method so the original history remains understandable. Do not silently replace a plant identity, timestamp or finding in a way that makes the record appear to have always contained the corrected information.",
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY"]
-      }
-    ],
-    "workedExamples": [
-      "A photo set includes an overall area view, a whole-plant image and a close image of the observed structure, all tied to room, zone, plant identity, date/time and the corresponding written observation.",
-      "A comparison set includes one affected plant and a nearby typical plant photographed under similar lighting so the reviewer can see the difference without relying on a filtered image.",
-      "A shift handoff states that a zone was rechecked, documents the remaining pattern, notes that the cause is unresolved, records who was notified and specifies the next required observation rather than writing only 'watch plants.'"
-    ],
-    "commonMistakes": [
-      "Saving observation photographs without plant, room or zone identity.",
-      "Using color filters, enhancement or inconsistent lighting as the primary evidence for a color-related observation.",
-      "Submitting only a close-up image with no whole-plant or area context.",
-      "Writing a handoff that lists completed tasks but omits unresolved abnormalities or uncertainty.",
-      "Silently overwriting the original observation when correcting an identity or timestamp error."
-    ],
-    "practicalApplication":"Complete a simulated crop observation report from a room map, image set and work-history packet. The report must identify the sample route, preserve crop and photo identity, separate observation from interpretation, document escalation and produce a shift handoff that another learner can reconstruct without seeing the original room. Build a three-image evidence set: context view, representative whole-plant view and close detail.",
+    "overview":"Observation only becomes operational evidence when another qualified person can reconstruct what was inspected and what remains unresolved. Learners build crop records that preserve identity, time, sample route, objective descriptions, photographs, available context, actions and escalation. Photography is treated as evidence: images retain plant and location identity, include both context and detail, and avoid edits that can materially change appearance.",
+    "vocabulary":[{"term":"reconstructable record","definition":"A record containing enough identity, timing, context and history for another qualified person to understand what occurred."},{"term":"photo context","definition":"The identity, location, scale or scene information needed to interpret a crop image correctly."},{"term":"handoff","definition":"A structured transfer of completed work, observations, deviations, unresolved conditions and priorities to the next responsible person or shift."},{"term":"uncertainty","definition":"A clearly stated limit in what the available evidence supports, preserved rather than hidden by an invented conclusion."}],
+    "sections":[{"title":"A crop note needs identity and timing","body":"A useful record identifies the room or zone, crop or batch, plant or bench when relevant, date/time, developmental context and the person or controlled system responsible for the entry. A technically correct observation attached to the wrong location or time can mislead later decisions.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},{"title":"Photographs preserve both detail and context","body":"Current university diagnostic guidance recommends photographs that show the overall setting as well as closer views of relevant plant features. Natural or otherwise consistent lighting, useful comparison views, and inclusion of relevant structures when needed can make an image set more interpretable. Link each image set to crop identity and time, and retake images that are blurred, misleading or too context-poor to support review.","references":["REF-PLANT-BIO-001"],"extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}},{"title":"Photo evidence should support comparison","body":"A strong image set often includes an overall crop or area view, a whole-plant or representative view, and a close detail of the feature being documented. When practical, comparison images of a more typical plant help the reviewer understand what differs. Avoid color filters or edits that materially alter the evidence.","extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}},{"title":"Handoffs distinguish done, observed and unresolved","body":"The receiving person should be able to tell what was completed, what was observed, what actions were taken, what conditions remain unresolved, what was escalated and what should be checked next. Human-factors guidance on shift handover emphasizes preparation, two-way exchange and cross-checking rather than treating handoff as a one-direction note dump.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]},{"title":"Corrections preserve the observation history","body":"If an observation record is corrected, use the supplied record-control method so the original history remains understandable. Do not silently replace a plant identity, timestamp or finding in a way that makes the record appear to have always contained the corrected information.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}],
+    "workedExamples":["A photo set includes an overall area view, a whole-plant image and a close image of the observed structure, all tied to room, zone, plant identity, date/time and the corresponding written observation.","A comparison set includes one affected plant and a nearby typical plant photographed under similar lighting so the reviewer can see the difference without relying on a filtered image.","A shift handoff states that a zone was rechecked, documents the remaining pattern, notes that the cause is unresolved, records who was notified and specifies the next required observation rather than writing only 'watch plants.'"],
+    "commonMistakes":["Saving observation photographs without plant, room or zone identity.","Using color filters, enhancement or inconsistent lighting as the primary evidence for a color-related observation.","Submitting only a close-up image with no whole-plant or area context.","Writing a handoff that lists completed tasks but omits unresolved abnormalities or uncertainty.","Silently overwriting the original observation when correcting an identity or timestamp error."],
+    "practicalApplication":"Use the downloadable observation/handoff worksheet with a simulated room map, image set and work-history packet. Preserve crop/photo identity, direct observation and pattern, contextual evidence, actions, uncertainty, escalation, next check, cross-check and any correction history so another learner can reconstruct the work.",
     "summary":"Crop records turn observation into transferable evidence. Preserve identity, timing, sample context, objective wording, photographs, actions, uncertainty and follow-up so the next qualified person can reconstruct the crop state and continue the work without guessing.",
-    "blocks": [
-      {
-        "type":"document",
-        "title":"Minimum crop-observation record",
-        "description":"Exact fields vary by facility, but the record should preserve enough context for reconstruction.",
-        "fields":[
-          {"label":"Crop identity","value":"Room/zone plus cultivar, lot, batch, bench, tray or plant ID as required"},
-          {"label":"Date/time","value":"When the observation actually occurred"},
-          {"label":"Purpose and route","value":"Why the crop was inspected and how representative points were selected"},
-          {"label":"Developmental context","value":"Observed stage/morphology with schedule context when relevant"},
-          {"label":"Observation and pattern","value":"Objective findings plus sample size, distribution and severity terms defined by procedure"},
-          {"label":"Photo evidence","value":"Context, representative and close views linked to identity and time when required"},
-          {"label":"Available context","value":"Relevant measurements or work history kept distinct from confirmed cause"},
-          {"label":"Action/escalation","value":"What was done, who was notified and what remains unresolved"},
-          {"label":"Handoff/follow-up","value":"Next check, hold, priority or open question for the receiving role"}
-        ],
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]
-      },
-      {
-        "type":"steps",
-        "title":"Diagnostic photo evidence set",
-        "items":[
-          {"title":"Context view","body":"Show the plant or observation area in its production context so location and distribution are understandable."},
-          {"title":"Representative whole-plant view","body":"Capture the overall plant form and visible distribution of the observation."},
-          {"title":"Close detail","body":"Capture the relevant structure sharply enough for review."},
-          {"title":"Comparison when useful","body":"Include a nearby typical comparison under similar conditions when it helps show the difference."},
-          {"title":"Identity and time","body":"Link the image set to the correct crop, location and observation time instead of relying on an unlabeled camera roll."}
-        ],
-        "extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}
-      },
-      {
-        "type":"image",
-        "assetId":"VIS-LH-TECH1-002-003",
-        "title":"Diagnostic photo evidence set",
-        "src":"/assets/course2/diagnostic-photo-evidence-set.svg",
-        "alt":"Three-panel diagram showing a context view of the crop area, a representative whole-plant view, and a close-detail view, followed by record fields for identity and time and reminders to use consistent lighting, retake misleading photos when possible, and avoid filters that materially change appearance.",
-        "caption":"Build image evidence from context to detail, link it to crop identity and time, and protect color fidelity so another person can reconstruct the observation.",
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-PLANT-BIO-001"]
-      },
-      {
-        "type":"table",
-        "title":"Handoff content that supports continuity",
-        "columns":["Handoff element","What the receiving person needs"],
-        "rows":[
-          ["Completed","What work or observation was actually completed"],
-          ["Observed","What condition or pattern was documented"],
-          ["Action taken","What was changed, checked or escalated"],
-          ["Unresolved","What remains uncertain, abnormal or incomplete"],
-          ["Next check","What the receiving role should verify and when"],
-          ["Cross-check","Questions or confirmation needed to ensure the handoff was understood"]
-        ],
-        "references":["REF-HSE-SHIFT-HANDOVER"]
-      },
-      {
-        "type":"image",
-        "assetId":"VIS-LH-TECH1-002-005",
-        "title":"Reconstructable crop-record and shift-handoff chain",
-        "src":"/assets/course2/reconstructable-handoff-chain.svg",
-        "alt":"Five-step flow from observe to record, act or escalate, hand off, and recheck, listing the identity, timing, sample, observation, action, unresolved-condition, next-check and cross-check information another qualified person needs to reconstruct the work.",
-        "caption":"A strong handoff connects what was observed, what was done, what remains unresolved, and what the receiving person must check next.",
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]
-      },
-      {
-        "type":"callout",
-        "title":"Evidence boundary",
-        "tone":"evidence",
-        "body":"Data-integrity and shift-handover guidance are used here as transferable quality frameworks for trustworthy cultivation records and continuity of work. They are not presented as claims that pharmaceutical GxP rules or UK HSE requirements automatically govern every cannabis cultivation record.",
-        "references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]
-      },
-      {
-        "type":"resource",
-        "title":"Public source: diagnostic photo guidance",
-        "body":"University of Minnesota Extension guidance used for transferable image-context, comparison-view and photo-quality principles in this lesson.",
-        "href":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers",
-        "label":"Open University of Minnesota diagnostic guidance"
-      }
+    "blocks":[
+      {"type":"document","title":"Minimum crop-observation record","description":"Exact fields vary by facility, but the record should preserve enough context for reconstruction.","fields":[{"label":"Crop identity","value":"Room/zone plus cultivar, lot, batch, bench, tray or plant ID as required"},{"label":"Date/time","value":"When the observation actually occurred"},{"label":"Purpose and route","value":"Why the crop was inspected and how representative points were selected"},{"label":"Developmental context","value":"Observed stage/morphology with schedule context when relevant"},{"label":"Observation and pattern","value":"Objective findings plus sample size, distribution and severity terms defined by procedure"},{"label":"Photo evidence","value":"Context, representative and close views linked to identity and time when required"},{"label":"Available context","value":"Relevant measurements or work history kept distinct from confirmed cause"},{"label":"Action/escalation","value":"What was done, who was notified and what remains unresolved"},{"label":"Handoff/follow-up","value":"Next check, hold, priority or open question for the receiving role"}],"references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]},
+      {"type":"steps","title":"Diagnostic photo evidence set","items":[{"title":"Context view","body":"Show the plant or observation area in its production context so location and distribution are understandable."},{"title":"Representative whole-plant view","body":"Capture the overall plant form and visible distribution of the observation."},{"title":"Close detail","body":"Capture the relevant structure sharply enough for review."},{"title":"Comparison when useful","body":"Include a nearby typical comparison under similar conditions when it helps show the difference."},{"title":"Identity and time","body":"Link the image set to the correct crop, location and observation time instead of relying on an unlabeled camera roll."}],"extensions":{"sourceHref":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"}},
+      {"type":"image","assetId":"VIS-LH-TECH1-002-003","title":"Diagnostic photo evidence set","src":"/assets/course2/diagnostic-photo-evidence-set.svg","alt":"Three-panel diagram showing a context view of the crop area, a representative whole-plant view, and a close-detail view, followed by record fields for identity and time and reminders to use consistent lighting, retake misleading photos when possible, and avoid filters that materially change appearance.","caption":"Build image evidence from context to detail, link it to crop identity and time, and protect color fidelity so another person can reconstruct the observation.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-PLANT-BIO-001"]},
+      {"type":"table","title":"Handoff content that supports continuity","columns":["Handoff element","What the receiving person needs"],"rows":[["Completed","What work or observation was actually completed"],["Observed","What condition or pattern was documented"],["Action taken","What was changed, checked or escalated"],["Unresolved","What remains uncertain, abnormal or incomplete"],["Next check","What the receiving role should verify and when"],["Cross-check","Questions or confirmation needed to ensure the handoff was understood"]],"references":["REF-HSE-SHIFT-HANDOVER"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-002-005","title":"Reconstructable crop-record and shift-handoff chain","src":"/assets/course2/reconstructable-handoff-chain.svg","alt":"Five-step flow from observe to record, act or escalate, hand off, and recheck, listing the identity, timing, sample, observation, action, unresolved-condition, next-check and cross-check information another qualified person needs to reconstruct the work.","caption":"A strong handoff connects what was observed, what was done, what remains unresolved, and what the receiving person must check next.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]},
+      {"type":"resource","title":"Downloadable practice: observation record and handoff","body":"Print or open this worksheet to practice reconstructable observation records, photo-evidence checks, relevant context, uncertainty, escalation, next-check ownership, receiving-person cross-check and correction history.","href":"/assets/course2/observation-handoff-practice.svg","label":"Open observation and handoff practice sheet","extensions":{"assetId":"VIS-LH-TECH1-002-007","downloadable":true}},
+      {"type":"callout","title":"Evidence boundary","tone":"evidence","body":"Data-integrity and shift-handover guidance are used here as transferable quality frameworks for trustworthy cultivation records and continuity of work. They are not presented as claims that pharmaceutical GxP rules or UK HSE requirements automatically govern every cannabis cultivation record.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"]},
+      {"type":"resource","title":"Public source: diagnostic photo guidance","body":"University of Minnesota Extension guidance used for transferable image-context, comparison-view and photo-quality principles in this lesson.","href":"https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers","label":"Open University of Minnesota diagnostic guidance"}
     ]
   }
 }
