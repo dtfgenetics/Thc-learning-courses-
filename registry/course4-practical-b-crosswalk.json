@@ -1,0 +1,98 @@
+{
+  "id": "CROSSWALK-LH-TECH1-004-PRACTICAL-B",
+  "version": "1.0.0",
+  "status": "development",
+  "courseId": "COURSE-LH-TECH1-004",
+  "practicalId": "PRACTICAL-TECH1-B",
+  "practicalDocument": "docs/academy-v2/practicals/PRACTICAL-TECH1-B-WATER-IRRIGATION-SHIFT.md",
+  "purpose": "Development crosswalk showing where Course 4 water, root-zone, nutrition-context, irrigation, equipment-care and record objectives can be observed in Practical B. Mapping coverage does not constitute practical validation, evaluator calibration, inter-rater evidence, standard setting or release approval.",
+  "validationBoundary": {
+    "practicalValidated": false,
+    "humanApprovalImplied": false,
+    "pilotEvidenceImplied": false,
+    "interRaterEvidenceImplied": false
+  },
+  "objectiveMappings": [
+    {
+      "objectiveId": "LO-LH-TECH1-004-01",
+      "statement": "Collect and identify the assigned water or nutrient-solution sample and obtain pH and EC readings using the supplied meter procedure while preserving units, sample identity, time and measurement context.",
+      "practicalTasks": [
+        "Inspect and prepare pH/EC measurement equipment.",
+        "Verify calibration status and obtain representative measurements.",
+        "Record pH/EC with sample source, time and method."
+      ],
+      "scoringCategories": ["measurement technique and calibration awareness", "pH/EC and nutrition-context interpretation"],
+      "expectedEvidence": ["correct meter workflow", "source/feed identification", "pH and EC measurements"],
+      "deliverables": ["meter/calibration check record", "water/solution measurement log"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-004-02",
+      "statement": "Describe root-zone moisture, saturation, drainage and dryback as repeated observations or trends rather than treating one reading or elapsed time alone as a complete irrigation diagnosis.",
+      "practicalTasks": [
+        "Compare root-zone observations/dryback trend with prior records."
+      ],
+      "scoringCategories": ["delivery/root-zone problem recognition", "records and reconciliation"],
+      "expectedEvidence": ["root-zone interpretation", "completed irrigation log"],
+      "deliverables": ["irrigation work record", "zone map with exception"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-004-03",
+      "statement": "Use pH, EC, developmental stage, root-zone condition and symptom pattern as diagnostic context while avoiding unsupported nutrient-deficiency, excess or antagonism claims.",
+      "practicalTasks": [
+        "When a crop symptom card is assigned, use the supplied developmental stage, symptom pattern, pH/EC, root-zone and irrigation context to write a bounded interpretation that separates observed evidence from possible explanations and does not assign a nutrient deficiency, excess or antagonism without supporting evidence.",
+        "Escalate issues outside Technician I authority, including unresolved nutrition-like symptoms or conditions that would require recipe, treatment, repair or process redesign."
+      ],
+      "scoringCategories": ["pH/EC and nutrition-context interpretation", "escalation/handoff"],
+      "expectedEvidence": ["bounded nutrition-context interpretation when a symptom card is assigned", "exception handling"],
+      "deliverables": ["nutrition-context note when a symptom card is assigned", "brief handoff describing unresolved condition"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-004-04",
+      "statement": "Execute an authorized routine irrigation or fertigation work order by confirming room or zone, material and required sequence, then verify representative delivery and document completion or deviation.",
+      "practicalTasks": [
+        "Verify work order, room, batch and solution identity.",
+        "Inspect irrigation delivery points before or during the run.",
+        "Execute the assigned irrigation event.",
+        "Identify a local delivery failure and avoid changing the entire room to solve one emitter problem."
+      ],
+      "scoringCategories": ["work-order/identity verification", "irrigation execution", "delivery/root-zone problem recognition"],
+      "expectedEvidence": ["delivery inspection", "work-order execution", "exception handling"],
+      "deliverables": ["irrigation work record", "zone map with exception"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-004-05",
+      "statement": "Perform permitted operator-level irrigation and measurement-equipment readiness checks and escalate leaks, clogs, damaged tools, suspect meters, missed events or other unresolved faults without unauthorized repair.",
+      "practicalTasks": [
+        "Inspect and prepare pH/EC measurement equipment.",
+        "Inspect irrigation delivery points before or during the run.",
+        "Escalate issues outside Technician I authority, including unresolved nutrition-like symptoms or conditions that would require recipe, treatment, repair or process redesign."
+      ],
+      "scoringCategories": ["measurement technique and calibration awareness", "escalation/handoff"],
+      "expectedEvidence": ["correct meter workflow", "delivery inspection", "exception handling"],
+      "deliverables": ["meter/calibration check record", "brief handoff describing unresolved condition"]
+    },
+    {
+      "objectiveId": "LO-LH-TECH1-004-06",
+      "statement": "Create reconstructable irrigation, measurement and root-zone records that distinguish target or work-order instructions from observed results, verification actions, unresolved conditions and shift-handoff needs.",
+      "practicalTasks": [
+        "Record pH/EC with sample source, time and method.",
+        "Record actual irrigation completion, measurement results, nutrition-context observations and exceptions.",
+        "Escalate issues outside Technician I authority, including unresolved nutrition-like symptoms or conditions that would require recipe, treatment, repair or process redesign."
+      ],
+      "scoringCategories": ["records and reconciliation", "escalation/handoff"],
+      "expectedEvidence": ["pH and EC measurements", "completed irrigation log", "exception handling"],
+      "deliverables": ["water/solution measurement log", "irrigation work record", "brief handoff describing unresolved condition"]
+    }
+  ],
+  "courseSpecificReadiness": {
+    "objectiveCoverageMapped": true,
+    "lessonContentBuilt": true,
+    "assessmentDevelopmentBankBuilt": true,
+    "practicalMappingBuilt": true,
+    "learnerAssetLayerBuilt": false,
+    "humanTechnicalReview": "not-started",
+    "renderedAccessibilityReview": "not-started",
+    "practicalValidation": "not-started",
+    "controlledPilotEvidence": "not-started"
+  }
+}
