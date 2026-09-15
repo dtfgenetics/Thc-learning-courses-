@@ -48,5 +48,5 @@ jobs:
           node scripts/test-tech2-course6.mjs
           node scripts/test-tech2-course7.mjs
           node scripts/test-tech2-course8.mjs
-      - name: Validate curriculum references
-        run: node scripts/validate-curriculum-references.mjs
+      - name: Validate curriculum graph and references
+        run: node scripts/validate-curriculum.mjs
