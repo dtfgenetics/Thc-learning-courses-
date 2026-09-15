@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH2-008-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two deviations are unresolved: one blocks lot identity for a planned movement and one is a low-risk formatting error. Which is normally higher priority?",
+  "choices": [
+    "The formatting error because it is easier to close.",
+    "The unresolved lot-identity condition because downstream genealogy could be compromised.",
+    "Treat both as equally urgent regardless of consequence.",
+    "The formatting error because records are always more important than identity."
+  ],
+  "correct": 1,
+  "rationale": "Priority follows consequence and dependency; an unresolved identity condition can contaminate downstream traceability and therefore outranks cosmetic record work.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}

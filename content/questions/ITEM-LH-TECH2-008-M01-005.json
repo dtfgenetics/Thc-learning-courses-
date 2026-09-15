@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-008-M01-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-008-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A controller shows a severe excursion while the sensor is known to have failed verification. What should happen before a major corrective action?",
+  "choices": [
+    "Use a valid verification method or reference measurement and classify the sensor condition.",
+    "Use the failed sensor because the excursion is severe.",
+    "Change the setpoint until the failed sensor looks normal.",
+    "Delete the excursion from the record."
+  ],
+  "correct": 0,
+  "rationale": "Known-invalid data cannot support a major corrective action; the candidate must restore trustworthy evidence or escalate the data-quality condition.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

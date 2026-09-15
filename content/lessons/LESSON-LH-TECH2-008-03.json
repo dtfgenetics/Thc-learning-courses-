@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-008-03",
+  "title": "Postharvest, Traceability, Metrics and Controlled-Record Integration",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001",
+    "COMP-CROP-PLAN-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-008-06",
+    "LO-LH-TECH2-008-07"
+  ],
+  "estimatedMinutes": 85,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Postharvest and records stations test whether Technician II can preserve evidence when the easiest explanation is incomplete. Product condition, room history, genealogy, physical counts, controlled records and KPI definitions must remain distinguishable. The learner scopes only what the evidence supports and hands disposition or controlled-record decisions to the authorized role.",
+    "vocabulary": [
+      {
+        "term": "Affected scope",
+        "definition": "The evidence-supported set of product, lots, locations, times or records potentially involved in a deviation."
+      },
+      {
+        "term": "Genealogy",
+        "definition": "Traceable source-to-downstream relationships preserved through splits, moves, harvests and later material identities."
+      },
+      {
+        "term": "Metric definition",
+        "definition": "The numerator, denominator, eligible population, time window, unit and inclusion rules required to interpret a KPI."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Room conditions do not substitute for product evidence",
+        "body": "Environmental history informs the investigation, but room relative humidity is not product water activity and cannot be substituted for required product measurements.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Scope follows genealogy and evidence",
+        "body": "Contain suspect material while mapping source, destination, time and lot relationships. Do not label the entire facility affected when genealogy supports a narrower set, and do not exclude inconvenient material to improve apparent results.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Reconciliation preserves discrepancies",
+        "body": "Physical and recorded identities, counts or status are compared without fabricating movements or silently editing controlled records. Corrections follow the authorized process with original evidence retained.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "KPI interpretation preserves the denominator",
+        "body": "A result is only comparable when its definition and eligible population are stable. Planned and actual records remain separate so the reason for variance can still be evaluated.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A dry-room excursion overlaps only two genealogically linked lots; hold and investigate the supported scope instead of assuming every lot in the facility is affected.",
+      "A physical count differs from the controlled record; document the mismatch and correction path rather than inventing a transaction to force agreement."
+    ],
+    "commonMistakes": [
+      "Using room RH as product water activity.",
+      "Expanding or shrinking affected scope without genealogy evidence.",
+      "Overwriting planned values with actual values.",
+      "Changing a KPI denominator after seeing the result."
+    ],
+    "practicalApplication": "Complete Practical F and G preparation packets containing a lot-scope table, genealogy diagram, reconciliation worksheet, KPI calculation sheet and decision-ready handoff.",
+    "summary": "Postharvest and traceability competence depends on product evidence, bounded scope, intact genealogy, controlled corrections and stable metric definitions."
+  }
+}

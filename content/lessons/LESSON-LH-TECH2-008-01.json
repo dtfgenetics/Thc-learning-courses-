@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-008-01",
+  "title": "Integrated Case Triage, Data Quality and Diagnostic Prioritization",
+  "competencies": [
+    "COMP-SAFETY-WORK-001",
+    "COMP-ENV-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-008-01",
+    "LO-LH-TECH2-008-02",
+    "LO-LH-TECH2-008-03"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-VPD-002",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001"
+  ],
+  "content": {
+    "overview": "The integrated lab begins with competing abnormalities rather than a single labeled problem. Technician II must establish immediate safety and containment needs, verify whether measurements are trustworthy, define the affected scope, rank hypotheses and choose the smallest defensible next verification step before recommending correction.",
+    "vocabulary": [
+      {
+        "term": "Critical prioritization",
+        "definition": "Ordering work by immediate safety, containment, consequence, timing dependency and authority rather than convenience."
+      },
+      {
+        "term": "Data-validity gate",
+        "definition": "A required check that determines whether a measurement is trustworthy enough to support a consequential action."
+      },
+      {
+        "term": "Ranked hypothesis",
+        "definition": "A possible explanation ordered by fit to the verified evidence while remaining explicitly unconfirmed until evidence supports confirmation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Triage precedes diagnosis",
+        "body": "Urgent safety, biosecurity, identity or quality-containment conditions are addressed before routine optimization. A technician does not delay a required stop or escalation while collecting optional diagnostic detail.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Invalid data cannot justify major correction",
+        "body": "Sensor disagreement, implausible values, missing calibration context or known equipment faults trigger verification. A known-invalid reading is not converted into a major setpoint, irrigation or chemical change.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Hypotheses stay separate from findings",
+        "body": "Observed pattern, timing and verified measurements support ranked hypotheses and next tests. The shift report should distinguish what is known from what remains a proposed explanation.",
+        "references": [
+          "REF-VPD-002",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A canopy appears stressed while two temperature sensors disagree materially; verify measurement quality and local conditions before changing room strategy.",
+      "A controller alarm coincides with a crop symptom, but equipment output is unverified; classify the alarm as evidence to investigate rather than proof of crop cause."
+    ],
+    "commonMistakes": [
+      "Treating the first abnormal number as the cause.",
+      "Changing several systems at once before defining the problem.",
+      "Allowing routine work to outrank an active safety or containment trigger.",
+      "Writing a hypothesis as a confirmed diagnosis."
+    ],
+    "practicalApplication": "Use a mixed crop/environment/equipment packet to create a priority log, data-quality table, ranked hypotheses and next-verification plan mapped to Practicals A and B.",
+    "summary": "Integrated diagnostic work starts with consequence and data validity, then moves from observations to ranked hypotheses and bounded next checks."
+  }
+}
