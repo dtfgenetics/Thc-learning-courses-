@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-M01-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One sensor disagrees with several peers. What is the first useful question?",
+  "choices": [
+    "Whether placement, verification status or local conditions explain the disagreement",
+    "Which set point should be changed immediately",
+    "Which sensor should be deleted",
+    "Which cultivar should be blamed"
+  ],
+  "correct": 0,
+  "rationale": "Whether placement, verification status or local conditions explain the disagreement. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-module1-formative"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Why can a daily environmental average be insufficient for some troubleshooting tasks?",
+  "choices": [
+    "Averages always exaggerate every outlier",
+    "Averages contain no numerical information",
+    "Short transitions, peaks and equipment cycling can disappear inside the average",
+    "Only one instantaneous value is ever valid"
+  ],
+  "correct": 2,
+  "rationale": "Short transitions, peaks and equipment cycling can disappear inside the average. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

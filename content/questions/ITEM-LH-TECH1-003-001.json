@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A dashboard shows 60% RH in two rooms, but one room is warmer. Which action best preserves useful environmental evidence?",
+  "choices": [
+    "Record each room temperature and RH pair and interpret VPD with the supplied method",
+    "Assume the rooms have identical VPD",
+    "Lower RH until the percentages differ",
+    "Ignore temperature because RH is enough"
+  ],
+  "correct": 0,
+  "rationale": "Record each room temperature and RH pair and interpret VPD with the supplied method. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

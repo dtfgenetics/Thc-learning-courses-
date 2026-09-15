@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-TECH1-003-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Which statement about a fixture dimmer percentage is most accurate?",
+  "choices": [
+    "It directly equals PPFD in µmol m⁻² s⁻¹",
+    "It proves uniformity across the canopy",
+    "It is a fixture/control setting and should not automatically be treated as the canopy PPFD",
+    "It replaces the need for a measurement method"
+  ],
+  "correct": 2,
+  "rationale": "It is a fixture/control setting and should not automatically be treated as the canopy PPFD. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

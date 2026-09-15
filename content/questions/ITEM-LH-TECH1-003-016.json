@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-016",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-003-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A controller reports a fault code outside Technician I training. What is the correct boundary?",
+  "choices": [
+    "Guess a repair based on the code wording",
+    "Reset and reprogram all controls",
+    "Ignore the code if plants look normal",
+    "Record the code/context and escalate according to the supplied procedure rather than attempting unauthorized repair"
+  ],
+  "correct": 3,
+  "rationale": "Record the code/context and escalate according to the supplied procedure rather than attempting unauthorized repair. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

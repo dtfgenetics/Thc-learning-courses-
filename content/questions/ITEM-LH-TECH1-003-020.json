@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-003-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A trend shows repeated lights-on temperature spikes even though the 24-hour average is within range. What belongs in the handoff?",
+  "choices": [
+    "Only the acceptable average",
+    "A confirmed HVAC diagnosis",
+    "No note because the average passed",
+    "The repeated spike pattern with timing/location, relevant checks, escalation and unresolved status"
+  ],
+  "correct": 3,
+  "rationale": "The repeated spike pattern with timing/location, relevant checks, escalation and unresolved status. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

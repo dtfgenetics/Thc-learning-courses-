@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-M01-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-003-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A device fault requires a repair outside Technician I authorization. What should happen?",
+  "choices": [
+    "Repair it anyway",
+    "Ignore it until failure",
+    "Document and escalate according to procedure, including any required out-of-service step",
+    "Change unrelated set points"
+  ],
+  "correct": 2,
+  "rationale": "Document and escalate according to procedure, including any required out-of-service step. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-module1-formative"
+  }
+}

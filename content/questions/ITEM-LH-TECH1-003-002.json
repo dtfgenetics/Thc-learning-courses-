@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Which record correctly distinguishes a target from an observation?",
+  "choices": [
+    "Temperature 25 °C because that is the desired value",
+    "Target 25 °C; measured canopy-zone sensor 27 °C at 14:05",
+    "Temperature 27 °C target and measured are interchangeable",
+    "Room hot; no units or sensor location needed"
+  ],
+  "correct": 1,
+  "rationale": "Target 25 °C; measured canopy-zone sensor 27 °C at 14:05. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

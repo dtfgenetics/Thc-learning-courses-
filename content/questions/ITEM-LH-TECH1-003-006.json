@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-TECH1-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A nine-point PPFD map has a good average but much brighter center points and dim corners. What should the technician report?",
+  "choices": [
+    "Only the average because it summarizes the room",
+    "The distribution and representative grid values, not only the average",
+    "Only the center because it is brightest",
+    "A lighting-design diagnosis without escalation"
+  ],
+  "correct": 1,
+  "rationale": "The distribution and representative grid values, not only the average. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

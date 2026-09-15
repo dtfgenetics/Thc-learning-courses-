@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-TECH1-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One sensor changes sharply exactly when irrigation begins, while nearby sensors do not. What should be recorded first?",
+  "choices": [
+    "Irrigation as the confirmed root cause",
+    "The nearby sensors as wrong",
+    "A new room set point",
+    "The timing, sensor location and comparison pattern as context before assigning a cause"
+  ],
+  "correct": 3,
+  "rationale": "The timing, sensor location and comparison pattern as context before assigning a cause. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}
