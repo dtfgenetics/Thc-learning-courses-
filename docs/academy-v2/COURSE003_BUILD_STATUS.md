@@ -1,72 +1,59 @@
 # Technician I Course 003 development readiness
 
 Course: `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals  
-Course version: `0.4.0`  
+Course version: `0.5.0`  
 Release status: `draft`
 
 ## Automated development completed
 
-Course 003 now has a dedicated occupational instruction, assessment, development-stage performance-evidence and learner-visual foundation.
+Course 003 now has its planned occupational instruction, assessment, development-stage performance-evidence and learner-asset layers.
 
 - dedicated module: `MOD-LH-TECH1-003-MONITORING`;
 - five measurable Course 003 learning objectives;
 - four applied course-specific lessons;
-- 32 distinct dedicated Course 003 items: 12 formative and 20 summative-development items;
+- 32 distinct dedicated items: 12 formative and 20 summative-development items;
 - formative module assessment `ASSESS-LH-TECH1-003-M01`;
 - draft summative assessment `ASSESS-LH-TECH1-003-FINAL`;
 - mapped development practical: `PRACTICAL-TECH1-A — Safe Room Entry & Crop Inspection`;
 - objective/practical crosswalk: `registry/course3-practical-a-crosswalk.json`;
-- three produced learner visuals governed by `visuals/COURSE3-ASSET-REGISTRY.json`;
+- six governed learner assets: four embedded teaching visuals and two downloadable practice worksheets;
 - dedicated Drive mirror folder: `1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU`;
-- deterministic crosswalk and learner-asset contracts run through the normal Course 003 regression;
+- deterministic practical-crosswalk and learner-asset contracts run through the normal Course 003 regression;
 - Course 003 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
 
-## Instructional emphasis
+## Learner asset coverage
 
-The course trains Technician I learners to distinguish targets from measurements, record temperature/RH/VPD with sensor context, perform repeatable PPFD and photoperiod checks, preserve canopy light distribution instead of relying on one point, evaluate sensor placement and verification status, recognize trends and alarms, perform only authorized operator-level checks, and escalate unresolved environmental or lighting faults without independently redesigning control strategy.
+Every Course 003 lesson now has dedicated embedded visual support:
 
-## Practical A coverage
+1. Lesson 1 — temperature/RH/VPD measurement context;
+2. Lesson 2 — repeatable canopy PPFD grid measurement;
+3. Lesson 3 — sensor placement and representativeness triage;
+4. Lesson 4 — alarm, trend, permitted verification and shift-handoff workflow.
 
-Practical A contains development-stage environmental/light stations that can directly exercise Course 003 objectives:
+Two printable practice assets are linked directly from the relevant lessons:
 
-- read routine environmental values and distinguish normal, questionable and follow-up conditions;
-- use supplied placement, comparison readings, calibration/verification status, logging context and crop location to judge whether a reading is representative, suspect or incomplete;
-- perform only supplied operator-level sensor/equipment readiness checks and escalate unauthorized repair, calibration or control redesign;
-- perform a repeatable canopy-light verification using a supplied grid, measurement height and sensor orientation;
-- preserve all PPFD points instead of substituting one point or fixture setting for canopy-level evidence;
-- record photoperiod and PPFD verification with units, location, time and instrument/context;
-- keep supplied scenario targets/limits separate from measured values;
-- preserve unresolved conditions and escalation status in reconstructable records and handoff.
+- environmental measurement record practice — targets vs measurements, representativeness, verification, uncertainty and handoff;
+- PPFD grid and sensor-verification practice — repeatable grid, distribution, photoperiod context, outlier triage, authority boundary and escalation.
 
-This mapping is development coverage only. Practical A remains `development` in the integrated lab plan.
+The public repository is canonical learner delivery; all six produced assets are mirrored to the Course 003 Drive folder and registered in `visuals/COURSE3-ASSET-REGISTRY.json`.
 
-## Learner visual foundation
+## Scope controls
 
-Three original accessible SVGs are now public, lesson-linked and Drive-mirrored:
+- VPD is environmental drying-demand context, not a universal cannabis target chart.
+- PPFD example values are illustrative, not production targets.
+- one light point, fixture setting or average is not whole-canopy evidence.
+- an outlier does not automatically prove a bad sensor or room-wide condition.
+- an alarm is evidence of a rule event, not a biological diagnosis or root cause.
+- Technician I verification remains distinct from unauthorized repair, protected calibration or control-strategy redesign.
 
-1. `VIS-LH-TECH1-003-001` — **Temperature, relative humidity and VPD measurement context** — Lesson 1  
-   teaches paired temperature/RH context, VPD as interpretation rather than universal target law, and separation of target/measurement/alarm.
-2. `VIS-LH-TECH1-003-002` — **Repeatable canopy PPFD grid measurement** — Lesson 2  
-   teaches consistent measurement plane, full-grid preservation and why one bright point, fixture setting or average cannot substitute for canopy distribution.
-3. `VIS-LH-TECH1-003-003` — **Sensor placement and representativeness triage** — Lesson 3  
-   teaches location, peer comparison, verification status, trend/logging context, authorized checks and escalation before control changes.
+## Remaining development/readiness work
 
-The public repository is the canonical learner delivery location. Google Drive is the controlled production/reference mirror.
+The planned Course 003 learner-content/asset package no longer has a basic missing-asset gap. Remaining work is primarily review/validation preparation:
 
-## Assessment design
-
-The formative and summative sets are non-overlapping. The 20-item summative-development bank covers environmental measurement and VPD context, PPFD/photoperiod measurement, sensor representativeness and trend reasoning, equipment-care boundaries, and reconstructable alarm/handoff records. Authored answer-key positions are balanced by construction and runtime choice randomization remains enabled.
-
-## Remaining Course 003 development priorities
-
-The visual foundation is built, but the learner asset layer is not yet complete. Next priorities are:
-
-1. Lesson 4 alarm/trend/verification/handoff visual;
-2. printable environmental measurement record practice sheet;
-3. printable PPFD grid/sensor-verification practice sheet;
-4. rendered accessibility review preparation;
-5. human technical and assessment review packets;
-6. pilot-ready equivalent practical form details.
+- rendered accessibility review preparation and evidence;
+- human technical and assessment review packets;
+- pilot-ready equivalent Practical A form details;
+- optional PDF exports derived from canonical SVG worksheets after layout/accessibility review.
 
 ## Remaining human/empirical validation gates
 
