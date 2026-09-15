@@ -1,0 +1,32 @@
+{
+  "id": "EMR-LH-TECH1-001-05-CLEANING",
+  "mappingCandidateId": "MAP-LH-TECH1-001-05-UMASS-GREENHOUSE-SANITATION",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-05-CLEANING",
+  "statement": "Greenhouse cleaning should physically remove soil, plant debris, and other organic residues before disinfection because organic matter can reduce disinfectant effectiveness and shield pathogens from contact with the disinfectant.",
+  "domain": "sanitation-biosecurity",
+  "lessonIds": ["LESSON-LH-TECH1-001-05"],
+  "referenceIds": ["REF-UMASS-GREENHOUSE-SANITATION"],
+  "competencyIds": ["COMP-SPACE-BIOSEC-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-03"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2027-03-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed UMass greenhouse cleaning/disinfection guidance and cross-checked against the current extension page on September 15, 2026. The statement preserves the distinction between physical cleaning and subsequent disinfection.",
+    "notes": "Human sanitation/plant-pathology review is required before promotion."
+  },
+  "sourceContext": [
+    {
+      "lessonId": "LESSON-LH-TECH1-001-05",
+      "referenceId": "REF-UMASS-GREENHOUSE-SANITATION",
+      "jsonPath": "$.content.sections[0].references",
+      "contextTitle": "Cleaning comes before disinfection"
+    }
+  ]
+}
