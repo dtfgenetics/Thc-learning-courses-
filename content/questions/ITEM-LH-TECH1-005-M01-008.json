@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-005-M01-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-005-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A quarantine boundary is accidentally crossed. What should Technician I do?",
+  "choices": [
+    "Remove quarantine signage",
+    "Ignore it if no symptom appears immediately",
+    "Move more material to make the workflow consistent",
+    "Follow the breach/containment procedure and document the event rather than silently continuing"
+  ],
+  "correct": 3,
+  "rationale": "Follow the breach/containment procedure and document the event rather than silently continuing. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-module1-formative"
+  }
+}

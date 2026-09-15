@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-005-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-005-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A coworker asks Technician I to alter the propagation method because a batch is slow. No authorized change is documented. What is the best response?",
+  "choices": [
+    "Change the method verbally",
+    "Double every propagation input",
+    "Continue the supplied method, document the evidence and route the proposed change for authorization",
+    "Discard the batch"
+  ],
+  "correct": 2,
+  "rationale": "Continue the supplied method, document the evidence and route the proposed change for authorization. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-005",
+    "itemSet": "course5-v1"
+  }
+}
