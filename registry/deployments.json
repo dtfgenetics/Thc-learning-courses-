@@ -62,6 +62,56 @@
         "visuals/ASSET-REGISTRY.json"
       ],
       "boundary": "This deployment closes the machine/public SVG visual-delivery gap only. Factual/copy review of replacement candidates, rendered accessibility review, responsive/manual learner review, and all certification-release gates remain open."
+    },
+    {
+      "id": "DEPLOY-TECH1-COURSES-002-007-2026-09-15",
+      "courseIds": [
+        "COURSE-LH-TECH1-002",
+        "COURSE-LH-TECH1-003",
+        "COURSE-LH-TECH1-004",
+        "COURSE-LH-TECH1-005",
+        "COURSE-LH-TECH1-006",
+        "COURSE-LH-TECH1-007"
+      ],
+      "environment": "production",
+      "site": "https://dtfseeds.com",
+      "catalogRoute": "/courses/",
+      "siteRepository": "dtfgenetics/Thc",
+      "siteCommit": "de77ae97733fec7333c7985951315efad2be420a",
+      "workflow": "Publish Technician I Courses 2-7",
+      "workflowRunId": 34994934284,
+      "workflowRunNumber": 2,
+      "workflowRunAttempt": 2,
+      "completedAt": "2026-09-15T16:29:34Z",
+      "result": "success",
+      "routes": [
+        {"courseId":"COURSE-LH-TECH1-002","pageId":45207,"route":"/learn/learning-hub/cultivation-technician-i/plant-observation-growth-stages-crop-records/","lessons":4,"assessments":2,"publicLearningItems":32},
+        {"courseId":"COURSE-LH-TECH1-003","pageId":45216,"route":"/learn/learning-hub/cultivation-technician-i/environmental-light-sensor-fundamentals/","lessons":4,"assessments":2,"publicLearningItems":32},
+        {"courseId":"COURSE-LH-TECH1-004","pageId":45223,"route":"/learn/learning-hub/cultivation-technician-i/water-root-zone-nutrition-irrigation-fundamentals/","lessons":4,"assessments":2,"publicLearningItems":36},
+        {"courseId":"COURSE-LH-TECH1-005","pageId":45231,"route":"/learn/learning-hub/cultivation-technician-i/propagation-canopy-ipm-scouting-crop-care/","lessons":4,"assessments":2,"publicLearningItems":36},
+        {"courseId":"COURSE-LH-TECH1-006","pageId":45241,"route":"/learn/learning-hub/cultivation-technician-i/harvest-postharvest-traceability-shift-handoff/","lessons":4,"assessments":2,"publicLearningItems":36},
+        {"courseId":"COURSE-LH-TECH1-007","pageId":45250,"route":"/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/","lessons":4,"assessments":1,"publicLearningItems":12}
+      ],
+      "verification": {
+        "authenticatedWordPressTreeVerification": true,
+        "freshAnonymousCourseRootVerification": true,
+        "verifiedAnonymousCourseRootCount": 6,
+        "catalogVersion": 5,
+        "freshAnonymousCatalogVerification": true,
+        "credentialOfferingCount": 10,
+        "catalogCourseCount": 15,
+        "openTechnicianIAcademicCourseCount": 7,
+        "falseIssuanceClaimsDetected": false
+      },
+      "publicationAuthority": [
+        "content/public-releases/PUBLIC-RELEASE-LH-TECH1-002.json",
+        "content/public-releases/PUBLIC-RELEASE-LH-TECH1-003.json",
+        "content/public-releases/PUBLIC-RELEASE-LH-TECH1-004.json",
+        "content/public-releases/PUBLIC-RELEASE-LH-TECH1-005.json",
+        "content/public-releases/PUBLIC-RELEASE-LH-TECH1-006.json",
+        "content/public-releases/PUBLIC-RELEASE-LH-TECH1-007.json"
+      ],
+      "boundary": "This deployment verifies that all seven Technician I academic training courses are public learner surfaces. It does not approve the Technician I professional certification for issuance, does not publish secure credential forms or credential-purpose exams, and does not satisfy human review, practical validation, pilot, calibration, standard-setting, privacy/retention, or final credential-release gates."
     }
   ]
 }
