@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-005-01",
+  "title": "Propagation Performance Measurement, Donor Comparison and Batch Evidence",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-005-01",
+    "LO-LH-TECH2-005-06"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PROP-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "content": {
+    "overview": "Technician II propagation troubleshooting begins with comparable performance evidence. Rooting success, losses and time-to-root should be tied to donor identity, batch, operator, media, environment, sanitation events and observation timing. Percentages without denominators or genealogy can hide where the problem actually occurred.",
+    "vocabulary": [
+      {
+        "term": "Propagation success rate",
+        "definition": "The number of units meeting the defined successful outcome divided by the eligible starting units for the same defined batch and time point."
+      },
+      {
+        "term": "Loss distribution",
+        "definition": "How failed or removed units are distributed across donors, trays, operators, locations, dates or other traceable groups."
+      },
+      {
+        "term": "Donor effect hypothesis",
+        "definition": "A testable explanation that source-plant condition may contribute to propagation performance; it is not proof of genetic causation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Keep denominators and time points consistent",
+        "body": "A 90% rooting result at day 14 cannot be fairly compared with an 80% result at day 7 without accounting for the observation window and starting denominator. Preserve removed or excluded units and the reason for exclusion.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Stratify before averaging",
+        "body": "Facility-wide averages can hide a weak donor, tray position, operator, media lot or environment zone. Compare traceable groups before deciding the problem is systemic.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Preserve the original production record",
+        "body": "If an entry is later found incorrect, correct it through the controlled process while preserving the original value, reason and attribution. Do not rewrite the batch history to make the analysis cleaner.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two donors average 88% rooting together, but one is 98% and the other is 62%; the combined average hides the actionable pattern.",
+      "A tray shows lower success than neighboring trays, but it was scored three days earlier; align the time point before assigning a process cause."
+    ],
+    "commonMistakes": [
+      "Comparing percentages with different denominators.",
+      "Averaging donors until a localized pattern disappears.",
+      "Removing failed units from the denominator without a controlled reason.",
+      "Editing source records after seeing the outcome."
+    ],
+    "practicalApplication": "Build a propagation performance table by donor/batch with starting count, rooted count, loss count, observation day, operator, media, environment notes and sanitation events, then annotate which comparisons are valid.",
+    "summary": "Propagation performance review depends on comparable denominators, traceable groups and preserved source records."
+  }
+}
