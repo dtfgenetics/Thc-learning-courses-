@@ -30,5 +30,8 @@ jobs:
       - name: Validate learner-facing catalog UI
         run: node scripts/test-certification-catalog-ui.mjs
 
+      - name: Audit Course 1 objective coverage
+        run: node scripts/audit-course1-objective-coverage.mjs
+
       - name: Report certification completion state
         run: node scripts/report-certification-completion.mjs
