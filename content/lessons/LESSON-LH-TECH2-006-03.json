@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "status": "draft",
+  "assessment": null,
+  "id": "LESSON-LH-TECH2-006-03",
+  "title": "Lot Genealogy, Affected Scope and Evidence-Bounded Investigation",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH2-006-01",
+    "LO-LH-TECH2-006-04",
+    "LO-LH-TECH2-006-06"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-POSTHARVEST-001"
+  ],
+  "content": {
+    "overview": "Affected scope should follow genealogy and shared process exposure, not fear or convenience. Technician II traces source harvest identity through racks, lots, movements, rooms and storage, then defines what evidence supports inclusion or exclusion from the investigation.",
+    "vocabulary": [
+      {
+        "term": "Genealogy",
+        "definition": "The traceable relationship between source material and downstream lots, containers, movements or process states."
+      },
+      {
+        "term": "Affected scope",
+        "definition": "The evidence-supported set of material, locations or time periods potentially involved in the deviation."
+      },
+      {
+        "term": "Shared exposure",
+        "definition": "A process, room, equipment, movement or time condition plausibly common to multiple material units."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Trace from source to current identity",
+        "body": "Preserve source harvest/batch identity when material is divided, moved or relabeled into downstream process units. New identifiers extend genealogy rather than erase it.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Scope narrowly when evidence supports narrow scope",
+        "body": "If only one traceable rack shared the relevant condition, do not automatically label the entire facility affected. Conversely, do not exclude connected material simply to improve apparent results.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Document why material enters or leaves the investigation",
+        "body": "Scope decisions should cite identity, shared exposure, position, timeline and product evidence rather than undocumented assumptions.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A room excursion overlaps only two traceable lots during a defined window; other lots were in a different room and time period, so scope starts with the shared exposure evidence.",
+      "A rack was moved through the same affected drying zone before the deviation was noticed; its genealogy and timing keep it in the investigation until evidence supports exclusion."
+    ],
+    "commonMistakes": [
+      "Scoping the whole facility by default.",
+      "Excluding failed or suspect material from the dataset.",
+      "Losing source genealogy when assigning a downstream lot number.",
+      "Changing identifiers to make records agree."
+    ],
+    "practicalApplication": "Draw a lot-genealogy diagram linking harvest source, racks, rooms, movements, sampling and current status, then annotate inclusion/exclusion evidence for affected scope.",
+    "summary": "Defensible scope follows traceable genealogy and shared process evidence, neither broader nor narrower than the records support."
+  }
+}
