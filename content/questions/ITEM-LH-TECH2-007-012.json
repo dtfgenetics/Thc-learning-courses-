@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A transplant occurred three days later than planned. What should the handoff record?",
+  "choices": [
+    "Only the actual date.",
+    "Change the planned date to the actual date.",
+    "Delete the schedule entry.",
+    "Both planned and actual dates, the variance/context, downstream impact and any required next decision."
+  ],
+  "correct": 3,
+  "rationale": "Both planned and actual dates, the variance/context, downstream impact and any required next decision.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

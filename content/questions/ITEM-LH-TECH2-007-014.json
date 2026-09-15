@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-007-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A record entry is verified as wrong. What is the correct correction model?",
+  "choices": [
+    "Silently overwrite it.",
+    "Preserve the original entry and record the authorized correction, reason and attribution.",
+    "Delete the whole record.",
+    "Change neighboring records until they agree."
+  ],
+  "correct": 1,
+  "rationale": "Preserve the original entry and record the authorized correction, reason and attribution.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A harvest lot receives a new downstream package ID. What should happen to source genealogy?",
+  "choices": [
+    "The package ID is linked downstream while the harvest/source identity remains retrievable.",
+    "The harvest identity is erased.",
+    "Only the newest ID remains.",
+    "Genealogy ends at harvest."
+  ],
+  "correct": 0,
+  "rationale": "The package ID is linked downstream while the harvest/source identity remains retrievable.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ]
+}

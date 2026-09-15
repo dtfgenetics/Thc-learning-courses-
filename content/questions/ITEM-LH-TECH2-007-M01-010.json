@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-M01-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Can two KPI values be compared if eligibility rules differ?",
+  "choices": [
+    "Yes, if both are percentages.",
+    "Not directly; the definitions must be reconciled or standardized first.",
+    "Yes, if the newer result is better.",
+    "Only the higher value matters."
+  ],
+  "correct": 1,
+  "rationale": "Not directly; the definitions must be reconciled or standardized first.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

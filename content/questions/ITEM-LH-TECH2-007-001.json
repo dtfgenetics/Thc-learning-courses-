@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-007-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A physical plant is in Room B while its controlled record lists Room A and no verified move record is available. What is the strongest response?",
+  "choices": [
+    "Document the mismatch, verify available movement evidence, and route the correction through the authorized process without inventing a move event.",
+    "Create a move record with an estimated timestamp.",
+    "Change the room field immediately to match the plant.",
+    "Ignore the physical location because the electronic record is authoritative."
+  ],
+  "correct": 0,
+  "rationale": "Document the mismatch, verify available movement evidence, and route the correction through the authorized process without inventing a move event.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

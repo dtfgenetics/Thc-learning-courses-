@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-007-M01-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-TECH2-007-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "12 failures out of 60 eligible units equals what failure rate?",
+  "choices": [
+    "20%.",
+    "12%.",
+    "48%.",
+    "80%."
+  ],
+  "correct": 0,
+  "rationale": "20%. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
