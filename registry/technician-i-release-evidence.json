@@ -1,0 +1,52 @@
+{
+  "id": "RELEASE-EVIDENCE-TECH1-001",
+  "version": "1.0.0",
+  "status": "draft",
+  "credentialProgram": "CREDPROG-CULT-TECH-I-001",
+  "releaseReady": false,
+  "evidencePolicy": "Only completed human review, pilot, calibration, standard-setting, security, privacy and release-approval evidence may advance a gate. Repository structure, generated files, synthetic records, passing CI, or course completion alone must not close a release gate.",
+  "gates": {
+    "humanTechnicalReview": "not-started",
+    "humanAssessmentReview": "not-started",
+    "renderedAccessibilityReview": "not-started",
+    "jobTaskAnalysisValidation": "draft",
+    "smeEmployerValidation": "not-started",
+    "controlledPilotEvidence": "not-started",
+    "practicalValidation": "not-started",
+    "capstoneValidation": "not-started",
+    "evaluatorCalibration": "not-started",
+    "interRaterEvidence": "not-started",
+    "blueprintWeightsFinalization": "not-started",
+    "secureOperationalItemBank": "not-built",
+    "secureAssessmentStore": "not-approved",
+    "equivalentSecureForms": "not-built",
+    "formalStandardSetting": "provisional",
+    "candidateEvidenceRetentionPrivacyPolicy": "not-approved",
+    "credentialIssuanceWorkflowApproval": "not-approved",
+    "finalProgramReleaseApproval": "not-requested"
+  },
+  "requiredEvidence": [
+    "versioned technical/curriculum review approval",
+    "versioned assessment review approval",
+    "rendered accessibility evidence",
+    "validated job-task analysis and SME/employer validation",
+    "controlled learner/item pilot evidence",
+    "validated Practical A-F evidence",
+    "validated integrated capstone evidence",
+    "evaluator calibration and inter-rater evidence",
+    "final credential-assessment blueprint weights",
+    "new secure operational item bank in an approved private assessment store",
+    "equivalent secure credential forms",
+    "formal standard-setting evidence",
+    "approved candidate-evidence retention/privacy policy",
+    "approved credential issuance workflow",
+    "explicit versioned final program release approval"
+  ],
+  "prohibitedShortcuts": [
+    "Do not treat green CI as certification approval.",
+    "Do not use public ITEM-TECH1 development items as the secure operational credential bank.",
+    "Do not create synthetic human review, pilot, calibration or approval evidence to close gates.",
+    "Do not expose secure operational answer keys or credential forms in the public repository.",
+    "Do not issue the credential while any required release gate is unresolved."
+  ]
+}
