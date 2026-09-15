@@ -34,6 +34,7 @@ for (const program of credentialPrograms) {
 let errors = 0;
 let credentialBearing = 0;
 let completePath = 0;
+let draftIncomplete = 0;
 let nonCredential = 0;
 console.log('Course credential pathway coverage');
 for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
@@ -49,9 +50,20 @@ for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
 
   credentialBearing++;
   let ok = true;
+  const explicitDraftCompletionGate = course.status === 'draft' && !course.finalAssessment && (
+    course.extensions?.dedicatedCourseAssessmentRequired === true ||
+    course.extensions?.dedicatedLabModuleRequired === true
+  );
+
   if (!course.finalAssessment) {
-    console.error(`ERROR ${course.id}: credentialBearing=true but finalAssessment is missing`);
-    errors++; ok = false;
+    if (explicitDraftCompletionGate) {
+      draftIncomplete++;
+      ok = false;
+      console.log(`${course.id}: draft credential-path course; final assessment/lab evidence is explicitly still required before pathway completion`);
+    } else {
+      console.error(`ERROR ${course.id}: credentialBearing=true but finalAssessment is missing without an explicit draft completion gate`);
+      errors++; ok = false;
+    }
   } else {
     const assessment = assessments.get(course.finalAssessment);
     if (!assessment) {
@@ -71,8 +83,8 @@ for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
   if (ok) completePath++;
   const legacyIds = legacyMapped.map((x) => x.id).join(',') || 'none';
   const programIds = programMapped.map((x) => x.id).join(',') || 'none';
-  console.log(`${course.id}: credential-bearing; finalAssessment=${course.finalAssessment ?? 'none'}; legacyCredentials=${legacyIds}; credentialPrograms=${programIds}; pathwayComplete=${ok}`);
+  console.log(`${course.id}: credential-bearing; status=${course.status ?? 'unspecified'}; finalAssessment=${course.finalAssessment ?? 'none'}; legacyCredentials=${legacyIds}; credentialPrograms=${programIds}; pathwayComplete=${ok}`);
 }
 
-console.log(`Summary: courses=${courses.length}; credentialBearing=${credentialBearing}; completeCredentialPaths=${completePath}; nonCredential=${nonCredential}`);
+console.log(`Summary: courses=${courses.length}; credentialBearing=${credentialBearing}; completeCredentialPaths=${completePath}; draftIncompleteCredentialPaths=${draftIncomplete}; nonCredential=${nonCredential}`);
 if (errors) process.exit(1);
