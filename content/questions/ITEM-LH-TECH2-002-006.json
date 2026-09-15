@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-TECH2-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A temperature sensor flatlines exactly after maintenance while nearby verified sensors continue changing. What is the best fault classification?",
+  "choices": [
+    "Confirmed perfect temperature control.",
+    "Suspected sensor/data-quality fault pending verification, not a confirmed room-temperature condition.",
+    "Confirmed HVAC failure.",
+    "Confirmed crop-transpiration failure."
+  ],
+  "correct": 1,
+  "rationale": "Suspected sensor/data-quality fault pending verification, not a confirmed room-temperature condition. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

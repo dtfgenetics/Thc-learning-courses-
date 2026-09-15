@@ -20,12 +20,14 @@ for (const id of expected) {
   assert.equal(course.extensions.legacySourceCourse, 'COURSE-CULT-TECH-II-001');
   assert.ok(course.modules.length > 0 && course.competencies.length > 0);
 
-  if (id === 'COURSE-LH-TECH2-001') {
-    assert.equal(course.finalAssessment, 'ASSESS-LH-TECH2-001-FINAL');
+  if (id === 'COURSE-LH-TECH2-001' || id === 'COURSE-LH-TECH2-002') {
+    const expectedFinal = id === 'COURSE-LH-TECH2-001' ? 'ASSESS-LH-TECH2-001-FINAL' : 'ASSESS-LH-TECH2-002-FINAL';
+    const expectedPractical = id === 'COURSE-LH-TECH2-001' ? 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP' : 'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION';
+    assert.equal(course.finalAssessment, expectedFinal);
     assert.equal(course.extensions.dedicatedCourseAssessmentRequired, false);
     assert.equal(course.extensions.dedicatedPerformanceValidationRequired, true);
-    assert.equal(course.extensions.mappedPractical, 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP');
-    assert.ok(fs.existsSync(path.join('content/assessments', course.finalAssessment + '.json')), 'Course 201 final assessment must resolve');
+    assert.equal(course.extensions.mappedPractical, expectedPractical);
+    assert.ok(fs.existsSync(path.join('content/assessments', course.finalAssessment + '.json')), id + ' final assessment must resolve');
   } else if (id === 'COURSE-LH-TECH2-008') {
     assert.equal(course.finalAssessment, null);
     assert.equal(course.extensions.dedicatedLabModuleRequired, true);

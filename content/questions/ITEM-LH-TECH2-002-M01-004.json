@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH2-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: A fault requires opening an electrical enclosure not assigned to the operator. What is the correct action?",
+  "choices": [
+    "Open it carefully with insulated gloves.",
+    "Ask a coworker to watch while opening it.",
+    "Reset power repeatedly.",
+    "Preserve equipment status and refer the work to the qualified/authorized role."
+  ],
+  "correct": 3,
+  "rationale": "Preserve equipment status and refer the work to the qualified/authorized role. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-M01-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-TECH2-002-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Formative: A single emitter tests correctly. What does that establish about a 40-emitter zone?",
+  "choices": [
+    "The whole zone is uniform.",
+    "The filter is clean.",
+    "Only that one location performed correctly; representative distribution still needs verification.",
+    "Pressure is identical everywhere."
+  ],
+  "correct": 2,
+  "rationale": "Only that one location performed correctly; representative distribution still needs verification. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}

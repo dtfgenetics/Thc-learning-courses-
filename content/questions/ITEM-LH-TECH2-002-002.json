@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-LH-TECH2-002-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspected bad sensor produced data for six hours. What should happen to those historical values?",
+  "choices": [
+    "Overwrite them with the room average.",
+    "Preserve them with a documented data-quality flag and the evidence supporting the concern.",
+    "Delete them after replacing the sensor.",
+    "Mark the entire crop cycle invalid without review."
+  ],
+  "correct": 1,
+  "rationale": "Preserve them with a documented data-quality flag and the evidence supporting the concern. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-LH-TECH2-002-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-002-06",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A controller commands a dehumidifier on, but independent humidity measurements do not respond. What can be concluded now?",
+  "choices": [
+    "The dehumidifier compressor is definitely failed.",
+    "The humidity sensors are definitely wrong.",
+    "There is a command-to-response mismatch that needs equipment/control verification; root cause is not yet confirmed.",
+    "The controller display proves the equipment is working."
+  ],
+  "correct": 2,
+  "rationale": "There is a command-to-response mismatch that needs equipment/control verification; root cause is not yet confirmed. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ]
+}
