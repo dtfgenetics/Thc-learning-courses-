@@ -43,6 +43,9 @@ for (const mapping of crosswalk.objectiveMappings) {
   for (const task of mapping.practicalTasks) {
     assert.ok(practicalText.includes(task), `${mapping.objectiveId}: mapped task is not present in Practical A: ${task}`);
   }
+  for (const category of mapping.scoringCategories) {
+    assert.ok(practicalText.includes(category), `${mapping.objectiveId}: mapped scoring category is not present in Practical A: ${category}`);
+  }
   for (const evidence of mapping.expectedEvidence) {
     assert.ok(practicalText.includes(evidence), `${mapping.objectiveId}: mapped evidence is not present in Practical A: ${evidence}`);
   }
@@ -68,4 +71,4 @@ assert.notEqual(releaseEvidence.gates?.renderedAccessibilityReview, 'approved');
 assert.notEqual(releaseEvidence.gates?.practicalValidation, 'validated');
 assert.notEqual(releaseEvidence.gates?.controlledPilotEvidence, 'accepted');
 
-console.log('Course 3 Practical A crosswalk passed: all five objectives map to canonical development-stage tasks/evidence while human, pilot and validation gates remain open.');
+console.log('Course 3 Practical A crosswalk passed: all five objectives map to canonical development-stage tasks, scoring categories, evidence and deliverables while human, pilot and validation gates remain open.');
