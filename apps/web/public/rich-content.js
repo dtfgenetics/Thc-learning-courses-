@@ -7,26 +7,45 @@ function text(tag, value, className = '') {
 
 function appendReferences(parent, references) {
   if (!Array.isArray(references) || references.length === 0) return;
-  const note = text('p', `Evidence: ${references.join(', ')}`, 'rich-evidence');
-  parent.append(note);
+  const details = document.createElement('details');
+  details.className = 'rich-evidence';
+  details.append(text('summary', 'Sources & evidence'));
+  const list = document.createElement('ul');
+  list.className = 'rich-evidence-list';
+  for (const reference of references) list.append(text('li', reference));
+  details.append(list);
+  parent.append(details);
 }
 
 function appendImage(parent, { src, alt, caption, credit, assetId }, className = '') {
   const figure = document.createElement('figure');
   figure.className = `rich-figure${className ? ` ${className}` : ''}`;
+  if (assetId) figure.dataset.assetId = assetId;
+
   const image = document.createElement('img');
   image.src = src;
   image.alt = alt ?? '';
   image.loading = 'lazy';
   image.decoding = 'async';
   figure.append(image);
-  if (caption || credit || assetId) {
-    const pieces = [];
-    if (caption) pieces.push(caption);
-    if (credit) pieces.push(`Source: ${credit}`);
-    if (assetId) pieces.push(`Asset ${assetId}`);
-    figure.append(text('figcaption', pieces.join(' • ')));
+
+  const footer = document.createElement('figcaption');
+  const pieces = [];
+  if (caption) pieces.push(caption);
+  if (credit) pieces.push(`Source: ${credit}`);
+  if (pieces.length) footer.append(text('span', pieces.join(' • '), 'rich-figure-caption-text'));
+
+  if (src) {
+    const fullSize = document.createElement('a');
+    fullSize.href = src;
+    fullSize.textContent = 'Open full-size visual';
+    fullSize.className = 'rich-figure-fullsize';
+    fullSize.target = '_blank';
+    fullSize.rel = 'noopener noreferrer';
+    footer.append(fullSize);
   }
+
+  if (footer.childNodes.length) figure.append(footer);
   parent.append(figure);
 }
 
