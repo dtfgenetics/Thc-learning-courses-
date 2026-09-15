@@ -202,8 +202,13 @@ async function renderCredentialProgress() {
     const demonstrated = (data.competencies ?? []).filter((row) => row.masteryLevel === 'demonstrated').length;
     const performancePassed = (data.performanceAssessments ?? []).filter((row) => row.status === 'passed' && Number(row.criticalErrorCount ?? 0) === 0).length;
     const portfolioComplete = (data.portfolioArtifacts ?? []).filter((row) => ['accepted','verified','complete'].includes(row.status)).length;
+    const releasePending = data.eligibility?.requirementsSatisfied === true && data.eligibility?.releaseAuthorized === false;
+    const credentialStatus = data.eligibility?.eligible ? 'Eligible' : releasePending ? 'Release pending' : 'In progress';
+    const credentialStatusNote = releasePending
+      ? 'Learner requirements are satisfied; credential validation/release gates are still open.'
+      : (data.credential?.title ?? '');
     summary.append(
-      summaryCard('Credential status', data.eligibility?.eligible ? 'Eligible' : 'In progress', data.credential?.title ?? ''),
+      summaryCard('Credential status', credentialStatus, credentialStatusNote),
       summaryCard('Best written exam', bestScore >= 0 ? `${bestScore.toFixed(0)}%` : 'Not attempted', `Pass ${data.credential?.minimumPassingScorePercent ?? 80}%`),
       summaryCard('Competencies demonstrated', String(demonstrated), `${(data.competencies ?? []).length} transcript records`),
       summaryCard('Performance evidence', `${performancePassed}/${(data.performanceAssessments ?? []).length}`, '7 practicals + capstone'),
@@ -217,8 +222,17 @@ async function renderCredentialProgress() {
       blocker.append(text('h3', 'What remains'));
       const list = document.createElement('ul');
       for (const row of data.eligibility?.missingRequirements ?? []) {
-        const humanType = row.type === 'assessment' ? 'Written assessment' : row.type === 'performance-assessment' ? 'Practical/capstone' : 'Portfolio artifact';
+        const humanType = row.type === 'assessment'
+          ? 'Written assessment'
+          : row.type === 'performance-assessment'
+            ? 'Practical/capstone'
+            : row.type === 'course-completion'
+              ? 'Course completion'
+              : 'Portfolio artifact';
         list.append(text('li', `${humanType}: ${row.id} — ${statusLabel(row.reason)}`));
+      }
+      for (const row of data.eligibility?.releaseBlockers ?? []) {
+        list.append(text('li', `Credential release: ${statusLabel(row.reason)}`));
       }
       if (!list.children.length) list.append(text('li', 'No unresolved requirement details are available.'));
       blocker.append(list);
