@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-002-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-002-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Which photo record is strongest for a color-related leaf observation?",
+  "choices": [
+    "A whole-plant context image plus a clear close image linked to plant/location identity and time",
+    "A filtered close-up with no plant ID",
+    "A social-media screenshot with unknown lighting",
+    "Any image is sufficient if the technician remembers the plant"
+  ],
+  "correct": 0,
+  "rationale": "Context and identity make the image reconstructable, while filters or unknown provenance can undermine comparison.",
+  "references": [
+    "REF-PLANT-BIO-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

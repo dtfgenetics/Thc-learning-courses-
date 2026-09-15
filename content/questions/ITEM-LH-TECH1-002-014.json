@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-TECH1-002-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-002-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A symptom photo is strongly color-shifted by lighting. What is the best evidence action when conditions allow?",
+  "choices": [
+    "Increase saturation until the symptom is obvious",
+    "Retake under more consistent or neutral lighting and preserve crop identity",
+    "Use the image and omit the lighting issue",
+    "Convert it to a stylized filter"
+  ],
+  "correct": 1,
+  "rationale": "When color is part of the observation, a more faithful image is preferable to editing that can change symptom appearance.",
+  "references": [
+    "REF-PLANT-BIO-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

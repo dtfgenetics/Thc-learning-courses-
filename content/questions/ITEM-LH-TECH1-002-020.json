@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician suspects disease spread but the task does not authorize diagnosis or treatment selection. What is the best response?",
+  "choices": [
+    "Choose a pesticide based on the symptom",
+    "Move affected plants through clean areas for closer viewing",
+    "Record a confirmed disease name so the next shift acts faster",
+    "Document location and evidence, preserve supplied quarantine boundaries and escalate according to procedure"
+  ],
+  "correct": 3,
+  "rationale": "The technician preserves evidence and containment boundaries while escalating work outside their diagnostic or treatment authority.",
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

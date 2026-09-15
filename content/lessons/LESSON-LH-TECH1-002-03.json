@@ -1,0 +1,139 @@
+{
+  "id": "LESSON-LH-TECH1-002-03",
+  "title": "Observation, Pattern, Context and Diagnostic Boundaries",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PLANT-BIO-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-002-03",
+    "LO-LH-TECH1-002-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A Technician I creates reliable evidence for diagnosis without pretending that every visible symptom proves a cause. This lesson trains learners to separate direct observations from interpretations, describe incidence and spatial pattern, add available environmental or work-history context, recognize urgent abnormalities, and escalate when the evidence or authority boundary does not support an independent conclusion.",
+    "vocabulary": [
+      {
+        "term": "observation",
+        "definition": "A description of directly visible, measured or otherwise documented evidence without an unsupported causal conclusion."
+      },
+      {
+        "term": "interpretation",
+        "definition": "A reasoned meaning assigned to observations that may remain provisional until additional evidence confirms it."
+      },
+      {
+        "term": "incidence",
+        "definition": "The proportion or count of observed units showing a defined condition within the sampled population."
+      },
+      {
+        "term": "differential",
+        "definition": "A set of plausible explanations considered when evidence does not yet support one confirmed cause."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Describe before you diagnose",
+        "body": "Color change, tissue damage, posture, architecture, root appearance, developmental differences and spatial patterns can be recorded directly. A causal label such as nutrient deficiency, pathogen, irrigation failure or genetic weakness requires supporting evidence. Technician I records the observation and routes the case when diagnosis exceeds the task or available evidence.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Pattern changes the investigation",
+        "body": "One plant, one bench, one irrigation zone, one room edge and an entire room represent different evidence patterns. Record counts or proportions where practical, location and severity using supplied definitions, and whether neighboring comparison plants show the same condition.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Context strengthens a note without proving cause",
+        "body": "Recent irrigation, environmental readings, lighting or equipment events, transplant or canopy work, IPM history and developmental stage can make an observation more useful. Context should be attached as context unless the supplied procedure and evidence justify a causal conclusion.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Escalate consequence and uncertainty",
+        "body": "Sudden widespread wilt, suspected spreading pest or disease evidence, unexpected reproductive morphology, strong root-zone abnormality, substantial zone differences or damage associated with equipment or work can require prompt escalation. Follow the supplied procedure and preserve the original condition before changing it when safe to do so.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Older lower leaves on 6 of 20 sampled plants in Zone B show interveinal yellowing. The note records distribution, location, photos and available root-zone measurements without declaring a specific deficiency.",
+      "A room-wide droop appears shortly after a scheduled irrigation event. The technician records the timing and pattern, checks supplied irrigation and environmental status, and escalates rather than independently changing the control strategy."
+    ],
+    "commonMistakes": [
+      "Replacing an objective description with a disease or nutrient label that has not been verified.",
+      "Recording an environmental or irrigation event as proof of cause rather than as context.",
+      "Changing conditions before documenting the original abnormal state when there is no immediate safety reason to do so."
+    ],
+    "practicalApplication": "Sort a set of crop notes into direct observation, context, interpretation and unsupported diagnosis. Rewrite weak notes to include location, distribution, developmental context and escalation status, then identify which cases require immediate versus routine follow-up under the supplied procedure.",
+    "summary": "Technician I observation protects the distinction between evidence and diagnosis. Strong notes preserve what changed, where, how widely, under what context and what was escalated, allowing a qualified person to investigate without inheriting an unsupported conclusion.",
+    "blocks": [
+      {
+        "type": "table",
+        "title": "Evidence layers in a crop note",
+        "columns": [
+          "Layer",
+          "Example",
+          "How to treat it"
+        ],
+        "rows": [
+          [
+            "Direct observation",
+            "Six lower leaves show interveinal yellowing",
+            "Record as observed evidence"
+          ],
+          [
+            "Pattern",
+            "Six of twenty sampled plants, concentrated in Zone B",
+            "Record distribution and sample context"
+          ],
+          [
+            "Context",
+            "Irrigation event completed 45 minutes earlier",
+            "Attach as relevant history, not automatic proof"
+          ],
+          [
+            "Interpretation",
+            "Irrigation delivery could be involved",
+            "Keep provisional unless evidence supports confirmation"
+          ],
+          [
+            "Unsupported diagnosis",
+            "The room has a specific deficiency",
+            "Do not record as fact without sufficient evidence/authority"
+          ]
+        ],
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "One zone droops after irrigation",
+        "setting": "Plants in one irrigation zone are drooping while the rest of the room remains upright. A scheduled irrigation event just completed.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Record irrigation failure as confirmed and reprogram the controller",
+          "Record the zone pattern, compare representative points, check supplied irrigation/environment status and escalate unresolved deviation",
+          "Water the entire room again because droop always means drought",
+          "Delete the observation if plants may recover later"
+        ],
+        "answer": "Record the zone pattern, compare representative points, check supplied irrigation/environment status and escalate unresolved deviation",
+        "feedback": "The spatial pattern and timing are useful evidence, but neither proves the cause or authorizes independent control redesign.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      }
+    ]
+  }
+}

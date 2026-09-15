@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-018",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-002-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Plant damage appears immediately after a canopy-work order was completed. What should the observation record include?",
+  "choices": [
+    "Only the damage description; work history should be hidden",
+    "Location and pattern of damage plus the relevant work-order/shift context and escalation status",
+    "A statement that the worker definitely caused the damage",
+    "No record unless the cause is confirmed"
+  ],
+  "correct": 1,
+  "rationale": "Relevant work history should be connected to the observation without converting timing alone into proof of cause.",
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}

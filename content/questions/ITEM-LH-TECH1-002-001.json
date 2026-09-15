@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-002-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PLANT-BIO-001",
+  "objective": "LO-LH-TECH1-002-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A routine crop walk begins at the room entrance where one plant is badly wilted. What is the best next step before describing the room-level condition?",
+  "choices": [
+    "Follow the supplied representative route and compare multiple locations before describing the room-level pattern",
+    "Use the wilted plant as the room sample because it is obvious",
+    "Diagnose the room as under-watered and water every plant",
+    "Remove the plant so the record is not biased"
+  ],
+  "correct": 0,
+  "rationale": "One conspicuous plant does not establish the distribution of a condition. A representative route is needed before a room-level statement.",
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-002",
+    "itemSet": "course2-v1"
+  }
+}
