@@ -1,0 +1,52 @@
+{
+  "courseId": "COURSE-LH-TECH1-001",
+  "recordType": "automated-quality-approval",
+  "version": 1,
+  "generatedBy": "deterministic-quality-gates",
+  "humanApproval": false,
+  "credentialReleaseApproval": false,
+  "approvals": [
+    {
+      "gate": "curriculum-structure",
+      "status": "approved",
+      "basis": "deterministic course/module/lesson graph validation"
+    },
+    {
+      "gate": "objective-coverage",
+      "status": "approved",
+      "basis": "Course 1 objective coverage audit"
+    },
+    {
+      "gate": "review-inventory-completeness",
+      "status": "approved",
+      "basis": "dynamic Course 1 finish-review inventory audit"
+    },
+    {
+      "gate": "public-visual-concept-coverage",
+      "status": "approved",
+      "basis": "18 of 18 planned primary instructional concepts mapped to public learner assets"
+    },
+    {
+      "gate": "catalog-visibility-contract",
+      "status": "approved",
+      "basis": "canonical certification catalog visibility checks"
+    },
+    {
+      "gate": "academic-publication-boundary",
+      "status": "approved",
+      "basis": "public academic availability remains distinct from professional credential issuance"
+    }
+  ],
+  "notApprovedByThisRecord": [
+    "scientific-human-review",
+    "editorial-human-review",
+    "assessment-human-review",
+    "rendered-accessibility-review",
+    "practical-assessor-calibration",
+    "controlled-learner-pilot",
+    "formal-standard-setting",
+    "professional-credential-release"
+  ],
+  "productionEligible": true,
+  "note": "This record is production-eligible only as evidence of deterministic machine checks. It cannot satisfy any human-evidence or credential-release gate."
+}
