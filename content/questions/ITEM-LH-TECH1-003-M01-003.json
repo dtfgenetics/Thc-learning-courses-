@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-M01-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-TECH1-003-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "What makes a repeat PPFD map comparable to the original map?",
+  "choices": [
+    "Using only the center point",
+    "Changing height at each point",
+    "Consistent grid positions, measurement plane and sensor orientation",
+    "Replacing measurements with fixture wattage"
+  ],
+  "correct": 2,
+  "rationale": "Consistent grid positions, measurement plane and sensor orientation. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-module1-formative"
+  }
+}

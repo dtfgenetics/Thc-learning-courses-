@@ -1,0 +1,110 @@
+{
+  "id": "LESSON-LH-TECH1-003-01",
+  "title": "Temperature, RH and VPD as Contextual Measurements",
+  "version": "1.0.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-003-01",
+    "LO-LH-TECH1-003-05"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-VPD-002",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Technician I uses environmental measurements as documented evidence, not as universal cultivation commands. Learners practice recording temperature and relative humidity together, interpreting VPD as atmospheric drying-demand context, identifying whether a value is an observed measurement or a supplied target, and preserving the time, location and sensor information needed for another qualified person to reconstruct the reading.",
+    "vocabulary": [
+      {
+        "term": "relative humidity",
+        "definition": "Water vapor in air expressed relative to the saturation amount at the measured temperature."
+      },
+      {
+        "term": "vapor pressure deficit",
+        "definition": "The difference between saturation vapor pressure and actual vapor pressure under the measured conditions; it describes atmospheric drying demand."
+      },
+      {
+        "term": "target",
+        "definition": "A supplied intended value, range or operating limit used for comparison; it is not the same thing as an observed measurement."
+      },
+      {
+        "term": "measurement context",
+        "definition": "The units, location, time, sensor identity or other information needed to interpret a recorded value correctly."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Temperature and RH belong together",
+        "body": "Relative humidity depends on temperature. A humidity percentage without the associated temperature is incomplete for VPD interpretation. Technician I records both values with the units and context required by the facility workflow rather than inferring drying demand from RH alone.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "VPD is an interpretation tool, not a universal target law",
+        "body": "VPD combines temperature and humidity into a useful description of atmospheric drying demand. It should be interpreted with plant stage, crop condition, airflow, root-zone status and the method used to calculate it. Technician I compares readings with supplied targets but does not independently redesign environmental strategy to chase a chart value.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Observed value, target and alarm are different records",
+        "body": "A target describes intended operation, a measured value describes what a sensor reported, and an alarm describes a rule or threshold event. A reconstructable record keeps those roles distinct and identifies the sensor, location and time so another person can tell what actually happened.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two rooms both show 60% RH but have different temperatures. The technician records both variables and compares the resulting VPD context rather than assuming the rooms are equivalent.",
+      "A dashboard target reads 25 °C while the current canopy-zone sensor reads 27 °C. The record stores 25 °C as the supplied target and 27 °C as the observation rather than replacing one with the other."
+    ],
+    "commonMistakes": [
+      "Recording RH without temperature when the task requires VPD context.",
+      "Treating a copied VPD chart as a universal rule for every crop and facility.",
+      "Recording the target value as though it were the actual sensor reading.",
+      "Changing room controls before verifying the reading and the technician authority boundary."
+    ],
+    "practicalApplication": "Given a dashboard snapshot and room map, create a measurement record that correctly separates current temperature, RH, calculated or displayed VPD, supplied targets, sensor location, time and any alarm state. Identify which conclusions are supported and which would require additional evidence or escalation.",
+    "summary": "Environmental measurements become useful when their variables and context are preserved. Technician I records temperature and RH together, treats VPD as contextual interpretation, separates target from observation and escalates rather than turning one number into an independent control strategy.",
+    "blocks": [
+      {
+        "type": "comparison",
+        "title": "Target versus measurement",
+        "left": {
+          "label": "Target",
+          "body": "The intended value, range or limit supplied by the facility procedure or control strategy."
+        },
+        "right": {
+          "label": "Measurement",
+          "body": "The value actually reported at an identified sensor, location and time."
+        },
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same RH, different temperature",
+        "setting": "Room A and Room B both show 60% RH, but Room B is several degrees warmer.",
+        "prompt": "What is the strongest Technician I interpretation?",
+        "options": [
+          "The rooms must have the same VPD because RH matches",
+          "Record each temperature and RH pair and interpret VPD using the supplied method",
+          "Lower RH in both rooms until the percentages differ",
+          "Ignore temperature because humidity controls drying demand alone"
+        ],
+        "answer": "Record each temperature and RH pair and interpret VPD using the supplied method",
+        "feedback": "VPD depends on temperature and humidity together, so matching RH percentages do not guarantee the same vapor-pressure relationship.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ]
+  }
+}

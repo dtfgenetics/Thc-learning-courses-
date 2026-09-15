@@ -28,7 +28,7 @@ for (const courseId of program.requiredCourses) {
     assert.equal(exposesGate, true, `${courseId} must expose the missing completion gate`);
   }
 }
-for (const courseId of ['COURSE-LH-TECH1-003','COURSE-LH-TECH1-004','COURSE-LH-TECH1-005','COURSE-LH-TECH1-006']) {
+for (const courseId of ['COURSE-LH-TECH1-004','COURSE-LH-TECH1-005','COURSE-LH-TECH1-006']) {
   const c = read(`content/courses/${courseId}.json`);
   assert.equal(c.finalAssessment, null);
   assert.equal(c.extensions?.dedicatedCourseAssessmentRequired, true);
@@ -36,9 +36,12 @@ for (const courseId of ['COURSE-LH-TECH1-003','COURSE-LH-TECH1-004','COURSE-LH-T
 const course2 = read('content/courses/COURSE-LH-TECH1-002.json');
 assert.equal(course2.finalAssessment, 'ASSESS-LH-TECH1-002-FINAL');
 assert.equal(course2.extensions?.dedicatedCourseAssessmentRequired, false);
+const course3 = read('content/courses/COURSE-LH-TECH1-003.json');
+assert.equal(course3.finalAssessment, 'ASSESS-LH-TECH1-003-FINAL');
+assert.equal(course3.extensions?.dedicatedCourseAssessmentRequired, false);
 const integrated = read('content/courses/COURSE-LH-TECH1-007.json');
 assert.equal(integrated.extensions?.dedicatedLabModuleRequired, true);
 assert.equal(integrated.extensions?.credentialPracticalSetRequired.length, 6);
 assert.equal(new Set(integrated.extensions.credentialPracticalSetRequired).size, 6);
 assert.equal(integrated.extensions?.capstoneRequired, 'CAPSTONE-TECH1-SHIFT-001');
-console.log('Technician I program structure passed: all seven courses resolve; Course 002 has advanced to draft instruction/assessment while Courses 003-007 retain explicit completion gates.');
+console.log('Technician I program structure passed: all seven courses resolve; Courses 002-003 have advanced to draft instruction/assessment while Courses 004-007 retain explicit completion gates.');

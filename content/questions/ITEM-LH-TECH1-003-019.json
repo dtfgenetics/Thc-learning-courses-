@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A scheduled reading was missed, but the technician remembers approximately what the display showed. What is the strongest record practice?",
+  "choices": [
+    "Backfill the remembered value at the scheduled time",
+    "Use the target value instead",
+    "Use the facility missing-data or late-entry process and do not represent a remembered estimate as the original measurement",
+    "Copy the next reading backward"
+  ],
+  "correct": 2,
+  "rationale": "Use the facility missing-data or late-entry process and do not represent a remembered estimate as the original measurement. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

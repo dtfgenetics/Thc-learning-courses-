@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-003-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A humidity alarm is active, but the local sensor is directly in a dehumidifier discharge path. What should the technician do?",
+  "choices": [
+    "Silence the alarm and change the set point immediately",
+    "Move the sensor without documenting original placement",
+    "Preserve the alarm and placement context, perform permitted checks and escalate unresolved condition",
+    "Declare equipment failure as confirmed"
+  ],
+  "correct": 2,
+  "rationale": "Preserve the alarm and placement context, perform permitted checks and escalate unresolved condition. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}

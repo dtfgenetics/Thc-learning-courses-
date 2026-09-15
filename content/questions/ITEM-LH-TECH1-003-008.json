@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-TECH1-003-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-TECH1-003-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "The controller schedule says lights should be on, but the technician observes one zone dark. What is the strongest response?",
+  "choices": [
+    "Change the crop photoperiod strategy independently",
+    "Record the schedule as though all lights were on",
+    "Ignore the zone because the controller is correct",
+    "Record intended photoperiod versus observed state and follow the supplied verification/escalation procedure"
+  ],
+  "correct": 3,
+  "rationale": "Record intended photoperiod versus observed state and follow the supplied verification/escalation procedure. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-003",
+    "itemSet": "course3-v1"
+  }
+}
