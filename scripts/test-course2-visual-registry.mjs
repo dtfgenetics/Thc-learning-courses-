@@ -9,9 +9,10 @@ const registry = readJson('visuals/COURSE2-ASSET-REGISTRY.json');
 assert.equal(registry.courseId, 'COURSE-LH-TECH1-002');
 assert.equal(registry.policy?.expandable, true, 'Course 2 visual registry must remain expandable');
 assert.equal(registry.policy?.maximumAssetCount, null, 'Course 2 visual registry must not impose an artificial asset maximum');
+assert.ok(registry.driveStorage?.folderId, 'Course 2 visual registry must preserve controlled Drive mirror metadata');
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.ok(produced.length >= 3, 'Course 2 visual learning batch 1 requires at least three produced learner assets');
+assert.ok(produced.length >= 5, 'Course 2 visual learning batch 2 requires at least five produced learner assets');
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length, 'Course 2 produced visual ids must be unique');
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length, 'Course 2 produced learner paths must be unique');
 
@@ -27,6 +28,11 @@ for (const asset of produced) {
   assert.ok(typeof asset.title === 'string' && asset.title.trim(), `${asset.id}: title is required`);
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim(), `${asset.id}: purpose is required`);
   assert.ok(typeof asset.version === 'string' && /^\d+\.\d+\.\d+$/.test(asset.version), `${asset.id}: semantic version is required`);
+  assert.ok(['mirrored', 'pending-upload'].includes(asset.driveMirrorStatus), `${asset.id}: driveMirrorStatus must explicitly track controlled-mirror state`);
+  if (asset.driveMirrorStatus === 'mirrored') {
+    assert.ok(asset.driveFileId, `${asset.id}: mirrored asset must include driveFileId`);
+    assert.ok(asset.driveFileUrl, `${asset.id}: mirrored asset must include driveFileUrl`);
+  }
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload, `${asset.id}: publicDownloadUrl must use the canonical main-branch raw path`);
@@ -62,4 +68,4 @@ for (const asset of produced) {
   }
 }
 
-console.log(`Course 2 visual delivery contract passed for ${produced.length} produced learner assets: accessibility, responsive SVG structure, public paths, registry metadata and lesson usage are consistent.`);
+console.log(`Course 2 visual delivery contract passed for ${produced.length} produced learner assets: accessibility, responsive SVG structure, public paths, Drive mirror state, registry metadata and lesson usage are consistent.`);
