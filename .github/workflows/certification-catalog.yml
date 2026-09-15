@@ -1,0 +1,34 @@
+name: Certification catalog visibility
+
+on:
+  pull_request:
+    branches: [dev, staging, main]
+  push:
+    branches: [dev, staging, main, 'feat/certification-catalog-*']
+
+permissions:
+  contents: read
+
+jobs:
+  catalog-visibility:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate canonical public credential state
+        run: node scripts/test-public-credential-status.mjs
+
+      - name: Validate catalog build contract
+        run: node scripts/test-certification-catalog-contract.mjs
+
+      - name: Validate learner-facing catalog UI
+        run: node scripts/test-certification-catalog-ui.mjs
+
+      - name: Report certification completion state
+        run: node scripts/report-certification-completion.mjs
