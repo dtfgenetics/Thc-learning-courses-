@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { once } from 'node:events';
+import { createAcademyWebServer } from '../apps/web/server.mjs';
 
 const root = process.cwd();
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -57,9 +59,37 @@ for (const itemId of formative.items) {
   const item = read(`content/questions/${itemId}.json`);
   assert.equal(item.purpose, 'formative');
   assert.ok(formative.objectives.includes(item.objective));
+  assert.ok(Array.isArray(item.references) && item.references.length > 0, `${itemId} must retain evidence references`);
 }
 assert.equal(final.extensions?.linkedCredentialPractical, 'PRACTICAL-TECH1-A');
-console.log('Course 002 production slice passed: four lessons, five objectives, 12 distinct formative items and 20 balanced summative items are wired while release remains draft-gated.');
 
 await import('./test-course2-visual-registry.mjs');
 await import('./test-course2-practical-crosswalk.mjs');
+
+const visualRegistry = read('visuals/COURSE2-ASSET-REGISTRY.json');
+const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
+assert.equal(producedAssets.length, 10, 'Course 2 should expose the current 10 governed learner assets');
+
+const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
+server.listen(0, '127.0.0.1');
+await once(server, 'listening');
+try {
+  const base = `http://127.0.0.1:${server.address().port}`;
+  for (const asset of producedAssets) {
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 2 learner path`);
+    const response = await fetch(`${base}${asset.learnerPath}`);
+    assert.equal(response.status, 200, `${asset.learnerPath} should be delivered by the Academy runtime`);
+    assert.match(response.headers.get('content-type') ?? '', /^image\/svg\+xml/, `${asset.learnerPath} should use the SVG content type`);
+    const svg = await response.text();
+    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
+    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
+    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
+  }
+  const traversalProbe = await fetch(`${base}/assets/course2/../course1/cultivation-work-area-hazard-scan.svg`);
+  assert.equal(traversalProbe.status, 404, 'course asset routing must not accept traversal-shaped paths');
+} finally {
+  server.close();
+  await once(server, 'close');
+}
+
+console.log('Course 002 production slice passed: four lessons, five objectives, 12 referenced formative items, 20 balanced summative items, practical crosswalk, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.');
