@@ -66,6 +66,8 @@ jobs:
         run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-006 --require-complete-learning-loop --require-balanced-assessment
       - name: Enforce all seven Technician I source-package contracts
         run: node scripts/report-tech1-course-package-readiness.mjs --require-source-package
+      - name: Enforce Technician I credential machine-layer contract
+        run: node scripts/test-tech1-machine-layer.mjs
       - name: Enforce public credential-bank security boundary
         run: node scripts/test-public-credential-bank-boundary.mjs
       - name: Enforce fail-closed Technician I release readiness
