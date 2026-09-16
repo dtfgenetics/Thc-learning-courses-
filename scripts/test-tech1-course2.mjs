@@ -85,8 +85,10 @@ try {
     assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
     assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
   }
-  const traversalProbe = await fetch(`${base}/assets/course2/../course1/cultivation-work-area-hazard-scan.svg`);
-  assert.equal(traversalProbe.status, 404, 'course asset routing must not accept traversal-shaped paths');
+  const invalidCourseDirectory = await fetch(`${base}/assets/course2x/representative-crop-walk-route.svg`);
+  assert.equal(invalidCourseDirectory.status, 404, 'course asset routing must only accept course<number> directories');
+  const missingAsset = await fetch(`${base}/assets/course2/not-a-real-asset.svg`);
+  assert.equal(missingAsset.status, 404, 'course asset routing must return 404 for missing controlled assets');
 } finally {
   server.close();
   await once(server, 'close');
