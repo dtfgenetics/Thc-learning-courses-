@@ -17,7 +17,7 @@ A course object, assessment bank, or asset folder by itself is not a finished ce
 | Course | Current source state | Assessment source | Learner/visual source | Learning Hub production package | Performance mapping | Human/release state | Immediate machine priority |
 |---|---|---|---|---|---|---|---|
 | `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | `published`; Course 1 reference implementation | Published module checks + final + integrated practical | Full learner, instructor, remediation and reviewed visual layer | Reference package exists | Integrated Course 1 practical | Machine work complete; human validation gates remain open | Preserve as reference; do not weaken gates |
-| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items declared | 10 produced learner assets; 7 embedded visuals + 3 downloadable practice worksheets | Active package now includes objective coverage, learner materials, evidence dossier, instructor/remediation guide, accessibility review packet, human-review worklist, manifest + assets | Practical A; crosswalk `development` | Not release-ready; rendered/human/pilot/release evidence open | Item-level objective audit → Practical A crosswalk/assessor package → learner-surface/runtime QA → deployment evidence |
+| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items declared | 10 produced learner assets; 7 embedded visuals + 3 downloadable practice worksheets | Active package includes objective coverage, learner materials, evidence dossier, instructor guide, objective remediation/reassessment matrix, accessibility review packet, human-review worklist, manifest + assets | Practical A crosswalk exists and is source-tested; practical validation/calibration remain open | Not release-ready; rendered/human/pilot/release evidence open | Execute item-level objective audit → Practical A assessor/validation/calibration package → learner-surface/runtime QA → deployment evidence |
 | `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | `draft` v0.5.0 | M01 formative + final; 32 dedicated items declared | 6 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practical A; crosswalk `development` | Not release-ready | Convert after Course 2 package factory is proven |
 | `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 7 learner assets declared; visual registry present | `assets/` plus Practical B crosswalk status files | Practical B; crosswalk `development` | Not release-ready | Complete package after 2–3 |
 | `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 9 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practicals C/D/E; crosswalk `development` | Not release-ready | Complete package after 4 |
@@ -62,15 +62,26 @@ Course 2 package artifacts already added in this work block:
 - `LEARNER-MATERIALS.md`;
 - `EVIDENCE-DOSSIER.md`;
 - `instructor/INSTRUCTOR-GUIDE.md`;
+- `instructor/OBJECTIVE-REMEDIATION-MATRIX.md`;
 - `accessibility/COURSE2-RENDERED-ACCESSIBILITY-UX-REVIEW.md`;
 - `FINAL-HUMAN-REVIEW-WORKLIST.md`;
 - `COURSE-PACKAGE-MANIFEST.md`.
 
+Reusable tooling added:
+
+- `scripts/report-tech1-course-package-readiness.mjs`;
+- `scripts/audit-learning-hub-objective-coverage.mjs`.
+
+Existing Course 2 performance evidence discovered and preserved:
+
+- `registry/course2-practical-a-crosswalk.json`;
+- `scripts/test-course2-practical-crosswalk.mjs`.
+
 Remaining Course 2 machine priorities:
 
-- deterministic item-level objective coverage report for all 32 items;
-- controlled remediation/reassessment rules;
-- Practical A crosswalk/assessor package;
+- execute and record deterministic item-level objective coverage across all 32 question objects;
+- resolve any missing/imbalanced item-level objective or source coverage identified by that audit;
+- complete Practical A assessor/validation/calibration evidence without rebuilding the existing source-tested crosswalk;
 - learner-surface wiring and public asset-path verification;
 - responsive/runtime QA;
 - versioned review-queue generation;
@@ -96,10 +107,22 @@ Existing source-structure audit:
 node scripts/audit-tech1-course-package-source.mjs
 ```
 
-New cross-course package-readiness report:
+Cross-course package-readiness report:
 
 ```bash
 node scripts/report-tech1-course-package-readiness.mjs --human
+```
+
+Course-level objective learning-loop audit:
+
+```bash
+node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop
+```
+
+Add strict formative+summative item-level coverage when the course bank is expected to meet that stronger standard:
+
+```bash
+node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop --require-balanced-assessment
 ```
 
 Fail CI while any machine package signal is missing:
