@@ -114,11 +114,13 @@ for (const phrase of [
 ]) assert.ok(capstoneText.includes(phrase), `capstone governance text must include ${phrase}`);
 
 const program = read('content/credential-programs/CREDPROG-CULT-TECH-I-001.json');
+const machineLayer = read('registry/technician-i-machine-layer.json');
 assert.equal(program.status, 'draft');
-assert.equal(program.assessmentModel?.criticalFailureRuleSource, 'registry/technician-i-integrated-lab-plan.json');
-assert.deepEqual(program.assessmentModel?.criticalFailureRuleIds, plan.criticalFailureRules.map((rule) => rule.id));
-assert.equal(program.assessmentModel?.criticalFailurePolicyStatus, 'development');
+assert.match(program.assessmentModel?.passingRule ?? '', /credential-blocking critical failure/i);
 assert.equal(program.assessmentModel?.standardSettingStatus, 'provisional');
+assert.equal(program.assessmentModel?.noCriticalErrorsRequired, true);
+assert.equal(machineLayer.integratedLabPlan, 'registry/technician-i-integrated-lab-plan.json');
+assert.deepEqual(plan.criticalFailureRules.map((rule) => rule.id), ['CF-SAFETY-001', 'CF-IDENTITY-001', 'CF-INTEGRITY-001', 'CF-AUTHORITY-001', 'CF-HOLD-001']);
 
 const credentialAssessment = read('content/assessments/ASSESS-CRED-TECH1-001.json');
 assert.equal(credentialAssessment.status, 'draft');
