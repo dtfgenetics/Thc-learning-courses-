@@ -14,6 +14,7 @@ const categorySpecs = [
   {
     key: 'courseDefinition',
     label: 'controlled course definition',
+    stage: 'source-package',
     test: ({ coursePath, course }) =>
       exists(coursePath) &&
       Boolean(course.id && course.version && course.status && course.title && course.description) &&
@@ -24,6 +25,7 @@ const categorySpecs = [
   {
     key: 'instructionalGraph',
     label: 'course-specific instructional graph',
+    stage: 'source-package',
     test: ({ courseId }) => {
       const key = courseId.replace(/^COURSE-/, '');
       const modules = listDir('content/modules').filter((name) => name.startsWith(`MOD-${key}-`) && name.endsWith('.json'));
@@ -35,6 +37,7 @@ const categorySpecs = [
   {
     key: 'academicAssessment',
     label: 'academic assessment source',
+    stage: 'source-package',
     test: ({ courseId, course, profile }) => {
       const key = courseId.replace(/^COURSE-/, '');
       const formative = exists(`content/assessments/ASSESS-${key}-M01.json`);
@@ -46,30 +49,37 @@ const categorySpecs = [
   {
     key: 'learnerApplication',
     label: 'learner application package',
-    test: ({ docsDir }) =>
-      exists(`${docsDir}/LEARNER-MATERIALS.md`) ||
-      exists(`${docsDir}/student/STUDENT-WORKBOOK.md`) ||
-      exists(`${docsDir}/STUDENT-WORKBOOK.md`)
+    stage: 'source-package',
+    test: ({ docsDir, profile }) => profile === 'integrated-practice-lab'
+      ? exists(`${docsDir}/INTEGRATED-LAB-LEARNER-PACKET.md`)
+      : exists(`${docsDir}/LEARNER-MATERIALS.md`) ||
+        exists(`${docsDir}/student/STUDENT-WORKBOOK.md`) ||
+        exists(`${docsDir}/STUDENT-WORKBOOK.md`)
   },
   {
     key: 'objectiveAlignment',
     label: 'objective/practice/assessment/remediation evidence',
-    test: ({ docsDir, courseNumber }) =>
-      exists(`${docsDir}/OBJECTIVE-COVERAGE.md`) ||
-      exists(`${docsDir}/COURSE${courseNumber}-LESSON-PRACTICE-MAP.json`) ||
-      exists(`${docsDir}/COURSE-LESSON-PRACTICE-MAP.json`)
+    stage: 'source-package',
+    test: ({ docsDir, courseNumber, profile }) => profile === 'integrated-practice-lab'
+      ? exists(`${docsDir}/OBJECTIVE-PERFORMANCE-CROSSWALK.md`) && exists(`${docsDir}/REMEDIATION-RETEST-MATRIX.md`)
+      : exists(`${docsDir}/OBJECTIVE-COVERAGE.md`) ||
+        exists(`${docsDir}/COURSE${courseNumber}-LESSON-PRACTICE-MAP.json`) ||
+        exists(`${docsDir}/COURSE-LESSON-PRACTICE-MAP.json`)
   },
   {
     key: 'evidenceDossier',
     label: 'course evidence/source dossier',
-    test: ({ docsDir }) =>
-      exists(`${docsDir}/EVIDENCE-DOSSIER.md`) ||
-      exists(`${docsDir}/SOURCE-REGISTER.md`) ||
-      exists(`${docsDir}/SOURCE-AUDIT.md`)
+    stage: 'source-package',
+    test: ({ docsDir, profile }) => profile === 'integrated-practice-lab'
+      ? exists(`${docsDir}/INTEGRATED-EVIDENCE-DOSSIER.md`)
+      : exists(`${docsDir}/EVIDENCE-DOSSIER.md`) ||
+        exists(`${docsDir}/SOURCE-REGISTER.md`) ||
+        exists(`${docsDir}/SOURCE-AUDIT.md`)
   },
   {
     key: 'visualPlan',
     label: 'controlled visual/asset plan',
+    stage: 'source-package',
     test: ({ docsDir, courseNumber }) =>
       exists(`visuals/COURSE${courseNumber}-ASSET-REGISTRY.json`) ||
       exists(`${docsDir}/assets/visuals/COURSE${courseNumber}-VISUAL-REFERENCE-MANIFEST.md`) ||
@@ -78,21 +88,26 @@ const categorySpecs = [
   {
     key: 'instructorAssessorSupport',
     label: 'instructor/assessor support',
-    test: ({ docsDir }) =>
-      exists(`${docsDir}/instructor/INSTRUCTOR-GUIDE.md`) ||
-      exists(`${docsDir}/INSTRUCTOR-GUIDE.md`) ||
-      exists(`${docsDir}/practical/ASSESSOR-GUIDE.md`)
+    stage: 'source-package',
+    test: ({ docsDir, profile }) => profile === 'integrated-practice-lab'
+      ? exists(`${docsDir}/assessor/CAPSTONE-ASSESSOR-GUIDE.md`) && exists(`${docsDir}/assessor/CAPSTONE-CALIBRATION-VALIDATION-PACKET.md`)
+      : exists(`${docsDir}/instructor/INSTRUCTOR-GUIDE.md`) ||
+        exists(`${docsDir}/INSTRUCTOR-GUIDE.md`) ||
+        exists(`${docsDir}/practical/ASSESSOR-GUIDE.md`)
   },
   {
     key: 'accessibilityUxPacket',
     label: 'rendered accessibility/manual UX packet',
-    test: ({ docsDir, courseNumber }) =>
-      exists(`${docsDir}/accessibility/COURSE${courseNumber}-RENDERED-ACCESSIBILITY-UX-REVIEW.md`) ||
-      exists(`${docsDir}/accessibility/RENDERED-ACCESSIBILITY-UX-REVIEW.md`)
+    stage: 'source-package',
+    test: ({ docsDir, courseNumber, profile }) => profile === 'integrated-practice-lab'
+      ? exists(`${docsDir}/accessibility/COURSE7-INTEGRATED-LAB-ACCESSIBILITY-UX-REVIEW.md`)
+      : exists(`${docsDir}/accessibility/COURSE${courseNumber}-RENDERED-ACCESSIBILITY-UX-REVIEW.md`) ||
+        exists(`${docsDir}/accessibility/RENDERED-ACCESSIBILITY-UX-REVIEW.md`)
   },
   {
     key: 'humanReviewQueue',
     label: 'human review worklist/queue',
+    stage: 'source-package',
     test: ({ docsDir }) =>
       exists(`${docsDir}/FINAL-HUMAN-REVIEW-WORKLIST.md`) ||
       exists(`${docsDir}/REVIEW-PACKET.md`)
@@ -100,6 +115,7 @@ const categorySpecs = [
   {
     key: 'deploymentEvidence',
     label: 'public deployment/release evidence',
+    stage: 'deployment',
     test: ({ docsDir }) =>
       exists(`${docsDir}/RELEASE-EVIDENCE.md`) ||
       exists(`${docsDir}/PUBLIC-DEPLOYMENT-EVIDENCE.md`) ||
@@ -107,6 +123,8 @@ const categorySpecs = [
   }
 ];
 
+const sourceSpecs = categorySpecs.filter((spec) => spec.stage === 'source-package');
+const deploymentSpecs = categorySpecs.filter((spec) => spec.stage === 'deployment');
 const rows = [];
 for (const [index, courseId] of (program.requiredCourses ?? []).entries()) {
   const courseNumber = String(index + 1);
@@ -117,16 +135,21 @@ for (const [index, courseId] of (program.requiredCourses ?? []).entries()) {
   const profile = courseId.endsWith('-007') ? 'integrated-practice-lab' : 'ordinary-course';
   const context = { courseId, courseNumber, coursePath, docsDir, course, profile };
   const checks = Object.fromEntries(categorySpecs.map((spec) => [spec.key, Boolean(spec.test(context))]));
-  const passed = Object.values(checks).filter(Boolean).length;
-  const total = Object.keys(checks).length;
+  const sourceMissing = sourceSpecs.filter((spec) => !checks[spec.key]).map((spec) => spec.label);
+  const deploymentMissing = deploymentSpecs.filter((spec) => !checks[spec.key]).map((spec) => spec.label);
+  const sourcePassed = sourceSpecs.length - sourceMissing.length;
+  const deploymentPassed = deploymentSpecs.length - deploymentMissing.length;
   rows.push({
     courseId,
     title: course.title ?? null,
     lifecycle: course.status ?? 'missing',
     profile,
     checks,
-    machinePackageSignals: `${passed}/${total}`,
-    missing: categorySpecs.filter((spec) => !checks[spec.key]).map((spec) => spec.label),
+    sourcePackageSignals: `${sourcePassed}/${sourceSpecs.length}`,
+    deploymentSignals: `${deploymentPassed}/${deploymentSpecs.length}`,
+    sourcePackageMissing: sourceMissing,
+    deploymentMissing,
+    missing: [...sourceMissing, ...deploymentMissing],
     humanValidationOpen: true
   });
 }
@@ -139,7 +162,9 @@ const result = {
   summary: {
     courses: rows.length,
     sourceObjectsPresent: rows.filter((row) => row.lifecycle !== 'missing').length,
-    machinePackageSignalComplete: rows.filter((row) => row.missing.length === 0).length,
+    sourcePackageComplete: rows.filter((row) => row.sourcePackageMissing.length === 0).length,
+    deploymentVerified: rows.filter((row) => row.deploymentMissing.length === 0).length,
+    fullMachinePackageComplete: rows.filter((row) => row.missing.length === 0).length,
     humanValidationOpen: true,
     professionalCredentialIssuanceReady: false
   }
@@ -147,14 +172,18 @@ const result = {
 
 if (args.has('--human')) {
   console.log('Technician I course-package readiness');
-  console.log('Course | State | Machine signals | Missing');
+  console.log('Course | State | Source package | Deployment | Missing');
   for (const row of rows) {
-    console.log(`${row.courseId} | ${row.lifecycle} | ${row.machinePackageSignals} | ${row.missing.length ? row.missing.join('; ') : 'none'}`);
+    console.log(`${row.courseId} | ${row.lifecycle} | ${row.sourcePackageSignals} | ${row.deploymentSignals} | ${row.missing.length ? row.missing.join('; ') : 'none'}`);
   }
-  console.log(`Machine package signals complete: ${result.summary.machinePackageSignalComplete}/${result.summary.courses}`);
+  console.log(`Source packages complete: ${result.summary.sourcePackageComplete}/${result.summary.courses}`);
+  console.log(`Deployment evidence verified: ${result.summary.deploymentVerified}/${result.summary.courses}`);
+  console.log(`Full machine packages complete: ${result.summary.fullMachinePackageComplete}/${result.summary.courses}`);
   console.log('Human validation remains open. This report does not grant academic approval or professional credential issuance.');
 } else {
   console.log(JSON.stringify(result, null, 2));
 }
 
-if (args.has('--require-machine-package') && rows.some((row) => row.missing.length > 0)) process.exit(2);
+if (args.has('--require-source-package') && rows.some((row) => row.sourcePackageMissing.length > 0)) process.exit(2);
+if (args.has('--require-deployment') && rows.some((row) => row.deploymentMissing.length > 0)) process.exit(3);
+if (args.has('--require-machine-package') && rows.some((row) => row.missing.length > 0)) process.exit(4);
