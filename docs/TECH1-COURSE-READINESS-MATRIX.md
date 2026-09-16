@@ -18,9 +18,9 @@ A course object, assessment bank, or asset folder by itself is not a finished ce
 |---|---|---|---|---|---|---|---|
 | `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | `published`; Course 1 reference implementation | Published module checks + final + integrated practical | Full learner, instructor, remediation and reviewed visual layer | Reference package exists | Integrated Course 1 practical | Machine work complete; human validation gates remain open | Preserve as reference; do not weaken gates |
 | `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items | 10 produced learner assets; 7 embedded visuals + 3 downloadable practice worksheets | Objective coverage, learner materials, evidence dossier, instructor/remediation, assessor guide, calibration/validation packet, accessibility review, human-review worklist and manifest are present | Practical A crosswalk + assessor support present; actual calibration/validation evidence remains open | Controlled course remains draft; public learner projection is non-authoritative; human/pilot/release gates open | Confirm full CI → deployed responsive/readback QA → versioned review queue → truthful deployment evidence |
-| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | `draft` v0.5.0 | M01 formative + final; 32 dedicated items declared | 6 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practical A; crosswalk `development` | Not release-ready | Convert using the proven Course 2 package factory |
-| `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 7 learner assets declared; visual registry present | `assets/` plus Practical B crosswalk status files | Practical B; crosswalk `development` | Not release-ready | Complete package after 2–3 |
-| `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 9 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practicals C/D/E; crosswalk `development` | Not release-ready | Complete package after 4 |
+| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | `draft` v0.5.0 | M01 formative + final; 32 distinct dedicated items | 6 produced/mirrored learner assets; 4 embedded visuals + 2 downloadable worksheets | Objective coverage, learner materials, evidence dossier, instructor/remediation, accessibility review, human-review worklist and manifest are present | Practical A crosswalk maps all 5 objectives; shared Practical A calibration/validation remains open | Controlled course remains draft; human/pilot/release gates open | Confirm full CI → deployed responsive/readback QA → versioned review queue → truthful deployment evidence |
+| `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 7 learner assets declared; visual registry present | `assets/` plus Practical B crosswalk status files | Practical B; crosswalk `development` | Not release-ready | Convert using the proven Course 2/3 package factory |
+| `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 9 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practicals C/D/E; crosswalk `development` | Not release-ready | Complete package after Course 4 |
 | `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff | `draft` v0.3.0 | M01 formative + final; 36 dedicated items declared | Learner asset layer explicitly not built | No Course 6 Learning Hub package directory found | Practical F; crosswalk `development` | Not release-ready | Build learner/assets layer, then package |
 | `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab | `draft` v0.2.0 | M01 readiness assessment; ordinary final intentionally `null` | Integrated lab source exists; package layer incomplete | No Course 7 Learning Hub package directory found | Practicals A–F + `CAPSTONE-TECH1-SHIFT-001` | Pilot, evaluator calibration, standard setting and live credential form approval remain open | Finish only after Courses 2–6 package pattern is stable |
 
@@ -90,15 +90,33 @@ Remaining Course 2 machine priorities:
 
 Open human/evidence work remains technical review, instructional/assessment review, Practical A calibration and validation, accessibility approval, real pilot evidence, standard setting where applicable, and academic release approval.
 
-### 2. Courses 3–6 — reuse, do not reinvent
+### 2. Course 3 — second package-factory implementation established
 
-Course 2 now provides the package pattern. Apply the same architecture and validation logic to Courses 3, 4, 5 and 6 while keeping course-specific content, sources, practice and visuals distinct. Do not copy claims, scoring rules or references merely to satisfy file presence.
+Course 3 now applies the same architecture to a different technical domain instead of cloning Course 2 content. Its machine package includes:
 
-### 3. Course 7 — integrated performance package
+- five-objective learning-loop coverage;
+- 12 formative + 20 summative items with formative coverage `2/2/3/2/3` and at least four final items per objective;
+- six governed learner assets with repository/runtime paths and controlled Drive mirror records;
+- learner application materials and integrated scenario;
+- course-specific evidence dossier preserving VPD/light/data-integrity claim boundaries;
+- instructor and remediation/reassessment support;
+- rendered accessibility/UX review packet;
+- human-review worklist and package manifest;
+- Practical A crosswalk with stale learner-asset readiness metadata corrected;
+- `scripts/test-tech1-course3.mjs` runtime delivery checks for all six produced Course 3 assets;
+- strict Course 3 learning-loop/balanced-assessment enforcement in `.github/workflows/validate.yml`.
+
+Remaining Course 3 machine priorities are full CI confirmation, deployed responsive/readback QA, exact-version review-queue evidence and truthful deployment evidence. Human technical/assessment/accessibility/practical/pilot/release gates remain open.
+
+### 3. Courses 4–6 — reuse, do not reinvent
+
+Courses 2 and 3 now provide two working package examples. Apply the same architecture and validation logic to Courses 4, 5 and 6 while keeping course-specific content, sources, practice, performance evidence and visuals distinct. Do not copy claims, scoring rules or references merely to satisfy file presence.
+
+### 4. Course 7 — integrated performance package
 
 After Courses 2–6 are stable, finish Course 7 around Practicals A–F and the shift capstone, including evaluator equivalence/calibration and secure credential-form boundaries.
 
-### 4. Credential machine layer
+### 5. Credential machine layer
 
 Then close the remaining machine-resolvable Technician I artifacts: JTA/competency crosswalk package, controlled practical packages, capstone package, final credential blueprint, private operational assessment-store contract, equivalent-form rules, retake/remediation/accommodation/appeal/security procedures, retention/privacy draft, and issuance/verification runtime.
 
@@ -116,19 +134,19 @@ Cross-course package-readiness report:
 node scripts/report-tech1-course-package-readiness.mjs --human
 ```
 
-Course-level objective learning-loop audit:
-
-```bash
-node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop
-```
-
-Strict formative+summative item-level coverage:
+Course 2 strict objective learning-loop audit:
 
 ```bash
 node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop --require-balanced-assessment
 ```
 
-The strict Course 2 command is also enforced by `.github/workflows/validate.yml`.
+Course 3 strict objective learning-loop audit:
+
+```bash
+node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-003 --require-complete-learning-loop --require-balanced-assessment
+```
+
+Both strict commands are enforced by `.github/workflows/validate.yml`.
 
 Fail CI while any machine package signal is missing:
 
