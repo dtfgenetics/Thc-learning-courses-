@@ -1,131 +1,123 @@
 # Active Work — Technician I Completion
 
-**Status:** active  
+**Status:** active — source/package machine build complete; deployment and human validation remain  
 **Started:** 2026-09-15  
+**Updated:** 2026-09-16  
 **Credential program:** `CREDPROG-CULT-TECH-I-001 — THC Cultivation Technician I`
 
 ## Objective
 
-Finish the first complete professional training/certification pathway by using Course 1 as the package reference, upgrading Courses 2–7 to the same controlled standard, and then closing every Technician I credential-level machine deliverable while keeping human/pilot/security/release evidence fail-closed.
+Finish the first complete professional training/certification pathway while keeping academic/public course completion separate from professional credential authorization.
 
-## Course 1 reference state
+The project has now crossed an important boundary: **all seven Technician I source packages and the credential machine-control layer are built and deterministically enforced.** Remaining machine work is primarily truthful deployment/readback evidence and storage reconciliation. Human, pilot, psychometric, privacy/security and final release approvals remain open by design.
 
-`COURSE-LH-TECH1-001` is the reference implementation for future course packages.
+## Current seven-course state
 
-Machine/public preparation now includes:
+1. `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows — reference implementation; machine/public preparation complete; human validation open.
+2. `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records — source package complete; 32 dedicated items; Practical A; 10 governed learner assets.
+3. `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals — source package complete; 32 dedicated items; Practical A mapping; 6 governed learner assets.
+4. `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals — source package complete; 36 dedicated items; Practical B; 7 governed learner assets.
+5. `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care — source package complete; 36 dedicated items; Practicals C/D/E; 9 governed learner assets.
+6. `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff — source package complete; 36 dedicated items; Practical F; 8 repository learner assets; individual Drive mirrors remain pending.
+7. `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab — integrated source package complete; 12-item readiness check with two items per objective, Practicals A–F, 200-point capstone, five controlled critical-failure classes, equivalent-form/retest/evaluator/privacy controls.
 
-- 6 modules / 18 canonical lessons;
-- 12 controlled objectives;
-- 120 scored public academic knowledge items;
-- integrated practical;
-- learner workbook/activities and field references;
-- instructor/remediation/assessor materials;
-- canonical public teaching visuals across all 18 lessons;
-- responsive guided learner UI;
-- public deployment verification;
-- authoritative dynamic human-review queue;
-- objective → instruction → practice → assessment → remediation audit;
-- WCAG 2.2 AA rendered accessibility/manual UX review packet;
-- fail-closed completion status that does not fabricate human approval.
+The authoritative cross-course state is `docs/TECH1-COURSE-READINESS-MATRIX.md`. The source-package gate is executable through:
 
-`registry/course1-completion-status.json` is authoritative for Course 1 closure state. `machineResolvableWorkComplete` is true; `goldStandardPackageComplete` and `certificationEvidenceValidated` remain false until real human evidence exists.
+```bash
+node scripts/report-tech1-course-package-readiness.mjs --require-source-package
+```
 
-## Technician I course sequence
+## Credential machine layer now built
 
-1. `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows — reference package; machine work complete, human validation open.
-2. `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records — instruction/assessment draft; 32 dedicated items; mapped to Practical A.
-3. `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals — instruction/assessment draft; 32 dedicated items.
-4. `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals — instruction/assessment draft; 36 dedicated items; mapped to Practical B.
-5. `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care — instruction/assessment draft; 36 dedicated items; mapped to Practicals C/D/E.
-6. `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff — instruction/assessment draft; 36 dedicated items; mapped to Practical F.
-7. `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab — integrated-lab draft; readiness assessment, Practicals A–F mapping and capstone blueprint present.
+The credential-level machine controls now include:
 
-The Course 2–7 source milestones are substantial but are not equivalent to Course 1 package completion.
+- 13-domain JTA/competency/course/practical/capstone crosswalk: `registry/technician-i-jta-competency-crosswalk.json`;
+- integrated practical/capstone controls: `registry/technician-i-integrated-lab-plan.json`;
+- authoritative machine-layer registry: `registry/technician-i-machine-layer.json`;
+- fail-closed release-evidence registry: `registry/technician-i-release-evidence.json`;
+- public credential blueprint with **zero operational secure items**: `content/assessments/ASSESS-CRED-TECH1-001.json`;
+- secure assessment-store contract;
+- equivalent secure-form construction/rotation rules;
+- retest/remediation/accommodation/appeal/security policy draft;
+- candidate evidence retention/privacy draft;
+- capstone assessor/calibration packages;
+- credential issuance/verification workflow contract;
+- public read-only credential verification runtime and persistent credential status-transition infrastructure;
+- deterministic `scripts/test-tech1-machine-layer.mjs` and `scripts/test-tech1-release-readiness.mjs`.
 
-## Reusable course-package contract
+Current program-level critical-failure governance is aligned to the integrated lab plan: safety, identity/genealogy, data integrity, authority boundary, and active hold/release. These remain development rules until validation and formal standard setting.
 
-Each ordinary Learning Hub certification course must be able to demonstrate, without artificial content ceilings:
+## CI state
 
-1. **Course definition** — audience, scope, competencies, learning outcomes, evidence/assessment policy, version/status and credential-path mapping.
-2. **Controlled instructional graph** — resolvable modules and lessons with measurable objectives and evidence-backed instruction.
-3. **Objective alignment** — every controlled objective has instruction, applied practice, scored assessment coverage and remediation/reassessment guidance.
-4. **Learner application** — meaningful workbook/activity/scenario/job-aid evidence appropriate to the course rather than decorative filler.
-5. **Assessment package** — distinct formative and summative academic evidence, quality-reviewed items, scoring/remediation rules and explicit separation from the secure credential examination.
-6. **Performance mapping** — course-appropriate practical/capstone evidence and observable criteria where required.
-7. **Evidence/source dossier** — material scientific/safety claims trace to authoritative sources and course-specific review.
-8. **Visual plan** — only instructionally useful visuals, mapped to the correct lesson; factual/copy/accessibility/responsive QA required before publication.
-9. **Instructor/assessor support** — instructor guidance, remediation, exemplars and assessor material appropriate to the course.
-10. **Accessibility/manual UX packet** — machine tests plus real rendered WCAG 2.2 AA/manual learner review requirements.
-11. **Human review queue** — generated from current versioned objects; approvals never inferred from CI.
-12. **Public deployment evidence** — exact route/build/SHA, authenticated readback where applicable, and anonymous learner verification.
-13. **Release boundary** — academic course completion remains separate from professional credential issuance.
+The current Technician I structure workflow on the machine-layer enforcement head completed successfully. The main curriculum workflow now enforces:
 
-Course 7 uses the same principles but is an integrated practice-lab profile: the emphasis is performance integration, equivalent forms, evaluator calibration and capstone evidence rather than a redundant ordinary course final.
+- Course 2–6 complete learning-loop/balanced-assessment audits;
+- all seven source-package contracts;
+- Technician I credential machine-layer contract;
+- public credential-bank security boundary;
+- fail-closed Technician I release readiness;
+- the complete repository test suite.
 
-## Next machine work — strict order
+Green CI proves source/package consistency. It does **not** authorize professional credential issuance.
 
-### A. Package factory and cross-course audit
+## Remaining machine work — strict order
 
-- Encode the reusable package contract as deterministic validation instead of Course-1-only scripts wherever practical.
-- Audit Courses 2–7 against that contract.
-- Generate one authoritative readiness matrix showing present artifacts, missing machine deliverables and human-only gates.
-- Preserve existing source IDs and provenance; do not delete valid draft work simply because it predates the final package contract.
+### A. Deployment/readback closure for Courses 2–7
 
-### B. Upgrade Courses 2–6 one at a time
+For each course:
 
-For each course, in sequence:
+- verify the deployed learner route against the intended course/version;
+- perform responsive learner-surface QA across supported viewport classes;
+- verify learner visuals/resources load through the deployed runtime;
+- perform anonymous public readback where the surface is intended to be public;
+- record the exact build/SHA/route only after successful verification;
+- never create release evidence before the deployed result actually exists.
 
-- close content/evidence gaps;
-- verify objective/practice/assessment/remediation alignment;
-- complete learner workbook/applied evidence;
-- complete useful visual mapping/production specifications;
-- complete instructor/remediation material;
-- prepare rendered accessibility/manual UX review packet;
-- generate full human-review queue;
-- publish only after machine checks are green and public-state wording remains truthful;
-- record exact deployment evidence.
+### B. Course 6 storage reconciliation
 
-### C. Finish Course 7 integrated lab
+- mirror the eight Course 6 learner SVGs into the controlled Drive folder when a byte-transfer path is available;
+- update `visuals/COURSE6-ASSET-REGISTRY.json` only with real returned Drive file IDs/URLs;
+- do not fabricate mirror metadata.
 
-- verify all six practical mappings and lab tasks;
-- finalize capstone development package;
-- complete evaluator packet and equivalent-form/calibration protocol;
-- prepare accessibility/manual UX review;
-- preserve secure credential-form boundary.
+### C. Credential-runtime hardening only where release-safe
 
-### D. Finish Technician I credential machine layer
+- preserve the existing public read-only verification endpoint and status-transition audit infrastructure;
+- keep new credential issuance disabled until the private assessment/evidence decision system and release gates are approved;
+- do not create an admin minting shortcut that can bypass program readiness.
 
-After Courses 1–7 reach the reference package standard, finish the credential-level machine deliverables:
+### D. Synchronize governance records
 
-- final JTA/competency crosswalk package for human validation;
-- Practicals A–F controlled packages;
-- Cultivation Shift capstone package;
-- evaluator qualification/calibration/inter-rater protocols;
-- final credential assessment blueprint;
-- private operational item-bank/storage contract;
-- equivalent secure-form generation/rotation rules;
-- retake/remediation/accommodations/appeals/security procedures;
-- candidate evidence retention/privacy/deletion policy draft;
-- credential issuance/verification workflow implementation;
-- versioned release-evidence registry.
+- keep readiness matrix, release-evidence registry, package manifests and active-work status synchronized with exact versions/commits;
+- record new machine artifacts without advancing human gate states.
 
 ## Human gates that must remain real
 
 Do not mark any of the following complete using generated text, CI, synthetic records or assistant judgment:
 
 - technical/curriculum approval;
-- assessment-item approval;
+- assessment-item/blueprint approval;
 - rendered accessibility approval;
 - employer/SME JTA validation;
 - controlled learner/item pilot;
-- practical/capstone validation;
+- Practical A–F validation;
+- capstone validation;
 - evaluator calibration/inter-rater evidence;
-- secure operational assessment approval;
-- formal standard setting;
+- approved private operational item bank/store and equivalent forms;
+- formal standard setting and final decision rules;
 - candidate privacy/retention approval;
-- credential issuance workflow approval;
+- credential issuance/security workflow approval;
 - final Technician I program release approval.
+
+## Known design debt
+
+`COMP-SPACE-BIOSEC-001` is a shared competency whose current generic wording includes grow-space workflow **design**. Technician I uses only its operational sanitation/biosecurity subset and does not claim independent design authority. The Tech1 JTA crosswalk now makes that boundary explicit. A future competency-library refactor may split operational biosecurity execution from higher-level space/workflow design; do not broaden Technician I simply to match the shared competency wording.
 
 ## Definition of success for this active work block
 
-The machine-build portion of Technician I is complete only when all seven courses satisfy the reusable course-package contract, all credential-level technical artifacts are built, current CI is green, public academic surfaces are verified, private exam boundaries are intact, and the only unresolved release gates are ones requiring genuine human/pilot/security/standard-setting evidence.
+The remaining machine-build work is complete when:
+
+1. all seven source packages remain green under CI;
+2. Courses 2–7 have fresh truthful deployed responsive/readback evidence;
+3. Course 6 mirror metadata reflects actual Drive uploads;
+4. private exam boundaries and disabled issuance remain intact;
+5. the only unresolved release blockers require genuine human review, pilot evidence, evaluator/calibration evidence, security/privacy approval, formal standard setting, or final release authorization.
