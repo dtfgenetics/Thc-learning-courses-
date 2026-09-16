@@ -1,7 +1,7 @@
 {
   "id": "CREDPROG-CULT-TECH-I-001",
   "title": "THC Cultivation Technician I",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "credentialType": "professional-credential",
   "occupationalClaim": "The credential holder can safely execute routine commercial cultivation work under established SOPs, make required observations and measurements, preserve plant/material identity and traceability, document work accurately, perform permitted operator-level equipment care, and escalate abnormal or unauthorized conditions appropriately.",
@@ -57,7 +57,16 @@
       "PRACTICAL-TECH1-F"
     ],
     "capstone": "CAPSTONE-TECH1-SHIFT-001",
-    "passingRule": "Development rule only: candidate must meet the provisional written/scenario standard, satisfy all required practical performance criteria, complete the integrated shift capstone, and have no unresolved critical safety failure. Final cut scores require formal standard setting before release.",
+    "passingRule": "Development rule only: candidate must meet the provisional written/scenario standard, satisfy all required practical performance criteria, complete the integrated shift capstone, and have no unresolved credential-blocking critical failure. Final cut scores, domain rules and critical-failure decision rules require formal validation and standard setting before release.",
+    "criticalFailureRuleSource": "registry/technician-i-integrated-lab-plan.json",
+    "criticalFailureRuleIds": [
+      "CF-SAFETY-001",
+      "CF-IDENTITY-001",
+      "CF-INTEGRITY-001",
+      "CF-AUTHORITY-001",
+      "CF-HOLD-001"
+    ],
+    "criticalFailurePolicyStatus": "development",
     "standardSettingStatus": "provisional",
     "noCriticalErrorsRequired": true
   },
