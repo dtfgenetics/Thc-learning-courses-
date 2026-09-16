@@ -17,7 +17,7 @@ A course object, assessment bank, or asset folder by itself is not a finished ce
 | Course | Current source state | Assessment source | Learner/visual source | Learning Hub production package | Performance mapping | Human/release state | Immediate machine priority |
 |---|---|---|---|---|---|---|---|
 | `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | `published`; Course 1 reference implementation | Published module checks + final + integrated practical | Full learner, instructor, remediation and reviewed visual layer | Reference package exists | Integrated Course 1 practical | Machine work complete; human validation gates remain open | Preserve as reference; do not weaken gates |
-| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items declared | 10 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practical A; crosswalk `development` | Not release-ready | Build full Course 2 package first |
+| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items declared | 10 produced learner assets; 7 embedded visuals + 3 downloadable practice worksheets | Active package now includes objective coverage, learner materials, evidence dossier, instructor/remediation guide, accessibility review packet, human-review worklist, manifest + assets | Practical A; crosswalk `development` | Not release-ready; rendered/human/pilot/release evidence open | Item-level objective audit → Practical A crosswalk/assessor package → learner-surface/runtime QA → deployment evidence |
 | `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | `draft` v0.5.0 | M01 formative + final; 32 dedicated items declared | 6 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practical A; crosswalk `development` | Not release-ready | Convert after Course 2 package factory is proven |
 | `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 7 learner assets declared; visual registry present | `assets/` plus Practical B crosswalk status files | Practical B; crosswalk `development` | Not release-ready | Complete package after 2–3 |
 | `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 9 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practicals C/D/E; crosswalk `development` | Not release-ready | Complete package after 4 |
@@ -56,17 +56,24 @@ The machine layer must therefore finish all seven course packages and credential
 
 Preserve its existing course object, dedicated lessons/objectives, M01/final assessment source, Practical A mapping, visual registry and learner assets. Add the missing package evidence around them rather than replacing valid source.
 
-Required Course 2 production outputs next:
+Course 2 package artifacts already added in this work block:
 
-- objective-alignment report;
-- learner workbook/application package;
-- evidence/source dossier;
-- visual placement/QA manifest;
-- instructor/remediation guide;
-- assessor/practical crosswalk package;
-- rendered accessibility/manual UX review packet;
-- human-review worklist/packet;
-- package manifest;
+- `OBJECTIVE-COVERAGE.md`;
+- `LEARNER-MATERIALS.md`;
+- `EVIDENCE-DOSSIER.md`;
+- `instructor/INSTRUCTOR-GUIDE.md`;
+- `accessibility/COURSE2-RENDERED-ACCESSIBILITY-UX-REVIEW.md`;
+- `FINAL-HUMAN-REVIEW-WORKLIST.md`;
+- `COURSE-PACKAGE-MANIFEST.md`.
+
+Remaining Course 2 machine priorities:
+
+- deterministic item-level objective coverage report for all 32 items;
+- controlled remediation/reassessment rules;
+- Practical A crosswalk/assessor package;
+- learner-surface wiring and public asset-path verification;
+- responsive/runtime QA;
+- versioned review-queue generation;
 - release/deployment evidence only after the learner surface actually exists and is verified.
 
 ### 2. Courses 3–6 — reuse, do not reinvent
