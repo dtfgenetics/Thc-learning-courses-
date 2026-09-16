@@ -72,5 +72,15 @@ jobs:
         run: node scripts/test-public-credential-bank-boundary.mjs
       - name: Enforce fail-closed Technician I release readiness
         run: node scripts/test-tech1-release-readiness.mjs
-      - name: Run complete curriculum and credential audit suite
-        run: npm test
+      - name: Run complete curriculum and credential audit suite with diagnostics
+        id: complete_audit
+        run: node scripts/run-curriculum-audit-suite.mjs
+      - name: Upload curriculum audit diagnostics
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: curriculum-audit-diagnostics
+          path: artifacts/curriculum-audit-results.json
+          if-no-files-found: warn
+          retention-days: 14
