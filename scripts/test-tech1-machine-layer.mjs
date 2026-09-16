@@ -48,8 +48,11 @@ assert.deepEqual(labPlan.practicals.map((row) => row.id), expectedPracticals);
 const mappedPracticals = new Set(crosswalk.domains.flatMap((row) => row.practicals ?? []));
 for (const practical of expectedPracticals) assert.ok(mappedPracticals.has(practical), `practical absent from JTA crosswalk: ${practical}`);
 
-assert.deepEqual(program.assessmentModel?.criticalFailureRuleIds, labPlan.criticalFailureRules.map((row) => row.id));
-assert.equal(program.assessmentModel?.criticalFailurePolicyStatus, 'development');
+const expectedCriticalFailures = ['CF-SAFETY-001', 'CF-IDENTITY-001', 'CF-INTEGRITY-001', 'CF-AUTHORITY-001', 'CF-HOLD-001'];
+assert.deepEqual(labPlan.criticalFailureRules.map((row) => row.id), expectedCriticalFailures);
+assert.ok(labPlan.criticalFailureRules.every((row) => row.blocksCredentialEvidence === true));
+assert.match(program.assessmentModel?.passingRule ?? '', /credential-blocking critical failure/i);
+assert.equal(program.assessmentModel?.noCriticalErrorsRequired, true);
 assert.equal(program.assessmentModel?.standardSettingStatus, 'provisional');
 
 assert.equal(credentialAssessment.status, 'draft');
