@@ -9,122 +9,19 @@
     "publicDelivery": "Produced Course 6 learner assets live in the public repository and are served by the Academy runtime. Google Drive is a controlled production/reference mirror and does not replace the canonical repository asset."
   },
   "driveStorage": {
-    "folderId": null,
+    "folderId": "1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq",
+    "folderUrl": "https://drive.google.com/drive/folders/1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq",
     "folderName": "Course 6 — Harvest, Postharvest & Traceability Learning Boards",
-    "mirrorStatus": "pending"
+    "mirrorStatus": "folder-created-assets-pending"
   },
   "assets": [
-    {
-      "id": "VIS-LH-TECH1-006-001",
-      "status": "produced",
-      "deliveryType": "embedded-visual",
-      "title": "Harvest readiness and stop-work decision flow",
-      "learnerPath": "/assets/course6/harvest-readiness-stop-work.svg",
-      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-01"],
-      "objectiveIds": ["LO-LH-TECH1-006-01", "LO-LH-TECH1-006-04", "LO-LH-TECH1-006-05"],
-      "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024", "REF-OSHA-1910-22-WALKING", "REF-IPM-001"],
-      "purpose": "Teach authorization, destination, PPE, pathway, sanitation and receiving readiness plus stop/hold/escalation when conditions change.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-002",
-      "status": "produced",
-      "deliveryType": "embedded-visual",
-      "title": "Controlled harvest to dry-room receiving workflow",
-      "learnerPath": "/assets/course6/harvest-receiving-flow.svg",
-      "sourcePath": "apps/web/public/assets/course6/harvest-receiving-flow.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-02"],
-      "objectiveIds": ["LO-LH-TECH1-006-02", "LO-LH-TECH1-006-04", "LO-LH-TECH1-006-05"],
-      "references": ["REF-POSTHARVEST-001", "REF-IPM-001"],
-      "purpose": "Show clean handling, lot identity, suspect-material holds, verified receiving and monitored drying context without a universal fixed-day rule.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-003",
-      "status": "produced",
-      "deliveryType": "embedded-visual",
-      "title": "Source-to-output harvest genealogy",
-      "learnerPath": "/assets/course6/source-output-genealogy.svg",
-      "sourcePath": "apps/web/public/assets/course6/source-output-genealogy.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-03", "LESSON-LH-TECH1-006-04"],
-      "objectiveIds": ["LO-LH-TECH1-006-03", "LO-LH-TECH1-006-06"],
-      "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY", "REF-POSTHARVEST-001"],
-      "purpose": "Teach that new harvest/output identifiers extend source genealogy across transformation, destination, quantity and status rather than replacing source identity.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-004",
-      "status": "produced",
-      "deliveryType": "embedded-visual",
-      "title": "Quantity reconciliation and discrepancy control",
-      "learnerPath": "/assets/course6/reconciliation-discrepancy.svg",
-      "sourcePath": "apps/web/public/assets/course6/reconciliation-discrepancy.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-03", "LESSON-LH-TECH1-006-04"],
-      "objectiveIds": ["LO-LH-TECH1-006-06"],
-      "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-GS1-GLOBAL-TRACEABILITY"],
-      "purpose": "Teach preservation of both original outgoing and receiving evidence and controlled discrepancy resolution instead of overwriting or averaging to force agreement.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-005",
-      "status": "produced",
-      "deliveryType": "embedded-visual",
-      "title": "Harvest-to-dry-room reconstructable handoff",
-      "learnerPath": "/assets/course6/dry-room-handoff.svg",
-      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-04"],
-      "objectiveIds": ["LO-LH-TECH1-006-02", "LO-LH-TECH1-006-03", "LO-LH-TECH1-006-05", "LO-LH-TECH1-006-06"],
-      "references": ["REF-POSTHARVEST-001", "REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"],
-      "purpose": "Integrate identity, destination, quantity, condition, hold/deviation, authorized action, escalation and next action into a receiving-shift handoff.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-006",
-      "status": "produced",
-      "deliveryType": "downloadable-practice",
-      "title": "Harvest readiness practice worksheet",
-      "learnerPath": "/assets/course6/harvest-readiness-practice.svg",
-      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-practice.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-01"],
-      "objectiveIds": ["LO-LH-TECH1-006-01", "LO-LH-TECH1-006-04", "LO-LH-TECH1-006-05"],
-      "references": ["REF-NIOSH-CANNABIS-HAZARDS-2024", "REF-OSHA-1910-22-WALKING", "REF-IPM-001"],
-      "purpose": "Provide printable practice for authorization, identity, destination, PPE, pathway, tool/cart sanitation, changed conditions and stop/hold/escalation decisions.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-007",
-      "status": "produced",
-      "deliveryType": "downloadable-practice",
-      "title": "Harvest genealogy and reconciliation practice worksheet",
-      "learnerPath": "/assets/course6/traceability-reconciliation-practice.svg",
-      "sourcePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-03", "LESSON-LH-TECH1-006-04"],
-      "objectiveIds": ["LO-LH-TECH1-006-03", "LO-LH-TECH1-006-05", "LO-LH-TECH1-006-06"],
-      "references": ["REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"],
-      "purpose": "Provide printable practice for source/output genealogy, destination and status mapping, outgoing/receiving quantity evidence and controlled discrepancy handling.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    },
-    {
-      "id": "VIS-LH-TECH1-006-008",
-      "status": "produced",
-      "deliveryType": "downloadable-practice",
-      "title": "Dry-room receiving and shift handoff practice worksheet",
-      "learnerPath": "/assets/course6/dry-room-handoff-practice.svg",
-      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff-practice.svg",
-      "primaryLessons": ["LESSON-LH-TECH1-006-02", "LESSON-LH-TECH1-006-04"],
-      "objectiveIds": ["LO-LH-TECH1-006-02", "LO-LH-TECH1-006-03", "LO-LH-TECH1-006-05", "LO-LH-TECH1-006-06"],
-      "references": ["REF-POSTHARVEST-001", "REF-GS1-GLOBAL-TRACEABILITY", "REF-MHRA-GXP-DATA-INTEGRITY"],
-      "purpose": "Provide printable receiving and handoff practice that keeps normal receiving, partial completion, holds, discrepancies and unresolved follow-up visible.",
-      "driveMirrorStatus": "pending",
-      "version": "1.0.0"
-    }
+    {"id":"VIS-LH-TECH1-006-001","status":"produced","deliveryType":"embedded-visual","title":"Harvest readiness and stop-work decision flow","learnerPath":"/assets/course6/harvest-readiness-stop-work.svg","sourcePath":"apps/web/public/assets/course6/harvest-readiness-stop-work.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-stop-work.svg","primaryLessons":["LESSON-LH-TECH1-006-01"],"objectiveIds":["LO-LH-TECH1-006-01","LO-LH-TECH1-006-04","LO-LH-TECH1-006-05"],"references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-OSHA-1910-22-WALKING","REF-IPM-001"],"purpose":"Teach authorization, destination, PPE, pathway, sanitation and receiving readiness plus stop/hold/escalation when conditions change.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-002","status":"produced","deliveryType":"embedded-visual","title":"Controlled harvest to dry-room receiving workflow","learnerPath":"/assets/course6/harvest-receiving-flow.svg","sourcePath":"apps/web/public/assets/course6/harvest-receiving-flow.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-receiving-flow.svg","primaryLessons":["LESSON-LH-TECH1-006-02"],"objectiveIds":["LO-LH-TECH1-006-02","LO-LH-TECH1-006-04","LO-LH-TECH1-006-05"],"references":["REF-POSTHARVEST-001","REF-IPM-001"],"purpose":"Show clean handling, lot identity, suspect-material holds, verified receiving and monitored drying context without a universal fixed-day rule.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-003","status":"produced","deliveryType":"embedded-visual","title":"Source-to-output harvest genealogy","learnerPath":"/assets/course6/source-output-genealogy.svg","sourcePath":"apps/web/public/assets/course6/source-output-genealogy.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/source-output-genealogy.svg","primaryLessons":["LESSON-LH-TECH1-006-03","LESSON-LH-TECH1-006-04"],"objectiveIds":["LO-LH-TECH1-006-03","LO-LH-TECH1-006-06"],"references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY","REF-POSTHARVEST-001"],"purpose":"Teach that new harvest/output identifiers extend source genealogy across transformation, destination, quantity and status rather than replacing source identity.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-004","status":"produced","deliveryType":"embedded-visual","title":"Quantity reconciliation and discrepancy control","learnerPath":"/assets/course6/reconciliation-discrepancy.svg","sourcePath":"apps/web/public/assets/course6/reconciliation-discrepancy.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/reconciliation-discrepancy.svg","primaryLessons":["LESSON-LH-TECH1-006-03","LESSON-LH-TECH1-006-04"],"objectiveIds":["LO-LH-TECH1-006-06"],"references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-GS1-GLOBAL-TRACEABILITY"],"purpose":"Teach preservation of both original outgoing and receiving evidence and controlled discrepancy resolution instead of overwriting or averaging to force agreement.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-005","status":"produced","deliveryType":"embedded-visual","title":"Harvest-to-dry-room reconstructable handoff","learnerPath":"/assets/course6/dry-room-handoff.svg","sourcePath":"apps/web/public/assets/course6/dry-room-handoff.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff.svg","primaryLessons":["LESSON-LH-TECH1-006-04"],"objectiveIds":["LO-LH-TECH1-006-02","LO-LH-TECH1-006-03","LO-LH-TECH1-006-05","LO-LH-TECH1-006-06"],"references":["REF-POSTHARVEST-001","REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"],"purpose":"Integrate identity, destination, quantity, condition, hold/deviation, authorized action, escalation and next action into a receiving-shift handoff.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-006","status":"produced","deliveryType":"downloadable-practice","title":"Harvest readiness practice worksheet","learnerPath":"/assets/course6/harvest-readiness-practice.svg","sourcePath":"apps/web/public/assets/course6/harvest-readiness-practice.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-practice.svg","primaryLessons":["LESSON-LH-TECH1-006-01"],"objectiveIds":["LO-LH-TECH1-006-01","LO-LH-TECH1-006-04","LO-LH-TECH1-006-05"],"references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-OSHA-1910-22-WALKING","REF-IPM-001"],"purpose":"Provide printable practice for authorization, identity, destination, PPE, pathway, tool/cart sanitation, changed conditions and stop/hold/escalation decisions.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-007","status":"produced","deliveryType":"downloadable-practice","title":"Harvest genealogy and reconciliation practice worksheet","learnerPath":"/assets/course6/traceability-reconciliation-practice.svg","sourcePath":"apps/web/public/assets/course6/traceability-reconciliation-practice.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/traceability-reconciliation-practice.svg","primaryLessons":["LESSON-LH-TECH1-006-03","LESSON-LH-TECH1-006-04"],"objectiveIds":["LO-LH-TECH1-006-03","LO-LH-TECH1-006-05","LO-LH-TECH1-006-06"],"references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"],"purpose":"Provide printable practice for source/output genealogy, destination and status mapping, outgoing/receiving quantity evidence and controlled discrepancy handling.","driveMirrorStatus":"pending","version":"1.0.0"},
+    {"id":"VIS-LH-TECH1-006-008","status":"produced","deliveryType":"downloadable-practice","title":"Dry-room receiving and shift handoff practice worksheet","learnerPath":"/assets/course6/dry-room-handoff-practice.svg","sourcePath":"apps/web/public/assets/course6/dry-room-handoff-practice.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff-practice.svg","primaryLessons":["LESSON-LH-TECH1-006-02","LESSON-LH-TECH1-006-04"],"objectiveIds":["LO-LH-TECH1-006-02","LO-LH-TECH1-006-03","LO-LH-TECH1-006-05","LO-LH-TECH1-006-06"],"references":["REF-POSTHARVEST-001","REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"],"purpose":"Provide printable receiving and handoff practice that keeps normal receiving, partial completion, holds, discrepancies and unresolved follow-up visible.","driveMirrorStatus":"pending","version":"1.0.0"}
   ]
 }
