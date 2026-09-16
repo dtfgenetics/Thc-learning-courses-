@@ -58,15 +58,6 @@
     ],
     "capstone": "CAPSTONE-TECH1-SHIFT-001",
     "passingRule": "Development rule only: candidate must meet the provisional written/scenario standard, satisfy all required practical performance criteria, complete the integrated shift capstone, and have no unresolved credential-blocking critical failure. Final cut scores, domain rules and critical-failure decision rules require formal validation and standard setting before release.",
-    "criticalFailureRuleSource": "registry/technician-i-integrated-lab-plan.json",
-    "criticalFailureRuleIds": [
-      "CF-SAFETY-001",
-      "CF-IDENTITY-001",
-      "CF-INTEGRITY-001",
-      "CF-AUTHORITY-001",
-      "CF-HOLD-001"
-    ],
-    "criticalFailurePolicyStatus": "development",
     "standardSettingStatus": "provisional",
     "noCriticalErrorsRequired": true
   },
