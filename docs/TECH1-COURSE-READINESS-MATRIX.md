@@ -1,7 +1,7 @@
 # Technician I Course Readiness Matrix
 
 **Program:** `CREDPROG-CULT-TECH-I-001 — THC Cultivation Technician I`  
-**Audit date:** 2026-09-15  
+**Audit date:** 2026-09-16  
 **Package contract:** `docs/LEARNING-HUB-COURSE-PACKAGE-CONTRACT.md`  
 **Reference implementation:** `COURSE-LH-TECH1-001`  
 **Machine reporter:** `scripts/report-tech1-course-package-readiness.mjs`
@@ -17,8 +17,8 @@ A course object, assessment bank, or asset folder by itself is not a finished ce
 | Course | Current source state | Assessment source | Learner/visual source | Learning Hub production package | Performance mapping | Human/release state | Immediate machine priority |
 |---|---|---|---|---|---|---|---|
 | `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | `published`; Course 1 reference implementation | Published module checks + final + integrated practical | Full learner, instructor, remediation and reviewed visual layer | Reference package exists | Integrated Course 1 practical | Machine work complete; human validation gates remain open | Preserve as reference; do not weaken gates |
-| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items declared | 10 produced learner assets; 7 embedded visuals + 3 downloadable practice worksheets | Active package includes objective coverage, learner materials, evidence dossier, instructor guide, objective remediation/reassessment matrix, accessibility review packet, human-review worklist, manifest + assets | Practical A crosswalk exists and is source-tested; practical validation/calibration remain open | Not release-ready; rendered/human/pilot/release evidence open | Execute item-level objective audit → Practical A assessor/validation/calibration package → learner-surface/runtime QA → deployment evidence |
-| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | `draft` v0.5.0 | M01 formative + final; 32 dedicated items declared | 6 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practical A; crosswalk `development` | Not release-ready | Convert after Course 2 package factory is proven |
+| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | `draft` v0.10.0 | M01 formative + final; 32 dedicated items | 10 produced learner assets; 7 embedded visuals + 3 downloadable practice worksheets | Objective coverage, learner materials, evidence dossier, instructor/remediation, assessor guide, calibration/validation packet, accessibility review, human-review worklist and manifest are present | Practical A crosswalk + assessor support present; actual calibration/validation evidence remains open | Controlled course remains draft; public learner projection is non-authoritative; human/pilot/release gates open | Confirm full CI → deployed responsive/readback QA → versioned review queue → truthful deployment evidence |
+| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | `draft` v0.5.0 | M01 formative + final; 32 dedicated items declared | 6 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practical A; crosswalk `development` | Not release-ready | Convert using the proven Course 2 package factory |
 | `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 7 learner assets declared; visual registry present | `assets/` plus Practical B crosswalk status files | Practical B; crosswalk `development` | Not release-ready | Complete package after 2–3 |
 | `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | `draft` v0.4.0 | M01 formative + final; 36 dedicated items declared | 9 learner assets declared; visual registry present | Package directory currently contains only `assets/` | Practicals C/D/E; crosswalk `development` | Not release-ready | Complete package after 4 |
 | `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff | `draft` v0.3.0 | M01 formative + final; 36 dedicated items declared | Learner asset layer explicitly not built | No Course 6 Learning Hub package directory found | Practical F; crosswalk `development` | Not release-ready | Build learner/assets layer, then package |
@@ -52,44 +52,47 @@ The machine layer must therefore finish all seven course packages and credential
 
 ## Production order
 
-### 1. Course 2 — prove the package factory
+### 1. Course 2 — package factory established
 
-Preserve its existing course object, dedicated lessons/objectives, M01/final assessment source, Practical A mapping, visual registry and learner assets. Add the missing package evidence around them rather than replacing valid source.
+Preserve its existing course object, dedicated lessons/objectives, M01/final assessment source, Practical A mapping, visual registry and learner assets. Add evidence around valid source rather than replacing it.
 
-Course 2 package artifacts already added in this work block:
+Course 2 package artifacts now include:
 
 - `OBJECTIVE-COVERAGE.md`;
 - `LEARNER-MATERIALS.md`;
 - `EVIDENCE-DOSSIER.md`;
 - `instructor/INSTRUCTOR-GUIDE.md`;
 - `instructor/OBJECTIVE-REMEDIATION-MATRIX.md`;
+- `assessor/PRACTICAL-A-ASSESSOR-GUIDE.md`;
+- `assessor/PRACTICAL-A-CALIBRATION-VALIDATION-PACKET.md`;
 - `accessibility/COURSE2-RENDERED-ACCESSIBILITY-UX-REVIEW.md`;
 - `FINAL-HUMAN-REVIEW-WORKLIST.md`;
 - `COURSE-PACKAGE-MANIFEST.md`.
 
-Reusable tooling added:
+Reusable tooling/gates include:
 
 - `scripts/report-tech1-course-package-readiness.mjs`;
-- `scripts/audit-learning-hub-objective-coverage.mjs`.
+- `scripts/audit-learning-hub-objective-coverage.mjs`;
+- `scripts/test-tech1-course2.mjs` runtime delivery checks for all governed Course 2 assets;
+- `.github/workflows/validate.yml` strict Course 2 learning-loop/balanced-assessment audit on every governed branch push/PR.
 
-Existing Course 2 performance evidence discovered and preserved:
+Existing Course 2 performance evidence preserved:
 
 - `registry/course2-practical-a-crosswalk.json`;
 - `scripts/test-course2-practical-crosswalk.mjs`.
 
 Remaining Course 2 machine priorities:
 
-- execute and record deterministic item-level objective coverage across all 32 question objects;
-- resolve any missing/imbalanced item-level objective or source coverage identified by that audit;
-- complete Practical A assessor/validation/calibration evidence without rebuilding the existing source-tested crosswalk;
-- learner-surface wiring and public asset-path verification;
-- responsive/runtime QA;
-- versioned review-queue generation;
-- release/deployment evidence only after the learner surface actually exists and is verified.
+- confirm the complete CI audit passes on the current source;
+- perform responsive learner-surface QA on the deployed runtime;
+- generate/verify review queue records against exact reviewed versions;
+- record release/deployment evidence only after fresh anonymous public readback succeeds.
+
+Open human/evidence work remains technical review, instructional/assessment review, Practical A calibration and validation, accessibility approval, real pilot evidence, standard setting where applicable, and academic release approval.
 
 ### 2. Courses 3–6 — reuse, do not reinvent
 
-Once Course 2 passes the deterministic package reporter and course-specific QA, apply the same file architecture and generation/validation logic to Courses 3, 4, 5 and 6. Course-specific content, sources, practice and visuals remain distinct.
+Course 2 now provides the package pattern. Apply the same architecture and validation logic to Courses 3, 4, 5 and 6 while keeping course-specific content, sources, practice and visuals distinct. Do not copy claims, scoring rules or references merely to satisfy file presence.
 
 ### 3. Course 7 — integrated performance package
 
@@ -119,11 +122,13 @@ Course-level objective learning-loop audit:
 node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop
 ```
 
-Add strict formative+summative item-level coverage when the course bank is expected to meet that stronger standard:
+Strict formative+summative item-level coverage:
 
 ```bash
 node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop --require-balanced-assessment
 ```
+
+The strict Course 2 command is also enforced by `.github/workflows/validate.yml`.
 
 Fail CI while any machine package signal is missing:
 
