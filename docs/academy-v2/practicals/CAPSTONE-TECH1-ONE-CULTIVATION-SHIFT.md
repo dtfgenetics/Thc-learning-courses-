@@ -173,9 +173,21 @@ Future runtime versions can store an event stream so the credential can show wha
 - documentation/data integrity: 25
 - prioritization, escalation and handoff: 20
 
-**Target pass:** 160/200 (80%).
+**Development target pass:** 160/200 (80%).
 
-The learner should also resolve any serious safety or identity problem before completion. This is a competency expectation, not a bureaucratic release gate.
+The 160-point target is provisional until formal standard-setting/decision-rule approval. A numerical target by itself is not evidence that the cut score is valid.
+
+## Development critical-failure rules
+
+The controlled integrated-lab plan currently defines five behaviors that block acceptance of credential evidence for the affected performance until remediation and reevaluation occur:
+
+1. **`CF-SAFETY-001`** — knowingly continue through an unresolved life-safety or serious uncontrolled hazard when stop/emergency procedure is required.
+2. **`CF-IDENTITY-001`** — knowingly move, merge, relabel or transform material after an unresolved identity conflict in a way that breaks genealogy.
+3. **`CF-INTEGRITY-001`** — falsify, overwrite or force a measurement, count, weight or record to hide a discrepancy.
+4. **`CF-AUTHORITY-001`** — perform an unauthorized pesticide/treatment selection, technical repair/bypass or product-release decision outside supplied Technician I authority.
+5. **`CF-HOLD-001`** — knowingly move or release material from an active contamination/quality hold without the required authorization.
+
+These are development governance rules. Their final wording and operation require technical review, evaluator calibration, pilot evidence and credential decision-rule approval. Evaluators must not invent additional critical-failure rules during administration.
 
 ## Form generation
 
@@ -210,6 +222,10 @@ The underlying competency blueprint stays constant while surface details change.
 - feedback after submission
 - randomized equivalent form
 - complete event/evidence record
+- secure credential form required
+- evaluator/critical-failure controls required
+
+Credential mode must remain disabled until the controlled lab plan records secure/live credential-form approval after all required release gates.
 
 ## Employer-facing output
 
@@ -225,12 +241,12 @@ The public credential should not reveal test questions. It can report validated 
 
 ## Portfolio artifact
 
-The learner receives a sanitized **Cultivation Shift Performance Summary** containing:
+The learner receives a sanitized **Cultivation Shift Performance Summary** containing approved fields such as:
 - competency results
-- practical artifacts
+- approved practical artifacts
 - sample work records
 - scenario categories completed
-- capstone score/status
+- capstone status/score disclosure only as permitted by the final privacy/credential policy
 - portfolio links selected by the learner
 
-This becomes the centerpiece of the Technician I employment portfolio.
+The public/portfolio artifact must not expose secure questions, answer keys, protected event logic, evaluator private notes or accommodation information.
