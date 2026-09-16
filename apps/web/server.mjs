@@ -324,9 +324,9 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       if (sendStatic(res, file, type, req.method)) return;
     }
 
-    const courseOneAssetMatch = url.pathname.match(/^\/assets\/course1\/([A-Za-z0-9._-]+\.svg)$/);
-    if ((req.method === 'GET' || req.method === 'HEAD') && courseOneAssetMatch) {
-      const assetFile = path.join('assets', 'course1', courseOneAssetMatch[1]);
+    const courseAssetMatch = url.pathname.match(/^\/assets\/(course\d+)\/([A-Za-z0-9._-]+\.svg)$/);
+    if ((req.method === 'GET' || req.method === 'HEAD') && courseAssetMatch) {
+      const assetFile = path.join('assets', courseAssetMatch[1], courseAssetMatch[2]);
       if (sendStatic(res, assetFile, 'image/svg+xml; charset=utf-8', req.method)) return;
     }
     return json(res, 404, { error: 'not-found' });
