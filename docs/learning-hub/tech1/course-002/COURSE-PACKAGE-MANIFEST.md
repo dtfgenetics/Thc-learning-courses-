@@ -17,6 +17,8 @@
 - formative assessment: `content/assessments/ASSESS-LH-TECH1-002-M01.json`
 - summative academic assessment: `content/assessments/ASSESS-LH-TECH1-002-FINAL.json`
 - performance mapping: `PRACTICAL-TECH1-A`
+- development crosswalk: `registry/course2-practical-a-crosswalk.json`
+- crosswalk source test: `scripts/test-course2-practical-crosswalk.mjs`
 
 ## Learner/visual source
 
@@ -37,21 +39,25 @@ The asset registry remains authoritative for exact asset IDs, lesson/objective m
 | `LEARNER-MATERIALS.md` | present | applied learner activities, worksheets, integrated scenario and assessment boundary |
 | `EVIDENCE-DOSSIER.md` | present | course-specific source roles, verification notes, claim boundaries and open review work |
 | `instructor/INSTRUCTOR-GUIDE.md` | present | facilitation, misconception, remediation and development scoring guidance |
+| `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` | present | objective-specific corrective coaching, fresh practice and equivalent reassessment guidance |
 | `accessibility/COURSE2-RENDERED-ACCESSIBILITY-UX-REVIEW.md` | prepared / not approved | manual WCAG 2.2 AA and learner-UX review packet |
 | `FINAL-HUMAN-REVIEW-WORKLIST.md` | present / gates open | real SME, ID, assessment, practical, accessibility, pilot and release gates |
+| `COURSE-PACKAGE-MANIFEST.md` | present | controlled package inventory and remaining work |
 | `assets/` | present | Course 2 package assets/reference material |
 
 ## Source/package checks already supported
 
 - `scripts/audit-tech1-course-package-source.mjs` — shared development-source structure audit for Technician I Courses 2–7.
-- `scripts/report-tech1-course-package-readiness.mjs` — cross-course package-signal report added 2026-09-15.
+- `scripts/report-tech1-course-package-readiness.mjs` — cross-course package-signal report.
+- `scripts/audit-learning-hub-objective-coverage.mjs` — reusable item-level objective/instruction/practice/assessment/remediation audit; supports strict learning-loop and balanced-assessment modes.
+- `scripts/test-course2-practical-crosswalk.mjs` — proves all five Course 2 objectives map to real Practical A tasks, scoring categories, expected evidence and deliverables while validation gates remain open.
 - `docs/TECH1-COURSE-READINESS-MATRIX.md` — cross-course control surface.
 
 ## Machine work still required for Course 2
 
-1. Build deterministic item-level objective coverage counts from all 32 dedicated question objects.
-2. Complete explicit controlled remediation/reassessment rules rather than relying only on instructor guidance.
-3. Complete/validate the Course 2 → Practical A performance crosswalk and assessor package.
+1. Execute/record the reusable item-level objective audit against all 32 Course 2 question objects and resolve any coverage/reference failures it identifies.
+2. Keep the new remediation/reassessment matrix synchronized with objective or lesson changes and pass it through human instructional/assessment review.
+3. Preserve the already-built Practical A crosswalk; complete Practical A assessor/validation/calibration evidence rather than rebuilding the mapping.
 4. Verify every public Course 2 asset path and downloadable worksheet through the actual learner-serving runtime.
 5. Wire/verify the complete Course 2 learner surface using the canonical lesson objects and registered assets.
 6. Run responsive/static/runtime QA appropriate to the project.
@@ -63,7 +69,7 @@ The asset registry remains authoritative for exact asset IDs, lesson/objective m
 - subject-matter/technical review;
 - instructional-design review;
 - assessment-definition/item review;
-- Practical A assessor/performance review;
+- Practical A assessor/performance validation and evaluator calibration evidence;
 - rendered accessibility/manual UX approval;
 - real learner pilot evidence;
 - applicable standard-setting/decision-rule approval;
