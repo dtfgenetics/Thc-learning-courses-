@@ -1,8 +1,8 @@
 # Course Package Manifest — COURSE-LH-TECH1-002
 
 **Course:** Plant Observation, Growth Stages & Crop Records  
-**Package state:** machine package substantially built; human validation and deployment evidence remain open  
-**Date:** 2026-09-16
+**Package state:** machine source package substantially built; human validation and deployment evidence remain open  
+**Date:** 2026-09-17
 
 ## Canonical source
 
@@ -19,6 +19,7 @@
 - performance mapping: `PRACTICAL-TECH1-A`
 - development crosswalk: `registry/course2-practical-a-crosswalk.json`
 - crosswalk source test: `scripts/test-course2-practical-crosswalk.mjs`
+- fail-closed completion registry: `registry/course2-completion-status.json`
 
 ## Learner/visual source
 
@@ -36,6 +37,7 @@ The asset registry remains authoritative for exact asset IDs, lesson/objective m
 | Artifact | Status | Purpose |
 |---|---|---|
 | `OBJECTIVE-COVERAGE.md` | present | objective → instruction → practice → assessment/performance alignment and open gaps |
+| `ASSESSMENT-COVERAGE-REPORT.md` | present | item-level formative/summative objective distribution and assessment-quality boundary |
 | `LEARNER-MATERIALS.md` | present | applied learner activities, worksheets, integrated scenario and assessment boundary |
 | `EVIDENCE-DOSSIER.md` | present | course-specific source roles, verification notes, claim boundaries and open review work |
 | `instructor/INSTRUCTOR-GUIDE.md` | present | facilitation, misconception, remediation and development scoring guidance |
@@ -44,6 +46,7 @@ The asset registry remains authoritative for exact asset IDs, lesson/objective m
 | `assessor/PRACTICAL-A-CALIBRATION-VALIDATION-PACKET.md` | present / evidence pending | controlled plan and blank evidence record for technical review, calibration, pilot, standard setting, fairness and operational approval |
 | `accessibility/COURSE2-RENDERED-ACCESSIBILITY-UX-REVIEW.md` | prepared / not approved | manual WCAG 2.2 AA and learner-UX review packet |
 | `FINAL-HUMAN-REVIEW-WORKLIST.md` | present / gates open | real SME, ID, assessment, practical, accessibility, pilot and release gates |
+| `registry/course2-completion-status.json` | fail-closed control | authoritative distinction between machine-built evidence, remaining machine work and genuine human/evidence gates |
 | `COURSE-PACKAGE-MANIFEST.md` | present | controlled package inventory and remaining work |
 | `assets/` | present | Course 2 package assets/reference material |
 
@@ -53,22 +56,36 @@ The asset registry remains authoritative for exact asset IDs, lesson/objective m
 - `scripts/report-tech1-course-package-readiness.mjs` — cross-course package-signal report.
 - `scripts/audit-learning-hub-objective-coverage.mjs` — reusable item-level objective/instruction/practice/assessment/remediation audit; supports strict learning-loop and balanced-assessment modes.
 - `scripts/test-course2-practical-crosswalk.mjs` — proves all five Course 2 objectives map to real Practical A tasks, scoring categories, expected evidence and deliverables while validation gates remain open.
-- `scripts/test-tech1-course2.mjs` — checks the Course 2 source package and now starts the real Academy HTTP server to verify every produced Course 2 learner SVG is delivered from its controlled `/assets/course2/` path with SVG content type and accessible `<title>`/`<desc>` metadata; it also rejects invalid course directories and missing assets.
-- `apps/web/server.mjs` — learner-asset delivery now uses a constrained `/assets/course<number>/<svg-file>` route instead of a Course-1-only route, so future governed course asset folders can use the same runtime contract.
+- `scripts/test-tech1-course2.mjs` — checks Course 2 package-artifact presence, objective-specific remediation/reassessment sections, item-level formative/summative objective coverage, reference-backed items, applied/analyze summative demand, answer-key balance, Practical A crosswalk, fail-closed completion state and all 10 governed assets through the real Academy HTTP server.
+- `scripts/test-course2-visual-registry.mjs` — verifies the governed Course 2 visual registry.
+- `apps/web/server.mjs` — learner-asset delivery uses a constrained `/assets/course<number>/<svg-file>` route so governed course asset folders share a consistent runtime contract.
 - `.github/workflows/validate.yml` — push/PR quality workflow runs the complete `npm test` suite; `npm test` includes `tech1:course2:test`.
 - `docs/TECH1-COURSE-READINESS-MATRIX.md` — cross-course control surface.
 
 ## Assessment/objective repository verification
 
-Current Course 2 source contains 32 distinct scored question objects: 12 formative plus 20 summative. Repository inspection on 2026-09-16 found all 32 objects carrying reference fields. Summative coverage is four items for each of the five Course 2 objectives; formative coverage is distributed across all five objectives. The canonical deterministic audit remains `scripts/audit-learning-hub-objective-coverage.mjs` and must continue to pass in strict learning-loop/balanced-assessment mode whenever the bank changes.
+The current Course 2 source contains 32 distinct scored question objects: 12 formative plus 20 summative. All assessed items are required by the deterministic tests to retain evidence references.
+
+Current item-level objective distribution:
+
+| Objective | Formative | Summative | Total |
+|---|---:|---:|---:|
+| `LO-LH-TECH1-002-01` | 1 | 4 | 5 |
+| `LO-LH-TECH1-002-02` | 2 | 4 | 6 |
+| `LO-LH-TECH1-002-03` | 4 | 4 | 8 |
+| `LO-LH-TECH1-002-04` | 3 | 4 | 7 |
+| `LO-LH-TECH1-002-05` | 2 | 4 | 6 |
+| **Total** | **12** | **20** | **32** |
+
+Every controlled objective therefore has both formative and summative academic evidence, and the current 20-item summative form is evenly distributed at four items per objective. This proves structural coverage only; human item-quality review, pilot evidence and standard-setting decisions remain open.
 
 ## Machine work still required for Course 2
 
-1. Confirm the current CI run passes the updated Course 2 runtime regression and complete repository audit suite.
-2. Run/retain the strict objective learning-loop audit after any assessment, objective or remediation change.
-3. Verify responsive learner rendering and interaction behavior on the deployed learner surface, not just source files.
-4. Generate/verify review queue records against the exact source versions used for human review.
-5. Perform fresh anonymous public readback after deployment and record truthful release/deployment evidence.
+1. Confirm the current CI run passes the strengthened Course 2 production regression and complete repository audit suite.
+2. Verify the learner-facing Course 2 route, lesson navigation, practice interactions and assessment workflow rather than asset delivery alone.
+3. Generate and verify authoritative versioned Course 2 review-queue/packet records against the exact source versions used for human review.
+4. Perform deployed responsive/manual learner-surface QA and fresh anonymous public readback after an actual deployment.
+5. Record truthful release/deployment evidence with the exact route, build/run and source/site SHA only after verification succeeds.
 
 ## Human/evidence gates that remain open
 
@@ -77,7 +94,7 @@ Current Course 2 source contains 32 distinct scored question objects: 12 formati
 - assessment-definition/item review;
 - Practical A technical approval, assessor calibration/inter-rater evidence and performance validation;
 - rendered accessibility/manual UX approval;
-- real learner pilot evidence;
+- real learner/item/practical pilot evidence;
 - applicable standard-setting/decision-rule approval;
 - academic release approval.
 
