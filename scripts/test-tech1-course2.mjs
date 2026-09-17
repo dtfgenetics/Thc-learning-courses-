@@ -133,6 +133,46 @@ server.listen(0, '127.0.0.1');
 await once(server, 'listening');
 try {
   const base = `http://127.0.0.1:${server.address().port}`;
+
+  const catalogResponse = await fetch(`${base}/api/catalog`);
+  assert.equal(catalogResponse.status, 200, 'Course 2 staging catalog should be available');
+  const catalog = await catalogResponse.json();
+  const courseTwo = (catalog.courses ?? []).find((entry) => entry.id === course.id);
+  assert.ok(courseTwo, 'Course 2 must appear in the draft-preview Academy catalog');
+  const observationModule = (courseTwo.modules ?? []).find((entry) => entry.id === module.id);
+  assert.ok(observationModule, 'Course 2 dedicated observation module must appear in the learner catalog graph');
+  const catalogLessonIds = (observationModule.lessons ?? []).map((entry) => entry.id).filter(Boolean);
+  assert.deepEqual(catalogLessonIds, module.lessons, 'Course 2 dedicated lesson ordering must match the canonical module');
+
+  for (const lessonId of module.lessons) {
+    const sourceLesson = read(`content/lessons/${lessonId}.json`);
+    const lessonResponse = await fetch(`${base}/api/lessons/${lessonId}`);
+    assert.equal(lessonResponse.status, 200, `${lessonId} should be reachable through the learner lesson endpoint`);
+    const lesson = await lessonResponse.json();
+    assert.equal(lesson.id, lessonId);
+    assert.equal(Object.hasOwn(lesson, 'assessment'), false, `${lessonId} learner projection must not expose assessment source linkage`);
+    assert.equal(Object.hasOwn(lesson, 'questions'), false, `${lessonId} learner projection must not expose raw question objects`);
+    assert.ok(Array.isArray(lesson.content?.blocks) && lesson.content.blocks.length > 0, `${lessonId} must expose ordered rich content blocks`);
+    for (const block of lesson.content.blocks) {
+      if (block.type === 'image') {
+        assert.match(block.src ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${lessonId} image blocks must use governed Course 2 asset paths`);
+        assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${lessonId} image blocks must retain learner-facing alt text`);
+      }
+    }
+
+    const practiceResponse = await fetch(`${base}/api/lessons/${lessonId}/practice?seed=course2-route-qa`);
+    assert.equal(practiceResponse.status, 200, `${lessonId} practice endpoint should be reachable`);
+    const practice = await practiceResponse.json();
+    assert.equal(practice.presentationSeed, 'course2-route-qa');
+    assert.ok(Array.isArray(practice.items) && practice.items.length > 0, `${lessonId} should expose objective-aligned formative practice in draft preview`);
+    const lessonObjectives = new Set(sourceLesson.learningObjectives ?? []);
+    assert.ok(practice.items.every((item) => lessonObjectives.has(item.objective)), `${lessonId} practice must stay inside the lesson objective set`);
+    for (const item of practice.items) {
+      assert.equal(Object.hasOwn(item, 'rationale'), false, `${item.id} pre-answer practice projection should not expose the source rationale`);
+      assert.equal(Object.hasOwn(item, 'references'), false, `${item.id} learner practice projection should not expose internal source-reference IDs`);
+    }
+  }
+
   for (const asset of producedAssets) {
     assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 2 learner path`);
     const response = await fetch(`${base}${asset.learnerPath}`);
@@ -152,4 +192,4 @@ try {
   await once(server, 'close');
 }
 
-console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
+console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, learner catalog/lesson/practice routes, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
