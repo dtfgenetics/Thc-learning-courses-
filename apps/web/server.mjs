@@ -124,30 +124,48 @@ export function sanitizeAssessmentStimulus(blocks) {
   return sanitized;
 }
 
-export function presentPracticeItem(item, seed) {
+function preparePracticeItem(item, seed) {
   const pairs = item.choices.map((choice, index) => ({ choice, sourceIndex: index }));
   const random = seededRandom(`${seed}:${item.id}`);
   for (let index = pairs.length - 1; index > 0; index -= 1) {
     const swapIndex = Math.floor(random() * (index + 1));
     [pairs[index], pairs[swapIndex]] = [pairs[swapIndex], pairs[index]];
   }
-  const correct = pairs.findIndex((pair) => pair.sourceIndex === item.correct);
+  const correctIndex = pairs.findIndex((pair) => pair.sourceIndex === item.correct);
   const stimulus = sanitizeAssessmentStimulus(item.stimulus);
-  return {
+  const presentation = {
     id: item.id,
     competency: item.competency,
     objective: item.objective ?? null,
     stem: item.stem,
     ...(stimulus.length ? { stimulus } : {}),
     choices: pairs.map((pair) => pair.choice),
-    correct,
-    rationale: item.rationale,
     difficulty: item.difficulty
+  };
+  return { presentation, correctIndex, rationale: item.rationale ?? '' };
+}
+
+export function presentPracticeItem(item, seed) {
+  return preparePracticeItem(item, seed).presentation;
+}
+
+function gradePracticeItem(item, seed, selectedIndex) {
+  if (!Number.isInteger(selectedIndex)) return null;
+  const prepared = preparePracticeItem(item, seed);
+  if (selectedIndex < 0 || selectedIndex >= prepared.presentation.choices.length) return null;
+  return {
+    itemId: item.id,
+    isCorrect: selectedIndex === prepared.correctIndex,
+    correctChoice: prepared.presentation.choices[prepared.correctIndex],
+    rationale: prepared.rationale
   };
 }
 
+function validPracticeSeed(value) {
+  return typeof value === 'string' && /^[A-Za-z0-9._-]{1,64}$/.test(value);
+}
 function normalizePracticeSeed(value) {
-  if (typeof value === 'string' && /^[A-Za-z0-9._-]{1,64}$/.test(value)) return value;
+  if (validPracticeSeed(value)) return value;
   return crypto.randomUUID();
 }
 
@@ -212,7 +230,7 @@ export function loadPublicLesson(id, { previewDrafts = true } = {}) {
   return safeLesson(lesson, publicReleaseIds);
 }
 
-export function loadLessonPracticeItems(id, { previewDrafts = true, seed = 'practice' } = {}) {
+function loadLessonPracticeSourceItems(id, { previewDrafts = true } = {}) {
   if (!/^LESSON-[A-Z0-9-]+$/.test(id)) return [];
   const target = path.join(root, 'content/lessons', `${id}.json`);
   if (!fs.existsSync(target)) return [];
@@ -226,11 +244,20 @@ export function loadLessonPracticeItems(id, { previewDrafts = true, seed = 'prac
   return readDirJson('content/questions')
     .filter((item) => item.purpose === 'formative' && competencies.has(item.competency) && isVisible(item, previewDrafts, publicReleaseIds))
     .filter((item) => objectives.size === 0 || !item.objective || objectives.has(item.objective))
-    .filter((item) => Array.isArray(item.choices) && item.choices.length >= 2 && Number.isInteger(item.correct) && item.correct >= 0 && item.correct < item.choices.length)
-    .map((item) => presentPracticeItem(item, seed));
+    .filter((item) => Array.isArray(item.choices) && item.choices.length >= 2 && Number.isInteger(item.correct) && item.correct >= 0 && item.correct < item.choices.length);
 }
 
-export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-checkpoint' } = {}) {
+export function loadLessonPracticeItems(id, { previewDrafts = true, seed = 'practice' } = {}) {
+  return loadLessonPracticeSourceItems(id, { previewDrafts }).map((item) => presentPracticeItem(item, seed));
+}
+
+export function gradeLessonPracticeItem(id, { itemId, selectedIndex, seed, previewDrafts = true } = {}) {
+  if (!validPracticeSeed(seed) || typeof itemId !== 'string') return null;
+  const item = loadLessonPracticeSourceItems(id, { previewDrafts }).find((entry) => entry.id === itemId);
+  return item ? gradePracticeItem(item, seed, selectedIndex) : null;
+}
+
+function loadModuleAssessmentSource(id, { previewDrafts = true } = {}) {
   if (!/^MOD-[A-Z0-9-]+$/.test(id)) return null;
   const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
   const assessments = new Map(readDirJson('content/assessments').map((item) => [item.id, item]));
@@ -245,8 +272,15 @@ export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-
     const item = questions.get(itemId);
     if (!item || item.purpose !== 'formative' || !isVisible(item, previewDrafts, publicReleaseIds)) return null;
     if (!Array.isArray(item.choices) || item.choices.length < 2 || !Number.isInteger(item.correct) || item.correct < 0 || item.correct >= item.choices.length) return null;
-    items.push(presentPracticeItem(item, seed));
+    items.push(item);
   }
+  return { module, assessment, items, publicReleaseIds };
+}
+
+export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-checkpoint' } = {}) {
+  const source = loadModuleAssessmentSource(id, { previewDrafts });
+  if (!source) return null;
+  const { module, assessment, items, publicReleaseIds } = source;
   return {
     module: { id: module.id, title: module.title, version: module.version, status: publicStatus(module, publicReleaseIds) },
     assessment: {
@@ -260,8 +294,16 @@ export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-
       totalItems: items.length
     },
     presentationSeed: seed,
-    items
+    items: items.map((item) => presentPracticeItem(item, seed))
   };
+}
+
+export function gradeModuleAssessmentItem(id, { itemId, selectedIndex, seed, previewDrafts = true } = {}) {
+  if (!validPracticeSeed(seed) || typeof itemId !== 'string') return null;
+  const source = loadModuleAssessmentSource(id, { previewDrafts });
+  if (!source) return null;
+  const item = source.items.find((entry) => entry.id === itemId);
+  return item ? gradePracticeItem(item, seed, selectedIndex) : null;
 }
 
 function securityHeaders(res, contentType) {
@@ -281,6 +323,37 @@ function sendStatic(res, fileName, contentType, method = 'GET') {
   if (method === 'HEAD') res.end(); else res.end(fs.readFileSync(target));
   return true;
 }
+function readRequestJson(req, maxBytes = 16384) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    let bytes = 0;
+    let settled = false;
+    req.on('data', (chunk) => {
+      if (settled) return;
+      bytes += chunk.length;
+      if (bytes > maxBytes) {
+        settled = true;
+        reject(new Error('request-body-too-large'));
+        return;
+      }
+      chunks.push(chunk);
+    });
+    req.on('end', () => {
+      if (settled) return;
+      try {
+        const text = Buffer.concat(chunks).toString('utf8');
+        resolve(text ? JSON.parse(text) : {});
+      } catch {
+        reject(new Error('invalid-json'));
+      }
+    });
+    req.on('error', (error) => {
+      if (settled) return;
+      settled = true;
+      reject(error);
+    });
+  });
+}
 
 export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
   const previewDrafts = env.NODE_ENV !== 'production' && env.ACADEMY_PREVIEW_DRAFTS !== '0';
@@ -288,7 +361,7 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
   if (!api && env.NODE_ENV !== 'production') {
     try { api = createApiHandler({ env }); } catch { api = null; }
   }
-  return function handler(req, res) {
+  return async function handler(req, res) {
     let url; try { url = new URL(req.url, 'http://localhost'); } catch { return json(res, 400, { error: 'invalid-url' }); }
     if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
     if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
@@ -300,11 +373,27 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       const presentationSeed = normalizePracticeSeed(url.searchParams.get('seed'));
       return json(res, 200, { lessonId: practiceMatch[1], presentationSeed, items: loadLessonPracticeItems(practiceMatch[1], { previewDrafts, seed: presentationSeed }) });
     }
+    const practiceGradeMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)\/practice\/grade$/);
+    if (req.method === 'POST' && practiceGradeMatch) {
+      let body;
+      try { body = await readRequestJson(req); } catch (error) { return json(res, 400, { error: error.message === 'request-body-too-large' ? 'request-body-too-large' : 'invalid-json' }); }
+      if (typeof body.itemId !== 'string' || !Number.isInteger(body.selectedIndex) || !validPracticeSeed(body.presentationSeed)) return json(res, 400, { error: 'invalid-practice-response' });
+      const result = gradeLessonPracticeItem(practiceGradeMatch[1], { itemId: body.itemId, selectedIndex: body.selectedIndex, seed: body.presentationSeed, previewDrafts });
+      return result ? json(res, 200, result) : json(res, 404, { error: 'practice-item-not-found' });
+    }
     const moduleAssessmentMatch = url.pathname.match(/^\/api\/modules\/(MOD-[A-Z0-9-]+)\/assessment$/);
     if (req.method === 'GET' && moduleAssessmentMatch) {
       const presentationSeed = normalizePracticeSeed(url.searchParams.get('seed'));
       const payload = loadModuleAssessment(moduleAssessmentMatch[1], { previewDrafts, seed: presentationSeed });
       return payload ? json(res, 200, payload) : json(res, 404, { error: 'module-assessment-not-found' });
+    }
+    const moduleGradeMatch = url.pathname.match(/^\/api\/modules\/(MOD-[A-Z0-9-]+)\/assessment\/grade$/);
+    if (req.method === 'POST' && moduleGradeMatch) {
+      let body;
+      try { body = await readRequestJson(req); } catch (error) { return json(res, 400, { error: error.message === 'request-body-too-large' ? 'request-body-too-large' : 'invalid-json' }); }
+      if (typeof body.itemId !== 'string' || !Number.isInteger(body.selectedIndex) || !validPracticeSeed(body.presentationSeed)) return json(res, 400, { error: 'invalid-assessment-response' });
+      const result = gradeModuleAssessmentItem(moduleGradeMatch[1], { itemId: body.itemId, selectedIndex: body.selectedIndex, seed: body.presentationSeed, previewDrafts });
+      return result ? json(res, 200, result) : json(res, 404, { error: 'assessment-item-not-found' });
     }
     if (api && (url.pathname.startsWith('/api/v1/') || url.pathname === '/readyz')) return api(req, res);
 
