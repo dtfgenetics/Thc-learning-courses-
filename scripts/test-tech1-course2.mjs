@@ -168,10 +168,54 @@ try {
     const lessonObjectives = new Set(sourceLesson.learningObjectives ?? []);
     assert.ok(practice.items.every((item) => lessonObjectives.has(item.objective)), `${lessonId} practice must stay inside the lesson objective set`);
     for (const item of practice.items) {
-      assert.equal(Object.hasOwn(item, 'rationale'), false, `${item.id} pre-answer practice projection should not expose the source rationale`);
+      assert.equal(Object.hasOwn(item, 'correct'), false, `${item.id} pre-answer practice projection must not expose the shuffled answer key`);
+      assert.equal(Object.hasOwn(item, 'rationale'), false, `${item.id} pre-answer practice projection must not expose the source rationale`);
       assert.equal(Object.hasOwn(item, 'references'), false, `${item.id} learner practice projection should not expose internal source-reference IDs`);
     }
+
+    const sample = practice.items[0];
+    const gradeResponse = await fetch(`${base}/api/lessons/${lessonId}/practice/grade`, {
+      method: 'POST',
+      headers: { accept: 'application/json', 'content-type': 'application/json' },
+      body: JSON.stringify({ itemId: sample.id, selectedIndex: 0, presentationSeed: practice.presentationSeed })
+    });
+    assert.equal(gradeResponse.status, 200, `${lessonId} should provide post-response formative feedback`);
+    const grade = await gradeResponse.json();
+    assert.equal(grade.itemId, sample.id);
+    assert.equal(typeof grade.isCorrect, 'boolean');
+    assert.ok(typeof grade.correctChoice === 'string' && sample.choices.includes(grade.correctChoice), `${sample.id} grading feedback should identify a presented choice`);
+    assert.ok(typeof grade.rationale === 'string', `${sample.id} grading feedback should provide post-answer rationale`);
   }
+
+  const moduleResponse = await fetch(`${base}/api/modules/${module.id}/assessment?seed=course2-module-qa`);
+  assert.equal(moduleResponse.status, 200, 'Course 2 module checkpoint should be reachable in draft preview');
+  const moduleCheckpoint = await moduleResponse.json();
+  assert.equal(moduleCheckpoint.presentationSeed, 'course2-module-qa');
+  assert.equal(moduleCheckpoint.items.length, formative.items.length);
+  for (const item of moduleCheckpoint.items) {
+    assert.equal(Object.hasOwn(item, 'correct'), false, `${item.id} module checkpoint must not expose the shuffled answer key before response`);
+    assert.equal(Object.hasOwn(item, 'rationale'), false, `${item.id} module checkpoint must not expose rationale before response`);
+    assert.equal(Object.hasOwn(item, 'references'), false, `${item.id} module checkpoint must not expose internal source-reference IDs`);
+  }
+  const moduleSample = moduleCheckpoint.items[0];
+  const moduleGradeResponse = await fetch(`${base}/api/modules/${module.id}/assessment/grade`, {
+    method: 'POST',
+    headers: { accept: 'application/json', 'content-type': 'application/json' },
+    body: JSON.stringify({ itemId: moduleSample.id, selectedIndex: 0, presentationSeed: moduleCheckpoint.presentationSeed })
+  });
+  assert.equal(moduleGradeResponse.status, 200, 'Course 2 module checkpoint should grade only after a learner response');
+  const moduleGrade = await moduleGradeResponse.json();
+  assert.equal(moduleGrade.itemId, moduleSample.id);
+  assert.equal(typeof moduleGrade.isCorrect, 'boolean');
+  assert.ok(typeof moduleGrade.correctChoice === 'string' && moduleSample.choices.includes(moduleGrade.correctChoice));
+  assert.ok(typeof moduleGrade.rationale === 'string');
+
+  const invalidGrade = await fetch(`${base}/api/modules/${module.id}/assessment/grade`, {
+    method: 'POST',
+    headers: { accept: 'application/json', 'content-type': 'application/json' },
+    body: JSON.stringify({ itemId: moduleSample.id, selectedIndex: 0, presentationSeed: 'bad seed with spaces' })
+  });
+  assert.equal(invalidGrade.status, 400, 'invalid presentation seeds must fail closed rather than grading against a new random form');
 
   for (const asset of producedAssets) {
     assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 2 learner path`);
@@ -192,4 +236,4 @@ try {
   await once(server, 'close');
 }
 
-console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, learner catalog/lesson/practice routes, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
+console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
