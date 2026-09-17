@@ -6,7 +6,7 @@
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 2 now has a substantial controlled package: source instruction, balanced formative/summative assessment coverage, governed learner assets, objective remediation, Practical A mapping, assessor guidance, calibration protocol, evidence dossier, accessibility review packet and human-review worklist. Remaining machine work is learner-surface/package verification, authoritative review-queue generation, deployment verification and any defects exposed by those checks. Human technical, assessment, accessibility, practical/pilot/calibration and release gates remain open.",
+  "machineCompletionBoundary": "Course 2 now has a substantial controlled source package: instruction, balanced formative/summative assessment coverage, governed learner assets, objective remediation, Practical A mapping, canonical assessor guidance and calibration/validation packet, evidence dossier, accessibility review packet and human-review worklist. Remaining machine work is learner-surface interaction/navigation verification, authoritative versioned review-queue generation, fresh deployment/readback evidence and any defects exposed by those checks. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -28,14 +28,15 @@
         "docs/learning-hub/tech1/course-002/instructor/OBJECTIVE-REMEDIATION-MATRIX.md"
       ],
       "humanGateRequired": true,
-      "note": "Current 32-item academic bank covers all five controlled objectives. Formative counts are 1/2/4/3/2; the 20-item summative form contains four items per objective. Structural coverage does not replace human item-quality review or pilot evidence."
+      "note": "The current 32-item academic bank covers all five controlled objectives. Formative counts are 1/2/4/3/2; the 20-item summative form contains exactly four items per objective. Structural coverage does not replace human item-quality review or pilot evidence."
     },
     {
       "id": "learner-application-package",
-      "state": "built-needs-runtime-and-human-review",
+      "state": "built-needs-deployed-interaction-and-human-review",
       "evidence": [
         "docs/learning-hub/tech1/course-002/LEARNER-MATERIALS.md",
-        "visuals/COURSE2-ASSET-REGISTRY.json"
+        "visuals/COURSE2-ASSET-REGISTRY.json",
+        "scripts/test-tech1-course2.mjs"
       ],
       "humanGateRequired": true
     },
@@ -48,7 +49,7 @@
         "scripts/test-tech1-course2.mjs"
       ],
       "humanGateRequired": true,
-      "note": "The current production test verifies all 10 governed Course 2 SVG assets through the Academy runtime, including MIME type, SVG markup, accessible title/description and expected 404 behavior. Rendered visual quality still requires human review."
+      "note": "The production test verifies all 10 governed Course 2 SVG assets through the Academy runtime, including MIME type, SVG markup, accessible title/description and expected 404 behavior. Rendered visual quality and responsive/manual UX still require human review."
     },
     {
       "id": "evidence-and-source-audit",
@@ -75,18 +76,18 @@
       "evidence": [
         "registry/course2-practical-a-crosswalk.json",
         "scripts/test-course2-practical-crosswalk.mjs",
-        "docs/learning-hub/tech1/course-002/practical/ASSESSOR-GUIDE.md"
+        "docs/learning-hub/tech1/course-002/assessor/PRACTICAL-A-ASSESSOR-GUIDE.md"
       ],
       "humanGateRequired": true
     },
     {
-      "id": "evaluator-calibration-protocol",
-      "state": "protocol-built-evidence-not-started",
+      "id": "evaluator-calibration-validation-package",
+      "state": "packet-built-evidence-pending",
       "evidence": [
-        "docs/learning-hub/tech1/course-002/practical/CALIBRATION-PROTOCOL.md"
+        "docs/learning-hub/tech1/course-002/assessor/PRACTICAL-A-CALIBRATION-VALIDATION-PACKET.md"
       ],
       "humanGateRequired": true,
-      "note": "Protocol exists; no evaluator calibration completion or inter-rater evidence is claimed."
+      "note": "The packet defines technical review, evaluator calibration, response-process, pilot, fairness, equivalent-form and decision-rule evidence requirements. Its pending fields remain pending; no calibration completion, inter-rater reliability, practical validation or cut-score approval is claimed."
     },
     {
       "id": "rendered-accessibility-review",
@@ -131,10 +132,10 @@
     }
   ],
   "nextMachineActions": [
-    "strengthen Course 2 production tests to require every controlled objective in both formative and summative evidence and require the Course 2 package artifacts",
-    "verify the learner-facing Course 2 route/course navigation and assessment workflow rather than asset delivery alone",
-    "generate the authoritative versioned Course 2 review queue/packet from current source objects",
-    "record public deployment/readback evidence only after the Course 2 learner surface is actually deployed and verified"
+    "confirm CI passes the strengthened Course 2 production test and current repository validation suite",
+    "verify the learner-facing Course 2 route, lesson navigation, practice and assessment workflow rather than asset delivery alone",
+    "generate and verify the authoritative versioned Course 2 review queue/packet from the current source objects",
+    "record public deployment/readback evidence only after the Course 2 learner surface is deployed and verified"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
