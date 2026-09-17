@@ -49,7 +49,11 @@ assert.equal(crosswalk.validationBoundary?.pilotEvidenceImplied,false);
 assert.equal(crosswalk.validationBoundary?.interRaterEvidenceImplied,false);
 assert.equal(crosswalk.courseSpecificReadiness?.objectiveCoverageMapped,true);
 assert.equal(crosswalk.courseSpecificReadiness?.practicalMappingBuilt,true);
-assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt,false);
+assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt,true);
+assert.equal(crosswalk.courseSpecificReadiness?.visualRegistry,'visuals/COURSE6-ASSET-REGISTRY.json');
+assert.equal(crosswalk.courseSpecificReadiness?.producedLearnerAssets,8);
+assert.equal(crosswalk.courseSpecificReadiness?.driveFolderCreated,true);
+assert.equal(crosswalk.courseSpecificReadiness?.driveAssetMirroring,'pending');
 assert.equal(crosswalk.courseSpecificReadiness?.humanTechnicalReview,'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.renderedAccessibilityReview,'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.practicalValidation,'not-started');
@@ -59,4 +63,4 @@ assert.notEqual(releaseEvidence.gates?.renderedAccessibilityReview,'approved');
 assert.notEqual(releaseEvidence.gates?.practicalValidation,'validated');
 assert.notEqual(releaseEvidence.gates?.controlledPilotEvidence,'accepted');
 
-console.log('Course 6 Practical F crosswalk passed: all six objectives map to literal development-stage harvest/postharvest evidence while product-release, human, pilot and validation gates remain open.');
+console.log('Course 6 Practical F crosswalk passed: all six objectives map to literal development-stage harvest/postharvest evidence, eight learner assets are built, Drive asset mirroring remains pending, and product-release/human/pilot/validation gates remain open.');
