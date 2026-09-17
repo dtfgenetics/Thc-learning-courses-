@@ -119,6 +119,22 @@ function practiceSeed() {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
+async function gradeFormativeResponse(url, { itemId, selectedIndex, presentationSeed }) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { accept: 'application/json', 'content-type': 'application/json' },
+    body: JSON.stringify({ itemId, selectedIndex, presentationSeed })
+  });
+  if (!response.ok) throw new Error(`Feedback request failed (${response.status})`);
+  return response.json();
+}
+
+function formativeFeedback(result) {
+  return result.isCorrect
+    ? `Correct. ${result.rationale ?? ''}`
+    : `Not quite. The best answer is: ${result.correctChoice ?? 'the keyed response'}. ${result.rationale ?? ''}`;
+}
+
 function renderPracticeSection(article, lesson) {
   const section = document.createElement('section');
   section.className = 'lesson-section practice-section';
@@ -158,14 +174,30 @@ function renderPracticeSection(article, lesson) {
           input.type = 'radio';
           input.name = name;
           input.value = String(choiceIndex);
-          input.addEventListener('change', () => {
+          input.addEventListener('change', async () => {
+            if (fieldset.dataset.answered === 'true' || fieldset.dataset.submitting === 'true') return;
+            fieldset.dataset.submitting = 'true';
             const inputs = [...fieldset.querySelectorAll('input[type="radio"]')];
             inputs.forEach((control) => { control.disabled = true; });
-            const isCorrect = choiceIndex === item.correct;
-            feedback.dataset.state = isCorrect ? 'correct' : 'incorrect';
-            feedback.textContent = isCorrect
-              ? `Correct. ${item.rationale ?? ''}`
-              : `Not quite. The best answer is: ${item.choices[item.correct]}. ${item.rationale ?? ''}`;
+            feedback.dataset.state = '';
+            feedback.textContent = 'Checking response…';
+            try {
+              const result = await gradeFormativeResponse(`/api/lessons/${encodeURIComponent(lesson.id)}/practice/grade`, {
+                itemId: item.id,
+                selectedIndex: choiceIndex,
+                presentationSeed: payload.presentationSeed
+              });
+              fieldset.dataset.answered = 'true';
+              feedback.dataset.state = result.isCorrect ? 'correct' : 'incorrect';
+              feedback.textContent = formativeFeedback(result);
+            } catch (error) {
+              delete fieldset.dataset.submitting;
+              inputs.forEach((control) => { control.disabled = false; });
+              feedback.dataset.state = 'incorrect';
+              feedback.textContent = `Feedback unavailable: ${error.message}. Try again.`;
+              return;
+            }
+            delete fieldset.dataset.submitting;
           });
           label.append(input, text('span', choice));
           options.append(label);
@@ -223,18 +255,33 @@ function renderModuleAssessment(payload) {
       input.type = 'radio';
       input.name = name;
       input.value = String(choiceIndex);
-      input.addEventListener('change', () => {
-        if (fieldset.dataset.answered === 'true') return;
-        fieldset.dataset.answered = 'true';
-        [...fieldset.querySelectorAll('input[type="radio"]')].forEach((control) => { control.disabled = true; });
-        answered += 1;
-        const isCorrect = choiceIndex === item.correct;
-        if (isCorrect) correct += 1;
-        feedback.dataset.state = isCorrect ? 'correct' : 'incorrect';
-        feedback.textContent = isCorrect
-          ? `Correct. ${item.rationale ?? ''}`
-          : `Not quite. The best answer is: ${item.choices[item.correct]}. ${item.rationale ?? ''}`;
-        updateSummary();
+      input.addEventListener('change', async () => {
+        if (fieldset.dataset.answered === 'true' || fieldset.dataset.submitting === 'true') return;
+        fieldset.dataset.submitting = 'true';
+        const inputs = [...fieldset.querySelectorAll('input[type="radio"]')];
+        inputs.forEach((control) => { control.disabled = true; });
+        feedback.dataset.state = '';
+        feedback.textContent = 'Checking response…';
+        try {
+          const result = await gradeFormativeResponse(`/api/modules/${encodeURIComponent(payload.module.id)}/assessment/grade`, {
+            itemId: item.id,
+            selectedIndex: choiceIndex,
+            presentationSeed: payload.presentationSeed
+          });
+          fieldset.dataset.answered = 'true';
+          answered += 1;
+          if (result.isCorrect) correct += 1;
+          feedback.dataset.state = result.isCorrect ? 'correct' : 'incorrect';
+          feedback.textContent = formativeFeedback(result);
+          updateSummary();
+        } catch (error) {
+          delete fieldset.dataset.submitting;
+          inputs.forEach((control) => { control.disabled = false; });
+          feedback.dataset.state = 'incorrect';
+          feedback.textContent = `Feedback unavailable: ${error.message}. Try again.`;
+          return;
+        }
+        delete fieldset.dataset.submitting;
       });
       label.append(input, text('span', choice));
       options.append(label);
