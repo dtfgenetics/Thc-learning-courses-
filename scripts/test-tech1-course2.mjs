@@ -26,8 +26,8 @@ const packageArtifacts = [
   'docs/learning-hub/tech1/course-002/instructor/INSTRUCTOR-GUIDE.md',
   'docs/learning-hub/tech1/course-002/instructor/OBJECTIVE-REMEDIATION-MATRIX.md',
   'docs/learning-hub/tech1/course-002/accessibility/COURSE2-RENDERED-ACCESSIBILITY-UX-REVIEW.md',
-  'docs/learning-hub/tech1/course-002/practical/ASSESSOR-GUIDE.md',
-  'docs/learning-hub/tech1/course-002/practical/CALIBRATION-PROTOCOL.md',
+  'docs/learning-hub/tech1/course-002/assessor/PRACTICAL-A-ASSESSOR-GUIDE.md',
+  'docs/learning-hub/tech1/course-002/assessor/PRACTICAL-A-CALIBRATION-VALIDATION-PACKET.md',
   'registry/course2-completion-status.json'
 ];
 for (const artifact of packageArtifacts) assert.ok(exists(artifact), `missing Course 2 package artifact ${artifact}`);
