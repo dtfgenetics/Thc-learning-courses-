@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const root = process.cwd();
 const args = Object.fromEntries(process.argv.slice(2).filter((x) => x.startsWith('--') && x.includes('=')).map((x) => {
@@ -11,11 +12,21 @@ const check = process.argv.includes('--check');
 const courseId = args.course;
 if (!courseId) throw new Error('Usage: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-... [--summary-only] [--check]');
 
+function exists(rel) { return fs.existsSync(path.join(root, rel)); }
 function readJson(rel) { return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8')); }
+function readText(rel) { return fs.readFileSync(path.join(root, rel), 'utf8'); }
 function readDirJson(rel) {
   const dir = path.join(root, rel);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((n) => n.endsWith('.json')).sort().map((n) => readJson(path.join(rel, n)));
+}
+function contentVersion(rel) {
+  const digest = crypto.createHash('sha256').update(readText(rel)).digest('hex');
+  return `sha256:${digest}`;
+}
+function normalizeMappedPracticals(course) {
+  const value = course.extensions?.mappedPracticals ?? course.extensions?.mappedPractical ?? [];
+  return Array.isArray(value) ? value : (value ? [value] : []);
 }
 
 const courses = new Map(readDirJson('content/courses').map((x) => [x.id, x]));
@@ -36,6 +47,10 @@ const assessmentPrefix = `ASSESS-${key}-`;
 const itemPrefix = `ITEM-${key}-`;
 const practicalPrefix = `PRACTICAL-${key}-`;
 const capstonePrefix = `CAPSTONE-${key}-`;
+
+const integratedLabPlanPath = 'registry/technician-i-integrated-lab-plan.json';
+const integratedLabPlan = exists(integratedLabPlanPath) ? readJson(integratedLabPlanPath) : null;
+const sharedPracticalById = new Map((integratedLabPlan?.practicals ?? []).map((entry) => [entry.id, entry]));
 
 function latestReview(objectId, objectVersion, reviewType) {
   return reviews.filter((r) => r.objectId === objectId && String(r.objectVersion) === String(objectVersion) && r.reviewType === reviewType)
@@ -74,6 +89,13 @@ for (const lessonId of uniqueLessonIds) {
 const courseAssessments = assessments.filter((x) => x.id.startsWith(assessmentPrefix)).sort((a,b) => a.id.localeCompare(b.id));
 const courseQuestions = questions.filter((x) => x.id.startsWith(itemPrefix)).sort((a,b) => a.id.localeCompare(b.id));
 const coursePerformance = performance.filter((x) => x.id.startsWith(practicalPrefix) || x.id.startsWith(capstonePrefix)).sort((a,b) => a.id.localeCompare(b.id));
+const mappedPracticalIds = normalizeMappedPracticals(course);
+const sharedMappedPracticals = [];
+for (const practicalId of mappedPracticalIds) {
+  if (coursePerformance.some((entry) => entry.id === practicalId)) continue;
+  const practical = sharedPracticalById.get(practicalId);
+  if (practical) sharedMappedPracticals.push(practical);
+}
 
 for (const assessment of courseAssessments) {
   addTask(tasks, {lane:'assessment-definition',objectType:'assessment',objectId:assessment.id,objectVersion:assessment.version,reviewType:'assessment'});
@@ -85,6 +107,34 @@ for (const item of courseQuestions) {
 for (const practical of coursePerformance) {
   addTask(tasks, {lane:'performance-assessment',objectType:'performance-assessment',objectId:practical.id,objectVersion:practical.version,reviewType:'assessment'});
 }
+for (const practical of sharedMappedPracticals) {
+  if (!exists(practical.document)) continue;
+  addTask(tasks, {
+    lane:'performance-assessment',
+    objectType:'shared-practical',
+    objectId:practical.id,
+    objectVersion:contentVersion(practical.document),
+    reviewType:'assessment',
+    sourcePath:practical.document,
+    sourceState:practical.status ?? null
+  });
+}
+
+const practicalCrosswalkPath = course.extensions?.practicalCrosswalk;
+let practicalCrosswalk = null;
+if (practicalCrosswalkPath && exists(practicalCrosswalkPath)) {
+  practicalCrosswalk = readJson(practicalCrosswalkPath);
+  addTask(tasks, {
+    lane:'performance-crosswalk',
+    objectType:'performance-crosswalk',
+    objectId:practicalCrosswalk.id ?? `${course.id}-PERFORMANCE-CROSSWALK`,
+    objectVersion:practicalCrosswalk.version ?? contentVersion(practicalCrosswalkPath),
+    reviewType:'assessment',
+    sourcePath:practicalCrosswalkPath,
+    sourceState:practicalCrosswalk.status ?? null
+  });
+}
+
 addTask(tasks, {lane:'course-accessibility',objectType:'course',objectId:course.id,objectVersion:course.version,reviewType:'accessibility'});
 addTask(tasks, {lane:'course-legal-compliance',objectType:'course',objectId:course.id,objectVersion:course.version,reviewType:'legal-compliance'});
 
@@ -106,7 +156,8 @@ const output = {
     lessons: uniqueLessonIds.length,
     assessments: courseAssessments.length,
     knowledgeItems: courseQuestions.length,
-    performanceAssessments: coursePerformance.length
+    performanceAssessments: coursePerformance.length + sharedMappedPracticals.length,
+    performanceCrosswalks: practicalCrosswalk ? 1 : 0
   },
   summary: {totalTasks:tasks.length,approved:counts.approved ?? 0,pending:counts.pending ?? 0,blocked:counts.blocked ?? 0,revisionRequired:counts['revision-required'] ?? 0},
   lanes: laneSummary,
@@ -148,8 +199,36 @@ if (check) {
     }
   }
 
+  for (const practicalId of mappedPracticalIds) {
+    const local = coursePerformance.find((entry) => entry.id === practicalId);
+    if (local) continue;
+    const shared = sharedPracticalById.get(practicalId);
+    if (!shared) {
+      failures.push(`mapped practical ${practicalId} cannot be resolved from local performance assessments or the Technician I integrated lab plan`);
+      continue;
+    }
+    if (!shared.document || !exists(shared.document)) failures.push(`mapped practical ${practicalId} document is missing: ${shared.document ?? '<none>'}`);
+  }
+
+  if (practicalCrosswalkPath) {
+    if (!practicalCrosswalk) failures.push(`practical crosswalk cannot be resolved: ${practicalCrosswalkPath}`);
+    else {
+      if (practicalCrosswalk.courseId !== course.id) failures.push(`practical crosswalk course mismatch: ${practicalCrosswalk.courseId} != ${course.id}`);
+      const crosswalkPracticals = new Set([
+        practicalCrosswalk.practicalId,
+        ...(practicalCrosswalk.practicalIds ?? []),
+        ...(practicalCrosswalk.practicals ?? [])
+      ].filter(Boolean).map((entry) => typeof entry === 'string' ? entry : entry.id).filter(Boolean));
+      for (const practicalId of mappedPracticalIds) {
+        if (!crosswalkPracticals.has(practicalId) && mappedPracticalIds.length === 1) failures.push(`practical crosswalk does not identify mapped practical ${practicalId}`);
+      }
+    }
+  }
+
   if (courseAssessments.length === 0) failures.push('course must resolve at least one course assessment');
   if (tasks.length === 0) failures.push('review queue must contain at least one task');
+  if (mappedPracticalIds.length > 0 && !tasks.some((task) => task.lane === 'performance-assessment')) failures.push('mapped practicals require at least one performance-assessment review task');
+  if (practicalCrosswalkPath && !tasks.some((task) => task.lane === 'performance-crosswalk')) failures.push('mapped practical crosswalk requires a performance-crosswalk review task');
   if (failures.length) throw new Error(`${courseId} Learning Hub review queue integrity check failed: ${failures.join('; ')}`);
 }
 
