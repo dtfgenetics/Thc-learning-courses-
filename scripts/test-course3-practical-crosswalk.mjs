@@ -60,7 +60,7 @@ assert.equal(crosswalk.validationBoundary?.pilotEvidenceImplied, false);
 assert.equal(crosswalk.validationBoundary?.interRaterEvidenceImplied, false);
 assert.equal(crosswalk.courseSpecificReadiness?.objectiveCoverageMapped, true);
 assert.equal(crosswalk.courseSpecificReadiness?.practicalMappingBuilt, true);
-assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, false);
+assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, true);
 assert.equal(crosswalk.courseSpecificReadiness?.humanTechnicalReview, 'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.renderedAccessibilityReview, 'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.practicalValidation, 'not-started');
