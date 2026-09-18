@@ -48,5 +48,7 @@ jobs:
           node scripts/test-tech2-course6.mjs
           node scripts/test-tech2-course7.mjs
           node scripts/test-tech2-course8.mjs
+      - name: Validate Technician II learner runtime
+        run: node scripts/test-tech2-learner-runtime.mjs
       - name: Validate curriculum graph and references
         run: node scripts/validate-curriculum.mjs
