@@ -388,56 +388,81 @@
           "conceptId": "VIS-LH-TECH2-005-01",
           "outcomeIndex": 1,
           "outcome": "Calculate and compare propagation performance using traceable donors, batches, denominators, time points and loss distributions.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course5/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course5/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Propagation performance diagram aligning donor or batch identity, eligible starting denominator, rooted and loss counts, observation time point, operator and environment so success percentages are only compared across valid groups and weak donors or trays are not averaged away.",
+          "caption": "Propagation percentages only mean something when the denominator, time point and genealogy are comparable. Stratify donors, trays, operators, media and zones before averaging.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-005-01"
+          ],
+          "references": [
+            "REF-PROP-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-005-02",
           "outcomeIndex": 2,
           "outcome": "Troubleshoot propagation underperformance using donor, sanitation, environment, handling, timing and plant-health evidence without unsupported contamination or genotype claims.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course5/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course5/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Propagation differential matrix comparing donor condition, sanitation, environment, handling, media, timing and plant-health explanations, with evidence for and against each and a discriminating next check instead of unsupported contamination or genotype conclusions.",
+          "caption": "A donor-linked or tray-linked pattern directs the investigation; it does not prove genetics or contamination. Rank alternatives and choose the next check that can change the ranking.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-005-02"
+          ],
+          "references": [
+            "REF-PROP-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-005-03",
           "outcomeIndex": 3,
           "outcome": "Evaluate canopy and flowering work using planned-versus-actual scope, spatial uniformity, recovery and cultivar/stage context.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course5/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course5/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Canopy review workflow comparing the authorized work order with mapped pre-work conditions, actual work completed, spatial post-work observations and recovery over time, while retaining cultivar and developmental stage as context instead of assuming genotype causation.",
+          "caption": "Judge canopy work by the planned-versus-actual response, not the technique name. Use mapped recovery and stage/cultivar context rather than a single center-room impression.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-005-03"
+          ],
+          "references": [
+            "REF-CANOPY-001",
+            "REF-CANOPY-DEFOL-2025-001",
+            "REF-FLOWER-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-005-04",
           "outcomeIndex": 4,
           "outcome": "Produce a reconstructable performance review and supervisor handoff while maintaining sanitation, traceability, role and authorization boundaries.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course5/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course5/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Supervisor handoff workflow preserving donor, batch, cultivar and zone identity, comparable performance metrics, leading and alternative explanations, biosecurity status, authorized actions, role boundaries and the next required verification without deleting contrary evidence.",
+          "caption": "Make the review decision-ready while preserving sanitation, traceability and role limits. Keep contrary evidence visible and hand off the next verification or high-risk decision to the authorized role.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-005-04"
+          ],
+          "references": [
+            "REF-PROP-001",
+            "REF-CANOPY-001",
+            "REF-FLOWER-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         }
       ]
