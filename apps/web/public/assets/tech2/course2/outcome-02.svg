@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Command, response and fault classification</title>
+<desc id="desc">A troubleshooting diagram separates controller command, physical response, independent measurement, and spatial or time-series pattern before assigning a provisional fault class such as sensor-data, control-response, equipment-response, or distribution-process.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="74" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="#173f2f">Command ≠ response</text>
+<text x="64" y="112" font-family="system-ui,sans-serif" font-size="20" fill="#365b4c">Classify the evidence chain before naming a root cause.</text>
+<g font-family="system-ui,sans-serif">
+<rect x="80" y="175" width="235" height="125" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="105" y="215" font-size="24" font-weight="700" fill="#173f2f">Commanded state</text><text x="105" y="252" font-size="19" fill="#29483b">Target • on/off • output</text>
+<rect x="370" y="175" width="235" height="125" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="395" y="215" font-size="24" font-weight="700" fill="#173f2f">Physical response</text><text x="395" y="252" font-size="19" fill="#29483b">Did the process react?</text>
+<rect x="660" y="175" width="235" height="125" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="685" y="215" font-size="24" font-weight="700" fill="#173f2f">Independent check</text><text x="685" y="252" font-size="19" fill="#29483b">Reference measurement</text>
+<rect x="950" y="175" width="235" height="125" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="975" y="215" font-size="24" font-weight="700" fill="#173f2f">Pattern</text><text x="975" y="252" font-size="19" fill="#29483b">Time • space • alarms</text>
+<path d="M315 238h55M605 238h55M895 238h55" stroke="#386a50" stroke-width="5"/>
+<text x="80" y="370" font-size="26" font-weight="800" fill="#173f2f">Provisional fault class</text>
+<rect x="80" y="405" width="250" height="95" rx="16" fill="#f0f4f2" stroke="#70897d" stroke-width="2"/><text x="105" y="445" font-size="21" font-weight="700" fill="#29483b">Sensor / data quality</text><text x="105" y="477" font-size="17" fill="#456054">measurement suspect</text>
+<rect x="365" y="405" width="250" height="95" rx="16" fill="#f0f4f2" stroke="#70897d" stroke-width="2"/><text x="390" y="445" font-size="21" font-weight="700" fill="#29483b">Control-response</text><text x="390" y="477" font-size="17" fill="#456054">command mismatch</text>
+<rect x="650" y="405" width="250" height="95" rx="16" fill="#f0f4f2" stroke="#70897d" stroke-width="2"/><text x="675" y="445" font-size="21" font-weight="700" fill="#29483b">Equipment-response</text><text x="675" y="477" font-size="17" fill="#456054">process fails to respond</text>
+<rect x="935" y="405" width="250" height="95" rx="16" fill="#f0f4f2" stroke="#70897d" stroke-width="2"/><text x="960" y="445" font-size="21" font-weight="700" fill="#29483b">Distribution / process</text><text x="960" y="477" font-size="17" fill="#456054">location-specific pattern</text>
+<rect x="160" y="565" width="960" height="90" rx="18" fill="#f7efe0" stroke="#9b6b2f" stroke-width="3"/><text x="195" y="610" font-size="22" font-weight="700" fill="#6e481c">Fault class narrows the next check; it is not an unverified repair diagnosis.</text>
+</g></svg>
