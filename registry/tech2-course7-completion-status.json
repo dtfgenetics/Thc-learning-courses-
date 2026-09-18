@@ -1,0 +1,42 @@
+{
+  "courseId": "COURSE-LH-TECH2-007",
+  "title": "Traceability, Production Metrics, Shift Coordination & Peer Support",
+  "version": "0.2.0",
+  "updated": "2026-09-18",
+  "canonicalCourseState": "draft",
+  "publicAcademicPackage": "published",
+  "machineResolvableWorkComplete": false,
+  "goldStandardPackageComplete": false,
+  "certificationEvidenceValidated": false,
+  "publicLearningItems": 36,
+  "publicLessons": 4,
+  "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-007.json",
+  "deploymentEvidence": "registry/tech2-course7-deployment-evidence.json",
+  "machineCompletionBoundary": "Technician II Course 7 has a published learner-facing academic package with four dedicated lessons, 12 formative items, 24 summative learning-assessment items, and a mapped performance practical kept outside public credential decision-making. Public course, representative lesson and knowledge-check routes are verified. Remaining machine work is CI confirmation of learner-runtime/content checks, exact deployment build/source SHA identification, exact-version review governance, and defects exposed by responsive/manual QA. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH2-007.json",
+    "content/public-releases/PUBLIC-RELEASE-LH-TECH2-007.json",
+    "scripts/test-tech2-course7.mjs",
+    "scripts/test-tech2-public-release.mjs",
+    "scripts/test-tech2-learner-runtime.mjs",
+    "registry/tech2-course7-deployment-evidence.json"
+  ],
+  "nextMachineActions": [
+    "confirm CI passes the Technician II public-release, course-regression and learner-runtime checks",
+    "complete deployed responsive/manual learner-surface QA and record defects",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface",
+    "create and enforce exact-version human-review queues/records where missing",
+    "repair any course-content, assessment, navigation or accessibility defects exposed by those checks without weakening credential-security or authority boundaries"
+  ],
+  "nextHumanActions": [
+    "technical/curriculum review",
+    "instructional-design review",
+    "assessment item review",
+    "mapped practical validation",
+    "evaluator calibration/inter-rater evidence",
+    "rendered accessibility review",
+    "controlled learner/item/practical pilot",
+    "standard setting where applicable",
+    "versioned academic/credential release approval"
+  ]
+}
