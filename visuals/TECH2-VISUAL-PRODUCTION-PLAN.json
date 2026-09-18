@@ -560,56 +560,78 @@
           "conceptId": "VIS-LH-TECH2-007-01",
           "outcomeIndex": 1,
           "outcome": "Reconcile physical and recorded crop/lot identities while preserving genealogy and controlled correction evidence.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course7/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course7/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Reconciliation flow comparing physical identity, controlled record identity, current status and location, preserving discrepancies, tracing genealogy through splits and moves, and routing corrections through an authorized process without fabricating transactions or overwriting history.",
+          "caption": "A discrepancy is evidence. Reconcile identity and status without inventing transactions, breaking genealogy or overwriting the original controlled record.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-007-01"
+          ],
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-POSTHARVEST-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-007-02",
           "outcomeIndex": 2,
           "outcome": "Calculate defined production KPIs with the correct denominator, eligible population and time window, then interpret trends without overstating one-cycle changes.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course7/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course7/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "KPI workflow defining numerator, denominator, eligible population, time window and exclusions before calculation, checking comparability across cycles, and treating one-cycle movement as a signal rather than a confirmed long-term process trend.",
+          "caption": "A KPI is only comparable when its numerator, denominator, eligibility rules and time window remain compatible. Do not improve the result by changing the denominator after seeing the number.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-007-02"
+          ],
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-POSTHARVEST-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-007-03",
           "outcomeIndex": 3,
           "outcome": "Support peer execution using the current controlled procedure while preserving formal supervisory, approval and record-change authority boundaries.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course7/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course7/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Peer-support workflow anchoring coaching to the current controlled procedure, identifying an observable execution difference, demonstrating or clarifying the approved method, verifying the result, and escalating unresolved authority or record-change questions without creating disciplinary or policy authority.",
+          "caption": "Peer support should strengthen execution of the current controlled method without turning personal preference into policy or expanding supervisory, approval or record-change authority.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-007-03"
+          ],
+          "references": [
+            "REF-ASTM-E2659-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-007-04",
           "outcomeIndex": 4,
           "outcome": "Prioritize unresolved work and produce a decision-ready shift handoff that preserves planned-versus-actual history, dependencies and decision ownership.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course7/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course7/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Shift handoff framework ranking unresolved work by safety, quarantine, identity or traceability risk, crop or lot consequence, timing dependency and downstream blocking, while preserving planned-versus-actual history and assigning a next action and decision owner.",
+          "caption": "Prioritize by consequence and dependency, not convenience. Preserve planned-versus-actual history and hand off each unresolved issue with the next action, deadline or dependency, and decision owner.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-007-04"
+          ],
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-ASTM-E2659-001"
+          ],
           "qaApproved": false
         }
       ]
