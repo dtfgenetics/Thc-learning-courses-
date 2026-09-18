@@ -1,8 +1,8 @@
 # Course Package Manifest — COURSE-LH-TECH1-006
 
 **Course:** Harvest, Postharvest, Traceability & Shift Handoff  
-**Package state:** machine package substantially complete; Drive asset mirrors, deployed QA and human validation open  
-**Date:** 2026-09-16
+**Package state:** machine package substantially complete; Drive mirrors reconciled; deployed responsive/manual QA and human validation open  
+**Date:** 2026-09-18
 
 ## Canonical source
 
@@ -35,7 +35,7 @@ Course 6 now has a real learner asset layer:
 - all assets are wired into canonical lesson blocks;
 - public paths live under `apps/web/public/assets/course6/`;
 - controlled Drive folder: `1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq`;
-- individual Drive asset uploads remain pending and are not falsely marked mirrored.
+- all 8 controlled Drive mirrors are present and recorded with verified file IDs in `visuals/COURSE6-ASSET-REGISTRY.json`.
 
 ## Package artifacts
 
@@ -74,8 +74,7 @@ Course 6 machine checks must preserve:
 
 - execute/retain passing strict Course 6 learning-loop/balanced-assessment CI;
 - verify deployed rendered learner surface at mobile/tablet/desktop widths;
-- perform anonymous public readback after deployment;
-- upload and verify the eight controlled Drive mirror files when a valid file-byte transfer path is available;
+- preserve the verified anonymous public course/lesson/assessment readback record and complete exact build/source-SHA identification;
 - generate/verify source-version-specific review queue records;
 - record deployment evidence only after actual observation.
 
