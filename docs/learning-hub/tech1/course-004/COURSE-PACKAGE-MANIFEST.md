@@ -1,8 +1,8 @@
 # Course Package Manifest — COURSE-LH-TECH1-004
 
 **Course:** Water, Root Zone, Nutrition & Irrigation Fundamentals  
-**Package state:** machine package substantially complete; deployed QA and human validation open  
-**Date:** 2026-09-16
+**Package state:** machine package substantially complete; public route readback verified; exact build identity, responsive/manual QA and human validation open  
+**Date:** 2026-09-18
 
 ## Canonical source
 
@@ -68,11 +68,10 @@ Course 4 must preserve all of the following:
 
 ## Remaining machine work
 
-- execute and retain passing CI evidence for the strict Course 4 learning-loop/balanced-assessment gate;
-- verify the complete rendered learner surface at mobile, tablet and desktop widths in the deployed environment;
-- perform fresh anonymous public readback after deployment;
-- generate/verify source-version-specific review queue records;
-- record deployment evidence only after the deployed build is actually observed.
+- confirm CI passes the strict learning-loop gate, shared Courses 3–7 learner-runtime regression and versioned Course 4 review-queue check;
+- complete deployed responsive/manual learner-surface QA;
+- record the exact deployment build/source SHA for the already verified public course, lesson and knowledge-check routes;
+- repair any defects exposed by those checks without weakening evidence or authority boundaries.
 
 ## Human/evidence gates still open
 
