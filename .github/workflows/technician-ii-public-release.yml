@@ -16,6 +16,8 @@ on:
       - 'scripts/test-tech2-learner-runtime.mjs'
       - 'scripts/test-tech2-course-completion-status.mjs'
       - 'scripts/test-tech2-course-support-packages.mjs'
+      - 'scripts/test-tech2-visual-production-plan.mjs'
+      - 'visuals/TECH2-VISUAL-PRODUCTION-PLAN.json'
       - '.github/workflows/technician-ii-public-release.yml'
   push:
     branches: [main, staging, dev]
@@ -66,5 +68,7 @@ jobs:
         run: node scripts/test-tech2-course-completion-status.mjs
       - name: Validate Technician II learner support packages
         run: node scripts/test-tech2-course-support-packages.mjs
+      - name: Validate Technician II visual production lifecycle
+        run: node scripts/test-tech2-visual-production-plan.mjs
       - name: Validate curriculum graph and references
         run: node scripts/validate-curriculum.mjs
