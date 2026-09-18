@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
   "deploymentEvidence": "registry/tech2-course8-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 8 has a published learner-facing simulation-preparation package with four lessons and a 16-item formative readiness assessment, while seven practicals and the Senior Technician capstone remain separate development/validation evidence. Public course, representative lesson and readiness routes are verified. Remaining machine work is CI confirmation of learner-runtime/content checks, exact deployment build/source SHA identification, exact-version review governance, and defects exposed by responsive/manual QA. Secure credential forms and issuance remain fail-closed.",
+  "machineCompletionBoundary": "Technician II Course 8 has a published learner-facing simulation-preparation package with four lessons and a 16-item formative readiness assessment, while seven practicals and the Senior Technician capstone remain separate development/validation evidence. Public course, representative lesson and readiness routes are verified. Primary instructional visuals are built and mapped as review candidates but remain fail-closed pending human/technical/accessibility approval. Remaining machine work is CI confirmation of learner-runtime/content checks, exact deployment build/source SHA identification, exact-version review governance, and defects exposed by responsive/manual QA. Secure credential forms and issuance remain fail-closed.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-008.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
@@ -26,7 +26,8 @@
     "complete deployed responsive/manual learner-surface QA and record defects",
     "record and verify the exact deployment build/source SHA identity for the public learner surface",
     "create and enforce exact-version human-review queues/records where missing",
-    "repair any course-content, assessment, navigation or accessibility defects exposed by those checks without weakening credential-security or authority boundaries"
+    "repair any course-content, assessment, navigation or accessibility defects exposed by those checks without weakening credential-security or authority boundaries",
+    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
   "nextHumanActions": [
     "technical/occupational review",
@@ -40,5 +41,13 @@
     "standard setting/decision rules",
     "privacy/security/retention approval",
     "final Technician II release approval"
-  ]
+  ],
+  "visualLayer": {
+    "primaryConcepts": 8,
+    "reviewCandidates": 8,
+    "plannedOnly": 0,
+    "approvedForLearnerRender": 0,
+    "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+    "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
+  }
 }
