@@ -67,6 +67,27 @@
       "Correcting execution without verifying the current procedure version."
     ],
     "practicalApplication": "Write a peer-coaching note that states the task, applicable SOP/version, observable execution difference, coaching provided, verification result and any escalation required.",
-    "summary": "Peer support strengthens execution when it is evidence-based, SOP-anchored and bounded by the technician’s actual authority."
+    "summary": "Peer support strengthens execution when it is evidence-based, SOP-anchored and bounded by the technician’s actual authority.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-007-03",
+          "title": "SOP-based peer support without supervisory overreach",
+          "src": "/assets/tech2/course7/outcome-03.svg",
+          "alt": "Peer-support workflow anchoring coaching to the current controlled procedure, identifying an observable execution difference, demonstrating or clarifying the approved method, verifying the result, and escalating unresolved authority or record-change questions without creating disciplinary or policy authority.",
+          "caption": "Peer support should strengthen execution of the current controlled method without turning personal preference into policy or expanding supervisory, approval or record-change authority.",
+          "references": [
+            "REF-ASTM-E2659-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-007-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
