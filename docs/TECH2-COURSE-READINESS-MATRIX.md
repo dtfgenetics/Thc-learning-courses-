@@ -13,7 +13,7 @@ All eight Technician II learner-facing academic packages have explicit public-re
 
 | Course | Public academic source | Assessment source | Learner support | Primary visuals | Public readback | Remaining machine work |
 |---|---|---|---|---:|---|---|
-| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 planned / 0 produced | course + lesson + knowledge check verified | CI runtime confirmation; visual production; responsive/manual QA; exact deployment build/SHA |
+| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 source assets produced as review candidates / 0 release-approved | course + lesson + knowledge check verified | visual release QA + learner-page integration; CI runtime confirmation; responsive/manual QA; exact deployment build/SHA |
 | `COURSE-LH-TECH2-002` — Environmental Data, Sensors & Equipment Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
 | `COURSE-LH-TECH2-003` — Fertigation Execution, Verification & Root-Zone Interpretation | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
 | `COURSE-LH-TECH2-004` — Plant Health, IPM & Biosecurity Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
