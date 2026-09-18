@@ -2,8 +2,8 @@
 
 **Course:** Integrated Cultivation Technician Practice Lab  
 **Profile:** integrated performance / capstone course  
-**Package state:** machine governance package substantially complete; validation/release evidence open  
-**Date:** 2026-09-16
+**Package state:** machine governance package substantially complete; public route readback verified; exact build identity, responsive/manual QA and validation/release evidence open  
+**Date:** 2026-09-18
 
 ## Canonical source
 
@@ -80,6 +80,13 @@ Course 7 machine work is complete when:
 8. candidate-evidence privacy/retention draft exists;
 9. secure credential mode remains fail-closed;
 10. deterministic tests enforce these boundaries.
+
+## Remaining machine work
+
+- confirm CI passes the shared Courses 3–7 learner-runtime regression and versioned Course 7 review-queue check;
+- complete deployed responsive/manual integrated-lab QA;
+- record the exact deployment build/source SHA for the already verified public course, lesson and readiness-check routes;
+- preserve fail-closed secure credential-form boundaries while correcting any learner-surface defects.
 
 ## Human/evidence gates still open
 
