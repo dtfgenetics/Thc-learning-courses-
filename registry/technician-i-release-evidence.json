@@ -1,10 +1,26 @@
 {
   "id": "RELEASE-EVIDENCE-TECH1-001",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "credentialProgram": "CREDPROG-CULT-TECH-I-001",
   "releaseReady": false,
-  "evidencePolicy": "Only completed human review, pilot, calibration, standard-setting, security, privacy and release-approval evidence may advance a gate. Repository structure, generated files, synthetic records, passing CI, or course completion alone must not close a release gate.",
+  "machineLayerState": "built-fail-closed",
+  "machineArtifacts": {
+    "coursePackageReadinessReporter": "scripts/report-tech1-course-package-readiness.mjs",
+    "machineLayerRegistry": "registry/technician-i-machine-layer.json",
+    "machineLayerTest": "scripts/test-tech1-machine-layer.mjs",
+    "releaseReadinessReporter": "scripts/report-tech1-release-readiness.mjs",
+    "releaseReadinessTest": "scripts/test-tech1-release-readiness.mjs",
+    "jtaCompetencyCrosswalk": "registry/technician-i-jta-competency-crosswalk.json",
+    "integratedLabPlan": "registry/technician-i-integrated-lab-plan.json",
+    "credentialAssessmentBlueprint": "content/assessments/ASSESS-CRED-TECH1-001.json",
+    "secureAssessmentStoreContract": "docs/academy-v2/credential/tech1/SECURE-ASSESSMENT-STORE-CONTRACT.md",
+    "equivalentSecureFormRules": "docs/academy-v2/credential/tech1/EQUIVALENT-SECURE-FORM-RULES.md",
+    "candidatePolicyDraft": "docs/academy-v2/credential/tech1/CANDIDATE-RETEST-ACCOMMODATION-APPEAL-SECURITY-DRAFT.md",
+    "candidateEvidenceRetentionPrivacyDraft": "docs/learning-hub/tech1/course-007/CANDIDATE-EVIDENCE-RETENTION-PRIVACY-DRAFT.md",
+    "issuanceVerificationWorkflow": "docs/academy-v2/credential/tech1/ISSUANCE-VERIFICATION-WORKFLOW.md"
+  },
+  "evidencePolicy": "Only completed human review, pilot, calibration, standard-setting, security, privacy and release-approval evidence may advance a release gate. Repository structure, generated files, machine contracts, synthetic records, passing CI, course completion or deployment alone must not close a human/validation/release gate.",
   "gates": {
     "humanTechnicalReview": "not-started",
     "humanAssessmentReview": "not-started",
@@ -36,17 +52,19 @@
     "evaluator calibration and inter-rater evidence",
     "final credential-assessment blueprint weights",
     "new secure operational item bank in an approved private assessment store",
-    "equivalent secure credential forms",
+    "approved secure assessment delivery/store implementation evidence",
+    "equivalent secure credential forms and equivalence evidence",
     "formal standard-setting evidence",
     "approved candidate-evidence retention/privacy policy",
-    "approved credential issuance workflow",
+    "approved credential issuance/security workflow",
     "explicit versioned final program release approval"
   ],
   "prohibitedShortcuts": [
     "Do not treat green CI as certification approval.",
-    "Do not use public ITEM-TECH1 development items as the secure operational credential bank.",
-    "Do not create synthetic human review, pilot, calibration or approval evidence to close gates.",
-    "Do not expose secure operational answer keys or credential forms in the public repository.",
+    "Do not treat a machine-built policy/contract as approval of the real operational system.",
+    "Do not use public ITEM-TECH1 or other public development items as the secure operational credential bank.",
+    "Do not create synthetic human review, pilot, calibration, inter-rater, standard-setting or approval evidence to close gates.",
+    "Do not expose secure operational answer keys, credential forms, candidate evidence or signing secrets in the public repository.",
     "Do not issue the credential while any required release gate is unresolved."
   ]
 }

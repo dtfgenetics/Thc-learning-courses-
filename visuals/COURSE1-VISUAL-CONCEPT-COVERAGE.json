@@ -1,6 +1,6 @@
 {
   "courseId": "COURSE-LH-TECH1-001",
-  "version": 1,
+  "version": 2,
   "policy": {
     "requiredPrimaryConceptCount": 18,
     "assetCountIsNotAQualityTarget": true,
@@ -20,11 +20,11 @@
     {"conceptId":"VIS-LH-TECH1-001-10-GENEALOGY","title":"Plant and material genealogy","lessonIds":["LESSON-LH-TECH1-001-10"],"publicAsset":"/assets/course1/material-genealogy.svg","registryAssetId":"VIS-LH-TECH1-001-008","status":"deployed"},
     {"conceptId":"VIS-LH-TECH1-001-11-MOVEMENT-RECORD","title":"Vendor-neutral movement-record evidence","lessonIds":["LESSON-LH-TECH1-001-11"],"publicAsset":"/assets/course1/inventory-reconciliation-flow.svg","registryAssetId":"VIS-LH-TECH1-001-009","status":"deployed-combined","coverageNote":"The visual connects physical identity/location/condition with the controlled record and event history; canonical lesson tables define stable movement-event fields including identity, source, destination, quantity/count, time, event context and attribution."},
     {"conceptId":"VIS-LH-TECH1-001-12-RECONCILIATION","title":"Inventory reconciliation without forced balancing","lessonIds":["LESSON-LH-TECH1-001-11","LESSON-LH-TECH1-001-12"],"publicAsset":"/assets/course1/inventory-reconciliation-flow.svg","registryAssetId":"VIS-LH-TECH1-001-009","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE","title":"Equipment pre-use readiness scan","lessonIds":["LESSON-LH-TECH1-001-13"],"publicAsset":"/assets/course1/operator-care-servicing-boundary.svg","registryAssetId":"VIS-LH-TECH1-001-010","status":"deployed-combined"},
-    {"conceptId":"VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE","title":"Operator care versus servicing boundary","lessonIds":["LESSON-LH-TECH1-001-14"],"publicAsset":"/assets/course1/operator-care-servicing-boundary.svg","registryAssetId":"VIS-LH-TECH1-001-010","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-15-FAULT-REPORT","title":"Maintenance-ready fault report","lessonIds":["LESSON-LH-TECH1-001-15"],"publicAsset":"/assets/course1/maintenance-fault-report.svg","registryAssetId":"VIS-LH-TECH1-001-011","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-16-RECORD-CORRECTION","title":"Data integrity and transparent record correction","lessonIds":["LESSON-LH-TECH1-001-16"],"publicAsset":"/assets/course1/data-integrity-record-lifecycle.svg","registryAssetId":"VIS-LH-TECH1-001-014","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-17-SHIFT-HANDOFF","title":"Professional shift handoff","lessonIds":["LESSON-LH-TECH1-001-17"],"publicAsset":"/assets/course1/shift-handoff-model.svg","registryAssetId":"VIS-LH-TECH1-001-012","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW","title":"Integrated Technician I workflow","lessonIds":["LESSON-LH-TECH1-001-18"],"publicAsset":"/assets/course1/shift-handoff-model.svg","registryAssetId":"VIS-LH-TECH1-001-012","status":"deployed-combined"}
+    {"conceptId":"VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE","title":"Equipment pre-use readiness scan","lessonIds":["LESSON-LH-TECH1-001-13"],"publicAsset":"/assets/course1/equipment-preuse-readiness.svg","registryAssetId":"VIS-LH-TECH1-001-015","status":"deployed"},
+    {"conceptId":"VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE","title":"Operator care versus servicing boundary","lessonIds":["LESSON-LH-TECH1-001-14"],"publicAsset":"/assets/course1/operator-vs-maintenance-boundary.svg","registryAssetId":"VIS-LH-TECH1-001-016","status":"deployed"},
+    {"conceptId":"VIS-LH-TECH1-001-15-FAULT-REPORT","title":"Maintenance-ready fault context and escalation","lessonIds":["LESSON-LH-TECH1-001-15"],"publicAsset":"/assets/course1/fault-context-escalation.svg","registryAssetId":"VIS-LH-TECH1-001-017","status":"deployed"},
+    {"conceptId":"VIS-LH-TECH1-001-16-RECORD-CORRECTION","title":"Controlled record correction and audit-trail preservation","lessonIds":["LESSON-LH-TECH1-001-16"],"publicAsset":"/assets/course1/record-correction-controls.svg","registryAssetId":"VIS-LH-TECH1-001-018","status":"deployed"},
+    {"conceptId":"VIS-LH-TECH1-001-17-SHIFT-HANDOFF","title":"Professional shift handoff","lessonIds":["LESSON-LH-TECH1-001-17"],"publicAsset":"/assets/course1/shift-handoff-control.svg","registryAssetId":"VIS-LH-TECH1-001-019","status":"deployed"},
+    {"conceptId":"VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW","title":"Integrated Technician I workflow","lessonIds":["LESSON-LH-TECH1-001-18"],"publicAsset":"/assets/course1/integrated-technician-workflow.svg","registryAssetId":"VIS-LH-TECH1-001-020","status":"deployed"}
   ]
 }

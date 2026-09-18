@@ -73,6 +73,28 @@
       "Treating KPI movement as a cause rather than a signal."
     ],
     "practicalApplication": "Produce a senior-technician handoff with reconciled identities, selected KPIs and definitions, priority-ranked work, unresolved deviations, dependencies, peer-support actions and decision owners.",
-    "summary": "Good shift coordination preserves historical truth and turns operational evidence into clear priorities, dependencies and owned next decisions."
+    "summary": "Good shift coordination preserves historical truth and turns operational evidence into clear priorities, dependencies and owned next decisions.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-007-04",
+          "title": "Priority-ranked senior technician handoff",
+          "src": "/assets/tech2/course7/outcome-04.svg",
+          "alt": "Shift handoff framework ranking unresolved work by safety, quarantine, identity or traceability risk, crop or lot consequence, timing dependency and downstream blocking, while preserving planned-versus-actual history and assigning a next action and decision owner.",
+          "caption": "Prioritize by consequence and dependency, not convenience. Preserve planned-versus-actual history and hand off each unresolved issue with the next action, deadline or dependency, and decision owner.",
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-ASTM-E2659-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-007-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

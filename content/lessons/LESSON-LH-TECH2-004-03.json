@@ -68,6 +68,28 @@
       "Moving the follow-up date until the numbers look better."
     ],
     "practicalApplication": "For an intervention record, define baseline, expected outcome, follow-up schedule, comparable measures, confounders and the criteria for continue/hold/escalate review.",
-    "summary": "Treatment follow-up measures outcomes against a comparable baseline and makes uncertainty visible."
+    "summary": "Treatment follow-up measures outcomes against a comparable baseline and makes uncertainty visible.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-004-03",
+          "title": "Intervention follow-up against a comparable baseline",
+          "src": "/assets/tech2/course4/outcome-03.svg",
+          "alt": "IPM follow-up workflow defining baseline and intended outcome before intervention, repeating comparable measurements over enough rounds, recording confounders such as sampling changes or overlapping controls, and classifying the result as improving, unchanged, worsening or unresolved.",
+          "caption": "An intervention is not proven effective just because it was completed. Compare against a defined baseline, preserve confounders, and allow the result to remain unresolved when the evidence is incomplete.",
+          "references": [
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-004-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

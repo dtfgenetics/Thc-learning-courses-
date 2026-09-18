@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Next-test, action, escalation and handoff</title>
+<desc id="desc">A decision flow starts with ranked hypotheses, checks data quality, chooses the test that best separates hypotheses, then routes the result to an authorized action or escalation and ends with a reconstructable handoff.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="76" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="#163122">Choose the safest informative next step</text>
+<text x="64" y="116" font-family="system-ui,sans-serif" font-size="22" fill="#5a6b60">More data is not automatically better data. Choose checks that change the decision.</text>
+<g font-family="system-ui,sans-serif">
+  <rect x="70" y="180" width="260" height="112" rx="20" fill="#eef3f7" stroke="#47637a" stroke-width="3"/>
+  <text x="200" y="220" text-anchor="middle" font-size="23" font-weight="800" fill="#163122">Ranked hypotheses</text>
+  <text x="200" y="254" text-anchor="middle" font-size="18" fill="#163122">What competing explanations</text>
+  <text x="200" y="280" text-anchor="middle" font-size="18" fill="#163122">would change the action?</text>
+
+  <path d="M330 236H390" stroke="#163122" stroke-width="5"/><path d="M378 226l14 10-14 10" fill="none" stroke="#163122" stroke-width="4"/>
+
+  <rect x="400" y="180" width="260" height="112" rx="20" fill="#f7f3e8" stroke="#a57a2b" stroke-width="3"/>
+  <text x="530" y="220" text-anchor="middle" font-size="23" font-weight="800" fill="#163122">Verify data quality</text>
+  <text x="530" y="254" text-anchor="middle" font-size="18" fill="#163122">Representative sample?</text>
+  <text x="530" y="280" text-anchor="middle" font-size="18" fill="#163122">Known method / sensor status?</text>
+
+  <path d="M660 236H720" stroke="#163122" stroke-width="5"/><path d="M708 226l14 10-14 10" fill="none" stroke="#163122" stroke-width="4"/>
+
+  <rect x="730" y="180" width="260" height="112" rx="20" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+  <text x="860" y="220" text-anchor="middle" font-size="23" font-weight="800" fill="#163122">Select next test</text>
+  <text x="860" y="254" text-anchor="middle" font-size="18" fill="#163122">Prefer a result that would</text>
+  <text x="860" y="280" text-anchor="middle" font-size="18" fill="#163122">change hypothesis ranking</text>
+
+  <path d="M990 236H1050" stroke="#163122" stroke-width="5"/><path d="M1038 226l14 10-14 10" fill="none" stroke="#163122" stroke-width="4"/>
+
+  <rect x="1060" y="180" width="150" height="112" rx="20" fill="#163122"/>
+  <text x="1135" y="220" text-anchor="middle" font-size="22" font-weight="800" fill="#fffdf7">Result</text>
+  <text x="1135" y="254" text-anchor="middle" font-size="17" fill="#fffdf7">Update ranking</text>
+  <text x="1135" y="280" text-anchor="middle" font-size="17" fill="#fffdf7">and uncertainty</text>
+
+  <path d="M1135 292V360" stroke="#163122" stroke-width="5"/>
+  <path d="M1125 348l10 14 10-14" fill="none" stroke="#163122" stroke-width="4"/>
+
+  <polygon points="1135,370 1240,450 1135,530 1030,450" fill="#fff0e7" stroke="#9b5229" stroke-width="3"/>
+  <text x="1135" y="438" text-anchor="middle" font-size="21" font-weight="800" fill="#163122">Within authority</text>
+  <text x="1135" y="466" text-anchor="middle" font-size="18" fill="#163122">and safe to act?</text>
+
+  <path d="M1030 450H820" stroke="#163122" stroke-width="5"/><path d="M832 440l-14 10 14 10" fill="none" stroke="#163122" stroke-width="4"/>
+  <text x="922" y="435" text-anchor="middle" font-size="18" font-weight="700" fill="#245f3d">YES</text>
+  <rect x="520" y="392" width="290" height="116" rx="20" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+  <text x="665" y="430" text-anchor="middle" font-size="23" font-weight="800" fill="#163122">Authorized action</text>
+  <text x="665" y="464" text-anchor="middle" font-size="18" fill="#163122">Change only what is assigned.</text>
+  <text x="665" y="490" text-anchor="middle" font-size="18" fill="#163122">Capture before / after evidence.</text>
+
+  <path d="M1135 530V584H900" stroke="#163122" stroke-width="5" fill="none"/><path d="M912 574l-14 10 14 10" fill="none" stroke="#163122" stroke-width="4"/>
+  <text x="1104" y="566" font-size="18" font-weight="700" fill="#9b5229">NO / HIGH CONSEQUENCE</text>
+  <rect x="520" y="540" width="370" height="104" rx="20" fill="#fff0e7" stroke="#9b5229" stroke-width="3"/>
+  <text x="705" y="578" text-anchor="middle" font-size="23" font-weight="800" fill="#163122">Hold / contain / escalate</text>
+  <text x="705" y="612" text-anchor="middle" font-size="18" fill="#163122">Route to the qualified role or controlled process.</text>
+
+  <rect x="70" y="410" width="370" height="234" rx="22" fill="#163122"/>
+  <text x="94" y="452" font-size="24" font-weight="800" fill="#fffdf7">Reconstructable handoff</text>
+  <text x="94" y="492" font-size="18" fill="#fffdf7">• problem statement + scope</text>
+  <text x="94" y="524" font-size="18" fill="#fffdf7">• map / timeline + data-quality checks</text>
+  <text x="94" y="556" font-size="18" fill="#fffdf7">• ranked hypotheses + next test</text>
+  <text x="94" y="588" font-size="18" fill="#fffdf7">• action / escalation + observed result</text>
+  <text x="94" y="620" font-size="18" fill="#fffdf7">• unresolved questions remain visible</text>
+</g>
+</svg>

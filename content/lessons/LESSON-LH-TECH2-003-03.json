@@ -72,6 +72,29 @@
       "Treating root-zone EC as an element-specific nutrient assay."
     ],
     "practicalApplication": "Trend representative irrigation timestamps/volumes, emitter output, root-zone moisture, pH/EC, crop stage, environment and plant observations. Annotate which evidence supports delivery, scheduling, accumulation or plant-demand hypotheses.",
-    "summary": "Root-zone interpretation is strongest when measured irrigation performance, crop demand and chemical trends are analyzed as one system."
+    "summary": "Root-zone interpretation is strongest when measured irrigation performance, crop demand and chemical trends are analyzed as one system.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-003-03",
+          "title": "Root-zone trends need system context",
+          "src": "/assets/tech2/course3/outcome-03.svg",
+          "alt": "Connected root-zone interpretation model linking measured irrigation delivery, media and container context, crop demand and environment, moisture or dryback trends, and pH or EC, emphasizing that no single dryback percentage or EC value is a universal diagnosis.",
+          "caption": "Interpret dryback, pH and EC with installed irrigation performance, media/container conditions, crop stage and environmental demand. One number is not a complete diagnosis.",
+          "references": [
+            "REF-IRRIGATION-001",
+            "REF-NUTRIENT-UPTAKE-2026-001",
+            "REF-ROOTZONE-NUTRIENT-002",
+            "REF-NUTRITION-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-003-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

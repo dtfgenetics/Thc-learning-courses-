@@ -71,6 +71,61 @@
       "Writing a hypothesis as a confirmed diagnosis."
     ],
     "practicalApplication": "Use a mixed crop/environment/equipment packet to create a priority log, data-quality table, ranked hypotheses and next-verification plan mapped to Practicals A and B.",
-    "summary": "Integrated diagnostic work starts with consequence and data validity, then moves from observations to ranked hypotheses and bounded next checks."
+    "summary": "Integrated diagnostic work starts with consequence and data validity, then moves from observations to ranked hypotheses and bounded next checks.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-008-01",
+          "title": "Integrated shift priority triage",
+          "src": "/assets/tech2/course8/outcome-01.svg",
+          "alt": "Priority triage framework ranking competing Technician II deviations by immediate safety, containment, data validity, crop or lot consequence, timing dependency and assigned authority before convenience or optimization work.",
+          "caption": "Triage by consequence and dependency before diagnosis. Safety, containment and decision-blocking data problems outrank routine optimization.",
+          "references": [
+            "REF-ASTM-E2659-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-008-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-008-02",
+          "title": "Integrated diagnostic workup from verified evidence",
+          "src": "/assets/tech2/course8/outcome-02.svg",
+          "alt": "Diagnostic workup flow separating verified observations from context, ranking multiple hypotheses, identifying uncertainty and the next discriminating check, then updating the ranking without converting a plausible explanation into a confirmed cause.",
+          "caption": "Keep observations, hypotheses and confirmed causes separate. Choose the next check because it can change the ranking, not because it simply adds more data.",
+          "references": [
+            "REF-VPD-002",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-008-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-008-03",
+          "title": "Invalid data blocks consequential equipment action",
+          "src": "/assets/tech2/course8/outcome-03.svg",
+          "alt": "Sensor and equipment decision flow verifying measurement validity and independent process response before consequential setpoint, irrigation or equipment action, separating safe operator checks from maintenance escalation and rejecting major corrective action based on data known to be invalid.",
+          "caption": "Known-invalid data cannot justify a major correction. Verify measurement quality and physical response, then stay inside the assigned operator-care boundary.",
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-ASTM-E2659-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-008-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

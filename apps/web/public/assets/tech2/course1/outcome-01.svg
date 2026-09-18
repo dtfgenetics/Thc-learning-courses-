@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Evidence to bounded conclusion</title>
+<desc id="desc">A five-stage diagnostic reasoning flow separates direct observation, context, hypotheses, discriminating evidence, and bounded conclusion, with uncertainty preserved and an authority boundary before action.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="76" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="#163122">Evidence → bounded conclusion</text>
+<text x="64" y="116" font-family="system-ui,sans-serif" font-size="22" fill="#5a6b60">Do not convert the first clue into a cause.</text>
+<g font-family="system-ui,sans-serif">
+  <g transform="translate(64 170)">
+    <rect width="210" height="150" rx="22" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+    <text x="24" y="42" font-size="24" font-weight="800" fill="#163122">1. Observe</text>
+    <text x="24" y="82" font-size="18" fill="#163122">Direct features</text>
+    <text x="24" y="110" font-size="18" fill="#163122">Measurements</text>
+    <text x="24" y="138" font-size="18" fill="#163122">Events</text>
+  </g>
+  <g transform="translate(302 170)">
+    <rect width="210" height="150" rx="22" fill="#f7f3e8" stroke="#a57a2b" stroke-width="3"/>
+    <text x="24" y="42" font-size="24" font-weight="800" fill="#163122">2. Context</text>
+    <text x="24" y="82" font-size="18" fill="#163122">Crop stage</text>
+    <text x="24" y="110" font-size="18" fill="#163122">Location / cohort</text>
+    <text x="24" y="138" font-size="18" fill="#163122">Recent changes</text>
+  </g>
+  <g transform="translate(540 170)">
+    <rect width="210" height="150" rx="22" fill="#eef3f7" stroke="#47637a" stroke-width="3"/>
+    <text x="24" y="42" font-size="24" font-weight="800" fill="#163122">3. Hypotheses</text>
+    <text x="24" y="82" font-size="18" fill="#163122">Rank plausible causes</text>
+    <text x="24" y="110" font-size="18" fill="#163122">Keep alternatives</text>
+    <text x="24" y="138" font-size="18" fill="#163122">State uncertainty</text>
+  </g>
+  <g transform="translate(778 170)">
+    <rect width="210" height="150" rx="22" fill="#f7f3e8" stroke="#8b5b24" stroke-width="3"/>
+    <text x="24" y="42" font-size="24" font-weight="800" fill="#163122">4. Test</text>
+    <text x="24" y="82" font-size="18" fill="#163122">Choose evidence that</text>
+    <text x="24" y="110" font-size="18" fill="#163122">changes the ranking</text>
+    <text x="24" y="138" font-size="18" fill="#163122">of hypotheses</text>
+  </g>
+  <g transform="translate(1016 170)">
+    <rect width="200" height="150" rx="22" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+    <text x="22" y="42" font-size="24" font-weight="800" fill="#163122">5. Conclude</text>
+    <text x="22" y="82" font-size="18" fill="#163122">Confirmed fact or</text>
+    <text x="22" y="110" font-size="18" fill="#163122">bounded inference</text>
+    <text x="22" y="138" font-size="18" fill="#163122">—not certainty theater</text>
+  </g>
+  <path d="M274 245H296M512 245H534M750 245H772M988 245H1010" stroke="#163122" stroke-width="5" stroke-linecap="round"/>
+  <path d="M291 235l12 10-12 10M529 235l12 10-12 10M767 235l12 10-12 10M1005 235l12 10-12 10" fill="none" stroke="#163122" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="64" y="382" width="555" height="128" rx="20" fill="#fff0e7" stroke="#9b5229" stroke-width="3"/>
+  <text x="88" y="422" font-size="24" font-weight="800" fill="#163122">Preserve conflicting evidence</text>
+  <text x="88" y="458" font-size="18" fill="#163122">A result that weakens the preferred explanation stays in the record.</text>
+  <text x="88" y="488" font-size="18" fill="#163122">Uncertainty is documented, not edited away.</text>
+  <rect x="661" y="382" width="555" height="128" rx="20" fill="#eef3f7" stroke="#47637a" stroke-width="3"/>
+  <text x="685" y="422" font-size="24" font-weight="800" fill="#163122">Authority boundary</text>
+  <text x="685" y="458" font-size="18" fill="#163122">Evidence can support a next step without authorizing every action.</text>
+  <text x="685" y="488" font-size="18" fill="#163122">Hold or escalate when consequence or authority exceeds the role.</text>
+  <rect x="64" y="556" width="1152" height="92" rx="18" fill="#163122"/>
+  <text x="88" y="588" font-size="22" font-weight="800" fill="#fffdf7">Record the chain:</text>
+  <text x="270" y="588" font-size="19" fill="#fffdf7">facts → context → hypotheses → discriminating evidence → bounded conclusion</text>
+  <text x="270" y="618" font-size="19" fill="#fffdf7">→ authorized next action or escalation</text>
+  <text x="88" y="638" font-size="15" fill="#dfe9e2">Illustrative model; current procedures and qualified authority remain controlling.</text>
+</g>
+</svg>

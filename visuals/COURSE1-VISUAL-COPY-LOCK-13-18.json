@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "scope": "Release-safe copy controls for Course 1 primary visuals 13-18.",
+  "global": {
+    "allowedBranding": [
+      "THC Learning Hub",
+      "Course 1",
+      "Technician I foundation"
+    ],
+    "prohibitedBranding": [
+      "Cultivation Technician Certification",
+      "Technician I Certification",
+      "Certified Technician",
+      "credential issued",
+      "certification issued"
+    ],
+    "rules": [
+      "Visuals teach public academic course content and must not imply professional credential issuance.",
+      "Facility-specific procedures remain controlled by current SOPs, manufacturer instructions, labels, record systems, and authorized roles.",
+      "Technician I actions must remain explicitly assigned, trained, and authorized."
+    ]
+  },
+  "assets": [
+    {
+      "conceptId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
+      "lessonId": "LESSON-LH-TECH1-001-13",
+      "moduleNumber": 5,
+      "title": "Equipment Pre-Use and Readiness Checks",
+      "header": "Course 1 • Module 5 • Equipment Readiness",
+      "coreMessage": "Check the exact asset, controlled status, assigned external readiness points, permitted indicators, and final status before use.",
+      "decisionLabels": [
+        "Ready",
+        "Approved routine correction",
+        "Out of service / escalate",
+        "Emergency response"
+      ],
+      "boundary": "A failed readiness check is a reason to stop use, preserve controlled status, and follow the site-defined escalation process. It is not permission to diagnose or repair.",
+      "prohibitedClaims": [
+        "apply lockout/tagout",
+        "remove tag",
+        "repair the equipment",
+        "clear for service"
+      ]
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
+      "lessonId": "LESSON-LH-TECH1-001-14",
+      "moduleNumber": 5,
+      "title": "Routine Operator Care versus Skilled Maintenance",
+      "header": "Course 1 • Module 5 • Operator vs. Maintenance Boundary",
+      "coreMessage": "Routine operator care exists only where the current equipment/site procedure explicitly assigns, trains, and authorizes the action.",
+      "operatorExamples": [
+        "external cleaning",
+        "observation",
+        "setup",
+        "simple checks",
+        "permitted reset or adjustment"
+      ],
+      "servicingSignals": [
+        "guarded or protected access",
+        "electrical work",
+        "powered disassembly",
+        "pressure or stored energy",
+        "diagnosis",
+        "repair",
+        "calibration"
+      ],
+      "boundary": "When the next step crosses into servicing or hazardous-energy work, preserve safe status and transfer the work to the trained and authorized role.",
+      "prohibitedClaims": [
+        "basic troubleshooting is always allowed",
+        "minor adjustments are always allowed",
+        "operator may calibrate",
+        "operator may repair"
+      ]
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
+      "lessonId": "LESSON-LH-TECH1-001-15",
+      "moduleNumber": 5,
+      "title": "Maintenance-Ready Fault Context",
+      "header": "Course 1 • Module 5 • Fault Reporting",
+      "coreMessage": "Record the exact asset, time, alarm or symptom, permitted checks, recurrence, process impact, safe status, and notification.",
+      "evidenceRule": "Separate verified observations from hypotheses. Do not declare a root cause without authorized diagnostic evidence.",
+      "boundary": "Reporting timing and channel follow the applicable emergency, fault-reporting, or escalation procedure.",
+      "prohibitedClaims": [
+        "root cause is",
+        "always report immediately to maintenance",
+        "technician diagnosis"
+      ]
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
+      "lessonId": "LESSON-LH-TECH1-001-16",
+      "moduleNumber": 6,
+      "title": "Controlled Record Correction",
+      "header": "Course 1 • Module 6 • Record Integrity",
+      "coreMessage": "Correct records through the approved paper or digital process while preserving the original information or audit trail, attribution, timing, and reason when required.",
+      "paperExample": "Single-line strike-through, corrected entry, initials/date, and reason may be shown only as an illustrative paper-record method when the governing procedure permits it.",
+      "boundary": "The approved record system, facility SOP, and applicable requirements control the correction method.",
+      "prohibitedClaims": [
+        "always strike through",
+        "never use digital correction",
+        "this is the required correction method"
+      ]
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
+      "lessonId": "LESSON-LH-TECH1-001-17",
+      "moduleNumber": 6,
+      "title": "Professional Shift Handoff",
+      "header": "Course 1 • Module 6 • Shift Handoff",
+      "coreMessage": "Transfer current status, completed and open work, unresolved risks, notifications, next actions, timing, and ownership using exact identifiers.",
+      "boundary": "Transferred instructions and priorities must be current, controlled, and within the receiving worker's authority. Use cross-check/read-back for critical open items.",
+      "prohibitedClaims": [
+        "incoming worker must follow verbal instruction even if undocumented",
+        "handoff overrides SOP",
+        "supervisor approval is always required"
+      ]
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
+      "lessonId": "LESSON-LH-TECH1-001-18",
+      "moduleNumber": 6,
+      "title": "Integrated Technician I Workflow",
+      "header": "Course 1 • Module 6 • Integrated Workflow",
+      "cycle": [
+        "Review assigned work",
+        "Verify current controlled instructions",
+        "Check hazards and prerequisites",
+        "Execute authorized work",
+        "Monitor and preserve status",
+        "Document facts",
+        "Communicate and follow up"
+      ],
+      "coreMessage": "Strong performance includes stopping, holding, preserving evidence, or escalating when the next action exceeds authority or the evidence is incomplete.",
+      "boundary": "Planning means reviewing assigned work, current instructions, dependencies, hazards, prerequisites, and priorities; it does not create independent production-planning or release authority.",
+      "prohibitedClaims": [
+        "create the production plan",
+        "independently prioritize production",
+        "release held material",
+        "clear equipment for service"
+      ]
+    }
+  ]
+}

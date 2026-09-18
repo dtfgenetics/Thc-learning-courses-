@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Ranked multi-factor differential</title>
+<desc id="desc">A differential diagnosis matrix compares root-zone, nutrition, environment, and biotic or developmental hypotheses using evidence for, evidence against, and the next discriminating check.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="76" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="#163122">Ranked multi-factor differential</text>
+<text x="64" y="116" font-family="system-ui,sans-serif" font-size="22" fill="#5a6b60">Visible symptoms can share mechanisms. Rank explanations with evidence instead of matching a picture to one label.</text>
+<g font-family="system-ui,sans-serif">
+  <rect x="64" y="156" width="1152" height="74" rx="16" fill="#163122"/>
+  <text x="86" y="202" font-size="21" font-weight="800" fill="#fffdf7">Hypothesis family</text>
+  <text x="360" y="202" font-size="21" font-weight="800" fill="#fffdf7">Evidence for</text>
+  <text x="650" y="202" font-size="21" font-weight="800" fill="#fffdf7">Evidence against / uncertainty</text>
+  <text x="970" y="202" font-size="21" font-weight="800" fill="#fffdf7">Next discriminating check</text>
+
+  <g font-size="17" fill="#163122">
+    <rect x="64" y="238" width="1152" height="92" rx="12" fill="#e8f1ea" stroke="#d9d3c4"/>
+    <text x="86" y="274" font-size="22" font-weight="800">Root zone</text>
+    <text x="360" y="270">Zone-specific wetness, drainage,</text><text x="360" y="296">root condition, EC/pH pattern</text>
+    <text x="650" y="270">Healthy roots elsewhere;</text><text x="650" y="296">sampling method may differ</text>
+    <text x="970" y="270">Compare affected/unaffected</text><text x="970" y="296">root-zone measurements</text>
+
+    <rect x="64" y="338" width="1152" height="92" rx="12" fill="#f7f3e8" stroke="#d9d3c4"/>
+    <text x="86" y="374" font-size="22" font-weight="800">Nutrition</text>
+    <text x="360" y="370">Symptom distribution, tissue</text><text x="360" y="396">context, input/root-zone history</text>
+    <text x="650" y="370">EC is not ion-specific;</text><text x="650" y="396">visible onset may be non-unique</text>
+    <text x="970" y="370">Verify sampling + compare</text><text x="970" y="396">chemistry and root context</text>
+
+    <rect x="64" y="438" width="1152" height="92" rx="12" fill="#eef3f7" stroke="#d9d3c4"/>
+    <text x="86" y="474" font-size="22" font-weight="800">Environment</text>
+    <text x="360" y="470">Spatial gradient, canopy sensor,</text><text x="360" y="496">event timing, equipment zone</text>
+    <text x="650" y="470">Room average may hide pattern;</text><text x="650" y="496">single probe may be unrepresentative</text>
+    <text x="970" y="470">Co-locate verified sensor;</text><text x="970" y="496">map affected/unaffected positions</text>
+
+    <rect x="64" y="538" width="1152" height="92" rx="12" fill="#fff0e7" stroke="#d9d3c4"/>
+    <text x="86" y="574" font-size="22" font-weight="800">Biotic / developmental</text>
+    <text x="360" y="570">Pest/pathogen signs, spread,</text><text x="360" y="596">crop stage or morphology</text>
+    <text x="650" y="570">Look-alikes remain possible;</text><text x="650" y="596">calendar timing alone is weak</text>
+    <text x="970" y="570">Qualified confirmation or</text><text x="970" y="596">stage-matched comparison</text>
+  </g>
+  <text x="64" y="668" font-size="17" fill="#5a6b60">Illustrative matrix: actual ranking depends on case evidence. Keep competing explanations visible.</text>
+  <text x="64" y="696" font-size="17" fill="#5a6b60">Change their relative ranking only when discriminating evidence supports the change.</text>
+</g>
+</svg>

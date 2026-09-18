@@ -67,6 +67,27 @@
       "Treating a hold as authorization to dispose product."
     ],
     "practicalApplication": "Create a deviation fact sheet containing lot/rack identity, location, process timeline, product observations, room data, current containment and a separate hypotheses section.",
-    "summary": "Containment protects product and evidence; chronology and facts come before causal and disposition conclusions."
+    "summary": "Containment protects product and evidence; chronology and facts come before causal and disposition conclusions.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-006-01",
+          "title": "Containment and fact baseline before causal conclusions",
+          "src": "/assets/tech2/course6/outcome-01.svg",
+          "alt": "Postharvest deviation workflow starting with exact material identity and containment, then preserving the event timeline, product observations, room or process history and current status before hypotheses or disposition decisions are considered.",
+          "caption": "Containment protects product and evidence; it does not decide disposition. Establish lot identity, chronology and observed facts before writing a causal story.",
+          "references": [
+            "REF-POSTHARVEST-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-006-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

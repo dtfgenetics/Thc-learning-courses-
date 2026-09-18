@@ -69,6 +69,28 @@
       "Changing identifiers to make records agree."
     ],
     "practicalApplication": "Draw a lot-genealogy diagram linking harvest source, racks, rooms, movements, sampling and current status, then annotate inclusion/exclusion evidence for affected scope.",
-    "summary": "Defensible scope follows traceable genealogy and shared process evidence, neither broader nor narrower than the records support."
+    "summary": "Defensible scope follows traceable genealogy and shared process evidence, neither broader nor narrower than the records support.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-006-03",
+          "title": "Lot genealogy and evidence-bounded affected scope",
+          "src": "/assets/tech2/course6/outcome-03.svg",
+          "alt": "Lot genealogy flow tracing source harvest identity through racks, rooms, movements and downstream lot identifiers, then using shared exposure, position, timing and product evidence to include or exclude material from affected scope without making the investigation automatically facility-wide or artificially narrow.",
+          "caption": "Affected scope follows traceable genealogy and shared exposure. Include and exclude material because the evidence supports it, not because a broader or narrower scope is more convenient.",
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-POSTHARVEST-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-006-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

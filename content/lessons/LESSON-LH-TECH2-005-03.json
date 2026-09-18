@@ -71,6 +71,28 @@
       "Changing the work plan outside assigned authority."
     ],
     "practicalApplication": "Complete a planned-versus-actual canopy review with mapped pre/post observations, crop stage, cultivar, authorized work, exceptions, recovery timing and unresolved factors.",
-    "summary": "Canopy performance is an evidence question: what was authorized, what occurred, where the response differed and what evidence explains it."
+    "summary": "Canopy performance is an evidence question: what was authorized, what occurred, where the response differed and what evidence explains it.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-005-03",
+          "title": "Canopy performance is planned-versus-actual evidence",
+          "src": "/assets/tech2/course5/outcome-03.svg",
+          "alt": "Canopy review workflow comparing the authorized work order with mapped pre-work conditions, actual work completed, spatial post-work observations and recovery over time, while retaining cultivar and developmental stage as context instead of assuming genotype causation.",
+          "caption": "Judge canopy work by the planned-versus-actual response, not the technique name. Use mapped recovery and stage/cultivar context rather than a single center-room impression.",
+          "references": [
+            "REF-CANOPY-001",
+            "REF-CANOPY-DEFOL-2025-001",
+            "REF-FLOWER-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-005-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This practical tests whether a candidate can enter a cultivation area, recognize obvious hazards and biosecurity concerns, inspect a crop systematically, interpret basic environmental information, document findings and hand off issues without turning the exercise into an advanced diagnosis test.
+This practical tests whether a candidate can enter a cultivation area, recognize obvious hazards and biosecurity concerns, inspect a crop systematically, interpret routine environmental and light information, complete a repeatable canopy-light verification when assigned, document findings and hand off issues without turning the exercise into an advanced diagnosis or control-design test.
 
 ## Candidate packet
 
@@ -16,8 +16,11 @@ The candidate receives:
 - room map and plant/batch IDs
 - previous-shift handoff
 - current environmental dashboard
+- supplied environmental/light targets or limits for the scenario
+- sensor-location information plus supplied calibration/verification status and logging context for selected readings
 - crop-inspection form
 - escalation/contact guide
+- when the light-verification station is assigned: an approved PPFD meter or simulated meter output, measurement grid, required measurement height/orientation and photoperiod record
 
 ## Seeded conditions
 
@@ -28,9 +31,13 @@ A standard version should include a rotating selection of conditions such as:
 - sanitation station requiring correct use
 - suspect plant near room edge
 - one local sensor reading inconsistent with other room data
+- one sensor whose placement, agreement, calibration/verification status or logging context makes the reading incomplete or suspect
+- an equipment/sensor condition that permits a documented operator-level check but requires escalation rather than unauthorized repair, calibration or control redesign
 - mild crop stress in a defined zone
 - one observation that should be documented but not overdiagnosed
 - one issue requiring escalation
+- when light verification is assigned, a canopy grid with meaningful spatial variation that cannot be represented by one point
+- a photoperiod or light-record detail that must be checked against the supplied scenario record rather than assumed from fixture settings
 
 ## Candidate tasks
 
@@ -42,8 +49,12 @@ A standard version should include a rotating selection of conditions such as:
 6. Follow a repeatable inspection route.
 7. Record plant stage, vigor, morphology, visible stress and abnormalities.
 8. Read environmental values and distinguish a normal reading, a questionable sensor reading and a condition requiring follow-up.
-9. Photograph or mark supplied findings where required.
-10. Complete the crop-inspection record and shift handoff.
+9. Use the supplied sensor placement, comparison readings, calibration/verification status, logging context and crop location to judge whether a selected reading is representative, suspect or incomplete.
+10. Perform only the supplied operator-level sensor/equipment readiness checks and escalate any fault, alarm or condition that would require unauthorized repair, calibration or control redesign.
+11. When assigned, perform a repeatable canopy light verification using the supplied grid, measurement height and sensor orientation; preserve all PPFD points instead of substituting one reading for the canopy.
+12. Record supplied photoperiod information and the PPFD verification with units, location, time, instrument/context and any unresolved spatial difference; compare against the supplied scenario target or limit without independently redesigning lighting strategy.
+13. Photograph or mark supplied findings where required.
+14. Complete the crop-inspection record and shift handoff.
 
 ## Expected evidence
 
@@ -54,6 +65,11 @@ The assessor should capture:
 - inspection route
 - crop observations
 - environmental interpretation
+- sensor representativeness decision using placement, comparison, verification/calibration and logging context
+- operator-level readiness check and escalation decision where applicable
+- when assigned, completed canopy light-verification grid or simulated measurement record
+- PPFD units, measurement location/height/orientation and instrument/context
+- photoperiod record and comparison with the supplied scenario target or limit
 - escalation choices
 - completed inspection record
 - final verbal or written handoff
@@ -70,6 +86,8 @@ The assessor should capture:
 
 **Target pass:** 80/100.
 
+The environmental-interpretation and documentation categories include the assigned sensor-verification and light-verification stations when those stations are present on the form. Equivalent forms must preserve the same competency demand even when scenario numbers, map locations or meter outputs change.
+
 A candidate should correct any unresolved serious safety or identity error before the practical is considered complete. The intent is not to create extra bureaucracy; it is to ensure the employment credential does not reward unsafe execution.
 
 ## Strong-performance indicators
@@ -79,6 +97,10 @@ A candidate should correct any unresolved serious safety or identity error befor
 - records observable evidence rather than unsupported diagnoses
 - connects findings to exact room/zone/plant IDs
 - questions an inconsistent sensor before recommending a room-wide change
+- checks whether sensor placement, comparison data, verification/calibration status and logging context support the reading before treating it as representative
+- stays inside supplied operator-care authority and escalates repair, calibration or control-design work outside that authority
+- uses the supplied PPFD grid and measurement context consistently rather than treating one point or fixture setting as canopy-level evidence
+- separates supplied target/limit information from actual measured values
 - gives the next person a handoff they can act on
 
 ## Weak-performance indicators
@@ -88,6 +110,11 @@ A candidate should correct any unresolved serious safety or identity error befor
 - writes vague observations such as “plants look bad”
 - diagnoses a pest or nutrient problem without evidence
 - reacts to one sensor number without context
+- accepts a reading as representative without considering supplied placement, comparison or verification context
+- performs or invents a repair/calibration/control change outside the supplied operator-level procedure
+- treats one PPFD point or a fixture setting as proof of canopy-wide light conditions
+- changes measurement position/orientation across the grid without documenting the change
+- independently changes lighting control strategy when the task only authorizes measurement, verification and escalation
 - leaves location, time, identity or follow-up out of the record
 
 ## Deliverables
@@ -96,8 +123,14 @@ A candidate should correct any unresolved serious safety or identity error befor
 2. crop inspection/scouting record
 3. annotated room map
 4. environmental interpretation note
-5. shift handoff
+5. when assigned, sensor verification/readiness note
+6. when assigned, canopy light-verification grid or supplied simulation record
+7. shift handoff
+
+## Scope boundary
+
+Practical A remains a **development** practical. The environmental/light stations evaluate entry-level measurement, documentation, representativeness checks, comparison and escalation—not environmental-system design, universal VPD/PPFD targets, fixture engineering, unauthorized calibration/repair or independent control-strategy changes. Facility procedures, instrument instructions and supplied scenario targets govern the stations when more specific.
 
 ## Portfolio use
 
-A redacted/simulated version of the inspection record and room map can be included in the candidate's employment portfolio as evidence of safe crop-observation practice.
+A redacted/simulated version of the inspection record, room map and non-secure environmental/light verification practice records can be included in the candidate's employment portfolio as evidence of safe crop-observation and measurement practice.

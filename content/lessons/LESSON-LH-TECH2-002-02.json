@@ -77,6 +77,29 @@
       "Using one light reading to characterize the whole canopy."
     ],
     "practicalApplication": "Annotate a trend showing commands, alarms, independent measurements and relevant work events. Assign a provisional fault class and list the next safe check that would distinguish sensor, controller, equipment or spatial-process causes.",
-    "summary": "Good fault classification connects commands to real response, uses spatial and temporal evidence, and stops short of claiming a repair diagnosis without adequate verification."
+    "summary": "Good fault classification connects commands to real response, uses spatial and temporal evidence, and stops short of claiming a repair diagnosis without adequate verification.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-002-02",
+          "title": "Command, response and fault classification",
+          "src": "/assets/tech2/course2/outcome-02.svg",
+          "alt": "Fault-classification workflow separating controller command, physical response, independent measurement and spatial or time-series pattern before assigning a provisional sensor-data, control-response, equipment-response or distribution-process category.",
+          "caption": "A command is not proof of physical response. Combine independent measurement, time-series behavior and spatial pattern to choose the next verification path without overstating root cause.",
+          "references": [
+            "REF-VPD-002",
+            "REF-ENV-TEMP-2025-001",
+            "REF-LIGHT-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-002-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

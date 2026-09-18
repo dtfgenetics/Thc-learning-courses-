@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Pattern analysis before diagnosis</title>
+<desc id="desc">A diagnostic pattern-analysis diagram compares spatial, temporal, cohort, environmental, and developmental views before deciding whether measurements are representative.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="76" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="#163122">Pattern analysis before diagnosis</text>
+<text x="64" y="116" font-family="system-ui,sans-serif" font-size="22" fill="#5a6b60">Ask whether the measurement represents the crop—not just whether the number exists.</text>
+<g font-family="system-ui,sans-serif">
+  <rect x="64" y="162" width="250" height="150" rx="22" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+  <text x="88" y="204" font-size="25" font-weight="800" fill="#163122">Spatial</text>
+  <text x="88" y="242" font-size="18" fill="#163122">Affected vs unaffected</text>
+  <text x="88" y="270" font-size="18" fill="#163122">Canopy position / zone</text>
+  <text x="88" y="298" font-size="18" fill="#163122">Gradient or cluster?</text>
+
+  <rect x="338" y="162" width="250" height="150" rx="22" fill="#f7f3e8" stroke="#a57a2b" stroke-width="3"/>
+  <text x="362" y="204" font-size="25" font-weight="800" fill="#163122">Temporal</text>
+  <text x="362" y="242" font-size="18" fill="#163122">Onset and progression</text>
+  <text x="362" y="270" font-size="18" fill="#163122">Recent operational events</text>
+  <text x="362" y="298" font-size="18" fill="#163122">Association ≠ proof</text>
+
+  <rect x="612" y="162" width="250" height="150" rx="22" fill="#eef3f7" stroke="#47637a" stroke-width="3"/>
+  <text x="636" y="204" font-size="25" font-weight="800" fill="#163122">Cohort</text>
+  <text x="636" y="242" font-size="18" fill="#163122">Cultivar / batch / age</text>
+  <text x="636" y="270" font-size="18" fill="#163122">Same treatment?</text>
+  <text x="636" y="298" font-size="18" fill="#163122">Comparable groups?</text>
+
+  <rect x="886" y="162" width="330" height="150" rx="22" fill="#fff0e7" stroke="#9b5229" stroke-width="3"/>
+  <text x="910" y="204" font-size="25" font-weight="800" fill="#163122">Environment + stage</text>
+  <text x="910" y="242" font-size="18" fill="#163122">Representative canopy measurements</text>
+  <text x="910" y="270" font-size="18" fill="#163122">Morphology / developmental state</text>
+  <text x="910" y="298" font-size="18" fill="#163122">Controller average may hide local differences</text>
+
+  <path d="M189 326V382M463 326V382M737 326V382M1051 326V382" stroke="#163122" stroke-width="4"/>
+  <path d="M179 372l10 12 10-12M453 372l10 12 10-12M727 372l10 12 10-12M1041 372l10 12 10-12" fill="none" stroke="#163122" stroke-width="4"/>
+
+  <rect x="160" y="390" width="960" height="116" rx="24" fill="#163122"/>
+  <text x="640" y="433" text-anchor="middle" font-size="27" font-weight="800" fill="#fffdf7">Representativeness check</text>
+  <text x="640" y="470" text-anchor="middle" font-size="20" fill="#fffdf7">Do these samples, positions, time points, cohorts and sensors support the decision being considered?</text>
+
+  <path d="M640 506V548" stroke="#163122" stroke-width="4"/>
+  <path d="M630 538l10 12 10-12" fill="none" stroke="#163122" stroke-width="4"/>
+  <rect x="160" y="556" width="450" height="92" rx="18" fill="#e8f1ea" stroke="#245f3d" stroke-width="3"/>
+  <text x="385" y="592" text-anchor="middle" font-size="22" font-weight="800" fill="#163122">Representative enough</text>
+  <text x="385" y="622" text-anchor="middle" font-size="18" fill="#163122">Use the pattern as evidence, with limits stated.</text>
+  <rect x="670" y="556" width="450" height="92" rx="18" fill="#fff0e7" stroke="#9b5229" stroke-width="3"/>
+  <text x="895" y="592" text-anchor="middle" font-size="22" font-weight="800" fill="#163122">Not representative enough</text>
+  <text x="895" y="622" text-anchor="middle" font-size="18" fill="#163122">Collect better-positioned or better-matched evidence first.</text>
+</g>
+</svg>

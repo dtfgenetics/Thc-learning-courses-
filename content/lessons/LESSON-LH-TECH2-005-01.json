@@ -67,6 +67,27 @@
       "Editing source records after seeing the outcome."
     ],
     "practicalApplication": "Build a propagation performance table by donor/batch with starting count, rooted count, loss count, observation day, operator, media, environment notes and sanitation events, then annotate which comparisons are valid.",
-    "summary": "Propagation performance review depends on comparable denominators, traceable groups and preserved source records."
+    "summary": "Propagation performance review depends on comparable denominators, traceable groups and preserved source records.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-005-01",
+          "title": "Comparable propagation performance evidence",
+          "src": "/assets/tech2/course5/outcome-01.svg",
+          "alt": "Propagation performance diagram aligning donor or batch identity, eligible starting denominator, rooted and loss counts, observation time point, operator and environment so success percentages are only compared across valid groups and weak donors or trays are not averaged away.",
+          "caption": "Propagation percentages only mean something when the denominator, time point and genealogy are comparable. Stratify donors, trays, operators, media and zones before averaging.",
+          "references": [
+            "REF-PROP-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-005-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

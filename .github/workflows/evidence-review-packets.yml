@@ -1,0 +1,55 @@
+name: Evidence review packets
+
+on:
+  workflow_dispatch:
+    inputs:
+      review_id:
+        description: Optional pending evidence review ID; leave blank to build all pending packets
+        required: false
+        type: string
+  pull_request:
+    paths:
+      - 'automation/curriculum-ingestion/reviews/**'
+      - 'content/lessons/**'
+      - 'content/references/**'
+      - 'content/claims/**'
+      - 'registry/LINKS.json'
+      - 'schemas/evidence-mapping-review.schema.json'
+      - 'scripts/build-evidence-review-packets.mjs'
+      - 'scripts/validate-evidence-mapping-reviews.mjs'
+      - '.github/workflows/evidence-review-packets.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-review-packets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Syntax-check evidence review packet builder
+        run: node --check scripts/build-evidence-review-packets.mjs
+      - name: Validate evidence mapping review records
+        run: node scripts/validate-evidence-mapping-reviews.mjs
+      - name: Build human review packet bundle
+        env:
+          REVIEW_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.review_id || '' }}
+        run: |
+          if [ -n "$REVIEW_ID" ]; then
+            node scripts/build-evidence-review-packets.mjs \
+              --id="$REVIEW_ID" \
+              --output=automation/curriculum-ingestion/reports/evidence-review-packets
+          else
+            node scripts/build-evidence-review-packets.mjs \
+              --output=automation/curriculum-ingestion/reports/evidence-review-packets
+          fi
+      - name: Upload evidence review packet bundle
+        uses: actions/upload-artifact@v7
+        with:
+          name: course1-evidence-review-packets
+          path: automation/curriculum-ingestion/reports/evidence-review-packets/

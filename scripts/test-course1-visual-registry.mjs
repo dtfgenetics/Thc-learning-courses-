@@ -5,6 +5,7 @@ import path from 'node:path';
 const root = process.cwd();
 const registryPath = path.join(root, 'visuals/ASSET-REGISTRY.json');
 const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+const richContent = fs.readFileSync(path.join(root, 'apps/web/public/rich-content.js'), 'utf8');
 
 assert.equal(registry.courseId, 'COURSE-LH-TECH1-001');
 assert.equal(registry.policy?.expandable, true, 'Course 1 visual registry must remain expandable');
@@ -78,14 +79,22 @@ for (const file of fs.readdirSync(lessonDir).filter((name) => /^LESSON-LH-TECH1-
   }
 }
 
+assert.match(richContent, /COURSE1_PRIMARY_VISUAL_OVERRIDES/, 'controlled Course 1 learner visual override registry must exist in the shared renderer');
 for (const asset of produced) {
-  assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced learner asset is registered but not mapped into a canonical Course 1 lesson`);
+  if (!usedAssetIds.has(asset.id) && richContent.includes(`assetId: '${asset.id}'`) && richContent.includes(`src: '${asset.learnerPath}'`)) {
+    usedAssetIds.add(asset.id);
+  }
+}
+
+for (const asset of produced) {
+  assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced learner asset is registered but not mapped into a canonical lesson or controlled learner-render override`);
   for (const lessonId of asset.primaryLessons) {
     const lessonPath = path.join(root, 'content/lessons', `${lessonId}.json`);
     assert.ok(fs.existsSync(lessonPath), `${asset.id}: primary lesson ${lessonId} does not exist`);
   }
 }
 
-console.log(`Course 1 visual delivery contract passed for ${produced.length} produced learner assets: public download metadata, source files, file-format integrity, accessibility, registry mapping, and canonical lesson usage are consistent.`);
+console.log(`Course 1 visual delivery contract passed for ${produced.length} produced learner assets: public download metadata, source files, file-format integrity, accessibility, registry mapping, and canonical/controlled learner usage are consistent.`);
 
+await import('./test-course1-svg-drive-provenance.mjs');
 await import('./test-course1-visual-release-manifest.mjs');

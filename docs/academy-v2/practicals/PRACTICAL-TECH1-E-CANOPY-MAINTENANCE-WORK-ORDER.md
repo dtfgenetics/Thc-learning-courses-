@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This practical tests whether a candidate can interpret and execute a defined canopy-maintenance work order consistently while protecting sanitation, plant integrity, production intent and documentation.
+This practical tests whether a candidate can interpret and execute a defined canopy-maintenance work order consistently while protecting sanitation, clean-to-dirty and quarantine/isolation boundaries, plant integrity, production intent and documentation.
 
 ## Candidate packet
 
@@ -15,6 +15,7 @@ The candidate receives:
 - plant stage and vigor notes
 - canopy work order with defined objective
 - sanitation procedure
+- clean-to-dirty movement and isolation/quarantine instructions
 - before images/room diagram
 - support/pruning criteria
 - stop/escalation conditions
@@ -30,6 +31,7 @@ Rotate conditions such as:
 - inconsistent previous operator execution
 - blocked aisle/support placement problem
 - accidental stem damage requiring documentation
+- a suspect plant/tool/waste movement choice that could cross a clean or quarantine boundary
 
 ## Candidate tasks
 
@@ -40,15 +42,17 @@ Rotate conditions such as:
 5. Apply supplied pruning/support/repositioning criteria consistently to simulated plants.
 6. Recognize stop conditions such as active tissue splitting, severe stress or pest concerns.
 7. Maintain sanitation and waste control.
-8. Compare completed results with the stated structural objective.
-9. Record scope completed, exceptions, damage and follow-up needs.
-10. Provide a concise shift handoff.
+8. When a pest concern, suspect plant or contaminated tool/waste condition is encountered, preserve supplied clean-to-dirty movement and isolation/quarantine boundaries and report any actual or potential breach before continuing in a clean area.
+9. Compare completed results with the stated structural objective.
+10. Record scope completed, exceptions, damage and follow-up needs.
+11. Provide a concise shift handoff.
 
 ## Expected evidence
 
 - work-order interpretation
 - action-selection decisions
 - sanitation sequence
+- quarantine/isolation action when applicable
 - before/after annotations
 - exception handling
 - consistency review
@@ -71,7 +75,7 @@ Rotate conditions such as:
 - does not turn a defined task into a personal training experiment
 - modifies or stops work appropriately on stressed/damaged plants
 - recognizes ambiguous instructions before removing irreversible tissue
-- keeps tools/waste from becoming a biosecurity problem
+- keeps tools/waste from becoming a biosecurity problem and maintains supplied isolation/quarantine boundaries
 - documents what actually happened and which plants need follow-up
 
 ## Deliverables
@@ -80,8 +84,9 @@ Rotate conditions such as:
 2. before/after decision sheet
 3. completed room work record
 4. exceptions/damage log
-5. handoff note
+5. quarantine/isolation note when applicable
+6. handoff note
 
 ## Portfolio use
 
-An annotated work-order execution report can show employers that the candidate can follow production intent, preserve plant health and document consistent labor execution.
+An annotated work-order execution report can show employers that the candidate can follow production intent, preserve plant health, maintain biosecurity boundaries and document consistent labor execution.

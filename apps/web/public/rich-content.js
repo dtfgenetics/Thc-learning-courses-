@@ -1,3 +1,103 @@
+export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
+  'Equipment Pre-Use and Readiness Checks': {
+    replaceAssetIds: ['VIS-LH-TECH1-001-010'],
+    block: {
+      type: 'image',
+      assetId: 'VIS-LH-TECH1-001-015',
+      title: 'Equipment pre-use readiness',
+      src: '/assets/course1/equipment-preuse-readiness.svg',
+      alt: 'Five-step equipment pre-use readiness model: confirm exact asset and assignment, check controlled status, inspect only assigned external readiness points, review indicators permitted by the operator procedure, and classify the result as ready, approved routine correction, hold or escalation, or emergency response.',
+      caption: 'A pre-use check verifies readiness; a failed criterion does not authorize repair. Preserve controlled status and follow the site-defined out-of-service or escalation process.',
+      references: ['REF-NIOSH-CANNABIS-HAZARDS-2024', 'REF-OSHA-1910-147-LOTO']
+    }
+  },
+  'Routine Operator Care versus Skilled Maintenance': {
+    replaceAssetIds: ['VIS-LH-TECH1-001-010'],
+    block: {
+      type: 'image',
+      assetId: 'VIS-LH-TECH1-001-016',
+      title: 'Operator care versus maintenance boundary',
+      src: '/assets/course1/operator-vs-maintenance-boundary.svg',
+      alt: 'Two-column decision visual separating routine operator care explicitly assigned, trained and authorized by current procedure from maintenance or servicing involving guarded access, electrical components, powered disassembly, pressure, stored energy, diagnosis, calibration or other unassigned work.',
+      caption: 'The current equipment instructions and employer procedure define the boundary. If the action is not assigned to the operator, stop and clarify rather than expanding routine care into servicing.',
+      references: ['REF-OSHA-1910-147-LOTO', 'REF-NIOSH-CANNABIS-HAZARDS-2024', 'REF-NIOSH-LOTO-2011-156']
+    }
+  },
+  'Alarms, Fault Context and Maintenance Escalation': {
+    replaceAssetIds: ['VIS-LH-TECH1-001-011'],
+    block: {
+      type: 'image',
+      assetId: 'VIS-LH-TECH1-001-017',
+      title: 'Fault context and escalation',
+      src: '/assets/course1/fault-context-escalation.svg',
+      alt: 'Maintenance-ready fault context model that records exact asset and location, first occurrence, exact alarm or symptom, permitted operator checks and results, recurrence, process impact, controlled status and notification while keeping verified facts separate from hypotheses.',
+      caption: 'Make the condition reproducible without manufacturing certainty. Reporting timing and channel follow the applicable emergency, fault-reporting or escalation procedure.',
+      references: ['REF-MHRA-GXP-DATA-INTEGRITY', 'REF-OSHA-1910-147-LOTO', 'REF-NIOSH-CANNABIS-HAZARDS-2024']
+    }
+  },
+  'Contemporaneous Records and Data Integrity': {
+    replaceAssetIds: ['VIS-LH-TECH1-001-014'],
+    block: {
+      type: 'image',
+      assetId: 'VIS-LH-TECH1-001-018',
+      title: 'Controlled record correction',
+      src: '/assets/course1/record-correction-controls.svg',
+      alt: 'Record-correction visual showing that paper and digital changes follow the governing record system and facility procedure, preserve the original information or audit trail, retain attribution and timing, and never silently overwrite, erase, backdate or replace missing data with an invented value.',
+      caption: 'Correction methods are system-controlled. A paper strike-through style is only an example when the governing procedure permits it; the universal principle is preservation of original history or audit trail.',
+      references: ['REF-MHRA-GXP-DATA-INTEGRITY']
+    }
+  },
+  'Professional Shift Handoff': {
+    replaceAssetIds: ['VIS-LH-TECH1-001-012'],
+    block: {
+      type: 'image',
+      assetId: 'VIS-LH-TECH1-001-019',
+      title: 'Professional shift handoff',
+      src: '/assets/course1/shift-handoff-control.svg',
+      alt: 'Four-stage shift handoff model showing outgoing preparation, two-way information exchange, incoming cross-check, and explicit ownership of unresolved work, with safety and access controls, holds and identity problems, equipment status, incomplete work and time-sensitive next actions prioritized.',
+      caption: 'Handoff instructions and priorities must be current, controlled and within the receiving worker’s authority. Transfer exact status, ownership and timing instead of improvised instructions.',
+      references: ['REF-HSE-SHIFT-HANDOVER', 'REF-MHRA-GXP-DATA-INTEGRITY']
+    }
+  },
+  'Integrated Technician Workflow Case': {
+    replaceAssetIds: [],
+    insertAt: 1,
+    block: {
+      type: 'image',
+      assetId: 'VIS-LH-TECH1-001-020',
+      title: 'Integrated Technician I workflow',
+      src: '/assets/course1/integrated-technician-workflow.svg',
+      alt: 'Integrated workflow connecting review of assigned work and current controlled instructions, readiness and dependency checks, authorized routine execution, monitoring and response to change, truthful documentation, and communication or follow-up while keeping unresolved or unauthorized work visibly open.',
+      caption: 'PLAN means reviewing assigned work, current controlled instructions, hazards, prerequisites and priorities—not independent production-planning authority. Blocked or unauthorized work remains open and is routed to the appropriate role.',
+      references: ['REF-NIOSH-CANNABIS-HAZARDS-2024', 'REF-MHRA-GXP-DATA-INTEGRITY', 'REF-OSHA-1910-147-LOTO', 'REF-HSE-SHIFT-HANDOVER']
+    }
+  }
+});
+
+function lessonTitleFromParent(parent) {
+  if (!(parent instanceof Element)) return '';
+  if (!parent.classList.contains('lesson-article')) return '';
+  return parent.querySelector(':scope > h2')?.textContent?.trim() ?? '';
+}
+
+export function applyCourse1PrimaryVisualOverride(parent, blocks) {
+  if (!Array.isArray(blocks)) return blocks;
+  const override = COURSE1_PRIMARY_VISUAL_OVERRIDES[lessonTitleFromParent(parent)];
+  if (!override) return blocks;
+
+  const next = blocks.map((block) => ({ ...block }));
+  const replacementIndex = next.findIndex((block) => block.type === 'image' && override.replaceAssetIds.includes(block.assetId));
+  if (replacementIndex >= 0) {
+    next[replacementIndex] = { ...override.block };
+    return next;
+  }
+
+  if (next.some((block) => block.type === 'image' && block.assetId === override.block.assetId)) return next;
+  const insertAt = Math.max(0, Math.min(Number.isInteger(override.insertAt) ? override.insertAt : next.length, next.length));
+  next.splice(insertAt, 0, { ...override.block });
+  return next;
+}
+
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
   node.textContent = value ?? '';
@@ -7,26 +107,45 @@ function text(tag, value, className = '') {
 
 function appendReferences(parent, references) {
   if (!Array.isArray(references) || references.length === 0) return;
-  const note = text('p', `Evidence: ${references.join(', ')}`, 'rich-evidence');
-  parent.append(note);
+  const details = document.createElement('details');
+  details.className = 'rich-evidence';
+  details.append(text('summary', 'Sources & evidence'));
+  const list = document.createElement('ul');
+  list.className = 'rich-evidence-list';
+  for (const reference of references) list.append(text('li', reference));
+  details.append(list);
+  parent.append(details);
 }
 
 function appendImage(parent, { src, alt, caption, credit, assetId }, className = '') {
   const figure = document.createElement('figure');
   figure.className = `rich-figure${className ? ` ${className}` : ''}`;
+  if (assetId) figure.dataset.assetId = assetId;
+
   const image = document.createElement('img');
   image.src = src;
   image.alt = alt ?? '';
   image.loading = 'lazy';
   image.decoding = 'async';
   figure.append(image);
-  if (caption || credit || assetId) {
-    const pieces = [];
-    if (caption) pieces.push(caption);
-    if (credit) pieces.push(`Source: ${credit}`);
-    if (assetId) pieces.push(`Asset ${assetId}`);
-    figure.append(text('figcaption', pieces.join(' • ')));
+
+  const footer = document.createElement('figcaption');
+  const pieces = [];
+  if (caption) pieces.push(caption);
+  if (credit) pieces.push(`Source: ${credit}`);
+  if (pieces.length) footer.append(text('span', pieces.join(' • '), 'rich-figure-caption-text'));
+
+  if (src) {
+    const fullSize = document.createElement('a');
+    fullSize.href = src;
+    fullSize.textContent = 'Open full-size visual';
+    fullSize.className = 'rich-figure-fullsize';
+    fullSize.target = '_blank';
+    fullSize.rel = 'noopener noreferrer';
+    footer.append(fullSize);
   }
+
+  if (footer.childNodes.length) figure.append(footer);
   parent.append(figure);
 }
 
@@ -227,7 +346,8 @@ function renderDivider(parent) {
 
 export function renderRichBlocks(parent, blocks) {
   if (!Array.isArray(blocks) || blocks.length === 0) return false;
-  for (const block of blocks) {
+  const renderBlocks = applyCourse1PrimaryVisualOverride(parent, blocks);
+  for (const block of renderBlocks) {
     switch (block.type) {
       case 'text': renderTextBlock(parent, block); break;
       case 'callout': renderCallout(parent, block); break;

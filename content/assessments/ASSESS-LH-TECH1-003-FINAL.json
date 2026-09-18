@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "competencies": [
     "COMP-ENV-VPD-001",
@@ -80,10 +80,11 @@
   },
   "extensions": {
     "courseId": "COURSE-LH-TECH1-003",
+    "linkedCredentialPractical": "PRACTICAL-TECH1-A",
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH1-003-M01",
     "bankStatus": "development-seed",
     "bankExpansionTarget": 30,
-    "completionModel": "Course 003 remains draft. Written evidence does not replace later integrated Technician I practical/capstone requirements or program release gates."
+    "completionModel": "Course 003 remains draft. Written evidence and development-stage Practical A mapping do not replace practical validation, human review, pilot evidence, integrated capstone requirements or program release gates."
   }
 }

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Temperature, relative humidity and VPD measurement context</title>
+  <desc id="desc">Educational diagram showing temperature and relative humidity as paired measurements feeding VPD context, with target, measured value and alarm kept as separate record types. It emphasizes units, sensor identity, location and time and states that VPD is context rather than a universal target rule.</desc>
+  <style>
+    text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#17352b}.h1{font-size:34px;font-weight:800}.h2{font-size:22px;font-weight:750}.body{font-size:18px}.small{font-size:15px}.label{font-size:16px;font-weight:700}.card{fill:#fffdf7;stroke:#355f50;stroke-width:2}.soft{fill:#eef5ed}.accent{fill:#dcebdd}.line{stroke:#355f50;stroke-width:3;fill:none}.dash{stroke:#6c8178;stroke-width:2;stroke-dasharray:8 7;fill:none}.pill{fill:#f6f1e6;stroke:#8c8a78;stroke-width:1.5}
+  </style>
+  <rect width="1200" height="760" fill="#f7f3e8"/>
+  <text x="60" y="65" class="h1">Environmental measurements need context</text>
+  <text x="60" y="98" class="body">Record what the sensor reported before deciding what the reading means.</text>
+
+  <rect x="60" y="140" width="310" height="210" rx="22" class="card"/>
+  <text x="90" y="180" class="h2">1. Pair the measurements</text>
+  <rect x="90" y="210" width="110" height="70" rx="14" class="soft"/>
+  <text x="112" y="238" class="label">TEMP</text>
+  <text x="109" y="265" class="body">___ °C</text>
+  <rect x="225" y="210" width="110" height="70" rx="14" class="soft"/>
+  <text x="258" y="238" class="label">RH</text>
+  <text x="249" y="265" class="body">___ %</text>
+  <path d="M200 245 H225" class="line"/>
+  <text x="90" y="315" class="small">RH alone is incomplete for VPD interpretation.</text>
+
+  <rect x="445" y="140" width="310" height="210" rx="22" class="card"/>
+  <text x="475" y="180" class="h2">2. Interpret VPD as context</text>
+  <circle cx="600" cy="252" r="58" class="accent"/>
+  <text x="568" y="244" class="label">VPD</text>
+  <text x="536" y="270" class="small">drying-demand</text>
+  <text x="480" y="315" class="small">Use the supplied calculation/method and crop context.</text>
+  <path d="M370 245 H440" class="line"/>
+  <path d="M430 237 l12 8 -12 8" fill="#355f50"/>
+
+  <rect x="830" y="140" width="310" height="210" rx="22" class="card"/>
+  <text x="860" y="180" class="h2">3. Preserve record context</text>
+  <rect x="860" y="210" width="112" height="42" rx="18" class="pill"/><text x="879" y="237" class="small">sensor ID</text>
+  <rect x="988" y="210" width="112" height="42" rx="18" class="pill"/><text x="1011" y="237" class="small">location</text>
+  <rect x="860" y="266" width="112" height="42" rx="18" class="pill"/><text x="889" y="293" class="small">time</text>
+  <rect x="988" y="266" width="112" height="42" rx="18" class="pill"/><text x="1017" y="293" class="small">units</text>
+  <text x="860" y="330" class="small">Enough detail for another person to reconstruct the reading.</text>
+  <path d="M755 245 H825" class="line"/>
+  <path d="M815 237 l12 8 -12 8" fill="#355f50"/>
+
+  <text x="60" y="415" class="h2">Keep three record roles separate</text>
+  <rect x="60" y="445" width="330" height="170" rx="20" class="card"/>
+  <text x="90" y="485" class="h2">TARGET</text>
+  <text x="90" y="522" class="body">Intended value, range or limit</text>
+  <text x="90" y="555" class="small">Supplied by procedure/control strategy.</text>
+  <text x="90" y="583" class="small">Do not copy it into the measurement field.</text>
+
+  <rect x="435" y="445" width="330" height="170" rx="20" class="card"/>
+  <text x="465" y="485" class="h2">MEASUREMENT</text>
+  <text x="465" y="522" class="body">What the identified sensor reported</text>
+  <text x="465" y="555" class="small">Record location, time, units and instrument context.</text>
+  <text x="465" y="583" class="small">Verify suspect data before control changes.</text>
+
+  <rect x="810" y="445" width="330" height="170" rx="20" class="card"/>
+  <text x="840" y="485" class="h2">ALARM</text>
+  <text x="840" y="522" class="body">A rule or threshold event</text>
+  <text x="840" y="555" class="small">An alarm is not the same as the target or reading.</text>
+  <text x="840" y="583" class="small">Document and route it under the supplied procedure.</text>
+
+  <rect x="60" y="650" width="1080" height="66" rx="18" class="accent"/>
+  <text x="84" y="680" class="label">Evidence boundary:</text>
+  <text x="230" y="680" class="small">VPD describes atmospheric drying-demand context. This visual does not prescribe a universal cannabis VPD target.</text>
+  <text x="230" y="704" class="small">Facility procedures, plant condition and the supplied measurement method govern the technician task.</text>
+</svg>

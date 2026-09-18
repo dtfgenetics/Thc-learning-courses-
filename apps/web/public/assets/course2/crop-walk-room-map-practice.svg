@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 1056" role="img" aria-labelledby="title desc">
+  <title id="title">Crop-walk room-map practice worksheet</title>
+  <desc id="desc">Printable worksheet with a blank three-zone crop-room map, spaces to draw a representative route and observation points, and fields for purpose, crop identity, sample denominator, spatial pattern, direct observations, context, uncertainty, and escalation.</desc>
+  <rect width="816" height="1056" fill="#fffdf5"/>
+  <text x="48" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#173d2b">Crop-Walk Room-Map Practice</text>
+  <text x="48" y="88" font-family="Arial, sans-serif" font-size="15" fill="#365b48">Course 2 practice sheet — draw the route, mark observation points, and record the evidence before interpreting it.</text>
+
+  <g font-family="Arial, sans-serif" font-size="14" fill="#173d2b">
+    <text x="48" y="130" font-weight="700">Purpose:</text><line x1="112" y1="134" x2="390" y2="134" stroke="#657b6c"/>
+    <text x="420" y="130" font-weight="700">Date/time:</text><line x1="492" y1="134" x2="760" y2="134" stroke="#657b6c"/>
+    <text x="48" y="162" font-weight="700">Room/zone/crop identity:</text><line x1="205" y1="166" x2="760" y2="166" stroke="#657b6c"/>
+  </g>
+
+  <rect x="48" y="195" width="720" height="390" rx="18" fill="#ffffff" stroke="#5c7d69" stroke-width="2"/>
+  <text x="66" y="224" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#173d2b">ROOM MAP — draw your route and number the observation points</text>
+  <line x1="288" y1="240" x2="288" y2="558" stroke="#cfd9d2" stroke-width="2"/>
+  <line x1="528" y1="240" x2="528" y2="558" stroke="#cfd9d2" stroke-width="2"/>
+  <text x="168" y="574" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#56685e">Zone A</text>
+  <text x="408" y="574" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#56685e">Zone B</text>
+  <text x="648" y="574" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#56685e">Zone C</text>
+  <g fill="none" stroke="#98aa9e" stroke-width="1.5">
+    <circle cx="105" cy="285" r="15"/><circle cx="165" cy="285" r="15"/><circle cx="225" cy="285" r="15"/>
+    <circle cx="105" cy="350" r="15"/><circle cx="165" cy="350" r="15"/><circle cx="225" cy="350" r="15"/>
+    <circle cx="105" cy="415" r="15"/><circle cx="165" cy="415" r="15"/><circle cx="225" cy="415" r="15"/>
+    <circle cx="105" cy="480" r="15"/><circle cx="165" cy="480" r="15"/><circle cx="225" cy="480" r="15"/>
+    <circle cx="345" cy="285" r="15"/><circle cx="405" cy="285" r="15"/><circle cx="465" cy="285" r="15"/>
+    <circle cx="345" cy="350" r="15"/><circle cx="405" cy="350" r="15"/><circle cx="465" cy="350" r="15"/>
+    <circle cx="345" cy="415" r="15"/><circle cx="405" cy="415" r="15"/><circle cx="465" cy="415" r="15"/>
+    <circle cx="345" cy="480" r="15"/><circle cx="405" cy="480" r="15"/><circle cx="465" cy="480" r="15"/>
+    <circle cx="585" cy="285" r="15"/><circle cx="645" cy="285" r="15"/><circle cx="705" cy="285" r="15"/>
+    <circle cx="585" cy="350" r="15"/><circle cx="645" cy="350" r="15"/><circle cx="705" cy="350" r="15"/>
+    <circle cx="585" cy="415" r="15"/><circle cx="645" cy="415" r="15"/><circle cx="705" cy="415" r="15"/>
+    <circle cx="585" cy="480" r="15"/><circle cx="645" cy="480" r="15"/><circle cx="705" cy="480" r="15"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#173d2b">
+    <text x="48" y="625" font-size="15" font-weight="700">Sample denominator:</text>
+    <text x="190" y="625" font-size="14">_____ inspected</text>
+    <text x="330" y="625" font-size="15" font-weight="700">Observed count:</text>
+    <text x="445" y="625" font-size="14">_____ with defined finding</text>
+    <text x="48" y="662" font-size="15" font-weight="700">Spatial pattern:</text>
+    <rect x="153" y="647" width="14" height="14" fill="none" stroke="#657b6c"/><text x="174" y="660" font-size="13">isolated</text>
+    <rect x="240" y="647" width="14" height="14" fill="none" stroke="#657b6c"/><text x="261" y="660" font-size="13">edge-associated</text>
+    <rect x="380" y="647" width="14" height="14" fill="none" stroke="#657b6c"/><text x="401" y="660" font-size="13">zonal/clustered</text>
+    <rect x="515" y="647" width="14" height="14" fill="none" stroke="#657b6c"/><text x="536" y="660" font-size="13">widespread</text>
+    <rect x="640" y="647" width="14" height="14" fill="none" stroke="#657b6c"/><text x="661" y="660" font-size="13">other</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <text x="48" y="710" font-size="16" font-weight="700" fill="#173d2b">Direct observations — describe what you can see or measure</text>
+    <line x1="48" y1="735" x2="768" y2="735" stroke="#98aa9e"/><line x1="48" y1="763" x2="768" y2="763" stroke="#98aa9e"/><line x1="48" y1="791" x2="768" y2="791" stroke="#98aa9e"/>
+    <text x="48" y="835" font-size="16" font-weight="700" fill="#173d2b">Relevant context — keep it separate from confirmed cause</text>
+    <line x1="48" y1="860" x2="768" y2="860" stroke="#98aa9e"/><line x1="48" y1="888" x2="768" y2="888" stroke="#98aa9e"/>
+    <text x="48" y="930" font-size="15" font-weight="700" fill="#173d2b">What remains uncertain?</text><line x1="207" y1="934" x2="768" y2="934" stroke="#98aa9e"/>
+    <text x="48" y="968" font-size="15" font-weight="700" fill="#173d2b">Escalation / next check:</text><line x1="211" y1="972" x2="768" y2="972" stroke="#98aa9e"/>
+  </g>
+
+  <rect x="48" y="1000" width="720" height="34" rx="10" fill="#eef4ef"/>
+  <text x="60" y="1022" font-family="Arial, sans-serif" font-size="12" fill="#365b48">Practice principle: route + denominator + location + pattern first. A spatial pattern is evidence about distribution; it does not by itself prove a cause.</text>
+</svg>

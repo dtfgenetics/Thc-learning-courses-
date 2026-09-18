@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -8,20 +8,18 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "scenario",
-  "stem": "Plant damage appears immediately after a canopy-work order was completed. What should the observation record include?",
+  "stem": "Plant damage is observed shortly after a canopy-work order was completed in the same area. What should the observation record include?",
   "choices": [
-    "Only the damage description; work history should be hidden",
-    "Location and pattern of damage plus the relevant work-order/shift context and escalation status",
-    "A statement that the worker definitely caused the damage",
-    "No record unless the cause is confirmed"
+    "Record the work order as the confirmed cause because the timing and location match",
+    "Record the location and pattern of damage, the relevant work-order/shift context, and the escalation status while keeping causality unconfirmed",
+    "Record the damage and location now, but omit the work history until a supervisor confirms whether it caused the damage",
+    "Record the work-order timing and the damage description, but omit the spatial pattern because the timing already provides the strongest clue"
   ],
   "correct": 1,
-  "rationale": "Relevant work history should be connected to the observation without converting timing alone into proof of cause.",
-  "references": [
-    "REF-PLANT-BIO-001"
-  ],
+  "rationale": "Relevant work history belongs in the record because it may help later review, but temporal association does not by itself prove cause. The record should preserve both the observed distribution and the contextual event without causal overreach.",
+  "references": ["REF-PLANT-BIO-001"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2"
   }
 }

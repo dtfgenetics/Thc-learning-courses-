@@ -85,6 +85,30 @@
       "Performing a high-risk intervention because the technician believes it will help."
     ],
     "practicalApplication": "Produce either a Propagation Performance Review or Canopy/Flowering Performance Review with calculations, mapped evidence, differential, role-boundary decision, biosecurity status and supervisor handoff.",
-    "summary": "Integrated performance review turns production evidence into a clear, traceable, bounded next action without overstating causation or authority."
+    "summary": "Integrated performance review turns production evidence into a clear, traceable, bounded next action without overstating causation or authority.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-005-04",
+          "title": "Integrated propagation and canopy performance handoff",
+          "src": "/assets/tech2/course5/outcome-04.svg",
+          "alt": "Supervisor handoff workflow preserving donor, batch, cultivar and zone identity, comparable performance metrics, leading and alternative explanations, biosecurity status, authorized actions, role boundaries and the next required verification without deleting contrary evidence.",
+          "caption": "Make the review decision-ready while preserving sanitation, traceability and role limits. Keep contrary evidence visible and hand off the next verification or high-risk decision to the authorized role.",
+          "references": [
+            "REF-PROP-001",
+            "REF-CANOPY-001",
+            "REF-FLOWER-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-005-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

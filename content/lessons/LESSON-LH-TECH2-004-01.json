@@ -68,6 +68,28 @@
       "Deleting observations that complicate the trend."
     ],
     "practicalApplication": "Build a scouting-round worksheet with route, zones, sample denominator, trap IDs, incidence, severity, crop/batch identity, observer, date/time and any method deviation.",
-    "summary": "Comparable scouting requires stable methods, known denominators and preserved original evidence."
+    "summary": "Comparable scouting requires stable methods, known denominators and preserved original evidence.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-004-01",
+          "title": "Comparable scouting requires a stable measurement system",
+          "src": "/assets/tech2/course4/outcome-01.svg",
+          "alt": "Scouting-quality diagram linking repeatable routes and zones, sample denominator, fixed trap or location identity, consistent incidence and severity definitions, and preserved method deviations so repeated rounds can be compared without confusing sampling changes for biological trends.",
+          "caption": "A scouting trend is only as comparable as its method. Keep route, denominator, trap/location identity and definitions stable—or document the change—so negative findings and trends have meaning.",
+          "references": [
+            "REF-IPM-001",
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-004-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

@@ -66,6 +66,27 @@
       "Moving tools or plants from suspect to clean areas because symptoms look minor."
     ],
     "practicalApplication": "Annotate three scouting rounds on the same map, marking new, persistent and resolved locations plus likely movement pathways and containment priorities.",
-    "summary": "Trend interpretation combines counts with mapped scope, severity, chronology and biosecurity context."
+    "summary": "Trend interpretation combines counts with mapped scope, severity, chronology and biosecurity context.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-004-02",
+          "title": "Spatial and temporal plant-health trend",
+          "src": "/assets/tech2/course4/outcome-02.svg",
+          "alt": "Plant-health trend model comparing mapped scope, incidence, severity, chronology and plausible movement pathways across repeated scouting rounds so a flat total does not hide spread into new zones or worsening severity.",
+          "caption": "Map scope across repeated rounds. The same total count can represent one contained cluster or a broader spread, and incidence and severity should not be treated as the same measure.",
+          "references": [
+            "REF-IPM-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-004-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

@@ -1,65 +1,25 @@
 {
   "id": "LESSON-LH-TECH1-003-02",
   "title": "PPFD, Photoperiod and Repeatable Canopy Light Checks",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": [
-    "COMP-LIGHT-001",
-    "COMP-PRO-QA-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-003-02",
-    "LO-LH-TECH1-003-05"
-  ],
+  "competencies": ["COMP-LIGHT-001", "COMP-PRO-QA-001"],
+  "learningObjectives": ["LO-LH-TECH1-003-02", "LO-LH-TECH1-003-05"],
   "estimatedMinutes": 60,
-  "references": [
-    "REF-LIGHT-001",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "references": ["REF-LIGHT-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
   "assessment": null,
   "content": {
     "overview": "Lighting measurements are meaningful only when the measurement method represents the crop. Learners practice distinguishing fixture settings from canopy measurements, recording photoperiod and PPFD with correct context, using repeatable canopy grids, and recognizing why one bright center reading or a changed meter angle cannot describe whole-canopy light distribution.",
     "vocabulary": [
-      {
-        "term": "PPFD",
-        "definition": "Photosynthetic photon flux density: the flux of photosynthetically active photons reaching a surface per unit area and time."
-      },
-      {
-        "term": "photoperiod",
-        "definition": "The scheduled duration and timing of the light and dark periods."
-      },
-      {
-        "term": "measurement grid",
-        "definition": "A repeatable set of canopy positions used to characterize spatial light distribution."
-      },
-      {
-        "term": "uniformity",
-        "definition": "The degree to which measured light intensity is distributed consistently across a defined canopy area."
-      }
+      {"term":"PPFD","definition":"Photosynthetic photon flux density: the flux of photosynthetically active photons reaching a surface per unit area and time."},
+      {"term":"photoperiod","definition":"The scheduled duration and timing of the light and dark periods."},
+      {"term":"measurement grid","definition":"A repeatable set of canopy positions used to characterize spatial light distribution."},
+      {"term":"uniformity","definition":"The degree to which measured light intensity is distributed consistently across a defined canopy area."}
     ],
     "sections": [
-      {
-        "title": "Fixture output is not the same as canopy PPFD",
-        "body": "A fixture setting, rated output or dimmer percentage does not tell a technician exactly how much photosynthetically active light reaches every canopy location. PPFD is measured at the crop plane, and canopy geometry, fixture layout, distance and surrounding surfaces can change distribution.",
-        "references": [
-          "REF-LIGHT-001"
-        ]
-      },
-      {
-        "title": "One point cannot describe spatial distribution",
-        "body": "A center reading can be useful for that point but may hide brighter or dimmer regions elsewhere. A repeatable measurement grid keeps height, orientation and positions consistent so maps can be compared over time or after authorized changes.",
-        "references": [
-          "REF-LIGHT-001"
-        ]
-      },
-      {
-        "title": "Photoperiod records preserve schedule and observation",
-        "body": "Technicians may verify timer or controller schedules and observe lights-on/lights-off states within their procedure. A record should distinguish the intended schedule from what was actually observed, including any discrepancy or alarm, without independently changing crop strategy unless authorized.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY",
-          "REF-LIGHT-001"
-        ]
-      }
+      {"title":"Fixture output is not the same as canopy PPFD","body":"A fixture setting, rated output or dimmer percentage does not tell a technician exactly how much photosynthetically active light reaches every canopy location. PPFD is measured at the crop plane, and canopy geometry, fixture layout, distance and surrounding surfaces can change distribution.","references":["REF-LIGHT-001"]},
+      {"title":"One point cannot describe spatial distribution","body":"A center reading can be useful for that point but may hide brighter or dimmer regions elsewhere. A repeatable measurement grid keeps height, orientation and positions consistent so maps can be compared over time or after authorized changes.","references":["REF-LIGHT-001"]},
+      {"title":"Photoperiod records preserve schedule and observation","body":"Technicians may verify timer or controller schedules and observe lights-on/lights-off states within their procedure. A record should distinguish the intended schedule from what was actually observed, including any discrepancy or alarm, without independently changing crop strategy unless authorized.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-LIGHT-001"]}
     ],
     "workedExamples": [
       "A nine-point canopy grid has an acceptable average but a much brighter center and dimmer corners. The technician records the distribution instead of reporting only the average.",
@@ -71,55 +31,13 @@
       "Treating a fixture dimmer percentage as a direct canopy PPFD value.",
       "Changing photoperiod because a schedule discrepancy is observed without checking the supplied authority/process."
     ],
-    "practicalApplication": "Use a supplied room map and PPFD readings to record a repeatable canopy light grid, calculate or compare the average and range where instructed, identify spatial hot/dim areas, and document the intended photoperiod versus observed controller/light state.",
+    "practicalApplication": "Use the downloadable PPFD and sensor-verification practice sheet with a supplied room map and readings. Preserve the measurement grid, height/orientation, each point, units and time; summarize distribution without hiding extremes; record intended versus observed photoperiod; and document any outlier verification or escalation required by the scenario.",
     "summary": "Technician I light work focuses on repeatable measurement and accurate records. PPFD should be tied to canopy location and method, spatial distribution should not be hidden by one point or average, and photoperiod discrepancies are documented and escalated within authorization.",
     "blocks": [
-      {
-        "type": "steps",
-        "title": "Repeatable canopy light check",
-        "items": [
-          {
-            "title": "Define the grid",
-            "body": "Use the supplied or approved canopy positions."
-          },
-          {
-            "title": "Hold the measurement plane",
-            "body": "Keep sensor height and orientation consistent with the defined method."
-          },
-          {
-            "title": "Record each point",
-            "body": "Preserve PPFD value, units, position and time."
-          },
-          {
-            "title": "Summarize distribution",
-            "body": "Report average/range or other required uniformity information without hiding extreme points."
-          },
-          {
-            "title": "Escalate discrepancies",
-            "body": "Route unexpected distribution or photoperiod states through the supplied procedure rather than independently redesigning the lighting strategy."
-          }
-        ],
-        "references": [
-          "REF-LIGHT-001"
-        ]
-      },
-      {
-        "type": "scenario",
-        "title": "Bright center reading",
-        "setting": "The center canopy point is 950 while several edge points are near 500. The facility asks for a room light check.",
-        "prompt": "What is the strongest report?",
-        "options": [
-          "Room PPFD is 950 because the center is most important",
-          "Report the full repeatable grid and its distribution rather than substituting the center point for the canopy",
-          "Move the meter closer to the fixture until all points match",
-          "Delete edge readings because they lower the average"
-        ],
-        "answer": "Report the full repeatable grid and its distribution rather than substituting the center point for the canopy",
-        "feedback": "Spatial mapping is specifically intended to reveal distribution that one point cannot represent.",
-        "references": [
-          "REF-LIGHT-001"
-        ]
-      }
+      {"type":"steps","title":"Repeatable canopy light check","items":[{"title":"Define the grid","body":"Use the supplied or approved canopy positions."},{"title":"Hold the measurement plane","body":"Keep sensor height and orientation consistent with the defined method."},{"title":"Record each point","body":"Preserve PPFD value, units, position and time."},{"title":"Summarize distribution","body":"Report average/range or other required uniformity information without hiding extreme points."},{"title":"Escalate discrepancies","body":"Route unexpected distribution or photoperiod states through the supplied procedure rather than independently redesigning the lighting strategy."}],"references":["REF-LIGHT-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-003-002","title":"Repeatable canopy PPFD grid","src":"/assets/course3/ppfd-grid-measurement.svg","alt":"Nine-point canopy PPFD map with a brighter center and dimmer edges, plus reminders to keep measurement height, sensor orientation and grid positions consistent and to report every point with units and context.","caption":"A repeatable grid preserves spatial light distribution; one bright center point, fixture setting or average cannot replace the canopy map.","references":["REF-LIGHT-001","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"type":"resource","title":"Downloadable practice: PPFD grid and sensor verification","body":"Use this printable worksheet to record a nine-point PPFD grid with consistent measurement method, summarize distribution without hiding extremes, compare intended and observed photoperiod, and practice structured sensor-outlier verification within the Technician I authority boundary.","href":"/assets/course3/ppfd-sensor-verification-practice.svg","label":"Open PPFD and sensor-verification practice sheet","extensions":{"assetId":"VIS-LH-TECH1-003-006","downloadable":true}},
+      {"type":"scenario","title":"Bright center reading","setting":"The center canopy point is 950 while several edge points are near 500. The facility asks for a room light check.","prompt":"What is the strongest report?","options":["Room PPFD is 950 because the center is most important","Report the full repeatable grid and its distribution rather than substituting the center point for the canopy","Move the meter closer to the fixture until all points match","Delete edge readings because they lower the average"],"answer":"Report the full repeatable grid and its distribution rather than substituting the center point for the canopy","feedback":"Spatial mapping is specifically intended to reveal distribution that one point cannot represent.","references":["REF-LIGHT-001"]}
     ]
   }
 }
