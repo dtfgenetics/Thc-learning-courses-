@@ -1,12 +1,12 @@
 {
   "courseId": "COURSE-LH-TECH1-002",
   "version": "0.11.0",
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "academicPublication": "draft",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 2 source/package construction, learner catalog/lesson/practice/module-checkpoint routing, server-side formative grading, objective-balanced assessment controls, Practical A mapping, governed assets, remediation, and versioned human-review queue integrity are machine-verified. Remaining machine work is fresh deployed responsive/manual learner-surface QA, anonymous public readback, exact deployment evidence, and any defects exposed by those checks. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
+  "machineCompletionBoundary": "Course 2 source/package construction, learner catalog/lesson/practice/module-checkpoint routing, server-side formative grading, objective-balanced assessment controls, Practical A mapping, governed assets, remediation, exact-version review-queue integrity, and repository CI are machine-verified. Remaining machine work is deployed responsive/manual learner-surface QA, exact deployment build/source SHA verification using the public build-identity contract, and repair of any defects those checks expose. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -132,10 +132,9 @@
     }
   ],
   "nextMachineActions": [
-    "confirm the current CI run passes the full repository validation suite including Course 2 runtime and review-queue checks",
-    "perform fresh deployed responsive/manual learner-surface QA for Course 2",
-    "repair any defects exposed by deployed QA/readback without weakening the existing fail-closed assessment and credential boundaries",
-    "record and verify the exact deployment build/source SHA identity for the public learner surface"
+    "complete deployed responsive/manual learner-surface QA and record defects",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface",
+    "repair any defects exposed by deployed QA/readback without weakening assessment or credential boundaries"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
@@ -150,5 +149,15 @@
   ],
   "deploymentEvidence": "registry/course2-deployment-evidence.json",
   "publicRouteReadback": "verified-partial",
-  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open."
+  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH1-002.json",
+    "docs/learning-hub/tech1/course-002/COURSE-PACKAGE-MANIFEST.md",
+    "docs/learning-hub/tech1/course-002/ASSESSMENT-COVERAGE-REPORT.md",
+    "visuals/COURSE2-ASSET-REGISTRY.json",
+    "registry/course2-deployment-evidence.json",
+    "scripts/test-tech1-review-queues.mjs",
+    "scripts/test-build-identity-endpoint.mjs",
+    "scripts/verify-public-deployment-identity.mjs"
+  ]
 }

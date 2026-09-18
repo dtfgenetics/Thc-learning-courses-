@@ -71,9 +71,9 @@ try{
       assert.equal(response.status,200,`${concept.conceptId}: governed learner visual must resolve through the Academy runtime`);
       assert.match(response.headers.get('content-type')??'',/^image\/svg\+xml/,`${concept.conceptId}: runtime must serve SVG content type`);
       const svg=await response.text();
-      assert.match(svg,/<svg[\\s>]/,`${concept.conceptId}: SVG markup missing`);
-      assert.match(svg,/<title[\\s>]/,`${concept.conceptId}: accessible SVG title missing`);
-      assert.match(svg,/<desc[\\s>]/,`${concept.conceptId}: accessible SVG description missing`);
+      assert.match(svg,/<svg[\s>]/,`${concept.conceptId}: SVG markup missing`);
+      assert.match(svg,/<title[\s>]/,`${concept.conceptId}: accessible SVG title missing`);
+      assert.match(svg,/<desc[\s>]/,`${concept.conceptId}: accessible SVG description missing`);
     }
   }
   const invalid=await fetch(`${base}/assets/tech2/course9/outcome-01.svg`);

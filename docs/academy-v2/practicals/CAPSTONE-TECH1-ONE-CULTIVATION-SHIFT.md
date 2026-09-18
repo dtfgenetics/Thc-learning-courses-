@@ -175,7 +175,7 @@ Future runtime versions can store an event stream so the credential can show wha
 
 **Development target pass:** 160/200 (80%).
 
-The 160-point target is provisional until formal standard-setting/decision-rule approval. A numerical target by itself is not evidence that the cut score is valid.
+This development target of 160 points is provisional until formal standard setting and decision-rule approval. A numerical target by itself is not evidence that the cut score is valid.
 
 ## Development critical-failure rules
 

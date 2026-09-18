@@ -19,7 +19,7 @@ for(let n=1;n<=8;n++){
   assert.match(manifest,new RegExp(course.id.replaceAll('-','\\-')),`Course ${n}: manifest must name canonical course id`);
   assert.match(manifest,/Public academic package:\*\* published|Public academic package:\*\*\s*published|Public academic package:\s*published/i,`Course ${n}: manifest must record published academic package`);
   assert.match(manifest,/human\/evidence gates|Open human\/evidence gates/i,`Course ${n}: manifest must preserve human gates`);
-  assert.match(support,/Applied artifact:/,`Course ${n}: support package needs applied artifacts`);
+  assert.match(support,/Applied (?:learner )?artifact:/,`Course ${n}: support package needs applied artifacts`);
   assert.match(support,/Equivalent reassessment:/,`Course ${n}: support package needs equivalent reassessment`);
   assert.match(support,/Visual concept 1:/,`Course ${n}: support package needs visual briefs`);
   assert.match(support,/Accessibility\/manual|Accessibility\/manual review/i,`Course ${n}: support package needs accessibility review criteria`);
