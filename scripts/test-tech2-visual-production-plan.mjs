@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { once } from 'node:events';
+import { createAcademyWebServer } from '../apps/web/server.mjs';
 
 const root=process.cwd();
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
@@ -57,4 +59,28 @@ for(const [courseIndex,entry] of plan.courses.entries()){
   }
 }
 assert.equal(total,36);
-console.log('Technician II visual production plan: PASS (36 outcome-aligned concepts, fail-closed release lifecycle).');
+
+const server=createAcademyWebServer({env:{...process.env,NODE_ENV:'development',ACADEMY_PREVIEW_DRAFTS:'1'}});
+server.listen(0,'127.0.0.1');
+await once(server,'listening');
+try{
+  const base=`http://127.0.0.1:${server.address().port}`;
+  for(const entry of plan.courses){
+    for(const concept of entry.concepts.filter((row)=>['review-candidate','approved','produced'].includes(row.status))){
+      const response=await fetch(`${base}${concept.targetPublicPath}`);
+      assert.equal(response.status,200,`${concept.conceptId}: governed learner visual must resolve through the Academy runtime`);
+      assert.match(response.headers.get('content-type')??'',/^image\/svg\+xml/,`${concept.conceptId}: runtime must serve SVG content type`);
+      const svg=await response.text();
+      assert.match(svg,/<svg[\\s>]/,`${concept.conceptId}: SVG markup missing`);
+      assert.match(svg,/<title[\\s>]/,`${concept.conceptId}: accessible SVG title missing`);
+      assert.match(svg,/<desc[\\s>]/,`${concept.conceptId}: accessible SVG description missing`);
+    }
+  }
+  const invalid=await fetch(`${base}/assets/tech2/course9/outcome-01.svg`);
+  assert.equal(invalid.status,404,'Technician II asset route must reject course directories outside 1-8');
+} finally {
+  server.close();
+  await once(server,'close');
+}
+
+console.log('Technician II visual production plan: PASS (36 outcome-aligned concepts, fail-closed release lifecycle and runtime delivery for review-ready assets).');
