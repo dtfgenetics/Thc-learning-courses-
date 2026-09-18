@@ -1,0 +1,32 @@
+{
+  "courseId": "COURSE-LH-TECH1-003",
+  "version": "0.1.0",
+  "updated": "2026-09-18",
+  "academicPublication": "draft",
+  "machineResolvableWorkComplete": false,
+  "goldStandardPackageComplete": false,
+  "certificationEvidenceValidated": false,
+  "machineCompletionBoundary": "Course 3 has a complete controlled source package with four substantive lessons, five objectives, 12 formative items, 20 summative items, Practical A mapping, six governed learner assets, remediation, accessibility and human-review artifacts. Repository/runtime asset delivery is machine-verified. Remaining machine work is learner catalog/lesson/practice/assessment route verification, versioned review-queue verification, deployed responsive/manual QA, anonymous public readback and exact deployment evidence. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH1-003.json",
+    "scripts/test-tech1-course3.mjs",
+    "docs/learning-hub/tech1/course-003/COURSE-PACKAGE-MANIFEST.md",
+    "visuals/COURSE3-ASSET-REGISTRY.json"
+  ],
+  "nextMachineActions": [
+    "verify learner catalog, lesson, formative-practice and course-assessment routes against the real Academy runtime",
+    "enforce a versioned Course 3 human-review queue against exact source versions",
+    "perform fresh deployed responsive/manual learner-surface QA",
+    "perform anonymous public readback and record exact deployment route/build/source SHA evidence"
+  ],
+  "nextHumanActions": [
+    "technical/curriculum review",
+    "instructional-design review",
+    "assessment item review",
+    "Practical A calibration/performance validation",
+    "rendered accessibility review",
+    "controlled pilot",
+    "standard setting where applicable",
+    "versioned academic release approval"
+  ]
+}
