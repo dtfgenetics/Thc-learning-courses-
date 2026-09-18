@@ -13,14 +13,14 @@ All eight Technician II learner-facing academic packages have explicit public-re
 
 | Course | Public academic source | Assessment source | Learner support | Primary visuals | Public readback | Remaining machine work |
 |---|---|---|---|---:|---|---|
-| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 source assets produced as review candidates / 0 release-approved | course + lesson + knowledge check verified | visual release QA + learner-page integration; CI runtime confirmation; responsive/manual QA; exact deployment build/SHA |
-| `COURSE-LH-TECH2-002` — Environmental Data, Sensors & Equipment Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
-| `COURSE-LH-TECH2-003` — Fertigation Execution, Verification & Root-Zone Interpretation | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
-| `COURSE-LH-TECH2-004` — Plant Health, IPM & Biosecurity Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
-| `COURSE-LH-TECH2-005` — Propagation & Canopy Performance Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
-| `COURSE-LH-TECH2-006` — Harvest/Postharvest Deviations & Quality Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
-| `COURSE-LH-TECH2-007` — Traceability, Production Metrics, Shift Coordination & Peer Support | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 / 0 | verified | same |
-| `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab | 4 dedicated lab lessons released | 16 formative readiness items; conventional final intentionally absent | integrated remediation/visual package authored | 8 / 0 | course + lesson + readiness check verified | CI runtime confirmation; 8 visuals; responsive/manual QA; exact build/SHA; keep secure performance evidence restricted |
+| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 review candidates | course + lesson + knowledge check verified | visual human/technical QA; responsive/manual QA; exact deployment build/SHA |
+| `COURSE-LH-TECH2-002` — Environmental Data, Sensors & Equipment Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
+| `COURSE-LH-TECH2-003` — Fertigation Execution, Verification & Root-Zone Interpretation | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
+| `COURSE-LH-TECH2-004` — Plant Health, IPM & Biosecurity Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
+| `COURSE-LH-TECH2-005` — Propagation & Canopy Performance Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
+| `COURSE-LH-TECH2-006` — Harvest/Postharvest Deviations & Quality Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
+| `COURSE-LH-TECH2-007` — Traceability, Production Metrics, Shift Coordination & Peer Support | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
+| `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab | 4 dedicated lab lessons released | 16 formative readiness items; conventional final intentionally absent | integrated remediation/visual package authored | 8 review candidates | course + lesson + readiness check verified | visual human/technical QA; responsive/manual QA; exact build/SHA; keep secure performance evidence restricted |
 
 ## Machine controls added
 
@@ -38,12 +38,12 @@ The course system now includes:
 
 ## Remaining machine-creatable work
 
-1. Produce and integrate the 36 primary Technician II instructional visuals, beginning with outcome-level diagrams that reduce cognitive load rather than decorative imagery.
-2. Map each finished visual to its exact canonical lesson(s) and source references, add external captions/text alternatives, and pass the visual lifecycle gate.
-3. Confirm the new runtime/support/visual tests pass in CI and repair defects they expose.
+1. Complete technical/content/accessibility review of the 36 outcome-aligned Technician II visual candidates and approve, revise or reject each without bypassing the review gate.
+2. After approval, set the individual lesson visual and registry lifecycle state truthfully so approved assets become learner-visible through the existing fail-closed renderer.
+3. Confirm the runtime/support/visual tests pass in CI and repair defects they expose.
 4. Perform deployed responsive/manual learner-surface QA on course, lesson and assessment pages; record defects without confusing automated reachability with accessibility approval.
 5. Resolve exact public deployment build/source SHA identity and update the deployment-evidence records only after direct verification.
-6. Add exact-version review-queue enforcement for Technician II course content if the existing generic review tooling can resolve these course objects without exposing restricted practical/credential evidence.
+6. Enforce exact-version review queues for Technician II course content and mapped performance evidence.
 7. Continue expanding applied worksheets/job aids where learner use shows a need; current package counts are not content ceilings.
 
 ## Human/evidence gates that must remain open
@@ -65,4 +65,4 @@ The course system now includes:
 
 ## Definition of machine-build completion
 
-The Technician II machine-build phase is complete when all eight course regressions and learner-runtime checks pass, the 36 primary visual concepts have approved learner assets or an explicitly reviewed alternate representation, public deployment evidence includes exact build/source identity, course surfaces have completed responsive/manual QA, and the only unresolved gates require genuine human/pilot/calibration/psychometric/security/release evidence.
+The Technician II machine-build phase is complete when all eight course regressions and learner-runtime checks pass, the 36 primary visual candidates have completed technical/content/accessibility review and are either approved learner assets or explicitly reviewed alternate representations, public deployment evidence includes exact build/source identity, course surfaces have completed responsive/manual QA, and the only unresolved gates require genuine human/pilot/calibration/psychometric/security/release evidence.
