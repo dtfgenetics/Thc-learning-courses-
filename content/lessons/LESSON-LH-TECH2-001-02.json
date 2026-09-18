@@ -70,6 +70,28 @@
       "Comparing plants at different developmental stages as if they were identical cohorts."
     ],
     "practicalApplication": "Create a crop map and timeline with affected/unaffected cohorts, canopy position, irrigation zone, stage and recent operational events. Mark which patterns support or weaken each hypothesis.",
-    "summary": "Spatial, temporal and cohort structure turns scattered observations into diagnostic evidence while exposing false assumptions created by averages or calendar labels."
+    "summary": "Spatial, temporal and cohort structure turns scattered observations into diagnostic evidence while exposing false assumptions created by averages or calendar labels.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-001-02",
+          "title": "Pattern analysis before diagnosis",
+          "src": "/assets/tech2/course1/outcome-02.svg",
+          "alt": "Pattern-analysis model comparing spatial distribution, chronology, cohorts, environmental measurements and developmental stage before deciding whether the available measurements are representative enough for a diagnostic decision.",
+          "caption": "A room average or calendar date can hide the pattern that matters. Compare location, time, cohort, environment and developmental stage before treating a measurement as representative.",
+          "references": [
+            "REF-VPD-002",
+            "REF-ENV-TEMP-2025-001",
+            "REF-FLOWER-MORPH-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-001-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
