@@ -128,56 +128,81 @@
           "conceptId": "VIS-LH-TECH2-002-01",
           "outcomeIndex": 1,
           "outcome": "Verify whether environmental, lighting and equipment measurements are representative and fit for decisions before changing controls.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course2/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course2/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Sensor-verification workflow checking device and crop context, colocated comparison with a verified reference, calibration or maintenance history, and a final data-quality decision before any control change.",
+          "caption": "Verify representativeness before acting. Preserve questionable data, compare under the same exposure, and separate data-quality decisions from calibration or repair authority.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-002-01"
+          ],
+          "references": [
+            "REF-VPD-002",
+            "REF-ENV-TEMP-2025-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-002-02",
           "outcomeIndex": 2,
           "outcome": "Interpret commands, alarms, spatial maps and time-series response to classify likely sensor, control, equipment or distribution faults without overstating root cause.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course2/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course2/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Fault-classification workflow separating controller command, physical response, independent measurement and spatial or time-series pattern before assigning a provisional sensor-data, control-response, equipment-response or distribution-process category.",
+          "caption": "A command is not proof of physical response. Combine independent measurement, time-series behavior and spatial pattern to choose the next verification path without overstating root cause.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-002-02"
+          ],
+          "references": [
+            "REF-VPD-002",
+            "REF-ENV-TEMP-2025-001",
+            "REF-LIGHT-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-002-03",
           "outcomeIndex": 3,
           "outcome": "Verify irrigation/equipment performance using measured output and process evidence while respecting operator-care, servicing and hazardous-energy boundaries.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course2/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course2/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Irrigation and equipment verification flow measuring installed output, comparing it with the assigned procedure, checking for protected access, hazardous energy, pressure, disassembly or unassigned servicing, then routing to either an authorized operator action or stop-and-escalate handoff.",
+          "caption": "Technician II may verify installed performance deeply, but protected access, hazardous energy, pressure release, disassembly or unassigned servicing are stop-and-escalate cues unless specifically authorized.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-002-03"
+          ],
+          "references": [
+            "REF-IRRIGATION-001",
+            "REF-OSHA-1910-147-LOTO",
+            "REF-NIOSH-CANNABIS-HAZARDS-2024"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-002-04",
           "outcomeIndex": 4,
           "outcome": "Produce a reconstructable verification report, safe maintenance handoff and post-action confirmation plan.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course2/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course2/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Verification and handoff workflow recording exact asset identity, measurements and method, provisional fault classification, current safe status and authority boundary, receiving role, authorized intervention and a comparable post-action measurement before closure.",
+          "caption": "Closure requires reconstructable evidence. Record the boundary cue and receiving owner, preserve original data, and repeat the relevant measurement after authorized work rather than assuming an alarm reset proves restoration.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-002-04"
+          ],
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-IRRIGATION-001",
+            "REF-OSHA-1910-147-LOTO"
+          ],
           "qaApproved": false
         }
       ]
