@@ -102,6 +102,17 @@ Every visual must:
 - identify illustrative examples as illustrative;
 - preserve the distinction between academic training and professional credential issuance.
 
+## Current primary-visual production state
+
+Four outcome-aligned SVG source assets now exist as **review candidates**:
+
+- `VIS-LH-TECH2-001-01` → `/assets/tech2/course1/outcome-01.svg` → Lesson 1;
+- `VIS-LH-TECH2-001-02` → `/assets/tech2/course1/outcome-02.svg` → Lesson 2;
+- `VIS-LH-TECH2-001-03` → `/assets/tech2/course1/outcome-03.svg` → Lesson 3;
+- `VIS-LH-TECH2-001-04` → `/assets/tech2/course1/outcome-04.svg` → Lesson 4.
+
+Each candidate has a mapped learner caption, meaningful text alternative, canonical lesson placement and evidence-reference list in `visuals/TECH2-VISUAL-PRODUCTION-PLAN.json`. They remain deliberately unapproved until rendered responsive QA and public-path verification are complete. A source file existing in the repository is not by itself release approval.
+
 ## Accessibility/manual UX review
 
 Human review remains required for:
