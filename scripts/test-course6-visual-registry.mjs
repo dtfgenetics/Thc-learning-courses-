@@ -10,7 +10,7 @@ assert.equal(registry.courseId, 'COURSE-LH-TECH1-006');
 assert.equal(registry.policy?.expandable, true);
 assert.equal(registry.policy?.maximumAssetCount, null);
 assert.equal(registry.driveStorage?.folderId, '1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq');
-assert.equal(registry.driveStorage?.mirrorStatus, 'folder-created-assets-pending');
+assert.equal(registry.driveStorage?.mirrorStatus, '8-of-8-assets-mirrored-verified-2026-09-18');
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
 const embedded = produced.filter((asset) => asset.deliveryType === 'embedded-visual');
@@ -35,7 +35,9 @@ for (const asset of produced) {
   assert.ok(typeof asset.title === 'string' && asset.title.trim());
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim());
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
-  assert.equal(asset.driveMirrorStatus, 'pending', `${asset.id}: Drive mirror must remain truthful until the file upload is verified`);
+  assert.equal(asset.driveMirrorStatus, 'mirrored-verified', `${asset.id}: Drive mirror must remain verified`);
+  assert.match(asset.driveFileId ?? '', /^[A-Za-z0-9_-]+$/, `${asset.id}: verified Drive mirror requires a file id`);
+  assert.match(asset.driveUrl ?? '', /^https:\/\/drive\.google\.com\/file\/d\//, `${asset.id}: verified Drive mirror requires a Drive URL`);
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
@@ -92,4 +94,4 @@ assert.equal(course.extensions?.downloadablePracticeAssetCount, 3);
 assert.equal(course.extensions?.totalLearnerAssetCount, 8);
 assert.equal(course.extensions?.independentProductReleaseAuthorityConferred, false);
 
-console.log('Course 6 learner-asset contract passed for eight public, accessible and lesson-reachable assets. The controlled Drive folder exists; individual file mirroring remains explicitly pending until verified.');
+console.log('Course 6 learner-asset contract passed for eight public, accessible, lesson-reachable assets with eight verified controlled Drive mirrors.');
