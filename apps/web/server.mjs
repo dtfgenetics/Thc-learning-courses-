@@ -376,6 +376,36 @@ function readRequestJson(req, maxBytes = 16384) {
   });
 }
 
+export function buildPublicBuildIdentity(env = process.env) {
+  const sourceCandidates = [
+    env.ACADEMY_SOURCE_SHA,
+    env.GITHUB_SHA,
+    env.CF_PAGES_COMMIT_SHA,
+    env.VERCEL_GIT_COMMIT_SHA,
+    env.RENDER_GIT_COMMIT,
+    env.SOURCE_VERSION
+  ];
+  const buildCandidates = [
+    env.ACADEMY_BUILD_ID,
+    env.BUILD_ID,
+    env.CF_PAGES_BRANCH && env.CF_PAGES_COMMIT_SHA ? `cloudflare:${env.CF_PAGES_BRANCH}` : null,
+    env.VERCEL_DEPLOYMENT_ID,
+    env.RENDER_SERVICE_ID
+  ];
+  const sourceSha = sourceCandidates
+    .map((value) => typeof value === 'string' ? value.trim() : '')
+    .find((value) => /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/i.test(value)) ?? null;
+  const buildId = buildCandidates
+    .map((value) => typeof value === 'string' ? value.trim() : '')
+    .find((value) => value.length > 0 && value.length <= 160 && /^[A-Za-z0-9._:@/-]+$/.test(value)) ?? null;
+  return {
+    service: 'thc-academy-web',
+    buildId,
+    sourceSha,
+    exactIdentityAvailable: Boolean(buildId && sourceSha)
+  };
+}
+
 export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
   const previewDrafts = env.NODE_ENV !== 'production' && env.ACADEMY_PREVIEW_DRAFTS !== '0';
   let api = apiHandler;
@@ -385,6 +415,7 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
   return async function handler(req, res) {
     let url; try { url = new URL(req.url, 'http://localhost'); } catch { return json(res, 400, { error: 'invalid-url' }); }
     if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
+    if (req.method === 'GET' && url.pathname === '/api/build-info') return json(res, 200, buildPublicBuildIdentity(env));
     if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
     if (req.method === 'GET' && url.pathname === '/api/staging/governance') return previewDrafts ? json(res, 200, buildStagingGovernanceSummary()) : json(res, 404, { error: 'not-found' });
     const lessonMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)$/);
