@@ -25,6 +25,12 @@ for(let n=1;n<=8;n++){
   for(const rel of status.evidence) assert.ok(fs.existsSync(path.join(root,rel)),`Technician II Course ${n}: evidence path missing: ${rel}`);
   assert.ok(Array.isArray(status.nextMachineActions)&&status.nextMachineActions.length>=4,`Technician II Course ${n}: machine work list incomplete`);
   assert.ok(Array.isArray(status.nextHumanActions)&&status.nextHumanActions.length>=8,`Technician II Course ${n}: human/evidence gate list incomplete`);
+  assert.equal(status.visualLayer?.primaryConcepts,n===8?8:4,`Technician II Course ${n}: primary visual concept count mismatch`);
+  assert.equal(status.visualLayer?.reviewCandidates,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: all primary visuals should be built as review candidates`);
+  assert.equal(status.visualLayer?.plannedOnly,0,`Technician II Course ${n}: no primary visual should remain plan-only`);
+  assert.equal(status.visualLayer?.approvedForLearnerRender,0,`Technician II Course ${n}: human visual approval must remain open until recorded`);
+  assert.ok(fs.existsSync(path.join(root,status.visualLayer.registry)),`Technician II Course ${n}: visual registry missing`);
+  assert.ok(fs.existsSync(path.join(root,status.visualLayer.reviewWorklist)),`Technician II Course ${n}: visual review worklist missing`);
 
   assert.equal(deployment.courseId,course.id,`Technician II Course ${n}: deployment evidence id mismatch`);
   assert.equal(deployment.publicRouteReadbackVerified,true);
