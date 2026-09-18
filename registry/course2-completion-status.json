@@ -150,5 +150,12 @@
   ],
   "deploymentEvidence": "registry/course2-deployment-evidence.json",
   "publicRouteReadback": "verified-partial",
-  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open."
+  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH1-002.json",
+    "docs/learning-hub/tech1/course-002/COURSE-PACKAGE-MANIFEST.md",
+    "docs/learning-hub/tech1/course-002/ASSESSMENT-COVERAGE-REPORT.md",
+    "visuals/COURSE2-ASSET-REGISTRY.json",
+    "registry/course2-deployment-evidence.json"
+  ]
 }
