@@ -42,6 +42,15 @@ for(const [courseIndex,entry] of plan.courses.entries()){
       assert.ok(Array.isArray(concept.lessonIds)&&concept.lessonIds.length>0,`${concept.conceptId}: review candidate requires lesson placement`);
       assert.ok(Array.isArray(concept.references)&&concept.references.length>0,`${concept.conceptId}: review candidate requires evidence references`);
       assert.ok(fs.existsSync(path.join(root,concept.sourcePath)),`${concept.conceptId}: review candidate source file missing`);
+      for(const lessonId of concept.lessonIds){
+        const lesson=read(`content/lessons/${lessonId}.json`);
+        const visual=(lesson.content?.extensions?.primaryVisuals??[]).find((block)=>block.assetId===concept.conceptId);
+        assert.ok(visual,`${concept.conceptId}: mapped lesson ${lessonId} is missing the governed visual candidate`);
+        assert.equal(visual.src,concept.targetPublicPath,`${concept.conceptId}: lesson visual path drift`);
+        assert.equal(visual.alt,concept.learnerTextAlternative,`${concept.conceptId}: lesson visual text alternative drift`);
+        assert.equal(visual.caption,concept.caption,`${concept.conceptId}: lesson visual caption drift`);
+        assert.equal(visual.extensions?.releaseApproved,false,`${concept.conceptId}: review candidate must remain fail-closed in the learner renderer`);
+      }
     } else {
       assert.notEqual(concept.status,'produced',`${concept.conceptId}: cannot claim production without full gate`);
     }
