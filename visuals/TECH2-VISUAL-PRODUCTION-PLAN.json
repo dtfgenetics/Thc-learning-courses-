@@ -475,56 +475,79 @@
           "conceptId": "VIS-LH-TECH2-006-01",
           "outcomeIndex": 1,
           "outcome": "Contain postharvest deviations and establish a fact/timeline baseline before causal or disposition conclusions.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course6/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course6/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Postharvest deviation workflow starting with exact material identity and containment, then preserving the event timeline, product observations, room or process history and current status before hypotheses or disposition decisions are considered.",
+          "caption": "Containment protects product and evidence; it does not decide disposition. Establish lot identity, chronology and observed facts before writing a causal story.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-006-01"
+          ],
+          "references": [
+            "REF-POSTHARVEST-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-006-02",
           "outcomeIndex": 2,
           "outcome": "Interpret room/process history together with representative product measurements while distinguishing room RH, moisture content and water activity.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course6/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course6/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Drying-process diagram separating room temperature and relative humidity from representative product measurements such as moisture content and water activity, with rack position, loading, airflow and time included so spatial and temporal differences can be evaluated without substituting one measurement for another.",
+          "caption": "Room RH is not product water activity, and moisture content and water activity are not interchangeable. Combine room history with representative product measurements by position and time.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-006-02"
+          ],
+          "references": [
+            "REF-POSTHARVEST-001",
+            "REF-POSTHARVEST-DRY-2025-001",
+            "REF-POSTHARVEST-STABILITY-2026-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-006-03",
           "outcomeIndex": 3,
           "outcome": "Reconstruct lot genealogy and affected scope without unsupported facility-wide expansion or convenient exclusions.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course6/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course6/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Lot genealogy flow tracing source harvest identity through racks, rooms, movements and downstream lot identifiers, then using shared exposure, position, timing and product evidence to include or exclude material from affected scope without making the investigation automatically facility-wide or artificially narrow.",
+          "caption": "Affected scope follows traceable genealogy and shared exposure. Include and exclude material because the evidence supports it, not because a broader or narrower scope is more convenient.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-006-03"
+          ],
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-POSTHARVEST-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-006-04",
           "outcomeIndex": 4,
           "outcome": "Produce a QA-ready handoff while preserving controlled records, historical SOP versions and product-disposition authority boundaries.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course6/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course6/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Deviation review workflow identifying the governing procedure version at the time of the event, preserving planned versus actual execution and original corrections, summarizing facts, genealogy and measurements, and handing unresolved disposition questions to the authorized QA or management role instead of releasing product independently.",
+          "caption": "Use the procedure version that governed the event, preserve planned and actual history, and hand final release, rework or destruction decisions to the authorized disposition role.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-006-04"
+          ],
+          "references": [
+            "REF-ASTM-E2659-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-GS1-GLOBAL-TRACEABILITY"
+          ],
           "qaApproved": false
         }
       ]
