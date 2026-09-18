@@ -72,6 +72,28 @@
       "Using prior maintenance experience as proof of current authorization."
     ],
     "practicalApplication": "Run a representative irrigation/equipment verification exercise, identify the last permitted operator action, document any energy/protected-access cue, preserve safe status and create the maintenance handoff.",
-    "summary": "Technician II verifies performance deeply but does not cross servicing, hazardous-energy or protected-access boundaries without explicit authorization."
+    "summary": "Technician II verifies performance deeply but does not cross servicing, hazardous-energy or protected-access boundaries without explicit authorization.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-002-03",
+          "title": "Verify performance without crossing the service boundary",
+          "src": "/assets/tech2/course2/outcome-03.svg",
+          "alt": "Irrigation and equipment verification flow measuring installed output, comparing it with the assigned procedure, checking for protected access, hazardous energy, pressure, disassembly or unassigned servicing, then routing to either an authorized operator action or stop-and-escalate handoff.",
+          "caption": "Technician II may verify installed performance deeply, but protected access, hazardous energy, pressure release, disassembly or unassigned servicing are stop-and-escalate cues unless specifically authorized.",
+          "references": [
+            "REF-IRRIGATION-001",
+            "REF-OSHA-1910-147-LOTO",
+            "REF-NIOSH-CANNABIS-HAZARDS-2024"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-002-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
