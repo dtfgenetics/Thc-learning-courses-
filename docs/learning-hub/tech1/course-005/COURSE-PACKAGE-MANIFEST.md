@@ -1,8 +1,8 @@
 # Course Package Manifest — COURSE-LH-TECH1-005
 
 **Course:** Propagation, Canopy, IPM Scouting & Crop Care  
-**Package state:** machine package substantially complete; rendered QA and human validation open  
-**Date:** 2026-09-16
+**Package state:** machine package substantially complete; public route readback verified; exact build identity, responsive/manual QA and human validation open  
+**Date:** 2026-09-18
 
 ## Canonical source
 
@@ -69,11 +69,10 @@ Course 5 machine checks must preserve:
 
 ## Remaining machine work
 
-- retain passing strict Course 5 learning-loop/balanced-assessment CI evidence;
-- verify the complete rendered learner surface at mobile/tablet/desktop widths;
-- perform fresh anonymous public readback after deployment;
-- create/verify review queue records tied to exact source versions;
-- record deployment evidence only after real observation.
+- confirm CI passes the strict learning-loop gate, shared Courses 3–7 learner-runtime regression and versioned Course 5 review-queue check;
+- complete deployed responsive/manual learner-surface QA;
+- record the exact deployment build/source SHA for the already verified public course, lesson and knowledge-check routes;
+- repair any defects exposed by those checks while preserving the no-pesticide/no-treatment-selection authority boundary.
 
 ## Human/evidence gates open
 
