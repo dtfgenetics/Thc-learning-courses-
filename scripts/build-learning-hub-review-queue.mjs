@@ -25,7 +25,7 @@ function contentVersion(rel) {
   return `sha256:${digest}`;
 }
 function normalizeMappedPracticals(course) {
-  const value = course.extensions?.mappedPracticals ?? course.extensions?.mappedPractical ?? [];
+  const value = course.extensions?.mappedPerformanceAssessments ?? course.extensions?.mappedPracticals ?? course.extensions?.mappedPractical ?? [];
   return Array.isArray(value) ? value : (value ? [value] : []);
 }
 
@@ -35,6 +35,7 @@ const lessons = new Map(readDirJson('content/lessons').map((x) => [x.id, x]));
 const assessments = readDirJson('content/assessments');
 const questions = readDirJson('content/questions');
 const performance = readDirJson('content/performance-assessments');
+const performanceById = new Map(performance.map((x) => [x.id, x]));
 const reviews = readDirJson('content/reviews');
 const assessmentById = new Map(assessments.map((x) => [x.id, x]));
 const questionById = new Map(questions.map((x) => [x.id, x]));
@@ -48,9 +49,16 @@ const itemPrefix = `ITEM-${key}-`;
 const practicalPrefix = `PRACTICAL-${key}-`;
 const capstonePrefix = `CAPSTONE-${key}-`;
 
-const integratedLabPlanPath = 'registry/technician-i-integrated-lab-plan.json';
-const integratedLabPlan = exists(integratedLabPlanPath) ? readJson(integratedLabPlanPath) : null;
-const sharedPracticalById = new Map((integratedLabPlan?.practicals ?? []).map((entry) => [entry.id, entry]));
+const integratedLabPlanPaths = [
+  'registry/technician-i-integrated-lab-plan.json',
+  'registry/technician-ii-integrated-lab-plan.json'
+];
+const integratedLabPlans = integratedLabPlanPaths.filter(exists).map(readJson);
+const sharedPracticalById = new Map();
+for (const plan of integratedLabPlans) {
+  for (const entry of plan.practicals ?? []) sharedPracticalById.set(entry.id, entry);
+  if (plan.capstone?.id) sharedPracticalById.set(plan.capstone.id, plan.capstone);
+}
 
 function latestReview(objectId, objectVersion, reviewType) {
   return reviews.filter((r) => r.objectId === objectId && String(r.objectVersion) === String(objectVersion) && r.reviewType === reviewType)
@@ -110,9 +118,15 @@ const courseSpecificAssessments = reviewAssessments.filter((assessment) => asses
 
 const coursePerformance = performance.filter((x) => x.id.startsWith(practicalPrefix) || x.id.startsWith(capstonePrefix)).sort((a,b) => a.id.localeCompare(b.id));
 const mappedPracticalIds = normalizeMappedPracticals(course);
+const directMappedPerformance = [];
 const sharedMappedPracticals = [];
 for (const practicalId of mappedPracticalIds) {
   if (coursePerformance.some((entry) => entry.id === practicalId)) continue;
+  const direct = performanceById.get(practicalId);
+  if (direct) {
+    directMappedPerformance.push(direct);
+    continue;
+  }
   const practical = sharedPracticalById.get(practicalId);
   if (practical) sharedMappedPracticals.push(practical);
 }
@@ -138,7 +152,7 @@ for (const item of reviewQuestions) {
     sourceScope: item.id.startsWith(itemPrefix) ? 'course-specific' : 'shared-module'
   });
 }
-for (const practical of coursePerformance) {
+for (const practical of [...coursePerformance, ...directMappedPerformance]) {
   addTask(tasks, {lane:'performance-assessment',objectType:'performance-assessment',objectId:practical.id,objectVersion:practical.version,reviewType:'assessment'});
 }
 for (const practical of sharedMappedPracticals) {
@@ -192,7 +206,7 @@ const output = {
     courseSpecificAssessments: courseSpecificAssessments.length,
     knowledgeItems: reviewQuestions.length,
     courseSpecificKnowledgeItems: reviewQuestions.filter((item) => item.id.startsWith(itemPrefix)).length,
-    performanceAssessments: coursePerformance.length + sharedMappedPracticals.length,
+    performanceAssessments: coursePerformance.length + directMappedPerformance.length + sharedMappedPracticals.length,
     performanceCrosswalks: practicalCrosswalk ? 1 : 0
   },
   summary: {totalTasks:tasks.length,approved:counts.approved ?? 0,pending:counts.pending ?? 0,blocked:counts.blocked ?? 0,revisionRequired:counts['revision-required'] ?? 0},
@@ -230,7 +244,7 @@ if (check) {
   }
 
   for (const practicalId of mappedPracticalIds) {
-    const local = coursePerformance.find((entry) => entry.id === practicalId);
+    const local = coursePerformance.find((entry) => entry.id === practicalId) ?? performanceById.get(practicalId);
     if (local) continue;
     const shared = sharedPracticalById.get(practicalId);
     if (!shared) {
