@@ -169,7 +169,24 @@ try {
   assert.equal(practice.presentationSeed, 'qa-seed');
   assert.ok(practice.items.length > 0, 'Course 1 lesson practice should expose researched formative items in staging');
   assert.ok(practice.items.every((item) => item.objective === 'LO-LH-TECH1-001-01'), 'lesson practice must be objective-aligned, not only competency-aligned');
-  assert.ok(new Set(practice.items.map((item) => item.correct)).size > 1, 'choice presentation must not lock every keyed answer to one position');
+  const inferredCorrectIndexes = new Map();
+  for (const item of practice.items) {
+    assert.equal(Object.hasOwn(item, 'correct'), false, `${item.id} practice presentation must not expose the answer key`);
+    const correctIndexes = [];
+    for (let selectedIndex = 0; selectedIndex < item.choices.length; selectedIndex += 1) {
+      const gradeResponse = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01/practice/grade`, {
+        method: 'POST',
+        headers: { accept: 'application/json', 'content-type': 'application/json' },
+        body: JSON.stringify({ itemId: item.id, selectedIndex, presentationSeed: practice.presentationSeed })
+      });
+      assert.equal(gradeResponse.status, 200, `${item.id} should grade server-side`);
+      const grade = await gradeResponse.json();
+      if (grade.isCorrect) correctIndexes.push(selectedIndex);
+    }
+    assert.equal(correctIndexes.length, 1, `${item.id} must have exactly one correct presented choice`);
+    inferredCorrectIndexes.set(item.id, correctIndexes[0]);
+  }
+  assert.ok(new Set(inferredCorrectIndexes.values()).size > 1, 'choice presentation must not lock every keyed answer to one position');
   const visualPracticeItem = practice.items.find((item) => item.id === 'ITEM-LH-TECH1-001-M01-001');
   assert.ok(visualPracticeItem, 'visual Course 1 safety practice item should be returned');
   assert.ok(Array.isArray(visualPracticeItem.stimulus) && visualPracticeItem.stimulus.length === 1, 'visual practice item should expose a sanitized evidence stimulus');
@@ -182,7 +199,8 @@ try {
   for (const item of practice.items) {
     const source = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/questions', `${item.id}.json`), 'utf8'));
     assert.deepEqual([...item.choices].sort(), [...source.choices].sort(), `${item.id} presentation must preserve the source choice set`);
-    assert.equal(item.choices[item.correct], source.choices[source.correct], `${item.id} remapped key must identify the source correct answer`);
+    const presentedCorrectIndex = inferredCorrectIndexes.get(item.id);
+    assert.equal(item.choices[presentedCorrectIndex], source.choices[source.correct], `${item.id} server-side remapped key must identify the source correct answer`);
   }
 
   const visualPracticeCoverage = [
