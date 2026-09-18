@@ -134,8 +134,8 @@
   "nextMachineActions": [
     "confirm the current CI run passes the full repository validation suite including Course 2 runtime and review-queue checks",
     "perform fresh deployed responsive/manual learner-surface QA for Course 2",
-    "perform anonymous public readback after deployment and record the exact route, build/run identifier, source/site SHA, and observed result",
-    "repair any defects exposed by deployed QA/readback without weakening the existing fail-closed assessment and credential boundaries"
+    "repair any defects exposed by deployed QA/readback without weakening the existing fail-closed assessment and credential boundaries",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
@@ -147,5 +147,8 @@
     "controlled learner/item/practical pilot",
     "applicable standard setting",
     "versioned academic release approval"
-  ]
+  ],
+  "deploymentEvidence": "registry/course2-deployment-evidence.json",
+  "publicRouteReadback": "verified-partial",
+  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open."
 }
