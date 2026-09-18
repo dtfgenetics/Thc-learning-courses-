@@ -11,13 +11,15 @@
     "content/courses/COURSE-LH-TECH1-007.json",
     "scripts/test-tech1-course7.mjs",
     "docs/learning-hub/tech1/course-007/COURSE-PACKAGE-MANIFEST.md",
-    "registry/technician-i-integrated-lab-plan.json"
+    "registry/technician-i-integrated-lab-plan.json",
+    "registry/course7-deployment-evidence.json"
   ],
   "nextMachineActions": [
     "verify learner-safe integrated-lab routes and governed visual reuse through the real Academy runtime",
     "enforce a versioned Course 7 human-review queue against exact source versions",
     "perform fresh deployed responsive/manual integrated-lab QA and anonymous readback of learner-safe routes",
-    "keep secure credential-form and issuance boundaries fail-closed while deployment evidence is recorded"
+    "keep secure credential-form and issuance boundaries fail-closed while deployment evidence is recorded",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface"
   ],
   "nextHumanActions": [
     "technical/occupational review",
@@ -31,5 +33,8 @@
     "standard setting/decision-rule approval",
     "privacy/security/retention approval",
     "final program release approval"
-  ]
+  ],
+  "deploymentEvidence": "registry/course7-deployment-evidence.json",
+  "publicRouteReadback": "verified-partial",
+  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open."
 }
