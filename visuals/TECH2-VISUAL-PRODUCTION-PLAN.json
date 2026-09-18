@@ -41,56 +41,81 @@
           "conceptId": "VIS-LH-TECH2-001-01",
           "outcomeIndex": 1,
           "outcome": "Separate direct observation, contextual facts, hypotheses and confirmed causes while preserving conflicting evidence and uncertainty.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course1/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course1/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Five-stage diagnostic reasoning model separating direct observation, contextual facts, ranked hypotheses, discriminating evidence and a bounded conclusion. It also shows that conflicting evidence and uncertainty stay in the record, and that evidence does not by itself authorize actions beyond the technician's role.",
+          "caption": "Use evidence to narrow uncertainty, not to manufacture certainty. Preserve conflicting findings and separate the diagnostic conclusion from the authority to act.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-001-01"
+          ],
+          "references": [
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-001-02",
           "outcomeIndex": 2,
           "outcome": "Analyze spatial, temporal, cohort, environmental and developmental patterns and verify whether measurements are representative enough for diagnostic decisions.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course1/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course1/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Pattern-analysis model comparing spatial distribution, chronology, cohorts, environmental measurements and developmental stage before deciding whether the available measurements are representative enough for a diagnostic decision.",
+          "caption": "A room average or calendar date can hide the pattern that matters. Compare location, time, cohort, environment and developmental stage before treating a measurement as representative.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-001-02"
+          ],
+          "references": [
+            "REF-VPD-002",
+            "REF-ENV-TEMP-2025-001",
+            "REF-FLOWER-MORPH-2023-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-001-03",
           "outcomeIndex": 3,
           "outcome": "Build and rank multi-factor differentials across root-zone, nutrition, environment, pest, disease and developmental causes using discriminating evidence.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course1/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course1/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Differential-diagnosis matrix comparing root-zone, nutrition, environment, and biotic or developmental hypothesis families. Each row separates evidence for the hypothesis, evidence against or uncertainty, and the next check most likely to change its ranking.",
+          "caption": "Rank multiple plausible mechanisms together. EC, visible symptoms, tissue data, roots, environment and pest or disease findings are evidence streams, not automatic one-to-one diagnoses.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-001-03"
+          ],
+          "references": [
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-NUTRITION-001",
+            "REF-ROOTZONE-NUTRIENT-002",
+            "REF-CANNABIS-NPK-RSM-2024-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-001-04",
           "outcomeIndex": 4,
           "outcome": "Select safe next tests and authorized actions, escalate high-consequence or unresolved conditions, and produce a reconstructable supervisor-ready diagnostic workup.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course1/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course1/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Decision flow beginning with ranked hypotheses, verifying data quality, selecting a discriminating next test, updating the hypothesis ranking from the result, checking whether action is authorized and safe, then routing to either an authorized action or hold, containment and escalation, with a reconstructable handoff record.",
+          "caption": "Choose the test that can change the decision. Verify data quality first, act only within authority, and leave unresolved questions visible in the handoff.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-001-04"
+          ],
+          "references": [
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-VPD-002"
+          ],
           "qaApproved": false
         }
       ]
