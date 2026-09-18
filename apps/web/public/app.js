@@ -430,6 +430,9 @@ function renderLesson(lesson) {
     article.append(section);
   }
 
+  // Optional governed primary visuals can be added without replacing legacy lesson content.
+  renderRichBlocks(article, content.extensions?.primaryVisuals);
+
   const renderedRich = renderRichBlocks(article, content.blocks);
   if (!renderedRich) renderLegacyLessonContent(article, content);
 
