@@ -1,7 +1,7 @@
 # Technician I Course Readiness Matrix
 
 **Program:** `CREDPROG-CULT-TECH-I-001 — THC Cultivation Technician I`  
-**Audit date:** 2026-09-17  
+**Audit date:** 2026-09-18  
 **Package contract:** `docs/LEARNING-HUB-COURSE-PACKAGE-CONTRACT.md`  
 **Machine reporter:** `scripts/report-tech1-course-package-readiness.mjs`  
 **Credential machine registry:** `registry/technician-i-machine-layer.json`
@@ -15,12 +15,12 @@ All seven Technician I **source packages satisfy the machine source-package cont
 | Course | Source/package state | Assessment/performance state | Learner assets | Remaining machine deployment work | Human/release gates |
 |---|---|---|---|---|---|
 | `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | Reference implementation; machine-resolvable package work complete | Published academic package + integrated practical | Full governed learner/instructor visual layer | Preserve verified public release evidence | Human credential validation remains open |
-| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | Source package complete; controlled course remains `draft`; fail-closed completion registry added | 12 formative items distributed 1/2/4/3/2 across objectives; 20 summative items exactly 4/objective; Practical A crosswalk + canonical assessor/calibration-validation packet | 10 governed assets; runtime delivery test covers all assets | CI confirmation; learner route/navigation/practice/assessment workflow QA; versioned review queue; fresh deployed responsive QA/readback and deployment evidence | technical/assessment/accessibility/practical/calibration/pilot/standard-setting/release approval open |
-| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | Source package complete; `draft` | 12 formative + 20 summative; Practical A mapping | 6 governed/mirrored assets | deployed responsive QA/readback + deployment evidence | human/pilot/release gates open |
-| `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | Source package complete; `draft` | 12 formative + 24 summative with 2 formative + 4 summative per objective; Practical B | 7 governed assets | deployed responsive QA/readback + deployment evidence | human/practical/pilot/release gates open |
-| `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | Source package complete; `draft` | 12 formative + 24 summative; Practicals C/D/E | 9 governed assets | deployed responsive QA/readback + deployment evidence | human/practical/pilot/release gates open; no pesticide/treatment authority |
-| `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff | Source package complete; `draft` v0.4.0 | 12 formative + 24 summative; Practical F | 8 learner-reachable repo assets; Course 6 Drive folder exists | individual Drive mirrors still pending; deployed responsive QA/readback + deployment evidence | human/practical/pilot/release gates open; no product-release authority |
-| `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab | Integrated source package complete; `draft` | 12-item readiness bank (2 per objective), Practicals A–F, 200-point capstone; ordinary final intentionally `null` | governed reuse manifest across Courses 2–6 | deployed integrated-lab QA/readback + deployment evidence | practical/capstone validation, calibration/inter-rater, standard setting, privacy/security and release approval open |
+| `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | Source package complete; controlled course remains `draft`; fail-closed completion registry | 12 formative items distributed 1/2/4/3/2 across objectives; 20 summative items exactly 4/objective; Practical A crosswalk + canonical assessor/calibration-validation packet | 10 governed assets; learner routes and server-side formative grading verified in repository tests | Public course/lesson/assessment readback verified; exact deployment build/source SHA and manual responsive QA remain | technical/assessment/accessibility/practical/calibration/pilot/standard-setting/release approval open |
+| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | Source package complete; `draft`; fail-closed completion registry | 12 formative + 20 summative; Practical A mapping | 6 governed/mirrored assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/pilot/release gates open |
+| `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | Source package complete; `draft`; fail-closed completion registry | 12 formative + 24 summative with 2 formative + 4 summative per objective; Practical B | 7 governed assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/practical/pilot/release gates open |
+| `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | Source package complete; `draft`; fail-closed completion registry | 12 formative + 24 summative; Practicals C/D/E | 9 governed assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/practical/pilot/release gates open; no pesticide/treatment authority |
+| `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff | Source package complete; `draft` v0.4.0; fail-closed completion registry | 12 formative + 24 summative; Practical F | 8 learner-reachable repo assets + 8/8 verified Drive mirrors | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/practical/pilot/release gates open; no product-release authority |
+| `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab | Integrated source package complete; `draft`; fail-closed completion registry | 12-item readiness bank (2 per objective), Practicals A–F, 200-point capstone; ordinary final intentionally `null` | governed reuse manifest across Courses 2–6 | Public course/lesson/readiness-check readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | practical/capstone validation, calibration/inter-rater, standard setting, privacy/security and release approval open |
 
 ## Course 2 control layer now established
 
@@ -77,12 +77,11 @@ The API already provides read-only public credential verification with security/
 
 The remaining work that machines can truthfully perform is narrower:
 
-1. finish Course 2 learner-route/navigation/practice/assessment runtime verification and then reuse the same deployment QA pattern for Courses 3–7;
-2. generate fresh deployed responsive/manual learner-surface QA evidence for Courses 2–7;
-3. perform anonymous public readback and record exact deployment build/SHA/routes only after successful deployment;
-4. finish Course 6 individual Drive mirrors and update its asset registry with real file IDs only after successful uploads;
-5. keep CI/release-readiness/status ledgers synchronized with exact current versions;
-6. implement additional operational issuance components only behind approved decision/evidence stores—never by bypassing release gates.
+1. confirm CI passes the shared Courses 3–7 learner-runtime regression and the Course 2 learner-runtime controls;
+2. complete deployed responsive/manual learner-surface QA evidence for Courses 2–7;
+3. identify and record exact deployment build/source SHA for the already verified public routes;
+4. keep versioned review-queue, completion-status, deployment-evidence and release-readiness ledgers synchronized with exact current versions;
+5. implement additional operational issuance components only behind approved decision/evidence stores—never by bypassing release gates.
 
 ## Human/evidence blockers that must remain open
 
