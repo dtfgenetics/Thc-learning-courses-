@@ -37,7 +37,7 @@ try {
       assert.ok((source.references??[]).length>0,`${lessonId} must retain evidence references`);
       assert.ok((source.content?.overview??'').length>=40,`${lessonId} must retain a substantive overview`);
       assert.ok((source.content?.summary??'').length>=40,`${lessonId} must retain a substantive summary`);
-      assert.ok((source.content?.blocks??[]).length>0,`${lessonId} must retain structured learner content`);
+      assert.ok((source.content?.blocks??[]).length>0 || (source.content?.sections??[]).length>0,`${lessonId} must retain structured learner content`);
 
       const lessonResponse=await fetch(`${base}/api/lessons/${lessonId}`);
       assert.equal(lessonResponse.status,200,`${lessonId} learner route should resolve`);
