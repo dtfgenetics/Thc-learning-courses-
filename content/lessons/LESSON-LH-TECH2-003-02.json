@@ -68,6 +68,27 @@
       "Repeating measurements without documenting why the repeat was performed."
     ],
     "practicalApplication": "Complete a final-batch verification record with device/sample identity, verification evidence, result, expected range, disposition and any authorized correction or escalation.",
-    "summary": "Measurement quality is part of batch quality. Verify the tool and sample before acting, then preserve both the original evidence and the final disposition."
+    "summary": "Measurement quality is part of batch quality. Verify the tool and sample before acting, then preserve both the original evidence and the final disposition.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-003-02",
+          "title": "Measurement quality and accept-hold decision",
+          "src": "/assets/tech2/course3/outcome-02.svg",
+          "alt": "Final-batch verification flow checking sample identity, measuring-device identity and status, reference or standard verification, probe condition and a repeat verified measurement before comparison with the controlled range and selection of accept, authorized adjustment, hold or escalation.",
+          "caption": "Verify the sample and measuring system before changing chemistry. Preserve the original value and use the controlled accept, correction, hold or escalation rule.",
+          "references": [
+            "REF-WATER-ALKALINITY-EXT-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-003-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
