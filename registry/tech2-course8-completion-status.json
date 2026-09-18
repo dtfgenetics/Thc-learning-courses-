@@ -1,0 +1,44 @@
+{
+  "courseId": "COURSE-LH-TECH2-008",
+  "title": "Integrated Technician II Simulation Lab",
+  "version": "0.2.0",
+  "updated": "2026-09-18",
+  "canonicalCourseState": "draft",
+  "publicAcademicPackage": "published",
+  "machineResolvableWorkComplete": false,
+  "goldStandardPackageComplete": false,
+  "certificationEvidenceValidated": false,
+  "publicLearningItems": 16,
+  "publicLessons": 4,
+  "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
+  "deploymentEvidence": "registry/tech2-course8-deployment-evidence.json",
+  "machineCompletionBoundary": "Technician II Course 8 has a published learner-facing simulation-preparation package with four lessons and a 16-item formative readiness assessment, while seven practicals and the Senior Technician capstone remain separate development/validation evidence. Public course, representative lesson and readiness routes are verified. Remaining machine work is CI confirmation of learner-runtime/content checks, exact deployment build/source SHA identification, exact-version review governance, and defects exposed by responsive/manual QA. Secure credential forms and issuance remain fail-closed.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH2-008.json",
+    "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
+    "scripts/test-tech2-course8.mjs",
+    "scripts/test-tech2-public-release.mjs",
+    "scripts/test-tech2-learner-runtime.mjs",
+    "registry/tech2-course8-deployment-evidence.json"
+  ],
+  "nextMachineActions": [
+    "confirm CI passes the Technician II public-release, course-regression and learner-runtime checks",
+    "complete deployed responsive/manual learner-surface QA and record defects",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface",
+    "create and enforce exact-version human-review queues/records where missing",
+    "repair any course-content, assessment, navigation or accessibility defects exposed by those checks without weakening credential-security or authority boundaries"
+  ],
+  "nextHumanActions": [
+    "technical/occupational review",
+    "instructional/assessment review",
+    "Practical A-G validation",
+    "Senior Technician capstone validation",
+    "evaluator calibration/inter-rater evidence",
+    "controlled pilot",
+    "form-equivalence evidence",
+    "rendered accessibility/accommodation approval",
+    "standard setting/decision rules",
+    "privacy/security/retention approval",
+    "final Technician II release approval"
+  ]
+}
