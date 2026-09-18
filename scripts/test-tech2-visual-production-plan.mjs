@@ -35,6 +35,13 @@ for(const [courseIndex,entry] of plan.courses.entries()){
       assert.ok(Array.isArray(concept.lessonIds)&&concept.lessonIds.length>0,`${concept.conceptId}: lesson placement required`);
       assert.ok(Array.isArray(concept.references)&&concept.references.length>0,`${concept.conceptId}: evidence references required`);
       assert.ok(fs.existsSync(path.join(root,concept.sourcePath)),`${concept.conceptId}: produced source file missing`);
+    } else if(concept.status==='review-candidate'){
+      assert.equal(concept.qaApproved,false,`${concept.conceptId}: review candidate must remain unapproved until release QA is complete`);
+      assert.ok(typeof concept.learnerTextAlternative==='string'&&concept.learnerTextAlternative.trim().length>=40,`${concept.conceptId}: review candidate requires meaningful text alternative`);
+      assert.ok(typeof concept.caption==='string'&&concept.caption.trim().length>=20,`${concept.conceptId}: review candidate requires caption`);
+      assert.ok(Array.isArray(concept.lessonIds)&&concept.lessonIds.length>0,`${concept.conceptId}: review candidate requires lesson placement`);
+      assert.ok(Array.isArray(concept.references)&&concept.references.length>0,`${concept.conceptId}: review candidate requires evidence references`);
+      assert.ok(fs.existsSync(path.join(root,concept.sourcePath)),`${concept.conceptId}: review candidate source file missing`);
     } else {
       assert.notEqual(concept.status,'produced',`${concept.conceptId}: cannot claim production without full gate`);
     }
