@@ -215,56 +215,82 @@
           "conceptId": "VIS-LH-TECH2-003-01",
           "outcomeIndex": 1,
           "outcome": "Execute approved fertigation batches with verified material identity, calculations, measurement quality and chemical-safety controls without independently redesigning the recipe.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course3/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course3/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Pre-batch fertigation readiness workflow verifying the effective recipe, source water, material identity, target volume, calculation inputs, sequence, measuring tools, PPE and authorization before mixing, with any mismatch routed to hold and escalation instead of improvisation.",
+          "caption": "Controlled execution starts before mixing. Verify the current instruction, source water, exact materials, calculation inputs, PPE, tools and authority; hold any mismatch rather than improvising.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-003-01"
+          ],
+          "references": [
+            "REF-WATER-ALKALINITY-EXT-001",
+            "REF-SAFETY-OSHA-001",
+            "REF-ASTM-E2659-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-003-02",
           "outcomeIndex": 2,
           "outcome": "Interpret irrigation delivery, root-zone moisture/dryback, pH and EC as a connected system using crop, media, container, stage and environmental context.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course3/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course3/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Final-batch verification flow checking sample identity, measuring-device identity and status, reference or standard verification, probe condition and a repeat verified measurement before comparison with the controlled range and selection of accept, authorized adjustment, hold or escalation.",
+          "caption": "Verify the sample and measuring system before changing chemistry. Preserve the original value and use the controlled accept, correction, hold or escalation rule.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-003-02"
+          ],
+          "references": [
+            "REF-WATER-ALKALINITY-EXT-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-003-03",
           "outcomeIndex": 3,
           "outcome": "Build ranked fertigation/root-zone differentials and select discriminating verification steps before corrective action.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course3/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course3/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Connected root-zone interpretation model linking measured irrigation delivery, media and container context, crop demand and environment, moisture or dryback trends, and pH or EC, emphasizing that no single dryback percentage or EC value is a universal diagnosis.",
+          "caption": "Interpret dryback, pH and EC with installed irrigation performance, media/container conditions, crop stage and environmental demand. One number is not a complete diagnosis.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-003-03"
+          ],
+          "references": [
+            "REF-IRRIGATION-001",
+            "REF-NUTRIENT-UPTAKE-2026-001",
+            "REF-ROOTZONE-NUTRIENT-002",
+            "REF-NUTRITION-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-003-04",
           "outcomeIndex": 4,
           "outcome": "Produce reconstructable batch and diagnostic records and escalate chemistry, safety, equipment or crop-risk decisions that exceed Technician II authority.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course3/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course3/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Troubleshooting workflow that ranks measurement, irrigation delivery, timing, accumulation, nutrient-supply, root-condition and crop-demand hypotheses, selects a discriminating check, then routes to an authorized correction with post-action verification or to hold and escalation when recipe, chemistry, equipment or safety authority is exceeded.",
+          "caption": "Troubleshoot toward the next decision, not a dramatic recipe change. Choose the check that can change the ranking, act only within authority, and preserve post-action evidence and unresolved conditions.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-003-04"
+          ],
+          "references": [
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-NUTRITION-001",
+            "REF-IRRIGATION-001",
+            "REF-SAFETY-OSHA-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         }
       ]
