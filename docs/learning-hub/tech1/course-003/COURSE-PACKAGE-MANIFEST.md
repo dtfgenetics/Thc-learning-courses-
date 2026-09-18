@@ -1,8 +1,8 @@
 # Course Package Manifest — COURSE-LH-TECH1-003
 
 **Course:** Environmental, Light & Sensor Fundamentals  
-**Package state:** machine package under active completion; human validation and deployment evidence remain open  
-**Date:** 2026-09-16
+**Package state:** machine source package substantially complete; public route readback verified; exact build identity, responsive/manual QA and human validation remain open  
+**Date:** 2026-09-18
 
 ## Canonical source
 
@@ -63,16 +63,14 @@ Practical A remains development work. Mapping is not calibration, inter-rater ev
 
 ## Runtime delivery contract
 
-`apps/web/server.mjs` now uses a constrained generic learner-asset route for `/assets/course<number>/<svg-file>`, so Course 3 uses the same runtime contract as Course 2 rather than needing a special-case route. Course 3's production test must verify every produced registry asset through the real Academy HTTP handler before the machine package is considered complete.
+`apps/web/server.mjs` now uses a constrained generic learner-asset route for `/assets/course<number>/<svg-file>`, so Course 3 uses the same runtime contract as Course 2 rather than needing a special-case route. Course 3's production test verifies every produced registry asset through the real Academy HTTP handler. A shared Courses 3–7 learner-runtime regression also verifies draft-preview catalog, lesson, formative-practice, server-side grading and module-checkpoint behavior.
 
 ## Machine work still required
 
-1. Extend `scripts/test-tech1-course3.mjs` to verify every produced Course 3 asset through the actual Academy runtime, including accessible SVG metadata.
-2. Add the strict Course 3 learning-loop/balanced-assessment command to CI after the current package/remediation source is committed.
-3. Confirm the complete repository test/quality workflow passes on the final Course 3 source.
-4. Perform responsive rendered QA on the deployed learner surface.
-5. Generate/verify review queue records against exact source versions.
-6. Record truthful deployment evidence only after fresh anonymous public readback succeeds.
+1. Confirm CI passes the shared Courses 3–7 learner-runtime regression and the versioned Course 3 review-queue check.
+2. Complete deployed responsive/manual learner-surface QA.
+3. Record the exact deployment build/source SHA for the already verified public course, lesson and knowledge-check routes.
+4. Repair any defects exposed by those checks without weakening assessment-security or role-boundary controls.
 
 ## Human/evidence gates that remain open
 
