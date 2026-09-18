@@ -72,6 +72,7 @@ for (const spec of expected) {
       must(Array.isArray(item.choices) && item.choices.length >= 2, `${itemId}: choices missing`);
       must(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < item.choices.length, `${itemId}: invalid keyed response`);
       must(item.rationale && String(item.rationale).trim().length >= 20, `${itemId}: explanatory rationale missing`);
+      must(Array.isArray(item.references) && item.references.length > 0, `${itemId}: evidence references missing`);
       courseItems += 1;
     }
   }
