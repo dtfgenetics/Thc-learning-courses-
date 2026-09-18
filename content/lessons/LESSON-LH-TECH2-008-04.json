@@ -87,6 +87,28 @@
       "Recording a score without the evaluator evidence that supports it."
     ],
     "practicalApplication": "Assemble a mock Senior Technician Diagnostic Shift packet with priority log, station artifacts, evaluator evidence index, accommodation record when applicable, critical-error check, remediation decision and final handoff.",
-    "summary": "The integrated lab is completed through independently sufficient practical evidence, a passing capstone, controlled evaluator evidence and preserved release gates."
+    "summary": "The integrated lab is completed through independently sufficient practical evidence, a passing capstone, controlled evaluator evidence and preserved release gates.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-008-08",
+          "title": "Senior Technician Diagnostic Shift evidence packet",
+          "src": "/assets/tech2/course8/outcome-08.svg",
+          "alt": "Capstone evidence model requiring each of seven practicals plus the integrated capstone to independently meet its standard with no critical error, linking evaluator observations to rubric domains and candidate artifacts, and routing failed evidence to remediation and an equivalent reassessment rather than compensatory averaging.",
+          "caption": "Practical and capstone evidence is non-compensatory. Failed evidence or a critical error requires remediation and equivalent reassessment; stronger performance elsewhere cannot average it away.",
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-HSE-SHIFT-HANDOVER",
+            "REF-ASTM-E2659-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-008-08",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
