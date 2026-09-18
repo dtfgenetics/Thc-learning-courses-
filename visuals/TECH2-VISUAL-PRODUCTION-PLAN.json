@@ -1,0 +1,589 @@
+{
+  "version": 1,
+  "program": "CREDPROG-CULT-TECH-II-001",
+  "updated": "2026-09-18",
+  "purpose": "Fail-closed production registry for primary Technician II learner visuals. Planned concepts are not public assets until a reviewed binary/source exists, accessibility text is complete, canonical lesson placement is mapped, and release QA passes.",
+  "policy": {
+    "expandable": true,
+    "maximumAssetCount": null,
+    "primaryConceptCount": 36,
+    "statusValues": [
+      "planned",
+      "in-production",
+      "review-candidate",
+      "approved",
+      "produced",
+      "retired"
+    ],
+    "defaultStatus": "planned",
+    "requiredAccessibility": [
+      "meaningful learner text alternative outside image",
+      "caption",
+      "non-color cues",
+      "mobile readability"
+    ],
+    "requiredQA": [
+      "canonical terminology",
+      "factual/source alignment",
+      "Technician II authority boundary",
+      "no universal SOP/legal/product claims",
+      "responsive readability",
+      "public path verification"
+    ],
+    "credentialBoundary": "Academic visuals must not imply secure credential-form approval or professional certification issuance."
+  },
+  "courses": [
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "title": "Advanced Crop Observation & Diagnostic Reasoning",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-001-01",
+          "outcomeIndex": 1,
+          "outcome": "Separate direct observation, contextual facts, hypotheses and confirmed causes while preserving conflicting evidence and uncertainty.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course1/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-001-02",
+          "outcomeIndex": 2,
+          "outcome": "Analyze spatial, temporal, cohort, environmental and developmental patterns and verify whether measurements are representative enough for diagnostic decisions.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course1/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-001-03",
+          "outcomeIndex": 3,
+          "outcome": "Build and rank multi-factor differentials across root-zone, nutrition, environment, pest, disease and developmental causes using discriminating evidence.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course1/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-001-04",
+          "outcomeIndex": 4,
+          "outcome": "Select safe next tests and authorized actions, escalate high-consequence or unresolved conditions, and produce a reconstructable supervisor-ready diagnostic workup.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course1/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-002",
+      "title": "Environmental Data, Sensors & Equipment Response",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-002-01",
+          "outcomeIndex": 1,
+          "outcome": "Verify whether environmental, lighting and equipment measurements are representative and fit for decisions before changing controls.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course2/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-002-02",
+          "outcomeIndex": 2,
+          "outcome": "Interpret commands, alarms, spatial maps and time-series response to classify likely sensor, control, equipment or distribution faults without overstating root cause.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course2/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-002-03",
+          "outcomeIndex": 3,
+          "outcome": "Verify irrigation/equipment performance using measured output and process evidence while respecting operator-care, servicing and hazardous-energy boundaries.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course2/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-002-04",
+          "outcomeIndex": 4,
+          "outcome": "Produce a reconstructable verification report, safe maintenance handoff and post-action confirmation plan.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course2/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-003",
+      "title": "Fertigation Execution, Verification & Root-Zone Interpretation",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-003-01",
+          "outcomeIndex": 1,
+          "outcome": "Execute approved fertigation batches with verified material identity, calculations, measurement quality and chemical-safety controls without independently redesigning the recipe.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course3/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-003-02",
+          "outcomeIndex": 2,
+          "outcome": "Interpret irrigation delivery, root-zone moisture/dryback, pH and EC as a connected system using crop, media, container, stage and environmental context.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course3/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-003-03",
+          "outcomeIndex": 3,
+          "outcome": "Build ranked fertigation/root-zone differentials and select discriminating verification steps before corrective action.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course3/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-003-04",
+          "outcomeIndex": 4,
+          "outcome": "Produce reconstructable batch and diagnostic records and escalate chemistry, safety, equipment or crop-risk decisions that exceed Technician II authority.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course3/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "title": "Plant Health, IPM & Biosecurity Troubleshooting",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-004-01",
+          "outcomeIndex": 1,
+          "outcome": "Produce comparable scouting datasets and interpret incidence, severity, spatial scope and multi-round trend evidence.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course4/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-004-02",
+          "outcomeIndex": 2,
+          "outcome": "Evaluate authorized IPM intervention follow-up against baseline while identifying confounding, missing evidence and unresolved risk.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course4/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-004-03",
+          "outcomeIndex": 3,
+          "outcome": "Maintain quarantine, sanitation and movement controls while escalating high-risk or uncertain plant-health findings.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course4/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-004-04",
+          "outcomeIndex": 4,
+          "outcome": "Document scope, data quality, outcome evidence and next-round priorities without altering observations or assuming treatment authority.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course4/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-005",
+      "title": "Propagation & Canopy Performance Troubleshooting",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-005-01",
+          "outcomeIndex": 1,
+          "outcome": "Calculate and compare propagation performance using traceable donors, batches, denominators, time points and loss distributions.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course5/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-005-02",
+          "outcomeIndex": 2,
+          "outcome": "Troubleshoot propagation underperformance using donor, sanitation, environment, handling, timing and plant-health evidence without unsupported contamination or genotype claims.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course5/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-005-03",
+          "outcomeIndex": 3,
+          "outcome": "Evaluate canopy and flowering work using planned-versus-actual scope, spatial uniformity, recovery and cultivar/stage context.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course5/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-005-04",
+          "outcomeIndex": 4,
+          "outcome": "Produce a reconstructable performance review and supervisor handoff while maintaining sanitation, traceability, role and authorization boundaries.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course5/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "title": "Harvest/Postharvest Deviations & Quality Response",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-006-01",
+          "outcomeIndex": 1,
+          "outcome": "Contain postharvest deviations and establish a fact/timeline baseline before causal or disposition conclusions.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course6/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-006-02",
+          "outcomeIndex": 2,
+          "outcome": "Interpret room/process history together with representative product measurements while distinguishing room RH, moisture content and water activity.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course6/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-006-03",
+          "outcomeIndex": 3,
+          "outcome": "Reconstruct lot genealogy and affected scope without unsupported facility-wide expansion or convenient exclusions.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course6/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-006-04",
+          "outcomeIndex": 4,
+          "outcome": "Produce a QA-ready handoff while preserving controlled records, historical SOP versions and product-disposition authority boundaries.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course6/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-007",
+      "title": "Traceability, Production Metrics, Shift Coordination & Peer Support",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-007-01",
+          "outcomeIndex": 1,
+          "outcome": "Reconcile physical and recorded crop/lot identities while preserving genealogy and controlled correction evidence.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course7/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-007-02",
+          "outcomeIndex": 2,
+          "outcome": "Calculate defined production KPIs with the correct denominator, eligible population and time window, then interpret trends without overstating one-cycle changes.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course7/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-007-03",
+          "outcomeIndex": 3,
+          "outcome": "Support peer execution using the current controlled procedure while preserving formal supervisory, approval and record-change authority boundaries.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course7/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-007-04",
+          "outcomeIndex": 4,
+          "outcome": "Prioritize unresolved work and produce a decision-ready shift handoff that preserves planned-versus-actual history, dependencies and decision ownership.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course7/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-008",
+      "title": "Integrated Technician II Simulation Lab",
+      "concepts": [
+        {
+          "conceptId": "VIS-LH-TECH2-008-01",
+          "outcomeIndex": 1,
+          "outcome": "Prioritize competing Technician II deviations by immediate safety, containment, data-validity, crop or lot consequence, timing dependency and assigned authority before selecting a next action.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-01.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-01.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-02",
+          "outcomeIndex": 2,
+          "outcome": "Integrate crop pattern, environmental context and measurement quality into a ranked diagnostic workup that separates verified observations, hypotheses and required next checks.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-02.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-02.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-03",
+          "outcomeIndex": 3,
+          "outcome": "Verify sensor and equipment evidence before acting, classify safe operator checks versus authorized maintenance escalation, and reject major corrective action based on data known to be invalid.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-03.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-03.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-04",
+          "outcomeIndex": 4,
+          "outcome": "Integrate approved fertigation execution, water and measurement verification, irrigation delivery, root-zone trend and crop context into a bounded troubleshooting recommendation.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-04.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-04.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-05",
+          "outcomeIndex": 5,
+          "outcome": "Integrate IPM trend evidence with propagation and canopy performance while protecting biosecurity, treatment-authority limits, cultivar or stage context and uncertainty.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-05.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-05.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-06",
+          "outcomeIndex": 6,
+          "outcome": "Investigate postharvest deviations by preserving product measurements, lot genealogy, affected-scope evidence, holds and product-disposition authority boundaries.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-06.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-06.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-07",
+          "outcomeIndex": 7,
+          "outcome": "Reconcile traceability, planned-versus-actual records and KPI definitions while providing SOP-based peer support and a priority-ranked shift handoff without unauthorized record changes.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-07.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-07.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        },
+        {
+          "conceptId": "VIS-LH-TECH2-008-08",
+          "outcomeIndex": 8,
+          "outcome": "Assemble a reconstructable Senior Technician Diagnostic Shift evidence packet that supports evaluator scoring, remediation decisions and supervisor handoff without unresolved critical errors.",
+          "status": "planned",
+          "deliveryType": "instructional-visual",
+          "targetPublicPath": "/assets/tech2/course8/outcome-08.svg",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-08.svg",
+          "learnerTextAlternative": null,
+          "caption": null,
+          "lessonIds": [],
+          "references": [],
+          "qaApproved": false
+        }
+      ]
+    }
+  ]
+}
