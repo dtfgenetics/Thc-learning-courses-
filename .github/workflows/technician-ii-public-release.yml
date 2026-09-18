@@ -10,6 +10,12 @@ on:
       - 'content/questions/Q-LH-TECH2-*.json'
       - 'content/public-releases/PUBLIC-RELEASE-LH-TECH2-*.json'
       - 'scripts/test-tech2-public-release.mjs'
+      - 'docs/learning-hub/tech2/**'
+      - 'registry/tech2-course*-completion-status.json'
+      - 'registry/tech2-course*-deployment-evidence.json'
+      - 'scripts/test-tech2-learner-runtime.mjs'
+      - 'scripts/test-tech2-course-completion-status.mjs'
+      - 'scripts/test-tech2-course-support-packages.mjs'
       - '.github/workflows/technician-ii-public-release.yml'
   push:
     branches: [main, staging, dev]
@@ -21,6 +27,12 @@ on:
       - 'content/questions/Q-LH-TECH2-*.json'
       - 'content/public-releases/PUBLIC-RELEASE-LH-TECH2-*.json'
       - 'scripts/test-tech2-public-release.mjs'
+      - 'docs/learning-hub/tech2/**'
+      - 'registry/tech2-course*-completion-status.json'
+      - 'registry/tech2-course*-deployment-evidence.json'
+      - 'scripts/test-tech2-learner-runtime.mjs'
+      - 'scripts/test-tech2-course-completion-status.mjs'
+      - 'scripts/test-tech2-course-support-packages.mjs'
       - '.github/workflows/technician-ii-public-release.yml'
 
 permissions:
@@ -52,5 +64,7 @@ jobs:
         run: node scripts/test-tech2-learner-runtime.mjs
       - name: Validate Technician II completion/deployment evidence
         run: node scripts/test-tech2-course-completion-status.mjs
+      - name: Validate Technician II learner support packages
+        run: node scripts/test-tech2-course-support-packages.mjs
       - name: Validate curriculum graph and references
         run: node scripts/validate-curriculum.mjs
