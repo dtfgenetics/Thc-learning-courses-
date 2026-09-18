@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Verification report to evidence-based closure</title>
+<desc id="desc">A report and handoff workflow records exact device or asset identity, measurements and comparison method, provisional fault classification, current safe status and authority boundary, receiving role, authorized intervention, and a comparable post-action check before closure.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="74" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="#173f2f">Evidence-based closure</text>
+<text x="64" y="112" font-family="system-ui,sans-serif" font-size="20" fill="#365b4c">A cleared alarm is not enough. Reconstruct the work and verify the response.</text>
+<g font-family="system-ui,sans-serif">
+<rect x="90" y="165" width="240" height="145" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="115" y="205" font-size="23" font-weight="800" fill="#173f2f">Record</text><text x="115" y="242" font-size="18" fill="#29483b">ID • location • time</text><text x="115" y="272" font-size="18" fill="#29483b">readings • method</text>
+<rect x="375" y="165" width="240" height="145" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="400" y="205" font-size="23" font-weight="800" fill="#173f2f">Classify</text><text x="400" y="242" font-size="18" fill="#29483b">evidence + uncertainty</text><text x="400" y="272" font-size="18" fill="#29483b">current safe status</text>
+<rect x="660" y="165" width="240" height="145" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="685" y="205" font-size="23" font-weight="800" fill="#173f2f">Handoff</text><text x="685" y="242" font-size="18" fill="#29483b">boundary cue • owner</text><text x="685" y="272" font-size="18" fill="#29483b">authorized next work</text>
+<rect x="945" y="165" width="240" height="145" rx="18" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="970" y="205" font-size="23" font-weight="800" fill="#173f2f">Verify again</text><text x="970" y="242" font-size="18" fill="#29483b">same comparable method</text><text x="970" y="272" font-size="18" fill="#29483b">intended response?</text>
+<path d="M330 238h45M615 238h45M900 238h45" stroke="#386a50" stroke-width="5"/>
+<rect x="165" y="405" width="950" height="185" rx="22" fill="#f7efe0" stroke="#9b6b2f" stroke-width="3"/>
+<text x="200" y="452" font-size="27" font-weight="800" fill="#6e481c">Closure requires evidence</text>
+<text x="200" y="495" font-size="20" fill="#5a472f">• preserve original readings and fault history</text>
+<text x="200" y="530" font-size="20" fill="#5a472f">• document who owned the action and why the technician stopped</text>
+<text x="200" y="565" font-size="20" fill="#5a472f">• repeat the relevant measurement under comparable conditions</text>
+</g></svg>
