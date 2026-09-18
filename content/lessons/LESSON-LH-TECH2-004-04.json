@@ -70,6 +70,28 @@
       "Omitting negative or conflicting findings from the handoff."
     ],
     "practicalApplication": "Produce an IPM follow-up report with sampling quality, annotated map, trend classification, intervention history, outcome evidence, biosecurity status, authority boundary, escalation trigger and next-round plan.",
-    "summary": "Advanced IPM competence means defensible evidence, intact containment and clear escalation—not unauthorized treatment."
+    "summary": "Advanced IPM competence means defensible evidence, intact containment and clear escalation—not unauthorized treatment.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-004-04",
+          "title": "Containment, authority and IPM handoff",
+          "src": "/assets/tech2/course4/outcome-04.svg",
+          "alt": "Plant-health decision flow preserving quarantine, sanitation and clean-to-dirty movement controls, checking whether an action is within the technician's role and applicable product or facility authorization, and routing unresolved or regulated treatment decisions to an authorized role with an evidence-rich handoff.",
+          "caption": "Strong diagnostic evidence does not create pesticide or regulated-treatment authority. Preserve containment, act only within authorization, and escalate with the measured scope, trend, intervention history and unresolved uncertainty.",
+          "references": [
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-004-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
