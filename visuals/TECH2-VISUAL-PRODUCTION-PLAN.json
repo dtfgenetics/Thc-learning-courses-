@@ -644,112 +644,152 @@
           "conceptId": "VIS-LH-TECH2-008-01",
           "outcomeIndex": 1,
           "outcome": "Prioritize competing Technician II deviations by immediate safety, containment, data-validity, crop or lot consequence, timing dependency and assigned authority before selecting a next action.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Priority triage framework ranking competing Technician II deviations by immediate safety, containment, data validity, crop or lot consequence, timing dependency and assigned authority before convenience or optimization work.",
+          "caption": "Triage by consequence and dependency before diagnosis. Safety, containment and decision-blocking data problems outrank routine optimization.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-01"
+          ],
+          "references": [
+            "REF-ASTM-E2659-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-02",
           "outcomeIndex": 2,
           "outcome": "Integrate crop pattern, environmental context and measurement quality into a ranked diagnostic workup that separates verified observations, hypotheses and required next checks.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Diagnostic workup flow separating verified observations from context, ranking multiple hypotheses, identifying uncertainty and the next discriminating check, then updating the ranking without converting a plausible explanation into a confirmed cause.",
+          "caption": "Keep observations, hypotheses and confirmed causes separate. Choose the next check because it can change the ranking, not because it simply adds more data.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-01"
+          ],
+          "references": [
+            "REF-VPD-002",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-03",
           "outcomeIndex": 3,
           "outcome": "Verify sensor and equipment evidence before acting, classify safe operator checks versus authorized maintenance escalation, and reject major corrective action based on data known to be invalid.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Sensor and equipment decision flow verifying measurement validity and independent process response before consequential setpoint, irrigation or equipment action, separating safe operator checks from maintenance escalation and rejecting major corrective action based on data known to be invalid.",
+          "caption": "Known-invalid data cannot justify a major correction. Verify measurement quality and physical response, then stay inside the assigned operator-care boundary.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-01"
+          ],
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-ASTM-E2659-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-04",
           "outcomeIndex": 4,
           "outcome": "Integrate approved fertigation execution, water and measurement verification, irrigation delivery, root-zone trend and crop context into a bounded troubleshooting recommendation.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Station workflow verifying approved recipe and material identity, measuring-system readiness, irrigation delivery, root-zone trend and crop context before a bounded troubleshooting recommendation, with unauthorized recipe redesign or major chemistry decisions routed to escalation.",
+          "caption": "Verify batch identity, measurement quality, delivery and crop context before troubleshooting the root zone. Do not convert diagnostic skill into independent recipe-design authority.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-02"
+          ],
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-05",
           "outcomeIndex": 5,
           "outcome": "Integrate IPM trend evidence with propagation and canopy performance while protecting biosecurity, treatment-authority limits, cultivar or stage context and uncertainty.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-05.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-05.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Integrated plant-health and performance workflow combining comparable multi-round IPM sampling, biosecurity controls, donor or batch evidence, canopy and flowering context, and uncertainty while keeping regulated treatment decisions and unsupported contamination or genotype claims outside Technician II authority.",
+          "caption": "Combine multi-round IPM evidence with donor, sanitation, stage and mapped canopy response. Preserve biosecurity and do not overstate contamination, genotype causation or treatment authority.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-02"
+          ],
+          "references": [
+            "REF-IPM-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-06",
           "outcomeIndex": 6,
           "outcome": "Investigate postharvest deviations by preserving product measurements, lot genealogy, affected-scope evidence, holds and product-disposition authority boundaries.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-06.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-06.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Postharvest station workflow separating room history from representative product measurements, containing suspect material, tracing lot genealogy and shared exposure, defining evidence-bounded affected scope, and handing unresolved disposition decisions to the authorized role.",
+          "caption": "Product evidence, process history and genealogy define the affected scope. Room RH is not product water activity, and containment does not authorize disposition.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-03"
+          ],
+          "references": [
+            "REF-POSTHARVEST-001",
+            "REF-GS1-GLOBAL-TRACEABILITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-07",
           "outcomeIndex": 7,
           "outcome": "Reconcile traceability, planned-versus-actual records and KPI definitions while providing SOP-based peer support and a priority-ranked shift handoff without unauthorized record changes.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-07.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-07.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Integrated records workflow reconciling physical and controlled identities, preserving planned-versus-actual history, calculating KPIs from stable definitions and denominators, supporting peers using the current procedure, then ranking unresolved work and assigning a decision owner without unauthorized record edits or supervisory overreach.",
+          "caption": "Reconcile, calculate and hand off without manufacturing a clean record. Preserve discrepancies, stable KPI definitions, planned-versus-actual history and the authorized decision owner.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-03"
+          ],
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-008-08",
           "outcomeIndex": 8,
           "outcome": "Assemble a reconstructable Senior Technician Diagnostic Shift evidence packet that supports evaluator scoring, remediation decisions and supervisor handoff without unresolved critical errors.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course8/outcome-08.svg",
           "sourcePath": "apps/web/public/assets/tech2/course8/outcome-08.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Capstone evidence model requiring each of seven practicals plus the integrated capstone to independently meet its standard with no critical error, linking evaluator observations to rubric domains and candidate artifacts, and routing failed evidence to remediation and an equivalent reassessment rather than compensatory averaging.",
+          "caption": "Practical and capstone evidence is non-compensatory. Failed evidence or a critical error requires remediation and equivalent reassessment; stronger performance elsewhere cannot average it away.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-008-04"
+          ],
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-HSE-SHIFT-HANDOVER",
+            "REF-ASTM-E2659-001"
+          ],
           "qaApproved": false
         }
       ]
