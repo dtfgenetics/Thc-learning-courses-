@@ -1,40 +1,18 @@
 {
-  "version": "0.2.0",
+  "version": "0.4.0",
   "status": "draft",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
-  "intendedAudience": [
-    "Learners progressing through the THC Cultivation Technician I pathway",
-    "Entry-level cultivation employees developing supervised operational competency"
-  ],
-  "deliveryModes": [
-    "self-directed-web",
-    "instructor-facilitated",
-    "supervised-lab",
-    "workplace-equivalent"
-  ],
+  "intendedAudience": ["Learners progressing through the THC Cultivation Technician I pathway","Entry-level cultivation employees developing supervised operational competency"],
+  "deliveryModes": ["self-directed-web","instructor-facilitated","supervised-lab","workplace-equivalent"],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
   "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
   "finalAssessment": "ASSESS-LH-TECH1-005-FINAL",
   "id": "COURSE-LH-TECH1-005",
   "title": "Propagation, Canopy, IPM Scouting & Crop Care",
   "description": "Integrates Technician I propagation, transplant, routine canopy work, scouting, sanitation, plant identity, and escalation into controlled work-order execution without granting independent treatment-selection or pesticide-applicator authority.",
-  "modules": [
-    "MOD-PROP-001",
-    "MOD-CANOPY-001",
-    "MOD-IPM-001",
-    "MOD-LH-TECH1-001-BIOSEC",
-    "MOD-LH-TECH1-001-RECORDS",
-    "MOD-LH-TECH1-005-CROPCARE"
-  ],
-  "competencies": [
-    "COMP-PROP-001",
-    "COMP-CANOPY-001",
-    "COMP-IPM-001",
-    "COMP-SPACE-BIOSEC-001",
-    "COMP-PRO-SOP-001",
-    "COMP-PRO-QA-001"
-  ],
+  "modules": ["MOD-PROP-001","MOD-CANOPY-001","MOD-IPM-001","MOD-LH-TECH1-001-BIOSEC","MOD-LH-TECH1-001-RECORDS","MOD-LH-TECH1-005-CROPCARE"],
+  "competencies": ["COMP-PROP-001","COMP-CANOPY-001","COMP-IPM-001","COMP-SPACE-BIOSEC-001","COMP-PRO-SOP-001","COMP-PRO-QA-001"],
   "learningOutcomes": [
     "Verify donor, lot, tray, plant, room and work-order identity and execute authorized propagation/transplant work while preserving sanitation, labels, counts and exceptions.",
     "Execute authorized routine canopy work to the supplied standard while protecting plant condition, tissue integrity, sanitation and hold/escalation boundaries.",
@@ -43,37 +21,30 @@
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-I-001",
-    "jtaDomains": [
-      2,
-      3,
-      7,
-      8,
-      9,
-      13
-    ],
-    "maturity": "instruction-assessment-draft",
-    "developmentDependencies": [
-      "MOD-PROP-001",
-      "MOD-CANOPY-001",
-      "MOD-IPM-001",
-      "MOD-LH-TECH1-001-BIOSEC",
-      "MOD-LH-TECH1-001-RECORDS",
-      "MOD-LH-TECH1-005-CROPCARE"
-    ],
+    "jtaDomains": [2,3,7,8,9,13],
+    "maturity": "instruction-assessment-practical-visual-practice-draft",
+    "developmentDependencies": ["MOD-PROP-001","MOD-CANOPY-001","MOD-IPM-001","MOD-LH-TECH1-001-BIOSEC","MOD-LH-TECH1-001-RECORDS","MOD-LH-TECH1-005-CROPCARE"],
     "dedicatedCourseAssessmentRequired": false,
     "contentCeiling": null,
     "dedicatedPerformanceValidationRequired": true,
-    "mappedPracticals": [
-      "PRACTICAL-TECH1-C",
-      "PRACTICAL-TECH1-D",
-      "PRACTICAL-TECH1-E"
-    ],
+    "mappedPracticals": ["PRACTICAL-TECH1-C","PRACTICAL-TECH1-D","PRACTICAL-TECH1-E"],
+    "practicalCrosswalk": "registry/course5-practical-cde-crosswalk.json",
+    "practicalCrosswalkStatus": "development",
+    "learnerAssetLayerBuilt": true,
+    "visualRegistry": "visuals/COURSE5-ASSET-REGISTRY.json",
+    "visualLearningBatch": 1,
+    "practiceAssetBatch": 1,
+    "producedVisualCount": 6,
+    "downloadablePracticeAssetCount": 3,
+    "totalLearnerAssetCount": 9,
+    "driveAssetFolderId": "1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo",
     "humanTechnicalReviewRequired": true,
     "accessibilityReviewRequired": true,
     "assessmentBankExpansionTarget": 36,
     "dedicatedItemCount": 36,
     "formativeItemCount": 12,
     "summativeItemCount": 24,
-    "pesticideApplicatorAuthorityConferred": false
+    "pesticideApplicatorAuthorityConferred": false,
+    "treatmentSelectionAuthorityConferred": false
   }
 }

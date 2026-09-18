@@ -1,0 +1,139 @@
+{
+  "id": "JTA-CROSSWALK-TECH1-001",
+  "version": "1.0.0",
+  "status": "development",
+  "credentialProgram": "CREDPROG-CULT-TECH-I-001",
+  "jtaSource": "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_I_JTA.md",
+  "humanValidationRequired": true,
+  "claimBoundary": "Mappings identify the Technician I operational subset of shared competencies. They do not expand the credential into facility design, independent diagnosis, pesticide treatment selection, engineering repair, supervision, or product-release authority.",
+  "domains": [
+    {
+      "domain": 1,
+      "title": "Safe work, PPE and stop-work/escalation",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-SAFETY-WORK-001", "COMP-PRO-SOP-001"],
+      "courses": ["COURSE-LH-TECH1-001", "COURSE-LH-TECH1-006", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-A", "PRACTICAL-TECH1-E", "PRACTICAL-TECH1-F"],
+      "capstone": true
+    },
+    {
+      "domain": 2,
+      "title": "Sanitation, biosecurity and controlled movement between zones",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-SPACE-BIOSEC-001", "COMP-IPM-001", "COMP-PRO-SOP-001"],
+      "courses": ["COURSE-LH-TECH1-001", "COURSE-LH-TECH1-005", "COURSE-LH-TECH1-006", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-A", "PRACTICAL-TECH1-C", "PRACTICAL-TECH1-D", "PRACTICAL-TECH1-E", "PRACTICAL-TECH1-F"],
+      "capstone": true,
+      "scopeNote": "Technician I applies supplied movement, sanitation, quarantine and biosecurity controls; this mapping does not claim independent grow-space workflow design authority."
+    },
+    {
+      "domain": 3,
+      "title": "Crop observation and routine scouting",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-PLANT-BIO-001", "COMP-FLOWER-001", "COMP-IPM-001", "COMP-PRO-QA-001"],
+      "courses": ["COURSE-LH-TECH1-002", "COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-A", "PRACTICAL-TECH1-C", "PRACTICAL-TECH1-E"],
+      "capstone": true
+    },
+    {
+      "domain": 4,
+      "title": "Environmental monitoring and basic sensor reading",
+      "targetProficiency": "Applied",
+      "competencies": ["COMP-ENV-VPD-001", "COMP-PRO-QA-001"],
+      "courses": ["COURSE-LH-TECH1-002", "COURSE-LH-TECH1-003", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-A"],
+      "capstone": true
+    },
+    {
+      "domain": 5,
+      "title": "Water, nutrient-solution, pH and EC measurement",
+      "targetProficiency": "Applied",
+      "competencies": ["COMP-WATER-001", "COMP-NUTRITION-001", "COMP-ROOTZONE-001", "COMP-PRO-QA-001"],
+      "courses": ["COURSE-LH-TECH1-004", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-B"],
+      "capstone": true
+    },
+    {
+      "domain": 6,
+      "title": "Routine irrigation/fertigation execution",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-WATER-001", "COMP-ROOTZONE-001", "COMP-CULT-EQUIPMENT-CARE-001", "COMP-PRO-SOP-001"],
+      "courses": ["COURSE-LH-TECH1-004", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-B"],
+      "capstone": true
+    },
+    {
+      "domain": 7,
+      "title": "IPM scouting, documentation and escalation",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-IPM-001", "COMP-SPACE-BIOSEC-001", "COMP-PRO-QA-001"],
+      "courses": ["COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-C"],
+      "capstone": true,
+      "scopeNote": "No pesticide-applicator or independent treatment-selection authority is conferred."
+    },
+    {
+      "domain": 8,
+      "title": "Propagation, transplanting and plant-identity protection",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-PROP-001", "COMP-SPACE-BIOSEC-001", "COMP-CULT-TRACEABILITY-001"],
+      "courses": ["COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-D"],
+      "capstone": true
+    },
+    {
+      "domain": 9,
+      "title": "Routine canopy and crop-care work",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-CANOPY-001", "COMP-FLOWER-001", "COMP-SPACE-BIOSEC-001"],
+      "courses": ["COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-E"],
+      "capstone": true
+    },
+    {
+      "domain": 10,
+      "title": "Harvest and postharvest handoff",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-FLOWER-001", "COMP-POSTHARVEST-001", "COMP-CULT-TRACEABILITY-001"],
+      "courses": ["COURSE-LH-TECH1-006", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-F"],
+      "capstone": true
+    },
+    {
+      "domain": 11,
+      "title": "Traceability, plant/material movement, inventory and waste records",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-CULT-TRACEABILITY-001", "COMP-PRO-QA-001"],
+      "courses": ["COURSE-LH-TECH1-001", "COURSE-LH-TECH1-006", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-D", "PRACTICAL-TECH1-F"],
+      "capstone": true
+    },
+    {
+      "domain": 12,
+      "title": "Routine equipment care, setup checks and fault reporting",
+      "targetProficiency": "Applied/Operational",
+      "competencies": ["COMP-CULT-EQUIPMENT-CARE-001", "COMP-SAFETY-WORK-001", "COMP-PRO-SOP-001"],
+      "courses": ["COURSE-LH-TECH1-001", "COURSE-LH-TECH1-003", "COURSE-LH-TECH1-004", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-B"],
+      "capstone": true,
+      "scopeNote": "Operator care and fault reporting only; unauthorized mechanical/electrical repair or bypass is outside scope."
+    },
+    {
+      "domain": 13,
+      "title": "SOP/work-order execution, records and shift handoff",
+      "targetProficiency": "Operational",
+      "competencies": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CULT-TRACEABILITY-001"],
+      "courses": ["COURSE-LH-TECH1-001", "COURSE-LH-TECH1-002", "COURSE-LH-TECH1-003", "COURSE-LH-TECH1-004", "COURSE-LH-TECH1-005", "COURSE-LH-TECH1-006", "COURSE-LH-TECH1-007"],
+      "practicals": ["PRACTICAL-TECH1-A", "PRACTICAL-TECH1-B", "PRACTICAL-TECH1-C", "PRACTICAL-TECH1-D", "PRACTICAL-TECH1-E", "PRACTICAL-TECH1-F"],
+      "capstone": true
+    }
+  ],
+  "validation": {
+    "domainCoverageComplete": true,
+    "allProgramCompetenciesRepresented": true,
+    "courseMappingSource": "CULTIVATION_TECHNICIAN_I_JTA.md",
+    "practicalMappingSource": "CULTIVATION_TECHNICIAN_I_JTA.md",
+    "smeEmployerValidation": "not-started",
+    "finalWeighting": "not-established"
+  }
+}

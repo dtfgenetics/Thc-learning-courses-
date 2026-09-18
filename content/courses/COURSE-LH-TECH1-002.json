@@ -1,65 +1,18 @@
 {
-  "version": "0.2.1",
-  "status": "draft",
-  "credentialBearing": true,
-  "level": "Cultivation Technician I / entry occupational pathway",
-  "intendedAudience": [
-    "Learners progressing through the THC Cultivation Technician I pathway",
-    "Entry-level cultivation employees developing supervised operational competency"
-  ],
-  "deliveryModes": [
-    "self-directed-web",
-    "instructor-facilitated",
-    "supervised-lab",
-    "workplace-equivalent"
-  ],
-  "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
-  "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
-  "finalAssessment": "ASSESS-LH-TECH1-002-FINAL",
-  "id": "COURSE-LH-TECH1-002",
-  "title": "Plant Observation, Growth Stages & Crop Records",
-  "description": "Develops a Technician I observation workflow for describing crop condition and developmental stage without over-diagnosing, preserving location and identity context, and producing records that another qualified person can reconstruct.",
-  "modules": [
-    "MOD-PLANT-BIO-001",
-    "MOD-FLOWER-001",
-    "MOD-LH-TECH1-001-RECORDS",
-    "MOD-LH-TECH1-002-OBSERVATION"
-  ],
-  "competencies": [
-    "COMP-PLANT-BIO-001",
-    "COMP-FLOWER-001",
-    "COMP-PRO-SOP-001",
-    "COMP-PRO-QA-001"
-  ],
-  "learningOutcomes": [
-    "Execute a repeatable crop-observation route and preserve plant, room, zone, time and sample context.",
-    "Describe cannabis developmental and reproductive stage from observable morphology while keeping schedule timing as context rather than proof.",
-    "Separate direct observation, population or spatial pattern, contextual evidence and unsupported causal diagnosis.",
-    "Create reconstructable crop records and image evidence that preserve identity, timing, uncertainty, escalation and shift-handoff needs."
-  ],
-  "extensions": {
-    "credentialPath": "CREDPROG-CULT-TECH-I-001",
-    "jtaDomains": [
-      3,
-      4,
-      13
-    ],
-    "maturity": "instruction-assessment-draft",
-    "developmentDependencies": [
-      "MOD-PLANT-BIO-001",
-      "MOD-FLOWER-001",
-      "MOD-LH-TECH1-001-RECORDS",
-      "MOD-LH-TECH1-002-OBSERVATION"
-    ],
-    "dedicatedCourseAssessmentRequired": false,
-    "contentCeiling": null,
-    "dedicatedPerformanceValidationRequired": true,
-    "mappedPractical": "PRACTICAL-TECH1-A",
-    "humanTechnicalReviewRequired": true,
-    "accessibilityReviewRequired": true,
-    "assessmentBankExpansionTarget": 30,
-    "dedicatedItemCount": 32,
-    "formativeItemCount": 12,
-    "summativeItemCount": 20
-  }
+  "version":"0.10.0",
+  "status":"draft",
+  "credentialBearing":true,
+  "level":"Cultivation Technician I / entry occupational pathway",
+  "intendedAudience":["Learners progressing through the THC Cultivation Technician I pathway","Entry-level cultivation employees developing supervised operational competency"],
+  "deliveryModes":["self-directed-web","instructor-facilitated","supervised-lab","workplace-equivalent"],
+  "evidencePolicy":"Use canonical evidence-backed science and operational references for durable principles. Public authoritative and peer-reviewed sources may be used directly to create and improve instructional content when claims remain within source scope and provenance is preserved. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
+  "assessmentPolicy":"This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
+  "finalAssessment":"ASSESS-LH-TECH1-002-FINAL",
+  "id":"COURSE-LH-TECH1-002",
+  "title":"Plant Observation, Growth Stages & Crop Records",
+  "description":"Develops a Technician I observation workflow for describing crop condition and developmental stage without over-diagnosing, preserving location and identity context, and producing records that another qualified person can reconstruct.",
+  "modules":["MOD-PLANT-BIO-001","MOD-FLOWER-001","MOD-LH-TECH1-001-RECORDS","MOD-LH-TECH1-002-OBSERVATION"],
+  "competencies":["COMP-PLANT-BIO-001","COMP-FLOWER-001","COMP-PRO-SOP-001","COMP-PRO-QA-001"],
+  "learningOutcomes":["Execute a repeatable crop-observation route and preserve plant, room, zone, time and sample context.","Describe cannabis developmental and reproductive stage from observable morphology while keeping schedule timing as context rather than proof.","Separate direct observation, population or spatial pattern, contextual evidence and unsupported causal diagnosis.","Create reconstructable crop records and image evidence that preserve identity, timing, uncertainty, escalation and shift-handoff needs."],
+  "extensions":{"credentialPath":"CREDPROG-CULT-TECH-I-001","jtaDomains":[3,4,13],"maturity":"instruction-assessment-visual-practice-crosswalk-draft","developmentDependencies":["MOD-PLANT-BIO-001","MOD-FLOWER-001","MOD-LH-TECH1-001-RECORDS","MOD-LH-TECH1-002-OBSERVATION"],"dedicatedCourseAssessmentRequired":false,"contentCeiling":null,"dedicatedPerformanceValidationRequired":true,"mappedPractical":"PRACTICAL-TECH1-A","practicalCrosswalk":"registry/course2-practical-a-crosswalk.json","practicalCrosswalkStatus":"development","humanTechnicalReviewRequired":true,"accessibilityReviewRequired":true,"assessmentBankExpansionTarget":30,"dedicatedItemCount":32,"formativeItemCount":12,"summativeItemCount":20,"sourceDepthPass":1,"diagnosticBoundarySourcePass":1,"reproductiveMorphologySourcePass":1,"visualLearningBatch":4,"practiceAssetBatch":2,"producedVisualCount":7,"downloadablePracticeAssetCount":3,"totalLearnerAssetCount":10,"visualRegistry":"visuals/COURSE2-ASSET-REGISTRY.json","visualDriveFolderId":"1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o"}
 }

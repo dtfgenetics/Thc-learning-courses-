@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "PUBLIC-RELEASE-LH-TECH1-003",
+  "courseId": "COURSE-LH-TECH1-003",
+  "title": "Environmental, Light & Sensor Fundamentals",
+  "publicationState": "published",
+  "publicScope": {
+    "modules": ["MOD-LH-TECH1-003-MONITORING"],
+    "assessments": ["ASSESS-LH-TECH1-003-M01", "ASSESS-LH-TECH1-003-FINAL"],
+    "publicCourseItems": 32,
+    "practicalIds": ["PRACTICAL-TECH1-A"],
+    "studentSources": [
+      "content/lessons/LESSON-LH-TECH1-003-01.json",
+      "content/lessons/LESSON-LH-TECH1-003-02.json",
+      "content/lessons/LESSON-LH-TECH1-003-03.json",
+      "content/lessons/LESSON-LH-TECH1-003-04.json"
+    ]
+  },
+  "publicationBoundary": {
+    "learnerPackage": "released",
+    "courseTests": "released-for-learning",
+    "practicalMapping": "released-development",
+    "credentialExam": "restricted",
+    "credentialDecision": "restricted-governance"
+  },
+  "excludedFromPublicRelease": [
+    "credential-purpose exam items and answer data",
+    "human review records and reviewer queues",
+    "pilot participant records and psychometric evidence",
+    "assessor calibration records",
+    "credential issuance secrets and signing material"
+  ],
+  "boundary": "This manifest authorizes the learner-facing academic training package and development-stage Practical A mapping for public study. It does not establish practical validation, validated certification use or professional credential issuance readiness."
+}

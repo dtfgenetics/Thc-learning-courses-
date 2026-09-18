@@ -69,6 +69,28 @@
       "Treating a physical count mismatch as permission to change controlled records."
     ],
     "practicalApplication": "Reconcile a mixed packet of physical counts, crop/lot identities, locations and transition records. Mark matches, discrepancies, missing evidence and the authorized correction path.",
-    "summary": "Traceability reconciliation preserves identity and history while resolving discrepancies through controlled evidence and correction processes."
+    "summary": "Traceability reconciliation preserves identity and history while resolving discrepancies through controlled evidence and correction processes.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-007-01",
+          "title": "Traceability reconciliation without forced agreement",
+          "src": "/assets/tech2/course7/outcome-01.svg",
+          "alt": "Reconciliation flow comparing physical identity, controlled record identity, current status and location, preserving discrepancies, tracing genealogy through splits and moves, and routing corrections through an authorized process without fabricating transactions or overwriting history.",
+          "caption": "A discrepancy is evidence. Reconcile identity and status without inventing transactions, breaking genealogy or overwriting the original controlled record.",
+          "references": [
+            "REF-GS1-GLOBAL-TRACEABILITY",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-POSTHARVEST-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-007-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

@@ -78,6 +78,28 @@
       "Omitting failed hypotheses or unresolved data from the handoff."
     ],
     "practicalApplication": "Complete a supervisor-ready diagnostic report containing problem statement, map/timeline, data-quality checks, ranked hypotheses, next test, authorized action, escalation decision, outcome and unresolved conditions.",
-    "summary": "A high-quality workup reduces uncertainty safely, respects authority boundaries and leaves evidence another qualified person can audit."
+    "summary": "A high-quality workup reduces uncertainty safely, respects authority boundaries and leaves evidence another qualified person can audit.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-001-04",
+          "title": "Next-test, action, escalation and handoff",
+          "src": "/assets/tech2/course1/outcome-04.svg",
+          "alt": "Decision flow beginning with ranked hypotheses, verifying data quality, selecting a discriminating next test, updating the hypothesis ranking from the result, checking whether action is authorized and safe, then routing to either an authorized action or hold, containment and escalation, with a reconstructable handoff record.",
+          "caption": "Choose the test that can change the decision. Verify data quality first, act only within authority, and leave unresolved questions visible in the handoff.",
+          "references": [
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-VPD-002"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-001-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "purpose": "Separate technical delivery from actual learner-facing production quality so a file cannot be treated as production-ready merely because it renders, has a valid path, or exists in controlled storage.",
+  "sourceOfTruth": {
+    "publicBaselineRegistry": "visuals/ASSET-REGISTRY.json",
+    "releaseManifest": "visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json",
+    "visualQaGate": "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
+    "productionStandard": "docs/learning-hub/tech1/course-001/PRODUCTION-QUALITY-STANDARD.md"
+  },
+  "qualityStates": [
+    "draft",
+    "review-candidate",
+    "baseline-public",
+    "production-approved",
+    "retired"
+  ],
+  "rules": {
+    "technicalDeliveryIsNotProductionApproval": true,
+    "drivePresenceIsNotProductionApproval": true,
+    "generatedImageTextIsNotAuthoritativeCopy": true,
+    "oneCanonicalMasterPerApprovedVersion": true,
+    "onePrimaryConceptPerLearnerAsset": true,
+    "productionApprovalRequiresCanonicalCopyReconciliation": true,
+    "productionApprovalRequiresResponsiveReview": true,
+    "productionApprovalRequiresAccessibilityReview": true,
+    "productionApprovalRequiresPublicPathVerification": true
+  },
+  "primaryInstructionalRaster": {
+    "minimumShortSidePx": 1200,
+    "appliesTo": "Course 1 primary instructional PNG/JPEG/WebP replacement assets",
+    "reason": "Instructional posters and infographics must remain legible when displayed responsively, opened full-size, or used in higher-density displays. 384x512 review images are not production masters.",
+    "smallUiIconsExcluded": true
+  },
+  "learnerUi": {
+    "hideInternalAssetIdsFromPrimaryCaption": true,
+    "collapseRawReferenceIdsBehindExpandableEvidence": true,
+    "provideFullSizeVisualLink": true,
+    "avoidTinyPosterTextAsOnlyInstructionalCopy": true
+  }
+}

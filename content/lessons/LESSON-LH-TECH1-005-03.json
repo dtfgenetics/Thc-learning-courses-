@@ -1,76 +1,27 @@
 {
   "id": "LESSON-LH-TECH1-005-03",
   "title": "IPM Scouting, Incidence, Severity and Quarantine Evidence",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": [
-    "COMP-IPM-001",
-    "COMP-SPACE-BIOSEC-001",
-    "COMP-PRO-SOP-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-005-03",
-    "LO-LH-TECH1-005-04",
-    "LO-LH-TECH1-005-05"
-  ],
+  "competencies": ["COMP-IPM-001", "COMP-SPACE-BIOSEC-001", "COMP-PRO-SOP-001"],
+  "learningObjectives": ["LO-LH-TECH1-005-03", "LO-LH-TECH1-005-04", "LO-LH-TECH1-005-05"],
   "estimatedMinutes": 65,
-  "references": [
-    "REF-IPM-001"
-  ],
+  "references": ["REF-IPM-001"],
   "assessment": null,
   "content": {
     "overview": "IPM scouting is a repeatable evidence system. Technician I learners follow a defined route, inspect relevant plant structures, traps and room locations, distinguish symptoms from direct signs, record where findings occur and how widely or severely they occur, protect quarantine or isolation boundaries, and escalate evidence without independently selecting pesticide treatment or claiming applicator authority.",
     "vocabulary": [
-      {
-        "term": "incidence",
-        "definition": "The count or proportion of observed plants or sites showing a defined condition."
-      },
-      {
-        "term": "severity",
-        "definition": "The degree or intensity of damage or symptoms on an affected plant, tissue or observation unit."
-      },
-      {
-        "term": "sign",
-        "definition": "Direct evidence of a causal organism or agent, such as an insect, egg, fungal growth or other identifiable structure."
-      },
-      {
-        "term": "symptom",
-        "definition": "A plant response such as chlorosis, necrosis, distortion or wilting that can have multiple possible causes."
-      },
-      {
-        "term": "quarantine boundary",
-        "definition": "A controlled separation used to limit movement of pests, pathogens or potentially contaminated plant material, people or tools."
-      }
+      {"term":"incidence","definition":"The count or proportion of observed plants or sites showing a defined condition."},
+      {"term":"severity","definition":"The degree or intensity of damage or symptoms on an affected plant, tissue or observation unit."},
+      {"term":"sign","definition":"Direct evidence of a causal organism or agent, such as an insect, egg, fungal growth or other identifiable structure."},
+      {"term":"symptom","definition":"A plant response such as chlorosis, necrosis, distortion or wilting that can have multiple possible causes."},
+      {"term":"quarantine boundary","definition":"A controlled separation used to limit movement of pests, pathogens or potentially contaminated plant material, people or tools."}
     ],
     "sections": [
-      {
-        "title": "A repeatable route reduces scouting bias",
-        "body": "Use the supplied path and inspection pattern across representative canopy heights, leaf surfaces, growing points, media or root-zone surfaces, traps and defined high-risk locations. Scouting only the most damaged plants or only easy-to-reach positions cannot establish reliable incidence or distribution.",
-        "references": [
-          "REF-IPM-001"
-        ]
-      },
-      {
-        "title": "Signs and symptoms are not interchangeable",
-        "body": "A symptom is the plant response and can overlap across pests, disease, nutrition, environment or mechanical damage. Direct signs of an organism are stronger evidence but still need location, distribution and identification context. Record what is actually observed before naming a cause.",
-        "references": [
-          "REF-IPM-001"
-        ]
-      },
-      {
-        "title": "Incidence, severity and trend answer different questions",
-        "body": "Incidence describes how many observation units are affected; severity describes how strongly an affected unit is impacted; repeated rounds show whether the pattern is stable, expanding or resolving. One dramatic photograph cannot substitute for a room-level distribution record.",
-        "references": [
-          "REF-IPM-001"
-        ]
-      },
-      {
-        "title": "Scouting does not grant treatment authority",
-        "body": "Technician I can recognize and document evidence, follow supplied containment or quarantine steps and escalate. This credential does not independently authorize pesticide selection, mixing, application or decisions reserved for a licensed or otherwise authorized applicator or specialist.",
-        "references": [
-          "REF-IPM-001"
-        ]
-      }
+      {"title":"A repeatable route reduces scouting bias","body":"Use the supplied path and inspection pattern across representative canopy heights, leaf surfaces, growing points, media or root-zone surfaces, traps and defined high-risk locations. Scouting only the most damaged plants or only easy-to-reach positions cannot establish reliable incidence or distribution.","references":["REF-IPM-001"]},
+      {"title":"Signs and symptoms are not interchangeable","body":"A symptom is the plant response and can overlap across pests, disease, nutrition, environment or mechanical damage. Direct signs of an organism are stronger evidence but still need location, distribution and identification context. Record what is actually observed before naming a cause.","references":["REF-IPM-001"]},
+      {"title":"Incidence, severity and trend answer different questions","body":"Incidence describes how many observation units are affected; severity describes how strongly an affected unit is impacted; repeated rounds show whether the pattern is stable, expanding or resolving. One dramatic photograph cannot substitute for a room-level distribution record.","references":["REF-IPM-001"]},
+      {"title":"Scouting does not grant treatment authority","body":"Technician I can recognize and document evidence, follow supplied containment or quarantine steps and escalate. This credential does not independently authorize pesticide selection, mixing, application or decisions reserved for a licensed or otherwise authorized applicator or specialist.","references":["REF-IPM-001"]}
     ],
     "workedExamples": [
       "Two mildly affected plants become twelve over three repeated scouting rounds. Even if individual severity remains low, the rising incidence trend supports escalation.",
@@ -82,62 +33,22 @@
       "Using one close-up photo as proof of room-wide incidence.",
       "Selecting or applying a pesticide merely because the technician recognizes a likely pest."
     ],
-    "practicalApplication": "Complete a simulated scouting route with trap counts, plant symptoms, one direct pest sign, one quarantine-zone boundary and repeated-round data. Record incidence, severity and spatial pattern, protect the boundary and identify which findings require escalation without selecting a treatment.",
+    "practicalApplication": "Complete a simulated scouting route with trap counts, plant symptoms, one direct pest sign, one quarantine-zone boundary and repeated-round data. Use the downloadable IPM scouting practice sheet to record incidence, severity, spatial pattern, trend, biosecurity action, uncertainty and escalation without selecting a treatment.",
     "summary": "IPM scouting turns plant-health observations into comparable evidence. Technician I follows a consistent route, separates signs from symptoms, records incidence/severity/trend, protects containment boundaries and escalates without exceeding treatment authority.",
     "blocks": [
-      {
-        "type": "table",
-        "title": "Scouting evidence layers",
-        "columns": [
-          "Layer",
-          "Example",
-          "Technician I use"
-        ],
-        "rows": [
-          [
-            "Symptom",
-            "Leaf stippling or distortion",
-            "Record appearance and location; do not treat the symptom alone as proof of cause"
-          ],
-          [
-            "Sign",
-            "Observed insect or identifiable biological structure",
-            "Record direct evidence with location and identification context"
-          ],
-          [
-            "Incidence",
-            "5 of 30 sampled plants affected",
-            "Describe how widely the defined condition occurs in the sample"
-          ],
-          [
-            "Severity",
-            "Affected leaves show low/moderate/high defined damage",
-            "Describe intensity using the supplied scale"
-          ],
-          [
-            "Trend",
-            "Affected count rises across repeated rounds",
-            "Escalate meaningful change even if individual severity remains modest"
-          ],
-          [
-            "Spatial pattern",
-            "Findings concentrated near an intake or one bench",
-            "Preserve distribution because it informs qualified investigation"
-          ]
-        ],
-        "references": [
-          "REF-IPM-001"
-        ]
-      },
-      {
-        "type": "callout",
-        "title": "Applicator boundary",
-        "tone": "safety",
-        "body": "Recognition and scouting do not confer pesticide-applicator authority. Treatment selection, mixing, application, re-entry or other regulated actions must follow jurisdiction, label, facility authorization and required training or licensing.",
-        "references": [
-          "REF-IPM-001"
-        ]
-      }
+      {"type":"table","title":"Scouting evidence layers","columns":["Layer","Example","Technician I use"],"rows":[
+        ["Symptom","Leaf stippling or distortion","Record appearance and location; do not treat the symptom alone as proof of cause"],
+        ["Sign","Observed insect or identifiable biological structure","Record direct evidence with location and identification context"],
+        ["Incidence","5 of 30 sampled plants affected","Describe how widely the defined condition occurs in the sample"],
+        ["Severity","Affected leaves show low/moderate/high defined damage","Describe intensity using the supplied scale"],
+        ["Trend","Affected count rises across repeated rounds","Escalate meaningful change even if individual severity remains modest"],
+        ["Spatial pattern","Findings concentrated near an intake or one bench","Preserve distribution because it informs qualified investigation"]
+      ],"references":["REF-IPM-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-005-003","title":"IPM scouting route and spatial pattern","src":"/assets/course5/ipm-scouting-route-patterns.svg","alt":"Room-map diagram showing a repeatable scouting route through representative edge, center and high-risk locations with mapped observation points and evidence layers.","caption":"A repeatable route and mapped findings make incidence, spatial pattern and trend interpretable across rounds.","references":["REF-IPM-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-005-004","title":"Sign versus symptom evidence layers","src":"/assets/course5/sign-vs-symptom-evidence.svg","alt":"Comparison of plant symptoms and direct signs followed by location, incidence, severity, spatial pattern and trend as an evidence stack before diagnosis.","caption":"Symptoms are plant responses; signs are more direct evidence. Neither should be detached from distribution and context.","references":["REF-IPM-001"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-005-005","title":"Biosecurity and quarantine workflow","src":"/assets/course5/biosecurity-quarantine-flow.svg","alt":"Clean-to-dirty movement diagram showing sanitation checkpoints, suspect material isolation, quarantine boundaries, breach documentation and escalation.","caption":"Scouting must preserve clean areas and quarantine boundaries while evidence is collected and escalated.","references":["REF-IPM-001"]},
+      {"type":"resource","title":"Downloadable practice: IPM scouting route","body":"Use this printable worksheet to practice room mapping, sign/symptom classification, incidence, severity, spatial pattern, trend, quarantine actions, uncertainty and escalation without treatment selection.","href":"/assets/course5/ipm-scouting-practice.svg","label":"Open IPM scouting practice sheet","extensions":{"assetId":"VIS-LH-TECH1-005-008","downloadable":true}},
+      {"type":"callout","title":"Applicator boundary","tone":"safety","body":"Recognition and scouting do not confer pesticide-applicator authority. Treatment selection, mixing, application, re-entry or other regulated actions must follow jurisdiction, label, facility authorization and required training or licensing.","references":["REF-IPM-001"]}
     ]
   }
 }

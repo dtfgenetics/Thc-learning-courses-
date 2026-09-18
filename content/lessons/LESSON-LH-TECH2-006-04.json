@@ -70,6 +70,28 @@
       "Hiding contrary measurements from QA."
     ],
     "practicalApplication": "Create a QA-ready deviation package with governing procedure/version, facts, timeline, genealogy, affected scope, measurements, hypotheses, completed authorized actions and unresolved disposition questions.",
-    "summary": "Controlled deviation work preserves historical truth and provides decision-ready evidence without exceeding release/disposition authority."
+    "summary": "Controlled deviation work preserves historical truth and provides decision-ready evidence without exceeding release/disposition authority.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-006-04",
+          "title": "Controlled deviation review and disposition handoff",
+          "src": "/assets/tech2/course6/outcome-04.svg",
+          "alt": "Deviation review workflow identifying the governing procedure version at the time of the event, preserving planned versus actual execution and original corrections, summarizing facts, genealogy and measurements, and handing unresolved disposition questions to the authorized QA or management role instead of releasing product independently.",
+          "caption": "Use the procedure version that governed the event, preserve planned and actual history, and hand final release, rework or destruction decisions to the authorized disposition role.",
+          "references": [
+            "REF-ASTM-E2659-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-GS1-GLOBAL-TRACEABILITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-006-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

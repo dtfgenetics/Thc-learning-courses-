@@ -36,7 +36,7 @@ jobs:
       - name: Verify staging candidate integrity
         run: node scripts/verify-staging-candidate.mjs
       - name: Upload staging candidate
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: academy-staging-${{ github.sha }}
           path: dist/staging-candidate

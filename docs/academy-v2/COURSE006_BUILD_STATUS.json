@@ -1,0 +1,36 @@
+{
+  "courseId": "COURSE-LH-TECH1-006",
+  "courseVersion": "0.3.0",
+  "status": "development-readiness",
+  "module": "MOD-LH-TECH1-006-HARVEST",
+  "objectives": ["LO-LH-TECH1-006-01","LO-LH-TECH1-006-02","LO-LH-TECH1-006-03","LO-LH-TECH1-006-04","LO-LH-TECH1-006-05","LO-LH-TECH1-006-06"],
+  "formativeAssessment": "ASSESS-LH-TECH1-006-M01",
+  "summativeAssessment": "ASSESS-LH-TECH1-006-FINAL",
+  "formativeItems": 12,
+  "summativeItems": 24,
+  "totalDedicatedItems": 36,
+  "mappedPractical": "PRACTICAL-TECH1-F",
+  "practicalCrosswalk": "registry/course6-practical-f-crosswalk.json",
+  "practicalCrosswalkStatus": "development",
+  "objectiveCoverageMappedToPractical": true,
+  "learnerAssetLayerBuilt": false,
+  "independentProductReleaseAuthorityConferred": false,
+  "releaseStatus": "draft",
+  "remainingDevelopmentPriorities": [
+    "Course 6 learner visual/practice asset layer",
+    "rendered accessibility review preparation",
+    "human technical and assessment review packets",
+    "pilot-ready equivalent Practical F form details"
+  ],
+  "remainingValidationGates": [
+    "human technical review",
+    "human assessment review",
+    "rendered accessibility review",
+    "controlled pilot evidence",
+    "practical validation",
+    "evaluator calibration and inter-rater evidence",
+    "formal standard setting",
+    "program release approval"
+  ],
+  "boundary": "Practical mapping and deterministic tests demonstrate development coverage only. They do not constitute independent product-release authority, human approval, practical validation, pilot evidence, inter-rater evidence or release approval."
+}

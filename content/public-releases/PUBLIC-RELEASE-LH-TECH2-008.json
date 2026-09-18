@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "PUBLIC-RELEASE-LH-TECH2-008",
+  "courseId": "COURSE-LH-TECH2-008",
+  "title": "Integrated Technician II Simulation Lab",
+  "publicationState": "published",
+  "publicScope": {
+    "modules": ["MOD-LH-TECH2-008-LAB"],
+    "assessments": ["ASSESS-LH-TECH2-008-M01"],
+    "publicCourseItems": 16,
+    "practicalIds": [
+      "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+      "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+      "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+      "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+      "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+      "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+      "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION",
+      "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT"
+    ],
+    "studentSources": [
+      "content/lessons/LESSON-LH-TECH2-008-01.json",
+      "content/lessons/LESSON-LH-TECH2-008-02.json",
+      "content/lessons/LESSON-LH-TECH2-008-03.json",
+      "content/lessons/LESSON-LH-TECH2-008-04.json"
+    ]
+  },
+  "publicationBoundary": {
+    "learnerPackage": "released",
+    "courseTests": "released-for-learning",
+    "credentialExam": "restricted",
+    "credentialDecision": "restricted-governance"
+  },
+  "excludedFromPublicRelease": [
+    "live practical and capstone forms, evaluator keys, scoring anchors and candidate evidence",
+    "credential-purpose exam items and answer data",
+    "human review records and reviewer queues",
+    "pilot participant records and psychometric evidence",
+    "assessor calibration and inter-rater records",
+    "credential issuance secrets and signing material"
+  ],
+  "boundary": "This manifest authorizes only the learner-facing Technician II simulation-preparation lessons and formative readiness assessment for public study. The seven practicals, capstone performance decision, secure forms, evaluator evidence, standard setting and credential issuance remain restricted and unapproved."
+}

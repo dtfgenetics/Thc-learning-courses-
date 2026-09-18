@@ -1,0 +1,29 @@
+{
+  "id": "EMR-LH-TECH1-001-AUDIT-TRAIL",
+  "mappingCandidateId": "MAP-LH-TECH1-001-09-MHRA-GXP-DATA-INTEGRITY",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-AUDIT-TRAIL",
+  "statement": "A record audit trail should preserve information about creation, modification, or deletion without obscuring or overwriting the original record, so the history of changes can be reconstructed with the who, what, when, and why of the action.",
+  "domain": "data-integrity",
+  "lessonIds": ["LESSON-LH-TECH1-001-09", "LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12"],
+  "referenceIds": ["REF-MHRA-GXP-DATA-INTEGRITY"],
+  "competencyIds": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CULT-TRACEABILITY-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-05", "LO-LH-TECH1-001-07", "LO-LH-TECH1-001-08", "LO-LH-TECH1-001-11", "LO-LH-TECH1-001-12"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2027-09-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed MHRA GxP data-integrity guidance and cross-checked against the current final guidance on September 15, 2026. The statement reflects the guidance's audit-trail definition and reconstruction principle. It is used as a general record-integrity model, not as cannabis-specific regulation.",
+    "notes": "Human data-integrity review is required before promotion."
+  },
+  "sourceContext": [
+    {"lessonId": "LESSON-LH-TECH1-001-09", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[2].references", "contextTitle": "Never manufacture completion or missing data"},
+    {"lessonId": "LESSON-LH-TECH1-001-11", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[2].references", "contextTitle": "Corrections need a basis"},
+    {"lessonId": "LESSON-LH-TECH1-001-12", "referenceId": "REF-MHRA-GXP-DATA-INTEGRITY", "jsonPath": "$.content.sections[0].references", "contextTitle": "A discrepancy remains evidence until it is resolved"}
+  ]
+}

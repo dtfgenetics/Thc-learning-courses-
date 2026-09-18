@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Repeatable canopy PPFD grid measurement</title>
+  <desc id="desc">Educational diagram showing a nine-point canopy light grid with a brighter center and dimmer edges, consistent sensor height and orientation, and a reminder that one PPFD point or fixture setting cannot represent the entire canopy. Example values are illustrative rather than target values.</desc>
+  <style>
+    text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#17352b}.h1{font-size:34px;font-weight:800}.h2{font-size:22px;font-weight:750}.body{font-size:18px}.small{font-size:15px}.label{font-size:16px;font-weight:750}.card{fill:#fffdf7;stroke:#355f50;stroke-width:2}.grid{fill:#eef5ed;stroke:#55786b;stroke-width:2}.hot{fill:#dcebdd;stroke:#355f50;stroke-width:3}.line{stroke:#355f50;stroke-width:3;fill:none}.dash{stroke:#74897f;stroke-width:2;stroke-dasharray:8 7;fill:none}.pill{fill:#f6f1e6;stroke:#8c8a78;stroke-width:1.5}
+  </style>
+  <rect width="1200" height="760" fill="#f7f3e8"/>
+  <text x="60" y="64" class="h1">Repeatable canopy light check</text>
+  <text x="60" y="98" class="body">A grid reveals spatial distribution that one bright point cannot represent.</text>
+
+  <rect x="60" y="140" width="625" height="470" rx="24" class="card"/>
+  <text x="90" y="180" class="h2">Illustrative 3 × 3 PPFD map</text>
+  <text x="90" y="207" class="small">Example values only — not a target range.</text>
+
+  <g transform="translate(115 235)">
+    <rect x="0" y="0" width="155" height="95" rx="14" class="grid"/><text x="55" y="57" class="h2">520</text>
+    <rect x="170" y="0" width="155" height="95" rx="14" class="grid"/><text x="225" y="57" class="h2">610</text>
+    <rect x="340" y="0" width="155" height="95" rx="14" class="grid"/><text x="395" y="57" class="h2">500</text>
+    <rect x="0" y="110" width="155" height="95" rx="14" class="grid"/><text x="55" y="167" class="h2">700</text>
+    <rect x="170" y="110" width="155" height="95" rx="14" class="hot"/><text x="225" y="167" class="h2">860</text>
+    <rect x="340" y="110" width="155" height="95" rx="14" class="grid"/><text x="395" y="167" class="h2">690</text>
+    <rect x="0" y="220" width="155" height="95" rx="14" class="grid"/><text x="55" y="277" class="h2">530</text>
+    <rect x="170" y="220" width="155" height="95" rx="14" class="grid"/><text x="225" y="277" class="h2">620</text>
+    <rect x="340" y="220" width="155" height="95" rx="14" class="grid"/><text x="395" y="277" class="h2">510</text>
+  </g>
+  <text x="115" y="585" class="small">Units: µmol·m⁻²·s⁻¹ (illustrative values)</text>
+
+  <rect x="730" y="140" width="410" height="215" rx="24" class="card"/>
+  <text x="760" y="180" class="h2">Hold the method constant</text>
+  <line x1="790" y1="225" x2="790" y2="315" class="dash"/>
+  <rect x="760" y="215" width="60" height="28" rx="8" class="pill"/><text x="772" y="234" class="small">sensor</text>
+  <line x1="740" y1="315" x2="1110" y2="315" class="line"/>
+  <text x="845" y="235" class="label">Same measurement height</text>
+  <text x="845" y="265" class="label">Same sensor orientation</text>
+  <text x="845" y="295" class="label">Same defined grid positions</text>
+  <text x="760" y="338" class="small">Comparable maps require a repeatable measurement plane.</text>
+
+  <rect x="730" y="385" width="410" height="225" rx="24" class="card"/>
+  <text x="760" y="425" class="h2">What to report</text>
+  <circle cx="776" cy="465" r="6" fill="#355f50"/><text x="795" y="471" class="body">Every point and its position</text>
+  <circle cx="776" cy="503" r="6" fill="#355f50"/><text x="795" y="509" class="body">Units, time and instrument context</text>
+  <circle cx="776" cy="541" r="6" fill="#355f50"/><text x="795" y="547" class="body">Required average/range or uniformity summary</text>
+  <circle cx="776" cy="579" r="6" fill="#355f50"/><text x="795" y="585" class="body">Unexpected spatial differences</text>
+
+  <rect x="60" y="645" width="1080" height="72" rx="18" class="hot"/>
+  <text x="84" y="676" class="label">Do not substitute:</text>
+  <text x="235" y="676" class="small">The center point (860 here), fixture wattage, dimmer percentage or one average is not the full canopy map.</text>
+  <text x="235" y="701" class="small">Measure and preserve distribution; route unexpected results through the supplied procedure.</text>
+</svg>

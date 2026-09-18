@@ -1,27 +1,28 @@
 {
   "id": "ITEM-LH-TECH1-007-M01-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
-  "competency": "COMP-IPM-001",
-  "objective": "LO-LH-TECH1-007-04",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-007-02",
   "bloomLevel": "analyze",
   "difficulty": "moderate",
   "type": "scenario",
-  "stem": "A scouting route finds direct pest evidence concentrated near one intake. What best preserves useful evidence?",
+  "stem": "During a systematic crop-observation route, a technician finds direct pest evidence concentrated near one intake. What response best preserves useful evidence and biosecurity boundaries?",
   "choices": [
-    "Record only the pest name",
-    "Record the identified locations, incidence/severity or counts, direct evidence and prior-round comparison, then protect biosecurity and escalate as required",
+    "Record only the pest name and continue the route without location context",
+    "Record the identified locations, incidence/severity or counts and direct evidence, protect the affected movement/biosecurity boundary, and escalate as required by procedure",
     "Treat the whole room immediately without authorization",
-    "Remove the affected leaves and omit the finding"
+    "Remove the affected leaves and omit the finding so the room record stays consistent"
   ],
   "correct": 1,
-  "rationale": "Spatial pattern and comparable evidence make the finding actionable without granting independent treatment authority.",
+  "rationale": "The technician preserves direct crop-observation evidence, spatial context and biosecurity controls while escalating within the supplied procedure. A visible finding does not authorize independent treatment selection.",
   "references": [
     "REF-IPM-001"
   ],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-007",
-    "itemSet": "course7-readiness-v1"
+    "itemSet": "course7-readiness-v1",
+    "revisionNote": "Remapped from integrated objective 04 to objective 02 because the item primarily measures systematic crop observation, evidence collection, biosecurity and escalation. Propagation/canopy integration remains represented by items 007 and 008 under objective 04."
   }
 }

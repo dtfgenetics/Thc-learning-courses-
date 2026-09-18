@@ -1,29 +1,73 @@
-# Technician I Course 003 production milestone
+# Technician I Course 003 development readiness
 
-Course: `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals
+Course: `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals  
+Course version: `0.5.0`  
+Release status: `draft`
 
-## Source built
+## Automated development completed
 
-Course 003 now has a dedicated occupational delivery layer on top of the existing canonical environment, VPD, lighting, sensor, equipment-care and records material.
+Course 003 now has its planned occupational instruction, assessment, development-stage performance-evidence and learner-asset layers.
 
 - dedicated module: `MOD-LH-TECH1-003-MONITORING`;
 - five measurable Course 003 learning objectives;
 - four applied course-specific lessons;
-- 32 distinct dedicated Course 003 items: 12 formative and 20 summative-development items;
+- 32 distinct dedicated items: 12 formative and 20 summative-development items;
 - formative module assessment `ASSESS-LH-TECH1-003-M01`;
 - draft summative assessment `ASSESS-LH-TECH1-003-FINAL`;
-- deterministic Course 003 regression plus updated Technician I program regression;
-- synchronized global curriculum registry;
-- Course 003 remains `draft` pending human technical review, accessibility review, bank expansion/pilot evidence, integrated practical/capstone evidence and program release approval.
+- mapped development practical: `PRACTICAL-TECH1-A — Safe Room Entry & Crop Inspection`;
+- objective/practical crosswalk: `registry/course3-practical-a-crosswalk.json`;
+- six governed learner assets: four embedded teaching visuals and two downloadable practice worksheets;
+- dedicated Drive mirror folder: `1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU`;
+- deterministic practical-crosswalk and learner-asset contracts run through the normal Course 003 regression;
+- Course 003 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
 
-## Instructional emphasis
+## Learner asset coverage
 
-The course trains Technician I learners to distinguish targets from measurements, record temperature/RH/VPD with sensor context, perform repeatable PPFD and photoperiod checks, preserve canopy light distribution instead of relying on one point, evaluate sensor placement and verification status, recognize trends and alarms, perform only authorized operator-level checks, and escalate unresolved environmental or lighting faults without independently redesigning control strategy.
+Every Course 003 lesson now has dedicated embedded visual support:
 
-## Assessment design
+1. Lesson 1 — temperature/RH/VPD measurement context;
+2. Lesson 2 — repeatable canopy PPFD grid measurement;
+3. Lesson 3 — sensor placement and representativeness triage;
+4. Lesson 4 — alarm, trend, permitted verification and shift-handoff workflow.
 
-The formative and summative sets are non-overlapping. The 20-item summative-development bank covers environmental measurement and VPD context, PPFD/photoperiod measurement, sensor representativeness and trend reasoning, equipment-care boundaries, and reconstructable alarm/handoff records. Authored answer-key positions are balanced by construction and runtime choice randomization remains enabled.
+Two printable practice assets are linked directly from the relevant lessons:
 
-## Validation
+- environmental measurement record practice — targets vs measurements, representativeness, verification, uncertainty and handoff;
+- PPFD grid and sensor-verification practice — repeatable grid, distribution, photoperiod context, outlier triage, authority boundary and escalation.
 
-The one-shot production workflow generated the Course 003 source, rebuilt the canonical registry, and passed the Learning Hub item-quality gate, schema validation, curriculum validation, registry validation, Technician I program regression, Course 002 regression, Course 003 regression and the complete deterministic `npm test` suite before committing the generated source. Pull-request workflows provide the independent integration validation before promotion.
+The public repository is canonical learner delivery; all six produced assets are mirrored to the Course 003 Drive folder and registered in `visuals/COURSE3-ASSET-REGISTRY.json`.
+
+## Scope controls
+
+- VPD is environmental drying-demand context, not a universal cannabis target chart.
+- PPFD example values are illustrative, not production targets.
+- one light point, fixture setting or average is not whole-canopy evidence.
+- an outlier does not automatically prove a bad sensor or room-wide condition.
+- an alarm is evidence of a rule event, not a biological diagnosis or root cause.
+- Technician I verification remains distinct from unauthorized repair, protected calibration or control-strategy redesign.
+
+## Remaining development/readiness work
+
+The planned Course 003 learner-content/asset package no longer has a basic missing-asset gap. Remaining work is primarily review/validation preparation:
+
+- rendered accessibility review preparation and evidence;
+- human technical and assessment review packets;
+- pilot-ready equivalent Practical A form details;
+- optional PDF exports derived from canonical SVG worksheets after layout/accessibility review.
+
+## Remaining human/empirical validation gates
+
+The following cannot be closed by generated files or green CI alone:
+
+- human technical review;
+- human assessment review;
+- rendered accessibility review;
+- controlled learner/item pilot evidence;
+- Practical A validation;
+- evaluator calibration and inter-rater evidence;
+- formal standard setting;
+- final Technician I program release approval.
+
+## Boundary
+
+Public-source research, instruction, assessments, diagrams, worksheets, practical mappings and deterministic QA may continue before these gates are complete. Human/pilot gates control validated credential evidence and release status; they do not block ordinary source-backed course development.

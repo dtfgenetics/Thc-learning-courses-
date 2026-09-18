@@ -1,0 +1,35 @@
+{
+  "id": "EMR-LH-TECH1-001-13-15-ENERGY-BOUNDARY",
+  "mappingCandidateId": "MAP-LH-TECH1-001-13-OSHA-1910-147-LOTO",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-ENERGY-SERVICING-BOUNDARY",
+  "statement": "Within workplaces covered by OSHA 29 CFR 1910.147, normal machine stopping does not by itself establish hazardous-energy isolation for servicing or maintenance; covered work requires control of unexpected energization, startup, or release of stored energy, while agriculture employment is expressly excluded from this standard's scope.",
+  "domain": "hazardous-energy",
+  "lessonIds": [
+    "LESSON-LH-TECH1-001-13",
+    "LESSON-LH-TECH1-001-14",
+    "LESSON-LH-TECH1-001-15",
+    "LESSON-LH-TECH1-001-18"
+  ],
+  "referenceIds": ["REF-OSHA-1910-147-LOTO"],
+  "competencyIds": ["COMP-CULT-EQUIPMENT-CARE-001", "COMP-SAFETY-WORK-001", "COMP-PRO-QA-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-09", "LO-LH-TECH1-001-10", "LO-LH-TECH1-001-01"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2026-12-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from reviewed OSHA 29 CFR 1910.147 and cross-checked against the current OSHA standard on September 15, 2026. The statement preserves the standard's servicing/maintenance focus and explicit agriculture exclusion so the course does not imply universal applicability to every cultivation workplace.",
+    "notes": "Human occupational-safety/legal-scope review is required before promotion. Facility classification, state-plan requirements, machine-specific procedures, and other applicable standards must be determined separately."
+  },
+  "sourceContext": [
+    {"lessonId": "LESSON-LH-TECH1-001-13", "referenceId": "REF-OSHA-1910-147-LOTO", "jsonPath": "$.content.sections[2].references", "contextTitle": "Inspection does not expand repair authority"},
+    {"lessonId": "LESSON-LH-TECH1-001-14", "referenceId": "REF-OSHA-1910-147-LOTO", "jsonPath": "$.content.sections[1].references", "contextTitle": "A stopped machine can still contain hazardous energy"},
+    {"lessonId": "LESSON-LH-TECH1-001-15", "referenceId": "REF-OSHA-1910-147-LOTO", "jsonPath": "$.content.sections[2].references", "contextTitle": "A reset is not a repair"},
+    {"lessonId": "LESSON-LH-TECH1-001-18", "referenceId": "REF-OSHA-1910-147-LOTO", "jsonPath": "$.content.sections[1].references", "contextTitle": "Use evidence to choose the next safe action"}
+  ]
+}

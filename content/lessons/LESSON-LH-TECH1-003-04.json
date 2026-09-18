@@ -1,69 +1,25 @@
 {
   "id": "LESSON-LH-TECH1-003-04",
   "title": "Alarms, Trends, Environmental Records and Shift Handoff",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": [
-    "COMP-ENV-VPD-001",
-    "COMP-LIGHT-001",
-    "COMP-CULT-EQUIPMENT-CARE-001",
-    "COMP-PRO-QA-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-003-03",
-    "LO-LH-TECH1-003-04",
-    "LO-LH-TECH1-003-05"
-  ],
+  "competencies": ["COMP-ENV-VPD-001","COMP-LIGHT-001","COMP-CULT-EQUIPMENT-CARE-001","COMP-PRO-QA-001"],
+  "learningObjectives": ["LO-LH-TECH1-003-03","LO-LH-TECH1-003-04","LO-LH-TECH1-003-05"],
   "estimatedMinutes": 60,
-  "references": [
-    "REF-VPD-002",
-    "REF-LIGHT-001",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "references": ["REF-VPD-002","REF-LIGHT-001","REF-MHRA-GXP-DATA-INTEGRITY"],
   "assessment": null,
   "content": {
     "overview": "Environmental work is not complete when a technician reads a dashboard. Learners practice distinguishing instantaneous values, trends, averages and alarms; documenting verification actions; connecting readings to crop location and equipment context; and producing a shift handoff that makes unresolved environmental or lighting conditions reconstructable without hiding uncertainty.",
     "vocabulary": [
-      {
-        "term": "trend",
-        "definition": "A sequence of measurements over time used to identify direction, cycling, transitions or recurring patterns."
-      },
-      {
-        "term": "alarm",
-        "definition": "A system or procedural indication that a defined condition or rule has been met and requires a specified response."
-      },
-      {
-        "term": "outlier",
-        "definition": "A value that differs substantially from comparison values or the surrounding pattern and therefore warrants context or verification."
-      },
-      {
-        "term": "handoff",
-        "definition": "A structured transfer of completed checks, observations, deviations, unresolved conditions and priorities to the next responsible person."
-      }
+      {"term":"trend","definition":"A sequence of measurements over time used to identify direction, cycling, transitions or recurring patterns."},
+      {"term":"alarm","definition":"A system or procedural indication that a defined condition or rule has been met and requires a specified response."},
+      {"term":"outlier","definition":"A value that differs substantially from comparison values or the surrounding pattern and therefore warrants context or verification."},
+      {"term":"handoff","definition":"A structured transfer of completed checks, observations, deviations, unresolved conditions and priorities to the next responsible person."}
     ],
     "sections": [
-      {
-        "title": "Instantaneous values, averages and trends answer different questions",
-        "body": "A current value shows one moment, an average summarizes a period and a trend preserves change over time. Equipment cycling, lights-on/off transitions or short excursions can disappear inside averages, so technicians use the form of data required by the task instead of treating every summary as interchangeable.",
-        "references": [
-          "REF-VPD-002"
-        ]
-      },
-      {
-        "title": "An alarm is evidence of a rule event, not a diagnosis",
-        "body": "When an alarm occurs, record the alarm identity, affected room or asset, time, relevant readings and the permitted verification actions. The alarm may indicate a threshold or system condition, but it does not by itself establish biological damage or root cause.",
-        "references": [
-          "REF-VPD-002",
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      },
-      {
-        "title": "Handoffs preserve unresolved conditions",
-        "body": "A useful handoff states what was observed, what target or limit applied, what checks were completed, what remained unresolved, who was notified and what follow-up is required. If data quality is uncertain, the uncertainty is part of the handoff rather than being replaced with a guessed value or cause.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      }
+      {"title":"Instantaneous values, averages and trends answer different questions","body":"A current value shows one moment, an average summarizes a period and a trend preserves change over time. Equipment cycling, lights-on/off transitions or short excursions can disappear inside averages, so technicians use the form of data required by the task instead of treating every summary as interchangeable.","references":["REF-VPD-002"]},
+      {"title":"An alarm is evidence of a rule event, not a diagnosis","body":"When an alarm occurs, record the alarm identity, affected room or asset, time, relevant readings and the permitted verification actions. The alarm may indicate a threshold or system condition, but it does not by itself establish biological damage or root cause.","references":["REF-VPD-002","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"title":"Handoffs preserve unresolved conditions","body":"A useful handoff states what was observed, what target or limit applied, what checks were completed, what remained unresolved, who was notified and what follow-up is required. If data quality is uncertain, the uncertainty is part of the handoff rather than being replaced with a guessed value or cause.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
     ],
     "workedExamples": [
       "A daily temperature average appears normal, but the trend shows a repeated lights-on spike. The technician records the recurring transition pattern and escalates under the supplied procedure rather than reporting only the average.",
@@ -72,72 +28,16 @@
     "commonMistakes": [
       "Using a daily average to dismiss short repeated excursions.",
       "Writing an alarm as a confirmed diagnosis or equipment root cause.",
-      "Closing a handoff with “fixed” when only the alarm was acknowledged and the cause remains unresolved.",
+      "Closing a handoff with ‘fixed’ when only the alarm was acknowledged and the cause remains unresolved.",
       "Backfilling a missed reading from memory as though it were measured at the scheduled time."
     ],
-    "practicalApplication": "Review a simulated 24-hour environmental/light trend with one sensor outlier and one alarm. Identify the important event, record the target versus measured values, document permitted verification, and create a receiving-shift handoff that clearly separates resolved actions from unresolved cause or data-quality questions.",
+    "practicalApplication": "Use the environmental measurement practice sheet with a simulated 24-hour environmental/light trend containing one outlier and one alarm. Record target versus measured evidence, identify the important trend event, document only permitted verification, preserve unresolved cause/data-quality questions, and create a receiving-shift handoff with the next required check and owner.",
     "summary": "Environmental records need time, location, measurement and equipment context. Trends and alarms support investigation but do not automatically prove cause. Technician I verifies within procedure, records uncertainty honestly and hands off unresolved conditions so the next qualified person can continue the work.",
     "blocks": [
-      {
-        "type": "document",
-        "title": "Environmental deviation handoff",
-        "description": "A reconstructable handoff separates evidence, checks and unresolved work.",
-        "fields": [
-          {
-            "label": "Room/zone/asset",
-            "value": "Controlled location and equipment/sensor identity"
-          },
-          {
-            "label": "Time window",
-            "value": "When the reading, trend or alarm occurred"
-          },
-          {
-            "label": "Target/limit",
-            "value": "Supplied target or alarm rule applicable to the task"
-          },
-          {
-            "label": "Observed evidence",
-            "value": "Measured values, trend, photoperiod/light state or alarm identity"
-          },
-          {
-            "label": "Verification completed",
-            "value": "Permitted checks actually performed"
-          },
-          {
-            "label": "Unresolved condition",
-            "value": "What is still unknown or outside technician authority"
-          },
-          {
-            "label": "Escalation",
-            "value": "Who was notified and according to which process"
-          },
-          {
-            "label": "Next action",
-            "value": "Required follow-up for the receiving role"
-          }
-        ],
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      },
-      {
-        "type": "scenario",
-        "title": "Average hides a repeated spike",
-        "setting": "The 24-hour average temperature is within the supplied range, but the trend shows a short spike at each lights-on transition.",
-        "prompt": "What is the strongest record?",
-        "options": [
-          "Report only the acceptable average",
-          "Document the repeated transition spike with time/location context and escalate if the supplied procedure requires it",
-          "Delete the spikes because they are brief",
-          "Independently change HVAC controls without authorization"
-        ],
-        "answer": "Document the repeated transition spike with time/location context and escalate if the supplied procedure requires it",
-        "feedback": "Averages can conceal meaningful dynamics. The trend should be preserved without assuming root cause or exceeding role authority.",
-        "references": [
-          "REF-VPD-002",
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      }
+      {"type":"document","title":"Environmental deviation handoff","description":"A reconstructable handoff separates evidence, checks and unresolved work.","fields":[{"label":"Room/zone/asset","value":"Controlled location and equipment/sensor identity"},{"label":"Time window","value":"When the reading, trend or alarm occurred"},{"label":"Target/limit","value":"Supplied target or alarm rule applicable to the task"},{"label":"Observed evidence","value":"Measured values, trend, photoperiod/light state or alarm identity"},{"label":"Verification completed","value":"Permitted checks actually performed"},{"label":"Unresolved condition","value":"What is still unknown or outside technician authority"},{"label":"Escalation","value":"Who was notified and according to which process"},{"label":"Next action","value":"Required follow-up for the receiving role"}],"references":["REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-003-004","title":"Alarm, trend, verification and handoff workflow","src":"/assets/course3/alarm-trend-handoff-workflow.svg","alt":"Diagram showing a time trend with a repeated spike hidden by an average, followed by an alarm workflow that captures event identity, evidence, permitted verification, escalation, unresolved condition and receiving-shift next action.","caption":"Averages can hide repeated events, and an alarm does not prove root cause. Preserve the event, verification, uncertainty and next action for handoff.","references":["REF-VPD-002","REF-LIGHT-001","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"type":"resource","title":"Downloadable practice: environmental measurement and handoff record","body":"Use this printable worksheet to practice separating targets from observed readings, preserving sensor/time/location context, evaluating representativeness, documenting permitted verification and carrying unresolved uncertainty into escalation and shift handoff.","href":"/assets/course3/environment-measurement-practice.svg","label":"Open environmental measurement practice sheet","extensions":{"assetId":"VIS-LH-TECH1-003-005","downloadable":true}},
+      {"type":"scenario","title":"Average hides a repeated spike","setting":"The 24-hour average temperature is within the supplied range, but the trend shows a short spike at each lights-on transition.","prompt":"What is the strongest record?","options":["Report only the acceptable average","Document the repeated transition spike with time/location context and escalate if the supplied procedure requires it","Delete the spikes because they are brief","Independently change HVAC controls without authorization"],"answer":"Document the repeated transition spike with time/location context and escalate if the supplied procedure requires it","feedback":"Averages can conceal meaningful dynamics. The trend should be preserved without assuming root cause or exceeding role authority.","references":["REF-VPD-002","REF-MHRA-GXP-DATA-INTEGRITY"]}
     ]
   }
 }

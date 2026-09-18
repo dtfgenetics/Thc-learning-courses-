@@ -1,0 +1,46 @@
+{
+  "id": "CROSSWALK-LH-TECH1-005-PRACTICAL-CDE",
+  "version": "1.1.0",
+  "status": "development",
+  "courseId": "COURSE-LH-TECH1-005",
+  "practicals": [
+    {"id":"PRACTICAL-TECH1-C","document":"docs/academy-v2/practicals/PRACTICAL-TECH1-C-IPM-SCOUTING-ROUTE.md"},
+    {"id":"PRACTICAL-TECH1-D","document":"docs/academy-v2/practicals/PRACTICAL-TECH1-D-PROPAGATION-WORKSTATION.md"},
+    {"id":"PRACTICAL-TECH1-E","document":"docs/academy-v2/practicals/PRACTICAL-TECH1-E-CANOPY-MAINTENANCE-WORK-ORDER.md"}
+  ],
+  "purpose": "Development crosswalk showing where Course 5 propagation, canopy, IPM scouting, biosecurity, authority-boundary and crop-care record objectives can be observed across Practicals C, D and E. Mapping coverage does not constitute practical validation, applicator authorization, evaluator calibration, inter-rater evidence, standard setting or release approval.",
+  "validationBoundary": {"practicalsValidated":false,"humanApprovalImplied":false,"pilotEvidenceImplied":false,"interRaterEvidenceImplied":false,"pesticideApplicatorAuthorityConferred":false,"treatmentSelectionAuthorityConferred":false},
+  "objectiveMappings": [
+    {"objectiveId":"LO-LH-TECH1-005-01","statement":"Verify donor, lot, tray, plant and work-order identity and execute authorized propagation or transplant steps while preserving labels, counts, sanitation checkpoints and exception records.","performanceMappings":[{"practicalId":"PRACTICAL-TECH1-D","practicalTasks":["Verify donor identity, cultivar, target count and work order.","Prepare a clean workstation and stage labels before cutting.","Maintain unambiguous tray/lot identity.","Reconcile started, rooted, lost and handed-off counts.","Complete the propagation batch record and handoff."],"scoringCategories":["work-order/donor verification","sanitation","labeling/traceability","count reconciliation","documentation/escalation"],"expectedEvidence":["clean workstation setup","donor acceptance decisions","tray labeling/map","count reconciliation","completed batch record"],"deliverables":["workstation setup checklist","tray map","propagation batch record","deviation/handoff note"]}]},
+    {"objectiveId":"LO-LH-TECH1-005-02","statement":"Execute authorized pruning, defoliation, support, spacing, training or related canopy work to the supplied standard while protecting plant identity, sanitation, tissue condition and recovery needs.","performanceMappings":[{"practicalId":"PRACTICAL-TECH1-E","practicalTasks":["Verify room, batch, stage and work-order objective.","Select the least disruptive action that satisfies the work order.","Apply supplied pruning/support/repositioning criteria consistently to simulated plants.","Recognize stop conditions such as active tissue splitting, severe stress or pest concerns.","Compare completed results with the stated structural objective."],"scoringCategories":["work-order/objective interpretation","pre-task crop inspection","task execution and tissue preservation","consistency against criteria","exception/escalation handling"],"expectedEvidence":["work-order interpretation","action-selection decisions","before/after annotations","exception handling","consistency review"],"deliverables":["annotated canopy work plan","before/after decision sheet","completed room work record","exceptions/damage log"]}]},
+    {"objectiveId":"LO-LH-TECH1-005-03","statement":"Follow a repeatable scouting route and document signs, symptoms, location, incidence, severity and trend without converting limited evidence into an unsupported pest or disease diagnosis.","performanceMappings":[{"practicalId":"PRACTICAL-TECH1-C","practicalTasks":["Follow the supplied route and identify high-risk inspection points.","Inspect representative canopy levels and leaf surfaces.","Classify provided findings as symptom, direct sign, mechanical damage, or insufficient evidence.","Calculate simple incidence from the supplied sample.","Assign supplied severity categories consistently.","Plot findings on the room map.","Compare with previous rounds and identify stable, increasing or resolving trends."],"scoringCategories":["route/inspection completeness","sign vs symptom classification","incidence/severity","spatial/trend interpretation"],"expectedEvidence":["route/inspection completeness","classification accuracy","incidence/severity calculations","pattern map","trend interpretation"],"deliverables":["completed scouting sheet","annotated room map","incidence/severity calculations","trap trend note"]}]},
+    {"objectiveId":"LO-LH-TECH1-005-04","statement":"Maintain facility sanitation, clean-to-dirty movement, tool-control and quarantine or isolation boundaries during propagation, crop care and scouting, and report any breach.","performanceMappings":[
+      {"practicalId":"PRACTICAL-TECH1-C","practicalTasks":["Prepare clean scouting tools/PPE.","When a suspect finding threatens a clean area, preserve supplied clean-to-dirty movement, tool-control and isolation/quarantine boundaries; document and report any actual or potential breach."],"scoringCategories":["sanitation/biosecurity"],"expectedEvidence":["clean scouting sequence","clean-to-dirty/quarantine decision"],"deliverables":["biosecurity/quarantine note where applicable","escalation/handoff note"]},
+      {"practicalId":"PRACTICAL-TECH1-D","practicalTasks":["Sequence tool sanitation correctly.","When donor material is suspect or outside acceptance criteria, preserve supplied clean-to-dirty movement and isolation/quarantine boundaries, segregate affected tools/material as instructed, and report any actual or potential breach."],"scoringCategories":["sanitation"],"expectedEvidence":["tool sanitation sequence","quarantine/isolation action when applicable"],"deliverables":["quarantine/isolation note when applicable","deviation/handoff note"]},
+      {"practicalId":"PRACTICAL-TECH1-E","practicalTasks":["Maintain sanitation and waste control.","When a pest concern, suspect plant or contaminated tool/waste condition is encountered, preserve supplied clean-to-dirty movement and isolation/quarantine boundaries and report any actual or potential breach before continuing in a clean area."],"scoringCategories":["sanitation/workspace control"],"expectedEvidence":["sanitation sequence","quarantine/isolation action when applicable"],"deliverables":["quarantine/isolation note when applicable","handoff note"]}
+    ]},
+    {"objectiveId":"LO-LH-TECH1-005-05","statement":"Distinguish routine Technician I crop-care authority from work requiring a lead, specialist or licensed/authorized applicator, and stop or escalate when the supplied instruction or authorization boundary is exceeded.","performanceMappings":[
+      {"practicalId":"PRACTICAL-TECH1-C","practicalTasks":["Choose appropriate escalation without making unauthorized pesticide or treatment-selection decisions."],"scoringCategories":["escalation choice"],"expectedEvidence":["escalation decision"],"deliverables":["escalation/handoff note"]},
+      {"practicalId":"PRACTICAL-TECH1-D","practicalTasks":["Identify a batch exception without redesigning the protocol."],"scoringCategories":["documentation/escalation"],"expectedEvidence":["deviation/escalation note"],"deliverables":["deviation/handoff note"]},
+      {"practicalId":"PRACTICAL-TECH1-E","practicalTasks":["Recognize stop conditions such as active tissue splitting, severe stress or pest concerns."],"scoringCategories":["exception/escalation handling"],"expectedEvidence":["exception handling"],"deliverables":["exceptions/damage log","handoff note"]}
+    ]},
+    {"objectiveId":"LO-LH-TECH1-005-06","statement":"Create reconstructable propagation, canopy and IPM records that preserve identity, work completed, evidence observed, sanitation or quarantine actions, deviations, uncertainty and shift-handoff needs.","performanceMappings":[
+      {"practicalId":"PRACTICAL-TECH1-C","practicalTasks":["Complete the scouting record and handoff."],"scoringCategories":["documentation/handoff"],"expectedEvidence":["scouting record quality"],"deliverables":["completed scouting sheet","biosecurity/quarantine note where applicable","escalation/handoff note"]},
+      {"practicalId":"PRACTICAL-TECH1-D","practicalTasks":["Complete the propagation batch record and handoff."],"scoringCategories":["documentation/escalation"],"expectedEvidence":["completed batch record"],"deliverables":["propagation batch record","quarantine/isolation note when applicable","deviation/handoff note"]},
+      {"practicalId":"PRACTICAL-TECH1-E","practicalTasks":["Record scope completed, exceptions, damage and follow-up needs.","Provide a concise shift handoff."],"scoringCategories":["records/handoff"],"expectedEvidence":["completed work record"],"deliverables":["completed room work record","quarantine/isolation note when applicable","handoff note"]}
+    ]}
+  ],
+  "courseSpecificReadiness": {
+    "objectiveCoverageMapped": true,
+    "lessonContentBuilt": true,
+    "assessmentDevelopmentBankBuilt": true,
+    "practicalMappingBuilt": true,
+    "learnerAssetLayerBuilt": true,
+    "learnerAssetCount": 9,
+    "visualRegistry": "visuals/COURSE5-ASSET-REGISTRY.json",
+    "humanTechnicalReview": "not-started",
+    "renderedAccessibilityReview": "not-started",
+    "practicalValidation": "not-started",
+    "controlledPilotEvidence": "not-started"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "sources": [
+    {"id":"pubmed","kind":"research","authority":"primary","baseUrl":"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/","supports":["journal","peer-reviewed-study","peer-reviewed-review"],"automation":"api","reviewRequired":true},
+    {"id":"crossref","kind":"metadata","authority":"primary","baseUrl":"https://api.crossref.org/v1/","supports":["doi-metadata","journal-metadata","license-metadata","retraction-update-metadata"],"automation":"api","reviewRequired":true},
+    {"id":"datagov","kind":"government-catalog","authority":"primary-metadata","baseUrl":"https://api.gsa.gov/technology/datagov/v4/","apiKeyEnv":"DATA_GOV_API_KEY","supports":["federal-dataset-metadata","dataset-distributions","licenses","harvest-provenance"],"automation":"api","reviewRequired":true},
+    {"id":"usda","kind":"government","authority":"primary","baseUrl":"https://www.nal.usda.gov/","supports":["agriculture","datasets","technical-guidance"],"automation":"catalog-and-curated-links","reviewRequired":true},
+    {"id":"osha","kind":"government","authority":"primary","baseUrl":"https://www.osha.gov/","supports":["workplace-safety","regulatory-guidance","datasets"],"automation":"curated-links-and-datagov","reviewRequired":true},
+    {"id":"epa","kind":"government","authority":"primary","baseUrl":"https://www.epa.gov/","supports":["pesticide-worker-safety","restricted-entry","environmental-guidance"],"automation":"curated-links-and-datagov","reviewRequired":true},
+    {"id":"fda","kind":"government","authority":"primary","baseUrl":"https://www.fda.gov/","supports":["data-integrity","traceability","recordkeeping"],"automation":"curated-links-and-datagov","reviewRequired":true},
+    {"id":"university-extension","kind":"academic-guidance","authority":"secondary","baseUrl":null,"supports":["horticulture","plant-health","ipm","cultivation-practice"],"automation":"discovery-provider-required","reviewRequired":true},
+    {"id":"wikimedia","kind":"media","authority":"candidate","baseUrl":"https://commons.wikimedia.org/w/api.php","supports":["reference-images","licensed-media","license-metadata","credit-metadata"],"automation":"api","reviewRequired":true,"licenseCheckRequired":true},
+    {"id":"internal","kind":"internal","authority":"canonical","baseUrl":null,"supports":["approved-assets","course-content","encyclopedia","job-aids","practice-datasets"],"automation":"repository-index","reviewRequired":false}
+  ],
+  "rules": {
+    "neverAutoPublishExternalContent": true,
+    "externalCollectionDestination": "automation/curriculum-ingestion/inbox/",
+    "requireProvenance": true,
+    "requireLicenseMetadataForExternalMedia": true,
+    "preferExistingApprovedInternalAssets": true,
+    "preferPrimaryAuthorityLinks": true,
+    "datasetCandidatesRequireReviewBeforeRegistryPromotion": true,
+    "mediaCandidatesRequireLicenseAndFactualReviewBeforePromotion": true,
+    "deduplicateBy": ["doi", "pmid", "canonicalUrl", "identifier", "contentHash"]
+  }
+}

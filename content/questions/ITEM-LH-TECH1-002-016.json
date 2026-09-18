@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -8,20 +8,18 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "A technician later realizes a photo was linked to the wrong plant ID. What should happen?",
+  "stem": "A technician discovers after the crop walk that a photo was linked to the wrong plant ID. Which correction best preserves record integrity?",
   "choices": [
-    "Silently replace the ID so the record appears correct from the start",
-    "Delete the entire crop walk",
-    "Keep the wrong ID because corrections are never allowed",
-    "Use the controlled correction method so the original history and corrected identity remain reconstructable"
+    "Create a new entry with the correct plant ID and remove the incorrect link so only the corrected state remains visible",
+    "Leave the original record unchanged and tell the next shift verbally which plant the image actually shows",
+    "Add a free-text note with the correct plant ID but do not connect the note to the original image record",
+    "Use the controlled correction method so the original association, corrected plant identity, correction time and correction history remain reconstructable"
   ],
   "correct": 3,
-  "rationale": "Corrections should preserve the true record history rather than silently rewriting it.",
-  "references": [
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "rationale": "A correction should fix the identity error without erasing or disconnecting the original history. The controlled correction preserves what was originally recorded, what changed, and the corrected state so another reviewer can reconstruct the sequence.",
+  "references": ["REF-MHRA-GXP-DATA-INTEGRITY"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2"
   }
 }

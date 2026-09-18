@@ -1,0 +1,28 @@
+{
+  "id": "EMR-LH-TECH1-001-17-SHIFT-HANDOFF",
+  "mappingCandidateId": "MAP-LH-TECH1-001-17-HSE-SHIFT-HANDOVER",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-SHIFT-HANDOFF",
+  "statement": "HSE describes effective shift handover as three linked elements: preparation by outgoing personnel, exchange of task-relevant information between outgoing and incoming personnel, and cross-checking by incoming personnel as responsibility is assumed.",
+  "domain": "shift-handoff",
+  "lessonIds": ["LESSON-LH-TECH1-001-17", "LESSON-LH-TECH1-001-18"],
+  "referenceIds": ["REF-HSE-SHIFT-HANDOVER"],
+  "competencyIds": ["COMP-PRO-SOP-001", "COMP-PRO-QA-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-12"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2027-09-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed UK Health and Safety Executive shift-handover guidance and cross-checked against the current HSE page on September 15, 2026. It is used as a transferable safety-critical communication model rather than as a claim that UK HSE requirements govern U.S. cannabis operations.",
+    "notes": "Human operations/safety communication review is required before promotion; preserve the jurisdiction and transferability boundary."
+  },
+  "sourceContext": [
+    {"lessonId": "LESSON-LH-TECH1-001-17", "referenceId": "REF-HSE-SHIFT-HANDOVER", "jsonPath": "$.content.sections[0].references", "contextTitle": "Prepare before the exchange"},
+    {"lessonId": "LESSON-LH-TECH1-001-18", "referenceId": "REF-HSE-SHIFT-HANDOVER", "jsonPath": "$.content.sections[2].references", "contextTitle": "Finish with a reconstructable shift state"}
+  ]
+}

@@ -81,6 +81,30 @@
       "Treating a pest observation elsewhere in the facility as proof of the current symptom cause."
     ],
     "practicalApplication": "For a case with at least three evidence streams, construct a ranked differential that includes nutritional/root-zone, environmental and biotic alternatives. State evidence for, evidence against and the most discriminating next check for each.",
-    "summary": "Advanced crop diagnosis is a multi-factor evidence problem. Strong decisions triangulate symptom pattern, roots, chemistry, environment, plant health and crop history."
+    "summary": "Advanced crop diagnosis is a multi-factor evidence problem. Strong decisions triangulate symptom pattern, roots, chemistry, environment, plant health and crop history.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-001-03",
+          "title": "Ranked multi-factor differential",
+          "src": "/assets/tech2/course1/outcome-03.svg",
+          "alt": "Differential-diagnosis matrix comparing root-zone, nutrition, environment, and biotic or developmental hypothesis families. Each row separates evidence for the hypothesis, evidence against or uncertainty, and the next check most likely to change its ranking.",
+          "caption": "Rank multiple plausible mechanisms together. EC, visible symptoms, tissue data, roots, environment and pest or disease findings are evidence streams, not automatic one-to-one diagnoses.",
+          "references": [
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-NUTRITION-001",
+            "REF-ROOTZONE-NUTRIENT-002",
+            "REF-CANNABIS-NPK-RSM-2024-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-001-03",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

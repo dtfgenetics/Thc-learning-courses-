@@ -1,131 +1,36 @@
 {
   "id": "LESSON-LH-TECH1-004-01",
   "title": "Sample Identity, pH/EC Measurement and Meter Readiness",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": [
-    "COMP-WATER-001",
-    "COMP-CULT-EQUIPMENT-CARE-001",
-    "COMP-PRO-QA-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-004-01",
-    "LO-LH-TECH1-004-05",
-    "LO-LH-TECH1-004-06"
-  ],
+  "competencies": ["COMP-WATER-001", "COMP-CULT-EQUIPMENT-CARE-001", "COMP-PRO-QA-001"],
+  "learningObjectives": ["LO-LH-TECH1-004-01", "LO-LH-TECH1-004-05", "LO-LH-TECH1-004-06"],
   "estimatedMinutes": 60,
-  "references": [
-    "REF-IRRIGATION-001",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "references": ["REF-IRRIGATION-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
   "assessment": null,
   "content": {
     "overview": "Technician I measurement begins with the correct sample and a trustworthy instrument, not with a number. Learners practice confirming whether the task requires source water, prepared nutrient solution, runoff/drainage or another defined sample; following permitted meter inspection, rinse, storage and calibration or verification steps; recording pH and EC with units and sample identity; and recognizing when a suspect reading must be repeated or escalated instead of used to change the crop.",
     "vocabulary": [
-      {
-        "term": "sample identity",
-        "definition": "The controlled description of what liquid or root-zone sample was collected, where it came from and when it was collected."
-      },
-      {
-        "term": "pH",
-        "definition": "A logarithmic measure related to hydrogen ion activity that describes acidity or basicity of a solution."
-      },
-      {
-        "term": "electrical conductivity",
-        "definition": "A measure of solution conductivity influenced by the concentration and mobility of dissolved ions; it does not identify individual nutrients."
-      },
-      {
-        "term": "verification check",
-        "definition": "A permitted comparison or readiness step used to determine whether a meter or measurement appears fit for the assigned task."
-      }
+      {"term":"sample identity","definition":"The controlled description of what liquid or root-zone sample was collected, where it came from and when it was collected."},
+      {"term":"pH","definition":"A logarithmic measure related to hydrogen ion activity that describes acidity or basicity of a solution."},
+      {"term":"electrical conductivity","definition":"A measure of solution conductivity influenced by the concentration and mobility of dissolved ions; it does not identify individual nutrients."},
+      {"term":"verification check","definition":"A permitted comparison or readiness step used to determine whether a meter or measurement appears fit for the assigned task."}
     ],
     "sections": [
-      {
-        "title": "Confirm the sample before measuring",
-        "body": "Source water, prepared feed, runoff or drainage and root-zone extracts answer different questions and are not automatically interchangeable. The record should identify sample type, location or reservoir, time and any required batch or work-order context before the pH or EC value is interpreted.",
-        "references": [
-          "REF-IRRIGATION-001",
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      },
-      {
-        "title": "Measurement quality comes before correction",
-        "body": "Meters require the preparation and verification steps specified by the facility and manufacturer. A dirty, poorly stored, unstable or out-of-status probe can create false precision. When a reading shifts unexpectedly, verify the meter and sample context before changing nutrient solution or irrigation practice.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "Record what EC can and cannot tell you",
-        "body": "EC is useful for tracking overall dissolved ionic concentration and trends, but similar EC values can result from different ionic mixtures. Technician I records the value, unit, sample method and context without presenting EC as a nutrient-specific chemical analysis.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      },
-      {
-        "title": "pH is context, not a diagnosis",
-        "body": "pH affects nutrient chemistry and availability, but a pH value by itself does not prove a specific deficiency or root-zone disorder. Interpretation should retain sample method, EC, root-zone condition, crop stage and other evidence when the task requires escalation.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      }
+      {"title":"Confirm the sample before measuring","body":"Source water, prepared feed, runoff or drainage and root-zone extracts answer different questions and are not automatically interchangeable. The record should identify sample type, location or reservoir, time and any required batch or work-order context before the pH or EC value is interpreted.","references":["REF-IRRIGATION-001","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"title":"Measurement quality comes before correction","body":"Meters require the preparation and verification steps specified by the facility and manufacturer. A dirty, poorly stored, unstable or out-of-status probe can create false precision. When a reading shifts unexpectedly, verify the meter and sample context before changing nutrient solution or irrigation practice.","references":["REF-IRRIGATION-001"]},
+      {"title":"Record what EC can and cannot tell you","body":"EC is useful for tracking overall dissolved ionic concentration and trends, but similar EC values can result from different ionic mixtures. Technician I records the value, unit, sample method and context without presenting EC as a nutrient-specific chemical analysis.","references":["REF-IRRIGATION-001"]},
+      {"title":"pH is context, not a diagnosis","body":"pH affects nutrient chemistry and availability, but a pH value by itself does not prove a specific deficiency or root-zone disorder. Interpretation should retain sample method, EC, root-zone condition, crop stage and other evidence when the task requires escalation.","references":["REF-IRRIGATION-001"]}
     ],
-    "workedExamples": [
-      "A pH meter reading suddenly shifts after storage. The technician follows the supplied meter verification or calibration procedure before treating the new number as a crop condition.",
-      "A runoff EC result is recorded as runoff from an identified zone and irrigation event rather than compared as though it were the same measurement method as a pore-water or saturated-media extract."
-    ],
-    "commonMistakes": [
-      "Measuring an unidentified cup and attaching the result to the wrong room or solution.",
-      "Treating EC as a direct measurement of each individual nutrient.",
-      "Adjusting a solution based on one suspect meter result before verification.",
-      "Comparing values from different sample methods as though the methods were equivalent."
-    ],
-    "practicalApplication": "Given labeled and unlabeled sample containers, a meter-status packet and a work order, select the correct sample, identify any data-quality problem, follow the permitted readiness sequence, and produce a pH/EC record with sample identity, units, time, meter context and escalation status.",
+    "workedExamples": ["A pH meter reading suddenly shifts after storage. The technician follows the supplied meter verification or calibration procedure before treating the new number as a crop condition.","A runoff EC result is recorded as runoff from an identified zone and irrigation event rather than compared as though it were the same measurement method as a pore-water or saturated-media extract."],
+    "commonMistakes": ["Measuring an unidentified cup and attaching the result to the wrong room or solution.","Treating EC as a direct measurement of each individual nutrient.","Adjusting a solution based on one suspect meter result before verification.","Comparing values from different sample methods as though the methods were equivalent."],
+    "practicalApplication": "Use the downloadable water/solution measurement practice sheet with labeled and unlabeled sample containers, a meter-status packet and a work order. Select the correct sample, identify any data-quality problem, follow the permitted readiness sequence, and produce a pH/EC record with sample identity, units, time, meter/method context and escalation status.",
     "summary": "Reliable water and nutrient-solution measurements require correct sample identity, fit-for-task instruments and reconstructable records. pH and EC are valuable context measurements, but neither should be turned into a nutrient-specific or root-cause diagnosis without supporting evidence.",
     "blocks": [
-      {
-        "type": "steps",
-        "title": "Technician measurement sequence",
-        "items": [
-          {
-            "title": "Confirm the requested sample",
-            "body": "Match the work order to source water, prepared solution, runoff/drainage or other defined sample type."
-          },
-          {
-            "title": "Verify identity and timing",
-            "body": "Record room, zone, reservoir, batch or other required identity plus collection time."
-          },
-          {
-            "title": "Check meter readiness",
-            "body": "Perform only the inspection, rinse, storage, calibration or verification steps permitted by the supplied procedure."
-          },
-          {
-            "title": "Measure and stabilize",
-            "body": "Use the defined method and allow the reading to stabilize as required before recording."
-          },
-          {
-            "title": "Record value and unit",
-            "body": "Preserve pH or EC result together with the context needed to reconstruct the measurement."
-          },
-          {
-            "title": "Handle suspect results",
-            "body": "Repeat or verify within procedure and escalate unresolved measurement problems before using them for crop decisions."
-          }
-        ],
-        "references": [
-          "REF-IRRIGATION-001",
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      },
-      {
-        "type": "callout",
-        "title": "Evidence boundary",
-        "tone": "evidence",
-        "body": "A pH or EC reading is one piece of evidence. It does not independently identify a nutrient deficiency, root disease, irrigation failure or specific dissolved-ion composition.",
-        "references": [
-          "REF-IRRIGATION-001"
-        ]
-      }
+      {"type":"steps","title":"Technician measurement sequence","items":[{"title":"Confirm the requested sample","body":"Match the work order to source water, prepared solution, runoff/drainage or other defined sample type."},{"title":"Verify identity and timing","body":"Record room, zone, reservoir, batch or other required identity plus collection time."},{"title":"Check meter readiness","body":"Perform only the inspection, rinse, storage, calibration or verification steps permitted by the supplied procedure."},{"title":"Measure and stabilize","body":"Use the defined method and allow the reading to stabilize as required before recording."},{"title":"Record value and unit","body":"Preserve pH or EC result together with the context needed to reconstruct the measurement."},{"title":"Handle suspect results","body":"Repeat or verify within procedure and escalate unresolved measurement problems before using them for crop decisions."}],"references":["REF-IRRIGATION-001","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"type":"image","assetId":"VIS-LH-TECH1-004-001","title":"Sample identity and pH/EC measurement context","src":"/assets/course4/sample-ph-ec-context.svg","alt":"Workflow from work order and sample identity through meter readiness, pH and EC measurement, contextual recording, verification and escalation, emphasizing that values are evidence rather than nutrient-specific diagnoses.","caption":"Confirm the sample and measurement method before interpreting pH or EC; keep planned values separate from measured evidence.","references":["REF-IRRIGATION-001","REF-MHRA-GXP-DATA-INTEGRITY"]},
+      {"type":"callout","title":"Evidence boundary","tone":"evidence","body":"A pH or EC reading is one piece of evidence. It does not independently identify a nutrient deficiency, root disease, irrigation failure or specific dissolved-ion composition.","references":["REF-IRRIGATION-001"]},
+      {"type":"resource","title":"Downloadable practice: water / solution measurement record","body":"Use this printable worksheet to practice sample identity, meter readiness, pH/EC method and units, repeat verification, evidence limits and escalation while keeping supplied targets separate from actual measurements.","href":"/assets/course4/water-solution-measurement-practice.svg","label":"Open water / solution measurement practice sheet","extensions":{"assetId":"VIS-LH-TECH1-004-006","downloadable":true}}
     ]
   }
 }

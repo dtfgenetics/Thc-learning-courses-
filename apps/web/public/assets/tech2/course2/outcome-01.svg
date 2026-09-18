@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Representative measurement before action</title>
+<desc id="desc">A sensor verification workflow checks location and crop context, compares a suspect sensor with a verified reference under the same exposure, reviews calibration and maintenance history, then classifies the data as fit for use, limited, or requiring escalation before control changes.</desc>
+<rect width="1280" height="720" fill="#fffdf7"/>
+<text x="64" y="74" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="#173f2f">Representative measurement before action</text>
+<text x="64" y="112" font-family="system-ui,sans-serif" font-size="20" fill="#365b4c">Verify whether the data deserve to drive the decision.</text>
+<g font-family="system-ui,sans-serif">
+<rect x="70" y="175" width="230" height="150" rx="20" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="95" y="215" font-size="24" font-weight="700" fill="#173f2f">1. Context</text><text x="95" y="252" font-size="19" fill="#29483b">Device ID • location</text><text x="95" y="281" font-size="19" fill="#29483b">height • shielding</text><text x="95" y="310" font-size="19" fill="#29483b">crop / process zone</text>
+<rect x="345" y="175" width="250" height="150" rx="20" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="370" y="215" font-size="24" font-weight="700" fill="#173f2f">2. Compare</text><text x="370" y="252" font-size="19" fill="#29483b">Colocate a verified</text><text x="370" y="281" font-size="19" fill="#29483b">reference under the</text><text x="370" y="310" font-size="19" fill="#29483b">same exposure</text>
+<rect x="640" y="175" width="250" height="150" rx="20" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="665" y="215" font-size="24" font-weight="700" fill="#173f2f">3. History</text><text x="665" y="252" font-size="19" fill="#29483b">Calibration • drift</text><text x="665" y="281" font-size="19" fill="#29483b">maintenance • response</text><text x="665" y="310" font-size="19" fill="#29483b">stabilization time</text>
+<rect x="935" y="175" width="275" height="150" rx="20" fill="#edf6ef" stroke="#386a50" stroke-width="3"/><text x="960" y="215" font-size="24" font-weight="700" fill="#173f2f">4. Data decision</text><text x="960" y="252" font-size="19" fill="#29483b">Fit for use?</text><text x="960" y="281" font-size="19" fill="#29483b">Limited / flagged?</text><text x="960" y="310" font-size="19" fill="#29483b">Escalate?</text>
+<path d="M300 250h45M595 250h45M890 250h45" stroke="#386a50" stroke-width="5"/>
+<rect x="120" y="410" width="1040" height="180" rx="22" fill="#f7efe0" stroke="#9b6b2f" stroke-width="3"/>
+<text x="155" y="455" font-size="26" font-weight="800" fill="#6e481c">Decision rule</text>
+<text x="155" y="495" font-size="21" fill="#5a472f">Do not change controls merely because two sensors disagree.</text>
+<text x="155" y="530" font-size="21" fill="#5a472f">Preserve questionable data, document why it is flagged, and verify representativeness first.</text>
+<text x="155" y="565" font-size="21" fill="#5a472f">A comparison supports a data-quality decision; it does not automatically authorize calibration or repair.</text>
+</g></svg>

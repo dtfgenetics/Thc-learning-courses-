@@ -1,0 +1,45 @@
+{
+  "id": "TECH1-MACHINE-LAYER-001",
+  "version": "1.0.0",
+  "status": "development",
+  "credentialProgram": "CREDPROG-CULT-TECH-I-001",
+  "sourcePackagesRequired": 7,
+  "jtaCrosswalk": "registry/technician-i-jta-competency-crosswalk.json",
+  "integratedLabPlan": "registry/technician-i-integrated-lab-plan.json",
+  "releaseEvidence": "registry/technician-i-release-evidence.json",
+  "credentialAssessmentBlueprint": "content/assessments/ASSESS-CRED-TECH1-001.json",
+  "contracts": {
+    "secureAssessmentStore": "docs/academy-v2/credential/tech1/SECURE-ASSESSMENT-STORE-CONTRACT.md",
+    "equivalentSecureForms": "docs/academy-v2/credential/tech1/EQUIVALENT-SECURE-FORM-RULES.md",
+    "candidateRetestAccommodationAppealSecurity": "docs/academy-v2/credential/tech1/CANDIDATE-RETEST-ACCOMMODATION-APPEAL-SECURITY-DRAFT.md",
+    "candidateEvidenceRetentionPrivacy": "docs/learning-hub/tech1/course-007/CANDIDATE-EVIDENCE-RETENTION-PRIVACY-DRAFT.md",
+    "issuanceVerification": "docs/academy-v2/credential/tech1/ISSUANCE-VERIFICATION-WORKFLOW.md",
+    "capstoneAssessorGuide": "docs/learning-hub/tech1/course-007/assessor/CAPSTONE-ASSESSOR-GUIDE.md",
+    "capstoneCalibrationValidation": "docs/learning-hub/tech1/course-007/assessor/CAPSTONE-CALIBRATION-VALIDATION-PACKET.md"
+  },
+  "securityBoundary": {
+    "publicOperationalCredentialItemsAllowed": false,
+    "publicOperationalAnswerKeysAllowed": false,
+    "publicCandidateEvidenceAllowed": false,
+    "publicSigningSecretsAllowed": false,
+    "operationalCredentialAssessmentAuthorized": false,
+    "issuanceEnabled": false,
+    "verificationRuntimeApproved": false
+  },
+  "humanEvidenceBoundary": {
+    "syntheticHumanApprovalAllowed": false,
+    "syntheticPilotEvidenceAllowed": false,
+    "syntheticCalibrationEvidenceAllowed": false,
+    "syntheticStandardSettingAllowed": false,
+    "finalReleaseRequiresHumanApproval": true
+  },
+  "machineLayerDefinition": [
+    "all seven source packages satisfy the controlled source-package contract",
+    "13-domain JTA crosswalk resolves to current program competencies and courses",
+    "Practicals A-F and capstone blueprints resolve with secure/live forms unapproved",
+    "secure assessment-store and equivalent-form contracts exist",
+    "candidate retest/remediation/accommodation/appeal/security and retention/privacy drafts exist",
+    "issuance and verification workflow contract exists and remains disabled",
+    "release readiness remains fail-closed until genuine validation evidence closes every required gate"
+  ]
+}

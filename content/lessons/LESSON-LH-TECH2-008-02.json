@@ -83,6 +83,43 @@
       "Claiming genetics or contamination without comparative evidence."
     ],
     "practicalApplication": "Rotate through Practical C, D and E preparation cases and produce one bounded troubleshooting memo per station with verified facts, uncertainty, next check and escalation boundary.",
-    "summary": "Advanced production troubleshooting preserves process identity, comparable evidence and authority boundaries across root-zone, IPM, propagation and canopy work."
+    "summary": "Advanced production troubleshooting preserves process identity, comparable evidence and authority boundaries across root-zone, IPM, propagation and canopy work.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-008-04",
+          "title": "Integrated fertigation and root-zone station",
+          "src": "/assets/tech2/course8/outcome-04.svg",
+          "alt": "Station workflow verifying approved recipe and material identity, measuring-system readiness, irrigation delivery, root-zone trend and crop context before a bounded troubleshooting recommendation, with unauthorized recipe redesign or major chemistry decisions routed to escalation.",
+          "caption": "Verify batch identity, measurement quality, delivery and crop context before troubleshooting the root zone. Do not convert diagnostic skill into independent recipe-design authority.",
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-008-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-008-05",
+          "title": "Integrated IPM propagation and canopy evidence",
+          "src": "/assets/tech2/course8/outcome-05.svg",
+          "alt": "Integrated plant-health and performance workflow combining comparable multi-round IPM sampling, biosecurity controls, donor or batch evidence, canopy and flowering context, and uncertainty while keeping regulated treatment decisions and unsupported contamination or genotype claims outside Technician II authority.",
+          "caption": "Combine multi-round IPM evidence with donor, sanitation, stage and mapped canopy response. Preserve biosecurity and do not overstate contamination, genotype causation or treatment authority.",
+          "references": [
+            "REF-IPM-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-008-05",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

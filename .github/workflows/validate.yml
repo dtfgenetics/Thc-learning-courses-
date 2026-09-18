@@ -34,7 +34,7 @@ jobs:
       - name: Upload generated curriculum registry when available
         if: always()
         continue-on-error: true
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: generated-curriculum-registry
           path: registry/curriculum.json
@@ -54,7 +54,47 @@ jobs:
         run: node scripts/check-course1-visual-concept-coverage.mjs
       - name: Audit Learning Hub assessment item quality
         run: node scripts/check-learning-hub-item-quality.mjs
+      - name: Enforce Course 2 complete learning loop and balanced assessment
+        run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop --require-balanced-assessment
+      - name: Enforce Course 2 versioned human-review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-002 --summary-only --check
+      - name: Enforce Course 3 complete learning loop and balanced assessment
+        run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-003 --require-complete-learning-loop --require-balanced-assessment
+      - name: Enforce Course 3 versioned human-review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-003 --summary-only --check
+      - name: Enforce Course 4 complete learning loop and balanced assessment
+        run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-004 --require-complete-learning-loop --require-balanced-assessment
+      - name: Enforce Course 4 versioned human-review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-004 --summary-only --check
+      - name: Enforce Course 5 complete learning loop and balanced assessment
+        run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-005 --require-complete-learning-loop --require-balanced-assessment
+      - name: Enforce Course 5 versioned human-review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-005 --summary-only --check
+      - name: Enforce Course 6 complete learning loop and balanced assessment
+        run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-006 --require-complete-learning-loop --require-balanced-assessment
+      - name: Enforce Course 6 versioned human-review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-006 --summary-only --check
+      - name: Enforce Course 7 versioned human-review queue integrity
+        run: node scripts/build-learning-hub-review-queue.mjs --course=COURSE-LH-TECH1-007 --summary-only --check
+      - name: Enforce fail-closed Course 2-7 completion registries
+        run: node scripts/test-tech1-course-completion-status.mjs
+      - name: Enforce all seven Technician I source-package contracts
+        run: node scripts/report-tech1-course-package-readiness.mjs --require-source-package
+      - name: Enforce Technician I credential machine-layer contract
+        run: node scripts/test-tech1-machine-layer.mjs
       - name: Enforce public credential-bank security boundary
         run: node scripts/test-public-credential-bank-boundary.mjs
-      - name: Run complete curriculum and credential audit suite
-        run: npm test
+      - name: Enforce fail-closed Technician I release readiness
+        run: node scripts/test-tech1-release-readiness.mjs
+      - name: Run complete curriculum and credential audit suite with diagnostics
+        id: complete_audit
+        run: node scripts/run-curriculum-audit-suite.mjs
+      - name: Upload curriculum audit diagnostics
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: curriculum-audit-diagnostics
+          path: artifacts/curriculum-audit-results.json
+          if-no-files-found: warn
+          retention-days: 14

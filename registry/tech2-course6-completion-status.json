@@ -1,0 +1,51 @@
+{
+  "courseId": "COURSE-LH-TECH2-006",
+  "title": "Harvest/Postharvest Deviations & Quality Response",
+  "version": "0.2.0",
+  "updated": "2026-09-18",
+  "canonicalCourseState": "draft",
+  "publicAcademicPackage": "published",
+  "machineResolvableWorkComplete": false,
+  "goldStandardPackageComplete": false,
+  "certificationEvidenceValidated": false,
+  "publicLearningItems": 36,
+  "publicLessons": 4,
+  "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-006.json",
+  "deploymentEvidence": "registry/tech2-course6-deployment-evidence.json",
+  "machineCompletionBoundary": "Technician II Course 6 has a published learner-facing academic package with four dedicated lessons, 12 formative items, 24 summative learning-assessment items, and a mapped performance practical kept outside public credential decision-making. Public course, representative lesson and knowledge-check routes are verified. Primary instructional visuals are built and mapped as review candidates but remain fail-closed pending human/technical/accessibility approval. Remaining machine work is CI confirmation of learner-runtime/content checks, exact deployment build/source SHA identification, course-level review/completion governance, and defects exposed by responsive/manual QA. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH2-006.json",
+    "content/public-releases/PUBLIC-RELEASE-LH-TECH2-006.json",
+    "scripts/test-tech2-course6.mjs",
+    "scripts/test-tech2-public-release.mjs",
+    "scripts/test-tech2-learner-runtime.mjs",
+    "registry/tech2-course6-deployment-evidence.json"
+  ],
+  "nextMachineActions": [
+    "confirm CI passes the Technician II public-release, course-regression and learner-runtime checks",
+    "complete deployed responsive/manual learner-surface QA and record defects",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface",
+    "create and enforce exact-version human-review queues/records where missing",
+    "repair any course-content, assessment, navigation or accessibility defects exposed by those checks without weakening credential-security or authority boundaries",
+    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
+  ],
+  "nextHumanActions": [
+    "technical/curriculum review",
+    "instructional-design review",
+    "assessment item review",
+    "mapped practical validation",
+    "evaluator calibration/inter-rater evidence",
+    "rendered accessibility review",
+    "controlled learner/item/practical pilot",
+    "standard setting where applicable",
+    "versioned academic/credential release approval"
+  ],
+  "visualLayer": {
+    "primaryConcepts": 4,
+    "reviewCandidates": 4,
+    "plannedOnly": 0,
+    "approvedForLearnerRender": 0,
+    "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+    "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
+  }
+}

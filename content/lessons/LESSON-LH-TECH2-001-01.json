@@ -67,6 +67,27 @@
       "Changing several major inputs before a diagnostic baseline is captured."
     ],
     "practicalApplication": "Build a four-column workup: observed facts; relevant context; ranked hypotheses; next discriminating evidence. Add an explicit confidence statement and escalation trigger.",
-    "summary": "Defensible diagnosis preserves evidence, ranks hypotheses and uses targeted confirmation instead of converting the first clue into a cause."
+    "summary": "Defensible diagnosis preserves evidence, ranks hypotheses and uses targeted confirmation instead of converting the first clue into a cause.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-001-01",
+          "title": "Evidence to bounded conclusion",
+          "src": "/assets/tech2/course1/outcome-01.svg",
+          "alt": "Five-stage diagnostic reasoning model separating direct observation, contextual facts, ranked hypotheses, discriminating evidence and a bounded conclusion. It also shows that conflicting evidence and uncertainty stay in the record, and that evidence does not by itself authorize actions beyond the technician's role.",
+          "caption": "Use evidence to narrow uncertainty, not to manufacture certainty. Preserve conflicting findings and separate the diagnostic conclusion from the authority to act.",
+          "references": [
+            "REF-NUTRIENT-DEFICIENCY-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-001-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

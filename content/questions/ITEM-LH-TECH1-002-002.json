@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -8,20 +8,20 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "multiple-choice",
-  "stem": "Which observation plan best reduces location sampling bias in a room with multiple irrigation zones?",
+  "stem": "A room contains edge, center and multiple process zones. Which observation plan best reduces location sampling bias while remaining repeatable?",
   "choices": [
-    "Inspect only plants nearest the door",
-    "Use representative points across edges, center and relevant process zones defined by the route",
-    "Inspect only the plants that look different",
-    "Choose plants from one bench and multiply the result"
+    "Use the same convenient aisle on every walk so the sample is consistent over time",
+    "Use representative points across the defined route, including relevant edges, center positions and process zones, and record how many points were inspected",
+    "Inspect the zones with the most previous problems because they are most likely to show useful findings",
+    "Rotate to a different informal path each walk so every area eventually receives attention"
   ],
   "correct": 1,
-  "rationale": "Representative observation intentionally samples relevant areas instead of relying on convenience or visible abnormality alone.",
-  "references": [
-    "REF-PLANT-BIO-001"
-  ],
+  "rationale": "Repeatability alone does not make a convenience sample representative. A defined route should cover relevant spatial/process areas and preserve the denominator so findings can be interpreted and compared over time.",
+  "references": ["REF-PLANT-BIO-001"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2",
+    "publicSourceUrl": "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management",
+    "sourceScope": "Transferable greenhouse scouting and recordkeeping guidance; route details remain facility-specific."
   }
 }

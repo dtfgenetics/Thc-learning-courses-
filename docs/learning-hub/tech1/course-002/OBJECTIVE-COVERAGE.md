@@ -1,0 +1,69 @@
+# Objective Coverage — COURSE-LH-TECH1-002
+
+**Course:** Plant Observation, Growth Stages & Crop Records  
+**Status:** development alignment record  
+**Date:** 2026-09-15
+
+## Purpose
+
+This document records the current objective → instruction → applied practice → academic assessment → performance-evidence relationship for Course 2. It does not constitute human assessment approval, psychometric validation, practical validation, or professional credential issuance.
+
+## Controlled objectives
+
+| Objective | Controlled statement | Instruction | Applied practice | Academic assessment declaration | Performance evidence | Current gap |
+|---|---|---|---|---|---|---|
+| `LO-LH-TECH1-002-01` | Execute a repeatable crop-observation route that samples representative locations and preserves room, zone, plant or bench identity. | `LESSON-LH-TECH1-002-01` | Crop-walk route design; denominator/spatial-pattern worksheet; representative-sampling scenario | Declared in `ASSESS-LH-TECH1-002-M01` and `ASSESS-LH-TECH1-002-FINAL` | `PRACTICAL-TECH1-A` mapping | Item-level count and human item review remain open |
+| `LO-LH-TECH1-002-02` | Describe cannabis developmental and reproductive stage from observable morphology while distinguishing biological stage from calendar timing. | `LESSON-LH-TECH1-002-02` | Mixed-stage crop exercise; morphology-vs-calendar scenario; reproductive-morphology interpretation | Declared in M01 and final | `PRACTICAL-TECH1-A` mapping | Item-level count, image-accessibility review and human item review remain open |
+| `LO-LH-TECH1-002-03` | Differentiate direct observation, spatial or population pattern, contextual evidence and unsupported causal diagnosis during routine crop inspection. | `LESSON-LH-TECH1-002-01`, `-02`, `-03` | Evidence-layer sorting; representative comparison; diagnostic-boundary scenario | Declared in M01 and final | `PRACTICAL-TECH1-A` mapping | Item-level count and scored-performance crosswalk remain open |
+| `LO-LH-TECH1-002-04` | Create a reconstructable crop-observation record with sample context, objective wording, useful photographs, timing, identity and unresolved uncertainty. | `LESSON-LH-TECH1-002-04` | Observation/handoff worksheet; photo-evidence audit; reconstructable-record exercise | Declared in M01 and final | `PRACTICAL-TECH1-A` mapping | Item-level count, rendered form review and assessor evidence rules remain open |
+| `LO-LH-TECH1-002-05` | Follow supplied observation and escalation procedures, documenting abnormal conditions and handing off unresolved findings without exceeding Technician I authority. | `LESSON-LH-TECH1-002-03`, `-04` | Escalation scenario; unresolved-condition handoff; next-check/cross-check practice | Declared in M01 and final | `PRACTICAL-TECH1-A` mapping | Explicit remediation/reassessment rules and practical assessor validation remain open |
+
+## Current assessment structure
+
+### Formative
+
+`ASSESS-LH-TECH1-002-M01`
+
+- purpose: formative;
+- 12 controlled items;
+- all five Course 2 objectives are declared by the assessment definition;
+- 80% development threshold;
+- randomized items and choices;
+- extended-time and alternative-accessible-presentation metadata present;
+- immediate feedback mode.
+
+### Summative academic course assessment
+
+`ASSESS-LH-TECH1-002-FINAL`
+
+- purpose: summative;
+- 20 controlled items;
+- all five Course 2 objectives are declared by the assessment definition;
+- 80% development threshold;
+- competency blueprint: Plant Biology 8, Flower 4, Professional QA 4, Professional SOP 4;
+- development bank explicitly separated from professional credential evidence;
+- linked professional performance evidence: `PRACTICAL-TECH1-A`.
+
+## Alignment findings
+
+### Present
+
+- Every controlled objective resolves to at least one dedicated Course 2 lesson.
+- Every dedicated lesson contains an applied activity or scenario rather than instruction-only text.
+- Both academic assessment definitions declare all five controlled objectives.
+- Formative and summative assessment IDs are distinct.
+- Course 2 explicitly maps to observable performance evidence through Practical A.
+- Lesson content preserves Technician I authority boundaries and separates observation from unsupported diagnosis.
+
+### Still required before machine-package completion
+
+1. Generate exact item-level objective/competency counts from question objects rather than relying only on assessment-level declarations.
+2. Verify that every objective has sufficient scored evidence in both the formative and summative bank.
+3. Add objective-linked remediation guidance and equivalent reassessment guidance.
+4. Complete the Practical A course crosswalk with observable criteria, evidence capture, critical-error handling where applicable, and reassessment boundaries.
+5. Run human assessment-definition/item review and retain versioned decisions.
+6. Complete rendered accessibility review of assessment and practice interactions.
+
+## Release boundary
+
+Course 2 remains `draft`. This alignment record is machine-preparation evidence only. It must not be used to claim Course 2 is human-approved, psychometrically validated, professionally credential-bearing in production, or sufficient by itself for Technician I issuance.

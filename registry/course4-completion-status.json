@@ -1,0 +1,36 @@
+{
+  "courseId": "COURSE-LH-TECH1-004",
+  "version": "0.1.0",
+  "updated": "2026-09-18",
+  "academicPublication": "draft",
+  "machineResolvableWorkComplete": false,
+  "goldStandardPackageComplete": false,
+  "certificationEvidenceValidated": false,
+  "machineCompletionBoundary": "Course 4 has a complete controlled source package with four substantive lessons, six objectives, 12 formative items, 24 summative items, Practical B mapping, seven governed learner assets, remediation, accessibility and assessor packages. Runtime asset delivery is machine-verified. Remaining machine work is learner route/practice/assessment verification, versioned review-queue verification, deployed responsive/manual QA, anonymous public readback and exact deployment evidence.",
+  "evidence": [
+    "content/courses/COURSE-LH-TECH1-004.json",
+    "scripts/test-tech1-course4.mjs",
+    "docs/learning-hub/tech1/course-004/COURSE-PACKAGE-MANIFEST.md",
+    "visuals/COURSE4-ASSET-REGISTRY.json",
+    "registry/course4-deployment-evidence.json"
+  ],
+  "nextMachineActions": [
+    "verify learner catalog, lesson, formative-practice and course-assessment routes against the real Academy runtime",
+    "enforce a versioned Course 4 human-review queue against exact source versions",
+    "perform fresh deployed responsive/manual learner-surface QA",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface"
+  ],
+  "nextHumanActions": [
+    "technical/curriculum review",
+    "instructional-design review",
+    "assessment item review",
+    "Practical B calibration/inter-rater/performance validation",
+    "rendered accessibility review",
+    "controlled pilot",
+    "standard setting where applicable",
+    "versioned academic release approval"
+  ],
+  "deploymentEvidence": "registry/course4-deployment-evidence.json",
+  "publicRouteReadback": "verified-partial",
+  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open."
+}

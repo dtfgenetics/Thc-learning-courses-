@@ -1,0 +1,220 @@
+name: Curriculum ingestion
+
+on:
+  workflow_dispatch:
+    inputs:
+      collector:
+        description: Ingestion operation to run
+        required: true
+        default: plan
+        type: choice
+        options:
+          - plan
+          - research
+          - datasets
+          - media
+          - links
+      query:
+        description: Query for research, dataset or media collection
+        required: false
+        type: string
+      lesson_id:
+        description: Optional lesson ID to attach to collected candidates
+        required: false
+        type: string
+      agency:
+        description: Optional federal dataset publisher filter
+        required: false
+        default: all
+        type: choice
+        options:
+          - all
+          - usda
+          - osha
+          - epa
+      limit:
+        description: Maximum candidate records per external source
+        required: false
+        default: '8'
+        type: string
+  pull_request:
+    paths:
+      - 'automation/curriculum-ingestion/**'
+      - 'schemas/dependency-manifest.schema.json'
+      - 'schemas/link-record.schema.json'
+      - 'schemas/dataset-record.schema.json'
+      - 'schemas/evidence-mapping-review.schema.json'
+      - 'scripts/audit-curriculum-dependencies.mjs'
+      - 'scripts/audit-existing-evidence-coverage.mjs'
+      - 'scripts/build-evidence-mapping-inbox.mjs'
+      - 'scripts/build-ingestion-plan.mjs'
+      - 'scripts/check-approved-evidence-mappings.mjs'
+      - 'scripts/promote-evidence-mapping.mjs'
+      - 'scripts/test-evidence-mapping-promotion.mjs'
+      - 'scripts/validate-evidence-mapping-reviews.mjs'
+      - 'scripts/validate-dependency-manifests.mjs'
+      - 'scripts/validate-ingestion-registries.mjs'
+      - 'scripts/check-external-links.mjs'
+      - 'scripts/collect-*.mjs'
+      - 'content/claims/**'
+      - 'content/references/**'
+      - 'content/lessons/**'
+      - 'content/competencies/**'
+      - 'content/learning-objectives/**'
+      - 'visuals/ASSET-REGISTRY.json'
+      - 'registry/LINKS.json'
+      - 'registry/DATASETS.json'
+  schedule:
+    - cron: '17 8 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Syntax-check ingestion scripts
+        run: |
+          for file in \
+            scripts/audit-existing-evidence-coverage.mjs \
+            scripts/build-evidence-mapping-inbox.mjs \
+            scripts/build-ingestion-plan.mjs \
+            scripts/check-approved-evidence-mappings.mjs \
+            scripts/check-external-links.mjs \
+            scripts/collect-government-datasets.mjs \
+            scripts/collect-research-metadata.mjs \
+            scripts/collect-wikimedia-media.mjs \
+            scripts/promote-evidence-mapping.mjs \
+            scripts/test-evidence-mapping-promotion.mjs \
+            scripts/validate-evidence-mapping-reviews.mjs \
+            scripts/validate-ingestion-registries.mjs; do
+            node --check "$file"
+          done
+      - name: Validate dependency manifests
+        run: node scripts/validate-dependency-manifests.mjs
+      - name: Validate link and dataset registries
+        run: node scripts/validate-ingestion-registries.mjs
+      - name: Validate evidence mapping reviews
+        run: node scripts/validate-evidence-mapping-reviews.mjs
+      - name: Test evidence mapping promotion safeguards
+        run: node scripts/test-evidence-mapping-promotion.mjs
+      - name: Verify approved evidence mappings remain promotable
+        run: node scripts/check-approved-evidence-mappings.mjs
+      - name: Audit Course 1 dependencies
+        run: node scripts/audit-curriculum-dependencies.mjs --write-report=automation/curriculum-ingestion/reports/course1-latest.json
+      - name: Audit existing direct evidence coverage
+        run: node scripts/audit-existing-evidence-coverage.mjs --output=automation/curriculum-ingestion/reports/existing-evidence.json
+      - name: Build evidence mapping recovery inbox
+        run: node scripts/build-evidence-mapping-inbox.mjs --output=automation/curriculum-ingestion/inbox/evidence-mapping-candidates.json
+      - name: Build collection plan
+        run: node scripts/build-ingestion-plan.mjs --output=automation/curriculum-ingestion/reports/collection-plan.json
+      - name: Upload dependency and evidence reports
+        uses: actions/upload-artifact@v7
+        with:
+          name: course1-ingestion-plan
+          path: |
+            automation/curriculum-ingestion/reports/course1-latest.json
+            automation/curriculum-ingestion/reports/existing-evidence.json
+            automation/curriculum-ingestion/reports/collection-plan.json
+            automation/curriculum-ingestion/inbox/evidence-mapping-candidates.json
+
+  link-health:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.collector == 'links')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Check canonical external links
+        run: node scripts/check-external-links.mjs --output=automation/curriculum-ingestion/reports/link-health.json
+      - name: Upload link health report
+        uses: actions/upload-artifact@v7
+        with:
+          name: external-link-health
+          path: automation/curriculum-ingestion/reports/link-health.json
+
+  collect-research:
+    if: github.event_name == 'workflow_dispatch' && inputs.collector == 'research' && inputs.query != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Collect research candidates
+        env:
+          QUERY: ${{ inputs.query }}
+          LESSON_ID: ${{ inputs.lesson_id }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          node scripts/collect-research-metadata.mjs \
+            --query="$QUERY" \
+            --lesson="$LESSON_ID" \
+            --limit="$LIMIT" \
+            --output=automation/curriculum-ingestion/inbox/research-candidates.json
+      - name: Upload research candidates
+        uses: actions/upload-artifact@v7
+        with:
+          name: research-candidates
+          path: automation/curriculum-ingestion/inbox/research-candidates.json
+
+  collect-datasets:
+    if: github.event_name == 'workflow_dispatch' && inputs.collector == 'datasets' && inputs.query != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Collect federal dataset candidates
+        env:
+          QUERY: ${{ inputs.query }}
+          LESSON_ID: ${{ inputs.lesson_id }}
+          AGENCY: ${{ inputs.agency }}
+          LIMIT: ${{ inputs.limit }}
+          DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+        run: |
+          node scripts/collect-government-datasets.mjs \
+            --query="$QUERY" \
+            --lesson="$LESSON_ID" \
+            --agency="$AGENCY" \
+            --limit="$LIMIT" \
+            --output=automation/curriculum-ingestion/inbox/dataset-candidates.json
+      - name: Upload dataset candidates
+        uses: actions/upload-artifact@v7
+        with:
+          name: dataset-candidates
+          path: automation/curriculum-ingestion/inbox/dataset-candidates.json
+
+  collect-media:
+    if: github.event_name == 'workflow_dispatch' && inputs.collector == 'media' && inputs.query != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Collect licensed-media candidates
+        env:
+          QUERY: ${{ inputs.query }}
+          LESSON_ID: ${{ inputs.lesson_id }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          node scripts/collect-wikimedia-media.mjs \
+            --query="$QUERY" \
+            --lesson="$LESSON_ID" \
+            --limit="$LIMIT" \
+            --output=automation/curriculum-ingestion/inbox/media-candidates.json
+      - name: Upload media candidates
+        uses: actions/upload-artifact@v7
+        with:
+          name: media-candidates
+          path: automation/curriculum-ingestion/inbox/media-candidates.json

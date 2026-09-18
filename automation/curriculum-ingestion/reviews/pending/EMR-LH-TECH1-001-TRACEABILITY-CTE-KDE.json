@@ -1,0 +1,30 @@
+{
+  "id": "EMR-LH-TECH1-001-TRACEABILITY-CTE-KDE",
+  "mappingCandidateId": "MAP-LH-TECH1-001-10-GS1-GLOBAL-TRACEABILITY",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-TRACEABILITY-CTE-KDE",
+  "statement": "GS1 traceability uses Critical Tracking Events to represent important lifecycle events involving traceable objects and Key Data Elements to describe the actual instances of those events, commonly capturing who, what, where, when, and why.",
+  "domain": "traceability",
+  "lessonIds": ["LESSON-LH-TECH1-001-10", "LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12", "LESSON-LH-TECH1-001-18"],
+  "referenceIds": ["REF-GS1-GLOBAL-TRACEABILITY"],
+  "competencyIds": ["COMP-CULT-TRACEABILITY-001", "COMP-PRO-QA-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-06", "LO-LH-TECH1-001-07", "LO-LH-TECH1-001-08"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2027-09-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed GS1 Global Traceability Standard and cross-checked against the current GS1 traceability standard page on September 15, 2026. The statement is used as a vendor-neutral traceability model and does not imply that GS1 terminology is a cannabis-specific legal requirement.",
+    "notes": "Human traceability/data-governance review is required before promotion."
+  },
+  "sourceContext": [
+    {"lessonId": "LESSON-LH-TECH1-001-10", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[1].references", "contextTitle": "Trace events, not just labels"},
+    {"lessonId": "LESSON-LH-TECH1-001-11", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[0].references", "contextTitle": "Record the real event"},
+    {"lessonId": "LESSON-LH-TECH1-001-12", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.sections[1].references", "contextTitle": "Waste still has genealogy"},
+    {"lessonId": "LESSON-LH-TECH1-001-18", "referenceId": "REF-GS1-GLOBAL-TRACEABILITY", "jsonPath": "$.content.blocks[6].references", "contextTitle": "Phase 3 — reconcile physical and recorded reality"}
+  ]
+}

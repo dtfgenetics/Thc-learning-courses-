@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Observation, interpretation, and diagnostic-boundary workflow</title>
+  <desc id="desc">A four-stage teaching diagram showing direct observation, spatial pattern and context, provisional interpretation, and verified diagnosis or escalation. It emphasizes that symptoms, timing, and context can guide investigation but do not by themselves prove a cause.</desc>
+  <rect width="1200" height="720" rx="32" fill="#f7f4e8"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#173d2b">Build evidence before naming a cause</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="20" fill="#365b48">Move from what is directly observed to pattern and context, then keep interpretation provisional until evidence supports confirmation.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="155" width="245" height="370" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <circle cx="178" cy="215" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+    <text x="178" y="225" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">1</text>
+    <text x="178" y="270" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Direct observation</text>
+    <text x="82" y="315" font-size="16" fill="#365b48">Record what is visible, measured,</text>
+    <text x="82" y="340" font-size="16" fill="#365b48">counted, or otherwise documented.</text>
+    <text x="82" y="385" font-size="16" fill="#365b48">• plant part / structure</text>
+    <text x="82" y="414" font-size="16" fill="#365b48">• appearance or change</text>
+    <text x="82" y="443" font-size="16" fill="#365b48">• count / proportion</text>
+    <text x="82" y="472" font-size="16" fill="#365b48">• photo / measurement</text>
+
+    <rect x="325" y="155" width="245" height="370" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <circle cx="448" cy="215" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+    <text x="448" y="225" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">2</text>
+    <text x="448" y="270" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Pattern + context</text>
+    <text x="352" y="315" font-size="16" fill="#365b48">Add information that changes how</text>
+    <text x="352" y="340" font-size="16" fill="#365b48">the observation should be investigated.</text>
+    <text x="352" y="385" font-size="16" fill="#365b48">• isolated / zonal / widespread</text>
+    <text x="352" y="414" font-size="16" fill="#365b48">• stage / timing</text>
+    <text x="352" y="443" font-size="16" fill="#365b48">• environment / work history</text>
+    <text x="352" y="472" font-size="16" fill="#365b48">• nearby comparison plants</text>
+
+    <rect x="595" y="155" width="245" height="370" rx="24" fill="#ffffff" stroke="#b36b32" stroke-width="3"/>
+    <circle cx="718" cy="215" r="34" fill="#fff2df" stroke="#b36b32" stroke-width="3"/>
+    <text x="718" y="225" text-anchor="middle" font-size="30" font-weight="700" fill="#6d3c18">3</text>
+    <text x="718" y="270" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Interpretation</text>
+    <text x="622" y="315" font-size="16" fill="#365b48">Use evidence to narrow possibilities,</text>
+    <text x="622" y="340" font-size="16" fill="#365b48">but keep the conclusion provisional.</text>
+    <text x="622" y="385" font-size="16" fill="#365b48">• consider multiple explanations</text>
+    <text x="622" y="414" font-size="16" fill="#365b48">• identify missing evidence</text>
+    <text x="622" y="443" font-size="16" fill="#365b48">• state uncertainty clearly</text>
+    <text x="622" y="472" font-size="16" fill="#365b48">• avoid turning a clue into proof</text>
+
+    <rect x="865" y="155" width="280" height="370" rx="24" fill="#ffffff" stroke="#6f927d" stroke-width="3"/>
+    <circle cx="1005" cy="215" r="34" fill="#eaf1ec" stroke="#5c7d69" stroke-width="3"/>
+    <text x="1005" y="225" text-anchor="middle" font-size="30" font-weight="700" fill="#173d2b">4</text>
+    <text x="1005" y="270" text-anchor="middle" font-size="23" font-weight="700" fill="#173d2b">Confirm or escalate</text>
+    <text x="892" y="315" font-size="16" fill="#365b48">A confirmed diagnosis needs evidence and</text>
+    <text x="892" y="340" font-size="16" fill="#365b48">authority appropriate to the decision.</text>
+    <text x="892" y="385" font-size="16" fill="#365b48">• use approved references/tests</text>
+    <text x="892" y="414" font-size="16" fill="#365b48">• involve qualified reviewers</text>
+    <text x="892" y="443" font-size="16" fill="#365b48">• preserve original evidence</text>
+    <text x="892" y="472" font-size="16" fill="#365b48">• route unresolved cases onward</text>
+  </g>
+
+  <g stroke="#b36b32" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M300 335 H320"/><path d="M570 335 H590"/><path d="M840 335 H860"/>
+  </g>
+  <g fill="#b36b32"><path d="M320 335 l-12 -9 v18 z"/><path d="M590 335 l-12 -9 v18 z"/><path d="M860 335 l-12 -9 v18 z"/></g>
+
+  <rect x="60" y="565" width="1080" height="95" rx="20" fill="#fffaf0" stroke="#b36b32" stroke-width="3"/>
+  <text x="90" y="605" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#6d3c18">Evidence boundary</text>
+  <text x="90" y="635" font-family="Arial, sans-serif" font-size="17" fill="#5f4a3c">A symptom, spatial pattern, recent event, or environmental reading can change the differential without proving a single cause.</text>
+
+  <text x="60" y="700" font-family="Arial, sans-serif" font-size="15" fill="#56685e">Teaching diagram — diagnostic confirmation and management authority remain procedure-, evidence-, and role-specific.</text>
+</svg>

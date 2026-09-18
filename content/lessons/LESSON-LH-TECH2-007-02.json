@@ -67,6 +67,27 @@
       "Using a KPI result without its definition and source records."
     ],
     "practicalApplication": "Calculate three provided KPIs, write the numerator/denominator/time window beside each, then compare multiple cycles and identify which apparent changes are truly comparable.",
-    "summary": "Correct KPI reasoning begins with stable definitions and ends with cautious, context-aware trend interpretation."
+    "summary": "Correct KPI reasoning begins with stable definitions and ends with cautious, context-aware trend interpretation.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-007-02",
+          "title": "KPI definition before interpretation",
+          "src": "/assets/tech2/course7/outcome-02.svg",
+          "alt": "KPI workflow defining numerator, denominator, eligible population, time window and exclusions before calculation, checking comparability across cycles, and treating one-cycle movement as a signal rather than a confirmed long-term process trend.",
+          "caption": "A KPI is only comparable when its numerator, denominator, eligibility rules and time window remain compatible. Do not improve the result by changing the denominator after seeing the number.",
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-POSTHARVEST-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-007-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

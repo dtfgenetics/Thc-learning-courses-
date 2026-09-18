@@ -67,6 +67,28 @@
       "Deleting or overwriting data after deciding a sensor is suspect."
     ],
     "practicalApplication": "Create a sensor-verification record including device ID, exact location, comparison instrument, stabilization period, paired readings, calibration status, data-quality disposition and escalation decision.",
-    "summary": "Reliable troubleshooting starts by verifying that sensor data are representative, comparable and documented well enough to support the decision being made."
+    "summary": "Reliable troubleshooting starts by verifying that sensor data are representative, comparable and documented well enough to support the decision being made.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-002-01",
+          "title": "Representative measurement before action",
+          "src": "/assets/tech2/course2/outcome-01.svg",
+          "alt": "Sensor-verification workflow checking device and crop context, colocated comparison with a verified reference, calibration or maintenance history, and a final data-quality decision before any control change.",
+          "caption": "Verify representativeness before acting. Preserve questionable data, compare under the same exposure, and separate data-quality decisions from calibration or repair authority.",
+          "references": [
+            "REF-VPD-002",
+            "REF-ENV-TEMP-2025-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-002-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

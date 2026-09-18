@@ -1,0 +1,28 @@
+{
+  "id": "EMR-LH-TECH1-001-WPS-PROTECTIONS",
+  "mappingCandidateId": "MAP-LH-TECH1-001-02-EPA-WPS",
+  "action": "create",
+  "claimId": "CLAIM-LH-TECH1-001-WPS-PROTECTIONS",
+  "statement": "For workers and handlers on agricultural establishments covered by EPA's Worker Protection Standard, employers must provide specified pesticide-safety protections that include application and entry restrictions, safety and hazard information, decontamination supplies, emergency assistance, and required handler personal protective equipment.",
+  "domain": "pesticide-worker-safety",
+  "lessonIds": ["LESSON-LH-TECH1-001-02", "LESSON-LH-TECH1-001-03"],
+  "referenceIds": ["REF-EPA-WPS"],
+  "competencyIds": ["COMP-SAFETY-WORK-001"],
+  "objectiveIds": ["LO-LH-TECH1-001-01", "LO-LH-TECH1-001-02"],
+  "version": "0.1.0",
+  "claimStatus": "draft",
+  "reviewDueAt": "2026-12-15",
+  "status": "needs-scientific-review",
+  "review": {
+    "editor": "OpenAI GPT-5.6 Sol",
+    "scientificReviewer": "Pending human scientific reviewer",
+    "approvedAt": null,
+    "aiAssisted": true,
+    "rationale": "Drafted from the reviewed EPA WPS overview and cross-checked against the current EPA page on September 15, 2026. The claim is conditional on actual WPS coverage and does not imply that every cannabis workplace, task, pesticide use, or worker role is governed by WPS.",
+    "notes": "Human regulatory/safety review is required before promotion. Preserve the applicability qualifier and distinction between awareness and handler/applicator authorization."
+  },
+  "sourceContext": [
+    {"lessonId":"LESSON-LH-TECH1-001-02","referenceId":"REF-EPA-WPS","jsonPath":"$.content.sections[2].references","contextTitle":"Separate application restrictions from post-application REIs"},
+    {"lessonId":"LESSON-LH-TECH1-001-03","referenceId":"REF-EPA-WPS","jsonPath":"$.references","contextTitle":"Cannabis-Specific Workplace Exposures and Emergency Escalation"}
+  ]
+}

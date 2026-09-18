@@ -70,6 +70,28 @@
       "Ignoring donor and sanitation history."
     ],
     "practicalApplication": "Create a propagation differential table with evidence for/against donor, sanitation, environment, handling, media and timing hypotheses, then identify one next discriminating check and the role responsible.",
-    "summary": "Advanced propagation troubleshooting narrows uncertainty with traceable evidence instead of turning patterns into unsupported causes."
+    "summary": "Advanced propagation troubleshooting narrows uncertainty with traceable evidence instead of turning patterns into unsupported causes.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-005-02",
+          "title": "Propagation underperformance differential",
+          "src": "/assets/tech2/course5/outcome-02.svg",
+          "alt": "Propagation differential matrix comparing donor condition, sanitation, environment, handling, media, timing and plant-health explanations, with evidence for and against each and a discriminating next check instead of unsupported contamination or genotype conclusions.",
+          "caption": "A donor-linked or tray-linked pattern directs the investigation; it does not prove genetics or contamination. Rank alternatives and choose the next check that can change the ranking.",
+          "references": [
+            "REF-PROP-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-005-02",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

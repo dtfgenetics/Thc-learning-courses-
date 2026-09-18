@@ -69,6 +69,28 @@
       "Beginning mixing before PPE or spill response requirements are established."
     ],
     "practicalApplication": "Complete a pre-batch readiness checklist documenting effective recipe/version, source water, each material identity, target volume, calculations, sequence, meter status, PPE and any hold/escalation condition.",
-    "summary": "Controlled fertigation starts with verified identity, effective instructions, safe handling and authority boundaries before any nutrient is added."
+    "summary": "Controlled fertigation starts with verified identity, effective instructions, safe handling and authority boundaries before any nutrient is added.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-003-01",
+          "title": "Controlled fertigation batch readiness",
+          "src": "/assets/tech2/course3/outcome-01.svg",
+          "alt": "Pre-batch fertigation readiness workflow verifying the effective recipe, source water, material identity, target volume, calculation inputs, sequence, measuring tools, PPE and authorization before mixing, with any mismatch routed to hold and escalation instead of improvisation.",
+          "caption": "Controlled execution starts before mixing. Verify the current instruction, source water, exact materials, calculation inputs, PPE, tools and authority; hold any mismatch rather than improvising.",
+          "references": [
+            "REF-WATER-ALKALINITY-EXT-001",
+            "REF-SAFETY-OSHA-001",
+            "REF-ASTM-E2659-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-003-01",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }

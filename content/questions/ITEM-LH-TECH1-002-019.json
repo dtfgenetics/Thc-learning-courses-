@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -8,20 +8,18 @@
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "multiple-choice",
-  "stem": "Which handoff best preserves an unresolved observation?",
+  "stem": "Which handoff best preserves an unresolved crop observation for the receiving shift?",
   "choices": [
-    "Zone B issue fixed",
-    "Plants still weird",
+    "Zone B rechecked at 14:00; 4 of 12 sampled plants remain wilted; lead notified; improvement noted, so the issue is considered resolved unless symptoms return",
     "Zone B rechecked at 14:00; 4 of 12 sampled plants remain wilted; cause unresolved; lead notified; next check due per work order",
-    "No note until a diagnosis is confirmed"
+    "Zone B rechecked at 14:00; 4 of 12 sampled plants remain wilted; details explained verbally to the receiving technician, so no additional written follow-up is needed",
+    "Zone B rechecked at 14:00; 4 of 12 sampled plants remain wilted; observation recorded, but the next check is left open for the receiving shift to decide"
   ],
-  "correct": 2,
-  "rationale": "A useful handoff states what was checked, what remains, uncertainty, escalation and the next required action.",
-  "references": [
-    "REF-MHRA-GXP-DATA-INTEGRITY"
-  ],
+  "correct": 1,
+  "rationale": "A strong handoff preserves what was checked, the remaining observation, sample context, uncertainty, escalation and the next expected check. Partial improvement, verbal-only transfer or an unspecified next action can create continuity gaps.",
+  "references": ["REF-MHRA-GXP-DATA-INTEGRITY", "REF-HSE-SHIFT-HANDOVER"],
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
-    "itemSet": "course2-v1"
+    "itemSet": "course2-v2"
   }
 }
