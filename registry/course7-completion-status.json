@@ -6,20 +6,22 @@
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 7 has an integrated controlled source/governance package with four lessons, six objectives, a 12-item formative readiness bank, Practicals A-F, a 200-point capstone, critical-failure controls, assessor/calibration packets, accessibility and candidate-evidence governance drafts. A conventional final exam is intentionally absent. Remaining machine work is learner integrated-lab route verification, versioned review-queue verification, deployed responsive/manual QA, public readback of learner-safe surfaces and exact deployment evidence. Secure credential forms remain fail-closed.",
+  "machineCompletionBoundary": "Course 7 controlled source/package construction, learner runtime routing, governed assets, public route readback, and exact-version human-review queue integrity are machine-verified. Remaining machine work is deployed responsive/manual learner-surface QA, exact deployment build/source SHA verification using the public build-identity contract, and repair of any defects those checks expose. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-007.json",
     "scripts/test-tech1-course7.mjs",
     "docs/learning-hub/tech1/course-007/COURSE-PACKAGE-MANIFEST.md",
     "registry/technician-i-integrated-lab-plan.json",
-    "registry/course7-deployment-evidence.json"
+    "registry/course7-deployment-evidence.json",
+    "scripts/test-tech1-review-queues.mjs",
+    "scripts/test-build-identity-endpoint.mjs",
+    "scripts/verify-public-deployment-identity.mjs",
+    "scripts/test-tech1-courses3-7-learner-runtime.mjs"
   ],
   "nextMachineActions": [
-    "verify learner-safe integrated-lab routes and governed visual reuse through the real Academy runtime",
-    "enforce a versioned Course 7 human-review queue against exact source versions",
-    "perform fresh deployed responsive/manual integrated-lab QA and anonymous readback of learner-safe routes",
-    "keep secure credential-form and issuance boundaries fail-closed while deployment evidence is recorded",
-    "record and verify the exact deployment build/source SHA identity for the public learner surface"
+    "complete deployed responsive/manual integrated-lab QA and record defects",
+    "record and verify the exact deployment build/source SHA identity for the public learner surface",
+    "repair any defects exposed by deployed QA while keeping secure credential-form and issuance boundaries fail-closed"
   ],
   "nextHumanActions": [
     "technical/occupational review",
