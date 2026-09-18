@@ -71,6 +71,28 @@
       "Rewriting old data after an equipment fault is confirmed."
     ],
     "practicalApplication": "Produce a complete Sensor & Equipment Verification Report with annotated trend/data table, provisional fault classification, safe-status/authority boundary, receiving role and post-action verification plan.",
-    "summary": "High-quality verification ends with a reconstructable report, safe handoff and evidence that the authorized action actually restored intended performance."
+    "summary": "High-quality verification ends with a reconstructable report, safe handoff and evidence that the authorized action actually restored intended performance.",
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-002-04",
+          "title": "Verification report to evidence-based closure",
+          "src": "/assets/tech2/course2/outcome-04.svg",
+          "alt": "Verification and handoff workflow recording exact asset identity, measurements and method, provisional fault classification, current safe status and authority boundary, receiving role, authorized intervention and a comparable post-action measurement before closure.",
+          "caption": "Closure requires reconstructable evidence. Record the boundary cue and receiving owner, preserve original data, and repeat the relevant measurement after authorized work rather than assuming an alarm reset proves restoration.",
+          "references": [
+            "REF-MHRA-GXP-DATA-INTEGRITY",
+            "REF-IRRIGATION-001",
+            "REF-OSHA-1910-147-LOTO"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-002-04",
+            "releaseApproved": false,
+            "releaseState": "review-candidate"
+          }
+        }
+      ]
+    }
   }
 }
