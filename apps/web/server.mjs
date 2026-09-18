@@ -40,7 +40,28 @@ function publicStatus(object, publicReleaseIds = new Set()) {
   return publicReleaseIds.has(object?.id) ? 'published' : object?.status;
 }
 function safeLesson(lesson, publicReleaseIds = new Set()) {
-  return { id: lesson.id, title: lesson.title, version: lesson.version, status: publicStatus(lesson, publicReleaseIds), competencies: lesson.competencies ?? [], learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [], estimatedMinutes: lesson.estimatedMinutes ?? null, references: lesson.references ?? [], content: lesson.content ?? {} };
+  const sourceContent = lesson.content ?? {};
+  const blocks = Array.isArray(sourceContent.blocks) && sourceContent.blocks.length
+    ? sourceContent.blocks
+    : (sourceContent.sections ?? [])
+        .filter((section) => section && typeof section.title === 'string' && typeof section.body === 'string')
+        .map((section) => ({
+          type: 'text',
+          title: section.title,
+          body: section.body,
+          ...(Array.isArray(section.references) && section.references.length ? { references: section.references } : {})
+        }));
+  return {
+    id: lesson.id,
+    title: lesson.title,
+    version: lesson.version,
+    status: publicStatus(lesson, publicReleaseIds),
+    competencies: lesson.competencies ?? [],
+    learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [],
+    estimatedMinutes: lesson.estimatedMinutes ?? null,
+    references: lesson.references ?? [],
+    content: { ...sourceContent, blocks }
+  };
 }
 
 function hashSeed(value) {
