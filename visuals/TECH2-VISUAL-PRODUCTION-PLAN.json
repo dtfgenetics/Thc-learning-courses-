@@ -303,56 +303,79 @@
           "conceptId": "VIS-LH-TECH2-004-01",
           "outcomeIndex": 1,
           "outcome": "Produce comparable scouting datasets and interpret incidence, severity, spatial scope and multi-round trend evidence.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course4/outcome-01.svg",
           "sourcePath": "apps/web/public/assets/tech2/course4/outcome-01.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Scouting-quality diagram linking repeatable routes and zones, sample denominator, fixed trap or location identity, consistent incidence and severity definitions, and preserved method deviations so repeated rounds can be compared without confusing sampling changes for biological trends.",
+          "caption": "A scouting trend is only as comparable as its method. Keep route, denominator, trap/location identity and definitions stable—or document the change—so negative findings and trends have meaning.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-004-01"
+          ],
+          "references": [
+            "REF-IPM-001",
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-004-02",
           "outcomeIndex": 2,
           "outcome": "Evaluate authorized IPM intervention follow-up against baseline while identifying confounding, missing evidence and unresolved risk.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course4/outcome-02.svg",
           "sourcePath": "apps/web/public/assets/tech2/course4/outcome-02.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Plant-health trend model comparing mapped scope, incidence, severity, chronology and plausible movement pathways across repeated scouting rounds so a flat total does not hide spread into new zones or worsening severity.",
+          "caption": "Map scope across repeated rounds. The same total count can represent one contained cluster or a broader spread, and incidence and severity should not be treated as the same measure.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-004-02"
+          ],
+          "references": [
+            "REF-IPM-001",
+            "REF-IPM-GREENHOUSE-2024-001"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-004-03",
           "outcomeIndex": 3,
           "outcome": "Maintain quarantine, sanitation and movement controls while escalating high-risk or uncertain plant-health findings.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course4/outcome-03.svg",
           "sourcePath": "apps/web/public/assets/tech2/course4/outcome-03.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "IPM follow-up workflow defining baseline and intended outcome before intervention, repeating comparable measurements over enough rounds, recording confounders such as sampling changes or overlapping controls, and classifying the result as improving, unchanged, worsening or unresolved.",
+          "caption": "An intervention is not proven effective just because it was completed. Compare against a defined baseline, preserve confounders, and allow the result to remain unresolved when the evidence is incomplete.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-004-03"
+          ],
+          "references": [
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         },
         {
           "conceptId": "VIS-LH-TECH2-004-04",
           "outcomeIndex": 4,
           "outcome": "Document scope, data quality, outcome evidence and next-round priorities without altering observations or assuming treatment authority.",
-          "status": "planned",
+          "status": "review-candidate",
           "deliveryType": "instructional-visual",
           "targetPublicPath": "/assets/tech2/course4/outcome-04.svg",
           "sourcePath": "apps/web/public/assets/tech2/course4/outcome-04.svg",
-          "learnerTextAlternative": null,
-          "caption": null,
-          "lessonIds": [],
-          "references": [],
+          "learnerTextAlternative": "Plant-health decision flow preserving quarantine, sanitation and clean-to-dirty movement controls, checking whether an action is within the technician's role and applicable product or facility authorization, and routing unresolved or regulated treatment decisions to an authorized role with an evidence-rich handoff.",
+          "caption": "Strong diagnostic evidence does not create pesticide or regulated-treatment authority. Preserve containment, act only within authorization, and escalate with the measured scope, trend, intervention history and unresolved uncertainty.",
+          "lessonIds": [
+            "LESSON-LH-TECH2-004-04"
+          ],
+          "references": [
+            "REF-IPM-GREENHOUSE-2024-001",
+            "REF-IPM-001",
+            "REF-MHRA-GXP-DATA-INTEGRITY"
+          ],
           "qaApproved": false
         }
       ]
