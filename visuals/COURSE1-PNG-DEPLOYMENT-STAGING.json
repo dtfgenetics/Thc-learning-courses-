@@ -8,7 +8,7 @@
   "deploymentWorkflow": ".github/workflows/course1-png-deploy.yml",
   "latestDeploymentRun": 34873948740,
   "transferState": "authenticated-agent-fetch-verified-candidates-blocked-by-qa",
-  "transferFinding": "The historical GitHub Actions download received a Drive permission page, but authenticated Drive reads have now verified the real PNG bytes for assets 13-18. The transfer path is therefore technically available. These six specific v3 binaries must still not be published because visual/copy QA found incorrect module labels, credential-overstatement wording, and asset-specific authority/process defects. The verified SVG baseline remains intact.",
+  "transferFinding": "Authenticated Drive reads verified the real PNG bytes for assets 13-18, but the six v3 binaries remain rejected. A governed copy lock now defines the corrected Module 5/6 headers, academic-course branding, authority boundaries and prohibited claims that every replacement export must satisfy before binary QA and public cutover.",
   "rules": {
     "replaceOnlyAfterBinaryExists": true,
     "preserveCurrentSvgUntilVerified": true,
@@ -17,7 +17,8 @@
     "requireCanonicalLessonMatch": true,
     "requireTechnicianAuthorityBoundary": true,
     "requireAuthenticatedBinaryQa": true,
-    "blockKnownRejectedBinary": true
+    "blockKnownRejectedBinary": true,
+    "requireCopyLockValidation": true
   },
   "candidates": [
     {
@@ -26,8 +27,9 @@
       "candidateFile": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
       "driveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv",
       "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
-      "status": "authenticated-binary-verified-revise-before-publication",
-      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and align failed-readiness response with site-defined out-of-service/escalation authority rather than universal tag-out wording."
+      "status": "rebuild-required-copy-lock-defined",
+      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and align failed-readiness response with site-defined out-of-service/escalation authority rather than universal tag-out wording.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
     },
     {
       "assetId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
@@ -35,8 +37,9 @@
       "candidateFile": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
       "driveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2",
       "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
-      "status": "authenticated-binary-verified-revise-before-publication",
-      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and qualify troubleshooting/adjustment work as explicitly assigned, trained and authorized operator work."
+      "status": "rebuild-required-copy-lock-defined",
+      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and qualify troubleshooting/adjustment work as explicitly assigned, trained and authorized operator work.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
     },
     {
       "assetId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
@@ -44,8 +47,9 @@
       "candidateFile": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
       "driveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv",
       "targetPublicPath": "/assets/course1/fault-report-v3.png",
-      "status": "authenticated-binary-verified-revise-before-publication",
-      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and defer reporting timing/channel to the applicable emergency or fault-escalation procedure while preserving observed-fact reporting."
+      "status": "rebuild-required-copy-lock-defined",
+      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and defer reporting timing/channel to the applicable emergency or fault-escalation procedure while preserving observed-fact reporting.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
     },
     {
       "assetId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
@@ -53,8 +57,9 @@
       "candidateFile": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
       "driveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX",
       "targetPublicPath": "/assets/course1/record-correction-v3.png",
-      "status": "authenticated-binary-verified-revise-before-publication",
-      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and label strike-through/initial/date as a paper-record example only; the approved paper or digital record system and SOP control the correction method."
+      "status": "rebuild-required-copy-lock-defined",
+      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and label strike-through/initial/date as a paper-record example only; the approved paper or digital record system and SOP control the correction method.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
     },
     {
       "assetId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
@@ -62,8 +67,9 @@
       "candidateFile": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
       "driveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY",
       "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
-      "status": "authenticated-binary-verified-revise-before-publication",
-      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and make clear that handoff instructions/priorities must be current, controlled and within the receiving worker's authority."
+      "status": "rebuild-required-copy-lock-defined",
+      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and make clear that handoff instructions/priorities must be current, controlled and within the receiving worker's authority.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
     },
     {
       "assetId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
@@ -71,8 +77,10 @@
       "candidateFile": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
       "driveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey",
       "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
-      "status": "authenticated-binary-verified-revise-before-publication",
-      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and frame planning as review of assigned work/current controlled instructions rather than independent production-planning authority."
+      "status": "rebuild-required-copy-lock-defined",
+      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and frame planning as review of assigned work/current controlled instructions rather than independent production-planning authority.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
     }
-  ]
+  ],
+  "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
 }
