@@ -10,6 +10,7 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { startOrResumeCourseAssessment, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { loadCourseAcademicCompletionBundle, evaluateCourseAcademicCompletion } from './course-enrollment-completion-service.mjs';
 import {
   getCoursePracticalEvaluation,
   saveCoursePracticalEvaluation,
@@ -436,6 +437,40 @@ export function createHandler({
         if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         const progress = await learnerStore.listProgress(auth.subject);
         return json(res, 200, { learner: { subject: auth.subject }, progress });
+      }
+
+      const courseCompletionMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/completion$/);
+      if (req.method === 'GET' && courseCompletionMatch) {
+        route = 'GET /api/v1/me/courses/:courseId/completion';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listProgress !== 'function' || typeof learnerStore.listCourseEvidence !== 'function') {
+          return json(res, 503, { error: 'learner-academic-evidence-persistence-unavailable', requestId });
+        }
+        const bundle = loadCourseAcademicCompletionBundle(courseCompletionMatch[1]);
+        if (!bundle) return json(res, 404, { error: 'course-completion-not-configured', requestId });
+        const progress = await learnerStore.listProgress(auth.subject);
+        const evidence = await learnerStore.listCourseEvidence(auth.subject, {
+          assessmentId: bundle.assessment.id,
+          performanceAssessmentId: bundle.performanceAssessmentId
+        });
+        const academic = evaluateCourseAcademicCompletion({ bundle, progress, evidence });
+        return json(res, 200, {
+          course: { id: bundle.course.id, title: bundle.course.title, version: bundle.course.version },
+          complete: academic.complete,
+          instruction: academic.instruction,
+          finalAssessment: {
+            assessmentId: academic.snapshot.finalAssessmentId,
+            status: academic.snapshot.finalAssessmentStatus
+          },
+          performanceAssessment: {
+            assessmentId: academic.snapshot.performanceAssessmentId,
+            status: academic.snapshot.performanceAssessmentStatus,
+            criticalErrorCount: academic.snapshot.performanceCriticalErrorCount
+          },
+          missingRequirements: academic.missingRequirements,
+          completionRecordedAt: academic.requirementCompletedAt
+        });
       }
 
       const courseEvidenceMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/evidence$/);
