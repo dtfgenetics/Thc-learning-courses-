@@ -56,7 +56,12 @@ try {
   assert.match(await richStylesResponse.text(), /rich-scenario/, 'rich lesson styles should include scenario presentation');
   const appResponse = await fetch(`${base}/app.js`);
   assert.equal(appResponse.status, 200);
-  assert.match(await appResponse.text(), /renderRichBlocks\(fieldset, item\.stimulus\)/, 'practice UI should render sanitized rich evidence stimuli before choices');
+  const appClientText = await appResponse.text();
+  assert.match(appClientText, /renderRichBlocks\(fieldset, item\.stimulus\)/, 'practice UI should render sanitized rich evidence stimuli before choices');
+  assert.match(appClientText, /\/api\/v1\/me\/enrollments/, 'learner catalog should connect to the enrollment API');
+  assert.match(appClientText, /Enroll in this course/, 'published academic courses should expose an enrollment action');
+  assert.match(appClientText, /course\.status !== 'published'/, 'draft preview courses must not expose enrollment');
+  assert.match(appClientText, /professional credential eligibility is tracked separately/, 'academic enrollment must preserve the credential boundary');
 
   const assessmentClient = await fetch(`${base}/course-assessment.js`);
   assert.equal(assessmentClient.status, 200);
