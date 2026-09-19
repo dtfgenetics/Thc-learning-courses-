@@ -114,9 +114,12 @@
     },
     {
       "id": "controlled-pilot",
-      "state": "not-started",
-      "evidence": [],
-      "humanGateRequired": true
+      "state": "protocol-ready-pilot-not-started",
+      "evidence": [
+        "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md"
+      ],
+      "humanGateRequired": true,
+      "note": "A controlled pilot protocol is now available, but no learner/item/practical pilot evidence, calibration result, psychometric result, or pilot approval is claimed."
     },
     {
       "id": "course-standard-setting",
