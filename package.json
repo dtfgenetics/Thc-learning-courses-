@@ -133,7 +133,8 @@
     "deployment:identity:test": "node scripts/test-build-identity-endpoint.mjs",
     "deployment:identity:verify": "node scripts/verify-public-deployment-identity.mjs",
     "tech1:review-queues:test": "node scripts/test-tech1-review-queues.mjs",
-    "deployment:identity:record": "node scripts/record-public-deployment-identity.mjs"
+    "deployment:identity:record": "node scripts/record-public-deployment-identity.mjs",
+    "deployment:surface:verify": "node scripts/verify-public-learner-surface.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",

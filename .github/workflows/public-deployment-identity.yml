@@ -1,4 +1,4 @@
-name: Record public deployment identity
+name: Record public deployment evidence
 
 on:
   push:
@@ -69,8 +69,16 @@ jobs:
           BASE_URL: ${{ steps.target.outputs.base_url }}
         run: |
           node scripts/record-public-deployment-identity.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA" --write
+      - name: Verify deployed learner surfaces
+        env:
+          EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
+          BASE_URL: ${{ steps.target.outputs.base_url }}
+        run: |
+          node scripts/verify-public-learner-surface.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA" --write
       - name: Validate updated deployment evidence
         run: |
+          npm run academy:accessibility:test
+          npm run tech1:course-completion-status:test
           npm run tech1:course-deployment-evidence:test
           npm run tech2:course-completion-status:test
           npm run academy:completion:check
@@ -84,16 +92,16 @@ jobs:
             exit 0
           fi
           short_sha="${EXPECTED_SHA:0:12}"
-          branch="ops/deployment-identity-${short_sha}"
+          branch="ops/deployment-evidence-${short_sha}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
           git add registry/
-          git commit -m "ops: record deployed Academy identity ${short_sha}"
+          git commit -m "ops: record deployed Academy evidence ${short_sha}"
           git push --force-with-lease origin "$branch"
           existing="$(gh pr list --base dev --head "$branch" --state open --json number --jq '.[0].number // empty')"
           if [ -z "$existing" ]; then
-            gh pr create               --base dev               --head "$branch"               --title "Record deployed Academy identity ${short_sha}"               --body "Verified the public /api/build-info response against full source SHA \`${EXPECTED_SHA}\` and updated the Technician I/II deployment evidence ledgers. Manual responsive/accessibility and human certification gates remain fail-closed."
+            gh pr create               --base dev               --head "$branch"               --title "Record deployed Academy evidence ${short_sha}"               --body "Verified the public /api/build-info response and learner course/lesson/assessment surfaces against full source SHA \`${EXPECTED_SHA}\`. Machine deployment QA was recorded; manual responsive/accessibility and human certification gates remain fail-closed."
           else
             echo "PR #$existing already exists."
           fi
