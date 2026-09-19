@@ -425,6 +425,7 @@ export function createHandler({
         const courseVersion = String(body.courseVersion ?? '').trim();
         const course = loadCourseDefinition(courseId);
         if (!course) return json(res, 404, { error: 'course-not-found', requestId });
+        if (course.status !== 'published') return json(res, 409, { error: 'course-not-open-for-enrollment', courseStatus: course.status ?? null, requestId });
         if (String(course.version) !== courseVersion) return json(res, 409, { error: 'course-version-mismatch', currentVersion: String(course.version), requestId });
         const enrollment = await learnerStore.enroll(auth.subject, { courseId, courseVersion });
         return json(res, 200, { enrollment });

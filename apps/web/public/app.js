@@ -12,6 +12,7 @@ let progress = readProgress();
 let progressMode = 'local';
 let accountSubject = null;
 let currentLesson = null;
+let enrollments = [];
 const progressClient = createServerProgressClient();
 
 function text(tag, value, className = '') {
@@ -29,6 +30,92 @@ function matchesQuery(course, query) {
 
 function progressLabel() {
   return progressMode === 'account' ? 'Account lesson progress' : 'Device lesson progress';
+}
+function humanStatus(value) {
+  return String(value ?? 'not-recorded').replaceAll('-', ' ');
+}
+
+
+function enrollmentFor(course) {
+  return enrollments.find((row) => row.courseId === course.id && String(row.courseVersion) === String(course.version)) ?? null;
+}
+
+async function loadAccountEnrollments() {
+  const response = await fetch('/api/v1/me/enrollments', {
+    headers: { accept: 'application/json' },
+    credentials: 'same-origin'
+  });
+  if (!response.ok) throw new Error(`Enrollment request failed (${response.status})`);
+  const body = await response.json();
+  enrollments = Array.isArray(body.enrollments) ? body.enrollments : [];
+}
+
+async function enrollInCourse(course, button, status) {
+  button.disabled = true;
+  status.textContent = 'Enrolling…';
+  try {
+    const response = await fetch('/api/v1/me/enrollments', {
+      method: 'POST',
+      headers: { accept: 'application/json', 'content-type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ courseId: course.id, courseVersion: String(course.version) })
+    });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (response.status === 401 || response.status === 403) throw new Error('Sign in to enroll in this course.');
+      if (body.error === 'course-not-open-for-enrollment') throw new Error('This course is not open for enrollment yet.');
+      throw new Error(`Enrollment failed (${response.status}).`);
+    }
+    const existing = enrollmentFor(course);
+    if (!existing) enrollments.push(body.enrollment);
+    status.textContent = body.enrollment.status === 'completed'
+      ? 'Already enrolled • academic requirements complete'
+      : 'Enrolled • academic course progress is now linked to your account';
+    renderCatalog();
+  } catch (error) {
+    button.disabled = false;
+    status.textContent = error.message;
+  }
+}
+
+function renderCourseEnrollment(details, course) {
+  const panel = document.createElement('div');
+  panel.className = 'course-enrollment-panel';
+  const status = text('p', '', 'course-enrollment-status');
+  status.setAttribute('aria-live', 'polite');
+
+  if (course.status !== 'published') {
+    status.textContent = 'Development preview only • enrollment is unavailable until this academic course is published.';
+    panel.append(status);
+    details.append(panel);
+    return;
+  }
+
+  const enrollment = enrollmentFor(course);
+  if (enrollment) {
+    status.textContent = enrollment.status === 'completed'
+      ? 'Enrolled • academic requirements complete'
+      : `Enrolled • ${humanStatus(enrollment.status)}`;
+    panel.append(status);
+    details.append(panel);
+    return;
+  }
+
+  if (progressMode !== 'account') {
+    status.textContent = 'Sign in to enroll and sync official academic course progress to your account.';
+    panel.append(status);
+    details.append(panel);
+    return;
+  }
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'course-enroll-button';
+  button.textContent = 'Enroll in this course';
+  button.addEventListener('click', () => enrollInCourse(course, button, status));
+  status.textContent = 'Enrollment is for this academic course only; professional credential eligibility is tracked separately.';
+  panel.append(button, status);
+  details.append(panel);
 }
 
 function renderCatalog() {
@@ -67,6 +154,8 @@ function renderCatalog() {
     if (course.credentialBearing) {
       details.append(text('p', 'Lesson progress only. Course and credential completion also depend on the required assessment and practical-performance evidence, which are tracked separately from lesson checkmarks.', 'course-meta'));
     }
+
+    renderCourseEnrollment(details, course);
 
     for (const module of course.modules) {
       const section = document.createElement('section');
@@ -474,10 +563,12 @@ async function loadProgressMode() {
     progress = account.progress;
     progressMode = 'account';
     accountSubject = account.subject;
+    await loadAccountEnrollments();
   } catch {
     progress = readProgress();
     progressMode = 'local';
     accountSubject = null;
+    enrollments = [];
   }
 }
 
