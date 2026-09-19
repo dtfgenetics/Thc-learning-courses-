@@ -168,6 +168,73 @@ function credentialProgressView(credential, course, rawEvidence) {
   };
 }
 
+export function credentialTranscriptView(credential, course, rawEvidence) {
+  const progress = credentialProgressView(credential, course, rawEvidence);
+  const competencyRows = (progress.competencies ?? []).map((row) => ({
+    competencyId: row.competencyId,
+    masteryLevel: row.masteryLevel ?? 'not-recorded',
+    curriculumVersion: row.curriculumVersion ?? null,
+    demonstratedAt: row.updatedAt ?? null
+  }));
+  const demonstratedCompetencies = competencyRows.filter((row) => row.masteryLevel === 'demonstrated').length;
+  const assessmentRows = (progress.assessmentAttempts ?? [])
+    .filter((row) => row.status === 'scored')
+    .map((row) => ({
+      assessmentId: row.assessmentId,
+      assessmentVersion: row.assessmentVersion ?? null,
+      status: row.passed === true ? 'passed' : 'not-passed',
+      scorePercent: row.scorePercent == null ? null : Number(row.scorePercent),
+      scoredAt: row.scoredAt ?? null
+    }));
+  const practicalRows = (progress.performanceAssessments ?? []).map((row) => ({
+    assessmentId: row.assessmentId,
+    status: row.status ?? 'not-recorded',
+    scorePercent: row.scorePercent == null ? null : Number(row.scorePercent),
+    criticalErrorCount: Number(row.criticalErrorCount ?? 0),
+    evaluatedAt: row.evaluatedAt ?? null
+  }));
+  const artifactRows = (progress.portfolioArtifacts ?? []).map((row) => ({
+    artifactId: row.artifactId,
+    status: row.status ?? 'not-recorded',
+    verifiedAt: row.verifiedAt ?? row.updatedAt ?? null
+  }));
+  return {
+    transcriptType: 'credential-competency-transcript',
+    credential: {
+      id: progress.credential.id,
+      title: progress.credential.title,
+      version: progress.credential.version,
+      status: progress.credential.status,
+      role: progress.credential.role,
+      course: progress.credential.course,
+      courseVersion: progress.credential.courseVersion,
+      certificationUseStatus: progress.credential.certificationUseStatus,
+      releaseApprovalStatus: progress.credential.releaseApprovalStatus
+    },
+    summary: {
+      eligibleForCredential: progress.eligibility.eligible === true,
+      demonstratedCompetencies,
+      totalCompetencies: competencyRows.length,
+      passedAssessments: assessmentRows.filter((row) => row.status === 'passed').length,
+      totalScoredAssessments: assessmentRows.length,
+      passedPracticals: practicalRows.filter((row) => row.status === 'passed').length,
+      totalPracticals: practicalRows.length,
+      verifiedArtifacts: artifactRows.filter((row) => row.status === 'verified').length,
+      totalArtifacts: artifactRows.length
+    },
+    competencies: competencyRows,
+    assessments: assessmentRows,
+    performanceAssessments: practicalRows,
+    portfolioArtifacts: artifactRows,
+    missingRequirements: progress.eligibility.missingRequirements ?? [],
+    privacy: {
+      excludesLearnerIdentifier: true,
+      excludesPrivateEvaluatorNotes: true,
+      excludesRawResponses: true
+    }
+  };
+}
+
 function learnerSafePracticalHistory(rows = []) {
   if (!Array.isArray(rows)) return [];
   return rows.map((row) => ({
@@ -446,6 +513,20 @@ export function createHandler({
         if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
         const evidence = await learnerStore.listCredentialEvidence(auth.subject, { credentialDefinitionId: credential.id });
         return json(res, 200, credentialProgressView(credential, course, evidence));
+      }
+
+      const credentialTranscriptMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/transcript$/);
+      if (req.method === 'GET' && credentialTranscriptMatch) {
+        route = 'GET /api/v1/me/credentials/:credentialId/transcript';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listCredentialEvidence !== 'function') return json(res, 503, { error: 'learner-evidence-persistence-unavailable', requestId });
+        const credential = loadCredentialDefinition(credentialTranscriptMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const course = loadCourseDefinition(credential.course);
+        if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
+        const evidence = await learnerStore.listCredentialEvidence(auth.subject, { credentialDefinitionId: credential.id });
+        return json(res, 200, credentialTranscriptView(credential, course, evidence));
       }
 
       const lessonProgressMatch = url.pathname.match(/^\/api\/v1\/me\/lessons\/(LESSON-[A-Z0-9-]+)$/);
