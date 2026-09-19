@@ -39,7 +39,7 @@ for (const file of [
 ]) requireFile(file);
 
 for (const [area, gate] of [
-  ['curriculum', 'substantiveContentComplete'],
+  ['curriculum', 'stagingContentSliceValidated'],
   ['assessment', 'blueprintComplete'],
   ['assessment', 'developmentFormGeneration'],
   ['runtime', 'serverSideAttemptStateMachine'],
