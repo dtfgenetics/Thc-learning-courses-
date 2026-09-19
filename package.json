@@ -132,7 +132,8 @@
     "academy:completion:check": "node scripts/report-academy-completion-matrix.mjs --check",
     "deployment:identity:test": "node scripts/test-build-identity-endpoint.mjs",
     "deployment:identity:verify": "node scripts/verify-public-deployment-identity.mjs",
-    "tech1:review-queues:test": "node scripts/test-tech1-review-queues.mjs"
+    "tech1:review-queues:test": "node scripts/test-tech1-review-queues.mjs",
+    "deployment:identity:record": "node scripts/record-public-deployment-identity.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
