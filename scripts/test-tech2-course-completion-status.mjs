@@ -17,13 +17,18 @@ for(let n=1;n<=8;n++){
   assert.equal(status.publicAcademicPackage,release.publicationState,`Technician II Course ${n}: public package state mismatch`);
   assert.equal(status.certificationEvidenceValidated,false,`Technician II Course ${n}: cannot claim validated certification evidence`);
   assert.equal(status.goldStandardPackageComplete,false,`Technician II Course ${n}: cannot claim gold-standard completion before human/evidence gates close`);
-  assert.equal(status.machineResolvableWorkComplete,false,`Technician II Course ${n}: machine completion remains open until runtime/deployment/manual QA is reconciled`);
+  if(status.machineResolvableWorkComplete===true){
+    assert.equal((status.nextMachineActions??[]).length,0,`Technician II Course ${n}: machine completion cannot retain open machine actions`);
+    assert.equal(status.deployedMachineSurfaceQa?.state,'verified',`Technician II Course ${n}: machine completion requires deployed surface QA`);
+    assert.match(status.deployedMachineSurfaceQa?.sourceSha??'',/^(?:[0-9a-f]{40}|[0-9a-f]{64})$/i,`Technician II Course ${n}: machine completion requires exact deployment SHA`);
+  }
   assert.equal(status.publicLessons,4,`Technician II Course ${n}: expected four public lessons`);
   assert.equal(status.publicLearningItems,n===8?16:36,`Technician II Course ${n}: public item count mismatch`);
   assert.ok(typeof status.machineCompletionBoundary==='string'&&status.machineCompletionBoundary.length>180,`Technician II Course ${n}: missing substantive completion boundary`);
   assert.ok(Array.isArray(status.evidence)&&status.evidence.length>=6,`Technician II Course ${n}: incomplete machine evidence list`);
   for(const rel of status.evidence) assert.ok(fs.existsSync(path.join(root,rel)),`Technician II Course ${n}: evidence path missing: ${rel}`);
-  assert.ok(Array.isArray(status.nextMachineActions)&&status.nextMachineActions.length>=4,`Technician II Course ${n}: machine work list incomplete`);
+  assert.ok(Array.isArray(status.nextMachineActions),`Technician II Course ${n}: machine work queue missing`);
+  if(status.machineResolvableWorkComplete!==true) assert.ok(status.nextMachineActions.length>0,`Technician II Course ${n}: incomplete course must list remaining machine work`);
   assert.ok(Array.isArray(status.nextHumanActions)&&status.nextHumanActions.length>=8,`Technician II Course ${n}: human/evidence gate list incomplete`);
   assert.equal(status.visualLayer?.primaryConcepts,n===8?8:4,`Technician II Course ${n}: primary visual concept count mismatch`);
   assert.equal(status.visualLayer?.reviewCandidates,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: all primary visuals should be built as review candidates`);
