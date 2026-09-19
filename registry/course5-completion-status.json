@@ -16,7 +16,8 @@
     "scripts/test-tech1-review-queues.mjs",
     "scripts/test-build-identity-endpoint.mjs",
     "scripts/verify-public-deployment-identity.mjs",
-    "scripts/test-tech1-courses3-7-learner-runtime.mjs"
+    "scripts/test-tech1-courses3-7-learner-runtime.mjs",
+    "docs/learning-hub/tech1/course-005/pilot/PILOT-PROTOCOL.md"
   ],
   "nextMachineActions": [
     "complete deployed responsive/manual learner-surface QA and record defects",
@@ -35,5 +36,12 @@
   ],
   "deploymentEvidence": "registry/course5-deployment-evidence.json",
   "publicRouteReadback": "verified-partial",
-  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open."
+  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open.",
+  "pilotProtocol": {
+    "state": "protocol-ready-pilot-not-started",
+    "path": "docs/learning-hub/tech1/course-005/pilot/PILOT-PROTOCOL.md",
+    "evidenceCollected": false,
+    "approvalRecorded": false,
+    "boundary": "Protocol readiness does not establish pilot completion, assessment validity, standard setting, or credential release."
+  }
 }
