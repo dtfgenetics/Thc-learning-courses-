@@ -118,6 +118,56 @@ function renderCourseEnrollment(details, course) {
   details.append(panel);
 }
 
+function renderPathwayPanel(details, course) {
+  const pathway = course.pathway;
+  const hasCoursePrerequisites = Array.isArray(course.prerequisites) && course.prerequisites.length > 0;
+  if (!pathway && !course.level && !hasCoursePrerequisites) return;
+
+  const panel = document.createElement('section');
+  panel.className = 'course-pathway-panel';
+  panel.setAttribute('aria-label', `${course.title} pathway and prerequisites`);
+  panel.append(text('p', 'Pathway & prerequisites', 'course-pathway-heading'));
+
+  if (course.level) {
+    panel.append(text('p', `Course level: ${course.level}`, 'course-pathway-line'));
+  }
+
+  if (pathway) {
+    const status = humanStatus(pathway.status);
+    panel.append(text('p', `Professional pathway: ${pathway.title} • ${status}`, 'course-pathway-line'));
+    if ((pathway.targetRoles ?? []).length) {
+      panel.append(text('p', `Target roles: ${pathway.targetRoles.join(', ')}`, 'course-pathway-line'));
+    }
+    if ((pathway.proficiencyTarget ?? []).length) {
+      panel.append(text('p', `Program proficiency target: ${pathway.proficiencyTarget.join(' / ')}`, 'course-pathway-line'));
+    }
+    if ((pathway.prerequisiteCredentials ?? []).length) {
+      const heading = text('p', 'Professional pathway prerequisite', 'course-pathway-subheading');
+      const list = document.createElement('ul');
+      list.className = 'course-pathway-list';
+      for (const prerequisite of pathway.prerequisiteCredentials) {
+        list.append(text('li', `${prerequisite.title} • ${humanStatus(prerequisite.status)}`));
+      }
+      panel.append(heading, list);
+      panel.append(text('p', 'This program prerequisite applies to the professional credential pathway. It does not by itself restrict access to public academic study unless the course prerequisites below say so.', 'course-pathway-note'));
+    }
+  }
+
+  if (hasCoursePrerequisites) {
+    panel.append(text('p', 'Public study prerequisites', 'course-pathway-subheading'));
+    const list = document.createElement('ul');
+    list.className = 'course-pathway-list';
+    for (const prerequisite of course.prerequisites) list.append(text('li', prerequisite));
+    panel.append(list);
+  }
+
+  if (Array.isArray(course.intendedAudience) && course.intendedAudience.length) {
+    panel.append(text('p', `Intended audience: ${course.intendedAudience.join('; ')}`, 'course-pathway-note'));
+  }
+
+  details.append(panel);
+}
+
 function renderCatalog() {
   catalogRoot.replaceChildren();
   const query = searchInput.value.trim();
@@ -156,6 +206,7 @@ function renderCatalog() {
     }
 
     renderCourseEnrollment(details, course);
+    renderPathwayPanel(details, course);
 
     for (const module of course.modules) {
       const section = document.createElement('section');
