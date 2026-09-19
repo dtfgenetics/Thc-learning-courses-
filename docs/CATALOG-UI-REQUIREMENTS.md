@@ -11,5 +11,7 @@ The public `/courses/` experience must:
 - present academic-course enrollment separately from professional credential eligibility, assessment, practical, review, and issuance gates;
 - explain that public academic courses and professional credential release are separate states;
 - remain crawlable and usable on mobile, tablet, and desktop;
+- expose safe canonical pathway discovery metadata for learning courses: program name/status, target roles, course level, public-study prerequisites, and professional-program prerequisite credentials when applicable;
+- distinguish professional-program prerequisites from public academic-study prerequisites so a draft credential prerequisite is not presented as a blanket restriction on public learning content;
 - preserve the broader DTFSeeds navigation shell;
 - avoid exposing secure credential assessment material.
