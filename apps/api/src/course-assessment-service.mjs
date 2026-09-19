@@ -173,6 +173,37 @@ export async function startOrResumeCourseAssessment({ learnerStore, subject, cou
   return { status: 200, body: safeAttemptView(bundle, attempt, { resumed }) };
 }
 
+export async function getCourseAssessmentAttemptStatus({ learnerStore, subject, attemptId }) {
+  const attempt = await learnerStore.getAssessmentAttempt(subject, { attemptId });
+  if (!attempt) return { status: 404, body: { error: 'assessment-attempt-not-found' } };
+  const assessment = loadById('assessments', attempt.assessmentId);
+  if (!assessment?.extensions?.courseId) return { status: 409, body: { error: 'course-assessment-not-released' } };
+  const bundle = loadPublishedCourseAssessment(assessment.extensions.courseId);
+  if (bundle.error) return { status: 409, body: { error: bundle.error } };
+  ensureAttemptMatchesPackage(attempt, bundle);
+  if (attempt.status === 'scored') {
+    return { status: 200, body: resultView(bundle, attempt, competencyRowsFromScoredAttempt(attempt)) };
+  }
+  if (attempt.status !== 'started') {
+    return {
+      status: 200,
+      body: {
+        course: { id: bundle.course.id, title: bundle.course.title, version: bundle.course.version },
+        attempt: {
+          id: attempt.id,
+          status: attempt.status,
+          startedAt: attempt.startedAt ?? null,
+          submittedAt: attempt.submittedAt ?? null,
+          scoredAt: attempt.scoredAt ?? null
+        },
+        editable: false,
+        resumed: true
+      }
+    };
+  }
+  return { status: 200, body: { ...safeAttemptView(bundle, attempt, { resumed: true }), editable: true } };
+}
+
 export async function saveCourseAssessmentResponses({ learnerStore, subject, attemptId, responses }) {
   const attempt = await learnerStore.getAssessmentAttempt(subject, { attemptId });
   if (!attempt) return { status: 404, body: { error: 'assessment-attempt-not-found' } };

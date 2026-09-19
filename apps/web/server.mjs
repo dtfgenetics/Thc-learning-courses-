@@ -195,9 +195,36 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   const modules = new Map(readDirJson('content/modules').map((item) => [item.id, item]));
   const lessons = new Map(readDirJson('content/lessons').map((item) => [item.id, item]));
   const assessments = new Map(readDirJson('content/assessments').map((item) => [item.id, item]));
+  const credentialPrograms = new Map(readDirJson('content/credential-programs').map((item) => [item.id, item]));
   const publicReleaseIds = buildPublicReleaseIds({ modules, assessments });
+  const safeStringList = (value) => Array.isArray(value) ? value.filter((entry) => typeof entry === 'string' && entry.trim()).map((entry) => entry.trim()) : [];
+  const safePathway = (course) => {
+    const programId = course.extensions?.credentialPath;
+    const program = typeof programId === 'string' ? credentialPrograms.get(programId) : null;
+    if (!program) return null;
+    return {
+      id: program.id,
+      title: program.title,
+      status: program.status ?? 'draft',
+      targetRoles: safeStringList(program.targetRoles),
+      proficiencyTarget: safeStringList(program.proficiencyTarget),
+      prerequisiteCredentials: safeStringList(program.prerequisiteCredentials).map((id) => {
+        const prerequisite = credentialPrograms.get(id);
+        return { id, title: prerequisite?.title ?? id, status: prerequisite?.status ?? 'draft' };
+      })
+    };
+  };
   const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts, publicReleaseIds)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
-    id: course.id, title: course.title, version: course.version, status: publicStatus(course, publicReleaseIds), credentialBearing: Boolean(course.credentialBearing), description: course.description ?? course.summary ?? '',
+    id: course.id,
+    title: course.title,
+    version: course.version,
+    status: publicStatus(course, publicReleaseIds),
+    credentialBearing: Boolean(course.credentialBearing),
+    description: course.description ?? course.summary ?? '',
+    level: typeof course.level === 'string' ? course.level : null,
+    intendedAudience: safeStringList(course.intendedAudience),
+    prerequisites: safeStringList(course.prerequisites),
+    pathway: safePathway(course),
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
       id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds), assessment: module.assessment ?? null,
       lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts, publicReleaseIds)).map((lesson) => ({ id: lesson.id, title: lesson.title, status: publicStatus(lesson, publicReleaseIds), estimatedMinutes: lesson.estimatedMinutes ?? null }))

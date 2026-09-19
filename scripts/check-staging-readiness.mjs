@@ -29,6 +29,7 @@ for (const file of [
   'apps/api/src/server.mjs',
   'database/schema.sql',
   'openapi/credential-verifier.yaml',
+  'openapi/learner-api.yaml',
   'scripts/build-staging-candidate.mjs',
   'scripts/verify-staging-candidate.mjs',
   '.github/workflows/staging-candidate.yml',

@@ -6,7 +6,11 @@ import { createApiServer } from '../apps/api/src/server.mjs';
 const foundationsCourse = JSON.parse(
   fs.readFileSync(new URL('../content/courses/COURSE-CULT-FOUNDATIONS-001.json', import.meta.url), 'utf8')
 );
+const courseOne = JSON.parse(
+  fs.readFileSync(new URL('../content/courses/COURSE-LH-TECH1-001.json', import.meta.url), 'utf8')
+);
 const CURRENT_FOUNDATIONS_VERSION = foundationsCourse.version;
+const CURRENT_COURSE_ONE_VERSION = courseOne.version;
 
 const enrollments = new Map();
 const learnerStore = {
@@ -65,12 +69,12 @@ try {
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: CURRENT_FOUNDATIONS_VERSION })
+    body: JSON.stringify({ courseId: 'COURSE-LH-TECH1-001', courseVersion: CURRENT_COURSE_ONE_VERSION })
   });
   assert.equal(response.status, 200);
   let body = await response.json();
-  assert.equal(body.enrollment.courseId, 'COURSE-CULT-FOUNDATIONS-001');
-  assert.equal(body.enrollment.courseVersion, CURRENT_FOUNDATIONS_VERSION);
+  assert.equal(body.enrollment.courseId, 'COURSE-LH-TECH1-001');
+  assert.equal(body.enrollment.courseVersion, CURRENT_COURSE_ONE_VERSION);
   assert.equal(body.enrollment.status, 'active');
   assert.equal(Object.hasOwn(body.enrollment, 'passed'), false);
   assert.equal(Object.hasOwn(body.enrollment, 'credential'), false);
@@ -84,7 +88,7 @@ try {
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: CURRENT_FOUNDATIONS_VERSION })
+    body: JSON.stringify({ courseId: 'COURSE-LH-TECH1-001', courseVersion: CURRENT_COURSE_ONE_VERSION })
   });
   assert.equal(response.status, 200, 'enrollment should be idempotent');
   response = await fetch(`${base}/api/v1/me/enrollments`, { headers: { authorization: 'Bearer alice' } });
@@ -92,6 +96,16 @@ try {
 
   response = await fetch(`${base}/api/v1/me/enrollments`, { headers: { authorization: 'Bearer bob' } });
   assert.equal((await response.json()).enrollments.length, 0, 'enrollments must be isolated by verified subject');
+
+  response = await fetch(`${base}/api/v1/me/enrollments`, {
+    method: 'POST',
+    headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
+    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: CURRENT_FOUNDATIONS_VERSION })
+  });
+  assert.equal(response.status, 409);
+  body = await response.json();
+  assert.equal(body.error, 'course-not-open-for-enrollment');
+  assert.equal(body.courseStatus, 'draft');
 
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
@@ -104,12 +118,12 @@ try {
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: '0.9.0' })
+    body: JSON.stringify({ courseId: 'COURSE-LH-TECH1-001', courseVersion: '0.9.0' })
   });
   assert.equal(response.status, 409);
   body = await response.json();
   assert.equal(body.error, 'course-version-mismatch');
-  assert.equal(body.currentVersion, CURRENT_FOUNDATIONS_VERSION);
+  assert.equal(body.currentVersion, CURRENT_COURSE_ONE_VERSION);
 } finally {
   server.close();
   await once(server, 'close');

@@ -88,7 +88,24 @@ export function evaluateCourseAcademicCompletion({ bundle, progress = [], eviden
   const requiredLessonIds = [...new Set(bundle.lessons.map((lesson) => lesson.id))];
   const completedRows = progress.filter((row) => row?.status === 'completed' && requiredLessonIds.includes(row.lessonId));
   const completedLessonIds = [...new Set(completedRows.map((row) => row.lessonId))];
+  const completedLessonSet = new Set(completedLessonIds);
   const instructionComplete = requiredLessonIds.length > 0 && completedLessonIds.length === requiredLessonIds.length;
+  const moduleProgress = (bundle.modules ?? []).map((module) => {
+    const lessonIds = [...new Set(module.lessons ?? [])];
+    const moduleCompletedRows = completedRows.filter((row) => lessonIds.includes(row.lessonId));
+    const completedCount = lessonIds.filter((lessonId) => completedLessonSet.has(lessonId)).length;
+    const complete = lessonIds.length > 0 && completedCount === lessonIds.length;
+    return {
+      moduleId: module.id,
+      title: module.title ?? module.id,
+      requiredLessonCount: lessonIds.length,
+      completedLessonCount: completedCount,
+      completionPercent: lessonIds.length ? Math.round((completedCount / lessonIds.length) * 100) : 0,
+      complete,
+      completedAt: complete ? latestIso(moduleCompletedRows.map((row) => row.completedAt)) : null
+    };
+  });
+  const instructionPercent = requiredLessonIds.length ? Math.round((completedLessonIds.length / requiredLessonIds.length) * 100) : 0;
 
   const attempts = (evidence.assessmentAttempts ?? []).filter((row) => row.assessmentId === bundle.assessment.id && row.status === 'scored');
   const passedAttempts = attempts.filter((row) => row.passed === true);
@@ -118,11 +135,22 @@ export function evaluateCourseAcademicCompletion({ bundle, progress = [], eviden
     desiredEnrollmentStatus: complete ? 'completed' : 'active',
     requirementCompletedAt,
     missingRequirements,
+    instruction: {
+      complete: instructionComplete,
+      completionPercent: instructionPercent,
+      requiredLessonCount: requiredLessonIds.length,
+      completedLessonCount: completedLessonIds.length,
+      modules: moduleProgress
+    },
     snapshot: {
       courseId: bundle.course.id,
       courseVersion: String(bundle.course.version),
       requiredLessonCount: requiredLessonIds.length,
       completedLessonCount: completedLessonIds.length,
+      instructionCompletionPercent: instructionPercent,
+      completedModuleCount: moduleProgress.filter((module) => module.complete).length,
+      requiredModuleCount: moduleProgress.length,
+      modules: moduleProgress,
       finalAssessmentId: bundle.assessment.id,
       finalAssessmentStatus: writtenStatus,
       performanceAssessmentId: bundle.performanceAssessmentId,
