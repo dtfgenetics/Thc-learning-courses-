@@ -1,0 +1,68 @@
+name: Record public deployment identity
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Full deployed source SHA expected from /api/build-info
+        required: true
+        type: string
+      base_url:
+        description: Public Academy base URL
+        required: false
+        default: https://dtfseeds.com
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  verify-and-record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: dev
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Verify and record exact public deployment identity
+        run: >
+          node scripts/record-public-deployment-identity.mjs
+          --base-url "${{ inputs.base_url }}"
+          --expected-sha "${{ inputs.expected_sha }}"
+          --write
+      - name: Validate updated deployment evidence
+        run: |
+          npm run tech1:course-deployment-evidence:test
+          npm run tech2:course-completion-status:test
+          npm run academy:completion:check
+      - name: Create ledger update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          if git diff --quiet; then
+            echo "No ledger changes are required."
+            exit 0
+          fi
+          short_sha="${EXPECTED_SHA:0:12}"
+          branch="ops/deployment-identity-${short_sha}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add registry/
+          git commit -m "ops: record deployed Academy identity ${short_sha}"
+          git push --force-with-lease origin "$branch"
+          existing="$(gh pr list --base dev --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh pr create               --base dev               --head "$branch"               --title "Record deployed Academy identity ${short_sha}"               --body "Verified the public /api/build-info response against full source SHA \`${EXPECTED_SHA}\` and updated the Technician I/II deployment evidence ledgers. Manual responsive/accessibility and human certification gates remain fail-closed."
+          else
+            echo "PR #$existing already exists."
+          fi
