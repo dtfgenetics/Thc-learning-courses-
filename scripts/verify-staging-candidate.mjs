@@ -45,6 +45,7 @@ const expectedFingerprints = {
   systemReadiness: 'registry/system-readiness.json',
   databaseSchema: 'database/schema.sql',
   credentialVerifierOpenApi: 'openapi/credential-verifier.yaml',
+  learnerApiOpenApi: 'openapi/learner-api.yaml',
   dependencyLock: 'package-lock.json'
 };
 for (const [name, rel] of Object.entries(expectedFingerprints)) {
