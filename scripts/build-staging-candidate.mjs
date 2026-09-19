@@ -92,6 +92,7 @@ const manifest = {
     systemReadiness: sha256(path.join(runtimeDir, 'registry/system-readiness.json')),
     databaseSchema: sha256(path.join(runtimeDir, 'database/schema.sql')),
     credentialVerifierOpenApi: sha256(path.join(runtimeDir, 'openapi/credential-verifier.yaml')),
+    learnerApiOpenApi: sha256(path.join(runtimeDir, 'openapi/learner-api.yaml')),
     dependencyLock: sha256(path.join(runtimeDir, 'package-lock.json'))
   },
   boundaries: {
