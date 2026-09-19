@@ -184,15 +184,26 @@ async function renderCredentialProgress() {
   lessonView.focus();
 
   try {
-    const response = await fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/progress', {
-      headers: { accept: 'application/json' },
-      credentials: 'same-origin'
-    });
-    if (!response.ok) {
-      if (response.status === 401 || response.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
-      throw new Error(`Credential progress unavailable (${response.status}).`);
+    const [progressResponse, transcriptResponse] = await Promise.all([
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/progress', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/transcript', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      })
+    ]);
+    if (!progressResponse.ok) {
+      if (progressResponse.status === 401 || progressResponse.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
+      throw new Error(`Credential progress unavailable (${progressResponse.status}).`);
     }
-    const data = await response.json();
+    if (!transcriptResponse.ok) {
+      if (transcriptResponse.status === 401 || transcriptResponse.status === 403) throw new Error('Competency transcript is available after learner authentication.');
+      throw new Error(`Competency transcript unavailable (${transcriptResponse.status}).`);
+    }
+    const data = await progressResponse.json();
+    const transcriptData = await transcriptResponse.json();
     panel.querySelector('.status')?.remove();
 
     const summary = document.createElement('section');
@@ -276,25 +287,26 @@ async function renderCredentialProgress() {
     const transcript = document.createElement('section');
     transcript.className = 'portal-progress-section';
     transcript.append(text('h3', 'Competency transcript'));
-    if (!(data.competencies ?? []).length) {
+    transcript.append(text('p', 'This transcript is a privacy-bounded evidence view. It excludes learner identifiers, private evaluator notes, raw responses, and answer-key material.', 'portal-result-note'));
+    if (!(transcriptData.competencies ?? []).length) {
       transcript.append(text('p', 'No competency mastery records are available yet. Competency evidence is created by scored official assessments, not by opening lessons.', 'portal-result-note'));
     } else {
       const list = document.createElement('div');
       list.className = 'portal-evidence-list';
-      for (const row of data.competencies) {
+      for (const row of transcriptData.competencies) {
         const item = document.createElement('div');
         item.className = 'portal-evidence-row';
         const identity = document.createElement('div');
         identity.append(text('strong', row.competencyId));
-        identity.append(text('span', `Curriculum ${row.curriculumVersion}`, 'portal-evidence-meta'));
+        identity.append(text('span', `Curriculum ${row.curriculumVersion ?? 'not recorded'}`, 'portal-evidence-meta'));
         item.append(identity, text('span', statusLabel(row.masteryLevel), `portal-evidence-status status-${row.masteryLevel}`));
         list.append(item);
       }
       transcript.append(list);
     }
     panel.append(transcript);
-    panel.append(evidenceList('Practical & capstone evidence', data.performanceAssessments ?? [], 'assessmentId'));
-    panel.append(evidenceList('Employment portfolio', data.portfolioArtifacts ?? [], 'artifactId'));
+    panel.append(evidenceList('Practical & capstone evidence', transcriptData.performanceAssessments ?? [], 'assessmentId'));
+    panel.append(evidenceList('Employment portfolio', transcriptData.portfolioArtifacts ?? [], 'artifactId'));
   } catch (error) {
     panel.querySelector('.status')?.remove();
     panel.append(text('p', error.message, 'portal-error'));
