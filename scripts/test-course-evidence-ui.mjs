@@ -32,6 +32,12 @@ assert.match(portal, /privacy-bounded evidence view/, 'credential transcript mus
 assert.match(portal, /transcriptData\.competencies/, 'competency transcript rows must come from the transcript projection');
 assert.match(portal, /transcriptData\.performanceAssessments/, 'practical transcript rows must come from the transcript projection');
 assert.match(portal, /transcriptData\.portfolioArtifacts/, 'portfolio transcript rows must come from the transcript projection');
+assert.match(portal, /My Learning Dashboard/, 'learner portal should expose one consolidated dashboard');
+assert.match(portal, /\/api\/v1\/me\/enrollments/, 'dashboard should read authoritative enrollment state');
+assert.match(portal, /\/api\/v1\/me\/courses\/\$\{COURSE1_ID\}\/completion/, 'dashboard should read authoritative course completion');
+assert.match(portal, /Academic course status/, 'dashboard should separate academic course status');
+assert.match(portal, /Professional credential progress/, 'dashboard should separately label professional credential progress');
+assert.match(portal, /does not by itself issue or authorize a professional credential/, 'academic completion must not imply credential issuance');
 
 
 for (const forbidden of [
