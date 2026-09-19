@@ -31,6 +31,10 @@ function matchesQuery(course, query) {
 function progressLabel() {
   return progressMode === 'account' ? 'Account lesson progress' : 'Device lesson progress';
 }
+function humanStatus(value) {
+  return String(value ?? 'not-recorded').replaceAll('-', ' ');
+}
+
 
 function enrollmentFor(course) {
   return enrollments.find((row) => row.courseId === course.id && String(row.courseVersion) === String(course.version)) ?? null;
@@ -91,7 +95,7 @@ function renderCourseEnrollment(details, course) {
   if (enrollment) {
     status.textContent = enrollment.status === 'completed'
       ? 'Enrolled • academic requirements complete'
-      : `Enrolled • ${statusLabel(enrollment.status)}`;
+      : `Enrolled • ${humanStatus(enrollment.status)}`;
     panel.append(status);
     details.append(panel);
     return;
