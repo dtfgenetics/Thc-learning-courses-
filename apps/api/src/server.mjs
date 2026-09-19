@@ -9,7 +9,7 @@ import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
-import { startOrResumeCourseAssessment, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { startOrResumeCourseAssessment, getCourseAssessmentAttemptStatus, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
 import { loadCourseAcademicCompletionBundle, evaluateCourseAcademicCompletion } from './course-enrollment-completion-service.mjs';
 import {
   getCoursePracticalEvaluation,
@@ -510,6 +510,16 @@ export function createHandler({
         if (!auth) return;
         if (!learnerStore || ['findOpenAssessmentAttempt','createAssessmentAttempt'].some((method) => typeof learnerStore[method] !== 'function')) return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
         const result = await startOrResumeCourseAssessment({ learnerStore, subject: auth.subject, courseId: courseAssessmentStartMatch[1] });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const assessmentAttemptStatusMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]{36})$/);
+      if (req.method === 'GET' && assessmentAttemptStatusMatch) {
+        route = 'GET /api/v1/me/assessment-attempts/:attemptId';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function') return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        const result = await getCourseAssessmentAttemptStatus({ learnerStore, subject: auth.subject, attemptId: assessmentAttemptStatusMatch[1] });
         return json(res, result.status, { ...result.body, requestId });
       }
 
