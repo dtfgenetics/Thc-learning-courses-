@@ -15,7 +15,14 @@ for (let n=2;n<=7;n++) {
   assert.ok(typeof status.machineCompletionBoundary==='string' && status.machineCompletionBoundary.length>120,`Course ${n} needs a substantive machine-completion boundary`);
   assert.ok(Array.isArray(status.evidence) && status.evidence.length>=3,`Course ${n} needs machine evidence paths`);
   for (const rel of status.evidence) assert.ok(fs.existsSync(path.join(root,rel)),`Course ${n} completion evidence missing: ${rel}`);
-  assert.ok(Array.isArray(status.nextMachineActions) && status.nextMachineActions.length>0,`Course ${n} needs next machine actions`);
+  assert.ok(Array.isArray(status.nextMachineActions),`Course ${n} needs a machine action queue`);
+  if(status.machineResolvableWorkComplete===true){
+    assert.equal(status.nextMachineActions.length,0,`Course ${n} cannot claim machine completion with open machine actions`);
+    assert.equal(status.deployedMachineSurfaceQa?.state,'verified',`Course ${n} machine completion requires deployed surface QA`);
+    assert.match(status.deployedMachineSurfaceQa?.sourceSha??'',/^(?:[0-9a-f]{40}|[0-9a-f]{64})$/i,`Course ${n} machine completion requires an exact deployed source SHA`);
+  } else {
+    assert.ok(status.nextMachineActions.length>0,`Course ${n} must list remaining machine work while incomplete`);
+  }
   assert.ok(Array.isArray(status.nextHumanActions) && status.nextHumanActions.length>0,`Course ${n} needs explicit human/evidence gates`);
 }
 console.log('Technician I Course 2-7 fail-closed completion registries: PASS');
