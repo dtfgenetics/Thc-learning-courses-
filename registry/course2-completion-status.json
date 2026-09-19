@@ -119,7 +119,7 @@
         "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md"
       ],
       "humanGateRequired": true,
-      "note": "A controlled pilot protocol is now available, but no learner/item/practical pilot evidence, calibration result, psychometric result, or pilot approval is claimed."
+      "note": "Controlled pilot protocol is ready; no learner/item/practical pilot evidence or approval is claimed."
     },
     {
       "id": "course-standard-setting",
@@ -161,6 +161,14 @@
     "registry/course2-deployment-evidence.json",
     "scripts/test-tech1-review-queues.mjs",
     "scripts/test-build-identity-endpoint.mjs",
-    "scripts/verify-public-deployment-identity.mjs"
-  ]
+    "scripts/verify-public-deployment-identity.mjs",
+    "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md"
+  ],
+  "pilotProtocol": {
+    "state": "protocol-ready-pilot-not-started",
+    "path": "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md",
+    "evidenceCollected": false,
+    "approvalRecorded": false,
+    "boundary": "Protocol readiness does not establish pilot completion, assessment validity, standard setting, or credential release."
+  }
 }
