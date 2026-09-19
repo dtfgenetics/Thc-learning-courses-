@@ -9,7 +9,7 @@ const foundationsCourse = JSON.parse(
 const courseOne = JSON.parse(
   fs.readFileSync(new URL('../content/courses/COURSE-LH-TECH1-001.json', import.meta.url), 'utf8')
 );
-const CURRENT_COURSE_ONE_VERSION = foundationsCourse.version;
+const CURRENT_FOUNDATIONS_VERSION = foundationsCourse.version;
 const CURRENT_COURSE_ONE_VERSION = courseOne.version;
 
 const enrollments = new Map();
@@ -100,7 +100,7 @@ try {
   response = await fetch(`${base}/api/v1/me/enrollments`, {
     method: 'POST',
     headers: { authorization: 'Bearer alice', 'content-type': 'application/json' },
-    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: foundationsCourse.version })
+    body: JSON.stringify({ courseId: 'COURSE-CULT-FOUNDATIONS-001', courseVersion: CURRENT_FOUNDATIONS_VERSION })
   });
   assert.equal(response.status, 409);
   body = await response.json();
