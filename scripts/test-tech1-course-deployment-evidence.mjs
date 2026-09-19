@@ -14,8 +14,15 @@ for(let n=2;n<=7;n++){
   assert.equal(evidence.representativeAssessmentReadbackVerified,true,`Course ${n} representative assessment readback must be verified`);
   assert.equal(evidence.trainingCredentialBoundaryObserved,true,`Course ${n} public page must preserve the training/credential boundary`);
   assert.equal(evidence.responsiveManualQaApproved,false,`Course ${n} must not falsely claim manual responsive QA approval`);
-  assert.equal(evidence.exactDeploymentBuildId,null,`Course ${n} build id must remain null until actually verified`);
-  assert.equal(evidence.exactDeploymentSourceSha,null,`Course ${n} source SHA must remain null until actually verified`);
+  const identityRecorded = evidence.exactDeploymentBuildId !== null || evidence.exactDeploymentSourceSha !== null;
+  if (identityRecorded) {
+    assert.match(evidence.exactDeploymentBuildId ?? '', /^[A-Za-z0-9._:@/-]{1,160}$/, `Course ${n} build id must be controlled text`);
+    assert.match(evidence.exactDeploymentSourceSha ?? '', /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/i, `Course ${n} source SHA must be full length`);
+    assert.match(evidence.evidenceState ?? '', /build-identity-verified/, `Course ${n} evidence state must record verified identity`);
+  } else {
+    assert.equal(evidence.exactDeploymentBuildId,null,`Course ${n} build id must remain null until actually verified`);
+    assert.equal(evidence.exactDeploymentSourceSha,null,`Course ${n} source SHA must remain null until actually verified`);
+  }
   for(const key of ['courseUrl','representativeLessonUrl','representativeAssessmentUrl']){
     assert.match(evidence[key]??'',/^https:\/\/dtfseeds\.com\//,`Course ${n} ${key} must use the public dtfseeds.com route`);
   }

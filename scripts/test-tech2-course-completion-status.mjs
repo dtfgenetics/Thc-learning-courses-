@@ -38,7 +38,14 @@ for(let n=1;n<=8;n++){
   assert.equal(deployment.representativeAssessmentReadbackVerified,true);
   assert.equal(deployment.trainingCredentialBoundaryObserved,true);
   assert.equal(deployment.responsiveManualQaApproved,false,`Technician II Course ${n}: manual responsive/accessibility QA must not be fabricated`);
-  assert.equal(deployment.exactDeploymentBuildId,null,`Technician II Course ${n}: build id must remain null until verified`);
-  assert.equal(deployment.exactDeploymentSourceSha,null,`Technician II Course ${n}: source SHA must remain null until verified`);
+  const identityRecorded = deployment.exactDeploymentBuildId !== null || deployment.exactDeploymentSourceSha !== null;
+  if (identityRecorded) {
+    assert.match(deployment.exactDeploymentBuildId ?? '', /^[A-Za-z0-9._:@/-]{1,160}$/, `Technician II Course ${n}: build id must be controlled text`);
+    assert.match(deployment.exactDeploymentSourceSha ?? '', /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/i, `Technician II Course ${n}: source SHA must be full length`);
+    assert.match(deployment.evidenceState ?? '', /build-identity-verified/, `Technician II Course ${n}: evidence state must record verified identity`);
+  } else {
+    assert.equal(deployment.exactDeploymentBuildId,null,`Technician II Course ${n}: build id must remain null until verified`);
+    assert.equal(deployment.exactDeploymentSourceSha,null,`Technician II Course ${n}: source SHA must remain null until verified`);
+  }
 }
 console.log('Technician II Courses 1-8 completion/deployment evidence boundary: PASS');

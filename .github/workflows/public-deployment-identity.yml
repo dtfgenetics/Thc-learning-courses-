@@ -1,0 +1,99 @@
+name: Record public deployment identity
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Full deployed source SHA expected from /api/build-info
+        required: true
+        type: string
+      base_url:
+        description: Public Academy base URL
+        required: false
+        default: https://dtfseeds.com
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  verify-and-record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: dev
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Resolve verification target
+        id: target
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_SHA: ${{ inputs.expected_sha }}
+          INPUT_BASE_URL: ${{ inputs.base_url }}
+          PUSH_SHA: ${{ github.sha }}
+        run: |
+          if [ "$EVENT_NAME" = "push" ]; then
+            echo "expected_sha=$PUSH_SHA" >> "$GITHUB_OUTPUT"
+            echo "base_url=https://dtfseeds.com" >> "$GITHUB_OUTPUT"
+          else
+            echo "expected_sha=$INPUT_SHA" >> "$GITHUB_OUTPUT"
+            echo "base_url=${INPUT_BASE_URL:-https://dtfseeds.com}" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Wait for deployed build identity
+        env:
+          EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
+          BASE_URL: ${{ steps.target.outputs.base_url }}
+        run: |
+          for attempt in {1..20}; do
+            if node scripts/verify-public-deployment-identity.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA"; then
+              exit 0
+            fi
+            echo "Deployment identity not current yet (attempt $attempt/20)."
+            sleep 30
+          done
+          echo "::error::Public deployment did not report expected source SHA within the verification window."
+          exit 1
+      - name: Record exact public deployment identity
+        env:
+          EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
+          BASE_URL: ${{ steps.target.outputs.base_url }}
+        run: |
+          node scripts/record-public-deployment-identity.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA" --write
+      - name: Validate updated deployment evidence
+        run: |
+          npm run tech1:course-deployment-evidence:test
+          npm run tech2:course-completion-status:test
+          npm run academy:completion:check
+      - name: Create ledger update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
+        run: |
+          if git diff --quiet; then
+            echo "No ledger changes are required."
+            exit 0
+          fi
+          short_sha="${EXPECTED_SHA:0:12}"
+          branch="ops/deployment-identity-${short_sha}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add registry/
+          git commit -m "ops: record deployed Academy identity ${short_sha}"
+          git push --force-with-lease origin "$branch"
+          existing="$(gh pr list --base dev --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh pr create               --base dev               --head "$branch"               --title "Record deployed Academy identity ${short_sha}"               --body "Verified the public /api/build-info response against full source SHA \`${EXPECTED_SHA}\` and updated the Technician I/II deployment evidence ledgers. Manual responsive/accessibility and human certification gates remain fail-closed."
+          else
+            echo "PR #$existing already exists."
+          fi
