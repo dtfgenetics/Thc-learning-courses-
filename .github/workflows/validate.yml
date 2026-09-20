@@ -83,7 +83,7 @@ jobs:
       - name: Enforce Technician I credential machine-layer contract
         run: node scripts/test-tech1-machine-layer.mjs
       - name: Enforce public credential-bank security boundary
-        run: node scripts/test-public-credential-bank-boundary.mjs
+        run: npm run credential:public-bank-boundary:test
       - name: Enforce fail-closed Technician I release readiness
         run: node scripts/test-tech1-release-readiness.mjs
       - name: Run complete curriculum and credential audit suite with diagnostics
