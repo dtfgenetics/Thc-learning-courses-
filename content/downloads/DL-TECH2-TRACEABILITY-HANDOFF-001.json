@@ -1,0 +1,27 @@
+{
+  "id": "DL-TECH2-TRACEABILITY-HANDOFF-001",
+  "title": "Technician II Traceability, Metrics and Shift Handoff Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "record-template",
+  "format": "csv",
+  "description": "A structured shift record linking crop or lot identity, production metrics, open deviations, completed work, pending checks, authority boundaries, and receiving-owner handoff.",
+  "path": "/downloads/tech2-traceability-shift-handoff.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-007",
+    "COURSE-LH-CLOP-005"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Record the exact crop, room, lot, batch, or task identity used by the local traceability system.",
+    "Separate observed metric values from interpretation and corrective decisions.",
+    "Carry forward unresolved deviations, quarantines, maintenance issues, sampling, and verification tasks with a named receiving owner.",
+    "Document when the receiving role acknowledges the handoff and any new priority or escalation."
+  ],
+  "limitations": [
+    "This record supplements rather than replaces regulated inventory, batch, quality, security, or employment records.",
+    "Site-specific identifiers, retention rules, signatures, access controls, and required fields must follow the approved local system."
+  ]
+}
