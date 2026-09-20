@@ -12,6 +12,9 @@ assert.equal(plan.program,'CREDPROG-CULT-TECH-II-001');
 assert.equal(plan.policy?.expandable,true);
 assert.equal(plan.policy?.maximumAssetCount,null);
 assert.equal(plan.policy?.primaryConceptCount,36);
+assert.equal(plan.policy?.productionFormatPolicy?.preferred,'raster');
+assert.equal(plan.policy?.productionFormatPolicy?.svgReleaseAllowed,false);
+assert.deepEqual(plan.policy?.productionFormatPolicy?.allowedReleasedExtensions,['png','webp','jpg','jpeg']);
 assert.equal((plan.courses??[]).length,8);
 
 let total=0;
@@ -27,10 +30,13 @@ for(const [courseIndex,entry] of plan.courses.entries()){
     ids.add(concept.conceptId);
     assert.equal(concept.outcome,course.learningOutcomes[concept.outcomeIndex-1],`${concept.conceptId}: outcome drift`);
     assert.ok(plan.policy.statusValues.includes(concept.status),`${concept.conceptId}: unsupported status`);
-    assert.match(concept.targetPublicPath??'',/^\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.svg$/);
-    assert.match(concept.sourcePath??'',/^apps\/web\/public\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.svg$/);
+    assert.match(concept.targetPublicPath??'',/^\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.(?:svg|png|webp|jpe?g)$/i);
+    assert.match(concept.sourcePath??'',/^apps\/web\/public\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.(?:svg|png|webp|jpe?g)$/i);
     const releaseStates=new Set(['approved','produced']);
     if(releaseStates.has(concept.status)){
+      const releasedExt=path.extname(concept.sourcePath).slice(1).toLowerCase();
+      assert.ok(plan.policy.productionFormatPolicy.allowedReleasedExtensions.includes(releasedExt),`${concept.conceptId}: released Technician II visual must use an approved raster format`);
+      assert.notEqual(releasedExt,'svg',`${concept.conceptId}: SVG cannot be promoted to approved/produced`);
       assert.equal(concept.qaApproved,true,`${concept.conceptId}: approved/produced requires QA approval`);
       assert.ok(typeof concept.learnerTextAlternative==='string'&&concept.learnerTextAlternative.trim().length>=40,`${concept.conceptId}: meaningful text alternative required`);
       assert.ok(typeof concept.caption==='string'&&concept.caption.trim().length>=20,`${concept.conceptId}: caption required`);
@@ -69,15 +75,25 @@ try{
     for(const concept of entry.concepts.filter((row)=>['review-candidate','approved','produced'].includes(row.status))){
       const response=await fetch(`${base}${concept.targetPublicPath}`);
       assert.equal(response.status,200,`${concept.conceptId}: governed learner visual must resolve through the Academy runtime`);
-      assert.match(response.headers.get('content-type')??'',/^image\/svg\+xml/,`${concept.conceptId}: runtime must serve SVG content type`);
-      const svg=await response.text();
-      assert.match(svg,/<svg[\s>]/,`${concept.conceptId}: SVG markup missing`);
-      assert.match(svg,/<title[\s>]/,`${concept.conceptId}: accessible SVG title missing`);
-      assert.match(svg,/<desc[\s>]/,`${concept.conceptId}: accessible SVG description missing`);
+      const ext=path.extname(concept.targetPublicPath).toLowerCase();
+      const expectedTypes={'.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.jpeg':'image/jpeg'};
+      assert.ok(expectedTypes[ext],`${concept.conceptId}: supported image extension required`);
+      assert.ok((response.headers.get('content-type')??'').startsWith(expectedTypes[ext]),`${concept.conceptId}: runtime content type must match source extension`);
+      if(ext==='.svg'){
+        const svg=await response.text();
+        assert.match(svg,/<svg[\s>]/,`${concept.conceptId}: SVG markup missing`);
+        assert.match(svg,/<title[\s>]/,`${concept.conceptId}: accessible SVG title missing`);
+        assert.match(svg,/<desc[\s>]/,`${concept.conceptId}: accessible SVG description missing`);
+      }else{
+        const bytes=await response.arrayBuffer();
+        assert.ok(bytes.byteLength>100,`${concept.conceptId}: raster asset must not be empty`);
+      }
     }
   }
-  const invalid=await fetch(`${base}/assets/tech2/course9/outcome-01.svg`);
+  const invalid=await fetch(`${base}/assets/tech2/course9/outcome-01.png`);
   assert.equal(invalid.status,404,'Technician II asset route must reject course directories outside 1-8');
+  const unsupported=await fetch(`${base}/assets/tech2/course1/outcome-01.gif`);
+  assert.equal(unsupported.status,404,'Technician II asset route must reject unsupported image formats');
 } finally {
   server.close();
   await once(server,'close');
