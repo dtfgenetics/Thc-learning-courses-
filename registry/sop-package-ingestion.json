@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "asOf": "2026-09-20",
+  "targetCount": 24,
+  "policy": "A controlled SOP package cannot be marked ingested until its source files are present in the repository, reviewed, mapped, and approved for the stated release surface.",
+  "repositoryLearnerPack": {
+    "status": "draft-internal-preview",
+    "sourceLesson": "LESSON-PRO-SOP-DESIGN-001",
+    "sourceReference": "REF-EPA-SOP-QAG6",
+    "downloadIds": ["DL-SOP-AUTHORING-001", "DL-SOP-EXECUTION-001", "DL-SOP-DEVIATION-001", "DL-SOP-TRAINING-001"]
+  },
+  "externalPackages": [
+    {"externalId": "GROW-042", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
+    {"externalId": "GROW-050", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
+    {"externalId": "GROW-060", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
+    {"externalId": "GROW-070", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"}
+  ],
+  "remainingUnidentifiedTargets": 20
+}

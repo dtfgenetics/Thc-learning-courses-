@@ -1,0 +1,16 @@
+{
+  "id": "DL-SOP-TRAINING-001",
+  "title": "SOP Training and Authorization Verification Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "record-template",
+  "format": "csv",
+  "description": "A training evidence record linking a learner and role to the controlled SOP version, training method, knowledge check, observed practice, restrictions, remediation, and authorization decision.",
+  "path": "/downloads/sop-training-verification.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-PRO-SOP-001", "COURSE-LH-TECH1-001"],
+  "resourceMappings": [],
+  "instructions": ["Identify the exact controlled SOP version covered by the training event.", "Record knowledge and observed-practice results independently when both are required.", "Document restrictions, remediation, and retraining triggers without implying authorization.", "Require the designated authorizing role to make and record the final work-authorization decision."],
+  "limitations": ["Course or template completion alone does not authorize controlled work.", "The organization must define qualified assessors, passing rules, retraining triggers, record retention, and authorization roles."]
+}
