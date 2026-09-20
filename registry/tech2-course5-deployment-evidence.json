@@ -1,8 +1,8 @@
 {
   "courseId": "COURSE-LH-TECH2-005",
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-005.json",
-  "verifiedAt": "2026-09-18",
-  "verificationMethod": "anonymous public HTTP readback",
+  "verifiedAt": "2026-09-20",
+  "verificationMethod": "anonymous public HTTP readback + successful DTFSeeds GitHub Actions publish/verification evidence",
   "courseUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/propagation-canopy-performance-troubleshooting/",
   "representativeLessonUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/propagation-canopy-performance-troubleshooting/lesson-01/",
   "representativeAssessmentUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/propagation-canopy-performance-troubleshooting/knowledge-check/",
@@ -15,8 +15,16 @@
   "representativeAssessmentReadbackVerified": true,
   "trainingCredentialBoundaryObserved": true,
   "responsiveManualQaApproved": false,
-  "exactDeploymentBuildId": null,
-  "exactDeploymentSourceSha": null,
-  "evidenceState": "partial-public-readback-verified-build-identity-and-manual-responsive-qa-open",
-  "note": "This record proves anonymous public reachability and the public academic-training boundary only. It does not claim exact deployment build identity, source SHA equivalence, manual responsive/accessibility approval, practical/capstone validity, psychometric evidence, or credential release approval."
+  "exactDeploymentBuildId": "github-actions-run:34999459498",
+  "exactDeploymentSourceSha": "068c333deb15bfca1d606748abda386dbfea87a9",
+  "evidenceState": "public-readback-and-build-identity-verified-manual-responsive-qa-open",
+  "note": "Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and the exact DTFSeeds deployment workflow/site commit are verified. The production publisher fetched the curriculum from dtfgenetics/Thc-learning-courses-@main without recording a pinned curriculum SHA, so exact curriculum-version equivalence remains a separate evidence concern. Manual responsive/accessibility approval, practical/capstone validity, pilot/calibration evidence, standard setting, and credential release approval remain open.",
+  "deploymentRepository": "dtfgenetics/Thc",
+  "deploymentWorkflow": "Publish Technician II Courses 1-8",
+  "deploymentWorkflowRunId": 34999459498,
+  "deploymentWorkflowRunNumber": 2,
+  "deploymentArtifactId": 10408628594,
+  "deploymentArtifactDigest": "sha256:1f155adf5384efd3fbc1abf449522b72eb912ef445e65f527177501afa088ca8",
+  "curriculumSource": "dtfgenetics/Thc-learning-courses-@main",
+  "curriculumSourceShaPinnedByDeployment": false
 }
