@@ -1,0 +1,16 @@
+{
+  "id": "DL-SOP-EXECUTION-001",
+  "title": "SOP Execution and Read-and-Follow Checklist",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "record-template",
+  "format": "csv",
+  "description": "A read-and-follow evidence record for verifying the controlled version, prerequisites, execution, acceptance criteria, exceptions, escalation, and outcome.",
+  "path": "/downloads/sop-execution-checklist.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-PRO-SOP-001", "COURSE-LH-TECH1-001"],
+  "resourceMappings": [],
+  "instructions": ["Confirm the controlled document identifier and version before starting.", "Verify training, safety, tools, materials, and other prerequisites before the first step.", "Record completion and acceptance evidence as work occurs rather than reconstructing it later.", "Stop, hold, and escalate when the procedure cannot be followed or a criterion is not met."],
+  "limitations": ["This checklist does not replace the controlling SOP or authorize work outside the learner's assigned role.", "Facility records, safety controls, and escalation requirements remain controlling."]
+}
