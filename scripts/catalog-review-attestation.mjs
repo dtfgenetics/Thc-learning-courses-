@@ -18,12 +18,24 @@ function readAttestations() {
     .map((name) => JSON.parse(fs.readFileSync(path.join(dir, name), 'utf8')));
 }
 
-function currentTree(rel) {
+function gitObjectSha(spec) {
   try {
-    return execFileSync('git', ['rev-parse', `HEAD:${rel}`], { cwd: root, encoding: 'utf8' }).trim();
+    return execFileSync('git', ['rev-parse', spec], { cwd: root, encoding: 'utf8' }).trim();
   } catch {
     return null;
   }
+}
+
+function currentTree(rel) {
+  return gitObjectSha(`HEAD:${rel}`);
+}
+
+function currentObjectBlob(rel, objectId) {
+  return gitObjectSha(`HEAD:${rel}/${objectId}.json`);
+}
+
+function attestedObjectBlob(treeSha, objectId) {
+  return gitObjectSha(`${treeSha}:${objectId}.json`);
 }
 
 export function validCatalogAttestations() {
@@ -34,16 +46,25 @@ export function validCatalogAttestations() {
   });
 }
 
-export function catalogAttestationApproval(objectType, reviewType) {
+export function catalogAttestationApproval(objectType, reviewType, objectId = null) {
   const mapping = directoryByObjectType[objectType];
   if (!mapping) return null;
   const [rel, key] = mapping;
   const tree = currentTree(rel);
   if (!tree) return null;
+
   return readAttestations()
     .filter((attestation) => attestation.status === 'approved')
     .filter((attestation) => (attestation.approvalTypes ?? []).includes(reviewType))
-    .filter((attestation) => attestation.scope?.[key] === tree)
+    .filter((attestation) => {
+      const attestedTree = attestation.scope?.[key];
+      if (!attestedTree) return false;
+      if (!objectId) return attestedTree === tree;
+
+      const currentBlob = currentObjectBlob(rel, objectId);
+      const attestedBlob = attestedObjectBlob(attestedTree, objectId);
+      return Boolean(currentBlob) && currentBlob === attestedBlob;
+    })
     .sort((a, b) => Date.parse(b.reviewedAt) - Date.parse(a.reviewedAt))[0] ?? null;
 }
 

@@ -38,7 +38,7 @@ function latestReview(objectId, objectVersion, reviewType) {
     .sort((a, b) => Date.parse(b.reviewedAt) - Date.parse(a.reviewedAt))[0] ?? null;
 }
 function approvalFor(objectType, objectId, objectVersion, reviewType) {
-  return latestReview(objectId, objectVersion, reviewType) ?? catalogAttestationApproval(objectType, reviewType);
+  return latestReview(objectId, objectVersion, reviewType) ?? catalogAttestationApproval(objectType, reviewType, objectId);
 }
 function stateFromReview(review) {
   if (!review) return 'pending';

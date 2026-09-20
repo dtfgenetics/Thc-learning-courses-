@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-M01-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
   "competency": "COMP-PLANT-BIO-001",
@@ -8,17 +8,17 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "Formative diagnostic check 7: A symptom appears only on one cultivar in two rooms but not on other cultivars sharing those rooms. Which observation most changes the next diagnostic step?",
+  "stem": "After an irrigation-system change, similar stress appears first on plants at the end of one line across two cultivars, while the same cultivars elsewhere remain unaffected. Which observation would best discriminate a local process problem from a cultivar effect?",
   "choices": [
-    "Room effects are proven irrelevant.",
-    "The cultivar is proven genetically defective.",
-    "The repeated cultivar association increases the value of comparing genotype/developmental response with shared environmental and root-zone evidence.",
-    "No additional environmental or root-zone data are needed."
+    "Compare delivery, root-zone moisture and symptom timing at affected end-of-line plants with matched unaffected plants elsewhere.",
+    "Compare only the cultivar names on the plant tags.",
+    "Assume both cultivars developed the same genetic defect at once.",
+    "Wait until every plant in the room shows the same symptom."
   ],
-  "correct": 2,
-  "rationale": "A repeated cohort association is useful evidence but does not by itself prove a genetic cause or eliminate shared-system contributors.",
+  "correct": 0,
+  "rationale": "A repeated location pattern across cultivars points to a potentially local process factor. Matched affected-versus-unaffected comparisons and chronology provide stronger discriminating evidence than cultivar labels alone.",
   "references": [
-    "REF-FLOWER-MORPH-2023-001",
-    "REF-NUTRIENT-DEFICIENCY-001"
+    "REF-PLANT-BIO-001",
+    "REF-ROOTZONE-NUTRIENT-002"
   ]
 }

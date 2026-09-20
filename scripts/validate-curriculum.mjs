@@ -179,7 +179,7 @@ for (const { file, data } of collections.lessons) {
     
     const lessonReviews = reviewsByTargetId.get(data.id) || [];
     const hasApprovedReview = lessonReviews.some((r) => r.status === 'approved' || r.status === 'passed') ||
-      Boolean(catalogAttestationApproval('lesson', 'scientific')) && Boolean(catalogAttestationApproval('lesson', 'editorial'));
+      Boolean(catalogAttestationApproval('lesson', 'scientific', data.id)) && Boolean(catalogAttestationApproval('lesson', 'editorial', data.id));
     if (!hasApprovedReview) {
       if (publicAcademicLessonIds.has(data.id)) {
         warnings.push(`${file}: public academic lesson ${data.id} has no approval review record; certification/production release remains blocked`);
@@ -229,7 +229,7 @@ for (const { file, data } of collections.questions) {
   // CRITICAL: Active and published items MUST have approval review records
   if (data.status === 'active' || data.status === 'published') {
     const itemReviews = reviewsByTargetId.get(data.id) || [];
-    const attestedApproval = catalogAttestationApproval('question', 'assessment');
+    const attestedApproval = catalogAttestationApproval('question', 'assessment', data.id);
     const hasApprovedReview = itemReviews.some((r) => r.status === 'approved' || r.status === 'passed') || Boolean(attestedApproval);
     const hasMinimumReviewRecords = itemReviews.length > 0 || Boolean(attestedApproval);
     
@@ -329,7 +329,7 @@ function assertPublishedDependencies(sourceFile, data) {
   const nonApprovedItems = [];
   for (const itemId of data.items ?? []) {
     const item = objects.get(itemId);
-    if (item && !['active', 'approved', 'published'].includes(item.status) && !catalogAttestationApproval('question', 'assessment')) nonApprovedItems.push(itemId);
+    if (item && !['active', 'approved', 'published'].includes(item.status) && !catalogAttestationApproval('question', 'assessment', itemId)) nonApprovedItems.push(itemId);
   }
   if (nonApprovedItems.length > 0) {
     if (publicAcademicAssessmentIds.has(data.id)) {

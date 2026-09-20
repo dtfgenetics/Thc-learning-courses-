@@ -36,7 +36,7 @@ function latestReview(objectId, objectVersion, reviewType) {
 }
 
 function approvalFor(objectType, objectId, objectVersion, reviewType) {
-  return latestReview(objectId, objectVersion, reviewType) ?? catalogAttestationApproval(objectType, reviewType);
+  return latestReview(objectId, objectVersion, reviewType) ?? catalogAttestationApproval(objectType, reviewType, objectId);
 }
 
 function stateFromReview(review) {
