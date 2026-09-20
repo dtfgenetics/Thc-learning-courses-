@@ -1,0 +1,16 @@
+{
+  "id": "DL-SOP-AUTHORING-001",
+  "title": "SOP Authoring and Control Template",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "worksheet",
+  "format": "csv",
+  "description": "A structured worksheet for drafting an executable SOP with purpose, scope, authority, prerequisites, ordered actions, acceptance criteria, records, exceptions, references, and document control.",
+  "path": "/downloads/sop-authoring-template.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-PRO-SOP-001"],
+  "resourceMappings": [],
+  "instructions": ["Assign a controlled document identifier and accountable owner before review.", "Write one observable required action per step and pair it with an acceptance criterion.", "Define the record location and exception route for every critical action or decision.", "Have a qualified reviewer test the draft literally before approval and release."],
+  "limitations": ["This is a training template, not an approved site SOP or legal requirement.", "Only an authorized organization-specific review and document-control process can approve or release the resulting SOP."]
+}
