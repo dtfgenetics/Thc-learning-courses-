@@ -1,0 +1,28 @@
+{
+  "id": "DL-TECH2-EQUIPMENT-VERIFICATION-001",
+  "title": "Technician II Sensor and Equipment Verification Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "measurement-log",
+  "format": "csv",
+  "description": "A verification log for sensor identity, representative placement, command-versus-response checks, independent measurements, safe operator boundaries, and maintenance handoff.",
+  "path": "/downloads/tech2-sensor-equipment-verification.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-002",
+    "COURSE-LH-EIFS-004",
+    "COURSE-LH-EIFS-008"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Record asset and sensor identifiers before comparing readings or control responses.",
+    "Separate controller command, measured physical response, and independent reference measurement.",
+    "Document any placement, calibration, maintenance, airflow, pressure, or access condition that affects interpretation.",
+    "Stop and escalate protected access, hazardous-energy, disassembly, or servicing tasks unless specifically authorized."
+  ],
+  "limitations": [
+    "A controller command or alarm reset is not proof that physical performance is restored.",
+    "This log does not grant calibration, electrical, refrigeration, pressure-system, or hazardous-energy service authority."
+  ]
+}
