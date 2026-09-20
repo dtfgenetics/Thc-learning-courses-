@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-M01-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
   "competency": "COMP-IPM-ADV-001",
@@ -8,15 +8,15 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "Formative diagnostic check 12: A suspected contagious disease would trigger containment and major crop decisions if confirmed. What follows from the high consequence of being wrong?",
+  "stem": "Scouting finds scattered chlorotic spots but no direct pathogen sign. A confirmatory sample can be collected, although poor handling could spread contamination. What is the best next step?",
   "choices": [
-    "Use less evidence because action is urgent.",
-    "Treat every similar symptom as the same disease.",
-    "Wait for widespread damage before documenting the concern.",
-    "Use stronger confirmation and appropriate containment/escalation rather than relying on visual similarity alone."
+    "Move symptomatic leaves through several rooms so more staff can inspect them.",
+    "Call the condition a confirmed disease and begin treatment immediately.",
+    "Follow the containment and sampling procedure, document representative evidence, and escalate for appropriate confirmation before making major crop decisions.",
+    "Discard the observation because visual symptoms are never useful."
   ],
-  "correct": 3,
-  "rationale": "Higher-consequence diagnoses warrant stronger confirmation and timely escalation/containment.",
+  "correct": 2,
+  "rationale": "When disease is plausible but unconfirmed, evidence collection should preserve biosecurity and support consequence-proportional confirmation. Controlled sampling and escalation are stronger than diagnosis from appearance alone.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]
