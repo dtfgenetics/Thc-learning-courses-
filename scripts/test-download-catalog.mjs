@@ -8,12 +8,25 @@ const expectedIds = [
   'DL-DAILY-CULTIVATION-LOG-001',
   'DL-ENVIRONMENT-LOG-001',
   'DL-IRRIGATION-ROOTZONE-LOG-001',
-  'DL-SCOUTING-ESCALATION-LOG-001'
+  'DL-SCOUTING-ESCALATION-LOG-001',
+  'DL-TECH2-DIAGNOSTIC-WORKUP-001',
+  'DL-TECH2-EQUIPMENT-VERIFICATION-001',
+  'DL-TECH2-FERTIGATION-ROOTZONE-001',
+  'DL-TECH2-IPM-BIOSECURITY-001',
+  'DL-TECH2-POSTHARVEST-DEVIATION-001',
+  'DL-TECH2-PROP-CANOPY-001',
+  'DL-TECH2-SIMULATION-EVIDENCE-001',
+  'DL-TECH2-TRACEABILITY-HANDOFF-001'
 ];
 
 const html = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/index.html'), 'utf8');
 const portal = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/portal.js'), 'utf8');
 const portalStyles = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/portal.css'), 'utf8');
+const tech2CourseIds = Array.from({ length: 8 }, (_, index) => `COURSE-LH-TECH2-${String(index + 1).padStart(3, '0')}`);
+const downloadRecords = expectedIds.map((id) => JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/downloads', `${id}.json`), 'utf8')));
+for (const courseId of tech2CourseIds) {
+  assert.ok(downloadRecords.some((record) => record.courseMappings?.includes(courseId)), `${courseId} should have at least one mapped learner download`);
+}
 assert.match(html, /id="tab-resources"[^>]*aria-pressed="false"/, 'Academy navigation should expose the Downloads view');
 assert.match(portal, /fetch\('\/api\/downloads'/, 'Downloads view should load the safe metadata API');
 assert.match(portal, /action\.download\s*=\s*''/, 'Download links should use browser download behavior');
