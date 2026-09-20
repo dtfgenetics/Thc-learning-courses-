@@ -14,6 +14,7 @@ const courses = readDir('content/courses');
 const assessments = new Map(readDir('content/assessments').map((x) => [x.id, x]));
 const credentials = readDir('content/credentials');
 const credentialPrograms = readDir('content/credential-programs');
+const performanceAssessments = new Map(readDir('content/performance-assessments').map((x) => [x.id, x]));
 
 const legacyCredentialsByCourse = new Map();
 for (const credential of credentials) {
@@ -29,6 +30,19 @@ for (const program of credentialPrograms) {
     list.push(program);
     credentialProgramsByCourse.set(courseId, list);
   }
+}
+
+function integratedPerformancePath(programs, course) {
+  if (course.extensions?.integratedPerformanceValidationRequired !== true) return null;
+  const requiredPracticals = course.extensions?.credentialPracticalSetRequired ?? [];
+  const capstoneId = course.extensions?.capstoneRequired ?? null;
+  const missing = [...requiredPracticals, capstoneId].filter(Boolean).filter((id) => !performanceAssessments.has(id));
+  const wrongTypes = requiredPracticals.filter((id) => performanceAssessments.get(id)?.assessmentType !== 'practical');
+  if (capstoneId && performanceAssessments.get(capstoneId)?.assessmentType !== 'capstone') wrongTypes.push(capstoneId);
+  const program = programs.find((candidate) => candidate.assessmentModel?.capstone === capstoneId);
+  const mappedPracticals = new Set(program?.assessmentModel?.performanceEvidence ?? []);
+  const unmapped = requiredPracticals.filter((id) => !mappedPracticals.has(id));
+  return { complete: missing.length === 0 && wrongTypes.length === 0 && unmapped.length === 0 && Boolean(program), missing, wrongTypes, unmapped, capstoneId };
 }
 
 let errors = 0;
@@ -50,6 +64,7 @@ for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
 
   credentialBearing++;
   let ok = true;
+  const performancePath = integratedPerformancePath(programMapped, course);
   const explicitDraftCompletionGate = course.status === 'draft' && !course.finalAssessment && (
     course.extensions?.dedicatedCourseAssessmentRequired === true ||
     course.extensions?.dedicatedLabModuleRequired === true ||
@@ -57,7 +72,9 @@ for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
   );
 
   if (!course.finalAssessment) {
-    if (explicitDraftCompletionGate) {
+    if (performancePath?.complete) {
+      console.log(`${course.id}: integrated performance pathway is structurally complete (${course.extensions.credentialPracticalSetRequired.length} practicals plus ${performancePath.capstoneId}); validation and release remain gated`);
+    } else if (explicitDraftCompletionGate) {
       draftIncomplete++;
       ok = false;
       const gateType = course.extensions?.integratedPerformanceValidationRequired === true
@@ -66,6 +83,11 @@ for (const course of [...courses].sort((a,b) => a.id.localeCompare(b.id))) {
           ? 'dedicated lab evidence'
           : 'dedicated final assessment';
       console.log(`${course.id}: draft credential-path course; ${gateType} is explicitly still required before pathway completion`);
+      if (performancePath) {
+        if (performancePath.missing.length) console.log(`${course.id}: missing performance objects: ${performancePath.missing.join(', ')}`);
+        if (performancePath.wrongTypes.length) console.log(`${course.id}: wrong performance object types: ${performancePath.wrongTypes.join(', ')}`);
+        if (performancePath.unmapped.length) console.log(`${course.id}: credential program does not map: ${performancePath.unmapped.join(', ')}`);
+      }
     } else {
       console.error(`ERROR ${course.id}: credentialBearing=true but finalAssessment is missing without an explicit draft completion gate`);
       errors++; ok = false;
