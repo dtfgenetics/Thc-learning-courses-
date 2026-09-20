@@ -78,8 +78,10 @@ try {
   assert.match(appText, /\/assessment\/grade/, 'module checkpoint UI must request server-side feedback after a response');
   assert.doesNotMatch(appText, /item\.correct/, 'learner UI must not depend on a pre-answer client-side answer key');
 } finally {
+  const closed = once(server, 'close');
   server.close();
-  await once(server, 'close');
+  server.closeAllConnections();
+  await closed;
 }
 
 console.log('Course 1 formative module checkpoint delivery, answer-key non-disclosure, seeded shuffling, and post-response server-side grading tests passed without fixed module or item-count ceilings.');
