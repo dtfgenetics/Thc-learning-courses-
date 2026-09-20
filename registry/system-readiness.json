@@ -14,12 +14,12 @@
       }
     },
     "assessment": {
-      "status": "pilot-bank",
+      "status": "pilot-bank-review-reopened",
       "gates": {
         "blueprintComplete": true,
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
-        "humanAssessmentReviewComplete": true,
+        "humanAssessmentReviewComplete": false,
         "pilotStatisticsComplete": false
       }
     },
