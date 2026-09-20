@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { catalogAttestationApproval, catalogAttestationStatus } from './catalog-review-attestation.mjs';
 
 const root = process.cwd();
 const args = Object.fromEntries(process.argv.slice(2).filter((x) => x.startsWith('--') && x.includes('=')).map((x) => {
@@ -36,6 +37,9 @@ function latestReview(objectId, objectVersion, reviewType) {
   return reviews.filter((r) => r.objectId === objectId && String(r.objectVersion) === String(objectVersion) && r.reviewType === reviewType)
     .sort((a, b) => Date.parse(b.reviewedAt) - Date.parse(a.reviewedAt))[0] ?? null;
 }
+function approvalFor(objectType, objectId, objectVersion, reviewType) {
+  return latestReview(objectId, objectVersion, reviewType) ?? catalogAttestationApproval(objectType, reviewType);
+}
 function stateFromReview(review) {
   if (!review) return 'pending';
   return review.status === 'approved' ? 'approved' : 'revision-required';
@@ -51,18 +55,18 @@ for (const domain of registry.domains ?? []) {
 for (const lessonId of [...lessonIds].sort()) {
   const lesson = lessons.get(lessonId);
   if (!lesson) throw new Error(`Review packet builder cannot resolve lesson ${lessonId}`);
-  const scientific = latestReview(lesson.id, lesson.version, 'scientific');
+  const scientific = approvalFor('lesson', lesson.id, lesson.version, 'scientific');
   const scientificState = stateFromReview(scientific);
   tasks.push({lane:'lesson-scientific',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'scientific',state:scientificState,latestReviewId:scientific?.id ?? null});
-  const editorial = latestReview(lesson.id, lesson.version, 'editorial');
+  const editorial = approvalFor('lesson', lesson.id, lesson.version, 'editorial');
   tasks.push({lane:'lesson-editorial',objectType:'lesson',objectId:lesson.id,objectVersion:lesson.version,reviewType:'editorial',state:scientificState === 'approved' ? stateFromReview(editorial) : 'blocked',blockedBy:scientificState === 'approved' ? null : 'scientific-approval',latestReviewId:editorial?.id ?? null});
 }
 for (const assessment of [...assessments.values()].sort((a,b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(assessment.id, assessment.version, 'assessment');
+  const review = approvalFor('assessment', assessment.id, assessment.version, 'assessment');
   tasks.push({lane:'assessment-definition',objectType:'assessment',objectId:assessment.id,objectVersion:assessment.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
 }
 for (const item of [...questions.values()].sort((a,b) => a.id.localeCompare(b.id))) {
-  const review = latestReview(item.id, item.version, 'assessment');
+  const review = approvalFor('question', item.id, item.version, 'assessment');
   tasks.push({lane:item.purpose === 'formative' ? 'formative-item' : 'credential-item',objectType:'question',objectId:item.id,objectVersion:item.version,reviewType:'assessment',state:stateFromReview(review),latestReviewId:review?.id ?? null});
 }
 
@@ -142,7 +146,7 @@ function packetFor(task) {
     }),
     reviewHistory: history.map((r) => ({id:r.id,reviewType:r.reviewType,status:r.status,reviewedAt:r.reviewedAt,reviewer:r.reviewer ?? null,notes:r.notes ?? null})),
     checklist: checklistFor(task),
-    approvalRule: task.state === 'blocked' ? `Blocked by ${task.blockedBy}` : 'Approval must be recorded as a version-specific human review record; packet generation never promotes content automatically.'
+    approvalRule: task.state === 'blocked' ? `Blocked by ${task.blockedBy}` : 'Approval must be recorded by an exact-version review or an immutable Git-tree-bound catalog attestation; packet generation never promotes content automatically.'
   };
 }
 
@@ -158,7 +162,8 @@ const summary = {
   packetCount: packets.length,
   states: Object.fromEntries(['approved','pending','blocked','revision-required'].map((state) => [state, selected.filter((t) => t.state === state).length])),
   lanes: Object.fromEntries([...new Set(selected.map((t) => t.lane))].sort().map((lane) => [lane, selected.filter((t) => t.lane === lane).length])),
-  unresolvedPackets: selected.length - packets.length
+  unresolvedPackets: selected.length - packets.length,
+  catalogAttestation: catalogAttestationStatus()
 };
 
 function markdown(packet) {

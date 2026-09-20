@@ -1,0 +1,54 @@
+{
+  "id": "REVIEW-PILOT-PROTOCOL-BATCH-OWNER-20260920",
+  "objectId": "academy-course-pilot-protocols",
+  "objectVersion": "1.0.0",
+  "reviewType": "project-owner-acceptance",
+  "status": "approved",
+  "reviewerId": "dtfgenetics-project-owner",
+  "reviewedAt": "2026-09-20",
+  "notes": "The project owner reviewed and approved the latest merged batch covering the 14 controlled Technician I and Technician II course pilot protocols, their registry and deterministic validation, and the readiness correction separating repository implementation from deployed validation.",
+  "evidenceChecked": [
+    "registry/academy-course-pilot-protocols.json",
+    "scripts/test-academy-course-pilot-protocols.mjs",
+    "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech1/course-003/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech1/course-004/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech1/course-005/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech1/course-007/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-001/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-002/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-003/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-004/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-005/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-006/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-007/pilot/PILOT-PROTOCOL.md",
+    "docs/learning-hub/tech2/course-008/pilot/PILOT-PROTOCOL.md",
+    "registry/system-readiness.json",
+    "docs/CERTIFICATION-COMPLETION-MATRIX.md",
+    "pull-request:486",
+    "pull-request:506",
+    "pull-request:508",
+    "pull-request:510"
+  ],
+  "scope": {
+    "approved": [
+      "pilot-protocol content and structure",
+      "pilot-protocol registry",
+      "deterministic pilot-protocol validation",
+      "readiness-model correction",
+      "completion-matrix correction"
+    ],
+    "notApprovedByThisRecord": [
+      "scientific lesson review",
+      "editorial lesson review",
+      "assessment or item review",
+      "completed pilot evidence",
+      "standard setting",
+      "accessibility conformance",
+      "credential issuance",
+      "production deployment",
+      "production readiness"
+    ]
+  }
+}
