@@ -1,0 +1,35 @@
+{
+  "id":"ENC-CANNABIS-TAXONOMY-016",
+  "title":"Cannabis Taxonomy Classification and Identity Layers",
+  "slug":"cannabis-taxonomy-classification-identity-layers",
+  "volume":1,
+  "domain":"plant-science",
+  "status":"draft",
+  "version":"1.0.0",
+  "summary":"Cannabis classification is most reliable when botanical taxonomy, cultivated-plant naming, population ancestry, clone identity, morphology, chemistry, commercial labels and legal categories are recorded as separate evidence layers rather than compressed into one strain name.",
+  "sections":[
+    {
+      "title":"Accepted names and taxonomic treatments",
+      "body":"Taxonomy delimits and classifies organisms, nomenclature supplies names under formal rules, and identification connects questioned material to a supported taxon. Plants of the World Online currently accepts Cannabis sativa L. in Cannabaceae. That record states the treatment used by the cited reference on its access date. It does not prove that every seed, clone or commercial product bearing a cannabis label was correctly identified. A defensible record preserves the source label, accepted name, authority, reference identifier and access date in separate fields.",
+      "references":["REF-KEW-CANNABIS-TAXONOMY-001","REF-CANNABIS-TAXONOMY-SMALL-2015-001"]
+    },
+    {
+      "title":"Species concepts and population structure",
+      "body":"Cannabis has been treated as one variable species and as multiple species or subspecies. Different treatments can emphasize reproductive compatibility, diagnosable morphology, ancestry or population structure. Genomic studies show meaningful structure and domestication history, while extensive movement, selection, crossing and gene flow complicate simple boundaries. A measured genetic cluster is evidence about relatedness under a sampling and analysis method; it does not automatically require recognition as a botanical species. Instruction should name the treatment being followed and preserve uncertainty where credible treatments differ.",
+      "references":["REF-CANNABIS-TAXONOMY-SMALL-2015-001","REF-CANNABIS-DOMESTICATION-2021-001"]
+    },
+    {
+      "title":"Cultivars clones chemotypes and market labels",
+      "body":"A cultivar, breeding line, clone, accession, chemotype, trade designation and legal category answer different questions. A clone identifier depends on propagation and custody records. A chemotype depends on the sampled tissue, date, laboratory method, analytes, units and classification rule. Commercial indica and sativa labels may mix morphology, expected effects, ancestry claims and branding. They should not be treated as automatic botanical ranks or reliable predictors. Genetic evidence has also shown that reported commercial identity can diverge from measured relationships, so each claim must remain independently testable.",
+      "references":["REF-CANNABIS-GENETIC-STRUCTURE-2015-001","REF-CANNABIS-TAXONOMY-SMALL-2015-001"]
+    },
+    {
+      "title":"Evidence and classification records",
+      "body":"A classification record begins with a unique material identifier and the original source wording. It then separates botanical identity, cultivated name, clone or accession, reported pedigree, morphology, chemistry, legal category and trade name. Each conclusion needs an observer, date, method, reference, evidence limits, alternative explanations and confidence rationale. Conflicting labels must remain visible. The appropriate conclusion may support Cannabis sativa under a named treatment while leaving cultivar identity or ancestry unresolved. Escalation is required when the decision affects law, safety, research validity, germplasm preservation or commerce beyond the reviewer’s authority.",
+      "references":["REF-KEW-CANNABIS-TAXONOMY-001","REF-CANNABIS-GENETIC-STRUCTURE-2015-001","REF-CANNABIS-DOMESTICATION-2021-001"]
+    }
+  ],
+  "references":["REF-KEW-CANNABIS-TAXONOMY-001","REF-CANNABIS-TAXONOMY-SMALL-2015-001","REF-CANNABIS-GENETIC-STRUCTURE-2015-001","REF-CANNABIS-DOMESTICATION-2021-001"],
+  "relatedLessons":["LESSON-PLANT-BIO-001","LESSON-CROP-GENETICS-001","LESSON-BREED-IDENTITY-002","LESSON-LH-TECH1-002-01"],
+  "relatedCompetencies":["COMP-PLANT-BIO-001","COMP-GENETICS-001"]
+}
