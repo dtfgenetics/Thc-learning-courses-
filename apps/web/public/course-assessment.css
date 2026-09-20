@@ -59,6 +59,13 @@
 .course-practical-critical { padding: 1rem; border: 1px solid #d8bf8d; border-left: 5px solid #9b6b22; border-radius: .7rem; background: #fffaf0; }
 .course-practical-boundary { margin-top: 1.5rem; padding: .85rem; border-left: 4px solid var(--green); background: var(--green-soft); }
 .course-practical-page-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.practical-submission-form { display: grid; gap: .8rem; }
+.practical-submission-row { margin: 0; padding: .85rem; border: 1px solid var(--line); border-radius: .5rem; background: #fff; }
+.practical-submission-row legend { padding: 0 .25rem; font-weight: 700; }
+.practical-submission-field { display: grid; gap: .35rem; margin-top: .6rem; font-weight: 650; }
+.practical-submission-field input, .practical-submission-field textarea { width: 100%; box-sizing: border-box; padding: .65rem; border: 1px solid var(--line); border-radius: .35rem; font: inherit; font-weight: 400; }
+.practical-submission-status { min-height: 1.5rem; margin: 0; color: var(--muted); }
+.practical-submission-status.error { color: var(--danger); }
 
 @media (max-width: 620px) {
   .course-assessment-toolbar { top: .25rem; align-items: flex-start; flex-direction: column; gap: .2rem; }
