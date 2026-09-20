@@ -23,7 +23,8 @@ for(const [area,gate] of [
   ['learnerExperience','publishedCourseEnrollmentUi'],
   ['learnerExperience','rolePathwayDiscovery'],
   ['learnerExperience','consolidatedDashboard'],
-  ['learnerExperience','privacyBoundedCredentialTranscript']
+  ['learnerExperience','privacyBoundedCredentialTranscript'],
+  ['learnerExperience','practicalEvidenceSubmissionRepositoryImplemented']
 ]) assert.equal(readiness.areas[area]?.gates?.[gate],true,`${area}.${gate} should reflect merged deterministic capability`);
 
 for(const [area,gate] of [
