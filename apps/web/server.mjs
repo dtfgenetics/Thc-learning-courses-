@@ -198,6 +198,21 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
   const credentialPrograms = new Map(readDirJson('content/credential-programs').map((item) => [item.id, item]));
   const publicReleaseIds = buildPublicReleaseIds({ modules, assessments });
   const safeStringList = (value) => Array.isArray(value) ? value.filter((entry) => typeof entry === 'string' && entry.trim()).map((entry) => entry.trim()) : [];
+  const safeFinalAssessment = (course) => {
+    if (typeof course.finalAssessment !== 'string') return null;
+    const assessment = assessments.get(course.finalAssessment);
+    if (!assessment || !isVisible(assessment, previewDrafts, publicReleaseIds)) return null;
+    return {
+      id: assessment.id,
+      title: assessment.title,
+      status: publicStatus(assessment, publicReleaseIds),
+      purpose: assessment.purpose,
+      passingScorePercent: Number(assessment.passingScorePercent ?? 0),
+      feedbackMode: assessment.feedbackMode ?? 'after-submit',
+      itemCount: Array.isArray(assessment.items) ? assessment.items.length : 0,
+      certificationUseStatus: assessment.extensions?.certificationUseStatus ?? null
+    };
+  };
   const safePathway = (course) => {
     const programId = course.extensions?.credentialPath;
     const program = typeof programId === 'string' ? credentialPrograms.get(programId) : null;
@@ -225,12 +240,53 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
     intendedAudience: safeStringList(course.intendedAudience),
     prerequisites: safeStringList(course.prerequisites),
     pathway: safePathway(course),
+    finalAssessment: safeFinalAssessment(course),
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
       id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds), assessment: module.assessment ?? null,
       lessons: (module.lessons ?? []).map((lessonId) => lessons.get(lessonId)).filter((lesson) => lesson && isVisible(lesson, previewDrafts, publicReleaseIds)).map((lesson) => ({ id: lesson.id, title: lesson.title, status: publicStatus(lesson, publicReleaseIds), estimatedMinutes: lesson.estimatedMinutes ?? null }))
     }))
   }));
   return { mode: previewDrafts ? 'staging-preview' : 'published-only', generatedAt: new Date().toISOString(), courses: visibleCourses };
+}
+
+function isDownloadVisible(download, previewDrafts) {
+  return previewDrafts || (download?.status === 'published' && download?.releaseStatus === 'public');
+}
+
+function safeDownload(download) {
+  const strings = (value) => Array.isArray(value) ? value.filter((entry) => typeof entry === 'string' && entry.trim()).map((entry) => entry.trim()) : [];
+  return {
+    id: download.id,
+    title: download.title,
+    version: download.version,
+    status: download.status,
+    releaseStatus: download.releaseStatus,
+    kind: download.kind,
+    format: download.format,
+    description: download.description,
+    path: download.path,
+    accessibilityStatus: download.accessibilityStatus,
+    courseMappings: strings(download.courseMappings),
+    resourceMappings: strings(download.resourceMappings),
+    instructions: strings(download.instructions),
+    limitations: strings(download.limitations)
+  };
+}
+
+export function buildDownloadCatalog({ previewDrafts = true } = {}) {
+  const downloads = readDirJson('content/downloads')
+    .filter((download) => isDownloadVisible(download, previewDrafts))
+    .sort((a, b) => String(a.title).localeCompare(String(b.title)))
+    .map(safeDownload);
+  return { mode: previewDrafts ? 'staging-preview' : 'published-only', generatedAt: new Date().toISOString(), downloads };
+}
+
+export function loadPublicDownload(id, { previewDrafts = true } = {}) {
+  if (!/^DL-[A-Z0-9-]+$/.test(id)) return null;
+  const target = path.join(root, 'content/downloads', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const download = JSON.parse(fs.readFileSync(target, 'utf8'));
+  return isDownloadVisible(download, previewDrafts) ? safeDownload(download) : null;
 }
 
 export function buildStagingGovernanceSummary() {
@@ -444,6 +500,12 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
     if (req.method === 'GET' && url.pathname === '/api/build-info') return json(res, 200, buildPublicBuildIdentity(env));
     if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
+    if (req.method === 'GET' && url.pathname === '/api/downloads') return json(res, 200, buildDownloadCatalog({ previewDrafts }));
+    const downloadMetadataMatch = url.pathname.match(/^\/api\/downloads\/(DL-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && downloadMetadataMatch) {
+      const download = loadPublicDownload(downloadMetadataMatch[1], { previewDrafts });
+      return download ? json(res, 200, download) : json(res, 404, { error: 'download-not-found' });
+    }
     if (req.method === 'GET' && url.pathname === '/api/staging/governance') return previewDrafts ? json(res, 200, buildStagingGovernanceSummary()) : json(res, 404, { error: 'not-found' });
     const lessonMatch = url.pathname.match(/^\/api\/lessons\/(LESSON-[A-Z0-9-]+)$/);
     if (req.method === 'GET' && lessonMatch) { const lesson = loadPublicLesson(lessonMatch[1], { previewDrafts }); return lesson ? json(res, 200, lesson) : json(res, 404, { error: 'lesson-not-found' }); }
@@ -501,6 +563,11 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     if ((req.method === 'GET' || req.method === 'HEAD') && tech2AssetMatch) {
       const assetFile = path.join('assets', 'tech2', tech2AssetMatch[1], tech2AssetMatch[2]);
       if (sendStatic(res, assetFile, 'image/svg+xml; charset=utf-8', req.method)) return;
+    }
+    const downloadFileMatch = url.pathname.match(/^\/downloads\/([A-Za-z0-9._-]+\.csv)$/);
+    if ((req.method === 'GET' || req.method === 'HEAD') && downloadFileMatch) {
+      const source = readDirJson('content/downloads').find((download) => download.path === url.pathname && isDownloadVisible(download, previewDrafts));
+      if (source && sendStatic(res, path.join('downloads', downloadFileMatch[1]), 'text/csv; charset=utf-8', req.method)) return;
     }
     return json(res, 404, { error: 'not-found' });
   };

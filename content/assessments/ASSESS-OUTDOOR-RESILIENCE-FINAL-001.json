@@ -1,0 +1,26 @@
+{
+  "id": "ASSESS-OUTDOOR-RESILIENCE-FINAL-001",
+  "title": "THC Outdoor Resilience and Risk Management Final Assessment",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": ["COMP-OUTDOOR-ESTABLISH-001", "COMP-OUTDOOR-RISK-001"],
+  "objectives": ["LO-OUT-HARDEN-001", "LO-OUT-SURFACE-002", "LO-OUT-SEASONAL-003", "LO-OUT-POLLEN-001", "LO-OUT-WEATHER-002", "LO-OUT-WILDLIFE-003"],
+  "items": ["ITEM-OUTDOOR-RESILIENCE-FINAL-001", "ITEM-OUTDOOR-RESILIENCE-FINAL-002", "ITEM-OUTDOOR-RESILIENCE-FINAL-003", "ITEM-OUTDOOR-RESILIENCE-FINAL-004", "ITEM-OUTDOOR-RESILIENCE-FINAL-005", "ITEM-OUTDOOR-RESILIENCE-FINAL-006", "ITEM-OUTDOOR-RESILIENCE-FINAL-007", "ITEM-OUTDOOR-RESILIENCE-FINAL-008", "ITEM-OUTDOOR-RESILIENCE-FINAL-009", "ITEM-OUTDOOR-RESILIENCE-FINAL-010", "ITEM-OUTDOOR-RESILIENCE-FINAL-011", "ITEM-OUTDOOR-RESILIENCE-FINAL-012"],
+  "passingScorePercent": 80,
+  "maxAttempts": 3,
+  "cooldownHours": 0,
+  "feedbackMode": "after-submit",
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "sourceModuleAssessments": ["ASSESS-OUTDOOR-ESTABLISH-001", "ASSESS-OUTDOOR-RISK-001"],
+    "dedicatedItemBankSource": "preserved-from-prior-course-final-branches",
+    "certificationUseStatus": "not-authorized",
+    "academicThresholdStatus": "provisional-development",
+    "standardSettingStatus": "pending-validation",
+    "requireHumanAssessmentReview": true,
+    "thresholdNote": "The 80% score is a development target for academic course completion only. This noncredential course final must not be used for certification issuance until review, pilot evidence, accessibility review, and release approval are recorded."
+  }
+}

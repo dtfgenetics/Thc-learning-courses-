@@ -15,6 +15,7 @@ const mappings = {
   references: 'content/references',
   programs: 'content/programs',
   credentials: 'content/credentials',
+  downloads: 'content/downloads',
   credentialPrograms: 'content/credential-programs',
   resources: 'content/resources',
   issuers: 'content/issuer'

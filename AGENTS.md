@@ -23,3 +23,5 @@ A successful push is not completion. The agent must inspect the newest SHA, CI, 
 When Academy/product work and repository operations both apply, use the Academy builder for product/content decisions, the GitHub orchestrator for repository execution, the relevant GitHub specialist skill for the failure class, and post-push cleanup after every repository write.
 
 The skills are the project workflow sources of truth. Keep this file short; update the skills/resources instead of duplicating detailed instructions here.
+
+Before adding or editing Academy material, read `docs/AI-CONTENT-AUTHORING-GUIDE.md`. It defines the search-before-create sequence, canonical directories, object wiring order, status boundaries, generated files, and minimum deterministic checks. New learner downloads belong in `content/downloads/` with files under `apps/web/public/downloads/`; do not model them as legacy 420-catalog resources.
