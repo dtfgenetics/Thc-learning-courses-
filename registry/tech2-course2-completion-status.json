@@ -2,7 +2,7 @@
   "courseId": "COURSE-LH-TECH2-002",
   "title": "Environmental Data, Sensors & Equipment Response",
   "version": "0.2.0",
-  "updated": "2026-09-18",
+  "updated": "2026-09-20",
   "canonicalCourseState": "draft",
   "publicAcademicPackage": "published",
   "machineResolvableWorkComplete": false,
@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-002.json",
   "deploymentEvidence": "registry/tech2-course2-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 2 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Remaining machine work is deployed responsive/manual learner-surface QA, exact deployment build/source SHA verification using the public build-identity contract, and repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "machineCompletionBoundary": "Technician II Course 2 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment workflow/site-commit identity is now verified. Remaining work is deployed responsive/manual learner-surface QA, curriculum-version equivalence where a deployment did not pin the curriculum SHA, and repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-002.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-002.json",
@@ -26,9 +26,9 @@
   ],
   "nextMachineActions": [
     "complete deployed responsive/manual learner-surface QA and record defects",
-    "record and verify the exact deployment build/source SHA identity for the public learner surface",
     "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
-    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
+    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates",
+    "pin or otherwise prove exact curriculum-version equivalence on the next public deployment so future release evidence is fully reproducible"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
@@ -48,5 +48,11 @@
     "approvedForLearnerRender": 0,
     "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
     "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
+  },
+  "deployedMachineSurfaceQa": {
+    "state": "partial-build-identity-verified-manual-qa-open",
+    "sourceSha": "068c333deb15bfca1d606748abda386dbfea87a9",
+    "buildId": "github-actions-run:34999459498",
+    "manualResponsiveQaApproved": false
   }
 }
