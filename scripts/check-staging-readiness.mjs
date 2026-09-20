@@ -29,6 +29,7 @@ for (const file of [
   'apps/api/src/server.mjs',
   'database/schema.sql',
   'openapi/credential-verifier.yaml',
+  'openapi/learner-api.yaml',
   'scripts/build-staging-candidate.mjs',
   'scripts/verify-staging-candidate.mjs',
   '.github/workflows/staging-candidate.yml',
@@ -38,7 +39,7 @@ for (const file of [
 ]) requireFile(file);
 
 for (const [area, gate] of [
-  ['curriculum', 'substantiveContentComplete'],
+  ['curriculum', 'stagingContentSliceValidated'],
   ['assessment', 'blueprintComplete'],
   ['assessment', 'developmentFormGeneration'],
   ['runtime', 'serverSideAttemptStateMachine'],

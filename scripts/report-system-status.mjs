@@ -73,7 +73,7 @@ for (const [areaName, area] of Object.entries(readiness.areas ?? {})) {
 }
 
 const stagingRequired = [
-  ['curriculum', 'substantiveContentComplete'],
+  ['curriculum', 'stagingContentSliceValidated'],
   ['assessment', 'blueprintComplete'],
   ['assessment', 'developmentFormGeneration'],
   ['runtime', 'serverSideAttemptStateMachine'],

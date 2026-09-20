@@ -9,7 +9,8 @@ import { createFixedWindowRateLimiter } from './rate-limit.mjs';
 import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './security.mjs';
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
-import { startOrResumeCourseAssessment, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { startOrResumeCourseAssessment, getCourseAssessmentAttemptStatus, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { loadCourseAcademicCompletionBundle, evaluateCourseAcademicCompletion } from './course-enrollment-completion-service.mjs';
 import {
   getCoursePracticalEvaluation,
   saveCoursePracticalEvaluation,
@@ -165,6 +166,73 @@ function credentialProgressView(credential, course, rawEvidence) {
     competencies: (rawEvidence.competencies ?? []).filter((row) => requiredCompetencies.size === 0 || requiredCompetencies.has(row.competencyId)),
     performanceAssessments: requiredPerformance.map((id) => performanceById.get(id) ?? { assessmentId: id, status: 'not-recorded', scorePercent: null, criticalErrorCount: 0 }),
     portfolioArtifacts: requiredArtifacts.map((id) => portfolioById.get(id) ?? { artifactId: id, status: 'not-recorded' })
+  };
+}
+
+export function credentialTranscriptView(credential, course, rawEvidence) {
+  const progress = credentialProgressView(credential, course, rawEvidence);
+  const competencyRows = (progress.competencies ?? []).map((row) => ({
+    competencyId: row.competencyId,
+    masteryLevel: row.masteryLevel ?? 'not-recorded',
+    curriculumVersion: row.curriculumVersion ?? null,
+    demonstratedAt: row.updatedAt ?? null
+  }));
+  const demonstratedCompetencies = competencyRows.filter((row) => row.masteryLevel === 'demonstrated').length;
+  const assessmentRows = (progress.assessmentAttempts ?? [])
+    .filter((row) => row.status === 'scored')
+    .map((row) => ({
+      assessmentId: row.assessmentId,
+      assessmentVersion: row.assessmentVersion ?? null,
+      status: row.passed === true ? 'passed' : 'not-passed',
+      scorePercent: row.scorePercent == null ? null : Number(row.scorePercent),
+      scoredAt: row.scoredAt ?? null
+    }));
+  const practicalRows = (progress.performanceAssessments ?? []).map((row) => ({
+    assessmentId: row.assessmentId,
+    status: row.status ?? 'not-recorded',
+    scorePercent: row.scorePercent == null ? null : Number(row.scorePercent),
+    criticalErrorCount: Number(row.criticalErrorCount ?? 0),
+    evaluatedAt: row.evaluatedAt ?? null
+  }));
+  const artifactRows = (progress.portfolioArtifacts ?? []).map((row) => ({
+    artifactId: row.artifactId,
+    status: row.status ?? 'not-recorded',
+    verifiedAt: row.verifiedAt ?? row.updatedAt ?? null
+  }));
+  return {
+    transcriptType: 'credential-competency-transcript',
+    credential: {
+      id: progress.credential.id,
+      title: progress.credential.title,
+      version: progress.credential.version,
+      status: progress.credential.status,
+      role: progress.credential.role,
+      course: progress.credential.course,
+      courseVersion: progress.credential.courseVersion,
+      certificationUseStatus: progress.credential.certificationUseStatus,
+      releaseApprovalStatus: progress.credential.releaseApprovalStatus
+    },
+    summary: {
+      eligibleForCredential: progress.eligibility.eligible === true,
+      demonstratedCompetencies,
+      totalCompetencies: competencyRows.length,
+      passedAssessments: assessmentRows.filter((row) => row.status === 'passed').length,
+      totalScoredAssessments: assessmentRows.length,
+      passedPracticals: practicalRows.filter((row) => row.status === 'passed').length,
+      totalPracticals: practicalRows.length,
+      verifiedArtifacts: artifactRows.filter((row) => row.status === 'verified').length,
+      totalArtifacts: artifactRows.length
+    },
+    competencies: competencyRows,
+    assessments: assessmentRows,
+    performanceAssessments: practicalRows,
+    portfolioArtifacts: artifactRows,
+    missingRequirements: progress.eligibility.missingRequirements ?? [],
+    privacy: {
+      excludesLearnerIdentifier: true,
+      excludesPrivateEvaluatorNotes: true,
+      excludesRawResponses: true
+    }
   };
 }
 
@@ -357,6 +425,7 @@ export function createHandler({
         const courseVersion = String(body.courseVersion ?? '').trim();
         const course = loadCourseDefinition(courseId);
         if (!course) return json(res, 404, { error: 'course-not-found', requestId });
+        if (course.status !== 'published') return json(res, 409, { error: 'course-not-open-for-enrollment', courseStatus: course.status ?? null, requestId });
         if (String(course.version) !== courseVersion) return json(res, 409, { error: 'course-version-mismatch', currentVersion: String(course.version), requestId });
         const enrollment = await learnerStore.enroll(auth.subject, { courseId, courseVersion });
         return json(res, 200, { enrollment });
@@ -369,6 +438,40 @@ export function createHandler({
         if (!learnerStore || typeof learnerStore.listProgress !== 'function') return json(res, 503, { error: 'learner-persistence-unavailable', requestId });
         const progress = await learnerStore.listProgress(auth.subject);
         return json(res, 200, { learner: { subject: auth.subject }, progress });
+      }
+
+      const courseCompletionMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/completion$/);
+      if (req.method === 'GET' && courseCompletionMatch) {
+        route = 'GET /api/v1/me/courses/:courseId/completion';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listProgress !== 'function' || typeof learnerStore.listCourseEvidence !== 'function') {
+          return json(res, 503, { error: 'learner-academic-evidence-persistence-unavailable', requestId });
+        }
+        const bundle = loadCourseAcademicCompletionBundle(courseCompletionMatch[1]);
+        if (!bundle) return json(res, 404, { error: 'course-completion-not-configured', requestId });
+        const progress = await learnerStore.listProgress(auth.subject);
+        const evidence = await learnerStore.listCourseEvidence(auth.subject, {
+          assessmentId: bundle.assessment.id,
+          performanceAssessmentId: bundle.performanceAssessmentId
+        });
+        const academic = evaluateCourseAcademicCompletion({ bundle, progress, evidence });
+        return json(res, 200, {
+          course: { id: bundle.course.id, title: bundle.course.title, version: bundle.course.version },
+          complete: academic.complete,
+          instruction: academic.instruction,
+          finalAssessment: {
+            assessmentId: academic.snapshot.finalAssessmentId,
+            status: academic.snapshot.finalAssessmentStatus
+          },
+          performanceAssessment: {
+            assessmentId: academic.snapshot.performanceAssessmentId,
+            status: academic.snapshot.performanceAssessmentStatus,
+            criticalErrorCount: academic.snapshot.performanceCriticalErrorCount
+          },
+          missingRequirements: academic.missingRequirements,
+          completionRecordedAt: academic.requirementCompletedAt
+        });
       }
 
       const courseEvidenceMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/evidence$/);
@@ -411,6 +514,16 @@ export function createHandler({
         return json(res, result.status, { ...result.body, requestId });
       }
 
+      const assessmentAttemptStatusMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]{36})$/);
+      if (req.method === 'GET' && assessmentAttemptStatusMatch) {
+        route = 'GET /api/v1/me/assessment-attempts/:attemptId';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function') return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        const result = await getCourseAssessmentAttemptStatus({ learnerStore, subject: auth.subject, attemptId: assessmentAttemptStatusMatch[1] });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
       const assessmentResponsesMatch = url.pathname.match(/^\/api\/v1\/me\/assessment-attempts\/([0-9a-fA-F-]{36})\/responses$/);
       if (req.method === 'PUT' && assessmentResponsesMatch) {
         route = 'PUT /api/v1/me/assessment-attempts/:attemptId/responses';
@@ -446,6 +559,20 @@ export function createHandler({
         if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
         const evidence = await learnerStore.listCredentialEvidence(auth.subject, { credentialDefinitionId: credential.id });
         return json(res, 200, credentialProgressView(credential, course, evidence));
+      }
+
+      const credentialTranscriptMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/transcript$/);
+      if (req.method === 'GET' && credentialTranscriptMatch) {
+        route = 'GET /api/v1/me/credentials/:credentialId/transcript';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listCredentialEvidence !== 'function') return json(res, 503, { error: 'learner-evidence-persistence-unavailable', requestId });
+        const credential = loadCredentialDefinition(credentialTranscriptMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const course = loadCourseDefinition(credential.course);
+        if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
+        const evidence = await learnerStore.listCredentialEvidence(auth.subject, { credentialDefinitionId: credential.id });
+        return json(res, 200, credentialTranscriptView(credential, course, evidence));
       }
 
       const lessonProgressMatch = url.pathname.match(/^\/api\/v1\/me\/lessons\/(LESSON-[A-Z0-9-]+)$/);

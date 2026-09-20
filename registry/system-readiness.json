@@ -1,15 +1,16 @@
 {
   "system": "THC Academy",
   "version": "0.1.0",
-  "updatedAt": "2026-09-05",
+  "updatedAt": "2026-09-19",
   "productionReady": false,
   "areas": {
     "curriculum": {
-      "status": "in-review",
+      "status": "building-and-review",
       "gates": {
-        "substantiveContentComplete": true,
+        "substantiveContentComplete": false,
         "scientificReviewComplete": false,
-        "editorialReviewComplete": false
+        "editorialReviewComplete": false,
+        "stagingContentSliceValidated": true
       }
     },
     "assessment": {
@@ -23,15 +24,18 @@
       }
     },
     "runtime": {
-      "status": "foundation",
+      "status": "integrated-development",
       "gates": {
         "serverSideAttemptStateMachine": true,
         "serverSideScoringCore": true,
         "competencyResultCore": true,
         "postgresSchemaDefined": true,
         "productionPersistenceAdapter": false,
-        "authenticationIntegrated": false,
-        "authorizationIntegrated": false
+        "authenticationIntegrated": true,
+        "authorizationIntegrated": true,
+        "lessonModuleCourseCompletion": true,
+        "assessmentAttemptLifecycle": true,
+        "learnerTranscriptProjection": true
       }
     },
     "credentials": {
@@ -47,18 +51,20 @@
       }
     },
     "api": {
-      "status": "development",
+      "status": "integrated-development",
       "gates": {
         "verificationContract": true,
         "developmentHttpService": true,
         "productionDatabaseIntegration": false,
         "rateLimiting": true,
         "authentication": true,
-        "observability": true
+        "observability": true,
+        "learnerOpenApiContract": true,
+        "learnerOpenApiRuntimeParity": true
       }
     },
     "security": {
-      "status": "design",
+      "status": "implemented-controls-pending-production-validation",
       "gates": {
         "piiExcludedFromGit": true,
         "privateKeysExcludedFromGit": true,
@@ -86,6 +92,16 @@
         "backupRestoreTested": false,
         "incidentResponseRunbook": true,
         "monitoringAndAlerting": false
+      }
+    },
+    "learnerExperience": {
+      "status": "integrated-development",
+      "gates": {
+        "publishedCourseEnrollmentUi": true,
+        "rolePathwayDiscovery": true,
+        "consolidatedDashboard": true,
+        "privacyBoundedCredentialTranscript": true,
+        "practicalEvidenceSubmissionWorkflow": false
       }
     }
   }

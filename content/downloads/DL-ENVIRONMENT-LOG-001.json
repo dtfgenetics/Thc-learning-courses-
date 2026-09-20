@@ -1,0 +1,16 @@
+{
+  "id": "DL-ENVIRONMENT-LOG-001",
+  "title": "Environment and Sensor Observation Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "measurement-log",
+  "format": "csv",
+  "description": "A context-first log for environmental readings, sensor identity, crop stage, observed condition, and follow-up.",
+  "path": "/downloads/environment-sensor-observation-log.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-HOME-GROW-001", "COURSE-OUTDOOR-GREENHOUSE-001", "COURSE-LH-TECH1-004"],
+  "resourceMappings": [],
+  "instructions": ["Record the sensor identifier and location with every reading.", "Keep setpoint, measured value, and observation as separate fields.", "Use the approved SOP or responsible person to decide whether a value requires action."],
+  "limitations": ["No universal environmental target is implied by this template.", "Verify instrument condition and site requirements before interpreting a reading."]
+}

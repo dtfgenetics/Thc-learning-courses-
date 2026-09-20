@@ -26,6 +26,19 @@ assert.match(portal, /Device lesson checkmarks are separate from official eviden
 assert.match(portal, /completionModel/, 'course completion-model guidance must be rendered without inventing a new state');
 assert.match(portal, /course1EvidencePromise/, 'Course 1 evidence request must be cached across catalog rerenders');
 assert.match(portal, /querySelector\('\.course-evidence-panel, \.course-evidence-loading'\)/, 'catalog observer must guard against duplicate evidence injection');
+assert.match(portal, /\/api\/v1\/me\/credentials\/CRED-CULT-TECH-II-001\/transcript/, 'credential transcript UI must use the dedicated transcript endpoint');
+assert.match(portal, /const transcriptData = await transcriptResponse\.json\(\)/, 'credential transcript UI must keep transcript evidence separate from progress evidence');
+assert.match(portal, /privacy-bounded evidence view/, 'credential transcript must explain its privacy-bounded projection');
+assert.match(portal, /transcriptData\.competencies/, 'competency transcript rows must come from the transcript projection');
+assert.match(portal, /transcriptData\.performanceAssessments/, 'practical transcript rows must come from the transcript projection');
+assert.match(portal, /transcriptData\.portfolioArtifacts/, 'portfolio transcript rows must come from the transcript projection');
+assert.match(portal, /My Learning Dashboard/, 'learner portal should expose one consolidated dashboard');
+assert.match(portal, /\/api\/v1\/me\/enrollments/, 'dashboard should read authoritative enrollment state');
+assert.match(portal, /\/api\/v1\/me\/courses\/\$\{COURSE1_ID\}\/completion/, 'dashboard should read authoritative course completion');
+assert.match(portal, /Academic course status/, 'dashboard should separate academic course status');
+assert.match(portal, /Professional credential progress/, 'dashboard should separately label professional credential progress');
+assert.match(portal, /does not by itself issue or authorize a professional credential/, 'academic completion must not imply credential issuance');
+
 
 for (const forbidden of [
   /courseComplete/i,
