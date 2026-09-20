@@ -1,0 +1,16 @@
+{
+  "id": "DL-SOP-DEVIATION-001",
+  "title": "SOP Deviation and Change-Control Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "record-template",
+  "format": "csv",
+  "description": "A bounded record for documenting an SOP exception, immediate containment, affected scope, escalation, authorized disposition, proposed change, training impact, and closure.",
+  "path": "/downloads/sop-deviation-change-record.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-PRO-SOP-001"],
+  "resourceMappings": [],
+  "instructions": ["Record the observed condition separately from the expected requirement.", "Apply only authorized immediate containment and identify all potentially affected material or work.", "Route investigation, disposition, and procedure changes to the designated approving roles.", "Link approved changes to the effective version, retraining impact, and closure evidence."],
+  "limitations": ["Recording a deviation does not authorize a disposition, procedure change, or return to work.", "This training record does not replace an organization's quality, investigation, or change-control system."]
+}
