@@ -13,6 +13,25 @@ const questions = readDirJson('content/questions');
 const assessments = readDirJson('content/assessments');
 const credentialItems = questions.filter(({ data }) => data.purpose === 'credential');
 const credentialAssessments = assessments.filter(({ data }) => data.purpose === 'credential');
+const exposureRegistry = readJson('registry/public-credential-item-exposure.json');
+
+assert.equal(exposureRegistry.schemaVersion, 1, 'public credential exposure registry schemaVersion must remain 1');
+assert.equal(exposureRegistry.id, 'public-credential-item-exposure');
+assert.deepEqual(exposureRegistry.scope, {
+  path: 'content/questions/*.json',
+  selector: { purpose: 'credential' },
+  appliesToAllMatches: true
+});
+assert.equal(exposureRegistry.classification.publicSource, 'keyed-development-blueprint');
+assert.equal(exposureRegistry.classification.securityState, 'compromised-for-secure-operational-use');
+assert.equal(exposureRegistry.classification.operationalUseAllowed, false);
+assert.equal(exposureRegistry.classification.activationAllowed, false);
+assert.equal(exposureRegistry.replacement.destination, 'approved-private-assessment-store-or-delivery-service');
+assert.equal(exposureRegistry.replacement.newSecureItemMaterialRequired, true);
+assert.equal(exposureRegistry.replacement.copyPublicKeyedContentUnchanged, false);
+assert.equal(exposureRegistry.replacement.protectedItemIdsPublished, false);
+assert.equal(exposureRegistry.replacement.answerKeysPublished, false);
+assert.equal(exposureRegistry.lineage.publicToOperationalRelationship, 'replacement-required-not-promotion');
 
 assert.ok(credentialItems.length > 0, 'expected public development credential-item blueprints to be present');
 assert.ok(credentialAssessments.length > 0, 'expected at least one public development credential assessment blueprint');
