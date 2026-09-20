@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-M01-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -8,15 +8,15 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "Formative diagnostic check 6: Two cultivars changed photoperiod on the same date but show different reproductive morphology. What is the best diagnostic interpretation?",
+  "stem": "Within one cultivar, upper nodes show clear reproductive development while shaded lower nodes are less advanced. What should be checked before labeling the lower-node development abnormal?",
   "choices": [
-    "The slower cultivar is nutrient deficient by definition.",
-    "Use each plant’s morphology and crop context; calendar week alone does not prove one cultivar is abnormal.",
-    "Both cultivars must be assigned the same biological stage.",
-    "Immediately increase light intensity for the slower cultivar."
+    "Only the number of days since the photoperiod change.",
+    "Position in the canopy, local light environment, whole-plant morphology and the cultivar's developmental pattern.",
+    "Whether another cultivar in a different room flowers at the same speed.",
+    "Whether fertilizer concentration can be increased immediately."
   ],
   "correct": 1,
-  "rationale": "Floral progression varies and should be documented with morphology, not calendar time alone.",
+  "rationale": "Developmental interpretation should use plant morphology and local crop context. Node position, canopy conditions and cultivar response can produce normal within-plant differences that a calendar date alone cannot classify.",
   "references": [
     "REF-FLOWER-MORPH-2023-001",
     "REF-LIGHT-001"

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-M01-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
   "competency": "COMP-IPM-ADV-001",
@@ -8,15 +8,15 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "Formative diagnostic check 5: Wilted plants occur in wet media, and no pest or pathogen sign has been confirmed. Which diagnostic approach is strongest?",
+  "stem": "Leaf-edge injury appears soon after an environmental setpoint change, and scouting finds no insects, webbing, frass, sporulation or characteristic lesions. What is the strongest initial interpretation?",
   "choices": [
-    "Keep root dysfunction, irrigation, environment and disease in the differential and collect evidence that separates them.",
-    "Apply a pesticide immediately because wilt can be caused by disease.",
-    "Irrigate more because wilt always indicates water shortage.",
-    "Rule out disease because media are wet."
+    "Treat the condition as a confirmed fungal disease.",
+    "Treat the condition as a confirmed nutrient deficiency.",
+    "Keep abiotic stress and biotic causes in the differential, verify timing and distribution, and look for discriminating signs before assigning a cause.",
+    "Apply a pesticide because direct signs are unnecessary when leaves are damaged."
   ],
-  "correct": 0,
-  "rationale": "Wilt has multiple biotic and abiotic causes; wet media can be consistent with root dysfunction and does not confirm or exclude disease.",
+  "correct": 2,
+  "rationale": "Plant injury can have overlapping biotic and abiotic appearances. Timing, spatial pattern and direct signs help separate hypotheses before a high-consequence diagnosis or control decision is made.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

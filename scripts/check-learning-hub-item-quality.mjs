@@ -31,6 +31,47 @@ const normalize = (value) => String(value ?? '')
   .trim()
   .replace(/\s+/g, ' ');
 
+const NEAR_DUPLICATE_MIN_TOKENS = 10;
+const NEAR_DUPLICATE_MIN_CHARS = 60;
+const NEAR_DUPLICATE_LENGTH_RATIO_MIN = 0.8;
+const NEAR_DUPLICATE_BIGRAM_DICE_THRESHOLD = 0.9;
+
+function wordTokens(value) {
+  const normalized = normalize(value);
+  return normalized ? normalized.split(' ') : [];
+}
+
+function tokenBigrams(tokens) {
+  const grams = new Set();
+  for (let index = 0; index < tokens.length - 1; index += 1) {
+    grams.add(`${tokens[index]} ${tokens[index + 1]}`);
+  }
+  return grams;
+}
+
+function diceCoefficient(a, b) {
+  if (a.size === 0 || b.size === 0) return 0;
+  let intersection = 0;
+  for (const value of a) if (b.has(value)) intersection += 1;
+  return (2 * intersection) / (a.size + b.size);
+}
+
+function nearDuplicateStemScore(a, b) {
+  const aNormalized = normalize(a);
+  const bNormalized = normalize(b);
+  if (aNormalized === bNormalized) return 1;
+  if (aNormalized.length < NEAR_DUPLICATE_MIN_CHARS || bNormalized.length < NEAR_DUPLICATE_MIN_CHARS) return 0;
+
+  const aTokens = wordTokens(aNormalized);
+  const bTokens = wordTokens(bNormalized);
+  if (aTokens.length < NEAR_DUPLICATE_MIN_TOKENS || bTokens.length < NEAR_DUPLICATE_MIN_TOKENS) return 0;
+
+  const lengthRatio = Math.min(aTokens.length, bTokens.length) / Math.max(aTokens.length, bTokens.length);
+  if (lengthRatio < NEAR_DUPLICATE_LENGTH_RATIO_MIN) return 0;
+
+  return diceCoefficient(tokenBigrams(aTokens), tokenBigrams(bTokens));
+}
+
 const courseKeyFromAssessment = (id) => {
   const match = /^ASSESS-LH-(.+?-\d{3})-(?:M\d{2}|FINAL)$/.exec(id);
   return match?.[1] ?? null;
@@ -68,6 +109,7 @@ for (const [key, group] of [...groups.entries()].sort(([a], [b]) => a.localeComp
   const itemMap = new Map(group.questions.map((item) => [item.id, item]));
   const membership = new Map();
   const normalizedStems = new Map();
+  const stemRecords = [];
   const objectiveCounts = new Map();
   const sourceKeyPositions = new Map();
 
@@ -109,6 +151,7 @@ for (const [key, group] of [...groups.entries()].sort(([a], [b]) => a.localeComp
     const stemKey = normalize(item.stem);
     if (normalizedStems.has(stemKey)) failures.push(`${item.id}: duplicate normalized stem with ${normalizedStems.get(stemKey)}`);
     else normalizedStems.set(stemKey, item.id);
+    stemRecords.push({ id: item.id, stem: item.stem, normalized: stemKey });
 
     if (Array.isArray(item.choices)) {
       const normalizedChoices = item.choices.map(normalize);
@@ -129,6 +172,18 @@ for (const [key, group] of [...groups.entries()].sort(([a], [b]) => a.localeComp
     }
 
     if (/\b(always|never|obviously|clearly)\b/i.test(item.stem)) warnings.push(`${item.id}: stem contains an absolute/cueing term worth human review`);
+  }
+
+  for (let leftIndex = 0; leftIndex < stemRecords.length; leftIndex += 1) {
+    for (let rightIndex = leftIndex + 1; rightIndex < stemRecords.length; rightIndex += 1) {
+      const left = stemRecords[leftIndex];
+      const right = stemRecords[rightIndex];
+      if (left.normalized === right.normalized) continue;
+      const score = nearDuplicateStemScore(left.stem, right.stem);
+      if (score >= NEAR_DUPLICATE_BIGRAM_DICE_THRESHOLD) {
+        failures.push(`${right.id}: near-duplicate stem with ${left.id} (token-bigram Dice=${score.toFixed(3)}, threshold=${NEAR_DUPLICATE_BIGRAM_DICE_THRESHOLD.toFixed(2)})`);
+      }
+    }
   }
 
   for (const [objective, count] of objectiveCounts) {
