@@ -32,4 +32,4 @@ Expose the canonical two foundational certificates and eight professional creden
 
 Catalog visibility and Course 1 machine preparation are complete. Course 1 is **not** finally human-approved and Technician I is **not** releasable as a professional credential. Real technical/editorial/assessment/accessibility/legal review, practical calibration/equivalence, controlled pilot evidence, formal standard setting and versioned approval remain real human gates.
 
-The next active build block is completing Technician I Courses 2–7 against the Course 1 package standard and then closing the Technician I credential-level validation/release evidence.
+That next build block has now advanced: all seven Technician I source packages satisfy the machine source-package contract. Current work is source reconciliation, exact deployment/readback evidence, raster production-asset replacement, versioned human review, controlled pilot/practical/calibration evidence, standard setting, credential governance/security approval, and final release verification.

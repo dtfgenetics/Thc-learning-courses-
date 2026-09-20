@@ -2,7 +2,7 @@
 
 This file is a human-readable projection of the canonical credential architecture. It must not be used to authorize credential issuance.
 
-Snapshot: 2026-09-20, from repository validation/status tooling plus the controlled Drive deliverable register.
+Snapshot: 2026-09-20. Repository registries/readiness ledgers are authoritative for certification state; Drive registers are controlled supporting archives and production-asset sources. The legacy 420-course catalog is reconciled as a resource/reference library rather than 420 credential-bearing certification courses.
 
 ## Inventory Matrix
 
@@ -31,8 +31,8 @@ Snapshot: 2026-09-20, from repository validation/status tooling plus the control
 | --- | --- | --- | --- | --- |
 | THC Safety & Responsible Practice Certificate | Foundational certificate | Visible | In development | Blocked |
 | THC Cultivation Foundations Certificate | Foundational certificate | Visible | In development | Blocked |
-| THC Cultivation Technician I | Professional credential | Visible | Active build; Course 1 public academic package, Courses 2–7 incomplete | Blocked |
-| THC Cultivation Technician II | Professional credential | Visible | Active draft build | Blocked |
+| THC Cultivation Technician I | Professional credential | Visible | All 7 source/package contracts machine-complete; deployment evidence and human/pilot/standard-setting gates remain | Blocked |
+| THC Cultivation Technician II | Professional credential | Visible | All 8 public academic packages present; 36 primary raster production visuals remain in controlled review/production; human/pilot/credential gates remain | Blocked |
 | THC Plant Health, IPM & Biosecurity Specialist | Professional credential | Visible | Planned architecture | Blocked |
 | THC Environmental, Irrigation & Fertigation Systems Specialist | Professional credential | Visible | Planned architecture | Blocked |
 | THC Propagation & Clean Stock Specialist | Professional credential | Visible | Planned architecture | Blocked |
@@ -47,11 +47,11 @@ Snapshot: 2026-09-20, from repository validation/status tooling plus the control
 
 ## Current completion focus
 
-1. Finish Course 1 as the gold-standard course package.
-2. Convert Course 1 quality/packaging rules into reusable generic validation.
-3. Bring Technician I Courses 2–7 to that same course-package standard.
-4. Complete Technician I credential-level practicals, capstone, secure assessment, validation, standard setting, policy and issuance work.
-5. Use Technician I as the reusable credential-production pattern for the remaining programs.
+1. Reconcile the controlled repository, Drive registers, and the legacy 420-course catalog so repository registries remain the certification source of truth.
+2. Keep Technician I's seven machine-complete source packages green while closing exact deployment identity, responsive/manual QA, raster asset replacement, and versioned review evidence.
+3. Finish Technician II's 36 primary production visuals as reviewed high-resolution PNG/WebP/JPEG assets; SVG review candidates are legacy-only and cannot be released as production visuals.
+4. Complete human scientific/editorial/assessment/accessibility/compliance review records, then collect real pilot/practical/calibration evidence and perform formal standard setting.
+5. Finalize credential privacy/security/issuance governance, verify deployed learner and credential surfaces, and only then advance the fail-closed production release gates.
 
 ## Important boundary
 
