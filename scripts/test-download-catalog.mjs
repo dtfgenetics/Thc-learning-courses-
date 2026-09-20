@@ -9,6 +9,13 @@ const expectedIds = [
   'DL-ENVIRONMENT-LOG-001',
   'DL-IRRIGATION-ROOTZONE-LOG-001',
   'DL-SCOUTING-ESCALATION-LOG-001',
+  'DL-TECH1-CANOPY-WORK-ORDER-001',
+  'DL-TECH1-CROP-INSPECTION-001',
+  'DL-TECH1-HARVEST-HANDOFF-001',
+  'DL-TECH1-INTEGRATED-SHIFT-001',
+  'DL-TECH1-IPM-SCOUTING-001',
+  'DL-TECH1-PROPAGATION-BATCH-001',
+  'DL-TECH1-WATER-IRRIGATION-001',
   'DL-TECH2-DIAGNOSTIC-WORKUP-001',
   'DL-TECH2-EQUIPMENT-VERIFICATION-001',
   'DL-TECH2-FERTIGATION-ROOTZONE-001',
@@ -24,6 +31,10 @@ const portal = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/portal.
 const portalStyles = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/portal.css'), 'utf8');
 const tech2CourseIds = Array.from({ length: 8 }, (_, index) => `COURSE-LH-TECH2-${String(index + 1).padStart(3, '0')}`);
 const downloadRecords = expectedIds.map((id) => JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/downloads', `${id}.json`), 'utf8')));
+const tech1CourseIds = Array.from({ length: 6 }, (_, index) => `COURSE-LH-TECH1-${String(index + 2).padStart(3, '0')}`);
+for (const courseId of tech1CourseIds) {
+  assert.ok(downloadRecords.some((record) => record.courseMappings?.includes(courseId)), `${courseId} should have at least one mapped learner download`);
+}
 for (const courseId of tech2CourseIds) {
   assert.ok(downloadRecords.some((record) => record.courseMappings?.includes(courseId)), `${courseId} should have at least one mapped learner download`);
 }

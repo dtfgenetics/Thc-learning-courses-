@@ -1,0 +1,16 @@
+{
+  "id": "DL-TECH1-CROP-INSPECTION-001",
+  "title": "Technician I Crop Inspection and Room Entry Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "observation-log",
+  "format": "csv",
+  "description": "A structured record for safe room entry, repeatable crop inspection, environmental evidence, bounded observation, escalation, and shift handoff.",
+  "path": "/downloads/tech1-crop-inspection-record.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-LH-TECH1-002", "COURSE-LH-TECH1-003", "COURSE-LH-TECH1-007"],
+  "resourceMappings": [],
+  "instructions": ["Verify the room, work order, batch identity, PPE, and entry conditions before recording observations.", "Record direct crop observations separately from interpretations.", "Include units, location, time, and sensor or instrument context for measurements.", "Document stop, hold, or escalation decisions and produce a reconstructable handoff."],
+  "limitations": ["This record does not authorize diagnosis, control-system redesign, repair, treatment selection, or product release.", "Facility SOPs and approved instrument procedures control when they are more specific."]
+}
