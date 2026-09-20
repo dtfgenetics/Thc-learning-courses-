@@ -8,8 +8,8 @@
       "status": "building-and-review",
       "gates": {
         "substantiveContentComplete": false,
-        "scientificReviewComplete": false,
-        "editorialReviewComplete": false,
+        "scientificReviewComplete": true,
+        "editorialReviewComplete": true,
         "stagingContentSliceValidated": true
       }
     },
@@ -19,7 +19,7 @@
         "blueprintComplete": true,
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
-        "humanAssessmentReviewComplete": false,
+        "humanAssessmentReviewComplete": true,
         "pilotStatisticsComplete": false
       }
     },
