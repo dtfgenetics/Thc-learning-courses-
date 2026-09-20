@@ -1,0 +1,26 @@
+{
+  "id": "DL-TECH2-IPM-BIOSECURITY-001",
+  "title": "Technician II Plant Health and Biosecurity Investigation Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "observation-log",
+  "format": "csv",
+  "description": "A scouting and investigation record for symptom distribution, direct pest or pathogen signs, abiotic alternatives, containment actions, sampling, confirmation status, and escalation.",
+  "path": "/downloads/tech2-ipm-biosecurity-investigation.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-004"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Record symptom pattern and direct signs separately from the suspected cause.",
+    "Document affected and unaffected comparison areas, chronology, crop stage, and recent environmental or cultural changes.",
+    "Use site biosecurity procedures when collecting, containing, moving, or submitting suspect material.",
+    "Record confirmation status and who owns the next containment, treatment, sampling, or disposition decision."
+  ],
+  "limitations": [
+    "Visual similarity alone does not confirm a pest, pathogen, viroid, nutrient disorder, or environmental injury.",
+    "Pesticide selection, disease disposition, quarantine, and destructive actions require the applicable legal, label, site, and supervisory authority."
+  ]
+}

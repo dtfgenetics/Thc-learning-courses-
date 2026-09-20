@@ -1,0 +1,26 @@
+{
+  "id": "DL-TECH2-SIMULATION-EVIDENCE-001",
+  "title": "Technician II Integrated Simulation Evidence Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "worksheet",
+  "format": "csv",
+  "description": "An integrated evidence record for the Technician II simulation lab, linking scenario observations, data verification, differential reasoning, authorized actions, escalation, handoff, and reflective follow-up.",
+  "path": "/downloads/tech2-integrated-simulation-evidence.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-008"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Create one row for each meaningful decision point in the simulation.",
+    "Identify the evidence available at that moment before recording the decision or action.",
+    "Record the authority boundary and escalation path whenever the scenario exceeds the technician role.",
+    "Use the final rows to document handoff quality, verification of outcomes, and what evidence would improve a future response."
+  ],
+  "limitations": [
+    "This worksheet documents learner reasoning and evidence; it is not itself a credential decision or assessor score sheet.",
+    "Simulation authorization does not grant permission to perform restricted real-world tasks."
+  ]
+}

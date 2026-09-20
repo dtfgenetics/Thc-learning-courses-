@@ -1,0 +1,26 @@
+{
+  "id": "DL-TECH2-POSTHARVEST-DEVIATION-001",
+  "title": "Technician II Harvest and Postharvest Deviation Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "record-template",
+  "format": "csv",
+  "description": "A lot-linked deviation record for harvest and postharvest observations, environmental and handling evidence, product-status controls, investigation, escalation, and disposition ownership.",
+  "path": "/downloads/tech2-postharvest-deviation.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-006"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Record lot identity, process stage, time, location, and product status before documenting the deviation.",
+    "Preserve original temperature, humidity, water-activity, handling, sanitation, packaging, or storage evidence when available.",
+    "Document immediate authorized containment separately from root-cause hypotheses.",
+    "Identify the role responsible for investigation, release, rework, hold, rejection, or other disposition decisions."
+  ],
+  "limitations": [
+    "This template does not define universal drying, curing, storage, water-activity, microbial, or disposition limits.",
+    "Product release and disposition remain subject to applicable law, testing requirements, quality procedures, and authorized personnel."
+  ]
+}
