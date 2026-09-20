@@ -1,0 +1,26 @@
+{
+  "id": "ASSESS-HOME-GROW-FINAL-001",
+  "title": "THC Home Grow Learning Path Final Assessment",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": ["COMP-HOME-START-001", "COMP-HOME-WORKFLOW-001"],
+  "objectives": ["LO-HOME-SCOPE-001", "LO-HOME-OBSERVE-002", "LO-HOME-TROUBLESHOOT-003", "LO-HOME-STAGES-001", "LO-HOME-DAILY-002", "LO-HOME-HARVEST-003"],
+  "items": ["ITEM-HOME-GROW-FINAL-001", "ITEM-HOME-GROW-FINAL-002", "ITEM-HOME-GROW-FINAL-003", "ITEM-HOME-GROW-FINAL-004", "ITEM-HOME-GROW-FINAL-005", "ITEM-HOME-GROW-FINAL-006", "ITEM-HOME-GROW-FINAL-007", "ITEM-HOME-GROW-FINAL-008", "ITEM-HOME-GROW-FINAL-009", "ITEM-HOME-GROW-FINAL-010", "ITEM-HOME-GROW-FINAL-011", "ITEM-HOME-GROW-FINAL-012"],
+  "passingScorePercent": 80,
+  "maxAttempts": 3,
+  "cooldownHours": 0,
+  "feedbackMode": "after-submit",
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "extensions": {
+    "courseFinalProfile": "public-noncredential-dedicated-bank",
+    "sourceModuleAssessments": ["ASSESS-HOME-START-001", "ASSESS-HOME-WORKFLOW-001"],
+    "dedicatedItemBankSource": "preserved-from-prior-course-final-branches",
+    "certificationUseStatus": "not-authorized",
+    "academicThresholdStatus": "provisional-development",
+    "standardSettingStatus": "pending-validation",
+    "requireHumanAssessmentReview": true,
+    "thresholdNote": "The 80% score is a development target for academic course completion only. This noncredential course final must not be used for certification issuance until review, pilot evidence, accessibility review, and release approval are recorded."
+  }
+}

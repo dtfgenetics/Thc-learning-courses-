@@ -22,6 +22,7 @@ expect(/<aside[^>]*aria-label="Course catalog"/i, html, 'course catalog must hav
 expect(/<nav[^>]*aria-label="Academy courses"/i, html, 'course navigation must have an accessible name');
 expect(/<nav[^>]*aria-label="Academy features"/i, html, 'Academy feature navigation must have an accessible name');
 expect(/id="tab-progress"[^>]*aria-pressed="false"/i, html, 'credential progress tab must expose pressed state');
+expect(/id="tab-resources"[^>]*aria-pressed="false"/i, html, 'learner downloads tab must expose pressed state');
 expect(/<label[^>]*for="course-search"/i, html, 'search field needs an explicit label');
 expect(/id="course-search"[^>]*type="search"/i, html, 'search input must use search semantics');
 expect(/id="lesson-view"[^>]*tabindex="-1"[^>]*aria-live="polite"/i, html, 'lesson panel must be focusable and announce updates');
@@ -36,6 +37,8 @@ expect(/createElement\('legend'\)/, app, 'practice questions must use legends fo
 expect(/setAttribute\('aria-live',\s*'polite'\)/, app, 'practice feedback must be announced to assistive technology');
 expect(/@media\s*\(max-width:\s*700px\)/i, governanceStyles, 'governance dashboard needs narrow-screen treatment');
 expect(/\.portal-tab:focus-visible[^\{]*\{/i, portalStyles, 'feature tabs need visible keyboard focus');
+expect(/\.download-action:focus-visible[^\{]*\{/i, portalStyles, 'download links need visible keyboard focus');
+expect(/setAttribute\('aria-label', `Download \$\{download\.title\} as CSV`\)/, portal, 'download links need resource-specific accessible names');
 expect(/\.portal-table-wrap\s*\{[^}]*overflow-x:\s*auto/i, portalStyles, 'credential attempt table must remain horizontally scrollable on narrow screens');
 expect(/@media\s*\(max-width:\s*620px\)/i, portalStyles, 'credential progress view needs narrow-screen treatment');
 expect(/button\.type\s*=\s*'button'/, app, 'dynamic lesson controls must use explicit button type');

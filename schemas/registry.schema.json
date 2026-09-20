@@ -15,7 +15,11 @@
     "assessments": {"type": "array", "items": {"type": "string"}},
     "questions": {"type": "array", "items": {"type": "string"}},
     "references": {"type": "array", "items": {"type": "string"}},
-    "credentials": {"type": "array", "items": {"type": "string"}}
+    "credentials": {"type": "array", "items": {"type": "string"}},
+    "downloads": {"type": "array", "items": {"type": "string"}},
+    "credentialPrograms": {"type": "array", "items": {"type": "string"}},
+    "resources": {"type": "array", "items": {"type": "string"}},
+    "issuers": {"type": "array", "items": {"type": "string"}}
   },
   "additionalProperties": false
 }

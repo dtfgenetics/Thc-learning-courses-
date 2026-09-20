@@ -9,6 +9,7 @@ Repository: `dtfgenetics/Thc-learning-courses-`
 `content/competencies` — competency definitions  
 `content/courses` — course objects  
 `content/credentials` — credential definitions  
+`content/downloads` — learner worksheets, logs, checklists, and job-aid metadata
 `content/encyclopedia` — canonical reference content  
 `content/glossary` — terminology  
 `content/job-roles` — occupational roles  
@@ -37,6 +38,8 @@ Repository: `dtfgenetics/Thc-learning-courses-`
 `apps/api` — API/runtime/persistence layer  
 `database` — database definitions/readiness  
 `openapi` — public API contract
+
+Use `docs/AI-CONTENT-AUTHORING-GUIDE.md` for the canonical create/edit sequence. Download files referenced by `content/downloads` live under `apps/web/public/downloads` and are validated against their metadata.
 
 ## Canonical search-before-create rule
 

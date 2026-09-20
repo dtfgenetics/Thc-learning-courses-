@@ -204,6 +204,12 @@ function renderCatalog() {
     if (course.credentialBearing) {
       details.append(text('p', 'Lesson progress only. Course and credential completion also depend on the required assessment and practical-performance evidence, which are tracked separately from lesson checkmarks.', 'course-meta'));
     }
+    if (course.finalAssessment) {
+      const final = course.finalAssessment;
+      const label = final.purpose === 'credential' ? 'Credential assessment' : 'Course final';
+      const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • provisional ${Number(final.passingScorePercent ?? 0).toFixed(0)}% academic threshold`;
+      details.append(text('p', note, 'course-final-summary'));
+    }
 
     renderCourseEnrollment(details, course);
     renderPathwayPanel(details, course);

@@ -424,6 +424,86 @@ function renderTools() {
   lessonView.focus();
 }
 
+function downloadStatusLabel(download) {
+  if (download.status === 'published' && download.releaseStatus === 'public') return 'Published resource';
+  return 'Development preview';
+}
+
+function renderDownloadCard(download) {
+  const card = document.createElement('article');
+  card.className = 'download-card';
+
+  const header = document.createElement('div');
+  header.className = 'download-card-header';
+  const identity = document.createElement('div');
+  identity.append(text('p', `${String(download.format ?? '').toUpperCase()} · ${statusLabel(download.kind)}`, 'download-kind'));
+  identity.append(text('h3', download.title));
+  header.append(identity, text('span', downloadStatusLabel(download), `download-status status-${download.status}`));
+  card.append(header, text('p', download.description, 'download-description'));
+
+  const metadata = document.createElement('dl');
+  const fields = [
+    ['Course mappings', String((download.courseMappings ?? []).length)],
+    ['Version', download.version],
+    ['Accessibility', statusLabel(download.accessibilityStatus)]
+  ];
+  for (const [label, value] of fields) {
+    const row = document.createElement('div');
+    row.append(text('dt', label), text('dd', value));
+    metadata.append(row);
+  }
+  card.append(metadata);
+
+  if ((download.instructions ?? []).length) {
+    card.append(text('p', 'Use this tool', 'download-subheading'));
+    const list = document.createElement('ul');
+    for (const instruction of download.instructions) list.append(text('li', instruction));
+    card.append(list);
+  }
+
+  const action = document.createElement('a');
+  action.className = 'download-action';
+  action.href = download.path;
+  action.download = '';
+  action.append(text('span', 'Download CSV'));
+  action.setAttribute('aria-label', `Download ${download.title} as CSV`);
+  card.append(action);
+  return card;
+}
+
+async function renderDownloads() {
+  setActive('tab-resources');
+  if (compactCatalog?.matches) setCatalogExpanded(false);
+  const panel = document.createElement('div');
+  panel.className = 'portal-panel downloads-panel';
+  panel.append(text('p', 'Printable learner resources', 'eyebrow'));
+  panel.append(text('h2', 'Logs, Worksheets & Job Aids'));
+  panel.append(text('p', 'Use these structured tools during course exercises and practice. Site-approved records and SOPs remain authoritative for regulated or workplace activity.', 'lede'));
+  const status = text('p', 'Loading learner resources…', 'status');
+  status.setAttribute('aria-live', 'polite');
+  panel.append(status);
+  lessonView.replaceChildren(panel);
+  lessonView.focus();
+
+  try {
+    const response = await fetch('/api/downloads', { headers: { accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Resource catalog unavailable (${response.status}).`);
+    const body = await response.json();
+    const downloads = Array.isArray(body.downloads) ? body.downloads : [];
+    status.textContent = downloads.length
+      ? `${downloads.length} resource${downloads.length === 1 ? '' : 's'} available in ${body.mode === 'staging-preview' ? 'development preview' : 'the public library'}.`
+      : 'No learner downloads are currently published.';
+    if (!downloads.length) return;
+    const grid = document.createElement('div');
+    grid.className = 'download-grid';
+    for (const download of downloads) grid.append(renderDownloadCard(download));
+    panel.append(grid);
+  } catch (error) {
+    status.className = 'portal-error';
+    status.textContent = error.message;
+  }
+}
+
 function renderVerify() {
   setActive('tab-verify');
   if (compactCatalog?.matches) setCatalogExpanded(false);
@@ -521,4 +601,5 @@ document.querySelector('#tab-catalog')?.addEventListener('click', () => {
 });
 document.querySelector('#tab-progress')?.addEventListener('click', renderCredentialProgress);
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
+document.querySelector('#tab-resources')?.addEventListener('click', renderDownloads);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);

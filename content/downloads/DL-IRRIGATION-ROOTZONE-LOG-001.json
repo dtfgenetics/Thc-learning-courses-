@@ -1,0 +1,16 @@
+{
+  "id": "DL-IRRIGATION-ROOTZONE-LOG-001",
+  "title": "Irrigation and Root-Zone Observation Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "measurement-log",
+  "format": "csv",
+  "description": "A structured worksheet for recording irrigation events, source and drain measurements, root-zone observations, and exceptions.",
+  "path": "/downloads/irrigation-rootzone-observation-log.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-HOME-GROW-001", "COURSE-ROOTZONE-ADVANCED-001", "COURSE-LH-TECH1-003"],
+  "resourceMappings": [],
+  "instructions": ["Record units for every numeric measurement.", "Separate measured data from visual observations and decisions.", "Escalate out-of-range results through the applicable site procedure."],
+  "limitations": ["This template does not prescribe nutrient recipes, irrigation timing, or corrective actions.", "Sampling method and acceptance limits must come from the applicable course exercise or approved SOP."]
+}
