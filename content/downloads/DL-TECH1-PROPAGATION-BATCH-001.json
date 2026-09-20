@@ -1,0 +1,16 @@
+{
+  "id": "DL-TECH1-PROPAGATION-BATCH-001",
+  "title": "Technician I Propagation Batch Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "record-template",
+  "format": "csv",
+  "description": "A traceable propagation record for donor acceptance, sanitation, tray identity, rooting progress, count reconciliation, quarantine, and handoff.",
+  "path": "/downloads/tech1-propagation-batch-record.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+  "resourceMappings": [],
+  "instructions": ["Verify donor and work-order identity before preparing labels or material.", "Record sanitation and isolation checkpoints as they occur.", "Preserve donor-to-tray genealogy and never guess an ambiguous identity.", "Reconcile started, rooted, lost, rejected, and handed-off counts before closing the batch."],
+  "limitations": ["This record does not replace facility donor-acceptance, clean-stock, or quarantine procedures.", "The template does not authorize protocol redesign or release of suspect material."]
+}

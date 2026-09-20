@@ -1,0 +1,16 @@
+{
+  "id": "DL-TECH1-INTEGRATED-SHIFT-001",
+  "title": "Technician I Integrated Cultivation Shift Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "worksheet",
+  "format": "csv",
+  "description": "An integrated evidence record for shift prioritization, measurements, practical decisions, traceability, deviations, escalation, outcome verification, and final handoff.",
+  "path": "/downloads/tech1-integrated-shift-record.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-LH-TECH1-007"],
+  "resourceMappings": [],
+  "instructions": ["Create one row for each meaningful task or decision point.", "Record the evidence available at that time before entering the decision or action.", "Identify stop, continue, hold, or clarify decisions and the applicable authority boundary.", "Close the record with incomplete work, next-shift priorities, outcome verification, and a reconstructable handoff."],
+  "limitations": ["This worksheet is learner evidence and does not replace an assessor score or credential decision.", "Simulation completion does not authorize restricted real-world work or credential issuance."]
+}
