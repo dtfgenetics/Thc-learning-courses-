@@ -66,6 +66,29 @@ paths:
         '200': { description: Learner-safe written and practical course evidence }
         '401': { description: Authentication required }
         '404': { description: Course or evidence model not found }
+  /me/courses/{courseId}/practical-submission:
+    get:
+      operationId: getLearnerPracticalSubmission
+      parameters:
+        - $ref: '#/components/parameters/CourseId'
+      responses:
+        '200': { description: Private learner practical evidence-reference submission }
+        '401': { description: Authentication required }
+        '404': { description: Practical submission model not configured }
+    put:
+      operationId: saveLearnerPracticalSubmission
+      parameters:
+        - $ref: '#/components/parameters/CourseId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PracticalSubmissionRequest'
+      responses:
+        '200': { description: Draft or submitted practical evidence references saved; no score or credential is issued }
+        '400': { description: Invalid or incomplete practical evidence submission }
+        '401': { description: Authentication required }
   /me/courses/{courseId}/assessment-attempts:
     post:
       operationId: startOrResumeCourseAssessment
@@ -183,3 +206,20 @@ components:
         itemId: { type: string }
         itemVersion: { type: [string, number] }
         response: {}
+    PracticalSubmissionRequest:
+      type: object
+      additionalProperties: false
+      required: [status, evidenceOutputs]
+      properties:
+        status: { type: string, enum: [draft, submitted] }
+        learnerStatement: { type: string, maxLength: 2000 }
+        evidenceOutputs:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [name, reference, description]
+            properties:
+              name: { type: string, maxLength: 200 }
+              reference: { type: string, maxLength: 500 }
+              description: { type: string, maxLength: 1000 }

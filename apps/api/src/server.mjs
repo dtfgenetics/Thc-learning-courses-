@@ -20,6 +20,7 @@ import {
   buildCoursePracticalReport,
   coursePracticalReportCsv
 } from './course-practical-evaluator-service.mjs';
+import { normalizePracticalEvidenceSubmission, learnerPracticalSubmissionView } from '../../../packages/domain/practical-evidence-submission.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -502,6 +503,33 @@ export function createHandler({
           }
         }
         return json(res, 200, courseEvidenceView(course, assessment, evidence));
+      }
+
+      const practicalSubmissionMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/practical-submission$/);
+      if ((req.method === 'GET' || req.method === 'PUT') && practicalSubmissionMatch) {
+        if (req.method === 'GET') route = 'GET /api/v1/me/courses/:courseId/practical-submission';
+        else route = 'PUT /api/v1/me/courses/:courseId/practical-submission';
+        const auth = authorizeRequest(resolvedAuthorize, req, req.method === 'GET' ? 'learner:read' : 'learner:write', res, requestId);
+        if (!auth) return;
+        const requiredMethod = req.method === 'GET' ? 'getPracticalSubmission' : 'savePracticalSubmission';
+        if (!learnerStore || typeof learnerStore[requiredMethod] !== 'function') return json(res, 503, { error: 'learner-practical-submission-persistence-unavailable', requestId });
+        const course = loadCourseDefinition(practicalSubmissionMatch[1]);
+        const assessment = course?.finalAssessment ? loadAssessmentDefinition(course.finalAssessment) : null;
+        const practical = course ? loadCourse1PracticalForEvaluation(course.id) : null;
+        if (!course || !assessment || !practical || assessment.extensions?.linkedPerformanceAssessment !== practical.id) return json(res, 404, { error: 'practical-submission-not-configured', requestId });
+        const key = { courseId: course.id, assessmentId: practical.id, assessmentVersion: practical.version };
+        if (req.method === 'GET') {
+          const record = await learnerStore.getPracticalSubmission(auth.subject, key);
+          return json(res, 200, learnerPracticalSubmissionView(practical, record));
+        }
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 32 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        let submission;
+        try { submission = normalizePracticalEvidenceSubmission(practical, body); }
+        catch (error) { return json(res, 400, { error: error.message, requestId }); }
+        const saved = await learnerStore.savePracticalSubmission(auth.subject, { ...key, submission });
+        return json(res, 200, learnerPracticalSubmissionView(practical, saved));
       }
 
       const courseAssessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/assessment-attempts$/);
