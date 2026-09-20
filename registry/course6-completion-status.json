@@ -1,7 +1,7 @@
 {
   "courseId": "COURSE-LH-TECH1-006",
   "version": "0.2.0",
-  "updated": "2026-09-18",
+  "updated": "2026-09-20",
   "academicPublication": "draft",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
@@ -16,7 +16,8 @@
     "scripts/test-tech1-review-queues.mjs",
     "scripts/test-build-identity-endpoint.mjs",
     "scripts/verify-public-deployment-identity.mjs",
-    "scripts/test-tech1-courses3-7-learner-runtime.mjs"
+    "scripts/test-tech1-courses3-7-learner-runtime.mjs",
+    "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md"
   ],
   "nextMachineActions": [
     "complete deployed responsive/manual learner-surface QA and record defects",
@@ -40,5 +41,12 @@
     "status": "verified-8-of-8",
     "registry": "visuals/COURSE6-ASSET-REGISTRY.json",
     "verifiedAt": "2026-09-18"
+  },
+  "pilotProtocol": {
+    "state": "protocol-ready-pilot-not-started",
+    "path": "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md",
+    "evidenceCollected": false,
+    "approvalRecorded": false,
+    "boundary": "Protocol readiness does not establish pilot completion, assessment validity, standard setting, or credential release."
   }
 }
