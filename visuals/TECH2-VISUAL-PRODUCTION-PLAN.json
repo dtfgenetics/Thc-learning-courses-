@@ -30,7 +30,25 @@
       "responsive readability",
       "public path verification"
     ],
-    "credentialBoundary": "Academic visuals must not imply secure credential-form approval or professional certification issuance."
+    "credentialBoundary": "Academic visuals must not imply secure credential-form approval or professional certification issuance.",
+    "productionFormatPolicy": {
+      "preferred": "raster",
+      "allowedReleasedExtensions": [
+        "png",
+        "webp",
+        "jpg",
+        "jpeg"
+      ],
+      "legacyReviewCandidateExtensions": [
+        "svg",
+        "png",
+        "webp",
+        "jpg",
+        "jpeg"
+      ],
+      "svgReleaseAllowed": false,
+      "rationale": "Technician II production visuals must use reviewed high-resolution raster assets. Existing SVG review candidates remain visible only as legacy internal candidates until replaced; they cannot be promoted to approved or produced."
+    }
   },
   "courses": [
     {

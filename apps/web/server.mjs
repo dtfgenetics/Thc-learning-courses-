@@ -559,10 +559,18 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       const assetFile = path.join('assets', courseAssetMatch[1], courseAssetMatch[2]);
       if (sendStatic(res, assetFile, 'image/svg+xml; charset=utf-8', req.method)) return;
     }
-    const tech2AssetMatch = url.pathname.match(/^\/assets\/tech2\/(course[1-8])\/([A-Za-z0-9._-]+\.svg)$/);
+    const tech2AssetMatch = url.pathname.match(/^\/assets\/tech2\/(course[1-8])\/([A-Za-z0-9._-]+\.(?:svg|png|webp|jpe?g))$/i);
     if ((req.method === 'GET' || req.method === 'HEAD') && tech2AssetMatch) {
       const assetFile = path.join('assets', 'tech2', tech2AssetMatch[1], tech2AssetMatch[2]);
-      if (sendStatic(res, assetFile, 'image/svg+xml; charset=utf-8', req.method)) return;
+      const ext = path.extname(tech2AssetMatch[2]).toLowerCase();
+      const assetTypes = {
+        '.svg': 'image/svg+xml; charset=utf-8',
+        '.png': 'image/png',
+        '.webp': 'image/webp',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg'
+      };
+      if (sendStatic(res, assetFile, assetTypes[ext], req.method)) return;
     }
     const downloadFileMatch = url.pathname.match(/^\/downloads\/([A-Za-z0-9._-]+\.csv)$/);
     if ((req.method === 'GET' || req.method === 'HEAD') && downloadFileMatch) {
