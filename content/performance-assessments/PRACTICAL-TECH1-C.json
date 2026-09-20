@@ -1,0 +1,18 @@
+{
+  "id": "PRACTICAL-TECH1-C",
+  "title": "Technician I Practical C — IPM Scouting Route",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-I-001",
+  "jobTasks": ["TASK-CULT-IPM-001", "TASK-CULT-SANITATION-001", "TASK-CULT-OBSERVE-001", "TASK-CULT-RECORDS-001"],
+  "competencies": ["COMP-IPM-001", "COMP-SPACE-BIOSEC-001", "COMP-PLANT-BIO-001", "COMP-CULT-TRACEABILITY-001", "COMP-PRO-QA-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Completed scouting sheet", "Annotated room map", "Incidence and severity calculations", "Trap trend note", "Biosecurity or quarantine note", "Escalation handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Sanitation and biosecurity","points":15},{"name":"Route and inspection completeness","points":15},{"name":"Sign versus symptom classification","points":15},{"name":"Incidence and severity","points":15},{"name":"Spatial and trend interpretation","points":20},{"name":"Escalation choice","points":10},{"name":"Documentation and handoff","points":10}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Knowingly carries suspect tools or material across a supplied clean or quarantine boundary without required controls.", "Selects or applies an unauthorized pesticide or treatment outside the supplied Technician I authority.", "Falsifies counts locations severity or trend records to conceal a finding.", "Knowingly releases a suspect plant or area from an active hold without authorization."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH1-C-IPM-SCOUTING-ROUTE.md",
+  "extensions": {"credentialProgram":"CREDPROG-CULT-TECH-I-001","courseMappings":["COURSE-LH-TECH1-005","COURSE-LH-TECH1-007"],"cutScoreStatus":"provisional","credentialUseAuthorized":false}
+}

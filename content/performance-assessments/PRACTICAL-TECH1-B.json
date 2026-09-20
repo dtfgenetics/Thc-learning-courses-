@@ -1,0 +1,18 @@
+{
+  "id": "PRACTICAL-TECH1-B",
+  "title": "Technician I Practical B — Water & Irrigation Shift",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-I-001",
+  "jobTasks": ["TASK-CULT-WATER-001", "TASK-CULT-IRRIGATION-001", "TASK-CULT-RECORDS-001"],
+  "competencies": ["COMP-WATER-001", "COMP-NUTRITION-001", "COMP-ROOTZONE-001", "COMP-CULT-EQUIPMENT-CARE-001", "COMP-CULT-TRACEABILITY-001", "COMP-PRO-SOP-001", "COMP-PRO-QA-001"],
+  "deliveryModes": ["simulation", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Meter and calibration check record", "Water or solution measurement log", "Irrigation work record", "Zone exception map", "Bounded nutrition-context note", "Unresolved-condition handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Work-order and identity verification","points":10},{"name":"Measurement technique and calibration awareness","points":20},{"name":"pH EC and nutrition-context interpretation","points":15},{"name":"Irrigation execution","points":20},{"name":"Delivery and root-zone problem recognition","points":15},{"name":"Records and reconciliation","points":15},{"name":"Escalation and handoff","points":5}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Uses an unverified measurement to make an unauthorized room-wide irrigation or nutrient change.", "Knowingly applies the wrong solution or work order to a room, batch, or zone after an unresolved identity conflict.", "Bypasses a serious electrical, chemical, pressure, or slip hazard instead of stopping and escalating.", "Falsifies pH EC delivery quantity or completion records to conceal a discrepancy."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH1-B-WATER-IRRIGATION-SHIFT.md",
+  "extensions": {"credentialProgram":"CREDPROG-CULT-TECH-I-001","courseMappings":["COURSE-LH-TECH1-004","COURSE-LH-TECH1-007"],"cutScoreStatus":"provisional","credentialUseAuthorized":false}
+}

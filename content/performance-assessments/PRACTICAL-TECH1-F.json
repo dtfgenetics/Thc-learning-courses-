@@ -1,0 +1,18 @@
+{
+  "id": "PRACTICAL-TECH1-F",
+  "title": "Technician I Practical F — Harvest-to-Dry-Room Handoff",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "practical",
+  "role": "ROLE-CULT-TECH-I-001",
+  "jobTasks": ["TASK-CULT-HARVEST-001", "TASK-CULT-POSTHARVEST-001", "TASK-CULT-SANITATION-001", "TASK-CULT-RECORDS-001"],
+  "competencies": ["COMP-POSTHARVEST-001", "COMP-SAFETY-WORK-001", "COMP-SPACE-BIOSEC-001", "COMP-CULT-TRACEABILITY-001", "COMP-PRO-SOP-001", "COMP-PRO-QA-001"],
+  "deliveryModes": ["simulation", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Pre-harvest safety and readiness check", "Harvest work record", "Waste or exception record", "Lot-movement traceability chain", "Dry-room receiving record", "Quantity reconciliation", "Postharvest condition note", "Unresolved-issue handoff"],
+  "scoring": {"totalPoints": 100, "domains": [{"name":"Authorization scope and safety verification","points":10},{"name":"Sanitation and clean handling","points":15},{"name":"Lot identity and traceability","points":25},{"name":"Harvest workflow execution","points":15},{"name":"Postharvest receiving and environment interpretation","points":15},{"name":"Quantity reconciliation","points":10},{"name":"Records and handoff","points":10}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Knowingly continues through an unresolved serious harvest or pathway safety hazard.", "Moves merges relabels or receives material after an unresolved identity conflict that breaks genealogy.", "Knowingly moves or releases suspect material from an active contamination or quality hold without authorization.", "Falsifies weight count waste destination or receiving records to hide a discrepancy."],
+  "sourceDocument": "docs/academy-v2/practicals/PRACTICAL-TECH1-F-HARVEST-TO-DRY-ROOM-HANDOFF.md",
+  "extensions": {"credentialProgram":"CREDPROG-CULT-TECH-I-001","courseMappings":["COURSE-LH-TECH1-006","COURSE-LH-TECH1-007"],"cutScoreStatus":"provisional","credentialUseAuthorized":false}
+}

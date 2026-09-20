@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { catalogAttestationApproval, catalogAttestationStatus } from './catalog-review-attestation.mjs';
 
 const root = process.cwd();
 const human = process.argv.includes('--human');
@@ -39,12 +40,17 @@ const glossary = readDir('content/glossary');
 const readiness = readJson('registry/system-readiness.json');
 
 function hasApprovedReview(objectId, objectVersion, reviewType) {
-  return reviews.some((review) =>
+  const explicit = reviews.some((review) =>
     review.objectId === objectId &&
     String(review.objectVersion) === String(objectVersion) &&
     review.reviewType === reviewType &&
     review.status === 'approved'
   );
+  if (explicit) return true;
+  const objectType = reviewType === 'assessment'
+    ? (assessments.some((item) => item.id === objectId) ? 'assessment' : 'question')
+    : 'lesson';
+  return Boolean(catalogAttestationApproval(objectType, reviewType, objectId));
 }
 
 let pendingScientific = 0;
@@ -64,6 +70,8 @@ for (const question of questions) {
 const summativeQuestions = questions.filter((item) => ['summative', 'credential'].includes(item.purpose));
 const activeQuestions = summativeQuestions.filter((item) => item.status === 'active');
 const completedPilots = pilots.filter((record) => record.status === 'complete' || record.complete === true);
+const reviewTaskTotal = (lessons.length * 2) + assessments.length + questions.length;
+const pendingReviewTotal = pendingScientific + pendingEditorial + pendingAssessment;
 
 const productionBlockers = [];
 for (const [areaName, area] of Object.entries(readiness.areas ?? {})) {
@@ -123,12 +131,15 @@ const report = {
     credentials: statusCounts(credentials)
   },
   review: {
+    catalogAttestation: catalogAttestationStatus(),
     approvedRecords: reviews.filter((review) => review.status === 'approved').length,
     totalRecords: reviews.length,
+    totalTasks: reviewTaskTotal,
+    approvedTasks: reviewTaskTotal - pendingReviewTotal,
     pendingScientific,
     pendingEditorial,
     pendingAssessment,
-    pendingTotal: pendingScientific + pendingEditorial + pendingAssessment
+    pendingTotal: pendingReviewTotal
   },
   pilot: {
     records: pilots.length,
