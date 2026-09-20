@@ -39,7 +39,7 @@ export async function loadProductionApiOptions(env = process.env) {
   const rawLearnerStore = adapters?.learnerStore;
   const requiredLearnerMethods = [
     'listProgress', 'setLessonProgress', 'listEnrollments', 'enroll',
-    'listCredentialEvidence', 'listCourseEvidence',
+    'listCredentialEvidence', 'listCourseEvidence', 'getPracticalSubmission', 'savePracticalSubmission',
     'findOpenAssessmentAttempt', 'getAssessmentAttempt', 'createAssessmentAttempt',
     'saveAssessmentResponses', 'saveAssessmentScore'
   ];

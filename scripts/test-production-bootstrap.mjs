@@ -16,19 +16,20 @@ const productionEnv = {
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_REQUIRED_SCHEMA_VERSION: '3'
+  THC_REQUIRED_SCHEMA_VERSION: '4'
 };
 const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
 assert.equal(await options.credentialStore.ping(), true);
-assert.equal(await options.credentialStore.schemaVersion(), '3');
-assert.equal(options.requiredSchemaVersion, '3');
+assert.equal(await options.credentialStore.schemaVersion(), '4');
+assert.equal(options.requiredSchemaVersion, '4');
 assert.equal(options.credentialWriter.kind, 'test-writer');
 assert.equal(typeof options.learnerStore.listCourseEvidence, 'function');
 assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
 for (const method of ['findOpenAssessmentAttempt', 'getAssessmentAttempt', 'createAssessmentAttempt', 'saveAssessmentResponses', 'saveAssessmentScore']) {
   assert.equal(typeof options.learnerStore[method], 'function', `production learner store must provide ${method}()`);
 }
+for (const method of ['getPracticalSubmission', 'savePracticalSubmission']) assert.equal(typeof options.learnerStore[method], 'function', `production learner store must provide ${method}()`);
 assert.equal(options.practicalEvaluatorStore.kind, 'test-practical-evaluator');
 for (const method of ['listCourseLearners', 'listCourseReportRows', 'getEvaluation', 'saveEvaluation', 'claimEvaluator', 'releaseEvaluator', 'setEvaluatorAssignment']) {
   assert.equal(typeof options.practicalEvaluatorStore[method], 'function', `production practical evaluator store must provide ${method}()`);
@@ -54,4 +55,4 @@ assert.equal(evaluatorAuth.ok, true);
 const adminWrite = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:write');
 assert.equal(adminWrite.ok, true);
 
-console.log('Production persistence, schema v3 readiness, automatic academic enrollment completion, learner assessment/evidence, practical evaluator queue/assignment/reporting, and authentication adapter contracts passed.');
+console.log('Production persistence, schema v4 readiness, learner practical submissions, automatic academic enrollment completion, assessment/evidence, evaluator queue/assignment/reporting, and authentication adapter contracts passed.');
