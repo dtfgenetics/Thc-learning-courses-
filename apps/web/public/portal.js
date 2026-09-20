@@ -177,23 +177,73 @@ async function renderCredentialProgress() {
   const panel = document.createElement('div');
   panel.className = 'portal-panel';
   panel.append(text('p', 'Private learner record', 'eyebrow'));
-  panel.append(text('h2', 'My Credential Progress'));
-  panel.append(text('p', 'Your exam, competency, practical, capstone, and portfolio evidence are evaluated together. Lesson completion alone does not issue a credential.', 'lede'));
-  panel.append(text('p', 'Loading Technician II credential evidence…', 'status'));
+  panel.append(text('h2', 'My Learning Dashboard'));
+  panel.append(text('p', 'Review your academic enrollment, current Course 1 completion, and professional credential evidence in one place. Academic course completion and professional credential issuance remain separate.', 'lede'));
+  panel.append(text('p', 'Loading learner records…', 'status'));
   lessonView.replaceChildren(panel);
   lessonView.focus();
 
   try {
-    const response = await fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/progress', {
-      headers: { accept: 'application/json' },
-      credentials: 'same-origin'
-    });
-    if (!response.ok) {
-      if (response.status === 401 || response.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
-      throw new Error(`Credential progress unavailable (${response.status}).`);
+    const [enrollmentResponse, courseCompletionResponse, progressResponse, transcriptResponse] = await Promise.all([
+      fetch('/api/v1/me/enrollments', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch(`/api/v1/me/courses/${COURSE1_ID}/completion`, {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/progress', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-II-001/transcript', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      })
+    ]);
+    if (!enrollmentResponse.ok) {
+      if (enrollmentResponse.status === 401 || enrollmentResponse.status === 403) throw new Error('Learner dashboard is available after learner authentication.');
+      throw new Error(`Enrollment status unavailable (${enrollmentResponse.status}).`);
     }
-    const data = await response.json();
+    if (!courseCompletionResponse.ok) {
+      if (courseCompletionResponse.status === 401 || courseCompletionResponse.status === 403) throw new Error('Course completion is available after learner authentication.');
+      throw new Error(`Course completion unavailable (${courseCompletionResponse.status}).`);
+    }
+    if (!progressResponse.ok) {
+      if (progressResponse.status === 401 || progressResponse.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
+      throw new Error(`Credential progress unavailable (${progressResponse.status}).`);
+    }
+    if (!transcriptResponse.ok) {
+      if (transcriptResponse.status === 401 || transcriptResponse.status === 403) throw new Error('Competency transcript is available after learner authentication.');
+      throw new Error(`Competency transcript unavailable (${transcriptResponse.status}).`);
+    }
+    const enrollmentData = await enrollmentResponse.json();
+    const courseCompletion = await courseCompletionResponse.json();
+    const data = await progressResponse.json();
+    const transcriptData = await transcriptResponse.json();
     panel.querySelector('.status')?.remove();
+
+    const courseEnrollment = (enrollmentData.enrollments ?? []).find((row) => row.courseId === COURSE1_ID && String(row.courseVersion) === String(courseCompletion.course?.version));
+    const academicSummary = document.createElement('section');
+    academicSummary.className = 'portal-progress-summary';
+    academicSummary.setAttribute('aria-label', 'Academic course summary');
+    const instruction = courseCompletion.instruction ?? {};
+    const completedModules = (instruction.modules ?? []).filter((row) => row.complete === true).length;
+    academicSummary.append(
+      summaryCard('Course 1 enrollment', courseEnrollment ? statusLabel(courseEnrollment.status) : 'Not enrolled', courseCompletion.course?.title ?? COURSE1_TITLE),
+      summaryCard('Lesson completion', `${instruction.completedLessonCount ?? 0}/${instruction.requiredLessonCount ?? 0}`, `${instruction.completionPercent ?? 0}% of canonical instruction`),
+      summaryCard('Modules complete', `${completedModules}/${(instruction.modules ?? []).length}`, 'Derived from authoritative lesson progress'),
+      summaryCard('Course final', statusLabel(courseCompletion.finalAssessment?.status), 'Academic course assessment'),
+      summaryCard('Course practical', statusLabel(courseCompletion.performanceAssessment?.status), 'Academic practical evidence')
+    );
+    panel.append(text('h3', 'Academic course status'), academicSummary);
+    if (courseCompletion.complete === true) {
+      panel.append(text('p', 'Course 1 academic requirements are complete. This does not by itself issue or authorize a professional credential.', 'portal-result-note'));
+    } else {
+      const remaining = (courseCompletion.missingRequirements ?? []).map(statusLabel);
+      panel.append(text('p', remaining.length ? `Course 1 requirements still open: ${remaining.join(', ')}.` : 'Course 1 academic requirements are still in progress.', 'portal-result-note'));
+    }
 
     const summary = document.createElement('section');
     summary.className = 'portal-progress-summary';
@@ -214,7 +264,7 @@ async function renderCredentialProgress() {
       summaryCard('Performance evidence', `${performancePassed}/${(data.performanceAssessments ?? []).length}`, '7 practicals + capstone'),
       summaryCard('Portfolio evidence', `${portfolioComplete}/${(data.portfolioArtifacts ?? []).length}`, 'Employment artifacts')
     );
-    panel.append(summary);
+    panel.append(text('h3', 'Professional credential progress'), summary);
 
     if (!(data.eligibility?.eligible)) {
       const blocker = document.createElement('section');
@@ -276,25 +326,26 @@ async function renderCredentialProgress() {
     const transcript = document.createElement('section');
     transcript.className = 'portal-progress-section';
     transcript.append(text('h3', 'Competency transcript'));
-    if (!(data.competencies ?? []).length) {
+    transcript.append(text('p', 'This transcript is a privacy-bounded evidence view. It excludes learner identifiers, private evaluator notes, raw responses, and answer-key material.', 'portal-result-note'));
+    if (!(transcriptData.competencies ?? []).length) {
       transcript.append(text('p', 'No competency mastery records are available yet. Competency evidence is created by scored official assessments, not by opening lessons.', 'portal-result-note'));
     } else {
       const list = document.createElement('div');
       list.className = 'portal-evidence-list';
-      for (const row of data.competencies) {
+      for (const row of transcriptData.competencies) {
         const item = document.createElement('div');
         item.className = 'portal-evidence-row';
         const identity = document.createElement('div');
         identity.append(text('strong', row.competencyId));
-        identity.append(text('span', `Curriculum ${row.curriculumVersion}`, 'portal-evidence-meta'));
+        identity.append(text('span', `Curriculum ${row.curriculumVersion ?? 'not recorded'}`, 'portal-evidence-meta'));
         item.append(identity, text('span', statusLabel(row.masteryLevel), `portal-evidence-status status-${row.masteryLevel}`));
         list.append(item);
       }
       transcript.append(list);
     }
     panel.append(transcript);
-    panel.append(evidenceList('Practical & capstone evidence', data.performanceAssessments ?? [], 'assessmentId'));
-    panel.append(evidenceList('Employment portfolio', data.portfolioArtifacts ?? [], 'artifactId'));
+    panel.append(evidenceList('Practical & capstone evidence', transcriptData.performanceAssessments ?? [], 'assessmentId'));
+    panel.append(evidenceList('Employment portfolio', transcriptData.portfolioArtifacts ?? [], 'artifactId'));
   } catch (error) {
     panel.querySelector('.status')?.remove();
     panel.append(text('p', error.message, 'portal-error'));
@@ -371,6 +422,86 @@ function renderTools() {
   panel.append(grid);
   lessonView.replaceChildren(panel);
   lessonView.focus();
+}
+
+function downloadStatusLabel(download) {
+  if (download.status === 'published' && download.releaseStatus === 'public') return 'Published resource';
+  return 'Development preview';
+}
+
+function renderDownloadCard(download) {
+  const card = document.createElement('article');
+  card.className = 'download-card';
+
+  const header = document.createElement('div');
+  header.className = 'download-card-header';
+  const identity = document.createElement('div');
+  identity.append(text('p', `${String(download.format ?? '').toUpperCase()} · ${statusLabel(download.kind)}`, 'download-kind'));
+  identity.append(text('h3', download.title));
+  header.append(identity, text('span', downloadStatusLabel(download), `download-status status-${download.status}`));
+  card.append(header, text('p', download.description, 'download-description'));
+
+  const metadata = document.createElement('dl');
+  const fields = [
+    ['Course mappings', String((download.courseMappings ?? []).length)],
+    ['Version', download.version],
+    ['Accessibility', statusLabel(download.accessibilityStatus)]
+  ];
+  for (const [label, value] of fields) {
+    const row = document.createElement('div');
+    row.append(text('dt', label), text('dd', value));
+    metadata.append(row);
+  }
+  card.append(metadata);
+
+  if ((download.instructions ?? []).length) {
+    card.append(text('p', 'Use this tool', 'download-subheading'));
+    const list = document.createElement('ul');
+    for (const instruction of download.instructions) list.append(text('li', instruction));
+    card.append(list);
+  }
+
+  const action = document.createElement('a');
+  action.className = 'download-action';
+  action.href = download.path;
+  action.download = '';
+  action.append(text('span', 'Download CSV'));
+  action.setAttribute('aria-label', `Download ${download.title} as CSV`);
+  card.append(action);
+  return card;
+}
+
+async function renderDownloads() {
+  setActive('tab-resources');
+  if (compactCatalog?.matches) setCatalogExpanded(false);
+  const panel = document.createElement('div');
+  panel.className = 'portal-panel downloads-panel';
+  panel.append(text('p', 'Printable learner resources', 'eyebrow'));
+  panel.append(text('h2', 'Logs, Worksheets & Job Aids'));
+  panel.append(text('p', 'Use these structured tools during course exercises and practice. Site-approved records and SOPs remain authoritative for regulated or workplace activity.', 'lede'));
+  const status = text('p', 'Loading learner resources…', 'status');
+  status.setAttribute('aria-live', 'polite');
+  panel.append(status);
+  lessonView.replaceChildren(panel);
+  lessonView.focus();
+
+  try {
+    const response = await fetch('/api/downloads', { headers: { accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Resource catalog unavailable (${response.status}).`);
+    const body = await response.json();
+    const downloads = Array.isArray(body.downloads) ? body.downloads : [];
+    status.textContent = downloads.length
+      ? `${downloads.length} resource${downloads.length === 1 ? '' : 's'} available in ${body.mode === 'staging-preview' ? 'development preview' : 'the public library'}.`
+      : 'No learner downloads are currently published.';
+    if (!downloads.length) return;
+    const grid = document.createElement('div');
+    grid.className = 'download-grid';
+    for (const download of downloads) grid.append(renderDownloadCard(download));
+    panel.append(grid);
+  } catch (error) {
+    status.className = 'portal-error';
+    status.textContent = error.message;
+  }
 }
 
 function renderVerify() {
@@ -470,4 +601,5 @@ document.querySelector('#tab-catalog')?.addEventListener('click', () => {
 });
 document.querySelector('#tab-progress')?.addEventListener('click', renderCredentialProgress);
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
+document.querySelector('#tab-resources')?.addEventListener('click', renderDownloads);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);

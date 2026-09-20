@@ -16,6 +16,24 @@
 .portal-input-row input:focus, .portal-verify-form input:focus { outline: 3px solid rgba(36,95,61,.18); border-color: var(--green); }
 .portal-result { display: block; margin-top: 1rem; color: var(--green); font-size: 1.5rem; }
 .portal-result-note { color: var(--muted); font-size: .86rem; }
+.download-grid { display: grid; gap: 1rem; margin-top: 1.25rem; }
+.download-card { display: grid; gap: .9rem; border: 1px solid var(--line); border-left: 4px solid var(--green); border-radius: .75rem; padding: 1rem 1.1rem; background: #fff; }
+.download-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.download-card h3 { margin: .15rem 0 0; font-size: 1.15rem; line-height: 1.25; }
+.download-kind { margin: 0; color: var(--gold); font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+.download-status { flex: 0 0 auto; border-radius: 999px; padding: .3rem .55rem; background: #fbf2df; color: #735019; font-size: .7rem; font-weight: 850; text-transform: uppercase; }
+.download-status.status-published { background: var(--green-soft); color: var(--green); }
+.download-description { margin: 0; color: var(--muted); max-width: 74ch; }
+.download-card dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: 0; }
+.download-card dl div { border-top: 1px solid var(--line); padding-top: .5rem; min-width: 0; }
+.download-card dt { color: var(--muted); font-size: .7rem; font-weight: 800; text-transform: uppercase; }
+.download-card dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+.download-subheading { margin: 0; font-weight: 800; }
+.download-card ul { margin: -.4rem 0 0; padding-left: 1.25rem; color: var(--muted); }
+.download-card li + li { margin-top: .3rem; }
+.download-action { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; border: 1px solid var(--green); border-radius: .55rem; padding: .55rem .8rem; background: var(--green); color: #fff; font-weight: 800; text-decoration: none; }
+.download-action:hover { filter: brightness(.94); }
+.download-action:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .portal-verify-form { display: flex; gap: .5rem; margin: 1.25rem 0; }
 .portal-verify-form button { min-height: 44px; border: 1px solid var(--green); background: var(--green); color: #fff; border-radius: .6rem; padding: .7rem 1rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
 .portal-verify-form button:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
@@ -119,6 +137,9 @@
   .field-reference-grid, .field-reference-comparison { grid-template-columns: 1fr; }
   .field-reference-actions, .field-reference-actions .field-reference-print { width: 100%; }
   .lesson-field-reference .field-reference-button { width: 100%; }
+  .download-card-header { flex-direction: column; gap: .55rem; }
+  .download-card dl { grid-template-columns: 1fr; }
+  .download-action { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 420px) {

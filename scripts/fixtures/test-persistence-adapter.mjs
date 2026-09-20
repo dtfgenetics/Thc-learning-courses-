@@ -4,6 +4,7 @@ export async function createPersistenceAdapters() {
   const attempts = new Map();
   const practicalResults = new Map();
   const assignments = new Map();
+  const practicalSubmissions = new Map();
 
   function assignmentKey(subject, courseId, assessmentId, assessmentVersion) {
     return `${subject}:${courseId}:${assessmentId}:${assessmentVersion}`;
@@ -38,7 +39,7 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '3'; },
+      async schemaVersion() { return '4'; },
       async getByVerificationId() { return null; },
       async count() { return 0; }
     },
@@ -165,6 +166,14 @@ export async function createPersistenceAdapters() {
             scorePercent: practical.scorePercent, criticalErrorCount: practical.criticalErrorCount, evaluatedAt: practical.evaluatedAt, updatedAt: practical.updatedAt
           } : null
         };
+      },
+      async getPracticalSubmission(subject, { courseId, assessmentId, assessmentVersion } = {}) {
+        return structuredClone(practicalSubmissions.get(`${subject}:${courseId}:${assessmentId}:${assessmentVersion}`) ?? null);
+      },
+      async savePracticalSubmission(subject, { courseId, assessmentId, assessmentVersion, submission } = {}) {
+        const saved = { ...structuredClone(submission), submittedAt: submission.status === 'submitted' ? new Date().toISOString() : null, updatedAt: new Date().toISOString() };
+        practicalSubmissions.set(`${subject}:${courseId}:${assessmentId}:${assessmentVersion}`, saved);
+        return structuredClone(saved);
       },
       async listCredentialEvidence(subject, { credentialDefinitionId } = {}) {
         return { learnerId: subject, credentialDefinitionId, assessmentAttempts: [], assessments: [], competencies: [], performanceAssessments: [], portfolioArtifacts: [] };

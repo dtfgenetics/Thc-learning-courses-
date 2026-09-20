@@ -32,10 +32,12 @@ const collections = {
   assessments: readDirJson('content/assessments'),
   questions: readDirJson('content/questions'),
   references: readDirJson('content/references'),
+  resources: readDirJson('content/resources'),
   modules: readDirJson('content/modules'),
   courses: readDirJson('content/courses'),
   programs: readDirJson('content/programs'),
   credentials: readDirJson('content/credentials'),
+  downloads: readDirJson('content/downloads'),
   credentialPrograms: readDirJson('content/credential-programs'),
   reviews: readDirJson('content/reviews')
 };
@@ -279,7 +281,17 @@ for (const { file, data } of collections.credentials) {
 }
 const credentialTime = performance.now() - startCredentialTime;
 
-// 9A. PROFESSIONAL CREDENTIAL PROGRAM VALIDATION
+// 9A. LEARNER DOWNLOAD VALIDATION
+for (const { file, data } of collections.downloads) {
+  requireMany(file, data.courseMappings, 'course');
+  requireMany(file, data.resourceMappings, 'resource');
+  const target = path.join(root, 'apps/web/public', String(data.path ?? '').replace(/^\//, ''));
+  if (!data.path || !fs.existsSync(target)) addError('completeness', `${file}: download file does not exist at ${data.path ?? '(missing path)'}`);
+  if (data.status === 'published' && data.releaseStatus !== 'public') addError('state-conflict', `${file}: published download must have releaseStatus public`);
+  if (data.releaseStatus === 'public' && data.status !== 'published') addError('state-conflict', `${file}: public download must have status published`);
+}
+
+// 9B. PROFESSIONAL CREDENTIAL PROGRAM VALIDATION
 const startCredentialProgramTime = performance.now();
 for (const { file, data } of collections.credentialPrograms) {
   if (!data.id?.startsWith('CREDPROG-')) continue;

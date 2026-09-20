@@ -11,6 +11,7 @@ const mappings = [
   ['content/courses', 'schemas/course.schema.json'],
   ['content/credential-programs', 'schemas/credential-program.schema.json', new Set(['registry.json'])],
   ['content/credentials', 'schemas/credential.schema.json'],
+  ['content/downloads', 'schemas/download.schema.json'],
   ['content/encyclopedia', 'schemas/encyclopedia-entry.schema.json'],
   ['content/glossary', 'schemas/glossary-entry.schema.json'],
   ['content/learning-objectives', 'schemas/learning-objective.schema.json'],

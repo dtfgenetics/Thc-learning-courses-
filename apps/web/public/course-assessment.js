@@ -242,6 +242,54 @@ function renderPracticalPersonalStatus(panel, evidenceResult) {
   panel.append(section);
 }
 
+async function loadPracticalSubmission() {
+  const response = await fetch(`/api/v1/me/courses/${COURSE_ID}/practical-submission`, { headers: { accept: 'application/json' }, credentials: 'same-origin' });
+  if (response.status === 401 || response.status === 403) return { state: 'authentication-required' };
+  if (!response.ok) return { state: 'unavailable' };
+  return { state: 'loaded', data: await response.json() };
+}
+
+async function renderPracticalSubmission(panel) {
+  const result = await loadPracticalSubmission().catch(() => ({ state: 'unavailable' }));
+  const section = el('section', '', 'course-practical-section practical-submission');
+  section.append(el('h3', 'Submit practical evidence references'));
+  if (result.state === 'authentication-required') {
+    section.append(el('p', 'Sign in to save private references to your practical evidence.', 'course-assessment-note'));
+    panel.append(section); return;
+  }
+  if (result.state !== 'loaded') {
+    section.append(el('p', 'The private submission workspace is temporarily unavailable.', 'course-assessment-note'));
+    panel.append(section); return;
+  }
+  const submission = result.data.submission;
+  section.append(el('p', result.data.boundary, 'course-assessment-note'));
+  const form = document.createElement('form'); form.className = 'practical-submission-form';
+  for (const output of submission.evidenceOutputs) {
+    const row = el('fieldset', '', 'practical-submission-row'); row.dataset.evidenceName = output.name;
+    row.append(el('legend', output.name));
+    const refLabel = el('label', '', 'practical-submission-field'); refLabel.append(el('span', 'Controlled reference'));
+    const reference = document.createElement('input'); reference.type = 'text'; reference.maxLength = 500; reference.value = output.reference; reference.placeholder = 'Approved storage link, object ID, packet, or page'; reference.dataset.reference = 'true'; refLabel.append(reference);
+    const descLabel = el('label', '', 'practical-submission-field'); descLabel.append(el('span', 'What this evidence demonstrates'));
+    const description = document.createElement('textarea'); description.rows = 2; description.maxLength = 1000; description.value = output.description; description.dataset.description = 'true'; descLabel.append(description);
+    row.append(refLabel, descLabel); form.append(row);
+  }
+  const statementLabel = el('label', '', 'practical-submission-field'); statementLabel.append(el('span', 'Learner statement'));
+  const statement = document.createElement('textarea'); statement.rows = 3; statement.maxLength = 2000; statement.value = submission.learnerStatement; statement.placeholder = 'Summarize the practical context, accommodations, and unresolved limitations.'; statementLabel.append(statement); form.append(statementLabel);
+  const status = el('p', submission.status === 'submitted' ? 'Submitted for review' : 'Draft not submitted', 'practical-submission-status');
+  const actions = el('div', '', 'course-assessment-actions');
+  const draft = el('button', 'Save draft', 'course-assessment-secondary'); draft.type = 'button';
+  const submit = el('button', submission.status === 'submitted' ? 'Update submission' : 'Submit for review', 'course-assessment-launch'); submit.type = 'button';
+  const save = async (nextStatus) => {
+    draft.disabled = true; submit.disabled = true; status.textContent = nextStatus === 'submitted' ? 'Submitting...' : 'Saving...';
+    const evidenceOutputs = [...form.querySelectorAll('.practical-submission-row')].map((row) => ({ name: row.dataset.evidenceName, reference: row.querySelector('[data-reference]').value, description: row.querySelector('[data-description]').value }));
+    const response = await fetch(`/api/v1/me/courses/${COURSE_ID}/practical-submission`, { method: 'PUT', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ status: nextStatus, evidenceOutputs, learnerStatement: statement.value }) });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) { status.textContent = `Submission not saved: ${body.error || response.status}`; status.classList.add('error'); draft.disabled = false; submit.disabled = false; return; }
+    status.classList.remove('error'); status.textContent = body.submission.status === 'submitted' ? 'Submitted for authorized evaluator review.' : 'Draft saved.'; submit.textContent = body.submission.status === 'submitted' ? 'Update submission' : 'Submit for review'; draft.disabled = false; submit.disabled = false;
+  };
+  draft.addEventListener('click', () => save('draft')); submit.addEventListener('click', () => save('submitted')); actions.append(draft, submit); form.append(status, actions); section.append(form); panel.append(section);
+}
+
 function appendNumberedList(parent, items, className = '') {
   const list = document.createElement('ol');
   if (className) list.className = className;
@@ -266,7 +314,7 @@ async function openCoursePractical(sourceButton) {
   sourceButton.disabled = false;
 }
 
-function renderCoursePractical(evidenceResult) {
+async function renderCoursePractical(evidenceResult) {
   setCurriculumTabActive();
   const practical = COURSE_PRACTICAL_PUBLIC;
   const panel = el('article', '', 'portal-panel course-practical-panel');
@@ -301,6 +349,7 @@ function renderCoursePractical(evidenceResult) {
   evidence.append(el('h3', 'Seven required evidence outputs'));
   appendNumberedList(evidence, practical.evidenceOutputs, 'course-practical-list');
   panel.append(evidence);
+  await renderPracticalSubmission(panel);
 
   const scoring = el('section', '', 'course-practical-section');
   scoring.append(el('h3', '100-point scoring model'));

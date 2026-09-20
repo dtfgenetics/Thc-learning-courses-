@@ -363,6 +363,37 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       return { learnerId: externalSubject, assessmentAttempts, performanceAssessment };
     },
+    async getPracticalSubmission(externalSubject, { courseId, assessmentId, assessmentVersion } = {}) {
+      const learnerId = await learnerIdForSubject(externalSubject);
+      if (!learnerId) return null;
+      const result = await queryOrUnavailable(query,
+        `select status, evidence_json, submitted_at, updated_at
+           from learner_practical_submissions
+          where learner_id = $1 and course_id = $2 and assessment_id = $3 and assessment_version = $4
+          limit 1`,
+        [learnerId, courseId, assessmentId, String(assessmentVersion)]);
+      const row = result.rows?.[0];
+      if (!row) return null;
+      const evidence = responseValue(row.evidence_json) ?? {};
+      return { ...evidence, status: row.status, submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null, updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null };
+    },
+    async savePracticalSubmission(externalSubject, { courseId, assessmentId, assessmentVersion, submission } = {}) {
+      const learner = await ensureLearner(externalSubject);
+      const submittedAt = submission.status === 'submitted' ? new Date().toISOString() : null;
+      const result = await queryOrUnavailable(query,
+        `insert into learner_practical_submissions
+           (learner_id, course_id, assessment_id, assessment_version, status, evidence_json, submitted_at, updated_at)
+         values ($1, $2, $3, $4, $5, $6::jsonb, $7, now())
+         on conflict (learner_id, course_id, assessment_id, assessment_version)
+         do update set status = excluded.status, evidence_json = excluded.evidence_json,
+                       submitted_at = case when excluded.status = 'submitted' then coalesce(learner_practical_submissions.submitted_at, excluded.submitted_at) else null end,
+                       updated_at = now()
+         returning status, evidence_json, submitted_at, updated_at`,
+        [learner.id, courseId, assessmentId, String(assessmentVersion), submission.status, JSON.stringify(submission), submittedAt]);
+      const row = result.rows?.[0];
+      const evidence = responseValue(row?.evidence_json) ?? submission;
+      return { ...evidence, status: row?.status ?? submission.status, submittedAt: row?.submitted_at ? new Date(row.submitted_at).toISOString() : submittedAt, updatedAt: row?.updated_at ? new Date(row.updated_at).toISOString() : null };
+    },
     async listCredentialEvidence(externalSubject, { credentialDefinitionId } = {}) {
       if (!credentialDefinitionId) throw new Error('credentialDefinitionId required');
       const learnerId = await learnerIdForSubject(externalSubject);

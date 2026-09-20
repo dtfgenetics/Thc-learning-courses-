@@ -1,0 +1,16 @@
+{
+  "id": "DL-SCOUTING-ESCALATION-LOG-001",
+  "title": "Scouting and Escalation Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "observation-log",
+  "format": "csv",
+  "description": "A repeatable scouting record for locations, observations, evidence captured, immediate containment, and escalation status.",
+  "path": "/downloads/scouting-escalation-log.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-OUTDOOR-RESILIENCE-001", "COURSE-LH-TECH1-002", "COURSE-LH-TECH1-005"],
+  "resourceMappings": [],
+  "instructions": ["Describe what was observed before assigning a diagnosis.", "Record the exact location and evidence captured.", "Keep observation, containment, escalation, and authorized disposition as separate fields."],
+  "limitations": ["This log does not authorize pesticide use, crop disposition, or diagnosis beyond the learner's role.", "Follow applicable labels, regulations, and approved site procedures."]
+}

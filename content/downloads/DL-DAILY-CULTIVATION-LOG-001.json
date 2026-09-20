@@ -1,0 +1,16 @@
+{
+  "id": "DL-DAILY-CULTIVATION-LOG-001",
+  "title": "Daily Cultivation Observation Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "observation-log",
+  "format": "csv",
+  "description": "A neutral daily record for crop area observations, completed work, exceptions, and escalation ownership.",
+  "path": "/downloads/daily-cultivation-observation-log.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": ["COURSE-HOME-GROW-001", "COURSE-LH-TECH1-001"],
+  "resourceMappings": [],
+  "instructions": ["Create one row per observation period or material event.", "Use the controlled room, zone, crop, and work-order identifiers available at the site.", "Record an exception and escalation owner without rewriting prior observations."],
+  "limitations": ["This learning tool does not replace a licensed facility's approved record or SOP.", "Do not enter private learner information or regulated production data in a public copy."]
+}

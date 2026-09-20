@@ -56,7 +56,17 @@ try {
   assert.match(await richStylesResponse.text(), /rich-scenario/, 'rich lesson styles should include scenario presentation');
   const appResponse = await fetch(`${base}/app.js`);
   assert.equal(appResponse.status, 200);
-  assert.match(await appResponse.text(), /renderRichBlocks\(fieldset, item\.stimulus\)/, 'practice UI should render sanitized rich evidence stimuli before choices');
+  const appClientText = await appResponse.text();
+  assert.match(appClientText, /renderRichBlocks\(fieldset, item\.stimulus\)/, 'practice UI should render sanitized rich evidence stimuli before choices');
+  assert.match(appClientText, /\/api\/v1\/me\/enrollments/, 'learner catalog should connect to the enrollment API');
+  assert.match(appClientText, /Enroll in this course/, 'published academic courses should expose an enrollment action');
+  assert.match(appClientText, /course\.status !== 'published'/, 'draft preview courses must not expose enrollment');
+  assert.match(appClientText, /professional credential eligibility is tracked separately/, 'academic enrollment must preserve the credential boundary');
+  assert.match(appClientText, /Pathway & prerequisites/, 'learner catalog should expose pathway discovery');
+  assert.match(appClientText, /Target roles:/, 'learner catalog should expose canonical target roles');
+  assert.match(appClientText, /Public study prerequisites/, 'learner catalog should label course study prerequisites');
+  assert.match(appClientText, /Professional pathway prerequisite/, 'learner catalog should distinguish credential-program prerequisites');
+  assert.match(appClientText, /does not by itself restrict access to public academic study/, 'credential pathway prerequisite must not be presented as a public-study lock');
 
   const assessmentClient = await fetch(`${base}/course-assessment.js`);
   assert.equal(assessmentClient.status, 200);
@@ -117,6 +127,20 @@ try {
 
   const courseOne = catalog.courses.find((course) => course.id === 'COURSE-LH-TECH1-001');
   assert.ok(courseOne, 'Course 1 should be present in the staging catalog');
+  assert.equal(courseOne.pathway?.id, 'CREDPROG-CULT-TECH-I-001', 'Course 1 must expose its canonical Technician I pathway');
+  assert.equal(courseOne.pathway?.title, 'THC Cultivation Technician I');
+  assert.ok((courseOne.pathway?.targetRoles ?? []).includes('Cultivation Technician'), 'Course 1 pathway should expose canonical target roles');
+  assert.ok(Array.isArray(courseOne.prerequisites) && courseOne.prerequisites.length > 0, 'Course 1 should expose public-study prerequisites');
+  assert.ok(typeof courseOne.level === 'string' && courseOne.level.length > 0, 'Course 1 should expose its course level');
+
+  const tech2Course = catalog.courses.find((course) => course.id === 'COURSE-LH-TECH2-001');
+  assert.ok(tech2Course, 'Technician II Course 1 should appear in staging preview');
+  assert.equal(tech2Course.pathway?.id, 'CREDPROG-CULT-TECH-II-001');
+  assert.equal(tech2Course.pathway?.prerequisiteCredentials?.[0]?.id, 'CREDPROG-CULT-TECH-I-001');
+  assert.equal(tech2Course.pathway?.prerequisiteCredentials?.[0]?.title, 'THC Cultivation Technician I');
+  for (const forbidden of ['occupationalClaim', 'assessmentModel', 'limitations', 'validation']) {
+    assert.equal(serializedCatalog.includes(`"${forbidden}"`), false, `catalog must not expose internal credential-program field ${forbidden}`);
+  }
   const courseOneLessonIds = courseOne.modules.flatMap((module) => module.lessons).map((lessonEntry) => lessonEntry.id).filter(Boolean);
   assert.ok(courseOneLessonIds.length >= 18, 'Course 1 should retain at least the current 18-lesson curriculum while remaining extensible');
   assert.equal(new Set(courseOneLessonIds).size, courseOneLessonIds.length, 'Course 1 lesson graph should not contain duplicate lesson ids');

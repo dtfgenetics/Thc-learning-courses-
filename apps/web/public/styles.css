@@ -42,6 +42,7 @@ button { touch-action: manipulation; }
 .course summary { cursor: pointer; padding: .85rem .9rem .6rem; font-weight: 800; }
 .course summary:focus-visible { outline: 3px solid rgba(36,95,61,.2); outline-offset: -3px; }
 .course-meta { color: var(--muted); display: block; font-size: .76rem; font-weight: 600; margin-top: .1rem; }
+.course-final-summary { margin: .35rem .9rem .75rem; color: var(--muted); font-size: .82rem; font-weight: 650; }
 .progress-track { height: .35rem; margin: 0 .9rem .8rem; background: #ebe6d9; border-radius: 999px; overflow: hidden; }
 .progress-fill { height: 100%; background: var(--green); border-radius: inherit; }
 .module { border-top: 1px solid var(--line); padding: .75rem .9rem; }
@@ -86,6 +87,51 @@ button { touch-action: manipulation; }
 .completion-note { margin: .45rem 0 0; color: var(--muted); font-size: .86rem; }
 
 .site-footer { padding: 1.2rem clamp(1rem, 4vw, 4rem) 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
+
+
+.course-enrollment-panel {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin: .8rem 0 1rem;
+  padding: .8rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: rgba(255,255,255,.55);
+}
+.course-enroll-button {
+  min-height: 44px;
+  padding: .65rem .9rem;
+  border: 1px solid currentColor;
+  border-radius: .6rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--paper);
+}
+.course-enroll-button:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+.course-enroll-button:disabled { cursor: progress; opacity: .65; }
+.course-enrollment-status { margin: 0; color: var(--muted); font-size: .9rem; }
+
+
+.course-pathway-panel {
+  margin: .8rem 0 1rem;
+  padding: .9rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: rgba(246,248,239,.72);
+}
+.course-pathway-heading,
+.course-pathway-subheading {
+  margin: 0 0 .4rem;
+  font-weight: 800;
+}
+.course-pathway-line,
+.course-pathway-note { margin: .3rem 0; }
+.course-pathway-note { color: var(--muted); font-size: .88rem; }
+.course-pathway-list { margin: .3rem 0 .55rem 1.25rem; padding: 0; }
+.course-pathway-list li + li { margin-top: .25rem; }
 
 @media (max-width: 1040px) {
   .app-shell { grid-template-columns: minmax(250px, 310px) minmax(0, 1fr); }
