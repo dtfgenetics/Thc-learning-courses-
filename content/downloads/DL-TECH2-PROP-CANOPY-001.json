@@ -1,0 +1,28 @@
+{
+  "id": "DL-TECH2-PROP-CANOPY-001",
+  "title": "Technician II Propagation and Canopy Performance Troubleshooting Log",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "observation-log",
+  "format": "csv",
+  "description": "A cohort-based troubleshooting record for propagation establishment, donor or cutting identity, rooting or transplant performance, canopy response, environmental context, and corrective follow-up.",
+  "path": "/downloads/tech2-propagation-canopy-troubleshooting.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-005",
+    "COURSE-LH-PCS-003",
+    "COURSE-LH-PCS-006"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Track plant or cohort identity and the relevant propagation or canopy operation before evaluating performance.",
+    "Compare affected and unaffected cohorts under the same developmental and environmental context.",
+    "Record handling, sanitation, root-zone, environment, light, irrigation, and training variables that could explain the pattern.",
+    "Separate the observed response from the corrective action and verify the outcome at a defined follow-up."
+  ],
+  "limitations": [
+    "This log does not define universal rooting times, light levels, irrigation schedules, plant densities, or training methods.",
+    "Use the approved crop plan, sanitation procedure, cultivar information, and supervisor direction for operational changes."
+  ]
+}
