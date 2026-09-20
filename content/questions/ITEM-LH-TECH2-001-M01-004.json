@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-M01-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
   "competency": "COMP-NUTRIENT-DIAG-001",
@@ -8,16 +8,17 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "Formative diagnostic check 4: A tissue result is outside a published range, but sampled leaf position and crop stage were not recorded. What is the strongest conclusion?",
+  "stem": "A crop block develops interveinal chlorosis on older leaves while root-zone EC has risen across several irrigations. Tissue results are not yet available. Which next step best strengthens the nutrient differential?",
   "choices": [
-    "The crop is definitively deficient.",
-    "The crop is definitively toxic.",
-    "Tissue testing is never useful for cannabis diagnosis.",
-    "The result is potentially useful but cannot be interpreted confidently until sampling context and other evidence are resolved."
+    "Diagnose magnesium deficiency from leaf color alone.",
+    "Ignore root-zone history because visual symptoms identify nutrient causes.",
+    "Increase every fertilizer element at the next irrigation.",
+    "Compare root-zone EC, pH, moisture trend and matched unaffected plants before deciding whether nutrient supply, uptake or water balance best fits the evidence."
   ],
   "correct": 3,
-  "rationale": "Tissue interpretation depends on sampling context, stage and comparison with other evidence.",
+  "rationale": "Nutrient-related symptoms can overlap with root-zone and water-balance problems. Comparing root-zone trends and unaffected plants strengthens the differential without treating leaf appearance as proof of one deficiency.",
   "references": [
-    "REF-NUTRIENT-DEFICIENCY-001"
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-ROOTZONE-NUTRIENT-002"
   ]
 }

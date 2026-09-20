@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-M01-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "formative",
   "competency": "COMP-ENV-ADV-001",
@@ -8,15 +8,15 @@
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
-  "stem": "Formative diagnostic check 9: A single canopy sensor suddenly differs from two colocated verified sensors after maintenance. What should happen before changing room controls?",
+  "stem": "Two canopy sensors agree through most of the light period but diverge whenever a nearby dehumidifier cycles, while a reference sensor sits outside that airflow zone. What should be verified before treating the difference as a room-wide event?",
   "choices": [
-    "Verify the suspect sensor’s placement, condition and calibration/data quality.",
-    "Change HVAC settings to match the outlier.",
-    "Average all three values and call the issue resolved.",
-    "Ignore all sensor data for the rest of the crop cycle."
+    "Sensor placement, local airflow/equipment effects, sensor condition and comparison with representative locations.",
+    "Only the room-average setpoint shown on the controller.",
+    "Whether the highest reading can replace every other sensor value.",
+    "Whether all sensors can be moved beside the dehumidifier."
   ],
   "correct": 0,
-  "rationale": "A conflicting outlier should trigger data-quality verification before high-consequence control changes.",
+  "rationale": "A measurement can be real but locally unrepresentative. Verifying placement, equipment-linked airflow, sensor condition and representative comparison points helps distinguish a local microenvironment from a room-wide environmental event.",
   "references": [
     "REF-ENV-TEMP-2025-001",
     "REF-VPD-002"
