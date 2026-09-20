@@ -1,0 +1,28 @@
+{
+  "id": "DL-TECH2-DIAGNOSTIC-WORKUP-001",
+  "title": "Technician II Diagnostic Workup Record",
+  "version": "0.1.0",
+  "status": "draft",
+  "releaseStatus": "internal-preview",
+  "kind": "worksheet",
+  "format": "csv",
+  "description": "A structured evidence record for separating observations from hypotheses, ranking differentials, selecting discriminating checks, and documenting bounded conclusions.",
+  "path": "/downloads/tech2-diagnostic-workup.csv",
+  "accessibilityStatus": "partial",
+  "courseMappings": [
+    "COURSE-LH-TECH2-001",
+    "COURSE-LH-PHIB-001",
+    "COURSE-LH-PHIB-002"
+  ],
+  "resourceMappings": [],
+  "instructions": [
+    "Record direct observations and contextual facts before entering hypotheses.",
+    "Keep evidence supporting and contradicting each hypothesis visible.",
+    "Document the next check selected because it can change the differential ranking.",
+    "Record the authorized action or escalation separately from the diagnostic conclusion."
+  ],
+  "limitations": [
+    "This worksheet supports diagnostic reasoning but does not confirm a pathogen, nutrient disorder, genetic cause, or equipment failure by itself.",
+    "Use approved site procedures and qualified laboratory or supervisory support when confirmation or restricted actions are required."
+  ]
+}
