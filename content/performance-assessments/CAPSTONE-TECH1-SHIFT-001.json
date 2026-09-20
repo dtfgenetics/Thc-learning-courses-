@@ -1,0 +1,18 @@
+{
+  "id": "CAPSTONE-TECH1-SHIFT-001",
+  "title": "Technician I Capstone — One Cultivation Shift",
+  "version": "1.0.0",
+  "status": "draft",
+  "purpose": "credential",
+  "assessmentType": "capstone",
+  "role": "ROLE-CULT-TECH-I-001",
+  "jobTasks": ["TASK-CULT-SAFETY-001", "TASK-CULT-SANITATION-001", "TASK-CULT-OBSERVE-001", "TASK-CULT-ENV-001", "TASK-CULT-WATER-001", "TASK-CULT-IRRIGATION-001", "TASK-CULT-IPM-001", "TASK-CULT-PROP-001", "TASK-CULT-CANOPY-001", "TASK-CULT-HARVEST-001", "TASK-CULT-POSTHARVEST-001", "TASK-CULT-RECORDS-001"],
+  "competencies": ["COMP-SAFETY-WORK-001", "COMP-SPACE-BIOSEC-001", "COMP-PLANT-BIO-001", "COMP-ENV-VPD-001", "COMP-WATER-001", "COMP-NUTRITION-001", "COMP-ROOTZONE-001", "COMP-IPM-001", "COMP-PROP-001", "COMP-CANOPY-001", "COMP-FLOWER-001", "COMP-POSTHARVEST-001", "COMP-PRO-SOP-001", "COMP-PRO-QA-001", "COMP-CULT-TRACEABILITY-001", "COMP-CULT-EQUIPMENT-CARE-001"],
+  "deliveryModes": ["simulation", "virtual-facility", "supervised-lab", "workplace-equivalent"],
+  "evidenceOutputs": ["Prioritized shift plan", "Task decisions and timestamps", "Measurement entries", "Crop and scouting observations", "Annotated maps and images", "Traceability events", "Deviation and escalation decisions", "Final shift log", "Final handoff", "Sanitized Cultivation Shift Performance Summary"],
+  "scoring": {"totalPoints": 200, "domains": [{"name":"Safety and biosecurity","points":30},{"name":"Crop observation and environment","points":25},{"name":"Water and irrigation","points":25},{"name":"IPM scouting","points":25},{"name":"Propagation and canopy production execution","points":25},{"name":"Harvest postharvest and traceability","points":25},{"name":"Documentation and data integrity","points":25},{"name":"Prioritization escalation and handoff","points":20}]},
+  "passingStandard": {"minimumPercent": 80, "noCriticalErrors": true},
+  "criticalErrors": ["Knowingly continues through an unresolved life-safety or serious uncontrolled hazard when stop or emergency procedure is required.", "Knowingly moves merges relabels or transforms material after an unresolved identity conflict in a way that breaks genealogy.", "Falsifies overwrites or forces a measurement count weight or record to hide a discrepancy.", "Performs an unauthorized pesticide treatment technical repair bypass or product-release decision outside supplied Technician I authority.", "Knowingly moves or releases material from an active contamination or quality hold without required authorization."],
+  "sourceDocument": "docs/academy-v2/practicals/CAPSTONE-TECH1-ONE-CULTIVATION-SHIFT.md",
+  "extensions": {"credentialProgram":"CREDPROG-CULT-TECH-I-001","courseMappings":["COURSE-LH-TECH1-007"],"requiredPracticals":["PRACTICAL-TECH1-A","PRACTICAL-TECH1-B","PRACTICAL-TECH1-C","PRACTICAL-TECH1-D","PRACTICAL-TECH1-E","PRACTICAL-TECH1-F"],"recommendedMinutes":[120,180],"equivalentFormsRequired":true,"cutScoreStatus":"provisional","credentialUseAuthorized":false}
+}

@@ -18,6 +18,9 @@ function idsIn(rel) {
 const taskIds = idsIn('content/job-tasks');
 const competencyIds = idsIn('content/competencies');
 const roleIds = idsIn('content/job-roles');
+const credentialPrograms = fs.readdirSync(path.join(root, 'content/credential-programs'))
+  .filter((name) => name.endsWith('.json') && name !== 'registry.json')
+  .map((name) => readJson(path.join('content/credential-programs', name)));
 const roleById = new Map();
 for (const name of fs.readdirSync(path.join(root, 'content/job-roles')).filter((name) => name.endsWith('.json'))) {
   const role = readJson(path.join('content/job-roles', name));
@@ -49,6 +52,14 @@ for (const name of files) {
 
   const total = (data.scoring?.domains ?? []).reduce((sum, domain) => sum + (domain.points ?? 0), 0);
   if (total !== data.scoring?.totalPoints) errors.push(`${rel}: scoring domains total ${total}, expected ${data.scoring?.totalPoints}`);
+}
+
+for (const program of credentialPrograms) {
+  for (const id of program.assessmentModel?.performanceEvidence ?? []) {
+    if (!seen.has(id)) errors.push(`content/credential-programs/${program.id}.json: missing performance assessment ${id}`);
+  }
+  const capstone = program.assessmentModel?.capstone;
+  if (capstone && !seen.has(capstone)) errors.push(`content/credential-programs/${program.id}.json: missing capstone ${capstone}`);
 }
 
 if (errors.length) {
