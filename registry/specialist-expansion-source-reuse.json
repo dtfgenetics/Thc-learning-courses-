@@ -24,6 +24,26 @@
         "plant-health differentials",
         "IPM scouting and trend response",
         "root-zone/environment disorder context"
+      ],
+      "targetCourseReusePlans": [
+        {
+          "targetCourseId": "COURSE-LH-PHIB-001",
+          "state": "canonical-draft-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-001-DIAGNOSTIC",
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-001",
+            "COURSE-LH-TECH2-004"
+          ],
+          "remainingDepth": [
+            "specialist arthropod identification depth",
+            "plant disease and HLVd depth",
+            "biosecurity system depth",
+            "dedicated specialist course assessment"
+          ]
+        }
       ]
     },
     {
