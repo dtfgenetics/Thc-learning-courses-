@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-002-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-MAP-001",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A large room is controlled from one central temperature/RH sensor, while crop symptoms cluster along one wall. What measurement plan best tests whether the control sensor is representative?",
+  "choices": [
+    "Map comparable measurements across canopy locations and relevant times, including the symptomatic zone and reference areas, while documenting sensor placement and exposure.",
+    "Trust the central sensor because the controller uses it.",
+    "Move the central sensor to the symptomatic wall and discard the previous data.",
+    "Measure only near HVAC supply air because it changes fastest."
+  ],
+  "correct": 0,
+  "rationale": "Spatial mapping is needed to detect gradients and determine whether a single control sensor represents actual canopy conditions across the room.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true
+  }
+}

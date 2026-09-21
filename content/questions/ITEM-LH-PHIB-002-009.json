@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-002-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-ENV-LOADS-003",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A room becomes harder to control after canopy density increases and irrigation timing changes, even though HVAC setpoints did not change. Which explanation should be evaluated?",
+  "choices": [
+    "Plant transpiration, irrigation events, lighting heat, crop density, and control sequencing may have changed sensible and latent loads even with unchanged setpoints.",
+    "The HVAC load must be unchanged because the setpoints are unchanged.",
+    "Only outdoor weather can change room moisture load.",
+    "Crop density affects yield but not environmental load."
+  ],
+  "correct": 0,
+  "rationale": "Crop water release, lighting, irrigation, density, and control timing all influence sensible and latent loads; fixed setpoints do not imply fixed loads.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-002-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-ROOTZONE-DRYBACK-003",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A team wants one fixed dryback percentage to use for every cultivar, container size, growth stage, and environmental condition. What is the strongest correction?",
+  "choices": [
+    "Treat dryback as a time-dependent change in root-zone moisture that must be interpreted with media, container, root development, plant demand, irrigation strategy, and environment.",
+    "Use one fixed percentage because dryback is independent of crop demand.",
+    "Use calendar time only because moisture measurements add unnecessary complexity.",
+    "Select the highest dryback observed and apply it universally."
+  ],
+  "correct": 0,
+  "rationale": "Dryback is dynamic and context-dependent; a single universal target can ignore major differences in media, roots, crop demand, and environment.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-002-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-ROOTZONE-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Plants in one bench wilt despite moist media. The containers drain slowly and roots in affected pots appear poorly aerated. Which next step best supports the differential?",
+  "choices": [
+    "Evaluate physical structure, drainage, aeration, moisture distribution, and root condition before assuming the plants simply need more irrigation.",
+    "Increase irrigation frequency because wilting always means the media are too dry.",
+    "Ignore root observations because above-ground symptoms determine the diagnosis.",
+    "Raise nutrient concentration before checking drainage or aeration."
+  ],
+  "correct": 0,
+  "rationale": "Wilting can occur when root-zone physical or aeration constraints impair water uptake even when media are wet; the next step should discriminate among physical, moisture, and chemical constraints.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true
+  }
+}

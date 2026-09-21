@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-002-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-ROOTZONE-MEDIA-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two rooms use different root-zone media but the same irrigation schedule. One medium retains more water and drains more slowly. What is the best interpretation?",
+  "choices": [
+    "The media may require different irrigation management because water retention, air-filled porosity, drainage, structure, and container context affect root-zone behavior.",
+    "The same irrigation schedule must be correct because the crop cultivar is the same.",
+    "Media physical properties matter only during transplanting.",
+    "Water retention can be ignored if nutrient concentration is unchanged."
+  ],
+  "correct": 0,
+  "rationale": "Media properties determine how water and air are held and released; identical schedules can produce different root-zone conditions in different media.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true
+  }
+}

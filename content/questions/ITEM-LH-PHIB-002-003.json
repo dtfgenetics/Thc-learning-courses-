@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-002-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-NUTRIENT-EC-003",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Root-zone EC rises over several irrigations while runoff volume falls. What is the best use of the EC trend?",
+  "choices": [
+    "Treat it as a concentration and mass-balance signal to investigate with irrigation, moisture, runoff, crop demand, and nutrient context rather than as a universal proof of deficiency or toxicity.",
+    "Treat the EC value as a complete measure of plant nutritional sufficiency.",
+    "Ignore the trend because only nutrient-solution EC matters.",
+    "Conclude that every plant in the room has the same nutritional status."
+  ],
+  "correct": 0,
+  "rationale": "EC describes dissolved-ion concentration and is most informative as a trend interpreted with water balance and system context; it is not a complete diagnosis of plant nutrition.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRIENT-UPTAKE-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true
+  }
+}
