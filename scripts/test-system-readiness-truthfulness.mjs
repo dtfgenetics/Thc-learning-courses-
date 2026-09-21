@@ -5,6 +5,7 @@ import { execFileSync } from 'node:child_process';
 const readiness=JSON.parse(fs.readFileSync('registry/system-readiness.json','utf8'));
 const staging=fs.readFileSync('scripts/check-staging-readiness.mjs','utf8');
 const status=fs.readFileSync('scripts/report-system-status.mjs','utf8');
+const curriculumWorkflow=fs.readFileSync('.github/workflows/validate.yml','utf8');
 
 assert.equal(readiness.productionReady,false,'Academy must remain fail-closed for production');
 assert.equal(readiness.areas.curriculum.gates.substantiveContentComplete,false,'global curriculum completion must remain false while the intended Academy build is unfinished');
@@ -22,6 +23,7 @@ assert.equal(readiness.areas.assessment.gates.pilotStatisticsComplete,false,'con
 assert.match(staging,/\['curriculum', 'stagingContentSliceValidated'\]/,'staging readiness must use the validated slice gate');
 assert.doesNotMatch(staging,/\['curriculum', 'substantiveContentComplete'\]/,'staging readiness must not require a false global completion claim');
 assert.match(status,/\['curriculum', 'stagingContentSliceValidated'\]/,'system status staging calculation must use the validated slice gate');
+assert.match(curriculumWorkflow,/actions\/checkout@v\d+[\s\S]*?fetch-depth:\s*0/,'curriculum quality CI must preserve git history for versioned review-queue truthfulness');
 
 for(const [area,gate] of [
   ['runtime','authenticationIntegrated'],
