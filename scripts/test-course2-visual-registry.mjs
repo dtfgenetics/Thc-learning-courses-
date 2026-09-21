@@ -10,6 +10,10 @@ assert.equal(registry.courseId, 'COURSE-LH-TECH1-002');
 assert.equal(registry.policy?.expandable, true);
 assert.equal(registry.policy?.maximumAssetCount, null);
 assert.ok(registry.driveStorage?.folderId);
+assert.deepEqual(registry.policy?.productionInstructionalFormats, ['png','webp','jpeg','jpg']);
+assert.equal(registry.policy?.svgProductionTarget, false);
+assert.equal(registry.policy?.legacySvgCompatibilityAllowed, true);
+assert.equal(registry.policy?.rasterReplacementRequired, true);
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
 assert.ok(produced.length >= 10, 'Course 2 photo-evidence practice batch requires at least ten produced learner assets');
@@ -72,4 +76,4 @@ for (const asset of produced) {
   for (const lessonId of asset.primaryLessons) assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)));
 }
 
-console.log(`Course 2 learner-asset contract passed for ${produced.length} assets, including embedded visuals and downloadable practice worksheets.`);
+console.log(`Course 2 learner-asset contract passed for ${produced.length} legacy SVG compatibility assets with fail-closed raster replacement requirements.`);
