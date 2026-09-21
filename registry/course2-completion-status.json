@@ -1,7 +1,7 @@
 {
   "courseId": "COURSE-LH-TECH1-002",
-  "version": "0.11.0",
-  "updated": "2026-09-18",
+  "version": "0.12.0",
+  "updated": "2026-09-20",
   "academicPublication": "draft",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
@@ -42,14 +42,14 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "runtime-verified-development-baseline-human-review-open",
+      "state": "legacy-svg-compatibility-baseline-raster-replacement-open",
       "evidence": [
         "visuals/COURSE2-ASSET-REGISTRY.json",
         "scripts/test-course2-visual-registry.mjs",
         "scripts/test-tech1-course2.mjs"
       ],
       "humanGateRequired": true,
-      "note": "The production test verifies all 10 governed Course 2 SVG assets through the Academy runtime, including MIME type, SVG markup, accessible title/description and expected 404 behavior. Rendered visual quality and responsive/manual UX still require human review."
+      "note": "All 10 governed Course 2 SVG assets remain available only as the verified compatibility baseline so current learner routes are not broken. Current production policy requires high-resolution PNG/WebP/JPEG/JPG replacements. Each raster replacement must pass factual/copy QA, accessibility, responsive/manual review, registry mapping and public-path verification before the matching SVG baseline can be retired."
     },
     {
       "id": "evidence-and-source-audit",
@@ -135,6 +135,7 @@
     }
   ],
   "nextMachineActions": [
+    "produce and QA raster replacements for the 10 legacy Course 2 SVG compatibility assets, then retire each SVG only after verified public-path replacement",
     "complete deployed responsive/manual learner-surface QA and record defects",
     "record and verify the exact deployment build/source SHA identity for the public learner surface",
     "repair any defects exposed by deployed QA/readback without weakening assessment or credential boundaries"
