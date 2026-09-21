@@ -68,7 +68,7 @@ for (const rel of ledgerPaths) {
   updatedLedgers.push(rel);
 }
 
-const identityAction = /(exact deployment build\/source SHA|deployment build\/source SHA|deployment build.*source SHA|record and verify the exact deployment build|record the exact deployment build)/i;
+const identityAction = /(exact deployment build\/source SHA|deployment build\/source SHA|deployment build.*source SHA|record and verify the exact deployment build|record the exact deployment build|pin or otherwise prove exact curriculum-version equivalence)/i;
 const updatedCompletionLedgers = [];
 for (const rel of completionPaths) {
   const file = path.join(root, rel);
@@ -78,9 +78,12 @@ for (const rel of completionPaths) {
   }
   if (typeof data.machineCompletionBoundary === 'string') {
     data.machineCompletionBoundary = data.machineCompletionBoundary
+      .replace(/Exact DTFSeeds deployment workflow\/site-commit identity is now verified\./i, 'Exact DTFSeeds deployment build/source identity and pinned curriculum-version equivalence are now verified.')
       .replace(/,? exact deployment build\/source SHA verification using the public build-identity contract,? ?/i, ', ')
+      .replace(/curriculum-version equivalence where a deployment did not pin the curriculum SHA, and /i, '')
       .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA, and repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair')
-      .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA, repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair');
+      .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA, repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair')
+      .replace(/Remaining work is deployed responsive\/manual learner-surface QA, and repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair');
   }
   data.deploymentIdentity = {
     state: 'verified',
