@@ -63,6 +63,17 @@ if (pngQa) {
   }
 }
 
+const referenceBoardIndex = readJson('visuals/COURSE1-RASTER-REFERENCE-BOARD-INDEX.json');
+assert.equal(referenceBoardIndex.courseId, courseId, 'reference-board index must belong to Course 1');
+assert.equal(referenceBoardIndex.boards?.length, 3, 'Course 1 reference-board index must record the three controlled source boards');
+const referenceBoardIds = new Set(referenceBoardIndex.boards.map((row) => row.driveFileId));
+for (const concept of manifest.concepts.filter((row) => Number(row.conceptId.match(/-([0-9]{2})-/)?.[1]) <= 12)) {
+  assert.equal(concept.candidate?.individualProductionMasterRequired, true, `${concept.conceptId}: concepts 1-12 require an individual production master`);
+  assert.ok(referenceBoardIds.has(concept.candidate?.sourceDriveFileId), `${concept.conceptId}: source Drive file must resolve through the controlled reference-board index`);
+  assert.equal(concept.candidate?.sourceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: large review board must remain Drive-controlled rather than masquerade as a repository production binary`);
+  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: a reference-board derivative cannot be release-approved before an individual production master exists`);
+}
+
 for (const concept of manifest.concepts) {
   assert.match(concept.conceptId ?? '', /^VIS-LH-TECH1-001-[0-9]{2}-[A-Z0-9-]+$/, `${concept.conceptId ?? '<missing>'}: invalid concept ID`);
 
