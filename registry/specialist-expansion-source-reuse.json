@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-21",
+  "purpose": "Prevent duplicate curriculum during specialist and lead-program expansion by identifying existing canonical courses that may supply reusable objectives, lessons, evidence, assessments or scenarios. A reuse candidate is source material only and does not satisfy a future program requirement until reconciled into the target course and reviewed.",
+  "policy": {
+    "noAutomaticEquivalence": true,
+    "noAutomaticCredit": true,
+    "preserveSourceVersioning": true,
+    "requireObjectiveLevelReconciliation": true,
+    "requireEvidenceAndAssessmentReview": true
+  },
+  "programs": [
+    {
+      "programId": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+      "plannedCourseCount": 7,
+      "candidateReuseSources": [
+        "COURSE-LH-TECH2-001",
+        "COURSE-LH-TECH2-004",
+        "COURSE-NUTRITION-IPM-ADVANCED-001",
+        "COURSE-ROOTZONE-ADVANCED-001"
+      ],
+      "reuseFocus": [
+        "diagnostic reasoning",
+        "plant-health differentials",
+        "IPM scouting and trend response",
+        "root-zone/environment disorder context"
+      ]
+    },
+    {
+      "programId": "CREDPROG-ENV-IRR-FERT-001",
+      "plannedCourseCount": 8,
+      "candidateReuseSources": [
+        "COURSE-LH-TECH2-002",
+        "COURSE-LH-TECH2-003",
+        "COURSE-ENV-LIGHT-ADVANCED-001",
+        "COURSE-WATER-IRRIGATION-ADVANCED-001",
+        "COURSE-ROOTZONE-ADVANCED-001"
+      ],
+      "reuseFocus": [
+        "environmental measurement",
+        "lighting",
+        "sensor verification",
+        "water quality",
+        "irrigation",
+        "fertigation",
+        "root-zone interpretation"
+      ]
+    },
+    {
+      "programId": "CREDPROG-PROP-CLEAN-STOCK-001",
+      "plannedCourseCount": 6,
+      "candidateReuseSources": [
+        "COURSE-LH-TECH1-002",
+        "COURSE-LH-TECH1-005",
+        "COURSE-LH-TECH2-005",
+        "COURSE-PROP-ADVANCED-001",
+        "COURSE-GENETICS-ADVANCED-001"
+      ],
+      "reuseFocus": [
+        "plant identity",
+        "propagation workflows",
+        "donor performance",
+        "sanitation",
+        "tissue-culture foundations"
+      ]
+    },
+    {
+      "programId": "CREDPROG-POSTHARVEST-QA-001",
+      "plannedCourseCount": 6,
+      "candidateReuseSources": [
+        "COURSE-LH-TECH1-006",
+        "COURSE-LH-TECH2-006",
+        "COURSE-POSTHARVEST-QA-001",
+        "COURSE-PRO-SOP-001"
+      ],
+      "reuseFocus": [
+        "harvest handling",
+        "drying and storage",
+        "deviation investigation",
+        "traceability",
+        "quality systems"
+      ]
+    },
+    {
+      "programId": "CREDPROG-GEN-BREED-PRES-001",
+      "plannedCourseCount": 8,
+      "candidateReuseSources": [
+        "COURSE-GENETICS-ADVANCED-001",
+        "COURSE-PROP-ADVANCED-001",
+        "COURSE-CULT-FOUNDATIONS-001"
+      ],
+      "reuseFocus": [
+        "inheritance",
+        "selection",
+        "reproductive biology",
+        "seed and clone preservation",
+        "tissue-culture concepts"
+      ]
+    },
+    {
+      "programId": "CREDPROG-CULT-LEAD-OPS-001",
+      "plannedCourseCount": 9,
+      "candidateReuseSources": [
+        "COURSE-CROP-SYSTEMS-001",
+        "COURSE-PRO-SOP-001",
+        "COURSE-LH-TECH1-007",
+        "COURSE-LH-TECH2-007",
+        "COURSE-LH-TECH2-008"
+      ],
+      "reuseFocus": [
+        "production planning",
+        "SOP/document control",
+        "metrics",
+        "shift coordination",
+        "integrated operations",
+        "CAPA and handoff"
+      ]
+    }
+  ]
+}
