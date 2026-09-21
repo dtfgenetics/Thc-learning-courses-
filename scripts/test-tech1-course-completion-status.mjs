@@ -23,6 +23,11 @@ for (let n=2;n<=7;n++) {
   } else {
     assert.ok(status.nextMachineActions.length>0,`Course ${n} must list remaining machine work while incomplete`);
   }
+  if(status.deploymentIdentity?.state==='verified' && status.deployedMachineSurfaceQa?.state==='verified'){
+    assert.ok(!(status.nextMachineActions??[]).some(action=>/deployed responsive\/manual|defects exposed by deployed QA/i.test(String(action))),`Course ${n} cannot retain resolved deployed-QA actions`);
+    assert.doesNotMatch(status.machineCompletionBoundary,/exact deployment build\/source SHA verification/i,`Course ${n} boundary cannot list verified deployment identity as unfinished`);
+    assert.match(status.machineCompletionBoundary,/deployment build\/source identity and machine learner-surface QA are verified/i,`Course ${n} boundary must record verified deployment state`);
+  }
   assert.ok(Array.isArray(status.nextHumanActions) && status.nextHumanActions.length>0,`Course ${n} needs explicit human/evidence gates`);
 }
 console.log('Technician I Course 2-7 fail-closed completion registries: PASS');
