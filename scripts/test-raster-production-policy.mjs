@@ -5,6 +5,7 @@ import path from 'node:path';
 const root=process.cwd();
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const raster=['png','webp','jpeg','jpg'];
+const releaseRaster=['png','webp','jpg','jpeg'];
 
 for(let n=2;n<=6;n++){
   const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
@@ -21,8 +22,34 @@ for(let n=2;n<=6;n++){
   }
 }
 
+const course1Registry=read('visuals/ASSET-REGISTRY.json');
+const course1Svg=(course1Registry.assets??[]).filter(asset=>path.extname(asset.sourcePath??'').toLowerCase()==='.svg');
+assert.equal(course1Svg.length,20,'Course 1: expected 20 unique governed SVG compatibility baselines');
+for(const asset of course1Svg){
+  assert.equal(asset.assetLifecycle,'legacy-svg-compatibility-baseline',`${asset.id}: Course 1 SVG lifecycle must be compatibility baseline`);
+  assert.equal(asset.rasterReplacement?.status,'required-not-produced',`${asset.id}: Course 1 raster replacement must remain open until produced`);
+}
+
 const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
 assert.equal(tech2.policy?.productionFormatPolicy?.svgReleaseAllowed,false,'Technician II: SVG release must remain prohibited');
-assert.deepEqual(tech2.policy?.productionFormatPolicy?.allowedReleasedExtensions,['png','webp','jpg','jpeg']);
+assert.deepEqual(tech2.policy?.productionFormatPolicy?.allowedReleasedExtensions,releaseRaster);
 
-console.log('Raster production policy: PASS (Technician I Courses 2-6 and Technician II remain fail-closed to raster-only production release).');
+const replacementProgram=read('registry/raster-replacement-program.json');
+assert.equal(replacementProgram.summary?.totalGovernedReplacements,96,'Raster program total must reconcile to 96 governed replacements');
+assert.equal(replacementProgram.summary?.technicianI,60,'Technician I raster program must reconcile to 60 replacements');
+assert.equal(replacementProgram.summary?.technicianII,36,'Technician II raster program must reconcile to 36 replacements');
+assert.equal(replacementProgram.summary?.releasedRasterReplacements,0,'No raster replacement may be claimed released without reviewed binaries');
+assert.equal(replacementProgram.summary?.openRasterReplacements,96,'All 96 replacements remain open until reviewed binaries are released');
+
+const expectedTech1Counts=new Map([[1,20],[2,10],[3,6],[4,7],[5,9],[6,8]]);
+for(const row of replacementProgram.technicianI??[]){
+  const n=Number(row.courseId?.slice(-3));
+  assert.equal(row.count,expectedTech1Counts.get(n),`${row.courseId}: raster queue count drift`);
+}
+const expectedTech2Counts=new Map([[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[8,8]]);
+for(const row of replacementProgram.technicianII??[]){
+  const n=Number(row.courseId?.slice(-3));
+  assert.equal(row.count,expectedTech2Counts.get(n),`${row.courseId}: raster queue count drift`);
+}
+
+console.log('Raster production policy: PASS (96 governed replacements reconciled across Technician I Courses 1-6 and Technician II).');
