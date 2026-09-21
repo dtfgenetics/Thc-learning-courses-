@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "courseId": "COURSE-LH-TECH1-001",
   "purpose": "Fail-closed release control for the 18 primary Course 1 visual concepts. Review candidates remain separate from the verified learner-facing SVG baseline until factual, accessibility, responsive, binary, registry and lesson-cutover checks all pass.",
   "canonicalSources": {
@@ -65,8 +65,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Representative cultivation work-area hazard scan; examples demonstrate a scanning method, not a universal hazard list.",
@@ -88,8 +97,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Hierarchy of controls with Technician I authorization boundaries.",
@@ -111,8 +129,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "PPE selection is controlled by the assigned task, hazard assessment, label/SDS, site procedure and worker authorization.",
@@ -134,8 +161,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Training example for locating hazard, first-aid, handling, exposure-control and emergency information in an SDS; use the actual current SDS for the product in use.",
@@ -157,8 +193,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Source-route-receiver model for cultivation biosecurity pathways.",
@@ -180,8 +225,17 @@
         "sourceType": "corrected-drive-reference-board",
         "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
         "targetPublicPath": null,
-        "binaryState": "final-individual-master-not-registered",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "reference-board-only-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+          "sizeBytes": 2704696,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "corrected-reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Example of facility-controlled zone movement; actual sequencing follows the site's zone map, current risk status and SOP.",
@@ -203,8 +257,17 @@
         "sourceType": "corrected-drive-reference-board",
         "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
         "targetPublicPath": null,
-        "binaryState": "final-individual-master-not-registered",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "reference-board-only-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+          "sizeBytes": 2704696,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "corrected-reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Sanitation decision sequence: prepare, remove debris, clean, verify the approved product/instructions, meet required contact conditions, finish as applicable, inspect, protect and document.",
@@ -228,8 +291,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.",
@@ -251,8 +323,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Illustrative controlled-document anatomy emphasizing identity, current revision, prerequisites, steps, acceptance criteria, records and escalation points.",
@@ -274,8 +355,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Vendor-neutral plant and material genealogy model for maintaining identity across routine cultivation events.",
@@ -297,8 +387,17 @@
         "sourceType": "drive-reference-board-derivative",
         "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
         "targetPublicPath": null,
-        "binaryState": "not-verified-in-repository",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Vendor-neutral movement-record evidence model; exact fields and systems are controlled by the facility and applicable program.",
@@ -321,8 +420,17 @@
         "sourceType": "corrected-drive-reference-board",
         "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
         "targetPublicPath": null,
-        "binaryState": "final-individual-master-not-registered",
-        "qaStatus": "preferred-review-candidate"
+        "binaryState": "reference-board-only-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+          "sizeBytes": 2704696,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "corrected-reference-board-only"
+        },
+        "individualProductionMasterRequired": true
       },
       "accessibility": {
         "caption": "Inventory reconciliation preserves discrepancies for investigation instead of forcing records and physical counts to match.",
