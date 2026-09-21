@@ -1,0 +1,49 @@
+{
+  "id": "TECH2-MACHINE-LAYER-001",
+  "version": "1.0.0",
+  "status": "development",
+  "credentialProgram": "CREDPROG-CULT-TECH-II-001",
+  "sourcePackagesRequired": 8,
+  "integratedLabPlan": "registry/technician-ii-integrated-lab-plan.json",
+  "releaseEvidence": "registry/technician-ii-release-evidence.json",
+  "credentialAssessmentBlueprint": "content/assessments/ASSESS-CULT-TECH-II-CREDENTIAL-001.json",
+  "contracts": {
+    "secureAssessmentStore": "docs/academy-v2/credential/tech2/SECURE-ASSESSMENT-STORE-CONTRACT.md",
+    "equivalentSecureForms": "docs/academy-v2/credential/tech2/EQUIVALENT-SECURE-FORM-RULES.md",
+    "candidateRetestAccommodationAppealSecurity": "docs/academy-v2/credential/tech2/CANDIDATE-RETEST-ACCOMMODATION-APPEAL-SECURITY-DRAFT.md",
+    "candidateEvidenceRetentionPrivacy": "docs/academy-v2/credential/tech2/CANDIDATE-EVIDENCE-RETENTION-PRIVACY-DRAFT.md",
+    "issuanceVerification": "docs/academy-v2/credential/tech2/ISSUANCE-VERIFICATION-WORKFLOW.md",
+    "capstone": "docs/academy-v2/practicals/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.md"
+  },
+  "securityBoundary": {
+    "publicOperationalCredentialItemsAllowed": false,
+    "publicOperationalAnswerKeysAllowed": false,
+    "publicCandidateEvidenceAllowed": false,
+    "publicSigningSecretsAllowed": false,
+    "operationalCredentialAssessmentAuthorized": false,
+    "issuanceEnabled": false,
+    "verificationRuntimeApproved": false
+  },
+  "humanEvidenceBoundary": {
+    "syntheticHumanApprovalAllowed": false,
+    "syntheticPilotEvidenceAllowed": false,
+    "syntheticCalibrationEvidenceAllowed": false,
+    "syntheticEmployerValidationAllowed": false,
+    "syntheticStandardSettingAllowed": false,
+    "finalReleaseRequiresHumanApproval": true
+  },
+  "occupationalValidationBoundary": {
+    "jobTaskAnalysisValidated": false,
+    "smeEmployerValidationAccepted": false,
+    "statement": "Repository mapping and course structure do not substitute for an approved Technician II job-task analysis or SME/employer validation."
+  },
+  "machineLayerDefinition": [
+    "all eight Technician II course/package objects resolve under repository validation",
+    "Practicals A-G and the Senior Technician Diagnostic Shift capstone resolve as development performance evidence",
+    "the public credential blueprint contains zero selected operational secure items and explicitly requires a private operational store",
+    "secure assessment-store and equivalent-form contracts exist",
+    "candidate retest/remediation/accommodation/appeal/security and retention/privacy drafts exist",
+    "issuance/verification workflow exists and remains disabled",
+    "job-task/employer validation, pilot, calibration, standard-setting, privacy/security approval and final release remain genuine external/human gates"
+  ]
+}
