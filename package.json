@@ -151,7 +151,9 @@
     "readiness:truthfulness:test": "node scripts/test-system-readiness-truthfulness.mjs",
     "pilot:course-protocols:test": "node scripts/test-academy-course-pilot-protocols.mjs",
     "credential:public-bank-boundary:test": "node scripts/test-public-credential-bank-boundary.mjs",
-    "itembank:quality:test": "node scripts/check-learning-hub-item-quality.mjs"
+    "itembank:quality:test": "node scripts/check-learning-hub-item-quality.mjs",
+    "visuals:raster:backlog": "node scripts/report-raster-replacement-backlog.mjs",
+    "visuals:raster:backlog:json": "node scripts/report-raster-replacement-backlog.mjs --json"
   },
   "dependencies": {
     "ajv": "8.20.0",
