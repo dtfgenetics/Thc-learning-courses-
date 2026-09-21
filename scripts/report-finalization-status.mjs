@@ -25,7 +25,7 @@ const courses=courseStatusPaths.map((file)=>{
 
 const readiness=read('registry/system-readiness.json');
 const tech1=read('registry/technician-i-release-evidence.json');
-const tech2=read('registry/technician-ii-release-evidence.json');
+const tech2=read('registry/technician-ii-release-evidence.json');\nconst programRegistry=read('content/credential-programs/registry.json');
 
 const falseSystemGates=[];
 for(const [areaName,area] of Object.entries(readiness.areas??{})){
