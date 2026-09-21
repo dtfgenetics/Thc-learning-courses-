@@ -1,7 +1,7 @@
 {
   "system": "THC Academy",
   "version": "0.1.0",
-  "updatedAt": "2026-09-20",
+  "updatedAt": "2026-09-21",
   "productionReady": false,
   "areas": {
     "curriculum": {
@@ -11,7 +11,8 @@
         "scientificReviewComplete": true,
         "editorialReviewComplete": true,
         "stagingContentSliceValidated": true
-      }
+      },
+      "scope": "Repository-wide curriculum construction and lesson-review queue state; does not represent Technician credential release approval."
     },
     "assessment": {
       "status": "pilot-bank-review-reopened",
@@ -21,7 +22,8 @@
         "minimumActivePoolComplete": false,
         "humanAssessmentReviewComplete": false,
         "pilotStatisticsComplete": false
-      }
+      },
+      "scope": "Development and public academic assessment capability; secure operational credential-bank approval is tracked separately and remains fail-closed."
     },
     "runtime": {
       "status": "integrated-development",
@@ -48,7 +50,8 @@
         "productionIssuerIdentity": false,
         "productionSigning": false,
         "revocationPersistence": false
-      }
+      },
+      "scope": "Credential runtime foundation only; production issuance remains unavailable until program-specific release evidence and production security/persistence gates close."
     },
     "api": {
       "status": "integrated-development",
@@ -81,7 +84,8 @@
         "contentAccessibilityReviewComplete": false,
         "assessmentAccessibilityReviewComplete": false,
         "frontendAccessibilityTestingComplete": false
-      }
+      },
+      "scope": "Automated accessibility requirements are implemented, but rendered/manual WCAG and responsive approval remains open."
     },
     "operations": {
       "status": "design",
@@ -92,7 +96,8 @@
         "backupRestoreTested": false,
         "incidentResponseRunbook": true,
         "monitoringAndAlerting": false
-      }
+      },
+      "scope": "Repository release controls exist; production operational approval requires deployed environment, persistence, backup/restore, monitoring, and release evidence."
     },
     "learnerExperience": {
       "status": "integrated-development",
@@ -105,5 +110,10 @@
         "practicalEvidenceSubmissionWorkflow": false
       }
     }
+  },
+  "readinessScope": {
+    "canonicalAuthority": "Certification repository registries and executable gates",
+    "academicPublicationBoundary": "Public academic availability does not imply professional credential approval or issuance readiness.",
+    "credentialReleaseBoundary": "Technician I and Technician II release evidence ledgers remain authoritative for occupational validation, assessment validation, pilot, standard-setting, security/privacy, and final issuance approval."
   }
 }
