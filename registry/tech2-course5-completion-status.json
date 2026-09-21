@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-005.json",
   "deploymentEvidence": "registry/tech2-course5-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 5 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment workflow/site-commit identity is now verified. Remaining work is deployed responsive/manual learner-surface QA, curriculum-version equivalence where a deployment did not pin the curriculum SHA, and repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "machineCompletionBoundary": "Technician II Course 5 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment build/source identity and pinned curriculum-version equivalence are now verified. Remaining work is deployed responsive/manual learner-surface QA, repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-005.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-005.json",
@@ -26,8 +26,7 @@
   ],
   "nextMachineActions": [
     "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
-    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates",
-    "pin or otherwise prove exact curriculum-version equivalence on the next public deployment so future release evidence is fully reproducible"
+    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
