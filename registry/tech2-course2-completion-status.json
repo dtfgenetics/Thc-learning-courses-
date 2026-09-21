@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-002.json",
   "deploymentEvidence": "registry/tech2-course2-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 2 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Remaining machine work is deployed responsive/manual learner-surface QA, exact deployment build/source SHA verification using the public build-identity contract, and repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "machineCompletionBoundary": "Technician II Course 2 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-002.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-002.json",
@@ -25,8 +25,6 @@
     "scripts/verify-public-deployment-identity.mjs"
   ],
   "nextMachineActions": [
-    "complete deployed responsive/manual learner-surface QA and record defects",
-    "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
     "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
   "nextHumanActions": [
