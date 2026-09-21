@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root=process.cwd();
 const assetsRoot=path.join(root,'apps','web','public','assets');
+const readJson=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 
 const walk=(dir)=>{
   if(!fs.existsSync(dir)) return [];
@@ -32,25 +33,44 @@ for(const file of svgFiles){
   (groups[group]??=[]).push(file);
 }
 
-const readJson=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-const course2=readJson('visuals/COURSE2-ASSET-REGISTRY.json');
-const tech2=readJson('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
-
 const governed=[];
-for(const asset of course2.assets??[]){
-  if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
+
+const course1=readJson('visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json');
+for(const concept of course1.concepts??[]){
+  const publicAsset=concept.baseline?.publicAsset??'';
+  if(!publicAsset.toLowerCase().endsWith('.svg')) continue;
   governed.push({
     program:'Technician I',
-    courseId:course2.courseId,
-    id:asset.id,
-    title:asset.title,
-    sourcePath:asset.sourcePath,
-    currentLifecycle:asset.assetLifecycle??asset.status,
-    replacementStatus:asset.rasterReplacement?.status??'missing',
-    releaseGate:asset.rasterReplacement?.releaseGate??null
+    courseId:course1.courseId,
+    id:concept.conceptId,
+    title:concept.accessibility?.caption??concept.conceptId,
+    sourcePath:`apps/web/public${publicAsset}`,
+    currentLifecycle:'legacy-svg-compatibility-baseline',
+    replacementStatus:concept.releaseApproved===true?'released':'raster-replacement-required',
+    candidateFileName:concept.candidate?.fileName??null,
+    candidateState:concept.candidate?.binaryState??null,
+    releaseGate:'course1-production-quality-release-manifest'
   });
 }
 
+for(let n=2;n<=6;n++){
+  const registry=readJson(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
+  for(const asset of registry.assets??[]){
+    if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
+    governed.push({
+      program:'Technician I',
+      courseId:registry.courseId,
+      id:asset.id,
+      title:asset.title,
+      sourcePath:asset.sourcePath,
+      currentLifecycle:asset.assetLifecycle??asset.status,
+      replacementStatus:asset.rasterReplacement?.status??'missing',
+      releaseGate:asset.rasterReplacement?.releaseGate??null
+    });
+  }
+}
+
+const tech2=readJson('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
 for(const course of tech2.courses??[]){
   for(const concept of course.concepts??[]){
     if(path.extname(concept.sourcePath??'').toLowerCase()!=='.svg') continue;
@@ -74,8 +94,8 @@ const summary={
   policy:'Production instructional visuals must use reviewed high-resolution raster formats. SVG files are compatibility/review artifacts only unless a narrower non-instructional exception is explicitly documented.',
   allowedProductionFormats:['png','webp','jpg','jpeg'],
   totalLegacySvgFiles:svgFiles.length,
-  governedRasterReplacementItems:governed.length,
-  unregisteredLegacySvgFiles:unregistered.length,
+  governedRasterReplacementConcepts:governed.length,
+  legacySvgFilesWithoutReplacementMapping:unregistered.length,
   groups:Object.fromEntries(Object.entries(groups).map(([name,files])=>[name,{count:files.length,files}])),
   governed,
   unregistered
@@ -86,8 +106,8 @@ if(process.argv.includes('--json')){
 }else{
   console.log('THC Academy raster replacement backlog');
   console.log(`Legacy SVG files in public asset tree: ${summary.totalLegacySvgFiles}`);
-  console.log(`Governed replacement items: ${summary.governedRasterReplacementItems}`);
-  console.log(`Legacy SVG files not yet represented by Course 2 / Technician II replacement registries: ${summary.unregisteredLegacySvgFiles}`);
+  console.log(`Governed raster replacement concepts/items: ${summary.governedRasterReplacementConcepts}`);
+  console.log(`Legacy SVG files without an explicit replacement mapping: ${summary.legacySvgFilesWithoutReplacementMapping}`);
   console.log('');
   for(const [name,row] of Object.entries(summary.groups)){
     console.log(`- ${name}: ${row.count}`);
