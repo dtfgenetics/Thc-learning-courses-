@@ -26,7 +26,7 @@ Expose the canonical two foundational certificates and eight professional creden
   - objective → instruction → practice → scored assessment → remediation/reassessment audit;
   - WCAG 2.2 AA rendered accessibility/manual UX review packet;
   - fail-closed Course 1 finish CI;
-  - explicit `machineResolvableWorkComplete: true` while human gates remain open.
+  - Course 1 academic/runtime/deployment baseline is machine-verified, but `machineResolvableWorkComplete` is now fail-closed while governed raster replacement and deployed manual/responsive QA work remains.
 
 ## Current boundary
 
