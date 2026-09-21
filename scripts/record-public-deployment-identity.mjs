@@ -56,14 +56,14 @@ for (const rel of ledgerPaths) {
   const data = JSON.parse(fs.readFileSync(file, 'utf8'));
   data.exactDeploymentBuildId = identity.buildId;
   data.exactDeploymentSourceSha = identity.sourceSha.toLowerCase();
+  data.curriculumSource = `dtfgenetics/Thc-learning-courses-@${identity.sourceSha.toLowerCase()}`;
+  data.curriculumSourceShaPinnedByDeployment = true;
   data.buildIdentityVerifiedAt = new Date().toISOString();
   data.buildIdentityEndpoint = `${baseUrl}/api/build-info`;
   data.evidenceState = data.responsiveManualQaApproved === true
     ? 'public-readback-build-identity-and-manual-responsive-qa-verified'
     : 'public-readback-and-build-identity-verified-manual-responsive-qa-open';
-  data.note = String(data.note ?? '')
-    .replace(/ It does not claim exact deployment build identity, source SHA equivalence,/i, ' It records exact deployment build identity and source SHA equivalence; it does not claim')
-    .replace(/ It does not claim exact deployment build identity, source SHA equivalence, manual responsive\/accessibility approval,/i, ' It records exact deployment build identity and source SHA equivalence; it does not claim manual responsive/accessibility approval,');
+  data.note = 'Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and exact Academy build identity were verified against the pinned curriculum source SHA. Manual responsive/accessibility approval, pilot/practical validity, standard setting, and credential release approval remain open.';
   if (write) fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
   updatedLedgers.push(rel);
 }
