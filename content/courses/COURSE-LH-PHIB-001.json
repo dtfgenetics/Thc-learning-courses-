@@ -1,0 +1,74 @@
+{
+  "id": "COURSE-LH-PHIB-001",
+  "title": "Scouting Systems & Diagnostic Reasoning",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Plant Health, IPM & Biosecurity Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners who have completed or can demonstrate equivalent Technician II plant-observation and IPM foundations",
+    "Cultivation personnel developing advanced plant-health scouting, diagnostic reasoning, evidence-quality, and escalation capability"
+  ],
+  "prerequisites": [
+    "THC Cultivation Technician II pathway or approved equivalent prerequisite evidence before specialist certification activation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "This draft specialist course reuses governed Technician II diagnostic and IPM modules as source-controlled development dependencies. Reuse preserves evidence lineage but does not establish specialist equivalence. Specialist release requires course-specific objective reconciliation, disease/pest/biosecurity depth review, dedicated assessment evidence, accessibility review, and program-level validation.",
+  "assessmentPolicy": "Existing Technician II module assessments may support formative development only. A dedicated specialist course final and specialist credential assessment remain required before this course can become credential-bearing.",
+  "description": "Builds a specialist-level scouting and diagnostic reasoning foundation by integrating representative sampling, evidence-quality controls, spatial and temporal pattern analysis, differential diagnosis, IPM trend interpretation, biosecurity boundaries, uncertainty communication, and escalation.",
+  "modules": [
+    "MOD-LH-TECH2-001-DIAGNOSTIC",
+    "MOD-LH-TECH2-004-IPM"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-PLANT-BIO-001",
+    "COMP-ROOTZONE-001",
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": null,
+  "learningOutcomes": [
+    "Design and execute representative scouting approaches that preserve route, denominator, location, timing, cohort, severity, and method context so repeated observations can be compared defensibly.",
+    "Separate direct observations, contextual facts, hypotheses, and confirmed causes while preserving conflicting evidence, uncertainty, and diagnostic limits.",
+    "Build and rank multi-factor plant-health differentials across root-zone, nutritional, environmental, arthropod, disease, and developmental causes using discriminating evidence rather than single-symptom shortcuts.",
+    "Interpret multi-round IPM and plant-health trends while distinguishing incidence, severity, spatial spread, treatment follow-up, confounding, and unresolved risk.",
+    "Maintain sanitation, quarantine, movement-control, documentation, and escalation boundaries while producing a reconstructable specialist-ready scouting and diagnostic record."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+    "maturity": "reused-module-specialist-draft",
+    "developmentDependencies": [
+      "COURSE-LH-TECH2-001",
+      "COURSE-LH-TECH2-004",
+      "MOD-LH-TECH2-001-DIAGNOSTIC",
+      "MOD-LH-TECH2-004-IPM"
+    ],
+    "reusedFormativeAssessments": [
+      "ASSESS-LH-TECH2-001-M01",
+      "ASSESS-LH-TECH2-004-M01"
+    ],
+    "contentCeiling": null,
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedSpecialistModuleDepthRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "credentialActivationRequirements": [
+      "dedicated specialist assessment",
+      "specialist-specific disease, arthropod and biosecurity depth reconciliation",
+      "human technical and assessment review",
+      "rendered accessibility review",
+      "controlled pilot evidence",
+      "program-level validation and release approval"
+    ]
+  }
+}
