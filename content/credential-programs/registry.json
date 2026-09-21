@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "architecture": "docs/THC_ACADEMY_SYSTEM_ARCHITECTURE.md",
   "resourceLibraryCount": 420,
@@ -43,7 +43,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-TECH1-001",
-      "capstone": "CAPSTONE-TECH1-SHIFT-001"
+      "capstone": "CAPSTONE-TECH1-SHIFT-001",
+      "programState": "active-finalization",
+      "canonicalCourseObjectsPresent": 7
     },
     {
       "id": "CREDPROG-CULT-TECH-II-001",
@@ -83,7 +85,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CULT-TECH-II-CREDENTIAL-001",
-      "capstone": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT"
+      "capstone": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+      "programState": "active-finalization",
+      "canonicalCourseObjectsPresent": 8
     },
     {
       "id": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
@@ -119,7 +123,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-PHIB-001",
-      "capstone": "CAPSTONE-CRED-PHIB-DIAGNOSTIC-001"
+      "capstone": "CAPSTONE-CRED-PHIB-DIAGNOSTIC-001",
+      "programState": "planned-content-authoring",
+      "canonicalCourseObjectsPresent": 0
     },
     {
       "id": "CREDPROG-ENV-IRR-FERT-001",
@@ -163,7 +169,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-EIFS-001",
-      "capstone": "CAPSTONE-CRED-EIFS-SYSTEMS-001"
+      "capstone": "CAPSTONE-CRED-EIFS-SYSTEMS-001",
+      "programState": "planned-content-authoring",
+      "canonicalCourseObjectsPresent": 0
     },
     {
       "id": "CREDPROG-PROP-CLEAN-STOCK-001",
@@ -195,7 +203,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-PCS-001",
-      "capstone": "CAPSTONE-CRED-PCS-PROPAGATION-001"
+      "capstone": "CAPSTONE-CRED-PCS-PROPAGATION-001",
+      "programState": "planned-content-authoring",
+      "canonicalCourseObjectsPresent": 0
     },
     {
       "id": "CREDPROG-POSTHARVEST-QA-001",
@@ -227,7 +237,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-PHQ-001",
-      "capstone": "CAPSTONE-CRED-PHQ-QUALITY-001"
+      "capstone": "CAPSTONE-CRED-PHQ-QUALITY-001",
+      "programState": "planned-content-authoring",
+      "canonicalCourseObjectsPresent": 0
     },
     {
       "id": "CREDPROG-GEN-BREED-PRES-001",
@@ -272,7 +284,9 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-GBP-001",
-      "capstone": "CAPSTONE-CRED-GBP-BREEDING-001"
+      "capstone": "CAPSTONE-CRED-GBP-BREEDING-001",
+      "programState": "planned-content-authoring",
+      "canonicalCourseObjectsPresent": 0
     },
     {
       "id": "CREDPROG-CULT-LEAD-OPS-001",
@@ -316,7 +330,32 @@
         }
       ],
       "credentialAssessment": "ASSESS-CRED-CLOP-001",
-      "capstone": "CAPSTONE-CRED-CLOP-OPS-001"
+      "capstone": "CAPSTONE-CRED-CLOP-OPS-001",
+      "programState": "planned-content-authoring",
+      "canonicalCourseObjectsPresent": 0
     }
-  ]
+  ],
+  "updated": "2026-09-21",
+  "currentReleaseScope": {
+    "label": "Technician academic/certification finalization",
+    "programIds": [
+      "CREDPROG-CULT-TECH-I-001",
+      "CREDPROG-CULT-TECH-II-001"
+    ],
+    "canonicalCourseCount": 15,
+    "boundary": "This scope may be finalized and released independently of future specialist/lead program expansion. Credential issuance remains governed by each program's fail-closed release evidence."
+  },
+  "futureExpansionScope": {
+    "programIds": [
+      "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+      "CREDPROG-ENV-IRR-FERT-001",
+      "CREDPROG-PROP-CLEAN-STOCK-001",
+      "CREDPROG-POSTHARVEST-QA-001",
+      "CREDPROG-GEN-BREED-PRES-001",
+      "CREDPROG-CULT-LEAD-OPS-001"
+    ],
+    "plannedCanonicalCourseCount": 44,
+    "state": "planned-content-authoring",
+    "boundary": "Future specialist/lead expansion is part of the Academy roadmap but must not be counted as complete or required to misrepresent the current Technician release state."
+  }
 }
