@@ -19,10 +19,14 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: academy-public-deployment-identity-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify-and-record:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
@@ -59,7 +63,7 @@ jobs:
               exit 0
             fi
             echo "Deployment identity not current yet (attempt $attempt/20)."
-            sleep 30
+            if [ "$attempt" -lt 20 ]; then sleep 30; fi
           done
           echo "::error::Public deployment did not report expected source SHA within the verification window."
           exit 1
