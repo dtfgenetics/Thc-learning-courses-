@@ -3,10 +3,10 @@
   "version": "0.11.0",
   "updated": "2026-09-20",
   "academicPublication": "draft",
-  "machineResolvableWorkComplete": false,
+  "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 2 source/package construction, learner catalog/lesson/practice/module-checkpoint routing, server-side formative grading, objective-balanced assessment controls, Practical A mapping, governed assets, remediation, exact-version review-queue integrity, and repository CI are machine-verified. Exact DTFSeeds deployment build/source identity and pinned curriculum-version equivalence are now verified. Remaining work is deployed responsive/manual learner-surface QA, repair of any defects those checks expose. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
+  "machineCompletionBoundary": "Course 2 source/package construction, learner catalog/lesson/practice/module-checkpoint routing, server-side formative grading, objective-balanced assessment controls, Practical A mapping, governed assets, remediation, exact-version review-queue integrity, and repository CI are machine-verified. Exact DTFSeeds deployment build/source identity and pinned curriculum-version equivalence are now verified. Machine-resolvable source, package, runtime, and deployed-surface verification is complete for the current pinned snapshot. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -150,7 +150,7 @@
   ],
   "deploymentEvidence": "registry/course2-deployment-evidence.json",
   "publicRouteReadback": "verified-build-identity",
-  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified. DTFSeeds production workflow/site-commit identity is now recorded from the successful publish run. Manual responsive/accessibility approval remains open, and the historical deployment did not record the exact curriculum-repository SHA fetched from @main.",
+  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the current snapshot; manual responsive/accessibility approval remains open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-002.json",
     "docs/learning-hub/tech1/course-002/COURSE-PACKAGE-MANIFEST.md",
