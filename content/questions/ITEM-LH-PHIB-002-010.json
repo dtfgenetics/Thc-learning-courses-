@@ -4,7 +4,7 @@
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRIENT-DIAG-001",
-  "objective": "LO-NUTRIENT-DIAG-002",
+  "objective": "LO-LH-PHIB-002-10",
   "bloomLevel": "evaluate",
   "difficulty": "expert",
   "type": "case-study",
@@ -25,6 +25,8 @@
   ],
   "extensions": {
     "specialistCourse": "COURSE-LH-PHIB-002",
-    "seedBank": true
+    "seedBank": true,
+    "sourceObjective": "LO-NUTRIENT-DIAG-002",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
   }
 }

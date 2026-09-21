@@ -10,15 +10,16 @@
     "COMP-ENV-ADV-001"
   ],
   "objectives": [
-    "LO-NUTRIENT-INTERACT-001",
-    "LO-NUTRIENT-DIAG-002",
-    "LO-NUTRIENT-EC-003",
-    "LO-ROOTZONE-001",
-    "LO-ROOTZONE-MEDIA-002",
-    "LO-ROOTZONE-DRYBACK-003",
-    "LO-ENV-MAP-001",
-    "LO-ENV-AIRFLOW-002",
-    "LO-ENV-LOADS-003"
+    "LO-LH-PHIB-002-01",
+    "LO-LH-PHIB-002-02",
+    "LO-LH-PHIB-002-03",
+    "LO-LH-PHIB-002-04",
+    "LO-LH-PHIB-002-05",
+    "LO-LH-PHIB-002-06",
+    "LO-LH-PHIB-002-07",
+    "LO-LH-PHIB-002-08",
+    "LO-LH-PHIB-002-09",
+    "LO-LH-PHIB-002-10"
   ],
   "items": [
     "ITEM-LH-PHIB-002-001",
@@ -78,6 +79,8 @@
       "ASSESS-ENV-ADV-MODULE-001"
     ],
     "humanAssessmentReviewRequired": true,
-    "pilotRequiredBeforeActivation": true
+    "pilotRequiredBeforeActivation": true,
+    "objectiveOwnership": "specialist-course-specific",
+    "sourceObjectiveReuse": "tracked on assessment-item extensions"
   }
 }

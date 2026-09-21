@@ -4,7 +4,7 @@
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
-  "objective": "LO-ROOTZONE-MEDIA-002",
+  "objective": "LO-LH-PHIB-002-05",
   "bloomLevel": "analyze",
   "difficulty": "moderate",
   "type": "scenario",
@@ -22,6 +22,8 @@
   ],
   "extensions": {
     "specialistCourse": "COURSE-LH-PHIB-002",
-    "seedBank": true
+    "seedBank": true,
+    "sourceObjective": "LO-ROOTZONE-MEDIA-002",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
   }
 }

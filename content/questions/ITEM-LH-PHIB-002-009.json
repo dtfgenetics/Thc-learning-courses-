@@ -4,7 +4,7 @@
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
-  "objective": "LO-ENV-LOADS-003",
+  "objective": "LO-LH-PHIB-002-09",
   "bloomLevel": "analyze",
   "difficulty": "hard",
   "type": "scenario",
@@ -23,6 +23,8 @@
   ],
   "extensions": {
     "specialistCourse": "COURSE-LH-PHIB-002",
-    "seedBank": true
+    "seedBank": true,
+    "sourceObjective": "LO-ENV-LOADS-003",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
   }
 }
