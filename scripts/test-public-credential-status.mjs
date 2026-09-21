@@ -36,11 +36,25 @@ const technicianI = publicStatus.professionalCredentials?.find((credential) => c
 if (!technicianI) {
   errors.push('Technician I public status entry is required.');
 } else {
-  if (!technicianI.availableCourses?.includes('COURSE-LH-TECH1-001')) {
-    errors.push('Technician I must expose COURSE-LH-TECH1-001 as the currently available academic course.');
+  const expectedTech1Courses = Array.from({ length: 7 }, (_, index) => `COURSE-LH-TECH1-${String(index + 1).padStart(3, '0')}`);
+  if (JSON.stringify(technicianI.availableCourses ?? []) !== JSON.stringify(expectedTech1Courses)) {
+    errors.push(`Technician I must expose all seven public academic courses in canonical order; found ${JSON.stringify(technicianI.availableCourses ?? [])}.`);
   }
   if (technicianI.issuanceAvailable) {
     errors.push('Technician I issuance must remain false until release-evidence gates are explicitly complete.');
+  }
+}
+
+const technicianII = publicStatus.professionalCredentials?.find((credential) => credential.id === 'CREDPROG-CULT-TECH-II-001');
+if (!technicianII) {
+  errors.push('Technician II public status entry is required.');
+} else {
+  const expectedTech2Courses = Array.from({ length: 8 }, (_, index) => `COURSE-LH-TECH2-${String(index + 1).padStart(3, '0')}`);
+  if (JSON.stringify(technicianII.availableCourses ?? []) !== JSON.stringify(expectedTech2Courses)) {
+    errors.push(`Technician II must expose all eight public academic courses in canonical order; found ${JSON.stringify(technicianII.availableCourses ?? [])}.`);
+  }
+  if (technicianII.issuanceAvailable) {
+    errors.push('Technician II issuance must remain false until release-evidence gates are explicitly complete.');
   }
 }
 

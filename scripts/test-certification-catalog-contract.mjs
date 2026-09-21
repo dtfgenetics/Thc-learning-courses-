@@ -26,6 +26,12 @@ for (const courseId of target.currentlyAvailableAcademicCourses ?? []) {
     errors.push(`Catalog build target marks ${courseId} available but readiness registry does not.`);
   }
 }
+if (declaredAvailable.size !== (target.currentlyAvailableAcademicCourses ?? []).length) {
+  errors.push(`Readiness registry declares ${declaredAvailable.size} available academic courses but build target declares ${(target.currentlyAvailableAcademicCourses ?? []).length}.`);
+}
+if ((target.currentlyAvailableAcademicCourses ?? []).length !== 15) {
+  errors.push(`Expected 15 public Technician I/II academic courses, found ${(target.currentlyAvailableAcademicCourses ?? []).length}.`);
+}
 
 const issuanceEnabled = [
   ...(status.foundationalCertificates ?? []),
@@ -42,4 +48,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Certification catalog contract passed: ${visibleCount} offerings represented, ${target.currentlyAvailableAcademicCourses.length} academic course currently available, ${issuanceEnabled.length} credential issuances enabled.`);
+console.log(`Certification catalog contract passed: ${visibleCount} offerings represented, ${target.currentlyAvailableAcademicCourses.length} academic courses currently available, ${issuanceEnabled.length} credential issuances enabled.`);
