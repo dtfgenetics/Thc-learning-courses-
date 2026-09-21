@@ -26,7 +26,6 @@
   ],
   "nextMachineActions": [
     "complete deployed responsive/manual learner-surface QA and record defects",
-    "record and verify the exact deployment build/source SHA identity for the public learner surface",
     "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
     "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
@@ -48,5 +47,18 @@
     "approvedForLearnerRender": 0,
     "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
     "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
+  },
+  "publicRouteReadback": "verified-build-identity",
+  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
+  "deploymentIdentity": {
+    "state": "verified",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "endpoint": "https://dtfseeds.com/api/build-info"
+  },
+  "deployedMachineSurfaceQa": {
+    "state": "verified",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708"
   }
 }
