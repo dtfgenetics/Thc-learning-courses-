@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "CANDIDATE-GOVERNANCE-CONTROLS-001",
+  "version": "0.1.0",
+  "updated": "2026-09-21",
+  "status": "approval-pending",
+  "appliesTo": [
+    "CREDPROG-CULT-TECH-I-001",
+    "CREDPROG-CULT-TECH-II-001"
+  ],
+  "sourceDrafts": [
+    "docs/academy-v2/credential/tech1/CANDIDATE-RETEST-ACCOMMODATION-APPEAL-SECURITY-DRAFT.md",
+    "docs/learning-hub/tech1/course-007/CANDIDATE-EVIDENCE-RETENTION-PRIVACY-DRAFT.md"
+  ],
+  "controls": {
+    "retest": {
+      "state": "defined-approval-pending",
+      "remediationRequiredBeforeRetest": true,
+      "equivalentSecureFormOrVariantRequired": true,
+      "criticalFailureNonCompensatory": true,
+      "finalAttemptLimit": null,
+      "waitingPeriodHours": null,
+      "feePolicy": null,
+      "privatePriorFormExposureRecordRequired": true
+    },
+    "accommodation": {
+      "state": "defined-approval-pending",
+      "constructPreservationRequired": true,
+      "separateFromScoringDecision": true,
+      "minimumNecessaryAssessorDisclosure": true,
+      "examples": [
+        "extended time",
+        "accessible presentation",
+        "assistive technology",
+        "rest breaks",
+        "alternative input/output",
+        "physically accessible workstation"
+      ],
+      "medicalDocumentationPubliclyExposed": false
+    },
+    "appeal": {
+      "state": "defined-approval-pending",
+      "preserveOriginalRecord": true,
+      "authorizedDecisionMakerRequired": true,
+      "decisionRecordRequired": true,
+      "secureAnswerKeyDisclosureAllowed": false,
+      "grounds": [
+        "administration/technical irregularity",
+        "scoring/rubric application error",
+        "accommodation implementation failure",
+        "identity/record mismatch",
+        "policy/procedure error",
+        "credential issuance/verification error"
+      ]
+    },
+    "securityIncident": {
+      "state": "defined-approval-pending",
+      "silentEvidenceMutationAllowed": false,
+      "supportedActions": [
+        "hold",
+        "investigation",
+        "documented disposition",
+        "candidate communication where appropriate",
+        "form/item quarantine",
+        "reassessment where justified",
+        "security escalation"
+      ]
+    },
+    "privacyRetention": {
+      "state": "defined-approval-pending",
+      "dataMinimizationRequired": true,
+      "roleBasedAccessRequired": true,
+      "overwriteOriginalScoredEvidenceAllowed": false,
+      "auditTrailRequired": true,
+      "retentionScheduleApproved": false,
+      "retentionPeriods": {
+        "failedPracticeAttempts": null,
+        "readinessAttempts": null,
+        "credentialAttempts": null,
+        "evaluatorCalibrationEvidence": null,
+        "appealAdjudicationRecords": null,
+        "issuedCredentialVerificationRecords": null,
+        "revokedExpiredCredentials": null,
+        "securityLogs": null
+      }
+    },
+    "publicVerification": {
+      "state": "defined-approval-pending",
+      "minimumNecessaryProjectionRequired": true,
+      "rawScoresPublicByDefault": false,
+      "secureItemsPublic": false,
+      "evaluatorNotesPublic": false,
+      "accommodationDataPublic": false
+    }
+  },
+  "requiredApprovals": [
+    "program",
+    "assessment",
+    "accessibility",
+    "privacy/legal",
+    "security",
+    "organizational"
+  ],
+  "operationalUseAuthorized": false,
+  "boundary": "Machine-complete governance structure only. No legal/privacy approval, final retention schedule, final retest limit/waiting period/fee rule, or operational credential authorization is claimed."
+}
