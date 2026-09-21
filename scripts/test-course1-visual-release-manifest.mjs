@@ -53,6 +53,12 @@ if (pngQa) {
     assert.ok(Number.isInteger(qaAsset.width) && qaAsset.width > 0, `${qaAsset.conceptId}: authenticated binary QA requires image width`);
     assert.ok(Number.isInteger(qaAsset.height) && qaAsset.height > 0, `${qaAsset.conceptId}: authenticated binary QA requires image height`);
     assert.equal(qaAsset.mimeType, 'image/png', `${qaAsset.conceptId}: authenticated QA record must identify the current v3 master as PNG`);
+    assert.equal(qaAsset.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: 384x512 review binary must remain blocked from production release`);
+    assert.ok(typeof qaAsset.repositoryReviewPath === 'string' && qaAsset.repositoryReviewPath.endsWith('.png'), `${qaAsset.conceptId}: repository review path is required`);
+    assert.ok(fs.existsSync(path.join(root, qaAsset.repositoryReviewPath)), `${qaAsset.conceptId}: imported repository review binary is missing`);
+    assert.equal(concept.candidate.repositoryReviewPath, qaAsset.repositoryReviewPath, `${qaAsset.conceptId}: manifest review path must match authenticated QA evidence`);
+    assert.deepEqual(concept.candidate.observedPixelDimensions, { width: qaAsset.width, height: qaAsset.height }, `${qaAsset.conceptId}: manifest dimensions must match authenticated QA evidence`);
+    assert.equal(concept.candidate.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: manifest must fail closed on low-resolution review binary`);
     assert.ok(Array.isArray(qaAsset.findings) && qaAsset.findings.length > 0, `${qaAsset.conceptId}: rejected binary must record actionable QA findings`);
   }
 }

@@ -1,10 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "courseId": "COURSE-LH-TECH1-001",
   "reviewScope": "Authenticated binary and visual/copy QA for individual v3 PNG masters 13-18",
-  "reviewDate": "2026-09-14",
+  "reviewDate": "2026-09-21",
   "releasePolicy": "These binaries are review evidence only. None may be registered as a produced learner asset or marked public-approved until the listed defects are corrected and the replacement binary passes the Course 1 visual release gate.",
   "commonFindings": [
+    "All six authenticated v3 images are 384 × 512 px and therefore fail the production-resolution gate.",
     "All six v3 images incorrectly label their location as Course 1 | Module 1. Lessons 13-15 belong to Module 5; lessons 16-18 belong to Module 6.",
     "All six v3 images use Cultivation Technician Certification branding even though Course 1 public academic completion is separate from Technician I professional credential eligibility and issuance.",
     "Each rebuilt image must preserve Technician I authorization boundaries and defer facility-specific actions to the current SOP, manufacturer instructions, controlled record system, or authorized role as applicable."
@@ -28,7 +29,9 @@
         "Replace certification wording with public-course/Technician I foundation wording that does not imply credential issuance.",
         "Do not use tag-out language in a way that implies every Technician I is authorized to apply lockout/tagout. State that failed readiness criteria require stopping use, preserving controlled status, and following the site-defined out-of-service/escalation process.",
         "Keep pre-use inspection distinct from maintenance diagnosis or repair authority."
-      ]
+      ],
+      "productionResolutionStatus": "insufficient-rebuild-required",
+      "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png"
     },
     {
       "conceptId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
@@ -48,7 +51,9 @@
         "Replace certification wording with public-course/Technician I foundation wording.",
         "Qualify basic troubleshooting and minor adjustments as actions explicitly assigned, trained, and authorized by the equipment/site procedure.",
         "Keep diagnosis, repair, calibration, guarded/protected servicing, hazardous-energy work, and return-to-service approval inside the trained and authorized maintenance/servicing role."
-      ]
+      ],
+      "productionResolutionStatus": "insufficient-rebuild-required",
+      "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png"
     },
     {
       "conceptId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
@@ -68,7 +73,9 @@
         "Replace certification wording with public-course/Technician I foundation wording.",
         "Reporting timing and channel must defer to the applicable emergency, fault-reporting, or escalation procedure rather than imply one universal immediate-report rule for every condition.",
         "Preserve the strong distinction between observed facts and unsupported diagnosis."
-      ]
+      ],
+      "productionResolutionStatus": "insufficient-rebuild-required",
+      "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png"
     },
     {
       "conceptId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
@@ -88,7 +95,9 @@
         "Replace certification wording with public-course/Technician I foundation wording.",
         "Do not present single-line strike-through, initials/date, and reason as a universal correction method. Label that sequence as a paper-record example only when the governing procedure permits it.",
         "Explicitly state that paper and digital correction methods are controlled by the record system, facility SOP, and applicable requirements, and must preserve the original information or audit trail."
-      ]
+      ],
+      "productionResolutionStatus": "insufficient-rebuild-required",
+      "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png"
     },
     {
       "conceptId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
@@ -108,7 +117,9 @@
         "Replace certification wording with public-course/Technician I foundation wording.",
         "Clarify that special instructions and priorities communicated at handoff must be current, controlled, and within the receiving worker's authority rather than improvised instructions.",
         "Keep the emphasis on current status, completed/open work, unresolved risks, ownership, and follow-up."
-      ]
+      ],
+      "productionResolutionStatus": "insufficient-rebuild-required",
+      "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png"
     },
     {
       "conceptId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
@@ -128,7 +139,16 @@
         "Replace certification wording with public-course/Technician I foundation wording.",
         "Frame PLAN as reviewing the assigned work, current controlled instruction, hazards, prerequisites, and priorities—not independent production planning authority.",
         "Keep the integrated cycle tied to authorized execution, monitoring, truthful documentation, communication, and follow-up."
-      ]
+      ],
+      "productionResolutionStatus": "insufficient-rebuild-required",
+      "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png"
     }
-  ]
+  ],
+  "productionMasterTarget": {
+    "minimumWidth": 2400,
+    "minimumHeight": 3200,
+    "preferredPrintResolutionDpi": 300,
+    "webDerivativeMinimumWidth": 1200,
+    "webDerivativeMinimumHeight": 1600
+  }
 }
