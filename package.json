@@ -157,7 +157,9 @@
     "visuals:raster-policy:test": "node scripts/test-raster-production-policy.mjs",
     "visuals:raster-coverage:test": "node scripts/test-raster-backlog-coverage.mjs",
     "finalize:status": "node scripts/report-finalization-status.mjs",
-    "finalize:status:json": "node scripts/report-finalization-status.mjs --json"
+    "finalize:status:json": "node scripts/report-finalization-status.mjs --json",
+    "specialist:readiness": "node scripts/report-specialist-expansion-readiness.mjs",
+    "specialist:readiness:json": "node scripts/report-specialist-expansion-readiness.mjs --json"
   },
   "dependencies": {
     "ajv": "8.20.0",
