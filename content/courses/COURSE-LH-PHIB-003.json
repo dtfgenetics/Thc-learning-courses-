@@ -1,0 +1,52 @@
+{
+  "id": "COURSE-LH-PHIB-003",
+  "title": "Arthropod Pest Biology, Identification & IPM",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Plant Health, IPM & Biosecurity Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Plant Health, IPM & Biosecurity Specialist pathway",
+    "Cultivation personnel responsible for advanced arthropod scouting, identification evidence, containment and escalation"
+  ],
+  "prerequisites": [
+    "Scouting Systems & Diagnostic Reasoning or equivalent advanced diagnostic foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Pest biology and identification claims are grounded in controlled extension and peer-reviewed sources. Cannabis/hemp-specific threshold and treatment evidence is preserved as limited where the literature is limited; no universal pesticide or action-threshold rule is implied.",
+  "assessmentPolicy": "Course-specific assessment remains to be built. No pest-management item or course completion can authorize pesticide selection or application.",
+  "description": "Builds specialist-level arthropod identification and IPM reasoning for major hemp/cannabis and greenhouse pest groups while emphasizing magnification, life-stage evidence, representative scouting, threshold uncertainty, containment and legal/role boundaries.",
+  "modules": [
+    "MOD-LH-PHIB-003-ARTHROPODS"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": null,
+  "learningOutcomes": [
+    "Differentiate major arthropod pest groups using body form, life stage, plant location, feeding evidence, by-products, movement, and appropriate magnification before assigning pest identity.",
+    "Compare cannabis aphid, twospotted spider mite, and hemp russet mite biology, injury patterns, detection limits, and confirmation needs without inventing unsupported action thresholds.",
+    "Distinguish thrips and fungus-gnat life stages, signs, injury patterns, sampling locations, and common look-alikes using evidence appropriate to greenhouse crop scouting.",
+    "Map likely arthropod movement pathways through plant material, people, tools, air movement, growing media, and crop zones and apply authorized containment and sanitation controls.",
+    "Document pest-identification confidence, specimen or image evidence, affected scope, unresolved look-alikes, monitoring method, and treatment-authority boundaries in a reconstructable plant-health record."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+    "maturity": "new-specialist-content-draft",
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "contentCeiling": null
+  }
+}
