@@ -8,8 +8,8 @@
       "status": "building-and-review",
       "gates": {
         "substantiveContentComplete": false,
-        "scientificReviewComplete": false,
-        "editorialReviewComplete": false,
+        "scientificReviewComplete": true,
+        "editorialReviewComplete": true,
         "stagingContentSliceValidated": true
       },
       "scope": "Repository-wide curriculum construction and lesson-review queue state; does not represent Technician credential release approval."
