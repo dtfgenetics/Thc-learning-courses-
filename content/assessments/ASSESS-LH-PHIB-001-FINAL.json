@@ -13,16 +13,16 @@
     "COMP-SPACE-BIOSEC-001"
   ],
   "objectives": [
-    "LO-LH-TECH2-004-01",
-    "LO-LH-TECH2-001-01",
-    "LO-LH-TECH2-001-02",
-    "LO-LH-TECH2-001-03",
-    "LO-LH-TECH2-001-04",
-    "LO-LH-TECH2-004-02",
-    "LO-LH-TECH2-004-03",
-    "LO-LH-TECH2-004-04",
-    "LO-LH-TECH2-004-05",
-    "LO-LH-TECH2-004-06"
+    "LO-LH-PHIB-001-01",
+    "LO-LH-PHIB-001-02",
+    "LO-LH-PHIB-001-03",
+    "LO-LH-PHIB-001-04",
+    "LO-LH-PHIB-001-05",
+    "LO-LH-PHIB-001-06",
+    "LO-LH-PHIB-001-07",
+    "LO-LH-PHIB-001-08",
+    "LO-LH-PHIB-001-09",
+    "LO-LH-PHIB-001-10"
   ],
   "items": [
     "ITEM-LH-PHIB-001-001",
@@ -101,6 +101,8 @@
     ],
     "publicCredentialItemsExcluded": true,
     "humanAssessmentReviewRequired": true,
-    "pilotRequiredBeforeActivation": true
+    "pilotRequiredBeforeActivation": true,
+    "objectiveOwnership": "specialist-course-specific",
+    "sourceObjectiveReuse": "tracked on assessment-item extensions"
   }
 }

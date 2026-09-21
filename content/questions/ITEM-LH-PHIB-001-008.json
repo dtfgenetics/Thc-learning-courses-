@@ -4,7 +4,7 @@
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
-  "objective": "LO-LH-TECH2-004-04",
+  "objective": "LO-LH-PHIB-001-08",
   "bloomLevel": "apply",
   "difficulty": "moderate",
   "type": "scenario",
@@ -22,6 +22,8 @@
   ],
   "extensions": {
     "specialistCourse": "COURSE-LH-PHIB-001",
-    "seedBank": true
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-04",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
   }
 }
