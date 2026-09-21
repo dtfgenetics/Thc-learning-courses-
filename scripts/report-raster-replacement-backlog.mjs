@@ -53,6 +53,22 @@ for(const concept of course1.concepts??[]){
   });
 }
 
+const course1Registry=readJson('visuals/ASSET-REGISTRY.json');
+const alreadyMappedCourse1Paths=new Set(governed.filter((row)=>row.courseId===course1.courseId).map((row)=>row.sourcePath));
+for(const asset of course1Registry.assets??[]){
+  if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg'||alreadyMappedCourse1Paths.has(asset.sourcePath)) continue;
+  governed.push({
+    program:'Technician I',
+    courseId:course1Registry.courseId,
+    id:asset.id,
+    title:asset.title,
+    sourcePath:asset.sourcePath,
+    currentLifecycle:asset.assetLifecycle??asset.status,
+    replacementStatus:asset.rasterReplacement?.status??'missing',
+    releaseGate:asset.rasterReplacement?.releaseGate??null
+  });
+}
+
 for(let n=2;n<=6;n++){
   const registry=readJson(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
   for(const asset of registry.assets??[]){
