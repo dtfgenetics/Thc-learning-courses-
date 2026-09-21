@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-LH-PHIB-001-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-TECH2-001-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Lower-leaf chlorosis appears after a period of cool, saturated root-zone conditions. A feed record shows nitrogen was supplied within the approved program. Which conclusion is strongest?",
+  "choices": [
+    "Nitrogen-related symptoms remain possible, but uptake limitation and root-zone conditions should be evaluated before concluding that the supply concentration itself is deficient.",
+    "The feed record proves nitrogen cannot be involved.",
+    "The symptom proves the fertilizer concentration must be increased.",
+    "Cool root-zone conditions can be ignored because only formulation determines nutrient status."
+  ],
+  "correct": 0,
+  "rationale": "Nutrient symptoms can reflect supply, uptake, root function, environmental context, or interactions. A feed record does not by itself establish plant availability or cause.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001",
+    "REF-ROOTZONE-NUTRIENT-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true
+  }
+}

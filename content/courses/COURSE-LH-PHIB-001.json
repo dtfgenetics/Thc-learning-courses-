@@ -34,7 +34,7 @@
     "COMP-SPACE-BIOSEC-001",
     "COMP-PRO-QA-001"
   ],
-  "finalAssessment": null,
+  "finalAssessment": "ASSESS-LH-PHIB-001-FINAL",
   "learningOutcomes": [
     "Design and execute representative scouting approaches that preserve route, denominator, location, timing, cohort, severity, and method context so repeated observations can be compared defensibly.",
     "Separate direct observations, contextual facts, hypotheses, and confirmed causes while preserving conflicting evidence, uncertainty, and diagnostic limits.",
@@ -69,6 +69,11 @@
       "rendered accessibility review",
       "controlled pilot evidence",
       "program-level validation and release approval"
-    ]
+    ],
+    "dedicatedCourseAssessment": "ASSESS-LH-PHIB-001-FINAL",
+    "dedicatedItemCount": 10,
+    "targetSpecialistItemBankCount": 60,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
   }
 }

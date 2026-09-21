@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-001-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-TECH2-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A root-zone sample has elevated EC, but roots appear healthy, irrigation delivery is uneven, and symptoms are concentrated in one zone. Which approach best supports a defensible differential?",
+  "choices": [
+    "Interpret EC together with moisture, drainage, irrigation delivery, pH, root condition, crop pattern, and recent history rather than treating EC as a single-cause diagnosis.",
+    "Declare nutrient toxicity because elevated EC always proves excessive nutrient uptake.",
+    "Ignore irrigation uniformity because EC already identifies the cause.",
+    "Average all zones together so the local pattern does not affect the conclusion."
+  ],
+  "correct": 0,
+  "rationale": "Root-zone measurements are interacting evidence. EC must be interpreted with water status, delivery, pH, roots, spatial pattern, and management history.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-NUTRITION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true
+  }
+}

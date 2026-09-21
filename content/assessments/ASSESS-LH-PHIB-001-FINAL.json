@@ -1,0 +1,106 @@
+{
+  "id": "ASSESS-LH-PHIB-001-FINAL",
+  "title": "Scouting Systems & Diagnostic Reasoning — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001",
+    "COMP-ENV-ADV-001",
+    "COMP-ROOTZONE-001",
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "objectives": [
+    "LO-LH-TECH2-004-01",
+    "LO-LH-TECH2-001-01",
+    "LO-LH-TECH2-001-02",
+    "LO-LH-TECH2-001-03",
+    "LO-LH-TECH2-001-04",
+    "LO-LH-TECH2-004-02",
+    "LO-LH-TECH2-004-03",
+    "LO-LH-TECH2-004-04",
+    "LO-LH-TECH2-004-05",
+    "LO-LH-TECH2-004-06"
+  ],
+  "items": [
+    "ITEM-LH-PHIB-001-001",
+    "ITEM-LH-PHIB-001-002",
+    "ITEM-LH-PHIB-001-003",
+    "ITEM-LH-PHIB-001-004",
+    "ITEM-LH-PHIB-001-005",
+    "ITEM-LH-PHIB-001-006",
+    "ITEM-LH-PHIB-001-007",
+    "ITEM-LH-PHIB-001-008",
+    "ITEM-LH-PHIB-001-009",
+    "ITEM-LH-PHIB-001-010"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 10,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-IPM-ADV-001",
+      "items": 4,
+      "cognitiveTarget": "Representative scouting, trend interpretation, follow-up evidence and treatment-authority boundaries"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 2,
+      "cognitiveTarget": "Observation-versus-interpretation separation and reconstructable record integrity"
+    },
+    {
+      "competency": "COMP-ENV-ADV-001",
+      "items": 1,
+      "cognitiveTarget": "Environmental data representativeness for plant-health decisions"
+    },
+    {
+      "competency": "COMP-ROOTZONE-001",
+      "items": 1,
+      "cognitiveTarget": "Root-zone evidence integration in differential diagnosis"
+    },
+    {
+      "competency": "COMP-NUTRIENT-DIAG-001",
+      "items": 1,
+      "cognitiveTarget": "Multi-factor nutrient and uptake differential reasoning"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 1,
+      "cognitiveTarget": "Containment, sanitation and movement-control application"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 4,
+    "targetBankItemsPerCompetency": 12,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PHIB-001",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 60,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "sourceModuleAssessments": [
+      "ASSESS-LH-TECH2-001-M01",
+      "ASSESS-LH-TECH2-004-M01"
+    ],
+    "sourceCourseAssessments": [
+      "ASSESS-LH-TECH2-001-FINAL",
+      "ASSESS-LH-TECH2-004-FINAL"
+    ],
+    "publicCredentialItemsExcluded": true,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

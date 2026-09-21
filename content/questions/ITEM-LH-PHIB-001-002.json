@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-001-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH2-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A scout sees interveinal chlorosis and records “magnesium deficiency confirmed” before checking root-zone, environmental, or nutrition history. What should be changed?",
+  "choices": [
+    "Keep the symptom as a direct observation and record magnesium deficiency as one hypothesis pending discriminating evidence.",
+    "Replace the observation with the diagnosis so the report is concise.",
+    "Start a corrective feed immediately because the visual pattern is enough to confirm cause.",
+    "Delete observations that do not fit the suspected diagnosis."
+  ],
+  "correct": 0,
+  "rationale": "A symptom can support a hypothesis but does not by itself confirm cause. Direct observations should remain separate from interpretation and uncertainty.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true
+  }
+}
