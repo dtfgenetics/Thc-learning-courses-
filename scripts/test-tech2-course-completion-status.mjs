@@ -48,6 +48,8 @@ for(let n=1;n<=8;n++){
     assert.match(deployment.exactDeploymentBuildId ?? '', /^[A-Za-z0-9._:@/-]{1,160}$/, `Technician II Course ${n}: build id must be controlled text`);
     assert.match(deployment.exactDeploymentSourceSha ?? '', /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/i, `Technician II Course ${n}: source SHA must be full length`);
     assert.match(deployment.evidenceState ?? '', /build-identity-verified/, `Technician II Course ${n}: evidence state must record verified identity`);
+    assert.equal(deployment.curriculumSourceShaPinnedByDeployment, true, `Technician II Course ${n}: exact deployment identity must record pinned curriculum SHA`);
+    assert.equal(deployment.curriculumSource, `dtfgenetics/Thc-learning-courses-@${deployment.exactDeploymentSourceSha}`, `Technician II Course ${n}: curriculum source must match exact deployment source SHA`);
   } else {
     assert.equal(deployment.exactDeploymentBuildId,null,`Technician II Course ${n}: build id must remain null until verified`);
     assert.equal(deployment.exactDeploymentSourceSha,null,`Technician II Course ${n}: source SHA must remain null until verified`);
