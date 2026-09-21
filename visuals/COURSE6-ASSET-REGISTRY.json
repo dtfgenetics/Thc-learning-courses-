@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "courseId": "COURSE-LH-TECH1-006",
   "policy": {
     "expandable": true,
@@ -15,7 +15,16 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Produced Course 6 learner assets live in the public repository and are served by the Academy runtime. Google Drive is a controlled production/reference mirror and does not replace the canonical repository asset."
+    "publicDelivery": "Existing Course 6 SVG files remain a verified learner-facing compatibility baseline so current public routes are not broken. New production instructional assets and replacements must be high-resolution PNG/WebP/JPEG/JPG. Google Drive remains a controlled mirror and does not replace the canonical repository asset.",
+    "productionInstructionalFormats": [
+      "png",
+      "webp",
+      "jpeg",
+      "jpg"
+    ],
+    "svgProductionTarget": false,
+    "legacySvgCompatibilityAllowed": true,
+    "rasterReplacementRequired": true
   },
   "driveStorage": {
     "folderId": "1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq",
@@ -50,7 +59,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "154jcFchE1Et8iIgVXYgkNTCsePRuw5ly",
-      "driveUrl": "https://drive.google.com/file/d/154jcFchE1Et8iIgVXYgkNTCsePRuw5ly/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/154jcFchE1Et8iIgVXYgkNTCsePRuw5ly/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-002",
@@ -76,7 +96,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1wZcalnvR_B49sOwr-tBaS9HiIEibosAD",
-      "driveUrl": "https://drive.google.com/file/d/1wZcalnvR_B49sOwr-tBaS9HiIEibosAD/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1wZcalnvR_B49sOwr-tBaS9HiIEibosAD/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-003",
@@ -103,7 +134,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU",
-      "driveUrl": "https://drive.google.com/file/d/1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-004",
@@ -128,7 +170,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o",
-      "driveUrl": "https://drive.google.com/file/d/1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-005",
@@ -156,7 +209,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL",
-      "driveUrl": "https://drive.google.com/file/d/1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-006",
@@ -183,7 +247,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N",
-      "driveUrl": "https://drive.google.com/file/d/1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-007",
@@ -210,7 +285,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1hXULtkclAzM6X3w__F4q6-qi9st9wlST",
-      "driveUrl": "https://drive.google.com/file/d/1hXULtkclAzM6X3w__F4q6-qi9st9wlST/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1hXULtkclAzM6X3w__F4q6-qi9st9wlST/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-006-008",
@@ -239,7 +325,18 @@
       "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
       "driveFileId": "1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg",
-      "driveUrl": "https://drive.google.com/file/d/1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg/view?usp=drivesdk"
+      "driveUrl": "https://drive.google.com/file/d/1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg/view?usp=drivesdk",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     }
   ]
 }
