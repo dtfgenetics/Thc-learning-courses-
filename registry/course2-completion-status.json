@@ -137,7 +137,6 @@
   "nextMachineActions": [
     "produce and QA raster replacements for the 10 legacy Course 2 SVG compatibility assets, then retire each SVG only after verified public-path replacement",
     "complete deployed responsive/manual learner-surface QA and record defects",
-    "record and verify the exact deployment build/source SHA identity for the public learner surface",
     "repair any defects exposed by deployed QA/readback without weakening assessment or credential boundaries"
   ],
   "nextHumanActions": [
@@ -152,8 +151,8 @@
     "versioned academic release approval"
   ],
   "deploymentEvidence": "registry/course2-deployment-evidence.json",
-  "publicRouteReadback": "verified-partial",
-  "publicRouteReadbackBoundary": "Anonymous public course landing, one representative lesson, and the module/readiness assessment route were verified on 2026-09-18. Exact deployment build/source SHA identity and manual responsive/accessibility approval remain open.",
+  "publicRouteReadback": "verified-build-identity",
+  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-002.json",
     "docs/learning-hub/tech1/course-002/COURSE-PACKAGE-MANIFEST.md",
@@ -171,5 +170,16 @@
     "evidenceCollected": false,
     "approvalRecorded": false,
     "boundary": "Protocol readiness does not establish pilot completion, assessment validity, standard setting, or credential release."
+  },
+  "deploymentIdentity": {
+    "state": "verified",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "endpoint": "https://dtfseeds.com/api/build-info"
+  },
+  "deployedMachineSurfaceQa": {
+    "state": "verified",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708"
   }
 }
