@@ -15,8 +15,8 @@
   "representativeAssessmentReadbackVerified": true,
   "trainingCredentialBoundaryObserved": true,
   "responsiveManualQaApproved": false,
-  "exactDeploymentBuildId": "github-actions-run:34999459498",
-  "exactDeploymentSourceSha": "068c333deb15bfca1d606748abda386dbfea87a9",
+  "exactDeploymentBuildId": "dtf-academy-338f3cc23581-35582824708",
+  "exactDeploymentSourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
   "evidenceState": "public-readback-and-build-identity-verified-manual-responsive-qa-open",
   "note": "Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and the exact DTFSeeds deployment workflow/site commit are verified. The production publisher fetched the curriculum from dtfgenetics/Thc-learning-courses-@main without recording a pinned curriculum SHA, so exact curriculum-version equivalence remains a separate evidence concern. Manual responsive/accessibility approval, practical/capstone validity, pilot/calibration evidence, standard setting, and credential release approval remain open.",
   "deploymentRepository": "dtfgenetics/Thc",
@@ -26,5 +26,64 @@
   "deploymentArtifactId": 10408628594,
   "deploymentArtifactDigest": "sha256:1f155adf5384efd3fbc1abf449522b72eb912ef445e65f527177501afa088ca8",
   "curriculumSource": "dtfgenetics/Thc-learning-courses-@main",
-  "curriculumSourceShaPinnedByDeployment": false
+  "curriculumSourceShaPinnedByDeployment": false,
+  "buildIdentityVerifiedAt": "2026-09-21T09:25:23.307Z",
+  "buildIdentityEndpoint": "https://dtfseeds.com/api/build-info",
+  "machineSurfaceQa": {
+    "state": "verified",
+    "verifiedAt": "2026-09-21T09:25:36.853Z",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceResponsiveContract": {
+      "viewport": true,
+      "language": true,
+      "compactBreakpoint": true,
+      "assessmentBreakpoint": true,
+      "reducedMotion": true,
+      "visibleFocus": true,
+      "touchTargets": true
+    },
+    "publicSurfaces": [
+      {
+        "kind": "course",
+        "requestedUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/traceability-production-metrics-shift-coordination-peer-support/",
+        "finalUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/traceability-production-metrics-shift-coordination-peer-support/",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "htmlLanguage": true,
+        "viewport": true,
+        "title": true,
+        "publiclyIndexable": true,
+        "loginRedirect": false,
+        "pass": true
+      },
+      {
+        "kind": "lesson",
+        "requestedUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/traceability-production-metrics-shift-coordination-peer-support/lesson-01/",
+        "finalUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/traceability-production-metrics-shift-coordination-peer-support/lesson-01/",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "htmlLanguage": true,
+        "viewport": true,
+        "title": true,
+        "publiclyIndexable": true,
+        "loginRedirect": false,
+        "pass": true
+      },
+      {
+        "kind": "assessment",
+        "requestedUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/traceability-production-metrics-shift-coordination-peer-support/knowledge-check/",
+        "finalUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/traceability-production-metrics-shift-coordination-peer-support/knowledge-check/",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "htmlLanguage": true,
+        "viewport": true,
+        "title": true,
+        "publiclyIndexable": true,
+        "loginRedirect": false,
+        "pass": true
+      }
+    ]
+  },
+  "machineSurfaceQaVerified": true
 }

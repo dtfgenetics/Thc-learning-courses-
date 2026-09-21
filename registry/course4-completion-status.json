@@ -20,8 +20,6 @@
     "docs/learning-hub/tech1/course-004/pilot/PILOT-PROTOCOL.md"
   ],
   "nextMachineActions": [
-    "complete deployed responsive/manual learner-surface QA and record defects",
-    "repair any defects exposed by deployed QA/readback without weakening assessment, practical or credential boundaries",
     "pin or otherwise prove exact curriculum-version equivalence on the next public deployment so future release evidence is fully reproducible"
   ],
   "nextHumanActions": [
@@ -43,5 +41,16 @@
     "evidenceCollected": false,
     "approvalRecorded": false,
     "boundary": "Protocol readiness does not establish pilot completion, assessment validity, standard setting, or credential release."
+  },
+  "deploymentIdentity": {
+    "state": "verified",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "endpoint": "https://dtfseeds.com/api/build-info"
+  },
+  "deployedMachineSurfaceQa": {
+    "state": "verified",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708"
   }
 }

@@ -25,7 +25,6 @@
     "scripts/verify-public-deployment-identity.mjs"
   ],
   "nextMachineActions": [
-    "complete deployed responsive/manual learner-surface QA and record defects",
     "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
     "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates",
     "pin or otherwise prove exact curriculum-version equivalence on the next public deployment so future release evidence is fully reproducible"
@@ -52,9 +51,14 @@
     "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
   },
   "deployedMachineSurfaceQa": {
-    "state": "partial-build-identity-verified-manual-qa-open",
-    "sourceSha": "068c333deb15bfca1d606748abda386dbfea87a9",
-    "buildId": "github-actions-run:34999459498",
-    "manualResponsiveQaApproved": false
+    "state": "verified",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708"
+  },
+  "deploymentIdentity": {
+    "state": "verified",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "endpoint": "https://dtfseeds.com/api/build-info"
   }
 }

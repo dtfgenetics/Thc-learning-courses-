@@ -46,5 +46,16 @@
     "evidenceCollected": false,
     "approvalRecorded": false,
     "boundary": "Protocol readiness does not establish pilot completion, assessment validity, standard setting, or credential release."
+  },
+  "deploymentIdentity": {
+    "state": "verified",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "endpoint": "https://dtfseeds.com/api/build-info"
+  },
+  "deployedMachineSurfaceQa": {
+    "state": "verified",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708"
   }
 }
