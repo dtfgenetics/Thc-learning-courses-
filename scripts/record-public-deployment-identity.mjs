@@ -56,19 +56,19 @@ for (const rel of ledgerPaths) {
   const data = JSON.parse(fs.readFileSync(file, 'utf8'));
   data.exactDeploymentBuildId = identity.buildId;
   data.exactDeploymentSourceSha = identity.sourceSha.toLowerCase();
+  data.curriculumSource = `dtfgenetics/Thc-learning-courses-@${identity.sourceSha.toLowerCase()}`;
+  data.curriculumSourceShaPinnedByDeployment = true;
   data.buildIdentityVerifiedAt = new Date().toISOString();
   data.buildIdentityEndpoint = `${baseUrl}/api/build-info`;
   data.evidenceState = data.responsiveManualQaApproved === true
     ? 'public-readback-build-identity-and-manual-responsive-qa-verified'
     : 'public-readback-and-build-identity-verified-manual-responsive-qa-open';
-  data.note = String(data.note ?? '')
-    .replace(/ It does not claim exact deployment build identity, source SHA equivalence,/i, ' It records exact deployment build identity and source SHA equivalence; it does not claim')
-    .replace(/ It does not claim exact deployment build identity, source SHA equivalence, manual responsive\/accessibility approval,/i, ' It records exact deployment build identity and source SHA equivalence; it does not claim manual responsive/accessibility approval,');
+  data.note = 'Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and exact Academy build identity were verified against the pinned curriculum source SHA. Manual responsive/accessibility approval, pilot/practical validity, standard setting, and credential release approval remain open.';
   if (write) fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
   updatedLedgers.push(rel);
 }
 
-const identityAction = /(exact deployment build\/source SHA|deployment build\/source SHA|deployment build.*source SHA|record and verify the exact deployment build|record the exact deployment build)/i;
+const identityAction = /(exact deployment build\/source SHA|deployment build\/source SHA|deployment build.*source SHA|record and verify the exact deployment build|record the exact deployment build|pin or otherwise prove exact curriculum-version equivalence)/i;
 const updatedCompletionLedgers = [];
 for (const rel of completionPaths) {
   const file = path.join(root, rel);
@@ -78,9 +78,12 @@ for (const rel of completionPaths) {
   }
   if (typeof data.machineCompletionBoundary === 'string') {
     data.machineCompletionBoundary = data.machineCompletionBoundary
+      .replace(/Exact DTFSeeds deployment workflow\/site-commit identity is now verified\./i, 'Exact DTFSeeds deployment build/source identity and pinned curriculum-version equivalence are now verified.')
       .replace(/,? exact deployment build\/source SHA verification using the public build-identity contract,? ?/i, ', ')
+      .replace(/curriculum-version equivalence where a deployment did not pin the curriculum SHA, and /i, '')
       .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA, and repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair')
-      .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA, repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair');
+      .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA, repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair')
+      .replace(/Remaining work is deployed responsive\/manual learner-surface QA, and repair/i, 'Remaining machine work is deployed responsive/manual learner-surface QA and repair');
   }
   data.deploymentIdentity = {
     state: 'verified',
