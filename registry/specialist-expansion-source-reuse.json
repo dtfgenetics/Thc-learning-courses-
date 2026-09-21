@@ -43,6 +43,26 @@
             "biosecurity system depth",
             "dedicated specialist course assessment"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-002",
+          "state": "canonical-draft-seeded",
+          "reusedModules": [
+            "MOD-NUTRIENT-DIAG-001",
+            "MOD-ROOTZONE-001",
+            "MOD-ENV-ADV-001"
+          ],
+          "sourceCourses": [
+            "COURSE-NUTRITION-IPM-ADVANCED-001",
+            "COURSE-ROOTZONE-ADVANCED-001",
+            "COURSE-ENV-LIGHT-ADVANCED-001"
+          ],
+          "remainingDepth": [
+            "specialist disorder case integration",
+            "cannabis-specific abiotic look-alike depth",
+            "dedicated specialist final assessment",
+            "human technical and assessment review"
+          ]
         }
       ]
     },
