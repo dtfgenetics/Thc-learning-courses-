@@ -29,6 +29,11 @@ for(let n=1;n<=8;n++){
   for(const rel of status.evidence) assert.ok(fs.existsSync(path.join(root,rel)),`Technician II Course ${n}: evidence path missing: ${rel}`);
   assert.ok(Array.isArray(status.nextMachineActions),`Technician II Course ${n}: machine work queue missing`);
   if(status.machineResolvableWorkComplete!==true) assert.ok(status.nextMachineActions.length>0,`Technician II Course ${n}: incomplete course must list remaining machine work`);
+  if(status.deploymentIdentity?.state==='verified' && status.deployedMachineSurfaceQa?.state==='verified'){
+    assert.ok(!(status.nextMachineActions??[]).some(action=>/deployed responsive\/manual|defects exposed by deployed QA/i.test(String(action))),`Technician II Course ${n}: cannot retain resolved deployed-QA actions`);
+    assert.doesNotMatch(status.machineCompletionBoundary,/exact deployment build\/source SHA verification/i,`Technician II Course ${n}: boundary cannot list verified deployment identity as unfinished`);
+    assert.match(status.machineCompletionBoundary,/deployment build\/source identity and machine learner-surface QA are verified/i,`Technician II Course ${n}: boundary must record verified deployment state`);
+  }
   assert.ok(Array.isArray(status.nextHumanActions)&&status.nextHumanActions.length>=8,`Technician II Course ${n}: human/evidence gate list incomplete`);
   assert.equal(status.visualLayer?.primaryConcepts,n===8?8:4,`Technician II Course ${n}: primary visual concept count mismatch`);
   assert.equal(status.visualLayer?.reviewCandidates,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: all primary visuals should be built as review candidates`);

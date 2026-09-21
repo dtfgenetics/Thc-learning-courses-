@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-007.json",
   "deploymentEvidence": "registry/tech2-course7-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 7 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Remaining machine work is deployed responsive/manual learner-surface QA, exact deployment build/source SHA verification using the public build-identity contract, and repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "machineCompletionBoundary": "Technician II Course 7 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-007.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-007.json",
@@ -25,8 +25,7 @@
     "scripts/verify-public-deployment-identity.mjs"
   ],
   "nextMachineActions": [
-    "complete deployed responsive/manual learner-surface QA and record defects",
-    "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
+    "produce and QA 4 high-resolution raster replacements for the governed Technician II visual candidates; keep SVG review candidates non-public until each replacement passes release QA",
     "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
   "nextHumanActions": [
@@ -46,7 +45,10 @@
     "plannedOnly": 0,
     "approvedForLearnerRender": 0,
     "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
-    "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
+    "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md",
+    "rasterReplacementProgram": "registry/raster-replacement-program.json",
+    "rasterReplacementsRequired": 4,
+    "rasterReplacementsReleased": 0
   },
   "publicRouteReadback": "verified-build-identity",
   "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
