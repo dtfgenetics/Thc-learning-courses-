@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A team asks for one universal cannabis-aphid count that automatically triggers treatment in every facility and crop stage. How should the specialist respond?",
+  "choices": [
+    "Choose the lowest count reported online so the rule is conservative.",
+    "State that the cited hemp source did not establish a research-based action threshold and use validated facility/jurisdiction rules, comparable trends, crop impact and authorized decision criteria instead.",
+    "Use the same threshold as spider mites because both feed on plants.",
+    "Treat any single aphid detection as proof that the entire facility requires treatment."
+  ],
+  "correct": 1,
+  "rationale": "The controlled hemp source explicitly notes that research-based action thresholds were not established in its production context, so the course must not manufacture a universal trigger.",
+  "references": [
+    "REF-CANNABIS-APHID-NCSU-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-003-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Repeated detections cluster around one intake pathway while adjacent zones remain negative under comparable scouting. What is the strongest interpretation?",
+  "choices": [
+    "The entire facility is confirmed equally affected.",
+    "The negative adjacent zones prove the pest cannot spread.",
+    "The intake pathway is the proven sole cause.",
+    "The localized pattern supports prioritizing that pathway for containment and investigation while keeping alternative movement routes and broader surveillance open."
+  ],
+  "correct": 3,
+  "rationale": "A spatially localized signal can prioritize a plausible movement pathway, but pattern evidence alone does not prove one sole cause or eliminate the need for comparable surveillance elsewhere.",
+  "references": [
+    "REF-HEMP-IPM-VT-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

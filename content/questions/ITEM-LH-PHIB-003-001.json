@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A leaf shows fine stippling, and close inspection finds colonies of tiny mites plus silk webbing on the underside. Which conclusion best matches the evidence?",
+  "choices": [
+    "The injury proves hemp russet mite because all mites make webbing.",
+    "The evidence is more consistent with a webspinning spider-mite problem than with hemp russet mite, while exact species may still require closer identification.",
+    "The stippling proves thrips even though no thrips were found.",
+    "The webbing can be ignored because only leaf color matters."
+  ],
+  "correct": 1,
+  "rationale": "Webbing plus mite colonies on leaf undersides is strong evidence for webspinning spider mites; hemp russet mites do not produce the characteristic spider-mite webbing.",
+  "references": [
+    "REF-SPIDER-MITE-UCIPM-001",
+    "REF-HEMP-RUSSET-NCSU-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

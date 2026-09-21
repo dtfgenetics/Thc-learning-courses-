@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-003-04",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A microscopic mite is confirmed on newly introduced plant material in one room. Which response best protects clean areas while scope is being determined?",
+  "choices": [
+    "Move suspect plants through clean rooms to compare symptoms.",
+    "Maintain authorized isolation and sanitation, restrict unnecessary movement of suspect material/tools/people, and intensify defined scouting around plausible pathways.",
+    "Remove all records so the source cannot be blamed.",
+    "Assume every room is equally infested without inspecting them."
+  ],
+  "correct": 1,
+  "rationale": "Plant material, tools, people and other pathways can contribute to spread; authorized containment and focused scouting protect clean areas without overstating the affected scope.",
+  "references": [
+    "REF-HEMP-RUSSET-NCSU-001",
+    "REF-HEMP-IPM-VT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}
