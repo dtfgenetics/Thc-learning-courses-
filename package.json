@@ -155,7 +155,9 @@
     "visuals:raster:backlog": "node scripts/report-raster-replacement-backlog.mjs",
     "visuals:raster:backlog:json": "node scripts/report-raster-replacement-backlog.mjs --json",
     "visuals:raster-policy:test": "node scripts/test-raster-production-policy.mjs",
-    "visuals:raster-coverage:test": "node scripts/test-raster-backlog-coverage.mjs"
+    "visuals:raster-coverage:test": "node scripts/test-raster-backlog-coverage.mjs",
+    "finalize:status": "node scripts/report-finalization-status.mjs",
+    "finalize:status:json": "node scripts/report-finalization-status.mjs --json"
   },
   "dependencies": {
     "ajv": "8.20.0",
