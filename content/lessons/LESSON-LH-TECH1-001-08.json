@@ -86,17 +86,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-010",
-        "src": "/assets/course1/operator-care-servicing-boundary.svg",
-        "alt": "Two-sided diagram showing routine operator care such as assigned external inspection, cleaning, setup, visible checks, consumable replacement, and readings on one side, and servicing such as removing guards, entering hazardous motion areas, opening protected electrical components, disassembling powered equipment, or releasing stored energy on the other.",
-        "caption": "The boundary is defined by equipment instructions, the site SOP, worker role and authorization—not by how easy a repair looks.",
-        "references": [
-          "REF-OSHA-1910-147-LOTO",
-          "REF-NIOSH-CANNABIS-HAZARDS-2024"
-        ]
-      },
-      {
         "type": "table",
         "title": "Classify the decision before acting",
         "columns": [
@@ -265,6 +254,17 @@
         "title": "Key takeaway",
         "tone": "evidence",
         "body": "Professional competence includes knowing where to stop and how to preserve the operation while the decision moves to the correct authority. Complete assigned routine work confidently, but do not turn knowledge, urgency or availability into permission that the role and controlled procedure do not grant."
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-028",
+        "src": "/assets/course1/authority-escalation.png",
+        "alt": "Decision flow separating work the technician is assigned, trained and authorized to perform from conditions that require stopping, isolating where authorized, documenting and escalating. Any supervisor, manager, maintenance or compliance roles shown are examples rather than a universal facility hierarchy.",
+        "caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
       }
     ]
   }

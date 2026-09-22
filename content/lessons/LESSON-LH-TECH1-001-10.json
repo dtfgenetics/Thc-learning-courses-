@@ -87,17 +87,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-008",
-        "src": "/assets/course1/material-genealogy.svg",
-        "alt": "Genealogy chain showing source plant, clone tray, transplant batch, flowering room, harvest container, and sample or disposition, with a reminder to preserve source and new identity, location, time, quantity where relevant, responsible record, and the relationship between identifiers at each transition.",
-        "caption": "A new identifier should extend the genealogy. It should not erase the relationship to the source material.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY",
-          "REF-GS1-GLOBAL-TRACEABILITY"
-        ]
-      },
-      {
         "type": "table",
         "title": "Five questions for a traceability event",
         "columns": [
@@ -288,6 +277,18 @@
         "references": [
           "REF-GS1-GLOBAL-TRACEABILITY",
           "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-030",
+        "src": "/assets/course1/material-genealogy.png",
+        "alt": "Traceability diagram linking source plant or material identity through propagation, room or location movement, harvest containers, samples and later disposition records. Example identifiers illustrate continuity and are not a universal form or jurisdiction-specific compliance format.",
+        "caption": "Vendor-neutral plant and material genealogy model for maintaining identity across routine cultivation events.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-FDA-FOOD-TRACEABILITY-RULE"
         ]
       }
     ]

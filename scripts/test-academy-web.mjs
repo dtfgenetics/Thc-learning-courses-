@@ -14,7 +14,7 @@ async function startServer(env) {
 const sanitizedProbe = sanitizeAssessmentStimulus([
   {
     type: 'image',
-    src: '/assets/course1/cultivation-work-area-hazard-scan.svg',
+    src: '/assets/course1/hazard-scan.png',
     alt: 'Assessment evidence image',
     caption: 'Visible learner context',
     answer: 'SECRET-ANSWER',
@@ -155,7 +155,7 @@ try {
       assert.equal(typeof block.type, 'string', `${richLessonId} rich blocks should declare a type`);
       observedRichTypes.add(block.type);
       if (block.type === 'image') {
-        assert.match(block.src ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${richLessonId} image blocks should use controlled Course 1 asset paths`);
+        assert.match(block.src ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.(?:png|webp|jpe?g)$/i, `${richLessonId} image blocks should use controlled Course 1 raster asset paths`);
         assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${richLessonId} image blocks should include learner-facing alt text`);
       }
       if (block.type === 'steps') {
@@ -178,13 +178,14 @@ try {
   assert.equal(new Set(producedAssets.map((asset) => asset.learnerPath)).size, producedAssets.length, 'produced learner asset paths should be unique');
 
   for (const asset of producedAssets) {
-    assert.match(asset.learnerPath ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 1 learner path`);
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.(?:png|webp|jpe?g)$/i, `${asset.id} should use a controlled Course 1 raster learner path`);
     const assetResponse = await fetch(`${base}${asset.learnerPath}`);
     assert.equal(assetResponse.status, 200, `${asset.learnerPath} should be served`);
-    const svg = await assetResponse.text();
-    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
-    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
-    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
+    const bytes = Buffer.from(await assetResponse.arrayBuffer());
+    assert.ok(bytes.length >= 8, `${asset.learnerPath} should return an image binary`);
+    if (/\.png$/i.test(asset.learnerPath)) {
+      assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a', `${asset.learnerPath} should contain a valid PNG signature`);
+    }
   }
 
   const courseOnePractice = await fetch(`${base}/api/lessons/LESSON-LH-TECH1-001-01/practice?seed=qa-seed`);
@@ -215,7 +216,7 @@ try {
   assert.ok(visualPracticeItem, 'visual Course 1 safety practice item should be returned');
   assert.ok(Array.isArray(visualPracticeItem.stimulus) && visualPracticeItem.stimulus.length === 1, 'visual practice item should expose a sanitized evidence stimulus');
   assert.equal(visualPracticeItem.stimulus[0].type, 'image');
-  assert.equal(visualPracticeItem.stimulus[0].src, '/assets/course1/cultivation-work-area-hazard-scan.svg');
+  assert.equal(visualPracticeItem.stimulus[0].src, '/assets/course1/hazard-scan.png');
   assert.ok(typeof visualPracticeItem.stimulus[0].alt === 'string' && visualPracticeItem.stimulus[0].alt.length > 0, 'assessment image stimulus should include alt text');
   for (const forbidden of ['answer', 'correct', 'scoringKey', 'extensions']) {
     assert.equal(Object.hasOwn(visualPracticeItem.stimulus[0], forbidden), false, `visual assessment stimulus should not expose ${forbidden}`);
@@ -228,12 +229,12 @@ try {
   }
 
   const visualPracticeCoverage = [
-    ['LESSON-LH-TECH1-001-01', 'ITEM-LH-TECH1-001-M01-001', '/assets/course1/cultivation-work-area-hazard-scan.svg'],
-    ['LESSON-LH-TECH1-001-04', 'ITEM-LH-TECH1-001-M02-001', '/assets/course1/biosecurity-pathway-map.svg'],
-    ['LESSON-LH-TECH1-001-07', 'ITEM-LH-TECH1-001-M03-001', '/assets/course1/controlled-document-anatomy.svg'],
-    ['LESSON-LH-TECH1-001-10', 'ITEM-LH-TECH1-001-M04-001', '/assets/course1/material-genealogy.svg'],
-    ['LESSON-LH-TECH1-001-13', 'ITEM-LH-TECH1-001-M05-001', '/assets/course1/operator-care-servicing-boundary.svg'],
-    ['LESSON-LH-TECH1-001-17', 'ITEM-LH-TECH1-001-M06-012', '/assets/course1/shift-handoff-model.svg']
+    ['LESSON-LH-TECH1-001-01', 'ITEM-LH-TECH1-001-M01-001', '/assets/course1/hazard-scan.png'],
+    ['LESSON-LH-TECH1-001-04', 'ITEM-LH-TECH1-001-M02-001', '/assets/course1/contamination-routes.png'],
+    ['LESSON-LH-TECH1-001-07', 'ITEM-LH-TECH1-001-M03-001', '/assets/course1/controlled-document.png'],
+    ['LESSON-LH-TECH1-001-10', 'ITEM-LH-TECH1-001-M04-001', '/assets/course1/material-genealogy.png'],
+    ['LESSON-LH-TECH1-001-13', 'ITEM-LH-TECH1-001-M05-001', '/assets/course1/authority-escalation.png'],
+    ['LESSON-LH-TECH1-001-17', 'ITEM-LH-TECH1-001-M06-012', '/assets/course1/shift-handoff-model.png']
   ];
   for (const [practiceLessonId, expectedItemId, expectedAsset] of visualPracticeCoverage) {
     const response = await fetch(`${base}/api/lessons/${practiceLessonId}/practice?seed=visual-coverage`);

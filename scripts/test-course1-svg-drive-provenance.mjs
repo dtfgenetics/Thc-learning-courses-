@@ -44,14 +44,18 @@ for (const asset of mirror.assets) {
 
   const concept = coverageById.get(asset.conceptId);
   assert.ok(concept, `${asset.conceptId}: missing concept coverage`);
-  assert.equal(concept.registryAssetId, asset.registryAssetId);
-  assert.equal(concept.publicAsset, registered.learnerPath);
+  assert.ok(typeof concept.registryAssetId === 'string' && concept.registryAssetId.trim(), `${asset.conceptId}: current concept coverage must resolve a learner asset`);
+  assert.ok(typeof concept.publicAsset === 'string' && concept.publicAsset.trim(), `${asset.conceptId}: current concept coverage must resolve a learner path`);
 
   const releaseConcept = releaseById.get(asset.conceptId);
   assert.ok(releaseConcept, `${asset.conceptId}: missing release control record`);
   assert.equal(releaseConcept.baseline.registryAssetId, asset.registryAssetId);
   assert.equal(releaseConcept.baseline.publicAsset, registered.learnerPath);
-  assert.equal(releaseConcept.releaseApproved, false, `${asset.conceptId}: rejected PNG candidate must remain unapproved even though the controlled SVG baseline is public`);
+  if (releaseConcept.releaseApproved) {
+    assert.equal(releaseConcept.candidate.qaStatus, 'public-approved', `${asset.conceptId}: released replacement must be public-approved`);
+    assert.match(releaseConcept.candidate.targetPublicPath ?? '', /\.png$/i, `${asset.conceptId}: released replacement must target PNG`);
+    assert.notEqual(releaseConcept.candidate.repositoryPath, asset.repositoryPath, `${asset.conceptId}: released replacement must not reuse the SVG baseline file`);
+  }
 }
 
 assert.deepEqual([...conceptIds].sort(), [

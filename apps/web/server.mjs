@@ -554,10 +554,18 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       if (sendStatic(res, file, type, req.method)) return;
     }
 
-    const courseAssetMatch = url.pathname.match(/^\/assets\/(course\d+)\/([A-Za-z0-9._-]+\.svg)$/);
+    const courseAssetMatch = url.pathname.match(/^\/assets\/(course\d+)\/([A-Za-z0-9._-]+\.(?:svg|png|webp|jpe?g))$/i);
     if ((req.method === 'GET' || req.method === 'HEAD') && courseAssetMatch) {
       const assetFile = path.join('assets', courseAssetMatch[1], courseAssetMatch[2]);
-      if (sendStatic(res, assetFile, 'image/svg+xml; charset=utf-8', req.method)) return;
+      const ext = path.extname(courseAssetMatch[2]).toLowerCase();
+      const assetTypes = {
+        '.svg': 'image/svg+xml; charset=utf-8',
+        '.png': 'image/png',
+        '.webp': 'image/webp',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg'
+      };
+      if (sendStatic(res, assetFile, assetTypes[ext], req.method)) return;
     }
     const tech2AssetMatch = url.pathname.match(/^\/assets\/tech2\/(course[1-8])\/([A-Za-z0-9._-]+\.(?:svg|png|webp|jpe?g))$/i);
     if ((req.method === 'GET' || req.method === 'HEAD') && tech2AssetMatch) {

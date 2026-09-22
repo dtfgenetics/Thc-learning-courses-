@@ -90,18 +90,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-002",
-        "src": "/assets/course1/ppe-hazcom-decision-map.svg",
-        "alt": "Diagram linking the assigned task, employer hazard assessment, product label and Safety Data Sheet, and applicable restrictions to the current SOP or work-order decision and required PPE.",
-        "caption": "The PPE and entry decision comes from controlled information for the actual task—not memory or a generic rule.",
-        "references": [
-          "REF-OSHA-1910-132-PPE",
-          "REF-OSHA-1910-1200-HAZCOM",
-          "REF-EPA-WPS"
-        ]
-      },
-      {
         "type": "steps",
         "title": "Seven-step chemical-task check",
         "items": [
@@ -331,6 +319,34 @@
         "references": [
           "REF-OSHA-1910-132-PPE",
           "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS-REI-2026"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-023",
+        "src": "/assets/course1/ppe-task-guide.png",
+        "alt": "Decision model linking the assigned task to the employer hazard assessment, product label and safety data sheet, facility procedure, restrictions and the resulting PPE requirement. It does not present a universal task-to-PPE matrix or imply that respirator clearance, fit testing or authorization is automatic.",
+        "caption": "PPE selection is controlled by the assigned task, hazard assessment, label/SDS, site procedure and worker authorization.",
+        "references": [
+          "REF-OSHA-1910-132-PPE",
+          "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS",
+          "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
+          "REF-EPA-WPS-REI-2026"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-024",
+        "src": "/assets/course1/sds-anatomy.png",
+        "alt": "Illustrative safety data sheet anatomy showing where a learner may find identification, hazards, first aid, handling and storage, exposure controls and other safety information. Any example product details are fictional training content and do not replace the current manufacturer SDS, label or facility HazCom program.",
+        "caption": "Training example for locating hazard, first-aid, handling, exposure-control and emergency information in an SDS; use the actual current SDS for the product in use.",
+        "references": [
+          "REF-OSHA-1910-132-PPE",
+          "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS",
+          "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
           "REF-EPA-WPS-REI-2026"
         ]
       }

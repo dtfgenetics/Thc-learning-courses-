@@ -86,17 +86,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-010",
-        "src": "/assets/course1/operator-care-servicing-boundary.svg",
-        "alt": "Two-column visual distinguishing explicitly assigned routine operator care from servicing and technical maintenance that may involve guards, hazardous motion, protected electrical components, powered disassembly, pressure, stored energy, or other hazards requiring the employer-defined authorized role.",
-        "caption": "Use the controlled operator procedure to find the boundary. Do not move the boundary yourself because the next step looks easy.",
-        "references": [
-          "REF-OSHA-1910-147-LOTO",
-          "REF-NIOSH-CANNABIS-HAZARDS-2024"
-        ]
-      },
-      {
         "type": "table",
         "title": "Signals that work may have crossed into servicing",
         "columns": [
@@ -246,6 +235,30 @@
         "title": "Key takeaway",
         "tone": "safety",
         "body": "Routine care supports equipment reliability. It does not grant hazardous-energy, electrical, mechanical or skilled-maintenance authority. When the controlled operator procedure ends, competent performance is to preserve the status and refer the work."
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-028",
+        "src": "/assets/course1/authority-escalation.png",
+        "alt": "Decision flow separating work the technician is assigned, trained and authorized to perform from conditions that require stopping, isolating where authorized, documenting and escalating. Any supervisor, manager, maintenance or compliance roles shown are examples rather than a universal facility hierarchy.",
+        "caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-NIOSH-LOTO-2011-156"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-034",
+        "src": "/assets/course1/operator-vs-maintenance-v3.png",
+        "alt": "Two-column decision visual separating routine operator care explicitly assigned, trained and authorized by current procedure from maintenance or servicing involving guarded access, electrical components, powered disassembly, pressure, stored energy, diagnosis, calibration or other unassigned work.",
+        "caption": "Routine operator care remains limited to actions explicitly assigned, trained and authorized by the current procedure.",
+        "references": [
+          "REF-OSHA-1910-147-LOTO",
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-NIOSH-LOTO-2011-156"
+        ]
       }
     ]
   }

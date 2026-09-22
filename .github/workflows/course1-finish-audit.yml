@@ -70,7 +70,17 @@ jobs:
         with:
           node-version: 20
       - name: Enforce learner material production quality
-        run: node scripts/check-course1-material-production-quality.mjs
+        run: |
+          set -o pipefail
+          node scripts/check-course1-material-production-quality.mjs 2>&1 | tee course1-production-quality.log
+      - name: Upload production-quality diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: course1-production-quality-diagnostics
+          path: course1-production-quality.log
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Verify objective instruction-practice-assessment-remediation loop
         run: node scripts/audit-course1-objective-coverage.mjs
       - name: Verify complete human-review inventory
