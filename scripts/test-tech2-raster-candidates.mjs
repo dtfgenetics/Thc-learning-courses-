@@ -25,11 +25,12 @@ for(const course of plan.courses){
   for(const concept of course.concepts){
     const replacement=concept.rasterReplacement;
     assert.equal(replacement?.status,'owner-approved-production-release',`${concept.conceptId}: lifecycle drift`);
-    assert.equal(replacement?.generatedFrom,concept.sourcePath);
+    assert.match(replacement?.generatedFrom??'',/^apps\/web\/public\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.svg$/,`${concept.conceptId}: original SVG provenance must be preserved`);
+    assert.equal(concept.sourcePath,replacement?.candidateSourcePath,`${concept.conceptId}: released source path must point to the governed WebP`);
     assert.equal(replacement?.encoding,'lossless-webp');
     assert.equal(replacement?.releaseApproved,true);
     assert.match(replacement?.candidateSourcePath??'',/^apps\/web\/public\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.webp$/);
-    const source=fs.readFileSync(path.join(root,concept.sourcePath));
+    const source=fs.readFileSync(path.join(root,replacement.generatedFrom));
     const candidate=fs.readFileSync(path.join(root,replacement.candidateSourcePath));
     assert.equal(sha256(source),replacement.sourceSha256);
     assert.equal(sha256(candidate),replacement.candidateSha256);
@@ -44,4 +45,4 @@ for(const course of plan.courses){
   }
 }
 assert.equal(checked,36);
-console.log('Technician II raster candidates: PASS (36 lossless WebP candidates; release remains human-QA gated).');
+console.log('Technician II raster candidates: PASS (36 lossless WebP assets owner-approved for academic release with original SVG provenance preserved).');
