@@ -8,7 +8,7 @@
 
 Course 4 contains six controlled objectives, four dedicated lessons, 12 formative items, 24 summative items, seven produced learner assets and a development mapping to `PRACTICAL-TECH1-B`.
 
-Repository inspection on 2026-09-16 found a balanced academic bank: **2 formative + 4 summative items for each objective**. No Course 4 question objects with an empty `references` array were found in the audit.
+Current machine inspection confirms a balanced academic bank: **2 formative + 4 summative items for each objective**. No Course 4 question objects with an empty `references` array were found in the audit.
 
 | Objective | Instruction | Applied practice | Formative | Summative | Practical B evidence |
 |---|---|---|---:|---:|---|
@@ -44,6 +44,10 @@ Learners create records another qualified person can reconstruct, keeping target
 Primary reviewed references are `REF-IRRIGATION-001`, `REF-NUTRITION-001` and `REF-MHRA-GXP-DATA-INTEGRITY`. The irrigation study is used for irrigation/root-zone principles without generalizing a treatment-specific outdoor-tunnel result into universal indoor recommendations. Nutrition evidence supports contextual mineral-nutrition concepts without turning one study into a universal feed recipe. The MHRA guidance is used as a general data-integrity model, not cannabis law.
 
 The seven governed assets in `visuals/COURSE4-ASSET-REGISTRY.json` include five embedded learning visuals and two downloadable practice worksheets.
+
+## Test-to-teaching provenance
+
+`docs/learning-hub/tech1/course-004/TEST-TO-TEACHING-MAP.md` records the exact dedicated Course 4 lessons that teach each assessed objective. The final assessment carries the same mapping in machine-readable metadata. Encyclopedia/reference material may support accuracy and deeper study but cannot satisfy Course 4 teaching or test coverage.
 
 ## Deterministic gate
 
