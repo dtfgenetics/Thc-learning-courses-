@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "courseId": "COURSE-LH-TECH1-001",
   "purpose": "Fail-closed release control for the 18 primary Course 1 visual concepts. Review candidates remain separate from the verified learner-facing SVG baseline until factual, accessibility, responsive, binary, registry and lesson-cutover checks all pass.",
   "canonicalSources": {
@@ -8,12 +8,16 @@
     "qaGate": "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
     "accessibilityPlan": "docs/learning-hub/tech1/course-001/VISUAL-ACCESSIBILITY-PLAN.md",
     "candidateRecord": "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-CANDIDATES-V3.md",
-    "pngStaging": "visuals/COURSE1-PNG-DEPLOYMENT-STAGING.json"
+    "pngStaging": "visuals/COURSE1-PNG-DEPLOYMENT-STAGING.json",
+    "rasterCopyLock001014": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+    "rasterBuildManifest001014": "visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json"
   },
   "candidateStorage": {
     "provider": "Google Drive",
     "folderId": "1cRDJn8stRWOKkcmsbjD12qjvt5g031oN",
-    "role": "Controlled production masters and review references. Drive presence alone never authorizes learner publication."
+    "role": "Controlled production masters and review references. Drive presence alone never authorizes learner publication.",
+    "repositoryRoot": "visuals/review-candidates/course1/production-masters",
+    "repositoryRole": "Canonical binary review candidates; repository presence does not authorize learner publication."
   },
   "policy": {
     "expectedPrimaryConceptCount": 18,
@@ -61,21 +65,30 @@
         "publicAsset": "/assets/course1/cultivation-work-area-hazard-scan.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-01-HAZARD-SCAN-v3.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-003-HAZARD-SCAN-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/hazard-scan.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-003-HAZARD-SCAN-master-v1.png",
+        "sha256": "5c5a304ad2bf814ded823621275cff05ea5fd3fce550e2822111555a99b58416",
+        "sizeBytes": 222915,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-01-07-12-v3.png",
           "sizeBytes": 2802853,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Representative cultivation work-area hazard scan; examples demonstrate a scanning method, not a universal hazard list.",
@@ -93,21 +106,30 @@
         "publicAsset": "/assets/course1/hazard-control-decision-flow.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v3.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-001-HIERARCHY-CONTROLS-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/hierarchy-controls.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-001-HIERARCHY-CONTROLS-master-v1.png",
+        "sha256": "0839bfef3f2deb5aefee04b8e6a99cb79d731793845682703bf06a32c4385108",
+        "sizeBytes": 215239,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-01-07-12-v3.png",
           "sizeBytes": 2802853,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Hierarchy of controls with Technician I authorization boundaries.",
@@ -125,21 +147,30 @@
         "publicAsset": "/assets/course1/ppe-hazcom-decision-map.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-03-PPE-TASK-v3.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-002-PPE-HAZCOM-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/ppe-task-guide.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-002-PPE-HAZCOM-master-v1.png",
+        "sha256": "97784630f94286e003600baeee3272c2cb3dbcc1d4be6911125f8a2bba46fdb6",
+        "sizeBytes": 222117,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-01-07-12-v3.png",
           "sizeBytes": 2802853,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "PPE selection is controlled by the assigned task, hazard assessment, label/SDS, site procedure and worker authorization.",
@@ -157,21 +188,30 @@
         "publicAsset": "/assets/course1/ppe-hazcom-decision-map.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-04-SDS-ANATOMY-v5.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-04-SDS-ANATOMY-SDS-ANATOMY-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/sds-anatomy.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-04-SDS-ANATOMY-SDS-ANATOMY-master-v1.png",
+        "sha256": "ffe5e1f75e24129c31d02fb4a5bfca454a019de5aafb119f8d4862118c64da21",
+        "sizeBytes": 236749,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-04-12-v4.png",
           "sizeBytes": 2794892,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Training example for locating hazard, first-aid, handling, exposure-control and emergency information in an SDS; use the actual current SDS for the product in use.",
@@ -189,21 +229,30 @@
         "publicAsset": "/assets/course1/biosecurity-pathway-map.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES-v2.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-004-BIOSECURITY-PATHWAY-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/contamination-routes.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-004-BIOSECURITY-PATHWAY-master-v1.png",
+        "sha256": "226a2d9c8f7474b479d3ce79a6fcc669ef84957f70e1b9f7dfd4d1f800e0ce7f",
+        "sizeBytes": 190367,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-01-07-12-v3.png",
           "sizeBytes": 2802853,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Source-route-receiver model for cultivation biosecurity pathways.",
@@ -221,21 +270,30 @@
         "publicAsset": "/assets/course1/biosecurity-pathway-map.svg"
       },
       "candidate": {
-        "fileName": null,
-        "sourceType": "corrected-drive-reference-board",
-        "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
-        "targetPublicPath": null,
-        "binaryState": "reference-board-only-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-CLEAN-DIRTY-FLOW-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/clean-dirty-flow.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-CLEAN-DIRTY-FLOW-master-v1.png",
+        "sha256": "74e2298e02f6ec04389a6ca7fe224e2a5acc808c416e020776ed22c71d8845ee",
+        "sizeBytes": 252331,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-corrections-06-07-12-v5-reference.png",
           "sizeBytes": 2704696,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "corrected-reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Example of facility-controlled zone movement; actual sequencing follows the site's zone map, current risk status and SOP.",
@@ -253,21 +311,30 @@
         "publicAsset": "/assets/course1/cleaning-disinfection-sequence.svg"
       },
       "candidate": {
-        "fileName": null,
-        "sourceType": "corrected-drive-reference-board",
-        "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
-        "targetPublicPath": null,
-        "binaryState": "reference-board-only-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-005-CLEANING-DISINFECTION-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/sanitation-sequence.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-005-CLEANING-DISINFECTION-master-v1.png",
+        "sha256": "d26592efbf63b28b93a6451dfb41863c8848ec2076d24fc489d819101bdf7f40",
+        "sizeBytes": 225847,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-corrections-06-07-12-v5-reference.png",
           "sizeBytes": 2704696,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "corrected-reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Sanitation decision sequence: prepare, remove debris, clean, verify the approved product/instructions, meet required contact conditions, finish as applicable, inspect, protect and document.",
@@ -287,21 +354,30 @@
         "publicAsset": "/assets/course1/operator-care-servicing-boundary.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION-v2.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-010-AUTHORITY-SERVICING-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/authority-escalation.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-010-AUTHORITY-SERVICING-master-v1.png",
+        "sha256": "93ef76fad2f5ffc5dde3edb833bb80474013b7dc9bfce539c9d0f9e1e7166c68",
+        "sizeBytes": 239719,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-04-12-v4.png",
           "sizeBytes": 2794892,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.",
@@ -319,21 +395,30 @@
         "publicAsset": "/assets/course1/controlled-document-anatomy.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT-v2.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-007-CONTROLLED-DOCUMENT-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/controlled-document.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-007-CONTROLLED-DOCUMENT-master-v1.png",
+        "sha256": "3504c607006140c6056f7efece99fe1c0c67d0ef6415d7d615b33c4f4c9b1a67",
+        "sizeBytes": 207846,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-04-12-v4.png",
           "sizeBytes": 2794892,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Illustrative controlled-document anatomy emphasizing identity, current revision, prerequisites, steps, acceptance criteria, records and escalation points.",
@@ -351,21 +436,30 @@
         "publicAsset": "/assets/course1/material-genealogy.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-10-GENEALOGY-v2.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-008-MATERIAL-GENEALOGY-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/material-genealogy.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-008-MATERIAL-GENEALOGY-master-v1.png",
+        "sha256": "7abb7ddbacdfddc7add60e026d33e0a90918a04d4f4b137b2482b27015fd92ab",
+        "sizeBytes": 215218,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-04-12-v4.png",
           "sizeBytes": 2794892,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Vendor-neutral plant and material genealogy model for maintaining identity across routine cultivation events.",
@@ -383,21 +477,30 @@
         "publicAsset": "/assets/course1/inventory-reconciliation-flow.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD-v2.png",
-        "sourceType": "drive-reference-board-derivative",
-        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
-        "targetPublicPath": null,
-        "binaryState": "drive-reference-board-verified-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD-MOVEMENT-RECORD-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/material-movement-record.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-11-MOVEMENT-RECORD-MOVEMENT-RECORD-master-v1.png",
+        "sha256": "ccf519dd2d19ae119e5785dd1f6691e39eb5c051204ea5c3e7a65a5e46832e3a",
+        "sizeBytes": 216006,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-candidate-set-04-12-v4.png",
           "sizeBytes": 2794892,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Vendor-neutral movement-record evidence model; exact fields and systems are controlled by the facility and applicable program.",
@@ -416,21 +519,30 @@
         "publicAsset": "/assets/course1/inventory-reconciliation-flow.svg"
       },
       "candidate": {
-        "fileName": null,
-        "sourceType": "corrected-drive-reference-board",
-        "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
-        "targetPublicPath": null,
-        "binaryState": "reference-board-only-individual-master-required",
-        "qaStatus": "preferred-review-candidate",
-        "sourceBoard": {
+        "fileName": "VIS-LH-TECH1-001-009-INVENTORY-RECONCILIATION-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": "/assets/course1/inventory-reconciliation.png",
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-009-INVENTORY-RECONCILIATION-master-v1.png",
+        "sha256": "1d202958d9e6bb9cccb8cfa079875b6c8575cb2e070c4672affb9d09cf1825bf",
+        "sizeBytes": 217902,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "productionResolutionStatus": "meets-machine-target-human-review-required",
+        "individualProductionMasterRequired": false,
+        "predecessorDriveReferenceFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+        "predecessorReferenceBoard": {
           "title": "course1-QA-corrections-06-07-12-v5-reference.png",
           "sizeBytes": 2704696,
           "mimeType": "image/png",
           "controlledBinaryLocation": "Google Drive",
           "repositoryImportStatus": "deferred-large-review-board",
           "role": "corrected-reference-board-only"
-        },
-        "individualProductionMasterRequired": true
+        }
       },
       "accessibility": {
         "caption": "Inventory reconciliation preserves discrepancies for investigation instead of forcing records and physical counts to match.",
@@ -451,7 +563,7 @@
         "fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
         "sourceType": "repository-built-copy-locked-production-master",
         "sourceDriveFileId": null,
-        "targetPublicPath": null,
+        "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
         "binaryState": "repository-production-master-human-qa-required",
         "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
@@ -494,7 +606,7 @@
         "fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
         "sourceType": "repository-built-copy-locked-production-master",
         "sourceDriveFileId": null,
-        "targetPublicPath": null,
+        "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
         "binaryState": "repository-production-master-human-qa-required",
         "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
@@ -537,7 +649,7 @@
         "fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
         "sourceType": "repository-built-copy-locked-production-master",
         "sourceDriveFileId": null,
-        "targetPublicPath": null,
+        "targetPublicPath": "/assets/course1/fault-report-v3.png",
         "binaryState": "repository-production-master-human-qa-required",
         "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
@@ -580,7 +692,7 @@
         "fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
         "sourceType": "repository-built-copy-locked-production-master",
         "sourceDriveFileId": null,
-        "targetPublicPath": null,
+        "targetPublicPath": "/assets/course1/record-correction-v3.png",
         "binaryState": "repository-production-master-human-qa-required",
         "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
@@ -623,7 +735,7 @@
         "fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
         "sourceType": "repository-built-copy-locked-production-master",
         "sourceDriveFileId": null,
-        "targetPublicPath": null,
+        "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
         "binaryState": "repository-production-master-human-qa-required",
         "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
@@ -666,7 +778,7 @@
         "fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
         "sourceType": "repository-built-copy-locked-production-master",
         "sourceDriveFileId": null,
-        "targetPublicPath": null,
+        "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
         "binaryState": "repository-production-master-human-qa-required",
         "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
@@ -699,9 +811,130 @@
   ],
   "updated": "2026-09-22",
   "productionMasterProgress": {
-    "produced": 6,
-    "remaining": 12,
+    "produced": 18,
+    "remaining": 0,
     "scope": "18 primary concepts",
-    "releaseApproved": 0
-  }
+    "releaseApproved": 0,
+    "supportingProduced": 5,
+    "supportingRemaining": 0,
+    "supportingReleaseApproved": 0
+  },
+  "supportingReplacements": [
+    {
+      "assetId": "VIS-LH-TECH1-001-006",
+      "title": "Quarantine, hold, and restricted-entry comparison",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-06"
+      ],
+      "baselinePublicAsset": "/assets/course1/quarantine-hold-rei-comparison.svg",
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-006-QUARANTINE-HOLD-REI-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-006-QUARANTINE-HOLD-REI-master-v1.png",
+        "targetPublicPath": "/assets/course1/quarantine-hold-rei-comparison.svg",
+        "sha256": "0b6f2f473ede62b2a8e90093a55637ae59d117527ae54ce2fe29f7a786941c64",
+        "sizeBytes": 221035,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-011",
+      "title": "Maintenance-ready fault report",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-15"
+      ],
+      "baselinePublicAsset": "/assets/course1/maintenance-fault-report.svg",
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-011-MAINTENANCE-FAULT-REPORT-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-011-MAINTENANCE-FAULT-REPORT-master-v1.png",
+        "targetPublicPath": "/assets/course1/maintenance-fault-report.svg",
+        "sha256": "a06c5a7ad77094d1fee17ffdb99a28587647552065727cc7fa55324179c511e4",
+        "sizeBytes": 205881,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-012",
+      "title": "Professional shift-handoff model",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-17",
+        "LESSON-LH-TECH1-001-18"
+      ],
+      "baselinePublicAsset": "/assets/course1/shift-handoff-model.svg",
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-012-SHIFT-HANDOFF-MODEL-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-012-SHIFT-HANDOFF-MODEL-master-v1.png",
+        "targetPublicPath": "/assets/course1/shift-handoff-model.svg",
+        "sha256": "3954df746b5db81dfd38b39ddba51a9dd86455f6972677d850c946fa3ec30eb2",
+        "sizeBytes": 205855,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-013",
+      "title": "Deviation, exception, incomplete and unknown status decision map",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-09"
+      ],
+      "baselinePublicAsset": "/assets/course1/deviation-status-decision-map.svg",
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-013-DEVIATION-STATUS-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-013-DEVIATION-STATUS-master-v1.png",
+        "targetPublicPath": "/assets/course1/deviation-status-decision-map.svg",
+        "sha256": "3590455cd32a3027c7a6b904627a82be84f211dbbd04ddd09812fb6467a0e6bc",
+        "sizeBytes": 220398,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-014",
+      "title": "Cultivation data integrity record lifecycle",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-16"
+      ],
+      "baselinePublicAsset": "/assets/course1/data-integrity-record-lifecycle.svg",
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-014-DATA-INTEGRITY-LIFECYCLE-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-014-DATA-INTEGRITY-LIFECYCLE-master-v1.png",
+        "targetPublicPath": "/assets/course1/data-integrity-record-lifecycle.svg",
+        "sha256": "928082982cf25c1d60c8a84e262c4a11fbf5d49967acf6fcec195e7ec54c2c02",
+        "sizeBytes": 221716,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate"
+      },
+      "releaseApproved": false
+    }
+  ]
 }
