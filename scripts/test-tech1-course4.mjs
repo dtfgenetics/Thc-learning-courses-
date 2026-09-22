@@ -9,7 +9,7 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const exists = (p) => fs.existsSync(path.join(root, p));
 
 const course = read('content/courses/COURSE-LH-TECH1-004.json');
-assert.equal(course.status, 'draft');
+assert.equal(course.status, 'published');
 assert.equal(course.finalAssessment, 'ASSESS-LH-TECH1-004-FINAL');
 assert.ok(course.modules.includes('MOD-LH-TECH1-004-IRRIGATION'));
 assert.equal(course.extensions?.dedicatedCourseAssessmentRequired, false);
