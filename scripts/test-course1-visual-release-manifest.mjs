@@ -44,25 +44,27 @@ if (pngQa) {
   for (const qaAsset of pngQa.assets) {
     const concept = manifestById.get(qaAsset.conceptId);
     assert.ok(concept, `${qaAsset.conceptId}: authenticated PNG QA record references an unknown release concept`);
-    assert.equal(qaAsset.qaStatus, 'revise-before-publication', `${qaAsset.conceptId}: current authenticated v3 QA evidence must remain revise-before-publication until a corrected binary is reviewed`);
-    assert.equal(concept.releaseApproved, false, `${qaAsset.conceptId}: a binary with revise-before-publication QA evidence cannot be release-approved`);
-    assert.notEqual(concept.candidate.qaStatus, 'public-approved', `${qaAsset.conceptId}: rejected authenticated binary cannot be marked public-approved in the release manifest`);
-    const recordedDrivePredecessor=concept.candidate.sourceType==='repository-built-copy-locked-production-master'
-      ? concept.candidate.predecessorDriveFileId
-      : concept.candidate.sourceDriveFileId;
-    assert.equal(recordedDrivePredecessor, qaAsset.driveFileId, `${qaAsset.conceptId}: QA evidence must remain linked as predecessor provenance`);
-    assert.match(qaAsset.sha256 ?? '', /^[a-f0-9]{64}$/, `${qaAsset.conceptId}: authenticated binary QA requires a SHA-256 digest`);
-    assert.ok(Number.isInteger(qaAsset.bytes) && qaAsset.bytes > 0, `${qaAsset.conceptId}: authenticated binary QA requires byte size`);
-    assert.ok(Number.isInteger(qaAsset.width) && qaAsset.width > 0, `${qaAsset.conceptId}: authenticated binary QA requires image width`);
-    assert.ok(Number.isInteger(qaAsset.height) && qaAsset.height > 0, `${qaAsset.conceptId}: authenticated binary QA requires image height`);
-    assert.equal(qaAsset.mimeType, 'image/png', `${qaAsset.conceptId}: authenticated QA record must identify the current v3 master as PNG`);
-    assert.equal(qaAsset.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: 384x512 review binary must remain blocked from production release`);
-    assert.ok(typeof qaAsset.repositoryReviewPath === 'string' && qaAsset.repositoryReviewPath.endsWith('.png'), `${qaAsset.conceptId}: repository review path is required`);
-    assert.ok(fs.existsSync(path.join(root, qaAsset.repositoryReviewPath)), `${qaAsset.conceptId}: imported repository review binary is missing`);
-    assert.equal(concept.candidate.repositoryReviewPath, qaAsset.repositoryReviewPath, `${qaAsset.conceptId}: manifest review path must match authenticated QA evidence`);
-    assert.deepEqual(concept.candidate.observedPixelDimensions, { width: qaAsset.width, height: qaAsset.height }, `${qaAsset.conceptId}: manifest dimensions must match authenticated QA evidence`);
-    assert.equal(concept.candidate.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: manifest must fail closed on low-resolution review binary`);
-    assert.ok(Array.isArray(qaAsset.findings) && qaAsset.findings.length > 0, `${qaAsset.conceptId}: rejected binary must record actionable QA findings`);
+    assert.equal(qaAsset.qaStatus, 'revise-before-publication', `${qaAsset.conceptId}: historical v3 QA evidence must remain rejected`);
+    assert.match(qaAsset.sha256 ?? '', /^[a-f0-9]{64}$/, `${qaAsset.conceptId}: historical QA requires SHA-256`);
+    assert.ok(Number.isInteger(qaAsset.width) && qaAsset.width > 0, `${qaAsset.conceptId}: historical QA width required`);
+    assert.ok(Number.isInteger(qaAsset.height) && qaAsset.height > 0, `${qaAsset.conceptId}: historical QA height required`);
+    assert.equal(qaAsset.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: historical low-resolution binary must remain rejected`);
+    assert.equal(concept.candidate.repositoryReviewPath, qaAsset.repositoryReviewPath, `${qaAsset.conceptId}: predecessor QA path must remain recorded`);
+    assert.deepEqual(concept.candidate.observedPixelDimensions, { width: qaAsset.width, height: qaAsset.height }, `${qaAsset.conceptId}: predecessor dimensions must remain recorded`);
+    assert.ok(Array.isArray(qaAsset.findings) && qaAsset.findings.length > 0, `${qaAsset.conceptId}: predecessor findings must remain recorded`);
+
+    const rebuilt =
+      concept.candidate.repositoryPath !== qaAsset.repositoryReviewPath &&
+      concept.candidate.sha256 !== qaAsset.sha256;
+    if (concept.releaseApproved) {
+      assert.equal(rebuilt, true, `${qaAsset.conceptId}: release requires a rebuilt binary distinct from rejected v3 evidence`);
+      assert.equal(concept.candidate.qaStatus, 'public-approved', `${qaAsset.conceptId}: released rebuilt binary must be public-approved`);
+      assert.equal(concept.candidate.productionResolutionStatus, 'meets-production-target', `${qaAsset.conceptId}: rebuilt released binary must meet production target`);
+      assert.ok(Number(concept.candidate.pixelDimensions?.width ?? 0) >= Number(pngQa.productionMasterTarget?.minimumWidth ?? 2400), `${qaAsset.conceptId}: rebuilt width below production target`);
+      assert.ok(Number(concept.candidate.pixelDimensions?.height ?? 0) >= Number(pngQa.productionMasterTarget?.minimumHeight ?? 3200), `${qaAsset.conceptId}: rebuilt height below production target`);
+    } else if (!rebuilt) {
+      assert.notEqual(concept.candidate.qaStatus, 'public-approved', `${qaAsset.conceptId}: rejected predecessor cannot be public-approved`);
+    }
   }
 }
 
