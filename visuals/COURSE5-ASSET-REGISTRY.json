@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "courseId": "COURSE-LH-TECH1-005",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 5 SVG files remain a verified learner-facing compatibility baseline so current public routes are not broken. New production instructional assets and replacements must be high-resolution PNG/WebP/JPEG/JPG. Google Drive remains a controlled mirror and does not replace the canonical repository asset.",
+    "publicDelivery": "Existing Course 5 SVG files remain the verified learner-facing compatibility baseline. 9 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -59,13 +59,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.webp",
+        "generatedFrom": "apps/web/public/assets/course5/propagation-identity-traceability.svg",
+        "sourceSha256": "25cd8acb90823bf5f1589a16364b673cf73040ee585e3d31cf0a72db30d2b841",
+        "candidateSha256": "d9615d807cafc80b715bdcc5a0f4d60cdbb67e719f30c2cba6c41506a732ff91",
+        "bytes": 108286,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -96,13 +113,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.webp",
+        "generatedFrom": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
+        "sourceSha256": "543379c3db63d5a63ed7cd225753867f45abe826bfecddd576db3ffbc0463263",
+        "candidateSha256": "9770256afcb2649632fa0e053d44eae17f4170c7d039729bf949678bc7ff482a",
+        "bytes": 100614,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -132,13 +166,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.webp",
+        "generatedFrom": "apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
+        "sourceSha256": "56049c1eca081e23fd16009a44ed6d4be89cc622e3b1dfede03946abca4d3bd0",
+        "candidateSha256": "03de17a83ca9e4bab804c35bd005e71a37e5cceea8b4ed75f1fb69e8b3102339",
+        "bytes": 80468,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -167,13 +218,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.webp",
+        "generatedFrom": "apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
+        "sourceSha256": "9216d9ca350ee0833c53b93ea8e09e8b978b7a9fd0f071c89a22bea7c0616291",
+        "candidateSha256": "ec013d4ea3b1c360b7c9d7c815898e44b63cc59208c85d4036e0d4a01bda3b6c",
+        "bytes": 104658,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -207,13 +275,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.webp",
+        "generatedFrom": "apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
+        "sourceSha256": "d1b016511a073690e0ff2bebd2709c6533a593b41158bce22ddbd59d19ba23cc",
+        "candidateSha256": "6c9c36457a268df88bdf73dd0663f7975aa646a59ea301824e767b6af208cc1b",
+        "bytes": 94610,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -249,13 +334,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.webp",
+        "generatedFrom": "apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
+        "sourceSha256": "1a77e92215ee39ddf326d44a591d872b43ab63797acc908c6ec397db4423607b",
+        "candidateSha256": "ff91f08374d0277d1196ee6f354c10b09ce2d2399fa718aa901974332b63f6f7",
+        "bytes": 99948,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -288,13 +390,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course5/propagation-workstation-practice.svg",
+        "sourceSha256": "ff4aa95cd11dbbd2a4cbed315fb13674387f9d7c47891d0790787b0a008af99f",
+        "candidateSha256": "80248f822b5736db8dbf788261091bd194d758ca83482442fe616d81fea04229",
+        "bytes": 101276,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2071
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -327,13 +446,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course5/ipm-scouting-practice.svg",
+        "sourceSha256": "713e4609be3a3957b4b464a0073f711fb8e9a1e39cb0850c0e88bc06566d2437",
+        "candidateSha256": "5f6b233c6282c1ea4b31cc8ee7c081514730a29cc733d4a2d14f2e814545d00e",
+        "bytes": 97724,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2071
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -367,13 +503,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course5/canopy-work-order-practice.svg",
+        "sourceSha256": "77fd30acb8451ad9b63409ca01b930e4441edfecf454f80e0df67c4679e24000",
+        "candidateSha256": "72e1278f6c0f20e45496c8d056e7d42ed62de95555b93b7ab424cf85e9f9dcfb",
+        "bytes": 122674,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2071
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     }

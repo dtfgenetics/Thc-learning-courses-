@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 8,
   "courseId": "COURSE-LH-TECH1-003",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 3 SVG files remain a verified learner-facing compatibility baseline so current public routes are not broken. New production instructional assets and replacements must be high-resolution PNG/WebP/JPEG/JPG. Google Drive remains a controlled mirror and does not replace the canonical repository asset.",
+    "publicDelivery": "Existing Course 3 SVG files remain the verified learner-facing compatibility baseline. 6 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -61,13 +61,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course3/environment-measurement-context.webp",
+        "generatedFrom": "apps/web/public/assets/course3/environment-measurement-context.svg",
+        "sourceSha256": "936777b7f9cc0656725299a07b62dc5e3dd8232fdaea844c39bbb1251f101fa5",
+        "candidateSha256": "3c53278cae3cc7bfb062d42dea637d3dcb778e4d43f5bccd03a99b762d8ce21a",
+        "bytes": 156384,
+        "pixelDimensions": {
+          "width": 2526,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -100,13 +117,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course3/ppfd-grid-measurement.webp",
+        "generatedFrom": "apps/web/public/assets/course3/ppfd-grid-measurement.svg",
+        "sourceSha256": "3154069bd0d6431b2d63af6a2937505346968dcaafd441561791d83fb3be6954",
+        "candidateSha256": "759bcb6da32ee56679cbb0fc82499ad5b311462ad65041fa6f64c4a02f771267",
+        "bytes": 128836,
+        "pixelDimensions": {
+          "width": 2526,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -138,13 +172,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course3/sensor-representativeness-triage.webp",
+        "generatedFrom": "apps/web/public/assets/course3/sensor-representativeness-triage.svg",
+        "sourceSha256": "2cd43369d937e80b622285b7d86ac43f488337253e0e68756f17c0bf1f32c562",
+        "candidateSha256": "c0340b0aa5c4329b6e2046b10ef068e416e392402f967f7e08922b27ab84d4df",
+        "bytes": 168138,
+        "pixelDimensions": {
+          "width": 2526,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -177,13 +228,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.webp",
+        "generatedFrom": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.svg",
+        "sourceSha256": "419007ccfa77bf0ab4073017049225e08208ccbf73c91d307c99ca7c7801872a",
+        "candidateSha256": "5fd4671269fed72a536055d1e99545175bae83cb8e2013b49967645dce257daf",
+        "bytes": 144342,
+        "pixelDimensions": {
+          "width": 2526,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -216,13 +284,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course3/environment-measurement-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course3/environment-measurement-practice.svg",
+        "sourceSha256": "88f5ef72c86d3aacddc5533c3687a069084addc50f6eeaf84aefa63cfe2447e8",
+        "candidateSha256": "82e8caf93b2a051dc6cd5925cf3247514056d0a3c712a981a104613835b48b1d",
+        "bytes": 103646,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2053
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -257,13 +342,30 @@
       "version": "1.0.0",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.svg",
+        "sourceSha256": "42737f8534f35be27af446804b8b67cd098f497c634a754e9ce6f31b83bb4682",
+        "candidateSha256": "3f560af5f4c2d38ffc310bdd1191a610454b03d0c9c2180e7a5b24d40023a481",
+        "bytes": 114082,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2053
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     }
