@@ -17,25 +17,25 @@ A credential should answer an employer:
 
 ### 1. THC Learning Academy
 
-The comprehensive knowledge system containing **420 Comprehensive Educational Resources** across the controlled 20-domain catalog.
+The standalone THC Encyclopedia containing **420 topic entries and explanations** across the controlled subject domains.
 
-These resources are not certification courses. They may be scientific explainers, illustrated guides, diagnostic references, calculators, decision trees, research summaries, case studies, datasets, charts, SOP references, worksheets, interactive tools, or other educational objects appropriate to the topic.
+These entries are not Certification Courses or Certification Course Tests. Each is an encyclopedia-style topic explanation with science, terminology, mechanisms, context, evidence limits, references, cross-links, and appropriate educational visuals.
 
 ### 2. THC Learning Hub
 
-The structured learning environment containing the **purpose-built certification courses** required by THC Academy credentials.
+The dedicated certification curriculum containing **purpose-built Certification Courses** required by THC Academy credentials.
 
-Certification courses are designed from occupational job tasks and competencies. They may reference and assign relevant Comprehensive Educational Resources, but the 420-resource catalog itself is not the credential curriculum.
+Certification Courses are designed specifically from occupational job tasks, competencies, and proficiency requirements. Every required objective must be taught directly inside the Certification Course through dedicated lesson material, examples, practice, scenarios, visuals, and remediation. The 420 Encyclopedia is separate and may only be cited as optional background/further reading.
 
 ### 3. THC Academy credentials
 
 The credentialing system controls eligibility, competency definitions, secure summative assessment, practical/performance requirements, passing standards, retakes/remediation, issuance, verification, maintenance, appeals, governance, and quality assurance.
 
-A course test is not the same as a secure credential assessment.
+A Certification Course Test is specific to its own Certification Course and must be built from that course's taught objectives and material. It is also separate from the secure final credential assessment.
 
 ## Connected systems
 
-1. **Comprehensive Educational Resource Library** — 420 resources, encyclopedia-style knowledge, glossary, claims, references, evidence, visuals, SOP reference material, diagnostic and interactive educational tools.
+1. **THC Encyclopedia** — 420 standalone topic entries with explanations, references, cross-links, evidence, and educational visuals.
 2. **Occupational Competency** — occupations, job roles, tasks, competencies, proficiency.
 3. **Learning Hub** — certification programs, dedicated courses, modules, lessons, activities, and practice.
 4. **Assessment** — formative checks, course tests, secure credential knowledge/scenario/calculation/image/data assessments, practicals, and capstones.
