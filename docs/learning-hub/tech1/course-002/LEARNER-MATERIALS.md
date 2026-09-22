@@ -2,7 +2,7 @@
 
 **Course:** Plant Observation, Growth Stages & Crop Records  
 **Status:** development learner package  
-**Date:** 2026-09-15
+**Updated:** 2026-09-22
 
 ## Learner purpose
 
@@ -153,11 +153,19 @@ Course 2 currently contains:
 - current development threshold: 80% for each assessment definition;
 - mapped professional performance evidence: `PRACTICAL-TECH1-A`.
 
-These are development/public-academic course materials. They are not the secure Technician I credential examination and do not independently authorize professional credential issuance.
+These are development/public-academic course materials. Every final-test objective is mapped back to dedicated Course 2 lessons in `TEST-TO-TEACHING-MAP.md`; the test may not assess encyclopedia-only or unrelated-course material. These assessments are not the secure Technician I credential examination and do not independently authorize professional credential issuance.
 
-## Remediation expectations
+## Remediation and reassessment
 
-Until the objective-linked remediation package is completed, instructors/learners should not treat repeated test attempts as equivalent evidence automatically. Remediation must target the missed objective and require fresh/equivalent practice before reassessment. Exact controlled remediation/reassessment rules remain a Course 2 package deliverable.
+Objective-linked remediation is controlled in `instructor/OBJECTIVE-REMEDIATION-MATRIX.md`. A missed objective is not remediated by simply replaying the same answer key.
+
+The learner must receive:
+
+1. corrective coaching for the missed objective;
+2. fresh/equivalent return-to-practice work;
+3. reassessment at the same intended cognitive demand using a different but equivalent prompt/scenario.
+
+The matrix covers all five controlled Course 2 objectives. Human reviewers still need to confirm equivalence, fairness, accessibility and instructional sufficiency before final course approval.
 
 ## Completion boundary
 
