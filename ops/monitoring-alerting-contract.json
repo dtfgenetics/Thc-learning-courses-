@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-ACADEMY-MONITORING-ALERTING-CONTRACT-001",
+  "status": "code-ready-deployment-validation-pending",
+  "requiredSignals": [
+    "api availability and latency",
+    "http 5xx/error rate",
+    "authentication and authorization failures",
+    "admin MFA failures",
+    "database connectivity and saturation",
+    "assessment attempt/scoring failures",
+    "practical submission/evaluator workflow failures",
+    "credential issuance/signing/revocation failures",
+    "public credential verification failures",
+    "backup failures and restore-drill failures"
+  ],
+  "alertRouting": {
+    "provider": null,
+    "primaryChannel": null,
+    "secondaryChannel": null,
+    "onCallOwner": null
+  },
+  "evidenceRequired": [
+    "deployed signal source",
+    "alert rule identifier",
+    "test alert timestamp",
+    "delivery evidence",
+    "owner acknowledgement"
+  ],
+  "readinessBoundary": "Contract completeness does not satisfy monitoringAndAlerting. Live instrumentation and a successfully delivered test alert are required."
+}
