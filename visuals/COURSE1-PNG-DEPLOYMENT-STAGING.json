@@ -4,11 +4,11 @@
   "publicAssetRoot": "apps/web/public/assets/course1/",
   "currentPublicRegistry": "visuals/ASSET-REGISTRY.json",
   "qaGate": "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
-  "binaryQaRecord": "visuals/COURSE1-PNG-QA-13-18.json",
+  "binaryQaRecord": "visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json",
   "deploymentWorkflow": ".github/workflows/course1-png-deploy.yml",
-  "latestDeploymentRun": 34873948740,
-  "transferState": "six-rebuilt-repository-masters-awaiting-human-qa",
-  "transferFinding": "Assets 13-18 were rebuilt from the approved copy lock as individual 2400×3200 PNG production masters. They remain fail-closed pending human factual, accessibility, responsive and public-path QA.",
+  "latestDeploymentRun": 35714349323,
+  "transferState": "twenty-three-repository-masters-built-human-qa-required",
+  "transferFinding": "Course 1 now has repository production masters for all 18 primary concepts plus five supporting legacy replacement assets. All remain fail-closed pending human factual, accessibility, responsive and public-path QA.",
   "rules": {
     "replaceOnlyAfterBinaryExists": true,
     "preserveCurrentSvgUntilVerified": true,
@@ -22,107 +22,400 @@
   },
   "candidates": [
     {
+      "assetId": "VIS-LH-TECH1-001-01-HAZARD-SCAN",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-01",
+      "candidateFile": "VIS-LH-TECH1-001-003-HAZARD-SCAN-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/hazard-scan.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-003-HAZARD-SCAN-master-v1.png",
+      "sha256": "5c5a304ad2bf814ded823621275cff05ea5fd3fce550e2822111555a99b58416",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-01",
+      "candidateFile": "VIS-LH-TECH1-001-001-HIERARCHY-CONTROLS-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/hierarchy-controls.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-001-HIERARCHY-CONTROLS-master-v1.png",
+      "sha256": "0839bfef3f2deb5aefee04b8e6a99cb79d731793845682703bf06a32c4385108",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-03-PPE-TASK",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-02",
+      "candidateFile": "VIS-LH-TECH1-001-002-PPE-HAZCOM-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/ppe-task-guide.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-002-PPE-HAZCOM-master-v1.png",
+      "sha256": "97784630f94286e003600baeee3272c2cb3dbcc1d4be6911125f8a2bba46fdb6",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-04-SDS-ANATOMY",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-02",
+      "candidateFile": "VIS-LH-TECH1-001-04-SDS-ANATOMY-SDS-ANATOMY-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/sds-anatomy.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-04-SDS-ANATOMY-SDS-ANATOMY-master-v1.png",
+      "sha256": "ffe5e1f75e24129c31d02fb4a5bfca454a019de5aafb119f8d4862118c64da21",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-04",
+      "candidateFile": "VIS-LH-TECH1-001-004-BIOSECURITY-PATHWAY-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/contamination-routes.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-004-BIOSECURITY-PATHWAY-master-v1.png",
+      "sha256": "226a2d9c8f7474b479d3ce79a6fcc669ef84957f70e1b9f7dfd4d1f800e0ce7f",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-04",
+      "candidateFile": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-CLEAN-DIRTY-FLOW-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/clean-dirty-flow.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-CLEAN-DIRTY-FLOW-master-v1.png",
+      "sha256": "74e2298e02f6ec04389a6ca7fe224e2a5acc808c416e020776ed22c71d8845ee",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-07-SANITATION-SEQUENCE",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-05",
+      "candidateFile": "VIS-LH-TECH1-001-005-CLEANING-DISINFECTION-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/sanitation-sequence.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-005-CLEANING-DISINFECTION-master-v1.png",
+      "sha256": "d26592efbf63b28b93a6451dfb41863c8848ec2076d24fc489d819101bdf7f40",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-08",
+      "candidateFile": "VIS-LH-TECH1-001-010-AUTHORITY-SERVICING-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/authority-escalation.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-010-AUTHORITY-SERVICING-master-v1.png",
+      "sha256": "93ef76fad2f5ffc5dde3edb833bb80474013b7dc9bfce539c9d0f9e1e7166c68",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-07",
+      "candidateFile": "VIS-LH-TECH1-001-007-CONTROLLED-DOCUMENT-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/controlled-document.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-007-CONTROLLED-DOCUMENT-master-v1.png",
+      "sha256": "3504c607006140c6056f7efece99fe1c0c67d0ef6415d7d615b33c4f4c9b1a67",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-10-GENEALOGY",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-10",
+      "candidateFile": "VIS-LH-TECH1-001-008-MATERIAL-GENEALOGY-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/material-genealogy.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-008-MATERIAL-GENEALOGY-master-v1.png",
+      "sha256": "7abb7ddbacdfddc7add60e026d33e0a90918a04d4f4b137b2482b27015fd92ab",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-11",
+      "candidateFile": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD-MOVEMENT-RECORD-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/material-movement-record.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-11-MOVEMENT-RECORD-MOVEMENT-RECORD-master-v1.png",
+      "sha256": "ccf519dd2d19ae119e5785dd1f6691e39eb5c051204ea5c3e7a65a5e46832e3a",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-12-RECONCILIATION",
+      "kind": "primary-concept",
+      "lessonId": "LESSON-LH-TECH1-001-11",
+      "candidateFile": "VIS-LH-TECH1-001-009-INVENTORY-RECONCILIATION-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/inventory-reconciliation.png",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-009-INVENTORY-RECONCILIATION-master-v1.png",
+      "sha256": "1d202958d9e6bb9cccb8cfa079875b6c8575cb2e070c4672affb9d09cf1825bf",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
       "assetId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
+      "kind": "primary-concept",
       "lessonId": "LESSON-LH-TECH1-001-13",
       "candidateFile": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
       "driveFileId": null,
       "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
       "status": "production-master-built-human-qa-required",
-      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
       "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
       "sha256": "c032d0d454169e32cdd7f23fa4a5777e36b88ba81b2a929545b86f0a8064aeea",
       "pixelDimensions": {
         "width": 2400,
         "height": 3200
-      },
-      "predecessorDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv"
+      }
     },
     {
       "assetId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
+      "kind": "primary-concept",
       "lessonId": "LESSON-LH-TECH1-001-14",
       "candidateFile": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
       "driveFileId": null,
       "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
       "status": "production-master-built-human-qa-required",
-      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
       "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
       "sha256": "32fa56ea1f1e3e6ee7ee0ecd958145091dc309f5840b60e5b5b2c3406fc11f1b",
       "pixelDimensions": {
         "width": 2400,
         "height": 3200
-      },
-      "predecessorDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2"
+      }
     },
     {
       "assetId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
+      "kind": "primary-concept",
       "lessonId": "LESSON-LH-TECH1-001-15",
       "candidateFile": "VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
       "driveFileId": null,
       "targetPublicPath": "/assets/course1/fault-report-v3.png",
       "status": "production-master-built-human-qa-required",
-      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
       "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
       "sha256": "5f74091a18b7548b498ed948a4f35aa6456c0094f0300dd3a2a181e33e051e94",
       "pixelDimensions": {
         "width": 2400,
         "height": 3200
-      },
-      "predecessorDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv"
+      }
     },
     {
       "assetId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
+      "kind": "primary-concept",
       "lessonId": "LESSON-LH-TECH1-001-16",
       "candidateFile": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
       "driveFileId": null,
       "targetPublicPath": "/assets/course1/record-correction-v3.png",
       "status": "production-master-built-human-qa-required",
-      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
       "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
       "sha256": "01a42f01070506c0be0e5ccd4428ba136ae9fb1bfad33509f53e4b6081ef0f13",
       "pixelDimensions": {
         "width": 2400,
         "height": 3200
-      },
-      "predecessorDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX"
+      }
     },
     {
       "assetId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
+      "kind": "primary-concept",
       "lessonId": "LESSON-LH-TECH1-001-17",
       "candidateFile": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
       "driveFileId": null,
       "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
       "status": "production-master-built-human-qa-required",
-      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
       "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
       "sha256": "47c57c310e884ec5f091983ef063c6c1c4544a0ba97840cbe647c5c2c0a9d02d",
       "pixelDimensions": {
         "width": 2400,
         "height": 3200
-      },
-      "predecessorDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY"
+      }
     },
     {
       "assetId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
+      "kind": "primary-concept",
       "lessonId": "LESSON-LH-TECH1-001-18",
       "candidateFile": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
       "driveFileId": null,
       "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
       "status": "production-master-built-human-qa-required",
-      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "releaseNote": "Repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
       "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
       "sha256": "585b9b73deb373eb5c9d8aa1fad3ced9f79c937f0300aedd4904871abd5195f5",
       "pixelDimensions": {
         "width": 2400,
         "height": 3200
-      },
-      "predecessorDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey"
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-006",
+      "kind": "supporting-legacy-replacement",
+      "lessonId": "LESSON-LH-TECH1-001-06",
+      "candidateFile": "VIS-LH-TECH1-001-006-QUARANTINE-HOLD-REI-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/quarantine-hold-rei-comparison.svg",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Supporting repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-006-QUARANTINE-HOLD-REI-master-v1.png",
+      "sha256": "0b6f2f473ede62b2a8e90093a55637ae59d117527ae54ce2fe29f7a786941c64",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-011",
+      "kind": "supporting-legacy-replacement",
+      "lessonId": "LESSON-LH-TECH1-001-15",
+      "candidateFile": "VIS-LH-TECH1-001-011-MAINTENANCE-FAULT-REPORT-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/maintenance-fault-report.svg",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Supporting repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-011-MAINTENANCE-FAULT-REPORT-master-v1.png",
+      "sha256": "a06c5a7ad77094d1fee17ffdb99a28587647552065727cc7fa55324179c511e4",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-012",
+      "kind": "supporting-legacy-replacement",
+      "lessonId": "LESSON-LH-TECH1-001-17",
+      "candidateFile": "VIS-LH-TECH1-001-012-SHIFT-HANDOFF-MODEL-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/shift-handoff-model.svg",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Supporting repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-012-SHIFT-HANDOFF-MODEL-master-v1.png",
+      "sha256": "3954df746b5db81dfd38b39ddba51a9dd86455f6972677d850c946fa3ec30eb2",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-013",
+      "kind": "supporting-legacy-replacement",
+      "lessonId": "LESSON-LH-TECH1-001-09",
+      "candidateFile": "VIS-LH-TECH1-001-013-DEVIATION-STATUS-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/deviation-status-decision-map.svg",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Supporting repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-013-DEVIATION-STATUS-master-v1.png",
+      "sha256": "3590455cd32a3027c7a6b904627a82be84f211dbbd04ddd09812fb6467a0e6bc",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-014",
+      "kind": "supporting-legacy-replacement",
+      "lessonId": "LESSON-LH-TECH1-001-16",
+      "candidateFile": "VIS-LH-TECH1-001-014-DATA-INTEGRITY-LIFECYCLE-master-v1.png",
+      "driveFileId": null,
+      "targetPublicPath": "/assets/course1/data-integrity-record-lifecycle.svg",
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Supporting repository production master meets the machine pixel/encoding gate. Human factual, accessibility, responsive and public-path QA remains required before cutover.",
+      "copyLock": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-014-DATA-INTEGRITY-LIFECYCLE-master-v1.png",
+      "sha256": "928082982cf25c1d60c8a84e262c4a11fbf5d49967acf6fcec195e7ec54c2c02",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      }
     }
   ],
-  "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+  "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+  "copyLocks": [
+    "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+    "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+  ]
 }
