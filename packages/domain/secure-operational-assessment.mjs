@@ -43,7 +43,7 @@ export function buildSecureOperationalForm({formId,formRevision,credentialProgra
   };
   const deliveryPayload={
     formId,formRevision,credentialProgramId,
-    items:secureItems.map((item,index)=>({position:index+1,...projectSecureDeliveryItem(item)})
+    items:secureItems.map((item,index)=>({position:index+1,...projectSecureDeliveryItem(item)}))
   };
   return {privateManifest,deliveryPayload};
 }
