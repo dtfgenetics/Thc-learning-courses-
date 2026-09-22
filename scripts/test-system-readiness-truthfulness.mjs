@@ -33,6 +33,8 @@ for(const [area,gate] of [
   ['runtime','lessonModuleCourseCompletion'],
   ['runtime','assessmentAttemptLifecycle'],
   ['runtime','learnerTranscriptProjection'],
+  ['runtime','productionPersistenceAdapterCodeReady'],
+  ['credentials','revocationTransactionCodeReady'],
   ['api','learnerOpenApiContract'],
   ['api','learnerOpenApiRuntimeParity'],
   ['learnerExperience','publishedCourseEnrollmentUi'],
