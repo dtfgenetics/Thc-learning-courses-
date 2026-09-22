@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-ACADEMY-RASTER-REPLACEMENT-PROGRAM-001",
+  "updated": "2026-09-22",
+  "purpose": "Canonical production queue for replacing legacy/review SVG instructional visuals with reviewed high-resolution raster assets without breaking learner-facing routes.",
+  "productionPolicy": {
+    "allowedFormats": [
+      "png",
+      "webp",
+      "jpg",
+      "jpeg"
+    ],
+    "svgProductionAllowed": false,
+    "retireSvgOnlyAfter": [
+      "replacement binary exists",
+      "factual/copy QA passes",
+      "accessibility text/caption mapping passes",
+      "responsive/manual review passes",
+      "registry and lesson mapping updated",
+      "public path verified"
+    ]
+  },
+  "summary": {
+    "totalGovernedReplacements": 96,
+    "technicianI": 60,
+    "technicianII": 36,
+    "releasedRasterReplacements": 0,
+    "openRasterReplacements": 96,
+    "producedRasterCandidates": 10,
+    "remainingRasterProduction": 86
+  },
+  "technicianI": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "count": 20,
+      "sourceRegistries": [
+        "visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json",
+        "visuals/ASSET-REGISTRY.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-002",
+      "count": 10,
+      "sourceRegistries": [
+        "visuals/COURSE2-ASSET-REGISTRY.json",
+        "visuals/COURSE2-RASTER-CANDIDATE-MANIFEST.json"
+      ],
+      "state": "candidate-produced-human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "count": 6,
+      "sourceRegistries": [
+        "visuals/COURSE3-ASSET-REGISTRY.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "count": 7,
+      "sourceRegistries": [
+        "visuals/COURSE4-ASSET-REGISTRY.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "count": 9,
+      "sourceRegistries": [
+        "visuals/COURSE5-ASSET-REGISTRY.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "count": 8,
+      "sourceRegistries": [
+        "visuals/COURSE6-ASSET-REGISTRY.json"
+      ],
+      "state": "raster-replacement-required"
+    }
+  ],
+  "technicianII": [
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-002",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-003",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-005",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-007",
+      "count": 4,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-008",
+      "count": 8,
+      "sourceRegistries": [
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+      ],
+      "state": "raster-replacement-required"
+    }
+  ],
+  "sequencing": [
+    "Technician I Course 1",
+    "Technician I Course 2",
+    "Technician I Courses 3-6",
+    "Technician II Courses 1-8"
+  ],
+  "integrityBoundary": "This registry tracks machine production work only. It does not convert visual review candidates into approved learner assets and does not satisfy human technical, accessibility, assessment, pilot, calibration, standard-setting, legal/privacy/security, or credential-release gates."
+}

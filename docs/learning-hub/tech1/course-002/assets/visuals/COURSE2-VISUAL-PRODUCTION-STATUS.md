@@ -4,7 +4,7 @@
 
 ## Canonical learner delivery
 
-Course 2 learner assets are responsive, accessible SVG files published from `apps/web/public/assets/course2/`. The repository/public web asset is the learner-delivery source of truth. Google Drive is a controlled production/reference mirror.
+Course 2 currently uses ten responsive, accessible SVG files as a **legacy compatibility baseline** published from `apps/web/public/assets/course2/`. They remain in place only to avoid breaking the verified learner surface. Current production policy requires high-resolution PNG/WebP/JPEG/JPG replacements. The repository/public web asset remains the learner-delivery source of truth; Google Drive is a controlled production/reference mirror.
 
 ## Controlled Drive mirror
 
@@ -13,7 +13,7 @@ Folder: **Course 2 — Visual Learning Boards**
 - folder ID: `1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 - folder URL: `https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 
-All ten produced Course 2 learner assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`.
+All ten current compatibility assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`. Each now carries an explicit fail-closed raster-replacement requirement.
 
 ## Embedded teaching visuals
 
@@ -42,7 +42,8 @@ All ten produced Course 2 learner assets are mirrored and recorded in `visuals/C
 - `embedded-visual` assets must appear as canonical lesson image blocks with matching public paths, meaningful alt text and captions;
 - `downloadable-practice` assets must appear as lesson resource blocks with matching learner download paths and learner-facing descriptions/labels;
 - all produced assets must exist in the public Course 2 directory;
-- all SVGs must include `<title>`, `<desc>` and `viewBox` accessibility/responsive metadata;
+- while legacy SVG compatibility files remain live, they must include `<title>`, `<desc>` and `viewBox` accessibility/responsive metadata;
+- no SVG may be treated as the final production target; every live SVG entry must retain an open raster-replacement record until a PNG/WebP/JPEG/JPG replacement passes release QA;
 - all produced assets must have canonical raw GitHub download URLs;
 - all produced assets must be mirrored to Drive with file ID and URL metadata;
 - no produced asset may remain orphaned from its canonical lesson.
@@ -64,7 +65,9 @@ These assets teach evidence collection, reproductive/developmental morphology, d
 
 ## Remaining Course 2 learner-asset priorities
 
-- optional printable/PDF exports derived from canonical SVG worksheets after layout/accessibility review;
+- produce high-resolution raster replacements for all ten legacy SVG compatibility assets;
+- verify factual copy, accessibility, responsive layout, registry mapping and public delivery for each replacement before retiring its SVG baseline;
+- optional printable/PDF exports derived from approved raster worksheet masters after layout/accessibility review;
 - human technical and accessibility review before any draft-to-release status change;
 - any additional performance-validation artifacts identified by the Technician I credential/practical audit.
 

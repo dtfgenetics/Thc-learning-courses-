@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-LH-PHIB-001-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-001-07",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A biological-control release was followed by fewer pest detections, but scouting effort was also reduced and a sanitation change occurred at the same time. What should the follow-up report say?",
+  "choices": [
+    "Record the improvement but identify the sampling change and overlapping sanitation action as confounders, then define a comparable next monitoring round.",
+    "Attribute the improvement entirely to the biological control because it occurred first.",
+    "Ignore the sanitation change because it was not a pesticide treatment.",
+    "Remove the earlier scouting method from the record so all rounds appear comparable."
+  ],
+  "correct": 0,
+  "rationale": "Treatment follow-up should compare against baseline while preserving confounders and method changes; correlation alone does not establish the sole cause of improvement.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-03",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

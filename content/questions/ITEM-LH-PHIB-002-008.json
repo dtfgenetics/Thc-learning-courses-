@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-LH-PHIB-002-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-PHIB-002-08",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Air temperature is near target, but one dense canopy zone remains humid with weak air movement and recurring localized stress. What is the best interpretation?",
+  "choices": [
+    "Evaluate airflow distribution, heat removal, moisture removal, canopy density, and local plant response together rather than assuming room-average temperature proves adequate environmental control.",
+    "Add fans without measuring the affected zone because fan quantity determines airflow quality.",
+    "Ignore humidity because temperature is on target.",
+    "Use the room-average RH to rule out localized moisture conditions."
+  ],
+  "correct": 0,
+  "rationale": "Environmental control depends on distribution and interacting heat/moisture removal functions; acceptable averages can hide localized boundary-layer or airflow problems.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true,
+    "sourceObjective": "LO-ENV-AIRFLOW-002",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

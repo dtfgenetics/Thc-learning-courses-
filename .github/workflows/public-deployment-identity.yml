@@ -3,6 +3,13 @@ name: Record public deployment evidence
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'registry/**'
+      - 'scripts/record-public-deployment-identity.mjs'
+      - 'scripts/test-tech1-course-deployment-evidence.mjs'
+      - 'scripts/test-tech1-course-completion-status.mjs'
+      - 'scripts/test-tech2-course-completion-status.mjs'
+      - '.github/workflows/public-deployment-identity.yml'
   workflow_dispatch:
     inputs:
       expected_sha:
@@ -19,14 +26,17 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: academy-public-deployment-identity-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify-and-record:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: dev
           fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
@@ -59,7 +69,7 @@ jobs:
               exit 0
             fi
             echo "Deployment identity not current yet (attempt $attempt/20)."
-            sleep 30
+            if [ "$attempt" -lt 20 ]; then sleep 30; fi
           done
           echo "::error::Public deployment did not report expected source SHA within the verification window."
           exit 1
@@ -92,16 +102,18 @@ jobs:
             exit 0
           fi
           short_sha="${EXPECTED_SHA:0:12}"
-          branch="ops/deployment-evidence-${short_sha}"
+          branch="ops/deployment-evidence-${short_sha}-${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
           git add registry/
           git commit -m "ops: record deployed Academy evidence ${short_sha}"
-          git push --force-with-lease origin "$branch"
-          existing="$(gh pr list --base dev --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          git push -u origin "$branch"
+          existing="$(gh pr list --base main --head "$branch" --state open --json number --jq '.[0].number // empty')"
           if [ -z "$existing" ]; then
-            gh pr create               --base dev               --head "$branch"               --title "Record deployed Academy evidence ${short_sha}"               --body "Verified the public /api/build-info response and learner course/lesson/assessment surfaces against full source SHA \`${EXPECTED_SHA}\`. Machine deployment QA was recorded; manual responsive/accessibility and human certification gates remain fail-closed."
+            if ! gh pr create --base main --head "$branch" --title "Record deployed Academy evidence ${short_sha}" --body "Verified the public /api/build-info response and learner course/lesson/assessment surfaces against full source SHA \`${EXPECTED_SHA}\`. Machine deployment QA was recorded; manual responsive/accessibility and human certification gates remain fail-closed."; then
+              echo "::warning::Evidence branch $branch was pushed successfully, but repository settings did not permit GitHub Actions to open the PR. Create a PR from $branch to main with normal repository tooling."
+            fi
           else
             echo "PR #$existing already exists."
           fi

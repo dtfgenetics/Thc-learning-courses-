@@ -1,18 +1,580 @@
 {
-  "version": 6,
+  "version": 8,
   "courseId": "COURSE-LH-TECH1-002",
-  "policy": {"expandable":true,"maximumAssetCount":null,"requiredAccessibility":["title","description","learner text alternative"],"statusValues":["planned","in-production","produced","retired"],"publicDelivery":"Produced Course 2 learner assets live in the public repository and may be viewed or downloaded directly from their raw GitHub URL. Google Drive is a controlled mirror for production/reference copies and does not replace the canonical repository asset."},
-  "driveStorage": {"folderId":"1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o","folderUrl":"https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o","folderName":"Course 2 — Visual Learning Boards"},
+  "policy": {
+    "expandable": true,
+    "maximumAssetCount": null,
+    "requiredAccessibility": [
+      "title",
+      "description",
+      "learner text alternative"
+    ],
+    "statusValues": [
+      "planned",
+      "in-production",
+      "produced",
+      "retired"
+    ],
+    "publicDelivery": "Existing Course 2 SVG files remain the verified learner-facing compatibility baseline. Ten high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
+    "productionInstructionalFormats": [
+      "png",
+      "webp",
+      "jpeg",
+      "jpg"
+    ],
+    "svgProductionTarget": false,
+    "legacySvgCompatibilityAllowed": true,
+    "rasterReplacementRequired": true
+  },
+  "driveStorage": {
+    "folderId": "1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o",
+    "folderUrl": "https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o",
+    "folderName": "Course 2 — Visual Learning Boards"
+  },
   "assets": [
-    {"id":"VIS-LH-TECH1-002-001","status":"produced","deliveryType":"embedded-visual","title":"Representative crop-walk route and sample context","learnerPath":"/assets/course2/representative-crop-walk-route.svg","sourcePath":"apps/web/public/assets/course2/representative-crop-walk-route.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/representative-crop-walk-route.svg","driveFileId":"1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be","driveFileUrl":"https://drive.google.com/file/d/1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-01"],"objectiveIds":["LO-LH-TECH1-002-01","LO-LH-TECH1-002-03"],"references":["REF-PLANT-BIO-001"],"publicSourceLinks":["https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management"],"purpose":"Teach why a crop walk needs a representative route, location context and a denominator before the learner makes a room-level statement.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-002","status":"produced","deliveryType":"embedded-visual","title":"Morphology-based developmental staging","learnerPath":"/assets/course2/morphology-stage-evidence.svg","sourcePath":"apps/web/public/assets/course2/morphology-stage-evidence.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/morphology-stage-evidence.svg","driveFileId":"1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza","driveFileUrl":"https://drive.google.com/file/d/1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-02"],"objectiveIds":["LO-LH-TECH1-002-02","LO-LH-TECH1-002-03"],"references":["REF-FLOWER-MORPH-2023-001","REF-PLANT-BIO-001"],"publicSourceLinks":[],"purpose":"Separate observable developmental morphology from calendar-only staging and reinforce that published timing is context rather than a universal production rule.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-003","status":"produced","deliveryType":"embedded-visual","title":"Diagnostic photo evidence set","learnerPath":"/assets/course2/diagnostic-photo-evidence-set.svg","sourcePath":"apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg","driveFileId":"1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq","driveFileUrl":"https://drive.google.com/file/d/1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-04"],"objectiveIds":["LO-LH-TECH1-002-04","LO-LH-TECH1-002-05"],"references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-PLANT-BIO-001"],"publicSourceLinks":["https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"],"purpose":"Teach the context-view, whole-plant-view and close-detail image sequence while preserving identity, time and color fidelity for reconstructable crop records.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-004","status":"produced","deliveryType":"embedded-visual","title":"Spatial pattern comparison","learnerPath":"/assets/course2/spatial-pattern-comparison.svg","sourcePath":"apps/web/public/assets/course2/spatial-pattern-comparison.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/spatial-pattern-comparison.svg","driveFileId":"1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7","driveFileUrl":"https://drive.google.com/file/d/1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-01"],"objectiveIds":["LO-LH-TECH1-002-01","LO-LH-TECH1-002-03"],"references":["REF-PLANT-BIO-001"],"publicSourceLinks":[],"purpose":"Compare isolated, edge-associated, zonal or clustered, and widespread spatial patterns while keeping distribution separate from causal interpretation.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-005","status":"produced","deliveryType":"embedded-visual","title":"Reconstructable crop-record and shift-handoff chain","learnerPath":"/assets/course2/reconstructable-handoff-chain.svg","sourcePath":"apps/web/public/assets/course2/reconstructable-handoff-chain.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reconstructable-handoff-chain.svg","driveFileId":"1R64EMjV4jtRsGJD3JWptXOF_murzcLU8","driveFileUrl":"https://drive.google.com/file/d/1R64EMjV4jtRsGJD3JWptXOF_murzcLU8/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-04"],"objectiveIds":["LO-LH-TECH1-002-04","LO-LH-TECH1-002-05"],"references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"],"publicSourceLinks":[],"purpose":"Show the continuity chain from observation through record, action or escalation, handoff and recheck so another qualified person can reconstruct what happened and what remains open.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-006","status":"produced","deliveryType":"downloadable-practice","title":"Crop-walk room-map practice worksheet","learnerPath":"/assets/course2/crop-walk-room-map-practice.svg","sourcePath":"apps/web/public/assets/course2/crop-walk-room-map-practice.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/crop-walk-room-map-practice.svg","driveFileId":"19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX","driveFileUrl":"https://drive.google.com/file/d/19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-01"],"objectiveIds":["LO-LH-TECH1-002-01","LO-LH-TECH1-002-03"],"references":["REF-PLANT-BIO-001"],"publicSourceLinks":[],"purpose":"Give learners a printable room-map activity for drawing a representative route, recording denominator and spatial pattern, and separating observation/context/uncertainty before escalation.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-007","status":"produced","deliveryType":"downloadable-practice","title":"Observation record and handoff practice worksheet","learnerPath":"/assets/course2/observation-handoff-practice.svg","sourcePath":"apps/web/public/assets/course2/observation-handoff-practice.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-handoff-practice.svg","driveFileId":"15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA","driveFileUrl":"https://drive.google.com/file/d/15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-04"],"objectiveIds":["LO-LH-TECH1-002-04","LO-LH-TECH1-002-05"],"references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-HSE-SHIFT-HANDOVER"],"publicSourceLinks":[],"purpose":"Give learners a printable structured record for practicing identity, direct observation, photo evidence, context, uncertainty, escalation, handoff, recheck and correction history.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-008","status":"produced","deliveryType":"embedded-visual","title":"Observation, interpretation, and diagnostic-boundary workflow","learnerPath":"/assets/course2/observation-interpretation-diagnosis-boundary.svg","sourcePath":"apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg","driveFileId":"1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw","driveFileUrl":"https://drive.google.com/file/d/1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-03"],"objectiveIds":["LO-LH-TECH1-002-03","LO-LH-TECH1-002-05"],"references":["REF-PLANT-BIO-001"],"publicSourceLinks":["https://extension.psu.edu/overview-of-plant-diagnostics"],"purpose":"Teach the evidence boundary from direct observation through pattern/context and provisional interpretation to confirmation or escalation, emphasizing that clues narrow possibilities without proving a single cause.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-009","status":"produced","deliveryType":"embedded-visual","title":"Reproductive morphology reference","learnerPath":"/assets/course2/reproductive-morphology-reference.svg","sourcePath":"apps/web/public/assets/course2/reproductive-morphology-reference.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reproductive-morphology-reference.svg","driveFileId":"12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa","driveFileUrl":"https://drive.google.com/file/d/12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-02"],"objectiveIds":["LO-LH-TECH1-002-02","LO-LH-TECH1-002-03"],"references":["REF-FLOWER-MORPH-2023-001"],"publicSourceLinks":["https://pmc.ncbi.nlm.nih.gov/articles/PMC13258890/"],"purpose":"Give learners an original schematic reference for visible pistillate and staminate reproductive structures and for documenting mixed or unexpected expression without assigning an unsupported cause.","version":"1.0.0"},
-    {"id":"VIS-LH-TECH1-002-010","status":"produced","deliveryType":"downloadable-practice","title":"Photo evidence audit practice worksheet","learnerPath":"/assets/course2/photo-evidence-audit-practice.svg","sourcePath":"apps/web/public/assets/course2/photo-evidence-audit-practice.svg","publicDownloadUrl":"https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/photo-evidence-audit-practice.svg","driveFileId":"1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO","driveFileUrl":"https://drive.google.com/file/d/1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO/view","driveMirrorStatus":"mirrored","primaryLessons":["LESSON-LH-TECH1-002-04"],"objectiveIds":["LO-LH-TECH1-002-04","LO-LH-TECH1-002-05"],"references":["REF-PLANT-BIO-001"],"publicSourceLinks":["https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"],"purpose":"Give learners a printable evidence-quality exercise using synthetic image-set examples to audit context, detail, identity/time, comparison value, lighting consistency, image fidelity, retake needs and diagnostic limits.","version":"1.0.0"}
+    {
+      "id": "VIS-LH-TECH1-002-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Representative crop-walk route and sample context",
+      "learnerPath": "/assets/course2/representative-crop-walk-route.svg",
+      "sourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/representative-crop-walk-route.svg",
+      "driveFileId": "1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be",
+      "driveFileUrl": "https://drive.google.com/file/d/1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-01",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [
+        "https://www.umass.edu/agriculture-food-environment/greenhouse-floriculture/greenhouse-best-management-practices-bmp-manual/integrated-pest-management"
+      ],
+      "purpose": "Teach why a crop walk needs a representative route, location context and a denominator before the learner makes a room-level statement.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.webp",
+        "generatedFrom": "apps/web/public/assets/course2/representative-crop-walk-route.svg",
+        "sourceSha256": "82d1c7407543052cfd6380f4b8502f0f73a68c4c159b781ea8e4870fedc8afde",
+        "candidateSha256": "6f543568c022e42e5521615d03f0949eb84c49f85b2448efa593a9249bf741b0",
+        "bytes": 170058,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-002",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Morphology-based developmental staging",
+      "learnerPath": "/assets/course2/morphology-stage-evidence.svg",
+      "sourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/morphology-stage-evidence.svg",
+      "driveFileId": "1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza",
+      "driveFileUrl": "https://drive.google.com/file/d/1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-02"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-02",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-FLOWER-MORPH-2023-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Separate observable developmental morphology from calendar-only staging and reinforce that published timing is context rather than a universal production rule.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.webp",
+        "generatedFrom": "apps/web/public/assets/course2/morphology-stage-evidence.svg",
+        "sourceSha256": "ed71b198dd2cca4e256671a20f491ecea00606287b7ce2e3a8f832f2800f9429",
+        "candidateSha256": "34b9aa20e2092fe17b696e00b682f979326a63325da35ebca7c9aefa14f53a0d",
+        "bytes": 165514,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-003",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Diagnostic photo evidence set",
+      "learnerPath": "/assets/course2/diagnostic-photo-evidence-set.svg",
+      "sourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+      "driveFileId": "1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq",
+      "driveFileUrl": "https://drive.google.com/file/d/1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-04",
+        "LO-LH-TECH1-002-05"
+      ],
+      "references": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [
+        "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"
+      ],
+      "purpose": "Teach the context-view, whole-plant-view and close-detail image sequence while preserving identity, time and color fidelity for reconstructable crop records.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.webp",
+        "generatedFrom": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+        "sourceSha256": "455af3894edee490e55d9e8969ef11b60c20f8973f8e2c1d6e69353886593689",
+        "candidateSha256": "5084b07891ec2630b1d5bca45a7aebb283679f302e75140a0451d02f8df26f12",
+        "bytes": 179084,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-004",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Spatial pattern comparison",
+      "learnerPath": "/assets/course2/spatial-pattern-comparison.svg",
+      "sourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/spatial-pattern-comparison.svg",
+      "driveFileId": "1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7",
+      "driveFileUrl": "https://drive.google.com/file/d/1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-01",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Compare isolated, edge-associated, zonal or clustered, and widespread spatial patterns while keeping distribution separate from causal interpretation.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.webp",
+        "generatedFrom": "apps/web/public/assets/course2/spatial-pattern-comparison.svg",
+        "sourceSha256": "ef0efb02d858728bc5143872f295e77c931f788a26e675eb8477b2ba76b6e255",
+        "candidateSha256": "12631b7384241236d4bb894c838a956c6830e1b57016a6ad34a85e73bbbef0e1",
+        "bytes": 198406,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-005",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Reconstructable crop-record and shift-handoff chain",
+      "learnerPath": "/assets/course2/reconstructable-handoff-chain.svg",
+      "sourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
+      "driveFileId": "1R64EMjV4jtRsGJD3JWptXOF_murzcLU8",
+      "driveFileUrl": "https://drive.google.com/file/d/1R64EMjV4jtRsGJD3JWptXOF_murzcLU8/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-04",
+        "LO-LH-TECH1-002-05"
+      ],
+      "references": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-HSE-SHIFT-HANDOVER"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Show the continuity chain from observation through record, action or escalation, handoff and recheck so another qualified person can reconstruct what happened and what remains open.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.webp",
+        "generatedFrom": "apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
+        "sourceSha256": "58d6d33a20c4e27900c7e65e0950ed50db5734d7fafd9d8c2f2fc15b7cfa94c4",
+        "candidateSha256": "ef610963c03d860119f3c60897e897c7927cc924c1153a52b90c8facb073cd71",
+        "bytes": 189348,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-006",
+      "status": "produced",
+      "deliveryType": "downloadable-practice",
+      "title": "Crop-walk room-map practice worksheet",
+      "learnerPath": "/assets/course2/crop-walk-room-map-practice.svg",
+      "sourcePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
+      "driveFileId": "19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX",
+      "driveFileUrl": "https://drive.google.com/file/d/19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-01",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Give learners a printable room-map activity for drawing a representative route, recording denominator and spatial pattern, and separating observation/context/uncertainty before escalation.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
+        "sourceSha256": "577441064c355cbf456ca3bcef58665376ca18011acd55df319b249e8d1a6c0c",
+        "candidateSha256": "ddd86a1fbf091af5e1d43145478326eeec29037648da4c01a0c6a96c2126cdae",
+        "bytes": 105492,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2071
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-007",
+      "status": "produced",
+      "deliveryType": "downloadable-practice",
+      "title": "Observation record and handoff practice worksheet",
+      "learnerPath": "/assets/course2/observation-handoff-practice.svg",
+      "sourcePath": "apps/web/public/assets/course2/observation-handoff-practice.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-handoff-practice.svg",
+      "driveFileId": "15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA",
+      "driveFileUrl": "https://drive.google.com/file/d/15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-04",
+        "LO-LH-TECH1-002-05"
+      ],
+      "references": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-HSE-SHIFT-HANDOVER"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Give learners a printable structured record for practicing identity, direct observation, photo evidence, context, uncertainty, escalation, handoff, recheck and correction history.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/observation-handoff-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course2/observation-handoff-practice.svg",
+        "sourceSha256": "d5959384b65e9c140e47eaa44c28a0b8a11d389bdb6159052defea051eaea369",
+        "candidateSha256": "a9d1f485d1c855e5cfadbb8c7db3f69bb2e5ba55e863cd8f4a194abc0eb57417",
+        "bytes": 108036,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2071
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-008",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Observation, interpretation, and diagnostic-boundary workflow",
+      "learnerPath": "/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+      "sourcePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+      "driveFileId": "1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw",
+      "driveFileUrl": "https://drive.google.com/file/d/1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-03"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-03",
+        "LO-LH-TECH1-002-05"
+      ],
+      "references": [
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [
+        "https://extension.psu.edu/overview-of-plant-diagnostics"
+      ],
+      "purpose": "Teach the evidence boundary from direct observation through pattern/context and provisional interpretation to confirmation or escalation, emphasizing that clues narrow possibilities without proving a single cause.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.webp",
+        "generatedFrom": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+        "sourceSha256": "fb13322fc186d1a02544f59bf621f039e9706cf78d83481f7d6d9a7a76067c29",
+        "candidateSha256": "23b7652219b720668fe3c751a354bdc5b6e864d3837ab5c1c9e87b464e48aba1",
+        "bytes": 184634,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-009",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Reproductive morphology reference",
+      "learnerPath": "/assets/course2/reproductive-morphology-reference.svg",
+      "sourcePath": "apps/web/public/assets/course2/reproductive-morphology-reference.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reproductive-morphology-reference.svg",
+      "driveFileId": "12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa",
+      "driveFileUrl": "https://drive.google.com/file/d/12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-02"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-02",
+        "LO-LH-TECH1-002-03"
+      ],
+      "references": [
+        "REF-FLOWER-MORPH-2023-001"
+      ],
+      "publicSourceLinks": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13258890/"
+      ],
+      "purpose": "Give learners an original schematic reference for visible pistillate and staminate reproductive structures and for documenting mixed or unexpected expression without assigning an unsupported cause.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/reproductive-morphology-reference.webp",
+        "generatedFrom": "apps/web/public/assets/course2/reproductive-morphology-reference.svg",
+        "sourceSha256": "6d291ec46376b96d975eb6415552d96b2d7244d93829e2524bbb91ef9fc5d8f6",
+        "candidateSha256": "51849762e8bb7feb7356394d579ed4cf457685d618a19d82ce63a9a43b0bf49e",
+        "bytes": 195426,
+        "pixelDimensions": {
+          "width": 2667,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    },
+    {
+      "id": "VIS-LH-TECH1-002-010",
+      "status": "produced",
+      "deliveryType": "downloadable-practice",
+      "title": "Photo evidence audit practice worksheet",
+      "learnerPath": "/assets/course2/photo-evidence-audit-practice.svg",
+      "sourcePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
+      "driveFileId": "1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO",
+      "driveFileUrl": "https://drive.google.com/file/d/1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO/view",
+      "driveMirrorStatus": "mirrored",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-002-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-002-04",
+        "LO-LH-TECH1-002-05"
+      ],
+      "references": [
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [
+        "https://extension.umn.edu/agriculture/specialty-crops/diagnostic-help-for-fruit-and-vegetable-farmers"
+      ],
+      "purpose": "Give learners a printable evidence-quality exercise using synthetic image-set examples to audit context, detail, identity/time, comparison value, lighting consistency, image fidelity, retake needs and diagnostic limits.",
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "candidate-produced-human-qa-required",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "candidateSourcePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
+        "sourceSha256": "f2bc8045571819570f6c2c1a6f12b0b725cd3d873cbdcd2c788b60e6c28c8482",
+        "candidateSha256": "5a233e8384af7089edbacf98ee9660b6c01f73c7d6d54a40debb53b5d0e898dd",
+        "bytes": 198224,
+        "pixelDimensions": {
+          "width": 1600,
+          "height": 2071
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
+    }
   ]
 }

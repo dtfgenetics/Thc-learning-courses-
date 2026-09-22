@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-003-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A suspect arthropod sample must be moved for confirmation, but carrying the plant through a clean production zone would violate the facility's movement control. What is the best response?",
+  "choices": [
+    "Carry it through quickly because diagnosis overrides biosecurity.",
+    "Skip confirmation and declare the pest absent.",
+    "Use the approved contained sampling/transfer method or escalate for an authorized alternative without breaching the clean-zone boundary.",
+    "Leave the suspect plant in a shared corridor."
+  ],
+  "correct": 2,
+  "rationale": "Diagnostic work should preserve biosecurity boundaries; sampling and transfer should use the facility's authorized containment method or be escalated rather than creating a new movement pathway.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

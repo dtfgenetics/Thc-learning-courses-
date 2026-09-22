@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "courseId": "COURSE-LH-TECH1-001",
   "purpose": "Fail-closed release control for the 18 primary Course 1 visual concepts. Review candidates remain separate from the verified learner-facing SVG baseline until factual, accessibility, responsive, binary, registry and lesson-cutover checks all pass.",
   "canonicalSources": {
@@ -35,151 +35,611 @@
       "replacement registered in visuals/ASSET-REGISTRY.json",
       "canonical lesson image block updated to the verified replacement",
       "public path/render verification before retiring the baseline"
-    ]
+    ],
+    "productionMasterTarget": {
+      "orientation": "portrait",
+      "minimumPixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "preferredPrintResolutionDpi": 300,
+      "webDerivativeMinimumPixelDimensions": {
+        "width": 1200,
+        "height": 1600
+      },
+      "note": "Pixel dimensions are the enforceable repository gate. DPI metadata alone does not make a low-resolution image production quality."
+    }
   },
   "concepts": [
     {
       "conceptId": "VIS-LH-TECH1-001-01-HAZARD-SCAN",
-      "lessonIds": ["LESSON-LH-TECH1-001-01"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-003", "publicAsset": "/assets/course1/cultivation-work-area-hazard-scan.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-01-HAZARD-SCAN-v3.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Representative cultivation work-area hazard scan; examples demonstrate a scanning method, not a universal hazard list.", "learnerTextAlternative": "Cultivation work-area scan showing representative pathway, electrical, equipment, access and exposure concerns. The learner checks the actual assigned area, applies only authorized routine controls, and stops or escalates conditions that are unsafe, changing or outside their authority."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-01"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-003",
+        "publicAsset": "/assets/course1/cultivation-work-area-hazard-scan.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-01-HAZARD-SCAN-v3.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Representative cultivation work-area hazard scan; examples demonstrate a scanning method, not a universal hazard list.",
+        "learnerTextAlternative": "Cultivation work-area scan showing representative pathway, electrical, equipment, access and exposure concerns. The learner checks the actual assigned area, applies only authorized routine controls, and stops or escalates conditions that are unsafe, changing or outside their authority."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS",
-      "lessonIds": ["LESSON-LH-TECH1-001-01"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-001", "publicAsset": "/assets/course1/hazard-control-decision-flow.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v3.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Hierarchy of controls with Technician I authorization boundaries.", "learnerTextAlternative": "Hierarchy from elimination and substitution through engineering and administrative controls to PPE, paired with a technician decision boundary. The framework prioritizes more effective controls while reminding learners that substitutions, engineering changes and other technical decisions require the facility's authorization rather than independent worker action."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-01"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-001",
+        "publicAsset": "/assets/course1/hazard-control-decision-flow.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS-v3.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Hierarchy of controls with Technician I authorization boundaries.",
+        "learnerTextAlternative": "Hierarchy from elimination and substitution through engineering and administrative controls to PPE, paired with a technician decision boundary. The framework prioritizes more effective controls while reminding learners that substitutions, engineering changes and other technical decisions require the facility's authorization rather than independent worker action."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-03-PPE-TASK",
-      "lessonIds": ["LESSON-LH-TECH1-001-02"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-002", "publicAsset": "/assets/course1/ppe-hazcom-decision-map.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-03-PPE-TASK-v3.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "PPE selection is controlled by the assigned task, hazard assessment, label/SDS, site procedure and worker authorization.", "learnerTextAlternative": "Decision model linking the assigned task to the employer hazard assessment, product label and safety data sheet, facility procedure, restrictions and the resulting PPE requirement. It does not present a universal task-to-PPE matrix or imply that respirator clearance, fit testing or authorization is automatic."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-02"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-002",
+        "publicAsset": "/assets/course1/ppe-hazcom-decision-map.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-03-PPE-TASK-v3.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "PPE selection is controlled by the assigned task, hazard assessment, label/SDS, site procedure and worker authorization.",
+        "learnerTextAlternative": "Decision model linking the assigned task to the employer hazard assessment, product label and safety data sheet, facility procedure, restrictions and the resulting PPE requirement. It does not present a universal task-to-PPE matrix or imply that respirator clearance, fit testing or authorization is automatic."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-04-SDS-ANATOMY",
-      "lessonIds": ["LESSON-LH-TECH1-001-02"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-002", "publicAsset": "/assets/course1/ppe-hazcom-decision-map.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-04-SDS-ANATOMY-v5.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Training example for locating hazard, first-aid, handling, exposure-control and emergency information in an SDS; use the actual current SDS for the product in use.", "learnerTextAlternative": "Illustrative safety data sheet anatomy showing where a learner may find identification, hazards, first aid, handling and storage, exposure controls and other safety information. Any example product details are fictional training content and do not replace the current manufacturer SDS, label or facility HazCom program."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-02"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-002",
+        "publicAsset": "/assets/course1/ppe-hazcom-decision-map.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-04-SDS-ANATOMY-v5.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Training example for locating hazard, first-aid, handling, exposure-control and emergency information in an SDS; use the actual current SDS for the product in use.",
+        "learnerTextAlternative": "Illustrative safety data sheet anatomy showing where a learner may find identification, hazards, first aid, handling and storage, exposure controls and other safety information. Any example product details are fictional training content and do not replace the current manufacturer SDS, label or facility HazCom program."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES",
-      "lessonIds": ["LESSON-LH-TECH1-001-04"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-004", "publicAsset": "/assets/course1/biosecurity-pathway-map.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES-v2.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Source-route-receiver model for cultivation biosecurity pathways.", "learnerTextAlternative": "Contamination pathway model connecting a source to a receiving plant or area through people, PPE, tools, carts, hoses, containers, media, plant material or debris. Zone names and transition rules are facility-specific; the learner uses the site's actual map and SOP to interrupt routes."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-04"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-004",
+        "publicAsset": "/assets/course1/biosecurity-pathway-map.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES-v2.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-01-07-12-v3.png",
+          "sizeBytes": 2802853,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Source-route-receiver model for cultivation biosecurity pathways.",
+        "learnerTextAlternative": "Contamination pathway model connecting a source to a receiving plant or area through people, PPE, tools, carts, hoses, containers, media, plant material or debris. Zone names and transition rules are facility-specific; the learner uses the site's actual map and SOP to interrupt routes."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW",
-      "lessonIds": ["LESSON-LH-TECH1-001-04"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-004", "publicAsset": "/assets/course1/biosecurity-pathway-map.svg"},
-      "candidate": {"fileName": null, "sourceType": "corrected-drive-reference-board", "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8", "targetPublicPath": null, "binaryState": "final-individual-master-not-registered", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Example of facility-controlled zone movement; actual sequencing follows the site's zone map, current risk status and SOP.", "learnerTextAlternative": "Example movement map showing controlled transitions between areas of different biosecurity risk. People, tools, carts, hoses and materials can carry contamination, and sanitized status can be lost through recontamination. Direction and backtracking rules come from the facility's current zone map and procedure, not from a universal clean-to-dirty rule."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-04"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-004",
+        "publicAsset": "/assets/course1/biosecurity-pathway-map.svg"
+      },
+      "candidate": {
+        "fileName": null,
+        "sourceType": "corrected-drive-reference-board",
+        "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+        "targetPublicPath": null,
+        "binaryState": "reference-board-only-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+          "sizeBytes": 2704696,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "corrected-reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Example of facility-controlled zone movement; actual sequencing follows the site's zone map, current risk status and SOP.",
+        "learnerTextAlternative": "Example movement map showing controlled transitions between areas of different biosecurity risk. People, tools, carts, hoses and materials can carry contamination, and sanitized status can be lost through recontamination. Direction and backtracking rules come from the facility's current zone map and procedure, not from a universal clean-to-dirty rule."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-07-SANITATION-SEQUENCE",
-      "lessonIds": ["LESSON-LH-TECH1-001-05"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-005", "publicAsset": "/assets/course1/cleaning-disinfection-sequence.svg"},
-      "candidate": {"fileName": null, "sourceType": "corrected-drive-reference-board", "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8", "targetPublicPath": null, "binaryState": "final-individual-master-not-registered", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Sanitation decision sequence: prepare, remove debris, clean, verify the approved product/instructions, meet required contact conditions, finish as applicable, inspect, protect and document.", "learnerTextAlternative": "Ordered sanitation model beginning with control of the work area, gross-debris removal and physical cleaning, followed by verification of the exact approved product, preparation, precautions and compatibility. The learner then follows label/SOP-defined contact conditions, completes any required finish step, inspects, protects from recontamination and documents results. No universal rinse, dry, concentration or contact-time value is implied."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-05"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-005",
+        "publicAsset": "/assets/course1/cleaning-disinfection-sequence.svg"
+      },
+      "candidate": {
+        "fileName": null,
+        "sourceType": "corrected-drive-reference-board",
+        "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+        "targetPublicPath": null,
+        "binaryState": "reference-board-only-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+          "sizeBytes": 2704696,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "corrected-reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Sanitation decision sequence: prepare, remove debris, clean, verify the approved product/instructions, meet required contact conditions, finish as applicable, inspect, protect and document.",
+        "learnerTextAlternative": "Ordered sanitation model beginning with control of the work area, gross-debris removal and physical cleaning, followed by verification of the exact approved product, preparation, precautions and compatibility. The learner then follows label/SOP-defined contact conditions, completes any required finish step, inspects, protects from recontamination and documents results. No universal rinse, dry, concentration or contact-time value is implied."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION",
-      "lessonIds": ["LESSON-LH-TECH1-001-08", "LESSON-LH-TECH1-001-13", "LESSON-LH-TECH1-001-14"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-010", "publicAsset": "/assets/course1/operator-care-servicing-boundary.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION-v2.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.", "learnerTextAlternative": "Decision flow separating work the technician is assigned, trained and authorized to perform from conditions that require stopping, isolating where authorized, documenting and escalating. Any supervisor, manager, maintenance or compliance roles shown are examples rather than a universal facility hierarchy."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-08",
+        "LESSON-LH-TECH1-001-13",
+        "LESSON-LH-TECH1-001-14"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-010",
+        "publicAsset": "/assets/course1/operator-care-servicing-boundary.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION-v2.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.",
+        "learnerTextAlternative": "Decision flow separating work the technician is assigned, trained and authorized to perform from conditions that require stopping, isolating where authorized, documenting and escalating. Any supervisor, manager, maintenance or compliance roles shown are examples rather than a universal facility hierarchy."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT",
-      "lessonIds": ["LESSON-LH-TECH1-001-07"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-007", "publicAsset": "/assets/course1/controlled-document-anatomy.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT-v2.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Illustrative controlled-document anatomy emphasizing identity, current revision, prerequisites, steps, acceptance criteria, records and escalation points.", "learnerTextAlternative": "Example SOP or work-order layout showing document identity and current revision status, prerequisites, ordered task steps, acceptance criteria, required records and exception or escalation points. The exact format is illustrative; learners use the facility's current controlled source."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-07"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-007",
+        "publicAsset": "/assets/course1/controlled-document-anatomy.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT-v2.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Illustrative controlled-document anatomy emphasizing identity, current revision, prerequisites, steps, acceptance criteria, records and escalation points.",
+        "learnerTextAlternative": "Example SOP or work-order layout showing document identity and current revision status, prerequisites, ordered task steps, acceptance criteria, required records and exception or escalation points. The exact format is illustrative; learners use the facility's current controlled source."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-10-GENEALOGY",
-      "lessonIds": ["LESSON-LH-TECH1-001-10"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-008", "publicAsset": "/assets/course1/material-genealogy.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-10-GENEALOGY-v2.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Vendor-neutral plant and material genealogy model for maintaining identity across routine cultivation events.", "learnerTextAlternative": "Traceability diagram linking source plant or material identity through propagation, room or location movement, harvest containers, samples and later disposition records. Example identifiers illustrate continuity and are not a universal form or jurisdiction-specific compliance format."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-10"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-008",
+        "publicAsset": "/assets/course1/material-genealogy.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-10-GENEALOGY-v2.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Vendor-neutral plant and material genealogy model for maintaining identity across routine cultivation events.",
+        "learnerTextAlternative": "Traceability diagram linking source plant or material identity through propagation, room or location movement, harvest containers, samples and later disposition records. Example identifiers illustrate continuity and are not a universal form or jurisdiction-specific compliance format."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD",
-      "lessonIds": ["LESSON-LH-TECH1-001-11"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-009", "publicAsset": "/assets/course1/inventory-reconciliation-flow.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD-v2.png", "sourceType": "drive-reference-board-derivative", "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4", "targetPublicPath": null, "binaryState": "not-verified-in-repository", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Vendor-neutral movement-record evidence model; exact fields and systems are controlled by the facility and applicable program.", "learnerTextAlternative": "Movement-record example connecting material identity with source, destination, quantity or count, time, event context and attributable recording. It teaches reconstructable evidence without claiming one universal form, software product or jurisdictional requirement."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-11"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-009",
+        "publicAsset": "/assets/course1/inventory-reconciliation-flow.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD-v2.png",
+        "sourceType": "drive-reference-board-derivative",
+        "sourceDriveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+        "targetPublicPath": null,
+        "binaryState": "drive-reference-board-verified-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-candidate-set-04-12-v4.png",
+          "sizeBytes": 2794892,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Vendor-neutral movement-record evidence model; exact fields and systems are controlled by the facility and applicable program.",
+        "learnerTextAlternative": "Movement-record example connecting material identity with source, destination, quantity or count, time, event context and attributable recording. It teaches reconstructable evidence without claiming one universal form, software product or jurisdictional requirement."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-12-RECONCILIATION",
-      "lessonIds": ["LESSON-LH-TECH1-001-11", "LESSON-LH-TECH1-001-12"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-009", "publicAsset": "/assets/course1/inventory-reconciliation-flow.svg"},
-      "candidate": {"fileName": null, "sourceType": "corrected-drive-reference-board", "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8", "targetPublicPath": null, "binaryState": "final-individual-master-not-registered", "qaStatus": "preferred-review-candidate"},
-      "accessibility": {"caption": "Inventory reconciliation preserves discrepancies for investigation instead of forcing records and physical counts to match.", "learnerTextAlternative": "Reconciliation flow comparing physical evidence with controlled records, verifying identifiers and recent events, preserving any discrepancy, documenting confirmed facts separately from assumptions and escalating unresolved differences. Record correction occurs only through the authorized process; forced balancing and falsification are prohibited."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-11",
+        "LESSON-LH-TECH1-001-12"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-009",
+        "publicAsset": "/assets/course1/inventory-reconciliation-flow.svg"
+      },
+      "candidate": {
+        "fileName": null,
+        "sourceType": "corrected-drive-reference-board",
+        "sourceDriveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+        "targetPublicPath": null,
+        "binaryState": "reference-board-only-individual-master-required",
+        "qaStatus": "preferred-review-candidate",
+        "sourceBoard": {
+          "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+          "sizeBytes": 2704696,
+          "mimeType": "image/png",
+          "controlledBinaryLocation": "Google Drive",
+          "repositoryImportStatus": "deferred-large-review-board",
+          "role": "corrected-reference-board-only"
+        },
+        "individualProductionMasterRequired": true
+      },
+      "accessibility": {
+        "caption": "Inventory reconciliation preserves discrepancies for investigation instead of forcing records and physical counts to match.",
+        "learnerTextAlternative": "Reconciliation flow comparing physical evidence with controlled records, verifying identifiers and recent events, preserving any discrepancy, documenting confirmed facts separately from assumptions and escalating unresolved differences. Record correction occurs only through the authorized process; forced balancing and falsification are prohibited."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
-      "lessonIds": ["LESSON-LH-TECH1-001-13"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-015", "publicAsset": "/assets/course1/equipment-preuse-readiness.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv", "targetPublicPath": "/assets/course1/equipment-preuse-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
-      "accessibility": {"caption": "Pre-use readiness verifies controlled status and assigned checks without expanding the technician's repair authority.", "learnerTextAlternative": "Five-step equipment pre-use readiness model: confirm exact asset and assignment, check controlled status, inspect only assigned external readiness points, review indicators permitted by the operator procedure, and classify the result as ready, approved routine correction, hold or escalation, or emergency response."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-13"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-015",
+        "publicAsset": "/assets/course1/equipment-preuse-readiness.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
+        "sourceType": "drive-individual-master",
+        "sourceDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv",
+        "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
+        "binaryState": "repository-imported-rejected-review-binary",
+        "qaStatus": "revise-before-publication",
+        "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
+        "observedPixelDimensions": {
+          "width": 384,
+          "height": 512
+        },
+        "productionResolutionStatus": "insufficient-rebuild-required",
+        "revisionReasons": [
+          "384x512 source is below production resolution target",
+          "replace universal tag-out/report language with facility-authorized hold/isolation/reporting language",
+          "bound every pre-use check to assigned procedure, equipment type and worker authorization"
+        ]
+      },
+      "accessibility": {
+        "caption": "Pre-use readiness verifies controlled status and assigned checks without expanding the technician's repair authority.",
+        "learnerTextAlternative": "Five-step equipment pre-use readiness model: confirm exact asset and assignment, check controlled status, inspect only assigned external readiness points, review indicators permitted by the operator procedure, and classify the result as ready, approved routine correction, hold or escalation, or emergency response."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
-      "lessonIds": ["LESSON-LH-TECH1-001-14"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-016", "publicAsset": "/assets/course1/operator-vs-maintenance-boundary.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2", "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
-      "accessibility": {"caption": "Routine operator care remains limited to actions explicitly assigned, trained and authorized by the current procedure.", "learnerTextAlternative": "Two-column decision visual separating routine operator care explicitly assigned, trained and authorized by current procedure from maintenance or servicing involving guarded access, electrical components, powered disassembly, pressure, stored energy, diagnosis, calibration or other unassigned work."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-14"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-016",
+        "publicAsset": "/assets/course1/operator-vs-maintenance-boundary.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
+        "sourceType": "drive-individual-master",
+        "sourceDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2",
+        "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
+        "binaryState": "repository-imported-rejected-review-binary",
+        "qaStatus": "revise-before-publication",
+        "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
+        "observedPixelDimensions": {
+          "width": 384,
+          "height": 512
+        },
+        "productionResolutionStatus": "insufficient-rebuild-required",
+        "revisionReasons": [
+          "384x512 source is below production resolution target",
+          "avoid treating operator and maintenance responsibilities as universal role definitions",
+          "frame routine care as explicitly assigned/trained/authorized and protected servicing as procedure- and role-controlled"
+        ]
+      },
+      "accessibility": {
+        "caption": "Routine operator care remains limited to actions explicitly assigned, trained and authorized by the current procedure.",
+        "learnerTextAlternative": "Two-column decision visual separating routine operator care explicitly assigned, trained and authorized by current procedure from maintenance or servicing involving guarded access, electrical components, powered disassembly, pressure, stored energy, diagnosis, calibration or other unassigned work."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
-      "lessonIds": ["LESSON-LH-TECH1-001-15"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-017", "publicAsset": "/assets/course1/fault-context-escalation.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv", "targetPublicPath": "/assets/course1/fault-report-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
-      "accessibility": {"caption": "Fault context separates verified observations and permitted checks from unsupported diagnosis while using the applicable reporting procedure.", "learnerTextAlternative": "Maintenance-ready fault context model recording exact asset and location, first occurrence, exact alarm or symptom, permitted operator checks and results, recurrence, process impact, controlled status and notification while keeping verified facts separate from hypotheses."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-15"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-017",
+        "publicAsset": "/assets/course1/fault-context-escalation.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
+        "sourceType": "drive-individual-master",
+        "sourceDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv",
+        "targetPublicPath": "/assets/course1/fault-report-v3.png",
+        "binaryState": "repository-imported-rejected-review-binary",
+        "qaStatus": "revise-before-publication",
+        "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
+        "observedPixelDimensions": {
+          "width": 384,
+          "height": 512
+        },
+        "productionResolutionStatus": "insufficient-rebuild-required",
+        "revisionReasons": [
+          "384x512 source is below production resolution target",
+          "replace universal immediate-report/follow-until-resolved wording with the facility's required timing, channel and handoff procedure",
+          "separate verified observations and permitted checks from unsupported diagnosis"
+        ]
+      },
+      "accessibility": {
+        "caption": "Fault context separates verified observations and permitted checks from unsupported diagnosis while using the applicable reporting procedure.",
+        "learnerTextAlternative": "Maintenance-ready fault context model recording exact asset and location, first occurrence, exact alarm or symptom, permitted operator checks and results, recurrence, process impact, controlled status and notification while keeping verified facts separate from hypotheses."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
-      "lessonIds": ["LESSON-LH-TECH1-001-16"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-018", "publicAsset": "/assets/course1/record-correction-controls.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX", "targetPublicPath": "/assets/course1/record-correction-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
-      "accessibility": {"caption": "Paper and digital correction methods are controlled by the governing record system and must preserve original information or audit trail.", "learnerTextAlternative": "Record-correction model showing that paper and digital changes follow the governing record system and facility procedure, preserve the original information or audit trail, retain attribution and timing, and never silently overwrite, erase, backdate or replace missing data with an invented value."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-16"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-018",
+        "publicAsset": "/assets/course1/record-correction-controls.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
+        "sourceType": "drive-individual-master",
+        "sourceDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX",
+        "targetPublicPath": "/assets/course1/record-correction-v3.png",
+        "binaryState": "repository-imported-rejected-review-binary",
+        "qaStatus": "revise-before-publication",
+        "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
+        "observedPixelDimensions": {
+          "width": 384,
+          "height": 512
+        },
+        "productionResolutionStatus": "insufficient-rebuild-required",
+        "revisionReasons": [
+          "384x512 source is below production resolution target",
+          "single-line paper correction is an example rather than a universal record-correction rule",
+          "add controlled digital-system correction and audit-trail boundary without implying deletion or overwrite"
+        ]
+      },
+      "accessibility": {
+        "caption": "Paper and digital correction methods are controlled by the governing record system and must preserve original information or audit trail.",
+        "learnerTextAlternative": "Record-correction model showing that paper and digital changes follow the governing record system and facility procedure, preserve the original information or audit trail, retain attribution and timing, and never silently overwrite, erase, backdate or replace missing data with an invented value."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
-      "lessonIds": ["LESSON-LH-TECH1-001-17"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-019", "publicAsset": "/assets/course1/shift-handoff-control.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY", "targetPublicPath": "/assets/course1/shift-handoff-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
-      "accessibility": {"caption": "Professional handoff transfers exact status, cross-checks critical conditions and confirms ownership without improvising new authority.", "learnerTextAlternative": "Four-stage shift handoff model showing outgoing preparation, two-way information exchange, incoming cross-check, and explicit ownership of unresolved work, with safety and access controls, holds and identity problems, equipment status, incomplete work and time-sensitive next actions prioritized."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-17"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-019",
+        "publicAsset": "/assets/course1/shift-handoff-control.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
+        "sourceType": "drive-individual-master",
+        "sourceDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY",
+        "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
+        "binaryState": "repository-imported-rejected-review-binary",
+        "qaStatus": "revise-before-publication",
+        "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
+        "observedPixelDimensions": {
+          "width": 384,
+          "height": 512
+        },
+        "productionResolutionStatus": "insufficient-rebuild-required",
+        "revisionReasons": [
+          "384x512 source is below production resolution target",
+          "present handoff fields as facility-controlled examples rather than a universal form",
+          "preserve unresolved, incomplete and unknown status plus explicit decision ownership"
+        ]
+      },
+      "accessibility": {
+        "caption": "Professional handoff transfers exact status, cross-checks critical conditions and confirms ownership without improvising new authority.",
+        "learnerTextAlternative": "Four-stage shift handoff model showing outgoing preparation, two-way information exchange, incoming cross-check, and explicit ownership of unresolved work, with safety and access controls, holds and identity problems, equipment status, incomplete work and time-sensitive next actions prioritized."
+      },
       "releaseApproved": false
     },
     {
       "conceptId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
-      "lessonIds": ["LESSON-LH-TECH1-001-18"],
-      "baseline": {"registryAssetId": "VIS-LH-TECH1-001-020", "publicAsset": "/assets/course1/integrated-technician-workflow.svg"},
-      "candidate": {"fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png", "sourceType": "drive-individual-master", "sourceDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey", "targetPublicPath": "/assets/course1/integrated-workflow-v3.png", "binaryState": "authenticated-rejected-review-binary", "qaStatus": "revise-before-publication"},
-      "accessibility": {"caption": "Integrated Technician I workflow connects assigned work review, readiness, authorized execution, monitoring, truthful documentation and follow-up without expanding role authority.", "learnerTextAlternative": "Integrated workflow connecting review of assigned work and current controlled instructions, readiness and dependency checks, authorized routine execution, monitoring and response to change, truthful documentation, and communication or follow-up while keeping unresolved or unauthorized work visibly open."},
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-18"
+      ],
+      "baseline": {
+        "registryAssetId": "VIS-LH-TECH1-001-020",
+        "publicAsset": "/assets/course1/integrated-technician-workflow.svg"
+      },
+      "candidate": {
+        "fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
+        "sourceType": "drive-individual-master",
+        "sourceDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey",
+        "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
+        "binaryState": "repository-imported-rejected-review-binary",
+        "qaStatus": "revise-before-publication",
+        "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
+        "observedPixelDimensions": {
+          "width": 384,
+          "height": 512
+        },
+        "productionResolutionStatus": "insufficient-rebuild-required",
+        "revisionReasons": [
+          "384x512 source is below production resolution target",
+          "generic plan-prepare-execute-monitor-document cycle is insufficiently tied to Technician I authority boundaries",
+          "rebuild around controlled instruction, verified status, evidence capture, exception handling and escalation/handoff"
+        ]
+      },
+      "accessibility": {
+        "caption": "Integrated Technician I workflow connects assigned work review, readiness, authorized execution, monitoring, truthful documentation and follow-up without expanding role authority.",
+        "learnerTextAlternative": "Integrated workflow connecting review of assigned work and current controlled instructions, readiness and dependency checks, authorized routine execution, monitoring and response to change, truthful documentation, and communication or follow-up while keeping unresolved or unauthorized work visibly open."
+      },
       "releaseApproved": false
     }
   ]

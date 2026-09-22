@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-LH-PHIB-001-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-001-09",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A later scouting round contradicts the team's earlier working diagnosis. What is the best documentation practice?",
+  "choices": [
+    "Preserve the original observations and interpretation, add the new evidence, explain how the differential changed, and document the next verification step.",
+    "Delete the earlier diagnosis so the record shows only the current explanation.",
+    "Change the original observations to match the new conclusion.",
+    "Keep the new evidence out of the record until the final cause is confirmed."
+  ],
+  "correct": 0,
+  "rationale": "Reconstructable records preserve original data, later evidence, uncertainty, and changes in interpretation rather than rewriting history to fit a preferred conclusion.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-05",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-LH-PHIB-002-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-PHIB-002-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Older leaves show progressive chlorosis while tissue data, root-zone readings, irrigation history, and environmental conditions are all available. Which evidence strategy is most defensible?",
+  "choices": [
+    "Integrate symptom location and progression with tissue, root-zone, irrigation, and environmental data to test competing nutrient hypotheses.",
+    "Choose the nutrient associated with the most visually similar internet photo.",
+    "Use tissue data alone because plant appearance is subjective.",
+    "Use symptom position alone because it is more important than root-zone or environmental context."
+  ],
+  "correct": 0,
+  "rationale": "Reliable nutrient diagnosis triangulates plant symptoms with tissue, root-zone, irrigation, and environmental evidence rather than relying on a single evidence stream.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-NUTRITION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true,
+    "sourceObjective": "LO-NUTRIENT-DIAG-002",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

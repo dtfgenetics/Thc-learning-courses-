@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-LH-PHIB-001-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-001-06",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Sticky-card counts decline after an intervention, but plant inspections show damage severity increasing and detections appearing in two new zones. What is the best interpretation?",
+  "choices": [
+    "The evidence is mixed; trap counts alone do not establish control, so incidence, severity, spatial spread, method consistency, and additional rounds should be considered.",
+    "The intervention is confirmed effective because trap counts declined.",
+    "The intervention failed because any new-zone detection proves total failure.",
+    "Plant inspections should be discarded because sticky cards are the only comparable measure."
+  ],
+  "correct": 0,
+  "rationale": "IPM follow-up should integrate multiple comparable evidence streams. Declining trap counts can coexist with worsening crop impact or spatial spread.",
+  "references": [
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-02",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

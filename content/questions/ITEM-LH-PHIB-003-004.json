@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A plant has yellowing and reduced vigor, and the stems carry colonies of aphids, shed skins and sticky honeydew. Which evidence is most directly useful for the pest diagnosis?",
+  "choices": [
+    "Yellowing alone because crop symptoms identify aphid species.",
+    "The fertilizer record because aphids cannot cause yellowing.",
+    "Only the honeydew because no other sap-feeder can produce it.",
+    "The observed aphids plus cast skins and honeydew, interpreted with plant location and distribution."
+  ],
+  "correct": 3,
+  "rationale": "Direct aphid observations supported by cast skins and honeydew provide stronger pest evidence than nonspecific crop symptoms or honeydew considered alone.",
+  "references": [
+    "REF-CANNABIS-APHID-NCSU-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

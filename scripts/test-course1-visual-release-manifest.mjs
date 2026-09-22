@@ -53,8 +53,25 @@ if (pngQa) {
     assert.ok(Number.isInteger(qaAsset.width) && qaAsset.width > 0, `${qaAsset.conceptId}: authenticated binary QA requires image width`);
     assert.ok(Number.isInteger(qaAsset.height) && qaAsset.height > 0, `${qaAsset.conceptId}: authenticated binary QA requires image height`);
     assert.equal(qaAsset.mimeType, 'image/png', `${qaAsset.conceptId}: authenticated QA record must identify the current v3 master as PNG`);
+    assert.equal(qaAsset.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: 384x512 review binary must remain blocked from production release`);
+    assert.ok(typeof qaAsset.repositoryReviewPath === 'string' && qaAsset.repositoryReviewPath.endsWith('.png'), `${qaAsset.conceptId}: repository review path is required`);
+    assert.ok(fs.existsSync(path.join(root, qaAsset.repositoryReviewPath)), `${qaAsset.conceptId}: imported repository review binary is missing`);
+    assert.equal(concept.candidate.repositoryReviewPath, qaAsset.repositoryReviewPath, `${qaAsset.conceptId}: manifest review path must match authenticated QA evidence`);
+    assert.deepEqual(concept.candidate.observedPixelDimensions, { width: qaAsset.width, height: qaAsset.height }, `${qaAsset.conceptId}: manifest dimensions must match authenticated QA evidence`);
+    assert.equal(concept.candidate.productionResolutionStatus, 'insufficient-rebuild-required', `${qaAsset.conceptId}: manifest must fail closed on low-resolution review binary`);
     assert.ok(Array.isArray(qaAsset.findings) && qaAsset.findings.length > 0, `${qaAsset.conceptId}: rejected binary must record actionable QA findings`);
   }
+}
+
+const referenceBoardIndex = readJson('visuals/COURSE1-RASTER-REFERENCE-BOARD-INDEX.json');
+assert.equal(referenceBoardIndex.courseId, courseId, 'reference-board index must belong to Course 1');
+assert.equal(referenceBoardIndex.boards?.length, 3, 'Course 1 reference-board index must record the three controlled source boards');
+const referenceBoardIds = new Set(referenceBoardIndex.boards.map((row) => row.driveFileId));
+for (const concept of manifest.concepts.filter((row) => Number(row.conceptId.match(/-([0-9]{2})-/)?.[1]) <= 12)) {
+  assert.equal(concept.candidate?.individualProductionMasterRequired, true, `${concept.conceptId}: concepts 1-12 require an individual production master`);
+  assert.ok(referenceBoardIds.has(concept.candidate?.sourceDriveFileId), `${concept.conceptId}: source Drive file must resolve through the controlled reference-board index`);
+  assert.equal(concept.candidate?.sourceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: large review board must remain Drive-controlled rather than masquerade as a repository production binary`);
+  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: a reference-board derivative cannot be release-approved before an individual production master exists`);
 }
 
 for (const concept of manifest.concepts) {

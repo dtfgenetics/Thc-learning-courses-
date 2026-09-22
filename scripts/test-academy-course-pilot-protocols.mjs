@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const root=process.cwd();
 const registry=JSON.parse(fs.readFileSync(path.join(root,'registry/academy-course-pilot-protocols.json'),'utf8'));
-assert.equal(registry.courses.length,14,'expected six Technician I and eight Technician II pilot protocols');
+assert.equal(registry.courses.length,15,'expected seven Technician I and eight Technician II pilot protocols');
 assert.equal(registry.defaultKnowledgeItemPlanningTarget.usableResponsesPerItem,50);
 assert.equal(registry.defaultKnowledgeItemPlanningTarget.preliminaryMinimumPerItem,30);
 
@@ -16,6 +16,23 @@ for(const entry of registry.courses){
   const file=path.join(root,entry.protocol);
   assert.ok(fs.existsSync(file),`${entry.courseId}: pilot protocol missing`);
   const md=fs.readFileSync(file,'utf8');
+  if(entry.courseId==='COURSE-LH-TECH1-001'){
+    for(const required of [
+      '# Course 1 Controlled Pilot Protocol',
+      '## Preconditions',
+      '## Knowledge-assessment evidence target',
+      '## Practical pilot',
+      '## Learner feedback',
+      '## Data handling',
+      '## Analysis sequence',
+      '## Exit condition'
+    ]) assert.ok(md.includes(required),`${entry.courseId}: missing Course 1 pilot section ${required}`);
+    assert.match(md,/50 usable responses per knowledge item/i,`${entry.courseId}: missing default item target`);
+    assert.match(md,/30 usable responses per item/i,`${entry.courseId}: missing preliminary item minimum`);
+    assert.match(md,/must stay outside this repository/i,`${entry.courseId}: private pilot-data boundary missing`);
+    assert.match(md,/does not automatically release Course 1/i,`${entry.courseId}: release boundary missing`);
+    continue;
+  }
   for(const required of [
     '# Pilot Protocol',
     'Canonical material freeze',
@@ -37,4 +54,4 @@ for(const entry of registry.courses){
   assert.match(md,/Human approval to advance:\s*\*\*pending\*\*/i,`${entry.courseId}: pilot approval must remain pending`);
   assert.doesNotMatch(md,/Human approval to advance:\s*\*\*(?:approved|complete|passed)\*\*/i,`${entry.courseId}: fabricated pilot approval`);
 }
-console.log('Academy course pilot protocols: PASS (14 controlled protocols; pilot evidence remains pending).');
+console.log('Academy course pilot protocols: PASS (15 controlled protocols; pilot evidence remains pending).');

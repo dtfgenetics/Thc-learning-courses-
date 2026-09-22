@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Yellow sticky-card captures of small dark flies increase near a propagation bench. What additional evidence is needed before claiming larval root damage from fungus gnats?",
+  "choices": [
+    "Nothing; adult trap counts directly measure root feeding.",
+    "A pesticide purchase record.",
+    "Media and root-zone inspection for larvae and associated root evidence, interpreted with moisture and sampling context.",
+    "A leaf-only inspection from a distant room."
+  ],
+  "correct": 2,
+  "rationale": "Adult monitoring supports evidence of flying activity, but larvae develop in media and can feed on roots; root-zone and larval evidence are needed to assess that risk.",
+  "references": [
+    "REF-FUNGUS-GNAT-UCIPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

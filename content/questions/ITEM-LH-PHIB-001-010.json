@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-LH-PHIB-001-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-001-10",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A scout's evidence strongly supports a particular pest, but selecting or applying a pesticide is outside the scout's assigned authority. What is the correct next action?",
+  "choices": [
+    "Document the evidence and scope, maintain applicable containment controls, and escalate treatment selection or application to the authorized role.",
+    "Apply the most commonly used product because the diagnosis is well supported.",
+    "Choose a product from an online recommendation if the label appears relevant.",
+    "Delay documentation until an application decision has been made."
+  ],
+  "correct": 0,
+  "rationale": "Diagnostic confidence does not create treatment authority. Regulated or facility-controlled treatment decisions remain with the authorized role and applicable label/procedure.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-06",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "LESSON-LH-PHIB-003-05",
+  "title": "Arthropod Movement, Containment & IPM Decision Boundaries",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-003-04",
+    "LO-LH-PHIB-003-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-HEMP-IPM-VT-001",
+    "REF-HEMP-RUSSET-NCSU-001",
+    "REF-CANNABIS-APHID-NCSU-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A strong arthropod workup connects pest identity with movement pathways, affected scope, sanitation and monitoring while keeping pesticide or regulated-treatment decisions inside the authorized role. The record must show what was observed, how confidently it was identified and what remains unresolved.",
+    "vocabulary": [
+      {
+        "term": "Movement pathway",
+        "definition": "A plausible route by which an arthropod or infested material can move among plants, zones or facilities, including plant material, people, tools, supplies, air movement or growing media."
+      },
+      {
+        "term": "Containment",
+        "definition": "Authorized actions that limit movement from an affected area or source while diagnosis and management decisions are made."
+      },
+      {
+        "term": "Identification confidence",
+        "definition": "A documented expression of how strongly the available organism, life-stage and injury evidence supports the stated pest identity."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Trace how the pest could move",
+        "body": "Plant material and propagation stock can move pests directly, while people, tools, supplies, air currents or media can contribute to movement for particular arthropods. Map plausible pathways from the observed zone and preserve which pathways are evidence-supported versus merely possible.",
+        "references": [
+          "REF-HEMP-RUSSET-NCSU-001",
+          "REF-HEMP-IPM-VT-001"
+        ]
+      },
+      {
+        "title": "Containment can precede perfect certainty",
+        "body": "When spread consequences are meaningful, follow the facility's authorized isolation, sanitation and clean-to-dirty controls while identification is being strengthened. Containment should not erase uncertainty or be presented as proof of the suspected pest.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Treatment authority remains separate",
+        "body": "A specialist workup can identify likely pests, map scope and recommend the next verification step without independently authorizing a pesticide or other regulated treatment. Product selection and application must follow current law, label, facility procedure and assigned authority.",
+        "references": [
+          "REF-CANNABIS-APHID-NCSU-001",
+          "REF-HEMP-RUSSET-NCSU-001"
+        ]
+      },
+      {
+        "title": "Make the handoff reconstructable",
+        "body": "Record specimen or image evidence, magnification or identification method, crop locations and denominator, injury and direct signs, confidence level, look-alikes, movement concerns, containment already in place and the next responsible role. Do not rewrite earlier findings when later evidence changes the diagnosis.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A microscopic mite found on propagated material may justify holding related lots and reviewing movement pathways while a qualified identification is confirmed.",
+      "A probable pest identification can support intensified scouting and containment even when treatment selection remains outside the technician's authority."
+    ],
+    "commonMistakes": [
+      "Treating diagnostic confidence as permission to choose or apply a pesticide.",
+      "Moving suspect plants or tools through clean zones for convenience during confirmation.",
+      "Deleting earlier observations after a later identification changes the working diagnosis."
+    ],
+    "practicalApplication": "Build a supervisor-ready arthropod handoff: pest identity/confidence, direct evidence, affected scope, sampling denominator, likely movement pathways, current containment, unresolved look-alikes, next verification, and the role responsible for any regulated treatment decision.",
+    "summary": "Arthropod IPM links accurate identification to movement control, comparable monitoring and authorized decision-making. Strong specialists can act on evidence without overstating certainty or authority."
+  }
+}

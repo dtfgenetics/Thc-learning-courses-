@@ -16,8 +16,69 @@
   "representativeAssessmentReadbackVerified": true,
   "trainingCredentialBoundaryObserved": true,
   "responsiveManualQaApproved": false,
-  "exactDeploymentBuildId": null,
-  "exactDeploymentSourceSha": null,
-  "evidenceState": "partial-public-readback-verified-build-identity-and-manual-responsive-qa-open",
-  "note": "This record proves anonymous public reachability and observed course/lesson/assessment content only. It does not claim exact deployment build identity, source SHA equivalence, browser-matrix QA, assistive-technology approval, pilot validity, or credential release approval."
+  "exactDeploymentBuildId": "dtf-academy-338f3cc23581-35582824708",
+  "exactDeploymentSourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+  "evidenceState": "public-readback-and-build-identity-verified-manual-responsive-qa-open",
+  "note": "Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and exact Academy build identity were verified against the pinned curriculum source SHA. Manual responsive/accessibility approval, pilot/practical validity, standard setting, and credential release approval remain open.",
+  "buildIdentityVerifiedAt": "2026-09-21T09:33:40.400Z",
+  "buildIdentityEndpoint": "https://dtfseeds.com/api/build-info",
+  "machineSurfaceQa": {
+    "state": "verified",
+    "verifiedAt": "2026-09-21T09:33:49.605Z",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708",
+    "sourceResponsiveContract": {
+      "viewport": true,
+      "language": true,
+      "compactBreakpoint": true,
+      "assessmentBreakpoint": true,
+      "reducedMotion": true,
+      "visibleFocus": true,
+      "touchTargets": true
+    },
+    "publicSurfaces": [
+      {
+        "kind": "course",
+        "requestedUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/",
+        "finalUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "htmlLanguage": true,
+        "viewport": true,
+        "title": true,
+        "publiclyIndexable": true,
+        "loginRedirect": false,
+        "pass": true
+      },
+      {
+        "kind": "lesson",
+        "requestedUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/lesson-01/",
+        "finalUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/lesson-01/",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "htmlLanguage": true,
+        "viewport": true,
+        "title": true,
+        "publiclyIndexable": true,
+        "loginRedirect": false,
+        "pass": true
+      },
+      {
+        "kind": "assessment",
+        "requestedUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/readiness-check/",
+        "finalUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/readiness-check/",
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "htmlLanguage": true,
+        "viewport": true,
+        "title": true,
+        "publiclyIndexable": true,
+        "loginRedirect": false,
+        "pass": true
+      }
+    ]
+  },
+  "machineSurfaceQaVerified": true,
+  "curriculumSource": "dtfgenetics/Thc-learning-courses-@338f3cc235810fc8d267559b511d497b182a7718",
+  "curriculumSourceShaPinnedByDeployment": true
 }
