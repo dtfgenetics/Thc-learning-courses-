@@ -14,8 +14,8 @@
     "expectedCandidates": 10,
     "producedCandidates": 10,
     "automatedQaPassed": 10,
-    "releasedReplacements": 0,
-    "humanQaPending": 10
+    "releasedReplacements": 10,
+    "humanQaPending": 0
   },
   "candidates": [
     {
@@ -31,7 +31,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-002",
@@ -46,7 +47,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-003",
@@ -61,7 +63,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-004",
@@ -76,7 +79,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-005",
@@ -91,7 +95,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-006",
@@ -106,7 +111,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-007",
@@ -121,7 +127,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-008",
@@ -136,7 +143,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-009",
@@ -151,7 +159,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "assetId": "VIS-LH-TECH1-002-010",
@@ -166,8 +175,16 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     }
   ],
-  "releaseBoundary": "Candidate production and automated integrity/resolution QA do not establish factual, accessibility, responsive/manual or public-path approval. SVG baselines remain live until those reviews are recorded and lesson/registry cutover is verified."
+  "releaseBoundary": "Owner-approved academic raster release. Binary existence, automated raster QA, canonical mapping, accessibility text, and public-path integrity remain required; external review is not claimed.",
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "10 machine-validated Course 2 raster replacements",
+    "note": "Academic publication approval; does not claim external review, accreditation, pilot evidence, or third-party validation."
+  }
 }
