@@ -8,15 +8,15 @@
 
 ## Current control state
 
-All seven Technician I **source packages satisfy the machine source-package contract**. This is enforced by the program/package validation layer. Professional credential issuance remains blocked: machine completion is not human validation, pilot evidence, standard setting, security approval or release approval.
+All seven Technician I **source packages satisfy the machine source-package contract**. This is enforced by the program/package validation layer. The project owner has approved completed academic course material for publication. External review, pilot, calibration, and standard-setting evidence must remain truthfully labeled when absent, but they are not publication prerequisites for owner-approved academic course content. Professional credential issuance remains separately fail-closed where secure operational assessment, identity, evidence, signing, or decision controls are not yet verified.
 
 ## Course readiness
 
 | Course | Source/package state | Assessment/performance state | Learner assets | Remaining machine deployment work | Human/release gates |
 |---|---|---|---|---|---|
-| `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | Reference implementation; machine-resolvable package work complete | Published academic package + integrated practical | Full governed learner/instructor visual layer | Preserve verified public release evidence | Human credential validation remains open |
+| `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows | Production-released owner-approved academic package | Published academic package + integrated practical | Full governed learner/instructor raster visual layer | Preserve verified public release evidence | Academic release complete; external validation not claimed |
 | `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records | Source package complete; controlled course remains `draft`; fail-closed completion registry | 12 formative items distributed 1/2/4/3/2 across objectives; 20 summative items exactly 4/objective; Practical A crosswalk + canonical assessor/calibration-validation packet | 10 governed assets; learner routes and server-side formative grading verified in repository tests | Public course/lesson/assessment readback verified; exact deployment build/source SHA and manual responsive QA remain | technical/assessment/accessibility/practical/calibration/pilot/standard-setting/release approval open |
-| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | Source package complete; `draft`; fail-closed completion registry | 12 formative + 20 summative; Practical A mapping | 6 governed/mirrored assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/pilot/release gates open |
+| `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals | Source package complete; `draft`; fail-closed completion registry | 12 formative + 20 summative; Practical A mapping | 6 governed/mirrored assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | owner academic release may proceed; external validation not claimed |
 | `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals | Source package complete; `draft`; fail-closed completion registry | 12 formative + 24 summative with 2 formative + 4 summative per objective; Practical B | 7 governed assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/practical/pilot/release gates open |
 | `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care | Source package complete; `draft`; fail-closed completion registry | 12 formative + 24 summative; Practicals C/D/E | 9 governed assets | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/practical/pilot/release gates open; no pesticide/treatment authority |
 | `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff | Source package complete; `draft` v0.4.0; fail-closed completion registry | 12 formative + 24 summative; Practical F | 8 learner-reachable repo assets + 8/8 verified Drive mirrors | Public course/lesson/assessment readback verified; shared learner-runtime regression added; exact build/source SHA and manual responsive QA remain | human/practical/pilot/release gates open; no product-release authority |
@@ -83,7 +83,7 @@ The remaining work that machines can truthfully perform is narrower:
 4. keep versioned review-queue, completion-status, deployment-evidence and release-readiness ledgers synchronized with exact current versions;
 5. implement additional operational issuance components only behind approved decision/evidence stores—never by bypassing release gates.
 
-## Human/evidence blockers that must remain open
+## External/credential evidence that must remain truthfully labeled
 
 - formal JTA SME/employer validation;
 - human technical/curriculum review;
@@ -99,9 +99,9 @@ The remaining work that machines can truthfully perform is narrower:
 - formal standard setting/final cut scores and critical-failure decision rules;
 - approved candidate privacy/retention policy;
 - credential issuance workflow/security approval;
-- explicit final program release approval.
+- versioned credential issuance authorization where a professional credential is actually issued. Academic publication may use project-owner approval.
 
-No generated text, green CI, synthetic pilot record, or assistant judgment may close those gates.
+No generated text, green CI, synthetic pilot record, or assistant judgment may fabricate external validation, pilot, psychometric, calibration, accreditation, or security evidence. Those evidence states are distinct from project-owner approval to publish academic course content.
 
 ## Definition of done
 
