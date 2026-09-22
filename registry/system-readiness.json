@@ -1,6 +1,6 @@
 {
   "system": "THC Academy",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "updatedAt": "2026-09-22",
   "productionReady": false,
   "areas": {
@@ -53,9 +53,10 @@
         "productionIssuerIdentity": false,
         "productionSigning": false,
         "revocationPersistence": false,
-        "revocationTransactionCodeReady": true
+        "revocationTransactionCodeReady": true,
+        "productionSigningIntegrationCodeReady": true
       },
-      "scope": "Credential runtime foundation includes transaction-tested revocation persistence code, but production issuer identity, signing and deployed revocation persistence remain unavailable until live infrastructure and security validation close."
+      "scope": "Credential runtime foundation includes transaction-tested revocation code and a managed external signing-provider integration contract. Production issuer identity, production signing and deployed revocation persistence remain false until real infrastructure, key custody/security validation and program release approval exist."
     },
     "api": {
       "status": "integrated-development",
