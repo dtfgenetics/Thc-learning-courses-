@@ -16,10 +16,29 @@ for(let n=2;n<=6;n++){
   for(const asset of registry.assets??[]){
     if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
     assert.equal(asset.assetLifecycle,'legacy-svg-compatibility-baseline',`${asset.id}: SVG lifecycle must be compatibility baseline`);
-    const expectedStatus='candidate-produced-human-qa-required';
-    assert.equal(asset.rasterReplacement?.status,expectedStatus,`${asset.id}: raster replacement lifecycle drift`);
+    assert.equal(asset.rasterReplacement?.status,'owner-approved-production-release',`${asset.id}: released raster lifecycle drift`);
+    assert.equal(asset.rasterReplacement?.releaseApproved,true,`${asset.id}: owner-approved academic raster release required`);
     assert.deepEqual(asset.rasterReplacement?.allowedFormats,raster,`${asset.id}: raster format policy drift`);
-    assert.match(asset.rasterReplacement?.releaseGate??'',/factual.*accessibility.*responsive.*public-path/i,`${asset.id}: replacement release gate incomplete`);
+    assert.match(asset.rasterReplacement?.candidateSourcePath??'',new RegExp(`^apps/web/public/assets/course${n}/[A-Za-z0-9._-]+\\.webpimport assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root=process.cwd();
+const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const raster=['png','webp','jpeg','jpg'];
+const releaseRaster=['png','webp','jpg','jpeg'];
+
+for(let n=2;n<=6;n++){
+  const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
+  assert.equal(registry.policy?.svgProductionTarget,false,`Course ${n}: SVG must not be the production target`);
+  assert.equal(registry.policy?.legacySvgCompatibilityAllowed,true,`Course ${n}: current SVG baselines must stay explicitly compatibility-only until replaced`);
+  assert.equal(registry.policy?.rasterReplacementRequired,true,`Course ${n}: raster replacement must be required`);
+  assert.deepEqual(registry.policy?.productionInstructionalFormats,raster,`Course ${n}: production raster format policy drift`);
+  for(const asset of registry.assets??[]){
+    if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
+    assert.equal(asset.assetLifecycle,'legacy-svg-compatibility-baseline',`${asset.id}: SVG lifecycle must be compatibility baseline`);
+,'i'),`${asset.id}: released WebP source path required`);
+    assert.equal(asset.rasterReplacement?.releaseGate,'owner-approved-academic-release-with-machine-integrity-controls',`${asset.id}: released machine-integrity gate drift`);
   }
 }
 
