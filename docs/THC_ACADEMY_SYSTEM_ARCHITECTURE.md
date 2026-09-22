@@ -1,27 +1,27 @@
 # THC Academy System Architecture
 
 **Status:** Canonical architecture baseline  
-**Purpose:** Define the permanent separation between the THC Learning Academy resource library, the THC Learning Hub certification curriculum, and THC Academy credentialing.
+**Purpose:** Define the permanent separation between the standalone 420-entry THC Encyclopedia, dedicated Certification Courses and Certification Course Tests, and professional credential governance.
 
 ## 1. System model
 
 The project has three connected but distinct educational systems.
 
-### THC Learning Academy — comprehensive educational resource library
+### THC Encyclopedia — 420 standalone topic entries
 
-The THC Learning Academy is the comprehensive knowledge system. It contains **420 Comprehensive Educational Resources** organized across the existing 20 subject domains.
+The THC Encyclopedia is a standalone knowledge system containing **420 encyclopedia-style topic entries** organized across the controlled subject domains.
 
-The 420 resources are **not certification courses** and do not each produce a credential. A resource may be a scientific explainer, illustrated guide, diagnostic atlas, interactive tool, calculator, decision tree, reference chart, case study, dataset, research summary, SOP reference, glossary, visual guide, worksheet, or other educational object appropriate to the topic.
+The 420 entries are **not Certification Courses, Certification Course Lessons, or Certification Course Tests**. Each entry is an encyclopedia topic/explanation with definitions, science, mechanisms, cultivation context, evidence limits, references, cross-links, and educational visuals.
 
-Resources provide broad and deep coverage of cultivation, plant science, diagnostics, crop systems, postharvest, genetics, research, quality systems, and related educational content. Certification courses may cite, link to, or assign these resources, but they must not treat the resource catalog itself as the certification curriculum.
+The encyclopedia provides broad and deep topical explanations. A Certification Course may optionally cite an encyclopedia entry as background or further reading, but encyclopedia content never satisfies a Certification Course objective, lesson requirement, test requirement, practical requirement, completion rule, or credential requirement.
 
-### THC Learning Hub — certification curriculum
+### Certification Courses — dedicated credential curriculum
 
-The THC Learning Hub contains the **purpose-built courses required for THC Academy credentials**.
+The certification system contains **purpose-built Certification Courses required for THC Academy credentials**.
 
-Certification courses are designed from job tasks and competencies, not by relabeling the 420 resources. Each certification course has its own objectives, instruction, activities, formative assessment, scenarios, practical work, and course-level test.
+Each Certification Course is designed specifically for one certification pathway from job tasks, competencies, and required proficiency. Every course must contain its own dedicated objectives, lessons, explanations, examples, visuals, activities, scenarios, practice, remediation, and course-specific assessments.
 
-Certification courses may reuse canonical science from the resource library through references and mapped learning objects. Duplicating and independently rewriting the same scientific claim in multiple courses should be avoided whenever a canonical source object can be reused.
+Certification Courses may cite the Encyclopedia for optional background reading, but all knowledge and application required to pass a course must be taught inside that Certification Course itself.
 
 ### THC Academy — credentials, assessment, governance, and verification
 
@@ -109,9 +109,9 @@ Three assessment layers must remain distinct.
 
 Low-stakes retrieval, practice, feedback, calculations, image interpretation, and scenarios embedded in certification courses.
 
-### Course-level summative assessment
+### Certification Course Test
 
-Tests whether a learner met the objectives of one Learning Hub course. Passing a course test does not itself award the professional credential.
+A Certification Course Test is written specifically from the current Certification Course objectives and the material actually taught or practiced in that course. Every scored item must trace to a course objective and taught course content. Encyclopedia-only material, external reference-only material, or content from another course cannot be required unless it is also directly taught in the tested course. Passing a Certification Course Test demonstrates course-level attainment; it does not by itself award the professional credential.
 
 ### Credential assessment
 
@@ -317,15 +317,15 @@ Target WCAG 2.2 AA for learner-facing content and assessments. Media require tex
 
 Use these terms consistently:
 
-- **Comprehensive Educational Resource** — one of the 420 Learning Academy resources.
-- **Certification Course** — a structured Learning Hub course designed specifically for a professional credential pathway.
-- **Course Test** — assessment of one certification course.
+- **Encyclopedia Entry** — one of the 420 standalone THC Encyclopedia topic explanations.
+- **Certification Course** — a dedicated instructional course designed specifically for a defined certification pathway and its competencies.
+- **Certification Course Test** — a dedicated test derived only from the current objectives and taught materials of one Certification Course.
 - **Credential Assessment** — secure final assessment process for a professional credential.
 - **Foundational Certificate** — completion/attainment certificate below professional credential level.
 - **Professional Credential** — one of the eight THC Academy workforce-oriented credentials.
 - **Endorsement** — assessed advanced specialization attached to an appropriate credential.
 
-Do not describe the 420-resource catalog as 420 courses.
+Do not describe the 420-entry Encyclopedia as Certification Courses or use it to satisfy Certification Course/Test completion.
 
 ## 15. Immediate production order
 
