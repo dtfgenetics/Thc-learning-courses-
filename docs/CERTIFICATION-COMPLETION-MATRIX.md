@@ -2,9 +2,11 @@
 
 This file is a human-readable projection of the canonical credential architecture. It must not be used to authorize credential issuance.
 
-Snapshot: 2026-09-21. Repository registries/readiness ledgers are authoritative for certification state; Drive registers are controlled supporting archives and production-asset sources. The legacy 420-course catalog is reconciled as a resource/reference library rather than 420 credential-bearing certification courses.
+Snapshot: 2026-09-22. This matrix covers **certification materials only**. The separate THC Plant Science Encyclopedia (`THC-ENC-001`–`THC-ENC-420`) is not included in certification course, lesson, question, assessment, or completion totals. The historical `THC-C001`–`THC-C420` catalog is crosswalk-only and is not counted as either current certification curriculum or the canonical encyclopedia. Repository registries/readiness ledgers are authoritative for current certification state.
 
-## Inventory Matrix
+## Inventory Matrix — certification system only
+
+**Counting rule:** only dedicated certification-course materials count here. Encyclopedia topics and historical 420-catalog records are excluded.
 
 | Area | Current inventory | Complete | Needs revision | Missing | Integration / QA |
 | --- | ---: | --- | --- | --- | --- |
@@ -47,7 +49,7 @@ Snapshot: 2026-09-21. Repository registries/readiness ledgers are authoritative 
 
 ## Current completion focus
 
-1. Reconcile the controlled repository, Drive registers, and the legacy 420-course catalog so repository registries remain the certification source of truth.
+1. Keep certification-course/test production independent from the 420-topic encyclopedia and historical THC-C crosswalk; never use encyclopedia completion as certification completion.
 2. Keep Technician I's seven source/package contracts, canonical performance objects, and printable job-aid pack green while closing responsive/manual QA, raster asset replacement, changed-object review evidence, practical validation, pilot and standard-setting gates.
 3. Complete human QA and verified cutover for the 82 produced raster candidates, then create the remaining 14 governed Course 1 replacements; SVG compatibility/review assets cannot be released as production visuals.
 4. Complete human scientific/editorial/assessment/accessibility/compliance review records, then collect real pilot/practical/calibration evidence and perform formal standard setting.
