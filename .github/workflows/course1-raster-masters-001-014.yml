@@ -1,0 +1,99 @@
+name: Build Course 1 raster masters 001-014
+
+on:
+  push:
+    branches:
+      - 'feat/course1-raster-masters-001-014-20260922'
+    paths:
+      - 'visuals/COURSE1-RASTER-COPY-LOCK-001-014.json'
+      - 'scripts/build-course1-raster-masters-001-014.py'
+      - '.github/workflows/course1-raster-masters-001-014.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course1-raster-masters-001-014-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install raster renderer
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Build governed PNG candidates
+        run: python scripts/build-course1-raster-masters-001-014.py
+
+      - name: Validate output contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+
+          root = Path('.')
+          manifest = json.loads((root / 'visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json').read_text())
+          rows = manifest.get('assets', [])
+          if len(rows) != 14:
+              raise SystemExit(f'expected 14 raster candidates, found {len(rows)}')
+          if manifest.get('releaseApproved') is not False:
+              raise SystemExit('build manifest must remain releaseApproved=false')
+
+          seen = set()
+          for row in rows:
+              asset_id = row['assetId']
+              if asset_id in seen:
+                  raise SystemExit(f'duplicate asset id: {asset_id}')
+              seen.add(asset_id)
+              p = root / row['file']
+              if p.suffix.lower() != '.png':
+                  raise SystemExit(f'{asset_id}: non-PNG output')
+              if not p.exists() or p.stat().st_size < 100_000:
+                  raise SystemExit(f'{asset_id}: missing or unexpectedly small output')
+              with Image.open(p) as im:
+                  if im.format != 'PNG' or im.size != (2400, 3200):
+                      raise SystemExit(f'{asset_id}: invalid PNG/dimensions {im.format} {im.size}')
+              if row.get('releaseApproved') is not False:
+                  raise SystemExit(f'{asset_id}: candidate must remain releaseApproved=false')
+
+          print('validated 14 governed 2400x3200 PNG review candidates')
+          PY
+
+      - name: Enforce raster-only output
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find visuals/review-candidates/course1/production-masters -maxdepth 1 -type f -name '*001-0*.svg' | grep -q .; then
+            echo 'ERROR: SVG output found in the governed raster production directory.'
+            exit 1
+          fi
+
+      - name: Commit generated candidates and build manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json
+          git add visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-0??-*-master-v1.png
+          if git diff --cached --quiet; then
+            echo 'Generated raster candidates already match the branch.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'assets: build Course 1 raster masters 001-014'
+          git push
