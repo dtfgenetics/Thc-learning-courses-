@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const c=JSON.parse(fs.readFileSync('ops/monitoring-alerting-contract.json','utf8'));
+assert.equal(c.status,'code-ready-deployment-validation-pending');
+assert.ok(c.requiredSignals.length>=8);
+for(const signal of ['admin MFA failures','credential issuance/signing/revocation failures','backup failures and restore-drill failures']) assert.ok(c.requiredSignals.includes(signal),signal);
+for(const value of Object.values(c.alertRouting)) assert.equal(value,null,'unverified alert routing must remain unset');
+assert.ok(c.evidenceRequired.includes('test alert timestamp'));
+assert.match(c.readinessBoundary,/does not satisfy monitoringAndAlerting/i);
+console.log('Monitoring/alerting deployment contract passed.');
