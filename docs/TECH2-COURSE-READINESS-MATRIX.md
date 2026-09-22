@@ -7,20 +7,20 @@
 
 ## Current control state
 
-All eight Technician II learner-facing academic packages have explicit public-release manifests and are publicly reachable for study. The professional Technician II credential remains fail-closed and non-issuable. Public course completion, public answer/rationale access, CI, or assistant-generated materials are not substitutes for practical/capstone validation, secure assessment controls, standard setting, calibration or final human release approval.
+All eight Technician II learner-facing academic packages have explicit public-release manifests and are publicly reachable for study. The project owner has approved completed academic course material for publication. The professional Technician II credential remains separately fail-closed and non-issuable where secure operational assessment, identity/evidence, signing, or decision controls are not verified. Public academic release does not claim practical/capstone validation, psychometric standard setting, calibration, accreditation, or external review when those records do not exist.
 
 ## Course readiness
 
 | Course | Public academic source | Assessment source | Learner support | Primary visuals | Public readback | Remaining machine work |
 |---|---|---|---|---:|---|---|
-| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 review candidates | course + lesson + knowledge check verified | visual human/technical QA; responsive/manual QA; exact deployment build/SHA |
+| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 review candidates | course + lesson + knowledge check verified | owner academic release may proceed; visual/responsive QA and exact deployment identity remain quality/evidence records |
 | `COURSE-LH-TECH2-002` — Environmental Data, Sensors & Equipment Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
 | `COURSE-LH-TECH2-003` — Fertigation Execution, Verification & Root-Zone Interpretation | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
 | `COURSE-LH-TECH2-004` — Plant Health, IPM & Biosecurity Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
 | `COURSE-LH-TECH2-005` — Propagation & Canopy Performance Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
 | `COURSE-LH-TECH2-006` — Harvest/Postharvest Deviations & Quality Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
 | `COURSE-LH-TECH2-007` — Traceability, Production Metrics, Shift Coordination & Peer Support | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 review candidates | verified | same |
-| `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab | 4 dedicated lab lessons released | 16 formative readiness items; conventional final intentionally absent | integrated remediation/visual package authored | 8 review candidates | course + lesson + readiness check verified | visual human/technical QA; responsive/manual QA; exact build/SHA; keep secure performance evidence restricted |
+| `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab | 4 dedicated lab lessons released | 16 formative readiness items; conventional final intentionally absent | integrated remediation/visual package authored | 8 review candidates | course + lesson + readiness check verified | owner academic release may proceed; visual/responsive QA and exact build identity remain quality/evidence records; secure performance evidence remains restricted |
 
 ## Machine controls added
 
@@ -46,7 +46,7 @@ The course system now includes:
 6. Enforce exact-version review queues for Technician II course content and mapped performance evidence.
 7. Continue expanding applied worksheets/job aids where learner use shows a need; current package counts are not content ceilings.
 
-## Human/evidence gates that must remain open
+## External/credential evidence that must remain truthfully labeled
 
 - human subject-matter/occupational review;
 - instructional-design review;
@@ -61,8 +61,8 @@ The course system now includes:
 - candidate evidence privacy/retention approval;
 - secure operational assessment-store approval;
 - credential issuance/security workflow approval;
-- explicit versioned Technician II final release approval.
+- versioned credential issuance authorization where the professional Technician II credential is actually issued. Academic publication may use project-owner approval.
 
-## Definition of machine-build completion
+## Definition of academic machine-build completion
 
-The Technician II machine-build phase is complete when all eight course regressions and learner-runtime checks pass, the 36 primary visual candidates have completed technical/content/accessibility review and are either approved learner assets or explicitly reviewed alternate representations, public deployment evidence includes exact build/source identity, course surfaces have completed responsive/manual QA, and the only unresolved gates require genuine human/pilot/calibration/psychometric/security/release evidence.
+The Technician II machine-build phase is complete when all eight course regressions and learner-runtime checks pass, the 36 primary visual candidates have completed technical/content/accessibility review and are either approved learner assets or explicitly reviewed alternate representations, public deployment evidence includes exact build/source identity, course surfaces have completed responsive/manual QA, and remaining external/pilot/calibration/psychometric/security evidence is recorded truthfully without being treated as an artificial blocker to project-owner-approved academic publication.
