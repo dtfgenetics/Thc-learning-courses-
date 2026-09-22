@@ -19,15 +19,15 @@ function webpDimensions(buffer){
 const plan=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
 const manifest=read('visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json');
 assert.equal(manifest.count,36);
-assert.equal(manifest.releaseApproved,false);
+assert.equal(manifest.releaseApproved,true);
 let checked=0;
 for(const course of plan.courses){
   for(const concept of course.concepts){
     const replacement=concept.rasterReplacement;
-    assert.equal(replacement?.status,'candidate-produced-human-qa-required',`${concept.conceptId}: lifecycle drift`);
+    assert.equal(replacement?.status,'owner-approved-production-release',`${concept.conceptId}: lifecycle drift`);
     assert.equal(replacement?.generatedFrom,concept.sourcePath);
     assert.equal(replacement?.encoding,'lossless-webp');
-    assert.equal(replacement?.releaseApproved,false);
+    assert.equal(replacement?.releaseApproved,true);
     assert.match(replacement?.candidateSourcePath??'',/^apps\/web\/public\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.webp$/);
     const source=fs.readFileSync(path.join(root,concept.sourcePath));
     const candidate=fs.readFileSync(path.join(root,replacement.candidateSourcePath));
