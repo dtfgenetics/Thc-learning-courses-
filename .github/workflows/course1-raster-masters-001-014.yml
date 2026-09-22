@@ -1,4 +1,4 @@
-name: Build Course 1 raster masters 001-014
+name: Build Course 1 raster completion set
 
 on:
   push:
@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: course1-raster-masters-001-014-${{ github.ref }}
+  group: course1-raster-completion-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -49,36 +49,41 @@ jobs:
           root = Path('.')
           manifest = json.loads((root / 'visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json').read_text())
           rows = manifest.get('assets', [])
-          if len(rows) != 14:
-              raise SystemExit(f'expected 14 raster candidates, found {len(rows)}')
+
+          if len(rows) != 17:
+              raise SystemExit(f'expected 17 raster candidates, found {len(rows)}')
+          if manifest.get('governedReplacementCount') != 14:
+              raise SystemExit('expected 14 governed replacement candidates')
+          if manifest.get('supplementalPrimaryConceptCount') != 3:
+              raise SystemExit('expected 3 supplemental primary-concept candidates')
           if manifest.get('releaseApproved') is not False:
               raise SystemExit('build manifest must remain releaseApproved=false')
 
           seen = set()
           for row in rows:
-              asset_id = row['assetId']
-              if asset_id in seen:
-                  raise SystemExit(f'duplicate asset id: {asset_id}')
-              seen.add(asset_id)
+              record_id = row['recordId']
+              if record_id in seen:
+                  raise SystemExit(f'duplicate record id: {record_id}')
+              seen.add(record_id)
               p = root / row['file']
               if p.suffix.lower() != '.png':
-                  raise SystemExit(f'{asset_id}: non-PNG output')
+                  raise SystemExit(f'{record_id}: non-PNG output')
               if not p.exists() or p.stat().st_size < 100_000:
-                  raise SystemExit(f'{asset_id}: missing or unexpectedly small output')
+                  raise SystemExit(f'{record_id}: missing or unexpectedly small output')
               with Image.open(p) as im:
                   if im.format != 'PNG' or im.size != (2400, 3200):
-                      raise SystemExit(f'{asset_id}: invalid PNG/dimensions {im.format} {im.size}')
+                      raise SystemExit(f'{record_id}: invalid PNG/dimensions {im.format} {im.size}')
               if row.get('releaseApproved') is not False:
-                  raise SystemExit(f'{asset_id}: candidate must remain releaseApproved=false')
+                  raise SystemExit(f'{record_id}: candidate must remain releaseApproved=false')
 
-          print('validated 14 governed 2400x3200 PNG review candidates')
+          print('validated 14 governed replacements + 3 supplemental primary masters at 2400x3200 PNG')
           PY
 
       - name: Enforce raster-only output
         shell: bash
         run: |
           set -euo pipefail
-          if find visuals/review-candidates/course1/production-masters -maxdepth 1 -type f -name '*001-0*.svg' | grep -q .; then
+          if find visuals/review-candidates/course1/production-masters -maxdepth 1 -type f -name '*.svg' | grep -q .; then
             echo 'ERROR: SVG output found in the governed raster production directory.'
             exit 1
           fi
@@ -88,12 +93,12 @@ jobs:
         run: |
           set -euo pipefail
           git add visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json
-          git add visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-0??-*-master-v1.png
+          git add visuals/review-candidates/course1/production-masters/*.png
           if git diff --cached --quiet; then
             echo 'Generated raster candidates already match the branch.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'assets: build Course 1 raster masters 001-014'
+          git commit -m 'assets: build Course 1 raster completion set'
           git push
