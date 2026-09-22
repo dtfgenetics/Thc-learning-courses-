@@ -90,11 +90,13 @@ assert.equal(course1Release.productionMasterProgress?.produced,18,'All Course 1 
 assert.equal(course1Release.productionMasterProgress?.remaining,0,'No primary Course 1 production master may remain unbuilt');
 assert.equal(course1Release.productionMasterProgress?.supportingProduced,5,'All five supporting Course 1 raster replacements must exist');
 assert.equal(course1Release.productionMasterProgress?.supportingRemaining,0,'No supporting Course 1 raster production may remain open');
-assert.equal(course1Release.productionMasterProgress?.releaseApproved,0,'No primary Course 1 raster is human-approved yet');
-assert.equal(course1Release.productionMasterProgress?.supportingReleaseApproved,0,'No supporting Course 1 raster is human-approved yet');
+assert.equal(course1Release.productionMasterProgress?.releaseApproved,18,'All 18 primary Course 1 rasters must record owner-approved release');
+assert.equal(course1Release.productionMasterProgress?.supportingReleaseApproved,5,'All five supporting Course 1 rasters must record owner-approved release');
 
 for(const row of [...(course1Release.concepts??[]),...(course1Release.supportingReplacements??[])]){
-  assert.equal(row.releaseApproved,false,`${row.conceptId??row.assetId}: release must remain fail-closed`);
+  assert.equal(row.releaseApproved,true,`${row.conceptId??row.assetId}: owner-approved Course 1 release must be recorded`);
+  assert.equal(row.candidate?.qaStatus,'public-approved',`${row.conceptId??row.assetId}: released raster must be public-approved`);
+  assert.match(row.candidate?.registryAssetId??'',/^VIS-LH-TECH1-001-[0-9]{3}$/,`${row.conceptId??row.assetId}: released raster registry ID required`);
   assert.match(row.candidate?.repositoryPath??'',/^visuals\/review-candidates\/course1\/production-masters\/.+\.png$/i,`${row.conceptId??row.assetId}: governed repository candidate path missing`);
   assert.match(row.candidate?.targetPublicPath??'',/^\/assets\/course1\/.+\.(png|webp|jpe?g)$/i,`${row.conceptId??row.assetId}: governed public raster target missing`);
   assert.equal(row.candidate?.pixelDimensions?.width,2400,`${row.conceptId??row.assetId}: release candidate width drift`);
@@ -127,4 +129,4 @@ for(const row of replacementProgram.technicianII??[]){
   assert.equal(row.count,expectedTech2Counts.get(n),`${row.courseId}: raster queue count drift`);
 }
 
-console.log('Raster production policy: PASS (96/96 governed candidates produced; Course 1 has 18 primary + 5 supporting masters; 0 release approvals).');
+console.log('Raster production policy: PASS (96/96 governed candidates produced; Course 1 has 18 primary + 5 supporting masters released; 20/96 governed replacements released).');
