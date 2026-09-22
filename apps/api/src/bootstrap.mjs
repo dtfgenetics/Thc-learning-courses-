@@ -25,6 +25,18 @@ export function validateProductionEnvironment(env = process.env) {
   return { mode: 'production', persistenceAdapterModule, authAdapterModule, publicBaseUrl: parsed.toString(), requiredSchemaVersion };
 }
 
+export function enforceProductionAuthAssurance(authorize) {
+  if (typeof authorize !== 'function') throw new Error('Production authorizer must be a function');
+  return function authorizeWithAssurance(req, requiredScope) {
+    const result = authorize(req, requiredScope);
+    if (!result?.ok) return result;
+    if (String(requiredScope ?? '').startsWith('admin:') && result.mfaVerified !== true) {
+      return { ok: false, status: 403, error: 'admin-mfa-required' };
+    }
+    return result;
+  };
+}
+
 export async function loadProductionApiOptions(env = process.env) {
   const config = validateProductionEnvironment(env);
   if (config.mode !== 'production') return { env };
@@ -67,8 +79,9 @@ export async function loadProductionApiOptions(env = process.env) {
 
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
   if (typeof authModule.createRequestAuthorizer !== 'function') throw new Error('Authentication adapter module must export createRequestAuthorizer({ env })');
-  const authorize = await authModule.createRequestAuthorizer({ env });
-  if (typeof authorize !== 'function') throw new Error('Authentication adapter must return an authorize(req, requiredScope) function');
+  const rawAuthorize = await authModule.createRequestAuthorizer({ env });
+  if (typeof rawAuthorize !== 'function') throw new Error('Authentication adapter must return an authorize(req, requiredScope) function');
+  const authorize = enforceProductionAuthAssurance(rawAuthorize);
 
   return {
     env,
