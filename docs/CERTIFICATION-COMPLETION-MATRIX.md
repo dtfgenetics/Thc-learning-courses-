@@ -2,7 +2,7 @@
 
 This file is a human-readable projection of the canonical credential architecture. It must not be used to authorize credential issuance.
 
-Snapshot: 2026-09-21. Repository registries/readiness ledgers are authoritative for certification state; Drive registers are controlled supporting archives and production-asset sources. The legacy 420-course catalog is reconciled as a resource/reference library rather than 420 credential-bearing certification courses.
+Snapshot: 2026-09-21. Repository registries/readiness ledgers are authoritative for certification state; Drive registers are controlled supporting archives and production-asset sources. The separate 420-entry THC Encyclopedia is excluded from certification completion accounting. Certification completion is measured only from dedicated Certification Courses, their own lessons, course-specific tests, practicals, review evidence, deployment evidence, and credential objects.
 
 ## Inventory Matrix
 
@@ -47,7 +47,7 @@ Snapshot: 2026-09-21. Repository registries/readiness ledgers are authoritative 
 
 ## Current completion focus
 
-1. Reconcile the controlled repository, Drive registers, and the legacy 420-course catalog so repository registries remain the certification source of truth.
+1. Keep certification accounting isolated from the standalone 420-entry THC Encyclopedia. Certification readiness is measured only from dedicated `COURSE-LH-*` course material, its own `LESSON-LH-*` instruction, course-specific assessments, practicals, reviews, deployment evidence, and credential objects.
 2. Keep Technician I's seven source/package contracts, canonical performance objects, and printable job-aid pack green while closing responsive/manual QA, raster asset replacement, changed-object review evidence, practical validation, pilot and standard-setting gates.
 3. Complete human QA and verified cutover for the 82 produced raster candidates, then create the remaining 14 governed Course 1 replacements; SVG compatibility/review assets cannot be released as production visuals.
 4. Complete human scientific/editorial/assessment/accessibility/compliance review records, then collect real pilot/practical/calibration evidence and perform formal standard setting.
