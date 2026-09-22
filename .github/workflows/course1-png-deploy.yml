@@ -1,13 +1,22 @@
-name: Deploy Course 1 PNG candidates
+name: Deploy approved Course 1 raster replacements
 
 on:
   workflow_dispatch:
   push:
+    branches:
+      - dev
     paths:
+      - 'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json'
+      - 'visuals/ASSET-REGISTRY.json'
+      - 'visuals/review-candidates/course1/production-masters/**'
       - '.github/workflows/course1-png-deploy.yml'
 
 permissions:
   contents: write
+
+concurrency:
+  group: course1-approved-raster-deploy-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -18,63 +27,92 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download controlled Course 1 PNG masters
+      - name: Stage only explicitly approved repository candidates
+        id: stage
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p apps/web/public/assets/course1
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
 
-          download_png() {
-            local id="$1"
-            local out="$2"
-            curl --fail --location --retry 3 --retry-delay 2 \
-              "https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t" \
-              --output "$out"
-            magic="$(head -c 8 "$out" | od -An -tx1 | tr -d ' \n')"
-            if [ "$magic" != "89504e470d0a1a0a" ]; then
-              echo "ERROR: $out is not a valid PNG (magic=$magic)"
-              exit 1
-            fi
+          const manifest = JSON.parse(fs.readFileSync('visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json', 'utf8'));
+          const approved = (manifest.concepts || []).filter((row) => row.releaseApproved === true);
+
+          if (approved.length === 0) {
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, 'approved_count=0\n');
+            console.log('No Course 1 raster candidate is releaseApproved=true. Nothing will be published.');
+            process.exit(0);
           }
 
-          download_png '1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv' 'apps/web/public/assets/course1/equipment-preuse-v3.png'
-          download_png '1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2' 'apps/web/public/assets/course1/operator-vs-maintenance-v3.png'
-          download_png '17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv' 'apps/web/public/assets/course1/fault-report-v3.png'
-          download_png '1FPA-1ygokBNPOl-6R2POSamkNENUpwEX' 'apps/web/public/assets/course1/record-correction-v3.png'
-          download_png '1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY' 'apps/web/public/assets/course1/shift-handoff-v3.png'
-          download_png '1o8suJoL6YbubrwZLArXSBGb2dKYlbyey' 'apps/web/public/assets/course1/integrated-workflow-v3.png'
+          let copied = 0;
+          for (const row of approved) {
+            const candidate = row.candidate || {};
+            const source = candidate.repositoryPath;
+            const targetPublicPath = candidate.targetPublicPath;
 
-      - name: Deterministic asset checks
+            if (!source || !targetPublicPath) {
+              throw new Error(`${row.conceptId}: approved candidate requires repositoryPath and targetPublicPath`);
+            }
+            if (!source.startsWith('visuals/review-candidates/course1/production-masters/')) {
+              throw new Error(`${row.conceptId}: source must be a governed repository production master`);
+            }
+            if (!targetPublicPath.startsWith('/assets/course1/')) {
+              throw new Error(`${row.conceptId}: targetPublicPath must stay inside /assets/course1/`);
+            }
+            if (!/\.(png|webp|jpe?g)$/i.test(source) || !/\.(png|webp|jpe?g)$/i.test(targetPublicPath)) {
+              throw new Error(`${row.conceptId}: only governed raster formats may be deployed`);
+            }
+            if (!fs.existsSync(source)) {
+              throw new Error(`${row.conceptId}: approved repository candidate does not exist: ${source}`);
+            }
+
+            const target = path.join('apps/web/public', targetPublicPath);
+            fs.mkdirSync(path.dirname(target), { recursive: true });
+            fs.copyFileSync(source, target);
+            copied += 1;
+            console.log(`staged ${row.conceptId}: ${source} -> ${target}`);
+          }
+
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `approved_count=${copied}\n`);
+          NODE
+
+      - name: Validate staged raster files
+        if: steps.stage.outputs.approved_count != '0'
         shell: bash
         run: |
           set -euo pipefail
-          for f in \
-            apps/web/public/assets/course1/equipment-preuse-v3.png \
-            apps/web/public/assets/course1/operator-vs-maintenance-v3.png \
-            apps/web/public/assets/course1/fault-report-v3.png \
-            apps/web/public/assets/course1/record-correction-v3.png \
-            apps/web/public/assets/course1/shift-handoff-v3.png \
-            apps/web/public/assets/course1/integrated-workflow-v3.png
-          do
-            test -s "$f"
-            bytes="$(wc -c < "$f")"
-            if [ "$bytes" -lt 100000 ]; then
-              echo "ERROR: $f is unexpectedly small ($bytes bytes)"
-              exit 1
-            fi
-            echo "verified $f ($bytes bytes)"
-          done
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const manifest = JSON.parse(fs.readFileSync('visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json', 'utf8'));
+          const approved = (manifest.concepts || []).filter((row) => row.releaseApproved === true);
 
-      - name: Commit public PNG assets
+          for (const row of approved) {
+            const target = path.join('apps/web/public', row.candidate.targetPublicPath);
+            const bytes = fs.readFileSync(target);
+            if (bytes.length < 100000) throw new Error(`${row.conceptId}: staged raster is unexpectedly small`);
+
+            const ext = path.extname(target).toLowerCase();
+            if (ext === '.png') {
+              const magic = bytes.subarray(0, 8).toString('hex');
+              if (magic !== '89504e470d0a1a0a') throw new Error(`${row.conceptId}: invalid PNG signature`);
+            }
+          }
+          console.log(`Validated ${approved.length} explicitly approved Course 1 raster replacement(s).`);
+          NODE
+
+      - name: Commit approved public raster replacements
+        if: steps.stage.outputs.approved_count != '0'
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet -- apps/web/public/assets/course1; then
-            echo 'No asset changes to commit.'
+            echo 'Approved public assets already match repository candidates.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add apps/web/public/assets/course1/*.png
-          git commit -m 'assets: publish Course 1 PNG candidates 13-18'
+          git add apps/web/public/assets/course1
+          git commit -m 'assets: publish approved Course 1 raster replacements'
           git push
