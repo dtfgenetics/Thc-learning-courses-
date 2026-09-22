@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-ACADEMY-BACKUP-RESTORE-CONTRACT-001",
+  "status": "code-ready-deployment-validation-pending",
+  "database": "PostgreSQL",
+  "requirements": {
+    "encryptionAtRest": true,
+    "encryptedTransport": true,
+    "automatedBackupsRequired": true,
+    "pointInTimeRecoveryRequiredWhereSupported": true,
+    "isolatedRestoreDrillRequired": true,
+    "restoreMustVerifySchemaVersion": true,
+    "restoreMustVerifyCredentialAndAuditIntegrity": true,
+    "destructiveProductionRestoreWithoutApprovalAllowed": false
+  },
+  "deploymentValues": {
+    "provider": null,
+    "backupSchedule": null,
+    "rpoMinutes": null,
+    "rtoMinutes": null,
+    "retentionDays": null,
+    "lastSuccessfulBackup": null,
+    "lastRestoreDrill": null
+  },
+  "readinessBoundary": "Contract completeness does not satisfy backupRestoreTested. Provider configuration, successful backups and an isolated restore drill must be evidenced from the deployed environment."
+}

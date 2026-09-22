@@ -1,8 +1,13 @@
 import assert from 'node:assert/strict';
-import { loadProductionApiOptions, validateProductionEnvironment } from '../apps/api/src/bootstrap.mjs';
+import { enforceProductionAuthAssurance, loadProductionApiOptions, validateProductionEnvironment } from '../apps/api/src/bootstrap.mjs';
 import { createHandler } from '../apps/api/src/server.mjs';
 
 assert.deepEqual(validateProductionEnvironment({ NODE_ENV: 'development' }), { mode: 'development' });
+
+const noMfa = enforceProductionAuthAssurance(() => ({ ok: true, subject: 'admin-no-mfa', scopes: ['admin:read'], mfaVerified: false }));
+assert.deepEqual(noMfa({ headers: {} }, 'admin:read'), { ok: false, status: 403, error: 'admin-mfa-required' });
+const learnerWithoutMfa = enforceProductionAuthAssurance(() => ({ ok: true, subject: 'learner', scopes: ['learner:read'], mfaVerified: false }));
+assert.equal(learnerWithoutMfa({ headers: {} }, 'learner:read').ok, true);
 
 for (const env of [
   { NODE_ENV: 'production' },
@@ -49,10 +54,11 @@ assert.equal(authMissing.status, 401);
 const authOk = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:read');
 assert.equal(authOk.ok, true);
 assert.equal(authOk.subject, 'external-user-001');
+assert.equal(authOk.mfaVerified, true);
 for (const scope of ['admin:write', 'learner:read', 'learner:write', 'evaluator:read', 'evaluator:write']) assert.ok(authOk.scopes.includes(scope));
 const evaluatorAuth = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'evaluator:write');
 assert.equal(evaluatorAuth.ok, true);
 const adminWrite = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:write');
 assert.equal(adminWrite.ok, true);
 
-console.log('Production persistence, schema v4 readiness, learner practical submissions, automatic academic enrollment completion, assessment/evidence, evaluator queue/assignment/reporting, and authentication adapter contracts passed.');
+console.log('Production persistence, schema v4 readiness, learner practical submissions, automatic academic enrollment completion, assessment/evidence, evaluator queue/assignment/reporting, authentication adapter, and admin MFA assurance contracts passed.');

@@ -1,6 +1,6 @@
 {
   "system": "THC Academy",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "updatedAt": "2026-09-22",
   "productionReady": false,
   "areas": {
@@ -81,8 +81,11 @@
         "serverSideScoringBoundary": true,
         "adminMfaEnforced": false,
         "rowLevelAuthorization": false,
-        "securityReviewComplete": false
-      }
+        "securityReviewComplete": false,
+        "adminMfaEnforcementCodeReady": true,
+        "rowLevelAuthorizationPolicyCodeReady": true
+      },
+      "scope": "Production bootstrap now requires explicit MFA evidence for admin scopes, and repository RLS policy/migration contracts are executable. adminMfaEnforced, rowLevelAuthorization and securityReviewComplete remain false until deployed identity/database controls and independent validation prove them."
     },
     "accessibility": {
       "status": "design",
@@ -102,9 +105,11 @@
         "productionEnvironment": false,
         "backupRestoreTested": false,
         "incidentResponseRunbook": true,
-        "monitoringAndAlerting": false
+        "monitoringAndAlerting": false,
+        "backupRestoreContractCodeReady": true,
+        "monitoringAlertingContractCodeReady": true
       },
-      "scope": "Repository release controls exist; production operational approval requires deployed environment, persistence, backup/restore, monitoring, and release evidence."
+      "scope": "Repository release controls now include executable backup/restore and monitoring/alerting contracts. Live staging/production environments, demonstrated restore drills and deployed monitoring remain false until infrastructure-backed evidence exists."
     },
     "learnerExperience": {
       "status": "integrated-development",
@@ -114,8 +119,10 @@
         "consolidatedDashboard": true,
         "privacyBoundedCredentialTranscript": true,
         "practicalEvidenceSubmissionRepositoryImplemented": true,
-        "practicalEvidenceSubmissionWorkflow": false
-      }
+        "practicalEvidenceSubmissionWorkflow": false,
+        "practicalEvidenceSubmissionWorkflowCodeReady": true
+      },
+      "scope": "Learner practical evidence submission has domain, API and persistence contracts. The live operational workflow gate remains false until deployed end-to-end validation with real identity, persistence and evaluator operations exists."
     }
   },
   "readinessScope": {

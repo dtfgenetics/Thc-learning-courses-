@@ -4,6 +4,6 @@ export async function createRequestAuthorizer() {
     if (header !== 'Bearer external-test-token') return { ok: false, status: 401, error: 'invalid-authentication' };
     const scopes = ['admin:read', 'admin:write', 'learner:read', 'learner:write', 'evaluator:read', 'evaluator:write'];
     if (requiredScope && !scopes.includes(requiredScope)) return { ok: false, status: 403, error: 'insufficient-scope' };
-    return { ok: true, subject: 'external-user-001', scopes };
+    return { ok: true, subject: 'external-user-001', scopes, mfaVerified: true, authenticationMethods: ['password','otp'] };
   };
 }
