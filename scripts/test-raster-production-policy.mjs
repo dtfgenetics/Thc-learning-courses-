@@ -42,8 +42,11 @@ assert.equal(tech2.policy?.productionFormatPolicy?.svgReleaseAllowed,false,'Tech
 assert.deepEqual(tech2.policy?.productionFormatPolicy?.allowedReleasedExtensions,releaseRaster);
 for(const course of tech2.courses??[]){
   for(const concept of course.concepts??[]){
-    assert.equal(concept.rasterReplacement?.status,'candidate-produced-human-qa-required',`${concept.conceptId}: Technician II candidate lifecycle drift`);
-    assert.equal(concept.rasterReplacement?.releaseApproved,false,`${concept.conceptId}: candidate production cannot imply approval`);
+    assert.equal(concept.rasterReplacement?.status,'owner-approved-production-release',`${concept.conceptId}: Technician II released lifecycle drift`);
+    assert.equal(concept.rasterReplacement?.releaseApproved,true,`${concept.conceptId}: owner-approved academic raster release required`);
+    assert.equal(concept.qaApproved,true,`${concept.conceptId}: released concept must record QA approval`);
+    assert.match(concept.targetPublicPath??'',/^\/assets\/tech2\/.+\.webp$/i,`${concept.conceptId}: released learner target must be WebP`);
+    assert.match(concept.sourcePath??'',/^apps\/web\/public\/assets\/tech2\/.+\.webp$/i,`${concept.conceptId}: released source path must be WebP`);
   }
 }
 
@@ -51,8 +54,8 @@ const replacementProgram=read('registry/raster-replacement-program.json');
 assert.equal(replacementProgram.summary?.totalGovernedReplacements,96,'Raster program total must reconcile to 96 governed replacements');
 assert.equal(replacementProgram.summary?.technicianI,60,'Technician I raster program must reconcile to 60 replacements');
 assert.equal(replacementProgram.summary?.technicianII,36,'Technician II raster program must reconcile to 36 replacements');
-assert.equal(replacementProgram.summary?.releasedRasterReplacements,20,'Course 1 must contribute 20 released governed raster replacements');
-assert.equal(replacementProgram.summary?.openRasterReplacements,76,'Seventy-six governed replacements must remain open after the Course 1 cutover');
+assert.equal(replacementProgram.summary?.releasedRasterReplacements,96,'All 96 governed raster replacements must record owner-approved academic release');
+assert.equal(replacementProgram.summary?.openRasterReplacements,0,'No governed raster replacement may remain open after owner-approved cutover');
 assert.equal(replacementProgram.summary?.producedRasterCandidates,96,'All governed raster replacement candidates must be machine-produced');
 assert.equal(replacementProgram.summary?.remainingRasterProduction,0,'Raster production backlog must be zero once all governed binaries exist');
 
@@ -129,4 +132,4 @@ for(const row of replacementProgram.technicianII??[]){
   assert.equal(row.count,expectedTech2Counts.get(n),`${row.courseId}: raster queue count drift`);
 }
 
-console.log('Raster production policy: PASS (96/96 governed candidates produced; Course 1 has 18 primary + 5 supporting masters released; 20/96 governed replacements released).');
+console.log('Raster production policy: PASS (96/96 governed candidates produced and owner-approved for academic raster release; professional credential issuance remains separately controlled).');
