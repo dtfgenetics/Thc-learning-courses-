@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "competencies": [
     "COMP-PLANT-BIO-001",
@@ -85,6 +85,30 @@
     "bankExpansionTarget": 30,
     "completionModel": "The course assessment is development evidence only while the course remains draft. Credential performance still requires the mapped Technician I practical and program-level release gates.",
     "distinctFormativeBank": true,
-    "formativeAssessment": "ASSESS-LH-TECH1-002-M01"
+    "formativeAssessment": "ASSESS-LH-TECH1-002-M01",
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH1-002-01": [
+        "LESSON-LH-TECH1-002-01"
+      ],
+      "LO-LH-TECH1-002-02": [
+        "LESSON-LH-TECH1-002-02"
+      ],
+      "LO-LH-TECH1-002-03": [
+        "LESSON-LH-TECH1-002-01",
+        "LESSON-LH-TECH1-002-02",
+        "LESSON-LH-TECH1-002-03"
+      ],
+      "LO-LH-TECH1-002-04": [
+        "LESSON-LH-TECH1-002-04"
+      ],
+      "LO-LH-TECH1-002-05": [
+        "LESSON-LH-TECH1-002-03",
+        "LESSON-LH-TECH1-002-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-002/TEST-TO-TEACHING-MAP.md"
   }
 }
