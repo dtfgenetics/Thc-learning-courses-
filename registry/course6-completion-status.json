@@ -1,7 +1,7 @@
 {
   "courseId": "COURSE-LH-TECH1-006",
-  "version": "0.2.0",
-  "updated": "2026-09-18",
+  "version": "0.3.0",
+  "updated": "2026-09-22",
   "academicPublication": "draft",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
@@ -17,10 +17,11 @@
     "scripts/test-build-identity-endpoint.mjs",
     "scripts/verify-public-deployment-identity.mjs",
     "scripts/test-tech1-courses3-7-learner-runtime.mjs",
-    "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md"
+    "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md",
+    "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
   ],
   "nextMachineActions": [
-    "produce and QA high-resolution raster replacements for Course 6 legacy SVG compatibility assets, retiring each SVG only after verified public-path replacement"
+    "after required human factual/copy, accessibility and responsive review is recorded, cut over the approved Course 6 raster WebP replacements in canonical lesson/registry paths and verify every public path before retiring the matching SVG baseline"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
@@ -57,5 +58,14 @@
     "state": "verified",
     "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
     "buildId": "dtf-academy-338f3cc23581-35582824708"
+  },
+  "rasterCandidateProduction": {
+    "state": "produced-automated-qa-passed-human-cutover-review-open",
+    "candidateCount": 8,
+    "format": "lossless-webp",
+    "minimumShortSidePx": 1600,
+    "manifest": "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json",
+    "releaseApproved": false,
+    "boundary": "SVG compatibility baselines remain live until human factual/copy, accessibility, responsive/manual and verified public-path cutover review is recorded."
   }
 }

@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "id": "TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST-001",
+  "updated": "2026-09-22",
+  "courseIds": [
+    "COURSE-LH-TECH1-003",
+    "COURSE-LH-TECH1-004",
+    "COURSE-LH-TECH1-005",
+    "COURSE-LH-TECH1-006"
+  ],
+  "purpose": "Integrity and automated-QA record for the 30 Technician I Courses 3-6 high-resolution lossless WebP candidates rendered from canonical learner-facing SVG compatibility baselines.",
+  "productionMethod": {
+    "source": "canonical SVG compatibility baseline",
+    "format": "lossless WebP",
+    "minimumShortSidePx": 1600,
+    "contentTransformation": "none; deterministic raster rendering only"
+  },
+  "summary": {
+    "expectedCandidates": 30,
+    "producedCandidates": 30,
+    "automatedQaPassed": 30,
+    "releasedReplacements": 0,
+    "humanQaPending": 30,
+    "byCourse": {
+      "COURSE-LH-TECH1-003": 6,
+      "COURSE-LH-TECH1-004": 7,
+      "COURSE-LH-TECH1-005": 9,
+      "COURSE-LH-TECH1-006": 8
+    }
+  },
+  "candidates": [
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "assetId": "VIS-LH-TECH1-003-001",
+      "sourcePath": "apps/web/public/assets/course3/environment-measurement-context.svg",
+      "sourceSha256": "936777b7f9cc0656725299a07b62dc5e3dd8232fdaea844c39bbb1251f101fa5",
+      "candidatePath": "apps/web/public/assets/course3/environment-measurement-context.webp",
+      "candidateSha256": "3c53278cae3cc7bfb062d42dea637d3dcb778e4d43f5bccd03a99b762d8ce21a",
+      "bytes": 156384,
+      "pixelDimensions": {
+        "width": 2526,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "assetId": "VIS-LH-TECH1-003-002",
+      "sourcePath": "apps/web/public/assets/course3/ppfd-grid-measurement.svg",
+      "sourceSha256": "3154069bd0d6431b2d63af6a2937505346968dcaafd441561791d83fb3be6954",
+      "candidatePath": "apps/web/public/assets/course3/ppfd-grid-measurement.webp",
+      "candidateSha256": "759bcb6da32ee56679cbb0fc82499ad5b311462ad65041fa6f64c4a02f771267",
+      "bytes": 128836,
+      "pixelDimensions": {
+        "width": 2526,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "assetId": "VIS-LH-TECH1-003-003",
+      "sourcePath": "apps/web/public/assets/course3/sensor-representativeness-triage.svg",
+      "sourceSha256": "2cd43369d937e80b622285b7d86ac43f488337253e0e68756f17c0bf1f32c562",
+      "candidatePath": "apps/web/public/assets/course3/sensor-representativeness-triage.webp",
+      "candidateSha256": "c0340b0aa5c4329b6e2046b10ef068e416e392402f967f7e08922b27ab84d4df",
+      "bytes": 168138,
+      "pixelDimensions": {
+        "width": 2526,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "assetId": "VIS-LH-TECH1-003-004",
+      "sourcePath": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.svg",
+      "sourceSha256": "419007ccfa77bf0ab4073017049225e08208ccbf73c91d307c99ca7c7801872a",
+      "candidatePath": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.webp",
+      "candidateSha256": "5fd4671269fed72a536055d1e99545175bae83cb8e2013b49967645dce257daf",
+      "bytes": 144342,
+      "pixelDimensions": {
+        "width": 2526,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "assetId": "VIS-LH-TECH1-003-005",
+      "sourcePath": "apps/web/public/assets/course3/environment-measurement-practice.svg",
+      "sourceSha256": "88f5ef72c86d3aacddc5533c3687a069084addc50f6eeaf84aefa63cfe2447e8",
+      "candidatePath": "apps/web/public/assets/course3/environment-measurement-practice.webp",
+      "candidateSha256": "82e8caf93b2a051dc6cd5925cf3247514056d0a3c712a981a104613835b48b1d",
+      "bytes": 103646,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2053
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "assetId": "VIS-LH-TECH1-003-006",
+      "sourcePath": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.svg",
+      "sourceSha256": "42737f8534f35be27af446804b8b67cd098f497c634a754e9ce6f31b83bb4682",
+      "candidatePath": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.webp",
+      "candidateSha256": "3f560af5f4c2d38ffc310bdd1191a610454b03d0c9c2180e7a5b24d40023a481",
+      "bytes": 114082,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2053
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-001",
+      "sourcePath": "apps/web/public/assets/course4/sample-ph-ec-context.svg",
+      "sourceSha256": "4dc7a9f3be175b80d3e28e13e56046d405f28b7c2bcda40d086f042667dc59b8",
+      "candidatePath": "apps/web/public/assets/course4/sample-ph-ec-context.webp",
+      "candidateSha256": "2bdaa9eb4dc084101339f338b4a219458c88b27d410a2256e16234b2f633eb33",
+      "bytes": 154120,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-002",
+      "sourcePath": "apps/web/public/assets/course4/root-zone-dryback-trend.svg",
+      "sourceSha256": "d323b5e33d31b4427b31a1acb5ed12a21b928e2b1626961b83e82ba345bd8212",
+      "candidatePath": "apps/web/public/assets/course4/root-zone-dryback-trend.webp",
+      "candidateSha256": "2ee1a9d2f095c2dde9d50a46d9212b43a1f44aae87b0ef5e0e2901e502fd93c9",
+      "bytes": 111686,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-003",
+      "sourcePath": "apps/web/public/assets/course4/nutrition-context-differential.svg",
+      "sourceSha256": "2fd30d4debcb189a4000e3230dc80f14938c3be94967eac95313548b5e52eaff",
+      "candidatePath": "apps/web/public/assets/course4/nutrition-context-differential.webp",
+      "candidateSha256": "fd510f23c40a7cfddc133afa4c0dd96a9d4fe072e2685acf36ce77c69f80a5d9",
+      "bytes": 133582,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-004",
+      "sourcePath": "apps/web/public/assets/course4/irrigation-work-order-delivery.svg",
+      "sourceSha256": "57549847da7c31207379c09725ccca5ba4a301d02b3293519d01a5a66baf0df1",
+      "candidatePath": "apps/web/public/assets/course4/irrigation-work-order-delivery.webp",
+      "candidateSha256": "dd93948a3b2a9ca9e8c300a34059d2448d98db438b9b565b97a42e2d8163cfe0",
+      "bytes": 144182,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-005",
+      "sourcePath": "apps/web/public/assets/course4/irrigation-fault-handoff-workflow.svg",
+      "sourceSha256": "e1e3a6f30fa3cf90da42a98efec1bd804b52dd4fc3e7234c815bb15210816e73",
+      "candidatePath": "apps/web/public/assets/course4/irrigation-fault-handoff-workflow.webp",
+      "candidateSha256": "51707b0b448b49d2474156a035cb3d80414216ecbce3ea2acd5852fc78f4b525",
+      "bytes": 129900,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-006",
+      "sourcePath": "apps/web/public/assets/course4/water-solution-measurement-practice.svg",
+      "sourceSha256": "788bce8dc064d44362718f8ef1aca4142d889bb9780db135f2e695af6c9e57f7",
+      "candidatePath": "apps/web/public/assets/course4/water-solution-measurement-practice.webp",
+      "candidateSha256": "4cbc3a95b52f9ea7edfd652067444f12aacc66271b6c8ad947dbec207de6ed2e",
+      "bytes": 117182,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "assetId": "VIS-LH-TECH1-004-007",
+      "sourcePath": "apps/web/public/assets/course4/irrigation-verification-practice.svg",
+      "sourceSha256": "5b6d8daf4cbc178909a0c167ba125c641f4b3853abf7603ef12715e418952d60",
+      "candidatePath": "apps/web/public/assets/course4/irrigation-verification-practice.webp",
+      "candidateSha256": "060dafeb4aa476609370825b76b77418181c481107b4bcf22930c579d4413e74",
+      "bytes": 116968,
+      "pixelDimensions": {
+        "width": 2560,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-001",
+      "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.svg",
+      "sourceSha256": "25cd8acb90823bf5f1589a16364b673cf73040ee585e3d31cf0a72db30d2b841",
+      "candidatePath": "apps/web/public/assets/course5/propagation-identity-traceability.webp",
+      "candidateSha256": "d9615d807cafc80b715bdcc5a0f4d60cdbb67e719f30c2cba6c41506a732ff91",
+      "bytes": 108286,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-002",
+      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
+      "sourceSha256": "543379c3db63d5a63ed7cd225753867f45abe826bfecddd576db3ffbc0463263",
+      "candidatePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.webp",
+      "candidateSha256": "9770256afcb2649632fa0e053d44eae17f4170c7d039729bf949678bc7ff482a",
+      "bytes": 100614,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-003",
+      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
+      "sourceSha256": "56049c1eca081e23fd16009a44ed6d4be89cc622e3b1dfede03946abca4d3bd0",
+      "candidatePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.webp",
+      "candidateSha256": "03de17a83ca9e4bab804c35bd005e71a37e5cceea8b4ed75f1fb69e8b3102339",
+      "bytes": 80468,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-004",
+      "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
+      "sourceSha256": "9216d9ca350ee0833c53b93ea8e09e8b978b7a9fd0f071c89a22bea7c0616291",
+      "candidatePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.webp",
+      "candidateSha256": "ec013d4ea3b1c360b7c9d7c815898e44b63cc59208c85d4036e0d4a01bda3b6c",
+      "bytes": 104658,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-005",
+      "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
+      "sourceSha256": "d1b016511a073690e0ff2bebd2709c6533a593b41158bce22ddbd59d19ba23cc",
+      "candidatePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.webp",
+      "candidateSha256": "6c9c36457a268df88bdf73dd0663f7975aa646a59ea301824e767b6af208cc1b",
+      "bytes": 94610,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-006",
+      "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
+      "sourceSha256": "1a77e92215ee39ddf326d44a591d872b43ab63797acc908c6ec397db4423607b",
+      "candidatePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.webp",
+      "candidateSha256": "ff91f08374d0277d1196ee6f354c10b09ce2d2399fa718aa901974332b63f6f7",
+      "bytes": 99948,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-007",
+      "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.svg",
+      "sourceSha256": "ff4aa95cd11dbbd2a4cbed315fb13674387f9d7c47891d0790787b0a008af99f",
+      "candidatePath": "apps/web/public/assets/course5/propagation-workstation-practice.webp",
+      "candidateSha256": "80248f822b5736db8dbf788261091bd194d758ca83482442fe616d81fea04229",
+      "bytes": 101276,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2071
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-008",
+      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.svg",
+      "sourceSha256": "713e4609be3a3957b4b464a0073f711fb8e9a1e39cb0850c0e88bc06566d2437",
+      "candidatePath": "apps/web/public/assets/course5/ipm-scouting-practice.webp",
+      "candidateSha256": "5f6b233c6282c1ea4b31cc8ee7c081514730a29cc733d4a2d14f2e814545d00e",
+      "bytes": 97724,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2071
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "assetId": "VIS-LH-TECH1-005-009",
+      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.svg",
+      "sourceSha256": "77fd30acb8451ad9b63409ca01b930e4441edfecf454f80e0df67c4679e24000",
+      "candidatePath": "apps/web/public/assets/course5/canopy-work-order-practice.webp",
+      "candidateSha256": "72e1278f6c0f20e45496c8d056e7d42ed62de95555b93b7ab424cf85e9f9dcfb",
+      "bytes": 122674,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2071
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-001",
+      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
+      "sourceSha256": "13e9db3b6d9181fcf82ac35650928e9d0e040398f66ea19400183dd2ba91b5ab",
+      "candidatePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.webp",
+      "candidateSha256": "162d6007f70ba740db01b59a21183b278879dc73c4ce3247f6b25844831e77d5",
+      "bytes": 83728,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-002",
+      "sourcePath": "apps/web/public/assets/course6/harvest-receiving-flow.svg",
+      "sourceSha256": "a99c0a88dee157d11e7e30a1f2c560964d391b941fab143e8864884f43400378",
+      "candidatePath": "apps/web/public/assets/course6/harvest-receiving-flow.webp",
+      "candidateSha256": "f886024f9b17ee70841bdaca8aaa63de348e87e0ef36b587c2f6d0682b096e9f",
+      "bytes": 131188,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-003",
+      "sourcePath": "apps/web/public/assets/course6/source-output-genealogy.svg",
+      "sourceSha256": "c257e27b5dd2f5d0969eef46d78b924409b328e1b6e6fadf6e707b1651791ad5",
+      "candidatePath": "apps/web/public/assets/course6/source-output-genealogy.webp",
+      "candidateSha256": "e5d9eb1e5f8ee64cb0d894eeabf1c91250434544483531de6faacba932067cfe",
+      "bytes": 90372,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-004",
+      "sourcePath": "apps/web/public/assets/course6/reconciliation-discrepancy.svg",
+      "sourceSha256": "c51b8088fe6f1efffa759f677f828e97a013706abeb0245a90711759278167bd",
+      "candidatePath": "apps/web/public/assets/course6/reconciliation-discrepancy.webp",
+      "candidateSha256": "a7a22711b310be255c5477b3dd48098dc21ac4e8356d613c60c359ce4caa332d",
+      "bytes": 83856,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-005",
+      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff.svg",
+      "sourceSha256": "b768ce549174e0da77497a08885351092a9ad7fa8b26686af3a5dc1dea640d3f",
+      "candidatePath": "apps/web/public/assets/course6/dry-room-handoff.webp",
+      "candidateSha256": "079afa08e45623370cfa17c08b471f23d55c2fb8f3d03e6cd5d65470970ee9ef",
+      "bytes": 116306,
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-006",
+      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-practice.svg",
+      "sourceSha256": "84e05669b214859b4a6ffda2720c6b8b51c6f28bd294eebc144c7d0d02eef553",
+      "candidatePath": "apps/web/public/assets/course6/harvest-readiness-practice.webp",
+      "candidateSha256": "c2a9fc4096c343110b90f5f54bc7c57ba54772afa5e08292be9937df91a3000b",
+      "bytes": 92372,
+      "pixelDimensions": {
+        "width": 2133,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-007",
+      "sourcePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
+      "sourceSha256": "2ce50c50d3b7695f1c8ff4ca31ae9610857ac96ebac5f04e78f0d0e03da0e0f2",
+      "candidatePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.webp",
+      "candidateSha256": "e1197944c70f2ec379aafce30132bc7e0fa1c387e56f24a4960a131998909e9b",
+      "bytes": 94296,
+      "pixelDimensions": {
+        "width": 2021,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "assetId": "VIS-LH-TECH1-006-008",
+      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff-practice.svg",
+      "sourceSha256": "f867d8b6c7d486c11e97e77986a8948a246be26dcc5dd234f0a3771a2170a181",
+      "candidatePath": "apps/web/public/assets/course6/dry-room-handoff-practice.webp",
+      "candidateSha256": "f326b9f3db984a79cb2974a7ae5b563e410a6c3367172f897187f8f43eb91997",
+      "bytes": 89230,
+      "pixelDimensions": {
+        "width": 2021,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    }
+  ],
+  "releaseBoundary": "Candidate production and automated integrity/resolution QA do not establish factual, accessibility, responsive/manual or public-path approval. SVG baselines remain live until those reviews are recorded and lesson/registry cutover is verified."
+}

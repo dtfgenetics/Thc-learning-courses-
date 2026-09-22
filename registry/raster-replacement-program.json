@@ -26,8 +26,8 @@
     "technicianII": 36,
     "releasedRasterReplacements": 0,
     "openRasterReplacements": 96,
-    "producedRasterCandidates": 10,
-    "remainingRasterProduction": 86
+    "producedRasterCandidates": 40,
+    "remainingRasterProduction": 56
   },
   "technicianI": [
     {
@@ -52,33 +52,37 @@
       "courseId": "COURSE-LH-TECH1-003",
       "count": 6,
       "sourceRegistries": [
-        "visuals/COURSE3-ASSET-REGISTRY.json"
+        "visuals/COURSE3-ASSET-REGISTRY.json",
+        "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
       "count": 7,
       "sourceRegistries": [
-        "visuals/COURSE4-ASSET-REGISTRY.json"
+        "visuals/COURSE4-ASSET-REGISTRY.json",
+        "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
       "count": 9,
       "sourceRegistries": [
-        "visuals/COURSE5-ASSET-REGISTRY.json"
+        "visuals/COURSE5-ASSET-REGISTRY.json",
+        "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
       "count": 8,
       "sourceRegistries": [
-        "visuals/COURSE6-ASSET-REGISTRY.json"
+        "visuals/COURSE6-ASSET-REGISTRY.json",
+        "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     }
   ],
   "technicianII": [

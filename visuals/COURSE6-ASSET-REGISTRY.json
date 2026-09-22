@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "courseId": "COURSE-LH-TECH1-006",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 6 SVG files remain a verified learner-facing compatibility baseline so current public routes are not broken. New production instructional assets and replacements must be high-resolution PNG/WebP/JPEG/JPG. Google Drive remains a controlled mirror and does not replace the canonical repository asset.",
+    "publicDelivery": "Existing Course 6 SVG files remain the verified learner-facing compatibility baseline. 8 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -62,13 +62,30 @@
       "driveUrl": "https://drive.google.com/file/d/154jcFchE1Et8iIgVXYgkNTCsePRuw5ly/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.webp",
+        "generatedFrom": "apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
+        "sourceSha256": "13e9db3b6d9181fcf82ac35650928e9d0e040398f66ea19400183dd2ba91b5ab",
+        "candidateSha256": "162d6007f70ba740db01b59a21183b278879dc73c4ce3247f6b25844831e77d5",
+        "bytes": 83728,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -99,13 +116,30 @@
       "driveUrl": "https://drive.google.com/file/d/1wZcalnvR_B49sOwr-tBaS9HiIEibosAD/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/harvest-receiving-flow.webp",
+        "generatedFrom": "apps/web/public/assets/course6/harvest-receiving-flow.svg",
+        "sourceSha256": "a99c0a88dee157d11e7e30a1f2c560964d391b941fab143e8864884f43400378",
+        "candidateSha256": "f886024f9b17ee70841bdaca8aaa63de348e87e0ef36b587c2f6d0682b096e9f",
+        "bytes": 131188,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -137,13 +171,30 @@
       "driveUrl": "https://drive.google.com/file/d/1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/source-output-genealogy.webp",
+        "generatedFrom": "apps/web/public/assets/course6/source-output-genealogy.svg",
+        "sourceSha256": "c257e27b5dd2f5d0969eef46d78b924409b328e1b6e6fadf6e707b1651791ad5",
+        "candidateSha256": "e5d9eb1e5f8ee64cb0d894eeabf1c91250434544483531de6faacba932067cfe",
+        "bytes": 90372,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -173,13 +224,30 @@
       "driveUrl": "https://drive.google.com/file/d/1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/reconciliation-discrepancy.webp",
+        "generatedFrom": "apps/web/public/assets/course6/reconciliation-discrepancy.svg",
+        "sourceSha256": "c51b8088fe6f1efffa759f677f828e97a013706abeb0245a90711759278167bd",
+        "candidateSha256": "a7a22711b310be255c5477b3dd48098dc21ac4e8356d613c60c359ce4caa332d",
+        "bytes": 83856,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -212,13 +280,30 @@
       "driveUrl": "https://drive.google.com/file/d/1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/dry-room-handoff.webp",
+        "generatedFrom": "apps/web/public/assets/course6/dry-room-handoff.svg",
+        "sourceSha256": "b768ce549174e0da77497a08885351092a9ad7fa8b26686af3a5dc1dea640d3f",
+        "candidateSha256": "079afa08e45623370cfa17c08b471f23d55c2fb8f3d03e6cd5d65470970ee9ef",
+        "bytes": 116306,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -250,13 +335,30 @@
       "driveUrl": "https://drive.google.com/file/d/1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/harvest-readiness-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course6/harvest-readiness-practice.svg",
+        "sourceSha256": "84e05669b214859b4a6ffda2720c6b8b51c6f28bd294eebc144c7d0d02eef553",
+        "candidateSha256": "c2a9fc4096c343110b90f5f54bc7c57ba54772afa5e08292be9937df91a3000b",
+        "bytes": 92372,
+        "pixelDimensions": {
+          "width": 2133,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -288,13 +390,30 @@
       "driveUrl": "https://drive.google.com/file/d/1hXULtkclAzM6X3w__F4q6-qi9st9wlST/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
+        "sourceSha256": "2ce50c50d3b7695f1c8ff4ca31ae9610857ac96ebac5f04e78f0d0e03da0e0f2",
+        "candidateSha256": "e1197944c70f2ec379aafce30132bc7e0fa1c387e56f24a4960a131998909e9b",
+        "bytes": 94296,
+        "pixelDimensions": {
+          "width": 2021,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     },
@@ -328,13 +447,30 @@
       "driveUrl": "https://drive.google.com/file/d/1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg/view?usp=drivesdk",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
+        "candidateSourcePath": "apps/web/public/assets/course6/dry-room-handoff-practice.webp",
+        "generatedFrom": "apps/web/public/assets/course6/dry-room-handoff-practice.svg",
+        "sourceSha256": "f867d8b6c7d486c11e97e77986a8948a246be26dcc5dd234f0a3771a2170a181",
+        "candidateSha256": "f326b9f3db984a79cb2974a7ae5b563e410a6c3367172f897187f8f43eb91997",
+        "bytes": 89230,
+        "pixelDimensions": {
+          "width": 2021,
+          "height": 1600
+        },
+        "encoding": "lossless-webp",
+        "automatedQa": [
+          "source and candidate SHA-256 recorded",
+          "RIFF/WEBP/VP8L signature verified",
+          "shortest side is at least 1600 px",
+          "canonical asset, lesson and accessibility mappings retained"
+        ],
+        "releaseApproved": false,
         "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
       }
     }
