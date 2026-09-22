@@ -8,23 +8,191 @@
     "rule": "Every primary instructional concept must be represented by at least one produced public learner asset, mapped to the canonical lesson(s), and retain meaningful accessible text in the lesson object. A single well-designed asset may cover multiple tightly related concepts."
   },
   "concepts": [
-    {"conceptId":"VIS-LH-TECH1-001-01-HAZARD-SCAN","title":"Cultivation workplace hazard scan","lessonIds":["LESSON-LH-TECH1-001-01"],"publicAsset":"/assets/course1/cultivation-work-area-hazard-scan.svg","registryAssetId":"VIS-LH-TECH1-001-003","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS","title":"Hierarchy of controls and technician decision boundary","lessonIds":["LESSON-LH-TECH1-001-01"],"publicAsset":"/assets/course1/hazard-control-decision-flow.svg","registryAssetId":"VIS-LH-TECH1-001-001","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-03-PPE-TASK","title":"Task-based PPE decision model","lessonIds":["LESSON-LH-TECH1-001-02"],"publicAsset":"/assets/course1/ppe-hazcom-decision-map.svg","registryAssetId":"VIS-LH-TECH1-001-002","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-04-SDS-ANATOMY","title":"Hazard communication and SDS information anatomy","lessonIds":["LESSON-LH-TECH1-001-02"],"publicAsset":"/assets/course1/ppe-hazcom-decision-map.svg","registryAssetId":"VIS-LH-TECH1-001-002","status":"deployed-combined","coverageNote":"The public HazCom/PPE visual teaches the label/SDS information source, hazard, first-aid, handling and exposure-control relationship. Detailed SDS section reading remains in canonical lesson text rather than inventing product-specific data."},
-    {"conceptId":"VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES","title":"Contamination source-route-receiver pathways","lessonIds":["LESSON-LH-TECH1-001-04"],"publicAsset":"/assets/course1/biosecurity-pathway-map.svg","registryAssetId":"VIS-LH-TECH1-001-004","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW","title":"Facility-controlled zone movement and transition flow","lessonIds":["LESSON-LH-TECH1-001-04"],"publicAsset":"/assets/course1/biosecurity-pathway-map.svg","registryAssetId":"VIS-LH-TECH1-001-004","status":"deployed-combined","coverageNote":"Directional sequencing is presented as facility/SOP controlled and risk-dependent, not as a universal clean-to-dirty law."},
-    {"conceptId":"VIS-LH-TECH1-001-07-SANITATION-SEQUENCE","title":"Cleaning, disinfection and sanitation verification sequence","lessonIds":["LESSON-LH-TECH1-001-05"],"publicAsset":"/assets/course1/cleaning-disinfection-sequence.svg","registryAssetId":"VIS-LH-TECH1-001-005","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION","title":"Authorization boundary and escalation logic","lessonIds":["LESSON-LH-TECH1-001-08","LESSON-LH-TECH1-001-13","LESSON-LH-TECH1-001-14"],"publicAsset":"/assets/course1/operator-care-servicing-boundary.svg","registryAssetId":"VIS-LH-TECH1-001-010","status":"deployed-combined"},
-    {"conceptId":"VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT","title":"Controlled SOP and work-order anatomy","lessonIds":["LESSON-LH-TECH1-001-07"],"publicAsset":"/assets/course1/controlled-document-anatomy.svg","registryAssetId":"VIS-LH-TECH1-001-007","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-10-GENEALOGY","title":"Plant and material genealogy","lessonIds":["LESSON-LH-TECH1-001-10"],"publicAsset":"/assets/course1/material-genealogy.svg","registryAssetId":"VIS-LH-TECH1-001-008","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-11-MOVEMENT-RECORD","title":"Vendor-neutral movement-record evidence","lessonIds":["LESSON-LH-TECH1-001-11"],"publicAsset":"/assets/course1/inventory-reconciliation-flow.svg","registryAssetId":"VIS-LH-TECH1-001-009","status":"deployed-combined","coverageNote":"The visual connects physical identity/location/condition with the controlled record and event history; canonical lesson tables define stable movement-event fields including identity, source, destination, quantity/count, time, event context and attribution."},
-    {"conceptId":"VIS-LH-TECH1-001-12-RECONCILIATION","title":"Inventory reconciliation without forced balancing","lessonIds":["LESSON-LH-TECH1-001-11","LESSON-LH-TECH1-001-12"],"publicAsset":"/assets/course1/inventory-reconciliation-flow.svg","registryAssetId":"VIS-LH-TECH1-001-009","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE","title":"Equipment pre-use readiness scan","lessonIds":["LESSON-LH-TECH1-001-13"],"publicAsset":"/assets/course1/equipment-preuse-readiness.svg","registryAssetId":"VIS-LH-TECH1-001-015","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE","title":"Operator care versus servicing boundary","lessonIds":["LESSON-LH-TECH1-001-14"],"publicAsset":"/assets/course1/operator-vs-maintenance-boundary.svg","registryAssetId":"VIS-LH-TECH1-001-016","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-15-FAULT-REPORT","title":"Maintenance-ready fault context and escalation","lessonIds":["LESSON-LH-TECH1-001-15"],"publicAsset":"/assets/course1/fault-context-escalation.svg","registryAssetId":"VIS-LH-TECH1-001-017","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-16-RECORD-CORRECTION","title":"Controlled record correction and audit-trail preservation","lessonIds":["LESSON-LH-TECH1-001-16"],"publicAsset":"/assets/course1/record-correction-controls.svg","registryAssetId":"VIS-LH-TECH1-001-018","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-17-SHIFT-HANDOFF","title":"Professional shift handoff","lessonIds":["LESSON-LH-TECH1-001-17"],"publicAsset":"/assets/course1/shift-handoff-control.svg","registryAssetId":"VIS-LH-TECH1-001-019","status":"deployed"},
-    {"conceptId":"VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW","title":"Integrated Technician I workflow","lessonIds":["LESSON-LH-TECH1-001-18"],"publicAsset":"/assets/course1/integrated-technician-workflow.svg","registryAssetId":"VIS-LH-TECH1-001-020","status":"deployed"}
+    {
+      "conceptId": "VIS-LH-TECH1-001-01-HAZARD-SCAN",
+      "title": "Cultivation workplace hazard scan",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-01"
+      ],
+      "publicAsset": "/assets/course1/hazard-scan.png",
+      "registryAssetId": "VIS-LH-TECH1-001-021",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-02-HIERARCHY-CONTROLS",
+      "title": "Hierarchy of controls and technician decision boundary",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-01"
+      ],
+      "publicAsset": "/assets/course1/hierarchy-controls.png",
+      "registryAssetId": "VIS-LH-TECH1-001-022",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-03-PPE-TASK",
+      "title": "Task-based PPE decision model",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-02"
+      ],
+      "publicAsset": "/assets/course1/ppe-task-guide.png",
+      "registryAssetId": "VIS-LH-TECH1-001-023",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-04-SDS-ANATOMY",
+      "title": "Hazard communication and SDS information anatomy",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-02"
+      ],
+      "publicAsset": "/assets/course1/sds-anatomy.png",
+      "registryAssetId": "VIS-LH-TECH1-001-024",
+      "status": "deployed",
+      "coverageNote": "Released individual production raster; The public HazCom/PPE visual teaches the label/SDS information source, hazard, first-aid, handling and exposure-control relationship. Detailed SDS section reading remains in canonical lesson text rather than inventing product-specific data."
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-05-CONTAMINATION-ROUTES",
+      "title": "Contamination source-route-receiver pathways",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-04"
+      ],
+      "publicAsset": "/assets/course1/contamination-routes.png",
+      "registryAssetId": "VIS-LH-TECH1-001-025",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW",
+      "title": "Facility-controlled zone movement and transition flow",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-04"
+      ],
+      "publicAsset": "/assets/course1/clean-dirty-flow.png",
+      "registryAssetId": "VIS-LH-TECH1-001-026",
+      "status": "deployed",
+      "coverageNote": "Released individual production raster; Directional sequencing is presented as facility/SOP controlled and risk-dependent, not as a universal clean-to-dirty law."
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-07-SANITATION-SEQUENCE",
+      "title": "Cleaning, disinfection and sanitation verification sequence",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-05"
+      ],
+      "publicAsset": "/assets/course1/sanitation-sequence.png",
+      "registryAssetId": "VIS-LH-TECH1-001-027",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-08-AUTHORITY-ESCALATION",
+      "title": "Authorization boundary and escalation logic",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-08",
+        "LESSON-LH-TECH1-001-13",
+        "LESSON-LH-TECH1-001-14"
+      ],
+      "publicAsset": "/assets/course1/authority-escalation.png",
+      "registryAssetId": "VIS-LH-TECH1-001-028",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-09-CONTROLLED-DOCUMENT",
+      "title": "Controlled SOP and work-order anatomy",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-07"
+      ],
+      "publicAsset": "/assets/course1/controlled-document.png",
+      "registryAssetId": "VIS-LH-TECH1-001-029",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-10-GENEALOGY",
+      "title": "Plant and material genealogy",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-10"
+      ],
+      "publicAsset": "/assets/course1/material-genealogy.png",
+      "registryAssetId": "VIS-LH-TECH1-001-030",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD",
+      "title": "Vendor-neutral movement-record evidence",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-11"
+      ],
+      "publicAsset": "/assets/course1/material-movement-record.png",
+      "registryAssetId": "VIS-LH-TECH1-001-031",
+      "status": "deployed",
+      "coverageNote": "Released individual production raster; The visual connects physical identity/location/condition with the controlled record and event history; canonical lesson tables define stable movement-event fields including identity, source, destination, quantity/count, time, event context and attribution."
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-12-RECONCILIATION",
+      "title": "Inventory reconciliation without forced balancing",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-11",
+        "LESSON-LH-TECH1-001-12"
+      ],
+      "publicAsset": "/assets/course1/inventory-reconciliation.png",
+      "registryAssetId": "VIS-LH-TECH1-001-032",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
+      "title": "Equipment pre-use readiness scan",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-13"
+      ],
+      "publicAsset": "/assets/course1/equipment-preuse-v3.png",
+      "registryAssetId": "VIS-LH-TECH1-001-033",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
+      "title": "Operator care versus servicing boundary",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-14"
+      ],
+      "publicAsset": "/assets/course1/operator-vs-maintenance-v3.png",
+      "registryAssetId": "VIS-LH-TECH1-001-034",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
+      "title": "Maintenance-ready fault context and escalation",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-15"
+      ],
+      "publicAsset": "/assets/course1/fault-report-v3.png",
+      "registryAssetId": "VIS-LH-TECH1-001-035",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
+      "title": "Controlled record correction and audit-trail preservation",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-16"
+      ],
+      "publicAsset": "/assets/course1/record-correction-v3.png",
+      "registryAssetId": "VIS-LH-TECH1-001-036",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
+      "title": "Professional shift handoff",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-17"
+      ],
+      "publicAsset": "/assets/course1/shift-handoff-v3.png",
+      "registryAssetId": "VIS-LH-TECH1-001-037",
+      "status": "deployed"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
+      "title": "Integrated Technician I workflow",
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-18"
+      ],
+      "publicAsset": "/assets/course1/integrated-workflow-v3.png",
+      "registryAssetId": "VIS-LH-TECH1-001-038",
+      "status": "deployed"
+    }
   ]
 }
