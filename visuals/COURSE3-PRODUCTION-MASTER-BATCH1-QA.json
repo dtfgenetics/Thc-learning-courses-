@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "id": "COURSE3-PRODUCTION-MASTER-BATCH1-QA-001",
+  "updated": "2026-09-22",
+  "scope": [
+    "VIS-LH-TECH1-003-001",
+    "VIS-LH-TECH1-003-002",
+    "VIS-LH-TECH1-003-003",
+    "VIS-LH-TECH1-003-004"
+  ],
+  "status": "reference-board-rejected-for-publication",
+  "referenceBoard": {
+    "conversationFile": "a_detailed_educational_infographic_poster_collage.png",
+    "role": "visual-direction-reference-only",
+    "releaseApproved": false
+  },
+  "findings": [
+    "Composite board combines four assets; canonical release requires individual governed production masters.",
+    "Environmental panel embeds generalized growth-stage temperature/RH/VPD ranges that the canonical lesson explicitly avoids presenting as universal cultivation commands.",
+    "PPFD panel embeds example numeric canopy targets/map values that are not part of the canonical lesson copy lock.",
+    "Sensor panel includes prescriptive placement language that exceeds the lesson's contextual representativeness framing.",
+    "Alarm panel includes target ranges and corrective-action wording that can imply independent control authority beyond Technician I boundaries.",
+    "Branding says Cannabis Training Academy instead of the approved THC Learning Hub/Course 3 vocabulary.",
+    "Generated visible copy does not exactly match canonical captions, terminology and authority language."
+  ],
+  "disposition": "Do not publish or cut lessons over to this board. Use only as composition/reference direction for four separate rebuilt masters.",
+  "requiredRebuilds": [
+    {
+      "assetId": "VIS-LH-TECH1-003-001",
+      "title": "Environmental measurement context",
+      "copyRules": [
+        "Temperature and RH belong together.",
+        "VPD is contextual atmospheric drying-demand information.",
+        "Keep supplied target, observed measurement and alarm roles distinct.",
+        "Show sensor/location/time/units context.",
+        "No growth-stage target table or universal VPD range."
+      ]
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-002",
+      "title": "Repeatable canopy PPFD grid",
+      "copyRules": [
+        "Show a repeatable canopy grid and measurement method.",
+        "Use PPFD units correctly if values are displayed.",
+        "Emphasize distribution rather than one center point.",
+        "No universal PPFD target or flowering-week prescription."
+      ]
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-003",
+      "title": "Sensor placement and representativeness triage",
+      "copyRules": [
+        "Contrast representative and locally biased measurements.",
+        "Preserve original placement context.",
+        "Compare peers and verification status before control changes.",
+        "No universal sensor height or unauthorized calibration/repair instruction."
+      ]
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-004",
+      "title": "Alarm, trend, verification and handoff workflow",
+      "copyRules": [
+        "Distinguish current value, average, trend and alarm.",
+        "Alarm is evidence of a rule event, not a diagnosis.",
+        "Record permitted verification, unresolved condition, escalation and next action.",
+        "No universal alarm targets or independent corrective-control instruction."
+      ]
+    }
+  ]
+}
