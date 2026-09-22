@@ -30,7 +30,7 @@ assert.deepEqual([...manifestIds].sort(), [...coverageIds].sort(), 'visual relea
 const coverageById = new Map(coverage.concepts.map((concept) => [concept.conceptId, concept]));
 const registryById = new Map((registry.assets ?? []).map((asset) => [asset.id, asset]));
 const manifestById = new Map(manifest.concepts.map((concept) => [concept.conceptId, concept]));
-const allowedQaStatuses = new Set(['preferred-review-candidate', 'revise-before-publication', 'pending-review', 'public-approved']);
+const allowedQaStatuses = new Set(['preferred-review-candidate', 'revise-before-publication', 'pending-review', 'production-master-review-candidate', 'public-approved']);
 const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
 const sorted = (values) => [...values].sort();
@@ -47,7 +47,10 @@ if (pngQa) {
     assert.equal(qaAsset.qaStatus, 'revise-before-publication', `${qaAsset.conceptId}: current authenticated v3 QA evidence must remain revise-before-publication until a corrected binary is reviewed`);
     assert.equal(concept.releaseApproved, false, `${qaAsset.conceptId}: a binary with revise-before-publication QA evidence cannot be release-approved`);
     assert.notEqual(concept.candidate.qaStatus, 'public-approved', `${qaAsset.conceptId}: rejected authenticated binary cannot be marked public-approved in the release manifest`);
-    assert.equal(concept.candidate.sourceDriveFileId, qaAsset.driveFileId, `${qaAsset.conceptId}: QA evidence must identify the same controlled Drive master as the release manifest`);
+    const recordedDrivePredecessor=concept.candidate.sourceType==='repository-built-copy-locked-production-master'
+      ? concept.candidate.predecessorDriveFileId
+      : concept.candidate.sourceDriveFileId;
+    assert.equal(recordedDrivePredecessor, qaAsset.driveFileId, `${qaAsset.conceptId}: QA evidence must remain linked as predecessor provenance`);
     assert.match(qaAsset.sha256 ?? '', /^[a-f0-9]{64}$/, `${qaAsset.conceptId}: authenticated binary QA requires a SHA-256 digest`);
     assert.ok(Number.isInteger(qaAsset.bytes) && qaAsset.bytes > 0, `${qaAsset.conceptId}: authenticated binary QA requires byte size`);
     assert.ok(Number.isInteger(qaAsset.width) && qaAsset.width > 0, `${qaAsset.conceptId}: authenticated binary QA requires image width`);
@@ -108,7 +111,13 @@ for (const concept of manifest.concepts) {
 
   assert.ok(concept.candidate && typeof concept.candidate === 'object', `${concept.conceptId}: candidate metadata is required`);
   assert.ok(typeof concept.candidate.sourceType === 'string' && concept.candidate.sourceType.trim(), `${concept.conceptId}: candidate sourceType is required`);
-  assert.ok(typeof concept.candidate.sourceDriveFileId === 'string' && concept.candidate.sourceDriveFileId.trim(), `${concept.conceptId}: controlled Drive provenance is required`);
+  if(concept.candidate.sourceType==='repository-built-copy-locked-production-master'){
+    assert.ok(typeof concept.candidate.repositoryPath==='string'&&concept.candidate.repositoryPath.endsWith('.png'),`${concept.conceptId}: repository production master path is required`);
+    assert.ok(fs.existsSync(path.join(root,concept.candidate.repositoryPath)),`${concept.conceptId}: repository production master is missing`);
+    assert.match(concept.candidate.sha256??'',/^[a-f0-9]{64}$/,`${concept.conceptId}: repository production master digest is required`);
+  }else{
+    assert.ok(typeof concept.candidate.sourceDriveFileId === 'string' && concept.candidate.sourceDriveFileId.trim(), `${concept.conceptId}: controlled Drive provenance is required`);
+  }
   assert.ok(typeof concept.candidate.binaryState === 'string' && concept.candidate.binaryState.trim(), `${concept.conceptId}: binaryState is required`);
   assert.ok(allowedQaStatuses.has(concept.candidate.qaStatus), `${concept.conceptId}: unsupported QA status ${concept.candidate.qaStatus}`);
 
