@@ -70,20 +70,28 @@ const referenceBoardIndex = readJson('visuals/COURSE1-RASTER-REFERENCE-BOARD-IND
 assert.equal(referenceBoardIndex.courseId, courseId, 'reference-board index must belong to Course 1');
 assert.equal(referenceBoardIndex.boards?.length, 3, 'Course 1 reference-board index must record the three controlled source boards');
 const referenceBoardIds = new Set(referenceBoardIndex.boards.map((row) => row.driveFileId));
-for (const concept of manifest.concepts.filter((row) => Number(row.conceptId.match(/-([0-9]{2})-/)?.[1]) <= 12)) {
-  assert.equal(concept.candidate?.individualProductionMasterRequired, true, `${concept.conceptId}: concepts 1-12 require an individual production master`);
+for (const concept of manifest.concepts.slice(0, 12)) {
+  assert.equal(concept.candidate?.sourceType, 'repository-built-copy-locked-production-master', `${concept.conceptId}: concepts 1-12 must now resolve to individual repository production masters`);
+  assert.equal(concept.candidate?.individualProductionMasterRequired, false, `${concept.conceptId}: individual production master requirement should be satisfied`);
+  assert.ok(typeof concept.candidate?.repositoryPath === 'string' && concept.candidate.repositoryPath.endsWith('.png'), `${concept.conceptId}: repository production master path required`);
+  assert.ok(fs.existsSync(path.join(root, concept.candidate.repositoryPath)), `${concept.conceptId}: repository production master is missing`);
+  assert.equal(concept.candidate?.pixelDimensions?.width, 2400, `${concept.conceptId}: production master width must remain 2400`);
+  assert.equal(concept.candidate?.pixelDimensions?.height, 3200, `${concept.conceptId}: production master height must remain 3200`);
+  assert.ok(referenceBoardIds.has(concept.candidate?.predecessorDriveFileId), `${concept.conceptId}: predecessor Drive reference must resolve through the controlled reference-board index`);
+  assert.equal(concept.candidate?.predecessorReferenceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: predecessor board must remain reference-only provenance`);
+  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: produced master still requires human QA before release`);
+}
 
-  if (concept.candidate?.sourceType === 'repository-built-copy-locked-production-master') {
-    assert.ok(referenceBoardIds.has(concept.candidate?.predecessorDriveReferenceFileId), `${concept.conceptId}: predecessor Drive reference must resolve through the controlled reference-board index`);
-    assert.equal(concept.candidate?.predecessorReferenceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: predecessor review board must remain Drive-controlled reference evidence`);
-    assert.ok(typeof concept.candidate?.repositoryPath === 'string' && concept.candidate.repositoryPath.endsWith('.png'), `${concept.conceptId}: individual repository production master path is required`);
-    assert.ok(fs.existsSync(path.join(root, concept.candidate.repositoryPath)), `${concept.conceptId}: individual repository production master is missing`);
-  } else {
-    assert.ok(referenceBoardIds.has(concept.candidate?.sourceDriveFileId), `${concept.conceptId}: source Drive file must resolve through the controlled reference-board index`);
-    assert.equal(concept.candidate?.sourceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: large review board must remain Drive-controlled rather than masquerade as a repository production binary`);
-  }
-
-  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: human QA is still required before learner-facing replacement release`);
+assert.equal(manifest.supportingReplacements?.length, 5, 'Course 1 release manifest must track five supporting legacy raster replacements');
+for (const support of manifest.supportingReplacements ?? []) {
+  assert.match(support.assetId ?? '', /^VIS-LH-TECH1-001-[0-9]{3}$/, `${support.assetId ?? '<missing>'}: invalid supporting asset ID`);
+  assert.equal(support.releaseApproved, false, `${support.assetId}: supporting replacement must remain fail-closed before human QA`);
+  assert.equal(support.candidate?.sourceType, 'repository-built-copy-locked-production-master', `${support.assetId}: supporting replacement must use a repository production master`);
+  assert.ok(typeof support.candidate?.repositoryPath === 'string' && support.candidate.repositoryPath.endsWith('.png'), `${support.assetId}: supporting repository path required`);
+  assert.ok(fs.existsSync(path.join(root, support.candidate.repositoryPath)), `${support.assetId}: supporting production master is missing`);
+  assert.equal(support.candidate?.pixelDimensions?.width, 2400, `${support.assetId}: supporting master width must remain 2400`);
+  assert.equal(support.candidate?.pixelDimensions?.height, 3200, `${support.assetId}: supporting master height must remain 3200`);
+  assert.match(support.candidate?.targetPublicPath ?? '', /^\/assets\/course1\/.+\.png$/, `${support.assetId}: supporting target public path required`);
 }
 
 for (const concept of manifest.concepts) {
