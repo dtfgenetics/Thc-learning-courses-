@@ -89,7 +89,7 @@ The 12-item M01 assessment is formative. Instructors should use objective-level 
 
 ## Summative academic assessment
 
-The 24-item final is separate from the formative bank and remains draft until assessment review and release approval. Passing the academic final does not substitute for Practicals C, D and E.
+The 24-item final is separate from the formative bank and is derived from the six controlled objectives taught in the four dedicated Course 5 lessons. `TEST-TO-TEACHING-MAP.md` records the exact instructional provenance. Encyclopedia-only, external-reading-only, or unrelated-course material may not be introduced as scored Course 5 content unless first taught directly in this course. The assessment remains draft until assessment review and release approval. Passing the academic final does not substitute for Practicals C, D and E and does not confer pesticide-applicator or treatment-selection authority.
 
 ## Learner completion evidence
 
