@@ -99,14 +99,9 @@ def draw_wrapped(
     x, y = xy
     lines = wrap_px(draw, text, fnt, max_width)
     if max_lines is not None and len(lines) > max_lines:
-        lines = lines[:max_lines]
-        while lines and text_width(draw, lines[-1] + "…", fnt) > max_width:
-            words = lines[-1].split()
-            if len(words) <= 1:
-                break
-            lines[-1] = " ".join(words[:-1])
-        if lines:
-            lines[-1] = lines[-1].rstrip(".,;:") + "…"
+        raise RuntimeError(
+            f"Text overflow: {len(lines)} lines exceeds {max_lines}: {text[:120]}"
+        )
     bbox = draw.textbbox((0, 0), "Ag", font=fnt)
     line_h = bbox[3] - bbox[1] + line_gap
     for i, line in enumerate(lines):
@@ -169,11 +164,16 @@ def render_asset(asset: dict, output_dir: Path) -> Path:
 
     # Title zone
     draw.rectangle((0, 420, W, 930), fill=COLORS["gold2"])
-    draw.text((150, 500), asset["kicker"], font=font(34, True), fill=COLORS["purple"])
+    kicker_f = font(34, True)
+    if text_width(draw, asset["kicker"], kicker_f) > 2100:
+        raise RuntimeError(f"{record_id}: kicker exceeds title-zone width")
+    draw.text((150, 500), asset["kicker"], font=kicker_f, fill=COLORS["purple"])
     title_f = font(73, True)
     title_lines = wrap_px(draw, asset["title"], title_f, 2050)
+    if len(title_lines) > 3:
+        raise RuntimeError(f"{record_id}: title exceeds three lines")
     ty = 585
-    for line in title_lines[:3]:
+    for line in title_lines:
         draw.text((150, ty), line, font=title_f, fill=COLORS["ink"])
         ty += 92
     draw.line((150, 870, 2250, 870), fill=COLORS["gold"], width=14)
@@ -201,6 +201,8 @@ def render_asset(asset: dict, output_dir: Path) -> Path:
         draw.text((x0 + 100, y0 + card_h // 2 - 43), str(i + 1), font=font(58, True), fill=accent, anchor="ma")
 
         tx = x0 + 320
+        if text_width(draw, heading, head_font) > 1760:
+            raise RuntimeError(f"{record_id}: panel heading exceeds card width: {heading}")
         draw.text((tx, y0 + 54), heading, font=head_font, fill=COLORS["ink"])
         draw_wrapped(draw, (tx, y0 + 128), body, body_font, COLORS["muted"], 1760, line_gap=10, max_lines=4)
 
