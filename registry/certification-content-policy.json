@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "certification-content-policy",
+  "updated": "2026-09-22",
+  "canonicalCertificationCoursePattern": "^COURSE-LH-",
+  "canonicalCertificationLessonPattern": "^LESSON-LH-",
+  "canonicalCourseAssessmentPattern": "^ASSESS-LH-",
+  "canonicalCourseItemPattern": "^ITEM-LH-",
+  "encyclopediaPattern": "^THC-ENC-[0-9]{3}$",
+  "historicalCatalogPattern": "^THC-C[0-9]{3}$",
+  "rules": {
+    "certificationCoursesAreDedicated": true,
+    "certificationLessonsAreDedicated": true,
+    "courseTestsAreDerivedFromCourseMaterial": true,
+    "assessedObjectivesMustBeTaughtInSameCourse": true,
+    "encyclopediaMayBeOptionalReferenceOnly": true,
+    "encyclopediaMaySubstituteForCourseInstruction": false,
+    "encyclopediaMayCountTowardCourseCompletion": false,
+    "legacyCatalogMayCountAsCertification": false,
+    "crossCourseTestSubstitutionAllowed": false
+  },
+  "classification": {
+    "canonicalCertificationDevelopment": "COURSE-LH-* objects, including draft specialist/pathway courses",
+    "migrationBacklog": "credentialBearing=true course objects outside COURSE-LH-* that predate the dedicated Learning Hub model",
+    "publicNoncredential": "non-LH courses with credentialBearing=false that are intentionally public education",
+    "retiredLegacy420": "COURSE-THC-C### objects retained only for provenance or source recovery"
+  }
+}
