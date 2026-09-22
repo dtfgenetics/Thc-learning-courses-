@@ -70,9 +70,9 @@ Required before gold-standard academic release:
 - field/job aids where they materially support transfer to practice;
 - no decorative filler added merely to satisfy an asset count.
 
-### A5. Certification-course assessment package
+### A5. Dedicated Certification Course Test package
 
-The course test is part of the dedicated certification-course package and must be derived from what the course actually teaches.
+The Certification Course Test is a dedicated part of that course package. It must be derived from the exact current objectives and material taught or practiced in that specific course.
 
 Required:
 
@@ -82,6 +82,8 @@ Required:
 - objective/competency mapping;
 - explicit mapping from every scored objective/item family to dedicated course instruction where that objective is taught;
 - no scored content that exists only in the 420 encyclopedia, a blueprint, or external reading;
+- no scored content borrowed from another certification course unless that content is also directly taught in this course;
+- no course objective considered complete solely because a matching encyclopedia topic exists;
 - evidence references;
 - item-purpose metadata;
 - accessibility/accommodations metadata where supported by the runtime;
