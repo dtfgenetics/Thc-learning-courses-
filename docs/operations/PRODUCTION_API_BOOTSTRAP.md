@@ -6,10 +6,11 @@ The THC Academy API must fail closed in production. Development memory storage a
 
 Set all of the following before starting `apps/api/src/server.mjs` with `NODE_ENV=production`:
 
-- `THC_PERSISTENCE_ADAPTER_MODULE` — module that exports `createPersistenceAdapters({ env })`.
+- `THC_PERSISTENCE_ADAPTER_MODULE` — module that exports `createPersistenceAdapters({ env })`. The repository now provides `./apps/api/src/postgres-production-adapter.mjs`.
+- `THC_POSTGRES_POOL_MODULE` — when using the repository Postgres adapter, deployment module that exports `createPostgresPool({ env })` and returns a pool with `query()` and `connect()`.
 - `THC_AUTH_ADAPTER_MODULE` — module that exports `createRequestAuthorizer({ env })` for the deployed identity provider.
 - `THC_PUBLIC_BASE_URL` — externally reachable HTTPS base URL for the Academy/API environment.
-- `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `3`.
+- `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `4`.
 
 The bootstrap rejects missing configuration, non-HTTPS public URLs, adapter modules without the required factories, persistence stores without readiness/schema/lookup functions, and authentication adapters that do not return an authorizer function.
 
@@ -74,7 +75,7 @@ The application deliberately does not prescribe a specific identity vendor. A de
 
 1. Provision PostgreSQL and an application database/user using least privilege.
 2. Apply `database/schema.sql` through the controlled migration process.
-3. Verify `academy_schema_migrations` contains version `3`.
+3. Verify `academy_schema_migrations` contains version `4`.
 4. Verify the `practical_evaluation_assignments` table and its evaluator index exist.
 5. Configure the deployment-specific persistence adapter and database secrets, including the enrollment-completion store.
 6. Configure the identity-provider authentication adapter and provider secrets/keys through the deployment secret manager.

@@ -1,7 +1,7 @@
 {
   "system": "THC Academy",
-  "version": "0.1.0",
-  "updatedAt": "2026-09-21",
+  "version": "0.1.4",
+  "updatedAt": "2026-09-22",
   "productionReady": false,
   "areas": {
     "curriculum": {
@@ -21,9 +21,12 @@
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
         "humanAssessmentReviewComplete": false,
-        "pilotStatisticsComplete": false
+        "pilotStatisticsComplete": false,
+        "minimumCandidatePoolComplete": true,
+        "secureOperationalStoreIntegrationCodeReady": true,
+        "secureFormConstructionCodeReady": true
       },
-      "scope": "Development and public academic assessment capability; secure operational credential-bank approval is tracked separately and remains fail-closed."
+      "scope": "Development/public academic assessment capability and private-store integration contracts are implemented. Candidate-bank depth is complete; operational item-bank population, active-item depth, human assessment review, pilot statistics, form-equivalence evidence and real secure-store approval remain fail-closed."
     },
     "runtime": {
       "status": "integrated-development",
@@ -37,8 +40,10 @@
         "authorizationIntegrated": true,
         "lessonModuleCourseCompletion": true,
         "assessmentAttemptLifecycle": true,
-        "learnerTranscriptProjection": true
-      }
+        "learnerTranscriptProjection": true,
+        "productionPersistenceAdapterCodeReady": true
+      },
+      "scope": "Repository production persistence adapter composition is implemented and transaction-tested, but productionPersistenceAdapter remains false until a live PostgreSQL deployment, migrations, secret delivery, failure/retry behavior and operational validation are completed."
     },
     "credentials": {
       "status": "foundation",
@@ -49,9 +54,11 @@
         "privacySafeVerificationProjection": true,
         "productionIssuerIdentity": false,
         "productionSigning": false,
-        "revocationPersistence": false
+        "revocationPersistence": false,
+        "revocationTransactionCodeReady": true,
+        "productionSigningIntegrationCodeReady": true
       },
-      "scope": "Credential runtime foundation only; production issuance remains unavailable until program-specific release evidence and production security/persistence gates close."
+      "scope": "Credential runtime foundation includes transaction-tested revocation code and a managed external signing-provider integration contract. Production issuer identity, production signing and deployed revocation persistence remain false until real infrastructure, key custody/security validation and program release approval exist."
     },
     "api": {
       "status": "integrated-development",
