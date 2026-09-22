@@ -123,7 +123,8 @@ assert.equal(completionStatus.certificationEvidenceValidated, false, 'Course 2 a
 assert.equal(completionStatus.nextMachineActions.length, 0, 'Course 2 cannot retain machine actions after verified raster cutover');
 assert.equal(completionStatus.goldStandardPackageComplete, false);
 assert.equal(completionStatus.certificationEvidenceValidated, false);
-assert.ok((completionStatus.nextMachineActions ?? []).length > 0, 'Course 2 must remain fail-closed while machine work remains');
+assert.equal(completionStatus.deployedMachineSurfaceQa?.state, 'verified', 'Course 2 machine completion requires verified deployed learner-surface QA');
+assert.equal(completionStatus.ownerReleaseApproval?.state, 'approved', 'Course 2 owner-approved academic raster release must be recorded');
 assert.ok((completionStatus.nextHumanActions ?? []).length > 0, 'Course 2 must retain real human validation gates');
 
 const visualRegistry = read('visuals/COURSE2-ASSET-REGISTRY.json');
