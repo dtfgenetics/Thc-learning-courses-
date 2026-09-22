@@ -1,6 +1,6 @@
 {
   "system": "THC Academy",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "updatedAt": "2026-09-22",
   "productionReady": false,
   "areas": {
@@ -107,9 +107,10 @@
         "incidentResponseRunbook": true,
         "monitoringAndAlerting": false,
         "backupRestoreContractCodeReady": true,
-        "monitoringAlertingContractCodeReady": true
+        "monitoringAlertingContractCodeReady": true,
+        "productionValidationEvidenceContractReady": true
       },
-      "scope": "Repository release controls now include executable backup/restore and monitoring/alerting contracts. Live staging/production environments, demonstrated restore drills and deployed monitoring remain false until infrastructure-backed evidence exists."
+      "scope": "Repository release controls now include executable backup/restore, monitoring/alerting, and production-validation evidence contracts. Live staging/production environments, demonstrated restore drills, deployed monitoring and other infrastructure-backed gates remain false until referenced evidence exists."
     },
     "learnerExperience": {
       "status": "integrated-development",
