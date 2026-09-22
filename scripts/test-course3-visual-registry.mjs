@@ -23,7 +23,7 @@ const usedAssetIds = new Set();
 
 for (const asset of produced) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-003-[0-9]{3}$/);
-  assert.match(asset.learnerPath ?? '', /^\/assets\/course3\/[A-Za-z0-9._-]+\.svg$/i);
+  assert.match(asset.learnerPath ?? '', /^\/assets\/course3\/[A-Za-z0-9._-]+\.webp$/i);
   assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course3\/[A-Za-z0-9._-]+\.svg$/i);
   assert.ok(['embedded-visual', 'downloadable-practice'].includes(asset.deliveryType), `${asset.id}: unsupported deliveryType`);
   assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0);
@@ -37,7 +37,14 @@ for (const asset of produced) {
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
-  assert.equal(asset.learnerPath, `/${asset.sourcePath.replace(/^apps\/web\/public\//, '')}`);
+  assert.equal(asset.rasterReplacement?.releaseApproved, true, `${asset.id}: raster replacement must be owner-approved`);
+  assert.equal(asset.rasterReplacement?.generatedFrom, asset.sourcePath, `${asset.id}: released raster must preserve SVG provenance`);
+  assert.equal(asset.learnerPath, `/${asset.rasterReplacement.candidateSourcePath.replace(/^apps\/web\/public\//, '')}`);
+  const rasterSource = path.join(root, asset.rasterReplacement.candidateSourcePath);
+  assert.ok(fs.existsSync(rasterSource), `${asset.id}: released WebP learner asset missing`);
+  const rasterHeader = fs.readFileSync(rasterSource).subarray(0, 12);
+  assert.equal(rasterHeader.subarray(0, 4).toString('ascii'), 'RIFF');
+  assert.equal(rasterHeader.subarray(8, 12).toString('ascii'), 'WEBP');
 
   const source = path.join(root, asset.sourcePath);
   assert.ok(fs.existsSync(source), `${asset.id}: public source asset missing`);
