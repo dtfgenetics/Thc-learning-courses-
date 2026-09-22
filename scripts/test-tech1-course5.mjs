@@ -110,18 +110,14 @@ await once(server, 'listening');
 try {
   const base = `http://127.0.0.1:${server.address().port}`;
   for (const asset of producedAssets) {
-    assert.match(asset.learnerPath ?? '', /^\/assets\/course5\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 5 learner path`);
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course5\/[A-Za-z0-9._-]+\.webp$/, `${asset.id} should use the owner-approved Course 5 WebP learner path`);
     const response = await fetch(`${base}${asset.learnerPath}`);
     assert.equal(response.status, 200, `${asset.learnerPath} should be delivered by the Academy runtime`);
-    assert.match(response.headers.get('content-type') ?? '', /^image\/svg\+xml/, `${asset.learnerPath} should use the SVG content type`);
-    const svg = await response.text();
-    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
-    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
-    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
+    assert.match(response.headers.get('content-type') ?? '', /^image\/webp/, `${asset.learnerPath} should use the WebP content type`);
   }
-  const invalidCourseDirectory = await fetch(`${base}/assets/course5x/propagation-identity-traceability.svg`);
+  const invalidCourseDirectory = await fetch(`${base}/assets/course5x/propagation-identity-traceability.webp`);
   assert.equal(invalidCourseDirectory.status, 404, 'course asset routing must only accept course<number> directories');
-  const missingAsset = await fetch(`${base}/assets/course5/not-a-real-asset.svg`);
+  const missingAsset = await fetch(`${base}/assets/course5/not-a-real-asset.webp`);
   assert.equal(missingAsset.status, 404, 'course asset routing must return 404 for missing controlled assets');
 } finally {
   server.close();
