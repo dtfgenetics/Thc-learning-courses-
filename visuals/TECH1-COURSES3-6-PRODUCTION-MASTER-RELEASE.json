@@ -49,21 +49,22 @@
         "role": "legacy-svg-compatibility-baseline"
       },
       "candidate": {
-        "status": "production-required",
-        "repositoryPath": null,
-        "targetPublicPath": null,
+        "status": "production-path-reserved",
+        "repositoryPath": "visuals/review-candidates/course3/production-masters/VIS-LH-TECH1-003-001-ENV-MEASUREMENT-CONTEXT-master-v1.webp",
+        "targetPublicPath": "/assets/course3/environment-measurement-context.webp",
         "sha256": null,
         "sizeBytes": null,
         "pixelDimensions": null,
         "copyLockStatus": "required",
         "factualReviewStatus": "required",
-        "accessibilityStatus": "required",
+        "accessibilityStatus": "copy-prepared-review-pending",
         "renderReviewStatus": "required",
-        "publicPathStatus": "required"
+        "publicPathStatus": "required",
+        "fileName": "VIS-LH-TECH1-003-001-ENV-MEASUREMENT-CONTEXT-master-v1.webp"
       },
       "accessibility": {
-        "caption": null,
-        "learnerTextAlternative": null
+        "caption": "Temperature and relative humidity are measured observations used together to interpret VPD in the actual crop-zone context; targets and alarms come from the applicable controlled procedure.",
+        "learnerTextAlternative": "Indoor cultivation canopy with a temperature and relative-humidity sensor positioned in the crop zone. A teaching overlay separates the measured temperature and RH values from calculated VPD context and from facility-supplied target or alarm limits, emphasizing location, time and units rather than a universal VPD target."
       },
       "releaseApproved": false
     },
@@ -75,21 +76,22 @@
         "role": "legacy-svg-compatibility-baseline"
       },
       "candidate": {
-        "status": "production-required",
-        "repositoryPath": null,
-        "targetPublicPath": null,
+        "status": "production-path-reserved",
+        "repositoryPath": "visuals/review-candidates/course3/production-masters/VIS-LH-TECH1-003-002-PPFD-GRID-master-v1.webp",
+        "targetPublicPath": "/assets/course3/ppfd-grid-measurement.webp",
         "sha256": null,
         "sizeBytes": null,
         "pixelDimensions": null,
         "copyLockStatus": "required",
         "factualReviewStatus": "required",
-        "accessibilityStatus": "required",
+        "accessibilityStatus": "copy-prepared-review-pending",
         "renderReviewStatus": "required",
-        "publicPathStatus": "required"
+        "publicPathStatus": "required",
+        "fileName": "VIS-LH-TECH1-003-002-PPFD-GRID-master-v1.webp"
       },
       "accessibility": {
-        "caption": null,
-        "learnerTextAlternative": null
+        "caption": "A repeatable canopy-plane PPFD grid shows spatial light distribution more reliably than fixture setting or a single measurement point.",
+        "learnerTextAlternative": "Indoor canopy measured with a quantum sensor across a repeatable nine-point grid on the same canopy plane. The visual records PPFD in micromoles per square meter per second and compares spatial measurements without presenting a universal cannabis PPFD target."
       },
       "releaseApproved": false
     },
@@ -101,21 +103,22 @@
         "role": "legacy-svg-compatibility-baseline"
       },
       "candidate": {
-        "status": "production-required",
-        "repositoryPath": null,
-        "targetPublicPath": null,
+        "status": "production-path-reserved",
+        "repositoryPath": "visuals/review-candidates/course3/production-masters/VIS-LH-TECH1-003-003-SENSOR-REPRESENTATIVENESS-master-v1.webp",
+        "targetPublicPath": "/assets/course3/sensor-representativeness-triage.webp",
         "sha256": null,
         "sizeBytes": null,
         "pixelDimensions": null,
         "copyLockStatus": "required",
         "factualReviewStatus": "required",
-        "accessibilityStatus": "required",
+        "accessibilityStatus": "copy-prepared-review-pending",
         "renderReviewStatus": "required",
-        "publicPathStatus": "required"
+        "publicPathStatus": "required",
+        "fileName": "VIS-LH-TECH1-003-003-SENSOR-REPRESENTATIVENESS-master-v1.webp"
       },
       "accessibility": {
-        "caption": null,
-        "learnerTextAlternative": null
+        "caption": "Sensor readings should be interpreted in relation to placement, local influences and representative crop-zone conditions before control changes or repair are considered.",
+        "learnerTextAlternative": "Comparison of a sensor in a representative crop-zone position with sensors biased by a nearby supply-air stream or local heat source. A verification path directs the learner to compare conditions, document uncertainty and escalate unresolved instrument or placement concerns rather than diagnosing from one outlier."
       },
       "releaseApproved": false
     },
@@ -127,21 +130,22 @@
         "role": "legacy-svg-compatibility-baseline"
       },
       "candidate": {
-        "status": "production-required",
-        "repositoryPath": null,
-        "targetPublicPath": null,
+        "status": "production-path-reserved",
+        "repositoryPath": "visuals/review-candidates/course3/production-masters/VIS-LH-TECH1-003-004-ALARM-TREND-HANDOFF-master-v1.webp",
+        "targetPublicPath": "/assets/course3/alarm-trend-handoff.webp",
         "sha256": null,
         "sizeBytes": null,
         "pixelDimensions": null,
         "copyLockStatus": "required",
         "factualReviewStatus": "required",
-        "accessibilityStatus": "required",
+        "accessibilityStatus": "copy-prepared-review-pending",
         "renderReviewStatus": "required",
-        "publicPathStatus": "required"
+        "publicPathStatus": "required",
+        "fileName": "VIS-LH-TECH1-003-004-ALARM-TREND-HANDOFF-master-v1.webp"
       },
       "accessibility": {
-        "caption": null,
-        "learnerTextAlternative": null
+        "caption": "Current readings, trends and alarm events are different evidence types; verified exceptions should retain chronology, status and handoff ownership.",
+        "learnerTextAlternative": "Training dashboard showing a current environmental reading, a short time-series trend and a hypothetical SOP-supplied alarm threshold as separate elements. A workflow records verification, unresolved status, notification and next ownership without treating the example threshold as a universal cultivation target."
       },
       "releaseApproved": false
     },
@@ -153,21 +157,22 @@
         "role": "legacy-svg-compatibility-baseline"
       },
       "candidate": {
-        "status": "production-required",
-        "repositoryPath": null,
-        "targetPublicPath": null,
+        "status": "production-path-reserved",
+        "repositoryPath": "visuals/review-candidates/course3/production-masters/VIS-LH-TECH1-003-005-ENV-MEASUREMENT-PRACTICE-master-v1.png",
+        "targetPublicPath": "/assets/course3/environment-measurement-practice.png",
         "sha256": null,
         "sizeBytes": null,
         "pixelDimensions": null,
         "copyLockStatus": "required",
         "factualReviewStatus": "required",
-        "accessibilityStatus": "required",
+        "accessibilityStatus": "copy-prepared-review-pending",
         "renderReviewStatus": "required",
-        "publicPathStatus": "required"
+        "publicPathStatus": "required",
+        "fileName": "VIS-LH-TECH1-003-005-ENV-MEASUREMENT-PRACTICE-master-v1.png"
       },
       "accessibility": {
-        "caption": null,
-        "learnerTextAlternative": null
+        "caption": "Practice record for environmental observations, instrument identity, representativeness, verification and handoff.",
+        "learnerTextAlternative": "Printable environmental measurement practice sheet with fields for location, date and time, instrument identity, temperature, relative humidity, units, supplied target or alarm context, verification action, uncertainty, status and handoff."
       },
       "releaseApproved": false
     },
@@ -179,21 +184,22 @@
         "role": "legacy-svg-compatibility-baseline"
       },
       "candidate": {
-        "status": "production-required",
-        "repositoryPath": null,
-        "targetPublicPath": null,
+        "status": "production-path-reserved",
+        "repositoryPath": "visuals/review-candidates/course3/production-masters/VIS-LH-TECH1-003-006-PPFD-VERIFICATION-PRACTICE-master-v1.png",
+        "targetPublicPath": "/assets/course3/ppfd-sensor-verification-practice.png",
         "sha256": null,
         "sizeBytes": null,
         "pixelDimensions": null,
         "copyLockStatus": "required",
         "factualReviewStatus": "required",
-        "accessibilityStatus": "required",
+        "accessibilityStatus": "copy-prepared-review-pending",
         "renderReviewStatus": "required",
-        "publicPathStatus": "required"
+        "publicPathStatus": "required",
+        "fileName": "VIS-LH-TECH1-003-006-PPFD-VERIFICATION-PRACTICE-master-v1.png"
       },
       "accessibility": {
-        "caption": null,
-        "learnerTextAlternative": null
+        "caption": "Practice sheet for repeatable PPFD-grid measurement and verification of unusual sensor readings.",
+        "learnerTextAlternative": "Printable practice sheet with a nine-point canopy measurement grid, measurement-plane and instrument fields, PPFD unit context, photoperiod or operating context, outlier verification, uncertainty and escalation fields."
       },
       "releaseApproved": false
     },
