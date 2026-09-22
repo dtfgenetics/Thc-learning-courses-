@@ -31,6 +31,14 @@ assert.equal(signed.issuer.issuerId,'THC-ACADEMY');
 assert.equal(calls.length,1);
 assert.match(calls[0].digest,/^[a-f0-9]{64}$/);
 assert.deepEqual(calls[0].context,{credentialId:'cred-1',verificationId:'VERIFY-TEST-1',issuerId:'THC-ACADEMY'});
-assert.ok(!JSON.stringify(signed).match(/privateKey|private_key|seed|keyMaterial/));
+const forbiddenKeys=new Set(['privateKey','private_key','secret','seed','pem','keyMaterial']);
+function assertNoForbiddenKeys(value,path='root'){
+  if(!value||typeof value!=='object') return;
+  for(const [key,child] of Object.entries(value)){
+    assert.ok(!forbiddenKeys.has(key), `${path} must not expose forbidden field ${key}`);
+    assertNoForbiddenKeys(child,`${path}.${key}`);
+  }
+}
+assertNoForbiddenKeys(signed);
 
 console.log('Managed credential issuer/signing integration contract: PASS');
