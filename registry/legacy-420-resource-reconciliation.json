@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "legacy-420-resource-reconciliation",
   "source": {
     "fileName": "THC_Academy_Certification_Production_Control_v1.0.xlsx",
@@ -9,15 +9,18 @@
   },
   "architecture": {
     "legacyObjectType": "misclassified-course-record",
-    "canonicalObjectType": "comprehensive-educational-resource",
-    "credentialBearing": false
+    "canonicalObjectType": "standalone-420-lesson",
+    "canonicalNamespace": "THC-ENC-001..THC-ENC-420",
+    "canonicalRepository": "dtfgenetics/Thc",
+    "credentialBearing": false,
+    "certificationDependencyAllowed": false
   },
   "summary": {
     "total": 420,
     "confirmedReuse": 3,
-    "confirmedUpgrade": 119,
-    "candidateReview": 298,
-    "unmatched": 252,
+    "confirmedUpgrade": 59,
+    "candidateReview": 358,
+    "unmatched": 312,
     "createRequired": 0
   },
   "records": [
@@ -35,7 +38,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Domestication, Dispersal, and Human Selection",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-004.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -56,7 +59,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Accepted Botanical Identity and Nomenclature",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-002.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -77,7 +80,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "The Cannabis Achene: What Growers Call a Seed",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-007.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -98,7 +101,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Plant Cells, Tissues, and Organ Systems",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-061.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -119,7 +122,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Root System Architecture",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-009.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -133,14 +136,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C005",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "reuse",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Stem Anatomy and Vascular Transport",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-010.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -154,14 +157,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C006",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Stomata, Guard Cells, and Gas Exchange",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-068.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -175,14 +178,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C007",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Female Flower, Bract, Stigma, and Inflorescence Anatomy",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-017.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -196,14 +199,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C008",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Glandular and Nonglandular Trichome Classes",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-019.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -217,14 +220,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C009",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "The Light Reactions of Photosynthesis",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-063.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -245,7 +248,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Cellular Respiration and Night Metabolism",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-067.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -266,7 +269,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Transpiration as a Physical and Biological Process",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-082.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -287,7 +290,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Plant Hormones: Auxin",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-073.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -308,7 +311,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Low-Stress Bending and Thigmomorphogenesis",
         "path": "content/encyclopedia/volume-10/lessons/thc-enc-184.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -329,7 +332,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Source Leaves and Sink Tissues",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-071.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -343,14 +346,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C015",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Growth Rate, Development, and Biomass Partitioning",
         "path": "content/encyclopedia/volume-04/lessons/thc-enc-079.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -364,14 +367,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C016",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Genotype, Phenotype, and Phenotypic Plasticity",
         "path": "content/encyclopedia/volume-08/lessons/thc-enc-146.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -385,14 +388,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C017",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Drought Stress and Recovery",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-094.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -406,14 +409,14 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C018",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Rhizosphere Microbes: Functions and Limits of Claims",
         "path": "content/encyclopedia/volume-03/lessons/thc-enc-047.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -434,7 +437,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "How to Read Cannabis Plant Science Critically",
         "path": "content/encyclopedia/volume-01/lessons/thc-enc-001.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -448,7 +451,7 @@
       "domainId": "THC-A01",
       "domain": "Plant Science Foundations",
       "legacyPrerequisite": "THC-C020",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Seedling",
       "classification": "manual-review",
       "match": null
@@ -462,17 +465,8 @@
       "legacyPrerequisite": null,
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LEGAL-JURISDICTION-001",
-        "title": "Jurisdiction, Licensing and How to Verify Current Rules",
-        "path": "content/lessons/LESSON-LEGAL-JURISDICTION-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C023",
@@ -483,17 +477,8 @@
       "legacyPrerequisite": "THC-C022",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-08",
-        "title": "Working Within Authorization and Escalation Boundaries",
-        "path": "content/lessons/LESSON-LH-TECH1-001-08.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C024",
@@ -504,17 +489,8 @@
       "legacyPrerequisite": "THC-C023",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-02",
-        "title": "PPE, Chemical Labels and Safety Data Sheets",
-        "path": "content/lessons/LESSON-LH-TECH1-001-02.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C025",
@@ -525,17 +501,8 @@
       "legacyPrerequisite": "THC-C024",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SAFETY-HAZARDS-001",
-        "title": "Cultivation Hazards: Tools, Machinery, Electrical and Work Areas",
-        "path": "content/lessons/LESSON-SAFETY-HAZARDS-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C026",
@@ -546,17 +513,8 @@
       "legacyPrerequisite": "THC-C025",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-01",
-        "title": "Hazard Recognition and Control Boundaries",
-        "path": "content/lessons/LESSON-LH-TECH1-001-01.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C027",
@@ -565,19 +523,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C026",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SAFETY-CHEMICAL-003",
-        "title": "Chemical Labels, Pesticide Worker Protection and Decontamination",
-        "path": "content/lessons/LESSON-SAFETY-CHEMICAL-003.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C028",
@@ -586,19 +535,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C027",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-02",
-        "title": "PPE, Chemical Labels and Safety Data Sheets",
-        "path": "content/lessons/LESSON-LH-TECH1-001-02.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C029",
@@ -607,19 +547,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C028",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-03",
-        "title": "Cannabis-Specific Workplace Exposures and Emergency Escalation",
-        "path": "content/lessons/LESSON-LH-TECH1-001-03.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C030",
@@ -628,19 +559,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C029",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SAFETY-HEAT-PPE-002",
-        "title": "Heat Stress, Hydration, PPE and Emergency Response",
-        "path": "content/lessons/LESSON-SAFETY-HEAT-PPE-002.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C031",
@@ -649,19 +571,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C030",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-03",
-        "title": "Cannabis-Specific Workplace Exposures and Emergency Escalation",
-        "path": "content/lessons/LESSON-LH-TECH1-001-03.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C032",
@@ -672,17 +585,8 @@
       "legacyPrerequisite": "THC-C031",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SAFETY-HAZARDS-001",
-        "title": "Cultivation Hazards: Tools, Machinery, Electrical and Work Areas",
-        "path": "content/lessons/LESSON-SAFETY-HAZARDS-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C033",
@@ -693,17 +597,8 @@
       "legacyPrerequisite": "THC-C032",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-03",
-        "title": "Cannabis-Specific Workplace Exposures and Emergency Escalation",
-        "path": "content/lessons/LESSON-LH-TECH1-001-03.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C034",
@@ -714,17 +609,8 @@
       "legacyPrerequisite": "THC-C033",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-05",
-        "title": "Cleaning, Disinfection and Sanitation Verification",
-        "path": "content/lessons/LESSON-LH-TECH1-001-05.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C035",
@@ -735,17 +621,8 @@
       "legacyPrerequisite": "THC-C034",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-12",
-        "title": "Discrepancies, Waste and Destruction Documentation",
-        "path": "content/lessons/LESSON-LH-TECH1-001-12.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C036",
@@ -756,17 +633,8 @@
       "legacyPrerequisite": "THC-C035",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-01",
-        "title": "Hazard Recognition and Control Boundaries",
-        "path": "content/lessons/LESSON-LH-TECH1-001-01.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C037",
@@ -775,19 +643,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C036",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-16",
-        "title": "Contemporaneous Records and Data Integrity",
-        "path": "content/lessons/LESSON-LH-TECH1-001-16.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C038",
@@ -796,19 +655,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C037",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-08",
-        "title": "Working Within Authorization and Escalation Boundaries",
-        "path": "content/lessons/LESSON-LH-TECH1-001-08.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C039",
@@ -817,19 +667,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C038",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-RESPONSIBLE-RECORDS-003",
-        "title": "Responsible Cultivation Records, Traceability and Corrective Action",
-        "path": "content/lessons/LESSON-RESPONSIBLE-RECORDS-003.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C040",
@@ -838,19 +679,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C039",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LEGAL-JURISDICTION-001",
-        "title": "Jurisdiction, Licensing and How to Verify Current Rules",
-        "path": "content/lessons/LESSON-LEGAL-JURISDICTION-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C041",
@@ -861,17 +693,8 @@
       "legacyPrerequisite": "THC-C040",
       "legacyHours": 3.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-01",
-        "title": "Hazard Recognition and Control Boundaries",
-        "path": "content/lessons/LESSON-LH-TECH1-001-01.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C042",
@@ -880,19 +703,10 @@
       "domainId": "THC-A02",
       "domain": "Responsible Practice and Safety",
       "legacyPrerequisite": "THC-C041",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-18",
-        "title": "Integrated Technician Workflow Case",
-        "path": "content/lessons/LESSON-LH-TECH1-001-18.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C043",
@@ -903,17 +717,8 @@
       "legacyPrerequisite": null,
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-003-03",
-        "title": "Sensor Placement, Verification and Data-Quality Triage",
-        "path": "content/lessons/LESSON-LH-TECH1-003-03.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C044",
@@ -943,7 +748,7 @@
         "objectId": "THC-ENC-099",
         "title": "Sensor Placement, Mapping, and Calibration",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-099.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -964,7 +769,7 @@
         "objectId": "THC-ENC-083",
         "title": "Relative Humidity, Dew Point, and Condensation",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-083.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -985,7 +790,7 @@
         "objectId": "THC-ENC-085",
         "title": "Vapor Pressure Deficit: Meaning and Calculation",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-085.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -997,7 +802,7 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C047",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1006,7 +811,7 @@
         "objectId": "THC-ENC-103",
         "title": "Daily Light Integral Calculation",
         "path": "content/encyclopedia/volume-06/lessons/thc-enc-103.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1018,7 +823,7 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C048",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1027,7 +832,7 @@
         "objectId": "THC-ENC-132",
         "title": "Solution pH and Root-Zone pH",
         "path": "content/encyclopedia/volume-07/lessons/thc-enc-132.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1039,7 +844,7 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C049",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1048,7 +853,7 @@
         "objectId": "THC-ENC-134",
         "title": "Electrical Conductivity and Salinity",
         "path": "content/encyclopedia/volume-07/lessons/thc-enc-134.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1060,7 +865,7 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C050",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1069,7 +874,7 @@
         "objectId": "THC-ENC-091",
         "title": "Irrigation Volume, Frequency, and Distribution Uniformity",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-091.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1081,7 +886,7 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C051",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1090,7 +895,7 @@
         "objectId": "THC-ENC-092",
         "title": "Dryback: Measurement, Interpretation, and Limits",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-092.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1111,7 +916,7 @@
         "objectId": "THC-ENC-093",
         "title": "Runoff, Leaching Fraction, and Salt Movement",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-093.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1132,7 +937,7 @@
         "objectId": "THC-ENC-200",
         "title": "Canopy Measurements, Maps, and Yield Interpretation",
         "path": "content/encyclopedia/volume-10/lessons/thc-enc-200.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1153,7 +958,7 @@
         "objectId": "THC-ENC-043",
         "title": "Root Respiration and Oxygen Demand",
         "path": "content/encyclopedia/volume-03/lessons/thc-enc-043.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1174,7 +979,7 @@
         "objectId": "THC-ENC-239",
         "title": "Trichome Color as a Subjective Field Indicator",
         "path": "content/encyclopedia/volume-12/lessons/thc-enc-239.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1195,7 +1000,7 @@
         "objectId": "THC-ENC-300",
         "title": "Pest Records, Mapping, and Trend Analysis",
         "path": "content/encyclopedia/volume-15/lessons/thc-enc-300.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1207,19 +1012,10 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C057",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-16",
-        "title": "Contemporaneous Records and Data Integrity",
-        "path": "content/lessons/LESSON-LH-TECH1-001-16.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C059",
@@ -1228,19 +1024,10 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C058",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-10",
-        "title": "Identity Through the Cultivation Workflow",
-        "path": "content/lessons/LESSON-LH-TECH1-001-10.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C060",
@@ -1249,19 +1036,10 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C059",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-003-03",
-        "title": "Sensor Placement, Verification and Data-Quality Triage",
-        "path": "content/lessons/LESSON-LH-TECH1-003-03.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C061",
@@ -1270,19 +1048,10 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C060",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-003-04",
-        "title": "Alarms, Trends, Environmental Records and Shift Handoff",
-        "path": "content/lessons/LESSON-LH-TECH1-003-04.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C062",
@@ -1293,17 +1062,8 @@
       "legacyPrerequisite": "THC-C061",
       "legacyHours": 3.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-002-04",
-        "title": "Crop Observation Records, Photographs and Shift Handoff",
-        "path": "content/lessons/LESSON-LH-TECH1-002-04.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C063",
@@ -1312,7 +1072,7 @@
       "domainId": "THC-A03",
       "domain": "Measurement, Data, and Records",
       "legacyPrerequisite": "THC-C062",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Seedling",
       "classification": "manual-review",
       "match": null
@@ -1326,17 +1086,8 @@
       "legacyPrerequisite": null,
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-HOME-SCOPE-001",
-        "title": "Plan the Home Grow Before Starting Plants",
-        "path": "content/lessons/LESSON-HOME-SCOPE-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C065",
@@ -1347,17 +1098,8 @@
       "legacyPrerequisite": "THC-C064",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SPACE-ZONING-001",
-        "title": "Grow-Space Zoning, Movement and Sanitation Flow",
-        "path": "content/lessons/LESSON-SPACE-ZONING-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C066",
@@ -1368,17 +1110,8 @@
       "legacyPrerequisite": "THC-C065",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-HYDRO-SYSTEMS-001",
-        "title": "Hydroponic Systems: Recirculating, Drain-to-Waste and Water Movement",
-        "path": "content/lessons/LESSON-HYDRO-SYSTEMS-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C067",
@@ -1396,7 +1129,7 @@
         "objectId": "THC-ENC-059",
         "title": "Container Geometry, Root Restriction, and Transplanting",
         "path": "content/encyclopedia/volume-03/lessons/thc-enc-059.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1410,17 +1143,8 @@
       "legacyPrerequisite": "THC-C067",
       "legacyHours": 1.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-ENV-AIRFLOW-002",
-        "title": "Airflow, Boundary Layers and Environmental Uniformity",
-        "path": "content/lessons/LESSON-ENV-AIRFLOW-002.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C069",
@@ -1429,7 +1153,7 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C068",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1438,7 +1162,7 @@
         "objectId": "THC-ENC-120",
         "title": "Lighting Energy, Heat, Efficacy, and Crop Response",
         "path": "content/encyclopedia/volume-06/lessons/thc-enc-120.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1450,19 +1174,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C069",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-004-03",
-        "title": "Authorized Irrigation and Fertigation Work-Order Execution",
-        "path": "content/lessons/LESSON-LH-TECH1-004-03.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C071",
@@ -1471,19 +1186,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C070",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-WATER-001",
-        "title": "Water Quality, pH, EC and Irrigation Context",
-        "path": "content/lessons/LESSON-WATER-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C072",
@@ -1492,19 +1198,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C071",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-ENV-SENSORS-002",
-        "title": "Environmental Sensors, Placement, Calibration and Data Quality",
-        "path": "content/lessons/LESSON-ENV-SENSORS-002.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C073",
@@ -1513,7 +1210,7 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C072",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Seedling",
       "classification": "upgrade",
       "match": {
@@ -1522,7 +1219,7 @@
         "objectId": "THC-ENC-093",
         "title": "Runoff, Leaching Fraction, and Salt Movement",
         "path": "content/encyclopedia/volume-05/lessons/thc-enc-093.json",
-        "score": 1.0,
+        "score": 1,
         "method": "content-review",
         "status": "confirmed"
       }
@@ -1536,17 +1233,8 @@
       "legacyPrerequisite": "THC-C073",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SPACE-ZONING-001",
-        "title": "Grow-Space Zoning, Movement and Sanitation Flow",
-        "path": "content/lessons/LESSON-SPACE-ZONING-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C075",
@@ -1557,17 +1245,8 @@
       "legacyPrerequisite": "THC-C074",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SPACE-ZONING-001",
-        "title": "Grow-Space Zoning, Movement and Sanitation Flow",
-        "path": "content/lessons/LESSON-SPACE-ZONING-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C076",
@@ -1578,17 +1257,8 @@
       "legacyPrerequisite": "THC-C075",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-04",
-        "title": "Contamination Routes and Zone Discipline",
-        "path": "content/lessons/LESSON-LH-TECH1-001-04.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C077",
@@ -1599,17 +1269,8 @@
       "legacyPrerequisite": "THC-C076",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SPACE-CAPACITY-003",
-        "title": "Environmental, Utility and Equipment Capacity Before Crop Loading",
-        "path": "content/lessons/LESSON-SPACE-CAPACITY-003.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C078",
@@ -1620,17 +1281,8 @@
       "legacyPrerequisite": "THC-C077",
       "legacyHours": 2.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-ENV-LOADS-003",
-        "title": "Heat, Moisture Loads, Dehumidification and Control Capacity",
-        "path": "content/lessons/LESSON-ENV-LOADS-003.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C079",
@@ -1639,19 +1291,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C078",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SPACE-CAPACITY-003",
-        "title": "Environmental, Utility and Equipment Capacity Before Crop Loading",
-        "path": "content/lessons/LESSON-SPACE-CAPACITY-003.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C080",
@@ -1660,19 +1303,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C079",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-OUTDOOR-SITE-001",
-        "title": "Outdoor Site Selection, Sun, Drainage and Water Access",
-        "path": "content/lessons/LESSON-OUTDOOR-SITE-001.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C081",
@@ -1681,19 +1315,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C080",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-GREENHOUSE-CLIMATE-002",
-        "title": "Greenhouse and High-Tunnel Climate Management",
-        "path": "content/lessons/LESSON-GREENHOUSE-CLIMATE-002.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C082",
@@ -1702,19 +1327,10 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C081",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-007-02",
-        "title": "Room Inspection, Measurement and Irrigation Integration",
-        "path": "content/lessons/LESSON-LH-TECH1-007-02.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C083",
@@ -1725,17 +1341,8 @@
       "legacyPrerequisite": "THC-C082",
       "legacyHours": 3.5,
       "legacyCredential": "Seedling",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-001-01",
-        "title": "Hazard Recognition and Control Boundaries",
-        "path": "content/lessons/LESSON-LH-TECH1-001-01.json",
-        "score": 1.0,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C084",
@@ -1744,7 +1351,7 @@
       "domainId": "THC-A04",
       "domain": "Grow Systems Foundations",
       "legacyPrerequisite": "THC-C083",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Seedling",
       "classification": "manual-review",
       "match": null
@@ -1800,17 +1407,8 @@
       "legacyPrerequisite": "THC-C086",
       "legacyHours": 1.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SPACE-INTAKE-002",
-        "title": "Plant Intake, Quarantine and Source Verification",
-        "path": "content/lessons/LESSON-SPACE-INTAKE-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C088",
@@ -1821,17 +1419,8 @@
       "legacyPrerequisite": "THC-C087",
       "legacyHours": 1.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-PROP-SEED-002",
-        "title": "Seed Viability, Germination and Seedling Establishment",
-        "path": "content/lessons/LESSON-PROP-SEED-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C089",
@@ -1842,17 +1431,8 @@
       "legacyPrerequisite": "THC-C088",
       "legacyHours": 1.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-PROP-SEED-002",
-        "title": "Seed Viability, Germination and Seedling Establishment",
-        "path": "content/lessons/LESSON-PROP-SEED-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C090",
@@ -1861,7 +1441,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C089",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -1882,7 +1462,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C090",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -1903,7 +1483,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C091",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -1924,7 +1504,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C092",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -1945,7 +1525,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C093",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2071,7 +1651,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C099",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2092,7 +1672,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C100",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2113,7 +1693,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C101",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2134,7 +1714,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C102",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2157,17 +1737,8 @@
       "legacyPrerequisite": "THC-C103",
       "legacyHours": 3.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-005-01",
-        "title": "Propagation, Transplant Identity and Sanitation Control",
-        "path": "content/lessons/LESSON-LH-TECH1-005-01.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C105",
@@ -2176,7 +1747,7 @@
       "domainId": "THC-A05",
       "domain": "Seed and Propagation Practice",
       "legacyPrerequisite": "THC-C104",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2190,17 +1761,8 @@
       "legacyPrerequisite": null,
       "legacyHours": 1.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SOIL-MICROBES-002",
-        "title": "Rhizosphere, Endophytes, Mycorrhizae and Microbial Risk",
-        "path": "content/lessons/LESSON-SOIL-MICROBES-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C107",
@@ -2293,7 +1855,7 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C110",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2314,7 +1876,7 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C111",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2335,7 +1897,7 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C112",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2356,19 +1918,10 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C113",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-WATER-PH-002",
-        "title": "pH Measurement, Buffering and Nutrient Availability Context",
-        "path": "content/lessons/LESSON-WATER-PH-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C115",
@@ -2377,7 +1930,7 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C114",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "upgrade",
       "match": {
@@ -2400,17 +1953,8 @@
       "legacyPrerequisite": "THC-C115",
       "legacyHours": 2.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-NUTRITION-MACRO-002",
-        "title": "Macronutrients: N, P, K, Ca, Mg and S",
-        "path": "content/lessons/LESSON-NUTRITION-MACRO-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C117",
@@ -2421,17 +1965,8 @@
       "legacyPrerequisite": "THC-C116",
       "legacyHours": 2.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-NUTRITION-MACRO-002",
-        "title": "Macronutrients: N, P, K, Ca, Mg and S",
-        "path": "content/lessons/LESSON-NUTRITION-MACRO-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C118",
@@ -2442,17 +1977,8 @@
       "legacyPrerequisite": "THC-C117",
       "legacyHours": 2.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-NUTRITION-MICRO-003",
-        "title": "Micronutrients, Availability and Nutrient Antagonism",
-        "path": "content/lessons/LESSON-NUTRITION-MICRO-003.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C119",
@@ -2463,17 +1989,8 @@
       "legacyPrerequisite": "THC-C118",
       "legacyHours": 2.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-NUTRIENT-INTERACT-001",
-        "title": "Nutrient Interactions, Balance and Developmental Context",
-        "path": "content/lessons/LESSON-NUTRIENT-INTERACT-001.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C120",
@@ -2484,17 +2001,8 @@
       "legacyPrerequisite": "THC-C119",
       "legacyHours": 2.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SOIL-AMENDMENTS-003",
-        "title": "Amendments, Humic/Fulvic Inputs, Enzymes and Biostimulant Evidence",
-        "path": "content/lessons/LESSON-SOIL-AMENDMENTS-003.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C121",
@@ -2503,19 +2011,10 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C120",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SOIL-MICROBES-002",
-        "title": "Rhizosphere, Endophytes, Mycorrhizae and Microbial Risk",
-        "path": "content/lessons/LESSON-SOIL-MICROBES-002.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C122",
@@ -2524,19 +2023,10 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C121",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-SOIL-AMENDMENTS-003",
-        "title": "Amendments, Humic/Fulvic Inputs, Enzymes and Biostimulant Evidence",
-        "path": "content/lessons/LESSON-SOIL-AMENDMENTS-003.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C123",
@@ -2545,19 +2035,10 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C122",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-004-03",
-        "title": "Authorized Irrigation and Fertigation Work-Order Execution",
-        "path": "content/lessons/LESSON-LH-TECH1-004-03.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C124",
@@ -2566,19 +2047,10 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C123",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-004-02",
-        "title": "Root-Zone Moisture, Dryback and EC Trend Context",
-        "path": "content/lessons/LESSON-LH-TECH1-004-02.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C125",
@@ -2589,17 +2061,8 @@
       "legacyPrerequisite": "THC-C124",
       "legacyHours": 3.5,
       "legacyCredential": "Cultivator",
-      "classification": "upgrade",
-      "match": {
-        "repository": "dtfgenetics/Thc-learning-courses-",
-        "objectType": "lesson",
-        "objectId": "LESSON-LH-TECH1-004-04",
-        "title": "Nutrition Context, Irrigation Deviations and Shift Handoff",
-        "path": "content/lessons/LESSON-LH-TECH1-004-04.json",
-        "score": 1,
-        "method": "content-review",
-        "status": "confirmed"
-      }
+      "classification": "manual-review",
+      "match": null
     },
     {
       "legacyId": "THC-C126",
@@ -2608,7 +2071,7 @@
       "domainId": "THC-A06",
       "domain": "Root Zone, Media, and Nutrition",
       "legacyPrerequisite": "THC-C125",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2698,7 +2161,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C131",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2710,7 +2173,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C132",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2722,7 +2185,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C133",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2734,7 +2197,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C134",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": {
@@ -2755,7 +2218,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C135",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2827,7 +2290,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C141",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2839,7 +2302,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C142",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": {
@@ -2860,7 +2323,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C143",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2872,7 +2335,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C144",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2896,7 +2359,7 @@
       "domainId": "THC-A07",
       "domain": "Environment, Lighting, and Irrigation",
       "legacyPrerequisite": "THC-C146",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2977,7 +2440,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C152",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -2989,7 +2452,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C153",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3001,7 +2464,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C154",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3013,7 +2476,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C155",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3025,7 +2488,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C156",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3115,7 +2578,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C162",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3127,7 +2590,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C163",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3139,7 +2602,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C164",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3151,7 +2614,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C165",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3175,7 +2638,7 @@
       "domainId": "THC-A08",
       "domain": "Canopy, Flowering, and Crop Cycle",
       "legacyPrerequisite": "THC-C167",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3247,7 +2710,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C173",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3259,7 +2722,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C174",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3271,7 +2734,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C175",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -3292,7 +2755,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C176",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3304,7 +2767,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C177",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3376,7 +2839,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C183",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3388,7 +2851,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C184",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3400,7 +2863,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C185",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3412,7 +2875,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C186",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3436,7 +2899,7 @@
       "domainId": "THC-A09",
       "domain": "Scouting and Diagnostic Reasoning",
       "legacyPrerequisite": "THC-C188",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3517,7 +2980,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C194",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -3538,7 +3001,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C195",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3550,7 +3013,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C196",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -3571,7 +3034,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C197",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -3592,7 +3055,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C198",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -3691,7 +3154,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C204",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3703,7 +3166,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C205",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3715,7 +3178,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C206",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3727,7 +3190,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C207",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3751,7 +3214,7 @@
       "domainId": "THC-A10",
       "domain": "Integrated Pest Management",
       "legacyPrerequisite": "THC-C209",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3841,7 +3304,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C215",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -3862,7 +3325,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C216",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3874,7 +3337,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C217",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3886,14 +3349,14 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C218",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Hop Latent Viroid",
         "path": "content/encyclopedia/volume-16/lessons/thc-enc-310.json",
-        "score": 1.0,
+        "score": 1,
         "method": "token-similarity",
         "status": "candidate",
         "objectType": "encyclopedia-entry",
@@ -3907,7 +3370,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C219",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -3988,7 +3451,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C225",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4000,7 +3463,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C226",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4012,7 +3475,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C227",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4024,7 +3487,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C228",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4048,7 +3511,7 @@
       "domainId": "THC-A11",
       "domain": "Plant Disease and Biosecurity",
       "legacyPrerequisite": "THC-C230",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4129,7 +3592,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C236",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4141,7 +3604,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C237",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4153,7 +3616,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C238",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4165,7 +3628,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C239",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4177,7 +3640,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C240",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": {
@@ -4276,7 +3739,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C246",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4288,7 +3751,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C247",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4300,7 +3763,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C248",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4312,7 +3775,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C249",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4336,7 +3799,7 @@
       "domainId": "THC-A12",
       "domain": "Corrective Action and Crop Recovery",
       "legacyPrerequisite": "THC-C251",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Advanced Cultivator",
       "classification": "manual-review",
       "match": null
@@ -4417,7 +3880,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C257",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4429,7 +3892,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C258",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4441,7 +3904,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C259",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4453,7 +3916,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C260",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4465,7 +3928,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C261",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4537,7 +4000,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C267",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4549,7 +4012,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C268",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4561,7 +4024,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C269",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": {
@@ -4582,7 +4045,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C270",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4606,7 +4069,7 @@
       "domainId": "THC-A13",
       "domain": "Controlled-Environment Engineering",
       "legacyPrerequisite": "THC-C272",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4678,7 +4141,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C278",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4690,7 +4153,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C279",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": {
@@ -4711,7 +4174,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C280",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4723,7 +4186,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C281",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4735,7 +4198,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C282",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4807,7 +4270,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C288",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4819,7 +4282,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C289",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4831,7 +4294,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C290",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4843,7 +4306,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C291",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4867,7 +4330,7 @@
       "domainId": "THC-A14",
       "domain": "Advanced Fertigation and Crop Steering",
       "legacyPrerequisite": "THC-C293",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4939,7 +4402,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C299",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4951,7 +4414,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C300",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4963,7 +4426,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C301",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4975,7 +4438,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C302",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -4987,7 +4450,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C303",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5059,7 +4522,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C309",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5071,7 +4534,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C310",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5083,7 +4546,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C311",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5095,7 +4558,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C312",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5119,7 +4582,7 @@
       "domainId": "THC-A15",
       "domain": "Advanced Methods and Automation",
       "legacyPrerequisite": "THC-C314",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5200,14 +4663,14 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C320",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "reuse",
       "match": {
         "repository": "dtfgenetics/Thc",
         "title": "Whole-Plant Versus Branch Harvest",
         "path": "content/encyclopedia/volume-18/draft-lessons-341-345.json",
-        "score": 1.0,
+        "score": 1,
         "method": "exact-title",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -5221,7 +4684,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C321",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5233,7 +4696,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C322",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5245,7 +4708,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C323",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": {
@@ -5266,7 +4729,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C324",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5356,7 +4819,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C330",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": {
@@ -5377,7 +4840,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C331",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5389,7 +4852,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C332",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5401,7 +4864,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C333",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5425,7 +4888,7 @@
       "domainId": "THC-A16",
       "domain": "Harvest, Postharvest, and Quality",
       "legacyPrerequisite": "THC-C335",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Master Grower",
       "classification": "manual-review",
       "match": null
@@ -5477,7 +4940,7 @@
         "repository": "dtfgenetics/Thc",
         "title": "Quantitative Traits and Polygenic Inheritance",
         "path": "content/encyclopedia/volume-08/lessons/thc-enc-144.json",
-        "score": 1.0,
+        "score": 1,
         "method": "exact-title",
         "status": "confirmed",
         "objectType": "encyclopedia-entry",
@@ -5515,7 +4978,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C341",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5527,7 +4990,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C342",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5539,7 +5002,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C343",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5551,7 +5014,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C344",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5563,7 +5026,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C345",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5635,7 +5098,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C351",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5647,7 +5110,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C352",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5659,7 +5122,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C353",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": {
@@ -5680,7 +5143,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C354",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5704,7 +5167,7 @@
       "domainId": "THC-A17",
       "domain": "Genetics, Selection, and Breeding",
       "legacyPrerequisite": "THC-C356",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5803,7 +5266,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C362",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": {
@@ -5824,7 +5287,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C363",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": {
@@ -5845,7 +5308,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C364",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5857,7 +5320,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C365",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": {
@@ -5878,7 +5341,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C366",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -5959,7 +5422,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C372",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": {
@@ -5980,7 +5443,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C373",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": {
@@ -6001,7 +5464,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C374",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -6013,7 +5476,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C375",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -6037,7 +5500,7 @@
       "domainId": "THC-A18",
       "domain": "Seed Preservation and Tissue Culture",
       "legacyPrerequisite": "THC-C377",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Breeder",
       "classification": "manual-review",
       "match": null
@@ -6118,7 +5581,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C383",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6130,7 +5593,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C384",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6142,7 +5605,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C385",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6154,7 +5617,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C386",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6166,7 +5629,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C387",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6256,7 +5719,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C393",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6268,7 +5731,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C394",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6280,7 +5743,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C395",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6292,7 +5755,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C396",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6316,7 +5779,7 @@
       "domainId": "THC-A19",
       "domain": "Research, Trials, and Evidence",
       "legacyPrerequisite": "THC-C398",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6388,7 +5851,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C404",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6400,7 +5863,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C405",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6412,7 +5875,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C406",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6424,7 +5887,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C407",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6436,7 +5899,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C408",
-      "legacyHours": 2.0,
+      "legacyHours": 2,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6508,7 +5971,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C414",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6520,7 +5983,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C415",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6532,7 +5995,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C416",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6544,7 +6007,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C417",
-      "legacyHours": 3.0,
+      "legacyHours": 3,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
@@ -6568,7 +6031,7 @@
       "domainId": "THC-A20",
       "domain": "SOPs, QA, Teaching, and Leadership",
       "legacyPrerequisite": "THC-C419",
-      "legacyHours": 4.0,
+      "legacyHours": 4,
       "legacyCredential": "Mentor",
       "classification": "manual-review",
       "match": null
