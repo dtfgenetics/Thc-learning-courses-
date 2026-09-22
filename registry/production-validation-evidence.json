@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-ACADEMY-PRODUCTION-VALIDATION-EVIDENCE-001",
+  "updated": "2026-09-22",
+  "status": "evidence-pending",
+  "purpose": "Canonical intake contract for deployment-backed evidence required before production certification readiness gates may advance.",
+  "controls": [
+    {
+      "id": "production-postgres",
+      "readiness": [
+        [
+          "runtime",
+          "productionPersistenceAdapter"
+        ],
+        [
+          "api",
+          "productionDatabaseIntegration"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "deployed environment identifier",
+        "migration/schema version",
+        "TLS connection verification",
+        "transaction/read-write smoke test",
+        "failure/retry evidence"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "admin-mfa",
+      "readiness": [
+        [
+          "security",
+          "adminMfaEnforced"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "identity provider policy identifier",
+        "admin account test subject or pseudonymous test identity",
+        "successful MFA challenge evidence",
+        "failed/no-MFA access denial evidence"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "row-level-authorization",
+      "readiness": [
+        [
+          "security",
+          "rowLevelAuthorization"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "deployed database policy version",
+        "learner A cannot read learner B rows",
+        "service/admin role tests",
+        "write-path authorization tests"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "security-review",
+      "readiness": [
+        [
+          "security",
+          "securityReviewComplete"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "review scope",
+        "reviewer/organization identity",
+        "findings",
+        "disposition",
+        "approval or residual-risk decision"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "practical-submission-workflow",
+      "readiness": [
+        [
+          "learnerExperience",
+          "practicalEvidenceSubmissionWorkflow"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "authenticated learner submit test",
+        "persistent evidence-reference readback",
+        "evaluator queue visibility",
+        "assignment/claim workflow",
+        "scoring/follow-up persistence",
+        "privacy-boundary verification"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "staging-environment",
+      "readiness": [
+        [
+          "operations",
+          "stagingEnvironment"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "deployed staging URL/service identity",
+        "database identity",
+        "auth configuration identity",
+        "smoke-test result",
+        "exact build SHA"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "production-environment",
+      "readiness": [
+        [
+          "operations",
+          "productionEnvironment"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "deployed production service identity",
+        "database identity",
+        "auth configuration identity",
+        "exact release/build SHA",
+        "post-deploy smoke result"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "backup-restore",
+      "readiness": [
+        [
+          "operations",
+          "backupRestoreTested"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "backup job identifier",
+        "successful backup timestamp",
+        "isolated restore target",
+        "restore drill timestamp",
+        "schema/data-integrity verification",
+        "RPO/RTO observations"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "monitoring-alerting",
+      "readiness": [
+        [
+          "operations",
+          "monitoringAndAlerting"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "deployed metrics/log source",
+        "alert rule identifiers",
+        "synthetic/test alert timestamp",
+        "delivery record",
+        "owner acknowledgement"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "issuer-identity",
+      "readiness": [
+        [
+          "credentials",
+          "productionIssuerIdentity"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "issuer identifier",
+        "ownership/control evidence",
+        "public verification representation",
+        "approval record"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "credential-signing",
+      "readiness": [
+        [
+          "credentials",
+          "productionSigning"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "managed key/provider identifier",
+        "key custody/access policy",
+        "signing smoke result",
+        "verification result",
+        "rotation/revocation procedure evidence"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "revocation-persistence",
+      "readiness": [
+        [
+          "credentials",
+          "revocationPersistence"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "persistent revocation transaction test",
+        "public verification reflects revocation",
+        "audit event evidence",
+        "retry/idempotency evidence"
+      ],
+      "evidenceRefs": []
+    }
+  ],
+  "advancementRule": "A mapped live readiness gate may advance only when the corresponding control has real deployment-backed evidence, all required evidence is referenced, findings are dispositioned, and repository truthfulness tests are updated to the verified state.",
+  "prohibitedEvidence": [
+    "synthetic success substituted for deployment evidence",
+    "green CI alone",
+    "empty approval placeholders",
+    "fabricated reviewer/pilot/security records",
+    "secrets or private learner data committed to Git"
+  ]
+}
