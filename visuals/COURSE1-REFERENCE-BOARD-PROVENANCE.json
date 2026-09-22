@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "updated": "2026-09-21",
+  "purpose": "Controlled provenance and rebuild queue for Course 1 composite raster reference boards supporting concepts 01-12.",
+  "boards": [
+    {
+      "driveFileId": "1xnCgGDQWY2F1BbaRNKG4YhuIaqHVohHD",
+      "title": "course1-QA-candidate-set-01-07-12-v3.png",
+      "mimeType": "image/png",
+      "sizeBytes": 2802853,
+      "concepts": [
+        "01",
+        "02",
+        "03",
+        "05"
+      ],
+      "repositoryBinaryImported": false,
+      "releaseEligible": false
+    },
+    {
+      "driveFileId": "14uRKIGdg2BWgvWFCn_cRnQw4Adw6ilx4",
+      "title": "course1-QA-candidate-set-04-12-v4.png",
+      "mimeType": "image/png",
+      "sizeBytes": 2794892,
+      "concepts": [
+        "04",
+        "08",
+        "09",
+        "10",
+        "11"
+      ],
+      "repositoryBinaryImported": false,
+      "releaseEligible": false
+    },
+    {
+      "driveFileId": "1FQj5kOUxHHzdKemfQtLPzf5ZRpGxWrN8",
+      "title": "course1-QA-corrections-06-07-12-v5-reference.png",
+      "mimeType": "image/png",
+      "sizeBytes": 2704696,
+      "concepts": [
+        "06",
+        "07",
+        "12"
+      ],
+      "repositoryBinaryImported": false,
+      "releaseEligible": false
+    }
+  ],
+  "productionRule": {
+    "finalIndividualRasterRequired": true,
+    "compositeBoardReleaseAllowed": false,
+    "allowedFormats": [
+      "png",
+      "webp",
+      "jpg",
+      "jpeg"
+    ],
+    "minimumMasterPixels": {
+      "width": 2400,
+      "height": 3200
+    },
+    "minimumWebDerivativePixels": {
+      "width": 1200,
+      "height": 1600
+    },
+    "preferredPrintDpi": 300
+  },
+  "state": "individual-raster-rebuild-required",
+  "boundary": "Drive reference boards are controlled source references only. They do not satisfy binary, factual/copy, accessibility, responsive, registry, lesson-cutover or public-path release gates."
+}
