@@ -16,6 +16,11 @@ const security = requireFile('apps/api/src/security.mjs');
 const limiter = requireFile('apps/api/src/rate-limit.mjs');
 const apiTest = requireFile('scripts/test-api-security.mjs');
 const incident = requireFile('docs/INCIDENT-RESPONSE.md');
+const bootstrap = requireFile('apps/api/src/bootstrap.mjs');
+const rls = requireFile('database/rls-policies.sql');
+const backupContract = requireFile('ops/backup-restore-contract.json');
+const monitoringContract = requireFile('ops/monitoring-alerting-contract.json');
+const practicalSubmissionTest = requireFile('scripts/test-practical-evidence-submission.mjs');
 
 if (readiness.areas?.api?.gates?.rateLimiting === true && !limiter.includes('createFixedWindowRateLimiter')) {
   failures.push('api.rateLimiting is true without the rate limiter implementation');
@@ -42,6 +47,12 @@ const requiredRunbookSections = [
   '## Communications',
   '## Post-incident review'
 ];
+if (readiness.areas?.security?.gates?.adminMfaEnforcementCodeReady === true && !bootstrap.includes('admin-mfa-required')) failures.push('security.adminMfaEnforcementCodeReady is true without production MFA enforcement');
+if (readiness.areas?.security?.gates?.rowLevelAuthorizationPolicyCodeReady === true && !rls.includes('force row level security')) failures.push('security.rowLevelAuthorizationPolicyCodeReady is true without fail-closed RLS policy SQL');
+if (readiness.areas?.operations?.gates?.backupRestoreContractCodeReady === true && !backupContract.includes('code-ready-deployment-validation-pending')) failures.push('operations.backupRestoreContractCodeReady is true without backup/restore contract');
+if (readiness.areas?.operations?.gates?.monitoringAlertingContractCodeReady === true && !monitoringContract.includes('code-ready-deployment-validation-pending')) failures.push('operations.monitoringAlertingContractCodeReady is true without monitoring contract');
+if (readiness.areas?.learnerExperience?.gates?.practicalEvidenceSubmissionWorkflowCodeReady === true && !practicalSubmissionTest.includes('Learner practical evidence submission domain and API contracts passed')) failures.push('learnerExperience.practicalEvidenceSubmissionWorkflowCodeReady is true without practical submission regression coverage');
+
 if (readiness.areas?.operations?.gates?.incidentResponseRunbook === true) {
   for (const heading of requiredRunbookSections) {
     if (!incident.includes(heading)) failures.push(`incident response runbook missing section: ${heading}`);
