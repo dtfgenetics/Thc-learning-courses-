@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "id": "THC-CONTENT-SYSTEM-BOUNDARY-001",
+  "updated": "2026-09-22",
+  "systems": {
+    "encyclopedia": {
+      "name": "THC Plant Science Encyclopedia",
+      "canonicalIdPattern": "THC-ENC-001..THC-ENC-420",
+      "targetCount": 420,
+      "purpose": "Encyclopedia-style topics and explanations covering cannabis plant science, cultivation, diagnostics, genetics, postharvest, quality, and related knowledge.",
+      "contentModel": [
+        "topic title",
+        "plain-language explanation",
+        "core science",
+        "key terms",
+        "why it matters",
+        "examples or applications",
+        "misconceptions and evidence limits",
+        "cross-links",
+        "sources",
+        "instructional visuals where useful"
+      ],
+      "not": [
+        "certification course",
+        "credential-bearing lesson",
+        "course test",
+        "secure credential assessment"
+      ]
+    },
+    "certification": {
+      "name": "THC Academy Certification Curriculum",
+      "courseIdPattern": "COURSE-LH-*",
+      "lessonIdPattern": "LESSON-LH-*",
+      "objectiveIdPattern": "LO-LH-*",
+      "itemIdPattern": "ITEM-LH-*",
+      "assessmentIdPattern": "ASSESS-LH-*",
+      "practicalIdPattern": "PRACTICAL-LH-*",
+      "purpose": "Dedicated certification courses and tests built specifically for certificate and professional credential pathways.",
+      "courseMaterialRule": "Every certification course must contain its own dedicated objectives, lessons, explanations, examples, visuals, activities, practice, scenarios, remediation, and applicable practical work. Required knowledge must be taught inside the course.",
+      "testMaterialRule": "Every Certification Course Test must be built from that course's current controlled objectives and material actually taught or practiced in that course. No scored item may depend only on encyclopedia content, external reference-only material, a blueprint, or another course.",
+      "encyclopediaRelationship": "optional-background-reference-only",
+      "encyclopediaMaySatisfyCourseObjective": false,
+      "encyclopediaMaySatisfyLessonRequirement": false,
+      "encyclopediaMaySatisfyAssessmentCoverage": false,
+      "encyclopediaMaySatisfyCourseCompletion": false,
+      "encyclopediaMaySatisfyCredentialEligibility": false,
+      "testsMayAssessUntaughtMaterial": false,
+      "crossCourseTestSubstitutionAllowed": false,
+      "mustRemainIndependent": true
+    },
+    "legacy420Catalog": {
+      "name": "Historical THC-C001..THC-C420 catalog",
+      "status": "crosswalk-only",
+      "purpose": "Historical topic map retained for provenance and reconciliation.",
+      "mustNotBeCountedAs": [
+        "current encyclopedia IDs",
+        "certification courses",
+        "certification lessons",
+        "certification assessments"
+      ]
+    }
+  },
+  "countingRules": {
+    "encyclopediaCompletion": "Count only THC-ENC-001..THC-ENC-420 encyclopedia records and their own production state.",
+    "certificationCompletion": "Count only dedicated certification-course objects (`COURSE-LH-*`), their own course lessons/objectives, course-specific tests/items, practicals, and their release state.",
+    "noCombinedCompletionPercentage": true,
+    "certificationTestCoverage": "A course test counts coverage only when each scored item maps to a current objective owned by that same course and taught in that course."
+  }
+}

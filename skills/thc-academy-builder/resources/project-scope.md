@@ -15,30 +15,30 @@ A credential should answer an employer:
 
 ## Three-layer education architecture
 
-### 1. THC Learning Academy
+### 1. THC Plant Science Encyclopedia
 
-The comprehensive knowledge system containing **420 Comprehensive Educational Resources** across the controlled 20-domain catalog.
+The standalone knowledge system containing **420 encyclopedia-style topics and explanations**, using canonical IDs `THC-ENC-001` through `THC-ENC-420`.
 
-These resources are not certification courses. They may be scientific explainers, illustrated guides, diagnostic references, calculators, decision trees, research summaries, case studies, datasets, charts, SOP references, worksheets, interactive tools, or other educational objects appropriate to the topic.
+These 420 topics explain the subject matter. They are not certification courses, certification lessons, or certification tests. They may include core science, key terms, examples, misconceptions, evidence limits, sources, cross-links, and instructional visuals.
 
 ### 2. THC Learning Hub
 
 The structured learning environment containing the **purpose-built certification courses** required by THC Academy credentials.
 
-Certification courses are designed from occupational job tasks and competencies. They may reference and assign relevant Comprehensive Educational Resources, but the 420-resource catalog itself is not the credential curriculum.
+Certification courses are dedicated materials designed specifically for certification pathways from occupational job tasks, competencies, and course objectives. They must contain their own instruction, examples, activities, practice, remediation, and course assessments. They may reference encyclopedia topics for background or deeper study, but the 420 encyclopedia is not the certification curriculum.
 
 ### 3. THC Academy credentials
 
 The credentialing system controls eligibility, competency definitions, secure summative assessment, practical/performance requirements, passing standards, retakes/remediation, issuance, verification, maintenance, appeals, governance, and quality assurance.
 
-A course test is not the same as a secure credential assessment.
+A Certification Course Test is dedicated to its specific Certification Course and is built from that course's current objectives and taught material. It is separate from both the 420 Encyclopedia and the secure final credential assessment.
 
 ## Connected systems
 
-1. **Comprehensive Educational Resource Library** — 420 resources, encyclopedia-style knowledge, glossary, claims, references, evidence, visuals, SOP reference material, diagnostic and interactive educational tools.
+1. **THC Plant Science Encyclopedia** — 420 standalone encyclopedia-style topics and explanations, plus their sources, visuals, cross-links, glossary/evidence support, and related reference tools.
 2. **Occupational Competency** — occupations, job roles, tasks, competencies, proficiency.
 3. **Learning Hub** — certification programs, dedicated courses, modules, lessons, activities, and practice.
-4. **Assessment** — formative checks, course tests, secure credential knowledge/scenario/calculation/image/data assessments, practicals, and capstones.
+4. **Certification Assessment** — formative checks and course tests written from the dedicated certification-course objectives and taught material, plus separately governed secure credential assessments, practicals, and capstones.
 5. **Virtual Cultivation Facility** — simulated propagation, veg, flower, irrigation/fertigation, environmental, IPM, harvest, postharvest, QA, traceability, equipment-response and shift workflows.
 6. **Work-Based Learning** — supervised labs, practicums, internships, workplace evidence.
 7. **Credentials** — requirements, eligibility, issuance, competency transcript, portfolio, public verification, maintenance.

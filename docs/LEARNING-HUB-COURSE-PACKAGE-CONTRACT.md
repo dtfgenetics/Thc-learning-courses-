@@ -11,7 +11,8 @@
 3. Course content remains editable and extensible; counts are minimum quality baselines or current inventory, never maximums.
 4. Human review, rendered accessibility review, pilot evidence, calibration, standard setting and final approvals must remain genuine human/evidence gates.
 5. Public academic assessment content must remain separated from private secure operational credential examinations.
-6. Reused canonical modules may support a course, but each occupational course still needs a dedicated delivery layer that makes its role, decisions, practice and evidence explicit.
+6. Each certification course must be a dedicated instructional package. Reused references or encyclopedia topics may support it, but they cannot replace its dedicated lessons, examples, practice, remediation, or assessment.
+7. Certification tests must be built from the course's own controlled objectives and taught course material. No scored objective may exist only in an encyclopedia topic, blueprint, reference list, or question bank.
 
 ## Profile A — ordinary certification course
 
@@ -40,9 +41,11 @@ Required:
 - all referenced modules resolve;
 - all module lesson references resolve;
 - at least one course-specific occupational module;
-- a course-specific lesson layer that applies the canonical science to the job context;
+- a dedicated course-specific lesson layer that teaches the required certification content directly;
 - controlled course-specific objectives referenced by those lessons;
-- lesson-level source/evidence references where material claims are made.
+- enough explanation, examples, practice and feedback for the course to stand on its own;
+- lesson-level source/evidence references where material claims are made;
+- encyclopedia links only as optional supporting/deeper-study references, never as substitutes for required course instruction.
 
 The number of modules/lessons/objectives may grow. Existing Technician I production slices currently use four dedicated applied lessons for Courses 2–6; that is a current minimum baseline, not a global course-size rule.
 
@@ -67,7 +70,9 @@ Required before gold-standard academic release:
 - field/job aids where they materially support transfer to practice;
 - no decorative filler added merely to satisfy an asset count.
 
-### A5. Academic assessment package
+### A5. Dedicated Certification Course Test package
+
+The Certification Course Test is a dedicated part of that course package. It must be derived from the exact current objectives and material taught or practiced in that specific course.
 
 Required:
 
@@ -75,6 +80,10 @@ Required:
 - no unintended item overlap between formative and summative forms;
 - one defensible keyed answer per selected-response item;
 - objective/competency mapping;
+- explicit mapping from every scored objective/item family to dedicated course instruction where that objective is taught;
+- no scored content that exists only in the 420 encyclopedia, a blueprint, or external reading;
+- no scored content borrowed from another certification course unless that content is also directly taught in this course;
+- no course objective considered complete solely because a matching encyclopedia topic exists;
 - evidence references;
 - item-purpose metadata;
 - accessibility/accommodations metadata where supported by the runtime;

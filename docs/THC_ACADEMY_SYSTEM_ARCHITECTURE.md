@@ -7,21 +7,25 @@
 
 The project has three connected but distinct educational systems.
 
-### THC Learning Academy — comprehensive educational resource library
+### THC Plant Science Encyclopedia — 420-topic knowledge system
 
-The THC Learning Academy is the comprehensive knowledge system. It contains **420 Comprehensive Educational Resources** organized across the existing 20 subject domains.
+The 420-content system is the **THC Plant Science Encyclopedia**, with canonical topic IDs `THC-ENC-001` through `THC-ENC-420`.
 
-The 420 resources are **not certification courses** and do not each produce a credential. A resource may be a scientific explainer, illustrated guide, diagnostic atlas, interactive tool, calculator, decision tree, reference chart, case study, dataset, research summary, SOP reference, glossary, visual guide, worksheet, or other educational object appropriate to the topic.
+Each of the 420 records is an encyclopedia-style topic and explanation. Its purpose is to explain cannabis plant science, cultivation, diagnostics, genetics, postharvest, quality systems, and related subjects clearly and deeply. A normal topic may include a plain-language explanation, core science, key terms, why the topic matters, examples or applications, misconceptions, evidence limits, cross-links, sources, and instructional visuals.
 
-Resources provide broad and deep coverage of cultivation, plant science, diagnostics, crop systems, postharvest, genetics, research, quality systems, and related educational content. Certification courses may cite, link to, or assign these resources, but they must not treat the resource catalog itself as the certification curriculum.
+The 420 encyclopedia topics are **not certification courses, certification lessons, or certification tests**. They do not count toward certification-course completion or certification-test completion.
+
+The historical `THC-C001`–`THC-C420` catalog is retained only as a legacy provenance/crosswalk artifact. It is not the current encyclopedia ID system and is not the certification curriculum.
 
 ### THC Learning Hub — certification curriculum
 
 The THC Learning Hub contains the **purpose-built courses required for THC Academy credentials**.
 
-Certification courses are designed from job tasks and competencies, not by relabeling the 420 resources. Each certification course has its own objectives, instruction, activities, formative assessment, scenarios, practical work, and course-level test.
+Certification courses are designed from the certification pathway, job tasks, competencies, and intended learner performance. Every certification course is a **dedicated instructional package** with its own controlled objectives, dedicated course lessons, explanations, examples, activities, formative practice, scenarios, remediation, practical work where appropriate, and course-level tests.
 
-Certification courses may reuse canonical science from the resource library through references and mapped learning objects. Duplicating and independently rewriting the same scientific claim in multiple courses should be avoided whenever a canonical source object can be reused.
+The course must teach the knowledge and skills that its tests assess. Encyclopedia topics may be cited or linked for background or deeper study, but an encyclopedia topic cannot substitute for dedicated course instruction.
+
+Certification tests are also dedicated materials. Every scored course-test item must trace to a course objective and to content actually taught in that certification course. A test item must not be justified solely by an encyclopedia topic, a reference list, a blueprint, or an item bank.
 
 ### THC Academy — credentials, assessment, governance, and verification
 
@@ -80,7 +84,7 @@ Every certification program follows this hierarchy:
 
 `Credential -> Occupational use case -> Job tasks -> Competencies -> Proficiency requirements -> Required Learning Hub courses -> Learning objectives -> Lessons/activities -> Formative assessment -> Course tests -> Practical/simulation -> Certification blueprint -> Secure certification assessment -> Credential decision -> Issuance/verification -> Maintenance`
 
-## 5. Resource-to-credential mapping
+## 5. Encyclopedia-to-certification mapping
 
 Use persistent competency IDs to connect the resource library and credential programs.
 
@@ -99,7 +103,7 @@ maps to:
 - credential examination blueprint domain
 - practical/performance requirement
 
-The 420 resources support many pathways. One resource may support multiple certification courses and multiple credentials.
+The 420 encyclopedia topics may support many pathways as references or deeper-study links. One encyclopedia topic may support multiple certification courses and credentials, but it remains encyclopedia content and never becomes certification material merely by being linked.
 
 ## 6. Assessment separation
 
@@ -109,9 +113,9 @@ Three assessment layers must remain distinct.
 
 Low-stakes retrieval, practice, feedback, calculations, image interpretation, and scenarios embedded in certification courses.
 
-### Course-level summative assessment
+### Certification Course Test
 
-Tests whether a learner met the objectives of one Learning Hub course. Passing a course test does not itself award the professional credential.
+A dedicated test for one Certification Course. Every scored item must trace to a current objective owned by that course and to material actually taught or practiced in that course. Encyclopedia-only content, external reference-only content, or another course's lessons cannot satisfy the test blueprint. Passing a Certification Course Test does not itself award the professional credential.
 
 ### Credential assessment
 
@@ -317,15 +321,15 @@ Target WCAG 2.2 AA for learner-facing content and assessments. Media require tex
 
 Use these terms consistently:
 
-- **Comprehensive Educational Resource** — one of the 420 Learning Academy resources.
+- **Encyclopedia Topic** — one of the canonical `THC-ENC-001`–`THC-ENC-420` encyclopedia-style topics and explanations.
 - **Certification Course** — a structured Learning Hub course designed specifically for a professional credential pathway.
-- **Course Test** — assessment of one certification course.
+- **Certification Course Test** — a dedicated assessment built from the current objectives and taught material of one Certification Course.
 - **Credential Assessment** — secure final assessment process for a professional credential.
 - **Foundational Certificate** — completion/attainment certificate below professional credential level.
 - **Professional Credential** — one of the eight THC Academy workforce-oriented credentials.
 - **Endorsement** — assessed advanced specialization attached to an appropriate credential.
 
-Do not describe the 420-resource catalog as 420 courses.
+Do not describe the 420 encyclopedia topics as courses, certification lessons, or tests. Do not count them in certification-course, certification-lesson, or certification-test totals.
 
 ## 15. Immediate production order
 
