@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "competencies": [
     "COMP-POSTHARVEST-001",
@@ -102,6 +102,38 @@
     "formativeAssessment": "ASSESS-LH-TECH1-006-M01",
     "bankStatus": "development-seed",
     "bankExpansionTarget": 36,
-    "completionModel": "Course 006 remains draft. Written evidence does not replace PRACTICAL-TECH1-F, the integrated capstone, human review, pilot evidence or program release gates."
+    "completionModel": "Course 006 remains draft. Written evidence does not replace PRACTICAL-TECH1-F, the integrated capstone, human review, pilot evidence or program release gates.",
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "independentProductReleaseAuthorityStillExcluded": true,
+    "taughtMaterialMap": {
+      "LO-LH-TECH1-006-01": [
+        "LESSON-LH-TECH1-006-01"
+      ],
+      "LO-LH-TECH1-006-02": [
+        "LESSON-LH-TECH1-006-02",
+        "LESSON-LH-TECH1-006-04"
+      ],
+      "LO-LH-TECH1-006-03": [
+        "LESSON-LH-TECH1-006-03",
+        "LESSON-LH-TECH1-006-04"
+      ],
+      "LO-LH-TECH1-006-04": [
+        "LESSON-LH-TECH1-006-01",
+        "LESSON-LH-TECH1-006-02"
+      ],
+      "LO-LH-TECH1-006-05": [
+        "LESSON-LH-TECH1-006-01",
+        "LESSON-LH-TECH1-006-02",
+        "LESSON-LH-TECH1-006-03",
+        "LESSON-LH-TECH1-006-04"
+      ],
+      "LO-LH-TECH1-006-06": [
+        "LESSON-LH-TECH1-006-03",
+        "LESSON-LH-TECH1-006-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-006/TEST-TO-TEACHING-MAP.md"
   }
 }
