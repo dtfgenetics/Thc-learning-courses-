@@ -150,7 +150,8 @@ def render_asset(asset: dict, output_dir: Path) -> Path:
     img = Image.new("RGBA", (W, H), COLORS["cream"])
     draw = ImageDraw.Draw(img)
 
-    add_paper_texture(img, asset["assetId"])
+    record_id = asset.get("assetId") or asset["conceptId"]
+    add_paper_texture(img, record_id)
 
     # Header
     draw.rectangle((0, 0, W, 420), fill=COLORS["ink"])
@@ -161,7 +162,7 @@ def render_asset(asset: dict, output_dir: Path) -> Path:
     draw.text((320, 245), "TEACHING HEALTHY CULTIVATION", font=font(35, False), fill=COLORS["white"])
 
     # Asset control pill
-    pill = asset["assetId"].replace("VIS-LH-TECH1-", "")
+    pill = record_id.replace("VIS-LH-TECH1-", "")
     pw = int(text_width(draw, pill, font(31, True)) + 80)
     draw.rounded_rectangle((W - pw - 120, 92, W - 120, 158), radius=28, fill=COLORS["purple"])
     draw.text((W - pw - 80, 108), pill, font=font(31, True), fill=COLORS["white"])
@@ -216,7 +217,7 @@ def render_asset(asset: dict, output_dir: Path) -> Path:
 
     # Output
     output_dir.mkdir(parents=True, exist_ok=True)
-    out = output_dir / f"{asset['assetId']}-{asset['slug']}-master-v1.png"
+    out = output_dir / f"{record_id}-{asset['slug']}-master-v1.png"
     rgb = Image.new("RGB", img.size, COLORS["cream"])
     rgb.paste(img, mask=img.getchannel("A"))
     rgb.save(out, format="PNG", dpi=(300, 300), optimize=True)
@@ -239,22 +240,32 @@ def main() -> None:
     if spec["production"].get("svgOutputAllowed") is not False:
         raise RuntimeError("svgOutputAllowed must remain false.")
     assets = spec.get("assets", [])
+    supplemental = spec.get("supplementalPrimaryConcepts", [])
     if len(assets) != 14:
         raise RuntimeError(f"Expected 14 governed replacement candidates, found {len(assets)}")
+    if len(supplemental) != 3:
+        raise RuntimeError(f"Expected 3 supplemental primary-concept candidates, found {len(supplemental)}")
 
-    outputs = [render_asset(asset, OUT_DIR) for asset in assets]
+    candidates = [("governed-replacement", asset) for asset in assets]
+    candidates += [("supplemental-primary-concept", asset) for asset in supplemental]
+    outputs = [render_asset(asset, OUT_DIR) for _, asset in candidates]
 
     manifest = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "buildId": spec["id"],
         "builtFrom": str(SPEC_PATH.relative_to(ROOT)),
         "releaseApproved": False,
+        "governedReplacementCount": 14,
+        "supplementalPrimaryConceptCount": 3,
+        "totalCandidateCount": len(candidates),
         "assets": [],
     }
-    for asset, out in zip(assets, outputs):
+    for (kind, asset), out in zip(candidates, outputs):
         data = out.read_bytes()
-        manifest["assets"].append({
-            "assetId": asset["assetId"],
+        record_id = asset.get("assetId") or asset["conceptId"]
+        row = {
+            "recordId": record_id,
+            "kind": kind,
             "file": str(out.relative_to(ROOT)),
             "bytes": len(data),
             "sha256": hashlib.sha256(data).hexdigest(),
@@ -263,13 +274,19 @@ def main() -> None:
             "sourceLessonPaths": asset["sourceLessonPaths"],
             "sourceBaseline": asset["sourceBaseline"],
             "releaseApproved": False,
-        })
+        }
+        if "assetId" in asset:
+            row["assetId"] = asset["assetId"]
+        if "conceptId" in asset:
+            row["conceptId"] = asset["conceptId"]
+            row["baselineRegistryAssetId"] = asset.get("baselineRegistryAssetId")
+        manifest["assets"].append(row)
 
     manifest_path = ROOT / "visuals" / "COURSE1-RASTER-BUILD-MANIFEST-001-014.json"
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
     for row in manifest["assets"]:
-        print(f"{row['assetId']} {row['pixelDimensions']['width']}x{row['pixelDimensions']['height']} {row['bytes']} bytes {row['sha256'][:12]}")
+        print(f"{row['recordId']} {row['pixelDimensions']['width']}x{row['pixelDimensions']['height']} {row['bytes']} bytes {row['sha256'][:12]}")
 
 
 if __name__ == "__main__":
