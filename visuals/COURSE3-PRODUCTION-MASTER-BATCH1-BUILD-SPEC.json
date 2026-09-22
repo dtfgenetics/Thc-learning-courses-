@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "id": "COURSE3-PRODUCTION-MASTER-BATCH1-BUILD-SPEC-001",
+  "updated": "2026-09-22",
+  "global": {
+    "brand": "THC Learning Hub",
+    "course": "Course 3 — Cultivation Environment & Monitoring",
+    "format": "PNG",
+    "masterTarget": {
+      "width": 3200,
+      "height": 2400,
+      "minimumShortSidePx": 2400
+    },
+    "visibleTextPolicy": "minimal-copy; canonical lesson language only; longer explanations remain HTML text outside image",
+    "photorealism": "Believable indoor cultivation environment and real measurement practice; no decorative fantasy imagery.",
+    "prohibited": [
+      "universal cultivation setpoints",
+      "unsupported numeric targets",
+      "appearance-only diagnosis",
+      "independent control changes outside authorization",
+      "credential issuance claims"
+    ]
+  },
+  "assets": [
+    {
+      "assetId": "VIS-LH-TECH1-003-001",
+      "fileName": "environment-measurement-context.png",
+      "headline": "Environmental Measurement Context",
+      "labels": [
+        "Temperature + RH",
+        "VPD context",
+        "Supplied target",
+        "Observed measurement",
+        "Alarm/event",
+        "Sensor • location • time • units"
+      ],
+      "composition": "Photoreal canopy-zone environmental measurement scene paired with a clean record-role diagram. No target-value table.",
+      "alt": "Indoor cultivation measurement context pairing temperature and relative humidity before VPD interpretation and separating supplied target, observed measurement and alarm/event while preserving sensor, location, time and units."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-002",
+      "fileName": "ppfd-grid-measurement.png",
+      "headline": "Repeatable Canopy PPFD Grid",
+      "labels": [
+        "Same canopy plane",
+        "Same grid positions",
+        "Same sensor orientation",
+        "Record every point",
+        "PPFD — µmol·m⁻²·s⁻¹"
+      ],
+      "composition": "Photoreal quantum-sensor measurement at canopy level plus an unlabeled-value or clearly hypothetical spatial grid; emphasis on repeatability and distribution.",
+      "alt": "Technician measuring canopy PPFD with a repeatable grid, consistent plane and sensor orientation, recording every point to preserve spatial distribution."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-003",
+      "fileName": "sensor-representativeness-triage.png",
+      "headline": "Is This Sensor Representative?",
+      "labels": [
+        "Measurement purpose",
+        "Placement context",
+        "Peer comparison",
+        "Verification status",
+        "Trend context",
+        "Permitted check",
+        "Escalate unresolved"
+      ],
+      "composition": "Photoreal grow room showing representative canopy-zone sensor and locally influenced sensor near outlet/wall, followed by evidence triage flow.",
+      "alt": "Grow-room sensor comparison showing how a local microclimate can differ from the crop-representative question, followed by checks of placement, peers, verification status, trends and authorized escalation."
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-004",
+      "fileName": "alarm-trend-handoff-workflow.png",
+      "headline": "Alarm → Verify → Document → Handoff",
+      "labels": [
+        "Event identity",
+        "Observed evidence",
+        "Permitted verification",
+        "Unresolved condition",
+        "Escalation",
+        "Next owner/action"
+      ],
+      "composition": "Raster monitoring workflow with a trend where a repeated event is visible despite an ordinary-looking average; no fixed cultivation targets.",
+      "alt": "Environmental trend and alarm workflow preserving the event, observed evidence, permitted verification, unresolved condition, escalation and receiving-shift next action without claiming root cause."
+    }
+  ]
+}
