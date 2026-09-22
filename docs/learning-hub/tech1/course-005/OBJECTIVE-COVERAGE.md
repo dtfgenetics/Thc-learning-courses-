@@ -1,7 +1,7 @@
 # Course 5 Objective Coverage
 
 **Course:** `COURSE-LH-TECH1-005 — Propagation, Canopy, IPM Scouting & Crop Care`  
-**State:** draft / machine package under construction  
+**State:** draft / machine package aligned; human validation gates open  
 **Date:** 2026-09-16
 
 This crosswalk controls the Course 5 learning loop. It does not by itself validate Practicals C, D or E and does not confer pesticide-applicator or treatment-selection authority.
@@ -14,6 +14,12 @@ This crosswalk controls the Course 5 learning loop. It does not by itself valida
 | `LO-LH-TECH1-005-04` — maintain sanitation, clean-to-dirty movement, tool control and quarantine/isolation boundaries | Lessons 01–04 | sanitation checkpoints, suspect-material holds, quarantine decisions and breach reporting across all three stations | M01 formative + final item bank | Practicals C, D and E |
 | `LO-LH-TECH1-005-05` — distinguish Technician I authority from work requiring lead/specialist/authorized applicator action | Lessons 02–04 | stop/hold/escalate scenarios; no independent pesticide selection, protocol redesign or unauthorized plant-treatment decisions | M01 formative + final item bank | Practicals C, D and E |
 | `LO-LH-TECH1-005-06` — create reconstructable propagation, canopy and IPM records and handoffs | Lessons 01 and 04, integrated in Course 5 work | station worksheets plus integrated crop-care handoff | M01 formative + final item bank | Practicals C, D and E |
+
+## Test-to-teaching provenance
+
+`docs/learning-hub/tech1/course-005/TEST-TO-TEACHING-MAP.md` records the dedicated Course 5 lessons that teach every assessed objective. The final assessment contains the same machine-readable mapping. Encyclopedia material may support deeper study and source discovery, but cannot satisfy certification instruction or scored-test coverage.
+
+Current machine inspection confirms **4 summative items per objective** across all six controlled objectives. The formative bank remains separate.
 
 ## Controlled learning-loop requirements
 
