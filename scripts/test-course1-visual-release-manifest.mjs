@@ -81,13 +81,25 @@ for (const concept of manifest.concepts.slice(0, 12)) {
   assert.equal(concept.candidate?.pixelDimensions?.height, 3200, `${concept.conceptId}: production master height must remain 3200`);
   assert.ok(referenceBoardIds.has(concept.candidate?.predecessorDriveFileId), `${concept.conceptId}: predecessor Drive reference must resolve through the controlled reference-board index`);
   assert.equal(concept.candidate?.predecessorReferenceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: predecessor board must remain reference-only provenance`);
-  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: produced master still requires human QA before release`);
+  if (concept.releaseApproved) {
+    assert.equal(concept.candidate.qaStatus, 'public-approved', `${concept.conceptId}: released production master must be public-approved`);
+    assert.match(concept.candidate.targetPublicPath ?? '', /\.png$/i, `${concept.conceptId}: released production master must target PNG`);
+    assert.ok(typeof concept.candidate.registryAssetId === 'string' && concept.candidate.registryAssetId.trim(), `${concept.conceptId}: released production master requires registry ID`);
+  } else {
+    assert.notEqual(concept.candidate.qaStatus, 'public-approved', `${concept.conceptId}: unreleased production master cannot be public-approved`);
+  }
 }
 
 assert.equal(manifest.supportingReplacements?.length, 5, 'Course 1 release manifest must track five supporting legacy raster replacements');
 for (const support of manifest.supportingReplacements ?? []) {
   assert.match(support.assetId ?? '', /^VIS-LH-TECH1-001-[0-9]{3}$/, `${support.assetId ?? '<missing>'}: invalid supporting asset ID`);
-  assert.equal(support.releaseApproved, false, `${support.assetId}: supporting replacement must remain fail-closed before human QA`);
+  assert.equal(typeof support.releaseApproved, 'boolean', `${support.assetId}: supporting releaseApproved must be explicit`);
+  if (support.releaseApproved) {
+    assert.equal(support.candidate?.qaStatus, 'public-approved', `${support.assetId}: released supporting replacement must be public-approved`);
+    assert.equal(support.candidate?.registryAssetId, support.assetId, `${support.assetId}: supporting replacement must retain its canonical registry ID`);
+  } else {
+    assert.notEqual(support.candidate?.qaStatus, 'public-approved', `${support.assetId}: unreleased supporting replacement cannot be public-approved`);
+  }
   assert.equal(support.candidate?.sourceType, 'repository-built-copy-locked-production-master', `${support.assetId}: supporting replacement must use a repository production master`);
   assert.ok(typeof support.candidate?.repositoryPath === 'string' && support.candidate.repositoryPath.endsWith('.png'), `${support.assetId}: supporting repository path required`);
   assert.ok(fs.existsSync(path.join(root, support.candidate.repositoryPath)), `${support.assetId}: supporting production master is missing`);
@@ -103,14 +115,20 @@ for (const concept of manifest.concepts) {
   assert.ok(canonical, `${concept.conceptId}: missing canonical concept coverage record`);
   assert.deepEqual(sorted(concept.lessonIds ?? []), sorted(canonical.lessonIds ?? []), `${concept.conceptId}: lesson mapping drifted from canonical concept coverage`);
 
-  assert.equal(concept.baseline?.registryAssetId, canonical.registryAssetId, `${concept.conceptId}: baseline registry asset must match canonical coverage`);
-  assert.equal(concept.baseline?.publicAsset, canonical.publicAsset, `${concept.conceptId}: baseline learner path must match canonical coverage`);
-
   const baseline = registryById.get(concept.baseline.registryAssetId);
   assert.ok(baseline, `${concept.conceptId}: baseline registry asset ${concept.baseline.registryAssetId} is missing`);
-  assert.equal(baseline.status, 'produced', `${concept.conceptId}: baseline asset must remain produced until replacement cutover is verified`);
   assert.equal(baseline.learnerPath, concept.baseline.publicAsset, `${concept.conceptId}: baseline registry learner path drifted`);
   assert.ok(fs.existsSync(path.join(root, baseline.sourcePath)), `${concept.conceptId}: baseline source file is missing`);
+
+  if (concept.releaseApproved) {
+    assert.equal(canonical.registryAssetId, concept.candidate.registryAssetId, `${concept.conceptId}: released canonical coverage must point to replacement registry asset`);
+    assert.equal(canonical.publicAsset, concept.candidate.targetPublicPath, `${concept.conceptId}: released canonical coverage must point to replacement learner path`);
+    assert.equal(baseline.status, 'retired', `${concept.conceptId}: superseded SVG baseline must be retained as retired provenance after cutover`);
+  } else {
+    assert.equal(concept.baseline?.registryAssetId, canonical.registryAssetId, `${concept.conceptId}: unreleased baseline registry asset must match canonical coverage`);
+    assert.equal(concept.baseline?.publicAsset, canonical.publicAsset, `${concept.conceptId}: unreleased baseline learner path must match canonical coverage`);
+    assert.equal(baseline.status, 'produced', `${concept.conceptId}: unreleased baseline must remain produced`);
+  }
 
   assert.ok(Array.isArray(concept.lessonIds) && concept.lessonIds.length > 0, `${concept.conceptId}: at least one canonical lesson is required`);
   const resolvedObjectives = new Set();
