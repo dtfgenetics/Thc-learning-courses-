@@ -61,7 +61,7 @@ for (const asset of produced) {
   assert.match(svg, /viewBox=/);
 
   const replacement = asset.rasterReplacement;
-  assert.equal(replacement?.status, 'candidate-produced-human-qa-required', `${asset.id}: raster candidate state must remain fail-closed`);
+  assert.equal(replacement?.status, 'owner-approved-production-release', `${asset.id}: raster replacement must record owner-approved academic release`);
   assert.match(replacement?.candidateSourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
   assert.equal(replacement?.generatedFrom, asset.sourcePath, `${asset.id}: raster provenance must identify its SVG baseline`);
   assert.equal(replacement?.encoding, 'lossless-webp');
