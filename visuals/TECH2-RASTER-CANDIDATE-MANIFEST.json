@@ -1,0 +1,875 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-ACADEMY-TECH2-RASTER-CANDIDATES-001",
+  "updated": "2026-09-22",
+  "count": 36,
+  "releaseApproved": false,
+  "purpose": "Auditable lossless WebP review candidates for all governed Technician II primary visuals.",
+  "releaseBoundary": "Candidate production does not approve learner cutover. Existing SVG review candidates remain the mapped baseline until each WebP passes human factual, authority-boundary, accessibility, responsive and public-path review.",
+  "candidates": [
+    {
+      "conceptId": "VIS-LH-TECH2-001-01",
+      "courseId": "COURSE-LH-TECH2-001",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-01.svg",
+      "sourceSha256": "15b61cfb0b9a102cfa1737333d58abd0695345c4ce9fcb5279dd1b85008ca6be",
+      "candidateSha256": "d13711cacd24e2349e96829c3ec428efa9d0c392b838b906919bb6bcbbb6ac28",
+      "bytes": 174952,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-001-02",
+      "courseId": "COURSE-LH-TECH2-001",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-02.svg",
+      "sourceSha256": "2635e3abd01734b2813c049880fb198244747861087b6a0c9b843b840efd7457",
+      "candidateSha256": "846606076aef206e183070f2fdb7b723ea3e2b44aef5de1b3e390e677d2471ad",
+      "bytes": 159370,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-001-03",
+      "courseId": "COURSE-LH-TECH2-001",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-03.svg",
+      "sourceSha256": "082c75eb1f5f8681b5ec9e6c28a753eb4a475982b87c08049173660ca84399ba",
+      "candidateSha256": "af65b863046955d00781d34a01afab7738d746e61db1bfb93c0fe7f26684125e",
+      "bytes": 177330,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-001-04",
+      "courseId": "COURSE-LH-TECH2-001",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-04.svg",
+      "sourceSha256": "77360accbfe40ea692754d5c5b03ac8c4cb46724e0be8245113a3ef3544aee7a",
+      "candidateSha256": "8df5f3229c191daf84aabc7c9c706b7cb8bb73838d8c593ec04f13b662afd1b1",
+      "bytes": 164292,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-002-01",
+      "courseId": "COURSE-LH-TECH2-002",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-01.svg",
+      "sourceSha256": "af76be3abafcb9b1425f5e25bb3367f6391c81d9ac7a9ab88ceeb8fad64b704c",
+      "candidateSha256": "53d0d3e6f6e2d475e730cb7e81bf34925e271a2eae405e507cabfefc363b7b42",
+      "bytes": 127684,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-002-02",
+      "courseId": "COURSE-LH-TECH2-002",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-02.svg",
+      "sourceSha256": "159e2a67e5a896c2c727cb24a87f8f2f9d2ae2d9f527994c361bfd402aba9600",
+      "candidateSha256": "2b4c20b5286e6fad3af251596960e825353aa75d1156425431eb28214e6bcf61",
+      "bytes": 109682,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-002-03",
+      "courseId": "COURSE-LH-TECH2-002",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-03.svg",
+      "sourceSha256": "8144a7a15fd4c7946e259105224f0b2793e59cc4f99902c58fa5df73e695db0b",
+      "candidateSha256": "97272ce5a816d11408af3a4f9368d7c074cfaa2b6b1b95ed74b7bcd88b14dc28",
+      "bytes": 112382,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-002-04",
+      "courseId": "COURSE-LH-TECH2-002",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-04.svg",
+      "sourceSha256": "882d011189f1c5f29e3b30585b79348d7611d0e45116f8bcf14b2dd8bf09dbbd",
+      "candidateSha256": "60ecd7b38ed5ec9679fcac4b3d81cab8e40008c3f973d2bb9256a4e0c6dfe4e9",
+      "bytes": 101126,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-003-01",
+      "courseId": "COURSE-LH-TECH2-003",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-01.svg",
+      "sourceSha256": "9653b2d90594fc328e9a1dc6c8523bcbff517c96270edbf62791eff448c57836",
+      "candidateSha256": "e905acfa8b0e8584111bf089ebf1a6017e3a8cd8003923a2d9d38179613be54e",
+      "bytes": 93766,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-003-02",
+      "courseId": "COURSE-LH-TECH2-003",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-02.svg",
+      "sourceSha256": "eeaea1f9b33e9372475598f8a76f67df7ed180215b7fba578750e512bbc8f92f",
+      "candidateSha256": "f8aabb37ab538923094328d3a22984df022de5096d60746c1f19d56d38fcc6d8",
+      "bytes": 89944,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-003-03",
+      "courseId": "COURSE-LH-TECH2-003",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-03.svg",
+      "sourceSha256": "74274ed023616b8d520c50500409d013b11ac562380d4298be8f4672d7bb411e",
+      "candidateSha256": "7ab5174a056752096cf753ca7eebebfd7d05617b83e337345451e48007ffa181",
+      "bytes": 96922,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-003-04",
+      "courseId": "COURSE-LH-TECH2-003",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-04.svg",
+      "sourceSha256": "a736403089153e989de3760af5075f826312e88fd900f120a402ec18b6d97dd8",
+      "candidateSha256": "d830f77b3eb288c19a41950725037ba0d805e526fdc423a162ac82e7624b09ed",
+      "bytes": 81168,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-004-01",
+      "courseId": "COURSE-LH-TECH2-004",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-01.svg",
+      "sourceSha256": "ed53a610b2f5d7ad8e0411f3bdd05a06882f9a22fca885c147fe9e751f89c6df",
+      "candidateSha256": "be18e19d5add06e21423f8ad819429784e2d4b24fe66cd26a4534bd6182cea6f",
+      "bytes": 103562,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-004-02",
+      "courseId": "COURSE-LH-TECH2-004",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-02.svg",
+      "sourceSha256": "68b6eefcc268c651a4bd7ab3fb63d3e5ee57466472eb3f4a274d95684dd5b797",
+      "candidateSha256": "02492a604373198d6e12760ad6b85d3d5a481e73546e569dc62bc2e334249878",
+      "bytes": 90794,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-004-03",
+      "courseId": "COURSE-LH-TECH2-004",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-03.svg",
+      "sourceSha256": "91b9fd100e94794bda4f2da9a7c04cc2d6bb4a965b1706d97d32859431e63969",
+      "candidateSha256": "131b35f4ef715e4b7bb7f05f0b6faba1ef058d7cc5d01ea7e7adc58869db3475",
+      "bytes": 101850,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-004-04",
+      "courseId": "COURSE-LH-TECH2-004",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-04.svg",
+      "sourceSha256": "3fbc9cc588c55e0e9fe015df114ae0ae4b96e83a08b9b767a2b606fd9d02e862",
+      "candidateSha256": "8a19ed219aa1125cfd16a80b008717f01926286f82383ab800fbcea22951e1d0",
+      "bytes": 100972,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-005-01",
+      "courseId": "COURSE-LH-TECH2-005",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-01.svg",
+      "sourceSha256": "ad281d9ebe4206adbef849eefc464c5d24601e78025c9b5a26a79c135b5835e9",
+      "candidateSha256": "ef2300896ffde1e5ce20546b6eac8a569cb1b691abf615455e9c78cd8acea143",
+      "bytes": 99368,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-005-02",
+      "courseId": "COURSE-LH-TECH2-005",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-02.svg",
+      "sourceSha256": "fb88fcce4babea5ca7a745aa7697f6a84121283a19f1f5913bc8d4b2aa7b797b",
+      "candidateSha256": "19e598867b825f7b1b4055a54902f7c5a50739355a98dae84698de4fb29914da",
+      "bytes": 95822,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-005-03",
+      "courseId": "COURSE-LH-TECH2-005",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-03.svg",
+      "sourceSha256": "f9f03443992b9e90122c25c69521d94119b2d722f6ef1bdb071ab60aee1133db",
+      "candidateSha256": "6e010c3eec96d79aad1a7d846dcd3e17430c9519a70eb24320ae47a4c21dbddb",
+      "bytes": 94868,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-005-04",
+      "courseId": "COURSE-LH-TECH2-005",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-04.svg",
+      "sourceSha256": "f1882d3e612e730ca27365b456b9757bf27a04935468003017f25918412f7280",
+      "candidateSha256": "a2daaa5688ab4a0477010047b33decfe53432b779543a35aa3408de1bf026a96",
+      "bytes": 104848,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-006-01",
+      "courseId": "COURSE-LH-TECH2-006",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-01.svg",
+      "sourceSha256": "a8afe5e661ee6da2708c49fc6707acae8569fc8d8da429ace426788ef64bfc1d",
+      "candidateSha256": "077d3f56c41c867e25b0574b2170aa07700cb57e30e2c4ce59ddebbbeeceb9f7",
+      "bytes": 93014,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-006-02",
+      "courseId": "COURSE-LH-TECH2-006",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-02.svg",
+      "sourceSha256": "e47dcda8e316ed230cf1e5b0c76fed106050831ab9039d3ae7e4f5e99b9a027f",
+      "candidateSha256": "6577f7c14a39ed03a1e6b0809c1afa9fc71daae6b71814e10b01545aa882387f",
+      "bytes": 98692,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-006-03",
+      "courseId": "COURSE-LH-TECH2-006",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-03.svg",
+      "sourceSha256": "8419946887987824bf01b8c449852a363a5dfe1de2634eb701d18f3f9a22fac2",
+      "candidateSha256": "320e771f178e1c368e5f97734adfdbeb55b3a89178509838385cc2307a3e40c0",
+      "bytes": 105924,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-006-04",
+      "courseId": "COURSE-LH-TECH2-006",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-04.svg",
+      "sourceSha256": "c259bf869816436963442a817dc27bb882320b872870f71e7846f1c542641568",
+      "candidateSha256": "f98616e91aee688240bc7045554b9b790de55b1504aeea0b9813b339235b5094",
+      "bytes": 104248,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-007-01",
+      "courseId": "COURSE-LH-TECH2-007",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-01.svg",
+      "sourceSha256": "51a717eee31b3197f4d8240dc62819501eb1a017ca4c3a3c6dc854eb3e42c501",
+      "candidateSha256": "61068f1849167f1e91dd303b81d156ca75668a8620d0e014e19b3d06b33b0669",
+      "bytes": 98286,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-007-02",
+      "courseId": "COURSE-LH-TECH2-007",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-02.svg",
+      "sourceSha256": "f9722274e6375f5f2376a06fd309a04420e447c69292ac32d77736d9dd008f20",
+      "candidateSha256": "d4d3ed123a95930b42f6c6840bea3de8d797c4b74c8f618c7856a4fa52d05dbe",
+      "bytes": 93692,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-007-03",
+      "courseId": "COURSE-LH-TECH2-007",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-03.svg",
+      "sourceSha256": "54811aff6a11200eb920b68c1da63451f70efb04639fb06489fd1d29065d5671",
+      "candidateSha256": "a21de975593a1c57befbe88a3803bb6dad5e1c5cac724fa28aa69195149b9ae0",
+      "bytes": 104808,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-007-04",
+      "courseId": "COURSE-LH-TECH2-007",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-04.svg",
+      "sourceSha256": "5c65919946d3ebe9844d004f367e8c07ba80a509ae85e45674aa39b03a214189",
+      "candidateSha256": "b229a376c05174634f8d96a42638a1320a383d24361221d22ff6be13dd180bee",
+      "bytes": 88674,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-01",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-01.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-01.svg",
+      "sourceSha256": "1daff3b7b54b4d5c0a9b82b7a4f98ee76b7f8986971ec135c99ed53be31ca993",
+      "candidateSha256": "24b674d0ce03864119a5555239c7eb2337c9a9e76cbd61fe3678c2a9b6065ee1",
+      "bytes": 96492,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-02",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-02.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-02.svg",
+      "sourceSha256": "1ec03be9f3a0f3dc8814e9a282ea041580f6c87b87445ad87e4f1eaaca4c320c",
+      "candidateSha256": "1c5c8d09b7474fa708b1c6df930aef87c131d740203d596b8df5b1fb36aaef61",
+      "bytes": 84496,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-03",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-03.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-03.svg",
+      "sourceSha256": "85adc4abc02b59bd6abb1daad75d25d82169393dcfa6848bb9be806b02e72112",
+      "candidateSha256": "cf9997ff941ec8efa009ce5cd82f0dddb2b9a6d769b70887bb7d349d83382a08",
+      "bytes": 90080,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-04",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-04.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-04.svg",
+      "sourceSha256": "afef13036d2d8a44ae0b8ffef58d3d7631e1cd1b091a08b4d763f3939d9bdacb",
+      "candidateSha256": "9c834a4fd697cb6f9b0abc6feb6e33f198d0f2b9330577b37fa599b82072ee49",
+      "bytes": 96260,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-05",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-05.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-05.svg",
+      "sourceSha256": "1ad13ac38091325b594e076c634103e938f8c265379378d0f68299ed7d622a9d",
+      "candidateSha256": "6f150ff2713eaeb1a5f02f1a4806d7bf94606990a11fd67cc04ea0c4767c14ff",
+      "bytes": 100746,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-06",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-06.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-06.svg",
+      "sourceSha256": "06daae8cdecea7ca78cd4fb08d3802ccf91ebcb187f19b2ed494ba54f6013769",
+      "candidateSha256": "beadc296a863c558fd263825b45ab26e0f9f880e0d39c2fab99df1b691cd814d",
+      "bytes": 97044,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-07",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-07.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-07.svg",
+      "sourceSha256": "2e12e0bb4dc761bf24ed91d2dc375b18e8acbac0fa5e959f2abaa98602f2dd54",
+      "candidateSha256": "a63874b18486e977d2c15c2305ed89180d849fc7fe92cd249ded3a28d4450eb8",
+      "bytes": 96048,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    },
+    {
+      "conceptId": "VIS-LH-TECH2-008-08",
+      "courseId": "COURSE-LH-TECH2-008",
+      "status": "candidate-produced-human-qa-required",
+      "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-08.webp",
+      "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-08.svg",
+      "sourceSha256": "cff28e119042dd1a55546825da3eb4eb30c606a6216ef6d8929afd33d7a1c2b1",
+      "candidateSha256": "3fc7cf97a1c846dd72d58c8218c1ef25cea907cfcb23b2a8734f348c47245264",
+      "bytes": 108928,
+      "pixelDimensions": {
+        "width": 2845,
+        "height": 1600
+      },
+      "encoding": "lossless-webp",
+      "automatedQa": [
+        "source-exists",
+        "valid-xml-entities",
+        "lossless-webp-signature",
+        "shortest-side-at-least-1600",
+        "sha256-recorded"
+      ],
+      "releaseApproved": false,
+      "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+    }
+  ]
+}

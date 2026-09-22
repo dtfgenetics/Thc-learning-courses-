@@ -26,8 +26,8 @@
     "technicianII": 36,
     "releasedRasterReplacements": 0,
     "openRasterReplacements": 96,
-    "producedRasterCandidates": 40,
-    "remainingRasterProduction": 56
+    "producedRasterCandidates": 76,
+    "remainingRasterProduction": 20
   },
   "technicianI": [
     {
@@ -90,65 +90,73 @@
       "courseId": "COURSE-LH-TECH2-001",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-002",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-003",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-004",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-005",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-006",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-007",
       "count": 4,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH2-008",
       "count": 8,
       "sourceRegistries": [
-        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json"
+        "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
+        "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     }
   ],
   "sequencing": [

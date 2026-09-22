@@ -1,8 +1,8 @@
 {
   "courseId": "COURSE-LH-TECH2-004",
   "title": "Plant Health, IPM & Biosecurity Troubleshooting",
-  "version": "0.2.0",
-  "updated": "2026-09-18",
+  "version": "0.3.0",
+  "updated": "2026-09-22",
   "canonicalCourseState": "draft",
   "publicAcademicPackage": "published",
   "machineResolvableWorkComplete": false,
@@ -25,7 +25,7 @@
     "scripts/verify-public-deployment-identity.mjs"
   ],
   "nextMachineActions": [
-    "produce and QA 4 high-resolution raster replacements for the governed Technician II visual candidates; keep SVG review candidates non-public until each replacement passes release QA",
+    "preserve and validate 4 lossless WebP review candidates while human factual, authority-boundary, accessibility and responsive QA remains open",
     "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
   "nextHumanActions": [
@@ -48,7 +48,10 @@
     "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md",
     "rasterReplacementProgram": "registry/raster-replacement-program.json",
     "rasterReplacementsRequired": 4,
-    "rasterReplacementsReleased": 0
+    "rasterReplacementsReleased": 0,
+    "rasterCandidatesProduced": 4,
+    "rasterCandidateManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json",
+    "rasterCandidateReleaseApproved": 0
   },
   "publicRouteReadback": "verified-build-identity",
   "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
