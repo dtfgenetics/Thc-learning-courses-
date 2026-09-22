@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "id": "TECH1-C3-C6-PRODUCTION-RASTER-WORK-QUEUE-001",
+  "updated": "2026-09-22",
+  "policy": {
+    "finalFormats": [
+      "png",
+      "webp",
+      "jpeg",
+      "jpg"
+    ],
+    "svgFinalTarget": false,
+    "minimumShortSidePx": 1600,
+    "compatibilityRendersAreFinal": false,
+    "releaseRequires": [
+      "binary-integrity",
+      "minimum-resolution",
+      "copy-and-unit-verification",
+      "factual-evidence-review",
+      "accessibility-review",
+      "responsive-or-print-review",
+      "public-path-verification"
+    ]
+  },
+  "summary": {
+    "total": 30,
+    "embeddedVisuals": 21,
+    "downloadablePractice": 9,
+    "status": "production-brief-ready"
+  },
+  "assets": [
+    {
+      "assetId": "VIS-LH-TECH1-003-001",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "educational-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-002",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-003",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "educational-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-004",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "raster-workflow",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-005",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-006",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-001",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-002",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "raster-chart",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-003",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "diagnostic-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-004",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-005",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "raster-workflow",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-006",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-007",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-001",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-002",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-003",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-004",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "diagnostic-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-005",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-006",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "educational-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-007",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-008",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-009",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-001",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-002",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-003",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "raster-diagram",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-004",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "raster-diagram",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-005",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "photo-diagram-composite",
+      "status": "brief-ready",
+      "preferredFormat": "webp",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-006",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-007",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-008",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "printable-practice",
+      "status": "brief-ready",
+      "preferredFormat": "png",
+      "productionMasterRequired": true,
+      "legacySvgReleaseAllowed": false,
+      "compatibilityCandidateMayBePromoted": false,
+      "qa": {
+        "integrity": "pending-new-master",
+        "copyUnits": "pending",
+        "factual": "pending",
+        "accessibility": "pending",
+        "responsiveOrPrint": "pending",
+        "publicPath": "pending"
+      },
+      "releaseApproved": false
+    }
+  ]
+}
