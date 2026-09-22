@@ -14,7 +14,9 @@
     "releaseApproved": false,
     "outputDirectory": "visuals/review-candidates/course1/production-masters",
     "brand": "THC Academy",
-    "footer": "Academic learning visual • Follow current controlled procedures and authorized role boundaries."
+    "footer": "Academic learning visual • Follow current controlled procedures and authorized role boundaries.",
+    "governedReplacementCount": 14,
+    "supplementalPrimaryConceptCount": 3
   },
   "assets": [
     {
@@ -573,6 +575,125 @@
       ],
       "sourceBaseline": "/assets/course1/data-integrity-record-lifecycle.svg",
       "relatedProducedMaster": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png"
+    }
+  ],
+  "supplementalPrimaryConcepts": [
+    {
+      "conceptId": "VIS-LH-TECH1-001-04-SDS-ANATOMY",
+      "slug": "SDS-ANATOMY",
+      "module": 1,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-02"
+      ],
+      "title": "Safety Data Sheet Anatomy",
+      "kicker": "USE THE CURRENT SDS FOR THE ACTUAL PRODUCT IN USE",
+      "purpose": "Give learners a fast map for locating core hazard, first-aid, handling, exposure-control and emergency information without turning a training example into product-specific instructions.",
+      "panels": [
+        [
+          "Identification",
+          "Confirm product identity, recommended use and supplier information before relying on the document."
+        ],
+        [
+          "Hazard identification",
+          "Locate the classified hazards, signal word, pictograms, hazard statements and precautionary statements."
+        ],
+        [
+          "First aid & emergency response",
+          "Find first-aid measures and the sections covering fire-fighting and accidental-release information as applicable."
+        ],
+        [
+          "Handling & storage",
+          "Check safe handling practices, storage conditions and incompatibilities in the current SDS."
+        ],
+        [
+          "Exposure controls & PPE",
+          "Use the exposure-control and personal-protection information together with the employer hazard assessment and site program."
+        ]
+      ],
+      "boundary": "A training SDS is only a navigation example. Product-specific decisions come from the current manufacturer SDS, label and facility HazCom process.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-02.json"
+      ],
+      "sourceBaseline": "/assets/course1/ppe-hazcom-decision-map.svg",
+      "baselineRegistryAssetId": "VIS-LH-TECH1-001-002"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW",
+      "slug": "CLEAN-DIRTY-FLOW",
+      "module": 2,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-04"
+      ],
+      "title": "Controlled Zone Movement & Clean/Dirty Flow",
+      "kicker": "STATUS CAN CHANGE AT EVERY TRANSITION",
+      "purpose": "Provide the second individual biosecurity concept master required by the release manifest.",
+      "panels": [
+        [
+          "Read the facility zone map",
+          "Use the current site-defined risk zones and transition rules rather than assuming universal room names or traffic direction."
+        ],
+        [
+          "Verify current status",
+          "Check the worker, PPE, tool, cart, hose, material and area status before crossing a controlled boundary."
+        ],
+        [
+          "Complete the required transition",
+          "Apply the defined sanitation, changeover, separation or access step before moving into the next zone."
+        ],
+        [
+          "Prevent back-contamination",
+          "A cleaned or sanitized item can lose that status after new contact; protect it from uncontrolled surfaces and routes."
+        ],
+        [
+          "Stop on uncertainty",
+          "When the route, status or required transition cannot be verified, stop movement and use the facility escalation process."
+        ]
+      ],
+      "boundary": "“Clean-to-dirty” is not a universal one-way rule. Direction, backtracking and transition requirements come from the facility’s current risk map and SOP.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-04.json"
+      ],
+      "sourceBaseline": "/assets/course1/biosecurity-pathway-map.svg",
+      "baselineRegistryAssetId": "VIS-LH-TECH1-001-004"
+    },
+    {
+      "conceptId": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD",
+      "slug": "MOVEMENT-RECORD",
+      "module": 4,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-11"
+      ],
+      "title": "Material Movement Record",
+      "kicker": "MAKE EVERY CONTROLLED MOVE RECONSTRUCTABLE",
+      "purpose": "Provide the second individual traceability concept master required by the release manifest.",
+      "panels": [
+        [
+          "Identity",
+          "Record the controlled plant, material, lot, batch or container identifier involved in the move."
+        ],
+        [
+          "From → to",
+          "Capture the source and destination needed to reconstruct where the material moved."
+        ],
+        [
+          "Time & event context",
+          "Record when the movement occurred and the task, transfer or event that explains it."
+        ],
+        [
+          "Quantity / status",
+          "Record the required count, quantity or status information without inventing precision the system does not require."
+        ],
+        [
+          "Attribution & evidence",
+          "Keep the move attributable in the facility’s controlled system and preserve any required supporting record."
+        ]
+      ],
+      "boundary": "This is a vendor-neutral evidence model. Exact fields, software and reporting rules are controlled by the facility and applicable program.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-11.json"
+      ],
+      "sourceBaseline": "/assets/course1/inventory-reconciliation-flow.svg",
+      "baselineRegistryAssetId": "VIS-LH-TECH1-001-009"
     }
   ]
 }
