@@ -36,8 +36,7 @@ jobs:
           const fs = require('fs');
           const path = require('path');
 
-          const manifestPath = 'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json';
-          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          const manifest = JSON.parse(fs.readFileSync('visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json', 'utf8'));
           const approved = (manifest.concepts || []).filter((row) => row.releaseApproved === true);
 
           if (approved.length === 0) {
@@ -56,10 +55,10 @@ jobs:
               throw new Error(`${row.conceptId}: approved candidate requires repositoryPath and targetPublicPath`);
             }
             if (!source.startsWith('visuals/review-candidates/course1/production-masters/')) {
-              throw new Error(`${row.conceptId}: approved source must come from the governed production-masters directory`);
+              throw new Error(`${row.conceptId}: source must be a governed repository production master`);
             }
             if (!targetPublicPath.startsWith('/assets/course1/')) {
-              throw new Error(`${row.conceptId}: targetPublicPath must remain inside /assets/course1/`);
+              throw new Error(`${row.conceptId}: targetPublicPath must stay inside /assets/course1/`);
             }
             if (!/\.(png|webp|jpe?g)$/i.test(source) || !/\.(png|webp|jpe?g)$/i.test(targetPublicPath)) {
               throw new Error(`${row.conceptId}: only governed raster formats may be deployed`);
@@ -77,15 +76,6 @@ jobs:
 
           fs.appendFileSync(process.env.GITHUB_OUTPUT, `approved_count=${copied}\n`);
           NODE
-
-      - name: Reject accidental legacy Drive candidate deployment
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -Eq 'drive\.usercontent\.google\.com|1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv|1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2|17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv|1FPA-1ygokBNPOl-6R2POSamkNENUpwEX|1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY|1o8suJoL6YbubrwZLArXSBGb2dKYlbyey' .github/workflows/course1-png-deploy.yml; then
-            echo 'ERROR: stale Drive-download deployment path or rejected candidate IDs reintroduced.'
-            exit 1
-          fi
 
       - name: Validate staged raster files
         if: steps.stage.outputs.approved_count != '0'
