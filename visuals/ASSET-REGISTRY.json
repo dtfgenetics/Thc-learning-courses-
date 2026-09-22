@@ -29,7 +29,7 @@
   "assets": [
     {
       "id": "VIS-LH-TECH1-001-001",
-      "status": "produced",
+      "status": "retired",
       "title": "Hierarchy of controls and Technician I decision boundaries",
       "learnerPath": "/assets/course1/hazard-control-decision-flow.svg",
       "sourcePath": "apps/web/public/assets/course1/hazard-control-decision-flow.svg",
@@ -70,7 +70,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-002",
-      "status": "produced",
+      "status": "retired",
       "title": "PPE task guide and hazard-communication information map",
       "learnerPath": "/assets/course1/ppe-hazcom-decision-map.svg",
       "sourcePath": "apps/web/public/assets/course1/ppe-hazcom-decision-map.svg",
@@ -111,7 +111,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-003",
-      "status": "produced",
+      "status": "retired",
       "title": "Cultivation workplace hazard-recognition scan",
       "learnerPath": "/assets/course1/cultivation-work-area-hazard-scan.svg",
       "sourcePath": "apps/web/public/assets/course1/cultivation-work-area-hazard-scan.svg",
@@ -153,7 +153,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-004",
-      "status": "produced",
+      "status": "retired",
       "title": "Biosecurity pathway map",
       "learnerPath": "/assets/course1/biosecurity-pathway-map.svg",
       "sourcePath": "apps/web/public/assets/course1/biosecurity-pathway-map.svg",
@@ -194,7 +194,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-005",
-      "status": "produced",
+      "status": "retired",
       "title": "Cleaning and disinfection sequence",
       "learnerPath": "/assets/course1/cleaning-disinfection-sequence.svg",
       "sourcePath": "apps/web/public/assets/course1/cleaning-disinfection-sequence.svg",
@@ -237,13 +237,13 @@
       "id": "VIS-LH-TECH1-001-006",
       "status": "produced",
       "title": "Quarantine, hold, and restricted-entry comparison",
-      "learnerPath": "/assets/course1/quarantine-hold-rei-comparison.svg",
-      "sourcePath": "apps/web/public/assets/course1/quarantine-hold-rei-comparison.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/quarantine-hold-rei-comparison.svg",
+      "learnerPath": "/assets/course1/quarantine-hold-rei-comparison.png",
+      "sourcePath": "apps/web/public/assets/course1/quarantine-hold-rei-comparison.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/quarantine-hold-rei-comparison.png",
       "primaryLessons": [
         "LESSON-LH-TECH1-001-06"
       ],
-      "purpose": "Keep plant-health isolation, operational material status, and pesticide worker-entry controls conceptually separate.",
+      "purpose": "Production raster supporting quarantine, hold, and restricted-entry comparison in Course 1.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
         "status": "candidate-produced-human-qa-required",
@@ -276,7 +276,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-007",
-      "status": "produced",
+      "status": "retired",
       "title": "Controlled-document anatomy",
       "learnerPath": "/assets/course1/controlled-document-anatomy.svg",
       "sourcePath": "apps/web/public/assets/course1/controlled-document-anatomy.svg",
@@ -317,7 +317,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-008",
-      "status": "produced",
+      "status": "retired",
       "title": "Material genealogy",
       "learnerPath": "/assets/course1/material-genealogy.svg",
       "sourcePath": "apps/web/public/assets/course1/material-genealogy.svg",
@@ -358,7 +358,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-009",
-      "status": "produced",
+      "status": "retired",
       "title": "Inventory reconciliation flow",
       "learnerPath": "/assets/course1/inventory-reconciliation-flow.svg",
       "sourcePath": "apps/web/public/assets/course1/inventory-reconciliation-flow.svg",
@@ -400,7 +400,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-010",
-      "status": "produced",
+      "status": "retired",
       "title": "Operator-care versus servicing boundary",
       "learnerPath": "/assets/course1/operator-care-servicing-boundary.svg",
       "sourcePath": "apps/web/public/assets/course1/operator-care-servicing-boundary.svg",
@@ -443,13 +443,13 @@
       "id": "VIS-LH-TECH1-001-011",
       "status": "produced",
       "title": "Maintenance-ready fault report",
-      "learnerPath": "/assets/course1/maintenance-fault-report.svg",
-      "sourcePath": "apps/web/public/assets/course1/maintenance-fault-report.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/maintenance-fault-report.svg",
+      "learnerPath": "/assets/course1/maintenance-fault-report.png",
+      "sourcePath": "apps/web/public/assets/course1/maintenance-fault-report.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/maintenance-fault-report.png",
       "primaryLessons": [
         "LESSON-LH-TECH1-001-15"
       ],
-      "purpose": "Retain the prior fault-report baseline as a supporting public asset while the more explicit controlled escalation visual is used for the primary Lesson 5.3 presentation.",
+      "purpose": "Production raster supporting maintenance-ready fault report in Course 1.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
         "status": "candidate-produced-human-qa-required",
@@ -484,14 +484,14 @@
       "id": "VIS-LH-TECH1-001-012",
       "status": "produced",
       "title": "Professional shift-handoff model",
-      "learnerPath": "/assets/course1/shift-handoff-model.svg",
-      "sourcePath": "apps/web/public/assets/course1/shift-handoff-model.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/shift-handoff-model.svg",
+      "learnerPath": "/assets/course1/shift-handoff-model.png",
+      "sourcePath": "apps/web/public/assets/course1/shift-handoff-model.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/shift-handoff-model.png",
       "primaryLessons": [
         "LESSON-LH-TECH1-001-17",
         "LESSON-LH-TECH1-001-18"
       ],
-      "purpose": "Retain the prior handoff model as a supporting public asset while the controlled handoff and integrated workflow visuals provide the primary Lesson 6.2 and 6.3 teaching views.",
+      "purpose": "Production raster supporting professional shift-handoff model in Course 1.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
         "status": "candidate-produced-human-qa-required",
@@ -526,13 +526,13 @@
       "id": "VIS-LH-TECH1-001-013",
       "status": "produced",
       "title": "Deviation, exception, incomplete and unknown status decision map",
-      "learnerPath": "/assets/course1/deviation-status-decision-map.svg",
-      "sourcePath": "apps/web/public/assets/course1/deviation-status-decision-map.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/deviation-status-decision-map.svg",
+      "learnerPath": "/assets/course1/deviation-status-decision-map.png",
+      "sourcePath": "apps/web/public/assets/course1/deviation-status-decision-map.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/deviation-status-decision-map.png",
       "primaryLessons": [
         "LESSON-LH-TECH1-001-09"
       ],
-      "purpose": "Teach truthful classification of complete work, planned exceptions, deviations, incomplete work and unknown or unverified status without manufacturing completion.",
+      "purpose": "Production raster supporting deviation, exception, incomplete and unknown status decision map in Course 1.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
         "status": "candidate-produced-human-qa-required",
@@ -567,13 +567,13 @@
       "id": "VIS-LH-TECH1-001-014",
       "status": "produced",
       "title": "Cultivation data integrity record lifecycle",
-      "learnerPath": "/assets/course1/data-integrity-record-lifecycle.svg",
-      "sourcePath": "apps/web/public/assets/course1/data-integrity-record-lifecycle.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/data-integrity-record-lifecycle.svg",
+      "learnerPath": "/assets/course1/data-integrity-record-lifecycle.png",
+      "sourcePath": "apps/web/public/assets/course1/data-integrity-record-lifecycle.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/data-integrity-record-lifecycle.png",
       "primaryLessons": [
         "LESSON-LH-TECH1-001-16"
       ],
-      "purpose": "Retain the broader data-integrity lifecycle as a supporting public asset while the controlled correction visual provides the primary Lesson 6.1 correction teaching view.",
+      "purpose": "Production raster supporting cultivation data integrity record lifecycle in Course 1.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
         "status": "candidate-produced-human-qa-required",
@@ -606,7 +606,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-015",
-      "status": "produced",
+      "status": "retired",
       "title": "Equipment pre-use readiness",
       "learnerPath": "/assets/course1/equipment-preuse-readiness.svg",
       "sourcePath": "apps/web/public/assets/course1/equipment-preuse-readiness.svg",
@@ -646,7 +646,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-016",
-      "status": "produced",
+      "status": "retired",
       "title": "Operator care versus maintenance boundary",
       "learnerPath": "/assets/course1/operator-vs-maintenance-boundary.svg",
       "sourcePath": "apps/web/public/assets/course1/operator-vs-maintenance-boundary.svg",
@@ -686,7 +686,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-017",
-      "status": "produced",
+      "status": "retired",
       "title": "Fault context and escalation",
       "learnerPath": "/assets/course1/fault-context-escalation.svg",
       "sourcePath": "apps/web/public/assets/course1/fault-context-escalation.svg",
@@ -726,7 +726,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-018",
-      "status": "produced",
+      "status": "retired",
       "title": "Controlled record correction",
       "learnerPath": "/assets/course1/record-correction-controls.svg",
       "sourcePath": "apps/web/public/assets/course1/record-correction-controls.svg",
@@ -766,7 +766,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-019",
-      "status": "produced",
+      "status": "retired",
       "title": "Professional shift handoff control",
       "learnerPath": "/assets/course1/shift-handoff-control.svg",
       "sourcePath": "apps/web/public/assets/course1/shift-handoff-control.svg",
@@ -806,7 +806,7 @@
     },
     {
       "id": "VIS-LH-TECH1-001-020",
-      "status": "produced",
+      "status": "retired",
       "title": "Integrated Technician I workflow",
       "learnerPath": "/assets/course1/integrated-technician-workflow.svg",
       "sourcePath": "apps/web/public/assets/course1/integrated-technician-workflow.svg",
@@ -843,6 +843,225 @@
         ],
         "releaseApproved": false
       }
+    },
+    {
+      "id": "VIS-LH-TECH1-001-021",
+      "title": "Cultivation workplace hazard scan",
+      "purpose": "Production raster for cultivation workplace hazard scan in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/hazard-scan.png",
+      "learnerPath": "/assets/course1/hazard-scan.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/hazard-scan.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-01"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-022",
+      "title": "Hierarchy of controls and technician decision boundary",
+      "purpose": "Production raster for hierarchy of controls and technician decision boundary in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/hierarchy-controls.png",
+      "learnerPath": "/assets/course1/hierarchy-controls.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/hierarchy-controls.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-01"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-023",
+      "title": "Task-based PPE decision model",
+      "purpose": "Production raster for task-based ppe decision model in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/ppe-task-guide.png",
+      "learnerPath": "/assets/course1/ppe-task-guide.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/ppe-task-guide.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-02"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-024",
+      "title": "Hazard communication and SDS information anatomy",
+      "purpose": "Production raster for hazard communication and sds information anatomy in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/sds-anatomy.png",
+      "learnerPath": "/assets/course1/sds-anatomy.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/sds-anatomy.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-02"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-025",
+      "title": "Contamination source-route-receiver pathways",
+      "purpose": "Production raster for contamination source-route-receiver pathways in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/contamination-routes.png",
+      "learnerPath": "/assets/course1/contamination-routes.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/contamination-routes.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-04"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-026",
+      "title": "Facility-controlled zone movement and transition flow",
+      "purpose": "Production raster for facility-controlled zone movement and transition flow in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/clean-dirty-flow.png",
+      "learnerPath": "/assets/course1/clean-dirty-flow.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/clean-dirty-flow.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-04"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-027",
+      "title": "Cleaning, disinfection and sanitation verification sequence",
+      "purpose": "Production raster for cleaning, disinfection and sanitation verification sequence in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/sanitation-sequence.png",
+      "learnerPath": "/assets/course1/sanitation-sequence.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/sanitation-sequence.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-05"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-028",
+      "title": "Authorization boundary and escalation logic",
+      "purpose": "Production raster for authorization boundary and escalation logic in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/authority-escalation.png",
+      "learnerPath": "/assets/course1/authority-escalation.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/authority-escalation.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-08",
+        "LESSON-LH-TECH1-001-13",
+        "LESSON-LH-TECH1-001-14"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-029",
+      "title": "Controlled SOP and work-order anatomy",
+      "purpose": "Production raster for controlled sop and work-order anatomy in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/controlled-document.png",
+      "learnerPath": "/assets/course1/controlled-document.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/controlled-document.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-07"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-030",
+      "title": "Plant and material genealogy",
+      "purpose": "Production raster for plant and material genealogy in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/material-genealogy.png",
+      "learnerPath": "/assets/course1/material-genealogy.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/material-genealogy.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-10"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-031",
+      "title": "Vendor-neutral movement-record evidence",
+      "purpose": "Production raster for vendor-neutral movement-record evidence in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/material-movement-record.png",
+      "learnerPath": "/assets/course1/material-movement-record.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/material-movement-record.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-11"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-032",
+      "title": "Inventory reconciliation without forced balancing",
+      "purpose": "Production raster for inventory reconciliation without forced balancing in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/inventory-reconciliation.png",
+      "learnerPath": "/assets/course1/inventory-reconciliation.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/inventory-reconciliation.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-11",
+        "LESSON-LH-TECH1-001-12"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-033",
+      "title": "Equipment pre-use readiness scan",
+      "purpose": "Production raster for equipment pre-use readiness scan in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/equipment-preuse-v3.png",
+      "learnerPath": "/assets/course1/equipment-preuse-v3.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/equipment-preuse-v3.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-13"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-034",
+      "title": "Operator care versus servicing boundary",
+      "purpose": "Production raster for operator care versus servicing boundary in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/operator-vs-maintenance-v3.png",
+      "learnerPath": "/assets/course1/operator-vs-maintenance-v3.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/operator-vs-maintenance-v3.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-14"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-035",
+      "title": "Maintenance-ready fault context and escalation",
+      "purpose": "Production raster for maintenance-ready fault context and escalation in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/fault-report-v3.png",
+      "learnerPath": "/assets/course1/fault-report-v3.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/fault-report-v3.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-15"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-036",
+      "title": "Controlled record correction and audit-trail preservation",
+      "purpose": "Production raster for controlled record correction and audit-trail preservation in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/record-correction-v3.png",
+      "learnerPath": "/assets/course1/record-correction-v3.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/record-correction-v3.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-16"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-037",
+      "title": "Professional shift handoff",
+      "purpose": "Production raster for professional shift handoff in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/shift-handoff-v3.png",
+      "learnerPath": "/assets/course1/shift-handoff-v3.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/shift-handoff-v3.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-17"
+      ]
+    },
+    {
+      "id": "VIS-LH-TECH1-001-038",
+      "title": "Integrated Technician I workflow",
+      "purpose": "Production raster for integrated technician i workflow in Course 1.",
+      "status": "produced",
+      "sourcePath": "apps/web/public/assets/course1/integrated-workflow-v3.png",
+      "learnerPath": "/assets/course1/integrated-workflow-v3.png",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course1/integrated-workflow-v3.png",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-001-18"
+      ]
     }
   ]
 }
