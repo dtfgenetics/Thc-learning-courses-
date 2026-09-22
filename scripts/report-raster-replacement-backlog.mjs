@@ -65,6 +65,8 @@ for(const asset of course1Registry.assets??[]){
     sourcePath:asset.sourcePath,
     currentLifecycle:asset.assetLifecycle??asset.status,
     replacementStatus:asset.rasterReplacement?.status??'missing',
+    candidatePath:asset.rasterReplacement?.candidateSourcePath??null,
+    candidateSha256:asset.rasterReplacement?.candidateSha256??null,
     releaseGate:asset.rasterReplacement?.releaseGate??null
   });
 }
@@ -81,6 +83,8 @@ for(let n=2;n<=6;n++){
       sourcePath:asset.sourcePath,
       currentLifecycle:asset.assetLifecycle??asset.status,
       replacementStatus:asset.rasterReplacement?.status??'missing',
+      candidatePath:asset.rasterReplacement?.candidateSourcePath??null,
+      candidateSha256:asset.rasterReplacement?.candidateSha256??null,
       releaseGate:asset.rasterReplacement?.releaseGate??null
     });
   }

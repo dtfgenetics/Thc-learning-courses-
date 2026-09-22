@@ -20,7 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 2
+          # Review readiness compares current object versions with historical
+          # approvals. A shallow clone makes valid history appear missing and
+          # can produce a false readiness result.
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 24

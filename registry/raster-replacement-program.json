@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "THC-ACADEMY-RASTER-REPLACEMENT-PROGRAM-001",
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "purpose": "Canonical production queue for replacing legacy/review SVG instructional visuals with reviewed high-resolution raster assets without breaking learner-facing routes.",
   "productionPolicy": {
     "allowedFormats": [
@@ -25,7 +25,9 @@
     "technicianI": 60,
     "technicianII": 36,
     "releasedRasterReplacements": 0,
-    "openRasterReplacements": 96
+    "openRasterReplacements": 96,
+    "producedRasterCandidates": 10,
+    "remainingRasterProduction": 86
   },
   "technicianI": [
     {
@@ -41,9 +43,10 @@
       "courseId": "COURSE-LH-TECH1-002",
       "count": 10,
       "sourceRegistries": [
-        "visuals/COURSE2-ASSET-REGISTRY.json"
+        "visuals/COURSE2-ASSET-REGISTRY.json",
+        "visuals/COURSE2-RASTER-CANDIDATE-MANIFEST.json"
       ],
-      "state": "raster-replacement-required"
+      "state": "candidate-produced-human-qa-required"
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
