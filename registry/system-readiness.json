@@ -1,6 +1,6 @@
 {
   "system": "THC Academy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "updatedAt": "2026-09-22",
   "productionReady": false,
   "areas": {
@@ -38,8 +38,10 @@
         "authorizationIntegrated": true,
         "lessonModuleCourseCompletion": true,
         "assessmentAttemptLifecycle": true,
-        "learnerTranscriptProjection": true
-      }
+        "learnerTranscriptProjection": true,
+        "productionPersistenceAdapterCodeReady": true
+      },
+      "scope": "Repository production persistence adapter composition is implemented and transaction-tested, but productionPersistenceAdapter remains false until a live PostgreSQL deployment, migrations, secret delivery, failure/retry behavior and operational validation are completed."
     },
     "credentials": {
       "status": "foundation",
@@ -50,9 +52,10 @@
         "privacySafeVerificationProjection": true,
         "productionIssuerIdentity": false,
         "productionSigning": false,
-        "revocationPersistence": false
+        "revocationPersistence": false,
+        "revocationTransactionCodeReady": true
       },
-      "scope": "Credential runtime foundation only; production issuance remains unavailable until program-specific release evidence and production security/persistence gates close."
+      "scope": "Credential runtime foundation includes transaction-tested revocation persistence code, but production issuer identity, signing and deployed revocation persistence remain unavailable until live infrastructure and security validation close."
     },
     "api": {
       "status": "integrated-development",
