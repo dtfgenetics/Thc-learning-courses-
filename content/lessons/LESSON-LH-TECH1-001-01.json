@@ -85,16 +85,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-003",
-        "src": "/assets/course1/cultivation-work-area-hazard-scan.svg",
-        "alt": "Simplified cultivation room showing irrigation water approaching damaged electrical equipment, a blocked aisle, an unstable ladder, an exposed cutting tool, high-intensity lighting, and a carbon-dioxide life-safety alarm, with a reminder to scan for other task-specific exposures.",
-        "caption": "Use a deliberate room scan: people, pathways, equipment, environment, materials and alarms.",
-        "references": [
-          "REF-NIOSH-CANNABIS-HAZARDS-2024"
-        ]
-      },
-      {
         "type": "steps",
         "title": "Five questions for a pre-task and mid-task hazard scan",
         "items": [
@@ -163,17 +153,6 @@
         "title": "Recognition is not repair authority",
         "tone": "safety",
         "body": "Recognizing a damaged electrical device, unsafe alarm condition, failed guard or technical fault does not automatically authorize a Technician I worker to open, repair, bypass or troubleshoot it. Stop or isolate where the site procedure authorizes that action, preserve the condition, and escalate."
-      },
-      {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-001",
-        "src": "/assets/course1/hazard-control-decision-flow.svg",
-        "alt": "Flowchart showing a technician observing a hazard, checking for an authorized routine control, applying and verifying that control when permitted, or stopping, isolating where authorized, and escalating when the task cannot proceed safely. Life-safety alarms direct the worker to the posted emergency procedure.",
-        "caption": "A practical decision model for routine controls, stop-work, isolation within authorization, escalation and emergency response.",
-        "references": [
-          "REF-NIOSH-CANNABIS-HAZARDS-2024",
-          "REF-OSHA-1910-22-WALKING"
-        ]
       },
       {
         "type": "comparison",
@@ -252,6 +231,28 @@
         "body": "Safe routine cultivation work depends on noticing hazards early, preferring stronger authorized controls, verifying that the control worked, reassessing changed conditions, and treating stop-work and escalation as competent performance—not as failure to finish the task.",
         "references": [
           "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-021",
+        "src": "/assets/course1/hazard-scan.png",
+        "alt": "Cultivation work-area scan showing representative pathway, electrical, equipment, access and exposure concerns. The learner checks the actual assigned area, applies only authorized routine controls, and stops or escalates conditions that are unsafe, changing or outside their authority.",
+        "caption": "Representative cultivation work-area hazard scan; examples demonstrate a scanning method, not a universal hazard list.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-022",
+        "src": "/assets/course1/hierarchy-controls.png",
+        "alt": "Hierarchy from elimination and substitution through engineering and administrative controls to PPE, paired with a technician decision boundary. The framework prioritizes more effective controls while reminding learners that substitutions, engineering changes and other technical decisions require the facility's authorization rather than independent worker action.",
+        "caption": "Hierarchy of controls with Technician I authorization boundaries.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING"
         ]
       }
     ]
