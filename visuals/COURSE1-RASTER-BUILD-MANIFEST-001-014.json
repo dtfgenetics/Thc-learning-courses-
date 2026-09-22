@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 2,
+  "buildId": "COURSE1-RASTER-COPY-LOCK-001-014",
+  "builtFrom": "visuals/COURSE1-RASTER-COPY-LOCK-001-014.json",
+  "releaseApproved": false,
+  "governedReplacementCount": 14,
+  "supplementalPrimaryConceptCount": 3,
+  "totalCandidateCount": 17,
+  "assets": [
+    {
+      "recordId": "VIS-LH-TECH1-001-001",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-001-HIERARCHY-CONTROLS-master-v1.png",
+      "bytes": 215239,
+      "sha256": "0839bfef3f2deb5aefee04b8e6a99cb79d731793845682703bf06a32c4385108",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-01.json"
+      ],
+      "sourceBaseline": "/assets/course1/hazard-control-decision-flow.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-001"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-002",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-002-PPE-HAZCOM-master-v1.png",
+      "bytes": 222117,
+      "sha256": "97784630f94286e003600baeee3272c2cb3dbcc1d4be6911125f8a2bba46fdb6",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-02.json"
+      ],
+      "sourceBaseline": "/assets/course1/ppe-hazcom-decision-map.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-002"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-003",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-003-HAZARD-SCAN-master-v1.png",
+      "bytes": 222915,
+      "sha256": "5c5a304ad2bf814ded823621275cff05ea5fd3fce550e2822111555a99b58416",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-01.json",
+        "content/lessons/LESSON-LH-TECH1-001-03.json"
+      ],
+      "sourceBaseline": "/assets/course1/cultivation-work-area-hazard-scan.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-003"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-004",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-004-BIOSECURITY-PATHWAY-master-v1.png",
+      "bytes": 190367,
+      "sha256": "226a2d9c8f7474b479d3ce79a6fcc669ef84957f70e1b9f7dfd4d1f800e0ce7f",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-04.json"
+      ],
+      "sourceBaseline": "/assets/course1/biosecurity-pathway-map.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-004"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-005",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-005-CLEANING-DISINFECTION-master-v1.png",
+      "bytes": 225847,
+      "sha256": "d26592efbf63b28b93a6451dfb41863c8848ec2076d24fc489d819101bdf7f40",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-05.json"
+      ],
+      "sourceBaseline": "/assets/course1/cleaning-disinfection-sequence.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-005"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-006",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-006-QUARANTINE-HOLD-REI-master-v1.png",
+      "bytes": 221035,
+      "sha256": "0b6f2f473ede62b2a8e90093a55637ae59d117527ae54ce2fe29f7a786941c64",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-06.json"
+      ],
+      "sourceBaseline": "/assets/course1/quarantine-hold-rei-comparison.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-006"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-007",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-007-CONTROLLED-DOCUMENT-master-v1.png",
+      "bytes": 207846,
+      "sha256": "3504c607006140c6056f7efece99fe1c0c67d0ef6415d7d615b33c4f4c9b1a67",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-07.json"
+      ],
+      "sourceBaseline": "/assets/course1/controlled-document-anatomy.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-007"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-008",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-008-MATERIAL-GENEALOGY-master-v1.png",
+      "bytes": 215218,
+      "sha256": "7abb7ddbacdfddc7add60e026d33e0a90918a04d4f4b137b2482b27015fd92ab",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-10.json"
+      ],
+      "sourceBaseline": "/assets/course1/material-genealogy.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-008"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-009",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-009-INVENTORY-RECONCILIATION-master-v1.png",
+      "bytes": 217902,
+      "sha256": "1d202958d9e6bb9cccb8cfa079875b6c8575cb2e070c4672affb9d09cf1825bf",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-11.json",
+        "content/lessons/LESSON-LH-TECH1-001-12.json"
+      ],
+      "sourceBaseline": "/assets/course1/inventory-reconciliation-flow.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-009"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-010",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-010-AUTHORITY-SERVICING-master-v1.png",
+      "bytes": 239719,
+      "sha256": "93ef76fad2f5ffc5dde3edb833bb80474013b7dc9bfce539c9d0f9e1e7166c68",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-08.json",
+        "content/lessons/LESSON-LH-TECH1-001-13.json",
+        "content/lessons/LESSON-LH-TECH1-001-14.json"
+      ],
+      "sourceBaseline": "/assets/course1/operator-care-servicing-boundary.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-010"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-011",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-011-MAINTENANCE-FAULT-REPORT-master-v1.png",
+      "bytes": 205881,
+      "sha256": "a06c5a7ad77094d1fee17ffdb99a28587647552065727cc7fa55324179c511e4",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-15.json"
+      ],
+      "sourceBaseline": "/assets/course1/maintenance-fault-report.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-011"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-012",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-012-SHIFT-HANDOFF-MODEL-master-v1.png",
+      "bytes": 205855,
+      "sha256": "3954df746b5db81dfd38b39ddba51a9dd86455f6972677d850c946fa3ec30eb2",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-17.json",
+        "content/lessons/LESSON-LH-TECH1-001-18.json"
+      ],
+      "sourceBaseline": "/assets/course1/shift-handoff-model.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-012"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-013",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-013-DEVIATION-STATUS-master-v1.png",
+      "bytes": 220398,
+      "sha256": "3590455cd32a3027c7a6b904627a82be84f211dbbd04ddd09812fb6467a0e6bc",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-09.json"
+      ],
+      "sourceBaseline": "/assets/course1/deviation-status-decision-map.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-013"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-014",
+      "kind": "governed-replacement",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-014-DATA-INTEGRITY-LIFECYCLE-master-v1.png",
+      "bytes": 221716,
+      "sha256": "928082982cf25c1d60c8a84e262c4a11fbf5d49967acf6fcec195e7ec54c2c02",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-16.json"
+      ],
+      "sourceBaseline": "/assets/course1/data-integrity-record-lifecycle.svg",
+      "releaseApproved": false,
+      "assetId": "VIS-LH-TECH1-001-014"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-04-SDS-ANATOMY",
+      "kind": "supplemental-primary-concept",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-04-SDS-ANATOMY-SDS-ANATOMY-master-v1.png",
+      "bytes": 236749,
+      "sha256": "ffe5e1f75e24129c31d02fb4a5bfca454a019de5aafb119f8d4862118c64da21",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-02.json"
+      ],
+      "sourceBaseline": "/assets/course1/ppe-hazcom-decision-map.svg",
+      "releaseApproved": false,
+      "conceptId": "VIS-LH-TECH1-001-04-SDS-ANATOMY",
+      "baselineRegistryAssetId": "VIS-LH-TECH1-001-002"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW",
+      "kind": "supplemental-primary-concept",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW-CLEAN-DIRTY-FLOW-master-v1.png",
+      "bytes": 252331,
+      "sha256": "74e2298e02f6ec04389a6ca7fe224e2a5acc808c416e020776ed22c71d8845ee",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-04.json"
+      ],
+      "sourceBaseline": "/assets/course1/biosecurity-pathway-map.svg",
+      "releaseApproved": false,
+      "conceptId": "VIS-LH-TECH1-001-06-CLEAN-DIRTY-FLOW",
+      "baselineRegistryAssetId": "VIS-LH-TECH1-001-004"
+    },
+    {
+      "recordId": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD",
+      "kind": "supplemental-primary-concept",
+      "file": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-11-MOVEMENT-RECORD-MOVEMENT-RECORD-master-v1.png",
+      "bytes": 216006,
+      "sha256": "ccf519dd2d19ae119e5785dd1f6691e39eb5c051204ea5c3e7a65a5e46832e3a",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "encoding": "png",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-11.json"
+      ],
+      "sourceBaseline": "/assets/course1/inventory-reconciliation-flow.svg",
+      "releaseApproved": false,
+      "conceptId": "VIS-LH-TECH1-001-11-MOVEMENT-RECORD",
+      "baselineRegistryAssetId": "VIS-LH-TECH1-001-009"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+name: Build Course 1 raster completion set
+
+on:
+  push:
+    branches:
+      - 'feat/course1-raster-masters-001-014-20260922'
+    paths:
+      - 'visuals/COURSE1-RASTER-COPY-LOCK-001-014.json'
+      - 'scripts/build-course1-raster-masters-001-014.py'
+      - '.github/workflows/course1-raster-masters-001-014.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course1-raster-completion-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install raster renderer
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Build governed PNG candidates
+        run: python scripts/build-course1-raster-masters-001-014.py
+
+      - name: Validate output contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+
+          root = Path('.')
+          manifest = json.loads((root / 'visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json').read_text())
+          rows = manifest.get('assets', [])
+
+          if len(rows) != 17:
+              raise SystemExit(f'expected 17 raster candidates, found {len(rows)}')
+          if manifest.get('governedReplacementCount') != 14:
+              raise SystemExit('expected 14 governed replacement candidates')
+          if manifest.get('supplementalPrimaryConceptCount') != 3:
+              raise SystemExit('expected 3 supplemental primary-concept candidates')
+          if manifest.get('releaseApproved') is not False:
+              raise SystemExit('build manifest must remain releaseApproved=false')
+
+          seen = set()
+          for row in rows:
+              record_id = row['recordId']
+              if record_id in seen:
+                  raise SystemExit(f'duplicate record id: {record_id}')
+              seen.add(record_id)
+              p = root / row['file']
+              if p.suffix.lower() != '.png':
+                  raise SystemExit(f'{record_id}: non-PNG output')
+              if not p.exists() or p.stat().st_size < 100_000:
+                  raise SystemExit(f'{record_id}: missing or unexpectedly small output')
+              with Image.open(p) as im:
+                  if im.format != 'PNG' or im.size != (2400, 3200):
+                      raise SystemExit(f'{record_id}: invalid PNG/dimensions {im.format} {im.size}')
+              if row.get('releaseApproved') is not False:
+                  raise SystemExit(f'{record_id}: candidate must remain releaseApproved=false')
+
+          print('validated 14 governed replacements + 3 supplemental primary masters at 2400x3200 PNG')
+          PY
+
+      - name: Enforce raster-only output
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find visuals/review-candidates/course1/production-masters -maxdepth 1 -type f -name '*.svg' | grep -q .; then
+            echo 'ERROR: SVG output found in the governed raster production directory.'
+            exit 1
+          fi
+
+      - name: Upload Course 1 raster review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: course1-raster-review-masters
+          path: |
+            visuals/review-candidates/course1/production-masters/*.png
+            visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json
+            visuals/COURSE1-RASTER-COPY-LOCK-001-014.json
+            visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit generated candidates and build manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json
+          git add visuals/review-candidates/course1/production-masters/*.png
+          if git diff --cached --quiet; then
+            echo 'Generated raster candidates already match the branch.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'assets: build Course 1 raster completion set'
+          git push

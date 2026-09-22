@@ -83,7 +83,8 @@ for (const concept of release.concepts ?? []) {
   let canonicalSourceKey;
   if (candidate.sourceType === 'repository-built-copy-locked-production-master') {
     assert.ok(typeof candidate.repositoryPath === 'string' && candidate.repositoryPath.endsWith('.png'), `${concept.conceptId}: repository-built master path required`);
-    assert.ok(typeof candidate.predecessorDriveFileId === 'string' && candidate.predecessorDriveFileId.trim(), `${concept.conceptId}: rejected Drive predecessor ID required for provenance`);
+    const predecessorDriveFileId = candidate.predecessorDriveFileId ?? candidate.predecessorDriveReferenceFileId;
+    assert.ok(typeof predecessorDriveFileId === 'string' && predecessorDriveFileId.trim(), `${concept.conceptId}: rejected Drive predecessor ID required for provenance`);
     assert.match(candidate.sha256 ?? '', /^[a-f0-9]{64}$/, `${concept.conceptId}: repository-built master SHA-256 required`);
     const repositoryFile = path.join(root, candidate.repositoryPath);
     assert.ok(fs.existsSync(repositoryFile), `${concept.conceptId}: repository-built master is missing`);

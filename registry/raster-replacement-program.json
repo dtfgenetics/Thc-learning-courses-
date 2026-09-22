@@ -26,8 +26,8 @@
     "technicianII": 36,
     "releasedRasterReplacements": 0,
     "openRasterReplacements": 96,
-    "producedRasterCandidates": 82,
-    "remainingRasterProduction": 14
+    "producedRasterCandidates": 96,
+    "remainingRasterProduction": 0
   },
   "technicianI": [
     {
@@ -35,11 +35,12 @@
       "count": 20,
       "sourceRegistries": [
         "visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json",
-        "visuals/ASSET-REGISTRY.json"
+        "visuals/ASSET-REGISTRY.json",
+        "visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json"
       ],
-      "state": "partial-candidates-produced-human-qa-required",
-      "produced": 6,
-      "remaining": 14
+      "state": "candidate-produced-human-qa-required",
+      "produced": 20,
+      "remaining": 0
     },
     {
       "courseId": "COURSE-LH-TECH1-002",
@@ -167,5 +168,5 @@
     "Technician I Courses 3-6",
     "Technician II Courses 1-8"
   ],
-  "integrityBoundary": "This registry tracks machine production work only. It does not convert visual review candidates into approved learner assets and does not satisfy human technical, accessibility, assessment, pilot, calibration, standard-setting, legal/privacy/security, or credential-release gates."
+  "integrityBoundary": "All 96 governed raster replacement candidates now have machine-produced binaries. Zero replacements are release-approved. Human factual/copy/accessibility/responsive review, exact public-path verification, lesson cutover, pilot/calibration/standard-setting, legal/privacy/security and credential-release gates remain fail-closed."
 }
