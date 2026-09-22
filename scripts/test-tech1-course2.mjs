@@ -9,7 +9,7 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const readText = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const exists = (p) => fs.existsSync(path.join(root, p));
 const course = read('content/courses/COURSE-LH-TECH1-002.json');
-assert.equal(course.status, 'draft');
+assert.equal(course.status, 'published');
 assert.equal(course.finalAssessment, 'ASSESS-LH-TECH1-002-FINAL');
 assert.ok(course.modules.includes('MOD-LH-TECH1-002-OBSERVATION'));
 assert.equal(course.extensions?.dedicatedCourseAssessmentRequired, false);
@@ -117,7 +117,7 @@ await import('./test-course2-practical-crosswalk.mjs');
 
 const completionStatus = read('registry/course2-completion-status.json');
 assert.equal(completionStatus.courseId, course.id);
-assert.equal(completionStatus.academicPublication, 'draft');
+assert.equal(completionStatus.academicPublication, 'published');
 assert.equal(completionStatus.machineResolvableWorkComplete, true, 'Course 2 machine-resolvable work must be complete after owner-approved raster cutover and verified deployed surface QA');
 assert.equal(completionStatus.certificationEvidenceValidated, false, 'Course 2 academic machine completion must not imply validated professional credential evidence');
 assert.equal(completionStatus.nextMachineActions.length, 0, 'Course 2 cannot retain machine actions after verified raster cutover');
@@ -141,7 +141,7 @@ try {
   assert.equal(catalogResponse.status, 200, 'Course 2 staging catalog should be available');
   const catalog = await catalogResponse.json();
   const courseTwo = (catalog.courses ?? []).find((entry) => entry.id === course.id);
-  assert.ok(courseTwo, 'Course 2 must appear in the draft-preview Academy catalog');
+  assert.ok(courseTwo, 'Course 2 must appear in the published Academy catalog');
   const observationModule = (courseTwo.modules ?? []).find((entry) => entry.id === module.id);
   assert.ok(observationModule, 'Course 2 dedicated observation module must appear in the learner catalog graph');
   const catalogLessonIds = (observationModule.lessons ?? []).map((entry) => entry.id).filter(Boolean);
@@ -167,7 +167,7 @@ try {
     assert.equal(practiceResponse.status, 200, `${lessonId} practice endpoint should be reachable`);
     const practice = await practiceResponse.json();
     assert.equal(practice.presentationSeed, 'course2-route-qa');
-    assert.ok(Array.isArray(practice.items) && practice.items.length > 0, `${lessonId} should expose objective-aligned formative practice in draft preview`);
+    assert.ok(Array.isArray(practice.items) && practice.items.length > 0, `${lessonId} should expose objective-aligned formative practice in published mode`);
     const lessonObjectives = new Set(sourceLesson.learningObjectives ?? []);
     assert.ok(practice.items.every((item) => lessonObjectives.has(item.objective)), `${lessonId} practice must stay inside the lesson objective set`);
     for (const item of practice.items) {
@@ -191,7 +191,7 @@ try {
   }
 
   const moduleResponse = await fetch(`${base}/api/modules/${module.id}/assessment?seed=course2-module-qa`);
-  assert.equal(moduleResponse.status, 200, 'Course 2 module checkpoint should be reachable in draft preview');
+  assert.equal(moduleResponse.status, 200, 'Course 2 module checkpoint should be reachable in published mode');
   const moduleCheckpoint = await moduleResponse.json();
   assert.equal(moduleCheckpoint.presentationSeed, 'course2-module-qa');
   assert.equal(moduleCheckpoint.items.length, formative.items.length);
@@ -239,4 +239,4 @@ try {
   await once(server, 'close');
 }
 
-console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
+console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while academic publication is owner-approved and credential validation remains separate.`);
