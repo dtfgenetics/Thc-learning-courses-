@@ -88,18 +88,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-005",
-        "src": "/assets/course1/cleaning-disinfection-sequence.svg",
-        "alt": "Nine-step sanitation workflow showing secure or remove material, remove debris and gross soil, physically clean, verify the approved product and preparation, apply as directed, maintain required contact conditions, complete the required finish step, inspect the result, and document completion or exceptions.",
-        "caption": "A generic learning sequence; the exact product preparation, application, contact conditions, rinse/dry requirements and compatibility rules come from the current label and facility SOP.",
-        "references": [
-          "REF-UMASS-GREENHOUSE-SANITATION",
-          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
-          "REF-OSHA-1910-1200-HAZCOM"
-        ]
-      },
-      {
         "type": "steps",
         "title": "Nine sanitation decision points",
         "items": [
@@ -316,6 +304,18 @@
         "body": "Sanitation is a verifiable process, not an appearance. Clean first, use the exact approved product and preparation, complete the required conditions, inspect the result, protect the controlled state and document exceptions rather than hiding incomplete work.",
         "references": [
           "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-027",
+        "src": "/assets/course1/sanitation-sequence.png",
+        "alt": "Ordered sanitation model beginning with control of the work area, gross-debris removal and physical cleaning, followed by verification of the exact approved product, preparation, precautions and compatibility. The learner then follows label/SOP-defined contact conditions, completes any required finish step, inspects, protects from recontamination and documents results. No universal rinse, dry, concentration or contact-time value is implied.",
+        "caption": "Sanitation decision sequence: prepare, remove debris, clean, verify the approved product/instructions, meet required contact conditions, finish as applicable, inspect, protect and document.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-SANITATION",
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-OSHA-1910-1200-HAZCOM"
         ]
       }
     ]

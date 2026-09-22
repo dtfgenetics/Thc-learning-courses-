@@ -82,16 +82,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-007",
-        "src": "/assets/course1/controlled-document-anatomy.svg",
-        "alt": "Annotated controlled SOP showing document identity and revision, scope and prerequisites, material or asset identity, step sequence, acceptance criteria, required records, and escalation points, beside a work-order card containing the specific room, batch, asset, quantity, date, and shift context.",
-        "caption": "The SOP defines the controlled method; the work order applies that method to specific work. A conflict must be resolved, not guessed away.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      },
-      {
         "type": "steps",
         "title": "Seven checks before controlled work begins",
         "items": [
@@ -273,6 +263,16 @@
         "title": "Key takeaway",
         "tone": "evidence",
         "body": "Controlled work starts before the physical task. Establish the current instruction, reconcile the specific assignment to physical reality, understand what success looks like, and surface conflicts while there is still time to resolve them correctly.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-029",
+        "src": "/assets/course1/controlled-document.png",
+        "alt": "Example SOP or work-order layout showing document identity and current revision status, prerequisites, ordered task steps, acceptance criteria, required records and exception or escalation points. The exact format is illustrative; learners use the facility's current controlled source.",
+        "caption": "Illustrative controlled-document anatomy emphasizing identity, current revision, prerequisites, steps, acceptance criteria, records and escalation points.",
         "references": [
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]

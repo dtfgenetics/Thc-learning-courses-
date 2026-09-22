@@ -24,8 +24,8 @@
     "totalGovernedReplacements": 96,
     "technicianI": 60,
     "technicianII": 36,
-    "releasedRasterReplacements": 0,
-    "openRasterReplacements": 96,
+    "releasedRasterReplacements": 20,
+    "openRasterReplacements": 76,
     "producedRasterCandidates": 96,
     "remainingRasterProduction": 0
   },
@@ -38,9 +38,11 @@
         "visuals/ASSET-REGISTRY.json",
         "visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json"
       ],
-      "state": "candidate-produced-human-qa-required",
+      "state": "released",
       "produced": 20,
-      "remaining": 0
+      "remaining": 0,
+      "released": 20,
+      "open": 0
     },
     {
       "courseId": "COURSE-LH-TECH1-002",
@@ -168,5 +170,5 @@
     "Technician I Courses 3-6",
     "Technician II Courses 1-8"
   ],
-  "integrityBoundary": "All 96 governed raster replacement candidates now have machine-produced binaries. Zero replacements are release-approved. Human factual/copy/accessibility/responsive review, exact public-path verification, lesson cutover, pilot/calibration/standard-setting, legal/privacy/security and credential-release gates remain fail-closed."
+  "integrityBoundary": "All 96 governed raster replacement candidates have machine-produced binaries. Course 1 has released 20/20 governed replacements through the owner-approved production cutover; 76 governed replacements across the remaining Technician I/II courses remain fail-closed behind their review and release gates."
 }

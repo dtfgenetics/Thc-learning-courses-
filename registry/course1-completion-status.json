@@ -1,12 +1,12 @@
 {
   "courseId": "COURSE-LH-TECH1-001",
   "version": "1.0.1",
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "academicPublication": "published",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 1 canonical instruction, assessments, learner runtime, public deployment baseline and all governed high-resolution raster candidate production are machine-verified. Remaining machine work is defect-oriented release preparation and automated/deployed checks. Human technical/editorial/assessment/accessibility/legal review, responsive/manual UX review, practical calibration, controlled pilot evidence, formal standard setting and versioned final approval remain separate fail-closed gates.",
+  "machineCompletionBoundary": "Course 1 canonical instruction, assessments, learner runtime, the 23-asset production raster repository cutover, and governed raster release accounting are machine-verified. Public deployment/readback of the new raster paths and any defects exposed there remain machine-operational work. Rendered accessibility/responsive review, practical calibration, controlled pilot evidence, formal standard setting and credential release remain separate fail-closed gates.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -49,7 +49,7 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "legacy-svg-compatibility-baseline-raster-replacement-open",
+      "state": "production-raster-repository-cutover-complete-deployment-verification-open",
       "evidence": [
         "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-PRODUCTION-STATUS.md",
         "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
@@ -61,8 +61,8 @@
         "visuals/COURSE1-PRODUCTION-QUALITY-POLICY.json",
         "scripts/report-raster-replacement-backlog.mjs"
       ],
-      "humanGateRequired": true,
-      "note": "All current Course 1 SVG learner assets remain compatibility baselines only. The production-quality policy requires reviewed high-resolution PNG/WebP/JPEG replacements. Replacement candidates must satisfy factual/copy QA, Technician I authority boundaries, accessibility text/captions, responsive/manual review, repository registration, lesson mapping, and verified public delivery before an SVG baseline is retired."
+      "humanGateRequired": false,
+      "note": "Owner-approved repository cutover is complete: 23 PNG learner assets are active in canonical Course 1 lesson/assessment mappings, representing 20/20 governed legacy raster replacements plus three supplemental concept masters. All 20 superseded SVGs remain as retired compatibility/provenance records. Public deployment/readback of the new PNG paths is still required; broader rendered accessibility/responsive review remains tracked in its separate domain."
     },
     {
       "id": "module-assessment-review",
@@ -156,9 +156,9 @@
     }
   ],
   "nextMachineActions": [
-    "run repository integrity checks against the complete Course 1 raster candidate set and release mappings",
-    "prepare exact-version human factual/accessibility/responsive review records for the 23 Course 1 raster masters without marking approval",
-    "repair any defects exposed by automated or deployed QA without weakening assessment or credential boundaries"
+    "verify all 23 released Course 1 raster learner paths after the Academy/DTFSeeds deployment and record exact build/source identity",
+    "reconcile deployment evidence for the Course 1 raster cutover without changing credential-readiness claims",
+    "repair any defects exposed by deployed asset, runtime, accessibility-supporting, or route-integrity checks"
   ],
   "nextHumanActions": [
     "complete the authoritative 166-task current-baseline review queue using real versioned review records; the queue expands automatically if course objects are added",

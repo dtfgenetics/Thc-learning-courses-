@@ -89,16 +89,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-009",
-        "src": "/assets/course1/inventory-reconciliation-flow.svg",
-        "alt": "Flowchart comparing physical verification with the controlled record. Matching evidence is documented as verified; a mismatch triggers recounting, identifier and recent-event checks, preservation of the discrepancy, and escalation rather than changing a value merely to force agreement.",
-        "caption": "Reconciliation compares evidence. It does not make one side automatically correct.",
-        "references": [
-          "REF-MHRA-GXP-DATA-INTEGRITY"
-        ]
-      },
-      {
         "type": "table",
         "title": "Stable movement-event fields",
         "columns": [
@@ -295,6 +285,30 @@
         "references": [
           "REF-GS1-GLOBAL-TRACEABILITY",
           "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-031",
+        "src": "/assets/course1/material-movement-record.png",
+        "alt": "Movement-record example connecting material identity with source, destination, quantity or count, time, event context and attributable recording. It teaches reconstructable evidence without claiming one universal form, software product or jurisdictional requirement.",
+        "caption": "Vendor-neutral movement-record evidence model; exact fields and systems are controlled by the facility and applicable program.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-CODEX-TRACEABILITY-CXG-60-2006"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-032",
+        "src": "/assets/course1/inventory-reconciliation.png",
+        "alt": "Reconciliation flow comparing physical evidence with controlled records, verifying identifiers and recent events, preserving any discrepancy, documenting confirmed facts separately from assumptions and escalating unresolved differences. Record correction occurs only through the authorized process; forced balancing and falsification are prohibited.",
+        "caption": "Inventory reconciliation preserves discrepancies for investigation instead of forcing records and physical counts to match.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-CODEX-TRACEABILITY-CXG-60-2006"
         ]
       }
     ]

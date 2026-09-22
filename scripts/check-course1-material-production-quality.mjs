@@ -125,12 +125,22 @@ if (authenticatedQa) {
   for (const qaAsset of authenticatedQa.assets ?? []) {
     const concept = releaseByConcept.get(qaAsset.conceptId);
     assert.ok(concept, `${qaAsset.conceptId}: authenticated QA references unknown concept`);
-    if (qaAsset.qaStatus !== 'public-approved') {
+    const rejectedBinaryStillActive =
+      concept.candidate.repositoryPath === qaAsset.repositoryReviewPath ||
+      concept.candidate.sha256 === qaAsset.sha256;
+    if (qaAsset.qaStatus !== 'public-approved' && rejectedBinaryStillActive) {
       assert.equal(concept.releaseApproved, false, `${qaAsset.conceptId}: rejected/revise-before-publication binary cannot be release-approved`);
     }
     const shortSide = Math.min(Number(qaAsset.width ?? 0), Number(qaAsset.height ?? 0));
-    if (shortSide > 0 && shortSide < policy.primaryInstructionalRaster.minimumShortSidePx) {
+    if (shortSide > 0 && shortSide < policy.primaryInstructionalRaster.minimumShortSidePx && rejectedBinaryStillActive) {
       assert.equal(concept.releaseApproved, false, `${qaAsset.conceptId}: low-resolution authenticated binary must remain quarantined`);
+    }
+    if (concept.releaseApproved && !rejectedBinaryStillActive) {
+      assert.equal(concept.candidate.qaStatus, 'public-approved', `${qaAsset.conceptId}: released replacement must be public-approved`);
+      assert.ok(
+        Math.min(Number(concept.candidate.pixelDimensions?.width ?? 0), Number(concept.candidate.pixelDimensions?.height ?? 0)) >= policy.primaryInstructionalRaster.minimumShortSidePx,
+        `${qaAsset.conceptId}: released replacement must meet production raster size`
+      );
     }
   }
 }
