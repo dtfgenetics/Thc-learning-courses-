@@ -89,8 +89,8 @@
       {
         "type": "image",
         "title": "Professional shift handoff model",
-        "assetId": "VIS-LH-TECH1-001-012",
-        "src": "/assets/course1/shift-handoff-model.svg",
+        "assetId": "VIS-LH-TECH1-001-041",
+        "src": "/assets/course1/shift-handoff-model.png",
         "alt": "Diagram showing outgoing preparation, two-way handoff exchange, incoming cross-check, and ownership of unresolved actions.",
         "caption": "A strong handoff moves from preparation to exchange to cross-check, with unresolved work clearly assigned rather than merely mentioned.",
         "references": [
@@ -297,6 +297,17 @@
         "tone": "evidence",
         "body": "A handoff succeeds when the incoming shift can state what is true now, what is restricted or unresolved, who has been notified, what must happen next, and what they now own. Preparation, two-way exchange and cross-checking matter more than length.",
         "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-037",
+        "src": "/assets/course1/shift-handoff-v3.png",
+        "alt": "Four-stage shift handoff model showing outgoing preparation, two-way information exchange, incoming cross-check, and explicit ownership of unresolved work, with safety and access controls, holds and identity problems, equipment status, incomplete work and time-sensitive next actions prioritized.",
+        "caption": "Professional handoff transfers exact status, cross-checks critical conditions and confirms ownership without improvising new authority.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
           "REF-HSE-SHIFT-HANDOVER"
         ]
       }

@@ -114,17 +114,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-010",
-        "src": "/assets/course1/operator-care-servicing-boundary.svg",
-        "alt": "Diagram separating routine operator care explicitly assigned by equipment and site procedures from servicing that may involve guards, hazardous motion, protected electrical components, powered disassembly, pressure, stored energy, or other hazards requiring the employer-defined authorized role.",
-        "caption": "A failed readiness check does not authorize the technician to cross from inspection into servicing.",
-        "references": [
-          "REF-OSHA-1910-147-LOTO",
-          "REF-NIOSH-CANNABIS-HAZARDS-2024"
-        ]
-      },
-      {
         "type": "table",
         "title": "Readiness finding classification",
         "columns": [
@@ -255,6 +244,28 @@
         "title": "Key takeaway",
         "tone": "safety",
         "body": "Pre-use competence means finding problems before use, respecting controlled equipment status and staying inside the operator boundary. A failed check is a reason to control the asset—not a license to improvise a repair."
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-028",
+        "src": "/assets/course1/authority-escalation.png",
+        "alt": "Decision flow separating work the technician is assigned, trained and authorized to perform from conditions that require stopping, isolating where authorized, documenting and escalating. Any supervisor, manager, maintenance or compliance roles shown are examples rather than a universal facility hierarchy.",
+        "caption": "Technician authorization and escalation decision model; actual escalation roles follow the facility's chain of command.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-147-LOTO"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-033",
+        "src": "/assets/course1/equipment-preuse-v3.png",
+        "alt": "Five-step equipment pre-use readiness model: confirm exact asset and assignment, check controlled status, inspect only assigned external readiness points, review indicators permitted by the operator procedure, and classify the result as ready, approved routine correction, hold or escalation, or emergency response.",
+        "caption": "Pre-use readiness verifies controlled status and assigned checks without expanding the technician's repair authority.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-147-LOTO"
+        ]
       }
     ]
   }

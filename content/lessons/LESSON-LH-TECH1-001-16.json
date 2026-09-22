@@ -129,9 +129,9 @@
       },
       {
         "type": "image",
-        "assetId": "VIS-LH-TECH1-001-014",
+        "assetId": "VIS-LH-TECH1-001-043",
         "title": "A trustworthy record preserves the whole lifecycle",
-        "src": "/assets/course1/data-integrity-record-lifecycle.svg",
+        "src": "/assets/course1/data-integrity-record-lifecycle.png",
         "alt": "Record-lifecycle diagram showing controlled identity and observation, attributable contemporaneous recording, transparent correction, late or missing data handling, and reconstructable handoff while preserving the original history.",
         "caption": "Data integrity is not just neat data entry. The record must preserve identity, timing, attribution, corrections, missing information and handoff context so another qualified person can reconstruct what actually happened.",
         "references": [
@@ -311,6 +311,16 @@
         "title": "Key takeaway",
         "tone": "evidence",
         "body": "The goal is a trustworthy record of reality. Preserve timing, identity, context, attribution, correction history and missing information so another qualified person can reconstruct what actually occurred.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-036",
+        "src": "/assets/course1/record-correction-v3.png",
+        "alt": "Record-correction model showing that paper and digital changes follow the governing record system and facility procedure, preserve the original information or audit trail, retain attribution and timing, and never silently overwrite, erase, backdate or replace missing data with an invented value.",
+        "caption": "Paper and digital correction methods are controlled by the governing record system and must preserve original information or audit trail.",
         "references": [
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]

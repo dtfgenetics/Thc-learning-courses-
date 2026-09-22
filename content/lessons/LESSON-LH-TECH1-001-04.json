@@ -84,17 +84,6 @@
         ]
       },
       {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-004",
-        "src": "/assets/course1/biosecurity-pathway-map.svg",
-        "alt": "Cultivation facility pathway diagram showing a cleaner or sensitive zone, a controlled transition boundary, and a higher-risk or unresolved zone connected by workers, tools, carts, hose ends, incoming materials, and waste movement. It emphasizes controlled sanitation before crossing and avoiding unnecessary backward travel.",
-        "caption": "Follow the route: a controlled object can become uncontrolled again if it crosses the wrong boundary or contacts the wrong surface.",
-        "references": [
-          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
-          "REF-UMASS-GREENHOUSE-SANITATION"
-        ]
-      },
-      {
         "type": "table",
         "title": "Source-route-receiver examples",
         "columns": [
@@ -282,6 +271,28 @@
         "title": "Key takeaway",
         "tone": "evidence",
         "body": "Biosecurity is a movement-control problem as much as a cleaning problem. A technician protects cleaner or more sensitive areas by identifying source-route-receiver connections, following transition controls, protecting sanitized status and documenting boundary failures instead of hiding them.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-025",
+        "src": "/assets/course1/contamination-routes.png",
+        "alt": "Contamination pathway model connecting a source to a receiving plant or area through people, PPE, tools, carts, hoses, containers, media, plant material or debris. Zone names and transition rules are facility-specific; the learner uses the site's actual map and SOP to interrupt routes.",
+        "caption": "Source-route-receiver model for cultivation biosecurity pathways.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+          "REF-UMASS-GREENHOUSE-SANITATION"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-026",
+        "src": "/assets/course1/clean-dirty-flow.png",
+        "alt": "Example movement map showing controlled transitions between areas of different biosecurity risk. People, tools, carts, hoses and materials can carry contamination, and sanitized status can be lost through recontamination. Direction and backtracking rules come from the facility's current zone map and procedure, not from a universal clean-to-dirty rule.",
+        "caption": "Example of facility-controlled zone movement; actual sequencing follows the site's zone map, current risk status and SOP.",
         "references": [
           "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
           "REF-UMASS-GREENHOUSE-SANITATION"
