@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "competencies": [
     "COMP-WATER-001",
@@ -102,6 +102,34 @@
     "formativeAssessment": "ASSESS-LH-TECH1-004-M01",
     "bankStatus": "development-seed",
     "bankExpansionTarget": 36,
-    "completionModel": "Course 004 remains draft. Written evidence does not replace PRACTICAL-TECH1-B, integrated capstone evidence, human review, pilot evidence or program release gates."
+    "completionModel": "Course 004 remains draft. Written evidence does not replace PRACTICAL-TECH1-B, integrated capstone evidence, human review, pilot evidence or program release gates.",
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH1-004-01": [
+        "LESSON-LH-TECH1-004-01"
+      ],
+      "LO-LH-TECH1-004-02": [
+        "LESSON-LH-TECH1-004-02"
+      ],
+      "LO-LH-TECH1-004-03": [
+        "LESSON-LH-TECH1-004-02",
+        "LESSON-LH-TECH1-004-04"
+      ],
+      "LO-LH-TECH1-004-04": [
+        "LESSON-LH-TECH1-004-03"
+      ],
+      "LO-LH-TECH1-004-05": [
+        "LESSON-LH-TECH1-004-01",
+        "LESSON-LH-TECH1-004-03",
+        "LESSON-LH-TECH1-004-04"
+      ],
+      "LO-LH-TECH1-004-06": [
+        "LESSON-LH-TECH1-004-01",
+        "LESSON-LH-TECH1-004-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-004/TEST-TO-TEACHING-MAP.md"
   }
 }
