@@ -1,7 +1,7 @@
 {
   "system": "THC Academy",
-  "version": "0.1.0",
-  "updatedAt": "2026-09-21",
+  "version": "0.1.1",
+  "updatedAt": "2026-09-22",
   "productionReady": false,
   "areas": {
     "curriculum": {
@@ -21,9 +21,10 @@
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
         "humanAssessmentReviewComplete": false,
-        "pilotStatisticsComplete": false
+        "pilotStatisticsComplete": false,
+        "minimumCandidatePoolComplete": true
       },
-      "scope": "Development and public academic assessment capability; secure operational credential-bank approval is tracked separately and remains fail-closed."
+      "scope": "Development and public academic assessment capability. Candidate-bank depth is complete across the 12 Cultivation Foundations competencies, but active-item depth, human assessment review, pilot statistics and secure operational credential-bank approval remain fail-closed."
     },
     "runtime": {
       "status": "integrated-development",
