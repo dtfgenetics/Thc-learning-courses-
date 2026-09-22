@@ -113,9 +113,9 @@ Three assessment layers must remain distinct.
 
 Low-stakes retrieval, practice, feedback, calculations, image interpretation, and scenarios embedded in certification courses.
 
-### Course-level summative assessment
+### Certification Course Test
 
-Tests whether a learner met the objectives of one Learning Hub course. Passing a course test does not itself award the professional credential.
+A dedicated test for one Certification Course. Every scored item must trace to a current objective owned by that course and to material actually taught or practiced in that course. Encyclopedia-only content, external reference-only content, or another course's lessons cannot satisfy the test blueprint. Passing a Certification Course Test does not itself award the professional credential.
 
 ### Credential assessment
 
@@ -323,7 +323,7 @@ Use these terms consistently:
 
 - **Encyclopedia Topic** — one of the canonical `THC-ENC-001`–`THC-ENC-420` encyclopedia-style topics and explanations.
 - **Certification Course** — a structured Learning Hub course designed specifically for a professional credential pathway.
-- **Course Test** — assessment of one certification course.
+- **Certification Course Test** — a dedicated assessment built from the current objectives and taught material of one Certification Course.
 - **Credential Assessment** — secure final assessment process for a professional credential.
 - **Foundational Certificate** — completion/attainment certificate below professional credential level.
 - **Professional Credential** — one of the eight THC Academy workforce-oriented credentials.
