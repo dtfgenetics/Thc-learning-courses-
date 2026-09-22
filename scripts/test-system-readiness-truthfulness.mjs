@@ -36,6 +36,10 @@ for(const [area,gate] of [
   ['runtime','productionPersistenceAdapterCodeReady'],
   ['assessment','secureOperationalStoreIntegrationCodeReady'],
   ['assessment','secureFormConstructionCodeReady'],
+  ['security','adminMfaEnforcementCodeReady'],
+  ['security','rowLevelAuthorizationPolicyCodeReady'],
+  ['operations','backupRestoreContractCodeReady'],
+  ['operations','monitoringAlertingContractCodeReady'],
   ['credentials','revocationTransactionCodeReady'],
   ['credentials','productionSigningIntegrationCodeReady'],
   ['api','learnerOpenApiContract'],
@@ -44,17 +48,21 @@ for(const [area,gate] of [
   ['learnerExperience','rolePathwayDiscovery'],
   ['learnerExperience','consolidatedDashboard'],
   ['learnerExperience','privacyBoundedCredentialTranscript'],
-  ['learnerExperience','practicalEvidenceSubmissionRepositoryImplemented']
+  ['learnerExperience','practicalEvidenceSubmissionRepositoryImplemented'],
+  ['learnerExperience','practicalEvidenceSubmissionWorkflowCodeReady']
 ]) assert.equal(readiness.areas[area]?.gates?.[gate],true,`${area}.${gate} should reflect merged deterministic capability`);
 
 for(const [area,gate] of [
   ['runtime','productionPersistenceAdapter'],
   ['api','productionDatabaseIntegration'],
+  ['security','adminMfaEnforced'],
   ['security','rowLevelAuthorization'],
   ['security','securityReviewComplete'],
   ['learnerExperience','practicalEvidenceSubmissionWorkflow'],
   ['operations','stagingEnvironment'],
-  ['operations','productionEnvironment']
+  ['operations','productionEnvironment'],
+  ['operations','backupRestoreTested'],
+  ['operations','monitoringAndAlerting']
 ]) assert.equal(readiness.areas[area]?.gates?.[gate],false,`${area}.${gate} must remain false until deployed/validated evidence exists`);
 
 console.log('System readiness truthfulness and staging-slice boundary: PASS');
