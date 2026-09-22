@@ -82,7 +82,7 @@ The 12-item M01 assessment is diagnostic/formative. Route objective-level misses
 
 ## Summative academic use
 
-The 24-item Course 6 final is distinct from the formative bank and remains draft until human assessment/release review. A passing academic result does not replace Practical F.
+The 24-item Course 6 final is distinct from the formative bank and is derived from the six controlled objectives taught in the four dedicated Course 6 lessons. `TEST-TO-TEACHING-MAP.md` records the exact instructional provenance. Encyclopedia-only, external-reading-only, or unrelated-course material may not be scored unless first taught directly in Course 6. The assessment remains draft until human assessment/release review. A passing academic result does not replace Practical F or confer independent product-release/disposition authority.
 
 ## Portfolio evidence
 
