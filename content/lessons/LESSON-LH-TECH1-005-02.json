@@ -3,24 +3,73 @@
   "title": "Routine Canopy Work, Plant Condition and Work-Order Boundaries",
   "version": "1.1.0",
   "status": "draft",
-  "competencies": ["COMP-CANOPY-001", "COMP-SPACE-BIOSEC-001", "COMP-PRO-SOP-001"],
-  "learningObjectives": ["LO-LH-TECH1-005-02", "LO-LH-TECH1-005-04", "LO-LH-TECH1-005-05"],
+  "competencies": [
+    "COMP-CANOPY-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-005-02",
+    "LO-LH-TECH1-005-04",
+    "LO-LH-TECH1-005-05"
+  ],
   "estimatedMinutes": 65,
-  "references": ["REF-CANOPY-001", "REF-IPM-001"],
+  "references": [
+    "REF-CANOPY-001",
+    "REF-IPM-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Routine canopy work is controlled plant handling, not an invitation to redesign plant architecture from personal preference. Learners practice confirming the room and work order, inspecting plant condition before beginning, performing only the authorized pruning, defoliation, support, spacing or training task, protecting sanitation between plants and areas, recognizing excessive damage or plant conditions that require a hold, and recording work honestly.",
     "vocabulary": [
-      {"term":"canopy architecture","definition":"The spatial arrangement of stems, branches, leaves and reproductive sites in a plant canopy."},
-      {"term":"low-stress training","definition":"Canopy shaping that repositions or supports shoots without intentionally causing major tissue damage."},
-      {"term":"high-stress training","definition":"Training that intentionally removes, cuts or substantially damages tissue and therefore requires an appropriate recovery context."},
-      {"term":"work standard","definition":"The supplied task-specific definition of what plant work is required, acceptable and complete."}
+      {
+        "term": "canopy architecture",
+        "definition": "The spatial arrangement of stems, branches, leaves and reproductive sites in a plant canopy."
+      },
+      {
+        "term": "low-stress training",
+        "definition": "Canopy shaping that repositions or supports shoots without intentionally causing major tissue damage."
+      },
+      {
+        "term": "high-stress training",
+        "definition": "Training that intentionally removes, cuts or substantially damages tissue and therefore requires an appropriate recovery context."
+      },
+      {
+        "term": "work standard",
+        "definition": "The supplied task-specific definition of what plant work is required, acceptable and complete."
+      }
     ],
     "sections": [
-      {"title":"Inspect before modifying the plant","body":"Confirm plant or room identity, developmental context, vigor and any visible damage or pest/disease concern before beginning canopy work. A plant already showing a meaningful abnormality may require a hold or escalation rather than routine cutting or manipulation.","references":["REF-CANOPY-001","REF-IPM-001"]},
-      {"title":"The work order controls scope","body":"The technician performs the defined pruning, defoliation, support, spacing or training task to the supplied standard. Personal preference for topping, aggressive defoliation or another technique does not override the work order, plant condition or developmental stage.","references":["REF-CANOPY-001"]},
-      {"title":"Protect tissue and sanitation","body":"Use the supplied handling and sanitation method between plants or zones. Avoid unnecessary tissue damage, contaminated tool movement and support placement that cuts, constricts or abrades stems. When unintended damage occurs, document it rather than hiding it with additional pruning.","references":["REF-CANOPY-001","REF-IPM-001"]},
-      {"title":"Evaluate completion against the standard","body":"A canopy task is complete when the assigned plants were handled to the defined standard and exceptions were documented. Uniformity should be evaluated from the requested structural outcome and crop condition, not from making every plant visually identical regardless of biology.","references":["REF-CANOPY-001"]}
+      {
+        "title": "Inspect before modifying the plant",
+        "body": "Confirm plant or room identity, developmental context, vigor and any visible damage or pest/disease concern before beginning canopy work. A plant already showing a meaningful abnormality may require a hold or escalation rather than routine cutting or manipulation.",
+        "references": [
+          "REF-CANOPY-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "The work order controls scope",
+        "body": "The technician performs the defined pruning, defoliation, support, spacing or training task to the supplied standard. Personal preference for topping, aggressive defoliation or another technique does not override the work order, plant condition or developmental stage.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Protect tissue and sanitation",
+        "body": "Use the supplied handling and sanitation method between plants or zones. Avoid unnecessary tissue damage, contaminated tool movement and support placement that cuts, constricts or abrades stems. When unintended damage occurs, document it rather than hiding it with additional pruning.",
+        "references": [
+          "REF-CANOPY-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Evaluate completion against the standard",
+        "body": "A canopy task is complete when the assigned plants were handled to the defined standard and exceptions were documented. Uniformity should be evaluated from the requested structural outcome and crop condition, not from making every plant visually identical regardless of biology.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      }
     ],
     "workedExamples": [
       "A work order calls for selective lower-canopy cleanup. A coworker suggests heavy whole-plant defoliation. The technician follows the work order and escalates any needed change rather than substituting a personal technique.",
@@ -35,11 +84,73 @@
     "practicalApplication": "Execute a simulated canopy-maintenance work order containing a weak plant, a plant with fresh pest-like damage, a support placement risk and one accidental tissue injury. Use the downloadable canopy work-order practice sheet to document task scope, sanitation, quarantine/hold decisions, before/after verification, exceptions and handoff.",
     "summary": "Technician I canopy work links controlled instructions with plant condition. The technician confirms scope, handles tissue carefully, protects sanitation, stops when plant condition or authorization requires it, and documents actual completion instead of substituting personal technique.",
     "blocks": [
-      {"type":"comparison","title":"Assigned canopy work versus independent redesign","left":{"label":"Technician I task execution","body":"Confirm identity and plant condition, follow the defined pruning/support/training standard, protect sanitation and document exceptions."},"right":{"label":"Out-of-scope redesign","body":"Choose a different high-stress technique, remove substantially more tissue or change the production strategy without authorization."},"references":["REF-CANOPY-001"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-005-002","title":"Canopy work-order scope and stop boundary","src":"/assets/course5/canopy-work-order-stop-boundary.svg","alt":"Canopy decision flow from pre-task inspection to authorized work and result verification, with stop or hold conditions for severe stress, tissue splitting, pest concern, or ambiguous instructions.","caption":"Canopy work is controlled execution. Plant condition and the supplied work standard define when to proceed, stop, hold, clarify or escalate.","references":["REF-CANOPY-001","REF-IPM-001"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-005-005","title":"Biosecurity and quarantine workflow","src":"/assets/course5/biosecurity-quarantine-flow.svg","alt":"Clean-to-dirty movement diagram showing sanitation checkpoints, suspect plant isolation, quarantine boundaries, breach documentation and escalation.","caption":"Canopy work must not become a contamination or pest-spread pathway. Movement and tool control continue even when the production task is routine.","references":["REF-IPM-001"]},
-      {"type":"resource","title":"Downloadable practice: canopy maintenance work order","body":"Use this printable worksheet to practice room/work-order identity, plant-condition screening, authorized canopy action, stop conditions, sanitation/quarantine, before/after verification, exceptions and handoff.","href":"/assets/course5/canopy-work-order-practice.svg","label":"Open canopy work-order practice sheet","extensions":{"assetId":"VIS-LH-TECH1-005-009","downloadable":true}},
-      {"type":"scenario","title":"Pest signs during pruning","setting":"A pruning crew discovers fresh feeding damage and suspicious insects on several plants in one work area.","prompt":"What should happen first?","options":["Continue through all rooms with the same tools","Protect the supplied biosecurity boundary, stop or isolate work as required and escalate the finding","Prune off the evidence and discard it without a record","Move the suspect plants through clean rooms for comparison"],"answer":"Protect the supplied biosecurity boundary, stop or isolate work as required and escalate the finding","feedback":"Canopy work must not become a contamination or pest-spread pathway. The observation and boundary response take priority over routine task completion.","references":["REF-IPM-001","REF-CANOPY-001"]}
+      {
+        "type": "comparison",
+        "title": "Assigned canopy work versus independent redesign",
+        "left": {
+          "label": "Technician I task execution",
+          "body": "Confirm identity and plant condition, follow the defined pruning/support/training standard, protect sanitation and document exceptions."
+        },
+        "right": {
+          "label": "Out-of-scope redesign",
+          "body": "Choose a different high-stress technique, remove substantially more tissue or change the production strategy without authorization."
+        },
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-005-002",
+        "title": "Canopy work-order scope and stop boundary",
+        "src": "/assets/course5/canopy-work-order-stop-boundary.webp",
+        "alt": "Canopy decision flow from pre-task inspection to authorized work and result verification, with stop or hold conditions for severe stress, tissue splitting, pest concern, or ambiguous instructions.",
+        "caption": "Canopy work is controlled execution. Plant condition and the supplied work standard define when to proceed, stop, hold, clarify or escalate.",
+        "references": [
+          "REF-CANOPY-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-005-005",
+        "title": "Biosecurity and quarantine workflow",
+        "src": "/assets/course5/biosecurity-quarantine-flow.webp",
+        "alt": "Clean-to-dirty movement diagram showing sanitation checkpoints, suspect plant isolation, quarantine boundaries, breach documentation and escalation.",
+        "caption": "Canopy work must not become a contamination or pest-spread pathway. Movement and tool control continue even when the production task is routine.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "resource",
+        "title": "Downloadable practice: canopy maintenance work order",
+        "body": "Use this printable worksheet to practice room/work-order identity, plant-condition screening, authorized canopy action, stop conditions, sanitation/quarantine, before/after verification, exceptions and handoff.",
+        "href": "/assets/course5/canopy-work-order-practice.webp",
+        "label": "Open canopy work-order practice sheet",
+        "extensions": {
+          "assetId": "VIS-LH-TECH1-005-009",
+          "downloadable": true
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "Pest signs during pruning",
+        "setting": "A pruning crew discovers fresh feeding damage and suspicious insects on several plants in one work area.",
+        "prompt": "What should happen first?",
+        "options": [
+          "Continue through all rooms with the same tools",
+          "Protect the supplied biosecurity boundary, stop or isolate work as required and escalate the finding",
+          "Prune off the evidence and discard it without a record",
+          "Move the suspect plants through clean rooms for comparison"
+        ],
+        "answer": "Protect the supplied biosecurity boundary, stop or isolate work as required and escalate the finding",
+        "feedback": "Canopy work must not become a contamination or pest-spread pathway. The observation and boundary response take priority over routine task completion.",
+        "references": [
+          "REF-IPM-001",
+          "REF-CANOPY-001"
+        ]
+      }
     ]
   }
 }
