@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -22,6 +23,19 @@ assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.
 
 const registryById = new Map(produced.map((asset) => [asset.id, asset]));
 const usedAssetIds = new Set();
+const sha256 = (buffer) => crypto.createHash('sha256').update(buffer).digest('hex');
+
+function webpDimensions(buffer) {
+  assert.equal(buffer.subarray(0, 4).toString('ascii'), 'RIFF', 'WebP candidate must use a RIFF container');
+  assert.equal(buffer.subarray(8, 12).toString('ascii'), 'WEBP', 'WebP candidate must have a WEBP signature');
+  assert.equal(buffer.subarray(12, 16).toString('ascii'), 'VP8L', 'Course 2 candidates must use lossless WebP encoding');
+  assert.equal(buffer[20], 0x2f, 'Lossless WebP candidate is missing its VP8L signature byte');
+  const bits = buffer.readUInt32LE(21);
+  return {
+    width: (bits & 0x3fff) + 1,
+    height: ((bits >>> 14) & 0x3fff) + 1
+  };
+}
 
 for (const asset of produced) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-002-[0-9]{3}$/);
@@ -45,6 +59,22 @@ for (const asset of produced) {
   assert.match(svg, /<title[\s>]/);
   assert.match(svg, /<desc[\s>]/);
   assert.match(svg, /viewBox=/);
+
+  const replacement = asset.rasterReplacement;
+  assert.equal(replacement?.status, 'candidate-produced-human-qa-required', `${asset.id}: raster candidate state must remain fail-closed`);
+  assert.match(replacement?.candidateSourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
+  assert.equal(replacement?.generatedFrom, asset.sourcePath, `${asset.id}: raster provenance must identify its SVG baseline`);
+  assert.equal(replacement?.encoding, 'lossless-webp');
+  assert.equal(replacement?.releaseApproved, false, `${asset.id}: deterministic rendering is not release approval`);
+
+  const sourceBuffer = fs.readFileSync(source);
+  const candidateBuffer = fs.readFileSync(path.join(root, replacement.candidateSourcePath));
+  assert.equal(sha256(sourceBuffer), replacement.sourceSha256, `${asset.id}: source digest drift`);
+  assert.equal(sha256(candidateBuffer), replacement.candidateSha256, `${asset.id}: candidate digest drift`);
+  assert.equal(candidateBuffer.length, replacement.bytes, `${asset.id}: candidate byte count drift`);
+  const dimensions = webpDimensions(candidateBuffer);
+  assert.deepEqual(dimensions, replacement.pixelDimensions, `${asset.id}: candidate dimension metadata drift`);
+  assert.ok(Math.min(dimensions.width, dimensions.height) >= 1600, `${asset.id}: candidate shortest side must be at least 1600 px`);
 }
 
 for (const lessonNumber of ['01','02','03','04']) {
@@ -76,4 +106,4 @@ for (const asset of produced) {
   for (const lessonId of asset.primaryLessons) assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)));
 }
 
-console.log(`Course 2 learner-asset contract passed for ${produced.length} legacy SVG compatibility assets with fail-closed raster replacement requirements.`);
+console.log(`Course 2 learner-asset contract passed for ${produced.length} legacy SVG compatibility assets and ${produced.length} high-resolution lossless WebP candidates; learner cutover remains fail-closed pending human QA.`);

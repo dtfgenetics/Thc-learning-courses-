@@ -1,7 +1,7 @@
 {
   "courseId": "COURSE-LH-TECH1-002",
-  "version": "0.12.0",
-  "updated": "2026-09-20",
+  "version": "0.13.0",
+  "updated": "2026-09-22",
   "academicPublication": "draft",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
@@ -42,14 +42,16 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "legacy-svg-compatibility-baseline-raster-replacement-open",
+      "state": "raster-candidates-produced-automated-qa-passed-human-cutover-review-open",
       "evidence": [
         "visuals/COURSE2-ASSET-REGISTRY.json",
         "scripts/test-course2-visual-registry.mjs",
-        "scripts/test-tech1-course2.mjs"
+        "scripts/test-tech1-course2.mjs",
+        "visuals/COURSE2-RASTER-CANDIDATE-MANIFEST.json",
+        "apps/web/public/assets/course2/*.webp"
       ],
       "humanGateRequired": true,
-      "note": "All 10 governed Course 2 SVG assets remain available only as the verified compatibility baseline so current learner routes are not broken. Current production policy requires high-resolution PNG/WebP/JPEG/JPG replacements. Each raster replacement must pass factual/copy QA, accessibility, responsive/manual review, registry mapping and public-path verification before the matching SVG baseline can be retired."
+      "note": "All 10 governed Course 2 lossless WebP candidates exist at a minimum 1600 px shortest side with source and candidate SHA-256 provenance and deterministic binary QA. Existing SVG assets remain the live compatibility baseline until human factual/copy, accessibility, responsive/manual review and verified public-path cutover are recorded."
     },
     {
       "id": "evidence-and-source-audit",
@@ -135,7 +137,7 @@
     }
   ],
   "nextMachineActions": [
-    "produce and QA raster replacements for the 10 legacy Course 2 SVG compatibility assets, then retire each SVG only after verified public-path replacement"
+    "after the required human factual/copy, accessibility and responsive review is recorded, cut over the approved raster WebP replacements in canonical lesson/registry paths and verify every public path before retiring the matching SVG baseline"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
@@ -160,7 +162,8 @@
     "scripts/test-tech1-review-queues.mjs",
     "scripts/test-build-identity-endpoint.mjs",
     "scripts/verify-public-deployment-identity.mjs",
-    "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md"
+    "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md",
+    "visuals/COURSE2-RASTER-CANDIDATE-MANIFEST.json"
   ],
   "pilotProtocol": {
     "state": "protocol-ready-pilot-not-started",
