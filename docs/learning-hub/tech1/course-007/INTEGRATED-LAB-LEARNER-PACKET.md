@@ -71,7 +71,11 @@ Course 7 should reuse the relevant governed worksheets and visuals from Courses 
 
 ## Readiness assessment
 
-`ASSESS-LH-TECH1-007-M01` is formative readiness evidence only. It may diagnose weak domains and route remediation before practical/capstone work. It is not the professional credential examination.
+`ASSESS-LH-TECH1-007-M01` is formative readiness evidence only. It may diagnose weak domains and route remediation before practical/capstone work. All 12 readiness items are mapped to the four dedicated Course 7 integration lessons in `READINESS-TO-TEACHING-MAP.md`. It is not the professional credential examination and does not create credential eligibility.
+
+## Performance provenance
+
+Practicals A–F and the capstone may integrate knowledge and skills from Courses 1–6, but every scored performance domain must trace to taught Technician I material plus the Course 7 integration workflow. `PERFORMANCE-TO-TEACHING-MAP.md` is the human-readable control record for that relationship.
 
 ## Practice, readiness and credential modes
 

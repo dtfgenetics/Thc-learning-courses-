@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "competencies": [
     "COMP-SAFETY-WORK-001",
@@ -52,5 +52,36 @@
     "ITEM-LH-TECH1-007-M01-012"
   ],
   "maxAttempts": null,
-  "feedbackMode": "immediate"
+  "feedbackMode": "immediate",
+  "extensions": {
+    "courseId": "COURSE-LH-TECH1-007",
+    "readinessOnly": true,
+    "credentialDecisionUseAuthorized": false,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH1-007-01": [
+        "LESSON-LH-TECH1-007-01"
+      ],
+      "LO-LH-TECH1-007-02": [
+        "LESSON-LH-TECH1-007-02"
+      ],
+      "LO-LH-TECH1-007-03": [
+        "LESSON-LH-TECH1-007-02"
+      ],
+      "LO-LH-TECH1-007-04": [
+        "LESSON-LH-TECH1-007-03"
+      ],
+      "LO-LH-TECH1-007-05": [
+        "LESSON-LH-TECH1-007-04"
+      ],
+      "LO-LH-TECH1-007-06": [
+        "LESSON-LH-TECH1-007-01",
+        "LESSON-LH-TECH1-007-03",
+        "LESSON-LH-TECH1-007-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-007/READINESS-TO-TEACHING-MAP.md"
+  }
 }

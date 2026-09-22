@@ -54,6 +54,24 @@ for (const id of assess.items) {
   readinessCounts.set(q.objective, readinessCounts.get(q.objective) + 1);
 }
 assert.deepEqual([...readinessCounts.values()], [2, 2, 2, 2, 2, 2], 'Course 7 readiness bank must retain two formative items per integrated objective');
+assert.equal(assess.extensions?.readinessOnly,true,'Course 7 readiness assessment must remain formative readiness only');
+assert.equal(assess.extensions?.credentialDecisionUseAuthorized,false,'Course 7 readiness assessment cannot become the credential decision rule');
+assert.equal(assess.extensions?.courseDerivedAssessment,true,'Course 7 readiness assessment must remain course-derived');
+assert.equal(assess.extensions?.encyclopediaSubstitutionAllowed,false,'Encyclopedia material cannot substitute for Course 7 integration teaching');
+assert.equal(assess.extensions?.untaughtMaterialAllowed,false,'Course 7 readiness assessment cannot assess untaught material');
+const readinessMap=assess.extensions?.taughtMaterialMap??{};
+for(const objectiveId of expectedObjectives){
+  assert.ok(Array.isArray(readinessMap[objectiveId])&&readinessMap[objectiveId].length>0,`${objectiveId}: readiness objective must map to dedicated Course 7 teaching`);
+  for(const lessonId of readinessMap[objectiveId]){
+    assert.match(lessonId,/^LESSON-LH-TECH1-007-/,`${objectiveId}: readiness map must stay inside Course 7`);
+    assert.ok(mod.lessons.includes(lessonId),`${objectiveId}: mapped readiness lesson must belong to Course 7 lab module`);
+    const lesson=read(`content/lessons/${lessonId}.json`);
+    assert.ok((lesson.learningObjectives??[]).includes(objectiveId),`${objectiveId}: mapped lesson ${lessonId} must actually teach the objective`);
+  }
+}
+assert.ok(exists('docs/learning-hub/tech1/course-007/READINESS-TO-TEACHING-MAP.md'),'Course 7 must retain readiness-to-teaching audit');
+assert.ok(exists('docs/learning-hub/tech1/course-007/PERFORMANCE-TO-TEACHING-MAP.md'),'Course 7 must retain performance-to-teaching audit');
+
 
 const plan = read('registry/technician-i-integrated-lab-plan.json');
 assert.equal(plan.courseId, course.id);
@@ -71,6 +89,17 @@ assert.equal(plan.capstone.totalPoints, 200);
 assert.equal(plan.capstone.developmentTargetPassPoints, 160);
 assert.equal(plan.capstone.scoreDomains.reduce((sum, domain) => sum + domain.points, 0), 200);
 assert.equal(plan.capstone.secureCredentialFormApproved, false);
+const capstoneObject=read('content/performance-assessments/CAPSTONE-TECH1-SHIFT-001.json');
+assert.equal(capstoneObject.extensions?.dedicatedIntegrationRequired,true,'capstone must require dedicated Course 7 integration');
+assert.equal(capstoneObject.extensions?.encyclopediaSubstitutionAllowed,false,'encyclopedia cannot substitute for capstone teaching provenance');
+assert.equal(capstoneObject.extensions?.untaughtPerformanceAllowed,false,'capstone cannot assess untaught performance');
+const allowedTeachingCourses=new Set(['COURSE-LH-TECH1-001','COURSE-LH-TECH1-002','COURSE-LH-TECH1-003','COURSE-LH-TECH1-004','COURSE-LH-TECH1-005','COURSE-LH-TECH1-006','COURSE-LH-TECH1-007']);
+for(const [domain,sources] of Object.entries(capstoneObject.extensions?.teachingSources??{})){
+  assert.ok(Array.isArray(sources)&&sources.length>0,`${domain}: capstone domain must retain teaching provenance`);
+  assert.ok(sources.includes('COURSE-LH-TECH1-007'),`${domain}: capstone domain must include Course 7 integration teaching`);
+  for(const source of sources) assert.ok(allowedTeachingCourses.has(source),`${domain}: invalid teaching source ${source}`);
+}
+
 assert.ok(exists(plan.capstone.document));
 assert.equal(plan.criticalFailureRules.length, 5);
 assert.ok(plan.criticalFailureRules.every((rule) => rule.blocksCredentialEvidence === true));
