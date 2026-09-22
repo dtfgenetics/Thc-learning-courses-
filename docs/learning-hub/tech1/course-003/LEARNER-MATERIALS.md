@@ -29,11 +29,11 @@ Using a supplied dashboard snapshot and room map:
 7. document only the verification action authorized by the scenario;
 8. carry unresolved uncertainty into the handoff rather than inventing a cause.
 
-**Download:** `/assets/course3/environment-measurement-practice.svg`
+**Download:** `/assets/course3/environment-measurement-practice.webp`
 
 ### Visual reference
 
-`/assets/course3/environment-measurement-context.svg`
+`/assets/course3/environment-measurement-context.webp`
 
 Use it to reinforce the sequence: pair temperature with RH → interpret VPD in context → keep target, observation and alarm as separate record roles.
 
@@ -55,11 +55,11 @@ Using the supplied room/map scenario:
 6. record intended photoperiod separately from the observed light/controller state;
 7. document any discrepancy and route it through the supplied escalation process rather than independently redesigning lighting.
 
-**Download:** `/assets/course3/ppfd-sensor-verification-practice.svg`
+**Download:** `/assets/course3/ppfd-sensor-verification-practice.webp`
 
 ### Visual reference
 
-`/assets/course3/ppfd-grid-measurement.svg`
+`/assets/course3/ppfd-grid-measurement.webp`
 
 ## Lesson 3 — Sensor placement, verification and data-quality triage
 
@@ -80,11 +80,11 @@ For a supplied outlier:
 - record what the evidence supports and what it does **not** establish;
 - escalate unresolved faults or work outside the role boundary.
 
-Use the sensor section of `/assets/course3/ppfd-sensor-verification-practice.svg`.
+Use the sensor section of `/assets/course3/ppfd-sensor-verification-practice.webp`.
 
 ### Visual reference
 
-`/assets/course3/sensor-representativeness-triage.svg`
+`/assets/course3/sensor-representativeness-triage.webp`
 
 ## Lesson 4 — Alarms, trends, records and shift handoff
 
@@ -104,11 +104,11 @@ Given a simulated 24-hour trend with a repeated event, one outlier and one alarm
 6. identify who was notified under the scenario process;
 7. write a receiving-shift next action that another technician can execute.
 
-Use `/assets/course3/environment-measurement-practice.svg`.
+Use `/assets/course3/environment-measurement-practice.webp`.
 
 ### Visual reference
 
-`/assets/course3/alarm-trend-handoff-workflow.svg`
+`/assets/course3/alarm-trend-handoff-workflow.webp`
 
 ## Integrated Course 3 scenario
 
@@ -145,4 +145,4 @@ If the record cannot answer those questions, return to the relevant practice tas
 
 ## Assessment boundary
 
-Lesson practice and the 12-item module assessment support learning. The 20-item course final is the controlled summative academic assessment source. Practical A is a separate development performance assessment. Passing the academic course alone must not be represented as Technician I credential issuance or as proof that Practical A has been validated.
+Lesson practice and the 12-item module assessment support learning. The 20-item course final is derived from the five objectives and the four dedicated Course 3 lessons; `TEST-TO-TEACHING-MAP.md` records that provenance. Encyclopedia-only, external-reading-only, or unrelated-course material may not be introduced as scored Course 3 content unless it is first taught directly in this course. Practical A is a separate development performance assessment. Passing the academic course alone must not be represented as Technician I credential issuance or as proof that Practical A has been validated.
