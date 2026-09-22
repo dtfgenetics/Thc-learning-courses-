@@ -11,7 +11,7 @@
 3. Course content remains editable and extensible; counts are minimum quality baselines or current inventory, never maximums.
 4. Human review, rendered accessibility review, pilot evidence, calibration, standard setting and final approvals must remain genuine human/evidence gates.
 5. Public academic assessment content must remain separated from private secure operational credential examinations.
-6. Reused canonical modules may support a course, but each occupational course still needs a dedicated delivery layer that makes its role, decisions, practice and evidence explicit.
+6. Every Certification Course must contain dedicated instructional material for every required objective. Encyclopedia or external references may enrich learning but cannot substitute for required course lessons, examples, practice, scenarios, remediation, or test preparation.
 
 ## Profile A — ordinary certification course
 
@@ -33,14 +33,14 @@ Required:
 - measurable course learning outcomes;
 - `contentCeiling: null` or equivalent no-artificial-ceiling policy.
 
-### A2. Resolvable instructional graph
+### A2. Dedicated Certification Course instructional graph
 
 Required:
 
 - all referenced modules resolve;
 - all module lesson references resolve;
-- at least one course-specific occupational module;
-- a course-specific lesson layer that applies the canonical science to the job context;
+- dedicated course-specific occupational modules;
+- dedicated course-specific lessons that fully teach the knowledge and application required by the course objectives;
 - controlled course-specific objectives referenced by those lessons;
 - lesson-level source/evidence references where material claims are made.
 
@@ -67,11 +67,14 @@ Required before gold-standard academic release:
 - field/job aids where they materially support transfer to practice;
 - no decorative filler added merely to satisfy an asset count.
 
-### A5. Academic assessment package
+### A5. Dedicated Certification Course Test package
 
 Required:
 
-- distinct formative and summative evidence;
+- distinct formative and summative evidence authored specifically for this Certification Course;
+- every scored test item traceable to a current course objective and material actually taught or practiced in this course;
+- no required test item based only on optional Encyclopedia/reference reading;
+- no use of another course's content as a substitute for this course's taught material;
 - no unintended item overlap between formative and summative forms;
 - one defensible keyed answer per selected-response item;
 - objective/competency mapping;
