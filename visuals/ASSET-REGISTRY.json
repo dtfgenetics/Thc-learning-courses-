@@ -365,14 +365,31 @@
       "purpose": "Teach an evidence-based pre-use readiness scan, controlled status review, result classification and the boundary that a failed readiness criterion does not authorize repair.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
-        "releaseGate": "course1-production-quality-release-manifest"
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review",
+        "candidateSourcePath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
+        "generatedFrom": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+        "sourceSha256": "e16c6405f95555eb28d123e39773ca46d85339c164af836288cdb9af24882ab2",
+        "candidateSha256": "c032d0d454169e32cdd7f23fa4a5777e36b88ba81b2a929545b86f0a8064aeea",
+        "bytes": 407816,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "encoding": "png",
+        "automatedQa": [
+          "copy-lock-source",
+          "individual-production-master",
+          "2400x3200-pixels",
+          "sha256-recorded"
+        ],
+        "releaseApproved": false
       }
     },
     {
@@ -388,14 +405,31 @@
       "purpose": "Separate routine actions explicitly assigned, trained and authorized to an operator from protected servicing, repair, hazardous-energy work, diagnosis and other maintenance responsibilities.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
-        "releaseGate": "course1-production-quality-release-manifest"
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review",
+        "candidateSourcePath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
+        "generatedFrom": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+        "sourceSha256": "e16c6405f95555eb28d123e39773ca46d85339c164af836288cdb9af24882ab2",
+        "candidateSha256": "32fa56ea1f1e3e6ee7ee0ecd958145091dc309f5840b60e5b5b2c3406fc11f1b",
+        "bytes": 450337,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "encoding": "png",
+        "automatedQa": [
+          "copy-lock-source",
+          "individual-production-master",
+          "2400x3200-pixels",
+          "sha256-recorded"
+        ],
+        "releaseApproved": false
       }
     },
     {
@@ -411,14 +445,31 @@
       "purpose": "Teach a time-ordered, maintenance-ready fault context that separates verified observations and permitted checks from unsupported diagnosis and defers reporting timing or channel to the applicable procedure.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
-        "releaseGate": "course1-production-quality-release-manifest"
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review",
+        "candidateSourcePath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
+        "generatedFrom": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+        "sourceSha256": "e16c6405f95555eb28d123e39773ca46d85339c164af836288cdb9af24882ab2",
+        "candidateSha256": "5f74091a18b7548b498ed948a4f35aa6456c0094f0300dd3a2a181e33e051e94",
+        "bytes": 417937,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "encoding": "png",
+        "automatedQa": [
+          "copy-lock-source",
+          "individual-production-master",
+          "2400x3200-pixels",
+          "sha256-recorded"
+        ],
+        "releaseApproved": false
       }
     },
     {
@@ -434,14 +485,31 @@
       "purpose": "Teach that correction methods are controlled by the record system and facility procedure while preserving original information or audit trail, attribution, timing and honest missing-data status.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
-        "releaseGate": "course1-production-quality-release-manifest"
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review",
+        "candidateSourcePath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
+        "generatedFrom": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+        "sourceSha256": "e16c6405f95555eb28d123e39773ca46d85339c164af836288cdb9af24882ab2",
+        "candidateSha256": "01a42f01070506c0be0e5ccd4428ba136ae9fb1bfad33509f53e4b6081ef0f13",
+        "bytes": 270336,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "encoding": "png",
+        "automatedQa": [
+          "copy-lock-source",
+          "individual-production-master",
+          "2400x3200-pixels",
+          "sha256-recorded"
+        ],
+        "releaseApproved": false
       }
     },
     {
@@ -457,14 +525,31 @@
       "purpose": "Teach preparation, two-way exchange, incoming cross-check and ownership of unresolved work while requiring transferred instructions and priorities to remain current, controlled and within receiver authority.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
-        "releaseGate": "course1-production-quality-release-manifest"
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review",
+        "candidateSourcePath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
+        "generatedFrom": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+        "sourceSha256": "e16c6405f95555eb28d123e39773ca46d85339c164af836288cdb9af24882ab2",
+        "candidateSha256": "47c57c310e884ec5f091983ef063c6c1c4544a0ba97840cbe647c5c2c0a9d02d",
+        "bytes": 415409,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "encoding": "png",
+        "automatedQa": [
+          "copy-lock-source",
+          "individual-production-master",
+          "2400x3200-pixels",
+          "sha256-recorded"
+        ],
+        "releaseApproved": false
       }
     },
     {
@@ -480,14 +565,31 @@
       "purpose": "Connect review of assigned work and current controlled instructions with prerequisites, authorized execution, monitoring, truthful documentation, communication and follow-up without implying independent production-planning authority.",
       "assetLifecycle": "legacy-svg-compatibility-baseline",
       "rasterReplacement": {
-        "status": "required-not-produced",
+        "status": "candidate-produced-human-qa-required",
         "allowedFormats": [
           "png",
           "webp",
           "jpeg",
           "jpg"
         ],
-        "releaseGate": "course1-production-quality-release-manifest"
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review",
+        "candidateSourcePath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
+        "generatedFrom": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+        "sourceSha256": "e16c6405f95555eb28d123e39773ca46d85339c164af836288cdb9af24882ab2",
+        "candidateSha256": "585b9b73deb373eb5c9d8aa1fad3ced9f79c937f0300aedd4904871abd5195f5",
+        "bytes": 399765,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "encoding": "png",
+        "automatedQa": [
+          "copy-lock-source",
+          "individual-production-master",
+          "2400x3200-pixels",
+          "sha256-recorded"
+        ],
+        "releaseApproved": false
       }
     }
   ]
