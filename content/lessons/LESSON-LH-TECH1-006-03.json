@@ -3,24 +3,74 @@
   "title": "Harvest Genealogy, Quantity Reconciliation and Discrepancy Control",
   "version": "1.1.0",
   "status": "draft",
-  "competencies": ["COMP-CULT-TRACEABILITY-001","COMP-PRO-QA-001","COMP-PRO-SOP-001"],
-  "learningObjectives": ["LO-LH-TECH1-006-03","LO-LH-TECH1-006-05","LO-LH-TECH1-006-06"],
+  "competencies": [
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-006-03",
+    "LO-LH-TECH1-006-05",
+    "LO-LH-TECH1-006-06"
+  ],
   "estimatedMinutes": 65,
-  "references": ["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY","REF-POSTHARVEST-001"],
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-POSTHARVEST-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Harvest is a transformation event: identified source plants or batches become new containers, lots, racks, weights and receiving records. Technician I learners preserve source-to-output genealogy, record what moved and where, reconcile counts and weights, and stop a traceability problem from spreading. A physical-versus-record mismatch remains visible until it is resolved through the controlled process; the technician never edits a number merely to make the records agree.",
     "vocabulary": [
-      {"term":"genealogy","definition":"The documented relationship linking source plants or batches to the derived harvest lots, containers or postharvest records."},
-      {"term":"transformation event","definition":"A traceability event in which source material becomes one or more new identified outputs, such as plants becoming harvest containers or lots."},
-      {"term":"reconciliation","definition":"The controlled comparison of physical quantity, identity, location and record information to determine whether they agree and to document any discrepancy."},
-      {"term":"quantity discrepancy","definition":"A difference between expected, outgoing, incoming or physical counts or weights that requires explanation or controlled resolution before closure."}
+      {
+        "term": "genealogy",
+        "definition": "The documented relationship linking source plants or batches to the derived harvest lots, containers or postharvest records."
+      },
+      {
+        "term": "transformation event",
+        "definition": "A traceability event in which source material becomes one or more new identified outputs, such as plants becoming harvest containers or lots."
+      },
+      {
+        "term": "reconciliation",
+        "definition": "The controlled comparison of physical quantity, identity, location and record information to determine whether they agree and to document any discrepancy."
+      },
+      {
+        "term": "quantity discrepancy",
+        "definition": "A difference between expected, outgoing, incoming or physical counts or weights that requires explanation or controlled resolution before closure."
+      }
     ],
     "sections": [
-      {"title":"Harvest creates new traceable outputs","body":"New container or lot identifiers should extend the source genealogy. Record the source identity, event, output identity, source and destination locations, time, quantity where required and responsible record so another person can reconstruct how the current postharvest identity came to exist.","references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title":"Labels are necessary but not sufficient","body":"A correct label becomes useful traceability only when the record connects it to the right source material and transition. Removing the old identifier before the new relationship is verified or relying on cultivar appearance can permanently break harvest genealogy.","references":["REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"title":"Reconcile physical and recorded quantity","body":"Compare outgoing and receiving counts or weights using the supplied method and units. If values differ, preserve both original results and investigate through the controlled discrepancy process rather than silently changing one record, averaging values or selecting the number that makes the handoff balance.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title":"Waste or hold does not disappear from the chain","body":"Material diverted to a hold, waste or other controlled status remains part of the material history as required by the local workflow. The stable principle is that removed or diverted quantity must not simply vanish from the source-to-output relationship.","references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "title": "Harvest creates new traceable outputs",
+        "body": "New container or lot identifiers should extend the source genealogy. Record the source identity, event, output identity, source and destination locations, time, quantity where required and responsible record so another person can reconstruct how the current postharvest identity came to exist.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Labels are necessary but not sufficient",
+        "body": "A correct label becomes useful traceability only when the record connects it to the right source material and transition. Removing the old identifier before the new relationship is verified or relying on cultivar appearance can permanently break harvest genealogy.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Reconcile physical and recorded quantity",
+        "body": "Compare outgoing and receiving counts or weights using the supplied method and units. If values differ, preserve both original results and investigate through the controlled discrepancy process rather than silently changing one record, averaging values or selecting the number that makes the handoff balance.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Waste or hold does not disappear from the chain",
+        "body": "Material diverted to a hold, waste or other controlled status remains part of the material history as required by the local workflow. The stable principle is that removed or diverted quantity must not simply vanish from the source-to-output relationship.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ],
     "workedExamples": [
       "An outgoing harvest record shows 18.4 kg and receiving shows 17.9 kg. The technician preserves both entries and opens the supplied reconciliation process rather than overwriting the receiving result.",
@@ -35,18 +85,93 @@
     "practicalApplication": "Reconstruct a harvest genealogy from source plants to three receiving containers, including one held container and a planted outgoing/receiving weight mismatch. Identify the first point where the physical and digital records diverge and complete the discrepancy record without changing original evidence.",
     "summary": "Harvest traceability is a chain of identities, transformations, locations and quantities. Technician I links outputs to sources, reconciles physical and recorded reality, and keeps discrepancies visible until the controlled process resolves them.",
     "blocks": [
-      {"type":"steps","title":"Harvest transformation and reconciliation","items":[
-        {"title":"Verify source identity","body":"Match the physical plants or batch to the current harvest authorization before transformation begins."},
-        {"title":"Assign and verify output identity","body":"Prepare the required harvest container or lot identifiers before the source identity is removed or obscured."},
-        {"title":"Record the transformation","body":"Link source and output identities with location, time, quantity and responsible event record as required."},
-        {"title":"Receive at the destination","body":"Verify that the identified output reached the intended dry-room rack, container or postharvest location."},
-        {"title":"Reconcile quantity and status","body":"Compare outgoing/receiving counts or weights and account for held, waste or other controlled status required by the workflow."},
-        {"title":"Stop on discrepancy","body":"Preserve original values and open the controlled discrepancy process instead of forcing a false match."}
-      ],"references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-006-003","title":"Source-to-output harvest genealogy","src":"/assets/course6/source-output-genealogy.svg","alt":"Traceability diagram linking an authorized source batch through a harvest transformation event to several identified output containers and dry-room destinations, including a held output that retains source identity and quantity.","caption":"A new container or lot identifier extends the source genealogy; it does not erase the source relationship.","references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY","REF-POSTHARVEST-001"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-006-004","title":"Quantity reconciliation and discrepancy control","src":"/assets/course6/reconciliation-discrepancy.svg","alt":"Outgoing and receiving quantities are compared; when they differ, both original attributable values are preserved and the mismatch enters a controlled discrepancy process rather than being overwritten or averaged.","caption":"A discrepancy is evidence to reconcile, not permission to change history until the records agree.","references":["REF-MHRA-GXP-DATA-INTEGRITY","REF-GS1-GLOBAL-TRACEABILITY"]},
-      {"type":"resource","title":"Downloadable practice: harvest genealogy and reconciliation","body":"Use this printable worksheet to map source material into identified outputs, record destinations and holds, compare outgoing and receiving quantities and preserve discrepancy evidence without forcing a match.","href":"/assets/course6/traceability-reconciliation-practice.svg","label":"Open traceability and reconciliation practice sheet","extensions":{"assetId":"VIS-LH-TECH1-006-007","downloadable":true}},
-      {"type":"scenario","title":"Outgoing and receiving weights differ","setting":"The outgoing harvest record shows 18.4 kg. The receiving scale record shows 17.9 kg, and both entries are attributable.","prompt":"What is the strongest action?","options":["Change the receiving record to 18.4 kg so the handoff can close","Preserve both results and reconcile the discrepancy through the supplied process before closing the affected handoff","Average the two weights","Delete the outgoing weight because receiving is later"],"answer":"Preserve both results and reconcile the discrepancy through the supplied process before closing the affected handoff","feedback":"Data integrity requires preserving original evidence. A discrepancy is a condition to resolve, not a reason to edit history until the numbers match.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "type": "steps",
+        "title": "Harvest transformation and reconciliation",
+        "items": [
+          {
+            "title": "Verify source identity",
+            "body": "Match the physical plants or batch to the current harvest authorization before transformation begins."
+          },
+          {
+            "title": "Assign and verify output identity",
+            "body": "Prepare the required harvest container or lot identifiers before the source identity is removed or obscured."
+          },
+          {
+            "title": "Record the transformation",
+            "body": "Link source and output identities with location, time, quantity and responsible event record as required."
+          },
+          {
+            "title": "Receive at the destination",
+            "body": "Verify that the identified output reached the intended dry-room rack, container or postharvest location."
+          },
+          {
+            "title": "Reconcile quantity and status",
+            "body": "Compare outgoing/receiving counts or weights and account for held, waste or other controlled status required by the workflow."
+          },
+          {
+            "title": "Stop on discrepancy",
+            "body": "Preserve original values and open the controlled discrepancy process instead of forcing a false match."
+          }
+        ],
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-006-003",
+        "title": "Source-to-output harvest genealogy",
+        "src": "/assets/course6/source-output-genealogy.webp",
+        "alt": "Traceability diagram linking an authorized source batch through a harvest transformation event to several identified output containers and dry-room destinations, including a held output that retains source identity and quantity.",
+        "caption": "A new container or lot identifier extends the source genealogy; it does not erase the source relationship.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-006-004",
+        "title": "Quantity reconciliation and discrepancy control",
+        "src": "/assets/course6/reconciliation-discrepancy.webp",
+        "alt": "Outgoing and receiving quantities are compared; when they differ, both original attributable values are preserved and the mismatch enters a controlled discrepancy process rather than being overwritten or averaged.",
+        "caption": "A discrepancy is evidence to reconcile, not permission to change history until the records agree.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "type": "resource",
+        "title": "Downloadable practice: harvest genealogy and reconciliation",
+        "body": "Use this printable worksheet to map source material into identified outputs, record destinations and holds, compare outgoing and receiving quantities and preserve discrepancy evidence without forcing a match.",
+        "href": "/assets/course6/traceability-reconciliation-practice.webp",
+        "label": "Open traceability and reconciliation practice sheet",
+        "extensions": {
+          "assetId": "VIS-LH-TECH1-006-007",
+          "downloadable": true
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "Outgoing and receiving weights differ",
+        "setting": "The outgoing harvest record shows 18.4 kg. The receiving scale record shows 17.9 kg, and both entries are attributable.",
+        "prompt": "What is the strongest action?",
+        "options": [
+          "Change the receiving record to 18.4 kg so the handoff can close",
+          "Preserve both results and reconcile the discrepancy through the supplied process before closing the affected handoff",
+          "Average the two weights",
+          "Delete the outgoing weight because receiving is later"
+        ],
+        "answer": "Preserve both results and reconcile the discrepancy through the supplied process before closing the affected handoff",
+        "feedback": "Data integrity requires preserving original evidence. A discrepancy is a condition to resolve, not a reason to edit history until the numbers match.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ]
   }
 }

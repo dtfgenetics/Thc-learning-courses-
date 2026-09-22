@@ -3,24 +3,69 @@
   "title": "Authorized Irrigation and Fertigation Work-Order Execution",
   "version": "1.1.0",
   "status": "draft",
-  "competencies": ["COMP-PRO-SOP-001", "COMP-ROOTZONE-001", "COMP-CULT-EQUIPMENT-CARE-001"],
-  "learningObjectives": ["LO-LH-TECH1-004-04", "LO-LH-TECH1-004-05"],
+  "competencies": [
+    "COMP-PRO-SOP-001",
+    "COMP-ROOTZONE-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-004-04",
+    "LO-LH-TECH1-004-05"
+  ],
   "estimatedMinutes": 65,
-  "references": ["REF-IRRIGATION-001"],
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "Technician I is responsible for executing routine irrigation or fertigation work as assigned, not for independently designing the crop strategy. Learners practice matching the work order to the correct room or zone and material, checking obvious equipment readiness, performing the authorized sequence, verifying delivery at representative points, recognizing leaks, clogs, missed events or abnormal saturation/dryness, and stopping or escalating when the task no longer matches the controlled instruction.",
     "vocabulary": [
-      {"term":"work order","definition":"The controlled instruction defining the assigned task, location, material, sequence and other required execution details."},
-      {"term":"representative delivery check","definition":"A procedure-defined check at selected locations used to confirm that irrigation is actually reaching the intended crop area."},
-      {"term":"deviation","definition":"A departure from the supplied work order, SOP, expected process condition or verified result that requires documentation or escalation."},
-      {"term":"operator care","definition":"Routine inspection, cleaning, setup or simple equipment checks explicitly authorized for the equipment user."}
+      {
+        "term": "work order",
+        "definition": "The controlled instruction defining the assigned task, location, material, sequence and other required execution details."
+      },
+      {
+        "term": "representative delivery check",
+        "definition": "A procedure-defined check at selected locations used to confirm that irrigation is actually reaching the intended crop area."
+      },
+      {
+        "term": "deviation",
+        "definition": "A departure from the supplied work order, SOP, expected process condition or verified result that requires documentation or escalation."
+      },
+      {
+        "term": "operator care",
+        "definition": "Routine inspection, cleaning, setup or simple equipment checks explicitly authorized for the equipment user."
+      }
     ],
     "sections": [
-      {"title":"Verify before starting","body":"Confirm the current work order, room or zone, solution or water source, required task sequence and any relevant hold or access status. When identity or instruction is unclear, pause and clarify instead of relying on memory or a previous shift schedule.","references":["REF-IRRIGATION-001"]},
-      {"title":"Execution stays inside authorization","body":"Perform the assigned hand watering or routine system operation exactly within the supplied procedure. Technician I does not independently redesign irrigation timing, nutrient concentration, controller programming or protected equipment settings unless that authority is explicitly part of the task and training.","references":["REF-IRRIGATION-001"]},
-      {"title":"Verify actual delivery","body":"A command sent to a controller or a pump turning on is not the same as confirmed crop delivery. Follow the procedure-defined representative checks for emitters, zones, containers or output points and compare the observed result with the work order expectation.","references":["REF-IRRIGATION-001"]},
-      {"title":"Deviation response preserves the original condition","body":"Leaks, clogged or missing delivery, abnormal saturation or dryness, damaged lines, failed pumps or other obvious faults should be documented and handled through the supplied stop, isolate, permitted-correction or escalation steps. Do not hide incomplete irrigation by marking the work order complete.","references":["REF-IRRIGATION-001"]}
+      {
+        "title": "Verify before starting",
+        "body": "Confirm the current work order, room or zone, solution or water source, required task sequence and any relevant hold or access status. When identity or instruction is unclear, pause and clarify instead of relying on memory or a previous shift schedule.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Execution stays inside authorization",
+        "body": "Perform the assigned hand watering or routine system operation exactly within the supplied procedure. Technician I does not independently redesign irrigation timing, nutrient concentration, controller programming or protected equipment settings unless that authority is explicitly part of the task and training.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Verify actual delivery",
+        "body": "A command sent to a controller or a pump turning on is not the same as confirmed crop delivery. Follow the procedure-defined representative checks for emitters, zones, containers or output points and compare the observed result with the work order expectation.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Deviation response preserves the original condition",
+        "body": "Leaks, clogged or missing delivery, abnormal saturation or dryness, damaged lines, failed pumps or other obvious faults should be documented and handled through the supplied stop, isolate, permitted-correction or escalation steps. Do not hide incomplete irrigation by marking the work order complete.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
     ],
     "workedExamples": [
       "The controller shows an event completed, but a representative emitter in one zone is dry. The technician records the delivery failure and follows the supplied check/escalation steps rather than marking the zone complete.",
@@ -35,10 +80,78 @@
     "practicalApplication": "Use the downloadable irrigation/root-zone verification worksheet to run a simulated irrigation shift from a work order containing one identity mismatch, one clogged representative emitter and one leak. Demonstrate verification before execution, representative delivery checks, correct handling of each deviation, and an accurate completion/handoff record.",
     "summary": "Routine irrigation work is controlled execution plus verification. Technician I confirms identity and instruction, performs only authorized steps, verifies actual delivery, documents deviations and escalates unresolved faults rather than redesigning crop strategy or hiding incomplete work.",
     "blocks": [
-      {"type":"steps","title":"Irrigation work-order sequence","items":[{"title":"Match the work order","body":"Confirm room/zone, crop or batch where required, material/source and current instruction."},{"title":"Check readiness","body":"Inspect permitted equipment and work-area conditions before beginning."},{"title":"Execute assigned steps","body":"Perform hand watering or system operation within the supplied sequence and authority."},{"title":"Verify representative delivery","body":"Check the defined points that show whether water or solution actually reached the intended crop area."},{"title":"Handle deviations","body":"Apply only permitted routine corrections; stop or escalate unresolved leaks, clogs, missed delivery or equipment faults."},{"title":"Document completion truthfully","body":"Record what was completed, what was not completed, observed results, deviations and handoff needs."}],"references":["REF-IRRIGATION-001"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-004-004","title":"Work order and representative delivery verification","src":"/assets/course4/irrigation-work-order-delivery.svg","alt":"Work-order flow from room, zone and source verification through equipment readiness, authorized execution and representative delivery checks, with a zone map showing one local failed delivery point.","caption":"Controller completion is not proof of crop delivery. Verify representative points and preserve local deviations rather than marking incomplete work complete.","references":["REF-IRRIGATION-001"]},
-      {"type":"resource","title":"Downloadable practice: irrigation and root-zone verification","body":"Use this printable worksheet to practice work-order identity, representative delivery checks, root-zone observations, deviations, permitted actions and handoff while keeping controller status separate from verified crop delivery.","href":"/assets/course4/irrigation-verification-practice.svg","label":"Open irrigation / root-zone verification practice sheet","extensions":{"assetId":"VIS-LH-TECH1-004-007","downloadable":true}},
-      {"type":"scenario","title":"Controller says complete, emitter is dry","setting":"The irrigation controller reports the event finished, but a required representative emitter has no delivery.","prompt":"What is the strongest Technician I action?","options":["Mark the event complete because the controller says it ran","Document the failed representative delivery check and follow the supplied verification/correction/escalation procedure","Increase nutrient concentration","Ignore the emitter unless plants wilt"],"answer":"Document the failed representative delivery check and follow the supplied verification/correction/escalation procedure","feedback":"Controller execution and crop delivery are different facts. The representative check exists to verify actual delivery.","references":["REF-IRRIGATION-001"]}
+      {
+        "type": "steps",
+        "title": "Irrigation work-order sequence",
+        "items": [
+          {
+            "title": "Match the work order",
+            "body": "Confirm room/zone, crop or batch where required, material/source and current instruction."
+          },
+          {
+            "title": "Check readiness",
+            "body": "Inspect permitted equipment and work-area conditions before beginning."
+          },
+          {
+            "title": "Execute assigned steps",
+            "body": "Perform hand watering or system operation within the supplied sequence and authority."
+          },
+          {
+            "title": "Verify representative delivery",
+            "body": "Check the defined points that show whether water or solution actually reached the intended crop area."
+          },
+          {
+            "title": "Handle deviations",
+            "body": "Apply only permitted routine corrections; stop or escalate unresolved leaks, clogs, missed delivery or equipment faults."
+          },
+          {
+            "title": "Document completion truthfully",
+            "body": "Record what was completed, what was not completed, observed results, deviations and handoff needs."
+          }
+        ],
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-004-004",
+        "title": "Work order and representative delivery verification",
+        "src": "/assets/course4/irrigation-work-order-delivery.webp",
+        "alt": "Work-order flow from room, zone and source verification through equipment readiness, authorized execution and representative delivery checks, with a zone map showing one local failed delivery point.",
+        "caption": "Controller completion is not proof of crop delivery. Verify representative points and preserve local deviations rather than marking incomplete work complete.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "resource",
+        "title": "Downloadable practice: irrigation and root-zone verification",
+        "body": "Use this printable worksheet to practice work-order identity, representative delivery checks, root-zone observations, deviations, permitted actions and handoff while keeping controller status separate from verified crop delivery.",
+        "href": "/assets/course4/irrigation-verification-practice.webp",
+        "label": "Open irrigation / root-zone verification practice sheet",
+        "extensions": {
+          "assetId": "VIS-LH-TECH1-004-007",
+          "downloadable": true
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "Controller says complete, emitter is dry",
+        "setting": "The irrigation controller reports the event finished, but a required representative emitter has no delivery.",
+        "prompt": "What is the strongest Technician I action?",
+        "options": [
+          "Mark the event complete because the controller says it ran",
+          "Document the failed representative delivery check and follow the supplied verification/correction/escalation procedure",
+          "Increase nutrient concentration",
+          "Ignore the emitter unless plants wilt"
+        ],
+        "answer": "Document the failed representative delivery check and follow the supplied verification/correction/escalation procedure",
+        "feedback": "Controller execution and crop delivery are different facts. The representative check exists to verify actual delivery.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
     ]
   }
 }

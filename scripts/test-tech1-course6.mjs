@@ -99,14 +99,10 @@ try{
   for(const asset of produced){
     const response=await fetch(`${base}${asset.learnerPath}`);
     assert.equal(response.status,200,`${asset.learnerPath} should be served by Academy runtime`);
-    assert.match(response.headers.get('content-type')??'',/^image\/svg\+xml/);
-    const svg=await response.text();
-    assert.match(svg,/<svg[\s>]/);
-    assert.match(svg,/<title[\s>]/);
-    assert.match(svg,/<desc[\s>]/);
+    assert.match(response.headers.get('content-type')??'',/^image\/webp/);
   }
-  assert.equal((await fetch(`${base}/assets/course6x/harvest-readiness-stop-work.svg`)).status,404);
-  assert.equal((await fetch(`${base}/assets/course6/not-a-real-asset.svg`)).status,404);
+  assert.equal((await fetch(`${base}/assets/course6x/harvest-readiness-stop-work.webp`)).status,404);
+  assert.equal((await fetch(`${base}/assets/course6/not-a-real-asset.webp`)).status,404);
 } finally {
   server.close();
   await once(server,'close');

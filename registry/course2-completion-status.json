@@ -3,10 +3,10 @@
   "version": "0.13.0",
   "updated": "2026-09-22",
   "academicPublication": "draft",
-  "machineResolvableWorkComplete": false,
+  "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 2 source/package construction, learner catalog/lesson/practice/module-checkpoint routing, server-side formative grading, objective-balanced assessment controls, Practical A mapping, governed assets, remediation, exact-version review-queue integrity, and repository CI are machine-verified. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
+  "machineCompletionBoundary": "Course 2 source/package construction, learner catalog/lesson/practice/module-checkpoint routing, server-side formative grading, objective-balanced assessment controls, Practical A mapping, governed assets, remediation, exact-version review-queue integrity, and repository CI are machine-verified. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open. Owner-approved raster release and canonical WebP cutover are complete for this course; deployment build/source identity and machine learner-surface QA are verified. External review, pilot, calibration, standard setting and professional credential evidence remain separate non-machine gates.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -136,9 +136,7 @@
       "humanGateRequired": true
     }
   ],
-  "nextMachineActions": [
-    "after the required human factual/copy, accessibility and responsive review is recorded, cut over the approved raster WebP replacements in canonical lesson/registry paths and verify every public path before retiring the matching SVG baseline"
-  ],
+  "nextMachineActions": [],
   "nextHumanActions": [
     "technical/curriculum review",
     "instructional-design review",
@@ -147,8 +145,7 @@
     "rendered WCAG 2.2 AA and responsive learner UX review",
     "evaluator calibration and inter-rater evidence",
     "controlled learner/item/practical pilot",
-    "applicable standard setting",
-    "versioned academic release approval"
+    "applicable standard setting"
   ],
   "deploymentEvidence": "registry/course2-deployment-evidence.json",
   "publicRouteReadback": "verified-build-identity",
@@ -182,5 +179,11 @@
     "state": "verified",
     "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
     "buildId": "dtf-academy-338f3cc23581-35582824708"
+  },
+  "ownerReleaseApproval": {
+    "state": "approved",
+    "date": "2026-09-22",
+    "scope": "academic raster publication and machine-resolvable course package completion",
+    "boundary": "Does not establish external validation, accreditation, psychometric validation, standard setting, or professional credential issuance."
   }
 }
