@@ -297,6 +297,17 @@
           "REF-GS1-GLOBAL-TRACEABILITY",
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-032",
+        "src": "/assets/course1/inventory-reconciliation.png",
+        "alt": "Reconciliation flow comparing physical evidence with controlled records, verifying identifiers and recent events, preserving any discrepancy, documenting confirmed facts separately from assumptions and escalating unresolved differences. Record correction occurs only through the authorized process; forced balancing and falsification are prohibited.",
+        "caption": "Inventory reconciliation preserves discrepancies for investigation instead of forcing records and physical counts to match.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
       }
     ]
   }
