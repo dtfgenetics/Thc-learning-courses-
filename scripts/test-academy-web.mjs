@@ -155,7 +155,7 @@ try {
       assert.equal(typeof block.type, 'string', `${richLessonId} rich blocks should declare a type`);
       observedRichTypes.add(block.type);
       if (block.type === 'image') {
-        assert.match(block.src ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/, `${richLessonId} image blocks should use controlled Course 1 asset paths`);
+        assert.match(block.src ?? '', /^\/assets\/course1\/[A-Za-z0-9._-]+\.(?:png|webp|jpe?g)$/i, `${richLessonId} image blocks should use controlled Course 1 raster asset paths`);
         assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${richLessonId} image blocks should include learner-facing alt text`);
       }
       if (block.type === 'steps') {
