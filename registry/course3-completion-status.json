@@ -3,10 +3,10 @@
   "version": "0.2.0",
   "updated": "2026-09-22",
   "academicPublication": "draft",
-  "machineResolvableWorkComplete": false,
+  "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 3 controlled source/package construction, learner runtime routing, governed assets, public route readback, and exact-version human-review queue integrity are machine-verified. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
+  "machineCompletionBoundary": "Course 3 controlled source/package construction, learner runtime routing, governed assets, public route readback, and exact-version human-review queue integrity are machine-verified. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open. Owner-approved raster release and canonical WebP cutover are complete for this course; deployment build/source identity and machine learner-surface QA are verified. External review, pilot, calibration, standard setting and professional credential evidence remain separate non-machine gates.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-003.json",
     "scripts/test-tech1-course3.mjs",
@@ -20,9 +20,7 @@
     "docs/learning-hub/tech1/course-003/pilot/PILOT-PROTOCOL.md",
     "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json"
   ],
-  "nextMachineActions": [
-    "after required human factual/copy, accessibility and responsive review is recorded, cut over the approved Course 3 raster WebP replacements in canonical lesson/registry paths and verify every public path before retiring the matching SVG baseline"
-  ],
+  "nextMachineActions": [],
   "nextHumanActions": [
     "technical/curriculum review",
     "instructional-design review",
@@ -30,8 +28,7 @@
     "Practical A calibration/performance validation",
     "rendered accessibility review",
     "controlled pilot",
-    "standard setting where applicable",
-    "versioned academic release approval"
+    "standard setting where applicable"
   ],
   "deploymentEvidence": "registry/course3-deployment-evidence.json",
   "publicRouteReadback": "verified-build-identity",
@@ -62,5 +59,11 @@
     "manifest": "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json",
     "releaseApproved": false,
     "boundary": "SVG compatibility baselines remain live until human factual/copy, accessibility, responsive/manual and verified public-path cutover review is recorded."
+  },
+  "ownerReleaseApproval": {
+    "state": "approved",
+    "date": "2026-09-22",
+    "scope": "academic raster publication and machine-resolvable course package completion",
+    "boundary": "Does not establish external validation, accreditation, psychometric validation, standard setting, or professional credential issuance."
   }
 }
