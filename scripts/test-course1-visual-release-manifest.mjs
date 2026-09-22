@@ -96,7 +96,12 @@ for (const support of manifest.supportingReplacements ?? []) {
   assert.equal(typeof support.releaseApproved, 'boolean', `${support.assetId}: supporting releaseApproved must be explicit`);
   if (support.releaseApproved) {
     assert.equal(support.candidate?.qaStatus, 'public-approved', `${support.assetId}: released supporting replacement must be public-approved`);
-    assert.equal(support.candidate?.registryAssetId, support.assetId, `${support.assetId}: supporting replacement must retain its canonical registry ID`);
+    assert.match(support.candidate?.registryAssetId ?? '', /^VIS-LH-TECH1-001-[0-9]{3}$/, `${support.assetId}: released supporting replacement requires a registry ID`);
+    assert.notEqual(support.candidate?.registryAssetId, support.assetId, `${support.assetId}: released supporting PNG must use a distinct registry ID from the retired SVG baseline`);
+    const supportingReplacement = registryById.get(support.candidate.registryAssetId);
+    assert.ok(supportingReplacement, `${support.assetId}: released supporting replacement is absent from the public registry`);
+    assert.equal(supportingReplacement.status, 'produced', `${support.assetId}: released supporting replacement must be produced`);
+    assert.equal(supportingReplacement.learnerPath, support.candidate.targetPublicPath, `${support.assetId}: supporting learner path drift`);
   } else {
     assert.notEqual(support.candidate?.qaStatus, 'public-approved', `${support.assetId}: unreleased supporting replacement cannot be public-approved`);
   }
