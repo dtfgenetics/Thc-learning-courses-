@@ -1,21 +1,40 @@
 {
   "version": "0.4.0",
-  "status": "draft",
+  "status": "published",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
   "intendedAudience": [
     "Learners progressing through the THC Cultivation Technician I pathway",
     "Entry-level cultivation employees developing supervised operational competency"
   ],
-  "deliveryModes": ["self-directed-web", "instructor-facilitated", "supervised-lab", "workplace-equivalent"],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, product labels, equipment manuals, and jurisdiction-specific requirements control when they are more specific. Reused curriculum modules are development dependencies and do not substitute for course-specific occupational review.",
   "assessmentPolicy": "This draft course is not credential evidence merely because its structure exists. Course-specific formative work, a course-level summative assessment, accessibility review, human technical review, and any required practical evidence must be completed and validated before the course can advance beyond draft/review status.",
   "finalAssessment": "ASSESS-LH-TECH1-004-FINAL",
   "id": "COURSE-LH-TECH1-004",
   "title": "Water, Root Zone, Nutrition & Irrigation Fundamentals",
   "description": "Prepares Technician I learners to identify the required sample or work order, measure and record pH/EC and root-zone observations, execute routine irrigation within authorization, verify representative delivery, and escalate unresolved deviations without turning isolated readings into unsupported diagnoses.",
-  "modules": ["MOD-WATER-001", "MOD-ROOTZONE-001", "MOD-NUTRITION-001", "MOD-LH-TECH1-001-EQUIPMENT", "MOD-LH-TECH1-001-RECORDS", "MOD-LH-TECH1-004-IRRIGATION"],
-  "competencies": ["COMP-WATER-001", "COMP-ROOTZONE-001", "COMP-NUTRITION-001", "COMP-PRO-SOP-001", "COMP-CULT-EQUIPMENT-CARE-001", "COMP-PRO-QA-001"],
+  "modules": [
+    "MOD-WATER-001",
+    "MOD-ROOTZONE-001",
+    "MOD-NUTRITION-001",
+    "MOD-LH-TECH1-001-EQUIPMENT",
+    "MOD-LH-TECH1-001-RECORDS",
+    "MOD-LH-TECH1-004-IRRIGATION"
+  ],
+  "competencies": [
+    "COMP-WATER-001",
+    "COMP-ROOTZONE-001",
+    "COMP-NUTRITION-001",
+    "COMP-PRO-SOP-001",
+    "COMP-CULT-EQUIPMENT-CARE-001",
+    "COMP-PRO-QA-001"
+  ],
   "learningOutcomes": [
     "Collect and identify assigned water or nutrient-solution samples and record pH/EC measurements with units, method and instrument context.",
     "Describe root-zone moisture, saturation, drainage, dryback and comparable EC trends without treating one reading or elapsed interval as a complete diagnosis.",
@@ -24,9 +43,21 @@
   ],
   "extensions": {
     "credentialPath": "CREDPROG-CULT-TECH-I-001",
-    "jtaDomains": [5, 6, 12, 13],
-    "maturity": "instruction-assessment-practical-learner-assets-draft",
-    "developmentDependencies": ["MOD-WATER-001", "MOD-ROOTZONE-001", "MOD-NUTRITION-001", "MOD-LH-TECH1-001-EQUIPMENT", "MOD-LH-TECH1-001-RECORDS", "MOD-LH-TECH1-004-IRRIGATION"],
+    "jtaDomains": [
+      5,
+      6,
+      12,
+      13
+    ],
+    "maturity": "instruction-assessment-practical-learner-assets-public-academic",
+    "developmentDependencies": [
+      "MOD-WATER-001",
+      "MOD-ROOTZONE-001",
+      "MOD-NUTRITION-001",
+      "MOD-LH-TECH1-001-EQUIPMENT",
+      "MOD-LH-TECH1-001-RECORDS",
+      "MOD-LH-TECH1-004-IRRIGATION"
+    ],
     "dedicatedCourseAssessmentRequired": false,
     "contentCeiling": null,
     "dedicatedPerformanceValidationRequired": true,
