@@ -34,6 +34,12 @@ for(const asset of course1Svg){
 const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
 assert.equal(tech2.policy?.productionFormatPolicy?.svgReleaseAllowed,false,'Technician II: SVG release must remain prohibited');
 assert.deepEqual(tech2.policy?.productionFormatPolicy?.allowedReleasedExtensions,releaseRaster);
+for(const course of tech2.courses??[]){
+  for(const concept of course.concepts??[]){
+    assert.equal(concept.rasterReplacement?.status,'candidate-produced-human-qa-required',`${concept.conceptId}: Technician II candidate lifecycle drift`);
+    assert.equal(concept.rasterReplacement?.releaseApproved,false,`${concept.conceptId}: candidate production cannot imply approval`);
+  }
+}
 
 const replacementProgram=read('registry/raster-replacement-program.json');
 assert.equal(replacementProgram.summary?.totalGovernedReplacements,96,'Raster program total must reconcile to 96 governed replacements');
@@ -41,8 +47,8 @@ assert.equal(replacementProgram.summary?.technicianI,60,'Technician I raster pro
 assert.equal(replacementProgram.summary?.technicianII,36,'Technician II raster program must reconcile to 36 replacements');
 assert.equal(replacementProgram.summary?.releasedRasterReplacements,0,'No raster replacement may be claimed released without reviewed binaries');
 assert.equal(replacementProgram.summary?.openRasterReplacements,96,'All 96 replacements remain open until reviewed binaries are released');
-assert.equal(replacementProgram.summary?.producedRasterCandidates,40,'Technician I Courses 2-6 must report forty produced raster candidates');
-assert.equal(replacementProgram.summary?.remainingRasterProduction,56,'Raster production remainder must reconcile after the Courses 2-6 candidate tranches');
+assert.equal(replacementProgram.summary?.producedRasterCandidates,76,'Technician I Courses 2-6 and Technician II must report 76 produced raster candidates');
+assert.equal(replacementProgram.summary?.remainingRasterProduction,20,'Only Technician I Course 1 raster production may remain after the Technician II tranche');
 
 const expectedTech1Counts=new Map([[1,20],[2,10],[3,6],[4,7],[5,9],[6,8]]);
 for(const row of replacementProgram.technicianI??[]){
