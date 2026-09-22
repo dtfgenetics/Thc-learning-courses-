@@ -8,17 +8,17 @@
 
 Course 3 has five controlled course-specific learning objectives, four dedicated lessons, 12 distinct formative items, 20 distinct summative items, six produced learner assets and a development mapping to `PRACTICAL-TECH1-A`.
 
-Repository inspection on 2026-09-16 found formative item coverage of **2 / 2 / 3 / 2 / 3** across objectives 01–05. The Course 3 production test requires at least four summative items per objective, and the current 20-item final is designed around that balanced distribution. Scored items are evidence-backed; empty reference arrays were not found in the Course 3 question set during this audit.
+Current machine inspection confirms formative item coverage of **2 / 2 / 3 / 2 / 3** across objectives 01–05 and exactly **4 / 4 / 4 / 4 / 4** summative items. The current 20-item final is therefore balanced across all five controlled objectives. Scored items are evidence-backed; empty reference arrays were not found in the Course 3 question set during this audit.
 
 ## Objective learning loop
 
 | Objective | Primary instruction | Applied practice / learner evidence | Formative coverage | Summative coverage | Performance evidence | Remediation |
 |---|---|---|---:|---:|---|---|
-| `LO-LH-TECH1-003-01` | Lesson 01 — Temperature, RH and VPD as Contextual Measurements | Environmental measurement record; target-vs-measurement comparison; same-RH/different-temperature scenario | 2 | ≥4 | Practical A environmental interpretation + documentation/traceability | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
-| `LO-LH-TECH1-003-02` | Lesson 02 — PPFD, Photoperiod and Repeatable Canopy Light Checks | Nine-point PPFD grid; photoperiod record; repeatable canopy-light-check workflow; bright-center scenario | 2 | ≥4 | Practical A light-verification station when assigned | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
-| `LO-LH-TECH1-003-03` | Lessons 03–04 — Sensor Placement, Verification and Data-Quality Triage; Alarms, Trends, Environmental Records and Shift Handoff | Sensor-outlier worksheet; representativeness triage; trend/alarm scenario; handoff record | 3 | ≥4 | Practical A environmental interpretation + observation quality | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
-| `LO-LH-TECH1-003-04` | Lessons 03–04 | Operator-level readiness checks; escalation decisions; alarm/handoff scenario | 2 | ≥4 | Practical A environmental interpretation + handoff/escalation | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
-| `LO-LH-TECH1-003-05` | Lessons 01, 02 and 04 | Environmental measurement record; PPFD grid; deviation handoff; traceability practice | 3 | ≥4 | Practical A documentation/traceability + handoff/escalation | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
+| `LO-LH-TECH1-003-01` | Lesson 01 — Temperature, RH and VPD as Contextual Measurements | Environmental measurement record; target-vs-measurement comparison; same-RH/different-temperature scenario | 2 | 4 | Practical A environmental interpretation + documentation/traceability | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
+| `LO-LH-TECH1-003-02` | Lesson 02 — PPFD, Photoperiod and Repeatable Canopy Light Checks | Nine-point PPFD grid; photoperiod record; repeatable canopy-light-check workflow; bright-center scenario | 2 | 4 | Practical A light-verification station when assigned | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
+| `LO-LH-TECH1-003-03` | Lessons 03–04 — Sensor Placement, Verification and Data-Quality Triage; Alarms, Trends, Environmental Records and Shift Handoff | Sensor-outlier worksheet; representativeness triage; trend/alarm scenario; handoff record | 3 | 4 | Practical A environmental interpretation + observation quality | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
+| `LO-LH-TECH1-003-04` | Lessons 03–04 | Operator-level readiness checks; escalation decisions; alarm/handoff scenario | 2 | 4 | Practical A environmental interpretation + handoff/escalation | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
+| `LO-LH-TECH1-003-05` | Lessons 01, 02 and 04 | Environmental measurement record; PPFD grid; deviation handoff; traceability practice | 3 | 4 | Practical A documentation/traceability + handoff/escalation | `instructor/OBJECTIVE-REMEDIATION-MATRIX.md` |
 
 ## Instruction-to-practice alignment
 
@@ -41,6 +41,10 @@ The learner must perform only authorized operator-level checks and escalate work
 ### `LO-LH-TECH1-003-05`
 
 The learner must create reconstructable environmental/light records. Lessons 01, 02 and 04 collectively require target, measured value, alarm/event, verification action, unresolved condition, location, time, units, instrument/sensor context and escalation/handoff status as applicable.
+
+## Test-to-teaching provenance
+
+`docs/learning-hub/tech1/course-003/TEST-TO-TEACHING-MAP.md` records the exact dedicated lessons that teach each assessed objective. The final assessment metadata carries the same machine-readable map. The 420 Encyclopedia may support deeper study and source discovery but cannot substitute for required Course 3 instruction.
 
 ## Assessment boundary
 
