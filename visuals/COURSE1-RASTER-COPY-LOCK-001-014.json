@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "id": "COURSE1-RASTER-COPY-LOCK-001-014",
+  "updated": "2026-09-22",
+  "courseId": "COURSE-LH-TECH1-001",
+  "status": "machine-drafted-human-review-required",
+  "purpose": "Controlled copy and source map for the 14 remaining governed Course 1 raster replacement candidates. This file authorizes deterministic candidate production only; it does not authorize learner-facing release.",
+  "production": {
+    "format": "png",
+    "width": 2400,
+    "height": 3200,
+    "orientation": "portrait",
+    "svgOutputAllowed": false,
+    "releaseApproved": false,
+    "outputDirectory": "visuals/review-candidates/course1/production-masters",
+    "brand": "THC Academy",
+    "footer": "Academic learning visual • Follow current controlled procedures and authorized role boundaries."
+  },
+  "assets": [
+    {
+      "assetId": "VIS-LH-TECH1-001-001",
+      "slug": "HIERARCHY-CONTROLS",
+      "module": 1,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-01"
+      ],
+      "title": "Hierarchy of Controls & Technician I Boundaries",
+      "kicker": "CONTROL THE HAZARD AT THE STRONGEST AUTHORIZED LEVEL",
+      "purpose": "Teach the hierarchy of controls while separating control preference from technician authority.",
+      "panels": [
+        [
+          "Elimination & substitution",
+          "Remove the hazard or replace it with a lower-hazard option when the authorized process permits."
+        ],
+        [
+          "Engineering controls",
+          "Use physical design or isolation controls established by the facility; do not redesign systems independently."
+        ],
+        [
+          "Administrative controls",
+          "Follow controlled procedures, scheduling, access rules, training and work practices."
+        ],
+        [
+          "PPE",
+          "Use the task-specific PPE required by the hazard assessment, label/SDS and site procedure."
+        ],
+        [
+          "Technician boundary",
+          "If the needed control exceeds assigned authority, stop or stabilize as authorized, document and escalate."
+        ]
+      ],
+      "boundary": "Control effectiveness and authorization are separate questions. A stronger control is not automatically a Technician I decision.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-01.json"
+      ],
+      "sourceBaseline": "/assets/course1/hazard-control-decision-flow.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-002",
+      "slug": "PPE-HAZCOM",
+      "module": 1,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-02"
+      ],
+      "title": "PPE & Hazard Communication Decision Map",
+      "kicker": "TASK → HAZARD INFORMATION → PROCEDURE → REQUIRED PROTECTION",
+      "purpose": "Connect the assigned task to the controlled information that determines PPE and restrictions.",
+      "panels": [
+        [
+          "1. Identify the assigned task",
+          "Confirm the exact material, product, equipment and work activity."
+        ],
+        [
+          "2. Check the hazard basis",
+          "Use the employer hazard assessment and the actual conditions of the work."
+        ],
+        [
+          "3. Read label & current SDS",
+          "Verify product-specific hazards, precautions, first aid and required protective measures."
+        ],
+        [
+          "4. Check site procedure",
+          "Apply facility restrictions, training prerequisites and task authorization."
+        ],
+        [
+          "5. Use required PPE",
+          "Inspect, wear, remove and handle PPE according to the controlling instructions."
+        ]
+      ],
+      "boundary": "This is a decision model, not a universal task-to-PPE chart. Specialized protection is used only under the applicable program and authorization.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-02.json"
+      ],
+      "sourceBaseline": "/assets/course1/ppe-hazcom-decision-map.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-003",
+      "slug": "HAZARD-SCAN",
+      "module": 1,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-01",
+        "LESSON-LH-TECH1-001-03"
+      ],
+      "title": "Cultivation Work-Area Hazard Scan",
+      "kicker": "SCAN THE ACTUAL AREA BEFORE THE TASK STARTS",
+      "purpose": "Practice a repeatable work-area scan without implying a universal hazard list.",
+      "panels": [
+        [
+          "Pathways & housekeeping",
+          "Look for slips, trips, blocked routes, unstable storage and changing work conditions."
+        ],
+        [
+          "Electrical & powered equipment",
+          "Check visible condition, cords, wet-location concerns, guards and access boundaries."
+        ],
+        [
+          "Access & physical hazards",
+          "Notice ladders, overhead work, sharp edges, pinch points and restricted areas."
+        ],
+        [
+          "Exposure conditions",
+          "Check products, dusts, aerosols, residues, heat, noise or other task-relevant exposure cues."
+        ],
+        [
+          "Act on what you find",
+          "Use only authorized routine controls; stop and escalate unsafe, changing or out-of-scope conditions."
+        ]
+      ],
+      "boundary": "Representative examples support a scanning method. The current task, site procedure and actual conditions control the response.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-01.json",
+        "content/lessons/LESSON-LH-TECH1-001-03.json"
+      ],
+      "sourceBaseline": "/assets/course1/cultivation-work-area-hazard-scan.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-004",
+      "slug": "BIOSECURITY-PATHWAY",
+      "module": 2,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-04"
+      ],
+      "title": "Biosecurity Pathway Map",
+      "kicker": "SOURCE → ROUTE → RECEIVER",
+      "purpose": "Show how contamination can move through people, tools, equipment and material pathways.",
+      "panels": [
+        [
+          "Source",
+          "Plant material, debris, media, water, residues, pests or other contamination sources."
+        ],
+        [
+          "Routes",
+          "People, PPE, tools, carts, hoses, containers, surfaces, media and plant movement."
+        ],
+        [
+          "Receiver",
+          "A susceptible plant, propagation area, room, clean tool, container or controlled zone."
+        ],
+        [
+          "Interrupt the route",
+          "Use the site-defined transition, sanitation, separation and movement controls."
+        ],
+        [
+          "Verify before crossing",
+          "A sanitized item can be recontaminated; current status matters at every transition."
+        ]
+      ],
+      "boundary": "Zone names, traffic direction and transition rules are facility-specific. Use the current zone map and SOP.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-04.json"
+      ],
+      "sourceBaseline": "/assets/course1/biosecurity-pathway-map.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-005",
+      "slug": "CLEANING-DISINFECTION",
+      "module": 2,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-05"
+      ],
+      "title": "Cleaning & Disinfection Sequence",
+      "kicker": "CLEAN FIRST • APPLY THE APPROVED PRODUCT CORRECTLY • VERIFY",
+      "purpose": "Teach the ordered distinction between debris removal, cleaning, product verification, contact conditions, finishing, inspection and documentation.",
+      "panels": [
+        [
+          "1. Prepare & control the area",
+          "Confirm scope, required PPE, material status and what must be protected or removed."
+        ],
+        [
+          "2. Remove gross debris & clean",
+          "Physical cleaning comes before the disinfection step where the procedure requires it."
+        ],
+        [
+          "3. Verify the exact product",
+          "Use the approved product, current label/instructions, preparation and compatibility requirements."
+        ],
+        [
+          "4. Meet contact conditions",
+          "Follow the controlling instructions for application, coverage and required contact conditions."
+        ],
+        [
+          "5. Finish, inspect & document",
+          "Complete any required finish step, protect from recontamination, inspect and record the result."
+        ]
+      ],
+      "boundary": "No universal concentration, contact time, rinse or drying rule is implied. The product label and facility procedure control the exact method.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-05.json"
+      ],
+      "sourceBaseline": "/assets/course1/cleaning-disinfection-sequence.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-006",
+      "slug": "QUARANTINE-HOLD-REI",
+      "module": 2,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-06"
+      ],
+      "title": "Quarantine, Hold & Restricted-Entry Controls",
+      "kicker": "DIFFERENT CONTROLS CAN OVERLAP — CLEAR EACH ONE SEPARATELY",
+      "purpose": "Keep biological isolation, operational hold status and pesticide-entry restrictions conceptually separate.",
+      "panels": [
+        [
+          "Quarantine",
+          "Separates plant material or an area because biological or pest risk remains unresolved."
+        ],
+        [
+          "Hold",
+          "Prevents movement, use, release or further processing while an authorized decision is pending."
+        ],
+        [
+          "Restricted-entry interval",
+          "A pesticide-labeling interval that restricts ordinary worker entry where the Worker Protection Standard applies."
+        ],
+        [
+          "Statuses can stack",
+          "Releasing one status does not automatically clear another applicable restriction."
+        ],
+        [
+          "Breach response",
+          "Stop further movement or exposure, preserve identity and route evidence, document facts and escalate each open decision."
+        ]
+      ],
+      "boundary": "Release, disposition and worker-entry clearance can come from different authorities or rules. Verify every active control.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-06.json"
+      ],
+      "references": [
+        "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
+        "REF-UMASS-GREENHOUSE-SANITATION",
+        "REF-EPA-WPS-REI-2026",
+        "REF-EPA-WPS-APPLICATION-RESTRICTIONS"
+      ],
+      "sourceBaseline": "/assets/course1/quarantine-hold-rei-comparison.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-007",
+      "slug": "CONTROLLED-DOCUMENT",
+      "module": 3,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-07"
+      ],
+      "title": "Controlled SOP / Work-Order Anatomy",
+      "kicker": "VERIFY THE CURRENT CONTROLLED SOURCE BEFORE ACTING",
+      "purpose": "Show the information a technician needs to confirm before and during controlled work.",
+      "panels": [
+        [
+          "Identity & revision",
+          "Confirm the document/work order and its current controlled version."
+        ],
+        [
+          "Prerequisites",
+          "Check required training, materials, status, PPE, equipment and preconditions."
+        ],
+        [
+          "Ordered steps",
+          "Follow the controlled sequence and any defined decision points."
+        ],
+        [
+          "Acceptance criteria",
+          "Know what evidence is required to call a step or task complete."
+        ],
+        [
+          "Records & escalation",
+          "Capture required evidence and route exceptions, deviations or out-of-scope conditions correctly."
+        ]
+      ],
+      "boundary": "The layout is illustrative. The facility’s current controlled source, not memory or an old copy, governs the work.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-07.json"
+      ],
+      "sourceBaseline": "/assets/course1/controlled-document-anatomy.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-008",
+      "slug": "MATERIAL-GENEALOGY",
+      "module": 4,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-10"
+      ],
+      "title": "Plant & Material Genealogy",
+      "kicker": "KEEP IDENTITY CONNECTED THROUGH EVERY CONTROLLED EVENT",
+      "purpose": "Visualize identity continuity from source material through routine cultivation, movement and disposition events.",
+      "panels": [
+        [
+          "Source identity",
+          "Begin with the controlled source plant, seed lot, clone batch or other originating material."
+        ],
+        [
+          "Propagation & derived material",
+          "Link new plant or material identifiers back to the correct source relationship."
+        ],
+        [
+          "Location & movement",
+          "Preserve identity when material changes room, zone, container or process point."
+        ],
+        [
+          "Harvest, samples & containers",
+          "Carry the controlled relationship into later material, sample and container records."
+        ],
+        [
+          "Disposition trail",
+          "Keep final status and downstream events tied to the correct genealogy rather than relying on appearance or memory."
+        ]
+      ],
+      "boundary": "Example identifiers are vendor-neutral and illustrative. The facility and applicable program define the actual record fields.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-10.json"
+      ],
+      "sourceBaseline": "/assets/course1/material-genealogy.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-009",
+      "slug": "INVENTORY-RECONCILIATION",
+      "module": 4,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-11",
+        "LESSON-LH-TECH1-001-12"
+      ],
+      "title": "Inventory Reconciliation Without Forced Balancing",
+      "kicker": "COMPARE EVIDENCE • PRESERVE DISCREPANCIES • ESCALATE",
+      "purpose": "Show how physical and recorded evidence are compared without inventing movements or corrections.",
+      "panels": [
+        [
+          "1. Verify identity",
+          "Confirm the exact material, lot, plant, container and location being compared."
+        ],
+        [
+          "2. Compare physical vs record",
+          "Count or verify what is actually present and compare it with the controlled record."
+        ],
+        [
+          "3. Review recent events",
+          "Check authorized movements, transfers, waste, corrections and other relevant records."
+        ],
+        [
+          "4. Preserve the discrepancy",
+          "Keep unresolved differences visible; separate confirmed facts from hypotheses."
+        ],
+        [
+          "5. Document & escalate",
+          "Use the authorized reconciliation/correction process. Never force the numbers to match."
+        ]
+      ],
+      "boundary": "A discrepancy is operational information. Record correction requires a valid basis and the controlled process.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-11.json",
+        "content/lessons/LESSON-LH-TECH1-001-12.json"
+      ],
+      "sourceBaseline": "/assets/course1/inventory-reconciliation-flow.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-010",
+      "slug": "AUTHORITY-SERVICING",
+      "module": 3,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-08",
+        "LESSON-LH-TECH1-001-13",
+        "LESSON-LH-TECH1-001-14"
+      ],
+      "title": "Authorization & Servicing Boundary",
+      "kicker": "ASSIGNED + TRAINED + AUTHORIZED = ROUTINE WORK",
+      "purpose": "Separate routine technician actions from technical changes, diagnosis, repair or protected servicing.",
+      "panels": [
+        [
+          "Assigned routine work",
+          "Continue only when the task is assigned, the procedure is current and required training/authorization is in place."
+        ],
+        [
+          "Routine care",
+          "Perform external cleaning, observation, setup or simple checks only when the procedure explicitly permits them."
+        ],
+        [
+          "Stop conditions",
+          "Unsafe conditions, failed readiness criteria, unknown status or changing conditions require pause and control."
+        ],
+        [
+          "Servicing boundary",
+          "Protected access, stored energy, disassembly, diagnosis, repair, electrical work and calibration transfer to authorized roles."
+        ],
+        [
+          "Escalation",
+          "Preserve safe status, record observations and route the issue through the facility’s chain of command."
+        ]
+      ],
+      "boundary": "A problem does not create permission to troubleshoot beyond scope. Technician I authority comes from assignment, training and controlled procedure.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-08.json",
+        "content/lessons/LESSON-LH-TECH1-001-13.json",
+        "content/lessons/LESSON-LH-TECH1-001-14.json"
+      ],
+      "sourceBaseline": "/assets/course1/operator-care-servicing-boundary.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-011",
+      "slug": "MAINTENANCE-FAULT-REPORT",
+      "module": 5,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-15"
+      ],
+      "title": "Maintenance-Ready Fault Report",
+      "kicker": "REPORT VERIFIED CONTEXT — NOT AN UNSUPPORTED DIAGNOSIS",
+      "purpose": "Provide a supporting fault-report view that preserves useful observations, timing and safe status.",
+      "panels": [
+        [
+          "Exact asset & location",
+          "Record the equipment identifier, area and process context."
+        ],
+        [
+          "Time-ordered observations",
+          "Capture alarm codes, symptoms, visible conditions, sounds or other verified facts with date/time."
+        ],
+        [
+          "Permitted checks",
+          "Document only checks the procedure allows and the result of each check."
+        ],
+        [
+          "Operational impact",
+          "State what stopped, changed, remained safe or could not be verified."
+        ],
+        [
+          "Safe status & notification",
+          "Preserve the required status and use the approved maintenance/escalation channel."
+        ]
+      ],
+      "boundary": "Keep observations separate from hypotheses. Diagnosis and repair remain with the authorized role.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-15.json"
+      ],
+      "sourceBaseline": "/assets/course1/maintenance-fault-report.svg",
+      "relatedProducedMaster": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-012",
+      "slug": "SHIFT-HANDOFF-MODEL",
+      "module": 6,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-17",
+        "LESSON-LH-TECH1-001-18"
+      ],
+      "title": "Professional Shift-Handoff Model",
+      "kicker": "TRANSFER STATUS, EVIDENCE, RISK AND OWNERSHIP",
+      "purpose": "Retain a concise supporting handoff model alongside the more detailed Lesson 6.2 handoff visual.",
+      "panels": [
+        [
+          "Exact identifiers",
+          "Use the controlled room, crop, material, lot, equipment and work-order identifiers."
+        ],
+        [
+          "Completed vs open",
+          "Separate verified completed work from incomplete, blocked, unknown or pending work."
+        ],
+        [
+          "Current restrictions",
+          "State holds, quarantine, equipment status, alarms, safety controls or other active constraints."
+        ],
+        [
+          "Notifications & next actions",
+          "Record who was notified, critical timing and the controlled next step without inventing priorities."
+        ],
+        [
+          "Ownership confirmation",
+          "Confirm the receiver understands the open items and who owns each unresolved decision."
+        ]
+      ],
+      "boundary": "A verbal handoff does not override controlled records, current procedures or receiver authorization.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-17.json",
+        "content/lessons/LESSON-LH-TECH1-001-18.json"
+      ],
+      "sourceBaseline": "/assets/course1/shift-handoff-model.svg",
+      "relatedProducedMaster": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-013",
+      "slug": "DEVIATION-STATUS",
+      "module": 3,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-09"
+      ],
+      "title": "Deviation, Exception & Honest Work Status",
+      "kicker": "DESCRIBE WHAT ACTUALLY HAPPENED — DO NOT MANUFACTURE COMPLETION",
+      "purpose": "Teach truthful classification of complete work, planned exceptions, deviations, incomplete work and unknown/unverified status.",
+      "panels": [
+        [
+          "Complete",
+          "Required steps and acceptance criteria are met and the required evidence exists."
+        ],
+        [
+          "Planned exception",
+          "The controlled procedure anticipated the condition and provides an approved alternate path."
+        ],
+        [
+          "Deviation",
+          "An unplanned departure from an approved instruction, expected condition or process requires documentation and evaluation."
+        ],
+        [
+          "Incomplete",
+          "One or more required steps, records, measurements or acceptance checks are not complete or verified."
+        ],
+        [
+          "Unknown / unverified",
+          "Keep uncertainty visible when the evidence does not support a conclusion; hand the open decision forward."
+        ]
+      ],
+      "boundary": "A missed observation stays missing unless a controlled late-entry or correction process preserves the true timing and status.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-09.json"
+      ],
+      "references": [
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "sourceBaseline": "/assets/course1/deviation-status-decision-map.svg"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-001-014",
+      "slug": "DATA-INTEGRITY-LIFECYCLE",
+      "module": 6,
+      "lessonIds": [
+        "LESSON-LH-TECH1-001-16"
+      ],
+      "title": "Cultivation Data-Integrity Record Lifecycle",
+      "kicker": "MAKE THE RECORD RECONSTRUCTABLE — NOT JUST NEAT",
+      "purpose": "Show the broader record lifecycle around the more focused controlled-correction visual.",
+      "panels": [
+        [
+          "Identity & context",
+          "Tie the observation or action to the correct material, asset, location, unit and process point."
+        ],
+        [
+          "Real timing",
+          "Record when the activity or observation occurred; preserve later entry timing when a controlled late-entry process is used."
+        ],
+        [
+          "Attribution",
+          "Keep creation and changes tied to the responsible person or controlled system."
+        ],
+        [
+          "Transparent correction",
+          "Preserve the original entry and an understandable change history using the facility method."
+        ],
+        [
+          "Missing data & handoff",
+          "Leave missing information visibly missing and preserve enough context for another qualified person to reconstruct what happened."
+        ]
+      ],
+      "boundary": "Never backfill a target, estimate or remembered approximation as though it were the original contemporaneous measurement.",
+      "sourceLessonPaths": [
+        "content/lessons/LESSON-LH-TECH1-001-16.json"
+      ],
+      "references": [
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "sourceBaseline": "/assets/course1/data-integrity-record-lifecycle.svg",
+      "relatedProducedMaster": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png"
+    }
+  ]
+}
