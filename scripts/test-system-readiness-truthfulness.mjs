@@ -40,6 +40,7 @@ for(const [area,gate] of [
   ['security','rowLevelAuthorizationPolicyCodeReady'],
   ['operations','backupRestoreContractCodeReady'],
   ['operations','monitoringAlertingContractCodeReady'],
+  ['operations','productionValidationEvidenceContractReady'],
   ['credentials','revocationTransactionCodeReady'],
   ['credentials','productionSigningIntegrationCodeReady'],
   ['api','learnerOpenApiContract'],
