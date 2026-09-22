@@ -1,25 +1,65 @@
 {
   "id": "LESSON-LH-TECH1-003-03",
   "title": "Sensor Placement, Verification and Data-Quality Triage",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "status": "draft",
-  "competencies": ["COMP-ENV-VPD-001", "COMP-CULT-EQUIPMENT-CARE-001"],
-  "learningObjectives": ["LO-LH-TECH1-003-03", "LO-LH-TECH1-003-04"],
+  "competencies": [
+    "COMP-ENV-VPD-001",
+    "COMP-CULT-EQUIPMENT-CARE-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-003-03",
+    "LO-LH-TECH1-003-04"
+  ],
   "estimatedMinutes": 60,
-  "references": ["REF-VPD-002"],
+  "references": [
+    "REF-VPD-002",
+    "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+  ],
   "assessment": null,
   "content": {
     "overview": "A sensor can display a plausible number and still fail to represent the crop. Learners practice checking placement, comparison with nearby sensors, calibration or verification status, airflow and equipment influence, logging interval and obvious physical condition before treating an outlier as a real room change. Technician I verifies within procedure and escalates unresolved faults instead of performing unauthorized repair.",
     "vocabulary": [
-      {"term":"sensor bias","definition":"A systematic measurement error that shifts readings away from the true condition."},
-      {"term":"representative location","definition":"A position chosen to reflect the environment relevant to the crop rather than an atypical local microclimate."},
-      {"term":"verification","definition":"A permitted check that gathers evidence about whether a measurement or device is behaving as expected without necessarily adjusting or repairing it."},
-      {"term":"calibration status","definition":"The documented state showing whether an instrument has received required calibration or comparison procedures within the applicable interval."}
+      {
+        "term": "sensor bias",
+        "definition": "A systematic measurement error that shifts readings away from the true condition."
+      },
+      {
+        "term": "representative location",
+        "definition": "A position chosen to reflect the environment relevant to the crop rather than an atypical local microclimate."
+      },
+      {
+        "term": "verification",
+        "definition": "A permitted check that gathers evidence about whether a measurement or device is behaving as expected without necessarily adjusting or repairing it."
+      },
+      {
+        "term": "calibration status",
+        "definition": "The documented state showing whether an instrument has received required calibration or comparison procedures within the applicable interval."
+      }
     ],
     "sections": [
-      {"title":"Placement can create a valid local reading that is invalid for the question","body":"A sensor close to an intake, dehumidifier outlet, wet surface, lamp, wall or dense canopy may accurately measure that local microclimate but fail to represent the room or crop question. Technician I records the sensor location and compares it with the intended measurement purpose before escalating a reading.","references":["REF-VPD-002"]},
-      {"title":"Compare evidence before changing controls","body":"When one sensor disagrees with peers, compare placement, recent trends, calibration or verification status and any obvious equipment or airflow context. A single outlier does not automatically prove the room is wrong or the sensor is wrong; it identifies a condition requiring structured verification.","references":["REF-VPD-002"]},
-      {"title":"Operator care has a boundary","body":"Technician I may perform explicitly permitted checks such as cleanliness inspection, connection/status review, documented comparison or simple readiness steps. Opening electrical equipment, altering protected calibration settings or repairing HVAC/control systems is outside the role unless separately authorized and trained.","references":["REF-VPD-002"]}
+      {
+        "title": "Placement can create a valid local reading that is invalid for the question",
+        "body": "A sensor close to an intake, dehumidifier outlet, wet surface, lamp, wall or dense canopy may accurately measure that local microclimate but fail to represent the room or crop question. Technician I records the sensor location and compares it with the intended measurement purpose before escalating a reading.",
+        "references": [
+          "REF-VPD-002",
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+        ]
+      },
+      {
+        "title": "Compare evidence before changing controls",
+        "body": "When one sensor disagrees with peers, compare placement, recent trends, calibration or verification status and any obvious equipment or airflow context. A single outlier does not automatically prove the room is wrong or the sensor is wrong; it identifies a condition requiring structured verification.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+        ]
+      },
+      {
+        "title": "Operator care has a boundary",
+        "body": "Technician I may perform explicitly permitted checks such as cleanliness inspection, connection/status review, documented comparison or simple readiness steps. Opening electrical equipment, altering protected calibration settings or repairing HVAC/control systems is outside the role unless separately authorized and trained.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+        ]
+      }
     ],
     "workedExamples": [
       "One RH sensor reads much lower than four peers. It is found directly in a dehumidifier discharge path. The technician records the placement and comparison and escalates according to sensor procedure rather than changing the entire room set point.",
@@ -34,10 +74,87 @@
     "practicalApplication": "Use the shared PPFD and sensor-verification practice sheet with a supplied outlier scenario. Record the sensor identity, reading, placement, peer evidence, verification/calibration status and trend context; classify the reading as representative, suspect/incomplete or requiring escalation; then document only the operator-level check actually authorized.",
     "summary": "Good environmental decisions depend on measurement quality. Technician I checks whether a sensor represents the crop, compares outliers with independent evidence, performs only permitted verification and escalates unresolved faults without unauthorized repair.",
     "blocks": [
-      {"type":"table","title":"Outlier triage questions","columns":["Question","Evidence to check","Do not assume"],"rows":[["Where is the sensor?","Crop position, wall/intake/outlet/wet surface/fixture influence","That the value represents the whole room"],["Do peers agree?","Nearby independent sensors or reference check","That majority agreement alone proves accuracy"],["Is verification current?","Calibration/comparison status and procedure","That a displayed number is automatically trustworthy"],["What changed over time?","Trend around lights, irrigation or equipment cycling","That a daily average captures every event"],["Is operator action authorized?","Supplied equipment-care procedure","That recognizing a fault grants repair authority"]],"references":["REF-VPD-002"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-003-003","title":"Sensor placement and representativeness triage","src":"/assets/course3/sensor-representativeness-triage.svg","alt":"Room diagram comparing a canopy-zone sensor, a wall sensor and a sensor near an air outlet, followed by a six-step outlier workflow checking location, peer agreement, verification status, trends, authorized checks and escalation.","caption":"A sensor may accurately describe its local microclimate without representing the crop question. Preserve placement context and verify before control changes.","references":["REF-VPD-002"]},
-      {"type":"resource","title":"Downloadable practice: PPFD grid and sensor verification","body":"Use the sensor-verification section of this shared printable worksheet to practice placement review, peer comparison, verification status, trend context, operator-level checks and escalation while preserving the original outlier evidence.","href":"/assets/course3/ppfd-sensor-verification-practice.svg","label":"Open PPFD and sensor-verification practice sheet","extensions":{"assetId":"VIS-LH-TECH1-003-006","downloadable":true}},
-      {"type":"scenario","title":"One sensor disagrees","setting":"Five canopy sensors cluster closely while one wall sensor reads much drier. The outlier is near an air outlet.","prompt":"What is the strongest Technician I response?","options":["Change the room humidity set point to match the wall sensor","Document placement, compare readings and verification status, then escalate unresolved discrepancy under procedure","Delete the wall reading because it differs","Move all canopy sensors to the wall"],"answer":"Document placement, compare readings and verification status, then escalate unresolved discrepancy under procedure","feedback":"The outlier may reflect location, instrument bias or a real local condition. Structured verification comes before control redesign.","references":["REF-VPD-002"]}
+      {
+        "type": "table",
+        "title": "Outlier triage questions",
+        "columns": [
+          "Question",
+          "Evidence to check",
+          "Do not assume"
+        ],
+        "rows": [
+          [
+            "Where is the sensor?",
+            "Crop position, wall/intake/outlet/wet surface/fixture influence",
+            "That the value represents the whole room"
+          ],
+          [
+            "Do peers agree?",
+            "Nearby independent sensors or reference check",
+            "That majority agreement alone proves accuracy"
+          ],
+          [
+            "Is verification current?",
+            "Calibration/comparison status and procedure",
+            "That a displayed number is automatically trustworthy"
+          ],
+          [
+            "What changed over time?",
+            "Trend around lights, irrigation or equipment cycling",
+            "That a daily average captures every event"
+          ],
+          [
+            "Is operator action authorized?",
+            "Supplied equipment-care procedure",
+            "That recognizing a fault grants repair authority"
+          ]
+        ],
+        "references": [
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-003-003",
+        "title": "Sensor placement and representativeness triage",
+        "src": "/assets/course3/sensor-representativeness-triage.svg",
+        "alt": "Room diagram comparing a canopy-zone sensor, a wall sensor and a sensor near an air outlet, followed by a six-step outlier workflow checking location, peer agreement, verification status, trends, authorized checks and escalation.",
+        "caption": "A sensor may accurately describe its local microclimate without representing the crop question. Preserve placement context and verify before control changes.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "resource",
+        "title": "Downloadable practice: PPFD grid and sensor verification",
+        "body": "Use the sensor-verification section of this shared printable worksheet to practice placement review, peer comparison, verification status, trend context, operator-level checks and escalation while preserving the original outlier evidence.",
+        "href": "/assets/course3/ppfd-sensor-verification-practice.svg",
+        "label": "Open PPFD and sensor-verification practice sheet",
+        "extensions": {
+          "assetId": "VIS-LH-TECH1-003-006",
+          "downloadable": true
+        }
+      },
+      {
+        "type": "scenario",
+        "title": "One sensor disagrees",
+        "setting": "Five canopy sensors cluster closely while one wall sensor reads much drier. The outlier is near an air outlet.",
+        "prompt": "What is the strongest Technician I response?",
+        "options": [
+          "Change the room humidity set point to match the wall sensor",
+          "Document placement, compare readings and verification status, then escalate unresolved discrepancy under procedure",
+          "Delete the wall reading because it differs",
+          "Move all canopy sensors to the wall"
+        ],
+        "answer": "Document placement, compare readings and verification status, then escalate unresolved discrepancy under procedure",
+        "feedback": "The outlier may reflect location, instrument bias or a real local condition. Structured verification comes before control redesign.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
+          "REF-VPD-002"
+        ]
+      }
     ]
   }
 }

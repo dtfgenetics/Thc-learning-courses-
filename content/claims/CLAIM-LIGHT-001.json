@@ -2,10 +2,17 @@
   "id": "CLAIM-LIGHT-001",
   "statement": "Cannabis growth and development respond to light intensity, spectrum and photoperiod, so lighting decisions should evaluate these variables together rather than treating fixture type alone as the controlling factor.",
   "domain": "lighting-photosynthesis",
-  "supportsCompetencies": ["COMP-LIGHT-001"],
-  "supportsLessons": ["LESSON-LIGHT-001"],
-  "references": ["REF-LIGHT-001"],
+  "supportsCompetencies": [
+    "COMP-LIGHT-001"
+  ],
+  "supportsLessons": [
+    "LESSON-LIGHT-001"
+  ],
+  "references": [
+    "REF-LIGHT-001",
+    "REF-CANNABIS-LIGHT-2021-646020"
+  ],
   "evidenceStatus": "evidence-collected",
   "status": "draft",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
