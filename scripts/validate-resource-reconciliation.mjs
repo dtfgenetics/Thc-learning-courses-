@@ -22,6 +22,10 @@ for (let index = 0; index < 420; index += 1) {
   if (ids[index] !== expected) throw new Error(`Expected ${expected} at record ${index + 1}, found ${ids[index]}.`);
 }
 
+if (registry.architecture.certificationDependencyAllowed !== false) {
+  throw new Error('The standalone 420-lesson system must never be a certification dependency.');
+}
+
 const counts = registry.records.reduce((result, record) => {
   result[record.classification] = (result[record.classification] ?? 0) + 1;
   if (record.classification === 'reuse' && record.match?.status !== 'confirmed') {
@@ -43,6 +47,17 @@ const expectedSummary = {
 };
 for (const [key, value] of Object.entries(expectedSummary)) {
   if (registry.summary[key] !== value) throw new Error(`Summary ${key}=${registry.summary[key]} but calculated ${value}.`);
+}
+
+for (const record of registry.records) {
+  const match = record.match;
+  if (!match) continue;
+  if (match.repository !== 'dtfgenetics/Thc' || match.objectType !== 'encyclopedia-entry' || !/^THC-ENC-[0-9]{3}$/.test(match.objectId)) {
+    throw new Error(`${record.legacyId} crosses the 420-lesson boundary into non-encyclopedia content.`);
+  }
+  if (/LESSON-LH-|COURSE-LH-|ASSESS-LH-|PRACTICAL-LH-|CRED/.test(JSON.stringify(match))) {
+    throw new Error(`${record.legacyId} illegally references certification-course material.`);
+  }
 }
 
 const repositoryRoots = new Map([
@@ -72,4 +87,4 @@ for (const record of registry.records) {
   if (object.id !== match.objectId) throw new Error(`${record.legacyId} target ID differs from ${match.objectId}.`);
   if (object.title !== match.title) throw new Error(`${record.legacyId} target title differs from ${match.title}.`);
 }
-console.log(`Resource reconciliation passed: ${expectedSummary.total} records; ${expectedSummary.confirmedReuse} confirmed reuse; ${expectedSummary.confirmedUpgrade} confirmed upgrade; ${expectedSummary.candidateReview} manual review; ${expectedSummary.unmatched} unmatched.`);
+console.log(`Standalone 420-lesson reconciliation passed: ${expectedSummary.total} records; ${expectedSummary.confirmedReuse} confirmed reuse; ${expectedSummary.confirmedUpgrade} confirmed upgrade; ${expectedSummary.candidateReview} manual review; ${expectedSummary.unmatched} unmatched.`);
