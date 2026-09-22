@@ -28,7 +28,9 @@ const course1Svg=(course1Registry.assets??[]).filter(asset=>path.extname(asset.s
 assert.equal(course1Svg.length,20,'Course 1: expected 20 unique governed SVG compatibility baselines');
 for(const asset of course1Svg){
   assert.equal(asset.assetLifecycle,'legacy-svg-compatibility-baseline',`${asset.id}: Course 1 SVG lifecycle must be compatibility baseline`);
-  assert.equal(asset.rasterReplacement?.status,'required-not-produced',`${asset.id}: Course 1 raster replacement must remain open until produced`);
+  const n=Number(asset.id.slice(-3));
+  const expected=n>=15?'candidate-produced-human-qa-required':'required-not-produced';
+  assert.equal(asset.rasterReplacement?.status,expected,`${asset.id}: Course 1 raster replacement lifecycle drift`);
 }
 
 const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
@@ -47,8 +49,8 @@ assert.equal(replacementProgram.summary?.technicianI,60,'Technician I raster pro
 assert.equal(replacementProgram.summary?.technicianII,36,'Technician II raster program must reconcile to 36 replacements');
 assert.equal(replacementProgram.summary?.releasedRasterReplacements,0,'No raster replacement may be claimed released without reviewed binaries');
 assert.equal(replacementProgram.summary?.openRasterReplacements,96,'All 96 replacements remain open until reviewed binaries are released');
-assert.equal(replacementProgram.summary?.producedRasterCandidates,76,'Technician I Courses 2-6 and Technician II must report 76 produced raster candidates');
-assert.equal(replacementProgram.summary?.remainingRasterProduction,20,'Only Technician I Course 1 raster production may remain after the Technician II tranche');
+assert.equal(replacementProgram.summary?.producedRasterCandidates,82,'Produced raster accounting must include the first six Course 1 masters');
+assert.equal(replacementProgram.summary?.remainingRasterProduction,14,'Course 1 must report fourteen remaining governed raster replacements');
 
 const expectedTech1Counts=new Map([[1,20],[2,10],[3,6],[4,7],[5,9],[6,8]]);
 for(const row of replacementProgram.technicianI??[]){
