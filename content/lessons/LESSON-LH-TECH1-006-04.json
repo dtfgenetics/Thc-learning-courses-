@@ -3,24 +3,75 @@
   "title": "Dry-Room Handoff, Holds and Reconstructable Shift Records",
   "version": "1.1.0",
   "status": "draft",
-  "competencies": ["COMP-POSTHARVEST-001","COMP-CULT-TRACEABILITY-001","COMP-PRO-QA-001","COMP-PRO-SOP-001"],
-  "learningObjectives": ["LO-LH-TECH1-006-02","LO-LH-TECH1-006-03","LO-LH-TECH1-006-05","LO-LH-TECH1-006-06"],
+  "competencies": [
+    "COMP-POSTHARVEST-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001",
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-TECH1-006-02",
+    "LO-LH-TECH1-006-03",
+    "LO-LH-TECH1-006-05",
+    "LO-LH-TECH1-006-06"
+  ],
   "estimatedMinutes": 70,
-  "references": ["REF-POSTHARVEST-001","REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"],
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
   "assessment": null,
   "content": {
     "overview": "A harvest handoff is complete only when the receiving role can reconstruct what arrived, where it came from, what quantity and condition were recorded, what was held or unresolved, and what requires follow-up. This lesson integrates harvest work status, dry-room receiving, environmental and product-condition notes, discrepancy records and shift communication. Learners practice truthful partial-completion records instead of marking the entire harvest complete when a lot, rack, quantity or quality question remains open.",
     "vocabulary": [
-      {"term":"receiving handoff","definition":"The controlled transfer of material identity, location, quantity, condition, work status and unresolved issues to the receiving role or shift."},
-      {"term":"partial completion","definition":"A truthful status showing that some assigned work is complete while an identified portion remains held, unresolved or not performed."},
-      {"term":"exception record","definition":"A controlled record of a deviation, discrepancy, hold, abnormal condition or incomplete work that requires follow-up."},
-      {"term":"reconstructability","definition":"The ability of another qualified person to determine what occurred, to which material, where and when, what changed and what remains open."}
+      {
+        "term": "receiving handoff",
+        "definition": "The controlled transfer of material identity, location, quantity, condition, work status and unresolved issues to the receiving role or shift."
+      },
+      {
+        "term": "partial completion",
+        "definition": "A truthful status showing that some assigned work is complete while an identified portion remains held, unresolved or not performed."
+      },
+      {
+        "term": "exception record",
+        "definition": "A controlled record of a deviation, discrepancy, hold, abnormal condition or incomplete work that requires follow-up."
+      },
+      {
+        "term": "reconstructability",
+        "definition": "The ability of another qualified person to determine what occurred, to which material, where and when, what changed and what remains open."
+      }
     ],
     "sections": [
-      {"title":"Handoff separates completed from unresolved work","body":"State which rooms, batches, containers or racks were successfully received and which remain held, mismatched, unavailable or incomplete. A harvest can be partially complete without falsifying the entire work order as finished.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title":"Postharvest condition is linked to identity and location","body":"Record the dry-room rack or location, supplied environmental information and observed product condition for the correct identified lot. One nonuniform rack or suspect container is documented at its actual scope rather than generalized automatically to the entire room.","references":["REF-POSTHARVEST-001"]},
-      {"title":"Uncertainty stays visible","body":"If root cause, final disposition, release status or a quantity discrepancy remains unresolved, state that directly. Technician I should not convert an unresolved condition into a guessed explanation or release decision simply to create a clean handoff.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"title":"Receiving records close the transition","body":"The handoff should allow the receiving role to connect source material, harvest output, destination, quantity, hold status, condition note, actions already taken, escalation and next required action. This closes the operational transition without erasing the open issues that still need qualified review.","references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "title": "Handoff separates completed from unresolved work",
+        "body": "State which rooms, batches, containers or racks were successfully received and which remain held, mismatched, unavailable or incomplete. A harvest can be partially complete without falsifying the entire work order as finished.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Postharvest condition is linked to identity and location",
+        "body": "Record the dry-room rack or location, supplied environmental information and observed product condition for the correct identified lot. One nonuniform rack or suspect container is documented at its actual scope rather than generalized automatically to the entire room.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Uncertainty stays visible",
+        "body": "If root cause, final disposition, release status or a quantity discrepancy remains unresolved, state that directly. Technician I should not convert an unresolved condition into a guessed explanation or release decision simply to create a clean handoff.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Receiving records close the transition",
+        "body": "The handoff should allow the receiving role to connect source material, harvest output, destination, quantity, hold status, condition note, actions already taken, escalation and next required action. This closes the operational transition without erasing the open issues that still need qualified review.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ],
     "workedExamples": [
       "Three containers are received normally while one is held for suspect contamination. The handoff lists the received locations and quantities separately from the held container and identifies the required review.",
@@ -35,23 +86,126 @@
     "practicalApplication": "Complete a full harvest-to-dry-room packet with normal receiving, one held container, one weight discrepancy, one unavailable destination and one rack requiring environmental follow-up. Produce the harvest record, genealogy map, receiving record, discrepancy/hold record and final handoff.",
     "summary": "A strong harvest handoff transfers facts, not just material. Technician I preserves identity, quantity, location, condition, work status, holds, discrepancies, escalation and follow-up so the next qualified person can continue the postharvest process without guessing.",
     "blocks": [
-      {"type":"document","title":"Harvest-to-dry-room handoff record","description":"A complete handoff keeps normal receiving, exceptions and unresolved work visible at the same time.","fields":[
-        {"label":"Authorization / source identity","value":"Harvest work order plus room, plant, batch or lot identity"},
-        {"label":"Output identity / destination","value":"Harvest container or lot identifier and verified dry-room rack/location"},
-        {"label":"Quantity","value":"Outgoing and receiving count/weight with units and reconciliation status"},
-        {"label":"Condition / environment","value":"Required product-condition or dry-room observation tied to the correct lot/location"},
-        {"label":"Sanitation / hold status","value":"Clean-handling confirmation plus any isolated or held material"},
-        {"label":"Deviation / discrepancy","value":"Identity, quantity, destination, contamination or equipment issue that remains open"},
-        {"label":"Action / escalation","value":"Authorized step taken and person/role notified"},
-        {"label":"Next action","value":"Follow-up required by the receiving shift or qualified reviewer"}
-      ],"references":["REF-POSTHARVEST-001","REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-006-003","title":"Source-to-output harvest genealogy","src":"/assets/course6/source-output-genealogy.svg","alt":"Source batch linked through a harvest transformation event to multiple identified receiving outputs and destinations, including a held output that remains part of the traceability chain.","caption":"The receiving role should be able to trace every output back to its source transformation, including held material.","references":["REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-006-004","title":"Quantity reconciliation and discrepancy control","src":"/assets/course6/reconciliation-discrepancy.svg","alt":"Outgoing and receiving quantities remain as separate original records when they differ and are routed into a controlled discrepancy process rather than edited to agree.","caption":"A handoff can remain partially open while a quantity discrepancy is investigated; original evidence stays intact.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type":"image","assetId":"VIS-LH-TECH1-006-005","title":"Harvest-to-dry-room reconstructable handoff","src":"/assets/course6/dry-room-handoff.svg","alt":"Structured dry-room handoff organizing source and output identity, destination, quantity and reconciliation, condition, sanitation or hold state, deviation, escalation and next action.","caption":"A complete handoff makes both completed work and unresolved conditions reconstructable for the receiving shift.","references":["REF-POSTHARVEST-001","REF-GS1-GLOBAL-TRACEABILITY","REF-MHRA-GXP-DATA-INTEGRITY"]},
-      {"type":"resource","title":"Downloadable practice: harvest genealogy and reconciliation","body":"Use this worksheet to map source/output relationships, destinations, holds and outgoing/receiving quantity evidence before closing the handoff.","href":"/assets/course6/traceability-reconciliation-practice.svg","label":"Open traceability and reconciliation practice sheet","extensions":{"assetId":"VIS-LH-TECH1-006-007","downloadable":true}},
-      {"type":"resource","title":"Downloadable practice: dry-room receiving and shift handoff","body":"Use this worksheet to record receiving identity, destination, quantity, condition, hold/deviation state, escalation and next action without guessing root cause or release status.","href":"/assets/course6/dry-room-handoff-practice.svg","label":"Open dry-room receiving and handoff practice sheet","extensions":{"assetId":"VIS-LH-TECH1-006-008","downloadable":true}},
-      {"type":"callout","title":"Practical F mapping","tone":"evidence","body":"Course 006 supports PRACTICAL-TECH1-F — Harvest-to-Dry-Room Handoff. Passing the written course assessment does not replace the practical demonstration of sanitation, traceability, quantity reconciliation, receiving judgment and handoff performance.","references":["REF-POSTHARVEST-001"]},
-      {"type":"callout","title":"Release authority boundary","tone":"safety","body":"Technician I records receiving status, holds, deviations and follow-up. This course does not confer independent product release, disposition or final quality-acceptance authority.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+      {
+        "type": "document",
+        "title": "Harvest-to-dry-room handoff record",
+        "description": "A complete handoff keeps normal receiving, exceptions and unresolved work visible at the same time.",
+        "fields": [
+          {
+            "label": "Authorization / source identity",
+            "value": "Harvest work order plus room, plant, batch or lot identity"
+          },
+          {
+            "label": "Output identity / destination",
+            "value": "Harvest container or lot identifier and verified dry-room rack/location"
+          },
+          {
+            "label": "Quantity",
+            "value": "Outgoing and receiving count/weight with units and reconciliation status"
+          },
+          {
+            "label": "Condition / environment",
+            "value": "Required product-condition or dry-room observation tied to the correct lot/location"
+          },
+          {
+            "label": "Sanitation / hold status",
+            "value": "Clean-handling confirmation plus any isolated or held material"
+          },
+          {
+            "label": "Deviation / discrepancy",
+            "value": "Identity, quantity, destination, contamination or equipment issue that remains open"
+          },
+          {
+            "label": "Action / escalation",
+            "value": "Authorized step taken and person/role notified"
+          },
+          {
+            "label": "Next action",
+            "value": "Follow-up required by the receiving shift or qualified reviewer"
+          }
+        ],
+        "references": [
+          "REF-POSTHARVEST-001",
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-006-003",
+        "title": "Source-to-output harvest genealogy",
+        "src": "/assets/course6/source-output-genealogy.webp",
+        "alt": "Source batch linked through a harvest transformation event to multiple identified receiving outputs and destinations, including a held output that remains part of the traceability chain.",
+        "caption": "The receiving role should be able to trace every output back to its source transformation, including held material.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-006-004",
+        "title": "Quantity reconciliation and discrepancy control",
+        "src": "/assets/course6/reconciliation-discrepancy.webp",
+        "alt": "Outgoing and receiving quantities remain as separate original records when they differ and are routed into a controlled discrepancy process rather than edited to agree.",
+        "caption": "A handoff can remain partially open while a quantity discrepancy is investigated; original evidence stays intact.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-006-005",
+        "title": "Harvest-to-dry-room reconstructable handoff",
+        "src": "/assets/course6/dry-room-handoff.webp",
+        "alt": "Structured dry-room handoff organizing source and output identity, destination, quantity and reconciliation, condition, sanitation or hold state, deviation, escalation and next action.",
+        "caption": "A complete handoff makes both completed work and unresolved conditions reconstructable for the receiving shift.",
+        "references": [
+          "REF-POSTHARVEST-001",
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "resource",
+        "title": "Downloadable practice: harvest genealogy and reconciliation",
+        "body": "Use this worksheet to map source/output relationships, destinations, holds and outgoing/receiving quantity evidence before closing the handoff.",
+        "href": "/assets/course6/traceability-reconciliation-practice.webp",
+        "label": "Open traceability and reconciliation practice sheet",
+        "extensions": {
+          "assetId": "VIS-LH-TECH1-006-007",
+          "downloadable": true
+        }
+      },
+      {
+        "type": "resource",
+        "title": "Downloadable practice: dry-room receiving and shift handoff",
+        "body": "Use this worksheet to record receiving identity, destination, quantity, condition, hold/deviation state, escalation and next action without guessing root cause or release status.",
+        "href": "/assets/course6/dry-room-handoff-practice.webp",
+        "label": "Open dry-room receiving and handoff practice sheet",
+        "extensions": {
+          "assetId": "VIS-LH-TECH1-006-008",
+          "downloadable": true
+        }
+      },
+      {
+        "type": "callout",
+        "title": "Practical F mapping",
+        "tone": "evidence",
+        "body": "Course 006 supports PRACTICAL-TECH1-F — Harvest-to-Dry-Room Handoff. Passing the written course assessment does not replace the practical demonstration of sanitation, traceability, quantity reconciliation, receiving judgment and handoff performance.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Release authority boundary",
+        "tone": "safety",
+        "body": "Technician I records receiving status, holds, deviations and follow-up. This course does not confer independent product release, disposition or final quality-acceptance authority.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
     ]
   }
 }
