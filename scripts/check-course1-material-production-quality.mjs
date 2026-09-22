@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -63,7 +64,7 @@ for (const asset of registry.assets ?? []) {
   assert.ok(fs.existsSync(path.join(root, asset.sourcePath)), `${asset.id}: public baseline source is missing`);
 }
 
-const approvedDriveIds = new Set();
+const approvedSourceKeys = new Set();
 const releaseByConcept = new Map(release.concepts.map((concept) => [concept.conceptId, concept]));
 const boardLikeName = /(?:board|sheet|montage|contact[-_ ]?sheet|grid)/i;
 
@@ -78,7 +79,21 @@ function pngDimensions(buffer) {
 let approvedReplacements = 0;
 for (const concept of release.concepts ?? []) {
   assert.ok(concept.candidate && typeof concept.candidate === 'object', `${concept.conceptId}: candidate metadata required`);
-  assert.ok(typeof concept.candidate.sourceDriveFileId === 'string' && concept.candidate.sourceDriveFileId.trim(), `${concept.conceptId}: canonical Drive source ID required`);
+  const candidate = concept.candidate;
+  let canonicalSourceKey;
+  if (candidate.sourceType === 'repository-built-copy-locked-production-master') {
+    assert.ok(typeof candidate.repositoryPath === 'string' && candidate.repositoryPath.endsWith('.png'), `${concept.conceptId}: repository-built master path required`);
+    assert.ok(typeof candidate.predecessorDriveFileId === 'string' && candidate.predecessorDriveFileId.trim(), `${concept.conceptId}: rejected Drive predecessor ID required for provenance`);
+    assert.match(candidate.sha256 ?? '', /^[a-f0-9]{64}$/, `${concept.conceptId}: repository-built master SHA-256 required`);
+    const repositoryFile = path.join(root, candidate.repositoryPath);
+    assert.ok(fs.existsSync(repositoryFile), `${concept.conceptId}: repository-built master is missing`);
+    const actualSha256 = crypto.createHash('sha256').update(fs.readFileSync(repositoryFile)).digest('hex');
+    assert.equal(actualSha256, candidate.sha256, `${concept.conceptId}: repository-built master SHA-256 mismatch`);
+    canonicalSourceKey = `repository:${candidate.repositoryPath}`;
+  } else {
+    assert.ok(typeof candidate.sourceDriveFileId === 'string' && candidate.sourceDriveFileId.trim(), `${concept.conceptId}: canonical Drive source ID required`);
+    canonicalSourceKey = `drive:${candidate.sourceDriveFileId}`;
+  }
   assert.equal(typeof concept.releaseApproved, 'boolean', `${concept.conceptId}: releaseApproved must be explicit`);
 
   if (!concept.releaseApproved) {
@@ -90,8 +105,8 @@ for (const concept of release.concepts ?? []) {
   assert.equal(concept.candidate.qaStatus, 'public-approved', `${concept.conceptId}: production approval requires public-approved QA`);
   assert.ok(typeof concept.candidate.fileName === 'string' && concept.candidate.fileName.trim(), `${concept.conceptId}: approved asset needs an individual file name`);
   assert.ok(!boardLikeName.test(concept.candidate.fileName), `${concept.conceptId}: generation boards/contact sheets cannot be production learner assets`);
-  assert.ok(!approvedDriveIds.has(concept.candidate.sourceDriveFileId), `${concept.conceptId}: approved version must have one canonical Drive master, not a reused multi-concept master`);
-  approvedDriveIds.add(concept.candidate.sourceDriveFileId);
+  assert.ok(!approvedSourceKeys.has(canonicalSourceKey), `${concept.conceptId}: approved version must have one canonical source, not a reused multi-concept master`);
+  approvedSourceKeys.add(canonicalSourceKey);
   assert.ok(typeof concept.candidate.targetPublicPath === 'string' && concept.candidate.targetPublicPath.startsWith('/assets/course1/'), `${concept.conceptId}: approved learner path is required`);
 
   const publicFile = path.join(root, 'apps/web/public', concept.candidate.targetPublicPath.replace(/^\//, ''));

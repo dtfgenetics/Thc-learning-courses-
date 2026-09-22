@@ -7,8 +7,8 @@
   "binaryQaRecord": "visuals/COURSE1-PNG-QA-13-18.json",
   "deploymentWorkflow": ".github/workflows/course1-png-deploy.yml",
   "latestDeploymentRun": 34873948740,
-  "transferState": "authenticated-agent-fetch-verified-candidates-blocked-by-qa",
-  "transferFinding": "Authenticated Drive reads verified the real PNG bytes for assets 13-18, but the six v3 binaries remain rejected. A governed copy lock now defines the corrected Module 5/6 headers, academic-course branding, authority boundaries and prohibited claims that every replacement export must satisfy before binary QA and public cutover.",
+  "transferState": "six-rebuilt-repository-masters-awaiting-human-qa",
+  "transferFinding": "Assets 13-18 were rebuilt from the approved copy lock as individual 2400×3200 PNG production masters. They remain fail-closed pending human factual, accessibility, responsive and public-path QA.",
   "rules": {
     "replaceOnlyAfterBinaryExists": true,
     "preserveCurrentSvgUntilVerified": true,
@@ -24,62 +24,104 @@
     {
       "assetId": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE",
       "lessonId": "LESSON-LH-TECH1-001-13",
-      "candidateFile": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
-      "driveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv",
+      "candidateFile": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
+      "driveFileId": null,
       "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
-      "status": "rebuild-required-copy-lock-defined",
-      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and align failed-readiness response with site-defined out-of-service/escalation authority rather than universal tag-out wording.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
+      "sha256": "c032d0d454169e32cdd7f23fa4a5777e36b88ba81b2a929545b86f0a8064aeea",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "predecessorDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv"
     },
     {
       "assetId": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE",
       "lessonId": "LESSON-LH-TECH1-001-14",
-      "candidateFile": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
-      "driveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2",
+      "candidateFile": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
+      "driveFileId": null,
       "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
-      "status": "rebuild-required-copy-lock-defined",
-      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and qualify troubleshooting/adjustment work as explicitly assigned, trained and authorized operator work.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
+      "sha256": "32fa56ea1f1e3e6ee7ee0ecd958145091dc309f5840b60e5b5b2c3406fc11f1b",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "predecessorDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2"
     },
     {
       "assetId": "VIS-LH-TECH1-001-15-FAULT-REPORT",
       "lessonId": "LESSON-LH-TECH1-001-15",
-      "candidateFile": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
-      "driveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv",
+      "candidateFile": "VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
+      "driveFileId": null,
       "targetPublicPath": "/assets/course1/fault-report-v3.png",
-      "status": "rebuild-required-copy-lock-defined",
-      "releaseNote": "Rebuild for Module 5, remove credential-issuance implication, and defer reporting timing/channel to the applicable emergency or fault-escalation procedure while preserving observed-fact reporting.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
+      "sha256": "5f74091a18b7548b498ed948a4f35aa6456c0094f0300dd3a2a181e33e051e94",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "predecessorDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv"
     },
     {
       "assetId": "VIS-LH-TECH1-001-16-RECORD-CORRECTION",
       "lessonId": "LESSON-LH-TECH1-001-16",
-      "candidateFile": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
-      "driveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX",
+      "candidateFile": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
+      "driveFileId": null,
       "targetPublicPath": "/assets/course1/record-correction-v3.png",
-      "status": "rebuild-required-copy-lock-defined",
-      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and label strike-through/initial/date as a paper-record example only; the approved paper or digital record system and SOP control the correction method.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
+      "sha256": "01a42f01070506c0be0e5ccd4428ba136ae9fb1bfad33509f53e4b6081ef0f13",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "predecessorDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX"
     },
     {
       "assetId": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF",
       "lessonId": "LESSON-LH-TECH1-001-17",
-      "candidateFile": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
-      "driveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY",
+      "candidateFile": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
+      "driveFileId": null,
       "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
-      "status": "rebuild-required-copy-lock-defined",
-      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and make clear that handoff instructions/priorities must be current, controlled and within the receiving worker's authority.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
+      "sha256": "47c57c310e884ec5f091983ef063c6c1c4544a0ba97840cbe647c5c2c0a9d02d",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "predecessorDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY"
     },
     {
       "assetId": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW",
       "lessonId": "LESSON-LH-TECH1-001-18",
-      "candidateFile": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
-      "driveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey",
+      "candidateFile": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
+      "driveFileId": null,
       "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
-      "status": "rebuild-required-copy-lock-defined",
-      "releaseNote": "Rebuild for Module 6, remove credential-issuance implication, and frame planning as review of assigned work/current controlled instructions rather than independent production-planning authority.",
-      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"
+      "status": "production-master-built-human-qa-required",
+      "releaseNote": "Rebuilt from the approved copy lock as an individual 2400×3200 repository production master. Human factual, accessibility, responsive and public-path QA remains required before lesson cutover.",
+      "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json",
+      "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
+      "sha256": "585b9b73deb373eb5c9d8aa1fad3ced9f79c937f0300aedd4904871abd5195f5",
+      "pixelDimensions": {
+        "width": 2400,
+        "height": 3200
+      },
+      "predecessorDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey"
     }
   ],
   "copyLock": "visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json"

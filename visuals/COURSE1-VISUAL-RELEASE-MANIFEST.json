@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "courseId": "COURSE-LH-TECH1-001",
   "purpose": "Fail-closed release control for the 18 primary Course 1 visual concepts. Review candidates remain separate from the verified learner-facing SVG baseline until factual, accessibility, responsive, binary, registry and lesson-cutover checks all pass.",
   "canonicalSources": {
@@ -448,12 +448,12 @@
         "publicAsset": "/assets/course1/equipment-preuse-readiness.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
-        "sourceType": "drive-individual-master",
-        "sourceDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv",
-        "targetPublicPath": "/assets/course1/equipment-preuse-v3.png",
-        "binaryState": "repository-imported-rejected-review-binary",
-        "qaStatus": "revise-before-publication",
+        "fileName": "VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": null,
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-v3.png",
         "observedPixelDimensions": {
           "width": 384,
@@ -464,7 +464,16 @@
           "384x512 source is below production resolution target",
           "replace universal tag-out/report language with facility-authorized hold/isolation/reporting language",
           "bound every pre-use check to assigned procedure, equipment type and worker authorization"
-        ]
+        ],
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-13-EQUIPMENT-PREUSE-master-v1.png",
+        "sha256": "c032d0d454169e32cdd7f23fa4a5777e36b88ba81b2a929545b86f0a8064aeea",
+        "sizeBytes": 407816,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "individualProductionMasterRequired": false,
+        "predecessorDriveFileId": "1y1QLIeRDRhE-mqL5WNd8jw8fE6BFTuEv"
       },
       "accessibility": {
         "caption": "Pre-use readiness verifies controlled status and assigned checks without expanding the technician's repair authority.",
@@ -482,12 +491,12 @@
         "publicAsset": "/assets/course1/operator-vs-maintenance-boundary.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
-        "sourceType": "drive-individual-master",
-        "sourceDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2",
-        "targetPublicPath": "/assets/course1/operator-vs-maintenance-v3.png",
-        "binaryState": "repository-imported-rejected-review-binary",
-        "qaStatus": "revise-before-publication",
+        "fileName": "VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": null,
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-v3.png",
         "observedPixelDimensions": {
           "width": 384,
@@ -498,7 +507,16 @@
           "384x512 source is below production resolution target",
           "avoid treating operator and maintenance responsibilities as universal role definitions",
           "frame routine care as explicitly assigned/trained/authorized and protected servicing as procedure- and role-controlled"
-        ]
+        ],
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-14-OPERATOR-VS-MAINTENANCE-master-v1.png",
+        "sha256": "32fa56ea1f1e3e6ee7ee0ecd958145091dc309f5840b60e5b5b2c3406fc11f1b",
+        "sizeBytes": 450337,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "individualProductionMasterRequired": false,
+        "predecessorDriveFileId": "1nONcGyZG23QDJy9NWuvBo4RX7Pxv2ct2"
       },
       "accessibility": {
         "caption": "Routine operator care remains limited to actions explicitly assigned, trained and authorized by the current procedure.",
@@ -516,12 +534,12 @@
         "publicAsset": "/assets/course1/fault-context-escalation.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
-        "sourceType": "drive-individual-master",
-        "sourceDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv",
-        "targetPublicPath": "/assets/course1/fault-report-v3.png",
-        "binaryState": "repository-imported-rejected-review-binary",
-        "qaStatus": "revise-before-publication",
+        "fileName": "VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": null,
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-15-FAULT-REPORT-v3.png",
         "observedPixelDimensions": {
           "width": 384,
@@ -532,7 +550,16 @@
           "384x512 source is below production resolution target",
           "replace universal immediate-report/follow-until-resolved wording with the facility's required timing, channel and handoff procedure",
           "separate verified observations and permitted checks from unsupported diagnosis"
-        ]
+        ],
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-15-FAULT-REPORT-master-v1.png",
+        "sha256": "5f74091a18b7548b498ed948a4f35aa6456c0094f0300dd3a2a181e33e051e94",
+        "sizeBytes": 417937,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "individualProductionMasterRequired": false,
+        "predecessorDriveFileId": "17OrHDw4KXyJvaHGleE_Aw3BHqJuKaHtv"
       },
       "accessibility": {
         "caption": "Fault context separates verified observations and permitted checks from unsupported diagnosis while using the applicable reporting procedure.",
@@ -550,12 +577,12 @@
         "publicAsset": "/assets/course1/record-correction-controls.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
-        "sourceType": "drive-individual-master",
-        "sourceDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX",
-        "targetPublicPath": "/assets/course1/record-correction-v3.png",
-        "binaryState": "repository-imported-rejected-review-binary",
-        "qaStatus": "revise-before-publication",
+        "fileName": "VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": null,
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-16-RECORD-CORRECTION-v3.png",
         "observedPixelDimensions": {
           "width": 384,
@@ -566,7 +593,16 @@
           "384x512 source is below production resolution target",
           "single-line paper correction is an example rather than a universal record-correction rule",
           "add controlled digital-system correction and audit-trail boundary without implying deletion or overwrite"
-        ]
+        ],
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-16-RECORD-CORRECTION-master-v1.png",
+        "sha256": "01a42f01070506c0be0e5ccd4428ba136ae9fb1bfad33509f53e4b6081ef0f13",
+        "sizeBytes": 270336,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "individualProductionMasterRequired": false,
+        "predecessorDriveFileId": "1FPA-1ygokBNPOl-6R2POSamkNENUpwEX"
       },
       "accessibility": {
         "caption": "Paper and digital correction methods are controlled by the governing record system and must preserve original information or audit trail.",
@@ -584,12 +620,12 @@
         "publicAsset": "/assets/course1/shift-handoff-control.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
-        "sourceType": "drive-individual-master",
-        "sourceDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY",
-        "targetPublicPath": "/assets/course1/shift-handoff-v3.png",
-        "binaryState": "repository-imported-rejected-review-binary",
-        "qaStatus": "revise-before-publication",
+        "fileName": "VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": null,
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-v3.png",
         "observedPixelDimensions": {
           "width": 384,
@@ -600,7 +636,16 @@
           "384x512 source is below production resolution target",
           "present handoff fields as facility-controlled examples rather than a universal form",
           "preserve unresolved, incomplete and unknown status plus explicit decision ownership"
-        ]
+        ],
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-17-SHIFT-HANDOFF-master-v1.png",
+        "sha256": "47c57c310e884ec5f091983ef063c6c1c4544a0ba97840cbe647c5c2c0a9d02d",
+        "sizeBytes": 415409,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "individualProductionMasterRequired": false,
+        "predecessorDriveFileId": "1Kxb7WzplFSSqnzqfPCjx9INjQpm3-KxY"
       },
       "accessibility": {
         "caption": "Professional handoff transfers exact status, cross-checks critical conditions and confirms ownership without improvising new authority.",
@@ -618,12 +663,12 @@
         "publicAsset": "/assets/course1/integrated-technician-workflow.svg"
       },
       "candidate": {
-        "fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
-        "sourceType": "drive-individual-master",
-        "sourceDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey",
-        "targetPublicPath": "/assets/course1/integrated-workflow-v3.png",
-        "binaryState": "repository-imported-rejected-review-binary",
-        "qaStatus": "revise-before-publication",
+        "fileName": "VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
+        "sourceType": "repository-built-copy-locked-production-master",
+        "sourceDriveFileId": null,
+        "targetPublicPath": null,
+        "binaryState": "repository-production-master-human-qa-required",
+        "qaStatus": "production-master-review-candidate",
         "repositoryReviewPath": "visuals/review-candidates/course1/individual/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-v3.png",
         "observedPixelDimensions": {
           "width": 384,
@@ -634,7 +679,16 @@
           "384x512 source is below production resolution target",
           "generic plan-prepare-execute-monitor-document cycle is insufficiently tied to Technician I authority boundaries",
           "rebuild around controlled instruction, verified status, evidence capture, exception handling and escalation/handoff"
-        ]
+        ],
+        "repositoryPath": "visuals/review-candidates/course1/production-masters/VIS-LH-TECH1-001-18-INTEGRATED-WORKFLOW-master-v1.png",
+        "sha256": "585b9b73deb373eb5c9d8aa1fad3ced9f79c937f0300aedd4904871abd5195f5",
+        "sizeBytes": 399765,
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 3200
+        },
+        "individualProductionMasterRequired": false,
+        "predecessorDriveFileId": "1o8suJoL6YbubrwZLArXSBGb2dKYlbyey"
       },
       "accessibility": {
         "caption": "Integrated Technician I workflow connects assigned work review, readiness, authorized execution, monitoring, truthful documentation and follow-up without expanding role authority.",
@@ -642,5 +696,12 @@
       },
       "releaseApproved": false
     }
-  ]
+  ],
+  "updated": "2026-09-22",
+  "productionMasterProgress": {
+    "produced": 6,
+    "remaining": 12,
+    "scope": "18 primary concepts",
+    "releaseApproved": 0
+  }
 }
