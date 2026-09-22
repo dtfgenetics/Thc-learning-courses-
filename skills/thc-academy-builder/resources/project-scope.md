@@ -31,7 +31,7 @@ Certification courses are dedicated materials designed specifically for certific
 
 The credentialing system controls eligibility, competency definitions, secure summative assessment, practical/performance requirements, passing standards, retakes/remediation, issuance, verification, maintenance, appeals, governance, and quality assurance.
 
-A course test is not the same as a secure credential assessment.
+A Certification Course Test is dedicated to its specific Certification Course and is built from that course's current objectives and taught material. It is separate from both the 420 Encyclopedia and the secure final credential assessment.
 
 ## Connected systems
 
