@@ -22,8 +22,8 @@ Using a supplied work order and sample set:
 6. repeat or verify a suspect result within procedure;
 7. document unresolved meter/sample uncertainty and escalation status.
 
-**Worksheet:** `/assets/course4/water-solution-measurement-practice.svg`  
-**Visual:** `/assets/course4/sample-ph-ec-context.svg`
+**Worksheet:** `/assets/course4/water-solution-measurement-practice.webp`  
+**Visual:** `/assets/course4/sample-ph-ec-context.webp`
 
 Key evidence rule: EC reflects overall conductivity influenced by dissolved ions; it is not a direct measurement of each individual nutrient. A pH value is context, not proof of a particular deficiency or root disorder.
 
@@ -41,8 +41,8 @@ Using a simulated seven-day log:
 - separate observation from possible explanations;
 - write an escalation note without prescribing an advanced irrigation/nutrition strategy.
 
-**Worksheet:** `/assets/course4/irrigation-verification-practice.svg`  
-**Visuals:** `/assets/course4/root-zone-dryback-trend.svg`, `/assets/course4/nutrition-context-differential.svg`
+**Worksheet:** `/assets/course4/irrigation-verification-practice.webp`  
+**Visuals:** `/assets/course4/root-zone-dryback-trend.webp`, `/assets/course4/nutrition-context-differential.webp`
 
 Key evidence rule: dryback is a trajectory, not simply “hours since watering.” One runoff/root-zone result does not establish a complete cause.
 
@@ -63,8 +63,8 @@ The learner must:
 7. document leaks, clogs, missed delivery or incomplete work truthfully;
 8. escalate unresolved mechanical/electrical/process issues rather than performing unauthorized repair.
 
-**Worksheet:** `/assets/course4/irrigation-verification-practice.svg`  
-**Visual:** `/assets/course4/irrigation-work-order-delivery.svg`
+**Worksheet:** `/assets/course4/irrigation-verification-practice.webp`  
+**Visual:** `/assets/course4/irrigation-work-order-delivery.webp`
 
 ## Lesson 4 — nutrition context, deviations and handoff
 
@@ -85,7 +85,7 @@ Create a handoff that distinguishes:
 - unresolved condition;
 - escalation recipient and next action.
 
-**Visuals:** `/assets/course4/nutrition-context-differential.svg`, `/assets/course4/irrigation-fault-handoff-workflow.svg`
+**Visuals:** `/assets/course4/nutrition-context-differential.webp`, `/assets/course4/irrigation-fault-handoff-workflow.webp`
 
 ## Integrated Course 4 scenario
 
@@ -118,4 +118,4 @@ Before assessment, the learner should be able to answer:
 
 ## Assessment boundary
 
-The 12-item module assessment is formative. The 24-item final is the controlled summative academic bank. Practical B is a separate development performance assessment. Academic course completion alone is not Technician I credential issuance and does not prove Practical B has been validated.
+The 12-item module assessment is formative. The 24-item final is derived from the six controlled objectives and the four dedicated Course 4 lessons; `TEST-TO-TEACHING-MAP.md` records that provenance. Encyclopedia-only, external-reading-only, or unrelated-course material may not be scored unless the concept is first taught directly in Course 4. Practical B is a separate development performance assessment. Academic course completion alone is not Technician I credential issuance and does not prove Practical B has been validated.
