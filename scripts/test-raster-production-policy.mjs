@@ -16,7 +16,8 @@ for(let n=2;n<=6;n++){
   for(const asset of registry.assets??[]){
     if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
     assert.equal(asset.assetLifecycle,'legacy-svg-compatibility-baseline',`${asset.id}: SVG lifecycle must be compatibility baseline`);
-    assert.equal(asset.rasterReplacement?.status,'required-not-produced',`${asset.id}: raster replacement must remain open until a real replacement is produced`);
+    const expectedStatus=n===2?'candidate-produced-human-qa-required':'required-not-produced';
+    assert.equal(asset.rasterReplacement?.status,expectedStatus,`${asset.id}: raster replacement lifecycle drift`);
     assert.deepEqual(asset.rasterReplacement?.allowedFormats,raster,`${asset.id}: raster format policy drift`);
     assert.match(asset.rasterReplacement?.releaseGate??'',/factual.*accessibility.*responsive.*public-path/i,`${asset.id}: replacement release gate incomplete`);
   }
@@ -40,6 +41,8 @@ assert.equal(replacementProgram.summary?.technicianI,60,'Technician I raster pro
 assert.equal(replacementProgram.summary?.technicianII,36,'Technician II raster program must reconcile to 36 replacements');
 assert.equal(replacementProgram.summary?.releasedRasterReplacements,0,'No raster replacement may be claimed released without reviewed binaries');
 assert.equal(replacementProgram.summary?.openRasterReplacements,96,'All 96 replacements remain open until reviewed binaries are released');
+assert.equal(replacementProgram.summary?.producedRasterCandidates,10,'Course 2 must report its ten produced raster candidates');
+assert.equal(replacementProgram.summary?.remainingRasterProduction,86,'Raster production remainder must reconcile after the Course 2 candidate tranche');
 
 const expectedTech1Counts=new Map([[1,20],[2,10],[3,6],[4,7],[5,9],[6,8]]);
 for(const row of replacementProgram.technicianI??[]){

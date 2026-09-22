@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "id": "COURSE2-RASTER-CANDIDATE-MANIFEST-001",
+  "updated": "2026-09-22",
+  "courseId": "COURSE-LH-TECH1-002",
+  "purpose": "Integrity and automated-QA record for the ten Course 2 high-resolution lossless WebP candidates rendered from the canonical learner-facing SVG compatibility baselines.",
+  "productionMethod": {
+    "source": "canonical SVG compatibility baseline",
+    "format": "lossless WebP",
+    "minimumShortSidePx": 1600,
+    "contentTransformation": "none; deterministic raster rendering only"
+  },
+  "summary": {
+    "expectedCandidates": 10,
+    "producedCandidates": 10,
+    "automatedQaPassed": 10,
+    "releasedReplacements": 0,
+    "humanQaPending": 10
+  },
+  "candidates": [
+    {
+      "assetId": "VIS-LH-TECH1-002-001",
+      "sourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.svg",
+      "sourceSha256": "82d1c7407543052cfd6380f4b8502f0f73a68c4c159b781ea8e4870fedc8afde",
+      "candidatePath": "apps/web/public/assets/course2/representative-crop-walk-route.webp",
+      "candidateSha256": "6f543568c022e42e5521615d03f0949eb84c49f85b2448efa593a9249bf741b0",
+      "bytes": 170058,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-002",
+      "sourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.svg",
+      "sourceSha256": "ed71b198dd2cca4e256671a20f491ecea00606287b7ce2e3a8f832f2800f9429",
+      "candidatePath": "apps/web/public/assets/course2/morphology-stage-evidence.webp",
+      "candidateSha256": "34b9aa20e2092fe17b696e00b682f979326a63325da35ebca7c9aefa14f53a0d",
+      "bytes": 165514,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-003",
+      "sourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+      "sourceSha256": "455af3894edee490e55d9e8969ef11b60c20f8973f8e2c1d6e69353886593689",
+      "candidatePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.webp",
+      "candidateSha256": "5084b07891ec2630b1d5bca45a7aebb283679f302e75140a0451d02f8df26f12",
+      "bytes": 179084,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-004",
+      "sourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.svg",
+      "sourceSha256": "ef0efb02d858728bc5143872f295e77c931f788a26e675eb8477b2ba76b6e255",
+      "candidatePath": "apps/web/public/assets/course2/spatial-pattern-comparison.webp",
+      "candidateSha256": "12631b7384241236d4bb894c838a956c6830e1b57016a6ad34a85e73bbbef0e1",
+      "bytes": 198406,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-005",
+      "sourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
+      "sourceSha256": "58d6d33a20c4e27900c7e65e0950ed50db5734d7fafd9d8c2f2fc15b7cfa94c4",
+      "candidatePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.webp",
+      "candidateSha256": "ef610963c03d860119f3c60897e897c7927cc924c1153a52b90c8facb073cd71",
+      "bytes": 189348,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-006",
+      "sourcePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
+      "sourceSha256": "577441064c355cbf456ca3bcef58665376ca18011acd55df319b249e8d1a6c0c",
+      "candidatePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.webp",
+      "candidateSha256": "ddd86a1fbf091af5e1d43145478326eeec29037648da4c01a0c6a96c2126cdae",
+      "bytes": 105492,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2071
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-007",
+      "sourcePath": "apps/web/public/assets/course2/observation-handoff-practice.svg",
+      "sourceSha256": "d5959384b65e9c140e47eaa44c28a0b8a11d389bdb6159052defea051eaea369",
+      "candidatePath": "apps/web/public/assets/course2/observation-handoff-practice.webp",
+      "candidateSha256": "a9d1f485d1c855e5cfadbb8c7db3f69bb2e5ba55e863cd8f4a194abc0eb57417",
+      "bytes": 108036,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2071
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-008",
+      "sourcePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+      "sourceSha256": "fb13322fc186d1a02544f59bf621f039e9706cf78d83481f7d6d9a7a76067c29",
+      "candidatePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.webp",
+      "candidateSha256": "23b7652219b720668fe3c751a354bdc5b6e864d3837ab5c1c9e87b464e48aba1",
+      "bytes": 184634,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-009",
+      "sourcePath": "apps/web/public/assets/course2/reproductive-morphology-reference.svg",
+      "sourceSha256": "6d291ec46376b96d975eb6415552d96b2d7244d93829e2524bbb91ef9fc5d8f6",
+      "candidatePath": "apps/web/public/assets/course2/reproductive-morphology-reference.webp",
+      "candidateSha256": "51849762e8bb7feb7356394d579ed4cf457685d618a19d82ce63a9a43b0bf49e",
+      "bytes": 195426,
+      "pixelDimensions": {
+        "width": 2667,
+        "height": 1600
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-002-010",
+      "sourcePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
+      "sourceSha256": "f2bc8045571819570f6c2c1a6f12b0b725cd3d873cbdcd2c788b60e6c28c8482",
+      "candidatePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.webp",
+      "candidateSha256": "5a233e8384af7089edbacf98ee9660b6c01f73c7d6d54a40debb53b5d0e898dd",
+      "bytes": 198224,
+      "pixelDimensions": {
+        "width": 1600,
+        "height": 2071
+      },
+      "format": "webp",
+      "automatedQaStatus": "passed",
+      "releaseStatus": "human-qa-required"
+    }
+  ],
+  "releaseBoundary": "Candidate production and automated integrity/resolution QA do not establish factual, accessibility, responsive/manual or public-path approval. SVG baselines remain live until those reviews are recorded and lesson/registry cutover is verified."
+}
