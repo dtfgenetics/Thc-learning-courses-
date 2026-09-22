@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A scouting program monitors only adult fungus gnats on sticky cards and never examines media, while another program monitors only foliage for thrips and ignores flowers and growing tips. What is the shared weakness?",
+  "choices": [
+    "Both programs fail to match sampling location and life stage to the biology of the target pest.",
+    "Both programs use too many monitoring methods.",
+    "Sticky traps and crop inspection are never appropriate in IPM.",
+    "Only pesticide records are needed to understand pest pressure."
+  ],
+  "correct": 0,
+  "rationale": "Monitoring is strongest when the method targets relevant life stages and habitats; adult-only or poorly located sampling can miss biologically important stages and crop sites.",
+  "references": [
+    "REF-THRIPS-UCIPM-001",
+    "REF-FUNGUS-GNAT-UCIPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

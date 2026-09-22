@@ -1,12 +1,12 @@
 {
   "courseId": "COURSE-LH-TECH1-006",
   "version": "0.2.0",
-  "updated": "2026-09-20",
+  "updated": "2026-09-18",
   "academicPublication": "draft",
   "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 6 controlled source/package construction, learner runtime routing, governed assets, public route readback, and exact-version human-review queue integrity are machine-verified. Exact DTFSeeds deployment workflow/site-commit identity is now verified. Remaining work is deployed responsive/manual learner-surface QA, curriculum-version equivalence where a deployment did not pin the curriculum SHA, and repair of any defects those checks expose. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
+  "machineCompletionBoundary": "Course 6 controlled source/package construction, learner runtime routing, governed assets, public route readback, and exact-version human-review queue integrity are machine-verified. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human technical, assessment, accessibility, practical/pilot/calibration/standard-setting and release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-006.json",
     "scripts/test-tech1-course6.mjs",
@@ -20,7 +20,7 @@
     "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md"
   ],
   "nextMachineActions": [
-    "pin or otherwise prove exact curriculum-version equivalence on the next public deployment so future release evidence is fully reproducible"
+    "produce and QA high-resolution raster replacements for Course 6 legacy SVG compatibility assets, retiring each SVG only after verified public-path replacement"
   ],
   "nextHumanActions": [
     "technical/curriculum review",
@@ -34,7 +34,7 @@
   ],
   "deploymentEvidence": "registry/course6-deployment-evidence.json",
   "publicRouteReadback": "verified-build-identity",
-  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified. DTFSeeds production workflow/site-commit identity is now recorded from the successful publish run. Manual responsive/accessibility approval remains open, and the historical deployment did not record the exact curriculum-repository SHA fetched from @main.",
+  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
   "driveMirrors": {
     "status": "verified-8-of-8",
     "registry": "visuals/COURSE6-ASSET-REGISTRY.json",

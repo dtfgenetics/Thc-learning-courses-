@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-003-04",
+  "title": "Thrips & Fungus Gnats: Life Stages, Injury & Sampling Location",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-003-03"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-THRIPS-UCIPM-001",
+    "REF-FUNGUS-GNAT-UCIPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Thrips and fungus gnats occupy different crop niches and produce different evidence. Thrips are slender plant-feeding insects often associated with foliage, flowers and growing points, while fungus-gnat larvae develop in moist organic media and can feed on roots. Sampling the correct location and life stage is essential.",
+    "vocabulary": [
+      {
+        "term": "Thrips",
+        "definition": "Minute, slender insects with fringed adult wings; pest species can feed on plant cells and produce scarring, distortion and dark fecal specks."
+      },
+      {
+        "term": "Fungus gnat",
+        "definition": "A small dark-winged fly whose larvae develop in moist organic media, feeding mainly on fungi and organic matter but also on roots."
+      },
+      {
+        "term": "Sticky trap",
+        "definition": "A monitoring surface used to detect and trend flying arthropods; trap captures support scouting but do not by themselves describe all crop injury or immature stages."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Thrips evidence is often hidden in protected plant sites",
+        "body": "Thrips can occupy flowers, buds, growing tips and leaf surfaces. Feeding may leave pale or silvery scarring, distorted tissue and dark fecal specks. Because similar injury can arise from other causes, dislodge or collect specimens and use appropriate identification support when species matters.",
+        "references": [
+          "REF-THRIPS-UCIPM-001"
+        ]
+      },
+      {
+        "title": "Fungus-gnat adults and larvae tell different parts of the story",
+        "body": "Adults are small, dark, weak-flying insects often noticed near moist media or lights. Larvae live in organic media, have a dark head capsule and pale body, and can feed on roots. Adult trap counts can indicate activity, but root-zone inspection and moisture context are needed to understand larval risk.",
+        "references": [
+          "REF-FUNGUS-GNAT-UCIPM-001"
+        ]
+      },
+      {
+        "title": "Sampling must match the biology",
+        "body": "Use foliage or flower inspection and appropriate traps for thrips, and combine adult monitoring with media/root-zone observations for fungus gnats. Keep sample effort and placement consistent enough that trends reflect pest change rather than a change in how or where the crop was inspected.",
+        "references": [
+          "REF-THRIPS-UCIPM-001",
+          "REF-FUNGUS-GNAT-UCIPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A sticky trap increase near propagation media supports increased flying fungus-gnat activity but does not quantify larval root feeding without additional root-zone evidence.",
+      "Silvery foliage plus dark fecal specks and recovered slender insects supports thrips more strongly than silvery foliage alone."
+    ],
+    "commonMistakes": [
+      "Treating adult trap counts as a direct count of root-zone fungus-gnat larvae.",
+      "Assuming all dark small flies near containers are fungus gnats without checking diagnostic characters.",
+      "Calling feeding scars a species-level thrips identification without specimen evidence."
+    ],
+    "practicalApplication": "Create a sampling plan for one foliage-associated suspect and one media-associated suspect. Specify target life stage, sampling location, collection method, denominator, identification confidence and how repeated rounds will remain comparable.",
+    "summary": "Thrips and fungus gnats require different sampling locations and life-stage evidence. Match the monitoring method to pest biology and interpret trap or injury data as part of a larger evidence set."
+  }
+}

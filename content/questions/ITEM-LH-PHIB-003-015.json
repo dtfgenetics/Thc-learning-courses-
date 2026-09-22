@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A specialist has high confidence in the pest identity, but pesticide selection and application are outside the specialist's assigned authority. What is the correct handoff?",
+  "choices": [
+    "Select and apply a product anyway because diagnostic confidence grants treatment authority.",
+    "Delay documentation until someone approves a pesticide.",
+    "Document identity confidence, evidence, scope, containment and monitoring needs, then escalate treatment selection/application to the authorized role under current label, law and facility procedure.",
+    "Recommend any product sold for a similar greenhouse pest."
+  ],
+  "correct": 2,
+  "rationale": "Accurate identification and treatment authority are separate controls; regulated product selection and application must remain with the authorized role under current label, law and facility procedure.",
+  "references": [
+    "REF-CANNABIS-APHID-NCSU-001",
+    "REF-HEMP-RUSSET-NCSU-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

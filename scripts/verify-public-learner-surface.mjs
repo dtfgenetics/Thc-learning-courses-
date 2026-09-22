@@ -107,8 +107,8 @@ for(const rel of deploymentPaths){
   checks.push({courseId:evidence.courseId,results});
 }
 
-const qaAction=/(deployed responsive\/manual learner-surface QA|deployed learner-surface QA|responsive\/manual learner-surface QA)/i;
-const repairAction=/repair any defects exposed by deployed QA\/readback/i;
+const qaAction=/(?:complete )?deployed responsive\/manual .*?QA|deployed learner-surface QA|responsive\/manual learner-surface QA/i;
+const repairAction=/repair any .*?defects exposed by deployed QA(?:\/readback)?/i;
 for(const rel of completionPaths){
   const file=path.join(root,rel);
   const status=JSON.parse(fs.readFileSync(file,'utf8'));
@@ -118,11 +118,14 @@ for(const rel of completionPaths){
     sourceSha:identity.sourceSha.toLowerCase(),
     buildId:identity.buildId
   };
-  if((status.nextMachineActions??[]).length===0) status.machineResolvableWorkComplete=true;
+  status.machineResolvableWorkComplete=(status.nextMachineActions??[]).length===0;
   if(typeof status.machineCompletionBoundary==='string'){
-    status.machineCompletionBoundary=status.machineCompletionBoundary
-      .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA[^.]*\./i,'Deployed machine learner-surface QA is verified against the exact public build. Human rendered accessibility/manual UX review remains open.')
-      .replace(/Remaining machine work is deployed responsive\/manual learner-surface QA and repair of any defects those checks expose\./i,'Deployed machine learner-surface QA is verified against the exact public build. Human rendered accessibility/manual UX review remains open.');
+    const humanGate=(status.machineCompletionBoundary.match(/Human [^.]+\.$/i)??[])[0]??'';
+    const prefix=status.machineCompletionBoundary.split(/Remaining machine work is|Exact DTFSeeds deployment build\/source identity and machine learner-surface QA are verified\.|Machine-resolvable source, runtime, and deployed-surface verification is complete/i)[0].trim();
+    const machineState=status.machineResolvableWorkComplete
+      ? 'Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Machine-resolvable source, runtime, and deployed-surface verification is complete for the current pinned snapshot.'
+      : 'Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue.';
+    status.machineCompletionBoundary=[prefix,machineState,humanGate].filter(Boolean).join(' ');
   }
   if(write) fs.writeFileSync(file,JSON.stringify(status,null,2)+'\n');
 }

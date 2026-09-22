@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-LH-PHIB-001-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two scouting rounds each record 3 affected plants, but the first round inspected 30 plants and the second inspected 120. What is the best interpretation?",
+  "choices": [
+    "The raw counts are not directly comparable as incidence until the different sampling denominators are accounted for.",
+    "The pressure is unchanged because both rounds found exactly 3 affected plants.",
+    "The second round proves severity decreased because more plants were inspected.",
+    "Only the latest raw count should be retained because it used the larger sample."
+  ],
+  "correct": 0,
+  "rationale": "Comparable scouting requires the sampling denominator and method context; equal raw counts can represent different incidence when sampling effort differs.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-01",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

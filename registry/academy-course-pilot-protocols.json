@@ -1,13 +1,20 @@
 {
-  "version": "1.0.0",
-  "updated": "2026-09-18",
-  "purpose": "Controlled registry for course-specific pilot protocols. Presence of a protocol does not mean pilot evidence exists or a credential is validated.",
+  "version": "1.1.0",
+  "updated": "2026-09-21",
+  "purpose": "Controlled registry for all 15 Technician I/II academic course pilot protocols. Presence of a protocol does not mean pilot evidence exists, an assessment is validated, or a credential is approved.",
   "defaultKnowledgeItemPlanningTarget": {
     "usableResponsesPerItem": 50,
     "preliminaryMinimumPerItem": 30,
     "boundary": "Development evidence-collection targets only; not automatic activation or standard-setting thresholds."
   },
   "courses": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "track": "Technician I",
+      "protocol": "docs/learning-hub/tech1/course-001/pilot/PILOT-PROTOCOL.md",
+      "state": "protocol-ready-pilot-not-started",
+      "protocolProfile": "course1-controlled"
+    },
     {
       "courseId": "COURSE-LH-TECH1-002",
       "track": "Technician I",

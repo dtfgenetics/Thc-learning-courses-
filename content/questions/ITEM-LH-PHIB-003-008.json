@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Several thrips are collected, but the facility needs a species-level determination because management implications differ. What is the strongest action?",
+  "choices": [
+    "Assign species from crop injury alone.",
+    "Use the darkest specimen as the representative species.",
+    "Call every specimen western flower thrips because it is common in greenhouses.",
+    "Preserve specimens and obtain qualified identification using the microscopic characters needed for species-level determination."
+  ],
+  "correct": 3,
+  "rationale": "UC IPM notes that species-level thrips identification may require expert preparation and examination of microscopic characters; injury alone is not sufficient.",
+  "references": [
+    "REF-THRIPS-UCIPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

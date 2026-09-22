@@ -1,0 +1,81 @@
+{
+  "id": "LESSON-LH-PHIB-003-01",
+  "title": "Arthropod Identification Framework: Pest, Life Stage, Sign & Injury",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-003-01"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-HEMP-IPM-VT-001",
+    "REF-THRIPS-UCIPM-001",
+    "REF-SPIDER-MITE-UCIPM-001",
+    "REF-FUNGUS-GNAT-UCIPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist arthropod identification begins with observable anatomy, life stage, crop location and feeding evidence rather than jumping from plant injury to a pest name. Small greenhouse pests often require magnification, and species-level identification can require expert examination.",
+    "vocabulary": [
+      {
+        "term": "Arthropod sign",
+        "definition": "Direct evidence of the organism or its activity, such as a specimen, cast skin, webbing, honeydew, fecal specks or frass."
+      },
+      {
+        "term": "Injury pattern",
+        "definition": "The visible plant response to feeding or activity; injury can support a differential but may not uniquely identify the pest."
+      },
+      {
+        "term": "Life stage",
+        "definition": "A developmental form such as egg, larva or nymph, pupa or adult whose appearance, location and susceptibility may differ."
+      },
+      {
+        "term": "Look-alike",
+        "definition": "A pest, beneficial organism or non-pest condition that can resemble another organism or produce similar crop injury."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identity needs more than crop symptoms",
+        "body": "Stippling, chlorosis, distortion, wilt or slowed growth can have arthropod and non-arthropod causes. Build identification from the organism itself when possible, then combine body form, number of legs or wings, movement, feeding location, by-products and injury pattern. Preserve uncertainty when the evidence cannot support species-level identity.",
+        "references": [
+          "REF-HEMP-IPM-VT-001",
+          "REF-THRIPS-UCIPM-001",
+          "REF-SPIDER-MITE-UCIPM-001"
+        ]
+      },
+      {
+        "title": "Match the observation method to pest size and location",
+        "body": "Tiny arthropods can be missed when scouting relies on unaided vision. Inspect the leaf surface and underside, stems, growing points, flowers, media surface and root-zone context as appropriate. Use hand lenses, microscopes, traps or specimen collection when those methods can discriminate the suspected group.",
+        "references": [
+          "REF-THRIPS-UCIPM-001",
+          "REF-SPIDER-MITE-UCIPM-001",
+          "REF-FUNGUS-GNAT-UCIPM-001"
+        ]
+      },
+      {
+        "title": "By-products and distribution strengthen the workup",
+        "body": "Webbing, honeydew, cast skins, dark fecal specks and larval habitat can add discriminating evidence. Record where the evidence occurs and how widely it is distributed; do not convert one sign into a facility-wide conclusion without representative scouting.",
+        "references": [
+          "REF-CANNABIS-APHID-NCSU-001",
+          "REF-SPIDER-MITE-UCIPM-001",
+          "REF-THRIPS-UCIPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Fine stippling plus webbing and colonies on leaf undersides supports a spider-mite hypothesis more strongly than stippling alone.",
+      "Silvery scarring with dark fecal specks and slender insects supports a thrips workup, but species-level identification may still require expert examination."
+    ],
+    "commonMistakes": [
+      "Diagnosing a pest only from crop injury without finding supporting organism evidence.",
+      "Assuming every small flying insect near media is a fungus gnat.",
+      "Forcing species-level certainty when the available magnification or specimen quality cannot support it."
+    ],
+    "practicalApplication": "Build a five-column identification record for a suspect arthropod: organism features, life stage, plant or media location, direct signs/by-products, and crop injury. Add at least one look-alike and the next observation that could separate them.",
+    "summary": "Specialist pest identification is an evidence process. Observe the organism, life stage, location, signs and injury together, use appropriate magnification, and keep the identification confidence proportional to the evidence."
+  }
+}

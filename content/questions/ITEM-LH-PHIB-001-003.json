@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-LH-PHIB-001-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-PHIB-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One humidity sensor near a dehumidifier shows a stable value while leaf symptoms cluster at the opposite end of the room. What is the strongest next step before using that sensor value to rule out an environmental contribution?",
+  "choices": [
+    "Verify whether measurements are representative by comparing location, exposure, timing, and an appropriate reference or additional measurement points.",
+    "Use the single sensor because any calibrated sensor represents the whole room.",
+    "Ignore the spatial symptom pattern because sensor data always outrank crop observations.",
+    "Adjust the environmental setpoint first and verify the sensor later."
+  ],
+  "correct": 0,
+  "rationale": "Diagnostic use of environmental data depends on representativeness and data quality; a valid reading at one location may not describe conditions elsewhere.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-001-02",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

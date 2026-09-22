@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-PHIB-003-FINAL",
+  "title": "Arthropod Pest Biology, Identification & IPM — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-PHIB-003-01",
+    "LO-LH-PHIB-003-02",
+    "LO-LH-PHIB-003-03",
+    "LO-LH-PHIB-003-04",
+    "LO-LH-PHIB-003-05"
+  ],
+  "items": [
+    "ITEM-LH-PHIB-003-001",
+    "ITEM-LH-PHIB-003-002",
+    "ITEM-LH-PHIB-003-003",
+    "ITEM-LH-PHIB-003-004",
+    "ITEM-LH-PHIB-003-005",
+    "ITEM-LH-PHIB-003-006",
+    "ITEM-LH-PHIB-003-007",
+    "ITEM-LH-PHIB-003-008",
+    "ITEM-LH-PHIB-003-009",
+    "ITEM-LH-PHIB-003-010",
+    "ITEM-LH-PHIB-003-011",
+    "ITEM-LH-PHIB-003-012",
+    "ITEM-LH-PHIB-003-013",
+    "ITEM-LH-PHIB-003-014",
+    "ITEM-LH-PHIB-003-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-IPM-ADV-001",
+      "items": 9,
+      "cognitiveTarget": "Arthropod identification evidence, cannabis/hemp pest biology, life stages, look-alikes and threshold uncertainty"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 3,
+      "cognitiveTarget": "Movement pathways, containment and sanitation boundaries"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Identification confidence, reconstructable corrections and treatment-authority handoff"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 6,
+    "targetBankItemsPerCompetency": 20,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PHIB-003",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}
