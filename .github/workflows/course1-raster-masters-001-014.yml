@@ -88,6 +88,18 @@ jobs:
             exit 1
           fi
 
+      - name: Upload Course 1 raster review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: course1-raster-review-masters
+          path: |
+            visuals/review-candidates/course1/production-masters/*.png
+            visuals/COURSE1-RASTER-BUILD-MANIFEST-001-014.json
+            visuals/COURSE1-RASTER-COPY-LOCK-001-014.json
+            visuals/COURSE1-VISUAL-COPY-LOCK-13-18.json
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Commit generated candidates and build manifest
         shell: bash
         run: |
