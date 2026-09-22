@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-CONTENT-SYSTEM-BOUNDARY-001",
+  "updated": "2026-09-22",
+  "systems": {
+    "encyclopedia": {
+      "name": "THC Plant Science Encyclopedia",
+      "canonicalIdPattern": "THC-ENC-001..THC-ENC-420",
+      "targetCount": 420,
+      "purpose": "Encyclopedia-style topics and explanations covering cannabis plant science, cultivation, diagnostics, genetics, postharvest, quality, and related knowledge.",
+      "contentModel": [
+        "topic title",
+        "plain-language explanation",
+        "core science",
+        "key terms",
+        "why it matters",
+        "examples or applications",
+        "misconceptions and evidence limits",
+        "cross-links",
+        "sources",
+        "instructional visuals where useful"
+      ],
+      "not": [
+        "certification course",
+        "credential-bearing lesson",
+        "course test",
+        "secure credential assessment"
+      ]
+    },
+    "certification": {
+      "name": "THC Academy Certification Curriculum",
+      "courseIdPattern": "COURSE-*",
+      "lessonIdPattern": "LESSON-*",
+      "assessmentIdPattern": "ASSESS-*",
+      "purpose": "Purpose-built courses, lessons, activities, tests, practicals, and capstones for certificate and professional credential pathways.",
+      "mayReferenceEncyclopedia": true,
+      "mustRemainIndependent": true
+    },
+    "legacy420Catalog": {
+      "name": "Historical THC-C001..THC-C420 catalog",
+      "status": "crosswalk-only",
+      "purpose": "Historical topic map retained for provenance and reconciliation.",
+      "mustNotBeCountedAs": [
+        "current encyclopedia IDs",
+        "certification courses",
+        "certification lessons",
+        "certification assessments"
+      ]
+    }
+  },
+  "countingRules": {
+    "encyclopediaCompletion": "Count only THC-ENC-001..THC-ENC-420 encyclopedia records and their own production state.",
+    "certificationCompletion": "Count only current certification curriculum objects and their course/test/practical release state.",
+    "noCombinedCompletionPercentage": true
+  }
+}
