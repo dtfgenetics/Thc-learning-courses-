@@ -72,9 +72,18 @@ assert.equal(referenceBoardIndex.boards?.length, 3, 'Course 1 reference-board in
 const referenceBoardIds = new Set(referenceBoardIndex.boards.map((row) => row.driveFileId));
 for (const concept of manifest.concepts.filter((row) => Number(row.conceptId.match(/-([0-9]{2})-/)?.[1]) <= 12)) {
   assert.equal(concept.candidate?.individualProductionMasterRequired, true, `${concept.conceptId}: concepts 1-12 require an individual production master`);
-  assert.ok(referenceBoardIds.has(concept.candidate?.sourceDriveFileId), `${concept.conceptId}: source Drive file must resolve through the controlled reference-board index`);
-  assert.equal(concept.candidate?.sourceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: large review board must remain Drive-controlled rather than masquerade as a repository production binary`);
-  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: a reference-board derivative cannot be release-approved before an individual production master exists`);
+
+  if (concept.candidate?.sourceType === 'repository-built-copy-locked-production-master') {
+    assert.ok(referenceBoardIds.has(concept.candidate?.predecessorDriveReferenceFileId), `${concept.conceptId}: predecessor Drive reference must resolve through the controlled reference-board index`);
+    assert.equal(concept.candidate?.predecessorReferenceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: predecessor review board must remain Drive-controlled reference evidence`);
+    assert.ok(typeof concept.candidate?.repositoryPath === 'string' && concept.candidate.repositoryPath.endsWith('.png'), `${concept.conceptId}: individual repository production master path is required`);
+    assert.ok(fs.existsSync(path.join(root, concept.candidate.repositoryPath)), `${concept.conceptId}: individual repository production master is missing`);
+  } else {
+    assert.ok(referenceBoardIds.has(concept.candidate?.sourceDriveFileId), `${concept.conceptId}: source Drive file must resolve through the controlled reference-board index`);
+    assert.equal(concept.candidate?.sourceBoard?.repositoryImportStatus, 'deferred-large-review-board', `${concept.conceptId}: large review board must remain Drive-controlled rather than masquerade as a repository production binary`);
+  }
+
+  assert.equal(concept.releaseApproved, false, `${concept.conceptId}: human QA is still required before learner-facing replacement release`);
 }
 
 for (const concept of manifest.concepts) {
