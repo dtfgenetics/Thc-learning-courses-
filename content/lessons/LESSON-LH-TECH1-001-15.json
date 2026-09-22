@@ -90,7 +90,7 @@
       {
         "type": "image",
         "assetId": "VIS-LH-TECH1-001-011",
-        "src": "/assets/course1/maintenance-fault-report.svg",
+        "src": "/assets/course1/maintenance-fault-report.png",
         "alt": "Annotated maintenance-ready fault report showing asset and location, time, alarm or observation, permitted checks and results, process or crop impact, safe action and notification, with a warning against vague statements such as 'pump broken' and unsupported root-cause claims.",
         "caption": "A useful maintenance escalation gives the next qualified person enough context to reproduce and investigate the condition.",
         "references": [
@@ -290,6 +290,18 @@
         "title": "Key takeaway",
         "tone": "evidence",
         "body": "Good technicians do not need to guess every root cause. They make the fault legible: what changed, where and when it occurred, whether it recurred, what was checked, what was affected, what safe status was preserved, and what remains for the authorized investigator."
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-035",
+        "src": "/assets/course1/fault-report-v3.png",
+        "alt": "Maintenance-ready fault context model recording exact asset and location, first occurrence, exact alarm or symptom, permitted operator checks and results, recurrence, process impact, controlled status and notification while keeping verified facts separate from hypotheses.",
+        "caption": "Fault context separates verified observations and permitted checks from unsupported diagnosis while using the applicable reporting procedure.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-147-LOTO",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
       }
     ]
   }
