@@ -52,6 +52,22 @@ const expectedObjectives = [
 ];
 assert.deepEqual(new Set(final.objectives), new Set(expectedObjectives));
 assert.deepEqual(new Set(formative.objectives), new Set(expectedObjectives));
+assert.equal(final.extensions?.courseDerivedAssessment, true, 'Course 5 final must remain explicitly course-derived');
+assert.equal(final.extensions?.encyclopediaSubstitutionAllowed, false, 'Encyclopedia material cannot substitute for Course 5 instruction');
+assert.equal(final.extensions?.untaughtMaterialAllowed, false, 'Course 5 final cannot assess untaught material');
+assert.equal(final.extensions?.treatmentAuthorityStillExcluded, true, 'Course 5 assessment must not imply pesticide/treatment authority');
+const taughtMaterialMap = final.extensions?.taughtMaterialMap ?? {};
+for (const objectiveId of expectedObjectives) {
+  assert.ok(Array.isArray(taughtMaterialMap[objectiveId]) && taughtMaterialMap[objectiveId].length > 0, `${objectiveId}: final must map to dedicated taught material`);
+  for (const lessonId of taughtMaterialMap[objectiveId]) {
+    assert.match(lessonId, /^LESSON-LH-TECH1-005-/, `${objectiveId}: test-to-teaching map must stay inside Course 5`);
+    assert.ok(module.lessons.includes(lessonId), `${objectiveId}: mapped lesson must belong to the dedicated Course 5 module`);
+    const lesson = read(`content/lessons/${lessonId}.json`);
+    assert.ok((lesson.learningObjectives ?? []).includes(objectiveId), `${objectiveId}: mapped lesson ${lessonId} must actually teach the objective`);
+  }
+}
+assert.ok(exists('docs/learning-hub/tech1/course-005/TEST-TO-TEACHING-MAP.md'), 'Course 5 must retain a human-readable test-to-teaching audit');
+
 
 const summativeCounts = new Map(expectedObjectives.map((id) => [id, 0]));
 const formativeCounts = new Map(expectedObjectives.map((id) => [id, 0]));
