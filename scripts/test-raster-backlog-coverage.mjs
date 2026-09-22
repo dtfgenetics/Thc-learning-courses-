@@ -41,7 +41,8 @@ for(let n=2;n<=6;n++){
 const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
 for(const course of tech2.courses??[]){
   for(const concept of course.concepts??[]){
-    add(concept.sourcePath,concept.conceptId,course.courseId,!['approved','produced'].includes(concept.status));
+    const governedSvg=concept.rasterReplacement?.generatedFrom ?? concept.sourcePath;
+    add(governedSvg,concept.conceptId,course.courseId,!['approved','produced'].includes(concept.status));
   }
 }
 
