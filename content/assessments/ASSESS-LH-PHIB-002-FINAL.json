@@ -1,0 +1,86 @@
+{
+  "id": "ASSESS-LH-PHIB-002-FINAL",
+  "title": "Nutrient, Root-Zone & Environmental Disorder Differentials — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-NUTRIENT-DIAG-001",
+    "COMP-ROOTZONE-001",
+    "COMP-ENV-ADV-001"
+  ],
+  "objectives": [
+    "LO-LH-PHIB-002-01",
+    "LO-LH-PHIB-002-02",
+    "LO-LH-PHIB-002-03",
+    "LO-LH-PHIB-002-04",
+    "LO-LH-PHIB-002-05",
+    "LO-LH-PHIB-002-06",
+    "LO-LH-PHIB-002-07",
+    "LO-LH-PHIB-002-08",
+    "LO-LH-PHIB-002-09",
+    "LO-LH-PHIB-002-10"
+  ],
+  "items": [
+    "ITEM-LH-PHIB-002-001",
+    "ITEM-LH-PHIB-002-002",
+    "ITEM-LH-PHIB-002-003",
+    "ITEM-LH-PHIB-002-004",
+    "ITEM-LH-PHIB-002-005",
+    "ITEM-LH-PHIB-002-006",
+    "ITEM-LH-PHIB-002-007",
+    "ITEM-LH-PHIB-002-008",
+    "ITEM-LH-PHIB-002-009",
+    "ITEM-LH-PHIB-002-010"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 10,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-NUTRIENT-DIAG-001",
+      "items": 4,
+      "cognitiveTarget": "Interaction-aware nutrient differentials, symptom/evidence integration and EC interpretation"
+    },
+    {
+      "competency": "COMP-ROOTZONE-001",
+      "items": 3,
+      "cognitiveTarget": "Root-zone physical constraints, media management and dynamic dryback interpretation"
+    },
+    {
+      "competency": "COMP-ENV-ADV-001",
+      "items": 3,
+      "cognitiveTarget": "Spatial environmental mapping, airflow distribution and sensible/latent load interpretation"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 4,
+    "targetBankItemsPerCompetency": 12,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PHIB-002",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 60,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "reusedModuleAssessments": [
+      "ASSESS-NUTRIENT-DIAG-MODULE-001",
+      "ASSESS-ROOTZONE-MODULE-001",
+      "ASSESS-ENV-ADV-MODULE-001"
+    ],
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true,
+    "objectiveOwnership": "specialist-course-specific",
+    "sourceObjectiveReuse": "tracked on assessment-item extensions"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Microscopy later shows that an arthropod recorded as a probable spider mite was actually a different mite. What should happen to the earlier record?",
+  "choices": [
+    "Overwrite the original observation so no incorrect hypothesis remains.",
+    "Preserve the original observation and confidence state, append the corrected identification and supporting evidence, and document how the workup changed.",
+    "Delete all earlier scouting because the diagnosis changed.",
+    "Keep both identities listed as confirmed."
+  ],
+  "correct": 1,
+  "rationale": "Data-integrity practice preserves the original record and subsequent correction so the diagnostic history remains reconstructable rather than rewritten after new evidence arrives.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

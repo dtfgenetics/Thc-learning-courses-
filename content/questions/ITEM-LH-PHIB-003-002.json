@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-003-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A scout sees silvery leaf scarring and dark fecal specks, then dislodges several slender insects from the affected tissue. What should the record say?",
+  "choices": [
+    "A nutrient deficiency is confirmed because silvering is a mineral symptom.",
+    "Spider mites are confirmed because fecal specks are diagnostic of mites.",
+    "Thrips are strongly supported by the combined organism and feeding evidence, but species-level identity should remain bounded by the available identification method.",
+    "The crop is pest-free because the insects were easy to dislodge."
+  ],
+  "correct": 2,
+  "rationale": "Silvery or scarred tissue, dark fecal specks and recovered slender insects support a thrips workup, while species-level identification can require expert microscopic examination.",
+  "references": [
+    "REF-THRIPS-UCIPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-003-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Leaves are curling and bronzing, no webbing is present, and unaided inspection finds no pest. Hemp russet mite is a concern. What is the strongest next step?",
+  "choices": [
+    "Use suitable high magnification or a microscope to examine appropriately sampled tissue before calling the mite confirmed.",
+    "Rule out mites because nothing was visible without magnification.",
+    "Confirm spider mites because both pests are mites.",
+    "Use a universal pesticide threshold before verifying identity."
+  ],
+  "correct": 0,
+  "rationale": "Hemp russet mites are microscopic and can require strong magnification for confirmation; absence of visible webbing and an unaided negative inspection do not establish or exclude the diagnosis.",
+  "references": [
+    "REF-HEMP-RUSSET-NCSU-001",
+    "REF-HEMP-RUSSET-JEE-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

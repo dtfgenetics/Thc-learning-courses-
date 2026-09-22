@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-003-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A scout has a blurry image of a tiny arthropod and crop injury consistent with several pests. How should identification confidence be documented?",
+  "choices": [
+    "Record the observable features and injury, state that identity is unresolved or provisional, preserve the image/specimen limitations, and define the next confirmation step.",
+    "Select the most damaging pest name so the report receives attention.",
+    "Mark species as confirmed because the crop injury looks familiar.",
+    "Delete the image because it is not definitive."
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable report matches certainty to evidence, preserves limitations and unresolved look-alikes, and identifies what additional evidence is needed for stronger confirmation.",
+  "references": [
+    "REF-THRIPS-UCIPM-001",
+    "REF-HEMP-RUSSET-NCSU-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-003",
+    "seedBank": true
+  }
+}

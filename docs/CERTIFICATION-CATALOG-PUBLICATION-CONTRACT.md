@@ -39,9 +39,11 @@ Must not be shown unless the corresponding release-evidence process is complete 
 
 ## Current catalog behavior
 
-- Course 1 (`COURSE-LH-TECH1-001`) may be linked as an available public academic course.
+- All seven Technician I academic courses (`COURSE-LH-TECH1-001` through `COURSE-LH-TECH1-007`) may be linked as available public academic learning.
+- All eight Technician II academic courses (`COURSE-LH-TECH2-001` through `COURSE-LH-TECH2-008`) may be linked as available public academic learning.
 - THC Cultivation Technician I must still be labeled **In development** until its program release evidence is complete.
-- Technician II must be labeled **In development**.
+- THC Cultivation Technician II must still be labeled **In development** until its program release evidence is complete.
+- Public academic-course availability must never be presented as professional credential issuance availability.
 - The six specialist/lead pathways are visible as **Planned** until their production state advances.
 - Foundational certificates are visible as **In development** until current-model certificate packages and issuance rules are complete.
 
@@ -63,6 +65,6 @@ Every catalog deployment should record:
 - public route;
 - credential status-registry version;
 - visible offering count;
-- Course 1 route health;
+- public academic course count and representative Technician I/II route health;
 - responsive/navigation verification;
 - verification timestamp.

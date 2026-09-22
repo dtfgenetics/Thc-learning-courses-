@@ -2,7 +2,7 @@
   "courseId": "COURSE-LH-TECH2-008",
   "title": "Integrated Technician II Simulation Lab",
   "version": "0.2.0",
-  "updated": "2026-09-20",
+  "updated": "2026-09-18",
   "canonicalCourseState": "draft",
   "publicAcademicPackage": "published",
   "machineResolvableWorkComplete": false,
@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
   "deploymentEvidence": "registry/tech2-course8-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 8 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment workflow/site-commit identity is now verified. Remaining work is deployed responsive/manual learner-surface QA, curriculum-version equivalence where a deployment did not pin the curriculum SHA, and repair of any defects those checks expose. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "machineCompletionBoundary": "Technician II Course 8 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-008.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
@@ -25,9 +25,8 @@
     "scripts/verify-public-deployment-identity.mjs"
   ],
   "nextMachineActions": [
-    "repair any course-content, assessment, navigation or accessibility defects exposed by deployed QA without weakening credential-security or authority boundaries",
-    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates",
-    "pin or otherwise prove exact curriculum-version equivalence on the next public deployment so future release evidence is fully reproducible"
+    "produce and QA 8 high-resolution raster replacements for the governed Technician II visual candidates; keep SVG review candidates non-public until each replacement passes release QA",
+    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
   ],
   "nextHumanActions": [
     "technical/occupational review",
@@ -48,17 +47,22 @@
     "plannedOnly": 0,
     "approvedForLearnerRender": 0,
     "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
-    "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md"
+    "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md",
+    "rasterReplacementProgram": "registry/raster-replacement-program.json",
+    "rasterReplacementsRequired": 8,
+    "rasterReplacementsReleased": 0
   },
-  "deployedMachineSurfaceQa": {
-    "state": "verified",
-    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
-    "buildId": "dtf-academy-338f3cc23581-35582824708"
-  },
+  "publicRouteReadback": "verified-build-identity",
+  "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
   "deploymentIdentity": {
     "state": "verified",
     "buildId": "dtf-academy-338f3cc23581-35582824708",
     "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
     "endpoint": "https://dtfseeds.com/api/build-info"
+  },
+  "deployedMachineSurfaceQa": {
+    "state": "verified",
+    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-338f3cc23581-35582824708"
   }
 }

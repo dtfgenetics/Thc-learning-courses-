@@ -1,12 +1,30 @@
 {
-  "version": 1,
+  "version": 2,
   "courseId": "COURSE-LH-TECH1-005",
   "policy": {
     "expandable": true,
     "maximumAssetCount": null,
-    "requiredAccessibility": ["title", "description", "learner text alternative"],
-    "statusValues": ["planned", "in-production", "produced", "retired"],
-    "publicDelivery": "Produced Course 5 learner assets live in the public repository and may be viewed or downloaded directly from their raw GitHub URL. Google Drive is a controlled production/reference mirror and does not replace the canonical repository asset."
+    "requiredAccessibility": [
+      "title",
+      "description",
+      "learner text alternative"
+    ],
+    "statusValues": [
+      "planned",
+      "in-production",
+      "produced",
+      "retired"
+    ],
+    "publicDelivery": "Existing Course 5 SVG files remain a verified learner-facing compatibility baseline so current public routes are not broken. New production instructional assets and replacements must be high-resolution PNG/WebP/JPEG/JPG. Google Drive remains a controlled mirror and does not replace the canonical repository asset.",
+    "productionInstructionalFormats": [
+      "png",
+      "webp",
+      "jpeg",
+      "jpg"
+    ],
+    "svgProductionTarget": false,
+    "legacySvgCompatibilityAllowed": true,
+    "rasterReplacementRequired": true
   },
   "driveStorage": {
     "folderId": "1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo",
@@ -25,11 +43,31 @@
       "driveFileId": "1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099",
       "driveFileUrl": "https://drive.google.com/file/d/1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-01", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-01", "LO-LH-TECH1-005-06"],
-      "references": ["REF-PROP-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-01",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-01",
+        "LO-LH-TECH1-005-06"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
       "purpose": "Teach donor/lot/tray identity control, labels-before-movement, count reconciliation, exception handling and the rule that uncertain identity stops movement rather than being guessed.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-002",
@@ -42,11 +80,31 @@
       "driveFileId": "1xwcER7w319W-1gCdkaoEI6txhMj_8pHi",
       "driveFileUrl": "https://drive.google.com/file/d/1xwcER7w319W-1gCdkaoEI6txhMj_8pHi/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-02", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-02", "LO-LH-TECH1-005-05"],
-      "references": ["REF-CANOPY-001", "REF-IPM-001"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-02",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-02",
+        "LO-LH-TECH1-005-05"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-IPM-001"
+      ],
       "purpose": "Teach pre-task condition checks, supplied canopy scope, tissue-protection limits, stop conditions, sanitation and truthful exception recording.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-003",
@@ -59,11 +117,30 @@
       "driveFileId": "1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv",
       "driveFileUrl": "https://drive.google.com/file/d/1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-03", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-03", "LO-LH-TECH1-005-04"],
-      "references": ["REF-IPM-001"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-03",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-03",
+        "LO-LH-TECH1-005-04"
+      ],
+      "references": [
+        "REF-IPM-001"
+      ],
       "purpose": "Teach repeatable representative scouting, mapped locations, incidence, severity, spatial pattern, trend and quarantine/escalation status instead of scouting only obvious damage.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-004",
@@ -76,11 +153,29 @@
       "driveFileId": "1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH",
       "driveFileUrl": "https://drive.google.com/file/d/1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-03"],
-      "objectiveIds": ["LO-LH-TECH1-005-03", "LO-LH-TECH1-005-05"],
-      "references": ["REF-IPM-001"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-03"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-03",
+        "LO-LH-TECH1-005-05"
+      ],
+      "references": [
+        "REF-IPM-001"
+      ],
       "purpose": "Separate symptoms from direct signs and show how location, incidence, severity, pattern and trend build evidence without automatically proving diagnosis or treatment authority.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-005",
@@ -93,11 +188,34 @@
       "driveFileId": "1DqVj3ac_XBH89rJqllr3rC81nRH6szW7",
       "driveFileUrl": "https://drive.google.com/file/d/1DqVj3ac_XBH89rJqllr3rC81nRH6szW7/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-01", "LESSON-LH-TECH1-005-02", "LESSON-LH-TECH1-005-03", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-04", "LO-LH-TECH1-005-05", "LO-LH-TECH1-005-06"],
-      "references": ["REF-IPM-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-01",
+        "LESSON-LH-TECH1-005-02",
+        "LESSON-LH-TECH1-005-03",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-04",
+        "LO-LH-TECH1-005-05",
+        "LO-LH-TECH1-005-06"
+      ],
+      "references": [
+        "REF-IPM-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
       "purpose": "Teach clean-to-dirty movement, tool-control checkpoints, suspect-material isolation/quarantine, breach documentation and escalation across propagation, canopy work and scouting.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-006",
@@ -110,11 +228,36 @@
       "driveFileId": "1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC",
       "driveFileUrl": "https://drive.google.com/file/d/1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-01", "LO-LH-TECH1-005-02", "LO-LH-TECH1-005-03", "LO-LH-TECH1-005-04", "LO-LH-TECH1-005-05", "LO-LH-TECH1-005-06"],
-      "references": ["REF-PROP-001", "REF-CANOPY-001", "REF-IPM-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-01",
+        "LO-LH-TECH1-005-02",
+        "LO-LH-TECH1-005-03",
+        "LO-LH-TECH1-005-04",
+        "LO-LH-TECH1-005-05",
+        "LO-LH-TECH1-005-06"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANOPY-001",
+        "REF-IPM-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
       "purpose": "Integrate identity, task status, evidence, biosecurity actions, authorized actions, unresolved conditions, escalation and next-step handoff across all three Course 5 workstreams.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-007",
@@ -127,11 +270,33 @@
       "driveFileId": "1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd",
       "driveFileUrl": "https://drive.google.com/file/d/1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-01", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-01", "LO-LH-TECH1-005-04", "LO-LH-TECH1-005-06"],
-      "references": ["REF-PROP-001", "REF-IPM-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-01",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-01",
+        "LO-LH-TECH1-005-04",
+        "LO-LH-TECH1-005-06"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-IPM-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
       "purpose": "Provide printable practice for donor/work-order identity, sanitation, tray mapping, count reconciliation, propagation condition, quarantine/isolation and handoff.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-008",
@@ -144,11 +309,33 @@
       "driveFileId": "1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ",
       "driveFileUrl": "https://drive.google.com/file/d/1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-03", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-03", "LO-LH-TECH1-005-04", "LO-LH-TECH1-005-05", "LO-LH-TECH1-005-06"],
-      "references": ["REF-IPM-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-03",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-03",
+        "LO-LH-TECH1-005-04",
+        "LO-LH-TECH1-005-05",
+        "LO-LH-TECH1-005-06"
+      ],
+      "references": [
+        "REF-IPM-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
       "purpose": "Provide printable scouting practice for route, map, sign/symptom classification, incidence, severity, spatial pattern, trend, quarantine and escalation without treatment selection.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     },
     {
       "id": "VIS-LH-TECH1-005-009",
@@ -161,11 +348,34 @@
       "driveFileId": "1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9",
       "driveFileUrl": "https://drive.google.com/file/d/1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9/view",
       "driveMirrorStatus": "mirrored",
-      "primaryLessons": ["LESSON-LH-TECH1-005-02", "LESSON-LH-TECH1-005-04"],
-      "objectiveIds": ["LO-LH-TECH1-005-02", "LO-LH-TECH1-005-04", "LO-LH-TECH1-005-05", "LO-LH-TECH1-005-06"],
-      "references": ["REF-CANOPY-001", "REF-IPM-001", "REF-MHRA-GXP-DATA-INTEGRITY"],
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-02",
+        "LESSON-LH-TECH1-005-04"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-02",
+        "LO-LH-TECH1-005-04",
+        "LO-LH-TECH1-005-05",
+        "LO-LH-TECH1-005-06"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-IPM-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
       "purpose": "Provide printable practice for canopy work-order identity, pre-task plant condition, authorized action, stop conditions, sanitation/quarantine, before/after verification, exceptions and handoff.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "rasterReplacement": {
+        "status": "required-not-produced",
+        "allowedFormats": [
+          "png",
+          "webp",
+          "jpeg",
+          "jpg"
+        ],
+        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
+      }
     }
   ]
 }

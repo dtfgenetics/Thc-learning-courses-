@@ -1,0 +1,32 @@
+{
+  "id": "ITEM-LH-PHIB-002-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-PHIB-002-10",
+  "bloomLevel": "evaluate",
+  "difficulty": "expert",
+  "type": "case-study",
+  "stem": "A localized crop zone shows chlorosis and slowed growth. That zone also has higher root-zone EC, slower dryback, and slightly higher nighttime humidity than comparison zones. Which next step best advances the diagnosis?",
+  "choices": [
+    "Rank nutrient-supply, uptake/root-zone, irrigation, and environmental hypotheses together and choose a discriminating check that can separate them before making a corrective change.",
+    "Increase fertilizer concentration because chlorosis is the most visible clue.",
+    "Lower room humidity everywhere because the affected zone is slightly more humid.",
+    "Flush every plant because elevated EC identifies the sole cause."
+  ],
+  "correct": 0,
+  "rationale": "Multiple aligned differences support a multi-factor differential. The next step should discriminate among plausible mechanisms rather than jumping from one measurement or symptom to a universal corrective action.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true,
+    "sourceObjective": "LO-NUTRIENT-DIAG-002",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

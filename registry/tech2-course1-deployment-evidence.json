@@ -1,8 +1,8 @@
 {
   "courseId": "COURSE-LH-TECH2-001",
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-001.json",
-  "verifiedAt": "2026-09-20",
-  "verificationMethod": "anonymous public HTTP readback + successful DTFSeeds GitHub Actions publish/verification evidence",
+  "verifiedAt": "2026-09-18",
+  "verificationMethod": "anonymous public HTTP readback",
   "courseUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/advanced-crop-observation-diagnostic-reasoning/",
   "representativeLessonUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/advanced-crop-observation-diagnostic-reasoning/lesson-01/",
   "representativeAssessmentUrl": "https://dtfseeds.com/learn/learning-hub/cultivation-technician-ii/advanced-crop-observation-diagnostic-reasoning/knowledge-check/",
@@ -18,20 +18,12 @@
   "exactDeploymentBuildId": "dtf-academy-338f3cc23581-35582824708",
   "exactDeploymentSourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
   "evidenceState": "public-readback-and-build-identity-verified-manual-responsive-qa-open",
-  "note": "Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and the exact DTFSeeds deployment workflow/site commit are verified. The production publisher fetched the curriculum from dtfgenetics/Thc-learning-courses-@main without recording a pinned curriculum SHA, so exact curriculum-version equivalence remains a separate evidence concern. Manual responsive/accessibility approval, practical/capstone validity, pilot/calibration evidence, standard setting, and credential release approval remain open.",
-  "deploymentRepository": "dtfgenetics/Thc",
-  "deploymentWorkflow": "Publish Technician II Courses 1-8",
-  "deploymentWorkflowRunId": 34999459498,
-  "deploymentWorkflowRunNumber": 2,
-  "deploymentArtifactId": 10408628594,
-  "deploymentArtifactDigest": "sha256:1f155adf5384efd3fbc1abf449522b72eb912ef445e65f527177501afa088ca8",
-  "curriculumSource": "dtfgenetics/Thc-learning-courses-@main",
-  "curriculumSourceShaPinnedByDeployment": false,
-  "buildIdentityVerifiedAt": "2026-09-21T09:25:23.307Z",
+  "note": "Anonymous learner routes, representative lesson/assessment readback, the training/credential boundary, and exact Academy build identity were verified against the pinned curriculum source SHA. Manual responsive/accessibility approval, pilot/practical validity, standard setting, and credential release approval remain open.",
+  "buildIdentityVerifiedAt": "2026-09-21T09:33:40.400Z",
   "buildIdentityEndpoint": "https://dtfseeds.com/api/build-info",
   "machineSurfaceQa": {
     "state": "verified",
-    "verifiedAt": "2026-09-21T09:25:31.544Z",
+    "verifiedAt": "2026-09-21T09:33:50.841Z",
     "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
     "buildId": "dtf-academy-338f3cc23581-35582824708",
     "sourceResponsiveContract": {
@@ -85,5 +77,7 @@
       }
     ]
   },
-  "machineSurfaceQaVerified": true
+  "machineSurfaceQaVerified": true,
+  "curriculumSource": "dtfgenetics/Thc-learning-courses-@338f3cc235810fc8d267559b511d497b182a7718",
+  "curriculumSourceShaPinnedByDeployment": true
 }

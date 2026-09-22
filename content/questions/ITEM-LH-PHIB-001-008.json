@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-LH-PHIB-001-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-001-08",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A high-risk plant-health finding is confined to one propagation zone and has not been confirmed elsewhere. Which response best preserves biosecurity while the finding is evaluated?",
+  "choices": [
+    "Maintain the facility's applicable isolation, sanitation, and clean-to-dirty movement controls; document scope; and escalate according to the authorized procedure.",
+    "Move suspect plants through other rooms to compare symptoms under different conditions.",
+    "Share tools between the affected and unaffected zones to test whether the problem spreads.",
+    "End isolation immediately because the cause is not yet confirmed."
+  ],
+  "correct": 0,
+  "rationale": "Uncertain cause does not remove spread risk. Applicable quarantine, sanitation, and movement controls should be maintained while scope and cause are evaluated.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-001",
+    "seedBank": true,
+    "sourceObjective": "LO-LH-TECH2-004-04",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}

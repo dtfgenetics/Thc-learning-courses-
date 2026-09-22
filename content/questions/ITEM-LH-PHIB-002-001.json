@@ -1,0 +1,30 @@
+{
+  "id": "ITEM-LH-PHIB-002-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-NUTRIENT-DIAG-001",
+  "objective": "LO-LH-PHIB-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A crop response appears shortly after a feed change, but root-zone pH also shifted and the plants entered a new developmental stage. What is the strongest diagnostic approach?",
+  "choices": [
+    "Evaluate nutrient interactions, developmental context, root-zone chemistry, and the timing of all changes before assigning the response to one element or concentration.",
+    "Attribute the response to the feed change because it happened most recently.",
+    "Ignore developmental stage because nutrition operates independently of plant stage.",
+    "Use only the fertilizer label rate because root-zone measurements cannot affect nutrient interpretation."
+  ],
+  "correct": 0,
+  "rationale": "Nutrient responses can reflect interactions among supply, stage, root-zone conditions, and environment; temporal association alone does not prove a single cause.",
+  "references": [
+    "REF-NUTRITION-001",
+    "REF-ROOTZONE-NUTRIENT-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-002",
+    "seedBank": true,
+    "sourceObjective": "LO-NUTRIENT-INTERACT-001",
+    "objectiveReuseBoundary": "Source objective preserves lineage only; specialist item is governed by its course-owned objective."
+  }
+}
