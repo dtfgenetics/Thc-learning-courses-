@@ -17,6 +17,12 @@ const runJson=(script,args=[])=>JSON.parse(execFileSync(process.execPath,[script
 const cert=runJson('scripts/report-certification-evidence-reconciliation.mjs',['--json']);
 const production=runJson('scripts/report-production-evidence-reconciliation.mjs');
 const programs=readDir('content/credential-programs').filter(x=>['CREDPROG-CULT-TECH-I-001','CREDPROG-CULT-TECH-II-001'].includes(x.id));
+const candidateControls=read('registry/candidate-governance-controls.json');
+const candidateGovernanceApprovals=readDir('content/candidate-governance-approvals')
+  .filter(x=>x.controlsId===candidateControls.id&&String(x.controlsVersion)===String(candidateControls.version)&&x.status!=='invalidated')
+  .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+const latestCandidateGovernance=candidateGovernanceApprovals[0]??null;
+const candidateGovernanceApproved=latestCandidateGovernance?.status==='approved'&&candidateControls.operationalUseAuthorized===true;
 
 const atLeastEvidence=(s)=>['evidence-complete','approved','not-applicable'].includes(s);
 const approved=(s)=>['approved','not-applicable'].includes(s);
@@ -91,6 +97,27 @@ for(const course of cert.courses){
   }
 }
 
+const sharedGovernanceWork=[];
+if(!candidateGovernanceApproved){
+  const evidenceStatus=latestCandidateGovernance?.status??'missing';
+  const executionState=evidenceStatus==='revision-required'
+    ? 'revision-required'
+    : evidenceStatus==='approved'&&candidateControls.operationalUseAuthorized!==true
+      ? 'ready-for-application'
+      : 'ready';
+  sharedGovernanceWork.push({
+    scope:'shared-governance',
+    controlsId:candidateControls.id,
+    controlsVersion:candidateControls.version,
+    gate:'candidateGovernance',
+    evidenceStatus,
+    operationalUseAuthorized:candidateControls.operationalUseAuthorized===true,
+    executionState,
+    dependencies:[],
+    priority:executionState==='revision-required'?0:executionState==='ready-for-application'?1:15
+  });
+}
+
 const programWork=[];
 for(const program of programs){
   const courses=(program.requiredCourses??[]).map(id=>cert.courses.find(x=>x.courseId===id)).filter(Boolean);
@@ -123,6 +150,14 @@ for(const program of programs){
         if(!approved(s)) blockers.push({scope:'course',courseId:c.courseId,gate,status:s});
       }
     }
+    if(!candidateGovernanceApproved){
+      blockers.push({
+        scope:'candidate-governance',
+        controlsId:candidateControls.id,
+        status:latestCandidateGovernance?.status??'missing',
+        operationalUseAuthorized:candidateControls.operationalUseAuthorized===true
+      });
+    }
     for(const p of production.controls){
       if(p.evidenceStatus!=='approved') blockers.push({scope:'production',controlId:p.controlId,status:p.evidenceStatus});
     }
@@ -131,6 +166,9 @@ for(const program of programs){
       if(b.scope==='production'){
         const row=production.controls.find(x=>x.controlId===b.controlId);
         return ['evidence-complete','approved'].includes(row?.evidenceStatus);
+      }
+      if(b.scope==='candidate-governance'){
+        return latestCandidateGovernance?.status==='approved';
       }
       const c=cert.courses.find(x=>x.courseId===b.courseId);
       return atLeastEvidence(gateStatus(c,b.gate));
@@ -158,7 +196,7 @@ const productionWork=production.controls
     priority:x.evidenceStatus==='revision-required'?0:x.evidenceStatus==='evidence-complete'?1:20
   }));
 
-const all=[...courseWork,...programWork,...productionWork]
+const all=[...courseWork,...sharedGovernanceWork,...programWork,...productionWork]
   .sort((a,b)=>a.priority-b.priority || String(a.courseId??a.credentialProgramId??a.controlId).localeCompare(String(b.courseId??b.credentialProgramId??b.controlId)));
 
 const count=(state)=>all.filter(x=>x.executionState===state).length;
@@ -171,10 +209,11 @@ const output={
     revisionRequired:count('revision-required'),
     blocked:count('blocked')+count('blocked-for-approval'),
     courseWorkItems:courseWork.length,
+    sharedGovernanceWorkItems:sharedGovernanceWork.length,
     programWorkItems:programWork.length,
     productionWorkItems:productionWork.length
   },
-  immediateQueue:all.filter(x=>['revision-required','ready-for-approval','ready'].includes(x.executionState)),
+  immediateQueue:all.filter(x=>['revision-required','ready-for-approval','ready-for-application','ready'].includes(x.executionState)),
   blockedQueue:all.filter(x=>['blocked','blocked-for-approval'].includes(x.executionState)),
   all
 };
@@ -187,7 +226,7 @@ else{
   console.log('');
   console.log('Immediate queue:');
   for(const x of output.immediateQueue){
-    const who=x.courseId??x.credentialProgramId??x.controlId;
+    const who=x.courseId??x.credentialProgramId??x.controlId??x.controlsId;
     console.log(`- [${x.executionState}] ${who} :: ${x.gate??'productionControl'}`);
   }
 }
