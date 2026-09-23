@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IRRIGATION-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A schedule produces acceptable room-average moisture but one bench repeatedly remains wet. What is the strongest next step?",
   "choices": [
-    "Shorten every event immediately.",
-    "Ignore the wet bench because the room average is acceptable.",
-    "Raise EC to increase water use.",
-    "Compare representative delivery and root-zone trends by location instead of changing the whole-room schedule from the average."
+    "Shorten every irrigation event slightly because a persistently wet bench indicates the room schedule is too aggressive overall.",
+    "Keep the room schedule unchanged because the average moisture trend is acceptable and one bench should be handled as a local crop issue.",
+    "Increase nutrient EC in the wet bench so plant water use rises and the moisture trend converges with the rest of the room.",
+    "Compare location-specific delivery, drainage, substrate moisture trends, and plant/root context before changing the whole-room schedule based on the average."
   ],
   "correct": 3,
-  "rationale": "Compare representative delivery and root-zone trends by location instead of changing the whole-room schedule from the average.",
+  "rationale": "A room average can hide spatially important outliers. A repeatedly wet bench may result from excess delivery, poor drainage, substrate variation, reduced plant uptake, root problems, or local environment. Changing the entire schedule before measuring those factors risks creating a new problem for otherwise normal benches. The strongest response is a location-specific comparison that explains why that bench behaves differently.",
   "references": [
     "REF-IRRIGATION-001"
   ]
