@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why must a KPI worksheet record its denominator and eligibility rule?",
   "choices": [
-    "So the calculation is reproducible and comparable rather than a percentage detached from its population definition.",
-    "Because denominators can be changed later to improve results.",
-    "Because numerator values are optional.",
-    "Because definitions are unnecessary once the percentage is known."
+    "Record the denominator and eligibility rule so another reviewer can reproduce the KPI and know exactly which population the percentage represents.",
+    "Record the denominator mainly so it can be adjusted later if unusual failures would distort the metric.",
+    "Record only the denominator because the numerator can be inferred from the reported percentage.",
+    "The denominator definition becomes unnecessary once a percentage has been published consistently for several cycles."
   ],
   "correct": 0,
-  "rationale": "So the calculation is reproducible and comparable rather than a percentage detached from its population definition.",
+  "rationale": "A percentage has little meaning without knowing which population qualified for inclusion and how the denominator was constructed. Recording the denominator and eligibility rule makes the calculation reproducible and comparable across cycles. It also prevents post hoc exclusions or definition drift from silently changing what the KPI means.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
