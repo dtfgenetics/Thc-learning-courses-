@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Fresh pest signs are found while a pruning team is moving through rooms. What should happen?",
   "choices": [
-    "Apply the supplied stop/isolation and sanitation controls before continuing movement, and escalate the finding",
-    "Continue through clean rooms with the same tools",
-    "Move suspect plants through clean areas",
-    "Prune off evidence and omit the record"
+    "Apply the required stop, isolation, sanitation, and movement controls before continuing through cleaner areas, and escalate the fresh pest finding.",
+    "Continue the planned pruning route because stopping mid-route creates more plant stress.",
+    "Move a suspect plant into a clean room for better inspection while the rest of the team continues.",
+    "Prune off the visible evidence so tools and workers can continue without a hold."
   ],
   "correct": 0,
-  "rationale": "Apply the supplied stop/isolation and sanitation controls before continuing movement, and escalate the finding. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Fresh pest evidence changes the biosecurity risk of the work route. Continuing with the same tools or moving suspect material through clean areas can spread contamination. Technician I should apply the defined stop/isolation and sanitation controls, preserve the evidence, and escalate before normal movement resumes.",
   "references": [
     "REF-IPM-001"
   ],

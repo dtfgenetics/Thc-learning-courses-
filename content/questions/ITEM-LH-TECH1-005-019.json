@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A coworker asks Technician I to alter the propagation method because a batch is slow. No authorized change is documented. What is the best response?",
   "choices": [
-    "Change the method verbally",
-    "Double every propagation input",
-    "Continue the supplied method, document the evidence and route the proposed change for authorization",
-    "Discard the batch"
+    "Change the propagation method verbally if the coworker has more experience with the crop.",
+    "Increase all propagation inputs so the slow batch has the strongest chance of catching up.",
+    "Continue the authorized method, document the slow-batch evidence, and route the proposed change for approval rather than modifying the process independently.",
+    "Discard the slow batch because it no longer matches the expected schedule."
   ],
   "correct": 2,
-  "rationale": "Continue the supplied method, document the evidence and route the proposed change for authorization. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A slow batch can justify review, but it does not authorize an undocumented process change. Technician I should continue the controlled method, preserve the observed performance evidence, and escalate the proposed adjustment. Verbal changes or arbitrary increases make the outcome harder to interpret and weaken process control.",
   "references": [
     "REF-IPM-001"
   ],

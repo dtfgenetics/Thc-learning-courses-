@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why is one dramatic close-up photo insufficient to describe a room-wide IPM condition?",
   "choices": [
-    "It may show detail but does not establish incidence, severity distribution or spatial pattern across the crop",
-    "Close-up photos are never useful",
-    "IPM never uses images",
-    "Only trap data matter"
+    "It can document detail on one affected unit but does not establish how common, severe, or spatially distributed the condition is across the room.",
+    "Close-up photos should not be used in IPM because images are too subjective for scouting.",
+    "Trap counts replace visual scouting, so room-level interpretation should rely only on traps.",
+    "One close-up is enough if the photographed symptom is visually distinctive."
   ],
   "correct": 0,
-  "rationale": "It may show detail but does not establish incidence, severity distribution or spatial pattern across the crop. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A close-up can be valuable evidence of one finding, but it cannot tell a reviewer how many plants are affected, how severe the condition is across the sample, or whether the pattern is localized or widespread. Room-level interpretation needs the photo plus scouting denominator, location, and distribution context.",
   "references": [
     "REF-IPM-001"
   ],

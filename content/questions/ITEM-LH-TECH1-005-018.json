@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What should happen when a canopy instruction conflicts with an active plant hold?",
   "choices": [
-    "Ignore the hold",
-    "Respect the hold and resolve the conflict through the controlled instruction/escalation process before continuing",
-    "Remove the hold label",
-    "Finish the task and document later"
+    "Continue the canopy task because the work order was issued after the hold was created.",
+    "Respect the active hold and resolve the instruction conflict through the controlled escalation process before continuing work on the held material.",
+    "Remove the hold label temporarily so the canopy task can be completed and replace it afterward.",
+    "Finish the task first and document the hold conflict at shift end."
   ],
   "correct": 1,
-  "rationale": "Respect the hold and resolve the conflict through the controlled instruction/escalation process before continuing. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "An active hold controls material status until it is formally resolved. A conflicting work order does not automatically cancel that status. Technician I should stop work on the held material and escalate the conflict so the correct instruction is confirmed before proceeding.",
   "references": [
     "REF-IPM-001"
   ],

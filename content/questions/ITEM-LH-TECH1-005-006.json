@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A branch cracks during authorized repositioning. What is the strongest response?",
   "choices": [
-    "Hide the damage with additional pruning",
-    "Follow the supplied plant-damage response, document the identified plant and stop forcing the branch",
-    "Continue bending until it matches nearby plants",
-    "Ignore it if the branch stays attached"
+    "Prune around the crack so the damage is less visible and continue the planned work.",
+    "Stop forcing the branch, follow the supplied plant-damage response, and document the identified plant and observed damage.",
+    "Continue repositioning until the branch matches nearby plants because the task is already authorized.",
+    "Ignore the crack if the branch remains attached and leaves stay upright."
   ],
   "correct": 1,
-  "rationale": "Follow the supplied plant-damage response, document the identified plant and stop forcing the branch. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A cracked branch is new plant damage that changes the condition under which the original work was authorized. Continuing to force the branch can worsen the injury, while hiding or ignoring it destroys useful evidence. Technician I should stop the action, follow the plant-damage response, and document the affected plant.",
   "references": [
     "REF-CANOPY-001",
     "REF-IPM-001"
