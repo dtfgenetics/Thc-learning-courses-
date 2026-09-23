@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A single canopy sensor suddenly differs from two colocated verified sensors after maintenance. What should happen before changing room controls?",
   "choices": [
-    "Verify the suspect sensor’s placement, condition and calibration/data quality.",
-    "Change HVAC settings to match the outlier.",
-    "Average all three values and call the issue resolved.",
-    "Ignore all sensor data for the rest of the crop cycle."
+    "Verify the suspect sensor's placement, physical condition, recent maintenance effects, and calibration/data quality before changing room controls.",
+    "Adjust the room controls toward the outlier value because a recently serviced sensor may be more accurate than older colocated sensors.",
+    "Use the average of all three sensors as the control value while continuing to watch for a persistent difference.",
+    "Temporarily exclude the two matching sensors from the comparison because agreement between them could reflect a shared calibration bias."
   ],
   "correct": 0,
-  "rationale": "A conflicting outlier should trigger data-quality verification before high-consequence control changes.",
+  "rationale": "A sudden disagreement that appears immediately after maintenance raises a data-quality question before it raises a control question. The outlier may reflect placement, damage, configuration, contamination, calibration drift, or a maintenance-related change. Verifying the suspect sensor against known-good or colocated references protects the room from an unnecessary high-consequence control adjustment. Averaging the readings can hide a faulty input, and acting on the outlier assumes accuracy before the measurement system has been checked.",
   "references": [
     "REF-ENV-TEMP-2025-001",
     "REF-VPD-002"
