@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which comparison best distinguishes a local microclimate from sensor bias?",
   "choices": [
-    "Compare readings taken in different rooms on different days.",
-    "Compare only target setpoints.",
-    "Compare equipment model numbers.",
-    "Compare the suspect and verified sensors while colocated, then compare representative locations under matched conditions."
+    "Compare the suspect sensor in its normal location with a verified sensor in a different room, then compare the room averages.",
+    "Compare both sensors against their configured target setpoints and use the sensor closest to target as the more credible reading.",
+    "Compare the model specifications and calibration dates of the two sensors before collecting any additional field measurements.",
+    "Colocate the suspect and verified sensors under matched conditions to test instrument agreement, then compare representative locations to test whether the original difference is spatial."
   ],
   "correct": 3,
-  "rationale": "Compare the suspect and verified sensors while colocated, then compare representative locations under matched conditions. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "To distinguish sensor bias from a real microclimate difference, the test must separate instrument effects from location effects. Colocation holds the environment as constant as practical and reveals whether the two sensors agree under the same exposure. After instrument agreement is established, measurements across representative locations show whether the original difference persists because the spaces themselves differ. Comparing targets, model numbers, or unmatched rooms cannot isolate those two explanations as cleanly.",
   "references": [
     "REF-VPD-002",
     "REF-ENV-TEMP-2025-001"
