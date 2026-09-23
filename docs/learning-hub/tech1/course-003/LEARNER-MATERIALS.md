@@ -2,7 +2,7 @@
 
 **Course:** Environmental, Light & Sensor Fundamentals  
 **Audience:** Technician I learners working in supervised, self-directed, lab or approved workplace-equivalent settings  
-**Status:** development learner package; not credential validation evidence
+**Status:** published owner-approved academic learner package; not professional credential validation evidence
 
 ## How to use this package
 

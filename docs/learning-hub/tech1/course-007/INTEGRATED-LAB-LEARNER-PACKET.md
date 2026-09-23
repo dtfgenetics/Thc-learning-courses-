@@ -1,7 +1,7 @@
 # Course 7 Integrated Lab Learner Packet
 
 **Course:** Integrated Cultivation Technician Practice Lab  
-**State:** development learner package
+**State:** published owner-approved integrated academic learner package
 
 ## Purpose
 

@@ -1,7 +1,7 @@
 # Course 5 Learner Materials
 
 **Course:** Propagation, Canopy, IPM Scouting & Crop Care  
-**State:** draft learner package
+**State:** published owner-approved academic learner package
 
 ## Purpose
 
