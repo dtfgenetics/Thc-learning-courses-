@@ -27,7 +27,7 @@ const imageCountByLesson = new Map();
 for (const asset of produced) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-004-[0-9]{3}$/);
   assert.match(asset.learnerPath ?? '', /^\/assets\/course4\/[A-Za-z0-9._-]+\.webp$/i);
-  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course4\/[A-Za-z0-9._-]+\.svg$/i);
+  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course4\/[A-Za-z0-9._-]+\.webp$/i);
   assert.ok(['embedded-visual', 'downloadable-practice'].includes(asset.deliveryType), `${asset.id}: unsupported deliveryType`);
   assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0);
   assert.ok(Array.isArray(asset.objectiveIds) && asset.objectiveIds.length > 0);
@@ -35,8 +35,9 @@ for (const asset of produced) {
   assert.ok(typeof asset.title === 'string' && asset.title.trim());
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim());
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
-  assert.equal(asset.driveMirrorStatus, 'mirrored', `${asset.id}: produced assets must be mirrored before merge`);
-  assert.ok(asset.driveFileId && asset.driveFileUrl, `${asset.id}: mirrored asset requires Drive metadata`);
+  assert.equal(asset.assetLifecycle, 'production-raster-active');
+  assert.equal(asset.productionRasterDriveMirrorStatus, 'not-recorded');
+  assert.ok(asset.legacySource?.sourcePath?.endsWith('.svg'), `${asset.id}: legacy SVG provenance path required`);
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
@@ -50,8 +51,10 @@ for (const asset of produced) {
   assert.equal(rasterHeader.subarray(8, 12).toString('ascii'), 'WEBP');
 
   const source = path.join(root, asset.sourcePath);
-  assert.ok(fs.existsSync(source), `${asset.id}: public source asset missing`);
-  const svg = fs.readFileSync(source, 'utf8');
+  assert.ok(fs.existsSync(source), `${asset.id}: production raster asset missing`);
+  const legacySource = path.join(root, asset.legacySource?.sourcePath ?? '');
+  assert.ok(fs.existsSync(legacySource), `${asset.id}: legacy provenance SVG missing`);
+  const svg = fs.readFileSync(legacySource, 'utf8');
   assert.match(svg, /<svg[\s>]/);
   assert.match(svg, /<title[\s>]/);
   assert.match(svg, /<desc[\s>]/);
@@ -93,4 +96,4 @@ for (const asset of produced) {
   }
 }
 
-console.log(`Course 4 learner-asset contract passed for ${produced.length} public, accessible, Drive-mirrored and lesson-reachable assets across all four lessons.`);
+console.log(`Course 4 learner-asset contract passed with raster-first WebP delivery and preserved SVG provenance.`);

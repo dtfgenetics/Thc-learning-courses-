@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "courseId": "COURSE-LH-TECH1-005",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 5 SVG files remain the verified learner-facing compatibility baseline. 9 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
+    "publicDelivery": "Owner-approved lossless WebP assets are the production learner-facing delivery format for Course 5. Legacy SVG files remain provenance/reference sources only and are not production instructional assets.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -23,8 +23,8 @@
       "jpg"
     ],
     "svgProductionTarget": false,
-    "legacySvgCompatibilityAllowed": true,
-    "rasterReplacementRequired": true
+    "legacySvgCompatibilityAllowed": false,
+    "rasterReplacementRequired": false
   },
   "driveStorage": {
     "folderId": "1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo",
@@ -38,11 +38,8 @@
       "deliveryType": "embedded-visual",
       "title": "Propagation identity and traceability workflow",
       "learnerPath": "/assets/course5/propagation-identity-traceability.webp",
-      "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-identity-traceability.svg",
-      "driveFileId": "1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099",
-      "driveFileUrl": "https://drive.google.com/file/d/1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-identity-traceability.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-01",
         "LESSON-LH-TECH1-005-04"
@@ -57,7 +54,7 @@
       ],
       "purpose": "Teach donor/lot/tray identity control, labels-before-movement, count reconciliation, exception handling and the rule that uncertain identity stops movement rather than being guessed.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -84,7 +81,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/propagation-identity-traceability.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-identity-traceability.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099",
+        "driveFileUrl": "https://drive.google.com/file/d/1w9kQ7BujJpvqfi2EEBLyNfdhwViOe099/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-002",
@@ -92,11 +97,8 @@
       "deliveryType": "embedded-visual",
       "title": "Canopy work-order scope and stop boundary",
       "learnerPath": "/assets/course5/canopy-work-order-stop-boundary.webp",
-      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
-      "driveFileId": "1xwcER7w319W-1gCdkaoEI6txhMj_8pHi",
-      "driveFileUrl": "https://drive.google.com/file/d/1xwcER7w319W-1gCdkaoEI6txhMj_8pHi/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-stop-boundary.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-02",
         "LESSON-LH-TECH1-005-04"
@@ -111,7 +113,7 @@
       ],
       "purpose": "Teach pre-task condition checks, supplied canopy scope, tissue-protection limits, stop conditions, sanitation and truthful exception recording.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -138,7 +140,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-stop-boundary.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1xwcER7w319W-1gCdkaoEI6txhMj_8pHi",
+        "driveFileUrl": "https://drive.google.com/file/d/1xwcER7w319W-1gCdkaoEI6txhMj_8pHi/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-003",
@@ -146,11 +156,8 @@
       "deliveryType": "embedded-visual",
       "title": "IPM scouting route and spatial-pattern evidence",
       "learnerPath": "/assets/course5/ipm-scouting-route-patterns.webp",
-      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
-      "driveFileId": "1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv",
-      "driveFileUrl": "https://drive.google.com/file/d/1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-route-patterns.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-03",
         "LESSON-LH-TECH1-005-04"
@@ -164,7 +171,7 @@
       ],
       "purpose": "Teach repeatable representative scouting, mapped locations, incidence, severity, spatial pattern, trend and quarantine/escalation status instead of scouting only obvious damage.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -191,7 +198,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-route-patterns.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv",
+        "driveFileUrl": "https://drive.google.com/file/d/1qoPtJRIkhJYgZhPx84p3hS-Xw3ZEQhNv/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-004",
@@ -199,11 +214,8 @@
       "deliveryType": "embedded-visual",
       "title": "Sign versus symptom evidence layers",
       "learnerPath": "/assets/course5/sign-vs-symptom-evidence.webp",
-      "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
-      "driveFileId": "1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH",
-      "driveFileUrl": "https://drive.google.com/file/d/1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/sign-vs-symptom-evidence.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-03"
       ],
@@ -216,7 +228,7 @@
       ],
       "purpose": "Separate symptoms from direct signs and show how location, incidence, severity, pattern and trend build evidence without automatically proving diagnosis or treatment authority.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -243,7 +255,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/sign-vs-symptom-evidence.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH",
+        "driveFileUrl": "https://drive.google.com/file/d/1DZTiX_Fr_gc0TSau9NcqyzeWsr1rM4wH/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-005",
@@ -251,11 +271,8 @@
       "deliveryType": "embedded-visual",
       "title": "Biosecurity, clean-to-dirty and quarantine workflow",
       "learnerPath": "/assets/course5/biosecurity-quarantine-flow.webp",
-      "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
-      "driveFileId": "1DqVj3ac_XBH89rJqllr3rC81nRH6szW7",
-      "driveFileUrl": "https://drive.google.com/file/d/1DqVj3ac_XBH89rJqllr3rC81nRH6szW7/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/biosecurity-quarantine-flow.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-01",
         "LESSON-LH-TECH1-005-02",
@@ -273,7 +290,7 @@
       ],
       "purpose": "Teach clean-to-dirty movement, tool-control checkpoints, suspect-material isolation/quarantine, breach documentation and escalation across propagation, canopy work and scouting.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -300,7 +317,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/biosecurity-quarantine-flow.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1DqVj3ac_XBH89rJqllr3rC81nRH6szW7",
+        "driveFileUrl": "https://drive.google.com/file/d/1DqVj3ac_XBH89rJqllr3rC81nRH6szW7/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-006",
@@ -308,11 +333,8 @@
       "deliveryType": "embedded-visual",
       "title": "Integrated crop-care handoff workflow",
       "learnerPath": "/assets/course5/integrated-crop-care-handoff.webp",
-      "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
-      "driveFileId": "1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC",
-      "driveFileUrl": "https://drive.google.com/file/d/1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/integrated-crop-care-handoff.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-04"
       ],
@@ -332,7 +354,7 @@
       ],
       "purpose": "Integrate identity, task status, evidence, biosecurity actions, authorized actions, unresolved conditions, escalation and next-step handoff across all three Course 5 workstreams.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -359,7 +381,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/integrated-crop-care-handoff.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC",
+        "driveFileUrl": "https://drive.google.com/file/d/1UAC-Vph5UEAHhNgXCQdJihcdQEF_JBrC/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-007",
@@ -367,11 +397,8 @@
       "deliveryType": "downloadable-practice",
       "title": "Propagation workstation practice worksheet",
       "learnerPath": "/assets/course5/propagation-workstation-practice.webp",
-      "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-workstation-practice.svg",
-      "driveFileId": "1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd",
-      "driveFileUrl": "https://drive.google.com/file/d/1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-workstation-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-01",
         "LESSON-LH-TECH1-005-04"
@@ -388,7 +415,7 @@
       ],
       "purpose": "Provide printable practice for donor/work-order identity, sanitation, tray mapping, count reconciliation, propagation condition, quarantine/isolation and handoff.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -415,7 +442,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/propagation-workstation-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/propagation-workstation-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd",
+        "driveFileUrl": "https://drive.google.com/file/d/1XxAAB-cCYSHUC2XDz0ogPZ366lSHC_qd/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-008",
@@ -423,11 +458,8 @@
       "deliveryType": "downloadable-practice",
       "title": "IPM scouting route practice worksheet",
       "learnerPath": "/assets/course5/ipm-scouting-practice.webp",
-      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-practice.svg",
-      "driveFileId": "1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ",
-      "driveFileUrl": "https://drive.google.com/file/d/1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-03",
         "LESSON-LH-TECH1-005-04"
@@ -444,7 +476,7 @@
       ],
       "purpose": "Provide printable scouting practice for route, map, sign/symptom classification, incidence, severity, spatial pattern, trend, quarantine and escalation without treatment selection.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -471,7 +503,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/ipm-scouting-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/ipm-scouting-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ",
+        "driveFileUrl": "https://drive.google.com/file/d/1b8sDjXVQWSOpNd5kZTTp4e6unWkiH3PQ/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-005-009",
@@ -479,11 +519,8 @@
       "deliveryType": "downloadable-practice",
       "title": "Canopy maintenance work-order practice worksheet",
       "learnerPath": "/assets/course5/canopy-work-order-practice.webp",
-      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-practice.svg",
-      "driveFileId": "1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9",
-      "driveFileUrl": "https://drive.google.com/file/d/1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-005-02",
         "LESSON-LH-TECH1-005-04"
@@ -501,7 +538,7 @@
       ],
       "purpose": "Provide printable practice for canopy work-order identity, pre-task plant condition, authorized action, stop conditions, sanitation/quarantine, before/after verification, exceptions and handoff.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -528,7 +565,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course5/canopy-work-order-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/canopy-work-order-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9",
+        "driveFileUrl": "https://drive.google.com/file/d/1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
   ],
   "ownerReleaseApproval": {
