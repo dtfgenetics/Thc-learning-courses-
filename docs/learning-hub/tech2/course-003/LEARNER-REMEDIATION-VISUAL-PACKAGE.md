@@ -70,12 +70,24 @@ Required evidence: priority statement; identifiers/instruction source; observati
 ## Visual production specification
 At least **4 primary instructional visuals**, one per current outcome. Additional visuals may be added without limit. Use exact terminology, no invented universal SOP/legal/product settings, phone-readable composition, meaningful external alt text/caption, non-color cues, illustrative-example labeling, and explicit academic-training/credential separation.
 
+## Current primary-visual production state
+
+The four SVG visual candidates currently referenced by Course 3 lessons are **legacy review/provenance assets only**. They do not satisfy the current production standard.
+
+Required production replacements:
+- `VIS-LH-TECH2-003-01` → high-resolution PNG/WebP for controlled batch readiness;
+- `VIS-LH-TECH2-003-02` → high-resolution PNG/WebP for measurement-quality and accept/hold logic;
+- `VIS-LH-TECH2-003-03` → high-resolution PNG/WebP for root-zone system interpretation;
+- `VIS-LH-TECH2-003-04` → high-resolution PNG/WebP for bounded troubleshooting and escalation.
+
+The raster replacements must preserve the existing captions, text alternatives, terminology and evidence references, then pass learner-runtime and responsive QA before counting toward production visual completion.
+
 ## Accessibility/manual UX
 Keyboard/focus; headings/landmarks; screen-reader semantics/order; 200%/400% zoom and reflow; mobile/tablet/desktop; contrast/non-color cues; form/table labels; assessment errors/instructions; visual text alternatives; print/download readability.
 
 ## Evidence/authority boundary
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.
+This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 3 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless it is first taught directly in Course 3. The course does not confer independent recipe-design authority. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING`. Course completion alone does not validate or issue Technician II certification.
