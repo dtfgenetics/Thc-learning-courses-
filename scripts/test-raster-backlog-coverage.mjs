@@ -35,7 +35,8 @@ for(const asset of c1Registry.assets??[]){
 for(let n=2;n<=6;n++){
   const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
   for(const asset of registry.assets??[]){
-    add(asset.sourcePath,asset.id,registry.courseId,!['released','owner-approved-production-release'].includes(asset.rasterReplacement?.status));
+    const legacySvg=asset.legacySource?.sourcePath ?? asset.rasterReplacement?.generatedFrom;
+    add(legacySvg,asset.id,registry.courseId,!['released','owner-approved-production-release'].includes(asset.rasterReplacement?.status));
   }
 }
 const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
