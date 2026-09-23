@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH1-001-FINAL",
   "title": "Safety, Responsible Practice & Cultivation Workflows — Course Assessment",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "published",
   "purpose": "summative",
   "competencies": [
@@ -131,6 +131,12 @@
     "untaughtMaterialAllowed": false,
     "teachingProvenanceMode": "derived-from-canonical-course-lessons",
     "teachingProvenanceAudit": "scripts/audit-course1-objective-coverage.mjs",
-    "testToTeachingAudit": "docs/learning-hub/tech1/course-001/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-001/TEST-TO-TEACHING-MAP.md",
+    "itemQualityRevision": {
+      "date": "2026-09-23",
+      "scope": "All 36 summative items revised for stronger distractor plausibility and explanatory rationales while preserving keys, objectives, competencies, references, Bloom levels, difficulty, blueprint, item membership, stimuli, and test-to-teaching mappings.",
+      "reviewRequired": true,
+      "professionalValidationConferred": false
+    }
   }
 }
