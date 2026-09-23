@@ -20,7 +20,7 @@ The check detects drift in either direction: a readiness flag cannot turn true w
 
 Course 1 is the only canonical course whose older completion ledger still reports machine-resolvable work.
 
-`npm run course1:raster-public:verify` checks the live site against all **23** release-approved raster paths from `visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json`, verifies exact build identity, and reports failed paths.
+`npm run course1:raster-public:verify` checks the live site against all **23** produced raster learner paths from the canonical `visuals/ASSET-REGISTRY.json` (with the release manifest retained as supporting release-control evidence), verifies exact build identity, and reports failed paths.
 
 Use `--write` only after a successful live verification. That records the deployment evidence and closes the Course 1 legacy machine queue without altering any human or credential-release gate.
 

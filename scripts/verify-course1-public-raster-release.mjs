@@ -9,15 +9,16 @@ const baseUrl=(value('--base-url')??'https://dtfseeds.com').replace(/\/$/,'');
 const write=has('--write');
 
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json'),'utf8'));
+const registry=JSON.parse(fs.readFileSync(path.join(root,'visuals/ASSET-REGISTRY.json'),'utf8'));
 const deploymentLedger=JSON.parse(fs.readFileSync(path.join(root,'registry/deployments.json'),'utf8'));
 const completionPath=path.join(root,'registry/course1-completion-status.json');
 const completion=JSON.parse(fs.readFileSync(completionPath,'utf8'));
 
-const assets=(manifest.concepts??[])
-  .filter(x=>x.releaseApproved===true&&typeof x.candidate?.targetPublicPath==='string')
-  .map(x=>({conceptId:x.conceptId,path:x.candidate.targetPublicPath,sha256:x.candidate.sha256??null,registryAssetId:x.candidate.registryAssetId??null}));
+const assets=(registry.assets??[])
+  .filter(x=>x.status==='produced'&&typeof x.learnerPath==='string'&&/\.(?:png|webp|jpe?g)$/i.test(x.learnerPath))
+  .map(x=>({registryAssetId:x.id,path:x.learnerPath}));
 
-if(assets.length!==23) throw new Error(`Expected 23 released Course 1 raster assets, found ${assets.length}`);
+if(assets.length!==23) throw new Error(`Expected 23 produced Course 1 raster assets in ASSET-REGISTRY.json, found ${assets.length}`);
 if(new Set(assets.map(x=>x.path)).size!==23) throw new Error('Course 1 release manifest has duplicate public raster paths');
 
 const idResp=await fetch(`${baseUrl}/api/build-info`,{headers:{accept:'application/json','user-agent':'thc-course1-raster-verifier/1.0'}});
@@ -58,8 +59,8 @@ const record={
     failedPaths:failed.map(x=>x.path)
   },
   visualAuthority:[
-    'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json',
     'visuals/ASSET-REGISTRY.json',
+    'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json',
     'content/lessons/LESSON-LH-TECH1-001-*.json'
   ],
   boundary:'This record verifies public delivery of the 23 governed Course 1 raster learner assets and exact deployed build identity only. Human accessibility/UX review and certification-release evidence remain separate.'
