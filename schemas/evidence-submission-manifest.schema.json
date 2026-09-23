@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/evidence-submission-manifest.schema.json",
+  "title": "THC Academy Evidence Submission Manifest",
+  "type": "object",
+  "required": [
+    "id",
+    "scope",
+    "targetId",
+    "targetVersion",
+    "status",
+    "submittedBy",
+    "submittedAt",
+    "evidenceRecordIds",
+    "declarations",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^EVSUB-[A-Z0-9-]+$"
+    },
+    "scope": {
+      "enum": [
+        "course",
+        "credential-program",
+        "production-control"
+      ]
+    },
+    "targetId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "targetVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "ready-for-review",
+        "returned",
+        "accepted",
+        "invalidated"
+      ]
+    },
+    "submittedBy": {
+      "type": "string",
+      "minLength": 3
+    },
+    "submittedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidenceRecordIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "declarations": {
+      "type": "object",
+      "required": [
+        "noSecrets",
+        "noPrivateKeys",
+        "noLearnerPII",
+        "exactVersionEvidence",
+        "noFabricatedCompletion"
+      ],
+      "properties": {
+        "noSecrets": {
+          "const": true
+        },
+        "noPrivateKeys": {
+          "const": true
+        },
+        "noLearnerPII": {
+          "const": true
+        },
+        "exactVersionEvidence": {
+          "const": true
+        },
+        "noFabricatedCompletion": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewerId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviewedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "decisionNotes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
