@@ -3,18 +3,10 @@
   "title": "Observation, Pattern, Context and Diagnostic Boundaries",
   "version": "1.1.0",
   "status": "published",
-  "competencies": [
-    "COMP-PLANT-BIO-001",
-    "COMP-PRO-SOP-001"
-  ],
-  "learningObjectives": [
-    "LO-LH-TECH1-002-03",
-    "LO-LH-TECH1-002-05"
-  ],
+  "competencies": ["COMP-PLANT-BIO-001", "COMP-PRO-SOP-001"],
+  "learningObjectives": ["LO-LH-TECH1-002-03", "LO-LH-TECH1-002-05"],
   "estimatedMinutes": 60,
-  "references": [
-    "REF-PLANT-BIO-001"
-  ],
+  "references": ["REF-PLANT-BIO-001"],
   "assessment": null,
   "extensions": {
     "publicSources": [
@@ -29,64 +21,38 @@
   "content": {
     "overview": "A Technician I creates reliable evidence for diagnosis without pretending that every visible symptom proves a cause. This lesson trains learners to separate direct observations from interpretations, describe incidence and spatial pattern, add available environmental or work-history context, recognize urgent abnormalities, and escalate when the evidence or authority boundary does not support an independent conclusion.",
     "vocabulary": [
-      {
-        "term": "observation",
-        "definition": "A description of directly visible, measured or otherwise documented evidence without an unsupported causal conclusion."
-      },
-      {
-        "term": "interpretation",
-        "definition": "A reasoned meaning assigned to observations that may remain provisional until additional evidence confirms it."
-      },
-      {
-        "term": "incidence",
-        "definition": "The proportion or count of observed units showing a defined condition within the sampled population."
-      },
-      {
-        "term": "differential",
-        "definition": "A set of plausible explanations considered when evidence does not yet support one confirmed cause."
-      }
+      {"term":"observation","definition":"A description of directly visible, measured or otherwise documented evidence without an unsupported causal conclusion."},
+      {"term":"interpretation","definition":"A reasoned meaning assigned to observations that may remain provisional until additional evidence confirms it."},
+      {"term":"incidence","definition":"The proportion or count of observed units showing a defined condition within the sampled population."},
+      {"term":"differential","definition":"A set of plausible explanations considered when evidence does not yet support one confirmed cause."}
     ],
     "sections": [
       {
         "title": "Describe before you diagnose",
         "body": "Color change, tissue damage, posture, architecture, root appearance, developmental differences and spatial patterns can be recorded directly. A causal label such as nutrient deficiency, pathogen, irrigation failure or genetic weakness requires supporting evidence. Technician I records the observation and routes the case when diagnosis exceeds the task or available evidence.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
         "title": "Pattern changes the investigation",
         "body": "One plant, one bench, one irrigation zone, one room edge and an entire room represent different evidence patterns. Record counts or proportions where practical, location and severity using supplied definitions, and whether neighboring comparison plants show the same condition. Public extension diagnostic guidance likewise treats whole-plant distribution and site pattern as important clues rather than as stand-alone proof of cause.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ],
-        "extensions": {
-          "sourceHref": "https://extension.psu.edu/overview-of-plant-diagnostics"
-        }
+        "references": ["REF-PLANT-BIO-001"],
+        "extensions": {"sourceHref":"https://extension.psu.edu/overview-of-plant-diagnostics"}
       },
       {
         "title": "Context strengthens a note without proving cause",
         "body": "Recent irrigation, environmental readings, lighting or equipment events, transplant or canopy work, IPM history and developmental stage can make an observation more useful. Diagnostic guidance emphasizes plant identity, site conditions and management history because different causes can produce similar symptoms. Context should therefore remain attached as evidence unless the supplied procedure and additional evidence justify a confirmed conclusion.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ],
-        "extensions": {
-          "sourceHref": "https://extension.psu.edu/overview-of-plant-diagnostics"
-        }
+        "references": ["REF-PLANT-BIO-001"],
+        "extensions": {"sourceHref":"https://extension.psu.edu/overview-of-plant-diagnostics"}
       },
       {
         "title": "Interpretation is a hypothesis layer",
         "body": "A strong interpretation narrows possibilities and identifies what evidence would distinguish them; it does not erase uncertainty. When multiple causes remain plausible, preserve the differential and the missing evidence rather than converting the most familiar explanation into a fact.",
-        "extensions": {
-          "sourceHref": "https://extension.psu.edu/overview-of-plant-diagnostics"
-        }
+        "extensions": {"sourceHref":"https://extension.psu.edu/overview-of-plant-diagnostics"}
       },
       {
         "title": "Escalate consequence and uncertainty",
         "body": "Sudden widespread wilt, suspected spreading pest or disease evidence, unexpected reproductive morphology, strong root-zone abnormality, substantial zone differences or damage associated with equipment or work can require prompt escalation. Follow the supplied procedure and preserve the original condition before changing it when safe to do so.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "references": ["REF-PLANT-BIO-001"]
       }
     ],
     "workedExamples": [
@@ -105,41 +71,15 @@
       {
         "type": "table",
         "title": "Evidence layers in a crop note",
-        "columns": [
-          "Layer",
-          "Example",
-          "How to treat it"
-        ],
+        "columns": ["Layer", "Example", "How to treat it"],
         "rows": [
-          [
-            "Direct observation",
-            "Six lower leaves show interveinal yellowing",
-            "Record as observed evidence"
-          ],
-          [
-            "Pattern",
-            "Six of twenty sampled plants, concentrated in Zone B",
-            "Record distribution and sample context"
-          ],
-          [
-            "Context",
-            "Irrigation event completed 45 minutes earlier",
-            "Attach as relevant history, not automatic proof"
-          ],
-          [
-            "Interpretation",
-            "Irrigation delivery could be involved",
-            "Keep provisional unless evidence supports confirmation"
-          ],
-          [
-            "Unsupported diagnosis",
-            "The room has a specific deficiency",
-            "Do not record as fact without sufficient evidence/authority"
-          ]
+          ["Direct observation", "Six lower leaves show interveinal yellowing", "Record as observed evidence"],
+          ["Pattern", "Six of twenty sampled plants, concentrated in Zone B", "Record distribution and sample context"],
+          ["Context", "Irrigation event completed 45 minutes earlier", "Attach as relevant history, not automatic proof"],
+          ["Interpretation", "Irrigation delivery could be involved", "Keep provisional unless evidence supports confirmation"],
+          ["Unsupported diagnosis", "The room has a specific deficiency", "Do not record as fact without sufficient evidence/authority"]
         ],
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
         "type": "image",
@@ -148,18 +88,14 @@
         "src": "/assets/course2/observation-interpretation-diagnosis-boundary.svg",
         "alt": "Four-stage diagram moving from direct observation to spatial pattern and context, then provisional interpretation, and finally confirmation or escalation, with reminders that symptoms, timing and context can narrow possibilities without proving a single cause.",
         "caption": "Build the evidence chain before naming a cause: observe first, preserve pattern and context, keep interpretation provisional, then confirm or escalate according to the available evidence and role.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
         "type": "callout",
         "title": "A clue is not proof",
         "tone": "evidence",
         "body": "Plant diagnostic guidance uses host identity, symptoms/signs, distribution, site conditions and history together because different problems can look similar. Treat each clue as evidence that changes the differential—not as automatic confirmation of one cause.",
-        "extensions": {
-          "sourceHref": "https://extension.psu.edu/overview-of-plant-diagnostics"
-        }
+        "extensions": {"sourceHref":"https://extension.psu.edu/overview-of-plant-diagnostics"}
       },
       {
         "type": "scenario",
@@ -174,9 +110,7 @@
         ],
         "answer": "Record the zone pattern, compare representative points, check supplied irrigation/environment status and escalate unresolved deviation",
         "feedback": "The spatial pattern and timing are useful evidence, but neither proves the cause or authorizes independent control redesign.",
-        "references": [
-          "REF-PLANT-BIO-001"
-        ]
+        "references": ["REF-PLANT-BIO-001"]
       },
       {
         "type": "resource",
