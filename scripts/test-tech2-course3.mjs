@@ -6,7 +6,9 @@ const program=read('content/credential-programs/CREDPROG-CULT-TECH-II-001.json')
 const finalA=read('content/assessments/ASSESS-LH-TECH2-003-FINAL.json');
 const formA=read('content/assessments/ASSESS-LH-TECH2-003-M01.json');
 const practical=read('content/performance-assessments/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.json');
-assert.equal(course.version,'0.2.0'); assert.equal(course.status,'draft'); assert.equal(course.finalAssessment,finalA.id);
+assert.equal(course.version,'0.2.0'); assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false); assert.equal(course.finalAssessment,finalA.id);
 assert.ok(course.modules.includes('MOD-LH-TECH2-003-FERTIGATION'));
 assert.equal(course.extensions.mappedPractical,practical.id);
 assert.equal(course.extensions.independentRecipeDesignAuthorityConferred,false);
