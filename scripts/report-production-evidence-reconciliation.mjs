@@ -22,6 +22,16 @@ for(const control of contract.controls??[]){
     area,gate,committed:Boolean(readiness.areas?.[area]?.gates?.[gate])
   }));
   const shouldBeTrue=status==='approved';
+  const contractStatus=control.status??'pending';
+  if(status==='approved'&&contractStatus!=='approved'){
+    problems.push(`${control.id}: exact production evidence is approved but contract status=${contractStatus}`);
+  }
+  if(status!=='approved'&&contractStatus==='approved'){
+    problems.push(`${control.id}: contract status is approved but latest exact production evidence state is ${status}`);
+  }
+  if(status==='approved'&&!(control.evidenceRefs??[]).includes(latest?.id)){
+    problems.push(`${control.id}: approved contract does not reference latest approved evidence ${latest?.id??'missing'}`);
+  }
   for(const m of mapped){
     if(m.committed!==shouldBeTrue){
       problems.push(`${control.id}: readiness ${m.area}.${m.gate}=${m.committed} but exact evidence state is ${status}`);
@@ -30,6 +40,7 @@ for(const control of contract.controls??[]){
   rows.push({
     controlId:control.id,
     evidenceStatus:status,
+    contractStatus,
     latestEvidenceId:latest?.id??null,
     observedAt:latest?.observedAt??null,
     requiredEvidenceCount:(control.requiredEvidence??[]).length,
