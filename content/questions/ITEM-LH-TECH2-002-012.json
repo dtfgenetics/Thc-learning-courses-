@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A blocked powered component can only be cleared by removing a guard. The operator SOP does not authorize guard removal. What should the technician do?",
   "choices": [
-    "Remove the guard because the blockage is visible.",
-    "Hold the stop button while reaching in.",
-    "Ask another technician to remove the guard.",
-    "Stop at the operator-care boundary and route the work through the authorized servicing process."
+    "Remove the guard if the equipment is stopped and the blockage is visible, because no troubleshooting beyond the obstruction is required.",
+    "Keep the stop control engaged while clearing the blockage so the technician maintains control of the equipment state.",
+    "Have a second trained technician observe while the guard is removed, since two-person verification reduces servicing risk.",
+    "Stop at the operator-care boundary and route the task through the authorized servicing and hazardous-energy control process."
   ],
   "correct": 3,
-  "rationale": "Stop at the operator-care boundary and route the work through the authorized servicing process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "Removing a guard to access a powered component can expose the worker to hazardous energy or moving parts and crosses beyond routine operator care when the governing procedure does not authorize it. Holding a stop control or using a second person is not a substitute for the employer's authorized servicing and energy-control process. The correct boundary decision is to preserve the safe state, stop the unauthorized task, and transfer the work to personnel and procedures qualified for servicing.",
   "references": [
     "REF-OSHA-1910-147-LOTO"
   ]

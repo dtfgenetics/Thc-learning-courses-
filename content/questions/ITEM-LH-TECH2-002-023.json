@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician believes a sensor is wrong and changes its recorded values to match a nearby instrument. What is the primary problem?",
   "choices": [
-    "Nearby instruments can never be used as references.",
-    "Sensor values may only be recorded once per day.",
-    "The original evidence was altered instead of preserved and dispositioned through a documented data-quality process.",
-    "The technician should have changed the setpoint too."
+    "The technician used a nearby instrument as a reference without first proving that the reference instrument was within calibration.",
+    "The technician failed to retain both values long enough to calculate a correction factor for the suspect sensor.",
+    "The technician altered the original evidence instead of preserving it and resolving the suspected error through a documented data-quality process.",
+    "The technician should have changed the controller setpoint at the same time so the operating record remained internally consistent."
   ],
   "correct": 2,
-  "rationale": "The original evidence was altered instead of preserved and dispositioned through a documented data-quality process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "When a sensor value is suspected to be wrong, the original record should be preserved and the concern documented through a controlled data-quality process. That process may include comparison with verified references, calibration checks, annotations, or formal invalidation—but it should not silently rewrite historical evidence to match an expected value. Altering the record destroys traceability and makes later reconstruction of the event and the technician's reasoning much more difficult.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

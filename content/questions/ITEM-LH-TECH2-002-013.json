@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A pressurized irrigation component is shut off, but the gauge still shows pressure. What is the correct boundary decision?",
   "choices": [
-    "Preserve safe status and refer the pressure-release/disassembly work to the authorized servicing process.",
-    "Loosen the fitting slowly.",
-    "Tap the gauge until pressure appears to fall.",
-    "Have a coworker hold the hose while opening it."
+    "Preserve the safe shutdown condition and refer pressure release, isolation, or disassembly to the authorized servicing process before opening the system.",
+    "Crack the fitting slowly while monitoring the gauge so residual pressure can bleed off in a controlled way.",
+    "Cycle the local control once to see whether the gauge drops, then proceed if the reading appears stable.",
+    "Have a second worker stabilize the hose or fitting while the technician opens the connection gradually."
   ],
   "correct": 0,
-  "rationale": "Preserve safe status and refer the pressure-release/disassembly work to the authorized servicing process. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A shutoff indication does not prove that stored hydraulic or pneumatic energy is gone. A gauge that still shows pressure is direct evidence that hazardous energy may remain. Opening, loosening, or manipulating the component before the authorized release/isolation process can expose workers to sudden movement or fluid release. The correct response is to preserve the safe status and transfer the task to the controlled servicing process that addresses stored energy.",
   "references": [
     "REF-OSHA-1910-147-LOTO"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A suspected bad sensor produced data for six hours. What should happen to those historical values?",
   "choices": [
-    "Overwrite them with the room average.",
-    "Preserve them with a documented data-quality flag and the evidence supporting the concern.",
-    "Delete them after replacing the sensor.",
-    "Mark the entire crop cycle invalid without review."
+    "Replace the six-hour period with the room average so downstream users are not misled by data that may be invalid.",
+    "Preserve the original values, flag the affected interval as potentially unreliable, and document the evidence and verification steps that support the concern.",
+    "Delete the suspect interval after the sensor is replaced because data known to be unreliable should not remain in the production record.",
+    "Mark the entire environmental record from that crop cycle as invalid because one sensor's reliability is uncertain."
   ],
   "correct": 1,
-  "rationale": "Preserve them with a documented data-quality flag and the evidence supporting the concern. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "Suspect data should remain reconstructable. The strongest action is to preserve the original observations, clearly identify the interval whose quality is in question, and document why it is being challenged and what verification was performed. Overwriting or deleting the data destroys traceability, while invalidating the entire crop cycle overstates the scope of the problem. The goal is to distinguish questionable data from trusted data without rewriting history.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

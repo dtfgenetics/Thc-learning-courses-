@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IRRIGATION-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A nominal 2-L/h emitter is installed at every site. What does that prove about current distribution?",
   "choices": [
-    "It proves the nominal rating only; representative measured output is still required to evaluate installed performance.",
-    "Every emitter currently delivers exactly 2 L/h.",
-    "Pressure and filtration cannot affect delivery.",
-    "Only the first emitter on each line needs measurement."
+    "Treat the 2-L/h rating as a nominal specification and verify representative installed output before concluding that distribution is performing as intended.",
+    "Use the manufacturer rating as the current delivery value unless there is visible evidence of clogging or leakage.",
+    "Measure one emitter at the start of each irrigation line and apply that result to the remaining sites in the zone.",
+    "Use total zone flow divided by emitter count as sufficient proof that each outlet is delivering approximately 2 L/h."
   ],
   "correct": 0,
-  "rationale": "It proves the nominal rating only; representative measured output is still required to evaluate installed performance. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A nominal emitter rating describes expected performance under specified conditions; it does not prove what every installed outlet is delivering now. Pressure variation, filtration condition, clogging, wear, line length, elevation, and installation differences can change actual output. Representative catch or flow measurements across the zone are therefore needed to evaluate installed distribution. A single-point measurement or zone-average calculation can hide localized under- or over-delivery.",
   "references": [
     "REF-IRRIGATION-001"
   ]

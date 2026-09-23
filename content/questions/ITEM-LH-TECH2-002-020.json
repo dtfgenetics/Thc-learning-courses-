@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IRRIGATION-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Catch volumes vary widely but pressure was measured only at the pump. What additional evidence has highest value?",
   "choices": [
-    "The pump nameplate only.",
-    "The nutrient brand only.",
-    "The previous crop yield only.",
-    "Representative downstream pressure/output and filtration condition across near/far and problem-prone positions."
+    "Use the pump nameplate and pump discharge pressure together to estimate whether downstream delivery should be adequate.",
+    "Compare nutrient formulation and substrate dryback by location because large catch-volume differences can reflect plant demand as well as hydraulic performance.",
+    "Compare the previous crop's irrigation uniformity and yield data to determine whether the current pattern is new.",
+    "Measure representative downstream pressure and emitter output across near, far, and problem-prone positions and inspect filtration condition."
   ],
   "correct": 3,
-  "rationale": "Representative downstream pressure/output and filtration condition across near/far and problem-prone positions. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "Pump pressure alone cannot show what pressure and flow actually reach emitters throughout the zone. Wide catch-volume variation calls for measurements where the problem occurs: representative downstream pressure, actual emitter output, line position, and filtration condition. Those data can identify pressure loss, restrictions, or localized delivery defects that a pump reading misses. Historical crop data and plant demand may add context, but they cannot replace direct verification of the current hydraulic distribution.",
   "references": [
     "REF-IRRIGATION-001"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two probes disagree when separated but agree when colocated. What does that result most strongly support?",
   "choices": [
-    "Both sensors need replacement.",
-    "The controller is necessarily defective.",
-    "The original difference was likely spatial rather than an instrument offset.",
-    "The room average is sufficient for all crop decisions."
+    "Treat both sensors as suspect because agreement during colocation can occur even when both instruments share the same calibration bias.",
+    "Treat the controller as the likely cause because the probes disagree only when operating in their normal positions.",
+    "Interpret the colocation agreement as evidence that the original difference was probably spatial or placement-related rather than a persistent instrument offset.",
+    "Use the room-average value for future decisions because the colocation test shows that location-specific measurements add little value."
   ],
   "correct": 2,
-  "rationale": "The original difference was likely spatial rather than an instrument offset. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "When two probes disagree in separate locations but agree when colocated, the result argues against a persistent offset between the instruments and increases the likelihood that the original difference reflected real spatial conditions or placement effects. It does not prove both instruments are perfect, and it does not eliminate the value of spatial monitoring. The test is useful because it changes the explanation from 'the sensors disagree' to 'the locations may differ.'",
   "references": [
     "REF-VPD-002",
     "REF-ENV-TEMP-2025-001"
