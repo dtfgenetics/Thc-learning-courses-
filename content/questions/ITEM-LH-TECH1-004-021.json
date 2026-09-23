@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which record correctly separates plan from reality?",
   "choices": [
-    "Work order target EC recorded separately from the actual identified-sample EC measurement",
-    "Target EC copied into the measured-value field",
-    "Only the target retained",
-    "Only the word normal recorded"
+    "Record the work-order target EC separately from the actual EC measured on the identified sample.",
+    "Copy the target EC into the measured-value field so the record shows the intended condition.",
+    "Keep only the target because planned values are more important than one observation.",
+    "Record only “normal” if the measured value was close to target."
   ],
   "correct": 0,
-  "rationale": "Work order target EC recorded separately from the actual identified-sample EC measurement. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Plan and reality should remain distinct. The target EC shows what the work order intended; the measured EC shows what the identified sample actually contained. Keeping both values separate makes deviations visible and preserves a reconstructable record.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IRRIGATION-001"
