@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A donor planned for propagation shows new pest-like stippling. What should happen before cuttings are distributed?",
   "choices": [
-    "Hold or flag the donor material and follow the plant-health/biosecurity escalation process before propagation.",
-    "Take cuttings first so production stays on schedule.",
-    "Move the donor into the clean rooting area for observation.",
-    "Share tools with healthy donors to compare symptoms."
+    "Hold or flag the donor material and follow the defined plant-health and biosecurity process before distributing cuttings.",
+    "Take the scheduled cuttings first and quarantine the rooted trays later if the donor symptoms progress.",
+    "Move the donor into the clean propagation area so symptoms can be compared under the same environment as healthy stock.",
+    "Use dedicated tools on the suspect donor, then distribute cuttings if no pest is visible on the harvested material."
   ],
   "correct": 0,
-  "rationale": "Hold or flag the donor material and follow the plant-health/biosecurity escalation process before propagation.",
+  "rationale": "A donor with new pest-like stippling can transfer a plant-health problem into many downstream propagules. The donor should therefore be held or flagged and evaluated through the defined plant-health and biosecurity process before cuttings are distributed. Propagating first creates a multiplication pathway, while moving the donor into clean space or relying only on visible pests weakens containment.",
   "references": [
     "REF-IPM-001",
     "REF-PROP-001"
