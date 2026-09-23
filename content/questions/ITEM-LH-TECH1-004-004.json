@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which statement about EC is most accurate?",
   "choices": [
-    "EC directly reports nitrogen concentration",
-    "EC is identical to pH",
-    "EC proves which ion is deficient",
-    "EC reflects overall dissolved ionic conductivity but does not identify individual nutrients"
+    "EC directly reports how much nitrogen is dissolved in the solution.",
+    "EC and pH describe the same property from different instruments.",
+    "EC identifies which nutrient ion is deficient when a plant shows symptoms.",
+    "EC reflects overall ionic conductivity in solution but does not identify the individual ions or nutrients contributing to it."
   ],
   "correct": 3,
-  "rationale": "EC reflects overall dissolved ionic conductivity but does not identify individual nutrients. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "EC is a bulk conductivity measurement. It can indicate whether dissolved ionic concentration is relatively higher or lower, but it cannot tell which specific nutrient is present, deficient, or excessive. Interpreting individual nutrients requires additional context or measurements beyond EC alone.",
   "references": [
     "REF-IRRIGATION-001"
   ],
