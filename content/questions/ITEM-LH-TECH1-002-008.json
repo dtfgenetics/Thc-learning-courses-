@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Most plants show similar inflorescence development, while about 15% visibly lag. Which statement is best?",
   "choices": [
-    "The crop has one uniform stage because a majority agrees",
-    "The lagging plants are necessarily diseased",
-    "Stage can only be determined after harvest",
-    "Document the dominant morphology and the lagging subgroup rather than forcing one label on every plant"
+    "Assign the whole crop one stage because the large majority shows the same morphology.",
+    "Treat the lagging 15% as diseased until another cause is demonstrated.",
+    "Delay stage recording until harvest so the final developmental outcome is known.",
+    "Record the dominant developmental pattern and the visibly lagging subgroup rather than forcing a single stage label onto every plant."
   ],
   "correct": 3,
-  "rationale": "Mixed development is meaningful evidence and should be recorded as a distribution.",
+  "rationale": "A majority pattern is useful, but it does not make the lagging subgroup disappear. Recording both the dominant morphology and the proportion that visibly differs preserves the real developmental distribution and gives later reviewers information they can compare with cultivar, environment, plant history, or other context.",
   "references": [
     "REF-FLOWER-MORPH-2023-001"
   ],
