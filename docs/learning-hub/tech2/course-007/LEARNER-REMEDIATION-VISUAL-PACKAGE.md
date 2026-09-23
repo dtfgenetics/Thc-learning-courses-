@@ -2,7 +2,7 @@
 
 **Course:** Traceability, Production Metrics, Shift Coordination & Peer Support  
 **Version anchor:** 0.2.0  
-**Status:** authored development support; human review open
+**Status:** published owner-approved academic learner support; human review open
 
 ## Evidence-centered loop
 Orient → observe/measure → compare → reason → act within authority → document → reassess in an equivalent context.

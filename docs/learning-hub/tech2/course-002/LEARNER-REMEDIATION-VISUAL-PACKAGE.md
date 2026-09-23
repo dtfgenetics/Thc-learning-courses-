@@ -2,7 +2,7 @@
 
 **Course:** Environmental Data, Sensors & Equipment Response  
 **Version anchor:** 0.2.0  
-**Package status:** authored development support; human review remains open
+**Package status:** published owner-approved academic learner support; human review remains open
 
 ## Learner-use model
 
@@ -126,6 +126,6 @@ Human review remains required for:
 
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-Course-specific formative and summative items are separate from the public Technician II credential-development bank. Every summative objective is mapped back to dedicated Course 2 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 2. Course completion remains draft/development evidence and does not replace Practical B, private operational credential forms, program validation, standard setting or final release approval.
+Course-specific formative and summative items are separate from the public Technician II credential-development bank. Every summative objective is mapped back to dedicated Course 2 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 2. Academic course completion is published educational evidence but does not replace Practical B, private operational credential forms, program validation, standard setting or final release approval.
 
 Mapped performance evidence: `PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION`. Public course completion does not itself validate or issue the Technician II professional credential.
