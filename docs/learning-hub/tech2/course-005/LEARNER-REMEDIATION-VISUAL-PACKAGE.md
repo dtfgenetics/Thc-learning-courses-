@@ -83,3 +83,9 @@ Use canonical evidence-backed science and operational references for durable pri
 This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 5 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 5. The course does not authorize unsupported genotype/contamination conclusions or independent high-risk intervention. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW`. Academic course completion alone does not validate or issue Technician II certification.
+
+## Published learner job aid
+
+- **DL-TECH2-PROP-CANOPY-001 — Technician II Propagation and Canopy Performance Troubleshooting Log**
+- Download: `/downloads/tech2-propagation-canopy-troubleshooting.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.
