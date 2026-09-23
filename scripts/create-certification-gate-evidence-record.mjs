@@ -17,7 +17,7 @@ const limitations=(get('--limitations')??'').split('|').map(x=>x.trim()).filter(
 const allowedGates=new Set([
   'exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis',
   'practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting',
-  'secureOperationalFormReadiness','credentialAuthorization'
+  'secureOperationalFormReadiness','occupationalProgramValidation','credentialAuthorization'
 ]);
 const allowedStatuses=new Set(['in-progress','evidence-complete','approved','revision-required']);
 
