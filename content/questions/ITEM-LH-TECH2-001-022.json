@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which supervisor-ready statement best represents bounded diagnostic certainty?",
   "choices": [
-    "“Root-zone dysfunction is definitely the cause.”",
+    "“Root-zone dysfunction is the most likely cause, and the current evidence is sufficient to begin corrective action while confirmation is completed.”",
     "“Root-zone dysfunction is the leading hypothesis; sensor and irrigation evidence support it, but root inspection and matched-zone comparison are still needed before cause is confirmed.”",
-    "“Something is wrong; no evidence summary is needed.”",
-    "“All possible causes are equally likely forever.”"
+    "“The evidence is mixed, so the safest report is to list all plausible causes without ranking them until complete confirmation is available.”",
+    "“The current pattern is consistent with root-zone dysfunction, but because one environmental variable is also abnormal, neither hypothesis should be prioritized yet.”"
   ],
   "correct": 1,
-  "rationale": "A useful handoff identifies the leading hypothesis, supporting evidence, uncertainty and next verification.",
+  "rationale": "A supervisor-ready handoff should be decisive about what the evidence supports while remaining explicit about uncertainty. The keyed statement names the leading hypothesis, cites supporting evidence, identifies the remaining uncertainty, and specifies the next discriminating checks. Beginning corrective action before confirmation may be justified in some risk situations but overstates what this evidence alone establishes. Refusing to rank hypotheses wastes the information already collected, while treating every unresolved alternative as equally likely obscures the actual evidence balance.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001"
   ]
