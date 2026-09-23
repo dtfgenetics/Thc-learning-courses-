@@ -49,7 +49,11 @@ const courseGateDependencies={
 };
 
 function depsFor(course,gate){
-  return (courseGateDependencies[gate]??[]).map(d=>{
+  const deps=[...(courseGateDependencies[gate]??[])];
+  if(gate==='standardSetting'&&gateStatus(course,'itemAnalysis')==='not-applicable'&&gateStatus(course,'practicalAssessorCalibration')!=='not-applicable'){
+    deps.push({gate:'practicalAssessorCalibration',require:'evidence'});
+  }
+  return deps.map(d=>{
     const status=gateStatus(course,d.gate);
     const met=d.require==='approved'?approved(status):atLeastEvidence(status);
     return {...d,status,met};
