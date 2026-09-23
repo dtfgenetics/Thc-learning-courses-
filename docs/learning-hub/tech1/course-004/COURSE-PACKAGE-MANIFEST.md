@@ -61,7 +61,7 @@ Course 4 must preserve all of the following:
 4. two formative and four summative items per objective unless a reviewed blueprint change explicitly supersedes the current distribution;
 5. evidence references on every scored item;
 6. Practical B objective mapping;
-7. all seven governed Course 4 assets present and deliverable through the Academy runtime with SVG accessibility metadata;
+7. all seven governed Course 4 WebP assets present and deliverable through the Academy runtime with learner-facing alt/caption metadata;
 8. complete remediation sections for all six objectives;
 9. package artifact presence;
 10. draft/release boundaries that do not imply professional credential issuance.
