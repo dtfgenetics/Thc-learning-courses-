@@ -18,6 +18,13 @@ const runJson=(script,args=[])=>JSON.parse(execFileSync(process.execPath,[script
 const cert=runJson('scripts/report-certification-evidence-reconciliation.mjs',['--json']);
 const production=runJson('scripts/report-production-evidence-reconciliation.mjs');
 const programs=readDir('content/credential-programs').filter(x=>['CREDPROG-CULT-TECH-I-001','CREDPROG-CULT-TECH-II-001'].includes(x.id));
+const candidateControls=read('registry/candidate-governance-controls.json');
+const candidateGovernanceApprovals=readDir('content/candidate-governance-approvals')
+  .filter(x=>x.controlsId===candidateControls.id&&String(x.controlsVersion)===String(candidateControls.version)&&x.status!=='invalidated')
+  .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+const latestCandidateGovernance=candidateGovernanceApprovals[0]??null;
+const candidateGovernanceApproved=latestCandidateGovernance?.status==='approved'&&candidateControls.operationalUseAuthorized===true;
+const candidateGovernanceEvidenceApproved=latestCandidateGovernance?.status==='approved';
 
 const gateOrder=[
   'exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis','practicalAssessorCalibration',
@@ -34,6 +41,9 @@ function isAtLeastEvidence(status){ return sufficientForEvidence.has(status); }
 function isApproved(status){ return approvedOrNa.has(status); }
 
 const contradictions=[];
+if(candidateControls.operationalUseAuthorized===true&&!candidateGovernanceEvidenceApproved){
+  contradictions.push(`${candidateControls.id}: operationalUseAuthorized=true without approved exact-version candidate-governance evidence`);
+}
 const courseDependencies=[];
 for(const course of cert.courses){
   const dependencies=[];
@@ -93,6 +103,24 @@ for(const program of programs){
       if(!isAtLeastEvidence(s)) preEvidenceBlockers.push({courseId:course.courseId,gate,status:s});
     }
   }
+  if(!candidateGovernanceApproved){
+    preApprovalBlockers.push({
+      scope:'candidate-governance',
+      controlsId:candidateControls.id,
+      controlsVersion:candidateControls.version,
+      evidenceStatus:latestCandidateGovernance?.status??'missing',
+      operationalUseAuthorized:candidateControls.operationalUseAuthorized===true
+    });
+  }
+  if(!candidateGovernanceEvidenceApproved){
+    preEvidenceBlockers.push({
+      scope:'candidate-governance',
+      controlsId:candidateControls.id,
+      controlsVersion:candidateControls.version,
+      evidenceStatus:latestCandidateGovernance?.status??'missing',
+      operationalUseAuthorized:candidateControls.operationalUseAuthorized===true
+    });
+  }
   if(!allProductionApproved){
     for(const c of production.controls.filter(x=>x.evidenceStatus!=='approved')){
       preApprovalBlockers.push({scope:'production',controlId:c.controlId,status:c.evidenceStatus});
@@ -118,6 +146,14 @@ for(const program of programs){
     credentialAuthorizationStatuses:[...new Set(authStatuses)],
     approvalBlockerCount:preApprovalBlockers.length,
     evidenceBlockerCount:preEvidenceBlockers.length,
+    candidateGovernance:{
+      controlsId:candidateControls.id,
+      controlsVersion:candidateControls.version,
+      evidenceStatus:latestCandidateGovernance?.status??'missing',
+      evidenceRecordId:latestCandidateGovernance?.id??null,
+      operationalUseAuthorized:candidateControls.operationalUseAuthorized===true,
+      approvedAndApplied:candidateGovernanceApproved
+    },
     productionControlsApproved:productionApproved.length,
     productionControlsTotal:production.controls.length,
     approvalBlockers:preApprovalBlockers,
@@ -131,6 +167,9 @@ const summary={
   programs:programDependencies.length,
   programsAuthorizationApprovalReady:programDependencies.filter(x=>x.approvalBlockerCount===0).length,
   programsAuthorizationEvidenceReady:programDependencies.filter(x=>x.evidenceBlockerCount===0).length,
+  candidateGovernanceEvidenceStatus:latestCandidateGovernance?.status??'missing',
+  candidateGovernanceOperationalUseAuthorized:candidateControls.operationalUseAuthorized===true,
+  candidateGovernanceApprovedAndApplied:candidateGovernanceApproved,
   productionControlsApproved:productionApproved.length,
   productionControlsTotal:production.controls.length,
   dependencyContradictions:contradictions.length
