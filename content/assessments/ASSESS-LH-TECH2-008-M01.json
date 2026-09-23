@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-008-M01",
   "title": "Integrated Technician II Simulation Lab — Readiness Check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "formative",
   "competencies": [
@@ -71,6 +71,43 @@
     "readinessOnly": true,
     "credentialEvidence": false,
     "doesNotReplacePracticalEvidence": true,
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-008-01": [
+        "LESSON-LH-TECH2-008-01",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-02": [
+        "LESSON-LH-TECH2-008-01",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-03": [
+        "LESSON-LH-TECH2-008-01",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-04": [
+        "LESSON-LH-TECH2-008-02",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-05": [
+        "LESSON-LH-TECH2-008-02",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-06": [
+        "LESSON-LH-TECH2-008-03",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-07": [
+        "LESSON-LH-TECH2-008-03",
+        "LESSON-LH-TECH2-008-04"
+      ],
+      "LO-LH-TECH2-008-08": [
+        "LESSON-LH-TECH2-008-04"
+      ]
+    },
+    "readinessToTeachingAudit": "docs/learning-hub/tech2/course-008/READINESS-TO-TEACHING-MAP.md"
   }
 }
