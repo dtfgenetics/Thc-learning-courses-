@@ -6,6 +6,7 @@ const registry=JSON.parse(fs.readFileSync(path.join(root,'registry/certification
 const courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
 const assessments=new Map(readDir('content/assessments').map(x=>[x.id,x]));
 const ss=readDir('content/standard-setting-evidence');
+const integratedSs=readDir('content/integrated-performance-standard-setting-evidence');
 const fe=readDir('content/secure-form-equivalence-evidence');
 const rows=[];
 for(const row of registry.courses.filter(x=>x.conventionalFinal)){
@@ -18,10 +19,24 @@ for(const row of registry.courses.filter(x=>x.conventionalFinal)){
     secureForms:f?{id:f.id,status:f.status,formCount:f.formCount,quantitativeEvidenceStatus:f.equivalenceReview?.quantitativeEvidenceStatus??null}:{status:'missing'}
   });
 }
+const integratedRows=[];
+for(const row of registry.courses.filter(x=>!x.conventionalFinal)){
+  const c=courses.get(row.courseId);
+  if(c?.extensions?.standardSettingRequired!==true) continue;
+  const s=integratedSs.filter(x=>x.courseId===row.courseId&&String(x.courseVersion)===String(c.version)&&x.status!=='invalidated').sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt))[0]??null;
+  integratedRows.push({
+    courseId:row.courseId,
+    courseVersion:c?.version??null,
+    standardSetting:s?{id:s.id,status:s.status,method:s.method,componentCount:s.components?.length??0}:{status:'missing'}
+  });
+}
 console.log(JSON.stringify({
   summary:{
     conventionalCourses:rows.length,
+    integratedPerformanceCourses:integratedRows.length,
     standardSettingApproved:rows.filter(x=>x.standardSetting.status==='approved').length,
+    integratedStandardSettingApproved:integratedRows.filter(x=>x.standardSetting.status==='approved').length,
+    totalStandardSettingApproved:rows.filter(x=>x.standardSetting.status==='approved').length+integratedRows.filter(x=>x.standardSetting.status==='approved').length,
     secureFormsApproved:rows.filter(x=>x.secureForms.status==='approved').length
-  },courses:rows
+  },courses:rows,integratedPerformanceCourses:integratedRows
 },null,2));

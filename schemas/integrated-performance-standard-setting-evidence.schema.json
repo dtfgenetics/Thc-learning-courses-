@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/integrated-performance-standard-setting-evidence.schema.json",
+  "title": "THC Academy Integrated Performance Standard-Setting Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "courseId",
+    "courseVersion",
+    "status",
+    "method",
+    "panelistCount",
+    "components",
+    "decisionRule",
+    "governanceDecision",
+    "authorityId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^IPSTDSET-[A-Z0-9-]+$"
+    },
+    "courseId": {
+      "enum": [
+        "COURSE-LH-TECH1-007",
+        "COURSE-LH-TECH2-008"
+      ]
+    },
+    "courseVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "panel-complete",
+        "approved",
+        "revision-required",
+        "invalidated"
+      ]
+    },
+    "method": {
+      "enum": [
+        "performance-standard-study",
+        "modified-angoff",
+        "borderline-group",
+        "contrasting-groups",
+        "other"
+      ]
+    },
+    "panelistCount": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "components": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "assessmentId",
+          "assessmentVersion",
+          "assessmentType",
+          "recommendedMinimumPercent",
+          "criticalErrorRuleApproved"
+        ],
+        "properties": {
+          "assessmentId": {
+            "type": "string",
+            "pattern": "^(PRACTICAL|CAPSTONE)-[A-Z0-9-]+$"
+          },
+          "assessmentVersion": {
+            "type": [
+              "string",
+              "integer"
+            ]
+          },
+          "assessmentType": {
+            "enum": [
+              "practical",
+              "capstone"
+            ]
+          },
+          "recommendedMinimumPercent": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "adoptedMinimumPercent": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "criticalErrorRuleApproved": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decisionRule": {
+      "type": "object",
+      "required": [
+        "allRequiredComponentsMustPass",
+        "noCriticalErrors",
+        "compensatoryScoringAllowed"
+      ],
+      "properties": {
+        "allRequiredComponentsMustPass": {
+          "type": "boolean"
+        },
+        "noCriticalErrors": {
+          "type": "boolean"
+        },
+        "compensatoryScoringAllowed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "governanceDecision": {
+      "type": "object",
+      "required": [
+        "decision"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "pending",
+            "adopt",
+            "return-for-analysis",
+            "reject"
+          ]
+        },
+        "decisionAuthority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decisionDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorityId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
