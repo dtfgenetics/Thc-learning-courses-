@@ -2,7 +2,7 @@
   "id": "ASSESS-LH-TECH2-004-FINAL",
   "title": "Plant Health, IPM & Biosecurity Troubleshooting — Course Assessment",
   "version": "1.1.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "summative",
   "competencies": [
     "COMP-IPM-ADV-001",
@@ -80,7 +80,7 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH2-004",
     "linkedCredentialPractical": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-004-M01",
@@ -114,6 +114,10 @@
         "LESSON-LH-TECH2-004-04"
       ]
     },
-    "testToTeachingAudit": "docs/learning-hub/tech2/course-004/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-004/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }
