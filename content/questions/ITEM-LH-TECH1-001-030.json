@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-030","version":1,"status":"draft","purpose":"summative","competency":"COMP-CULT-EQUIPMENT-CARE-001","objective":"LO-LH-TECH1-001-10","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A pump alarm appears, and the SOP allows checking tank level and visible leaks only. Those checks do not explain the alarm. What next?","choices":["Keep resetting the alarm","Record the fault context and escalate for further diagnosis","Open the electrical control box","Change controller settings until the alarm stops"],"correct":1,"rationale":"After permitted operator checks are exhausted, the technician should preserve fault context and escalate.","references":["REF-OSHA-1910-147-LOTO","REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-030",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-EQUIPMENT-CARE-001",
+  "objective": "LO-LH-TECH1-001-10",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A pump alarm appears, and the SOP allows checking tank level and visible leaks only. Those checks do not explain the alarm. What next?",
+  "choices": [
+    "Reset the alarm again after each occurrence while monitoring for visible leaks.",
+    "Record the alarm context and completed operator checks, then escalate because the allowed checks did not identify the fault.",
+    "Open the electrical control enclosure to look for a tripped component before calling maintenance.",
+    "Change controller settings within a small range until the alarm stops, then restore the original target."
+  ],
+  "correct": 1,
+  "rationale": "Once the permitted checks have been completed without resolving the alarm, Technician I should preserve the fault evidence and escalate rather than expanding into unauthorized diagnosis. Repeated resets, control changes, or opening electrical equipment can mask the problem or cross the servicing boundary.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

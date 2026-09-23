@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-001-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-TRACEABILITY-001",
@@ -19,13 +19,13 @@
     }
   ],
   "choices": [
-    "Only the cultivar nickname",
-    "Only the destination room",
-    "Only the worker's initials",
-    "Material identity plus source, destination, applicable quantity/count, time, and responsible person/system"
+    "Material identity and cultivar name are sufficient if the receiving room is known.",
+    "Material identity and destination are sufficient because source location already exists in the prior record.",
+    "Material identity, worker initials, and date are sufficient for routine internal movement.",
+    "Material identity plus source, destination, applicable quantity/count, time, and responsible person or system should be recorded."
   ],
   "correct": 3,
-  "rationale": "These fields support reconstruction independent of a specific software vendor.",
+  "rationale": "A movement record should let another person reconstruct what moved, from where, to where, how much, when, and under whose responsibility. Keeping those core fields makes the history understandable even if software or vendor systems change. A nickname, destination, or worker initials alone cannot reconstruct the movement.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-GS1-GLOBAL-TRACEABILITY"

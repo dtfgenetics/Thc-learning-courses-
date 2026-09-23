@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-001-034",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -19,13 +19,13 @@
     }
   ],
   "choices": [
-    "Room 2 okay",
-    "Finished most stuff",
-    "Irrigation problem maybe",
-    "Zone 2 emitters 5–8 showed no flow at 16:20; operator checks completed; maintenance ticket M-44 opened; plants remain in place; next shift verify response before next event"
+    "“Room 2 okay; no major issues.”",
+    "“Finished most assigned work; a few items remain.”",
+    "“Possible irrigation problem in Zone 2; maintenance may need to check it.”",
+    "“Zone 2 emitters 5–8 showed no flow at 16:20; operator checks completed; maintenance ticket M-44 opened; plants remain in place; next shift verify response before next event.”"
   ],
   "correct": 3,
-  "rationale": "Precise handoffs identify location, observation, time, actions, open status and next step.",
+  "rationale": "The strongest handoff identifies the exact location and condition, timing, actions already completed, current status, escalation reference, and next required step. General statements such as “okay” or “problem maybe” force the incoming shift to reconstruct facts that should already be documented.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-HSE-SHIFT-HANDOVER"

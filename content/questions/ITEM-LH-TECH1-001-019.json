@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-019","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A required measurement was not taken, but the technician remembers the room was 'about normal.' What should be recorded?","choices":["A normal-looking value estimated from memory","The previous shift's value","The measurement as missing according to procedure, with appropriate explanation/escalation","Nothing; leave no indication the measurement was required"],"correct":2,"rationale":"Missing data should remain visibly missing rather than be replaced with invented or retrospective values.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-019",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A required measurement was not taken, but the technician remembers the room was 'about normal.' What should be recorded?",
+  "choices": [
+    "Enter a reasonable estimate based on memory and mark it as approximate.",
+    "Use the previous shift's measurement if room conditions appeared unchanged.",
+    "Record the required measurement as missing according to procedure, explain what happened, and escalate or follow up as required.",
+    "Leave the field blank without comment so the record does not contain a known incorrect value."
+  ],
+  "correct": 2,
+  "rationale": "A missing measurement should remain visibly missing rather than being replaced with a guessed or borrowed value. The record should show that the measurement was not taken and provide the required explanation or follow-up. This preserves data integrity and lets later reviewers distinguish absence of evidence from a real measurement.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

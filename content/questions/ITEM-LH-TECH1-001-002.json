@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-001-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -19,13 +19,13 @@
     }
   ],
   "choices": [
-    "Post a reminder sign and leave the hose in place",
-    "Reroute or secure the hose so it no longer creates the repeated trip hazard",
-    "Tell experienced workers they can ignore it",
-    "Require workers to walk faster through the aisle"
+    "Post a warning sign and remind workers to watch for the hose during irrigation.",
+    "Reroute, bridge, or secure the hose so the repeated aisle trip hazard is removed or substantially reduced.",
+    "Limit the aisle to experienced workers during irrigation because they are more familiar with the hose location.",
+    "Schedule irrigation during a quieter period so fewer people are exposed to the hose."
   ],
   "correct": 1,
-  "rationale": "Changing the work setup to remove or reduce the repeated hazard is stronger than relying only on attention or warnings.",
+  "rationale": "Because the hose repeatedly creates the same aisle hazard, a stronger control changes the work setup rather than relying mainly on attention, experience, or timing. Rerouting or securing the hose reduces exposure at the source. Signs and scheduling can support safety, but they leave the hazard in place and depend more heavily on worker behavior.",
   "references": [
     "REF-OSHA-1910-22-WALKING"
   ]

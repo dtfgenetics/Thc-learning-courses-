@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-012","version":1,"status":"draft","purpose":"summative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-03","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A cart leaves a quarantine zone and is needed in propagation. What should happen?","choices":["Move it directly because carts do not carry pathogens","Spray only the wheels regardless of SOP","Cover it with plastic and skip cleaning","Follow the required cleaning/disinfection and release process before entering the cleaner zone"],"correct":3,"rationale":"Equipment and carts can act as contamination vectors, so controlled movement and sanitation are required.","references":["REF-UMASS-GREENHOUSE-SANITATION","REF-PSU-GREENHOUSE-DISEASE-SOURCES"]}
+{
+  "id": "ITEM-LH-TECH1-001-012",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A cart leaves a quarantine zone and is needed in propagation. What should happen?",
+  "choices": [
+    "Move the cart directly if no visible soil or plant debris is present on it.",
+    "Clean only the wheels because they are the main surfaces that contact contaminated floors.",
+    "Cover the cart before moving it so propagation surfaces do not touch the suspect-zone surfaces.",
+    "Follow the required cleaning, disinfection, segregation, and release process before moving the cart into the cleaner propagation zone."
+  ],
+  "correct": 3,
+  "rationale": "Carts can move contamination on wheels, handles, shelves, tools, debris, and contact surfaces. A quarantine-to-propagation move therefore needs to follow the facility's sanitation and release process rather than relying on appearance, partial cleaning, or temporary covering. The goal is to prevent the cart from becoming a contamination pathway into the cleaner area.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION",
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+  ]
+}

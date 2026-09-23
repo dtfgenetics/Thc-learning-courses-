@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-015","version":1,"status":"draft","purpose":"summative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-04","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A held batch looks completely healthy. Who should release the hold?","choices":["Any technician who inspected it","The worker who needs the space","The role authorized by the controlled procedure","Whoever created the original label"],"correct":2,"rationale":"Visual appearance does not replace the controlled release decision; hold release belongs to the authorized role.","references":["REF-UMASS-GREENHOUSE-SANITATION"]}
+{
+  "id": "ITEM-LH-TECH1-001-015",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A held batch looks completely healthy. Who should release the hold?",
+  "choices": [
+    "Any trained technician may release the hold after a documented inspection shows no visible problem.",
+    "The worker responsible for the affected space may release it if keeping the hold would disrupt production.",
+    "The role authorized by the controlled procedure should make the release decision using the required evidence.",
+    "The person who originally placed the hold should release it once the condition they noticed is no longer visible."
+  ],
+  "correct": 2,
+  "rationale": "A hold is a controlled status, not simply a visual label. Healthy appearance can be useful evidence, but release authority belongs to the role defined by the facility procedure and may require additional checks or documentation. Technician I should maintain the hold and provide observations rather than releasing it based on convenience or personal judgment.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ]
+}
