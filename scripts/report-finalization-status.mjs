@@ -31,6 +31,7 @@ const occupational=runJson('scripts/report-occupational-program-validation-readi
 const humanEvidence=runJson('scripts/report-human-evidence-readiness.mjs');
 const standardSecure=runJson('scripts/report-standard-secure-readiness.mjs');
 const credentialAuth=runJson('scripts/report-credential-authorization-readiness.mjs');
+const productionEvidence=runJson('scripts/report-production-evidence-reconciliation.mjs');
 
 const falseSystemGates=[];
 for(const [areaName,area] of Object.entries(readiness.areas??{})){
@@ -76,10 +77,11 @@ const output={
     occupationalProgramValidation:occupational.summary,
     pilotAndAccessibility:humanEvidence.summary,
     standardSettingAndSecureForms:standardSecure.summary,
-    credentialAuthorization:credentialAuth.summary
+    credentialAuthorization:credentialAuth.summary,
+    productionControls:productionEvidence.summary
   },
   priorities:[
-    'close any remaining repository structural/evidence-integrity defects reported by the live reconciler',
+    'close any remaining repository structural/evidence-integrity defects reported by the live reconciler and production-evidence reconciler',
     'complete real exact-version human assessment, technical/occupational and accessibility review evidence',
     'execute controlled pilots and practical/capstone validation/calibration, then analyze item and inter-rater evidence',
     'perform formal standard setting and secure operational form equivalence/security review',
