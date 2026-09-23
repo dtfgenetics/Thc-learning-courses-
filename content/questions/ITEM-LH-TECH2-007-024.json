@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A low-risk administrative task and a time-sensitive quarantine identity issue are both unfinished. Which should normally be prioritized?",
   "choices": [
-    "The administrative task because it is easier.",
-    "Whichever task appears first alphabetically.",
-    "Treat both as equal regardless of consequence.",
-    "The quarantine/identity issue because its risk and downstream dependency are greater."
+    "Finish the low-risk administrative task first because quick closure reduces the open-task count.",
+    "Use a neutral ordering rule such as first-in/first-out so personal judgment does not bias priority.",
+    "Treat both items as equal until a supervisor explicitly assigns priority.",
+    "Prioritize the quarantine/identity issue because its consequence, time sensitivity, and downstream dependency are materially greater."
   ],
   "correct": 3,
-  "rationale": "The quarantine/identity issue because its risk and downstream dependency are greater.",
+  "rationale": "Priority should reflect consequence, urgency, and dependency—not ease or arbitrary ordering. A quarantine/identity issue can affect containment, traceability, release, and multiple downstream tasks, so it normally outranks a low-risk administrative item. The handoff should make that reasoning explicit so the next shift understands why the issue is first.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]
