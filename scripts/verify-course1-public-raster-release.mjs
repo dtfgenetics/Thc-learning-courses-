@@ -16,7 +16,11 @@ const completion=JSON.parse(fs.readFileSync(completionPath,'utf8'));
 
 const assets=(registry.assets??[])
   .filter(x=>x.status==='produced'&&typeof x.learnerPath==='string'&&/\.(?:png|webp|jpe?g)$/i.test(x.learnerPath))
-  .map(x=>({registryAssetId:x.id,path:x.learnerPath}));
+  .map(x=>({
+    registryAssetId:x.id,
+    path:x.learnerPath,
+    sourcePath:x.sourcePath??`apps/web/public${x.learnerPath}`
+  }));
 
 if(assets.length!==23) throw new Error(`Expected 23 produced Course 1 raster assets in ASSET-REGISTRY.json, found ${assets.length}`);
 if(new Set(assets.map(x=>x.path)).size!==23) throw new Error('Course 1 release manifest has duplicate public raster paths');
@@ -29,13 +33,14 @@ if(identity?.exactIdentityAvailable!==true||!identity?.buildId||!identity?.sourc
 }
 
 const results=[];
+const rawBase=`https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/${encodeURIComponent(String(identity.sourceSha).toLowerCase())}`;
 for(const asset of assets){
-  const url=baseUrl+asset.path;
-  const res=await fetch(url,{redirect:'follow',headers:{accept:'image/png,image/webp,image/*','user-agent':'thc-course1-raster-verifier/1.0'}});
+  const url=`${rawBase}/${asset.sourcePath}`;
+  const res=await fetch(url,{redirect:'follow',headers:{accept:'image/png,image/webp,image/*','user-agent':'thc-course1-raster-verifier/1.1'}});
   const contentType=res.headers.get('content-type')??'';
   const buf=Buffer.from(await res.arrayBuffer());
   results.push({
-    ...asset,url,status:res.status,contentType,sizeBytes:buf.length,
+    ...asset,deliveryUrl:url,status:res.status,contentType,sizeBytes:buf.length,
     pass:res.ok&&/^image\/(?:png|webp|jpeg)/i.test(contentType)&&buf.length>1000
   });
 }
@@ -55,7 +60,8 @@ const record={
   verification:{
     releasedRasterCount:assets.length,
     verifiedRasterCount:results.filter(x=>x.pass).length,
-    allReleasedRasterPathsVerified:verified,
+    allReleasedRasterDeliveryUrlsVerified:verified,
+    deliveryMode:'pinned-raw-github-source-used-by-wordpress',
     failedPaths:failed.map(x=>x.path)
   },
   visualAuthority:[
@@ -63,7 +69,7 @@ const record={
     'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json',
     'content/lessons/LESSON-LH-TECH1-001-*.json'
   ],
-  boundary:'This record verifies public delivery of the 23 governed Course 1 raster learner assets and exact deployed build identity only. Human accessibility/UX review and certification-release evidence remain separate.'
+  boundary:'This record verifies availability of all 23 governed Course 1 raster learner assets at the exact pinned curriculum source used by the WordPress Course 1 publisher, plus exact deployed build identity. WordPress renders these pinned raw source URLs rather than /assets/course1/* paths on dtfseeds.com. Human accessibility/UX review and certification-release evidence remain separate.'
 };
 
 if(write&&verified){
@@ -81,7 +87,7 @@ if(write&&verified){
   const visualDomain=(completion.domains??[]).find(x=>x.id==='visual-and-asset-completion');
   if(visualDomain){
     visualDomain.state='production-raster-public-readback-complete';
-    visualDomain.note='All 23 governed Course 1 PNG learner assets are active in canonical mappings and were verified from the public learner asset paths against an exact deployed build identity. Human rendered accessibility/responsive review remains separately open.';
+    visualDomain.note='All 23 governed Course 1 raster learner assets were verified at the exact pinned curriculum source used by the WordPress Course 1 publisher, together with exact deployed build identity. WordPress renders the pinned raw source URLs rather than site-local /assets/course1/* paths. Human rendered accessibility/responsive review remains separately open.';
   }
   fs.writeFileSync(completionPath,JSON.stringify(completion,null,2)+'\n');
 }
