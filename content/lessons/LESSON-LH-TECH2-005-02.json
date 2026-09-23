@@ -77,7 +77,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-005-02",
           "title": "Propagation underperformance differential",
-          "src": "/assets/tech2/course5/outcome-02.svg",
+          "src": "/assets/tech2/course5/outcome-02.webp",
           "alt": "Propagation differential matrix comparing donor condition, sanitation, environment, handling, media, timing and plant-health explanations, with evidence for and against each and a discriminating next check instead of unsupported contamination or genotype conclusions.",
           "caption": "A donor-linked or tray-linked pattern directs the investigation; it does not prove genetics or contamination. Rank alternatives and choose the next check that can change the ranking.",
           "references": [
@@ -87,8 +87,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-005-02",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
