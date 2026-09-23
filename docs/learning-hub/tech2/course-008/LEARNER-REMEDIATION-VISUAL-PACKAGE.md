@@ -118,7 +118,10 @@ Use a multi-stage shift case that forces reprioritization after new information.
 Required outputs: priority/dependency map; source/identifier table; evidence-quality check; measurements/observations; ranked reasoning; authority decision; verification or containment result; reconciliation; final handoff.
 
 ## Visual production
-Produce at least **8 primary instructional visuals**, one per current outcome. Assets remain unlimited. Require exact terminology, phone-readable layouts, captions and meaningful text alternatives, non-color cues, clearly illustrative examples, and no invented universal SOP/legal/product/repair/approval authority.
+
+Course 8 has **8 owner-approved lossless WebP primary visuals** recorded in `visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json`. The learner lessons must use the WebP paths under `/assets/tech2/course8/`; legacy SVGs remain provenance/source material only and are not the learner-facing production format.
+
+The approved raster set remains subject to the normal responsive/public-runtime QA controls, but it no longer belongs in a “visuals not produced” backlog.
 
 ## Accessibility/manual review
 Keyboard and focus; semantic headings/landmarks; screen-reader order/state; 200%/400% zoom/reflow; mobile/tablet/desktop; contrast/non-color cues; form/table labels; assessment instructions/errors; visual alternatives; print/download readability.
@@ -126,6 +129,6 @@ Keyboard and focus; semantic headings/landmarks; screen-reader order/state; 200%
 ## Evidence and credential boundary
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.
+Course 8 is an integrated academic simulation lab, not a conventional final-exam course. Its 16 readiness items are formative and map directly to the four dedicated Course 8 integration lessons in `READINESS-TO-TEACHING-MAP.md`. Practicals A–G and the capstone must trace to taught Technician II content plus Course 8 integration as recorded in `PERFORMANCE-TO-TEACHING-MAP.md`. The 420 Encyclopedia may support deeper study but cannot create a scored readiness, practical, or capstone requirement. Professional credential validation/release remains separately fail-closed.
 
 Readiness checks and public simulation-preparation lessons do not count as secure credential evidence. Seven practicals plus the capstone require separate validation and approval.
