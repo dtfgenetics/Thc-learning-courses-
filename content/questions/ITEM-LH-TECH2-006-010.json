@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A rack was moved through the same affected zone before the deviation was discovered. What should happen?",
   "choices": [
-    "Exclude it because it is no longer in the room.",
-    "Keep it in the investigation until genealogy, timing and product evidence support inclusion or exclusion.",
-    "Release it based only on appearance.",
-    "Delete the movement record."
+    "Exclude the moved rack because it was no longer physically present when the deviation was discovered.",
+    "Keep the rack within the investigation until timing, movement genealogy, exposure duration, and product evidence support inclusion or exclusion.",
+    "Release the rack if its current appearance is normal because genealogy alone does not prove product impact.",
+    "Treat movement history as secondary once the rack has entered a different room with acceptable conditions."
   ],
   "correct": 1,
-  "rationale": "Keep it in the investigation until genealogy, timing and product evidence support inclusion or exclusion.",
+  "rationale": "A rack that passed through the affected zone during the relevant window may have been exposed even if it was moved before discovery. Its current location does not erase that exposure history. The investigation should preserve it within scope until genealogy, timing, duration, process conditions, and product measurements provide a defensible basis to include or exclude it.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]
