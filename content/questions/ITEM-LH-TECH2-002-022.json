@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why is a normal stop button insufficient proof that equipment is safe to service?",
   "choices": [
-    "Stop buttons never affect equipment.",
-    "Hazardous or stored energy and unexpected startup may remain unless the employer-defined energy-control procedure is completed.",
-    "Only hydraulic systems contain energy.",
-    "Servicing safety depends only on how long the equipment has been off."
+    "A normal stop button proves the equipment is de-energized only when no stored mechanical or fluid energy is present.",
+    "A normal stop control may stop operation without isolating hazardous or stored energy or preventing unexpected startup; the employer-defined energy-control procedure is required for servicing.",
+    "A normal stop is sufficient for electrical hazards but not for hydraulic, pneumatic, or mechanical stored-energy hazards.",
+    "A normal stop is sufficient after the equipment has remained inactive long enough for residual energy to dissipate."
   ],
   "correct": 1,
-  "rationale": "Hazardous or stored energy and unexpected startup may remain unless the employer-defined energy-control procedure is completed. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A normal stop command changes the operating state but does not necessarily isolate energy sources, block unexpected startup, or dissipate stored electrical, hydraulic, pneumatic, mechanical, thermal, or gravitational energy. Servicing safety depends on completing the employer's energy-control procedure appropriate to the equipment and task. Time off, apparent inactivity, or the type of energy involved cannot substitute for verified isolation.",
   "references": [
     "REF-OSHA-1910-147-LOTO"
   ]
