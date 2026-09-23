@@ -16,8 +16,8 @@ for (const [performanceId, downloadId] of mappings) {
   const download = JSON.parse(fs.readFileSync(`content/downloads/${downloadId}.json`, 'utf8'));
   const csvPath = `apps/web/public${download.path}`;
   assert.equal(performance.extensions.credentialUseAuthorized, false, `${performanceId} must remain development-only`);
-  assert.equal(download.status, 'draft');
-  assert.equal(download.releaseStatus, 'internal-preview');
+  assert.equal(download.status, 'published');
+  assert.equal(download.releaseStatus, 'public');
   assert.equal(download.accessibilityStatus, 'partial');
   assert.ok(fs.existsSync(csvPath), `${downloadId} must resolve to a CSV file`);
   const [header, ...rows] = fs.readFileSync(csvPath, 'utf8').trimEnd().split(/\r?\n/);
@@ -28,4 +28,4 @@ for (const [performanceId, downloadId] of mappings) {
   assert.ok(download.limitations.length >= 2);
 }
 
-console.log('Technician I learner download pack: PASS (6 practical job aids + 1 capstone evidence record).');
+console.log('Technician I learner download pack: PASS (7 published/public academic job aids mapped to Practicals A–F and the integrated capstone).');
