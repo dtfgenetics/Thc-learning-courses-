@@ -80,7 +80,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-007-04",
           "title": "Priority-ranked senior technician handoff",
-          "src": "/assets/tech2/course7/outcome-04.svg",
+          "src": "/assets/tech2/course7/outcome-04.webp",
           "alt": "Shift handoff framework ranking unresolved work by safety, quarantine, identity or traceability risk, crop or lot consequence, timing dependency and downstream blocking, while preserving planned-versus-actual history and assigning a next action and decision owner.",
           "caption": "Prioritize by consequence and dependency, not convenience. Preserve planned-versus-actual history and hand off each unresolved issue with the next action, deadline or dependency, and decision owner.",
           "references": [
@@ -90,8 +90,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-007-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
