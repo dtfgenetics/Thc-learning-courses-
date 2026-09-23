@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IRRIGATION-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Far-end plants dry faster and catch volumes are lower there. What evidence should be checked next?",
   "choices": [
-    "Only nutrient formulation.",
-    "Pressure, filtration, line position and representative emitter output across the zone.",
-    "Only room CO2.",
-    "Only cultivar name."
+    "Compare the nutrient formulation and target EC first because lower far-end catch volume is most likely a consequence of plant water demand.",
+    "Check pressure, filtration, line position, and representative emitter output across the zone, including far-end and comparison locations.",
+    "Compare room CO2 and temperature because faster dryback can reduce catch volume at the far end of the line.",
+    "Compare cultivar distribution along the line before checking the irrigation hardware because cultivar demand can explain uneven substrate drying."
   ],
   "correct": 1,
-  "rationale": "Pressure, filtration, line position and representative emitter output across the zone. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "Lower catch volume at the far end combined with faster drying creates a direct reason to investigate hydraulic distribution. Pressure loss, filtration restrictions, line position, and emitter performance can all produce a spatial delivery pattern. Nutrient formulation, cultivar demand, and room conditions may influence plant dryback, but they do not explain why measured irrigation output itself is lower in the same locations. The next step should therefore verify the distribution system before attributing the pattern to crop demand.",
   "references": [
     "REF-IRRIGATION-001"
   ]
