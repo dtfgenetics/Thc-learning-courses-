@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-021","version":1,"status":"draft","purpose":"summative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-06","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"Before moving a group of plants, one physical tag does not match the work order. What should happen?","choices":["Stop the affected movement and resolve the identity mismatch under procedure","Move all plants and fix the tag later","Remove the mismatched tag","Put the plant with whichever group looks similar"],"correct":0,"rationale":"Identity should be verified before movement so genealogy and records remain reconstructable.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-021",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-06",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Before moving a group of plants, one physical tag does not match the work order. What should happen?",
+  "choices": [
+    "Stop the affected movement, preserve the mismatched tag and plant identity, and reconcile the discrepancy under procedure before moving that plant.",
+    "Move the full group to keep the work order on schedule, then correct the tag in the destination room.",
+    "Remove the mismatched tag and replace it with one that matches the work order before movement.",
+    "Place the plant with the group it most closely resembles and document the choice afterward."
+  ],
+  "correct": 0,
+  "rationale": "A tag mismatch creates an identity risk. Moving, retagging, or grouping the plant by appearance before reconciliation can break genealogy and make the error harder to reconstruct. The affected movement should stop until the physical plant, tag, and controlled record are reconciled.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
