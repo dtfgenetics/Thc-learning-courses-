@@ -20,6 +20,7 @@ const bootstrap = requireFile('apps/api/src/bootstrap.mjs');
 const rls = requireFile('database/rls-policies.sql');
 const backupContract = requireFile('ops/backup-restore-contract.json');
 const monitoringContract = requireFile('ops/monitoring-alerting-contract.json');
+const productionValidation = requireFile('registry/production-validation-evidence.json');
 const practicalSubmissionTest = requireFile('scripts/test-practical-evidence-submission.mjs');
 
 if (readiness.areas?.api?.gates?.rateLimiting === true && !limiter.includes('createFixedWindowRateLimiter')) {
@@ -51,6 +52,7 @@ if (readiness.areas?.security?.gates?.adminMfaEnforcementCodeReady === true && !
 if (readiness.areas?.security?.gates?.rowLevelAuthorizationPolicyCodeReady === true && !rls.includes('force row level security')) failures.push('security.rowLevelAuthorizationPolicyCodeReady is true without fail-closed RLS policy SQL');
 if (readiness.areas?.operations?.gates?.backupRestoreContractCodeReady === true && !backupContract.includes('code-ready-deployment-validation-pending')) failures.push('operations.backupRestoreContractCodeReady is true without backup/restore contract');
 if (readiness.areas?.operations?.gates?.monitoringAlertingContractCodeReady === true && !monitoringContract.includes('code-ready-deployment-validation-pending')) failures.push('operations.monitoringAlertingContractCodeReady is true without monitoring contract');
+if (readiness.areas?.operations?.gates?.productionValidationEvidenceContractReady === true && !productionValidation.includes('THC-ACADEMY-PRODUCTION-VALIDATION-EVIDENCE-001')) failures.push('operations.productionValidationEvidenceContractReady is true without production evidence intake contract');
 if (readiness.areas?.learnerExperience?.gates?.practicalEvidenceSubmissionWorkflowCodeReady === true && !practicalSubmissionTest.includes('Learner practical evidence submission domain and API contracts passed')) failures.push('learnerExperience.practicalEvidenceSubmissionWorkflowCodeReady is true without practical submission regression coverage');
 
 if (readiness.areas?.operations?.gates?.incidentResponseRunbook === true) {
