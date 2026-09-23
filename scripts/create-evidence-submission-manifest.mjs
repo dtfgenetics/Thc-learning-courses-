@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {root,readDir,evidenceIndex} from './lib/evidence-submission-utils.mjs';
+import {root,readDir,evidenceIndex,buildOwnershipResolver} from './lib/evidence-submission-utils.mjs';
 
 const args=process.argv.slice(2);
 const get=(n)=>{const i=args.indexOf(n);return i>=0?args[i+1]:null;};
@@ -28,7 +28,15 @@ if(scope==='course'){
 }
 
 const idx=evidenceIndex();
-for(const id of evidenceRecordIds) if(!idx.has(id)) throw new Error(`Unknown evidence record id ${id}`);
+const ownership=buildOwnershipResolver();
+for(const id of evidenceRecordIds){
+  const hit=idx.get(id);
+  if(!hit) throw new Error(`Unknown evidence record id ${id}`);
+  const owner=ownership.resolve(hit);
+  if(scope==='course'&&!owner.courseIds.includes(targetId)) throw new Error(`Evidence ${id} does not belong to course ${targetId}`);
+  if(scope==='credential-program'&&!owner.programIds.includes(targetId)) throw new Error(`Evidence ${id} does not belong to credential program ${targetId}`);
+  if(scope==='production-control'&&!owner.controlIds.includes(targetId)) throw new Error(`Evidence ${id} does not belong to production control ${targetId}`);
+}
 
 const now=new Date().toISOString();
 const safe=(v)=>String(v).toUpperCase().replace(/[^A-Z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,70);

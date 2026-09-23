@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {root,readDir,evidenceIndex,statusIsReviewable} from './lib/evidence-submission-utils.mjs';
+import {root,readDir,evidenceIndex,statusIsReviewable,buildOwnershipResolver} from './lib/evidence-submission-utils.mjs';
 
 const errors=[];
 const courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
@@ -8,6 +8,7 @@ const programs=new Map(readDir('content/credential-programs').filter(x=>x.id).ma
 const contract=JSON.parse(fs.readFileSync(path.join(root,'registry/production-validation-evidence.json'),'utf8'));
 const controls=new Set((contract.controls??[]).map(x=>x.id));
 const idx=evidenceIndex();
+const ownership=buildOwnershipResolver();
 const rows=readDir('content/evidence-submissions');
 const ids=new Set();
 
@@ -27,18 +28,18 @@ for(const r of rows){
       if(!statusIsReviewable(hit)) errors.push(`${r.id}: ${id} is not evidence-complete/approved for review submission`);
     }
     const x=hit.record;
+    const owner=ownership.resolve(hit);
     if(r.scope==='course'){
-      if(x.courseId && x.courseId!==r.targetId && !String(x.id).includes(r.targetId.replace(/^COURSE-/,''))) {
-        // Evidence can be program-level only when the submission itself is program-level; keep course submissions narrow.
-        errors.push(`${r.id}: evidence ${id} is locked to another course ${x.courseId}`);
-      }
+      if(!owner.courseIds.includes(r.targetId)) errors.push(`${r.id}: evidence ${id} does not belong to course ${r.targetId}; resolved courses=${owner.courseIds.join(',')||'none'}`);
       if(x.courseVersion!==undefined && String(x.courseVersion)!==String(r.targetVersion)) errors.push(`${r.id}: evidence ${id} courseVersion mismatch`);
     }
     if(r.scope==='credential-program'){
-      if(x.credentialProgramId && x.credentialProgramId!==r.targetId) errors.push(`${r.id}: evidence ${id} belongs to credential program ${x.credentialProgramId}`);
+      if(!owner.programIds.includes(r.targetId)) errors.push(`${r.id}: evidence ${id} does not belong to credential program ${r.targetId}; resolved programs=${owner.programIds.join(',')||'none'}`);
       if(x.credentialProgramVersion!==undefined && String(x.credentialProgramVersion)!==String(r.targetVersion)) errors.push(`${r.id}: evidence ${id} credentialProgramVersion mismatch`);
     }
-    if(r.scope==='production-control' && x.controlId && x.controlId!==r.targetId) errors.push(`${r.id}: evidence ${id} belongs to production control ${x.controlId}`);
+    if(r.scope==='production-control'){
+      if(!owner.controlIds.includes(r.targetId)) errors.push(`${r.id}: evidence ${id} does not belong to production control ${r.targetId}; resolved controls=${owner.controlIds.join(',')||'none'}`);
+    }
   }
   if(r.status==='accepted'){
     if(!r.reviewerId||!r.reviewedAt) errors.push(`${r.id}: accepted submission requires reviewerId and reviewedAt`);
