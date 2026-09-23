@@ -85,3 +85,9 @@ Use canonical evidence-backed science and operational references for durable pri
 This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 4 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 4. The course does not confer independent pesticide selection, mixing, application, or regulated treatment authority. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP`. Course completion alone does not validate or issue Technician II certification.
+
+## Published learner job aid
+
+- **DL-TECH2-IPM-BIOSECURITY-001 — Technician II Plant Health and Biosecurity Investigation Log**
+- Download: `/downloads/tech2-ipm-biosecurity-investigation.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.

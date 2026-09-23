@@ -83,3 +83,9 @@ Use canonical evidence-backed science and operational references for durable pri
 This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 6 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 6. The course does not confer independent product release, rework, destruction, or disposition authority. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE`. Academic course completion alone does not validate or issue Technician II certification.
+
+## Published learner job aid
+
+- **DL-TECH2-POSTHARVEST-DEVIATION-001 — Technician II Harvest and Postharvest Deviation Log**
+- Download: `/downloads/tech2-postharvest-deviation.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.
