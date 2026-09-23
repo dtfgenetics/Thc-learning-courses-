@@ -50,7 +50,9 @@ for(const course of cert.courses){
 
   const std=statusOf(course,'standardSetting');
   if(['evidence-complete','approved'].includes(std)){
-    for(const gate of ['exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis']){
+    const prereqs=['exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis'];
+    if(statusOf(course,'itemAnalysis')==='not-applicable'&&statusOf(course,'practicalAssessorCalibration')!=='not-applicable') prereqs.push('practicalAssessorCalibration');
+    for(const gate of prereqs){
       const s=statusOf(course,gate);
       if(!isAtLeastEvidence(s)){
         contradictions.push(`${course.courseId}: standardSetting=${std} but prerequisite ${gate}=${s}`);
