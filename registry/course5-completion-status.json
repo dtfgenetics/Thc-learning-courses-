@@ -6,7 +6,7 @@
   "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 5 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete, including the owner-approved raster-first learner-asset cutover. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
+  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 5 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete, including the owner-approved raster-first learner-asset cutover. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Machine-resolvable source, runtime, and deployed-surface verification is complete for the current pinned snapshot.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-005.json",
     "scripts/test-tech1-course5.mjs",
@@ -42,14 +42,14 @@
   },
   "deploymentIdentity": {
     "state": "verified",
-    "buildId": "dtf-academy-338f3cc23581-35582824708",
-    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-397f8d7e285f-35927783941",
+    "sourceSha": "397f8d7e285f5a230ac441fda66921fa53a56a49",
     "endpoint": "https://dtfseeds.com/api/build-info"
   },
   "deployedMachineSurfaceQa": {
     "state": "verified",
-    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
-    "buildId": "dtf-academy-338f3cc23581-35582824708"
+    "sourceSha": "397f8d7e285f5a230ac441fda66921fa53a56a49",
+    "buildId": "dtf-academy-397f8d7e285f-35927783941"
   },
   "rasterCandidateProduction": {
     "state": "production-raster-cutover-complete-manual-responsive-review-open",
