@@ -1,7 +1,7 @@
 # Course 6 Learner Materials
 
 **Course:** Harvest, Postharvest, Traceability & Shift Handoff  
-**State:** draft learner package
+**State:** published owner-approved academic learner package
 
 ## Purpose
 
@@ -25,7 +25,7 @@ The Course 6 registry contains eight produced public assets.
 7. `VIS-LH-TECH1-006-007` — Harvest genealogy and reconciliation practice worksheet
 8. `VIS-LH-TECH1-006-008` — Dry-room receiving and shift handoff practice worksheet
 
-Canonical assets live under `/assets/course6/`. The controlled Drive folder exists, but individual Drive file mirroring remains pending and must not be represented as complete until file IDs are verified.
+Canonical assets live under `/assets/course6/`. All eight controlled Drive mirrors are verified and recorded with file IDs in `visuals/COURSE6-ASSET-REGISTRY.json`.
 
 ## Applied practice sequence
 
@@ -82,7 +82,7 @@ The 12-item M01 assessment is diagnostic/formative. Route objective-level misses
 
 ## Summative academic use
 
-The 24-item Course 6 final is distinct from the formative bank and is derived from the six controlled objectives taught in the four dedicated Course 6 lessons. `TEST-TO-TEACHING-MAP.md` records the exact instructional provenance. Encyclopedia-only, external-reading-only, or unrelated-course material may not be scored unless first taught directly in Course 6. The assessment remains draft until human assessment/release review. A passing academic result does not replace Practical F or confer independent product-release/disposition authority.
+The 24-item Course 6 final is distinct from the formative bank and is derived from the six controlled objectives taught in the four dedicated Course 6 lessons. `TEST-TO-TEACHING-MAP.md` records the exact instructional provenance. Encyclopedia-only, external-reading-only, or unrelated-course material may not be scored unless first taught directly in Course 6. The assessment is published for academic use. A passing academic result does not replace Practical F, validate the professional credential, or confer independent product-release/disposition authority.
 
 ## Portfolio evidence
 
