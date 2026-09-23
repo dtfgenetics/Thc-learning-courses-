@@ -18,6 +18,7 @@ const registry=read('registry/certification-validation-execution.json');
 const courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
 const assessments=new Map(readDir('content/assessments').map(x=>[x.id,x]));
 const programs=readDir('content/credential-programs').filter(x=>x.id);
+const formPsychometrics=readDir('content/form-psychometric-evidence');
 const queue=runJson('scripts/report-certification-execution-work-queue.mjs',['--json']);
 
 function programFor(courseId){return programs.find(p=>(p.requiredCourses??[]).includes(courseId))??null;}
@@ -32,6 +33,10 @@ for(const row of registry.courses.filter(x=>x.conventionalFinal)){
 
   const standardQueue=queueItem(row.courseId,'standardSetting');
   const secureQueue=queueItem(row.courseId,'secureOperationalFormReadiness');
+  const psychometricRows=formPsychometrics
+    .filter(e=>e.courseId===course.id&&String(e.courseVersion)===String(course.version)&&e.assessmentId===assessment.id&&String(e.assessmentVersion)===String(assessment.version)&&e.status!=='invalidated')
+    .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+  const latestPsychometrics=psychometricRows[0]??null;
 
   kits.push({
     id:'KIT-STDSEC-'+course.id.replace(/^COURSE-/,''),
@@ -42,6 +47,17 @@ for(const row of registry.courses.filter(x=>x.conventionalFinal)){
     credentialProgramId:program.id,
     credentialProgramVersion:String(program.version),
     itemCount:(assessment.items??[]).length,
+    formPsychometrics:latestPsychometrics?{
+      id:latestPsychometrics.id,
+      status:latestPsychometrics.status,
+      cohortId:latestPsychometrics.cohortId,
+      formId:latestPsychometrics.formId,
+      formRevision:latestPsychometrics.formRevision,
+      sampleSize:latestPsychometrics.sampleSize,
+      reliabilityStatus:latestPsychometrics.reliability?.status??null,
+      reliabilityValue:latestPsychometrics.reliability?.value??null,
+      classificationCuts:latestPsychometrics.classificationAnalysis?.cutScores??[]
+    }:{status:'missing'},
     standardSetting:{
       executionState:standardQueue?.executionState??'closed',
       dependencies:standardQueue?.dependencies??[],
@@ -52,6 +68,8 @@ for(const row of registry.courses.filter(x=>x.conventionalFinal)){
         'Train panelists on the selected standard-setting method and record panel composition.',
         'Collect independent item judgments before discussion and controlled rounds.',
         'Document the recommended raw/percent cut score plus rounding rule.',
+        'Review form-level score distribution, timing, classification impact, and reliability only when sufficient pilot data exist.',
+        'Treat insufficient-data reliability as insufficient data; do not manufacture a coefficient.',
         'Review pilot impact/sensitivity where usable data exist.',
         'Keep panel recommendation separate from governance adoption.'
       ]
@@ -77,7 +95,10 @@ function md(k){
     '# Standard Setting & Secure Form Operator Kit — '+k.courseId,'',
     'Course: '+k.courseId+'@'+k.courseVersion,
     'Final: '+k.assessmentId+'@'+k.assessmentVersion+' ('+k.itemCount+' items)',
-    'Credential program: '+k.credentialProgramId+'@'+k.credentialProgramVersion,'',
+    'Credential program: '+k.credentialProgramId+'@'+k.credentialProgramVersion,
+    'Latest form psychometric evidence: '+(k.formPsychometrics.id?(
+      k.formPsychometrics.id+' / '+k.formPsychometrics.status+' / N='+k.formPsychometrics.sampleSize+' / reliability='+k.formPsychometrics.reliabilityStatus
+    ):k.formPsychometrics.status),'',
     '## Standard setting','',
     'Execution state: '+k.standardSetting.executionState,'',
     'Blocked dependencies:'

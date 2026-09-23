@@ -20,6 +20,10 @@ expectCourse(
   {dir:'content/calibration-evidence',record:{id:'TEST-CAL',assessmentId:'PRACTICAL-LH-TECH1-001-WORKFLOW'}},
   'COURSE-LH-TECH1-001','CREDPROG-CULT-TECH-I-001'
 );
+expectCourse(
+  {dir:'content/form-psychometric-evidence',record:{id:'TEST-FORMPSY',courseId:'COURSE-LH-TECH1-001',assessmentId:'ASSESS-LH-TECH1-001-FINAL',status:'complete'}},
+  'COURSE-LH-TECH1-001','CREDPROG-CULT-TECH-I-001'
+);
 const gov=ownership.resolve({dir:'content/candidate-governance-approvals',record:{id:'TEST-GOV'}});
 for(const p of ['CREDPROG-CULT-TECH-I-001','CREDPROG-CULT-TECH-II-001']){
   if(!gov.programIds.includes(p)) throw new Error('candidate governance missing ownership for '+p);
@@ -27,4 +31,4 @@ for(const p of ['CREDPROG-CULT-TECH-I-001','CREDPROG-CULT-TECH-II-001']){
 const prod=ownership.resolve({dir:'content/production-control-evidence',record:{id:'TEST-PROD',controlId:'backup-restore'}});
 if(prod.controlIds.join(',')!=='backup-restore') throw new Error('production control ownership drift');
 
-console.log('Evidence submission scope resolver: PASS (assessment items, assessments, practical calibration, candidate governance, production control).');
+console.log('Evidence submission scope resolver: PASS (assessment items, assessments, form psychometrics, practical calibration, candidate governance, production control).');

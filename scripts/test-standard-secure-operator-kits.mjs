@@ -15,6 +15,7 @@ const files=fs.readdirSync(dir).filter(x=>x.endsWith('.json'));
 for(const f of files){
   const k=JSON.parse(fs.readFileSync(path.join(dir,f),'utf8'));
   if(!k.standardSetting?.startCommand||!k.secureForms?.startCommand) throw new Error(f+': missing execution commands');
+  if(!k.formPsychometrics||!('status' in k.formPsychometrics)) throw new Error(f+': form psychometric summary missing');
   if(k.standardSetting.executionState==='blocked'&&k.standardSetting.dependencies.length===0) throw new Error(f+': blocked standard setting lacks dependencies');
   if(k.secureForms.executionState==='blocked'&&k.secureForms.dependencies.length===0) throw new Error(f+': blocked secure forms lack dependencies');
 }

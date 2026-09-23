@@ -1,0 +1,328 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/form-psychometric-evidence.schema.json",
+  "title": "THC Academy Form-Level Psychometric Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "courseId",
+    "courseVersion",
+    "assessmentId",
+    "assessmentVersion",
+    "formId",
+    "formRevision",
+    "cohortId",
+    "status",
+    "sampleSize",
+    "scoreSummary",
+    "timingSummary",
+    "classificationAnalysis",
+    "reliability",
+    "analystId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^FORMPSY-[A-Z0-9-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+    },
+    "courseVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assessmentId": {
+      "type": "string",
+      "pattern": "^ASSESS-LH-TECH[12]-[0-9]{3}-FINAL$"
+    },
+    "assessmentVersion": {
+      "type": [
+        "string",
+        "integer"
+      ]
+    },
+    "formId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "formRevision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cohortId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "complete",
+        "invalidated"
+      ]
+    },
+    "sampleSize": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "itemCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "scoreSummary": {
+      "type": "object",
+      "required": [
+        "meanPercent",
+        "medianPercent",
+        "standardDeviationPercent",
+        "minimumPercent",
+        "maximumPercent",
+        "histogram"
+      ],
+      "properties": {
+        "meanPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "medianPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "standardDeviationPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "minimumPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "maximumPercent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "histogram": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "lowerInclusive",
+              "upperExclusive",
+              "count"
+            ],
+            "properties": {
+              "lowerInclusive": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "upperExclusive": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 101
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "timingSummary": {
+      "type": "object",
+      "required": [
+        "medianSeconds",
+        "p90Seconds",
+        "minimumSeconds",
+        "maximumSeconds"
+      ],
+      "properties": {
+        "medianSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "p90Seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "minimumSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "maximumSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "classificationAnalysis": {
+      "type": "object",
+      "required": [
+        "cutScores"
+      ],
+      "properties": {
+        "cutScores": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "percent",
+              "source",
+              "passCount",
+              "failCount",
+              "passRate"
+            ],
+            "properties": {
+              "percent": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "source": {
+                "enum": [
+                  "configured-provisional",
+                  "panel-recommendation",
+                  "governance-adopted",
+                  "sensitivity-only",
+                  "other"
+                ]
+              },
+              "passCount": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "failCount": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "passRate": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "reliability": {
+      "type": "object",
+      "required": [
+        "status",
+        "method",
+        "minimumSampleSize",
+        "usableParticipantCount",
+        "value",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "computed",
+            "insufficient-data",
+            "not-computed"
+          ]
+        },
+        "method": {
+          "enum": [
+            "kr-20",
+            "cronbach-alpha-dichotomous",
+            "none"
+          ]
+        },
+        "minimumSampleSize": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "usableParticipantCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -1,
+          "maximum": 1
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "analystId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
