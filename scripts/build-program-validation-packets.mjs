@@ -132,6 +132,7 @@ packets.push({
       'Organizational approval'
     ]
   },
+  startCommand:'npm run evidence:intake:candidate-governance -- --authority <GOVERNANCE-LEAD> --write',
   recordTemplate:{
     status:'approval-pending',
     approvals:{program:false,assessment:false,accessibility:false,privacyLegal:false,security:false,organizational:false},
@@ -152,7 +153,7 @@ function md(p){
       '- Waiting period hours: '+String(p.unresolvedDecisions.waitingPeriodHours),
       '- Fee policy: '+String(p.unresolvedDecisions.feePolicy),
       '- Retention schedule approved: '+String(p.unresolvedDecisions.retentionScheduleApproved),'',
-      'Source drafts:','',...p.sourceDrafts.map(x=>'- '+x),'');
+      'Source drafts:','',...p.sourceDrafts.map(x=>'- '+x),'','## Start record','', '    '+p.startCommand,'');
   }
   lines.push('## Review sections','');
   for(const [name,items] of Object.entries(p.sections)){
