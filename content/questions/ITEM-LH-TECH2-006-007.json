@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why should causal hypotheses be separated from the initial fact baseline?",
   "choices": [
-    "Because hypotheses should never be documented.",
-    "Because only room data count as facts.",
-    "So observations and measurements remain distinguishable from interpretations that may change as evidence develops.",
-    "Because the final cause should be written before containment."
+    "Separate hypotheses from the fact baseline so observations and measurements remain distinguishable from interpretations that may change as evidence develops.",
+    "Keep hypotheses out of the record entirely until one cause is confirmed so the baseline remains objective.",
+    "Treat room and instrument data as facts but record product observations as hypotheses because visual assessments are more subjective.",
+    "Document the most likely cause in the fact baseline once initial containment is complete so the investigation has a clear direction."
   ],
   "correct": 2,
-  "rationale": "So observations and measurements remain distinguishable from interpretations that may change as evidence develops.",
+  "rationale": "A good deviation record distinguishes what was directly observed or measured from what the team thinks may explain it. Hypotheses are useful and should be documented, but they should remain labeled as interpretations so they can be revised without rewriting the factual record. Mixing cause assumptions into the baseline increases confirmation bias and makes later reconstruction of the investigation more difficult.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
