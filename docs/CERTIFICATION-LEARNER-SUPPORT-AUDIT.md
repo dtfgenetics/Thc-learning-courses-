@@ -14,7 +14,7 @@ Run:
 
 ## Signals measured
 
-For each canonical course the reporter examines its dedicated course module and lessons plus the course learner-support package. It records:
+For each canonical course the reporter examines its dedicated course module and lessons, course learner-support documents, and mapped learner-download metadata. Course 1 uses its established workbook, workbook templates, integrated practical, Field Reference index, and objective-remediation matrix rather than the newer support-package filename convention. It records:
 
 - worked examples;
 - common mistakes/misconceptions;
@@ -24,7 +24,9 @@ For each canonical course the reporter examines its dedicated course module and 
 - lesson resource/download blocks;
 - tables/comparisons;
 - remediation/reassessment signals;
-- worksheet, checklist, job-aid, practice-sheet, download, or record-template signals.
+- worksheet, checklist, job-aid, practice-sheet, workbook, Field Reference, download, or record-template signals;
+- mapped course downloads; and
+- mapped downloads that are actually `published` + `public`.
 
 The resulting support score is a **prioritization signal**, not a readiness score or credential decision.
 
@@ -32,10 +34,10 @@ The resulting support score is a **prioritization signal**, not a readiness scor
 
 The `--check` mode fails only when a canonical course is missing:
 
-1. a detectable learner-support package; or
+1. a detectable learner-support package or equivalent established learner-support set; or
 2. any applied-practice signal in its dedicated learning layer.
 
-Other flags identify improvement opportunities but do not fail publication. Examples include no detected worked-example array, no dedicated lesson image block, no downloadable job-aid signal, or no integrated-scenario signal.
+Other flags identify improvement opportunities but do not fail publication. Examples include no detected worked-example array, no dedicated lesson image block, no downloadable job-aid signal, or no integrated-scenario signal. Published course-owned CSV tools are counted from `content/downloads` mappings rather than inferred from prose.
 
 ## Improvement rule
 
