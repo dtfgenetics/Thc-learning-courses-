@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which handoff is most reconstructable?",
   "choices": [
-    "A note that says treatment worked.",
-    "Only the final pest name.",
-    "One that includes route/sample effort, map, incidence/severity, intervention history, trend, containment status, uncertainty and next follow-up.",
-    "Only the latest positive plant photograph."
+    "A handoff that names the most likely pest and summarizes whether the intervention appears to be working.",
+    "A handoff that records only the final diagnosis and treatment history so the next shift does not overfocus on intermediate uncertainty.",
+    "A handoff that preserves route and sampling effort, map/location, incidence and severity, intervention history, trend, containment status, uncertainty, and the next planned follow-up.",
+    "A handoff that includes the latest positive photograph and current trap counts, with older scouting detail left in the original records."
   ],
   "correct": 2,
-  "rationale": "One that includes route/sample effort, map, incidence/severity, intervention history, trend, containment status, uncertainty and next follow-up.",
+  "rationale": "A reconstructable handoff allows the receiving person to understand what was sampled, where the problem is, how pressure changed, what actions were taken, what containment is in place, what remains uncertain, and what should happen next. A diagnosis or photograph alone omits the sampling context and decision path needed to evaluate trend and response quality. The handoff should summarize enough controlled evidence to continue the investigation without guessing.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
