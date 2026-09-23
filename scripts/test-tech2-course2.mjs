@@ -9,6 +9,23 @@ assert.equal(course.version,'0.2.0'); assert.equal(course.status,'draft'); asser
 assert.ok(course.modules.includes('MOD-LH-TECH2-002-VERIFICATION'));
 assert.equal(course.extensions.mappedPractical,'PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION');
 assert.equal(finalA.items.length,24); assert.equal(formA.items.length,12);
+assert.equal(finalA.extensions?.courseDerivedAssessment,true,'Technician II Course 2 final must remain explicitly course-derived');
+assert.equal(finalA.extensions?.encyclopediaSubstitutionAllowed,false,'Encyclopedia material cannot substitute for Tech II Course 2 instruction');
+assert.equal(finalA.extensions?.untaughtMaterialAllowed,false,'Tech II Course 2 final cannot assess untaught material');
+const mod=read('content/modules/MOD-LH-TECH2-002-VERIFICATION.json');
+const expectedObjectives=['LO-LH-TECH2-002-01','LO-LH-TECH2-002-02','LO-LH-TECH2-002-03','LO-LH-TECH2-002-04','LO-LH-TECH2-002-05','LO-LH-TECH2-002-06'];
+const taughtMap=finalA.extensions?.taughtMaterialMap??{};
+for(const objectiveId of expectedObjectives){
+  assert.ok(Array.isArray(taughtMap[objectiveId])&&taughtMap[objectiveId].length>0,objectiveId+': final must map to dedicated taught material');
+  for(const lessonId of taughtMap[objectiveId]){
+    assert.match(lessonId,/^LESSON-LH-TECH2-002-/,objectiveId+': test-to-teaching map must stay inside Tech II Course 2');
+    assert.ok(mod.lessons.includes(lessonId),objectiveId+': mapped lesson must belong to Tech II Course 2 module');
+    const lesson=read('content/lessons/'+lessonId+'.json');
+    assert.ok((lesson.learningObjectives??[]).includes(objectiveId),objectiveId+': mapped lesson '+lessonId+' must actually teach the objective');
+  }
+}
+assert.ok(fs.existsSync('docs/learning-hub/tech2/course-002/TEST-TO-TEACHING-MAP.md'),'Tech II Course 2 must retain a human-readable test-to-teaching audit');
+
 assert.equal(new Set([...finalA.items,...formA.items]).size,36);
 for(const id of [...finalA.items,...formA.items]) assert.ok(id.startsWith('ITEM-LH-TECH2-002-'));
 const counts=[0,0,0,0]; for(const id of finalA.items) counts[read('content/questions/'+id+'.json').correct]++; assert.deepEqual(counts,[6,6,6,6]);
