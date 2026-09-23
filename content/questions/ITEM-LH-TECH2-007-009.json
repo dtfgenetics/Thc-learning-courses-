@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A failure rate is defined as failed eligible units divided by 80 eligible units. Twelve failed. What is the rate?",
   "choices": [
-    "15%.",
-    "12%.",
-    "68%.",
-    "85%."
+    "15%, because 12 failed units divided by 80 eligible units equals 0.15.",
+    "12%, because the failed-unit count can be expressed directly as the percentage when the denominator is below 100.",
+    "68%, because 68 of the eligible units did not fail.",
+    "85%, because the success rate is the complement of failure and should be reported instead."
   ],
   "correct": 0,
-  "rationale": "15%. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "rationale": "The KPI definition specifies failed eligible units divided by eligible units. Twelve divided by 80 equals 0.15, or 15%. The numerator cannot be used as a percentage by itself, and reporting the success rate instead would answer a different metric. The denominator must remain the defined eligible population rather than being changed after the outcome.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
