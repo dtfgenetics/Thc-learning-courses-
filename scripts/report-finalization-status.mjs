@@ -33,6 +33,7 @@ const standardSecure=runJson('scripts/report-standard-secure-readiness.mjs');
 const credentialAuth=runJson('scripts/report-credential-authorization-readiness.mjs');
 const productionEvidence=runJson('scripts/report-production-evidence-reconciliation.mjs');
 const releaseDependencies=runJson('scripts/report-certification-release-dependencies.mjs',['--json']);
+const executionQueue=runJson('scripts/report-certification-execution-work-queue.mjs',['--json']);
 
 const falseSystemGates=[];
 for(const [areaName,area] of Object.entries(readiness.areas??{})){
@@ -80,7 +81,8 @@ const output={
     standardSettingAndSecureForms:standardSecure.summary,
     credentialAuthorization:credentialAuth.summary,
     productionControls:productionEvidence.summary,
-    releaseDependencies:releaseDependencies.summary
+    releaseDependencies:releaseDependencies.summary,
+    executionWorkQueue:executionQueue.summary
   },
   priorities:[
     'close any remaining repository structural/evidence-integrity defects reported by the live reconciler and production-evidence reconciler',
