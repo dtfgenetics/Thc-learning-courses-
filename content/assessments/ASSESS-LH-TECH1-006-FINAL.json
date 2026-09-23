@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "status": "draft",
+  "status": "published",
   "competencies": [
     "COMP-POSTHARVEST-001",
     "COMP-CULT-TRACEABILITY-001",
@@ -100,9 +100,9 @@
     "linkedCredentialPractical": "PRACTICAL-TECH1-F",
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH1-006-M01",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 36,
-    "completionModel": "Course 006 remains draft. Written evidence does not replace PRACTICAL-TECH1-F, the integrated capstone, human review, pilot evidence or program release gates.",
+    "completionModel": "This published public academic assessment contributes only to academic course evidence. It does not replace mapped practical/performance requirements and does not authorize professional credential issuance.",
     "courseDerivedAssessment": true,
     "encyclopediaSubstitutionAllowed": false,
     "untaughtMaterialAllowed": false,
@@ -134,6 +134,10 @@
         "LESSON-LH-TECH1-006-04"
       ]
     },
-    "testToTeachingAudit": "docs/learning-hub/tech1/course-006/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-006/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }
