@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Five canopy RH sensors agree closely while one wall sensor near an air outlet reads much drier. What is the strongest interpretation?",
   "choices": [
-    "The outlier requires placement/data-quality verification before it is treated as representative of the room",
-    "The whole room must be drier than the canopy sensors show",
-    "The wall sensor is definitely broken",
-    "Move all sensors to the wall"
+    "Treat the wall-sensor value as a placement/data-quality question until its representativeness is verified against the canopy pattern.",
+    "Treat the whole room as drier than the canopy sensors indicate because the wall sensor is closer to the HVAC outlet.",
+    "Treat the wall sensor as failed because any single reading that differs from five others must be incorrect.",
+    "Move all sensors to the wall so they can be compared under the same air stream."
   ],
   "correct": 0,
-  "rationale": "The outlier requires placement/data-quality verification before it is treated as representative of the room. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "Five closely agreeing canopy sensors and one much drier wall sensor near an outlet suggest that location may explain at least part of the difference. The wall value could still be valid for that location, so it should not be discarded as broken or treated as representative of the whole room without verification. Sensor placement and comparison context need to be checked before a room-level conclusion is made.",
   "references": [
     "REF-VPD-002"
   ],
