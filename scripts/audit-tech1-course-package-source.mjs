@@ -50,7 +50,9 @@ for (const courseId of targetIds) {
   const dedicatedObjectivePrefix = `LO-${key}-`;
   const assessmentPrefix = `ASSESS-${key}-`;
 
-  assert(course.status === 'draft', `${courseId}: current source-package audit expects draft lifecycle status until human release evidence exists.`);
+  assert(['published','approved'].includes(course.status), `${courseId}: academic package must be owner-approved/published while professional credential gates remain separate.`);
+  assert(course.extensions?.academicPublicationStatus === 'owner-approved-public-academic-release', `${courseId}: academic publication status must be recorded.`);
+  assert(course.extensions?.professionalCredentialUseAuthorized === false, `${courseId}: academic publication must not authorize professional credential use.`);
   assert(course.credentialBearing === true, `${courseId}: credentialBearing must be true for the Technician I pathway.`);
   assert(course.extensions?.credentialPath === 'CREDPROG-CULT-TECH-I-001', `${courseId}: credentialPath must resolve to Technician I.`);
   assert(course.extensions?.contentCeiling === null, `${courseId}: contentCeiling must remain null (no artificial content ceiling).`);
