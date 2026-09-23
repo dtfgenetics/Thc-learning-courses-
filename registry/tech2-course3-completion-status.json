@@ -12,7 +12,7 @@
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-003.json",
   "deploymentEvidence": "registry/tech2-course3-deployment-evidence.json",
-  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician II Course 3 has an owner-approved published academic package, course-derived assessment/integration provenance, deployed learner-surface verification, exact build/source identity, and its governed primary raster visuals released to the learner-facing WebP layer. Machine-resolvable academic package work is complete. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, practical/capstone validation, pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
+  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician II Course 3 has an owner-approved published academic package, course-derived assessment/integration provenance, deployed learner-surface verification, exact build/source identity, and its governed primary raster visuals released to the learner-facing WebP layer. Machine-resolvable academic package work is complete. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, practical/capstone validation, pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Machine-resolvable source, runtime, and deployed-surface verification is complete for the current pinned snapshot.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-003.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-003.json",
@@ -54,13 +54,13 @@
   "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
   "deploymentIdentity": {
     "state": "verified",
-    "buildId": "dtf-academy-338f3cc23581-35582824708",
-    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
+    "buildId": "dtf-academy-5db8b19e32ec-35930472219",
+    "sourceSha": "5db8b19e32ecbf1e1d8e900fd4fb234a46774cf2",
     "endpoint": "https://dtfseeds.com/api/build-info"
   },
   "deployedMachineSurfaceQa": {
     "state": "verified",
-    "sourceSha": "338f3cc235810fc8d267559b511d497b182a7718",
-    "buildId": "dtf-academy-338f3cc23581-35582824708"
+    "sourceSha": "5db8b19e32ecbf1e1d8e900fd4fb234a46774cf2",
+    "buildId": "dtf-academy-5db8b19e32ec-35930472219"
   }
 }
