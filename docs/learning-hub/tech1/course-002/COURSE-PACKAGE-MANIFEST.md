@@ -24,11 +24,11 @@
 ## Learner/visual source
 
 - visual registry: `visuals/COURSE2-ASSET-REGISTRY.json`
-- 10 produced Course 2 learner assets are registered;
+- 10 owner-approved production WebP Course 2 learner assets are registered;
 - 7 embedded instructional visuals;
 - 3 downloadable practice worksheets;
 - public learner source paths live under `apps/web/public/assets/course2/`;
-- controlled Drive mirror is recorded by the visual registry.
+- legacy SVG provenance mirrors are recorded by the visual registry; production WebP Drive mirroring is not yet claimed.
 
 The asset registry remains authoritative for exact asset IDs, lesson/objective mappings, public paths, source paths and Drive mirror IDs.
 
@@ -58,7 +58,7 @@ The asset registry remains authoritative for exact asset IDs, lesson/objective m
 - `scripts/test-course2-practical-crosswalk.mjs` — proves all five Course 2 objectives map to real Practical A tasks, scoring categories, expected evidence and deliverables while validation gates remain open.
 - `scripts/test-tech1-course2.mjs` — checks Course 2 package-artifact presence, objective-specific remediation/reassessment sections, item-level formative/summative objective coverage, reference-backed items, applied/analyze summative demand, answer-key balance, Practical A crosswalk, fail-closed completion state and all 10 governed assets through the real Academy HTTP server.
 - `scripts/test-course2-visual-registry.mjs` — verifies the governed Course 2 visual registry.
-- `apps/web/server.mjs` — learner-asset delivery uses a constrained `/assets/course<number>/<svg-file>` route so governed course asset folders share a consistent runtime contract.
+- `apps/web/server.mjs` — learner-asset delivery uses constrained `/assets/course<number>/<raster-file>` routes so governed course asset folders share a consistent runtime contract.
 - `.github/workflows/validate.yml` — push/PR quality workflow runs the complete `npm test` suite; `npm test` includes `tech1:course2:test`.
 - `docs/TECH1-COURSE-READINESS-MATRIX.md` — cross-course control surface.
 
