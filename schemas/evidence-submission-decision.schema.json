@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/evidence-submission-decision.schema.json",
+  "title": "THC Academy Evidence Submission Review Decision",
+  "type": "object",
+  "required": [
+    "id",
+    "submissionId",
+    "decision",
+    "reviewerId",
+    "reviewedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^EVDEC-[A-Z0-9-]+$"
+    },
+    "submissionId": {
+      "type": "string",
+      "pattern": "^EVSUB-[A-Z0-9-]+$"
+    },
+    "decision": {
+      "enum": [
+        "accepted",
+        "returned",
+        "revision-required"
+      ]
+    },
+    "reviewerId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
