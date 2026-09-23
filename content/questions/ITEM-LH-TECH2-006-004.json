@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Genealogy shows only two lots occupied the affected room during the excursion window. What is the defensible initial scope?",
   "choices": [
-    "Automatically scope the entire facility.",
-    "Exclude the worse-performing lot to improve the result.",
-    "Scope only the single best-looking container.",
-    "Start with those traceably exposed lots and expand only if additional evidence supports broader scope."
+    "Scope the entire facility because any environmental excursion can affect postharvest product outside the room through shared operations.",
+    "Exclude the lot with better product measurements and investigate only the visibly worse lot to make the assessment more efficient.",
+    "Start with the single worst-looking container within the room and expand scope only if that unit fails additional checks.",
+    "Start with the two traceably exposed lots and expand scope only if genealogy, shared equipment, timing, movement, or other evidence supports broader exposure."
   ],
   "correct": 3,
-  "rationale": "Start with those traceably exposed lots and expand only if additional evidence supports broader scope.",
+  "rationale": "Initial scope should follow traceable exposure, not speculation. If genealogy shows only two lots occupied the affected room during the excursion window, those lots form the defensible starting scope. The investigation should then ask whether shared equipment, movement, timing, or other contact pathways justify expansion. Automatically including the whole facility or narrowing to only the worst-looking container both distort the exposure evidence.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]
