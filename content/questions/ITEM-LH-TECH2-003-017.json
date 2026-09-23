@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two rooms use the same media and clock schedule but show different dryback. Which context is most important to compare?",
   "choices": [
-    "Plant size/stage, light, VPD, rooting and actual irrigation delivery.",
-    "Only the calendar date.",
-    "Only the nutrient brand.",
-    "Only the room name."
+    "Compare plant size and stage, light exposure, VPD, rooting, and actual irrigation delivery because the same media and clock schedule can still produce different water use and root-zone behavior.",
+    "Use calendar age as the main comparison because matching media and schedule make room-level environmental differences secondary.",
+    "Compare nutrient brand and batch because dryback differences under the same schedule usually indicate fertilizer-related water demand.",
+    "Compare room identification and historical yield first because long-term room performance is more informative than current root-zone measurements."
   ],
   "correct": 0,
-  "rationale": "Plant size/stage, light, VPD, rooting and actual irrigation delivery.",
+  "rationale": "Two rooms can share media and clock times yet still dry back differently because plant biomass, developmental stage, root occupancy, light load, VPD, airflow, and actual delivered irrigation differ. The useful comparison is therefore the set of variables that control water supply and demand, not merely the schedule label. Matching media and timing do not guarantee matching biological water use or hydraulic delivery.",
   "references": [
     "REF-NUTRIENT-UPTAKE-2026-001",
     "REF-IRRIGATION-001"

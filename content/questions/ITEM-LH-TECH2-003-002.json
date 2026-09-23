@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The approved recipe specifies Material A, but only a visually similar Material B is available. What should the technician do?",
   "choices": [
-    "Substitute Material B at the same volume.",
-    "Hold the batch and resolve the material-identity discrepancy through the controlled process.",
-    "Use half as much Material B as a precaution.",
-    "Ask a coworker whether the substitution usually works."
+    "Substitute Material B at the same dose if its analysis appears equivalent and document the substitution after the batch is complete.",
+    "Hold the batch and resolve the material-identity discrepancy through the controlled material/change process before use.",
+    "Use a reduced amount of Material B as a conservative substitute while waiting for Material A to arrive.",
+    "Use Material B only for this batch if another trained technician confirms that the materials have been interchanged successfully before."
   ],
   "correct": 1,
-  "rationale": "Hold the batch and resolve the material-identity discrepancy through the controlled process.",
+  "rationale": "Visual similarity or informal experience does not establish equivalence to the controlled recipe. A material substitution can change composition, concentration, compatibility, hazard profile, or final nutrient balance. The correct action is to hold the batch and resolve the identity/substitution through the approved process so the change is authorized and traceable before the material enters production.",
   "references": [
     "REF-ASTM-E2659-001"
   ]

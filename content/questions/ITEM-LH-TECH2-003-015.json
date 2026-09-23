@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-QUALITY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why should source-water identity be verified before comparing two fertigation batches?",
   "choices": [
-    "Source water never affects final solution chemistry.",
-    "Only final volume matters.",
-    "Different source-water chemistry can alter pH behavior and ionic contribution, changing the interpretation.",
-    "Source identity matters only for outdoor crops."
+    "Source water can be ignored if both final batches reach the same EC and pH targets.",
+    "Source identity matters mainly when total dissolved solids differ enough to change the starting EC by more than the meter tolerance.",
+    "Different source-water alkalinity and ionic composition can change pH behavior, nutrient contribution, and how two otherwise similar fertigation batches should be interpreted.",
+    "Source-water identity matters primarily for outdoor or recirculating systems because controlled indoor recipes override normal source variation."
   ],
   "correct": 2,
-  "rationale": "Different source-water chemistry can alter pH behavior and ionic contribution, changing the interpretation.",
+  "rationale": "Source water contributes its own alkalinity and dissolved ions to the final solution. Two batches can be prepared from the same recipe yet respond differently to acid/base adjustment or contribute different background ions when the source water changes. Verifying source identity therefore helps explain pH behavior, nutrient contribution, and batch-to-batch differences that final EC alone may not reveal.",
   "references": [
     "REF-WATER-ALKALINITY-EXT-001"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A spill occurs during batch preparation. What should guide the response?",
   "choices": [
-    "Continue mixing so the batch does not time out.",
-    "Neutralize it with another chemical from memory.",
-    "Rinse everything immediately regardless of product hazards.",
-    "The facility spill/exposure procedure and product hazard information, using required PPE and escalation."
+    "Continue the batch if the spill is contained and address cleanup after mixing is complete so the process does not remain partially finished.",
+    "Use a familiar neutralizing chemical if the spilled product's general hazard class is known and the amount is small.",
+    "Rinse the area immediately with water unless the container label specifically prohibits water contact.",
+    "Follow the facility spill/exposure procedure and the product hazard information, using the required PPE, containment, reporting, and escalation steps."
   ],
   "correct": 3,
-  "rationale": "The facility spill/exposure procedure and product hazard information, using required PPE and escalation.",
+  "rationale": "Spill response depends on the identity and hazards of the material, the amount and location spilled, exposure risk, and the facility's emergency procedure. Improvised neutralization or automatic rinsing can create additional reactions or exposures, while continuing the batch can spread contamination or delay needed response. The controlled spill procedure and hazard information should guide containment, PPE, cleanup, reporting, and escalation.",
   "references": [
     "REF-SAFETY-OSHA-001"
   ]

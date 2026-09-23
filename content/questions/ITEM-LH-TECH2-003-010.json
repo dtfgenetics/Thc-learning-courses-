@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IRRIGATION-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Nominal 2-L/h emitters are installed. What does that label prove about current installed performance?",
   "choices": [
-    "Every emitter currently delivers exactly 2 L/h.",
-    "It does not prove current field delivery; representative output must be measured.",
-    "Pressure and clogging cannot affect output.",
-    "The irrigation zone needs no uniformity testing."
+    "Use the 2-L/h rating as the current output unless there is visible evidence that an emitter is obstructed.",
+    "Treat the rating as a nominal specification and verify representative installed output before concluding that the zone is delivering uniformly.",
+    "Measure only the farthest emitter in each line because the end position is the most likely location for pressure loss.",
+    "Calculate average zone flow from pump output and emitter count instead of collecting site-level measurements."
   ],
   "correct": 1,
-  "rationale": "It does not prove current field delivery; representative output must be measured.",
+  "rationale": "The emitter label describes nominal performance under specified conditions, not guaranteed field output. Pressure, filtration, clogging, elevation, line length, wear, and installation conditions can alter actual delivery. Representative measurements across the zone are needed to determine installed uniformity; a single far-end value or a calculated average can miss local under- or over-delivery.",
   "references": [
     "REF-IRRIGATION-001"
   ]

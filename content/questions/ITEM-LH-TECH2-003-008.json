@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-QUALITY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A pH meter passes yesterday’s calibration but gives an implausible value today. What is the best reasoning?",
   "choices": [
-    "Yesterday’s calibration makes the value unquestionable.",
-    "The batch must be discarded without another check.",
-    "Change the recipe until the meter value looks familiar.",
-    "Current measurement fitness should be verified; prior calibration alone does not prove today’s reading is valid."
+    "Accept the reading because the meter passed calibration the previous day and no formal calibration interval has expired.",
+    "Discard the batch because an implausible pH after recent calibration indicates the solution is outside control.",
+    "Adjust the batch until the displayed pH is close to the historical recipe value, then verify the meter after production.",
+    "Verify current measurement fitness and the sample before acting; yesterday's calibration does not guarantee that today's specific reading is valid."
   ],
   "correct": 3,
-  "rationale": "Current measurement fitness should be verified; prior calibration alone does not prove today’s reading is valid.",
+  "rationale": "A prior calibration establishes that the instrument met requirements at that time, not that every future measurement is automatically valid. Drift, contamination, damaged probes, poor sample handling, temperature effects, or preparation errors can still produce an implausible reading. The technician should verify current instrument fitness and sample identity/condition before changing or discarding the batch.",
   "references": [
     "REF-WATER-ALKALINITY-EXT-001"
   ]
