@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-003","version":1,"status":"draft","purpose":"summative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-02","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A cleaning product is unfamiliar. What should the technician use to determine required precautions?","choices":["A coworker's memory of a different product","The product color and smell","The current label, SDS, work instruction, and supplied PPE requirements","A social-media recommendation"],"correct":2,"rationale":"Current controlled product and workplace information governs chemical precautions.","references":["REF-OSHA-1910-1200-HAZCOM","REF-OSHA-1910-132-PPE"]}
+{
+  "id": "ITEM-LH-TECH1-001-003",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A cleaning product is unfamiliar. What should the technician use to determine required precautions?",
+  "choices": [
+    "Use a coworker's experience with a similar product as the primary guide, then confirm the PPE before beginning.",
+    "Use visible characteristics such as color, odor, and container type to judge how hazardous the product is.",
+    "Use the current product label, Safety Data Sheet, applicable work instruction, and required PPE information before handling the chemical.",
+    "Use a trusted online recommendation for the product if the facility documents are not immediately available."
+  ],
+  "correct": 2,
+  "rationale": "Chemical precautions should come from current controlled information for the actual product and task. The label and SDS describe hazards and handling information, while the facility procedure and PPE requirements explain how that information applies at work. Memory, appearance, or online advice may be incomplete or refer to a different formulation and should not replace controlled hazard information.",
+  "references": [
+    "REF-OSHA-1910-1200-HAZCOM",
+    "REF-OSHA-1910-132-PPE"
+  ]
+}
