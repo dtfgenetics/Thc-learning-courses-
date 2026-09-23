@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-003-FINAL",
   "title": "Fertigation Execution, Verification & Root-Zone Interpretation — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -109,6 +109,41 @@
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-003-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "independentRecipeDesignAuthorityAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-003-01": [
+        "LESSON-LH-TECH2-003-01",
+        "LESSON-LH-TECH2-003-02"
+      ],
+      "LO-LH-TECH2-003-02": [
+        "LESSON-LH-TECH2-003-01",
+        "LESSON-LH-TECH2-003-02",
+        "LESSON-LH-TECH2-003-04"
+      ],
+      "LO-LH-TECH2-003-03": [
+        "LESSON-LH-TECH2-003-01",
+        "LESSON-LH-TECH2-003-04"
+      ],
+      "LO-LH-TECH2-003-04": [
+        "LESSON-LH-TECH2-003-03",
+        "LESSON-LH-TECH2-003-04"
+      ],
+      "LO-LH-TECH2-003-05": [
+        "LESSON-LH-TECH2-003-03"
+      ],
+      "LO-LH-TECH2-003-06": [
+        "LESSON-LH-TECH2-003-03",
+        "LESSON-LH-TECH2-003-04"
+      ],
+      "LO-LH-TECH2-003-07": [
+        "LESSON-LH-TECH2-003-02",
+        "LESSON-LH-TECH2-003-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-003/TEST-TO-TEACHING-MAP.md"
   }
 }
