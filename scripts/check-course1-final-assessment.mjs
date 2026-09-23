@@ -31,6 +31,12 @@ const items = itemIds.map((id) => {
   return item;
 }).filter(Boolean);
 const targets = assessment.extensions?.qualityTargets ?? {};
+if (assessment.extensions?.courseDerivedAssessment !== true) failures.push(`${assessmentId}: must remain explicitly course-derived`);
+if (assessment.extensions?.encyclopediaSubstitutionAllowed !== false) failures.push(`${assessmentId}: encyclopedia material cannot substitute for Course 1 instruction`);
+if (assessment.extensions?.untaughtMaterialAllowed !== false) failures.push(`${assessmentId}: final cannot assess untaught material`);
+if (assessment.extensions?.teachingProvenanceAudit !== 'scripts/audit-course1-objective-coverage.mjs') failures.push(`${assessmentId}: teaching provenance audit must remain canonical`);
+if (!fs.existsSync(path.join(root, assessment.extensions?.testToTeachingAudit ?? ''))) failures.push(`${assessmentId}: human-readable test-to-teaching audit is missing`);
+
 
 if (assessment.totalItems != null && assessment.totalItems !== itemIds.length) {
   failures.push(`${assessmentId}: totalItems=${assessment.totalItems}, listed items=${itemIds.length}`);
@@ -88,8 +94,8 @@ for (const item of evidenceItems) {
       continue;
     }
     if (block.type === 'image') {
-      if (targets.requireControlledImagePaths === true && !/^\/assets\/course1\/[A-Za-z0-9._-]+\.svg$/.test(block.src ?? '')) {
-        failures.push(`${item.id}: image stimulus must use a controlled Course 1 SVG asset path`);
+      if (targets.requireControlledImagePaths === true && !/^\/assets\/course1\/[A-Za-z0-9._-]+\.(?:png|webp|jpe?g)$/i.test(block.src ?? '')) {
+        failures.push(`${item.id}: image stimulus must use a controlled Course 1 raster asset path (PNG/WebP/JPEG)`);
       }
       if (targets.requireAccessibleImageAlt === true && !(typeof block.alt === 'string' && block.alt.trim().length > 0)) {
         failures.push(`${item.id}: image stimulus requires meaningful alt text`);
