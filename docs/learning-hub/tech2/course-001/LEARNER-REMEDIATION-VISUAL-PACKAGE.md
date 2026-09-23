@@ -108,6 +108,12 @@ Course 1 has **4 owner-approved lossless WebP primary visuals** recorded in `vis
 
 The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
 
+## Published learner job aid
+
+- **DL-TECH2-DIAGNOSTIC-WORKUP-001 — Technician II Diagnostic Workup Record**
+- Download: `/downloads/tech2-diagnostic-workup.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.
+
 ## Accessibility/manual UX review
 
 Human review remains required for:
