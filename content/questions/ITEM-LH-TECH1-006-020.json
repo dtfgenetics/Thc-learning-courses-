@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A harvest task now requires a technical repair outside Technician I training. What should happen?",
   "choices": [
-    "Attempt the repair because harvest is time-sensitive",
-    "Bypass the fault",
-    "Record the repair as complete",
-    "Stop the affected work and escalate the repair need rather than improvising"
+    "Attempt the repair if the harvest window is time-sensitive and the fault appears simple.",
+    "Bypass the fault long enough to finish the current lot and call maintenance afterward.",
+    "Mark the repair complete so the work order can close while a qualified person is contacted.",
+    "Stop the affected work and escalate the repair need rather than improvising beyond Technician I training or authorization."
   ],
   "correct": 3,
-  "rationale": "Stop the affected work and escalate the repair need rather than improvising. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A technical repair outside Technician I training marks an authority boundary. Time pressure does not make improvised repair acceptable. The technician should stop the affected work, preserve the equipment and lot status, and escalate so a qualified person can restore the system safely.",
   "references": [
     "REF-POSTHARVEST-001"
   ],
