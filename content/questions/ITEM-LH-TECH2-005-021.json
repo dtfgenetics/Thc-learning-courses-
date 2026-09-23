@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The authorized work order called for selective canopy adjustment, but the completion record only says “defoliated.” What is missing for performance review?",
   "choices": [
-    "Traceable planned-versus-actual scope, intensity/location, timing and post-work observations.",
-    "The technique name is sufficient.",
-    "Only the worker name matters.",
-    "A room average yield from a different cycle."
+    "The completion record needs planned-versus-actual scope, intensity and location of work, timing, and post-work observations so performance can be linked to what was actually done.",
+    "The word “defoliated” is sufficient if the same team normally uses a standard intensity and technique.",
+    "Only the worker identity is needed because the authorized work order already defines the intended scope.",
+    "A later room-average yield can substitute for detailed completion records if the crop performs within target."
   ],
   "correct": 0,
-  "rationale": "Traceable planned-versus-actual scope, intensity/location, timing and post-work observations.",
+  "rationale": "A performance review needs to know not just that work occurred, but what was actually done compared with the plan. Scope, intensity, location, timing, and post-work observations are necessary to relate outcomes to the intervention. A technique label or worker name alone cannot establish whether execution matched the authorized work order or explain spatial differences in recovery.",
   "references": [
     "REF-CANOPY-001"
   ]
