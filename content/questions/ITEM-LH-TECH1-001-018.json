@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-018","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A routine equipment check is allowed, but the next troubleshooting step requires opening a guarded panel. What should Technician I do?","choices":["Open it if the alarm is urgent","Stop at the authorized boundary and refer the condition to qualified personnel","Ask another technician to open it","Disable the alarm and continue"],"correct":1,"rationale":"Technician I covers routine operator checks, not protected servicing or hazardous-energy work outside authorization.","references":["REF-OSHA-1910-147-LOTO"]}
+{
+  "id": "ITEM-LH-TECH1-001-018",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A routine equipment check is allowed, but the next troubleshooting step requires opening a guarded panel. What should Technician I do?",
+  "choices": [
+    "Open the guarded panel if the alarm is urgent and only a visual inspection is needed.",
+    "Stop at the authorized operator-care boundary and refer the protected troubleshooting step to qualified personnel.",
+    "Ask a more experienced technician to open the panel while the learner observes.",
+    "Acknowledge or disable the alarm temporarily so the equipment can remain in service until maintenance arrives."
+  ],
+  "correct": 1,
+  "rationale": "Routine operator checks do not authorize access behind guards or into areas that may expose workers to hazardous energy. Technician I should stop at the defined boundary and escalate to qualified personnel. Urgency, experience, or observation by another worker does not replace the required servicing and energy-control authorization.",
+  "references": [
+    "REF-OSHA-1910-147-LOTO"
+  ]
+}
