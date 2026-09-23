@@ -2,15 +2,27 @@
   "id": "DL-TECH1-CANOPY-WORK-ORDER-001",
   "title": "Technician I Canopy Work-Order Record",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "record-template",
   "format": "csv",
   "description": "A controlled record for interpreting and executing canopy work while preserving plant identity, sanitation, tissue condition, exceptions, and handoff.",
   "path": "/downloads/tech1-canopy-work-order-record.csv",
   "accessibilityStatus": "partial",
-  "courseMappings": ["COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+  "courseMappings": [
+    "COURSE-LH-TECH1-005",
+    "COURSE-LH-TECH1-007"
+  ],
   "resourceMappings": [],
-  "instructions": ["Record the defined work-order objective before selecting an action.", "Identify stressed, damaged, suspect, or ambiguous plants before irreversible work begins.", "Document completed scope, exceptions, damage, sanitation, and before-and-after references.", "Stop and escalate when supplied limits or authority boundaries are reached."],
-  "limitations": ["This record does not authorize personal training experiments or changes to production strategy.", "Facility work orders and stop conditions govern the actual task."]
+  "instructions": [
+    "Record the defined work-order objective before selecting an action.",
+    "Identify stressed, damaged, suspect, or ambiguous plants before irreversible work begins.",
+    "Document completed scope, exceptions, damage, sanitation, and before-and-after references.",
+    "Stop and escalate when supplied limits or authority boundaries are reached."
+  ],
+  "limitations": [
+    "This record does not authorize personal training experiments or changes to production strategy.",
+    "Facility work orders and stop conditions govern the actual task."
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument."
 }

@@ -34,7 +34,14 @@ const html = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/index.htm
 const portal = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/portal.js'), 'utf8');
 const portalStyles = fs.readFileSync(path.join(process.cwd(), 'apps/web/public/portal.css'), 'utf8');
 const tech2CourseIds = Array.from({ length: 8 }, (_, index) => `COURSE-LH-TECH2-${String(index + 1).padStart(3, '0')}`);
-const publicTech2Ids = [
+const publicAcademicIds = [
+  'DL-TECH1-CANOPY-WORK-ORDER-001',
+  'DL-TECH1-CROP-INSPECTION-001',
+  'DL-TECH1-HARVEST-HANDOFF-001',
+  'DL-TECH1-INTEGRATED-SHIFT-001',
+  'DL-TECH1-IPM-SCOUTING-001',
+  'DL-TECH1-PROPAGATION-BATCH-001',
+  'DL-TECH1-WATER-IRRIGATION-001',
   'DL-TECH2-DIAGNOSTIC-WORKUP-001',
   'DL-TECH2-EQUIPMENT-VERIFICATION-001',
   'DL-TECH2-FERTIGATION-ROOTZONE-001',
@@ -44,7 +51,7 @@ const publicTech2Ids = [
   'DL-TECH2-SIMULATION-EVIDENCE-001',
   'DL-TECH2-TRACEABILITY-HANDOFF-001'
 ];
-const draftIds = expectedIds.filter((id) => !publicTech2Ids.includes(id));
+const draftIds = expectedIds.filter((id) => !publicAcademicIds.includes(id));
 const downloadRecords = expectedIds.map((id) => JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/downloads', `${id}.json`), 'utf8')));
 const tech1CourseIds = Array.from({ length: 6 }, (_, index) => `COURSE-LH-TECH1-${String(index + 2).padStart(3, '0')}`);
 for (const courseId of tech1CourseIds) {
@@ -69,7 +76,7 @@ async function start(env) {
 
 for (const id of expectedIds) {
   const record = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'content/downloads', `${id}.json`), 'utf8'));
-  if (publicTech2Ids.includes(id)) {
+  if (publicAcademicIds.includes(id)) {
     assert.equal(record.status, 'published');
     assert.equal(record.releaseStatus, 'public');
   } else {
@@ -110,8 +117,8 @@ const production = await start({ ...process.env, NODE_ENV: 'production', ACADEMY
 try {
   const base = `http://127.0.0.1:${production.address().port}`;
   const catalog = await (await fetch(`${base}/api/downloads`)).json();
-  assert.deepEqual(catalog.downloads.map((entry) => entry.id).sort(), [...publicTech2Ids].sort(), 'production catalog must expose only published/public Technician II learner downloads');
-  for (const id of publicTech2Ids) {
+  assert.deepEqual(catalog.downloads.map((entry) => entry.id).sort(), [...publicAcademicIds].sort(), 'production catalog must expose only published/public academic learner downloads');
+  for (const id of publicAcademicIds) {
     const metadata = await fetch(`${base}/api/downloads/${id}`);
     assert.equal(metadata.status, 200, `${id} metadata should be public in production`);
     const record = downloadRecords.find((entry) => entry.id === id);

@@ -2,15 +2,27 @@
   "id": "DL-TECH1-IPM-SCOUTING-001",
   "title": "Technician I IPM Scouting Route Record",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "observation-log",
   "format": "csv",
   "description": "A repeatable scouting record for direct signs, symptoms, incidence, severity, spatial patterns, trap counts, biosecurity controls, and escalation.",
   "path": "/downloads/tech1-ipm-scouting-record.csv",
   "accessibilityStatus": "partial",
-  "courseMappings": ["COURSE-LH-TECH1-005", "COURSE-LH-TECH1-007"],
+  "courseMappings": [
+    "COURSE-LH-TECH1-005",
+    "COURSE-LH-TECH1-007"
+  ],
   "resourceMappings": [],
-  "instructions": ["Follow the supplied route and record representative locations and canopy positions.", "Separate direct signs from symptoms, injury, mechanical damage, and insufficient evidence.", "Calculate incidence from the inspected denominator and use the supplied severity scale.", "Protect clean-to-dirty and quarantine boundaries and escalate without selecting unauthorized treatment."],
-  "limitations": ["A scouting record does not confirm pest or pathogen identity without adequate evidence.", "This template does not authorize pesticide selection, application, or release from quarantine."]
+  "instructions": [
+    "Follow the supplied route and record representative locations and canopy positions.",
+    "Separate direct signs from symptoms, injury, mechanical damage, and insufficient evidence.",
+    "Calculate incidence from the inspected denominator and use the supplied severity scale.",
+    "Protect clean-to-dirty and quarantine boundaries and escalate without selecting unauthorized treatment."
+  ],
+  "limitations": [
+    "A scouting record does not confirm pest or pathogen identity without adequate evidence.",
+    "This template does not authorize pesticide selection, application, or release from quarantine."
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument."
 }

@@ -2,15 +2,27 @@
   "id": "DL-TECH1-WATER-IRRIGATION-001",
   "title": "Technician I Water and Irrigation Shift Record",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "measurement-log",
   "format": "csv",
   "description": "A controlled worksheet for solution identity, pH and EC context, irrigation delivery, root-zone observations, exceptions, and escalation.",
   "path": "/downloads/tech1-water-irrigation-record.csv",
   "accessibilityStatus": "partial",
-  "courseMappings": ["COURSE-LH-TECH1-004", "COURSE-LH-TECH1-007"],
+  "courseMappings": [
+    "COURSE-LH-TECH1-004",
+    "COURSE-LH-TECH1-007"
+  ],
   "resourceMappings": [],
-  "instructions": ["Verify the work order, room, batch, solution, and meter identity before measuring or delivering.", "Record actual measurements and delivery rather than copying planned values.", "Keep local emitter or root-zone exceptions separate from room-wide conclusions.", "Escalate recipe, repair, treatment, or process changes outside Technician I authority."],
-  "limitations": ["pH and EC do not identify a specific nutrient deficiency, toxicity, or antagonism by themselves.", "This template does not authorize nutrient-recipe changes or equipment repair."]
+  "instructions": [
+    "Verify the work order, room, batch, solution, and meter identity before measuring or delivering.",
+    "Record actual measurements and delivery rather than copying planned values.",
+    "Keep local emitter or root-zone exceptions separate from room-wide conclusions.",
+    "Escalate recipe, repair, treatment, or process changes outside Technician I authority."
+  ],
+  "limitations": [
+    "pH and EC do not identify a specific nutrient deficiency, toxicity, or antagonism by themselves.",
+    "This template does not authorize nutrient-recipe changes or equipment repair."
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument."
 }
