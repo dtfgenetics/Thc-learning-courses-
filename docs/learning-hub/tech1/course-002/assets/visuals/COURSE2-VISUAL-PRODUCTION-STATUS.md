@@ -4,7 +4,7 @@
 
 ## Canonical learner delivery
 
-Course 2 currently uses ten responsive, accessible SVG files as a **legacy compatibility baseline** published from `apps/web/public/assets/course2/`. They remain in place only to avoid breaking the verified learner surface. Current production policy requires high-resolution PNG/WebP/JPEG/JPG replacements. The repository/public web asset remains the learner-delivery source of truth; Google Drive is a controlled production/reference mirror.
+Course 2 now uses ten owner-approved high-resolution lossless WebP files as the production learner-facing asset set under `apps/web/public/assets/course2/`. The superseded SVG files remain provenance/reference sources only and are not production instructional assets. The repository/public web raster asset is the learner-delivery source of truth; existing Drive SVG mirrors are retained as legacy provenance until raster Drive mirrors are separately recorded.
 
 ## Controlled Drive mirror
 
@@ -13,7 +13,7 @@ Folder: **Course 2 — Visual Learning Boards**
 - folder ID: `1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 - folder URL: `https://drive.google.com/drive/folders/1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o`
 
-All ten current compatibility assets are mirrored and recorded in `visuals/COURSE2-ASSET-REGISTRY.json`. Each now carries an explicit fail-closed raster-replacement requirement.
+All ten production WebP assets are recorded in `visuals/COURSE2-ASSET-REGISTRY.json` with deterministic SHA-256 and dimension checks. The prior SVG Drive mirrors are preserved only as provenance metadata; production raster Drive mirroring is not claimed until separately verified.
 
 ## Embedded teaching visuals
 

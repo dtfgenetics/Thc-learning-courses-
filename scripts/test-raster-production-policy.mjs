@@ -10,16 +10,36 @@ const releaseRaster=['png','webp','jpg','jpeg'];
 for(let n=2;n<=6;n++){
   const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
   assert.equal(registry.policy?.svgProductionTarget,false,`Course ${n}: SVG must not be the production target`);
+  assert.deepEqual(registry.policy?.productionInstructionalFormats,raster,`Course ${n}: production raster format policy drift`);
+  if(n===2){
+    assert.equal(registry.policy?.legacySvgCompatibilityAllowed,false,'Course 2: SVG must not remain an active learner compatibility path after raster cutover');
+    assert.equal(registry.policy?.rasterReplacementRequired,false,'Course 2: raster replacement is complete');
+    for(const asset of registry.assets??[]){
+      assert.equal(path.extname(asset.sourcePath??'').toLowerCase(),'.webp',`${asset.id}: Course 2 production source must be WebP`);
+      assert.equal(asset.assetLifecycle,'production-raster-active',`${asset.id}: Course 2 raster lifecycle drift`);
+      assert.equal(asset.rasterReplacement?.candidateSourcePath,asset.sourcePath,`${asset.id}: active raster path must match released candidate path`);
+      assert.match(asset.legacySource?.sourcePath??'',/^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/i,`${asset.id}: SVG provenance source required`);
+    }
+    continue;
+  }
   assert.equal(registry.policy?.legacySvgCompatibilityAllowed,true,`Course ${n}: current SVG baselines must stay explicitly compatibility-only until replaced`);
   assert.equal(registry.policy?.rasterReplacementRequired,true,`Course ${n}: raster replacement must be required`);
-  assert.deepEqual(registry.policy?.productionInstructionalFormats,raster,`Course ${n}: production raster format policy drift`);
   for(const asset of registry.assets??[]){
     if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
     assert.equal(asset.assetLifecycle,'legacy-svg-compatibility-baseline',`${asset.id}: SVG lifecycle must be compatibility baseline`);
     assert.equal(asset.rasterReplacement?.status,'owner-approved-production-release',`${asset.id}: released raster lifecycle drift`);
     assert.equal(asset.rasterReplacement?.releaseApproved,true,`${asset.id}: owner-approved academic raster release required`);
     assert.deepEqual(asset.rasterReplacement?.allowedFormats,raster,`${asset.id}: raster format policy drift`);
-    assert.match(asset.rasterReplacement?.candidateSourcePath??'',new RegExp(`^apps/web/public/assets/course${n}/[A-Za-z0-9._-]+\\.webp$`,'i'),`${asset.id}: released WebP source path required`);
+    assert.match(asset.rasterReplacement?.candidateSourcePath??'',new RegExp(`^apps/web/public/assets/course${n}/[A-Za-z0-9._-]+\\.webpimport assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root=process.cwd();
+const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const raster=['png','webp','jpeg','jpg'];
+const releaseRaster=['png','webp','jpg','jpeg'];
+
+,'i'),`${asset.id}: released WebP source path required`);
     assert.equal(asset.rasterReplacement?.releaseGate,'owner-approved-academic-release-with-machine-integrity-controls',`${asset.id}: released machine-integrity gate drift`);
   }
 }

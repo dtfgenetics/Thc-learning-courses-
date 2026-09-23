@@ -3,9 +3,9 @@
   "id": "COURSE2-RASTER-CANDIDATE-MANIFEST-001",
   "updated": "2026-09-22",
   "courseId": "COURSE-LH-TECH1-002",
-  "purpose": "Integrity and automated-QA record for the ten Course 2 high-resolution lossless WebP candidates rendered from the canonical learner-facing SVG compatibility baselines.",
+  "purpose": "Integrity, provenance and automated-QA record for the ten released Course 2 high-resolution lossless WebP production assets rendered from retired SVG provenance sources.",
   "productionMethod": {
-    "source": "canonical SVG compatibility baseline",
+    "source": "retired SVG provenance source",
     "format": "lossless WebP",
     "minimumShortSidePx": 1600,
     "contentTransformation": "none; deterministic raster rendering only"
@@ -15,7 +15,9 @@
     "producedCandidates": 10,
     "automatedQaPassed": 10,
     "releasedReplacements": 10,
-    "humanQaPending": 0
+    "humanQaPending": 0,
+    "activeProductionRasters": 10,
+    "legacySvgLearnerTargets": 0
   },
   "candidates": [
     {
@@ -179,7 +181,7 @@
       "releaseApproved": true
     }
   ],
-  "releaseBoundary": "Owner-approved academic raster release. Binary existence, automated raster QA, canonical mapping, accessibility text, and public-path integrity remain required; external review is not claimed.",
+  "releaseBoundary": "Owner-approved academic raster release is active in canonical lesson/resource paths. Binary existence, automated raster QA, canonical mapping and accessibility text remain required; manual responsive/accessibility review and external validation are not implied.",
   "ownerReleaseApproval": {
     "status": "approved",
     "date": "2026-09-22",
