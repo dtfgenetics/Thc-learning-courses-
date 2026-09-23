@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "status": "draft",
+  "status": "published",
   "competencies": [
     "COMP-PROP-001",
     "COMP-CANOPY-001",
@@ -104,9 +104,9 @@
     ],
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH1-005-M01",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 36,
-    "completionModel": "Course 005 remains draft. Written evidence does not replace the three mapped Technician I practicals, integrated capstone evidence, human review, pilot evidence or program release gates.",
+    "completionModel": "This published public academic assessment contributes only to academic course evidence. It does not replace mapped practical/performance requirements and does not authorize professional credential issuance.",
     "courseDerivedAssessment": true,
     "encyclopediaSubstitutionAllowed": false,
     "untaughtMaterialAllowed": false,
@@ -140,6 +140,10 @@
         "LESSON-LH-TECH1-005-04"
       ]
     },
-    "testToTeachingAudit": "docs/learning-hub/tech1/course-005/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-005/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }
