@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A wall sensor and a canopy sensor disagree by several points of RH. What is the strongest first interpretation?",
   "choices": [
-    "The disagreement may reflect location or sensor error; verify placement and use a colocated comparison before deciding.",
-    "The canopy sensor is definitely wrong.",
-    "Average the two readings and change the setpoint.",
-    "Delete the higher value because it is inconvenient."
+    "Treat the disagreement as a possible location effect or sensor offset and verify placement with a colocated comparison before changing control targets.",
+    "Treat the canopy sensor as the more relevant value because it is closer to the crop, then adjust the room target around that reading.",
+    "Average both readings and use the midpoint as the best estimate until the sensors can be checked during the next maintenance window.",
+    "Use the wall sensor as the control reference because fixed room sensors are normally more stable than movable canopy sensors."
   ],
   "correct": 0,
-  "rationale": "The disagreement may reflect location or sensor error; verify placement and use a colocated comparison before deciding. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A disagreement between sensors can result from true spatial variation, placement differences, shielding, airflow exposure, calibration offset, or sensor fault. Before changing environmental controls, the technician should determine whether the instruments agree when exposed to the same conditions. A colocated comparison separates location effects from instrument offset far better than averaging or choosing one sensor based on presumed authority. This preserves both measurement quality and the ability to make an interpretable control decision.",
   "references": [
     "REF-VPD-002",
     "REF-ENV-TEMP-2025-001"
