@@ -29,6 +29,8 @@ const credentialAuthorizationEvidence=readDir('content/credential-authorization-
 const occupationalProgramEvidence=readDir('content/occupational-program-validation-evidence');
 const credentialPrograms=readDir('content/credential-programs').filter(x=>x.id);
 const gateEvidence=readDir('content/certification-gate-evidence');
+const evidenceSubmissions=readDir('content/evidence-submissions');
+const evidenceSubmissionDecisions=readDir('content/evidence-submission-decisions');
 const performance=new Map(readDir('content/performance-assessments').map(x=>[x.id,x]));
 
 const gateOrder=[
@@ -37,6 +39,19 @@ const gateOrder=[
   'secureOperationalFormReadiness','occupationalProgramValidation','credentialAuthorization'
 ];
 const rank={prepared:0,'in-progress':1,'evidence-complete':2,approved:3,'revision-required':-1,'not-applicable':99};
+
+function latestSubmissionDecision(submissionId){
+  return evidenceSubmissionDecisions
+    .filter(d=>d.submissionId===submissionId)
+    .sort((a,b)=>Date.parse(b.reviewedAt)-Date.parse(a.reviewedAt))[0]??null;
+}
+function acceptedSubmissionsFor(scope,targetId,targetVersion){
+  return evidenceSubmissions
+    .filter(s=>s.scope===scope&&s.targetId===targetId&&String(s.targetVersion)===String(targetVersion)&&s.status!=='invalidated')
+    .map(s=>({submission:s,decision:latestSubmissionDecision(s.id)}))
+    .filter(x=>x.decision?.decision==='accepted')
+    .map(x=>({submissionId:x.submission.id,decisionId:x.decision.id,reviewedAt:x.decision.reviewedAt,evidenceRecordIds:x.submission.evidenceRecordIds}));
+}
 
 function latestGateRecord(courseId,courseVersion,gate){
   return gateEvidence
@@ -274,12 +289,21 @@ for(const courseRow of registry.courses??[]){
   }
   const applicable=gateOrder.filter(g=>gates[g].status!=='not-applicable');
   const releaseReady=applicable.every(g=>gates[g].status==='approved');
+  const programForCourse=credentialPrograms.find(p=>(p.requiredCourses??[]).includes(courseRow.courseId))??null;
+  const acceptedCourseSubmissions=acceptedSubmissionsFor('course',courseRow.courseId,course.version);
+  const acceptedProgramSubmissions=programForCourse
+    ? acceptedSubmissionsFor('credential-program',programForCourse.id,programForCourse.version)
+    : [];
   rows.push({
     courseId:courseRow.courseId,
     courseVersion:course.version,
     track:courseRow.track,
     ordinal:courseRow.ordinal,
     releaseReady,
+    submissionReview:{
+      acceptedCourseSubmissions,
+      acceptedProgramSubmissions
+    },
     gates
   });
   for(const gate of gateOrder){
@@ -302,6 +326,14 @@ const output={
   allCoursesReleaseReady:rows.length===15&&rows.every(r=>r.releaseReady),
   structuralProblems,
   gateSummary,
+  acceptedSubmissionSummary:{
+    courseSubmissions:rows.reduce((n,r)=>n+(r.submissionReview?.acceptedCourseSubmissions?.length??0),0),
+    programSubmissionReferences:rows.reduce((n,r)=>n+(r.submissionReview?.acceptedProgramSubmissions?.length??0),0),
+    uniqueAcceptedSubmissions:new Set(rows.flatMap(r=>[
+      ...(r.submissionReview?.acceptedCourseSubmissions??[]).map(x=>x.submissionId),
+      ...(r.submissionReview?.acceptedProgramSubmissions??[]).map(x=>x.submissionId)
+    ])).size
+  },
   courses:rows
 };
 

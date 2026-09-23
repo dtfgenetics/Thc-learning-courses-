@@ -27,6 +27,7 @@ const mappings = [
   ['content/occupational-program-validation-evidence', 'schemas/occupational-program-validation-evidence.schema.json'],
   ['content/production-control-evidence', 'schemas/production-control-evidence.schema.json'],
   ['content/evidence-submissions', 'schemas/evidence-submission-manifest.schema.json'],
+  ['content/evidence-submission-decisions', 'schemas/evidence-submission-decision.schema.json'],
   ['content/course-pilot-execution-evidence', 'schemas/course-pilot-execution-evidence.schema.json'],
   ['content/accessibility-review-evidence', 'schemas/rendered-accessibility-review-evidence.schema.json'],
   ['content/candidate-governance-approvals', 'schemas/candidate-governance-approval.schema.json'],
