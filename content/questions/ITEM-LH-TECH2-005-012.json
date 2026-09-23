@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A leading hypothesis explains most but not all observations. How should the handoff treat the conflicting evidence?",
   "choices": [
-    "Remove it because it weakens the conclusion.",
-    "Change it to match the leading hypothesis.",
-    "Delay the handoff until all uncertainty disappears.",
-    "Include it and state the remaining uncertainty instead of deleting or hiding it."
+    "Remove conflicting observations from the summary once the leading hypothesis explains most of the evidence.",
+    "Revise conflicting observations if later evidence shows the leading hypothesis was correct.",
+    "Delay the handoff until all significant uncertainty has been resolved so the receiving shift gets one clear conclusion.",
+    "Include the conflicting evidence, explain the current hypothesis ranking, and state what uncertainty remains and what evidence is still needed."
   ],
   "correct": 3,
-  "rationale": "Include it and state the remaining uncertainty instead of deleting or hiding it.",
+  "rationale": "A handoff should reflect the evidence as it actually exists, not only the observations that fit the leading explanation. Conflicting data can reveal limits in the hypothesis, measurement problems, or alternative causes that still matter. Preserving that uncertainty allows the next shift to continue the investigation intelligently rather than inheriting an artificially certain conclusion.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
