@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Canopy work stopped in one zone after suspicious pest signs. What should the record preserve?",
   "choices": [
-    "Mark the whole room complete",
-    "Completed plants, held area, observed evidence, sanitation response, escalation and unresolved status",
-    "Record a confirmed pest diagnosis without evidence",
-    "Omit the hold so the next shift can decide"
+    "Mark the whole room complete because most canopy work was finished before the stop.",
+    "Record which plants or zone were completed, which area was held, the observed pest evidence, sanitation response, escalation, and unresolved status.",
+    "Record a confirmed pest diagnosis so the next shift knows why the work stopped.",
+    "Omit the hold and let the next shift decide whether the area should remain isolated."
   ],
   "correct": 1,
-  "rationale": "Completed plants, held area, observed evidence, sanitation response, escalation and unresolved status. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "When work stops because of a plant-health concern, the record should separate completed from held scope and preserve the actual evidence and response. A confirmed diagnosis should not be invented, and the hold status should not be left ambiguous. The next shift needs a clear continuation point.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IPM-001"
