@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A tool crosses a quarantine boundary without the required sanitation step. What is the correct record response?",
   "choices": [
-    "Silently sanitize later",
-    "Delete the tool from inventory",
-    "Treat it as a biosecurity breach, follow the supplied containment/correction procedure and document it",
-    "Assume no problem because no pest is visible"
+    "Sanitize the tool later and omit the crossing if no contamination becomes visible.",
+    "Remove the tool from inventory so the record no longer shows a quarantine-boundary violation.",
+    "Treat the event as a biosecurity deviation, apply the supplied containment/correction procedure, and document what crossed the boundary and what actions followed.",
+    "Assume the event had no consequence because no pest was visible on the tool."
   ],
   "correct": 2,
-  "rationale": "Treat it as a biosecurity breach, follow the supplied containment/correction procedure and document it. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Crossing a quarantine boundary without the required sanitation step is a process failure even if no organism is visible. The event should remain reconstructable so the facility can determine affected scope and corrective action. Silent cleanup or deleting the tool record hides the deviation.",
   "references": [
     "REF-IPM-001"
   ],
