@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A blade was used on suspect donor tissue and the next work order calls for clean donor material. What is the correct response?",
   "choices": [
-    "Wipe it on clothing and continue",
-    "Follow the required tool sanitation or replacement step before contacting clean material",
-    "Use it until the end of the shift",
-    "Skip sanitation if the blade looks clean"
+    "Wipe the blade on clean clothing and proceed if no debris remains visible.",
+    "Follow the required sanitation or replacement step before the blade contacts clean donor material.",
+    "Keep using the blade until the end of the shift so sanitation occurs only once.",
+    "Skip sanitation if the suspect donor showed no confirmed pest or disease."
   ],
   "correct": 1,
-  "rationale": "Follow the required tool sanitation or replacement step before contacting clean material. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A blade that contacted suspect tissue can transfer contamination even when it looks clean and the cause is unconfirmed. The facility sanitation or replacement step exists to break that pathway before the tool reaches clean donor material. Visual cleanliness or lack of confirmed disease does not remove the biosecurity risk.",
   "references": [
     "REF-PROP-001",
     "REF-IPM-001"
