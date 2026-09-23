@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-013","version":1,"status":"draft","purpose":"summative","competency":"COMP-SPACE-BIOSEC-001","objective":"LO-LH-TECH1-001-03","bloomLevel":"understand","difficulty":"easy","type":"multiple-choice","stem":"Which is a realistic contamination route in greenhouse cultivation?","choices":["Tools, containers, media, water, plant debris, and worker movement","Only visibly diseased leaves","Only airborne spores","Only incoming seeds"],"correct":0,"rationale":"Greenhouse pathogens can move through many physical routes, including tools, soil/media, water, debris, containers, plants, and workers.","references":["REF-PSU-GREENHOUSE-DISEASE-SOURCES"]}
+{
+  "id": "ITEM-LH-TECH1-001-013",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-TECH1-001-03",
+  "bloomLevel": "understand",
+  "difficulty": "easy",
+  "type": "multiple-choice",
+  "stem": "Which is a realistic contamination route in greenhouse cultivation?",
+  "choices": [
+    "Tools, containers, media, water, plant debris, incoming plants, and worker movement can all carry contamination.",
+    "Contamination risk mainly comes from visibly diseased leaves because hidden sources are difficult to control.",
+    "Airborne spores are the primary route, so tool and worker movement are secondary concerns.",
+    "Incoming seed is the main route because established greenhouse materials are already adapted to the facility."
+  ],
+  "correct": 0,
+  "rationale": "Greenhouse contamination can move through many routes, including tools, containers, media, water, debris, plants, footwear, hands, carts, and other worker or equipment movement. Biosecurity therefore depends on controlling multiple pathways rather than focusing only on visibly diseased tissue or one presumed source.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-SOURCES"
+  ]
+}
