@@ -27,7 +27,7 @@ const usedAssetIds = new Set();
 for (const asset of produced) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-006-[0-9]{3}$/);
   assert.match(asset.learnerPath ?? '', /^\/assets\/course6\/[A-Za-z0-9._-]+\.webp$/i);
-  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course6\/[A-Za-z0-9._-]+\.svg$/i);
+  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course6\/[A-Za-z0-9._-]+\.webp$/i);
   assert.ok(['embedded-visual', 'downloadable-practice'].includes(asset.deliveryType), `${asset.id}: unsupported deliveryType`);
   assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0);
   assert.ok(Array.isArray(asset.objectiveIds) && asset.objectiveIds.length > 0);
@@ -51,8 +51,10 @@ for (const asset of produced) {
   assert.equal(rasterHeader.subarray(8, 12).toString('ascii'), 'WEBP');
 
   const source = path.join(root, asset.sourcePath);
-  assert.ok(fs.existsSync(source), `${asset.id}: public source asset missing`);
-  const svg = fs.readFileSync(source, 'utf8');
+  assert.ok(fs.existsSync(source), `${asset.id}: production raster asset missing`);
+  const legacySource = path.join(root, asset.legacySource?.sourcePath ?? '');
+  assert.ok(fs.existsSync(legacySource), `${asset.id}: legacy provenance SVG missing`);
+  const svg = fs.readFileSync(legacySource, 'utf8');
   assert.match(svg, /<svg[\s>]/);
   assert.match(svg, /<title[\s>]/);
   assert.match(svg, /<desc[\s>]/);
