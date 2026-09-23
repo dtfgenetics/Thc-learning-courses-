@@ -2,7 +2,7 @@
   "id": "ASSESS-LH-TECH2-003-FINAL",
   "title": "Fertigation Execution, Verification & Root-Zone Interpretation — Course Assessment",
   "version": "1.1.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "summative",
   "competencies": [
     "COMP-WATER-QUALITY-ADV-001",
@@ -105,7 +105,7 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH2-003",
     "linkedCredentialPractical": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-003-M01",
@@ -144,6 +144,10 @@
         "LESSON-LH-TECH2-003-04"
       ]
     },
-    "testToTeachingAudit": "docs/learning-hub/tech2/course-003/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-003/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }
