@@ -1,8 +1,8 @@
 # Course Package Manifest — COURSE-LH-TECH1-002
 
 **Course:** Plant Observation, Growth Stages & Crop Records  
-**Package state:** machine source package substantially built; human validation and deployment evidence remain open  
-**Date:** 2026-09-17
+**Package state:** owner-approved published academic package; professional validation and manual accessibility evidence remain open  
+**Date:** 2026-09-22
 
 ## Canonical source
 
@@ -79,13 +79,13 @@ Current item-level objective distribution:
 
 Every controlled objective therefore has both formative and summative academic evidence, and the current 20-item summative form is evenly distributed at four items per objective. This proves structural coverage only; human item-quality review, pilot evidence and standard-setting decisions remain open.
 
-## Machine work still required for Course 2
+## Remaining machine-quality work for Course 2
 
-1. Confirm the current CI run passes the strengthened Course 2 production regression and complete repository audit suite.
-2. Verify the learner-facing Course 2 route, lesson navigation, practice interactions and assessment workflow rather than asset delivery alone.
-3. Generate and verify authoritative versioned Course 2 review-queue/packet records against the exact source versions used for human review.
-4. Perform deployed responsive/manual learner-surface QA and fresh anonymous public readback after an actual deployment.
-5. Record truthful release/deployment evidence with the exact route, build/run and source/site SHA only after verification succeeds.
+1. Keep the Course 2 regression and complete repository audit suite green after content changes.
+2. Preserve the already verified learner-facing course, lesson and assessment readback/build identity.
+3. Perform deployed responsive/manual accessibility and learner-surface QA across supported layouts.
+4. Generate or refresh versioned review-queue/packet records when exact source versions change.
+5. Expand instructional visuals, examples and learner practice where review identifies a real need.
 
 ## Human/evidence gates that remain open
 
@@ -96,14 +96,14 @@ Every controlled objective therefore has both formative and summative academic e
 - rendered accessibility/manual UX approval;
 - real learner/item/practical pilot evidence;
 - applicable standard-setting/decision-rule approval;
-- academic release approval.
+- professional credential release approval.
 
 No machine artifact may mark these complete on behalf of a reviewer.
 
 ## Publication and authority boundary
 
-Course 2's learner-facing public-release record may publish academic learner material without changing the controlled course object's `draft` authority state. That public projection must not be interpreted as technical validation, credential approval or professional credential issuance. The controlled package remains authoritative for governance and validation state.
+Course 2's controlled course, dedicated module and dedicated lessons are published for owner-approved academic use. That academic publication must not be interpreted as technical validation, practical validation, credential approval or professional credential issuance. Professional validation and issuance remain governed by the fail-closed credential evidence layer.
 
 ## Release boundary
 
-Course 2 remains `draft` in the controlled course source. Completion of this package does not by itself authorize professional credential issuance.
+Course 2 is published as academic training material. Completion of this package does not by itself authorize professional credential issuance.
