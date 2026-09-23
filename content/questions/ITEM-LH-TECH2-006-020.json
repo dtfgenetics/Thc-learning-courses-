@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A room excursion occurred, but product measurements before and after remain consistent across representative positions. What does that support?",
   "choices": [
-    "The excursion can be erased.",
-    "Product measurements are irrelevant once a room alarm occurs.",
-    "The entire facility must be disposed.",
-    "The excursion is a process event requiring documentation, while product evidence may limit the inferred affected condition; both should remain in the investigation."
+    "Remove the excursion from the deviation record if representative product measurements show no measurable impact.",
+    "Treat product measurements as secondary once a validated environmental alarm has occurred because the process excursion defines the product status.",
+    "Broaden disposition to the entire facility because an excursion shows the drying process was uncontrolled even if product data are stable.",
+    "Document the excursion as a process event while using the consistent representative product evidence to bound what product impact can actually be inferred."
   ],
   "correct": 3,
-  "rationale": "The excursion is a process event requiring documentation, while product evidence may limit the inferred affected condition; both should remain in the investigation.",
+  "rationale": "A process excursion remains real and should be documented even when product measurements appear unaffected. At the same time, product evidence matters when determining the scope and significance of the event. The investigation should preserve both facts: the process left its target state, but representative product measurements may limit the evidence for actual product impact. Neither source should erase the other.",
   "references": [
     "REF-POSTHARVEST-001"
   ]
