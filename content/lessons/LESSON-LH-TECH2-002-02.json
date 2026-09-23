@@ -84,7 +84,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-002-02",
           "title": "Command, response and fault classification",
-          "src": "/assets/tech2/course2/outcome-02.svg",
+          "src": "/assets/tech2/course2/outcome-02.webp",
           "alt": "Fault-classification workflow separating controller command, physical response, independent measurement and spatial or time-series pattern before assigning a provisional sensor-data, control-response, equipment-response or distribution-process category.",
           "caption": "A command is not proof of physical response. Combine independent measurement, time-series behavior and spatial pattern to choose the next verification path without overstating root cause.",
           "references": [
@@ -95,8 +95,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-002-02",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
