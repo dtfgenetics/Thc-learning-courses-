@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-001-028",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -19,13 +19,13 @@
     }
   ],
   "choices": [
-    "Use the equipment carefully",
-    "Stand farther away",
-    "Ask a coworker to watch the moving part",
-    "Do not use it; follow the out-of-service/escalation procedure"
+    "Use the equipment at reduced speed while keeping clear of the exposed moving part.",
+    "Increase distance from the machine and limit use to experienced operators until the guard is replaced.",
+    "Have a coworker watch the unguarded area while the equipment is used for essential work.",
+    "Do not use the equipment; follow the out-of-service and escalation procedure until the safeguard is properly restored."
   ],
   "correct": 3,
-  "rationale": "Missing safeguards are not compensated for by careful behavior; the equipment should not be used until properly addressed.",
+  "rationale": "A missing guard means a required safeguard is absent. Careful behavior, distance, experience, or a spotter do not replace the protection the guard provides. The machine should be removed from use according to procedure and escalated for authorized repair before operation resumes.",
   "references": [
     "REF-OSHA-1910-147-LOTO"
   ]
