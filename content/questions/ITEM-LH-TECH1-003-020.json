@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A trend shows repeated lights-on temperature spikes even though the 24-hour average is within range. What belongs in the handoff?",
   "choices": [
-    "Only the acceptable average",
-    "A confirmed HVAC diagnosis",
-    "No note because the average passed",
-    "The repeated spike pattern with timing/location, relevant checks, escalation and unresolved status"
+    "Report only the acceptable 24-hour average because it is the formal summary metric.",
+    "Report a confirmed HVAC fault because repeated lights-on spikes indicate equipment failure.",
+    "Omit the pattern because an average within range shows the room met the environmental requirement overall.",
+    "Report the repeated lights-on spike pattern with timing and location, relevant checks or comparisons, escalation status, and the fact that root cause remains unresolved if it has not been established."
   ],
   "correct": 3,
-  "rationale": "The repeated spike pattern with timing/location, relevant checks, escalation and unresolved status. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A 24-hour average can hide repeated short excursions that may matter operationally. The handoff should preserve the recurring spike pattern and its timing rather than letting the average erase it. Technician I should also separate observation from diagnosis: the pattern can justify escalation without proving an HVAC fault.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ],
