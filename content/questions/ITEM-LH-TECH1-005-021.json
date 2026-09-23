@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which propagation handoff is most reconstructable?",
   "choices": [
-    "Identified tray/donor, actual count/status, sanitation or hold state, exception, escalation and next action",
-    "Tray looks fine",
-    "Propagation complete",
-    "Only the cultivar name"
+    "Record the identified tray or donor, actual count and status, sanitation or hold state, any exception, escalation, and next action.",
+    "Record only that the tray looks healthy and ready for the next step.",
+    "Record only “propagation complete” because the detailed information already exists elsewhere.",
+    "Record only the cultivar name so the receiving shift knows which genetics are involved."
   ],
   "correct": 0,
-  "rationale": "Identified tray/donor, actual count/status, sanitation or hold state, exception, escalation and next action. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A strong propagation handoff lets the next shift understand what material is involved, how much is present, whether any hold or sanitation issue remains, what exceptions occurred, and what must happen next. A generic status or cultivar name alone is not enough to reconstruct the work.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IPM-001"
