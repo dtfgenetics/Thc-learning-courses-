@@ -21,6 +21,7 @@ assert.equal(course.extensions?.independentProductReleaseAuthorityConferred,fals
 assert.equal(course.extensions?.dedicatedItemCount,36);
 assert.equal(course.extensions?.learnerAssetLayerBuilt,true);
 assert.equal(course.extensions?.totalLearnerAssetCount,8);
+assert.equal(course.extensions?.driveAssetMirrorStatus,'verified-8-of-8');
 
 const module=read('content/modules/MOD-LH-TECH1-006-HARVEST.json');
 assert.equal(module.lessons.length,4);
@@ -126,4 +127,4 @@ try{
   await once(server,'close');
 }
 
-console.log('Course 006 production slice passed: four lessons, six objectives, 36 referenced scored items, complete package artifacts, Practical F mapping and eight lesson-reachable runtime assets are wired while individual Drive mirrors and human/release gates remain open.');
+console.log('Course 006 production slice passed: four lessons, six objectives, 36 referenced scored items, complete package artifacts, Practical F mapping and eight lesson-reachable runtime assets and 8/8 controlled Drive mirrors are verified while human/professional-release gates remain open.');
