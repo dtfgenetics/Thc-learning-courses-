@@ -20,6 +20,7 @@ const mappings = [
   ['content/performance-assessments', 'schemas/performance-assessment.schema.json'],
   ['content/pilot-evidence', 'schemas/pilot-evidence.schema.json'],
   ['content/calibration-evidence', 'schemas/practical-calibration-evidence.schema.json'],
+  ['content/certification-gate-evidence', 'schemas/certification-gate-evidence.schema.json'],
   ['content/pilot-plans', 'schemas/pilot-plan.schema.json'],
   ['content/programs', 'schemas/program.schema.json'],
   ['content/questions', 'schemas/question.schema.json'],
