@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-004-FINAL",
   "title": "Plant Health, IPM & Biosecurity Troubleshooting — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -84,6 +84,36 @@
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-004-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "pesticideTreatmentAuthorityAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-004-01": [
+        "LESSON-LH-TECH2-004-01"
+      ],
+      "LO-LH-TECH2-004-02": [
+        "LESSON-LH-TECH2-004-02",
+        "LESSON-LH-TECH2-004-03"
+      ],
+      "LO-LH-TECH2-004-03": [
+        "LESSON-LH-TECH2-004-03",
+        "LESSON-LH-TECH2-004-04"
+      ],
+      "LO-LH-TECH2-004-04": [
+        "LESSON-LH-TECH2-004-02",
+        "LESSON-LH-TECH2-004-04"
+      ],
+      "LO-LH-TECH2-004-05": [
+        "LESSON-LH-TECH2-004-01",
+        "LESSON-LH-TECH2-004-03",
+        "LESSON-LH-TECH2-004-04"
+      ],
+      "LO-LH-TECH2-004-06": [
+        "LESSON-LH-TECH2-004-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-004/TEST-TO-TEACHING-MAP.md"
   }
 }
