@@ -26,6 +26,7 @@ const calibrationEvidence=readDir('content/calibration-evidence');
 const standardSettingEvidence=readDir('content/standard-setting-evidence');
 const secureFormEvidence=readDir('content/secure-form-equivalence-evidence');
 const credentialAuthorizationEvidence=readDir('content/credential-authorization-evidence');
+const occupationalProgramEvidence=readDir('content/occupational-program-validation-evidence');
 const credentialPrograms=readDir('content/credential-programs').filter(x=>x.id);
 const gateEvidence=readDir('content/certification-gate-evidence');
 const performance=new Map(readDir('content/performance-assessments').map(x=>[x.id,x]));
@@ -33,7 +34,7 @@ const performance=new Map(readDir('content/performance-assessments').map(x=>[x.i
 const gateOrder=[
   'exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis',
   'practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting',
-  'secureOperationalFormReadiness','credentialAuthorization'
+  'secureOperationalFormReadiness','occupationalProgramValidation','credentialAuthorization'
 ];
 const rank={prepared:0,'in-progress':1,'evidence-complete':2,approved:3,'revision-required':-1,'not-applicable':99};
 
@@ -167,6 +168,34 @@ function deriveSecureForms(courseRow){
   const status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='evidence-complete'?'evidence-complete':'in-progress';
   return {status,detail:{records:rows.length,latestRecordId:latest.id,formCount:latest.formCount,quantitativeEvidenceStatus:latest.equivalenceReview?.quantitativeEvidenceStatus??null}};
 }
+function deriveOccupationalProgramValidation(courseRow){
+  const course=coursesById.get(courseRow.courseId);
+  if(!course) return {status:'prepared',problems:[`missing course for occupational program validation`]};
+  const programs=credentialPrograms.filter(p=>(p.requiredCourses??[]).includes(courseRow.courseId));
+  if(programs.length!==1) return {status:'prepared',problems:[`expected exactly one credential program for ${courseRow.courseId}, found ${programs.length}`]};
+  const program=programs[0];
+  const rows=occupationalProgramEvidence
+    .filter(e=>e.credentialProgramId===program.id&&String(e.credentialProgramVersion)===String(program.version)&&e.status!=='invalidated')
+    .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+  const latest=rows[0]??null;
+  if(!latest) return {status:'prepared',detail:{credentialProgramId:program.id,credentialProgramVersion:program.version,records:0}};
+  const courseLock=latest.authorizedCourses?.find(x=>x.courseId===courseRow.courseId);
+  if(!courseLock || String(courseLock.courseVersion)!==String(course.version)){
+    return {status:'prepared',detail:{credentialProgramId:program.id,latestRecordId:latest.id},problems:[`occupational validation does not cover current course version ${course.version}`]};
+  }
+  const status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='evidence-complete'?'evidence-complete':latest.status==='in-progress'?'in-progress':'prepared';
+  return {status,detail:{
+    credentialProgramId:program.id,
+    credentialProgramVersion:program.version,
+    latestRecordId:latest.id,
+    jtaValidated:latest.jobTaskAnalysis?.validated??false,
+    smeEmployerValidated:latest.smeEmployerValidation?.completed??false,
+    blueprintWeightsFinalized:latest.assessmentBlueprint?.weightsFinalized??false,
+    practicalsValidated:latest.performanceValidation?.practicalsValidated??0,
+    practicalsExpected:latest.performanceValidation?.practicalsExpected??0,
+    capstoneValidated:latest.performanceValidation?.capstoneValidated??false
+  }};
+}
 function deriveCredentialAuthorization(courseRow){
   const course=coursesById.get(courseRow.courseId);
   if(!course) return {status:'prepared',problems:[`missing course for credential authorization`]};
@@ -192,7 +221,7 @@ function explicitOrDerived(courseRow,gate,derived){
   const problems=[...(derived.problems??[])];
 
   // Approval for gates with repository-verifiable prerequisites cannot leapfrog missing evidence.
-  if(explicit.status==='approved' && ['exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis','practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting','secureOperationalFormReadiness','credentialAuthorization'].includes(gate)){
+  if(explicit.status==='approved' && ['exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis','practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting','secureOperationalFormReadiness','occupationalProgramValidation','credentialAuthorization'].includes(gate)){
     if(!['evidence-complete','approved'].includes(derived.status)){
       problems.push(`approved attestation cannot satisfy ${gate} before repository-verifiable prerequisite evidence is complete`);
       return {status:derived.status,source:'derived-with-rejected-attestation',detail:derived.detail,attestationId:explicit.id,problems};
@@ -214,11 +243,12 @@ for(const courseRow of registry.courses??[]){
     practicalAssessorCalibration:deriveCalibration(courseRow),
     standardSetting:deriveStandardSetting(courseRow),
     secureOperationalFormReadiness:deriveSecureForms(courseRow),
+    occupationalProgramValidation:deriveOccupationalProgramValidation(courseRow),
     credentialAuthorization:deriveCredentialAuthorization(courseRow)
   };
   const gates={};
   for(const gate of gateOrder){
-    if(['exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis','practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting','secureOperationalFormReadiness','credentialAuthorization'].includes(gate)){
+    if(['exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis','practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting','secureOperationalFormReadiness','occupationalProgramValidation','credentialAuthorization'].includes(gate)){
       gates[gate]=explicitOrDerived(courseRow,gate,derived[gate]);
     }else{
       const rec=latestGateRecord(courseRow.courseId,course.version,gate);
