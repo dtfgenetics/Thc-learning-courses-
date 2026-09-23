@@ -74,16 +74,17 @@ for(const asset of course1Registry.assets??[]){
 for(let n=2;n<=6;n++){
   const registry=readJson(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
   for(const asset of registry.assets??[]){
-    if(path.extname(asset.sourcePath??'').toLowerCase()!=='.svg') continue;
+    const legacySvg=asset.legacySource?.sourcePath ?? asset.rasterReplacement?.generatedFrom;
+    if(path.extname(legacySvg??'').toLowerCase()!=='.svg') continue;
     governed.push({
       program:'Technician I',
       courseId:registry.courseId,
       id:asset.id,
       title:asset.title,
-      sourcePath:asset.sourcePath,
+      sourcePath:legacySvg,
       currentLifecycle:asset.assetLifecycle??asset.status,
       replacementStatus:asset.rasterReplacement?.status??'missing',
-      candidatePath:asset.rasterReplacement?.candidateSourcePath??null,
+      candidatePath:asset.rasterReplacement?.candidateSourcePath??asset.sourcePath??null,
       candidateSha256:asset.rasterReplacement?.candidateSha256??null,
       releaseGate:asset.rasterReplacement?.releaseGate??null
     });
