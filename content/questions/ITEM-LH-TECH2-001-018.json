@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRIENT-DIAG-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A grower wants to copy the exact N-P-K optimum from one published hydroponic study to every cultivar and system. What is the strongest response?",
   "choices": [
-    "The published optimum is universal because it is peer reviewed.",
-    "Use the study as evidence that nutrient levels and interactions matter, but validate rates for the actual cultivar, stage and production system.",
-    "Ignore the study completely because it used hydroponics.",
-    "Use only phosphorus because interactions make nitrogen and potassium irrelevant."
+    "Adopt the published optimum as the default target because a peer-reviewed response-surface study provides stronger evidence than facility-specific historical practice.",
+    "Use the study as evidence that nutrient levels and interactions matter, then validate the actual rates for the cultivar, growth stage, water quality, substrate, and production system in use.",
+    "Use the study only as background literature because hydroponic findings cannot inform nutrient reasoning in a different controlled-environment system.",
+    "Apply the reported ratio but scale total concentration according to the facility's target EC, because preserving the ratio transfers the study result across systems."
   ],
   "correct": 1,
-  "rationale": "Study-specific optima are not universal prescriptions; the interaction finding supports multi-factor reasoning within context.",
+  "rationale": "A published optimum is conditional on the genetics, developmental stage, environment, water, root-zone system, measurement methods, and response variables used in that study. Its strongest transferable lesson is that nutrient responses can be nonlinear and interactive, not that one N-P-K recipe is universally optimal. The evidence should inform hypotheses and starting ranges, while actual rates are validated in the production context being managed. Copying either the exact rate or ratio without that validation overextends the study beyond its demonstrated scope.",
   "references": [
     "REF-CANNABIS-NPK-RSM-2024-001"
   ]
