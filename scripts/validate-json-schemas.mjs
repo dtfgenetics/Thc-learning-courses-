@@ -22,6 +22,7 @@ const mappings = [
   ['content/calibration-evidence', 'schemas/practical-calibration-evidence.schema.json'],
   ['content/certification-gate-evidence', 'schemas/certification-gate-evidence.schema.json'],
   ['content/standard-setting-evidence', 'schemas/standard-setting-evidence.schema.json'],
+  ['content/integrated-performance-standard-setting-evidence', 'schemas/integrated-performance-standard-setting-evidence.schema.json'],
   ['content/secure-form-equivalence-evidence', 'schemas/secure-form-equivalence-evidence.schema.json'],
   ['content/credential-authorization-evidence', 'schemas/credential-authorization-evidence.schema.json'],
   ['content/occupational-program-validation-evidence', 'schemas/occupational-program-validation-evidence.schema.json'],
