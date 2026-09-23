@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A pH meter suddenly reads far differently after storage. What should occur before crop solution is changed?",
   "choices": [
-    "Assume the crop chemistry changed",
-    "Adjust solution immediately",
-    "Follow the supplied meter verification or calibration procedure and confirm sample context",
-    "Average the new reading with yesterday’s value"
+    "Assume the crop solution changed and begin adjusting it toward the previous pH.",
+    "Average the unusual reading with yesterday's value and use the midpoint as the working result.",
+    "Verify the meter and sample context using the approved procedure before making any crop-solution change.",
+    "Retest until a value closer to the expected range appears, then use that result."
   ],
   "correct": 2,
-  "rationale": "Follow the supplied meter verification or calibration procedure and confirm sample context. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A sudden unexpected meter result can reflect a real chemistry change, but it can also result from storage, contamination, calibration drift, temperature, or sample problems. Before changing the crop solution, the technician should verify the instrument and sample context. Acting first can create a new problem if the original reading was unreliable.",
   "references": [
     "REF-IRRIGATION-001"
   ],
