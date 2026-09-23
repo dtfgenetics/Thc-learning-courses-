@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A harvest lot receives a new downstream package ID. What should happen to source genealogy?",
   "choices": [
-    "The package ID is linked downstream while the harvest/source identity remains retrievable.",
-    "The harvest identity is erased.",
-    "Only the newest ID remains.",
-    "Genealogy ends at harvest."
+    "Link the new package ID downstream while keeping the harvest/source identity retrievable in the genealogy chain.",
+    "Close the harvest identity once packaging occurs because the package ID becomes the controlling unit.",
+    "Use only the newest package ID in future records and keep harvest identity only in archived source files.",
+    "End genealogy at harvest and begin a separate packaging genealogy to avoid duplicate identifiers."
   ],
   "correct": 0,
-  "rationale": "The package ID is linked downstream while the harvest/source identity remains retrievable.",
+  "rationale": "A downstream package ID should extend the chain of identity, not replace it. Keeping the source harvest linked allows backward traceability to origin and forward traceability to packages or later movements. Deleting or separating source identity breaks the chain needed for reconciliation, investigation, or disposition.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]
