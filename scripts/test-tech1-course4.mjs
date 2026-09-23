@@ -40,7 +40,7 @@ const formative = read('content/assessments/ASSESS-LH-TECH1-004-M01.json');
 const final = read('content/assessments/ASSESS-LH-TECH1-004-FINAL.json');
 assert.equal(formative.purpose, 'formative');
 assert.equal(formative.items.length, 12);
-assert.equal(final.status, 'draft');
+assert.equal(final.status,'published');
 assert.equal(final.purpose, 'summative');
 assert.equal(final.items.length, 24);
 assert.equal(new Set(final.items).size, 24);
