@@ -135,4 +135,4 @@ Course 2 academic completion must not independently issue `THC Cultivation Techn
 | Standard setting | OPEN | OPEN | OPEN |
 | Academic release approval | OPEN | OPEN | OPEN |
 
-Course 2 remains `draft` until the appropriate evidence exists and controlled state is advanced through the project release process.
+Course 2 is published for owner-approved academic use. Professional validation and credential issuance remain blocked until the appropriate evidence exists and the separate credential release process is completed.
