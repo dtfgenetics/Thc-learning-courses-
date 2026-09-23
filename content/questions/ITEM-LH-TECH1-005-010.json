@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What does incidence describe in a scouting record?",
   "choices": [
-    "The intensity of damage on one leaf",
-    "How many or what proportion of sampled units show the defined condition",
-    "The treatment selected",
-    "The cultivar name"
+    "The intensity of damage on one affected leaf.",
+    "The number or proportion of sampled units that meet the defined condition.",
+    "The treatment selected after scouting.",
+    "The cultivar identity of the sampled plants."
   ],
   "correct": 1,
-  "rationale": "How many or what proportion of sampled units show the defined condition. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Incidence describes how widely the defined condition occurs within the sampled population, commonly as a count or proportion affected. Severity is a different concept describing how intense the condition is on affected units. Keeping the two separate makes scouting trends easier to interpret.",
   "references": [
     "REF-IPM-001"
   ],
