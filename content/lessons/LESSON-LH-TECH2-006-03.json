@@ -76,7 +76,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-006-03",
           "title": "Lot genealogy and evidence-bounded affected scope",
-          "src": "/assets/tech2/course6/outcome-03.svg",
+          "src": "/assets/tech2/course6/outcome-03.webp",
           "alt": "Lot genealogy flow tracing source harvest identity through racks, rooms, movements and downstream lot identifiers, then using shared exposure, position, timing and product evidence to include or exclude material from affected scope without making the investigation automatically facility-wide or artificially narrow.",
           "caption": "Affected scope follows traceable genealogy and shared exposure. Include and exclude material because the evidence supports it, not because a broader or narrower scope is more convenient.",
           "references": [
@@ -86,8 +86,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-006-03",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

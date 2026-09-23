@@ -70,15 +70,9 @@ Produce at least **4 primary instructional visuals**, one per current outcome. A
 
 ## Current primary-visual production state
 
-The four SVG visual candidates referenced by Course 7 lessons are **legacy review/provenance assets only**. They do not satisfy the current raster-only production standard.
+Course 7 has **4 owner-approved lossless WebP primary visuals** recorded in `visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json`. Learner lessons use the WebP paths under `/assets/tech2/course7/`. Legacy SVG files remain provenance/source material only and are not the learner-facing production format.
 
-Required production replacements:
-- `VIS-LH-TECH2-007-01` → high-resolution PNG/WebP for traceability reconciliation;
-- `VIS-LH-TECH2-007-02` → high-resolution PNG/WebP for KPI definition/comparability;
-- `VIS-LH-TECH2-007-03` → high-resolution PNG/WebP for SOP-based peer support;
-- `VIS-LH-TECH2-007-04` → high-resolution PNG/WebP for priority-ranked shift handoff.
-
-The raster replacements must preserve the existing captions, text alternatives, terminology and evidence references, then pass responsive/public-runtime QA before counting toward production visual completion.
+The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
 
 ## Accessibility/manual review
 Keyboard and focus; semantic headings/landmarks; screen-reader order/state; 200%/400% zoom/reflow; mobile/tablet/desktop; contrast/non-color cues; form/table labels; assessment instructions/errors; visual alternatives; print/download readability.

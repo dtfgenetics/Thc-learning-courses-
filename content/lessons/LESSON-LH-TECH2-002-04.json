@@ -78,7 +78,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-002-04",
           "title": "Verification report to evidence-based closure",
-          "src": "/assets/tech2/course2/outcome-04.svg",
+          "src": "/assets/tech2/course2/outcome-04.webp",
           "alt": "Verification and handoff workflow recording exact asset identity, measurements and method, provisional fault classification, current safe status and authority boundary, receiving role, authorized intervention and a comparable post-action measurement before closure.",
           "caption": "Closure requires reconstructable evidence. Record the boundary cue and receiving owner, preserve original data, and repeat the relevant measurement after authorized work rather than assuming an alarm reset proves restoration.",
           "references": [
@@ -88,8 +88,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-002-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

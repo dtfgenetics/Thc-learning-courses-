@@ -75,7 +75,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-004-01",
           "title": "Comparable scouting requires a stable measurement system",
-          "src": "/assets/tech2/course4/outcome-01.svg",
+          "src": "/assets/tech2/course4/outcome-01.webp",
           "alt": "Scouting-quality diagram linking repeatable routes and zones, sample denominator, fixed trap or location identity, consistent incidence and severity definitions, and preserved method deviations so repeated rounds can be compared without confusing sampling changes for biological trends.",
           "caption": "A scouting trend is only as comparable as its method. Keep route, denominator, trap/location identity and definitions stable—or document the change—so negative findings and trends have meaning.",
           "references": [
@@ -85,8 +85,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-004-01",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

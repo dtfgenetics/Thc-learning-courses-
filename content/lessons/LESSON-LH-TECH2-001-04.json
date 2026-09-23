@@ -85,7 +85,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-001-04",
           "title": "Next-test, action, escalation and handoff",
-          "src": "/assets/tech2/course1/outcome-04.svg",
+          "src": "/assets/tech2/course1/outcome-04.webp",
           "alt": "Decision flow beginning with ranked hypotheses, verifying data quality, selecting a discriminating next test, updating the hypothesis ranking from the result, checking whether action is authorized and safe, then routing to either an authorized action or hold, containment and escalation, with a reconstructable handoff record.",
           "caption": "Choose the test that can change the decision. Verify data quality first, act only within authority, and leave unresolved questions visible in the handoff.",
           "references": [
@@ -95,8 +95,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-001-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

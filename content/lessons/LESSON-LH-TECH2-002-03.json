@@ -79,7 +79,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-002-03",
           "title": "Verify performance without crossing the service boundary",
-          "src": "/assets/tech2/course2/outcome-03.svg",
+          "src": "/assets/tech2/course2/outcome-03.webp",
           "alt": "Irrigation and equipment verification flow measuring installed output, comparing it with the assigned procedure, checking for protected access, hazardous energy, pressure, disassembly or unassigned servicing, then routing to either an authorized operator action or stop-and-escalate handoff.",
           "caption": "Technician II may verify installed performance deeply, but protected access, hazardous energy, pressure release, disassembly or unassigned servicing are stop-and-escalate cues unless specifically authorized.",
           "references": [
@@ -89,8 +89,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-002-03",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

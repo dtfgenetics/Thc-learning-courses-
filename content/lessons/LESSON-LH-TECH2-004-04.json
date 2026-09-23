@@ -77,7 +77,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-004-04",
           "title": "Containment, authority and IPM handoff",
-          "src": "/assets/tech2/course4/outcome-04.svg",
+          "src": "/assets/tech2/course4/outcome-04.webp",
           "alt": "Plant-health decision flow preserving quarantine, sanitation and clean-to-dirty movement controls, checking whether an action is within the technician's role and applicable product or facility authorization, and routing unresolved or regulated treatment decisions to an authorized role with an evidence-rich handoff.",
           "caption": "Strong diagnostic evidence does not create pesticide or regulated-treatment authority. Preserve containment, act only within authorization, and escalate with the measured scope, trend, intervention history and unresolved uncertainty.",
           "references": [
@@ -87,8 +87,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-004-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

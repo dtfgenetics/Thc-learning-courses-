@@ -92,7 +92,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-005-04",
           "title": "Integrated propagation and canopy performance handoff",
-          "src": "/assets/tech2/course5/outcome-04.svg",
+          "src": "/assets/tech2/course5/outcome-04.webp",
           "alt": "Supervisor handoff workflow preserving donor, batch, cultivar and zone identity, comparable performance metrics, leading and alternative explanations, biosecurity status, authorized actions, role boundaries and the next required verification without deleting contrary evidence.",
           "caption": "Make the review decision-ready while preserving sanitation, traceability and role limits. Keep contrary evidence visible and hand off the next verification or high-risk decision to the authorized role.",
           "references": [
@@ -104,8 +104,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-005-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

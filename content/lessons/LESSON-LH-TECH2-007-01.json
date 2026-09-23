@@ -76,7 +76,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-007-01",
           "title": "Traceability reconciliation without forced agreement",
-          "src": "/assets/tech2/course7/outcome-01.svg",
+          "src": "/assets/tech2/course7/outcome-01.webp",
           "alt": "Reconciliation flow comparing physical identity, controlled record identity, current status and location, preserving discrepancies, tracing genealogy through splits and moves, and routing corrections through an authorized process without fabricating transactions or overwriting history.",
           "caption": "A discrepancy is evidence. Reconcile identity and status without inventing transactions, breaking genealogy or overwriting the original controlled record.",
           "references": [
@@ -86,8 +86,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-007-01",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

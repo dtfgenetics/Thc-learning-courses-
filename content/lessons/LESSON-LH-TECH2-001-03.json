@@ -88,7 +88,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-001-03",
           "title": "Ranked multi-factor differential",
-          "src": "/assets/tech2/course1/outcome-03.svg",
+          "src": "/assets/tech2/course1/outcome-03.webp",
           "alt": "Differential-diagnosis matrix comparing root-zone, nutrition, environment, and biotic or developmental hypothesis families. Each row separates evidence for the hypothesis, evidence against or uncertainty, and the next check most likely to change its ranking.",
           "caption": "Rank multiple plausible mechanisms together. EC, visible symptoms, tissue data, roots, environment and pest or disease findings are evidence streams, not automatic one-to-one diagnoses.",
           "references": [
@@ -100,8 +100,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-001-03",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

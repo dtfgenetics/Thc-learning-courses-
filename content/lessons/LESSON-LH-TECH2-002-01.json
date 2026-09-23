@@ -74,7 +74,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-002-01",
           "title": "Representative measurement before action",
-          "src": "/assets/tech2/course2/outcome-01.svg",
+          "src": "/assets/tech2/course2/outcome-01.webp",
           "alt": "Sensor-verification workflow checking device and crop context, colocated comparison with a verified reference, calibration or maintenance history, and a final data-quality decision before any control change.",
           "caption": "Verify representativeness before acting. Preserve questionable data, compare under the same exposure, and separate data-quality decisions from calibration or repair authority.",
           "references": [
@@ -84,8 +84,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-002-01",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

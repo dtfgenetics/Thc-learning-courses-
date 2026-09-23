@@ -90,7 +90,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-003-04",
           "title": "Bounded fertigation and root-zone troubleshooting",
-          "src": "/assets/tech2/course3/outcome-04.svg",
+          "src": "/assets/tech2/course3/outcome-04.webp",
           "alt": "Troubleshooting workflow that ranks measurement, irrigation delivery, timing, accumulation, nutrient-supply, root-condition and crop-demand hypotheses, selects a discriminating check, then routes to an authorized correction with post-action verification or to hold and escalation when recipe, chemistry, equipment or safety authority is exceeded.",
           "caption": "Troubleshoot toward the next decision, not a dramatic recipe change. Choose the check that can change the ranking, act only within authority, and preserve post-action evidence and unresolved conditions.",
           "references": [
@@ -102,8 +102,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-003-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

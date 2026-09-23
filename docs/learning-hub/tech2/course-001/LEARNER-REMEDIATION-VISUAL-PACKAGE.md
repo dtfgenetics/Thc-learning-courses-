@@ -104,16 +104,9 @@ Every visual must:
 
 ## Current primary-visual production state
 
-The four existing SVG files are **legacy review/provenance assets only** and are **not production course visuals** under the current raster-only instructional-asset standard.
+Course 1 has **4 owner-approved lossless WebP primary visuals** recorded in `visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json`. Learner lessons use the WebP paths under `/assets/tech2/course1/`. Legacy SVG files remain provenance/source material only and are not the learner-facing production format.
 
-Required production replacements:
-
-- `VIS-LH-TECH2-001-01` → high-resolution PNG/WebP raster replacement for Lesson 1;
-- `VIS-LH-TECH2-001-02` → high-resolution PNG/WebP raster replacement for Lesson 2;
-- `VIS-LH-TECH2-001-03` → high-resolution PNG/WebP raster replacement for Lesson 3;
-- `VIS-LH-TECH2-001-04` → high-resolution PNG/WebP raster replacement for Lesson 4.
-
-Legacy SVG paths may remain only for source/provenance review until their raster replacements are produced, QA'd, wired into the lesson JSON, and verified through the public learner runtime. They must not be counted as production-ready visual assets.
+The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
 
 ## Accessibility/manual UX review
 
