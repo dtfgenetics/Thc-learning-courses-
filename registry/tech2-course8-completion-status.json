@@ -3,16 +3,16 @@
   "title": "Integrated Technician II Simulation Lab",
   "version": "0.3.0",
   "updated": "2026-09-22",
-  "canonicalCourseState": "draft",
+  "canonicalCourseState": "published",
   "publicAcademicPackage": "published",
-  "machineResolvableWorkComplete": false,
+  "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
   "publicLearningItems": 16,
   "publicLessons": 4,
   "releaseManifest": "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
   "deploymentEvidence": "registry/tech2-course8-deployment-evidence.json",
-  "machineCompletionBoundary": "Technician II Course 8 has a published learner-facing academic package with its dedicated lessons, controlled learning assessments, mapped performance evidence, machine-verified learner runtime, exact-version human-review queue integrity, public readback evidence, and governed visual review candidates. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Remaining machine work is limited to the explicit nextMachineActions queue. Human practical, assessment, accessibility, pilot, calibration, standard-setting and credential-release gates remain open.",
+  "machineCompletionBoundary": "Technician II Course 8 has an owner-approved published academic package, course-derived assessment/integration provenance, deployed learner-surface verification, exact build/source identity, and its governed primary raster visuals released to the learner-facing WebP layer. Machine-resolvable academic package work is complete. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, practical/capstone validation, pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
   "evidence": [
     "content/courses/COURSE-LH-TECH2-008.json",
     "content/public-releases/PUBLIC-RELEASE-LH-TECH2-008.json",
@@ -24,10 +24,7 @@
     "scripts/test-build-identity-endpoint.mjs",
     "scripts/verify-public-deployment-identity.mjs"
   ],
-  "nextMachineActions": [
-    "preserve and validate 8 lossless WebP review candidates while human factual, authority-boundary, accessibility and responsive QA remains open",
-    "preserve visual lifecycle/runtime integrity while human reviewers approve, revise or reject the mapped review candidates"
-  ],
+  "nextMachineActions": [],
   "nextHumanActions": [
     "technical/occupational review",
     "instructional/assessment review",
@@ -45,15 +42,15 @@
     "primaryConcepts": 8,
     "reviewCandidates": 8,
     "plannedOnly": 0,
-    "approvedForLearnerRender": 0,
+    "approvedForLearnerRender": 8,
     "registry": "visuals/TECH2-VISUAL-PRODUCTION-PLAN.json",
     "reviewWorklist": "docs/learning-hub/tech2/TECH2-PRIMARY-VISUAL-REVIEW-WORKLIST.md",
     "rasterReplacementProgram": "registry/raster-replacement-program.json",
-    "rasterReplacementsRequired": 8,
-    "rasterReplacementsReleased": 0,
+    "rasterReplacementsRequired": 0,
+    "rasterReplacementsReleased": 8,
     "rasterCandidatesProduced": 8,
     "rasterCandidateManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json",
-    "rasterCandidateReleaseApproved": 0
+    "rasterCandidateReleaseApproved": 8
   },
   "publicRouteReadback": "verified-build-identity",
   "publicRouteReadbackBoundary": "Anonymous public course, representative lesson, and assessment readback are verified against the exact pinned curriculum source SHA reported by the public build-identity endpoint. Machine surface QA is verified for the deployed snapshot; manual responsive/accessibility approval remains open.",
