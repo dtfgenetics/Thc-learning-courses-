@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why is a single universal dryback percentage inappropriate for every crop?",
   "choices": [
-    "Media, container, rooting, stage, environment and plant demand change the meaning of the moisture trend.",
-    "Dryback is determined only by nutrient concentration.",
-    "All calibrated sensors produce the same biological target.",
-    "Container size has no effect once roots are present."
+    "Dryback meaning depends on media properties, container volume, root development, growth stage, environment, irrigation strategy, and plant demand.",
+    "A universal percentage can work if all rooms use the same nutrient EC, because EC is the main driver of water use.",
+    "A calibrated moisture sensor makes a universal biological dryback target valid across crops because the sensor removes media differences.",
+    "Container size matters early in the crop but becomes negligible after the root system fills the substrate."
   ],
   "correct": 0,
-  "rationale": "Media, container, rooting, stage, environment and plant demand change the meaning of the moisture trend.",
+  "rationale": "Dryback is a pattern of water loss, not a universal biological target. The same percentage can represent very different plant and root-zone conditions depending on substrate water-holding characteristics, container geometry, root occupancy, stage, environment, and irrigation frequency. Calibration improves measurement accuracy, but it does not make one target biologically appropriate for every crop context.",
   "references": [
     "REF-IRRIGATION-001",
     "REF-NUTRIENT-UPTAKE-2026-001"
