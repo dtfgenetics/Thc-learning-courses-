@@ -75,4 +75,4 @@ This document records the current objective → instruction → applied practice
 
 ## Release boundary
 
-Course 2 remains `draft`. This alignment record is machine-preparation evidence only. It must not be used to claim Course 2 is human-approved, psychometrically validated, professionally credential-bearing in production, or sufficient by itself for Technician I issuance.
+Course 2 is published for owner-approved academic use. This alignment record is machine-preparation evidence only. It must not be used to claim Course 2 is human-approved, psychometrically validated, professionally credential-bearing in production, or sufficient by itself for Technician I issuance.

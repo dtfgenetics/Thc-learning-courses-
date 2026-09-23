@@ -88,4 +88,4 @@ No machine artifact may mark these complete on behalf of a reviewer.
 
 ## Release boundary
 
-Course 3 remains `draft`. Completion of this package can advance machine readiness, but it does not authorize professional Technician I credential issuance.
+Course 3 is published for owner-approved academic use. Completion of this package can advance machine readiness, but it does not authorize professional Technician I credential issuance.

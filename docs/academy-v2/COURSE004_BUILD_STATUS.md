@@ -20,7 +20,7 @@ Course 004 now has a dedicated occupational instruction, assessment, development
 - five embedded teaching visuals plus two downloadable practice worksheets governed by `visuals/COURSE4-ASSET-REGISTRY.json`;
 - all seven learner assets are public, lesson-linked, accessibility-tagged SVGs and mirrored to Drive folder `13su1HkrSjWqhMtssQos3cju9BkgeqGBv`;
 - deterministic practical-crosswalk and learner-asset contracts run through the normal Course 004 regression;
-- Course 004 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
+- Course 004 is published for owner-approved academic use; human review, pilot, calibration, practical validation and professional credential release approval remain separate and are not implied.
 
 ## Instructional emphasis
 

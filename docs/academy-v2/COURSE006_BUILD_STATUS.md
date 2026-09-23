@@ -18,7 +18,7 @@ Course 006 has dedicated instruction, assessment and development-stage Practical
 - objective/practical crosswalk: `registry/course6-practical-f-crosswalk.json`;
 - Practical F now explicitly exercises pre/during-harvest PPE/pathway/task-hazard checks, changed-condition stop/escalation, source-to-new-identifier genealogy, destination/identity/hold/instruction conflict resolution, contamination/hold control, quantity reconciliation and receiving handoff;
 - deterministic crosswalk validation runs through the normal Course 006 regression;
-- Course 006 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
+- Course 006 is published for owner-approved academic use; human review, pilot, calibration, practical validation and professional credential release approval remain separate and are not implied.
 
 ## Authority and evidence boundaries
 

@@ -60,4 +60,4 @@ The contract runs through `scripts/test-tech1-course4.mjs` alongside the Practic
 
 ## Remaining gates
 
-The learner asset package is complete for the current design, but Course 4 remains `draft`. Human technical review, assessment review, rendered accessibility review, Practical B validation, pilot evidence, evaluator calibration/inter-rater evidence, standard setting and final program release approval remain unresolved.
+The learner asset package is complete for the current design and Course 4 is published for owner-approved academic use. Human technical review, assessment review, rendered accessibility review, Practical B validation, pilot evidence, evaluator calibration/inter-rater evidence, standard setting and final program release approval remain unresolved.

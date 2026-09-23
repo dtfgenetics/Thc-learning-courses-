@@ -22,7 +22,7 @@
 - 24 summative;
 - current final blueprint requires four summative items per objective;
 - assessed items must retain evidence references;
-- final remains `draft` until human assessment/release approval.
+- final is published for academic use; human assessment review and professional credential-release approval remain open.
 
 ## Learner asset layer
 
@@ -92,4 +92,4 @@ Course 6 machine checks must preserve:
 
 ## Release boundary
 
-Course 6 remains `draft`. It does not confer independent product release/disposition authority, and its completion does not authorize the THC Cultivation Technician I professional credential.
+Course 6 is published for owner-approved academic use. It does not confer independent product release/disposition authority, and its completion does not authorize the THC Cultivation Technician I professional credential.

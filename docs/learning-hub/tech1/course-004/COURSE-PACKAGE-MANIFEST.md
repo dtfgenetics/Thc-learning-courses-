@@ -88,4 +88,4 @@ No machine artifact may mark those evidence-dependent gates complete on behalf o
 
 ## Release boundary
 
-Course 4 remains `draft`. Completion of this machine package does not authorize issuance of the THC Cultivation Technician I credential. Credential issuance remains dependent on the complete program, validated performance system, approved decision rules, security/privacy controls and actual human release approval.
+Course 4 is published for owner-approved academic use. Completion of this machine package does not authorize issuance of the THC Cultivation Technician I credential. Credential issuance remains dependent on the complete program, validated performance system, approved decision rules, security/privacy controls and actual human release approval.
