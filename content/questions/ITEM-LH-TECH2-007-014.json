@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A record entry is verified as wrong. What is the correct correction model?",
   "choices": [
-    "Silently overwrite it.",
-    "Preserve the original entry and record the authorized correction, reason and attribution.",
-    "Delete the whole record.",
-    "Change neighboring records until they agree."
+    "Overwrite the incorrect entry once the supporting source is verified so reports contain only accurate data.",
+    "Preserve the original entry and add the authorized correction with the reason, attribution, timing, and evidence supporting the change.",
+    "Delete and recreate the whole record if the error affects a controlled field.",
+    "Adjust related entries at the same time so the corrected record remains internally consistent."
   ],
   "correct": 1,
-  "rationale": "Preserve the original entry and record the authorized correction, reason and attribution.",
+  "rationale": "A verified error should be corrected in a way that preserves both accuracy and history. The record should show the original value, the authorized correction, who made it, when, why, and what evidence supports it. Silent overwrite, deletion, or coordinated edits to force consistency can hide how the error arose and weaken reconstructability.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

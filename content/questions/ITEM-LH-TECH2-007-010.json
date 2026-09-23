@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Three comparable cycles show increasing schedule variance while the same task dependency repeatedly runs late. What does the pattern support?",
   "choices": [
-    "A guaranteed single root cause.",
-    "A recurring operational bottleneck worth investigation and planning adjustment.",
-    "Deleting the worst cycle as noise.",
-    "Overwriting planned dates with actual dates."
+    "The repeated variance proves one root cause in the late dependency and should be corrected without further analysis.",
+    "The recurring late dependency is a credible operational bottleneck signal that warrants investigation and planning adjustment, while cause still needs verification.",
+    "The worst cycle should be removed from the series if it was affected by unusual conditions so the trend reflects normal performance.",
+    "Planned dates should be overwritten with actual dates after each cycle so variance does not distort the KPI."
   ],
   "correct": 1,
-  "rationale": "A recurring operational bottleneck worth investigation and planning adjustment.",
+  "rationale": "Repeated schedule variance that aligns with the same late dependency across comparable cycles is strong evidence of a recurring bottleneck, but it still does not prove one root cause. The pattern should trigger investigation and planning review. Removing difficult cycles or overwriting planned dates would erase the very variance the metric is meant to reveal.",
   "references": [
     "REF-POSTHARVEST-001"
   ]

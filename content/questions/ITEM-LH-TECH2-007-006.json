@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which item should rank highest in a shift handoff?",
   "choices": [
-    "A low-risk formatting task with no dependency.",
-    "An unresolved identity/traceability mismatch that blocks downstream harvest movement.",
-    "A completed task with no exception.",
-    "A metric already reviewed and closed."
+    "A formatting task due before shift end because deadline risk should drive handoff priority.",
+    "An unresolved identity/traceability mismatch that blocks downstream harvest movement and creates a dependency for the next shift.",
+    "A completed task with no exception because confirming closure prevents unnecessary duplicate work.",
+    "A metric already reviewed and closed because it may still affect future planning."
   ],
   "correct": 1,
-  "rationale": "An unresolved identity/traceability mismatch that blocks downstream harvest movement.",
+  "rationale": "Handoffs should prioritize unresolved work with high consequence, dependencies, or immediate operational impact. A traceability mismatch that blocks downstream movement can affect identity, compliance, and multiple later tasks, so it should be prominent. Routine completed work can still be summarized, but it does not deserve the same priority as an unresolved blocker.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]

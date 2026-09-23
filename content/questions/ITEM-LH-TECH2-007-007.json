@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One source batch is split into two flowering rooms. What should happen to genealogy?",
   "choices": [
-    "Each room gets an unrelated identity with no source link.",
-    "The source batch record is deleted.",
-    "Both downstream lots retain their source relationship and the split/move event.",
-    "Only the larger downstream lot keeps the source identity."
+    "Assign unrelated downstream identities in each room and retain the original batch only as a historical inventory note.",
+    "Close the source batch record once the split occurs because downstream lots become the new active traceability units.",
+    "Create downstream lot identities that both retain their relationship to the source batch and record the split/movement event linking source to destination.",
+    "Keep the source identity only on the larger downstream lot and treat the smaller room as a secondary sublot without genealogy."
   ],
   "correct": 2,
-  "rationale": "Both downstream lots retain their source relationship and the split/move event.",
+  "rationale": "Splitting a source batch creates downstream identities, but genealogy must preserve how each downstream lot originated. The source record should remain linked through the split/movement event so investigators can trace backward and forward. Deleting or selectively retaining the source relationship breaks the chain of identity.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]

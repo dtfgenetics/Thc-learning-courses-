@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which activity is outside normal Technician II peer-support authority?",
   "choices": [
-    "Demonstrating an approved task step.",
-    "Pointing out an observable execution difference.",
-    "Formal disciplinary action or unilateral policy/SOP approval.",
-    "Communicating the current shift priority."
+    "Demonstrating the approved task step to a peer who is learning the process.",
+    "Pointing out an observable difference between current execution and the effective SOP.",
+    "Issuing formal discipline or unilaterally approving a policy/SOP change, which requires authority beyond routine Technician II peer support.",
+    "Communicating current priorities, dependencies, and escalation needs during the shift."
   ],
   "correct": 2,
-  "rationale": "Formal disciplinary action or unilateral policy/SOP approval.",
+  "rationale": "Technician II can support peers through demonstration, observation, coaching, and clear communication of controlled work. Formal discipline, policy approval, and unilateral SOP changes are governance actions that require assigned authority. Keeping that distinction prevents peer support from drifting into management or document-control powers the role does not hold.",
   "references": [
     "REF-ASTM-E2659-001"
   ]

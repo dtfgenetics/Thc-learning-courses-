@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two records claim the same unique lot identity. What should Technician II do?",
   "choices": [
-    "Delete the older record.",
-    "Preserve both records as evidence, contain downstream ambiguity as needed, and escalate the duplicate identity through the controlled correction process.",
-    "Rename one lot without an audit trail.",
-    "Choose the record with the larger quantity."
+    "Delete the older record once the newer record is verified so the unique identity exists only once in the active system.",
+    "Preserve both records, contain any downstream ambiguity, and escalate the duplicate identity through the controlled reconciliation/correction process.",
+    "Rename one lot using a locally generated suffix so operations can continue while the issue is reviewed.",
+    "Keep the record associated with the larger quantity because it is more likely to be the primary lot."
   ],
   "correct": 1,
-  "rationale": "Preserve both records as evidence, contain downstream ambiguity as needed, and escalate the duplicate identity through the controlled correction process.",
+  "rationale": "A duplicate unique identity creates uncertainty about genealogy, quantity, movement, and downstream records. Both records should remain intact as evidence until the discrepancy is reconciled through the controlled process. Deleting, renaming, or choosing one record based on quantity can hide the origin of the conflict and create new traceability errors.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

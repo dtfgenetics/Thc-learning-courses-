@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A peer performs a routine task differently from the current SOP. What may Technician II appropriately do?",
   "choices": [
-    "Describe the observable difference, verify the effective SOP, demonstrate the approved method, and escalate unresolved issues.",
-    "Issue formal discipline.",
-    "Rewrite the SOP locally.",
-    "Approve an alternate method without authority."
+    "Describe the observable difference, verify the currently effective SOP, demonstrate or reinforce the approved method within assigned role, and escalate unresolved deviation or training issues.",
+    "Issue a formal corrective warning because performing a routine task differently from the SOP is already a confirmed compliance failure.",
+    "Update the local work instruction to match the peer's method if it appears more efficient and produces the same result.",
+    "Authorize the alternate method temporarily if the technician can explain why it is technically equivalent to the SOP."
   ],
   "correct": 0,
-  "rationale": "Describe the observable difference, verify the effective SOP, demonstrate the approved method, and escalate unresolved issues.",
+  "rationale": "Technician II can recognize and coach observable differences in routine execution, but formal discipline, SOP revision, and alternate-method approval belong to other authorized roles. The technician should first verify the effective controlled instruction, reinforce the approved method, document the concern as required, and escalate unresolved issues rather than expanding authority.",
   "references": [
     "REF-ASTM-E2659-001"
   ]
