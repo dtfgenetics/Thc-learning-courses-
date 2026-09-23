@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Verify 23 public Course 1 raster paths
+      - name: Verify 23 pinned Course 1 raster delivery URLs
         run: |
           set -o pipefail
           node scripts/verify-course1-public-raster-release.mjs | tee course1-raster-public-verification.json
