@@ -9,21 +9,32 @@ const courseDir = path.join(root, 'content/courses');
 const files = fs.readdirSync(credentialsDir).filter((name) => name.endsWith('.json')).sort();
 const candidateControls = JSON.parse(fs.readFileSync(path.join(root, 'registry/candidate-governance-controls.json'), 'utf8'));
 assert.ok(files.length > 0, 'credential inventory must not be empty');
-assert.equal(candidateControls.status, 'approval-pending', 'candidate governance controls must remain approval-pending until real approvals exist');
-assert.equal(candidateControls.operationalUseAuthorized, false, 'candidate governance controls must fail closed for operational use');
+assert.ok(['approval-pending','approved'].includes(candidateControls.status), 'candidate governance status must be approval-pending or approved');
 assert.equal(candidateControls.controls?.retest?.remediationRequiredBeforeRetest, true);
 assert.equal(candidateControls.controls?.retest?.equivalentSecureFormOrVariantRequired, true);
 assert.equal(candidateControls.controls?.retest?.criticalFailureNonCompensatory, true);
-assert.equal(candidateControls.controls?.retest?.finalAttemptLimit, null, 'unapproved retest limits must not be invented');
-assert.equal(candidateControls.controls?.retest?.waitingPeriodHours, null, 'unapproved waiting periods must not be invented');
-assert.equal(candidateControls.controls?.retest?.feePolicy, null, 'unapproved fee policy must not be invented');
+
+if (candidateControls.operationalUseAuthorized === true) {
+  assert.equal(candidateControls.status, 'approved', 'operational candidate governance requires approved registry status');
+  assert.ok(candidateControls.appliedApprovalRecordId, 'operational candidate governance must record applied approval provenance');
+  assert.notEqual(candidateControls.controls?.retest?.finalAttemptLimit, null, 'approved operational retest policy must be explicit');
+  assert.notEqual(candidateControls.controls?.retest?.waitingPeriodHours, null, 'approved operational waiting-period policy must be explicit');
+  assert.notEqual(candidateControls.controls?.retest?.feePolicy, null, 'approved operational fee policy must be explicit');
+  assert.equal(candidateControls.controls?.privacyRetention?.retentionScheduleApproved, true, 'approved operational governance requires a retention schedule');
+  assert.ok(Object.values(candidateControls.controls?.privacyRetention?.retentionPeriods ?? {}).every((value) => value !== null && value !== ''), 'approved retention periods must be explicit');
+} else {
+  assert.equal(candidateControls.status, 'approval-pending', 'unapplied candidate governance must remain approval-pending');
+  assert.equal(candidateControls.controls?.retest?.finalAttemptLimit, null, 'unapproved retest limits must not be invented');
+  assert.equal(candidateControls.controls?.retest?.waitingPeriodHours, null, 'unapproved waiting periods must not be invented');
+  assert.equal(candidateControls.controls?.retest?.feePolicy, null, 'unapproved fee policy must not be invented');
+  assert.equal(candidateControls.controls?.privacyRetention?.retentionScheduleApproved, false, 'retention schedule must remain open until approved');
+  assert.ok(Object.values(candidateControls.controls?.privacyRetention?.retentionPeriods ?? {}).every((value) => value === null), 'unapproved retention periods must remain unset');
+}
 assert.equal(candidateControls.controls?.accommodation?.constructPreservationRequired, true);
 assert.equal(candidateControls.controls?.accommodation?.minimumNecessaryAssessorDisclosure, true);
 assert.equal(candidateControls.controls?.appeal?.preserveOriginalRecord, true);
 assert.equal(candidateControls.controls?.appeal?.secureAnswerKeyDisclosureAllowed, false);
 assert.equal(candidateControls.controls?.securityIncident?.silentEvidenceMutationAllowed, false);
-assert.equal(candidateControls.controls?.privacyRetention?.retentionScheduleApproved, false, 'retention schedule must remain open until approved');
-assert.ok(Object.values(candidateControls.controls?.privacyRetention?.retentionPeriods ?? {}).every((value) => value === null), 'unapproved retention periods must remain unset');
 assert.equal(candidateControls.controls?.publicVerification?.rawScoresPublicByDefault, false);
 assert.equal(candidateControls.controls?.publicVerification?.secureItemsPublic, false);
 for (const source of candidateControls.sourceDrafts ?? []) {
