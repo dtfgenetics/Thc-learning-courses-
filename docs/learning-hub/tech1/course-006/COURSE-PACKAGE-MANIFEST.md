@@ -1,7 +1,7 @@
 # Course Package Manifest — COURSE-LH-TECH1-006
 
 **Course:** Harvest, Postharvest, Traceability & Shift Handoff  
-**Package state:** machine package substantially complete; Drive mirrors reconciled; deployed responsive/manual QA and human validation open  
+**Package state:** owner-approved published academic package; Drive mirrors and exact deployment identity reconciled; responsive/manual QA and professional validation remain open  
 **Date:** 2026-09-18
 
 ## Canonical source
@@ -74,7 +74,7 @@ Course 6 machine checks must preserve:
 
 - execute/retain passing strict Course 6 learning-loop/balanced-assessment CI;
 - verify deployed rendered learner surface at mobile/tablet/desktop widths;
-- preserve the verified anonymous public course/lesson/assessment readback record and complete exact build/source-SHA identification;
+- preserve the verified anonymous public course/lesson/assessment readback record and exact build/source-SHA identity;
 - generate/verify source-version-specific review queue records;
 - record deployment evidence only after actual observation.
 
@@ -88,7 +88,6 @@ Course 6 machine checks must preserve:
 - rendered accessibility/manual UX approval;
 - controlled pilot evidence;
 - decision-rule/standard-setting approval where required;
-- academic release approval.
 
 ## Release boundary
 
