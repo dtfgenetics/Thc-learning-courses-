@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-TRACEABILITY-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which event data best supports reconstructable harvest genealogy?",
   "choices": [
-    "Only final dry-room location",
-    "Only harvest date",
-    "Only output label color",
-    "Source and output identity, event type, locations, time, quantity/status and responsible record"
+    "Only the final dry-room location because that is where the material can be found.",
+    "Only the harvest date because all other information can be reconstructed from the schedule.",
+    "Only the output label or color because it identifies the postharvest unit.",
+    "Source and output identity, event type, relevant locations, time, quantity/status, and the responsible record or actor."
   ],
   "correct": 3,
-  "rationale": "Source and output identity, event type, locations, time, quantity/status and responsible record. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Reconstructable genealogy requires both identity and event context. A later reviewer should be able to determine what source became what output, where and when the transformation occurred, how much material was involved, and which record or responsible role captured the event. One field alone cannot support that reconstruction.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY",
     "REF-MHRA-GXP-DATA-INTEGRITY"
