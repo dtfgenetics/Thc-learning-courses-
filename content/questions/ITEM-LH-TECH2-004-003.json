@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "After an authorized intervention, one leaf is clean but multi-round incidence continues to rise. What conclusion is defensible?",
   "choices": [
-    "The treatment succeeded because at least one leaf is clean.",
-    "The rising incidence should be deleted as preexisting damage.",
-    "The isolated clean observation does not support control success against the contradictory trend.",
-    "The follow-up can stop because the action was completed."
+    "Treat the intervention as successful because at least one inspected leaf no longer shows the issue.",
+    "Classify the rising incidence as delayed expression of pre-intervention damage and close the response unless severity also increases.",
+    "Treat the clean leaf as one observation but keep the intervention outcome unresolved because the multi-round incidence trend is still worsening.",
+    "End follow-up once the authorized intervention is completed unless a new treatment decision is being considered."
   ],
   "correct": 2,
-  "rationale": "The isolated clean observation does not support control success against the contradictory trend.",
+  "rationale": "One clean leaf is a weak and potentially unrepresentative observation compared with a multi-round trend showing increasing incidence. The strongest interpretation is to preserve both pieces of evidence and recognize that the broader trend does not support declaring control success yet. Intervention completion is not the same as outcome verification, and contradictory evidence should remain visible until the trend is adequately explained.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001",
     "REF-IPM-001"

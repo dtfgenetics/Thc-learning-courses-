@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why should contradictory scouting observations remain in the record?",
   "choices": [
-    "They are evidence needed to understand uncertainty, data quality and later decisions.",
-    "They weaken the report and should be deleted.",
-    "Only observations supporting the final conclusion matter.",
-    "Contradictions automatically invalidate the whole scouting round."
+    "Keep contradictory observations because they are part of the evidence needed to understand uncertainty, sampling quality, and why later decisions changed.",
+    "Remove contradictory observations from the summary once a final diagnosis is selected so the report is easier to interpret.",
+    "Retain only observations that support the final conclusion, while keeping contradictory notes in an informal working file.",
+    "Invalidate the entire scouting round whenever observations conflict, because internal inconsistency makes the data unusable."
   ],
   "correct": 0,
-  "rationale": "They are evidence needed to understand uncertainty, data quality and later decisions.",
+  "rationale": "Contradictory observations can reveal sampling variation, changing conditions, data-quality problems, or weaknesses in the current hypothesis. Preserving them allows later reviewers to understand what was known at each point and why the diagnosis or response changed. Deleting or hiding conflicting evidence creates confirmation bias and weakens reconstructability, while automatically discarding the whole round can throw away valid information that still has diagnostic value.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

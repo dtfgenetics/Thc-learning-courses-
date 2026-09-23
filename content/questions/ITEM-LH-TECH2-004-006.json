@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician is highly confident about the pest identity. Does that confidence authorize pesticide selection or application?",
   "choices": [
-    "Yes, if the technician has seen the pest before.",
-    "No; diagnosis confidence and treatment/application authority are separate controls.",
-    "Yes, if crop loss could be expensive.",
-    "Yes, if an online product claims the pest on its label."
+    "High confidence can justify treatment selection when the technician has prior experience with the same pest and the product is labeled for it.",
+    "Diagnostic confidence does not create treatment-selection or pesticide-application authority; those remain governed by separate authorization, label, facility, and jurisdictional controls.",
+    "High crop-loss risk permits the technician to choose an interim treatment while formal approval is pending.",
+    "A product label naming the pest is enough to authorize use if the technician follows the listed rate and PPE."
   ],
   "correct": 1,
-  "rationale": "No; diagnosis confidence and treatment/application authority are separate controls.",
+  "rationale": "Correct identification and confidence in the diagnosis are separate from legal and organizational authority to select or apply a pesticide. Product labeling, licensing, facility authorization, jurisdictional requirements, and assigned role all still govern treatment decisions. A technician may provide evidence and escalate the diagnosis without independently converting that diagnosis into application authority.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

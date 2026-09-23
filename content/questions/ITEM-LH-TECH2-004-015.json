@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "An intervention coincides with crop removal, humidity correction and intensified sanitation. What is the strongest outcome statement if pressure later falls?",
   "choices": [
-    "The treatment alone caused the decline.",
-    "The environmental change alone caused the decline.",
-    "Pressure declined after multiple simultaneous changes; attribution to one intervention is limited without stronger evidence.",
-    "The other changes should be removed from the record."
+    "Attribute the decline primarily to the treatment because it was the planned intervention and the other changes were supportive conditions.",
+    "Attribute the decline primarily to humidity correction because environmental improvement affects pest/pathogen pressure more broadly.",
+    "Report that pressure declined after several simultaneous changes and that the contribution of any one intervention cannot be isolated without stronger evidence.",
+    "Remove the crop-removal and sanitation details from the trend summary so the treatment effect can be evaluated more directly."
   ],
   "correct": 2,
-  "rationale": "Pressure declined after multiple simultaneous changes; attribution to one intervention is limited without stronger evidence.",
+  "rationale": "When crop removal, environmental correction, sanitation, and treatment occur together, the observed decline is a combined outcome. The data may support that the overall response was effective, but they do not isolate which component caused the improvement. A defensible report preserves all concurrent changes and limits causal attribution. Removing other actions from the record would distort the evidence rather than clarify it.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001",
     "REF-MHRA-GXP-DATA-INTEGRITY"

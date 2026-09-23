@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A suspected contagious disease has high propagation-source consequences but uncertain visual evidence. What is the strongest action?",
   "choices": [
-    "Make a definitive visual diagnosis and release unaffected-looking material.",
-    "Preserve containment and escalate for stronger qualified confirmation proportional to the consequence of being wrong.",
-    "Begin an unauthorized treatment immediately.",
-    "Ignore the finding until symptoms become severe."
+    "Use the most likely visual diagnosis to release unaffected-looking material while retaining only symptomatic plants in quarantine.",
+    "Preserve containment and escalate for stronger qualified confirmation proportional to the consequences of a false positive or false negative.",
+    "Begin an interim treatment immediately because the potential propagation-source consequence makes delay riskier than an incorrect treatment.",
+    "Continue normal movement until symptom severity increases enough to justify a stronger diagnostic response."
   ],
   "correct": 1,
-  "rationale": "Preserve containment and escalate for stronger qualified confirmation proportional to the consequence of being wrong.",
+  "rationale": "When a suspected contagious disease could affect propagation-source material, the consequences of being wrong are high in both directions. Releasing material too early can spread a real problem, while declaring disease from weak visual evidence can trigger unnecessary destruction or disruption. The defensible response is consequence-proportional: maintain containment, preserve traceability, and obtain stronger qualified confirmation before making irreversible decisions.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

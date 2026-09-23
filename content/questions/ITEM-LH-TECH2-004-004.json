@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A quarantined propagation batch needs additional inspection. What is the correct approach?",
   "choices": [
-    "Move the batch into a clean room for better light.",
-    "Share tools with adjacent clean stock to compare symptoms.",
-    "Release the batch temporarily because no diagnosis is confirmed.",
-    "Use a method that preserves the quarantine/sanitation boundary or escalate if inspection cannot be done without breaching it."
+    "Move the batch temporarily into a clean inspection area if that provides better visibility, then disinfect the area afterward.",
+    "Use the same tools on quarantined and clean stock if tools are sanitized between individual plants during the comparison.",
+    "Release the batch briefly for inspection because quarantine status should not prevent collecting diagnostic evidence.",
+    "Inspect using a method that preserves the quarantine and sanitation boundary, or escalate if the required inspection cannot be completed without breaching containment."
   ],
   "correct": 3,
-  "rationale": "Use a method that preserves the quarantine/sanitation boundary or escalate if inspection cannot be done without breaching it.",
+  "rationale": "Quarantine exists to control movement and cross-contact while the risk remains unresolved. Inspection should therefore be designed around that containment boundary rather than temporarily suspending it. Moving the batch or sharing tools with clean stock can create new exposure pathways even when sanitation is attempted. If adequate inspection cannot be performed within the controlled area, the correct response is to escalate for an authorized method rather than improvise.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

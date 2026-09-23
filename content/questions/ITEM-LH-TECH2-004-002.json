@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Total trap catch is unchanged, but positives expanded from one edge zone to four distant zones. What is the strongest interpretation?",
   "choices": [
-    "Control is proven because counts did not rise.",
-    "Spatial scope worsened even though the total count stayed flat.",
-    "The map is irrelevant if the total is unchanged.",
-    "The added zones should be excluded as outliers."
+    "Treat the unchanged total catch as evidence that pressure is stable because overall abundance did not increase.",
+    "Report that spatial scope expanded from one zone to four, indicating a broader distribution even though the total catch stayed flat.",
+    "Treat the new zone pattern as secondary unless total trap count also rises, because abundance is the primary trend measure.",
+    "Pool the four positive zones into one composite location so the new distribution remains comparable with the earlier round."
   ],
   "correct": 1,
-  "rationale": "Spatial scope worsened even though the total count stayed flat.",
+  "rationale": "A flat total count can hide a meaningful change in spatial distribution. Expansion from one localized edge zone to four distant zones means the problem is no longer confined to the same area, which can affect containment, scouting, and response decisions. Abundance and spatial scope answer different questions and should both be preserved rather than collapsed into one number.",
   "references": [
     "REF-IPM-001"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A follow-up plan should specify what?",
   "choices": [
-    "Only the next treatment product.",
-    "Only a date with no sampling design.",
-    "Where/when to resample, comparable effort, outcome metrics, containment status, escalation triggers and unresolved questions.",
-    "Only the leading diagnosis."
+    "A follow-up plan should identify the likely next treatment so the authorized role can act quickly if pressure persists.",
+    "A follow-up plan should specify the date and responsible person; sampling design can be adjusted based on conditions at the time.",
+    "A follow-up plan should define where and when to resample, comparable effort, outcome metrics, containment status, escalation triggers, and unresolved questions.",
+    "A follow-up plan should focus on the leading diagnosis so alternative causes do not dilute the interpretation of the next round."
   ],
   "correct": 2,
-  "rationale": "Where/when to resample, comparable effort, outcome metrics, containment status, escalation triggers and unresolved questions.",
+  "rationale": "A strong follow-up plan makes the next evidence collection comparable and decision-relevant. It should define when and where sampling occurs, how much effort is used, which outcomes are measured, what containment remains active, and what findings trigger escalation or closure. Leaving those choices until the next round can introduce bias and make trend interpretation weaker.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IPM-001"
