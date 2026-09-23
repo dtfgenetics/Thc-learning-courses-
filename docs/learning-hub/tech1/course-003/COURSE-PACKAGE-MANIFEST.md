@@ -1,7 +1,7 @@
 # Course Package Manifest — COURSE-LH-TECH1-003
 
 **Course:** Environmental, Light & Sensor Fundamentals  
-**Package state:** machine source package substantially complete; public route readback verified; exact build identity, responsive/manual QA and human validation remain open  
+**Package state:** owner-approved published academic package; public route readback and exact build identity verified; responsive/manual QA and professional validation remain open  
 **Date:** 2026-09-18
 
 ## Canonical source
@@ -69,7 +69,6 @@ Practical A remains development work. Mapping is not calibration, inter-rater ev
 
 1. Confirm CI passes the shared Courses 3–7 learner-runtime regression and the versioned Course 3 review-queue check.
 2. Complete deployed responsive/manual learner-surface QA.
-3. Record the exact deployment build/source SHA for the already verified public course, lesson and knowledge-check routes.
 4. Repair any defects exposed by those checks without weakening assessment-security or role-boundary controls.
 
 ## Human/evidence gates that remain open
@@ -82,7 +81,6 @@ Practical A remains development work. Mapping is not calibration, inter-rater ev
 - rendered accessibility/manual UX approval;
 - real learner pilot evidence;
 - applicable standard-setting/decision-rule approval;
-- academic release approval.
 
 No machine artifact may mark these complete on behalf of a reviewer.
 
