@@ -109,6 +109,23 @@ if(process.argv.includes('--json')){
 
 if(process.argv.includes('--check')){
   const structural=rows.filter(r=>r.flags.includes('missing-learner-support-package')||r.flags.includes('no-applied-practice-signal'));
+  const course1=rows.find((r)=>r.courseId==='COURSE-LH-TECH1-001');
+  const publishedDownloadTotal=downloadRecords.filter((record)=>record.status==='published' && record.releaseStatus==='public').length;
+  const mappedPublicGap=rows.filter((r)=>r.courseId!=='COURSE-LH-TECH1-001' && r.signals.publishedDownloads===0);
+
+  if(course1?.flags.includes('missing-learner-support-package')){
+    console.error('\nCourse 1 learner-support source detection regressed.');
+    process.exitCode=1;
+  }
+  if(publishedDownloadTotal<15){
+    console.error(`\nPublished academic learner-download coverage regressed: expected at least 15, found ${publishedDownloadTotal}.`);
+    process.exitCode=1;
+  }
+  if(mappedPublicGap.length){
+    console.error('\nCanonical courses missing a mapped published/public learner job aid:');
+    for(const r of mappedPublicGap) console.error(`- ${r.courseId}`);
+    process.exitCode=1;
+  }
   if(structural.length){
     console.error('\nStructural learner-support gaps:');
     for(const r of structural) console.error(`- ${r.courseId}: ${r.flags.join(', ')}`);
