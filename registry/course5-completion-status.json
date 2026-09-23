@@ -6,7 +6,7 @@
   "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 5 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
+  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 5 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete, including the owner-approved raster-first learner-asset cutover. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
   "evidence": [
     "content/courses/COURSE-LH-TECH1-005.json",
     "scripts/test-tech1-course5.mjs",
@@ -52,13 +52,13 @@
     "buildId": "dtf-academy-338f3cc23581-35582824708"
   },
   "rasterCandidateProduction": {
-    "state": "produced-automated-qa-passed-human-cutover-review-open",
+    "state": "production-raster-cutover-complete-manual-responsive-review-open",
     "candidateCount": 9,
     "format": "lossless-webp",
     "minimumShortSidePx": 1600,
     "manifest": "visuals/TECH1-COURSES3-6-RASTER-CANDIDATE-MANIFEST.json",
-    "releaseApproved": false,
-    "boundary": "SVG compatibility baselines remain live until human factual/copy, accessibility, responsive/manual and verified public-path cutover review is recorded."
+    "releaseApproved": true,
+    "boundary": "Course 5 owner-approved WebP assets are active in learner-facing production paths. Legacy SVG files remain provenance/reference sources only. Manual responsive/accessibility review and external/professional validation remain open."
   },
   "ownerReleaseApproval": {
     "state": "approved",
