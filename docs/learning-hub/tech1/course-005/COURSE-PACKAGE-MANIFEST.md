@@ -62,7 +62,7 @@ Course 5 machine checks must preserve:
 6. evidence references on scored items;
 7. complete objective remediation/reassessment sections;
 8. Practical C/D/E crosswalk coverage;
-9. all nine governed assets available through the Academy runtime with accessible SVG metadata;
+9. all nine governed WebP assets available through the Academy runtime with learner-facing alt/caption metadata;
 10. explicit `pesticideApplicatorAuthorityConferred: false` and `treatmentSelectionAuthorityConferred: false` boundaries;
 11. package artifact presence;
 12. truthful draft/release separation from professional credential issuance.
