@@ -8,9 +8,37 @@ const course=read('content/courses/COURSE-LH-TECH2-008.json');
 assert.equal(course.status,'draft'); assert.equal(course.finalAssessment,null); assert.equal(course.extensions.dedicatedLabModuleRequired,false); assert.equal(course.extensions.dedicatedLabModule,'MOD-LH-TECH2-008-LAB'); assert.equal(course.extensions.formativeReadinessAssessment,'ASSESS-LH-TECH2-008-M01'); assert.equal(course.extensions.labPlan,'LABPLAN-TECH2-001'); assert.equal(course.extensions.integratedPerformanceValidationRequired,true); assert.equal(course.extensions.liveCredentialFormApproved,false); assert.equal(course.extensions.independentPesticideTreatmentAuthorityConferred,false); assert.equal(course.extensions.independentProductReleaseAuthorityConferred,false); assert.equal(course.extensions.independentHighRiskRepairAuthorityConferred,false); assert.equal(course.extensions.controlledRecordEditAuthorityExpanded,false); assert.equal(course.extensions.formalSupervisoryAuthorityConferred,false);
 const expected=["PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP","PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION","PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING","PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP","PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW","PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE","PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION"]; assert.deepEqual(course.extensions.credentialPracticalSetRequired,expected); assert.equal(course.extensions.capstoneRequired,'CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT');
 const mod=read('content/modules/MOD-LH-TECH2-008-LAB.json'); assert.equal(mod.lessons.length,4); assert.equal(mod.assessment,'ASSESS-LH-TECH2-008-M01'); for(const id of mod.lessons)assert.ok(exists('content/lessons/'+id+'.json')); for(let i=1;i<=8;i++)assert.ok(exists('content/learning-objectives/LO-LH-TECH2-008-0'+i+'.json'));
-const assess=read('content/assessments/ASSESS-LH-TECH2-008-M01.json'); assert.equal(assess.purpose,'formative'); assert.equal(assess.items.length,16); assert.equal(assess.extensions.credentialEvidence,false); for(const id of assess.items){const q=read('content/questions/'+id+'.json');assert.equal(q.purpose,'formative');}
+const assess=read('content/assessments/ASSESS-LH-TECH2-008-M01.json'); assert.equal(assess.purpose,'formative'); assert.equal(assess.items.length,16); assert.equal(assess.extensions.credentialEvidence,false);
+ assert.equal(assess.extensions?.courseDerivedAssessment,true,'Course 8 readiness must remain course-derived');
+ assert.equal(assess.extensions?.encyclopediaSubstitutionAllowed,false,'Encyclopedia material cannot substitute for Course 8 integration teaching');
+ assert.equal(assess.extensions?.untaughtMaterialAllowed,false,'Course 8 readiness cannot assess untaught material');
+ const readinessMap=assess.extensions?.taughtMaterialMap??{};
+ const expectedObjectives=['LO-LH-TECH2-008-01','LO-LH-TECH2-008-02','LO-LH-TECH2-008-03','LO-LH-TECH2-008-04','LO-LH-TECH2-008-05','LO-LH-TECH2-008-06','LO-LH-TECH2-008-07','LO-LH-TECH2-008-08'];
+ for(const objectiveId of expectedObjectives){
+   assert.ok(Array.isArray(readinessMap[objectiveId])&&readinessMap[objectiveId].length>0,objectiveId+': readiness objective must map to dedicated Course 8 teaching');
+   for(const lessonId of readinessMap[objectiveId]){
+     assert.match(lessonId,/^LESSON-LH-TECH2-008-/,objectiveId+': readiness map must stay inside Course 8');
+     assert.ok(mod.lessons.includes(lessonId),objectiveId+': mapped lesson must belong to Course 8 lab module');
+     const lesson=read('content/lessons/'+lessonId+'.json');
+     assert.ok((lesson.learningObjectives??[]).includes(objectiveId),objectiveId+': mapped lesson '+lessonId+' must actually teach the objective');
+   }
+ }
+ assert.ok(exists('docs/learning-hub/tech2/course-008/READINESS-TO-TEACHING-MAP.md'),'Course 8 must retain readiness-to-teaching audit');
+ assert.ok(exists('docs/learning-hub/tech2/course-008/PERFORMANCE-TO-TEACHING-MAP.md'),'Course 8 must retain performance-to-teaching audit');
+ for(const id of assess.items){const q=read('content/questions/'+id+'.json');assert.equal(q.purpose,'formative');}
 const plan=read('registry/technician-ii-integrated-lab-plan.json'); assert.equal(plan.status,'draft'); assert.deepEqual(plan.practicals.map(p=>p.id),expected); assert.equal(plan.practicals.length,7); for(const p of plan.practicals){assert.equal(p.totalPoints,100);assert.equal(p.targetPassPoints,80);assert.equal(p.noCriticalErrors,true);assert.ok(exists(p.document));}
 assert.equal(plan.capstone.id,'CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT'); assert.equal(plan.capstone.totalPoints,100); assert.equal(plan.capstone.developmentTargetPassPoints,80); assert.equal(plan.capstone.scoreDomains.reduce((s,d)=>s+d.points,0),100); assert.equal(plan.capstone.noCriticalErrors,true); assert.equal(plan.capstone.secureCredentialFormApproved,false); assert.ok(exists(plan.capstone.document));
+const capstoneObject=read('content/performance-assessments/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.json');
+assert.equal(capstoneObject.extensions?.dedicatedIntegrationRequired,true,'Tech II capstone must require dedicated Course 8 integration');
+assert.equal(capstoneObject.extensions?.encyclopediaSubstitutionAllowed,false,'Encyclopedia material cannot substitute for capstone teaching provenance');
+assert.equal(capstoneObject.extensions?.untaughtPerformanceAllowed,false,'Tech II capstone cannot assess untaught performance');
+const allowedTeachingCourses=new Set(['COURSE-LH-TECH2-001','COURSE-LH-TECH2-002','COURSE-LH-TECH2-003','COURSE-LH-TECH2-004','COURSE-LH-TECH2-005','COURSE-LH-TECH2-006','COURSE-LH-TECH2-007','COURSE-LH-TECH2-008']);
+for(const [domain,sources] of Object.entries(capstoneObject.extensions?.teachingSources??{})){
+  assert.ok(Array.isArray(sources)&&sources.length>0,domain+': capstone domain must retain teaching provenance');
+  assert.ok(sources.includes('COURSE-LH-TECH2-008'),domain+': capstone domain must include Course 8 integration teaching');
+  for(const source of sources) assert.ok(allowedTeachingCourses.has(source),domain+': invalid teaching source '+source);
+}
+
 assert.equal(plan.completionLogic.allSevenPracticalsRequired,true); assert.equal(plan.completionLogic.compensatoryAveragingAllowed,false); assert.equal(plan.completionLogic.readinessAssessmentIsCredentialEvidence,false); assert.equal(plan.criticalFailureRules.length,7); assert.ok(plan.criticalFailureRules.every(r=>r.blocksCredentialEvidence===true)); assert.equal(plan.evaluatorControls.pilotDoubleScoringRequired,true); assert.equal(plan.formControls.secureCredentialFormsPublic,false); assert.equal(plan.accessibilityControls.accommodationMayNotLowerPassingThreshold,true); assert.equal(plan.retestPolicy.equivalentFormRequired,true);
 const program=read('content/credential-programs/CREDPROG-CULT-TECH-II-001.json'); assert.equal(program.status,'draft'); assert.equal(program.assessmentModel.performanceEvidence.length,7); assert.equal(program.assessmentModel.capstone,'CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT');
 console.log('Technician II Course 008 integrated lab passed: readiness-only assessment, seven non-compensatory practicals, 100-point capstone, critical-error controls, evaluator/accessibility/retest controls and draft release gates resolve.');

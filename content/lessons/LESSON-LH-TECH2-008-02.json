@@ -90,7 +90,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-008-04",
           "title": "Integrated fertigation and root-zone station",
-          "src": "/assets/tech2/course8/outcome-04.svg",
+          "src": "/assets/tech2/course8/outcome-04.webp",
           "alt": "Station workflow verifying approved recipe and material identity, measuring-system readiness, irrigation delivery, root-zone trend and crop context before a bounded troubleshooting recommendation, with unauthorized recipe redesign or major chemistry decisions routed to escalation.",
           "caption": "Verify batch identity, measurement quality, delivery and crop context before troubleshooting the root zone. Do not convert diagnostic skill into independent recipe-design authority.",
           "references": [
@@ -98,15 +98,16 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-008-04",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         },
         {
           "type": "image",
           "assetId": "VIS-LH-TECH2-008-05",
           "title": "Integrated IPM propagation and canopy evidence",
-          "src": "/assets/tech2/course8/outcome-05.svg",
+          "src": "/assets/tech2/course8/outcome-05.webp",
           "alt": "Integrated plant-health and performance workflow combining comparable multi-round IPM sampling, biosecurity controls, donor or batch evidence, canopy and flowering context, and uncertainty while keeping regulated treatment decisions and unsupported contamination or genotype claims outside Technician II authority.",
           "caption": "Combine multi-round IPM evidence with donor, sanitation, stage and mapped canopy response. Preserve biosecurity and do not overstate contamination, genotype causation or treatment authority.",
           "references": [
@@ -115,8 +116,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-008-05",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

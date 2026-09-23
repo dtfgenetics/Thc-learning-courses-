@@ -94,7 +94,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-008-08",
           "title": "Senior Technician Diagnostic Shift evidence packet",
-          "src": "/assets/tech2/course8/outcome-08.svg",
+          "src": "/assets/tech2/course8/outcome-08.webp",
           "alt": "Capstone evidence model requiring each of seven practicals plus the integrated capstone to independently meet its standard with no critical error, linking evaluator observations to rubric domains and candidate artifacts, and routing failed evidence to remediation and an equivalent reassessment rather than compensatory averaging.",
           "caption": "Practical and capstone evidence is non-compensatory. Failed evidence or a critical error requires remediation and equivalent reassessment; stronger performance elsewhere cannot average it away.",
           "references": [
@@ -104,8 +104,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-008-08",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]

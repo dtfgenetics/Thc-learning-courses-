@@ -85,7 +85,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-008-06",
           "title": "Integrated postharvest deviation scope",
-          "src": "/assets/tech2/course8/outcome-06.svg",
+          "src": "/assets/tech2/course8/outcome-06.webp",
           "alt": "Postharvest station workflow separating room history from representative product measurements, containing suspect material, tracing lot genealogy and shared exposure, defining evidence-bounded affected scope, and handing unresolved disposition decisions to the authorized role.",
           "caption": "Product evidence, process history and genealogy define the affected scope. Room RH is not product water activity, and containment does not authorize disposition.",
           "references": [
@@ -94,15 +94,16 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-008-06",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         },
         {
           "type": "image",
           "assetId": "VIS-LH-TECH2-008-07",
           "title": "Integrated traceability metrics and shift handoff",
-          "src": "/assets/tech2/course8/outcome-07.svg",
+          "src": "/assets/tech2/course8/outcome-07.webp",
           "alt": "Integrated records workflow reconciling physical and controlled identities, preserving planned-versus-actual history, calculating KPIs from stable definitions and denominators, supporting peers using the current procedure, then ranking unresolved work and assigning a decision owner without unauthorized record edits or supervisory overreach.",
           "caption": "Reconcile, calculate and hand off without manufacturing a clean record. Preserve discrepancies, stable KPI definitions, planned-versus-actual history and the authorized decision owner.",
           "references": [
@@ -111,8 +112,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-008-07",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
