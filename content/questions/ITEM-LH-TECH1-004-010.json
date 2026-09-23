@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRITION-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why should a visual symptom chart not be used as proof of a nutrient diagnosis?",
   "choices": [
-    "Leaves contain no useful information",
-    "Many nutrition, water, root-zone and environmental problems can produce overlapping visible symptoms",
-    "Nutrients never affect leaves",
-    "Only EC is needed for diagnosis"
+    "Visual symptoms are too subjective to contribute useful evidence.",
+    "Different nutrition, root-zone, water, pest, disease, and environmental problems can produce overlapping visible symptoms.",
+    "Nutrients rarely create visible leaf symptoms, so charts are mostly historical teaching tools.",
+    "EC alone identifies whether a symptom is nutritional, making the chart unnecessary."
   ],
   "correct": 1,
-  "rationale": "Many nutrition, water, root-zone and environmental problems can produce overlapping visible symptoms. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Symptom charts can help organize observations, but many different causes can produce similar chlorosis, necrosis, curling, or spotting. A chart therefore supports a differential rather than proving a diagnosis. The technician should combine visible pattern with pH, EC, irrigation, root-zone, environment, and other relevant evidence before a cause is assigned.",
   "references": [
     "REF-NUTRITION-001",
     "REF-IRRIGATION-001"
