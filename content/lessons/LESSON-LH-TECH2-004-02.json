@@ -73,7 +73,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-004-02",
           "title": "Spatial and temporal plant-health trend",
-          "src": "/assets/tech2/course4/outcome-02.svg",
+          "src": "/assets/tech2/course4/outcome-02.webp",
           "alt": "Plant-health trend model comparing mapped scope, incidence, severity, chronology and plausible movement pathways across repeated scouting rounds so a flat total does not hide spread into new zones or worsening severity.",
           "caption": "Map scope across repeated rounds. The same total count can represent one contained cluster or a broader spread, and incidence and severity should not be treated as the same measure.",
           "references": [
@@ -82,8 +82,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-004-02",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
