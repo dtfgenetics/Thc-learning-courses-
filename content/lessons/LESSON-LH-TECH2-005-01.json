@@ -74,7 +74,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-005-01",
           "title": "Comparable propagation performance evidence",
-          "src": "/assets/tech2/course5/outcome-01.svg",
+          "src": "/assets/tech2/course5/outcome-01.webp",
           "alt": "Propagation performance diagram aligning donor or batch identity, eligible starting denominator, rooted and loss counts, observation time point, operator and environment so success percentages are only compared across valid groups and weak donors or trays are not averaged away.",
           "caption": "Propagation percentages only mean something when the denominator, time point and genealogy are comparable. Stratify donors, trays, operators, media and zones before averaging.",
           "references": [
@@ -83,8 +83,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-005-01",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
