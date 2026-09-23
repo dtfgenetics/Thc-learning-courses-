@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRITION-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician sees marginal necrosis on several plants. What belongs in the initial record?",
   "choices": [
-    "A confirmed nutrient-toxicity diagnosis",
-    "A new fertilizer recipe",
-    "Objective symptom location/distribution plus stage and available pH, EC, irrigation and root-zone context",
-    "A claim that genetics caused it"
+    "Record a confirmed nutrient-toxicity diagnosis so the next shift knows what correction to make.",
+    "Recommend a new fertilizer recipe based on the visible margin damage.",
+    "Record the objective symptom location and distribution along with crop stage and available pH, EC, irrigation, and root-zone context.",
+    "Record genetics as the cause if the affected plants share a cultivar."
   ],
   "correct": 2,
-  "rationale": "Objective symptom location/distribution plus stage and available pH, EC, irrigation and root-zone context. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "The initial record should capture what is actually visible and the context that may help later interpretation. Marginal necrosis can have multiple nutritional, environmental, or root-zone explanations, so Technician I should not convert the observation into a diagnosis or recipe change. A reconstructable record preserves symptom location, distribution, stage, and relevant measurements.",
   "references": [
     "REF-NUTRITION-001",
     "REF-IRRIGATION-001"
