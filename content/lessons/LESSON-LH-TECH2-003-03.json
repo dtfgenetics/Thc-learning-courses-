@@ -79,7 +79,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-003-03",
           "title": "Root-zone trends need system context",
-          "src": "/assets/tech2/course3/outcome-03.svg",
+          "src": "/assets/tech2/course3/outcome-03.webp",
           "alt": "Connected root-zone interpretation model linking measured irrigation delivery, media and container context, crop demand and environment, moisture or dryback trends, and pH or EC, emphasizing that no single dryback percentage or EC value is a universal diagnosis.",
           "caption": "Interpret dryback, pH and EC with installed irrigation performance, media/container conditions, crop stage and environmental demand. One number is not a complete diagnosis.",
           "references": [
@@ -90,8 +90,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-003-03",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
