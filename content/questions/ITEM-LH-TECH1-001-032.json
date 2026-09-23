@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-032","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-QA-001","objective":"LO-LH-TECH1-001-11","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A paper record contains an incorrect value. What is the best correction approach?","choices":["Follow the controlled correction method so the original entry and corrected value remain reconstructable","Erase the original completely","Cover it with correction fluid","Rewrite the entire page and destroy the first copy"],"correct":0,"rationale":"Data-integrity practice preserves the original record history and makes corrections attributable.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-032",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-TECH1-001-11",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A paper record contains an incorrect value. What is the best correction approach?",
+  "choices": [
+    "Use the controlled correction method so the original entry remains readable and the corrected value, reason, date/time, and attribution are reconstructable.",
+    "Erase the incorrect value completely so no one accidentally uses it later.",
+    "Cover the original value with correction fluid and write the correct value on top.",
+    "Rewrite the page neatly and destroy the original so the official record contains only accurate information."
+  ],
+  "correct": 0,
+  "rationale": "A paper-record correction should improve accuracy without erasing history. The controlled method preserves the original entry and makes the correction attributable and understandable. Erasure, correction fluid, or destroying the original hides what was first recorded and weakens data integrity.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
