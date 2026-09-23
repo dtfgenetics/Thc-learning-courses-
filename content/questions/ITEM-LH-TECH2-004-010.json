@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Symptoms remain limited to one propagation batch. Which response best protects clean stock while evidence is reviewed?",
   "choices": [
-    "Mix the batch with healthy plants to see whether symptoms spread.",
-    "Maintain the defined quarantine/movement controls and trace source/material contacts.",
-    "Move suspect plants between rooms for comparison.",
-    "Relax sanitation because the issue is localized."
+    "Move a small subset of suspect plants into clean stock for comparison while keeping the rest of the batch isolated.",
+    "Maintain the defined quarantine and movement controls, trace source/material contacts, and continue evidence review without exposing clean stock.",
+    "Relocate the suspect batch between rooms to determine whether symptoms follow the plants or the environment.",
+    "Reduce sanitation intensity around the batch because a localized pattern suggests a noncontagious cause is more likely."
   ],
   "correct": 1,
-  "rationale": "Maintain the defined quarantine/movement controls and trace source/material contacts.",
+  "rationale": "A batch-limited problem creates a strong reason to preserve containment while the cause remains uncertain. Quarantine protects clean stock from a potentially transmissible issue and also preserves traceability of contacts and movements. Mixing, relocating, or relaxing sanitation can create new exposure pathways before the risk is understood. The batch history and contact network should be traced without breaching the containment boundary.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]
