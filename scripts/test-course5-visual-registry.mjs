@@ -41,7 +41,8 @@ for (const asset of produced) {
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
   assert.equal(asset.rasterReplacement?.releaseApproved, true, `${asset.id}: raster replacement must be owner-approved`);
-  assert.equal(asset.rasterReplacement?.generatedFrom, asset.sourcePath, `${asset.id}: released raster must preserve SVG provenance`);
+  assert.equal(asset.rasterReplacement?.generatedFrom, asset.legacySource?.sourcePath, `${asset.id}: released raster must preserve SVG provenance`);
+  assert.equal(asset.rasterReplacement?.candidateSourcePath, asset.sourcePath, `${asset.id}: candidate raster source must match active production sourcePath`);
   assert.equal(asset.learnerPath, `/${asset.rasterReplacement.candidateSourcePath.replace(/^apps\/web\/public\//, '')}`);
   const rasterSource = path.join(root, asset.rasterReplacement.candidateSourcePath);
   assert.ok(fs.existsSync(rasterSource), `${asset.id}: released WebP learner asset missing`);
