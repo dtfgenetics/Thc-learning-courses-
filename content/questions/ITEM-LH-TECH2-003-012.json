@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRIENT-DIAG-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Interveinal chlorosis appears only in one irrigation zone. Which differential is strongest?",
   "choices": [
-    "Declare a micronutrient deficiency from color alone.",
-    "Increase micronutrients facility-wide immediately.",
-    "Ignore irrigation because leaf symptoms cannot arise from root-zone conditions.",
-    "Keep nutrition, localized delivery/root-zone conditions and other look-alikes open until zone evidence separates them."
+    "Treat the localized chlorosis as a micronutrient deficiency because symptoms confined to one irrigation zone are most consistent with uneven nutrient delivery.",
+    "Increase the suspected micronutrient only in the affected zone and use the plant response as the main confirmation test.",
+    "Prioritize root-zone pH as the cause because a zone-limited pattern is more likely to reflect nutrient availability than foliar or environmental stress.",
+    "Keep nutrition, localized delivery/root-zone conditions, and plausible look-alikes in the differential until zone-specific evidence separates them."
   ],
   "correct": 3,
-  "rationale": "Keep nutrition, localized delivery/root-zone conditions and other look-alikes open until zone evidence separates them.",
+  "rationale": "A symptom restricted to one irrigation zone makes localized delivery and root-zone conditions important, but it does not establish a specific nutrient deficiency or pH mechanism. Similar chlorosis can arise from nutrient supply, availability, root impairment, irrigation distribution, environmental effects, or other look-alikes. The strongest workup uses the spatial pattern to prioritize zone-specific evidence while keeping multiple explanations open until discriminating data are collected.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001",
     "REF-NUTRITION-001"
