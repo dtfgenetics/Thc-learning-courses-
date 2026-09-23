@@ -2,7 +2,7 @@
   "id": "COURSE-LH-TECH2-008",
   "title": "Integrated Technician II Simulation Lab",
   "version": "0.2.0",
-  "status": "draft",
+  "status": "published",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
   "intendedAudience": [
@@ -19,7 +19,7 @@
     "workplace-equivalent"
   ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.",
-  "assessmentPolicy": "This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.",
+  "assessmentPolicy": "This owner-approved public academic course uses course-specific formative and summative/readiness evidence derived from material taught in the course. Academic course completion is educational evidence only and does not authorize professional credential issuance. Secure credential examinations, validated practical/capstone decisions, evaluator calibration, standard setting, privacy/security approval, and final credential release remain separately fail-closed.",
   "description": "Integrates the seven Technician II performance practicals and Senior Technician Diagnostic Shift capstone through supervised, evidence-based performance preparation. Readiness knowledge checks are formative only; completion requires each mapped practical and the capstone to independently meet its performance standard with no critical errors.",
   "modules": [
     "MOD-ENV-ADV-001",
@@ -112,6 +112,11 @@
     "independentProductReleaseAuthorityConferred": false,
     "independentHighRiskRepairAuthorityConferred": false,
     "controlledRecordEditAuthorityExpanded": false,
-    "formalSupervisoryAuthorityConferred": false
+    "formalSupervisoryAuthorityConferred": false,
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "encyclopediaSubstitutionAllowed": false,
+    "continuousImprovement": true
   }
 }

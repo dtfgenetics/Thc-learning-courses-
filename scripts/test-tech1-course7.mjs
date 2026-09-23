@@ -8,7 +8,9 @@ const readText = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 const exists = (p) => fs.existsSync(path.join(root, p));
 
 const course = read('content/courses/COURSE-LH-TECH1-007.json');
-assert.equal(course.status, 'draft');
+assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false);
 assert.equal(course.finalAssessment, null, 'Course 7 intentionally uses integrated performance rather than an ordinary final exam');
 assert.equal(course.extensions?.dedicatedLabModuleRequired, false);
 assert.equal(course.extensions?.dedicatedLabModule, 'MOD-LH-TECH1-007-LAB');
@@ -37,7 +39,7 @@ const expectedObjectives = Array.from({ length: 6 }, (_, i) => `LO-LH-TECH1-007-
 for (const id of expectedObjectives) assert.ok(exists(`content/learning-objectives/${id}.json`), `missing Course 7 objective ${id}`);
 
 const assess = read('content/assessments/ASSESS-LH-TECH1-007-M01.json');
-assert.equal(assess.status, 'draft');
+assert.equal(assess.status, 'published');
 assert.equal(assess.purpose, 'formative');
 assert.equal(assess.items.length, 12);
 assert.equal(new Set(assess.items).size, 12);

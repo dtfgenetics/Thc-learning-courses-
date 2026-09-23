@@ -1,6 +1,6 @@
 {
   "version": "1.2.0",
-  "status": "draft",
+  "status": "published",
   "competencies": [
     "COMP-PLANT-BIO-001",
     "COMP-FLOWER-001",
@@ -81,9 +81,9 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH1-002",
     "linkedCredentialPractical": "PRACTICAL-TECH1-A",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 30,
-    "completionModel": "The course assessment is development evidence only while the course remains draft. Credential performance still requires the mapped Technician I practical and program-level release gates.",
+    "completionModel": "This published public academic assessment contributes only to academic course evidence. It does not replace mapped practical/performance requirements and does not authorize professional credential issuance.",
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH1-002-M01",
     "courseDerivedAssessment": true,
@@ -109,6 +109,10 @@
         "LESSON-LH-TECH1-002-04"
       ]
     },
-    "testToTeachingAudit": "docs/learning-hub/tech1/course-002/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-002/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "status": "draft",
+  "status": "published",
   "competencies": [
     "COMP-POSTHARVEST-001",
     "COMP-CULT-TRACEABILITY-001",
@@ -42,5 +42,11 @@
     "ITEM-LH-TECH1-006-M01-012"
   ],
   "maxAttempts": null,
-  "feedbackMode": "immediate"
+  "feedbackMode": "immediate",
+  "extensions": {
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
+  }
 }

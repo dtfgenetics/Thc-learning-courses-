@@ -2,7 +2,7 @@
   "id": "ASSESS-LH-TECH2-001-FINAL",
   "title": "Advanced Crop Observation & Diagnostic Reasoning — Course Assessment",
   "version": "1.1.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "summative",
   "competencies": [
     "COMP-ENV-ADV-001",
@@ -105,9 +105,9 @@
   "extensions": {
     "courseId": "COURSE-LH-TECH2-001",
     "linkedCredentialPractical": "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "bankExpansionTarget": 48,
-    "completionModel": "Course assessment is development evidence only while Course 201 is draft. Credential performance remains separately dependent on Practical A and program-level release gates.",
+    "completionModel": "This published public academic assessment contributes only to academic course evidence. It does not replace mapped practical/performance requirements and does not authorize professional credential issuance.",
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-001-M01",
     "publicCredentialItemsExcluded": true,
@@ -145,6 +145,10 @@
         "LESSON-LH-TECH2-001-04"
       ]
     },
-    "testToTeachingAudit": "docs/learning-hub/tech2/course-001/TEST-TO-TEACHING-MAP.md"
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-001/TEST-TO-TEACHING-MAP.md",
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }

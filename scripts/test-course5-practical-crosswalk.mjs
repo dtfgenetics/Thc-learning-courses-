@@ -14,7 +14,9 @@ const releaseEvidence=read('registry/technician-i-release-evidence.json');
 
 assert.equal(crosswalk.courseId,course.id);
 assert.equal(crosswalk.status,'development');
-assert.equal(course.status,'draft');
+assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false);
 assert.equal(course.extensions?.practicalCrosswalk,'registry/course5-practical-cde-crosswalk.json');
 assert.equal(course.extensions?.practicalCrosswalkStatus,'development');
 assert.equal(course.extensions?.pesticideApplicatorAuthorityConferred,false);

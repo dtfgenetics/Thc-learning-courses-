@@ -2,7 +2,7 @@
   "id": "COURSE-LH-TECH2-001",
   "title": "Advanced Crop Observation & Diagnostic Reasoning",
   "version": "0.2.0",
-  "status": "draft",
+  "status": "published",
   "credentialBearing": true,
   "level": "Cultivation Technician II / advanced occupational pathway",
   "intendedAudience": [
@@ -19,7 +19,7 @@
     "workplace-equivalent"
   ],
   "evidencePolicy": "Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.",
-  "assessmentPolicy": "Course-specific formative and summative items are separate from the public Technician II credential-development bank. Course completion remains draft/development evidence and does not replace Practical A, private operational credential forms, program validation, standard setting or final release approval.",
+  "assessmentPolicy": "This owner-approved public academic course uses course-specific formative and summative/readiness evidence derived from material taught in the course. Academic course completion is educational evidence only and does not authorize professional credential issuance. Secure credential examinations, validated practical/capstone decisions, evaluator calibration, standard setting, privacy/security approval, and final credential release remain separately fail-closed.",
   "description": "Develops structured multi-factor crop observation, evidence collection, differential reasoning, uncertainty communication, and escalation for abnormal crop conditions within Technician II authority.",
   "modules": [
     "MOD-PLANT-BIO-001",
@@ -73,6 +73,11 @@
     "mappedPractical": "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
     "dedicatedItemCount": 36,
     "formativeItemCount": 12,
-    "summativeItemCount": 24
+    "summativeItemCount": 24,
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "encyclopediaSubstitutionAllowed": false,
+    "continuousImprovement": true
   }
 }

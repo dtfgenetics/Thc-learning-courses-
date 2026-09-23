@@ -2,7 +2,7 @@
   "id": "ASSESS-LH-TECH2-002-M01",
   "title": "Environmental Data, Sensors & Equipment Response — Formative Check",
   "version": "1.0.0",
-  "status": "draft",
+  "status": "published",
   "purpose": "formative",
   "competencies": [
     "COMP-ENV-ADV-001",
@@ -47,8 +47,12 @@
   },
   "extensions": {
     "courseId": "COURSE-LH-TECH2-002",
-    "bankStatus": "development-seed",
+    "bankStatus": "public-academic-course-assessment",
     "distinctSummativeBank": true,
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
   }
 }
