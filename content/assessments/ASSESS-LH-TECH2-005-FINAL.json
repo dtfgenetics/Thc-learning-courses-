@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-005-FINAL",
   "title": "Propagation & Canopy Performance Troubleshooting — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -96,6 +96,41 @@
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-005-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "unsupportedGenotypeClaimAllowed": false,
+    "unsupportedContaminationClaimAllowed": false,
+    "independentHighRiskInterventionAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-005-01": [
+        "LESSON-LH-TECH2-005-01",
+        "LESSON-LH-TECH2-005-04"
+      ],
+      "LO-LH-TECH2-005-02": [
+        "LESSON-LH-TECH2-005-02",
+        "LESSON-LH-TECH2-005-04"
+      ],
+      "LO-LH-TECH2-005-03": [
+        "LESSON-LH-TECH2-005-03",
+        "LESSON-LH-TECH2-005-04"
+      ],
+      "LO-LH-TECH2-005-04": [
+        "LESSON-LH-TECH2-005-03",
+        "LESSON-LH-TECH2-005-04"
+      ],
+      "LO-LH-TECH2-005-05": [
+        "LESSON-LH-TECH2-005-02",
+        "LESSON-LH-TECH2-005-04"
+      ],
+      "LO-LH-TECH2-005-06": [
+        "LESSON-LH-TECH2-005-01",
+        "LESSON-LH-TECH2-005-02",
+        "LESSON-LH-TECH2-005-03",
+        "LESSON-LH-TECH2-005-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-005/TEST-TO-TEACHING-MAP.md"
   }
 }
