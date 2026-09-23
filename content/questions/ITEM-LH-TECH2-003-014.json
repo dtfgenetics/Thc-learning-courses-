@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The batch calculation conflicts with the controlled target final volume. What is the best action?",
   "choices": [
-    "Choose the larger number to avoid deficiency.",
-    "Stop and reconcile the calculation/instruction before adding materials.",
-    "Average the two values.",
-    "Use yesterday’s volume from memory."
+    "Use the larger calculated volume because under-volume batching is more likely to concentrate nutrients beyond the target.",
+    "Stop and reconcile the calculation, recipe, and target final volume before adding materials or making an irreversible batch change.",
+    "Average the conflicting values if both calculations were performed from the same controlled recipe.",
+    "Use the previous successful batch volume as the working value and correct the record after the discrepancy is resolved."
   ],
   "correct": 1,
-  "rationale": "Stop and reconcile the calculation/instruction before adding materials.",
+  "rationale": "A conflict between the batch calculation and controlled target volume means the instruction set is not yet internally reconciled. Choosing, averaging, or substituting a historical value can propagate an error into the batch and make the final concentration difficult to reconstruct. The discrepancy should be resolved before material addition so the technician can execute one verified instruction path.",
   "references": [
     "REF-ASTM-E2659-001"
   ]
