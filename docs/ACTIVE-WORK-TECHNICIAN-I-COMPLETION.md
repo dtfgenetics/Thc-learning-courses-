@@ -1,15 +1,15 @@
 # Active Work — Technician I Completion
 
-**Status:** active — source/package machine build complete; deployment and human validation remain  
+**Status:** active — academic source/package and deployment evidence substantially reconciled; manual QA and professional validation remain  
 **Started:** 2026-09-15  
-**Updated:** 2026-09-16  
+**Updated:** 2026-09-22  
 **Credential program:** `CREDPROG-CULT-TECH-I-001 — THC Cultivation Technician I`
 
 ## Objective
 
 Finish the first complete professional training/certification pathway while keeping academic/public course completion separate from professional credential authorization.
 
-The project has now crossed an important boundary: **all seven Technician I source packages and the credential machine-control layer are built and deterministically enforced.** Remaining machine work is primarily truthful deployment/readback evidence and storage reconciliation. Human, pilot, psychometric, privacy/security and final release approvals remain open by design.
+The project has now crossed an important boundary: **all seven Technician I source packages and the credential machine-control layer are built and deterministically enforced.** Remaining machine work is primarily learner-surface QA, content-depth improvement, visual/support expansion, and synchronization of truthful deployment/readback evidence. Human, pilot, psychometric, privacy/security and final release approvals remain open by design.
 
 ## Current seven-course state
 
@@ -18,7 +18,7 @@ The project has now crossed an important boundary: **all seven Technician I sour
 3. `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals — source package complete; 32 dedicated items; Practical A mapping; 6 governed learner assets.
 4. `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals — source package complete; 36 dedicated items; Practical B; 7 governed learner assets.
 5. `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care — source package complete; 36 dedicated items; Practicals C/D/E; 9 governed learner assets.
-6. `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff — source package complete; 36 dedicated items; Practical F; 8 repository learner assets; individual Drive mirrors remain pending.
+6. `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff — source package complete; 36 dedicated items; Practical F; 8 repository learner assets; 8/8 controlled Drive mirrors verified.
 7. `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab — integrated source package complete; 12-item readiness check with two items per objective, Practicals A–F, 200-point capstone, five controlled critical-failure classes, equivalent-form/retest/evaluator/privacy controls.
 
 The authoritative cross-course state is `docs/TECH1-COURSE-READINESS-MATRIX.md`. The source-package gate is executable through:
@@ -73,11 +73,11 @@ For each course:
 - record the exact build/SHA/route only after successful verification;
 - never create release evidence before the deployed result actually exists.
 
-### B. Course 6 storage reconciliation
+### B. Course 6 storage state
 
-- mirror the eight Course 6 learner SVGs into the controlled Drive folder when a byte-transfer path is available;
-- update `visuals/COURSE6-ASSET-REGISTRY.json` only with real returned Drive file IDs/URLs;
-- do not fabricate mirror metadata.
+- all eight controlled Course 6 Drive mirrors are verified in `visuals/COURSE6-ASSET-REGISTRY.json`;
+- preserve those real file IDs/URLs and refresh them only when an asset is intentionally replaced;
+- do not regress verified mirror metadata back to a pending state.
 
 ### C. Credential-runtime hardening only where release-safe
 
@@ -118,6 +118,6 @@ The remaining machine-build work is complete when:
 
 1. all seven source packages remain green under CI;
 2. Courses 2–7 have fresh truthful deployed responsive/readback evidence;
-3. Course 6 mirror metadata reflects actual Drive uploads;
+3. Course 6 mirror metadata remains synchronized with the verified 8/8 Drive uploads;
 4. private exam boundaries and disabled issuance remain intact;
 5. the only unresolved release blockers require genuine human review, pilot evidence, evaluator/calibration evidence, security/privacy approval, formal standard setting, or final release authorization.
