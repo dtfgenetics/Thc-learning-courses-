@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A transplant occurred three days later than planned. What should the handoff record?",
   "choices": [
-    "Only the actual date.",
-    "Change the planned date to the actual date.",
-    "Delete the schedule entry.",
-    "Both planned and actual dates, the variance/context, downstream impact and any required next decision."
+    "Record the actual transplant date because that is the only date that affected production.",
+    "Change the planned date to the actual date so the schedule reflects what happened rather than an obsolete plan.",
+    "Remove the missed schedule entry and create a new task for the actual transplant date.",
+    "Record both planned and actual dates, the three-day variance and context, downstream effects or dependencies, and any decision still required."
   ],
   "correct": 3,
-  "rationale": "Both planned and actual dates, the variance/context, downstream impact and any required next decision.",
+  "rationale": "Planned and actual dates serve different purposes: one records intent and the other records execution. Preserving both makes schedule variance visible and allows the next shift to understand what changed, why it matters, and which downstream tasks may be affected. Rewriting the plan to match the outcome destroys useful operational evidence.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
