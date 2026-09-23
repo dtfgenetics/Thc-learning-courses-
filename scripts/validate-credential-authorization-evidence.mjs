@@ -13,6 +13,7 @@ const readDir=(rel)=>{
 const programs=new Map(readDir('content/credential-programs').filter(x=>x.data.id).map(x=>[x.data.id,x.data]));
 const courses=new Map(readDir('content/courses').map(x=>[x.data.id,x.data]));
 const controls=readJson('registry/candidate-governance-controls.json');
+const governanceApprovals=readDir('content/candidate-governance-approvals').map(x=>x.data);
 const rows=readDir('content/credential-authorization-evidence');
 const ids=new Set();
 
@@ -86,6 +87,10 @@ for(const {file,data:r} of rows){
     }
     if(r.governance?.finalReleaseDecision!=='approve') errors.push(`${file}: approved authorization requires finalReleaseDecision=approve`);
     if(!r.governance?.decisionAuthority||!r.governance?.decisionDate) errors.push(`${file}: approved authorization requires governance decision authority/date`);
+    const governanceApproval=governanceApprovals
+      .filter(x=>x.controlsId===controls.id&&String(x.controlsVersion)===String(controls.version)&&x.status==='approved')
+      .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt))[0]??null;
+    if(!governanceApproval) errors.push(`${file}: approved credential authorization requires approved exact-version candidate governance evidence`);
     if(controls.operationalUseAuthorized!==true) errors.push(`${file}: candidate governance controls are not authorized for operational use`);
     if(r.privacyRetention?.candidateGovernanceControlsVersion!==controls.version) errors.push(`${file}: candidate governance controls version must match current ${controls.version}`);
   }
