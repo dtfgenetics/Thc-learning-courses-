@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A crop note says only “plants look bad today.” What makes the record inadequate?",
   "choices": [
-    "It contains no diagnosis",
-    "It does not name a fertilizer",
-    "It is too short and lacks objective condition, identity, distribution and useful context",
-    "It is written in present tense"
+    "It is inadequate mainly because it does not include the technician's suspected diagnosis.",
+    "It is inadequate mainly because it does not identify the nutrient or product involved.",
+    "It is too vague to reconstruct what was observed because it lacks objective condition, crop identity/location, distribution, and useful context.",
+    "It is inadequate because present-tense wording makes the note less formal."
   ],
   "correct": 2,
-  "rationale": "Vague wording does not allow another person to reconstruct what was actually observed.",
+  "rationale": "A useful crop record should let another person understand what was actually seen, where, on which crop or plants, how widely it was distributed, and what relevant context was present. “Plants look bad” provides none of that evidence. A diagnosis is not required; objective and reconstructable observation is.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ],

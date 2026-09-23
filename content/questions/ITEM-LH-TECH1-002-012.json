@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Plants along one room edge are shorter with longer internodes than plants in the center. What is the best first record?",
   "choices": [
-    "Bad genetics on the edge",
-    "The entire room needs a new lighting plan",
-    "Remove edge plants before taking photographs",
-    "A spatially concentrated edge pattern with representative plant measurements and available environment/light/irrigation context"
+    "Record that edge plants have poor genetics because the pattern is concentrated along the room perimeter.",
+    "Recommend a room-wide lighting redesign because longer internodes indicate insufficient light.",
+    "Remove the edge plants before documenting them so only normal crop structure remains in the comparison.",
+    "Record the edge-concentrated pattern with representative measurements and available light, environment, irrigation, and plant-history context before assigning cause."
   ],
   "correct": 3,
-  "rationale": "Preserving the spatial pattern and available context is more defensible than assigning a cause before evidence supports it.",
+  "rationale": "The spatial concentration is the most important first finding. Representative plant measurements and nearby environmental/process context make the pattern reconstructable and give later reviewers evidence to compare possible light, environment, irrigation, or plant-history explanations. Calling genetics or lighting the cause before that comparison goes beyond what the observation establishes.",
   "references": [
     "REF-PLANT-BIO-001"
   ],

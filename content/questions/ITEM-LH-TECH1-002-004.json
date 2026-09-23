@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What should generally be observed before zooming in on a single leaf symptom?",
   "choices": [
-    "The likely nutrient brand involved",
-    "The final diagnosis",
-    "The harvest date",
-    "The room-wide or whole-plant pattern and uniformity"
+    "The nutrient or product most likely to explain the symptom.",
+    "The most likely diagnosis based on prior room history.",
+    "The expected harvest date and scheduled crop week.",
+    "The whole-plant and broader crop pattern, including whether the condition is localized or distributed."
   ],
   "correct": 3,
-  "rationale": "Whole-crop and whole-plant pattern provides context for interpreting a local structure or symptom.",
+  "rationale": "A local leaf symptom is easier to interpret when the technician first understands the larger pattern. Whole-plant and room-level observations can show whether the issue is isolated, repeated in one zone, associated with plant age, or broadly distributed. Diagnosis, nutrient cause, or harvest timing should not be assumed before that context is collected.",
   "references": [
     "REF-PLANT-BIO-001"
   ],

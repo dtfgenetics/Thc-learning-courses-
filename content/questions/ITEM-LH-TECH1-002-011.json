@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "How should a recent irrigation event be treated when documenting a new crop abnormality?",
   "choices": [
-    "As proof that irrigation caused the abnormality",
-    "As irrelevant and omitted from the record",
-    "As useful context unless evidence and procedure establish it as the cause",
-    "As permission to redesign the irrigation program"
+    "Treat the irrigation event as proof that irrigation caused the abnormality because the timing is recent.",
+    "Leave the irrigation event out unless a supervisor already believes it is related.",
+    "Record the irrigation event as relevant context while keeping cause separate until evidence and procedure support a causal conclusion.",
+    "Use the irrigation event as authority to change the program if the abnormality is severe enough."
   ],
   "correct": 2,
-  "rationale": "Work history can strengthen context without automatically proving causation.",
+  "rationale": "Recent work history can help explain timing and possible relationships, but sequence alone does not prove cause. Recording the irrigation event preserves useful context for later troubleshooting while avoiding the mistake of turning correlation into diagnosis. Technician I should document and escalate rather than redesigning the program independently.",
   "references": [
     "REF-PLANT-BIO-001"
   ],
