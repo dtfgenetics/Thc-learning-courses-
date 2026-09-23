@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Wilted plants occur in wet media, and no pest or pathogen sign has been confirmed. Which diagnostic approach is strongest?",
   "choices": [
-    "Keep root dysfunction, irrigation, environment and disease in the differential and collect evidence that separates them.",
-    "Apply a pesticide immediately because wilt can be caused by disease.",
-    "Irrigate more because wilt always indicates water shortage.",
-    "Rule out disease because media are wet."
+    "Keep root dysfunction, irrigation, environment, and disease in the differential and collect evidence that can separate those possibilities before selecting a response.",
+    "Prioritize a root-pathogen hypothesis because persistent wilt in wet media is more consistent with disease than with irrigation or environmental causes.",
+    "Reduce irrigation immediately and use the plant response as the main test of whether excess moisture caused the wilt.",
+    "Inspect foliar pest pressure first because wet media makes a root-zone water-balance problem less likely than an above-canopy stress."
   ],
   "correct": 0,
-  "rationale": "Wilt has multiple biotic and abiotic causes; wet media can be consistent with root dysfunction and does not confirm or exclude disease.",
+  "rationale": "Wilt reflects loss of adequate water status in the plant, but it does not identify why that occurred. In wet media, possible explanations still include oxygen-limited or damaged roots, poor hydraulic function, irrigation distribution problems, environmental demand, and infectious root disease. The strongest approach is to keep those competing explanations active and collect discriminating evidence such as root condition, moisture distribution, drainage, environmental pattern, and pathogen signs. Prioritizing one cause or changing irrigation before that comparison risks treating a hypothesis as if it were already confirmed.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

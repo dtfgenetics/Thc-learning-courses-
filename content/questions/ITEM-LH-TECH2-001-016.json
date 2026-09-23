@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Symptoms repeatedly intensify after irrigation and ease later, while RH also spikes inside the canopy after irrigation. What does this timing provide?",
   "choices": [
-    "Proof that humidity is the sole cause.",
-    "Proof that nutrition cannot be involved.",
-    "A reason to ignore unaffected canopy locations.",
-    "Evidence linking the symptom pattern to an irrigation-associated environmental/root-zone event that should be tested against alternatives."
+    "Treat the repeated post-irrigation timing as confirmation that humidity is the primary cause and adjust the environmental target first.",
+    "Treat the timing as evidence against a nutrient-related explanation because nutritional effects would not track an irrigation event so closely.",
+    "Focus the next observations on the affected plants because unaffected canopy locations add little value once a repeated temporal pattern is established.",
+    "Use the repeated timing to prioritize irrigation-associated environmental and root-zone hypotheses, then test those against competing explanations and unaffected comparison locations."
   ],
   "correct": 3,
-  "rationale": "Temporal association can prioritize hypotheses but does not by itself prove a single mechanism.",
+  "rationale": "Repeated timing is meaningful because it links symptom intensity to an irrigation-associated event, but it does not identify which mechanism within that event is responsible. Irrigation can change canopy humidity, root-zone moisture and oxygen conditions, nutrient concentration, and plant water status at the same time. The temporal pattern should therefore raise the priority of those linked hypotheses while comparison measurements and unaffected locations are used to separate them. Treating the association as proof of one mechanism would confuse correlation with diagnosis.",
   "references": [
     "REF-VPD-002"
   ]

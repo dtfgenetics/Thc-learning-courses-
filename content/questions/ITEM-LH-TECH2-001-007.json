@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A symptom appears only on one cultivar in two rooms but not on other cultivars sharing those rooms. Which observation most changes the next diagnostic step?",
   "choices": [
-    "Room effects are proven irrelevant.",
-    "The cultivar is proven genetically defective.",
-    "The repeated cultivar association increases the value of comparing genotype/developmental response with shared environmental and root-zone evidence.",
-    "No additional environmental or root-zone data are needed."
+    "Treat the repeated cultivar pattern as evidence that room conditions are unlikely to matter and focus the workup on cultivar-specific genetics.",
+    "Treat the repeated cultivar pattern as evidence of a cultivar defect and compare only plants from that cultivar in the two affected rooms.",
+    "Use the repeated cultivar association to strengthen the genotype/developmental hypothesis while still comparing shared environmental, root-zone, and management evidence across affected and unaffected cohorts.",
+    "Hold environmental and root-zone investigation until another cultivar shows the same symptom, because the current pattern is cultivar-specific."
   ],
   "correct": 2,
-  "rationale": "A repeated cohort association is useful evidence but does not by itself prove a genetic cause or eliminate shared-system contributors.",
+  "rationale": "A repeated association with one cultivar across two rooms is meaningful because it shifts the weight of evidence toward cultivar-specific developmental or genotype-related sensitivity. It still does not isolate genetics as the cause. The same cultivar could respond differently to shared root-zone, environmental, or management conditions, and those contributors may interact with genotype. The strongest next step is therefore a cohort comparison that uses the cultivar pattern as evidence while testing whether affected and unaffected plants differ in other discriminating variables.",
   "references": [
     "REF-FLOWER-MORPH-2023-001",
     "REF-NUTRIENT-DEFICIENCY-001"

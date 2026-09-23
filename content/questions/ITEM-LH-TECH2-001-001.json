@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician sees pale upper leaves and writes “iron deficiency confirmed” before checking any other evidence. What is the best correction to the workup?",
   "choices": [
-    "Record the pale upper leaves as an observation and keep iron deficiency as one hypothesis pending discriminating evidence.",
-    "Immediately increase iron because the symptom name is specific.",
-    "Delete older normal observations so the record is consistent.",
-    "Treat the feed chart as confirmation of the plant cause."
+    "Record the pale upper leaves as an observation, keep iron deficiency as one hypothesis, and collect discriminating evidence before changing the diagnosis.",
+    "Record iron deficiency as the working diagnosis because upper-leaf chlorosis is most consistent with an immobile-element problem, then verify after correction.",
+    "Compare the plant only with its nearest neighbors; if they look normal, classify the issue as an isolated iron problem and adjust that plant.",
+    "Use the current feed formulation and target pH as supporting confirmation that the symptom is nutritional rather than environmental or root-zone related."
   ],
   "correct": 0,
-  "rationale": "A visible symptom is evidence, not proof of one cause; the record should preserve observation separately from hypothesis.",
+  "rationale": "The strongest correction is to separate what was directly observed from what is still only a hypothesis. Pale upper leaves can be consistent with iron-related limitation, but similar visible patterns can arise from root-zone conditions, pH-related availability, environmental stress, sampling context, or other causes. A defensible workup preserves the symptom description, keeps iron deficiency in the differential, and then collects evidence that can distinguish competing explanations. The other options convert suggestive context into confirmation before the evidence supports that conclusion.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001"
   ]

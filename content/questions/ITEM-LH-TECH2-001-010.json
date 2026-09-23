@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Plants in one zone remain wet longer and show slower growth. Which comparison best tests a root-zone hypothesis?",
   "choices": [
-    "Compare only the nutrient label.",
-    "Compare irrigation delivery, drainage, substrate moisture trend, root observations and matched unaffected plants.",
-    "Compare only room-average temperature.",
-    "Increase irrigation frequency and judge by one hour of response."
+    "Compare the nutrient formulation and target EC for the affected zone with the rest of the room before collecting additional root-zone measurements.",
+    "Compare irrigation delivery, drainage, substrate moisture trend, root observations, and matched unaffected plants from the same room.",
+    "Compare room-average temperature and RH with historical targets to determine whether environmental demand explains the slower drying.",
+    "Reduce irrigation frequency in the affected zone for one cycle and use the next moisture reading as the primary test of the root-zone hypothesis."
   ],
   "correct": 1,
-  "rationale": "Root-zone hypotheses require a system comparison that includes water delivery, media behavior, roots and a relevant control cohort.",
+  "rationale": "The hypothesis concerns a localized root-zone condition, so the strongest test compares the variables that determine water delivery, retention, drainage, root function, and plant use in affected versus unaffected plants. Nutrient labels and room averages can contribute context but may miss a zone-specific delivery or substrate problem. Changing irrigation before establishing the pattern introduces a new variable and can temporarily change moisture without identifying why that zone was behaving differently.",
   "references": [
     "REF-NUTRITION-001",
     "REF-ROOTZONE-NUTRIENT-002"
