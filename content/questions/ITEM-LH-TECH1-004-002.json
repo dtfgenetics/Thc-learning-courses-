@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which information makes an EC result most useful?",
   "choices": [
-    "The value alone",
-    "The value and unit together with sample type, location and time",
-    "The nutrient brand alone",
-    "The plant color alone"
+    "The EC number alone, because the instrument already defines the measurement type.",
+    "The EC value and unit together with sample identity, location or source, and observation time.",
+    "The nutrient brand and batch name, because those explain what EC should have been.",
+    "The plant appearance, because crop condition is more important than measurement context."
   ],
   "correct": 1,
-  "rationale": "The value and unit together with sample type, location and time. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "An EC value is interpretable only when another person can tell what was measured, in what units, where or from which sample, and when. That context makes the record reconstructable and allows later comparison. Brand names or plant appearance may be useful background but cannot replace the measurement identity itself.",
   "references": [
     "REF-IRRIGATION-001"
   ],
