@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-016","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-05","bloomLevel":"analyze","difficulty":"moderate","type":"scenario","stem":"A printed SOP is revision 3, while the controlled system shows revision 5 is current. What should the technician do?","choices":["Use revision 3 because it is already in the room","Average the two procedures","Ask a coworker which one they prefer","Follow document-control procedure and use the current approved instruction"],"correct":3,"rationale":"Controlled work requires the current approved instruction rather than an obsolete copy.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-016",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A printed SOP is revision 3, while the controlled system shows revision 5 is current. What should the technician do?",
+  "choices": [
+    "Use revision 3 for the current task because it is the copy available at the point of work, then request revision 5 afterward.",
+    "Compare revisions 3 and 5 and follow whichever steps are common to both until the difference can be resolved.",
+    "Ask an experienced coworker which revision the team has been using most recently.",
+    "Follow document-control procedure, remove or flag the obsolete copy as directed, and use the currently effective approved instruction."
+  ],
+  "correct": 3,
+  "rationale": "Controlled work depends on using the instruction that is currently approved, not whichever copy happens to be nearby. An obsolete SOP can contain superseded steps, limits, or safety controls. The technician should follow the document-control process, use revision 5, and handle the outdated copy according to facility procedure so it does not continue to cause confusion.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
