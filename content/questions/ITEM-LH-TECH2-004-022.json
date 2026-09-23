@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A scout wants to carry a suspect plant through a clean corridor to photograph it. What is the best decision?",
   "choices": [
-    "Carry it quickly before spores or pests move.",
-    "Do not bypass movement controls for convenience; use an approved contained method or escalate.",
-    "Cover only the leaves and use the corridor.",
-    "Proceed if no insects are visible."
+    "Carry the plant through the corridor quickly in a covered container if the route is short and no pests are visible.",
+    "Do not bypass movement controls for convenience; use an approved contained inspection/photo method or escalate for one.",
+    "Cover the canopy while leaving the container exposed, because most biosecurity risk is carried on leaves rather than media or equipment.",
+    "Move the plant if the technician believes the issue is abiotic, since movement restrictions mainly address confirmed biological hazards."
   ],
   "correct": 1,
-  "rationale": "Do not bypass movement controls for convenience; use an approved contained method or escalate.",
+  "rationale": "Movement controls exist precisely because the biological risk may still be uncertain. Transporting a suspect plant through a clean corridor can spread pests, pathogens, debris, or contaminated media even when no insects are visible. Photography or inspection should therefore use an approved contained method that preserves segregation, or the need should be escalated rather than solved by weakening the containment boundary.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]
