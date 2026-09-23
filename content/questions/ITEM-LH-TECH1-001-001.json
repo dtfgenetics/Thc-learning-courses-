@@ -1,1 +1,24 @@
-{"id":"ITEM-LH-TECH1-001-001","version":1,"status":"draft","purpose":"summative","competency":"COMP-SAFETY-WORK-001","objective":"LO-LH-TECH1-001-01","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"A wet floor is directly beside a damaged powered device. What is the best Technician I response?","choices":["Stop use/entry as directed, prevent exposure if authorized, and escalate the electrical hazard","Keep working but step around the water","Dry only the floor and continue using the damaged device","Open the device to check the wiring"],"correct":0,"rationale":"The combination of water and damaged electrical equipment requires controlling exposure and escalation, not unauthorized electrical work.","references":["REF-NIOSH-CANNABIS-HAZARDS-2024","REF-OSHA-1910-22-WALKING"]}
+{
+  "id": "ITEM-LH-TECH1-001-001",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SAFETY-WORK-001",
+  "objective": "LO-LH-TECH1-001-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A wet floor is directly beside a damaged powered device. What is the best Technician I response?",
+  "choices": [
+    "Stop use or entry as directed, keep people away from the wet/damaged equipment area if authorized, and escalate the electrical hazard.",
+    "Keep working in the area but avoid stepping in the water until maintenance arrives.",
+    "Dry the floor first and resume using the device if the water is removed.",
+    "Unplug or open the damaged device to check whether the wiring is wet."
+  ],
+  "correct": 0,
+  "rationale": "Water beside damaged powered equipment creates both slip and electrical exposure concerns. Technician I should control exposure within assigned authority, stop use or entry as directed, and escalate the damaged equipment rather than troubleshooting energized or potentially energized components. Drying the floor alone does not make damaged equipment safe, and opening or manipulating the device can cross into unauthorized electrical work.",
+  "references": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-22-WALKING"
+  ]
+}
