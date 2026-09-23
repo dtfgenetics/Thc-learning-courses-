@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The work order calls for selective lower-canopy cleanup, but a coworker suggests heavy whole-plant defoliation. What should Technician I do?",
   "choices": [
-    "Follow the defined work order and route any requested scope change for authorization",
-    "Use the coworker’s preferred technique",
-    "Remove extra tissue to make plants uniform",
-    "Skip the work order"
+    "Follow the authorized lower-canopy cleanup work order and route any requested scope change for approval rather than expanding the task independently.",
+    "Use the coworker's heavier defoliation method if it appears more efficient and still leaves the plants healthy.",
+    "Remove extra tissue so all plants look uniform even if the work order did not call for that intensity.",
+    "Ignore the work order if the coworker has more canopy experience."
   ],
   "correct": 0,
-  "rationale": "Follow the defined work order and route any requested scope change for authorization. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "The technician's authority comes from the current controlled work order, not coworker preference. A heavier whole-plant defoliation changes the scope and intensity of the task and may affect crop response. Technician I should complete the authorized work and escalate any proposed change rather than silently expanding the treatment.",
   "references": [
     "REF-CANOPY-001",
     "REF-IPM-001"
