@@ -21,6 +21,8 @@ const questions=new Map(readDir('content/questions').map(x=>[x.id,x]));
 const reviews=readDir('content/reviews');
 const pilotEvidence=readDir('content/pilot-evidence');
 const calibrationEvidence=readDir('content/calibration-evidence');
+const standardSettingEvidence=readDir('content/standard-setting-evidence');
+const secureFormEvidence=readDir('content/secure-form-equivalence-evidence');
 const gateEvidence=readDir('content/certification-gate-evidence');
 const performance=new Map(readDir('content/performance-assessments').map(x=>[x.id,x]));
 
@@ -113,6 +115,32 @@ function deriveCalibration(courseRow){
   else if(withAny>0) status='in-progress';
   return {status,detail:{requiredPerformanceAssessments:total,withCalibrationEvidence:withAny,withCompleteResolvedCalibrationEvidence:complete},problems};
 }
+function deriveStandardSetting(courseRow){
+  if(!courseRow.conventionalFinal) return {status:'not-applicable',detail:{reason:'no conventional final'}};
+  const course=coursesById.get(courseRow.courseId);
+  const assessment=assessments.get(courseRow.finalAssessmentId);
+  if(!course||!assessment) return {status:'prepared',problems:[`missing course or assessment for standard setting`]};
+  const rows=standardSettingEvidence
+    .filter(e=>e.courseId===courseRow.courseId&&String(e.courseVersion)===String(course.version)&&e.assessmentId===assessment.id&&String(e.assessmentVersion)===String(assessment.version)&&e.status!=='invalidated')
+    .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+  const latest=rows[0]??null;
+  if(!latest) return {status:'prepared',detail:{records:0,assessmentId:assessment.id,assessmentVersion:assessment.version}};
+  const status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='panel-complete'?'evidence-complete':'in-progress';
+  return {status,detail:{records:rows.length,latestRecordId:latest.id,method:latest.method,productionCutScorePercent:latest.governanceDecision?.productionCutScorePercent??null}};
+}
+function deriveSecureForms(courseRow){
+  if(!courseRow.conventionalFinal) return {status:'not-applicable',detail:{reason:'no conventional final'}};
+  const course=coursesById.get(courseRow.courseId);
+  const assessment=assessments.get(courseRow.finalAssessmentId);
+  if(!course||!assessment) return {status:'prepared',problems:[`missing course or assessment for secure form readiness`]};
+  const rows=secureFormEvidence
+    .filter(e=>e.courseId===courseRow.courseId&&String(e.courseVersion)===String(course.version)&&e.assessmentId===assessment.id&&String(e.assessmentVersion)===String(assessment.version)&&e.status!=='invalidated')
+    .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+  const latest=rows[0]??null;
+  if(!latest) return {status:'prepared',detail:{records:0,assessmentId:assessment.id,assessmentVersion:assessment.version}};
+  const status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='evidence-complete'?'evidence-complete':'in-progress';
+  return {status,detail:{records:rows.length,latestRecordId:latest.id,formCount:latest.formCount,quantitativeEvidenceStatus:latest.equivalenceReview?.quantitativeEvidenceStatus??null}};
+}
 function explicitOrDerived(courseRow,gate,derived){
   const course=coursesById.get(courseRow.courseId);
   const explicit=course?latestGateRecord(courseRow.courseId,course.version,gate):null;
@@ -120,7 +148,7 @@ function explicitOrDerived(courseRow,gate,derived){
   const problems=[...(derived.problems??[])];
 
   // Approval for gates with repository-verifiable prerequisites cannot leapfrog missing evidence.
-  if(explicit.status==='approved' && ['exactVersionHumanAssessmentReview','itemAnalysis','practicalAssessorCalibration'].includes(gate)){
+  if(explicit.status==='approved' && ['exactVersionHumanAssessmentReview','itemAnalysis','practicalAssessorCalibration','standardSetting','secureOperationalFormReadiness'].includes(gate)){
     if(!['evidence-complete','approved'].includes(derived.status)){
       problems.push(`approved attestation cannot satisfy ${gate} before repository-verifiable prerequisite evidence is complete`);
       return {status:derived.status,source:'derived-with-rejected-attestation',detail:derived.detail,attestationId:explicit.id,problems};
@@ -137,11 +165,13 @@ for(const courseRow of registry.courses??[]){
   const derived={
     exactVersionHumanAssessmentReview:deriveHumanReview(courseRow),
     itemAnalysis:deriveItemAnalysis(courseRow),
-    practicalAssessorCalibration:deriveCalibration(courseRow)
+    practicalAssessorCalibration:deriveCalibration(courseRow),
+    standardSetting:deriveStandardSetting(courseRow),
+    secureOperationalFormReadiness:deriveSecureForms(courseRow)
   };
   const gates={};
   for(const gate of gateOrder){
-    if(gate==='exactVersionHumanAssessmentReview'||gate==='itemAnalysis'||gate==='practicalAssessorCalibration'){
+    if(['exactVersionHumanAssessmentReview','itemAnalysis','practicalAssessorCalibration','standardSetting','secureOperationalFormReadiness'].includes(gate)){
       gates[gate]=explicitOrDerived(courseRow,gate,derived[gate]);
     }else{
       const rec=latestGateRecord(courseRow.courseId,course.version,gate);
