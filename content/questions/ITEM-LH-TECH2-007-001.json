@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A physical plant is in Room B while its controlled record lists Room A and no verified move record is available. What is the strongest response?",
   "choices": [
-    "Document the mismatch, verify available movement evidence, and route the correction through the authorized process without inventing a move event.",
-    "Create a move record with an estimated timestamp.",
-    "Change the room field immediately to match the plant.",
-    "Ignore the physical location because the electronic record is authoritative."
+    "Document the mismatch, verify available movement evidence, and route correction through the authorized process without inventing a move event.",
+    "Create a move event using the best estimated time so the electronic genealogy matches the physical location before downstream work continues.",
+    "Change the room field to Room B immediately and note that supporting movement evidence was unavailable.",
+    "Treat the controlled record as authoritative until a formal discrepancy review proves the physical location is wrong."
   ],
   "correct": 0,
-  "rationale": "Document the mismatch, verify available movement evidence, and route the correction through the authorized process without inventing a move event.",
+  "rationale": "The mismatch is real evidence that physical state and controlled record disagree, but the missing move record means the technician cannot reconstruct an event by assumption. The correct response is to preserve both facts, review available evidence, contain downstream ambiguity as needed, and use the authorized correction process. Inventing a timestamp or silently editing the location would create false history.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY",
     "REF-MHRA-GXP-DATA-INTEGRITY"
