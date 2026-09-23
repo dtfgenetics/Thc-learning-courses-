@@ -13,8 +13,8 @@ assert.equal(registry.policy?.maximumAssetCount, null);
 assert.ok(registry.driveStorage?.folderId);
 assert.deepEqual(registry.policy?.productionInstructionalFormats, ['png','webp','jpeg','jpg']);
 assert.equal(registry.policy?.svgProductionTarget, false);
-assert.equal(registry.policy?.legacySvgCompatibilityAllowed, true);
-assert.equal(registry.policy?.rasterReplacementRequired, true);
+assert.equal(registry.policy?.legacySvgCompatibilityAllowed, false);
+assert.equal(registry.policy?.rasterReplacementRequired, false);
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
 assert.ok(produced.length >= 10, 'Course 2 photo-evidence practice batch requires at least ten produced learner assets');
@@ -39,22 +39,26 @@ function webpDimensions(buffer) {
 
 for (const asset of produced) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-002-[0-9]{3}$/);
-  assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/i);
-  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/i);
+  assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
+  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
   assert.ok(['embedded-visual', 'downloadable-practice'].includes(asset.deliveryType), `${asset.id}: unsupported deliveryType`);
   assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0);
   assert.ok(Array.isArray(asset.objectiveIds) && asset.objectiveIds.length > 0);
   assert.ok(typeof asset.title === 'string' && asset.title.trim());
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim());
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
-  assert.equal(asset.driveMirrorStatus, 'mirrored', `${asset.id}: produced assets must be mirrored before merge`);
-  assert.ok(asset.driveFileId && asset.driveFileUrl, `${asset.id}: mirrored asset requires Drive metadata`);
+  assert.equal(asset.assetLifecycle, 'production-raster-active');
+  assert.equal(asset.productionRasterDriveMirrorStatus, 'not-recorded');
+  assert.equal(asset.legacySource?.driveMirrorStatus, 'mirrored', `${asset.id}: legacy provenance source must retain its verified Drive mirror metadata`);
+  assert.ok(asset.legacySource?.driveFileId && asset.legacySource?.driveFileUrl, `${asset.id}: legacy provenance source requires Drive metadata`);
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
   assert.equal(asset.learnerPath, `/${asset.sourcePath.replace(/^apps\/web\/public\//, '')}`);
   const source = path.join(root, asset.sourcePath);
-  assert.ok(fs.existsSync(source), `${asset.id}: public source asset missing`);
-  const svg = fs.readFileSync(source, 'utf8');
+  assert.ok(fs.existsSync(source), `${asset.id}: production raster asset missing`);
+  const legacySource = path.join(root, asset.legacySource?.sourcePath ?? '');
+  assert.ok(fs.existsSync(legacySource), `${asset.id}: legacy provenance SVG missing`);
+  const svg = fs.readFileSync(legacySource, 'utf8');
   assert.match(svg, /<svg[\s>]/);
   assert.match(svg, /<title[\s>]/);
   assert.match(svg, /<desc[\s>]/);
@@ -63,13 +67,14 @@ for (const asset of produced) {
   const replacement = asset.rasterReplacement;
   assert.equal(replacement?.status, 'owner-approved-production-release', `${asset.id}: raster replacement must record owner-approved academic release`);
   assert.match(replacement?.candidateSourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
-  assert.equal(replacement?.generatedFrom, asset.sourcePath, `${asset.id}: raster provenance must identify its SVG baseline`);
+  assert.equal(replacement?.candidateSourcePath, asset.sourcePath, `${asset.id}: released raster path must be the active production source`);
+  assert.equal(replacement?.generatedFrom, asset.legacySource?.sourcePath, `${asset.id}: raster provenance must identify its SVG baseline`);
   assert.equal(replacement?.encoding, 'lossless-webp');
   assert.equal(replacement?.releaseApproved, true, `${asset.id}: owner-approved academic raster release must be recorded`);
 
-  const sourceBuffer = fs.readFileSync(source);
-  const candidateBuffer = fs.readFileSync(path.join(root, replacement.candidateSourcePath));
-  assert.equal(sha256(sourceBuffer), replacement.sourceSha256, `${asset.id}: source digest drift`);
+  const sourceBuffer = fs.readFileSync(legacySource);
+  const candidateBuffer = fs.readFileSync(source);
+  assert.equal(sha256(sourceBuffer), replacement.sourceSha256, `${asset.id}: legacy source digest drift`);
   assert.equal(sha256(candidateBuffer), replacement.candidateSha256, `${asset.id}: candidate digest drift`);
   assert.equal(candidateBuffer.length, replacement.bytes, `${asset.id}: candidate byte count drift`);
   const dimensions = webpDimensions(candidateBuffer);
@@ -106,4 +111,4 @@ for (const asset of produced) {
   for (const lessonId of asset.primaryLessons) assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)));
 }
 
-console.log(`Course 2 learner-asset contract passed for ${produced.length} legacy SVG compatibility assets and ${produced.length} high-resolution lossless WebP candidates; learner cutover remains fail-closed pending human QA.`);
+console.log(`Course 2 learner-asset contract passed for ${produced.length} active high-resolution lossless WebP learner assets with preserved SVG provenance; learner delivery is raster-first.`);
