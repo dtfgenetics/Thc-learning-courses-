@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-001-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -19,13 +19,13 @@
     }
   ],
   "choices": [
-    "Use it because only the outside touched the floor",
-    "Handle it according to the sanitation procedure before reuse",
-    "Rinse it briefly with nutrient solution",
-    "Wipe it on a clean glove"
+    "Use the nozzle if only the exterior touched the floor and the inside flow path stayed closed.",
+    "Handle the nozzle according to the sanitation procedure before it enters or contacts the cleaner propagation area.",
+    "Rinse the nozzle with clean nutrient solution to remove visible floor residue before use.",
+    "Wipe the contact surface with a clean glove or towel and proceed if no debris remains."
   ],
   "correct": 1,
-  "rationale": "Hose ends and tools can move pathogen-contaminated material; sanitation prevents recontamination.",
+  "rationale": "A hose nozzle can carry contamination on surfaces that later contact hands, tools, benches, or clean plant areas. Visible cleanliness alone does not show that the contamination risk has been controlled. The nozzle should be cleaned and/or disinfected according to the facility's sanitation procedure before reuse in the cleaner propagation area.",
   "references": [
     "REF-PSU-GREENHOUSE-DISEASE-SOURCES",
     "REF-UMASS-GREENHOUSE-SANITATION"
