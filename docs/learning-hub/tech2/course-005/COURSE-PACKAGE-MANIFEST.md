@@ -2,9 +2,9 @@
 
 **Course:** Propagation & Canopy Performance Troubleshooting  
 **Canonical version:** 0.2.0  
-**Canonical course state:** draft  
+**Canonical course state:** published  
 **Public academic package:** published  
-**Updated:** 2026-09-18
+**Updated:** 2026-09-22
 
 ## Purpose
 This package governs the learner-support, remediation, visual, accessibility, evidence and review layer around the canonical Technician II course. It remains fully editable and expandable.
