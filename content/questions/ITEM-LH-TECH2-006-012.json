@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What belongs in a QA-ready handoff?",
   "choices": [
-    "Only the preferred cause.",
-    "Only room RH and temperature.",
-    "A rewritten record without conflicting evidence.",
-    "Containment status, facts, timeline, genealogy/scope, product/process evidence, hypotheses, authorized actions, uncertainty and unresolved disposition decision."
+    "A concise handoff should state the preferred cause and the technician's recommended disposition so QA can act quickly.",
+    "A QA-ready handoff mainly needs room temperature/RH and product measurements because those are the most objective parts of the record.",
+    "Conflicting evidence should be resolved into one interpretation before handoff so QA receives a coherent record.",
+    "A QA-ready handoff should include containment status, factual timeline, genealogy/scope, product and process evidence, hypotheses, authorized actions, remaining uncertainty, and the unresolved disposition decision."
   ],
   "correct": 3,
-  "rationale": "Containment status, facts, timeline, genealogy/scope, product/process evidence, hypotheses, authorized actions, uncertainty and unresolved disposition decision.",
+  "rationale": "QA needs enough information to reconstruct the event and understand what decision remains. That means preserving factual evidence, scope, timeline, containment, hypotheses, actions, and uncertainty—not merely the preferred cause or environmental data. A handoff that hides conflicting evidence can lead to premature disposition and weakens traceability.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
