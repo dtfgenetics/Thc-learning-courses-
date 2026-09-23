@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A hose and harvest cart block part of the designated aisle before movement begins. What should Technician I do?",
   "choices": [
-    "Apply the supplied routine control to restore the path and verify it is clear before movement begins",
-    "Work around the obstruction",
-    "Move faster to reduce exposure",
-    "Ignore it because harvest is scheduled"
+    "Apply the allowed routine control to restore the aisle and verify the path is clear before cart movement begins.",
+    "Work around the hose and cart as long as the team is warned about the obstruction.",
+    "Move the harvest cart quickly through the narrowed aisle to reduce the time workers are exposed.",
+    "Leave the obstruction in place because the harvest schedule has already started."
   ],
   "correct": 0,
-  "rationale": "Apply the supplied routine control to restore the path and verify it is clear before movement begins. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A blocked aisle creates a foreseeable movement and trip hazard before harvest traffic begins. Technician I should correct the routine obstruction within authority and verify the pathway is clear rather than relying on awareness or speed. The schedule does not override a basic safe-work condition.",
   "references": [
     "REF-NIOSH-CANNABIS-HAZARDS-2024",
     "REF-OSHA-1910-22-WALKING"
