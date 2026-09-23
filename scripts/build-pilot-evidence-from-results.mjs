@@ -45,11 +45,11 @@ function median(values) {
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
-function pointBiserial(rows) {
-  const usable = rows.filter((row) => Number.isFinite(row.totalScore) && typeof row.correct === 'boolean');
+function pointBiserial(rows, scoreField = 'totalScore') {
+  const usable = rows.filter((row) => Number.isFinite(row[scoreField]) && typeof row.correct === 'boolean');
   if (usable.length < 2) return null;
   const x = usable.map((row) => row.correct ? 1 : 0);
-  const y = usable.map((row) => Number(row.totalScore));
+  const y = usable.map((row) => Number(row[scoreField]));
   const meanX = x.reduce((a, b) => a + b, 0) / x.length;
   const meanY = y.reduce((a, b) => a + b, 0) / y.length;
   const covariance = x.reduce((sum, value, i) => sum + (value - meanX) * (y[i] - meanY), 0) / x.length;
@@ -70,6 +70,7 @@ for (const [index, row] of payload.responses.entries()) {
   if (row.selectedChoiceIndex !== null && row.selectedChoiceIndex !== undefined && (!Number.isInteger(row.selectedChoiceIndex) || row.selectedChoiceIndex < 0)) throw new Error(`responses[${index}].selectedChoiceIndex is invalid`);
   if (!Number.isFinite(row.responseTimeSeconds) || row.responseTimeSeconds < 0) throw new Error(`responses[${index}].responseTimeSeconds is invalid`);
   if (!Number.isFinite(row.totalScore) || row.totalScore < 0 || row.totalScore > 1) throw new Error(`responses[${index}].totalScore must be between 0 and 1`);
+  if (row.restScore !== undefined && (!Number.isFinite(row.restScore) || row.restScore < 0 || row.restScore > 1)) throw new Error(`responses[${index}].restScore must be between 0 and 1 when present`);
   if (row.responseTimeAnomaly !== undefined && typeof row.responseTimeAnomaly !== 'boolean') throw new Error(`responses[${index}].responseTimeAnomaly must be boolean when present`);
 
   const key = `${row.itemId}@${row.itemVersion}`;
@@ -92,7 +93,9 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
     if (row.selectedChoiceIndex === null || row.selectedChoiceIndex === undefined) continue;
     choiceCounts.set(row.selectedChoiceIndex, (choiceCounts.get(row.selectedChoiceIndex) ?? 0) + 1);
   }
-  const discriminationValue = pointBiserial(rows);
+  const useItemRest = rows.every((row) => Number.isFinite(row.restScore));
+  const discriminationMethod = useItemRest ? 'point-biserial-item-rest' : 'point-biserial';
+  const discriminationValue = pointBiserial(rows, useItemRest ? 'restScore' : 'totalScore');
   const evidence = {
     id: `PILOT-${payload.cohortId.replace(/[^A-Z0-9-]/gi, '-').toUpperCase()}-${itemId.replace(/^ITEM-/, '')}-V${itemVersion}`,
     itemId,
@@ -100,7 +103,7 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
     status: complete ? 'complete' : 'draft',
     sampleSize: rows.length,
     percentCorrect: rows.length ? correctCount / rows.length : null,
-    discrimination: discriminationValue === null ? null : { method: 'point-biserial', value: discriminationValue },
+    discrimination: discriminationValue === null ? null : { method: discriminationMethod, value: discriminationValue },
     distractorSelection: [...choiceCounts.entries()].sort((a, b) => a[0] - b[0]).map(([choiceIndex, count]) => ({
       choiceIndex,
       count,
@@ -112,7 +115,7 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
     challengeHistory: [],
     analystId: payload.analystId,
     completedAt: complete ? (payload.completedAt ?? new Date().toISOString()) : null,
-    notes: `Aggregated from pseudonymous pilot cohort ${payload.cohortId}. Participant-level responses are not stored in the repository.`
+    notes: `Aggregated from pseudonymous pilot cohort ${payload.cohortId}. Participant-level responses are not stored in the repository. Discrimination uses item-rest score when restScore is supplied for every response to the item; otherwise it uses the supplied totalScore.`
   };
   output.push(evidence);
 }
