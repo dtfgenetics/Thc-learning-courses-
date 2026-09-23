@@ -6,7 +6,9 @@ const program = read('content/credential-programs/CREDPROG-CULT-TECH-II-001.json
 const finalA = read('content/assessments/ASSESS-LH-TECH2-001-FINAL.json');
 const formA = read('content/assessments/ASSESS-LH-TECH2-001-M01.json');
 assert.equal(course.version,'0.2.0');
-assert.equal(course.status,'draft');
+assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false);
 assert.equal(course.finalAssessment,finalA.id);
 assert.ok(course.modules.includes('MOD-LH-TECH2-001-DIAGNOSTIC'));
 assert.equal(course.extensions.mappedPractical,'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP');
