@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A work order targeted selected dense zones, but the performance review averages the entire room. What is the main analytical weakness?",
   "choices": [
-    "Room-wide averaging can dilute the response in the actual treated scope.",
-    "The technique name is enough to prove success.",
-    "Targeted zones should never be mapped.",
-    "Only the highest-performing plants should be reviewed."
+    "Review the treated dense zones separately because room-wide averaging can dilute the response where the intervention actually occurred.",
+    "Use the room-wide average because the work order occurred inside one production room and should be judged at room scale.",
+    "Compare only the best-performing treated plants to determine whether the technique can work under ideal conditions.",
+    "Use technique name and completion status as the primary evidence because spatial recovery differences are secondary."
   ],
   "correct": 0,
-  "rationale": "Room-wide averaging can dilute the response in the actual treated scope.",
+  "rationale": "When an intervention targets selected dense zones, the treated scope is the unit most directly connected to the work. A room-wide average can mix treated and untreated areas and hide either improvement or harm within the intended intervention zone. The stronger analysis preserves the mapped treatment scope and compares it with appropriate baseline and reference locations rather than diluting the effect across the whole room.",
   "references": [
     "REF-CANOPY-001"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician later finds that one tray count in the source record was entered incorrectly. What is the correct response?",
   "choices": [
-    "Overwrite the original count with no note.",
-    "Use the controlled correction process while preserving the original entry, correction reason and attribution.",
-    "Delete the entire tray from the analysis.",
-    "Change neighboring records so the batch appears consistent."
+    "Replace the original tray count with the corrected value so analysis uses the most accurate record.",
+    "Use the controlled correction process so the original entry, corrected value, reason, author, and timing remain reconstructable.",
+    "Exclude the tray from the analysis because a corrected source record can no longer support reliable performance calculations.",
+    "Adjust neighboring tray counts if needed so the corrected batch total remains consistent with the original summary."
   ],
   "correct": 1,
-  "rationale": "Use the controlled correction process while preserving the original entry, correction reason and attribution.",
+  "rationale": "A discovered data-entry error should be corrected transparently rather than erased or compensated elsewhere. The controlled correction should preserve the original value, the corrected value, why the change was made, who made it, and when. That maintains both accuracy and traceability. Deleting the tray or rewriting surrounding records would distort the source evidence.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

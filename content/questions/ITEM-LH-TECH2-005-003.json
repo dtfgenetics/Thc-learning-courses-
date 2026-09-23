@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A canopy review uses only one center-room photograph to claim uniform recovery after work. What evidence would most improve the conclusion?",
   "choices": [
-    "A second center-room photograph from the same angle.",
-    "The name of the training technique alone.",
-    "Repeatable mapped observations across predefined canopy positions linked to the authorized work and recovery timing.",
-    "Fixture wattage without spatial crop observations."
+    "Repeat the center-room photograph after the same recovery interval so the before/after comparison uses the same viewpoint.",
+    "Document the training technique and date because consistency of technique is the main determinant of recovery quality.",
+    "Collect repeatable observations across predefined mapped canopy positions and relate them to the authorized work, baseline, and recovery timing.",
+    "Use fixture wattage and room-average environmental data as the primary evidence that canopy recovery was uniform."
   ],
   "correct": 2,
-  "rationale": "Repeatable mapped observations across predefined canopy positions linked to the authorized work and recovery timing.",
+  "rationale": "One center-room image cannot establish uniformity across a canopy. A stronger evaluation uses predefined locations, repeatable viewpoints or measurements, and a known relationship to the authorized work and recovery interval. That makes spatial differences visible and allows before/after comparison. Repeating one central photo improves consistency but still cannot represent the whole canopy.",
   "references": [
     "REF-CANOPY-001"
   ]

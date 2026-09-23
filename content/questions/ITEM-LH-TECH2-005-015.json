@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CANOPY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "After canopy work, edge zones show slower recovery than center zones. What is the most useful next review?",
   "choices": [
-    "Average all zones until the difference disappears.",
-    "Repeat the same high-risk work immediately without authorization.",
-    "Compare mapped pre/post architecture and relevant spatial environment at edge versus center positions.",
-    "Use only the center-zone photographs."
+    "Average edge and center recovery so the room has one performance metric for the intervention.",
+    "Repeat the same canopy work on the edge zones so their response can be compared with the center under a stronger treatment.",
+    "Compare mapped pre/post canopy structure and relevant environmental conditions at edge and center positions to determine what differs with the slower recovery pattern.",
+    "Use center-zone images as the reference because the center represents the room's standard production condition."
   ],
   "correct": 2,
-  "rationale": "Compare mapped pre/post architecture and relevant spatial environment at edge versus center positions.",
+  "rationale": "A spatial recovery difference should be investigated spatially. Comparing mapped architecture, light, temperature, humidity, airflow, and other relevant context at edge versus center positions helps determine whether the slower response tracks the intervention itself or a location-dependent condition. Averaging the zones or repeating work before understanding the pattern can hide or worsen the difference.",
   "references": [
     "REF-CANOPY-001"
   ]

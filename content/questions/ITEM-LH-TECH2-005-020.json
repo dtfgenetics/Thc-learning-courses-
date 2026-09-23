@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician suspects handling injury because losses begin after transfer. What next check most directly tests that idea?",
   "choices": [
-    "Change the nutrient recipe first.",
-    "Assume genotype because one cultivar is common.",
-    "Delete transfer timestamps.",
-    "Compare handling/transfer records and damage pattern across similarly staged batches with and without the loss pattern."
+    "Change the nutrient program first because transfer stress often appears through delayed nutrient uptake.",
+    "Prioritize genotype because one cultivar is common among the affected trays and handling injury should affect all cultivars similarly.",
+    "Use only post-transfer symptom photographs to judge whether the damage pattern resembles handling injury.",
+    "Compare transfer/handling records, timing, and damage patterns across similarly staged batches with and without the loss pattern."
   ],
   "correct": 3,
-  "rationale": "Compare handling/transfer records and damage pattern across similarly staged batches with and without the loss pattern.",
+  "rationale": "A handling-injury hypothesis is best tested by evidence tied directly to the transfer event. Comparing timing, handling records, operator/process differences, and characteristic damage across otherwise comparable batches can show whether the losses track the transfer process. Changing nutrients or assuming genotype introduces alternative explanations without first testing the proposed handling pathway.",
   "references": [
     "REF-PROP-001"
   ]

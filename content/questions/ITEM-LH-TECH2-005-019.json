@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Facility rooting success is 85%, but one donor/batch combination is 52% while all others exceed 90%. What is the best analytical approach?",
   "choices": [
-    "Report only 85% and stop investigating.",
-    "Remove the 52% group as an outlier automatically.",
-    "Preserve the facility metric but stratify the donor/batch subgroup because the aggregate masks a localized problem.",
-    "Average the failed subgroup with the best donor twice."
+    "Report the 85% facility rate as the primary conclusion because facility-level performance is the controlled KPI.",
+    "Exclude the 52% group as an outlier if all other donor/batch groups exceed 90%.",
+    "Retain the overall 85% metric but stratify and investigate the 52% donor/batch subgroup because the aggregate masks a localized performance problem.",
+    "Weight the highest-performing donor group more heavily so the facility metric reflects typical rather than exceptional performance."
   ],
   "correct": 2,
-  "rationale": "Preserve the facility metric but stratify the donor/batch subgroup because the aggregate masks a localized problem.",
+  "rationale": "An aggregate can be accurate while still hiding an important subgroup failure. The 85% facility rate should be retained, but the 52% donor/batch result deserves separate analysis because it differs sharply from the rest of the population. Automatically removing or reweighting the subgroup would erase the very signal that may identify a donor, handling, environment, or process problem.",
   "references": [
     "REF-PROP-001"
   ]

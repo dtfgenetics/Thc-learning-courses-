@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One cultivar reaches the same final rooting success as others but three days later. What should the technician avoid claiming?",
   "choices": [
-    "That timing should be documented.",
-    "That comparisons should use defined endpoints.",
-    "That donor and environment context matter.",
-    "That the cultivar has failed propagation solely because its validated rooting timeline is slower."
+    "Avoid treating the slower cultivar as failed solely because it reaches the same final rooting success on a longer validated timeline.",
+    "Avoid documenting the timing difference because final success is the only propagation outcome that matters.",
+    "Avoid comparing donor history and environment once both cultivars achieve the same final rooting percentage.",
+    "Avoid using a defined endpoint because cultivar-specific timelines make standardized propagation comparisons misleading."
   ],
   "correct": 3,
-  "rationale": "That the cultivar has failed propagation solely because its validated rooting timeline is slower.",
+  "rationale": "If a cultivar reaches the same acceptable final rooting success but does so later, the difference is primarily one of timing, not necessarily failure. That timing should be documented and may matter operationally, but it should be interpreted against the validated endpoint and cultivar context. Standardized endpoints remain useful precisely because they prevent early measurements from being mistaken for final failure.",
   "references": [
     "REF-PROP-001"
   ]

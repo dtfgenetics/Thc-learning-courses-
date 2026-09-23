@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A proposed corrective action is outside the technician’s assigned authority but the evidence for it is strong. What should the technician do?",
   "choices": [
-    "Perform the action because confidence is high.",
-    "Document the evidence and recommendation, then escalate the decision to the authorized role.",
-    "Hide the recommendation to avoid delay.",
-    "Alter the work order locally."
+    "Perform the action because a strong evidence base justifies acting before the formal authority step catches up.",
+    "Document the evidence and recommendation, preserve current status, and escalate the decision to the role authorized to approve or execute the action.",
+    "Omit the recommendation from the handoff so the authorized role can make an independent decision without bias.",
+    "Revise the local work order to include the action, then request retrospective approval if the result is favorable."
   ],
   "correct": 1,
-  "rationale": "Document the evidence and recommendation, then escalate the decision to the authorized role.",
+  "rationale": "Strong evidence can support a recommendation, but it does not expand the technician's assigned authority. The correct response is to preserve the evidence, state the recommended action and rationale, and escalate to the role permitted to approve or perform it. Acting first or changing a work order locally bypasses governance, while hiding the recommendation wastes useful evidence and delays decision-making.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
