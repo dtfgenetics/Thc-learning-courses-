@@ -2,11 +2,11 @@
 
 Course: `COURSE-LH-TECH1-002` — **Plant Observation, Growth Stages & Crop Records**  
 Current course version: `0.10.0`  
-Current status: `draft`
+Current status: `published` for owner-approved academic use; professional credential validation remains separate
 
 ## What is built
 
-Course 002 now has a complete development-stage instructional package rather than only a course shell:
+Course 002 now has a complete published academic instructional package rather than only a course shell:
 
 - dedicated module: `MOD-LH-TECH1-002-OBSERVATION`;
 - five measurable Course 002 learning objectives;
@@ -14,7 +14,7 @@ Course 002 now has a complete development-stage instructional package rather tha
 - 12 distinct formative items;
 - 20 distinct summative-development items;
 - formative module assessment `ASSESS-LH-TECH1-002-M01`;
-- draft summative course assessment `ASSESS-LH-TECH1-002-FINAL`;
+- published summative academic course assessment `ASSESS-LH-TECH1-002-FINAL`;
 - 10 governed learner assets: 7 embedded teaching visuals and 3 downloadable practice worksheets;
 - public learner asset paths under `apps/web/public/assets/course2/`;
 - controlled Drive mirror under `Course 2 — Visual Learning Boards`;
@@ -81,7 +81,7 @@ The repository can automatically verify that:
 
 - the four lessons, five objectives and assessments exist;
 - the 32 Course 2 items satisfy the current structural/quality contract;
-- Course 2 remains draft-gated;
+- Course 2 remains professionally credential-gated even though its academic package is published;
 - all produced learner assets exist, are publicly addressable, accessible at the SVG metadata level, mirrored to Drive and reachable from canonical lessons;
 - all five Course 2 objectives map to actual Practical A tasks/evidence/deliverables; and
 - no crosswalk field falsely advances human review, pilot or practical-validation status.
@@ -99,7 +99,7 @@ The following work requires real review or observed evidence and must not be syn
 - **Controlled pilot evidence:** not started.
 - **Evaluator calibration / inter-rater evidence:** not started at the credential-program level.
 
-Course 002 must remain `draft` while these required gates are unresolved.
+Course 002 may remain published for academic study while these professional-validation gates remain unresolved; those gates continue to block professional credential issuance.
 
 ## Program-wide blockers beyond Course 2
 
@@ -120,4 +120,4 @@ See:
 5. Revise the course/practical from observed review findings.
 6. Advance status only through the established release-gate process.
 
-The automated content, assessment, learner-asset and Practical A mapping layers are now substantially built. The remaining Course 002 blockers are primarily **human review and empirical performance-validation gates**, not missing basic course scaffolding.
+The automated content, assessment, learner-asset and Practical A mapping layers are now substantially built. The remaining Course 002 professional-certification blockers are primarily **human review and empirical performance-validation gates**, not missing basic course scaffolding or academic-publication state.

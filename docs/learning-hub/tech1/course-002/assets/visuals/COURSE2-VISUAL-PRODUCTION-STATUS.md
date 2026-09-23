@@ -71,4 +71,4 @@ These assets teach evidence collection, reproductive/developmental morphology, d
 - human technical and accessibility review before any draft-to-release status change;
 - any additional performance-validation artifacts identified by the Technician I credential/practical audit.
 
-All four Course 2 lessons have dedicated visual support, and the planned observation, morphology, diagnostic-boundary, photo-evidence, room-map and handoff practice layers now have learner-facing assets. Course 2 remains draft-gated pending human review and required performance validation.
+All four Course 2 lessons have dedicated visual support, and the planned observation, morphology, diagnostic-boundary, photo-evidence, room-map and handoff practice layers now have learner-facing assets. Course 2 is published for academic use. Human technical/accessibility review and performance validation remain open for professional credential purposes and continuous improvement.

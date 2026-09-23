@@ -1,7 +1,7 @@
 # Learner Materials — COURSE-LH-TECH1-002
 
 **Course:** Plant Observation, Growth Stages & Crop Records  
-**Status:** development learner package  
+**Status:** published owner-approved academic learner package  
 **Updated:** 2026-09-22
 
 ## Learner purpose
