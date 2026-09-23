@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-001-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -19,13 +19,13 @@
     }
   ],
   "choices": [
-    "Pause the task and resolve the conflict before moving material",
-    "Assume the room number is correct",
-    "Assume the batch ID is correct",
-    "Change whichever field is easier"
+    "Pause the task and resolve the Room 3 versus Room 4 identity conflict before any movement or execution.",
+    "Use Room 3 because the work order is the primary instruction and correct the batch assignment afterward.",
+    "Use Room 4 because the batch ID is more specific than the room field in the work order.",
+    "Change the field that appears more likely to be wrong so the task can continue."
   ],
   "correct": 0,
-  "rationale": "Conflicting controlled identifiers create an identity risk and should be resolved before execution.",
+  "rationale": "A conflict between controlled identifiers means the technician cannot be sure the work is being performed on the correct material in the correct location. Proceeding by choosing one field or editing a record from assumption can create a larger traceability error. The correct response is to pause the affected work and resolve the discrepancy through the controlled process before movement.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
