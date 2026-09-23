@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-002-FINAL",
   "title": "Environmental Data, Sensors & Equipment Response — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -102,6 +102,37 @@
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-002-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-002-01": [
+        "LESSON-LH-TECH2-002-01",
+        "LESSON-LH-TECH2-002-02",
+        "LESSON-LH-TECH2-002-04"
+      ],
+      "LO-LH-TECH2-002-02": [
+        "LESSON-LH-TECH2-002-02"
+      ],
+      "LO-LH-TECH2-002-03": [
+        "LESSON-LH-TECH2-002-03",
+        "LESSON-LH-TECH2-002-04"
+      ],
+      "LO-LH-TECH2-002-04": [
+        "LESSON-LH-TECH2-002-03"
+      ],
+      "LO-LH-TECH2-002-05": [
+        "LESSON-LH-TECH2-002-03",
+        "LESSON-LH-TECH2-002-04"
+      ],
+      "LO-LH-TECH2-002-06": [
+        "LESSON-LH-TECH2-002-01",
+        "LESSON-LH-TECH2-002-02",
+        "LESSON-LH-TECH2-002-03",
+        "LESSON-LH-TECH2-002-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-002/TEST-TO-TEACHING-MAP.md"
   }
 }

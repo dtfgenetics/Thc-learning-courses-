@@ -102,6 +102,17 @@ Every visual must:
 - identify illustrative examples as illustrative;
 - preserve the distinction between academic training and professional credential issuance.
 
+## Current primary-visual production state
+
+The four primary visuals currently referenced by the Course 2 lessons are SVG review/provenance candidates, not production-ready instructional assets under the current raster-only standard.
+
+Required next visual work:
+- produce high-resolution PNG/WebP replacements for `VIS-LH-TECH2-002-01` through `VIS-LH-TECH2-002-04`;
+- preserve the existing captions, text alternatives and evidence references;
+- replace lesson learner paths with raster paths after QA;
+- verify mobile/reflow and public runtime delivery;
+- do not count the legacy SVG files toward production visual completion.
+
 ## Accessibility/manual UX review
 
 Human review remains required for:
@@ -120,6 +131,6 @@ Human review remains required for:
 
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-Course-specific formative and summative items are separate from the public Technician II credential-development bank. Course completion remains draft/development evidence and does not replace Practical B, private operational credential forms, program validation, standard setting or final release approval.
+Course-specific formative and summative items are separate from the public Technician II credential-development bank. Every summative objective is mapped back to dedicated Course 2 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 2. Course completion remains draft/development evidence and does not replace Practical B, private operational credential forms, program validation, standard setting or final release approval.
 
 Mapped performance evidence: `PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION`. Public course completion does not itself validate or issue the Technician II professional credential.
