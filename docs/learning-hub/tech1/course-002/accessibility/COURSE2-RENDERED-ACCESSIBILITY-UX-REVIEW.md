@@ -64,9 +64,9 @@ Special checks:
 
 Check:
 
-- `/assets/course2/crop-walk-room-map-practice.svg`
-- `/assets/course2/observation-handoff-practice.svg`
-- `/assets/course2/photo-evidence-audit-practice.svg`
+- `/assets/course2/crop-walk-room-map-practice.webp`
+- `/assets/course2/observation-handoff-practice.webp`
+- `/assets/course2/photo-evidence-audit-practice.webp`
 
 For each:
 
@@ -134,4 +134,4 @@ Record:
 
 ## Release boundary
 
-Machine tests can detect some markup/path regressions, but they cannot close this packet. Course 2 must remain fail-closed for gold-standard release until actual rendered review evidence is recorded and approved.
+Machine tests can detect some markup/path regressions, but they cannot close this packet. Course 2 may remain published for academic use, but rendered accessibility approval and professional credential release remain fail-closed until actual review evidence is recorded and approved.
