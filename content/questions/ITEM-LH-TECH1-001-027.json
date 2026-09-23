@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-027","version":1,"status":"draft","purpose":"summative","competency":"COMP-CULT-TRACEABILITY-001","objective":"LO-LH-TECH1-001-08","bloomLevel":"analyze","difficulty":"hard","type":"scenario","stem":"A technician cannot determine why a tracked count changed overnight. Which action best preserves the investigation?","choices":["Correct the count to the expected number","Delete the earlier entry","Document the observed discrepancy, preserve available evidence, and escalate according to procedure","Wait several days and then reconstruct the event from memory"],"correct":2,"rationale":"Preserving the discrepancy and evidence enables investigation; silent correction destroys useful information.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-027",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-TECH1-001-08",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician cannot determine why a tracked count changed overnight. Which action best preserves the investigation?",
+  "choices": [
+    "Change the count to the expected value if the current record appears inconsistent with normal overnight movement.",
+    "Delete the earlier entry and re-enter the current count so the record reflects the latest physical state.",
+    "Document the discrepancy, preserve the available records and physical evidence, and escalate through the reconciliation process.",
+    "Wait until more activity occurs and reconstruct the likely change later from worker memory and routine movement patterns."
+  ],
+  "correct": 2,
+  "rationale": "An unexplained count change is evidence that should be preserved, not corrected from assumption. The technician should document what is physically observed, keep the existing records intact, and escalate so movement, waste, transfer, or counting evidence can be reviewed. Silent correction or later reconstruction from memory can create a false transaction history.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}
