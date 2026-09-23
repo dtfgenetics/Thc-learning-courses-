@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-006-FINAL",
   "title": "Harvest/Postharvest Deviations & Quality Response — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -90,6 +90,35 @@
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-006-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "independentProductReleaseOrDispositionAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-006-01": [
+        "LESSON-LH-TECH2-006-01",
+        "LESSON-LH-TECH2-006-03"
+      ],
+      "LO-LH-TECH2-006-02": [
+        "LESSON-LH-TECH2-006-02"
+      ],
+      "LO-LH-TECH2-006-03": [
+        "LESSON-LH-TECH2-006-02"
+      ],
+      "LO-LH-TECH2-006-04": [
+        "LESSON-LH-TECH2-006-03",
+        "LESSON-LH-TECH2-006-04"
+      ],
+      "LO-LH-TECH2-006-05": [
+        "LESSON-LH-TECH2-006-04"
+      ],
+      "LO-LH-TECH2-006-06": [
+        "LESSON-LH-TECH2-006-01",
+        "LESSON-LH-TECH2-006-03",
+        "LESSON-LH-TECH2-006-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-006/TEST-TO-TEACHING-MAP.md"
   }
 }
