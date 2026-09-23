@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-15",
+  "updated": "2026-09-23",
   "purpose": "Machine-readable record of verified public deployments for certification-course learner surfaces. Deployment evidence does not authorize professional credential issuance.",
   "deployments": [
     {
@@ -85,12 +85,54 @@
       "completedAt": "2026-09-15T16:29:34Z",
       "result": "success",
       "routes": [
-        {"courseId":"COURSE-LH-TECH1-002","pageId":45207,"route":"/learn/learning-hub/cultivation-technician-i/plant-observation-growth-stages-crop-records/","lessons":4,"assessments":2,"publicLearningItems":32},
-        {"courseId":"COURSE-LH-TECH1-003","pageId":45216,"route":"/learn/learning-hub/cultivation-technician-i/environmental-light-sensor-fundamentals/","lessons":4,"assessments":2,"publicLearningItems":32},
-        {"courseId":"COURSE-LH-TECH1-004","pageId":45223,"route":"/learn/learning-hub/cultivation-technician-i/water-root-zone-nutrition-irrigation-fundamentals/","lessons":4,"assessments":2,"publicLearningItems":36},
-        {"courseId":"COURSE-LH-TECH1-005","pageId":45231,"route":"/learn/learning-hub/cultivation-technician-i/propagation-canopy-ipm-scouting-crop-care/","lessons":4,"assessments":2,"publicLearningItems":36},
-        {"courseId":"COURSE-LH-TECH1-006","pageId":45241,"route":"/learn/learning-hub/cultivation-technician-i/harvest-postharvest-traceability-shift-handoff/","lessons":4,"assessments":2,"publicLearningItems":36},
-        {"courseId":"COURSE-LH-TECH1-007","pageId":45250,"route":"/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/","lessons":4,"assessments":1,"publicLearningItems":12}
+        {
+          "courseId": "COURSE-LH-TECH1-002",
+          "pageId": 45207,
+          "route": "/learn/learning-hub/cultivation-technician-i/plant-observation-growth-stages-crop-records/",
+          "lessons": 4,
+          "assessments": 2,
+          "publicLearningItems": 32
+        },
+        {
+          "courseId": "COURSE-LH-TECH1-003",
+          "pageId": 45216,
+          "route": "/learn/learning-hub/cultivation-technician-i/environmental-light-sensor-fundamentals/",
+          "lessons": 4,
+          "assessments": 2,
+          "publicLearningItems": 32
+        },
+        {
+          "courseId": "COURSE-LH-TECH1-004",
+          "pageId": 45223,
+          "route": "/learn/learning-hub/cultivation-technician-i/water-root-zone-nutrition-irrigation-fundamentals/",
+          "lessons": 4,
+          "assessments": 2,
+          "publicLearningItems": 36
+        },
+        {
+          "courseId": "COURSE-LH-TECH1-005",
+          "pageId": 45231,
+          "route": "/learn/learning-hub/cultivation-technician-i/propagation-canopy-ipm-scouting-crop-care/",
+          "lessons": 4,
+          "assessments": 2,
+          "publicLearningItems": 36
+        },
+        {
+          "courseId": "COURSE-LH-TECH1-006",
+          "pageId": 45241,
+          "route": "/learn/learning-hub/cultivation-technician-i/harvest-postharvest-traceability-shift-handoff/",
+          "lessons": 4,
+          "assessments": 2,
+          "publicLearningItems": 36
+        },
+        {
+          "courseId": "COURSE-LH-TECH1-007",
+          "pageId": 45250,
+          "route": "/learn/learning-hub/cultivation-technician-i/integrated-cultivation-technician-practice-lab/",
+          "lessons": 4,
+          "assessments": 1,
+          "publicLearningItems": 12
+        }
       ],
       "verification": {
         "authenticatedWordPressTreeVerification": true,
@@ -112,6 +154,34 @@
         "content/public-releases/PUBLIC-RELEASE-LH-TECH1-007.json"
       ],
       "boundary": "This deployment verifies that all seven Technician I academic training courses are public learner surfaces. It does not approve the Technician I professional certification for issuance, does not publish secure credential forms or credential-purpose exams, and does not satisfy human review, practical validation, pilot, calibration, standard-setting, privacy/retention, or final credential-release gates."
+    },
+    {
+      "id": "DEPLOY-COURSE-LH-TECH1-001-RASTER23-2026-09-23",
+      "courseId": "COURSE-LH-TECH1-001",
+      "environment": "production",
+      "site": "https://dtfseeds.com",
+      "courseRoute": "/learn/learning-hub/cultivation-technician-i/safety-responsible-practice-cultivation-workflows/",
+      "siteRepository": "dtfgenetics/Thc",
+      "workflow": "Verify Course 1 public raster release",
+      "workflowRunId": 35927669459,
+      "workflowRunAttempt": 2,
+      "completedAt": "2026-09-23T22:25:05.031Z",
+      "result": "success",
+      "exactDeploymentBuildId": "dtf-academy-397f8d7e285f-35927783941",
+      "exactDeploymentSourceSha": "397f8d7e285f5a230ac441fda66921fa53a56a49",
+      "verification": {
+        "releasedRasterCount": 23,
+        "verifiedRasterCount": 23,
+        "allReleasedRasterDeliveryUrlsVerified": true,
+        "deliveryMode": "pinned-raw-github-source-used-by-wordpress",
+        "failedPaths": []
+      },
+      "visualAuthority": [
+        "visuals/ASSET-REGISTRY.json",
+        "visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json",
+        "content/lessons/LESSON-LH-TECH1-001-*.json"
+      ],
+      "boundary": "This record verifies availability of all 23 governed Course 1 raster learner assets at the exact pinned curriculum source used by the WordPress Course 1 publisher, plus exact deployed build identity. WordPress renders these pinned raw source URLs rather than /assets/course1/* paths on dtfseeds.com. Human accessibility/UX review and certification-release evidence remain separate."
     }
   ]
 }
