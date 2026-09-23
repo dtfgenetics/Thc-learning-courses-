@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-007-FINAL",
   "title": "Traceability, Production Metrics, Shift Coordination & Peer Support — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -84,6 +84,38 @@
     "bankExpansionTarget": 48,
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-007-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "formalSupervisoryAuthorityAllowed": false,
+    "unauthorizedControlledRecordEditAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-007-01": [
+        "LESSON-LH-TECH2-007-01",
+        "LESSON-LH-TECH2-007-04"
+      ],
+      "LO-LH-TECH2-007-02": [
+        "LESSON-LH-TECH2-007-01",
+        "LESSON-LH-TECH2-007-04"
+      ],
+      "LO-LH-TECH2-007-03": [
+        "LESSON-LH-TECH2-007-02",
+        "LESSON-LH-TECH2-007-04"
+      ],
+      "LO-LH-TECH2-007-04": [
+        "LESSON-LH-TECH2-007-02",
+        "LESSON-LH-TECH2-007-04"
+      ],
+      "LO-LH-TECH2-007-05": [
+        "LESSON-LH-TECH2-007-03",
+        "LESSON-LH-TECH2-007-04"
+      ],
+      "LO-LH-TECH2-007-06": [
+        "LESSON-LH-TECH2-007-03",
+        "LESSON-LH-TECH2-007-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-007/TEST-TO-TEACHING-MAP.md"
   }
 }

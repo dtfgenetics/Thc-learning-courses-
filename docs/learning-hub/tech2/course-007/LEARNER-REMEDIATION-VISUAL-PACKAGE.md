@@ -68,12 +68,24 @@ Required outputs: priority/dependency map; source/identifier table; evidence-qua
 ## Visual production
 Produce at least **4 primary instructional visuals**, one per current outcome. Assets remain unlimited. Require exact terminology, phone-readable layouts, captions and meaningful text alternatives, non-color cues, clearly illustrative examples, and no invented universal SOP/legal/product/repair/approval authority.
 
+## Current primary-visual production state
+
+The four SVG visual candidates referenced by Course 7 lessons are **legacy review/provenance assets only**. They do not satisfy the current raster-only production standard.
+
+Required production replacements:
+- `VIS-LH-TECH2-007-01` → high-resolution PNG/WebP for traceability reconciliation;
+- `VIS-LH-TECH2-007-02` → high-resolution PNG/WebP for KPI definition/comparability;
+- `VIS-LH-TECH2-007-03` → high-resolution PNG/WebP for SOP-based peer support;
+- `VIS-LH-TECH2-007-04` → high-resolution PNG/WebP for priority-ranked shift handoff.
+
+The raster replacements must preserve the existing captions, text alternatives, terminology and evidence references, then pass responsive/public-runtime QA before counting toward production visual completion.
+
 ## Accessibility/manual review
 Keyboard and focus; semantic headings/landmarks; screen-reader order/state; 200%/400% zoom/reflow; mobile/tablet/desktop; contrast/non-color cues; form/table labels; assessment instructions/errors; visual alternatives; print/download readability.
 
 ## Evidence and credential boundary
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.
+This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 7 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 7. The course does not confer formal supervisory authority or unauthorized controlled-record edit authority. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION`. Public academic completion alone does not validate or issue Technician II certification.
