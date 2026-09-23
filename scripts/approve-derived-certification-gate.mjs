@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
+import {assertDerivedGateApprovable} from './lib/certification-gate-approval-policy.mjs';
 
 const root=process.cwd();
 const args=process.argv.slice(2);
@@ -14,16 +15,14 @@ const decisionNotes=get('--decision-notes');
 const evidenceRefs=(get('--evidence-refs')??'').split(',').map(x=>x.trim()).filter(Boolean);
 if(!courseId||!gate||!authorityId||!decisionNotes) throw new Error('Usage: --course <COURSE-ID> --gate <gate> --authority <id> --decision-notes <text> [--evidence-refs id,id] [--write]');
 
-const approvable=new Set(['pilotExecution','itemAnalysis','practicalAssessorCalibration','accessibilityUxHumanReview','occupationalProgramValidation']);
-if(!approvable.has(gate)) throw new Error('Gate '+gate+' is not approved through this transition');
+
 
 const reconciled=JSON.parse(execFileSync(process.execPath,['scripts/report-certification-evidence-reconciliation.mjs','--json'],{cwd:root,encoding:'utf8'}));
 const row=reconciled.courses.find(x=>x.courseId===courseId);
 if(!row) throw new Error('Unknown canonical course '+courseId);
 const state=row.gates?.[gate];
 if(!state) throw new Error('Gate not found '+gate);
-if(!['evidence-complete','approved'].includes(state.status)) throw new Error(gate+' must be evidence-complete before approval; current='+state.status);
-if(state.status==='approved') throw new Error(gate+' is already approved for '+courseId);
+assertDerivedGateApprovable(gate,state.status);
 
 const coursePath=path.join(root,'content/courses',courseId+'.json');
 const course=JSON.parse(fs.readFileSync(coursePath,'utf8'));
