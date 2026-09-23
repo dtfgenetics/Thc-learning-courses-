@@ -1,6 +1,6 @@
 # Technician II Learner Download Pack
 
-Status: **internal preview**  
+Status: **published owner-approved academic learner-support pack**  
 Scope: `CREDPROG-CULT-TECH-II-001` learner-support assets  
 Release boundary: these files are educational job aids. They do not replace site SOPs, regulated records, assessor scoring instruments, product-release authority, or credential-issuance controls.
 
@@ -19,7 +19,7 @@ Release boundary: these files are educational job aids. They do not replace site
 
 ## Quality rules
 
-Every metadata object remains `draft` + `internal-preview` until the normal content/accessibility release process is completed. Each CSV uses descriptive column headers, contains no executable formulas, and is served through the existing controlled downloads API. The automated download test verifies file existence, API visibility in preview, production hiding for draft assets, safe route behavior, and complete Technician II course coverage.
+All eight Technician II metadata objects are `published` + `public` for owner-approved academic learner use. Each CSV uses descriptive column headers, contains no executable formulas, and is served through the existing controlled downloads API. The automated download test verifies file existence, production visibility for these eight published assets, continued hiding of unrelated draft assets, safe route behavior, and complete Technician II course coverage.
 
 ## Content boundaries
 
