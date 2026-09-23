@@ -1,7 +1,7 @@
 # Learner Materials — COURSE-LH-TECH1-004
 
 **Course:** Water, Root Zone, Nutrition & Irrigation Fundamentals  
-**Status:** development learner package  
+**Status:** published owner-approved academic learner package  
 **Boundary:** facility SOPs, current work orders, product labels, equipment manuals and applicable jurisdictional requirements control operational work when they are more specific than the educational examples here.
 
 ## What this course trains
