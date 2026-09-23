@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which action best preserves diagnostic value when testing a root-zone hypothesis?",
   "choices": [
-    "Change irrigation, nutrients and HVAC simultaneously.",
-    "Skip baseline measurements to save time.",
-    "Judge success from one plant immediately after the change.",
-    "Document the baseline and make only an authorized, interpretable change while holding other major variables stable when practical."
+    "Change irrigation volume and nutrient concentration together so the response is large enough to reveal whether the root zone is limiting growth.",
+    "Collect the new measurement immediately after the change and use that short-term response as the primary diagnostic endpoint.",
+    "Use several affected plants but omit an unchanged comparison group if baseline measurements are already documented.",
+    "Document the baseline, make only an authorized interpretable change, and hold other major variables stable when practical so the response can be attributed more confidently."
   ],
   "correct": 3,
-  "rationale": "Limiting simultaneous changes and preserving baseline evidence makes response data more interpretable.",
+  "rationale": "A diagnostic intervention is most informative when the condition before the change is documented, the change is narrow enough to interpret, and other major variables are kept stable when practical. Changing several inputs at once can improve or worsen the crop without revealing which factor mattered. Immediate response may also reflect transient physical effects rather than a durable biological change. A controlled, authorized change with baseline and comparison evidence preserves both diagnostic value and operational accountability.",
   "references": [
     "REF-NUTRITION-001",
     "REF-ROOTZONE-NUTRIENT-002"
