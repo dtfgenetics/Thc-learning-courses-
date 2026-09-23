@@ -114,19 +114,33 @@ function deriveItemAnalysis(courseRow){
   else if(withAny>0) status='in-progress';
   return {status,detail:{itemCount:total,itemsWithAnyPilotEvidence:withAny,itemsWithCompletePilotEvidence:complete},problems:missing.map(id=>`missing item ${id}`)};
 }
-function performanceIdsForIntegrated(courseId){
+function performanceCourseMappings(assessment){
+  const ext=assessment?.extensions??{};
+  const ids=[];
+  if(Array.isArray(ext.courseMappings)) ids.push(...ext.courseMappings);
+  if(ext.course) ids.push(ext.course);
+  if(ext.integratedCourseId) ids.push(ext.integratedCourseId);
+  if(assessment?.integratedCourseId) ids.push(assessment.integratedCourseId);
+  return [...new Set(ids.filter(Boolean))];
+}
+function performanceIdsForCourse(courseId){
   const c=coursesById.get(courseId);
   if(!c) return [];
   const ids=[];
   const ext=c.extensions??{};
+  if(ext.mappedPractical) ids.push(ext.mappedPractical);
   if(Array.isArray(ext.credentialPracticalSetRequired)) ids.push(...ext.credentialPracticalSetRequired);
   if(Array.isArray(ext.mappedPerformanceAssessments)) ids.push(...ext.mappedPerformanceAssessments);
   if(ext.capstoneRequired) ids.push(ext.capstoneRequired);
+  for(const [id,assessment] of performance){
+    if(performanceCourseMappings(assessment).includes(courseId)) ids.push(id);
+  }
   return [...new Set(ids)];
 }
 function deriveCalibration(courseRow){
-  if(!courseRow.integratedPerformance) return {status:'not-applicable',detail:{reason:'not integrated performance course'}};
-  const ids=performanceIdsForIntegrated(courseRow.courseId);
+  const ids=performanceIdsForCourse(courseRow.courseId);
+  if(ids.length===0) return {status:'not-applicable',detail:{reason:'no mapped practical or capstone'}};
+
   let total=0,withAny=0,complete=0;
   const problems=[];
   for(const id of ids){

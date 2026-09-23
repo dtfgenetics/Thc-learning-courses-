@@ -108,20 +108,34 @@ const gateGuidance={
 function courseProgram(courseId){
   return programs.find(p=>(p.requiredCourses??[]).includes(courseId))??null;
 }
-function integratedPerformanceIds(course){
-  const ext=course?.extensions??{};
+function performanceCourseMappings(assessment){
+  const ext=assessment?.extensions??{};
   return [...new Set([
+    ...(Array.isArray(ext.courseMappings)?ext.courseMappings:[]),
+    ...(ext.course?[ext.course]:[]),
+    ...(ext.integratedCourseId?[ext.integratedCourseId]:[]),
+    ...(assessment?.integratedCourseId?[assessment.integratedCourseId]:[])
+  ].filter(Boolean))];
+}
+function performanceIdsForCourse(course){
+  const ext=course?.extensions??{};
+  const ids=[
+    ...(ext.mappedPractical?[ext.mappedPractical]:[]),
     ...(Array.isArray(ext.credentialPracticalSetRequired)?ext.credentialPracticalSetRequired:[]),
     ...(Array.isArray(ext.mappedPerformanceAssessments)?ext.mappedPerformanceAssessments:[]),
     ...(ext.capstoneRequired?[ext.capstoneRequired]:[])
-  ])];
+  ];
+  for(const [id,assessment] of performance){
+    if(performanceCourseMappings(assessment).includes(course?.id)) ids.push(id);
+  }
+  return [...new Set(ids)];
 }
 function packetFor(row){
   const course=courses.get(row.courseId);
   if(!course) throw new Error(`Missing canonical course ${row.courseId}`);
   const program=courseProgram(row.courseId);
   if(!program) throw new Error(`No credential program maps ${row.courseId}`);
-  const perfIds=integratedPerformanceIds(course);
+  const perfIds=performanceIdsForCourse(course);
   const final=row.finalAssessmentId?assessments.get(row.finalAssessmentId):null;
   return {
     courseId:row.courseId,
@@ -168,7 +182,7 @@ function markdown(p){
   if(p.performanceAssessments.length){
     for(const a of p.performanceAssessments) lines.push(`- Performance assessment: \`${a.id}@${a.version??'MISSING'}\` — ${a.status}`);
   }else{
-    lines.push('- Course-owned integrated performance assessment anchors: none declared on this course object.');
+    lines.push('- Course-mapped performance assessment anchors: none declared.');
   }
   lines.push('','## Evidence gates','');
   for(const g of p.gates){
