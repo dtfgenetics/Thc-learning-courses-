@@ -24,6 +24,7 @@ const requiredGates=[
   'accessibilityUxHumanReview',
   'standardSetting',
   'secureOperationalFormReadiness',
+  'occupationalProgramValidation',
   'credentialAuthorization'
 ];
 

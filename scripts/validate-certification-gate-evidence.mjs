@@ -16,7 +16,7 @@ const ids=new Set();
 const gates=new Set([
   'exactVersionHumanAssessmentReview','pilotExecution','itemAnalysis',
   'practicalAssessorCalibration','accessibilityUxHumanReview','standardSetting',
-  'secureOperationalFormReadiness','credentialAuthorization'
+  'secureOperationalFormReadiness','occupationalProgramValidation','credentialAuthorization'
 ]);
 const statuses=new Set(['in-progress','evidence-complete','approved','revision-required']);
 

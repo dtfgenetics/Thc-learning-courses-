@@ -20,7 +20,7 @@ The repository may contain other educational or legacy course objects. They are 
 
 ## Evidence gates
 
-Each canonical course is tracked across eight distinct evidence gates:
+Each canonical course is tracked across nine distinct evidence gates:
 
 1. exact-version human assessment review
 2. pilot execution
@@ -29,7 +29,8 @@ Each canonical course is tracked across eight distinct evidence gates:
 5. accessibility / learner-UX human review
 6. standard setting
 7. secure operational form readiness
-8. credential authorization
+8. occupational program validation
+9. credential authorization
 
 These states are intentionally separate. Completing one gate does not imply another gate has passed.
 
@@ -74,6 +75,7 @@ The next evidence-producing work should focus on:
 - completing rendered accessibility and learner-UX review records;
 - conducting and recording defensible standard-setting work;
 - producing secure operational assessment forms and form-equivalence evidence;
+- completing exact-version occupational program validation, including technical review, job-task analysis, SME/employer validation, blueprint weights, and practical/capstone validation;
 - documenting credential authority, issuance, revocation, appeals, renewal, privacy/security, and production controls.
 
 The registry should be updated only when real evidence changes a gate state.

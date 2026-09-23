@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {execFileSync} from 'node:child_process';
 
 const root=process.cwd();
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const runJson=(script,args=[])=>JSON.parse(execFileSync(process.execPath,[script,...args],{cwd:root,encoding:'utf8'}));
 
 const courseStatusPaths=[
   ...Array.from({length:7},(_,i)=>`registry/course${i+1}-completion-status.json`),
@@ -14,7 +16,7 @@ const courses=courseStatusPaths.map((file)=>{
   return {
     file,
     courseId:row.courseId,
-    academicPublication:row.academicPublication??row.publicAcademicPackage??null,
+    academicPublication:row.academicPublication??row.publicAcademicPackage??row.publicAcademicRelease??null,
     machineResolvableWorkComplete:row.machineResolvableWorkComplete===true,
     goldStandardPackageComplete:row.goldStandardPackageComplete===true,
     certificationEvidenceValidated:row.certificationEvidenceValidated===true,
@@ -24,8 +26,11 @@ const courses=courseStatusPaths.map((file)=>{
 });
 
 const readiness=read('registry/system-readiness.json');
-const tech1=read('registry/technician-i-release-evidence.json');
-const tech2=read('registry/technician-ii-release-evidence.json');\nconst programRegistry=read('content/credential-programs/registry.json');
+const reconciled=runJson('scripts/report-certification-evidence-reconciliation.mjs',['--json']);
+const occupational=runJson('scripts/report-occupational-program-validation-readiness.mjs');
+const humanEvidence=runJson('scripts/report-human-evidence-readiness.mjs');
+const standardSecure=runJson('scripts/report-standard-secure-readiness.mjs');
+const credentialAuth=runJson('scripts/report-credential-authorization-readiness.mjs');
 
 const falseSystemGates=[];
 for(const [areaName,area] of Object.entries(readiness.areas??{})){
@@ -34,60 +39,75 @@ for(const [areaName,area] of Object.entries(readiness.areas??{})){
   }
 }
 
-const unresolvedCredentialGates=(record)=>Object.entries(record.gates??{})
-  .filter(([,state])=>!['approved','complete','completed','validated','ready','active'].includes(String(state).toLowerCase()))
-  .map(([gate,state])=>({gate,state}));
-
 const machineActions=courses.flatMap((c)=>c.machineActions.map((action)=>({courseId:c.courseId,action})));
 const humanActions=courses.flatMap((c)=>c.humanActions.map((action)=>({courseId:c.courseId,action})));
-
 const dedupe=(rows,key)=>[...new Map(rows.map((row)=>[key(row),row])).values()];
-const machineUnique=dedupe(machineActions,(x)=>x.action);
-const humanUnique=dedupe(humanActions,(x)=>x.action);
+
+const gateStates={};
+for(const [gate,counts] of Object.entries(reconciled.gateSummary??{})){
+  gateStates[gate]=counts;
+}
+const openEvidenceGates=Object.entries(gateStates)
+  .filter(([,counts])=>Object.entries(counts).some(([state,count])=>state!=='approved'&&state!=='not-applicable'&&count>0))
+  .map(([gate,counts])=>({gate,counts}));
 
 const output={
-  generatedFrom:'canonical repository state',
+  generatedFrom:'live certification evidence reconciliation plus canonical repository state',
   productionReady:readiness.productionReady===true,
+  authoritativeCertificationReleaseReady:reconciled.allCoursesReleaseReady===true,
   courseSummary:{
     total:courses.length,
     machineComplete:courses.filter((c)=>c.machineResolvableWorkComplete).length,
     machineOpen:courses.filter((c)=>!c.machineResolvableWorkComplete).length,
-    goldStandardComplete:courses.filter((c)=>c.goldStandardPackageComplete).length,
-    certificationEvidenceValidated:courses.filter((c)=>c.certificationEvidenceValidated).length
+    goldStandardPackageComplete:courses.filter((c)=>c.goldStandardPackageComplete).length,
+    legacyCertificationEvidenceValidatedFlags:courses.filter((c)=>c.certificationEvidenceValidated).length,
+    reconciledReleaseReadyCourses:reconciled.releaseReadyCourses,
+    canonicalCourses:reconciled.canonicalCourses
   },
-  openMachineActions:machineUnique,
-  openHumanActions:humanUnique,
+  openMachineActions:dedupe(machineActions,(x)=>x.action),
+  openHumanActions:dedupe(humanActions,(x)=>x.action),
   openSystemGates:falseSystemGates,
-  technicianI:{
-    releaseReady:tech1.releaseReady===true,
-    unresolvedGates:unresolvedCredentialGates(tech1)
+  certificationEvidence:{
+    structuralProblems:reconciled.structuralProblems,
+    gateSummary:gateStates,
+    openEvidenceGates
   },
-  technicianII:{
-    releaseReady:tech2.releaseReady===true,
-    unresolvedGates:unresolvedCredentialGates(tech2)
+  programEvidence:{
+    occupationalProgramValidation:occupational.summary,
+    pilotAndAccessibility:humanEvidence.summary,
+    standardSettingAndSecureForms:standardSecure.summary,
+    credentialAuthorization:credentialAuth.summary
   },
   priorities:[
-    'produce and release-QA governed raster replacements',
-    'complete deployed responsive/manual accessibility and learner-surface QA',
-    'repair defects exposed by deployed QA',
-    'complete real version-specific technical, assessment and accessibility review evidence',
-    'collect controlled pilot, practical, capstone, calibration and inter-rater evidence',
-    'perform formal standard setting and finalize decision rules',
-    'deploy and validate production persistence, authorization, issuer/signing, revocation, backup/restore and monitoring controls',
-    'record explicit versioned final program release approval only after prerequisite evidence closes'
-  ]
+    'close any remaining repository structural/evidence-integrity defects reported by the live reconciler',
+    'complete real exact-version human assessment, technical/occupational and accessibility review evidence',
+    'execute controlled pilots and practical/capstone validation/calibration, then analyze item and inter-rater evidence',
+    'perform formal standard setting and secure operational form equivalence/security review',
+    'approve candidate governance, privacy/retention, issuer/signing/revocation and production controls',
+    'record explicit final credential-program authorization only after every prerequisite evidence gate is approved'
+  ],
+  authority:{
+    certificationReleaseView:'scripts/report-certification-evidence-reconciliation.mjs',
+    planningRegistry:'registry/certification-validation-execution.json',
+    legacyCourseCompletionLedgers:'supporting package/work queues only; not authoritative for certification release',
+    legacyTechnicianReleaseLedgers:'supporting historical/program checklists only; must not override exact-version reconciled evidence'
+  }
 };
 
 if(process.argv.includes('--json')) process.stdout.write(JSON.stringify(output,null,2)+'\n');
 else{
   console.log('THC Academy finalization status');
-  console.log(`Courses: ${output.courseSummary.total}; machine-complete ${output.courseSummary.machineComplete}; machine-open ${output.courseSummary.machineOpen}`);
-  console.log(`Open system gates: ${output.openSystemGates.length}`);
-  console.log(`Technician I unresolved release gates: ${output.technicianI.unresolvedGates.length}`);
-  console.log(`Technician II unresolved release gates: ${output.technicianII.unresolvedGates.length}`);
+  console.log(`Canonical certification courses: ${output.courseSummary.canonicalCourses}; release-ready ${output.courseSummary.reconciledReleaseReadyCourses}`);
+  console.log(`Authoritative certification release ready: ${output.authoritativeCertificationReleaseReady?'YES':'NO'}`);
+  console.log(`Open certification evidence gates: ${output.certificationEvidence.openEvidenceGates.length}`);
+  console.log(`Open system/infrastructure gates: ${output.openSystemGates.length}`);
+  if(output.certificationEvidence.structuralProblems.length){
+    console.log('Structural evidence problems:');
+    for(const p of output.certificationEvidence.structuralProblems) console.log(`- ${p}`);
+  }
   console.log('');
-  console.log('Machine priorities:');
-  output.priorities.slice(0,3).forEach((x,i)=>console.log(`${i+1}. ${x}`));
+  console.log('Current priorities:');
+  output.priorities.slice(0,4).forEach((x,i)=>console.log(`${i+1}. ${x}`));
   console.log('');
-  console.log('Use --json for the complete live queue.');
+  console.log('Use --json for the complete evidence-derived queue.');
 }

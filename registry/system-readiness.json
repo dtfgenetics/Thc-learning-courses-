@@ -129,6 +129,7 @@
   "readinessScope": {
     "canonicalAuthority": "Certification repository registries and executable gates",
     "academicPublicationBoundary": "Public academic availability does not imply professional credential approval or issuance readiness.",
-    "credentialReleaseBoundary": "Technician I and Technician II release evidence ledgers remain authoritative for occupational validation, assessment validation, pilot, standard-setting, security/privacy, and final issuance approval."
+    "credentialReleaseBoundary": "The certification evidence reconciler is the authoritative current-version release view for Technician course evidence gates. Technician I/II legacy release-evidence ledgers remain supporting historical/program checklists and must not override exact-version reconciled evidence.",
+    "occupationalProgramValidationBoundary": "Job-task analysis, SME/employer validation, technical curriculum review, assessment-blueprint finalization, and practical/capstone validation require dedicated exact-version occupational program evidence."
   }
 }
