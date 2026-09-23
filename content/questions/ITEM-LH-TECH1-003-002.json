@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which record correctly distinguishes a target from an observation?",
   "choices": [
-    "Temperature 25 °C because that is the desired value",
-    "Target 25 °C; measured canopy-zone sensor 27 °C at 14:05",
-    "Temperature 27 °C target and measured are interchangeable",
-    "Room hot; no units or sensor location needed"
+    "“Temperature 25 °C” because the target value can stand in for the room condition when the system is under control.",
+    "“Target 25 °C; canopy-zone sensor measured 27 °C at 14:05.”",
+    "“Temperature 27 °C” because target and observation describe the same environmental variable.",
+    "“Room hot” because location, unit, and time are secondary once an abnormal condition is recognized."
   ],
   "correct": 1,
-  "rationale": "Target 25 °C; measured canopy-zone sensor 27 °C at 14:05. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A target describes the intended condition; a measurement describes what was actually observed. Keeping those values separate preserves the difference between plan and reality and makes the record reconstructable. Including the sensor location and time also helps later reviewers understand whether the measurement is representative and when the deviation occurred.",
   "references": [
     "REF-VPD-002"
   ],
