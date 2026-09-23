@@ -1,12 +1,12 @@
 {
   "courseId": "COURSE-LH-TECH1-001",
   "version": "1.0.1",
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "academicPublication": "published",
-  "machineResolvableWorkComplete": false,
+  "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Course 1 canonical instruction, assessments, learner runtime, the 23-asset production raster repository cutover, and governed raster release accounting are machine-verified. Public deployment/readback of the new raster paths and any defects exposed there remain machine-operational work. Rendered accessibility/responsive review, practical calibration, controlled pilot evidence, formal standard setting and credential release remain separate fail-closed gates.",
+  "machineCompletionBoundary": "Course 1 canonical instruction, assessments, learner runtime, the 23-asset production raster repository cutover, and public delivery/readback of all 23 governed raster learner assets against exact deployed build identity are machine-verified. Machine-resolvable package/deployment work is complete for the current snapshot. Rendered accessibility/responsive human review, technical/occupational validation, practical calibration, controlled pilot evidence, formal standard setting, secure-form readiness, and credential authorization remain separate fail-closed gates.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -49,7 +49,7 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "production-raster-repository-cutover-complete-deployment-verification-open",
+      "state": "production-raster-public-readback-complete",
       "evidence": [
         "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-PRODUCTION-STATUS.md",
         "docs/learning-hub/tech1/course-001/assets/visuals/COURSE1-VISUAL-QA-GATE.md",
@@ -62,7 +62,7 @@
         "scripts/report-raster-replacement-backlog.mjs"
       ],
       "humanGateRequired": false,
-      "note": "Owner-approved repository cutover is complete: 23 PNG learner assets are active in canonical Course 1 lesson/assessment mappings, representing 20/20 governed legacy raster replacements plus three supplemental concept masters. All 20 superseded SVGs remain as retired compatibility/provenance records. Public deployment/readback of the new PNG paths is still required; broader rendered accessibility/responsive review remains tracked in its separate domain."
+      "note": "Owner-approved repository cutover is complete and all 23 governed Course 1 raster learner assets were verified at the exact pinned curriculum source used by the production WordPress publisher in workflow run 35927669459 attempt 2. Human rendered accessibility/responsive review remains separately open."
     },
     {
       "id": "module-assessment-review",
@@ -111,7 +111,7 @@
         "scripts/test-academy-web.mjs"
       ],
       "humanGateRequired": true,
-      "note": "A WCAG 2.2 Level AA rendered review packet now defines required surface coverage, browser/device/assistive-technology evidence, all 19 canonical visual placements, assessment interaction checks, responsive review and closure rules. Machine checks remain supporting evidence only."
+      "note": "A WCAG 2.2 Level AA rendered review packet now defines required surface coverage, browser/device/assistive-technology evidence, the current canonical visual placements, assessment interaction checks, responsive review and closure rules. Machine checks remain supporting evidence only."
     },
     {
       "id": "responsive-learner-ux-review",
@@ -125,14 +125,14 @@
     },
     {
       "id": "public-deployment-verification",
-      "state": "verified",
+      "state": "verified-current-raster-source",
       "evidence": [
         "docs/CERTIFICATION-CATALOG-PUBLICATION-CONTRACT.md",
         "registry/credential-public-status.json",
         "registry/deployments.json"
       ],
       "humanGateRequired": false,
-      "note": "Verified 2026-09-15 on dtfseeds.com. Initial public Course 1/catalog verification completed in run 34982604835 (#30) at DTFSeeds SHA 2cda770033a6e8d126c7457805dd2c86e7098d6f. Canonical visual delivery was subsequently verified in run 34988643494 (#44) at SHA 7cffef779ee5ab3fe4249ea9b8428521e703db27. Fresh anonymous verification preserved Certification Catalog V4 with 10 offerings and no issuance-available=true claims while confirming the public Course 1 lesson surface; authenticated readback continues to confirm the canonical 120-item public Course 1 package."
+      "note": "Initial Course 1/catalog deployment remains verified. On 2026-09-23, workflow run 35927669459 attempt 2 additionally verified all 23 governed raster learner assets against exact production build identity dtf-academy-397f8d7e285f-35927783941 and source SHA 397f8d7e285f5a230ac441fda66921fa53a56a49. Credential-release evidence remains separate."
     },
     {
       "id": "controlled-pilot",
@@ -155,11 +155,7 @@
       "humanGateRequired": true
     }
   ],
-  "nextMachineActions": [
-    "verify all 23 released Course 1 raster learner paths after the Academy/DTFSeeds deployment and record exact build/source identity",
-    "reconcile deployment evidence for the Course 1 raster cutover without changing credential-readiness claims",
-    "repair any defects exposed by deployed asset, runtime, accessibility-supporting, or route-integrity checks"
-  ],
+  "nextMachineActions": [],
   "nextHumanActions": [
     "complete the authoritative 166-task current-baseline review queue using real versioned review records; the queue expands automatically if course objects are added",
     "technical/curriculum review",
