@@ -17,8 +17,8 @@ Course 002 now has a complete published academic instructional package rather th
 - published summative academic course assessment `ASSESS-LH-TECH1-002-FINAL`;
 - 10 governed learner assets: 7 embedded teaching visuals and 3 downloadable practice worksheets;
 - public learner asset paths under `apps/web/public/assets/course2/`;
-- controlled Drive mirror under `Course 2 — Visual Learning Boards`;
-- deterministic asset-delivery contract covering accessibility metadata, public paths, Drive mirror state and canonical lesson reachability;
+- legacy SVG provenance mirrors remain recorded under `Course 2 — Visual Learning Boards`; production WebP Drive mirroring is not claimed until separately verified;
+- deterministic asset-delivery contract covering raster public paths, legacy provenance, accessibility metadata and canonical lesson reachability;
 - explicit development mapping to `PRACTICAL-TECH1-A`;
 - machine-readable Course 2 → Practical A objective crosswalk at `registry/course2-practical-a-crosswalk.json`;
 - deterministic crosswalk test that checks mappings against canonical learning-objective files and the actual Practical A document.
@@ -82,7 +82,7 @@ The repository can automatically verify that:
 - the four lessons, five objectives and assessments exist;
 - the 32 Course 2 items satisfy the current structural/quality contract;
 - Course 2 remains professionally credential-gated even though its academic package is published;
-- all produced learner assets exist, are publicly addressable, accessible at the SVG metadata level, mirrored to Drive and reachable from canonical lessons;
+- all 10 production WebP learner assets exist, are publicly addressable and reachable from canonical lessons, while retired SVG provenance and its recorded Drive mirrors remain traceable;
 - all five Course 2 objectives map to actual Practical A tasks/evidence/deliverables; and
 - no crosswalk field falsely advances human review, pilot or practical-validation status.
 
@@ -94,7 +94,7 @@ The following work requires real review or observed evidence and must not be syn
 
 - **Human technical/curriculum review:** not started.
 - **Human assessment review:** not started at the program release-gate level.
-- **Rendered accessibility review:** not started; source-level SVG accessibility checks do not replace rendered/manual review.
+- **Rendered accessibility review:** not started; machine raster/path and text-alternative checks do not replace rendered/manual review.
 - **Practical A validation:** not started; the practical remains a development form.
 - **Controlled pilot evidence:** not started.
 - **Evaluator calibration / inter-rater evidence:** not started at the credential-program level.

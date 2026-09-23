@@ -35,7 +35,7 @@ Using the supplied crop-room practice sheet:
 - classify the visible spatial pattern as isolated, edge-associated, zonal/clustered, widespread, or another documented pattern;
 - write one room-level statement that does not overgeneralize from a single plant.
 
-**Download:** `/assets/course2/crop-walk-room-map-practice.svg`
+**Download:** `/assets/course2/crop-walk-room-map-practice.webp`
 
 ### Evidence check
 
@@ -105,7 +105,7 @@ Audit each synthetic image set for:
 - edits/filters that could materially alter appearance;
 - missing evidence that limits interpretation.
 
-**Download:** `/assets/course2/photo-evidence-audit-practice.svg`
+**Download:** `/assets/course2/photo-evidence-audit-practice.webp`
 
 ### Learner activity B: reconstructable record and handoff
 
@@ -125,7 +125,7 @@ Complete the observation/handoff worksheet with:
 - receiving-person cross-check;
 - correction history where an entry changes.
 
-**Download:** `/assets/course2/observation-handoff-practice.svg`
+**Download:** `/assets/course2/observation-handoff-practice.webp`
 
 ## Integrated application scenario
 
@@ -169,4 +169,4 @@ The matrix covers all five controlled Course 2 objectives. Human reviewers still
 
 ## Completion boundary
 
-This learner package can support course development and review. Course 2 remains `draft` until the required technical, instructional, assessment, accessibility, practical, pilot and release gates are satisfied.
+This learner package is published for owner-approved academic use. Technical, instructional, assessment, accessibility, practical, pilot and professional-credential release gates remain separate and must still be satisfied before professional credential issuance.
