@@ -199,7 +199,11 @@
     "certification:final-human-review:require-complete": "node scripts/report-certification-final-human-review.mjs --require-complete",
     "certification:validation-execution": "node scripts/report-certification-validation-execution.mjs",
     "certification:validation-execution:json": "node scripts/report-certification-validation-execution.mjs --json",
-    "certification:validation-execution:check": "node scripts/report-certification-validation-execution.mjs --check"
+    "certification:validation-execution:check": "node scripts/report-certification-validation-execution.mjs --check",
+    "calibration:aggregate": "node scripts/build-practical-calibration-evidence.mjs",
+    "calibration:validate": "node scripts/validate-practical-calibration-evidence.mjs",
+    "calibration:readiness": "node scripts/report-practical-calibration-readiness.mjs",
+    "calibration:readiness:json": "node scripts/report-practical-calibration-readiness.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
