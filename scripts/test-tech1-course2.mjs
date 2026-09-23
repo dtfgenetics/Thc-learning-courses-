@@ -175,7 +175,7 @@ try {
     assert.ok(Array.isArray(lesson.content?.blocks) && lesson.content.blocks.length > 0, `${lessonId} must expose ordered rich content blocks`);
     for (const block of lesson.content.blocks) {
       if (block.type === 'image') {
-        assert.match(block.src ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${lessonId} image blocks must use governed Course 2 asset paths`);
+        assert.match(block.src ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/, `${lessonId} image blocks must use governed Course 2 WebP asset paths`);
         assert.ok(typeof block.alt === 'string' && block.alt.trim().length > 0, `${lessonId} image blocks must retain learner-facing alt text`);
       }
     }
@@ -238,22 +238,20 @@ try {
   assert.equal(invalidGrade.status, 400, 'invalid presentation seeds must fail closed rather than grading against a new random form');
 
   for (const asset of producedAssets) {
-    assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 2 learner path`);
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/, `${asset.id} should use a controlled Course 2 WebP learner path`);
     const response = await fetch(`${base}${asset.learnerPath}`);
     assert.equal(response.status, 200, `${asset.learnerPath} should be delivered by the Academy runtime`);
-    assert.match(response.headers.get('content-type') ?? '', /^image\/svg\+xml/, `${asset.learnerPath} should use the SVG content type`);
-    const svg = await response.text();
-    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
-    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
-    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
+    assert.match(response.headers.get('content-type') ?? '', /^image\/webp/, `${asset.learnerPath} should use the WebP content type`);
+    const body = Buffer.from(await response.arrayBuffer());
+    assert.ok(body.length > 0, `${asset.learnerPath} should return raster bytes`);
   }
-  const invalidCourseDirectory = await fetch(`${base}/assets/course2x/representative-crop-walk-route.svg`);
+  const invalidCourseDirectory = await fetch(`${base}/assets/course2x/representative-crop-walk-route.webp`);
   assert.equal(invalidCourseDirectory.status, 404, 'course asset routing must only accept course<number> directories');
-  const missingAsset = await fetch(`${base}/assets/course2/not-a-real-asset.svg`);
+  const missingAsset = await fetch(`${base}/assets/course2/not-a-real-asset.webp`);
   assert.equal(missingAsset.status, 404, 'course asset routing must return 404 for missing controlled assets');
 } finally {
   server.close();
   await once(server, 'close');
 }
 
-console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 learner assets are wired through the Academy runtime while release remains draft-gated.`);
+console.log(`Course 002 production slice passed: four lessons, five objectives, ${[...formativeObjectiveCounts.values()].join('/')} formative distribution, ${[...summativeObjectiveCounts.values()].join('/')} summative distribution, remediation/reassessment package, Practical A crosswalk/assessor controls, secure learner catalog/lesson/practice/module-checkpoint routes with server-side grading, visual registry, and all governed Course 2 WebP learner assets are wired through the Academy runtime while professional credential validation remains separately gated.`);
