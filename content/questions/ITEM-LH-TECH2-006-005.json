@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The SOP was revised after the deviation. Which version should be used to reconstruct what governed the event?",
   "choices": [
-    "The version that was effective when the work occurred, with later revisions documented separately.",
-    "Only the newest version.",
-    "Whichever version makes the execution appear compliant.",
-    "No SOP version is needed once the event is over."
+    "Use the SOP version that was effective when the event occurred and document later revisions separately so the historical execution can be reconstructed accurately.",
+    "Use the newest SOP because it represents the current approved process and therefore the best standard for judging past execution.",
+    "Use whichever version most closely matches the work that was actually performed, even if that version was not effective at the time.",
+    "Reconstruct the event from operator notes and equipment data only, because an outdated SOP no longer governs once it has been superseded."
   ],
   "correct": 0,
-  "rationale": "The version that was effective when the work occurred, with later revisions documented separately.",
+  "rationale": "To determine what instructions governed the event, the investigation must use the controlled SOP version that was effective when the work occurred. Later revisions may be relevant to corrective action or lessons learned, but they should not be substituted retroactively. Using a newer or more convenient version can falsely change the standard against which the original execution is evaluated.",
   "references": [
     "REF-ASTM-E2659-001"
   ]

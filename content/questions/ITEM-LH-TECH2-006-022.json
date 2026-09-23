@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A downstream lot ID was assigned after harvest. What happens to the source harvest identity?",
   "choices": [
-    "It can be deleted.",
-    "It remains linked in genealogy; the downstream ID extends traceability rather than replacing source history.",
-    "Only the newest ID matters.",
-    "Source identity should be overwritten to prevent duplicates."
+    "Delete the source harvest ID once the downstream lot ID is assigned so only one active identifier remains.",
+    "Keep the downstream lot linked to the source harvest identity so traceability extends the genealogy rather than replacing the original history.",
+    "Use only the downstream ID in future records because source identity matters only before harvest.",
+    "Overwrite the source ID with the downstream lot number to avoid duplicate references during investigation."
   ],
   "correct": 1,
-  "rationale": "It remains linked in genealogy; the downstream ID extends traceability rather than replacing source history.",
+  "rationale": "A downstream lot ID adds a new traceability node; it should not erase the identity of the source harvest from which the lot came. Keeping the linkage allows investigators to trace backward to source material and forward to later processing or movement. Replacing or deleting source identity breaks genealogy and makes exposure or disposition analysis harder.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]

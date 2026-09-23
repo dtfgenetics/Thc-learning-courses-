@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which statement best captures Technician II authority in a postharvest deviation?",
   "choices": [
-    "Diagnostic confidence grants release authority.",
-    "Any technician may destroy held product.",
-    "A low-risk appearance authorizes release.",
-    "The technician may investigate, verify, scope and recommend within SOP, but final product release/disposition remains with the authorized role."
+    "Technician II may release held product when the investigation provides high-confidence evidence that the lot is acceptable.",
+    "Technician II may authorize destruction when the product risk is low but continuing the investigation would delay operations.",
+    "Technician II may change disposition status when appearance and representative measurements are acceptable, then notify QA.",
+    "Technician II may investigate, verify, define evidence-supported scope, preserve containment, and recommend within SOP, while final release or destruction remains with the authorized disposition role."
   ],
   "correct": 3,
-  "rationale": "The technician may investigate, verify, scope and recommend within SOP, but final product release/disposition remains with the authorized role.",
+  "rationale": "Technician II contributes technical investigation and evidence quality, but product disposition is a separate governance authority. The technician may characterize the event, verify measurements, define scope, maintain holds, and make a documented recommendation. Final release, destruction, or other disposition must remain with the role authorized by the facility's controlled system.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

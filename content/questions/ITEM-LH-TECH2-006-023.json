@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician discovers a controlled record error during investigation. What is correct?",
   "choices": [
-    "Silently overwrite it.",
-    "Delete the record.",
-    "Correct it through the authorized process while preserving the original entry, attribution and reason for correction.",
-    "Change related records to force agreement."
+    "Overwrite the value silently if the corrected result is supported by stronger evidence.",
+    "Delete the record and recreate it correctly so the official file contains no known errors.",
+    "Use the authorized correction process to preserve the original entry, corrected value, reason, attribution, and timing of the change.",
+    "Adjust related records to match the corrected value so the investigation remains internally consistent."
   ],
   "correct": 2,
-  "rationale": "Correct it through the authorized process while preserving the original entry, attribution and reason for correction.",
+  "rationale": "Controlled records can be corrected, but the correction must remain reconstructable. Preserving the original entry, who corrected it, when, why, and what the new value is protects both accuracy and integrity. Silent overwriting, deletion, or coordinated changes to force agreement hide the history the investigation may need.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

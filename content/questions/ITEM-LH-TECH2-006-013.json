@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A team wants to move suspect material into an unaffected lot to free rack space. What is the problem?",
   "choices": [
-    "The move destroys containment and can contaminate identity/scope evidence before disposition is authorized.",
-    "It always improves traceability.",
-    "It proves the material is acceptable.",
-    "It converts the hold into a release decision automatically."
+    "Moving suspect material into an unaffected lot can destroy segregation, blur lot identity, and contaminate the evidence needed to support disposition.",
+    "The move is acceptable if both lots remain in the same room and are labeled separately afterward.",
+    "The move is acceptable if the suspect material appears normal because the hold is precautionary rather than confirmed.",
+    "The move improves traceability because comparing suspect and unaffected material in one rack simplifies observation."
   ],
   "correct": 0,
-  "rationale": "The move destroys containment and can contaminate identity/scope evidence before disposition is authorized.",
+  "rationale": "Segregation protects both product control and evidence integrity. Mixing suspect material with unaffected product can create cross-contact, confuse genealogy, and make it harder to determine which material experienced the original condition. Rack-space pressure does not justify weakening the hold; any movement should preserve identity and follow the authorized containment/disposition process.",
   "references": [
     "REF-POSTHARVEST-001"
   ]

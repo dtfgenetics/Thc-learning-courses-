@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Conflicting product observations are found within the same lot. What should the investigator do?",
   "choices": [
-    "Delete the conflicting values.",
-    "Average them and discard location information.",
-    "Preserve the conflicting observations and map their positions instead of selecting only the values that support one theory.",
-    "Declare one observer wrong without verification."
+    "Remove the conflicting values once repeat observations support the dominant pattern.",
+    "Average the observations into one lot value and omit location so the dataset can be summarized cleanly.",
+    "Preserve the conflicting observations with their locations and investigate whether the pattern reflects real spatial variation, sampling differences, or measurement quality.",
+    "Choose the observer with the strongest training record and treat that observation as authoritative."
   ],
   "correct": 2,
-  "rationale": "Preserve the conflicting observations and map their positions instead of selecting only the values that support one theory.",
+  "rationale": "Conflicting product observations may be diagnostically important rather than erroneous. Their positions, methods, timing, and measurement quality should be preserved so the investigation can determine whether the disagreement reflects spatial variation, sampling, or error. Averaging or deleting them can erase the signal needed to understand the deviation.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

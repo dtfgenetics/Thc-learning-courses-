@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Drying time matches the facility target but product measurements remain spatially inconsistent. What is defensible?",
   "choices": [
-    "Elapsed days override product evidence.",
-    "The lot should not be declared uniformly complete from elapsed time alone; investigate the product-measurement pattern.",
-    "Discard the inconsistent samples.",
-    "Use only the room average RH."
+    "Declare completion because the validated drying duration has been reached and use the spatial measurements only for process-improvement review.",
+    "Do not declare uniform completion from elapsed time alone; investigate the spatial product-measurement differences and resolve their significance.",
+    "Discard the inconsistent positions from the dataset if most samples are within the expected range.",
+    "Use the room-average RH as the deciding value because environmental control is the validated driver of drying."
   ],
   "correct": 1,
-  "rationale": "The lot should not be declared uniformly complete from elapsed time alone; investigate the product-measurement pattern.",
+  "rationale": "Elapsed time is process context, not proof that every position reached the intended product condition. If representative product measurements remain spatially inconsistent, the lot may not be uniformly complete even when the nominal duration has been reached. The discrepancy should be investigated rather than overridden by time or environmental averages.",
   "references": [
     "REF-POSTHARVEST-001"
   ]
