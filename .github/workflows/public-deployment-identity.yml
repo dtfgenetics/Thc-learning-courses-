@@ -59,13 +59,26 @@ jobs:
             echo "expected_sha=$INPUT_SHA" >> "$GITHUB_OUTPUT"
             echo "base_url=${INPUT_BASE_URL:-https://dtfseeds.com}" >> "$GITHUB_OUTPUT"
           fi
-      - name: Wait for deployed build identity
+      - name: Resolve deployed build identity
+        id: deployment
         env:
+          EVENT_NAME: ${{ github.event_name }}
           EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
           BASE_URL: ${{ steps.target.outputs.base_url }}
         run: |
+          if [ "$EVENT_NAME" = "push" ]; then
+            if node scripts/verify-public-deployment-identity.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA"; then
+              echo "deployed=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "deployed=false" >> "$GITHUB_OUTPUT"
+              echo "::notice::Current repository push is not the deployed Academy source yet; no deployment evidence will be recorded."
+            fi
+            exit 0
+          fi
+
           for attempt in {1..20}; do
             if node scripts/verify-public-deployment-identity.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA"; then
+              echo "deployed=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             echo "Deployment identity not current yet (attempt $attempt/20)."
@@ -74,18 +87,21 @@ jobs:
           echo "::error::Public deployment did not report expected source SHA within the verification window."
           exit 1
       - name: Record exact public deployment identity
+        if: steps.deployment.outputs.deployed == 'true'
         env:
           EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
           BASE_URL: ${{ steps.target.outputs.base_url }}
         run: |
           node scripts/record-public-deployment-identity.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA" --write
       - name: Verify deployed learner surfaces
+        if: steps.deployment.outputs.deployed == 'true'
         env:
           EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
           BASE_URL: ${{ steps.target.outputs.base_url }}
         run: |
           node scripts/verify-public-learner-surface.mjs --base-url "$BASE_URL" --expected-sha "$EXPECTED_SHA" --write
       - name: Validate updated deployment evidence
+        if: steps.deployment.outputs.deployed == 'true'
         run: |
           npm run academy:accessibility:test
           npm run tech1:course-completion-status:test
@@ -93,6 +109,7 @@ jobs:
           npm run tech2:course-completion-status:test
           npm run academy:completion:check
       - name: Create ledger update pull request
+        if: steps.deployment.outputs.deployed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           EXPECTED_SHA: ${{ steps.target.outputs.expected_sha }}
