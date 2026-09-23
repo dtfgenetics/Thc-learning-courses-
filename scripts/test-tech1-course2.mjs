@@ -134,7 +134,7 @@ await import('./test-course2-practical-crosswalk.mjs');
 
 const completionStatus = read('registry/course2-completion-status.json');
 assert.equal(completionStatus.courseId, course.id);
-assert.equal(completionStatus.academicPublication, 'draft');
+assert.equal(completionStatus.academicPublication, 'published');
 assert.equal(completionStatus.machineResolvableWorkComplete, true, 'Course 2 machine-resolvable work must be complete after owner-approved raster cutover and verified deployed surface QA');
 assert.equal(completionStatus.certificationEvidenceValidated, false, 'Course 2 academic machine completion must not imply validated professional credential evidence');
 assert.equal(completionStatus.nextMachineActions.length, 0, 'Course 2 cannot retain machine actions after verified raster cutover');
