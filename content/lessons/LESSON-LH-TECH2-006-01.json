@@ -74,7 +74,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-006-01",
           "title": "Containment and fact baseline before causal conclusions",
-          "src": "/assets/tech2/course6/outcome-01.svg",
+          "src": "/assets/tech2/course6/outcome-01.webp",
           "alt": "Postharvest deviation workflow starting with exact material identity and containment, then preserving the event timeline, product observations, room or process history and current status before hypotheses or disposition decisions are considered.",
           "caption": "Containment protects product and evidence; it does not decide disposition. Establish lot identity, chronology and observed facts before writing a causal story.",
           "references": [
@@ -83,8 +83,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-006-01",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
