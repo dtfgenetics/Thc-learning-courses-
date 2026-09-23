@@ -23,12 +23,13 @@ for(const [courseNumber,expected] of expectedCounts){
   for(const asset of registry.assets){
     const replacement=asset.rasterReplacement;
     assert.equal(replacement?.status,'owner-approved-production-release',`${asset.id}: candidate lifecycle drift`);
-    assert.equal(replacement?.generatedFrom,asset.sourcePath,`${asset.id}: source provenance drift`);
+    assert.equal(replacement?.generatedFrom,asset.legacySource?.sourcePath,`${asset.id}: source provenance drift`);
+    assert.equal(replacement?.candidateSourcePath,asset.sourcePath,`${asset.id}: active raster source drift`);
     assert.equal(replacement?.encoding,'lossless-webp');
     assert.equal(replacement?.releaseApproved,true,`${asset.id}: candidate production cannot imply release approval`);
     assert.match(replacement?.candidateSourcePath??'',new RegExp(`^apps/web/public/assets/course${courseNumber}/[A-Za-z0-9._-]+\\.webp$`,'i'));
 
-    const source=fs.readFileSync(path.join(root,asset.sourcePath));
+    const source=fs.readFileSync(path.join(root,asset.legacySource.sourcePath));
     const sourceText=source.toString('utf8');
     assert.doesNotMatch(sourceText,/&(?!amp;|lt;|gt;|quot;|apos;|#[0-9]+;|#x[0-9A-Fa-f]+;)/,`${asset.id}: SVG baseline contains an unescaped XML entity`);
     const candidate=fs.readFileSync(path.join(root,replacement.candidateSourcePath));
