@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "courseId": "COURSE-LH-TECH1-003",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 3 SVG files remain the verified learner-facing compatibility baseline. 6 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
+    "publicDelivery": "Owner-approved lossless WebP assets are the production learner-facing delivery format for Course 3. Legacy SVG files remain provenance/reference sources only and are not production instructional assets.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -23,8 +23,8 @@
       "jpg"
     ],
     "svgProductionTarget": false,
-    "legacySvgCompatibilityAllowed": true,
-    "rasterReplacementRequired": true
+    "legacySvgCompatibilityAllowed": false,
+    "rasterReplacementRequired": false
   },
   "driveStorage": {
     "folderId": "1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU",
@@ -38,11 +38,8 @@
       "deliveryType": "embedded-visual",
       "title": "Temperature, relative humidity and VPD measurement context",
       "learnerPath": "/assets/course3/environment-measurement-context.webp",
-      "sourcePath": "apps/web/public/assets/course3/environment-measurement-context.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-context.svg",
-      "driveFileId": "1XgNkzqjJFx9bxJ54jdj7TOBeziQnOUsw",
-      "driveFileUrl": "https://drive.google.com/file/d/1XgNkzqjJFx9bxJ54jdj7TOBeziQnOUsw/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course3/environment-measurement-context.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-context.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-003-01"
       ],
@@ -59,7 +56,7 @@
       ],
       "purpose": "Show why temperature and relative humidity are recorded together for VPD context while target, measured value and alarm remain distinct record roles with sensor, location, time and unit context.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -86,7 +83,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course3/environment-measurement-context.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-context.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1XgNkzqjJFx9bxJ54jdj7TOBeziQnOUsw",
+        "driveFileUrl": "https://drive.google.com/file/d/1XgNkzqjJFx9bxJ54jdj7TOBeziQnOUsw/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-003-002",
@@ -94,11 +99,8 @@
       "deliveryType": "embedded-visual",
       "title": "Repeatable canopy PPFD grid measurement",
       "learnerPath": "/assets/course3/ppfd-grid-measurement.webp",
-      "sourcePath": "apps/web/public/assets/course3/ppfd-grid-measurement.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-grid-measurement.svg",
-      "driveFileId": "19V-hi5oJs07ygw35zAxaLxRfzMpzRF8i",
-      "driveFileUrl": "https://drive.google.com/file/d/19V-hi5oJs07ygw35zAxaLxRfzMpzRF8i/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course3/ppfd-grid-measurement.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-grid-measurement.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-003-02"
       ],
@@ -115,7 +117,7 @@
       ],
       "purpose": "Teach a repeatable canopy PPFD grid with consistent measurement plane and preservation of spatial distribution instead of substituting one bright point, fixture setting or average for canopy-level evidence.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -142,7 +144,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course3/ppfd-grid-measurement.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-grid-measurement.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "19V-hi5oJs07ygw35zAxaLxRfzMpzRF8i",
+        "driveFileUrl": "https://drive.google.com/file/d/19V-hi5oJs07ygw35zAxaLxRfzMpzRF8i/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-003-003",
@@ -150,11 +160,8 @@
       "deliveryType": "embedded-visual",
       "title": "Sensor placement and representativeness triage",
       "learnerPath": "/assets/course3/sensor-representativeness-triage.webp",
-      "sourcePath": "apps/web/public/assets/course3/sensor-representativeness-triage.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/sensor-representativeness-triage.svg",
-      "driveFileId": "1PkxPswkVjL4sCJk_fco-zKzwrbdZfgOF",
-      "driveFileUrl": "https://drive.google.com/file/d/1PkxPswkVjL4sCJk_fco-zKzwrbdZfgOF/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course3/sensor-representativeness-triage.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/sensor-representativeness-triage.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-003-03"
       ],
@@ -170,7 +177,7 @@
       ],
       "purpose": "Teach that placement can make a locally valid reading non-representative for the crop question and provide an outlier-verification sequence before unauthorized repair or control redesign.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -197,7 +204,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course3/sensor-representativeness-triage.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/sensor-representativeness-triage.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1PkxPswkVjL4sCJk_fco-zKzwrbdZfgOF",
+        "driveFileUrl": "https://drive.google.com/file/d/1PkxPswkVjL4sCJk_fco-zKzwrbdZfgOF/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-003-004",
@@ -205,11 +220,8 @@
       "deliveryType": "embedded-visual",
       "title": "Alarm, trend, verification and handoff workflow",
       "learnerPath": "/assets/course3/alarm-trend-handoff-workflow.webp",
-      "sourcePath": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/alarm-trend-handoff-workflow.svg",
-      "driveFileId": "1QSblfA3xwMgshyuTWUwaZcEOqovv8mWK",
-      "driveFileUrl": "https://drive.google.com/file/d/1QSblfA3xwMgshyuTWUwaZcEOqovv8mWK/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/alarm-trend-handoff-workflow.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-003-04"
       ],
@@ -226,7 +238,7 @@
       "publicSourceLinks": [],
       "purpose": "Show why current values, averages, trends and alarms answer different questions and connect an alarm event to evidence capture, permitted verification, escalation and a reconstructable handoff.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -253,7 +265,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course3/alarm-trend-handoff-workflow.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/alarm-trend-handoff-workflow.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1QSblfA3xwMgshyuTWUwaZcEOqovv8mWK",
+        "driveFileUrl": "https://drive.google.com/file/d/1QSblfA3xwMgshyuTWUwaZcEOqovv8mWK/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-003-005",
@@ -261,11 +281,8 @@
       "deliveryType": "downloadable-practice",
       "title": "Environmental measurement record practice worksheet",
       "learnerPath": "/assets/course3/environment-measurement-practice.webp",
-      "sourcePath": "apps/web/public/assets/course3/environment-measurement-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-practice.svg",
-      "driveFileId": "1f0q2gjMnAme6eikxUL3a0zsq_BPgMGov",
-      "driveFileUrl": "https://drive.google.com/file/d/1f0q2gjMnAme6eikxUL3a0zsq_BPgMGov/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course3/environment-measurement-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-003-01",
         "LESSON-LH-TECH1-003-04"
@@ -282,7 +299,7 @@
       "publicSourceLinks": [],
       "purpose": "Provide a printable practice record for separating supplied targets from measurements, evaluating representativeness, documenting permitted verification, preserving uncertainty and handing off unresolved environmental conditions.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -309,7 +326,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course3/environment-measurement-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/environment-measurement-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1f0q2gjMnAme6eikxUL3a0zsq_BPgMGov",
+        "driveFileUrl": "https://drive.google.com/file/d/1f0q2gjMnAme6eikxUL3a0zsq_BPgMGov/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-003-006",
@@ -317,11 +342,8 @@
       "deliveryType": "downloadable-practice",
       "title": "PPFD grid and sensor verification practice worksheet",
       "learnerPath": "/assets/course3/ppfd-sensor-verification-practice.webp",
-      "sourcePath": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-sensor-verification-practice.svg",
-      "driveFileId": "1Pd-eLG_fh4FQBoITJHInTDDzCgE_Tnht",
-      "driveFileUrl": "https://drive.google.com/file/d/1Pd-eLG_fh4FQBoITJHInTDDzCgE_Tnht/view",
-      "driveMirrorStatus": "mirrored",
+      "sourcePath": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-sensor-verification-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-003-02",
         "LESSON-LH-TECH1-003-03"
@@ -340,7 +362,7 @@
       "publicSourceLinks": [],
       "purpose": "Provide a printable nine-point PPFD grid and sensor-outlier verification worksheet that preserves measurement method, distribution, photoperiod context, operator authority and escalation/handoff status.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -367,7 +389,15 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course3/ppfd-sensor-verification-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/ppfd-sensor-verification-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1Pd-eLG_fh4FQBoITJHInTDDzCgE_Tnht",
+        "driveFileUrl": "https://drive.google.com/file/d/1Pd-eLG_fh4FQBoITJHInTDDzCgE_Tnht/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
   ],
   "ownerReleaseApproval": {
