@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Root-zone EC is elevated in one irrigation zone while input EC is unchanged. What interpretation is most defensible first?",
   "choices": [
-    "The nutrient formulation is definitely too strong for the whole room.",
-    "The EC meter is definitely broken.",
-    "Investigate moisture delivery, drainage, water use, pH and root condition before assigning a single cause.",
-    "High EC proves a specific nutrient toxicity."
+    "Treat the unchanged input EC as evidence that the nutrient recipe is acceptable and increase irrigation volume to dilute the affected zone.",
+    "Repeat the EC measurement with a verified meter and, if the result persists, attribute the problem to localized salt accumulation.",
+    "Investigate moisture delivery, drainage, water use, pH, and root condition before assigning a single cause to the elevated root-zone EC.",
+    "Reduce nutrient strength for the affected irrigation zone because elevated root-zone EC indicates excessive nutrient concentration at the roots."
   ],
   "correct": 2,
-  "rationale": "Root-zone EC is a concentration signal affected by water balance, uptake and accumulation; it does not identify a single cause or ion.",
+  "rationale": "Elevated root-zone EC is a concentration signal, not a diagnosis. It can rise because of uneven delivery, insufficient drainage, differential water use, evaporation, root impairment, pH-related effects, or accumulated salts even when input EC is unchanged. The defensible first step is therefore to verify the measurement and investigate the water-balance and root-zone context before selecting a correction. Diluting, reducing feed strength, or naming localized salt accumulation may eventually be appropriate, but each assumes a cause that has not yet been separated from the alternatives.",
   "references": [
     "REF-ROOTZONE-NUTRIENT-002",
     "REF-NUTRITION-001"
