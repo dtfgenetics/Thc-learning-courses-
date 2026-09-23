@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The controller reports an event completed, but a required representative emitter is dry. What is the correct completion status?",
   "choices": [
-    "Complete because the controller ran",
-    "Complete if other emitters are wet",
-    "The delivery deviation must be documented and handled under procedure; the affected delivery should not be falsely marked complete",
-    "Delete the representative check"
+    "Mark the event complete because the controller finished the programmed cycle.",
+    "Mark it complete if most other representative emitters are wet.",
+    "Document the dry representative emitter as a delivery deviation and follow the required hold/escalation or corrective process rather than falsely closing the affected delivery.",
+    "Remove the failed representative check from the record because it conflicts with the controller completion state."
   ],
   "correct": 2,
-  "rationale": "The delivery deviation must be documented and handled under procedure; the affected delivery should not be falsely marked complete. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A completed controller cycle does not prove successful delivery at every required location. A dry representative emitter is evidence of a deviation that must remain visible and be handled through the defined process. Closing the event as complete or deleting the conflicting evidence would hide a possible irrigation failure.",
   "references": [
     "REF-IRRIGATION-001"
   ],
