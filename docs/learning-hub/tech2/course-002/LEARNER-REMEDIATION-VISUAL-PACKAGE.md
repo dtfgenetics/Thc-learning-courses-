@@ -108,6 +108,12 @@ Course 2 has **4 owner-approved lossless WebP primary visuals** recorded in `vis
 
 The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
 
+## Published learner job aid
+
+- **DL-TECH2-EQUIPMENT-VERIFICATION-001 — Technician II Sensor and Equipment Verification Log**
+- Download: `/downloads/tech2-sensor-equipment-verification.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.
+
 ## Accessibility/manual UX review
 
 Human review remains required for:
