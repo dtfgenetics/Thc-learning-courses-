@@ -6,7 +6,7 @@
   "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 2 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
+  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 2 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete, including the Course 2 raster-first learner-asset cutover. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -42,7 +42,7 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "raster-candidates-produced-automated-qa-passed-human-cutover-review-open",
+      "state": "production-raster-cutover-complete-manual-responsive-review-open",
       "evidence": [
         "visuals/COURSE2-ASSET-REGISTRY.json",
         "scripts/test-course2-visual-registry.mjs",
@@ -51,7 +51,7 @@
         "apps/web/public/assets/course2/*.webp"
       ],
       "humanGateRequired": true,
-      "note": "All 10 governed Course 2 lossless WebP candidates exist at a minimum 1600 px shortest side with source and candidate SHA-256 provenance and deterministic binary QA. Existing SVG assets remain the live compatibility baseline until human factual/copy, accessibility, responsive/manual review and verified public-path cutover are recorded."
+      "note": "All 10 governed Course 2 lossless WebP assets are the active learner-facing production paths at a minimum 1600 px shortest side with source/candidate SHA-256 provenance and deterministic binary QA. Legacy SVG files remain provenance/reference sources only. Manual responsive/accessibility review remains open."
     },
     {
       "id": "evidence-and-source-audit",
