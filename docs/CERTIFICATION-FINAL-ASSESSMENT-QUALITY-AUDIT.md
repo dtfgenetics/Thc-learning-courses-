@@ -12,6 +12,8 @@ The heuristics are **not** validity decisions and are not content quotas.
 
 All **13 conventional canonical Technician finals** have now completed the repository item-quality pass. Twelve finals contain explicit `itemQualityRevision` metadata after targeted or full item revisions, while Technician I Course 3 contains an `itemQualityReview` marker documenting a full 20/20 review with no item rewrite required. This is a machine-audited content-quality state, **not** human assessment approval or psychometric validation.
 
+Human review of the exact current final/item versions is tracked separately in `docs/CERTIFICATION-FINAL-HUMAN-REVIEW-QUEUE.md` and by `certification:final-human-review`; this keeps repository quality-pass completion distinct from human approval.
+
 Coverage is enforced by:
 
 - `npm run certification:final-quality:coverage`;
