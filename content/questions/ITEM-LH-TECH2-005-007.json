@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Batch X reports 90% rooting at day 14 and Batch Y reports 78% at day 7. Why is a direct performance ranking weak?",
   "choices": [
-    "The larger percentage always proves the better process.",
-    "Only cultivar name matters.",
-    "The observation time differs, so the outcomes are not yet comparable at the same endpoint.",
-    "Day of observation never affects propagation performance."
+    "Rank Batch X higher because 90% is a better rooting outcome than 78%, even though the observations were taken on different days.",
+    "Rank by cultivar history instead because rooting percentages from different observation days cannot be interpreted quantitatively.",
+    "Avoid direct ranking until the batches are compared at the same defined endpoint or with an explicitly validated time-to-root metric.",
+    "Treat the observation day as unimportant if both batches used the same propagation protocol and environment."
   ],
   "correct": 2,
-  "rationale": "The observation time differs, so the outcomes are not yet comparable at the same endpoint.",
+  "rationale": "Rooting success changes over time. A 90% result at day 14 and a 78% result at day 7 are not equivalent endpoints, so a direct performance ranking confounds success rate with time allowed to root. The batches should be compared at a common validated endpoint or with a metric that explicitly incorporates rooting time.",
   "references": [
     "REF-PROP-001"
   ]
