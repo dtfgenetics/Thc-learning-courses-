@@ -19,6 +19,7 @@ const mappings = [
   ['content/modules', 'schemas/module.schema.json'],
   ['content/performance-assessments', 'schemas/performance-assessment.schema.json'],
   ['content/pilot-evidence', 'schemas/pilot-evidence.schema.json'],
+  ['content/form-psychometric-evidence', 'schemas/form-psychometric-evidence.schema.json'],
   ['content/calibration-evidence', 'schemas/practical-calibration-evidence.schema.json'],
   ['content/certification-gate-evidence', 'schemas/certification-gate-evidence.schema.json'],
   ['content/standard-setting-evidence', 'schemas/standard-setting-evidence.schema.json'],
