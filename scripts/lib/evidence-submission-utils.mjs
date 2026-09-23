@@ -10,10 +10,12 @@ export function readDir(rel){
 export const evidenceDirectories=[
   'content/reviews',
   'content/pilot-evidence',
+  'content/form-psychometric-evidence',
   'content/course-pilot-execution-evidence',
   'content/calibration-evidence',
   'content/accessibility-review-evidence',
   'content/standard-setting-evidence',
+  'content/integrated-performance-standard-setting-evidence',
   'content/secure-form-equivalence-evidence',
   'content/occupational-program-validation-evidence',
   'content/candidate-governance-approvals',
@@ -35,6 +37,7 @@ export function evidenceIndex(){
 export function statusIsReviewable(x){
   if(x.dir==='content/reviews') return x.record.status==='approved';
   if(x.dir==='content/calibration-evidence') return x.record.status==='complete';
+  if(x.dir==='content/form-psychometric-evidence') return x.record.status==='complete';
   return ['evidence-complete','approved'].includes(x.record.status);
 }
 
