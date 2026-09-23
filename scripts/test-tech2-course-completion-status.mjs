@@ -38,7 +38,10 @@ for(let n=1;n<=8;n++){
   assert.equal(status.visualLayer?.primaryConcepts,n===8?8:4,`Technician II Course ${n}: primary visual concept count mismatch`);
   assert.equal(status.visualLayer?.reviewCandidates,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: all primary visuals should be built as review candidates`);
   assert.equal(status.visualLayer?.plannedOnly,0,`Technician II Course ${n}: no primary visual should remain plan-only`);
-  assert.equal(status.visualLayer?.approvedForLearnerRender,0,`Technician II Course ${n}: human visual approval must remain open until recorded`);
+  assert.equal(status.visualLayer?.approvedForLearnerRender,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: all governed WebP primary visuals are owner-approved for learner render`);
+  assert.equal(status.visualLayer?.rasterReplacementsRequired,0,`Technician II Course ${n}: no primary raster replacement should remain required`);
+  assert.equal(status.visualLayer?.rasterReplacementsReleased,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: released raster count mismatch`);
+  assert.equal(status.visualLayer?.rasterCandidateReleaseApproved,status.visualLayer?.primaryConcepts,`Technician II Course ${n}: raster approval count mismatch`);
   assert.ok(fs.existsSync(path.join(root,status.visualLayer.registry)),`Technician II Course ${n}: visual registry missing`);
   assert.ok(fs.existsSync(path.join(root,status.visualLayer.reviewWorklist)),`Technician II Course ${n}: visual review worklist missing`);
 
