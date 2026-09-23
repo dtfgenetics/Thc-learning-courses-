@@ -28,8 +28,6 @@ for(const r of rows){
     }
     const x=hit.record;
     if(r.scope==='course'){
-      const courseMatch=x.courseId===r.targetId || x.objectId===r.targetId || x.targetId===r.targetId;
-      const program=programs.values().find?.(()=>false);
       if(x.courseId && x.courseId!==r.targetId && !String(x.id).includes(r.targetId.replace(/^COURSE-/,''))) {
         // Evidence can be program-level only when the submission itself is program-level; keep course submissions narrow.
         errors.push(`${r.id}: evidence ${id} is locked to another course ${x.courseId}`);
