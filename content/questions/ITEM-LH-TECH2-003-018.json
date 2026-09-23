@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRIENT-DIAG-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A tissue value is outside a published range. Why should it not automatically trigger a recipe change?",
   "choices": [
-    "Tissue testing is never useful.",
-    "Sampling position, stage, symptom pattern, root-zone and environmental context affect interpretation and causality.",
-    "Published ranges always apply only to soil.",
-    "The value proves the meter is wrong."
+    "Treat the result as unreliable because tissue testing cannot distinguish nutritional status from root-zone effects in a controlled crop.",
+    "Interpret the value in the context of sampled tissue position, crop stage, symptom pattern, root-zone conditions, environment, and the reference population before changing the recipe.",
+    "Apply the published range directly if the laboratory method is valid, because sampling context mainly affects visual diagnosis rather than tissue concentration.",
+    "Assume the out-of-range result reflects meter or laboratory error unless the same element is also abnormal in root-zone solution."
   ],
   "correct": 1,
-  "rationale": "Sampling position, stage, symptom pattern, root-zone and environmental context affect interpretation and causality.",
+  "rationale": "A tissue result is evidence, but its meaning depends on how the sample was collected and on the biological and production context. Tissue position, stage, cultivar, symptom distribution, root-zone conditions, and environmental factors can all affect concentration and causality. A published range can inform interpretation without proving that changing the recipe will correct the problem. The strongest response integrates the laboratory value with the rest of the diagnostic evidence.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001"
   ]
