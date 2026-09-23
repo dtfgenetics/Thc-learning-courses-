@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician believes destruction is safest but lacks disposition authority. What is the correct action?",
   "choices": [
-    "Destroy the product immediately.",
-    "Document the evidence and recommendation, maintain authorized containment, and escalate the disposition decision.",
-    "Change the lot status to destroyed.",
-    "Remove the lot from genealogy."
+    "Destroy the product if the evidence strongly supports that as the safest outcome and obtain documentation afterward.",
+    "Maintain authorized containment, document the evidence and recommendation, and escalate the disposition decision to the role with release/destruction authority.",
+    "Change the lot status to destroyed in the record so no accidental release can occur while approval is pending.",
+    "Remove the lot from genealogy once destruction is recommended because it should no longer participate in downstream traceability."
   ],
   "correct": 1,
-  "rationale": "Document the evidence and recommendation, maintain authorized containment, and escalate the disposition decision.",
+  "rationale": "A strong technical recommendation does not create disposition authority. Technician II can document why destruction may be appropriate, preserve the hold, and escalate the decision to the authorized role. Changing status, destroying product, or deleting genealogy before approval bypasses governance and can break traceability. The recommendation should be evidence-based while the controlled disposition process remains intact.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
