@@ -24,6 +24,12 @@ for(let n=1;n<=8;n++){
   assert.match(support,/Visual concept 1:/,`Course ${n}: support package needs visual briefs`);
   assert.match(support,/Accessibility\/manual|Accessibility\/manual review/i,`Course ${n}: support package needs accessibility review criteria`);
   assert.match(support,/does not validate|does not issue|do not validate|do not issue|does not itself validate|Public academic completion alone does not validate|Readiness checks.*do not count/i,`Course ${n}: support package must preserve credential boundary`);
+  const downloadFiles=fs.readdirSync(path.join(root,'content/downloads')).filter((name)=>name.endsWith('.json'));
+  const mappedDownloads=downloadFiles.map((name)=>read(`content/downloads/${name}`)).filter((record)=>record.courseMappings?.includes(course.id));
+  assert.ok(mappedDownloads.some((record)=>record.status==='published' && record.releaseStatus==='public'),`Course ${n}: requires a published/public learner job aid`);
+  const publicDownload=mappedDownloads.find((record)=>record.status==='published' && record.releaseStatus==='public');
+  assert.match(support,new RegExp(publicDownload.id.replaceAll('-','\\-')),`Course ${n}: support package must name its published learner job aid`);
+  assert.ok(support.includes(publicDownload.path),`Course ${n}: support package must link its published learner job aid path`);
   const outcomeCount=(course.learningOutcomes??[]).length;
   assert.ok(outcomeCount>=4,`Course ${n}: expected at least four learning outcomes`);
   for(let i=1;i<=outcomeCount;i++) assert.match(support,new RegExp(`### Outcome ${i}(?:\\n|\\r)`),`Course ${n}: missing support for outcome ${i}`);
