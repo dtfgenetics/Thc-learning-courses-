@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A count mismatch is discovered during reconciliation. Which action is prohibited?",
   "choices": [
-    "Documenting the discrepancy.",
-    "Checking source and movement records.",
-    "Routing a controlled correction.",
-    "Fabricating a transaction so physical and recorded counts agree."
+    "Documenting the discrepancy while the reconciliation remains open.",
+    "Checking source, movement, and quantity records to identify where the mismatch arose.",
+    "Routing a controlled correction once sufficient evidence establishes the error.",
+    "Creating or backfilling a transaction that did not occur solely to make recorded and physical counts agree."
   ],
   "correct": 3,
-  "rationale": "Fabricating a transaction so physical and recorded counts agree.",
+  "rationale": "Reconciliation is meant to explain why records and physical counts differ, not to force agreement by fabricating history. Documenting the discrepancy, reviewing source evidence, and correcting verified errors through the authorized process are appropriate. Creating a transaction that never occurred destroys data integrity and can corrupt genealogy, inventory, and downstream decisions.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]
