@@ -77,7 +77,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-001-02",
           "title": "Pattern analysis before diagnosis",
-          "src": "/assets/tech2/course1/outcome-02.svg",
+          "src": "/assets/tech2/course1/outcome-02.webp",
           "alt": "Pattern-analysis model comparing spatial distribution, chronology, cohorts, environmental measurements and developmental stage before deciding whether the available measurements are representative enough for a diagnostic decision.",
           "caption": "A room average or calendar date can hide the pattern that matters. Compare location, time, cohort, environment and developmental stage before treating a measurement as representative.",
           "references": [
@@ -87,8 +87,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-001-02",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
