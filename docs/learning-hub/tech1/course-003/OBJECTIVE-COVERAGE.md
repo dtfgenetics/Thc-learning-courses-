@@ -1,7 +1,7 @@
 # Objective Coverage — COURSE-LH-TECH1-003
 
 **Course:** Environmental, Light & Sensor Fundamentals  
-**Controlled source state:** `draft` v0.5.0  
+**Controlled source state:** `published` v0.5.0 for owner-approved academic use  
 **Purpose:** machine-auditable development crosswalk from controlled objectives through instruction, applied practice, scored assessment, remediation and mapped performance evidence. Human technical, assessment, accessibility, pilot and release review remain required.
 
 ## Coverage summary
