@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The controller schedule says lights should be on, but the technician observes one zone dark. What is the strongest response?",
   "choices": [
-    "Change the crop photoperiod strategy independently",
-    "Record the schedule as though all lights were on",
-    "Ignore the zone because the controller is correct",
-    "Record intended photoperiod versus observed state and follow the supplied verification/escalation procedure"
+    "Change the photoperiod strategy for that zone because the dark condition shows the programmed schedule is unsuitable.",
+    "Record the programmed state as the room condition because controller schedule is the controlled source of truth.",
+    "Ignore the dark zone if the controller reports that the lighting command is active.",
+    "Record the intended schedule and the observed dark-zone condition, perform only the supplied verification checks, and escalate the mismatch according to procedure."
   ],
   "correct": 3,
-  "rationale": "Record intended photoperiod versus observed state and follow the supplied verification/escalation procedure. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A controller schedule records what should happen, while direct observation shows what actually happened in that zone. The mismatch should be preserved rather than overwritten by either source. Technician I should verify only the checks allowed by procedure and escalate equipment or control-system troubleshooting that goes beyond the assigned boundary.",
   "references": [
     "REF-LIGHT-001"
   ],
