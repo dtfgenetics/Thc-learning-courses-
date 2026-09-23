@@ -19,7 +19,7 @@ Course 003 now has its planned occupational instruction, assessment, development
 - six governed learner assets: four embedded teaching visuals and two downloadable practice worksheets;
 - dedicated Drive mirror folder: `1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU`;
 - deterministic practical-crosswalk and learner-asset contracts run through the normal Course 003 regression;
-- Course 003 remains `draft`; no human review, pilot, calibration, practical validation or credential release approval is implied.
+- Course 003 is published for owner-approved academic use; human review, pilot, calibration, practical validation and professional credential release approval remain separate and are not implied.
 
 ## Learner asset coverage
 
