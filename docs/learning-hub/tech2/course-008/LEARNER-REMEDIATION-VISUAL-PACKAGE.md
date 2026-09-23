@@ -132,3 +132,9 @@ Use canonical evidence-backed science and operational references for durable pri
 Course 8 is an integrated academic simulation lab, not a conventional final-exam course. Its 16 readiness items are formative and map directly to the four dedicated Course 8 integration lessons in `READINESS-TO-TEACHING-MAP.md`. Practicals A–G and the capstone must trace to taught Technician II content plus Course 8 integration as recorded in `PERFORMANCE-TO-TEACHING-MAP.md`. The 420 Encyclopedia may support deeper study but cannot create a scored readiness, practical, or capstone requirement. Professional credential validation/release remains separately fail-closed.
 
 Readiness checks and public simulation-preparation lessons do not count as secure credential evidence. Seven practicals plus the capstone require separate validation and approval.
+
+## Published learner job aid
+
+- **DL-TECH2-SIMULATION-EVIDENCE-001 — Technician II Integrated Simulation Evidence Record**
+- Download: `/downloads/tech2-integrated-simulation-evidence.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.
