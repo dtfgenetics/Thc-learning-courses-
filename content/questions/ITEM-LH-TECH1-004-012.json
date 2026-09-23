@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRITION-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which statement best reflects nutrient availability?",
   "choices": [
-    "Supply concentration alone guarantees uptake",
-    "High EC identifies every nutrient present",
-    "pH has no relationship to nutrient chemistry",
-    "A nutrient can be present in solution yet be poorly available because root-zone chemistry, water status, interactions or root health affect uptake"
+    "If nutrient concentration is high enough in solution, uptake is guaranteed.",
+    "A high total EC reveals which individual nutrients are present and available.",
+    "pH mainly affects meter readings and has little relationship to nutrient chemistry.",
+    "A nutrient can be present in solution yet remain poorly available because pH, water status, ion interactions, and root health affect uptake."
   ],
   "correct": 3,
-  "rationale": "A nutrient can be present in solution yet be poorly available because root-zone chemistry, water status, interactions or root health affect uptake. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Supply and availability are not the same thing. A nutrient may be present in the solution but still be poorly taken up because of pH, root-zone water status, ionic interactions, oxygen conditions, or root health. This is why neither concentration nor EC alone proves that the plant can access a specific nutrient.",
   "references": [
     "REF-NUTRITION-001",
     "REF-IRRIGATION-001"

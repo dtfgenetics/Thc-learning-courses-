@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One container remains saturated much longer than neighboring comparable containers. What should the technician do?",
   "choices": [
-    "Assume the entire room is overwatered",
-    "Add fertilizer",
-    "Wait until the next crop cycle without recording it",
-    "Document the localized pattern, verify assigned delivery/root-zone context and escalate unresolved abnormality"
+    "Classify the whole room as overwatered because one container stays wet longer than its neighbors.",
+    "Add fertilizer to the wet container so plant demand increases and moisture is used faster.",
+    "Leave the container until the next crop cycle because one localized abnormality does not justify action.",
+    "Document the localized saturation pattern, verify permitted delivery/root-zone checks for that container, and escalate if the abnormality remains unresolved."
   ],
   "correct": 3,
-  "rationale": "Document the localized pattern, verify assigned delivery/root-zone context and escalate unresolved abnormality. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A single container staying wet much longer than comparable neighbors is a localized pattern, not proof that the whole room is overwatered. Possible contributors include delivery, drainage, media condition, root function, or measurement differences. Technician I should document the contrast, complete only assigned checks, and escalate if the cause remains unresolved.",
   "references": [
     "REF-IRRIGATION-001"
   ],

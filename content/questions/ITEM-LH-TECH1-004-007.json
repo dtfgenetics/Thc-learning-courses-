@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ROOTZONE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Comparable root-zone EC rises across several events while dryback becomes substantially greater. What is the strongest Technician I response?",
   "choices": [
-    "Increase feed EC immediately",
-    "Diagnose one specific nutrient toxicity",
-    "Document both trends with irrigation and crop context and escalate for authorized review",
-    "Ignore moisture because EC is enough"
+    "Increase feed EC immediately because the rising root-zone EC shows the crop needs a stronger solution.",
+    "Name a specific nutrient toxicity because rising EC plus stronger dryback confirms salt injury.",
+    "Document the rising EC and greater dryback together with irrigation, crop, and root-zone context, then escalate for authorized interpretation or adjustment.",
+    "Focus only on EC because moisture loss is already reflected in the conductivity value."
   ],
   "correct": 2,
-  "rationale": "Document both trends with irrigation and crop context and escalate for authorized review. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Rising root-zone EC and increasing dryback can be related through water balance, concentration, delivery, or plant use, but the pattern does not identify one nutrient problem or authorize a recipe change. Technician I should preserve both trends and relevant context, then escalate for review rather than turning a multi-factor pattern into a single diagnosis.",
   "references": [
     "REF-IRRIGATION-001"
   ],
