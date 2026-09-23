@@ -13,14 +13,14 @@ All eight Technician II learner-facing academic packages have explicit public-re
 
 | Course | Public academic source | Assessment source | Learner support | Primary visuals | Public readback | Remaining machine work |
 |---|---|---|---|---:|---|---|
-| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | course + lesson + knowledge check verified | academic release complete; responsive/manual QA and exact deployment identity remain quality/evidence records |
+| `COURSE-LH-TECH2-001` — Advanced Crop Observation & Diagnostic Reasoning | 4 dedicated lessons released | 12 formative + 24 summative learning items | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | course + lesson + knowledge check verified | academic release complete; exact deployment identity is recorded; responsive/manual accessibility QA remains open |
 | `COURSE-LH-TECH2-002` — Environmental Data, Sensors & Equipment Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | verified | same |
 | `COURSE-LH-TECH2-003` — Fertigation Execution, Verification & Root-Zone Interpretation | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | verified | same |
 | `COURSE-LH-TECH2-004` — Plant Health, IPM & Biosecurity Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | verified | same |
 | `COURSE-LH-TECH2-005` — Propagation & Canopy Performance Troubleshooting | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | verified | same |
 | `COURSE-LH-TECH2-006` — Harvest/Postharvest Deviations & Quality Response | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | verified | same |
 | `COURSE-LH-TECH2-007` — Traceability, Production Metrics, Shift Coordination & Peer Support | 4 dedicated lessons released | 12 + 24 | package + remediation/visual brief authored | 4 owner-approved WebP learner visuals | verified | same |
-| `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab | 4 dedicated lab lessons released | 16 formative readiness items; conventional final intentionally absent | integrated remediation/visual package authored | 8 owner-approved WebP learner visuals | course + lesson + readiness check verified | academic release complete; responsive/manual QA and exact build identity remain quality/evidence records; secure performance evidence remains restricted |
+| `COURSE-LH-TECH2-008` — Integrated Technician II Simulation Lab | 4 dedicated lab lessons released | 16 formative readiness items; conventional final intentionally absent | integrated remediation/visual package authored | 8 owner-approved WebP learner visuals | course + lesson + readiness check verified | academic release complete; exact deployment identity is recorded; responsive/manual accessibility QA remains open; secure performance evidence remains restricted |
 
 ## Machine controls added
 
@@ -41,8 +41,8 @@ The course system now includes:
 1. Maintain technical/content/accessibility review records for the 36 released Technician II raster visuals and revise any asset that fails rendered learner-surface QA.
 2. Keep lesson visual metadata, raster manifests, public files and learner-visible rendering synchronized so released assets cannot drift back to legacy SVG review paths.
 3. Confirm the runtime/support/visual tests pass in CI and repair defects they expose.
-4. Perform deployed responsive/manual learner-surface QA on course, lesson and assessment pages; record defects without confusing automated reachability with accessibility approval.
-5. Resolve exact public deployment build/source SHA identity and update the deployment-evidence records only after direct verification.
+4. Perform deployed responsive/manual learner-surface QA on course, lesson and assessment pages; record defects without confusing automated reachability and recorded build identity with accessibility approval.
+5. Refresh exact public deployment build/source SHA identity only when a new deployment supersedes the currently verified Academy build.
 6. Enforce exact-version review queues for Technician II course content and mapped performance evidence.
 7. Continue expanding applied worksheets/job aids where learner use shows a need; current package counts are not content ceilings.
 
@@ -65,4 +65,4 @@ The course system now includes:
 
 ## Definition of academic machine-build completion
 
-The Technician II machine-build phase is complete when all eight course regressions and learner-runtime checks pass, the 36 primary visuals remain wired to the owner-approved raster manifest and pass learner-surface technical/content/accessibility QA, public deployment evidence includes exact build/source identity, course surfaces have completed responsive/manual QA, and remaining external/pilot/calibration/psychometric/security evidence is recorded truthfully without being treated as an artificial blocker to project-owner-approved academic publication.
+The Technician II machine-build phase is complete when all eight course regressions and learner-runtime checks pass, the 36 primary visuals remain wired to the owner-approved raster manifest and pass learner-surface technical/content/accessibility QA, public deployment evidence retains the verified exact build/source identity, course surfaces have completed responsive/manual QA, and remaining external/pilot/calibration/psychometric/security evidence is recorded truthfully without being treated as an artificial blocker to project-owner-approved academic publication.
