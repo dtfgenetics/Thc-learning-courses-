@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "status": "draft",
+  "status": "published",
   "competencies": [
     "COMP-PLANT-BIO-001",
     "COMP-FLOWER-001",
@@ -39,5 +39,11 @@
     "ITEM-LH-TECH1-002-M01-012"
   ],
   "maxAttempts": null,
-  "feedbackMode": "immediate"
+  "feedbackMode": "immediate",
+  "extensions": {
+    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationDate": "2026-09-22",
+    "professionalCredentialUseAuthorized": false,
+    "secureCredentialExam": false
+  }
 }
