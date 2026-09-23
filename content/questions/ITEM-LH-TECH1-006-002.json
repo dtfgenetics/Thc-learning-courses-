@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A powered tool has visible cord damage near a wet harvest area. What is the strongest response?",
   "choices": [
-    "Open the tool and inspect wiring",
-    "Stop use, prevent exposure where authorized and escalate for qualified repair",
-    "Dry the floor and keep using it",
-    "Wrap the cord and continue"
+    "Open the powered tool to inspect the wiring because the damage is visible and the cause appears obvious.",
+    "Stop using the tool, control exposure to the damaged/wet area as authorized, and escalate it for qualified repair.",
+    "Dry the floor and continue using the tool if it still operates normally.",
+    "Wrap the damaged cord temporarily and finish the harvest task before repair."
   ],
   "correct": 1,
-  "rationale": "Stop use, prevent exposure where authorized and escalate for qualified repair. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Visible cord damage near a wet work area creates an electrical hazard that Technician I should not troubleshoot or repair. The correct action is to stop use, protect people from the affected area within assigned authority, and escalate for qualified repair. Drying the floor or taping the cord does not restore the equipment to a verified safe condition.",
   "references": [
     "REF-NIOSH-CANNABIS-HAZARDS-2024",
     "REF-OSHA-1910-22-WALKING"
