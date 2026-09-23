@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Losses align with one operator, but that operator also handled the only trays in a warmer zone. What should the technician conclude?",
   "choices": [
-    "Operator error is proven.",
-    "Operator and zone are confounded; more evidence is needed before assigning cause.",
-    "Temperature is proven as the only cause.",
-    "Delete the operator field because it is sensitive."
+    "Treat operator technique as the likely cause because the losses align with one operator across all affected trays.",
+    "Treat operator and warmer-zone exposure as confounded because they occur together, and collect evidence that can separate those explanations before assigning cause.",
+    "Treat temperature as the cause because all affected trays share the warmer zone and environmental differences are measurable.",
+    "Remove operator identity from the analysis to avoid bias and evaluate only environmental variables."
   ],
   "correct": 1,
-  "rationale": "Operator and zone are confounded; more evidence is needed before assigning cause.",
+  "rationale": "Because the same operator handled the only trays in the warmer zone, operator and environment change together. The current data cannot isolate which factor explains the losses. The strongest next step is to compare additional trays, operators, or zones in a way that separates handling from temperature rather than naming either cause prematurely.",
   "references": [
     "REF-PROP-001"
   ]
