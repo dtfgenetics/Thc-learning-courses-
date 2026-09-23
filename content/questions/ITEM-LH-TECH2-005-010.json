@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two cultivars differ in flower response, but light exposure and starting canopy density also differ. What is the strongest next step?",
   "choices": [
-    "Declare a genotype effect immediately.",
-    "Gather comparable spatial and stage-matched evidence before attributing the response to cultivar.",
-    "Ignore the environmental differences.",
-    "Change the cultivar label in the production record."
+    "Attribute the response difference to cultivar because both groups were in the same production cycle.",
+    "Collect stage-matched and spatially comparable evidence, including light exposure and starting canopy density, before assigning the response to genotype.",
+    "Ignore environmental differences if the cultivar labels are correct and both groups received similar canopy work.",
+    "Compare only final flower appearance because initial canopy density and exposure differences matter mainly before recovery."
   ],
   "correct": 1,
-  "rationale": "Gather comparable spatial and stage-matched evidence before attributing the response to cultivar.",
+  "rationale": "Cultivar may affect response, but the comparison also differs in light exposure, starting density, and possibly stage. Those factors can independently influence recovery and flower development. A defensible genotype inference therefore requires more comparable groups or analysis that accounts for those confounders. Naming cultivar as the cause before that comparison overstates the evidence.",
   "references": [
     "REF-FLOWER-001",
     "REF-CANOPY-001"
