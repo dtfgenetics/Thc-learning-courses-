@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH2-001-FINAL",
   "title": "Advanced Crop Observation & Diagnostic Reasoning — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "summative",
   "competencies": [
@@ -110,6 +110,41 @@
     "completionModel": "Course assessment is development evidence only while Course 201 is draft. Credential performance remains separately dependent on Practical A and program-level release gates.",
     "distinctFormativeBank": true,
     "formativeAssessment": "ASSESS-LH-TECH2-001-M01",
-    "publicCredentialItemsExcluded": true
+    "publicCredentialItemsExcluded": true,
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "taughtMaterialMap": {
+      "LO-LH-TECH2-001-01": [
+        "LESSON-LH-TECH2-001-01",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-02": [
+        "LESSON-LH-TECH2-001-02",
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-03": [
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-04": [
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-05": [
+        "LESSON-LH-TECH2-001-03",
+        "LESSON-LH-TECH2-001-04"
+      ],
+      "LO-LH-TECH2-001-06": [
+        "LESSON-LH-TECH2-001-02"
+      ],
+      "LO-LH-TECH2-001-07": [
+        "LESSON-LH-TECH2-001-01",
+        "LESSON-LH-TECH2-001-02",
+        "LESSON-LH-TECH2-001-04"
+      ]
+    },
+    "testToTeachingAudit": "docs/learning-hub/tech2/course-001/TEST-TO-TEACHING-MAP.md"
   }
 }
