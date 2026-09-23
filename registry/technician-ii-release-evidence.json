@@ -58,5 +58,8 @@
     "Do not expose secure operational answer keys, selected forms or delivery material in the public repository.",
     "Do not average away a failed Technician II practical or capstone critical error.",
     "Do not issue the Technician II credential while any required release gate remains unresolved."
-  ]
+  ],
+  "authorityStatus": "supporting-legacy-program-checklist",
+  "authoritativeReadinessSource": "scripts/report-certification-evidence-reconciliation.mjs",
+  "authorityBoundary": "This ledger preserves program-specific historical/checklist gates. It must not override exact-version evidence-derived certification readiness from the certification evidence reconciler."
 }
