@@ -35,9 +35,11 @@ for (const asset of produced) {
   assert.ok(typeof asset.title === 'string' && asset.title.trim());
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim());
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
-  assert.equal(asset.driveMirrorStatus, 'mirrored-verified', `${asset.id}: Drive mirror must remain verified`);
-  assert.match(asset.driveFileId ?? '', /^[A-Za-z0-9_-]+$/, `${asset.id}: verified Drive mirror requires a file id`);
-  assert.match(asset.driveUrl ?? '', /^https:\/\/drive\.google\.com\/file\/d\//, `${asset.id}: verified Drive mirror requires a Drive URL`);
+  assert.equal(asset.assetLifecycle, 'production-raster-active');
+  assert.equal(asset.productionRasterDriveMirrorStatus, 'not-recorded');
+  assert.equal(asset.legacySource?.driveMirrorStatus, 'mirrored-verified', `${asset.id}: legacy provenance source must retain verified Drive mirror status`);
+  assert.match(asset.legacySource?.driveFileId ?? '', /^[A-Za-z0-9_-]+$/, `${asset.id}: legacy provenance source requires a Drive file id`);
+  assert.match(asset.legacySource?.driveFileUrl ?? '', /^https:\/\/drive\.google\.com\/file\/d\//, `${asset.id}: legacy provenance source requires a Drive URL`);
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
@@ -103,4 +105,4 @@ assert.equal(course.extensions?.downloadablePracticeAssetCount, 3);
 assert.equal(course.extensions?.totalLearnerAssetCount, 8);
 assert.equal(course.extensions?.independentProductReleaseAuthorityConferred, false);
 
-console.log('Course 6 learner-asset contract passed for eight public, accessible, lesson-reachable assets with eight verified controlled Drive mirrors.');
+console.log('Course 6 learner-asset contract passed for eight raster-first WebP learner assets with preserved verified SVG provenance mirrors.');
