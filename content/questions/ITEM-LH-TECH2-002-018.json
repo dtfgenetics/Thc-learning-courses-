@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A PPFD map shows one consistent low region. What is the strongest next step within Technician II scope?",
   "choices": [
-    "Increase all fixtures without verification.",
-    "Verify repeatability and relevant fixture/obstruction/context evidence, then escalate adjustment or repair according to authorization.",
-    "Assume the plants in that region need more fertilizer.",
-    "Discard the low readings because the room average is acceptable."
+    "Increase the affected fixtures enough to bring the low region to target, then remap the area to confirm the correction.",
+    "Verify that the low region is repeatable under controlled measurement geometry and inspect fixture, obstruction, placement, and system context before escalating an authorized adjustment or repair.",
+    "Investigate nutrient demand in the low region first because reduced PPFD can change plant nutrient uptake and create a similar growth pattern.",
+    "Use the room average as the control value unless the low region falls below target on two consecutive production days."
   ],
   "correct": 1,
-  "rationale": "Verify repeatability and relevant fixture/obstruction/context evidence, then escalate adjustment or repair according to authorization. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A consistent low region in a PPFD map is evidence of a spatial lighting problem, but it does not yet identify why it exists. The strongest Technician II response is to confirm repeatability with controlled measurement geometry and inspect likely contributors such as fixture condition, dimming state, obstruction, distance, or layout. Once the pattern is verified, adjustment or repair can be escalated within the technician's authority boundary. Immediate adjustment without verification risks correcting the wrong cause or creating a new imbalance.",
   "references": [
     "REF-LIGHT-001"
   ]
