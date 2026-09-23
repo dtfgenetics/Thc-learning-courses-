@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "certification-validation-execution-layer",
+  "scope": {
+    "program": "Technician certification",
+    "canonicalCourseCount": 15,
+    "technicianICourseCount": 7,
+    "technicianIICourseCount": 8,
+    "conventionalFinalCount": 13,
+    "integratedPracticalCapstoneCourseIds": [
+      "COURSE-LH-TECH1-007",
+      "COURSE-LH-TECH2-008"
+    ]
+  },
+  "statusVocabulary": [
+    "prepared",
+    "in-progress",
+    "evidence-complete",
+    "approved",
+    "revision-required",
+    "not-applicable"
+  ],
+  "evidenceGates": [
+    "exactVersionHumanAssessmentReview",
+    "pilotExecution",
+    "itemAnalysis",
+    "practicalAssessorCalibration",
+    "accessibilityUxHumanReview",
+    "standardSetting",
+    "secureOperationalFormReadiness",
+    "credentialAuthorization"
+  ],
+  "courses": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "track": "Technician I",
+      "ordinal": 1,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH1-001-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-001/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-002",
+      "track": "Technician I",
+      "ordinal": 2,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH1-002-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "track": "Technician I",
+      "ordinal": 3,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH1-003-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-003/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "track": "Technician I",
+      "ordinal": 4,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH1-004-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-004/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "track": "Technician I",
+      "ordinal": 5,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH1-005-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-005/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "track": "Technician I",
+      "ordinal": 6,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH1-006-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-006/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-007",
+      "track": "Technician I",
+      "ordinal": 7,
+      "conventionalFinal": false,
+      "finalAssessmentId": null,
+      "integratedPerformance": true,
+      "pilotProtocolPath": "docs/learning-hub/tech1/course-007/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "not-applicable",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "not-applicable",
+        "practicalAssessorCalibration": "prepared",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "not-applicable",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "track": "Technician II",
+      "ordinal": 1,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-001-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-001/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-002",
+      "track": "Technician II",
+      "ordinal": 2,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-002-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-002/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-003",
+      "track": "Technician II",
+      "ordinal": 3,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-003-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-003/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "track": "Technician II",
+      "ordinal": 4,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-004-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-004/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-005",
+      "track": "Technician II",
+      "ordinal": 5,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-005-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-005/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "track": "Technician II",
+      "ordinal": 6,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-006-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-006/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-007",
+      "track": "Technician II",
+      "ordinal": 7,
+      "conventionalFinal": true,
+      "finalAssessmentId": "ASSESS-LH-TECH2-007-FINAL",
+      "integratedPerformance": false,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-007/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "prepared",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "prepared",
+        "practicalAssessorCalibration": "not-applicable",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "prepared",
+        "credentialAuthorization": "prepared"
+      }
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-008",
+      "track": "Technician II",
+      "ordinal": 8,
+      "conventionalFinal": false,
+      "finalAssessmentId": null,
+      "integratedPerformance": true,
+      "pilotProtocolPath": "docs/learning-hub/tech2/course-008/pilot/PILOT-PROTOCOL.md",
+      "evidence": {
+        "exactVersionHumanAssessmentReview": "not-applicable",
+        "pilotExecution": "prepared",
+        "itemAnalysis": "not-applicable",
+        "practicalAssessorCalibration": "prepared",
+        "accessibilityUxHumanReview": "prepared",
+        "standardSetting": "prepared",
+        "secureOperationalFormReadiness": "not-applicable",
+        "credentialAuthorization": "prepared"
+      }
+    }
+  ],
+  "evidenceDefinitions": {
+    "prepared": "Required templates/protocols/queues exist and are ready for real execution; no completion is implied.",
+    "in-progress": "Human or field evidence collection has started but is incomplete.",
+    "evidence-complete": "Required evidence has been collected and quality-checked, but formal approval has not necessarily occurred.",
+    "approved": "The designated human authority has approved the exact current evidence/version for this gate.",
+    "revision-required": "Review identified changes that must be made before approval.",
+    "not-applicable": "This gate does not apply to this course/path."
+  },
+  "integrityRules": [
+    "Exactly 15 canonical Technician courses must be present.",
+    "Exactly 13 courses must identify a conventional final.",
+    "Technician I Course 7 and Technician II Course 8 must use integrated performance rather than conventional finals.",
+    "A machine quality pass must never be represented as human approval.",
+    "Pilot, calibration, psychometric, standard-setting, secure-form, and credential-authorization evidence remain separate gates.",
+    "Any version change to a scored object must invalidate prior exact-version approval for that object."
+  ]
+}
