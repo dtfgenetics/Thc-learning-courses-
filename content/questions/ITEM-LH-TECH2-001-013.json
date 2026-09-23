@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A flowering crop appears “late” based only on days since the schedule change. Which evidence should be added before calling the delay abnormal?",
   "choices": [
-    "Repeatable reproductive morphology plus light/dark history and cultivar context.",
-    "Only the current nutrient EC.",
-    "Only the room label.",
-    "Only flower size from one plant."
+    "Add repeatable reproductive morphology, actual light/dark history, and cultivar context before deciding whether the crop is developmentally delayed.",
+    "Compare current nutrient EC with the crop target and use any deviation as the primary explanation for the apparent delay.",
+    "Compare the room's current environmental setpoints with the schedule because a correct setpoint confirms that development should match the calendar.",
+    "Measure flower size from several plants and use the room average to assign the crop's developmental stage."
   ],
   "correct": 0,
-  "rationale": "Biological stage is better supported by morphology and photoperiod history than calendar count alone.",
+  "rationale": "Calendar days since a schedule change provide context, but they do not directly define biological stage. Reproductive morphology, actual photoperiod history, cultivar response, and plant condition are more direct evidence of whether development is progressing as expected. Nutrient EC, room setpoints, and flower size can contribute useful context, but none independently establishes that a crop is late. The strongest assessment combines repeatable morphology with the environmental and cultivar history that could explain normal variation.",
   "references": [
     "REF-FLOWER-MORPH-2023-001",
     "REF-LIGHT-001"
