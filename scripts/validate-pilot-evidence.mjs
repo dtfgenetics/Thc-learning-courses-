@@ -20,7 +20,7 @@ const pilotFiles = fs.existsSync(pilotDir) ? fs.readdirSync(pilotDir).filter((n)
 const records = [];
 const seenIds = new Set();
 const allowedStatuses = new Set(['draft','complete','invalidated']);
-const allowedMethods = new Set(['point-biserial','upper-lower','other']);
+const allowedMethods = new Set(['point-biserial','point-biserial-item-rest','upper-lower','other']);
 
 for (const name of pilotFiles) {
   const rel = path.join('content/pilot-evidence', name);
