@@ -31,8 +31,9 @@ The course system now includes:
 - `registry/tech2-course1-completion-status.json` through `registry/tech2-course8-completion-status.json` — fail-closed course completion ledgers;
 - `registry/tech2-course1-deployment-evidence.json` through `registry/tech2-course8-deployment-evidence.json` — truthful public readback evidence with build/SHA and manual-QA fields left open;
 - `scripts/test-tech2-course-completion-status.mjs` — prevents false completion, validation or deployment claims;
-- `docs/learning-hub/tech2/course-001/` through `course-008/` — controlled package manifests plus learner/remediation/visual support packages;
+- `docs/learning-hub/tech2/course-001/` through `course-008/` — controlled package manifests, learner/remediation/visual support packages, and dedicated rendered accessibility/UX review packets;
 - `scripts/test-tech2-course-support-packages.mjs` — requires applied learner artifacts, equivalent reassessment, visual briefs, accessibility criteria and credential boundaries;
+- `scripts/test-certification-rendered-qa-packets.mjs` — requires a rendered accessibility/UX review packet for all 15 canonical Technician courses and prevents machine-authored false approval;
 - `visuals/TECH2-VISUAL-PRODUCTION-PLAN.json` — 36 owner-approved raster primary visuals with fail-closed lifecycle;
 - `scripts/test-tech2-visual-production-plan.mjs` — blocks an asset from approved/produced status unless lesson placement, references, caption, text alternative, source file and QA approval exist.
 
