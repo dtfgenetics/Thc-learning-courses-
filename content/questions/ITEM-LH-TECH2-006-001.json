@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A suspect drying rack shows an unusual product condition. What is the strongest first action?",
   "choices": [
-    "Protect the rack under the authorized hold/segregation process and document identity, location, time and observations before assigning cause.",
-    "Blend the material into unaffected racks.",
-    "Release it because no cause is confirmed.",
-    "Declare the entire facility affected immediately."
+    "Place the rack under the authorized hold/segregation process, preserve lot identity and location, and document the observed condition before assigning cause.",
+    "Blend the suspect material with unaffected racks to determine whether the unusual condition is localized or representative.",
+    "Release the rack for continued drying because an unusual condition without confirmed cause is not yet a deviation.",
+    "Hold all postharvest material in the facility until the cause is known so no affected product can move."
   ],
   "correct": 0,
-  "rationale": "Protect the rack under the authorized hold/segregation process and document identity, location, time and observations before assigning cause.",
+  "rationale": "The first priority is to preserve control of the potentially affected material and the evidence needed to investigate it. Holding and segregating the specific rack maintains identity and prevents unintended movement while observations, location, timing, and related process data are documented. Blending destroys traceability, immediate release ignores the unresolved risk, and facility-wide hold may be disproportionate before evidence supports broader scope.",
   "references": [
     "REF-POSTHARVEST-001"
   ]
