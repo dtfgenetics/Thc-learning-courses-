@@ -1,7 +1,7 @@
 # Final Human Review Worklist — COURSE-LH-TECH1-003
 
 **Course:** Environmental, Light & Sensor Fundamentals  
-**Controlled state:** `draft`  
+**Controlled state:** `published` for owner-approved academic use  
 **Purpose:** authoritative worklist for decisions that cannot be truthfully closed by file generation or CI.
 
 ## Review rule
