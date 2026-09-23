@@ -104,14 +104,16 @@ Every visual must:
 
 ## Current primary-visual production state
 
-Four outcome-aligned SVG source assets now exist as **review candidates**:
+The four existing SVG files are **legacy review/provenance assets only** and are **not production course visuals** under the current raster-only instructional-asset standard.
 
-- `VIS-LH-TECH2-001-01` → `/assets/tech2/course1/outcome-01.svg` → Lesson 1;
-- `VIS-LH-TECH2-001-02` → `/assets/tech2/course1/outcome-02.svg` → Lesson 2;
-- `VIS-LH-TECH2-001-03` → `/assets/tech2/course1/outcome-03.svg` → Lesson 3;
-- `VIS-LH-TECH2-001-04` → `/assets/tech2/course1/outcome-04.svg` → Lesson 4.
+Required production replacements:
 
-Each candidate has a mapped learner caption, meaningful text alternative, canonical lesson placement and evidence-reference list in `visuals/TECH2-VISUAL-PRODUCTION-PLAN.json`. They remain deliberately unapproved until rendered responsive QA and public-path verification are complete. A source file existing in the repository is not by itself release approval.
+- `VIS-LH-TECH2-001-01` → high-resolution PNG/WebP raster replacement for Lesson 1;
+- `VIS-LH-TECH2-001-02` → high-resolution PNG/WebP raster replacement for Lesson 2;
+- `VIS-LH-TECH2-001-03` → high-resolution PNG/WebP raster replacement for Lesson 3;
+- `VIS-LH-TECH2-001-04` → high-resolution PNG/WebP raster replacement for Lesson 4.
+
+Legacy SVG paths may remain only for source/provenance review until their raster replacements are produced, QA'd, wired into the lesson JSON, and verified through the public learner runtime. They must not be counted as production-ready visual assets.
 
 ## Accessibility/manual UX review
 
@@ -131,6 +133,6 @@ Human review remains required for:
 
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-Course-specific formative and summative items are separate from the public Technician II credential-development bank. Course completion remains draft/development evidence and does not replace Practical A, private operational credential forms, program validation, standard setting or final release approval.
+Course-specific formative and summative items are separate from the public Technician II credential-development bank. Every summative objective is mapped back to dedicated Course 1 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be introduced as scored material unless it is first taught directly in this course. Course completion remains draft/development evidence and does not replace Practical A, private operational credential forms, program validation, standard setting or final release approval.
 
 Mapped performance evidence: `PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP`. Public course completion does not itself validate or issue the Technician II professional credential.
