@@ -20,8 +20,8 @@ The check detects drift in either direction: a readiness flag cannot turn true w
 
 Course 1 is the only canonical course whose older completion ledger still reports machine-resolvable work.
 
-`npm run course1:raster-public:verify` checks the live site against all **23** produced raster learner paths from the canonical `visuals/ASSET-REGISTRY.json` (with the release manifest retained as supporting release-control evidence), verifies exact build identity, and reports failed paths.
+`npm run course1:raster-public:verify` checks all **23** produced raster learner assets from the canonical `visuals/ASSET-REGISTRY.json` at the exact pinned curriculum SHA reported by the live `/api/build-info` deployment identity (with the release manifest retained as supporting release-control evidence), verifies exact build identity, and reports failed paths.
 
-Use `--write` only after a successful live verification. That records the deployment evidence and closes the Course 1 legacy machine queue without altering any human or credential-release gate.
+Use `--write` only after a successful live verification. That records the deployment evidence and closes the Course 1 legacy machine queue without altering any human or credential-release gate. The WordPress Course 1 publisher intentionally renders pinned `raw.githubusercontent.com` curriculum asset URLs rather than site-local `/assets/course1/*` URLs.
 
 The verifier does not substitute for rendered WCAG/UX review.
