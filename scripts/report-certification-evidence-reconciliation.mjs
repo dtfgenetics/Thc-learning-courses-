@@ -24,6 +24,7 @@ const pilotExecutionEvidence=readDir('content/course-pilot-execution-evidence');
 const accessibilityReviewEvidence=readDir('content/accessibility-review-evidence');
 const calibrationEvidence=readDir('content/calibration-evidence');
 const standardSettingEvidence=readDir('content/standard-setting-evidence');
+const integratedPerformanceStandardSettingEvidence=readDir('content/integrated-performance-standard-setting-evidence');
 const secureFormEvidence=readDir('content/secure-form-equivalence-evidence');
 const credentialAuthorizationEvidence=readDir('content/credential-authorization-evidence');
 const occupationalProgramEvidence=readDir('content/occupational-program-validation-evidence');
@@ -172,10 +173,32 @@ function deriveCalibration(courseRow){
   return {status,detail:{requiredPerformanceAssessments:total,withCalibrationEvidence:withAny,withCompleteResolvedCalibrationEvidence:complete},problems};
 }
 function deriveStandardSetting(courseRow){
-  if(!courseRow.conventionalFinal) return {status:'not-applicable',detail:{reason:'no conventional final'}};
   const course=coursesById.get(courseRow.courseId);
+  if(!course) return {status:'prepared',problems:[`missing course for standard setting`]};
+
+  if(!courseRow.conventionalFinal){
+    const required=course.extensions?.standardSettingRequired===true;
+    if(!required) return {status:'not-applicable',detail:{reason:'integrated course does not require standard setting'}};
+    const ids=performanceIdsForCourse(courseRow.courseId);
+    const rows=integratedPerformanceStandardSettingEvidence
+      .filter(e=>e.courseId===courseRow.courseId&&String(e.courseVersion)===String(course.version)&&e.status!=='invalidated')
+      .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+    const latest=rows[0]??null;
+    if(!latest) return {status:'prepared',detail:{records:0,requiredPerformanceAssessments:ids.length,standardSettingModel:'integrated-performance-decision-rule'}};
+    const status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='panel-complete'?'evidence-complete':'in-progress';
+    return {status,detail:{
+      records:rows.length,
+      latestRecordId:latest.id,
+      method:latest.method,
+      requiredPerformanceAssessments:ids.length,
+      componentCount:latest.components?.length??0,
+      decision:latest.governanceDecision?.decision??null,
+      standardSettingModel:'integrated-performance-decision-rule'
+    }};
+  }
+
   const assessment=assessments.get(courseRow.finalAssessmentId);
-  if(!course||!assessment) return {status:'prepared',problems:[`missing course or assessment for standard setting`]};
+  if(!assessment) return {status:'prepared',problems:[`missing assessment for standard setting`]};
   const rows=standardSettingEvidence
     .filter(e=>e.courseId===courseRow.courseId&&String(e.courseVersion)===String(course.version)&&e.assessmentId===assessment.id&&String(e.assessmentVersion)===String(assessment.version)&&e.status!=='invalidated')
     .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
