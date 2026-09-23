@@ -1,7 +1,7 @@
 # Course Package Manifest — COURSE-LH-TECH1-004
 
 **Course:** Water, Root Zone, Nutrition & Irrigation Fundamentals  
-**Package state:** machine package substantially complete; public route readback verified; exact build identity, responsive/manual QA and human validation open  
+**Package state:** owner-approved published academic package; public route readback and exact build identity verified; responsive/manual QA and professional validation remain open  
 **Date:** 2026-09-18
 
 ## Canonical source
@@ -23,7 +23,7 @@ Course 4 contains 36 distinct referenced scored items:
 - 24 summative items;
 - each of the six controlled objectives has two formative items and four summative items;
 - all assessed items must remain evidence-referenced;
-- the ordinary final remains draft until human assessment review and release approval.
+- the ordinary final is published for academic use; human assessment review and professional credential-release approval remain open.
 
 The reusable strict learning-loop audit is the controlling machine check for objective-level instruction, applied practice, formative coverage, summative coverage, evidence references, remediation and reassessment.
 
@@ -70,7 +70,6 @@ Course 4 must preserve all of the following:
 
 - confirm CI passes the strict learning-loop gate, shared Courses 3–7 learner-runtime regression and versioned Course 4 review-queue check;
 - complete deployed responsive/manual learner-surface QA;
-- record the exact deployment build/source SHA for the already verified public course, lesson and knowledge-check routes;
 - repair any defects exposed by those checks without weakening evidence or authority boundaries.
 
 ## Human/evidence gates still open
@@ -82,7 +81,6 @@ Course 4 must preserve all of the following:
 - rendered accessibility/manual UX approval;
 - controlled learner pilot evidence;
 - applicable decision-rule/standard-setting approval;
-- academic release approval.
 
 No machine artifact may mark those evidence-dependent gates complete on behalf of a reviewer.
 
