@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which handoff is most reconstructable?",
   "choices": [
-    "Harvest complete",
-    "Source/output identity, destination, outgoing/receiving quantity, hold/deviation status, actions and next follow-up",
-    "Lot moved successfully",
-    "Only final weight"
+    "A note that says only “harvest complete.”",
+    "Source and output identity, destination, outgoing and receiving quantity, hold/deviation status, actions taken, and required next follow-up.",
+    "A statement that the lot moved successfully with no other details.",
+    "Only the final received weight because that is the most important outcome."
   ],
   "correct": 1,
-  "rationale": "Source/output identity, destination, outgoing/receiving quantity, hold/deviation status, actions and next follow-up. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A reconstructable handoff should let the receiving shift understand what material moved, where it went, how quantities compared, whether any hold or deviation remains, what actions were already taken, and what must happen next. Generic completion language cannot support that continuity.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-GS1-GLOBAL-TRACEABILITY"

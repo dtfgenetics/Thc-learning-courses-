@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The assigned receiving rack is visibly dirty before harvested material arrives. What should happen?",
   "choices": [
-    "Use the supplied sanitation/out-of-service process before material contacts the rack",
-    "Use it because drying will reduce contamination",
-    "Cover the dirt with labels",
-    "Receive material and clean later"
+    "Use the approved sanitation or out-of-service process and verify the rack is ready before harvested material contacts it.",
+    "Use the dirty rack because drying conditions will reduce contamination risk after placement.",
+    "Cover the visible debris with labels or clean paper so the harvested material does not touch it directly.",
+    "Receive the material first and clean the rack after the lot has been moved onward."
   ],
   "correct": 0,
-  "rationale": "Use the supplied sanitation/out-of-service process before material contacts the rack. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A dirty receiving rack can transfer contamination directly to harvested material or contact surfaces. The rack should be cleaned, sanitized, or removed from service according to the procedure before product contact. Later drying does not erase the contamination event, and covering debris is not equivalent to restoring the controlled receiving surface.",
   "references": [
     "REF-POSTHARVEST-001"
   ],

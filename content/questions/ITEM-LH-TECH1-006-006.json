@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Visible mold-like growth is found on one identified plant during harvest. What should Technician I do?",
   "choices": [
-    "Blend it into the lot if quantity is small",
-    "Follow the supplied hold/isolation procedure and keep the suspect material out of normal flow",
-    "Remove the visible portion and record the plant clean",
-    "Discard the entire room without authorization"
+    "Blend the small amount into the lot so one suspect plant does not create a disproportionate hold.",
+    "Apply the required hold/isolation process to the identified suspect material and keep it out of normal flow pending review.",
+    "Remove the visible growth and return the plant to the normal harvest stream if the remaining tissue looks clean.",
+    "Discard the entire room immediately so no possibly affected material can move."
   ],
   "correct": 1,
-  "rationale": "Follow the supplied hold/isolation procedure and keep the suspect material out of normal flow. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Visible mold-like growth is a plant/product condition that requires controlled isolation, not blending or ad hoc trimming. Technician I should preserve the identity of the suspect material, remove it from normal flow, and follow the hold/escalation process. Whole-room disposition decisions exceed Technician I authority unless the procedure specifically directs them.",
   "references": [
     "REF-POSTHARVEST-001"
   ],

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A required receiving weight was missed, but a worker remembers an approximate number. What should the record show?",
   "choices": [
-    "Enter the remembered number at the original time",
-    "Copy the outgoing weight",
-    "Use the planned target quantity",
-    "Use the controlled missing-data/late-entry process and do not invent an original measurement"
+    "Enter the remembered receiving weight at the original time and mark it as approximate.",
+    "Copy the outgoing weight because it is the closest controlled quantity available.",
+    "Use the planned target quantity so the receiving record remains complete.",
+    "Use the controlled missing-data or late-entry process and do not present a remembered or substituted value as the original receiving measurement."
   ],
   "correct": 3,
-  "rationale": "Use the controlled missing-data/late-entry process and do not invent an original measurement. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A missed receiving measurement cannot be recreated honestly by memory, target, or substitution from another record. The controlled missing-data or late-entry process preserves the fact that the original value was not captured at the required time and prevents false precision from entering the traceability record.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-GS1-GLOBAL-TRACEABILITY"

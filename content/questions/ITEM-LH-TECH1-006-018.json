@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A supervisor verbally asks the technician to blend held material into the normal lot, but the controlled hold instruction remains active. What is the safest process?",
   "choices": [
-    "Follow the verbal request immediately",
-    "Resolve the instruction conflict through the authorized control/release process before moving the held material",
-    "Remove the hold record",
-    "Blend only part of the material"
+    "Follow the supervisor's verbal request because direct supervision overrides the written hold.",
+    "Keep the hold active and resolve the instruction conflict through the authorized release/control process before moving or blending the material.",
+    "Remove the hold record first so the verbal request and material status no longer conflict.",
+    "Blend only part of the held material as a compromise while the rest remains isolated."
   ],
   "correct": 1,
-  "rationale": "Resolve the instruction conflict through the authorized control/release process before moving the held material. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "An active hold remains in force until it is resolved through the controlled process. A verbal instruction does not automatically create release authority or erase the recorded status. Technician I should preserve the hold and escalate the conflict so the authorized role can formally change disposition if appropriate.",
   "references": [
     "REF-POSTHARVEST-001"
   ],

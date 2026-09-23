@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What is the purpose of a harvest hold?",
   "choices": [
-    "To erase the source record",
-    "To keep identified suspect or unresolved material out of normal flow until controlled review/release",
-    "To allow unlabeled staging",
-    "To authorize independent disposal"
+    "To remove the source identity from the lot while review is pending.",
+    "To keep identified suspect or unresolved material out of normal flow until an authorized review and release/disposition decision occurs.",
+    "To allow unlabeled staging while the team decides what to do next.",
+    "To give Technician I independent authority to discard or release the material."
   ],
   "correct": 1,
-  "rationale": "To keep identified suspect or unresolved material out of normal flow until controlled review/release. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A hold is a controlled status used to prevent suspect or unresolved material from continuing through normal flow. It preserves identity and control while authorized review determines release, rework, destruction, or another disposition. It does not erase traceability or grant independent disposition authority.",
   "references": [
     "REF-IPM-001",
     "REF-POSTHARVEST-001"

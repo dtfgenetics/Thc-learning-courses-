@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "The harvest work order was valid at startup, but a spill later creates an uncontrolled slip hazard. What controls the next action?",
   "choices": [
-    "The original authorization means work must continue",
-    "Only the supervisor may notice a hazard",
-    "Reassess the changed condition and apply authorized control or stop/escalate before continuing",
-    "Finish the batch before cleanup"
+    "Continue because the work order was valid when the shift began and authorization has already been established.",
+    "Wait for a supervisor to notice the spill before changing the work sequence.",
+    "Reassess the changed condition and apply the authorized spill/slip control or stop and escalate before continuing harvest movement.",
+    "Finish the current batch before cleanup so partially completed material does not sit in process."
   ],
   "correct": 2,
-  "rationale": "Reassess the changed condition and apply authorized control or stop/escalate before continuing. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Authorization at startup does not freeze conditions for the rest of the task. A new spill creates a changed hazard state that must be controlled before work continues. Technician I should use the permitted response or stop/escalate rather than allowing production priority to override a newly unsafe pathway.",
   "references": [
     "REF-NIOSH-CANNABIS-HAZARDS-2024",
     "REF-OSHA-1910-22-WALKING"
