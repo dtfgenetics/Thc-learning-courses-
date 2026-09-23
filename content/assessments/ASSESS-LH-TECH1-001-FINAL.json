@@ -1,7 +1,7 @@
 {
   "id": "ASSESS-LH-TECH1-001-FINAL",
   "title": "Safety, Responsible Practice & Cultivation Workflows — Course Assessment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "published",
   "purpose": "summative",
   "competencies": [
@@ -125,6 +125,12 @@
       "requireControlledImagePaths": true,
       "requireAccessibleImageAlt": true
     },
-    "completionModel": "Course-level evidence combines the knowledge assessment with the linked performance practical; passing the written assessment alone is not treated as demonstrated practical performance."
+    "completionModel": "Course-level evidence combines the knowledge assessment with the linked performance practical; passing the written assessment alone is not treated as demonstrated practical performance.",
+    "courseDerivedAssessment": true,
+    "encyclopediaSubstitutionAllowed": false,
+    "untaughtMaterialAllowed": false,
+    "teachingProvenanceMode": "derived-from-canonical-course-lessons",
+    "teachingProvenanceAudit": "scripts/audit-course1-objective-coverage.mjs",
+    "testToTeachingAudit": "docs/learning-hub/tech1/course-001/TEST-TO-TEACHING-MAP.md"
   }
 }
