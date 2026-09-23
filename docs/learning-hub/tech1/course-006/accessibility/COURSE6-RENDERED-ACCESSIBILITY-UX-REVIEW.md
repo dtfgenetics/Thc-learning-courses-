@@ -19,10 +19,10 @@ Review the actual rendered experience for:
 
 ## Visual checks
 
-Every governed SVG should retain:
+Every governed raster asset and lesson placement should retain:
 
-- meaningful `<title>` and `<desc>`;
-- useful lesson-level `alt` text;
+- useful lesson-level `alt` text and/or equivalent nearby instructional text;
+- an accurate caption or contextual explanation when the image carries instructional meaning;
 - readable text and labels at zoom;
 - meaning not dependent on color alone;
 - no clipping/reflow failures at narrow widths;

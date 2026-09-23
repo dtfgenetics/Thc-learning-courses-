@@ -1,7 +1,7 @@
 # Course Package Manifest — COURSE-LH-TECH1-005
 
 **Course:** Propagation, Canopy, IPM Scouting & Crop Care  
-**Package state:** machine package substantially complete; public route readback verified; exact build identity, responsive/manual QA and human validation open  
+**Package state:** owner-approved published academic package; public route readback and exact build identity verified; responsive/manual QA and professional validation remain open  
 **Date:** 2026-09-18
 
 ## Canonical source
@@ -24,7 +24,7 @@ Course 5 contains 36 distinct scored item objects:
 - six controlled objectives;
 - current final blueprint requires four summative items per objective;
 - assessed items must remain evidence-referenced;
-- final remains draft pending human assessment/release approval.
+- final is published for academic use; human assessment review and professional credential-release approval remain open.
 
 ## Learner asset layer
 
@@ -62,7 +62,7 @@ Course 5 machine checks must preserve:
 6. evidence references on scored items;
 7. complete objective remediation/reassessment sections;
 8. Practical C/D/E crosswalk coverage;
-9. all nine governed assets available through the Academy runtime with accessible SVG metadata;
+9. all nine governed WebP assets available through the Academy runtime with learner-facing alt/caption metadata;
 10. explicit `pesticideApplicatorAuthorityConferred: false` and `treatmentSelectionAuthorityConferred: false` boundaries;
 11. package artifact presence;
 12. truthful draft/release separation from professional credential issuance.
@@ -71,7 +71,6 @@ Course 5 machine checks must preserve:
 
 - confirm CI passes the strict learning-loop gate, shared Courses 3–7 learner-runtime regression and versioned Course 5 review-queue check;
 - complete deployed responsive/manual learner-surface QA;
-- record the exact deployment build/source SHA for the already verified public course, lesson and knowledge-check routes;
 - repair any defects exposed by those checks while preserving the no-pesticide/no-treatment-selection authority boundary.
 
 ## Human/evidence gates open
@@ -84,7 +83,6 @@ Course 5 machine checks must preserve:
 - rendered accessibility/manual UX approval;
 - controlled learner pilot;
 - decision-rule/standard-setting approval where required;
-- academic release approval.
 
 ## Authority boundary
 
