@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-010",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A sensor value is plausible but its required verification interval is overdue. How should the reading be handled?",
   "choices": [
-    "Present it as fully verified because the number looks normal",
-    "Preserve the reading but document the verification-status limitation and follow the supplied process",
-    "Delete the reading",
-    "Adjust protected calibration settings without authorization"
+    "Present the value as fully verified because a plausible reading is stronger evidence than an overdue interval.",
+    "Preserve the reading, clearly document that the required verification interval is overdue, and follow the supplied verification/escalation process.",
+    "Delete the reading because any data from an overdue sensor are automatically unusable.",
+    "Adjust calibration settings until the reading matches a nearby verified sensor."
   ],
   "correct": 1,
-  "rationale": "Preserve the reading but document the verification-status limitation and follow the supplied process. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "An overdue verification interval weakens confidence in the measurement but does not automatically prove the value is wrong. The reading should remain in the record with its quality limitation clearly documented, and the instrument should be handled through the approved verification process. Deleting the value or altering protected calibration settings would erase evidence or exceed Technician I authority.",
   "references": [
     "REF-VPD-002"
   ],

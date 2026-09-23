@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A controller reports a fault code outside Technician I training. What is the correct boundary?",
   "choices": [
-    "Guess a repair based on the code wording",
-    "Reset and reprogram all controls",
-    "Ignore the code if plants look normal",
-    "Record the code/context and escalate according to the supplied procedure rather than attempting unauthorized repair"
+    "Attempt a repair that matches the wording of the fault code if the action appears low risk.",
+    "Reset and reprogram the controller so the fault can be tested under a new configuration.",
+    "Ignore the code if environmental readings and plants still appear normal.",
+    "Record the fault code and operating context and escalate according to the supplied procedure rather than attempting troubleshooting outside training."
   ],
   "correct": 3,
-  "rationale": "Record the code/context and escalate according to the supplied procedure rather than attempting unauthorized repair. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A fault code outside the technician's training marks an authority boundary. The technician can preserve the code, time, equipment state, and any permitted observations, but should not guess at repairs or change protected settings. Normal-looking plants do not make an unknown equipment fault irrelevant.",
   "references": [
     "REF-VPD-002"
   ],

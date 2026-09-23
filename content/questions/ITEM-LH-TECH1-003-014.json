@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which action is most consistent with operator-level sensor care when explicitly allowed by procedure?",
   "choices": [
-    "Open protected electronics for diagnosis",
-    "Inspect cleanliness/status and perform the defined comparison or readiness check",
-    "Rewrite calibration coefficients",
-    "Modify HVAC programming"
+    "Opening protected electronics to look for loose connections during a sensor check.",
+    "Inspecting cleanliness and visible condition and performing the defined comparison/readiness check when the procedure authorizes it.",
+    "Changing calibration coefficients so the sensor agrees with nearby instruments.",
+    "Changing HVAC programming so the environment matches the sensor reading."
   ],
   "correct": 1,
-  "rationale": "Inspect cleanliness/status and perform the defined comparison or readiness check. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "Operator-level care generally stays with external inspection, cleanliness, basic status checks, and defined comparisons that the procedure specifically authorizes. Opening protected electronics, rewriting calibration parameters, or changing control logic crosses into servicing or control authority that Technician I does not automatically hold.",
   "references": [
     "REF-VPD-002"
   ],
