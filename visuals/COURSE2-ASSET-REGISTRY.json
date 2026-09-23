@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "courseId": "COURSE-LH-TECH1-002",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 2 SVG files remain the verified learner-facing compatibility baseline. Ten high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
+    "publicDelivery": "Owner-approved lossless WebP assets are the production learner-facing delivery format. Legacy SVG files remain provenance/reference sources only and are not production instructional assets.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -23,8 +23,8 @@
       "jpg"
     ],
     "svgProductionTarget": false,
-    "legacySvgCompatibilityAllowed": true,
-    "rasterReplacementRequired": true
+    "legacySvgCompatibilityAllowed": false,
+    "rasterReplacementRequired": false
   },
   "driveStorage": {
     "folderId": "1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o",
@@ -37,12 +37,9 @@
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Representative crop-walk route and sample context",
-      "learnerPath": "/assets/course2/representative-crop-walk-route.svg",
-      "sourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/representative-crop-walk-route.svg",
-      "driveFileId": "1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be",
-      "driveFileUrl": "https://drive.google.com/file/d/1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/representative-crop-walk-route.webp",
+      "sourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/representative-crop-walk-route.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-01"
       ],
@@ -58,7 +55,7 @@
       ],
       "purpose": "Teach why a crop walk needs a representative route, location context and a denominator before the learner makes a room-level statement.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -85,19 +82,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/representative-crop-walk-route.svg",
+        "learnerPath": "/assets/course2/representative-crop-walk-route.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/representative-crop-walk-route.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be",
+        "driveFileUrl": "https://drive.google.com/file/d/1bFsloLImhTHIkbKhtecwFRrVUdPRF_Be/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-002",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Morphology-based developmental staging",
-      "learnerPath": "/assets/course2/morphology-stage-evidence.svg",
-      "sourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/morphology-stage-evidence.svg",
-      "driveFileId": "1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza",
-      "driveFileUrl": "https://drive.google.com/file/d/1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/morphology-stage-evidence.webp",
+      "sourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/morphology-stage-evidence.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-02"
       ],
@@ -112,7 +115,7 @@
       "publicSourceLinks": [],
       "purpose": "Separate observable developmental morphology from calendar-only staging and reinforce that published timing is context rather than a universal production rule.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -139,19 +142,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/morphology-stage-evidence.svg",
+        "learnerPath": "/assets/course2/morphology-stage-evidence.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/morphology-stage-evidence.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza",
+        "driveFileUrl": "https://drive.google.com/file/d/1kGi-w_LUEDfixKqLH1DSBNaKlkW7Hhza/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-003",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Diagnostic photo evidence set",
-      "learnerPath": "/assets/course2/diagnostic-photo-evidence-set.svg",
-      "sourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
-      "driveFileId": "1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq",
-      "driveFileUrl": "https://drive.google.com/file/d/1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/diagnostic-photo-evidence-set.webp",
+      "sourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/diagnostic-photo-evidence-set.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-04"
       ],
@@ -168,7 +177,7 @@
       ],
       "purpose": "Teach the context-view, whole-plant-view and close-detail image sequence while preserving identity, time and color fidelity for reconstructable crop records.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -195,19 +204,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+        "learnerPath": "/assets/course2/diagnostic-photo-evidence-set.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/diagnostic-photo-evidence-set.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq",
+        "driveFileUrl": "https://drive.google.com/file/d/1_yIa32k-99B6QSLl721tMn1ny5ZIlRgq/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-004",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Spatial pattern comparison",
-      "learnerPath": "/assets/course2/spatial-pattern-comparison.svg",
-      "sourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/spatial-pattern-comparison.svg",
-      "driveFileId": "1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7",
-      "driveFileUrl": "https://drive.google.com/file/d/1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/spatial-pattern-comparison.webp",
+      "sourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/spatial-pattern-comparison.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-01"
       ],
@@ -221,7 +236,7 @@
       "publicSourceLinks": [],
       "purpose": "Compare isolated, edge-associated, zonal or clustered, and widespread spatial patterns while keeping distribution separate from causal interpretation.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -248,19 +263,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/spatial-pattern-comparison.svg",
+        "learnerPath": "/assets/course2/spatial-pattern-comparison.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/spatial-pattern-comparison.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7",
+        "driveFileUrl": "https://drive.google.com/file/d/1F0QeitcZwsqkHokVoVsqm92Cs1MzHea7/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-005",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Reconstructable crop-record and shift-handoff chain",
-      "learnerPath": "/assets/course2/reconstructable-handoff-chain.svg",
-      "sourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
-      "driveFileId": "1R64EMjV4jtRsGJD3JWptXOF_murzcLU8",
-      "driveFileUrl": "https://drive.google.com/file/d/1R64EMjV4jtRsGJD3JWptXOF_murzcLU8/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/reconstructable-handoff-chain.webp",
+      "sourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reconstructable-handoff-chain.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-04"
       ],
@@ -275,7 +296,7 @@
       "publicSourceLinks": [],
       "purpose": "Show the continuity chain from observation through record, action or escalation, handoff and recheck so another qualified person can reconstruct what happened and what remains open.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -302,19 +323,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
+        "learnerPath": "/assets/course2/reconstructable-handoff-chain.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reconstructable-handoff-chain.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1R64EMjV4jtRsGJD3JWptXOF_murzcLU8",
+        "driveFileUrl": "https://drive.google.com/file/d/1R64EMjV4jtRsGJD3JWptXOF_murzcLU8/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-006",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Crop-walk room-map practice worksheet",
-      "learnerPath": "/assets/course2/crop-walk-room-map-practice.svg",
-      "sourcePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
-      "driveFileId": "19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX",
-      "driveFileUrl": "https://drive.google.com/file/d/19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/crop-walk-room-map-practice.webp",
+      "sourcePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/crop-walk-room-map-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-01"
       ],
@@ -328,7 +355,7 @@
       "publicSourceLinks": [],
       "purpose": "Give learners a printable room-map activity for drawing a representative route, recording denominator and spatial pattern, and separating observation/context/uncertainty before escalation.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -355,19 +382,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
+        "learnerPath": "/assets/course2/crop-walk-room-map-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/crop-walk-room-map-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX",
+        "driveFileUrl": "https://drive.google.com/file/d/19yfPykI9EjTLyDM1x7R7Zb28CRMROfXX/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-007",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Observation record and handoff practice worksheet",
-      "learnerPath": "/assets/course2/observation-handoff-practice.svg",
-      "sourcePath": "apps/web/public/assets/course2/observation-handoff-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-handoff-practice.svg",
-      "driveFileId": "15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA",
-      "driveFileUrl": "https://drive.google.com/file/d/15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/observation-handoff-practice.webp",
+      "sourcePath": "apps/web/public/assets/course2/observation-handoff-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-handoff-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-04"
       ],
@@ -382,7 +415,7 @@
       "publicSourceLinks": [],
       "purpose": "Give learners a printable structured record for practicing identity, direct observation, photo evidence, context, uncertainty, escalation, handoff, recheck and correction history.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -409,19 +442,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/observation-handoff-practice.svg",
+        "learnerPath": "/assets/course2/observation-handoff-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-handoff-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA",
+        "driveFileUrl": "https://drive.google.com/file/d/15QdqMlqJZmjy_xg4AgRK8twEm3GyxapA/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-008",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Observation, interpretation, and diagnostic-boundary workflow",
-      "learnerPath": "/assets/course2/observation-interpretation-diagnosis-boundary.svg",
-      "sourcePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
-      "driveFileId": "1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw",
-      "driveFileUrl": "https://drive.google.com/file/d/1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/observation-interpretation-diagnosis-boundary.webp",
+      "sourcePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-03"
       ],
@@ -437,7 +476,7 @@
       ],
       "purpose": "Teach the evidence boundary from direct observation through pattern/context and provisional interpretation to confirmation or escalation, emphasizing that clues narrow possibilities without proving a single cause.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -464,19 +503,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+        "learnerPath": "/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/observation-interpretation-diagnosis-boundary.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw",
+        "driveFileUrl": "https://drive.google.com/file/d/1RmCMeNyBaC9LN-cRCjBPPW3SDGcZQ6Fw/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-009",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Reproductive morphology reference",
-      "learnerPath": "/assets/course2/reproductive-morphology-reference.svg",
-      "sourcePath": "apps/web/public/assets/course2/reproductive-morphology-reference.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reproductive-morphology-reference.svg",
-      "driveFileId": "12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa",
-      "driveFileUrl": "https://drive.google.com/file/d/12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/reproductive-morphology-reference.webp",
+      "sourcePath": "apps/web/public/assets/course2/reproductive-morphology-reference.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reproductive-morphology-reference.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-02"
       ],
@@ -492,7 +537,7 @@
       ],
       "purpose": "Give learners an original schematic reference for visible pistillate and staminate reproductive structures and for documenting mixed or unexpected expression without assigning an unsupported cause.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -519,19 +564,25 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/reproductive-morphology-reference.svg",
+        "learnerPath": "/assets/course2/reproductive-morphology-reference.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/reproductive-morphology-reference.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa",
+        "driveFileUrl": "https://drive.google.com/file/d/12HYzvOKia-ECsVE50CiwTtWfTFAd_yWa/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-002-010",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Photo evidence audit practice worksheet",
-      "learnerPath": "/assets/course2/photo-evidence-audit-practice.svg",
-      "sourcePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
-      "driveFileId": "1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO",
-      "driveFileUrl": "https://drive.google.com/file/d/1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO/view",
-      "driveMirrorStatus": "mirrored",
+      "learnerPath": "/assets/course2/photo-evidence-audit-practice.webp",
+      "sourcePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/photo-evidence-audit-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-002-04"
       ],
@@ -547,7 +598,7 @@
       ],
       "purpose": "Give learners a printable evidence-quality exercise using synthetic image-set examples to audit context, detail, identity/time, comparison value, lighting consistency, image fidelity, retake needs and diagnostic limits.",
       "version": "1.0.0",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
         "status": "owner-approved-production-release",
         "allowedFormats": [
@@ -574,7 +625,16 @@
         ],
         "releaseApproved": true,
         "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
-      }
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
+        "learnerPath": "/assets/course2/photo-evidence-audit-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/photo-evidence-audit-practice.svg",
+        "driveMirrorStatus": "mirrored",
+        "driveFileId": "1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO",
+        "driveFileUrl": "https://drive.google.com/file/d/1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO/view"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
   ],
   "ownerReleaseApproval": {
