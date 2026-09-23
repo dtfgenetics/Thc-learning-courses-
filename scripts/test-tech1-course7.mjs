@@ -39,7 +39,7 @@ const expectedObjectives = Array.from({ length: 6 }, (_, i) => `LO-LH-TECH1-007-
 for (const id of expectedObjectives) assert.ok(exists(`content/learning-objectives/${id}.json`), `missing Course 7 objective ${id}`);
 
 const assess = read('content/assessments/ASSESS-LH-TECH1-007-M01.json');
-assert.equal(assess.status, 'draft');
+assert.equal(assess.status, 'published');
 assert.equal(assess.purpose, 'formative');
 assert.equal(assess.items.length, 12);
 assert.equal(new Set(assess.items).size, 12);
