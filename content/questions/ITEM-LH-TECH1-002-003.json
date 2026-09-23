@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-002-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PLANT-BIO-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician inspected 12 plants but did not record where they were located. What is the main evidence problem?",
   "choices": [
-    "The sample is automatically too small",
-    "The plants must be reinspected only at night",
-    "The observations cannot be reliably reconstructed or interpreted spatially",
-    "Location never matters when photographs exist"
+    "The number inspected is too small to support any useful crop observation.",
+    "The plants must be reinspected under different lighting before the observations can be used.",
+    "The observations lack enough location context to reconstruct the route or interpret whether findings were clustered, edge-biased, or broadly distributed.",
+    "Photographs make location records unnecessary as long as each plant image is clear."
   ],
   "correct": 2,
-  "rationale": "Without location context, another person cannot determine the spatial distribution or reproduce the observation route.",
+  "rationale": "Without location information, another person cannot tell where the 12 plants were within the room or whether the findings were concentrated in one area. The observations may still be valid for those plants, but the spatial pattern and route cannot be reconstructed reliably. Clear photos help document appearance, but they do not replace location context unless the location is also captured.",
   "references": [
     "REF-PLANT-BIO-001"
   ],
