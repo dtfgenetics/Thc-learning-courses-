@@ -1,7 +1,7 @@
 # Final Human Review Worklist — COURSE-LH-TECH1-004
 
 **Course:** Water, Root Zone, Nutrition & Irrigation Fundamentals  
-**Controlled state:** `draft`  
+**Controlled state:** `published` for owner-approved academic use  
 **Purpose:** track decisions that require real reviewer, evaluator, pilot or release evidence rather than machine-generated completion claims.
 
 ## 1. Subject-matter / technical review
