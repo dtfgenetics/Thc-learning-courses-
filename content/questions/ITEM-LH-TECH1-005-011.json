@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which is a direct sign rather than a symptom?",
   "choices": [
-    "Leaf chlorosis",
-    "Wilting",
-    "An observed insect, egg or identifiable fungal structure",
-    "Stunted growth"
+    "Leaf chlorosis because it directly identifies the causal organism.",
+    "Wilting because it shows the plant is under stress.",
+    "An observed insect, egg, webbing, frass, or identifiable pathogen structure associated with the problem.",
+    "Stunted growth because growth reduction is visible evidence."
   ],
   "correct": 2,
-  "rationale": "An observed insect, egg or identifiable fungal structure. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A sign is direct evidence of the pest or pathogen itself or a structure it produced, while a symptom is the plant's response. Chlorosis, wilting, and stunting are symptoms with many possible causes. An observed insect, egg, webbing, frass, or identifiable fungal structure is more direct evidence of the organism.",
   "references": [
     "REF-IPM-001"
   ],
