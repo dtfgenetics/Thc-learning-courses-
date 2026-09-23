@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-014",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Three detections occur on one edge plant versus three detections across three distant zones. Why are these not equivalent?",
   "choices": [
-    "The raw total makes them identical.",
-    "Spatial distribution changes the inferred affected scope and spread risk.",
-    "Only severity matters in IPM.",
-    "Location should not be included in scouting data."
+    "Treat the two situations as equivalent because each contains three detections and the same total abundance.",
+    "Treat them differently because detections spread across distant zones imply a broader affected scope and potentially different movement/spread risk than a single localized plant.",
+    "Use severity only to distinguish the situations, because distribution has less value than symptom intensity for response decisions.",
+    "Omit location from the trend if trap or scouting totals are already recorded, since raw counts are easier to compare between rounds."
   ],
   "correct": 1,
-  "rationale": "Spatial distribution changes the inferred affected scope and spread risk.",
+  "rationale": "The same number of detections can represent very different spatial patterns. Three findings on one edge plant describe a localized cluster, while three findings across distant zones indicate broader distribution and potentially different pathways or containment needs. Location is therefore part of the evidence, not an optional detail. Total counts alone cannot capture spread scope.",
   "references": [
     "REF-IPM-001"
   ]
