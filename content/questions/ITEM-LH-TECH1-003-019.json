@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A scheduled reading was missed, but the technician remembers approximately what the display showed. What is the strongest record practice?",
   "choices": [
-    "Backfill the remembered value at the scheduled time",
-    "Use the target value instead",
-    "Use the facility missing-data or late-entry process and do not represent a remembered estimate as the original measurement",
-    "Copy the next reading backward"
+    "Backfill the remembered approximate value at the scheduled time and mark it as an estimate.",
+    "Enter the target value because it represents what the room should have been at the missed time.",
+    "Use the facility's missing-data or late-entry process and do not present a remembered estimate as if it were the original contemporaneous measurement.",
+    "Copy the next available reading backward to preserve a continuous trend."
   ],
   "correct": 2,
-  "rationale": "Use the facility missing-data or late-entry process and do not represent a remembered estimate as the original measurement. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A missed measurement is different from a measurement that was actually observed and recorded at the required time. Reconstructing a remembered value, target, or later reading as though it were contemporaneous creates false precision and timing. The controlled missing-data or late-entry process preserves the fact that the original observation was not captured.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ],
