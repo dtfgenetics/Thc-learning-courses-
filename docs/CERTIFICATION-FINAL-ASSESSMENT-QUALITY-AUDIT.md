@@ -8,6 +8,16 @@ This audit adds a review-prioritization layer on top of the existing Learning Hu
 
 The heuristics are **not** validity decisions and are not content quotas.
 
+## Current quality-pass status
+
+All **13 conventional canonical Technician finals** have now completed the repository item-quality pass. Twelve finals contain explicit `itemQualityRevision` metadata after targeted or full item revisions, while Technician I Course 3 contains an `itemQualityReview` marker documenting a full 20/20 review with no item rewrite required. This is a machine-audited content-quality state, **not** human assessment approval or psychometric validation.
+
+Coverage is enforced by:
+
+- `npm run certification:final-quality:coverage`;
+- `npm run certification:final-quality:coverage:json`;
+- `npm run certification:final-quality:coverage:check`.
+
 Run:
 
 - `npm run certification:final-quality` — human-readable table;
@@ -54,7 +64,7 @@ A flagged item should be inspected in context. Do not rewrite a defensible item 
 
 `scripts/check-learning-hub-item-quality.mjs` remains the broader structural item-bank gate for all Learning Hub assessment objects. It already checks duplicate/near-duplicate stems, reference/objective/competency integrity, thin stems/rationales, duplicate choices, keyed-answer validity, and other mechanical issues.
 
-The certification-final audit is narrower: it focuses on the 13 conventional Technician finals and produces a course-level review-priority picture.
+The certification-final audit is narrower: it focuses on the 13 conventional Technician finals and produces a course-level review-priority picture. `check-certification-final-quality-coverage.mjs` separately verifies that every conventional final has an explicit quality-review/revision marker, that revised-plus-preserved item counts reconcile to `totalItems`, and that human review and professional-validation boundaries remain fail-closed.
 
 ## Assessment boundary
 
