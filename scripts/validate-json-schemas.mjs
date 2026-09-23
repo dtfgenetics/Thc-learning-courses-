@@ -23,6 +23,7 @@ const mappings = [
   ['content/certification-gate-evidence', 'schemas/certification-gate-evidence.schema.json'],
   ['content/standard-setting-evidence', 'schemas/standard-setting-evidence.schema.json'],
   ['content/secure-form-equivalence-evidence', 'schemas/secure-form-equivalence-evidence.schema.json'],
+  ['content/credential-authorization-evidence', 'schemas/credential-authorization-evidence.schema.json'],
   ['content/pilot-plans', 'schemas/pilot-plan.schema.json'],
   ['content/programs', 'schemas/program.schema.json'],
   ['content/questions', 'schemas/question.schema.json'],
