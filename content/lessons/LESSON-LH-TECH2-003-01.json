@@ -76,7 +76,7 @@
           "type": "image",
           "assetId": "VIS-LH-TECH2-003-01",
           "title": "Controlled fertigation batch readiness",
-          "src": "/assets/tech2/course3/outcome-01.svg",
+          "src": "/assets/tech2/course3/outcome-01.webp",
           "alt": "Pre-batch fertigation readiness workflow verifying the effective recipe, source water, material identity, target volume, calculation inputs, sequence, measuring tools, PPE and authorization before mixing, with any mismatch routed to hold and escalation instead of improvisation.",
           "caption": "Controlled execution starts before mixing. Verify the current instruction, source water, exact materials, calculation inputs, PPE, tools and authority; hold any mismatch rather than improvising.",
           "references": [
@@ -86,8 +86,9 @@
           ],
           "extensions": {
             "conceptId": "VIS-LH-TECH2-003-01",
-            "releaseApproved": false,
-            "releaseState": "review-candidate"
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
           }
         }
       ]
