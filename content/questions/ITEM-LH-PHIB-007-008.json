@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-007-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "When can temporary containment be justified before confirmation?",
+  "choices": [
+    "Only after a final diagnosis.",
+    "When a plausible high-consequence pathway could spread and reversible movement controls can reduce risk while evidence develops.",
+    "Whenever any plant looks different.",
+    "Never; containment requires certainty."
+  ],
+  "correct": 1,
+  "rationale": "Containment can be proportionate to consequence and transmission risk even under uncertainty.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}
