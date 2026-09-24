@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/job-task-analysis-evidence.schema.json",
+  "title": "THC Academy Job Task Analysis Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "credentialProgramId",
+    "credentialProgramVersion",
+    "status",
+    "baselineId",
+    "baselineAsOf",
+    "panel",
+    "population",
+    "taskFamilies",
+    "missingTaskFamilies",
+    "analystId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^JTA-[A-Z0-9-]+$"
+    },
+    "credentialProgramId": {
+      "enum": [
+        "CREDPROG-CULT-TECH-I-001",
+        "CREDPROG-CULT-TECH-II-001"
+      ]
+    },
+    "credentialProgramVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "preliminary",
+        "complete",
+        "invalidated"
+      ]
+    },
+    "baselineId": {
+      "type": "string",
+      "pattern": "^THC-CERT-OCCUPATIONAL-SOURCE-BASELINE-[0-9]+$"
+    },
+    "baselineAsOf": {
+      "type": "string",
+      "format": "date"
+    },
+    "panel": {
+      "type": "object",
+      "required": [
+        "panelId",
+        "respondentCount",
+        "employerPerspectiveCount",
+        "cultivationRoleCount",
+        "minimumRatingsPerTask"
+      ],
+      "properties": {
+        "panelId": {
+          "type": "string",
+          "minLength": 3
+        },
+        "respondentCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "employerPerspectiveCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cultivationRoleCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minimumRatingsPerTask": {
+          "type": "integer",
+          "minimum": 2
+        }
+      },
+      "additionalProperties": false
+    },
+    "population": {
+      "type": "object",
+      "required": [
+        "definition",
+        "operatingContexts",
+        "jurisdictionNotes"
+      ],
+      "properties": {
+        "definition": {
+          "type": "string",
+          "minLength": 40
+        },
+        "operatingContexts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "jurisdictionNotes": {
+          "type": "string",
+          "minLength": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "taskFamilies": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "taskFamilyId",
+          "label",
+          "courseMappings",
+          "ratingsCount",
+          "frequencyMean",
+          "importanceMean",
+          "criticalityMean",
+          "essentialityRate",
+          "dispositionCounts",
+          "consensusDisposition"
+        ],
+        "properties": {
+          "taskFamilyId": {
+            "type": "string",
+            "pattern": "^TECH[12]-[A-Z0-9-]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 5
+          },
+          "courseMappings": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+            }
+          },
+          "ratingsCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "frequencyMean": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "importanceMean": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "criticalityMean": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "essentialityRate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "dispositionCounts": {
+            "type": "object",
+            "required": [
+              "keep",
+              "adapt",
+              "reject"
+            ],
+            "properties": {
+              "keep": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "adapt": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "reject": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "consensusDisposition": {
+            "enum": [
+              "keep",
+              "adapt",
+              "reject",
+              "mixed"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "missingTaskFamilies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "rationale",
+          "proposedCourseMappings",
+          "reviewerSupportCount"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^JTA-ADD-[A-Z0-9-]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 5
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 20
+          },
+          "proposedCourseMappings": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+            }
+          },
+          "reviewerSupportCount": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "analystId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 20
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    }
+  },
+  "additionalProperties": false
+}
