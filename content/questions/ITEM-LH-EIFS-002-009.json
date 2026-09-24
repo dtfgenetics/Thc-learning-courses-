@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Which metric combination best supports a uniformity review?",
   "choices": [
-    "Average, minimum, maximum and spatial pattern from a repeatable grid.",
     "Only center PPFD.",
     "Only fixture wattage.",
-    "Only DLI from a weather service."
+    "Only DLI from a weather service.",
+    "Average, minimum, maximum and spatial pattern from a repeatable grid."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Distribution review requires both summary metrics and spatial pattern.",
   "references": [
     "REF-LIGHT-001"
