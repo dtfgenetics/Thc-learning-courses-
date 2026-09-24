@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 10
+    "evidencePlansSeeded": 11
   },
   "targets": [
     {
@@ -75,7 +75,9 @@
         "environmental commissioning"
       ],
       "sequence": 2,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-011.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-020",
