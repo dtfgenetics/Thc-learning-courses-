@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A cool surface approaches the room dew-point temperature. What risk becomes more plausible?",
   "choices": [
-    "Condensation on that surface.",
     "Automatic nutrient precipitation.",
     "Higher PPFD.",
-    "Permanent loss of transpiration."
+    "Permanent loss of transpiration.",
+    "Condensation on that surface."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "A surface near or below dew point can support local saturation and condensation.",
   "references": [
     "REF-VPD-002"
