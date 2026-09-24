@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-007-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-EIFS-007-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should runoff or return-sample timing be recorded?",
+  "choices": [
+    "Different collection points can represent different solution fractions and affect trend interpretation.",
+    "Timing never matters.",
+    "Only total volume matters.",
+    "All runoff samples are identical."
+  ],
+  "correct": 0,
+  "rationale": "Sampling timing and method affect what the sample represents.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
