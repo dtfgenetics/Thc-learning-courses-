@@ -52,10 +52,15 @@ for(const p of programs){
     courseLocks:locks,
     performanceAssessments:perf,
     currentValidationState:p.validation??{},
+    sourceReviewCommand:'npm run certification:sources:review:write',
+    sourceReviewPackets:locks.map(x=>'generated/certification-source-review-packets/'+x.courseId+'.md'),
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     sections:{
       technicalCurriculumReview:[
+        'Generate the certification public-source review packets before technical review.',
         'Review every locked course version for occupational scope, scientific/technical accuracy and role boundaries.',
+        'Use the course source-review packet to verify direct references, authoritative-source scope, verification dates and exact-version supplemental sources.',
+        'Check that generic greenhouse/extension evidence is not promoted into cannabis-specific numeric targets, pesticide authorization or finished-product specifications without appropriate supporting evidence.',
         'Record reviewer count and disposition all material technical concerns.'
       ],
       jobTaskAnalysis:[
@@ -146,7 +151,10 @@ packets.push({
 function md(p){
   const lines=['# Program Validation Packet — '+p.id,'','Packet type: '+p.packetType,''];
   if(p.packetType==='occupational-program-validation'){
-    lines.push('Credential program: '+p.credentialProgramId+'@'+p.credentialProgramVersion,'','## Occupational claim','',p.occupationalClaim,'','## Target roles','',...p.targetRoles.map(x=>'- '+x),'','## Current course locks','',...p.courseLocks.map(x=>'- '+x.courseId+'@'+x.courseVersion+' — '+x.title),'','## Required practical/capstone anchors','',...p.performanceAssessments.map(x=>'- '+x.id+'@'+x.version+' — '+x.assessmentType+' / '+x.status),'','## Start record','', '    '+p.startCommand,'');
+    lines.push('Credential program: '+p.credentialProgramId+'@'+p.credentialProgramVersion,'','## Occupational claim','',p.occupationalClaim,'','## Target roles','',...p.targetRoles.map(x=>'- '+x),'','## Current course locks','',...p.courseLocks.map(x=>'- '+x.courseId+'@'+x.courseVersion+' — '+x.title),'','## Public-source technical review','',
+      'Generate exact-version course source packets first:','', '    '+p.sourceReviewCommand,'',
+      ...p.sourceReviewPackets.map(x=>'- '+x),'',
+      '## Required practical/capstone anchors','',...p.performanceAssessments.map(x=>'- '+x.id+'@'+x.version+' — '+x.assessmentType+' / '+x.status),'','## Start record','', '    '+p.startCommand,'');
   }else{
     lines.push('Controls: '+p.controlsId+'@'+p.controlsVersion,'Applies to: '+p.appliesTo.join(', '),'Current status: '+p.currentStatus,'','## Unresolved governance decisions','',
       '- Final attempt limit: '+String(p.unresolvedDecisions.finalAttemptLimit),
