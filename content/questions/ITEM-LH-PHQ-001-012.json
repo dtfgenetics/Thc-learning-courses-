@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-001-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A short staging delay occurs. What is the strongest disposition principle?",
+  "choices": [
+    "Preserve timing, lot identity and product/process evidence, then evaluate consequence under the controlled procedure.",
+    "Automatically reject the lot.",
+    "Automatically release the lot.",
+    "Erase the delay from the record."
+  ],
+  "correct": 0,
+  "rationale": "A deviation is not automatic proof of failure, but must be evaluated from evidence.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
