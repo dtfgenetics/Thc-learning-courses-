@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "What evidence best evaluates whether dehumidification keeps up with a recurring moisture event?",
   "choices": [
-    "Trend temperature, RH, irrigation/lights state and equipment response through the event.",
     "Only the daily average RH.",
     "Only the dehumidifier nameplate.",
-    "Only one manual reading."
+    "Only one manual reading.",
+    "Trend temperature, RH, irrigation/lights state and equipment response through the event."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Time-series evidence across the moisture event shows whether removal capacity and sequencing respond adequately.",
   "references": [
     "REF-ENV-TEMP-2025-001",
