@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should photoperiod not be changed solely to preserve DLI?",
   "choices": [
-    "Photoperiod can have developmental significance beyond its role in photon integration.",
     "Photoperiod has no biological meaning.",
     "DLI never changes with time.",
+    "Photoperiod can have developmental significance beyond its role in photon integration.",
     "Only spectrum matters."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Photoperiod can influence plant development and should not be treated as a neutral arithmetic variable.",
   "references": [
     "REF-FLOWER-MORPH-2023-001"
