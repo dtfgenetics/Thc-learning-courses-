@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A plant-health intervention is followed by one normal reading immediately afterward. What is the strongest interpretation?",
+  "choices": [
+    "Recovery is proven.",
+    "The reading is useful but usually insufficient without an appropriate time window and representative recovery metrics.",
+    "The original deviation can be deleted.",
+    "The intervention can never work."
+  ],
+  "correct": 1,
+  "rationale": "Recovery requires evidence matched to the biological/process failure mode over a meaningful window.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
