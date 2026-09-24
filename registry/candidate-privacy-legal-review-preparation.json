@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "id": "CANDIDATE-PRIVACY-LEGAL-REVIEW-PREPARATION-001",
+  "updated": "2026-09-24",
+  "controlsId": "CANDIDATE-GOVERNANCE-CONTROLS-001",
+  "controlsVersion": "0.2.0",
+  "state": "review-packet-ready-privacy-legal-approval-pending",
+  "appliesTo": [
+    "CREDPROG-CULT-TECH-I-001",
+    "CREDPROG-CULT-TECH-II-001"
+  ],
+  "sourceIds": [
+    "REF-ISO-17024-2026-001",
+    "REF-ADA-TESTING-ACCOMMODATIONS-001",
+    "REF-FTC-DATA-MINIMIZATION-001"
+  ],
+  "proposedRetentionPeriods": {
+    "failedPracticeAttempts": "90 days after last practice activity, unless linked to an active appeal, security investigation or required audit record",
+    "readinessAttempts": "12 months after last readiness activity, unless superseded by a credential attempt or active review",
+    "credentialAttempts": "7 years after final attempt disposition, or longer when required by applicable law, contract, accreditation or an unresolved appeal/security matter",
+    "evaluatorCalibrationEvidence": "5 years after the calibration evidence is superseded or evaluator authorization ends, whichever is later",
+    "appealAdjudicationRecords": "7 years after final appeal disposition, or longer while a related legal/security matter remains open",
+    "issuedCredentialVerificationRecords": "for the active credential lifetime plus 7 years after expiration, revocation or retirement of the credential record",
+    "revokedExpiredCredentials": "7 years after revocation or expiration, with the minimum public verification projection retained only as necessary to verify historical status",
+    "securityLogs": "24 months by default; incident-linked logs retained with the incident record until its longer retention requirement expires"
+  },
+  "reviewAreas": [
+    {
+      "id": "PL-01",
+      "area": "data inventory and minimization",
+      "questions": [
+        "For each candidate-data field, what specific administration, assessment, security, appeal, audit or credential-verification purpose requires it?",
+        "Can any direct identifier or sensitive field be removed, pseudonymized, shortened in retention, or kept outside ordinary assessor views?",
+        "Are pilot/research fields separated from operational credential records?"
+      ],
+      "requiredEvidence": [
+        "data inventory",
+        "purpose map",
+        "field-level public/private classification",
+        "minimum-necessary access map"
+      ]
+    },
+    {
+      "id": "PL-02",
+      "area": "candidate notice, consent/lawful-basis and policy disclosure",
+      "questions": [
+        "What notice must candidates receive before enrollment, pilot participation, assessment, evidence upload and credential verification?",
+        "Which processing activities rely on consent, contract, legitimate operational need, legal obligation or another applicable basis in each intended jurisdiction?",
+        "Are retest, appeal, accommodation, retention, public verification and security-monitoring practices disclosed clearly before use?"
+      ],
+      "requiredEvidence": [
+        "candidate privacy notice",
+        "terms/policy version",
+        "jurisdiction applicability review",
+        "change-notice process"
+      ]
+    },
+    {
+      "id": "PL-03",
+      "area": "accommodation confidentiality",
+      "questions": [
+        "Is disability/medical documentation separated from ordinary evaluator views?",
+        "Do assessors receive only the minimum administration instruction needed to implement an approved accommodation?",
+        "Can public verification, score reports or evaluator notes expose accommodation or diagnosis information?"
+      ],
+      "requiredEvidence": [
+        "accommodation data-flow map",
+        "role access matrix",
+        "public-output verification",
+        "confidentiality procedure"
+      ]
+    },
+    {
+      "id": "PL-04",
+      "area": "retention and disposal",
+      "questions": [
+        "Do the proposed retention periods satisfy applicable law, contract, accreditation, appeals, security and credential-verification needs?",
+        "Are shorter periods appropriate for practice/readiness data and longer periods justified for credential/appeal/audit records?",
+        "Can deletion/disposal claims be honored across primary storage, backups, logs and third-party processors?"
+      ],
+      "requiredEvidence": [
+        "approved retention schedule",
+        "legal applicability rationale",
+        "backup/log deletion behavior",
+        "disposal/audit procedure"
+      ]
+    },
+    {
+      "id": "PL-05",
+      "area": "candidate access, correction, appeal and data-rights handling",
+      "questions": [
+        "What records may the candidate view or correct?",
+        "How are identity/contact corrections distinguished from challenges to scored evidence?",
+        "Which secure assessment content must remain withheld to protect form security?",
+        "How are applicable privacy/data-rights requests authenticated, tracked and completed?"
+      ],
+      "requiredEvidence": [
+        "candidate access/correction policy",
+        "appeal crosswalk",
+        "secure-content withholding rule",
+        "request log/process"
+      ]
+    },
+    {
+      "id": "PL-06",
+      "area": "public credential verification",
+      "questions": [
+        "Is the public verification projection limited to the minimum approved credential fields?",
+        "Are raw scores, evaluator notes, secure items, private evidence and accommodation information excluded?",
+        "How are revoked, expired, suspended or retired credentials represented without unnecessary personal disclosure?"
+      ],
+      "requiredEvidence": [
+        "public verification field list",
+        "sample projections for active/expired/revoked states",
+        "privacy review disposition"
+      ]
+    },
+    {
+      "id": "PL-07",
+      "area": "access control, vendors and processors",
+      "questions": [
+        "Are candidate, instructor, evaluator, administrator, approver, security/audit and public-verifier roles separated?",
+        "Which external identity, database, storage, email, monitoring or assessment providers process candidate data?",
+        "Are processor responsibilities, retention/deletion, security, incident and access obligations documented?"
+      ],
+      "requiredEvidence": [
+        "RBAC matrix",
+        "vendor/processor inventory",
+        "contracts/data-processing terms where applicable",
+        "privileged-access review"
+      ]
+    },
+    {
+      "id": "PL-08",
+      "area": "security incident and breach handling",
+      "questions": [
+        "Does the incident process distinguish candidate-data exposure, secure assessment exposure, credential fraud and integrity compromise?",
+        "Are evidence preservation, containment, notification analysis and decision authority documented?",
+        "Are jurisdiction-specific notification duties reviewed before live operation?"
+      ],
+      "requiredEvidence": [
+        "incident response plan",
+        "notification applicability matrix",
+        "security-log retention rule",
+        "test/exercise evidence"
+      ]
+    },
+    {
+      "id": "PL-09",
+      "area": "jurisdiction, employment/education and records applicability",
+      "questions": [
+        "Which jurisdictions will the Academy operate in, recruit from, store/process data in or issue credentials into?",
+        "Do employment, education, biometric/identity, consumer-protection, privacy, records, accessibility or credentialing rules add requirements?",
+        "Do any customers/employers/accreditors impose contractual retention, audit, confidentiality or data-location requirements?"
+      ],
+      "requiredEvidence": [
+        "jurisdiction scope statement",
+        "applicability matrix",
+        "exceptions/overrides to issuer baseline",
+        "review authority"
+      ]
+    }
+  ],
+  "approvalRecordRequired": {
+    "privacyLegal": true,
+    "exactControlsVersion": "0.2.0",
+    "retentionScheduleApproved": true,
+    "operationalUseAuthorizedOnlyAfterApproval": true
+  },
+  "boundary": "This preparation packet organizes privacy/legal review but does not provide legal advice or legal approval. Operational candidate governance remains blocked until an authorized privacy/legal review approves the applicable version and any required jurisdiction-specific changes."
+}
