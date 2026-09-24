@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should a suspect quantum sensor be verified before a major lighting change?",
   "choices": [
-    "Because instrument error can mimic a distribution problem and drive the wrong adjustment.",
     "Because PPFD is not measurable.",
     "Because fixture labels are always more accurate than meters.",
-    "Because calibration matters only outdoors."
+    "Because calibration matters only outdoors.",
+    "Because instrument error can mimic a distribution problem and drive the wrong adjustment."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Measurement quality must be established before acting on the data.",
   "references": [
     "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
