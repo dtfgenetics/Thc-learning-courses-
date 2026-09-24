@@ -23,7 +23,23 @@ for(const c of out.courses){
 }
 
 const supplement=JSON.parse(fs.readFileSync('registry/public-authoritative-source-supplements.json','utf8'));
-if((supplement.mappings??[]).length!==18) throw new Error('expected eighteen exact-version public-source supplements');
+const mappings=supplement.mappings??[];
+if(mappings.length<26) throw new Error('expected at least 26 exact-version public-source supplements');
+const mappingKeys=new Set(mappings.map((m)=>m.courseId+'|'+m.lessonId+'|'+m.lessonVersion));
+if(mappingKeys.size!==mappings.length) throw new Error('duplicate exact-version source supplement mapping detected');
+const supplementedCourses=new Set(mappings.map((m)=>m.courseId));
+if(supplementedCourses.size<10) throw new Error('expected supplemental source coverage across at least 10 canonical Technician courses');
+for(const mapping of mappings){
+  if(!Array.isArray(mapping.sourceIds)||mapping.sourceIds.length===0) throw new Error(mapping.lessonId+': supplemental mapping must reference at least one source');
+  for(const id of mapping.sourceIds){
+    const p=path.join(root,'content/references',id+'.json');
+    if(!fs.existsSync(p)) throw new Error(mapping.lessonId+': missing supplemental source '+id);
+    const ref=JSON.parse(fs.readFileSync(p,'utf8'));
+    if(!['reviewed','reviewed-source'].includes(ref.status)) throw new Error(id+': supplemental source must be reviewed');
+    if(!ref.lastVerifiedAt) throw new Error(id+': supplemental source missing lastVerifiedAt');
+    if(!ref.url?.startsWith('https://')) throw new Error(id+': supplemental source must use https');
+  }
+}
 const required=[
   'REF-EPA-WPS-LABELING-ACCESS-2026',
   'REF-EPA-WPS-AEZ-2025',
@@ -50,4 +66,4 @@ for(const id of required){
   if(!ref.url?.startsWith('https://')) throw new Error(id+': expected https source URL');
 }
 
-console.log('Certification public-source review packets: PASS (15 courses, 284 lessons, 18 exact-version supplemental mappings).');
+console.log(`Certification public-source review packets: PASS (15 courses, 284 lessons, ${mappings.length} exact-version supplemental mappings across ${supplementedCourses.size} Technician courses).`);
