@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A persistent humidity hotspot aligns with a dense interior canopy section across several days. What is the strongest next step?",
   "choices": [
-    "Map local airflow and temperature/RH through operating transitions before changing the whole-room setpoint.",
     "Increase every fan immediately.",
     "Ignore the hotspot because room average is acceptable.",
-    "Change fertilizer."
+    "Change fertilizer.",
+    "Map local airflow and temperature/RH through operating transitions before changing the whole-room setpoint."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Persistent local patterns call for targeted airflow/microclimate verification before broad changes.",
   "references": [
     "REF-VPD-002",
