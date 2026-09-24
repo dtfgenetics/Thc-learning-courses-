@@ -18,6 +18,12 @@ const programs=readDir('content/credential-programs').filter(x=>x.id);
 const performance=readDir('content/performance-assessments').filter(x=>['practical','capstone'].includes(x.assessmentType));
 const production=read('registry/production-validation-evidence.json');
 const occupationalBaseline=read('registry/public-occupational-source-baseline.json');
+const occupationalInstruments=read('registry/occupational-validation-instruments.json');
+const calibrationCoverage=read('registry/assessor-calibration-packet-coverage.json');
+const pilotIntake=read('registry/certification-pilot-intake-manifest.json');
+const standardSettingCoverage=read('registry/standard-setting-preparation-coverage.json');
+const secureFormCoverage=read('registry/secure-form-preparation-coverage.json');
+const privacyLegalPrep=read('registry/candidate-privacy-legal-review-preparation.json');
 
 const kits=[];
 
@@ -31,6 +37,9 @@ for(const row of registry.courses??[]){
     targetVersion:String(course.version),
     owner:'pilot lead',
     sourceProtocol:row.pilotProtocolPath,
+    pilotIntakeManifest:'registry/certification-pilot-intake-manifest.json',
+    privateIntakeSpec:'docs/assessment/CERTIFICATION-PILOT-PRIVATE-INTAKE-SPEC.md',
+    pilotIntakeLock:pilotIntake.courses.find(x=>x.courseId===course.id)??null,
     startCommand:'npm run evidence:intake:pilot -- --course '+course.id+' --pilot-id <PILOT-ID> --cohorts <COUNT> --participants <COUNT> --authority <PILOT-LEAD> --write',
     requiredActions:[
       'Freeze this exact course version before participant execution.',
@@ -65,6 +74,8 @@ for(const a of performance){
     targetVersion:String(a.version),
     owner:'assessment operations lead',
     sourceProtocol:'assessment-specific assessor/calibration packet where available',
+    calibrationPacket:calibrationCoverage.assessments.find(x=>x.assessmentId===a.id&&String(x.assessmentVersion)===String(a.version))?.packet??null,
+    calibrationCoverageRegistry:'registry/assessor-calibration-packet-coverage.json',
     startCommand:'node scripts/build-practical-calibration-evidence.mjs --input <PRIVATE-PAIRED-RATINGS.json> [--complete] [--write]',
     privateInputTemplate:{
       assessmentId:a.id,
@@ -109,6 +120,8 @@ for(const p of programs){
     occupationalSourceBaselineId:occupationalBaseline.id,
     occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
     jtaEvidenceCommand:'npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write',
+    panelInstrument:occupationalInstruments.programs.find(x=>x.programId===p.id)??null,
+    ratingAnalysisCommand:'npm run occupational:ratings:analyze -- <COMPLETED-SME-RATINGS.csv> --json',
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     currentCourseLocks:locks,
     requiredActions:[
@@ -125,6 +138,25 @@ for(const p of programs){
     ]
   });
 }
+
+kits.push({
+  kind:'candidate-governance',
+  id:'KIT-CANDIDATE-GOVERNANCE-PRIVACY-LEGAL',
+  targetId:privacyLegalPrep.controlsId,
+  targetVersion:String(privacyLegalPrep.controlsVersion),
+  owner:'privacy/legal + program governance authority',
+  sourceProtocol:'docs/CANDIDATE-PRIVACY-LEGAL-REVIEW-PACKET.md',
+  privacyLegalPreparationRegistry:'registry/candidate-privacy-legal-review-preparation.json',
+  standardSettingPreparationRegistry:'registry/standard-setting-preparation-coverage.json',
+  secureFormPreparationRegistry:'registry/secure-form-preparation-coverage.json',
+  startCommand:'Review registry/candidate-privacy-legal-review-preparation.json and record an exact-version candidate-governance approval only after applicable privacy/legal findings are resolved.',
+  requiredActions:[
+    'Review all nine privacy/legal preparation areas against intended operating jurisdictions and vendors/processors.',
+    'Approve or revise the exact candidate-governance controls version and proposed retention schedule.',
+    'Keep operationalUseAuthorized false until the required privacy/legal approval record is complete and applied.',
+    'Confirm public verification, accommodation confidentiality, candidate rights, incident handling and retention/disposal boundaries.'
+  ]
+});
 
 for(const control of production.controls??[]){
   kits.push({
@@ -157,6 +189,29 @@ function markdown(k){
     '## Required actions','',
     ...k.requiredActions.map(x=>'- [ ] '+x)
   ];
+  if(k.pilotIntakeManifest){
+    lines.push('','## Cross-course pilot intake','',
+      '- Manifest: '+k.pilotIntakeManifest,
+      '- Private intake spec: '+k.privateIntakeSpec,
+      '- Exact lock: '+(k.pilotIntakeLock?k.pilotIntakeLock.courseId+'@'+k.pilotIntakeLock.courseVersion:'missing'));
+  }
+  if(k.calibrationPacket){
+    lines.push('','## Exact assessor calibration packet','', '- '+k.calibrationPacket, '- Coverage registry: '+k.calibrationCoverageRegistry);
+  }
+  if(k.panelInstrument){
+    lines.push('','## Cannabis-specific SME panel instruments','',
+      '- Rating sheet: '+k.panelInstrument.panelCsv,
+      '- Emerging-task sheet: '+k.panelInstrument.emergingTaskCsv,
+      '- Instructions: '+k.panelInstrument.instructions,
+      '',
+      'Analyze completed ratings:','', '    '+k.ratingAnalysisCommand);
+  }
+  if(k.privacyLegalPreparationRegistry){
+    lines.push('','## Candidate-governance execution inputs','',
+      '- Privacy/legal preparation: '+k.privacyLegalPreparationRegistry,
+      '- Standard-setting preparation: '+k.standardSettingPreparationRegistry,
+      '- Secure-form preparation: '+k.secureFormPreparationRegistry);
+  }
   if(k.currentCourseLocks){
     lines.push('','## Current course locks','',...k.currentCourseLocks.map(x=>'- '+x.courseId+'@'+x.courseVersion));
   }
