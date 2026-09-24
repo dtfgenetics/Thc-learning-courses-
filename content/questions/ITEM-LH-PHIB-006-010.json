@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Which CAPA action is strongest after a documented equipment failure caused uneven irrigation?",
   "choices": [
-    "Retrain all staff without changing the equipment.",
     "Repair/replace the failed component, verify delivery uniformity, define recovery monitoring and review why the failure was not detected earlier.",
+    "Retrain all staff without changing the equipment.",
     "Close the CAPA when maintenance is scheduled.",
     "Change the crop label."
   ],
-  "correct": 1,
+  "correct": 0,
   "rationale": "CAPA should address the investigated cause, detection weakness and effectiveness verification.",
   "references": [
     "REF-ASTM-E2659-001",
