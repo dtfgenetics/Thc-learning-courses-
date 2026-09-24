@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspect HLVd cluster is found before confirmatory testing is complete. What is the strongest immediate response?",
+  "choices": [
+    "Document a confirmed outbreak immediately.",
+    "Use temporary movement/containment controls while preserving the cause as suspected and escalating testing.",
+    "Release the plants because the diagnosis is not yet confirmed.",
+    "Destroy all nearby crops automatically."
+  ],
+  "correct": 1,
+  "rationale": "Containment can be justified before confirmation, but it must not be documented as proof of cause.",
+  "references": [
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
