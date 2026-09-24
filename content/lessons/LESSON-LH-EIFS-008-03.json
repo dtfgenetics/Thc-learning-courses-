@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-008-03",
+  "title": "Alarms, Interlocks, Fail-Safe States & Degraded Operation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-008-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-OSHA-CO2-SAFETY-2026",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Automation should fail in controlled ways. Specialists need to understand what alarms and interlocks are intended to protect, which fallback states are safe, and when degraded operation must stop rather than be improvised around.",
+    "vocabulary": [
+      {
+        "term": "Fail-safe state",
+        "definition": "A predefined condition intended to reduce harm when normal control or equipment function is lost."
+      },
+      {
+        "term": "Degraded mode",
+        "definition": "Reduced or limited operation used temporarily under controlled conditions after a fault."
+      },
+      {
+        "term": "Interlock",
+        "definition": "A control dependency that prevents or limits operation until required conditions are satisfied."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Safety alarms override crop optimization",
+        "body": "Life-safety alarms such as CO2 hazards or protected equipment faults take precedence over environmental or irrigation targets.",
+        "references": [
+          "REF-OSHA-CO2-SAFETY-2026",
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Degraded operation needs boundaries",
+        "body": "A temporary manual fallback should define duration, monitoring frequency, responsible role and stop criteria rather than becoming an undocumented permanent workaround.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Do not bypass interlocks to prove function",
+        "body": "If a required interlock prevents operation, preserve the condition and route protected troubleshooting to the authorized role.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "An automated irrigation controller fails, so a documented manual watering fallback is used with increased monitoring until qualified controls service restores the system; the workaround is time-bounded and traceable."
+    ],
+    "commonMistakes": [
+      "Silencing alarms to maintain production.",
+      "Using manual override indefinitely.",
+      "Bypassing an interlock to test equipment."
+    ],
+    "practicalApplication": "For three failure scenarios, define the safe-state action, temporary fallback, monitoring requirement, stop criterion and escalation role.",
+    "summary": "Reliability includes knowing how to stop or degrade safely when automation cannot be trusted."
+  }
+}
