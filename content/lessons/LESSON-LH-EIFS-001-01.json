@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-001-01",
+  "title": "Representative Environmental Measurement & Spatial Mapping",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-001-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001",
+    "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Environmental control is only as good as the measurements used to describe the crop zone. Specialist work begins by asking whether sensors represent the canopy, how conditions vary through space and time, and whether instruments are verified before control changes are made.",
+    "vocabulary": [
+      {
+        "term": "Representative measurement",
+        "definition": "A measurement collected in a way intended to describe the conditions actually experienced by the crop or the decision target."
+      },
+      {
+        "term": "Spatial gradient",
+        "definition": "A systematic environmental difference across locations or canopy positions."
+      },
+      {
+        "term": "Colocated comparison",
+        "definition": "A comparison in which instruments are placed together under the same conditions to help separate location effects from instrument offset."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Measure the crop zone, not just the room",
+        "body": "Wall, return-air, equipment-discharge and canopy locations can represent different microclimates. Map multiple crop-relevant positions before assuming one controller sensor describes the entire room.",
+        "references": [
+          "REF-VPD-002",
+          "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+        ]
+      },
+      {
+        "title": "Check placement, shielding and verification status",
+        "body": "Radiant heat, direct airflow, wetting, sensor drift and poor shielding can bias temperature/RH readings. Colocated comparison against a trusted reference helps distinguish spatial variation from sensor error.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Time is part of representativeness",
+        "body": "Lights-on, irrigation, dehumidification cycles and lights-off transitions can create short but meaningful excursions that daily averages hide. Use time-series evidence when the decision depends on duration or transitions.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A wall sensor reads acceptable RH while interior canopy sensors remain elevated for hours after lights-off. Treat this as evidence of a crop-zone gradient until measurement validity is checked, not as a reason to discard the canopy readings."
+    ],
+    "commonMistakes": [
+      "Assuming one centrally mounted sensor is automatically representative.",
+      "Averaging disagreeing sensors before checking calibration/placement.",
+      "Using daily averages to dismiss repeated short-duration excursions."
+    ],
+    "practicalApplication": "Build a measurement map with at least six positions, record placement rationale, height, shielding, verification status and expected decision use, then compare the pattern across lights-on, irrigation and lights-off transitions.",
+    "summary": "Representative environmental measurement depends on location, time, shielding and instrument quality—not on sensor convenience."
+  }
+}

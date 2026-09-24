@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-001-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A wall sensor reports acceptable humidity while three interior-canopy sensors remain high after lights-off. What is the strongest first interpretation?",
+  "choices": [
+    "The wall sensor automatically overrides canopy measurements.",
+    "A crop-zone spatial gradient may exist and measurement validity/placement should be verified before changing controls.",
+    "All four sensors should be averaged and the pattern ignored.",
+    "Humidity does not matter after lights-off."
+  ],
+  "correct": 1,
+  "rationale": "Multiple crop-zone sensors showing a persistent different condition support investigating a real spatial gradient while still verifying instruments.",
+  "references": [
+    "REF-VPD-002",
+    "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-001-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A report confirms a repeated humid canopy zone but the exact equipment cause is unresolved. How should it be written?",
+  "choices": [
+    "Choose a cause so the report feels complete.",
+    "Delete the unresolved data.",
+    "State the verified spatial pattern and keep the cause unresolved pending further verification.",
+    "Call the wall sensor correct by definition."
+  ],
+  "correct": 2,
+  "rationale": "A verified pattern can be documented without overstating causal certainty.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

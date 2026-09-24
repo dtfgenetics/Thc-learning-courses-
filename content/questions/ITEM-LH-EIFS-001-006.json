@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-EIFS-001-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A cool surface approaches the room dew-point temperature. What risk becomes more plausible?",
+  "choices": [
+    "Automatic nutrient precipitation.",
+    "Higher PPFD.",
+    "Permanent loss of transpiration.",
+    "Condensation on that surface."
+  ],
+  "correct": 3,
+  "rationale": "A surface near or below dew point can support local saturation and condensation.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

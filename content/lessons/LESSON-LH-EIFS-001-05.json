@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-001-05",
+  "title": "Environmental Verification Reports & Decision Boundaries",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-001-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A specialist environmental report should allow another qualified person to reconstruct what was measured, where, with what instrument, under what operating state, what pattern was observed, how confident the interpretation is and which action is authorized next.",
+    "vocabulary": [
+      {
+        "term": "Verification record",
+        "definition": "A traceable record showing how a measurement, sensor, controller response or environmental condition was checked."
+      },
+      {
+        "term": "Operating state",
+        "definition": "Relevant system condition such as lights-on/off, irrigation active, dehumidification stage, equipment alarm or maintenance state."
+      },
+      {
+        "term": "Decision boundary",
+        "definition": "The limit of what the available evidence and the worker's assigned authority support doing next."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Record the measurement basis",
+        "body": "Include instrument ID, location/height, shielding, timestamp, units, verification/calibration status and operating state so the reading can be interpreted later.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Separate pattern from cause",
+        "body": "State what the data show before stating why it may have happened. A repeated humid canopy zone can be a verified pattern even when the exact airflow/dehumidification cause remains unresolved.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Make the next action proportional",
+        "body": "Minor measurement uncertainty may justify resampling; a persistent verified environmental excursion may justify escalation or an authorized correction. Electrical, refrigeration, gas, HVAC and advanced controls work remains role-qualified.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A report can conclude 'persistent lights-off canopy RH elevation confirmed at three representative points; installed wall sensor under-represents interior canopy conditions; cause unresolved pending airflow/dehumidification review' without overstating root cause."
+    ],
+    "commonMistakes": [
+      "Recording a setpoint but not the actual measured condition.",
+      "Reporting a cause when only a pattern is verified.",
+      "Performing an unauthorized control or equipment change because the data appear clear."
+    ],
+    "practicalApplication": "Write a one-page environmental verification report from a supplied trend/map including evidence quality, observed pattern, confidence, limitations, permitted next step and escalation owner.",
+    "summary": "A good environmental report preserves measurement provenance, separates evidence from inference and makes the next decision auditable."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "MOD-LH-EIFS-001-PLANT-ENV-MEASUREMENT",
+  "title": "Plant-Environment Measurement & Crop Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-001-01",
+    "LESSON-LH-EIFS-001-02",
+    "LESSON-LH-EIFS-001-03",
+    "LESSON-LH-EIFS-001-04",
+    "LESSON-LH-EIFS-001-05"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-ENV-VPD-001",
+    "COMP-LIGHT-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering representative environmental measurement, vapor-pressure/dew-point interpretation, lighting context, crop-response integration and data-quality reporting.",
+  "estimatedMinutes": 310,
+  "learningOutcomes": [
+    "Design a representative environmental measurement plan that accounts for sensor placement, shielding, crop zone, spatial gradients, time-series behavior and calibration/verification status.",
+    "Interpret temperature and relative humidity together through vapor-pressure and dew-point concepts while distinguishing room-air conditions from leaf-surface conditions.",
+    "Relate PPFD, photoperiod and DLI measurements to crop-environment context without converting examples from other crops or studies into universal cannabis targets.",
+    "Analyze crop response alongside environmental measurements to distinguish true room events, local microclimates, sensor error and plant-specific conditions.",
+    "Produce a reconstructable environmental verification report that states measurement quality, observed pattern, confidence, limits, permitted action and escalation needs."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}
