@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why is a 20-point dryback over four hours not necessarily equivalent to the same dryback over fourteen hours?",
   "choices": [
-    "Rate and environmental/crop context differ, which can reflect different demand and response.",
     "Dryback ignores time.",
     "Only final water content matters.",
+    "Rate and environmental/crop context differ, which can reflect different demand and response.",
     "The two are always equivalent."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Magnitude and rate both matter in interpreting a trajectory.",
   "references": [
     "REF-IRRIGATION-001",
