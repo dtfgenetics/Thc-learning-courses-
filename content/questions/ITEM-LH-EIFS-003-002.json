@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why can late-cycle environmental control fail even if the empty room tested well?",
   "choices": [
-    "Crop biomass and transpiration can substantially increase moisture load through the cycle.",
     "Empty rooms always have more moisture.",
     "Plants reduce all environmental load.",
+    "Crop biomass and transpiration can substantially increase moisture load through the cycle.",
     "Only outdoor weather matters."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Crop load changes as biomass and transpiration increase.",
   "references": [
     "REF-VPD-002"
