@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "What is the safest interpretation of a light-response result from one cultivar and one system?",
   "choices": [
-    "It is evidence of a relationship under those conditions, not a universal target for all cultivars and facilities.",
     "It establishes the optimum for all cannabis.",
     "It invalidates measurement mapping.",
-    "It can be applied without environmental context."
+    "It can be applied without environmental context.",
+    "It is evidence of a relationship under those conditions, not a universal target for all cultivars and facilities."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Study-specific treatment values should not be generalized beyond the tested context without validation.",
   "references": [
     "REF-VPD-002"
