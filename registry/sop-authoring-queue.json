@@ -16,7 +16,8 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 11
+    "evidencePlansSeeded": 17,
+    "evidencePlanCoverageComplete": true
   },
   "targets": [
     {
@@ -137,7 +138,9 @@
         "traceability"
       ],
       "sequence": 4,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-030.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-031",
@@ -165,7 +168,9 @@
         "sampling and records"
       ],
       "sequence": 5,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-031.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-032",
@@ -190,7 +195,9 @@
         "sanitation"
       ],
       "sequence": 6,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-032.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-033",
@@ -219,7 +226,9 @@
         "environmental stress"
       ],
       "sequence": 7,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-033.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-040",
@@ -390,7 +399,9 @@
         "airflow/light distribution"
       ],
       "sequence": 12,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-110.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-120",
@@ -419,7 +430,9 @@
         "environmental risk"
       ],
       "sequence": 13,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-120.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-130",

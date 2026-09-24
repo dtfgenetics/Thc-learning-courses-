@@ -1,0 +1,96 @@
+{
+  "id": "GROW-110",
+  "title": "Training and canopy management — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define canopy-training decisions, sanitation, plant-response monitoring and recovery checks without presenting one pruning/defoliation percentage or schedule as universal.",
+  "sourceIds": [
+    "REF-CANOPY-001",
+    "REF-CANOPY-DEFOL-2025-001",
+    "REF-LIGHT-INTERCANOPY-2025-001"
+  ],
+  "scope": {
+    "included": [
+      "canopy architecture",
+      "trellising/LST",
+      "topping/HST",
+      "pruning/defoliation",
+      "tool sanitation",
+      "light distribution",
+      "microclimate",
+      "recovery checks",
+      "plant-level work records"
+    ],
+    "excludedUntilValidated": [
+      "universal defoliation percentage",
+      "fixed topping node count for every genotype",
+      "automatic assumption that more training increases yield",
+      "training stressed/unhealthy plants without assessment",
+      "copying one lighting/training treatment into every facility"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-110-C01",
+      "statement": "Cannabis plant architecture influences light distribution, microclimate and spatial chemical/yield uniformity, so canopy management should be evaluated against the production objective and measured crop response.",
+      "sources": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-INTERCANOPY-2025-001"
+      ],
+      "boundary": "One plant shape or lighting strategy is not universally optimal across cultivar, density and facility conditions."
+    },
+    {
+      "id": "GROW-110-C02",
+      "statement": "Pruning and defoliation responses can depend on cultivar and lighting context, so treatment intensity and timing should be controlled and followed by recovery/performance observation.",
+      "sources": [
+        "REF-CANOPY-DEFOL-2025-001"
+      ],
+      "boundary": "Experimental defoliation treatments do not establish a universal percentage or calendar schedule."
+    },
+    {
+      "id": "GROW-110-C03",
+      "statement": "Low-stress and high-stress training should be treated as different disturbance levels with different recovery needs and should not be applied automatically to weak, diseased or otherwise compromised plants.",
+      "sources": [
+        "REF-CANOPY-001"
+      ],
+      "boundary": "The course does not guarantee yield benefit from any one technique."
+    },
+    {
+      "id": "GROW-110-C04",
+      "statement": "Canopy work should preserve plant/zone identity, technique, date, operator, removed material and abnormal response so later crop differences can be related to the actual intervention.",
+      "sources": [
+        "REF-CANOPY-001"
+      ],
+      "boundary": "A generic note such as 'defoliated room' is insufficient when intensity or affected plants matter."
+    },
+    {
+      "id": "GROW-110-C05",
+      "statement": "Tools contacting multiple plants can become a movement pathway for biological contamination, so canopy work should integrate the facility's approved sanitation and clean-to-dirty workflow.",
+      "sources": [
+        "REF-CANOPY-001"
+      ],
+      "boundary": "Specific sanitizers and contact times remain controlled by the biosecurity SOP and current product instructions."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "canopy objective/authorization record",
+    "plant/zone selection criteria",
+    "LST/trellis procedure",
+    "topping/HST boundary",
+    "pruning/defoliation boundary",
+    "tool sanitation handoff",
+    "light/microclimate verification",
+    "post-work recovery check",
+    "canopy intervention log",
+    "adverse-response deviation workflow"
+  ],
+  "releaseGates": [
+    "canopy/cultivation review",
+    "biosecurity review",
+    "facility/genotype validation",
+    "ergonomic/safety review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

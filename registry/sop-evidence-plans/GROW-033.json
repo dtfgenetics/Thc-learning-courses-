@@ -1,0 +1,98 @@
+{
+  "id": "GROW-033",
+  "title": "Seedling establishment — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define early seedling establishment, root-zone/environment observation, watering and transplant-readiness evidence without universal stage setpoints.",
+  "sourceIds": [
+    "REF-PROP-001",
+    "REF-PLANT-BIO-001",
+    "REF-IRRIGATION-001",
+    "REF-VPD-002"
+  ],
+  "scope": {
+    "included": [
+      "seedling identity",
+      "early morphology",
+      "root-zone moisture/aeration",
+      "watering verification",
+      "environment monitoring",
+      "damping-off/abnormality escalation",
+      "transplant readiness",
+      "handoff"
+    ],
+    "excludedUntilValidated": [
+      "universal seedling VPD target",
+      "fixed watering volume/frequency",
+      "transplanting by age alone",
+      "diagnosing every collapse as damping-off",
+      "feeding recipes detached from media/water/crop context"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-033-C01",
+      "statement": "Seedling establishment should be judged by observed development and root-zone/crop condition rather than age alone because early growth rate varies with genetics and environment.",
+      "sources": [
+        "REF-PROP-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "boundary": "Calendar age by itself does not establish transplant readiness."
+    },
+    {
+      "id": "GROW-033-C02",
+      "statement": "Young root systems require both water and oxygen, so seedling watering should be interpreted through media moisture, drainage, container size and root-zone condition instead of a fixed schedule.",
+      "sources": [
+        "REF-IRRIGATION-001"
+      ],
+      "boundary": "The SOP should not prescribe one irrigation volume/frequency across all media and containers."
+    },
+    {
+      "id": "GROW-033-C03",
+      "statement": "Temperature and humidity/VPD influence plant water relations, but research treatment values should be used as evidence of relationships rather than universal seedling setpoints.",
+      "sources": [
+        "REF-VPD-002"
+      ],
+      "boundary": "Facility crop plans and measured crop response govern operational setpoints."
+    },
+    {
+      "id": "GROW-033-C04",
+      "statement": "Seedling abnormalities such as collapse, discoloration or poor roots should trigger an evidence-based differential that includes water/oxygen, environment, injury and disease rather than an automatic single diagnosis.",
+      "sources": [
+        "REF-PROP-001",
+        "REF-IRRIGATION-001"
+      ],
+      "boundary": "Visual symptoms alone are insufficient to confirm a specific pathogen or nutrient cause."
+    },
+    {
+      "id": "GROW-033-C05",
+      "statement": "Transplant readiness records should preserve seed/plant identity, developmental condition, root-zone status, abnormal findings and destination so weak or suspect plants are not silently mixed into healthy cohorts.",
+      "sources": [
+        "REF-PROP-001",
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "Exact acceptance criteria require facility validation for the chosen container, medium and crop plan."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "seedling cohort/identity record",
+    "environment monitoring plan",
+    "watering/root-zone check",
+    "abnormality scouting record",
+    "damping-off/disease escalation",
+    "development/readiness checklist",
+    "transplant authorization",
+    "destination/lot genealogy",
+    "weak/suspect seedling hold workflow",
+    "post-transplant follow-up"
+  ],
+  "releaseGates": [
+    "propagation review",
+    "root-zone/environment review",
+    "plant-health review",
+    "facility-specific transplant validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

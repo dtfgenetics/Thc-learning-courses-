@@ -1,0 +1,109 @@
+{
+  "id": "GROW-120",
+  "title": "Flowering stage management — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define flowering transition, photoperiod verification, reproductive scouting, environment/load monitoring and late-flower risk controls without universal flowering recipes.",
+  "sourceIds": [
+    "REF-LIGHT-001",
+    "REF-FLOWER-MORPH-2023-001",
+    "REF-FLOWER-001",
+    "REF-SEX-2026-001",
+    "REF-PLANT-BIO-001",
+    "REF-VPD-002"
+  ],
+  "scope": {
+    "included": [
+      "transition readiness",
+      "photoperiod verification",
+      "flower development",
+      "sex/intersex scouting",
+      "environmental load",
+      "humidity/disease risk",
+      "maturity tracking",
+      "handoff to harvest"
+    ],
+    "excludedUntilValidated": [
+      "universal flowering duration",
+      "universal PPFD/DLI/VPD setpoints",
+      "assumption that one photoperiod response fits all genotypes",
+      "ignoring intersex findings because plants were feminized",
+      "harvest release based on calendar date alone"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-120-C01",
+      "statement": "Cannabis flowering development is shaped by genotype, photoperiod and environment, so flowering-stage management should preserve actual developmental observations alongside programmed schedules.",
+      "sources": [
+        "REF-LIGHT-001",
+        "REF-FLOWER-MORPH-2023-001"
+      ],
+      "boundary": "A programmed light schedule does not prove identical developmental timing across genotypes."
+    },
+    {
+      "id": "GROW-120-C02",
+      "statement": "Photoperiod and uninterrupted dark-period control are important flowering variables, supporting verification of actual timer/controller operation and light-leak or schedule deviations.",
+      "sources": [
+        "REF-LIGHT-001"
+      ],
+      "boundary": "The course should not convert one research treatment into a universal flowering schedule for all cannabis genetics."
+    },
+    {
+      "id": "GROW-120-C03",
+      "statement": "Unexpected male or intersex reproductive structures can occur in cannabis and may have genetic, hormonal, developmental and environmental contributors, so reproductive scouting and escalation should continue during flowering.",
+      "sources": [
+        "REF-SEX-2026-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "boundary": "No single stress trigger should be treated as a universal explanation for all intersex expression."
+    },
+    {
+      "id": "GROW-120-C04",
+      "statement": "As canopy and inflorescence biomass increase, moisture and heat loads and within-canopy gradients can change, requiring representative environmental monitoring rather than reliance on controller averages alone.",
+      "sources": [
+        "REF-VPD-002",
+        "REF-FLOWER-MORPH-2023-001"
+      ],
+      "boundary": "Research temperature/RH/VPD values are evidence of relationships, not universal flowering setpoints."
+    },
+    {
+      "id": "GROW-120-C05",
+      "statement": "Trichome and inflorescence maturation are asynchronous and genotype-dependent, so late-flower tracking should combine representative observations with the defined harvest objective instead of using one visual rule.",
+      "sources": [
+        "REF-FLOWER-001"
+      ],
+      "boundary": "Trichome color or flowering week alone does not directly establish cannabinoid concentration or whole-lot readiness."
+    },
+    {
+      "id": "GROW-120-C06",
+      "statement": "Late-flower management should preserve pest/disease, reproductive, environmental and irrigation deviations because quality and harvest decisions depend on the crop's actual history, not only its final appearance.",
+      "sources": [
+        "REF-FLOWER-001",
+        "REF-VPD-002"
+      ],
+      "boundary": "A visually mature crop does not automatically clear an unresolved plant-health or quality hold."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "flower-transition readiness checklist",
+    "photoperiod/dark-period verification",
+    "flower-development observation record",
+    "sex/intersex scouting and escalation",
+    "environment/load monitoring plan",
+    "late-flower plant-health checks",
+    "irrigation/nutrition change-control boundary",
+    "maturity trend record",
+    "harvest-readiness handoff",
+    "flowering deviation review"
+  ],
+  "releaseGates": [
+    "flowering physiology review",
+    "lighting/environment review",
+    "reproductive biology review",
+    "facility/genotype validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

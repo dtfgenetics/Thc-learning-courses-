@@ -1,0 +1,95 @@
+{
+  "id": "GROW-032",
+  "title": "Germination — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define a repeatable germination workflow that preserves seed-lot identity, moisture/oxygen/temperature context, sanitation, radicle handling and failure evidence without presenting one method as universally best.",
+  "sourceIds": [
+    "REF-PROP-001",
+    "REF-PLANT-BIO-001"
+  ],
+  "scope": {
+    "included": [
+      "seed-lot linkage",
+      "method selection",
+      "moisture management",
+      "temperature/oxygen context",
+      "sanitation",
+      "radicle handling",
+      "success/failure recording",
+      "transfer criteria"
+    ],
+    "excludedUntilValidated": [
+      "one universal germination method",
+      "guaranteed germination percentage",
+      "fixed germination time for every genotype/lot",
+      "overwatering as a default response to delayed emergence",
+      "discarding failed seeds without recording lot/method context"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-032-C01",
+      "statement": "Cannabis seed germination depends on viable seed and suitable water, temperature and oxygen conditions, so method records should preserve the environment in which each lot was tested.",
+      "sources": [
+        "REF-PROP-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "boundary": "The evidence does not support one universally superior germination container or technique."
+    },
+    {
+      "id": "GROW-032-C02",
+      "statement": "Germination performance should be calculated from a defined lot/sample and observation window rather than generalized from a few successful seeds.",
+      "sources": [
+        "REF-PROP-001"
+      ],
+      "boundary": "Observed sample performance should not be converted into a guaranteed whole-lot rate without an appropriate sampling design."
+    },
+    {
+      "id": "GROW-032-C03",
+      "statement": "Excess moisture and poor sanitation can complicate germination and early establishment, supporting controlled moisture and clean handling rather than keeping seeds continuously saturated.",
+      "sources": [
+        "REF-PROP-001"
+      ],
+      "boundary": "Exact moisture targets should be validated for the chosen method and substrate rather than copied as a universal number."
+    },
+    {
+      "id": "GROW-032-C04",
+      "statement": "Emerging radicles and young seedlings are mechanically vulnerable, so transfer methods should minimize avoidable handling damage and preserve lot/plant identity.",
+      "sources": [
+        "REF-PLANT-BIO-001",
+        "REF-PROP-001"
+      ],
+      "boundary": "The SOP should define handling principles, not claim that one transfer timing fits every method and genotype."
+    },
+    {
+      "id": "GROW-032-C05",
+      "statement": "Failed, delayed or contaminated germination batches should retain method, lot, environmental and sanitation evidence so cause can be investigated before repeating or changing the process.",
+      "sources": [
+        "REF-PROP-001"
+      ],
+      "boundary": "A failed batch should not automatically be attributed to genetics when method or storage conditions are unresolved."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "germination batch setup record",
+    "method-selection boundary",
+    "moisture/temperature context log",
+    "sanitation/preparation checklist",
+    "seed placement/handling steps",
+    "observation schedule",
+    "success/failure definitions",
+    "transfer-to-seedling criteria",
+    "failure/deviation investigation",
+    "lot-level germination summary"
+  ],
+  "releaseGates": [
+    "propagation review",
+    "method validation",
+    "sanitation review",
+    "lot/sampling review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}
