@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should root-zone response be included with irrigation-delivery evidence?",
   "choices": [
-    "It helps show whether the delivery fault materially affected water status or concentration in the crop.",
     "It replaces flow measurements.",
     "It proves root cause by itself.",
+    "It helps show whether the delivery fault materially affected water status or concentration in the crop.",
     "It is unrelated to irrigation."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Converging delivery and root-zone evidence strengthens diagnosis.",
   "references": [
     "REF-IRRIGATION-001"
