@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Which handoff is strongest for a suspected environmental equipment fault?",
   "choices": [
-    "Timestamps, affected zones, alarms, commands, equipment state, verified measurements and safety/authority boundaries.",
     "A note saying the room is bad.",
     "A repair instruction written by an unqualified worker.",
+    "Timestamps, affected zones, alarms, commands, equipment state, verified measurements and safety/authority boundaries.",
     "Only the controller screenshot."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Qualified handoff requires reconstructable evidence and role boundaries.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
