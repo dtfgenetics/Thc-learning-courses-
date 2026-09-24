@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-007-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-007-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which steering report is strongest?",
+  "choices": [
+    "Baseline, intervention, measurement method, response, uncertainty, acceptance/reversal criteria and authorized next action.",
+    "Only the new irrigation schedule.",
+    "Only final EC.",
+    "A verbal summary."
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable report links what changed to what happened.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
