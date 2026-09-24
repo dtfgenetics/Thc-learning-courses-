@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Two colocated sensors differ by a stable amount across several checks. What does that pattern support?",
   "choices": [
-    "Possible systematic bias that should be checked against a verified reference.",
     "A guaranteed room microclimate.",
     "Proof that both are accurate.",
+    "Possible systematic bias that should be checked against a verified reference.",
     "A need to change the room target."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Stable offset is consistent with bias but still needs reference comparison.",
   "references": [
     "REF-ENV-TEMP-2025-001"
