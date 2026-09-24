@@ -1,0 +1,56 @@
+{
+  "id": "COURSE-LH-PHIB-006",
+  "title": "Outbreak Containment, CAPA & Crop Recovery",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Plant Health, IPM & Biosecurity Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Plant Health, IPM & Biosecurity Specialist pathway",
+    "Cultivation personnel responsible for outbreak triage, containment, affected-scope reconstruction, corrective action, recovery monitoring and escalation"
+  ],
+  "prerequisites": [
+    "Plant Disease, HLVd & Biosecurity and Biological/Cultural Controls, Thresholds & Resistance Management or equivalent specialist foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Outbreak and CAPA instruction reuses controlled cannabis plant-health/IPM evidence plus quality-system/data-integrity sources. Containment is a risk-control action rather than proof of diagnosis; root cause requires evidence; CAPA closure requires effectiveness evidence; disposition/release remains role- and jurisdiction-controlled.",
+  "assessmentPolicy": "The dedicated specialist assessment is development-only until exact-version technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize regulated product release, pesticide use, destruction, quarantine release or final laboratory interpretation.",
+  "description": "Develops specialist response to pest, disease and plant-health outbreaks from first signal through containment, affected-scope reconstruction, causal analysis, CAPA, crop recovery verification, recurrence review and evidence-based handoff.",
+  "modules": [
+    "MOD-LH-PHIB-006-OUTBREAK-CAPA"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHIB-006-FINAL",
+  "learningOutcomes": [
+    "Triage an outbreak signal by separating immediate safety/spread controls from diagnostic certainty, preserving identity, affected scope and unresolved uncertainty.",
+    "Reconstruct outbreak distribution and likely pathways using time, location, plant/lot identity, movement history, environment, scouting and testing evidence.",
+    "Differentiate root cause, contributing factors, correlation and unsupported hypotheses and select corrective actions proportional to the evidence and consequence.",
+    "Design a CAPA and recovery plan with owners, due dates, containment, corrective/preventive actions, compatible recovery metrics and predefined effectiveness checks.",
+    "Determine whether an outbreak can be closed, escalated or reopened using comparable follow-up evidence, recurrence signals, disposition authority and reconstructable records."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+    "maturity": "new-specialist-content-draft",
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHIB-006-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}
