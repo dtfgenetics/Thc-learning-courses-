@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-007-05",
+  "title": "Case Defense, Confidence & Professional Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-007-05"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-ASTM-E2659-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The final specialist product is not just an answer; it is a defensible record that another qualified reviewer can reconstruct, challenge and continue. Confidence must be proportional to evidence, and unresolved risk must remain visible.",
+    "vocabulary": [
+      {
+        "term": "Confidence statement",
+        "definition": "A calibrated description of how strongly the available evidence supports the working conclusion."
+      },
+      {
+        "term": "Residual uncertainty",
+        "definition": "Important questions not resolved by the available evidence."
+      },
+      {
+        "term": "Case defense",
+        "definition": "Structured explanation of the evidence, reasoning, controls, alternatives and limitations supporting a recommendation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Show the reasoning chain",
+        "body": "Link the recommendation to observations, discriminating evidence, test results and the evidence that weakened alternatives. Avoid presenting the final answer as obvious or inevitable.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Calibrate confidence",
+        "body": "Use language such as possible, probable, strongly supported or confirmed only when the evidence justifies it under the facility's defined terminology. A specialist should be able to say what would change the conclusion.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Handoff the open work",
+        "body": "Written plus verbal transfer should include current status, active holds/controls, evidence, pending tests, deadlines, residual risk and the next responsible role, with opportunity for cross-checking.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A case can end with 'probable root-zone oxygen stress with unresolved secondary pathogen contribution' if that wording better matches the evidence than a falsely certain single diagnosis."
+    ],
+    "commonMistakes": [
+      "Hiding uncertainty to sound more expert.",
+      "Giving the conclusion without the evidence trail.",
+      "Omitting pending tests and active controls from handoff."
+    ],
+    "practicalApplication": "Present a five-minute case defense and a one-page handoff: evidence, differential, discriminating findings, response, confidence, residual risk and next action.",
+    "summary": "Professional diagnostic work is transparent enough to be audited, challenged and safely continued by another qualified person."
+  }
+}

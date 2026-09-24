@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-007-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A case file contains a leaf photo, an EC value from another irrigation zone, and a verbal claim of root rot. What is the best first step?",
+  "choices": [
+    "Treat all three as confirmation of root rot.",
+    "Separate each item by source, identity, time and what it can actually support before building the differential.",
+    "Discard the photo because images are never useful.",
+    "Use the EC value as proof of nutrient toxicity."
+  ],
+  "correct": 1,
+  "rationale": "Case intake should separate evidence types and their identity/context limits before interpretation.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

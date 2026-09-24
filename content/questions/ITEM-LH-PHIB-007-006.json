@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-007-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A donor plant looks healthy but is being evaluated for HLVd clean-stock status. What is the best conclusion from appearance alone?",
+  "choices": [
+    "The plant is HLVd-free.",
+    "Healthy appearance proves resistance.",
+    "Visual appearance cannot reliably exclude HLVd; an approved sampling/testing strategy is needed for that decision.",
+    "Testing is unnecessary unless leaves are yellow."
+  ],
+  "correct": 2,
+  "rationale": "Asymptomatic HLVd infection means symptom absence is not a reliable exclusion test.",
+  "references": [
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

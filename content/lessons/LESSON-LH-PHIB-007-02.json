@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHIB-007-02",
+  "title": "Differential Diagnosis Under Uncertainty",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-007-02"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-CANNABIS-DIAGNOSTICS-2024-001",
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A specialist differential should compare multiple plausible explanations across plant-health domains and update as new evidence arrives. The goal is not to name the first familiar disorder but to identify which evidence most strongly separates competing causes.",
+    "vocabulary": [
+      {
+        "term": "Discriminating evidence",
+        "definition": "An observation or test whose possible results meaningfully separate competing hypotheses."
+      },
+      {
+        "term": "Posterior confidence",
+        "definition": "Updated confidence in a hypothesis after considering new evidence; used here qualitatively rather than as a required numeric probability."
+      },
+      {
+        "term": "Look-alike",
+        "definition": "A different cause that can produce similar visible symptoms or crop responses."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Build across domains",
+        "body": "Include biotic disease, arthropod damage, nutrient/root-zone, environmental, irrigation/process and genetic/developmental explanations when the observations plausibly support them.",
+        "references": [
+          "REF-CANNABIS-DIAGNOSTICS-2024-001",
+          "REF-NUTRIENT-DEFICIENCY-001"
+        ]
+      },
+      {
+        "title": "Track supporting and conflicting evidence",
+        "body": "A strong differential records what each hypothesis explains and what it fails to explain. Confidence should decrease when high-quality evidence conflicts with the hypothesis.",
+        "references": [
+          "REF-CANNABIS-DIAGNOSTICS-2024-001"
+        ]
+      },
+      {
+        "title": "Use asymptomatic infection as a reminder about test limits",
+        "body": "HLVd demonstrates why visible appearance may not reliably exclude disease. Diagnostic confidence must match the biology and sensitivity of the evidence available.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Stunting with leaf discoloration may keep nutrient/root-zone stress, chronic pest feeding and HLVd in the differential until spatial pattern, roots, pest evidence and appropriate testing separate them."
+    ],
+    "commonMistakes": [
+      "Single-symptom diagnosis.",
+      "Treating one plausible mechanism as the only mechanism.",
+      "Ignoring evidence because it complicates the preferred answer."
+    ],
+    "practicalApplication": "Create a differential matrix with at least four hypotheses, supporting evidence, conflicting evidence, consequence if wrong and the next discriminating observation/test.",
+    "summary": "A specialist differential stays broad enough to prevent premature closure and narrow enough to drive the next useful evidence."
+  }
+}

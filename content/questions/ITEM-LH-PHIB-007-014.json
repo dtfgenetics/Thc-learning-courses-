@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What should a specialist handoff include?",
+  "choices": [
+    "Only the final diagnosis.",
+    "Current status, evidence, active controls/holds, pending tests, residual risk, deadlines and next responsible role.",
+    "Only completed actions.",
+    "Only verbal discussion."
+  ],
+  "correct": 1,
+  "rationale": "A structured written/verbal handoff preserves open work and unresolved risk.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

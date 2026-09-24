@@ -136,6 +136,27 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-007",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-001-DIAGNOSTIC",
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-001",
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-007-DIAGNOSTIC-CASE-LAB",
+          "remainingDepth": [
+            "photorealistic multi-case evidence packets and diagnostic visual set",
+            "human plant-health/biosecurity/quality-system review",
+            "assessor calibration with benchmark performances",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },

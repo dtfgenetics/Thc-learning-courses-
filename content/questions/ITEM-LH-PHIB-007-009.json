@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-007-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-007-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A lab result has excellent analytical quality but the sample identity cannot be reconstructed. What is the key limitation?",
+  "choices": [
+    "The assay result has weaker value for plant/lot-specific decisions because identity is uncertain.",
+    "The result automatically applies to the whole facility.",
+    "Identity is irrelevant if the assay is sensitive.",
+    "The result should be rewritten with a guessed plant ID."
+  ],
+  "correct": 0,
+  "rationale": "Analytical quality cannot compensate for broken sample identity when making plant/lot-specific decisions.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

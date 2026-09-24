@@ -1,0 +1,120 @@
+{
+  "id": "LABPLAN-PHIB-007-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "courseId": "COURSE-LH-PHIB-007",
+  "credentialProgram": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+  "purpose": "Development blueprint for the PHIB Diagnostic Case Laboratory practical. This file does not approve a live credential form, final cut score, laboratory authority, pesticide authority, quarantine release, product disposition or credential issuance.",
+  "prerequisites": [
+    "COURSE-LH-PHIB-001",
+    "COURSE-LH-PHIB-002",
+    "COURSE-LH-PHIB-003",
+    "COURSE-LH-PHIB-004",
+    "COURSE-LH-PHIB-005",
+    "COURSE-LH-PHIB-006"
+  ],
+  "practical": {
+    "id": "PRACTICAL-PHIB-007-INTEGRATED-DIAGNOSTIC-CASE",
+    "title": "PHIB Integrated Diagnostic Case Laboratory",
+    "document": "docs/academy-v2/practicals/PRACTICAL-PHIB-007-INTEGRATED-DIAGNOSTIC-CASE.md",
+    "totalPoints": 100,
+    "developmentTargetPassPoints": 80,
+    "noCriticalErrors": true,
+    "status": "development",
+    "evidenceOutputs": [
+      "Normalized case evidence inventory",
+      "Differential diagnosis matrix",
+      "Targeted sampling/testing and containment plan",
+      "Integrated IPM/biosecurity/CAPA response",
+      "Recovery/effectiveness-check plan",
+      "Final specialist case memo",
+      "Structured written/verbal handoff"
+    ],
+    "scoreDomains": [
+      {
+        "id": "domain-01",
+        "title": "Evidence normalization and integrity",
+        "points": 15
+      },
+      {
+        "id": "domain-02",
+        "title": "Differential diagnosis quality",
+        "points": 20
+      },
+      {
+        "id": "domain-03",
+        "title": "Sampling/testing and containment reasoning",
+        "points": 15
+      },
+      {
+        "id": "domain-04",
+        "title": "Integrated control and biosecurity plan",
+        "points": 15
+      },
+      {
+        "id": "domain-05",
+        "title": "CAPA and recovery verification",
+        "points": 15
+      },
+      {
+        "id": "domain-06",
+        "title": "Confidence, residual uncertainty and escalation",
+        "points": 10
+      },
+      {
+        "id": "domain-07",
+        "title": "Documentation and professional handoff",
+        "points": 10
+      }
+    ]
+  },
+  "criticalFailureRules": [
+    {
+      "id": "CF-PHIB-007-INTEGRITY-001",
+      "rule": "Fabricates, deletes, silently rewrites or knowingly misrepresents plant, sample, test, scouting or case evidence.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-PHIB-007-CONTAINMENT-001",
+      "rule": "Knowingly breaks a required quarantine, movement-control or urgent biosecurity boundary during the case.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-PHIB-007-AUTHORITY-001",
+      "rule": "Performs or directs an unauthorized pesticide, destruction, release, laboratory or regulated disposition action.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-PHIB-007-DATA-001",
+      "rule": "Makes a major corrective or release recommendation from data known to be invalid, mismatched or materially contradictory without required verification.",
+      "blocksCredentialEvidence": true
+    }
+  ],
+  "evaluatorControls": {
+    "rubricTrainingRequired": true,
+    "evidenceBasedScoringRequired": true,
+    "pilotDoubleScoringRequired": true,
+    "interRaterAgreementTarget": "to-be-set-from-pilot-evidence",
+    "conflictResolutionProcessRequired": true,
+    "criticalErrorEvidenceRequired": true,
+    "evaluatorIdentityAndTimestampRequired": true
+  },
+  "accessibilityControls": {
+    "humanAccessibilityReviewRequired": true,
+    "allowExtendedTimeWhenSpeedIsNotTheConstruct": true,
+    "allowAlternativeAccessiblePresentation": true,
+    "allowAssistiveInputWhenCompetencyConstructIsPreserved": true,
+    "accommodationMustBeDocumented": true,
+    "accommodationMayNotLowerRequiredEvidenceStandard": true,
+    "accommodationMayNotRemoveCriticalFailureRules": true
+  },
+  "completionLogic": {
+    "status": "development",
+    "practicalRequired": true,
+    "minimumPercent": 80,
+    "noCriticalErrors": true,
+    "compensatoryAveragingAllowed": false,
+    "evaluatorEvidenceRequired": true,
+    "courseCompletionDoesNotAuthorizeCredentialIssuance": true
+  }
+}
