@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-006-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "All affected plants trace to one donor group but are distributed across several rooms. Which hypothesis deserves stronger consideration?",
+  "choices": [
+    "A donor/propagation-linked pathway.",
+    "A single room-only airflow problem.",
+    "A universal nutrient deficiency proven by distribution.",
+    "No pathway can be considered until every plant is symptomatic."
+  ],
+  "correct": 0,
+  "rationale": "Shared lineage across rooms is relevant pathway evidence and should be compared with other exposure records.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
