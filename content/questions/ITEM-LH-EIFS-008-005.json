@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A sensor flat-lines while neighboring verified sensors continue changing. Which fault class should be investigated first?",
   "choices": [
-    "Sensor/data-path failure.",
     "Uniform room conditions.",
     "Crop genetics.",
+    "Sensor/data-path failure.",
     "Irrigation chemistry."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "A flat-line isolated to one signal is a data-quality warning.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
