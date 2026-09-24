@@ -11,11 +11,11 @@
   "stem": "A plant-health intervention is followed by one normal reading immediately afterward. What is the strongest interpretation?",
   "choices": [
     "Recovery is proven.",
-    "The reading is useful but usually insufficient without an appropriate time window and representative recovery metrics.",
     "The original deviation can be deleted.",
-    "The intervention can never work."
+    "The intervention can never work.",
+    "The reading is useful but usually insufficient without an appropriate time window and representative recovery metrics."
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "Recovery requires evidence matched to the biological/process failure mode over a meaningful window.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001",
