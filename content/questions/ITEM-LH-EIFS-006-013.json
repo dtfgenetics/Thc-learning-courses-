@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-006-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-006-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which irrigation handoff is strongest?",
+  "choices": [
+    "Zone ID, command/runtime, measured emitter output, pressure evidence, affected positions, root-zone consequence and checks already completed.",
+    "Only 'irrigation failed.'",
+    "Only the controller screenshot.",
+    "Only the cultivar name."
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable handoff links intent, delivery and crop consequence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}
