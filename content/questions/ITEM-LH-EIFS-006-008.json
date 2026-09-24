@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Many emitters in one zone drop together while other zones remain stable. Which fault class becomes more plausible?",
   "choices": [
-    "A zone-level supply, pressure, valve or filtration issue.",
     "Independent failure of every plant.",
     "Lighting spectrum.",
+    "A zone-level supply, pressure, valve or filtration issue.",
     "A universal root disease."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Shared zone behavior suggests a common delivery-path problem.",
   "references": [
     "REF-IRRIGATION-001"
