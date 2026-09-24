@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-008-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A controller shows cooling ON, equipment is physically running, but canopy temperature continues rising. Which fault classes remain plausible?",
+  "choices": [
+    "Distribution, capacity or measurement problems rather than a pure command failure.",
+    "Only a controller-command failure.",
+    "Only a nutrient problem.",
+    "No fault is possible because equipment is on."
+  ],
+  "correct": 0,
+  "rationale": "Running equipment without process response points beyond the command layer.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
