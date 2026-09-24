@@ -10,6 +10,7 @@ const filterCourse=value('--course');
 const filterAssessment=value('--assessment');
 const write=has('--write');
 const asJson=has('--json');
+const checkSourceIntegrity=has('--check-source-integrity');
 
 const read=(rel)=>JSON.parse(fs.readFileSync(path.join(root,rel),'utf8'));
 const readDir=(rel)=>{const d=path.join(root,rel);if(!fs.existsSync(d))return[];return fs.readdirSync(d).filter(n=>n.endsWith('.json')).sort().map(n=>read(path.join(rel,n)));};
@@ -35,11 +36,42 @@ function reviewState(id,version){
   if(!r) return {state:'pending',reviewId:null,status:null};
   return {state:r.status==='approved'?'approved':'revision-required',reviewId:r.id,status:r.status};
 }
+const authoritativeEvidenceLevels=new Set(['standards-government','peer-reviewed','university-extension','standard','A','B']);
+const authoritativeTypes=new Set(['government','standard','journal','peer-reviewed-study','peer-reviewed-review','extension']);
 function evidenceForItem(item){
   return (item.references??[]).map(id=>{
     const r=references.get(id);
-    return {id,title:r?.title??null,status:r?.status??null,evidenceLevel:r?.evidenceLevel??null,url:r?.url??null};
+    return {
+      id,
+      title:r?.title??null,
+      status:r?.status??null,
+      evidenceLevel:r?.evidenceLevel??null,
+      type:r?.type??null,
+      publisher:r?.publisher??null,
+      url:r?.url??null,
+      lastVerifiedAt:r?.lastVerifiedAt??null,
+      sourceRevisionDate:r?.sourceRevisionDate??null,
+      authoritative:Boolean(r&&(authoritativeEvidenceLevels.has(r.evidenceLevel)||authoritativeTypes.has(r.type))),
+      reviewed:Boolean(r&&['reviewed','reviewed-source'].includes(r.status)),
+      resolved:Boolean(r)
+    };
   });
+}
+function evidenceHealth(evidence){
+  const unresolved=evidence.filter(x=>!x.resolved).map(x=>x.id);
+  const problems=[];
+  if(evidence.length===0) problems.push('no-item-level-references');
+  if(unresolved.length) problems.push('unresolved-reference:'+unresolved.join(','));
+  if(evidence.length&&evidence.every(x=>!x.reviewed)) problems.push('no-reviewed-source');
+  if(evidence.length&&evidence.every(x=>!x.authoritative)) problems.push('no-authoritative-source');
+  return {
+    referenceCount:evidence.length,
+    reviewedReferenceCount:evidence.filter(x=>x.reviewed).length,
+    authoritativeReferenceCount:evidence.filter(x=>x.authoritative).length,
+    verifiedAuthoritativeReferenceCount:evidence.filter(x=>x.authoritative&&x.lastVerifiedAt).length,
+    unresolvedReferences:unresolved,
+    problems
+  };
 }
 function packetFor(id){
   const a=assessments.get(id);
@@ -49,6 +81,7 @@ function packetFor(id){
     if(!item) throw new Error(a.id+': missing item '+itemId);
     const obj=objectives.get(item.objective);
     const comp=competencies.get(item.competency);
+    const evidence=evidenceForItem(item);
     return {
       id:item.id,
       version:item.version,
@@ -62,12 +95,22 @@ function packetFor(id){
       choices:item.choices??[],
       correct:item.correct,
       rationale:item.rationale??null,
-      evidence:evidenceForItem(item),
+      evidence,
+      evidenceHealth:evidenceHealth(evidence),
       reviewCommand:'node scripts/create-review-record.mjs --object '+item.id+' --type assessment --reviewer <REVIEWER-ID> --status approved --confirm-approved --write'
     };
   });
+  const sourceSummary={
+    items:items.length,
+    itemsWithReferences:items.filter(x=>x.evidenceHealth.referenceCount>0).length,
+    itemsWithReviewedSources:items.filter(x=>x.evidenceHealth.reviewedReferenceCount>0).length,
+    itemsWithAuthoritativeSources:items.filter(x=>x.evidenceHealth.authoritativeReferenceCount>0).length,
+    itemsWithVerifiedAuthoritativeSources:items.filter(x=>x.evidenceHealth.verifiedAuthoritativeReferenceCount>0).length,
+    itemsWithUnresolvedReferences:items.filter(x=>x.evidenceHealth.unresolvedReferences.length>0).length,
+    itemsWithSourceProblems:items.filter(x=>x.evidenceHealth.problems.length>0).length
+  };
   return {
-    packetVersion:'1.0.0',
+    packetVersion:'1.1.0',
     assessment:{
       id:a.id,version:a.version,title:a.title,courseId:a.extensions?.courseId??null,totalItems:a.totalItems,
       passingScorePercent:a.passingScorePercent,
@@ -75,8 +118,10 @@ function packetFor(id){
       blueprint:a.blueprint??[],
       review:reviewState(a.id,a.version)
     },
+    sourceSummary,
     checklist:[
       'Verify every item is taught by the current course and does not rely on encyclopedia substitution.',
+      'Review the source-health block for every item: exact reference resolution, review state, authoritative evidence type/level, and verification metadata.',
       'Verify objective and competency alignment for each item.',
       'Verify one defensible keyed answer and plausible distractors.',
       'Verify scientific/technical claims and references support the keyed reasoning.',
@@ -103,7 +148,10 @@ function markdown(p){
     'Title: '+p.assessment.title,
     'Current definition review: '+p.assessment.review.state,
     'Current item count: '+p.assessment.totalItems,
-    'Configured passing score: '+p.assessment.passingScorePercent+'% (provisional for credential use)','',
+    'Configured passing score: '+p.assessment.passingScorePercent+'% (provisional for credential use)',
+    'Items with authoritative evidence: '+p.sourceSummary.itemsWithAuthoritativeSources+'/'+p.sourceSummary.items,
+    'Items with verified authoritative evidence: '+p.sourceSummary.itemsWithVerifiedAuthoritativeSources+'/'+p.sourceSummary.items,
+    'Items with source problems: '+p.sourceSummary.itemsWithSourceProblems,'',
     '## Assessment-level checklist','',
     ...p.checklist.map(x=>'- [ ] '+x),'',
     '## Record assessment-definition approval','',
@@ -123,7 +171,9 @@ function markdown(p){
       'Key: '+String.fromCharCode(65+Number(item.correct)),'',
       '### Rationale','',item.rationale??'—','',
       '### Evidence','',
-      ...(item.evidence.length?item.evidence.map(e=>'- '+e.id+': '+(e.title??'Untitled')+' ['+(e.status??'unknown')+'; level '+(e.evidenceLevel??'n/a')+']'):['- No item-level references listed.']),'',
+      ...(item.evidence.length?item.evidence.map(e=>'- '+e.id+': '+(e.title??'Untitled')+' ['+(e.status??'unknown')+'; level '+(e.evidenceLevel??'n/a')+'; authoritative='+(e.authoritative?'yes':'no')+'; verified='+(e.lastVerifiedAt??'not-recorded')+']'):['- No item-level references listed.']),'',
+      'Evidence health: refs='+item.evidenceHealth.referenceCount+', reviewed='+item.evidenceHealth.reviewedReferenceCount+', authoritative='+item.evidenceHealth.authoritativeReferenceCount+', verified-authoritative='+item.evidenceHealth.verifiedAuthoritativeReferenceCount,
+      'Evidence issues: '+(item.evidenceHealth.problems.join('; ')||'none'),'',
       '### Reviewer decision','',
       '- [ ] Approve exact current version',
       '- [ ] Changes requested',
@@ -149,6 +199,9 @@ if(write){
   ].join('\n')+'\n');
 }
 
+const sourceIntegrityProblems=packets.flatMap(p=>p.items.flatMap(item=>item.evidenceHealth.problems
+  .filter(x=>x==='no-item-level-references'||x.startsWith('unresolved-reference:'))
+  .map(problem=>({assessmentId:p.assessment.id,itemId:item.id,problem}))));
 const summary={
   packetCount:packets.length,
   finalDefinitionCount:packets.length,
@@ -157,8 +210,16 @@ const summary={
   definitionApproved:packets.filter(p=>p.assessment.review.state==='approved').length,
   itemsPending:packets.reduce((n,p)=>n+p.items.filter(x=>x.review.state==='pending').length,0),
   itemsApproved:packets.reduce((n,p)=>n+p.items.filter(x=>x.review.state==='approved').length,0),
+  itemsWithAuthoritativeSources:packets.reduce((n,p)=>n+p.sourceSummary.itemsWithAuthoritativeSources,0),
+  itemsWithVerifiedAuthoritativeSources:packets.reduce((n,p)=>n+p.sourceSummary.itemsWithVerifiedAuthoritativeSources,0),
+  sourceIntegrityProblems:sourceIntegrityProblems.length,
   outputDirectory:path.relative(root,outDir),
   wroteFiles:write
 };
-if(asJson) console.log(JSON.stringify(summary,null,2));
-else console.log('Certification final review packets: '+summary.packetCount+' finals, '+summary.itemCount+' current items; wroteFiles='+write);
+if(asJson) console.log(JSON.stringify({...summary,sourceIntegrityProblems},null,2));
+else console.log('Certification final review packets: '+summary.packetCount+' finals, '+summary.itemCount+' current items; authoritative='+summary.itemsWithAuthoritativeSources+'; sourceIntegrityProblems='+summary.sourceIntegrityProblems+'; wroteFiles='+write);
+if(checkSourceIntegrity&&sourceIntegrityProblems.length){
+  console.error('Certification final review source-integrity check failed:');
+  for(const p of sourceIntegrityProblems) console.error('- '+p.assessmentId+' / '+p.itemId+': '+p.problem);
+  process.exitCode=1;
+}
