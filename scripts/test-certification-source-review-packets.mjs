@@ -23,7 +23,7 @@ for(const c of out.courses){
 }
 
 const supplement=JSON.parse(fs.readFileSync('registry/public-authoritative-source-supplements.json','utf8'));
-if((supplement.mappings??[]).length!==15) throw new Error('expected fifteen exact-version public-source supplements');
+if((supplement.mappings??[]).length!==18) throw new Error('expected eighteen exact-version public-source supplements');
 const required=[
   'REF-EPA-WPS-LABELING-ACCESS-2026',
   'REF-EPA-WPS-AEZ-2025',
@@ -35,7 +35,10 @@ const required=[
   'REF-PSU-HIGH-TUNNEL-SCOUTING-2025',
   'REF-PSU-GREENHOUSE-DISEASE-RISK-2025',
   'REF-PSU-HIGH-TUNNEL-SANITATION-2025',
-  'REF-PSU-INDUSTRIAL-HEMP-PRODUCTION'
+  'REF-PSU-INDUSTRIAL-HEMP-PRODUCTION',
+  'REF-PURDUE-DLI-GREENHOUSE',
+  'REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT',
+  'REF-UMN-INDOOR-PLANT-LIGHTING-2026'
 ];
 for(const id of required){
   const p=path.join(root,'content/references',id+'.json');
@@ -47,4 +50,4 @@ for(const id of required){
   if(!ref.url?.startsWith('https://')) throw new Error(id+': expected https source URL');
 }
 
-console.log('Certification public-source review packets: PASS (15 courses, 284 lessons, 15 exact-version supplemental mappings).');
+console.log('Certification public-source review packets: PASS (15 courses, 284 lessons, 18 exact-version supplemental mappings).');
