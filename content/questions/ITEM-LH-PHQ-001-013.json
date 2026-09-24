@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-001-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which harvest-to-dry handoff is strongest?",
+  "choices": [
+    "Source harvest/lot ID, split destination, transfer time, condition, sanitation status, active deviations/holds and next responsible role.",
+    "Only total weight.",
+    "Only cultivar name.",
+    "A verbal note with no identity."
+  ],
+  "correct": 0,
+  "rationale": "The receiving process needs identity, condition and open-control status.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
