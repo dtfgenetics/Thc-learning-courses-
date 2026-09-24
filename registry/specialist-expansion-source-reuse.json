@@ -178,6 +178,28 @@
         "irrigation",
         "fertigation",
         "root-zone interpretation"
+      ],
+      "targetCourseReusePlans": [
+        {
+          "targetCourseId": "COURSE-LH-EIFS-001",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001",
+            "MOD-ENV-VPD-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-ENV-LIGHT-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-EIFS-001-PLANT-ENV-MEASUREMENT",
+          "remainingDepth": [
+            "photorealistic sensor-placement, microclimate and crop-response visual set",
+            "human environmental-systems/controlled-environment review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        }
       ]
     },
     {
