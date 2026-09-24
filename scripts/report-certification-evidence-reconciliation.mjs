@@ -263,8 +263,23 @@ function deriveCredentialAuthorization(courseRow){
   if(!courseLock || String(courseLock.courseVersion)!==String(course.version)){
     return {status:'prepared',detail:{credentialProgramId:program.id,latestRecordId:latest.id},problems:[`credential authorization does not cover current course version ${course.version}`]};
   }
-  const status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='evidence-complete'?'evidence-complete':latest.status==='suspended'?'revision-required':'in-progress';
-  return {status,detail:{credentialProgramId:program.id,credentialProgramVersion:program.version,latestRecordId:latest.id,finalReleaseDecision:latest.governance?.finalReleaseDecision??null}};
+  let status=latest.status==='approved'?'approved':latest.status==='revision-required'?'revision-required':latest.status==='evidence-complete'?'evidence-complete':latest.status==='suspended'?'revision-required':'in-progress';
+  const problems=[];
+  if(latest.status==='approved'){
+    if(program.status!=='approved'){
+      problems.push(`approved credential authorization requires credential program status=approved, found ${program.status}`);
+      status='revision-required';
+    }
+    if(course.extensions?.professionalCredentialUseAuthorized!==true){
+      problems.push(`approved credential authorization requires professionalCredentialUseAuthorized=true on current course`);
+      status='revision-required';
+    }
+    if(Object.prototype.hasOwnProperty.call(course.extensions??{},'liveCredentialFormApproved')&&course.extensions.liveCredentialFormApproved!==true){
+      problems.push(`approved credential authorization requires liveCredentialFormApproved=true on current integrated course`);
+      status='revision-required';
+    }
+  }
+  return {status,detail:{credentialProgramId:program.id,credentialProgramVersion:program.version,latestRecordId:latest.id,finalReleaseDecision:latest.governance?.finalReleaseDecision??null},problems};
 }
 function explicitOrDerived(courseRow,gate,derived){
   const course=coursesById.get(courseRow.courseId);
