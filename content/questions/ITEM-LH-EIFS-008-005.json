@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-008-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A sensor flat-lines while neighboring verified sensors continue changing. Which fault class should be investigated first?",
+  "choices": [
+    "Sensor/data-path failure.",
+    "Uniform room conditions.",
+    "Crop genetics.",
+    "Irrigation chemistry."
+  ],
+  "correct": 0,
+  "rationale": "A flat-line isolated to one signal is a data-quality warning.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
