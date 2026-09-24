@@ -11,11 +11,11 @@
   "stem": "A positive lab result has no reliable plant or lot identifier. How should it be used?",
   "choices": [
     "As definitive evidence for the whole room.",
-    "With caution; identity uncertainty weakens its value for affected-scope and disposition decisions.",
     "As proof that every nearby plant is positive.",
-    "As a substitute for chain-of-custody records."
+    "As a substitute for chain-of-custody records.",
+    "With caution; identity uncertainty weakens its value for affected-scope and disposition decisions."
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "Testing evidence is only as useful as the identity and chain of custody that connect it to the represented material.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
