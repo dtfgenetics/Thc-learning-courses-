@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-005-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-01",
+  "competency": "COMP-IPM-ADV-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "stem": "Why should a numeric threshold from another crop not automatically become a cannabis action threshold?",
+  "choices": [
+    "Thresholds are never useful.",
+    "Cannabis pests cannot be counted.",
+    "Thresholds depend on crop value, pest biology, stage, damage tolerance, monitoring method and local control options.",
+    "Only pesticide manufacturers may count pests."
+  ],
+  "correct": 2,
+  "rationale": "Thresholds are context-dependent decision rules and require validation before transfer to another crop/system.",
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}
