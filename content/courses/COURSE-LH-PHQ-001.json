@@ -1,0 +1,59 @@
+{
+  "id": "COURSE-LH-PHQ-001",
+  "title": "Harvest Readiness, Sanitary Handling & Lot Integrity",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Postharvest Quality Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners entering the Postharvest Quality Specialist pathway",
+    "Cultivation and postharvest personnel responsible for harvest readiness, sanitary handling, lot identity, transfers and initial postharvest quality records"
+  ],
+  "prerequisites": [
+    "Cultivation Technician II harvest/postharvest foundation or equivalent"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses cannabis-specific peer-reviewed postharvest and maturity evidence plus controlled data-integrity/traceability sources. Maturity indicators are interpreted through representative sampling and product objectives; no universal trichome-color percentage or calendar date is presented as a harvest rule.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize final product release, destruction, laboratory disposition or jurisdiction-specific compliance decisions outside assigned authority.",
+  "description": "Develops specialist harvest-readiness evaluation, sanitary harvest handling, lot creation/split/merge controls, contamination prevention and reconstructable transfer into drying.",
+  "modules": [
+    "MOD-LH-PHQ-001-HARVEST-LOT-INTEGRITY"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHQ-001-FINAL",
+  "learningOutcomes": [
+    "Evaluate harvest readiness using representative maturity observations, crop objectives, developmental context and sampling limits rather than a single flower, calendar date or universal visual threshold.",
+    "Design a sanitary harvest-handling workflow that protects material identity, minimizes contamination and preserves worker/process safety through cutting, transport and staging.",
+    "Create and maintain lot identity across harvest, splits, transfers, drying-room/rack assignment and later sample relationships without undocumented mixing or relabeling.",
+    "Detect and contain harvest-stage deviations such as sanitation failure, identity uncertainty, damaged material or environmental delay while preserving affected scope and evidence.",
+    "Produce a reconstructable harvest-to-dry handoff record with source identity, time, location, condition, sanitation status, lot genealogy, deviations and next responsible role."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-POSTHARVEST-QA-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-TECH2-006"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHQ-001-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}
