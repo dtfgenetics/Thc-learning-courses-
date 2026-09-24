@@ -34,6 +34,7 @@ const credentialAuth=runJson('scripts/report-credential-authorization-readiness.
 const productionEvidence=runJson('scripts/report-production-evidence-reconciliation.mjs');
 const releaseDependencies=runJson('scripts/report-certification-release-dependencies.mjs',['--json']);
 const executionQueue=runJson('scripts/report-certification-execution-work-queue.mjs',['--json']);
+const sourceHealth=runJson('scripts/report-certification-source-health.mjs',['--json']);
 
 const falseSystemGates=[];
 for(const [areaName,area] of Object.entries(readiness.areas??{})){
@@ -82,10 +83,16 @@ const output={
     credentialAuthorization:credentialAuth.summary,
     productionControls:productionEvidence.summary,
     releaseDependencies:releaseDependencies.summary,
-    executionWorkQueue:executionQueue.summary
+    executionWorkQueue:executionQueue.summary,
+    sourceProvenance:sourceHealth.summary
+  },
+  sourceProvenance:{
+    structuralProblems:sourceHealth.structuralProblems,
+    sourceReviewQueue:sourceHealth.sourceReviewQueue,
+    refreshQueue:sourceHealth.refreshQueue
   },
   priorities:[
-    'close any remaining repository structural/evidence-integrity defects reported by the live reconciler and production-evidence reconciler',
+    'close any remaining repository structural/evidence/source-integrity defects reported by the certification, production and source-provenance reconcilers',
     'complete real exact-version human assessment, technical/occupational and accessibility review evidence in dependency-safe order',
     'execute controlled pilots and practical/capstone validation/calibration, then analyze item and inter-rater evidence',
     'perform formal standard setting and secure operational form equivalence/security review',
@@ -107,6 +114,7 @@ else{
   console.log(`Authoritative certification release ready: ${output.authoritativeCertificationReleaseReady?'YES':'NO'}`);
   console.log(`Open certification evidence gates: ${output.certificationEvidence.openEvidenceGates.length}`);
   console.log(`Open system/infrastructure gates: ${output.openSystemGates.length}`);
+  console.log(`Source structural problems: ${output.sourceProvenance.structuralProblems.length}; source-review queue: ${output.sourceProvenance.sourceReviewQueue.length}; verification refresh queue: ${output.sourceProvenance.refreshQueue.length}`);
   if(output.certificationEvidence.structuralProblems.length){
     console.log('Structural evidence problems:');
     for(const p of output.certificationEvidence.structuralProblems) console.log(`- ${p}`);
