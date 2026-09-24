@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why can a daily temperature average hide an important control problem?",
+  "choices": [
+    "Averages can hide repeated short-duration excursions or transition failures.",
+    "Averages are always wrong.",
+    "Only maximum temperature matters.",
+    "Daily data should never be used."
+  ],
+  "correct": 0,
+  "rationale": "Time-series review can reveal recurring excursions that disappear inside a daily mean.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}
