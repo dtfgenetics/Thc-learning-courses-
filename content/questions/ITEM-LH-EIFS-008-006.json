@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-008-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-008-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should contradictory controller and physical evidence be preserved?",
+  "choices": [
+    "The disagreement helps identify which system layer may be failing.",
+    "One source should be deleted.",
+    "Contradictions prevent all troubleshooting.",
+    "The controller should always win."
+  ],
+  "correct": 0,
+  "rationale": "Conflicting evidence is diagnostically useful and should remain traceable.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
