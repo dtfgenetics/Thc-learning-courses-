@@ -10,12 +10,12 @@
   "difficulty": "hard",
   "stem": "A facility switches from Brand A to Brand B, but both products share the same insecticide mode-of-action group. What is the resistance-management concern?",
   "choices": [
-    "Brand rotation always creates a new mode of action.",
     "The switch may maintain similar selection pressure because MoA, not brand name, drives target-site selection.",
+    "Brand rotation always creates a new mode of action.",
     "Different packaging guarantees no cross-resistance.",
     "Resistance cannot develop in greenhouses."
   ],
-  "correct": 1,
+  "correct": 0,
   "rationale": "Resistance stewardship tracks mode of action and selection pressure rather than relying on brand changes.",
   "references": [
     "REF-IRAC-MOA-2026-001"
