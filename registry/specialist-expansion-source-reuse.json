@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-09-21",
+  "updated": "2026-09-24",
   "purpose": "Prevent duplicate curriculum during specialist and lead-program expansion by identifying existing canonical courses that may supply reusable objectives, lessons, evidence, assessments or scenarios. A reuse candidate is source material only and does not satisfy a future program requirement until reconciled into the target course and reviewed.",
   "policy": {
     "noAutomaticEquivalence": true,
@@ -78,6 +78,24 @@
           "remainingDepth": [
             "photorealistic pest identification plates",
             "human entomology/IPM review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-004-DISEASE-BIOSECURITY",
+          "remainingDepth": [
+            "photorealistic disease and HLVd educational visual set",
+            "human plant-pathology/biosecurity review",
             "rendered accessibility review",
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
