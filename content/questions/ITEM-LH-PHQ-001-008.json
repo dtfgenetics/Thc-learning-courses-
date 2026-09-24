@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two lots have the same cultivar nickname but different source/process histories. Can they be merged solely because the name matches?",
+  "choices": [
+    "No; source identity, status and controlled merge rules must be reconciled first.",
+    "Yes, cultivar name is enough.",
+    "Yes, if weights match.",
+    "Yes, if they look similar."
+  ],
+  "correct": 0,
+  "rationale": "Names do not replace traceability or status controls.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
