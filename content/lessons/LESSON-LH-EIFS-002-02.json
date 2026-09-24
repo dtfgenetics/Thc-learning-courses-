@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-002-02",
+  "title": "DLI, Photoperiod & Photon-Dose Interpretation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-002-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PURDUE-DLI-GREENHOUSE",
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Daily light integral combines photon intensity with time. Equal DLI can arise from different intensity-duration combinations, so DLI should be interpreted alongside photoperiod, instantaneous intensity and crop/environment context.",
+    "vocabulary": [
+      {
+        "term": "Daily light integral",
+        "definition": "The accumulated amount of photosynthetically active photons received per unit area over a day."
+      },
+      {
+        "term": "Photoperiod",
+        "definition": "The duration of the light period within a 24-hour cycle."
+      },
+      {
+        "term": "Photon dose",
+        "definition": "Integrated photon exposure over a defined time interval and area."
+      }
+    ],
+    "sections": [
+      {
+        "title": "DLI is PPFD integrated through time",
+        "body": "Representative PPFD and the actual light duration are both needed. One instantaneous measurement does not describe daily photon exposure.",
+        "references": [
+          "REF-PURDUE-DLI-GREENHOUSE"
+        ]
+      },
+      {
+        "title": "Equal DLI does not mean identical conditions",
+        "body": "Two schedules may produce similar DLI while using different PPFD and photoperiod. Instantaneous intensity, photoperiod biology and environmental load can still differ.",
+        "references": [
+          "REF-PURDUE-DLI-GREENHOUSE"
+        ]
+      },
+      {
+        "title": "Use crop and system context",
+        "body": "Higher photon delivery can change heat load, transpiration and irrigation demand. DLI should be reviewed with temperature, humidity, root-zone response and developmental stage.",
+        "references": [
+          "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A lower PPFD for a longer photoperiod can approach the DLI of a higher PPFD for a shorter duration, but the crop does not necessarily experience those schedules identically."
+    ],
+    "commonMistakes": [
+      "Treating DLI as independent of photoperiod.",
+      "Calculating DLI from the brightest single point.",
+      "Copying DLI ranges from another species as a cannabis universal."
+    ],
+    "practicalApplication": "Calculate illustrative DLI from representative PPFD and photoperiod, then state the assumptions and why the result does not by itself establish an optimum.",
+    "summary": "DLI is a daily exposure metric, not a universal prescription."
+  }
+}
