@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A humidity sensor sits directly in dehumidifier discharge and reads much drier than canopy sensors. What should be considered first?",
   "choices": [
-    "The discharge reading may represent a local microclimate rather than the crop average.",
     "The canopy sensors should be discarded.",
     "The room should be humidified immediately.",
+    "The discharge reading may represent a local microclimate rather than the crop average.",
     "Sensor location never matters."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Equipment discharge locations can be unrepresentative of canopy conditions.",
   "references": [
     "REF-VPD-002"
