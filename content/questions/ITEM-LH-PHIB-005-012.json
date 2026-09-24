@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-005-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-04",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "stem": "Does a technically sound mode-of-action rotation plan authorize a pesticide for cannabis use?",
+  "choices": [
+    "Yes, if the MoA groups alternate.",
+    "No; current label, crop/site registration, jurisdiction, worker-safety and facility authority still control use.",
+    "Yes, if the pest is severe.",
+    "Yes, if the active ingredient is used on another crop."
+  ],
+  "correct": 1,
+  "rationale": "Resistance planning does not override pesticide label or legal/operational authorization.",
+  "references": [
+    "REF-EPA-PESTICIDE-LABELS-2026-001",
+    "REF-IRAC-MOA-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}
