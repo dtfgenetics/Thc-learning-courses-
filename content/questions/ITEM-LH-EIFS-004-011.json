@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A signal becomes perfectly flat immediately after maintenance while nearby verified sensors continue changing. What is the strongest interpretation?",
   "choices": [
-    "Potential data-path, configuration or sensor failure that needs verification.",
     "Perfect room stability.",
     "Proof the nearby sensors are wrong.",
+    "Potential data-path, configuration or sensor failure that needs verification.",
     "A nutrient problem."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "A maintenance-linked flat line is a strong data-quality warning.",
   "references": [
     "REF-ENV-TEMP-2025-001",
