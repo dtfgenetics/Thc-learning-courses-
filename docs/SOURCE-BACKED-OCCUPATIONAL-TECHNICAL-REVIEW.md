@@ -8,7 +8,8 @@ Occupational program validation now explicitly consumes the certification public
 2. Use the Technician I or Technician II occupational validation packet/operator kit.
 3. Review every locked course version against its source packet before marking technical curriculum review complete.
 4. Record material scientific/technical concerns, source-scope limitations and dispositions in the occupational validation evidence.
-5. Continue separately with JTA, SME/employer validation, blueprint finalization and practical/capstone validation.
+5. Complete occupational evidence with `--confirm-source-review`; the resulting record pins the current source-review registry ID/date so a later source-registry revision reopens the provenance check.
+6. Continue separately with JTA, SME/employer validation, blueprint finalization and practical/capstone validation.
 
 The source packet is designed to make several review failures visible:
 
