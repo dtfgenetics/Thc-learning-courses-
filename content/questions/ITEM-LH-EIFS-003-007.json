@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-003-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Leaves near one circulation fan dry rapidly while the interior canopy stays humid. What does the pattern most strongly suggest?",
+  "choices": [
+    "A strong local jet with poor whole-canopy mixing.",
+    "Uniform airflow.",
+    "A proven nutrient deficiency.",
+    "Too little fan speed everywhere."
+  ],
+  "correct": 0,
+  "rationale": "Local over-drying plus interior humidity indicates uneven distribution.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}
