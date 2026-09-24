@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "THC-CERT-PUBLIC-AUTHORITATIVE-SOURCE-SUPPLEMENTS-001",
-  "asOf": "2026-09-23",
+  "asOf": "2026-09-24",
   "purpose": "Reviewed public-source supplements for exact-version technical review. These records strengthen reviewer evidence and may be incorporated into lesson content only through normal versioned content/review workflows.",
   "integrityBoundary": "A supplemental source mapping is not a scientific/editorial approval and does not modify a published lesson. Lesson content changes must increment the lesson version and obtain renewed exact-version review.",
   "mappings": [
@@ -57,6 +57,147 @@
       "reviewUse": [
         "Use as an integrated cross-check for chemical/PPE, treated-area, exposure-control, symptom-reporting, and authority-boundary scenarios.",
         "Do not convert source availability into handler/applicator authorization or medical diagnosis."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "lessonId": "LESSON-WATER-001",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-GREENHOUSE-WATER-QUALITY-2025",
+        "REF-PSU-IRRIGATION-WATER-TESTS-2025"
+      ],
+      "reviewUse": [
+        "Cross-check that irrigation-water quality is taught as a measured input with laboratory/context dependence rather than as a single universal number.",
+        "Verify that pH, alkalinity, EC/salts and source-water context are distinguished."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "lessonId": "LESSON-WATER-PH-002",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-GREENHOUSE-WATER-QUALITY-2025",
+        "REF-PSU-IRRIGATION-WATER-TESTS-2025"
+      ],
+      "reviewUse": [
+        "Verify the distinction between pH and alkalinity and avoid presenting a generic greenhouse range as a universal cannabis target.",
+        "Confirm that meter/lab context and trend interpretation remain part of the decision."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "lessonId": "LESSON-WATER-EC-003",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-GREENHOUSE-WATER-QUALITY-2025",
+        "REF-PSU-IRRIGATION-WATER-TESTS-2025"
+      ],
+      "reviewUse": [
+        "Cross-check EC as an aggregate dissolved-ion/salt signal whose meaning depends on water, fertilizer, medium, method and crop context.",
+        "Avoid transferring extension threshold examples into fixed cannabis setpoints."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "lessonId": "LESSON-ROOTZONE-MEDIA-002",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-POTTING-MEDIA-PROPAGATION",
+        "REF-PSU-IRRIGATION-WATER-TESTS-2025"
+      ],
+      "reviewUse": [
+        "Verify that soil/soilless media differ in buffering, aeration, water retention and testing method.",
+        "Confirm that media-specific analytical methods are not mixed without noting method dependence."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "lessonId": "LESSON-PROP-001",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-POTTING-MEDIA-PROPAGATION",
+        "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+      ],
+      "reviewUse": [
+        "Cross-check clean propagation-media and contamination-risk concepts.",
+        "Keep greenhouse propagation guidance separate from cultivar-specific cannabis propagation recipes."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "lessonId": "LESSON-PROP-CLONE-003",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-POTTING-MEDIA-PROPAGATION",
+        "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+      ],
+      "reviewUse": [
+        "Verify rooting-media and acclimatization instruction includes contamination/biosecurity context.",
+        "Use extension guidance for general protected-crop practice, not as a substitute for validated facility clone SOPs."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "lessonId": "LESSON-IPM-001",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-HIGH-TUNNEL-SCOUTING-2025",
+        "REF-PSU-HIGH-TUNNEL-SANITATION-2025"
+      ],
+      "reviewUse": [
+        "Cross-check IPM as prevention, scouting/monitoring, decision thresholds and integrated tactics rather than automatic pesticide use.",
+        "Keep pest-specific thresholds crop- and program-specific."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "lessonId": "LESSON-IPM-SCOUT-002",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-HIGH-TUNNEL-SCOUTING-2025",
+        "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+      ],
+      "reviewUse": [
+        "Verify representative scouting, plant-inspection, trap and recordkeeping principles.",
+        "Confirm that observation and mapping precede unsupported causal diagnosis."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "lessonId": "LESSON-IPM-BIOSEC-003",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-GREENHOUSE-DISEASE-RISK-2025",
+        "REF-PSU-HIGH-TUNNEL-SANITATION-2025"
+      ],
+      "reviewUse": [
+        "Cross-check sanitation, incoming-stock/tool/water pathways, moisture/condensation, separation and transition controls.",
+        "Keep actual disinfectants, contact times and treatment choices controlled by validated facility procedures and labels."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "lessonId": "LESSON-POSTHARVEST-DRY-002",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-INDUSTRIAL-HEMP-PRODUCTION"
+      ],
+      "reviewUse": [
+        "Use hemp extension evidence only for general prompt-drying, humidity/airflow and mold/spoilage risk concepts.",
+        "Do not convert industrial-hemp drying guidance into a universal cannabis finished-product specification."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "lessonId": "LESSON-POSTHARVEST-STORAGE-003",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PSU-INDUSTRIAL-HEMP-PRODUCTION"
+      ],
+      "reviewUse": [
+        "Cross-check storage discussion for moisture/heat/spoilage awareness while preserving product-specific QA requirements.",
+        "Treat facility specifications, validated packaging controls and jurisdictional requirements as controlling."
       ]
     }
   ]
