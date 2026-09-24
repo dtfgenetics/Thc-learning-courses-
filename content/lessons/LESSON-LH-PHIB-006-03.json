@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-006-03",
+  "title": "Root Cause, Contributing Factors & Evidence Discipline",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-006-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Root-cause analysis should explain why the event occurred using evidence rather than blame or timing alone. Complex outbreaks can have multiple causal and contributing factors, and unresolved hypotheses should remain labeled as such.",
+    "vocabulary": [
+      {
+        "term": "Root cause",
+        "definition": "An underlying factor that, when adequately addressed, is expected to reduce recurrence of the defined problem."
+      },
+      {
+        "term": "Contributing factor",
+        "definition": "A condition that influenced severity, detection, spread or consequence but may not independently explain the event."
+      },
+      {
+        "term": "Correlation",
+        "definition": "Association between observations that does not by itself demonstrate a causal relationship."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Separate cause from chronology",
+        "body": "The last task performed before symptoms appeared is not automatically the cause. Compare timing with biology, exposure pathways, measurements and controls.",
+        "references": [
+          "REF-ASTM-E2659-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Avoid operator-blame shortcuts",
+        "body": "An individual action can be part of the causal chain, but investigation should also examine procedure design, training, equipment, workload, monitoring and system controls when relevant.",
+        "references": [
+          "REF-ASTM-E2659-001"
+        ]
+      },
+      {
+        "title": "Preserve competing explanations until resolved",
+        "body": "Document evidence supporting and contradicting each major hypothesis. A defensible investigation may end with multiple contributors or residual uncertainty rather than a forced single cause.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A repeated contamination pattern after tool sanitation does not automatically prove staff noncompliance; concentration, contact time, organic load, tool design and workflow may also require evaluation."
+    ],
+    "commonMistakes": [
+      "Equating sequence with causation.",
+      "Selecting one root cause because the form requires one.",
+      "Ignoring evidence that conflicts with the preferred explanation."
+    ],
+    "practicalApplication": "Build a cause-evidence matrix with suspected cause, supporting evidence, conflicting evidence, next test and whether the factor is causal, contributing or unresolved.",
+    "summary": "CAPA quality depends on disciplined causal reasoning. Evidence, not blame or chronology alone, determines what should be corrected."
+  }
+}
