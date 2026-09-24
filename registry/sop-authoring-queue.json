@@ -17,7 +17,8 @@
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
     "evidencePlansSeeded": 17,
-    "evidencePlanCoverageComplete": true
+    "evidencePlanCoverageComplete": true,
+    "draftControlledPackagesCreated": 3
   },
   "targets": [
     {
@@ -107,9 +108,10 @@
         "movement controls"
       ],
       "sequence": 3,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-020.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-020.json"
     },
     {
       "id": "GROW-030",
@@ -327,13 +329,14 @@
         "label/jurisdiction limits"
       ],
       "sequence": 10,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-090.json",
       "newControlledReferences": [
         "REF-HEMP-PIERCING-PESTS-2024-001",
         "REF-HEMP-RUSSET-MANAGEMENT-2024-001",
         "REF-EPA-PESTICIDE-LABELS-2026-001"
-      ]
+      ],
+      "packageManifest": "registry/sop-packages/GROW-090.json"
     },
     {
       "id": "GROW-100",
@@ -363,14 +366,15 @@
         "clean stock"
       ],
       "sequence": 11,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-100.json",
       "newControlledReferences": [
         "REF-CANNABIS-PATHOGENS-2019-001",
         "REF-CANNABIS-DIAGNOSTICS-2024-001",
         "REF-HLVD-REVIEW-2023-001",
         "REF-HLVD-SPREAD-2025-001"
-      ]
+      ],
+      "packageManifest": "registry/sop-packages/GROW-100.json"
     },
     {
       "id": "GROW-110",

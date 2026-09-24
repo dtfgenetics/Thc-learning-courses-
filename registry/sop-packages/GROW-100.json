@@ -1,0 +1,39 @@
+{
+  "id": "GROW-100",
+  "title": "Disease and Disorder Management",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-100.json",
+  "scientificSop": "docs/sop-packages/GROW-100/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-100/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-100/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-100-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-IPM-ADV-001",
+    "MOD-ROOTZONE-001",
+    "MOD-ENV-ADV-001"
+  ],
+  "reusedLessons": [
+    "LESSON-IPM-DIAG-ADV-002",
+    "LESSON-IPM-INTEGRATE-003",
+    "LESSON-ROOTZONE-001",
+    "LESSON-ENV-MAP-001"
+  ],
+  "controlledReferences": [
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-CANNABIS-DIAGNOSTICS-2024-001",
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "releaseGates": [
+    "claim-level scientific review",
+    "diagnostic-method review",
+    "biosecurity review",
+    "facility/jurisdiction-specific legal and pesticide-label review where applicable",
+    "accessibility review",
+    "independent release review"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "GROW-020",
+  "title": "Biosecurity and Clean Workflow",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-020.json",
+  "scientificSop": "docs/sop-packages/GROW-020/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-020/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-020/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-020-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-SPACE-BIOSEC-001",
+    "MOD-IPM-001",
+    "MOD-IPM-ADV-001"
+  ],
+  "reusedLessons": [
+    "LESSON-IPM-BIOSEC-003",
+    "LESSON-IPM-SCOUT-002",
+    "LESSON-IPM-INTEGRATE-003",
+    "LESSON-LH-TECH2-004-04"
+  ],
+  "controlledReferences": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-CANNABIS-DIAGNOSTICS-2024-001",
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "releaseGates": [
+    "claim-level plant-pathology/biosecurity review",
+    "diagnostic/testing-method review",
+    "facility-layout and movement-path validation",
+    "sanitizer label/worker-safety/material-compatibility review",
+    "accessibility review",
+    "independent release review"
+  ]
+}

@@ -62,10 +62,11 @@
       "title": "Biosecurity and clean workflow",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-020.json"
     },
     {
       "externalId": "GROW-030",
@@ -219,20 +220,22 @@
       "title": "Integrated pest management",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-090.json"
     },
     {
       "externalId": "GROW-100",
       "title": "Disease and disorder management",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-100.json"
     },
     {
       "externalId": "GROW-110",
@@ -309,6 +312,7 @@
     "provenanceReconciledExactArtifactSets": 4,
     "packageCreatedOrLocatedPendingAdditionalReview": 3,
     "sourceMappedPlannedPackages": 17,
-    "releaseApprovedPackages": 0
+    "releaseApprovedPackages": 0,
+    "repositoryDraftPackagesCreated": 3
   }
 }
