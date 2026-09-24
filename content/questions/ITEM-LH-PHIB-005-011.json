@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-005-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-04",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "stem": "What is the best way to reduce repeated chemical selection pressure within an IPM program?",
+  "choices": [
+    "Use below-label rates.",
+    "Integrate nonchemical controls and, when chemical use is authorized, follow label/local guidance for effective MoA sequencing or rotation.",
+    "Apply the same MoA more frequently.",
+    "Choose products by brand color."
+  ],
+  "correct": 1,
+  "rationale": "IRM emphasizes integrated tactics and responsible use of different MoA groups under label/local guidance.",
+  "references": [
+    "REF-IRAC-MOA-2026-001",
+    "REF-OSU-GREENHOUSE-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}
