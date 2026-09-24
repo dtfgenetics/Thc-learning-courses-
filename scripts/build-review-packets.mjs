@@ -111,17 +111,23 @@ function checklistFor(task) {
     'Check headings, vocabulary and instructional flow for ambiguity or unnecessary complexity.'
   ];
   if (task.objectType === 'assessment') return [
-    'Verify blueprint, competency/objective coverage, item counts and cognitive targets.',
-    'Check passing-score language is provisional unless standard-setting evidence exists.',
-    'Confirm security, attempt, feedback and accommodation settings are appropriate.',
-    'Ensure the assessment cannot become production-ready without reviewed active item pools.'
+    'Verify the assessment blueprint is traceable to the exact course objectives, competencies, current occupational/JTA scope where applicable, item counts and intended cognitive targets.',
+    'Verify the assessment samples the intended construct without adding unrelated reading, memory, cultural or technology demands that are not part of the skill being assessed.',
+    'Check passing-score language is explicitly provisional unless formal standard-setting evidence exists for the exact version.',
+    'Confirm attempt, feedback, randomization, form-construction, security and accommodation settings preserve both construct validity and answer security.',
+    'Check accessibility/accommodation rules allow candidates to demonstrate the intended knowledge or skill without changing a construct that is itself legitimately being measured.',
+    'Ensure operational use remains blocked until exact-version human review, required pilot/item evidence, active-item depth and secure operational-store/form evidence are complete.'
   ];
   return [
-    'Verify objective and competency alignment.',
-    'Verify evidence alignment and scientific scope.',
-    'Confirm one defensible keyed answer and plausible distractors.',
-    'Check Bloom level, difficulty, plain language, accessibility and legal/safety boundaries.',
-    'Ensure secure answer/rationale content is not exposed to unauthenticated learner clients.'
+    'Verify the item directly measures its declared objective/competency and fits the intended occupational role rather than testing authority or responsibilities outside that role.',
+    'Verify every factual premise, keyed answer and rationale is supported by the cited evidence and does not overgeneralize treatment-, genotype-, system- or jurisdiction-specific findings.',
+    'Confirm there is one defensible keyed answer; distractors must be plausible to an incompletely prepared learner but clearly incorrect under the stated evidence and scenario.',
+    'Check the stem is necessary, unambiguous and free of irrelevant clues, excessive reading burden, trick wording, avoidable negatives or hidden assumptions not part of the construct.',
+    'Check cognitive level and difficulty are produced by the targeted knowledge/reasoning demand rather than vocabulary complexity, obscure trivia or formatting barriers.',
+    'Review fairness and bias: remove irrelevant demographic, cultural, socioeconomic or disability-related barriers and avoid stereotypes or needlessly sensitive context.',
+    'Check accessibility: content must remain understandable with reasonable alternate presentation/accommodation when the affected sensory or motor skill is not the construct being measured.',
+    'Verify legal/safety/role-authority boundaries, especially pesticide, electrical/HVAC, engineering, laboratory, diagnosis and final-disposition authority.',
+    'Ensure secure answer/rationale content is not exposed to unauthenticated learner clients and that review approval is pinned to the exact item version.'
   ];
 }
 function packetFor(task) {
