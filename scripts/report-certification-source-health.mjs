@@ -52,11 +52,14 @@ const rows=[...used].sort().map(id=>{
 const structuralProblems=[];
 for(const r of rows){
   if(r.missing) structuralProblems.push(r.id+': referenced source is missing');
-  else{
-    if(!r.reviewed) structuralProblems.push(r.id+': canonical source is not reviewed');
-    if(!r.https) structuralProblems.push(r.id+': canonical source lacks HTTPS URL');
-  }
 }
+const sourceReviewQueue=rows.filter(r=>!r.missing&&(!r.reviewed||!r.https)).map(r=>({
+  id:r.id,title:r.title,status:r.status,evidenceLevel:r.evidenceLevel,url:r.url,
+  reasons:[
+    ...(!r.reviewed?['source-not-reviewed']:[]),
+    ...(!r.https?['https-public-url-not-recorded']:[])
+  ]
+}));
 const refreshQueue=rows.filter(r=>!r.missing&&r.freshness!=='current').map(r=>({
   id:r.id,title:r.title,lastVerifiedAt:r.lastVerifiedAt,verificationAgeDays:r.verificationAgeDays,reason:r.freshness
 }));
@@ -69,9 +72,11 @@ const out={
     verifiedSources:rows.filter(r=>r.lastVerifiedAt).length,
     currentVerification:rows.filter(r=>r.freshness==='current').length,
     refreshQueue:refreshQueue.length,
+    sourceReviewQueue:sourceReviewQueue.length,
     structuralProblems:structuralProblems.length
   },
   structuralProblems,
+  sourceReviewQueue,
   refreshQueue,
   sources:rows
 };
@@ -82,6 +87,7 @@ else{
   console.log('Used source IDs: '+out.summary.sourceIdsUsed);
   console.log('Reviewed: '+out.summary.reviewedSources);
   console.log('Verification timestamp recorded: '+out.summary.verifiedSources);
+  console.log('Source review queue: '+out.summary.sourceReviewQueue);
   console.log('Refresh queue: '+out.summary.refreshQueue);
   console.log('Structural problems: '+out.summary.structuralProblems);
   if(refreshQueue.length){
