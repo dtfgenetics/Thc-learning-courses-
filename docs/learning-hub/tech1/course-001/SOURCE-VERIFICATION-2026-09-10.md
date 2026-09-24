@@ -44,7 +44,7 @@ Penn State Extension's `Sources Of Plant Disease In Greenhouses` (updated Novemb
 
 ### EPA — SOP guidance
 
-EPA continues to host `Guidance for Preparing Standard Operating Procedures, EPA QA/G-6`. **Bibliographic correction:** the underlying QA/G-6 document is dated **March 2001**; the EPA webpage was updated in 2026. The controlled reference object now records 2001 as the document year and notes the 2026 hosting-page update.
+EPA continues to host `Guidance for Preparing Standard Operating Procedures, EPA QA/G-6`. **Supersession correction (verified September 24, 2026):** EPA's current Quality Program Directives page identifies **EPA/600/B-07/001, April 2007** as the QA/G-6 version that replaces the March 2001 `EPA/240/B-01/004` document. The controlled reference now records the 2007 version. The instructional principles already used by Course 1 remain aligned—organization-specific SOPs, version control, availability to users, records and quality-system consistency—but future reviews must cite the 2007 document rather than the superseded 2001 edition.
 
 ### GS1 — traceability
 
@@ -74,7 +74,7 @@ WCAG 2.2 remains a W3C Recommendation. Course 1's delivery/accessibility plan co
 
 ## Verification result
 
-No principal Course 1 source was found to be retracted or superseded in a way that invalidates the current instructional claims. The evidence dossier's source-role boundaries remain appropriate. The active OSHA Hazard Communication transition is now explicitly tracked because employer labeling/program/training obligations can change during the life of this course even when the worker-level teaching principles remain stable.
+One bibliographic supersession was found and corrected: EPA QA/G-6 now points to the 2007 edition that replaced the 2001 version. No principal Course 1 source was found to be retracted or superseded in a way that invalidates the current instructional claims after that correction. The evidence dossier's source-role boundaries remain appropriate. The active OSHA Hazard Communication transition is now explicitly tracked because employer labeling/program/training obligations can change during the life of this course even when the worker-level teaching principles remain stable.
 
 ## Maintenance triggers
 
