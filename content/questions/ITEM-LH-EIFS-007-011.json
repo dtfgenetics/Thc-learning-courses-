@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-007-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-007-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why is changing volume, frequency and feed EC at the same time a weak steering experiment?",
+  "choices": [
+    "It becomes difficult to attribute the crop/root-zone response to one change.",
+    "More variables always improve diagnosis.",
+    "It guarantees faster learning.",
+    "It removes the need for records."
+  ],
+  "correct": 0,
+  "rationale": "Multiple simultaneous changes reduce interpretability.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
