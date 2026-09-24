@@ -316,6 +316,28 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-008",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001",
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-EIFS-004",
+            "COURSE-LH-EIFS-006",
+            "COURSE-LH-EIFS-007"
+          ],
+          "newModule": "MOD-LH-EIFS-008-AUTOMATION-RELIABILITY",
+          "remainingDepth": [
+            "photorealistic commissioning, alarm/interlock and failure-response visual set",
+            "human controls/automation/reliability and safety review",
+            "assessor calibration for commissioning practical",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
