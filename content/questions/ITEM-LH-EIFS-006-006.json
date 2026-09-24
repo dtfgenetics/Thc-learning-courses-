@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Which sampling plan best supports uniformity analysis?",
   "choices": [
-    "Near, middle, far-end and suspect locations across representative lines.",
     "One convenient emitter.",
     "Only the closest emitter to the pump.",
-    "Only locations with healthy plants."
+    "Only locations with healthy plants.",
+    "Near, middle, far-end and suspect locations across representative lines."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Representative spatial sampling can reveal pressure and clogging patterns.",
   "references": [
     "REF-IRRIGATION-001"
