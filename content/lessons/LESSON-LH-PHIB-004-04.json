@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHIB-004-04",
+  "title": "Clean Stock, Quarantine, Sanitation & Movement Control",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-004-04"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Biosecurity reduces introduction and spread by controlling plant-material entry, clean-stock status, movement between zones, tools/equipment, people, water/root-zone pathways, waste and release authority. No single sanitation step replaces the layered system.",
+    "vocabulary": [
+      {
+        "term": "Quarantine",
+        "definition": "A controlled separation status used while identity, health/testing, risk or release criteria remain unresolved."
+      },
+      {
+        "term": "Movement control",
+        "definition": "Rules that limit how plants, tools, people, water, equipment or waste move between areas of different biosecurity risk."
+      },
+      {
+        "term": "Release authority",
+        "definition": "The designated role permitted to remove a plant/lot/area from a hold or quarantine after required criteria are satisfied."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Start with incoming material and stock status",
+        "body": "Pathogen-tested or otherwise validated clean stock, controlled receiving and separation reduce the chance that disease is amplified through repeated vegetative propagation.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-HLVD-REVIEW-2023-001"
+        ]
+      },
+      {
+        "title": "Control pathways, not just plants",
+        "body": "Tools, contact surfaces, water/root-zone pathways, people, waste and movement between rooms can carry biological risk. Design one-way or risk-based workflows and keep clean-to-dirty transitions explicit.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Sanitation must be validated locally",
+        "body": "Research can identify candidate disinfectants or treatments, but operational concentration, contact time, compatibility, worker safety, label/legal requirements and efficacy must be validated for the facility. The course does not prescribe a universal sanitizer recipe.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If a cutting lot has unresolved HLVd status, keep identity and movement restrictions intact while testing is reconciled instead of distributing the lot because plants look healthy."
+    ],
+    "commonMistakes": [
+      "Treating quarantine as a diagnosis.",
+      "Allowing tools to move from suspect to clean areas without the controlled sanitation process.",
+      "Letting the person who notices a problem independently release the hold without designated authority."
+    ],
+    "practicalApplication": "Draw a facility biosecurity flow from receiving to donor/propagation to vegetative/flower areas. Add controls for tools, people, water, waste and suspect-material escalation.",
+    "summary": "Effective biosecurity is layered and pathway-based. Clean stock, separation, movement control, validated sanitation, traceability and controlled release work together."
+  }
+}
