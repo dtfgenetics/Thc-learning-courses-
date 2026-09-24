@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "What is the safest conclusion from a cannabis temperature study conducted under one cultivar and system?",
   "choices": [
-    "It demonstrates a relationship under those conditions but does not establish a universal room setpoint.",
     "It establishes the optimum for all cultivars.",
     "It proves temperature is the only yield driver.",
-    "It can be copied directly into any facility."
+    "It can be copied directly into any facility.",
+    "It demonstrates a relationship under those conditions but does not establish a universal room setpoint."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Study-specific treatment values should not be universalized.",
   "references": [
     "REF-ENV-TEMP-2025-001"
