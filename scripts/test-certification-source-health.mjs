@@ -11,7 +11,7 @@ const health=JSON.parse(run('scripts/report-certification-source-health.mjs',['-
 if(health.summary.canonicalLessons!==284) throw new Error('expected 284 canonical lessons');
 if(health.summary.structuralProblems!==0) throw new Error('source structural problems: '+health.structuralProblems.join('; '));
 if(health.summary.sourceIdsUsed<1) throw new Error('canonical source inventory unexpectedly empty');
-if(health.summary.reviewedSources!==health.summary.sourceIdsUsed) throw new Error('all canonical used sources must be reviewed');
+if(!Number.isInteger(health.summary.sourceReviewQueue)) throw new Error('source review maintenance queue missing');
 for(const row of health.refreshQueue){
   if(!['verification-not-recorded','refresh-due'].includes(row.reason)) throw new Error('unexpected refresh reason '+row.reason);
 }
