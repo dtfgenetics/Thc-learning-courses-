@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A reclaimed-water program has one historical lab report and then changes treatment configuration. What should happen?",
+  "choices": [
+    "Use the old report because source name is unchanged.",
+    "Measure only color.",
+    "Increase fertilizer.",
+    "Reassess risk and retest appropriate parameters after the treatment change."
+  ],
+  "correct": 3,
+  "rationale": "Treatment changes can change source-water risk and should prompt appropriate re-verification.",
+  "references": [
+    "REF-WATER-RECLAIMED-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}

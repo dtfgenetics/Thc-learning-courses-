@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-005-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A finished batch EC is much lower than expected. Recipe entries appear complete. What is the strongest next step?",
+  "choices": [
+    "Add more concentrate immediately.",
+    "Verify meter performance, final volume, material identity and mixing before changing chemistry.",
+    "Discard source-water records.",
+    "Increase irrigation duration."
+  ],
+  "correct": 1,
+  "rationale": "Unexpected concentration should trigger verification of measurement and process variables before correction.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}
