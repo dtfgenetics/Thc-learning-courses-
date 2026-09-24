@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-006-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-006-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A positive lab result has no reliable plant or lot identifier. How should it be used?",
+  "choices": [
+    "As definitive evidence for the whole room.",
+    "With caution; identity uncertainty weakens its value for affected-scope and disposition decisions.",
+    "As proof that every nearby plant is positive.",
+    "As a substitute for chain-of-custody records."
+  ],
+  "correct": 1,
+  "rationale": "Testing evidence is only as useful as the identity and chain of custody that connect it to the represented material.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
