@@ -4,6 +4,7 @@ const root=process.cwd(); const errors=[];
 const readDir=(rel)=>{const d=path.join(root,rel);if(!fs.existsSync(d))return[];return fs.readdirSync(d).filter(n=>n.endsWith('.json')).sort().map(n=>({file:path.join(rel,n),data:JSON.parse(fs.readFileSync(path.join(d,n),'utf8'))}));};
 const programs=new Map(readDir('content/credential-programs').filter(x=>x.data.id).map(x=>[x.data.id,x.data]));
 const courses=new Map(readDir('content/courses').map(x=>[x.data.id,x.data]));
+const sourceRegistry=JSON.parse(fs.readFileSync(path.join(root,'registry/public-authoritative-source-supplements.json'),'utf8'));
 const rows=readDir('content/occupational-program-validation-evidence');
 const ids=new Set();
 
@@ -28,6 +29,7 @@ for(const {file,data:r} of rows){
       [r.technicalCurriculumReview,'allCurrentCourseVersionsReviewed'],
       [r.technicalCurriculumReview,'contentScopeAndRoleBoundariesReviewed'],
       [r.technicalCurriculumReview,'scientificTechnicalConcernsResolvedOrDispositioned'],
+      [r.technicalCurriculumReview,'publicSourceReviewCompleted'],
       [r.jobTaskAnalysis,'validated'],
       [r.jobTaskAnalysis,'populationDefined'],
       [r.jobTaskAnalysis,'taskDomainCoverageReviewed'],
@@ -41,6 +43,9 @@ for(const {file,data:r} of rows){
       [r.assessmentBlueprint,'criticalContentRepresentationApproved'],
       [r.assessmentBlueprint,'cognitiveDemandApproved']
     ]) if(obj?.[key]!==true) errors.push(`${file}: ${r.status} requires ${key}=true`);
+    if(r.technicalCurriculumReview?.sourceReviewRegistryId!==sourceRegistry.id) errors.push(`${file}: completed technical review must reference current source review registry ${sourceRegistry.id}`);
+    if(String(r.technicalCurriculumReview?.sourceReviewRegistryAsOf)!==String(sourceRegistry.asOf)) errors.push(`${file}: completed technical review source registry date is stale`);
+    if(!(r.evidenceRefs??[]).includes(sourceRegistry.id)) errors.push(`${file}: completed occupational evidence must include source-review registry evidenceRef`);
     const perf=r.performanceValidation;
     if(perf?.required===true){
       if(perf.practicalsValidated!==perf.practicalsExpected) errors.push(`${file}: all expected practicals must be validated`);
