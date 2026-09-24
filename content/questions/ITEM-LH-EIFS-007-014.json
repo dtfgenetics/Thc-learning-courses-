@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A steering trial intended to reduce overnight saturation instead produces rising root-zone EC and uneven dryback. What should happen?",
   "choices": [
-    "Reopen the hypothesis and review/adjust under the controlled process rather than declaring success.",
     "Keep the strategy because it was planned.",
     "Delete the adverse data.",
+    "Reopen the hypothesis and review/adjust under the controlled process rather than declaring success.",
     "Raise feed EC."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Adverse measured response should trigger review, not narrative forcing.",
   "references": [
     "REF-ROOTZONE-NUTRIENT-002",
