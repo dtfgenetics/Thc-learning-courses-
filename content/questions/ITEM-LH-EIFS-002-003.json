@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should a suspect quantum sensor be verified before a major lighting change?",
+  "choices": [
+    "Because instrument error can mimic a distribution problem and drive the wrong adjustment.",
+    "Because PPFD is not measurable.",
+    "Because fixture labels are always more accurate than meters.",
+    "Because calibration matters only outdoors."
+  ],
+  "correct": 0,
+  "rationale": "Measurement quality must be established before acting on the data.",
+  "references": [
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}
