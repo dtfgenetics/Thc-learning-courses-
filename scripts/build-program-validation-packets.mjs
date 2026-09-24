@@ -16,6 +16,7 @@ const courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
 const programs=readDir('content/credential-programs').filter(x=>['CREDPROG-CULT-TECH-I-001','CREDPROG-CULT-TECH-II-001'].includes(x.id));
 const performance=readDir('content/performance-assessments');
 const controls=read('registry/candidate-governance-controls.json');
+const occupationalBaseline=read('registry/public-occupational-source-baseline.json');
 
 function performanceMappings(p){
   const ext=p.extensions??{};
@@ -54,6 +55,10 @@ for(const p of programs){
     currentValidationState:p.validation??{},
     sourceReviewCommand:'npm run certification:sources:review:write',
     sourceReviewPackets:locks.map(x=>'generated/certification-source-review-packets/'+x.courseId+'.md'),
+    occupationalSourceBaselineCommand:'npm run certification:occupational-source-baseline:write',
+    occupationalSourceBaselinePacket:'generated/occupational-source-baseline/OCCSRC-'+p.id.replace(/^CREDPROG-/,'')+'.md',
+    occupationalSourceBaselineId:occupationalBaseline.id,
+    occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     sections:{
       technicalCurriculumReview:[
@@ -64,7 +69,10 @@ for(const p of programs){
         'Record reviewer count and disposition all material technical concerns.'
       ],
       jobTaskAnalysis:[
+        'Generate and review the public occupational-source baseline packet before cannabis-specific JTA validation.',
         'Define the target worker population and operating context.',
+        'Use O*NET/BLS task families only as adjacent occupational evidence; keep/adapt/reject them explicitly for cannabis cultivation.',
+        'Identify cannabis-specific tasks, regulated-authority boundaries and credential-level differences not represented by the public occupational sources.',
         'Confirm task/domain inventory reflects actual job work.',
         'Review frequency/importance/criticality methodology and currency.',
         'Document sampling/panel limitations.'
@@ -154,6 +162,10 @@ function md(p){
     lines.push('Credential program: '+p.credentialProgramId+'@'+p.credentialProgramVersion,'','## Occupational claim','',p.occupationalClaim,'','## Target roles','',...p.targetRoles.map(x=>'- '+x),'','## Current course locks','',...p.courseLocks.map(x=>'- '+x.courseId+'@'+x.courseVersion+' — '+x.title),'','## Public-source technical review','',
       'Generate exact-version course source packets first:','', '    '+p.sourceReviewCommand,'',
       ...p.sourceReviewPackets.map(x=>'- '+x),'',
+      '## Public occupational source baseline','',
+      'Generate the adjacent-occupation JTA baseline:','', '    '+p.occupationalSourceBaselineCommand,'',
+      '- '+p.occupationalSourceBaselinePacket,
+      '- Baseline ID: '+p.occupationalSourceBaselineId+' / '+p.occupationalSourceBaselineAsOf,'',
       '## Required practical/capstone anchors','',...p.performanceAssessments.map(x=>'- '+x.id+'@'+x.version+' — '+x.assessmentType+' / '+x.status),'','## Start record','', '    '+p.startCommand,'');
   }else{
     lines.push('Controls: '+p.controlsId+'@'+p.controlsVersion,'Applies to: '+p.appliesTo.join(', '),'Current status: '+p.currentStatus,'','## Unresolved governance decisions','',
