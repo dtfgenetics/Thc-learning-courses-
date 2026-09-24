@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why is a canopy light grid stronger than one center PPFD measurement for uniformity work?",
   "choices": [
-    "It samples spatial variation caused by fixture layout, shading and canopy geometry.",
     "One center point always equals the room average.",
     "Uniformity is unrelated to location.",
-    "Only photoperiod matters."
+    "Only photoperiod matters.",
+    "It samples spatial variation caused by fixture layout, shading and canopy geometry."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Spatial mapping reveals variation that one point can miss.",
   "references": [
     "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
