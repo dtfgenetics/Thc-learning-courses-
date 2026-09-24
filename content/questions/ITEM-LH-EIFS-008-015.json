@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-008-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A packet supports an electrical fault class, but the responder is not authorized for electrical service. What should the packet do?",
+  "choices": [
+    "State the evidence and safe boundary, then transfer the issue to the qualified role without prescribing unauthorized repair.",
+    "Direct panel disassembly.",
+    "Recommend bypassing protection.",
+    "Close the issue."
+  ],
+  "correct": 0,
+  "rationale": "The handoff should narrow the fault without crossing service authority.",
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
