@@ -1,0 +1,32 @@
+{
+  "id": "MOD-LH-EIFS-006-IRRIGATION-UNIFORMITY",
+  "title": "Irrigation Design, Flow, Pressure, Uniformity & Maintenance",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-006-01",
+    "LESSON-LH-EIFS-006-02",
+    "LESSON-LH-EIFS-006-03",
+    "LESSON-LH-EIFS-006-04",
+    "LESSON-LH-EIFS-006-05"
+  ],
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering irrigation hydraulics concepts, measured emitter output, uniformity, filtration/clogging, maintenance and evidence-based fault handoff.",
+  "estimatedMinutes": 325,
+  "learningOutcomes": [
+    "Explain how source pressure, regulator performance, line losses, emitter characteristics and filtration affect delivered irrigation and why design specifications do not prove installed performance.",
+    "Measure representative emitter output and distribution uniformity using a repeatable sampling plan, appropriate units and controlled comparison conditions.",
+    "Diagnose localized and zone-level irrigation faults using flow, pressure, filtration, clogging, controller-command, spatial-pattern and root-zone evidence.",
+    "Evaluate preventive maintenance and sanitation needs for filters, emitters and irrigation components while preserving protected-service and chemical-safety boundaries.",
+    "Produce a reconstructable irrigation verification and maintenance handoff linking zone identity, command history, measured delivery, pressure/flow evidence, root-zone consequence and authorized next action."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}
