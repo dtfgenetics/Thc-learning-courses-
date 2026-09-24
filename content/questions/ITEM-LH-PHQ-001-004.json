@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-001-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A harvest tool was used on suspect mold-affected material and is now needed for unaffected material. What should happen?",
+  "choices": [
+    "Follow the controlled sanitation/segregation procedure before reuse.",
+    "Use it immediately if it looks clean.",
+    "Wipe it on clothing.",
+    "Mix affected and unaffected totes."
+  ],
+  "correct": 0,
+  "rationale": "Tools can transfer contamination and should follow controlled sanitation before returning to cleaner material.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
