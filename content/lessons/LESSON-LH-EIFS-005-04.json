@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-005-04",
+  "title": "Controlled Solution Preparation & Batch Verification",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-005-04"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-IRRIGATION-001",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist solution preparation follows an approved recipe and work order rather than improvising chemistry. Material identity, recipe version, final volume, sequence, mixing and measured acceptance should all be traceable.",
+    "vocabulary": [
+      {
+        "term": "Recipe version",
+        "definition": "Controlled formulation or work instruction identifying required materials, amounts and sequence."
+      },
+      {
+        "term": "Final volume",
+        "definition": "The completed solution volume against which ingredient additions and concentration calculations are defined."
+      },
+      {
+        "term": "Batch acceptance",
+        "definition": "Decision that a verified finished batch meets the controlled criteria for its intended use."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Verify inputs before mixing",
+        "body": "Confirm source-water identity, material identity, recipe version, units and target final volume before additions begin.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Unexpected EC should trigger process verification first",
+        "body": "Check meter fitness, batch volume, material identity and mixing before adding concentrate simply to chase a number.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Chemical safety remains controlled",
+        "body": "Acids, bases, concentrates and incompatible materials require the applicable PPE, handling and facility procedure. This course does not authorize ad hoc chemical mixing.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A completed batch reads lower EC than expected; verify the meter, final volume, material identity and mixing before changing chemistry."
+    ],
+    "commonMistakes": [
+      "Adjusting until the number looks right without preserving the original condition.",
+      "Using an outdated recipe.",
+      "Treating source-water changes as irrelevant to the finished batch."
+    ],
+    "practicalApplication": "Run a mock batch record from source-water check through material verification, calculated addition, mixing, final volume and acceptance measurements.",
+    "summary": "Batch quality depends on controlled execution and verified measurement, not on chasing a display."
+  }
+}
