@@ -20,3 +20,15 @@ The controlled Drive packages `GROW-042`, `GROW-050`, `GROW-060`, and `GROW-070`
 ## Ingestion gate for external packages
 
 An external SOP package can move beyond provenance reconciliation only when claims are reviewed against the current controlled source version, course/resource mappings are explicit, accessibility and applicable safety/engineering checks are complete, field/method validation is complete where required, and the appropriate release approval is recorded. The four located packages are currently `provenance-recorded-review-blocked`.
+
+
+## Full controlled-target reconciliation
+
+The controlled Master Deliverable Register now resolves all **24** THC-GROW SOP target IDs and scopes. The repository therefore no longer reports twenty targets as unidentified.
+
+- **4 packages** — GROW-042, GROW-050, GROW-060, and GROW-070 — have exact scientific-SOP, learner-guide, QA-record, and handoff Drive IDs recorded in the ingestion registry.
+- **3 additional packages** — GROW-001, GROW-010, and GROW-034 — have controlled Drive package/source locations and remain in legal/safety review, binary recovery, or source-transfer/review states.
+- **17 targets** are explicitly source-mapped/planned in the controlled register and still require full controlled-package authoring.
+- **0 packages** are release-approved by this reconciliation.
+
+Inventory identification is not source approval. Every package stays fail-closed until its own review, validation, accessibility, safety/engineering where applicable, and release evidence are complete.
