@@ -237,6 +237,26 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-EIFS-001",
+            "COURSE-LH-EIFS-003"
+          ],
+          "newModule": "MOD-LH-EIFS-004-SENSORS-CONTROLS",
+          "remainingDepth": [
+            "photorealistic sensor placement/calibration/controller/alarm visual set",
+            "human controls/instrumentation and safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
