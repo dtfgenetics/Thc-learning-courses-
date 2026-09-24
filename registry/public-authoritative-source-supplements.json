@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-CERT-PUBLIC-AUTHORITATIVE-SOURCE-SUPPLEMENTS-001",
+  "asOf": "2026-09-23",
+  "purpose": "Reviewed public-source supplements for exact-version technical review. These records strengthen reviewer evidence and may be incorporated into lesson content only through normal versioned content/review workflows.",
+  "integrityBoundary": "A supplemental source mapping is not a scientific/editorial approval and does not modify a published lesson. Lesson content changes must increment the lesson version and obtain renewed exact-version review.",
+  "mappings": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "lessonId": "LESSON-LH-TECH1-001-02",
+      "lessonVersion": "1.2.0",
+      "sourceIds": [
+        "REF-EPA-WPS-LABELING-ACCESS-2026",
+        "REF-EPA-WPS-AEZ-2025"
+      ],
+      "reviewUse": [
+        "Verify that pesticide-label information access and early-entry instruction remain distinct from ordinary worker authorization.",
+        "Verify the distinction between application-time exclusion controls and post-application restricted-entry intervals."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "lessonId": "LESSON-LH-TECH1-001-03",
+      "lessonVersion": "1.2.0",
+      "sourceIds": [
+        "REF-NIOSH-WRA-PREVENTION-2024",
+        "REF-CDC-MMWR-CANNABIS-ASTHMA-2023"
+      ],
+      "reviewUse": [
+        "Verify hierarchy-of-controls language for respiratory/allergic exposure prevention and that PPE is not framed as the sole control.",
+        "Verify that cannabis-production occupational-asthma risk is presented as a documented occupational-health concern without diagnosing individual learners or workers."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "lessonId": "LESSON-LH-TECH1-001-06",
+      "lessonVersion": "1.2.0",
+      "sourceIds": [
+        "REF-EPA-WPS-AEZ-2025",
+        "REF-EPA-WPS-LABELING-ACCESS-2026"
+      ],
+      "reviewUse": [
+        "Verify that quarantine/hold controls are not conflated with pesticide application-time exclusion or REI controls.",
+        "Verify escalation language when treated-area status, labeling information, or worker authorization is incomplete."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "lessonId": "LESSON-LH-TECH1-001-18",
+      "lessonVersion": "1.2.0",
+      "sourceIds": [
+        "REF-EPA-WPS-LABELING-ACCESS-2026",
+        "REF-EPA-WPS-AEZ-2025",
+        "REF-NIOSH-WRA-PREVENTION-2024",
+        "REF-CDC-MMWR-CANNABIS-ASTHMA-2023"
+      ],
+      "reviewUse": [
+        "Use as an integrated cross-check for chemical/PPE, treated-area, exposure-control, symptom-reporting, and authority-boundary scenarios.",
+        "Do not convert source availability into handler/applicator authorization or medical diagnosis."
+      ]
+    }
+  ]
+}
