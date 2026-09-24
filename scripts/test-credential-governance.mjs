@@ -24,11 +24,33 @@ if (candidateControls.operationalUseAuthorized === true) {
   assert.ok(Object.values(candidateControls.controls?.privacyRetention?.retentionPeriods ?? {}).every((value) => value !== null && value !== ''), 'approved retention periods must be explicit');
 } else {
   assert.equal(candidateControls.status, 'approval-pending', 'unapplied candidate governance must remain approval-pending');
-  assert.equal(candidateControls.controls?.retest?.finalAttemptLimit, null, 'unapproved retest limits must not be invented');
-  assert.equal(candidateControls.controls?.retest?.waitingPeriodHours, null, 'unapproved waiting periods must not be invented');
-  assert.equal(candidateControls.controls?.retest?.feePolicy, null, 'unapproved fee policy must not be invented');
-  assert.equal(candidateControls.controls?.privacyRetention?.retentionScheduleApproved, false, 'retention schedule must remain open until approved');
-  assert.ok(Object.values(candidateControls.controls?.privacyRetention?.retentionPeriods ?? {}).every((value) => value === null), 'unapproved retention periods must remain unset');
+  const retest = candidateControls.controls?.retest ?? {};
+  const retention = candidateControls.controls?.privacyRetention ?? {};
+  const issuerPolicyDefined = retest.finalAttemptLimit !== null || retest.waitingPeriodHours !== null || retest.feePolicy !== null;
+
+  if (issuerPolicyDefined) {
+    assert.ok(Number.isInteger(retest.finalAttemptLimit) && retest.finalAttemptLimit >= 1, 'defined issuer retest limit must be a positive integer');
+    assert.ok(Number.isInteger(retest.waitingPeriodHours) && retest.waitingPeriodHours >= 0, 'defined issuer waiting period must be a non-negative integer');
+    assert.ok(typeof retest.feePolicy === 'string' && retest.feePolicy.length > 0, 'defined issuer fee policy must be explicit');
+    assert.equal(retention.retentionScheduleApproved, false, 'defined issuer retention baseline must remain privacy/legal-unapproved until formal approval');
+    assert.ok(Object.values(retention.retentionPeriods ?? {}).every((value) => typeof value === 'string' && value.length > 0), 'defined issuer retention baseline must state every proposed period');
+    assert.equal(candidateControls.operationalUseAuthorized, false, 'issuer policy definition must not imply operational authorization');
+
+    const approvalDir = path.join(root, 'content/candidate-governance-approvals');
+    const approvals = fs.existsSync(approvalDir)
+      ? fs.readdirSync(approvalDir).filter((name) => name.endsWith('.json')).map((name) => JSON.parse(fs.readFileSync(path.join(approvalDir, name), 'utf8')))
+      : [];
+    const current = approvals.find((row) => row.controlsId === candidateControls.id && String(row.controlsVersion) === String(candidateControls.version) && row.status !== 'invalidated');
+    assert.ok(current, 'defined issuer policy requires a current-version governance approval record');
+    assert.equal(current.approvals?.privacyLegal, false, 'operational use must remain blocked while privacy/legal approval is open');
+    assert.equal(current.retentionSchedule?.approved, false, 'retention schedule must remain unapproved until privacy/legal review');
+  } else {
+    assert.equal(retest.finalAttemptLimit, null, 'undefined retest limits must remain unset');
+    assert.equal(retest.waitingPeriodHours, null, 'undefined waiting periods must remain unset');
+    assert.equal(retest.feePolicy, null, 'undefined fee policy must remain unset');
+    assert.equal(retention.retentionScheduleApproved, false, 'retention schedule must remain open until approved');
+    assert.ok(Object.values(retention.retentionPeriods ?? {}).every((value) => value === null), 'undefined retention periods must remain unset');
+  }
 }
 assert.equal(candidateControls.controls?.accommodation?.constructPreservationRequired, true);
 assert.equal(candidateControls.controls?.accommodation?.minimumNecessaryAssessorDisclosure, true);
