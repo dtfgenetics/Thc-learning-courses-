@@ -1,0 +1,61 @@
+{
+  "id": "COURSE-LH-EIFS-001",
+  "title": "Plant-Environment Measurement & Crop Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners entering the Environmental, Irrigation & Fertigation Systems Specialist pathway",
+    "Cultivation personnel responsible for crop-environment measurement, sensor interpretation, spatial mapping and evidence-based environmental handoff"
+  ],
+  "prerequisites": [
+    "Cultivation Technician II environmental/sensor competency or equivalent measurement foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Plant-environment relationships are grounded in cannabis-specific peer-reviewed evidence plus university protected-environment measurement and lighting guidance. Research treatment values, greenhouse examples and cultivar-specific responses are not converted into universal cannabis room targets without facility validation.",
+  "assessmentPolicy": "The dedicated specialist assessment is development-only until exact-version technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize HVAC, electrical, controls, gas, calibration or environmental setpoint changes outside assigned authority.",
+  "description": "Develops specialist measurement and interpretation of the crop environment, emphasizing representative sensor placement, spatial and temporal gradients, temperature/RH/VPD relationships, leaf-versus-air conditions, radiation/light context, crop response, data quality and evidence-based escalation.",
+  "modules": [
+    "MOD-LH-EIFS-001-PLANT-ENV-MEASUREMENT"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-ENV-VPD-001",
+    "COMP-LIGHT-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-001-FINAL",
+  "learningOutcomes": [
+    "Design a representative environmental measurement plan that accounts for sensor placement, shielding, crop zone, spatial gradients, time-series behavior and calibration/verification status.",
+    "Interpret temperature and relative humidity together through vapor-pressure and dew-point concepts while distinguishing room-air conditions from leaf-surface conditions.",
+    "Relate PPFD, photoperiod and DLI measurements to crop-environment context without converting examples from other crops or studies into universal cannabis targets.",
+    "Analyze crop response alongside environmental measurements to distinguish true room events, local microclimates, sensor error and plant-specific conditions.",
+    "Produce a reconstructable environmental verification report that states measurement quality, observed pattern, confidence, limits, permitted action and escalation needs."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-TECH2-002",
+      "COURSE-ENV-LIGHT-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-001-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}
