@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A nine-point canopy map has one bright center and several dim edges, but the average PPFD looks acceptable. What is the strongest conclusion?",
+  "choices": [
+    "The average proves the canopy is uniform.",
+    "The spatial distribution should be reviewed because the average can hide hot and dim zones.",
+    "Only the center value matters.",
+    "The meter must be wrong."
+  ],
+  "correct": 1,
+  "rationale": "Uniformity requires spatial interpretation; an average alone can conceal large distribution differences.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

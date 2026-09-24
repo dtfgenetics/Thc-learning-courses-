@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-002-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two rooms have similar PPFD but one has a longer photoperiod. What is most likely about DLI?",
+  "choices": [
+    "The longer-photoperiod room can have a higher DLI.",
+    "DLI must be identical.",
+    "Photoperiod is unrelated to DLI.",
+    "Only spectrum affects DLI."
+  ],
+  "correct": 0,
+  "rationale": "DLI integrates photon flux through time.",
+  "references": [
+    "REF-PURDUE-DLI-GREENHOUSE"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

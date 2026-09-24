@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-002-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-002-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why can two schedules with equal DLI still produce different crop responses?",
+  "choices": [
+    "Equal DLI guarantees identical physiology.",
+    "DLI ignores photons.",
+    "Different instantaneous intensity and photoperiod can have biological and environmental effects beyond the integrated total.",
+    "Only fertilizer determines response."
+  ],
+  "correct": 2,
+  "rationale": "Equal integrated dose does not make intensity and duration biologically interchangeable.",
+  "references": [
+    "REF-PURDUE-DLI-GREENHOUSE",
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

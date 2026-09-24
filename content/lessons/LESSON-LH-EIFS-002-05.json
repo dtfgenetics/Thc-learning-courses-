@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-002-05",
+  "title": "Lighting Verification, Trend Review & Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-002-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-LIGHT-001",
+    "REF-PURDUE-DLI-GREENHOUSE"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Lighting verification should leave a reconstructable record of what was measured, under which operating state, how the map was calculated, what changed and which next action is supported.",
+    "vocabulary": [
+      {
+        "term": "Lighting verification record",
+        "definition": "A traceable record of meter, grid, operating state, measured distribution and interpretation."
+      },
+      {
+        "term": "Operating state",
+        "definition": "Relevant condition such as fixture output level, photoperiod phase, canopy height or recent maintenance state."
+      },
+      {
+        "term": "Change verification",
+        "definition": "A repeat measurement used to determine whether an authorized change produced the intended effect."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Record the basis of comparison",
+        "body": "Meter identity, grid, crop plane, fixture output state, canopy condition and timestamp should be preserved so future maps can be compared defensibly.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Verify after meaningful change",
+        "body": "Fixture replacement, height changes, dimming adjustments and major canopy changes should trigger repeat measurement before assuming the new state is equivalent.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Keep electrical authority separate",
+        "body": "A specialist may identify a lighting-distribution problem without being authorized to open fixtures, modify circuits or perform electrical repair. Escalate according to role and procedure.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A map can document a persistent dim edge zone and recommend qualified fixture/layout review without directing unauthorized electrical work."
+    ],
+    "commonMistakes": [
+      "Keeping only the final average.",
+      "Failing to record fixture output or canopy height.",
+      "Performing electrical work because the light map is clear."
+    ],
+    "practicalApplication": "Write a lighting verification report that includes map method, results, uniformity interpretation, limits, permitted action and escalation owner.",
+    "summary": "A lighting map becomes operational evidence only when its measurement basis and decision boundary are preserved."
+  }
+}

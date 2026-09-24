@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-ADV-001",
+  "objective": "LO-LH-EIFS-002-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Average PPFD stays similar after raising fixtures, but the minimum rises and the maximum falls. What does that suggest?",
+  "choices": [
+    "Uniformity may have improved because the range narrowed.",
+    "Lighting got worse by definition.",
+    "Only the average matters.",
+    "The crop received no light."
+  ],
+  "correct": 0,
+  "rationale": "A narrower spatial range with a similar average can indicate improved distribution.",
+  "references": [
+    "REF-LIGHT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}

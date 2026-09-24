@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-002-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-002-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A light map identifies a persistent dim edge zone, but the worker is not authorized for electrical work. What is the correct next step?",
+  "choices": [
+    "Open the fixture and repair wiring.",
+    "Ignore the map.",
+    "Document the verified pattern and escalate for qualified fixture/layout review.",
+    "Increase every circuit load."
+  ],
+  "correct": 2,
+  "rationale": "Measurement findings do not expand electrical authority.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-002",
+    "seedBank": true
+  }
+}
