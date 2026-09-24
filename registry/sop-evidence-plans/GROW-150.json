@@ -1,0 +1,112 @@
+{
+  "id": "GROW-150",
+  "title": "Testing, QA, CAPA, and crop review — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define a cultivation QA workflow for deviations, affected-scope reconstruction, evidence review, laboratory/testing context, CAPA, effectiveness checks and periodic crop/process review.",
+  "sourceIds": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "scope": {
+    "included": [
+      "deviation intake",
+      "immediate containment",
+      "affected-scope reconstruction",
+      "root-cause analysis",
+      "CAPA",
+      "effectiveness checks",
+      "laboratory/COA context",
+      "batch/crop review",
+      "trend metrics",
+      "authorized disposition"
+    ],
+    "excludedUntilValidated": [
+      "automatic root cause from correlation alone",
+      "automatic product disposition without affected-scope evidence",
+      "retroactive deletion or rewriting of deviations",
+      "universal laboratory acceptance criteria detached from method/jurisdiction",
+      "closing CAPA only because an action was assigned"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-150-C01",
+      "statement": "Deviation handling should preserve the original event, immediate containment, actual affected scope, supporting measurements, relevant records and unresolved uncertainty before final disposition or CAPA is assigned.",
+      "sources": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-ASTM-E2659-001"
+      ],
+      "boundary": "A corrected process condition does not by itself resolve material impact or close the investigation."
+    },
+    {
+      "id": "GROW-150-C02",
+      "statement": "Root-cause analysis should distinguish evidence-supported causal factors from contributing conditions and hypotheses instead of treating temporal association or operator blame as proof.",
+      "sources": [
+        "REF-ASTM-E2659-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "boundary": "The framework does not require one named root-cause tool; method choice should match consequence and complexity."
+    },
+    {
+      "id": "GROW-150-C03",
+      "statement": "Corrective and preventive actions are stronger when linked to the investigated cause or system weakness and followed by a defined effectiveness check rather than closed at implementation.",
+      "sources": [
+        "REF-ASTM-E2659-001",
+        "REF-ASTM-D8403-001"
+      ],
+      "boundary": "An effectiveness metric must be appropriate to the failure mode and cannot be fabricated merely to close a record."
+    },
+    {
+      "id": "GROW-150-C04",
+      "statement": "Laboratory or COA results should be interpreted with sample identity, method, chain of custody, specification context and lot/process history so testing remains connected to the material actually represented.",
+      "sources": [
+        "REF-POSTHARVEST-001",
+        "REF-MHRA-GXP-DATA-INTEGRITY"
+      ],
+      "boundary": "The SOP should not invent jurisdiction-specific release limits or treat one laboratory result as universally representative without a defensible sampling plan."
+    },
+    {
+      "id": "GROW-150-C05",
+      "statement": "Periodic crop review should compare defined, stable metrics such as deviations, yield/quality outcomes, rework/holds, recurring plant-health signals and process variability using consistent denominators and definitions.",
+      "sources": [
+        "REF-ASTM-D8403-001",
+        "REF-ASTM-E2659-001"
+      ],
+      "boundary": "Changing a KPI definition breaks direct comparability unless the change is documented and historical interpretation is reconciled."
+    },
+    {
+      "id": "GROW-150-C06",
+      "statement": "Quality decisions should remain traceable to the evidence and authorization that supported release, hold, rework, rejection or further investigation.",
+      "sources": [
+        "REF-MHRA-GXP-DATA-INTEGRITY",
+        "REF-POSTHARVEST-STABILITY-2026-001"
+      ],
+      "boundary": "This educational QA model does not grant authority to release regulated product outside applicable facility and jurisdiction controls."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "deviation intake/triage",
+    "containment and affected-scope record",
+    "root-cause evidence worksheet",
+    "CAPA action/owner/due-date record",
+    "effectiveness-check plan",
+    "laboratory/COA review boundary",
+    "batch/crop disposition record",
+    "KPI definition register",
+    "periodic crop-review agenda",
+    "recurrence/escalation and management review"
+  ],
+  "releaseGates": [
+    "quality-system review",
+    "laboratory/testing applicability review",
+    "jurisdiction-specific disposition review",
+    "data-integrity review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

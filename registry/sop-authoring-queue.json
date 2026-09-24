@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 6
+    "evidencePlansSeeded": 9
   },
   "targets": [
     {
@@ -44,7 +44,9 @@
         "quality-system procedure design"
       ],
       "sequence": 1,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-000.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-011",
@@ -507,7 +509,9 @@
         "continuous improvement"
       ],
       "sequence": 16,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-150.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-160",
@@ -536,7 +540,9 @@
         "data integrity"
       ],
       "sequence": 17,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-160.json",
+      "newControlledReferences": []
     }
   ]
 }
