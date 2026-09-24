@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-004-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A room contains several wilted plants with brown roots. Irrigation history shows the affected zone was repeatedly waterlogged. What is the best specialist conclusion?",
+  "choices": [
+    "The brown roots prove Pythium infection.",
+    "Waterlogging proves there is no pathogen.",
+    "Both root-pathogen and abiotic oxygen/root-zone stress hypotheses should remain open until additional evidence discriminates them.",
+    "The plants should automatically be treated with a fungicide."
+  ],
+  "correct": 2,
+  "rationale": "Root browning and wilt can have infectious and abiotic causes; root-zone history is discriminating context but does not by itself prove or exclude a pathogen.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-CANNABIS-DIAGNOSTICS-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}
