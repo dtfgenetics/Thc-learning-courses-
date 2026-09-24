@@ -24,6 +24,7 @@ for(const file of fs.readdirSync(dir).filter(x=>x.startsWith('KIT-OCC-')&&x.ends
   if(!Array.isArray(occ.sourceReviewPackets)||occ.sourceReviewPackets.length!==occ.currentCourseLocks.length) throw new Error(file+': occupational source review packets must match course locks');
   if(occ.occupationalSourceBaselineCommand!=='npm run certification:occupational-source-baseline:write') throw new Error(file+': occupational source baseline command missing');
   if(!occ.occupationalSourceBaselineId) throw new Error(file+': occupational source baseline id missing');
+  if(occ.jtaEvidenceCommand!=='npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write') throw new Error(file+': structured JTA evidence command missing');
 }
 const calFile=fs.readdirSync(dir).find(x=>x.startsWith('KIT-CAL-')&&x.endsWith('.json'));
 const cal=JSON.parse(fs.readFileSync(path.join(dir,calFile),'utf8'));
