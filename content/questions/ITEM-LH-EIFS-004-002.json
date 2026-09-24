@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A sensor moved from wall height to canopy height begins reading differently. What should be checked first?",
+  "choices": [
+    "Whether the new location measures a genuinely different microclimate.",
+    "Whether the sensor color changed.",
+    "Whether the old reading was preferred.",
+    "Whether another room uses the same brand."
+  ],
+  "correct": 0,
+  "rationale": "A location change can create a real measurement difference and must be separated from instrument error.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}
