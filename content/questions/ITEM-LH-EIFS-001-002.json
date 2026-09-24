@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Two colocated temperature/RH sensors disagree persistently after equilibration. What should happen next?",
   "choices": [
-    "Compare them with a trusted reference or calibration check before deciding which reading to use.",
     "Move them to different rooms.",
     "Average them permanently.",
+    "Compare them with a trusted reference or calibration check before deciding which reading to use.",
     "Change room targets until both appear acceptable."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Colocated disagreement should trigger verification against a known reference to separate sensor offset from environmental variation.",
   "references": [
     "REF-ENV-TEMP-2025-001"
