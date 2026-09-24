@@ -30,6 +30,6 @@ The report traverses all 15 canonical Technician courses and their 284 lessons, 
 
 By default, a verification timestamp older than 730 days is placed in the refresh queue. Sources without a recorded verification timestamp are also queued. This is **maintenance metadata**, not an automatic content rejection: a source may still be scientifically valid even when its webpage verification timestamp is old or absent.
 
-The check fails only on structural/source-integrity defects such as a missing referenced source, a non-reviewed canonical source, or a canonical public source without HTTPS. Human technical review remains responsible for deciding whether source age, supersession, new evidence, or changed guidance requires lesson revision.
+The check fails only on structural/source-integrity defects such as a missing referenced source. Canonical sources that are not yet marked reviewed or do not have a recorded HTTPS public URL are surfaced in a separate **source review queue**, because legacy textbooks, standards, archived material, or valid records may require human provenance work rather than automatic rejection. Exact-version supplemental public sources remain stricter: they must already be reviewed and carry an HTTPS URL. Human technical review remains responsible for deciding whether source age, supersession, new evidence, or changed guidance requires lesson revision.
 
 Use `--max-age-days <N>` with the report when a tighter maintenance horizon is needed.
