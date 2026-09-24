@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "What belongs in a commissioning acceptance check?",
   "choices": [
-    "Defined test state, expected response, actual response, measurement evidence and acceptance criterion.",
     "Only whether the device powers on.",
     "Only the installer name.",
+    "Defined test state, expected response, actual response, measurement evidence and acceptance criterion.",
     "Only the controller model."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Commissioning evidence must show tested function and acceptance basis.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
