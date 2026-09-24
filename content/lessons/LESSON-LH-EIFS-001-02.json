@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-001-02",
+  "title": "Temperature, Relative Humidity, VPD & Dew-Point Interpretation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-001-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Temperature and relative humidity must be interpreted together because saturation vapor pressure changes with temperature. VPD is useful for describing atmospheric drying demand, while dew point helps evaluate condensation risk; neither is a stand-alone diagnosis of plant water status.",
+    "vocabulary": [
+      {
+        "term": "Vapor pressure deficit (VPD)",
+        "definition": "The difference between saturation vapor pressure and actual vapor pressure for the defined temperature-moisture state."
+      },
+      {
+        "term": "Dew point",
+        "definition": "The temperature at which air of a given moisture content becomes saturated and condensation can begin on a surface at or below that temperature."
+      },
+      {
+        "term": "Leaf-air temperature difference",
+        "definition": "The difference between measured leaf temperature and surrounding air temperature, which can change leaf-level vapor-pressure interpretation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "RH alone is incomplete",
+        "body": "The same RH at two different temperatures represents different vapor-pressure conditions. Calculate or interpret VPD from the actual temperature/RH pair rather than treating RH as a fixed moisture-demand measure.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Leaf temperature can differ from air",
+        "body": "Radiation, airflow and transpiration can make leaves warmer or cooler than nearby air. Leaf-level vapor-pressure interpretation therefore improves when representative leaf temperature is known.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Dew point is a surface-risk concept",
+        "body": "Condensation becomes plausible when a leaf, wall, duct or other surface approaches or falls below dew-point temperature, even when bulk-room RH is below 100%.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two rooms at 60% RH are not environmentally equivalent if one is substantially warmer; the warmer room generally has a different VPD because saturation vapor pressure is higher."
+    ],
+    "commonMistakes": [
+      "Using one VPD value as a universal optimum for every cultivar/stage.",
+      "Assuming air temperature equals leaf temperature.",
+      "Treating VPD as a direct measurement of root-zone water status."
+    ],
+    "practicalApplication": "For three supplied temperature/RH states, compare RH, VPD and dew-point implications, then explain how a cooler leaf or surface could change the plant-level or condensation interpretation.",
+    "summary": "VPD and dew point are contextual environmental tools. Their usefulness depends on correct temperature, humidity, surface/leaf context and measurement quality."
+  }
+}
