@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A pump fault appears to require powered disassembly. What should the irrigation specialist do?",
   "choices": [
-    "Preserve evidence and escalate to the qualified service role.",
     "Disassemble it while energized.",
     "Bypass protection to continue irrigation.",
-    "Ignore the fault."
+    "Ignore the fault.",
+    "Preserve evidence and escalate to the qualified service role."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Protected servicing and hazardous-energy work remain role-qualified.",
   "references": [
     "REF-SAFETY-OSHA-001"
