@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHIB-006-OUTBREAK-CAPA",
+  "title": "Outbreak Containment, CAPA & Crop Recovery",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHIB-006-01",
+    "LESSON-LH-PHIB-006-02",
+    "LESSON-LH-PHIB-006-03",
+    "LESSON-LH-PHIB-006-04",
+    "LESSON-LH-PHIB-006-05"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering outbreak triage, containment, affected-scope reconstruction, causal analysis, CAPA design, crop recovery verification and recurrence/closure decisions.",
+  "estimatedMinutes": 310,
+  "learningOutcomes": [
+    "Triage an outbreak signal by separating immediate safety/spread controls from diagnostic certainty, preserving identity, affected scope and unresolved uncertainty.",
+    "Reconstruct outbreak distribution and likely pathways using time, location, plant/lot identity, movement history, environment, scouting and testing evidence.",
+    "Differentiate root cause, contributing factors, correlation and unsupported hypotheses and select corrective actions proportional to the evidence and consequence.",
+    "Design a CAPA and recovery plan with owners, due dates, containment, corrective/preventive actions, compatible recovery metrics and predefined effectiveness checks.",
+    "Determine whether an outbreak can be closed, escalated or reopened using comparable follow-up evidence, recurrence signals, disposition authority and reconstructable records."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}
