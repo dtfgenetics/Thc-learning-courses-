@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-006-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What does immediate containment prove?",
+  "choices": [
+    "That the suspected cause is confirmed.",
+    "That the crop must be destroyed.",
+    "Only that potential spread is being controlled while the evidence is developed.",
+    "That no further testing is needed."
+  ],
+  "correct": 2,
+  "rationale": "Containment is a risk-control measure, not diagnostic confirmation.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
