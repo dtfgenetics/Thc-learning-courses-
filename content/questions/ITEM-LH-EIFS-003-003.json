@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-003-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is the safest conclusion from a cannabis temperature study conducted under one cultivar and system?",
+  "choices": [
+    "It demonstrates a relationship under those conditions but does not establish a universal room setpoint.",
+    "It establishes the optimum for all cultivars.",
+    "It proves temperature is the only yield driver.",
+    "It can be copied directly into any facility."
+  ],
+  "correct": 0,
+  "rationale": "Study-specific treatment values should not be universalized.",
+  "references": [
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}
