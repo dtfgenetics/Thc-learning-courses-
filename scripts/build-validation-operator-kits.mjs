@@ -101,10 +101,14 @@ for(const p of programs){
     targetVersion:String(p.version),
     owner:'program validation authority',
     sourceProtocol:'occupational program validation evidence contract',
+    sourceReviewCommand:'npm run certification:sources:review:write',
+    sourceReviewPackets:locks.map(x=>'generated/certification-source-review-packets/'+x.courseId+'.md'),
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     currentCourseLocks:locks,
     requiredActions:[
-      'Complete technical review of every locked current course version.',
+      'Generate and review the exact-version public-source packet for every locked course before completing technical curriculum review.',
+      'Complete technical review of every locked current course version, including source scope, freshness, scientific/technical accuracy and role boundaries.',
+      'Do not convert generic extension guidance into cannabis-specific numeric targets, pesticide permissions or product specifications without appropriate evidence.',
       'Validate target population, job-task analysis, task/domain coverage and currency.',
       'Obtain SME/employer review of role representativeness, critical tasks and scope boundaries.',
       'Finalize assessment-blueprint weights and competency/cognitive/critical-content coverage.',
@@ -146,6 +150,11 @@ function markdown(k){
   ];
   if(k.currentCourseLocks){
     lines.push('','## Current course locks','',...k.currentCourseLocks.map(x=>'- '+x.courseId+'@'+x.courseVersion));
+  }
+  if(k.sourceReviewCommand){
+    lines.push('','## Public-source technical review','',
+      'Generate source-review packets:','', '    '+k.sourceReviewCommand,'',
+      ...(k.sourceReviewPackets??[]).map(x=>'- '+x));
   }
   if(k.requiredEvidence){
     lines.push('','## Required production evidence','',...k.requiredEvidence.map(x=>'- [ ] '+x));

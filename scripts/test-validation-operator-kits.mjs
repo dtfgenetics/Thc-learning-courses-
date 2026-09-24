@@ -18,6 +18,11 @@ for(const k of out.kits){
     if(!fs.existsSync(path.join(dir,k.id+'.'+ext))) throw new Error(k.id+': missing '+ext+' kit');
   }
 }
+for(const file of fs.readdirSync(dir).filter(x=>x.startsWith('KIT-OCC-')&&x.endsWith('.json'))){
+  const occ=JSON.parse(fs.readFileSync(path.join(dir,file),'utf8'));
+  if(occ.sourceReviewCommand!=='npm run certification:sources:review:write') throw new Error(file+': occupational source review command missing');
+  if(!Array.isArray(occ.sourceReviewPackets)||occ.sourceReviewPackets.length!==occ.currentCourseLocks.length) throw new Error(file+': occupational source review packets must match course locks');
+}
 const calFile=fs.readdirSync(dir).find(x=>x.startsWith('KIT-CAL-')&&x.endsWith('.json'));
 const cal=JSON.parse(fs.readFileSync(path.join(dir,calFile),'utf8'));
 if(!cal.privateInputTemplate||!cal.startCommand.includes('build-practical-calibration-evidence.mjs')) throw new Error('calibration kit missing private input workflow');
