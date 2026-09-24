@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A sensor moved from wall height to canopy height begins reading differently. What should be checked first?",
   "choices": [
-    "Whether the new location measures a genuinely different microclimate.",
     "Whether the sensor color changed.",
     "Whether the old reading was preferred.",
+    "Whether the new location measures a genuinely different microclimate.",
     "Whether another room uses the same brand."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "A location change can create a real measurement difference and must be separated from instrument error.",
   "references": [
     "REF-VPD-002",
