@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "An operator wants to recalibrate a critical sensor using an unverified handheld meter. What is the strongest response?",
+  "choices": [
+    "Proceed because any second device is a reference.",
+    "Use a suitable verified reference and the authorized procedure.",
+    "Average the two devices.",
+    "Change the setpoint instead."
+  ],
+  "correct": 1,
+  "rationale": "A reference must itself be suitable and verified.",
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}
