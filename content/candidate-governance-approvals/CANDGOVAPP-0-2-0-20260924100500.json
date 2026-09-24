@@ -1,0 +1,56 @@
+{
+  "id": "CANDGOVAPP-0-2-0-20260924100500",
+  "controlsId": "CANDIDATE-GOVERNANCE-CONTROLS-001",
+  "controlsVersion": "0.2.0",
+  "status": "approval-pending",
+  "approvals": {
+    "program": true,
+    "assessment": true,
+    "accessibility": true,
+    "privacyLegal": false,
+    "security": true,
+    "organizational": true
+  },
+  "finalAttemptPolicy": {
+    "attemptLimit": 3,
+    "approved": true,
+    "notes": "Issuer policy: maximum three credential attempts; remediation required before each retest."
+  },
+  "waitingPeriodPolicy": {
+    "waitingPeriodHours": 168,
+    "approved": true,
+    "notes": "Issuer policy: minimum seven days between credential attempts."
+  },
+  "feePolicy": {
+    "policy": "No automatic retest fee at initial program launch. Any future fee must be published before the attempt, applied consistently, and must not penalize an approved accommodation.",
+    "approved": true
+  },
+  "retentionSchedule": {
+    "approved": false,
+    "periods": {
+      "failedPracticeAttempts": "90 days after last practice activity, unless linked to an active appeal, security investigation or required audit record",
+      "readinessAttempts": "12 months after last readiness activity, unless superseded by a credential attempt or active review",
+      "credentialAttempts": "7 years after final attempt disposition, or longer when required by applicable law, contract, accreditation or an unresolved appeal/security matter",
+      "evaluatorCalibrationEvidence": "5 years after the calibration evidence is superseded or evaluator authorization ends, whichever is later",
+      "appealAdjudicationRecords": "7 years after final appeal disposition, or longer while a related legal/security matter remains open",
+      "issuedCredentialVerificationRecords": "for the active credential lifetime plus 7 years after expiration, revocation or retirement of the credential record",
+      "revokedExpiredCredentials": "7 years after revocation or expiration, with the minimum public verification projection retained only as necessary to verify historical status",
+      "securityLogs": "24 months by default; incident-linked logs retained with the incident record until its longer retention requirement expires"
+    }
+  },
+  "authorityId": "DTF-THC-ACADEMY-PROGRAM-OWNER",
+  "recordedAt": "2026-09-24T10:05:00-05:00",
+  "summary": "Program, assessment, accessibility, security and organizational governance are approved as issuer policy for candidate administration. Privacy/legal approval of the proposed retention/privacy implementation remains pending; operational use is not authorized until that approval is complete.",
+  "evidenceRefs": [
+    "docs/academy-v2/credential/tech1/CANDIDATE-RETEST-ACCOMMODATION-APPEAL-SECURITY-DRAFT.md",
+    "docs/learning-hub/tech1/course-007/CANDIDATE-EVIDENCE-RETENTION-PRIVACY-DRAFT.md",
+    "content/references/REF-ISO-17024-2026-001.json",
+    "content/references/REF-ADA-TESTING-ACCOMMODATIONS-001.json",
+    "content/references/REF-FTC-DATA-MINIMIZATION-001.json"
+  ],
+  "limitations": [
+    "ISO/IEC 17024, ADA and FTC sources support the governance principles but do not prescribe the issuer-specific numeric retest or retention values.",
+    "Privacy/legal applicability remains open and may require longer or different retention periods by jurisdiction, contract or accreditation.",
+    "This approval does not authorize credential issuance or operational candidate governance."
+  ]
+}
