@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Who should improvise new sanitizer concentration during harvest?",
   "choices": [
-    "No one; use the approved chemistry/procedure and qualified authority.",
     "Any worker if contamination is suspected.",
     "Only the fastest worker.",
-    "Anyone using extra PPE."
+    "Anyone using extra PPE.",
+    "No one; use the approved chemistry/procedure and qualified authority."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Chemical sanitation should remain controlled and validated.",
   "references": [
     "REF-SAFETY-OSHA-001",
