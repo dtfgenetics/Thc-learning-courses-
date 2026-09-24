@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-004-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-004-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A single HLVd test is negative. What should determine how strongly that result supports release?",
+  "choices": [
+    "Only whether the plant looked healthy.",
+    "Whether the result was printed in color.",
+    "Sample identity, plant part, timing, sampling design, assay/method controls and the facility decision rule.",
+    "Whether the room has ever had insects."
+  ],
+  "correct": 2,
+  "rationale": "A test result supports only the sampled material and method under the applicable decision rule; sampling and identity determine inference strength.",
+  "references": [
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

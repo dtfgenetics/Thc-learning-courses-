@@ -125,12 +125,13 @@
       "credentialAssessment": "ASSESS-CRED-PHIB-001",
       "capstone": "CAPSTONE-CRED-PHIB-DIAGNOSTIC-001",
       "programState": "planned-content-authoring",
-      "canonicalCourseObjectsPresent": 3,
+      "canonicalCourseObjectsPresent": 4,
       "firstCanonicalCourse": "COURSE-LH-PHIB-001",
       "canonicalCoursesSeeded": [
         "COURSE-LH-PHIB-001",
         "COURSE-LH-PHIB-002",
-        "COURSE-LH-PHIB-003"
+        "COURSE-LH-PHIB-003",
+        "COURSE-LH-PHIB-004"
       ]
     },
     {
@@ -341,7 +342,7 @@
       "canonicalCourseObjectsPresent": 0
     }
   ],
-  "updated": "2026-09-21",
+  "updated": "2026-09-24",
   "currentReleaseScope": {
     "label": "Technician academic/certification finalization",
     "programIds": [

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-004-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-004-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which pathway belongs in an HLVd biosecurity map based on cannabis-specific transmission evidence?",
+  "choices": [
+    "Only airborne spores.",
+    "Only finished packaged product.",
+    "Only human respiratory droplets.",
+    "Plant material, propagation, tools/contact pathways, root/water-associated pathways, and potentially seed/pollen depending on the production context."
+  ],
+  "correct": 3,
+  "rationale": "Cannabis-specific HLVd studies support multiple plant, propagation, root/water and reproductive-material transmission pathways.",
+  "references": [
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

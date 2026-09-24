@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-004-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-004-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspected disease is later ruled out. How should the original record be handled?",
+  "choices": [
+    "Delete the original observations so only the final conclusion remains.",
+    "Preserve the original observations and add a traceable correction/update showing the later evidence and conclusion.",
+    "Change the original timestamp to the current date.",
+    "Rewrite the record so the final diagnosis appears obvious from the beginning."
+  ],
+  "correct": 1,
+  "rationale": "Data-integrity practice preserves original evidence and uses traceable corrections rather than retrospective rewriting.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

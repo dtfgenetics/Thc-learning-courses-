@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-004-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-004-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which testing-handoff record is strongest?",
+  "choices": [
+    "A result screenshot with no plant ID.",
+    "A sample tied to plant/lot/location, collection time, collector, test reason, laboratory/method and result.",
+    "A verbal statement that the sample was probably from the suspect room.",
+    "An unlabeled tube kept beside the workbench."
+  ],
+  "correct": 1,
+  "rationale": "Reconstructable sample identity and chain of custody increase the reliability of test evidence for downstream decisions.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

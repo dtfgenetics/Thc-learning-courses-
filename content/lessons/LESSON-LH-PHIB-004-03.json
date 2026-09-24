@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-PHIB-004-03",
+  "title": "Hop Latent Viroid: Biology, Transmission & Testing Concepts",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-004-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Hop latent viroid can infect cannabis stock and production plants without obvious symptoms, can move through propagation and other transmission pathways, and can impair crop performance. Visual appearance alone cannot establish HLVd-free status.",
+    "vocabulary": [
+      {
+        "term": "Viroid",
+        "definition": "A small infectious circular RNA agent that lacks a protein coat and can cause plant disease."
+      },
+      {
+        "term": "Asymptomatic infection",
+        "definition": "Infection present without reliable visible symptoms at the time of observation."
+      },
+      {
+        "term": "Clean stock",
+        "definition": "Propagation material managed under a defined testing, identity and biosecurity program intended to reduce pathogen introduction and spread."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Absence of dudding is not an exclusion test",
+        "body": "Cannabis HLVd infection may be asymptomatic, especially in stock material. Visual inspection therefore cannot substitute for an approved sampling/testing strategy when clean-stock status or high-consequence decisions depend on HLVd status.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Transmission is a systems problem",
+        "body": "Peer-reviewed cannabis research has detected HLVd in stock plants, vegetative cuttings, recirculated nutrient solution and multiple plant tissues, and has demonstrated important propagation, root-associated and seed/pollen transmission pathways. Biosecurity must therefore consider plant, tool, water/root-zone and reproductive-material movement.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      },
+      {
+        "title": "Testing decisions require sampling and method controls",
+        "body": "Molecular assays can support HLVd detection, but a result only answers the question represented by the sampled material and method. Sample identity, plant part, timing, chain of custody, laboratory method and decision rule must remain controlled.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001",
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A visually vigorous donor plant cannot be cleared as HLVd-free solely because no dudding symptoms are present."
+    ],
+    "commonMistakes": [
+      "Using visual appearance as proof of HLVd-negative status.",
+      "Treating one negative sample as a universal guarantee without considering sampling design.",
+      "Copying a disinfection concentration from research directly into facility practice without method/safety/material validation."
+    ],
+    "practicalApplication": "Map a suspect HLVd pathway from donor plant through cuttings, tools, irrigation/root-zone and production rooms. Mark where identity, testing, sanitation or movement controls can interrupt spread.",
+    "summary": "HLVd requires testing-aware clean-stock and biosecurity systems because asymptomatic infection and multiple transmission pathways make symptom-only control unreliable."
+  }
+}
