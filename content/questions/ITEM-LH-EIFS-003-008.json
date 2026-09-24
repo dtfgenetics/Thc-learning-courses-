@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should airflow be evaluated at multiple crop-zone positions?",
   "choices": [
-    "Distribution can vary even when fan speed or room averages appear acceptable.",
     "One fan reading describes the entire canopy.",
     "Airflow cannot create microclimates.",
+    "Distribution can vary even when fan speed or room averages appear acceptable.",
     "Only walls matter."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Crop-zone spatial measurements reveal distribution problems hidden by equipment settings or averages.",
   "references": [
     "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
