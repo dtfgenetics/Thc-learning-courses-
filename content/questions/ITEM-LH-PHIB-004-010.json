@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why does a sanitizer result reported in a research study not automatically become a facility recipe?",
   "choices": [
-    "Research sanitizers never work.",
     "Operational use still requires exact chemistry/concentration/contact time, material compatibility, worker safety, legal/label review and facility validation.",
+    "Research sanitizers never work.",
     "Only water may be used in cultivation.",
     "The study result applies only to outdoor plants."
   ],
-  "correct": 1,
+  "correct": 0,
   "rationale": "Research can identify candidate controls, but facility implementation requires validated method, safety, compatibility and legal controls.",
   "references": [
     "REF-HLVD-SPREAD-2025-001"
