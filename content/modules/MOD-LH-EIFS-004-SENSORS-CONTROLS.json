@@ -1,0 +1,32 @@
+{
+  "id": "MOD-LH-EIFS-004-SENSORS-CONTROLS",
+  "title": "Sensors, Controllers, Alarms, Calibration & Data Quality",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-004-01",
+    "LESSON-LH-EIFS-004-02",
+    "LESSON-LH-EIFS-004-03",
+    "LESSON-LH-EIFS-004-04",
+    "LESSON-LH-EIFS-004-05"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering representative sensors, calibration/verification, controller/alarm interpretation, data-quality failures and maintenance handoff.",
+  "estimatedMinutes": 315,
+  "learningOutcomes": [
+    "Evaluate sensor representativeness and measurement quality using placement, shielding, verification history, colocated comparison and time-series behavior.",
+    "Distinguish verification, calibration, adjustment and protected servicing, and use only suitable verified references for measurement-quality decisions.",
+    "Interpret controller commands, alarms, interlocks and physical response as separate evidence layers rather than treating displayed status as proof of delivery.",
+    "Analyze missing, flat-lined, intermittent and contradictory data while preserving the original record and explicitly representing uncertainty.",
+    "Produce a maintenance/controls handoff that identifies device, time, command, observed response, affected process, verification already completed and safe authority boundary."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}
