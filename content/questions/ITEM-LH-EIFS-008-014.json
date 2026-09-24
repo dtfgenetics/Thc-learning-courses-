@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should a commissioning packet preserve failed tests after the issue is corrected?",
   "choices": [
-    "They document what failed, how it was corrected and why later acceptance is justified.",
     "Failed tests should always be deleted.",
     "Only passing results matter.",
+    "They document what failed, how it was corrected and why later acceptance is justified.",
     "Keeping failures creates unnecessary records."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Data integrity requires traceable evidence of deviations and corrections.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
