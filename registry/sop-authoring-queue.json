@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 2
+    "evidencePlansSeeded": 3
   },
   "targets": [
     {
@@ -301,7 +301,13 @@
         "label/jurisdiction limits"
       ],
       "sequence": 10,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-090.json",
+      "newControlledReferences": [
+        "REF-HEMP-PIERCING-PESTS-2024-001",
+        "REF-HEMP-RUSSET-MANAGEMENT-2024-001",
+        "REF-EPA-PESTICIDE-LABELS-2026-001"
+      ]
     },
     {
       "id": "GROW-100",
