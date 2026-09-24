@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should contradictory controller and physical evidence be preserved?",
   "choices": [
-    "The disagreement helps identify which system layer may be failing.",
     "One source should be deleted.",
     "Contradictions prevent all troubleshooting.",
-    "The controller should always win."
+    "The controller should always win.",
+    "The disagreement helps identify which system layer may be failing."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Conflicting evidence is diagnostically useful and should remain traceable.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
