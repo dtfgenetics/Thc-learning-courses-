@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/sme-employer-validation-evidence.schema.json",
+  "title": "THC Academy SME / Employer Validation Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "credentialProgramId",
+    "credentialProgramVersion",
+    "status",
+    "jtaEvidenceId",
+    "jtaEvidenceRecordedAt",
+    "panel",
+    "occupationalClaimReview",
+    "taskFamilyReviews",
+    "scopeBoundaryReview",
+    "analystId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^SMEVAL-[A-Z0-9-]+$"
+    },
+    "credentialProgramId": {
+      "enum": [
+        "CREDPROG-CULT-TECH-I-001",
+        "CREDPROG-CULT-TECH-II-001"
+      ]
+    },
+    "credentialProgramVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "preliminary",
+        "complete",
+        "invalidated"
+      ]
+    },
+    "jtaEvidenceId": {
+      "type": "string",
+      "pattern": "^JTA-[A-Z0-9-]+$"
+    },
+    "jtaEvidenceRecordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "panel": {
+      "type": "object",
+      "required": [
+        "panelId",
+        "respondentCount",
+        "employerPerspectiveCount",
+        "currentCultivationRoleCount",
+        "minimumRatingsPerTask"
+      ],
+      "properties": {
+        "panelId": {
+          "type": "string",
+          "minLength": 3
+        },
+        "respondentCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "employerPerspectiveCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "currentCultivationRoleCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minimumRatingsPerTask": {
+          "type": "integer",
+          "minimum": 2
+        }
+      },
+      "additionalProperties": false
+    },
+    "occupationalClaimReview": {
+      "type": "object",
+      "required": [
+        "ratingsCount",
+        "representativeCount",
+        "tooBroadCount",
+        "tooNarrowCount",
+        "unclearCount",
+        "representativeRate"
+      ],
+      "properties": {
+        "ratingsCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "representativeCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tooBroadCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tooNarrowCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unclearCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "representativeRate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "taskFamilyReviews": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "taskFamilyId",
+          "ratingsCount",
+          "credentialLevelFitRate",
+          "criticalTaskRate",
+          "scopeBoundaryClearRate",
+          "dispositionCounts",
+          "consensusDisposition"
+        ],
+        "properties": {
+          "taskFamilyId": {
+            "type": "string",
+            "pattern": "^TECH[12]-[A-Z0-9-]+$"
+          },
+          "ratingsCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "credentialLevelFitRate": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "criticalTaskRate": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "scopeBoundaryClearRate": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "dispositionCounts": {
+            "type": "object",
+            "required": [
+              "keep",
+              "adapt",
+              "remove"
+            ],
+            "properties": {
+              "keep": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "adapt": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "remove": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "consensusDisposition": {
+            "enum": [
+              "keep",
+              "adapt",
+              "remove",
+              "mixed"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "scopeBoundaryReview": {
+      "type": "object",
+      "required": [
+        "pesticideAuthorityExplicit",
+        "maintenanceAuthorityExplicit",
+        "medicalDiagnosisExcluded",
+        "finalProductDispositionExcluded",
+        "personnelManagementExcludedWhereNotClaimed",
+        "legalJurisdictionBoundaryExplicit"
+      ],
+      "properties": {
+        "pesticideAuthorityExplicit": {
+          "type": "boolean"
+        },
+        "maintenanceAuthorityExplicit": {
+          "type": "boolean"
+        },
+        "medicalDiagnosisExcluded": {
+          "type": "boolean"
+        },
+        "finalProductDispositionExcluded": {
+          "type": "boolean"
+        },
+        "personnelManagementExcludedWhereNotClaimed": {
+          "type": "boolean"
+        },
+        "legalJurisdictionBoundaryExplicit": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "analystId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 20
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    }
+  },
+  "additionalProperties": false
+}
