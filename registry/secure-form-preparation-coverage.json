@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "id": "SECURE-FORM-PREPARATION-COVERAGE-001",
+  "updated": "2026-09-24",
+  "state": "13-of-13-conventional-course-secure-form-paths-prepared-private-form-evidence-pending",
+  "summary": {
+    "conventionalFinalCourses": 13,
+    "integratedPerformanceNotApplicable": 2,
+    "secureFormEvidenceApproved": 0
+  },
+  "privacyBoundary": "Secure operational items, answer keys, private manifests and store credentials remain outside this repository. Repository evidence uses only opaque form identifiers/revisions, counts, fingerprints and aggregate review metadata.",
+  "approvalRequires": [
+    "at least two distinct private operational forms",
+    "approved-operational private items only",
+    "public development items excluded",
+    "equivalent blueprint coverage",
+    "equivalent cognitive demand",
+    "equivalent critical-content representation",
+    "equivalent scored opportunity",
+    "retest overlap reviewed",
+    "private secure store verified",
+    "answer material excluded from delivery",
+    "exposure tracking enabled",
+    "quarantine workflow enabled",
+    "quantitative equivalence evidence documented when available"
+  ],
+  "boundary": "Preparation coverage does not approve forms. Real private forms and deployment/security/equivalence evidence are required.",
+  "courses": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "courseVersion": "1.0.1",
+      "track": "Technician I",
+      "assessmentId": "ASSESS-LH-TECH1-001-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-002",
+      "courseVersion": "0.13.0",
+      "track": "Technician I",
+      "assessmentId": "ASSESS-LH-TECH1-002-FINAL",
+      "assessmentVersion": "1.3.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "courseVersion": "0.2.0",
+      "track": "Technician I",
+      "assessmentId": "ASSESS-LH-TECH1-003-FINAL",
+      "assessmentVersion": "1.2.1",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "courseVersion": "0.2.0",
+      "track": "Technician I",
+      "assessmentId": "ASSESS-LH-TECH1-004-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "courseVersion": "0.2.0",
+      "track": "Technician I",
+      "assessmentId": "ASSESS-LH-TECH1-005-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "courseVersion": "0.3.0",
+      "track": "Technician I",
+      "assessmentId": "ASSESS-LH-TECH1-006-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-001-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-002",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-002-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-003",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-003-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-004-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-005",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-005-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-006-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-007",
+      "courseVersion": "0.3.0",
+      "track": "Technician II",
+      "assessmentId": "ASSESS-LH-TECH2-007-FINAL",
+      "assessmentVersion": "1.2.0",
+      "executionState": "prepared-prerequisites-pending",
+      "operatorKitBuilder": "scripts/build-standard-secure-operator-kits.mjs",
+      "intakeScript": "scripts/create-secure-form-equivalence-record.mjs",
+      "approvalScript": "scripts/approve-secure-form-equivalence.mjs"
+    }
+  ]
+}
