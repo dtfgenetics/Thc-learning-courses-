@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-004-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-004-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two data sources conflict materially. What is the strongest recordkeeping approach?",
+  "choices": [
+    "Delete the less convenient source.",
+    "Average them automatically.",
+    "Rewrite the earlier record.",
+    "Preserve both, document the conflict, and state how fitness-for-use was determined."
+  ],
+  "correct": 3,
+  "rationale": "Conflicting evidence should remain traceable through the data-quality decision.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-004-01",
+  "title": "Sensor Representativeness, Placement & Cross-Checks",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-004-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A sensor can be accurate at its location and still be unrepresentative of the crop. Specialist verification separates placement effects, local microclimate and instrument bias before a reading drives a control decision.",
+    "vocabulary": [
+      {
+        "term": "Representativeness",
+        "definition": "How well a measurement reflects the process or crop condition relevant to the decision."
+      },
+      {
+        "term": "Colocated comparison",
+        "definition": "Placing instruments together under the same exposure to distinguish location differences from instrument disagreement."
+      },
+      {
+        "term": "Placement bias",
+        "definition": "A measurement difference caused by location, shielding or exposure rather than the process condition of interest."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Location can create real differences",
+        "body": "Wall, return-air, equipment-discharge and canopy sensors may legitimately differ because they measure different microclimates. Verify the measurement question before declaring an instrument wrong.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Colocation separates instrument from location",
+        "body": "When sensors disagree, colocated comparison under the same exposure helps reveal whether the difference follows the devices or the locations.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Use independent evidence before major changes",
+        "body": "Compare neighboring sensors, verified references, crop response and equipment state before letting one outlier drive a high-consequence control action.",
+        "references": [
+          "REF-VPD-002",
+          "REF-ENV-TEMP-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A canopy sensor reads warmer after being moved closer to a fixture; placement/radiant-load bias should be checked before labeling it inaccurate."
+    ],
+    "commonMistakes": [
+      "Assuming installed controllers are automatically the most accurate source.",
+      "Averaging incompatible locations.",
+      "Moving sensors until they agree."
+    ],
+    "practicalApplication": "Classify five sensor locations as representative, local-purpose or suspect for a supplied room map and justify each decision.",
+    "summary": "Sensor quality begins with the question the sensor is supposed to answer."
+  }
+}

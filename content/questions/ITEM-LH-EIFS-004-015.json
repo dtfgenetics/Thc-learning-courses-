@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-004-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-004-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should a handoff include verification steps already completed?",
+  "choices": [
+    "It lets the qualified responder reconstruct the evidence and avoid repeating or misinterpreting prior checks.",
+    "It replaces maintenance work.",
+    "It proves root cause.",
+    "It allows removal of original alarms."
+  ],
+  "correct": 0,
+  "rationale": "Reconstructable handoff improves continuity without overstating cause.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}
