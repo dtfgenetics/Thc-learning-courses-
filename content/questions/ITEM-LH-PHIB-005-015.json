@@ -1,0 +1,29 @@
+{
+  "id": "ITEM-LH-PHIB-005-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-05",
+  "competency": "COMP-PRO-QA-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "stem": "A control suppresses the target pest but kills most beneficial organisms and the pest rapidly rebounds. What should the recurrence review examine?",
+  "choices": [
+    "Only whether the first pest count was written in ink.",
+    "Whether the beneficial organisms had names.",
+    "Nothing, because initial suppression proves success.",
+    "Compatibility, selection pressure, prevention/source controls, monitoring timing and whether the intervention disrupted the larger IPM system."
+  ],
+  "correct": 3,
+  "rationale": "Program learning should examine compatibility and system effects, not just short-term target suppression.",
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IRAC-MOA-2026-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-005-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-01",
+  "competency": "COMP-IPM-ADV-001",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "stem": "A facility detects a small new pest hotspot. Which response best separates monitoring from treatment authority?",
+  "choices": [
+    "Apply any pesticide immediately.",
+    "Increase representative scouting and confirm identity while using only already-authorized controls.",
+    "Ignore the hotspot until crop loss occurs.",
+    "Adopt a threshold from an unrelated crop without review."
+  ],
+  "correct": 1,
+  "rationale": "Early detection can justify intensified monitoring or authorized nonchemical actions without automatically authorizing treatment.",
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}
