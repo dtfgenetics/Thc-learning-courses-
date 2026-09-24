@@ -122,9 +122,11 @@
         "registry/secure-form-preparation-coverage.json",
         "scripts/build-credential-authorization-kits.mjs",
         "registry/production-validation-evidence.json",
-        "registry/candidate-governance-controls.json"
+        "registry/candidate-governance-controls.json",
+        "registry/candidate-privacy-legal-review-preparation.json",
+        "docs/CANDIDATE-PRIVACY-LEGAL-REVIEW-PACKET.md"
       ],
-      "nextExecution": "Build/validate private operational forms, complete privacy/legal governance, deploy/validate all production controls, then reconcile and approve exact-version Technician I/II credential authorization."
+      "nextExecution": "Build/validate private operational forms, execute privacy/legal review for candidate governance 0.2.0, deploy/validate all production controls, then reconcile and approve exact-version Technician I/II credential authorization."
     }
   ],
   "truthRules": [
