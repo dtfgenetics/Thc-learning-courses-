@@ -6,6 +6,7 @@ const programs=new Map(readDir('content/credential-programs').filter(x=>x.data.i
 const courses=new Map(readDir('content/courses').map(x=>[x.data.id,x.data]));
 const sourceRegistry=JSON.parse(fs.readFileSync(path.join(root,'registry/public-authoritative-source-supplements.json'),'utf8'));
 const occupationalBaseline=JSON.parse(fs.readFileSync(path.join(root,'registry/public-occupational-source-baseline.json'),'utf8'));
+const jtaEvidence=readDir('content/job-task-analysis-evidence').map(x=>x.data);
 const rows=readDir('content/occupational-program-validation-evidence');
 const ids=new Set();
 
@@ -51,6 +52,9 @@ for(const {file,data:r} of rows){
     if(r.jobTaskAnalysis?.occupationalSourceBaselineId!==occupationalBaseline.id) errors.push(`${file}: completed JTA must reference current occupational source baseline ${occupationalBaseline.id}`);
     if(String(r.jobTaskAnalysis?.occupationalSourceBaselineAsOf)!==String(occupationalBaseline.asOf)) errors.push(`${file}: completed JTA occupational source baseline date is stale`);
     if(!(r.evidenceRefs??[]).includes(occupationalBaseline.id)) errors.push(`${file}: completed occupational evidence must include occupational source baseline evidenceRef`);
+    const matchingJta=jtaEvidence.filter(x=>x.credentialProgramId===r.credentialProgramId&&String(x.credentialProgramVersion)===String(r.credentialProgramVersion)&&x.status==='complete'&&x.baselineId===occupationalBaseline.id&&String(x.baselineAsOf)===String(occupationalBaseline.asOf));
+    if(matchingJta.length===0) errors.push(`${file}: completed occupational validation requires complete current structured JTA evidence`);
+    else if(!(r.evidenceRefs??[]).some(id=>matchingJta.some(x=>x.id===id))) errors.push(`${file}: completed occupational evidence must reference a complete current JTA evidence record`);
     const perf=r.performanceValidation;
     if(perf?.required===true){
       if(perf.practicalsValidated!==perf.practicalsExpected) errors.push(`${file}: all expected practicals must be validated`);

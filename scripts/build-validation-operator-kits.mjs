@@ -108,12 +108,14 @@ for(const p of programs){
     occupationalSourceBaselinePacket:'generated/occupational-source-baseline/OCCSRC-'+p.id.replace(/^CREDPROG-/,'')+'.md',
     occupationalSourceBaselineId:occupationalBaseline.id,
     occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
+    jtaEvidenceCommand:'npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write',
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     currentCourseLocks:locks,
     requiredActions:[
       'Generate and review the exact-version public-source packet for every locked course before completing technical curriculum review.',
       'Generate and review the public occupational-source baseline before validating the cannabis-specific job-task analysis.',
       'Treat O*NET/BLS task families as adjacent occupational evidence only; explicitly keep, adapt or reject them during SME/employer review.',
+      'Collect pseudonymous panel ratings and build a current complete structured JTA aggregate before occupational validation completion.',
       'Complete technical review of every locked current course version, including source scope, freshness, scientific/technical accuracy and role boundaries.',
       'Do not convert generic extension guidance into cannabis-specific numeric targets, pesticide permissions or product specifications without appropriate evidence.',
       'Validate target population, job-task analysis, task/domain coverage and currency.',
@@ -167,7 +169,10 @@ function markdown(k){
     lines.push('','## Public occupational source baseline','',
       'Generate adjacent-occupation JTA baseline:','', '    '+k.occupationalSourceBaselineCommand,'',
       '- '+k.occupationalSourceBaselinePacket,
-      '- '+k.occupationalSourceBaselineId+' / '+k.occupationalSourceBaselineAsOf);
+      '- '+k.occupationalSourceBaselineId+' / '+k.occupationalSourceBaselineAsOf,
+      '',
+      'Build aggregate JTA evidence from private panel ratings:','',
+      '    '+k.jtaEvidenceCommand);
   }
   if(k.requiredEvidence){
     lines.push('','## Required production evidence','',...k.requiredEvidence.map(x=>'- [ ] '+x));
