@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "What should happen when an interlock prevents equipment operation during troubleshooting?",
   "choices": [
-    "Preserve the interlock condition and escalate protected troubleshooting to the authorized role.",
     "Bypass it briefly.",
     "Disable alarms first.",
-    "Force the output from another controller."
+    "Force the output from another controller.",
+    "Preserve the interlock condition and escalate protected troubleshooting to the authorized role."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Interlocks should not be bypassed by unqualified personnel.",
   "references": [
     "REF-SAFETY-OSHA-001"
