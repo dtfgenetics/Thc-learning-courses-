@@ -21,6 +21,7 @@ for(const id of ['PROGRAMVAL-CULT-TECH-I-001','PROGRAMVAL-CULT-TECH-II-001']){
   if(packet.occupationalSourceBaselineCommand!=='npm run certification:occupational-source-baseline:write') throw new Error(id+': occupational source baseline command missing');
   if(!packet.occupationalSourceBaselinePacket?.includes('generated/occupational-source-baseline/OCCSRC-')) throw new Error(id+': occupational source baseline packet missing');
   if(!packet.sections.jobTaskAnalysis.some(x=>/O\*NET\/BLS|occupational-source baseline/i.test(x))) throw new Error(id+': JTA public occupational source review requirement missing');
+  if(packet.jtaEvidenceCommand!=='npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write') throw new Error(id+': structured JTA evidence command missing');
 }
 const gov=JSON.parse(fs.readFileSync(path.join(dir,'CANDIDATEGOV-001.json'),'utf8'));
 if(gov.unresolvedDecisions.finalAttemptLimit!==null||gov.unresolvedDecisions.waitingPeriodHours!==null||gov.unresolvedDecisions.feePolicy!==null) throw new Error('candidate governance packet fabricated unresolved policy values');
