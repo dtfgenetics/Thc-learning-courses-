@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-004-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is affected-versus-unaffected comparison useful in a plant-disease workup?",
+  "choices": [
+    "It guarantees the pathogen can be identified visually.",
+    "It helps identify spatial, environmental, irrigation or cohort differences that may discriminate competing causes.",
+    "It removes the need for laboratory testing.",
+    "It makes incidence denominators unnecessary."
+  ],
+  "correct": 1,
+  "rationale": "Comparisons help reveal discriminating patterns and exposures; they do not guarantee diagnosis or replace appropriate confirmation.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}
