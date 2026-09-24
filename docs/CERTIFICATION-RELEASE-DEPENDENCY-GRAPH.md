@@ -10,7 +10,7 @@ For a conventional final, standard-setting evidence cannot reach `evidence-compl
 
 Secure operational form readiness cannot reach `evidence-complete` or `approved` unless exact-version assessment review, item analysis, and standard setting have reached at least evidence-complete status.
 
-Credential authorization is program-wide. An `approved` credential authorization requires every other applicable certification gate for every course in that credential program to be approved, plus all 12 production controls to have approved deployment-backed evidence. An `evidence-complete` authorization record likewise cannot outrun evidence-complete prerequisites.
+Credential authorization is program-wide. An `approved` credential authorization requires every other applicable certification gate for every course in that credential program to be approved, plus all 13 production controls to have approved deployment-backed evidence. An `evidence-complete` authorization record likewise cannot outrun evidence-complete prerequisites.
 
 These rules do not manufacture evidence and do not require work that is genuinely independent to happen serially. They prevent later governance states from being recorded ahead of their prerequisite evidence.
 
