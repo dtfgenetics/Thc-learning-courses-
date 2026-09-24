@@ -17,6 +17,7 @@ const courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
 const programs=readDir('content/credential-programs').filter(x=>x.id);
 const performance=readDir('content/performance-assessments').filter(x=>['practical','capstone'].includes(x.assessmentType));
 const production=read('registry/production-validation-evidence.json');
+const occupationalBaseline=read('registry/public-occupational-source-baseline.json');
 
 const kits=[];
 
@@ -103,10 +104,16 @@ for(const p of programs){
     sourceProtocol:'occupational program validation evidence contract',
     sourceReviewCommand:'npm run certification:sources:review:write',
     sourceReviewPackets:locks.map(x=>'generated/certification-source-review-packets/'+x.courseId+'.md'),
+    occupationalSourceBaselineCommand:'npm run certification:occupational-source-baseline:write',
+    occupationalSourceBaselinePacket:'generated/occupational-source-baseline/OCCSRC-'+p.id.replace(/^CREDPROG-/,'')+'.md',
+    occupationalSourceBaselineId:occupationalBaseline.id,
+    occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     currentCourseLocks:locks,
     requiredActions:[
       'Generate and review the exact-version public-source packet for every locked course before completing technical curriculum review.',
+      'Generate and review the public occupational-source baseline before validating the cannabis-specific job-task analysis.',
+      'Treat O*NET/BLS task families as adjacent occupational evidence only; explicitly keep, adapt or reject them during SME/employer review.',
       'Complete technical review of every locked current course version, including source scope, freshness, scientific/technical accuracy and role boundaries.',
       'Do not convert generic extension guidance into cannabis-specific numeric targets, pesticide permissions or product specifications without appropriate evidence.',
       'Validate target population, job-task analysis, task/domain coverage and currency.',
@@ -155,6 +162,12 @@ function markdown(k){
     lines.push('','## Public-source technical review','',
       'Generate source-review packets:','', '    '+k.sourceReviewCommand,'',
       ...(k.sourceReviewPackets??[]).map(x=>'- '+x));
+  }
+  if(k.occupationalSourceBaselineCommand){
+    lines.push('','## Public occupational source baseline','',
+      'Generate adjacent-occupation JTA baseline:','', '    '+k.occupationalSourceBaselineCommand,'',
+      '- '+k.occupationalSourceBaselinePacket,
+      '- '+k.occupationalSourceBaselineId+' / '+k.occupationalSourceBaselineAsOf);
   }
   if(k.requiredEvidence){
     lines.push('','## Required production evidence','',...k.requiredEvidence.map(x=>'- [ ] '+x));
