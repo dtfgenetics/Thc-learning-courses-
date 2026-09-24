@@ -1,0 +1,455 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-24",
+  "purpose": "Controlled integration map connecting repository-native SOP draft packages to the existing certification curriculum without converting drafts into released learner operational procedures.",
+  "summary": {
+    "sopPackages": 17,
+    "packagesMappedToExistingModules": 17,
+    "packagesMappedToExistingLessons": 17,
+    "operationallyReleased": 0,
+    "internalAlignmentOnly": 17
+  },
+  "policy": {
+    "draftSopMayBeUsedForInternalReview": true,
+    "draftSopMayBePresentedAsApprovedProcedure": false,
+    "underlyingReviewedScienceMayRemainInCourseLessons": true,
+    "releaseRequiresExactVersionApproval": true,
+    "releaseRequiresAccessibilityAndApplicableFacilityValidation": true
+  },
+  "mappings": [
+    {
+      "sopId": "GROW-000",
+      "title": "Manual overview, purpose, scope, document control",
+      "packageManifest": "registry/sop-packages/GROW-000.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-PRO-SOP-001",
+        "MOD-RESPONSIBLE-LEGAL-001"
+      ],
+      "reusedLessons": [
+        "LESSON-PRO-SOP-DESIGN-001",
+        "LESSON-PRO-CHANGE-003",
+        "LESSON-RESPONSIBLE-RECORDS-003",
+        "LESSON-LEGAL-JURISDICTION-001"
+      ],
+      "evidenceFocus": [
+        "document control",
+        "jurisdiction-neutral lawful-use boundary",
+        "quality-system procedure design"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-011",
+      "title": "Grow space setup",
+      "packageManifest": "registry/sop-packages/GROW-011.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-SPACE-BIOSEC-001",
+        "MOD-SAFETY-WORK-001",
+        "MOD-ENV-001"
+      ],
+      "reusedLessons": [
+        "LESSON-SPACE-ZONING-001",
+        "LESSON-SPACE-INTAKE-002",
+        "LESSON-SPACE-CAPACITY-003",
+        "LESSON-SAFETY-HAZARDS-001",
+        "LESSON-ENV-AIRFLOW-002"
+      ],
+      "evidenceFocus": [
+        "worker safety",
+        "electrical/fire/utility boundaries",
+        "environmental commissioning"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-020",
+      "title": "Biosecurity and clean workflow",
+      "packageManifest": "registry/sop-packages/GROW-020.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-SPACE-BIOSEC-001",
+        "MOD-IPM-001",
+        "MOD-IPM-ADV-001"
+      ],
+      "reusedLessons": [
+        "LESSON-IPM-BIOSEC-003",
+        "LESSON-IPM-SCOUT-002",
+        "LESSON-IPM-INTEGRATE-003",
+        "LESSON-LH-TECH2-004-04"
+      ],
+      "evidenceFocus": [
+        "sanitation",
+        "quarantine",
+        "clean stock",
+        "movement controls"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-030",
+      "title": "Genetics and crop planning",
+      "packageManifest": "registry/sop-packages/GROW-030.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-CROP-PLAN-001",
+        "MOD-GENETICS-001",
+        "MOD-PLANT-BIO-001"
+      ],
+      "reusedLessons": [
+        "LESSON-CROP-GENETICS-001",
+        "LESSON-CROP-SCHEDULE-002",
+        "LESSON-CROP-RECORDS-003",
+        "LESSON-GENETICS-001",
+        "LESSON-PLANT-BIO-SEX-003"
+      ],
+      "evidenceFocus": [
+        "genetic identity",
+        "crop scheduling",
+        "traceability"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-031",
+      "title": "Seed intake, labeling, and storage",
+      "packageManifest": "registry/sop-packages/GROW-031.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-PROP-001",
+        "MOD-GENETICS-001",
+        "MOD-PRO-QA-001"
+      ],
+      "reusedLessons": [
+        "LESSON-PROP-SEED-002",
+        "LESSON-GENETICS-001",
+        "LESSON-PRO-AUDIT-003",
+        "LESSON-CROP-RECORDS-003"
+      ],
+      "evidenceFocus": [
+        "seed storage",
+        "identity preservation",
+        "sampling and records"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-032",
+      "title": "Germination",
+      "packageManifest": "registry/sop-packages/GROW-032.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-PROP-001",
+        "MOD-PLANT-BIO-001"
+      ],
+      "reusedLessons": [
+        "LESSON-PROP-SEED-002",
+        "LESSON-PLANT-BIO-001"
+      ],
+      "evidenceFocus": [
+        "seed physiology",
+        "moisture/temperature/oxygen",
+        "sanitation"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-033",
+      "title": "Seedling establishment",
+      "packageManifest": "registry/sop-packages/GROW-033.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-PROP-001",
+        "MOD-PLANT-BIO-001",
+        "MOD-ENV-001",
+        "MOD-ROOTZONE-001"
+      ],
+      "reusedLessons": [
+        "LESSON-PROP-001",
+        "LESSON-PLANT-BIO-001",
+        "LESSON-ROOTZONE-001",
+        "LESSON-ENV-VPD-001"
+      ],
+      "evidenceFocus": [
+        "early development",
+        "root-zone moisture/aeration",
+        "environmental stress"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-040",
+      "title": "Growing media selection and preparation",
+      "packageManifest": "registry/sop-packages/GROW-040.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-ROOTZONE-001",
+        "MOD-SOIL-BIO-001",
+        "MOD-HYDRO-ADV-001"
+      ],
+      "reusedLessons": [
+        "LESSON-ROOTZONE-MEDIA-002",
+        "LESSON-ROOTZONE-DRYBACK-003",
+        "LESSON-SOIL-CEC-001",
+        "LESSON-SOIL-MICROBES-002",
+        "LESSON-HYDRO-SYSTEMS-001"
+      ],
+      "evidenceFocus": [
+        "water retention/aeration",
+        "CEC and chemistry",
+        "media/system-specific testing"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-080",
+      "title": "Mineral nutrition and deficiency diagnosis",
+      "packageManifest": "registry/sop-packages/GROW-080.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-NUTRITION-001",
+        "MOD-NUTRIENT-DIAG-001",
+        "MOD-ROOTZONE-001"
+      ],
+      "reusedLessons": [
+        "LESSON-NUTRITION-MACRO-002",
+        "LESSON-NUTRITION-MICRO-003",
+        "LESSON-NUTRIENT-INTERACT-001",
+        "LESSON-NUTRIENT-DIAG-002",
+        "LESSON-NUTRIENT-EC-003"
+      ],
+      "evidenceFocus": [
+        "plant nutrition",
+        "uptake limitations",
+        "deficiency look-alikes"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-090",
+      "title": "Integrated pest management",
+      "packageManifest": "registry/sop-packages/GROW-090.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-IPM-001",
+        "MOD-IPM-ADV-001",
+        "MOD-LH-PHIB-003-ARTHROPODS"
+      ],
+      "reusedLessons": [
+        "LESSON-IPM-SCOUT-002",
+        "LESSON-IPM-SCOUT-ADV-001",
+        "LESSON-IPM-DIAG-ADV-002",
+        "LESSON-IPM-INTEGRATE-003",
+        "LESSON-LH-PHIB-003-01"
+      ],
+      "evidenceFocus": [
+        "prevention/scouting",
+        "arthropod identification",
+        "biological/cultural controls",
+        "label/jurisdiction limits"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-100",
+      "title": "Disease and disorder management",
+      "packageManifest": "registry/sop-packages/GROW-100.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-IPM-ADV-001",
+        "MOD-ROOTZONE-001",
+        "MOD-ENV-ADV-001"
+      ],
+      "reusedLessons": [
+        "LESSON-IPM-DIAG-ADV-002",
+        "LESSON-IPM-INTEGRATE-003",
+        "LESSON-ROOTZONE-001",
+        "LESSON-ENV-MAP-001"
+      ],
+      "evidenceFocus": [
+        "cannabis pathogens",
+        "diagnostics",
+        "environment/disease interaction",
+        "clean stock"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-110",
+      "title": "Training and canopy management",
+      "packageManifest": "registry/sop-packages/GROW-110.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-CANOPY-001",
+        "MOD-CANOPY-ADV-001"
+      ],
+      "reusedLessons": [
+        "LESSON-CANOPY-001",
+        "LESSON-CANOPY-TRAIN-002",
+        "LESSON-CANOPY-ARCH-001",
+        "LESSON-CANOPY-LST-002",
+        "LESSON-CANOPY-HST-003",
+        "LESSON-CANOPY-UNIFORM-003"
+      ],
+      "evidenceFocus": [
+        "plant architecture",
+        "stress response",
+        "airflow/light distribution"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-120",
+      "title": "Flowering stage management",
+      "packageManifest": "registry/sop-packages/GROW-120.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-FLOWER-001",
+        "MOD-FLOWER-ADV-001",
+        "MOD-ENV-ADV-001"
+      ],
+      "reusedLessons": [
+        "LESSON-FLOWER-TRANSITION-001",
+        "LESSON-FLOWER-PHOTO-002",
+        "LESSON-FLOWER-SEX-002",
+        "LESSON-FLOWER-MATURITY-003",
+        "LESSON-ENV-LOADS-003"
+      ],
+      "evidenceFocus": [
+        "photoperiod",
+        "reproductive development",
+        "environmental risk"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-130",
+      "title": "Harvest readiness and harvest workflow",
+      "packageManifest": "registry/sop-packages/GROW-130.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-POSTHARVEST-PROCESS-001",
+        "MOD-LH-TECH1-006-HARVEST"
+      ],
+      "reusedLessons": [
+        "LESSON-PH-MATURITY-001",
+        "LESSON-PH-SAMPLING-001",
+        "LESSON-LH-TECH1-006-01",
+        "LESSON-LH-TECH1-006-02"
+      ],
+      "evidenceFocus": [
+        "maturity assessment",
+        "sampling",
+        "contamination prevention",
+        "traceability"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-140",
+      "title": "Drying, curing, storage, and water activity",
+      "packageManifest": "registry/sop-packages/GROW-140.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-POSTHARVEST-001",
+        "MOD-POSTHARVEST-QA-001",
+        "MOD-POSTHARVEST-PROCESS-001"
+      ],
+      "reusedLessons": [
+        "LESSON-POSTHARVEST-DRY-002",
+        "LESSON-POSTHARVEST-STORAGE-003",
+        "LESSON-PH-DRYING-002",
+        "LESSON-PH-STORAGE-003"
+      ],
+      "evidenceFocus": [
+        "postharvest drying",
+        "water activity/moisture",
+        "microbial stability",
+        "packaging/storage"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-150",
+      "title": "Testing, QA, CAPA, and crop review",
+      "packageManifest": "registry/sop-packages/GROW-150.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-PRO-QA-001",
+        "MOD-POSTHARVEST-QA-001"
+      ],
+      "reusedLessons": [
+        "LESSON-PRO-DEVIATION-001",
+        "LESSON-PRO-CAPA-002",
+        "LESSON-PRO-AUDIT-003",
+        "LESSON-PH-TRACE-002",
+        "LESSON-PH-DEVIATION-003"
+      ],
+      "evidenceFocus": [
+        "data integrity",
+        "deviation/CAPA",
+        "laboratory/testing context",
+        "continuous improvement"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    },
+    {
+      "sopId": "GROW-160",
+      "title": "Forms, logs, checklists, and training records",
+      "packageManifest": "registry/sop-packages/GROW-160.json",
+      "packageReleaseState": "blocked",
+      "integrationState": "internal-review-and-course-alignment-only",
+      "reusedModules": [
+        "MOD-PRO-SOP-001",
+        "MOD-PRO-QA-001"
+      ],
+      "reusedLessons": [
+        "LESSON-PRO-SOP-DESIGN-001",
+        "LESSON-PRO-TRAIN-002",
+        "LESSON-PRO-CHANGE-003",
+        "LESSON-RESPONSIBLE-RECORDS-003"
+      ],
+      "evidenceFocus": [
+        "controlled records",
+        "training evidence",
+        "document lifecycle",
+        "data integrity"
+      ],
+      "learnerExposureRule": "Do not expose the draft SOP as an approved operational procedure. Course lessons may teach the underlying science, observation, recordkeeping, and authority boundaries from reviewed sources.",
+      "futureReleaseRule": "After exact-version package approval, publish only through a controlled resource record that preserves version, release state, accessibility state, and course/lesson mappings."
+    }
+  ]
+}
