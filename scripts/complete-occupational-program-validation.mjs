@@ -15,6 +15,11 @@ const programs=new Map(readDir('content/credential-programs').filter(x=>x.id).ma
 const sourceRegistry=JSON.parse(fs.readFileSync(path.join(root,'registry/public-authoritative-source-supplements.json'),'utf8'));
 const occupationalBaseline=JSON.parse(fs.readFileSync(path.join(root,'registry/public-occupational-source-baseline.json'),'utf8'));
 const program=programs.get(source.credentialProgramId);if(!program||String(program.version)!==String(source.credentialProgramVersion))throw new Error('Stale credential program version');
+const jtaRows=readDir('content/job-task-analysis-evidence')
+  .filter(x=>x.credentialProgramId===program.id&&String(x.credentialProgramVersion)===String(program.version)&&x.status==='complete'&&x.baselineId===occupationalBaseline.id&&String(x.baselineAsOf)===String(occupationalBaseline.asOf))
+  .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
+const currentJta=jtaRows[0]??null;
+if(!currentJta) throw new Error('No complete current job-task-analysis evidence exists for '+program.id+'@'+program.version+' and '+occupationalBaseline.id);
 for(const lock of source.authorizedCourses??[]){const c=courses.get(lock.courseId);if(!c||String(c.version)!==String(lock.courseVersion))throw new Error('Stale course lock '+lock.courseId);}
 const expected=source.performanceValidation?.practicalsExpected??0;
 const now=new Date().toISOString(),record=structuredClone(source);
@@ -37,12 +42,13 @@ record.jobTaskAnalysis={
   currencyReviewed:true,
   publicOccupationalSourceReviewCompleted:true,
   occupationalSourceBaselineId:occupationalBaseline.id,
-  occupationalSourceBaselineAsOf:occupationalBaseline.asOf
+  occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
+  notes:'Validated against aggregate JTA evidence '+currentJta.id+'; '+(record.jobTaskAnalysis?.notes??'')
 };
 record.smeEmployerValidation={...record.smeEmployerValidation,completed:true,roleRepresentativenessReviewed:true,criticalTasksReviewed:true,scopeOfPracticeReviewed:true,panelistCount};
 record.assessmentBlueprint={...record.assessmentBlueprint,weightsFinalized:true,competencyCoverageApproved:true,criticalContentRepresentationApproved:true,cognitiveDemandApproved:true,blueprintVersion};
 record.performanceValidation={...record.performanceValidation,practicalsValidated:expected,capstoneValidated:record.performanceValidation?.capstoneRequired===true?true:record.performanceValidation?.capstoneValidated,criticalDecisionCoverageApproved:true,unresolvedCriticalIssues:0};
 record.summary='Evidence-complete occupational program validation derived from '+source.id+' for '+source.credentialProgramId+'@'+source.credentialProgramVersion+'.';
-record.evidenceRefs=[...new Set([...(source.evidenceRefs??[]),source.id,sourceRegistry.id,occupationalBaseline.id])];record.limitations=[...(source.limitations??[]),'Evidence-complete does not itself constitute final program approval or credential authorization.'];
+record.evidenceRefs=[...new Set([...(source.evidenceRefs??[]),source.id,sourceRegistry.id,occupationalBaseline.id,currentJta.id])];record.limitations=[...(source.limitations??[]),'Evidence-complete does not itself constitute final program approval or credential authorization.'];
 if(write){const d=path.join(root,'content/occupational-program-validation-evidence');const f=path.join(d,record.id+'.json');if(fs.existsSync(f))throw new Error('Refusing overwrite');fs.writeFileSync(f,JSON.stringify(record,null,2)+'\n');}
 console.log(JSON.stringify({wroteFile:write,record},null,2));
