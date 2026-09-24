@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-005-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which batch record is strongest?",
+  "choices": [
+    "Source identity, recipe version, material lots, final volume, additions, measurements, corrections, hold status, authorization and final disposition.",
+    "Only final pH.",
+    "Only ingredient totals.",
+    "A verbal note."
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable batch record preserves identity, execution and disposition evidence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}
