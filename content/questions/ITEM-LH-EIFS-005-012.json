@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Source-water EC rises before nutrients are added while the same recipe is used. Why is that relevant?",
   "choices": [
-    "It changes the starting dissolved-ion context and can affect the finished batch result.",
     "It can never matter.",
     "It proves concentrate changed.",
-    "It matters only after irrigation."
+    "It matters only after irrigation.",
+    "It changes the starting dissolved-ion context and can affect the finished batch result."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Changed source-water EC changes the baseline contribution to the finished solution.",
   "references": [
     "REF-WATER-ALKALINITY-EXT-001"
