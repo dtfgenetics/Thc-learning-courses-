@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should repeated alarms be reviewed with process state and corroborating measurements?",
   "choices": [
-    "Alarm meaning depends on device, timing, state and whether the measured process changed as expected.",
     "Alarms always identify root cause.",
     "Only alarm count matters.",
+    "Alarm meaning depends on device, timing, state and whether the measured process changed as expected.",
     "Process measurements are unrelated."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Alarm context is needed to distinguish sensor, capacity, sequencing and equipment-response problems.",
   "references": [
     "REF-VPD-002",
