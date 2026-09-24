@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-008-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-008-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What makes a manual fallback defensible after an automation failure?",
+  "choices": [
+    "Defined duration, monitoring, responsible role, stop criteria and documentation.",
+    "Leaving it in place indefinitely.",
+    "No monitoring if the crop looks fine.",
+    "Bypassing safety interlocks."
+  ],
+  "correct": 0,
+  "rationale": "Temporary degraded operation requires explicit boundaries.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
