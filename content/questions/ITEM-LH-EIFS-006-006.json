@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-006-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which sampling plan best supports uniformity analysis?",
+  "choices": [
+    "One convenient emitter.",
+    "Only the closest emitter to the pump.",
+    "Only locations with healthy plants.",
+    "Near, middle, far-end and suspect locations across representative lines."
+  ],
+  "correct": 3,
+  "rationale": "Representative spatial sampling can reveal pressure and clogging patterns.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

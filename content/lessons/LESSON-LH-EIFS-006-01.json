@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-006-01",
+  "title": "Flow, Pressure, Line Loss & Installed Delivery",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-006-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Installed irrigation performance depends on source pressure, regulators, line length, elevation, filters, valves and emitter behavior. A printed emitter rating or controller schedule is a design assumption, not proof of delivered output.",
+    "vocabulary": [
+      {
+        "term": "Flow",
+        "definition": "Volume of water delivered per unit time."
+      },
+      {
+        "term": "Pressure",
+        "definition": "Force per unit area available to move water through the irrigation system."
+      },
+      {
+        "term": "Line loss",
+        "definition": "Pressure/energy loss caused by friction, fittings, elevation and flow through the system."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Nominal output is not installed output",
+        "body": "Emitter ratings assume defined test conditions. Installed delivery can differ because of pressure, clogging, regulator performance, filtration and system configuration.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Pressure evidence adds context to flow",
+        "body": "Low far-end flow with low pressure suggests a different fault class from one isolated low emitter under otherwise stable pressure.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Controller command does not prove water arrived",
+        "body": "Use measured delivery and root-zone response to verify actual irrigation rather than relying on schedules or command logs alone.",
+        "references": [
+          "REF-ASTM-D8403-001",
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A zone command completes normally, but catch volumes are low at the far end. The controller log confirms intent, not delivery."
+    ],
+    "commonMistakes": [
+      "Using emitter labels as current performance data.",
+      "Ignoring pressure context.",
+      "Treating scheduled runtime as delivered volume."
+    ],
+    "practicalApplication": "Map a mock zone using source pressure, midline/far-end pressure and emitter catch volumes, then classify the likely fault domain.",
+    "summary": "Irrigation performance must be measured in the installed system, not inferred from labels or schedules."
+  }
+}

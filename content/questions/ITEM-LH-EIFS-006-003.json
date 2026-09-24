@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-006-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is a printed emitter flow rating insufficient evidence of current installed performance?",
+  "choices": [
+    "Ratings are never measured.",
+    "Pressure has no effect on irrigation.",
+    "Emitter performance cannot change.",
+    "Installed output can differ with pressure, clogging, filtration and system conditions."
+  ],
+  "correct": 3,
+  "rationale": "Installed conditions can shift actual output from nominal ratings.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

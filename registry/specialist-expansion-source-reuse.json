@@ -276,6 +276,26 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-EIFS-005"
+          ],
+          "newModule": "MOD-LH-EIFS-006-IRRIGATION-UNIFORMITY",
+          "remainingDepth": [
+            "photorealistic irrigation hydraulics, catch-test and filtration visual set",
+            "human irrigation/controlled-environment systems review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },

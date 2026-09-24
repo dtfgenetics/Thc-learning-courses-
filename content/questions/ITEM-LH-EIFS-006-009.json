@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-006-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should water chemistry not be blamed for clogging from EC alone?",
+  "choices": [
+    "EC proves all deposits are carbonate.",
+    "EC directly measures emitter blockage.",
+    "Water chemistry never affects irrigation.",
+    "EC does not identify the specific constituents or mechanism causing restriction."
+  ],
+  "correct": 3,
+  "rationale": "EC is bulk conductivity, not a direct clogging diagnosis.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

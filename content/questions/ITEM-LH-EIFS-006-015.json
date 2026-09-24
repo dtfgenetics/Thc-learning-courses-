@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-006-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-006-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What should a specialist avoid when escalating a suspected pressure-system fault?",
+  "choices": [
+    "Prescribing protected repair beyond assigned authority.",
+    "Providing pressure readings.",
+    "Providing emitter output data.",
+    "Providing the affected zone and time."
+  ],
+  "correct": 0,
+  "rationale": "The specialist should hand off evidence without directing unauthorized protected repair.",
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

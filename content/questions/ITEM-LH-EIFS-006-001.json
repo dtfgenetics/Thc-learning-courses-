@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-006-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "An irrigation controller logs a completed event, but far-end catch volumes are low. What does the controller log prove?",
+  "choices": [
+    "That intended irrigation was commanded, not that target delivery occurred.",
+    "That every emitter delivered design flow.",
+    "That pressure was adequate.",
+    "That the root zone is fully wetted."
+  ],
+  "correct": 0,
+  "rationale": "Command records show intent; physical delivery requires measurement.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}
