@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "id": "THC-CERT-OCCUPATIONAL-SOURCE-BASELINE-001",
+  "asOf": "2026-09-24",
+  "status": "supporting-baseline",
+  "purpose": "Public occupational-source baseline used to structure job-task-analysis review for the Technician I and Technician II cannabis cultivation credentials.",
+  "integrityBoundary": "This is not a cannabis-specific job-task analysis and does not validate either credential. O*NET/BLS task families are adjacent national occupational evidence that must be reviewed, adapted, rejected or supplemented by cannabis cultivation SMEs/employers before occupational validation can be approved.",
+  "programs": [
+    {
+      "credentialProgramId": "CREDPROG-CULT-TECH-I-001",
+      "credentialProgramVersion": "1.1.0",
+      "sourceIds": [
+        "REF-ONET-CROP-NURSERY-GREENHOUSE-2026",
+        "REF-BLS-AGRICULTURAL-WORKERS-2026"
+      ],
+      "interpretation": "Technician I is aligned to routine crop/nursery/greenhouse work performed under established procedures, with cannabis-specific safety, traceability, biosecurity and authority boundaries layered on top.",
+      "taskFamilies": [
+        {
+          "id": "TECH1-CROP-OBSERVATION-RECORDS",
+          "label": "Observe crop condition and record crop/work information",
+          "sourceSupport": [
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH1-001",
+            "COURSE-LH-TECH1-002"
+          ],
+          "publicOccupationalBasis": "National crop/nursery/greenhouse occupations include recording crop information and reporting crop progress.",
+          "cannabisAdaptationQuestions": [
+            "What cannabis-specific observations are expected at entry technician level?",
+            "Which records are regulatory/quality-critical versus general production records?",
+            "Which observations require escalation rather than diagnosis?"
+          ]
+        },
+        {
+          "id": "TECH1-PLANT-HANDLING-CROP-CARE",
+          "label": "Perform routine planting, transplanting, pruning and crop-care work",
+          "sourceSupport": [
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026",
+            "REF-BLS-AGRICULTURAL-WORKERS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH1-002",
+            "COURSE-LH-TECH1-005"
+          ],
+          "publicOccupationalBasis": "National crop/nursery/greenhouse work commonly includes planting, transplanting, pruning, weeding and other routine crop-care activities.",
+          "cannabisAdaptationQuestions": [
+            "Which routine cannabis canopy/propagation tasks belong at Technician I?",
+            "Which high-stress, chemical or specialized interventions remain outside scope?",
+            "What plant-identity controls must accompany movement or pruning?"
+          ]
+        },
+        {
+          "id": "TECH1-IRRIGATION-ROOTZONE",
+          "label": "Execute routine irrigation and root-zone measurement work",
+          "sourceSupport": [
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026",
+            "REF-BLS-AGRICULTURAL-WORKERS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH1-003",
+            "COURSE-LH-TECH1-004"
+          ],
+          "publicOccupationalBasis": "Crop/nursery/greenhouse roles include irrigation activities and use of irrigation equipment.",
+          "cannabisAdaptationQuestions": [
+            "Which irrigation checks can an entry technician perform independently?",
+            "Which pH/EC deviations require escalation?",
+            "Which equipment actions are operator-level versus maintenance?"
+          ]
+        },
+        {
+          "id": "TECH1-SCOUTING-PEST-RECOGNITION",
+          "label": "Scout crops and recognize pest/disease or abnormal-condition signals",
+          "sourceSupport": [
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH1-002",
+            "COURSE-LH-TECH1-005"
+          ],
+          "publicOccupationalBasis": "Crop occupations include inspecting plants and identifying pests/weeds as part of crop work.",
+          "cannabisAdaptationQuestions": [
+            "What level of pest/disease recognition is expected without diagnosing beyond evidence?",
+            "Which findings trigger quarantine/hold/escalation?",
+            "How are pesticide selection and application authority explicitly excluded unless separately qualified?"
+          ]
+        },
+        {
+          "id": "TECH1-HARVEST-POSTHARVEST",
+          "label": "Perform harvest, sorting, storage and postharvest handling",
+          "sourceSupport": [
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026",
+            "REF-BLS-AGRICULTURAL-WORKERS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH1-006"
+          ],
+          "publicOccupationalBasis": "National crop occupations include harvesting plus inspection, grading, sorting, storage and postharvest handling.",
+          "cannabisAdaptationQuestions": [
+            "Which cannabis harvest/postharvest handoffs are Technician I responsibilities?",
+            "Which quality/disposition decisions remain outside scope?",
+            "What lot/plant identity and traceability controls are mandatory?"
+          ]
+        },
+        {
+          "id": "TECH1-EQUIPMENT-SAFETY",
+          "label": "Use tools/equipment safely and perform permitted operator-level care",
+          "sourceSupport": [
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026",
+            "REF-BLS-AGRICULTURAL-WORKERS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH1-001",
+            "COURSE-LH-TECH1-003",
+            "COURSE-LH-TECH1-004"
+          ],
+          "publicOccupationalBasis": "Agricultural workers commonly use crop-production equipment and may perform minor equipment work.",
+          "cannabisAdaptationQuestions": [
+            "Which checks are safe operator-level tasks?",
+            "Where must lockout/maintenance authority begin?",
+            "Which alarms or control failures require stop-work?"
+          ]
+        }
+      ]
+    },
+    {
+      "credentialProgramId": "CREDPROG-CULT-TECH-II-001",
+      "credentialProgramVersion": "0.1.0",
+      "sourceIds": [
+        "REF-ONET-AG-SUPERVISORS-2026",
+        "REF-BLS-AGRICULTURAL-MANAGERS-2026",
+        "REF-ONET-CROP-NURSERY-GREENHOUSE-2026"
+      ],
+      "interpretation": "Technician II uses advanced monitoring, verification, troubleshooting, coordination and peer-support task families that overlap some agricultural supervisor work activities, while intentionally stopping short of general management, personnel authority, unrestricted maintenance, pesticide authority or final product disposition.",
+      "taskFamilies": [
+        {
+          "id": "TECH2-MONITOR-ANALYZE-CROP-SYSTEMS",
+          "label": "Monitor crop and production systems and interpret abnormal conditions",
+          "sourceSupport": [
+            "REF-ONET-AG-SUPERVISORS-2026",
+            "REF-ONET-CROP-NURSERY-GREENHOUSE-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH2-001",
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-TECH2-004",
+            "COURSE-LH-TECH2-005",
+            "COURSE-LH-TECH2-006"
+          ],
+          "publicOccupationalBasis": "Agricultural supervisory work includes monitoring processes/materials/surroundings, inspecting crops and evaluating operational conditions.",
+          "cannabisAdaptationQuestions": [
+            "Which deviations can a Technician II troubleshoot within scope?",
+            "What evidence is required before changing a setpoint or work plan?",
+            "Which conditions require specialist, manager, QA or maintenance escalation?"
+          ]
+        },
+        {
+          "id": "TECH2-SAFETY-QUALITY-VERIFICATION",
+          "label": "Verify safety, quality and procedure adherence during operations",
+          "sourceSupport": [
+            "REF-ONET-AG-SUPERVISORS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-006",
+            "COURSE-LH-TECH2-007"
+          ],
+          "publicOccupationalBasis": "First-line agricultural supervisors monitor operational quality/safety and inspect operations/equipment for problems.",
+          "cannabisAdaptationQuestions": [
+            "Which verification activities belong to a senior technician rather than a supervisor or QA authority?",
+            "How are observations documented without granting disciplinary or final-release authority?",
+            "Which safety conditions require immediate escalation?"
+          ]
+        },
+        {
+          "id": "TECH2-EQUIPMENT-VERIFICATION",
+          "label": "Inspect equipment/facilities and coordinate response to operating problems",
+          "sourceSupport": [
+            "REF-ONET-AG-SUPERVISORS-2026",
+            "REF-BLS-AGRICULTURAL-MANAGERS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-003"
+          ],
+          "publicOccupationalBasis": "Agricultural supervisory/management sources include inspecting facilities/equipment and overseeing maintenance needs.",
+          "cannabisAdaptationQuestions": [
+            "Which verification tests can Technician II perform?",
+            "Which repairs require maintenance qualification or lockout?",
+            "How are sensor/equipment findings separated from unsupported root-cause claims?"
+          ]
+        },
+        {
+          "id": "TECH2-COORDINATION-HANDOFF",
+          "label": "Coordinate work, priorities, records and shift handoff",
+          "sourceSupport": [
+            "REF-ONET-AG-SUPERVISORS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH2-007",
+            "COURSE-LH-TECH2-008"
+          ],
+          "publicOccupationalBasis": "Agricultural supervisory work includes coordinating activities, schedules, information and operational decisions.",
+          "cannabisAdaptationQuestions": [
+            "What coordination can a senior technician perform without becoming a personnel supervisor?",
+            "Which decisions require manager approval?",
+            "What handoff evidence is necessary for traceability and unresolved risk?"
+          ]
+        },
+        {
+          "id": "TECH2-PEER-SUPPORT-TRAINING",
+          "label": "Provide bounded peer task support and procedure-based coaching",
+          "sourceSupport": [
+            "REF-ONET-AG-SUPERVISORS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH2-007"
+          ],
+          "publicOccupationalBasis": "Agricultural supervisory roles commonly train workers in crop work, equipment use and safety practices.",
+          "cannabisAdaptationQuestions": [
+            "What peer support is appropriate without granting formal trainer/authorization authority?",
+            "Which competencies require designated qualified trainers or assessors?",
+            "How is coaching separated from changing controlled procedures?"
+          ]
+        },
+        {
+          "id": "TECH2-MANAGER-HANDOFF-DECISION-SUPPORT",
+          "label": "Prepare evidence-based escalation and decision support for managers/QA/specialists",
+          "sourceSupport": [
+            "REF-ONET-AG-SUPERVISORS-2026",
+            "REF-BLS-AGRICULTURAL-MANAGERS-2026"
+          ],
+          "courseMappings": [
+            "COURSE-LH-TECH2-001",
+            "COURSE-LH-TECH2-004",
+            "COURSE-LH-TECH2-006",
+            "COURSE-LH-TECH2-007",
+            "COURSE-LH-TECH2-008"
+          ],
+          "publicOccupationalBasis": "Agricultural supervisory work involves communicating with managers, evaluating conditions and supporting operational decisions.",
+          "cannabisAdaptationQuestions": [
+            "Which evidence should Technician II assemble before escalation?",
+            "Which release/disposition/chemical/policy decisions remain outside the credential?",
+            "How should uncertainty and alternative explanations be communicated?"
+          ]
+        }
+      ]
+    }
+  ]
+}
