@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-008-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which failure-response packet is strongest?",
+  "choices": [
+    "System identity, alarm/command sequence, physical response, measurements, temporary controls, recovery evidence, residual risk and next responsible role.",
+    "Only the final repair note.",
+    "Only screenshots.",
+    "A verbal summary with no timeline."
+  ],
+  "correct": 0,
+  "rationale": "A reconstructable packet preserves the whole evidence chain.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
