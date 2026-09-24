@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-004-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-004-04",
+  "bloomLevel": "apply",
+  "difficulty": "medium",
+  "type": "scenario",
+  "stem": "A newly received cutting lot has unresolved pathogen status. What is the best biosecurity action?",
+  "choices": [
+    "Mix it with established clean stock to compare vigor.",
+    "Maintain identity and controlled separation while the approved acceptance/testing criteria are resolved.",
+    "Remove labels so staff are not biased.",
+    "Release it if no symptoms appear after one day."
+  ],
+  "correct": 1,
+  "rationale": "Incoming material with unresolved status should retain identity and separation until defined acceptance/release criteria are met.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}
