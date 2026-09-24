@@ -1,0 +1,62 @@
+{
+  "id": "COURSE-LH-EIFS-008",
+  "title": "Automation, Commissioning, Reliability & Failure Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "EIFS specialist learners",
+    "Cultivation personnel responsible for commissioning checks, controller/alarm verification, system reliability evidence and safe failure-response handoff"
+  ],
+  "prerequisites": [
+    "Completion of EIFS Courses 1-7 or equivalent advanced environmental/irrigation systems preparation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course reuses governed sensor/data-quality, environmental, irrigation, safety and data-integrity evidence. Commissioning and reliability claims are framed as verification workflows; exact controller logic, electrical design, network/security configuration and protected service procedures remain facility/vendor/qualified-role specific.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize control-program changes, electrical work, alarm/interlock bypass, compressed-gas service or protected equipment repair.",
+  "description": "Develops specialist verification of automated cultivation systems from commissioning through normal operation, degraded modes, alarm/interlock response, failure classification, recovery verification and qualified handoff.",
+  "modules": [
+    "MOD-LH-EIFS-008-AUTOMATION-RELIABILITY"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-008-FINAL",
+  "learningOutcomes": [
+    "Build a commissioning verification plan that checks sensor identity, controller inputs/outputs, alarm/interlock behavior, command-versus-response and representative crop-zone outcomes before operational acceptance.",
+    "Differentiate normal control variation, sensor/data-quality faults, communication failures, equipment non-response and capacity/sequence limitations using converging evidence rather than controller status alone.",
+    "Evaluate fail-safe, degraded-mode and fallback responses for environmental and irrigation failures while preserving life-safety, crop-protection and role-authority boundaries.",
+    "Verify restoration after corrective action using comparable pre/post measurements, alarm history, command-response evidence and defined acceptance criteria rather than assuming repair completion equals recovery.",
+    "Produce a commissioning or failure-response packet that another qualified responder can reconstruct, including system identity, baseline, fault evidence, safe-state actions, unresolved risk and next authorized role."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-EIFS-004",
+      "COURSE-LH-EIFS-006",
+      "COURSE-LH-EIFS-007"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "practicalCaseRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-008-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

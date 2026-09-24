@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-008-02",
+  "title": "Failure Classes, Data Paths & Command-Response Diagnosis",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-008-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Automated-system faults can arise from sensor quality, communications, configuration, controller logic, equipment non-response, distribution or insufficient capacity. Specialists classify the failure domain from evidence before naming an internal root cause.",
+    "vocabulary": [
+      {
+        "term": "Data-path fault",
+        "definition": "Failure in sensing, communication, logging or display that prevents trustworthy process information."
+      },
+      {
+        "term": "Equipment non-response",
+        "definition": "A commanded output that does not produce the expected physical equipment state or process change."
+      },
+      {
+        "term": "Capacity limitation",
+        "definition": "A condition where functioning equipment cannot keep up with the actual process load."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Separate sensor, control and equipment layers",
+        "body": "A bad sensor can trigger the wrong command, a correct command can fail to reach equipment, and running equipment can still fail to achieve the crop-zone condition. Test each layer.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Use independent corroboration",
+        "body": "Compare controller logs with equipment state, neighboring/verified sensors and crop-zone outcome before deciding which layer failed.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Preserve contradictions",
+        "body": "Conflicting data are diagnostic evidence. Do not delete one source simply because another source is more convenient.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A controller shows cooling ON, the unit is physically running, but canopy temperature continues rising; the evidence points away from a pure command failure and toward distribution/capacity or measurement issues."
+    ],
+    "commonMistakes": [
+      "Calling every fault a controller problem.",
+      "Trusting display status without physical verification.",
+      "Changing several configuration values before classifying the fault."
+    ],
+    "practicalApplication": "Classify six mock failures into sensor/data path, command/configuration, equipment response, distribution, capacity or unresolved.",
+    "summary": "Reliability diagnosis works by separating failure layers and testing them independently."
+  }
+}

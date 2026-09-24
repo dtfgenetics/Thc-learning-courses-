@@ -1,0 +1,111 @@
+{
+  "id": "LABPLAN-EIFS-008-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "courseId": "COURSE-LH-EIFS-008",
+  "credentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+  "purpose": "Development blueprint for the EIFS automation/commissioning practical. This does not authorize live credential issuance, protected controls programming, electrical work, alarm/interlock bypass, compressed-gas service or protected equipment repair.",
+  "practical": {
+    "id": "PRACTICAL-EIFS-008-COMMISSIONING-FAILURE-RESPONSE",
+    "title": "EIFS Commissioning & Failure-Response Practical",
+    "document": "docs/academy-v2/practicals/PRACTICAL-EIFS-008-COMMISSIONING-FAILURE-RESPONSE.md",
+    "totalPoints": 100,
+    "developmentTargetPassPoints": 80,
+    "noCriticalErrors": true,
+    "status": "development",
+    "evidenceOutputs": [
+      "Commissioning test matrix",
+      "Sensor/input-output verification record",
+      "Alarm/interlock/fail-safe check",
+      "Failure-classification timeline",
+      "Temporary degraded-mode plan",
+      "Recovery/regression verification",
+      "Qualified handoff packet"
+    ],
+    "scoreDomains": [
+      {
+        "id": "domain-01",
+        "title": "Commissioning plan and acceptance criteria",
+        "points": 15
+      },
+      {
+        "id": "domain-02",
+        "title": "Command-response and data-path verification",
+        "points": 20
+      },
+      {
+        "id": "domain-03",
+        "title": "Alarm/interlock/fail-safe reasoning",
+        "points": 15
+      },
+      {
+        "id": "domain-04",
+        "title": "Failure classification and temporary controls",
+        "points": 15
+      },
+      {
+        "id": "domain-05",
+        "title": "Recovery/regression verification",
+        "points": 15
+      },
+      {
+        "id": "domain-06",
+        "title": "Evidence integrity and uncertainty",
+        "points": 10
+      },
+      {
+        "id": "domain-07",
+        "title": "Qualified handoff",
+        "points": 10
+      }
+    ]
+  },
+  "criticalFailureRules": [
+    {
+      "id": "CF-EIFS-008-SAFETY-001",
+      "rule": "Bypasses or directs bypass of a life-safety alarm, interlock or protected safeguard.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-EIFS-008-AUTHORITY-001",
+      "rule": "Performs or directs unauthorized electrical, controls, compressed-gas, pressure-system or protected equipment servicing.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-EIFS-008-INTEGRITY-001",
+      "rule": "Fabricates, deletes or knowingly misrepresents commissioning, alarm, sensor or recovery evidence.",
+      "blocksCredentialEvidence": true
+    },
+    {
+      "id": "CF-EIFS-008-RECOVERY-001",
+      "rule": "Declares restored operation without the required recovery verification after a material fault.",
+      "blocksCredentialEvidence": true
+    }
+  ],
+  "evaluatorControls": {
+    "rubricTrainingRequired": true,
+    "evidenceBasedScoringRequired": true,
+    "pilotDoubleScoringRequired": true,
+    "interRaterAgreementTarget": "to-be-set-from-pilot-evidence",
+    "conflictResolutionProcessRequired": true,
+    "criticalErrorEvidenceRequired": true,
+    "evaluatorIdentityAndTimestampRequired": true
+  },
+  "accessibilityControls": {
+    "humanAccessibilityReviewRequired": true,
+    "allowExtendedTimeWhenSpeedIsNotTheConstruct": true,
+    "allowAlternativeAccessiblePresentation": true,
+    "accommodationMustBeDocumented": true,
+    "accommodationMayNotLowerRequiredEvidenceStandard": true,
+    "accommodationMayNotRemoveCriticalFailureRules": true
+  },
+  "completionLogic": {
+    "status": "development",
+    "practicalRequired": true,
+    "minimumPercent": 80,
+    "noCriticalErrors": true,
+    "compensatoryAveragingAllowed": false,
+    "evaluatorEvidenceRequired": true,
+    "courseCompletionDoesNotAuthorizeCredentialIssuance": true
+  }
+}

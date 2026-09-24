@@ -1,0 +1,34 @@
+{
+  "id": "MOD-LH-EIFS-008-AUTOMATION-RELIABILITY",
+  "title": "Automation, Commissioning, Reliability & Failure Response",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-008-01",
+    "LESSON-LH-EIFS-008-02",
+    "LESSON-LH-EIFS-008-03",
+    "LESSON-LH-EIFS-008-04",
+    "LESSON-LH-EIFS-008-05"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering commissioning, command-response verification, failure classes, safe fallback states, recovery testing and reliability handoff.",
+  "estimatedMinutes": 335,
+  "learningOutcomes": [
+    "Build a commissioning verification plan that checks sensor identity, controller inputs/outputs, alarm/interlock behavior, command-versus-response and representative crop-zone outcomes before operational acceptance.",
+    "Differentiate normal control variation, sensor/data-quality faults, communication failures, equipment non-response and capacity/sequence limitations using converging evidence rather than controller status alone.",
+    "Evaluate fail-safe, degraded-mode and fallback responses for environmental and irrigation failures while preserving life-safety, crop-protection and role-authority boundaries.",
+    "Verify restoration after corrective action using comparable pre/post measurements, alarm history, command-response evidence and defined acceptance criteria rather than assuming repair completion equals recovery.",
+    "Produce a commissioning or failure-response packet that another qualified responder can reconstruct, including system identity, baseline, fault evidence, safe-state actions, unresolved risk and next authorized role."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "practicalCaseRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

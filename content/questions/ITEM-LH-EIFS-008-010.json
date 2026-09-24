@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-008-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A failed irrigation valve is replaced. What best verifies recovery?",
+  "choices": [
+    "Repeat the relevant delivery test and confirm related zone/alarm behavior under comparable conditions.",
+    "Close the event when the new valve is installed.",
+    "Check only the controller screen.",
+    "Assume replacement parts work."
+  ],
+  "correct": 0,
+  "rationale": "Repair completion must be followed by process-level verification.",
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}

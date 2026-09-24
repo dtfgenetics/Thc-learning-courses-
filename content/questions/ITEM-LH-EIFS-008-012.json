@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-008-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A fault recurs after the event was closed. What should happen?",
+  "choices": [
+    "Treat it as unrelated automatically.",
+    "Delete the prior record.",
+    "Repeat the same repair without review.",
+    "Reopen the investigation and reassess cause/effectiveness evidence."
+  ],
+  "correct": 3,
+  "rationale": "Recurrence is evidence that the earlier model or effectiveness check may have been incomplete.",
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
