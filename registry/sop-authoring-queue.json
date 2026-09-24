@@ -15,7 +15,8 @@
     "priority1": 11,
     "priority2": 6,
     "existingModuleReuseMapped": 17,
-    "newDiseaseSpecificDepthTarget": "GROW-100"
+    "newDiseaseSpecificDepthTarget": "GROW-100",
+    "evidencePlansSeeded": 1
   },
   "targets": [
     {
@@ -330,7 +331,14 @@
         "clean stock"
       ],
       "sequence": 11,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-100.json",
+      "newControlledReferences": [
+        "REF-CANNABIS-PATHOGENS-2019-001",
+        "REF-CANNABIS-DIAGNOSTICS-2024-001",
+        "REF-HLVD-REVIEW-2023-001",
+        "REF-HLVD-SPREAD-2025-001"
+      ]
     },
     {
       "id": "GROW-110",
