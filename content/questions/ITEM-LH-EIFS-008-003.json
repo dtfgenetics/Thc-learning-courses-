@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why is a dashboard status indicator insufficient commissioning evidence?",
   "choices": [
-    "It does not prove the physical equipment and managed process responded as intended.",
     "Status indicators are never useful.",
     "Only crop symptoms matter.",
-    "Commissioning does not require measurements."
+    "Commissioning does not require measurements.",
+    "It does not prove the physical equipment and managed process responded as intended."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Software state should be verified against equipment and process response.",
   "references": [
     "REF-ENV-TEMP-2025-001",
