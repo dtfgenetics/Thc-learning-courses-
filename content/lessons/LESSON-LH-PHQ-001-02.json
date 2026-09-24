@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-001-02",
+  "title": "Sanitary Harvest Handling & Contamination Prevention",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-001-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest handling should minimize contamination while protecting worker safety and material identity. Sanitation, cleanable tools/surfaces, controlled movement and defined clean/dirty transitions matter from cutting through staging.",
+    "vocabulary": [
+      {
+        "term": "Sanitary handling",
+        "definition": "Controlled handling intended to reduce introduction or spread of contamination during harvest and transfer."
+      },
+      {
+        "term": "Clean-to-dirty workflow",
+        "definition": "Movement sequence designed to reduce transfer from higher-risk material or surfaces back into cleaner operations."
+      },
+      {
+        "term": "Contact surface",
+        "definition": "Tool, table, container or equipment surface that can contact harvested material."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Tools and contact surfaces are part of product control",
+        "body": "Harvest tools, totes, tables and carts should follow the approved cleaning/sanitation process and remain traceable to the work area or lot where required.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Movement can spread contamination",
+        "body": "People, tools and containers moving between suspect and unaffected material can transfer biological or physical contamination. Use defined workflow and separation.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Safety still controls",
+        "body": "Cutting tools, lifting, powered equipment and chemical sanitation remain subject to PPE, ergonomics and task-authority requirements.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A tool used on suspect mold-affected material should not immediately return to unaffected harvest material without the controlled sanitation/segregation process."
+    ],
+    "commonMistakes": [
+      "Treating harvest as lower-risk because cultivation is finished.",
+      "Mixing clean and suspect totes.",
+      "Improvising sanitizer chemistry."
+    ],
+    "practicalApplication": "Map a harvest workflow from plant to drying intake and identify contamination-control points, sanitation records and stop/escalation boundaries.",
+    "summary": "Sanitary harvest handling protects product and traceability from the first cut onward."
+  }
+}
