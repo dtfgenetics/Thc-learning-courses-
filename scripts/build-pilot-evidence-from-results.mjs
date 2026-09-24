@@ -28,6 +28,17 @@ if (typeof payload.cohortId !== 'string' || payload.cohortId.length < 3) throw n
 if (typeof payload.analystId !== 'string' || payload.analystId.length < 3) throw new Error('analystId is required');
 if (!Array.isArray(payload.responses) || payload.responses.length === 0) throw new Error('responses must be a non-empty array');
 
+const manifestPath = path.join(root, 'registry/certification-pilot-intake-manifest.json');
+if (payload.courseId !== undefined || payload.courseVersion !== undefined) {
+  if (typeof payload.courseId !== 'string' || !payload.courseId) throw new Error('courseId is required when courseVersion is supplied');
+  if (payload.courseVersion === undefined || payload.courseVersion === null || String(payload.courseVersion).length === 0) throw new Error('courseVersion is required when courseId is supplied');
+  if (!fs.existsSync(manifestPath)) throw new Error('certification pilot intake manifest is missing');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  const course = (manifest.courses ?? []).find((row) => row.courseId === payload.courseId);
+  if (!course) throw new Error('Pilot results reference unknown certification course '+payload.courseId);
+  if (String(course.courseVersion) !== String(payload.courseVersion)) throw new Error('Pilot results courseVersion '+payload.courseVersion+' does not match current '+course.courseVersion+' for '+payload.courseId);
+}
+
 const questionDir = path.join(root, 'content/questions');
 const questionMap = new Map(
   fs.readdirSync(questionDir)
@@ -115,7 +126,7 @@ for (const [key, rows] of [...grouped.entries()].sort(([a], [b]) => a.localeComp
     challengeHistory: [],
     analystId: payload.analystId,
     completedAt: complete ? (payload.completedAt ?? new Date().toISOString()) : null,
-    notes: `Aggregated from pseudonymous pilot cohort ${payload.cohortId}. Participant-level responses are not stored in the repository. Discrimination uses item-rest score when restScore is supplied for every response to the item; otherwise it uses the supplied totalScore.`
+    notes: `Aggregated from pseudonymous pilot cohort ${payload.cohortId}${payload.courseId ? ' for '+payload.courseId+'@'+payload.courseVersion : ''}. Participant-level responses are not stored in the repository. Discrimination uses item-rest score when restScore is supplied for every response to the item; otherwise it uses the supplied totalScore.`
   };
   output.push(evidence);
 }
