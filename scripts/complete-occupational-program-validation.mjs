@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const root=process.cwd(),args=process.argv.slice(2);
 const get=n=>{const i=args.indexOf(n);return i>=0?args[i+1]:null;},has=x=>args.includes(x),write=has('--write');
-const sourceId=get('--source'),sourceFile=get('--source-file'),authority=get('--authority');
+const sourceId=get('--source'),sourceFile=get('--source-file'),authority=get('--authority'),jtaSourceFile=get('--jta-source-file');
 const reviewerCount=Number(get('--reviewer-count')),panelistCount=Number(get('--panelist-count')),blueprintVersion=get('--blueprint-version');
 if((!sourceId&&!sourceFile)||!authority||!Number.isInteger(reviewerCount)||reviewerCount<1||!Number.isInteger(panelistCount)||panelistCount<1||!blueprintVersion) throw new Error('Usage requires source, authority, reviewer-count>=1, panelist-count>=1, blueprint-version and all completion confirmations');
 const flags=['--confirm-current-courses','--confirm-source-review','--confirm-public-occupational-baseline','--confirm-role-boundaries','--confirm-technical-disposition','--confirm-jta','--confirm-population','--confirm-task-coverage','--confirm-currency','--confirm-sme','--confirm-role-representativeness','--confirm-critical-tasks','--confirm-scope','--confirm-blueprint-weights','--confirm-competency-coverage','--confirm-critical-content','--confirm-cognitive-demand','--confirm-performance-validation','--confirm-critical-decision-coverage'];
@@ -15,10 +15,12 @@ const programs=new Map(readDir('content/credential-programs').filter(x=>x.id).ma
 const sourceRegistry=JSON.parse(fs.readFileSync(path.join(root,'registry/public-authoritative-source-supplements.json'),'utf8'));
 const occupationalBaseline=JSON.parse(fs.readFileSync(path.join(root,'registry/public-occupational-source-baseline.json'),'utf8'));
 const program=programs.get(source.credentialProgramId);if(!program||String(program.version)!==String(source.credentialProgramVersion))throw new Error('Stale credential program version');
-const jtaRows=readDir('content/job-task-analysis-evidence')
+const jtaRows=jtaSourceFile
+  ? [JSON.parse(fs.readFileSync(path.resolve(root,jtaSourceFile),'utf8'))]
+  : readDir('content/job-task-analysis-evidence');
+const currentJta=jtaRows
   .filter(x=>x.credentialProgramId===program.id&&String(x.credentialProgramVersion)===String(program.version)&&x.status==='complete'&&x.baselineId===occupationalBaseline.id&&String(x.baselineAsOf)===String(occupationalBaseline.asOf))
-  .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt));
-const currentJta=jtaRows[0]??null;
+  .sort((a,b)=>Date.parse(b.recordedAt)-Date.parse(a.recordedAt))[0]??null;
 if(!currentJta) throw new Error('No complete current job-task-analysis evidence exists for '+program.id+'@'+program.version+' and '+occupationalBaseline.id);
 for(const lock of source.authorizedCourses??[]){const c=courses.get(lock.courseId);if(!c||String(c.version)!==String(lock.courseVersion))throw new Error('Stale course lock '+lock.courseId);}
 const expected=source.performanceValidation?.practicalsExpected??0;
