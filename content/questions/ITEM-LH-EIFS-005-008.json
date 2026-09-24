@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Two recently calibrated meters disagree on the same sample. What should be checked next?",
   "choices": [
-    "Standards, probe condition, sample identity and temperature/sample handling.",
     "Trust the more expensive meter.",
     "Average automatically.",
+    "Standards, probe condition, sample identity and temperature/sample handling.",
     "Change nutrient concentration."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Measurement-system disagreement requires verification before chemistry changes.",
   "references": [
     "REF-WATER-ALKALINITY-EXT-001"
