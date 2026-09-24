@@ -13,6 +13,12 @@ if(out.counts['candidate-governance']!==1) throw new Error('expected one candida
 for(const p of out.packets){
   if(!fs.existsSync(path.join(dir,p.id+'.md'))||!fs.existsSync(path.join(dir,p.id+'.json'))) throw new Error(p.id+': missing generated packet');
 }
+for(const id of ['PROGRAMVAL-CULT-TECH-I-001','PROGRAMVAL-CULT-TECH-II-001']){
+  const packet=JSON.parse(fs.readFileSync(path.join(dir,id+'.json'),'utf8'));
+  if(packet.sourceReviewCommand!=='npm run certification:sources:review:write') throw new Error(id+': source review command missing');
+  if(packet.sourceReviewPackets.length!==packet.courseLocks.length) throw new Error(id+': source review packet count must match course locks');
+  if(!packet.sections.technicalCurriculumReview.some(x=>/source-review packet/i.test(x))) throw new Error(id+': technical review source packet requirement missing');
+}
 const gov=JSON.parse(fs.readFileSync(path.join(dir,'CANDIDATEGOV-001.json'),'utf8'));
 if(gov.unresolvedDecisions.finalAttemptLimit!==null||gov.unresolvedDecisions.waitingPeriodHours!==null||gov.unresolvedDecisions.feePolicy!==null) throw new Error('candidate governance packet fabricated unresolved policy values');
 console.log('Program validation packet generation: PASS (2 occupational + 1 candidate governance).');
