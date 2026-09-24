@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-007-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What makes a steering strategy defensible?",
+  "choices": [
+    "Popularity on social media.",
+    "One vendor chart.",
+    "A universal dryback number.",
+    "Measured response under the facility's media, cultivar, environment and hardware, with predefined stop/acceptance criteria."
+  ],
+  "correct": 3,
+  "rationale": "Steering should be validated in the actual production system.",
+  "references": [
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-007-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-EIFS-007-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Runoff begins quickly while part of the root zone remains dry. What does this suggest?",
+  "choices": [
+    "Preferential flow or uneven distribution may be bypassing part of the root zone.",
+    "The whole root zone is uniformly saturated.",
+    "Runoff proves ideal irrigation.",
+    "Only fertilizer strength matters."
+  ],
+  "correct": 0,
+  "rationale": "Drainage can occur before uniform wetting is achieved.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}

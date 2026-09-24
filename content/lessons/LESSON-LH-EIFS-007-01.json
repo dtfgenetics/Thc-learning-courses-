@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-007-01",
+  "title": "Root-Zone Water Content as a Spatial and Temporal State",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-007-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Root-zone water content is not one uniform number. It varies with media physical properties, container geometry, root distribution, irrigation pattern, evaporation and transpiration, so representative placement and repeated measurement matter.",
+    "vocabulary": [
+      {
+        "term": "Volumetric water content",
+        "definition": "Water volume expressed relative to the volume of the measured root-zone material."
+      },
+      {
+        "term": "Water-holding behavior",
+        "definition": "How a substrate stores and releases water under the specific container, compaction and root conditions."
+      },
+      {
+        "term": "Spatial heterogeneity",
+        "definition": "Meaningful difference in moisture or chemistry across positions within one container, slab or zone."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Media and geometry shape the measurement",
+        "body": "Soilless media differ in porosity, water retention and aeration, and those properties can shift with particle size, compaction and container geometry. Report the system context with water-content data.",
+        "references": [
+          "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+        ]
+      },
+      {
+        "title": "Sensor placement defines the question",
+        "body": "A single probe can miss dry or wet regions elsewhere in the root zone. Verify placement and compare representative positions when spatial disagreement is plausible.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Crop demand changes the trajectory",
+        "body": "Plant size, root establishment, light, VPD and irrigation distribution influence how quickly water content changes between events.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two containers receive the same volume but show different water-content profiles because one has a different substrate packing and root distribution."
+    ],
+    "commonMistakes": [
+      "Treating one sensor as the whole root zone.",
+      "Comparing values across different media without context.",
+      "Assuming equal applied volume creates equal stored water."
+    ],
+    "practicalApplication": "Map three root-zone positions before and after irrigation and describe where the measurements agree, disagree and what that means for representativeness.",
+    "summary": "Root-zone water content is a measured distribution and trajectory, not a universal single target."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-007-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should the same measurement method and representative positions be used before and after a steering change?",
+  "choices": [
+    "Changing method or placement can make the apparent response non-comparable.",
+    "It is required only for aesthetics.",
+    "Different methods always improve accuracy.",
+    "Placement does not affect root-zone measurement."
+  ],
+  "correct": 0,
+  "rationale": "Comparable methods are needed to attribute observed changes to the intervention.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}

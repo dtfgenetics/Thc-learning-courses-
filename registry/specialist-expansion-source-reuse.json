@@ -296,6 +296,26 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-007",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-EIFS-005",
+            "COURSE-LH-EIFS-006"
+          ],
+          "newModule": "MOD-LH-EIFS-007-ROOTZONE-DRYBACK",
+          "remainingDepth": [
+            "photorealistic root-zone sensor, dryback-curve and runoff/return visual set",
+            "human irrigation/root-zone and crop-steering review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
