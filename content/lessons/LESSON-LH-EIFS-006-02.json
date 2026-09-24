@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-006-02",
+  "title": "Emitter Output Testing & Distribution Uniformity",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-006-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Uniformity testing uses representative output samples collected under comparable conditions. The goal is to identify whether delivery is consistent enough for the intended crop and to locate spatial patterns that require maintenance or design review.",
+    "vocabulary": [
+      {
+        "term": "Catch test",
+        "definition": "A controlled collection of emitter output over a known time to estimate delivered volume or flow."
+      },
+      {
+        "term": "Distribution uniformity",
+        "definition": "A measure or structured comparison of how evenly irrigation is delivered across sampled locations."
+      },
+      {
+        "term": "Representative sampling",
+        "definition": "Selection of test points intended to reflect different positions, lines or pressure conditions in the managed zone."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use a repeatable test method",
+        "body": "Keep collection time, containers, zone operating state and sampling locations controlled so before/after comparisons remain meaningful.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Sample the system, not just convenient emitters",
+        "body": "Include near, middle, far-end and suspect locations so the test can reveal spatial pressure or clogging patterns.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Interpret pattern as well as average",
+        "body": "A reasonable average can hide severely underperforming emitters. Review distribution, minimums and spatial location in addition to the mean.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A zone average looks acceptable, but several far-end emitters deliver half the volume of near-source emitters; the spatial pattern is operationally important."
+    ],
+    "commonMistakes": [
+      "Testing only one emitter.",
+      "Changing collection time between samples.",
+      "Reporting only the average and hiding low performers."
+    ],
+    "practicalApplication": "Run a mock 12-emitter catch test and calculate output variation while marking each location on the zone map.",
+    "summary": "Uniformity is a spatial delivery property that must be tested with a controlled sampling plan."
+  }
+}
