@@ -23,6 +23,7 @@ const owners={
   'backup-restore':'database/platform owner',
   'monitoring-alerting':'operations/on-call owner',
   'issuer-identity':'credential governance authority',
+  'secure-assessment-store':'assessment security/platform owner',
   'credential-signing':'credential security/key-custody authority',
   'revocation-persistence':'credential platform owner'
 };
@@ -83,6 +84,14 @@ const liveChecks={
     'Record the production issuer identifier and ownership/control evidence.',
     'Verify the public representation used by credential verification.',
     'Record governance approval.'
+  ],
+  'secure-assessment-store':[
+    'Record the deployed private secure assessment store/provider identity.',
+    'Verify store ping and exact bank version from the deployed runtime.',
+    'Select approved-operational private items and verify public/development item IDs are excluded.',
+    'Record a secure form and verify exposure tracking is written.',
+    'Exercise quarantine workflow and verify quarantined items are not selectable.',
+    'Verify delivery projection excludes scoring keys, rationales and answer material.'
   ],
   'credential-signing':[
     'Record the managed signing provider/key identifier without secret key material.',
@@ -149,7 +158,7 @@ function md(p){
 }
 
 const packets=(contract.controls??[]).map(packet);
-if(packets.length!==12) throw new Error(`Expected 12 production controls, found ${packets.length}`);
+if(packets.length!==13) throw new Error(`Expected 13 production controls, found ${packets.length}`);
 const ids=packets.map(p=>p.controlId);
 if(new Set(ids).size!==ids.length) throw new Error('Duplicate production control IDs');
 
