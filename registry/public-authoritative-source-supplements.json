@@ -199,6 +199,45 @@
         "Cross-check storage discussion for moisture/heat/spoilage awareness while preserving product-specific QA requirements.",
         "Treat facility specifications, validated packaging controls and jurisdictional requirements as controlling."
       ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "lessonId": "LESSON-ENV-SENSORS-002",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT",
+        "REF-PURDUE-DLI-GREENHOUSE"
+      ],
+      "reviewUse": [
+        "Cross-check that sensor placement is tied to the environment actually experienced by the crop and that atypical shade/location bias is considered.",
+        "Verify sensor maintenance, leveling/cleanliness and recalibration are treated as data-quality controls rather than assuming every reading is valid."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "lessonId": "LESSON-LIGHT-PPFD-002",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-UMN-INDOOR-PLANT-LIGHTING-2026",
+        "REF-PURDUE-DLI-GREENHOUSE"
+      ],
+      "reviewUse": [
+        "Verify PPFD is presented as photon flux density reaching a surface/canopy rather than watts or human-perceived brightness.",
+        "Cross-check measurement geometry, sensor placement and distance/context without copying non-cannabis crop intensity targets."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "lessonId": "LESSON-LIGHT-DLI-003",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PURDUE-DLI-GREENHOUSE",
+        "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+      ],
+      "reviewUse": [
+        "Verify DLI is presented as accumulated photosynthetic light over the day and distinguished from a single instantaneous PPFD reading.",
+        "Use extension material for measurement concepts only; cannabis-specific DLI targets require cannabis-specific evidence and facility validation."
+      ]
     }
   ]
 }
