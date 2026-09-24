@@ -11,11 +11,11 @@
   "stem": "One controller sensor disagrees with several verified crop-zone measurements. What is the strongest interpretation?",
   "choices": [
     "Controller status automatically makes its reading correct.",
-    "Representativeness and device quality should be checked before the controller reading drives a major change.",
     "The crop-zone sensors should be deleted.",
-    "All readings should be averaged."
+    "All readings should be averaged.",
+    "Representativeness and device quality should be checked before the controller reading drives a major change."
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "Installed authority does not replace measurement verification.",
   "references": [
     "REF-VPD-002",
