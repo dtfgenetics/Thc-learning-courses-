@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why can a daily temperature average hide an important control problem?",
   "choices": [
-    "Averages can hide repeated short-duration excursions or transition failures.",
     "Averages are always wrong.",
     "Only maximum temperature matters.",
-    "Daily data should never be used."
+    "Daily data should never be used.",
+    "Averages can hide repeated short-duration excursions or transition failures."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Time-series review can reveal recurring excursions that disappear inside a daily mean.",
   "references": [
     "REF-VPD-002"
