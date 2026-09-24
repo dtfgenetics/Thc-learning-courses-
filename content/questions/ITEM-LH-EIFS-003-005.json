@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why can lights-off increase condensation risk?",
   "choices": [
-    "Air and surfaces can cool while crop moisture remains high, shrinking the dew-point margin.",
     "Darkness eliminates water vapor.",
     "RH is fixed at lights-off.",
+    "Air and surfaces can cool while crop moisture remains high, shrinking the dew-point margin.",
     "Dew point no longer applies."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Cooling with persistent moisture can quickly move conditions toward saturation.",
   "references": [
     "REF-VPD-002"
