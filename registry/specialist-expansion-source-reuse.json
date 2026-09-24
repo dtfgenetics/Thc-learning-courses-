@@ -257,6 +257,25 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-EIFS-004"
+          ],
+          "newModule": "MOD-LH-EIFS-005-WATER-QUALITY",
+          "remainingDepth": [
+            "photorealistic water-sampling, meter-calibration and batch-preparation visual set",
+            "human water-quality/fertigation and chemical-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
