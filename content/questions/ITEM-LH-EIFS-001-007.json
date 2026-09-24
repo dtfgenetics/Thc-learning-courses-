@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-001-03",
+  "bloomLevel": "understand",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What does DLI represent?",
+  "choices": [
+    "Instantaneous photon flux only.",
+    "Accumulated photosynthetically active photons received per unit area over a day.",
+    "The number of light fixtures.",
+    "Leaf temperature."
+  ],
+  "correct": 1,
+  "rationale": "DLI integrates light over time rather than describing one instantaneous intensity.",
+  "references": [
+    "REF-PURDUE-DLI-GREENHOUSE"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}
