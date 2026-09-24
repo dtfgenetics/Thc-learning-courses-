@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-007-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "The decision question is whether one donor group can be released. Which sample is most relevant?",
+  "choices": [
+    "A sample from an unrelated production room.",
+    "A properly identified sample set representing the donor group under the approved method and decision rule.",
+    "Any positive sample from the previous year.",
+    "A photo of the donor room."
+  ],
+  "correct": 1,
+  "rationale": "Sampling should represent the population and decision being made.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}
