@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-007-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-007-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is the safest use of a published dryback percentage from another facility?",
+  "choices": [
+    "Treat it as contextual evidence or a hypothesis to validate, not a universal cannabis target.",
+    "Apply it to every cultivar and media.",
+    "Ignore all local measurements.",
+    "Use it regardless of sensor method."
+  ],
+  "correct": 0,
+  "rationale": "Dryback response depends on media, container, cultivar, environment and measurement method.",
+  "references": [
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
