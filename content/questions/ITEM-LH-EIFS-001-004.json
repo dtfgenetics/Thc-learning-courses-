@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-EIFS-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two rooms are both at 60% RH, but one is warmer. Which statement is most defensible?",
+  "choices": [
+    "Their VPD must be identical.",
+    "The warmer room generally has a different vapor-pressure deficit because saturation vapor pressure changes with temperature.",
+    "RH alone proves equal drying demand.",
+    "Temperature matters only for lighting."
+  ],
+  "correct": 1,
+  "rationale": "VPD depends on temperature and humidity together.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}
