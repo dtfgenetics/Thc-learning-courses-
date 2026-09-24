@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-PHIB-006-05",
+  "title": "Outbreak Closure, Recurrence & Evidence-Based Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-006-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Outbreak closure should show that affected scope was addressed, controls were implemented, recovery/effectiveness evidence is adequate, unresolved risks are explicit and the authorized role approved the next state. Recurrence is evidence that earlier assumptions or controls may need reassessment.",
+    "vocabulary": [
+      {
+        "term": "Closure criteria",
+        "definition": "Predefined evidence and authorization required before an outbreak or CAPA record can be closed."
+      },
+      {
+        "term": "Reopen trigger",
+        "definition": "A new finding or recurrence condition that requires the investigation or CAPA to be reassessed."
+      },
+      {
+        "term": "Management handoff",
+        "definition": "A structured transfer of current status, evidence, unresolved risk, controls and next actions to the responsible incoming role."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Close with evidence, not elapsed time",
+        "body": "Time since the last finding is useful only when the monitoring method, biological risk window and sampling coverage make it meaningful. Define closure around evidence and authority, not calendar passage alone.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-ASTM-D8403-001"
+        ]
+      },
+      {
+        "title": "Recurrence tests the investigation",
+        "body": "If the same problem returns, reassess root-cause assumptions, control compatibility, monitoring sensitivity and whether the effectiveness check actually represented the failure mode.",
+        "references": [
+          "REF-ASTM-D8403-001"
+        ]
+      },
+      {
+        "title": "Handoff must preserve unresolved risk",
+        "body": "Incoming staff or management should receive current status, evidence, holds/controls, open tests, deadlines and uncertainty. Written plus verbal transfer with cross-checking reduces information loss.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A room can move from outbreak status to controlled monitoring while one root-cause hypothesis remains unresolved, provided the record makes that residual uncertainty and required follow-up explicit."
+    ],
+    "commonMistakes": [
+      "Closing because no one reported a new issue for a few days.",
+      "Treating recurrence as a completely unrelated event without comparison.",
+      "Handing off only the final diagnosis and omitting open holds or pending tests."
+    ],
+    "practicalApplication": "Draft a closure and handoff packet with affected scope, final evidence, CAPA status, recovery metrics, residual risk, reopen triggers and the next responsible role.",
+    "summary": "Outbreak closure is a controlled evidence decision. Recurrence and handoff are part of the system, not administrative afterthoughts."
+  }
+}

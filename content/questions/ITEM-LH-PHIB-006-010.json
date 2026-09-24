@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-04",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which CAPA action is strongest after a documented equipment failure caused uneven irrigation?",
+  "choices": [
+    "Repair/replace the failed component, verify delivery uniformity, define recovery monitoring and review why the failure was not detected earlier.",
+    "Retrain all staff without changing the equipment.",
+    "Close the CAPA when maintenance is scheduled.",
+    "Change the crop label."
+  ],
+  "correct": 0,
+  "rationale": "CAPA should address the investigated cause, detection weakness and effectiveness verification.",
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}

@@ -118,6 +118,24 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-006-OUTBREAK-CAPA",
+          "remainingDepth": [
+            "photorealistic outbreak-mapping and CAPA visual set",
+            "human plant-health and quality-system review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
