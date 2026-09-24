@@ -59,6 +59,7 @@ for(const p of programs){
     occupationalSourceBaselinePacket:'generated/occupational-source-baseline/OCCSRC-'+p.id.replace(/^CREDPROG-/,'')+'.md',
     occupationalSourceBaselineId:occupationalBaseline.id,
     occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
+    jtaEvidenceCommand:'npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write',
     startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
     sections:{
       technicalCurriculumReview:[
@@ -72,6 +73,8 @@ for(const p of programs){
         'Generate and review the public occupational-source baseline packet before cannabis-specific JTA validation.',
         'Define the target worker population and operating context.',
         'Use O*NET/BLS task families only as adjacent occupational evidence; keep/adapt/reject them explicitly for cannabis cultivation.',
+        'Collect pseudonymous SME/employer ratings for frequency, importance, criticality, essentiality and keep/adapt/reject disposition.',
+        'Build aggregate structured JTA evidence with the repository tool; response-level ratings and reviewer identities stay private.',
         'Identify cannabis-specific tasks, regulated-authority boundaries and credential-level differences not represented by the public occupational sources.',
         'Confirm task/domain inventory reflects actual job work.',
         'Review frequency/importance/criticality methodology and currency.',
@@ -166,6 +169,7 @@ function md(p){
       'Generate the adjacent-occupation JTA baseline:','', '    '+p.occupationalSourceBaselineCommand,'',
       '- '+p.occupationalSourceBaselinePacket,
       '- Baseline ID: '+p.occupationalSourceBaselineId+' / '+p.occupationalSourceBaselineAsOf,'',
+      'Build aggregate cannabis-specific JTA evidence from private panel ratings:','', '    '+p.jtaEvidenceCommand,'',
       '## Required practical/capstone anchors','',...p.performanceAssessments.map(x=>'- '+x.id+'@'+x.version+' — '+x.assessmentType+' / '+x.status),'','## Start record','', '    '+p.startCommand,'');
   }else{
     lines.push('Controls: '+p.controlsId+'@'+p.controlsVersion,'Applies to: '+p.appliesTo.join(', '),'Current status: '+p.currentStatus,'','## Unresolved governance decisions','',
