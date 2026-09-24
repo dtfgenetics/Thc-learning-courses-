@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-001-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-001-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Five independent sensors rise together while the environmental dashboard reports equipment trouble. What is the strongest interpretation?",
+  "choices": [
+    "A real room event is more plausible than simultaneous failure of every sensor, though the response should still follow verification procedure.",
+    "All sensors are probably wrong.",
+    "Only the lowest sensor should be used.",
+    "Equipment status is irrelevant."
+  ],
+  "correct": 0,
+  "rationale": "Agreement across multiple independent signals strengthens evidence for a real environmental event.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}
