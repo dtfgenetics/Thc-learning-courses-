@@ -19,12 +19,15 @@ These sources support durable safety and worker-protection principles. They do n
 
 `registry/public-authoritative-source-supplements.json` records reviewed source-to-lesson mappings for current lesson versions where a public source can strengthen technical review without rewriting the lesson.
 
-The initial mappings cover:
+The exact-version mappings now cover 15 high-value lessons across Technician I Courses 1, 4, 5, and 6:
 
-- PPE, chemical labels and SDS;
-- cannabis-specific workplace exposures and escalation;
-- quarantine/hold/biosecurity breach response;
+- PPE, chemical labels, WPS entry/exclusion boundaries, and workplace respiratory exposure;
+- irrigation-water quality, pH, EC, and root-zone/media interpretation;
+- propagation media, greenhouse disease-risk pathways, scouting, sanitation, and IPM biosecurity;
+- postharvest drying/storage risk context;
 - the integrated Technician I workflow case.
+
+The extension sources are used to strengthen general protected-crop practice. Crop-specific numeric thresholds, pesticide decisions, disinfectant choices, and finished-product specifications remain controlled by validated cannabis/facility evidence rather than copied from unrelated crops.
 
 A supplemental mapping is **review support**, not lesson approval. If a reviewer decides the published lesson text should change, the lesson version must advance and exact-version scientific/editorial review must reopen.
 
