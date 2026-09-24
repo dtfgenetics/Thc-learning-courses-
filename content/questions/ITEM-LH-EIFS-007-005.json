@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-007-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is a 20-point dryback over four hours not necessarily equivalent to the same dryback over fourteen hours?",
+  "choices": [
+    "Rate and environmental/crop context differ, which can reflect different demand and response.",
+    "Dryback ignores time.",
+    "Only final water content matters.",
+    "The two are always equivalent."
+  ],
+  "correct": 0,
+  "rationale": "Magnitude and rate both matter in interpreting a trajectory.",
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
