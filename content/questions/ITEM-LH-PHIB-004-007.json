@@ -11,11 +11,11 @@
   "stem": "A single HLVd test is negative. What should determine how strongly that result supports release?",
   "choices": [
     "Only whether the plant looked healthy.",
-    "Sample identity, plant part, timing, sampling design, assay/method controls and the facility decision rule.",
     "Whether the result was printed in color.",
+    "Sample identity, plant part, timing, sampling design, assay/method controls and the facility decision rule.",
     "Whether the room has ever had insects."
   ],
-  "correct": 1,
+  "correct": 2,
   "rationale": "A test result supports only the sampled material and method under the applicable decision rule; sampling and identity determine inference strength.",
   "references": [
     "REF-HLVD-REVIEW-2023-001",
