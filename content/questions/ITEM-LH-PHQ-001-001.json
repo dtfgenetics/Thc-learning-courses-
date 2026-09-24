@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-001-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A top flower appears more mature than lower and interior flowers. What is the strongest harvest-readiness conclusion?",
+  "choices": [
+    "Representative sampling across meaningful canopy positions is needed before generalizing crop readiness.",
+    "The entire crop is ready because the top flower is ready.",
+    "Harvest timing should be based on calendar date only.",
+    "Use one universal amber percentage."
+  ],
+  "correct": 0,
+  "rationale": "Maturity can vary by position and flower age, so one convenient sample is not enough.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
