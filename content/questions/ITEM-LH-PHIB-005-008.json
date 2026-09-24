@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-005-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-03",
+  "competency": "COMP-IPM-ADV-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "stem": "Why should organic debris be removed before greenhouse surface disinfection?",
+  "choices": [
+    "Debris makes surfaces easier to label.",
+    "Cleaning removes material that can reduce disinfectant contact/effectiveness.",
+    "Disinfectants only work on metal.",
+    "Cleaning itself proves the area is pathogen-free."
+  ],
+  "correct": 1,
+  "rationale": "Physical cleaning and disinfection are distinct steps; removing organic matter improves the later disinfection process.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-SANITATION"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}
