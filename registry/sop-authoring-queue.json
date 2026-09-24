@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 9
+    "evidencePlansSeeded": 10
   },
   "targets": [
     {
@@ -445,7 +445,12 @@
         "traceability"
       ],
       "sequence": 14,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-130.json",
+      "newControlledReferences": [
+        "REF-CANNABIS-HARVEST-STIGMA-2025-001",
+        "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+      ]
     },
     {
       "id": "GROW-140",
