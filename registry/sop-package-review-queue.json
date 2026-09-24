@@ -9,7 +9,9 @@
     "accessibilityComplete": 0,
     "facilityValidationComplete": 0,
     "independentReleaseApproved": 0,
-    "releaseBlocked": 17
+    "releaseBlocked": 17,
+    "academicEvidenceReconciliationComplete": 17,
+    "academicEvidenceReconciliationCommit": "3615518526e8a96131c2fee59d866723ea9455a2"
   },
   "packages": [
     {
@@ -25,7 +27,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-011",
@@ -40,7 +45,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-020",
@@ -55,7 +63,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-030",
@@ -70,7 +81,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-031",
@@ -85,7 +99,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-032",
@@ -100,7 +117,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-033",
@@ -115,7 +135,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-040",
@@ -130,7 +153,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-080",
@@ -145,7 +171,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-090",
@@ -160,7 +189,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-100",
@@ -175,7 +207,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-110",
@@ -190,7 +225,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-120",
@@ -205,7 +243,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-130",
@@ -220,7 +261,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-140",
@@ -235,7 +279,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-150",
@@ -250,7 +297,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     },
     {
       "id": "GROW-160",
@@ -265,7 +315,10 @@
       "facilityMethodValidation": "not-started",
       "independentReleaseReview": "not-started",
       "releaseState": "blocked",
-      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed."
+      "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
+      "academicEvidenceReconciliation": "complete",
+      "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
     }
   ]
 }
