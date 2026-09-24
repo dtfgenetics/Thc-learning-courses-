@@ -34,6 +34,7 @@ const credentialAuth=runJson('scripts/report-credential-authorization-readiness.
 const productionEvidence=runJson('scripts/report-production-evidence-reconciliation.mjs');
 const releaseDependencies=runJson('scripts/report-certification-release-dependencies.mjs',['--json']);
 const executionQueue=runJson('scripts/report-certification-execution-work-queue.mjs',['--json']);
+const executionReadiness=read('registry/certification-validation-execution-readiness.json');
 const sourceHealth=runJson('scripts/report-certification-source-health.mjs',['--json']);
 const occupationalSourceBaseline=runJson('scripts/build-public-occupational-source-baseline.mjs',['--json']);
 
@@ -85,6 +86,7 @@ const output={
     productionControls:productionEvidence.summary,
     releaseDependencies:releaseDependencies.summary,
     executionWorkQueue:executionQueue.summary,
+    validationCampaignPreparation:executionReadiness.summary,
     sourceProvenance:sourceHealth.summary,
     occupationalSourceBaseline:{
       baselineId:occupationalSourceBaseline.baselineId,
@@ -122,6 +124,7 @@ else{
   console.log(`Authoritative certification release ready: ${output.authoritativeCertificationReleaseReady?'YES':'NO'}`);
   console.log(`Open certification evidence gates: ${output.certificationEvidence.openEvidenceGates.length}`);
   console.log(`Open system/infrastructure gates: ${output.openSystemGates.length}`);
+  console.log(`Validation waves prepared: ${output.programEvidence.validationCampaignPreparation.wavesPrepared}/${output.programEvidence.validationCampaignPreparation.waves}; human/field evidence complete: ${output.programEvidence.validationCampaignPreparation.humanOrFieldEvidenceComplete}`);
   console.log(`Source structural problems: ${output.sourceProvenance.structuralProblems.length}; source-review queue: ${output.sourceProvenance.sourceReviewQueue.length}; verification refresh queue: ${output.sourceProvenance.refreshQueue.length}`);
   if(output.certificationEvidence.structuralProblems.length){
     console.log('Structural evidence problems:');
