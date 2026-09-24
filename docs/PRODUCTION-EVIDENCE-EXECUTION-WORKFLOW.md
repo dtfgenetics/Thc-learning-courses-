@@ -1,13 +1,13 @@
 # Production Evidence Execution Workflow
 
-The repository now distinguishes **code-ready controls** from **deployment-backed approval evidence**. This workflow makes the remaining 12 production controls executable without pretending they are already complete.
+The repository now distinguishes **code-ready controls** from **deployment-backed approval evidence**. This workflow makes the remaining 13 production controls executable without pretending they are already complete.
 
 Commands:
 
 - `npm run production-evidence:packets` — dry-run packet inventory;
 - `npm run production-evidence:packets:json` — machine-readable inventory;
 - `npm run production-evidence:packets:write` — generate Markdown + JSON execution packets;
-- `npm run production-evidence:packets:test` — verify all 12 packets can be generated.
+- `npm run production-evidence:packets:test` — verify all 13 packets can be generated.
 
 The generated packets cover:
 
@@ -21,6 +21,7 @@ The generated packets cover:
 - backup/restore;
 - monitoring/alerting;
 - issuer identity;
+- private secure assessment-store integration;
 - credential signing;
 - revocation persistence.
 
