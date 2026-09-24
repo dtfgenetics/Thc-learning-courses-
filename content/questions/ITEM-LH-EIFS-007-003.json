@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should substrate type be documented with water-content data?",
   "choices": [
-    "Media physical properties influence water retention and aeration, so values are not directly interchangeable across systems.",
     "Media never affects water content.",
     "Only pH matters.",
-    "Container geometry is irrelevant."
+    "Container geometry is irrelevant.",
+    "Media physical properties influence water retention and aeration, so values are not directly interchangeable across systems."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Root-zone measurements depend on media and container context.",
   "references": [
     "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
