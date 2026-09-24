@@ -1,0 +1,39 @@
+{
+  "id": "GROW-150",
+  "title": "Testing, QA, CAPA, and crop review",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-150.json",
+  "scientificSop": "docs/sop-packages/GROW-150/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-150/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-150/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-150-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-PRO-QA-001",
+    "MOD-POSTHARVEST-QA-001"
+  ],
+  "reusedLessons": [
+    "LESSON-PRO-DEVIATION-001",
+    "LESSON-PRO-CAPA-002",
+    "LESSON-PRO-AUDIT-003",
+    "LESSON-PH-TRACE-002",
+    "LESSON-PH-DEVIATION-003"
+  ],
+  "controlledReferences": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "releaseGates": [
+    "quality-system review",
+    "laboratory/testing applicability review",
+    "jurisdiction-specific disposition review",
+    "data-integrity review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

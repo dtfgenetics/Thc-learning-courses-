@@ -1,0 +1,36 @@
+{
+  "id": "GROW-130",
+  "title": "Harvest readiness and harvest workflow",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-130.json",
+  "scientificSop": "docs/sop-packages/GROW-130/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-130/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-130/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-130-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-POSTHARVEST-PROCESS-001",
+    "MOD-LH-TECH1-006-HARVEST"
+  ],
+  "reusedLessons": [
+    "LESSON-PH-MATURITY-001",
+    "LESSON-PH-SAMPLING-001",
+    "LESSON-LH-TECH1-006-01",
+    "LESSON-LH-TECH1-006-02"
+  ],
+  "controlledReferences": [
+    "REF-POSTHARVEST-001",
+    "REF-CANNABIS-HARVEST-STIGMA-2025-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+  ],
+  "releaseGates": [
+    "claim-level flowering/maturity review",
+    "facility-specific maturity validation",
+    "sanitation/food-product handling review as applicable",
+    "lot/traceability review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

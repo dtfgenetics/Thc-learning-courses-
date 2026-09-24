@@ -1,0 +1,38 @@
+{
+  "id": "GROW-080",
+  "title": "Mineral nutrition and deficiency diagnosis",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-080.json",
+  "scientificSop": "docs/sop-packages/GROW-080/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-080/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-080/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-080-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-NUTRITION-001",
+    "MOD-NUTRIENT-DIAG-001",
+    "MOD-ROOTZONE-001"
+  ],
+  "reusedLessons": [
+    "LESSON-NUTRITION-MACRO-002",
+    "LESSON-NUTRITION-MICRO-003",
+    "LESSON-NUTRIENT-INTERACT-001",
+    "LESSON-NUTRIENT-DIAG-002",
+    "LESSON-NUTRIENT-EC-003"
+  ],
+  "controlledReferences": [
+    "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001",
+    "REF-CANNABIS-VEG-NPK-2024-001",
+    "REF-CANNABIS-FLOWER-NPK-2021-001"
+  ],
+  "releaseGates": [
+    "claim-level plant-nutrition review",
+    "sampling/laboratory-method review",
+    "facility-specific crop/system validation",
+    "chemical/fertilizer label and safety review where applicable",
+    "accessibility review",
+    "independent release review"
+  ]
+}

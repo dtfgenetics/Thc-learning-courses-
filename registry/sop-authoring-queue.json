@@ -18,7 +18,8 @@
     "newDiseaseSpecificDepthTarget": "GROW-100",
     "evidencePlansSeeded": 17,
     "evidencePlanCoverageComplete": true,
-    "draftControlledPackagesCreated": 10
+    "draftControlledPackagesCreated": 17,
+    "draftPackageCoverageComplete": true
   },
   "targets": [
     {
@@ -300,13 +301,14 @@
         "deficiency look-alikes"
       ],
       "sequence": 9,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-080.json",
       "newControlledReferences": [
         "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001",
         "REF-CANNABIS-VEG-NPK-2024-001",
         "REF-CANNABIS-FLOWER-NPK-2021-001"
-      ]
+      ],
+      "packageManifest": "registry/sop-packages/GROW-080.json"
     },
     {
       "id": "GROW-090",
@@ -410,9 +412,10 @@
         "airflow/light distribution"
       ],
       "sequence": 12,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-110.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-110.json"
     },
     {
       "id": "GROW-120",
@@ -441,9 +444,10 @@
         "environmental risk"
       ],
       "sequence": 13,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-120.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-120.json"
     },
     {
       "id": "GROW-130",
@@ -471,12 +475,13 @@
         "traceability"
       ],
       "sequence": 14,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-130.json",
       "newControlledReferences": [
         "REF-CANNABIS-HARVEST-STIGMA-2025-001",
         "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
-      ]
+      ],
+      "packageManifest": "registry/sop-packages/GROW-130.json"
     },
     {
       "id": "GROW-140",
@@ -506,12 +511,13 @@
         "packaging/storage"
       ],
       "sequence": 15,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-140.json",
       "newControlledReferences": [
         "REF-POSTHARVEST-VOLATILES-2024-001",
         "REF-CANNABINOID-THERMAL-STABILITY-2022-001"
-      ]
+      ],
+      "packageManifest": "registry/sop-packages/GROW-140.json"
     },
     {
       "id": "GROW-150",
@@ -540,9 +546,10 @@
         "continuous improvement"
       ],
       "sequence": 16,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-150.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-150.json"
     },
     {
       "id": "GROW-160",
@@ -571,9 +578,10 @@
         "data integrity"
       ],
       "sequence": 17,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-160.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-160.json"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "id": "GROW-110",
+  "title": "Training and canopy management",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-110.json",
+  "scientificSop": "docs/sop-packages/GROW-110/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-110/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-110/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-110-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-CANOPY-001",
+    "MOD-CANOPY-ADV-001"
+  ],
+  "reusedLessons": [
+    "LESSON-CANOPY-001",
+    "LESSON-CANOPY-TRAIN-002",
+    "LESSON-CANOPY-ARCH-001",
+    "LESSON-CANOPY-LST-002",
+    "LESSON-CANOPY-HST-003",
+    "LESSON-CANOPY-UNIFORM-003"
+  ],
+  "controlledReferences": [
+    "REF-CANOPY-001",
+    "REF-CANOPY-DEFOL-2025-001",
+    "REF-LIGHT-INTERCANOPY-2025-001"
+  ],
+  "releaseGates": [
+    "canopy/cultivation review",
+    "biosecurity review",
+    "facility/genotype validation",
+    "ergonomic/safety review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

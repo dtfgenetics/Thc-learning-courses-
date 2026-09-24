@@ -1,0 +1,41 @@
+{
+  "id": "GROW-140",
+  "title": "Drying, curing, storage, and water activity",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-140.json",
+  "scientificSop": "docs/sop-packages/GROW-140/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-140/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-140/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-140-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-POSTHARVEST-001",
+    "MOD-POSTHARVEST-QA-001",
+    "MOD-POSTHARVEST-PROCESS-001"
+  ],
+  "reusedLessons": [
+    "LESSON-POSTHARVEST-DRY-002",
+    "LESSON-POSTHARVEST-STORAGE-003",
+    "LESSON-PH-DRYING-002",
+    "LESSON-PH-STORAGE-003"
+  ],
+  "controlledReferences": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-STORAGE-2024-001",
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-POSTHARVEST-VOLATILES-2024-001",
+    "REF-CANNABINOID-THERMAL-STABILITY-2022-001"
+  ],
+  "releaseGates": [
+    "claim-level scientific review",
+    "water-activity/moisture measurement-method review",
+    "microbial-safety review",
+    "product/package-specific stability review",
+    "jurisdiction-specific testing/release review where applicable",
+    "accessibility review",
+    "independent release review"
+  ]
+}
