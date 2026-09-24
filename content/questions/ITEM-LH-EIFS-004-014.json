@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A repeated alarm appears to originate inside an energized electrical panel, and the worker is not authorized for electrical service. What should happen?",
   "choices": [
-    "Stay within permitted checks and escalate to qualified maintenance.",
     "Open the panel carefully.",
     "Reset every breaker.",
+    "Stay within permitted checks and escalate to qualified maintenance.",
     "Bypass the alarm."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Evidence collection does not expand electrical-service authority.",
   "references": [
     "REF-SAFETY-OSHA-001"
