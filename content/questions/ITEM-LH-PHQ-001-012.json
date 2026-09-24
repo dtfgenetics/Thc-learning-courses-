@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A short staging delay occurs. What is the strongest disposition principle?",
   "choices": [
-    "Preserve timing, lot identity and product/process evidence, then evaluate consequence under the controlled procedure.",
     "Automatically reject the lot.",
     "Automatically release the lot.",
-    "Erase the delay from the record."
+    "Erase the delay from the record.",
+    "Preserve timing, lot identity and product/process evidence, then evaluate consequence under the controlled procedure."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "A deviation is not automatic proof of failure, but must be evaluated from evidence.",
   "references": [
     "REF-POSTHARVEST-STABILITY-2026-001",
