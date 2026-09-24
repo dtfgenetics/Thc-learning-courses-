@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-PHQ-001-01",
+  "title": "Harvest Readiness: Representative Maturity Evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-001-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-CANNABIS-HARVEST-STIGMA-2025-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+    "REF-FLOWER-MORPH-2023-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest readiness is a representative biological and quality decision. Maturity can vary across canopy position, flower age and genotype, so one top flower, one calendar date or one universal trichome-color threshold is not enough.",
+    "vocabulary": [
+      {
+        "term": "Representative maturity sampling",
+        "definition": "Observation of multiple meaningful flower positions selected to characterize crop developmental state."
+      },
+      {
+        "term": "Maturity heterogeneity",
+        "definition": "Variation in developmental condition across flowers, positions or plants in the same crop."
+      },
+      {
+        "term": "Harvest objective",
+        "definition": "Defined production or quality goal used with maturity evidence to support timing decisions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Sample across meaningful positions",
+        "body": "Top, interior and lower flowers can differ in developmental state. A representative plan is stronger than convenience sampling from the most mature-looking site.",
+        "references": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Use multiple maturity cues",
+        "body": "Morphology, trichome observations and crop history can contribute to readiness, but each has limits. The decision should preserve the context and sampling method.",
+        "references": [
+          "REF-FLOWER-MORPH-2023-001",
+          "REF-CANNABIS-HARVEST-STIGMA-2025-001"
+        ]
+      },
+      {
+        "title": "Avoid universal visual percentages",
+        "body": "Research supports developmental relationships under studied conditions but does not justify one amber percentage or stigma percentage for every cultivar and quality objective.",
+        "references": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A top flower looks substantially more mature than lower/interior flowers; the correct response is broader representative sampling, not declaring the whole lot ready from the top sample."
+    ],
+    "commonMistakes": [
+      "Using one flower to represent the crop.",
+      "Harvesting by calendar alone.",
+      "Treating one visual threshold as universal."
+    ],
+    "practicalApplication": "Create a harvest-readiness sampling plan with positions, observations, crop objective, limitations and the evidence needed before release to harvest.",
+    "summary": "Harvest readiness depends on representative maturity evidence and stated quality objectives, not one convenient visual cue."
+  }
+}
