@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-001-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should harvest totes, tables and carts be included in sanitation control?",
+  "choices": [
+    "They are material-contact or movement surfaces that can transfer contamination between lots or work areas.",
+    "Only cutting tools matter.",
+    "Transport equipment cannot affect product.",
+    "Sanitation ends when plants are cut."
+  ],
+  "correct": 0,
+  "rationale": "Harvest handling surfaces can contribute to contamination transfer.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
