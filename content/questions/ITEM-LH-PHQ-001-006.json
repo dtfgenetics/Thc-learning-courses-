@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-001-02",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Who should improvise new sanitizer concentration during harvest?",
+  "choices": [
+    "No one; use the approved chemistry/procedure and qualified authority.",
+    "Any worker if contamination is suspected.",
+    "Only the fastest worker.",
+    "Anyone using extra PPE."
+  ],
+  "correct": 0,
+  "rationale": "Chemical sanitation should remain controlled and validated.",
+  "references": [
+    "REF-SAFETY-OSHA-001",
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
