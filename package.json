@@ -360,7 +360,9 @@
     "sop:owner-academic-approval:test": "node scripts/test-sop-owner-academic-content-approval.mjs",
     "candidate-governance:issuer-policy:test": "node scripts/test-candidate-governance-issuer-policy.mjs",
     "jta:tech2:baseline:test": "node scripts/test-tech2-jta-baseline.mjs",
-    "certification:curriculum-construction:test": "node scripts/test-certification-curriculum-construction-status.mjs"
+    "certification:curriculum-construction:test": "node scripts/test-certification-curriculum-construction-status.mjs",
+    "itembank:activation:queue": "node scripts/report-item-activation-work-queue.mjs",
+    "itembank:activation:queue:test": "node scripts/test-item-activation-work-queue.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
