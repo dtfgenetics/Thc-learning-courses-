@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-001-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A lot reaches drying after an unexpected staging delay. Why should the delay remain in the intake record?",
+  "choices": [
+    "Later product-condition evidence may need the actual exposure/process history to interpret risk.",
+    "The delay should be hidden if drying goes well.",
+    "Only room setpoints matter.",
+    "Delays cannot affect postharvest quality."
+  ],
+  "correct": 0,
+  "rationale": "Process history is needed for later quality interpretation.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
