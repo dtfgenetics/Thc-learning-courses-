@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why is changing volume, frequency and feed EC at the same time a weak steering experiment?",
   "choices": [
-    "It becomes difficult to attribute the crop/root-zone response to one change.",
     "More variables always improve diagnosis.",
     "It guarantees faster learning.",
+    "It becomes difficult to attribute the crop/root-zone response to one change.",
     "It removes the need for records."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Multiple simultaneous changes reduce interpretability.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
