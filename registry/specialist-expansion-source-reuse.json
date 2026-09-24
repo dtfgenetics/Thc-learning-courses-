@@ -218,6 +218,25 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-003",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-EIFS-001"
+          ],
+          "newModule": "MOD-LH-EIFS-003-HVAC-AIRFLOW",
+          "remainingDepth": [
+            "photorealistic HVAC/dehumidification/airflow/CO2 safety visual set",
+            "human environmental-controls and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },

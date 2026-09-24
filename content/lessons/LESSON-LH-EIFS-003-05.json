@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-003-05",
+  "title": "Trend-Based Equipment Response & Qualified Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-003-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialists should classify environmental faults from evidence before recommending qualified service. Trend data should connect commands, equipment state, sensor response and crop-zone outcome.",
+    "vocabulary": [
+      {
+        "term": "Command-response mismatch",
+        "definition": "A condition where a controller command occurs but the expected equipment or environmental response does not follow."
+      },
+      {
+        "term": "Fault class",
+        "definition": "A bounded category such as sensor, distribution, capacity, sequencing or equipment-response problem."
+      },
+      {
+        "term": "Qualified handoff",
+        "definition": "A structured escalation package sent to the role authorized to service the suspected system."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Follow the sequence from command to crop",
+        "body": "Review controller request, equipment status, representative sensor response and crop-zone outcome. A command alone does not prove the system delivered the intended environment.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Classify before naming root cause",
+        "body": "Evidence may support a sensor fault, airflow-distribution problem, latent-capacity limitation or equipment non-response without proving the exact mechanical failure.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Handoff the evidence, not a repair instruction",
+        "body": "Record timestamps, affected zones, alarms, equipment states, verified measurements and safe boundaries for the qualified maintenance or controls role.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A dehumidification command is logged, equipment status never changes, and canopy RH continues rising; the evidence supports an equipment-response fault class even before the mechanical cause is known."
+    ],
+    "commonMistakes": [
+      "Calling a controller command proof of delivery.",
+      "Opening electrical or HVAC equipment to verify a suspected fault.",
+      "Deleting conflicting sensor data from the handoff."
+    ],
+    "practicalApplication": "Build a command-response timeline and a maintenance handoff from a supplied environmental trend.",
+    "summary": "Strong environmental troubleshooting narrows the fault class and transfers evidence safely to the qualified role."
+  }
+}

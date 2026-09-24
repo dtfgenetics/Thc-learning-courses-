@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-EIFS-003-FINAL",
+  "title": "HVAC, Dehumidification, Airflow, CO2 & Dew-Point Concepts — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-EIFS-003-01",
+    "LO-LH-EIFS-003-02",
+    "LO-LH-EIFS-003-03",
+    "LO-LH-EIFS-003-04",
+    "LO-LH-EIFS-003-05"
+  ],
+  "items": [
+    "ITEM-LH-EIFS-003-001",
+    "ITEM-LH-EIFS-003-002",
+    "ITEM-LH-EIFS-003-003",
+    "ITEM-LH-EIFS-003-004",
+    "ITEM-LH-EIFS-003-005",
+    "ITEM-LH-EIFS-003-006",
+    "ITEM-LH-EIFS-003-007",
+    "ITEM-LH-EIFS-003-008",
+    "ITEM-LH-EIFS-003-009",
+    "ITEM-LH-EIFS-003-010",
+    "ITEM-LH-EIFS-003-011",
+    "ITEM-LH-EIFS-003-012",
+    "ITEM-LH-EIFS-003-013",
+    "ITEM-LH-EIFS-003-014",
+    "ITEM-LH-EIFS-003-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-ENV-ADV-001",
+      "items": 9,
+      "cognitiveTarget": "Load separation, airflow, CO2 safety and equipment-response reasoning"
+    },
+    {
+      "competency": "COMP-ENV-VPD-001",
+      "items": 3,
+      "cognitiveTarget": "Dew point, condensation and dehumidification transitions"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Trend-based fault classification and qualified handoff"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 6,
+    "targetBankItemsPerCompetency": 20,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-EIFS-003",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

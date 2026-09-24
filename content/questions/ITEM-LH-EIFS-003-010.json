@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-003-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-04",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A CO2 life-safety alarm activates while the crop-control system is requesting enrichment. What should happen?",
+  "choices": [
+    "Follow the posted emergency procedure and keep people out until the area is declared safe by the qualified process.",
+    "Enter quickly to inspect the controller.",
+    "Silence the alarm to protect the crop.",
+    "Increase enrichment to test the sensor."
+  ],
+  "correct": 0,
+  "rationale": "Life-safety controls override crop-control requests.",
+  "references": [
+    "REF-OSHA-CO2-SAFETY-2026"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-003-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-EIFS-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A canopy surface cools to near the room dew point. What risk increases?",
+  "choices": [
+    "Condensation on that surface.",
+    "Automatic nutrient precipitation.",
+    "Higher photon flux.",
+    "Permanent stomatal closure."
+  ],
+  "correct": 0,
+  "rationale": "Surfaces near or below dew point can condense moisture.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

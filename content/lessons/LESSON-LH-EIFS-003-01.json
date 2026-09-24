@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-003-01",
+  "title": "Sensible vs Latent Load & Environmental Capacity",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-003-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Controlled rooms carry both heat and moisture loads. Temperature can remain controlled while humidity rises, so specialists must distinguish sensible cooling performance from latent moisture-removal performance.",
+    "vocabulary": [
+      {
+        "term": "Sensible load",
+        "definition": "Heat load that changes air temperature."
+      },
+      {
+        "term": "Latent load",
+        "definition": "Moisture load associated with water vapor that must be removed or condensed."
+      },
+      {
+        "term": "Capacity margin",
+        "definition": "Available control capacity beyond the current operating load."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Stable temperature does not prove moisture control",
+        "body": "If RH rises sharply after irrigation while temperature stays stable, investigate latent moisture-removal capacity and sequencing before assuming a sensible-cooling problem.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Crop load changes through the cycle",
+        "body": "Transpiration and environmental load shift with biomass, light, root-zone water and developmental stage. Empty-room or early-cycle performance does not prove late-cycle capacity.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Temperature response is crop-context dependent",
+        "body": "Cannabis temperature studies show genotype-specific crop responses, so equipment performance and crop response should be evaluated without turning one experimental treatment into a universal setpoint.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A room holds temperature but loses RH control after irrigation events as canopy biomass increases; that pattern is consistent with a latent-load limitation worth qualified system review."
+    ],
+    "commonMistakes": [
+      "Treating temperature and humidity as one load.",
+      "Sizing conclusions from empty-room data.",
+      "Changing room targets before confirming the actual load pattern."
+    ],
+    "practicalApplication": "Plot temperature, RH, lighting state and irrigation events over several days and classify periods where sensible and latent control diverge.",
+    "summary": "Environmental capacity has separate heat and moisture dimensions that must be diagnosed with trend evidence."
+  }
+}

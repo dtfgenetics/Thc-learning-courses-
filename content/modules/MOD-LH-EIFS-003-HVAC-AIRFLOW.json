@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-EIFS-003-HVAC-AIRFLOW",
+  "title": "HVAC, Dehumidification, Airflow, CO2 & Dew-Point Concepts",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-003-01",
+    "LESSON-LH-EIFS-003-02",
+    "LESSON-LH-EIFS-003-03",
+    "LESSON-LH-EIFS-003-04",
+    "LESSON-LH-EIFS-003-05"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering environmental loads, dew point, dehumidification, airflow, CO2 safety and evidence-based equipment handoff.",
+  "estimatedMinutes": 320,
+  "learningOutcomes": [
+    "Differentiate sensible heat load from latent moisture load and use trend data to identify when temperature control and moisture removal are behaving differently.",
+    "Interpret dew point, cooling, dehumidification and lights-off transitions to identify condensation and high-humidity risk without reducing the problem to RH alone.",
+    "Evaluate airflow distribution using spatial crop-zone evidence rather than fan speed or room averages alone.",
+    "Explain CO2 monitoring and compressed-gas safety boundaries, including oxygen-displacement/asphyxiation risk and emergency escalation, without treating worker exposure limits as enrichment targets.",
+    "Produce a reconstructable environmental-system handoff that links symptoms, sensor trends, equipment state, likely failure class, evidence limits and qualified escalation."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

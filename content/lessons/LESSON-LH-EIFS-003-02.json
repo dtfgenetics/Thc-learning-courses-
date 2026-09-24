@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-003-02",
+  "title": "Dew Point, Dehumidification & Transition Risk",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-003-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Dew point connects air moisture to surface condensation risk. Lights-off cooling, cold surfaces and moisture release can create local saturation even when room-average RH is below 100%.",
+    "vocabulary": [
+      {
+        "term": "Dew point",
+        "definition": "The temperature at which air with a given moisture content becomes saturated."
+      },
+      {
+        "term": "Condensation risk",
+        "definition": "The possibility that a surface reaches or falls below dew-point temperature and water condenses."
+      },
+      {
+        "term": "Transition event",
+        "definition": "A system change such as lights-off, irrigation, cooling start or dehumidifier cycling that alters environmental load."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Surface temperature matters",
+        "body": "A leaf, wall, duct or pipe approaching the dew point can condense moisture even while bulk room RH remains lower than 100%.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Lights-off can increase condensation risk",
+        "body": "Cooling air and surfaces while crop moisture remains high can quickly raise RH and reduce the margin to dew point. Review transition timing rather than daily averages alone.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Dehumidification must match the moisture event",
+        "body": "Trend system response across irrigation, lights-off and crop-load changes to determine whether removal capacity and sequencing keep pace with the actual moisture load.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A canopy cools rapidly at lights-off while moisture remains high; surface temperatures approach dew point before the dehumidification sequence catches up."
+    ],
+    "commonMistakes": [
+      "Using RH alone to judge condensation risk.",
+      "Ignoring surface temperatures.",
+      "Treating a dew-point calculation as proof that condensation occurred without observing the surface state."
+    ],
+    "practicalApplication": "Review a lights-off trend and identify when temperature, RH and dew-point margin suggest the highest condensation risk.",
+    "summary": "Dew point is a surface-risk concept best used with trend timing and representative temperature measurements."
+  }
+}
