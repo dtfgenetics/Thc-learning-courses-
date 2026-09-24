@@ -1,19 +1,96 @@
 {
-  "version": "1.0.0",
-  "asOf": "2026-09-20",
+  "version": "1.1.0",
+  "asOf": "2026-09-23",
   "targetCount": 24,
-  "policy": "A controlled SOP package cannot be marked ingested until its source files are present in the repository, reviewed, mapped, and approved for the stated release surface.",
+  "policy": "A controlled SOP package may be provenance-reconciled when its canonical controlled Drive source is located and exact source identities are recorded. It must not be marked release-approved or operationally ingested until its claims, mappings, accessibility, independent review, and stated release gates are complete.",
   "repositoryLearnerPack": {
     "status": "draft-internal-preview",
     "sourceLesson": "LESSON-PRO-SOP-DESIGN-001",
     "sourceReference": "REF-EPA-SOP-QAG6",
-    "downloadIds": ["DL-SOP-AUTHORING-001", "DL-SOP-EXECUTION-001", "DL-SOP-DEVIATION-001", "DL-SOP-TRAINING-001"]
+    "downloadIds": [
+      "DL-SOP-AUTHORING-001",
+      "DL-SOP-EXECUTION-001",
+      "DL-SOP-DEVIATION-001",
+      "DL-SOP-TRAINING-001"
+    ]
   },
   "externalPackages": [
-    {"externalId": "GROW-042", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
-    {"externalId": "GROW-050", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
-    {"externalId": "GROW-060", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
-    {"externalId": "GROW-070", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"}
+    {
+      "externalId": "GROW-042",
+      "title": "Water Quality, pH, EC, Alkalinity, Sampling, and Meter Control",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled review and implementation planning only",
+      "controlledSourceIds": {
+        "scientificSop": "1IZMWas8wZJ3u2Sa3qZqQrXxc9Ni3rO5DhF8isL6rekI",
+        "learnerGuide": "1DLc2DJqTrvoISEomKGRCar5FCciFTCqMdC0Ezwndvps",
+        "qaReview": "1kTdfJE8S7MR7EKzh5m_fcjQ9Zm2wGIjqQ_OayX0lc54",
+        "handoff": "1VDYJG6_dfga6ILyhUM-UEW744X1NFmmArVZwgrQR7xo",
+        "recordsWorkbook": "1vgo5unrx1kVxeRFqEomdlWt0hHi6DPa_YXqpfmXa_zA"
+      },
+      "qaDisposition": "created-independent-review-blocked",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-050",
+      "title": "Environmental Control, Sensor Placement, Humidity, Leaf Temperature, and VPD",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled internal education, evidence collection, room-mapping design, implementation planning, calculator testing, visual production briefing, and independent review",
+      "controlledSourceIds": {
+        "scientificSop": "1mfXFJY2VChPwJJcOLqVD7ozEAV-kchTUPlGJh7aIQ9c",
+        "learnerGuide": "1yJAJ-6nGExYkO-XLBBsQcUpSdcaBIxNIBOKHzcIln5Q",
+        "qaReview": "1zh34d2XPzgxT3r3IapTMaFmOK_aisMk2-QdEoZO8MCw",
+        "handoff": "14t8TKUYFq4fLeXKhQIRzQv7-kK7C_iIDEb9o8H5zRwI",
+        "recordsWorkbook": "1EWUcLqhXeO_mP5x0l1XfwwQqosihxYzD6WoKdgFQGzE"
+      },
+      "qaDisposition": "hold-technical-inputs-field-validation-independent-review",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-060",
+      "title": "Lighting, PPFD, DLI, Photoperiod, Spectrum, Mapping, and Fixture Control",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled internal education, evidence collection, fixture and sensor inventory, PPFD mapping design, DLI calculation, schedule verification, visual briefing, field validation planning, and independent review",
+      "controlledSourceIds": {
+        "scientificSop": "1Sud7ile_165radF-PUzVo6BLLznkP-FC6EVzjylEVes",
+        "learnerGuide": "1qrspr5_6cB6ACNEdtBlwbO-bHCtfX9WZkIksdbrtxfs",
+        "qaReview": "12X5wA-PMgEBZN4yGZ1zmIWo9TlllqId9yS9EOK9YqyQ",
+        "handoff": "1Rn09BEO7tDzqUjmyBOIegnrD9et-M3XZuOUeRffkAB4",
+        "recordsWorkbook": "1aSaGSsGGBZ9Tcud2R42YzqkGRy76kUj2t9rn8zTkczc"
+      },
+      "qaDisposition": "hold-technical-inputs-field-validation-electrical-safety-review-independent-approval",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-070",
+      "title": "Irrigation and Fertigation: Water Balance, Delivery Uniformity, Root-Zone Moisture, and System Control",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled editorial, scientific, irrigation-engineering, fertigation-safety, implementation, and visual-production review only",
+      "controlledSourceIds": {
+        "scientificSop": "1ufY9yTZyK7Swgr541GgBuclVGrtr9e1r5NUpH8Tk9B0",
+        "learnerGuide": "1Ii92y1rWE54LY8b-MQ6xq-XMnDJCek-201SLHy2TWsU",
+        "qaReview": "1avZQI6QNwMs2TdQYmhNTnJqwaDV7sutYLCPVHFoUBzk",
+        "handoff": "1vzg18GV_INl9aHAiOdn1isLOwWg1fmW_d0rCEXghbNU",
+        "recordsWorkbook": "1sPREtCxwN0ccpJfPZLcAS_hQYwmUV8t8jmsGfqbnv2s"
+      },
+      "qaDisposition": "created-independent-review-blocked",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    }
   ],
   "remainingUnidentifiedTargets": 20
 }
