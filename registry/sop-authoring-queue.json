@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 1
+    "evidencePlansSeeded": 2
   },
   "targets": [
     {
@@ -454,7 +454,12 @@
         "packaging/storage"
       ],
       "sequence": 15,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-140.json",
+      "newControlledReferences": [
+        "REF-POSTHARVEST-VOLATILES-2024-001",
+        "REF-CANNABINOID-THERMAL-STABILITY-2022-001"
+      ]
     },
     {
       "id": "GROW-150",

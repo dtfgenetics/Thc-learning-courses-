@@ -1,0 +1,134 @@
+{
+  "id": "GROW-140",
+  "title": "Drying, curing, storage, and water activity — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define the source-supported claims and evidence boundaries required before authoring the full controlled GROW-140 postharvest SOP package.",
+  "sourceIds": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-STORAGE-2024-001",
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-POSTHARVEST-VOLATILES-2024-001",
+    "REF-CANNABINOID-THERMAL-STABILITY-2022-001"
+  ],
+  "scope": {
+    "included": [
+      "drying as controlled heat-and-mass transfer",
+      "representative product-condition measurement",
+      "moisture content versus water activity",
+      "within-load spatial variation",
+      "curing and moisture redistribution",
+      "packaging and storage variables",
+      "cannabinoid and volatile stability",
+      "microbial-risk escalation",
+      "lot traceability and deviation handling"
+    ],
+    "excludedUntilValidated": [
+      "universal number of drying days",
+      "one universal room temperature or RH target",
+      "one universal product water-activity release threshold for every jurisdiction and product class",
+      "claims that curing can remediate contaminated material",
+      "universal package or atmosphere claims",
+      "shelf-life claims without product- and package-specific stability evidence"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-140-C01",
+      "statement": "Drying rate and final product condition depend on interacting process variables including temperature, humidity, airflow, loading, flower geometry and time; room averages alone do not prove uniform product condition.",
+      "sources": [
+        "REF-POSTHARVEST-001",
+        "REF-POSTHARVEST-DRY-2025-001"
+      ],
+      "boundary": "A room setpoint is a process input, not direct evidence that every location or flower in a lot reached the same condition."
+    },
+    {
+      "id": "GROW-140-C02",
+      "statement": "Moisture content and water activity describe different properties of dried plant material and should not be treated as interchangeable indicators.",
+      "sources": [
+        "REF-POSTHARVEST-001",
+        "REF-POSTHARVEST-STABILITY-2026-001"
+      ],
+      "boundary": "A measured moisture percentage cannot by itself establish microbial or chemical stability, and a water-activity result must be interpreted with method, temperature, sampling and applicable specification."
+    },
+    {
+      "id": "GROW-140-C03",
+      "statement": "Cannabis/hemp drying methods can alter drying time, decarboxylation, color, microbial load, cannabinoid form and volatile retention, creating quality and safety tradeoffs rather than one universally superior method.",
+      "sources": [
+        "REF-POSTHARVEST-DRY-2025-001",
+        "REF-POSTHARVEST-VOLATILES-2024-001"
+      ],
+      "boundary": "Results from a specific cultivar, apparatus or drying treatment must not be converted directly into a universal cannabis recipe."
+    },
+    {
+      "id": "GROW-140-C04",
+      "statement": "Curing and sealed storage can change product moisture condition after drying, so sealed packaging does not eliminate the need for representative product measurements and stability checks.",
+      "sources": [
+        "REF-POSTHARVEST-DRY-2025-001",
+        "REF-POSTHARVEST-STABILITY-2026-001"
+      ],
+      "boundary": "Curing is not a validated remediation method for unsafe microbial contamination or materially nonconforming product."
+    },
+    {
+      "id": "GROW-140-C05",
+      "statement": "Storage stability is influenced by time, temperature, oxygen, light, humidity/moisture transfer, product matrix and packaging properties, and these factors can affect cannabinoids and volatile compounds differently.",
+      "sources": [
+        "REF-POSTHARVEST-STABILITY-2026-001",
+        "REF-POSTHARVEST-STORAGE-2024-001",
+        "REF-POSTHARVEST-VOLATILES-2024-001",
+        "REF-CANNABINOID-THERMAL-STABILITY-2022-001"
+      ],
+      "boundary": "Preserving one compound or using one package technology does not prove preservation of total product quality."
+    },
+    {
+      "id": "GROW-140-C06",
+      "statement": "Cannabinoid degradation in dried cannabis is time- and temperature-dependent under studied conditions, supporting the need to justify storage specifications and shelf-life with measured stability evidence.",
+      "sources": [
+        "REF-CANNABINOID-THERMAL-STABILITY-2022-001",
+        "REF-POSTHARVEST-STABILITY-2026-001"
+      ],
+      "boundary": "Kinetic findings from a study are not a finished-product expiry date and cannot replace product-specific stability validation."
+    },
+    {
+      "id": "GROW-140-C07",
+      "statement": "Representative sampling and lot traceability are necessary to investigate within-load variability, drying-room deviations and later storage failures without overgeneralizing from a convenience sample.",
+      "sources": [
+        "REF-POSTHARVEST-001",
+        "REF-POSTHARVEST-STABILITY-2026-001"
+      ],
+      "boundary": "A single favorable sample does not demonstrate uniformity across a heterogeneous lot."
+    },
+    {
+      "id": "GROW-140-C08",
+      "statement": "Postharvest disposition should preserve lot identity, define actual exposure and affected scope, review product-condition and stability evidence, and document authorized release, hold, rework or rejection decisions.",
+      "sources": [
+        "REF-POSTHARVEST-STABILITY-2026-001",
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "The SOP may define the evidence workflow but should not invent jurisdiction-specific release limits or override required laboratory and regulatory controls."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "dry-room and rack/load mapping workflow",
+    "representative moisture/water-activity sampling plan",
+    "instrument verification and method-record boundary",
+    "drying endpoint and hold/review decision framework",
+    "curing moisture-redistribution monitoring",
+    "packaging and storage specification record",
+    "stability-sampling and shelf-life evidence framework",
+    "microbial-risk escalation and contamination hold",
+    "lot genealogy, split/merge and movement records",
+    "postharvest deviation/CAPA workflow"
+  ],
+  "releaseGates": [
+    "claim-level scientific review",
+    "water-activity/moisture measurement-method review",
+    "microbial-safety review",
+    "product/package-specific stability review",
+    "jurisdiction-specific testing/release review where applicable",
+    "accessibility review",
+    "independent release review"
+  ]
+}
