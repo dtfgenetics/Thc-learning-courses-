@@ -11,11 +11,11 @@
   "stem": "A reclaimed-water program has one historical lab report and then changes treatment configuration. What should happen?",
   "choices": [
     "Use the old report because source name is unchanged.",
-    "Reassess risk and retest appropriate parameters after the treatment change.",
     "Measure only color.",
-    "Increase fertilizer."
+    "Increase fertilizer.",
+    "Reassess risk and retest appropriate parameters after the treatment change."
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "Treatment changes can change source-water risk and should prompt appropriate re-verification.",
   "references": [
     "REF-WATER-RECLAIMED-2026-001"
