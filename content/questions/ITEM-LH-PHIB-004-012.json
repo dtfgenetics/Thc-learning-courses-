@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-004-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-004-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What does quarantine status mean in a specialist disease workflow?",
+  "choices": [
+    "The quarantined material is confirmed infected.",
+    "Movement/release is controlled while specified risk, identity, testing or disposition criteria remain unresolved.",
+    "All quarantined material must be destroyed.",
+    "The scout who noticed the problem may independently release it."
+  ],
+  "correct": 1,
+  "rationale": "Quarantine is a control status, not proof of diagnosis; release authority and criteria must remain defined.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}
