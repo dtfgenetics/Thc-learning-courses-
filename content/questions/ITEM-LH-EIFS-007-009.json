@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should runoff or return-sample timing be recorded?",
   "choices": [
-    "Different collection points can represent different solution fractions and affect trend interpretation.",
     "Timing never matters.",
     "Only total volume matters.",
-    "All runoff samples are identical."
+    "All runoff samples are identical.",
+    "Different collection points can represent different solution fractions and affect trend interpretation."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Sampling timing and method affect what the sample represents.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
