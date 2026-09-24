@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-001-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-001-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should sample IDs remain linked to lot genealogy?",
+  "choices": [
+    "So laboratory or quality results can be traced back to the correct material and process history.",
+    "Sample IDs are only decorative.",
+    "Lot genealogy matters only before harvest.",
+    "Results automatically apply to every lot."
+  ],
+  "correct": 0,
+  "rationale": "Traceability connects sample evidence to the material represented.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
