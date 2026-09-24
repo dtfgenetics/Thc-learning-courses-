@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 4
+    "evidencePlansSeeded": 5
   },
   "targets": [
     {
@@ -102,7 +102,9 @@
         "movement controls"
       ],
       "sequence": 3,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-020.json",
+      "newControlledReferences": []
     },
     {
       "id": "GROW-030",
