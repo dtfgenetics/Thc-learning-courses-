@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-004-05",
+  "title": "Maintenance Escalation, Safe Boundaries & Reconstructable Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-004-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-SAFETY-OSHA-001",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A specialist handoff should narrow the problem and preserve evidence without crossing into unauthorized electrical, controls or protected calibration work.",
+    "vocabulary": [
+      {
+        "term": "Maintenance escalation",
+        "definition": "A structured transfer of verified fault evidence to the role authorized to service the equipment."
+      },
+      {
+        "term": "Safe boundary",
+        "definition": "The limit of checks a worker may perform without entering protected servicing or hazardous-energy work."
+      },
+      {
+        "term": "Reconstructable handoff",
+        "definition": "A record another qualified person can use to understand what happened, what was checked and what remains unresolved."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Name the device and event",
+        "body": "Include device/system ID, affected zone, time, alarm/command history, verified sensor evidence and crop/process consequence.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Document checks already completed",
+        "body": "State colocated comparisons, reference checks, placement review or safe resets already performed so qualified maintenance does not repeat or misinterpret the earlier work.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Do not cross into protected servicing",
+        "body": "Opening energized panels, bypassing safeguards or performing unqualified calibration/repair is outside the educational scope and should be escalated.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A useful escalation states that Unit DH-2 received three commands, showed no expected status change, canopy RH increased and sensor agreement was verified; it does not instruct an unqualified worker to open the unit."
+    ],
+    "commonMistakes": [
+      "Writing only 'HVAC bad.'",
+      "Omitting checks already completed.",
+      "Crossing into protected repair because the probable fault seems obvious."
+    ],
+    "practicalApplication": "Write a maintenance/controls escalation from a supplied alarm and sensor log.",
+    "summary": "Good escalation turns raw alarms into actionable evidence while preserving safety and authority boundaries."
+  }
+}
