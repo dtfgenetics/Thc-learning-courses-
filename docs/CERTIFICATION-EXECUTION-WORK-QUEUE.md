@@ -15,7 +15,7 @@ The queue distinguishes four useful states:
 - **revision-required** — existing evidence requires correction;
 - **blocked** — a prerequisite evidence gate is not far enough along.
 
-Course-level work includes assessment review, pilot execution, practical calibration, accessibility/UX review, item analysis, standard setting, and secure-form readiness. Occupational validation and credential authorization are collapsed to program-level work items because their canonical evidence records operate at the credential-program level. The 12 production controls appear as independent operational work items.
+Course-level work includes assessment review, pilot execution, practical calibration, accessibility/UX review, item analysis, standard setting, and secure-form readiness. Occupational validation and credential authorization are collapsed to program-level work items because their canonical evidence records operate at the credential-program level. The 13 production controls appear as independent operational work items.
 
 Credential authorization stays blocked until every other applicable certification gate in that program is approved and all production controls are approved.
 

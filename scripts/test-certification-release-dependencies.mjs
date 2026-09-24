@@ -5,7 +5,7 @@ if(run.status!==0) throw new Error(run.stderr||run.stdout);
 const out=JSON.parse(run.stdout);
 if(out.summary.canonicalCourses!==15) throw new Error(`expected 15 courses, got ${out.summary.canonicalCourses}`);
 if(out.summary.programs!==2) throw new Error(`expected 2 credential programs, got ${out.summary.programs}`);
-if(out.summary.productionControlsTotal!==12) throw new Error(`expected 12 production controls, got ${out.summary.productionControlsTotal}`);
+if(out.summary.productionControlsTotal!==13) throw new Error(`expected 13 production controls, got ${out.summary.productionControlsTotal}`);
 for(const p of out.programs){
   if(p.requiredCourses<7) throw new Error(`${p.credentialProgramId}: incomplete required-course mapping`);
   if(!Array.isArray(p.approvalBlockers)||!Array.isArray(p.evidenceBlockers)) throw new Error(`${p.credentialProgramId}: missing dependency blocker arrays`);
@@ -16,4 +16,4 @@ for(const c of out.courses){
 if(out.dependencyContradictions.length!==0){
   throw new Error('current repository contains release dependency contradictions: '+out.dependencyContradictions.join('; '));
 }
-console.log('Certification release dependency graph: PASS (15 courses, 2 programs, 12 production controls, no premature release evidence).');
+console.log('Certification release dependency graph: PASS (15 courses, 2 programs, 13 production controls, no premature release evidence).');

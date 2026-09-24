@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "THC-ACADEMY-PRODUCTION-VALIDATION-EVIDENCE-001",
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "status": "evidence-pending",
   "purpose": "Canonical intake contract for deployment-backed evidence required before production certification readiness gates may advance.",
   "controls": [
@@ -185,6 +185,25 @@
         "ownership/control evidence",
         "public verification representation",
         "approval record"
+      ],
+      "evidenceRefs": []
+    },
+    {
+      "id": "secure-assessment-store",
+      "readiness": [
+        [
+          "assessment",
+          "secureOperationalStoreIntegration"
+        ]
+      ],
+      "status": "pending",
+      "requiredEvidence": [
+        "deployed private secure assessment store/provider identity",
+        "store ping and bank-version verification",
+        "approved-operational private item selection test",
+        "secure form recording and exposure-tracking verification",
+        "quarantine workflow verification",
+        "delivery projection confirms scoring keys, rationales and answer material are excluded"
       ],
       "evidenceRefs": []
     },

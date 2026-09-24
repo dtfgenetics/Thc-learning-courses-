@@ -93,6 +93,20 @@ for(const {file,data:r} of rows){
     if(!governanceApproval) errors.push(`${file}: approved credential authorization requires approved exact-version candidate governance evidence`);
     if(controls.operationalUseAuthorized!==true) errors.push(`${file}: candidate governance controls are not authorized for operational use`);
     if(r.privacyRetention?.candidateGovernanceControlsVersion!==controls.version) errors.push(`${file}: candidate governance controls version must match current ${controls.version}`);
+    if(program){
+      if(program.status!=='approved') errors.push(`${file}: approved credential authorization requires credential program status=approved`);
+      if(program.assessmentModel?.standardSettingStatus!=='validated') errors.push(`${file}: approved credential authorization requires program standardSettingStatus=validated`);
+      for(const key of ['jobTaskAnalysis','smeEmployerValidation','assessmentReview','accessibilityReview']){
+        if(program.validation?.[key]!=='validated') errors.push(`${file}: approved credential authorization requires program validation.${key}=validated`);
+      }
+    }
+    for(const entry of r.authorizedCourses??[]){
+      const c=courses.get(entry.courseId);
+      if(c?.extensions?.professionalCredentialUseAuthorized!==true) errors.push(`${file}: approved credential authorization requires ${entry.courseId}.extensions.professionalCredentialUseAuthorized=true`);
+      if(Object.prototype.hasOwnProperty.call(c?.extensions??{},'liveCredentialFormApproved')&&c.extensions.liveCredentialFormApproved!==true){
+        errors.push(`${file}: approved credential authorization requires ${entry.courseId}.extensions.liveCredentialFormApproved=true`);
+      }
+    }
   }
   if(r.status==='suspended' && r.governance?.finalReleaseDecision!=='suspend') errors.push(`${file}: suspended authorization requires finalReleaseDecision=suspend`);
 }
