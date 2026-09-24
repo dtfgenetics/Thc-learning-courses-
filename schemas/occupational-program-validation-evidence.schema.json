@@ -69,7 +69,10 @@
       "required": [
         "allCurrentCourseVersionsReviewed",
         "contentScopeAndRoleBoundariesReviewed",
-        "scientificTechnicalConcernsResolvedOrDispositioned"
+        "scientificTechnicalConcernsResolvedOrDispositioned",
+        "publicSourceReviewCompleted",
+        "sourceReviewRegistryId",
+        "sourceReviewRegistryAsOf"
       ],
       "properties": {
         "allCurrentCourseVersionsReviewed": {
@@ -93,6 +96,23 @@
             "string",
             "null"
           ]
+        },
+        "publicSourceReviewCompleted": {
+          "type": "boolean"
+        },
+        "sourceReviewRegistryId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "sourceReviewRegistryAsOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
         }
       },
       "additionalProperties": false
