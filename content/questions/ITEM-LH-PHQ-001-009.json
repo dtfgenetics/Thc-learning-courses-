@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should sample IDs remain linked to lot genealogy?",
   "choices": [
-    "So laboratory or quality results can be traced back to the correct material and process history.",
     "Sample IDs are only decorative.",
     "Lot genealogy matters only before harvest.",
-    "Results automatically apply to every lot."
+    "Results automatically apply to every lot.",
+    "So laboratory or quality results can be traced back to the correct material and process history."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Traceability connects sample evidence to the material represented.",
   "references": [
     "REF-POSTHARVEST-001"
