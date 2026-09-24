@@ -57,7 +57,7 @@ const taskFamilies=[...expected.values()].map(t=>{
   const rs=ratingsByTask.get(t.id);
   if(!rs.length) return {
     taskFamilyId:t.id,label:t.label,courseMappings:t.courseMappings,ratingsCount:0,
-    frequencyMean:1,importanceMean:1,criticalityMean:1,essentialityRate:0,
+    frequencyMean:null,importanceMean:null,criticalityMean:null,essentialityRate:null,
     dispositionCounts:{keep:0,adapt:0,reject:0},consensusDisposition:'mixed',notes:'No usable ratings supplied.'
   };
   const counts={keep:0,adapt:0,reject:0};for(const r of rs)counts[r.disposition]++;
