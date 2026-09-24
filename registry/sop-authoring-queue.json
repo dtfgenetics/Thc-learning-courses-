@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 3
+    "evidencePlansSeeded": 4
   },
   "targets": [
     {
@@ -271,7 +271,13 @@
         "deficiency look-alikes"
       ],
       "sequence": 9,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-080.json",
+      "newControlledReferences": [
+        "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001",
+        "REF-CANNABIS-VEG-NPK-2024-001",
+        "REF-CANNABIS-FLOWER-NPK-2021-001"
+      ]
     },
     {
       "id": "GROW-090",

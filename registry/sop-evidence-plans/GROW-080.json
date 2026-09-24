@@ -1,0 +1,120 @@
+{
+  "id": "GROW-080",
+  "title": "Mineral nutrition and deficiency diagnosis — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define an evidence-led cannabis nutrition and deficiency-diagnosis SOP foundation without converting bounded nutrient-response studies into universal feed recipes.",
+  "sourceIds": [
+    "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001",
+    "REF-CANNABIS-VEG-NPK-2024-001",
+    "REF-CANNABIS-FLOWER-NPK-2021-001"
+  ],
+  "scope": {
+    "included": [
+      "macronutrient and micronutrient roles",
+      "deficiency symptom-pattern observation",
+      "upper-versus-lower canopy distribution",
+      "root-zone and irrigation context",
+      "tissue and solution/media testing escalation",
+      "nutrient interaction and antagonism",
+      "stage/system/genotype dependence",
+      "corrective-action verification"
+    ],
+    "excludedUntilValidated": [
+      "universal cannabis NPK recipe",
+      "universal EC or ppm feeding chart",
+      "diagnosis from leaf color alone",
+      "automatic correction from a single tissue or solution result",
+      "direct transfer of one hydroponic study's optimum concentrations to other cultivars, stages or media"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-080-C01",
+      "statement": "Single-element deficiencies in cannabis can produce recognizable foliar and growth patterns, but symptom onset and tissue nutrient concentration do not always correspond cleanly, so diagnosis should integrate multiple evidence types.",
+      "sources": [
+        "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001"
+      ],
+      "boundary": "Controlled single-element omission symptoms do not prove that a visually similar facility problem has the same cause."
+    },
+    {
+      "id": "GROW-080-C02",
+      "statement": "Cannabis nutrient deficiencies can materially reduce vegetative growth and inflorescence yield, making timely detection and evidence-based correction operationally important.",
+      "sources": [
+        "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001"
+      ],
+      "boundary": "Magnitude of loss varies by element, severity, duration, genotype, stage and production system."
+    },
+    {
+      "id": "GROW-080-C03",
+      "statement": "Nutrient diagnosis should separate direct observations from hypotheses and review root-zone pH/EC, irrigation/water status, source-water chemistry, formulation history, crop stage and root condition before concluding that a symptom is a primary nutrient deficiency.",
+      "sources": [
+        "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001"
+      ],
+      "boundary": "Visual symptomology alone cannot distinguish every deficiency, toxicity, uptake limitation, root disorder or environmental look-alike."
+    },
+    {
+      "id": "GROW-080-C04",
+      "statement": "Cannabis N, P and K responses are interactive rather than independent, and vegetative-stage growth responses can change as combinations of supplied nutrients change.",
+      "sources": [
+        "REF-CANNABIS-VEG-NPK-2024-001"
+      ],
+      "boundary": "Response-surface optima are experimental outcomes for defined conditions, not universal nutrient-solution specifications."
+    },
+    {
+      "id": "GROW-080-C05",
+      "statement": "Flowering-stage cannabis yield responses to nitrogen and phosphorus can be nonlinear, demonstrating that more fertilizer does not automatically produce more yield or quality.",
+      "sources": [
+        "REF-CANNABIS-FLOWER-NPK-2021-001"
+      ],
+      "boundary": "The tested deep-water-culture ranges and cultivar do not establish general flowering feed targets for other systems."
+    },
+    {
+      "id": "GROW-080-C06",
+      "statement": "Vegetative and flowering cannabis studies support treating crop stage as a controlled context for nutrient interpretation rather than carrying one nutrient target unchanged through the entire lifecycle.",
+      "sources": [
+        "REF-CANNABIS-VEG-NPK-2024-001",
+        "REF-CANNABIS-FLOWER-NPK-2021-001"
+      ],
+      "boundary": "Stage-specific evidence remains genotype- and system-dependent and should be validated before facility adoption."
+    },
+    {
+      "id": "GROW-080-C07",
+      "statement": "Tissue analysis is most useful when sample location, crop stage, symptom status, method and corresponding root-zone or solution context are preserved so results can be compared meaningfully.",
+      "sources": [
+        "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001"
+      ],
+      "boundary": "A laboratory concentration without sampling context does not automatically identify root cause or authorize a recipe change."
+    },
+    {
+      "id": "GROW-080-C08",
+      "statement": "Corrective nutrition actions should be verified with follow-up plant observations and compatible root-zone, solution or tissue measurements rather than closed solely because a feed adjustment was made.",
+      "sources": [
+        "REF-CANNABIS-NUTRIENT-DEFICIENCY-2023-001",
+        "REF-CANNABIS-VEG-NPK-2024-001"
+      ],
+      "boundary": "Process correction does not prove recovery until crop and measurement evidence support it."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "nutrient-diagnosis evidence hierarchy",
+    "symptom distribution and chronology worksheet",
+    "root-zone/water/formulation context review",
+    "tissue/media/solution sampling and chain-of-custody boundary",
+    "deficiency-versus-toxicity-versus-lockout differential",
+    "stage/system/genotype specification record",
+    "nutrient change authorization workflow",
+    "post-correction verification plan",
+    "nutrient deviation/CAPA record",
+    "feed-chart and study-transfer limitation statement"
+  ],
+  "releaseGates": [
+    "claim-level plant-nutrition review",
+    "sampling/laboratory-method review",
+    "facility-specific crop/system validation",
+    "chemical/fertilizer label and safety review where applicable",
+    "accessibility review",
+    "independent release review"
+  ]
+}
