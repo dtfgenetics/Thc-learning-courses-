@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-008-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why perform regression checks after a controls change?",
+  "choices": [
+    "A fix can unintentionally affect alarms, sequencing, neighboring zones or logging.",
+    "Regression checks are only for software developers.",
+    "They replace the original failed test.",
+    "They are unnecessary after repair."
+  ],
+  "correct": 0,
+  "rationale": "Related functions can be altered by configuration or hardware changes.",
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}
