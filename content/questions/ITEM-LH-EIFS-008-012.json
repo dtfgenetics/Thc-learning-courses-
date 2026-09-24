@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A fault recurs after the event was closed. What should happen?",
   "choices": [
-    "Reopen the investigation and reassess cause/effectiveness evidence.",
     "Treat it as unrelated automatically.",
     "Delete the prior record.",
-    "Repeat the same repair without review."
+    "Repeat the same repair without review.",
+    "Reopen the investigation and reassess cause/effectiveness evidence."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Recurrence is evidence that the earlier model or effectiveness check may have been incomplete.",
   "references": [
     "REF-ASTM-D8403-001",
