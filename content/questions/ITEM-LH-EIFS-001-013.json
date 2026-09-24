@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-001-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which environmental report is strongest?",
+  "choices": [
+    "One that records instrument ID, location, units, time, verification status, operating state, observed pattern and limitations.",
+    "One that records only the controller setpoint.",
+    "One that states a cause without measurements.",
+    "One that deletes outlier readings."
+  ],
+  "correct": 0,
+  "rationale": "Reconstructable reports preserve measurement provenance and context.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}
