@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should source identity and treatment state be recorded with water-test results?",
   "choices": [
-    "They affect whether future comparisons describe the same water condition.",
     "They are decorative metadata.",
     "Only EC matters.",
+    "They affect whether future comparisons describe the same water condition.",
     "They replace laboratory methods."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Water composition can change with source and treatment state.",
   "references": [
     "REF-WATER-RECLAIMED-2026-001"
