@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "id": "CERTIFICATION-CURRICULUM-CONSTRUCTION-STATUS-001",
+  "updated": "2026-09-24",
+  "exactRepositoryHead": "bbd458fea60b38e38824033d490b13209aea233f",
+  "scope": "Fifteen dedicated Technician I/II certification courses only; excludes the separate 420-topic encyclopedia and does not claim professional credential release.",
+  "summary": {
+    "totalCourses": 15,
+    "machineConstructionComplete": 15,
+    "academicallyPublished": 15,
+    "goldStandardPackagesComplete": 0,
+    "certificationEvidenceValidated": 0,
+    "constructionLayerComplete": true
+  },
+  "boundary": "constructionLayerComplete means the dedicated course content/runtime/package work tracked as machine-resolvable by each exact-version course ledger is complete. It does not mean human assessment review, SME/occupational validation, pilot evidence, accessibility approval, calibration, standard setting, secure-form readiness, privacy/security approval, or credential authorization is complete.",
+  "courses": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "version": "1.0.1",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course1-completion-status.json",
+      "remainingHumanActions": [
+        "complete the authoritative 166-task current-baseline review queue using real versioned review records; the queue expands automatically if course objects are added",
+        "technical/curriculum review",
+        "assessment review",
+        "rendered WCAG 2.2 AA visual/accessibility review",
+        "responsive/manual learner UX review",
+        "legal/compliance review",
+        "practical calibration and form-equivalence study",
+        "controlled learner/item pilot",
+        "formal standard setting",
+        "versioned final approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-002",
+      "version": "0.13.0",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course2-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item and definition review",
+        "Practical A performance review",
+        "rendered WCAG 2.2 AA and responsive learner UX review",
+        "evaluator calibration and inter-rater evidence",
+        "controlled learner/item/practical pilot",
+        "applicable standard setting"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "version": "0.2.0",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course3-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "Practical A calibration/performance validation",
+        "rendered accessibility review",
+        "controlled pilot",
+        "standard setting where applicable"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "version": "0.2.0",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course4-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "Practical B calibration/inter-rater/performance validation",
+        "rendered accessibility review",
+        "controlled pilot",
+        "standard setting where applicable"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "version": "0.2.0",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course5-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "Practical C/D/E calibration/inter-rater/performance validation",
+        "rendered accessibility review",
+        "controlled pilot",
+        "standard setting where applicable"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-006",
+      "version": "0.3.0",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course6-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "Practical F calibration/inter-rater/performance validation",
+        "rendered accessibility review",
+        "controlled pilot",
+        "standard setting where applicable"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-007",
+      "version": "0.1.0",
+      "track": "Technician I",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/course7-completion-status.json",
+      "remainingHumanActions": [
+        "technical/occupational review",
+        "instructional/assessment review",
+        "Practical A-F validation",
+        "capstone validation",
+        "evaluator calibration/inter-rater evidence",
+        "controlled pilot",
+        "form-equivalence evidence",
+        "accessibility/accommodation approval",
+        "standard setting/decision-rule approval",
+        "privacy/security/retention approval",
+        "final program release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course1-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-002",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course2-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-003",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course3-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course4-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-005",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course5-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course6-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-007",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course7-completion-status.json",
+      "remainingHumanActions": [
+        "technical/curriculum review",
+        "instructional-design review",
+        "assessment item review",
+        "mapped practical validation",
+        "evaluator calibration/inter-rater evidence",
+        "rendered accessibility review",
+        "controlled learner/item/practical pilot",
+        "standard setting where applicable",
+        "versioned academic/credential release approval"
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-008",
+      "version": "0.3.0",
+      "track": "Technician II",
+      "academicPublication": "published",
+      "machineResolvableWorkComplete": true,
+      "goldStandardPackageComplete": false,
+      "certificationEvidenceValidated": false,
+      "statusFile": "registry/tech2-course8-completion-status.json",
+      "remainingHumanActions": [
+        "technical/occupational review",
+        "instructional/assessment review",
+        "Practical A-G validation",
+        "Senior Technician capstone validation",
+        "evaluator calibration/inter-rater evidence",
+        "controlled pilot",
+        "form-equivalence evidence",
+        "rendered accessibility/accommodation approval",
+        "standard setting/decision rules",
+        "privacy/security/retention approval",
+        "final Technician II release approval"
+      ]
+    }
+  ]
+}
