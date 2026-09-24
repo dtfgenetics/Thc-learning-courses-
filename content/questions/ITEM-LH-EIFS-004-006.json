@@ -11,11 +11,11 @@
   "stem": "A sensor passes one spot check but repeatedly shows impossible step changes during operation. What is the strongest conclusion?",
   "choices": [
     "The spot check proves all data are valid.",
-    "The intermittent pattern still requires investigation of signal, logging, placement or device behavior.",
     "Delete the step changes and close the issue.",
-    "Increase control aggressiveness."
+    "Increase control aggressiveness.",
+    "The intermittent pattern still requires investigation of signal, logging, placement or device behavior."
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "One successful check does not resolve intermittent failure visible in time-series data.",
   "references": [
     "REF-ENV-TEMP-2025-001"
