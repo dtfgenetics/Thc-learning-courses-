@@ -345,6 +345,70 @@
         "Verify that drying trend interpretation considers temperature, humidity, moisture/water-activity behavior, time and spatial/process variation together.",
         "Preserve facility-validated specifications and current QA requirements instead of treating literature examples as universal finished-product limits."
       ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-002",
+      "lessonId": "LESSON-LH-TECH1-002-02",
+      "lessonVersion": "1.3.0",
+      "sourceIds": [
+        "REF-FLOWER-MORPH-2023-001"
+      ],
+      "reviewUse": [
+        "Cross-check morphology-based developmental and reproductive-stage observations against cannabis-specific peer-reviewed morphology evidence.",
+        "Keep visible morphology, developmental timing and causal interpretation separate so a recorded structure is not over-interpreted as proof of a genetic or environmental cause."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-007",
+      "lessonId": "LESSON-LH-TECH1-007-02",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024",
+        "REF-PSU-IRRIGATION-WATER-TESTS-2025"
+      ],
+      "reviewUse": [
+        "Cross-check integrated room inspection against cannabis-specific workplace hazard categories and the need to preserve safe authority boundaries during measurement work.",
+        "Verify irrigation and water observations remain measurement- and context-based rather than converting generic protected-crop examples into universal cannabis setpoints."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-002",
+      "lessonId": "LESSON-LH-TECH2-002-01",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT",
+        "REF-PURDUE-DLI-GREENHOUSE"
+      ],
+      "reviewUse": [
+        "Cross-check representative sensor placement, measurement geometry and environmental context before interpreting trends or controller behavior.",
+        "Verify calibration, placement and measurement quality are treated as prerequisites to decisions rather than assuming every sensor reading is representative."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-007",
+      "lessonId": "LESSON-LH-TECH2-007-04",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-HSE-SHIFT-HANDOVER"
+      ],
+      "reviewUse": [
+        "Cross-check supervisor-ready handoff against established human-factors principles of preparation, two-way communication, written plus verbal transfer and incoming-worker cross-checking.",
+        "Use HSE guidance as a transferable communication model only; facility procedures and U.S. jurisdiction-specific requirements remain controlling."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-008",
+      "lessonId": "LESSON-LH-TECH2-008-01",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-NUTRIENT-DEFICIENCY-001",
+        "REF-IPM-GREENHOUSE-2024-001",
+        "REF-POSTHARVEST-001"
+      ],
+      "reviewUse": [
+        "Cross-check integrated triage so nutrient/root-zone, plant-health/pathogen and process/postharvest explanations remain competing evidence-based hypotheses until discriminating evidence is available.",
+        "Verify the learner preserves uncertainty, conflicting evidence and next-test logic instead of reducing a multi-system case to visual symptom matching."
+      ]
     }
   ]
 }
