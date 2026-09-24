@@ -41,7 +41,16 @@ const record={
     reviewerCount:null,
     notes:null
   },
-  jobTaskAnalysis:{validated:false,populationDefined:false,taskDomainCoverageReviewed:false,currencyReviewed:false,notes:null},
+  jobTaskAnalysis:{
+    validated:false,
+    populationDefined:false,
+    taskDomainCoverageReviewed:false,
+    currencyReviewed:false,
+    publicOccupationalSourceReviewCompleted:false,
+    occupationalSourceBaselineId:null,
+    occupationalSourceBaselineAsOf:null,
+    notes:null
+  },
   smeEmployerValidation:{completed:false,roleRepresentativenessReviewed:false,criticalTasksReviewed:false,scopeOfPracticeReviewed:false,panelistCount:null,notes:null},
   assessmentBlueprint:{weightsFinalized:false,competencyCoverageApproved:false,criticalContentRepresentationApproved:false,cognitiveDemandApproved:false,blueprintVersion:null,notes:null},
   performanceValidation:{

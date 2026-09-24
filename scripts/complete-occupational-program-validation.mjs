@@ -5,7 +5,7 @@ const get=n=>{const i=args.indexOf(n);return i>=0?args[i+1]:null;},has=x=>args.i
 const sourceId=get('--source'),sourceFile=get('--source-file'),authority=get('--authority');
 const reviewerCount=Number(get('--reviewer-count')),panelistCount=Number(get('--panelist-count')),blueprintVersion=get('--blueprint-version');
 if((!sourceId&&!sourceFile)||!authority||!Number.isInteger(reviewerCount)||reviewerCount<1||!Number.isInteger(panelistCount)||panelistCount<1||!blueprintVersion) throw new Error('Usage requires source, authority, reviewer-count>=1, panelist-count>=1, blueprint-version and all completion confirmations');
-const flags=['--confirm-current-courses','--confirm-source-review','--confirm-role-boundaries','--confirm-technical-disposition','--confirm-jta','--confirm-population','--confirm-task-coverage','--confirm-currency','--confirm-sme','--confirm-role-representativeness','--confirm-critical-tasks','--confirm-scope','--confirm-blueprint-weights','--confirm-competency-coverage','--confirm-critical-content','--confirm-cognitive-demand','--confirm-performance-validation','--confirm-critical-decision-coverage'];
+const flags=['--confirm-current-courses','--confirm-source-review','--confirm-public-occupational-baseline','--confirm-role-boundaries','--confirm-technical-disposition','--confirm-jta','--confirm-population','--confirm-task-coverage','--confirm-currency','--confirm-sme','--confirm-role-representativeness','--confirm-critical-tasks','--confirm-scope','--confirm-blueprint-weights','--confirm-competency-coverage','--confirm-critical-content','--confirm-cognitive-demand','--confirm-performance-validation','--confirm-critical-decision-coverage'];
 for(const f of flags) if(!has(f)) throw new Error(f+' is required');
 const readDir=rel=>{const d=path.join(root,rel);if(!fs.existsSync(d))return[];return fs.readdirSync(d).filter(n=>n.endsWith('.json')).map(n=>JSON.parse(fs.readFileSync(path.join(d,n),'utf8')));};
 const source=sourceFile?JSON.parse(fs.readFileSync(path.resolve(root,sourceFile),'utf8')):readDir('content/occupational-program-validation-evidence').find(x=>x.id===sourceId);
@@ -13,6 +13,7 @@ if(!source) throw new Error('Occupational validation source not found');
 if(!['draft','in-progress'].includes(source.status)) throw new Error('Source must be draft/in-progress');
 const programs=new Map(readDir('content/credential-programs').filter(x=>x.id).map(x=>[x.id,x])),courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
 const sourceRegistry=JSON.parse(fs.readFileSync(path.join(root,'registry/public-authoritative-source-supplements.json'),'utf8'));
+const occupationalBaseline=JSON.parse(fs.readFileSync(path.join(root,'registry/public-occupational-source-baseline.json'),'utf8'));
 const program=programs.get(source.credentialProgramId);if(!program||String(program.version)!==String(source.credentialProgramVersion))throw new Error('Stale credential program version');
 for(const lock of source.authorizedCourses??[]){const c=courses.get(lock.courseId);if(!c||String(c.version)!==String(lock.courseVersion))throw new Error('Stale course lock '+lock.courseId);}
 const expected=source.performanceValidation?.practicalsExpected??0;
@@ -28,11 +29,20 @@ record.technicalCurriculumReview={
   sourceReviewRegistryAsOf:sourceRegistry.asOf,
   reviewerCount
 };
-record.jobTaskAnalysis={...record.jobTaskAnalysis,validated:true,populationDefined:true,taskDomainCoverageReviewed:true,currencyReviewed:true};
+record.jobTaskAnalysis={
+  ...record.jobTaskAnalysis,
+  validated:true,
+  populationDefined:true,
+  taskDomainCoverageReviewed:true,
+  currencyReviewed:true,
+  publicOccupationalSourceReviewCompleted:true,
+  occupationalSourceBaselineId:occupationalBaseline.id,
+  occupationalSourceBaselineAsOf:occupationalBaseline.asOf
+};
 record.smeEmployerValidation={...record.smeEmployerValidation,completed:true,roleRepresentativenessReviewed:true,criticalTasksReviewed:true,scopeOfPracticeReviewed:true,panelistCount};
 record.assessmentBlueprint={...record.assessmentBlueprint,weightsFinalized:true,competencyCoverageApproved:true,criticalContentRepresentationApproved:true,cognitiveDemandApproved:true,blueprintVersion};
 record.performanceValidation={...record.performanceValidation,practicalsValidated:expected,capstoneValidated:record.performanceValidation?.capstoneRequired===true?true:record.performanceValidation?.capstoneValidated,criticalDecisionCoverageApproved:true,unresolvedCriticalIssues:0};
 record.summary='Evidence-complete occupational program validation derived from '+source.id+' for '+source.credentialProgramId+'@'+source.credentialProgramVersion+'.';
-record.evidenceRefs=[...new Set([...(source.evidenceRefs??[]),source.id,sourceRegistry.id])];record.limitations=[...(source.limitations??[]),'Evidence-complete does not itself constitute final program approval or credential authorization.'];
+record.evidenceRefs=[...new Set([...(source.evidenceRefs??[]),source.id,sourceRegistry.id,occupationalBaseline.id])];record.limitations=[...(source.limitations??[]),'Evidence-complete does not itself constitute final program approval or credential authorization.'];
 if(write){const d=path.join(root,'content/occupational-program-validation-evidence');const f=path.join(d,record.id+'.json');if(fs.existsSync(f))throw new Error('Refusing overwrite');fs.writeFileSync(f,JSON.stringify(record,null,2)+'\n');}
 console.log(JSON.stringify({wroteFile:write,record},null,2));

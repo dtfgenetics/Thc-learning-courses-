@@ -123,7 +123,10 @@
         "validated",
         "populationDefined",
         "taskDomainCoverageReviewed",
-        "currencyReviewed"
+        "currencyReviewed",
+        "publicOccupationalSourceReviewCompleted",
+        "occupationalSourceBaselineId",
+        "occupationalSourceBaselineAsOf"
       ],
       "properties": {
         "validated": {
@@ -143,6 +146,23 @@
             "string",
             "null"
           ]
+        },
+        "publicOccupationalSourceReviewCompleted": {
+          "type": "boolean"
+        },
+        "occupationalSourceBaselineId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "occupationalSourceBaselineAsOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
         }
       },
       "additionalProperties": false

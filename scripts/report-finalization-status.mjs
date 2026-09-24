@@ -35,6 +35,7 @@ const productionEvidence=runJson('scripts/report-production-evidence-reconciliat
 const releaseDependencies=runJson('scripts/report-certification-release-dependencies.mjs',['--json']);
 const executionQueue=runJson('scripts/report-certification-execution-work-queue.mjs',['--json']);
 const sourceHealth=runJson('scripts/report-certification-source-health.mjs',['--json']);
+const occupationalSourceBaseline=runJson('scripts/build-public-occupational-source-baseline.mjs',['--json']);
 
 const falseSystemGates=[];
 for(const [areaName,area] of Object.entries(readiness.areas??{})){
@@ -84,7 +85,13 @@ const output={
     productionControls:productionEvidence.summary,
     releaseDependencies:releaseDependencies.summary,
     executionWorkQueue:executionQueue.summary,
-    sourceProvenance:sourceHealth.summary
+    sourceProvenance:sourceHealth.summary,
+    occupationalSourceBaseline:{
+      baselineId:occupationalSourceBaseline.baselineId,
+      baselineAsOf:occupationalSourceBaseline.baselineAsOf,
+      programPackets:occupationalSourceBaseline.packetCount,
+      programs:occupationalSourceBaseline.programs
+    }
   },
   sourceProvenance:{
     structuralProblems:sourceHealth.structuralProblems,
@@ -93,6 +100,7 @@ const output={
   },
   priorities:[
     'close any remaining repository structural/evidence/source-integrity defects reported by the certification, production and source-provenance reconcilers',
+    'use the public occupational-source baseline plus exact-version course source packets during real cannabis-specific JTA/SME technical review',
     'complete real exact-version human assessment, technical/occupational and accessibility review evidence in dependency-safe order',
     'execute controlled pilots and practical/capstone validation/calibration, then analyze item and inter-rater evidence',
     'perform formal standard setting and secure operational form equivalence/security review',
