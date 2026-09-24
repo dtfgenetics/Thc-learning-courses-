@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Who should service a suspected CO2 regulator or piping fault?",
   "choices": [
-    "A qualified person following facility compressed-gas procedures.",
     "Any crop worker.",
     "The nearest learner.",
-    "Anyone with a wrench."
+    "Anyone with a wrench.",
+    "A qualified person following facility compressed-gas procedures."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Compressed-gas service requires controlled qualified work.",
   "references": [
     "REF-OSHA-CO2-SAFETY-2026",
