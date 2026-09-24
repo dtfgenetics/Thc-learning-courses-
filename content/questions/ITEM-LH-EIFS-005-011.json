@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-04",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A recipe requires 2.5 L concentrate per 1000 L final solution. How much concentrate is required for 600 L?",
+  "choices": [
+    "1.0 L",
+    "1.5 L",
+    "2.5 L",
+    "4.0 L"
+  ],
+  "correct": 1,
+  "rationale": "2.5 × 600 / 1000 = 1.5 L.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}
