@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why must occupational CO2 exposure limits not be used as cultivation enrichment targets?",
   "choices": [
-    "They are worker-safety limits, not crop-performance recommendations.",
     "They are lighting values.",
     "They describe root-zone EC.",
+    "They are worker-safety limits, not crop-performance recommendations.",
     "They are fertilizer labels."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Worker exposure limits are safety boundaries, not crop setpoints.",
   "references": [
     "REF-OSHA-CO2-SAFETY-2026"
