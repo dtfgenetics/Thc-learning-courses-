@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why perform regression checks after a controls change?",
   "choices": [
-    "A fix can unintentionally affect alarms, sequencing, neighboring zones or logging.",
     "Regression checks are only for software developers.",
     "They replace the original failed test.",
+    "A fix can unintentionally affect alarms, sequencing, neighboring zones or logging.",
     "They are unnecessary after repair."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Related functions can be altered by configuration or hardware changes.",
   "references": [
     "REF-ASTM-D8403-001",
