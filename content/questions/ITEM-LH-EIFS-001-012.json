@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Crop symptoms and a verified handheld meter disagree with an unverified controller sensor. What is the strongest next step?",
   "choices": [
-    "Verify the installed sensor's placement/calibration before changing environmental targets.",
     "Change targets until the controller looks correct.",
     "Ignore the handheld meter.",
-    "Diagnose disease from the crop symptoms alone."
+    "Diagnose disease from the crop symptoms alone.",
+    "Verify the installed sensor's placement/calibration before changing environmental targets."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Measurement quality should be resolved before setpoint changes or causal conclusions.",
   "references": [
     "REF-ENV-TEMP-2025-001",
