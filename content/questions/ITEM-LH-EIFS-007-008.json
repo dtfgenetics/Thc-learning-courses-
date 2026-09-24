@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Input EC stays stable while root-zone EC rises over several cycles. What should be investigated?",
   "choices": [
-    "Water balance, delivery, uptake and drainage/concentration before increasing feed concentration.",
     "Only the fertilizer label.",
     "Only light spectrum.",
+    "Water balance, delivery, uptake and drainage/concentration before increasing feed concentration.",
     "Nothing, because input EC is stable."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Root-zone EC can diverge from input EC through water and solute dynamics.",
   "references": [
     "REF-ROOTZONE-NUTRIENT-002",
