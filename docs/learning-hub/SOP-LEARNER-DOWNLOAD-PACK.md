@@ -28,7 +28,21 @@ The controlled Master Deliverable Register now resolves all **24** THC-GROW SOP 
 
 - **4 packages** — GROW-042, GROW-050, GROW-060, and GROW-070 — have exact scientific-SOP, learner-guide, QA-record, and handoff Drive IDs recorded in the ingestion registry.
 - **3 additional packages** — GROW-001, GROW-010, and GROW-034 — have controlled Drive package/source locations and remain in legal/safety review, binary recovery, or source-transfer/review states.
-- **17 targets** are explicitly source-mapped/planned in the controlled register and still require full controlled-package authoring.
-- **0 packages** are release-approved by this reconciliation.
+- **17 targets** that were previously source-mapped/planned now have repository-native controlled draft packages. Each package contains an evidence plan, scientific SOP draft, learner-guide draft, implementation handoff, records template, package manifest, and a fail-closed QA/release state.
+- **0 packages** are release-approved by this reconciliation or by draft authoring.
 
 Inventory identification is not source approval. Every package stays fail-closed until its own review, validation, accessibility, safety/engineering where applicable, and release evidence are complete.
+
+
+## Repository draft-package coverage — 2026-09-24
+
+The reuse-first authoring queue is now complete at the controlled-draft layer:
+
+- **17/17 evidence plans created**
+- **17/17 five-part repository draft packages created**
+- **0 authoring-not-started targets remain**
+- **0 packages are operationally release-approved**
+
+Repository packages live under `docs/sop-packages/<GROW-ID>/` with manifests under `registry/sop-packages/` and records templates under `apps/web/public/downloads/sop-packages/`.
+
+Draft creation is not release. The remaining package work is package-specific scientific/technical review, facility criteria and method reconciliation, safety/engineering/legal review where applicable, rendered accessibility/manual QA, field/method validation where required, and explicit independent release approval.
