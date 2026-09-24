@@ -20,11 +20,15 @@ const av=schema('schemas/rendered-accessibility-review-evidence.schema.json');if
 
 const o=run('scripts/create-occupational-program-validation-record.mjs',['--program','CREDPROG-CULT-TECH-I-001','--authority','TEST']);
 const of=path.join(tmp,'occ.json');fs.writeFileSync(of,JSON.stringify(o));
-const flags=['--confirm-current-courses','--confirm-source-review','--confirm-role-boundaries','--confirm-technical-disposition','--confirm-jta','--confirm-population','--confirm-task-coverage','--confirm-currency','--confirm-sme','--confirm-role-representativeness','--confirm-critical-tasks','--confirm-scope','--confirm-blueprint-weights','--confirm-competency-coverage','--confirm-critical-content','--confirm-cognitive-demand','--confirm-performance-validation','--confirm-critical-decision-coverage'];
+const flags=['--confirm-current-courses','--confirm-source-review','--confirm-public-occupational-baseline','--confirm-role-boundaries','--confirm-technical-disposition','--confirm-jta','--confirm-population','--confirm-task-coverage','--confirm-currency','--confirm-sme','--confirm-role-representativeness','--confirm-critical-tasks','--confirm-scope','--confirm-blueprint-weights','--confirm-competency-coverage','--confirm-critical-content','--confirm-cognitive-demand','--confirm-performance-validation','--confirm-critical-decision-coverage'];
 const oc=run('scripts/complete-occupational-program-validation.mjs',['--source-file',of,'--authority','TEST-AUTH','--reviewer-count','2','--panelist-count','3','--blueprint-version','TEST-BLUEPRINT',...flags]);
 const ov=schema('schemas/occupational-program-validation-evidence.schema.json');if(!ov(oc))throw new Error(JSON.stringify(ov.errors));if(oc.status!=='evidence-complete'||oc.performanceValidation.practicalsValidated!==oc.performanceValidation.practicalsExpected)throw new Error('occupational completion failed');
 if(oc.technicalCurriculumReview.publicSourceReviewCompleted!==true)throw new Error('occupational source review not recorded');
 const sourceRegistry=JSON.parse(fs.readFileSync('registry/public-authoritative-source-supplements.json','utf8'));
 if(oc.technicalCurriculumReview.sourceReviewRegistryId!==sourceRegistry.id||oc.technicalCurriculumReview.sourceReviewRegistryAsOf!==sourceRegistry.asOf)throw new Error('occupational source review provenance mismatch');
 if(!oc.evidenceRefs.includes(sourceRegistry.id))throw new Error('occupational source review evidence reference missing');
+const occupationalBaseline=JSON.parse(fs.readFileSync('registry/public-occupational-source-baseline.json','utf8'));
+if(oc.jobTaskAnalysis.publicOccupationalSourceReviewCompleted!==true)throw new Error('public occupational baseline review not recorded');
+if(oc.jobTaskAnalysis.occupationalSourceBaselineId!==occupationalBaseline.id||oc.jobTaskAnalysis.occupationalSourceBaselineAsOf!==occupationalBaseline.asOf)throw new Error('occupational baseline provenance mismatch');
+if(!oc.evidenceRefs.includes(occupationalBaseline.id))throw new Error('occupational baseline evidence reference missing');
 console.log('Human validation completion transitions: PASS (pilot, accessibility, occupational).');
