@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-EIFS-008-04",
+  "title": "Recovery Verification, Regression Checks & Reliability Learning",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-008-04"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Repair completion is not proof of restored system performance. Recovery verification repeats the relevant commissioning or operating checks and confirms that corrective action did not create a new failure elsewhere.",
+    "vocabulary": [
+      {
+        "term": "Regression check",
+        "definition": "A verification that previously functioning related behaviors still work after a change or repair."
+      },
+      {
+        "term": "Recovery verification",
+        "definition": "Post-correction evidence showing that the affected function again meets defined acceptance criteria."
+      },
+      {
+        "term": "Recurrence",
+        "definition": "Return of the same or materially similar failure after corrective action."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Repeat the original failed test",
+        "body": "Use the same or equivalently controlled measurement that demonstrated the fault so before/after evidence is comparable.",
+        "references": [
+          "REF-ASTM-D8403-001"
+        ]
+      },
+      {
+        "title": "Check related functions",
+        "body": "Configuration or equipment changes can affect alarms, neighboring zones, sequencing or data logging. Verify critical related behavior rather than testing only the repaired component.",
+        "references": [
+          "REF-ENV-TEMP-2025-001",
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Recurrence reopens the model",
+        "body": "If the problem returns, review whether the root cause was incomplete, the effectiveness check was too weak or another condition was missed.",
+        "references": [
+          "REF-ASTM-D8403-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "After replacing a failed irrigation valve, repeat catch testing and confirm neighboring zone behavior plus alarm/logging state before closing the event."
+    ],
+    "commonMistakes": [
+      "Closing when a replacement part is installed.",
+      "Testing only the component and not the process outcome.",
+      "Ignoring recurrence because the original work order is closed."
+    ],
+    "practicalApplication": "Create a recovery-verification checklist for one environmental-control and one irrigation-control repair.",
+    "summary": "Reliability improves when every corrective action is followed by comparable effectiveness evidence and regression checks."
+  }
+}
