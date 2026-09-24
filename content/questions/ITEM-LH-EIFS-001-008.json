@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-001-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-LIGHT-001",
+  "objective": "LO-LH-EIFS-001-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two rooms have the same average PPFD but different photoperiods. What is most likely?",
+  "choices": [
+    "Their DLI can differ because daily light depends on both intensity and duration.",
+    "Their DLI must be identical.",
+    "Photoperiod affects only temperature.",
+    "PPFD cannot be measured indoors."
+  ],
+  "correct": 0,
+  "rationale": "DLI depends on the photon flux integrated across the light duration.",
+  "references": [
+    "REF-PURDUE-DLI-GREENHOUSE",
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}
