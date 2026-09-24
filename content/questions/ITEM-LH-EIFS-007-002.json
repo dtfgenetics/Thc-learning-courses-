@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A root-zone probe is moved to a new position and readings change sharply. What is the strongest first interpretation?",
   "choices": [
-    "Placement may have changed the measurement context and should be verified.",
     "The crop changed instantly.",
     "Feed EC is definitely wrong.",
+    "Placement may have changed the measurement context and should be verified.",
     "The old reading must be deleted."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Sensor placement can alter the represented root-zone condition.",
   "references": [
     "REF-IRRIGATION-001"
