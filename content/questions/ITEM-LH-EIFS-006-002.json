@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "One emitter is low while source pressure and neighboring emitters are stable. What is the strongest first interpretation?",
   "choices": [
-    "A localized delivery/emitter problem.",
     "A facility-wide nutrient issue.",
     "A room-wide pressure failure.",
+    "A localized delivery/emitter problem.",
     "A lighting problem."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Stable surrounding conditions with one low emitter support a local fault hypothesis.",
   "references": [
     "REF-IRRIGATION-001"
