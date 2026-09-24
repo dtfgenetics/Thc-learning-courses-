@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A source has acceptable pH and EC. What additional conclusion is justified about contaminant safety?",
   "choices": [
-    "None without source-specific risk-based chemical/microbiological verification.",
     "It is automatically safe for every use.",
     "Trace contaminants cannot be present.",
-    "No further testing is ever needed."
+    "No further testing is ever needed.",
+    "None without source-specific risk-based chemical/microbiological verification."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Routine pH/EC measurements do not constitute a contaminant panel.",
   "references": [
     "REF-WATER-RECLAIMED-2026-001"
