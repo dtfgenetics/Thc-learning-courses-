@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "CERTIFICATION-VALIDATION-EXECUTION-READINESS-001",
+  "updated": "2026-09-24",
+  "scope": "Repository/tooling preparation for the seven-wave Technician I/II certification validation campaign. This registry does not convert preparation into human, pilot, deployment or governance evidence.",
+  "overallState": "execution-ready-evidence-collection-pending",
+  "summary": {
+    "waves": 7,
+    "wavesPrepared": 7,
+    "humanOrFieldEvidenceComplete": 0,
+    "wavesApproved": 0,
+    "productionControls": 13,
+    "productionControlsApproved": 0,
+    "candidateGovernanceOperationallyAuthorized": false
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "name": "Occupational / technical validation",
+      "preparationState": "ready",
+      "evidenceState": "not-started",
+      "coverage": {
+        "programs": 2,
+        "techITasks": 13,
+        "techIITasks": 12
+      },
+      "evidence": [
+        "registry/occupational-validation-instruments.json",
+        "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_I_JTA.md",
+        "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_II_JTA.md"
+      ],
+      "nextExecution": "Recruit representative current cannabis cultivation SMEs/employers, collect independent ratings, reconcile tasks/role boundaries, record exact-version occupational approval evidence."
+    },
+    {
+      "wave": 2,
+      "name": "Exact-version assessment review",
+      "preparationState": "ready",
+      "evidenceState": "not-started",
+      "coverage": {
+        "courses": 15,
+        "conventionalFinals": 13
+      },
+      "evidence": [
+        "docs/CERTIFICATION-ASSESSMENT-REVIEW-CRITERIA.md",
+        "scripts/build-review-packets.mjs",
+        "registry/certification-validation-execution.json"
+      ],
+      "nextExecution": "Complete exact-version human assessment review records for applicable assessment definitions/items using the strengthened construct, key, fairness, accessibility and security criteria."
+    },
+    {
+      "wave": 3,
+      "name": "Rendered accessibility / learner UX",
+      "preparationState": "ready",
+      "evidenceState": "not-started",
+      "coverage": {
+        "coursePackets": 15
+      },
+      "evidence": [
+        "docs/CERTIFICATION-RENDERED-ACCESSIBILITY-QA.md",
+        "scripts/test-certification-rendered-qa-packets.mjs"
+      ],
+      "nextExecution": "Run manual keyboard, screen-reader, zoom/reflow, mobile/tablet/desktop and assessment-interaction review against exact deployed builds; remediate and retest."
+    },
+    {
+      "wave": 4,
+      "name": "Practical / capstone assessor calibration",
+      "preparationState": "ready",
+      "evidenceState": "not-started",
+      "coverage": {
+        "performanceAssessments": 15,
+        "technicianI": 7,
+        "technicianII": 8
+      },
+      "evidence": [
+        "registry/assessor-calibration-packet-coverage.json",
+        "docs/PILOT-CALIBRATION-EVIDENCE-PIPELINE.md"
+      ],
+      "nextExecution": "Have paired assessors independently score common samples, aggregate inter-rater evidence, resolve critical-failure disagreements, revise/version rubrics when needed."
+    },
+    {
+      "wave": 5,
+      "name": "Controlled pilot + item analysis",
+      "preparationState": "ready",
+      "evidenceState": "not-started",
+      "coverage": {
+        "courseIntakeAnchors": 15
+      },
+      "evidence": [
+        "registry/certification-pilot-intake-manifest.json",
+        "docs/assessment/CERTIFICATION-PILOT-PRIVATE-INTAKE-SPEC.md",
+        "scripts/build-pilot-evidence-from-results.mjs"
+      ],
+      "nextExecution": "Recruit representative pilot participants, collect private exact-version response/performance data, aggregate de-identified evidence, disposition findings and re-pilot meaningful revisions."
+    },
+    {
+      "wave": 6,
+      "name": "Formal standard setting",
+      "preparationState": "ready",
+      "evidenceState": "blocked-until-prerequisites",
+      "coverage": {
+        "courses": 15,
+        "conventionalFinals": 13,
+        "integratedPerformance": 2
+      },
+      "evidence": [
+        "registry/standard-setting-preparation-coverage.json",
+        "docs/STANDARD-SETTING-AND-SECURE-FORM-GOVERNANCE.md"
+      ],
+      "nextExecution": "After review/pilot/calibration prerequisites, run panel standard-setting studies and separately record governance adoption of exact-version decision rules."
+    },
+    {
+      "wave": 7,
+      "name": "Secure forms + credential authorization + production evidence",
+      "preparationState": "ready",
+      "evidenceState": "blocked-until-prerequisites",
+      "coverage": {
+        "secureFormCourses": 13,
+        "credentialPrograms": 2,
+        "productionControls": 13
+      },
+      "evidence": [
+        "registry/secure-form-preparation-coverage.json",
+        "scripts/build-credential-authorization-kits.mjs",
+        "registry/production-validation-evidence.json",
+        "registry/candidate-governance-controls.json"
+      ],
+      "nextExecution": "Build/validate private operational forms, complete privacy/legal governance, deploy/validate all production controls, then reconcile and approve exact-version Technician I/II credential authorization."
+    }
+  ],
+  "truthRules": [
+    "prepared means repository structures, protocols, exact-version anchors, forms or scripts are ready for real execution",
+    "evidence-complete requires actual human, learner, assessor, panel, facility or deployment evidence as applicable",
+    "approved requires the designated authority to approve the exact current evidence/version",
+    "owner approval of source-backed academic content does not manufacture pilot, inter-rater, accessibility, standard-setting, privacy/legal, security or deployment evidence"
+  ]
+}
