@@ -16,7 +16,7 @@
     "priority2": 6,
     "existingModuleReuseMapped": 17,
     "newDiseaseSpecificDepthTarget": "GROW-100",
-    "evidencePlansSeeded": 5
+    "evidencePlansSeeded": 6
   },
   "targets": [
     {
@@ -244,7 +244,12 @@
         "media/system-specific testing"
       ],
       "sequence": 8,
-      "status": "ready-for-controlled-package-authoring"
+      "status": "evidence-plan-seeded",
+      "evidencePlan": "registry/sop-evidence-plans/GROW-040.json",
+      "newControlledReferences": [
+        "REF-CANNABIS-SUBSTRATE-2020-001",
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+      ]
     },
     {
       "id": "GROW-080",

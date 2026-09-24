@@ -1,0 +1,127 @@
+{
+  "id": "GROW-040",
+  "title": "Growing media selection and preparation — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define an evidence-led growing-media SOP foundation that treats substrate physical/chemical properties, container geometry, irrigation behavior and crop response as an interacting root-zone system.",
+  "sourceIds": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001",
+    "REF-SOIL-CEC-001",
+    "REF-CANNABIS-SUBSTRATE-2020-001",
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+  ],
+  "scope": {
+    "included": [
+      "media identity and batch traceability",
+      "particle/structure and water-air balance",
+      "water-holding and drainage behavior",
+      "container geometry effects",
+      "pH/EC and chemical buffering context",
+      "peat/coir/soilless material differences",
+      "media-irrigation compatibility",
+      "root development and crop-response verification"
+    ],
+    "excludedUntilValidated": [
+      "one universal peat/coco ratio",
+      "one universal air-porosity or water-holding target for every container and crop stage",
+      "one irrigation schedule applied unchanged across different media",
+      "assumption that equal feed EC produces equal root-zone EC across substrates",
+      "claim that one medium is universally superior for all genotypes and systems"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-040-C01",
+      "statement": "Growing-media physical properties determine how water and air are stored and released around roots, so media selection and irrigation strategy should be evaluated together rather than as separate decisions.",
+      "sources": [
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+        "REF-IRRIGATION-001"
+      ],
+      "boundary": "Reported porosity or water-holding ranges are not universal cannabis release specifications because material source, particle distribution, compaction, container geometry and measurement method matter."
+    },
+    {
+      "id": "GROW-040-C02",
+      "statement": "Cannabis growth, root development and yield can differ among peat-based, fibre-amended and coir substrates under otherwise defined conditions, and genotype can modify the response.",
+      "sources": [
+        "REF-CANNABIS-SUBSTRATE-2020-001"
+      ],
+      "boundary": "The tested two-genotype pot experiment does not establish a universal ranking of media for other cultivars, facilities or irrigation programs."
+    },
+    {
+      "id": "GROW-040-C03",
+      "statement": "Peat, coir and other soilless materials differ in physical structure, water retention, aeration, chemical buffering and nutrient behavior, so material identity and supplier/batch characteristics should be preserved in records.",
+      "sources": [
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+      ],
+      "boundary": "Generic material names such as 'coco' or 'peat mix' do not prove the exact physical or chemical properties of a delivered batch."
+    },
+    {
+      "id": "GROW-040-C04",
+      "statement": "Container height and geometry interact with media pore structure to influence vertical water distribution, drainage and air-filled space, making container configuration part of root-zone interpretation.",
+      "sources": [
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+        "REF-IRRIGATION-001"
+      ],
+      "boundary": "Container effects should be verified in the actual media/container combination rather than inferred only from nominal container volume."
+    },
+    {
+      "id": "GROW-040-C05",
+      "statement": "Equal irrigation input or feed EC does not guarantee equal root-zone moisture or solute concentration across media because water retention, drainage, evapotranspiration and ion-buffering behavior can differ.",
+      "sources": [
+        "REF-ROOTZONE-NUTRIENT-002",
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+      ],
+      "boundary": "A media change should not be compensated automatically by changing feed concentration before delivery, drainage and root-zone trends are measured."
+    },
+    {
+      "id": "GROW-040-C06",
+      "statement": "Media pH, EC and exchange/buffering characteristics affect nutrient availability and interpretation, so acceptance and troubleshooting should preserve both physical and chemical evidence.",
+      "sources": [
+        "REF-SOIL-CEC-001",
+        "REF-ROOTZONE-NUTRIENT-002",
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+      ],
+      "boundary": "A single pH or EC measurement does not describe all nutrient availability or identify the cause of poor root performance."
+    },
+    {
+      "id": "GROW-040-C07",
+      "statement": "Media preparation and amendment should be controlled by exact material identity, batch, measured condition and intended production system so repeated crops can distinguish material variability from crop or irrigation effects.",
+      "sources": [
+        "REF-CANNABIS-SOILLESS-MEDIA-2025-001",
+        "REF-CANNABIS-SUBSTRATE-2020-001"
+      ],
+      "boundary": "A recipe copied by volume without verifying material condition, moisture state and source can change effective physical properties between batches."
+    },
+    {
+      "id": "GROW-040-C08",
+      "statement": "A media change should be verified after planting through root development, irrigation/drainage behavior, moisture dynamics, root-zone chemistry and crop response before the change is considered successful.",
+      "sources": [
+        "REF-CANNABIS-SUBSTRATE-2020-001",
+        "REF-ROOTZONE-NUTRIENT-002"
+      ],
+      "boundary": "Acceptable appearance during early growth does not prove later-stage irrigation, nutrition or yield performance."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "media specification and supplier/batch identity record",
+    "incoming media inspection and sampling plan",
+    "physical-property verification boundary",
+    "pH/EC and chemical-condition check",
+    "amendment/preparation batch record",
+    "container/media compatibility review",
+    "irrigation qualification after media change",
+    "root-zone trend monitoring plan",
+    "media deviation and substitution authorization",
+    "post-change crop-performance verification"
+  ],
+  "releaseGates": [
+    "claim-level substrate/root-zone review",
+    "measurement-method review",
+    "supplier/material specification reconciliation",
+    "facility-specific irrigation/container validation",
+    "accessibility review",
+    "independent release review"
+  ]
+}
