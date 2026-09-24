@@ -40,6 +40,9 @@ const schema=JSON.parse(fs.readFileSync(path.join(root,'schemas/credential-autho
 const validate=ajv.compile(schema);
 if(!validate(record)) throw new Error('credential authorization intake schema failure: '+JSON.stringify(validate.errors));
 if(record.status!=='draft'||record.governance.finalReleaseDecision!=='pending') throw new Error('credential authorization intake fabricated release state');
+for(const key of ['validityType','validityDays','renewalRequired','renewalWindowDays','renewalMethod']){
+  if(Object.prototype.hasOwnProperty.call(record.lifecycle,key)) throw new Error('credential authorization intake fabricated lifecycle policy field '+key);
+}
 
 const synthetic=structuredClone(record);
 synthetic.status='evidence-complete';
@@ -58,6 +61,22 @@ if(kits.status!==0) throw new Error(kits.stderr||kits.stdout);
 const kitOut=JSON.parse(kits.stdout);
 if(kitOut.kitCount!==2) throw new Error('expected two credential authorization kits');
 if(kitOut.kits.some(k=>k.productionControlsTotal!==13)) throw new Error('credential authorization kits must include 13 production controls');
+
+for(const badArgs of [
+  ['--validity-type','indefinite','--validity-days','365','--renewal-required','false','--renewal-method','none'],
+  ['--validity-type','indefinite','--renewal-required','true','--renewal-window-days','30','--renewal-method','reassessment'],
+  ['--validity-type','fixed-term','--validity-days','365','--renewal-required','true','--renewal-window-days','30','--renewal-method','none'],
+  ['--validity-type','fixed-term','--validity-days','365','--renewal-required','false','--renewal-method','reassessment']
+]){
+  const bad=spawnSync(process.execPath,[
+    'scripts/complete-credential-authorization-evidence.mjs',
+    '--source-file','DOES-NOT-MATTER.json','--authority','TEST',
+    ...badArgs,
+    '--confirm-issuer-authority','--confirm-signing-controls','--confirm-public-verification',
+    '--confirm-revocation-policy','--confirm-appeals-policy','--confirm-lifecycle-policy','--confirm-privacy-retention-policy'
+  ],{cwd:root,encoding:'utf8'});
+  if(bad.status===0) throw new Error('invalid lifecycle policy combination unexpectedly succeeded: '+badArgs.join(' '));
+}
 
 const blocked=spawnSync(process.execPath,[
   'scripts/approve-credential-authorization-evidence.mjs',

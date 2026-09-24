@@ -20,7 +20,7 @@ const record={
   verification:{publicVerificationEnabled:false,minimumNecessaryProjection:false,tamperDetectionEnabled:false,statusLookupSupportsRevocation:false,notes:null},
   revocation:{policyApproved:false,authorizedDecisionMakerRequired:true,reasonRecorded:true,effectiveDateRecorded:true,publicStatusUpdated:false,auditTrailRequired:true,notes:null},
   appeals:{policyApproved:false,preserveOriginalRecord:true,independentOrAuthorizedReviewRequired:true,decisionRecordRequired:true,secureAnswerDisclosureProhibited:true,notes:null},
-  lifecycle:{validityPolicyApproved:false,renewalPolicyApproved:false,supersessionPolicyApproved:false,expirationBehaviorDefined:false,validityType:'indefinite',validityDays:null,renewalRequired:false,renewalWindowDays:null,renewalMethod:'none',notes:null},
+  lifecycle:{validityPolicyApproved:false,renewalPolicyApproved:false,supersessionPolicyApproved:false,expirationBehaviorDefined:false,notes:null},
   privacyRetention:{policyApproved:false,dataMinimization:true,roleBasedAccess:true,retentionScheduleApproved:false,auditTrailRequired:true,deletionOrDispositionProcedureApproved:false,candidateGovernanceControlsVersion:String(controls.version),notes:null},
   productionControls:{persistentStoreValidated:false,authorizationValidated:false,backupRestoreValidated:false,monitoringValidated:false,signingIntegrationValidated:false,secureAssessmentStoreValidated:false,notes:null},
   governance:{programApproval:false,assessmentApproval:false,accessibilityApproval:false,privacyLegalApproval:false,securityApproval:false,organizationalApproval:false,finalReleaseDecision:'pending',decisionAuthority:null,decisionDate:null,rationale:null},

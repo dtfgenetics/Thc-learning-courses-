@@ -13,8 +13,13 @@ if(!['indefinite','fixed-term'].includes(validityType))throw new Error('--validi
 const renewalRequired=renewalRequiredRaw==='true'?true:renewalRequiredRaw==='false'?false:null;if(renewalRequired===null)throw new Error('--renewal-required must be true or false');
 const validityDays=validityDaysRaw===null?null:Number(validityDaysRaw),renewalWindowDays=renewalWindowRaw===null?null:Number(renewalWindowRaw);
 if(validityType==='fixed-term'&&(!Number.isInteger(validityDays)||validityDays<1))throw new Error('fixed-term validity requires --validity-days >=1');
+if(validityType==='indefinite'&&validityDaysRaw!==null)throw new Error('indefinite validity must not specify --validity-days');
+if(renewalRequired&&validityType!=='fixed-term')throw new Error('renewal-required=true requires fixed-term validity');
 if(renewalRequired&&(!Number.isInteger(renewalWindowDays)||renewalWindowDays<1))throw new Error('renewal requires --renewal-window-days >=1');
 if(!['none','reassessment','performance-reassessment','full-recredential'].includes(renewalMethod))throw new Error('invalid --renewal-method');
+if(renewalRequired&&renewalMethod==='none')throw new Error('renewal-required=true requires a renewal method');
+if(!renewalRequired&&renewalMethod!=='none')throw new Error('renewal-required=false requires --renewal-method none');
+if(!renewalRequired&&renewalWindowRaw!==null)throw new Error('renewal-required=false must not specify --renewal-window-days');
 
 const readDir=rel=>{const d=path.join(root,rel);if(!fs.existsSync(d))return[];return fs.readdirSync(d).filter(n=>n.endsWith('.json')).map(n=>JSON.parse(fs.readFileSync(path.join(d,n),'utf8')));};
 const source=sourceFile?JSON.parse(fs.readFileSync(path.resolve(root,sourceFile),'utf8')):readDir('content/credential-authorization-evidence').find(x=>x.id===sourceId);
