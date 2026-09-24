@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-001-04",
+  "title": "Crop Response, Microclimates & Measurement Disagreement",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-001-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001",
+    "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "When crop response and sensors disagree, specialists should not force the evidence to match one source. Instead, compare instrument validity, spatial pattern, leaf conditions, irrigation timing, airflow and crop distribution to determine whether the disagreement reflects a real microclimate, sensor error or another process.",
+    "vocabulary": [
+      {
+        "term": "Microclimate",
+        "definition": "A local environmental condition that differs meaningfully from the room or facility average."
+      },
+      {
+        "term": "Cross-check",
+        "definition": "Use of independent or differently located evidence to test whether a measurement or interpretation is representative."
+      },
+      {
+        "term": "Measurement disagreement",
+        "definition": "A persistent mismatch among instruments or between measured environment and crop response requiring verification before major control changes."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Multiple sensors moving together supports a real event",
+        "body": "Agreement across independent sensors plus equipment-status evidence strengthens the interpretation that a room event is real, while one isolated outlier more strongly suggests placement or sensor-quality review.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Crop pattern can localize the problem",
+        "body": "Symptoms clustered near fixtures, exterior walls, dense canopy interiors, air outlets or irrigation zones can help identify which environmental measurement locations require closer investigation.",
+        "references": [
+          "REF-PURDUE-HIGH-TUNNEL-ENVIRONMENT"
+        ]
+      },
+      {
+        "title": "Do not change targets to make bad data look correct",
+        "body": "When a controller disagrees with a recently verified reference, investigate sensor placement, shielding, calibration and response before shifting environmental setpoints.",
+        "references": [
+          "REF-VPD-002",
+          "REF-ENV-TEMP-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A humidity sensor in a dehumidifier discharge reads much drier than canopy sensors. The strongest first interpretation is a local discharge microclimate, not automatic evidence that the canopy sensors are wrong."
+    ],
+    "commonMistakes": [
+      "Trusting the controller because it is the controller.",
+      "Changing multiple setpoints before verifying the measurement pattern.",
+      "Treating plant symptoms as proof of one environmental cause."
+    ],
+    "practicalApplication": "Review a disagreement case with five room sensors, one handheld reference and a crop symptom map. Classify each reading as representative, local, suspect or unresolved and justify the next verification step.",
+    "summary": "Measurement disagreement is diagnostic information. Resolve it systematically before redesigning control targets."
+  }
+}
