@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "id": "CERTIFICATION-VALIDATION-CAMPAIGN-001",
+  "updated": "2026-09-24",
+  "exactConstructionSnapshot": "registry/certification-curriculum-construction-status.json",
+  "status": "prepared-execution-not-started",
+  "purpose": "Batch the remaining exact-version human/field certification evidence into dependency-safe review waves while preserving separate evidence gates.",
+  "summary": {
+    "courses": 15,
+    "conventionalFinalCourses": 13,
+    "integratedPerformanceCourses": 2,
+    "waves": 7,
+    "approvalsClaimed": 0
+  },
+  "waves": [
+    {
+      "id": "WAVE-1-OCCUPATIONAL-TECHNICAL",
+      "order": 1,
+      "state": "prepared",
+      "gates": [
+        "occupationalProgramValidation"
+      ],
+      "sessions": [
+        {
+          "id": "OCC-TECH1",
+          "scope": "Technician I",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-007",
+              "version": "0.1.0"
+            }
+          ],
+          "reviewInputs": [
+            "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_I_JTA.md",
+            "registry/public-occupational-source-baseline.json"
+          ],
+          "requiredPanel": "current cannabis cultivation SMEs/employers with role/task knowledge"
+        },
+        {
+          "id": "OCC-TECH2",
+          "scope": "Technician II",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-008",
+              "version": "0.3.0"
+            }
+          ],
+          "reviewInputs": [
+            "docs/academy-v2/job-task-analyses/CULTIVATION_TECHNICIAN_II_JTA.md",
+            "registry/public-occupational-source-baseline.json"
+          ],
+          "requiredPanel": "current senior cannabis cultivation SMEs/employers with advanced technician/task knowledge"
+        }
+      ],
+      "outputs": [
+        "structured task ratings",
+        "keep/adapt/reject dispositions",
+        "missing-task nominations",
+        "role-boundary decisions",
+        "technical curriculum findings",
+        "practical/capstone scope findings"
+      ],
+      "completionBoundary": "No occupational approval is claimed until exact-version panel evidence is collected and approved."
+    },
+    {
+      "id": "WAVE-2-ASSESSMENT-REVIEW",
+      "order": 2,
+      "state": "prepared",
+      "gates": [
+        "exactVersionHumanAssessmentReview"
+      ],
+      "dependencies": [
+        "WAVE-1-OCCUPATIONAL-TECHNICAL technical/blueprint findings available or explicitly no-change"
+      ],
+      "sessions": [
+        {
+          "id": "ASSESS-TECH1",
+          "scope": "Technician I conventional finals",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1",
+              "assessmentId": "ASSESS-LH-TECH1-001-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0",
+              "assessmentId": "ASSESS-LH-TECH1-002-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0",
+              "assessmentId": "ASSESS-LH-TECH1-003-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0",
+              "assessmentId": "ASSESS-LH-TECH1-004-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0",
+              "assessmentId": "ASSESS-LH-TECH1-005-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH1-006-FINAL"
+            }
+          ],
+          "requiredPanel": "assessment/content reviewers"
+        },
+        {
+          "id": "ASSESS-TECH2",
+          "scope": "Technician II conventional finals",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-001-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-002-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-003-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-004-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-005-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-006-FINAL"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0",
+              "assessmentId": "ASSESS-LH-TECH2-007-FINAL"
+            }
+          ],
+          "requiredPanel": "assessment/content reviewers"
+        }
+      ],
+      "outputs": [
+        "item/content validity disposition",
+        "key/rationale review",
+        "bias/accessibility flags",
+        "revision list",
+        "exact-version approval records"
+      ],
+      "completionBoundary": "Review approval does not imply pilot statistics or cut-score validation."
+    },
+    {
+      "id": "WAVE-3-ACCESSIBILITY-UX",
+      "order": 3,
+      "state": "prepared",
+      "gates": [
+        "accessibilityUxHumanReview"
+      ],
+      "dependencies": [],
+      "sessions": [
+        {
+          "id": "A11Y-TECH1",
+          "scope": "Technician I rendered learner surfaces",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-007",
+              "version": "0.1.0"
+            }
+          ],
+          "requiredPanel": "manual accessibility/UX reviewers"
+        },
+        {
+          "id": "A11Y-TECH2",
+          "scope": "Technician II rendered learner surfaces",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-008",
+              "version": "0.3.0"
+            }
+          ],
+          "requiredPanel": "manual accessibility/UX reviewers"
+        }
+      ],
+      "outputs": [
+        "keyboard review",
+        "desktop/mobile screen-reader evidence",
+        "zoom/reflow evidence",
+        "responsive review",
+        "assessment interaction review",
+        "remediation/retest evidence"
+      ],
+      "completionBoundary": "Automated tests remain supporting evidence only; rendered/manual review is required."
+    },
+    {
+      "id": "WAVE-4-PRACTICAL-CALIBRATION",
+      "order": 4,
+      "state": "prepared",
+      "gates": [
+        "practicalAssessorCalibration"
+      ],
+      "dependencies": [
+        "WAVE-1-OCCUPATIONAL-TECHNICAL practical/capstone scope accepted or revised"
+      ],
+      "sessions": [
+        {
+          "id": "CAL-TECH1",
+          "scope": "Technician I Practicals A-F + integrated capstone",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-007",
+              "version": "0.1.0"
+            }
+          ],
+          "requiredPanel": "at least paired assessors for calibration evidence"
+        },
+        {
+          "id": "CAL-TECH2",
+          "scope": "Technician II Practicals A-G + Senior Technician Diagnostic Shift",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-008",
+              "version": "0.3.0"
+            }
+          ],
+          "requiredPanel": "at least paired assessors for calibration evidence"
+        }
+      ],
+      "outputs": [
+        "anchored scoring calibration",
+        "critical-failure interpretation agreement",
+        "inter-rater evidence",
+        "reassessment rules",
+        "rubric revisions where needed"
+      ],
+      "completionBoundary": "A rubric draft is not calibration evidence; paired scoring observations are required."
+    },
+    {
+      "id": "WAVE-5-CONTROLLED-PILOT",
+      "order": 5,
+      "state": "prepared",
+      "gates": [
+        "pilotExecution",
+        "itemAnalysis"
+      ],
+      "dependencies": [
+        "WAVE-2-ASSESSMENT-REVIEW approved for pilot forms",
+        "WAVE-4-PRACTICAL-CALIBRATION sufficient assessor readiness for practical pilots"
+      ],
+      "sessions": [
+        {
+          "id": "PILOT-TECH1",
+          "scope": "Technician I learner/item/practical pilot",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-007",
+              "version": "0.1.0"
+            }
+          ],
+          "requiredPanel": "target-population pilot participants + controlled assessors"
+        },
+        {
+          "id": "PILOT-TECH2",
+          "scope": "Technician II learner/item/practical pilot",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-008",
+              "version": "0.3.0"
+            }
+          ],
+          "requiredPanel": "target-population pilot participants + controlled assessors"
+        }
+      ],
+      "outputs": [
+        "attempt-level pilot evidence",
+        "item difficulty/discrimination/omission evidence where applicable",
+        "timing/usability observations",
+        "practical performance distributions",
+        "revision/disposition decisions"
+      ],
+      "completionBoundary": "Generated or synthetic scores do not count as controlled pilot evidence."
+    },
+    {
+      "id": "WAVE-6-STANDARD-SETTING",
+      "order": 6,
+      "state": "blocked-until-prerequisites",
+      "gates": [
+        "standardSetting"
+      ],
+      "dependencies": [
+        "WAVE-2-ASSESSMENT-REVIEW approved",
+        "WAVE-5-CONTROLLED-PILOT evidence complete",
+        "itemAnalysis evidence complete",
+        "practical calibration evidence complete where applicable"
+      ],
+      "sessions": [
+        {
+          "id": "STANDARD-TECH1",
+          "scope": "Technician I credential/course decision rules",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-007",
+              "version": "0.1.0"
+            }
+          ],
+          "requiredPanel": "qualified standard-setting panel"
+        },
+        {
+          "id": "STANDARD-TECH2",
+          "scope": "Technician II credential/course decision rules",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-008",
+              "version": "0.3.0"
+            }
+          ],
+          "requiredPanel": "qualified standard-setting panel"
+        }
+      ],
+      "outputs": [
+        "documented method",
+        "panel judgments",
+        "recommended cut/decision rules",
+        "critical-failure rules",
+        "rationale",
+        "final approval record"
+      ],
+      "completionBoundary": "The existing 80% development target remains provisional until this wave is completed."
+    },
+    {
+      "id": "WAVE-7-SECURE-FORMS-AND-AUTHORIZATION",
+      "order": 7,
+      "state": "blocked-until-prerequisites",
+      "gates": [
+        "secureOperationalFormReadiness",
+        "credentialAuthorization"
+      ],
+      "dependencies": [
+        "WAVE-6-STANDARD-SETTING evidence complete",
+        "candidate governance approved and operationally authorized",
+        "required production controls evidence complete/approved"
+      ],
+      "sessions": [
+        {
+          "id": "RELEASE-TECH1",
+          "scope": "Technician I secure forms and program authorization",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH1-001",
+              "version": "1.0.1"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-002",
+              "version": "0.13.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-003",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-004",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-005",
+              "version": "0.2.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH1-007",
+              "version": "0.1.0"
+            }
+          ],
+          "requiredPanel": "assessment security + credential authorization authorities"
+        },
+        {
+          "id": "RELEASE-TECH2",
+          "scope": "Technician II secure forms and program authorization",
+          "courses": [
+            {
+              "courseId": "COURSE-LH-TECH2-001",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-002",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-003",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-004",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-005",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-006",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-007",
+              "version": "0.3.0"
+            },
+            {
+              "courseId": "COURSE-LH-TECH2-008",
+              "version": "0.3.0"
+            }
+          ],
+          "requiredPanel": "assessment security + credential authorization authorities"
+        }
+      ],
+      "outputs": [
+        "secure operational form-equivalence/security evidence",
+        "final dependency reconciliation",
+        "credential lifecycle approval",
+        "issuer/signing/revocation/public-verification approval",
+        "program authorization record"
+      ],
+      "completionBoundary": "Final authorization cannot outrun course evidence, candidate governance, or production controls."
+    }
+  ]
+}
