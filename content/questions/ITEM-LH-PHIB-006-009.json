@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-006-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What should happen when two plausible causes remain unresolved?",
+  "choices": [
+    "Choose one to finish the form.",
+    "Preserve both with supporting/conflicting evidence and define the next discriminating test or control.",
+    "Delete the weaker hypothesis.",
+    "Close the investigation immediately."
+  ],
+  "correct": 1,
+  "rationale": "Uncertainty should remain explicit until evidence supports a stronger conclusion.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
