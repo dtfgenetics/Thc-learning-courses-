@@ -100,6 +100,24 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-005-CONTROLS-RESISTANCE",
+          "remainingDepth": [
+            "photorealistic beneficial-organism and IPM decision visual set",
+            "human IPM/entomology and pesticide-stewardship review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
