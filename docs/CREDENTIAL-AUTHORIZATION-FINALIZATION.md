@@ -18,13 +18,13 @@ Create an exact-version starter for either credential program:
 
 `npm run evidence:intake:credential-authorization -- --program CREDPROG-CULT-TECH-I-001 --authority AUTHORIZATION-LEAD --issuer-id ISSUER-ID --issuer-name "Issuer Name" --issuer-url https://example.org/verify --write`
 
-The starter is `draft`; final governance approvals and operational validation flags remain false.
+The starter is `draft`; final governance approvals and operational validation flags remain false. It also leaves validity and renewal policy fields unset rather than assuming an indefinite or fixed-term credential.
 
 ## Evidence completion
 
 `npm run evidence:complete:credential-authorization -- --source CREDAUTH-... --authority AUTHORIZATION-LEAD --validity-type indefinite --renewal-required false --renewal-method none --confirm-issuer-authority --confirm-signing-controls --confirm-public-verification --confirm-revocation-policy --confirm-appeals-policy --confirm-lifecycle-policy --confirm-privacy-retention-policy --write`
 
-Completion is blocked until the release dependency graph reports **zero evidence blockers** for the program. That means every course prerequisite has reached at least evidence-complete, candidate governance evidence is approved, and all 13 production controls are at least evidence-complete.
+Lifecycle inputs are checked for internal consistency: indefinite credentials cannot carry a fixed validity period or required renewal; required renewal must use a fixed-term validity, an explicit renewal window, and a non-`none` renewal method. Completion is blocked until the release dependency graph reports **zero evidence blockers** for the program. That means every course prerequisite has reached at least evidence-complete, candidate governance evidence is approved, and all 13 production controls are at least evidence-complete.
 
 ## Final approval and application
 
