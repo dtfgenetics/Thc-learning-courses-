@@ -56,6 +56,7 @@ for(const [area,gate] of [
 for(const [area,gate] of [
   ['runtime','productionPersistenceAdapter'],
   ['api','productionDatabaseIntegration'],
+  ['assessment','secureOperationalStoreIntegration'],
   ['security','adminMfaEnforced'],
   ['security','rowLevelAuthorization'],
   ['security','securityReviewComplete'],
