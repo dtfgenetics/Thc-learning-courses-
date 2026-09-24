@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two recently calibrated meters disagree on the same sample. What should be checked next?",
+  "choices": [
+    "Standards, probe condition, sample identity and temperature/sample handling.",
+    "Trust the more expensive meter.",
+    "Average automatically.",
+    "Change nutrient concentration."
+  ],
+  "correct": 0,
+  "rationale": "Measurement-system disagreement requires verification before chemistry changes.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}
