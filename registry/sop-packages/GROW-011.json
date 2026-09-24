@@ -1,0 +1,40 @@
+{
+  "id": "GROW-011",
+  "title": "Grow space setup",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-011.json",
+  "scientificSop": "docs/sop-packages/GROW-011/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-011/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-011/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-011-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-SPACE-BIOSEC-001",
+    "MOD-SAFETY-WORK-001",
+    "MOD-ENV-001"
+  ],
+  "reusedLessons": [
+    "LESSON-SPACE-ZONING-001",
+    "LESSON-SPACE-INTAKE-002",
+    "LESSON-SPACE-CAPACITY-003",
+    "LESSON-SAFETY-HAZARDS-001",
+    "LESSON-ENV-AIRFLOW-002"
+  ],
+  "controlledReferences": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-22-WALKING",
+    "REF-OSHA-1910-147-LOTO",
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "releaseGates": [
+    "worker-safety review",
+    "electrical/HVAC/plumbing engineering boundary review",
+    "facility-layout/code applicability review",
+    "environmental measurement review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

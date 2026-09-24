@@ -1,0 +1,33 @@
+{
+  "id": "GROW-032",
+  "title": "Germination",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-032.json",
+  "scientificSop": "docs/sop-packages/GROW-032/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-032/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-032/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-032-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-PROP-001",
+    "MOD-PLANT-BIO-001"
+  ],
+  "reusedLessons": [
+    "LESSON-PROP-SEED-002",
+    "LESSON-PLANT-BIO-001"
+  ],
+  "controlledReferences": [
+    "REF-PROP-001",
+    "REF-PLANT-BIO-001"
+  ],
+  "releaseGates": [
+    "propagation review",
+    "method validation",
+    "sanitation review",
+    "lot/sampling review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

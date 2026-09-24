@@ -1,0 +1,39 @@
+{
+  "id": "GROW-033",
+  "title": "Seedling establishment",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-033.json",
+  "scientificSop": "docs/sop-packages/GROW-033/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-033/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-033/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-033-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-PROP-001",
+    "MOD-PLANT-BIO-001",
+    "MOD-ENV-001",
+    "MOD-ROOTZONE-001"
+  ],
+  "reusedLessons": [
+    "LESSON-PROP-001",
+    "LESSON-PLANT-BIO-001",
+    "LESSON-ROOTZONE-001",
+    "LESSON-ENV-VPD-001"
+  ],
+  "controlledReferences": [
+    "REF-PROP-001",
+    "REF-PLANT-BIO-001",
+    "REF-IRRIGATION-001",
+    "REF-VPD-002"
+  ],
+  "releaseGates": [
+    "propagation review",
+    "root-zone/environment review",
+    "plant-health review",
+    "facility-specific transplant validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

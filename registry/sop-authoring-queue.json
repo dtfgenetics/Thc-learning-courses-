@@ -18,7 +18,7 @@
     "newDiseaseSpecificDepthTarget": "GROW-100",
     "evidencePlansSeeded": 17,
     "evidencePlanCoverageComplete": true,
-    "draftControlledPackagesCreated": 3
+    "draftControlledPackagesCreated": 10
   },
   "targets": [
     {
@@ -46,9 +46,10 @@
         "quality-system procedure design"
       ],
       "sequence": 1,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-000.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-000.json"
     },
     {
       "id": "GROW-011",
@@ -77,9 +78,10 @@
         "environmental commissioning"
       ],
       "sequence": 2,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-011.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-011.json"
     },
     {
       "id": "GROW-020",
@@ -140,9 +142,10 @@
         "traceability"
       ],
       "sequence": 4,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-030.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-030.json"
     },
     {
       "id": "GROW-031",
@@ -170,9 +173,10 @@
         "sampling and records"
       ],
       "sequence": 5,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-031.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-031.json"
     },
     {
       "id": "GROW-032",
@@ -197,9 +201,10 @@
         "sanitation"
       ],
       "sequence": 6,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-032.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-032.json"
     },
     {
       "id": "GROW-033",
@@ -228,9 +233,10 @@
         "environmental stress"
       ],
       "sequence": 7,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-033.json",
-      "newControlledReferences": []
+      "newControlledReferences": [],
+      "packageManifest": "registry/sop-packages/GROW-033.json"
     },
     {
       "id": "GROW-040",
@@ -259,12 +265,13 @@
         "media/system-specific testing"
       ],
       "sequence": 8,
-      "status": "evidence-plan-seeded",
+      "status": "draft-controlled-package-created",
       "evidencePlan": "registry/sop-evidence-plans/GROW-040.json",
       "newControlledReferences": [
         "REF-CANNABIS-SUBSTRATE-2020-001",
         "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
-      ]
+      ],
+      "packageManifest": "registry/sop-packages/GROW-040.json"
     },
     {
       "id": "GROW-080",

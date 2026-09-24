@@ -1,0 +1,40 @@
+{
+  "id": "GROW-040",
+  "title": "Growing media selection and preparation",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-040.json",
+  "scientificSop": "docs/sop-packages/GROW-040/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-040/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-040/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-040-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-ROOTZONE-001",
+    "MOD-SOIL-BIO-001",
+    "MOD-HYDRO-ADV-001"
+  ],
+  "reusedLessons": [
+    "LESSON-ROOTZONE-MEDIA-002",
+    "LESSON-ROOTZONE-DRYBACK-003",
+    "LESSON-SOIL-CEC-001",
+    "LESSON-SOIL-MICROBES-002",
+    "LESSON-HYDRO-SYSTEMS-001"
+  ],
+  "controlledReferences": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001",
+    "REF-SOIL-CEC-001",
+    "REF-CANNABIS-SUBSTRATE-2020-001",
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+  ],
+  "releaseGates": [
+    "claim-level substrate/root-zone review",
+    "measurement-method review",
+    "supplier/material specification reconciliation",
+    "facility-specific irrigation/container validation",
+    "accessibility review",
+    "independent release review"
+  ]
+}

@@ -20,10 +20,11 @@
       "title": "Manual overview, purpose, scope, document control",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-000.json"
     },
     {
       "externalId": "GROW-001",
@@ -52,10 +53,11 @@
       "title": "Grow space setup",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-011.json"
     },
     {
       "externalId": "GROW-020",
@@ -73,40 +75,44 @@
       "title": "Genetics and crop planning",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-030.json"
     },
     {
       "externalId": "GROW-031",
       "title": "Seed intake, labeling, and storage",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-031.json"
     },
     {
       "externalId": "GROW-032",
       "title": "Germination",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-032.json"
     },
     {
       "externalId": "GROW-033",
       "title": "Seedling establishment",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-033.json"
     },
     {
       "externalId": "GROW-034",
@@ -124,10 +130,11 @@
       "title": "Growing media selection and preparation",
       "sourceSystem": "controlled-google-drive-master-register",
       "sourceState": "scope-identified-source-mapped-planned",
-      "ingestionStatus": "package-authoring-not-started",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
       "releaseState": "blocked",
       "driveRegisterStatus": "Source Mapped / Planned",
-      "nextGate": "Draft full controlled package"
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-040.json"
     },
     {
       "externalId": "GROW-042",
@@ -313,6 +320,6 @@
     "packageCreatedOrLocatedPendingAdditionalReview": 3,
     "sourceMappedPlannedPackages": 17,
     "releaseApprovedPackages": 0,
-    "repositoryDraftPackagesCreated": 3
+    "repositoryDraftPackagesCreated": 10
   }
 }

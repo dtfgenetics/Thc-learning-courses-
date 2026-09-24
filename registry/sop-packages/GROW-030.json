@@ -1,0 +1,41 @@
+{
+  "id": "GROW-030",
+  "title": "Genetics and crop planning",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-030.json",
+  "scientificSop": "docs/sop-packages/GROW-030/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-030/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-030/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-030-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-CROP-PLAN-001",
+    "MOD-GENETICS-001",
+    "MOD-PLANT-BIO-001"
+  ],
+  "reusedLessons": [
+    "LESSON-CROP-GENETICS-001",
+    "LESSON-CROP-SCHEDULE-002",
+    "LESSON-CROP-RECORDS-003",
+    "LESSON-GENETICS-001",
+    "LESSON-PLANT-BIO-SEX-003"
+  ],
+  "controlledReferences": [
+    "REF-GENETICS-001",
+    "REF-GENETICS-2026-001",
+    "REF-PLANT-BIO-001",
+    "REF-FLOWER-MORPH-2023-001",
+    "REF-SEX-2026-001",
+    "REF-POSTHARVEST-001"
+  ],
+  "releaseGates": [
+    "genetics/breeding review",
+    "facility/legal plant-count review",
+    "traceability review",
+    "crop-scheduling validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

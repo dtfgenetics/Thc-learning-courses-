@@ -1,0 +1,36 @@
+{
+  "id": "GROW-000",
+  "title": "Manual overview, purpose, scope, document control",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-000.json",
+  "scientificSop": "docs/sop-packages/GROW-000/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-000/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-000/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-000-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-PRO-SOP-001",
+    "MOD-RESPONSIBLE-LEGAL-001"
+  ],
+  "reusedLessons": [
+    "LESSON-PRO-SOP-DESIGN-001",
+    "LESSON-PRO-CHANGE-003",
+    "LESSON-RESPONSIBLE-RECORDS-003",
+    "LESSON-LEGAL-JURISDICTION-001"
+  ],
+  "controlledReferences": [
+    "REF-EPA-SOP-QAG6",
+    "REF-ASTM-E2659-001",
+    "REF-ASTM-D8403-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "releaseGates": [
+    "document-control review",
+    "legal/compliance applicability review",
+    "role/authority review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}
