@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A scout observes yellowing on three plants but finds no pathogen sign. Which record is most defensible?",
   "choices": [
-    "Confirmed fungal disease on three plants.",
     "Yellowing observed on three identified plants; cause unresolved, with follow-up comparison/testing planned.",
+    "Confirmed fungal disease on three plants.",
     "Nutrient deficiency confirmed because yellowing is nutritional.",
     "No record is needed until a diagnosis is known."
   ],
-  "correct": 1,
+  "correct": 0,
   "rationale": "Observation should be recorded separately from causal interpretation when evidence does not support a confirmed diagnosis.",
   "references": [
     "REF-CANNABIS-DIAGNOSTICS-2024-001"
