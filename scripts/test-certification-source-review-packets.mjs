@@ -24,11 +24,11 @@ for(const c of out.courses){
 
 const supplement=JSON.parse(fs.readFileSync('registry/public-authoritative-source-supplements.json','utf8'));
 const mappings=supplement.mappings??[];
-if(mappings.length<26) throw new Error('expected at least 26 exact-version public-source supplements');
+if(mappings.length<31) throw new Error('expected at least 31 exact-version public-source supplements');
 const mappingKeys=new Set(mappings.map((m)=>m.courseId+'|'+m.lessonId+'|'+m.lessonVersion));
 if(mappingKeys.size!==mappings.length) throw new Error('duplicate exact-version source supplement mapping detected');
 const supplementedCourses=new Set(mappings.map((m)=>m.courseId));
-if(supplementedCourses.size<10) throw new Error('expected supplemental source coverage across at least 10 canonical Technician courses');
+if(supplementedCourses.size!==15) throw new Error('expected exact-version supplemental source coverage across all 15 canonical Technician courses');
 for(const mapping of mappings){
   if(!Array.isArray(mapping.sourceIds)||mapping.sourceIds.length===0) throw new Error(mapping.lessonId+': supplemental mapping must reference at least one source');
   for(const id of mapping.sourceIds){
