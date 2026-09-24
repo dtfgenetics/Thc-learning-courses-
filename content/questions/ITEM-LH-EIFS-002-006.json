@@ -11,11 +11,11 @@
   "stem": "What is the strongest use of a DLI calculation built from one unusually bright PPFD point?",
   "choices": [
     "Treat it as the room DLI.",
-    "Treat it as an estimate for that point only and obtain representative PPFD data for canopy-level decisions.",
     "Use it to set every room target.",
-    "Ignore photoperiod."
+    "Ignore photoperiod.",
+    "Treat it as an estimate for that point only and obtain representative PPFD data for canopy-level decisions."
   ],
-  "correct": 1,
+  "correct": 3,
   "rationale": "DLI is only as representative as the PPFD input and duration used.",
   "references": [
     "REF-PURDUE-DLI-GREENHOUSE"
