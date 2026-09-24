@@ -1,0 +1,510 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-23",
+  "purpose": "Reuse-first authoring plan for the 17 controlled SOP targets that are identified in the Drive Master Deliverable Register but do not yet have a full controlled package.",
+  "policy": {
+    "existingInstructionIsSourceMaterialNotAutomaticSopApproval": true,
+    "preserveExactLessonAndReferenceVersions": true,
+    "requireClaimLevelSourceReconciliation": true,
+    "prohibitUniversalCannabisTargetsWithoutSupportingEvidence": true,
+    "requireApplicableSafetyLegalEngineeringReview": true,
+    "releaseRemainsFailClosed": true
+  },
+  "summary": {
+    "targets": 17,
+    "priority1": 11,
+    "priority2": 6,
+    "existingModuleReuseMapped": 17,
+    "newDiseaseSpecificDepthTarget": "GROW-100"
+  },
+  "targets": [
+    {
+      "id": "GROW-000",
+      "priority": 1,
+      "title": "Manual overview, purpose, scope, document control",
+      "reuseModules": [
+        "MOD-PRO-SOP-001",
+        "MOD-RESPONSIBLE-LEGAL-001"
+      ],
+      "reuseLessons": [
+        "LESSON-PRO-SOP-DESIGN-001",
+        "LESSON-PRO-CHANGE-003",
+        "LESSON-RESPONSIBLE-RECORDS-003",
+        "LESSON-LEGAL-JURISDICTION-001"
+      ],
+      "newAuthoring": [
+        "manual-level scope and document hierarchy",
+        "controlled-template index",
+        "version/review/release state model"
+      ],
+      "evidenceFocus": [
+        "document control",
+        "jurisdiction-neutral lawful-use boundary",
+        "quality-system procedure design"
+      ],
+      "sequence": 1,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-011",
+      "priority": 1,
+      "title": "Grow space setup",
+      "reuseModules": [
+        "MOD-SPACE-BIOSEC-001",
+        "MOD-SAFETY-WORK-001",
+        "MOD-ENV-001"
+      ],
+      "reuseLessons": [
+        "LESSON-SPACE-ZONING-001",
+        "LESSON-SPACE-INTAKE-002",
+        "LESSON-SPACE-CAPACITY-003",
+        "LESSON-SAFETY-HAZARDS-001",
+        "LESSON-ENV-AIRFLOW-002"
+      ],
+      "newAuthoring": [
+        "utilities and drainage readiness",
+        "electrical/lightproofing boundary",
+        "cleaning access and commissioning checklist"
+      ],
+      "evidenceFocus": [
+        "worker safety",
+        "electrical/fire/utility boundaries",
+        "environmental commissioning"
+      ],
+      "sequence": 2,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-020",
+      "priority": 1,
+      "title": "Biosecurity and clean workflow",
+      "reuseModules": [
+        "MOD-SPACE-BIOSEC-001",
+        "MOD-IPM-001",
+        "MOD-IPM-ADV-001"
+      ],
+      "reuseLessons": [
+        "LESSON-IPM-BIOSEC-003",
+        "LESSON-IPM-SCOUT-002",
+        "LESSON-IPM-INTEGRATE-003",
+        "LESSON-LH-TECH2-004-04"
+      ],
+      "newAuthoring": [
+        "entry/exit zoning sequence",
+        "tool and material movement matrix",
+        "waste/quarantine release criteria"
+      ],
+      "evidenceFocus": [
+        "sanitation",
+        "quarantine",
+        "clean stock",
+        "movement controls"
+      ],
+      "sequence": 3,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-030",
+      "priority": 2,
+      "title": "Genetics and crop planning",
+      "reuseModules": [
+        "MOD-CROP-PLAN-001",
+        "MOD-GENETICS-001",
+        "MOD-PLANT-BIO-001"
+      ],
+      "reuseLessons": [
+        "LESSON-CROP-GENETICS-001",
+        "LESSON-CROP-SCHEDULE-002",
+        "LESSON-CROP-RECORDS-003",
+        "LESSON-GENETICS-001",
+        "LESSON-PLANT-BIO-SEX-003"
+      ],
+      "newAuthoring": [
+        "source-risk intake checklist",
+        "plant-count and capacity planning",
+        "cultivar-specific flowering uncertainty controls"
+      ],
+      "evidenceFocus": [
+        "genetic identity",
+        "crop scheduling",
+        "traceability"
+      ],
+      "sequence": 4,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-031",
+      "priority": 2,
+      "title": "Seed intake, labeling, and storage",
+      "reuseModules": [
+        "MOD-PROP-001",
+        "MOD-GENETICS-001",
+        "MOD-PRO-QA-001"
+      ],
+      "reuseLessons": [
+        "LESSON-PROP-SEED-002",
+        "LESSON-GENETICS-001",
+        "LESSON-PRO-AUDIT-003",
+        "LESSON-CROP-RECORDS-003"
+      ],
+      "newAuthoring": [
+        "seed-lot chain of custody",
+        "storage-condition specification",
+        "inventory and viability-test records"
+      ],
+      "evidenceFocus": [
+        "seed storage",
+        "identity preservation",
+        "sampling and records"
+      ],
+      "sequence": 5,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-032",
+      "priority": 2,
+      "title": "Germination",
+      "reuseModules": [
+        "MOD-PROP-001",
+        "MOD-PLANT-BIO-001"
+      ],
+      "reuseLessons": [
+        "LESSON-PROP-SEED-002",
+        "LESSON-PLANT-BIO-001"
+      ],
+      "newAuthoring": [
+        "method comparison and selection boundary",
+        "contamination/failure troubleshooting",
+        "germination batch record"
+      ],
+      "evidenceFocus": [
+        "seed physiology",
+        "moisture/temperature/oxygen",
+        "sanitation"
+      ],
+      "sequence": 6,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-033",
+      "priority": 2,
+      "title": "Seedling establishment",
+      "reuseModules": [
+        "MOD-PROP-001",
+        "MOD-PLANT-BIO-001",
+        "MOD-ENV-001",
+        "MOD-ROOTZONE-001"
+      ],
+      "reuseLessons": [
+        "LESSON-PROP-001",
+        "LESSON-PLANT-BIO-001",
+        "LESSON-ROOTZONE-001",
+        "LESSON-ENV-VPD-001"
+      ],
+      "newAuthoring": [
+        "seedling-stage acceptance criteria",
+        "transplant-readiness record",
+        "damping-off differential/escalation"
+      ],
+      "evidenceFocus": [
+        "early development",
+        "root-zone moisture/aeration",
+        "environmental stress"
+      ],
+      "sequence": 7,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-040",
+      "priority": 1,
+      "title": "Growing media selection and preparation",
+      "reuseModules": [
+        "MOD-ROOTZONE-001",
+        "MOD-SOIL-BIO-001",
+        "MOD-HYDRO-ADV-001"
+      ],
+      "reuseLessons": [
+        "LESSON-ROOTZONE-MEDIA-002",
+        "LESSON-ROOTZONE-DRYBACK-003",
+        "LESSON-SOIL-CEC-001",
+        "LESSON-SOIL-MICROBES-002",
+        "LESSON-HYDRO-SYSTEMS-001"
+      ],
+      "newAuthoring": [
+        "media acceptance/specification record",
+        "batch preparation traceability",
+        "physical-property verification workflow"
+      ],
+      "evidenceFocus": [
+        "water retention/aeration",
+        "CEC and chemistry",
+        "media/system-specific testing"
+      ],
+      "sequence": 8,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-080",
+      "priority": 1,
+      "title": "Mineral nutrition and deficiency diagnosis",
+      "reuseModules": [
+        "MOD-NUTRITION-001",
+        "MOD-NUTRIENT-DIAG-001",
+        "MOD-ROOTZONE-001"
+      ],
+      "reuseLessons": [
+        "LESSON-NUTRITION-MACRO-002",
+        "LESSON-NUTRITION-MICRO-003",
+        "LESSON-NUTRIENT-INTERACT-001",
+        "LESSON-NUTRIENT-DIAG-002",
+        "LESSON-NUTRIENT-EC-003"
+      ],
+      "newAuthoring": [
+        "diagnostic evidence hierarchy",
+        "tissue/root-zone sampling escalation",
+        "corrective-action verification record"
+      ],
+      "evidenceFocus": [
+        "plant nutrition",
+        "uptake limitations",
+        "deficiency look-alikes"
+      ],
+      "sequence": 9,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-090",
+      "priority": 1,
+      "title": "Integrated pest management",
+      "reuseModules": [
+        "MOD-IPM-001",
+        "MOD-IPM-ADV-001",
+        "MOD-LH-PHIB-003-ARTHROPODS"
+      ],
+      "reuseLessons": [
+        "LESSON-IPM-SCOUT-002",
+        "LESSON-IPM-SCOUT-ADV-001",
+        "LESSON-IPM-DIAG-ADV-002",
+        "LESSON-IPM-INTEGRATE-003",
+        "LESSON-LH-PHIB-003-01"
+      ],
+      "newAuthoring": [
+        "facility scouting plan",
+        "threshold/decision-rule governance",
+        "legal pesticide authority matrix"
+      ],
+      "evidenceFocus": [
+        "prevention/scouting",
+        "arthropod identification",
+        "biological/cultural controls",
+        "label/jurisdiction limits"
+      ],
+      "sequence": 10,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-100",
+      "priority": 1,
+      "title": "Disease and disorder management",
+      "reuseModules": [
+        "MOD-IPM-ADV-001",
+        "MOD-ROOTZONE-001",
+        "MOD-ENV-ADV-001"
+      ],
+      "reuseLessons": [
+        "LESSON-IPM-DIAG-ADV-002",
+        "LESSON-IPM-INTEGRATE-003",
+        "LESSON-ROOTZONE-001",
+        "LESSON-ENV-MAP-001"
+      ],
+      "newAuthoring": [
+        "cannabis disease identification module",
+        "HLVd testing/biosecurity boundary",
+        "powdery mildew/Botrytis/root-disease differentials",
+        "laboratory confirmation and containment workflow"
+      ],
+      "evidenceFocus": [
+        "cannabis pathogens",
+        "diagnostics",
+        "environment/disease interaction",
+        "clean stock"
+      ],
+      "sequence": 11,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-110",
+      "priority": 2,
+      "title": "Training and canopy management",
+      "reuseModules": [
+        "MOD-CANOPY-001",
+        "MOD-CANOPY-ADV-001"
+      ],
+      "reuseLessons": [
+        "LESSON-CANOPY-001",
+        "LESSON-CANOPY-TRAIN-002",
+        "LESSON-CANOPY-ARCH-001",
+        "LESSON-CANOPY-LST-002",
+        "LESSON-CANOPY-HST-003",
+        "LESSON-CANOPY-UNIFORM-003"
+      ],
+      "newAuthoring": [
+        "stage/cultivar authorization limits",
+        "sanitation and tool control",
+        "canopy-work record and recovery checks"
+      ],
+      "evidenceFocus": [
+        "plant architecture",
+        "stress response",
+        "airflow/light distribution"
+      ],
+      "sequence": 12,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-120",
+      "priority": 2,
+      "title": "Flowering stage management",
+      "reuseModules": [
+        "MOD-FLOWER-001",
+        "MOD-FLOWER-ADV-001",
+        "MOD-ENV-ADV-001"
+      ],
+      "reuseLessons": [
+        "LESSON-FLOWER-TRANSITION-001",
+        "LESSON-FLOWER-PHOTO-002",
+        "LESSON-FLOWER-SEX-002",
+        "LESSON-FLOWER-MATURITY-003",
+        "LESSON-ENV-LOADS-003"
+      ],
+      "newAuthoring": [
+        "flower-stage transition checklist",
+        "intersex monitoring/escalation",
+        "late-flower contamination-risk controls"
+      ],
+      "evidenceFocus": [
+        "photoperiod",
+        "reproductive development",
+        "environmental risk"
+      ],
+      "sequence": 13,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-130",
+      "priority": 1,
+      "title": "Harvest readiness and harvest workflow",
+      "reuseModules": [
+        "MOD-POSTHARVEST-PROCESS-001",
+        "MOD-LH-TECH1-006-HARVEST"
+      ],
+      "reuseLessons": [
+        "LESSON-PH-MATURITY-001",
+        "LESSON-PH-SAMPLING-001",
+        "LESSON-LH-TECH1-006-01",
+        "LESSON-LH-TECH1-006-02"
+      ],
+      "newAuthoring": [
+        "harvest release/hold criteria",
+        "cut/trim batch segregation",
+        "sanitation and chain-of-custody workflow"
+      ],
+      "evidenceFocus": [
+        "maturity assessment",
+        "sampling",
+        "contamination prevention",
+        "traceability"
+      ],
+      "sequence": 14,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-140",
+      "priority": 1,
+      "title": "Drying, curing, storage, and water activity",
+      "reuseModules": [
+        "MOD-POSTHARVEST-001",
+        "MOD-POSTHARVEST-QA-001",
+        "MOD-POSTHARVEST-PROCESS-001"
+      ],
+      "reuseLessons": [
+        "LESSON-POSTHARVEST-DRY-002",
+        "LESSON-POSTHARVEST-STORAGE-003",
+        "LESSON-PH-DRYING-002",
+        "LESSON-PH-STORAGE-003"
+      ],
+      "newAuthoring": [
+        "water-activity measurement and hold workflow",
+        "dry-room load mapping",
+        "curing/storage release specifications",
+        "microbial-risk escalation"
+      ],
+      "evidenceFocus": [
+        "postharvest drying",
+        "water activity/moisture",
+        "microbial stability",
+        "packaging/storage"
+      ],
+      "sequence": 15,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-150",
+      "priority": 1,
+      "title": "Testing, QA, CAPA, and crop review",
+      "reuseModules": [
+        "MOD-PRO-QA-001",
+        "MOD-POSTHARVEST-QA-001"
+      ],
+      "reuseLessons": [
+        "LESSON-PRO-DEVIATION-001",
+        "LESSON-PRO-CAPA-002",
+        "LESSON-PRO-AUDIT-003",
+        "LESSON-PH-TRACE-002",
+        "LESSON-PH-DEVIATION-003"
+      ],
+      "newAuthoring": [
+        "laboratory qualification/intake boundary",
+        "batch disposition workflow",
+        "crop-review metrics and CAPA effectiveness record"
+      ],
+      "evidenceFocus": [
+        "data integrity",
+        "deviation/CAPA",
+        "laboratory/testing context",
+        "continuous improvement"
+      ],
+      "sequence": 16,
+      "status": "ready-for-controlled-package-authoring"
+    },
+    {
+      "id": "GROW-160",
+      "priority": 1,
+      "title": "Forms, logs, checklists, and training records",
+      "reuseModules": [
+        "MOD-PRO-SOP-001",
+        "MOD-PRO-QA-001"
+      ],
+      "reuseLessons": [
+        "LESSON-PRO-SOP-DESIGN-001",
+        "LESSON-PRO-TRAIN-002",
+        "LESSON-PRO-CHANGE-003",
+        "LESSON-RESPONSIBLE-RECORDS-003"
+      ],
+      "newAuthoring": [
+        "master forms index",
+        "minimum record fields per process",
+        "training/authorization matrix",
+        "retention/version-control model"
+      ],
+      "evidenceFocus": [
+        "controlled records",
+        "training evidence",
+        "document lifecycle",
+        "data integrity"
+      ],
+      "sequence": 17,
+      "status": "ready-for-controlled-package-authoring"
+    }
+  ]
+}
