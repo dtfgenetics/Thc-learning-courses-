@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-EIFS-007-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Input EC stays stable while root-zone EC rises over several cycles. What should be investigated?",
+  "choices": [
+    "Water balance, delivery, uptake and drainage/concentration before increasing feed concentration.",
+    "Only the fertilizer label.",
+    "Only light spectrum.",
+    "Nothing, because input EC is stable."
+  ],
+  "correct": 0,
+  "rationale": "Root-zone EC can diverge from input EC through water and solute dynamics.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
