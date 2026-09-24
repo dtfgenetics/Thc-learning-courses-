@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-007-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A steering trial intended to reduce overnight saturation instead produces rising root-zone EC and uneven dryback. What should happen?",
+  "choices": [
+    "Reopen the hypothesis and review/adjust under the controlled process rather than declaring success.",
+    "Keep the strategy because it was planned.",
+    "Delete the adverse data.",
+    "Raise feed EC."
+  ],
+  "correct": 0,
+  "rationale": "Adverse measured response should trigger review, not narrative forcing.",
+  "references": [
+    "REF-ROOTZONE-NUTRIENT-002",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}
