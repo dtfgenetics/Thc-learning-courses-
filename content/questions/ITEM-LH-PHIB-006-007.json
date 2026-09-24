@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Symptoms appeared after a sanitation task. What is the strongest root-cause conclusion?",
+  "choices": [
+    "The sanitation worker caused the event.",
+    "Timing alone is insufficient; evaluate the method, chemistry, equipment, workflow, environment and other evidence.",
+    "The task should be ignored.",
+    "The last action before symptoms is always the root cause."
+  ],
+  "correct": 1,
+  "rationale": "Chronology can generate a hypothesis but does not establish causation.",
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}
