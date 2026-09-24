@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "A lot reaches drying after an unexpected staging delay. Why should the delay remain in the intake record?",
   "choices": [
-    "Later product-condition evidence may need the actual exposure/process history to interpret risk.",
     "The delay should be hidden if drying goes well.",
     "Only room setpoints matter.",
+    "Later product-condition evidence may need the actual exposure/process history to interpret risk.",
     "Delays cannot affect postharvest quality."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Process history is needed for later quality interpretation.",
   "references": [
     "REF-POSTHARVEST-STABILITY-2026-001",
