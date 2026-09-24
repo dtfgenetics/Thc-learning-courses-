@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-001-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is the safest use of a published trichome or stigma treatment result?",
+  "choices": [
+    "Use it as contextual evidence under the studied conditions rather than a universal harvest threshold.",
+    "Apply it to all cultivars.",
+    "Ignore representative sampling.",
+    "Treat it as a legal release criterion."
+  ],
+  "correct": 0,
+  "rationale": "Study-specific maturity observations do not establish universal visual thresholds.",
+  "references": [
+    "REF-CANNABIS-HARVEST-STIGMA-2025-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}
