@@ -4,14 +4,15 @@
   "purpose": "Exact-version controlled review queue for repository-native SOP draft packages. Machine structure, scientific/technical review, safety/legal/engineering review, accessibility/manual review, facility/method validation and independent release approval are tracked separately.",
   "summary": {
     "packageCount": 17,
-    "machineStructuralQaComplete": 0,
+    "machineStructuralQaComplete": 17,
     "scientificTechnicalComplete": 0,
     "accessibilityComplete": 0,
     "facilityValidationComplete": 0,
     "independentReleaseApproved": 0,
     "releaseBlocked": 17,
     "academicEvidenceReconciliationComplete": 17,
-    "academicEvidenceReconciliationCommit": "3615518526e8a96131c2fee59d866723ea9455a2"
+    "academicEvidenceReconciliationCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+    "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2"
   },
   "packages": [
     {
@@ -20,7 +21,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-000.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -30,7 +31,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-011",
@@ -38,7 +62,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-011.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -48,7 +72,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-020",
@@ -56,7 +103,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-020.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -66,7 +113,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-030",
@@ -74,7 +144,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-030.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -84,7 +154,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-031",
@@ -92,7 +185,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-031.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -102,7 +195,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-032",
@@ -110,7 +226,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-032.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -120,7 +236,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-033",
@@ -128,7 +267,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-033.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -138,7 +277,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-040",
@@ -146,7 +308,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-040.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -156,7 +318,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-080",
@@ -164,7 +349,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-080.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -174,7 +359,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-090",
@@ -182,7 +390,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-090.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -192,7 +400,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-100",
@@ -200,7 +431,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-100.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -210,7 +441,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-110",
@@ -218,7 +472,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-110.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -228,7 +482,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-120",
@@ -236,7 +513,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-120.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -246,7 +523,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-130",
@@ -254,7 +554,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-130.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -264,7 +564,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-140",
@@ -272,7 +595,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-140.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -282,7 +605,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-150",
@@ -290,7 +636,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-150.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -300,7 +646,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     },
     {
       "id": "GROW-160",
@@ -308,7 +677,7 @@
       "version": "0.1.0",
       "manifest": "registry/sop-packages/GROW-160.json",
       "authoringState": "draft-controlled-package-created",
-      "machineStructuralQa": "pending-current-head-ci",
+      "machineStructuralQa": "complete",
       "scientificTechnicalReview": "not-started",
       "safetyLegalEngineeringReview": "not-started",
       "accessibilityManualReview": "not-started",
@@ -318,7 +687,30 @@
       "reviewRule": "A package may advance only when the exact reviewed version is unchanged or all changed objects are re-reviewed.",
       "academicEvidenceReconciliation": "complete",
       "academicEvidenceReviewedContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
-      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation"
+      "academicEvidenceReviewMethod": "deterministic claim/source/manifest/reference-boundary reconciliation",
+      "machineStructuralQaContentCommit": "3615518526e8a96131c2fee59d866723ea9455a2",
+      "machineStructuralQaEvidence": {
+        "curriculumQuality": {
+          "runId": 35983795110,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795110",
+          "conclusion": "success"
+        },
+        "technicianStructure": {
+          "runId": 35983795099,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795099",
+          "conclusion": "success"
+        },
+        "catalogVisibility": {
+          "runId": 35983795087,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795087",
+          "conclusion": "success"
+        },
+        "deploymentEvidence": {
+          "runId": 35983795153,
+          "url": "https://github.com/dtfgenetics/Thc-learning-courses-/actions/runs/35983795153",
+          "conclusion": "success"
+        }
+      }
     }
   ]
 }
