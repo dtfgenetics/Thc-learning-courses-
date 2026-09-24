@@ -35,6 +35,9 @@ const record={
     allCurrentCourseVersionsReviewed:false,
     contentScopeAndRoleBoundariesReviewed:false,
     scientificTechnicalConcernsResolvedOrDispositioned:false,
+    publicSourceReviewCompleted:false,
+    sourceReviewRegistryId:null,
+    sourceReviewRegistryAsOf:null,
     reviewerCount:null,
     notes:null
   },
