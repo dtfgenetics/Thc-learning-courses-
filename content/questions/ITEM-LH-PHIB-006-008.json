@@ -11,11 +11,11 @@
   "stem": "Why is 'operator error' often a weak stopping point for root-cause analysis?",
   "choices": [
     "Human actions are never relevant.",
-    "It can miss procedure, training, workload, equipment, monitoring and system contributors that allowed the event.",
     "Root causes must always be biological.",
+    "It can miss procedure, training, workload, equipment, monitoring and system contributors that allowed the event.",
     "CAPA cannot involve people."
   ],
-  "correct": 1,
+  "correct": 2,
   "rationale": "A robust investigation evaluates system conditions as well as individual actions.",
   "references": [
     "REF-ASTM-E2659-001"
