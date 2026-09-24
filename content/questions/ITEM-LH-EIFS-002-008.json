@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Why should a canopy be remapped after a major architecture change?",
   "choices": [
-    "Canopy height and geometry can change interception and measurement relationships.",
     "Plant architecture never affects light.",
     "Only fixture wattage matters.",
+    "Canopy height and geometry can change interception and measurement relationships.",
     "Maps remain valid permanently."
   ],
-  "correct": 0,
+  "correct": 2,
   "rationale": "Canopy geometry is part of the measurement context and can alter distribution.",
   "references": [
     "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
