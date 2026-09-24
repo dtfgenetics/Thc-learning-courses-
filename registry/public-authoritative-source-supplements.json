@@ -238,6 +238,113 @@
         "Verify DLI is presented as accumulated photosynthetic light over the day and distinguished from a single instantaneous PPFD reading.",
         "Use extension material for measurement concepts only; cannabis-specific DLI targets require cannabis-specific evidence and facility validation."
       ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "lessonId": "LESSON-LH-TECH2-001-03",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-NUTRIENT-DEFICIENCY-001",
+        "REF-IPM-GREENHOUSE-2024-001"
+      ],
+      "reviewUse": [
+        "Cross-check multi-factor differential reasoning against cannabis-specific evidence showing that nutrient symptoms and tissue measurements do not always align one-to-one.",
+        "Verify that infectious-disease possibilities, root-zone/nutrition factors and environmental context remain separate hypotheses until evidence supports a cause."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-001",
+      "lessonId": "LESSON-LH-TECH2-001-04",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-NUTRIENT-DEFICIENCY-001",
+        "REF-IPM-GREENHOUSE-2024-001"
+      ],
+      "reviewUse": [
+        "Verify that confirmation relies on appropriate next tests, repeated observations or laboratory/analytical evidence rather than visual symptom matching alone.",
+        "Keep diagnosis, treatment authority and escalation/reporting boundaries distinct."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-003",
+      "lessonId": "LESSON-LH-TECH2-003-04",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-NUTRIENT-DEFICIENCY-001",
+        "REF-PSU-GREENHOUSE-WATER-QUALITY-2025",
+        "REF-PSU-IRRIGATION-WATER-TESTS-2025"
+      ],
+      "reviewUse": [
+        "Cross-check fertigation/root-zone troubleshooting as an integrated interpretation of solution, water, medium/root-zone, plant and historical data rather than symptom-only diagnosis.",
+        "Avoid turning research or extension examples into universal cannabis pH, EC or nutrient setpoints."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "lessonId": "LESSON-LH-TECH2-004-01",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-IPM-GREENHOUSE-2024-001",
+        "REF-PSU-HIGH-TUNNEL-SCOUTING-2025"
+      ],
+      "reviewUse": [
+        "Verify standardized, representative scouting and recordkeeping as the basis for comparing pest/disease observations over time.",
+        "Keep crop- or facility-specific thresholds separate from general IPM monitoring principles."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-004",
+      "lessonId": "LESSON-LH-TECH2-004-04",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-IPM-GREENHOUSE-2024-001",
+        "REF-PSU-GREENHOUSE-DISEASE-RISK-2025",
+        "REF-PSU-HIGH-TUNNEL-SANITATION-2025"
+      ],
+      "reviewUse": [
+        "Cross-check containment and prevention language against cannabis greenhouse disease-management evidence emphasizing clean stock, sanitation, irrigation/environment management and monitoring.",
+        "Do not imply independent pesticide selection/application authority; labels, registrations, facility SOPs and applicable law remain controlling."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-005",
+      "lessonId": "LESSON-LH-TECH2-005-02",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-IPM-GREENHOUSE-2024-001",
+        "REF-PSU-POTTING-MEDIA-PROPAGATION",
+        "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+      ],
+      "reviewUse": [
+        "Verify that propagation underperformance differentials include stock-plant health, pathogen pressure, sanitation, rooting-media/environment and process variation.",
+        "Keep corrective action evidence-bounded and controlled by validated propagation SOPs."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "lessonId": "LESSON-LH-TECH2-006-01",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-POSTHARVEST-001"
+      ],
+      "reviewUse": [
+        "Cross-check deviation fact collection and process-timeline reconstruction against known postharvest variables including drying conditions, moisture/water activity, handling and storage.",
+        "Do not assume a single universal drying endpoint; distinguish observed facts from suspected cause."
+      ]
+    },
+    {
+      "courseId": "COURSE-LH-TECH2-006",
+      "lessonId": "LESSON-LH-TECH2-006-02",
+      "lessonVersion": "1.0.0",
+      "sourceIds": [
+        "REF-POSTHARVEST-001",
+        "REF-POSTHARVEST-DRY-2025-001",
+        "REF-POSTHARVEST-STABILITY-2026-001"
+      ],
+      "reviewUse": [
+        "Verify that drying trend interpretation considers temperature, humidity, moisture/water-activity behavior, time and spatial/process variation together.",
+        "Preserve facility-validated specifications and current QA requirements instead of treating literature examples as universal finished-product limits."
+      ]
     }
   ]
 }
