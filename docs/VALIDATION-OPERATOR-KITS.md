@@ -15,7 +15,7 @@ The generator creates:
 - 15 rendered accessibility/UX review kits;
 - 17 practical/capstone assessor-calibration kits;
 - 2 occupational program-validation kits;
-- 12 production-control validation kits.
+- 13 production-control validation kits.
 
 Calibration kits contain a **private input template** for paired ratings. That template is not evidence and should not be committed with real candidate/person data. Only de-identified aggregate output from the calibration aggregator belongs in the repository.
 
