@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-04",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A case supports a contaminated propagation workflow as the main mechanism. Which response is strongest?",
+  "choices": [
+    "Use one pesticide regardless of pathway.",
+    "Combine appropriate hold/movement controls, workflow correction, validated sanitation/process controls, targeted retesting and recovery/effectiveness checks.",
+    "Release all plants after one normal inspection.",
+    "Retrain staff only, without checking the workflow."
+  ],
+  "correct": 1,
+  "rationale": "Integrated response should address the evidence-supported pathway and verify effectiveness.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}
