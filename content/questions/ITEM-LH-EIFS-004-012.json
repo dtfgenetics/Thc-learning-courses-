@@ -10,12 +10,12 @@
   "type": "scenario",
   "stem": "Two data sources conflict materially. What is the strongest recordkeeping approach?",
   "choices": [
-    "Preserve both, document the conflict, and state how fitness-for-use was determined.",
     "Delete the less convenient source.",
     "Average them automatically.",
-    "Rewrite the earlier record."
+    "Rewrite the earlier record.",
+    "Preserve both, document the conflict, and state how fitness-for-use was determined."
   ],
-  "correct": 0,
+  "correct": 3,
   "rationale": "Conflicting evidence should remain traceable through the data-quality decision.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
