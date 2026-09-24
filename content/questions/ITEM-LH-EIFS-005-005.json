@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why should source identity and treatment state be recorded with water-test results?",
+  "choices": [
+    "They affect whether future comparisons describe the same water condition.",
+    "They are decorative metadata.",
+    "Only EC matters.",
+    "They replace laboratory methods."
+  ],
+  "correct": 0,
+  "rationale": "Water composition can change with source and treatment state.",
+  "references": [
+    "REF-WATER-RECLAIMED-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}
