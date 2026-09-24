@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-003-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A dehumidification command is logged, equipment status never changes, and canopy RH keeps rising. What is the strongest conclusion?",
+  "choices": [
+    "Evidence supports an equipment-response fault class, but the exact mechanical root cause still needs qualified investigation.",
+    "The mechanical root cause is proven.",
+    "The sensor should be deleted.",
+    "Humidity is irrelevant."
+  ],
+  "correct": 0,
+  "rationale": "Command-response evidence can classify the fault without proving the internal failure.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}
