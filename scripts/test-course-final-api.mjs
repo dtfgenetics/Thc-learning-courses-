@@ -5,11 +5,14 @@ import { loadPublishedCourseAssessment } from '../apps/api/src/course-assessment
 import { presentCourseAssessmentItem } from '../packages/domain/course-assessment-runtime.mjs';
 
 const attempts = new Map();
+let hideCurrentIdentityPrerequisites = false;
 const learnerStore = {
   async getLearnerProfile(subject) {
+    if (hideCurrentIdentityPrerequisites && subject === 'learner-course1') return { learnerReference: `THC-LRN-${subject}`, displayName: null, certificateName: null };
     return { learnerReference: `THC-LRN-${subject}`, displayName: subject === 'learner-no-name' ? null : 'Test Learner', certificateName: subject === 'learner-no-name' ? null : 'Test Learner' };
   },
   async listApplications(subject) {
+    if (hideCurrentIdentityPrerequisites && subject === 'learner-course1') return [];
     return subject === 'learner-no-app' ? [] : [{ applicationReference: 'THC-APP-TEST-001', programId: 'CREDPROG-CULT-TECH-I-001', status: 'active' }];
   },
   async findOpenAssessmentAttempt(subject, { assessmentId }) {
@@ -19,8 +22,16 @@ const learnerStore = {
     const row = attempts.get(attemptId);
     return row?.learnerId === subject ? structuredClone(row) : null;
   },
-  async createAssessmentAttempt(subject, { attempt }) {
-    attempts.set(attempt.id, structuredClone({ ...attempt, learnerId: subject }));
+  async createAssessmentAttempt(subject, { attempt, programId }) {
+    const profile = await this.getLearnerProfile(subject);
+    const application = (await this.listApplications(subject)).find((row) => row.programId === programId && row.status === 'active');
+    attempts.set(attempt.id, structuredClone({
+      ...attempt,
+      learnerId: subject,
+      learnerReference: profile.learnerReference,
+      certificateName: profile.certificateName,
+      applicationReference: application?.applicationReference ?? null
+    }));
     return structuredClone(attempts.get(attempt.id));
   },
   async saveAssessmentResponses(subject, { attemptId, responses }) {
@@ -83,15 +94,21 @@ try {
   assert.equal(started.resumed, false);
   assert.equal(started.items.length, 36);
   assert.equal(started.attempt.status, 'started');
+  assert.equal(started.learner.learnerReference, 'THC-LRN-learner-course1');
+  assert.equal(started.learner.applicationReference, 'THC-APP-TEST-001');
+  assert.equal(started.learner.certificateName, 'Test Learner');
   const startedSerialized = JSON.stringify(started);
   for (const forbidden of ['"correct"','"rationale"','answerKey','scoringKey']) assert.equal(startedSerialized.includes(forbidden), false, `start response leaked ${forbidden}`);
 
+  hideCurrentIdentityPrerequisites = true;
   const resume = await fetch(startUrl, { method: 'POST', headers: { authorization: 'Bearer learner-token', accept: 'application/json' } });
   const resumed = await resume.json();
   assert.equal(resume.status, 200);
   assert.equal(resumed.resumed, true);
   assert.equal(resumed.attempt.id, started.attempt.id);
   assert.equal(attempts.size, 1, 'resume must not create a second open attempt');
+  assert.equal(resumed.learner.applicationReference, 'THC-APP-TEST-001', 'resumed attempt must preserve its immutable application link');
+  hideCurrentIdentityPrerequisites = false;
 
   const bundle = loadPublishedCourseAssessment('COURSE-LH-TECH1-001');
   assert.equal(bundle.error, undefined);
@@ -122,6 +139,8 @@ try {
   assert.equal(result.attempt.status, 'scored');
   assert.equal(result.attempt.scorePercent, 100);
   assert.equal(result.attempt.passed, true);
+  assert.equal(result.learner.learnerReference, 'THC-LRN-learner-course1');
+  assert.equal(result.learner.applicationReference, 'THC-APP-TEST-001');
   assert.equal(result.competencyResults.length, 6);
   assert.equal(result.assessment.feedbackMode, 'post-attempt-domain-level');
   const resultSerialized = JSON.stringify(result);
