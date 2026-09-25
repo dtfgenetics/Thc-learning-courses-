@@ -186,6 +186,7 @@ create table if not exists audit_events (
   created_at timestamptz not null default now()
 );
 
+create unique index if not exists idx_learners_reference_unique on learners(learner_reference) where learner_reference is not null;
 create index if not exists idx_applications_learner_program on academy_applications(learner_id, program_id, updated_at desc);
 create index if not exists idx_attempts_learner_assessment on assessment_attempts(learner_id, assessment_id, started_at desc);
 create index if not exists idx_performance_learner_assessment on performance_assessment_results(learner_id, assessment_id, updated_at desc);
