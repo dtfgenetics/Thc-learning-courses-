@@ -6,6 +6,8 @@
 .course-assessment-launch:disabled, .course-assessment-submit:disabled { opacity: .58; cursor: not-allowed; }
 .course-assessment-panel > p, .course-assessment-result > p, .course-practical-panel > p { max-width: 72ch; }
 .course-assessment-note { color: var(--muted); font-size: .9rem; }
+.course-assessment-identity { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: .75rem 0; padding: .7rem .8rem; border: 1px solid var(--line); border-radius: .65rem; background: #fff; color: var(--muted); font-size: .78rem; }
+.course-assessment-identity span { overflow-wrap: anywhere; }
 .course-assessment-timer { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .course-assessment-timer.warning { color: #8a4b00; }
 .course-assessment-timer.expired { color: #8f1f1f; }
