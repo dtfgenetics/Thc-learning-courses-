@@ -93,6 +93,13 @@ function safeAttemptView(bundle, attempt, { resumed = false } = {}) {
   };
 }
 
+function attemptExpired(attempt, now = new Date().toISOString()) {
+  if (!attempt?.expiresAt) return false;
+  const expires = Date.parse(attempt.expiresAt);
+  const current = Date.parse(now);
+  return Number.isFinite(expires) && Number.isFinite(current) && current >= expires;
+}
+
 function latestCompletedTimestamp(attempts) {
   let latest = null;
   for (const attempt of attempts) {
@@ -204,10 +211,11 @@ export async function getCourseAssessmentAttemptStatus({ learnerStore, subject, 
   return { status: 200, body: { ...safeAttemptView(bundle, attempt, { resumed: true }), editable: true } };
 }
 
-export async function saveCourseAssessmentResponses({ learnerStore, subject, attemptId, responses }) {
+export async function saveCourseAssessmentResponses({ learnerStore, subject, attemptId, responses, now = new Date().toISOString() }) {
   const attempt = await learnerStore.getAssessmentAttempt(subject, { attemptId });
   if (!attempt) return { status: 404, body: { error: 'assessment-attempt-not-found' } };
   if (attempt.status !== 'started') return { status: 409, body: { error: 'assessment-attempt-not-editable', status: attempt.status } };
+  if (attemptExpired(attempt, now)) return { status: 409, body: { error: 'assessment-time-expired', expiresAt: attempt.expiresAt } };
   const assessment = loadById('assessments', attempt.assessmentId);
   if (!assessment?.extensions?.courseId) return { status: 409, body: { error: 'course-assessment-not-released' } };
   const bundle = loadPublishedCourseAssessment(assessment.extensions.courseId);
@@ -251,6 +259,7 @@ function resultView(bundle, attempt, competencyRows) {
       id: attempt.id,
       status: attempt.status,
       startedAt: attempt.startedAt,
+      expiresAt: attempt.expiresAt ?? null,
       submittedAt: attempt.submittedAt,
       scoredAt: attempt.scoredAt,
       scorePercent: Number(attempt.scorePercent),
@@ -295,8 +304,9 @@ export async function submitCourseAssessment({ learnerStore, subject, attemptId,
   ensureAttemptMatchesPackage(attempt, bundle);
   if (attempt.status === 'scored') return { status: 200, body: resultView(bundle, attempt, competencyRowsFromScoredAttempt(attempt)) };
   if (attempt.status !== 'started') return { status: 409, body: { error: 'assessment-attempt-not-submittable', status: attempt.status } };
+  const expired = attemptExpired(attempt, now);
   try {
-    const scored = scorePersistedCourseAssessment({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank, now });
+    const scored = scorePersistedCourseAssessment({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank, now, allowIncomplete: expired });
     const saved = await learnerStore.saveAssessmentScore(subject, { attempt: scored.attempt });
     return { status: 200, body: resultView(bundle, saved, scored.competencyResults) };
   } catch (error) {
