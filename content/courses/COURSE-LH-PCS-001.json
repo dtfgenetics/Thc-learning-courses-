@@ -1,0 +1,62 @@
+{
+  "id": "COURSE-LH-PCS-001",
+  "title": "Seed Biology, Germination & Seedling Establishment",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Propagation & Clean Stock Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners entering the Propagation & Clean Stock Specialist pathway",
+    "Cultivation personnel responsible for seed-lot intake, germination, seedling establishment, propagation records and early-stage quality control"
+  ],
+  "prerequisites": [
+    "Cultivation Technician I propagation competency or approved equivalent prerequisite evidence before specialist certification activation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Cannabis/hemp-specific research supports seed biology, germination and temperature-response concepts. Experimental treatment values and cultivar-specific results are evidence, not universal facility setpoints. General horticultural propagation guidance may support media and sanitation concepts when clearly identified as non-cannabis-specific.",
+  "assessmentPolicy": "The dedicated specialist final is development-only until exact-version technical/assessment review, accessibility review and pilot evidence are complete. Completion does not authorize unapproved chemical treatments, disease-control actions or facility protocol changes.",
+  "description": "Builds specialist capability in seed identity, provenance, reproductive origin, viability and vigor, evidence-based germination, seedling establishment, sanitation, traceability, batch QA and troubleshooting.",
+  "modules": [
+    "MOD-LH-PCS-001-SEED-ESTABLISHMENT"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-ROOTZONE-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PCS-001-FINAL",
+  "learningOutcomes": [
+    "Analyze seed identity, lot provenance, reproductive origin and basic seed anatomy before selecting or documenting a germination workflow.",
+    "Differentiate viability, vigor, germination percentage, germination rate and seedling establishment so propagation records do not treat these as interchangeable outcomes.",
+    "Evaluate germination conditions using cannabis/hemp evidence while separating research-treatment values from facility-specific operating targets.",
+    "Assess seedling establishment using root-zone moisture, aeration, media condition, sanitation and developmental evidence rather than a single visual symptom.",
+    "Create a reconstructable seed-to-seedling batch record that preserves identity, denominator, timing, abnormal outcomes, interventions, uncertainty and escalation."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PROP-CLEAN-STOCK-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-TECH1-005",
+      "COURSE-LH-TECH2-005",
+      "COURSE-PROP-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PCS-001-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}
