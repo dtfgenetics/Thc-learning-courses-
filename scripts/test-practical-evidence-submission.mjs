@@ -17,9 +17,9 @@ const learnerStore = {
   async getPracticalSubmission(subject) { return records.get(subject) ?? null; },
   async savePracticalSubmission(subject, { submission }) { const saved = { ...submission, submittedAt: submission.status === 'submitted' ? '2026-09-20T12:00:00.000Z' : null, updatedAt: '2026-09-20T12:00:00.000Z' }; records.set(subject, saved); return saved; }
 };
-const credentialStore = { async ping() { return true; }, async schemaVersion() { return '4'; }, async getByVerificationId() { return null; } };
+const credentialStore = { async ping() { return true; }, async schemaVersion() { return '6'; }, async getByVerificationId() { return null; } };
 const authorize = (req, scope) => req.headers.authorization === 'Bearer learner' ? { ok: true, subject: 'learner-1', scopes: [scope] } : { ok: false, status: 401, error: 'authentication-required' };
-const server = createApiServer({ env: { NODE_ENV: 'production' }, credentialStore, learnerStore, requiredSchemaVersion: '4', authorize, logger() {} });
+const server = createApiServer({ env: { NODE_ENV: 'production' }, credentialStore, learnerStore, requiredSchemaVersion: '6', authorize, logger() {} });
 server.listen(0, '127.0.0.1'); await once(server, 'listening');
 try {
   const base = `http://127.0.0.1:${server.address().port}`; const url = `${base}/api/v1/me/courses/COURSE-LH-TECH1-001/practical-submission`;
