@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-002-04",
+  "title": "Donor-Linked Performance Analysis & Differential Reasoning",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-002-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANNABIS-CONTROLLED-ENV-2023"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for donor-linked performance analysis & differential reasoning in donor/mother plant systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Stratify before averaging",
+        "body": "Compare rooting, loss, time-to-root and abnormal outcomes by donor, batch, operator, zone and time point so a weak subgroup is not hidden by the facility average.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Shared patterns and donor-linked patterns imply different next questions",
+        "body": "A decline across all donors after one room-control change supports investigating the shared process; a decline isolated to one donor group strengthens a source-linked hypothesis.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Correlation is not diagnosis",
+        "body": "A donor-linked pattern identifies where to investigate, not proof of genotype, disease or handling as the cause.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating visual health as proof of clean-stock status.",
+      "Guessing donor identity from appearance.",
+      "Averaging away donor-specific performance differences."
+    ],
+    "practicalApplication": "Review a donor-management scenario, preserve identity and status evidence, and document the strongest supported next action without overstating cause or cleanliness.",
+    "summary": "Donor management depends on traceable identity, plant-health evidence, controlled movement and longitudinal performance records."
+  }
+}
