@@ -23,6 +23,9 @@ for (const marker of [
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses',
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit',
   'Responses save to your learner record as you answer.',
+  'course-assessment-timer',
+  'Time expired — submitting',
+  'submitAssessment(panel, { force: true, timedOut: true })',
   'Post-attempt feedback is domain-level; answer keys are not displayed.',
   'This is the public Course 1 final, separate from the Technician I credential examination.',
   'Current academic development threshold:',
@@ -48,6 +51,7 @@ assert.equal(/\brationale\b/.test(js), false, 'learner assessment UI must not de
 
 for (const marker of [
   '.course-assessment-toolbar',
+  '.course-assessment-timer',
   '.course-assessment-choice',
   'min-height: 44px',
   '@media (max-width: 620px)',
