@@ -210,6 +210,8 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       passingScorePercent: Number(assessment.passingScorePercent ?? 0),
       feedbackMode: assessment.feedbackMode ?? 'after-submit',
       itemCount: Array.isArray(assessment.items) ? assessment.items.length : 0,
+      academicPracticalRequired: typeof assessment.extensions?.linkedPerformanceAssessment === 'string',
+      linkedAcademicPracticalId: assessment.extensions?.linkedPerformanceAssessment ?? null,
       certificationUseStatus: assessment.extensions?.certificationUseStatus ?? null
     };
   };
