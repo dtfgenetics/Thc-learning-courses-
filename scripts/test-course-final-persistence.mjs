@@ -45,7 +45,7 @@ const attempt = {
 await store.createAssessmentAttempt('learner-course1', { attempt });
 const createCall = calls.find((call) => call.text.includes('insert into assessment_attempt_items'));
 assert.ok(createCall);
-assert.match(createCall.text, /jsonb_to_recordset\(\$8::jsonb\)/);
+assert.match(createCall.text, /jsonb_to_recordset\(\$10::jsonb\)/);
 assert.equal(createCall.text.includes('ITEM-LH-TECH1-001-001'), false, 'item IDs must be parameters, not SQL interpolation');
 assert.equal(createCall.params[1], learnerId);
 assert.equal(createCall.params[2], 'ASSESS-LH-TECH1-001-FINAL');
