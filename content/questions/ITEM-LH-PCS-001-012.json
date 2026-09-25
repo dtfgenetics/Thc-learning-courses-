@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-001-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A tray contains a mislabeled cell and visible contamination. What is the strongest immediate response?",
+  "choices": [
+    "Relabel the cell from memory and continue.",
+    "Mix the affected cells into another tray.",
+    "Preserve identity boundaries, isolate/hold the affected material as required, document the observation and escalate under procedure.",
+    "Discard the entire lot without documentation."
+  ],
+  "correct": 2,
+  "rationale": "Preserve identity boundaries, isolate/hold the affected material as required, document the observation and escalate under procedure.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}

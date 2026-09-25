@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-001-01",
+  "title": "Seed Identity, Reproductive Origin & Anatomy",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-001-01"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-GENETICS-001",
+    "REF-PROP-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Seed propagation creates genetically distinct offspring, so specialist work begins with identity, provenance, lot context and the distinction between seed identity and clonal identity.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Seed identity is not genotype identity",
+        "body": "A seed lot can be traceable to a cross, cultivar or production lot without every resulting seedling being genetically identical. Sexual reproduction preserves parentage information while segregation and recombination create within-family variation.",
+        "references": [
+          "REF-GENETICS-001"
+        ]
+      },
+      {
+        "title": "Record provenance before treatment",
+        "body": "Lot ID, source, production date when known, storage history, seed count and any pre-treatment belong in the record before germination begins. Missing provenance reduces the interpretability of later performance.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Anatomy supports observation",
+        "body": "The seed coat, embryo axis, cotyledons and emerging radicle provide practical landmarks for distinguishing imbibition, radicle emergence and seedling establishment.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating a research protocol value as a universal production target.",
+      "Reporting successful seedlings without preserving the original denominator.",
+      "Changing multiple variables at once and then claiming one caused the result."
+    ],
+    "practicalApplication": "Audit a mock seed lot and identify which fields are required to reconstruct source, count, storage context and treatment history.",
+    "summary": "Use source-controlled evidence, preserve identity and denominators, and keep observations separate from explanations."
+  }
+}

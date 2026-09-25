@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "purpose": "Prevent duplicate curriculum during specialist and lead-program expansion by identifying existing canonical courses that may supply reusable objectives, lessons, evidence, assessments or scenarios. A reuse candidate is source material only and does not satisfy a future program requirement until reconciled into the target course and reviewed.",
   "policy": {
     "noAutomaticEquivalence": true,
@@ -357,6 +357,28 @@
         "donor performance",
         "sanitation",
         "tissue-culture foundations"
+      ],
+      "targetCourseReusePlans": [
+        {
+          "targetCourseId": "COURSE-LH-PCS-001",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-PROP-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-005",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-001-SEED-ESTABLISHMENT",
+          "remainingDepth": [
+            "photorealistic seed anatomy, germination-stage, seedling and root-zone visual set",
+            "human seed-science/propagation review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        }
       ]
     },
     {
