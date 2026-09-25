@@ -27,6 +27,7 @@ const port = Number(process.env.PORT ?? 8787);
 const credentialDefinitions = new Map();
 const courseDefinitions = new Map();
 const assessmentDefinitions = new Map();
+const credentialProgramDefinitions = new Map();
 
 function loadCredentialDefinition(id) {
   if (!/^CRED-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
@@ -35,6 +36,17 @@ function loadCredentialDefinition(id) {
   if (!fs.existsSync(target)) return null;
   const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
   credentialDefinitions.set(id, definition);
+  return definition;
+}
+
+function loadCredentialProgramDefinition(id) {
+  if (!/^CREDPROG-[A-Z0-9-]+$/.test(String(id ?? ''))) return null;
+  if (credentialProgramDefinitions.has(id)) return credentialProgramDefinitions.get(id);
+  const target = path.join(root, 'content/credential-programs', `${id}.json`);
+  if (!fs.existsSync(target)) return null;
+  const definition = JSON.parse(fs.readFileSync(target, 'utf8'));
+  if (definition?.id !== id) return null;
+  credentialProgramDefinitions.set(id, definition);
   return definition;
 }
 
@@ -403,6 +415,46 @@ export function createHandler({
         catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
         const result = await claimCoursePracticalEvaluation({ store: practicalEvaluatorStore, courseId: evaluatorAssignmentMatch[1], externalSubject: body.learnerSubject, evaluatorId: auth.subject, action: body.action ?? 'claim' });
         return json(res, result.status, { ...result.body, requestId });
+      }
+
+      if ((req.method === 'GET' || req.method === 'PUT') && url.pathname === '/api/v1/me/profile') {
+        route = `${req.method} /api/v1/me/profile`;
+        const auth = authorizeRequest(resolvedAuthorize, req, req.method === 'GET' ? 'learner:read' : 'learner:write', res, requestId);
+        if (!auth) return;
+        const requiredMethod = req.method === 'GET' ? 'getLearnerProfile' : 'saveLearnerProfile';
+        if (!learnerStore || typeof learnerStore[requiredMethod] !== 'function') return json(res, 503, { error: 'learner-profile-persistence-unavailable', requestId });
+        if (req.method === 'GET') return json(res, 200, { profile: await learnerStore.getLearnerProfile(auth.subject), requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const displayName = body.displayName == null ? null : String(body.displayName).trim();
+        const certificateName = body.certificateName == null ? null : String(body.certificateName).trim();
+        if ((displayName && displayName.length < 2) || (certificateName && certificateName.length < 2)) return json(res, 400, { error: 'invalid-learner-name', requestId });
+        const profile = await learnerStore.saveLearnerProfile(auth.subject, { displayName, certificateName });
+        return json(res, 200, { profile, requestId });
+      }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/applications') {
+        route = 'GET /api/v1/me/applications';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.listApplications !== 'function') return json(res, 503, { error: 'learner-application-persistence-unavailable', requestId });
+        return json(res, 200, { applications: await learnerStore.listApplications(auth.subject), requestId });
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/me/applications') {
+        route = 'POST /api/v1/me/applications';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || typeof learnerStore.createApplication !== 'function') return json(res, 503, { error: 'learner-application-persistence-unavailable', requestId });
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const programId = String(body.programId ?? '').trim();
+        const program = loadCredentialProgramDefinition(programId);
+        if (!program) return json(res, 404, { error: 'credential-program-not-found', requestId });
+        const application = await learnerStore.createApplication(auth.subject, { programId });
+        return json(res, 201, { application, requestId });
       }
 
       if (req.method === 'GET' && url.pathname === '/api/v1/me/enrollments') {
