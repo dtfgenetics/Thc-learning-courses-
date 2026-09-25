@@ -203,7 +203,7 @@ async function enhanceEvidencePanel(panel) {
     const written = result.data?.writtenAssessment ?? {};
     const finalButton = el('button', courseActionLabel(written.outcome), 'course-assessment-launch');
     finalButton.type = 'button';
-    finalButton.addEventListener('click', () => openCourseAssessment(finalButton));
+    finalButton.addEventListener('click', () => launchCourseAssessment(COURSE_ID, finalButton));
     actions.prepend(finalButton);
   }
   panel.append(actions);
@@ -396,12 +396,13 @@ async function renderCoursePractical(evidenceResult) {
   lessonView.focus();
 }
 
-async function openCourseAssessment(sourceButton) {
+export async function launchCourseAssessment(courseId, sourceButton) {
+  if (!courseId || !sourceButton) return;
   sourceButton.disabled = true;
   const original = sourceButton.textContent;
   sourceButton.textContent = 'Opening final…';
   try {
-    const response = await fetch(`/api/v1/me/courses/${COURSE_ID}/assessment-attempts`, {
+    const response = await fetch(`/api/v1/me/courses/${encodeURIComponent(courseId)}/assessment-attempts`, {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
     const body = await response.json().catch(() => ({}));
@@ -591,9 +592,9 @@ function renderAssessment(payload) {
   saveChains.clear();
   setCurriculumTabActive();
   const panel = el('article', '', 'portal-panel course-assessment-panel');
-  panel.append(el('p', 'Course 1 summative assessment', 'eyebrow'));
+  panel.append(el('p', 'Authenticated summative assessment', 'eyebrow'));
   panel.append(el('h2', payload.assessment.title));
-  panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%. This threshold is provisional pending pilot evidence and documented standard setting.`, 'lede'));
+  panel.append(el('p', `This is the graded academic final for ${payload.course?.title ?? 'this course'}. It is recorded to your learner account and remains separate from professional credential issuance. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
   const identity = el('div', '', 'course-assessment-identity');
   identity.append(el('span', `Learner: ${payload.learner?.learnerReference ?? 'account linked'}`));
@@ -636,7 +637,7 @@ async function submitAssessment(panel, { force = false, timedOut = false } = {})
     const body = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(body.error === 'assessment-incomplete' ? 'Every item must have a saved response before submission.' : body.error || `Submission failed (${response.status}).`);
     renderAssessmentResult(body);
-    refreshCourseEvidenceCard();
+    if (body.course?.id === COURSE_ID) refreshCourseEvidenceCard();
   } catch (error) {
     submit.textContent = 'Submit course final';
     updateAssessmentProgress(panel);
@@ -650,7 +651,7 @@ async function submitAssessment(panel, { force = false, timedOut = false } = {})
 function renderAssessmentResult(result) {
   stopAssessmentTimer();
   const panel = el('article', '', 'portal-panel course-assessment-result');
-  panel.append(el('p', 'Course 1 final result', 'eyebrow'));
+  panel.append(el('p', 'Recorded course-final result', 'eyebrow'));
   panel.append(el('h2', result.attempt.passed ? 'Course final passed under the current academic threshold' : 'Course final not passed under the current academic threshold'));
   const score = el('div', '', `course-assessment-score ${result.attempt.passed ? 'passed' : 'not-passed'}`);
   score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Current provisional threshold ${Number(result.assessment.passingScorePercent).toFixed(0)}%`));
@@ -661,7 +662,7 @@ function renderAssessmentResult(result) {
   resultRefs.append(el('span', `Attempt: ${result.attempt.id}`));
   resultRefs.append(el('span', `Scored: ${result.attempt.scoredAt ? new Date(result.attempt.scoredAt).toLocaleString() : 'pending'}`));
   panel.append(resultRefs);
-  panel.append(el('p', 'This is Course 1 academic knowledge evidence under a provisional development threshold pending pilot evidence and documented standard setting. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
+  panel.append(el('p', `This is academic knowledge evidence for ${result.course?.title ?? 'the course'}. Practical/performance evidence and professional credential issuance remain separate decisions.`, 'course-assessment-note'));
   const domains = el('section', '', 'course-assessment-domains');
   domains.append(el('h3', 'Domain results'));
   const list = el('div', '', 'course-assessment-domain-grid');
@@ -679,12 +680,15 @@ function renderAssessmentResult(result) {
     remediation.append(referenceButton); panel.append(remediation);
   }
   const actions = el('div', '', 'course-practical-page-actions');
-  const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary');
-  practicalButton.type = 'button';
-  practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
-  const back = el('button', 'Return to Course 1', 'course-assessment-secondary');
+  if (result.course?.id === COURSE_ID) {
+    const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary');
+    practicalButton.type = 'button';
+    practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
+    actions.append(practicalButton);
+  }
+  const back = el('button', 'Return to course catalog', 'course-assessment-secondary');
   back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
-  actions.append(practicalButton, back);
+  actions.append(back);
   panel.append(actions);
   lessonView.replaceChildren(panel); lessonView.focus();
 }
