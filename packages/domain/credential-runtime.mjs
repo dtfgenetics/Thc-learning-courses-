@@ -44,6 +44,7 @@ export function publicCredentialView(credential, definition) {
       version: credential.courseVersion ?? null
     },
     issuer: credential.issuer ?? payload.issuer ?? null,
+    recipientDisplayName: payload.publicRecipientNameConsent === true && typeof payload.publicRecipientName === 'string' ? payload.publicRecipientName : null,
     issuedAt: credential.issuedAt,
     expiresAt: credential.expiresAt ?? null,
     evidenceSummary: payload.publicEvidenceSummary ?? null,
