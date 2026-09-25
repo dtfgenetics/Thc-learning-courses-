@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-001-04",
+  "title": "Seedling Establishment, Root-Zone Condition & Sanitation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ROOTZONE-001",
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-001-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-PSU-POTTING-MEDIA-PROPAGATION"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Radicle emergence is not the end of propagation. Seedling establishment depends on a root zone that balances water and air, stable identity, sanitary handling and early recognition of abnormal development.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Establishment is a separate outcome",
+        "body": "A germinated seed can still fail during emergence or early seedling growth. Track normal establishment separately from radicle emergence.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Root-zone moisture and aeration interact",
+        "body": "Propagation media must support water availability while retaining air-filled pore space. Persistent saturation or poor structure can create root stress and disease-favorable conditions.",
+        "references": [
+          "REF-PSU-POTTING-MEDIA-PROPAGATION"
+        ]
+      },
+      {
+        "title": "Sanitation protects interpretation and stock",
+        "body": "Dirty tools, reused contaminated surfaces, splash movement and mixed tray identity can convert a seedling-performance problem into a biosecurity and traceability problem.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating a research protocol value as a universal production target.",
+      "Reporting successful seedlings without preserving the original denominator.",
+      "Changing multiple variables at once and then claiming one caused the result."
+    ],
+    "practicalApplication": "Inspect a simulated seedling tray record and classify observations into identity, emergence, root-zone, sanitation and plant-health categories before proposing any cause.",
+    "summary": "Use source-controlled evidence, preserve identity and denominators, and keep observations separate from explanations."
+  }
+}
