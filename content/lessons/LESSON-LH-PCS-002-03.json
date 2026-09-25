@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-002-03",
+  "title": "Stock-Area Biosecurity, Quarantine & Movement Control",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-002-03"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-IPM-001",
+    "REF-HLVD-TRANSMISSION-2025"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for stock-area biosecurity, quarantine & movement control in donor/mother plant systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Stock areas deserve separate controls",
+        "body": "Mother/stock plants can multiply biological risk across many downstream propagules. Clean, incoming, suspect and held material therefore need explicit boundaries.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Tools and plant movement are transmission pathways",
+        "body": "Cutting, pruning and plant-contact workflows can move sap-associated biological hazards; sanitation and movement controls must follow the facility's validated procedures.",
+        "references": [
+          "REF-HLVD-TRANSMISSION-2025"
+        ]
+      },
+      {
+        "title": "A quarantine label without operational separation is weak control",
+        "body": "Status must affect placement, movement, tools, access and release authority rather than existing only as a label.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating visual health as proof of clean-stock status.",
+      "Guessing donor identity from appearance.",
+      "Averaging away donor-specific performance differences."
+    ],
+    "practicalApplication": "Review a donor-management scenario, preserve identity and status evidence, and document the strongest supported next action without overstating cause or cleanliness.",
+    "summary": "Donor management depends on traceable identity, plant-health evidence, controlled movement and longitudinal performance records."
+  }
+}
