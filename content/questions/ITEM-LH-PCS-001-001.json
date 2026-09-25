@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A seed lot is labeled with the correct cross and lot number. Which statement is most accurate?",
+  "choices": [
+    "The label proves every seedling is genetically identical.",
+    "The label establishes provenance, but individual seedlings can still differ genetically because they arose through sexual reproduction.",
+    "The lot number eliminates the need to record parentage.",
+    "All seedlings from the lot should be treated as clones."
+  ],
+  "correct": 1,
+  "rationale": "The label establishes provenance, but individual seedlings can still differ genetically because they arose through sexual reproduction.",
+  "references": [
+    "REF-GENETICS-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}
