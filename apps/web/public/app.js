@@ -1,5 +1,6 @@
 import { courseProgress, createServerProgressClient, readProgress, setLessonComplete, writeProgress } from './progress.js';
 import { renderRichBlocks } from './rich-content.js';
+import { launchCourseAssessment } from './course-assessment.js';
 
 const catalogRoot = document.querySelector('#catalog');
 const catalogStatus = document.querySelector('#catalog-status');
@@ -209,6 +210,18 @@ function renderCatalog() {
       const label = final.purpose === 'credential' ? 'Credential assessment' : 'Course final';
       const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • provisional ${Number(final.passingScorePercent ?? 0).toFixed(0)}% academic threshold`;
       details.append(text('p', note, 'course-final-summary'));
+      if (final.status === 'published' && final.purpose === 'summative') {
+        const finalActions = document.createElement('div');
+        finalActions.className = 'course-assessment-actions course-final-actions';
+        const launch = document.createElement('button');
+        launch.type = 'button';
+        launch.className = 'course-assessment-launch';
+        launch.textContent = 'Take graded course final';
+        launch.setAttribute('aria-label', `Take graded final for ${course.title}`);
+        launch.addEventListener('click', () => launchCourseAssessment(course.id, launch));
+        finalActions.append(launch);
+        details.append(finalActions);
+      }
     }
 
     renderCourseEnrollment(details, course);
