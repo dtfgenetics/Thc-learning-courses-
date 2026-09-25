@@ -156,6 +156,22 @@ export function evaluateCourseAssessmentAttemptPolicy({ assessment, attempts = [
 export async function startOrResumeCourseAssessment({ learnerStore, subject, courseId, now = new Date().toISOString() }) {
   const bundle = loadPublishedCourseAssessment(courseId);
   if (bundle.error) return { status: bundle.error === 'course-not-found' ? 404 : 409, body: { error: bundle.error } };
+  if (bundle.course.credentialBearing === true && bundle.course.extensions?.credentialPath) {
+    if (typeof learnerStore.getLearnerProfile !== 'function' || typeof learnerStore.listApplications !== 'function') {
+      return { status: 503, body: { error: 'assessment-identity-linkage-unavailable' } };
+    }
+    const [profile, applications] = await Promise.all([
+      learnerStore.getLearnerProfile(subject),
+      learnerStore.listApplications(subject)
+    ]);
+    if (!profile?.certificateName) {
+      return { status: 409, body: { error: 'certificate-name-required', action: 'save-learner-profile' } };
+    }
+    const application = (applications ?? []).find((row) => row.programId === bundle.course.extensions.credentialPath && row.status === 'active');
+    if (!application?.applicationReference) {
+      return { status: 409, body: { error: 'active-credential-application-required', programId: bundle.course.extensions.credentialPath, action: 'create-credential-application' } };
+    }
+  }
   let attempt = await learnerStore.findOpenAssessmentAttempt(subject, { assessmentId: bundle.assessment.id });
   const resumed = Boolean(attempt);
   if (!attempt) {

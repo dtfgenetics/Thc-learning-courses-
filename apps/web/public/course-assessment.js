@@ -405,7 +405,16 @@ async function openCourseAssessment(sourceButton) {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
     const body = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(body.error === 'authentication-required' ? 'Sign in to start the official course final.' : body.error || `Assessment unavailable (${response.status}).`);
+    if (!response.ok) {
+      const message = body.error === 'authentication-required'
+        ? 'Sign in to start the official course final.'
+        : body.error === 'certificate-name-required'
+          ? 'Set the name you want printed on your certificate in My Learning Dashboard before starting the final.'
+          : body.error === 'active-credential-application-required'
+            ? 'Create your certification application in My Learning Dashboard before starting the final.'
+            : body.error || `Assessment unavailable (${response.status}).`;
+      throw new Error(message);
+    }
     renderAssessment(body);
   } catch (error) {
     sourceButton.textContent = original;
@@ -646,6 +655,12 @@ function renderAssessmentResult(result) {
   const score = el('div', '', `course-assessment-score ${result.attempt.passed ? 'passed' : 'not-passed'}`);
   score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Current provisional threshold ${Number(result.assessment.passingScorePercent).toFixed(0)}%`));
   panel.append(score);
+  const resultRefs = el('div', '', 'course-assessment-identity');
+  resultRefs.append(el('span', `Learner: ${result.learner?.learnerReference ?? 'account linked'}`));
+  resultRefs.append(el('span', `Application: ${result.learner?.applicationReference ?? 'not linked'}`));
+  resultRefs.append(el('span', `Attempt: ${result.attempt.id}`));
+  resultRefs.append(el('span', `Scored: ${result.attempt.scoredAt ? new Date(result.attempt.scoredAt).toLocaleString() : 'pending'}`));
+  panel.append(resultRefs);
   panel.append(el('p', 'This is Course 1 academic knowledge evidence under a provisional development threshold pending pilot evidence and documented standard setting. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
   const domains = el('section', '', 'course-assessment-domains');
   domains.append(el('h3', 'Domain results'));
