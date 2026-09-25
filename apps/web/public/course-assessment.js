@@ -6,6 +6,7 @@ const catalogRoot = document.querySelector('#catalog');
 const pendingSaves = new Set();
 const saveChains = new Map();
 let currentAttempt = null;
+let assessmentTimer = null;
 
 /* COURSE1_PRACTICAL_PUBLIC_DATA_START */
 const COURSE_PRACTICAL_PUBLIC = {
@@ -423,6 +424,47 @@ function allAnsweredAndSaved(panel) {
   return items.length > 0 && items.every((item) => item.dataset.answered === 'true' && item.dataset.saved === 'true');
 }
 
+function stopAssessmentTimer() {
+  if (assessmentTimer) clearInterval(assessmentTimer);
+  assessmentTimer = null;
+}
+
+function disableAssessmentInputs(panel) {
+  for (const control of panel.querySelectorAll('.course-assessment-form input, .course-assessment-submit')) control.disabled = true;
+}
+
+function startAssessmentTimer(panel) {
+  stopAssessmentTimer();
+  const timer = panel.querySelector('.course-assessment-timer');
+  const expiresAt = currentAttempt?.attempt?.expiresAt;
+  if (!timer || !expiresAt) {
+    if (timer) timer.textContent = 'Untimed';
+    return;
+  }
+  const tick = async () => {
+    const remainingMs = Date.parse(expiresAt) - Date.now();
+    if (!Number.isFinite(remainingMs)) { timer.textContent = 'Time unavailable'; stopAssessmentTimer(); return; }
+    if (remainingMs <= 0) {
+      timer.textContent = 'Time expired — submitting';
+      timer.classList.add('expired');
+      stopAssessmentTimer();
+      disableAssessmentInputs(panel);
+      await submitAssessment(panel, { force: true, timedOut: true });
+      return;
+    }
+    const totalSeconds = Math.ceil(remainingMs / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    timer.textContent = hours > 0
+      ? `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} remaining`
+      : `${minutes}:${String(seconds).padStart(2, '0')} remaining`;
+    timer.classList.toggle('warning', totalSeconds <= 300);
+  };
+  tick();
+  assessmentTimer = setInterval(tick, 1000);
+}
+
 function updateAssessmentProgress(panel) {
   const total = panel.querySelectorAll('.course-assessment-item').length;
   const answered = answerCount(panel);
@@ -545,7 +587,7 @@ function renderAssessment(payload) {
   panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%. This threshold is provisional pending pilot evidence and documented standard setting.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
   const toolbar = el('div', '', 'course-assessment-toolbar');
-  toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('span', 'Responses saved.', 'course-assessment-save-status'));
+  toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('strong', '', 'course-assessment-timer'), el('span', 'Responses saved.', 'course-assessment-save-status'));
   panel.append(toolbar);
   const form = document.createElement('form');
   form.className = 'course-assessment-form';
@@ -563,15 +605,16 @@ function renderAssessment(payload) {
   lessonView.replaceChildren(panel);
   lessonView.focus();
   updateAssessmentProgress(panel);
+  startAssessmentTimer(panel);
 }
 
-async function submitAssessment(panel) {
+async function submitAssessment(panel, { force = false, timedOut = false } = {}) {
   const submit = panel.querySelector('.course-assessment-submit');
-  if (!submit || submit.disabled) return;
-  submit.disabled = true; submit.textContent = 'Submitting…';
+  if (!submit || (submit.disabled && !force)) return;
+  submit.disabled = true; submit.textContent = timedOut ? 'Time expired — grading…' : 'Submitting…';
   try {
     await Promise.all([...pendingSaves]);
-    if (!allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.');
+    if (!force && !allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.');
     const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit`, {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
@@ -590,6 +633,7 @@ async function submitAssessment(panel) {
 }
 
 function renderAssessmentResult(result) {
+  stopAssessmentTimer();
   const panel = el('article', '', 'portal-panel course-assessment-result');
   panel.append(el('p', 'Course 1 final result', 'eyebrow'));
   panel.append(el('h2', result.attempt.passed ? 'Course final passed under the current academic threshold' : 'Course final not passed under the current academic threshold'));
