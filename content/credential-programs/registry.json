@@ -230,8 +230,14 @@
       ],
       "credentialAssessment": "ASSESS-CRED-PCS-001",
       "capstone": "CAPSTONE-CRED-PCS-PROPAGATION-001",
-      "programState": "planned-content-authoring",
-      "canonicalCourseObjectsPresent": 0
+      "programState": "course-authoring-in-progress",
+      "canonicalCourseObjectsPresent": 1,
+      "canonicalCourseObjectsPlanned": 6,
+      "courseAuthoringComplete": false,
+      "releaseAuthorized": false,
+      "canonicalCoursesSeeded": [
+        "COURSE-LH-PCS-001"
+      ]
     },
     {
       "id": "CREDPROG-POSTHARVEST-QA-001",
@@ -361,7 +367,7 @@
       "canonicalCourseObjectsPresent": 0
     }
   ],
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "currentReleaseScope": {
     "label": "Technician academic/certification finalization",
     "programIds": [
