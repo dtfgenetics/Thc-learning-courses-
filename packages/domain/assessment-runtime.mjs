@@ -3,6 +3,10 @@ import crypto from 'node:crypto';
 export function createAttempt({ learnerId, assessment, form, now = new Date().toISOString() }) {
   if (!learnerId) throw new Error('learnerId required');
   if (!assessment?.id || !form?.id || !Array.isArray(form.items)) throw new Error('assessment and form required');
+  const startedMs = Date.parse(now);
+  const timeLimitMinutes = assessment.timeLimitMinutes == null ? null : Number(assessment.timeLimitMinutes);
+  if (timeLimitMinutes != null && (!Number.isInteger(timeLimitMinutes) || timeLimitMinutes < 1)) throw new Error('invalid assessment time limit');
+  const expiresAt = timeLimitMinutes == null || !Number.isFinite(startedMs) ? null : new Date(startedMs + (timeLimitMinutes * 60 * 1000)).toISOString();
   return {
     id: crypto.randomUUID(),
     learnerId,
@@ -12,6 +16,7 @@ export function createAttempt({ learnerId, assessment, form, now = new Date().to
     formHash: form.integrityHash,
     status: 'started',
     startedAt: now,
+    expiresAt,
     submittedAt: null,
     scoredAt: null,
     items: form.items.map((item, index) => ({
