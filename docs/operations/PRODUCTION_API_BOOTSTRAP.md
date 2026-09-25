@@ -10,7 +10,7 @@ Set all of the following before starting `apps/api/src/server.mjs` with `NODE_EN
 - `THC_POSTGRES_POOL_MODULE` — when using the repository Postgres adapter, deployment module that exports `createPostgresPool({ env })` and returns a pool with `query()` and `connect()`.
 - `THC_AUTH_ADAPTER_MODULE` — module that exports `createRequestAuthorizer({ env })` for the deployed identity provider.
 - `THC_PUBLIC_BASE_URL` — externally reachable HTTPS base URL for the Academy/API environment.
-- `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `4`.
+- `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `6`.
 
 The bootstrap rejects missing configuration, non-HTTPS public URLs, adapter modules without the required factories, persistence stores without readiness/schema/lookup functions, and authentication adapters that do not return an authorizer function.
 
@@ -47,7 +47,7 @@ export async function createPersistenceAdapters({ env }) {
 
 `credentialStore.ping()` and `credentialStore.schemaVersion()` are used by `/readyz`. Production traffic should not be routed to the service until the database is reachable and its recorded schema version matches `THC_REQUIRED_SCHEMA_VERSION`.
 
-Schema version 3 adds `practical_evaluation_assignments`, which keeps evaluator ownership separate from practical score/evidence records. Schema version 4 adds private learner practical evidence-reference submissions. The academic enrollment-completion layer uses the existing `enrollments` table for current state and existing `audit_events` for immutable completion/reopen transition history.
+Schema version 3 adds `practical_evaluation_assignments`, which keeps evaluator ownership separate from practical score/evidence records. Schema version 4 adds private learner practical evidence-reference submissions. Schema version 5 adds persisted server-enforced assessment expiration timestamps. Schema version 6 adds learner/certificate profile fields, credential-program application references, and assessment-to-application linkage. The academic enrollment-completion layer uses the existing `enrollments` table for current state and existing `audit_events` for immutable completion/reopen transition history.
 
 `enrollmentCompletionStore.setEnrollmentAcademicStatus()` must update the current enrollment state and write its audit event atomically. The repository-provided `createPostgresEnrollmentCompletionStore({ query })` does this with one PostgreSQL statement and refuses to automate a `withdrawn` enrollment. `listEnrollmentAcademicHistory()` returns only minimal academic transition metadata; it does not expose assessment responses, private practical evidence, evaluator notes, or credential decisions.
 
