@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A cutting tray label is correct but the donor accession record is missing. What is the core quality problem?",
+  "choices": [
+    "The tray color is unknown.",
+    "Downstream material lacks reconstructable genealogy.",
+    "The cuttings cannot photosynthesize.",
+    "The rooting medium becomes invalid."
+  ],
+  "correct": 1,
+  "rationale": "A tray label without donor genealogy does not provide full source traceability.",
+  "references": [
+    "REF-GENETICS-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}
