@@ -19,7 +19,7 @@ for (const marker of [
 ]) assert.ok(html.includes(marker), `index must expose final-assessment asset/boundary contract: ${marker}`);
 
 for (const marker of [
-  '/api/v1/me/courses/${COURSE_ID}/assessment-attempts',
+  '/api/v1/me/courses/${encodeURIComponent(courseId)}/assessment-attempts',
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/responses',
   '/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit',
   'Responses save to your learner record as you answer.',
@@ -27,11 +27,10 @@ for (const marker of [
   'Time expired — submitting',
   'submitAssessment(panel, { force: true, timedOut: true })',
   'Post-attempt feedback is domain-level; answer keys are not displayed.',
-  'This is the public Course 1 final, separate from the Technician I credential examination.',
+  'Authenticated summative assessment',
+  'It is recorded to your learner account and remains separate from professional credential issuance.',
   'Current academic development threshold:',
-  'provisional pending pilot evidence and documented standard setting',
-  'This is Course 1 academic knowledge evidence under a provisional development threshold',
-  'this is not a Technician I credential decision',
+  'Practical/performance evidence and professional credential issuance remain separate decisions.',
   'Open Field References'
 ]) assert.ok(js.includes(marker), `assessment UI missing contract: ${marker}`);
 
@@ -61,4 +60,9 @@ for (const marker of [
 assert.ok(server.includes("['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']]"), 'web server must serve assessment JS');
 assert.ok(server.includes("['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']]"), 'web server must serve assessment CSS');
 
-console.log('Course 1 final learner UI autosave, accessibility, non-disclosure, provisional-threshold, credential-boundary, responsive, and static-serving contracts passed.');
+const app = fs.readFileSync('apps/web/public/app.js', 'utf8');
+assert.ok(app.includes("import { launchCourseAssessment } from './course-assessment.js'"), 'catalog must import the shared final launcher');
+assert.ok(app.includes('Take graded course final'), 'catalog must expose a graded final launch action for published summative finals');
+assert.ok(app.includes('launchCourseAssessment(course.id, launch)'), 'catalog final action must launch the selected course, not a hard-coded Course 1 assessment');
+
+console.log('Academy final learner UI autosave, accessibility, non-disclosure, identity linkage, generic course launching, responsive, and static-serving contracts passed.');
