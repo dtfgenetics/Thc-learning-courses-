@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-001-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A study reports one temperature as optimal for two hemp cultivars. How should a specialist use that value?",
+  "choices": [
+    "As a mandatory universal setpoint.",
+    "As evidence from those cultivars and conditions, not as a universal cannabis room setpoint.",
+    "Ignore it because hemp is Cannabis sativa.",
+    "Apply it without recording cultivar or protocol."
+  ],
+  "correct": 1,
+  "rationale": "As evidence from those cultivars and conditions, not as a universal cannabis room setpoint.",
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}
