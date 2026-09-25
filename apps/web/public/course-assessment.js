@@ -405,7 +405,16 @@ async function openCourseAssessment(sourceButton) {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
     const body = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(body.error === 'authentication-required' ? 'Sign in to start the official course final.' : body.error || `Assessment unavailable (${response.status}).`);
+    if (!response.ok) {
+      const message = body.error === 'authentication-required'
+        ? 'Sign in to start the official course final.'
+        : body.error === 'certificate-name-required'
+          ? 'Set the name you want printed on your certificate in My Learning Dashboard before starting the final.'
+          : body.error === 'active-credential-application-required'
+            ? 'Create your certification application in My Learning Dashboard before starting the final.'
+            : body.error || `Assessment unavailable (${response.status}).`;
+      throw new Error(message);
+    }
     renderAssessment(body);
   } catch (error) {
     sourceButton.textContent = original;
