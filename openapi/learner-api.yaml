@@ -8,6 +8,42 @@ servers:
 security:
   - bearerAuth: []
 paths:
+  /me/profile:
+    get:
+      operationId: getLearnerProfile
+      responses:
+        '200': { description: Private learner reference and certificate-name profile }
+        '401': { description: Authentication required }
+    put:
+      operationId: saveLearnerProfile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LearnerProfileRequest'
+      responses:
+        '200': { description: Learner profile saved }
+        '400': { description: Invalid learner name }
+        '401': { description: Authentication required }
+  /me/applications:
+    get:
+      operationId: listCredentialApplications
+      responses:
+        '200': { description: Private learner credential-program applications and reference numbers }
+        '401': { description: Authentication required }
+    post:
+      operationId: createCredentialApplication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CredentialApplicationRequest'
+      responses:
+        '201': { description: Credential-program application created or existing application returned }
+        '401': { description: Authentication required }
+        '404': { description: Credential program not found }
   /me/enrollments:
     get:
       operationId: listLearnerEnrollments
@@ -129,7 +165,7 @@ paths:
         '200': { description: Responses saved }
         '400': { description: Invalid response payload }
         '401': { description: Authentication required }
-        '409': { description: Attempt is no longer editable }
+        '409': { description: Attempt is no longer editable or its server-enforced time limit has expired }
   /me/assessment-attempts/{attemptId}/submit:
     post:
       operationId: submitAssessmentAttempt
@@ -184,6 +220,56 @@ components:
       required: true
       schema: { type: string, pattern: '^CRED-[A-Z0-9-]+$' }
   schemas:
+    LearnerProfileRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        displayName: { type: [string, 'null'], minLength: 2, maxLength: 120 }
+        certificateName: { type: [string, 'null'], minLength: 2, maxLength: 120 }
+    CredentialApplicationRequest:
+      type: object
+      additionalProperties: false
+      required: [programId]
+      properties:
+        programId: { type: string, pattern: '^CREDPROG-[A-Z0-9-]+
+      additionalProperties: false
+      required: [courseId, courseVersion]
+      properties:
+        courseId: { type: string }
+        courseVersion: { type: string }
+    LessonProgressRequest:
+      type: object
+      additionalProperties: false
+      required: [lessonVersion, status]
+      properties:
+        lessonVersion: { type: string }
+        status: { type: string, enum: [not-started, in-progress, completed] }
+    AssessmentResponse:
+      type: object
+      additionalProperties: false
+      required: [itemId, itemVersion, response]
+      properties:
+        itemId: { type: string }
+        itemVersion: { type: [string, number] }
+        response: {}
+    PracticalSubmissionRequest:
+      type: object
+      additionalProperties: false
+      required: [status, evidenceOutputs]
+      properties:
+        status: { type: string, enum: [draft, submitted] }
+        learnerStatement: { type: string, maxLength: 2000 }
+        evidenceOutputs:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [name, reference, description]
+            properties:
+              name: { type: string, maxLength: 200 }
+              reference: { type: string, maxLength: 500 }
+              description: { type: string, maxLength: 1000 }
+ }
     EnrollmentRequest:
       type: object
       additionalProperties: false
