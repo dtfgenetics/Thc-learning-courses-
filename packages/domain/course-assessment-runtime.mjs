@@ -154,6 +154,7 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
       formId: attempt.formId,
       status: attempt.status,
       startedAt: attempt.startedAt,
+      expiresAt: attempt.expiresAt ?? null,
       submittedAt: attempt.submittedAt ?? null,
       scoredAt: attempt.scoredAt ?? null
     },
@@ -161,6 +162,7 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
       id: assessment.id,
       title: assessment.title,
       totalItems: items.length,
+      timeLimitMinutes: assessment.timeLimitMinutes == null ? null : Number(assessment.timeLimitMinutes),
       passingScorePercent: Number(assessment.passingScorePercent ?? 0),
       feedbackMode: assessment.feedbackMode ?? null
     },
@@ -168,10 +170,10 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
   };
 }
 
-export function scorePersistedCourseAssessment({ assessment, attempt, itemBank, now = new Date().toISOString() }) {
+export function scorePersistedCourseAssessment({ assessment, attempt, itemBank, now = new Date().toISOString(), allowIncomplete = false }) {
   if (attempt.status !== 'started') throw new Error(`Cannot score attempt in status ${attempt.status}`);
   const unanswered = attempt.items.filter((row) => row.response == null || (Array.isArray(row.response) && row.response.length === 0));
-  if (unanswered.length) throw new Error(`Assessment has ${unanswered.length} unanswered item(s)`);
+  if (unanswered.length && !allowIncomplete) throw new Error(`Assessment has ${unanswered.length} unanswered item(s)`);
   const submitted = { ...attempt, status: 'submitted', submittedAt: now };
   const scored = scoreAttempt(submitted, itemBank, Number(assessment.passingScorePercent ?? 0), now);
   return { attempt: scored, competencyResults: competencyResults(scored) };
