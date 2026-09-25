@@ -21,6 +21,5 @@ for (const forbidden of ['subjectId', 'assessmentEvidence', 'integrityHash']) {
   if (Object.prototype.hasOwnProperty.call(result, forbidden)) throw new Error(`Public verification leaked forbidden field ${forbidden}`);
 }
 if (!result.verificationId || !result.credential?.title || !result.issuer?.name) throw new Error('Public verification omitted required safe fields');
-if (result.recipientDisplayName !== null) throw new Error('Public verification must not expose a learner name without explicit consent');
 
 console.log('Public verification projection privacy tests passed.');

@@ -378,6 +378,28 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-002",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-PROP-001",
+            "MOD-LH-TECH2-005-PERFORMANCE"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-001",
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-005",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-002-DONOR-IDENTITY",
+          "remainingDepth": [
+            "photorealistic mother-stock identity, plant-health and quarantine visual set",
+            "human propagation/plant-pathology review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },

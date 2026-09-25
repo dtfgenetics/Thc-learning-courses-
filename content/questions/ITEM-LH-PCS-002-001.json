@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two unlabeled mother plants are visually similar. What is the most defensible way to recover identity?",
+  "choices": [
+    "Assign identity from leaf shape.",
+    "Use controlled accession/genealogy records and hold unresolved material from downstream mixing.",
+    "Use aroma as the deciding test.",
+    "Label both with the most common cultivar."
+  ],
+  "correct": 1,
+  "rationale": "Identity must come from controlled records, not appearance.",
+  "references": [
+    "REF-GENETICS-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

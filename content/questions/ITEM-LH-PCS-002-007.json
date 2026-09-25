@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-002-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspect donor is tagged 'quarantine' but shares tools and traffic with clean stock. What is the main weakness?",
+  "choices": [
+    "The tag color may be wrong.",
+    "Quarantine status is not operationally enforced through movement/tool controls.",
+    "The donor is too old.",
+    "The room needs more lighting."
+  ],
+  "correct": 1,
+  "rationale": "A label alone does not create an effective biosecurity boundary.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

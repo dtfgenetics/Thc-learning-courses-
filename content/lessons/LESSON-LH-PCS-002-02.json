@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-002-02",
+  "title": "Donor Suitability, Health & Performance History",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-002-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-HLVD-TRANSMISSION-2025"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for donor suitability, health & performance history in donor/mother plant systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Suitability uses multiple evidence streams",
+        "body": "Donor condition, developmental status, cutting quality, recent stress, propagation success, plant-health history and identity confidence all affect whether a donor should supply material.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Asymptomatic does not mean pathogen-free",
+        "body": "HLVd has been detected in asymptomatic stock plants and rooted vegetative cuttings, so visual health alone cannot establish clean-stock status.",
+        "references": [
+          "REF-HLVD-TRANSMISSION-2025"
+        ]
+      },
+      {
+        "title": "Performance trends can reveal source-linked problems",
+        "body": "When one donor repeatedly underperforms under comparable process conditions, preserve that signal and investigate source, condition, genotype, handling and plant-health evidence before changing a shared room process.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating visual health as proof of clean-stock status.",
+      "Guessing donor identity from appearance.",
+      "Averaging away donor-specific performance differences."
+    ],
+    "practicalApplication": "Review a donor-management scenario, preserve identity and status evidence, and document the strongest supported next action without overstating cause or cleanliness.",
+    "summary": "Donor management depends on traceable identity, plant-health evidence, controlled movement and longitudinal performance records."
+  }
+}

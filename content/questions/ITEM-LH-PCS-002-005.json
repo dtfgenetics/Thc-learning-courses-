@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One donor group repeatedly roots poorly while other donors perform normally in the same room. What is the strongest next step?",
+  "choices": [
+    "Change the whole room immediately.",
+    "Investigate donor condition, source history, genotype, handling and plant-health evidence while preserving the donor-linked pattern.",
+    "Average all donors together.",
+    "Assume disease is confirmed."
+  ],
+  "correct": 1,
+  "rationale": "A donor-linked pattern narrows investigation but does not prove a single cause.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

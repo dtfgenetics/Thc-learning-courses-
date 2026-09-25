@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-002-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why do stock/mother areas warrant strong biosecurity controls?",
+  "choices": [
+    "Because one donor can supply many downstream propagules and multiply biological risk.",
+    "Because mother plants cannot be infected.",
+    "Because clones are genetically unrelated.",
+    "Because stock areas never need traceability."
+  ],
+  "correct": 0,
+  "rationale": "Stock plants can amplify risk across many propagated descendants.",
+  "references": [
+    "REF-HLVD-TRANSMISSION-2025"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}
