@@ -486,10 +486,14 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       const attemptsResult = await queryOrUnavailable(
         query,
-        `select assessment_id, assessment_version, form_id, status, started_at, submitted_at, scored_at, score_percent, passed
-           from assessment_attempts
-          where learner_id = $1
-          order by started_at desc`,
+        `select a.assessment_id, a.assessment_version, a.form_id, a.status, a.started_at, a.expires_at,
+                a.submitted_at, a.scored_at, a.score_percent, a.passed,
+                l.learner_reference, l.certificate_name, app.application_ref
+           from assessment_attempts a
+           join learners l on l.id = a.learner_id
+           left join academy_applications app on app.id = a.application_id
+          where a.learner_id = $1
+          order by a.started_at desc`,
         [learnerId]
       );
       const assessmentAttempts = (attemptsResult.rows ?? []).map(assessmentAttemptRow);
