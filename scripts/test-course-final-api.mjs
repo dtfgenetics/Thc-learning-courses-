@@ -6,6 +6,8 @@ import { presentCourseAssessmentItem } from '../packages/domain/course-assessmen
 
 const attempts = new Map();
 const learnerStore = {
+  async getLearnerProfile(subject) { return { learnerReference: `THC-LRN-${subject}`, displayName: 'Test Learner', certificateName: 'Test Learner' }; },
+  async listApplications() { return [{ applicationReference: 'THC-APP-TEST-001', programId: 'CREDPROG-CULT-TECH-I-001', status: 'active' }]; },
   async findOpenAssessmentAttempt(subject, { assessmentId }) {
     return [...attempts.values()].find((row) => row.learnerId === subject && row.assessmentId === assessmentId && ['started','submitted'].includes(row.status)) ?? null;
   },
