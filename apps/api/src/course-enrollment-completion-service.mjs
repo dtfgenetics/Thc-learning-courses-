@@ -112,22 +112,26 @@ export function evaluateCourseAcademicCompletion({ bundle, progress = [], eviden
   const writtenPassed = passedAttempts.length > 0;
   const writtenStatus = writtenPassed ? 'passed' : attempts.length ? 'not-passed' : 'not-attempted';
 
-  const practical = evidence.performanceAssessment?.assessmentId === bundle.performanceAssessmentId ? evidence.performanceAssessment : null;
-  const practicalPassed = Boolean(bundle.performanceAssessmentId)
-    && practical?.status === 'passed'
-    && Number(practical?.criticalErrorCount ?? 0) === 0;
-  const practicalStatus = practical?.status ?? 'not-recorded';
+  const practicalRequired = Boolean(bundle.performanceAssessmentId);
+  const practical = practicalRequired && evidence.performanceAssessment?.assessmentId === bundle.performanceAssessmentId
+    ? evidence.performanceAssessment
+    : null;
+  const practicalPassed = !practicalRequired || (
+    practical?.status === 'passed' &&
+    Number(practical?.criticalErrorCount ?? 0) === 0
+  );
+  const practicalStatus = practicalRequired ? (practical?.status ?? 'not-recorded') : 'not-required';
 
   const complete = instructionComplete && writtenPassed && practicalPassed;
   const missingRequirements = [];
   if (!instructionComplete) missingRequirements.push('instruction');
   if (!writtenPassed) missingRequirements.push('course-final');
-  if (!practicalPassed) missingRequirements.push('course-practical');
+  if (practicalRequired && !practicalPassed) missingRequirements.push('course-practical');
 
   const requirementCompletedAt = complete ? latestIso([
     ...completedRows.map((row) => row.completedAt),
     ...passedAttempts.map((row) => row.scoredAt),
-    practical?.evaluatedAt
+    practicalRequired ? practical?.evaluatedAt : null
   ]) ?? iso(now) : null;
 
   return {
