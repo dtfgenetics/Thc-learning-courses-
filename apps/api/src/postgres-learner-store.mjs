@@ -27,6 +27,7 @@ function assessmentAttemptRow(row) {
     formHash: row.form_hash ?? null,
     status: row.status,
     startedAt: row.started_at ? new Date(row.started_at).toISOString() : null,
+    expiresAt: row.expires_at ? new Date(row.expires_at).toISOString() : null,
     submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null,
     scoredAt: row.scored_at ? new Date(row.scored_at).toISOString() : null,
     scorePercent: row.score_percent == null ? null : Number(row.score_percent),
@@ -109,7 +110,7 @@ export function createPostgresLearnerStore({ query } = {}) {
     const result = await queryOrUnavailable(
       query,
       `select a.id, a.assessment_id, a.assessment_version, a.form_id, a.form_hash, a.status,
-              a.started_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
+              a.started_at, a.expires_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
          from learners l
          join assessment_attempts a on a.learner_id = l.id
         where l.external_subject = $1 and a.id = $2
@@ -200,7 +201,7 @@ export function createPostgresLearnerStore({ query } = {}) {
       const result = await queryOrUnavailable(
         query,
         `select id, assessment_id, assessment_version, form_id, form_hash, status,
-                started_at, submitted_at, scored_at, score_percent, passed
+                started_at, expires_at, submitted_at, scored_at, score_percent, passed
            from assessment_attempts
           where learner_id = $1 and assessment_id = $2 and status in ('started','submitted')
           order by started_at desc
@@ -232,11 +233,11 @@ export function createPostgresLearnerStore({ query } = {}) {
         query,
         `with inserted as (
            insert into assessment_attempts
-             (id, learner_id, assessment_id, assessment_version, form_id, form_hash, status, started_at, submitted_at, scored_at, score_percent, passed)
-           values ($1, $2, $3, $4, $5, $6, 'started', $7, null, null, null, null)
+             (id, learner_id, assessment_id, assessment_version, form_id, form_hash, status, started_at, expires_at, submitted_at, scored_at, score_percent, passed)
+           values ($1, $2, $3, $4, $5, $6, 'started', $7, $8, null, null, null, null)
            returning id
          ), input as (
-           select * from jsonb_to_recordset($8::jsonb) as x(
+           select * from jsonb_to_recordset($9::jsonb) as x(
              position integer, item_id text, item_version integer, competency_id text,
              response_json jsonb, score numeric, max_score numeric
            )
@@ -247,7 +248,7 @@ export function createPostgresLearnerStore({ query } = {}) {
                 input.response_json, input.score, input.max_score
            from inserted cross join input
          returning attempt_id`,
-        [attempt.id, learner.id, attempt.assessmentId, String(attempt.assessmentVersion), attempt.formId, attempt.formHash, attempt.startedAt, JSON.stringify(input)]
+        [attempt.id, learner.id, attempt.assessmentId, String(attempt.assessmentVersion), attempt.formId, attempt.formHash, attempt.startedAt, attempt.expiresAt ?? null, JSON.stringify(input)]
       );
       if ((result.rows ?? []).length !== input.length) throw new Error('assessment-attempt-item-write-mismatch');
       return { ...attempt, learnerId: externalSubject };
@@ -321,7 +322,7 @@ export function createPostgresLearnerStore({ query } = {}) {
              from owned
             where a.id = owned.id and (select count(*) from updated_items) = $8
            returning a.id, a.assessment_id, a.assessment_version, a.form_id, a.form_hash, a.status,
-                     a.started_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
+                     a.started_at, a.expires_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
          )
          select * from finalized`,
         [attempt.id, externalSubject, JSON.stringify(input), attempt.submittedAt, attempt.scoredAt, Number(attempt.scorePercent), Boolean(attempt.passed), input.length]
@@ -339,7 +340,7 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       const attemptsResult = await queryOrUnavailable(
         query,
-        `select assessment_id, assessment_version, form_id, status, started_at, submitted_at, scored_at, score_percent, passed
+        `select assessment_id, assessment_version, form_id, status, started_at, expires_at, submitted_at, scored_at, score_percent, passed
            from assessment_attempts
           where learner_id = $1 and assessment_id = $2
           order by started_at desc`,
