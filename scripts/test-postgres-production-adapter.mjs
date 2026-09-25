@@ -37,7 +37,7 @@ assert.equal(adapters.learnerStore.kind,'postgres-learner-runtime');
 assert.equal(adapters.practicalEvaluatorStore.kind,'postgres-practical-evaluator');
 assert.equal(adapters.enrollmentCompletionStore.kind,'postgres-enrollment-completion');
 assert.equal(await adapters.credentialStore.ping(),true);
-assert.equal(await adapters.credentialStore.schemaVersion(),'4');
+assert.equal(await adapters.credentialStore.schemaVersion(),'6');
 assert.equal((await adapters.credentialStore.getByVerificationId('VERIFY-1')).status,'valid');
 
 const transition=await adapters.credentialWriter.transitionById('cred-1','revoked',{actorId:'admin-1',reason:'controlled test'});
