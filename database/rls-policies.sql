@@ -16,6 +16,8 @@ $$;
 
 alter table learners enable row level security;
 alter table learners force row level security;
+alter table academy_applications enable row level security;
+alter table academy_applications force row level security;
 alter table enrollments enable row level security;
 alter table enrollments force row level security;
 alter table lesson_progress enable row level security;
@@ -34,6 +36,10 @@ alter table learner_portfolio_artifacts force row level security;
 create policy learner_self_read on learners
   for select
   using (id = thc_app.current_learner_id());
+
+create policy academy_application_self_read on academy_applications
+  for select
+  using (learner_id = thc_app.current_learner_id());
 
 create policy enrollment_self_read on enrollments
   for select
