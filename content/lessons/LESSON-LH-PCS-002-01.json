@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-002-01",
+  "title": "Donor Identity, Accessions & Genealogy",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-002-01"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-GENETICS-001",
+    "REF-CANNABIS-CONTROLLED-ENV-2023"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for donor identity, accessions & genealogy in donor/mother plant systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "A mother plant is a managed accession, not just a label",
+        "body": "Clonal propagation is used to retain cultivar identity, but the operational chain still depends on unique accession IDs, source history, cultivar claim, receipt or selection date, and links to downstream cutting batches.",
+        "references": [
+          "REF-CANNABIS-CONTROLLED-ENV-2023"
+        ]
+      },
+      {
+        "title": "Genealogy must survive every handoff",
+        "body": "A donor ID should follow collected cuttings into tray, batch and later plant records so a downstream performance or plant-health finding can be traced back to its source.",
+        "references": [
+          "REF-GENETICS-001"
+        ]
+      },
+      {
+        "title": "Appearance cannot safely reconstruct identity",
+        "body": "Leaf shape, aroma or growth habit may support observation but cannot replace controlled records when labels or genealogy are uncertain.",
+        "references": [
+          "REF-GENETICS-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating visual health as proof of clean-stock status.",
+      "Guessing donor identity from appearance.",
+      "Averaging away donor-specific performance differences."
+    ],
+    "practicalApplication": "Review a donor-management scenario, preserve identity and status evidence, and document the strongest supported next action without overstating cause or cleanliness.",
+    "summary": "Donor management depends on traceable identity, plant-health evidence, controlled movement and longitudinal performance records."
+  }
+}
