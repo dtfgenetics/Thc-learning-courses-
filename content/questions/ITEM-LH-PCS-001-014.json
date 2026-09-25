@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-001-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician observes fuzzy growth on two cells and immediately writes 'pathogen confirmed.' What is the documentation problem?",
+  "choices": [
+    "The record is too detailed.",
+    "The record converts an observation into a confirmed cause without diagnostic evidence.",
+    "The record contains a denominator.",
+    "The record includes an abnormal finding."
+  ],
+  "correct": 1,
+  "rationale": "The record converts an observation into a confirmed cause without diagnostic evidence.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}
