@@ -88,6 +88,11 @@ function safeAttemptView(bundle, attempt, { resumed = false } = {}) {
   const view = presentCourseAssessmentAttempt({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank });
   return {
     course: { id: bundle.course.id, title: bundle.course.title, version: bundle.course.version },
+    learner: {
+      learnerReference: attempt.learnerReference ?? null,
+      applicationReference: attempt.applicationReference ?? null,
+      certificateName: attempt.certificateName ?? null
+    },
     resumed,
     ...view
   };
@@ -175,7 +180,8 @@ export async function startOrResumeCourseAssessment({ learnerStore, subject, cou
       }
     }
     attempt = createCourseAssessmentAttempt({ learnerId: subject, assessment: bundle.assessment, itemBank: bundle.itemBank, now, seed: crypto.randomUUID() });
-    await learnerStore.createAssessmentAttempt(subject, { attempt });
+    const created = await learnerStore.createAssessmentAttempt(subject, { attempt, programId: bundle.course.extensions?.credentialPath ?? null });
+    attempt = { ...attempt, ...created };
   }
   return { status: 200, body: safeAttemptView(bundle, attempt, { resumed }) };
 }
@@ -249,6 +255,11 @@ export async function saveCourseAssessmentResponses({ learnerStore, subject, att
 function resultView(bundle, attempt, competencyRows) {
   return {
     course: { id: bundle.course.id, title: bundle.course.title },
+    learner: {
+      learnerReference: attempt.learnerReference ?? null,
+      applicationReference: attempt.applicationReference ?? null,
+      certificateName: attempt.certificateName ?? null
+    },
     assessment: {
       id: bundle.assessment.id,
       title: bundle.assessment.title,
