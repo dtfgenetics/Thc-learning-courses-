@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-001-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is changing temperature, medium and pre-treatment at the same time weak troubleshooting?",
+  "choices": [
+    "It always improves germination.",
+    "The changes are confounded, so the result cannot be cleanly attributed to one factor.",
+    "It removes the need for a control.",
+    "It proves cultivar independence."
+  ],
+  "correct": 1,
+  "rationale": "The changes are confounded, so the result cannot be cleanly attributed to one factor.",
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}
