@@ -6,8 +6,12 @@ import { presentCourseAssessmentItem } from '../packages/domain/course-assessmen
 
 const attempts = new Map();
 const learnerStore = {
-  async getLearnerProfile(subject) { return { learnerReference: `THC-LRN-${subject}`, displayName: 'Test Learner', certificateName: 'Test Learner' }; },
-  async listApplications() { return [{ applicationReference: 'THC-APP-TEST-001', programId: 'CREDPROG-CULT-TECH-I-001', status: 'active' }]; },
+  async getLearnerProfile(subject) {
+    return { learnerReference: `THC-LRN-${subject}`, displayName: subject === 'learner-no-name' ? null : 'Test Learner', certificateName: subject === 'learner-no-name' ? null : 'Test Learner' };
+  },
+  async listApplications(subject) {
+    return subject === 'learner-no-app' ? [] : [{ applicationReference: 'THC-APP-TEST-001', programId: 'CREDPROG-CULT-TECH-I-001', status: 'active' }];
+  },
   async findOpenAssessmentAttempt(subject, { assessmentId }) {
     return [...attempts.values()].find((row) => row.learnerId === subject && row.assessmentId === assessmentId && ['started','submitted'].includes(row.status)) ?? null;
   },
@@ -44,9 +48,15 @@ const credentialStore = {
 };
 
 const authorize = (req, scope) => {
-  if (req.headers.authorization !== 'Bearer learner-token') return { ok: false, status: 401, error: 'authentication-required' };
+  const token = req.headers.authorization;
+  const subjects = {
+    'Bearer learner-token': 'learner-course1',
+    'Bearer no-name-token': 'learner-no-name',
+    'Bearer no-app-token': 'learner-no-app'
+  };
+  if (!subjects[token]) return { ok: false, status: 401, error: 'authentication-required' };
   if (!['learner:read','learner:write'].includes(scope)) return { ok: false, status: 403, error: 'insufficient-scope' };
-  return { ok: true, subject: 'learner-course1', scopes: ['learner:read','learner:write'] };
+  return { ok: true, subject: subjects[token], scopes: ['learner:read','learner:write'] };
 };
 
 const server = createApiServer({ env: { NODE_ENV: 'production' }, credentialStore, learnerStore, requiredSchemaVersion: '2', authorize, logger: () => {} });
@@ -58,6 +68,14 @@ try {
   const startUrl = `${base}/api/v1/me/courses/COURSE-LH-TECH1-001/assessment-attempts`;
   const unauthorized = await fetch(startUrl, { method: 'POST' });
   assert.equal(unauthorized.status, 401);
+
+  const missingName = await fetch(startUrl, { method: 'POST', headers: { authorization: 'Bearer no-name-token', accept: 'application/json' } });
+  assert.equal(missingName.status, 409);
+  assert.equal((await missingName.json()).error, 'certificate-name-required');
+
+  const missingApplication = await fetch(startUrl, { method: 'POST', headers: { authorization: 'Bearer no-app-token', accept: 'application/json' } });
+  assert.equal(missingApplication.status, 409);
+  assert.equal((await missingApplication.json()).error, 'active-credential-application-required');
 
   const start = await fetch(startUrl, { method: 'POST', headers: { authorization: 'Bearer learner-token', accept: 'application/json' } });
   assert.equal(start.status, 200);
