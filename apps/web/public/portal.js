@@ -582,6 +582,48 @@ async function renderDownloads() {
   }
 }
 
+function printVerifiedCertificate(record) {
+  if (!record?.verificationId || !['issued','valid'].includes(record.status)) return;
+  const certificate = document.createElement('section');
+  certificate.className = 'print-certificate';
+  certificate.setAttribute('aria-label', 'Printable THC Academy credential certificate');
+  certificate.append(text('p', 'Teaching Healthy Cultivation', 'print-certificate-brand'));
+  certificate.append(text('p', 'THC Academy', 'print-certificate-academy'));
+  certificate.append(text('h1', 'Certificate of Credential'));
+  certificate.append(text('p', 'This certifies that', 'print-certificate-copy'));
+  certificate.append(text('h2', record.recipientDisplayName || 'Credential holder', 'print-certificate-name'));
+  certificate.append(text('p', 'has been issued the educational credential', 'print-certificate-copy'));
+  certificate.append(text('h3', record.credential?.title ?? 'THC Academy Credential', 'print-certificate-title'));
+  const meta = document.createElement('dl');
+  const fields = [
+    ['Verification ID', record.verificationId],
+    ['Credential ID', record.credential?.id],
+    ['Status', record.status],
+    ['Issued', record.issuedAt ? new Date(record.issuedAt).toLocaleDateString() : null],
+    ['Expires', record.expiresAt ? new Date(record.expiresAt).toLocaleDateString() : 'No expiration recorded'],
+    ['Issuer', record.issuer?.name]
+  ];
+  for (const [label, value] of fields) {
+    if (!value) continue;
+    const row = document.createElement('div');
+    row.append(text('dt', label), text('dd', value));
+    meta.append(row);
+  }
+  certificate.append(meta);
+  certificate.append(text('p', 'Verify this credential using the verification ID at the THC Academy credential verification page.', 'print-certificate-verify'));
+  certificate.append(text('p', record.disclaimer ?? '', 'print-certificate-disclaimer'));
+  document.body.append(certificate);
+  document.body.classList.add('printing-certificate');
+  const cleanup = () => {
+    document.body.classList.remove('printing-certificate');
+    certificate.remove();
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  window.print();
+  setTimeout(() => { if (certificate.isConnected) cleanup(); }, 1500);
+}
+
 function renderVerify() {
   setActive('tab-verify');
   if (compactCatalog?.matches) setCatalogExpanded(false);
@@ -637,6 +679,12 @@ function renderVerify() {
         dl.append(row);
       }
       card.append(dl);
+      if (['issued','valid'].includes(record.status)) {
+        const print = text('button', 'Print certificate', 'record-button portal-certificate-print');
+        print.type = 'button';
+        print.addEventListener('click', () => printVerifiedCertificate(record));
+        card.append(print);
+      }
       if (record.evidenceSummary) {
         card.append(text('p', `Verified evidence: ${record.evidenceSummary.writtenAssessments ?? 0} written assessment(s), ${record.evidenceSummary.performanceAssessments ?? 0} performance assessment(s), ${record.evidenceSummary.portfolioArtifacts ?? 0} portfolio artifact(s).`, 'portal-result-note'));
       }
