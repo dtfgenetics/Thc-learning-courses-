@@ -43,6 +43,7 @@ create table if not exists assessment_attempts (
   form_hash text not null,
   status text not null check (status in ('started','submitted','scored','voided')),
   started_at timestamptz not null default now(),
+  expires_at timestamptz,
   submitted_at timestamptz,
   scored_at timestamptz,
   score_percent numeric(5,2),
@@ -191,4 +192,11 @@ on conflict (version) do nothing;
 
 insert into academy_schema_migrations (version, description)
 values ('4', 'Learner practical evidence reference submissions')
+on conflict (version) do nothing;
+
+alter table assessment_attempts
+  add column if not exists expires_at timestamptz;
+
+insert into academy_schema_migrations (version, description)
+values ('5', 'Timed assessment attempt expiration')
 on conflict (version) do nothing;
