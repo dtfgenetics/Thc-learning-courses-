@@ -113,6 +113,29 @@ try {
   assert.equal(resubmit.status, 200, 'scored submission should be idempotently readable');
   assert.equal((await resubmit.json()).attempt.scorePercent, 100);
 
+  const timedStart = await fetch(startUrl, { method: 'POST', headers: { authorization: 'Bearer learner-token', accept: 'application/json' } });
+  assert.equal(timedStart.status, 200);
+  const timed = await timedStart.json();
+  assert.equal(timed.assessment.timeLimitMinutes, 60);
+  assert.ok(timed.attempt.expiresAt, 'timed attempt must expose a persisted deadline');
+  attempts.get(timed.attempt.id).expiresAt = '2000-01-01T00:00:00.000Z';
+
+  const expiredSave = await fetch(`${base}/api/v1/me/assessment-attempts/${timed.attempt.id}/responses`, {
+    method: 'PUT',
+    headers: { authorization: 'Bearer learner-token', accept: 'application/json', 'content-type': 'application/json' },
+    body: JSON.stringify({ responses: [{ itemId: timed.items[0].id, itemVersion: timed.items[0].version, response: 0 }] })
+  });
+  assert.equal(expiredSave.status, 409);
+  assert.equal((await expiredSave.json()).error, 'assessment-time-expired');
+
+  const expiredSubmit = await fetch(`${base}/api/v1/me/assessment-attempts/${timed.attempt.id}/submit`, {
+    method: 'POST', headers: { authorization: 'Bearer learner-token', accept: 'application/json' }
+  });
+  assert.equal(expiredSubmit.status, 200, 'expired attempt should be server-finalized even with unanswered items');
+  const expiredResult = await expiredSubmit.json();
+  assert.equal(expiredResult.attempt.status, 'scored');
+  assert.equal(expiredResult.attempt.passed, false);
+
   const blockedCredentialPath = await fetch(`${base}/api/v1/me/courses/COURSE-CULT-TECH-II-001/assessment-attempts`, {
     method: 'POST', headers: { authorization: 'Bearer learner-token' }
   });
