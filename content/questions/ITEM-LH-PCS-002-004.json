@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A mother plant appears healthy but has not been tested under the facility's clean-stock program. What can be concluded?",
+  "choices": [
+    "It is pathogen-free because it is asymptomatic.",
+    "Visual health alone does not establish clean-stock status.",
+    "It must be discarded.",
+    "All cuttings from it are automatically unsafe."
+  ],
+  "correct": 1,
+  "rationale": "Asymptomatic stock plants can carry HLVd; visual status alone is insufficient.",
+  "references": [
+    "REF-HLVD-TRANSMISSION-2025"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}
