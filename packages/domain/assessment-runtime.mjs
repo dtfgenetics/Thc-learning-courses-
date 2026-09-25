@@ -47,7 +47,9 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
     const item = bank.get(`${row.itemId}@${row.itemVersion}`);
     if (!item) throw new Error(`Missing immutable item version ${row.itemId}@${row.itemVersion}`);
     let score = 0;
-    if (['multiple-choice','scenario','case-study'].includes(item.type)) score = Number(row.response) === Number(item.correct) ? 1 : 0;
+    const unanswered = row.response == null || (Array.isArray(row.response) && row.response.length === 0);
+    if (unanswered) score = 0;
+    else if (['multiple-choice','scenario','case-study'].includes(item.type)) score = Number(row.response) === Number(item.correct) ? 1 : 0;
     else if (item.type === 'multiple-response') {
       const expected = [...item.correct].sort((a,b) => a-b);
       const actual = Array.isArray(row.response) ? [...row.response].sort((a,b) => a-b) : [];
