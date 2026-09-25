@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-001-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two seedlings from the same controlled cross differ in vigor. What is the best first interpretation?",
+  "choices": [
+    "Within-family variation is impossible.",
+    "Within-family variation is possible; verify identity and environment before treating the difference as an error.",
+    "The weaker seedling must be contaminated.",
+    "The cross record should be discarded."
+  ],
+  "correct": 1,
+  "rationale": "Within-family variation is possible; verify identity and environment before treating the difference as an error.",
+  "references": [
+    "REF-GENETICS-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}
