@@ -586,6 +586,12 @@ function renderAssessment(payload) {
   panel.append(el('h2', payload.assessment.title));
   panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%. This threshold is provisional pending pilot evidence and documented standard setting.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
+  const identity = el('div', '', 'course-assessment-identity');
+  identity.append(el('span', `Learner: ${payload.learner?.learnerReference ?? 'account linked'}`));
+  identity.append(el('span', `Application: ${payload.learner?.applicationReference ?? 'not linked'}`));
+  identity.append(el('span', `Certificate name: ${payload.learner?.certificateName ?? 'not set'}`));
+  identity.append(el('span', `Attempt: ${payload.attempt.id}`));
+  panel.append(identity);
   const toolbar = el('div', '', 'course-assessment-toolbar');
   toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('strong', '', 'course-assessment-timer'), el('span', 'Responses saved.', 'course-assessment-save-status'));
   panel.append(toolbar);
