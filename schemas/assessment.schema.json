@@ -16,6 +16,7 @@
     "passingScorePercent": {"type": "number", "minimum": 0, "maximum": 100},
     "maxAttempts": {"type": ["integer", "null"], "minimum": 1},
     "cooldownHours": {"type": "integer", "minimum": 0},
+    "timeLimitMinutes": {"type": ["integer", "null"], "minimum": 1, "maximum": 480},
     "feedbackMode": {"enum": ["immediate", "after-submit", "post-attempt-domain-level", "delayed", "none"]},
     "totalItems": {"type": "integer", "minimum": 1},
     "randomizeItems": {"type": "boolean"},
