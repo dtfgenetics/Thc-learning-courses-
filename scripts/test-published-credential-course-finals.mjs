@@ -12,9 +12,11 @@ const readDir = (rel) => {
 
 const releases = readDir('content/public-releases').filter((release) => release.publicationState === 'published');
 const releasedCourseIds = new Set(releases.map((release) => release.courseId));
+const targetPrograms = new Set(['CREDPROG-CULT-TECH-I-001', 'CREDPROG-CULT-TECH-II-001']);
 const courses = readDir('content/courses').filter((course) =>
   course.status === 'published' &&
   course.credentialBearing === true &&
+  targetPrograms.has(course.extensions?.credentialPath) &&
   typeof course.finalAssessment === 'string' &&
   releasedCourseIds.has(course.id)
 );
