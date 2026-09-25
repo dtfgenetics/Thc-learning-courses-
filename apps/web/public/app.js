@@ -203,7 +203,10 @@ function renderCatalog() {
     details.append(progressTrack);
 
     if (course.credentialBearing) {
-      details.append(text('p', 'Lesson progress only. Course and credential completion also depend on the required assessment and practical-performance evidence, which are tracked separately from lesson checkmarks.', 'course-meta'));
+      const academicRequirement = course.finalAssessment?.academicPracticalRequired
+        ? 'Academic course completion requires the graded final plus the linked academic practical.'
+        : 'Academic course completion requires the graded final; professional practical/performance requirements are tracked separately.';
+      details.append(text('p', `Lesson progress only. ${academicRequirement} Professional credential issuance remains a separate process.`, 'course-meta'));
     }
     if (course.finalAssessment) {
       const final = course.finalAssessment;
