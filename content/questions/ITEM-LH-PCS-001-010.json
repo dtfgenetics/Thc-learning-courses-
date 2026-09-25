@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-LH-PCS-001-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Radicles emerge, but many seedlings fail after emergence in persistently saturated media. What is the best next reasoning step?",
+  "choices": [
+    "Count every radicle as a successfully established seedling.",
+    "Treat establishment as a separate outcome and evaluate root-zone aeration/moisture, sanitation and plant-health evidence.",
+    "Assume genetics are the only cause.",
+    "Increase water without checking media condition."
+  ],
+  "correct": 1,
+  "rationale": "Treat establishment as a separate outcome and evaluate root-zone aeration/moisture, sanitation and plant-health evidence.",
+  "references": [
+    "REF-PSU-POTTING-MEDIA-PROPAGATION"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}
