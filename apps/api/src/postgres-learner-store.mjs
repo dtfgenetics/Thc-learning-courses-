@@ -133,6 +133,67 @@ export function createPostgresLearnerStore({ query } = {}) {
 
   return {
     kind: 'postgres-learner-runtime',
+    async getLearnerProfile(externalSubject) {
+      const learner = await ensureLearner(externalSubject);
+      return {
+        learnerReference: learner.learner_reference ?? null,
+        displayName: learner.display_name ?? null,
+        certificateName: learner.certificate_name ?? null
+      };
+    },
+    async saveLearnerProfile(externalSubject, { displayName = null, certificateName = null } = {}) {
+      const learner = await ensureLearner(externalSubject);
+      const cleanDisplay = displayName == null ? null : String(displayName).trim();
+      const cleanCertificate = certificateName == null ? null : String(certificateName).trim();
+      if (cleanDisplay && cleanDisplay.length > 120) throw new Error('displayName too long');
+      if (cleanCertificate && cleanCertificate.length > 120) throw new Error('certificateName too long');
+      const result = await queryOrUnavailable(query,
+        `update learners
+            set display_name = $1, certificate_name = $2, updated_at = now()
+          where id = $3
+        returning learner_reference, display_name, certificate_name`,
+        [cleanDisplay || null, cleanCertificate || null, learner.id]);
+      const row = result.rows?.[0] ?? {};
+      return { learnerReference: row.learner_reference ?? null, displayName: row.display_name ?? null, certificateName: row.certificate_name ?? null };
+    },
+    async listApplications(externalSubject) {
+      const learnerId = await learnerIdForSubject(externalSubject);
+      if (!learnerId) return [];
+      const result = await queryOrUnavailable(query,
+        `select application_ref, program_id, status, created_at, updated_at
+           from academy_applications
+          where learner_id = $1
+          order by created_at desc`,
+        [learnerId]);
+      return (result.rows ?? []).map((row) => ({
+        applicationReference: row.application_ref,
+        programId: row.program_id,
+        status: row.status,
+        createdAt: row.created_at ? new Date(row.created_at).toISOString() : null,
+        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+      }));
+    },
+    async createApplication(externalSubject, { programId } = {}) {
+      if (!/^CREDPROG-[A-Z0-9-]+$/.test(String(programId ?? ''))) throw new Error('invalid programId');
+      const learner = await ensureLearner(externalSubject);
+      const id = crypto.randomUUID();
+      const applicationReference = `THC-APP-${crypto.randomBytes(8).toString('hex').toUpperCase()}`;
+      const result = await queryOrUnavailable(query,
+        `insert into academy_applications (id, learner_id, application_ref, program_id, status)
+         values ($1, $2, $3, $4, 'active')
+         on conflict (learner_id, program_id)
+         do update set updated_at = now()
+         returning application_ref, program_id, status, created_at, updated_at`,
+        [id, learner.id, applicationReference, programId]);
+      const row = result.rows?.[0];
+      return {
+        applicationReference: row.application_ref,
+        programId: row.program_id,
+        status: row.status,
+        createdAt: row.created_at ? new Date(row.created_at).toISOString() : null,
+        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+      };
+    },
     async listEnrollments(externalSubject) {
       const result = await queryOrUnavailable(
         query,
