@@ -184,7 +184,15 @@ async function renderCredentialProgress() {
   lessonView.focus();
 
   try {
-    const [enrollmentResponse, courseCompletionResponse, progressResponse, transcriptResponse] = await Promise.all([
+    const [profileResponse, applicationsResponse, enrollmentResponse, courseCompletionResponse, progressResponse, transcriptResponse] = await Promise.all([
+      fetch('/api/v1/me/profile', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/applications', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
       fetch('/api/v1/me/enrollments', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
@@ -202,6 +210,10 @@ async function renderCredentialProgress() {
         credentials: 'same-origin'
       })
     ]);
+    if (!profileResponse.ok || !applicationsResponse.ok) {
+      if ([profileResponse.status, applicationsResponse.status].some((status) => status === 401 || status === 403)) throw new Error('Learner identity and application records are available after learner authentication.');
+      throw new Error('Learner identity/application records are unavailable.');
+    }
     if (!enrollmentResponse.ok) {
       if (enrollmentResponse.status === 401 || enrollmentResponse.status === 403) throw new Error('Learner dashboard is available after learner authentication.');
       throw new Error(`Enrollment status unavailable (${enrollmentResponse.status}).`);
@@ -218,11 +230,77 @@ async function renderCredentialProgress() {
       if (transcriptResponse.status === 401 || transcriptResponse.status === 403) throw new Error('Competency transcript is available after learner authentication.');
       throw new Error(`Competency transcript unavailable (${transcriptResponse.status}).`);
     }
+    const profileData = await profileResponse.json();
+    const applicationsData = await applicationsResponse.json();
     const enrollmentData = await enrollmentResponse.json();
     const courseCompletion = await courseCompletionResponse.json();
     const data = await progressResponse.json();
     const transcriptData = await transcriptResponse.json();
     panel.querySelector('.status')?.remove();
+
+    const profile = profileData.profile ?? {};
+    const applications = applicationsData.applications ?? [];
+    const tech1Application = applications.find((row) => row.programId === 'CREDPROG-CULT-TECH-I-001' && row.status === 'active') ?? null;
+    const identitySection = document.createElement('section');
+    identitySection.className = 'portal-progress-section learner-identity-section';
+    identitySection.append(text('h3', 'Learner identity & certification application'));
+    const identitySummary = document.createElement('div');
+    identitySummary.className = 'portal-progress-summary';
+    identitySummary.append(
+      summaryCard('Learner reference', profile.learnerReference ?? 'Not assigned', 'Private learner-account reference'),
+      summaryCard('Application reference', tech1Application?.applicationReference ?? 'Not created', 'Technician I application'),
+      summaryCard('Certificate name', profile.certificateName || 'Not set', 'Printed exactly as saved after credential issuance')
+    );
+    identitySection.append(identitySummary);
+    const identityForm = document.createElement('form');
+    identityForm.className = 'learner-identity-form';
+    const nameLabel = document.createElement('label');
+    nameLabel.className = 'portal-input-row';
+    nameLabel.append(text('span', 'Name to print on certificate'));
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.maxLength = 120;
+    nameInput.autocomplete = 'name';
+    nameInput.value = profile.certificateName ?? profile.displayName ?? '';
+    nameLabel.append(nameInput);
+    const identityActions = document.createElement('div');
+    identityActions.className = 'record-actions';
+    const saveName = text('button', 'Save certificate name', 'record-button');
+    saveName.type = 'submit';
+    identityActions.append(saveName);
+    if (!tech1Application) {
+      const createApplication = text('button', 'Create Technician I application', 'record-button');
+      createApplication.type = 'button';
+      createApplication.addEventListener('click', async () => {
+        createApplication.disabled = true;
+        const response = await fetch('/api/v1/me/applications', {
+          method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin',
+          body: JSON.stringify({ programId: 'CREDPROG-CULT-TECH-I-001' })
+        });
+        const body = await response.json().catch(() => ({}));
+        if (!response.ok) { createApplication.disabled = false; createApplication.textContent = body.error || 'Application not created'; return; }
+        createApplication.textContent = `Application ${body.application.applicationReference}`;
+        createApplication.disabled = true;
+      });
+      identityActions.append(createApplication);
+    }
+    const identityStatus = text('p', '', 'portal-result-note');
+    identityForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      saveName.disabled = true;
+      identityStatus.textContent = 'Saving…';
+      const response = await fetch('/api/v1/me/profile', {
+        method: 'PUT', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin',
+        body: JSON.stringify({ displayName: profile.displayName ?? nameInput.value, certificateName: nameInput.value })
+      });
+      const body = await response.json().catch(() => ({}));
+      if (!response.ok) { identityStatus.textContent = body.error || 'Name not saved.'; saveName.disabled = false; return; }
+      identityStatus.textContent = `Saved for certificate printing as ${body.profile.certificateName}.`;
+      saveName.disabled = false;
+    });
+    identityForm.append(nameLabel, identityActions, identityStatus);
+    identitySection.append(identityForm);
+    panel.append(identitySection);
 
     const courseEnrollment = (enrollmentData.enrollments ?? []).find((row) => row.courseId === COURSE1_ID && String(row.courseVersion) === String(courseCompletion.course?.version));
     const academicSummary = document.createElement('section');
