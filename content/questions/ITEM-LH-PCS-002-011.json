@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-002-04",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should donor-specific rooting performance be stratified before reporting one facility average?",
+  "choices": [
+    "To hide weak donors.",
+    "To prevent meaningful subgroup failures from being averaged away.",
+    "To avoid recording denominators.",
+    "To prove genotype is the cause."
+  ],
+  "correct": 1,
+  "rationale": "Stratification preserves donor-linked signals without claiming causation.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}
