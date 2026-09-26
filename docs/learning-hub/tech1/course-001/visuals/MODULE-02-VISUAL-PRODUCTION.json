@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "finalFormats": [
+    "png",
+    "webp",
+    "jpeg"
+  ],
+  "svgAllowed": false,
+  "minLongEdgePx": 2200,
+  "styleRule": "Use photorealistic cultivation scenes for recognition tasks and branded scientific diagrams/process visuals for mechanisms. No generic decorative cannabis imagery.",
+  "textRule": "Keep critical labels concise in-image; put detailed explanation in HTML caption/body copy.",
+  "accessibilityRule": "Every asset requires alt text and a nearby instructional caption.",
+  "moduleId": "MOD-LH-TECH1-001-BIOSEC",
+  "moduleTitle": "Sanitation, Biosecurity & Controlled Movement",
+  "visuals": [
+    {
+      "id": "VIS-LH-T1-C1-M2-001",
+      "lesson": "2.1",
+      "title": "Source → route → susceptible target contamination chain",
+      "type": "scientific-pathway-diagram",
+      "placement": "After contamination-chain scientific foundation",
+      "teachingPurpose": "Source → route → susceptible target contamination chain",
+      "requiredContent": [
+        "source reservoirs",
+        "worker/tool/cart/air/water transfer routes",
+        "clean propagation target",
+        "three intervention points"
+      ],
+      "filename": "vis-lh-t1-c1-m2-001-source-route-susceptible-target-contamination-chain.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-002",
+      "lesson": "2.1",
+      "title": "Clean-to-dirty cultivation movement map",
+      "type": "annotated-facility-diagram",
+      "placement": "After zone-discipline section",
+      "teachingPurpose": "Clean-to-dirty cultivation movement map",
+      "requiredContent": [
+        "propagation",
+        "production",
+        "quarantine",
+        "waste exit",
+        "worker route",
+        "tool/cart route",
+        "backtracking risk"
+      ],
+      "filename": "vis-lh-t1-c1-m2-002-clean-to-dirty-cultivation-movement-map.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-003",
+      "lesson": "2.1",
+      "title": "Cross-contamination recognition scene",
+      "type": "annotated-photorealistic-scene",
+      "placement": "After worked case",
+      "teachingPurpose": "Cross-contamination recognition scene",
+      "requiredContent": [
+        "shared cart",
+        "hose end contacting floor",
+        "gloves moving between zones",
+        "plant debris",
+        "room-specific tools"
+      ],
+      "filename": "vis-lh-t1-c1-m2-003-cross-contamination-recognition-scene.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-004",
+      "lesson": "2.2",
+      "title": "Cleaning → disinfection → verification sequence",
+      "type": "process-diagram",
+      "placement": "After sanitation sequence",
+      "teachingPurpose": "Cleaning → disinfection → verification sequence",
+      "requiredContent": [
+        "gross debris removal",
+        "cleaning",
+        "approved product verification",
+        "contact condition",
+        "finish/rinse/dry if required",
+        "inspection",
+        "documentation"
+      ],
+      "filename": "vis-lh-t1-c1-m2-004-cleaning-disinfection-verification-sequence.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-005",
+      "lesson": "2.2",
+      "title": "Why organic matter weakens disinfection",
+      "type": "scientific-mechanism-diagram",
+      "placement": "After disinfectant-performance foundation",
+      "teachingPurpose": "Why organic matter weakens disinfection",
+      "requiredContent": [
+        "surface debris shielding",
+        "uneven wetting",
+        "organic load",
+        "cleaned surface comparison"
+      ],
+      "filename": "vis-lh-t1-c1-m2-005-why-organic-matter-weakens-disinfection.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-006",
+      "lesson": "2.2",
+      "title": "Contact-time concept without product-specific recipe",
+      "type": "comparison-chart",
+      "placement": "After contact-time explanation",
+      "teachingPurpose": "Contact-time concept without product-specific recipe",
+      "requiredContent": [
+        "too short",
+        "label-compliant wet contact",
+        "unsupported over-concentration warning",
+        "no universal numbers"
+      ],
+      "filename": "vis-lh-t1-c1-m2-006-contact-time-concept-without-product-specific-recipe.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-007",
+      "lesson": "2.3",
+      "title": "Quarantine is more than a room",
+      "type": "systems-diagram",
+      "placement": "After quarantine scientific foundation",
+      "teachingPurpose": "Quarantine is more than a room",
+      "requiredContent": [
+        "identity",
+        "physical separation",
+        "movement control",
+        "tool control",
+        "entry/exit rules",
+        "release authority",
+        "records"
+      ],
+      "filename": "vis-lh-t1-c1-m2-007-quarantine-is-more-than-a-room.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-008",
+      "lesson": "2.3",
+      "title": "Quarantine vs hold vs restricted-entry",
+      "type": "comparison-plate",
+      "placement": "After distinction paragraph",
+      "teachingPurpose": "Quarantine vs hold vs restricted-entry",
+      "requiredContent": [
+        "purpose",
+        "what it applies to",
+        "what it blocks",
+        "who/process clears it",
+        "can coexist"
+      ],
+      "filename": "vis-lh-t1-c1-m2-008-quarantine-vs-hold-vs-restricted-entry.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-009",
+      "lesson": "2.3",
+      "title": "Biosecurity breach containment flow",
+      "type": "decision-flow",
+      "placement": "After breach response section",
+      "teachingPurpose": "Biosecurity breach containment flow",
+      "requiredContent": [
+        "stop movement",
+        "preserve identity/state",
+        "map route",
+        "contain if authorized",
+        "notify",
+        "document",
+        "release only by authority"
+      ],
+      "filename": "vis-lh-t1-c1-m2-009-biosecurity-breach-containment-flow.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M2-010",
+      "lesson": "2.3",
+      "title": "Biosecurity breach packet example",
+      "type": "annotated-document-example",
+      "placement": "Beside module application",
+      "teachingPurpose": "Biosecurity breach packet example",
+      "requiredContent": [
+        "room map",
+        "identifiers",
+        "movement timeline",
+        "sanitation status",
+        "immediate controls",
+        "open questions",
+        "handoff"
+      ],
+      "filename": "vis-lh-t1-c1-m2-010-biosecurity-breach-packet-example.png"
+    }
+  ]
+}
