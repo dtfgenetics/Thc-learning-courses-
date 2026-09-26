@@ -1,7 +1,7 @@
 {
   "system": "THC Academy",
-  "version": "0.1.6",
-  "updatedAt": "2026-09-23",
+  "version": "0.1.7",
+  "updatedAt": "2026-09-25",
   "productionReady": false,
   "areas": {
     "curriculum": {
@@ -42,9 +42,11 @@
         "lessonModuleCourseCompletion": true,
         "assessmentAttemptLifecycle": true,
         "learnerTranscriptProjection": true,
-        "productionPersistenceAdapterCodeReady": true
+        "productionPersistenceAdapterCodeReady": true,
+        "learnerReferenceAndApplicationLinkage": true,
+        "serverEnforcedAssessmentDeadlines": true
       },
-      "scope": "Repository production persistence adapter composition is implemented and transaction-tested, but productionPersistenceAdapter remains false until a live PostgreSQL deployment, migrations, secret delivery, failure/retry behavior and operational validation are completed."
+      "scope": "Repository runtime now includes persisted learner references, certification applications, assessment-to-application linkage, server-enforced assessment deadlines, graded-final launch for published conventional course finals, and transaction-tested production adapter composition. productionPersistenceAdapter remains false until a live PostgreSQL deployment, migrations, secret delivery, failure/retry behavior and operational validation are completed."
     },
     "credentials": {
       "status": "foundation",
@@ -57,9 +59,11 @@
         "productionSigning": false,
         "revocationPersistence": false,
         "revocationTransactionCodeReady": true,
-        "productionSigningIntegrationCodeReady": true
+        "productionSigningIntegrationCodeReady": true,
+        "printableVerificationCertificate": true,
+        "consentedPublicRecipientNameProjection": true
       },
-      "scope": "Credential runtime foundation includes transaction-tested revocation code and a managed external signing-provider integration contract. Production issuer identity, production signing and deployed revocation persistence remain false until real infrastructure, key custody/security validation and program release approval exist."
+      "scope": "Credential runtime foundation includes transaction-tested revocation code, a managed external signing-provider integration contract, privacy-safe public verification, and printable verification-backed certificate rendering. Production issuer identity, production signing and deployed revocation persistence remain false until real infrastructure, key custody/security validation and program release approval exist."
     },
     "api": {
       "status": "integrated-development",
@@ -122,9 +126,12 @@
         "privacyBoundedCredentialTranscript": true,
         "practicalEvidenceSubmissionRepositoryImplemented": true,
         "practicalEvidenceSubmissionWorkflow": false,
-        "practicalEvidenceSubmissionWorkflowCodeReady": true
+        "practicalEvidenceSubmissionWorkflowCodeReady": true,
+        "multiCourseAcademicRecords": true,
+        "multiCourseGradedFinalLaunch": true,
+        "certificationApplicationRegistry": true
       },
-      "scope": "Learner practical evidence submission has domain, API and persistence contracts. The live operational workflow gate remains false until deployed end-to-end validation with real identity, persistence and evaluator operations exists."
+      "scope": "Learner experience now includes course enrollment, multi-course academic records, account-linked certification applications for Technician I/II, persisted certificate display name, and authenticated graded-final launch for published conventional finals. Practical submission code is implemented; live operational practical workflow remains false until deployed end-to-end validation with real identity, persistence and evaluator operations exists."
     }
   },
   "readinessScope": {
