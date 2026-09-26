@@ -20,8 +20,11 @@ function contractRoutes(source){
 }
 
 const runtimeRoutes=[...server.matchAll(/route = '([A-Z]+) (\/api\/v1\/me\/[^']+)'/g)]
-  .map((match)=>`${match[1]} ${match[2]}`)
-  .sort();
+  .map((match)=>`${match[1]} ${match[2]}`);
+if (server.includes("route = \`${req.method} /api/v1/me/profile\`")) {
+  runtimeRoutes.push('GET /api/v1/me/profile', 'PUT /api/v1/me/profile');
+}
+runtimeRoutes.sort();
 const documentedRoutes=contractRoutes(contract);
 
 assert.equal(documentedRoutes.length>0,true,'learner OpenAPI contract must expose authenticated learner routes');
