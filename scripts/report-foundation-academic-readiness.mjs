@@ -6,6 +6,8 @@ const check = process.argv.includes('--check');
 const json = process.argv.includes('--json');
 
 const moduleIds = [
+  'MOD-PLANT-BIO-001',
+  'MOD-FLOWER-001',
   'MOD-ENV-001',
   'MOD-LIGHT-001',
   'MOD-WATER-001',
@@ -143,7 +145,7 @@ for (const moduleId of moduleIds) {
 }
 
 const report = {
-  scope: 'shared-foundation-modules-tech1-courses-3-through-6',
+  scope: 'shared-foundation-modules-tech1-courses-2-through-6',
   generatedAt: new Date().toISOString(),
   requirements: {
     minimumBlocksPerLesson: 4,
