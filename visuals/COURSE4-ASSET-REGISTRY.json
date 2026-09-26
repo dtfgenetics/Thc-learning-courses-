@@ -511,6 +511,146 @@
         "releaseApproved": true
       },
       "productionRasterDriveMirrorStatus": "mirrored"
+    },
+    {
+      "id": "VIS-FOUNDATION-ROOTZONE-AIRWATER-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Root-zone air-water balance after irrigation",
+      "primaryLessons": [
+        "LESSON-ROOTZONE-001"
+      ],
+      "references": [
+        "REF-IRRIGATION-001",
+        "REF-CONTAINER-MEDIA-NCSU-2021"
+      ],
+      "purpose": "Show water-filled and air-filled pore spaces, root position, drainage and the difference between adequate moisture and prolonged saturation.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-cross-section",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-MEDIA-COMPARE-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Peat, coco and coarse soilless media pore-structure comparison",
+      "primaryLessons": [
+        "LESSON-ROOTZONE-MEDIA-002"
+      ],
+      "references": [
+        "REF-IRRIGATION-001",
+        "REF-CONTAINER-MEDIA-NCSU-2021"
+      ],
+      "purpose": "Compare representative pore structure, water retention, drainage and aeration concepts across media without assigning universal irrigation schedules.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "comparison-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-NUTRITION-MACRO-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Macronutrient function and interaction map",
+      "primaryLessons": [
+        "LESSON-NUTRITION-MACRO-002"
+      ],
+      "references": [
+        "REF-NUTRITION-001",
+        "REF-PSU-HYDROPONIC-NUTRITION-2026"
+      ],
+      "purpose": "Map N, P, K, Ca, Mg and S to major plant functions while showing that cation balance and developmental context matter.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "branded-scientific-chart",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-NUTRITION-MICRO-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Micronutrient availability, pH and symptom-location reasoning",
+      "primaryLessons": [
+        "LESSON-NUTRITION-MICRO-003"
+      ],
+      "references": [
+        "REF-NUTRITION-001",
+        "REF-PSU-HYDROPONIC-NUTRITION-2026"
+      ],
+      "purpose": "Show selected micronutrient functions, pH-sensitive availability and how tissue age/pattern contributes to diagnosis without turning the graphic into a one-photo deficiency key.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-chart",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
     }
   ],
   "ownerReleaseApproval": {
