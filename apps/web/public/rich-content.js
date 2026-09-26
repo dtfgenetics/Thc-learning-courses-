@@ -3,9 +3,9 @@ export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
     replaceAssetIds: ['VIS-LH-TECH1-001-010'],
     block: {
       type: 'image',
-      assetId: 'VIS-LH-TECH1-001-015',
+      assetId: 'VIS-LH-TECH1-001-033',
       title: 'Equipment pre-use readiness',
-      src: '/assets/course1/equipment-preuse-readiness.svg',
+      src: '/assets/course1/equipment-preuse-v3.png',
       alt: 'Five-step equipment pre-use readiness model: confirm exact asset and assignment, check controlled status, inspect only assigned external readiness points, review indicators permitted by the operator procedure, and classify the result as ready, approved routine correction, hold or escalation, or emergency response.',
       caption: 'A pre-use check verifies readiness; a failed criterion does not authorize repair. Preserve controlled status and follow the site-defined out-of-service or escalation process.',
       references: ['REF-NIOSH-CANNABIS-HAZARDS-2024', 'REF-OSHA-1910-147-LOTO']
@@ -15,9 +15,9 @@ export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
     replaceAssetIds: ['VIS-LH-TECH1-001-010'],
     block: {
       type: 'image',
-      assetId: 'VIS-LH-TECH1-001-016',
+      assetId: 'VIS-LH-TECH1-001-034',
       title: 'Operator care versus maintenance boundary',
-      src: '/assets/course1/operator-vs-maintenance-boundary.svg',
+      src: '/assets/course1/operator-vs-maintenance-v3.png',
       alt: 'Two-column decision visual separating routine operator care explicitly assigned, trained and authorized by current procedure from maintenance or servicing involving guarded access, electrical components, powered disassembly, pressure, stored energy, diagnosis, calibration or other unassigned work.',
       caption: 'The current equipment instructions and employer procedure define the boundary. If the action is not assigned to the operator, stop and clarify rather than expanding routine care into servicing.',
       references: ['REF-OSHA-1910-147-LOTO', 'REF-NIOSH-CANNABIS-HAZARDS-2024', 'REF-NIOSH-LOTO-2011-156']
@@ -27,9 +27,9 @@ export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
     replaceAssetIds: ['VIS-LH-TECH1-001-011'],
     block: {
       type: 'image',
-      assetId: 'VIS-LH-TECH1-001-017',
+      assetId: 'VIS-LH-TECH1-001-035',
       title: 'Fault context and escalation',
-      src: '/assets/course1/fault-context-escalation.svg',
+      src: '/assets/course1/fault-report-v3.png',
       alt: 'Maintenance-ready fault context model that records exact asset and location, first occurrence, exact alarm or symptom, permitted operator checks and results, recurrence, process impact, controlled status and notification while keeping verified facts separate from hypotheses.',
       caption: 'Make the condition reproducible without manufacturing certainty. Reporting timing and channel follow the applicable emergency, fault-reporting or escalation procedure.',
       references: ['REF-MHRA-GXP-DATA-INTEGRITY', 'REF-OSHA-1910-147-LOTO', 'REF-NIOSH-CANNABIS-HAZARDS-2024']
@@ -39,9 +39,9 @@ export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
     replaceAssetIds: ['VIS-LH-TECH1-001-014'],
     block: {
       type: 'image',
-      assetId: 'VIS-LH-TECH1-001-018',
+      assetId: 'VIS-LH-TECH1-001-036',
       title: 'Controlled record correction',
-      src: '/assets/course1/record-correction-controls.svg',
+      src: '/assets/course1/record-correction-v3.png',
       alt: 'Record-correction visual showing that paper and digital changes follow the governing record system and facility procedure, preserve the original information or audit trail, retain attribution and timing, and never silently overwrite, erase, backdate or replace missing data with an invented value.',
       caption: 'Correction methods are system-controlled. A paper strike-through style is only an example when the governing procedure permits it; the universal principle is preservation of original history or audit trail.',
       references: ['REF-MHRA-GXP-DATA-INTEGRITY']
@@ -51,9 +51,9 @@ export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
     replaceAssetIds: ['VIS-LH-TECH1-001-012'],
     block: {
       type: 'image',
-      assetId: 'VIS-LH-TECH1-001-019',
+      assetId: 'VIS-LH-TECH1-001-037',
       title: 'Professional shift handoff',
-      src: '/assets/course1/shift-handoff-control.svg',
+      src: '/assets/course1/shift-handoff-v3.png',
       alt: 'Four-stage shift handoff model showing outgoing preparation, two-way information exchange, incoming cross-check, and explicit ownership of unresolved work, with safety and access controls, holds and identity problems, equipment status, incomplete work and time-sensitive next actions prioritized.',
       caption: 'Handoff instructions and priorities must be current, controlled and within the receiving worker’s authority. Transfer exact status, ownership and timing instead of improvised instructions.',
       references: ['REF-HSE-SHIFT-HANDOVER', 'REF-MHRA-GXP-DATA-INTEGRITY']
@@ -64,9 +64,9 @@ export const COURSE1_PRIMARY_VISUAL_OVERRIDES = Object.freeze({
     insertAt: 1,
     block: {
       type: 'image',
-      assetId: 'VIS-LH-TECH1-001-020',
+      assetId: 'VIS-LH-TECH1-001-038',
       title: 'Integrated Technician I workflow',
-      src: '/assets/course1/integrated-technician-workflow.svg',
+      src: '/assets/course1/integrated-workflow-v3.png',
       alt: 'Integrated workflow connecting review of assigned work and current controlled instructions, readiness and dependency checks, authorized routine execution, monitoring and response to change, truthful documentation, and communication or follow-up while keeping unresolved or unauthorized work visibly open.',
       caption: 'PLAN means reviewing assigned work, current controlled instructions, hazards, prerequisites and priorities—not independent production-planning authority. Blocked or unauthorized work remains open and is routed to the appropriate role.',
       references: ['REF-NIOSH-CANNABIS-HAZARDS-2024', 'REF-MHRA-GXP-DATA-INTEGRITY', 'REF-OSHA-1910-147-LOTO', 'REF-HSE-SHIFT-HANDOVER']
