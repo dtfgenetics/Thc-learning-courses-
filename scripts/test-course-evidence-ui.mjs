@@ -36,6 +36,10 @@ assert.match(portal, /transcriptData\.competencies/, 'competency transcript rows
 assert.match(portal, /transcriptData\.performanceAssessments/, 'practical transcript rows must come from the transcript projection');
 assert.match(portal, /transcriptData\.portfolioArtifacts/, 'portfolio transcript rows must come from the transcript projection');
 assert.match(portal, /My Learning Dashboard/, 'learner portal should expose one consolidated dashboard');
+assert.match(portal, /fetch\('\/api\/v1\/me\/credentials'/, 'dashboard must load the authenticated learner issued-credential list');
+assert.match(portal, /Issued certificates/, 'dashboard must expose learner-owned issued certificates separately from progress');
+assert.match(portal, /record\.recipient\?\.certificateName/, 'private certificate printing must use the learner-owned certificate name when present');
+assert.match(portal, /Print certificate/, 'issued or valid learner credentials must expose certificate printing');
 assert.match(portal, /\/api\/v1\/me\/enrollments/, 'dashboard should read authoritative enrollment state');
 assert.match(portal, /\/api\/v1\/me\/courses\/\$\{encodeURIComponent\(course\.id\)\}\/completion/, 'dashboard should read authoritative completion for each enrolled credential-path course');
 assert.match(portal, /Academic course status/, 'dashboard should separate academic course status');
