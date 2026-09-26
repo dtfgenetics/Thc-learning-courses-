@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-WATER-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-WATER-EC-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Feed EC stays steady while root-zone EC rises over several irrigation events. What is the strongest interpretation?",
+  "choices": [
+    "Investigate concentration/accumulation, dryback and drainage before increasing feed concentration",
+    "The feed meter must always be wrong",
+    "Add more fertilizer immediately",
+    "Root-zone EC cannot differ from feed EC"
+  ],
+  "correct": 0,
+  "rationale": "A rising root-zone trend with stable feed EC can indicate concentration or accumulation in the root zone and should be interpreted with moisture and drainage data.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}
