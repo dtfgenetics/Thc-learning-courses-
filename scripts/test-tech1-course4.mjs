@@ -19,7 +19,7 @@ assert.equal(course.extensions?.dedicatedPerformanceValidationRequired, true);
 assert.equal(course.extensions?.mappedPractical, 'PRACTICAL-TECH1-B');
 assert.equal(course.extensions?.dedicatedItemCount, 36);
 assert.equal(course.extensions?.learnerAssetLayerBuilt, true);
-assert.equal(course.extensions?.totalLearnerAssetCount, 7);
+assert.equal(course.extensions?.totalLearnerAssetCount, 8);
 
 const module = read('content/modules/MOD-LH-TECH1-004-IRRIGATION.json');
 assert.equal(module.lessons.length, 4);
@@ -119,8 +119,8 @@ await import('./test-course4-visual-registry.mjs');
 
 const visualRegistry = read('visuals/COURSE4-ASSET-REGISTRY.json');
 const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.equal(producedAssets.length, 7, 'Course 4 should expose the current seven governed learner assets');
-assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'embedded-visual').length, 5);
+assert.equal(producedAssets.length, 8, 'Course 4 should expose the current eight governed learner assets');
+assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'embedded-visual').length, 6);
 assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'downloadable-practice').length, 2);
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
@@ -143,4 +143,4 @@ try {
   await once(server, 'close');
 }
 
-console.log('Course 004 production slice passed: four lessons, six objectives, 12 referenced formative items, 24 balanced summative items, complete package artifacts, Practical B crosswalk, visual registry and all seven governed Course 4 learner assets are wired through the Academy runtime while human/release gates remain open.');
+console.log('Course 004 production slice passed: four lessons, six objectives, 12 referenced formative items, 24 balanced summative items, complete package artifacts, Practical B crosswalk, visual registry and all eight governed Course 4 learner assets are wired through the Academy runtime while human/release gates remain open.');
