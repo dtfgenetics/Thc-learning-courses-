@@ -60,9 +60,14 @@ assert.equal(academic.snapshot.requiredModuleCount,6);
 
 const course2Bundle=loadCourseAcademicCompletionBundle('COURSE-LH-TECH1-002');
 assert.ok(course2Bundle,'Technician I Course 2 completion bundle must resolve');
-assert.deepEqual(course2Bundle.completionModuleIds,['MOD-LH-TECH1-002-OBSERVATION'],'Course 2 academic completion must use its dedicated certification teaching module rather than draft development dependencies');
-assert.equal(course2Bundle.modules.length,1);
-assert.equal(course2Bundle.lessons.length,4);
+assert.deepEqual(course2Bundle.completionModuleIds,[
+  'MOD-PLANT-BIO-001',
+  'MOD-FLOWER-001',
+  'MOD-LH-TECH1-001-RECORDS',
+  'MOD-LH-TECH1-002-OBSERVATION'
+],'Course 2 academic completion must require every canonical published teaching module, including shared Plant Biology, Flowering and Records foundations.');
+assert.equal(course2Bundle.modules.length,4);
+assert.equal(course2Bundle.lessons.length,13);
 assert.equal(course2Bundle.performanceAssessmentId,null,'credential practical mapping must not be treated as an academic-practical requirement');
 const course2Progress=course2Bundle.lessons.map((lesson,index)=>({
   lessonId:lesson.id,
