@@ -168,6 +168,20 @@ function renderCourseOrientation(details, course, courseState, completed) {
   }
   intro.append(facts);
 
+  if (course.academicCompletionBlocked) {
+    const release = document.createElement('section');
+    release.className = 'course-release-notice';
+    release.append(text('h4', 'Academic release in progress'));
+    const open = course.openAcademicDependencies ?? [];
+    const names = open.map((item) => item.title ?? item.id).filter(Boolean);
+    release.append(text('p', names.length
+      ? `You can study the released modules now. Full academic course completion remains locked until ${names.join(', ')} is released.`
+      : 'You can study the released modules now. Full academic course completion remains locked until the remaining academic dependency is released.'
+    ));
+    release.append(text('p', 'Progress shown below refers to lessons currently available in this release.', 'course-release-detail'));
+    intro.append(release);
+  }
+
   if ((course.learningOutcomes ?? []).length) {
     const outcomes = document.createElement('div');
     outcomes.className = 'course-orientation-outcomes';
@@ -188,7 +202,9 @@ function renderCourseOrientation(details, course, courseState, completed) {
     button.textContent = courseState.completed > 0 ? `Continue: ${next.title}` : `Start: ${next.title}`;
     button.addEventListener('click', () => openLesson(next.id));
     actions.append(button);
-    if (courseState.completed > 0) actions.append(text('span', `${courseState.percent}% of lessons complete`, 'course-orientation-progress-copy'));
+    if (courseState.completed > 0) actions.append(text('span', course.academicCompletionBlocked
+      ? `${courseState.percent}% of currently available lessons complete`
+      : `${courseState.percent}% of lessons complete`, 'course-orientation-progress-copy'));
     intro.append(actions);
   }
 
