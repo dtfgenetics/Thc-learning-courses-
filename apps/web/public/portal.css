@@ -297,3 +297,9 @@
 @media (max-width: 620px) {
   .checkpoint-remediation-actions { display: grid; grid-template-columns: 1fr; }
 }
+
+
+.course-release-notice { margin: .15rem 0 .35rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: .75rem; padding: .85rem .95rem; background: var(--panel); }
+.course-release-notice h4 { margin: 0 0 .3rem; font-size: .95rem; }
+.course-release-notice p { margin: 0; color: var(--ink); line-height: 1.55; }
+.course-release-notice .course-release-detail { margin-top: .35rem; color: var(--muted); font-size: .8rem; }
