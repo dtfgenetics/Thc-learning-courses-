@@ -1,7 +1,7 @@
 # Technician I Course 003 development readiness
 
 Course: `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals  
-Course version: `0.5.0`  
+Course version: `0.6.0`  
 Release status: `draft`
 
 ## Automated development completed
@@ -16,7 +16,7 @@ Course 003 now has its planned occupational instruction, assessment, development
 - draft summative assessment `ASSESS-LH-TECH1-003-FINAL`;
 - mapped development practical: `PRACTICAL-TECH1-A — Safe Room Entry & Crop Inspection`;
 - objective/practical crosswalk: `registry/course3-practical-a-crosswalk.json`;
-- six governed learner assets: four embedded teaching visuals and two downloadable practice worksheets;
+- seven governed learner assets: five embedded teaching visuals and two downloadable practice worksheets;
 - dedicated Drive mirror folder: `1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU`;
 - deterministic practical-crosswalk and learner-asset contracts run through the normal Course 003 regression;
 - Course 003 is published for owner-approved academic use; human review, pilot, calibration, practical validation and professional credential release approval remain separate and are not implied.
@@ -30,12 +30,14 @@ Every Course 003 lesson now has dedicated embedded visual support:
 3. Lesson 3 — sensor placement and representativeness triage;
 4. Lesson 4 — alarm, trend, permitted verification and shift-handoff workflow.
 
+Lesson 1 now also includes a dedicated VPD physiology visual connecting room measurements to leaf temperature, stomata, airflow and root-zone water replacement.
+
 Two printable practice assets are linked directly from the relevant lessons:
 
 - environmental measurement record practice — targets vs measurements, representativeness, verification, uncertainty and handoff;
 - PPFD grid and sensor-verification practice — repeatable grid, distribution, photoperiod context, outlier triage, authority boundary and escalation.
 
-The public repository is canonical learner delivery; all six produced assets are mirrored to the Course 003 Drive folder and registered in `visuals/COURSE3-ASSET-REGISTRY.json`.
+The public repository is canonical learner delivery; all seven produced assets are mirrored to the Course 003 Drive folder and registered in `visuals/COURSE3-ASSET-REGISTRY.json`.
 
 ## Scope controls
 
@@ -53,7 +55,7 @@ The planned Course 003 learner-content/asset package no longer has a basic missi
 - rendered accessibility review preparation and evidence;
 - human technical and assessment review packets;
 - pilot-ready equivalent Practical A form details;
-- optional PDF exports derived from canonical SVG worksheets after layout/accessibility review.
+- optional PDF exports derived from canonical raster worksheets after layout/accessibility review.
 
 ## Remaining human/empirical validation gates
 
