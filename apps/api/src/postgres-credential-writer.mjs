@@ -42,6 +42,9 @@ export function createPostgresCredentialWriter({ withTransaction } = {}) {
               credential_definition_version, course_id, course_version, status,
               issued_at, expires_at, payload_json, payload_hash)
            values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11::jsonb,$12)
+           on conflict (subject_hash, credential_definition_id, credential_definition_version)
+             where status in ('issued','valid')
+           do nothing
            returning ${credentialColumns}`,
           [
             record.id, record.verificationId, record.subjectHash, record.credentialDefinitionId,
@@ -49,8 +52,23 @@ export function createPostgresCredentialWriter({ withTransaction } = {}) {
             record.issuedAt, record.expiresAt ?? null, JSON.stringify(record.payloadJson), record.payloadHash
           ]
         );
-        const issued = mapCredentialRow(insertResult.rows?.[0] ?? null);
-        if (!issued) throw new Error('credential-insert-failed');
+        let issued = mapCredentialRow(insertResult.rows?.[0] ?? null);
+        if (!issued) {
+          const concurrentResult = await query(
+            `select ${credentialColumns}
+               from credentials
+              where subject_hash = $1
+                and credential_definition_id = $2
+                and credential_definition_version = $3
+                and status in ('issued','valid')
+              order by issued_at desc
+              limit 1`,
+            [record.subjectHash, record.credentialDefinitionId, record.credentialDefinitionVersion]
+          );
+          issued = mapCredentialRow(concurrentResult.rows?.[0] ?? null);
+          if (issued) return { credential: issued, created: false, idempotent: true };
+          throw new Error('credential-insert-failed');
+        }
 
         await query(
           `insert into credential_status_events
