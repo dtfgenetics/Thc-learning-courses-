@@ -516,7 +516,7 @@
     },
     {
       "id": "VIS-FOUNDATION-POSTHARVEST-SYSTEM-001",
-      "status": "planned",
+      "status": "retired",
       "deliveryType": "embedded-visual",
       "title": "Harvest-to-storage postharvest quality system",
       "primaryLessons": [
@@ -547,11 +547,13 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "retiredReason": "Superseded by existing owner-approved production raster VIS-LH-TECH2-006-02, which directly teaches the same foundation concept without requiring duplicate asset production.",
+      "supersededBy": "VIS-LH-TECH2-006-02"
     },
     {
       "id": "VIS-FOUNDATION-DRYING-DYNAMICS-001",
-      "status": "planned",
+      "status": "retired",
       "deliveryType": "embedded-visual",
       "title": "Cannabis flower drying: internal moisture gradient to surrounding air",
       "primaryLessons": [
@@ -582,7 +584,9 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "retiredReason": "Superseded by existing owner-approved production raster VIS-LH-TECH2-006-02, which directly teaches the same foundation concept without requiring duplicate asset production.",
+      "supersededBy": "VIS-LH-TECH2-006-02"
     },
     {
       "id": "VIS-FOUNDATION-STORAGE-001",
