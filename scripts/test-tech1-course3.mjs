@@ -18,7 +18,7 @@ assert.equal(course.extensions?.dedicatedCourseAssessmentRequired, false);
 assert.equal(course.extensions?.dedicatedPerformanceValidationRequired, true);
 assert.equal(course.extensions?.dedicatedItemCount, 32);
 assert.equal(course.extensions?.learnerAssetLayerBuilt, true);
-assert.equal(course.extensions?.totalLearnerAssetCount, 6);
+assert.equal(course.extensions?.totalLearnerAssetCount, 7);
 
 const module = read('content/modules/MOD-LH-TECH1-003-MONITORING.json');
 assert.equal(module.lessons.length, 4);
@@ -119,7 +119,7 @@ assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, true, 'C
 
 const visualRegistry = read('visuals/COURSE3-ASSET-REGISTRY.json');
 const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.equal(producedAssets.length, 6, 'Course 3 should expose the current six governed learner assets');
+assert.equal(producedAssets.length, 7, 'Course 3 should expose the current seven governed learner assets');
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
 server.listen(0, '127.0.0.1');
@@ -141,4 +141,4 @@ try {
   await once(server, 'close');
 }
 
-console.log('Course 003 production slice passed: four lessons, five objectives, 12 referenced formative items, 20 balanced summative items, complete package artifacts, Practical A crosswalk, visual registry and all six governed Course 3 learner assets are wired through the Academy runtime while human/release gates remain open.');
+console.log('Course 003 production slice passed: four lessons, five objectives, 12 referenced formative items, 20 balanced summative items, complete package artifacts, Practical A crosswalk, visual registry and all seven governed Course 3 learner assets are wired through the Academy runtime while human/release gates remain open.');
