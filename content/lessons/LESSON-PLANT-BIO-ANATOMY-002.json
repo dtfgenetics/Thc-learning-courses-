@@ -250,7 +250,118 @@
           }
         }
       ]
-    }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Structure is the language of cultivation",
+        "body": "Precise anatomical terms make observations transferable. Roots, stems, nodes, internodes, meristems, leaves and reproductive structures have different functions, so a useful crop record names the structure before interpreting the cause of a change.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Cannabis structures, functions and cultivation relevance",
+        "columns": [
+          "Structure",
+          "Primary function",
+          "Why the grower cares"
+        ],
+        "rows": [
+          [
+            "Roots",
+            "Water/mineral acquisition and anchorage",
+            "Root condition affects whole-plant water and nutrient status"
+          ],
+          [
+            "Xylem",
+            "Long-distance water/mineral transport",
+            "Stem/root injury can affect distant tissues"
+          ],
+          [
+            "Phloem",
+            "Distribution of sugars and other organics",
+            "Connects source leaves with growing/storage sinks"
+          ],
+          [
+            "Node",
+            "Origin point for leaves/branches/reproductive structures",
+            "Key landmark for cutting, training and reproductive scouting"
+          ],
+          [
+            "Internode",
+            "Stem segment between nodes",
+            "Architecture and stretch are partly expressed here"
+          ],
+          [
+            "Meristem",
+            "Actively dividing growth region",
+            "Training changes which meristems dominate"
+          ],
+          [
+            "Stoma",
+            "Regulated gas-exchange pore",
+            "Links CO2 uptake with water loss"
+          ],
+          [
+            "Glandular trichome",
+            "Secretory epidermal structure",
+            "Useful morphology, not a direct potency assay"
+          ]
+        ],
+        "references": [
+          "REF-PLANT-BIO-001",
+          "REF-TRICHOME-BIOLOGY-2021-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same symptom, different anatomy",
+        "setting": "One lower leaf yellows while a separate plant has localized wilt above a damaged branch junction.",
+        "prompt": "Why should these not be treated as the same evidence?",
+        "options": [
+          "The affected tissues and transport context differ, so the next checks should differ",
+          "All visible symptoms mean nutrient deficiency",
+          "Branch damage cannot affect leaves",
+          "Leaf age never matters"
+        ],
+        "answer": "The affected tissues and transport context differ, so the next checks should differ.",
+        "feedback": "Organ identity, tissue age and vascular continuity change the meaning of an observation."
+      },
+      {
+        "type": "activity",
+        "title": "Build a structure-function map",
+        "instructions": "Annotate an approved cannabis specimen or image set.",
+        "prompts": [
+          "Label roots, stem, nodes, internodes, meristems and leaves.",
+          "Identify reproductive structures if present.",
+          "Connect each structure to one physiological function.",
+          "Connect each structure to one cultivation decision that depends on identifying it correctly.",
+          "Mark any structure whose visual appearance alone cannot establish a chemical or causal conclusion."
+        ],
+        "artifact": "Cannabis anatomy structure-function map",
+        "references": [
+          "REF-PLANT-BIO-001",
+          "REF-FLOWER-MORPH-2023-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Evidence boundary",
+        "tone": "warning",
+        "body": "Visible glandular-trichome abundance and morphology are useful observations, but chemical potency requires validated analytical measurement.",
+        "references": [
+          "REF-TRICHOME-BIOLOGY-2021-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Name the structure accurately first. Functional interpretation becomes much stronger when the anatomical location, tissue age and plant context are preserved."
+      }
+    ]
   },
   "extensions": {
     "migration": {
