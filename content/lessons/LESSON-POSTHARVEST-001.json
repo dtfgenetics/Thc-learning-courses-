@@ -1,37 +1,211 @@
 {
   "id": "LESSON-POSTHARVEST-001",
   "title": "Drying, Curing and Storage Quality Control",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-POSTHARVEST-001"],
-  "learningObjectives": ["LO-POSTHARVEST-001"],
+  "competencies": [
+    "COMP-POSTHARVEST-001"
+  ],
+  "learningObjectives": [
+    "LO-POSTHARVEST-001"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-POSTHARVEST-001"],
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Post-harvest handling continues to shape product quality after the plant is cut. Drying, curing, packaging, and storage should be treated as controlled processes because temperature, humidity, airflow, light, oxygen exposure, handling, and contamination risk can influence moisture behavior and chemical stability.",
+    "overview": "Harvest does not stop plant-material change. Drying moves water from internal tissues toward the surface and then into surrounding air; curing/conditioning allows moisture to redistribute under controlled storage; packaging changes exposure to water vapor, oxygen, light and physical damage; and storage temperature/time influence stability. Postharvest quality therefore depends on measured process conditions rather than touch, calendar days or room setpoints alone.",
     "vocabulary": [
-      {"term":"Drying","definition":"The controlled removal of water from harvested plant material after harvest."},
-      {"term":"Curing","definition":"A controlled post-drying holding period used to stabilize moisture distribution and product characteristics."},
-      {"term":"Water activity","definition":"A measure related to how available water is for chemical reactions and microbial growth in a material."},
-      {"term":"Storage stability","definition":"The ability of harvested material to maintain quality and chemical characteristics over time under defined conditions."}
+      {
+        "term": "Drying",
+        "definition": "The controlled removal of water from harvested plant material after harvest."
+      },
+      {
+        "term": "Curing",
+        "definition": "A controlled post-drying holding period used to stabilize moisture distribution and product characteristics."
+      },
+      {
+        "term": "Water activity",
+        "definition": "A measure related to how available water is for chemical reactions and microbial growth in a material."
+      },
+      {
+        "term": "Storage stability",
+        "definition": "The ability of harvested material to maintain quality and chemical characteristics over time under defined conditions."
+      }
     ],
     "sections": [
-      {"title":"Drying is a controlled moisture-removal process","body":"Drying should remove water at a controlled rate rather than as quickly as possible. Temperature, relative humidity, airflow, flower density, and load size influence how moisture moves from internal tissues to the surrounding air.","references":["REF-POSTHARVEST-001"]},
-      {"title":"Curing follows initial drying","body":"After initial drying, moisture can continue to redistribute within harvested material. Curing uses managed storage conditions to allow equilibration while monitoring for excessive moisture, degradation, or contamination risk.","references":["REF-POSTHARVEST-001"]},
-      {"title":"Packaging creates a storage environment","body":"Packaging influences exposure to moisture, oxygen, light, and physical damage. The package should therefore be considered part of the storage system rather than a neutral container added after quality decisions are finished.","references":["REF-POSTHARVEST-001"]},
-      {"title":"Storage conditions affect stability","body":"Temperature, light, oxygen, and time can influence the stability of harvested cannabis constituents. Consistent storage conditions and documented handling are important when comparing quality changes over time.","references":["REF-POSTHARVEST-001"]}
+      {
+        "title": "Drying is a controlled moisture-removal process",
+        "body": "Drying should remove water at a controlled rate rather than as quickly as possible. Temperature, relative humidity, airflow, flower density, and load size influence how moisture moves from internal tissues to the surrounding air.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Curing follows initial drying",
+        "body": "After initial drying, moisture can continue to redistribute within harvested material. Curing uses managed storage conditions to allow equilibration while monitoring for excessive moisture, degradation, or contamination risk.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Packaging creates a storage environment",
+        "body": "Packaging influences exposure to moisture, oxygen, light, and physical damage. The package should therefore be considered part of the storage system rather than a neutral container added after quality decisions are finished.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Storage conditions affect stability",
+        "body": "Temperature, light, oxygen, and time can influence the stability of harvested cannabis constituents. Consistent storage conditions and documented handling are important when comparing quality changes over time.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If outer flower surfaces feel dry while internal portions remain much wetter, avoid assuming the batch is uniformly dry; continue controlled monitoring before long-term packaging.",
-      "If material stored in different packages changes at different rates, compare oxygen, moisture, light exposure, and storage temperature rather than attributing the difference only to cultivar."
+      "Flower exteriors feel dry while denser interiors remain wetter. Surface feel alone cannot establish uniform moisture status; continue representative measurement and controlled conditioning.",
+      "Two drying zones share the same thermostat/RH setpoints, but one has much higher local airflow. Drying rate and uniformity can differ even when room averages match.",
+      "A batch reaches its intended dry endpoint but is packaged while moisture distribution is still uneven. Later equilibration can create localized high-moisture conditions inside the package.",
+      "Material stored warm and exposed to light changes faster than material protected from heat/light. Storage remains an active quality-control phase."
     ],
     "commonMistakes": [
-      "Maximizing airflow without considering overly rapid or uneven drying.",
-      "Treating curing as passive waiting without moisture and contamination monitoring.",
-      "Ignoring packaging and storage temperature after the initial dry is complete."
+      "Using touch alone to determine drying endpoint.",
+      "Assuming room setpoints equal actual product microclimate.",
+      "Maximizing airflow without checking uneven or excessively rapid drying.",
+      "Treating curing as passive waiting.",
+      "Packaging before moisture is sufficiently stable/uniform.",
+      "Ignoring temperature, oxygen and light after packaging."
     ],
-    "practicalApplication": "Document drying-room temperature, humidity, airflow pattern, batch density, and moisture observations using consistent methods. During curing and storage, record container conditions, inspection findings, and any quality changes so the process can be reproduced and improved.",
-    "summary": "Post-harvest quality depends on controlled moisture removal, stabilization, packaging, and storage. Drying and curing are active process-control stages, and the storage environment continues to influence harvested material after those stages are complete."
+    "practicalApplication": "Create a batch drying record with representative room and product observations across multiple locations and times. Track temperature, RH, airflow context, product moisture/weight or other approved endpoint metric, and spatial differences. Continue through packaging/conditioning and document whether moisture remains stable after equilibration.",
+    "summary": "Post-harvest quality depends on controlled moisture removal, stabilization, packaging, and storage. Drying and curing are active process-control stages, and the storage environment continues to influence harvested material after those stages are complete.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Drying is mass transfer",
+        "body": "Water moves from wetter internal tissues toward the material surface and then into the surrounding air. Temperature, RH, airflow, flower size/density and load arrangement all influence the rate and uniformity of that process.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Postharvest process variables",
+        "columns": [
+          "Variable",
+          "Why it matters",
+          "What to verify"
+        ],
+        "rows": [
+          [
+            "Temperature",
+            "Affects evaporation and chemical/microbial kinetics",
+            "Actual room/product-zone temperature"
+          ],
+          [
+            "Relative humidity",
+            "Affects moisture-removal gradient",
+            "Representative RH, not one distant sensor"
+          ],
+          [
+            "Airflow",
+            "Controls boundary-layer exchange",
+            "Distribution and direct-blast risk"
+          ],
+          [
+            "Load density",
+            "Changes local drying conditions",
+            "Spacing and batch geometry"
+          ],
+          [
+            "Moisture / water activity endpoint",
+            "Relates to product stability",
+            "Approved measurement method and representative sample"
+          ],
+          [
+            "Packaging/storage",
+            "Controls later moisture/oxygen/light exposure",
+            "Package condition and storage environment"
+          ]
+        ],
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Control a postharvest batch",
+        "items": [
+          {
+            "title": "Identify the batch",
+            "body": "Preserve lot identity and harvest time/context."
+          },
+          {
+            "title": "Map the drying environment",
+            "body": "Measure representative temperature/RH and note airflow/load geometry."
+          },
+          {
+            "title": "Track product change",
+            "body": "Use the approved weight/moisture/water-activity or other process method consistently."
+          },
+          {
+            "title": "Check spatial uniformity",
+            "body": "Compare representative locations instead of one convenient sample."
+          },
+          {
+            "title": "Condition/equilibrate",
+            "body": "Allow moisture distribution to stabilize under controlled conditions."
+          },
+          {
+            "title": "Package and verify",
+            "body": "Confirm the package/storage environment does not reintroduce instability."
+          },
+          {
+            "title": "Trend deviations",
+            "body": "Use batch records to identify repeatable hot spots, slow zones or handling problems."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Dry outside, wet inside",
+        "setting": "Dense flowers feel dry at the surface, but representative internal measurements remain higher and variable.",
+        "prompt": "What is the strongest action?",
+        "options": [
+          "Package immediately because the surface feels dry",
+          "Continue controlled drying/conditioning and representative measurement",
+          "Increase heat aggressively until every surface is brittle",
+          "Ignore internal variability"
+        ],
+        "answer": "Continue controlled drying/conditioning and representative measurement.",
+        "feedback": "Surface feel can lead product-average moisture status and does not prove uniformity."
+      },
+      {
+        "type": "activity",
+        "title": "Interpret a drying-room trend",
+        "instructions": "Review time-series environmental and product data from three drying zones.",
+        "prompts": [
+          "Identify the fastest and slowest drying zones.",
+          "Compare RH/temperature/airflow context.",
+          "Flag any location that may be over- or under-drying.",
+          "Decide what additional product measurement is needed before packaging.",
+          "Describe how you would verify stability after conditioning."
+        ],
+        "artifact": "Postharvest process-control trend review",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Postharvest is a measured process from harvest through storage. Room setpoints and surface feel are not substitutes for representative product and environmental evidence.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ]
   }
 }
