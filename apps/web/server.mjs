@@ -239,6 +239,8 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
     credentialBearing: Boolean(course.credentialBearing),
     description: course.description ?? course.summary ?? '',
     level: typeof course.level === 'string' ? course.level : null,
+    estimatedMinutes: Number.isFinite(Number(course.estimatedMinutes)) ? Number(course.estimatedMinutes) : null,
+    learningOutcomes: safeStringList(course.learningOutcomes),
     intendedAudience: safeStringList(course.intendedAudience),
     prerequisites: safeStringList(course.prerequisites),
     pathway: safePathway(course),
