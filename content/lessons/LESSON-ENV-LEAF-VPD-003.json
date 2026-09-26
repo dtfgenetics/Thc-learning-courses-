@@ -183,7 +183,27 @@
           "Why can leaf temperature differ from air temperature?",
           "What is a boundary layer?"
         ]
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-003-007",
+          "title": "Understanding VPD: atmospheric demand, leaf exchange and root-zone context",
+          "src": "/assets/course3/understanding-vpd-science.webp",
+          "alt": "Scientific cannabis cultivation diagram connecting air temperature and relative humidity to atmospheric vapor demand, leaf temperature and water exchange, stomatal behavior and root-zone water supply while keeping VPD targets contextual.",
+          "caption": "Leaf-level exchange depends on more than room RH: connect atmospheric demand with leaf temperature, airflow, stomatal behavior and root-zone water supply.",
+          "references": [
+            "REF-VPD-002",
+            "REF-MSU-BOUNDARY-LAYER-TRANSPIRATION"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-003-007",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE3-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
   }
 }
