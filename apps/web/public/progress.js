@@ -417,6 +417,7 @@ async function loadAcademicRecordData(courseId, context = null) {
 }
 
 function renderAcademicRecord(panel, record) {
+  panel.dataset.courseId = record.course.id;
   panel.replaceChildren();
   panel.append(transcriptElement('p', 'Private learner academic record', 'eyebrow'), transcriptElement('h2', record.course.title));
   panel.append(transcriptElement('p', record.academicCompletion.statement, 'record-boundary'));
