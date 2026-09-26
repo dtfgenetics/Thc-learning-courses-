@@ -43,6 +43,7 @@ export async function createPersistenceAdapters() {
       async ping() { return true; },
       async schemaVersion() { return '7'; },
       async getByVerificationId() { return null; },
+      async listBySubjectHash() { return []; },
       async count() { return 0; }
     },
     credentialWriter: {
