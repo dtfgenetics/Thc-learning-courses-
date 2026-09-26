@@ -11,7 +11,9 @@
   ],
   "estimatedMinutes": 50,
   "references": [
-    "REF-FLOWER-001"
+    "REF-FLOWER-001",
+    "REF-CANNABIS-PHOTOPERIOD-2023-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
   ],
   "assessment": null,
   "content": {
@@ -229,6 +231,45 @@
           "REF-FLOWER-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-002-002",
+          "title": "Morphology-based developmental staging",
+          "src": "/assets/course2/morphology-stage-evidence.webp",
+          "alt": "Cannabis developmental staging reference showing vegetative, transition and reproductive morphology so flowering progress is judged from visible structures rather than calendar age alone.",
+          "caption": "Flowering is a developmental sequence. Use plant morphology to track transition and reproductive progression rather than treating the schedule-change date as full flowering.",
+          "references": [
+            "REF-FLOWER-MORPH-2023-001",
+            "REF-CANNABIS-PHOTOPERIOD-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-002-002",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json"
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-002-009",
+          "title": "Reproductive morphology reference",
+          "src": "/assets/course2/reproductive-morphology-reference.webp",
+          "alt": "Cannabis reproductive morphology reference showing identifiable floral structures used to stage reproductive development and support representative flowering observations.",
+          "caption": "Use consistent reproductive structures and canopy locations when comparing flowering development over time.",
+          "references": [
+            "REF-FLOWER-MORPH-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-002-009",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
