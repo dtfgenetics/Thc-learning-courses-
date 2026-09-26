@@ -261,6 +261,27 @@
           "REF-PLANT-BIO-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-002-002",
+          "title": "Morphology-based developmental staging",
+          "src": "/assets/course2/morphology-stage-evidence.webp",
+          "alt": "Cannabis developmental staging reference showing seedling, vegetative, transition and reproductive morphology with stage decisions based on visible plant structures rather than calendar age alone.",
+          "caption": "Stage the plant from what it is doing biologically, not from its age alone. Morphology is the primary evidence for developmental state.",
+          "references": [
+            "REF-PLANT-BIO-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-002-002",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
