@@ -150,10 +150,17 @@ function credentialProgressView(credential, course, rawEvidence) {
   const requiredAssessments = new Set(credential.eligibility.requiredAssessments ?? []);
   const requiredPerformance = credential.eligibility.requiredPerformanceAssessments ?? [];
   const requiredArtifacts = credential.eligibility.requiredPortfolioArtifacts ?? [];
-  const requiredCompetencies = new Set(course?.competencies ?? []);
+  const requiredCourses = new Set(
+    (credential.eligibility.requiredCourseCompletions?.length
+      ? credential.eligibility.requiredCourseCompletions
+      : credential.eligibility.requireCourseCompletion === true
+        ? [credential.course]
+        : [])
+  );
+  const requiredCompetencies = new Set(credential.competenciesDemonstrated ?? course?.competencies ?? []);
   const evidence = {
     learnerId: rawEvidence.learnerId ?? null,
-    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => row.courseId === credential.course),
+    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => requiredCourses.has(row.courseId)),
     assessments: (rawEvidence.assessments ?? []).filter((row) => requiredAssessments.has(row.assessmentId)),
     performanceAssessments: (rawEvidence.performanceAssessments ?? []).filter((row) => requiredPerformance.includes(row.assessmentId)),
     portfolioArtifacts: (rawEvidence.portfolioArtifacts ?? []).filter((row) => requiredArtifacts.includes(row.artifactId))
@@ -170,6 +177,8 @@ function credentialProgressView(credential, course, rawEvidence) {
       role: credential.role ?? null,
       course: credential.course,
       courseVersion: credential.courseVersion ?? null,
+      credentialProgram: credential.credentialProgram ?? null,
+      requiredCourses: [...requiredCourses],
       certificationUseStatus: credential.governance?.certificationUseStatus ?? null,
       releaseApprovalStatus: credential.governance?.releaseApprovalStatus ?? null,
       minimumPassingScorePercent: credential.eligibility.minimumPassingScorePercent
@@ -222,6 +231,8 @@ export function credentialTranscriptView(credential, course, rawEvidence) {
       role: progress.credential.role,
       course: progress.credential.course,
       courseVersion: progress.credential.courseVersion,
+      credentialProgram: progress.credential.credentialProgram,
+      requiredCourses: progress.credential.requiredCourses,
       certificationUseStatus: progress.credential.certificationUseStatus,
       releaseApprovalStatus: progress.credential.releaseApprovalStatus
     },
