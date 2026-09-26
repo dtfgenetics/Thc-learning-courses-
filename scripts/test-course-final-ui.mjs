@@ -68,5 +68,8 @@ const app = fs.readFileSync('apps/web/public/app.js', 'utf8');
 assert.ok(app.includes("import { launchCourseAssessment } from './course-assessment.js'"), 'catalog must import the shared final launcher');
 assert.ok(app.includes('Take graded course final'), 'catalog must expose a graded final launch action for published summative finals');
 assert.ok(app.includes('launchCourseAssessment(course.id, launch)'), 'catalog final action must launch the selected course, not a hard-coded Course 1 assessment');
+assert.ok(app.includes("academyParams.get('course')"), 'Academy must accept a course deep link from the public course site');
+assert.ok(app.includes("academyParams.get('view')"), 'Academy must accept a final-view deep link');
+assert.ok(app.includes('data-course-final-for') || app.includes('dataset.courseFinalFor'), 'Academy must mark course-specific final controls for deep linking');
 
 console.log('Academy final learner UI autosave, accessibility, non-disclosure, identity linkage, generic course launching, responsive, and static-serving contracts passed.');
