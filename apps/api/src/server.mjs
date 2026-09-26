@@ -21,6 +21,7 @@ import {
   coursePracticalReportCsv
 } from './course-practical-evaluator-service.mjs';
 import { normalizePracticalEvidenceSubmission, learnerPracticalSubmissionView } from '../../../packages/domain/practical-evidence-submission.mjs';
+import { issueEligibleCredential } from './credential-issuance-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -315,6 +316,8 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
 
 export function createHandler({
   credentialStore = null,
+  credentialWriter = null,
+  credentialSigner = null,
   learnerStore = null,
   practicalEvaluatorStore = null,
   env = process.env,
@@ -680,6 +683,44 @@ export function createHandler({
         if (!/^\d+(?:\.\d+){0,3}$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
         const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
         return json(res, 200, { progress });
+      }
+
+      const credentialIssueMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/(CRED-[A-Z0-9-]+)\/issue$/);
+      if (req.method === 'POST' && credentialIssueMatch) {
+        route = 'POST /api/v1/admin/credentials/:credentialId/issue';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || ['listCredentialEvidence','getLearnerProfile','listApplications'].some((method) => typeof learnerStore[method] !== 'function')) {
+          return json(res, 503, { error: 'credential-issuance-learner-evidence-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const learnerSubject = String(body.learnerSubject ?? '').trim();
+        if (!learnerSubject) return json(res, 400, { error: 'learner-subject-required', requestId });
+
+        const credential = loadCredentialDefinition(credentialIssueMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const course = loadCourseDefinition(credential.course);
+        if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
+
+        const [rawEvidence, learnerProfile, applications] = await Promise.all([
+          learnerStore.listCredentialEvidence(learnerSubject, { credentialDefinitionId: credential.id }),
+          learnerStore.getLearnerProfile(learnerSubject),
+          learnerStore.listApplications(learnerSubject)
+        ]);
+        const result = await issueEligibleCredential({
+          credential,
+          course,
+          rawEvidence,
+          learnerSubject,
+          learnerProfile,
+          applications,
+          credentialWriter,
+          credentialSigner,
+          actorId: auth.subject
+        });
+        return json(res, result.status, { ...result.body, requestId });
       }
 
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);
