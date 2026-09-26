@@ -1,20 +1,185 @@
 {
-  "id":"LESSON-CANOPY-HST-003",
-  "title":"Topping, High-Stress Training and Recovery Management",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-CANOPY-001"],
-  "learningObjectives":["LO-CANOPY-HST-003"],
-  "estimatedMinutes":40,
-  "references":["REF-CANOPY-001"],
-  "assessment":null,
-  "content":{
-    "overview":"High-stress training intentionally removes or damages tissue to redirect growth. Topping and related methods can change branching patterns, but the benefit must be weighed against recovery time, plant vigor, developmental timing, and sanitation risk.",
-    "vocabulary":[{"term":"Topping","definition":"Removal of a shoot apex to alter apical dominance and encourage lateral development."},{"term":"Recovery interval","definition":"Time required for a plant to resume vigorous growth after a stressful intervention."},{"term":"Wound","definition":"A site where plant tissue has been cut or damaged, creating a healing and potential pathogen-entry zone."}],
-    "sections":[{"title":"Topping changes the hierarchy of shoots","body":"Removing an active apex alters hormonal and architectural relationships, allowing lateral shoots to become more competitive. The result depends on where and when the cut is made.","references":["REF-CANOPY-001"]},{"title":"Stress has a biological cost","body":"Tissue removal temporarily reduces photosynthetic area or growing points and requires healing. Weak or already stressed plants may recover poorly compared with vigorous plants.","references":["REF-CANOPY-001"]},{"title":"Timing matters","body":"High-stress interventions need enough recovery before major developmental transitions or harvest. Repeated late interventions can create uneven structure without providing time to realize the intended benefit.","references":["REF-CANOPY-001"]},{"title":"Clean technique matters","body":"Cut surfaces are wounds. Clean tools and deliberate cuts reduce avoidable tissue damage and contamination risk.","references":["REF-CANOPY-001"]}],
-    "workedExamples":["A vigorous vegetative plant with excessive vertical dominance may tolerate topping better than a recently transplanted plant showing water stress.","If topping produces several new leaders, later branch selection should follow the target canopy shape rather than keeping every shoot automatically."],
-    "commonMistakes":["Topping stressed plants because the calendar says it is time.","Repeating high-stress cuts without recovery.","Using dirty or crushing tools.","Assuming more tops always mean better canopy performance."],
-    "practicalApplication":"Before high-stress training, document plant vigor, stage, structural goal, and available recovery time. Use clean tools, make the minimum cut needed for the goal, and track recovery before another intervention.",
-    "summary":"High-stress training can reshape architecture effectively, but it is not free. Timing, vigor, sanitation, and recovery determine whether the intervention supports or delays the crop."
+  "id": "LESSON-CANOPY-HST-003",
+  "title": "Topping, High-Stress Training and Recovery Management",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-CANOPY-001"
+  ],
+  "learningObjectives": [
+    "LO-CANOPY-HST-003"
+  ],
+  "estimatedMinutes": 40,
+  "references": [
+    "REF-CANOPY-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "High-stress training intentionally removes or damages tissue to redirect growth. Topping and related methods can change branching patterns, but the benefit must be weighed against recovery time, plant vigor, developmental timing, and sanitation risk.",
+    "vocabulary": [
+      {
+        "term": "Topping",
+        "definition": "Removal of a shoot apex to alter apical dominance and encourage lateral development."
+      },
+      {
+        "term": "Recovery interval",
+        "definition": "Time required for a plant to resume vigorous growth after a stressful intervention."
+      },
+      {
+        "term": "Wound",
+        "definition": "A site where plant tissue has been cut or damaged, creating a healing and potential pathogen-entry zone."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Topping changes the hierarchy of shoots",
+        "body": "Removing an active apex alters hormonal and architectural relationships, allowing lateral shoots to become more competitive. The result depends on where and when the cut is made.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Stress has a biological cost",
+        "body": "Tissue removal temporarily reduces photosynthetic area or growing points and requires healing. Weak or already stressed plants may recover poorly compared with vigorous plants.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Timing matters",
+        "body": "High-stress interventions need enough recovery before major developmental transitions or harvest. Repeated late interventions can create uneven structure without providing time to realize the intended benefit.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Clean technique matters",
+        "body": "Cut surfaces are wounds. Clean tools and deliberate cuts reduce avoidable tissue damage and contamination risk.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A vigorous vegetative plant with excessive vertical dominance may tolerate topping better than a recently transplanted plant showing water stress.",
+      "If topping produces several new leaders, later branch selection should follow the target canopy shape rather than keeping every shoot automatically.",
+      "A plant is topped while actively growing and recovers with two strong leaders. A second stressed plant cut the same day stalls. The difference demonstrates why vigor and recovery capacity matter.",
+      "Repeated topping creates many small shoots but no measurable improvement in canopy uniformity. More cuts are not automatically better architecture."
+    ],
+    "commonMistakes": [
+      "Topping stressed plants because the calendar says it is time.",
+      "Repeating high-stress cuts without recovery.",
+      "Using dirty or crushing tools.",
+      "Assuming more tops always mean better canopy performance.",
+      "Scheduling cuts by calendar rather than plant condition.",
+      "Failing to define what recovery evidence is required before the next intervention."
+    ],
+    "practicalApplication": "Before high-stress training, document plant vigor, stage, structural goal, and available recovery time. Use clean tools, make the minimum cut needed for the goal, and track recovery before another intervention.",
+    "summary": "High-stress training can reshape architecture effectively, but it is not free. Timing, vigor, sanitation, and recovery determine whether the intervention supports or delays the crop.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "High-stress training is a tradeoff",
+        "body": "Topping and similar interventions can redistribute apical dominance, but every cut removes tissue and creates a wound. The expected architectural gain should justify the recovery cost.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Before making a high-stress cut",
+        "columns": [
+          "Check",
+          "Why it matters"
+        ],
+        "rows": [
+          [
+            "Plant vigor",
+            "Weak plants may recover slowly"
+          ],
+          [
+            "Developmental stage",
+            "Late stress may not repay its cost"
+          ],
+          [
+            "Structural goal",
+            "The cut should solve a defined problem"
+          ],
+          [
+            "Recovery window",
+            "The plant needs time before the next major stress"
+          ],
+          [
+            "Tool sanitation",
+            "Wounds increase contamination risk"
+          ]
+        ],
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Evaluate recovery",
+        "items": [
+          {
+            "title": "Document pre-cut state",
+            "body": "Record vigor, height and target architecture."
+          },
+          {
+            "title": "Make the minimum effective cut",
+            "body": "Avoid unnecessary tissue removal."
+          },
+          {
+            "title": "Watch wound response",
+            "body": "Check for damage or contamination."
+          },
+          {
+            "title": "Track new growth",
+            "body": "Measure whether lateral shoots actually develop as intended."
+          },
+          {
+            "title": "Wait for recovery evidence",
+            "body": "Do not stack stress automatically."
+          },
+          {
+            "title": "Verify canopy outcome",
+            "body": "Compare geometry and light distribution with the original goal."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Calendar says top; plant says wait",
+        "setting": "The schedule calls for topping today, but the plant is recently transplanted and wilted after irrigation problems.",
+        "prompt": "What is the strongest decision?",
+        "options": [
+          "Top because the calendar is authoritative",
+          "Delay until vigor and root-zone stability recover",
+          "Double the cut to catch up",
+          "Ignore plant condition"
+        ],
+        "answer": "Delay until vigor and root-zone stability recover.",
+        "feedback": "High-stress training should follow plant condition and recovery capacity, not calendar ritual."
+      },
+      {
+        "type": "activity",
+        "title": "Cost-benefit check for topping",
+        "instructions": "Review three plants with different vigor/stages.",
+        "prompts": [
+          "Choose which plant is appropriate to top now.",
+          "Explain the structural goal.",
+          "State what recovery evidence you expect.",
+          "Name the risk of cutting each unsuitable plant."
+        ],
+        "artifact": "High-stress training decision record"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "High-stress training is justified only when a clear architectural benefit outweighs the recovery cost."
+      }
+    ]
   }
 }
