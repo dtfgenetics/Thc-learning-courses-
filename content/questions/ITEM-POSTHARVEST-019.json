@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-POSTHARVEST-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-POSTHARVEST-001",
+  "objective": "LO-POSTHARVEST-DRY-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two drying racks end with the same average endpoint measurement, but Rack B has much greater sample-to-sample variation. Which conclusion is strongest?",
+  "choices": [
+    "Rack A is more uniform even though the averages match",
+    "The racks are identical because the average matches",
+    "Variation is irrelevant",
+    "Only room RH matters"
+  ],
+  "correct": 0,
+  "rationale": "Averages can hide nonuniform drying; sample spread is important when judging batch consistency.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ]
+}
