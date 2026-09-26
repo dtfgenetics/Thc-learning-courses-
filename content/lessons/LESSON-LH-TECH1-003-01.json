@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-003-01",
   "title": "Temperature, RH and VPD as Contextual Measurements",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "published",
   "competencies": [
     "COMP-ENV-VPD-001",
@@ -11,7 +11,7 @@
     "LO-LH-TECH1-003-01",
     "LO-LH-TECH1-003-05"
   ],
-  "estimatedMinutes": 55,
+  "estimatedMinutes": 65,
   "references": [
     "REF-VPD-002",
     "REF-MHRA-GXP-DATA-INTEGRITY"
@@ -58,6 +58,13 @@
         "references": [
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]
+      },
+      {
+        "title": "VPD connects air demand with leaf and root-zone physiology",
+        "body": "VPD describes a vapor-pressure gradient in the surrounding air, but crop response emerges from the whole plant. Leaf temperature changes saturation vapor pressure at the evaporating surface; stomatal aperture controls gas exchange; boundary-layer thickness and airflow affect transfer; roots must replace water lost from shoots; and light changes both photosynthetic demand and leaf energy balance. A VPD number therefore describes environmental demand, not the plant's complete water status.",
+        "references": [
+          "REF-VPD-002"
+        ]
       }
     ],
     "workedExamples": [
@@ -98,6 +105,26 @@
         "references": [
           "REF-VPD-002",
           "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-003-007",
+        "title": "VPD science: air demand, leaf exchange and water supply",
+        "src": "/assets/course3/understanding-vpd-science.webp",
+        "alt": "Educational diagram linking temperature and relative humidity to vapor pressure deficit, then connecting atmospheric demand with leaf temperature, stomata, transpiration, airflow and root-zone water replacement.",
+        "caption": "Read VPD as atmospheric demand in context. Leaf temperature, stomatal behavior, airflow, light and root-zone water supply determine how a real plant responds.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Do not turn a VPD chart into a universal recipe",
+        "tone": "evidence",
+        "body": "Stage bands and colored chart zones are teaching aids. They are not universal physiological thresholds. Cultivar, leaf temperature, radiation load, airflow, sensor placement, root-zone water status and measurement method can all change the meaning of the same room reading.",
+        "references": [
+          "REF-VPD-002"
         ]
       },
       {

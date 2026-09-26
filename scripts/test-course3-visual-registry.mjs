@@ -33,30 +33,39 @@ for (const asset of produced) {
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim());
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
   assert.equal(asset.assetLifecycle, 'production-raster-active');
-  assert.equal(asset.productionRasterDriveMirrorStatus, 'not-recorded');
-  assert.ok(asset.legacySource?.sourcePath?.endsWith('.svg'), `${asset.id}: legacy SVG provenance path required`);
+  assert.ok(['not-recorded', 'mirrored'].includes(asset.productionRasterDriveMirrorStatus), `${asset.id}: unsupported Drive mirror state`);
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
-  assert.equal(asset.rasterReplacement?.releaseApproved, true, `${asset.id}: raster replacement must be owner-approved`);
-  assert.equal(asset.rasterReplacement?.generatedFrom, asset.legacySource?.sourcePath, `${asset.id}: released raster must preserve SVG provenance`);
-  assert.equal(asset.rasterReplacement?.candidateSourcePath, asset.sourcePath, `${asset.id}: candidate raster source must match active production sourcePath`);
-  assert.equal(asset.learnerPath, `/${asset.rasterReplacement.candidateSourcePath.replace(/^apps\/web\/public\//, '')}`);
-  const rasterSource = path.join(root, asset.rasterReplacement.candidateSourcePath);
-  assert.ok(fs.existsSync(rasterSource), `${asset.id}: released WebP learner asset missing`);
+
+  const rasterSource = path.join(root, asset.sourcePath);
+  assert.ok(fs.existsSync(rasterSource), `${asset.id}: production WebP learner asset missing`);
   const rasterHeader = fs.readFileSync(rasterSource).subarray(0, 12);
   assert.equal(rasterHeader.subarray(0, 4).toString('ascii'), 'RIFF');
   assert.equal(rasterHeader.subarray(8, 12).toString('ascii'), 'WEBP');
 
-  const source = path.join(root, asset.sourcePath);
-  assert.ok(fs.existsSync(source), `${asset.id}: production raster asset missing`);
-  const legacySource = path.join(root, asset.legacySource?.sourcePath ?? '');
-  assert.ok(fs.existsSync(legacySource), `${asset.id}: legacy provenance SVG missing`);
-  const svg = fs.readFileSync(legacySource, 'utf8');
-  assert.match(svg, /<svg[\s>]/);
-  assert.match(svg, /<title[\s>]/);
-  assert.match(svg, /<desc[\s>]/);
-  assert.match(svg, /viewBox=/);
+  if (asset.nativeRaster) {
+    assert.equal(asset.nativeRaster.releaseApproved, true, `${asset.id}: native raster must be owner-approved`);
+    assert.equal(asset.nativeRaster.format, 'webp', `${asset.id}: native raster delivery must be WebP`);
+    assert.equal(asset.nativeRaster.sourceMasterFormat, 'png', `${asset.id}: native raster master must be PNG`);
+    assert.ok(Number(asset.nativeRaster.bytes) > 0, `${asset.id}: native raster byte size required`);
+    assert.ok(Number(asset.nativeRaster.pixelWidth) >= 1200, `${asset.id}: native raster width is too small`);
+    assert.ok(typeof asset.nativeRaster.driveFileId === 'string' && asset.nativeRaster.driveFileId, `${asset.id}: Drive web-raster mirror required`);
+    assert.ok(typeof asset.nativeRaster.driveMasterFileId === 'string' && asset.nativeRaster.driveMasterFileId, `${asset.id}: Drive PNG master mirror required`);
+  } else {
+    assert.ok(asset.legacySource?.sourcePath?.endsWith('.svg'), `${asset.id}: legacy SVG provenance path required for converted assets`);
+    assert.equal(asset.rasterReplacement?.releaseApproved, true, `${asset.id}: raster replacement must be owner-approved`);
+    assert.equal(asset.rasterReplacement?.generatedFrom, asset.legacySource?.sourcePath, `${asset.id}: released raster must preserve SVG provenance`);
+    assert.equal(asset.rasterReplacement?.candidateSourcePath, asset.sourcePath, `${asset.id}: candidate raster source must match active production sourcePath`);
+    assert.equal(asset.learnerPath, `/${asset.rasterReplacement.candidateSourcePath.replace(/^apps\/web\/public\//, '')}`);
+    const legacySource = path.join(root, asset.legacySource?.sourcePath ?? '');
+    assert.ok(fs.existsSync(legacySource), `${asset.id}: legacy provenance SVG missing`);
+    const svg = fs.readFileSync(legacySource, 'utf8');
+    assert.match(svg, /<svg[\s>]/);
+    assert.match(svg, /<title[\s>]/);
+    assert.match(svg, /<desc[\s>]/);
+    assert.match(svg, /viewBox=/);
+  }
 }
 
 for (const lessonNumber of ['01', '02', '03', '04']) {
@@ -92,4 +101,4 @@ for (const asset of produced) {
   }
 }
 
-console.log(`Course 3 learner-asset contract passed with raster-first WebP delivery and preserved SVG provenance.`);
+console.log(`Course 3 learner-asset contract passed with raster-first WebP delivery and native-raster support and preserved legacy provenance.`);
