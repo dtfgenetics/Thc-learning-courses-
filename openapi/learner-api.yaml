@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: THC Academy Learner API
-  version: 0.1.0
+  version: 0.2.0
   description: Authenticated learner runtime contract. Academic course completion and professional credential issuance remain separate.
 servers:
   - url: https://dtfseeds.com/api/v1
@@ -20,11 +20,10 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/LearnerProfileRequest'
+            schema: { $ref: '#/components/schemas/LearnerProfileRequest' }
       responses:
         '200': { description: Learner profile saved }
-        '400': { description: Invalid learner name }
+        '400': { description: Invalid learner profile }
         '401': { description: Authentication required }
   /me/applications:
     get:
@@ -38,10 +37,10 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/CredentialApplicationRequest'
+            schema: { $ref: '#/components/schemas/CredentialApplicationRequest' }
       responses:
         '201': { description: Credential-program application created or existing application returned }
+        '400': { description: Invalid program identifier }
         '401': { description: Authentication required }
         '404': { description: Credential program not found }
   /me/enrollments:
@@ -56,10 +55,10 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/EnrollmentRequest'
+            schema: { $ref: '#/components/schemas/EnrollmentRequest' }
       responses:
         '200': { description: Enrollment created or existing enrollment returned }
+        '400': { description: Invalid enrollment request }
         '401': { description: Authentication required }
         '404': { description: Course not found }
         '409': { description: Course version mismatch or course not open for enrollment }
@@ -73,13 +72,12 @@ paths:
     put:
       operationId: setLessonProgress
       parameters:
-        - $ref: '#/components/parameters/LessonId'
+        - { $ref: '#/components/parameters/LessonId' }
       requestBody:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/LessonProgressRequest'
+            schema: { $ref: '#/components/schemas/LessonProgressRequest' }
       responses:
         '200': { description: Lesson progress saved }
         '400': { description: Invalid lesson progress }
@@ -88,7 +86,7 @@ paths:
     get:
       operationId: getCourseCompletion
       parameters:
-        - $ref: '#/components/parameters/CourseId'
+        - { $ref: '#/components/parameters/CourseId' }
       responses:
         '200': { description: Authoritative lesson, module, assessment and practical completion projection }
         '401': { description: Authentication required }
@@ -97,7 +95,7 @@ paths:
     get:
       operationId: getCourseEvidence
       parameters:
-        - $ref: '#/components/parameters/CourseId'
+        - { $ref: '#/components/parameters/CourseId' }
       responses:
         '200': { description: Learner-safe written and practical course evidence }
         '401': { description: Authentication required }
@@ -106,7 +104,7 @@ paths:
     get:
       operationId: getLearnerPracticalSubmission
       parameters:
-        - $ref: '#/components/parameters/CourseId'
+        - { $ref: '#/components/parameters/CourseId' }
       responses:
         '200': { description: Private learner practical evidence-reference submission }
         '401': { description: Authentication required }
@@ -114,31 +112,30 @@ paths:
     put:
       operationId: saveLearnerPracticalSubmission
       parameters:
-        - $ref: '#/components/parameters/CourseId'
+        - { $ref: '#/components/parameters/CourseId' }
       requestBody:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PracticalSubmissionRequest'
+            schema: { $ref: '#/components/schemas/PracticalSubmissionRequest' }
       responses:
         '200': { description: Draft or submitted practical evidence references saved; no score or credential is issued }
-        '400': { description: Invalid or incomplete practical evidence submission }
+        '400': { description: Invalid practical evidence submission }
         '401': { description: Authentication required }
   /me/courses/{courseId}/assessment-attempts:
     post:
       operationId: startOrResumeCourseAssessment
       parameters:
-        - $ref: '#/components/parameters/CourseId'
+        - { $ref: '#/components/parameters/CourseId' }
       responses:
         '200': { description: Safe resumable course assessment presentation }
         '401': { description: Authentication required }
-        '409': { description: Assessment not released, cooldown active, or attempt limit reached }
+        '409': { description: Assessment unavailable, identity linkage incomplete, cooldown active, or attempt limit reached }
   /me/assessment-attempts/{attemptId}:
     get:
       operationId: getAssessmentAttemptStatus
       parameters:
-        - $ref: '#/components/parameters/AttemptId'
+        - { $ref: '#/components/parameters/AttemptId' }
       responses:
         '200': { description: Learner-safe attempt status or aggregate scored result }
         '401': { description: Authentication required }
@@ -147,22 +144,22 @@ paths:
     put:
       operationId: saveAssessmentResponses
       parameters:
-        - $ref: '#/components/parameters/AttemptId'
+        - { $ref: '#/components/parameters/AttemptId' }
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              additionalProperties: false
               required: [responses]
               properties:
                 responses:
                   type: array
                   minItems: 1
-                  items:
-                    $ref: '#/components/schemas/AssessmentResponse'
+                  items: { $ref: '#/components/schemas/AssessmentResponse' }
       responses:
-        '200': { description: Responses saved }
+        '200': { description: Responses saved to the learner attempt }
         '400': { description: Invalid response payload }
         '401': { description: Authentication required }
         '409': { description: Attempt is no longer editable or its server-enforced time limit has expired }
@@ -170,25 +167,33 @@ paths:
     post:
       operationId: submitAssessmentAttempt
       parameters:
-        - $ref: '#/components/parameters/AttemptId'
+        - { $ref: '#/components/parameters/AttemptId' }
       responses:
-        '200': { description: Aggregate scored result with competency-level feedback }
+        '200': { description: Server-scored result with competency-level feedback and no answer key }
         '401': { description: Authentication required }
         '409': { description: Attempt incomplete or not submittable }
+  /me/credentials:
+    get:
+      operationId: listIssuedLearnerCredentials
+      responses:
+        '200':
+          description: Private learner-owned issued credential summaries suitable for dashboard display and certificate printing
+        '401': { description: Authentication required }
+        '503': { description: Credential persistence unavailable }
   /me/credentials/{credentialId}/progress:
     get:
       operationId: getCredentialProgress
       parameters:
-        - $ref: '#/components/parameters/CredentialId'
+        - { $ref: '#/components/parameters/CredentialId' }
       responses:
-        '200': { description: Private learner credential progress and eligibility }
+        '200': { description: Private learner credential progress, learner requirements, and fail-closed release state }
         '401': { description: Authentication required }
         '404': { description: Credential definition not found }
   /me/credentials/{credentialId}/transcript:
     get:
       operationId: getCredentialCompetencyTranscript
       parameters:
-        - $ref: '#/components/parameters/CredentialId'
+        - { $ref: '#/components/parameters/CredentialId' }
       responses:
         '200': { description: Privacy-bounded competency transcript excluding learner identifiers, private evaluator notes and raw responses }
         '401': { description: Authentication required }
@@ -231,58 +236,20 @@ components:
       additionalProperties: false
       required: [programId]
       properties:
-        programId: { type: string, pattern: '^CREDPROG-[A-Z0-9-]+
-      additionalProperties: false
-      required: [courseId, courseVersion]
-      properties:
-        courseId: { type: string }
-        courseVersion: { type: string }
-    LessonProgressRequest:
-      type: object
-      additionalProperties: false
-      required: [lessonVersion, status]
-      properties:
-        lessonVersion: { type: string }
-        status: { type: string, enum: [not-started, in-progress, completed] }
-    AssessmentResponse:
-      type: object
-      additionalProperties: false
-      required: [itemId, itemVersion, response]
-      properties:
-        itemId: { type: string }
-        itemVersion: { type: [string, number] }
-        response: {}
-    PracticalSubmissionRequest:
-      type: object
-      additionalProperties: false
-      required: [status, evidenceOutputs]
-      properties:
-        status: { type: string, enum: [draft, submitted] }
-        learnerStatement: { type: string, maxLength: 2000 }
-        evidenceOutputs:
-          type: array
-          items:
-            type: object
-            additionalProperties: false
-            required: [name, reference, description]
-            properties:
-              name: { type: string, maxLength: 200 }
-              reference: { type: string, maxLength: 500 }
-              description: { type: string, maxLength: 1000 }
- }
+        programId: { type: string, pattern: '^CREDPROG-[A-Z0-9-]+$' }
     EnrollmentRequest:
       type: object
       additionalProperties: false
       required: [courseId, courseVersion]
       properties:
-        courseId: { type: string }
-        courseVersion: { type: string }
+        courseId: { type: string, pattern: '^COURSE-[A-Z0-9-]+$' }
+        courseVersion: { type: string, pattern: '^[0-9]+\\.[0-9]+\\.[0-9]+$' }
     LessonProgressRequest:
       type: object
       additionalProperties: false
       required: [lessonVersion, status]
       properties:
-        lessonVersion: { type: string }
+        lessonVersion: { type: string, pattern: '^[0-9]+(?:\\.[0-9]+){0,3}$' }
         status: { type: string, enum: [not-started, in-progress, completed] }
     AssessmentResponse:
       type: object
