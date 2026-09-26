@@ -1,20 +1,170 @@
 {
-  "id":"LESSON-PROP-SEED-002",
-  "title":"Seed Viability, Germination and Seedling Establishment",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-PROP-001"],
-  "learningObjectives":["LO-PROP-SEED-002"],
-  "estimatedMinutes":40,
-  "references":["REF-PROP-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Seed propagation is a transition from stored embryo to actively growing seedling. Success depends on viable seed, adequate water, oxygen, suitable temperature, clean conditions, and careful management after emergence.",
-    "vocabulary":[{"term":"Viability","definition":"The capacity of a seed to remain alive and capable of germination under suitable conditions."},{"term":"Imbibition","definition":"Initial water uptake by a dry seed during the beginning of germination."},{"term":"Radicle","definition":"The embryonic root that typically emerges first during germination."},{"term":"Cotyledon","definition":"An embryonic seed leaf that supports the young seedling during early development."}],
-    "sections":[{"title":"Germination begins with water uptake","body":"A viable seed absorbs water, reactivates metabolism, and resumes embryo growth. Moisture must be sufficient for imbibition without maintaining oxygen-poor saturation around the seed.","references":["REF-PROP-001"]},{"title":"Temperature influences biological rate","body":"Temperature affects metabolic activity and germination speed. Extreme conditions can slow development or increase stress, so temperature should be stable and appropriate for active germination.","references":["REF-PROP-001"]},{"title":"Early seedlings need a gradual transition","body":"After emergence, seedlings begin relying increasingly on photosynthesis and root uptake. Excessive light, saturated media, or abrupt environmental changes can overwhelm a small developing root system.","references":["REF-PROP-001"]},{"title":"Records reveal seed-lot performance","body":"Germination percentage and timing should be tracked by seed lot and storage history. This helps distinguish poor technique from declining seed quality.","references":["REF-PROP-001"]}],
-    "workedExamples":["If most seeds from one lot fail while another lot succeeds under the same conditions, seed viability or storage history becomes a stronger suspect than room temperature alone.","If emerged seedlings stretch strongly, examine light environment and establishment conditions rather than burying stems repeatedly without correcting the cause."],
-    "commonMistakes":["Keeping germination media waterlogged.","Handling newly emerged radicles roughly.","Applying mature-plant light or nutrient assumptions to very young seedlings."],
-    "practicalApplication":"Record seed lot, storage history, start date, germination method, temperature, emergence date, and abnormal seedlings. Transition emerged seedlings gradually into the intended root-zone and light environment.",
-    "summary":"Reliable seed propagation depends on viable seed, controlled moisture and temperature, oxygen access, sanitation, and careful seedling establishment after emergence."
+  "id": "LESSON-PROP-SEED-002",
+  "title": "Seed Viability, Germination and Seedling Establishment",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-PROP-SEED-002"
+  ],
+  "estimatedMinutes": 40,
+  "references": [
+    "REF-PROP-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Seed propagation is a transition from stored embryo to actively growing seedling. Success depends on viable seed, adequate water, oxygen, suitable temperature, clean conditions, and careful management after emergence.",
+    "vocabulary": [
+      {
+        "term": "Viability",
+        "definition": "The capacity of a seed to remain alive and capable of germination under suitable conditions."
+      },
+      {
+        "term": "Imbibition",
+        "definition": "Initial water uptake by a dry seed during the beginning of germination."
+      },
+      {
+        "term": "Radicle",
+        "definition": "The embryonic root that typically emerges first during germination."
+      },
+      {
+        "term": "Cotyledon",
+        "definition": "An embryonic seed leaf that supports the young seedling during early development."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Germination begins with water uptake",
+        "body": "A viable seed absorbs water, reactivates metabolism, and resumes embryo growth. Moisture must be sufficient for imbibition without maintaining oxygen-poor saturation around the seed.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Temperature influences biological rate",
+        "body": "Temperature affects metabolic activity and germination speed. Extreme conditions can slow development or increase stress, so temperature should be stable and appropriate for active germination.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Early seedlings need a gradual transition",
+        "body": "After emergence, seedlings begin relying increasingly on photosynthesis and root uptake. Excessive light, saturated media, or abrupt environmental changes can overwhelm a small developing root system.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Records reveal seed-lot performance",
+        "body": "Germination percentage and timing should be tracked by seed lot and storage history. This helps distinguish poor technique from declining seed quality.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If most seeds from one lot fail while another lot succeeds under the same conditions, seed viability or storage history becomes a stronger suspect than room temperature alone.",
+      "If emerged seedlings stretch strongly, examine light environment and establishment conditions rather than burying stems repeatedly without correcting the cause.",
+      "A seed lot reaches 92% germination but over a wide 10-day window. The percentage is good, but timing uniformity may still matter for crop management.",
+      "Seedlings stretch after emergence while temperature and moisture are acceptable. Light environment and distance become stronger suspects than germination technique."
+    ],
+    "commonMistakes": [
+      "Keeping germination media waterlogged.",
+      "Handling newly emerged radicles roughly.",
+      "Applying mature-plant light or nutrient assumptions to very young seedlings.",
+      "Reporting germination percentage without timing/uniformity.",
+      "Confusing seedling establishment problems with seed viability."
+    ],
+    "practicalApplication": "Record seed lot, storage history, start date, germination method, temperature, emergence date, and abnormal seedlings. Transition emerged seedlings gradually into the intended root-zone and light environment.",
+    "summary": "Reliable seed propagation depends on viable seed, controlled moisture and temperature, oxygen access, sanitation, and careful seedling establishment after emergence.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Germination has measurable milestones",
+        "body": "Imbibition, radicle emergence and seedling establishment are separate stages. Tracking both percentage and timing helps distinguish seed-lot quality from environmental or establishment problems.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Seed-lot performance metrics",
+        "columns": [
+          "Metric",
+          "What it tells you"
+        ],
+        "rows": [
+          [
+            "Germination percentage",
+            "How many seeds successfully germinate"
+          ],
+          [
+            "Time to first emergence",
+            "Earliest response"
+          ],
+          [
+            "Median emergence time",
+            "Typical speed"
+          ],
+          [
+            "Uniformity/spread",
+            "How synchronized the batch is"
+          ],
+          [
+            "Abnormal seedling rate",
+            "Quality after germination"
+          ]
+        ],
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Evaluate a seed batch",
+        "items": [
+          {
+            "title": "Record lot/storage history",
+            "body": "Preserve identity and age/context."
+          },
+          {
+            "title": "Standardize germination conditions",
+            "body": "Use consistent moisture, oxygen and temperature."
+          },
+          {
+            "title": "Record daily milestones",
+            "body": "Track radicle/emergence timing."
+          },
+          {
+            "title": "Calculate success and uniformity",
+            "body": "Do not stop at percentage alone."
+          },
+          {
+            "title": "Separate establishment failures",
+            "body": "Evaluate post-emergence light, moisture and root-zone conditions separately."
+          }
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Analyze a germination log",
+        "instructions": "Use a 20-seed daily-emergence dataset.",
+        "prompts": [
+          "Calculate final germination %.",
+          "Determine median emergence day.",
+          "Identify abnormal seedlings.",
+          "Decide whether the main issue is viability, uniformity or establishment."
+        ],
+        "artifact": "Seed-lot germination analysis"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "A strong seed lot is not only viable; it also emerges predictably and establishes normally under controlled conditions."
+      }
+    ]
   }
 }
