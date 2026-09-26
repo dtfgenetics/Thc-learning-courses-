@@ -39,6 +39,10 @@ assert.ok(js.includes("input.type = 'radio'"), 'single-choice assessment items n
 assert.ok(js.includes("input.type = 'checkbox'"), 'multiple-response assessment items need checkbox controls');
 assert.ok(js.includes("input.type = 'number'"), 'numeric assessment items need numeric controls');
 assert.ok(js.includes('renderRichBlocks(fieldset, item.stimulus)'), 'assessment evidence stimuli must use the accessible rich renderer');
+for (const identityMarker of ['Learner: ', 'Application: ', 'Certificate name: ', 'Attempt: ']) {
+  assert.ok(js.includes(identityMarker), `assessment UI must retain learner/exam identity marker: ${identityMarker}`);
+}
+assert.ok(js.includes('result.learner?.certificateName'), 'scored assessment result must retain the certificate name linked to the attempt');
 assert.ok(js.includes('pendingSaves'), 'submission must account for in-flight autosaves');
 assert.ok(js.includes('saveChains'), 'rapid updates for one item must be serialized');
 assert.ok(js.includes("fieldset.dataset.saved = 'false'"), 'changed responses must become unsaved until persistence succeeds');
