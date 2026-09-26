@@ -1,37 +1,335 @@
 {
   "id": "LESSON-LIGHT-001",
   "title": "PPFD, DLI, Photoperiod and Photosynthesis",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-LIGHT-001"],
-  "learningObjectives": ["LO-LIGHT-001"],
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "learningObjectives": [
+    "LO-LIGHT-001"
+  ],
   "estimatedMinutes": 45,
-  "references": ["REF-LIGHT-001"],
+  "references": [
+    "REF-LIGHT-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Cultivation lighting should be interpreted with measurements that describe photon intensity, duration, spectrum, and distribution. PPFD describes instantaneous photon flux at the canopy, while DLI integrates that exposure over the light period.",
+    "overview": "Cultivation lighting is best understood as a combination of photon intensity, time, spectrum and distribution across the canopy. PPFD describes instantaneous photosynthetic photon flux density at a surface; DLI integrates photon exposure over the daily light period. Neither metric is a complete description of photosynthesis or crop performance by itself, so this lesson connects measurement to canopy geometry, photoperiod, plant response and measurement uncertainty.",
     "vocabulary": [
-      {"term":"PPFD","definition":"Photosynthetic photon flux density, an instantaneous measure of photosynthetically active photons reaching a surface."},
-      {"term":"DLI","definition":"Daily light integral, the total photosynthetically active photon exposure accumulated over a day."},
-      {"term":"Photoperiod","definition":"The duration of the daily light period used by the crop."},
-      {"term":"Spectrum","definition":"The distribution of light energy across wavelengths reaching the plant."}
+      {
+        "term": "PPFD",
+        "definition": "Photosynthetic photon flux density, an instantaneous measure of photosynthetically active photons reaching a surface."
+      },
+      {
+        "term": "DLI",
+        "definition": "Daily light integral, the total photosynthetically active photon exposure accumulated over a day."
+      },
+      {
+        "term": "Photoperiod",
+        "definition": "The duration of the daily light period used by the crop."
+      },
+      {
+        "term": "Spectrum",
+        "definition": "The distribution of light energy across wavelengths reaching the plant."
+      }
     ],
     "sections": [
-      {"title":"PPFD describes intensity, not daily dose","body":"PPFD is a momentary canopy-level measurement. It is useful for mapping intensity and uniformity, but it does not describe the total daily photon dose unless the photoperiod is also considered.","references":["REF-LIGHT-001"]},
-      {"title":"DLI combines intensity and time","body":"DLI integrates photon flux over the duration of the light period. Two rooms can have the same PPFD and different DLI when their photoperiods differ, or similar DLI from different combinations of intensity and duration.","references":["REF-LIGHT-001"]},
-      {"title":"Canopy distribution matters","body":"An average PPFD can hide bright and dim zones. Mapping multiple canopy locations helps identify uneven distribution caused by fixture layout, distance, canopy geometry, and shading.","references":["REF-LIGHT-001"]},
-      {"title":"Spectrum and plant response","body":"Plant response depends on more than photon quantity. Spectrum can influence morphology and physiology, so fixture evaluation should consider spectrum together with intensity, photoperiod, and spatial distribution rather than relying on wattage or product labels alone.","references":["REF-LIGHT-001"]}
+      {
+        "title": "PPFD describes intensity, not daily dose",
+        "body": "PPFD is a momentary canopy-level measurement. It is useful for mapping intensity and uniformity, but it does not describe the total daily photon dose unless the photoperiod is also considered.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "DLI combines intensity and time",
+        "body": "DLI integrates photon flux over the duration of the light period. Two rooms can have the same PPFD and different DLI when their photoperiods differ, or similar DLI from different combinations of intensity and duration.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Canopy distribution matters",
+        "body": "An average PPFD can hide bright and dim zones. Mapping multiple canopy locations helps identify uneven distribution caused by fixture layout, distance, canopy geometry, and shading.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "title": "Spectrum and plant response",
+        "body": "Plant response depends on more than photon quantity. Spectrum can influence morphology and physiology, so fixture evaluation should consider spectrum together with intensity, photoperiod, and spatial distribution rather than relying on wattage or product labels alone.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If two rooms both measure 700 micromoles per square meter per second at the canopy but one runs a longer photoperiod, the longer-light room will accumulate a larger DLI if other conditions are equal.",
-      "If the center of a canopy measures much higher PPFD than the edges, use a grid of measurements before deciding that the entire crop receives the center value."
+      "A canopy receives an average PPFD of 600 µmol/m²/s for 18 hours. DLI = 600 × 18 × 3600 ÷ 1,000,000 = 38.9 mol/m²/day. The same PPFD over 12 hours would produce a lower DLI because exposure time is shorter.",
+      "A single center reading is 900 µmol/m²/s, but edge readings are 520–600. Reporting 900 as the whole-room PPFD hides nonuniformity. A grid map better represents what the canopy experiences.",
+      "Two rooms have the same calculated DLI but use different PPFD and photoperiod combinations. The equal daily photon total does not prove equal plant response because intensity, photoperiod signaling, temperature, CO2, canopy structure and other factors can differ.",
+      "A fixture is advertised at high electrical wattage. The learner does not infer canopy PPFD from wattage; they measure photon flux at the actual canopy because distance, optics, layout and losses affect delivery."
     ],
     "commonMistakes": [
-      "Treating fixture wattage as a direct measurement of canopy photon exposure.",
-      "Using one center-canopy PPFD reading as if it represented the entire crop.",
-      "Comparing DLI without confirming the photoperiod used in the calculation."
+      "Treating fixture wattage as canopy light intensity.",
+      "Using one center-canopy reading as the whole-room value.",
+      "Confusing PPFD with DLI.",
+      "Calculating DLI with the wrong photoperiod or unit conversion.",
+      "Assuming equal DLI guarantees equal plant response under every PPFD/photoperiod combination.",
+      "Ignoring canopy height and geometry when comparing maps over time."
     ],
-    "practicalApplication": "Measure PPFD at multiple canopy locations, record photoperiod, calculate DLI consistently, and interpret the results with canopy uniformity and spectrum in mind. Change lighting deliberately and verify the crop response rather than relying on fixture labels alone.",
-    "summary": "PPFD describes instantaneous photon intensity, DLI describes accumulated daily exposure, and photoperiod links the two. Useful lighting decisions also require attention to spectrum and spatial uniformity across the actual canopy."
+    "practicalApplication": "Build a canopy light map using a repeatable grid. Record PPFD, position, canopy height and measurement time; calculate average, minimum and maximum PPFD; identify distribution problems; calculate DLI using the actual photoperiod; then explain what the data can and cannot tell you about photosynthesis and crop performance.",
+    "summary": "PPFD measures instantaneous photon density; DLI measures accumulated daily photon exposure. Strong lighting decisions use mapped canopy measurements, correct photoperiod, consistent geometry and plant-response context rather than fixture wattage or a single center reading.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Light measurement answers different questions",
+        "body": "PPFD answers 'how many photosynthetic photons are arriving now?' DLI answers 'how many photosynthetic photons accumulated over the day?' Photoperiod answers 'how long is the daily light interval?' These measurements are related but not interchangeable.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Core lighting metrics",
+        "columns": [
+          "Metric",
+          "Meaning",
+          "Typical unit",
+          "Key limitation"
+        ],
+        "rows": [
+          [
+            "PPFD",
+            "Instantaneous photosynthetic photon flux density at a surface",
+            "µmol/m²/s",
+            "A snapshot; does not include daily duration"
+          ],
+          [
+            "DLI",
+            "Integrated photosynthetic photon exposure over a day",
+            "mol/m²/day",
+            "Does not describe spatial distribution or spectrum"
+          ],
+          [
+            "Photoperiod",
+            "Length/timing of the daily light interval",
+            "hours/day",
+            "Duration alone does not describe photon intensity"
+          ],
+          [
+            "Spectrum",
+            "Distribution of photons across wavelength",
+            "spectral distribution",
+            "Cannot substitute for intensity or dose measurement"
+          ],
+          [
+            "Uniformity",
+            "How evenly photons are distributed across the canopy",
+            "map/min:max/CV or similar",
+            "Depends on measurement grid and canopy geometry"
+          ]
+        ],
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Map the light the crop actually receives",
+        "items": [
+          {
+            "title": "Define the plane",
+            "body": "Measure at a consistent canopy plane or document canopy-height differences."
+          },
+          {
+            "title": "Use a grid",
+            "body": "Take multiple positions rather than one center reading."
+          },
+          {
+            "title": "Record PPFD and location",
+            "body": "Keep the measurement tied to a specific point and time."
+          },
+          {
+            "title": "Calculate distribution",
+            "body": "Compare average, minimum, maximum and visible spatial patterns."
+          },
+          {
+            "title": "Add photoperiod",
+            "body": "Use the actual hours of light to calculate DLI."
+          },
+          {
+            "title": "Interpret with crop context",
+            "body": "Compare the map with canopy structure, temperature, CO2, irrigation and observed plant response."
+          }
+        ]
+      },
+      {
+        "type": "document",
+        "title": "DLI calculation",
+        "description": "For a constant PPFD approximation: DLI = PPFD × photoperiod hours × 3600 ÷ 1,000,000.",
+        "fields": [
+          {
+            "label": "PPFD",
+            "value": "600 µmol/m²/s"
+          },
+          {
+            "label": "Photoperiod",
+            "value": "18 h/day"
+          },
+          {
+            "label": "Seconds of light",
+            "value": "18 × 3600 = 64,800 s"
+          },
+          {
+            "label": "Daily photons",
+            "value": "600 × 64,800 = 38,880,000 µmol/m²/day"
+          },
+          {
+            "label": "Convert to mol",
+            "value": "38.9 mol/m²/day"
+          }
+        ],
+        "note": "This simple calculation assumes the entered PPFD reasonably represents the period being integrated."
+      },
+      {
+        "type": "scenario",
+        "title": "The bright center hides the edges",
+        "setting": "A grower records 900 µmol/m²/s at the center of a bench and labels the entire bench '900 PPFD.' Edge measurements later show 540–620.",
+        "prompt": "What should be changed?",
+        "options": [
+          "Keep 900 because the center is the most important location",
+          "Use a grid and report distribution rather than one point as the whole canopy",
+          "Convert the center reading directly to fixture wattage",
+          "Ignore the edge values"
+        ],
+        "answer": "Use a grid and report distribution rather than one point as the whole canopy.",
+        "feedback": "A single value can conceal large spatial differences that affect crop uniformity.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Equal DLI does not mean identical environment",
+        "setting": "Two rooms deliver the same DLI with different PPFD and photoperiod combinations.",
+        "prompt": "Which conclusion is strongest?",
+        "options": [
+          "The crops must respond identically",
+          "The rooms have equal daily photon totals, but other biological and environmental responses can still differ",
+          "PPFD no longer matters when DLI matches",
+          "Photoperiod has no biological role"
+        ],
+        "answer": "The rooms have equal daily photon totals, but other biological and environmental responses can still differ.",
+        "feedback": "DLI is useful but does not erase differences in intensity, photoperiod signaling, environment or canopy response.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Build and interpret a canopy light map",
+        "instructions": "Use a supplied or measured grid of canopy PPFD values.",
+        "prompts": [
+          "Calculate the average PPFD.",
+          "Identify minimum and maximum values.",
+          "Describe where the brightest and dimmest zones occur.",
+          "Calculate DLI from the average PPFD and actual photoperiod.",
+          "Explain one limitation of using the average alone.",
+          "Name one crop observation you would compare with the map."
+        ],
+        "artifact": "Canopy light map and DLI worksheet",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key limitation",
+        "tone": "warning",
+        "body": "PPFD and DLI quantify photon exposure, not photosynthesis directly. Carbon dioxide, leaf temperature, stomatal behavior, nutrition, water status, canopy structure and genetics also influence crop response."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Measure the canopy, not the fixture label. PPFD tells you intensity now; DLI tells you daily photon exposure; a grid tells you whether the crop receives that light uniformly.",
+        "references": [
+          "REF-LIGHT-001"
+        ]
+      }
+    ],
+    "extensions": {
+      "academyEnrichment": {
+        "whyItMatters": "Lighting is one of the largest controllable energy inputs in indoor cultivation. A learner who can distinguish intensity, duration and distribution can make sense of canopy maps, compare rooms and avoid treating fixture wattage or one sensor reading as plant exposure.",
+        "priorKnowledgeRetrieval": [
+          "What is the difference between PPFD and DLI?",
+          "Why can one center-canopy reading be misleading?"
+        ],
+        "guidedPractice": [
+          {
+            "prompt": "Use a 3×3 PPFD grid to calculate average PPFD, identify distribution problems and compute DLI for the supplied photoperiod.",
+            "steps": [
+              "Read all nine values.",
+              "Calculate average/minimum/maximum.",
+              "Describe the spatial pattern.",
+              "Calculate DLI.",
+              "State one limitation of the result."
+            ],
+            "expectedEvidence": "A completed grid analysis and DLI calculation.",
+            "feedbackGuidance": "Strong work keeps the units correct and separates daily dose from spatial uniformity."
+          }
+        ],
+        "decisionScenarios": [
+          {
+            "scenario": "A fixture upgrade raises center PPFD but edge values barely change.",
+            "prompt": "Is the upgrade automatically an improvement for the whole canopy?",
+            "expectedReasoning": "No. Evaluate the full distribution, canopy response and energy/heat consequences rather than the peak value alone."
+          }
+        ],
+        "workplaceConnections": [
+          "Use a consistent measurement grid and canopy plane so maps can be compared over time.",
+          "Record fixture settings and photoperiod with PPFD maps to preserve context."
+        ],
+        "safetyComplianceNotes": [
+          "Follow electrical and fixture-access procedures; this lesson teaches light measurement and interpretation, not energized electrical servicing."
+        ],
+        "practicalActivities": [
+          {
+            "title": "Canopy PPFD/DLI mapping exercise",
+            "instructions": "Measure or analyze a canopy grid, calculate DLI and interpret uniformity.",
+            "evidenceToProduce": [
+              "PPFD grid",
+              "summary statistics",
+              "DLI calculation",
+              "interpretation"
+            ],
+            "deliveryModes": [
+              "simulation",
+              "supervised-lab",
+              "workplace",
+              "paper-data-exercise"
+            ]
+          }
+        ],
+        "portfolioEvidence": [
+          "A sanitized canopy light map with DLI calculation and interpretation."
+        ],
+        "spacedRetrieval": [
+          "One day later, explain why PPFD is not DLI.",
+          "One week later, calculate DLI from a new PPFD/photoperiod pair without notes."
+        ],
+        "furtherReading": [
+          "REF-LIGHT-001"
+        ],
+        "evidenceDisclosure": "PPFD and DLI are physical light measurements. Crop-specific response thresholds depend on genotype, stage and interacting environmental variables; this lesson does not present one universal cannabis target.",
+        "accessibility": {
+          "readingOrderNotes": "Teach metric distinctions before calculations and map interpretation.",
+          "alternativeTextNotes": "Light maps need text summaries of highest, lowest and spatial patterns rather than color alone.",
+          "transcriptRequired": false,
+          "nonVisualAlternative": "Provide numeric grids and written spatial coordinates for all light-mapping exercises."
+        }
+      }
+    }
   }
 }
