@@ -41,11 +41,15 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '6'; },
+      async schemaVersion() { return '7'; },
       async getByVerificationId() { return null; },
       async count() { return 0; }
     },
-    credentialWriter: { kind: 'test-writer' },
+    credentialWriter: {
+      kind: 'test-writer',
+      async issueCredential(record) { return { credential: structuredClone(record), created: true, idempotent: false }; },
+      async transitionById() { return null; }
+    },
     practicalEvaluatorStore: {
       kind: 'test-practical-evaluator',
       async listCourseLearners({ courseId, assessmentId, assessmentVersion, search = '', practicalStatus = '', assignmentFilter = '', evaluatorId = '', page = 1, pageSize = 25 } = {}) {
