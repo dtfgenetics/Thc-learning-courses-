@@ -692,7 +692,7 @@
     },
     {
       "id": "VIS-FOUNDATION-SEED-GERMINATION-001",
-      "status": "planned",
+      "status": "retired",
       "deliveryType": "embedded-visual",
       "title": "Cannabis seed anatomy and germination sequence",
       "primaryLessons": [
@@ -723,7 +723,9 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "retiredReason": "Superseded by existing owner-approved production raster VIS-LH-TECH1-005-010, which already provides the required cannabis seed anatomy and germination sequence.",
+      "supersededBy": "VIS-LH-TECH1-005-010"
     },
     {
       "id": "VIS-FOUNDATION-CLONE-ROOTING-001",
