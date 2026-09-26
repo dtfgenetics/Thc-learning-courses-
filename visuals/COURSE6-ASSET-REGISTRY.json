@@ -513,6 +513,111 @@
         "driveFileUrl": "https://drive.google.com/file/d/1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg/view?usp=drivesdk"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-POSTHARVEST-SYSTEM-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Harvest-to-storage postharvest quality system",
+      "primaryLessons": [
+        "LESSON-POSTHARVEST-001"
+      ],
+      "references": [
+        "REF-POSTHARVEST-001",
+        "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+      ],
+      "purpose": "Show harvest, controlled drying, conditioning/curing, packaging and storage as linked quality-control stages with moisture, temperature, airflow, oxygen and light variables.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "process-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-DRYING-DYNAMICS-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis flower drying: internal moisture gradient to surrounding air",
+      "primaryLessons": [
+        "LESSON-POSTHARVEST-DRY-002"
+      ],
+      "references": [
+        "REF-POSTHARVEST-001",
+        "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+      ],
+      "purpose": "Show moisture moving from internal flower tissue to the surface and then to room air, with airflow, temperature, RH and product density labeled as process variables.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-cross-section",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-STORAGE-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Curing, package microenvironment and storage stability",
+      "primaryLessons": [
+        "LESSON-POSTHARVEST-STORAGE-003"
+      ],
+      "references": [
+        "REF-POSTHARVEST-001",
+        "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+      ],
+      "purpose": "Show moisture redistribution, package headspace, seal/barrier properties, oxygen, light and temperature as storage variables after initial drying.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
     }
   ],
   "ownerReleaseApproval": {
