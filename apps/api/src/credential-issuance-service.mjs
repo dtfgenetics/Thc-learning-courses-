@@ -5,6 +5,11 @@ function sha256(value) {
   return crypto.createHash('sha256').update(String(value)).digest('hex');
 }
 
+export function credentialSubjectHash(learnerSubject) {
+  if (!String(learnerSubject ?? '').trim()) throw new Error('learner subject required');
+  return sha256(`thc-academy:credential-subject:${learnerSubject}`);
+}
+
 function credentialEvidenceProjection(credential, rawEvidence) {
   const assessmentIds = new Set(credential.eligibility.requiredAssessments ?? []);
   const performanceIds = new Set(credential.eligibility.requiredPerformanceAssessments ?? []);
@@ -98,7 +103,7 @@ export async function issueEligibleCredential({
   const evidence = credentialEvidenceProjection(credential, rawEvidence);
   const verificationId = crypto.randomBytes(18).toString('hex').toUpperCase();
   const credentialId = crypto.randomUUID();
-  const subjectHash = sha256(`thc-academy:credential-subject:${learnerSubject}`);
+  const subjectHash = credentialSubjectHash(learnerSubject);
 
   const unsignedPayload = {
     format: 'thc-academy-issued-credential-v1',
