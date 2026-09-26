@@ -187,6 +187,27 @@
         "tone": "evidence",
         "body": "Biosecurity works best when movement pathways are designed out of the system rather than relying only on cleanup after spread occurs."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-005",
+          "title": "Biosecurity, clean-to-dirty and quarantine workflow",
+          "src": "/assets/course5/biosecurity-quarantine-flow.webp",
+          "alt": "Educational facility workflow showing quarantine, clean-to-dirty movement, dedicated tools, staff traffic and waste pathways used to reduce pest and pathogen movement between cultivation zones.",
+          "caption": "Biosecurity is pathway control. Quarantine and clean-to-dirty workflow reduce opportunities for pests and pathogens to move through plants, people and equipment.",
+          "references": [
+            "REF-IPM-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-005",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
