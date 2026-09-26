@@ -178,13 +178,13 @@ async function renderCredentialProgress() {
   panel.className = 'portal-panel';
   panel.append(text('p', 'Private learner record', 'eyebrow'));
   panel.append(text('h2', 'My Learning Dashboard'));
-  panel.append(text('p', 'Review your academic enrollment, current Course 1 completion, and professional credential evidence in one place. Academic course completion and professional credential issuance remain separate.', 'lede'));
+  panel.append(text('p', 'Review your enrolled academic courses, graded-final progress, certification applications, and professional credential evidence in one place. Academic course completion and professional credential issuance remain separate.', 'lede'));
   panel.append(text('p', 'Loading learner records…', 'status'));
   lessonView.replaceChildren(panel);
   lessonView.focus();
 
   try {
-    const [profileResponse, applicationsResponse, enrollmentResponse, courseCompletionResponse, progressResponse, transcriptResponse] = await Promise.all([
+    const [profileResponse, applicationsResponse, enrollmentResponse, catalogResponse, progressResponse, transcriptResponse] = await Promise.all([
       fetch('/api/v1/me/profile', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
@@ -197,7 +197,7 @@ async function renderCredentialProgress() {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
       }),
-      fetch(`/api/v1/me/courses/${COURSE1_ID}/completion`, {
+      fetch('/api/catalog', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
       }),
@@ -218,10 +218,7 @@ async function renderCredentialProgress() {
       if (enrollmentResponse.status === 401 || enrollmentResponse.status === 403) throw new Error('Learner dashboard is available after learner authentication.');
       throw new Error(`Enrollment status unavailable (${enrollmentResponse.status}).`);
     }
-    if (!courseCompletionResponse.ok) {
-      if (courseCompletionResponse.status === 401 || courseCompletionResponse.status === 403) throw new Error('Course completion is available after learner authentication.');
-      throw new Error(`Course completion unavailable (${courseCompletionResponse.status}).`);
-    }
+    if (!catalogResponse.ok) throw new Error(`Course catalog unavailable (${catalogResponse.status}).`);
     if (!progressResponse.ok) {
       if (progressResponse.status === 401 || progressResponse.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
       throw new Error(`Credential progress unavailable (${progressResponse.status}).`);
@@ -233,7 +230,7 @@ async function renderCredentialProgress() {
     const profileData = await profileResponse.json();
     const applicationsData = await applicationsResponse.json();
     const enrollmentData = await enrollmentResponse.json();
-    const courseCompletion = await courseCompletionResponse.json();
+    const catalogData = await catalogResponse.json();
     const data = await progressResponse.json();
     const transcriptData = await transcriptResponse.json();
     panel.querySelector('.status')?.remove();
@@ -316,26 +313,62 @@ async function renderCredentialProgress() {
     identitySection.append(identityForm);
     panel.append(identitySection);
 
-    const courseEnrollment = (enrollmentData.enrollments ?? []).find((row) => row.courseId === COURSE1_ID && String(row.courseVersion) === String(courseCompletion.course?.version));
-    const academicSummary = document.createElement('section');
-    academicSummary.className = 'portal-progress-summary';
-    academicSummary.setAttribute('aria-label', 'Academic course summary');
-    const instruction = courseCompletion.instruction ?? {};
-    const completedModules = (instruction.modules ?? []).filter((row) => row.complete === true).length;
-    academicSummary.append(
-      summaryCard('Course 1 enrollment', courseEnrollment ? statusLabel(courseEnrollment.status) : 'Not enrolled', courseCompletion.course?.title ?? COURSE1_TITLE),
-      summaryCard('Lesson completion', `${instruction.completedLessonCount ?? 0}/${instruction.requiredLessonCount ?? 0}`, `${instruction.completionPercent ?? 0}% of canonical instruction`),
-      summaryCard('Modules complete', `${completedModules}/${(instruction.modules ?? []).length}`, 'Derived from authoritative lesson progress'),
-      summaryCard('Course final', statusLabel(courseCompletion.finalAssessment?.status), 'Academic course assessment'),
-      summaryCard('Course practical', statusLabel(courseCompletion.performanceAssessment?.status), 'Academic practical evidence')
+    const enrolledCourseIds = new Set((enrollmentData.enrollments ?? []).map((row) => row.courseId));
+    const academicCourses = (catalogData.courses ?? []).filter((course) =>
+      course.status === 'published' &&
+      course.credentialBearing === true &&
+      course.finalAssessment &&
+      enrolledCourseIds.has(course.id)
     );
-    panel.append(text('h3', 'Academic course status'), academicSummary);
-    if (courseCompletion.complete === true) {
-      panel.append(text('p', 'Course 1 academic requirements are complete. This does not by itself issue or authorize a professional credential.', 'portal-result-note'));
+    const completionResults = await Promise.all(academicCourses.map(async (course) => {
+      const response = await fetch(`/api/v1/me/courses/${encodeURIComponent(course.id)}/completion`, {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      });
+      if (!response.ok) return { course, unavailable: true, status: response.status };
+      return { course, completion: await response.json() };
+    }));
+
+    const academicSection = document.createElement('section');
+    academicSection.className = 'portal-progress-section';
+    academicSection.append(text('h3', 'Academic course status'));
+    if (!completionResults.length) {
+      academicSection.append(text('p', 'No enrolled credential-path course with a conventional graded final is recorded yet.', 'portal-result-note'));
     } else {
-      const remaining = (courseCompletion.missingRequirements ?? []).map(statusLabel);
-      panel.append(text('p', remaining.length ? `Course 1 requirements still open: ${remaining.join(', ')}.` : 'Course 1 academic requirements are still in progress.', 'portal-result-note'));
+      const courseList = document.createElement('div');
+      courseList.className = 'portal-course-record-list';
+      for (const result of completionResults) {
+        const row = document.createElement('article');
+        row.className = 'portal-course-record';
+        row.append(text('h4', result.course.title));
+        const enrollment = (enrollmentData.enrollments ?? []).find((item) => item.courseId === result.course.id && String(item.courseVersion) === String(result.course.version));
+        if (result.unavailable) {
+          row.append(text('p', `Completion record unavailable (${result.status}).`, 'portal-result-note'));
+          courseList.append(row);
+          continue;
+        }
+        const completion = result.completion;
+        const instruction = completion.instruction ?? {};
+        const stats = document.createElement('div');
+        stats.className = 'portal-progress-summary compact';
+        stats.append(
+          summaryCard('Enrollment', enrollment ? statusLabel(enrollment.status) : 'Not enrolled', `Course v${completion.course?.version ?? result.course.version}`),
+          summaryCard('Lessons', `${instruction.completedLessonCount ?? 0}/${instruction.requiredLessonCount ?? 0}`, `${instruction.completionPercent ?? 0}% complete`),
+          summaryCard('Final', statusLabel(completion.finalAssessment?.status), 'Server-graded academic assessment'),
+          summaryCard('Academic practical', statusLabel(completion.performanceAssessment?.status), completion.performanceAssessment?.status === 'not-required' ? 'Not required for this course' : 'Separate academic performance evidence')
+        );
+        row.append(stats);
+        if (completion.complete === true) {
+          row.append(text('p', 'Academic requirements complete. This does not by itself issue or authorize a professional credential.', 'portal-result-note'));
+        } else {
+          const remaining = (completion.missingRequirements ?? []).map(statusLabel);
+          row.append(text('p', remaining.length ? `Requirements still open: ${remaining.join(', ')}.` : 'Academic requirements are still in progress.', 'portal-result-note'));
+        }
+        courseList.append(row);
+      }
+      academicSection.append(courseList);
     }
+    panel.append(academicSection);
 
     const summary = document.createElement('section');
     summary.className = 'portal-progress-summary';
