@@ -37,6 +37,16 @@ for(const file of listJson('content/courses')){
     for(const moduleId of excluded){
       if(!declaredOpen.has(moduleId)) issues.push(`public release excludes undeclared dependency ${moduleId}`);
     }
+    for(const moduleId of course.modules??[]){
+      if(!scopedModules.has(moduleId) && !excluded.has(moduleId)) {
+        issues.push(`course module ${moduleId} is neither released nor explicitly excluded`);
+      }
+    }
+    for(const moduleId of scopedModules){
+      if(!(course.modules??[]).includes(moduleId)) {
+        issues.push(`public release scopes module ${moduleId} that is not declared on the course`);
+      }
+    }
   }
 
   for(const moduleId of course.modules??[]){
