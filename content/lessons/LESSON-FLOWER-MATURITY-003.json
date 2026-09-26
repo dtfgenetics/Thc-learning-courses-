@@ -1,20 +1,285 @@
 {
-  "id":"LESSON-FLOWER-MATURITY-003",
-  "title":"Trichomes, Floral Maturity and Representative Harvest Assessment",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-FLOWER-001"],
-  "learningObjectives":["LO-FLOWER-MATURITY-003"],
-  "estimatedMinutes":40,
-  "references":["REF-FLOWER-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Glandular trichomes and floral structures change during maturation, but development can vary among cultivars and across locations on the same plant. Harvest assessment should therefore use repeated, representative observations rather than a single top flower or fixed amber percentage.",
-    "vocabulary":[{"term":"Glandular trichome","definition":"A resin-producing epidermal structure found prominently on cannabis floral tissues."},{"term":"Representative sample","definition":"An observation or sample selected to reflect the broader crop rather than an extreme location."},{"term":"Asynchronous maturation","definition":"Uneven maturation among tissues, flowers, canopy positions, or plants."}],
-    "sections":[{"title":"Trichomes change with age","body":"Trichome morphology and appearance evolve through development, providing useful maturity information when observations are made consistently.","references":["REF-FLOWER-001"]},{"title":"Color is not a universal clock","body":"Clear, cloudy, and amber appearance can vary with genotype, tissue type, plant age, and observation method. No single percentage should be treated as a universal harvest threshold.","references":["REF-FLOWER-001"]},{"title":"Sampling position matters","body":"Upper flowers can mature differently from shaded lower positions. Use comparable tissues at multiple representative canopy locations and repeat observations over time.","references":["REF-FLOWER-001"]},{"title":"Combine multiple indicators","body":"Floral structure, trichome observations, plant condition, developmental trend, and quality objective should be considered together. Multiple lines of evidence reduce overconfidence in one indicator.","references":["REF-FLOWER-001"]}],
-    "workedExamples":["If top flowers show more amber trichomes than the middle canopy, record both rather than harvesting from the top observation alone.","If the advertised flowering week has arrived but representative floral observations are still changing rapidly, continue evaluating the plant rather than using the calendar as the only rule."],
-    "commonMistakes":["Sampling only sugar leaves instead of comparable floral tissues.","Using one magnified image to represent the entire plant.","Applying a universal amber percentage across cultivars."],
-    "practicalApplication":"Define representative sampling locations and tissue type, use the same magnification method, record trichome and floral-development observations on several dates, and make the harvest decision from the trend and crop objective.",
-    "summary":"Maturity assessment is a sampling problem as much as an observation problem. Repeated representative floral and trichome data are stronger than fixed week counts or one color threshold."
+  "id": "LESSON-FLOWER-MATURITY-003",
+  "title": "Trichomes, Floral Maturity and Representative Harvest Assessment",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-FLOWER-001"
+  ],
+  "learningObjectives": [
+    "LO-FLOWER-MATURITY-003"
+  ],
+  "estimatedMinutes": 40,
+  "references": [
+    "REF-FLOWER-001",
+    "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+    "REF-TRICHOME-BIOLOGY-2021-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Harvest maturity is a sampling and trend-interpretation problem. Glandular trichomes change during inflorescence development, but maturation is asynchronous and varies by genotype, plant age, tissue and canopy position. Trichome appearance is therefore useful evidence, not a universal harvest clock. A defensible maturity assessment uses representative floral tissue, consistent magnification, repeated observations and the crop's quality objective.",
+    "vocabulary": [
+      {
+        "term": "Glandular trichome",
+        "definition": "A resin-producing epidermal structure found prominently on cannabis floral tissues."
+      },
+      {
+        "term": "Representative sample",
+        "definition": "An observation or sample selected to reflect the broader crop rather than an extreme location."
+      },
+      {
+        "term": "Asynchronous maturation",
+        "definition": "Uneven maturation among tissues, flowers, canopy positions, or plants."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Trichomes change with age",
+        "body": "Trichome morphology and appearance evolve through development, providing useful maturity information when observations are made consistently.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Color is not a universal clock",
+        "body": "Clear, cloudy, and amber appearance can vary with genotype, tissue type, plant age, and observation method. No single percentage should be treated as a universal harvest threshold.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Sampling position matters",
+        "body": "Upper flowers can mature differently from shaded lower positions. Use comparable tissues at multiple representative canopy locations and repeat observations over time.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Combine multiple indicators",
+        "body": "Floral structure, trichome observations, plant condition, developmental trend, and quality objective should be considered together. Multiple lines of evidence reduce overconfidence in one indicator.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Top flowers show more amber heads than middle-canopy samples from the same plant. The learner records both and treats the difference as spatial variation rather than choosing the most mature-looking location as the whole-plant result.",
+      "A cultivar reaches the advertised week count, but representative trichome and floral observations are still changing rapidly. The learner continues trend monitoring rather than using the week number as the sole endpoint.",
+      "A magnified sample from a sugar leaf shows many amber trichomes, while bract samples remain mostly cloudy. The learner standardizes tissue type because leaf and floral trichomes should not be treated as interchangeable samples.",
+      "Two genotypes grown side by side show different trichome development at the same chronological age. The learner records genotype context instead of forcing both into the same visual threshold."
+    ],
+    "commonMistakes": [
+      "Sampling only the top flower.",
+      "Mixing sugar-leaf and bract observations as if they are the same tissue.",
+      "Using one magnified image to represent an entire plant or room.",
+      "Applying one amber percentage across all cultivars.",
+      "Using week count as the primary maturity measurement.",
+      "Ignoring observation method, magnification and lighting differences when comparing dates."
+    ],
+    "practicalApplication": "Define a representative sampling plan before observing maturity. Use the same tissue type, magnification method and canopy positions on several dates; record trichome appearance and floral morphology; compare the trend across positions; then summarize what the evidence supports and what remains uncertain before a harvest decision.",
+    "summary": "Trichome morphology and color provide useful maturity evidence, but maturation is asynchronous and genotype dependent. Representative sampling, consistent tissue and method, and repeated trends are stronger than one image, one canopy position or a universal amber percentage.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Trichomes mature asynchronously",
+        "body": "Cannabis glandular trichomes do not all develop at the same time. Plant age, genotype, tissue and position can produce mixed maturity states within the same inflorescence or plant.",
+        "references": [
+          "REF-FLOWER-001",
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Control the sampling method",
+        "columns": [
+          "Sampling choice",
+          "Why it matters"
+        ],
+        "rows": [
+          [
+            "Tissue type",
+            "Sugar leaves and bracts can differ; compare like with like"
+          ],
+          [
+            "Canopy position",
+            "Top, middle and lower flowers may mature differently"
+          ],
+          [
+            "Magnification/tool",
+            "Changes what structures and colors are visible"
+          ],
+          [
+            "Lighting/viewing conditions",
+            "Can change perceived clarity/color"
+          ],
+          [
+            "Date/time series",
+            "Shows whether maturation is stable or still changing"
+          ],
+          [
+            "Genotype",
+            "Developmental timing and trichome morphology vary among cultivars"
+          ]
+        ],
+        "references": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build a representative maturity assessment",
+        "items": [
+          {
+            "title": "Choose standard tissue",
+            "body": "Use comparable floral tissue rather than mixing leaf and bract samples."
+          },
+          {
+            "title": "Choose representative positions",
+            "body": "Sample multiple canopy zones instead of only the easiest or most mature-looking flower."
+          },
+          {
+            "title": "Standardize magnification",
+            "body": "Use the same device/method across observations."
+          },
+          {
+            "title": "Record morphology and trichomes",
+            "body": "Capture floral structure plus trichome appearance."
+          },
+          {
+            "title": "Repeat over time",
+            "body": "Trend several dates to see direction and rate of change."
+          },
+          {
+            "title": "Tie to crop objective",
+            "body": "Interpret the evidence in relation to the intended quality outcome without inventing a universal color threshold."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The top says ready; the middle does not",
+        "setting": "Upper flowers show substantially more amber trichomes than middle-canopy bract samples.",
+        "prompt": "What is the strongest conclusion?",
+        "options": [
+          "The entire crop is ready because the top is most mature",
+          "The crop shows spatially uneven maturity and needs representative trend assessment",
+          "Ignore the middle canopy",
+          "Harvest timing should be based only on the advertised week"
+        ],
+        "answer": "The crop shows spatially uneven maturity and needs representative trend assessment.",
+        "feedback": "One extreme canopy position should not represent the whole crop.",
+        "references": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same week, different genotype",
+        "setting": "Two cultivars are the same number of days into flowering but show different trichome-development patterns.",
+        "prompt": "Which interpretation is strongest?",
+        "options": [
+          "One cultivar must be defective",
+          "Genotype can influence trichome development and maturation",
+          "The microscope is necessarily wrong",
+          "Week count should override morphology"
+        ],
+        "answer": "Genotype can influence trichome development and maturation.",
+        "feedback": "Peer-reviewed work shows genotype and plant age influence trichome development.",
+        "references": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Three-date maturity trend",
+        "instructions": "Use a set of representative observations from three canopy positions on three dates.",
+        "prompts": [
+          "Keep tissue type consistent.",
+          "Compare top/middle/lower observations.",
+          "Describe the trend over time.",
+          "Identify whether variation is shrinking or widening.",
+          "State what additional evidence is needed before harvest."
+        ],
+        "artifact": "Representative maturity trend worksheet"
+      },
+      {
+        "type": "callout",
+        "title": "Do not turn amber percentage into a universal formula",
+        "tone": "warning",
+        "body": "Trichome color changes are real observations, but genotype, tissue, position, observation method and asynchronous development limit universal percentage rules.",
+        "references": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Maturity assessment is strongest when the sampling method is representative and repeatable and the decision is based on a trend, not one flower or one percentage."
+      }
+    ],
+    "extensions": {
+      "academyEnrichment": {
+        "whyItMatters": "Harvest timing can affect quality, but visual maturity assessment is vulnerable to sampling bias. A repeatable sampling plan teaches learners to separate real developmental trend from one convenient or extreme observation.",
+        "priorKnowledgeRetrieval": [
+          "Why is one top flower a weak sample for whole-crop maturity?",
+          "Why should sugar-leaf and bract trichomes not be mixed casually in the same trend?"
+        ],
+        "guidedPractice": [
+          {
+            "prompt": "Compare nine trichome observations collected from three canopy positions on three dates.",
+            "steps": [
+              "Confirm tissue type.",
+              "Compare positions.",
+              "Compare dates.",
+              "Describe asynchronous maturation.",
+              "State whether the evidence is sufficient for a harvest decision."
+            ],
+            "expectedEvidence": "A position-by-date trend table and short interpretation.",
+            "feedbackGuidance": "Strong work identifies sampling limitations and does not invent a universal amber threshold."
+          }
+        ],
+        "decisionScenarios": [
+          {
+            "scenario": "A cultivar reaches its breeder-listed flowering week but representative samples remain mostly unchanged from the prior week in some zones and continue changing in others.",
+            "prompt": "What is the next best action?",
+            "expectedReasoning": "Continue representative observation and interpret the trend with crop objective rather than treating the breeder week as a hard biological endpoint."
+          }
+        ],
+        "practicalActivities": [
+          {
+            "title": "Representative maturity sampling plan",
+            "instructions": "Design a repeatable preharvest observation protocol for a simulated crop.",
+            "evidenceToProduce": [
+              "sampling map",
+              "tissue definition",
+              "observation log",
+              "trend interpretation"
+            ],
+            "deliveryModes": [
+              "simulation",
+              "supervised-lab",
+              "workplace",
+              "paper-data-exercise"
+            ]
+          }
+        ],
+        "spacedRetrieval": [
+          "One day later, list three reasons one trichome image can misrepresent crop maturity.",
+          "One week later, explain why genotype and sampling position matter in trichome assessment."
+        ],
+        "furtherReading": [
+          "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+          "REF-TRICHOME-BIOLOGY-2021-001"
+        ],
+        "evidenceDisclosure": "Cannabis trichome development and maturation vary by genotype, plant age and position. Visual maturity indicators can support decisions but should not be presented as a validated universal chemical-potency or harvest-threshold measurement.",
+        "accessibility": {
+          "readingOrderNotes": "Teach sampling controls before maturity scenarios.",
+          "alternativeTextNotes": "Trichome images must describe tissue type, canopy position and visible maturity states in text.",
+          "transcriptRequired": false,
+          "nonVisualAlternative": "Provide written observation matrices with clear/cloudy/amber descriptors and sample positions."
+        }
+      }
+    }
   }
 }
