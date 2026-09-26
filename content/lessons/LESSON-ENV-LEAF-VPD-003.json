@@ -1,20 +1,188 @@
 {
-  "id":"LESSON-ENV-LEAF-VPD-003",
-  "title":"Leaf Temperature, Boundary Layers and Plant-Level VPD Context",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-ENV-VPD-001"],
-  "learningObjectives":["LO-ENV-LEAF-VPD-003"],
-  "estimatedMinutes":35,
-  "references":["REF-VPD-002"],
-  "assessment":null,
-  "content":{
-    "overview":"Air temperature and relative humidity describe the room, but the leaf surface can be warmer or cooler than the surrounding air. Radiation, airflow, transpiration, and leaf position affect this difference and therefore influence plant-atmosphere vapor-pressure interpretation.",
-    "vocabulary":[{"term":"Leaf temperature","definition":"The temperature of leaf tissue, which may differ from the surrounding air."},{"term":"Boundary layer","definition":"A thin region of relatively still air next to a leaf surface that influences heat and vapor exchange."},{"term":"Radiative load","definition":"Energy transferred to or from a leaf by radiation, affecting leaf temperature independently of air temperature."}],
-    "sections":[{"title":"Leaf and air temperatures can diverge","body":"Light absorption, transpiration, and air movement can shift leaf temperature above or below room air. This is why plant-level VPD calculations should specify whether they use air temperature or measured leaf temperature.","references":["REF-VPD-002"]},{"title":"Airflow changes exchange","body":"Moving air reduces the thickness of the leaf boundary layer and can alter convective heat and vapor transfer. Airflow therefore affects plant exchange even when the room's average temperature and humidity remain unchanged.","references":["REF-VPD-002"]},{"title":"Interpret measurements together","body":"Leaf temperature, air temperature, humidity, radiation, and airflow should be interpreted as a system. A single derived number should not replace observation of plant condition and root-zone water supply.","references":["REF-VPD-002"]}],
-    "workedExamples":["If infrared measurements show leaves several degrees cooler than air, do not assume an air-only VPD chart exactly represents the leaf surface.","If dense interior leaves remain humid despite acceptable room RH, examine local airflow and canopy structure."],
-    "commonMistakes":["Assuming leaf temperature always equals air temperature.","Ignoring airflow when comparing rooms with similar temperature and humidity.","Using one leaf-temperature spot measurement as a universal canopy value."],
-    "practicalApplication":"Measure representative leaf temperatures, note fixture load and airflow, compare them with air temperature and RH, and document whether your VPD method uses air or leaf temperature before interpreting the result.",
-    "summary":"Plant-level vapor-pressure interpretation improves when leaf temperature and boundary-layer conditions are considered alongside room temperature and humidity."
+  "id": "LESSON-ENV-LEAF-VPD-003",
+  "title": "Leaf Temperature, Boundary Layers and Plant-Level VPD Context",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-ENV-LEAF-VPD-003"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Air temperature and relative humidity describe the room, but the leaf surface can be warmer or cooler than the surrounding air. Radiation, airflow, transpiration, and leaf position affect this difference and therefore influence plant-atmosphere vapor-pressure interpretation.",
+    "vocabulary": [
+      {
+        "term": "Leaf temperature",
+        "definition": "The temperature of leaf tissue, which may differ from the surrounding air."
+      },
+      {
+        "term": "Boundary layer",
+        "definition": "A thin region of relatively still air next to a leaf surface that influences heat and vapor exchange."
+      },
+      {
+        "term": "Radiative load",
+        "definition": "Energy transferred to or from a leaf by radiation, affecting leaf temperature independently of air temperature."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Leaf and air temperatures can diverge",
+        "body": "Light absorption, transpiration, and air movement can shift leaf temperature above or below room air. This is why plant-level VPD calculations should specify whether they use air temperature or measured leaf temperature.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Airflow changes exchange",
+        "body": "Moving air reduces the thickness of the leaf boundary layer and can alter convective heat and vapor transfer. Airflow therefore affects plant exchange even when the room's average temperature and humidity remain unchanged.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "title": "Interpret measurements together",
+        "body": "Leaf temperature, air temperature, humidity, radiation, and airflow should be interpreted as a system. A single derived number should not replace observation of plant condition and root-zone water supply.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If infrared measurements show leaves several degrees cooler than air, do not assume an air-only VPD chart exactly represents the leaf surface.",
+      "If dense interior leaves remain humid despite acceptable room RH, examine local airflow and canopy structure.",
+      "Leaves under high irradiance measure 2 °C warmer than air while shaded leaves are near air temperature. A single leaf-temperature offset should not be assumed for the whole canopy.",
+      "Two rooms have identical air temperature/RH, but one has stronger airflow. Boundary-layer differences can change leaf heat and vapor exchange even when the room-level VPD matches."
+    ],
+    "commonMistakes": [
+      "Assuming leaf temperature always equals air temperature.",
+      "Ignoring airflow when comparing rooms with similar temperature and humidity.",
+      "Using one leaf-temperature spot measurement as a universal canopy value.",
+      "Using one infrared spot as a canopy-wide leaf-temperature value.",
+      "Ignoring emissivity, viewing angle or reflective interference when using IR tools."
+    ],
+    "practicalApplication": "Measure representative leaf temperatures, note fixture load and airflow, compare them with air temperature and RH, and document whether your VPD method uses air or leaf temperature before interpreting the result.",
+    "summary": "Plant-level vapor-pressure interpretation improves when leaf temperature and boundary-layer conditions are considered alongside room temperature and humidity.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "The leaf is the exchange surface",
+        "body": "Leaf temperature can differ from air temperature because absorbed radiation, evaporative cooling and convective heat transfer interact at the leaf surface. The thin boundary layer next to the leaf strongly affects that exchange.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "What shifts leaf temperature",
+        "columns": [
+          "Driver",
+          "Typical effect",
+          "What to observe"
+        ],
+        "rows": [
+          [
+            "Radiation",
+            "Can warm exposed leaves",
+            "PPFD/fixture load and leaf position"
+          ],
+          [
+            "Transpiration",
+            "Can cool leaves",
+            "Leaf water status and stomatal context"
+          ],
+          [
+            "Airflow",
+            "Thins boundary layer and changes heat/vapor exchange",
+            "Local air movement"
+          ],
+          [
+            "Canopy density",
+            "Creates interior microclimates",
+            "Interior vs exterior leaves"
+          ],
+          [
+            "Root-zone water limitation",
+            "Can reduce evaporative cooling",
+            "Moisture/root condition"
+          ]
+        ],
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Use leaf temperature correctly",
+        "items": [
+          {
+            "title": "Choose representative leaves",
+            "body": "Sample multiple canopy positions and light exposures."
+          },
+          {
+            "title": "Measure consistently",
+            "body": "Keep distance/angle/tool method consistent."
+          },
+          {
+            "title": "Pair with air data",
+            "body": "Record canopy air temperature and RH at the same time."
+          },
+          {
+            "title": "Add airflow context",
+            "body": "Note fan exposure and dense-canopy zones."
+          },
+          {
+            "title": "Interpret with root-zone status",
+            "body": "Leaf-air temperature differences can change when water supply is limited."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Identical room VPD, different crop response",
+        "setting": "Two rooms show the same air temperature/RH. Room B has much stronger canopy airflow and leaves run cooler.",
+        "prompt": "Which conclusion is strongest?",
+        "options": [
+          "Plant-level exchange must be identical",
+          "Leaf-level vapor-pressure context may differ because leaf temperature and boundary layers differ",
+          "Airflow cannot affect leaf temperature",
+          "Only RH matters"
+        ],
+        "answer": "Leaf-level vapor-pressure context may differ because leaf temperature and boundary layers differ.",
+        "feedback": "Room-level measurements do not fully describe the leaf surface."
+      },
+      {
+        "type": "activity",
+        "title": "Leaf-air temperature map",
+        "instructions": "Compare air temperature with leaf temperature at several canopy locations.",
+        "prompts": [
+          "Calculate each leaf-air difference.",
+          "Identify spatial patterns.",
+          "Record airflow/light context.",
+          "Explain which locations need more sampling before drawing a room-wide conclusion."
+        ],
+        "artifact": "Leaf-air temperature comparison"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Room VPD describes the air; leaf-level exchange depends on leaf temperature, airflow, radiation and plant water status."
+      }
+    ],
+    "extensions": {
+      "academyEnrichment": {
+        "whyItMatters": "Leaf temperature connects room measurements to the actual plant surface where heat and water exchange occur.",
+        "priorKnowledgeRetrieval": [
+          "Why can leaf temperature differ from air temperature?",
+          "What is a boundary layer?"
+        ]
+      }
+    }
   }
 }
