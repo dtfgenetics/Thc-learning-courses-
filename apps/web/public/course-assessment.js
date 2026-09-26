@@ -723,9 +723,11 @@ function renderAssessmentResult(result) {
     practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
     actions.append(practicalButton);
   }
+  const recordButton = el('button', 'View course record', 'course-assessment-secondary');
+  recordButton.type = 'button'; recordButton.addEventListener('click', () => document.querySelector('#tab-course-record')?.click());
   const back = el('button', 'Return to course catalog', 'course-assessment-secondary');
   back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
-  actions.append(back);
+  actions.append(recordButton, back);
   panel.append(actions);
   lessonView.replaceChildren(panel); lessonView.focus();
 }
