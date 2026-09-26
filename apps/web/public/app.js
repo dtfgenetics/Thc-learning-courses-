@@ -15,6 +15,10 @@ let accountSubject = null;
 let currentLesson = null;
 let enrollments = [];
 const progressClient = createServerProgressClient();
+const academyParams = new URLSearchParams(globalThis.location?.search ?? '');
+const deepLinkedCourseId = academyParams.get('course');
+const deepLinkedView = academyParams.get('view');
+let deepLinkHandled = false;
 
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
@@ -179,7 +183,8 @@ function renderCatalog() {
   for (const course of courses) {
     const details = document.createElement('details');
     details.className = 'course';
-    if (query || courseProgress(course, progress).completed > 0) details.open = true;
+    details.dataset.courseId = course.id;
+    if (query || courseProgress(course, progress).completed > 0 || deepLinkedCourseId === course.id) details.open = true;
     const summary = document.createElement('summary');
     summary.append(text('span', course.title));
     const courseState = courseProgress(course, progress);
@@ -219,6 +224,7 @@ function renderCatalog() {
         const launch = document.createElement('button');
         launch.type = 'button';
         launch.className = 'course-assessment-launch';
+        launch.dataset.courseFinalFor = course.id;
         launch.textContent = 'Take graded course final';
         launch.setAttribute('aria-label', `Take graded final for ${course.title}`);
         launch.addEventListener('click', () => launchCourseAssessment(course.id, launch));
@@ -261,6 +267,23 @@ function renderCatalog() {
       details.append(section);
     }
     catalogRoot.append(details);
+  }
+
+  if (!deepLinkHandled && deepLinkedCourseId) {
+    const target = catalogRoot.querySelector(`details.course[data-course-id="${CSS.escape(deepLinkedCourseId)}"]`);
+    if (target) {
+      target.open = true;
+      const focusTarget = deepLinkedView === 'final'
+        ? target.querySelector('[data-course-final-for]')
+        : target.querySelector('summary');
+      if (focusTarget) {
+        deepLinkHandled = true;
+        requestAnimationFrame(() => {
+          focusTarget.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          focusTarget.focus();
+        });
+      }
+    }
   }
 }
 
