@@ -38,89 +38,51 @@
     </div>
   </header>
 
-  <section id="governance-dashboard" class="governance-dashboard" aria-live="polite">
-    <p class="status">Loading staging governance status…</p>
+  <section id="governance-dashboard" class="governance-dashboard" aria-live="polite" hidden>
+    <p class="status">Loading Academy status…</p>
   </section>
 
   <section class="governance-dashboard" aria-label="Course 1 threshold status" hidden>
     <p><strong>Course 1 academic threshold notice:</strong> the current 80% course-final and integrated-practical thresholds are provisional development values pending pilot evidence and documented standard setting. They are not Technician I credential cut scores and do not by themselves issue a professional credential.</p>
   </section>
 
-  <section id="credential-pathways" class="governance-dashboard" aria-labelledby="credential-pathways-title">
-    <p class="eyebrow">Learning pathways</p>
-    <h2 id="credential-pathways-title">Choose Your Learning Path</h2>
-    <p>Start with core cultivation training, progress through advanced technician skills, then explore specialist and leadership programs.</p>
-
-    <h3>Foundations</h3>
-    <div class="portal-progress-summary" data-catalog-section="foundational">
-      <article class="portal-summary-card" data-credential-offering="THC Safety & Responsible Practice Certificate" data-offering-status="in-development" data-issuance-available="false">
-        <span class="portal-summary-label">Foundational certificate</span>
-        <strong class="portal-summary-value">Cultivation Safety & Professional Practice</strong>
-        <span class="portal-summary-note">In development · issuance not yet available</span>
-      </article>
-      <article class="portal-summary-card" data-credential-offering="THC Cultivation Foundations Certificate" data-offering-status="in-development" data-issuance-available="false">
-        <span class="portal-summary-label">Foundational certificate</span>
-        <strong class="portal-summary-value">Cannabis Cultivation Foundations</strong>
-        <span class="portal-summary-note">In development · issuance not yet available</span>
-      </article>
+  <section id="credential-pathways" class="academy-start" aria-labelledby="credential-pathways-title">
+    <div class="academy-start-copy">
+      <p class="eyebrow">Cannabis cultivation education</p>
+      <h2 id="credential-pathways-title">Learn the plant. Understand the system. Build real cultivation skill.</h2>
+      <p class="academy-start-lede">THC Academy combines cannabis plant science, environmental control, root-zone management, crop care, harvest and professional cultivation practice in a guided course sequence.</p>
+      <div class="academy-start-actions">
+        <a class="academy-primary-action" href="?course=COURSE-LH-TECH1-001">Start Technician I</a>
+        <a class="academy-secondary-action" href="#catalog">Browse courses</a>
+      </div>
     </div>
 
-    <h3>Technician Pathways</h3>
-    <div class="portal-progress-summary" data-catalog-section="technician">
-      <article class="portal-summary-card" data-credential-offering="THC Cultivation Technician I" data-credential-id="CREDPROG-CULT-TECH-I-001" data-offering-status="in-development" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 7-course pathway</span>
+    <div class="academy-path-grid" aria-label="Current learning pathways">
+      <article class="academy-path-card academy-path-card-primary">
+        <span class="portal-summary-label">Recommended starting pathway</span>
         <strong class="portal-summary-value">Cultivation Technician I</strong>
-        <span class="portal-summary-note">Begin with the available courses below</span>
-        <a href="#catalog">Open available Course 1</a>
+        <p>Seven-course foundation covering safe cultivation work, plant observation, environment and lighting, water and nutrition, propagation and crop care, harvest/postharvest, and integrated practice.</p>
+        <a href="?course=COURSE-LH-TECH1-001">Begin Course 1</a>
       </article>
-      <article class="portal-summary-card" data-credential-offering="THC Cultivation Technician II" data-credential-id="CREDPROG-CULT-TECH-II-001" data-offering-status="in-development" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 8-course pathway</span>
+      <article class="academy-path-card">
+        <span class="portal-summary-label">Advanced pathway</span>
         <strong class="portal-summary-value">Cultivation Technician II</strong>
-        <span class="portal-summary-note">In development</span>
+        <p>Eight advanced courses focused on diagnostic reasoning, environmental data, fertigation, plant health, propagation performance, postharvest quality, production metrics and integrated simulation.</p>
+        <a href="#catalog">View advanced courses</a>
       </article>
     </div>
 
-    <h3>Specialist Training</h3>
-    <div class="portal-progress-summary" data-catalog-section="specialist">
-      <article class="portal-summary-card" data-credential-offering="THC Plant Health, IPM & Biosecurity Specialist" data-credential-id="CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001" data-offering-status="planned" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 7-course pathway</span>
-        <strong class="portal-summary-value">Plant Health & IPM Specialist</strong>
-        <span class="portal-summary-note">Coming later</span>
-      </article>
-      <article class="portal-summary-card" data-credential-offering="THC Environmental, Irrigation & Fertigation Systems Specialist" data-credential-id="CREDPROG-ENV-IRR-FERT-001" data-offering-status="planned" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 8-course pathway</span>
-        <strong class="portal-summary-value">Environmental & Irrigation Systems</strong>
-        <span class="portal-summary-note">Coming later</span>
-      </article>
-      <article class="portal-summary-card" data-credential-offering="THC Propagation & Clean Stock Specialist" data-credential-id="CREDPROG-PROP-CLEAN-STOCK-001" data-offering-status="planned" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 6-course pathway</span>
-        <strong class="portal-summary-value">Propagation & Clean Stock</strong>
-        <span class="portal-summary-note">Coming later</span>
-      </article>
-      <article class="portal-summary-card" data-credential-offering="THC Postharvest Quality Specialist" data-credential-id="CREDPROG-POSTHARVEST-QA-001" data-offering-status="planned" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 6-course pathway</span>
-        <strong class="portal-summary-value">Postharvest & Quality</strong>
-        <span class="portal-summary-note">Coming later</span>
-      </article>
-      <article class="portal-summary-card" data-credential-offering="THC Genetics, Breeding & Preservation Specialist" data-credential-id="CREDPROG-GEN-BREED-PRES-001" data-offering-status="planned" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 8-course pathway</span>
-        <strong class="portal-summary-value">Genetics & Breeding Specialist</strong>
-        <span class="portal-summary-note">Coming later</span>
-      </article>
+    <div class="academy-availability-note">
+      <strong>What is available now:</strong>
+      <span>Academic cultivation coursework, practice activities, learning tools, progress tracking and released course assessments.</span>
+      <strong>Professional certification:</strong>
+      <span>The Technician credential system is still completing validation and release requirements. Academic course completion is separate from professional credential issuance.</span>
     </div>
 
-    <h3>Leadership & Operations</h3>
-    <div class="portal-progress-summary" data-catalog-section="advanced-professional">
-      <article class="portal-summary-card" data-credential-offering="THC Cultivation Lead & Operations Professional" data-credential-id="CREDPROG-CULT-LEAD-OPS-001" data-offering-status="planned" data-issuance-available="false">
-        <span class="portal-summary-label">Professional certification · 9-course pathway</span>
-        <strong class="portal-summary-value">Cultivation Leadership & Operations</strong>
-        <span class="portal-summary-note">Coming later</span>
-      </article>
-    </div>
-    <div class="portal-certification-note">
-      <strong>How certification works:</strong>
-      Learn → Practice → Assess → Certify. Course assessments support learning; professional certification uses a separate final eligibility and credential process.
-    </div>
+    <details class="academy-future-pathways">
+      <summary>Future specialist and leadership pathways</summary>
+      <p>Planned specialist programs include Plant Health &amp; IPM, Environmental &amp; Irrigation Systems, Propagation &amp; Clean Stock, Postharvest &amp; Quality, Genetics &amp; Breeding, and Cultivation Leadership &amp; Operations. These are future programs and are not presented as currently available credentials.</p>
+    </details>
   </section>
 
   <main class="app-shell">
@@ -139,9 +101,10 @@
 
     <section id="lesson-view" class="lesson-panel" tabindex="-1" aria-live="polite">
       <div class="welcome-card">
-        <p class="eyebrow">Start here</p>
-        <h2>Choose a lesson</h2>
-        <p>Select a course and lesson from the catalog. Learning content remains continuously editable as evidence, visuals, examples, field references, and instructional design improve.</p>
+        <p class="eyebrow">Recommended next step</p>
+        <h2>Start with Cultivation Technician I</h2>
+        <p>Begin with Course 1 if you are new to the Academy, or choose your current course from the outline. Each course builds plant science, practical reasoning and cultivation skill in sequence.</p>
+        <a class="academy-primary-action" href="?course=COURSE-LH-TECH1-001">Open Course 1</a>
       </div>
     </section>
   </main>
