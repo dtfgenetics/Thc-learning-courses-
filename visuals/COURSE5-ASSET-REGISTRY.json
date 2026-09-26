@@ -653,6 +653,252 @@
         "releaseApproved": true
       },
       "productionRasterDriveMirrorStatus": "mirrored"
+    },
+    {
+      "id": "VIS-FOUNDATION-PROP-PROCESS-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Seed and cutting propagation pathways compared",
+      "primaryLessons": [
+        "LESSON-PROP-001"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANNABIS-SEED-GERMINATION-2021",
+        "REF-CANNABIS-CLONAL-ROOTING-2019"
+      ],
+      "purpose": "Compare the biological pathway from seed imbibition and embryo emergence with cutting survival, wound response, adventitious rooting and acclimatization.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "process-comparison",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-SEED-GERMINATION-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis seed anatomy and germination sequence",
+      "primaryLessons": [
+        "LESSON-PROP-SEED-002"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANNABIS-SEED-GERMINATION-2021"
+      ],
+      "purpose": "Show intact seed anatomy, imbibition, radicle emergence, cotyledon expansion and early seedling establishment with accurate labels and stage order.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "photorealistic-educational-sequence",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-CLONE-ROOTING-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis cutting to adventitious-root formation and acclimatization",
+      "primaryLessons": [
+        "LESSON-PROP-CLONE-003"
+      ],
+      "references": [
+        "REF-PROP-001",
+        "REF-CANNABIS-CLONAL-ROOTING-2019"
+      ],
+      "purpose": "Show donor cutting, fresh wound, high-support unrooted stage, adventitious root emergence, rooted cutting and staged acclimatization.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "photorealistic-educational-sequence",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-CANOPY-ARCH-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Apical dominance and canopy architecture response",
+      "primaryLessons": [
+        "LESSON-CANOPY-001"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-001"
+      ],
+      "purpose": "Show how dominant shoot position, lateral branches, leaf distribution and canopy geometry affect spatial light interception.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-LST-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Low-stress training and trellis spacing before-and-after",
+      "primaryLessons": [
+        "LESSON-CANOPY-LST-002"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-001"
+      ],
+      "purpose": "Compare an uneven dominant canopy with a gradually repositioned trellised canopy while preserving realistic branch spacing and scouting access.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "photorealistic-comparison",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-HST-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Topping, lateral response and recovery timeline",
+      "primaryLessons": [
+        "LESSON-CANOPY-HST-003"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-LIGHT-001"
+      ],
+      "purpose": "Show apical removal, wound site, lateral shoot response and recovery over time while emphasizing plant vigor and recovery cost.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-sequence",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-IPM-CYCLE-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Integrated pest management decision cycle",
+      "primaryLessons": [
+        "LESSON-IPM-001"
+      ],
+      "references": [
+        "REF-IPM-001",
+        "REF-PSU-GREENHOUSE-IPM-2026"
+      ],
+      "purpose": "Teach prevent, scout, identify/diagnose, decide, control and verify as a continuous evidence loop rather than a pesticide-first workflow.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "decision-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
     }
   ],
   "ownerReleaseApproval": {
