@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'thc-academy-progress-v1';
 const ADMIN_COURSE_ID = 'COURSE-LH-TECH1-001';
-const ACADEMIC_RECORD_COURSE_ID = 'COURSE-LH-TECH1-001';
+const DEFAULT_ACADEMIC_RECORD_COURSE_ID = 'COURSE-LH-TECH1-001';
 
 export function readProgress(storage = globalThis.localStorage) {
   try {
@@ -287,14 +287,15 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
   const completedLessons = lessons.filter((lesson) => lesson.completed).length;
   const instructionComplete = lessons.length > 0 && completedLessons === lessons.length;
   const written = evidence.writtenAssessment ?? {};
-  const practical = evidence.performanceAssessment ?? {};
+  const practical = evidence.performanceAssessment ?? null;
+  const practicalRequired = Boolean(practical?.assessmentId);
   const writtenPassed = written.outcome === 'passed';
-  const practicalPassed = practical.status === 'passed' && Number(practical.criticalErrorCount ?? 0) === 0;
+  const practicalPassed = !practicalRequired || (practical.status === 'passed' && Number(practical.criticalErrorCount ?? 0) === 0);
   const complete = instructionComplete && writtenPassed && practicalPassed;
   const missingRequirements = [];
   if (!instructionComplete) missingRequirements.push('instruction');
   if (!writtenPassed) missingRequirements.push('course-final');
-  if (!practicalPassed) missingRequirements.push('course-practical');
+  if (practicalRequired && !practicalPassed) missingRequirements.push('course-practical');
   const versionHistory = enrollments.filter((row) => row.courseId === course.id).map((row) => ({
     courseVersion: String(row.courseVersion),
     status: row.status,
@@ -309,9 +310,9 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
     academicCompletion: {
       complete,
       status: complete ? 'complete' : 'in-progress',
-      completionRecordedAt: complete ? latestRecordDate([...lessons.map((lesson) => lesson.completedAt), written.latestScoredAt, practical.evaluatedAt]) : null,
+      completionRecordedAt: complete ? latestRecordDate([...lessons.map((lesson) => lesson.completedAt), written.latestScoredAt, practical?.evaluatedAt]) : null,
       missingRequirements,
-      statement: 'This is an academic Course 1 completion record. It is not a professional credential, license, or certification.'
+      statement: 'This is an academic course completion record. It is not a professional credential, license, certification, or credential-eligibility decision.'
     },
     instruction: { completedLessons, totalLessons: lessons.length, complete: instructionComplete, modules },
     writtenAssessment: {
@@ -325,15 +326,16 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
       latestScoredAt: recordIso(written.latestScoredAt)
     },
     performanceAssessment: {
-      assessmentId: practical.assessmentId ?? null,
-      status: practical.status ?? 'not-recorded',
-      scorePercent: practical.scorePercent == null ? null : Number(practical.scorePercent),
-      criticalErrorCount: Number(practical.criticalErrorCount ?? 0),
-      evaluatedAt: recordIso(practical.evaluatedAt),
-      updatedAt: recordIso(practical.updatedAt),
-      followUpStatus: practical.followUpStatus ?? 'none',
-      reassessmentTargetDate: practical.reassessmentTargetDate || null,
-      learnerFeedback: practical.remediationSummary || null
+      required: practicalRequired,
+      assessmentId: practical?.assessmentId ?? null,
+      status: practicalRequired ? (practical?.status ?? 'not-recorded') : 'not-required',
+      scorePercent: practical?.scorePercent == null ? null : Number(practical.scorePercent),
+      criticalErrorCount: Number(practical?.criticalErrorCount ?? 0),
+      evaluatedAt: recordIso(practical?.evaluatedAt),
+      updatedAt: recordIso(practical?.updatedAt),
+      followUpStatus: practical?.followUpStatus ?? 'none',
+      reassessmentTargetDate: practical?.reassessmentTargetDate || null,
+      learnerFeedback: practical?.remediationSummary || null
     },
     academicStatusHistory,
     courseVersionHistory: versionHistory
@@ -388,20 +390,30 @@ function transcriptSummaryCard(label, value, note = '') {
   return card;
 }
 
-async function loadAcademicRecordData() {
-  const requests = [
+async function loadAcademicRecordContext() {
+  const [catalogResponse, progressResponse, enrollmentResponse] = await Promise.all([
     fetch('/api/catalog', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
     fetch('/api/v1/me/progress', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
-    fetch('/api/v1/me/enrollments', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
-    fetch(`/api/v1/me/courses/${ACADEMIC_RECORD_COURSE_ID}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' })
-  ];
-  const [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse] = await Promise.all(requests);
-  if ([progressResponse, enrollmentResponse, evidenceResponse].some((response) => response.status === 401 || response.status === 403)) throw Object.assign(new Error('Sign in to view your authoritative Course 1 academic record.'), { status: 401 });
-  for (const response of [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse]) if (!response.ok) throw new Error(`Academic record data unavailable (${response.status}).`);
-  const [catalog, progress, enrollment, evidence] = await Promise.all([catalogResponse.json(), progressResponse.json(), enrollmentResponse.json(), evidenceResponse.json()]);
-  const course = (catalog.courses ?? []).find((row) => row.id === ACADEMIC_RECORD_COURSE_ID);
-  if (!course) throw new Error('Course 1 is not available in the published Academy catalog.');
-  return buildAcademicCourseRecord({ course, progressRows: progress.progress ?? [], enrollments: enrollment.enrollments ?? [], evidence });
+    fetch('/api/v1/me/enrollments', { headers: { accept: 'application/json' }, credentials: 'same-origin' })
+  ]);
+  if ([progressResponse, enrollmentResponse].some((response) => response.status === 401 || response.status === 403)) throw Object.assign(new Error('Sign in to view your authoritative academic course records.'), { status: 401 });
+  for (const response of [catalogResponse, progressResponse, enrollmentResponse]) if (!response.ok) throw new Error(`Academic record data unavailable (${response.status}).`);
+  const [catalog, progress, enrollment] = await Promise.all([catalogResponse.json(), progressResponse.json(), enrollmentResponse.json()]);
+  const enrolledIds = new Set((enrollment.enrollments ?? []).map((row) => row.courseId));
+  const courses = (catalog.courses ?? []).filter((row) => row.status === 'published' && row.finalAssessment && enrolledIds.has(row.id));
+  return { catalog, progress, enrollment, courses };
+}
+
+async function loadAcademicRecordData(courseId, context = null) {
+  const loaded = context ?? await loadAcademicRecordContext();
+  const selectedId = courseId ?? loaded.courses[0]?.id ?? DEFAULT_ACADEMIC_RECORD_COURSE_ID;
+  const course = (loaded.catalog.courses ?? []).find((row) => row.id === selectedId);
+  if (!course) throw new Error('The selected course is not available in the published Academy catalog.');
+  const evidenceResponse = await fetch(`/api/v1/me/courses/${encodeURIComponent(selectedId)}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' });
+  if (evidenceResponse.status === 401 || evidenceResponse.status === 403) throw Object.assign(new Error('Sign in to view your authoritative academic course records.'), { status: 401 });
+  if (!evidenceResponse.ok) throw new Error(`Academic record evidence unavailable (${evidenceResponse.status}).`);
+  const evidence = await evidenceResponse.json();
+  return buildAcademicCourseRecord({ course, progressRows: loaded.progress.progress ?? [], enrollments: loaded.enrollment.enrollments ?? [], evidence });
 }
 
 function renderAcademicRecord(panel, record) {
@@ -413,13 +425,19 @@ function renderAcademicRecord(panel, record) {
     transcriptSummaryCard('Academic course status', transcriptStatusLabel(record.academicCompletion.status), record.academicCompletion.completionRecordedAt ? `Recorded through ${transcriptDate(record.academicCompletion.completionRecordedAt)}` : ''),
     transcriptSummaryCard('Instruction', `${record.instruction.completedLessons}/${record.instruction.totalLessons}`, record.instruction.complete ? 'All canonical lesson IDs completed' : 'Instruction still in progress'),
     transcriptSummaryCard('Course final', transcriptStatusLabel(record.writtenAssessment.outcome), record.writtenAssessment.bestScorePercent == null ? `${record.writtenAssessment.attemptCount} recorded attempts` : `${record.writtenAssessment.bestScorePercent.toFixed(0)}% best • pass ${Number(record.writtenAssessment.passingScorePercent ?? 0).toFixed(0)}%`),
-    transcriptSummaryCard('Course practical', transcriptStatusLabel(record.performanceAssessment.status), record.performanceAssessment.scorePercent == null ? 'No finalized score' : `${record.performanceAssessment.scorePercent.toFixed(0)}% • ${record.performanceAssessment.criticalErrorCount} critical errors`)
+    transcriptSummaryCard(
+      'Course practical',
+      transcriptStatusLabel(record.performanceAssessment.status),
+      record.performanceAssessment.required
+        ? (record.performanceAssessment.scorePercent == null ? 'No finalized score' : `${record.performanceAssessment.scorePercent.toFixed(0)}% • ${record.performanceAssessment.criticalErrorCount} critical errors`)
+        : 'No academic practical required'
+    )
   );
   panel.append(summary);
   if (!record.academicCompletion.complete) {
     const missing = transcriptElement('section', '', 'record-warning');
     missing.append(transcriptElement('strong', 'Academic completion requirements still open'));
-    const labels = { instruction: 'Complete the canonical Course 1 lesson set', 'course-final': 'Pass the public Course 1 final assessment', 'course-practical': 'Pass the Course 1 practical without disqualifying critical errors' };
+    const labels = { instruction: 'Complete the canonical lesson set for this course', 'course-final': 'Pass this course final assessment', 'course-practical': 'Pass the required academic practical without disqualifying critical errors' };
     const list = document.createElement('ul');
     for (const item of record.academicCompletion.missingRequirements) list.append(transcriptElement('li', labels[item] ?? item));
     missing.append(list); panel.append(missing);
@@ -447,9 +465,13 @@ function renderAcademicRecord(panel, record) {
   const writtenText = record.writtenAssessment.bestScorePercent == null ? `${record.writtenAssessment.attemptCount} attempt(s) recorded.` : `Best recorded score ${record.writtenAssessment.bestScorePercent.toFixed(1)}%; passing standard ${Number(record.writtenAssessment.passingScorePercent ?? 0).toFixed(0)}%. Latest scored evidence: ${transcriptDate(record.writtenAssessment.latestScoredAt)}.`;
   assessments.append(transcriptElement('p', `Course final: ${transcriptStatusLabel(record.writtenAssessment.outcome)}. ${writtenText}`));
   const practicalText = [`Course practical: ${transcriptStatusLabel(record.performanceAssessment.status)}.`];
-  if (record.performanceAssessment.scorePercent != null) practicalText.push(`Recorded score ${record.performanceAssessment.scorePercent.toFixed(1)}%.`);
-  practicalText.push(`Critical errors: ${record.performanceAssessment.criticalErrorCount}.`);
-  practicalText.push(`Follow-up: ${transcriptFollowUpLabel(record.performanceAssessment.followUpStatus)}.`);
+  if (record.performanceAssessment.required) {
+    if (record.performanceAssessment.scorePercent != null) practicalText.push(`Recorded score ${record.performanceAssessment.scorePercent.toFixed(1)}%.`);
+    practicalText.push(`Critical errors: ${record.performanceAssessment.criticalErrorCount}.`);
+    practicalText.push(`Follow-up: ${transcriptFollowUpLabel(record.performanceAssessment.followUpStatus)}.`);
+  } else {
+    practicalText.push('No academic practical is required for completion of this course.');
+  }
   if (record.performanceAssessment.reassessmentTargetDate) practicalText.push(`Reassessment target: ${record.performanceAssessment.reassessmentTargetDate}.`);
   assessments.append(transcriptElement('p', practicalText.join(' ')));
   if (record.performanceAssessment.learnerFeedback) {
@@ -458,7 +480,7 @@ function renderAcademicRecord(panel, record) {
   panel.append(assessments);
 
   const transitions = transcriptElement('section', '', 'record-section');
-  transitions.append(transcriptElement('h3', 'Academic completion transition history'), transcriptElement('p', 'This timeline records automatic Course 1 enrollment completion and reopening decisions. It does not change or represent professional credential status.', 'record-meta'));
+  transitions.append(transcriptElement('h3', 'Academic completion transition history'), transcriptElement('p', 'This timeline records automatic enrollment completion and reopening decisions for this course. It does not change or represent professional credential status.', 'record-meta'));
   if (!record.academicStatusHistory.length) {
     transitions.append(transcriptElement('p', 'No automatic academic completion or reopening transitions are recorded yet.', 'record-meta'));
   } else {
@@ -477,7 +499,7 @@ function renderAcademicRecord(panel, record) {
 
   const versions = transcriptElement('section', '', 'record-section'); versions.append(transcriptElement('h3', 'Course-version history'));
   if (!record.courseVersionHistory.length) {
-    versions.append(transcriptElement('p', 'No account enrollment history is recorded for Course 1.', 'record-meta'));
+    versions.append(transcriptElement('p', 'No account enrollment history is recorded for this course.', 'record-meta'));
   } else {
     const wrap = transcriptElement('div', '', 'record-version-history'); wrap.tabIndex = 0; wrap.setAttribute('aria-label', 'Course version enrollment history');
     const table = document.createElement('table'); table.className = 'record-table'; const head = document.createElement('thead'); const hr = document.createElement('tr');
