@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { addAutomaticEnrollmentCompletion } from './enrollment-completion-adapter.mjs';
+import { loadProductionCredentialSigner } from './credential-signing-adapter.mjs';
 
 function required(env, name) {
   const value = String(env[name] ?? '').trim();
@@ -77,6 +78,14 @@ export async function loadProductionApiOptions(env = process.env) {
     completionStore
   });
 
+  const credentialWriter = adapters.credentialWriter ?? null;
+  if (credentialWriter && (typeof credentialWriter.issueCredential !== 'function' || typeof credentialWriter.transitionById !== 'function')) {
+    throw new Error('Production credentialWriter must provide issueCredential() and transitionById()');
+  }
+  const credentialSigner = env.THC_CREDENTIAL_SIGNER_MODULE
+    ? await loadProductionCredentialSigner(env)
+    : null;
+
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
   if (typeof authModule.createRequestAuthorizer !== 'function') throw new Error('Authentication adapter module must export createRequestAuthorizer({ env })');
   const rawAuthorize = await authModule.createRequestAuthorizer({ env });
@@ -86,7 +95,8 @@ export async function loadProductionApiOptions(env = process.env) {
   return {
     env,
     credentialStore,
-    credentialWriter: adapters.credentialWriter ?? null,
+    credentialWriter,
+    credentialSigner,
     learnerStore: wrapped.learnerStore,
     practicalEvaluatorStore: wrapped.practicalEvaluatorStore,
     enrollmentCompletionStore: completionStore,
