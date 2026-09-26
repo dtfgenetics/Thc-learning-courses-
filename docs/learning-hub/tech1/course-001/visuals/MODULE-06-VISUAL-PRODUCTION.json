@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "finalFormats": [
+    "png",
+    "webp",
+    "jpeg"
+  ],
+  "svgAllowed": false,
+  "minLongEdgePx": 2200,
+  "styleRule": "Use photorealistic cultivation scenes for recognition tasks and branded scientific diagrams/process visuals for mechanisms. No generic decorative cannabis imagery.",
+  "textRule": "Keep critical labels concise in-image; put detailed explanation in HTML caption/body copy.",
+  "accessibilityRule": "Every asset requires alt text and a nearby instructional caption.",
+  "moduleId": "MOD-LH-TECH1-001-RECORDS",
+  "moduleTitle": "Records, Shift Handoff & Integrated Workflow",
+  "visuals": [
+    {
+      "id": "VIS-LH-T1-C1-M6-001",
+      "lesson": "6.1",
+      "title": "A measurement is more than a number",
+      "type": "scientific-information-diagram",
+      "placement": "After measurement-system foundation",
+      "teachingPurpose": "A measurement is more than a number",
+      "requiredContent": [
+        "value",
+        "unit",
+        "identity",
+        "location",
+        "time",
+        "method/instrument",
+        "operator/system"
+      ],
+      "filename": "vis-lh-t1-c1-m6-001-a-measurement-is-more-than-a-number.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-002",
+      "lesson": "6.1",
+      "title": "Strong versus weak cultivation record",
+      "type": "comparison-plate",
+      "placement": "After reconstructable-record section",
+      "teachingPurpose": "Strong versus weak cultivation record",
+      "requiredContent": [
+        "context-free value",
+        "fully contextualized record",
+        "why interpretation changes"
+      ],
+      "filename": "vis-lh-t1-c1-m6-002-strong-versus-weak-cultivation-record.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-003",
+      "lesson": "6.1",
+      "title": "Contemporaneous versus late entry",
+      "type": "timeline-diagram",
+      "placement": "After record-facts section",
+      "teachingPurpose": "Contemporaneous versus late entry",
+      "requiredContent": [
+        "event time",
+        "entry time",
+        "late-entry reason",
+        "no backdating"
+      ],
+      "filename": "vis-lh-t1-c1-m6-003-contemporaneous-versus-late-entry.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-004",
+      "lesson": "6.1",
+      "title": "Correction that preserves history",
+      "type": "annotated-document-example",
+      "placement": "After corrections section",
+      "teachingPurpose": "Correction that preserves history",
+      "requiredContent": [
+        "original visible",
+        "corrected value",
+        "attribution",
+        "date/time/reason"
+      ],
+      "filename": "vis-lh-t1-c1-m6-004-correction-that-preserves-history.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-005",
+      "lesson": "6.2",
+      "title": "Closed-loop shift handoff",
+      "type": "human-factors-process-diagram",
+      "placement": "After handoff foundation",
+      "teachingPurpose": "Closed-loop shift handoff",
+      "requiredContent": [
+        "prepare",
+        "state critical items",
+        "incoming questions",
+        "read-back",
+        "cross-check",
+        "transfer confirmed"
+      ],
+      "filename": "vis-lh-t1-c1-m6-005-closed-loop-shift-handoff.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-006",
+      "lesson": "6.2",
+      "title": "High-signal handoff hierarchy",
+      "type": "priority-chart",
+      "placement": "After prioritize section",
+      "teachingPurpose": "High-signal handoff hierarchy",
+      "requiredContent": [
+        "safety/restrictions",
+        "holds",
+        "equipment faults",
+        "identity discrepancies",
+        "time-sensitive work",
+        "routine completions"
+      ],
+      "filename": "vis-lh-t1-c1-m6-006-high-signal-handoff-hierarchy.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-007",
+      "lesson": "6.2",
+      "title": "Observation versus diagnosis in handoff",
+      "type": "comparison-plate",
+      "placement": "After bounded-language section",
+      "teachingPurpose": "Observation versus diagnosis in handoff",
+      "requiredContent": [
+        "specific observation",
+        "unsupported diagnosis",
+        "better wording"
+      ],
+      "filename": "vis-lh-t1-c1-m6-007-observation-versus-diagnosis-in-handoff.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-008",
+      "lesson": "6.3",
+      "title": "Workflow dependency map",
+      "type": "systems-diagram",
+      "placement": "After dependency reasoning",
+      "teachingPurpose": "Workflow dependency map",
+      "requiredContent": [
+        "hold blocks move",
+        "sanitation blocks entry",
+        "identity mismatch blocks transfer",
+        "fault blocks irrigation"
+      ],
+      "filename": "vis-lh-t1-c1-m6-008-workflow-dependency-map.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-009",
+      "lesson": "6.3",
+      "title": "Integrated Technician I decision loop",
+      "type": "process-diagram",
+      "placement": "After integrated sequence",
+      "teachingPurpose": "Integrated Technician I decision loop",
+      "requiredContent": [
+        "review",
+        "restrictions",
+        "verify instruction",
+        "identity",
+        "prepare",
+        "act",
+        "record",
+        "stop/escalate",
+        "reconcile",
+        "handoff"
+      ],
+      "filename": "vis-lh-t1-c1-m6-009-integrated-technician-i-decision-loop.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M6-010",
+      "lesson": "6.3",
+      "title": "One-shift synthesis map",
+      "type": "integrated-scenario-diagram",
+      "placement": "Beside module application",
+      "teachingPurpose": "One-shift synthesis map",
+      "requiredContent": [
+        "safety",
+        "biosecurity",
+        "SOP",
+        "traceability",
+        "equipment",
+        "record/handoff connections"
+      ],
+      "filename": "vis-lh-t1-c1-m6-010-one-shift-synthesis-map.png"
+    }
+  ]
+}
