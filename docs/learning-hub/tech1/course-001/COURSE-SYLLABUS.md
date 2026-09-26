@@ -63,6 +63,35 @@ These outcomes map to the six controlled Course 1 competency areas: cultivation 
 
 Six formative module assessments are authored and learner-accessible as low-stakes retrieval and remediation checkpoints. The current forms contain 14 items each, but the item inventory and future form depth remain expandable rather than capped at 14. They provide immediate explanatory feedback and are not professional credential evidence.
 
+## Learning experience model
+
+Every module should follow the same high-quality learning cycle so the course teaches judgment instead of rewarding passive reading:
+
+1. **Orient** — explain why the topic matters in cultivation work and what decision the learner will be able to make.
+2. **Explain** — teach the scientific, safety, quality or human-factors mechanism behind the procedure.
+3. **Show** — pair the concept with a meaningful diagram, annotated photograph, workflow, comparison plate or document example.
+4. **Model** — walk through at least one worked example that shows expert reasoning step by step.
+5. **Practice with support** — use guided sorting, labeling, sequencing, record review or scenario decisions with immediate feedback.
+6. **Retrieve from memory** — use short no-notes checks so the learner must reconstruct the key idea rather than reread it.
+7. **Apply in context** — complete a realistic cultivation task, packet, handoff, inspection, traceability exercise or decision scenario.
+8. **Reflect and remediate** — explain why an incorrect choice fails, route the learner back to the exact concept, and require another application when needed.
+9. **Integrate** — connect the topic to earlier modules so safety, biosecurity, controlled work, traceability, equipment and records operate as one system.
+
+The target is deliberate practice, not page count. A learner should repeatedly **observe → interpret → decide → act within authority → document → verify/handoff**.
+
+### Visual learning standard
+
+Visuals are instructional objects, not decoration. A final course visual must do at least one of the following:
+
+- reveal a structure, pathway or mechanism that is difficult to understand from prose alone;
+- train recognition of a real cultivation condition;
+- compare correct and incorrect states;
+- show sequence, causality or decision logic;
+- make records, labels, equipment or process relationships easier to inspect;
+- support a practical exercise that asks the learner to identify or decide something.
+
+Photorealistic imagery is preferred for observation training. Scientific diagrams, process flows, reference charts and annotated document examples are preferred for abstract mechanisms and controlled workflows. Every meaningful visual requires accessible alt text and a nearby explanation of what the learner should notice.
+
 ## Learning materials
 
 The current Course 1 package includes:
