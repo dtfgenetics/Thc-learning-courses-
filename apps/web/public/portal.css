@@ -53,6 +53,10 @@
 .portal-summary-label { color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
 .portal-summary-value { color: var(--ink); font-size: 1.35rem; line-height: 1.1; overflow-wrap: anywhere; }
 .portal-summary-note { color: var(--muted); font-size: .78rem; line-height: 1.35; }
+.portal-certification-note { margin: 1rem 0 0; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--panel); color: var(--muted); font-size: .86rem; line-height: 1.45; }
+.portal-certification-note strong { color: var(--ink); }
+.governance-dashboard[hidden] { display: none !important; }
+
 .portal-blockers { border-left: 4px solid #9b6b22; background: #fbf2df; border-radius: .35rem; padding: 1rem 1.1rem; margin: 1.25rem 0; }
 .portal-blockers h3 { margin-top: 0; }
 .portal-blockers ul { margin-bottom: 0; padding-left: 1.25rem; }
@@ -144,7 +148,10 @@
   .governance-dashboard h2 { font-size: 1.35rem; line-height: 1.12; }
   .governance-dashboard h3 { font-size: 1rem; }
   .governance-dashboard p { font-size: .88rem; line-height: 1.5; }
-  .portal-summary-card { padding: .75rem; }
+  .portal-summary-card { padding: .72rem; }
+  .portal-summary-value { font-size: 1.02rem; line-height: 1.15; }
+  .portal-summary-label { font-size: .66rem; }
+  .portal-summary-note { font-size: .74rem; }
   .portal-progress-summary { grid-template-columns: 1fr 1fr; }
   .record-actions { display: grid!important; grid-template-columns: 1fr; gap: .5rem!important; }
   .record-button { width: 100%; min-height: 48px; justify-content: center; }

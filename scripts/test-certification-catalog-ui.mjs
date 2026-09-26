@@ -12,7 +12,7 @@ const offerings = [
 
 assert.equal(offerings.length, 10, 'The canonical public catalog must contain exactly 10 offerings.');
 assert.match(html, /id="credential-pathways"/, 'The learner portal must expose a credential-pathways section.');
-assert.match(html, /Certification roadmap/, 'The learner portal should clearly label the credential roadmap.');
+assert.match(html, /Learning pathways/, 'The learner portal should clearly label the learning pathways.');
 
 for (const offering of offerings) {
   assert.ok(
@@ -46,14 +46,14 @@ for (const courseId of buildTarget.currentlyAvailableAcademicCourses ?? []) {
 
 assert.match(
   html,
-  /Course 1 is the only public academic course currently marked available/i,
-  'The learner portal must distinguish current academic-course availability from certification issuance.'
+  /Learn → Practice → Assess → Certify/i,
+  'The learner portal must explain the learning-to-certification sequence in plain language.'
 );
 
 assert.match(
   html,
-  /Course 1 available below/i,
-  'Technician I should expose the currently available public Course 1 entry point.'
+  /Begin with the available courses below/i,
+  'Technician I should expose a clear learner entry point without governance-heavy wording.'
 );
 
-console.log('Certification catalog UI audit passed: 10 offerings are visible, Course 1 is clearly separated from credential issuance, and no unfinished credential is advertised as issuable.');
+console.log('Certification catalog UI audit passed: 10 canonical offerings are preserved, learner-first pathway copy is present, and no unfinished credential is advertised as issuable.');
