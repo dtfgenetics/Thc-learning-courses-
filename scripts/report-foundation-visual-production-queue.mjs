@@ -37,7 +37,7 @@ for (const rel of registries) {
       minimumShortSidePx: asset.productionSpec?.minimumShortSidePx ?? null,
       references: asset.references ?? [],
       learnerPath: asset.learnerPath ?? null,
-      releaseApproved: asset.rasterReplacement?.releaseApproved === true
+      releaseApproved: asset.rasterReplacement?.releaseApproved === true || asset.nativeRaster?.releaseApproved === true
     };
 
     if (asset.status !== 'produced' || !row.releaseApproved || !row.learnerPath) queue.push(row);
