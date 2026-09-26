@@ -184,7 +184,7 @@ async function renderCredentialProgress() {
   lessonView.focus();
 
   try {
-    const [profileResponse, applicationsResponse, enrollmentResponse, catalogResponse, tech1ProgressResponse, tech1TranscriptResponse, progressResponse, transcriptResponse] = await Promise.all([
+    const [profileResponse, applicationsResponse, enrollmentResponse, catalogResponse, issuedCredentialsResponse, tech1ProgressResponse, tech1TranscriptResponse, progressResponse, transcriptResponse] = await Promise.all([
       fetch('/api/v1/me/profile', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
@@ -198,6 +198,10 @@ async function renderCredentialProgress() {
         credentials: 'same-origin'
       }),
       fetch('/api/catalog', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
       }),
@@ -227,6 +231,10 @@ async function renderCredentialProgress() {
       throw new Error(`Enrollment status unavailable (${enrollmentResponse.status}).`);
     }
     if (!catalogResponse.ok) throw new Error(`Course catalog unavailable (${catalogResponse.status}).`);
+    if (!issuedCredentialsResponse.ok) {
+      if (issuedCredentialsResponse.status === 401 || issuedCredentialsResponse.status === 403) throw new Error('Issued certificates are available after learner authentication.');
+      throw new Error(`Issued credential records unavailable (${issuedCredentialsResponse.status}).`);
+    }
     for (const [response, label] of [[tech1ProgressResponse, 'Technician I credential progress'], [tech1TranscriptResponse, 'Technician I competency transcript']]) {
       if (!response.ok) {
         if (response.status === 401 || response.status === 403) throw new Error(`${label} is available after learner authentication.`);
@@ -245,6 +253,7 @@ async function renderCredentialProgress() {
     const applicationsData = await applicationsResponse.json();
     const enrollmentData = await enrollmentResponse.json();
     const catalogData = await catalogResponse.json();
+    const issuedCredentialsData = await issuedCredentialsResponse.json();
     const tech1Data = await tech1ProgressResponse.json();
     const tech1TranscriptData = await tech1TranscriptResponse.json();
     const data = await progressResponse.json();
@@ -328,6 +337,39 @@ async function renderCredentialProgress() {
     identityForm.append(nameLabel, identityActions, identityStatus);
     identitySection.append(identityForm);
     panel.append(identitySection);
+
+    const issuedCredentialsSection = document.createElement('section');
+    issuedCredentialsSection.className = 'portal-progress-section learner-issued-credentials';
+    issuedCredentialsSection.append(text('h3', 'Issued certificates'));
+    const issuedRecords = issuedCredentialsData.credentials ?? [];
+    if (!issuedRecords.length) {
+      issuedCredentialsSection.append(text('p', 'No issued professional credential is recorded for this learner account yet.', 'portal-result-note'));
+    } else {
+      const issuedList = document.createElement('div');
+      issuedList.className = 'portal-course-record-list';
+      for (const record of issuedRecords) {
+        const card = document.createElement('article');
+        card.className = 'portal-course-record portal-issued-credential';
+        card.append(text('h4', record.credential?.title ?? record.credential?.id ?? 'THC Academy Credential'));
+        const issuedMeta = document.createElement('div');
+        issuedMeta.className = 'portal-progress-summary compact';
+        issuedMeta.append(
+          summaryCard('Status', statusLabel(record.status), record.verificationId ?? ''),
+          summaryCard('Certificate name', record.recipient?.certificateName ?? 'Not recorded', record.recipient?.learnerReference ?? ''),
+          summaryCard('Issued', record.issuedAt ? new Date(record.issuedAt).toLocaleDateString() : 'Not recorded', record.recipient?.applicationReference ?? '')
+        );
+        card.append(issuedMeta);
+        if (['issued','valid'].includes(record.status)) {
+          const print = text('button', 'Print certificate', 'record-button portal-certificate-print');
+          print.type = 'button';
+          print.addEventListener('click', () => printVerifiedCertificate(record));
+          card.append(print);
+        }
+        issuedList.append(card);
+      }
+      issuedCredentialsSection.append(issuedList);
+    }
+    panel.append(issuedCredentialsSection);
 
     const enrolledCourseIds = new Set((enrollmentData.enrollments ?? []).map((row) => row.courseId));
     const academicCourses = (catalogData.courses ?? []).filter((course) =>
@@ -705,7 +747,7 @@ function printVerifiedCertificate(record) {
   certificate.append(text('p', 'THC Academy', 'print-certificate-academy'));
   certificate.append(text('h1', 'Certificate of Credential'));
   certificate.append(text('p', 'This certifies that', 'print-certificate-copy'));
-  certificate.append(text('h2', record.recipientDisplayName || 'Credential holder', 'print-certificate-name'));
+  certificate.append(text('h2', record.recipientDisplayName || record.recipient?.certificateName || 'Credential holder', 'print-certificate-name'));
   certificate.append(text('p', 'has been issued the educational credential', 'print-certificate-copy'));
   certificate.append(text('h3', record.credential?.title ?? 'THC Academy Credential', 'print-certificate-title'));
   const meta = document.createElement('dl');
