@@ -317,10 +317,10 @@ async function renderCredentialProgress() {
     const academicCourses = (catalogData.courses ?? []).filter((course) =>
       course.status === 'published' &&
       course.credentialBearing === true &&
-      course.finalAssessment &&
       enrolledCourseIds.has(course.id)
     );
     const completionResults = await Promise.all(academicCourses.map(async (course) => {
+      if (!course.finalAssessment) return { course, integratedPerformance: true };
       const response = await fetch(`/api/v1/me/courses/${encodeURIComponent(course.id)}/completion`, {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
@@ -333,7 +333,7 @@ async function renderCredentialProgress() {
     academicSection.className = 'portal-progress-section';
     academicSection.append(text('h3', 'Academic course status'));
     if (!completionResults.length) {
-      academicSection.append(text('p', 'No enrolled credential-path course with a conventional graded final is recorded yet.', 'portal-result-note'));
+      academicSection.append(text('p', 'No enrolled credential-path academic course is recorded yet.', 'portal-result-note'));
     } else {
       const courseList = document.createElement('div');
       courseList.className = 'portal-course-record-list';
@@ -342,6 +342,19 @@ async function renderCredentialProgress() {
         row.className = 'portal-course-record';
         row.append(text('h4', result.course.title));
         const enrollment = (enrollmentData.enrollments ?? []).find((item) => item.courseId === result.course.id && String(item.courseVersion) === String(result.course.version));
+        if (result.integratedPerformance) {
+          row.append(text('p', 'Integrated performance lab: this course intentionally has no ordinary final. Completion depends on its mapped practical/capstone evidence and remains separate from professional credential issuance.', 'portal-result-note'));
+          const integratedStats = document.createElement('div');
+          integratedStats.className = 'portal-progress-summary compact';
+          integratedStats.append(
+            summaryCard('Enrollment', enrollment ? statusLabel(enrollment.status) : 'Not enrolled', `Course v${result.course.version}`),
+            summaryCard('Assessment model', 'Integrated performance', 'No redundant conventional final'),
+            summaryCard('Credential issuance', 'Separate', 'Professional release gates remain fail-closed')
+          );
+          row.append(integratedStats);
+          courseList.append(row);
+          continue;
+        }
         if (result.unavailable) {
           row.append(text('p', `Completion record unavailable (${result.status}).`, 'portal-result-note'));
           courseList.append(row);
