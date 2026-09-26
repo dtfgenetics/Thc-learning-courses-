@@ -44,6 +44,10 @@ function academicCompletionModuleIds(course) {
 export function loadCourseAcademicCompletionBundle(courseId) {
   const course = readById('courses', courseId);
   if (!course || course.status !== 'published' || !course.finalAssessment) return null;
+  const openAcademicDependencies = Array.isArray(course.extensions?.openAcademicDependencies)
+    ? course.extensions.openAcademicDependencies.filter(Boolean)
+    : [];
+  if (course.extensions?.academicCompletionBlockedWhileOpenDependencies === true && openAcademicDependencies.length > 0) return null;
   const modules = [];
   const lessons = [];
   const completionModuleIds = academicCompletionModuleIds(course);
