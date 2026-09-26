@@ -8,6 +8,8 @@
 
 This packet defines what must be inspected after the current Course 3 content and seven governed assets are rendered in the learner runtime. Source-file presence is not evidence that the rendered experience is accessible. Do not mark this review complete until a human reviewer inspects the actual rendered surface and records findings against the exact deployed/source version.
 
+Automated source and route checks support this review, but they do not constitute rendered accessibility or learner-UX approval.
+
 ## Pages and states to inspect
 
 At minimum inspect:
