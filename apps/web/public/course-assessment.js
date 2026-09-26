@@ -659,6 +659,7 @@ function renderAssessmentResult(result) {
   const resultRefs = el('div', '', 'course-assessment-identity');
   resultRefs.append(el('span', `Learner: ${result.learner?.learnerReference ?? 'account linked'}`));
   resultRefs.append(el('span', `Application: ${result.learner?.applicationReference ?? 'not linked'}`));
+  resultRefs.append(el('span', `Certificate name: ${result.learner?.certificateName ?? 'not set'}`));
   resultRefs.append(el('span', `Attempt: ${result.attempt.id}`));
   resultRefs.append(el('span', `Scored: ${result.attempt.scoredAt ? new Date(result.attempt.scoredAt).toLocaleString() : 'pending'}`));
   panel.append(resultRefs);
