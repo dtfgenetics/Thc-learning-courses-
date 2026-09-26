@@ -1,12 +1,12 @@
 # Objective Coverage — COURSE-LH-TECH1-003
 
 **Course:** Environmental, Light & Sensor Fundamentals  
-**Controlled source state:** `published` v0.5.0 for owner-approved academic use  
+**Controlled source state:** `published` v0.6.0 for owner-approved academic use  
 **Purpose:** machine-auditable development crosswalk from controlled objectives through instruction, applied practice, scored assessment, remediation and mapped performance evidence. Human technical, assessment, accessibility, pilot and release review remain required.
 
 ## Coverage summary
 
-Course 3 has five controlled course-specific learning objectives, four dedicated lessons, 12 distinct formative items, 20 distinct summative items, six produced learner assets and a development mapping to `PRACTICAL-TECH1-A`.
+Course 3 has five controlled course-specific learning objectives, four dedicated lessons, 12 distinct formative items, 20 distinct summative items, seven produced learner assets and a development mapping to `PRACTICAL-TECH1-A`.
 
 Current machine inspection confirms formative item coverage of **2 / 2 / 3 / 2 / 3** across objectives 01–05 and exactly **4 / 4 / 4 / 4 / 4** summative items. The current 20-item final is therefore balanced across all five controlled objectives. Scored items are evidence-backed; empty reference arrays were not found in the Course 3 question set during this audit.
 
@@ -62,9 +62,9 @@ node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-
 
 ## Asset alignment
 
-The six governed learner assets in `visuals/COURSE3-ASSET-REGISTRY.json` support the objective loop without creating a content ceiling:
+The seven governed learner assets in `visuals/COURSE3-ASSET-REGISTRY.json` support the objective loop without creating a content ceiling:
 
-- four embedded visuals for environmental context, PPFD mapping, sensor representativeness and alarm/trend handoff;
+- five embedded visuals for environmental context, VPD physiology, PPFD mapping, sensor representativeness and alarm/trend handoff;
 - two downloadable practice sheets for environmental records and PPFD/sensor verification.
 
 The registry remains authoritative for exact asset IDs, paths, Drive mirror records, lesson mappings and reference mappings.
