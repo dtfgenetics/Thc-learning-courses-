@@ -59,6 +59,10 @@
 .portal-blockers li + li { margin-top: .4rem; }
 .portal-progress-section { margin-top: 1.75rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
 .portal-progress-section h3 { margin: 0 0 .8rem; }
+.portal-course-record-list { display: grid; gap: 1rem; }
+.portal-course-record { border: 1px solid var(--line); border-radius: .8rem; padding: 1rem; background: #fff; }
+.portal-course-record h4 { margin: 0 0 .5rem; font-size: 1rem; }
+.portal-course-record .portal-progress-summary.compact { margin: .75rem 0; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); }
 .portal-evidence-list { display: grid; gap: .55rem; }
 .portal-evidence-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 1px solid var(--line); border-radius: .7rem; padding: .75rem .85rem; background: #fff; }
 .portal-evidence-row > div { display: grid; gap: .2rem; min-width: 0; }
