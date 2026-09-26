@@ -212,7 +212,44 @@
       "migration": {
         "source": "PR-279",
         "preservedWithoutArtificialContentCaps": true
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-011",
+          "title": "Cannabis plant anatomy and developmental growth stages",
+          "src": "/assets/course5/plant-anatomy-growth-stages.webp",
+          "alt": "Cannabis plant anatomy illustration showing roots, stem, nodes, internodes, leaves, meristems and reproductive structures across major developmental stages.",
+          "caption": "Anatomy provides the vocabulary for cultivation decisions: roots, vascular tissues, nodes, internodes, meristems, leaves and reproductive structures each carry different information.",
+          "references": [
+            "REF-PLANT-BIO-001",
+            "REF-FLOWER-MORPH-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-011",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-002-009",
+          "title": "Reproductive morphology reference",
+          "src": "/assets/course2/reproductive-morphology-reference.webp",
+          "alt": "Cannabis reproductive morphology reference distinguishing pistillate and staminate structures and their locations on reproductive shoots.",
+          "caption": "Reproductive structures should be identified precisely and at known plant locations before drawing conclusions about stage, sex expression or pollination risk.",
+          "references": [
+            "REF-FLOWER-MORPH-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-002-009",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
   },
   "extensions": {
