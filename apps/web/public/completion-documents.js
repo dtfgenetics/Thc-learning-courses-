@@ -1,6 +1,6 @@
 import { buildAcademicCourseRecord } from './progress.js';
 
-const COURSE_ID = 'COURSE-LH-TECH1-001';
+const DEFAULT_COURSE_ID = 'COURSE-LH-TECH1-001';
 
 function iso(value) {
   if (!value) return null;
@@ -108,7 +108,7 @@ export function buildAcademicRecordJson(record, { generatedAt = new Date().toISO
 }
 
 export function academicRecordDownloadFiles(record, options = {}) {
-  const suffix = String(record?.course?.id ?? COURSE_ID).toLowerCase();
+  const suffix = String(record?.course?.id ?? DEFAULT_COURSE_ID).toLowerCase();
   return {
     transcript: {
       filename: `${suffix}-academic-transcript.txt`,
@@ -123,17 +123,18 @@ export function academicRecordDownloadFiles(record, options = {}) {
   };
 }
 
-async function loadAcademicRecord() {
+async function loadAcademicRecord(courseId) {
+  const selectedId = courseId || DEFAULT_COURSE_ID;
   const [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse] = await Promise.all([
     fetch('/api/catalog', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
     fetch('/api/v1/me/progress', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
     fetch('/api/v1/me/enrollments', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
-    fetch(`/api/v1/me/courses/${COURSE_ID}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' })
+    fetch(`/api/v1/me/courses/${encodeURIComponent(selectedId)}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' })
   ]);
   if ([progressResponse, enrollmentResponse, evidenceResponse].some((response) => response.status === 401 || response.status === 403)) throw new Error('authentication-required');
   for (const response of [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse]) if (!response.ok) throw new Error(`academic-record-unavailable:${response.status}`);
   const [catalog, progress, enrollments, evidence] = await Promise.all([catalogResponse.json(), progressResponse.json(), enrollmentResponse.json(), evidenceResponse.json()]);
-  const course = (catalog.courses ?? []).find((row) => row.id === COURSE_ID);
+  const course = (catalog.courses ?? []).find((row) => row.id === selectedId);
   if (!course) throw new Error('course-not-found');
   return buildAcademicCourseRecord({ course, progressRows: progress.progress ?? [], enrollments: enrollments.enrollments ?? [], evidence });
 }
@@ -151,12 +152,12 @@ function downloadFile(file) {
 }
 
 function waitForRecordActions(timeoutMs = 5000) {
-  const current = document.querySelector('.academic-record .record-actions');
+  const current = document.querySelector('.academic-record [data-course-id] .record-actions');
   if (current) return Promise.resolve(current);
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => { observer.disconnect(); reject(new Error('record-actions-unavailable')); }, timeoutMs);
     const observer = new MutationObserver(() => {
-      const node = document.querySelector('.academic-record .record-actions');
+      const node = document.querySelector('.academic-record [data-course-id] .record-actions');
       if (!node) return;
       clearTimeout(timeout);
       observer.disconnect();
@@ -167,13 +168,15 @@ function waitForRecordActions(timeoutMs = 5000) {
 }
 
 async function attachAcademicRecordDownloads() {
-  let record;
-  try { record = await loadAcademicRecord(); }
-  catch { return false; }
   let actions;
   try { actions = await waitForRecordActions(); }
   catch { return false; }
-  if (actions.querySelector('[data-academic-download="transcript"]')) return true;
+  const courseId = actions.closest('[data-course-id]')?.dataset.courseId;
+  if (!courseId) return false;
+  let record;
+  try { record = await loadAcademicRecord(courseId); }
+  catch { return false; }
+  for (const old of actions.querySelectorAll('[data-academic-download]')) old.remove();
   const files = academicRecordDownloadFiles(record);
   const transcript = document.createElement('button');
   transcript.type = 'button';
