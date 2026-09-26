@@ -3,15 +3,17 @@
   "id": "PUBLIC-RELEASE-LH-TECH1-002",
   "courseId": "COURSE-LH-TECH1-002",
   "title": "Plant Observation, Growth Stages & Crop Records",
-  "publicationState": "partial-published",
+  "publicationState": "published",
   "publicScope": {
     "modules": [
       "MOD-PLANT-BIO-001",
+      "MOD-FLOWER-001",
       "MOD-LH-TECH1-001-RECORDS",
       "MOD-LH-TECH1-002-OBSERVATION"
     ],
     "assessments": [
       "ASSESS-PLANT-BIO-MODULE-001",
+      "ASSESS-FLOWER-MODULE-001",
       "ASSESS-LH-TECH1-001-M06",
       "ASSESS-LH-TECH1-002-M01",
       "ASSESS-LH-TECH1-002-FINAL"
@@ -24,6 +26,9 @@
       "content/lessons/LESSON-PLANT-BIO-001.json",
       "content/lessons/LESSON-PLANT-BIO-ANATOMY-002.json",
       "content/lessons/LESSON-PLANT-BIO-SEX-003.json",
+      "content/lessons/LESSON-FLOWER-001.json",
+      "content/lessons/LESSON-FLOWER-PHOTO-002.json",
+      "content/lessons/LESSON-FLOWER-MATURITY-003.json",
       "content/lessons/LESSON-LH-TECH1-001-16.json",
       "content/lessons/LESSON-LH-TECH1-001-17.json",
       "content/lessons/LESSON-LH-TECH1-001-18.json",
@@ -32,19 +37,16 @@
       "content/lessons/LESSON-LH-TECH1-002-03.json",
       "content/lessons/LESSON-LH-TECH1-002-04.json"
     ],
-    "excludedModules": [
-      "MOD-FLOWER-001"
-    ],
-    "releasedLessonCount": 10,
-    "releasedModuleCount": 3,
-    "pendingModuleCount": 1
+    "excludedModules": [],
+    "releasedLessonCount": 13,
+    "releasedModuleCount": 4,
+    "pendingModuleCount": 0
   },
   "publicationBoundary": {
-    "learnerPackage": "partial-released",
+    "learnerPackage": "released",
     "courseTests": "released-for-learning",
     "credentialExam": "restricted",
-    "credentialDecision": "restricted-governance",
-    "openAcademicDependency": "MOD-FLOWER-001"
+    "credentialDecision": "restricted-governance"
   },
   "excludedFromPublicRelease": [
     "credential-purpose exam items and answer data",
@@ -53,5 +55,5 @@
     "assessor calibration records",
     "credential issuance secrets and signing material"
   ],
-  "boundary": "This manifest authorizes a scoped learner-facing academic release for the modules listed in publicScope.modules. MOD-FLOWER-001 remains excluded until its required raster instructional visuals and final academic release checks are complete. This manifest does not establish validated certification use or professional credential issuance readiness."
+  "boundary": "This manifest authorizes the complete learner-facing Course 2 academic training package for public study. It does not establish validated certification use, professional credential issuance readiness, psychometric validation, evaluator calibration, standard setting, or accreditation."
 }
