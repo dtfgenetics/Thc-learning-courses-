@@ -288,3 +288,12 @@
 @media (max-width: 620px) {
   .practice-review-button { width: 100%; }
 }
+
+
+.checkpoint-remediation-summary { margin: 1rem 0 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: .75rem; padding: .9rem 1rem; background: #fff; }
+.checkpoint-remediation-summary h3 { margin: 0 0 .35rem; font-size: 1rem; }
+.checkpoint-remediation-summary[hidden] { display: none !important; }
+.checkpoint-remediation-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .7rem; }
+@media (max-width: 620px) {
+  .checkpoint-remediation-actions { display: grid; grid-template-columns: 1fr; }
+}
