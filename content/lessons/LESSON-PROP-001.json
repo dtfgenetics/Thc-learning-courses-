@@ -210,6 +210,28 @@
           "REF-PROP-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-010",
+          "title": "Seed anatomy and germination physiology",
+          "src": "/assets/course5/seed-anatomy-germination.webp",
+          "alt": "Cannabis seed anatomy and germination sequence showing seed coat, embryo, cotyledons, radicle, imbibition, radicle emergence and early seedling establishment.",
+          "caption": "Seed propagation begins with viable anatomy and progresses through imbibition, metabolic reactivation, radicle emergence and establishment.",
+          "references": [
+            "REF-PROP-001",
+            "REF-CANNABIS-SEED-GERMINATION-2021"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-010",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
