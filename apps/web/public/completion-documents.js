@@ -196,8 +196,20 @@ async function attachAcademicRecordDownloads() {
 
 export function initializeAcademicRecordDownloads() {
   const tab = document.querySelector('#tab-course-record');
-  if (!tab) return false;
-  tab.addEventListener('click', () => { void attachAcademicRecordDownloads(); });
+  const lessonView = document.querySelector('#lesson-view');
+  if (!tab || !lessonView) return false;
+  let refreshQueued = false;
+  const queueRefresh = () => {
+    if (refreshQueued) return;
+    refreshQueued = true;
+    queueMicrotask(() => {
+      refreshQueued = false;
+      if (document.querySelector('.academic-record [data-course-id] .record-actions')) void attachAcademicRecordDownloads();
+    });
+  };
+  const observer = new MutationObserver(queueRefresh);
+  observer.observe(lessonView, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-course-id'] });
+  tab.addEventListener('click', queueRefresh);
   return true;
 }
 
