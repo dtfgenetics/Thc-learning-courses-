@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "moduleId": "MOD-LH-TECH1-001-SAFETY",
+  "moduleTitle": "Applied Cultivation Workplace Safety",
+  "productionPolicy": {
+    "finalFormats": [
+      "png",
+      "webp",
+      "jpeg"
+    ],
+    "svgAllowed": false,
+    "rasterMinLongEdgePx": 2200,
+    "instructionalTextRule": "Keep critical instructional labels legible at mobile width; complex explanatory text belongs in HTML captions adjacent to the image.",
+    "style": "Photorealistic cultivation environments for observational scenes; branded scientific infographic/diagram treatment for abstract mechanisms; no decorative cannabis imagery.",
+    "evidenceRule": "Every visual must teach a declared objective or decision and must not imply universal legal thresholds, PPE, chemical recipes, alarm setpoints or engineering settings.",
+    "accessibility": "Every final visual requires concise alt text plus an expanded figure caption in the course page."
+  },
+  "visuals": [
+    {
+      "id": "VIS-LH-T1-C1-M1-001",
+      "lesson": "1.1",
+      "title": "Cultivation hazard scan — source, pathway, consequence",
+      "type": "annotated-photorealistic-scene",
+      "placement": "After 'Start with observation, not normalization'",
+      "teachingPurpose": "Train learners to scan one realistic cultivation corridor for simultaneous slip/trip, electrical, egress, chemical and equipment-state hazards.",
+      "requiredContent": [
+        "wet floor spreading toward powered equipment",
+        "damaged cord clearly visible but not sensationalized",
+        "hose crossing walking path",
+        "blocked marked route",
+        "cart/equipment placement",
+        "normal healthy crop context"
+      ],
+      "labels": [
+        "hazard source",
+        "exposure/contact pathway",
+        "possible consequence",
+        "authorized first response"
+      ],
+      "alt": "Cultivation corridor showing several workplace hazards, including irrigation water near damaged electrical equipment, a hose across the walking path, and a blocked route.",
+      "evidence": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024",
+        "REF-OSHA-1910-22-WALKING"
+      ],
+      "filename": "vis-lh-t1-c1-m1-001-hazard-scan.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-002",
+      "lesson": "1.1",
+      "title": "Hierarchy of controls for cultivation work",
+      "type": "branded-scientific-diagram",
+      "placement": "After 'Use the hierarchy of controls — and stay inside authorization'",
+      "teachingPurpose": "Show why eliminating or engineering out a hazard is generally stronger than relying only on behavior or PPE.",
+      "requiredContent": [
+        "Elimination",
+        "Substitution",
+        "Engineering controls",
+        "Administrative/work-practice controls",
+        "PPE",
+        "effectiveness direction",
+        "authorization boundary callout"
+      ],
+      "alt": "Five-level hierarchy of controls from elimination through personal protective equipment, with a reminder that technicians only apply controls within authorization.",
+      "evidence": [
+        "OSHA Hazard Prevention and Control",
+        "NIOSH hierarchy of controls"
+      ],
+      "filename": "vis-lh-t1-c1-m1-002-hierarchy-controls.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-003",
+      "lesson": "1.1",
+      "title": "Water plus damaged electrical equipment — decision sequence",
+      "type": "decision-flow-diagram",
+      "placement": "After Lesson 1.1 worked case",
+      "teachingPurpose": "Make the stop/isolate/escalate logic visible without teaching unqualified electrical repair.",
+      "requiredContent": [
+        "observe water migration",
+        "identify energized/damaged equipment concern",
+        "do not touch exposed components",
+        "stop task",
+        "isolate/access-control only if authorized",
+        "escalate to qualified role",
+        "document status"
+      ],
+      "alt": "Decision flow showing a technician stopping work and escalating when irrigation water approaches visibly damaged powered equipment.",
+      "evidence": [
+        "REF-OSHA-1910-22-WALKING",
+        "course role-boundary model"
+      ],
+      "filename": "vis-lh-t1-c1-m1-003-water-electric-decision.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-004",
+      "lesson": "1.2",
+      "title": "Exposure routes and PPE function",
+      "type": "scientific-body-pathway-diagram",
+      "placement": "After 'Scientific foundation — match protection to the exposure route'",
+      "teachingPurpose": "Connect inhalation, eye, skin and hand-to-mouth exposure pathways to appropriate categories of controls without prescribing product-specific PPE.",
+      "requiredContent": [
+        "inhalation pathway",
+        "eye splash/aerosol pathway",
+        "skin contact pathway",
+        "hand-to-mouth transfer",
+        "higher-level controls before PPE",
+        "PPE examples marked illustrative/not universal"
+      ],
+      "alt": "Diagram of common workplace exposure routes—breathing, eyes, skin and hand-to-mouth—with controls matched to each route.",
+      "evidence": [
+        "REF-OSHA-1910-132-PPE",
+        "REF-OSHA-1910-1200-HAZCOM"
+      ],
+      "filename": "vis-lh-t1-c1-m1-004-exposure-routes-ppe.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-005",
+      "lesson": "1.2",
+      "title": "How to read a chemical label and SDS",
+      "type": "branded-document-anatomy-diagram",
+      "placement": "After 'Read an SDS as a structured technical document'",
+      "teachingPurpose": "Teach where hazard identity, signal word, precautionary information, first aid, storage and exposure-control information live.",
+      "requiredContent": [
+        "mock GHS-style label—not a real product",
+        "SDS section map",
+        "sections 1,2,4,6,7,8,9,10,11 emphasized",
+        "arrows linking task questions to sections"
+      ],
+      "alt": "Mock chemical label and Safety Data Sheet map highlighting where a worker finds hazard, first-aid, spill, storage and exposure-control information.",
+      "evidence": [
+        "REF-OSHA-1910-1200-HAZCOM"
+      ],
+      "filename": "vis-lh-t1-c1-m1-005-label-sds-map.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-006",
+      "lesson": "1.2",
+      "title": "Restricted entry versus ordinary work scheduling",
+      "type": "decision-flow-diagram",
+      "placement": "After pesticide-work boundaries",
+      "teachingPurpose": "Show that a production schedule does not override a pesticide label restriction or controlled-entry boundary.",
+      "requiredContent": [
+        "task scheduled",
+        "treated area status check",
+        "label/site restriction active?",
+        "no unauthorized entry",
+        "verify clearance/authorization",
+        "reschedule or escalate"
+      ],
+      "alt": "Flowchart showing that a scheduled plant-moving task stops when a treated-area restriction is still active.",
+      "evidence": [
+        "REF-EPA-WPS",
+        "REF-EPA-WPS-APPLICATION-RESTRICTIONS"
+      ],
+      "filename": "vis-lh-t1-c1-m1-006-restricted-entry-flow.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-007",
+      "lesson": "1.3",
+      "title": "Cannabis workplace respiratory exposure pathways",
+      "type": "photorealistic-plus-overlay",
+      "placement": "After 'Natural does not mean nonhazardous'",
+      "teachingPurpose": "Show how cultivation/processing tasks can generate plant particulate, microbial material or chemical aerosols without implying identical exposure in every facility.",
+      "requiredContent": [
+        "plant handling",
+        "dry material processing",
+        "visible conceptual particulate overlay, not exaggerated dust cloud",
+        "cleaning activity",
+        "ventilation/exhaust context",
+        "task-specific exposure note"
+      ],
+      "alt": "Cultivation and processing tasks illustrating possible respiratory exposure pathways from plant particulate, microbial material and cleaning aerosols.",
+      "evidence": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024",
+        "REF-NIOSH-CANNABIS-ALLERGIES-2023",
+        "REF-NIOSH-ASTHMA-2026"
+      ],
+      "filename": "vis-lh-t1-c1-m1-007-respiratory-pathways.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-008",
+      "lesson": "1.3",
+      "title": "Irritant versus sensitizer — why symptoms need reporting, not self-diagnosis",
+      "type": "scientific-mechanism-diagram",
+      "placement": "After respiratory scientific foundation",
+      "teachingPurpose": "Distinguish irritation from sensitization at a learner-safe level and show why repeated task-linked symptoms warrant escalation.",
+      "requiredContent": [
+        "irritant pathway simplified",
+        "sensitizer pathway simplified with latency/re-exposure",
+        "shared symptoms overlap",
+        "report pattern",
+        "qualified clinical evaluation boundary"
+      ],
+      "alt": "Simplified diagram comparing irritant and sensitizer pathways that can both lead to respiratory symptoms, emphasizing reporting and professional evaluation.",
+      "evidence": [
+        "REF-NIOSH-ASTHMA-2026"
+      ],
+      "filename": "vis-lh-t1-c1-m1-008-irritant-sensitizer.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-009",
+      "lesson": "1.3",
+      "title": "CO₂ alarm response — senses are not a detector",
+      "type": "branded-safety-diagram",
+      "placement": "After 'Alarms are action signals, not diagnosis invitations'",
+      "teachingPurpose": "Teach that CO₂ is colorless/odorless and that alarm response follows the site emergency plan rather than informal inspection.",
+      "requiredContent": [
+        "CO2 source/enriched room concept",
+        "fixed detector/alarm",
+        "worker outside threshold area",
+        "evacuate/keep out",
+        "follow emergency plan",
+        "no universal ppm alarm number shown"
+      ],
+      "alt": "CO2-enriched room diagram showing a fixed alarm and a worker following the emergency response rather than entering to inspect the room.",
+      "evidence": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024"
+      ],
+      "filename": "vis-lh-t1-c1-m1-009-co2-alarm-response.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M1-010",
+      "lesson": "1.3",
+      "title": "Pre-task safety brief — one-page visual workflow",
+      "type": "branded-reference-chart",
+      "placement": "Beside 'Module application — pre-task safety brief'",
+      "teachingPurpose": "Provide a reusable visual template linking task, hazards, controls, PPE, stop conditions, escalation and emergency communication.",
+      "requiredContent": [
+        "task/work area",
+        "hazards",
+        "controls",
+        "PPE",
+        "stop conditions",
+        "escalation conditions",
+        "emergency path",
+        "document/handoff"
+      ],
+      "alt": "One-page pre-task safety brief template with fields for hazards, controls, PPE, stop conditions, escalation and emergency communication.",
+      "evidence": [
+        "course synthesis"
+      ],
+      "filename": "vis-lh-t1-c1-m1-010-pretask-brief.png"
+    }
+  ]
+}
