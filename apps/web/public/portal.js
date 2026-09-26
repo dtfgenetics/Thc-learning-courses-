@@ -240,17 +240,25 @@ async function renderCredentialProgress() {
 
     const profile = profileData.profile ?? {};
     const applications = applicationsData.applications ?? [];
-    const tech1Application = applications.find((row) => row.programId === 'CREDPROG-CULT-TECH-I-001' && row.status === 'active') ?? null;
+    const applicationPrograms = [
+      { id: 'CREDPROG-CULT-TECH-I-001', title: 'Technician I' },
+      { id: 'CREDPROG-CULT-TECH-II-001', title: 'Technician II' }
+    ];
+    const activeApplications = new Map(applicationPrograms.map((program) => [
+      program.id,
+      applications.find((row) => row.programId === program.id && row.status === 'active') ?? null
+    ]));
     const identitySection = document.createElement('section');
     identitySection.className = 'portal-progress-section learner-identity-section';
     identitySection.append(text('h3', 'Learner identity & certification application'));
     const identitySummary = document.createElement('div');
     identitySummary.className = 'portal-progress-summary';
-    identitySummary.append(
-      summaryCard('Learner reference', profile.learnerReference ?? 'Not assigned', 'Private learner-account reference'),
-      summaryCard('Application reference', tech1Application?.applicationReference ?? 'Not created', 'Technician I application'),
-      summaryCard('Certificate name', profile.certificateName || 'Not set', 'Printed exactly as saved after credential issuance')
-    );
+    identitySummary.append(summaryCard('Learner reference', profile.learnerReference ?? 'Not assigned', 'Private learner-account reference'));
+    for (const program of applicationPrograms) {
+      const application = activeApplications.get(program.id);
+      identitySummary.append(summaryCard(`${program.title} application`, application?.applicationReference ?? 'Not created', application ? 'Active certification application' : 'Create before beginning credential-bearing finals'));
+    }
+    identitySummary.append(summaryCard('Certificate name', profile.certificateName || 'Not set', 'Printed exactly as saved after credential issuance'));
     identitySection.append(identitySummary);
     const identityForm = document.createElement('form');
     identityForm.className = 'learner-identity-form';
@@ -268,18 +276,24 @@ async function renderCredentialProgress() {
     const saveName = text('button', 'Save certificate name', 'record-button');
     saveName.type = 'submit';
     identityActions.append(saveName);
-    if (!tech1Application) {
-      const createApplication = text('button', 'Create Technician I application', 'record-button');
+    for (const program of applicationPrograms) {
+      if (activeApplications.get(program.id)) continue;
+      const createApplication = text('button', `Create ${program.title} application`, 'record-button');
       createApplication.type = 'button';
       createApplication.addEventListener('click', async () => {
         createApplication.disabled = true;
         const response = await fetch('/api/v1/me/applications', {
           method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin',
-          body: JSON.stringify({ programId: 'CREDPROG-CULT-TECH-I-001' })
+          body: JSON.stringify({ programId: program.id })
         });
         const body = await response.json().catch(() => ({}));
-        if (!response.ok) { createApplication.disabled = false; createApplication.textContent = body.error || 'Application not created'; return; }
-        createApplication.textContent = `Application ${body.application.applicationReference}`;
+        if (!response.ok) {
+          createApplication.disabled = false;
+          createApplication.textContent = body.error || `${program.title} application not created`;
+          return;
+        }
+        activeApplications.set(program.id, body.application);
+        createApplication.textContent = `${program.title}: ${body.application.applicationReference}`;
         createApplication.disabled = true;
       });
       identityActions.append(createApplication);
