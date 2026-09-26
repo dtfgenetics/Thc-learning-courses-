@@ -1,37 +1,202 @@
 {
   "id": "LESSON-CANOPY-001",
   "title": "Training Methods and Canopy Architecture",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-CANOPY-001"],
-  "learningObjectives": ["LO-CANOPY-001"],
+  "competencies": [
+    "COMP-CANOPY-001"
+  ],
+  "learningObjectives": [
+    "LO-CANOPY-001"
+  ],
   "estimatedMinutes": 45,
-  "references": ["REF-CANOPY-001"],
+  "references": [
+    "REF-CANOPY-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Canopy management changes plant architecture to improve space use, light distribution, access, and crop uniformity. Training methods should be chosen from the desired structural outcome, plant developmental stage, vigor, and expected recovery rather than applied as fixed rituals.",
+    "overview": "Canopy management is the deliberate modification of plant architecture to change how shoots occupy space, intercept light and remain accessible for crop work. Training changes growth distribution through bending, support or tissue removal, but the useful question is not 'Which technique is best?' It is 'What structural problem are we solving, at what developmental stage, with what recovery cost, and how will we measure the result?'",
     "vocabulary": [
-      {"term":"Apical dominance","definition":"A growth pattern in which the main shoot suppresses or reduces the relative growth of lateral shoots."},
-      {"term":"Low-stress training","definition":"Canopy shaping that bends, positions, or supports shoots without intentionally causing major tissue damage."},
-      {"term":"High-stress training","definition":"Training that intentionally removes, cuts, or substantially damages tissue and therefore requires recovery."},
-      {"term":"Canopy architecture","definition":"The spatial arrangement of stems, branches, leaves, and reproductive sites within the plant canopy."}
+      {
+        "term": "Apical dominance",
+        "definition": "A growth pattern in which the main shoot suppresses or reduces the relative growth of lateral shoots."
+      },
+      {
+        "term": "Low-stress training",
+        "definition": "Canopy shaping that bends, positions, or supports shoots without intentionally causing major tissue damage."
+      },
+      {
+        "term": "High-stress training",
+        "definition": "Training that intentionally removes, cuts, or substantially damages tissue and therefore requires recovery."
+      },
+      {
+        "term": "Canopy architecture",
+        "definition": "The spatial arrangement of stems, branches, leaves, and reproductive sites within the plant canopy."
+      }
     ],
     "sections": [
-      {"title":"Architecture changes the light environment","body":"Leaves and branches create self-shading and spatial gradients in photon exposure. Training can redistribute shoots and reduce severe differences between highly exposed and deeply shaded regions, but the result should be verified with canopy observations and measurements.","references":["REF-CANOPY-001"]},
-      {"title":"Training methods serve different goals","body":"Bending and repositioning shoots can alter structure with relatively little tissue damage, while topping or other high-stress methods change apical growth through tissue removal. The appropriate method depends on the structural goal rather than on a single preferred technique.","references":["REF-CANOPY-001"]},
-      {"title":"Plant stage and recovery matter","body":"Training creates a biological response. High-stress methods require sufficient vigor and recovery time, while aggressive intervention near sensitive developmental transitions can create costs that outweigh the intended architectural benefit.","references":["REF-CANOPY-001"]},
-      {"title":"Uniformity is a system outcome","body":"A flatter or more open canopy can improve access and light distribution, but canopy uniformity also depends on fixture layout, plant spacing, genetics, environment, and previous growth. Training should therefore be evaluated as one part of the complete production environment.","references":["REF-CANOPY-001"]}
+      {
+        "title": "Architecture changes the light environment",
+        "body": "Leaves and branches create self-shading and spatial gradients in photon exposure. Training can redistribute shoots and reduce severe differences between highly exposed and deeply shaded regions, but the result should be verified with canopy observations and measurements.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Training methods serve different goals",
+        "body": "Bending and repositioning shoots can alter structure with relatively little tissue damage, while topping or other high-stress methods change apical growth through tissue removal. The appropriate method depends on the structural goal rather than on a single preferred technique.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Plant stage and recovery matter",
+        "body": "Training creates a biological response. High-stress methods require sufficient vigor and recovery time, while aggressive intervention near sensitive developmental transitions can create costs that outweigh the intended architectural benefit.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "title": "Uniformity is a system outcome",
+        "body": "A flatter or more open canopy can improve access and light distribution, but canopy uniformity also depends on fixture layout, plant spacing, genetics, environment, and previous growth. Training should therefore be evaluated as one part of the complete production environment.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If the upper shoots dominate the fixture while interior branches remain shaded, repositioning or selectively training the dominant shoots may improve light distribution without assuming that every branch should be cut.",
-      "If a plant is weak or recently stressed, delay high-stress training until vigor and recovery capacity are sufficient for the intended intervention."
+      "A tall dominant shoot receives much higher PPFD than the surrounding canopy. Bending and repositioning may reduce the height difference without the recovery cost of removing the shoot.",
+      "A vigorous plant is topped early enough to recover and redistribute growth among lateral shoots. The same cut made shortly before a sensitive reproductive transition may have a different cost-benefit profile.",
+      "A canopy looks visually flat, but a PPFD map still shows bright and dim zones. Architecture should be evaluated with measurements rather than appearance alone.",
+      "Interior leaves remain crowded and humid despite adequate room airflow. Selective thinning may improve internal air movement, but excessive leaf removal can reduce photosynthetic area and stress the plant."
     ],
     "commonMistakes": [
-      "Choosing a training method because it is popular rather than because it solves a defined canopy problem.",
-      "Applying high-stress training without allowing adequate recovery time.",
-      "Assuming a flat canopy automatically has uniform light exposure without measuring or observing distribution."
+      "Using a training method because it is fashionable rather than because it solves a defined problem.",
+      "Making high-stress cuts without allowing recovery time.",
+      "Treating a flat canopy as proof of uniform PPFD.",
+      "Removing too much leaf area at once.",
+      "Ignoring genotype and vigor when comparing recovery.",
+      "Changing architecture repeatedly without measuring whether the intended light/space outcome improved."
     ],
-    "practicalApplication": "Before training, define the desired canopy outcome, document plant stage and vigor, identify which shoots create crowding or dominance, choose the least disruptive method that can achieve the goal, and evaluate the plant's recovery and resulting light distribution before the next intervention.",
-    "summary": "Canopy management is applied plant architecture. Effective training links a defined structural goal with plant stage, vigor, recovery capacity, and measured canopy conditions rather than treating topping, bending, or other techniques as universal recipes."
+    "practicalApplication": "Before training, create a canopy problem statement using height, branch position, crowding and light distribution. Choose the least disruptive intervention likely to solve that problem, document the intervention, then compare canopy geometry and PPFD or other relevant observations after recovery.",
+    "summary": "Canopy management is applied plant architecture. Effective training links a defined structural goal with plant stage, vigor, recovery capacity, and measured canopy conditions rather than treating topping, bending, or other techniques as universal recipes.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Training changes source-sink and spatial relationships",
+        "body": "Shoot position, apical dominance, leaf area and branch distribution influence where growth occurs and how the canopy captures light. Bending, topping, pruning and support systems alter those relationships differently and impose different recovery costs.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Choose a method from the problem",
+        "columns": [
+          "Canopy problem",
+          "Possible intervention",
+          "Evidence to verify outcome"
+        ],
+        "rows": [
+          [
+            "One shoot dominates height",
+            "Bend/support/reposition",
+            "Height spread and PPFD map"
+          ],
+          [
+            "Excess apical dominance early in growth",
+            "Topping under an approved plan",
+            "Lateral growth and recovery time"
+          ],
+          [
+            "Dense interior / poor access",
+            "Selective pruning or spacing",
+            "Air movement/access and retained leaf area"
+          ],
+          [
+            "Uneven branch support",
+            "Trellis/support positioning",
+            "Shoot distribution and structural stability"
+          ],
+          [
+            "Light hotspots/shadows",
+            "Architecture + fixture/spacing review",
+            "Grid PPFD before/after"
+          ]
+        ],
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Use a goal-measure-intervene-verify cycle",
+        "items": [
+          {
+            "title": "Define the problem",
+            "body": "Describe height, crowding, shading, access or support issue in measurable terms."
+          },
+          {
+            "title": "Record stage and vigor",
+            "body": "Recovery capacity changes with developmental state and plant condition."
+          },
+          {
+            "title": "Choose the least disruptive effective method",
+            "body": "Do not default to tissue removal when positioning can achieve the goal."
+          },
+          {
+            "title": "Perform the approved intervention",
+            "body": "Use clean technique and preserve plant identity."
+          },
+          {
+            "title": "Allow recovery",
+            "body": "Avoid stacking stress before the response can be evaluated."
+          },
+          {
+            "title": "Verify the result",
+            "body": "Re-measure geometry, light distribution, access or other target outcome."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Flat does not equal uniform",
+        "setting": "A canopy appears level by eye, but a 3×3 PPFD map ranges from 480 to 910 µmol/m²/s.",
+        "prompt": "What is the strongest conclusion?",
+        "options": [
+          "The canopy is uniform because it looks flat",
+          "Architecture and/or fixture distribution still create meaningful light nonuniformity",
+          "PPFD mapping is unnecessary after training",
+          "Remove more leaves immediately"
+        ],
+        "answer": "Architecture and/or fixture distribution still create meaningful light nonuniformity.",
+        "feedback": "Visual flatness is only one part of canopy uniformity; the actual light field must be measured."
+      },
+      {
+        "type": "activity",
+        "title": "Plan and verify one canopy intervention",
+        "instructions": "Use a supplied canopy diagram or real supervised plant.",
+        "prompts": [
+          "Define the structural problem.",
+          "Choose a training method and explain why.",
+          "Identify the expected recovery cost.",
+          "Specify what you will measure before and after.",
+          "State what result would show the intervention failed."
+        ],
+        "artifact": "Canopy intervention plan and verification record",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Training is successful when it solves a measured canopy problem with an acceptable recovery cost—not when a plant simply matches a popular shape.",
+        "references": [
+          "REF-CANOPY-001"
+        ]
+      }
+    ]
   }
 }
