@@ -13,12 +13,15 @@ const check = process.argv.includes('--check');
 
 const queue = [];
 const invalid = [];
+let foundationTargets = 0;
+let producedApproved = 0;
 
 for (const rel of registries) {
   const registry = JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
   for (const asset of registry.assets ?? []) {
     if (!String(asset.id ?? '').startsWith('VIS-FOUNDATION-')) continue;
 
+    foundationTargets += 1;
     const row = {
       registry: rel,
       courseId: registry.courseId,
@@ -36,6 +39,7 @@ for (const rel of registries) {
     };
 
     if (asset.status !== 'produced' || !row.releaseApproved || !row.learnerPath) queue.push(row);
+    else producedApproved += 1;
 
     if (asset.productionSpec?.svgAllowed !== false) {
       invalid.push({ id: asset.id, issue: 'svg-policy-not-explicitly-disabled' });
@@ -60,7 +64,8 @@ const report = {
   generatedAt: new Date().toISOString(),
   scope: 'foundation-visual-production-courses-3-through-6',
   summary: {
-    foundationTargets: queue.length + 0,
+    foundationTargets,
+    producedApproved,
     remainingProductionQueue: queue.length,
     invalidProductionSpecs: invalid.length,
     productionComplete: queue.length === 0 && invalid.length === 0
