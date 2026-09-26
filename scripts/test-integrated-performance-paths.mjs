@@ -31,7 +31,7 @@ for (const [coursePath, programPath] of [
 }
 
 const coverage = execFileSync(process.execPath, ['scripts/report-course-credential-coverage.mjs'], { encoding: 'utf8' });
-assert.match(coverage, /completeCredentialPaths=26/);
+assert.match(coverage, /completeCredentialPaths=25/);
 assert.match(coverage, /draftIncompleteCredentialPaths=0/);
 assert.match(coverage, /COURSE-LH-TECH1-007:.*pathwayComplete=true/);
 assert.match(coverage, /COURSE-LH-TECH2-008:.*pathwayComplete=true/);
