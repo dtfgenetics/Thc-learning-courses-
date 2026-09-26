@@ -3,7 +3,7 @@
   "courseId": "COURSE-LH-TECH1-001",
   "reviewScope": "Authenticated binary and visual/copy QA for individual v3 PNG masters 13-18",
   "reviewDate": "2026-09-21",
-  "releasePolicy": "These binaries are review evidence only. None may be registered as a produced learner asset or marked public-approved until the listed defects are corrected and the replacement binary passes the Course 1 visual release gate.",
+  "releasePolicy": "Historical evidence only. The six binaries recorded in this file remain rejected and must never be treated as the current learner binaries. Rebuilt production masters are separately governed by the current release manifest and registry.",
   "commonFindings": [
     "All six authenticated v3 images are 384 × 512 px and therefore fail the production-resolution gate.",
     "All six v3 images incorrectly label their location as Course 1 | Module 1. Lessons 13-15 belong to Module 5; lessons 16-18 belong to Module 6.",
@@ -150,5 +150,9 @@
     "preferredPrintResolutionDpi": 300,
     "webDerivativeMinimumWidth": 1200,
     "webDerivativeMinimumHeight": 1600
-  }
+  },
+  "lifecycle": "superseded-historical-predecessor-qa",
+  "currentProductionAuthority": "visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json",
+  "currentRegistryAuthority": "visuals/ASSET-REGISTRY.json",
+  "supersessionNote": "This record preserves QA evidence for the rejected 384x512 predecessor binaries only. The reused *-v3.png public filenames now resolve to distinct rebuilt 2400x3200 production binaries with different SHA-256 values. Current release status, dimensions, digests, registry IDs, and learner paths are controlled by COURSE1-VISUAL-RELEASE-MANIFEST.json and ASSET-REGISTRY.json."
 }
