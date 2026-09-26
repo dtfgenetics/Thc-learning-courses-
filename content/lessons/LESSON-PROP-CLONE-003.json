@@ -1,20 +1,196 @@
 {
-  "id":"LESSON-PROP-CLONE-003",
-  "title":"Cloning, Adventitious Rooting and Acclimatization",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-PROP-001"],
-  "learningObjectives":["LO-PROP-CLONE-003"],
-  "estimatedMinutes":45,
-  "references":["REF-PROP-001","REF-IPM-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Vegetative cuttings reproduce the donor genotype while creating a new root system from stem tissue. Cutting quality, sanitation, hydration, rooting environment, genotype, and acclimatization all influence success.",
-    "vocabulary":[{"term":"Mother plant","definition":"A donor plant maintained to supply vegetative cuttings."},{"term":"Adventitious root","definition":"A root that forms from tissue other than an existing root, such as a stem cutting."},{"term":"Transpirational demand","definition":"The atmospheric and plant conditions driving water loss from leaves."},{"term":"Acclimatization","definition":"Gradual transition from protected propagation conditions into the normal growing environment."}],
-    "sections":[{"title":"Donor quality sets the starting point","body":"Cuttings inherit the donor genotype and begin with the physiological condition of the selected shoot. Healthy, appropriately mature material provides a stronger starting point than stressed or diseased tissue.","references":["REF-PROP-001"]},{"title":"Fresh wounds increase sanitation importance","body":"Cutting tools and propagation surfaces can move pathogens into vulnerable tissue. Clean technique reduces one avoidable source of rooting failure.","references":["REF-IPM-001"]},{"title":"Unrooted cuttings have limited water replacement","body":"Before roots form, leaves can lose water faster than the cutting can replace it. Humidity, temperature, leaf area, and airflow should reduce excessive water loss without creating persistently stagnant conditions.","references":["REF-PROP-001"]},{"title":"Acclimatization reconnects roots and shoots","body":"Visible roots do not mean a cutting is ready for abrupt environmental exposure. The transition should progressively increase normal transpiration demand while the new root system expands.","references":["REF-PROP-001"]}],
-    "workedExamples":["If freshly rooted cuttings wilt immediately outside a dome, reduce the transition rate instead of assuming the roots are nonfunctional.","If one cultivar roots slower than another, track genotype-specific timing before making large environmental changes."],
-    "commonMistakes":["Taking cuttings from obviously stressed donor tissue.","Reusing blades without sanitation.","Keeping rooted cuttings indefinitely in extremely high humidity.","Assuming all cultivars root at the same rate."],
-    "practicalApplication":"Standardize donor selection, cutting size, sanitation, media, environmental conditions, rooting checks, and acclimatization steps. Track results by genotype and batch so improvements are based on evidence.",
-    "summary":"Cloning is controlled regeneration of a new root system from donor tissue. Healthy donors, sanitation, water-loss management, genotype-aware rooting, and gradual acclimatization make the process more repeatable."
+  "id": "LESSON-PROP-CLONE-003",
+  "title": "Cloning, Adventitious Rooting and Acclimatization",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-PROP-CLONE-003"
+  ],
+  "estimatedMinutes": 45,
+  "references": [
+    "REF-PROP-001",
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Vegetative cuttings reproduce the donor genotype while creating a new root system from stem tissue. Cutting quality, sanitation, hydration, rooting environment, genotype, and acclimatization all influence success.",
+    "vocabulary": [
+      {
+        "term": "Mother plant",
+        "definition": "A donor plant maintained to supply vegetative cuttings."
+      },
+      {
+        "term": "Adventitious root",
+        "definition": "A root that forms from tissue other than an existing root, such as a stem cutting."
+      },
+      {
+        "term": "Transpirational demand",
+        "definition": "The atmospheric and plant conditions driving water loss from leaves."
+      },
+      {
+        "term": "Acclimatization",
+        "definition": "Gradual transition from protected propagation conditions into the normal growing environment."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Donor quality sets the starting point",
+        "body": "Cuttings inherit the donor genotype and begin with the physiological condition of the selected shoot. Healthy, appropriately mature material provides a stronger starting point than stressed or diseased tissue.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Fresh wounds increase sanitation importance",
+        "body": "Cutting tools and propagation surfaces can move pathogens into vulnerable tissue. Clean technique reduces one avoidable source of rooting failure.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Unrooted cuttings have limited water replacement",
+        "body": "Before roots form, leaves can lose water faster than the cutting can replace it. Humidity, temperature, leaf area, and airflow should reduce excessive water loss without creating persistently stagnant conditions.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Acclimatization reconnects roots and shoots",
+        "body": "Visible roots do not mean a cutting is ready for abrupt environmental exposure. The transition should progressively increase normal transpiration demand while the new root system expands.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If freshly rooted cuttings wilt immediately outside a dome, reduce the transition rate instead of assuming the roots are nonfunctional.",
+      "If one cultivar roots slower than another, track genotype-specific timing before making large environmental changes.",
+      "Cuttings remain turgid but show no roots by the expected batch window. The learner compares genotype, donor condition, temperature, media moisture and sanitation before increasing humidity further.",
+      "Rooted cuttings show severe wilt only after lights intensify. The acclimatization load likely increased faster than root water-supply capacity."
+    ],
+    "commonMistakes": [
+      "Taking cuttings from obviously stressed donor tissue.",
+      "Reusing blades without sanitation.",
+      "Keeping rooted cuttings indefinitely in extremely high humidity.",
+      "Assuming all cultivars root at the same rate.",
+      "Judging success only by leaf turgor before roots are confirmed.",
+      "Increasing humidity indefinitely instead of progressing acclimatization."
+    ],
+    "practicalApplication": "Standardize donor selection, cutting size, sanitation, media, environmental conditions, rooting checks, and acclimatization steps. Track results by genotype and batch so improvements are based on evidence.",
+    "summary": "Cloning is controlled regeneration of a new root system from donor tissue. Healthy donors, sanitation, water-loss management, genotype-aware rooting, and gradual acclimatization make the process more repeatable.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "A cutting must survive before it can root",
+        "body": "Detached shoots continue losing water through leaves while lacking a functional root system. Propagation conditions reduce transpirational demand long enough for wound responses and adventitious roots to develop.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Cloning checkpoints",
+        "columns": [
+          "Checkpoint",
+          "Evidence"
+        ],
+        "rows": [
+          [
+            "Donor quality",
+            "Healthy, identified, appropriate shoot"
+          ],
+          [
+            "Cut quality",
+            "Clean wound / standardized cutting size"
+          ],
+          [
+            "Early survival",
+            "Turgor without decay"
+          ],
+          [
+            "Root initiation",
+            "Visible/adventitious roots by batch window"
+          ],
+          [
+            "Root development",
+            "Roots sufficient for transition"
+          ],
+          [
+            "Acclimatization",
+            "Maintains turgor under progressively normal conditions"
+          ]
+        ],
+        "references": [
+          "REF-PROP-001",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Run a clone batch as a controlled process",
+        "items": [
+          {
+            "title": "Select healthy donors",
+            "body": "Avoid symptomatic or weak source tissue."
+          },
+          {
+            "title": "Standardize cuts",
+            "body": "Use clean tools and consistent cutting dimensions."
+          },
+          {
+            "title": "Manage water loss",
+            "body": "Balance humidity, temperature, leaf area and airflow."
+          },
+          {
+            "title": "Track rooting by genotype",
+            "body": "Record time-to-root and losses."
+          },
+          {
+            "title": "Acclimatize gradually",
+            "body": "Increase normal transpiration demand stepwise."
+          },
+          {
+            "title": "Compare batch outcomes",
+            "body": "Change one major variable at a time."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Rooted but not ready",
+        "setting": "Cuttings have short new roots but wilt as soon as the dome is fully removed.",
+        "prompt": "What is the strongest conclusion?",
+        "options": [
+          "Roots are fake",
+          "Acclimatization is too abrupt for current root capacity",
+          "Add more fertilizer",
+          "Discard the whole batch"
+        ],
+        "answer": "Acclimatization is too abrupt for current root capacity.",
+        "feedback": "Root presence does not guarantee the plant can immediately support normal transpiration demand."
+      },
+      {
+        "type": "activity",
+        "title": "Clone batch performance review",
+        "instructions": "Compare two genotype batches.",
+        "prompts": [
+          "Calculate rooting %.",
+          "Compare median rooting time.",
+          "Compare loss after acclimatization.",
+          "Identify whether failure occurs before or after root formation.",
+          "Choose one protocol variable to test next."
+        ],
+        "artifact": "Clone batch review"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Cloning success includes survival, root formation and successful acclimatization—not visible roots alone."
+      }
+    ]
   }
 }
