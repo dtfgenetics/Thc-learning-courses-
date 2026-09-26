@@ -38,6 +38,9 @@ const learnerToSourcePath = (learnerPath) => `apps/web/public/${learnerPath.repl
 
 if (pngQa) {
   assert.equal(pngQa.courseId, courseId, 'authenticated PNG QA record must belong to Course 1');
+  assert.equal(pngQa.lifecycle, 'superseded-historical-predecessor-qa', 'low-resolution v3 QA record must be explicitly historical');
+  assert.equal(pngQa.currentProductionAuthority, 'visuals/COURSE1-VISUAL-RELEASE-MANIFEST.json', 'historical QA must point to the current release authority');
+  assert.match(pngQa.supersessionNote ?? '', /2400x3200 production binaries/i, 'historical QA must explain that public v3 filenames now resolve to rebuilt production binaries');
   assert.ok(Array.isArray(pngQa.assets) && pngQa.assets.length > 0, 'authenticated PNG QA record must contain reviewed assets');
   assert.equal(new Set(pngQa.assets.map((asset) => asset.conceptId)).size, pngQa.assets.length, 'authenticated PNG QA concept IDs must be unique');
 
@@ -204,4 +207,4 @@ for (const concept of manifest.concepts) {
 
 const approvedCount = manifest.concepts.filter((concept) => concept.releaseApproved).length;
 const authenticatedRejectedCount = pngQa?.assets?.length ?? 0;
-console.log(`Course 1 visual release gate passed for ${manifest.concepts.length} primary concepts; ${approvedCount} replacement candidate(s) are approved, ${authenticatedRejectedCount} authenticated PNG candidate(s) are explicitly blocked by QA, and all remaining candidates fail closed behind the verified SVG baseline.`);
+console.log(`Course 1 visual release gate passed for ${manifest.concepts.length} primary concepts; ${approvedCount} replacement candidate(s) are approved, ${authenticatedRejectedCount} historical predecessor PNG candidate(s) remain explicitly rejected while rebuilt production binaries are governed separately, and all remaining candidates fail closed behind the verified SVG baseline.`);
