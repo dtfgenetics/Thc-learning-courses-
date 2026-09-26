@@ -78,6 +78,22 @@
   .course-practical-page-actions { display: grid; }
 }
 
+
+@media (max-height: 620px) {
+  .course-assessment-toolbar,
+  .course-assessment-navigator,
+  .course-assessment-submit-area {
+    position: static;
+  }
+  .course-assessment-panel,
+  .course-assessment-result {
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+  }
+  .course-assessment-item {
+    scroll-margin-top: 1rem;
+  }
+}
+
 @media print {
   .course-assessment-actions, .course-assessment-submit-area, .course-assessment-secondary, .course-practical-personal-status, .course-practical-page-actions { display: none !important; }
   .course-practical-panel { max-width: none; }
