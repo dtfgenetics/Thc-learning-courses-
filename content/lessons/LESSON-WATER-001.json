@@ -197,6 +197,27 @@
           "REF-IRRIGATION-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-004-001",
+          "title": "Sample identity, pH and EC measurement context",
+          "src": "/assets/course4/sample-ph-ec-context.webp",
+          "alt": "Educational water and nutrient-solution measurement board showing source, feed and root-zone samples labeled separately with pH, electrical conductivity, sample identity and measurement context.",
+          "caption": "Source, feed and root-zone measurements answer different questions. Preserve sample identity and method before comparing pH or EC.",
+          "references": [
+            "REF-IRRIGATION-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-004-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
