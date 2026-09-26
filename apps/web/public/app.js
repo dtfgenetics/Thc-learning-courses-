@@ -487,6 +487,12 @@ function renderModuleAssessment(payload) {
 
   let answered = 0;
   let correct = 0;
+  const missedObjectives = new Set();
+  const remediationSummary = document.createElement('section');
+  remediationSummary.className = 'checkpoint-remediation-summary';
+  remediationSummary.hidden = true;
+  article.append(remediationSummary);
+
   const updateSummary = () => {
     const total = Number(payload.assessment.totalItems ?? payload.items.length);
     if (answered < total) {
@@ -495,7 +501,32 @@ function renderModuleAssessment(payload) {
     }
     const percent = total ? Math.round((correct / total) * 100) : 0;
     const target = Number(payload.assessment.passingScorePercent ?? 0);
-    progressNote.textContent = `${correct}/${total} correct • ${percent}%. ${percent >= target ? 'Development mastery target met for this checkpoint.' : 'Review the missed items and aligned lessons, then try another shuffled checkpoint.'}`;
+    progressNote.textContent = `${correct}/${total} correct • ${percent}%. ${percent >= target ? 'Development mastery target met for this checkpoint.' : 'Review the aligned lessons below, then try another shuffled checkpoint.'}`;
+
+    remediationSummary.replaceChildren();
+    const lessonTargets = new Map();
+    for (const objectiveId of missedObjectives) {
+      const targetLesson = payload.remediationByObjective?.[objectiveId];
+      if (targetLesson?.lessonId) lessonTargets.set(targetLesson.lessonId, targetLesson);
+    }
+    if (!lessonTargets.size) {
+      remediationSummary.hidden = true;
+      return;
+    }
+    remediationSummary.hidden = false;
+    remediationSummary.append(text('h3', 'Review these lessons before your next attempt'));
+    remediationSummary.append(text('p', 'These recommendations come from the learning objectives missed in this checkpoint.', 'portal-result-note'));
+    const actions = document.createElement('div');
+    actions.className = 'checkpoint-remediation-actions';
+    for (const targetLesson of lessonTargets.values()) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'practice-review-button';
+      button.textContent = targetLesson.lessonTitle ?? 'Review aligned lesson';
+      button.addEventListener('click', () => openLesson(targetLesson.lessonId));
+      actions.append(button);
+    }
+    remediationSummary.append(actions);
   };
 
   for (const [itemIndex, item] of (payload.items ?? []).entries()) {
@@ -530,7 +561,11 @@ function renderModuleAssessment(payload) {
           });
           fieldset.dataset.answered = 'true';
           answered += 1;
-          if (result.isCorrect) correct += 1;
+          if (result.isCorrect) {
+            correct += 1;
+          } else if (item.objective) {
+            missedObjectives.add(item.objective);
+          }
           feedback.dataset.state = result.isCorrect ? 'correct' : 'incorrect';
           feedback.textContent = formativeFeedback(result);
           remediation.replaceChildren();
