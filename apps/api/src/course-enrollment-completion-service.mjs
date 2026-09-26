@@ -32,12 +32,23 @@ function latestIso(values = []) {
   return valid.length ? valid.at(-1) : null;
 }
 
+function academicCompletionModuleIds(course) {
+  const explicit = course?.extensions?.academicCompletionModules;
+  if (Array.isArray(explicit) && explicit.length > 0) return [...new Set(explicit)];
+
+  const dedicatedPrefix = String(course?.id ?? '').replace(/^COURSE-/, 'MOD-');
+  const dedicated = (course?.modules ?? []).filter((moduleId) => String(moduleId).startsWith(dedicatedPrefix));
+  return dedicated.length ? [...new Set(dedicated)] : [...new Set(course?.modules ?? [])];
+}
+
 export function loadCourseAcademicCompletionBundle(courseId) {
   const course = readById('courses', courseId);
   if (!course || course.status !== 'published' || !course.finalAssessment) return null;
   const modules = [];
   const lessons = [];
-  for (const moduleId of course.modules ?? []) {
+  const completionModuleIds = academicCompletionModuleIds(course);
+  if (completionModuleIds.length === 0) return null;
+  for (const moduleId of completionModuleIds) {
     const module = readById('modules', moduleId);
     if (!module || module.status !== 'published') return null;
     modules.push(module);
@@ -54,6 +65,7 @@ export function loadCourseAcademicCompletionBundle(courseId) {
     modules,
     lessons,
     assessment,
+    completionModuleIds,
     performanceAssessmentId: assessment.extensions?.linkedPerformanceAssessment ?? null
   };
 }
