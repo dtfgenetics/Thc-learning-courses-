@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const registries = [
+  'visuals/COURSE2-ASSET-REGISTRY.json',
   'visuals/COURSE3-ASSET-REGISTRY.json',
   'visuals/COURSE4-ASSET-REGISTRY.json',
   'visuals/COURSE5-ASSET-REGISTRY.json',
@@ -63,7 +64,7 @@ for (const rel of registries) {
 
 const report = {
   generatedAt: new Date().toISOString(),
-  scope: 'foundation-visual-production-courses-3-through-6',
+  scope: 'foundation-visual-production-courses-2-through-6',
   summary: {
     foundationTargets,
     producedApproved,
