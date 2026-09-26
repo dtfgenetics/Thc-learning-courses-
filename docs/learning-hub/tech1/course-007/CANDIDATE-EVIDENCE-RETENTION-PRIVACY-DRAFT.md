@@ -70,20 +70,20 @@ Use role-based access. At minimum distinguish:
 
 Access should be limited to the minimum information required for the role.
 
-## Retention schedule — unresolved governance item
+## Retention schedule — issuer baseline pending approval
 
-The final retention periods must be approved based on legal, accreditation/business, audit, appeals and credential-verification needs. Until approved, the system should not silently delete or indefinitely retain credential evidence under an undocumented rule.
+The project now has a documented issuer baseline so the system does not rely on silent indefinite retention. These periods are **not represented as legal requirements** and remain subordinate to applicable law, contracts, accreditation requirements and approved privacy/legal review:
 
-The approved schedule should separately define retention for:
+- failed practice attempts: **90 days after last practice activity**, unless linked to an active appeal, security investigation or required audit record;
+- readiness attempts: **12 months after last readiness activity**, unless superseded by a credential attempt or active review;
+- credential attempts: **7 years after final attempt disposition**, or longer when required by applicable law, contract, accreditation or an unresolved appeal/security matter;
+- evaluator/calibration evidence: **5 years after the calibration evidence is superseded or evaluator authorization ends, whichever is later**;
+- appeal/adjudication records: **7 years after final appeal disposition**, or longer while a related legal/security matter remains open;
+- issued credential verification records: **active credential lifetime plus 7 years after expiration, revocation or retirement**;
+- revoked/expired credential records: **7 years after revocation or expiration**, retaining only the minimum public verification projection needed for historical status;
+- security logs: **24 months by default**, with incident-linked logs retained with the incident record until the longer applicable retention requirement expires.
 
-- failed/practice attempts;
-- readiness attempts;
-- credential attempts;
-- evaluator/calibration evidence;
-- appeal/adjudication records;
-- issued credential verification records;
-- revoked/expired credentials where applicable;
-- security logs.
+The baseline is defined in `registry/candidate-governance-controls.json`. It must not be activated as an operational deletion schedule until the required approvals are recorded.
 
 ## Integrity and auditability
 
@@ -132,4 +132,4 @@ When approved retention periods expire, disposal should be controlled and audita
 
 ## Current status
 
-Governance structure is defined, but final retention periods and legal/privacy approvals remain open. This document satisfies the machine requirement for an explicit controlled draft; it does not close the privacy release gate.
+Governance structure and a proposed retention schedule are defined and machine-aligned. Privacy/legal approval, security approval, organizational approval and operational-use authorization remain open. This document satisfies the machine requirement for an explicit controlled draft; it does not close the privacy release gate.
