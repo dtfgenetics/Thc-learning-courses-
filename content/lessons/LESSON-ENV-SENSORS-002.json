@@ -189,7 +189,26 @@
         "spacedRetrieval": [
           "Explain why a daily average can hide a short humidity spike."
         ]
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-003-003",
+          "title": "Sensor placement and representativeness triage",
+          "src": "/assets/course3/sensor-representativeness-triage.webp",
+          "alt": "Educational sensor placement diagram comparing representative canopy sensor positions with readings biased by walls, equipment airflow and atypical microclimates, followed by a verification sequence.",
+          "caption": "A valid sensor can still answer the wrong question when it is placed in an unrepresentative microclimate. Verify location and calibration before changing room controls.",
+          "references": [
+            "REF-VPD-002"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-003-003",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE3-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
   }
 }
