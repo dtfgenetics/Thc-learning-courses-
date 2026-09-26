@@ -184,7 +184,7 @@ async function renderCredentialProgress() {
   lessonView.focus();
 
   try {
-    const [profileResponse, applicationsResponse, enrollmentResponse, catalogResponse, progressResponse, transcriptResponse] = await Promise.all([
+    const [profileResponse, applicationsResponse, enrollmentResponse, catalogResponse, tech1ProgressResponse, tech1TranscriptResponse, progressResponse, transcriptResponse] = await Promise.all([
       fetch('/api/v1/me/profile', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
@@ -198,6 +198,14 @@ async function renderCredentialProgress() {
         credentials: 'same-origin'
       }),
       fetch('/api/catalog', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-I-001/progress', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-I-001/transcript', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
       }),
@@ -219,6 +227,12 @@ async function renderCredentialProgress() {
       throw new Error(`Enrollment status unavailable (${enrollmentResponse.status}).`);
     }
     if (!catalogResponse.ok) throw new Error(`Course catalog unavailable (${catalogResponse.status}).`);
+    for (const [response, label] of [[tech1ProgressResponse, 'Technician I credential progress'], [tech1TranscriptResponse, 'Technician I competency transcript']]) {
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403) throw new Error(`${label} is available after learner authentication.`);
+        throw new Error(`${label} unavailable (${response.status}).`);
+      }
+    }
     if (!progressResponse.ok) {
       if (progressResponse.status === 401 || progressResponse.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
       throw new Error(`Credential progress unavailable (${progressResponse.status}).`);
@@ -231,6 +245,8 @@ async function renderCredentialProgress() {
     const applicationsData = await applicationsResponse.json();
     const enrollmentData = await enrollmentResponse.json();
     const catalogData = await catalogResponse.json();
+    const tech1Data = await tech1ProgressResponse.json();
+    const tech1TranscriptData = await tech1TranscriptResponse.json();
     const data = await progressResponse.json();
     const transcriptData = await transcriptResponse.json();
     panel.querySelector('.status')?.remove();
@@ -383,6 +399,44 @@ async function renderCredentialProgress() {
     }
     panel.append(academicSection);
 
+    const tech1Summary = document.createElement('section');
+    tech1Summary.className = 'portal-progress-section credential-program-summary';
+    tech1Summary.append(text('h3', 'Technician I professional credential progress'));
+    const tech1Cards = document.createElement('div');
+    tech1Cards.className = 'portal-progress-summary';
+    const tech1Attempts = tech1Data.assessmentAttempts ?? [];
+    const tech1BestScore = tech1Attempts.filter((row) => row.status === 'scored' && row.scorePercent != null).reduce((best, row) => Math.max(best, Number(row.scorePercent)), -1);
+    const tech1CoursesRequired = tech1Data.credential?.requiredCourses ?? [];
+    const tech1MissingCourses = (tech1Data.eligibility?.missingRequirements ?? []).filter((row) => row.type === 'course-completion').length;
+    const tech1CoursesComplete = Math.max(0, tech1CoursesRequired.length - tech1MissingCourses);
+    const tech1PerformancePassed = (tech1Data.performanceAssessments ?? []).filter((row) => row.status === 'passed' && Number(row.criticalErrorCount ?? 0) === 0).length;
+    const tech1Demonstrated = (tech1TranscriptData.competencies ?? []).filter((row) => row.masteryLevel === 'demonstrated').length;
+    const tech1ReleasePending = tech1Data.eligibility?.requirementsSatisfied === true && tech1Data.eligibility?.releaseAuthorized === false;
+    const tech1CredentialStatus = tech1Data.eligibility?.eligible ? 'Eligible' : tech1ReleasePending ? 'Release pending' : 'In progress';
+    tech1Cards.append(
+      summaryCard('Credential status', tech1CredentialStatus, tech1Data.credential?.title ?? 'THC Cultivation Technician I'),
+      summaryCard('Required courses', `${tech1CoursesComplete}/${tech1CoursesRequired.length}`, 'All seven Technician I courses are required'),
+      summaryCard('Credential assessment', tech1BestScore >= 0 ? `${tech1BestScore.toFixed(0)}%` : 'Not attempted', `Current configured threshold ${tech1Data.credential?.minimumPassingScorePercent ?? 80}%`),
+      summaryCard('Practical & capstone evidence', `${tech1PerformancePassed}/${(tech1Data.performanceAssessments ?? []).length}`, 'Practicals A–F plus integrated capstone'),
+      summaryCard('Competencies demonstrated', String(tech1Demonstrated), `${(tech1TranscriptData.competencies ?? []).length} transcript records`)
+    );
+    tech1Summary.append(tech1Cards);
+    if (!(tech1Data.eligibility?.eligible)) {
+      const tech1Blockers = document.createElement('div');
+      tech1Blockers.className = 'portal-blockers';
+      tech1Blockers.append(text('h4', 'Technician I requirements still open'));
+      const tech1List = document.createElement('ul');
+      for (const row of tech1Data.eligibility?.missingRequirements ?? []) {
+        const humanType = row.type === 'assessment' ? 'Credential assessment' : row.type === 'performance-assessment' ? 'Practical/capstone' : row.type === 'course-completion' ? 'Course completion' : 'Portfolio artifact';
+        tech1List.append(text('li', `${humanType}: ${row.id} — ${statusLabel(row.reason)}`));
+      }
+      for (const row of tech1Data.eligibility?.releaseBlockers ?? []) tech1List.append(text('li', `Credential release: ${statusLabel(row.reason)}`));
+      if (!tech1List.children.length) tech1List.append(text('li', 'No unresolved Technician I requirement details are available.'));
+      tech1Blockers.append(tech1List);
+      tech1Summary.append(tech1Blockers);
+    }
+    panel.append(tech1Summary);
+
     const summary = document.createElement('section');
     summary.className = 'portal-progress-summary';
     const attempts = data.assessmentAttempts ?? [];
@@ -402,7 +456,7 @@ async function renderCredentialProgress() {
       summaryCard('Performance evidence', `${performancePassed}/${(data.performanceAssessments ?? []).length}`, '7 practicals + capstone'),
       summaryCard('Portfolio evidence', `${portfolioComplete}/${(data.portfolioArtifacts ?? []).length}`, 'Employment artifacts')
     );
-    panel.append(text('h3', 'Professional credential progress'), summary);
+    panel.append(text('h3', 'Technician II professional credential progress'), summary);
 
     if (!(data.eligibility?.eligible)) {
       const blocker = document.createElement('section');
