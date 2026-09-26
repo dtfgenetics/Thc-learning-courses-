@@ -90,7 +90,7 @@ try {
   assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-ENV-ADV-001'), true);
   assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-PLANT-BIO-001'), true, 'Technician II credential explicitly demonstrates plant-biology competency');
   assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-TC-ASEPTIC-001'), false, 'credential projection must exclude evidence outside competenciesDemonstrated');
-  assert.equal(body.summary.demonstratedCompetencies, 1);
+  assert.equal(body.summary.demonstratedCompetencies, 2, 'summary must count both demonstrated competencies inside the canonical Technician II credential scope');
   assert.equal(body.assessments.length, 1);
   assert.equal(body.assessments[0].status, 'passed');
   assert.equal(body.performanceAssessments.length, 8);
