@@ -3,24 +3,39 @@
   "id": "PUBLIC-RELEASE-LH-TECH1-002",
   "courseId": "COURSE-LH-TECH1-002",
   "title": "Plant Observation, Growth Stages & Crop Records",
-  "publicationState": "published",
+  "publicationState": "partial-published",
   "publicScope": {
-    "modules": ["MOD-LH-TECH1-002-OBSERVATION"],
-    "assessments": ["ASSESS-LH-TECH1-002-M01", "ASSESS-LH-TECH1-002-FINAL"],
+    "modules": [
+      "MOD-PLANT-BIO-001",
+      "MOD-LH-TECH1-001-RECORDS",
+      "MOD-LH-TECH1-002-OBSERVATION"
+    ],
+    "assessments": [
+      "ASSESS-PLANT-BIO-MODULE-001",
+      "ASSESS-LH-TECH1-001-M06",
+      "ASSESS-LH-TECH1-002-M01",
+      "ASSESS-LH-TECH1-002-FINAL"
+    ],
     "publicCourseItems": 32,
-    "practicalIds": ["PRACTICAL-TECH1-A"],
+    "practicalIds": [
+      "PRACTICAL-TECH1-A"
+    ],
     "studentSources": [
       "content/lessons/LESSON-LH-TECH1-002-01.json",
       "content/lessons/LESSON-LH-TECH1-002-02.json",
       "content/lessons/LESSON-LH-TECH1-002-03.json",
       "content/lessons/LESSON-LH-TECH1-002-04.json"
+    ],
+    "excludedModules": [
+      "MOD-FLOWER-001"
     ]
   },
   "publicationBoundary": {
-    "learnerPackage": "released",
+    "learnerPackage": "partial-released",
     "courseTests": "released-for-learning",
     "credentialExam": "restricted",
-    "credentialDecision": "restricted-governance"
+    "credentialDecision": "restricted-governance",
+    "openAcademicDependency": "MOD-FLOWER-001"
   },
   "excludedFromPublicRelease": [
     "credential-purpose exam items and answer data",
@@ -29,5 +44,5 @@
     "assessor calibration records",
     "credential issuance secrets and signing material"
   ],
-  "boundary": "This manifest authorizes the learner-facing academic training package for public study. It does not establish validated certification use or professional credential issuance readiness."
+  "boundary": "This manifest authorizes a scoped learner-facing academic release for the modules listed in publicScope.modules. MOD-FLOWER-001 remains excluded until its required raster instructional visuals and final academic release checks are complete. This manifest does not establish validated certification use or professional credential issuance readiness."
 }
