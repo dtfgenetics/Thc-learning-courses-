@@ -1,16 +1,16 @@
 {
   "courseId": "COURSE-LH-TECH1-002",
-  "version": "0.13.0",
-  "updated": "2026-09-22",
-  "academicPublication": "published",
-  "machineResolvableWorkComplete": true,
+  "version": "0.14.0",
+  "updated": "2026-09-26",
+  "academicPublication": "partial-published",
+  "machineResolvableWorkComplete": false,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 2 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete, including the Course 2 raster-first learner-asset cutover. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Machine-resolvable source, runtime, and deployed-surface verification is complete for the current pinned snapshot.",
+  "machineCompletionBoundary": "Course 2 is in a truthful scoped academic release. Plant Biology, Records, and Crop Observation modules are public. Flowering, Maturity and Harvest Foundations remains academically blocked until its required raster instructional visuals are produced, QA-reviewed, wired, and the foundation readiness gate passes. Professional certification evidence remains separately fail-closed.",
   "domains": [
     {
       "id": "canonical-content-audit",
-      "state": "source-structure-complete-human-review-open",
+      "state": "scoped-release-three-modules-public-flowering-foundation-open",
       "evidence": [
         "content/courses/COURSE-LH-TECH1-002.json",
         "content/modules/MOD-LH-TECH1-002-OBSERVATION.json",
@@ -32,7 +32,7 @@
     },
     {
       "id": "learner-application-package",
-      "state": "runtime-verified-needs-deployed-responsive-and-human-review",
+      "state": "partial-public-release-flowering-foundation-open",
       "evidence": [
         "docs/learning-hub/tech1/course-002/LEARNER-MATERIALS.md",
         "visuals/COURSE2-ASSET-REGISTRY.json",
@@ -42,7 +42,7 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "production-raster-cutover-complete-manual-responsive-review-open",
+      "state": "core-course-rasters-complete-foundation-expansion-open",
       "evidence": [
         "visuals/COURSE2-ASSET-REGISTRY.json",
         "scripts/test-course2-visual-registry.mjs",
@@ -51,7 +51,7 @@
         "apps/web/public/assets/course2/*.webp"
       ],
       "humanGateRequired": true,
-      "note": "All 10 governed Course 2 lossless WebP assets are the active learner-facing production paths at a minimum 1600 px shortest side with source/candidate SHA-256 provenance and deterministic binary QA. Legacy SVG files remain provenance/reference sources only. Manual responsive/accessibility review remains open."
+      "note": "The original governed Course 2 raster package is complete. Two additional foundation visuals are now required for the expanded Flowering module: VIS-FOUNDATION-FLOWER-PHOTOPERIOD-001 and VIS-FOUNDATION-FLOWER-MATURITY-001."
     },
     {
       "id": "evidence-and-source-audit",
@@ -136,7 +136,14 @@
       "humanGateRequired": true
     }
   ],
-  "nextMachineActions": [],
+  "nextMachineActions": [
+    "Produce and QA VIS-FOUNDATION-FLOWER-PHOTOPERIOD-001",
+    "Produce and QA VIS-FOUNDATION-FLOWER-MATURITY-001",
+    "Wire approved Flowering foundation rasters into learner lessons",
+    "Run foundation:academic-readiness:check",
+    "Publish MOD-FLOWER-001 only after the academic gate passes",
+    "Reconcile Course 2 release manifest to full academic publication after Flowering publication"
+  ],
   "nextHumanActions": [
     "technical/curriculum review",
     "instructional-design review",
@@ -183,7 +190,7 @@
   "ownerReleaseApproval": {
     "state": "approved",
     "date": "2026-09-22",
-    "scope": "academic raster publication and machine-resolvable course package completion",
+    "scope": "scoped academic publication of completed Course 2 modules; Flowering foundation remains excluded pending visual completion",
     "boundary": "Does not establish external validation, accreditation, psychometric validation, standard setting, or professional credential issuance."
   }
 }
