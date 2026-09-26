@@ -1,5 +1,5 @@
 {
-  "version": "0.10.0",
+  "version": "0.11.0",
   "status": "published",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -44,7 +44,7 @@
       4,
       13
     ],
-    "maturity": "instruction-assessment-visual-practice-crosswalk-published-academic",
+    "maturity": "partial-academic-release-flowering-foundation-visuals-open",
     "developmentDependencies": [
       "MOD-PLANT-BIO-001",
       "MOD-FLOWER-001",
@@ -73,10 +73,15 @@
     "totalLearnerAssetCount": 10,
     "visualRegistry": "visuals/COURSE2-ASSET-REGISTRY.json",
     "visualDriveFolderId": "1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o",
-    "academicPublicationStatus": "owner-approved-public-academic-release",
+    "academicPublicationStatus": "partial-public-academic-release",
     "academicPublicationDate": "2026-09-22",
     "professionalCredentialUseAuthorized": false,
     "encyclopediaSubstitutionAllowed": false,
-    "continuousImprovement": true
+    "continuousImprovement": true,
+    "academicPublicationBoundary": "Public academic access is authorized for the published Plant Biology, Records and Crop Observation modules. The Flowering, Maturity and Harvest foundation remains excluded until its required raster instructional visuals are produced, QA-reviewed and published.",
+    "openAcademicDependencies": [
+      "MOD-FLOWER-001"
+    ],
+    "machineResolvableWorkComplete": false
   }
 }
