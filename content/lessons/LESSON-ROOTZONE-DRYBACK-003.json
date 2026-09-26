@@ -172,6 +172,27 @@
         "tone": "evidence",
         "body": "Use dryback as a measured trajectory tied to crop demand and substrate behavior, not a fixed clock."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-004-002",
+          "title": "Root-zone moisture, drainage and dryback trend",
+          "src": "/assets/course4/root-zone-dryback-trend.webp",
+          "alt": "Educational root-zone trend graphic showing irrigation, drainage and changing moisture over time so dryback is read as a trajectory rather than one isolated value.",
+          "caption": "Dryback is a time-series pattern. Read post-irrigation moisture, drainage and the trajectory to the next irrigation together.",
+          "references": [
+            "REF-IRRIGATION-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-004-002",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
