@@ -32,6 +32,8 @@ for (const marker of [
   'Current academic development threshold:',
   'Practical/performance evidence and professional credential issuance remain separate decisions.',
   'Open Field References',
+  'View course record',
+  "document.querySelector('#tab-course-record')?.click()",
   'course-assessment-navigator',
   'Assessment question navigator',
   'updateQuestionNavigator(panel)'
