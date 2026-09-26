@@ -309,7 +309,26 @@
           "transcriptRequired": false,
           "nonVisualAlternative": "Provide temperature/RH tables with calculated examples so the lesson can be completed without charts."
         }
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-003-001",
+          "title": "Temperature, relative humidity and VPD measurement context",
+          "src": "/assets/course3/environment-measurement-context.webp",
+          "alt": "Educational environmental measurement board showing canopy temperature and relative humidity recorded together for vapor pressure deficit context, with measurement location, time and units kept visible.",
+          "caption": "Temperature and relative humidity only become useful VPD evidence when the measurement context—location, time, units and sensor—is preserved.",
+          "references": [
+            "REF-VPD-002"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-003-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE3-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
   }
 }
