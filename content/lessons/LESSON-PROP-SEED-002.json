@@ -166,6 +166,28 @@
         "tone": "evidence",
         "body": "A strong seed lot is not only viable; it also emerges predictably and establishes normally under controlled conditions."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-010",
+          "title": "Seed anatomy and germination physiology",
+          "src": "/assets/course5/seed-anatomy-germination.webp",
+          "alt": "Cannabis seed anatomy and germination sequence showing seed coat, embryo, cotyledons, radicle, imbibition, radicle emergence and early seedling establishment.",
+          "caption": "Track germination as a biological sequence, not a single event: imbibition, radicle emergence and seedling establishment are separate milestones.",
+          "references": [
+            "REF-PROP-001",
+            "REF-CANNABIS-SEED-GERMINATION-2021"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-010",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
