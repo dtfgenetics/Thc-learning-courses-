@@ -209,9 +209,9 @@ function renderCatalog() {
 
     if (course.credentialBearing) {
       const academicRequirement = course.finalAssessment?.academicPracticalRequired
-        ? 'Academic course completion requires the graded final plus the linked academic practical.'
-        : 'Academic course completion requires the graded final; professional practical/performance requirements are tracked separately.';
-      details.append(text('p', `Lesson progress only. ${academicRequirement} Professional credential issuance remains a separate process.`, 'course-meta'));
+        ? 'Lesson progress only. Academic course completion requires the graded final plus the linked academic practical.'
+        : 'Lesson progress only. Academic course completion requires the graded final; professional practical/performance requirements are tracked separately.';
+      details.append(text('p', `${academicRequirement} Professional credential issuance remains a separate process.`, 'course-meta'));
     }
     if (course.finalAssessment) {
       const final = course.finalAssessment;
