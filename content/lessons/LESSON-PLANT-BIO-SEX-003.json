@@ -233,7 +233,133 @@
           }
         }
       ]
-    }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Classify reproductive expression from structures, not labels",
+        "body": "Feminized, regular, monoecious and cultivar descriptors change expectations, but actual reproductive expression should be documented from visible floral morphology at known plant locations and stages.",
+        "references": [
+          "REF-SEX-2026-001",
+          "REF-FLOWER-MORPH-2023-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Reproductive evidence and its meaning",
+        "columns": [
+          "Evidence",
+          "What it supports",
+          "What it does not prove"
+        ],
+        "rows": [
+          [
+            "Pistillate reproductive structures",
+            "Observed female reproductive morphology",
+            "Future absence of pollen-producing tissue"
+          ],
+          [
+            "Staminate/anther structures",
+            "Observed pollen-producing morphology",
+            "The cause of that expression"
+          ],
+          [
+            "Ambiguous early primordia",
+            "Need for follow-up observation",
+            "Permanent sex classification"
+          ],
+          [
+            "Seed category",
+            "Prior expectation/probability",
+            "Guaranteed later expression"
+          ],
+          [
+            "Unexpected seed formation",
+            "Evidence that fertilization occurred",
+            "Identity of pollen source without investigation"
+          ]
+        ],
+        "references": [
+          "REF-SEX-2026-001",
+          "REF-FLOWER-MORPH-2023-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Scout reproductive morphology consistently",
+        "items": [
+          {
+            "title": "Preserve identity",
+            "body": "Record plant/lot and cultivar."
+          },
+          {
+            "title": "Map observation location",
+            "body": "Record node, branch or floral site."
+          },
+          {
+            "title": "Name the visible structure",
+            "body": "Separate confirmed morphology from uncertainty."
+          },
+          {
+            "title": "Record developmental stage",
+            "body": "Interpret early versus mature structures differently."
+          },
+          {
+            "title": "Repeat uncertain observations",
+            "body": "Do not force a permanent classification from incomplete morphology."
+          },
+          {
+            "title": "Escalate unexpected pollen-producing tissue",
+            "body": "Follow crop objective and facility procedure rather than improvising disposition."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Feminized seed, unexpected anther",
+        "setting": "A plant grown from feminized seed develops a confirmed pollen-producing structure during flowering.",
+        "prompt": "What is the strongest first response?",
+        "options": [
+          "Document the structure, location and timing and follow the facility isolation/escalation procedure",
+          "Ignore it because the seed label guarantees pistillate expression",
+          "Assume every nearby plant is already seeded",
+          "Destroy the entire room without review"
+        ],
+        "answer": "Document the structure, location and timing and follow the facility isolation/escalation procedure.",
+        "feedback": "Seed category changes probability but does not replace direct reproductive scouting."
+      },
+      {
+        "type": "activity",
+        "title": "Build a pollination-risk pathway",
+        "instructions": "Use a simulated facility with one pollen source and multiple receptive flowering zones.",
+        "prompts": [
+          "Identify the pollen source.",
+          "Identify receptive targets and overlapping timing.",
+          "Map likely air, personnel, equipment or plant-material movement pathways.",
+          "Mark containment controls.",
+          "State what evidence would be collected if unintended seed is later found."
+        ],
+        "artifact": "Pollination source-pathway-target map",
+        "references": [
+          "REF-SEX-2026-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Evidence boundary",
+        "tone": "warning",
+        "body": "Sex-expression instability can involve genetic, developmental, hormonal, treatment and environmental factors. Do not assign a universal one-stressor cause from morphology alone.",
+        "references": [
+          "REF-SEX-2026-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Reproductive management depends on repeated morphology-based observation, crop objective, timing, containment and traceable records—not assumptions from seed labels alone."
+      }
+    ]
   },
   "extensions": {
     "migration": {
