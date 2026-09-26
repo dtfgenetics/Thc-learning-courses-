@@ -42,9 +42,14 @@ function syncCatalogViewport() {
 function renderWelcome() {
   const card = document.createElement('div');
   card.className = 'welcome-card';
-  card.append(text('p', 'Start here', 'eyebrow'));
-  card.append(text('h2', 'Choose a lesson'));
-  card.append(text('p', 'Select a course and lesson from the catalog. You can also review credential progress, use the learning calculators, or verify an Academy credential.'));
+  card.append(text('p', 'Recommended next step', 'eyebrow'));
+  card.append(text('h2', 'Start with Cultivation Technician I'));
+  card.append(text('p', 'Begin with Course 1 if you are new to the Academy, or continue from the course outline. The pathway builds plant science, practical reasoning and cultivation skill in sequence.'));
+  const start = document.createElement('a');
+  start.className = 'academy-primary-action';
+  start.href = '?course=COURSE-LH-TECH1-001';
+  start.textContent = 'Open Course 1';
+  card.append(start);
   lessonView.replaceChildren(card);
   lessonView.focus();
 }
