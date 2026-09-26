@@ -381,7 +381,10 @@
     "candidate-governance:privacy-legal-prep:test": "node scripts/test-candidate-privacy-legal-review-preparation.mjs",
     "credential:private:test": "node scripts/test-private-learner-credentials-api.mjs",
     "certification:dependency-integrity": "node scripts/check-published-course-dependency-integrity.mjs",
-    "certification:dependency-integrity:check": "node scripts/check-published-course-dependency-integrity.mjs --check"
+    "certification:dependency-integrity:check": "node scripts/check-published-course-dependency-integrity.mjs --check",
+    "foundation:academic-readiness": "node scripts/report-foundation-academic-readiness.mjs",
+    "foundation:academic-readiness:json": "node scripts/report-foundation-academic-readiness.mjs --json",
+    "foundation:academic-readiness:check": "node scripts/report-foundation-academic-readiness.mjs --check"
   },
   "dependencies": {
     "ajv": "8.20.0",
