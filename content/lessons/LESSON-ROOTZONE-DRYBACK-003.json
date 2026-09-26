@@ -1,20 +1,177 @@
 {
-  "id":"LESSON-ROOTZONE-DRYBACK-003",
-  "title":"Dryback, Irrigation Frequency and Root-Zone Moisture Dynamics",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-ROOTZONE-001"],
-  "learningObjectives":["LO-ROOTZONE-DRYBACK-003"],
-  "estimatedMinutes":35,
-  "references":["REF-IRRIGATION-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Dryback describes how the root zone loses water between irrigations. The rate depends on plant demand, root mass, media properties, container size, temperature, humidity, and irrigation strategy, so it should be measured rather than assumed.",
-    "vocabulary":[{"term":"Dryback","definition":"The reduction in root-zone water content between irrigation events."},{"term":"Irrigation frequency","definition":"How often water or nutrient solution is applied to the root zone."},{"term":"Container capacity","definition":"A practical moisture state after a saturated container has drained excess gravitational water."}],
-    "sections":[{"title":"Dryback is a trajectory","body":"One moisture reading does not describe how quickly the root zone is changing. Repeated weight, sensor, or volumetric observations reveal the trajectory between irrigations.","references":["REF-IRRIGATION-001"]},{"title":"Roots and environment change water use","body":"Larger canopies, stronger light, warmer conditions, lower humidity, and more developed root systems can increase water use. Irrigation frequency should therefore evolve with the crop.","references":["REF-IRRIGATION-001"]},{"title":"Too wet and too dry have different risks","body":"Prolonged saturation can restrict gas exchange while excessive drying can limit water availability and concentrate dissolved ions. The useful range depends on the substrate and crop context.","references":["REF-IRRIGATION-001"]}],
-    "workedExamples":["If a container that once dried in two days now dries in one, increased plant demand may require a frequency change even though the media did not change.","If EC rises while containers are drying much farther between irrigations, examine water loss and concentration together."],
-    "commonMistakes":["Defining dryback from elapsed hours alone.","Using one irrigation frequency throughout the entire crop lifecycle.","Treating saturated and adequately moist media as equivalent."],
-    "practicalApplication":"Track container weight or moisture with a consistent method at irrigation and at selected intervals, compare the curve with plant size and environment, and adjust frequency based on the observed root-zone trajectory.",
-    "summary":"Dryback is a dynamic root-zone process. Measuring how moisture changes over time allows irrigation frequency to follow plant demand and substrate behavior instead of a fixed clock."
+  "id": "LESSON-ROOTZONE-DRYBACK-003",
+  "title": "Dryback, Irrigation Frequency and Root-Zone Moisture Dynamics",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ROOTZONE-001"
+  ],
+  "learningObjectives": [
+    "LO-ROOTZONE-DRYBACK-003"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Dryback describes how the root zone loses water between irrigations. The rate depends on plant demand, root mass, media properties, container size, temperature, humidity, and irrigation strategy, so it should be measured rather than assumed.",
+    "vocabulary": [
+      {
+        "term": "Dryback",
+        "definition": "The reduction in root-zone water content between irrigation events."
+      },
+      {
+        "term": "Irrigation frequency",
+        "definition": "How often water or nutrient solution is applied to the root zone."
+      },
+      {
+        "term": "Container capacity",
+        "definition": "A practical moisture state after a saturated container has drained excess gravitational water."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Dryback is a trajectory",
+        "body": "One moisture reading does not describe how quickly the root zone is changing. Repeated weight, sensor, or volumetric observations reveal the trajectory between irrigations.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Roots and environment change water use",
+        "body": "Larger canopies, stronger light, warmer conditions, lower humidity, and more developed root systems can increase water use. Irrigation frequency should therefore evolve with the crop.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Too wet and too dry have different risks",
+        "body": "Prolonged saturation can restrict gas exchange while excessive drying can limit water availability and concentrate dissolved ions. The useful range depends on the substrate and crop context.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If a container that once dried in two days now dries in one, increased plant demand may require a frequency change even though the media did not change.",
+      "If EC rises while containers are drying much farther between irrigations, examine water loss and concentration together.",
+      "A crop's overnight dryback increases after canopy expansion. The irrigation schedule may need adjustment even though the substrate did not change.",
+      "Two containers reach the same final moisture but one dries much faster. The trajectory—not only the endpoint—reveals different plant demand or delivery behavior."
+    ],
+    "commonMistakes": [
+      "Defining dryback from elapsed hours alone.",
+      "Using one irrigation frequency throughout the entire crop lifecycle.",
+      "Treating saturated and adequately moist media as equivalent.",
+      "Using dryback percentage without defining the reference point.",
+      "Adjusting frequency without checking irrigation volume and distribution."
+    ],
+    "practicalApplication": "Track container weight or moisture with a consistent method at irrigation and at selected intervals, compare the curve with plant size and environment, and adjust frequency based on the observed root-zone trajectory.",
+    "summary": "Dryback is a dynamic root-zone process. Measuring how moisture changes over time allows irrigation frequency to follow plant demand and substrate behavior instead of a fixed clock.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Dryback is a time-series measurement",
+        "body": "The useful information is how the root zone moves from post-irrigation water content toward the next irrigation point. Rate and shape of that curve reflect plant demand, substrate, container, environment and delivery.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "What changes dryback rate",
+        "columns": [
+          "Driver",
+          "Expected effect"
+        ],
+        "rows": [
+          [
+            "Larger canopy / higher light",
+            "Usually faster water use"
+          ],
+          [
+            "Warmer/drier air",
+            "Can increase atmospheric demand"
+          ],
+          [
+            "Larger root system",
+            "Can increase uptake capacity"
+          ],
+          [
+            "Higher-retention medium",
+            "Often slower change"
+          ],
+          [
+            "Larger container",
+            "More total stored water"
+          ],
+          [
+            "Uneven irrigation",
+            "Creates misleading local sensor/weight patterns"
+          ]
+        ],
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build a dryback curve",
+        "items": [
+          {
+            "title": "Define post-irrigation baseline",
+            "body": "Use a repeatable start point after drainage."
+          },
+          {
+            "title": "Measure at intervals",
+            "body": "Use weight or validated moisture sensing consistently."
+          },
+          {
+            "title": "Plot the curve",
+            "body": "Look at rate, overnight change and time to next irrigation."
+          },
+          {
+            "title": "Add crop/environment context",
+            "body": "Note canopy size, light and VPD conditions."
+          },
+          {
+            "title": "Adjust one variable",
+            "body": "Change timing or volume deliberately and compare the next curve."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same endpoint, different trajectory",
+        "setting": "Two plants reach the same moisture reading before irrigation, but one gets there six hours earlier.",
+        "prompt": "What does that suggest?",
+        "options": [
+          "They are identical",
+          "Water-use rate or root-zone behavior differs and should be investigated",
+          "Only the final value matters",
+          "Increase fertilizer"
+        ],
+        "answer": "Water-use rate or root-zone behavior differs and should be investigated.",
+        "feedback": "Dryback is a trajectory, not only an endpoint."
+      },
+      {
+        "type": "activity",
+        "title": "Plot a 24-hour dryback",
+        "instructions": "Graph supplied container-weight or moisture data.",
+        "prompts": [
+          "Identify the fastest-loss period.",
+          "Compare day vs night.",
+          "Estimate time to the next irrigation threshold used in the exercise.",
+          "Name one environmental or crop factor that could explain a change."
+        ],
+        "artifact": "Dryback trend graph"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Use dryback as a measured trajectory tied to crop demand and substrate behavior, not a fixed clock."
+      }
+    ]
   }
 }
