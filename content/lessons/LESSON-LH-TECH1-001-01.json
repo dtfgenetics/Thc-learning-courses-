@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-001-01",
   "title": "Hazard Recognition and Control Boundaries",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "published",
   "competencies": [
     "COMP-SAFETY-WORK-001"
@@ -85,6 +85,19 @@
         ]
       },
       {
+        "type": "image",
+        "assetId": "VIS-LH-T1-C1-M1-001",
+        "src": "/assets/course1/hazard-scan.png",
+        "driveMasterId": "1j_QySqlRS_7SRq0FbDc9-a_9iiVA3O6m",
+        "driveMasterFilename": "vis-lh-t1-c1-m1-001-hazard-scan.png",
+        "alt": "Cultivation corridor showing irrigation water near damaged electrical equipment, a hose crossing the walking path, and a blocked route.",
+        "caption": "Scan the full work area for hazard sources, exposure pathways, possible consequences, and only the first responses you are authorized to perform.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING"
+        ]
+      },
+      {
         "type": "steps",
         "title": "Five questions for a pre-task and mid-task hazard scan",
         "items": [
@@ -149,6 +162,18 @@
         ]
       },
       {
+        "type": "image",
+        "assetId": "VIS-LH-T1-C1-M1-002",
+        "src": "/assets/course1/hierarchy-controls.png",
+        "driveMasterId": "1FBQuQjaJuhg6eM2Usmrw8G-iG7BB4gEI",
+        "driveMasterFilename": "vis-lh-t1-c1-m1-002-hierarchy-controls.png",
+        "alt": "Five-level hierarchy of controls from elimination through personal protective equipment, with a Technician I authorization reminder.",
+        "caption": "Stronger controls act closer to the hazard source. PPE remains important, but it is the last layer in the hierarchy and never expands a worker's authorization.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
         "type": "callout",
         "title": "Recognition is not repair authority",
         "tone": "safety",
@@ -179,6 +204,19 @@
         ],
         "answer": "Stop the task, prevent exposure where authorized, and escalate the electrical condition.",
         "feedback": "Production timing does not override an uncontrolled electrical hazard. Technician I should not perform unauthorized electrical investigation or repair.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-OSHA-1910-22-WALKING"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-T1-C1-M1-003",
+        "src": "/assets/course1/hazard-scan.png",
+        "driveMasterId": "17T4rJblOe85fin1OCQoVa7nXI1ywW6pH",
+        "driveMasterFilename": "vis-lh-t1-c1-m1-003-water-electric-decision.png",
+        "alt": "Decision sequence showing stop-work, authorized isolation, escalation to a qualified role, and documentation when water approaches damaged powered equipment.",
+        "caption": "Electrical damage near water is a stop-and-escalate condition for an unqualified technician; recognition does not create repair authority.",
         "references": [
           "REF-NIOSH-CANNABIS-HAZARDS-2024",
           "REF-OSHA-1910-22-WALKING"
