@@ -21,6 +21,12 @@
       "PRACTICAL-TECH1-A"
     ],
     "studentSources": [
+      "content/lessons/LESSON-PLANT-BIO-001.json",
+      "content/lessons/LESSON-PLANT-BIO-ANATOMY-002.json",
+      "content/lessons/LESSON-PLANT-BIO-SEX-003.json",
+      "content/lessons/LESSON-LH-TECH1-001-16.json",
+      "content/lessons/LESSON-LH-TECH1-001-17.json",
+      "content/lessons/LESSON-LH-TECH1-001-18.json",
       "content/lessons/LESSON-LH-TECH1-002-01.json",
       "content/lessons/LESSON-LH-TECH1-002-02.json",
       "content/lessons/LESSON-LH-TECH1-002-03.json",
@@ -28,7 +34,10 @@
     ],
     "excludedModules": [
       "MOD-FLOWER-001"
-    ]
+    ],
+    "releasedLessonCount": 10,
+    "releasedModuleCount": 3,
+    "pendingModuleCount": 1
   },
   "publicationBoundary": {
     "learnerPackage": "partial-released",
