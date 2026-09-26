@@ -279,3 +279,12 @@
   .lesson-orientation-card { padding: .8rem; border-radius: .7rem; }
   .lesson-prior-knowledge > summary, .lesson-reference-details > summary, .lesson-technical-details > summary { min-height: 44px; display: flex; align-items: center; }
 }
+
+
+.practice-remediation { margin-top: .55rem; }
+.practice-review-button { min-height: 44px; border: 1px solid var(--green); border-radius: .6rem; background: transparent; color: var(--green); padding: .6rem .8rem; font-weight: 800; cursor: pointer; text-align: left; }
+.practice-review-button:hover { background: var(--green-soft); }
+.practice-review-button:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
+@media (max-width: 620px) {
+  .practice-review-button { width: 100%; }
+}
