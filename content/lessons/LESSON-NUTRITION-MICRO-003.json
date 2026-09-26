@@ -151,6 +151,29 @@
         "tone": "evidence",
         "body": "Micronutrient diagnosis is usually an availability-and-context problem before it is a 'just add more' problem."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-004-008",
+          "title": "pH, root-zone chemistry and nutrient availability context",
+          "src": "/assets/course4/ph-root-zone-nutrient-availability.webp",
+          "alt": "Educational root-zone chemistry diagram showing how pH influences nutrient availability and why visible nutrient-like symptoms must be interpreted with solution chemistry and plant context rather than treated as direct diagnoses.",
+          "caption": "Micronutrients can be present in the feed yet become less available when root-zone chemistry shifts. Use pH as context, not as a one-number diagnosis.",
+          "references": [
+            "REF-IRRIGATION-001",
+            "REF-NUTRITION-001",
+            "REF-PSU-HYDROPONIC-NUTRITION-2026"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-004-008",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
