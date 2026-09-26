@@ -38,8 +38,9 @@ assert.match(portal, /\/api\/v1\/me\/courses\/\$\{encodeURIComponent\(course\.id
 assert.match(portal, /Academic course status/, 'dashboard should separate academic course status');
 assert.match(portal, /Professional credential progress/, 'dashboard should separately label professional credential progress');
 assert.match(portal, /portal-course-record-list/, 'dashboard should render a list of enrolled academic course records');
-assert.match(portal, /No enrolled credential-path course with a conventional graded final is recorded yet/, 'dashboard must handle an empty academic course record set');
+assert.match(portal, /No enrolled credential-path academic course is recorded yet/, 'dashboard must handle an empty academic course record set');
 assert.match(portal, /Academic practical/, 'dashboard must distinguish academic practical evidence from professional practical requirements');
+assert.match(portal, /Integrated performance lab: this course intentionally has no ordinary final/, 'dashboard must represent Technician I Course 7 / Technician II Course 8 without inventing conventional finals');
 assert.match(portal, /does not by itself issue or authorize a professional credential/, 'academic completion must not imply credential issuance');
 assert.match(portal, /CREDPROG-CULT-TECH-I-001/, 'learner dashboard must support Technician I certification applications');
 assert.match(portal, /CREDPROG-CULT-TECH-II-001/, 'learner dashboard must support Technician II certification applications');
