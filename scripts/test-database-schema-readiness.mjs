@@ -36,7 +36,7 @@ for (const version of ['1', '2', '3', '4', '5', '6']) {
   const stale = await requestReadiness(version);
   assert.equal(stale.status, 503);
   assert.equal(stale.body.error, 'database-schema-version-mismatch');
-  assert.equal(stale.body.requiredSchemaVersion, '6');
+  assert.equal(stale.body.requiredSchemaVersion, '7');
   assert.equal(stale.body.actualSchemaVersion, version);
 }
 
