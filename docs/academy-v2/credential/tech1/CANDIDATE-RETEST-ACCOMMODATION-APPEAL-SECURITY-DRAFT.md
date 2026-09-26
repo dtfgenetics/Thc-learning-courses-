@@ -8,7 +8,9 @@
 - Remediation is required before retesting a failed credential domain, practical or capstone component.
 - Retests use an approved equivalent secure form or equivalent practical/capstone variant.
 - A controlled critical failure requires reevaluation of the affected domain after remediation; an aggregate score cannot erase the failure.
-- No final attempt limit, waiting period or fee rule is established here. Those operational policies require human approval and should be evaluated for fairness, validity and accessibility.
+- Current issuer-policy proposal: no more than **3 total credential attempts**, with remediation before a retest and a **minimum 168-hour (7-day) waiting period** after a failed credential attempt.
+- Initial-launch fee policy: **no automatic retest fee**. A later fee may be adopted only through a published, consistently applied policy and must not penalize an approved accommodation.
+- These numbers are issuer policy choices, not requirements prescribed by ISO/IEC 17024, ADA guidance or another external authority. They remain subject to assessment, accessibility, privacy/legal, security and organizational approval before operational use.
 - Retest decisions and prior-form exposure must be recorded privately.
 
 ## Accommodations
@@ -40,6 +42,10 @@ The incident process should support hold, investigation, documented disposition,
 
 No adverse decision should be based on personality preference or protected/sensitive characteristics. Assess observable credential requirements and documented evidence. Any automated signal must remain reviewable and must not independently make the final credential decision unless specifically validated and approved for that use.
 
+## Controlled-policy alignment
+
+The machine-readable source of truth for the current issuer-policy proposal is `registry/candidate-governance-controls.json` (`CANDIDATE-GOVERNANCE-CONTROLS-001`). If this narrative and the registry differ, the registry controls the machine gate and this document must be reconciled before approval.
+
 ## Approval boundary
 
-This file is a machine-built governance draft. It does not constitute legal advice, an approved candidate handbook, or final credential policy. Operational publication requires formal program, assessment, accessibility, privacy/security and organizational approval.
+This file is a controlled governance draft. It does not constitute legal advice, an approved candidate handbook, or final credential policy. Operational publication requires formal program, assessment, accessibility, privacy/legal, security and organizational approval.
