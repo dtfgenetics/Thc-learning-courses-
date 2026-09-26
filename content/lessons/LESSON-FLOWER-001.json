@@ -1,37 +1,234 @@
 {
   "id": "LESSON-FLOWER-001",
   "title": "Flowering Development, Maturity and Harvest Readiness",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": ["COMP-FLOWER-001"],
-  "learningObjectives": ["LO-FLOWER-001"],
+  "competencies": [
+    "COMP-FLOWER-001"
+  ],
+  "learningObjectives": [
+    "LO-FLOWER-001"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-FLOWER-001"],
+  "references": [
+    "REF-FLOWER-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Flowering is a developmental process, not a single calendar event. Harvest readiness should be interpreted from floral development, plant condition, genotype, environmental history, and multiple maturity observations rather than a universal week count or one trichome-color rule.",
+    "overview": "Cannabis flowering is a developmental sequence rather than a countdown to a fixed harvest date. Learners examine floral transition, inflorescence development, asynchronous maturation, trichome observation and representative sampling so harvest-readiness records are based on repeatable plant evidence rather than breeder-week estimates or a single amber-percentage rule.",
     "vocabulary": [
-      {"term":"Inflorescence","definition":"A reproductive shoot system bearing flowers and associated structures."},
-      {"term":"Glandular trichome","definition":"A specialized epidermal structure that produces and stores resin-associated metabolites on cannabis floral tissues."},
-      {"term":"Maturation","definition":"The progressive developmental changes that occur as reproductive tissues age and approach harvest."},
-      {"term":"Asynchronous development","definition":"A condition in which structures or tissues do not all develop or mature at exactly the same time."}
+      {
+        "term": "Inflorescence",
+        "definition": "A reproductive shoot system bearing flowers and associated structures."
+      },
+      {
+        "term": "Glandular trichome",
+        "definition": "A specialized epidermal structure that produces and stores resin-associated metabolites on cannabis floral tissues."
+      },
+      {
+        "term": "Maturation",
+        "definition": "The progressive developmental changes that occur as reproductive tissues age and approach harvest."
+      },
+      {
+        "term": "Asynchronous development",
+        "definition": "A condition in which structures or tissues do not all develop or mature at exactly the same time."
+      }
     ],
     "sections": [
-      {"title":"Flowering changes over time","body":"Floral structures expand and mature progressively. Development can vary among genotypes and among positions on the same plant, so calendar age should be treated as context rather than as a complete measure of readiness.","references":["REF-FLOWER-001"]},
-      {"title":"Trichomes provide useful but incomplete evidence","body":"Glandular trichome appearance changes during floral maturation, but trichomes can develop asynchronously and color distributions vary with genotype and plant age. A single percentage of clear, cloudy, or amber trichomes should not be treated as a universal harvest law.","references":["REF-FLOWER-001"]},
-      {"title":"Sample more than one location","body":"Observations from one bract or one top flower may not represent the entire plant. Maturity assessment is stronger when comparable structures are examined at several representative canopy positions and observations are repeated over time.","references":["REF-FLOWER-001"]},
-      {"title":"Harvest readiness is multi-factor","body":"A harvest decision should consider floral development, plant condition, trichome observations, intended quality goals, environmental history, and whether the crop is still changing meaningfully. Multiple lines of evidence reduce overconfidence in any single indicator.","references":["REF-FLOWER-001"]}
+      {
+        "title": "Flowering is a sequence of developmental events",
+        "body": "A change in photoperiod or other flowering signal begins a developmental transition, but visible flower formation, inflorescence expansion and maturation occur progressively. Different branches and canopy positions can advance at different rates. Record the date of the environmental transition as context, then use visible reproductive landmarks to describe actual development.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Inflorescences do not mature uniformly",
+        "body": "Upper, outer and strongly illuminated floral sites may not match shaded or lower positions. Genotype, microclimate, pollination status, plant health and local resource supply can all contribute to within-plant variation. Representative assessment therefore requires more than the most mature-looking top flower.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Trichome observations are useful but method-sensitive",
+        "body": "Glandular trichomes change appearance during development, but apparent clear, cloudy or amber proportions depend on tissue type, lighting, optics, image quality and sampling position. Observations are most useful when the same tissue type, magnification method and canopy positions are followed repeatedly.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Harvest readiness is an evidence-integration decision",
+        "body": "A harvest-readiness record can combine floral morphology, representative trichome observations, plant condition, development trend, crop objective and operational constraints. No single visual sign is a universal chemical assay or harvest law.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "title": "Trend is stronger than a one-time snapshot",
+        "body": "Repeated observations show whether the crop is still changing rapidly, approaching a stable developmental condition or diverging across canopy zones. A trend also makes it easier to detect sampling bias and distinguish normal maturation from localized stress or damage.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If upper flowers show more amber trichomes than lower flowers, record representative samples from both positions instead of using the most mature top as the sole harvest signal.",
-      "If a cultivar reaches the breeder's advertised week count but maturity observations are still changing rapidly, use actual plant evidence rather than calendar age alone."
+      "Upper flowers show substantially more amber-appearing trichomes than middle-canopy flowers. The learner records both positions using the same tissue type and magnification rather than using the top alone as the crop-wide harvest signal.",
+      "A breeder estimate says nine weeks, but representative observations are still changing quickly at week nine. The learner treats the advertised timeline as context and continues evidence-based maturity assessment.",
+      "Two workers reach different trichome estimates from the same flower because one inspected sugar leaves and the other inspected floral bracts. The sampling method is standardized before the data are compared.",
+      "One branch appears developmentally advanced after a localized heat event. The learner records the branch separately and avoids generalizing that condition to the entire crop without representative sampling."
     ],
     "commonMistakes": [
       "Using a fixed flowering week as an automatic harvest date.",
-      "Treating one trichome color percentage as universal across all genotypes.",
-      "Sampling only the most exposed flower and assuming it represents the whole crop."
+      "Treating one trichome color percentage as universal across cultivars.",
+      "Sampling only the most exposed top flower.",
+      "Mixing sugar-leaf and floral-bract observations as though they were equivalent samples.",
+      "Changing magnification, lighting or sampling position between observations without documenting the change.",
+      "Treating visible trichome appearance as a direct quantitative cannabinoid assay."
     ],
-    "practicalApplication": "Create a repeatable maturity log using the same sampling locations, magnification method, floral-development observations, and plant-condition notes. Compare trends across several observations before making a harvest decision.",
-    "summary": "Flowering and maturation are dynamic and can vary across genotypes and within a plant. Strong harvest-readiness decisions use repeated, representative observations and multiple indicators rather than a universal calendar or trichome-color threshold."
+    "practicalApplication": "Build a repeatable maturity-sampling protocol for an approved plant or image series. Define comparable floral tissue, at least three canopy positions, magnification/lighting method, image or observation ID, floral-development notes and observation dates. Repeat the assessment over time, summarize the trend, and state what can and cannot be concluded from the visual evidence.",
+    "summary": "Flowering and maturation are spatially and temporally variable. Strong harvest-readiness records use repeated observations from representative locations, consistent methods and multiple indicators. Calendar estimates and trichome appearance are useful context, but neither is a universal substitute for representative evidence.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Flowering is not a calendar switch",
+        "body": "The date of a light-schedule change is useful to record, but reproductive development continues through visible transition, flower formation, inflorescence expansion and maturation. Classify the crop from observed structures, not only from the number of days since the schedule changed.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Harvest-readiness evidence and its limits",
+        "columns": [
+          "Evidence",
+          "What it can tell you",
+          "What it cannot prove by itself"
+        ],
+        "rows": [
+          [
+            "Calendar / breeder estimate",
+            "Expected timing range and planning context",
+            "Actual maturity of a specific crop"
+          ],
+          [
+            "Floral morphology",
+            "Developmental progression and structural maturity",
+            "Exact chemical composition"
+          ],
+          [
+            "Trichome appearance",
+            "Visible maturation pattern at sampled tissues",
+            "Universal cannabinoid potency or crop-wide maturity"
+          ],
+          [
+            "Plant condition",
+            "Whether stress, senescence or damage is affecting interpretation",
+            "A single causal diagnosis"
+          ],
+          [
+            "Repeated representative sampling",
+            "Direction and consistency of maturation across locations",
+            "Product quality without appropriate analytical testing"
+          ]
+        ],
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Representative maturity assessment",
+        "items": [
+          {
+            "title": "Define the tissue",
+            "body": "Use comparable floral tissue; do not mix leaf trichomes and floral bracts without documenting the difference."
+          },
+          {
+            "title": "Define canopy positions",
+            "body": "Select repeatable upper, middle and lower or otherwise representative locations."
+          },
+          {
+            "title": "Standardize the observation method",
+            "body": "Keep magnification, lighting and image/inspection method as consistent as practical."
+          },
+          {
+            "title": "Record floral morphology",
+            "body": "Describe visible flower and inflorescence development in addition to trichome appearance."
+          },
+          {
+            "title": "Repeat over time",
+            "body": "Use multiple dates so the direction of change is visible."
+          },
+          {
+            "title": "Integrate crop context",
+            "body": "Add genotype, environmental history, plant condition and intended quality objective where appropriate."
+          },
+          {
+            "title": "State uncertainty",
+            "body": "Document sampling limitations or canopy disagreement rather than forcing one definitive percentage."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The top looks ready first",
+        "setting": "A top cola shows many amber-appearing trichomes, while representative middle-canopy flowers show mostly cloudy and some clear trichomes.",
+        "prompt": "What is the strongest next step?",
+        "options": [
+          "Harvest immediately because the top is the most mature",
+          "Ignore the top and only inspect the lowest flower",
+          "Record multiple representative positions and evaluate the trend before generalizing crop-wide readiness",
+          "Convert the top trichome color directly into THC percentage"
+        ],
+        "answer": "Record multiple representative positions and evaluate the trend before generalizing crop-wide readiness.",
+        "feedback": "Within-plant maturation can be asynchronous. Representative sampling reduces bias from extreme locations."
+      },
+      {
+        "type": "scenario",
+        "title": "The week number says ready, the crop says otherwise",
+        "setting": "The cultivar description suggests a nine-week flowering period. At the end of week nine, representative floral observations are still changing rapidly.",
+        "prompt": "How should the timeline be used?",
+        "options": [
+          "As the mandatory harvest date",
+          "As planning context while actual maturity is evaluated from plant evidence",
+          "As proof that the environmental system is wrong",
+          "As a substitute for all further sampling"
+        ],
+        "answer": "As planning context while actual maturity is evaluated from plant evidence.",
+        "feedback": "Published or breeder timelines are not a direct measurement of the current crop's developmental state."
+      },
+      {
+        "type": "activity",
+        "title": "Build a maturity trend, not a snapshot",
+        "instructions": "Create a three-date maturity record using consistent tissue type and representative canopy positions.",
+        "prompts": [
+          "Define the exact tissue and positions sampled.",
+          "Record the observation method and magnification.",
+          "Describe floral morphology at each position.",
+          "Record trichome appearance descriptively or categorically without presenting it as chemical potency.",
+          "Compare changes across dates and positions.",
+          "State whether the crop appears uniform, asynchronous or uncertain and explain the evidence."
+        ],
+        "artifact": "Representative flowering maturity trend log",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Do not turn trichome color into a universal formula",
+        "tone": "warning",
+        "body": "Clear/cloudy/amber observations are a visual maturity signal, not a validated universal equation for cannabinoid percentage or a crop-independent harvest threshold."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Harvest readiness is a sampling and evidence-integration problem. Use repeatable, representative observations over time instead of one flower, one week number or one trichome percentage.",
+        "references": [
+          "REF-FLOWER-001"
+        ]
+      }
+    ]
   }
 }
