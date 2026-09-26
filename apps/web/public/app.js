@@ -533,6 +533,18 @@ function renderModuleAssessment(payload) {
           if (result.isCorrect) correct += 1;
           feedback.dataset.state = result.isCorrect ? 'correct' : 'incorrect';
           feedback.textContent = formativeFeedback(result);
+          remediation.replaceChildren();
+          if (!result.isCorrect) {
+            const target = payload.remediationByObjective?.[item.objective];
+            if (target?.lessonId) {
+              const review = document.createElement('button');
+              review.type = 'button';
+              review.className = 'practice-review-button';
+              review.textContent = `Review aligned lesson: ${target.lessonTitle ?? 'lesson'}`;
+              review.addEventListener('click', () => openLesson(target.lessonId));
+              remediation.append(review);
+            }
+          }
           updateSummary();
         } catch (error) {
           delete fieldset.dataset.submitting;
@@ -548,7 +560,9 @@ function renderModuleAssessment(payload) {
     });
     const feedback = text('p', 'Choose one answer.', 'practice-feedback');
     feedback.setAttribute('aria-live', 'polite');
-    fieldset.append(options, feedback);
+    const remediation = document.createElement('div');
+    remediation.className = 'practice-remediation';
+    fieldset.append(options, feedback, remediation);
     article.append(fieldset);
   }
 
