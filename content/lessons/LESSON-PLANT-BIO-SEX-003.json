@@ -212,7 +212,27 @@
       "migration": {
         "source": "PR-279",
         "preservedWithoutArtificialContentCaps": true
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-002-009",
+          "title": "Reproductive morphology reference",
+          "src": "/assets/course2/reproductive-morphology-reference.webp",
+          "alt": "Cannabis reproductive morphology reference distinguishing pollen-producing and pollen-receptive floral structures with clear anatomical context for repeated scouting.",
+          "caption": "Classify reproductive expression from actual floral morphology. Seed label, cultivar name and vegetative appearance do not replace direct observation.",
+          "references": [
+            "REF-SEX-2026-001",
+            "REF-FLOWER-MORPH-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-002-009",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
   },
   "extensions": {
