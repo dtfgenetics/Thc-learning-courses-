@@ -1,37 +1,202 @@
 {
   "id": "LESSON-WATER-001",
   "title": "Water Quality, pH, EC and Irrigation Context",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-WATER-001"],
-  "learningObjectives": ["LO-WATER-001"],
+  "competencies": [
+    "COMP-WATER-001"
+  ],
+  "learningObjectives": [
+    "LO-WATER-001"
+  ],
   "estimatedMinutes": 45,
-  "references": ["REF-IRRIGATION-001"],
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Water management requires more than tracking how much solution is applied. Source-water chemistry, pH, EC, delivery uniformity, substrate properties, and root-system development all affect the conditions that roots actually experience.",
+    "overview": "Water management is a chemistry, delivery and root-zone problem at the same time. Source-water alkalinity and dissolved ions influence the starting solution; pH describes acidity/basicity; EC describes total ionic conductivity; irrigation hardware determines where solution is delivered; and substrate properties determine what roots actually experience. The learner should be able to separate these variables before deciding what needs correction.",
     "vocabulary": [
-      {"term":"pH","definition":"A logarithmic measure of hydrogen ion activity used to describe how acidic or basic a solution is."},
-      {"term":"EC","definition":"Electrical conductivity, a measure related to the total concentration of dissolved ions in a solution."},
-      {"term":"Irrigation uniformity","definition":"The degree to which an irrigation system delivers water consistently across the intended root zones."},
-      {"term":"Root-zone moisture","definition":"The amount and spatial distribution of water available in the medium occupied by roots."}
+      {
+        "term": "pH",
+        "definition": "A logarithmic measure of hydrogen ion activity used to describe how acidic or basic a solution is."
+      },
+      {
+        "term": "EC",
+        "definition": "Electrical conductivity, a measure related to the total concentration of dissolved ions in a solution."
+      },
+      {
+        "term": "Irrigation uniformity",
+        "definition": "The degree to which an irrigation system delivers water consistently across the intended root zones."
+      },
+      {
+        "term": "Root-zone moisture",
+        "definition": "The amount and spatial distribution of water available in the medium occupied by roots."
+      }
     ],
     "sections": [
-      {"title":"Source water sets the starting point","body":"Incoming water can contribute dissolved ions and alkalinity before fertilizer is added. Measuring source-water characteristics helps explain why the same nutrient recipe may behave differently when water sources change.","references":["REF-IRRIGATION-001"]},
-      {"title":"pH and EC answer different questions","body":"pH describes acidity or basicity, while EC reflects the overall ionic concentration of the solution. Neither value identifies every individual ion, and neither should be used as a complete diagnosis by itself.","references":["REF-IRRIGATION-001"]},
-      {"title":"Applied volume is not the same as root availability","body":"Two plants can receive the same total irrigation volume yet experience different root-zone conditions because media properties, emitter placement, drainage, and root-system size affect retention and distribution.","references":["REF-IRRIGATION-001"]},
-      {"title":"Measure trends, not isolated numbers","body":"Useful irrigation diagnosis compares source solution, applied solution, root-zone observations, and crop response over time. Sudden changes in pH, EC, moisture distribution, or runoff behavior can be more informative than a single reading taken without context.","references":["REF-IRRIGATION-001"]}
+      {
+        "title": "Source water sets the starting point",
+        "body": "Incoming water can contribute dissolved ions and alkalinity before fertilizer is added. Measuring source-water characteristics helps explain why the same nutrient recipe may behave differently when water sources change.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "pH and EC answer different questions",
+        "body": "pH describes acidity or basicity, while EC reflects the overall ionic concentration of the solution. Neither value identifies every individual ion, and neither should be used as a complete diagnosis by itself.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Applied volume is not the same as root availability",
+        "body": "Two plants can receive the same total irrigation volume yet experience different root-zone conditions because media properties, emitter placement, drainage, and root-system size affect retention and distribution.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Measure trends, not isolated numbers",
+        "body": "Useful irrigation diagnosis compares source solution, applied solution, root-zone observations, and crop response over time. Sudden changes in pH, EC, moisture distribution, or runoff behavior can be more informative than a single reading taken without context.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If two containers receive equal volume but one remains saturated much longer, investigate media properties, drainage, and delivery pattern before assuming nutrient concentration is the cause.",
-      "If source-water EC rises unexpectedly, compare the new source measurement with previous baselines before changing the nutrient program."
+      "Source water tests at low EC but high alkalinity. The low EC does not mean the water has little effect on root-zone pH over time; alkalinity can still provide substantial buffering capacity.",
+      "Two emitters run for the same duration, but one container receives less solution. Before changing the nutrient recipe, check emitter output and distribution uniformity.",
+      "Applied solution EC is normal while root-zone EC trends upward. The difference suggests accumulation or water-balance effects that require root-zone investigation rather than assuming the stock tank is wrong.",
+      "A pH reading is outside the usual range, but the meter has not been calibrated recently. Validate the measurement before changing acid/base dosing."
     ],
     "commonMistakes": [
-      "Assuming identical irrigation volume creates identical root-zone moisture conditions.",
-      "Treating EC as a direct measurement of every individual nutrient concentration.",
-      "Adjusting fertilizer before confirming whether the water source or delivery system changed."
+      "Treating pH and alkalinity as the same property.",
+      "Treating EC as a direct measurement of individual nutrient concentrations.",
+      "Assuming equal irrigation duration means equal delivered volume.",
+      "Ignoring source-water chemistry when troubleshooting nutrient behavior.",
+      "Changing fertilizer concentration before validating pH/EC meter calibration.",
+      "Interpreting applied solution without comparing root-zone response."
     ],
-    "practicalApplication": "Create a repeatable water-check routine that records source pH and EC, applied-solution measurements, delivery uniformity, and root-zone moisture observations. Use trends from the same measurement method to decide what needs investigation next.",
-    "summary": "Water quality, pH, EC, irrigation delivery, and root-zone behavior are connected but distinct. Strong water management measures each part of the system and interprets the numbers together rather than relying on volume, pH, or EC alone."
+    "practicalApplication": "Build a water-to-root-zone record using source water, mixed solution, emitter delivery and root-zone observations. Record pH, EC, alkalinity when available, delivered volume, drainage/runoff behavior and measurement method. Identify where the first meaningful difference appears in the chain before recommending a correction.",
+    "summary": "Water quality, pH, EC, irrigation delivery, and root-zone behavior are connected but distinct. Strong water management measures each part of the system and interprets the numbers together rather than relying on volume, pH, or EC alone.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Water quality starts before fertilizer is added",
+        "body": "Source water can contribute dissolved ions and alkalinity. pH alone does not describe buffering capacity, and EC alone does not identify which ions are present. A useful baseline includes source-water pH, EC and—when relevant—alkalinity/hardness or laboratory analysis.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Different measurements answer different questions",
+        "columns": [
+          "Measurement",
+          "What it tells you",
+          "What it does not tell you"
+        ],
+        "rows": [
+          [
+            "pH",
+            "Acidity/basicity of the solution",
+            "Buffering capacity or nutrient concentration"
+          ],
+          [
+            "Alkalinity",
+            "Capacity to neutralize acid / resist pH change",
+            "Overall dissolved-ion concentration"
+          ],
+          [
+            "EC",
+            "Total ionic conductivity",
+            "Identity or concentration of each nutrient ion"
+          ],
+          [
+            "Delivered volume",
+            "How much solution reached a location",
+            "How evenly the root ball was wetted"
+          ],
+          [
+            "Root-zone moisture",
+            "Water status in the medium",
+            "Solution chemistry by itself"
+          ]
+        ],
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Trace the irrigation chain",
+        "items": [
+          {
+            "title": "Start at the source",
+            "body": "Record source-water chemistry and any recent change in source."
+          },
+          {
+            "title": "Check the mixed solution",
+            "body": "Verify pH and EC after fertilizer/additives using calibrated instruments."
+          },
+          {
+            "title": "Check delivery",
+            "body": "Measure emitter output and uniformity rather than assuming equal flow."
+          },
+          {
+            "title": "Check the root zone",
+            "body": "Observe moisture, drainage, pH/EC trend and root condition."
+          },
+          {
+            "title": "Compare the crop",
+            "body": "Link the measurements to plant stage, location and visible response."
+          },
+          {
+            "title": "Correct the first verified failure",
+            "body": "Fix the earliest demonstrated problem in the chain instead of changing multiple variables at once."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Low EC, high alkalinity",
+        "setting": "Source water has a low EC reading but laboratory results show substantial alkalinity.",
+        "prompt": "Which conclusion is strongest?",
+        "options": [
+          "The water cannot affect root-zone pH because EC is low",
+          "Alkalinity can still influence pH buffering even when EC is not high",
+          "EC and alkalinity are identical measurements",
+          "Add more fertilizer immediately"
+        ],
+        "answer": "Alkalinity can still influence pH buffering even when EC is not high.",
+        "feedback": "EC and alkalinity describe different properties of the water."
+      },
+      {
+        "type": "activity",
+        "title": "Audit a water-to-root-zone dataset",
+        "instructions": "Review source, mixed-solution, emitter and root-zone data from one irrigation event.",
+        "prompts": [
+          "Identify which values describe chemistry versus delivery.",
+          "Flag any measurement that needs calibration/validation.",
+          "Compare emitter outputs.",
+          "Identify the first point where the system diverges from expectation.",
+          "State one next measurement before changing the nutrient program."
+        ],
+        "artifact": "Water and irrigation chain audit",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Separate source chemistry, solution chemistry, delivery and root-zone response. Troubleshooting becomes easier when you identify where the system first departs from expectation.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ]
   }
 }
