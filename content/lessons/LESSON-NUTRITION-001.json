@@ -209,6 +209,27 @@
           "REF-NUTRITION-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-004-003",
+          "title": "Nutrition-context differential",
+          "src": "/assets/course4/nutrition-context-differential.webp",
+          "alt": "Educational diagnostic comparison separating visible nutrient-like symptoms from pH, EC, irrigation, root-zone and crop-context evidence before assigning a nutrient cause.",
+          "caption": "Symptoms begin the differential; they do not finish it. Compare tissue pattern with root-zone chemistry, water status and plant context before changing the nutrient recipe.",
+          "references": [
+            "REF-NUTRITION-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-004-003",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
