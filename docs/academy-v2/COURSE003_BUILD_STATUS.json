@@ -1,10 +1,21 @@
 {
   "courseId": "COURSE-LH-TECH1-003",
-  "courseVersion": "0.5.0",
+  "courseVersion": "0.6.0",
   "status": "development-readiness",
   "module": "MOD-LH-TECH1-003-MONITORING",
-  "objectives": ["LO-LH-TECH1-003-01", "LO-LH-TECH1-003-02", "LO-LH-TECH1-003-03", "LO-LH-TECH1-003-04", "LO-LH-TECH1-003-05"],
-  "lessons": ["LESSON-LH-TECH1-003-01", "LESSON-LH-TECH1-003-02", "LESSON-LH-TECH1-003-03", "LESSON-LH-TECH1-003-04"],
+  "objectives": [
+    "LO-LH-TECH1-003-01",
+    "LO-LH-TECH1-003-02",
+    "LO-LH-TECH1-003-03",
+    "LO-LH-TECH1-003-04",
+    "LO-LH-TECH1-003-05"
+  ],
+  "lessons": [
+    "LESSON-LH-TECH1-003-01",
+    "LESSON-LH-TECH1-003-02",
+    "LESSON-LH-TECH1-003-03",
+    "LESSON-LH-TECH1-003-04"
+  ],
   "formativeAssessment": "ASSESS-LH-TECH1-003-M01",
   "summativeAssessment": "ASSESS-LH-TECH1-003-FINAL",
   "formativeItems": 12,
@@ -16,9 +27,9 @@
   "objectiveCoverageMappedToPractical": true,
   "visualRegistry": "visuals/COURSE3-ASSET-REGISTRY.json",
   "visualDriveFolderId": "1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU",
-  "producedVisualCount": 4,
+  "producedVisualCount": 5,
   "downloadablePracticeAssetCount": 2,
-  "totalLearnerAssetCount": 6,
+  "totalLearnerAssetCount": 7,
   "learnerAssetFoundationBuilt": true,
   "learnerAssetLayerBuilt": true,
   "releaseStatus": "draft",
@@ -30,9 +41,9 @@
     "Practical A environmental/sensor/PPFD development station coverage",
     "all five objectives crosswalked to canonical Practical A tasks, evidence, scoring categories and deliverables",
     "public release manifest points to Practical A as development-stage performance evidence",
-    "four public accessible embedded lesson visuals covering every Course 3 lesson",
+    "five public accessible embedded lesson visuals covering every Course 3 lesson, including dedicated VPD physiology context",
     "two public downloadable practice worksheets linked from their relevant lessons",
-    "all six learner assets mirrored to the dedicated Course 3 Drive folder",
+    "all seven learner assets mirrored to the dedicated Course 3 Drive folder",
     "deterministic Course 3 learner-asset registry and reachability contract"
   ],
   "remainingDevelopmentPriorities": [
