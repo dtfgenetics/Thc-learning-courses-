@@ -279,7 +279,28 @@
           "transcriptRequired": false,
           "nonVisualAlternative": "Provide written observation matrices with clear/cloudy/amber descriptors and sample positions."
         }
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-FLOWER-MATURITY-001",
+          "title": "Representative trichome maturity sampling",
+          "src": "/assets/course2/flower-trichome-representative-sampling.webp",
+          "alt": "Scientific macro illustration showing matched cannabis floral-bract samples from upper, middle, and lower canopy positions across three dates, with mixed clear, cloudy, and amber glandular trichome states to demonstrate asynchronous maturation.",
+          "caption": "Representative repeated sampling is stronger than one extreme image or one amber percentage. Compare like tissue, canopy position, observation method and trends over time.",
+          "references": [
+            "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+            "REF-TRICHOME-BIOLOGY-2021-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-FLOWER-MATURITY-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json",
+            "illustrationDisclosure": "Scientific macro illustration; not a literal photomicrograph or chemical assay."
+          }
+        }
+      ]
     }
   }
 }
