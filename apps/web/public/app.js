@@ -659,20 +659,52 @@ function renderLesson(lesson) {
   article.className = 'lesson-article';
   article.append(text('p', 'THC Academy lesson', 'eyebrow'));
   article.append(text('h2', lesson.title));
-  const meta = document.createElement('div');
-  meta.className = 'lesson-meta';
-  if (lesson.estimatedMinutes) meta.append(text('span', `${lesson.estimatedMinutes} min`, 'pill'));
-  meta.append(text('span', `Version ${lesson.version}`, 'pill'));
-  meta.append(text('span', progressLabel(), 'pill'));
-  article.append(meta);
 
   const content = lesson.content ?? {};
+  const meta = document.createElement('div');
+  meta.className = 'lesson-meta lesson-meta-primary';
+  if (lesson.estimatedMinutes) meta.append(text('span', `${lesson.estimatedMinutes} min`, 'pill'));
+  if ((lesson.learningObjectiveStatements ?? []).length) meta.append(text('span', `${lesson.learningObjectiveStatements.length} learning goal${lesson.learningObjectiveStatements.length === 1 ? '' : 's'}`, 'pill'));
+  article.append(meta);
+
   if (content.overview) {
     const intro = document.createElement('p');
-    intro.className = 'callout';
+    intro.className = 'lesson-overview';
     intro.textContent = content.overview;
     article.append(intro);
   }
+
+  const whyItMatters = content.extensions?.academyEnrichment?.whyItMatters;
+  if (typeof whyItMatters === 'string' && whyItMatters.trim()) {
+    const why = document.createElement('section');
+    why.className = 'lesson-orientation-card lesson-why';
+    why.append(text('h3', 'Why this matters'));
+    why.append(text('p', whyItMatters));
+    article.append(why);
+  }
+
+  if ((lesson.learningObjectiveStatements ?? []).length) {
+    const goals = document.createElement('section');
+    goals.className = 'lesson-orientation-card lesson-goals';
+    goals.append(text('h3', 'What you should be able to do'));
+    const list = document.createElement('ul');
+    for (const statement of lesson.learningObjectiveStatements) list.append(text('li', statement));
+    goals.append(list);
+    article.append(goals);
+  }
+
+  if (Array.isArray(content.extensions?.academyEnrichment?.priorKnowledgeRetrieval) && content.extensions.academyEnrichment.priorKnowledgeRetrieval.length) {
+    const prior = document.createElement('details');
+    prior.className = 'lesson-prior-knowledge';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Quick prior-knowledge check';
+    prior.append(summary);
+    const list = document.createElement('ul');
+    for (const prompt of content.extensions.academyEnrichment.priorKnowledgeRetrieval) list.append(text('li', prompt));
+    prior.append(list);
+    article.append(prior);
+  }
+
   if (Array.isArray(content.vocabulary) && content.vocabulary.length) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -700,12 +732,27 @@ function renderLesson(lesson) {
   if (!renderedRich) renderLegacyLessonContent(article, content);
 
   if (lesson.references?.length) {
-    const section = document.createElement('section');
-    section.className = 'lesson-section';
-    section.append(text('h3', 'Evidence references'));
+    const section = document.createElement('details');
+    section.className = 'lesson-section lesson-reference-details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Evidence references (${lesson.references.length})`;
+    section.append(summary);
     section.append(text('p', lesson.references.join(', ')));
     article.append(section);
   }
+
+  const technical = document.createElement('details');
+  technical.className = 'lesson-technical-details';
+  const technicalSummary = document.createElement('summary');
+  technicalSummary.textContent = 'Lesson information';
+  technical.append(technicalSummary);
+  const technicalMeta = document.createElement('div');
+  technicalMeta.className = 'lesson-meta';
+  technicalMeta.append(text('span', `Version ${lesson.version}`, 'pill'));
+  technicalMeta.append(text('span', progressLabel(), 'pill'));
+  technical.append(technicalMeta);
+  article.append(technical);
+
   renderPracticeSection(article, lesson);
   renderCompletionControl(article, lesson);
   lessonView.replaceChildren(article);
