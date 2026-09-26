@@ -38,6 +38,9 @@ assert.match(portal, /\/api\/v1\/me\/courses\/\$\{COURSE1_ID\}\/completion/, 'da
 assert.match(portal, /Academic course status/, 'dashboard should separate academic course status');
 assert.match(portal, /Professional credential progress/, 'dashboard should separately label professional credential progress');
 assert.match(portal, /does not by itself issue or authorize a professional credential/, 'academic completion must not imply credential issuance');
+assert.match(portal, /CREDPROG-CULT-TECH-I-001/, 'learner dashboard must support Technician I certification applications');
+assert.match(portal, /CREDPROG-CULT-TECH-II-001/, 'learner dashboard must support Technician II certification applications');
+assert.match(portal, /Create \${program\.title} application/, 'learner dashboard must create program-specific application records rather than a single hard-coded application');
 
 
 for (const forbidden of [
