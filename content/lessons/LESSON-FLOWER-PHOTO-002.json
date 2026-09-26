@@ -243,7 +243,27 @@
           "transcriptRequired": false,
           "nonVisualAlternative": "Provide all schedules as explicit clock times and durations."
         }
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-FLOWER-PHOTOPERIOD-001",
+          "title": "Photoperiod, daily light integral and dark-period integrity",
+          "src": "/assets/course2/flower-photoperiod-dark-period.webp",
+          "alt": "Scientific cannabis flowering diagram comparing two light schedules to distinguish photoperiod from daily light integral, plus an uninterrupted dark interval versus a dark interval interrupted by bright work light.",
+          "caption": "Photoperiod describes timing and duration; DLI describes daily photon dose. Verify the crop's actual dark-period exposure, and do not treat 12/12 as a universal biological optimum.",
+          "references": [
+            "REF-LIGHT-001",
+            "REF-CANNABIS-PHOTOPERIOD-2023-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-FLOWER-PHOTOPERIOD-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE2-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
   }
 }
