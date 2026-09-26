@@ -11,6 +11,16 @@ All 15 canonical certification courses are machine-constructed and academically 
 
 Do not add empty course shells, decorative placeholders, fake completion records, or new planning-only layers while these tracks remain open.
 
+## Closed milestone — Technician I Course 2
+
+`COURSE-LH-TECH1-002` is now a full academic release. Its four canonical modules and 13 learner lessons are published, the Plant Biology and Flowering foundation checkpoints are balanced formative assessments, the two new Flowering raster teaching assets are produced and governed, and the academic-completion service requires all four modules.
+
+Do not reopen Course 2 as a machine-content task unless a later audit finds a concrete defect. Professional credential validation remains open and separate.
+
+## Current machine-content focus
+
+Continue with the remaining shared-foundation visual-production and learner-material gaps in Technician I Courses 3–6. Use `foundation:academic-readiness` and `foundation:visual-queue` as the machine gates. Reuse existing approved raster assets where they genuinely match; produce new raster visuals only for uncovered instructional concepts.
+
 ## Immediate learner-material completion work
 
 1. Audit every canonical lesson for incomplete, thin, placeholder, duplicated, or generic learner-facing content.
