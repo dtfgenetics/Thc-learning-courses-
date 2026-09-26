@@ -378,7 +378,7 @@ function injectTranscriptStyles() {
   const style = document.createElement('style');
   style.id = 'course1-academic-record-styles';
   style.textContent = `
-    .academic-record{max-width:1120px}.record-boundary{padding:.9rem 1rem;border-left:4px solid var(--green);background:var(--green-soft);border-radius:.5rem}.record-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1rem 0}.record-card{display:grid;gap:.25rem;padding:.85rem;border:1px solid var(--line);border-radius:.75rem;background:#fff}.record-card strong{font-size:1.25rem}.record-card span,.record-meta{color:var(--muted)}.record-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.record-button{min-height:44px;border:1px solid var(--green);border-radius:.65rem;padding:.65rem .85rem;background:#fff;color:var(--green);font:inherit;font-weight:800;cursor:pointer}.record-section{margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--line)}.record-module{margin:.7rem 0;border:1px solid var(--line);border-radius:.7rem;background:#fff}.record-module>summary{min-height:44px;padding:.75rem .9rem;cursor:pointer;font-weight:800}.record-lessons{display:grid;gap:.4rem;padding:0 .9rem .9rem}.record-lesson{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.7rem;align-items:center;padding:.6rem 0;border-top:1px solid var(--line)}.record-version-history{overflow-x:auto}.record-table{width:100%;border-collapse:collapse}.record-table th,.record-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.record-table th{background:var(--panel)}.record-warning{padding:.8rem;border:1px solid #d7bf92;border-radius:.7rem;background:#fffaf0}.record-button:focus-visible,.record-module>summary:focus-visible,.record-version-history:focus-visible{outline:3px solid rgba(36,95,61,.22);outline-offset:2px}@media(max-width:620px){.record-lesson{grid-template-columns:1fr}.record-actions{display:grid}.record-button{width:100%}}@media print{#tab-course-record,.record-actions,.site-header,.catalog-panel,.site-footer,.governance-dashboard{display:none!important}.academic-record{max-width:none}.record-module{break-inside:avoid}.record-version-history{overflow:visible}}
+    .academic-record{max-width:1120px}.record-course-picker{display:grid;gap:.35rem;max-width:760px;margin:.8rem 0 1rem;font-weight:800}.record-course-select{min-height:44px;border:1px solid var(--line);border-radius:.65rem;padding:.65rem .75rem;background:#fff;color:var(--ink);font:inherit}.record-course-host{display:block}.record-boundary{padding:.9rem 1rem;border-left:4px solid var(--green);background:var(--green-soft);border-radius:.5rem}.record-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1rem 0}.record-card{display:grid;gap:.25rem;padding:.85rem;border:1px solid var(--line);border-radius:.75rem;background:#fff}.record-card strong{font-size:1.25rem}.record-card span,.record-meta{color:var(--muted)}.record-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.record-button{min-height:44px;border:1px solid var(--green);border-radius:.65rem;padding:.65rem .85rem;background:#fff;color:var(--green);font:inherit;font-weight:800;cursor:pointer}.record-section{margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--line)}.record-module{margin:.7rem 0;border:1px solid var(--line);border-radius:.7rem;background:#fff}.record-module>summary{min-height:44px;padding:.75rem .9rem;cursor:pointer;font-weight:800}.record-lessons{display:grid;gap:.4rem;padding:0 .9rem .9rem}.record-lesson{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.7rem;align-items:center;padding:.6rem 0;border-top:1px solid var(--line)}.record-version-history{overflow-x:auto}.record-table{width:100%;border-collapse:collapse}.record-table th,.record-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.record-table th{background:var(--panel)}.record-warning{padding:.8rem;border:1px solid #d7bf92;border-radius:.7rem;background:#fffaf0}.record-button:focus-visible,.record-course-select:focus-visible,.record-module>summary:focus-visible,.record-version-history:focus-visible{outline:3px solid rgba(36,95,61,.22);outline-offset:2px}@media(max-width:620px){.record-lesson{grid-template-columns:1fr}.record-actions{display:grid}.record-button{width:100%}}@media print{#tab-course-record,.record-actions,.site-header,.catalog-panel,.site-footer,.governance-dashboard{display:none!important}.academic-record{max-width:none}.record-module{break-inside:avoid}.record-version-history{overflow:visible}}
   `;
   document.head.append(style);
 }
@@ -518,9 +518,60 @@ export async function initializeAcademicCourseRecord() {
   injectTranscriptStyles();
   tab.addEventListener('click', async () => {
     for (const item of document.querySelectorAll('.portal-tab')) { const active = item.id === 'tab-course-record'; item.classList.toggle('active', active); item.setAttribute('aria-pressed', active ? 'true' : 'false'); }
-    const panel = transcriptElement('article', '', 'portal-panel academic-record'); panel.append(transcriptElement('p', 'Private learner academic record', 'eyebrow'), transcriptElement('h2', 'Course 1 Academic Record'), transcriptElement('p', 'Loading authoritative lesson, course-final, practical, and enrollment evidence…', 'status')); lessonView.replaceChildren(panel); lessonView.focus();
-    try { renderAcademicRecord(panel, await loadAcademicRecordData()); }
-    catch (error) { panel.replaceChildren(transcriptElement('p', 'Course 1 academic record', 'eyebrow'), transcriptElement('h2', 'Academic record unavailable'), transcriptElement('p', error.message, 'portal-error')); }
+    const panel = transcriptElement('article', '', 'portal-panel academic-record');
+    panel.append(
+      transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+      transcriptElement('h2', 'Academic Course Records'),
+      transcriptElement('p', 'Loading your enrolled course records, graded finals, academic practical evidence, and completion history…', 'status')
+    );
+    lessonView.replaceChildren(panel);
+    lessonView.focus();
+    try {
+      const context = await loadAcademicRecordContext();
+      if (!context.courses.length) {
+        panel.replaceChildren(
+          transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+          transcriptElement('h2', 'No academic course records yet'),
+          transcriptElement('p', 'Enroll in a published course with a graded final to create an account-linked academic course record.', 'record-meta')
+        );
+        return;
+      }
+      const chooser = transcriptElement('label', '', 'record-course-picker');
+      chooser.append(transcriptElement('span', 'Course record'));
+      const select = document.createElement('select');
+      select.className = 'record-course-select';
+      for (const course of context.courses) {
+        const option = document.createElement('option');
+        option.value = course.id;
+        option.textContent = course.title;
+        select.append(option);
+      }
+      chooser.append(select);
+      panel.replaceChildren(
+        transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+        transcriptElement('h2', 'Academic Course Records'),
+        chooser,
+        transcriptElement('div', '', 'record-course-host')
+      );
+      const host = panel.querySelector('.record-course-host');
+      const renderSelected = async () => {
+        host.replaceChildren(transcriptElement('p', 'Loading authoritative course evidence…', 'status'));
+        try {
+          const record = await loadAcademicRecordData(select.value, context);
+          renderAcademicRecord(host, record);
+        } catch (error) {
+          host.replaceChildren(transcriptElement('h3', 'Academic record unavailable'), transcriptElement('p', error.message, 'portal-error'));
+        }
+      };
+      select.addEventListener('change', renderSelected);
+      await renderSelected();
+    } catch (error) {
+      panel.replaceChildren(
+        transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+        transcriptElement('h2', 'Academic records unavailable'),
+        transcriptElement('p', error.message, 'portal-error')
+      );
+    }
   });
   return true;
 }
