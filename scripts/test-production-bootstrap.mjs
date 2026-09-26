@@ -21,14 +21,17 @@ const productionEnv = {
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_REQUIRED_SCHEMA_VERSION: '6'
+  THC_REQUIRED_SCHEMA_VERSION: '7'
 };
 const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
 assert.equal(await options.credentialStore.ping(), true);
-assert.equal(await options.credentialStore.schemaVersion(), '4');
-assert.equal(options.requiredSchemaVersion, '4');
+assert.equal(await options.credentialStore.schemaVersion(), '7');
+assert.equal(options.requiredSchemaVersion, '7');
 assert.equal(options.credentialWriter.kind, 'test-writer');
+assert.equal(typeof options.credentialWriter.issueCredential, 'function');
+assert.equal(typeof options.credentialWriter.transitionById, 'function');
+assert.equal(options.credentialSigner, null, 'signer stays unavailable until a managed signing module is configured');
 assert.equal(typeof options.learnerStore.listCourseEvidence, 'function');
 assert.equal(typeof options.learnerStore.listCredentialEvidence, 'function');
 for (const method of ['findOpenAssessmentAttempt', 'getAssessmentAttempt', 'createAssessmentAttempt', 'saveAssessmentResponses', 'saveAssessmentScore']) {
@@ -61,4 +64,4 @@ assert.equal(evaluatorAuth.ok, true);
 const adminWrite = options.authorize({ headers: { authorization: 'Bearer external-test-token' } }, 'admin:write');
 assert.equal(adminWrite.ok, true);
 
-console.log('Production persistence, schema v4 readiness, learner practical submissions, automatic academic enrollment completion, assessment/evidence, evaluator queue/assignment/reporting, authentication adapter, and admin MFA assurance contracts passed.');
+console.log('Production persistence, schema v7 readiness, learner practical submissions, automatic academic enrollment completion, assessment/evidence, evaluator queue/assignment/reporting, authentication adapter, and admin MFA assurance contracts passed.');
