@@ -12,7 +12,7 @@ Review the actual rendered Course 5 learner surface, not only source JSON or SVG
 
 - course landing/overview;
 - all four dedicated lessons;
-- six embedded learner visuals;
+- eight embedded learner visuals;
 - three downloadable practice worksheets;
 - formative assessment surface;
 - summative academic assessment surface when exposed in the approved environment;
@@ -21,14 +21,13 @@ Review the actual rendered Course 5 learner surface, not only source JSON or SVG
 
 ## Visual asset checks
 
-For every Course 5 SVG:
+For every Course 5 instructional raster asset:
 
-- meaningful `<title>` present;
-- meaningful `<desc>` present;
 - lesson-level text alternative communicates the instructional meaning, not merely visual appearance;
+- caption and surrounding lesson copy provide the scientific context required to interpret the visual;
 - text remains readable without relying on color alone;
 - labels do not clip at narrow widths;
-- diagrams remain understandable when zoomed;
+- diagrams remain understandable when zoomed and preserve legible labels at mobile, tablet and desktop widths;
 - print/download worksheets preserve usable contrast and writing space;
 - symbols used for quarantine, sanitation, warning or evidence have text equivalents.
 
