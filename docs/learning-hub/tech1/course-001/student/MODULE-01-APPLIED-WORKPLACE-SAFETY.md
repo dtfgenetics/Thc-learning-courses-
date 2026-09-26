@@ -25,6 +25,27 @@ A good Technician I scan asks four questions before production work begins:
 
 The fourth question is important. Recognizing a fault does not automatically qualify the technician to repair it.
 
+### Scientific foundation — hazard, exposure and risk are different questions
+
+A hazard can exist without a worker being exposed to it, and an exposure can vary greatly in route, intensity, duration and frequency. That distinction matters in cultivation because the same room can contain electrical, chemical, biological, ergonomic and environmental hazards at the same time. A technician should therefore avoid treating risk as a single visual impression such as “this room looks safe.”
+
+For routine work, think in a short causal chain:
+
+**hazard source → pathway or contact opportunity → worker/crop receptor → possible consequence → control**
+
+Examples:
+
+- irrigation water becomes an electrical risk when it creates a contact pathway toward energized or damaged equipment;
+- plant dust becomes a respiratory concern when a task suspends particulate in the breathing zone;
+- a sanitizer becomes a chemical-exposure concern when its concentration, handling method or splash/aerosol pathway creates contact;
+- a blocked aisle becomes a fall or emergency-egress concern because it changes how people can safely move through the work area.
+
+This is why observation must include both the **source** and the **pathway**. Removing or interrupting the pathway can be a stronger control than simply warning a worker to “be careful.”
+
+### Use the hierarchy of controls — and stay inside authorization
+
+OSHA and NIOSH use a hierarchy that prioritizes controls that act on the hazard itself before controls that depend mainly on worker behavior. In general, the order is **elimination**, **substitution**, **engineering controls**, **administrative/work-practice controls**, then **PPE**. The hierarchy is not permission to redesign equipment or processes on your own; Technician I applies only controls authorized by the site procedure and escalates changes that require engineering, electrical, chemical, supervisory or other specialist authority.
+
 ### Use the strongest authorized control
 
 When the work procedure allows it, changing the work environment is usually stronger than relying only on worker attention. A hose that repeatedly crosses an aisle should be rerouted or secured rather than turned into a permanent “watch your step” problem. A spill covered by an approved routine procedure should be corrected promptly. Damaged electrical equipment should not be opened or investigated by an unqualified technician simply because production is waiting.
@@ -76,6 +97,12 @@ Technicians use the PPE specified by the employer’s hazard assessment, work in
 
 Do not invent a personal rule that “more PPE is always safer.” Incorrect or excessive PPE can create heat stress, visibility problems, dexterity problems or a false sense of security. The correct standard is **appropriate PPE for the assessed task**.
 
+### Scientific foundation — match protection to the exposure route
+
+PPE works only when it interrupts a relevant exposure route and is appropriate for the hazard. Common routes include inhalation, eye contact, skin contact and accidental ingestion from contaminated hands or surfaces. A glove selected for one chemical is not automatically suitable for another; eye protection does not control inhalation; a face covering is not automatically a respirator; and respiratory protection can require a formal program, medical evaluation, fit testing and task-specific selection.
+
+That is why the hazard assessment comes before PPE selection. The learner should be able to explain **what hazard is present, how exposure could occur, what higher-level controls are already in place, and what residual exposure the assigned PPE is intended to reduce**.
+
 ### Read the current chemical information
 
 Hazard Communication uses labels, Safety Data Sheets and training to communicate chemical hazards. A technician should be able to locate:
@@ -89,6 +116,12 @@ Hazard Communication uses labels, Safety Data Sheets and training to communicate
 - spill or emergency information.
 
 The SDS does not replace training or the site SOP. It is one source inside a controlled hazard-communication system.
+
+### Read an SDS as a structured technical document
+
+Under OSHA Hazard Communication, SDS information follows a standardized section structure. For routine Technician I work, the most operationally useful sections commonly include identification; hazard identification; composition/information on ingredients; first-aid measures; accidental-release measures; handling and storage; exposure controls/PPE; physical and chemical properties; stability/reactivity; and toxicological information. The exact response still comes from the current product label, SDS, employer procedure and applicable rule.
+
+Do not reduce SDS use to memorizing a signal word. Signal words communicate relative hazard severity within the labeling system, but safe work decisions also depend on the specific hazard statements, precautionary statements, exposure route, task conditions and emergency instructions.
 
 ### Pesticide work has additional boundaries
 
@@ -135,6 +168,12 @@ Cannabis plant material can contribute to occupational exposure. NIOSH has repor
 
 This does **not** mean every worker or facility faces the same exposure level. The facility must assess actual conditions. Technician I must know how to recognize symptoms or alarms that require reporting or escalation.
 
+### Scientific foundation — respiratory exposure can be irritant, allergic or mixed
+
+Work-related breathing problems do not all arise through the same mechanism. Some workplace agents act primarily as irritants; others can act as sensitizers that trigger an immune response after a latency period; and some work conditions can worsen pre-existing disease. NIOSH describes cannabis-industry concerns that include plant material, organic dust/particulate, microbes, cleaning chemicals and other exposures. Recent NIOSH reporting also documents work-related asthma cases in cannabis cultivation and processing.
+
+For the technician, the operational lesson is not to diagnose the mechanism. It is to recognize a credible work pattern, report it early, and support exposure control. Repeated symptoms during a particular task, improvement away from the task, or recurrence after re-exposure are useful facts to report to the workplace health process and a qualified clinician.
+
 ### Report work-related symptoms
 
 Recurring cough, wheeze, chest tightness, shortness of breath, eye irritation, skin reactions or other symptoms associated with work should be reported through the workplace health and safety process. NIOSH’s 2026 asthma material emphasizes early recognition and prevention; the technician should not self-diagnose or hide symptoms because of stigma or production pressure.
@@ -143,7 +182,9 @@ Medical evaluation belongs to qualified health professionals. The worker’s rol
 
 ### Alarms are action signals, not diagnosis invitations
 
-A carbon-dioxide or other life-safety alarm should trigger the posted response procedure. If the worker is not assigned emergency-response duties, do not enter merely to look at a controller or “see if it feels okay.” Follow the emergency plan and chain of command.
+Carbon dioxide is colorless and odorless, so human senses are not a reliable warning system for an unsafe accumulation. Elevated CO₂ can displace oxygen and can also cause direct physiological effects at sufficiently high concentrations. A carbon-dioxide or other life-safety alarm should therefore trigger the posted response procedure, not an informal “smell test” or visual inspection.
+
+If the worker is not assigned emergency-response duties, do not enter merely to look at a controller or “see if it feels okay.” Follow the emergency plan and chain of command. Alarm setpoints, ventilation interlocks, emergency actions and re-entry criteria are facility-specific engineering and safety controls, not values the learner should invent from a generic course.
 
 ### Decision scenario
 
