@@ -25,7 +25,9 @@ A private authoritative credential record should contain at minimum:
 
 - credential instance ID;
 - credential program ID and version;
-- candidate internal identifier;
+- candidate internal identifier and immutable learner reference;
+- certification application reference linking the candidate decision to the applicable credential program;
+- candidate certificate/display name snapshot used for the issued artifact;
 - issuance timestamp;
 - current status (`active`, `suspended`, `revoked`, `expired` if renewal is later adopted);
 - evidence-decision reference(s), not full secure assessment content;
@@ -43,7 +45,7 @@ The public verification surface should return only what is needed to verify the 
 - issue date;
 - program/version identifier;
 - expiration/renewal date only if the approved program later requires one;
-- candidate display name only under the approved privacy/consent policy;
+- candidate display name only under the approved privacy/consent policy and only when the issuance record carries that consent state;
 - verification timestamp.
 
 Do not expose assessment items, answer keys, attempt history, medical/accommodation data, detailed assessor notes, internal candidate identifiers, or private evidence artifacts.
@@ -62,4 +64,6 @@ Verification identifiers should be high-entropy/non-sequential where practical a
 
 ## Current state
 
-The workflow contract exists, but operational issuance remains disabled. The release-evidence gate `credentialIssuanceWorkflowApproval` stays `not-approved` and `finalProgramReleaseApproval` stays unresolved until the real implementation and governance are approved.
+The workflow contract exists and the learner runtime now persists learner references, certification application references and certificate-name data used to bind course-assessment evidence to a candidate record. Public verification can render a printable certificate from an issued verification record and exposes a recipient display name only when explicit public-name consent is present.
+
+Operational issuance remains disabled. The release-evidence gate `credentialIssuanceWorkflowApproval` stays `not-approved` and `finalProgramReleaseApproval` stays unresolved until production issuer identity/signing/revocation controls, governance approvals and the remaining professional certification evidence gates are approved.
