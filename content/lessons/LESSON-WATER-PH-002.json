@@ -1,20 +1,147 @@
 {
-  "id":"LESSON-WATER-PH-002",
-  "title":"pH Measurement, Buffering and Nutrient Availability Context",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-WATER-001"],
-  "learningObjectives":["LO-WATER-PH-002"],
-  "estimatedMinutes":35,
-  "references":["REF-IRRIGATION-001"],
-  "assessment":null,
-  "content":{
-    "overview":"pH describes acidity or basicity and influences chemical reactions and nutrient availability, but a pH number alone does not identify every root-zone problem. Sampling method, buffering, solution composition, and measurement quality all matter.",
-    "vocabulary":[{"term":"pH","definition":"A logarithmic measure related to hydrogen ion activity in a solution."},{"term":"Buffering","definition":"Resistance of a solution or medium to rapid pH change when acids or bases are added."},{"term":"Alkalinity","definition":"The acid-neutralizing capacity of water, commonly associated with bicarbonate and carbonate species."}],
-    "sections":[{"title":"pH and alkalinity are different","body":"Two water sources can have similar pH but very different buffering capacity. Alkalinity influences how strongly the water resists acidification and can affect long-term root-zone pH behavior.","references":["REF-IRRIGATION-001"]},{"title":"Measurement method matters","body":"Meters require calibration, clean probes, adequate sample volume, and enough time to stabilize. Poor handling can create false precision and lead to unnecessary correction.","references":["REF-IRRIGATION-001"]},{"title":"pH affects nutrient chemistry","body":"Nutrient solubility and ionic form can change with pH, but apparent deficiency symptoms should still be evaluated with EC, root health, irrigation history, and plant development.","references":["REF-IRRIGATION-001"]}],
-    "workedExamples":["If source-water pH appears stable but root-zone pH drifts upward over time, investigate alkalinity and irrigation behavior rather than only lowering the feed pH more aggressively.","If a meter suddenly shifts after storage, recalibrate before changing the crop solution."],
-    "commonMistakes":["Treating pH and alkalinity as the same property.","Adjusting pH from an uncalibrated meter.","Diagnosing nutrient deficiency from pH alone."],
-    "practicalApplication":"Calibrate the pH meter, measure source and feed water consistently, document alkalinity when available, compare root-zone trends, and interpret changes together with EC and plant observations.",
-    "summary":"pH is an important chemical-context measurement, but useful interpretation requires sound measurement technique and awareness of buffering, alkalinity, EC, and root-zone conditions."
+  "id": "LESSON-WATER-PH-002",
+  "title": "pH Measurement, Buffering and Nutrient Availability Context",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-WATER-001"
+  ],
+  "learningObjectives": [
+    "LO-WATER-PH-002"
+  ],
+  "estimatedMinutes": 35,
+  "references": [
+    "REF-IRRIGATION-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "pH describes acidity or basicity and influences chemical reactions and nutrient availability, but a pH number alone does not identify every root-zone problem. Sampling method, buffering, solution composition, and measurement quality all matter.",
+    "vocabulary": [
+      {
+        "term": "pH",
+        "definition": "A logarithmic measure related to hydrogen ion activity in a solution."
+      },
+      {
+        "term": "Buffering",
+        "definition": "Resistance of a solution or medium to rapid pH change when acids or bases are added."
+      },
+      {
+        "term": "Alkalinity",
+        "definition": "The acid-neutralizing capacity of water, commonly associated with bicarbonate and carbonate species."
+      }
+    ],
+    "sections": [
+      {
+        "title": "pH and alkalinity are different",
+        "body": "Two water sources can have similar pH but very different buffering capacity. Alkalinity influences how strongly the water resists acidification and can affect long-term root-zone pH behavior.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Measurement method matters",
+        "body": "Meters require calibration, clean probes, adequate sample volume, and enough time to stabilize. Poor handling can create false precision and lead to unnecessary correction.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "pH affects nutrient chemistry",
+        "body": "Nutrient solubility and ionic form can change with pH, but apparent deficiency symptoms should still be evaluated with EC, root health, irrigation history, and plant development.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If source-water pH appears stable but root-zone pH drifts upward over time, investigate alkalinity and irrigation behavior rather than only lowering the feed pH more aggressively.",
+      "If a meter suddenly shifts after storage, recalibrate before changing the crop solution.",
+      "Two water sources both read pH 7.4, but one has far greater alkalinity. They can require very different acid input and produce different long-term root-zone pH behavior.",
+      "A probe reads 0.4 pH units differently after cleaning and recalibration. The original number was measurement error, not a crop change."
+    ],
+    "commonMistakes": [
+      "Treating pH and alkalinity as the same property.",
+      "Adjusting pH from an uncalibrated meter.",
+      "Diagnosing nutrient deficiency from pH alone.",
+      "Using pH paper/uncalibrated probes for decisions requiring precision.",
+      "Assuming a pH correction stays stable without considering alkalinity and media buffering."
+    ],
+    "practicalApplication": "Calibrate the pH meter, measure source and feed water consistently, document alkalinity when available, compare root-zone trends, and interpret changes together with EC and plant observations.",
+    "summary": "pH is an important chemical-context measurement, but useful interpretation requires sound measurement technique and awareness of buffering, alkalinity, EC, and root-zone conditions.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "pH is logarithmic; alkalinity is buffering capacity",
+        "body": "pH describes hydrogen-ion activity at the moment of measurement. Alkalinity describes how strongly water neutralizes added acid. Two samples can share a pH but respond very differently when adjusted.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Measurement quality checklist",
+        "columns": [
+          "Check",
+          "Reason"
+        ],
+        "rows": [
+          [
+            "Fresh calibration standards",
+            "Reduces systematic error"
+          ],
+          [
+            "Clean/hydrated probe",
+            "Improves response"
+          ],
+          [
+            "Temperature/stabilization",
+            "Prevents premature reading"
+          ],
+          [
+            "Sample method recorded",
+            "Enables comparisons"
+          ],
+          [
+            "Alkalinity known when relevant",
+            "Explains resistance to pH change"
+          ]
+        ],
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same pH, different alkalinity",
+        "setting": "Source A and B both read pH 7.3. Source B has much higher bicarbonate alkalinity.",
+        "prompt": "Which statement is best?",
+        "options": [
+          "They will behave identically when acidified",
+          "Source B can require more acid and exert more buffering",
+          "pH and alkalinity are identical",
+          "EC determines alkalinity"
+        ],
+        "answer": "Source B can require more acid and exert more buffering.",
+        "feedback": "pH is not a measure of acid-neutralizing capacity."
+      },
+      {
+        "type": "activity",
+        "title": "pH measurement QA",
+        "instructions": "Review a set of pH readings with calibration notes.",
+        "prompts": [
+          "Identify invalid or weak measurements.",
+          "Choose which readings can be trended.",
+          "Explain where alkalinity data are needed.",
+          "State one verification step before changing dosing."
+        ],
+        "artifact": "pH quality-control review"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "A pH value is only as useful as the sampling and calibration behind it, and pH should not be confused with alkalinity."
+      }
+    ]
   }
 }
