@@ -1,37 +1,266 @@
 {
   "id": "LESSON-PLANT-BIO-001",
   "title": "Cannabis Plant Structure and Lifecycle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
-  "competencies": ["COMP-PLANT-BIO-001"],
-  "learningObjectives": ["LO-PLANT-BIO-001"],
+  "competencies": [
+    "COMP-PLANT-BIO-001"
+  ],
+  "learningObjectives": [
+    "LO-PLANT-BIO-001"
+  ],
   "estimatedMinutes": 40,
-  "references": ["REF-PLANT-BIO-001"],
+  "references": [
+    "REF-PLANT-BIO-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Understanding cannabis begins with recognizing the plant's major organs and how their functions change across the lifecycle. Structure, development, and reproductive state provide the biological context needed for later lessons on environment, nutrition, propagation, training, and harvest.",
+    "overview": "Cannabis cultivation decisions make more sense when the learner can connect visible plant structures to their biological functions. This lesson builds that foundation by linking roots, stems, nodes, internodes, leaves, meristems and reproductive structures to transport, photosynthesis, water balance, growth and developmental stage. The goal is not memorization alone: learners practice using anatomy and stage as evidence while avoiding unsupported diagnosis from appearance.",
     "vocabulary": [
-      {"term":"Node","definition":"The point on a stem where leaves, branches, or reproductive structures can arise."},
-      {"term":"Internode","definition":"The stem segment located between two adjacent nodes."},
-      {"term":"Vegetative growth","definition":"A developmental phase dominated by roots, stems, leaves, and branching rather than mature reproductive structures."},
-      {"term":"Reproductive development","definition":"The developmental transition in which floral structures form and mature."}
+      {
+        "term": "Node",
+        "definition": "The point on a stem where leaves, branches, or reproductive structures can arise."
+      },
+      {
+        "term": "Internode",
+        "definition": "The stem segment located between two adjacent nodes."
+      },
+      {
+        "term": "Vegetative growth",
+        "definition": "A developmental phase dominated by roots, stems, leaves, and branching rather than mature reproductive structures."
+      },
+      {
+        "term": "Reproductive development",
+        "definition": "The developmental transition in which floral structures form and mature."
+      }
     ],
     "sections": [
-      {"title":"Roots, stems, leaves, and nodes","body":"Roots anchor the plant and acquire water and mineral nutrients. Stems provide support and transport pathways, while leaves are major sites of photosynthesis and gas exchange. Nodes organize branching and later reproductive development, making plant architecture easier to interpret when these structures are identified correctly.","references":["REF-PLANT-BIO-001"]},
-      {"title":"Development changes what structures mean","body":"A structure should not be interpreted without developmental context. Young vegetative plants allocate heavily to root, stem, and leaf expansion, while later developmental stages increasingly express reproductive structures. The same node therefore carries different diagnostic significance depending on plant age and phase.","references":["REF-PLANT-BIO-001"]},
-      {"title":"Reproductive morphology and sex expression","body":"Cannabis reproductive morphology is biologically important because sex expression and floral development affect propagation, breeding, crop planning, and harvest decisions. Learners should identify visible reproductive structures from morphology rather than relying on cultivar names or assumptions about the seed source.","references":["REF-PLANT-BIO-001"]},
-      {"title":"Morphology is evidence, not a complete diagnosis","body":"Leaf shape, branching, vigor, and floral development can provide useful observations, but morphology alone does not establish every cause of a plant condition. Environmental, genetic, nutritional, and pathological factors can produce overlapping visible effects, so later diagnostic work should combine plant structure with measurements and history.","references":["REF-PLANT-BIO-001"]}
+      {
+        "title": "Plant organs work as one connected system",
+        "body": "Roots acquire water and mineral nutrients from the root zone; stems support the canopy and contain vascular tissues; leaves capture light and exchange gases; meristems generate new growth; and reproductive structures develop from specialized shoot tissues. A change in one part of this system can alter another, so cultivation observations should connect organ identity with whole-plant function.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Nodes and internodes describe architecture",
+        "body": "A node is a repeated structural position where leaves, branches or reproductive structures may arise. The internode is the stem segment between nodes. Node count, internode length and branch position often describe plant architecture more accurately than total height alone. These measurements become especially useful when comparing plants grown under different light, spacing or environmental conditions.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Leaves link carbon gain with water loss",
+        "body": "Leaves are major photosynthetic organs, but photosynthesis depends on more than light. Carbon dioxide enters through stomata while water vapor is lost through transpiration. Leaf temperature, humidity, airflow, root-zone water supply and light therefore interact. A visible leaf symptom should be recorded precisely before it is assigned to a nutrient, environmental or disease cause.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Developmental stage is based on biology, not just calendar time",
+        "body": "Cannabis plants move through germination, seedling establishment, vegetative development, reproductive transition, flowering, maturation and senescence, but the rate varies with genetics and environment. Chronological age provides context, while observable morphology provides stronger evidence of developmental state.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Reproductive morphology must be observed directly",
+        "body": "Sex expression and floral development influence crop planning, breeding, pollination risk and harvest. Learners should identify visible reproductive structures from morphology and document uncertainty rather than relying on seed labels, cultivar marketing or assumptions about timing.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "title": "Observation is different from diagnosis",
+        "body": "Plant structure and developmental stage narrow the questions a technician should ask, but they rarely prove a single cause. Similar visible changes can arise from root-zone stress, environmental conditions, nutrition, injury, genetics or pathogens. Strong cultivation records separate what is directly observed from what is inferred.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "A plant with vigorous leaf and branch production but no developed floral structures is best described by its vegetative morphology rather than by chronological age alone.",
-      "When reproductive structures first appear at nodes, document their morphology and developmental progression instead of inferring sex or maturity from cultivar marketing information."
+      "Two plants are the same height, but one has eight compact nodes and the other has five widely spaced nodes. Recording node count and internode spacing reveals a meaningful architecture difference that height alone hides.",
+      "A lower leaf is yellowing while new growth remains green. The learner records organ position, tissue age and pattern first, then pairs that evidence with root-zone and environmental measurements instead of immediately labeling the symptom as a nutrient deficiency.",
+      "A plant reaches the expected calendar age for flowering but shows no reproductive morphology. The learner records the schedule and age as context while classifying stage from the structures actually present.",
+      "A branch tip is removed during an approved training activity. The learner identifies the apical growth point and predicts that growth distribution may change among remaining shoots, then records the later response rather than assuming a guaranteed outcome."
     ],
     "commonMistakes": [
-      "Using plant age alone to assign developmental stage without checking morphology.",
-      "Treating every visible leaf symptom as proof of a single nutrient problem.",
-      "Confusing a cultivar name with a reliable description of actual plant morphology or sex expression."
+      "Using plant age alone to assign developmental stage.",
+      "Using total plant height without recording node count or internode spacing.",
+      "Treating every visible leaf change as proof of a nutrient deficiency.",
+      "Confusing observation with diagnosis.",
+      "Assuming a seed label or cultivar name guarantees sex expression or developmental timing.",
+      "Describing a whole plant as one uniform stage when different organs are developing at different rates."
     ],
-    "practicalApplication": "During routine observation, identify roots or root-zone condition where visible, stems, nodes, internodes, leaves, branches, and reproductive structures. Record developmental stage from observable morphology, then use that stage as context when interpreting later environmental or management data.",
-    "summary": "Plant structure provides the vocabulary for cultivation science. Correctly identifying major organs, nodes, developmental stage, and reproductive morphology allows later environmental, nutrition, training, propagation, and harvest decisions to be grounded in the actual biology of the plant."
+    "practicalApplication": "Create a structured plant-observation record for one specimen or approved image set. Identify roots/root zone, main stem, nodes, internodes, leaves, branches, meristems and any reproductive structures; record developmental stage from visible evidence; measure node count and at least three internodes; then write separate fields for direct observations, contextual measurements and possible explanations. Do not convert appearance into a diagnosis unless supporting evidence is available.",
+    "summary": "Cannabis anatomy is the foundation for cultivation reasoning. Roots, stems, leaves, nodes, internodes, meristems and reproductive tissues form an integrated system whose development changes over time. Accurate cultivation work begins by identifying the structure and stage, measuring what can be measured, and keeping direct observation separate from causal diagnosis.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "From organ to function",
+        "body": "Cultivation observations become more useful when each visible structure is linked to its biological role. Roots acquire resources, stems transport and support, leaves exchange gases and capture light, meristems generate growth and reproductive tissues support flowering. This structure-function link is the basis for later lessons on irrigation, environment, nutrition, training and harvest.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Core cannabis structures and what they tell you",
+        "columns": [
+          "Structure",
+          "Primary function",
+          "Useful cultivation observation"
+        ],
+        "rows": [
+          [
+            "Roots / root zone",
+            "Water and mineral acquisition; anchorage; signaling",
+            "Root color/condition where visible, root-zone moisture, aeration and distribution"
+          ],
+          [
+            "Stem",
+            "Support and vascular transport",
+            "Damage, diameter, continuity, orientation and branch attachment"
+          ],
+          [
+            "Node",
+            "Repeated structural position for leaves, branches or reproductive structures",
+            "Node count, branch position and reproductive observation location"
+          ],
+          [
+            "Internode",
+            "Stem segment between nodes",
+            "Spacing pattern, elongation trend and architecture"
+          ],
+          [
+            "Leaf",
+            "Photosynthesis, gas exchange and transpiration",
+            "Tissue age, position, orientation, color pattern and damage"
+          ],
+          [
+            "Meristem / growth point",
+            "Production of new organs and shoots",
+            "Active tip condition and response after approved training"
+          ],
+          [
+            "Reproductive structures",
+            "Flowering and pollination functions",
+            "Morphology, location, developmental progression and uncertainty"
+          ]
+        ],
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Chronological age versus developmental state",
+        "left": {
+          "label": "Chronological age",
+          "body": "How much time has passed since a defined event such as emergence, rooting or a schedule change. Useful context, but not proof of stage."
+        },
+        "right": {
+          "label": "Developmental state",
+          "body": "Which biological landmarks and structures are actually present. Stronger evidence for classifying what the plant is doing now."
+        }
+      },
+      {
+        "type": "steps",
+        "title": "A repeatable plant-observation sequence",
+        "items": [
+          {
+            "title": "Identify the specimen",
+            "body": "Record plant, batch or image-set identity and observation date/time."
+          },
+          {
+            "title": "Locate major organs",
+            "body": "Identify root/root-zone context, stem, leaves, branches and growth points."
+          },
+          {
+            "title": "Measure architecture",
+            "body": "Record node count, representative internode lengths and branch positions where appropriate."
+          },
+          {
+            "title": "Classify developmental evidence",
+            "body": "Describe seedling, vegetative, transition, flowering or maturation landmarks from visible structures."
+          },
+          {
+            "title": "Record abnormal patterns",
+            "body": "Note which organ, tissue age and location are affected before assigning any cause."
+          },
+          {
+            "title": "Add environmental/root-zone context",
+            "body": "Pair morphology with relevant light, temperature, humidity, irrigation or root-zone information."
+          },
+          {
+            "title": "Separate observation from interpretation",
+            "body": "State what is directly visible, what is measured and what remains a hypothesis."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same height, different architecture",
+        "setting": "Two cannabis plants are 60 cm tall. Plant A has eight nodes with short internodes. Plant B has five nodes with long internodes.",
+        "prompt": "What is the better observation?",
+        "options": [
+          "The plants are developmentally identical because they are the same height",
+          "Plant B is automatically healthier because it stretched more",
+          "Record node count and internode spacing because height alone does not describe architecture",
+          "Diagnose Plant B with a nutrient deficiency"
+        ],
+        "answer": "Record node count and internode spacing because height alone does not describe architecture.",
+        "feedback": "Architecture is multidimensional. Node count and internode spacing preserve information that total height alone cannot."
+      },
+      {
+        "type": "scenario",
+        "title": "A visible symptom is not yet a diagnosis",
+        "setting": "Older lower leaves on one plant are yellowing while new growth remains comparatively green.",
+        "prompt": "What should happen first?",
+        "options": [
+          "Record the pattern and gather root-zone/environmental context before assigning a cause",
+          "Immediately diagnose nitrogen deficiency",
+          "Increase fertilizer concentration without measurements",
+          "Remove all affected leaves and close the record"
+        ],
+        "answer": "Record the pattern and gather root-zone/environmental context before assigning a cause.",
+        "feedback": "Organ position and tissue age are useful evidence, but multiple causes can produce similar visible patterns."
+      },
+      {
+        "type": "activity",
+        "title": "Build a structure-stage evidence record",
+        "instructions": "Use an approved plant, specimen or image series and create a structured observation record.",
+        "prompts": [
+          "Label the major organs and at least five nodes.",
+          "Measure or estimate three representative internodes using a consistent method.",
+          "Describe the developmental stage from visible landmarks.",
+          "Record at least three direct observations without interpretation.",
+          "Add two relevant environmental or root-zone measurements or known contextual facts.",
+          "List two possible explanations for one abnormal observation and state what additional evidence would distinguish them."
+        ],
+        "artifact": "Cannabis structure, stage and observation worksheet",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Evidence boundary",
+        "tone": "evidence",
+        "body": "General botanical principles support organ function, but cannabis developmental timing and morphology vary by genotype and environment. Avoid universal week-based claims unless the cited evidence and cultivation context support them.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Name the structure, identify the stage, measure the pattern, then interpret. Good cultivation science starts with precise observation before diagnosis.",
+        "references": [
+          "REF-PLANT-BIO-001"
+        ]
+      }
+    ]
   }
 }
