@@ -24,6 +24,7 @@ export async function createPersistenceAdapters({ env }) {
       async ping() {},
       async schemaVersion() {},
       async getByVerificationId(verificationId) {},
+      async listBySubjectHash(subjectHash) {},
       async count() {}
     },
     credentialWriter: {
