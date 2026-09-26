@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-003-01",
   "title": "Temperature, RH and VPD as Contextual Measurements",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "published",
   "competencies": [
     "COMP-ENV-VPD-001",
@@ -14,11 +14,12 @@
   "estimatedMinutes": 55,
   "references": [
     "REF-VPD-002",
-    "REF-MHRA-GXP-DATA-INTEGRITY"
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-VPD-003"
   ],
   "assessment": null,
   "content": {
-    "overview": "Technician I uses environmental measurements as documented evidence, not as universal cultivation commands. Learners practice recording temperature and relative humidity together, interpreting VPD as atmospheric drying-demand context, identifying whether a value is an observed measurement or a supplied target, and preserving the time, location and sensor information needed for another qualified person to reconstruct the reading.",
+    "overview": "Technician I uses environmental measurements as documented evidence, not as universal cultivation commands. Learners record temperature and relative humidity together, interpret vapor pressure deficit (VPD) as one description of atmospheric drying demand, distinguish room-air conditions from leaf-level conditions, and preserve the time, location, sensor and method context required for another qualified person to reconstruct the reading. VPD helps describe the gradient that can drive water loss from leaves, but actual transpiration also depends on stomatal conductance, leaf temperature, airflow/boundary-layer conditions and the ability of the root–xylem pathway to supply water.",
     "vocabulary": [
       {
         "term": "relative humidity",
@@ -58,6 +59,28 @@
         "references": [
           "REF-MHRA-GXP-DATA-INTEGRITY"
         ]
+      },
+      {
+        "title": "Air VPD and leaf-level conditions are related but not identical",
+        "body": "Room-air temperature and RH can be used to describe atmospheric VPD, but the vapor-pressure gradient experienced by a leaf also depends on leaf temperature. Radiation load, airflow, transpiration and plant water status can make leaf temperature differ from the surrounding air. That is why a technician records where and how temperature/RH were measured and does not treat a room dashboard value as a direct measurement of every leaf surface.",
+        "references": [
+          "REF-VPD-002",
+          "REF-VPD-003"
+        ]
+      },
+      {
+        "title": "VPD describes demand; plant hydraulics determine the response",
+        "body": "Increasing VPD generally increases atmospheric demand for water vapor, but plant response is regulated rather than purely passive. Stomata can reduce conductance as demand rises, and transpiration can also become limited by hydraulic supply through the soil, roots, xylem and leaves. A VPD value therefore cannot, by itself, prove whether a plant is transpiring too much, too little or normally.",
+        "references": [
+          "REF-VPD-003"
+        ]
+      },
+      {
+        "title": "Airflow changes the leaf boundary layer and measurement meaning",
+        "body": "Air movement alters the thin boundary layer of relatively still air next to the leaf surface. Changing that boundary layer can affect heat and water-vapor exchange even when the room sensor reports the same temperature and RH. Environmental records are strongest when airflow condition, sensor placement and crop location are preserved as context instead of being omitted from the interpretation.",
+        "references": [
+          "REF-VPD-003"
+        ]
       }
     ],
     "workedExamples": [
@@ -68,10 +91,16 @@
       "Recording RH without temperature when the task requires VPD context.",
       "Treating a copied VPD chart as a universal rule for every crop and facility.",
       "Recording the target value as though it were the actual sensor reading.",
+      "Changing room controls before verifying the reading and the technician authority boundary.",
+      "Assuming air temperature is always identical to leaf temperature when interpreting leaf-level vapor-pressure conditions.",
+      "Treating VPD as a direct measurement of transpiration rather than a description of atmospheric demand that interacts with stomata and plant hydraulics.",
+      "Recording RH without temperature when the task requires VPD context.",
+      "Treating a copied VPD chart as a universal rule for every crop and facility.",
+      "Recording the target value as though it were the actual sensor reading.",
       "Changing room controls before verifying the reading and the technician authority boundary."
     ],
     "practicalApplication": "Use the downloadable environmental measurement practice sheet with a supplied dashboard snapshot and room map. Record temperature, RH, calculated or displayed VPD, supplied targets, sensor/location/time context and alarm state; evaluate representativeness; document permitted verification and preserve any uncertainty or escalation need.",
-    "summary": "Environmental measurements become useful when their variables and context are preserved. Technician I records temperature and RH together, treats VPD as contextual interpretation, separates target from observation and escalates rather than turning one number into an independent control strategy.",
+    "summary": "Environmental measurements become useful when their variables, measurement plane and context are preserved. Technician I records temperature and RH together, treats VPD as atmospheric-demand context rather than a universal control law, recognizes that leaf temperature and airflow can change leaf-level conditions, separates target from observation, and escalates rather than turning one number into an unsupported diagnosis or control change.",
     "blocks": [
       {
         "type": "comparison",
