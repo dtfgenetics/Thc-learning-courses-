@@ -188,6 +188,44 @@
         "tone": "evidence",
         "body": "Good scouting produces comparable data: where, how many, how severe, what evidence, and how the pattern changes over time."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-003",
+          "title": "IPM scouting route and spatial-pattern evidence",
+          "src": "/assets/course5/ipm-scouting-route-patterns.webp",
+          "alt": "Educational cultivation-room scouting map showing a repeatable inspection route, fixed zones and mapped plant-health findings used to detect spatial patterns over time.",
+          "caption": "A consistent route turns scouting into comparable evidence. Map location, incidence and severity so trends and clusters become visible.",
+          "references": [
+            "REF-IPM-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-003",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-004",
+          "title": "Sign versus symptom evidence layers",
+          "src": "/assets/course5/sign-vs-symptom-evidence.webp",
+          "alt": "Educational comparison distinguishing direct pest or pathogen signs from plant symptoms such as chlorosis, lesions and distortion, with environmental and root-zone context shown as separate evidence layers.",
+          "caption": "Direct signs and plant symptoms are not equivalent evidence. Separate what the organism produces from how the plant responds.",
+          "references": [
+            "REF-IPM-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-004",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
