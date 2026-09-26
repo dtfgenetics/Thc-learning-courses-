@@ -20,6 +20,21 @@ A cultivation operation may track individual plants, groups, lots, batches, room
 
 GS1 distinguishes class-, batch/lot- and instance-level identification. Technician I does not need to memorize GS1 identifiers; the educational value is the underlying decision: **what level of identity is required for this material and event?**
 
+### Scientific foundation — traceability is a graph, not a list
+
+A useful way to understand traceability is as a network of linked objects and events. Objects can include plants, lots, rooms, containers, samples or waste units. Events connect those objects through actions such as propagation, transplanting, movement, treatment, sampling, harvest, splitting, combining or disposition.
+
+Each event should preserve enough information to answer questions such as:
+
+- What object was involved?
+- Where was it before and after the event?
+- When did the event occur?
+- What quantity or count changed?
+- Which earlier object or event is it derived from?
+- Who or what system recorded the event?
+
+This graph model explains why a single missing identifier can damage much more than one record: it can break the connection between upstream history and downstream observations.
+
 ### Transitions create identity risk
 
 Identity is easiest to lose when something changes:
@@ -83,6 +98,12 @@ A discrepancy can indicate:
 - loss/damage;
 - software or synchronization issue;
 - another process failure.
+
+### Scientific foundation — reconciliation is an error-detection process
+
+Reconciliation works because two representations of reality are compared: the **physical state** and the **recorded state**. Agreement increases confidence but does not prove perfection; disagreement is information that something needs investigation.
+
+A strong reconciliation process avoids immediately editing the record to make the mismatch disappear. Instead, it preserves the observation, repeats or verifies measurements where appropriate, checks recent movement events and identities, and records the resolution path. This turns discrepancies into process-improvement evidence instead of hidden errors.
 
 Technician I gathers permitted facts; a supervisor/compliance/QA role may own the investigation or final correction.
 
