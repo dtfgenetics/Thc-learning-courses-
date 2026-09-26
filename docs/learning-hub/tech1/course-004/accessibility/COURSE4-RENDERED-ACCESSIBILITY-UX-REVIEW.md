@@ -6,7 +6,9 @@
 
 ## Scope
 
-Review the actual rendered learner experience for all four lessons, rich content blocks, seven governed SVG assets, both downloadable worksheets, practice/assessment flows, errors/status states and navigation. Source-file existence is not accessibility evidence.
+Review the actual rendered learner experience for all four lessons, rich content blocks, eight governed WebP assets, both downloadable worksheets, practice/assessment flows, errors/status states and navigation. Source-file existence is not accessibility evidence.
+
+Automated source and route checks support this review, but they do not constitute rendered accessibility or learner-UX approval.
 
 ## Required viewport review
 

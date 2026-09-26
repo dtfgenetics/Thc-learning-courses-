@@ -67,10 +67,10 @@ assert.equal(crosswalk.validationBoundary?.interRaterEvidenceImplied,false);
 assert.equal(crosswalk.courseSpecificReadiness?.objectiveCoverageMapped,true);
 assert.equal(crosswalk.courseSpecificReadiness?.practicalMappingBuilt,true);
 assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt,true);
-assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetCount,9);
+assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetCount,11);
 assert.equal(crosswalk.courseSpecificReadiness?.visualRegistry,'visuals/COURSE5-ASSET-REGISTRY.json');
 assert.equal(course.extensions?.learnerAssetLayerBuilt,true);
-assert.equal(course.extensions?.totalLearnerAssetCount,9);
+assert.equal(course.extensions?.totalLearnerAssetCount,11);
 assert.equal(course.extensions?.visualRegistry,'visuals/COURSE5-ASSET-REGISTRY.json');
 assert.equal(crosswalk.courseSpecificReadiness?.humanTechnicalReview,'not-started');
 assert.equal(crosswalk.courseSpecificReadiness?.renderedAccessibilityReview,'not-started');
@@ -81,4 +81,4 @@ assert.notEqual(releaseEvidence.gates?.renderedAccessibilityReview,'approved');
 assert.notEqual(releaseEvidence.gates?.practicalValidation,'validated');
 assert.notEqual(releaseEvidence.gates?.controlledPilotEvidence,'accepted');
 
-console.log('Course 5 C/D/E crosswalk passed: all six objectives have literal development-stage practical evidence, the nine-asset learner layer is built, biosecurity spans all three contexts, and pesticide/treatment authority remains excluded.');
+console.log('Course 5 C/D/E crosswalk passed: all six objectives have literal development-stage practical evidence, the eleven-asset learner layer is built, biosecurity spans all three contexts, and pesticide/treatment authority remains excluded.');

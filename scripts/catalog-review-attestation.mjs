@@ -10,6 +10,8 @@ const directoryByObjectType = {
   question: ['content/questions', 'questionsTree'],
   credential: ['content/credentials', 'credentialsTree']
 };
+const shaCache = new Map();
+const treeEntryCache = new Map();
 
 function readAttestations() {
   const dir = path.join(root, 'content/review-attestations');
@@ -19,11 +21,34 @@ function readAttestations() {
 }
 
 function gitObjectSha(spec) {
+  if (shaCache.has(spec)) return shaCache.get(spec);
   try {
-    return execFileSync('git', ['rev-parse', spec], { cwd: root, encoding: 'utf8' }).trim();
+    const sha = execFileSync('git', ['rev-parse', spec], {
+      cwd: root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe']
+    }).trim();
+    shaCache.set(spec, sha);
+    return sha;
   } catch {
+    shaCache.set(spec, null);
     return null;
   }
+}
+
+function treeEntries(treeSha) {
+  if (treeEntryCache.has(treeSha)) return treeEntryCache.get(treeSha);
+  const output = execFileSync('git', ['ls-tree', treeSha], {
+    cwd: root,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe']
+  });
+  const entries = new Map(output.trim().split(/\r?\n/).filter(Boolean).map((line) => {
+    const [metadata, name] = line.split('\t');
+    return [name, metadata.split(' ')[2]];
+  }));
+  treeEntryCache.set(treeSha, entries);
+  return entries;
 }
 
 function currentTree(rel) {
@@ -31,11 +56,12 @@ function currentTree(rel) {
 }
 
 function currentObjectBlob(rel, objectId) {
-  return gitObjectSha(`HEAD:${rel}/${objectId}.json`);
+  const tree = currentTree(rel);
+  return tree ? treeEntries(tree).get(`${objectId}.json`) ?? null : null;
 }
 
 function attestedObjectBlob(treeSha, objectId) {
-  return gitObjectSha(`${treeSha}:${objectId}.json`);
+  return treeEntries(treeSha).get(`${objectId}.json`) ?? null;
 }
 
 export function validCatalogAttestations() {

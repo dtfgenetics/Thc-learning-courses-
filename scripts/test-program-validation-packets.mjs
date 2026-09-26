@@ -24,5 +24,10 @@ for(const id of ['PROGRAMVAL-CULT-TECH-I-001','PROGRAMVAL-CULT-TECH-II-001']){
   if(packet.jtaEvidenceCommand!=='npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write') throw new Error(id+': structured JTA evidence command missing');
 }
 const gov=JSON.parse(fs.readFileSync(path.join(dir,'CANDIDATEGOV-001.json'),'utf8'));
-if(gov.unresolvedDecisions.finalAttemptLimit!==null||gov.unresolvedDecisions.waitingPeriodHours!==null||gov.unresolvedDecisions.feePolicy!==null) throw new Error('candidate governance packet fabricated unresolved policy values');
+const controls=JSON.parse(fs.readFileSync('registry/candidate-governance-controls.json','utf8'));
+if(gov.currentStatus!=='approval-pending') throw new Error('candidate governance packet must remain approval-pending');
+if(gov.unresolvedDecisions.finalAttemptLimit!==controls.controls.retest.finalAttemptLimit) throw new Error('candidate governance packet attempt limit drift');
+if(gov.unresolvedDecisions.waitingPeriodHours!==controls.controls.retest.waitingPeriodHours) throw new Error('candidate governance packet waiting period drift');
+if(gov.unresolvedDecisions.feePolicy!==controls.controls.retest.feePolicy) throw new Error('candidate governance packet fee policy drift');
+if(gov.unresolvedDecisions.retentionScheduleApproved!==false) throw new Error('candidate governance packet must keep retention approval fail-closed');
 console.log('Program validation packet generation: PASS (2 occupational + 1 candidate governance).');

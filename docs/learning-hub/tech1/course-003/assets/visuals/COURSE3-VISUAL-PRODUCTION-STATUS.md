@@ -4,7 +4,7 @@
 
 ## Canonical learner delivery
 
-Course 3 learner assets are responsive, accessible SVG files published from `apps/web/public/assets/course3/`. The repository/public web asset is the learner-delivery source of truth; Google Drive is the controlled production/reference mirror.
+Course 3 learner assets are WebP files published from `apps/web/public/assets/course3/`. Converted assets retain accessible SVG provenance sources, while the native VPD science visual retains its PNG master and Drive identifiers. The repository/public WebP is the learner-delivery source of truth.
 
 ## Controlled Drive mirror
 
@@ -13,7 +13,7 @@ Folder: **Course 3 — Environmental & Light Learning Boards**
 - folder ID: `1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU`
 - folder URL: `https://drive.google.com/drive/folders/1U5aTbJBIYEJMzlp_vMYnWu5SYdlHWPqU`
 
-All six produced Course 3 learner assets are mirrored and recorded in `visuals/COURSE3-ASSET-REGISTRY.json`.
+All seven produced Course 3 learner assets are recorded in `visuals/COURSE3-ASSET-REGISTRY.json`; converted assets retain their legacy Drive provenance and the native-raster asset records both its WebP and PNG-master Drive mirrors.
 
 ## Embedded teaching visuals
 
@@ -35,11 +35,11 @@ All six produced Course 3 learner assets are mirrored and recorded in `visuals/C
 
 ## Delivery contract
 
-`scripts/test-course3-visual-registry.mjs` now requires at least six produced Course 3 learner assets, including at least four embedded visuals and two downloadable practice sheets. It verifies:
+`scripts/test-course3-visual-registry.mjs` now requires at least seven produced Course 3 learner assets, including at least five embedded visuals and two downloadable practice sheets. It verifies:
 
 - unique Course 3 asset IDs and learner paths;
 - public source files under the Course 3 asset directory;
-- SVG `<title>`, `<desc>` and `viewBox` accessibility/responsive metadata;
+- production WebP integrity plus SVG accessibility metadata for converted assets and PNG/WebP/Drive provenance for native-raster assets;
 - canonical raw GitHub download URLs;
 - Drive file IDs/URLs and mirrored status;
 - at least one embedded visual in each Course 3 lesson;

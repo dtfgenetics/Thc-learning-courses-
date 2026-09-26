@@ -72,7 +72,9 @@ for (const asset of produced) {
   assert.equal(replacement?.encoding, 'lossless-webp');
   assert.equal(replacement?.releaseApproved, true, `${asset.id}: owner-approved academic raster release must be recorded`);
 
-  const sourceBuffer = fs.readFileSync(legacySource);
+  // Git stores text assets with LF; normalize checkout-specific line endings before
+  // comparing provenance so the contract is deterministic on Windows and Unix.
+  const sourceBuffer = Buffer.from(fs.readFileSync(legacySource, 'utf8').replace(/\r\n/g, '\n'));
   const candidateBuffer = fs.readFileSync(source);
   assert.equal(sha256(sourceBuffer), replacement.sourceSha256, `${asset.id}: legacy source digest drift`);
   assert.equal(sha256(candidateBuffer), replacement.candidateSha256, `${asset.id}: candidate digest drift`);

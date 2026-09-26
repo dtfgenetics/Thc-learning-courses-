@@ -43,12 +43,9 @@ for(const row of queue.packages){
     }
   }
 
-  const excluded=[
-    ...(plan.scope?.excludedUntilValidated??[]),
-    ...(plan.scope?.excludedUntilQualified??[]),
-    ...(plan.scope?.excludedUntilApproved??[]),
-    ...(plan.scope?.excludedUntilAuthorized??[])
-  ];
+  const excluded=Object.entries(plan.scope??{})
+    .filter(([key,value])=>key.startsWith('excludedUntil')&&Array.isArray(value))
+    .flatMap(([,value])=>value);
   if(!excluded.length) failures.push(`${row.id}: no explicit excluded/unvalidated boundary list`);
 
   const sop=fs.readFileSync(manifest.scientificSop,'utf8');

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "courseId": "COURSE-LH-TECH1-005",
   "policy": {
     "expandable": true,
@@ -574,6 +574,85 @@
         "driveFileUrl": "https://drive.google.com/file/d/1kvhNr1rk4-H0ncmZpDCKRUZw32I-M9T9/view"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-LH-TECH1-005-010",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Seed anatomy and germination physiology",
+      "learnerPath": "/assets/course5/seed-anatomy-germination.webp",
+      "sourcePath": "apps/web/public/assets/course5/seed-anatomy-germination.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/seed-anatomy-germination.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-01",
+        "LO-LH-TECH1-005-04"
+      ],
+      "references": [
+        "REF-PROP-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Show the seed coat, embryo, cotyledons and radicle together with the transition from imbibition and metabolic reactivation through radicle emergence and seedling establishment.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 459936,
+        "pixelWidth": 1600,
+        "driveFileId": "1SgS9-ERhdBYZzG2l8-M8N3gEvxGWW_lG",
+        "driveMasterFileId": "1c_Ur84lvjzxRYk9gdfIYEj2MjRs_Rack",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson copy explains germination physiology beyond poster labels"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
+    },
+    {
+      "id": "VIS-LH-TECH1-005-011",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis plant anatomy and developmental growth stages",
+      "learnerPath": "/assets/course5/plant-anatomy-growth-stages.webp",
+      "sourcePath": "apps/web/public/assets/course5/plant-anatomy-growth-stages.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/plant-anatomy-growth-stages.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-005-02"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-005-02",
+        "LO-LH-TECH1-005-04"
+      ],
+      "references": [
+        "REF-CANOPY-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Connect roots, stems, nodes, internodes, leaves, meristems and reproductive structures to seedling, vegetative, transition and flowering stages so canopy work is interpreted in developmental context.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 556096,
+        "pixelWidth": 1600,
+        "driveFileId": "1AHZ9YNWjcxl6UKoELkpUVdZwsu0-gfj5",
+        "driveMasterFileId": "1wn-T2wPyWbeWzzO-rQkFtx_WAB6hBugt",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson copy distinguishes anatomy from developmental stage"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
     }
   ],
   "ownerReleaseApproval": {

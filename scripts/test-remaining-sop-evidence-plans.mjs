@@ -16,5 +16,8 @@ for(const id of ids){
 const q=JSON.parse(fs.readFileSync('registry/sop-authoring-queue.json','utf8'));
 assert.equal(q.summary.evidencePlansSeeded,17);
 assert.equal(q.summary.evidencePlanCoverageComplete,true);
-assert.equal(q.targets.filter(x=>x.status!=='evidence-plan-seeded').length,0);
+assert.equal(q.targets.filter(x=>typeof x.evidencePlan!=='string'||!x.evidencePlan.startsWith('registry/sop-evidence-plans/')).length,0);
+assert.equal(q.summary.draftControlledPackagesCreated,17);
+assert.equal(q.summary.draftPackageCoverageComplete,true);
+assert.equal(q.targets.filter(x=>x.status!=='draft-controlled-package-created').length,0);
 console.log('Remaining SOP evidence plans: PASS (17/17 planned targets now have controlled evidence plans; package authoring/review remains fail-closed).');

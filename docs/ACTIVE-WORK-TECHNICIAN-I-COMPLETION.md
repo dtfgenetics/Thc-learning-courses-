@@ -15,9 +15,9 @@ The project has now crossed an important boundary: **all seven Technician I sour
 
 1. `COURSE-LH-TECH1-001` — Safety, Responsible Practice & Cultivation Workflows — reference implementation; machine/public preparation complete; human validation open.
 2. `COURSE-LH-TECH1-002` — Plant Observation, Growth Stages & Crop Records — source package complete; 32 dedicated items; Practical A; 10 governed learner assets.
-3. `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals — source package complete; 32 dedicated items; Practical A mapping; 6 governed learner assets.
-4. `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals — source package complete; 36 dedicated items; Practical B; 7 governed learner assets.
-5. `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care — source package complete; 36 dedicated items; Practicals C/D/E; 9 governed learner assets.
+3. `COURSE-LH-TECH1-003` — Environmental, Light & Sensor Fundamentals — source package complete; 32 dedicated items; Practical A mapping; 7 governed learner assets.
+4. `COURSE-LH-TECH1-004` — Water, Root Zone, Nutrition & Irrigation Fundamentals — source package complete; 36 dedicated items; Practical B; 8 governed learner assets.
+5. `COURSE-LH-TECH1-005` — Propagation, Canopy, IPM Scouting & Crop Care — source package complete; 36 dedicated items; Practicals C/D/E; 11 governed learner assets.
 6. `COURSE-LH-TECH1-006` — Harvest, Postharvest, Traceability & Shift Handoff — source package complete; 36 dedicated items; Practical F; 8 repository learner assets; 8/8 controlled Drive mirrors verified.
 7. `COURSE-LH-TECH1-007` — Integrated Cultivation Technician Practice Lab — integrated source package complete; 12-item readiness check with two items per objective, Practicals A–F, 200-point capstone, five controlled critical-failure classes, equivalent-form/retest/evaluator/privacy controls.
 

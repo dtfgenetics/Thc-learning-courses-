@@ -16,13 +16,20 @@ for(let n=2;n<=6;n++){
   for(const asset of registry.assets??[]){
     assert.equal(path.extname(asset.sourcePath??'').toLowerCase(),'.webp',`${asset.id}: active production source must be WebP`);
     assert.equal(asset.assetLifecycle,'production-raster-active',`${asset.id}: raster lifecycle drift`);
-    assert.equal(asset.rasterReplacement?.status,'owner-approved-production-release',`${asset.id}: released raster lifecycle drift`);
-    assert.equal(asset.rasterReplacement?.releaseApproved,true,`${asset.id}: owner-approved academic raster release required`);
-    assert.deepEqual(asset.rasterReplacement?.allowedFormats,raster,`${asset.id}: raster format policy drift`);
-    assert.equal(asset.rasterReplacement?.candidateSourcePath,asset.sourcePath,`${asset.id}: active source must match released raster candidate`);
-    assert.match(asset.legacySource?.sourcePath??'',new RegExp(`^apps/web/public/assets/course${n}/[A-Za-z0-9._-]+\\.svg$`,'i'),`${asset.id}: SVG provenance source required`);
-    assert.equal(asset.rasterReplacement?.generatedFrom,asset.legacySource?.sourcePath,`${asset.id}: raster provenance must point to retired SVG source`);
-    assert.equal(asset.rasterReplacement?.releaseGate,'owner-approved-academic-release-with-machine-integrity-controls',`${asset.id}: released machine-integrity gate drift`);
+    if(asset.nativeRaster){
+      assert.equal(asset.nativeRaster.status,'owner-approved-production-release',`${asset.id}: native raster lifecycle drift`);
+      assert.equal(asset.nativeRaster.releaseApproved,true,`${asset.id}: owner-approved native raster release required`);
+      assert.equal(asset.nativeRaster.format,'webp',`${asset.id}: native delivery format drift`);
+      assert.equal(asset.nativeRaster.sourceMasterFormat,'png',`${asset.id}: native master format drift`);
+    }else{
+      assert.equal(asset.rasterReplacement?.status,'owner-approved-production-release',`${asset.id}: released raster lifecycle drift`);
+      assert.equal(asset.rasterReplacement?.releaseApproved,true,`${asset.id}: owner-approved academic raster release required`);
+      assert.deepEqual(asset.rasterReplacement?.allowedFormats,raster,`${asset.id}: raster format policy drift`);
+      assert.equal(asset.rasterReplacement?.candidateSourcePath,asset.sourcePath,`${asset.id}: active source must match released raster candidate`);
+      assert.match(asset.legacySource?.sourcePath??'',new RegExp(`^apps/web/public/assets/course${n}/[A-Za-z0-9._-]+\\.svg$`,'i'),`${asset.id}: SVG provenance source required`);
+      assert.equal(asset.rasterReplacement?.generatedFrom,asset.legacySource?.sourcePath,`${asset.id}: raster provenance must point to retired SVG source`);
+      assert.equal(asset.rasterReplacement?.releaseGate,'owner-approved-academic-release-with-machine-integrity-controls',`${asset.id}: released machine-integrity gate drift`);
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "courseId": "COURSE-LH-TECH1-004",
   "policy": {
     "expandable": true,
@@ -471,6 +471,46 @@
         "driveFileUrl": "https://drive.google.com/file/d/1HQKLMBlM97xlHJn6DSPGj_mJY-nOErkR/view"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-LH-TECH1-004-008",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "pH, root-zone chemistry and nutrient availability context",
+      "learnerPath": "/assets/course4/ph-root-zone-nutrient-availability.webp",
+      "sourcePath": "apps/web/public/assets/course4/ph-root-zone-nutrient-availability.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/ph-root-zone-nutrient-availability.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-004-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-004-01",
+        "LO-LH-TECH1-004-05"
+      ],
+      "references": [
+        "REF-IRRIGATION-001",
+        "REF-NUTRITION-001"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Explain pH as one part of root-zone chemistry that influences nutrient speciation, solubility and uptake context while preventing simplified availability charts from being interpreted as direct diagnoses.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 355148,
+        "pixelWidth": 1600,
+        "driveFileId": "1vRgBT1rH1VH7_pEom-r7TdgWWslMS1PP",
+        "driveMasterFileId": "1KG7scZnx7DmHb0JD7jaCwcdKYpuAvdKx",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson copy states evidence boundaries for pH availability charts"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
     }
   ],
   "ownerReleaseApproval": {

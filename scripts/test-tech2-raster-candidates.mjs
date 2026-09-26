@@ -30,7 +30,9 @@ for(const course of plan.courses){
     assert.equal(replacement?.encoding,'lossless-webp');
     assert.equal(replacement?.releaseApproved,true);
     assert.match(replacement?.candidateSourcePath??'',/^apps\/web\/public\/assets\/tech2\/course[1-8]\/outcome-[0-9]{2}\.webp$/);
-    const source=fs.readFileSync(path.join(root,replacement.generatedFrom));
+    const sourceText=fs.readFileSync(path.join(root,replacement.generatedFrom),'utf8').replace(/\r\n/g,'\n');
+    const source=Buffer.from(sourceText);
+    assert.doesNotMatch(sourceText,/&(?!amp;|lt;|gt;|quot;|apos;|#[0-9]+;|#x[0-9A-Fa-f]+;)/,`${concept.conceptId}: SVG baseline contains an unescaped XML entity`);
     const candidate=fs.readFileSync(path.join(root,replacement.candidateSourcePath));
     assert.equal(sha256(source),replacement.sourceSha256);
     assert.equal(sha256(candidate),replacement.candidateSha256);

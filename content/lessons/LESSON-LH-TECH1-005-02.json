@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-005-02",
   "title": "Routine Canopy Work, Plant Condition and Work-Order Boundaries",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "published",
   "competencies": [
     "COMP-CANOPY-001",
@@ -13,7 +13,7 @@
     "LO-LH-TECH1-005-04",
     "LO-LH-TECH1-005-05"
   ],
-  "estimatedMinutes": 65,
+  "estimatedMinutes": 75,
   "references": [
     "REF-CANOPY-001",
     "REF-IPM-001"
@@ -40,6 +40,14 @@
       }
     ],
     "sections": [
+      {
+        "title": "Anatomy and developmental stage determine what canopy work means",
+        "body": "Roots, stems, nodes, internodes, leaves and meristems form one connected transport and growth system. Nodes mark repeated structural units, internodes define spacing, and apical or axillary meristems generate new shoot growth. The same cut or bend can produce different consequences in a small seedling, rapidly expanding vegetative plant, transition plant or flowering crop because resource allocation, tissue maturity and reproductive development are different. Canopy work should therefore be tied to the identified structure and developmental context rather than plant height alone.",
+        "references": [
+          "REF-CANOPY-001",
+          "REF-PLANT-BIO-001"
+        ]
+      },
       {
         "title": "Inspect before modifying the plant",
         "body": "Confirm plant or room identity, developmental context, vigor and any visible damage or pest/disease concern before beginning canopy work. A plant already showing a meaningful abnormality may require a hold or escalation rather than routine cutting or manipulation.",
@@ -97,6 +105,18 @@
         },
         "references": [
           "REF-CANOPY-001"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-005-011",
+        "title": "Plant anatomy and developmental growth stages",
+        "src": "/assets/course5/plant-anatomy-growth-stages.webp",
+        "alt": "Educational cannabis plant diagram identifying roots, stem, nodes, internodes, leaves and growth points alongside seedling, vegetative, transition and flowering developmental stages.",
+        "caption": "Identify the structure and stage before acting. Node position, meristem location, tissue maturity and reproductive development all change the biological meaning of canopy work.",
+        "references": [
+          "REF-CANOPY-001",
+          "REF-PLANT-BIO-001"
         ]
       },
       {

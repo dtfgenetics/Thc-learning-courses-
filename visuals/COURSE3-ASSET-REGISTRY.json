@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "courseId": "COURSE-LH-TECH1-003",
   "policy": {
     "expandable": true,
@@ -398,6 +398,45 @@
         "driveFileUrl": "https://drive.google.com/file/d/1Pd-eLG_fh4FQBoITJHInTDDzCgE_Tnht/view"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-LH-TECH1-003-007",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Understanding VPD: atmospheric demand, leaf exchange and root-zone context",
+      "learnerPath": "/assets/course3/understanding-vpd-science.webp",
+      "sourcePath": "apps/web/public/assets/course3/understanding-vpd-science.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/understanding-vpd-science.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-003-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-003-01",
+        "LO-LH-TECH1-003-05"
+      ],
+      "references": [
+        "REF-VPD-002"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Connect temperature and relative humidity to atmospheric vapor demand, leaf water exchange, stomatal behavior and root-zone water supply while explicitly treating chart bands as contextual teaching aids rather than universal crop prescriptions.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 520626,
+        "pixelWidth": 1600,
+        "driveFileId": "1BnXYxp_ke3nvSMVOirlyIoeKGBIUFx9w",
+        "driveMasterFileId": "1_fyMdg8Tb0RZGKmO06NJBbvp4jOdMop1",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson alt text and caption carry required instructional meaning"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
     }
   ],
   "ownerReleaseApproval": {
