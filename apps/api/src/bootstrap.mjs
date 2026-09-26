@@ -46,8 +46,8 @@ export async function loadProductionApiOptions(env = process.env) {
   if (typeof persistenceModule.createPersistenceAdapters !== 'function') throw new Error('Persistence adapter module must export createPersistenceAdapters({ env })');
   const adapters = await persistenceModule.createPersistenceAdapters({ env });
   const credentialStore = adapters?.credentialStore;
-  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function') {
-    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
+  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function' || typeof credentialStore.listBySubjectHash !== 'function') {
+    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), getByVerificationId(), and listBySubjectHash()');
   }
   const rawLearnerStore = adapters?.learnerStore;
   const requiredLearnerMethods = [
