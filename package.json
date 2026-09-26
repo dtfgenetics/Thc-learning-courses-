@@ -51,7 +51,7 @@
     "credential:progress:test": "node scripts/test-credential-progress-api.mjs",
     "credential:issue:test": "node scripts/issue-test-credential.mjs --test",
     "credential:verify:test": "node scripts/verify-test-credential.mjs",
-    "credential:issuance:test": "node scripts/test-credential-issuance.mjs",
+    "credential:issuance:test": "node scripts/test-credential-issuance.mjs && node scripts/test-credential-issuance-service.mjs",
     "credential:public": "node scripts/project-public-verification.mjs",
     "credential:public:test": "node scripts/test-public-verification-projection.mjs",
     "credential:specialist:readiness": "node scripts/report-specialist-credential-readiness.mjs",
