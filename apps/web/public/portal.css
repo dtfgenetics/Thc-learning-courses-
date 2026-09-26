@@ -1,4 +1,18 @@
 
+.lesson-overview { margin: .8rem 0 1rem; max-width: 76ch; font-size: 1.05rem; line-height: 1.7; color: var(--ink); }
+.lesson-orientation-card { margin: .85rem 0; border: 1px solid var(--line); border-radius: .8rem; padding: .95rem 1rem; background: #fff; }
+.lesson-orientation-card h3 { margin: 0 0 .45rem; font-size: 1rem; }
+.lesson-orientation-card p { margin: 0; line-height: 1.6; color: var(--muted); }
+.lesson-orientation-card ul { margin: .35rem 0 0; padding-left: 1.2rem; }
+.lesson-orientation-card li + li { margin-top: .35rem; }
+.lesson-why { border-left: 4px solid var(--gold); }
+.lesson-goals { border-left: 4px solid var(--green); }
+.lesson-prior-knowledge, .lesson-reference-details, .lesson-technical-details { margin: .8rem 0; border: 1px solid var(--line); border-radius: .7rem; background: var(--panel); }
+.lesson-prior-knowledge > summary, .lesson-reference-details > summary, .lesson-technical-details > summary { cursor: pointer; padding: .75rem .9rem; font-weight: 800; color: var(--ink); }
+.lesson-prior-knowledge ul, .lesson-reference-details p, .lesson-technical-details .lesson-meta { margin: 0; padding: 0 .9rem .9rem; }
+.lesson-meta-primary { margin-bottom: .35rem; }
+
+
 .course-orientation { margin: .85rem .9rem 1rem; border: 1px solid var(--line); border-radius: .9rem; background: #fff; padding: 1rem; }
 .course-orientation-copy { display: grid; gap: .8rem; }
 .course-orientation-kicker { margin: 0; color: var(--gold); font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
@@ -257,4 +271,11 @@
   .course-orientation-facts { grid-template-columns: 1fr 1fr; }
   .course-orientation-actions { display: grid; grid-template-columns: 1fr; }
   .course-start-button { width: 100%; text-align: center; }
+}
+
+
+@media (max-width: 620px) {
+  .lesson-overview { font-size: 1rem; line-height: 1.65; }
+  .lesson-orientation-card { padding: .8rem; border-radius: .7rem; }
+  .lesson-prior-knowledge > summary, .lesson-reference-details > summary, .lesson-technical-details > summary { min-height: 44px; display: flex; align-items: center; }
 }
