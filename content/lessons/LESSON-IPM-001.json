@@ -1,37 +1,207 @@
 {
   "id": "LESSON-IPM-001",
   "title": "Prevention, Scouting and IPM Decision Logic",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-IPM-001"],
-  "learningObjectives": ["LO-IPM-001"],
+  "competencies": [
+    "COMP-IPM-001"
+  ],
+  "learningObjectives": [
+    "LO-IPM-001"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-IPM-001"],
+  "references": [
+    "REF-IPM-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Integrated pest management (IPM) is a decision system built around prevention, monitoring, diagnosis, thresholds, and proportionate control. The goal is not simply to apply a pesticide when damage appears; it is to reduce the chance of problems, detect them early, identify them correctly, and choose controls that fit the evidence and applicable rules.",
+    "overview": "Integrated pest management is a decision framework for reducing pest and disease risk while preserving crop health, worker safety and control options. Prevention lowers introduction pressure; structured scouting converts observations into trends; diagnosis separates biological problems from environmental or nutritional lookalikes; thresholds or action criteria determine when intervention is justified; and follow-up determines whether the response actually worked.",
     "vocabulary": [
-      {"term":"Scouting","definition":"A repeatable inspection process used to detect pests, diseases, damage, and changing crop conditions."},
-      {"term":"Sanitation","definition":"Practices that reduce the introduction, survival, or spread of pests and pathogens through cleaning and handling controls."},
-      {"term":"Diagnosis","definition":"The evidence-based process of identifying the most likely cause of a plant-health problem."},
-      {"term":"Integrated pest management","definition":"A prevention-first framework that combines monitoring and appropriate cultural, biological, physical, and chemical controls."}
+      {
+        "term": "Scouting",
+        "definition": "A repeatable inspection process used to detect pests, diseases, damage, and changing crop conditions."
+      },
+      {
+        "term": "Sanitation",
+        "definition": "Practices that reduce the introduction, survival, or spread of pests and pathogens through cleaning and handling controls."
+      },
+      {
+        "term": "Diagnosis",
+        "definition": "The evidence-based process of identifying the most likely cause of a plant-health problem."
+      },
+      {
+        "term": "Integrated pest management",
+        "definition": "A prevention-first framework that combines monitoring and appropriate cultural, biological, physical, and chemical controls."
+      }
     ],
     "sections": [
-      {"title":"Prevention comes before treatment","body":"Clean planting material, sanitation, controlled movement of tools and people, and appropriate environmental management can reduce the chance that a pest or pathogen becomes established. Preventive controls are usually easier to maintain than correcting a widespread problem later.","references":["REF-IPM-001"]},
-      {"title":"Scouting creates usable evidence","body":"Routine scouting should be consistent enough to reveal changes over time. Record location, symptom pattern, pest presence, severity, and environmental context so observations can be compared rather than relying on memory or isolated photographs.","references":["REF-IPM-001"]},
-      {"title":"Diagnosis should precede control choice","body":"Similar symptoms can have biological, environmental, nutritional, or mechanical causes. Before selecting a treatment, compare visible evidence with environmental conditions, root-zone information, crop history, and diagnostic observations so the response targets the actual problem.","references":["REF-IPM-001"]},
-      {"title":"Controls should be proportionate and lawful","body":"A control should fit the identified problem, crop context, risk level, and applicable product restrictions. IPM favors the least disruptive effective response and continued monitoring rather than automatic escalation to the strongest available treatment.","references":["REF-IPM-001"]}
+      {
+        "title": "Prevention comes before treatment",
+        "body": "Clean planting material, sanitation, controlled movement of tools and people, and appropriate environmental management can reduce the chance that a pest or pathogen becomes established. Preventive controls are usually easier to maintain than correcting a widespread problem later.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Scouting creates usable evidence",
+        "body": "Routine scouting should be consistent enough to reveal changes over time. Record location, symptom pattern, pest presence, severity, and environmental context so observations can be compared rather than relying on memory or isolated photographs.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Diagnosis should precede control choice",
+        "body": "Similar symptoms can have biological, environmental, nutritional, or mechanical causes. Before selecting a treatment, compare visible evidence with environmental conditions, root-zone information, crop history, and diagnostic observations so the response targets the actual problem.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Controls should be proportionate and lawful",
+        "body": "A control should fit the identified problem, crop context, risk level, and applicable product restrictions. IPM favors the least disruptive effective response and continued monitoring rather than automatic escalation to the strongest available treatment.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If several plants suddenly show spots after a humidity increase, document distribution and environmental history, isolate affected material where practical, and investigate disease and non-disease causes before choosing a treatment.",
-      "If one plant shows damage but surrounding plants do not, inspect the local root zone, handling history, and nearby pests before assuming a room-wide infestation."
+      "Three adjacent plants develop stippling, while nearby sticky cards and leaf undersides reveal increasing mite-like arthropod counts. The spatial and direct-pest evidence is stronger than symptom appearance alone.",
+      "Leaf spots appear after a humidity event, but no pathogen signs are confirmed. Record the pattern and environment while keeping abiotic injury, spray damage and disease in the differential.",
+      "One bench shows repeated pest detections near an entry door. The pattern suggests a pathway or local source that prevention measures should address, not just repeated spot treatment.",
+      "A biological control is released, but scouting counts do not decline. IPM requires follow-up and reassessment rather than assuming the treatment succeeded because it was applied."
     ],
     "commonMistakes": [
-      "Applying a control before establishing a defensible diagnosis.",
-      "Treating sanitation and scouting as optional once a crop looks healthy.",
-      "Assuming every pesticide or biological control is lawful or appropriate in every jurisdiction or production context."
+      "Choosing a treatment before confirming the problem.",
+      "Scouting inconsistently so trends cannot be compared.",
+      "Recording only presence/absence without location and severity/count context.",
+      "Ignoring non-pest causes that mimic pest or disease injury.",
+      "Treating one control application as the end of the decision cycle.",
+      "Assuming a product is permitted or appropriate without checking the governing label/program."
     ],
-    "practicalApplication": "Use a written scouting route and record findings by location. When a problem appears, document symptoms, environment, root-zone conditions, and pest or pathogen evidence; then select a prevention or control step that fits the diagnosis and continue monitoring to verify whether it worked.",
-    "summary": "IPM is a repeatable decision process: prevent problems, scout consistently, diagnose from evidence, choose proportionate controls, and verify outcomes. The quality of the diagnosis matters as much as the treatment choice."
+    "practicalApplication": "Run a repeatable scouting route using fixed zones and inspection points. Record pest/sign/symptom evidence, counts or severity, crop stage, environmental context and location. Build a short differential, identify the action criterion or escalation point, document the selected control pathway, and schedule follow-up evidence to verify effectiveness.",
+    "summary": "IPM is a repeatable decision process: prevent problems, scout consistently, diagnose from evidence, choose proportionate controls, and verify outcomes. The quality of the diagnosis matters as much as the treatment choice.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "IPM is a loop, not a spray decision",
+        "body": "The core cycle is prevent → scout → identify/diagnose → decide → control → verify. Missing any step increases the chance of treating the wrong problem, responding too late or repeating an ineffective intervention.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Evidence hierarchy in scouting",
+        "columns": [
+          "Evidence",
+          "Strength",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Direct organism/sign",
+            "High when correctly identified",
+            "Arthropod, eggs, frass, fungal structures"
+          ],
+          [
+            "Repeatable symptom pattern",
+            "Moderate",
+            "Consistent stippling, lesions, distortion"
+          ],
+          [
+            "Spatial pattern",
+            "Moderate",
+            "Bench edge, doorway, irrigation zone, clustered plants"
+          ],
+          [
+            "Environmental history",
+            "Contextual",
+            "Humidity event, wet canopy, heat stress"
+          ],
+          [
+            "Single photo without context",
+            "Low by itself",
+            "One leaf image with no plant/location history"
+          ]
+        ],
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build an IPM decision",
+        "items": [
+          {
+            "title": "Prevent",
+            "body": "Control incoming plant material, sanitation and movement pathways."
+          },
+          {
+            "title": "Scout consistently",
+            "body": "Use the same route, locations and observation method."
+          },
+          {
+            "title": "Describe before diagnosing",
+            "body": "Record signs, symptoms, counts and spatial pattern."
+          },
+          {
+            "title": "Build a differential",
+            "body": "Include pests, pathogens and non-biological lookalikes."
+          },
+          {
+            "title": "Apply the action criterion",
+            "body": "Use the approved threshold/program rather than personal preference."
+          },
+          {
+            "title": "Select a lawful compatible control",
+            "body": "Follow program, label and role requirements."
+          },
+          {
+            "title": "Verify",
+            "body": "Repeat scouting and compare the post-control trend."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Spots after a humidity event",
+        "setting": "Several plants develop leaf spots after two humid nights. No visible pest or confirmed pathogen sign is found yet.",
+        "prompt": "What is the strongest next step?",
+        "options": [
+          "Apply the strongest pesticide available",
+          "Document distribution and context, collect diagnostic evidence, and keep abiotic and biological causes in the differential",
+          "Assume humidity proves fungal disease",
+          "Ignore the spots until the crop declines"
+        ],
+        "answer": "Document distribution and context, collect diagnostic evidence, and keep abiotic and biological causes in the differential.",
+        "feedback": "Environmental history raises or lowers hypotheses but does not by itself identify the cause."
+      },
+      {
+        "type": "activity",
+        "title": "Create a scouting-to-decision record",
+        "instructions": "Use a simulated room map with multiple plant-health observations.",
+        "prompts": [
+          "Map all findings by zone.",
+          "Separate signs from symptoms.",
+          "Rank the top three hypotheses.",
+          "Identify one discriminating observation/test for each.",
+          "Choose the next action under the supplied IPM program.",
+          "Define what follow-up evidence would show improvement."
+        ],
+        "artifact": "IPM scouting and decision worksheet",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "A control is only as good as the diagnosis and follow-up evidence behind it. IPM turns scouting data into repeatable decisions.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
+    ]
   }
 }
