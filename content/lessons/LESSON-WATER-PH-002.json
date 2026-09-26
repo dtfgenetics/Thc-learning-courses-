@@ -142,6 +142,27 @@
         "tone": "evidence",
         "body": "A pH value is only as useful as the sampling and calibration behind it, and pH should not be confused with alkalinity."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-004-001",
+          "title": "pH measurement in sample context",
+          "src": "/assets/course4/sample-ph-ec-context.webp",
+          "alt": "Educational comparison of source, feed and root-zone samples with separate pH and EC readings and clear sample identity, illustrating why the measurement method and sample source must remain attached to the number.",
+          "caption": "A pH value without sample identity, calibration and method context can create false precision. Keep the number attached to the sample and measurement process.",
+          "references": [
+            "REF-IRRIGATION-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-004-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
