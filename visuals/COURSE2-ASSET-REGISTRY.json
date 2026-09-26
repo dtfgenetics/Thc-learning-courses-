@@ -635,6 +635,76 @@
         "driveFileUrl": "https://drive.google.com/file/d/1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO/view"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-FLOWER-PHOTOPERIOD-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Photoperiod, dark interval and flowering-transition signal",
+      "primaryLessons": [
+        "LESSON-FLOWER-PHOTO-002"
+      ],
+      "references": [
+        "REF-LIGHT-001",
+        "REF-CANNABIS-PHOTOPERIOD-2023-001"
+      ],
+      "purpose": "Teach the difference between photoperiod and DLI, show the intended light/dark cycle versus an interrupted dark period, and illustrate that flowering response is genotype dependent rather than governed by one universal 12/12 threshold.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-comparison-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal. Use clear clock/light-dark labels and put full explanation in lesson caption/body.",
+        "style": "Professional cannabis plant-science education; clean branded scientific diagram, not decorative poster art.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent light/dark distinction"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-FLOWER-MATURITY-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Representative trichome maturity sampling across canopy positions",
+      "primaryLessons": [
+        "LESSON-FLOWER-MATURITY-003"
+      ],
+      "references": [
+        "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+        "REF-TRICHOME-BIOLOGY-2021-001"
+      ],
+      "purpose": "Teach representative maturity sampling by comparing matched floral tissues from upper, middle and lower canopy positions over repeated dates, while showing asynchronous clear/cloudy/amber trichome development and explicitly avoiding a universal amber-percentage harvest rule.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "photorealistic-macro-comparison",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Use only concise labels for canopy position, tissue type and date. Put interpretation and evidence limitations in course text.",
+        "style": "High-resolution photorealistic cannabis macro educational image; scientifically plausible glandular trichomes; neutral lighting; no yellow filter; no stylized cartoon look.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "described canopy position and trichome-state differences"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
     }
   ],
   "ownerReleaseApproval": {
