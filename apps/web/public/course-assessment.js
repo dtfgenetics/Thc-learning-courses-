@@ -475,11 +475,27 @@ function startAssessmentTimer(panel) {
   assessmentTimer = setInterval(tick, 1000);
 }
 
+function updateQuestionNavigator(panel) {
+  const items = [...panel.querySelectorAll('.course-assessment-item')];
+  const buttons = [...panel.querySelectorAll('.course-assessment-nav-button')];
+  buttons.forEach((button, index) => {
+    const item = items[index];
+    if (!item) return;
+    const answered = item.dataset.answered === 'true';
+    const saved = item.dataset.saved === 'true';
+    button.classList.toggle('answered', answered);
+    button.classList.toggle('saved', answered && saved);
+    button.classList.toggle('saving', answered && !saved);
+    button.setAttribute('aria-label', `Question ${index + 1}: ${answered ? (saved ? 'answered and saved' : 'answer saving') : 'not answered'}`);
+  });
+}
+
 function updateAssessmentProgress(panel) {
   const total = panel.querySelectorAll('.course-assessment-item').length;
   const answered = answerCount(panel);
   const progress = panel.querySelector('.course-assessment-progress');
   if (progress) progress.textContent = `${answered}/${total} answered`;
+  updateQuestionNavigator(panel);
   const submit = panel.querySelector('.course-assessment-submit');
   if (submit) submit.disabled = !allAnsweredAndSaved(panel) || pendingSaves.size > 0;
 }
@@ -586,6 +602,25 @@ function renderAssessmentItem(item, index, panel) {
   return fieldset;
 }
 
+function renderQuestionNavigator(panel, itemCount) {
+  const nav = el('nav', '', 'course-assessment-navigator');
+  nav.setAttribute('aria-label', 'Assessment question navigator');
+  const label = el('strong', 'Questions', 'course-assessment-navigator-label');
+  const list = el('div', '', 'course-assessment-nav-list');
+  for (let index = 0; index < itemCount; index += 1) {
+    const button = el('button', String(index + 1), 'course-assessment-nav-button');
+    button.type = 'button';
+    button.addEventListener('click', () => {
+      const target = panel.querySelectorAll('.course-assessment-item')[index];
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target?.querySelector('input')?.focus({ preventScroll: true });
+    });
+    list.append(button);
+  }
+  nav.append(label, list);
+  return nav;
+}
+
 function renderAssessment(payload) {
   currentAttempt = payload;
   pendingSaves.clear();
@@ -605,6 +640,7 @@ function renderAssessment(payload) {
   const toolbar = el('div', '', 'course-assessment-toolbar');
   toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('strong', '', 'course-assessment-timer'), el('span', 'Responses saved.', 'course-assessment-save-status'));
   panel.append(toolbar);
+  panel.append(renderQuestionNavigator(panel, payload.items.length));
   const form = document.createElement('form');
   form.className = 'course-assessment-form';
   form.addEventListener('submit', async (event) => {
@@ -687,9 +723,11 @@ function renderAssessmentResult(result) {
     practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
     actions.append(practicalButton);
   }
+  const recordButton = el('button', 'View course record', 'course-assessment-secondary');
+  recordButton.type = 'button'; recordButton.addEventListener('click', () => document.querySelector('#tab-course-record')?.click());
   const back = el('button', 'Return to course catalog', 'course-assessment-secondary');
   back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
-  actions.append(back);
+  actions.append(recordButton, back);
   panel.append(actions);
   lessonView.replaceChildren(panel); lessonView.focus();
 }

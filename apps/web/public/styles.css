@@ -152,15 +152,34 @@ button { touch-action: manipulation; }
 }
 
 @media (max-width: 520px) {
-  .site-header h1 { font-size: clamp(2rem, 12vw, 3rem); }
-  .site-header .lede { font-size: .94rem; }
-  .mode-badge { white-space: normal; }
-  .lesson-panel { padding: .7rem; }
-  .welcome-card, .lesson-article { padding: 1rem; box-shadow: 0 8px 24px rgba(37,63,45,.07); }
-  .lesson-meta { gap: .35rem; margin-bottom: 1.2rem; }
-  .pill { font-size: .75rem; }
-  .practice-item { padding: .8rem; }
-  .practice-choice { padding: .65rem; }
+  html { scroll-padding-top: 4.5rem; }
+  body { font-size: 16.5px; }
+  .site-header { gap: .65rem; padding: .9rem .85rem .8rem; }
+  .site-header h1 { font-size: clamp(1.9rem,10vw,2.65rem); margin: .05rem 0 .2rem; }
+  .site-header .lede { font-size: .9rem; line-height: 1.48; }
+  .site-header .eyebrow { font-size: .68rem; }
+  .mode-badge { white-space: normal; padding: .35rem .6rem; font-size: .74rem; }
+  .catalog-panel { padding: .55rem .7rem; box-shadow: 0 6px 16px rgba(37,63,45,.06); }
+  .catalog-toggle { min-height: 46px; padding: .65rem .7rem; }
+  .catalog-body { padding-top: .55rem; }
+  .search { min-height: 48px; }
+  .course { margin-bottom: .55rem; border-radius: .7rem; }
+  .course summary { padding: .7rem .75rem .5rem; }
+  .module { padding: .65rem .75rem; }
+  .lesson-link { min-height: 46px; padding: .55rem .3rem; }
+  .lesson-panel { padding: .55rem; }
+  .welcome-card, .lesson-article { padding: .9rem; border-radius: .72rem; box-shadow: none; }
+  .lesson-article h2 { font-size: clamp(1.6rem,8vw,2.15rem); line-height: 1.06; }
+  .lesson-article > p:not(.eyebrow), .lesson-section > p, .rich-block > p, .completion-note { line-height: 1.62; }
+  .lesson-meta { flex-wrap: nowrap; gap: .35rem; margin: .8rem 0 1rem; overflow-x: auto; scrollbar-width: none; }
+  .lesson-meta::-webkit-scrollbar { display: none; }
+  .pill { flex: 0 0 auto; font-size: .72rem; }
+  .lesson-section { margin-top: 1.45rem; }
+  .lesson-section h3 { font-size: 1.2rem; }
+  .practice-item { padding: .8rem .75rem; border-radius: .72rem; }
+  .practice-choice { min-height: 50px; padding: .72rem .7rem; align-items: center; }
+  .practice-choice input { width: 19px; height: 19px; margin-top: 0; }
+  .completion-panel { margin-top: 1.6rem; padding: .85rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

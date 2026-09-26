@@ -31,7 +31,12 @@ for (const marker of [
   'It is recorded to your learner account and remains separate from professional credential issuance.',
   'Current academic development threshold:',
   'Practical/performance evidence and professional credential issuance remain separate decisions.',
-  'Open Field References'
+  'Open Field References',
+  'View course record',
+  "document.querySelector('#tab-course-record')?.click()",
+  'course-assessment-navigator',
+  'Assessment question navigator',
+  'updateQuestionNavigator(panel)'
 ]) assert.ok(js.includes(marker), `assessment UI missing contract: ${marker}`);
 
 assert.ok(js.includes("credentials: 'same-origin'"), 'assessment requests must use same-origin authentication');
@@ -58,7 +63,11 @@ for (const marker of [
   '.course-assessment-choice',
   'min-height: 44px',
   '@media (max-width: 620px)',
-  '.course-assessment-domain-grid'
+  '.course-assessment-domain-grid',
+  '.course-assessment-navigator',
+  '.course-assessment-nav-button',
+  'scroll-margin-top: 10rem',
+  'min-height: 52px'
 ]) assert.ok(css.includes(marker), `assessment CSS missing ${marker}`);
 
 assert.ok(server.includes("['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']]"), 'web server must serve assessment JS');
