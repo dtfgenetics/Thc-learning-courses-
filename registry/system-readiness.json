@@ -61,9 +61,13 @@
         "revocationTransactionCodeReady": true,
         "productionSigningIntegrationCodeReady": true,
         "printableVerificationCertificate": true,
-        "consentedPublicRecipientNameProjection": true
+        "consentedPublicRecipientNameProjection": true,
+        "transactionalIssuanceCodeReady": true,
+        "idempotentActiveIssuanceConstraintReady": true,
+        "issuanceFailClosedOnReleaseAuthorization": true,
+        "learnerOwnedCertificateRetrieval": true
       },
-      "scope": "Credential runtime foundation includes transaction-tested revocation code, a managed external signing-provider integration contract, privacy-safe public verification, and printable verification-backed certificate rendering. Production issuer identity, production signing and deployed revocation persistence remain false until real infrastructure, key custody/security validation and program release approval exist."
+      "scope": "Credential runtime foundation includes deterministic eligibility, fail-closed transactional credential creation, idempotent active-credential uniqueness, managed external signing-provider integration, private learner-owned certificate retrieval, transaction-tested revocation code, privacy-safe public verification, and printable certificates. Production issuer identity, production signing, deployed revocation persistence, secure operational forms, and program release authorization remain false until real infrastructure, validation, key-custody/security evidence, and final release approval exist."
     },
     "api": {
       "status": "integrated-development",
