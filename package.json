@@ -379,7 +379,9 @@
     "secure-forms:preparation:test": "node scripts/test-secure-form-preparation-coverage.mjs",
     "certification:execution-readiness:test": "node scripts/test-certification-validation-execution-readiness.mjs",
     "candidate-governance:privacy-legal-prep:test": "node scripts/test-candidate-privacy-legal-review-preparation.mjs",
-    "credential:private:test": "node scripts/test-private-learner-credentials-api.mjs"
+    "credential:private:test": "node scripts/test-private-learner-credentials-api.mjs",
+    "certification:dependency-integrity": "node scripts/check-published-course-dependency-integrity.mjs",
+    "certification:dependency-integrity:check": "node scripts/check-published-course-dependency-integrity.mjs --check"
   },
   "dependencies": {
     "ajv": "8.20.0",
