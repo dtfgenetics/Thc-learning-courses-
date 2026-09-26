@@ -155,6 +155,27 @@
         "tone": "evidence",
         "body": "EC tells you how much ionic conductivity is present overall; trend quality depends on consistent sampling and instrument method."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-004-001",
+          "title": "EC measurement through the irrigation chain",
+          "src": "/assets/course4/sample-ph-ec-context.webp",
+          "alt": "Educational comparison of source water, mixed nutrient solution and root-zone samples with electrical conductivity readings kept separate by sample identity and method.",
+          "caption": "EC is most useful as a trend when source, feed and root-zone samples are measured consistently and not treated as interchangeable.",
+          "references": [
+            "REF-IRRIGATION-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-004-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
