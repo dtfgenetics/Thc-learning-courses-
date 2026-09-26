@@ -58,6 +58,12 @@ function safeLesson(lesson, publicReleaseIds = new Set()) {
     status: publicStatus(lesson, publicReleaseIds),
     competencies: lesson.competencies ?? [],
     learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [],
+    learningObjectiveStatements: (lesson.learningObjectives ?? lesson.objectives ?? []).map((id) => {
+      const target = path.join(root, 'content/learning-objectives', `${id}.json`);
+      if (!fs.existsSync(target)) return null;
+      const objective = JSON.parse(fs.readFileSync(target, 'utf8'));
+      return typeof objective.statement === 'string' ? objective.statement : null;
+    }).filter(Boolean),
     estimatedMinutes: lesson.estimatedMinutes ?? null,
     references: lesson.references ?? [],
     content: { ...sourceContent, blocks }
