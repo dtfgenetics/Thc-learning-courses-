@@ -67,19 +67,28 @@ export function evaluateCredentialEligibility({ credential, evidence = {} } = {}
   const artifacts = new Map((evidence.portfolioArtifacts ?? []).map((row) => [row.artifactId, row]));
   const courseCompletions = new Map((evidence.courseCompletions ?? []).map((row) => [row.courseId, row]));
 
-  if (credential.eligibility.requireCourseCompletion === true) {
-    const result = courseCompletions.get(credential.course);
+  const requiredCourses = Array.isArray(credential.eligibility.requiredCourseCompletions) && credential.eligibility.requiredCourseCompletions.length
+    ? credential.eligibility.requiredCourseCompletions
+    : credential.eligibility.requireCourseCompletion === true
+      ? [credential.course]
+      : [];
+  for (const requiredCourseId of requiredCourses) {
+    const result = courseCompletions.get(requiredCourseId);
     if (!result) {
-      missing.push({ type: 'course-completion', id: credential.course, reason: 'missing-course-completion' });
-    } else if (result.status !== 'completed') {
-      missing.push({ type: 'course-completion', id: credential.course, reason: 'course-not-completed', actual: result.status ?? null });
-    } else if (credential.courseVersion) {
+      missing.push({ type: 'course-completion', id: requiredCourseId, reason: 'missing-course-completion' });
+      continue;
+    }
+    if (result.status !== 'completed') {
+      missing.push({ type: 'course-completion', id: requiredCourseId, reason: 'course-not-completed', actual: result.status ?? null });
+      continue;
+    }
+    if (requiredCourseId === credential.course && credential.courseVersion) {
       const requiredVersion = String(credential.courseVersion).trim();
       const actualVersion = String(result.courseVersion ?? '').trim();
       if (actualVersion !== requiredVersion) {
         missing.push({
           type: 'course-completion',
-          id: credential.course,
+          id: requiredCourseId,
           reason: actualVersion ? 'course-version-mismatch' : 'missing-course-version',
           required: requiredVersion,
           actual: actualVersion || null
@@ -150,7 +159,7 @@ export function evaluateCredentialEligibility({ credential, evidence = {} } = {}
     releaseAuthorized,
     eligible: requirementsSatisfied && releaseAuthorized,
     requirementSummary: {
-      courseCompletion: credential.eligibility.requireCourseCompletion === true ? 1 : 0,
+      courseCompletion: requiredCourses.length,
       writtenAssessments: (credential.eligibility.requiredAssessments ?? []).length,
       performanceAssessments: (credential.eligibility.requiredPerformanceAssessments ?? []).length,
       portfolioArtifacts: (credential.eligibility.requiredPortfolioArtifacts ?? []).length
