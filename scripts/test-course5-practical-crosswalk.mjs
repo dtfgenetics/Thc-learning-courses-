@@ -81,4 +81,4 @@ assert.notEqual(releaseEvidence.gates?.renderedAccessibilityReview,'approved');
 assert.notEqual(releaseEvidence.gates?.practicalValidation,'validated');
 assert.notEqual(releaseEvidence.gates?.controlledPilotEvidence,'accepted');
 
-console.log('Course 5 C/D/E crosswalk passed: all six objectives have literal development-stage practical evidence, the nine-asset learner layer is built, biosecurity spans all three contexts, and pesticide/treatment authority remains excluded.');
+console.log('Course 5 C/D/E crosswalk passed: all six objectives have literal development-stage practical evidence, the eleven-asset learner layer is built, biosecurity spans all three contexts, and pesticide/treatment authority remains excluded.');

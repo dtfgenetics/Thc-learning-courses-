@@ -76,7 +76,7 @@ Required record: **pending**
 
 ## 5. Visual and asset review
 
-Review all six produced Course 3 assets against the canonical lessons and visual registry:
+Review all seven produced Course 3 assets against the canonical lessons and visual registry:
 - technical meaning;
 - objective/lesson placement;
 - readable labels and units;

@@ -12,7 +12,7 @@ Review:
 - nutrition-context claims and symptom/diagnosis boundary;
 - irrigation/fertigation work-order execution and representative delivery checks;
 - equipment/operator authority boundaries;
-- technical meaning of all seven governed assets;
+- technical meaning of all eight governed assets;
 - evidence-to-claim mapping in `EVIDENCE-DOSSIER.md`.
 
 Reviewer/qualification/version/findings/decision: **pending**
@@ -58,7 +58,7 @@ Decision: **pending**
 
 ## 5. Visual/asset review
 
-Review all seven assets for technical meaning, placement, legible units/labels, accessible alternatives, claim boundaries, download/print quality and consistency with the Learning Hub visual standard.
+Review all eight assets for technical meaning, placement, legible units/labels, accessible alternatives, claim boundaries, download/print quality and consistency with the Learning Hub visual standard.
 
 Decision: **pending**
 
@@ -79,7 +79,7 @@ Decision: **pending**
 Before controlled release-state advancement or authoritative deployment evidence:
 - required human reviews are approved;
 - blocking accessibility findings are resolved/dispositioned;
-- all seven learner asset paths and assessment/remediation behavior are verified;
+- all eight learner asset paths and assessment/remediation behavior are verified;
 - fresh anonymous public readback succeeds after deployment;
 - release version/notes identify exactly what shipped.
 

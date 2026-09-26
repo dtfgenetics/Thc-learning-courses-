@@ -37,7 +37,7 @@ Two printable practice assets are linked directly from the relevant lessons:
 - environmental measurement record practice — targets vs measurements, representativeness, verification, uncertainty and handoff;
 - PPFD grid and sensor-verification practice — repeatable grid, distribution, photoperiod context, outlier triage, authority boundary and escalation.
 
-The public repository is canonical learner delivery; all seven produced assets are mirrored to the Course 003 Drive folder and registered in `visuals/COURSE3-ASSET-REGISTRY.json`.
+The public repository is canonical learner delivery; all seven produced assets are registered in `visuals/COURSE3-ASSET-REGISTRY.json`. Converted assets retain legacy Drive provenance, and the native VPD asset records its WebP and PNG-master Drive mirrors.
 
 ## Scope controls
 
