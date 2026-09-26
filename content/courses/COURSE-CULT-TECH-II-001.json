@@ -3,7 +3,7 @@
   "title": "THC Cultivation Technician II",
   "version": "1.0.0",
   "status": "draft",
-  "credentialBearing": true,
+  "credentialBearing": false,
   "modules": [
     "MOD-ENV-ADV-001",
     "MOD-LIGHT-ADV-001",
@@ -42,5 +42,10 @@
     "COMP-SPACE-BIOSEC-001",
     "COMP-CROP-PLAN-001"
   ],
-  "finalAssessment": "ASSESS-CULT-TECH-II-CREDENTIAL-001"
+  "finalAssessment": "ASSESS-CULT-TECH-II-CREDENTIAL-001",
+  "extensions": {
+    "legacySourceOnly": true,
+    "supersededByCredentialProgram": "CREDPROG-CULT-TECH-II-001",
+    "certificationCourseUse": "provenance-only"
+  }
 }
