@@ -21,7 +21,7 @@ import {
   coursePracticalReportCsv
 } from './course-practical-evaluator-service.mjs';
 import { normalizePracticalEvidenceSubmission, learnerPracticalSubmissionView } from '../../../packages/domain/practical-evidence-submission.mjs';
-import { issueEligibleCredential } from './credential-issuance-service.mjs';
+import { credentialSubjectHash, issueEligibleCredential } from './credential-issuance-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -258,6 +258,32 @@ export function credentialTranscriptView(credential, course, rawEvidence) {
       excludesPrivateEvaluatorNotes: true,
       excludesRawResponses: true
     }
+  };
+}
+
+function privateLearnerCredentialView(record, definition) {
+  const payload = record?.payloadJson ?? {};
+  return {
+    verificationId: record.verificationId,
+    status: record.status,
+    credential: {
+      id: definition?.id ?? record.credentialDefinitionId,
+      title: definition?.title ?? payload?.credential?.title ?? record.credentialDefinitionId,
+      version: record.credentialDefinitionVersion,
+      role: definition?.role ?? payload?.credential?.role ?? null
+    },
+    course: {
+      id: record.courseId ?? null,
+      version: record.courseVersion ?? null
+    },
+    recipient: {
+      learnerReference: payload?.recipient?.learnerReference ?? null,
+      certificateName: payload?.recipient?.certificateName ?? null,
+      applicationReference: payload?.recipient?.applicationReference ?? null
+    },
+    issuer: payload?.issuer ?? record.issuer ?? null,
+    issuedAt: record.issuedAt,
+    expiresAt: record.expiresAt ?? null
   };
 }
 
@@ -639,6 +665,21 @@ export function createHandler({
         if (!learnerStore || ['getAssessmentAttempt','saveAssessmentScore'].some((method) => typeof learnerStore[method] !== 'function')) return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
         const result = await submitCourseAssessment({ learnerStore, subject: auth.subject, attemptId: assessmentSubmitMatch[1] });
         return json(res, result.status, { ...result.body, requestId });
+      }
+
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/credentials') {
+        route = 'GET /api/v1/me/credentials';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (typeof resolvedCredentialStore.listBySubjectHash !== 'function') {
+          return json(res, 503, { error: 'learner-credential-persistence-unavailable', requestId });
+        }
+        const records = await resolvedCredentialStore.listBySubjectHash(credentialSubjectHash(auth.subject));
+        const credentials = records.map((record) => privateLearnerCredentialView(
+          record,
+          loadCredentialDefinition(record.credentialDefinitionId)
+        ));
+        return json(res, 200, { credentials, requestId });
       }
 
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
