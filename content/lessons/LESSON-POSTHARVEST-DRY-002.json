@@ -1,20 +1,185 @@
 {
-  "id":"LESSON-POSTHARVEST-DRY-002",
-  "title":"Drying Dynamics, Moisture Control and Water Activity",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-POSTHARVEST-001"],
-  "learningObjectives":["LO-POSTHARVEST-DRY-002"],
-  "estimatedMinutes":45,
-  "references":["REF-POSTHARVEST-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Drying removes water from harvested tissue while quality and contamination risk continue to change. Temperature, relative humidity, airflow, flower density, load size, and internal moisture gradients all influence the process.",
-    "vocabulary":[{"term":"Moisture gradient","definition":"A difference in water content between regions of a material that drives redistribution or drying."},{"term":"Water activity","definition":"A measure related to the availability of water for microbial growth and chemical reactions."},{"term":"Equilibrium","definition":"A state in which net moisture exchange between material and the surrounding environment becomes small under stable conditions."}],
-    "sections":[{"title":"Drying is internal and external","body":"Surface tissue can dry faster than the flower interior. Air conditions control external moisture removal while internal diffusion controls how quickly water reaches the surface.","references":["REF-POSTHARVEST-001"]},{"title":"Airflow should remove moisture without creating extremes","body":"Air movement supports vapor removal but excessive direct airflow can increase uneven drying. Distribution across the room matters more than simply maximizing fan speed.","references":["REF-POSTHARVEST-001"]},{"title":"Density and load affect the process","body":"Large dense flowers and heavy room loading can retain moisture differently from small loose material. Drying plans should account for product geometry and total moisture load.","references":["REF-POSTHARVEST-001"]},{"title":"Measurement is stronger than feel alone","body":"Physical feel can be useful but is subjective. Weight trends, calibrated environmental data, moisture measurements, or water-activity measurements provide more repeatable quality control.","references":["REF-POSTHARVEST-001"]}],
-    "workedExamples":["If outer surfaces feel crisp while stems and internal flower remain wet, continue controlled drying rather than assuming the entire batch is ready for sealed storage.","If one rack dries much faster than another, map airflow and room position before changing the entire room set point."],
-    "commonMistakes":["Blowing strong air directly onto flowers.","Judging the whole batch from one small sample.","Using time alone as the endpoint."],
-    "practicalApplication":"Record room temperature and RH, airflow pattern, batch loading, sample weights or moisture indicators, and representative product observations. Use the trend to determine when material is ready for the next post-harvest stage.",
-    "summary":"Drying is controlled moisture transport. Uniform environment, representative measurement, and attention to internal moisture gradients produce more reliable outcomes than fixed time or surface feel alone."
+  "id": "LESSON-POSTHARVEST-DRY-002",
+  "title": "Drying Dynamics, Moisture Control and Water Activity",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-001"
+  ],
+  "learningObjectives": [
+    "LO-POSTHARVEST-DRY-002"
+  ],
+  "estimatedMinutes": 45,
+  "references": [
+    "REF-POSTHARVEST-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Drying removes water from harvested tissue while quality and contamination risk continue to change. Temperature, relative humidity, airflow, flower density, load size, and internal moisture gradients all influence the process.",
+    "vocabulary": [
+      {
+        "term": "Moisture gradient",
+        "definition": "A difference in water content between regions of a material that drives redistribution or drying."
+      },
+      {
+        "term": "Water activity",
+        "definition": "A measure related to the availability of water for microbial growth and chemical reactions."
+      },
+      {
+        "term": "Equilibrium",
+        "definition": "A state in which net moisture exchange between material and the surrounding environment becomes small under stable conditions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Drying is internal and external",
+        "body": "Surface tissue can dry faster than the flower interior. Air conditions control external moisture removal while internal diffusion controls how quickly water reaches the surface.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Airflow should remove moisture without creating extremes",
+        "body": "Air movement supports vapor removal but excessive direct airflow can increase uneven drying. Distribution across the room matters more than simply maximizing fan speed.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Density and load affect the process",
+        "body": "Large dense flowers and heavy room loading can retain moisture differently from small loose material. Drying plans should account for product geometry and total moisture load.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Measurement is stronger than feel alone",
+        "body": "Physical feel can be useful but is subjective. Weight trends, calibrated environmental data, moisture measurements, or water-activity measurements provide more repeatable quality control.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If outer surfaces feel crisp while stems and internal flower remain wet, continue controlled drying rather than assuming the entire batch is ready for sealed storage.",
+      "If one rack dries much faster than another, map airflow and room position before changing the entire room set point.",
+      "Rack A loses mass much faster than Rack C while room RH appears uniform. Local airflow/load geometry becomes a likely explanation and should be mapped before changing whole-room RH.",
+      "A batch reaches the same average moisture metric as a prior batch but shows much greater sample-to-sample variation. Uniformity is worse even though the average matches."
+    ],
+    "commonMistakes": [
+      "Blowing strong air directly onto flowers.",
+      "Judging the whole batch from one small sample.",
+      "Using time alone as the endpoint.",
+      "Confusing moisture content with water activity as identical measurements.",
+      "Using one convenient sample as proof of batch uniformity."
+    ],
+    "practicalApplication": "Record room temperature and RH, airflow pattern, batch loading, sample weights or moisture indicators, and representative product observations. Use the trend to determine when material is ready for the next post-harvest stage.",
+    "summary": "Drying is controlled moisture transport. Uniform environment, representative measurement, and attention to internal moisture gradients produce more reliable outcomes than fixed time or surface feel alone.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Drying has two linked resistances",
+        "body": "Water must move from internal tissue to the surface and then from the surface into the air. Fast external drying cannot overcome slow internal redistribution without risking gradients and nonuniformity.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Drying evidence",
+        "columns": [
+          "Evidence",
+          "What it helps reveal"
+        ],
+        "rows": [
+          [
+            "Product mass trend",
+            "Overall water-loss trajectory"
+          ],
+          [
+            "Room temperature/RH",
+            "External drying environment"
+          ],
+          [
+            "Airflow map",
+            "Spatial vapor-removal differences"
+          ],
+          [
+            "Representative samples",
+            "Batch uniformity"
+          ],
+          [
+            "Water activity",
+            "Availability of water for microbial/chemical processes"
+          ],
+          [
+            "Product geometry",
+            "Why dense material may lag"
+          ]
+        ],
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Evaluate drying uniformity",
+        "items": [
+          {
+            "title": "Sample multiple locations",
+            "body": "Do not rely on one rack or one flower."
+          },
+          {
+            "title": "Trend product change",
+            "body": "Use approved mass/moisture/water-activity methods consistently."
+          },
+          {
+            "title": "Map environment",
+            "body": "Pair product data with temp/RH/airflow location."
+          },
+          {
+            "title": "Compare variation",
+            "body": "Average and range both matter."
+          },
+          {
+            "title": "Investigate outliers",
+            "body": "Look for load density, airflow or sensor-placement causes."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same average, different uniformity",
+        "setting": "Two batches finish with the same average endpoint metric, but Batch B has a much wider range across samples.",
+        "prompt": "Which batch is more uniform?",
+        "options": [
+          "Batch B because the average matches",
+          "Batch A because its sample spread is tighter",
+          "They are identical",
+          "Uniformity cannot be measured"
+        ],
+        "answer": "Batch A because its sample spread is tighter.",
+        "feedback": "Averages can conceal batch-to-batch differences in uniformity."
+      },
+      {
+        "type": "activity",
+        "title": "Analyze a drying curve",
+        "instructions": "Use 5-day product-weight and room-condition data from three racks.",
+        "prompts": [
+          "Calculate relative mass loss.",
+          "Identify the fastest and slowest rack.",
+          "Compare environmental context.",
+          "Flag the day when rate changes most.",
+          "State whether more sampling is needed before packaging."
+        ],
+        "artifact": "Drying trend analysis"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "A drying endpoint must be representative and uniform; room averages and surface feel cannot establish that alone."
+      }
+    ]
   }
 }
