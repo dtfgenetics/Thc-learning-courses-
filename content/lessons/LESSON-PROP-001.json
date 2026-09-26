@@ -1,39 +1,213 @@
 {
   "id": "LESSON-PROP-001",
   "title": "Seeds, Germination, Seedlings and Cuttings",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-PROP-001"],
-  "learningObjectives": ["LO-PROP-001"],
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-PROP-001"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-PROP-001"],
+  "references": [
+    "REF-PROP-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Propagation establishes the next crop from seeds or vegetative cuttings. Success depends on viable starting material, sanitation, moisture and oxygen balance, environmental stability, genotype response, and careful transition into normal growing conditions.",
+    "overview": "Propagation is a controlled transition from stored seed reserves or severed shoot tissue into an independently growing plant. Seeds must resume metabolism and emerge; cuttings must limit water loss while wounds reorganize and adventitious roots form. Starting-material quality, sanitation, oxygen/moisture balance, temperature, humidity, light and genotype all influence success, so propagation should be measured as a biological process rather than treated as a recipe.",
     "vocabulary": [
-      {"term":"Germination","definition":"The process in which a viable seed resumes growth and the embryo emerges to begin seedling development."},
-      {"term":"Cutting","definition":"A severed plant section used to produce a genetically matching vegetative propagule when it forms roots."},
-      {"term":"Adventitious root","definition":"A root that develops from non-root tissue such as the stem of a cutting."},
-      {"term":"Acclimatization","definition":"The gradual transition of newly rooted or protected propagules into the target growing environment."}
+      {
+        "term": "Germination",
+        "definition": "The process in which a viable seed resumes growth and the embryo emerges to begin seedling development."
+      },
+      {
+        "term": "Cutting",
+        "definition": "A severed plant section used to produce a genetically matching vegetative propagule when it forms roots."
+      },
+      {
+        "term": "Adventitious root",
+        "definition": "A root that develops from non-root tissue such as the stem of a cutting."
+      },
+      {
+        "term": "Acclimatization",
+        "definition": "The gradual transition of newly rooted or protected propagules into the target growing environment."
+      }
     ],
     "sections": [
-      {"title":"Start with viable, healthy material","body":"Seed and cutting performance begins with the condition of the starting material. Damaged, infected, poorly stored, or physiologically weak material can reduce success even when environmental conditions are otherwise appropriate.","references":["REF-PROP-001"]},
-      {"title":"Moisture must be balanced with oxygen","body":"Propagation requires adequate moisture without prolonged saturation. Seeds and new roots need access to oxygen, while unrooted cuttings have limited ability to replace water loss. The environment should therefore support hydration while avoiding conditions that encourage decay or oxygen limitation.","references":["REF-PROP-001"]},
-      {"title":"Sanitation protects vulnerable tissue","body":"Propagation involves young tissue and, for cuttings, fresh wounds that can provide entry points for pathogens. Clean tools, surfaces, hands, containers, and propagation material are important parts of a repeatable protocol.","references":["REF-PROP-001"]},
-      {"title":"Genotypes can respond differently","body":"Rooting speed and propagation success can vary among genotypes. A protocol that performs well with one cultivar may need adjustment for another, so cultivar-specific records are more useful than assuming every genotype responds identically.","references":["REF-PROP-001"]},
-      {"title":"Rooting is not the end of propagation","body":"Newly rooted material must transition into the normal crop environment. Acclimatization should reduce dependence on high-support humidity or other propagation conditions while allowing the root system and transpiration capacity to develop together.","references":["REF-PROP-001"]}
+      {
+        "title": "Start with viable, healthy material",
+        "body": "Seed and cutting performance begins with the condition of the starting material. Damaged, infected, poorly stored, or physiologically weak material can reduce success even when environmental conditions are otherwise appropriate.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Moisture must be balanced with oxygen",
+        "body": "Propagation requires adequate moisture without prolonged saturation. Seeds and new roots need access to oxygen, while unrooted cuttings have limited ability to replace water loss. The environment should therefore support hydration while avoiding conditions that encourage decay or oxygen limitation.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Sanitation protects vulnerable tissue",
+        "body": "Propagation involves young tissue and, for cuttings, fresh wounds that can provide entry points for pathogens. Clean tools, surfaces, hands, containers, and propagation material are important parts of a repeatable protocol.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Genotypes can respond differently",
+        "body": "Rooting speed and propagation success can vary among genotypes. A protocol that performs well with one cultivar may need adjustment for another, so cultivar-specific records are more useful than assuming every genotype responds identically.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Rooting is not the end of propagation",
+        "body": "Newly rooted material must transition into the normal crop environment. Acclimatization should reduce dependence on high-support humidity or other propagation conditions while allowing the root system and transpiration capacity to develop together.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "If one cultivar roots consistently slower than another under the same clean protocol, record the genotype-specific response before changing every environmental variable at once.",
-      "If newly rooted cuttings wilt immediately after leaving a high-humidity environment, evaluate whether the transition was too abrupt rather than assuming rooting had failed."
+      "A seed batch imbibes water but emergence remains uneven. The learner separates seed viability, temperature, oxygen/moisture conditions and handling history instead of assuming all non-emerged seeds are dead.",
+      "Fresh cuttings wilt within hours despite a moist medium. Because unrooted cuttings cannot replace water through a functioning root system, evaluate humidity, leaf load, stem condition and handling delay before simply adding more irrigation.",
+      "One genotype roots in 8 days and another in 13 under the same clean protocol. Record genotype-specific rooting time before making a system-wide environmental change.",
+      "Rooted cuttings collapse after a sudden humidity reduction. The root system may be present but not yet able to support the new transpiration demand; use staged acclimatization."
     ],
     "commonMistakes": [
-      "Keeping propagation media saturated because more moisture is assumed to improve rooting.",
-      "Reusing tools or surfaces between plants without appropriate sanitation.",
-      "Treating a protocol optimized for one genotype as universally optimal.",
-      "Skipping acclimatization as soon as roots are visible."
+      "Keeping media saturated because more moisture is assumed to improve rooting.",
+      "Treating visible roots as proof that acclimatization is complete.",
+      "Using weak or symptomatic donor material because it is convenient.",
+      "Ignoring tool and surface sanitation around fresh wounds.",
+      "Assuming all genotypes share the same rooting timeline.",
+      "Changing several propagation variables at once and losing the ability to identify which change helped."
     ],
-    "practicalApplication": "Build a propagation checklist that records source material, sanitation, environmental conditions, moisture status, rooting or emergence timing, genotype, and acclimatization outcome. Compare batches using the same observations so protocol changes are based on evidence.",
-    "summary": "Successful propagation is a controlled biological transition. Healthy starting material, sanitation, balanced moisture and oxygen, genotype-aware protocols, and gradual acclimatization produce more reliable seedlings and rooted cuttings than any single product or technique alone."
+    "practicalApplication": "Track one seed or cutting batch from intake through establishment. Record source identity, sanitation, environmental conditions, moisture status, emergence/rooting dates, losses, genotype and acclimatization outcome. Calculate a simple success rate and identify the earliest point where failed units diverged from successful ones.",
+    "summary": "Successful propagation is a controlled biological transition. Healthy starting material, sanitation, balanced moisture and oxygen, genotype-aware protocols, and gradual acclimatization produce more reliable seedlings and rooted cuttings than any single product or technique alone.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Seeds and cuttings solve different biological problems",
+        "body": "A seed contains an embryo and stored reserves that resume growth after suitable conditions permit germination. A cutting begins as detached shoot tissue with no functional root system, so it must survive water stress while wound responses and adventitious root formation occur.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Propagation evidence to track",
+        "columns": [
+          "Stage",
+          "Key evidence",
+          "Common failure clue"
+        ],
+        "rows": [
+          [
+            "Seed intake",
+            "Identity, storage history, visible condition",
+            "Damaged/aged/contaminated material"
+          ],
+          [
+            "Germination",
+            "Imbibition, radicle emergence, timing",
+            "Uneven or stalled emergence"
+          ],
+          [
+            "Cutting intake",
+            "Donor identity, tissue vigor, wound quality",
+            "Wilted or symptomatic source tissue"
+          ],
+          [
+            "Root initiation",
+            "Turgor, callus/root emergence, medium status",
+            "Persistent wilt, decay or no root formation"
+          ],
+          [
+            "Acclimatization",
+            "Rooted status plus response to lower humidity / normal light",
+            "Collapse after environmental transition"
+          ]
+        ],
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Run propagation as a controlled experiment",
+        "items": [
+          {
+            "title": "Standardize starting material",
+            "body": "Record genotype, donor/batch identity and tissue/seed condition."
+          },
+          {
+            "title": "Control sanitation",
+            "body": "Use clean tools, surfaces and containers to reduce avoidable contamination."
+          },
+          {
+            "title": "Balance moisture and oxygen",
+            "body": "Keep propagules hydrated without prolonged saturation."
+          },
+          {
+            "title": "Stabilize environment",
+            "body": "Track temperature, humidity and light rather than relying on room settings alone."
+          },
+          {
+            "title": "Record developmental milestones",
+            "body": "Capture emergence, visible rooting and losses by date."
+          },
+          {
+            "title": "Acclimatize gradually",
+            "body": "Transition rooted propagules toward the production environment while watching for stress."
+          },
+          {
+            "title": "Compare batches",
+            "body": "Use consistent records to identify genotype- or process-specific patterns."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Roots are visible, but cuttings collapse",
+        "setting": "Cuttings have visible new roots, but several wilt sharply after humidity is reduced and light is increased.",
+        "prompt": "What is the strongest interpretation?",
+        "options": [
+          "Visible roots guarantee full acclimatization",
+          "The transition may have exceeded the new root system's ability to support transpiration",
+          "Add fertilizer immediately",
+          "The genotype is necessarily defective"
+        ],
+        "answer": "The transition may have exceeded the new root system's ability to support transpiration.",
+        "feedback": "Root presence is a milestone, not proof that the plant is ready for an abrupt production environment."
+      },
+      {
+        "type": "activity",
+        "title": "Build a propagation batch record",
+        "instructions": "Compare one successful and one weak propagation batch.",
+        "prompts": [
+          "Calculate emergence/rooting percentage.",
+          "Compare time to first and median emergence/rooting.",
+          "Compare environmental and moisture records.",
+          "Identify the earliest divergence between batches.",
+          "Name one variable to test in the next batch while holding others constant."
+        ],
+        "artifact": "Propagation performance comparison",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Propagation success is the result of viable starting material, clean handling, water/oxygen balance, stable environment and gradual transition—not one product or trick.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ]
   }
 }
