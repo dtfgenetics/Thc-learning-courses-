@@ -146,6 +146,14 @@
   .governance-dashboard p { font-size: .88rem; line-height: 1.5; }
   .portal-summary-card { padding: .75rem; }
   .portal-progress-summary { grid-template-columns: 1fr 1fr; }
+  .record-actions { display: grid!important; grid-template-columns: 1fr; gap: .5rem!important; }
+  .record-button { width: 100%; min-height: 48px; justify-content: center; }
+  .academic-record .portal-course-record { padding: .8rem; border-radius: .7rem; }
+  .academic-record .portal-progress-summary.compact { grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .academic-record .portal-summary-value { font-size: 1.05rem; }
+  .portal-credential-card { padding: .9rem; border-radius: .7rem; }
+  .portal-credential-card dl { grid-template-columns: 1fr; gap: .55rem; }
+  .portal-certificate-print { width: 100%; min-height: 48px; }
   .portal-evidence-row { align-items: flex-start; flex-direction: column; }
   .course-evidence-row { align-items: flex-start; flex-direction: column; gap: .25rem; }
   .field-reference-grid, .field-reference-comparison { grid-template-columns: 1fr; }
