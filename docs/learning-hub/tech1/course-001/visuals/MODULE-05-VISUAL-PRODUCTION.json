@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "finalFormats": [
+    "png",
+    "webp",
+    "jpeg"
+  ],
+  "svgAllowed": false,
+  "minLongEdgePx": 2200,
+  "styleRule": "Use photorealistic cultivation scenes for recognition tasks and branded scientific diagrams/process visuals for mechanisms. No generic decorative cannabis imagery.",
+  "textRule": "Keep critical labels concise in-image; put detailed explanation in HTML caption/body copy.",
+  "accessibilityRule": "Every asset requires alt text and a nearby instructional caption.",
+  "moduleId": "MOD-LH-TECH1-001-EQUIP",
+  "moduleTitle": "Equipment Readiness, Operator Care & Fault Reporting",
+  "visuals": [
+    {
+      "id": "VIS-LH-T1-C1-M5-001",
+      "lesson": "5.1",
+      "title": "Cultivation equipment pre-use inspection",
+      "type": "annotated-photorealistic-scene",
+      "placement": "After readiness checklist",
+      "teachingPurpose": "Cultivation equipment pre-use inspection",
+      "requiredContent": [
+        "asset ID",
+        "guard",
+        "cord",
+        "leak",
+        "hose/connection",
+        "warning indicator",
+        "clear work area"
+      ],
+      "filename": "vis-lh-t1-c1-m5-001-cultivation-equipment-pre-use-inspection.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-002",
+      "lesson": "5.1",
+      "title": "Expected state → observe → compare → decide",
+      "type": "process-diagram",
+      "placement": "After failure-interception foundation",
+      "teachingPurpose": "Expected state → observe → compare → decide",
+      "requiredContent": [
+        "expected condition",
+        "observation",
+        "comparison",
+        "decision",
+        "document"
+      ],
+      "filename": "vis-lh-t1-c1-m5-002-expected-state-observe-compare-decide.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-003",
+      "lesson": "5.1",
+      "title": "Guard present versus missing",
+      "type": "comparison-plate",
+      "placement": "After failed-readiness section",
+      "teachingPurpose": "Guard present versus missing",
+      "requiredContent": [
+        "safe guarded state",
+        "missing/bypassed guard",
+        "out-of-service decision"
+      ],
+      "filename": "vis-lh-t1-c1-m5-003-guard-present-versus-missing.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-004",
+      "lesson": "5.2",
+      "title": "Operator care versus servicing boundary",
+      "type": "comparison-diagram",
+      "placement": "After operator-care section",
+      "teachingPurpose": "Operator care versus servicing boundary",
+      "requiredContent": [
+        "external cleaning/checks",
+        "consumables",
+        "guard removal",
+        "protected electrical access",
+        "pressure/stored energy"
+      ],
+      "filename": "vis-lh-t1-c1-m5-004-operator-care-versus-servicing-boundary.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-005",
+      "lesson": "5.2",
+      "title": "Stored-energy concept",
+      "type": "scientific-safety-diagram",
+      "placement": "After servicing section",
+      "teachingPurpose": "Stored-energy concept",
+      "requiredContent": [
+        "electrical",
+        "pressure",
+        "gravity/mechanical",
+        "unexpected startup",
+        "specialist boundary"
+      ],
+      "filename": "vis-lh-t1-c1-m5-005-stored-energy-concept.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-006",
+      "lesson": "5.3",
+      "title": "Observation → hypothesis → diagnosis",
+      "type": "reasoning-diagram",
+      "placement": "After diagnostic-reasoning foundation",
+      "teachingPurpose": "Observation → hypothesis → diagnosis",
+      "requiredContent": [
+        "direct fact",
+        "possible explanation",
+        "supported conclusion",
+        "authority/evidence threshold"
+      ],
+      "filename": "vis-lh-t1-c1-m5-006-observation-hypothesis-diagnosis.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-007",
+      "lesson": "5.3",
+      "title": "Recurring alarm timeline",
+      "type": "annotated-timeline",
+      "placement": "After repeated-reset section",
+      "teachingPurpose": "Recurring alarm timeline",
+      "requiredContent": [
+        "alarm",
+        "permitted check",
+        "temporary clear",
+        "recurrence",
+        "impact",
+        "ticket/escalation"
+      ],
+      "filename": "vis-lh-t1-c1-m5-007-recurring-alarm-timeline.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-008",
+      "lesson": "5.3",
+      "title": "Maintenance-ready fault ticket",
+      "type": "annotated-document-example",
+      "placement": "After fault-context list",
+      "teachingPurpose": "Maintenance-ready fault ticket",
+      "requiredContent": [
+        "asset",
+        "location",
+        "time",
+        "exact alarm",
+        "readings",
+        "checks",
+        "results",
+        "impact",
+        "action",
+        "notification"
+      ],
+      "filename": "vis-lh-t1-c1-m5-008-maintenance-ready-fault-ticket.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M5-009",
+      "lesson": "5.3",
+      "title": "Out-of-service handoff workflow",
+      "type": "decision-flow",
+      "placement": "Beside module application",
+      "teachingPurpose": "Out-of-service handoff workflow",
+      "requiredContent": [
+        "detect",
+        "safe state",
+        "tag/control if authorized",
+        "ticket",
+        "affected-task handoff",
+        "qualified service"
+      ],
+      "filename": "vis-lh-t1-c1-m5-009-out-of-service-handoff-workflow.png"
+    }
+  ]
+}
