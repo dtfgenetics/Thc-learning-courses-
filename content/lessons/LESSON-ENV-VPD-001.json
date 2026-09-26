@@ -1,15 +1,21 @@
 {
   "id": "LESSON-ENV-VPD-001",
   "title": "Understanding Vapor Pressure Deficit",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-ENV-VPD-001"],
-  "learningObjectives": ["LO-ENV-VPD-001"],
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-ENV-VPD-001"
+  ],
   "estimatedMinutes": 35,
-  "references": ["REF-VPD-002"],
+  "references": [
+    "REF-VPD-002"
+  ],
   "assessment": "ASSESS-ENV-VPD-001",
   "content": {
-    "overview": "Vapor pressure deficit (VPD) is a way to describe atmospheric drying demand using temperature and humidity together. It is more informative than reading relative humidity by itself because the amount of water vapor air can hold changes with temperature.",
+    "overview": "Vapor pressure deficit (VPD) describes atmospheric drying demand by combining temperature and humidity into one vapor-pressure relationship. Understanding the mechanism matters because the leaf does not experience relative humidity as an isolated number: leaf temperature, stomatal behavior, airflow and root-zone water supply all influence how readily water moves from leaf to air. This lesson teaches VPD as a plant-water-relations concept and a measurement framework, not as a rigid target chart.",
     "vocabulary": [
       {
         "term": "Relative humidity",
@@ -32,40 +38,278 @@
       {
         "title": "Why temperature and humidity must be read together",
         "body": "Relative humidity is temperature-dependent. Two rooms can show the same relative humidity while having different vapor-pressure relationships if their temperatures differ. That is why VPD interpretation uses both variables together rather than treating a humidity percentage as a complete description of atmospheric drying demand.",
-        "references": ["REF-VPD-002"]
+        "references": [
+          "REF-VPD-002"
+        ]
       },
       {
         "title": "What VPD tells a grower",
         "body": "VPD is useful as an environmental interpretation tool. It helps describe how strongly the air can draw moisture from plant surfaces under a given temperature and humidity combination. It should be considered alongside plant stage, plant condition, airflow, root-zone water availability, and actual crop response rather than used as a stand-alone diagnosis.",
-        "references": ["REF-VPD-002"]
+        "references": [
+          "REF-VPD-002"
+        ]
       },
       {
         "title": "Air temperature versus leaf temperature",
         "body": "A basic room-level VPD calculation usually starts with air temperature and relative humidity. Plant leaves, however, can differ from air temperature because of radiation, airflow, transpiration, and other conditions. For more precise crop interpretation, growers should understand whether a chart or calculator assumes air temperature alone or incorporates measured leaf temperature.",
-        "references": ["REF-VPD-002"]
+        "references": [
+          "REF-VPD-002"
+        ]
       },
       {
         "title": "Using VPD without turning it into a rigid rule",
         "body": "VPD charts are decision aids, not universal biological laws. A target copied from another facility may not transfer directly across cultivars, developmental stages, lighting loads, sensor placement, irrigation strategies, or air movement. The strongest practice is to pair environmental measurements with plant observations and to make changes deliberately rather than chasing a single number.",
-        "references": ["REF-VPD-002"]
+        "references": [
+          "REF-VPD-002"
+        ]
       },
       {
         "title": "A repeatable interpretation workflow",
         "body": "Measure temperature and relative humidity with calibrated sensors placed where they represent the crop environment. Confirm units and sensor location, calculate or read VPD using a consistent method, compare the result with the intended developmental context, and then check whether plant and root-zone observations agree with the environmental interpretation before making a correction.",
-        "references": ["REF-VPD-002"]
+        "references": [
+          "REF-VPD-002"
+        ]
       }
     ],
     "workedExamples": [
-      "Room A and Room B both read 60% relative humidity, but Room B is warmer. Do not assume equal VPD. Recalculate using each room's temperature because saturation vapor pressure changes with temperature.",
-      "A VPD reading appears different from the expected range while plants show no obvious stress. Before changing equipment, verify sensor accuracy, sensor placement, temperature units, and whether the chart assumes air or leaf temperature."
+      "Room A is 24 °C at 60% RH and Room B is 29 °C at 60% RH. The RH is identical, but the warmer air has a higher saturation vapor pressure, so the atmospheric vapor deficit is larger in Room B. The correct comparison uses temperature and RH together.",
+      "A room controller shows an apparently high VPD while plants look normal. The technician first checks whether the sensor is in the representative canopy zone, whether the reading is stable, and whether leaf temperature differs substantially from air temperature before changing the room.",
+      "A canopy under strong light has leaves cooler than the surrounding air because transpiration is active. A leaf-temperature-based VPD calculation can therefore differ from an air-temperature-only chart. Record which method is being used so comparisons remain meaningful.",
+      "Two zones have similar calculated VPD, but one has restricted root-zone moisture and poor air movement. The environmental number alone cannot explain plant response; root-zone status and airflow must be interpreted with it."
     ],
     "commonMistakes": [
-      "Using relative humidity alone and ignoring the temperature at which it was measured.",
-      "Treating one VPD chart as a universal target for every cultivar, stage, and facility.",
-      "Changing humidity or temperature aggressively before confirming sensor accuracy and crop response.",
-      "Confusing air-temperature VPD with calculations that use measured leaf temperature."
+      "Using relative humidity without the corresponding temperature.",
+      "Treating a copied VPD target as universally correct for every stage, cultivar and facility.",
+      "Confusing air VPD with a leaf-to-air vapor-pressure calculation.",
+      "Changing humidification, dehumidification or temperature before verifying sensor location and validity.",
+      "Assuming VPD alone determines transpiration rate.",
+      "Ignoring root-zone water supply, leaf temperature and airflow when plant response does not match the chart."
     ],
-    "practicalApplication": "When reviewing a room, record temperature and relative humidity together, note sensor location, calculate VPD consistently, and compare that reading with plant stage and visible crop response. If a correction is needed, adjust one controllable variable at a time and observe the result instead of chasing a chart value in isolation.",
-    "summary": "VPD combines temperature and humidity into a more useful description of atmospheric drying demand. It is most valuable when used as one part of a broader environmental diagnosis that also considers plant stage, sensor quality, root-zone water status, and actual crop response."
+    "practicalApplication": "Create a three-point canopy environmental check. At each location record air temperature, RH, sensor position and time; calculate VPD with the same method; compare the spatial pattern; then add leaf-temperature observations where available and one root-zone observation. Write a short interpretation that separates measured facts from assumptions and names the next evidence needed before changing environmental controls.",
+    "summary": "VPD is a useful way to describe atmospheric drying demand, but it is not a stand-alone plant diagnosis. Accurate interpretation requires temperature and humidity measured together, clear knowledge of whether air or leaf temperature is used, representative sensor placement, and comparison with plant, airflow and root-zone evidence.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Why VPD exists",
+        "body": "Relative humidity is a ratio tied to temperature. As temperature rises, saturation vapor pressure rises, so the same RH can represent a different vapor-pressure gradient. VPD converts temperature and humidity into a pressure difference that better describes the air's drying demand.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "What changes VPD interpretation",
+        "columns": [
+          "Factor",
+          "Why it matters",
+          "What to record"
+        ],
+        "rows": [
+          [
+            "Air temperature",
+            "Changes saturation vapor pressure",
+            "Canopy-zone temperature and unit"
+          ],
+          [
+            "Relative humidity",
+            "Changes actual vapor pressure",
+            "RH and time"
+          ],
+          [
+            "Leaf temperature",
+            "Changes saturation pressure at the evaporating surface",
+            "Measured or clearly stated assumption"
+          ],
+          [
+            "Airflow",
+            "Affects boundary-layer exchange around leaves",
+            "Fan/air movement context"
+          ],
+          [
+            "Root-zone water supply",
+            "Constrains the plant's ability to replace transpired water",
+            "Moisture/irrigation context"
+          ],
+          [
+            "Plant stage and morphology",
+            "Changes canopy behavior and transpiring surface",
+            "Stage, canopy density and crop condition"
+          ]
+        ],
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Interpret VPD as evidence, not a target chase",
+        "items": [
+          {
+            "title": "Verify the measurements",
+            "body": "Confirm temperature, RH, units, timestamp and sensor location."
+          },
+          {
+            "title": "Confirm the calculation method",
+            "body": "Know whether the value uses air temperature only or measured/assumed leaf temperature."
+          },
+          {
+            "title": "Check spatial variation",
+            "body": "Compare more than one canopy location before generalizing a room-wide value."
+          },
+          {
+            "title": "Compare with plant evidence",
+            "body": "Look at leaf posture, visible stress, canopy temperature and current growth stage."
+          },
+          {
+            "title": "Add root-zone and airflow context",
+            "body": "A similar atmospheric value can produce different plant responses when water supply or air movement differs."
+          },
+          {
+            "title": "Change deliberately",
+            "body": "If adjustment is justified, alter one controllable variable at a time and remeasure rather than chasing a chart number."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "Same RH, different drying demand",
+        "setting": "Two rooms both read 60% RH. One is 24 °C and the other is 29 °C.",
+        "prompt": "What is the strongest interpretation?",
+        "options": [
+          "They have the same atmospheric drying demand because RH is identical",
+          "The warmer room can have a larger vapor-pressure deficit, so temperature must be included",
+          "Only humidity matters for transpiration",
+          "The cooler room automatically has the higher VPD"
+        ],
+        "answer": "The warmer room can have a larger vapor-pressure deficit, so temperature must be included.",
+        "feedback": "RH cannot be interpreted independently of temperature because saturation vapor pressure changes with temperature.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "The chart and crop disagree",
+        "setting": "The displayed VPD is outside the facility's expected range, but the crop appears stable and root-zone measurements are normal.",
+        "prompt": "What should happen before a major environmental change?",
+        "options": [
+          "Immediately force the room to the chart value",
+          "Verify sensor placement/accuracy and the calculation assumptions, then compare with crop evidence",
+          "Ignore all environmental measurements",
+          "Increase irrigation automatically"
+        ],
+        "answer": "Verify sensor placement/accuracy and the calculation assumptions, then compare with crop evidence.",
+        "feedback": "A single environmental number should be verified and interpreted in context before it drives a large correction.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Map environmental demand across the canopy",
+        "instructions": "Take or use a simulated set of temperature/RH readings from at least three canopy locations and one time point.",
+        "prompts": [
+          "Calculate VPD consistently for each location.",
+          "Identify the highest and lowest atmospheric demand.",
+          "Record whether leaf temperature was measured or assumed.",
+          "Add one root-zone observation and one airflow observation.",
+          "Explain whether the evidence supports a room-wide change, a local investigation or continued monitoring."
+        ],
+        "artifact": "Canopy VPD interpretation worksheet",
+        "references": [
+          "REF-VPD-002"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key limitation",
+        "tone": "warning",
+        "body": "VPD is a model of atmospheric demand. It does not directly measure stomatal conductance, transpiration rate or root water supply, so those plant-system responses should not be inferred from VPD alone."
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Use VPD to connect temperature and humidity, then interpret it with leaf temperature, airflow, root-zone water status and crop response.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "extensions": {
+      "academyEnrichment": {
+        "whyItMatters": "Environmental control becomes more useful when the learner understands the physical reason temperature and humidity interact. VPD provides a common language for discussing atmospheric demand, but cultivation decisions improve when that number is connected to plant water relations and measurement quality.",
+        "priorKnowledgeRetrieval": [
+          "Why can two rooms at the same relative humidity have different drying demand?",
+          "What is the difference between air temperature and leaf temperature in a VPD calculation?"
+        ],
+        "guidedPractice": [
+          {
+            "prompt": "Compare three temperature/RH pairs and rank their atmospheric drying demand using a consistent VPD method.",
+            "steps": [
+              "Record temperature and RH.",
+              "Calculate each value.",
+              "Rank the locations.",
+              "State whether leaf temperature was measured.",
+              "Identify one additional plant or root-zone observation needed."
+            ],
+            "expectedEvidence": "A calculation table plus one short interpretation.",
+            "feedbackGuidance": "Strong work shows the calculation method and avoids turning the result into a universal target."
+          }
+        ],
+        "decisionScenarios": [
+          {
+            "scenario": "A sensor near a dehumidifier reports a much different VPD from two canopy sensors.",
+            "prompt": "Which value should drive the crop interpretation?",
+            "expectedReasoning": "First evaluate representativeness and sensor validity. A local equipment-adjacent reading may not represent the crop environment."
+          }
+        ],
+        "workplaceConnections": [
+          "Use stable sensor IDs and locations so environmental trends are comparable over time.",
+          "Record method changes, such as switching from air-only to leaf-temperature-based VPD, before comparing datasets."
+        ],
+        "safetyComplianceNotes": [
+          "Environmental-control changes should follow site procedures and equipment-authority limits; this lesson teaches interpretation rather than HVAC servicing."
+        ],
+        "practicalActivities": [
+          {
+            "title": "Three-point canopy VPD map",
+            "instructions": "Collect or analyze representative canopy readings, calculate VPD consistently, and write an evidence-based interpretation.",
+            "evidenceToProduce": [
+              "temperature/RH table",
+              "VPD calculations",
+              "sensor-location notes",
+              "short interpretation"
+            ],
+            "deliveryModes": [
+              "simulation",
+              "supervised-lab",
+              "workplace",
+              "paper-data-exercise"
+            ]
+          }
+        ],
+        "formativeAssessmentIds": [
+          "ASSESS-ENV-VPD-001"
+        ],
+        "portfolioEvidence": [
+          "A sanitized canopy environmental interpretation showing measurement context and uncertainty."
+        ],
+        "spacedRetrieval": [
+          "One day later, explain why RH cannot be interpreted without temperature.",
+          "One week later, explain why VPD does not directly equal plant transpiration."
+        ],
+        "furtherReading": [
+          "REF-VPD-002"
+        ],
+        "evidenceDisclosure": "The lesson uses VPD as an environmental interpretation framework. Cultivar- and stage-specific target ranges are context-dependent and should not be presented as universal biological constants.",
+        "accessibility": {
+          "readingOrderNotes": "Teach temperature/RH interaction before leaf-temperature and applied scenarios.",
+          "alternativeTextNotes": "Charts must describe axes, temperature, RH and direction of VPD change in text.",
+          "transcriptRequired": false,
+          "nonVisualAlternative": "Provide temperature/RH tables with calculated examples so the lesson can be completed without charts."
+        }
+      }
+    }
   }
 }
