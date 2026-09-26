@@ -250,6 +250,12 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
     intendedAudience: safeStringList(course.intendedAudience),
     prerequisites: safeStringList(course.prerequisites),
     pathway: safePathway(course),
+    academicPublicationStatus: course.extensions?.academicPublicationStatus ?? null,
+    academicCompletionBlocked: course.extensions?.academicCompletionBlockedWhileOpenDependencies === true && (course.extensions?.openAcademicDependencies?.length ?? 0) > 0,
+    openAcademicDependencies: (course.extensions?.openAcademicDependencies ?? []).map((moduleId) => {
+      const module = modules.get(moduleId);
+      return { id: moduleId, title: module?.title ?? moduleId, status: module?.status ?? 'missing' };
+    }),
     finalAssessment: safeFinalAssessment(course),
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
       id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds), assessment: module.assessment ?? null,
