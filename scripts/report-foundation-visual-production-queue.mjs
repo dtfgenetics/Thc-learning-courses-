@@ -20,6 +20,7 @@ for (const rel of registries) {
   const registry = JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
   for (const asset of registry.assets ?? []) {
     if (!String(asset.id ?? '').startsWith('VIS-FOUNDATION-')) continue;
+    if (asset.status === 'retired') continue;
 
     foundationTargets += 1;
     const row = {
