@@ -1,37 +1,214 @@
 {
   "id": "LESSON-NUTRITION-001",
   "title": "Essential Nutrients, Availability and Diagnostic Context",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "status": "draft",
-  "competencies": ["COMP-NUTRITION-001"],
-  "learningObjectives": ["LO-NUTRITION-001"],
+  "competencies": [
+    "COMP-NUTRITION-001"
+  ],
+  "learningObjectives": [
+    "LO-NUTRITION-001"
+  ],
   "estimatedMinutes": 50,
-  "references": ["REF-NUTRITION-001"],
+  "references": [
+    "REF-NUTRITION-001"
+  ],
   "assessment": null,
   "content": {
-    "overview": "Plant nutrition is a system of supply, availability, uptake, transport, and biological demand. Visual symptoms can help identify where to investigate, but they should be interpreted with pH, EC, developmental stage, root-zone condition, and nutrient interactions before assigning a cause.",
+    "overview": "Plant nutrition is a chain: nutrients must be supplied, remain chemically available, reach the root surface, cross into the plant, move to the tissues that need them and be used in metabolism. A deficiency-like leaf pattern can therefore result from low supply, unfavorable pH, high salinity, root injury, antagonistic ion balance, water stress or other limits. This lesson teaches nutrient diagnosis as evidence integration rather than symptom-chart matching.",
     "vocabulary": [
-      {"term":"Macronutrient","definition":"An essential mineral element required by plants in relatively large amounts compared with micronutrients."},
-      {"term":"Micronutrient","definition":"An essential mineral element required in smaller quantities but still necessary for normal growth and metabolism."},
-      {"term":"Nutrient antagonism","definition":"An interaction in which the presence or abundance of one ion can reduce the uptake or use of another nutrient."},
-      {"term":"Availability","definition":"The fraction of a nutrient that is present in a chemical and root-zone context where the plant can acquire and use it."}
+      {
+        "term": "Macronutrient",
+        "definition": "An essential mineral element required by plants in relatively large amounts compared with micronutrients."
+      },
+      {
+        "term": "Micronutrient",
+        "definition": "An essential mineral element required in smaller quantities but still necessary for normal growth and metabolism."
+      },
+      {
+        "term": "Nutrient antagonism",
+        "definition": "An interaction in which the presence or abundance of one ion can reduce the uptake or use of another nutrient."
+      },
+      {
+        "term": "Availability",
+        "definition": "The fraction of a nutrient that is present in a chemical and root-zone context where the plant can acquire and use it."
+      }
     ],
     "sections": [
-      {"title":"Essential nutrients have different biological roles","body":"Plants require a set of essential mineral elements for structural, metabolic, enzymatic, and regulatory functions. A nutrient program should therefore be evaluated as a balanced system rather than as a contest to maximize any single element.","references":["REF-NUTRITION-001"]},
-      {"title":"Supply does not guarantee availability","body":"A nutrient may be present in the solution yet remain poorly available because of root-zone pH, ionic interactions, precipitation, water status, or root health. This is why simply increasing fertilizer concentration can fail to correct a deficiency-like symptom.","references":["REF-NUTRITION-001"]},
-      {"title":"Symptoms are clues, not proof","body":"Leaf color, chlorosis, necrosis, distortion, and growth pattern can narrow a diagnosis, but many disorders overlap visually. Strong diagnosis combines symptom location and progression with pH, EC, irrigation history, developmental stage, and other evidence.","references":["REF-NUTRITION-001"]},
-      {"title":"Development changes nutrient context","body":"Nutrient demand and allocation patterns change as plants develop. A concentration or visual pattern that is acceptable in one developmental phase may need different interpretation in another, so stage should always be recorded during nutritional diagnosis.","references":["REF-NUTRITION-001"]}
+      {
+        "title": "Essential nutrients have different biological roles",
+        "body": "Plants require a set of essential mineral elements for structural, metabolic, enzymatic, and regulatory functions. A nutrient program should therefore be evaluated as a balanced system rather than as a contest to maximize any single element.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Supply does not guarantee availability",
+        "body": "A nutrient may be present in the solution yet remain poorly available because of root-zone pH, ionic interactions, precipitation, water status, or root health. This is why simply increasing fertilizer concentration can fail to correct a deficiency-like symptom.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Symptoms are clues, not proof",
+        "body": "Leaf color, chlorosis, necrosis, distortion, and growth pattern can narrow a diagnosis, but many disorders overlap visually. Strong diagnosis combines symptom location and progression with pH, EC, irrigation history, developmental stage, and other evidence.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "title": "Development changes nutrient context",
+        "body": "Nutrient demand and allocation patterns change as plants develop. A concentration or visual pattern that is acceptable in one developmental phase may need different interpretation in another, so stage should always be recorded during nutritional diagnosis.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      }
     ],
     "workedExamples": [
-      "A plant shows deficiency-like symptoms while root-zone EC is already high. Before adding more fertilizer, check pH, irrigation behavior, root health, and possible nutrient interactions.",
-      "If older and younger leaves show different patterns, document where symptoms begin and how they progress because nutrient mobility and developmental context can help narrow the investigation."
+      "Older leaves yellow first while root-zone EC is already elevated. Adding more fertilizer could worsen osmotic stress; first verify pH, root condition, irrigation and nutrient balance.",
+      "New growth shows interveinal chlorosis while older leaves remain greener. The tissue-age pattern is useful evidence, but it still must be checked against pH, root-zone conditions and crop history.",
+      "A nutrient is present in the feed solution, but root-zone pH has drifted far from the operating range. Presence in the tank does not guarantee availability at the root.",
+      "A grower increases potassium repeatedly and later observes calcium/magnesium-related problems. The learner considers nutrient competition/antagonism rather than assuming every symptom means insufficient total fertilizer."
     ],
     "commonMistakes": [
-      "Diagnosing a nutrient deficiency from leaf color alone.",
-      "Increasing all fertilizer components when root-zone EC is already elevated.",
-      "Ignoring pH, root health, and developmental stage when interpreting nutrient symptoms."
+      "Diagnosing a nutrient problem from one photograph.",
+      "Assuming a nutrient present in the reservoir is automatically available to roots.",
+      "Increasing total EC when root-zone EC is already high.",
+      "Ignoring tissue age and symptom progression.",
+      "Ignoring pH and root health when interpreting nutrient symptoms.",
+      "Treating nutrient interactions as independent single-element problems."
     ],
-    "practicalApplication": "When a nutrition problem is suspected, record symptom location and progression, measure pH and EC with consistent methods, review irrigation and root-zone conditions, and compare the evidence before changing nutrient concentration. Make one deliberate correction at a time whenever practical so the crop response can be interpreted.",
-    "summary": "Nutrient diagnosis requires more than matching leaf symptoms to a chart. Supply, pH, EC, nutrient interactions, root-zone conditions, developmental stage, and crop response should be interpreted together before deciding whether the problem is true deficiency, excess, antagonism, or limited availability."
+    "practicalApplication": "Use a structured nutrition differential: document affected tissue age and pattern, plant stage, feed pH/EC, root-zone pH/EC, irrigation history and root condition. List at least three plausible explanations, identify what evidence would distinguish them, and only then propose a controlled next step.",
+    "summary": "Nutrient diagnosis requires more than matching leaf symptoms to a chart. Supply, pH, EC, nutrient interactions, root-zone conditions, developmental stage, and crop response should be interpreted together before deciding whether the problem is true deficiency, excess, antagonism, or limited availability.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Supply is only the first step",
+        "body": "A fertilizer recipe can contain an element while the plant still experiences limited uptake or use. Availability depends on chemistry and root function; transport and demand depend on plant physiology and developmental stage.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Why a deficiency-like symptom can appear",
+        "columns": [
+          "Mechanism",
+          "Example evidence to check",
+          "Why more fertilizer may fail"
+        ],
+        "rows": [
+          [
+            "Low supply",
+            "Feed formulation / source analysis",
+            "The missing element may truly be insufficient"
+          ],
+          [
+            "pH-limited availability",
+            "Root-zone pH trend",
+            "More nutrient may remain poorly available"
+          ],
+          [
+            "High salinity / osmotic stress",
+            "Root-zone EC and water status",
+            "Higher concentration can further restrict water uptake"
+          ],
+          [
+            "Root injury / poor aeration",
+            "Root condition and moisture history",
+            "Damaged roots may not absorb supplied nutrients effectively"
+          ],
+          [
+            "Ion antagonism / imbalance",
+            "Recipe and tissue/root-zone context",
+            "Increasing one ion can worsen competition with another"
+          ],
+          [
+            "Developmental demand",
+            "Plant stage and tissue pattern",
+            "Normal demand changes can alter where symptoms first appear"
+          ]
+        ],
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Build a nutrient differential",
+        "items": [
+          {
+            "title": "Describe the symptom",
+            "body": "Record chlorosis, necrosis, distortion or growth effect without naming the cause yet."
+          },
+          {
+            "title": "Locate it",
+            "body": "Note older/newer tissue, upper/lower canopy and distribution across plants."
+          },
+          {
+            "title": "Measure the root zone",
+            "body": "Use consistent pH/EC and moisture/root observations."
+          },
+          {
+            "title": "Review inputs",
+            "body": "Check source water, feed recipe, recent changes and irrigation history."
+          },
+          {
+            "title": "List competing explanations",
+            "body": "Include supply, availability, salinity, root condition and environmental causes where plausible."
+          },
+          {
+            "title": "Choose discriminating evidence",
+            "body": "Identify which measurement or observation would separate the leading hypotheses."
+          },
+          {
+            "title": "Make one controlled change",
+            "body": "When correction is justified, avoid changing several variables at once."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "High EC with deficiency-like leaves",
+        "setting": "Plants show yellowing that resembles a deficiency, but root-zone EC is already high.",
+        "prompt": "What is the strongest next step?",
+        "options": [
+          "Increase fertilizer concentration immediately",
+          "Check pH, water status, root health and nutrient balance before adding more fertilizer",
+          "Ignore root-zone EC",
+          "Diagnose from leaf color alone"
+        ],
+        "answer": "Check pH, water status, root health and nutrient balance before adding more fertilizer.",
+        "feedback": "A deficiency-like symptom can result from poor availability or root stress even when total ion concentration is high.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "type": "activity",
+        "title": "Construct a nutrition differential",
+        "instructions": "Review a crop case with symptom photos/descriptions plus root-zone and feed data.",
+        "prompts": [
+          "Describe the symptom without naming a cause.",
+          "Identify affected tissue age and spatial pattern.",
+          "List three plausible mechanisms.",
+          "Choose one measurement that would increase or decrease confidence in each.",
+          "State the safest next investigative step."
+        ],
+        "artifact": "Nutrient differential worksheet",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Nutrient symptoms are clues, not laboratory results. Diagnose the chain—supply, availability, roots, transport and demand—before changing the recipe.",
+        "references": [
+          "REF-NUTRITION-001"
+        ]
+      }
+    ]
   }
 }
