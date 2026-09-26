@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-WATER-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-WATER-PH-002",
+  "bloomLevel": "understand",
+  "difficulty": "moderate",
+  "type": "multiple-choice",
+  "stem": "Which statement correctly distinguishes pH from alkalinity?",
+  "choices": [
+    "pH describes acidity/basicity, while alkalinity describes acid-neutralizing or buffering capacity",
+    "They are two names for the same measurement",
+    "Alkalinity is another unit for EC",
+    "pH identifies the concentration of every dissolved ion"
+  ],
+  "correct": 0,
+  "rationale": "pH and alkalinity describe different chemical properties; two waters can have similar pH but different resistance to acidification.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}
