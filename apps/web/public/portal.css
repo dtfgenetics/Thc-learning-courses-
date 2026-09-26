@@ -136,7 +136,15 @@
 }
 
 @media (max-width: 620px) {
-  .portal-panel { border-radius: .8rem; padding: 1rem; }
+  .portal-panel { border-radius: .75rem; padding: .9rem; }
+  .portal-nav { gap: .35rem; padding-bottom: .25rem; scrollbar-width: none; }
+  .portal-nav::-webkit-scrollbar { display: none; }
+  .portal-tab { min-height: 44px; padding: .55rem .7rem; font-size: .78rem; white-space: nowrap; }
+  .governance-dashboard { margin: .65rem .7rem; padding: .8rem; border-radius: .75rem; }
+  .governance-dashboard h2 { font-size: 1.35rem; line-height: 1.12; }
+  .governance-dashboard h3 { font-size: 1rem; }
+  .governance-dashboard p { font-size: .88rem; line-height: 1.5; }
+  .portal-summary-card { padding: .75rem; }
   .portal-progress-summary { grid-template-columns: 1fr 1fr; }
   .portal-evidence-row { align-items: flex-start; flex-direction: column; }
   .course-evidence-row { align-items: flex-start; flex-direction: column; gap: .25rem; }
