@@ -76,14 +76,16 @@ for (const marker of [
   "import { buildAcademicCourseRecord } from './progress.js'",
   '/api/v1/me/progress',
   '/api/v1/me/enrollments',
-  '/api/v1/me/courses/${COURSE_ID}/evidence',
+  '/api/v1/me/courses/${encodeURIComponent(selectedId)}/evidence',
   "credentials: 'same-origin'",
   'Download completion transcript',
   'Download academic transcript',
   'Download record data',
   'new Blob',
   'URL.createObjectURL',
-  "className = 'record-button'"
+  "className = 'record-button'",
+  "actions.closest('[data-course-id]')?.dataset.courseId",
+  "new MutationObserver(queueRefresh)"
 ]) assert.ok(runtime.includes(marker), `completion download runtime missing: ${marker}`);
 assert.equal(runtime.includes('.innerHTML'), false, 'completion downloads must not use innerHTML');
 assert.match(html, /<script type="module" src="\/completion-documents\.js"><\/script>/);
@@ -137,4 +139,4 @@ assert.ok(csv.includes('2026-09-22T12:00:00.000Z'));
 assert.equal(csv.includes('evaluatorNotes'), false);
 assert.equal(csv.includes('evidenceOutputs'), false);
 
-console.log('Course 1 learner academic transcript/data downloads, HTTP serving, and privacy-bounded admin completion/reopen exports passed.');
+console.log('Selected-course academic transcript/data downloads, HTTP serving, and privacy-bounded admin completion/reopen exports passed.');
