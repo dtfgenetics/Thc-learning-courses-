@@ -168,6 +168,27 @@
         "tone": "evidence",
         "body": "A repeatable grid is more informative than one impressive center reading."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-003-002",
+          "title": "Repeatable canopy PPFD grid measurement",
+          "src": "/assets/course3/ppfd-grid-measurement.webp",
+          "alt": "Educational canopy map showing a repeatable grid of photosynthetic photon flux density measurement points at a consistent canopy plane instead of relying on one center reading.",
+          "caption": "Map the canopy at a consistent plane and grid. Average PPFD is meaningful only when the spatial distribution is preserved.",
+          "references": [
+            "REF-LIGHT-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-003-002",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE3-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
