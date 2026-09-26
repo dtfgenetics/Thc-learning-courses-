@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-WATER-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-WATER-001",
+  "objective": "LO-WATER-001",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Source-water EC is unchanged, but one bench receives less irrigation volume than neighboring benches. What is the strongest next step?",
+  "choices": [
+    "Check emitter delivery and distribution before changing the nutrient recipe",
+    "Increase fertilizer concentration for the whole room",
+    "Assume pH is the only possible cause",
+    "Ignore the difference because runtime matched"
+  ],
+  "correct": 0,
+  "rationale": "Equal runtime does not guarantee equal delivered volume; delivery uniformity should be verified before changing chemistry.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}
