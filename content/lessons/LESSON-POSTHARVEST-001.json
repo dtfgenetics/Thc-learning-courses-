@@ -207,6 +207,28 @@
           "REF-POSTHARVEST-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH2-006-02",
+          "title": "Room conditions do not equal product state",
+          "src": "/assets/tech2/course6/outcome-02.webp",
+          "alt": "Drying-process diagram separating room temperature and relative humidity from representative product measurements such as moisture content and water activity, with rack position, loading, airflow and time included so spatial and temporal differences can be evaluated without substituting one measurement for another.",
+          "caption": "Room RH is not product water activity, and moisture content and water activity are not interchangeable. Combine room history with representative product measurements by position and time.",
+          "references": [
+            "REF-POSTHARVEST-001",
+            "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH2-006-02",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json"
+          }
+        }
+      ]
+    }
   }
 }
