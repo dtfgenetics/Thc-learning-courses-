@@ -27,6 +27,7 @@ const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
 assert.equal(await options.credentialStore.ping(), true);
 assert.equal(await options.credentialStore.schemaVersion(), '7');
+assert.equal(typeof options.credentialStore.listBySubjectHash, 'function', 'production credential store must provide private learner credential lookup');
 assert.equal(options.requiredSchemaVersion, '7');
 assert.equal(options.credentialWriter.kind, 'test-writer');
 assert.equal(typeof options.credentialWriter.issueCredential, 'function');
