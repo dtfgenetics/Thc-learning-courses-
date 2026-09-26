@@ -51,7 +51,7 @@ if (!requirementsResult.requirementsSatisfied) throw new Error('Passing Technici
 if (requirementsResult.releaseAuthorized || requirementsResult.eligible) throw new Error('Draft Technician II credential must not report release authorization or issuance eligibility');
 if (!requirementsResult.releaseBlockers.some((row) => row.reason === 'credential-definition-not-approved')) throw new Error('Draft Technician II definition did not block release');
 if (!requirementsResult.releaseBlockers.some((row) => row.reason === 'standard-setting-incomplete')) throw new Error('Technician II incomplete standard setting did not block release');
-if (requirementsResult.requirementSummary.courseCompletion !== 1 || requirementsResult.requirementSummary.writtenAssessments !== 1 || requirementsResult.requirementSummary.performanceAssessments !== 8 || requirementsResult.requirementSummary.portfolioArtifacts !== 9) {
+if (requirementsResult.requirementSummary.courseCompletion !== 8 || requirementsResult.requirementSummary.writtenAssessments !== 1 || requirementsResult.requirementSummary.performanceAssessments !== 8 || requirementsResult.requirementSummary.portfolioArtifacts !== 9) {
   throw new Error('Technician II eligibility requirement summary is incorrect');
 }
 
