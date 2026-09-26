@@ -198,6 +198,28 @@
           "REF-CANOPY-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-LH-TECH1-005-011",
+          "title": "Cannabis plant anatomy and developmental growth stages",
+          "src": "/assets/course5/plant-anatomy-growth-stages.webp",
+          "alt": "Cannabis plant anatomy and developmental-stage illustration showing roots, stems, nodes, internodes, leaves, meristems and reproductive structures across seedling, vegetative, transition and flowering stages.",
+          "caption": "Canopy training acts on real plant structures—nodes, internodes, meristems and branches—and its cost and response depend on developmental stage.",
+          "references": [
+            "REF-CANOPY-001",
+            "REF-LIGHT-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-LH-TECH1-005-011",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }
