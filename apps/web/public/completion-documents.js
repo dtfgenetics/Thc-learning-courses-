@@ -42,7 +42,8 @@ export function buildAcademicTranscriptText(record, { generatedAt = new Date().t
     `Instruction: ${Number(record.instruction?.completedLessons ?? 0)}/${Number(record.instruction?.totalLessons ?? 0)} canonical lessons completed`,
     `Course final: ${statusLabel(record.writtenAssessment?.outcome)}`,
     `Course practical: ${statusLabel(record.performanceAssessment?.status)}`,
-    `Practical critical errors: ${Number(record.performanceAssessment?.criticalErrorCount ?? 0)}`
+    `Practical requirement: ${record.performanceAssessment?.required === false ? 'Not required for academic course completion' : 'Required'}`,
+    `Practical critical errors: ${record.performanceAssessment?.required === false ? '—' : Number(record.performanceAssessment?.criticalErrorCount ?? 0)}`
   ];
 
   if ((record.academicCompletion?.missingRequirements ?? []).length) {
@@ -68,9 +69,13 @@ export function buildAcademicTranscriptText(record, { generatedAt = new Date().t
   lines.push(`Course final passing standard: ${record.writtenAssessment?.passingScorePercent == null ? '—' : `${Number(record.writtenAssessment.passingScorePercent).toFixed(1)}%`}`);
   lines.push(`Latest course-final score date: ${printable(record.writtenAssessment?.latestScoredAt)}`);
   lines.push(`Practical status: ${statusLabel(record.performanceAssessment?.status)}`);
-  lines.push(`Practical score: ${record.performanceAssessment?.scorePercent == null ? '—' : `${Number(record.performanceAssessment.scorePercent).toFixed(1)}%`}`);
-  lines.push(`Practical evaluated: ${printable(record.performanceAssessment?.evaluatedAt)}`);
-  lines.push(`Practical follow-up: ${statusLabel(record.performanceAssessment?.followUpStatus ?? 'none')}`);
+  if (record.performanceAssessment?.required === false) {
+    lines.push('Practical requirement: Not required for academic course completion');
+  } else {
+    lines.push(`Practical score: ${record.performanceAssessment?.scorePercent == null ? '—' : `${Number(record.performanceAssessment.scorePercent).toFixed(1)}%`}`);
+    lines.push(`Practical evaluated: ${printable(record.performanceAssessment?.evaluatedAt)}`);
+    lines.push(`Practical follow-up: ${statusLabel(record.performanceAssessment?.followUpStatus ?? 'none')}`);
+  }
   if (record.performanceAssessment?.reassessmentTargetDate) lines.push(`Reassessment target: ${record.performanceAssessment.reassessmentTargetDate}`);
   if (record.performanceAssessment?.learnerFeedback) lines.push(`Learner-facing assessor feedback: ${record.performanceAssessment.learnerFeedback}`);
 
