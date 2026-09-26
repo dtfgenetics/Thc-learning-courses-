@@ -123,6 +123,79 @@ function renderCourseEnrollment(details, course) {
   details.append(panel);
 }
 
+function formatCourseTime(minutes) {
+  const total = Number(minutes ?? 0);
+  if (!Number.isFinite(total) || total <= 0) return null;
+  const hours = Math.floor(total / 60);
+  const mins = total % 60;
+  if (!hours) return `${mins} min`;
+  return mins ? `${hours} hr ${mins} min` : `${hours} hr`;
+}
+
+function nextIncompleteLesson(course, completed) {
+  for (const module of course.modules ?? []) {
+    for (const lesson of module.lessons ?? []) {
+      if (!completed.has(lesson.id)) return lesson;
+    }
+  }
+  return course.modules?.[0]?.lessons?.[0] ?? null;
+}
+
+function renderCourseOrientation(details, course, courseState, completed) {
+  const panel = document.createElement('section');
+  panel.className = 'course-orientation';
+  panel.setAttribute('aria-label', `${course.title} course overview`);
+
+  const intro = document.createElement('div');
+  intro.className = 'course-orientation-copy';
+  intro.append(text('p', 'Course overview', 'course-orientation-kicker'));
+  if (course.description) intro.append(text('p', course.description, 'course-orientation-description'));
+
+  const facts = document.createElement('div');
+  facts.className = 'course-orientation-facts';
+  const lessonCount = courseState.total;
+  const moduleCount = (course.modules ?? []).length;
+  const duration = formatCourseTime(course.estimatedMinutes);
+  const factValues = [
+    [`${moduleCount}`, moduleCount === 1 ? 'module' : 'modules'],
+    [`${lessonCount}`, lessonCount === 1 ? 'lesson' : 'lessons']
+  ];
+  if (duration) factValues.push([duration, 'estimated study time']);
+  for (const [value, label] of factValues) {
+    const item = document.createElement('div');
+    item.append(text('strong', value), text('span', label));
+    facts.append(item);
+  }
+  intro.append(facts);
+
+  if ((course.learningOutcomes ?? []).length) {
+    const outcomes = document.createElement('div');
+    outcomes.className = 'course-orientation-outcomes';
+    outcomes.append(text('h4', 'By the end of this course, you should be able to:'));
+    const list = document.createElement('ul');
+    for (const outcome of course.learningOutcomes.slice(0, 6)) list.append(text('li', outcome));
+    outcomes.append(list);
+    intro.append(outcomes);
+  }
+
+  const next = nextIncompleteLesson(course, completed);
+  if (next) {
+    const actions = document.createElement('div');
+    actions.className = 'course-orientation-actions';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'course-start-button';
+    button.textContent = courseState.completed > 0 ? `Continue: ${next.title}` : `Start: ${next.title}`;
+    button.addEventListener('click', () => openLesson(next.id));
+    actions.append(button);
+    if (courseState.completed > 0) actions.append(text('span', `${courseState.percent}% of lessons complete`, 'course-orientation-progress-copy'));
+    intro.append(actions);
+  }
+
+  panel.append(intro);
+  details.append(panel);
+}
+
 function renderPathwayPanel(details, course) {
   const pathway = course.pathway;
   const hasCoursePrerequisites = Array.isArray(course.prerequisites) && course.prerequisites.length > 0;
@@ -206,6 +279,8 @@ function renderCatalog() {
     progressFill.style.width = `${courseState.percent}%`;
     progressTrack.append(progressFill);
     details.append(progressTrack);
+
+    renderCourseOrientation(details, course, courseState, completed);
 
     if (course.credentialBearing) {
       const academicRequirement = course.finalAssessment?.academicPracticalRequired
