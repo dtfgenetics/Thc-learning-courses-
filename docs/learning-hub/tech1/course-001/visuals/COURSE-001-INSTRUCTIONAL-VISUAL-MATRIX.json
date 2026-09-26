@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "title": "Course 1 Instructional Visual Matrix",
+  "policy": {
+    "finalFormats": [
+      "png",
+      "webp",
+      "jpeg"
+    ],
+    "svgAllowed": false,
+    "goal": "Every major lesson concept receives a visual only when it improves observation, mechanism understanding, workflow decisions, comparison, or transfer to practice.",
+    "assetClasses": [
+      "annotated photorealistic scene",
+      "scientific mechanism diagram",
+      "decision flow",
+      "comparison plate",
+      "reference chart",
+      "document anatomy",
+      "process sequence"
+    ],
+    "noDecoration": "Do not add generic cannabis photography that does not teach a declared objective."
+  },
+  "modules": [
+    {
+      "id": "MOD-LH-TECH1-001-SAFETY",
+      "title": "Applied Cultivation Workplace Safety",
+      "targetAssets": 10,
+      "priority": "production-now",
+      "required": [
+        "hazard scan scene",
+        "hierarchy of controls",
+        "water/electrical decision flow",
+        "exposure routes and PPE",
+        "label + SDS anatomy",
+        "restricted-entry flow",
+        "respiratory exposure scene",
+        "irritant vs sensitizer",
+        "CO2 alarm response",
+        "pre-task safety brief"
+      ]
+    },
+    {
+      "id": "MOD-LH-TECH1-001-BIOSEC",
+      "title": "Sanitation, Biosecurity & Controlled Movement",
+      "targetAssets": 10,
+      "priority": "next",
+      "required": [
+        "contamination pathway map",
+        "cleaning vs sanitizing vs disinfecting sequence",
+        "dirty-to-clean movement zones",
+        "tool/contact-surface transfer scene",
+        "root-zone contamination pathway",
+        "quarantine vs isolation vs restricted-entry comparison",
+        "hand/tool/footwear transfer chain",
+        "contact-time concept diagram",
+        "biosecurity entry checklist",
+        "cleaning verification workflow"
+      ]
+    },
+    {
+      "id": "MOD-LH-TECH1-001-SOPS",
+      "title": "SOPs, Work Orders, Authority & Escalation",
+      "targetAssets": 8,
+      "priority": "next",
+      "required": [
+        "controlled-document lifecycle",
+        "current revision check",
+        "work-order anatomy",
+        "acceptance criteria decision tree",
+        "deviation/escalation flow",
+        "authorized vs affected role comparison",
+        "incomplete-work handoff",
+        "stop-work decision ladder"
+      ]
+    },
+    {
+      "id": "MOD-LH-TECH1-001-TRACE",
+      "title": "Traceability, Material Movement, Inventory & Waste",
+      "targetAssets": 10,
+      "priority": "next",
+      "required": [
+        "plant identity chain",
+        "parent-lot-clone genealogy diagram",
+        "movement event timeline",
+        "room-to-room transfer record",
+        "inventory reconciliation example",
+        "discrepancy investigation flow",
+        "waste/disposition chain",
+        "ALCOA+ record example",
+        "barcode/label placement scene",
+        "trace-back/trace-forward exercise"
+      ]
+    },
+    {
+      "id": "MOD-LH-TECH1-001-EQUIP",
+      "title": "Equipment Readiness, Operator Care & Fault Reporting",
+      "targetAssets": 9,
+      "priority": "next",
+      "required": [
+        "pre-use equipment inspection scene",
+        "guarding hazard comparison",
+        "normal vs abnormal equipment state",
+        "operator care vs servicing boundary",
+        "stored-energy concept diagram",
+        "fault tag/isolation example",
+        "meter/sensor visual check",
+        "maintenance escalation flow",
+        "post-use cleaning/storage sequence"
+      ]
+    },
+    {
+      "id": "MOD-LH-TECH1-001-RECORDS",
+      "title": "Records, Shift Handoff & Integrated Workflow",
+      "targetAssets": 10,
+      "priority": "next",
+      "required": [
+        "good record vs weak record",
+        "contemporaneous entry timeline",
+        "correction-with-audit-trail example",
+        "handoff information stack",
+        "unfinished-work risk map",
+        "identity-location-time-event chain",
+        "two-way handoff workflow",
+        "integrated shift scenario map",
+        "exception/escalation log",
+        "course synthesis workflow"
+      ]
+    }
+  ],
+  "totals": {
+    "moduleCount": 6,
+    "targetAssets": 57
+  }
+}
