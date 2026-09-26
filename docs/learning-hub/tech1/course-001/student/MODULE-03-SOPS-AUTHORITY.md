@@ -16,6 +16,12 @@ EPA quality guidance defines SOPs as written instructions for routine or repetit
 
 An SOP defines the standard method within a defined scope. A work order applies controlled work to a specific room, batch, quantity, date, asset or shift. They should agree. If they conflict, the technician should not choose whichever instruction is more convenient.
 
+### Scientific foundation — controlled instructions reduce process variation
+
+Every repeated cultivation task contains sources of variation: different workers, different shifts, changing rooms, different tools, different plant states and changing environmental conditions. A controlled SOP reduces avoidable variation by making the required method, sequence, decision points and acceptance criteria explicit.
+
+That does not mean every plant or situation behaves identically. A strong SOP separates the **fixed parts of the process** from the **decision points where measured conditions determine the next action**. This is important in cultivation, where a rigid recipe can be inappropriate when plant state, media water content, environment or equipment condition differs from the assumed starting condition.
+
 Before work, identify:
 
 - current document/revision;
@@ -36,6 +42,16 @@ A printed instruction can look official and still be obsolete. EPA SOP guidance 
 ### Acceptance criteria convert “done” into evidence
 
 “Finished” should mean more than the worker reached the end of the page. A controlled task may require a verified count, cleanliness state, measurement, completed record, identity check, supervisor signoff or other acceptance condition.
+
+### Acceptance criteria versus process steps
+
+A process step tells the worker **what to do**. An acceptance criterion tells the operation **what must be true before the task can be considered acceptable**. Mixing those concepts creates weak training because a learner can execute every motion while still producing an unacceptable result.
+
+Examples:
+
+- “wipe the bench” is an action; “surface visibly free of soil/debris before disinfectant application” is an acceptance condition;
+- “move 24 plants” is an action; “24 correct identifiers verified at the documented destination” is an acceptance condition;
+- “take a measurement” is an action; “valid reading obtained with the required instrument status and recorded against the correct room/asset” is an acceptance condition.
 
 ### Worked case
 
@@ -69,6 +85,12 @@ Then identify one planted inconsistency between the SOP and work order.
 A technician may understand what an electrical panel does without being permitted to open it. A worker may recognize a pesticide-related restriction without having handler authority. A technician may identify that a pump has failed without being authorized to service it.
 
 Technician I is intentionally an execution-and-escalation role. The course should reward correct boundaries, not heroic improvisation.
+
+### Decision quality includes knowing when not to act
+
+Competence is not measured only by how many tasks a person can perform. In a controlled operation it also includes recognizing when the available information, authority, equipment state or safety condition is insufficient for action. A technician who stops at the correct boundary may be demonstrating stronger competence than someone who improvises a technically plausible but unauthorized repair.
+
+This principle should appear repeatedly throughout the course: **observe → verify authority → act if authorized → document → escalate unresolved conditions**.
 
 ### Affected versus authorized work is a useful model
 
