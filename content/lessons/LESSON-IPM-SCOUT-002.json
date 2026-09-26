@@ -1,20 +1,193 @@
 {
-  "id":"LESSON-IPM-SCOUT-002",
-  "title":"Scouting, Symptom Mapping and Diagnostic Evidence",
-  "version":"1.0.0",
-  "status":"draft",
-  "competencies":["COMP-IPM-001"],
-  "learningObjectives":["LO-IPM-SCOUT-002"],
-  "estimatedMinutes":40,
-  "references":["REF-IPM-001"],
-  "assessment":null,
-  "content":{
-    "overview":"Scouting converts casual observation into repeatable evidence. A useful scouting system records where a problem occurs, how severe it is, how it changes over time, what organisms or symptoms are present, and what environmental conditions may be contributing.",
-    "vocabulary":[{"term":"Incidence","definition":"The proportion or number of plants or sites showing a defined problem."},{"term":"Severity","definition":"The degree or intensity of damage or symptoms on affected plants or tissues."},{"term":"Diagnostic sign","definition":"Direct evidence of a causal organism, such as fungal growth, spores, insects, eggs, or other identifiable structures."},{"term":"Symptom","definition":"A plant response to stress or disease, such as chlorosis, necrosis, distortion, or wilting."}],
-    "sections":[{"title":"Use a consistent scouting route","body":"A repeated path and inspection method reduce bias and make changes easier to detect. Include representative canopy heights, leaf surfaces, growing points, media surfaces, and high-risk zones near doors, drains, intakes, or propagation areas.","references":["REF-IPM-001"]},{"title":"Separate signs from symptoms","body":"Symptoms can overlap among pests, diseases, nutrition, environment, and mechanical injury. Direct signs of an organism are stronger evidence, but even they should be interpreted with crop history and distribution.","references":["REF-IPM-001"]},{"title":"Map patterns before treating","body":"Whether damage is random, clustered, edge-associated, irrigation-line-associated, or confined to one cultivar can narrow the diagnosis. Spatial pattern often provides information that one close-up photograph cannot.","references":["REF-IPM-001"]},{"title":"Track change over time","body":"A one-time count cannot show whether a problem is stable, expanding, or resolving. Repeated incidence and severity records help determine whether intervention is needed and whether it worked.","references":["REF-IPM-001"]}],
-    "workedExamples":["If damage appears only near an intake, investigate incoming pest pressure and local environment rather than assuming a uniform room-wide cause.","If spotted leaves increase from two plants to twelve over three scouting rounds, the trend supports escalation even if each individual symptom remains mild."],
-    "commonMistakes":["Scouting only when symptoms are already obvious.","Recording a pest name without documenting the evidence used for identification.","Treating a close-up image as representative of the whole crop."],
-    "practicalApplication":"Create a scouting sheet with date, location, cultivar, plant count, incidence, severity, signs, symptoms, environmental notes, and follow-up action. Repeat the same route often enough to compare trends.",
-    "summary":"Scouting is a measurement system for plant health. Consistent routes, mapped patterns, direct evidence, and repeated observations make diagnosis and control decisions more defensible."
+  "id": "LESSON-IPM-SCOUT-002",
+  "title": "Scouting, Symptom Mapping and Diagnostic Evidence",
+  "version": "1.2.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-001"
+  ],
+  "learningObjectives": [
+    "LO-IPM-SCOUT-002"
+  ],
+  "estimatedMinutes": 40,
+  "references": [
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Scouting converts casual observation into repeatable evidence. A useful scouting system records where a problem occurs, how severe it is, how it changes over time, what organisms or symptoms are present, and what environmental conditions may be contributing.",
+    "vocabulary": [
+      {
+        "term": "Incidence",
+        "definition": "The proportion or number of plants or sites showing a defined problem."
+      },
+      {
+        "term": "Severity",
+        "definition": "The degree or intensity of damage or symptoms on affected plants or tissues."
+      },
+      {
+        "term": "Diagnostic sign",
+        "definition": "Direct evidence of a causal organism, such as fungal growth, spores, insects, eggs, or other identifiable structures."
+      },
+      {
+        "term": "Symptom",
+        "definition": "A plant response to stress or disease, such as chlorosis, necrosis, distortion, or wilting."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use a consistent scouting route",
+        "body": "A repeated path and inspection method reduce bias and make changes easier to detect. Include representative canopy heights, leaf surfaces, growing points, media surfaces, and high-risk zones near doors, drains, intakes, or propagation areas.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Separate signs from symptoms",
+        "body": "Symptoms can overlap among pests, diseases, nutrition, environment, and mechanical injury. Direct signs of an organism are stronger evidence, but even they should be interpreted with crop history and distribution.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Map patterns before treating",
+        "body": "Whether damage is random, clustered, edge-associated, irrigation-line-associated, or confined to one cultivar can narrow the diagnosis. Spatial pattern often provides information that one close-up photograph cannot.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Track change over time",
+        "body": "A one-time count cannot show whether a problem is stable, expanding, or resolving. Repeated incidence and severity records help determine whether intervention is needed and whether it worked.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If damage appears only near an intake, investigate incoming pest pressure and local environment rather than assuming a uniform room-wide cause.",
+      "If spotted leaves increase from two plants to twelve over three scouting rounds, the trend supports escalation even if each individual symptom remains mild.",
+      "Sticky-card counts rise from 2 to 5 to 14 in the same zone over three inspections. The trend is more informative than any one count and supports escalation under the facility's action criteria.",
+      "Leaf distortion appears on one cultivar only, while no organism or sign is found. Cultivar sensitivity, nutrition and environment remain in the differential instead of forcing a pest diagnosis."
+    ],
+    "commonMistakes": [
+      "Scouting only when symptoms are already obvious.",
+      "Recording a pest name without documenting the evidence used for identification.",
+      "Treating a close-up image as representative of the whole crop.",
+      "Recording only affected plants without denominator/total plants inspected.",
+      "Changing scouting route so trend comparisons become unreliable."
+    ],
+    "practicalApplication": "Create a scouting sheet with date, location, cultivar, plant count, incidence, severity, signs, symptoms, environmental notes, and follow-up action. Repeat the same route often enough to compare trends.",
+    "summary": "Scouting is a measurement system for plant health. Consistent routes, mapped patterns, direct evidence, and repeated observations make diagnosis and control decisions more defensible.",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Scouting is structured sampling",
+        "body": "The purpose of scouting is not to find one bad leaf; it is to collect comparable evidence across space and time. A repeatable route, denominator, severity scale and map make observations useful for decisions.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Core scouting fields",
+        "columns": [
+          "Field",
+          "Why it matters"
+        ],
+        "rows": [
+          [
+            "Location/zone",
+            "Reveals spatial pattern"
+          ],
+          [
+            "Plants inspected",
+            "Provides denominator"
+          ],
+          [
+            "Incidence",
+            "Shows how widespread the problem is"
+          ],
+          [
+            "Severity",
+            "Shows intensity on affected plants"
+          ],
+          [
+            "Sign vs symptom",
+            "Separates direct organism evidence from plant response"
+          ],
+          [
+            "Time/trend",
+            "Shows expansion, stability or response to control"
+          ]
+        ],
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Turn observations into evidence",
+        "items": [
+          {
+            "title": "Follow the same route",
+            "body": "Reduce sampling bias."
+          },
+          {
+            "title": "Inspect defined tissues",
+            "body": "Upper/lower leaves, growing points, media surface and high-risk zones."
+          },
+          {
+            "title": "Record denominator",
+            "body": "Know how many plants/points were inspected."
+          },
+          {
+            "title": "Map signs and symptoms",
+            "body": "Preserve spatial context."
+          },
+          {
+            "title": "Compare with prior rounds",
+            "body": "Look at trend, not only current presence."
+          },
+          {
+            "title": "Escalate based on evidence",
+            "body": "Use the supplied IPM action criteria."
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "title": "One photo versus room pattern",
+        "setting": "A close-up image shows stippling, but the rest of the room has not been inspected.",
+        "prompt": "What is the best next step?",
+        "options": [
+          "Diagnose the entire room from the photo",
+          "Run the standard scouting route and inspect for direct pest evidence",
+          "Apply treatment room-wide immediately",
+          "Discard the image"
+        ],
+        "answer": "Run the standard scouting route and inspect for direct pest evidence.",
+        "feedback": "A symptom photo is useful evidence, but it lacks incidence, distribution and direct-cause confirmation."
+      },
+      {
+        "type": "activity",
+        "title": "Map an IPM scouting round",
+        "instructions": "Use a room map and inspection dataset.",
+        "prompts": [
+          "Calculate incidence by zone.",
+          "Rank severity hot spots.",
+          "Separate signs from symptoms.",
+          "Identify the strongest cluster/pattern.",
+          "Recommend the next diagnostic or control step."
+        ],
+        "artifact": "Scouting map and trend summary"
+      },
+      {
+        "type": "callout",
+        "title": "Key takeaway",
+        "tone": "evidence",
+        "body": "Good scouting produces comparable data: where, how many, how severe, what evidence, and how the pattern changes over time."
+      }
+    ]
   }
 }
