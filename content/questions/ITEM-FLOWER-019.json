@@ -1,0 +1,24 @@
+{
+  "id": "ITEM-FLOWER-019",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-PHOTO-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two flowering rooms have similar DLI, but Room A uses a 13.5-hour light period and Room B uses a 12-hour light period. What is the strongest conclusion?",
+  "choices": [
+    "Similar DLI does not mean the plants received the same photoperiodic signal",
+    "The rooms must have identical flowering responses",
+    "Photoperiod is irrelevant when DLI matches",
+    "Only PPFD determines flowering"
+  ],
+  "correct": 0,
+  "rationale": "DLI measures daily photon dose, while photoperiod describes the duration and timing of light and darkness; they are related but not interchangeable.",
+  "references": [
+    "REF-LIGHT-001",
+    "REF-CANNABIS-PHOTOPERIOD-2023-001"
+  ]
+}
