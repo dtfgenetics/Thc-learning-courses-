@@ -395,8 +395,18 @@ export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-
   const source = loadModuleAssessmentSource(id, { previewDrafts });
   if (!source) return null;
   const { module, assessment, items, publicReleaseIds } = source;
+  const remediationByObjective = {};
+  for (const lessonId of module.lessons ?? []) {
+    const target = path.join(root, 'content/lessons', `${lessonId}.json`);
+    if (!fs.existsSync(target)) continue;
+    const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
+    for (const objectiveId of lesson.learningObjectives ?? lesson.objectives ?? []) {
+      remediationByObjective[objectiveId] = { lessonId: lesson.id, lessonTitle: lesson.title };
+    }
+  }
   return {
     module: { id: module.id, title: module.title, version: module.version, status: publicStatus(module, publicReleaseIds) },
+    remediationByObjective,
     assessment: {
       id: assessment.id,
       title: assessment.title,
