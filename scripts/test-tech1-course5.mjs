@@ -21,7 +21,7 @@ assert.equal(course.extensions?.pesticideApplicatorAuthorityConferred, false);
 assert.equal(course.extensions?.treatmentSelectionAuthorityConferred, false);
 assert.equal(course.extensions?.dedicatedItemCount, 36);
 assert.equal(course.extensions?.learnerAssetLayerBuilt, true);
-assert.equal(course.extensions?.totalLearnerAssetCount, 9);
+assert.equal(course.extensions?.totalLearnerAssetCount, 11);
 
 const module = read('content/modules/MOD-LH-TECH1-005-CROPCARE.json');
 assert.equal(module.lessons.length, 4);
@@ -118,8 +118,8 @@ await import('./test-course5-visual-registry.mjs');
 
 const visualRegistry = read('visuals/COURSE5-ASSET-REGISTRY.json');
 const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.equal(producedAssets.length, 9, 'Course 5 should expose the current nine governed learner assets');
-assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'embedded-visual').length, 6);
+assert.equal(producedAssets.length, 11, 'Course 5 should expose the current eleven governed learner assets');
+assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'embedded-visual').length, 8);
 assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'downloadable-practice').length, 3);
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
@@ -142,4 +142,4 @@ try {
   await once(server, 'close');
 }
 
-console.log('Course 005 production slice passed: four lessons, six objectives, 12 referenced formative items, 24 balanced summative items, complete package artifacts, Practical C/D/E mapping, visual registry and all nine governed Course 5 learner assets are wired through the Academy runtime while human/release gates remain open and pesticide/treatment authority remains explicitly excluded.');
+console.log('Course 005 production slice passed: four lessons, six objectives, 12 referenced formative items, 24 balanced summative items, complete package artifacts, Practical C/D/E mapping, visual registry and all eleven governed Course 5 learner assets are wired through the Academy runtime while human/release gates remain open and pesticide/treatment authority remains explicitly excluded.');
