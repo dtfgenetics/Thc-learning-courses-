@@ -75,6 +75,11 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
       const validExpected = expected.length > 1 && expected.every(Number.isInteger) && new Set(expected).size === expected.length;
       if (!validExpected) throw new Error(`Invalid ordering answer key for ${item.id}`);
       score = expected.length === actual.length && expected.every((value, index) => value === actual[index]) ? 1 : 0;
+    } else if (item.type === 'matching') {
+      const expected = Array.isArray(item.correct) ? item.correct.map(String) : [];
+      const actual = Array.isArray(row.response) ? row.response.map(String) : [];
+      if (expected.length < 2 || expected.some((value) => !value)) throw new Error(`Invalid matching answer key for ${item.id}`);
+      score = expected.length === actual.length && expected.every((value, index) => value === actual[index]) ? 1 : 0;
     } else throw new Error(`Unsupported production scoring type ${item.type}`);
     earned += score;
     possible += 1;
