@@ -389,7 +389,8 @@
     "foundation:visual-queue:json": "node scripts/report-foundation-visual-production-queue.mjs --json",
     "foundation:visual-queue:check": "node scripts/report-foundation-visual-production-queue.mjs --check",
     "course2:academic-completion-dependencies:test": "node scripts/test-course2-academic-completion-dependencies.mjs",
-    "course2:full-release-completion-contract:test": "node scripts/test-course2-full-release-completion-contract.mjs"
+    "course2:full-release-completion-contract:test": "node scripts/test-course2-full-release-completion-contract.mjs",
+    "assessment:runtime-hardening:test": "node scripts/test-assessment-runtime-hardening.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
