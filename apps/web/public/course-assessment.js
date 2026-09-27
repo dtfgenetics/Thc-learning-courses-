@@ -511,6 +511,11 @@ function responseForFieldset(fieldset, type) {
     const values = selects.map((select) => select.value === '' ? null : Number(select.value));
     return values.every((value) => Number.isInteger(value)) && new Set(values).size === values.length ? values : null;
   }
+  if (type === 'matching') {
+    const selects = [...fieldset.querySelectorAll('select[data-match-prompt]')];
+    const values = selects.map((select) => select.value || null);
+    return values.every((value) => typeof value === 'string' && value.length > 0) ? values : null;
+  }
   const selected = fieldset.querySelector('input[type="radio"]:checked');
   return selected ? Number(selected.value) : null;
 }
@@ -518,6 +523,7 @@ function responseForFieldset(fieldset, type) {
 function isAnswered(response, type) {
   if (type === 'multiple-response') return Array.isArray(response) && response.length > 0;
   if (type === 'ordering') return Array.isArray(response) && response.length > 1 && new Set(response).size === response.length;
+  if (type === 'matching') return Array.isArray(response) && response.length > 1 && response.every((value) => typeof value === 'string' && value.length > 0);
   return response !== null && response !== undefined && response !== '';
 }
 
@@ -607,6 +613,34 @@ function orderingControl(item, fieldset, panel) {
   return wrap;
 }
 
+function matchingControl(item, fieldset, panel) {
+  const wrap = el('div', '', 'course-assessment-matching');
+  item.matchPrompts.forEach((prompt, promptIndex) => {
+    const row = el('label', '', 'course-assessment-match-row');
+    row.append(el('span', prompt.text, 'course-assessment-match-prompt'));
+    const select = document.createElement('select');
+    select.dataset.matchPrompt = prompt.id;
+    select.className = 'course-assessment-match-select';
+    select.setAttribute('aria-label', `Match for ${prompt.text}`);
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Choose match';
+    select.append(placeholder);
+    item.matchOptions.forEach((option) => {
+      const entry = document.createElement('option');
+      entry.value = option.id;
+      entry.textContent = option.text;
+      entry.selected = Array.isArray(item.response) && item.response[promptIndex] === option.id;
+      select.append(entry);
+    });
+    select.addEventListener('change', () => persistResponse(panel, item, fieldset));
+    row.append(select);
+    wrap.append(row);
+  });
+  wrap.append(el('p', 'Choose one match for each prompt.', 'course-assessment-hint'));
+  return wrap;
+}
+
 function renderAssessmentItem(item, index, panel) {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'course-assessment-item';
@@ -634,6 +668,8 @@ function renderAssessmentItem(item, index, panel) {
     fieldset.append(input);
   } else if (item.type === 'ordering') {
     fieldset.append(orderingControl(item, fieldset, panel));
+  } else if (item.type === 'matching') {
+    fieldset.append(matchingControl(item, fieldset, panel));
   } else {
     fieldset.append(el('p', 'This assessment item type is not supported by the current learner runtime.', 'portal-error'));
   }
