@@ -506,12 +506,18 @@ function responseForFieldset(fieldset, type) {
     const value = fieldset.querySelector('input[type="number"]')?.value;
     return value === '' || value == null ? null : Number(value);
   }
+  if (type === 'ordering') {
+    const selects = [...fieldset.querySelectorAll('select[data-order-position]')];
+    const values = selects.map((select) => select.value === '' ? null : Number(select.value));
+    return values.every((value) => Number.isInteger(value)) && new Set(values).size === values.length ? values : null;
+  }
   const selected = fieldset.querySelector('input[type="radio"]:checked');
   return selected ? Number(selected.value) : null;
 }
 
 function isAnswered(response, type) {
   if (type === 'multiple-response') return Array.isArray(response) && response.length > 0;
+  if (type === 'ordering') return Array.isArray(response) && response.length > 1 && new Set(response).size === response.length;
   return response !== null && response !== undefined && response !== '';
 }
 
@@ -573,6 +579,34 @@ function multipleChoiceControl(item, choice, index, fieldset, panel) {
   return label;
 }
 
+function orderingControl(item, fieldset, panel) {
+  const wrap = el('div', '', 'course-assessment-ordering');
+  item.choices.forEach((_, position) => {
+    const row = el('label', '', 'course-assessment-order-row');
+    row.append(el('span', `Position ${position + 1}`, 'course-assessment-order-label'));
+    const select = document.createElement('select');
+    select.dataset.orderPosition = String(position);
+    select.className = 'course-assessment-order-select';
+    select.setAttribute('aria-label', `Order position ${position + 1}`);
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Choose item';
+    select.append(placeholder);
+    item.choices.forEach((choice, choiceIndex) => {
+      const option = document.createElement('option');
+      option.value = String(choiceIndex);
+      option.textContent = choice;
+      option.selected = Array.isArray(item.response) && Number(item.response[position]) === choiceIndex;
+      select.append(option);
+    });
+    select.addEventListener('change', () => persistResponse(panel, item, fieldset));
+    row.append(select);
+    wrap.append(row);
+  });
+  wrap.append(el('p', 'Rank every option once. Duplicate selections are not saved.', 'course-assessment-hint'));
+  return wrap;
+}
+
 function renderAssessmentItem(item, index, panel) {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'course-assessment-item';
@@ -598,6 +632,10 @@ function renderAssessmentItem(item, index, panel) {
     input.value = item.response ?? '';
     input.addEventListener('change', () => persistResponse(panel, item, fieldset));
     fieldset.append(input);
+  } else if (item.type === 'ordering') {
+    fieldset.append(orderingControl(item, fieldset, panel));
+  } else {
+    fieldset.append(el('p', 'This assessment item type is not supported by the current learner runtime.', 'portal-error'));
   }
   return fieldset;
 }
