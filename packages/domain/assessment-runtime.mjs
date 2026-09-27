@@ -38,8 +38,18 @@ export function submitAttempt(attempt, responses, now = new Date().toISOString()
   return { ...attempt, items, status: 'submitted', submittedAt: now };
 }
 
+function numericTolerance(item) {
+  const raw = item?.extensions?.numericTolerance;
+  if (raw == null) return 0;
+  const tolerance = Number(raw);
+  if (!Number.isFinite(tolerance) || tolerance < 0) throw new Error(`Invalid numeric tolerance for ${item.id}`);
+  return tolerance;
+}
+
 export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new Date().toISOString()) {
   if (attempt.status !== 'submitted') throw new Error(`Cannot score attempt in status ${attempt.status}`);
+  const passing = Number(passingScorePercent);
+  if (!Number.isFinite(passing) || passing < 0 || passing > 100) throw new Error('invalid passing score percent');
   const bank = new Map(itemBank.map((item) => [`${item.id}@${item.version}`, item]));
   let earned = 0;
   let possible = 0;
@@ -56,7 +66,9 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
       score = JSON.stringify(expected) === JSON.stringify(actual) ? 1 : 0;
     } else if (item.type === 'numeric') {
       const actual = Number(row.response);
-      score = Number.isFinite(actual) && actual === Number(item.correct) ? 1 : 0;
+      const expected = Number(item.correct);
+      const tolerance = numericTolerance(item);
+      score = Number.isFinite(actual) && Number.isFinite(expected) && Math.abs(actual - expected) <= tolerance ? 1 : 0;
     } else throw new Error(`Unsupported production scoring type ${item.type}`);
     earned += score;
     possible += 1;
@@ -69,7 +81,7 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
     status: 'scored',
     scoredAt: now,
     scorePercent,
-    passed: scorePercent >= passingScorePercent
+    passed: scorePercent >= passing
   };
 }
 
