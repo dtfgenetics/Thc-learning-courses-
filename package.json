@@ -394,7 +394,9 @@
     "qti3:export": "node scripts/export-qti3-assessment.mjs",
     "qti3:test": "node scripts/test-qti3-export.mjs",
     "assessment:runtime-hardening:test": "node scripts/test-assessment-runtime-hardening.mjs",
-    "credential:verification-ui:test": "node scripts/test-credential-verification-ui.mjs"
+    "credential:verification-ui:test": "node scripts/test-credential-verification-ui.mjs",
+    "assessment:ordering-runtime:test": "node scripts/test-assessment-ordering-runtime.mjs",
+    "assessment:ordering-ui:test": "node scripts/test-assessment-ordering-ui.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
