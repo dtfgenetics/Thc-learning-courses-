@@ -138,3 +138,14 @@
 @media (max-width: 560px) {
   .course-assessment-order-row { grid-template-columns: 1fr; gap: .35rem; }
 }
+
+
+.course-assessment-matching { display: grid; gap: .7rem; margin-top: .85rem; }
+.course-assessment-match-row { display: grid; grid-template-columns: minmax(12rem, .8fr) minmax(0, 1fr); align-items: center; gap: .75rem; }
+.course-assessment-match-prompt { font-weight: 750; line-height: 1.4; }
+.course-assessment-match-select { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: .65rem; background: #fff; padding: .65rem .75rem; font: inherit; }
+.course-assessment-match-select:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
+@media (max-width: 620px) {
+  .course-assessment-match-row { grid-template-columns: 1fr; gap: .35rem; }
+  .course-assessment-match-select { min-height: 52px; }
+}
