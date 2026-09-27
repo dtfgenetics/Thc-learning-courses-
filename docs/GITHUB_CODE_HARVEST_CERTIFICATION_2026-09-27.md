@@ -72,3 +72,43 @@ Decision: viable alternative to node-qrcode for the printable verification surfa
 4. Build an Open Badges 3.0 projection from an already-issued credential record; keep it disabled for production issuance until signer/governance gates are approved.
 5. Evaluate JOSE signing only behind the existing managed signer interface.
 6. Continue protecting secure credential-bank boundaries and never export private answer keys through public interoperability formats.
+
+
+## Implemented in this pass
+
+### Printable credential QR verification
+Implemented with vendored `davidshimjs/qrcodejs` (MIT).
+- vendored runtime: `apps/web/public/vendor/qrcode.min.js`;
+- preserved upstream license: `apps/web/public/vendor/qrcodejs-LICENSE.txt`;
+- printable certificate now renders a QR containing only a public verification deep link;
+- QR payload contains the existing `verificationId`, not learner name, score, assessment answers, subject hash, payload hash, or signature material;
+- `?verify=<verificationId>` now opens the Academy verifier and submits the public lookup automatically;
+- public lookup remains the existing `/api/v1/credentials/:verificationId` endpoint;
+- regression test: `scripts/test-credential-qr-verification.mjs`;
+- package script: `npm run credential:qr:test`.
+
+### QTI 3 academic export prototype
+Implemented a guarded QTI 3 item-package exporter based on current 1EdTech QTI 3 item and content-package examples.
+Files:
+- `scripts/lib/qti3-export.mjs`;
+- `scripts/export-qti3-assessment.mjs`;
+- `scripts/test-qti3-export.mjs`.
+
+Package scripts:
+- `npm run qti3:export -- --assessment=ASSESS-...`;
+- `npm run qti3:test`.
+
+Current supported interaction:
+- single-choice multiple-choice/scenario/case-study items.
+
+Security/governance gates:
+- assessment must be `approved` or `published`;
+- assessment purpose must be `formative` or `summative`;
+- credential-purpose assessments are refused;
+- every exported item must be `active`;
+- credential-purpose items are refused;
+- unsupported item types fail closed;
+- the generated package states that canonical THC JSON remains authoritative;
+- generated XML should be checked with official 1EdTech validation/conformance tooling before interchange use.
+
+This deliberately means several currently published course finals will not export yet when their underlying source items remain in a non-active lifecycle state. That is a governance signal, not an exporter defect: interoperability output should not silently convert development items into approved exchange artifacts.
