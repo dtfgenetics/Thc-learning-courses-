@@ -68,6 +68,20 @@ function choicePairs(item, formId, randomizeChoices = true) {
   return randomizeChoices ? shuffled(pairs, `${formId}:${item.id}@${item.version}:choices`) : pairs;
 }
 
+const learnerRuntimeTypes = new Set(['multiple-choice', 'scenario', 'case-study', 'multiple-response', 'numeric', 'ordering']);
+
+function assertLearnerRuntimeItem(item) {
+  if (!learnerRuntimeTypes.has(item.type)) throw new Error(`Unsupported learner assessment item type ${item.type}`);
+  if (item.type === 'ordering') {
+    if (!Array.isArray(item.choices) || item.choices.length < 2) throw new Error(`Ordering item ${item.id} requires at least two choices`);
+    if (!Array.isArray(item.correct) || item.correct.length !== item.choices.length) throw new Error(`Ordering item ${item.id} requires a complete ordering answer key`);
+    const indexes = item.correct.map(Number);
+    if (indexes.some((value) => !Number.isInteger(value) || value < 0 || value >= item.choices.length) || new Set(indexes).size !== item.choices.length) {
+      throw new Error(`Ordering item ${item.id} answer key must be a permutation of all choice indexes`);
+    }
+  }
+}
+
 export function buildCourseAssessmentForm({ assessment, itemBank, seed = crypto.randomUUID() }) {
   if (!assessment?.id || !Array.isArray(assessment.items) || assessment.items.length === 0) throw new Error('assessment items required');
   const byId = new Map(itemBank.map((item) => [item.id, item]));
@@ -75,6 +89,7 @@ export function buildCourseAssessmentForm({ assessment, itemBank, seed = crypto.
     const item = byId.get(id);
     if (!item) throw new Error(`Missing assessment item ${id}`);
     if (item.purpose !== 'summative') throw new Error(`Course assessment item ${id} must be summative`);
+    assertLearnerRuntimeItem(item);
     return { id: item.id, version: item.version, competency: item.competency };
   });
   const ordered = assessment.randomizeItems ? shuffled(selected, `${assessment.id}:${seed}:items`) : selected;
@@ -113,6 +128,14 @@ export function presentCourseAssessmentItem(item, { formId, response = null, ran
     return { ...base, choices: pairs.map((pair) => pair.choice), response: presentedResponse };
   }
   if (item.type === 'numeric') return { ...base, response: response == null ? null : Number(response) };
+  if (item.type === 'ordering') {
+    assertLearnerRuntimeItem(item);
+    const pairs = choicePairs(item, formId, randomizeChoices);
+    const presentedResponse = Array.isArray(response)
+      ? response.map((sourceIndex) => pairs.findIndex((pair) => pair.sourceIndex === Number(sourceIndex))).filter((index) => index >= 0)
+      : [];
+    return { ...base, choices: pairs.map((pair) => pair.choice), response: presentedResponse };
+  }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
 
@@ -135,6 +158,16 @@ export function normalizePresentedResponse(item, { formId, response, randomizeCh
     const numeric = Number(response);
     if (!Number.isFinite(numeric)) throw new Error(`Response for ${item.id} must be numeric`);
     return numeric;
+  }
+  if (item.type === 'ordering') {
+    assertLearnerRuntimeItem(item);
+    if (!Array.isArray(response)) throw new Error(`Response for ${item.id} must be an ordered array`);
+    const pairs = choicePairs(item, formId, randomizeChoices);
+    const indexes = response.map(Number);
+    if (indexes.length !== pairs.length || indexes.some((index) => !Number.isInteger(index) || !pairs[index]) || new Set(indexes).size !== pairs.length) {
+      throw new Error(`Response for ${item.id} must rank every choice exactly once`);
+    }
+    return indexes.map((index) => pairs[index].sourceIndex);
   }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
