@@ -392,7 +392,9 @@
     "course2:full-release-completion-contract:test": "node scripts/test-course2-full-release-completion-contract.mjs",
     "credential:qr:test": "node scripts/test-credential-qr-verification.mjs",
     "qti3:export": "node scripts/export-qti3-assessment.mjs",
-    "qti3:test": "node scripts/test-qti3-export.mjs"
+    "qti3:test": "node scripts/test-qti3-export.mjs",
+    "assessment:runtime-hardening:test": "node scripts/test-assessment-runtime-hardening.mjs",
+    "credential:verification-ui:test": "node scripts/test-credential-verification-ui.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
