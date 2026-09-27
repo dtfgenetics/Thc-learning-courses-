@@ -18,6 +18,8 @@ for (const marker of [
 ]) assert.ok(source.includes(marker), `ordering learner UI missing: ${marker}`);
 
 assert.ok(source.includes("new Set(values).size === values.length"), 'ordering response must reject duplicate ranks before save');
+assert.ok(source.includes(".course-assessment-form select"), 'time-expiry lock must disable ordering selects');
+assert.ok(source.includes("querySelector('input, select')"), 'question navigator must focus ordering selects');
 assert.ok(css.includes('.course-assessment-ordering'), 'ordering layout styles missing');
 assert.ok(css.includes('.course-assessment-order-select:focus-visible'), 'ordering controls need visible keyboard focus');
 assert.ok(css.includes('@media (max-width: 560px)'), 'ordering controls need mobile layout');
