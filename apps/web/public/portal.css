@@ -243,7 +243,13 @@
   .print-certificate dl div { border-top: 1px solid #777; padding-top: .07in; }
   .print-certificate dt { font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; }
   .print-certificate dd { margin: .04in 0 0; font-size: 10pt; overflow-wrap: anywhere; }
-  .print-certificate-verify { margin-top: .25in; font: 9pt/1.35 Arial, sans-serif; }
+  .print-certificate-verification { display: grid; grid-template-columns: 1.18in 1fr; gap: .18in; align-items: center; margin-top: .2in; text-align: left; font-family: Arial, sans-serif; }
+  .print-certificate-qr { text-align: center; }
+  .print-certificate-qr-code { width: 1.08in; height: 1.08in; margin: 0 auto; }
+  .print-certificate-qr-code img, .print-certificate-qr-code canvas { display: block; width: 100% !important; height: 100% !important; }
+  .print-certificate-qr-caption { display: block; margin-top: .04in; font-size: 7pt; text-transform: uppercase; letter-spacing: .08em; }
+  .print-certificate-verify { margin: 0; font: 9pt/1.35 Arial, sans-serif; }
+  .print-certificate-verification-url { margin: .05in 0 0; font: 7.5pt/1.25 Arial, sans-serif; overflow-wrap: anywhere; }
   .print-certificate-disclaimer { margin-top: .16in; font: 7.5pt/1.3 Arial, sans-serif; }
   .site-header, .governance-dashboard, .catalog-panel, .site-footer, .field-reference-back, .field-reference-actions, .lesson-field-reference, .field-reference-remediation { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
