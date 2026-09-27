@@ -225,6 +225,19 @@ for (const { file, data } of collections.questions) {
   if (data.type === 'multiple-response' && !Array.isArray(data.correct)) {
     addError('state-conflict', `${file}: multiple-response correct answer must be an array of choice indexes`);
   }
+  if (data.type === 'ordering') {
+    if (!Array.isArray(data.choices) || data.choices.length < 2) {
+      addError('state-conflict', `${file}: ordering item must define at least two choices`);
+    }
+    if (!Array.isArray(data.correct) || data.correct.length !== (data.choices?.length ?? 0)) {
+      addError('state-conflict', `${file}: ordering correct answer must rank every choice exactly once`);
+    } else {
+      const indexes = data.correct.map(Number);
+      if (indexes.some((value) => !Number.isInteger(value) || value < 0 || value >= data.choices.length) || new Set(indexes).size !== data.choices.length) {
+        addError('state-conflict', `${file}: ordering correct answer must be a permutation of all choice indexes`);
+      }
+    }
+  }
   
   // CRITICAL: Active and published items MUST have approval review records
   if (data.status === 'active' || data.status === 'published') {
