@@ -161,6 +161,50 @@
     "extensions": {
       "type": "object",
       "additionalProperties": true
+    },
+    "matchPrompts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z0-9][A-Z0-9_-]*$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "matchOptions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z0-9][A-Z0-9_-]*$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "allOf": [
@@ -298,10 +342,18 @@
         ]
       },
       "then": {
+        "required": [
+          "matchPrompts",
+          "matchOptions"
+        ],
         "properties": {
           "correct": {
             "type": "array",
-            "minItems": 1
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z0-9][A-Z0-9_-]*$"
+            }
           }
         }
       }
