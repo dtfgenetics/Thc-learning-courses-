@@ -743,6 +743,39 @@ async function renderDownloads() {
   }
 }
 
+function credentialVerificationUrl(verificationId) {
+  const url = new URL(window.location.href);
+  url.hash = '';
+  url.search = '';
+  url.searchParams.set('verify', String(verificationId));
+  return url.toString();
+}
+
+function appendCredentialQr(target, verificationId) {
+  const QR = globalThis.QRCode;
+  if (!QR || !verificationId) return null;
+  const wrap = document.createElement('div');
+  wrap.className = 'print-certificate-qr';
+  wrap.setAttribute('aria-label', 'QR code for public credential verification');
+  const code = document.createElement('div');
+  code.className = 'print-certificate-qr-code';
+  const caption = text('span', 'Scan to verify', 'print-certificate-qr-caption');
+  wrap.append(code, caption);
+  target.append(wrap);
+  try {
+    new QR(code, {
+      text: credentialVerificationUrl(verificationId),
+      width: 128,
+      height: 128,
+      correctLevel: QR.CorrectLevel?.M
+    });
+    return wrap;
+  } catch {
+    wrap.remove();
+    return null;
+  }
+}
+
 function printVerifiedCertificate(record) {
   if (!record?.verificationId || !['issued','valid'].includes(record.status)) return;
   const certificate = document.createElement('section');
@@ -771,7 +804,16 @@ function printVerifiedCertificate(record) {
     meta.append(row);
   }
   certificate.append(meta);
-  certificate.append(text('p', 'Verify this credential using the verification ID at the THC Academy credential verification page.', 'print-certificate-verify'));
+  const verifyBlock = document.createElement('div');
+  verifyBlock.className = 'print-certificate-verification';
+  appendCredentialQr(verifyBlock, record.verificationId);
+  const verifyCopy = document.createElement('div');
+  verifyCopy.append(
+    text('p', 'Verify this credential using the QR code or verification ID at the THC Academy credential verification page.', 'print-certificate-verify'),
+    text('p', credentialVerificationUrl(record.verificationId), 'print-certificate-verification-url')
+  );
+  verifyBlock.append(verifyCopy);
+  certificate.append(verifyBlock);
   certificate.append(text('p', record.disclaimer ?? '', 'print-certificate-disclaimer'));
   document.body.append(certificate);
   document.body.classList.add('printing-certificate');
@@ -785,7 +827,7 @@ function printVerifiedCertificate(record) {
   setTimeout(() => { if (certificate.isConnected) cleanup(); }, 1500);
 }
 
-function renderVerify() {
+function renderVerify(initialVerificationId = '') {
   setActive('tab-verify');
   if (compactCatalog?.matches) setCatalogExpanded(false);
   const panel = document.createElement('div');
@@ -801,6 +843,7 @@ function renderVerify() {
   input.placeholder = 'Verification ID';
   input.autocomplete = 'off';
   input.setAttribute('aria-label', 'Credential verification ID');
+  if (initialVerificationId) input.value = String(initialVerificationId).trim();
   const button = document.createElement('button');
   button.type = 'submit';
   button.textContent = 'Verify credential';
@@ -860,6 +903,7 @@ function renderVerify() {
   panel.append(form, result);
   lessonView.replaceChildren(panel);
   lessonView.focus();
+  if (initialVerificationId) window.setTimeout(() => form.requestSubmit(), 0);
 }
 
 catalogToggle?.addEventListener('click', () => {
@@ -890,3 +934,6 @@ document.querySelector('#tab-progress')?.addEventListener('click', renderCredent
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
 document.querySelector('#tab-resources')?.addEventListener('click', renderDownloads);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);
+
+const initialVerificationId = new URLSearchParams(window.location.search).get('verify');
+if (initialVerificationId) renderVerify(initialVerificationId);
