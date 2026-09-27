@@ -128,3 +128,13 @@
   .course-practical-stage-grid, .course-practical-score-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .course-practical-stage, .course-practical-score-domain, .course-practical-critical { break-inside: avoid; }
 }
+
+
+.course-assessment-ordering { display: grid; gap: .65rem; margin-top: .85rem; }
+.course-assessment-order-row { display: grid; grid-template-columns: minmax(6rem, .3fr) minmax(0, 1fr); align-items: center; gap: .75rem; }
+.course-assessment-order-label { font-weight: 750; }
+.course-assessment-order-select { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: .65rem; background: #fff; padding: .65rem .75rem; font: inherit; }
+.course-assessment-order-select:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
+@media (max-width: 560px) {
+  .course-assessment-order-row { grid-template-columns: 1fr; gap: .35rem; }
+}
