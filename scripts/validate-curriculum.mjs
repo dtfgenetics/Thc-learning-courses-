@@ -238,6 +238,21 @@ for (const { file, data } of collections.questions) {
       }
     }
   }
+  if (data.type === 'matching') {
+    const prompts = Array.isArray(data.matchPrompts) ? data.matchPrompts : [];
+    const options = Array.isArray(data.matchOptions) ? data.matchOptions : [];
+    const promptIds = prompts.map((entry) => String(entry?.id ?? ''));
+    const optionIds = options.map((entry) => String(entry?.id ?? ''));
+    if (prompts.length < 2) addError('state-conflict', `${file}: matching item must define at least two prompts`);
+    if (options.length < 2) addError('state-conflict', `${file}: matching item must define at least two options`);
+    if (promptIds.some((id) => !id) || new Set(promptIds).size !== promptIds.length) addError('state-conflict', `${file}: matching prompt IDs must be non-empty and unique`);
+    if (optionIds.some((id) => !id) || new Set(optionIds).size !== optionIds.length) addError('state-conflict', `${file}: matching option IDs must be non-empty and unique`);
+    if (!Array.isArray(data.correct) || data.correct.length !== promptIds.length) {
+      addError('state-conflict', `${file}: matching correct answer must contain one option ID per prompt`);
+    } else if (data.correct.some((id) => !optionIds.includes(String(id)))) {
+      addError('state-conflict', `${file}: matching correct answer references an unknown option ID`);
+    }
+  }
   
   // CRITICAL: Active and published items MUST have approval review records
   if (data.status === 'active' || data.status === 'published') {
