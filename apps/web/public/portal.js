@@ -777,7 +777,7 @@ function appendCredentialQr(target, verificationId) {
 }
 
 function printVerifiedCertificate(record) {
-  if (!record?.verificationId || !['issued','valid'].includes(record.status)) return;
+  if (!record?.verificationId || record.valid !== true || !['issued','valid'].includes(record.status)) return;
   const certificate = document.createElement('section');
   certificate.className = 'print-certificate';
   certificate.setAttribute('aria-label', 'Printable THC Academy credential certificate');
@@ -864,7 +864,8 @@ function renderVerify(initialVerificationId = '') {
       const record = await response.json();
       const card = document.createElement('section');
       card.className = 'portal-credential-card';
-      card.append(text('p', `Status: ${record.status ?? 'valid'}`, 'portal-credential-status'));
+      const verificationLabel = record.valid === true ? 'Verified active' : 'Not currently valid';
+      card.append(text('p', `${verificationLabel} · Status: ${record.status ?? 'unknown'}`, `portal-credential-status ${record.valid === true ? 'is-valid' : 'is-invalid'}`));
       card.append(text('h3', record.credential?.title ?? 'THC Academy Credential'));
       const dl = document.createElement('dl');
       const fields = [
@@ -883,7 +884,7 @@ function renderVerify(initialVerificationId = '') {
         dl.append(row);
       }
       card.append(dl);
-      if (['issued','valid'].includes(record.status)) {
+      if (record.valid === true && ['issued','valid'].includes(record.status)) {
         const print = text('button', 'Print certificate', 'record-button portal-certificate-print');
         print.type = 'button';
         print.addEventListener('click', () => printVerifiedCertificate(record));
