@@ -68,7 +68,7 @@ function choicePairs(item, formId, randomizeChoices = true) {
   return randomizeChoices ? shuffled(pairs, `${formId}:${item.id}@${item.version}:choices`) : pairs;
 }
 
-const learnerRuntimeTypes = new Set(['multiple-choice', 'scenario', 'case-study', 'multiple-response', 'numeric', 'ordering']);
+const learnerRuntimeTypes = new Set(['multiple-choice', 'scenario', 'case-study', 'multiple-response', 'numeric', 'ordering', 'matching']);
 
 function assertLearnerRuntimeItem(item) {
   if (!learnerRuntimeTypes.has(item.type)) throw new Error(`Unsupported learner assessment item type ${item.type}`);
@@ -79,6 +79,17 @@ function assertLearnerRuntimeItem(item) {
     if (indexes.some((value) => !Number.isInteger(value) || value < 0 || value >= item.choices.length) || new Set(indexes).size !== item.choices.length) {
       throw new Error(`Ordering item ${item.id} answer key must be a permutation of all choice indexes`);
     }
+  }
+  if (item.type === 'matching') {
+    if (!Array.isArray(item.matchPrompts) || item.matchPrompts.length < 2) throw new Error(`Matching item ${item.id} requires at least two prompts`);
+    if (!Array.isArray(item.matchOptions) || item.matchOptions.length < 2) throw new Error(`Matching item ${item.id} requires at least two options`);
+    const promptIds = item.matchPrompts.map((entry) => String(entry?.id ?? ''));
+    const optionIds = item.matchOptions.map((entry) => String(entry?.id ?? ''));
+    if (promptIds.some((id) => !id) || new Set(promptIds).size !== promptIds.length) throw new Error(`Matching item ${item.id} prompt IDs must be unique`);
+    if (optionIds.some((id) => !id) || new Set(optionIds).size !== optionIds.length) throw new Error(`Matching item ${item.id} option IDs must be unique`);
+    if (!Array.isArray(item.correct) || item.correct.length !== promptIds.length) throw new Error(`Matching item ${item.id} requires one answer per prompt`);
+    const answers = item.correct.map(String);
+    if (answers.some((id) => !optionIds.includes(id))) throw new Error(`Matching item ${item.id} answer key references an unknown option`);
   }
 }
 
@@ -136,6 +147,19 @@ export function presentCourseAssessmentItem(item, { formId, response = null, ran
       : [];
     return { ...base, choices: pairs.map((pair) => pair.choice), response: presentedResponse };
   }
+  if (item.type === 'matching') {
+    assertLearnerRuntimeItem(item);
+    const options = randomizeChoices
+      ? shuffled(item.matchOptions, `${formId}:${item.id}@${item.version}:matching-options`)
+      : [...item.matchOptions];
+    const safeResponse = Array.isArray(response) ? response.map(String) : [];
+    return {
+      ...base,
+      matchPrompts: item.matchPrompts.map((entry) => ({ id: entry.id, text: entry.text })),
+      matchOptions: options.map((entry) => ({ id: entry.id, text: entry.text })),
+      response: safeResponse
+    };
+  }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
 
@@ -168,6 +192,16 @@ export function normalizePresentedResponse(item, { formId, response, randomizeCh
       throw new Error(`Response for ${item.id} must rank every choice exactly once`);
     }
     return indexes.map((index) => pairs[index].sourceIndex);
+  }
+  if (item.type === 'matching') {
+    assertLearnerRuntimeItem(item);
+    if (!Array.isArray(response)) throw new Error(`Response for ${item.id} must be an array of option IDs`);
+    const optionIds = new Set(item.matchOptions.map((entry) => String(entry.id)));
+    const answers = response.map(String);
+    if (answers.length !== item.matchPrompts.length || answers.some((id) => !optionIds.has(id))) {
+      throw new Error(`Response for ${item.id} must include one valid option ID per prompt`);
+    }
+    return answers;
   }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
