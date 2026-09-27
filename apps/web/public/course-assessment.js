@@ -440,7 +440,7 @@ function stopAssessmentTimer() {
 }
 
 function disableAssessmentInputs(panel) {
-  for (const control of panel.querySelectorAll('.course-assessment-form input, .course-assessment-submit')) control.disabled = true;
+  for (const control of panel.querySelectorAll('.course-assessment-form input, .course-assessment-form select, .course-assessment-submit')) control.disabled = true;
 }
 
 function startAssessmentTimer(panel) {
@@ -651,7 +651,7 @@ function renderQuestionNavigator(panel, itemCount) {
     button.addEventListener('click', () => {
       const target = panel.querySelectorAll('.course-assessment-item')[index];
       target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      target?.querySelector('input')?.focus({ preventScroll: true });
+      target?.querySelector('input, select')?.focus({ preventScroll: true });
     });
     list.append(button);
   }
