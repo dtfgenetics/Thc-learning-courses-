@@ -1,0 +1,117 @@
+{
+  "id": "ALFIX-ENV-24H-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "Environmental Replay — 24 Hour Baseline Fixture",
+  "purpose": "Deterministic synthetic fixture for timeline, anomaly-detection, and equipment-failure learning activities. Not a universal cultivation target.",
+  "timezone": "UTC",
+  "subjectId": "SIM-PLANT-001",
+  "events": [
+    {
+      "id": "ALEVT-ENV-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "kind": "environment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "fixture",
+      "payload": {
+        "airTemperatureC": 23.5,
+        "relativeHumidityPct": 62,
+        "lightState": "off"
+      }
+    },
+    {
+      "id": "ALEVT-ENV-002",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T06:00:00Z",
+      "kind": "environment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "fixture",
+      "payload": {
+        "airTemperatureC": 23,
+        "relativeHumidityPct": 64,
+        "lightState": "off"
+      }
+    },
+    {
+      "id": "ALEVT-EQUIP-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T08:00:00Z",
+      "kind": "equipment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "simulation",
+      "payload": {
+        "equipment": "circulation-fan",
+        "state": "failed"
+      }
+    },
+    {
+      "id": "ALEVT-ENV-003",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T10:00:00Z",
+      "kind": "environment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "fixture",
+      "payload": {
+        "airTemperatureC": 26.8,
+        "relativeHumidityPct": 70,
+        "lightState": "on"
+      },
+      "annotations": [
+        {
+          "type": "instructional",
+          "code": "POST_FAILURE_DRIFT",
+          "message": "Synthetic drift follows the simulated fan failure; learners must not infer universal thresholds from this fixture."
+        }
+      ]
+    },
+    {
+      "id": "ALEVT-OBS-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T12:00:00Z",
+      "kind": "observation",
+      "subjectId": "SIM-PLANT-001",
+      "source": "simulation",
+      "payload": {
+        "airMovement": "reduced",
+        "canopyUniformity": "uneven"
+      }
+    },
+    {
+      "id": "ALEVT-INT-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T13:00:00Z",
+      "kind": "intervention",
+      "subjectId": "SIM-PLANT-001",
+      "source": "instructor",
+      "payload": {
+        "action": "restore-circulation",
+        "equipment": "circulation-fan"
+      }
+    },
+    {
+      "id": "ALEVT-ENV-004",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T16:00:00Z",
+      "kind": "environment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "fixture",
+      "payload": {
+        "airTemperatureC": 24.6,
+        "relativeHumidityPct": 64,
+        "lightState": "on"
+      }
+    },
+    {
+      "id": "ALEVT-OUT-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T23:00:00Z",
+      "kind": "outcome",
+      "subjectId": "SIM-PLANT-001",
+      "source": "simulation",
+      "payload": {
+        "state": "stabilized"
+      }
+    }
+  ]
+}
