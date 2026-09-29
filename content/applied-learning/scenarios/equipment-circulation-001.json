@@ -1,0 +1,133 @@
+{
+  "id": "ALSCN-EQUIPMENT-CIRCULATION-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "Circulation Failure: Read the Room",
+  "summary": "Use a synthetic environmental replay and direct observations to identify an equipment problem, select an appropriate immediate response, and evaluate the resulting trend.",
+  "subjectId": "SIM-PLANT-001",
+  "competencyIds": [],
+  "objectiveIds": [],
+  "events": [
+    {
+      "id": "ALEVT-SCN-ENV-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T06:00:00Z",
+      "kind": "environment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "fixture",
+      "payload": {
+        "airTemperatureC": 23,
+        "relativeHumidityPct": 64,
+        "lightState": "off"
+      }
+    },
+    {
+      "id": "ALEVT-SCN-EQUIP-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T08:00:00Z",
+      "kind": "equipment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "simulation",
+      "payload": {
+        "equipment": "circulation-fan",
+        "state": "failed"
+      }
+    },
+    {
+      "id": "ALEVT-SCN-ENV-002",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T10:00:00Z",
+      "kind": "environment",
+      "subjectId": "SIM-PLANT-001",
+      "source": "fixture",
+      "payload": {
+        "airTemperatureC": 26.8,
+        "relativeHumidityPct": 70,
+        "lightState": "on"
+      }
+    },
+    {
+      "id": "ALEVT-SCN-OBS-001",
+      "version": "1.0.0",
+      "timestamp": "2026-01-01T12:00:00Z",
+      "kind": "observation",
+      "subjectId": "SIM-PLANT-001",
+      "source": "simulation",
+      "payload": {
+        "airMovement": "reduced",
+        "canopyUniformity": "uneven"
+      }
+    }
+  ],
+  "allowedActions": [
+    {
+      "id": "inspect-circulation",
+      "label": "Inspect circulation equipment",
+      "description": "Check circulation equipment state and airflow before changing unrelated inputs."
+    },
+    {
+      "id": "restore-circulation",
+      "label": "Restore circulation",
+      "description": "Restore the failed circulation function using the scenario control."
+    },
+    {
+      "id": "increase-irrigation",
+      "label": "Increase irrigation",
+      "description": "Change irrigation volume without first resolving the airflow observation."
+    }
+  ],
+  "rules": [
+    {
+      "id": "RULE-CIRC-RESTORE",
+      "when": {
+        "eq": [
+          {
+            "var": "action.id"
+          },
+          "restore-circulation"
+        ]
+      },
+      "then": {
+        "result": "stabilizing",
+        "score": 1,
+        "outcomeCode": "CIRCULATION_RESTORED"
+      }
+    },
+    {
+      "id": "RULE-CIRC-INSPECT",
+      "when": {
+        "eq": [
+          {
+            "var": "action.id"
+          },
+          "inspect-circulation"
+        ]
+      },
+      "then": {
+        "result": "evidence-gained",
+        "score": 0,
+        "outcomeCode": "CIRCULATION_CONFIRMED_FAILED"
+      }
+    },
+    {
+      "id": "RULE-CIRC-IRRIGATION",
+      "when": {
+        "eq": [
+          {
+            "var": "action.id"
+          },
+          "increase-irrigation"
+        ]
+      },
+      "then": {
+        "result": "unresolved",
+        "score": 0,
+        "outcomeCode": "PRIMARY_FAILURE_UNRESOLVED"
+      }
+    }
+  ],
+  "instructor": {
+    "notes": "Synthetic training scenario. Values illustrate a controlled sequence and are not universal cultivation targets.",
+    "criticalAction": "restore-circulation"
+  }
+}
