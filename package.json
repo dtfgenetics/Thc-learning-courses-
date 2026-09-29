@@ -160,7 +160,8 @@
     "finalize:status:json": "node scripts/report-finalization-status.mjs --json",
     "specialist:readiness": "node scripts/report-specialist-expansion-readiness.mjs",
     "specialist:readiness:json": "node scripts/report-specialist-expansion-readiness.mjs --json",
-    "phib:seed:test": "node scripts/test-phib-specialist-seed.mjs"
+    "phib:seed:test": "node scripts/test-phib-specialist-seed.mjs",
+    "applied-learning:test": "node scripts/test-applied-learning-fixtures.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
