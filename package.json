@@ -161,8 +161,9 @@
     "specialist:readiness": "node scripts/report-specialist-expansion-readiness.mjs",
     "specialist:readiness:json": "node scripts/report-specialist-expansion-readiness.mjs --json",
     "phib:seed:test": "node scripts/test-phib-specialist-seed.mjs",
-    "applied-learning:test": "node scripts/test-applied-learning-fixtures.mjs && node scripts/test-applied-learning-timeline.mjs",
-    "applied-learning:timeline:test": "node scripts/test-applied-learning-timeline.mjs"
+    "applied-learning:test": "node scripts/test-applied-learning-fixtures.mjs && node scripts/test-applied-learning-timeline.mjs && node scripts/test-applied-learning-graph.mjs",
+    "applied-learning:timeline:test": "node scripts/test-applied-learning-timeline.mjs",
+    "applied-learning:graph:test": "node scripts/test-applied-learning-graph.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
