@@ -6,6 +6,8 @@ const root=process.cwd();
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const raster=['png','webp','jpeg','jpg'];
 const releaseRaster=['png','webp','jpg','jpeg'];
+const tech2Plan=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
+const producedTech2ConceptIds=new Set((tech2Plan.courses??[]).flatMap((course)=>course.concepts??[]).filter((concept)=>concept.status==='approved' || concept.rasterReplacement?.status==='owner-approved-production-release').map((concept)=>concept.conceptId));
 
 for(let n=2;n<=6;n++){
   const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
@@ -24,7 +26,7 @@ for(let n=2;n<=6;n++){
     if(asset.status === 'retired'){
       assert.ok(typeof asset.retiredReason === 'string' && asset.retiredReason.trim(), `${asset.id}: retired asset requires a reason`);
       assert.ok(typeof asset.supersededBy === 'string' && asset.supersededBy.trim(), `${asset.id}: retired asset requires a replacement identity`);
-      assert.ok((registry.assets ?? []).some((candidate) => candidate.id === asset.supersededBy && candidate.status === 'produced'), `${asset.id}: retired replacement must resolve to a produced governed asset`);
+      assert.ok((registry.assets ?? []).some((candidate) => candidate.id === asset.supersededBy && candidate.status === 'produced') || producedTech2ConceptIds.has(asset.supersededBy), `${asset.id}: retired replacement must resolve to a produced governed asset or approved Technician II concept`);
       continue;
     }
     assert.equal(asset.status,'produced',`${asset.id}: active governed asset must be produced`);
@@ -67,7 +69,7 @@ for(const asset of course1Svg){
   assert.equal(asset.rasterReplacement?.encoding,'png',`${asset.id}: Course 1 master must remain PNG`);
 }
 
-const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
+const tech2=tech2Plan;
 assert.equal(tech2.policy?.productionFormatPolicy?.svgReleaseAllowed,false,'Technician II: SVG release must remain prohibited');
 assert.deepEqual(tech2.policy?.productionFormatPolicy?.allowedReleasedExtensions,releaseRaster);
 for(const course of tech2.courses??[]){
