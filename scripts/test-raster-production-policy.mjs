@@ -10,7 +10,7 @@ const tech2Plan=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
 const producedTech2ConceptIds=new Set((tech2Plan.courses??[]).flatMap((course)=>course.concepts??[]).filter((concept)=>concept.status==='approved' || concept.rasterReplacement?.status==='owner-approved-production-release').map((concept)=>concept.conceptId));
 
 for(let n=2;n<=6;n++){
-  const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
+  const registry=technicianIRegistries.get(n);
   assert.equal(registry.policy?.svgProductionTarget,false,`Course ${n}: SVG must not be the production target`);
   assert.equal(registry.policy?.legacySvgCompatibilityAllowed,false,`Course ${n}: SVG must not remain an active learner compatibility path after raster cutover`);
   assert.equal(registry.policy?.rasterReplacementRequired,false,`Course ${n}: raster replacement is complete`);
