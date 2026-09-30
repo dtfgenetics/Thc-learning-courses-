@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const root=process.cwd();
 const sha256=(buffer)=>crypto.createHash('sha256').update(buffer).digest('hex');
-const expectedCounts=new Map([[2,10],[3,7],[4,8],[5,11],[6,8]]);
+const expectedCounts=new Map([[2,12],[3,7],[4,8],[5,11],[6,8]]);
 
 function webpDimensions(buffer){
   assert.equal(buffer.subarray(0,4).toString('ascii'),'RIFF','candidate must use a RIFF container');
@@ -30,12 +30,23 @@ for(const [courseNumber,expected] of expectedCounts){
 
     if(asset.nativeRaster){
       assert.equal(asset.nativeRaster.status,'owner-approved-production-release',`${asset.id}: native-raster lifecycle drift`);
-      assert.equal(asset.nativeRaster.format,'webp',`${asset.id}: native-raster format drift`);
+      assert.equal(asset.nativeRaster.format ?? asset.nativeRaster.encoding,'webp',`${asset.id}: native-raster format drift`);
       assert.equal(asset.nativeRaster.releaseApproved,true,`${asset.id}: native raster must record owner approval`);
-      assert.equal(raster.length,asset.nativeRaster.bytes,`${asset.id}: native-raster byte count drift`);
-      assert.ok(asset.nativeRaster.pixelWidth>=1200,`${asset.id}: native-raster width is too small`);
-      assert.ok(asset.nativeRaster.driveFileId,`${asset.id}: WebP Drive mirror is required`);
-      assert.ok(asset.nativeRaster.driveMasterFileId,`${asset.id}: PNG master Drive mirror is required`);
+      if (asset.nativeRaster.bytes !== undefined) {
+        assert.equal(raster.length,asset.nativeRaster.bytes,`${asset.id}: native-raster byte count drift`);
+      }
+      if (asset.nativeRaster.pixelWidth !== undefined) {
+        assert.ok(asset.nativeRaster.pixelWidth>=1200,`${asset.id}: native-raster width is too small`);
+      } else {
+        assert.ok(Math.min(asset.nativeRaster.pixelDimensions?.width ?? 0,asset.nativeRaster.pixelDimensions?.height ?? 0)>=1600,`${asset.id}: generated native raster dimensions are too small`);
+      }
+      if (asset.nativeRaster.driveFileId) {
+        assert.ok(asset.nativeRaster.driveMasterFileId,`${asset.id}: PNG master Drive mirror is required when native raster uses Drive provenance`);
+      } else {
+        assert.ok(typeof asset.nativeRaster.generatedFrom==='string' && asset.nativeRaster.generatedFrom.trim(),`${asset.id}: generated native raster requires source provenance`);
+        assert.ok(typeof asset.nativeRaster.generatedByWorkflow==='string' && asset.nativeRaster.generatedByWorkflow.trim(),`${asset.id}: generated native raster requires workflow provenance`);
+        assert.match(asset.nativeRaster.productionCommit??'',/^[0-9a-f]{40}$/,`${asset.id}: generated native raster requires production commit provenance`);
+      }
       native+=1;
       checked+=1;
       continue;
@@ -80,5 +91,5 @@ for(const asset of sharedFoundationAssets){
 
 assert.equal(checked,44,'Technician I Courses 2-6 must expose 44 Course-owned governed raster candidates');
 assert.equal(converted,40,'Technician I Courses 2-6 must preserve 40 converted lossless WebP assets');
-assert.equal(native,4,'Technician I Courses 3-5 must expose four approved native-raster WebP assets');
+assert.equal(native,6,'Technician I Courses 2-5 must expose six approved native-raster WebP assets');
 console.log(`Technician I raster assets: PASS (${converted} converted lossless WebPs + ${native} Course-owned native-raster WebPs + ${sharedFoundationAssets.length} governed shared foundation WebPs; release remains human-QA gated).`);
