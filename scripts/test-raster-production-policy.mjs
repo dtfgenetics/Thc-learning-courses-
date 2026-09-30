@@ -21,7 +21,13 @@ for(let n=2;n<=6;n++){
       assert.ok((asset.productionSpec.minimumShortSidePx ?? 0) >= 1600, `${asset.id}: planned raster must keep the high-resolution floor`);
       continue;
     }
-    assert.equal(asset.status,'produced',`${asset.id}: non-planned governed asset must be produced`);
+    if(asset.status === 'retired'){
+      assert.ok(typeof asset.retiredReason === 'string' && asset.retiredReason.trim(), `${asset.id}: retired asset requires a reason`);
+      assert.ok(typeof asset.supersededBy === 'string' && asset.supersededBy.trim(), `${asset.id}: retired asset requires a replacement identity`);
+      assert.ok((registry.assets ?? []).some((candidate) => candidate.id === asset.supersededBy && candidate.status === 'produced'), `${asset.id}: retired replacement must resolve to a produced governed asset`);
+      continue;
+    }
+    assert.equal(asset.status,'produced',`${asset.id}: active governed asset must be produced`);
     assert.equal(path.extname(asset.sourcePath??'').toLowerCase(),'.webp',`${asset.id}: active production source must be WebP`);
     assert.equal(asset.assetLifecycle,'production-raster-active',`${asset.id}: raster lifecycle drift`);
     if(asset.nativeRaster){
