@@ -146,7 +146,7 @@ assert.ok((completionStatus.nextHumanActions ?? []).length > 0, 'Course 2 must r
 
 const visualRegistry = read('visuals/COURSE2-ASSET-REGISTRY.json');
 const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.equal(producedAssets.length, 10, 'Course 2 should expose the current 10 governed learner assets');
+assert.ok(producedAssets.length >= 10, 'Course 2 should expose at least the ten governed Course-owned learner assets and may include governed shared foundation visuals');
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
 server.listen(0, '127.0.0.1');
