@@ -16,7 +16,7 @@ assert.equal(registry.policy?.svgProductionTarget, false);
 assert.equal(registry.policy?.legacySvgCompatibilityAllowed, false);
 assert.equal(registry.policy?.rasterReplacementRequired, false);
 
-const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
+const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced' && /^VIS-LH-TECH1-002-[0-9]{3}$/.test(asset.id ?? ''));
 assert.ok(produced.length >= 10, 'Course 2 photo-evidence practice batch requires at least ten produced learner assets');
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
