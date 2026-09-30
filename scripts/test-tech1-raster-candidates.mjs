@@ -21,8 +21,9 @@ let converted=0;
 let native=0;
 for(const [courseNumber,expected] of expectedCounts){
   const registry=JSON.parse(fs.readFileSync(path.join(root,`visuals/COURSE${courseNumber}-ASSET-REGISTRY.json`),'utf8'));
-  assert.equal(registry.assets?.length,expected,`Course ${courseNumber}: candidate inventory drift`);
-  for(const asset of registry.assets){
+  const producedAssets=(registry.assets??[]).filter((asset)=>asset.status==='produced');
+  assert.equal(producedAssets.length,expected,`Course ${courseNumber}: produced candidate inventory drift`);
+  for(const asset of producedAssets){
     const raster=fs.readFileSync(path.join(root,asset.sourcePath));
     assert.equal(raster.subarray(0,4).toString('ascii'),'RIFF',`${asset.id}: production asset must use a RIFF container`);
     assert.equal(raster.subarray(8,12).toString('ascii'),'WEBP',`${asset.id}: production asset must use WebP`);
