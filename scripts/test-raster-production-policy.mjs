@@ -14,6 +14,14 @@ for(let n=2;n<=6;n++){
   assert.equal(registry.policy?.rasterReplacementRequired,false,`Course ${n}: raster replacement is complete`);
   assert.deepEqual(registry.policy?.productionInstructionalFormats,raster,`Course ${n}: production raster format policy drift`);
   for(const asset of registry.assets??[]){
+    if(asset.status === 'planned'){
+      assert.ok(asset.productionSpec, `${asset.id}: planned asset requires a production specification`);
+      assert.equal(asset.productionSpec.svgAllowed,false, `${asset.id}: planned production target must remain raster-only`);
+      assert.ok(Array.isArray(asset.productionSpec.requiredFormats) && asset.productionSpec.requiredFormats.includes('webp'), `${asset.id}: planned production formats must include WebP`);
+      assert.ok((asset.productionSpec.minimumShortSidePx ?? 0) >= 1600, `${asset.id}: planned raster must keep the high-resolution floor`);
+      continue;
+    }
+    assert.equal(asset.status,'produced',`${asset.id}: non-planned governed asset must be produced`);
     assert.equal(path.extname(asset.sourcePath??'').toLowerCase(),'.webp',`${asset.id}: active production source must be WebP`);
     assert.equal(asset.assetLifecycle,'production-raster-active',`${asset.id}: raster lifecycle drift`);
     if(asset.nativeRaster){
