@@ -38,7 +38,9 @@ function webpDimensions(buffer) {
 }
 
 for (const asset of produced) {
-  assert.match(asset.id ?? '', /^VIS-LH-TECH1-002-[0-9]{3}$/);
+  const isCourseSpecific = (asset.primaryLessons ?? []).some((lessonId) => String(lessonId).startsWith('LESSON-LH-TECH1-002-'));
+  if (isCourseSpecific) assert.match(asset.id ?? '', /^VIS-LH-TECH1-002-[0-9]{3}$/);
+  else assert.match(asset.id ?? '', /^VIS-FOUNDATION-[A-Z0-9-]+$/, `${asset.id}: shared-module assets must use the foundation visual namespace`);
   assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
   assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
   assert.ok(['embedded-visual', 'downloadable-practice'].includes(asset.deliveryType), `${asset.id}: unsupported deliveryType`);
