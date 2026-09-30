@@ -6,7 +6,7 @@
   "required": ["id", "type", "title", "status", "evidenceLevel"],
   "properties": {
     "id": {"type": "string", "pattern": "^REF-[A-Z0-9-]+$"},
-    "type": {"enum": ["journal", "peer-reviewed-study", "peer-reviewed-review", "review", "standard", "government", "extension", "textbook", "industry", "other"]},
+    "type": {"enum": ["journal", "peer-reviewed-study", "peer-reviewed-review", "peer-reviewed-protocol", "review", "standard", "government", "extension", "university-extension", "textbook", "industry", "other"]},
     "title": {"type": "string", "minLength": 3},
     "publisher": {"type": ["string", "null"]},
     "journal": {"type": ["string", "null"]},
