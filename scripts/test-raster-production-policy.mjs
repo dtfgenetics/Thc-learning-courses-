@@ -19,8 +19,14 @@ for(let n=2;n<=6;n++){
     if(asset.nativeRaster){
       assert.equal(asset.nativeRaster.status,'owner-approved-production-release',`${asset.id}: native raster lifecycle drift`);
       assert.equal(asset.nativeRaster.releaseApproved,true,`${asset.id}: owner-approved native raster release required`);
-      assert.equal(asset.nativeRaster.format,'webp',`${asset.id}: native delivery format drift`);
-      assert.equal(asset.nativeRaster.sourceMasterFormat,'png',`${asset.id}: native master format drift`);
+      assert.equal(asset.nativeRaster.format ?? asset.nativeRaster.encoding,'webp',`${asset.id}: native delivery format drift`);
+      if (asset.nativeRaster.sourceMasterFormat !== undefined) {
+        assert.equal(asset.nativeRaster.sourceMasterFormat,'png',`${asset.id}: native master format drift`);
+      } else {
+        assert.ok(Array.isArray(asset.nativeRaster.allowedFormats) && asset.nativeRaster.allowedFormats.includes('webp'), `${asset.id}: native raster must explicitly allow WebP delivery`);
+        assert.ok(typeof asset.nativeRaster.generatedFrom === 'string' && asset.nativeRaster.generatedFrom.trim(), `${asset.id}: native raster generator provenance required`);
+        assert.ok(Math.min(asset.nativeRaster.pixelDimensions?.width ?? 0, asset.nativeRaster.pixelDimensions?.height ?? 0) >= 1600, `${asset.id}: native raster dimensions must meet the high-resolution floor`);
+      }
     }else{
       assert.equal(asset.rasterReplacement?.status,'owner-approved-production-release',`${asset.id}: released raster lifecycle drift`);
       assert.equal(asset.rasterReplacement?.releaseApproved,true,`${asset.id}: owner-approved academic raster release required`);
