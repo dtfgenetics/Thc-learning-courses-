@@ -10,10 +10,13 @@ assert.equal(bundle.modules.length,6);
 assert.equal(bundle.lessons.length,18);
 
 const firstModule=bundle.modules[0];
-const partialLessonIds=(firstModule.lessons??[]).slice(0,2);
-let progress=partialLessonIds.map((lessonId,index)=>({
-  lessonId,
-  lessonVersion:'1.0.0',
+const partialLessons=(firstModule.lessons??[])
+  .slice(0,2)
+  .map((lessonId)=>bundle.lessons.find((lesson)=>lesson.id===lessonId))
+  .filter(Boolean);
+let progress=partialLessons.map((lesson,index)=>({
+  lessonId:lesson.id,
+  lessonVersion:String(lesson.version),
   status:'completed',
   completedAt:`2026-09-0${index+1}T12:00:00.000Z`
 }));
