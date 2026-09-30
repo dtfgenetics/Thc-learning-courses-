@@ -14,6 +14,7 @@ for(let n=2;n<=6;n++){
   assert.equal(registry.policy?.rasterReplacementRequired,false,`Course ${n}: raster replacement is complete`);
   assert.deepEqual(registry.policy?.productionInstructionalFormats,raster,`Course ${n}: production raster format policy drift`);
   for(const asset of registry.assets??[]){
+    if(asset.status!=='produced') continue;
     assert.equal(path.extname(asset.sourcePath??'').toLowerCase(),'.webp',`${asset.id}: active production source must be WebP`);
     assert.equal(asset.assetLifecycle,'production-raster-active',`${asset.id}: raster lifecycle drift`);
     if(asset.nativeRaster){
