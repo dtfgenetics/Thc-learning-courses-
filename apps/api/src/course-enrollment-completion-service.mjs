@@ -102,7 +102,12 @@ export function courseIdForPerformanceAssessment(assessmentId) {
 export function evaluateCourseAcademicCompletion({ bundle, progress = [], evidence = {}, now = new Date().toISOString() } = {}) {
   if (!bundle?.course?.id || !bundle?.assessment?.id) throw new Error('course academic completion bundle required');
   const requiredLessonIds = [...new Set(bundle.lessons.map((lesson) => lesson.id))];
-  const completedRows = progress.filter((row) => row?.status === 'completed' && requiredLessonIds.includes(row.lessonId));
+  const requiredLessonVersions = new Map(bundle.lessons.map((lesson) => [lesson.id, String(lesson.version)]));
+  const completedRows = progress.filter((row) => (
+    row?.status === 'completed' &&
+    requiredLessonIds.includes(row.lessonId) &&
+    String(row.lessonVersion ?? '') === requiredLessonVersions.get(row.lessonId)
+  ));
   const completedLessonIds = [...new Set(completedRows.map((row) => row.lessonId))];
   const completedLessonSet = new Set(completedLessonIds);
   const instructionComplete = requiredLessonIds.length > 0 && completedLessonIds.length === requiredLessonIds.length;
