@@ -2,12 +2,16 @@ name: Technician I program structure
 
 on:
   push:
-    branches: [dev, staging, main]
+    branches: [main]
   pull_request:
-    branches: [dev, staging, main]
+    branches: [main]
 
 permissions:
   contents: read
+
+concurrency:
+  group: tech1-structure-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   structure-audit:
