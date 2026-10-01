@@ -17,7 +17,7 @@
 .course-assessment-navigator { display: grid; gap: .55rem; margin: 0 0 1rem; padding: .7rem .8rem; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
 .course-assessment-navigator-label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .course-assessment-nav-list { display: flex; flex-wrap: wrap; gap: .4rem; }
-.course-assessment-nav-button { min-width: 40px; min-height: 40px; border: 1px solid var(--line); border-radius: .55rem; background: var(--panel); color: var(--ink); font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
+.course-assessment-nav-button { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: .55rem; background: var(--panel); color: var(--ink); font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
 .course-assessment-nav-button.answered { border-color: #9bb7a1; background: var(--green-soft); }
 .course-assessment-nav-button.saved { border-color: var(--green); color: var(--green); }
 .course-assessment-nav-button.saving { border-style: dashed; }
@@ -92,7 +92,7 @@
   .course-assessment-navigator { position: sticky; top: 4.7rem; z-index: 2; margin-bottom: .8rem; padding: .55rem .6rem; background: rgba(255,255,255,.96); backdrop-filter: blur(10px); }
   .course-assessment-nav-list { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .15rem; scrollbar-width: none; overscroll-behavior-inline: contain; }
   .course-assessment-nav-list::-webkit-scrollbar { display: none; }
-  .course-assessment-nav-button { flex: 0 0 42px; min-width: 42px; min-height: 42px; }
+  .course-assessment-nav-button { flex: 0 0 44px; min-width: 44px; min-height: 44px; }
   .course-assessment-form { gap: .8rem; }
   .course-assessment-item { scroll-margin-top: 10rem; padding: .9rem .85rem; border-radius: .75rem; }
   .course-assessment-item legend { font-size: 1rem; line-height: 1.42; padding: 0 .2rem; }
@@ -120,6 +120,21 @@
   .course-practical-status-line { align-items: flex-start; flex-direction: column; }
   .course-practical-score-domain { grid-template-columns: 1fr; gap: .2rem; }
   .course-practical-page-actions { display: grid; }
+}
+
+@media (max-height: 620px) {
+  .course-assessment-toolbar,
+  .course-assessment-navigator,
+  .course-assessment-submit-area {
+    position: static;
+  }
+  .course-assessment-panel,
+  .course-assessment-result {
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+  }
+  .course-assessment-item {
+    scroll-margin-top: 1rem;
+  }
 }
 
 @media print {
