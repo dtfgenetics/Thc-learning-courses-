@@ -163,7 +163,7 @@ function updateEvidenceRow(panel, evidence) {
       const detail = row.querySelector('.course-evidence-detail');
       const parts = [];
       if (written.bestScorePercent != null) parts.push(`${Number(written.bestScorePercent).toFixed(0)}% best`);
-      if (written.passingScorePercent != null) parts.push(`current threshold ${Number(written.passingScorePercent).toFixed(0)}%`);
+      if (written.passingScorePercent != null) parts.push(`academic passing target ${Number(written.passingScorePercent).toFixed(0)}%`);
       if (Number(written.attemptCount ?? 0) > 0) parts.push(`${written.attemptCount} attempt${Number(written.attemptCount) === 1 ? '' : 's'}`);
       if (detail) detail.textContent = parts.join(' • ');
     }
@@ -361,10 +361,10 @@ async function renderCoursePractical(evidenceResult) {
     scoreGrid.append(card);
   }
   scoring.append(scoreGrid);
-  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% provisional academic development threshold`, 'course-practical-pass');
+  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% current academic passing target`, 'course-practical-pass');
   if (practical.passingStandard.noCriticalErrors) pass.append(document.createTextNode(' • no critical errors'));
   scoring.append(pass);
-  scoring.append(el('p', 'This threshold remains provisional pending pilot evidence and documented standard setting; it is not a Technician I credential cut score.', 'course-assessment-note'));
+  scoring.append(el('p', 'This academic target supports course feedback. Professional certification uses a separate validation, standard-setting, and release process.', 'course-assessment-note'));
   panel.append(scoring);
 
   const critical = el('section', '', 'course-practical-section course-practical-critical');
@@ -703,7 +703,7 @@ function renderAssessment(payload) {
   const panel = el('article', '', 'portal-panel course-assessment-panel');
   panel.append(el('p', 'Authenticated summative assessment', 'eyebrow'));
   panel.append(el('h2', payload.assessment.title));
-  panel.append(el('p', `This is the graded academic final for ${payload.course?.title ?? 'this course'}. It is recorded to your learner account and remains separate from professional credential issuance. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
+  panel.append(el('p', `This is the graded academic final for ${payload.course?.title ?? 'this course'}. It is recorded to your learner account and remains separate from professional credential issuance. Current academic passing target: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
   const identity = el('div', '', 'course-assessment-identity');
   identity.append(el('span', `Learner: ${payload.learner?.learnerReference ?? 'account linked'}`));

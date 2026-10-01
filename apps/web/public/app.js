@@ -7,6 +7,11 @@ const catalogStatus = document.querySelector('#catalog-status');
 const searchInput = document.querySelector('#course-search');
 const lessonView = document.querySelector('#lesson-view');
 const modeBadge = document.querySelector('#mode-badge');
+const mobileLearningBar = document.querySelector('#mobile-learning-bar');
+const mobileLearningTitle = document.querySelector('#mobile-learning-title');
+const mobileLearningProgress = document.querySelector('#mobile-learning-progress');
+const mobileOutlineButton = document.querySelector('#mobile-outline-button');
+const mobileContinueButton = document.querySelector('#mobile-continue-button');
 
 let catalog = null;
 let progress = readProgress();
@@ -139,6 +144,41 @@ function nextIncompleteLesson(course, completed) {
     }
   }
   return course.modules?.[0]?.lessons?.[0] ?? null;
+}
+
+function courseForLesson(lessonId) {
+  return (catalog?.courses ?? []).find((course) => (course.modules ?? []).some((module) => (module.lessons ?? []).some((lesson) => lesson.id === lessonId))) ?? null;
+}
+
+function nextLessonAfter(course, lessonId) {
+  const lessons = (course?.modules ?? []).flatMap((module) => module.lessons ?? []);
+  const index = lessons.findIndex((lesson) => lesson.id === lessonId);
+  return index >= 0 && index + 1 < lessons.length ? lessons[index + 1] : null;
+}
+
+function renderMobileLearningBar() {
+  if (!mobileLearningBar || !catalog) return;
+  const completed = new Set(progress.completedLessons);
+  const activeCourse = currentLesson ? courseForLesson(currentLesson.id) : null;
+  const fallbackCourse = activeCourse
+    ?? (catalog.courses ?? []).find((course) => course.id === 'COURSE-LH-TECH1-001')
+    ?? (catalog.courses ?? [])[0]
+    ?? null;
+  if (!fallbackCourse) {
+    mobileLearningBar.hidden = true;
+    return;
+  }
+
+  const state = courseProgress(fallbackCourse, progress);
+  const continuation = currentLesson && activeCourse?.id === fallbackCourse.id
+    ? nextLessonAfter(fallbackCourse, currentLesson.id)
+    : nextIncompleteLesson(fallbackCourse, completed);
+
+  mobileLearningTitle.textContent = fallbackCourse.title;
+  mobileLearningProgress.textContent = state.completed + '/' + state.total + ' lessons complete • ' + state.percent + '%';
+  mobileContinueButton.textContent = continuation ? (currentLesson ? 'Next lesson' : 'Continue') : 'Course outline';
+  mobileContinueButton.dataset.lessonId = continuation?.id ?? '';
+  mobileLearningBar.hidden = false;
 }
 
 function renderCourseOrientation(details, course, courseState, completed) {
@@ -307,7 +347,7 @@ function renderCatalog() {
     if (course.finalAssessment) {
       const final = course.finalAssessment;
       const label = final.purpose === 'credential' ? 'Credential assessment' : 'Course final';
-      const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • provisional ${Number(final.passingScorePercent ?? 0).toFixed(0)}% academic threshold`;
+      const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • current academic passing target ${Number(final.passingScorePercent ?? 0).toFixed(0)}%`;
       details.append(text('p', note, 'course-final-summary'));
       if (final.status === 'published' && final.purpose === 'summative') {
         const finalActions = document.createElement('div');
@@ -429,7 +469,8 @@ function renderPracticeSection(article, lesson) {
     .then((payload) => {
       const items = payload.items ?? [];
       if (items.length === 0) {
-        status.textContent = 'Lesson practice is being expanded. Continue with the worked examples and practical application below.';
+        section.hidden = true;
+        console.warn('Published lesson practice gap: ' + lesson.id);
         return;
       }
       status.remove();
@@ -496,7 +537,7 @@ function renderModuleAssessment(payload) {
   article.className = 'lesson-article module-assessment';
   article.append(text('p', 'Low-stakes module checkpoint', 'eyebrow'));
   article.append(text('h2', payload.assessment.title));
-  article.append(text('p', `This ${payload.assessment.totalItems}-item checkpoint is formative learning practice. The current ${Number(payload.assessment.passingScorePercent).toFixed(0)}% mastery target is a development target for feedback and remediation, not a credential cut score or certification decision.`, 'callout'));
+  article.append(text('p', `This ${payload.assessment.totalItems}-item checkpoint is low-stakes learning practice. Aim for ${Number(payload.assessment.passingScorePercent).toFixed(0)}% before moving on. Checkpoint results guide study and do not issue a professional credential.`, 'callout'));
   const progressNote = text('p', `0/${payload.assessment.totalItems} answered`, 'status');
   progressNote.setAttribute('aria-live', 'polite');
   article.append(progressNote);
@@ -686,6 +727,7 @@ function renderCompletionControl(article, lesson) {
     checkbox.disabled = false;
     setNote();
     renderCatalog();
+    renderMobileLearningBar();
   });
   label.append(checkbox, text('span', 'Mark this lesson complete'));
   section.append(label, note);
@@ -823,6 +865,7 @@ function renderLesson(lesson) {
   lessonView.replaceChildren(article);
   lessonView.focus();
   renderCatalog();
+  renderMobileLearningBar();
 }
 
 async function openLesson(id) {
@@ -865,12 +908,31 @@ async function start() {
       ? `Development preview • ${progressLabel()}`
       : `Public learning content • ${progressLabel()}`;
     renderCatalog();
+    renderMobileLearningBar();
   } catch (error) {
     modeBadge.textContent = 'Unavailable';
     catalogStatus.textContent = error.message;
     catalogStatus.classList.add('error');
   }
 }
+
+mobileOutlineButton?.addEventListener('click', () => {
+  const panel = document.querySelector('#catalog-panel');
+  const toggle = document.querySelector('#catalog-toggle');
+  const body = document.querySelector('#catalog-body');
+  if (panel && toggle && body) {
+    panel.dataset.expanded = 'true';
+    toggle.setAttribute('aria-expanded', 'true');
+    body.removeAttribute('hidden');
+    panel.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+});
+
+mobileContinueButton?.addEventListener('click', () => {
+  const lessonId = mobileContinueButton.dataset.lessonId;
+  if (lessonId) openLesson(lessonId);
+  else mobileOutlineButton?.click();
+});
 
 searchInput.addEventListener('input', renderCatalog);
 start();
