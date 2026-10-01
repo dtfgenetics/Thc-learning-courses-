@@ -11,8 +11,10 @@ Build a standards-aware education platform in which scientific evidence supports
 This repository is the authoritative source for the THC Academy certification system.
 
 - **Certification:** dedicated `COURSE-LH-*` courses, `LESSON-LH-*` lessons, course-derived assessments, practicals/capstones, exact-version review evidence, and credential rules.
-- **Encyclopedia:** a separate reference/education system. Encyclopedia material may support optional learning but may not substitute for certification instruction, satisfy course completion, or supply untaught examination content.
-- **Legacy 420 catalog:** historical/provenance material only. It is not the certification curriculum.
+- **Course terminology:** the word **course** is reserved for certification curriculum only.
+- **Encyclopedia:** a separate reference/education system, not a course system. Encyclopedia material may support optional learning but may not substitute for certification instruction, satisfy course completion, or supply untaught examination content.
+- **Other education:** guides, SOPs, glossary entries, tools, calculators, job aids, visual explainers, and similar materials are reference/support content unless explicitly wired into a certification course.
+- **Legacy 420 catalog:** historical/provenance material only. It is not the certification curriculum and must not be presented as an active course catalog.
 
 The machine-enforced boundary is defined in `registry/certification-content-policy.json`.
 

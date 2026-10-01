@@ -24,6 +24,12 @@ When Academy/product work and repository operations both apply, use the Academy 
 
 The skills are the project workflow sources of truth. Keep this file short; update the skills/resources instead of duplicating detailed instructions here.
 
+## Terminology boundary
+
+The word **course** is reserved for certification curriculum. A course object, course lesson, course assessment, course final, course practical, or course completion record must belong to a certification pathway.
+
+Do not label encyclopedia entries, reference articles, guides, SOPs, glossary entries, tools, calculators, visual explainers, job aids, or other non-credential education as courses. These may support certification instruction, but they remain separate content types and do not become courses merely because they are educational.
+
 Before adding or editing Academy material, read `docs/AI-CONTENT-AUTHORING-GUIDE.md`. It defines the search-before-create sequence, canonical directories, object wiring order, status boundaries, generated files, and minimum deterministic checks. New learner downloads belong in `content/downloads/` with files under `apps/web/public/downloads/`; do not model them as legacy 420-catalog resources.
 
 ## Parallel chat/session contract
