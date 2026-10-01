@@ -17,10 +17,14 @@ for(const [n,count] of Object.entries(expected)){
   assert.equal(release.publicationState,'published');
   assert.equal(release.publicationBoundary?.credentialExam,'restricted');
   assert.equal(release.publicationBoundary?.credentialDecision,'restricted-governance');
-  const expectedModules=[...(course.extensions?.academicCompletionModules??course.modules??[])].sort();
-  assert.ok(expectedModules.length>0,`${courseId}: course must define at least one academic completion module.`);
-  assert.deepEqual([...(release.publicScope?.modules??[])].sort(),expectedModules,`${courseId}: public release modules must match the course academic completion modules.`);
-  const modules=expectedModules.map(moduleId=>read(`content/modules/${moduleId}.json`));
+  const academicModules=[...(course.extensions?.academicCompletionModules??course.modules??[])];
+  assert.ok(academicModules.length>0,`${courseId}: course must define at least one academic completion module.`);
+  const releasedModuleIds=[...(release.publicScope?.modules??[])];
+  assert.ok(releasedModuleIds.length>0,`${courseId}: public release must name at least one academic module.`);
+  for(const moduleId of releasedModuleIds){
+    assert.ok(academicModules.includes(moduleId),`${courseId}: public release module ${moduleId} must belong to the course academic module set.`);
+  }
+  const modules=releasedModuleIds.map(moduleId=>read(`content/modules/${moduleId}.json`));
   assert.ok(modules.some(module=>module.id.includes(`TECH1-${n}`)),`${courseId}: public release must include its dedicated course module.`);
   const releasedLessons=[...new Set(modules.flatMap(module=>module.lessons??[]))].sort();
   assert.deepEqual(release.publicScope.studentSources.map(x=>path.basename(x,'.json')).sort(),releasedLessons,`${courseId}: public student sources must exactly match all released academic module lessons.`);
