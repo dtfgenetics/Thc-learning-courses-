@@ -307,7 +307,7 @@ function renderCatalog() {
     if (course.finalAssessment) {
       const final = course.finalAssessment;
       const label = final.purpose === 'credential' ? 'Credential assessment' : 'Course final';
-      const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • provisional ${Number(final.passingScorePercent ?? 0).toFixed(0)}% academic threshold`;
+      const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • current academic passing target ${Number(final.passingScorePercent ?? 0).toFixed(0)}%`;
       details.append(text('p', note, 'course-final-summary'));
       if (final.status === 'published' && final.purpose === 'summative') {
         const finalActions = document.createElement('div');
@@ -496,7 +496,7 @@ function renderModuleAssessment(payload) {
   article.className = 'lesson-article module-assessment';
   article.append(text('p', 'Low-stakes module checkpoint', 'eyebrow'));
   article.append(text('h2', payload.assessment.title));
-  article.append(text('p', `This ${payload.assessment.totalItems}-item checkpoint is formative learning practice. The current ${Number(payload.assessment.passingScorePercent).toFixed(0)}% mastery target is a development target for feedback and remediation, not a credential cut score or certification decision.`, 'callout'));
+  article.append(text('p', `This ${payload.assessment.totalItems}-item checkpoint is low-stakes learning practice. Aim for ${Number(payload.assessment.passingScorePercent).toFixed(0)}% before moving on. Checkpoint results guide study and do not issue a professional credential.`, 'callout'));
   const progressNote = text('p', `0/${payload.assessment.totalItems} answered`, 'status');
   progressNote.setAttribute('aria-live', 'polite');
   article.append(progressNote);
