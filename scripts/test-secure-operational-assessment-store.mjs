@@ -36,9 +36,22 @@ assert.throws(()=>buildSecureOperationalForm({
   items:[item('SECITEM-X-001','COMP-X'),item('SECITEM-X-001','COMP-X')]
 }),/duplicate/);
 
+const controls={
+  accessControlModel:'least-privilege-rbac',
+  leastPrivilegeAccess:true,
+  privilegedAccessAudited:true,
+  encryptionInTransit:true,
+  encryptionAtRest:true,
+  backupRecoveryDefined:true,
+  keyManagementSeparated:true,
+  environmentSeparated:true,
+  publicRepositoryMaterialExcluded:true
+};
+
 const calls=[];
 const store=validateSecureAssessmentStore({
   kind:'private-operational-assessment-store',
+  securityControls:controls,
   async ping(){return true;},
   async bankVersion(){return 'private-bank-v1';},
   async selectOperationalItems(input){calls.push(['select',input]);return [];},
@@ -48,6 +61,31 @@ const store=validateSecureAssessmentStore({
 });
 assert.equal(await store.ping(),true);
 assert.equal(await store.bankVersion(),'private-bank-v1');
+assert.equal(store.securityControls.publicRepositoryMaterialExcluded,true);
 assert.throws(()=>validateSecureAssessmentStore({kind:'public-repository'}),/must provide|prohibited/);
+
+const methodCompleteStore={
+  kind:'private-operational-assessment-store',
+  async ping(){return true;},
+  async bankVersion(){return 'v1';},
+  async selectOperationalItems(){return [];},
+  async recordForm(){},
+  async recordExposure(){},
+  async quarantineItem(){}
+};
+assert.throws(()=>validateSecureAssessmentStore(methodCompleteStore),/securityControls/);
+assert.throws(()=>validateSecureAssessmentStore({
+  ...methodCompleteStore,
+  securityControls:{...controls,privilegedAccessAudited:false}
+}),/privilegedAccessAudited/);
+assert.throws(()=>validateSecureAssessmentStore({
+  ...methodCompleteStore,
+  securityControls:{...controls,accessControlModel:'none'}
+}),/accessControlModel/);
+assert.throws(()=>validateSecureAssessmentStore({
+  ...methodCompleteStore,
+  kind:'development-public-bank',
+  securityControls:controls
+}),/prohibited/);
 
 console.log('Private secure assessment-store and operational form boundary: PASS');
