@@ -2,7 +2,7 @@ name: Technician I course package contract
 
 on:
   pull_request:
-    branches: [dev, staging, main]
+    branches: [main]
     paths:
       - content/courses/COURSE-LH-TECH1-00[2-7].json
       - content/modules/**
@@ -18,7 +18,7 @@ on:
       - scripts/audit-tech1-public-releases.mjs
       - .github/workflows/tech1-course-package-contract.yml
   push:
-    branches: [dev, staging, main, 'feat/tech1-*', 'feat/public-tech1-*', 'chore/advance-active-work-*']
+    branches: [main, 'feat/tech1-*', 'feat/public-tech1-*', 'chore/advance-active-work-*']
     paths:
       - content/courses/COURSE-LH-TECH1-00[2-7].json
       - content/modules/**
@@ -36,6 +36,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: tech1-package-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   package-contract:
