@@ -52,6 +52,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Curriculum validation resolves historical catalog-review attestations.
+          # A shallow checkout makes valid historical tree objects unavailable.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 24
