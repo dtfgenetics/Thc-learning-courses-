@@ -25,11 +25,17 @@ for(const [n,count] of Object.entries(expected)){
   const releasedLessons=[...new Set(modules.flatMap(module=>module.lessons??[]))].sort();
   assert.deepEqual(release.publicScope.studentSources.map(x=>path.basename(x,'.json')).sort(),releasedLessons,`${courseId}: public student sources must exactly match all released academic module lessons.`);
   for(const source of release.publicScope.studentSources) assert.ok(exists(source),`${courseId}: missing public source ${source}`);
-  const assessments=release.publicScope.assessments.map(id=>read(`content/assessments/${id}.json`));
-  const itemIds=assessments.flatMap(a=>a.items||[]);
+  const assessmentEntries=release.publicScope.assessments.map(id=>({id,assessment:read(`content/assessments/${id}.json`)}));
+  const itemIds=assessmentEntries.flatMap(({assessment})=>assessment.items||[]);
   assert.equal(new Set(itemIds).size,itemIds.length,`${courseId}: public assessments must not duplicate item identities across forms.`);
-  assert.equal(itemIds.length,count,`${courseId}: expected ${count} public learning items, found ${itemIds.length}.`);
-  assert.equal(release.publicScope.publicCourseItems,count,`${courseId}: manifest item count mismatch.`);
+  const dedicatedAssessmentIds=assessmentEntries
+    .filter(({id})=>id.includes(`LH-TECH1-${n}`))
+    .map(({id})=>id);
+  const dedicatedItemIds=assessmentEntries
+    .filter(({id})=>dedicatedAssessmentIds.includes(id))
+    .flatMap(({assessment})=>assessment.items||[]);
+  assert.equal(dedicatedItemIds.length,count,`${courseId}: expected ${count} course-owned public learning items, found ${dedicatedItemIds.length}.`);
+  assert.equal(release.publicScope.publicCourseItems,count,`${courseId}: manifest course-owned item count mismatch.`);
   for(const id of itemIds){
     const q=read(`content/questions/${id}.json`);
     assert.ok(['formative','summative'].includes(q.purpose),`${courseId}: credential-purpose item ${id} must not be public.`);
