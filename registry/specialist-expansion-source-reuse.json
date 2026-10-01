@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-09-25",
+  "updated": "2026-10-01",
   "purpose": "Prevent duplicate curriculum during specialist and lead-program expansion by identifying existing canonical courses that may supply reusable objectives, lessons, evidence, assessments or scenarios. A reuse candidate is source material only and does not satisfy a future program requirement until reconciled into the target course and reviewed.",
   "policy": {
     "noAutomaticEquivalence": true,
@@ -396,6 +396,28 @@
           "remainingDepth": [
             "photorealistic mother-stock identity, plant-health and quarantine visual set",
             "human propagation/plant-pathology review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-003",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-PROP-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-001",
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-005",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-003-CLONING-ROOTING-ACCLIMATION",
+          "remainingDepth": [
+            "instructional cutting/root-development/acclimation visual set",
+            "human propagation and controlled-environment review",
             "rendered accessibility review",
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"

@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-003-02",
+  "title": "Rooting Environment, Water Balance & Media Condition",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-003-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANNABIS-CLONAL-ROOTING-2019",
+    "REF-PSU-POTTING-MEDIA-PROPAGATION"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for rooting environment, water balance & media condition within controlled clonal-propagation systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Unrooted cuttings have limited water replacement",
+        "body": "Before functional roots develop, detached shoots can lose water through leaves faster than they can replace it. Temperature, humidity, light, leaf area and airflow influence that demand, so the goal is controlled water balance rather than a universal maximum-humidity rule.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Rooting response is genotype and context dependent",
+        "body": "Cannabis clonal-rooting research demonstrates meaningful variation among genotypes and donor conditions. A slower batch does not by itself prove an environmental failure, and a protocol that performs well for one genotype should not be assumed universal.",
+        "references": [
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      },
+      {
+        "title": "Media condition is evidence, not a calendar",
+        "body": "Root-zone media should be evaluated using the applicable system, method and crop context. Chronic saturation, excessive drying or inappropriate chemistry can confound rooting, while generic pH or EC numbers from another method should not be copied as universal cannabis targets.",
+        "references": [
+          "REF-PSU-POTTING-MEDIA-PROPAGATION"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Using humidity as the only environmental variable worth observing.",
+      "Assuming more water always reduces wilt risk.",
+      "Importing a numeric media target without matching the analytical method and system."
+    ],
+    "practicalApplication": "Compare two rooting-environment records and identify which additional observation would best distinguish water-loss stress, media-condition problems and normal genotype-specific timing.",
+    "summary": "Rooting conditions should be interpreted as an interacting water-balance and developmental system, not as a single target number."
+  }
+}

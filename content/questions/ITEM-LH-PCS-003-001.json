@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A tray is performing poorly, but the record contains only cultivar name and rooting date. Which missing information most limits reconstruction?",
+  "choices": [
+    "Leaf color alone",
+    "Donor/accession ID, cutting batch identity, process version and tray history",
+    "The breeder's marketing description",
+    "The room nickname"
+  ],
+  "correct": 1,
+  "rationale": "Propagation outcomes cannot be traced reliably without source and process identity.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}
