@@ -2,6 +2,7 @@ name: Technician II public academic release
 
 on:
   pull_request:
+    branches: [main]
     paths:
       - 'content/courses/COURSE-LH-TECH2-*.json'
       - 'content/modules/MOD-LH-TECH2-*.json'
@@ -22,7 +23,7 @@ on:
       - 'visuals/TECH2-VISUAL-PRODUCTION-PLAN.json'
       - '.github/workflows/technician-ii-public-release.yml'
   push:
-    branches: [main, staging, dev]
+    branches: [main]
     paths:
       - 'content/courses/COURSE-LH-TECH2-*.json'
       - 'content/modules/MOD-LH-TECH2-*.json'
@@ -41,6 +42,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: tech2-public-release-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate-public-academic-boundary:
