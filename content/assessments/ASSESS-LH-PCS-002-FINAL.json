@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-PCS-002-FINAL",
+  "title": "Mother/Donor Plant Management & Plant Identity — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-PCS-002-01",
+    "LO-LH-PCS-002-02",
+    "LO-LH-PCS-002-03",
+    "LO-LH-PCS-002-04",
+    "LO-LH-PCS-002-05"
+  ],
+  "items": [
+    "ITEM-LH-PCS-002-001",
+    "ITEM-LH-PCS-002-002",
+    "ITEM-LH-PCS-002-003",
+    "ITEM-LH-PCS-002-004",
+    "ITEM-LH-PCS-002-005",
+    "ITEM-LH-PCS-002-006",
+    "ITEM-LH-PCS-002-007",
+    "ITEM-LH-PCS-002-008",
+    "ITEM-LH-PCS-002-009",
+    "ITEM-LH-PCS-002-010",
+    "ITEM-LH-PCS-002-011",
+    "ITEM-LH-PCS-002-012",
+    "ITEM-LH-PCS-002-013",
+    "ITEM-LH-PCS-002-014",
+    "ITEM-LH-PCS-002-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-PROP-001",
+      "items": 9,
+      "cognitiveTarget": "Donor identity, suitability, testing status and lifecycle management"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 3,
+      "cognitiveTarget": "Stock-area biosecurity, quarantine and movement control"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Donor-linked performance analysis and reconstructable decisions"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 5,
+    "targetBankItemsPerCompetency": 25,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PCS-002",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

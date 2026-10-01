@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which donor lifecycle record is strongest?",
+  "choices": [
+    "A nickname and current photo only.",
+    "Accession identity, establishment date, testing status, health events, propagation output, performance trend, holds and disposition history.",
+    "Only the most recent rooting percentage.",
+    "Only final disposal date."
+  ],
+  "correct": 1,
+  "rationale": "Longitudinal records make donor decisions reconstructable.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

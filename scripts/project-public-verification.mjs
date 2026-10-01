@@ -28,7 +28,6 @@ const output = {
     name: record.issuer?.name ?? 'Teaching Healthy Cultivation',
     url: record.issuer?.url ?? 'https://dtfseeds.com/'
   },
-  recipientDisplayName: record.publicRecipientNameConsent === true && typeof record.publicRecipientName === 'string' ? record.publicRecipientName : null,
   issuedAt: record.issuedAt ?? null,
   evidenceSummary: record.publicEvidenceSummary ?? null,
   limitations: definition.limitations ?? [],

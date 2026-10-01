@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-002-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A blade contacts a suspect donor before use on clean stock. What is the strongest response?",
+  "choices": [
+    "Continue if the blade looks clean.",
+    "Follow the facility's validated sanitation/replacement procedure before crossing the biosecurity boundary.",
+    "Wipe it on clothing.",
+    "Use it only on vigorous plants."
+  ],
+  "correct": 1,
+  "rationale": "Plant-contact tools can act as transmission pathways and must follow validated controls.",
+  "references": [
+    "REF-HLVD-TRANSMISSION-2025"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}

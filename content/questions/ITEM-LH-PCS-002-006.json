@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-002-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-002-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which record best supports a donor suitability decision?",
+  "choices": [
+    "Only plant height.",
+    "Identity, condition, health/testing status, recent stress, cutting quality and propagation performance trend.",
+    "Only the cultivar marketing name.",
+    "Only current leaf color."
+  ],
+  "correct": 1,
+  "rationale": "Suitability depends on multiple evidence streams.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-002",
+    "seedBank": true
+  }
+}
