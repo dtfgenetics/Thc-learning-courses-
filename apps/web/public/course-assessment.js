@@ -440,7 +440,7 @@ function stopAssessmentTimer() {
 }
 
 function disableAssessmentInputs(panel) {
-  for (const control of panel.querySelectorAll('.course-assessment-form input, .course-assessment-submit')) control.disabled = true;
+  for (const control of panel.querySelectorAll('.course-assessment-form input, .course-assessment-form select, .course-assessment-submit')) control.disabled = true;
 }
 
 function startAssessmentTimer(panel) {
@@ -506,12 +506,24 @@ function responseForFieldset(fieldset, type) {
     const value = fieldset.querySelector('input[type="number"]')?.value;
     return value === '' || value == null ? null : Number(value);
   }
+  if (type === 'ordering') {
+    const selects = [...fieldset.querySelectorAll('select[data-order-position]')];
+    const values = selects.map((select) => select.value === '' ? null : Number(select.value));
+    return values.every((value) => Number.isInteger(value)) && new Set(values).size === values.length ? values : null;
+  }
+  if (type === 'matching') {
+    const selects = [...fieldset.querySelectorAll('select[data-match-prompt]')];
+    const values = selects.map((select) => select.value || null);
+    return values.every((value) => typeof value === 'string' && value.length > 0) ? values : null;
+  }
   const selected = fieldset.querySelector('input[type="radio"]:checked');
   return selected ? Number(selected.value) : null;
 }
 
 function isAnswered(response, type) {
   if (type === 'multiple-response') return Array.isArray(response) && response.length > 0;
+  if (type === 'ordering') return Array.isArray(response) && response.length > 1 && new Set(response).size === response.length;
+  if (type === 'matching') return Array.isArray(response) && response.length > 1 && response.every((value) => typeof value === 'string' && value.length > 0);
   return response !== null && response !== undefined && response !== '';
 }
 
@@ -573,6 +585,62 @@ function multipleChoiceControl(item, choice, index, fieldset, panel) {
   return label;
 }
 
+function orderingControl(item, fieldset, panel) {
+  const wrap = el('div', '', 'course-assessment-ordering');
+  item.choices.forEach((_, position) => {
+    const row = el('label', '', 'course-assessment-order-row');
+    row.append(el('span', `Position ${position + 1}`, 'course-assessment-order-label'));
+    const select = document.createElement('select');
+    select.dataset.orderPosition = String(position);
+    select.className = 'course-assessment-order-select';
+    select.setAttribute('aria-label', `Order position ${position + 1}`);
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Choose item';
+    select.append(placeholder);
+    item.choices.forEach((choice, choiceIndex) => {
+      const option = document.createElement('option');
+      option.value = String(choiceIndex);
+      option.textContent = choice;
+      option.selected = Array.isArray(item.response) && Number(item.response[position]) === choiceIndex;
+      select.append(option);
+    });
+    select.addEventListener('change', () => persistResponse(panel, item, fieldset));
+    row.append(select);
+    wrap.append(row);
+  });
+  wrap.append(el('p', 'Rank every option once. Duplicate selections are not saved.', 'course-assessment-hint'));
+  return wrap;
+}
+
+function matchingControl(item, fieldset, panel) {
+  const wrap = el('div', '', 'course-assessment-matching');
+  item.matchPrompts.forEach((prompt, promptIndex) => {
+    const row = el('label', '', 'course-assessment-match-row');
+    row.append(el('span', prompt.text, 'course-assessment-match-prompt'));
+    const select = document.createElement('select');
+    select.dataset.matchPrompt = prompt.id;
+    select.className = 'course-assessment-match-select';
+    select.setAttribute('aria-label', `Match for ${prompt.text}`);
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Choose match';
+    select.append(placeholder);
+    item.matchOptions.forEach((option) => {
+      const entry = document.createElement('option');
+      entry.value = option.id;
+      entry.textContent = option.text;
+      entry.selected = Array.isArray(item.response) && item.response[promptIndex] === option.id;
+      select.append(entry);
+    });
+    select.addEventListener('change', () => persistResponse(panel, item, fieldset));
+    row.append(select);
+    wrap.append(row);
+  });
+  wrap.append(el('p', 'Choose one match for each prompt.', 'course-assessment-hint'));
+  return wrap;
+}
+
 function renderAssessmentItem(item, index, panel) {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'course-assessment-item';
@@ -598,6 +666,12 @@ function renderAssessmentItem(item, index, panel) {
     input.value = item.response ?? '';
     input.addEventListener('change', () => persistResponse(panel, item, fieldset));
     fieldset.append(input);
+  } else if (item.type === 'ordering') {
+    fieldset.append(orderingControl(item, fieldset, panel));
+  } else if (item.type === 'matching') {
+    fieldset.append(matchingControl(item, fieldset, panel));
+  } else {
+    fieldset.append(el('p', 'This assessment item type is not supported by the current learner runtime.', 'portal-error'));
   }
   return fieldset;
 }
@@ -613,7 +687,7 @@ function renderQuestionNavigator(panel, itemCount) {
     button.addEventListener('click', () => {
       const target = panel.querySelectorAll('.course-assessment-item')[index];
       target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      target?.querySelector('input')?.focus({ preventScroll: true });
+      target?.querySelector('input, select')?.focus({ preventScroll: true });
     });
     list.append(button);
   }

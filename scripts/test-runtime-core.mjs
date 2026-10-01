@@ -34,7 +34,21 @@ if (valid.credential.status !== 'valid') throw new Error('Credential transition 
 let blocked = false;
 try { transitionCredential(valid.credential, 'issued', { actorId:'SYSTEM' }); } catch { blocked = true; }
 if (!blocked) throw new Error('Invalid credential transition was not blocked');
-const publicView = publicCredentialView(valid.credential, { id:'CRED-CULT-FOUNDATIONS-001', title:'THC Cultivation Foundations Certificate' });
+const definition = { id:'CRED-CULT-FOUNDATIONS-001', title:'THC Cultivation Foundations Certificate' };
+const publicView = publicCredentialView(valid.credential, definition, { now:'2026-09-05T00:14:00.000Z' });
 if ('subjectHash' in publicView || 'assessmentEvidence' in publicView) throw new Error('Public credential projection leaked private fields');
+if (publicView.valid !== true) throw new Error('Valid credential must project valid=true');
+
+const revokedCredential = { ...valid.credential, status:'revoked' };
+if (publicCredentialView(revokedCredential, definition, { now:'2026-09-05T00:14:00.000Z' }).valid !== false) throw new Error('Revoked credential must project valid=false');
+
+const expiredStatusCredential = { ...valid.credential, status:'expired' };
+if (publicCredentialView(expiredStatusCredential, definition, { now:'2026-09-05T00:14:00.000Z' }).valid !== false) throw new Error('Expired credential status must project valid=false');
+
+const expiredByDateCredential = { ...valid.credential, status:'valid', expiresAt:'2026-09-05T00:13:30.000Z' };
+if (publicCredentialView(expiredByDateCredential, definition, { now:'2026-09-05T00:14:00.000Z' }).valid !== false) throw new Error('Past expiresAt must project valid=false even before lifecycle reconciliation');
+
+const futureExpiryCredential = { ...valid.credential, status:'valid', expiresAt:'2026-09-06T00:00:00.000Z' };
+if (publicCredentialView(futureExpiryCredential, definition, { now:'2026-09-05T00:14:00.000Z' }).valid !== true) throw new Error('Future expiresAt must remain valid');
 
 console.log('Runtime core tests passed.');
