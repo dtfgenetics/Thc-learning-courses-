@@ -422,6 +422,28 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-SPACE-BIOSEC-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-PCS-003",
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-004",
+            "COURSE-LH-TECH2-005"
+          ],
+          "newModule": "MOD-LH-PCS-004-BIOSECURITY-TRACEABILITY",
+          "remainingDepth": [
+            "instructional propagation biosecurity/pathway/traceability visual set",
+            "human plant-pathology/biosecurity and propagation review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Who should release held stock back into normal propagation flow?",
+  "choices": [
+    "Any learner who completed this course",
+    "The role authorized by the facility's controlled release procedure using the required evidence",
+    "The first worker who needs the plants",
+    "Whoever collected the sample"
+  ],
+  "correct": 1,
+  "rationale": "This course teaches evidence and escalation, not release authority.",
+  "references": [
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}
