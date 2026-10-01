@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A propagation concern appears across several donor lines that shared tools and one work period. What is the strongest first interpretation?",
+  "choices": [
+    "All donor genetics failed simultaneously",
+    "A shared workflow pathway deserves investigation, but association alone does not prove transmission",
+    "The room is permanently contaminated",
+    "Every plant in the facility is infected"
+  ],
+  "correct": 1,
+  "rationale": "Shared workflow is relevant evidence but does not establish a causal transmission event.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

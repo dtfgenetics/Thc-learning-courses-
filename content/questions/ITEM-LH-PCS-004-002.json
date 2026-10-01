@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why can a visually healthy donor not be treated as confirmed clean stock?",
+  "choices": [
+    "Healthy plants are always mislabeled",
+    "Some infections, including HLVd, may be asymptomatic and require testing-aware controls",
+    "Visual inspection has no value at all",
+    "Only root color matters"
+  ],
+  "correct": 1,
+  "rationale": "Visual health alone is insufficient to exclude asymptomatic infection.",
+  "references": [
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

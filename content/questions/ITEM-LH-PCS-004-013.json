@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-004-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A sanitation checkpoint was skipped. What belongs in the initial deviation record?",
+  "choices": [
+    "A guessed root cause",
+    "Expected control, observed departure, affected scope, immediate containment, evidence and accountable follow-up",
+    "A statement that all stock is contaminated",
+    "Only the operator's name"
+  ],
+  "correct": 1,
+  "rationale": "A useful deviation record starts with reconstructable facts and controls.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

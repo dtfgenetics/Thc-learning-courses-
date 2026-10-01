@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-004-05",
+  "title": "Sanitation Deviations, Verification, CAPA & Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-004-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-IPM-001",
+    "REF-PSU-HIGH-TUNNEL-SANITATION-2025",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for sanitation deviations, verification, capa & handoff in propagation and clean-stock operations.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Record what was observed and what control failed",
+        "body": "A deviation record should identify the expected control, observed departure, affected material/area, immediate containment, evidence preserved and responsible follow-up. It should not invent a root cause before investigation.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Verification is evidence that the process occurred",
+        "body": "Completed checklists, tool-change logs, area-release records and traceable sanitation steps can verify execution. Verification of execution is different from proving pathogen eradication.",
+        "references": [
+          "REF-PSU-HIGH-TUNNEL-SANITATION-2025"
+        ]
+      },
+      {
+        "title": "Corrective action should target the demonstrated failure mode",
+        "body": "When evidence supports a workflow weakness, corrective action can address training, layout, sequencing, labeling or process controls. Effectiveness requires follow-up evidence rather than a closed form alone.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Writing a root cause before evidence supports it.",
+      "Treating a completed sanitation checklist as proof that all biological risk is eliminated.",
+      "Closing a deviation without an accountable follow-up or effectiveness check."
+    ],
+    "practicalApplication": "Build a biosecurity deviation and handoff record from a simulated propagation breach, separating observation, containment, investigation question, corrective action owner and effectiveness evidence.",
+    "summary": "Strong biosecurity records preserve what happened, what was controlled, what remains uncertain and who owns the next decision."
+  }
+}
