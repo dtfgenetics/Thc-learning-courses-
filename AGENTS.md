@@ -25,3 +25,17 @@ When Academy/product work and repository operations both apply, use the Academy 
 The skills are the project workflow sources of truth. Keep this file short; update the skills/resources instead of duplicating detailed instructions here.
 
 Before adding or editing Academy material, read `docs/AI-CONTENT-AUTHORING-GUIDE.md`. It defines the search-before-create sequence, canonical directories, object wiring order, status boundaries, generated files, and minimum deterministic checks. New learner downloads belong in `content/downloads/` with files under `apps/web/public/downloads/`; do not model them as legacy 420-catalog resources.
+
+## Parallel chat/session contract
+
+Every new concurrent Academy task must use its own session branch:
+
+`work/academy/<task>/<session-id>`
+
+Do not reuse another chat's mutable branch. Resume is explicit and should point to the exact branch/PR being continued.
+
+Keep curriculum, assessments, practicals, credentials, evidence, and Academy runtime changes in this canonical repository. Use one PR per session and run the narrow relevant checks first, followed by the repository's required validation/release checks before integration.
+
+Human-review, pilot, calibration, accessibility, security, and credential authorization evidence must remain fail-closed. Parallel work must never fabricate or bypass missing human/operational evidence just to unblock another session.
+
+Production/integration consumers should reference an exact validated commit/version after merge rather than copying mutable Academy source into another repo.
