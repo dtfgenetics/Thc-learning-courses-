@@ -866,6 +866,7 @@ function renderLesson(lesson) {
   lessonView.replaceChildren(article);
   lessonView.focus();
   renderCatalog();
+  renderMobileLearningBar();
 }
 
 async function openLesson(id) {
