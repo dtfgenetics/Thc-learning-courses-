@@ -59,6 +59,12 @@ The operational implementation must define and approve:
 - secure deletion/retirement procedure;
 - vendor/subprocessor controls when an external delivery system is used.
 
+## Runtime provider contract
+
+The API adapter refuses an operational provider unless it identifies itself as `private-operational-assessment-store`, implements the required operational methods, and declares a `securityControls` capability block. The declaration must state that least-privilege access, privileged-access auditing, encryption in transit and at rest, backup/recovery, key-management separation, environment separation, and exclusion of public-repository credential material are enabled. The provider must also declare an approved least-privilege RBAC or ABAC access-control model.
+
+This declaration is a software boundary, **not** evidence that the controls have been independently reviewed or approved. The release gate remains fail-closed until a real provider is deployed and its security/privacy, recovery, access, audit, and operational controls are verified with real evidence.
+
 ## Form delivery
 
 The delivery service receives only the minimum secure content required for the assigned form/session. Client-visible payloads must not include unused keys, bank metadata, hidden items, scoring rationales or other forms. Randomizing public items is not a security control.
