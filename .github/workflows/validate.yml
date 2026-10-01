@@ -2,9 +2,9 @@ name: Curriculum quality audit
 
 on:
   push:
-    branches: [dev, staging, main]
+    branches: [main]
   pull_request:
-    branches: [dev, staging, main]
+    branches: [main]
 
 permissions:
   contents: read
