@@ -2,6 +2,7 @@ name: Technician II public academic release
 
 on:
   pull_request:
+    branches: [main]
     paths:
       - 'content/courses/COURSE-LH-TECH2-*.json'
       - 'content/modules/MOD-LH-TECH2-*.json'
@@ -22,7 +23,7 @@ on:
       - 'visuals/TECH2-VISUAL-PRODUCTION-PLAN.json'
       - '.github/workflows/technician-ii-public-release.yml'
   push:
-    branches: [main, staging, dev]
+    branches: [main]
     paths:
       - 'content/courses/COURSE-LH-TECH2-*.json'
       - 'content/modules/MOD-LH-TECH2-*.json'
@@ -42,11 +43,19 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: tech2-public-release-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-public-academic-boundary:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Curriculum validation resolves historical catalog-review attestations.
+          # A shallow checkout makes valid historical tree objects unavailable.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 24

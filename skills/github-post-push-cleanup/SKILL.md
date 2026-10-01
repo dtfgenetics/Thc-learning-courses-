@@ -9,8 +9,8 @@ Use this skill after:
 - a GitHub Actions bot commit;
 - a conflict-resolution push;
 - a PR retarget or branch update;
-- a merge into `dev`, `staging`, or `main`;
-- a promotion `dev -> staging` or `staging -> main`;
+- a merge into `main`;
+- any explicit reconciliation or release-promotion operation;
 - a release-related commit/tag when observable.
 
 ## Post-push loop
@@ -18,9 +18,9 @@ Use this skill after:
 1. Resolve the exact new head SHA.
 2. Find the PR associated with the pushed branch, if any.
 3. Confirm the PR targets the correct branch:
-   - ordinary work -> `dev`
-   - integration promotion -> `staging`
-   - release-candidate promotion -> `main`
+   - ordinary work -> `main`
+   - legacy `dev`/`staging` work -> quarantine or selective harvest onto a fresh `main`-based branch
+   - production release -> explicit release workflow/tag from an exact validated `main` commit
 4. Inspect changed files/diff for accidental unrelated changes.
 5. Check mergeability against the current target.
 6. Inspect workflow runs tied to the new head SHA.
@@ -33,8 +33,8 @@ Use this skill after:
 13. Classify the merged source branch as LANDED/DELETE-CANDIDATE; never keep using it as a trunk.
 14. Close or mark superseded duplicate PRs/issues made obsolete by the merge.
 15. Re-check open PRs for incorrect base branches or new conflicts caused by the integration.
-16. If `dev` is green and an intentional release candidate is ready, prepare/inspect `dev -> staging`; do not promote unrelated incomplete work automatically.
-17. If `staging` is green and accepted for the intended scope, prepare/inspect `staging -> main`.
+16. Do not automatically promote legacy `dev` or `staging`; compare and selectively harvest unique useful work onto a fresh branch from current `main`.
+17. If a future branch-promotion model is deliberately restored, require a dedicated reconciliation change with green current-head checks before using it.
 18. Never trigger production publication merely because `main` changed; production release remains explicit.
 
 ## Cleanup after merge
@@ -45,7 +45,7 @@ After a successful merge:
 - confirm generated registry/manifests match source;
 - identify duplicate branches/PRs now made obsolete;
 - update the governing issue/checklist where useful;
-- verify no ordinary PR is still targeting `main` or `staging` incorrectly;
+- verify ordinary PRs target `main` and no new work is accidentally based on quarantined `dev` or `staging`;
 - verify no stale workflow run is being mistaken for the newest state;
 - preserve unique work before marking branches for deletion.
 

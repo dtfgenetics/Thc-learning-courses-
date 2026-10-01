@@ -1,43 +1,41 @@
 # GitHub Release / Promotion Manager Skill
 
 ## Purpose
-Control promotion from `dev` to `staging` to `main` and explicit production release without bypassing validation or mixing ordinary feature work into release boundaries.
+Control integration to canonical `main` and explicit production release without bypassing validation or reviving quarantined branch history.
 
-## Lifecycle
-`feature/content/fix/chore -> dev -> staging -> main -> explicit release`
+## Current lifecycle
+`short-lived feature/content/fix/chore branch -> main -> explicit production release`
 
-## Dev to staging
-Before promotion:
-- confirm `dev` is green on its current SHA;
-- identify the exact integration batch included;
+Legacy `dev` and `staging` are quarantined. They are not ordinary integration or promotion targets unless a dedicated reconciliation change explicitly restores that model after proving it safe.
+
+## Work branch to main
+Before integration:
+- confirm the work branch was created from a current validated `main` baseline;
+- identify the exact scope included;
 - verify no known blocking regression;
-- verify staging-specific environment/config expectations;
-- open or update one canonical `dev -> staging` PR;
-- avoid bundling unrelated direct staging commits.
-
-After merge:
-- invoke post-push cleanup on `staging`;
-- verify checks on the merged staging SHA;
-- run/inspect staging smoke tests where available;
-- record blockers before any main promotion.
-
-## Staging to main
-Before promotion:
-- confirm staging acceptance for the promoted scope;
-- confirm current staging SHA and checks;
-- verify database migration/rollback implications when relevant;
-- verify deployment/release behavior is understood;
-- open or update one canonical `staging -> main` PR.
+- compare changed files for unrelated or cross-session contamination;
+- run the narrow relevant tests and inspect current-head CI;
+- target one focused PR at `main`.
 
 After merge:
 - invoke post-push cleanup on `main`;
-- verify checks and expected main SHA;
-- do not infer production deployment solely from a main merge.
+- verify checks on the merged `main` SHA;
+- verify generated registries/manifests remain deterministic;
+- do not infer production deployment solely from a `main` merge.
+
+## Legacy branch reconciliation
+For useful work found on `dev`, `staging`, or another stale branch:
+- compare actual file content and commit intent against current `main`;
+- classify changes as already landed, obsolete/conflicting, or uniquely useful;
+- create a fresh branch from current `main`;
+- port only the uniquely useful pieces;
+- run current tests and open a focused PR to `main`;
+- never merge stale history wholesale merely to restore ancestry.
 
 ## Production release
 Production release must remain explicit. Before release:
 - verify release workflow/tag convention;
-- verify exact commit and version/scope;
+- verify exact `main` commit and version/scope;
 - run/inspect required production release checks;
 - preserve rollback reference;
 - ensure secrets/environment configuration are outside Git.
@@ -50,11 +48,11 @@ After release:
 - document exact unresolved infrastructure/admin blocker if verification cannot be completed.
 
 ## Rules
-- Never promote a known failing integration state.
-- Never use `main` as an ordinary feature integration branch.
+- Never integrate a known failing state.
+- Never use legacy `dev` or `staging` as an ordinary work target while they are quarantined.
 - Never weaken release gates to make a desired release pass.
 - Never claim a release succeeded merely because a tag/workflow was created.
-- Prefer one canonical promotion PR per boundary instead of multiple competing promotion PRs.
+- Prefer one focused PR per work session and an exact validated `main` SHA for release.
 
 ## Completion standard
-Promotion is complete only after the target branch's resulting SHA is verified, expected checks pass, post-push cleanup is complete, and any deployment/release effects are confirmed or precisely blocked.
+Integration or release work is complete only after the resulting target SHA is verified, expected checks pass, post-push cleanup is complete, and any deployment/release effects are confirmed or precisely blocked.

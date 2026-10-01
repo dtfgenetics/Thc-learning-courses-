@@ -2,7 +2,7 @@ name: Course 1 finish audit
 
 on:
   pull_request:
-    branches: [dev, staging, main]
+    branches: [main]
     paths:
       - content/courses/COURSE-LH-TECH1-001.json
       - content/modules/MOD-LH-TECH1-001-*.json
@@ -30,7 +30,7 @@ on:
       - scripts/check-course1-material-production-quality.mjs
       - .github/workflows/course1-finish-audit.yml
   push:
-    branches: [dev, staging, main, 'feat/course1-finish-*', 'fix/course1-*']
+    branches: [main, 'feat/course1-finish-*', 'fix/course1-*']
     paths:
       - content/courses/COURSE-LH-TECH1-001.json
       - content/modules/MOD-LH-TECH1-001-*.json
@@ -60,6 +60,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: course1-finish-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   course1-finish:

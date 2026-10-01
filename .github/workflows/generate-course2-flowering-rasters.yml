@@ -1,19 +1,19 @@
 name: Generate Course 2 Flowering Rasters
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/generate-course2-flowering-foundation-rasters.py"
-      - ".github/workflows/generate-course2-flowering-rasters.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
+  pull-requests: write
+
+concurrency:
+  group: course2-flowering-raster-generation-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   generate:
-    if: github.actor != 'github-actions[bot]'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -51,15 +51,26 @@ jobs:
               print(path, im.size, len(data), hashlib.sha256(data).hexdigest())
           PY
 
-      - name: Commit generated raster assets
+      - name: Open PR for generated raster assets
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add apps/web/public/assets/course2/flower-photoperiod-dark-period.webp
           git add apps/web/public/assets/course2/flower-trichome-representative-sampling.webp
           if git diff --cached --quiet; then
             echo "Raster assets already match generator output."
             exit 0
           fi
+
+          branch="assets/course2-flowering-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
           git commit -m "Generate Course 2 flowering foundation rasters"
-          git push
+          git push -u origin "$branch"
+
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "Generate Course 2 flowering foundation rasters" \
+            --body "Regenerates the governed Course 2 flowering raster assets from the repository generator. Normal main checks must pass before merge."

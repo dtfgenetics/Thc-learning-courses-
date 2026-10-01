@@ -60,11 +60,10 @@
     "directMutation": false,
     "integrationOwner": "dtfgenetics/Thc",
     "promotionFlow": [
-      "dev",
-      "staging",
+      "short-lived work branch",
       "main",
       "explicit production release"
     ],
-    "notes": "Academic publication does not authorize professional credentials; human/professional evidence gates remain fail-closed."
+    "notes": "Current main is the canonical integration branch. Legacy dev/staging are quarantined until deliberately reconciled. Academic publication does not authorize professional credentials; human/professional evidence gates remain fail-closed."
   }
 }
