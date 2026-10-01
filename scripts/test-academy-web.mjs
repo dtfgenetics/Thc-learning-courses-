@@ -69,6 +69,9 @@ try {
   assert.match(appClientText, /does not by itself restrict access to public academic study/, 'credential pathway prerequisite must not be presented as a public-study lock');
   assert.match(appClientText, /Take graded course final/, 'catalog should expose graded final launch actions');
   assert.match(appClientText, /launchCourseAssessment\(course\.id, launch\)/, 'graded final launcher must be course-specific');
+  assert.doesNotMatch(appClientText, /practice is being expanded/i, 'published learner UI must not expose unfinished-practice placeholder copy');
+  assert.match(appClientText, /renderMobileLearningBar/, 'learner runtime should maintain the compact mobile progress/continue control');
+  assert.match(homeHtml, /id="mobile-learning-bar"/, 'Academy shell should include the mobile learning progress control');
 
   const assessmentClient = await fetch(`${base}/course-assessment.js`);
   assert.equal(assessmentClient.status, 200);
