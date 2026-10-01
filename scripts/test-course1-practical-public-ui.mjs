@@ -35,9 +35,9 @@ for (const marker of [
   'Print practical',
   'The practical is public academic content.',
   'Personal assessor results remain private learner records.',
-  'provisional academic development threshold',
-  'pending pilot evidence and documented standard setting',
-  'not a Technician I credential cut score',
+  'current academic passing target',
+  'Professional certification uses a separate validation, standard-setting, and release process.',
+  'separate validation, standard-setting, and release process',
   'window.print()'
 ]) assert.ok(js.includes(marker), `public practical UI missing contract: ${marker}`);
 
@@ -75,4 +75,4 @@ for (const marker of [
 assert.ok(css.includes('min-height: 44px'), 'public practical actions must retain accessible touch-target sizing');
 assert.ok(css.includes('.course-practical-personal-status'), 'private result status needs a distinct visual region');
 
-console.log('Course 1 public academic practical learner UI, privacy, synchronization, extensibility, provisional-threshold, responsive, certification-boundary, and print contracts passed.');
+console.log('Course 1 public academic practical learner UI, privacy, synchronization, extensibility, academic-target, responsive, certification-boundary, and print contracts passed.');
