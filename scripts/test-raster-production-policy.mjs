@@ -6,22 +6,45 @@ const root=process.cwd();
 const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const raster=['png','webp','jpeg','jpg'];
 const releaseRaster=['png','webp','jpg','jpeg'];
+const technicianIRegistries=new Map(Array.from({length:5},(_,index)=>index+2).map((n)=>[n,read(`visuals/COURSE${n}-ASSET-REGISTRY.json`)]));
+const producedTechnicianIAssetIds=new Set([...technicianIRegistries.values()].flatMap((registry)=>(registry.assets??[]).filter((asset)=>asset.status==='produced').map((asset)=>asset.id)));
+const tech2Plan=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
+const producedTech2ConceptIds=new Set((tech2Plan.courses??[]).flatMap((course)=>course.concepts??[]).filter((concept)=>concept.status==='approved' || concept.rasterReplacement?.status==='owner-approved-production-release').map((concept)=>concept.conceptId));
 
 for(let n=2;n<=6;n++){
-  const registry=read(`visuals/COURSE${n}-ASSET-REGISTRY.json`);
+  const registry=technicianIRegistries.get(n);
   assert.equal(registry.policy?.svgProductionTarget,false,`Course ${n}: SVG must not be the production target`);
   assert.equal(registry.policy?.legacySvgCompatibilityAllowed,false,`Course ${n}: SVG must not remain an active learner compatibility path after raster cutover`);
   assert.equal(registry.policy?.rasterReplacementRequired,false,`Course ${n}: raster replacement is complete`);
   assert.deepEqual(registry.policy?.productionInstructionalFormats,raster,`Course ${n}: production raster format policy drift`);
   for(const asset of registry.assets??[]){
-    if(asset.status!=='produced') continue;
+    if(asset.status === 'planned'){
+      assert.ok(asset.productionSpec, `${asset.id}: planned asset requires a production specification`);
+      assert.equal(asset.productionSpec.svgAllowed,false, `${asset.id}: planned production target must remain raster-only`);
+      assert.ok(Array.isArray(asset.productionSpec.requiredFormats) && asset.productionSpec.requiredFormats.includes('webp'), `${asset.id}: planned production formats must include WebP`);
+      assert.ok((asset.productionSpec.minimumShortSidePx ?? 0) >= 1600, `${asset.id}: planned raster must keep the high-resolution floor`);
+      continue;
+    }
+    if(asset.status === 'retired'){
+      assert.ok(typeof asset.retiredReason === 'string' && asset.retiredReason.trim(), `${asset.id}: retired asset requires a reason`);
+      assert.ok(typeof asset.supersededBy === 'string' && asset.supersededBy.trim(), `${asset.id}: retired asset requires a replacement identity`);
+      assert.ok(producedTechnicianIAssetIds.has(asset.supersededBy) || producedTech2ConceptIds.has(asset.supersededBy), `${asset.id}: retired replacement must resolve to a produced governed Technician I asset or approved Technician II concept`);
+      continue;
+    }
+    assert.equal(asset.status,'produced',`${asset.id}: active governed asset must be produced`);
     assert.equal(path.extname(asset.sourcePath??'').toLowerCase(),'.webp',`${asset.id}: active production source must be WebP`);
     assert.equal(asset.assetLifecycle,'production-raster-active',`${asset.id}: raster lifecycle drift`);
     if(asset.nativeRaster){
       assert.equal(asset.nativeRaster.status,'owner-approved-production-release',`${asset.id}: native raster lifecycle drift`);
       assert.equal(asset.nativeRaster.releaseApproved,true,`${asset.id}: owner-approved native raster release required`);
-      assert.equal(asset.nativeRaster.format,'webp',`${asset.id}: native delivery format drift`);
-      assert.equal(asset.nativeRaster.sourceMasterFormat,'png',`${asset.id}: native master format drift`);
+      assert.equal(asset.nativeRaster.format ?? asset.nativeRaster.encoding,'webp',`${asset.id}: native delivery format drift`);
+      if (asset.nativeRaster.sourceMasterFormat !== undefined) {
+        assert.equal(asset.nativeRaster.sourceMasterFormat,'png',`${asset.id}: native master format drift`);
+      } else {
+        assert.ok(Array.isArray(asset.nativeRaster.allowedFormats) && asset.nativeRaster.allowedFormats.includes('webp'), `${asset.id}: native raster must explicitly allow WebP delivery`);
+        assert.ok(typeof asset.nativeRaster.generatedFrom === 'string' && asset.nativeRaster.generatedFrom.trim(), `${asset.id}: native raster generator provenance required`);
+        assert.ok(Math.min(asset.nativeRaster.pixelDimensions?.width ?? 0, asset.nativeRaster.pixelDimensions?.height ?? 0) >= 1600, `${asset.id}: native raster dimensions must meet the high-resolution floor`);
+      }
     }else{
       assert.equal(asset.rasterReplacement?.status,'owner-approved-production-release',`${asset.id}: released raster lifecycle drift`);
       assert.equal(asset.rasterReplacement?.releaseApproved,true,`${asset.id}: owner-approved academic raster release required`);
@@ -48,7 +71,7 @@ for(const asset of course1Svg){
   assert.equal(asset.rasterReplacement?.encoding,'png',`${asset.id}: Course 1 master must remain PNG`);
 }
 
-const tech2=read('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
+const tech2=tech2Plan;
 assert.equal(tech2.policy?.productionFormatPolicy?.svgReleaseAllowed,false,'Technician II: SVG release must remain prohibited');
 assert.deepEqual(tech2.policy?.productionFormatPolicy?.allowedReleasedExtensions,releaseRaster);
 for(const course of tech2.courses??[]){
