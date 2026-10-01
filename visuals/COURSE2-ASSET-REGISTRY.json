@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 9,
   "courseId": "COURSE-LH-TECH1-002",
   "policy": {
     "expandable": true,
@@ -635,6 +635,144 @@
         "driveFileUrl": "https://drive.google.com/file/d/1frurg0HF-WpsWx_-EPAdjaJZFMv64TdO/view"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-FLOWER-PHOTOPERIOD-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Photoperiod, dark interval and flowering-transition signal",
+      "primaryLessons": [
+        "LESSON-FLOWER-PHOTO-002"
+      ],
+      "references": [
+        "REF-LIGHT-001",
+        "REF-CANNABIS-PHOTOPERIOD-2023-001"
+      ],
+      "purpose": "Teach the difference between photoperiod and DLI, show the intended light/dark cycle versus an interrupted dark period, and illustrate that flowering response is genotype dependent rather than governed by one universal 12/12 threshold.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "scientific-comparison-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal. Use clear clock/light-dark labels and put full explanation in lesson caption/body.",
+        "style": "Professional cannabis plant-science education; clean branded scientific diagram, not decorative poster art.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent light/dark distinction"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course2/flower-photoperiod-dark-period.webp",
+      "sourcePath": "apps/web/public/assets/course2/flower-photoperiod-dark-period.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/flower-photoperiod-dark-period.webp",
+      "assetLifecycle": "production-raster-active",
+      "accessibility": {
+        "alt": "Scientific cannabis flowering diagram comparing photoperiod with daily light integral and showing an uninterrupted dark interval beside a dark interval interrupted by a bright work light."
+      },
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "allowedFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "generatedFrom": "scripts/generate-course2-flowering-foundation-rasters.py",
+        "generatedByWorkflow": ".github/workflows/generate-course2-flowering-rasters.yml",
+        "productionCommit": "043a67c38e237ccaa7e9232903ee2c491d8df728",
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1800
+        },
+        "encoding": "webp",
+        "automatedQa": [
+          "GitHub Actions generation workflow completed successfully",
+          "WEBP format verified on runner",
+          "shortest side verified at or above 1600 px",
+          "deterministic source generator retained in repository",
+          "lesson, reference and accessibility mappings retained"
+        ],
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls",
+        "note": "Deterministically generated scientific raster diagram. It distinguishes photoperiod from DLI and does not present 12/12 as a universal optimum."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-FLOWER-MATURITY-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Representative trichome maturity sampling across canopy positions",
+      "primaryLessons": [
+        "LESSON-FLOWER-MATURITY-003"
+      ],
+      "references": [
+        "REF-CANNABIS-TRICHOME-MATURATION-2023-001",
+        "REF-TRICHOME-BIOLOGY-2021-001"
+      ],
+      "purpose": "Teach representative maturity sampling by comparing matched floral tissues from upper, middle and lower canopy positions over repeated dates, while showing asynchronous clear/cloudy/amber trichome development and explicitly avoiding a universal amber-percentage harvest rule.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "scientific-macro-illustration",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Use only concise labels for canopy position, tissue type and date. Put interpretation and evidence limitations in course text.",
+        "style": "High-resolution scientific cannabis macro illustration with realistic glandular trichome morphology, neutral lighting, no yellow filter, and no stylized cartoon treatment. It must be labeled and described as an illustration rather than a literal photomicrograph.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "described canopy position and trichome-state differences"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course2/flower-trichome-representative-sampling.webp",
+      "sourcePath": "apps/web/public/assets/course2/flower-trichome-representative-sampling.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course2/flower-trichome-representative-sampling.webp",
+      "assetLifecycle": "production-raster-active",
+      "accessibility": {
+        "alt": "Scientific macro illustration of representative cannabis floral-bract sampling from upper, middle, and lower canopy positions across three dates, showing mixed clear, cloudy, and amber glandular trichome states."
+      },
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "allowedFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "generatedFrom": "scripts/generate-course2-flowering-foundation-rasters.py",
+        "generatedByWorkflow": ".github/workflows/generate-course2-flowering-rasters.yml",
+        "productionCommit": "043a67c38e237ccaa7e9232903ee2c491d8df728",
+        "pixelDimensions": {
+          "width": 2400,
+          "height": 1800
+        },
+        "encoding": "webp",
+        "automatedQa": [
+          "GitHub Actions generation workflow completed successfully",
+          "WEBP format verified on runner",
+          "shortest side verified at or above 1600 px",
+          "deterministic source generator retained in repository",
+          "lesson, reference and accessibility mappings retained"
+        ],
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls",
+        "note": "Deterministically generated scientific macro illustration, not a photomicrograph. It teaches representative repeated sampling and does not imply a universal amber-percentage harvest threshold."
+      }
     }
   ],
   "ownerReleaseApproval": {

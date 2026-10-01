@@ -3,7 +3,6 @@ import path from 'node:path';
 
 const root = process.cwd();
 const registries = [
-  'visuals/FLOWERING-FOUNDATION-ASSET-REGISTRY.json',
   'visuals/COURSE2-ASSET-REGISTRY.json',
   'visuals/COURSE3-ASSET-REGISTRY.json',
   'visuals/COURSE4-ASSET-REGISTRY.json',
