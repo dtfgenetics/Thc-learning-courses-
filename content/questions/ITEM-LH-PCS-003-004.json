@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-PCS-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Fresh unrooted cuttings wilt while media remains visibly moist. Which interpretation is most defensible?",
+  "choices": [
+    "Moist media proves water supply to leaves is adequate",
+    "Leaf water loss may exceed the cutting's limited replacement capacity before functional roots form",
+    "The genotype cannot be cloned",
+    "More fertilizer is necessarily required"
+  ],
+  "correct": 1,
+  "rationale": "Before rooting, water replacement is limited even when the rooting medium contains water.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

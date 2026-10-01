@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two clone trays become physically mixed before labels are verified. What is the strongest response?",
+  "choices": [
+    "Relabel by appearance",
+    "Hold the unresolved material and recover identity from controlled records before downstream mixing",
+    "Combine the trays under one new cultivar name",
+    "Use rooting speed to infer identity"
+  ],
+  "correct": 1,
+  "rationale": "Identity uncertainty should be contained rather than guessed from phenotype or performance.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should cutting preparation details be standardized and recorded?",
+  "choices": [
+    "To guarantee identical rooting across genotypes",
+    "To make later batch comparisons interpretable and reduce uncontrolled process variation",
+    "To eliminate the need for donor records",
+    "To prove every failed cutting was caused by the environment"
+  ],
+  "correct": 1,
+  "rationale": "Standardized preparation improves traceability and comparison but does not erase biological variation.",
+  "references": [
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-003-05",
+  "title": "Batch Performance, Controlled Change & Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-003-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-CANNABIS-CLONAL-ROOTING-2019",
+    "REF-PROP-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for batch performance, controlled change & handoff within controlled clonal-propagation systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Measure more than final rooting percentage",
+        "body": "Useful propagation review can include number started, survival, rooting proportion, timing distribution, loss stage, acclimation loss and handoff count. These measures distinguish where performance changed.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Stratify before blaming the protocol",
+        "body": "Genotype, donor, date, operator, tray position and process version can all structure the data. Comparing those strata helps identify whether an apparent trend is localized or system-wide without converting correlation into causation.",
+        "references": [
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      },
+      {
+        "title": "Controlled improvement requires a traceable test",
+        "body": "When evidence supports a process question, change one defined factor under authorized conditions, preserve the comparison and document the decision. A production batch should not become an undocumented experiment.",
+        "references": [
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Reporting only a final success percentage and losing failure-stage information.",
+      "Combining genotypes before checking whether their rooting distributions differ.",
+      "Changing several variables together and then claiming one caused the outcome."
+    ],
+    "practicalApplication": "Review a multi-batch propagation dataset, identify the strongest supported pattern, state at least one alternative explanation and define a controlled next test plus handoff record.",
+    "summary": "Propagation improvement depends on stratified batch evidence, controlled changes and records that preserve uncertainty as well as results."
+  }
+}

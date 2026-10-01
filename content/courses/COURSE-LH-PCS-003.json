@@ -1,0 +1,64 @@
+{
+  "id": "COURSE-LH-PCS-003",
+  "title": "Cloning, Rooting Environment & Acclimation",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Propagation & Clean Stock Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Propagation & Clean Stock Specialist pathway",
+    "Cultivation personnel responsible for vegetative propagation, rooting performance, acclimation and propagation batch records"
+  ],
+  "prerequisites": [
+    "COURSE-LH-PCS-001 and COURSE-LH-PCS-002 or approved equivalents",
+    "Cultivation Technician II propagation troubleshooting competency or approved equivalent"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Cannabis-specific clonal-propagation evidence supports genotype-dependent rooting and the need to treat rooting response as context dependent. Reviewed propagation literature supports adventitious rooting and acclimatization concepts. Facility SOPs control exact cutting dimensions, products, environmental targets, media, sanitation chemistry and release criteria; this course does not convert study-specific values into universal setpoints.",
+  "assessmentPolicy": "The dedicated specialist assessment is development-only until technical/assessment review, accessibility review and pilot evidence are complete. Learners analyze propagation evidence and controlled process decisions; course completion does not authorize unapproved hormone, pesticide, sanitation, destruction/disposition or production-protocol changes.",
+  "description": "Develops specialist control of clonal propagation from cutting intake through adventitious rooting and acclimation, emphasizing water-balance reasoning, rooting-environment evidence, failure localization, genotype-aware batch analysis and controlled process improvement.",
+  "modules": [
+    "MOD-LH-PCS-003-CLONING-ROOTING-ACCLIMATION"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-ENV-VPD-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PCS-003-FINAL",
+  "learningOutcomes": [
+    "Build a reconstructable clonal-propagation batch workflow that preserves donor identity, cutting condition, process steps and downstream handoff.",
+    "Interpret rooting-environment evidence in terms of cutting water balance and developmental state without treating one humidity, temperature or light value as universally correct.",
+    "Distinguish failures occurring during cutting survival, root initiation, root development and post-root acclimation and select the next useful observation or measurement.",
+    "Design a staged acclimation plan that increases normal production demand only as rooted cuttings demonstrate adequate response.",
+    "Analyze genotype- and batch-linked propagation performance, separate correlation from cause and propose a controlled next test with traceable records."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PROP-CLEAN-STOCK-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PCS-001",
+      "COURSE-LH-PCS-002",
+      "COURSE-LH-TECH1-005",
+      "COURSE-LH-TECH2-005",
+      "COURSE-PROP-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PCS-003-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}
