@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PCS-004-BIOSECURITY-TRACEABILITY",
+  "title": "Propagation Sanitation, Biosecurity & Traceability",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PCS-004-01",
+    "LESSON-LH-PCS-004-02",
+    "LESSON-LH-PCS-004-03",
+    "LESSON-LH-PCS-004-04",
+    "LESSON-LH-PCS-004-05"
+  ],
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering propagation contamination pathways, sanitation workflow, movement controls, quarantine/hold states, testing boundaries, lot genealogy, breach reconstruction and corrective-action records.",
+  "estimatedMinutes": 330,
+  "learningOutcomes": [
+    "Map biological and operational contamination pathways through a propagation system and identify where layered controls can interrupt spread.",
+    "Design a clean-to-dirty propagation workflow that controls tools, surfaces, people and plant movement without substituting generic advice for facility sanitation SOPs.",
+    "Apply quarantine, hold, testing-status and controlled-release concepts to suspect propagation material while preserving authority boundaries and uncertainty.",
+    "Build reconstructable donor-to-cutting-to-tray-to-handoff traceability and use it to contain and investigate an identity or biosecurity breach.",
+    "Evaluate sanitation and biosecurity deviations using observable evidence, document corrective actions and create an accountable handoff without claiming unsupported eradication or cleanliness."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

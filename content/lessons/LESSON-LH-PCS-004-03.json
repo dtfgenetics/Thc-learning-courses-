@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-004-03",
+  "title": "Quarantine, Hold Status, Testing Context & Controlled Release",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-004-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for quarantine, hold status, testing context & controlled release in propagation and clean-stock operations.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Hold status preserves uncertainty",
+        "body": "Suspect material should be kept from routine downstream movement while identity, symptoms, test status or exposure history are resolved. A hold is a control state, not a diagnosis.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Test results need context",
+        "body": "A test result belongs with sample identity, date, tissue/sample context, method and laboratory or procedure record. A single negative result should not be described as a permanent guarantee of clean stock.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001"
+        ]
+      },
+      {
+        "title": "Release requires authority and defined evidence",
+        "body": "Returning held material to normal flow is a controlled decision. The course teaches what evidence should be preserved and when to escalate; it does not grant authority to release, destroy or dispose of stock.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating quarantine as proof that material is infected.",
+      "Treating one negative test as permanent clean-stock certification.",
+      "Releasing held material because production needs it before the release decision is documented."
+    ],
+    "practicalApplication": "Review a suspect-stock scenario and produce a status record that separates observation, exposure history, test information, hold controls, decision authority and unresolved follow-up.",
+    "summary": "Quarantine and hold states manage uncertainty while evidence and authorized decisions are developed."
+  }
+}

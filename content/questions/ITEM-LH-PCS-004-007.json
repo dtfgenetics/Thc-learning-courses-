@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What is the purpose of placing suspect propagation material on hold?",
+  "choices": [
+    "To declare it infected",
+    "To prevent routine movement while uncertainty and required evidence are resolved",
+    "To authorize destruction",
+    "To guarantee later release"
+  ],
+  "correct": 1,
+  "rationale": "Hold status controls movement without predetermining diagnosis or disposition.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

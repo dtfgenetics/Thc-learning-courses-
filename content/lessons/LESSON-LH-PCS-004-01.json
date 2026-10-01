@@ -1,0 +1,57 @@
+{
+  "id": "LESSON-LH-PCS-004-01",
+  "title": "Propagation Contamination Pathways & Layered Biosecurity",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-004-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IPM-001",
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for propagation contamination pathways & layered biosecurity in propagation and clean-stock operations.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Propagation concentrates biological risk",
+        "body": "Donor plants, fresh wounds, repeated handling, shared tools and high plant density create multiple opportunities for pests and pathogens to move through propagation systems. A pathway map helps separate plausible routes from unsupported assumptions.",
+        "references": [
+          "REF-IPM-001",
+          "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+        ]
+      },
+      {
+        "title": "Asymptomatic appearance is not a clean-stock test",
+        "body": "HLVd can occur without obvious symptoms, so visual inspection alone cannot establish pathogen-free status. Identity, testing context and biosecurity records remain important even when plants appear healthy.",
+        "references": [
+          "REF-HLVD-REVIEW-2023-001"
+        ]
+      },
+      {
+        "title": "Layered controls interrupt pathways",
+        "body": "Stock separation, controlled movement, tool/work-surface sanitation, source records and testing escalation reduce risk through different mechanisms. No single layer proves a propagation area is biologically clean.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001",
+          "REF-IPM-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating visible plant health as proof of clean-stock status.",
+      "Assuming one sanitation step controls every transmission pathway.",
+      "Mapping a possible pathway as if it proves the source of an actual event."
+    ],
+    "practicalApplication": "Create a propagation pathway map from donor area through cutting, tray, rooting and handoff; mark movement, tool, water/root-zone and personnel interfaces plus the evidence needed to investigate each.",
+    "summary": "Biosecurity begins with identifying plausible movement pathways and applying multiple controls without overstating what any single control proves."
+  }
+}

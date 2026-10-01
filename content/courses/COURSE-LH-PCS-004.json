@@ -1,0 +1,64 @@
+{
+  "id": "COURSE-LH-PCS-004",
+  "title": "Propagation Sanitation, Biosecurity & Traceability",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Propagation & Clean Stock Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Propagation & Clean Stock Specialist pathway",
+    "Cultivation personnel responsible for propagation sanitation, stock movement controls, quarantine/hold status and propagation traceability"
+  ],
+  "prerequisites": [
+    "COURSE-LH-PCS-001 through COURSE-LH-PCS-003 or approved equivalents",
+    "Cultivation Technician II plant-health/biosecurity competency or approved equivalent"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Cannabis-specific disease literature supports the importance of clean planting stock, asymptomatic HLVd risk and multiple transmission pathways. General protected-crop guidance supports layered sanitation and movement controls. Exact disinfectants, concentrations, contact times, PPE, testing methods and release criteria remain controlled by validated facility procedures, product labels, worker-safety requirements and applicable law.",
+  "assessmentPolicy": "The specialist assessment remains development-only until technical/assessment review, accessibility review and pilot evidence are complete. Learners may identify hazards, containment needs, traceability breaks and escalation steps but completion does not authorize unapproved chemical use, pathogen testing, crop destruction/disposition or release of held material.",
+  "description": "Builds specialist propagation biosecurity capability through contamination-pathway analysis, clean-to-dirty workflow design, quarantine and hold-state control, plant/tool/personnel movement records, lot genealogy, breach reconstruction and evidence-based sanitation verification.",
+  "modules": [
+    "MOD-LH-PCS-004-BIOSECURITY-TRACEABILITY"
+  ],
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-CULT-TRACEABILITY-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PCS-004-FINAL",
+  "learningOutcomes": [
+    "Map biological and operational contamination pathways through a propagation system and identify where layered controls can interrupt spread.",
+    "Design a clean-to-dirty propagation workflow that controls tools, surfaces, people and plant movement without substituting generic advice for facility sanitation SOPs.",
+    "Apply quarantine, hold, testing-status and controlled-release concepts to suspect propagation material while preserving authority boundaries and uncertainty.",
+    "Build reconstructable donor-to-cutting-to-tray-to-handoff traceability and use it to contain and investigate an identity or biosecurity breach.",
+    "Evaluate sanitation and biosecurity deviations using observable evidence, document corrective actions and create an accountable handoff without claiming unsupported eradication or cleanliness."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PROP-CLEAN-STOCK-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PCS-002",
+      "COURSE-LH-PCS-003",
+      "COURSE-LH-TECH1-005",
+      "COURSE-LH-TECH2-004",
+      "COURSE-LH-TECH2-005"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PCS-004-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}
