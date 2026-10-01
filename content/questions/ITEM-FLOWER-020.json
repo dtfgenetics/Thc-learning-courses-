@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-FLOWER-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-PHOTO-002",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A flowering room timer is programmed correctly, but staff repeatedly enter during the dark interval under bright work lights. What should be investigated?",
+  "choices": [
+    "Whether the actual dark interval is being interrupted despite the programmed schedule",
+    "Only root-zone EC",
+    "Whether DLI can replace the dark period",
+    "Nothing because the timer setting is correct"
+  ],
+  "correct": 0,
+  "rationale": "The crop responds to actual light exposure, not the timer setting alone. Repeated light during the intended dark interval changes the real photoperiod.",
+  "references": [
+    "REF-CANNABIS-PHOTOPERIOD-2023-001"
+  ]
+}

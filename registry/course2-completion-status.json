@@ -1,12 +1,12 @@
 {
   "courseId": "COURSE-LH-TECH1-002",
-  "version": "0.13.0",
-  "updated": "2026-09-22",
+  "version": "0.15.0",
+  "updated": "2026-09-26",
   "academicPublication": "published",
   "machineResolvableWorkComplete": true,
   "goldStandardPackageComplete": false,
   "certificationEvidenceValidated": false,
-  "machineCompletionBoundary": "Deployment build/source identity and machine learner-surface QA are verified. Technician I Course 2 has an owner-approved published academic package with course-derived assessment/integration provenance, deployed learner-surface verification, and exact deployment identity where recorded. Machine-resolvable academic package work is complete, including the Course 2 raster-first learner-asset cutover. Remaining open work is genuine human/professional evidence: technical/assessment/accessibility review as applicable, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release. Exact DTFSeeds deployment build/source identity and machine learner-surface QA are verified. Machine-resolvable source, runtime, and deployed-surface verification is complete for the current pinned snapshot.",
+  "machineCompletionBoundary": "All canonical Course 2 academic modules, lessons, formative checkpoints, and governed learner-facing raster assets are now published and machine-resolvable. Deployment build/source identity and machine learner-surface QA are verified for the recorded deployed snapshot. The Flowering foundation expansion is complete and the course is no longer a partial academic release. Professional credential use remains separately fail-closed pending genuine human technical/assessment/accessibility review, mapped practical/capstone validation, controlled pilot evidence, evaluator calibration/inter-rater evidence, standard setting, privacy/security approval, and final professional credential release.",
   "domains": [
     {
       "id": "canonical-content-audit",
@@ -42,7 +42,7 @@
     },
     {
       "id": "visual-and-asset-completion",
-      "state": "production-raster-cutover-complete-manual-responsive-review-open",
+      "state": "production-raster-complete-manual-responsive-review-open",
       "evidence": [
         "visuals/COURSE2-ASSET-REGISTRY.json",
         "scripts/test-course2-visual-registry.mjs",
@@ -51,7 +51,7 @@
         "apps/web/public/assets/course2/*.webp"
       ],
       "humanGateRequired": true,
-      "note": "All 10 governed Course 2 lossless WebP assets are the active learner-facing production paths at a minimum 1600 px shortest side with source/candidate SHA-256 provenance and deterministic binary QA. Legacy SVG files remain provenance/reference sources only. Manual responsive/accessibility review remains open."
+      "note": "All governed Course 2 academic raster assets are produced and active, including the Flowering photoperiod/dark-period diagram and representative trichome-sampling scientific macro illustration. Manual responsive/accessibility review remains a human gate."
     },
     {
       "id": "evidence-and-source-audit",
@@ -183,7 +183,7 @@
   "ownerReleaseApproval": {
     "state": "approved",
     "date": "2026-09-22",
-    "scope": "academic raster publication and machine-resolvable course package completion",
+    "scope": "complete Course 2 academic publication and machine-resolvable learner package; professional credential authorization remains excluded",
     "boundary": "Does not establish external validation, accreditation, psychometric validation, standard setting, or professional credential issuance."
   }
 }

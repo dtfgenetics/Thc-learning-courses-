@@ -1,12 +1,25 @@
 {
   "id": "ASSESS-LIGHT-MODULE-001",
   "title": "Lighting Module Knowledge Check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "formative",
-  "competencies": ["COMP-LIGHT-001"],
-  "objectives": ["LO-LIGHT-001", "LO-LIGHT-PPFD-002", "LO-LIGHT-DLI-003"],
-  "items": ["ITEM-LIGHT-006", "ITEM-LIGHT-007", "ITEM-LIGHT-008"],
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "objectives": [
+    "LO-LIGHT-001",
+    "LO-LIGHT-PPFD-002",
+    "LO-LIGHT-DLI-003"
+  ],
+  "items": [
+    "ITEM-LIGHT-006",
+    "ITEM-LIGHT-013",
+    "ITEM-LIGHT-007",
+    "ITEM-LIGHT-009",
+    "ITEM-LIGHT-008",
+    "ITEM-LIGHT-010"
+  ],
   "passingScorePercent": 80,
   "maxAttempts": null,
   "feedbackMode": "immediate"

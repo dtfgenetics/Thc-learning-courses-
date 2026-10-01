@@ -1,12 +1,12 @@
 # Objective Coverage — COURSE-LH-TECH1-004
 
 **Course:** Water, Root Zone, Nutrition & Irrigation Fundamentals  
-**Controlled state:** `draft` v0.4.0  
+**Controlled state:** `published` v0.5.0  
 **Purpose:** development crosswalk proving instruction, applied practice, scored assessment, remediation and Practical B mapping without implying human validation.
 
 ## Coverage summary
 
-Course 4 contains six controlled objectives, four dedicated lessons, 12 formative items, 24 summative items, seven produced learner assets and a development mapping to `PRACTICAL-TECH1-B`.
+Course 4 contains six controlled objectives, four dedicated lessons, 12 formative items, 24 summative items, eight produced learner assets and a development mapping to `PRACTICAL-TECH1-B`.
 
 Current machine inspection confirms a balanced academic bank: **2 formative + 4 summative items for each objective**. No Course 4 question objects with an empty `references` array were found in the audit.
 
@@ -43,7 +43,7 @@ Learners create records another qualified person can reconstruct, keeping target
 
 Primary reviewed references are `REF-IRRIGATION-001`, `REF-NUTRITION-001` and `REF-MHRA-GXP-DATA-INTEGRITY`. The irrigation study is used for irrigation/root-zone principles without generalizing a treatment-specific outdoor-tunnel result into universal indoor recommendations. Nutrition evidence supports contextual mineral-nutrition concepts without turning one study into a universal feed recipe. The MHRA guidance is used as a general data-integrity model, not cannabis law.
 
-The seven governed assets in `visuals/COURSE4-ASSET-REGISTRY.json` include five embedded learning visuals and two downloadable practice worksheets.
+The eight governed assets in `visuals/COURSE4-ASSET-REGISTRY.json` include six embedded learning visuals and two downloadable practice worksheets, with the additional visual dedicated to pH, root-zone chemistry and nutrient-availability context.
 
 ## Test-to-teaching provenance
 

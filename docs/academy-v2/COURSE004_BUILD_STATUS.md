@@ -18,7 +18,7 @@ Course 004 now has a dedicated occupational instruction, assessment, development
 - objective/practical crosswalk: `registry/course4-practical-b-crosswalk.json`;
 - Practical B includes bounded nutrition-context interpretation using symptom pattern, developmental stage, pH/EC, root-zone and irrigation evidence without unsupported deficiency/excess/antagonism diagnosis;
 - five embedded teaching visuals plus two downloadable practice worksheets governed by `visuals/COURSE4-ASSET-REGISTRY.json`;
-- all seven learner assets are public, lesson-linked, accessibility-tagged SVGs and mirrored to Drive folder `13su1HkrSjWqhMtssQos3cju9BkgeqGBv`;
+- all eight learner assets are public, lesson-linked, accessibility-tagged WebPs with legacy or native-raster Drive provenance recorded;
 - deterministic practical-crosswalk and learner-asset contracts run through the normal Course 004 regression;
 - Course 004 is published for owner-approved academic use; human review, pilot, calibration, practical validation and professional credential release approval remain separate and are not implied.
 

@@ -17,7 +17,9 @@ assert.equal(registry.policy?.legacySvgCompatibilityAllowed, false);
 assert.equal(registry.policy?.rasterReplacementRequired, false);
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.ok(produced.length >= 10, 'Course 2 photo-evidence practice batch requires at least ten produced learner assets');
+const courseOwned = produced.filter((asset) => /^VIS-LH-TECH1-002-[0-9]{3}$/.test(asset.id ?? ''));
+const sharedFoundation = produced.filter((asset) => !courseOwned.includes(asset));
+assert.ok(courseOwned.length >= 10, 'Course 2 photo-evidence practice batch requires at least ten produced Course-owned learner assets');
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
 
@@ -37,7 +39,7 @@ function webpDimensions(buffer) {
   };
 }
 
-for (const asset of produced) {
+for (const asset of courseOwned) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-002-[0-9]{3}$/);
   assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
   assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
@@ -72,7 +74,9 @@ for (const asset of produced) {
   assert.equal(replacement?.encoding, 'lossless-webp');
   assert.equal(replacement?.releaseApproved, true, `${asset.id}: owner-approved academic raster release must be recorded`);
 
-  const sourceBuffer = fs.readFileSync(legacySource);
+  // Git stores text assets with LF; normalize checkout-specific line endings before
+  // comparing provenance so the contract is deterministic on Windows and Unix.
+  const sourceBuffer = Buffer.from(fs.readFileSync(legacySource, 'utf8').replace(/\r\n/g, '\n'));
   const candidateBuffer = fs.readFileSync(source);
   assert.equal(sha256(sourceBuffer), replacement.sourceSha256, `${asset.id}: legacy source digest drift`);
   assert.equal(sha256(candidateBuffer), replacement.candidateSha256, `${asset.id}: candidate digest drift`);
@@ -80,6 +84,31 @@ for (const asset of produced) {
   const dimensions = webpDimensions(candidateBuffer);
   assert.deepEqual(dimensions, replacement.pixelDimensions, `${asset.id}: candidate dimension metadata drift`);
   assert.ok(Math.min(dimensions.width, dimensions.height) >= 1600, `${asset.id}: candidate shortest side must be at least 1600 px`);
+}
+
+for (const asset of sharedFoundation) {
+  assert.match(asset.id ?? '', /^VIS-FOUNDATION-[A-Z0-9-]+-[0-9]{3}$/, `${asset.id}: shared foundation visual must use the governed foundation ID namespace`);
+  assert.equal(asset.deliveryType, 'embedded-visual', `${asset.id}: shared foundation visual must be instructional`);
+  assert.match(asset.learnerPath ?? '', /^\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
+  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course2\/[A-Za-z0-9._-]+\.webp$/i);
+  assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0, `${asset.id}: shared foundation visual needs at least one canonical lesson`);
+  assert.ok(Array.isArray(asset.references) && asset.references.length > 0, `${asset.id}: shared foundation visual needs evidence references`);
+  assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim(), `${asset.id}: shared foundation visual needs a purpose`);
+  assert.equal(asset.nativeRaster?.releaseApproved, true, `${asset.id}: shared foundation raster must be release approved`);
+  assert.ok(asset.nativeRaster?.pixelDimensions?.width >= 1600 && asset.nativeRaster?.pixelDimensions?.height >= 1600, `${asset.id}: shared foundation raster metadata must preserve high-resolution dimensions`);
+  const source = path.join(root, asset.sourcePath);
+  assert.ok(fs.existsSync(source), `${asset.id}: shared foundation raster asset missing`);
+  const buffer = fs.readFileSync(source);
+  assert.equal(buffer.subarray(0, 4).toString('ascii'), 'RIFF', `${asset.id}: shared foundation WebP must use a RIFF container`);
+  assert.equal(buffer.subarray(8, 12).toString('ascii'), 'WEBP', `${asset.id}: shared foundation asset must have a WEBP signature`);
+  assert.equal(asset.publicDownloadUrl, `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`);
+  assert.equal(asset.learnerPath, `/${asset.sourcePath.replace(/^apps\/web\/public\//, '')}`);
+  for (const lessonId of asset.primaryLessons) {
+    const lessonPath = path.join(root, 'content/lessons', `${lessonId}.json`);
+    assert.ok(fs.existsSync(lessonPath), `${asset.id}: missing shared foundation lesson ${lessonId}`);
+    const lessonText = fs.readFileSync(lessonPath, 'utf8');
+    assert.ok(lessonText.includes(asset.id), `${asset.id}: shared foundation visual must be reachable from ${lessonId}`);
+  }
 }
 
 for (const lessonNumber of ['01','02','03','04']) {
@@ -106,9 +135,9 @@ for (const lessonNumber of ['01','02','03','04']) {
   }
 }
 
-for (const asset of produced) {
-  assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced asset is not reachable from a canonical lesson`);
+for (const asset of courseOwned) {
+  assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced Course-owned asset is not reachable from a canonical Course 2 lesson`);
   for (const lessonId of asset.primaryLessons) assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)));
 }
 
-console.log(`Course 2 learner-asset contract passed for ${produced.length} active high-resolution lossless WebP learner assets with preserved SVG provenance; learner delivery is raster-first.`);
+console.log(`Course 2 learner-asset contract passed for ${courseOwned.length} Course-owned raster assets plus ${sharedFoundation.length} governed shared foundation visual(s); learner delivery remains raster-first.`);

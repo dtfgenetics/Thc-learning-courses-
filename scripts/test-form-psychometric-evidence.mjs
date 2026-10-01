@@ -18,7 +18,7 @@ function input(participantCount,minReliabilitySampleSize,computeReliability){
     formRevision:'r1',
     cohortId:'COHORT-PSY-TEST-'+participantCount,
     analystId:'TEST-ANALYST',
-    minimumReliabilitySampleSize,
+    minimumReliabilitySampleSize:minReliabilitySampleSize,
     computeReliability,
     cutScores:[
       {percent:80,source:'configured-provisional',notes:'Synthetic regression only.'},

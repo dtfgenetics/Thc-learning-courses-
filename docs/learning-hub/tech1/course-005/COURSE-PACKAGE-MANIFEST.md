@@ -29,8 +29,8 @@ Course 5 contains 36 distinct scored item objects:
 ## Learner asset layer
 
 - registry: `visuals/COURSE5-ASSET-REGISTRY.json`
-- 9 produced assets;
-- 6 embedded instructional visuals;
+- 11 produced assets;
+- 8 embedded instructional visuals;
 - 3 downloadable practice worksheets;
 - public repository paths under `apps/web/public/assets/course5/`;
 - controlled Google Drive mirrors recorded in the asset registry.
@@ -62,7 +62,7 @@ Course 5 machine checks must preserve:
 6. evidence references on scored items;
 7. complete objective remediation/reassessment sections;
 8. Practical C/D/E crosswalk coverage;
-9. all nine governed WebP assets available through the Academy runtime with learner-facing alt/caption metadata;
+9. all eleven governed WebP assets available through the Academy runtime with learner-facing alt/caption metadata;
 10. explicit `pesticideApplicatorAuthorityConferred: false` and `treatmentSelectionAuthorityConferred: false` boundaries;
 11. package artifact presence;
 12. truthful draft/release separation from professional credential issuance.

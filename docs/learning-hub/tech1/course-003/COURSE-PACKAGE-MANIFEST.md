@@ -22,7 +22,7 @@
 ## Learner/visual source
 
 - visual registry: `visuals/COURSE3-ASSET-REGISTRY.json`
-- six produced Course 3 learner assets are registered;
+- seven produced Course 3 learner assets are registered;
 - four embedded instructional visuals;
 - two downloadable practice worksheets;
 - learner paths live under `/assets/course3/`;

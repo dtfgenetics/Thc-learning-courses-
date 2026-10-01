@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "courseId": "COURSE-LH-TECH1-003",
   "policy": {
     "expandable": true,
@@ -398,6 +398,150 @@
         "driveFileUrl": "https://drive.google.com/file/d/1Pd-eLG_fh4FQBoITJHInTDDzCgE_Tnht/view"
       },
       "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-LH-TECH1-003-007",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Understanding VPD: atmospheric demand, leaf exchange and root-zone context",
+      "learnerPath": "/assets/course3/understanding-vpd-science.webp",
+      "sourcePath": "apps/web/public/assets/course3/understanding-vpd-science.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/understanding-vpd-science.webp",
+      "primaryLessons": [
+        "LESSON-LH-TECH1-003-01"
+      ],
+      "objectiveIds": [
+        "LO-LH-TECH1-003-01",
+        "LO-LH-TECH1-003-05"
+      ],
+      "references": [
+        "REF-VPD-002"
+      ],
+      "publicSourceLinks": [],
+      "purpose": "Connect temperature and relative humidity to atmospheric vapor demand, leaf water exchange, stomatal behavior and root-zone water supply while explicitly treating chart bands as contextual teaching aids rather than universal crop prescriptions.",
+      "version": "1.0.0",
+      "assetLifecycle": "production-raster-active",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "png",
+        "bytes": 520626,
+        "pixelWidth": 1600,
+        "driveFileId": "1BnXYxp_ke3nvSMVOirlyIoeKGBIUFx9w",
+        "driveMasterFileId": "1_fyMdg8Tb0RZGKmO06NJBbvp4jOdMop1",
+        "automatedQa": [
+          "RIFF/WEBP asset created from approved PNG master",
+          "web delivery width limited to 1600 px",
+          "lesson alt text and caption carry required instructional meaning"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "mirrored"
+    },
+    {
+      "id": "VIS-FOUNDATION-ENV-LEAF-VPD-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Leaf temperature, boundary layer and leaf-to-air vapor exchange",
+      "primaryLessons": [
+        "LESSON-ENV-LEAF-VPD-003"
+      ],
+      "references": [
+        "REF-VPD-002",
+        "REF-MSU-BOUNDARY-LAYER-TRANSPIRATION"
+      ],
+      "purpose": "Show air temperature versus leaf temperature, the leaf boundary layer, airflow effects and the leaf-to-air vapor-pressure relationship without implying one universal VPD target.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-LIGHT-PHOTOSYNTHESIS-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "From photons to photosynthesis: PPFD, spectrum, leaf and carbon assimilation context",
+      "primaryLessons": [
+        "LESSON-LIGHT-001"
+      ],
+      "references": [
+        "REF-LIGHT-001",
+        "REF-PURDUE-DLI-238"
+      ],
+      "purpose": "Connect photon arrival at the canopy with leaf interception, photosynthetic response, photoperiod and environmental limits; distinguish light measurement from photosynthesis itself.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
+    },
+    {
+      "id": "VIS-FOUNDATION-LIGHT-DLI-001",
+      "status": "planned",
+      "deliveryType": "embedded-visual",
+      "title": "Daily light integral calculation and equal-DLI comparison",
+      "primaryLessons": [
+        "LESSON-LIGHT-DLI-003"
+      ],
+      "references": [
+        "REF-LIGHT-001",
+        "REF-PURDUE-DLI-238"
+      ],
+      "purpose": "Visually teach DLI as PPFD integrated over time, including two different PPFD/photoperiod combinations that produce the same daily photon total.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "branded-chart",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      }
     }
   ],
   "ownerReleaseApproval": {

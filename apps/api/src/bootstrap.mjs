@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { addAutomaticEnrollmentCompletion } from './enrollment-completion-adapter.mjs';
+import { loadProductionCredentialSigner } from './credential-signing-adapter.mjs';
 
 function required(env, name) {
   const value = String(env[name] ?? '').trim();
@@ -45,8 +46,8 @@ export async function loadProductionApiOptions(env = process.env) {
   if (typeof persistenceModule.createPersistenceAdapters !== 'function') throw new Error('Persistence adapter module must export createPersistenceAdapters({ env })');
   const adapters = await persistenceModule.createPersistenceAdapters({ env });
   const credentialStore = adapters?.credentialStore;
-  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function') {
-    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), and getByVerificationId()');
+  if (!credentialStore || typeof credentialStore.ping !== 'function' || typeof credentialStore.schemaVersion !== 'function' || typeof credentialStore.getByVerificationId !== 'function' || typeof credentialStore.listBySubjectHash !== 'function') {
+    throw new Error('Production persistence adapter must provide credentialStore.ping(), schemaVersion(), getByVerificationId(), and listBySubjectHash()');
   }
   const rawLearnerStore = adapters?.learnerStore;
   const requiredLearnerMethods = [
@@ -77,6 +78,14 @@ export async function loadProductionApiOptions(env = process.env) {
     completionStore
   });
 
+  const credentialWriter = adapters.credentialWriter ?? null;
+  if (credentialWriter && (typeof credentialWriter.issueCredential !== 'function' || typeof credentialWriter.transitionById !== 'function')) {
+    throw new Error('Production credentialWriter must provide issueCredential() and transitionById()');
+  }
+  const credentialSigner = env.THC_CREDENTIAL_SIGNER_MODULE
+    ? await loadProductionCredentialSigner(env)
+    : null;
+
   const authModule = await import(resolveModuleSpecifier(config.authAdapterModule));
   if (typeof authModule.createRequestAuthorizer !== 'function') throw new Error('Authentication adapter module must export createRequestAuthorizer({ env })');
   const rawAuthorize = await authModule.createRequestAuthorizer({ env });
@@ -86,7 +95,8 @@ export async function loadProductionApiOptions(env = process.env) {
   return {
     env,
     credentialStore,
-    credentialWriter: adapters.credentialWriter ?? null,
+    credentialWriter,
+    credentialSigner,
     learnerStore: wrapped.learnerStore,
     practicalEvaluatorStore: wrapped.practicalEvaluatorStore,
     enrollmentCompletionStore: completionStore,

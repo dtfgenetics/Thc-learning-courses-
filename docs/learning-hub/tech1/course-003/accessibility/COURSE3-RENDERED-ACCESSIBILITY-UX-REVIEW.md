@@ -6,7 +6,9 @@
 
 ## Review boundary
 
-This packet defines what must be inspected after the current Course 3 content and six governed assets are rendered in the learner runtime. Source-file presence is not evidence that the rendered experience is accessible. Do not mark this review complete until a human reviewer inspects the actual rendered surface and records findings against the exact deployed/source version.
+This packet defines what must be inspected after the current Course 3 content and seven governed assets are rendered in the learner runtime. Source-file presence is not evidence that the rendered experience is accessible. Do not mark this review complete until a human reviewer inspects the actual rendered surface and records findings against the exact deployed/source version.
+
+Automated source and route checks support this review, but they do not constitute rendered accessibility or learner-UX approval.
 
 ## Pages and states to inspect
 
@@ -15,7 +17,7 @@ At minimum inspect:
 - Course 3 entry/catalog state;
 - each of the four dedicated Course 3 lessons;
 - expanded rich-content blocks: comparison, steps, tables, document fields, scenarios and resources;
-- all four embedded Course 3 SVG learning boards;
+- all five embedded Course 3 WebP learning boards;
 - both downloadable Course 3 SVG practice worksheets;
 - lesson practice flow;
 - module assessment flow;

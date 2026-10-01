@@ -186,6 +186,7 @@ create table if not exists audit_events (
   created_at timestamptz not null default now()
 );
 
+create unique index if not exists idx_learners_reference_unique on learners(learner_reference) where learner_reference is not null;
 create index if not exists idx_applications_learner_program on academy_applications(learner_id, program_id, updated_at desc);
 create index if not exists idx_attempts_learner_assessment on assessment_attempts(learner_id, assessment_id, started_at desc);
 create index if not exists idx_performance_learner_assessment on performance_assessment_results(learner_id, assessment_id, updated_at desc);
@@ -226,4 +227,12 @@ alter table assessment_attempts add column if not exists application_id uuid ref
 
 insert into academy_schema_migrations (version, description)
 values ('6', 'Learner profile, application references and assessment linkage')
+on conflict (version) do nothing;
+
+create unique index if not exists idx_credentials_active_subject_definition
+  on credentials(subject_hash, credential_definition_id, credential_definition_version)
+  where status in ('issued','valid');
+
+insert into academy_schema_migrations (version, description)
+values ('7', 'Idempotent active credential issuance uniqueness')
 on conflict (version) do nothing;

@@ -4,7 +4,7 @@
 
 ## Canonical learner delivery
 
-Course 4 learner assets are responsive, accessible SVG files published from:
+Course 4 learner assets are WebP files published from:
 
 `apps/web/public/assets/course4/`
 
@@ -17,7 +17,7 @@ Folder: **Course 4 — Water, Root Zone & Irrigation Learning Boards**
 - folder ID: `13su1HkrSjWqhMtssQos3cju9BkgeqGBv`
 - folder URL: `https://drive.google.com/drive/folders/13su1HkrSjWqhMtssQos3cju9BkgeqGBv`
 
-All seven produced Course 4 learner assets are mirrored and recorded in `visuals/COURSE4-ASSET-REGISTRY.json`.
+All eight produced Course 4 learner assets are recorded in `visuals/COURSE4-ASSET-REGISTRY.json`; converted assets retain legacy SVG/Drive provenance and the native pH science asset records its WebP and PNG-master Drive mirrors.
 
 ## Embedded teaching visuals
 
@@ -34,11 +34,11 @@ All seven produced Course 4 learner assets are mirrored and recorded in `visuals
 
 ## Delivery contract
 
-`scripts/test-course4-visual-registry.mjs` validates that the current Course 4 learner layer contains at least seven produced assets, at least five embedded teaching visuals and at least two downloadable practice assets. It also requires:
+`scripts/test-course4-visual-registry.mjs` validates that the current Course 4 learner layer contains at least eight produced assets, at least six embedded teaching visuals and at least two downloadable practice assets. It also requires:
 
 - a unique Course 4 asset ID and public learner path;
 - a source file under the public Course 4 asset directory;
-- SVG `<title>`, `<desc>` and `viewBox` metadata;
+- production WebP integrity plus SVG accessibility metadata for converted assets and PNG/WebP/Drive provenance for native-raster assets;
 - a canonical raw GitHub download URL;
 - Drive mirror file ID and URL metadata;
 - lesson reachability for every produced asset;

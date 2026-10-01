@@ -23,9 +23,10 @@ const client={
 const pool={
   async query(text){
     if(String(text).includes('select 1 as ok')) return {rows:[{ok:1}]};
-    if(String(text).includes('academy_schema_migrations')) return {rows:[{version:'4'}]};
+    if(String(text).includes('academy_schema_migrations')) return {rows:[{version:'7'}]};
     if(String(text).includes('count(*)::int as count from credentials')) return {rows:[{count:1}]};
     if(String(text).includes('where verification_id = $1')) return {rows:[credentialRow]};
+    if(String(text).includes('where subject_hash = $1')) return {rows:[credentialRow]};
     throw new Error(`unexpected pool query: ${text}`);
   },
   async connect(){ return client; }
@@ -37,8 +38,9 @@ assert.equal(adapters.learnerStore.kind,'postgres-learner-runtime');
 assert.equal(adapters.practicalEvaluatorStore.kind,'postgres-practical-evaluator');
 assert.equal(adapters.enrollmentCompletionStore.kind,'postgres-enrollment-completion');
 assert.equal(await adapters.credentialStore.ping(),true);
-assert.equal(await adapters.credentialStore.schemaVersion(),'6');
+assert.equal(await adapters.credentialStore.schemaVersion(),'7');
 assert.equal((await adapters.credentialStore.getByVerificationId('VERIFY-1')).status,'valid');
+assert.equal((await adapters.credentialStore.listBySubjectHash('hash')).length,1);
 
 const transition=await adapters.credentialWriter.transitionById('cred-1','revoked',{actorId:'admin-1',reason:'controlled test'});
 assert.equal(transition.credential.status,'revoked');
@@ -63,4 +65,4 @@ await assert.rejects(()=>bad.credentialWriter.transitionById('cred-1','revoked',
 assert.ok(rollbackEvents.includes('rollback'));
 assert.equal(rollbackEvents.at(-1),'release');
 
-console.log('Production PostgreSQL adapter composition and transactional credential revocation: PASS');
+console.log('Production PostgreSQL adapter schema v7, private credential lookup and transactional credential revocation: PASS');

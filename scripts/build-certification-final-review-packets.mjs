@@ -216,7 +216,7 @@ const summary={
   outputDirectory:path.relative(root,outDir),
   wroteFiles:write
 };
-if(asJson) console.log(JSON.stringify({...summary,sourceIntegrityProblems},null,2));
+if(asJson) console.log(JSON.stringify({...summary,sourceIntegrityProblemDetails:sourceIntegrityProblems},null,2));
 else console.log('Certification final review packets: '+summary.packetCount+' finals, '+summary.itemCount+' current items; authoritative='+summary.itemsWithAuthoritativeSources+'; sourceIntegrityProblems='+summary.sourceIntegrityProblems+'; wroteFiles='+write);
 if(checkSourceIntegrity&&sourceIntegrityProblems.length){
   console.error('Certification final review source-integrity check failed:');

@@ -70,6 +70,19 @@ export function createPostgresCredentialStore({ query } = {}) {
       );
       return mapCredentialRow(result.rows?.[0] ?? null);
     },
+    async listBySubjectHash(subjectHash) {
+      const result = await queryOrUnavailable(
+        query,
+        `select id, verification_id, subject_hash, credential_definition_id,
+                credential_definition_version, course_id, course_version, status,
+                issued_at, expires_at, payload_json, payload_hash
+           from credentials
+          where subject_hash = $1
+          order by issued_at desc`,
+        [subjectHash]
+      );
+      return (result.rows ?? []).map(mapCredentialRow);
+    },
     async count() {
       const result = await queryOrUnavailable(query, 'select count(*)::int as count from credentials', []);
       return Number(result.rows?.[0]?.count ?? 0);

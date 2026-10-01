@@ -1,5 +1,6 @@
 import { courseProgress, createServerProgressClient, readProgress, setLessonComplete, writeProgress } from './progress.js';
 import { renderRichBlocks } from './rich-content.js';
+import { launchCourseAssessment } from './course-assessment.js';
 
 const catalogRoot = document.querySelector('#catalog');
 const catalogStatus = document.querySelector('#catalog-status');
@@ -14,6 +15,10 @@ let accountSubject = null;
 let currentLesson = null;
 let enrollments = [];
 const progressClient = createServerProgressClient();
+const academyParams = new URLSearchParams(globalThis.location?.search ?? '');
+const deepLinkedCourseId = academyParams.get('course');
+const deepLinkedView = academyParams.get('view');
+let deepLinkHandled = false;
 
 function text(tag, value, className = '') {
   const node = document.createElement(tag);
@@ -118,6 +123,95 @@ function renderCourseEnrollment(details, course) {
   details.append(panel);
 }
 
+function formatCourseTime(minutes) {
+  const total = Number(minutes ?? 0);
+  if (!Number.isFinite(total) || total <= 0) return null;
+  const hours = Math.floor(total / 60);
+  const mins = total % 60;
+  if (!hours) return `${mins} min`;
+  return mins ? `${hours} hr ${mins} min` : `${hours} hr`;
+}
+
+function nextIncompleteLesson(course, completed) {
+  for (const module of course.modules ?? []) {
+    for (const lesson of module.lessons ?? []) {
+      if (!completed.has(lesson.id)) return lesson;
+    }
+  }
+  return course.modules?.[0]?.lessons?.[0] ?? null;
+}
+
+function renderCourseOrientation(details, course, courseState, completed) {
+  const panel = document.createElement('section');
+  panel.className = 'course-orientation';
+  panel.setAttribute('aria-label', `${course.title} course overview`);
+
+  const intro = document.createElement('div');
+  intro.className = 'course-orientation-copy';
+  intro.append(text('p', 'Course overview', 'course-orientation-kicker'));
+  if (course.description) intro.append(text('p', course.description, 'course-orientation-description'));
+
+  const facts = document.createElement('div');
+  facts.className = 'course-orientation-facts';
+  const lessonCount = courseState.total;
+  const moduleCount = (course.modules ?? []).length;
+  const duration = formatCourseTime(course.estimatedMinutes);
+  const factValues = [
+    [`${moduleCount}`, moduleCount === 1 ? 'module' : 'modules'],
+    [`${lessonCount}`, lessonCount === 1 ? 'lesson' : 'lessons']
+  ];
+  if (duration) factValues.push([duration, 'estimated study time']);
+  for (const [value, label] of factValues) {
+    const item = document.createElement('div');
+    item.append(text('strong', value), text('span', label));
+    facts.append(item);
+  }
+  intro.append(facts);
+
+  if (course.academicCompletionBlocked) {
+    const release = document.createElement('section');
+    release.className = 'course-release-notice';
+    release.append(text('h4', 'Academic release in progress'));
+    const open = course.openAcademicDependencies ?? [];
+    const names = open.map((item) => item.title ?? item.id).filter(Boolean);
+    release.append(text('p', names.length
+      ? `You can study the released modules now. Full academic course completion remains locked until ${names.join(', ')} is released.`
+      : 'You can study the released modules now. Full academic course completion remains locked until the remaining academic dependency is released.'
+    ));
+    release.append(text('p', 'Progress shown below refers to lessons currently available in this release.', 'course-release-detail'));
+    intro.append(release);
+  }
+
+  if ((course.learningOutcomes ?? []).length) {
+    const outcomes = document.createElement('div');
+    outcomes.className = 'course-orientation-outcomes';
+    outcomes.append(text('h4', 'By the end of this course, you should be able to:'));
+    const list = document.createElement('ul');
+    for (const outcome of course.learningOutcomes.slice(0, 6)) list.append(text('li', outcome));
+    outcomes.append(list);
+    intro.append(outcomes);
+  }
+
+  const next = nextIncompleteLesson(course, completed);
+  if (next) {
+    const actions = document.createElement('div');
+    actions.className = 'course-orientation-actions';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'course-start-button';
+    button.textContent = courseState.completed > 0 ? `Continue: ${next.title}` : `Start: ${next.title}`;
+    button.addEventListener('click', () => openLesson(next.id));
+    actions.append(button);
+    if (courseState.completed > 0) actions.append(text('span', course.academicCompletionBlocked
+      ? `${courseState.percent}% of currently available lessons complete`
+      : `${courseState.percent}% of lessons complete`, 'course-orientation-progress-copy'));
+    intro.append(actions);
+  }
+
+  panel.append(intro);
+  details.append(panel);
+}
+
 function renderPathwayPanel(details, course) {
   const pathway = course.pathway;
   const hasCoursePrerequisites = Array.isArray(course.prerequisites) && course.prerequisites.length > 0;
@@ -178,7 +272,8 @@ function renderCatalog() {
   for (const course of courses) {
     const details = document.createElement('details');
     details.className = 'course';
-    if (query || courseProgress(course, progress).completed > 0) details.open = true;
+    details.dataset.courseId = course.id;
+    if (query || courseProgress(course, progress).completed > 0 || deepLinkedCourseId === course.id) details.open = true;
     const summary = document.createElement('summary');
     summary.append(text('span', course.title));
     const courseState = courseProgress(course, progress);
@@ -201,14 +296,32 @@ function renderCatalog() {
     progressTrack.append(progressFill);
     details.append(progressTrack);
 
+    renderCourseOrientation(details, course, courseState, completed);
+
     if (course.credentialBearing) {
-      details.append(text('p', 'Lesson progress only. Course and credential completion also depend on the required assessment and practical-performance evidence, which are tracked separately from lesson checkmarks.', 'course-meta'));
+      const academicRequirement = course.finalAssessment?.academicPracticalRequired
+        ? 'Lesson progress only. Academic course completion requires the graded final plus the linked academic practical.'
+        : 'Lesson progress only. Academic course completion requires the graded final; professional practical/performance requirements are tracked separately.';
+      details.append(text('p', `${academicRequirement} Professional credential issuance remains a separate process.`, 'course-meta'));
     }
     if (course.finalAssessment) {
       const final = course.finalAssessment;
       const label = final.purpose === 'credential' ? 'Credential assessment' : 'Course final';
       const note = `${label}: ${final.title} • ${Number(final.itemCount ?? 0)} items • provisional ${Number(final.passingScorePercent ?? 0).toFixed(0)}% academic threshold`;
       details.append(text('p', note, 'course-final-summary'));
+      if (final.status === 'published' && final.purpose === 'summative') {
+        const finalActions = document.createElement('div');
+        finalActions.className = 'course-assessment-actions course-final-actions';
+        const launch = document.createElement('button');
+        launch.type = 'button';
+        launch.className = 'course-assessment-launch';
+        launch.dataset.courseFinalFor = course.id;
+        launch.textContent = 'Take graded course final';
+        launch.setAttribute('aria-label', `Take graded final for ${course.title}`);
+        launch.addEventListener('click', () => launchCourseAssessment(course.id, launch));
+        finalActions.append(launch);
+        details.append(finalActions);
+      }
     }
 
     renderCourseEnrollment(details, course);
@@ -245,6 +358,23 @@ function renderCatalog() {
       details.append(section);
     }
     catalogRoot.append(details);
+  }
+
+  if (!deepLinkHandled && deepLinkedCourseId) {
+    const target = catalogRoot.querySelector(`details.course[data-course-id="${CSS.escape(deepLinkedCourseId)}"]`);
+    if (target) {
+      target.open = true;
+      const focusTarget = deepLinkedView === 'final'
+        ? target.querySelector('[data-course-final-for]')
+        : target.querySelector('summary');
+      if (focusTarget) {
+        deepLinkHandled = true;
+        requestAnimationFrame(() => {
+          focusTarget.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          focusTarget.focus();
+        });
+      }
+    }
   }
 }
 
@@ -373,6 +503,12 @@ function renderModuleAssessment(payload) {
 
   let answered = 0;
   let correct = 0;
+  const missedObjectives = new Set();
+  const remediationSummary = document.createElement('section');
+  remediationSummary.className = 'checkpoint-remediation-summary';
+  remediationSummary.hidden = true;
+  article.append(remediationSummary);
+
   const updateSummary = () => {
     const total = Number(payload.assessment.totalItems ?? payload.items.length);
     if (answered < total) {
@@ -381,7 +517,32 @@ function renderModuleAssessment(payload) {
     }
     const percent = total ? Math.round((correct / total) * 100) : 0;
     const target = Number(payload.assessment.passingScorePercent ?? 0);
-    progressNote.textContent = `${correct}/${total} correct • ${percent}%. ${percent >= target ? 'Development mastery target met for this checkpoint.' : 'Review the missed items and aligned lessons, then try another shuffled checkpoint.'}`;
+    progressNote.textContent = `${correct}/${total} correct • ${percent}%. ${percent >= target ? 'Development mastery target met for this checkpoint.' : 'Review the aligned lessons below, then try another shuffled checkpoint.'}`;
+
+    remediationSummary.replaceChildren();
+    const lessonTargets = new Map();
+    for (const objectiveId of missedObjectives) {
+      const targetLesson = payload.remediationByObjective?.[objectiveId];
+      if (targetLesson?.lessonId) lessonTargets.set(targetLesson.lessonId, targetLesson);
+    }
+    if (!lessonTargets.size) {
+      remediationSummary.hidden = true;
+      return;
+    }
+    remediationSummary.hidden = false;
+    remediationSummary.append(text('h3', 'Review these lessons before your next attempt'));
+    remediationSummary.append(text('p', 'These recommendations come from the learning objectives missed in this checkpoint.', 'portal-result-note'));
+    const actions = document.createElement('div');
+    actions.className = 'checkpoint-remediation-actions';
+    for (const targetLesson of lessonTargets.values()) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'practice-review-button';
+      button.textContent = targetLesson.lessonTitle ?? 'Review aligned lesson';
+      button.addEventListener('click', () => openLesson(targetLesson.lessonId));
+      actions.append(button);
+    }
+    remediationSummary.append(actions);
   };
 
   for (const [itemIndex, item] of (payload.items ?? []).entries()) {
@@ -416,9 +577,25 @@ function renderModuleAssessment(payload) {
           });
           fieldset.dataset.answered = 'true';
           answered += 1;
-          if (result.isCorrect) correct += 1;
+          if (result.isCorrect) {
+            correct += 1;
+          } else if (item.objective) {
+            missedObjectives.add(item.objective);
+          }
           feedback.dataset.state = result.isCorrect ? 'correct' : 'incorrect';
           feedback.textContent = formativeFeedback(result);
+          remediation.replaceChildren();
+          if (!result.isCorrect) {
+            const target = payload.remediationByObjective?.[item.objective];
+            if (target?.lessonId) {
+              const review = document.createElement('button');
+              review.type = 'button';
+              review.className = 'practice-review-button';
+              review.textContent = `Review aligned lesson: ${target.lessonTitle ?? 'lesson'}`;
+              review.addEventListener('click', () => openLesson(target.lessonId));
+              remediation.append(review);
+            }
+          }
           updateSummary();
         } catch (error) {
           delete fieldset.dataset.submitting;
@@ -434,7 +611,9 @@ function renderModuleAssessment(payload) {
     });
     const feedback = text('p', 'Choose one answer.', 'practice-feedback');
     feedback.setAttribute('aria-live', 'polite');
-    fieldset.append(options, feedback);
+    const remediation = document.createElement('div');
+    remediation.className = 'practice-remediation';
+    fieldset.append(options, feedback, remediation);
     article.append(fieldset);
   }
 
@@ -545,20 +724,52 @@ function renderLesson(lesson) {
   article.className = 'lesson-article';
   article.append(text('p', 'THC Academy lesson', 'eyebrow'));
   article.append(text('h2', lesson.title));
-  const meta = document.createElement('div');
-  meta.className = 'lesson-meta';
-  if (lesson.estimatedMinutes) meta.append(text('span', `${lesson.estimatedMinutes} min`, 'pill'));
-  meta.append(text('span', `Version ${lesson.version}`, 'pill'));
-  meta.append(text('span', progressLabel(), 'pill'));
-  article.append(meta);
 
   const content = lesson.content ?? {};
+  const meta = document.createElement('div');
+  meta.className = 'lesson-meta lesson-meta-primary';
+  if (lesson.estimatedMinutes) meta.append(text('span', `${lesson.estimatedMinutes} min`, 'pill'));
+  if ((lesson.learningObjectiveStatements ?? []).length) meta.append(text('span', `${lesson.learningObjectiveStatements.length} learning goal${lesson.learningObjectiveStatements.length === 1 ? '' : 's'}`, 'pill'));
+  article.append(meta);
+
   if (content.overview) {
     const intro = document.createElement('p');
-    intro.className = 'callout';
+    intro.className = 'lesson-overview';
     intro.textContent = content.overview;
     article.append(intro);
   }
+
+  const whyItMatters = content.extensions?.academyEnrichment?.whyItMatters;
+  if (typeof whyItMatters === 'string' && whyItMatters.trim()) {
+    const why = document.createElement('section');
+    why.className = 'lesson-orientation-card lesson-why';
+    why.append(text('h3', 'Why this matters'));
+    why.append(text('p', whyItMatters));
+    article.append(why);
+  }
+
+  if ((lesson.learningObjectiveStatements ?? []).length) {
+    const goals = document.createElement('section');
+    goals.className = 'lesson-orientation-card lesson-goals';
+    goals.append(text('h3', 'What you should be able to do'));
+    const list = document.createElement('ul');
+    for (const statement of lesson.learningObjectiveStatements) list.append(text('li', statement));
+    goals.append(list);
+    article.append(goals);
+  }
+
+  if (Array.isArray(content.extensions?.academyEnrichment?.priorKnowledgeRetrieval) && content.extensions.academyEnrichment.priorKnowledgeRetrieval.length) {
+    const prior = document.createElement('details');
+    prior.className = 'lesson-prior-knowledge';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Quick prior-knowledge check';
+    prior.append(summary);
+    const list = document.createElement('ul');
+    for (const prompt of content.extensions.academyEnrichment.priorKnowledgeRetrieval) list.append(text('li', prompt));
+    prior.append(list);
+    article.append(prior);
+  }
+
   if (Array.isArray(content.vocabulary) && content.vocabulary.length) {
     const section = document.createElement('section');
     section.className = 'lesson-section';
@@ -586,12 +797,27 @@ function renderLesson(lesson) {
   if (!renderedRich) renderLegacyLessonContent(article, content);
 
   if (lesson.references?.length) {
-    const section = document.createElement('section');
-    section.className = 'lesson-section';
-    section.append(text('h3', 'Evidence references'));
+    const section = document.createElement('details');
+    section.className = 'lesson-section lesson-reference-details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Evidence references (${lesson.references.length})`;
+    section.append(summary);
     section.append(text('p', lesson.references.join(', ')));
     article.append(section);
   }
+
+  const technical = document.createElement('details');
+  technical.className = 'lesson-technical-details';
+  const technicalSummary = document.createElement('summary');
+  technicalSummary.textContent = 'Lesson information';
+  technical.append(technicalSummary);
+  const technicalMeta = document.createElement('div');
+  technicalMeta.className = 'lesson-meta';
+  technicalMeta.append(text('span', `Version ${lesson.version}`, 'pill'));
+  technicalMeta.append(text('span', progressLabel(), 'pill'));
+  technical.append(technicalMeta);
+  article.append(technical);
+
   renderPracticeSection(article, lesson);
   renderCompletionControl(article, lesson);
   lessonView.replaceChildren(article);

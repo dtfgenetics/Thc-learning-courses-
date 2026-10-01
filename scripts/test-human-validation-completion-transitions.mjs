@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 const root=process.cwd(),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'thc-human-complete-'));
-const run=(script,args)=>{const r=spawnSync(process.execPath,[script,...args],{cwd:root,encoding:'utf8'});if(r.status!==0)throw new Error(r.stderr||r.stdout);return JSON.parse(r.stdout).record;};
+const run=(script,args)=>{const r=spawnSync(process.execPath,[script,...args],{cwd:root,encoding:'utf8'});if(r.status!==0)throw new Error(r.stderr||r.stdout);const out=JSON.parse(r.stdout);return out.record??out;};
 const schema=p=>{const a=new Ajv2020({allErrors:true,strict:false});addFormats(a);return a.compile(JSON.parse(fs.readFileSync(p,'utf8')));};
 
 const p=run('scripts/create-course-pilot-execution-record.mjs',['--course','COURSE-LH-TECH1-001','--pilot-id','TEST-PILOT','--cohorts','1','--participants','12','--authority','TEST']);

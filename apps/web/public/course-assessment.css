@@ -14,6 +14,14 @@
 .course-assessment-toolbar { position: sticky; top: .5rem; z-index: 3; display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin: 1.25rem 0; padding: .7rem .85rem; border: 1px solid var(--line); border-radius: .7rem; background: rgba(255,253,247,.96); box-shadow: 0 8px 18px rgba(37,63,45,.06); }
 .course-assessment-save-status { color: var(--muted); font-size: .82rem; }
 .course-assessment-save-status.error { color: #712f26; }
+.course-assessment-navigator { display: grid; gap: .55rem; margin: 0 0 1rem; padding: .7rem .8rem; border: 1px solid var(--line); border-radius: .7rem; background: #fff; }
+.course-assessment-navigator-label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.course-assessment-nav-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+.course-assessment-nav-button { min-width: 40px; min-height: 40px; border: 1px solid var(--line); border-radius: .55rem; background: var(--panel); color: var(--ink); font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
+.course-assessment-nav-button.answered { border-color: #9bb7a1; background: var(--green-soft); }
+.course-assessment-nav-button.saved { border-color: var(--green); color: var(--green); }
+.course-assessment-nav-button.saving { border-style: dashed; }
+.course-assessment-nav-button:focus-visible { outline: 3px solid rgba(36,95,61,.22); outline-offset: 2px; }
 .course-assessment-form { display: grid; gap: 1rem; }
 .course-assessment-item { min-width: 0; margin: 0; border: 1px solid var(--line); border-radius: .85rem; padding: 1rem 1.05rem 1.1rem; background: #fff; }
 .course-assessment-item legend { max-width: 72ch; padding: 0 .35rem; font-weight: 800; line-height: 1.45; }
@@ -73,10 +81,41 @@
 .practical-submission-status.error { color: var(--danger); }
 
 @media (max-width: 620px) {
-  .course-assessment-toolbar { top: .25rem; align-items: flex-start; flex-direction: column; gap: .2rem; }
-  .course-assessment-item { padding: .85rem; }
-  .course-assessment-launch, .course-assessment-submit, .course-assessment-secondary { width: 100%; }
-  .course-assessment-score { align-items: flex-start; flex-direction: column; gap: .35rem; }
+  .course-assessment-panel, .course-assessment-result { padding-bottom: calc(82px + env(safe-area-inset-bottom)); }
+  .course-assessment-panel > h2, .course-assessment-result > h2 { font-size: clamp(1.65rem,8vw,2.25rem); line-height: 1.05; }
+  .course-assessment-panel > .lede, .course-assessment-result > .lede { font-size: .96rem; line-height: 1.55; }
+  .course-assessment-identity { display: grid; gap: .35rem; padding: .65rem .7rem; font-size: .74rem; }
+  .course-assessment-toolbar { top: .25rem; display: grid; grid-template-columns: 1fr auto; gap: .2rem .65rem; align-items: center; padding: .62rem .7rem; margin: .9rem 0; border-radius: .65rem; }
+  .course-assessment-progress { grid-column: 1; }
+  .course-assessment-timer { grid-column: 2; justify-self: end; font-size: .9rem; }
+  .course-assessment-save-status { grid-column: 1 / -1; font-size: .74rem; }
+  .course-assessment-navigator { position: sticky; top: 4.7rem; z-index: 2; margin-bottom: .8rem; padding: .55rem .6rem; background: rgba(255,255,255,.96); backdrop-filter: blur(10px); }
+  .course-assessment-nav-list { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .15rem; scrollbar-width: none; overscroll-behavior-inline: contain; }
+  .course-assessment-nav-list::-webkit-scrollbar { display: none; }
+  .course-assessment-nav-button { flex: 0 0 42px; min-width: 42px; min-height: 42px; }
+  .course-assessment-form { gap: .8rem; }
+  .course-assessment-item { scroll-margin-top: 10rem; padding: .9rem .85rem; border-radius: .75rem; }
+  .course-assessment-item legend { font-size: 1rem; line-height: 1.42; padding: 0 .2rem; }
+  .course-assessment-choices { gap: .5rem; margin-top: .7rem; }
+  .course-assessment-choice { min-height: 52px; padding: .78rem .8rem; border-radius: .7rem; align-items: center; }
+  .course-assessment-choice input { width: 20px; height: 20px; margin-top: 0; }
+  .course-assessment-choice span { font-size: .97rem; line-height: 1.42; }
+  .course-assessment-number { width: 100%; min-height: 52px; font-size: 1rem; }
+  .course-assessment-submit-area { position: sticky; bottom: 0; z-index: 4; margin: .5rem -.85rem -0.9rem; padding: .7rem .85rem calc(.7rem + env(safe-area-inset-bottom)); background: rgba(255,253,247,.97); border-top: 1px solid var(--line); box-shadow: 0 -8px 20px rgba(37,63,45,.07); }
+  .course-assessment-submit-area .course-assessment-note { margin: 0; font-size: .72rem; line-height: 1.35; }
+  .course-assessment-launch, .course-assessment-submit, .course-assessment-secondary { width: 100%; min-height: 48px; }
+  .course-assessment-score { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; gap: .65rem; padding: .85rem .9rem; }
+  .course-assessment-score strong { font-size: clamp(2.2rem,14vw,3.2rem); }
+  .course-assessment-score span { font-size: .82rem; line-height: 1.35; }
+  .course-assessment-domains, .course-assessment-remediation { margin-top: 1.1rem; padding-top: .9rem; }
+  .course-assessment-domain-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .course-assessment-domain { padding: .72rem; border-radius: .65rem; }
+  .course-assessment-domain strong { font-size: .88rem; line-height: 1.28; }
+  .course-assessment-domain-score { font-size: 1.15rem; }
+  .course-assessment-domain-state { font-size: .7rem; }
+  .course-assessment-remediation { padding: .85rem; }
+  .course-assessment-remediation .course-assessment-secondary { margin-top: .25rem; }
+  .course-practical-page-actions { display: grid; grid-template-columns: 1fr; gap: .5rem; }
   .course-assessment-domain-grid, .course-practical-stage-grid, .course-practical-score-grid { grid-template-columns: 1fr; }
   .course-practical-status-line { align-items: flex-start; flex-direction: column; }
   .course-practical-score-domain { grid-template-columns: 1fr; gap: .2rem; }

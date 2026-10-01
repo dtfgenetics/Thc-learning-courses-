@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-005-01",
   "title": "Propagation, Transplant Identity and Sanitation Control",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "published",
   "competencies": [
     "COMP-PROP-001",
@@ -13,7 +13,7 @@
     "LO-LH-TECH1-005-04",
     "LO-LH-TECH1-005-06"
   ],
-  "estimatedMinutes": 65,
+  "estimatedMinutes": 75,
   "references": [
     "REF-PROP-001",
     "REF-IPM-001",
@@ -41,6 +41,13 @@
       }
     ],
     "sections": [
+      {
+        "title": "Seed germination is a staged physiological transition",
+        "body": "A dry viable seed first takes up water by imbibition. Hydration restores membrane function, activates enzymes and respiration, and allows the embryo to resume growth. The radicle normally emerges first and establishes the initial root axis; the hypocotyl and cotyledons then support emergence and early seedling development. Water is essential, but persistent saturation can reduce oxygen diffusion and favor failure. Temperature changes reaction rates, while seed age and storage history influence viability and vigor.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
       {
         "title": "Identity is verified before plant material moves",
         "body": "Before taking cuttings, sowing assigned seed, transplanting or moving trays, verify the controlled donor or source, lot or batch, tray and destination required by the work order. If labels are missing or conflicting, stop movement and resolve identity from approved records; leaf shape or memory is not a valid substitute.",
@@ -117,6 +124,17 @@
         "references": [
           "REF-PROP-001",
           "REF-IPM-001"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-005-010",
+        "title": "Seed anatomy and germination physiology",
+        "src": "/assets/course5/seed-anatomy-germination.webp",
+        "alt": "Educational cannabis seed cutaway and germination sequence identifying seed coat, embryo, cotyledons and radicle, followed by water uptake, radicle emergence and early seedling establishment.",
+        "caption": "Germination moves from water uptake and metabolic reactivation to radicle emergence and seedling establishment. Moisture, oxygen, temperature, sanitation and seed vigor interact throughout the process.",
+        "references": [
+          "REF-PROP-001"
         ]
       },
       {

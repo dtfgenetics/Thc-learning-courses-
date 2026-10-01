@@ -30,7 +30,7 @@ The reusable strict learning-loop audit is the controlling machine check for obj
 ## Learner and visual source
 
 - visual registry: `visuals/COURSE4-ASSET-REGISTRY.json`
-- 7 produced learner assets are registered;
+- 8 produced learner assets are registered;
 - 5 embedded instructional visuals;
 - 2 downloadable practice worksheets;
 - canonical public files live under `apps/web/public/assets/course4/`;
@@ -61,7 +61,7 @@ Course 4 must preserve all of the following:
 4. two formative and four summative items per objective unless a reviewed blueprint change explicitly supersedes the current distribution;
 5. evidence references on every scored item;
 6. Practical B objective mapping;
-7. all seven governed Course 4 WebP assets present and deliverable through the Academy runtime with learner-facing alt/caption metadata;
+7. all eight governed Course 4 WebP assets present and deliverable through the Academy runtime with learner-facing alt/caption metadata;
 8. complete remediation sections for all six objectives;
 9. package artifact presence;
 10. draft/release boundaries that do not imply professional credential issuance.

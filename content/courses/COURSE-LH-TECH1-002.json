@@ -1,5 +1,5 @@
 {
-  "version": "0.10.0",
+  "version": "0.12.0",
   "status": "published",
   "credentialBearing": true,
   "level": "Cultivation Technician I / entry occupational pathway",
@@ -68,15 +68,25 @@
     "reproductiveMorphologySourcePass": 1,
     "visualLearningBatch": 4,
     "practiceAssetBatch": 2,
-    "producedVisualCount": 7,
+    "producedVisualCount": 9,
     "downloadablePracticeAssetCount": 3,
-    "totalLearnerAssetCount": 10,
+    "totalLearnerAssetCount": 12,
     "visualRegistry": "visuals/COURSE2-ASSET-REGISTRY.json",
     "visualDriveFolderId": "1pZCMSaiS5MiJpwgokjsR6mhZr_dbR58o",
     "academicPublicationStatus": "owner-approved-public-academic-release",
     "academicPublicationDate": "2026-09-22",
     "professionalCredentialUseAuthorized": false,
     "encyclopediaSubstitutionAllowed": false,
-    "continuousImprovement": true
+    "continuousImprovement": true,
+    "academicPublicationBoundary": "All four canonical Course 2 academic modules are published for learner study. Academic completion remains educational evidence only and does not authorize professional credential issuance.",
+    "openAcademicDependencies": [],
+    "machineResolvableWorkComplete": true,
+    "academicCompletionModules": [
+      "MOD-PLANT-BIO-001",
+      "MOD-FLOWER-001",
+      "MOD-LH-TECH1-001-RECORDS",
+      "MOD-LH-TECH1-002-OBSERVATION"
+    ],
+    "academicCompletionBlockedWhileOpenDependencies": true
   }
 }

@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-ROOTZONE-021",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-ROOTZONE-001",
+  "objective": "LO-ROOTZONE-DRYBACK-003",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two containers reach the same final moisture reading before irrigation, but one reaches it six hours earlier. What does that show?",
+  "choices": [
+    "Their dryback trajectories differ and plant demand, delivery or root-zone behavior should be investigated",
+    "They are identical because the endpoint matches",
+    "Only the clock matters",
+    "The faster-drying plant always needs more fertilizer"
+  ],
+  "correct": 0,
+  "rationale": "Dryback is a time-dependent trajectory; identical endpoints can hide important differences in rate and crop/root-zone behavior.",
+  "references": [
+    "REF-IRRIGATION-001"
+  ]
+}

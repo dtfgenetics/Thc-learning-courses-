@@ -49,10 +49,13 @@ const startIndex = source.indexOf(START);
 const endIndex = source.indexOf(END);
 if (startIndex < 0 || endIndex < startIndex) throw new Error('Course 1 practical public-data markers are missing from course-assessment.js');
 const current = source.slice(startIndex, endIndex + END.length);
+const normalizedCurrent = current.replace(/\r\n/g, '\n');
+const sourceEol = source.includes('\r\n') ? '\r\n' : '\n';
 
 if (writeMode) {
-  if (current !== expected) {
-    const next = `${source.slice(0, startIndex)}${expected}${source.slice(endIndex + END.length)}`;
+  if (normalizedCurrent !== expected) {
+    const sourceExpected = expected.replace(/\n/g, sourceEol);
+    const next = `${source.slice(0, startIndex)}${sourceExpected}${source.slice(endIndex + END.length)}`;
     fs.writeFileSync(runtimePath, next);
     console.log('Synchronized Course 1 public practical runtime data from the canonical practical object.');
   } else {
@@ -61,7 +64,7 @@ if (writeMode) {
   process.exit(0);
 }
 
-if (current !== expected) {
+if (normalizedCurrent !== expected) {
   console.error('Course 1 public practical runtime data is stale. Run: npm run course1:practical-public:sync');
   process.exit(1);
 }

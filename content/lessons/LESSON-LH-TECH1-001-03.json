@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-001-03",
   "title": "Cannabis-Specific Workplace Exposures and Emergency Escalation",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "published",
   "competencies": [
     "COMP-SAFETY-WORK-001"
@@ -96,6 +96,45 @@
         "caption": "A visual room scan should include ordinary workplace hazards and exposures that can be prominent in cultivation work.",
         "references": [
           "REF-NIOSH-CANNABIS-HAZARDS-2024"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "How to interpret the exposure scan scientifically",
+        "body": "A room image cannot prove an exposure dose or diagnose a health effect. Use it to identify possible sources, routes and failed controls that require verification. Ask what material or energy is present, how it could reach a worker, whether an engineering or work-practice control is functioning, and what evidence would justify continuation, pause, evacuation or escalation. This keeps visual recognition separate from unsupported assumptions about concentration or diagnosis.",
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-NIOSH-CANNABIS-ALLERGIES-2023"
+        ]
+      },
+      {
+        "type": "steps",
+        "title": "Source–route–worker model for cultivation exposures",
+        "items": [
+          {
+            "title": "Source",
+            "body": "Identify the material or energy source: plant dust, microbial material, pesticide or cleaning chemical, carbon dioxide, ozone, heat, intense light, noise or a physical hazard."
+          },
+          {
+            "title": "Route",
+            "body": "Determine the plausible route of exposure or harm: inhalation, skin or eye contact, ingestion through contaminated hands, noise/energy transfer, ergonomic loading, electrical contact or a fall/impact pathway."
+          },
+          {
+            "title": "Control",
+            "body": "Check whether the assigned engineering, enclosure, ventilation, sanitation, work-practice, access-control or PPE layer is actually present and functioning."
+          },
+          {
+            "title": "Worker evidence",
+            "body": "Observe task conditions and record worker-reported symptoms or events factually. Do not infer a diagnosis or exposure concentration from appearance alone."
+          },
+          {
+            "title": "Decision",
+            "body": "Continue only when the work remains inside the verified control envelope; otherwise pause, stop, report, escalate or follow the emergency procedure appropriate to the condition."
+          }
+        ],
+        "references": [
+          "REF-NIOSH-CANNABIS-HAZARDS-2024",
+          "REF-NIOSH-ASTHMA-2026"
         ]
       },
       {

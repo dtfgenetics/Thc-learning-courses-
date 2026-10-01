@@ -21,6 +21,7 @@ import {
   coursePracticalReportCsv
 } from './course-practical-evaluator-service.mjs';
 import { normalizePracticalEvidenceSubmission, learnerPracticalSubmissionView } from '../../../packages/domain/practical-evidence-submission.mjs';
+import { credentialSubjectHash, issueEligibleCredential } from './credential-issuance-service.mjs';
 
 const root = process.cwd();
 const port = Number(process.env.PORT ?? 8787);
@@ -150,10 +151,17 @@ function credentialProgressView(credential, course, rawEvidence) {
   const requiredAssessments = new Set(credential.eligibility.requiredAssessments ?? []);
   const requiredPerformance = credential.eligibility.requiredPerformanceAssessments ?? [];
   const requiredArtifacts = credential.eligibility.requiredPortfolioArtifacts ?? [];
-  const requiredCompetencies = new Set(course?.competencies ?? []);
+  const requiredCourses = new Set(
+    (credential.eligibility.requiredCourseCompletions?.length
+      ? credential.eligibility.requiredCourseCompletions
+      : credential.eligibility.requireCourseCompletion === true
+        ? [credential.course]
+        : [])
+  );
+  const requiredCompetencies = new Set(credential.competenciesDemonstrated ?? course?.competencies ?? []);
   const evidence = {
     learnerId: rawEvidence.learnerId ?? null,
-    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => row.courseId === credential.course),
+    courseCompletions: (rawEvidence.courseCompletions ?? []).filter((row) => requiredCourses.has(row.courseId)),
     assessments: (rawEvidence.assessments ?? []).filter((row) => requiredAssessments.has(row.assessmentId)),
     performanceAssessments: (rawEvidence.performanceAssessments ?? []).filter((row) => requiredPerformance.includes(row.assessmentId)),
     portfolioArtifacts: (rawEvidence.portfolioArtifacts ?? []).filter((row) => requiredArtifacts.includes(row.artifactId))
@@ -170,6 +178,8 @@ function credentialProgressView(credential, course, rawEvidence) {
       role: credential.role ?? null,
       course: credential.course,
       courseVersion: credential.courseVersion ?? null,
+      credentialProgram: credential.credentialProgram ?? null,
+      requiredCourses: [...requiredCourses],
       certificationUseStatus: credential.governance?.certificationUseStatus ?? null,
       releaseApprovalStatus: credential.governance?.releaseApprovalStatus ?? null,
       minimumPassingScorePercent: credential.eligibility.minimumPassingScorePercent
@@ -222,6 +232,8 @@ export function credentialTranscriptView(credential, course, rawEvidence) {
       role: progress.credential.role,
       course: progress.credential.course,
       courseVersion: progress.credential.courseVersion,
+      credentialProgram: progress.credential.credentialProgram,
+      requiredCourses: progress.credential.requiredCourses,
       certificationUseStatus: progress.credential.certificationUseStatus,
       releaseApprovalStatus: progress.credential.releaseApprovalStatus
     },
@@ -246,6 +258,32 @@ export function credentialTranscriptView(credential, course, rawEvidence) {
       excludesPrivateEvaluatorNotes: true,
       excludesRawResponses: true
     }
+  };
+}
+
+function privateLearnerCredentialView(record, definition) {
+  const payload = record?.payloadJson ?? {};
+  return {
+    verificationId: record.verificationId,
+    status: record.status,
+    credential: {
+      id: definition?.id ?? record.credentialDefinitionId,
+      title: definition?.title ?? payload?.credential?.title ?? record.credentialDefinitionId,
+      version: record.credentialDefinitionVersion,
+      role: definition?.role ?? payload?.credential?.role ?? null
+    },
+    course: {
+      id: record.courseId ?? null,
+      version: record.courseVersion ?? null
+    },
+    recipient: {
+      learnerReference: payload?.recipient?.learnerReference ?? null,
+      certificateName: payload?.recipient?.certificateName ?? null,
+      applicationReference: payload?.recipient?.applicationReference ?? null
+    },
+    issuer: payload?.issuer ?? record.issuer ?? null,
+    issuedAt: record.issuedAt,
+    expiresAt: record.expiresAt ?? null
   };
 }
 
@@ -304,6 +342,8 @@ export function courseEvidenceView(course, assessment, rawEvidence) {
 
 export function createHandler({
   credentialStore = null,
+  credentialWriter = null,
+  credentialSigner = null,
   learnerStore = null,
   practicalEvaluatorStore = null,
   env = process.env,
@@ -627,6 +667,21 @@ export function createHandler({
         return json(res, result.status, { ...result.body, requestId });
       }
 
+      if (req.method === 'GET' && url.pathname === '/api/v1/me/credentials') {
+        route = 'GET /api/v1/me/credentials';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (typeof resolvedCredentialStore.listBySubjectHash !== 'function') {
+          return json(res, 503, { error: 'learner-credential-persistence-unavailable', requestId });
+        }
+        const records = await resolvedCredentialStore.listBySubjectHash(credentialSubjectHash(auth.subject));
+        const credentials = records.map((record) => privateLearnerCredentialView(
+          record,
+          loadCredentialDefinition(record.credentialDefinitionId)
+        ));
+        return json(res, 200, { credentials, requestId });
+      }
+
       const credentialProgressMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/progress$/);
       if (req.method === 'GET' && credentialProgressMatch) {
         route = 'GET /api/v1/me/credentials/:credentialId/progress';
@@ -669,6 +724,44 @@ export function createHandler({
         if (!/^\d+(?:\.\d+){0,3}$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
         const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
         return json(res, 200, { progress });
+      }
+
+      const credentialIssueMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/(CRED-[A-Z0-9-]+)\/issue$/);
+      if (req.method === 'POST' && credentialIssueMatch) {
+        route = 'POST /api/v1/admin/credentials/:credentialId/issue';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        if (!learnerStore || ['listCredentialEvidence','getLearnerProfile','listApplications'].some((method) => typeof learnerStore[method] !== 'function')) {
+          return json(res, 503, { error: 'credential-issuance-learner-evidence-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const learnerSubject = String(body.learnerSubject ?? '').trim();
+        if (!learnerSubject) return json(res, 400, { error: 'learner-subject-required', requestId });
+
+        const credential = loadCredentialDefinition(credentialIssueMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const course = loadCourseDefinition(credential.course);
+        if (!course) return json(res, 500, { error: 'credential-course-not-found', requestId });
+
+        const [rawEvidence, learnerProfile, applications] = await Promise.all([
+          learnerStore.listCredentialEvidence(learnerSubject, { credentialDefinitionId: credential.id }),
+          learnerStore.getLearnerProfile(learnerSubject),
+          learnerStore.listApplications(learnerSubject)
+        ]);
+        const result = await issueEligibleCredential({
+          credential,
+          course,
+          rawEvidence,
+          learnerSubject,
+          learnerProfile,
+          applications,
+          credentialWriter,
+          credentialSigner,
+          actorId: auth.subject
+        });
+        return json(res, result.status, { ...result.body, requestId });
       }
 
       const credentialMatch = url.pathname.match(/^\/api\/v1\/credentials\/([A-Za-z0-9_-]+)$/);

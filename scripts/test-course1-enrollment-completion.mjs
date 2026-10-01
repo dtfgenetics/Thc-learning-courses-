@@ -46,6 +46,14 @@ academic = evaluateCourseAcademicCompletion({ bundle: evolvedBundle, progress: l
 assert.equal(academic.complete, false, 'adding a new canonical lesson should reopen academic requirements until completed');
 assert.deepEqual(academic.missingRequirements, ['instruction']);
 
+const revisedLessonBundle = {
+  ...bundle,
+  lessons: bundle.lessons.map((lesson, index) => index === 0 ? { ...lesson, version: '99.0.0' } : lesson)
+};
+academic = evaluateCourseAcademicCompletion({ bundle: revisedLessonBundle, progress: lessonProgress, evidence });
+assert.equal(academic.complete, false, 'completion from an older lesson version must not satisfy a revised lesson');
+assert.equal(academic.snapshot.completedLessonCount, 17);
+
 const subject = 'learner-course1-sync';
 let enrollment = {
   courseId: COURSE_ID,

@@ -1,12 +1,25 @@
 {
   "id": "ASSESS-ENV-MODULE-001",
   "title": "Environmental Management Module Knowledge Check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "purpose": "formative",
-  "competencies": ["COMP-ENV-VPD-001"],
-  "objectives": ["LO-ENV-VPD-001", "LO-ENV-SENSORS-002", "LO-ENV-LEAF-VPD-003"],
-  "items": ["ITEM-ENV-VPD-007", "ITEM-ENV-VPD-008", "ITEM-ENV-VPD-009"],
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "objectives": [
+    "LO-ENV-VPD-001",
+    "LO-ENV-SENSORS-002",
+    "LO-ENV-LEAF-VPD-003"
+  ],
+  "items": [
+    "ITEM-ENV-VPD-007",
+    "ITEM-ENV-VPD-015",
+    "ITEM-ENV-VPD-008",
+    "ITEM-ENV-VPD-012",
+    "ITEM-ENV-VPD-009",
+    "ITEM-ENV-VPD-013"
+  ],
   "passingScorePercent": 80,
   "maxAttempts": null,
   "feedbackMode": "immediate"

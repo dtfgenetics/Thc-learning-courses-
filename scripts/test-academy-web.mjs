@@ -67,12 +67,14 @@ try {
   assert.match(appClientText, /Public study prerequisites/, 'learner catalog should label course study prerequisites');
   assert.match(appClientText, /Professional pathway prerequisite/, 'learner catalog should distinguish credential-program prerequisites');
   assert.match(appClientText, /does not by itself restrict access to public academic study/, 'credential pathway prerequisite must not be presented as a public-study lock');
+  assert.match(appClientText, /Take graded course final/, 'catalog should expose graded final launch actions');
+  assert.match(appClientText, /launchCourseAssessment\(course\.id, launch\)/, 'graded final launcher must be course-specific');
 
   const assessmentClient = await fetch(`${base}/course-assessment.js`);
   assert.equal(assessmentClient.status, 200);
   const assessmentClientText = await assessmentClient.text();
   assert.match(assessmentClientText, /assessment-attempts/, 'Course 1 final client should expose the authenticated assessment workflow');
-  assert.match(assessmentClientText, /separate from the Technician I credential examination/, 'Course 1 final client must state the separate credential-exam boundary without labeling academic course content restricted');
+  assert.match(assessmentClientText, /separate from professional credential issuance/, 'graded academic finals must preserve the academic/credential boundary');
   const assessmentStyles = await fetch(`${base}/course-assessment.css`);
   assert.equal(assessmentStyles.status, 200);
   assert.match(await assessmentStyles.text(), /course-assessment-choice/, 'Course 1 final styles should include assessment controls');
@@ -263,4 +265,4 @@ try {
   await once(production, 'close');
 }
 
-console.log('Academy learner web, Course 1 final/practical assessor assets, and staging governance tests passed.');
+console.log('Academy learner web, multi-course graded finals, Course 1 practical assessor assets, and staging governance tests passed.');

@@ -17,12 +17,20 @@ const modules=new Map(readDir('content/modules').map(x=>[x.id,x]));
 const lessons=new Map(readDir('content/lessons').map(x=>[x.id,x]));
 const refs=new Map(readDir('content/references').map(x=>[x.id,x]));
 
+const structuralProblems=[];
 const canonicalLessonIds=new Set();
+let canonicalLessonCount=0;
 for(const row of execution.courses??[]){
   const c=courses.get(row.courseId);
+  if(!c){structuralProblems.push(row.courseId+': canonical course is missing');continue;}
   for(const mid of c?.modules??[]){
     const mod=modules.get(mid);
-    for(const lid of mod?.lessons??[]) canonicalLessonIds.add(lid);
+    if(!mod){structuralProblems.push(c.id+': module '+mid+' is missing');continue;}
+    for(const lid of mod.lessons??[]){
+      canonicalLessonCount++;
+      canonicalLessonIds.add(lid);
+      if(!lessons.has(lid)) structuralProblems.push(c.id+': lesson '+lid+' is missing');
+    }
   }
 }
 const used=new Set();
@@ -49,7 +57,6 @@ const rows=[...used].sort().map(id=>{
     freshness:ageDays===null?'verification-not-recorded':ageDays>maxAgeDays?'refresh-due':'current'
   };
 });
-const structuralProblems=[];
 for(const r of rows){
   if(r.missing) structuralProblems.push(r.id+': referenced source is missing');
 }
@@ -66,7 +73,8 @@ const refreshQueue=rows.filter(r=>!r.missing&&r.freshness!=='current').map(r=>({
 const out={
   policy:{maxVerificationAgeDays:maxAgeDays,freshnessIsMaintenanceNotContentApproval:true},
   summary:{
-    canonicalLessons:canonicalLessonIds.size,
+    canonicalLessons:canonicalLessonCount,
+    uniqueCanonicalLessons:canonicalLessonIds.size,
     sourceIdsUsed:rows.length,
     reviewedSources:rows.filter(r=>r.reviewed).length,
     verifiedSources:rows.filter(r=>r.lastVerifiedAt).length,

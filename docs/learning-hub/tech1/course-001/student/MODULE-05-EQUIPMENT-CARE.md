@@ -14,7 +14,19 @@ OSHA machine-guarding material emphasizes that moving machine parts can cause se
 
 ### Check before operation
 
-A pre-use check is a defined inspection intended to catch obvious readiness problems before they become worker injury, crop damage, process failure or downtime. The exact checklist belongs to the equipment manufacturer and facility procedure, but common categories include:
+A pre-use check is a defined inspection intended to catch obvious readiness problems before they become worker injury, crop damage, process failure or downtime.
+
+### Scientific foundation — readiness checks are a form of preventive risk control
+
+Equipment failures rarely matter only to the machine itself. In cultivation, one abnormal pump, fan, sensor, controller or dehumidifier can propagate into water stress, environmental drift, process delay, worker exposure or loss of traceability. Pre-use checks are therefore a simple form of **failure interception**: detect an abnormal condition before the equipment is relied on for production.
+
+A useful mental model is:
+
+**expected state → observation → compare → decide → document**
+
+The technician does not need to diagnose every failure. The important skill is recognizing when the observed state no longer meets the expected operating condition.
+
+The exact checklist belongs to the equipment manufacturer and facility procedure, but common categories include:
 
 - correct asset identity;
 - required cleanliness/sanitation state;
@@ -98,6 +110,18 @@ For ten equipment scenarios, draw a line between **operator care** and **servici
 ### An alarm is evidence, not a root cause
 
 A controller alert, failed zone, unusual noise, leak or abnormal reading is a symptom. It can narrow the investigation, but Technician I should not declare a root cause without evidence.
+
+### Scientific foundation — observation, hypothesis and diagnosis are not the same thing
+
+A good fault report separates three levels:
+
+1. **Observation:** directly seen, heard, measured or reported by the system.
+2. **Hypothesis:** a possible explanation consistent with the observation.
+3. **Diagnosis:** a supported conclusion reached with sufficient evidence and appropriate authority.
+
+For example, “Zone 3 has no measured flow” is an observation. “The filter may be blocked” is a hypothesis. “The filter is blocked” is a diagnosis that may require inspection beyond Technician I authority.
+
+Keeping those levels separate prevents premature conclusions from becoming false maintenance history.
 
 Useful fault context includes:
 

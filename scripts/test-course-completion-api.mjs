@@ -10,10 +10,13 @@ assert.equal(bundle.modules.length,6);
 assert.equal(bundle.lessons.length,18);
 
 const firstModule=bundle.modules[0];
-const partialLessonIds=(firstModule.lessons??[]).slice(0,2);
-let progress=partialLessonIds.map((lessonId,index)=>({
-  lessonId,
-  lessonVersion:'1.0.0',
+const partialLessons=(firstModule.lessons??[])
+  .slice(0,2)
+  .map((lessonId)=>bundle.lessons.find((lesson)=>lesson.id===lessonId))
+  .filter(Boolean);
+let progress=partialLessons.map((lesson,index)=>({
+  lessonId:lesson.id,
+  lessonVersion:String(lesson.version),
   status:'completed',
   completedAt:`2026-09-0${index+1}T12:00:00.000Z`
 }));
@@ -57,6 +60,38 @@ assert.equal(academic.instruction.completionPercent,100);
 assert.equal(academic.instruction.modules.every((row)=>row.complete===true),true);
 assert.equal(academic.snapshot.completedModuleCount,6);
 assert.equal(academic.snapshot.requiredModuleCount,6);
+
+const course2Bundle=loadCourseAcademicCompletionBundle('COURSE-LH-TECH1-002');
+assert.ok(course2Bundle,'Technician I Course 2 completion bundle must resolve');
+assert.deepEqual(course2Bundle.completionModuleIds,[
+  'MOD-PLANT-BIO-001',
+  'MOD-FLOWER-001',
+  'MOD-LH-TECH1-001-RECORDS',
+  'MOD-LH-TECH1-002-OBSERVATION'
+],'Course 2 academic completion must require every canonical published teaching module, including shared Plant Biology, Flowering and Records foundations.');
+assert.equal(course2Bundle.modules.length,4);
+assert.equal(course2Bundle.lessons.length,13);
+assert.equal(course2Bundle.performanceAssessmentId,null,'credential practical mapping must not be treated as an academic-practical requirement');
+const course2Progress=course2Bundle.lessons.map((lesson,index)=>({
+  lessonId:lesson.id,
+  lessonVersion:String(lesson.version),
+  status:'completed',
+  completedAt:`2026-09-${String((index%28)+1).padStart(2,'0')}T10:00:00.000Z`
+}));
+const course2Evidence={
+  assessmentAttempts:[{
+    assessmentId:course2Bundle.assessment.id,
+    assessmentVersion:String(course2Bundle.assessment.version),
+    status:'scored',
+    passed:true,
+    scorePercent:88,
+    scoredAt:'2026-09-24T10:00:00.000Z'
+  }]
+};
+const course2Academic=evaluateCourseAcademicCompletion({bundle:course2Bundle,progress:course2Progress,evidence:course2Evidence});
+assert.equal(course2Academic.complete,true,'published academic courses without a linked academic practical must be completable with instruction plus final');
+assert.deepEqual(course2Academic.missingRequirements,[]);
+assert.equal(course2Academic.snapshot.performanceAssessmentStatus,'not-required');
 
 const credentialStore={
   kind:'test-persistent',
@@ -122,4 +157,4 @@ try{
   await once(server,'close');
 }
 
-console.log('Authoritative lesson/module/course completion projection and API tests passed.');
+console.log('Authoritative lesson/module/course completion projection and API tests passed, including courses with and without a linked academic practical.');

@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-004-01",
   "title": "Sample Identity, pH/EC Measurement and Meter Readiness",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "published",
   "competencies": [
     "COMP-WATER-001",
@@ -13,7 +13,7 @@
     "LO-LH-TECH1-004-05",
     "LO-LH-TECH1-004-06"
   ],
-  "estimatedMinutes": 60,
+  "estimatedMinutes": 70,
   "references": [
     "REF-IRRIGATION-001",
     "REF-MHRA-GXP-DATA-INTEGRITY"
@@ -67,6 +67,14 @@
         "body": "pH affects nutrient chemistry and availability, but a pH value by itself does not prove a specific deficiency or root-zone disorder. Interpretation should retain sample method, EC, root-zone condition, crop stage and other evidence when the task requires escalation.",
         "references": [
           "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Why pH changes nutrient chemistry without diagnosing the crop",
+        "body": "pH changes proton activity and can alter nutrient speciation, solubility, surface charge and microbial processes in the root environment. Those chemical effects help explain why nutrient availability varies with pH, but availability is also shaped by media chemistry, alkalinity, cation exchange, dissolved-ion concentration, temperature, oxygen, irrigation history and root activity. A chart can show general chemical tendencies; it cannot prove that a visible symptom is caused by one element.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-NUTRITION-001"
         ]
       }
     ],
@@ -127,6 +135,27 @@
         "references": [
           "REF-IRRIGATION-001",
           "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-004-008",
+        "title": "pH, root-zone chemistry and nutrient availability",
+        "src": "/assets/course4/ph-root-zone-nutrient-availability.webp",
+        "alt": "Educational root-zone diagram showing pH as a chemical context variable that can alter nutrient form and availability, with roots, dissolved ions and media factors surrounding the uptake zone.",
+        "caption": "pH influences nutrient chemistry, but availability charts show broad tendencies rather than a direct deficiency diagnosis. Interpret pH with EC, sample method, media, irrigation and crop evidence.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-NUTRITION-001"
+        ]
+      },
+      {
+        "type": "callout",
+        "title": "Availability is not the same as uptake",
+        "tone": "evidence",
+        "body": "A nutrient can be present in solution yet poorly acquired by the plant, or a tissue symptom can appear even when solution chemistry looks acceptable. Root health, oxygen, water movement, ion competition, transport demand and developmental stage all affect the path from nutrient presence to plant function.",
+        "references": [
+          "REF-NUTRITION-001"
         ]
       },
       {

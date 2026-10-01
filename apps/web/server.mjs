@@ -58,6 +58,12 @@ function safeLesson(lesson, publicReleaseIds = new Set()) {
     status: publicStatus(lesson, publicReleaseIds),
     competencies: lesson.competencies ?? [],
     learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [],
+    learningObjectiveStatements: (lesson.learningObjectives ?? lesson.objectives ?? []).map((id) => {
+      const target = path.join(root, 'content/learning-objectives', `${id}.json`);
+      if (!fs.existsSync(target)) return null;
+      const objective = JSON.parse(fs.readFileSync(target, 'utf8'));
+      return typeof objective.statement === 'string' ? objective.statement : null;
+    }).filter(Boolean),
     estimatedMinutes: lesson.estimatedMinutes ?? null,
     references: lesson.references ?? [],
     content: { ...sourceContent, blocks }
@@ -210,6 +216,8 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       passingScorePercent: Number(assessment.passingScorePercent ?? 0),
       feedbackMode: assessment.feedbackMode ?? 'after-submit',
       itemCount: Array.isArray(assessment.items) ? assessment.items.length : 0,
+      academicPracticalRequired: typeof assessment.extensions?.linkedPerformanceAssessment === 'string',
+      linkedAcademicPracticalId: assessment.extensions?.linkedPerformanceAssessment ?? null,
       certificationUseStatus: assessment.extensions?.certificationUseStatus ?? null
     };
   };
@@ -237,9 +245,17 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
     credentialBearing: Boolean(course.credentialBearing),
     description: course.description ?? course.summary ?? '',
     level: typeof course.level === 'string' ? course.level : null,
+    estimatedMinutes: Number.isFinite(Number(course.estimatedMinutes)) ? Number(course.estimatedMinutes) : null,
+    learningOutcomes: safeStringList(course.learningOutcomes),
     intendedAudience: safeStringList(course.intendedAudience),
     prerequisites: safeStringList(course.prerequisites),
     pathway: safePathway(course),
+    academicPublicationStatus: course.extensions?.academicPublicationStatus ?? null,
+    academicCompletionBlocked: course.extensions?.academicCompletionBlockedWhileOpenDependencies === true && (course.extensions?.openAcademicDependencies?.length ?? 0) > 0,
+    openAcademicDependencies: (course.extensions?.openAcademicDependencies ?? []).map((moduleId) => {
+      const module = modules.get(moduleId);
+      return { id: moduleId, title: module?.title ?? moduleId, status: module?.status ?? 'missing' };
+    }),
     finalAssessment: safeFinalAssessment(course),
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
       id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds), assessment: module.assessment ?? null,
@@ -385,8 +401,18 @@ export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-
   const source = loadModuleAssessmentSource(id, { previewDrafts });
   if (!source) return null;
   const { module, assessment, items, publicReleaseIds } = source;
+  const remediationByObjective = {};
+  for (const lessonId of module.lessons ?? []) {
+    const target = path.join(root, 'content/lessons', `${lessonId}.json`);
+    if (!fs.existsSync(target)) continue;
+    const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
+    for (const objectiveId of lesson.learningObjectives ?? lesson.objectives ?? []) {
+      remediationByObjective[objectiveId] = { lessonId: lesson.id, lessonTitle: lesson.title };
+    }
+  }
   return {
     module: { id: module.id, title: module.title, version: module.version, status: publicStatus(module, publicReleaseIds) },
+    remediationByObjective,
     assessment: {
       id: assessment.id,
       title: assessment.title,
@@ -545,6 +571,7 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       ['/rich-content.js', ['rich-content.js', 'text/javascript; charset=utf-8']],
       ['/governance.js', ['governance.js', 'text/javascript; charset=utf-8']], ['/portal.js', ['portal.js', 'text/javascript; charset=utf-8']],
       ['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']], ['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']],
+      ['/vendor/qrcode.min.js', [path.join('vendor', 'qrcode.min.js'), 'text/javascript; charset=utf-8']],
       ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/rich-content.css', ['rich-content.css', 'text/css; charset=utf-8']],
       ['/governance.css', ['governance.css', 'text/css; charset=utf-8']], ['/portal.css', ['portal.css', 'text/css; charset=utf-8']],
       ['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']], ['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]

@@ -1,0 +1,87 @@
+{
+  "learnerId": "TEST-LEARNER-TECH1-FAIL",
+  "courseCompletions": [
+    {
+      "courseId": "COURSE-LH-TECH1-001",
+      "courseVersion": "1.0.0",
+      "status": "completed"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-002",
+      "courseVersion": "0.10.0",
+      "status": "completed"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-003",
+      "courseVersion": "0.2.0",
+      "status": "completed"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-004",
+      "courseVersion": "0.2.0",
+      "status": "completed"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-005",
+      "courseVersion": "0.2.0",
+      "status": "completed"
+    },
+    {
+      "courseId": "COURSE-LH-TECH1-007",
+      "courseVersion": "0.2.0",
+      "status": "completed"
+    }
+  ],
+  "assessments": [
+    {
+      "assessmentId": "ASSESS-CRED-TECH1-001",
+      "status": "passed",
+      "scorePercent": 86
+    }
+  ],
+  "performanceAssessments": [
+    {
+      "assessmentId": "PRACTICAL-TECH1-A",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 0
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-B",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 0
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-C",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 1
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-D",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 0
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-E",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 0
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-F",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 0
+    },
+    {
+      "assessmentId": "CAPSTONE-TECH1-SHIFT-001",
+      "status": "passed",
+      "scorePercent": 88,
+      "criticalErrorCount": 0
+    }
+  ],
+  "portfolioArtifacts": []
+}
