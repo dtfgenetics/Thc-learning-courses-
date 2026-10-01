@@ -73,8 +73,8 @@ for (const marker of [
   'padding-bottom: max(1.25rem, env(safe-area-inset-bottom))'
 ]) assert.ok(css.includes(marker), `assessment CSS missing ${marker}`);
 
-assert.equal(/course-assessment-nav-button[^}]*min-(?:width|height):\\s*(?:4[0-3]|3\\d)px/.test(css), false, 'assessment question navigator must keep at least 44px touch targets');
-assert.ok(/@media \\(max-height: 620px\\)[\\s\\S]*\\.course-assessment-toolbar,[\\s\\S]*\\.course-assessment-navigator,[\\s\\S]*\\.course-assessment-submit-area[\\s\\S]*position: static/.test(css), 'short-height assessment mode must release stacked sticky regions');
+assert.equal(/course-assessment-nav-button[^}]*min-(?:width|height):\s*(?:4[0-3]|3\d)px/.test(css), false, 'assessment question navigator must keep at least 44px touch targets');
+assert.ok(/@media \(max-height: 620px\)[\s\S]*\.course-assessment-toolbar,[\s\S]*\.course-assessment-navigator,[\s\S]*\.course-assessment-submit-area[\s\S]*position: static/.test(css), 'short-height assessment mode must release stacked sticky regions');
 
 assert.ok(server.includes("['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']]"), 'web server must serve assessment JS');
 assert.ok(server.includes("['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']]"), 'web server must serve assessment CSS');
