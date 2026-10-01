@@ -1,0 +1,7 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const m=read('visuals/TECH1-COURSES3-6-PRODUCTION-MASTER-RELEASE.json');const q=read('visuals/TECH1-COURSES3-6-PRODUCTION-RASTER-WORK-QUEUE.json');const c=read('visuals/TECH1-COURSES3-6-RASTER-COPY-LOCK.json');
+assert.equal(m.policy.expectedAssetCount,30);assert.equal(m.assets.length,30);assert.equal(q.assets.length,30);assert.equal(c.assets.length,30);assert.equal(m.policy.expandable,true);assert.equal(m.policy.maximumAssetCount,null);assert.equal(m.policy.svgProductionTarget,false);assert.equal(m.policy.compatibilityRenderMaySatisfyMaster,false);
+const qids=new Set(q.assets.map(x=>x.assetId));const cids=new Set(c.assets.map(x=>x.assetId));
+for(const a of m.assets){assert.ok(qids.has(a.assetId),a.assetId+' missing queue');assert.ok(cids.has(a.assetId),a.assetId+' missing copy lock');assert.equal(a.releaseApproved,false,a.assetId+' must start fail-closed');assert.equal(a.candidate.status,'production-required');assert.equal(a.candidate.repositoryPath,null);assert.equal(a.candidate.targetPublicPath,null);assert.equal(a.candidate.sha256,null);assert.equal(a.accessibility.caption,null);assert.equal(a.accessibility.learnerTextAlternative,null);}
+console.log('Tech I Courses 3-6 production master contract passed: 30 assets are mapped, copy-locked and fail-closed pending genuine production masters.');

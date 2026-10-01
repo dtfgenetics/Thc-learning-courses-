@@ -1,0 +1,825 @@
+{
+  "version": 1,
+  "id": "TECH1-C3-C6-PRODUCTION-MASTER-RELEASE-001",
+  "updated": "2026-09-22",
+  "courseIds": [
+    "COURSE-LH-TECH1-003",
+    "COURSE-LH-TECH1-004",
+    "COURSE-LH-TECH1-005",
+    "COURSE-LH-TECH1-006"
+  ],
+  "purpose": "Fail-closed release contract for Technician I Courses 3-6 production raster masters.",
+  "policy": {
+    "expectedAssetCount": 30,
+    "expandable": true,
+    "maximumAssetCount": null,
+    "candidateIsPublicByDefault": false,
+    "svgProductionTarget": false,
+    "compatibilityRenderMaySatisfyMaster": false,
+    "productionMaster": {
+      "preferredDpi": 300,
+      "minimumShortSidePx": 2400,
+      "formats": [
+        "png",
+        "webp",
+        "jpeg",
+        "jpg"
+      ]
+    },
+    "releaseApprovalRequires": [
+      "new production master binary distinct from compatibility render",
+      "governed repository master path",
+      "SHA-256 and byte size",
+      "production pixel dimensions",
+      "copy and unit lock",
+      "canonical lesson/objective/reference mapping",
+      "meaningful caption and learner text alternative",
+      "factual evidence review",
+      "responsive or print review",
+      "registry and lesson cutover",
+      "public path verification"
+    ]
+  },
+  "assets": [
+    {
+      "assetId": "VIS-LH-TECH1-003-001",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "educational-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-002",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-003",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "educational-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-004",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "raster-workflow",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-005",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-006",
+      "courseId": "COURSE-LH-TECH1-003",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-001",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-002",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "raster-chart",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-003",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "diagnostic-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-004",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-005",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "raster-workflow",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-006",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-007",
+      "courseId": "COURSE-LH-TECH1-004",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-001",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-002",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-003",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-004",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "diagnostic-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-005",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-006",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "educational-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-007",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-008",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-009",
+      "courseId": "COURSE-LH-TECH1-005",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-001",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-002",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-003",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "raster-diagram",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-004",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "raster-diagram",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-005",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "photo-diagram-composite",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-006",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-007",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-008",
+      "courseId": "COURSE-LH-TECH1-006",
+      "productionMode": "printable-practice",
+      "baseline": {
+        "role": "legacy-svg-compatibility-baseline"
+      },
+      "candidate": {
+        "status": "production-required",
+        "repositoryPath": null,
+        "targetPublicPath": null,
+        "sha256": null,
+        "sizeBytes": null,
+        "pixelDimensions": null,
+        "copyLockStatus": "required",
+        "factualReviewStatus": "required",
+        "accessibilityStatus": "required",
+        "renderReviewStatus": "required",
+        "publicPathStatus": "required"
+      },
+      "accessibility": {
+        "caption": null,
+        "learnerTextAlternative": null
+      },
+      "releaseApproved": false
+    }
+  ]
+}

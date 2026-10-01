@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "id": "TECH1-C3-C6-RASTER-COPY-LOCK-001",
+  "updated": "2026-09-22",
+  "scope": "Release-safe visual copy controls for Technician I Courses 3-6 production masters.",
+  "global": {
+    "allowedBranding": [
+      "THC Learning Hub",
+      "Technician I",
+      "Course 3",
+      "Course 4",
+      "Course 5",
+      "Course 6"
+    ],
+    "prohibitedBranding": [
+      "Certified Technician",
+      "Technician I Certification",
+      "credential issued",
+      "certification issued"
+    ],
+    "rules": [
+      "Do not present study-specific cultivation values as universal targets.",
+      "Separate observation, measurement and evidence from diagnosis or root-cause conclusions.",
+      "Facility procedures, labels, manufacturer instructions and authorized roles control site-specific actions.",
+      "Do not imply that public course completion itself issues a professional credential.",
+      "All visible units, labels and decision language must match canonical lesson meaning."
+    ]
+  },
+  "assets": [
+    {
+      "assetId": "VIS-LH-TECH1-003-001",
+      "productionMode": "educational-composite",
+      "prohibitedClaims": [
+        "one universal VPD target; unlabeled numbers; sensor directly against lamp/duct/door as the exemplar."
+      ],
+      "acceptanceCopyRule": "units legible; measurement location/time context visible; no universal target claim.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-002",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "lux meter as PPFD meter; universal PPFD target; fixture wattage as equivalent to canopy PPFD."
+      ],
+      "acceptanceCopyRule": "sensor orientation plausible; grid is readable; PPFD units use µmol·m⁻²·s⁻¹ when a unit example is shown.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-003",
+      "productionMode": "educational-composite",
+      "prohibitedClaims": [
+        "operator opening/repairing energized equipment; arbitrary ideal sensor height; diagnosis from one outlier."
+      ],
+      "acceptanceCopyRule": "local-bias examples are visually obvious; workflow ends in document/escalate when unresolved.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-004",
+      "productionMode": "raster-workflow",
+      "prohibitedClaims": [
+        "threshold as universal horticultural truth; auto-correction outside operator authority."
+      ],
+      "acceptanceCopyRule": "hypothetical/SOP-supplied threshold clearly labeled; chronology reconstructable.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-005",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "prefilled universal targets; tiny decorative fields."
+      ],
+      "acceptanceCopyRule": "usable in print and screen annotation; generous writing space.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-003-006",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "universal PPFD target."
+      ],
+      "acceptanceCopyRule": "PPFD unit notation accurate; grid remains readable when printed.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-001",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "EC as a nutrient-specific diagnosis; unlabeled calibration liquids; universal cannabis pH/EC target."
+      ],
+      "acceptanceCopyRule": "pH and EC are visibly different measurements; units/method context present; diagnostic limitation stated.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-002",
+      "productionMode": "raster-chart",
+      "prohibitedClaims": [
+        "one elapsed dryback interval as universally correct; moisture appearance alone as proof of root health."
+      ],
+      "acceptanceCopyRule": "repeated measurements visible; irrigation events and measurement timing distinguishable.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-003",
+      "productionMode": "diagnostic-composite",
+      "prohibitedClaims": [
+        "“yellow leaf = nitrogen deficiency” or other one-image certainty; unsupported treatment recommendation."
+      ],
+      "acceptanceCopyRule": "title/caption explicitly states similar symptoms can have different causes; no single-cause verdict.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-004",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "controller status presented as proof of delivery; universal irrigation volume."
+      ],
+      "acceptanceCopyRule": "representative verification is visually explicit.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-005",
+      "productionMode": "raster-workflow",
+      "prohibitedClaims": [
+        "automatic nutrient diagnosis from EC or symptoms."
+      ],
+      "acceptanceCopyRule": "unresolved status cannot visually appear closed/resolved.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-006",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "nutrient-specific conclusion field based only on EC."
+      ],
+      "acceptanceCopyRule": "sample identity remains linked to every recorded measurement.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-004-007",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "one dryback duration labeled ideal."
+      ],
+      "acceptanceCopyRule": "multiple sample locations supported.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-001",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "unlabeled mixed cuttings; dirty tools as normal practice; one rooting protocol as universal."
+      ],
+      "acceptanceCopyRule": "identity persists visually from source to propagule; sanitation is part of workflow.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-002",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "unsafe cutting posture; uncontrolled aggressive plant manipulation as universal practice."
+      ],
+      "acceptanceCopyRule": "work-order identity and stop boundary are prominent.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-003",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "pesticide application as default response; symptom photo as definitive diagnosis."
+      ],
+      "acceptanceCopyRule": "route covers representative zones; observation and diagnosis are visually separated.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-004",
+      "productionMode": "diagnostic-composite",
+      "prohibitedClaims": [
+        "appearance-only diagnosis; fabricated pest/pathogen morphology."
+      ],
+      "acceptanceCopyRule": "captions use observation language and uncertainty correctly.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-005",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "pesticide as substitute for biosecurity."
+      ],
+      "acceptanceCopyRule": "movement direction and boundary are immediately understandable.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-006",
+      "productionMode": "educational-composite",
+      "prohibitedClaims": [
+        "undocumented corrective action."
+      ],
+      "acceptanceCopyRule": "chronology reconstructable without explanatory prose.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-007",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "fixed rooting hormone or environmental recipe presented universally."
+      ],
+      "acceptanceCopyRule": "traceability from source through resulting propagules.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-008",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "diagnosis required for every observation."
+      ],
+      "acceptanceCopyRule": "supports “unknown/unresolved” honestly.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-005-009",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "universal training schedule."
+      ],
+      "acceptanceCopyRule": "task scope cannot be confused with horticultural target.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-001",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "unsafe climbing/cutting posture; unlabeled material; repair of unsafe equipment; potency/readiness claims from appearance alone."
+      ],
+      "acceptanceCopyRule": "safety and identity checks precede action; stop-work path is prominent and non-punitive.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-002",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "unlabeled harvested material; potency/quality inferred from appearance."
+      ],
+      "acceptanceCopyRule": "source and receiving records visibly reconcile.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-003",
+      "productionMode": "raster-diagram",
+      "prohibitedClaims": [
+        "ambiguous arrows or reused IDs."
+      ],
+      "acceptanceCopyRule": "learner can reconstruct ancestry from output back to source.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-004",
+      "productionMode": "raster-diagram",
+      "prohibitedClaims": [
+        "silently editing a record to force agreement."
+      ],
+      "acceptanceCopyRule": "discrepancy remains visible until resolved by authorized process.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-005",
+      "productionMode": "photo-diagram-composite",
+      "prohibitedClaims": [
+        "one drying temperature/RH/duration as universally correct."
+      ],
+      "acceptanceCopyRule": "transfer ownership and identity are unambiguous.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-006",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "appearance-only harvest maturity verdict."
+      ],
+      "acceptanceCopyRule": "unsafe/unverified conditions support a clear stop disposition.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-007",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "fields encouraging retroactive fabrication."
+      ],
+      "acceptanceCopyRule": "correction and original observation remain distinguishable.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    },
+    {
+      "assetId": "VIS-LH-TECH1-006-008",
+      "productionMode": "printable-practice",
+      "prohibitedClaims": [
+        "universal drying setpoint."
+      ],
+      "acceptanceCopyRule": "printable, writable and sufficient to reconstruct the handoff.",
+      "visibleCopyStatus": "locked-to-canonical-lesson-and-production-brief"
+    }
+  ]
+}

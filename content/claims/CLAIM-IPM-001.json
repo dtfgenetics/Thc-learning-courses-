@@ -2,10 +2,17 @@
   "id": "CLAIM-IPM-001",
   "statement": "Cannabis disease management is strongest when it combines clean planting stock, sanitation, environmental control, accurate diagnosis and proportionate biological or other legally permitted controls rather than relying on reactive treatment alone.",
   "domain": "integrated-pest-management",
-  "supportsCompetencies": ["COMP-IPM-001"],
-  "supportsLessons": ["LESSON-IPM-001"],
-  "references": ["REF-IPM-001"],
+  "supportsCompetencies": [
+    "COMP-IPM-001"
+  ],
+  "supportsLessons": [
+    "LESSON-IPM-001"
+  ],
+  "references": [
+    "REF-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
   "evidenceStatus": "evidence-collected",
   "status": "draft",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
