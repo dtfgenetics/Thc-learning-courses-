@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: sync-curriculum-registry-main
@@ -36,14 +36,12 @@ jobs:
       - name: Build canonical curriculum registry
         run: npm run registry:build
 
-      - name: Commit generated registry when changed
+      - name: Verify committed registry matches canonical source
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add registry/curriculum.json
-          if git diff --cached --quiet; then
-            echo "Curriculum registry already matches canonical source."
+          if git diff --quiet -- registry/curriculum.json; then
+            echo "Curriculum registry matches canonical source."
             exit 0
           fi
-          git commit -m "Sync generated curriculum registry"
-          git push
+          echo "::error::registry/curriculum.json is stale. Run npm run registry:build on the work branch and commit the generated registry before merge."
+          git --no-pager diff -- registry/curriculum.json
+          exit 1
