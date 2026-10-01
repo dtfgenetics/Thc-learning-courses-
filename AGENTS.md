@@ -12,7 +12,7 @@ Use specialist GitHub skills when the failure class is clear:
 
 - GitHub Actions failures, missing/stuck checks, logs, reruns, workflow configuration: `skills/github-actions-doctor/SKILL.md`
 - Conflicts, stale branches, wrong PR bases, duplicate/superseded work, difficult merges: `skills/github-branch-pr-surgery/SKILL.md`
-- `dev -> staging -> main` promotion, release gates, deployment verification: `skills/github-release-promotion-manager/SKILL.md`
+- release promotion, release gates, deployment verification: `skills/github-release-promotion-manager/SKILL.md`
 
 After any push, bot-generated commit, conflict-resolution push, merge, or promotion, immediately run the post-push convergence procedure at:
 
@@ -34,11 +34,11 @@ Before adding or editing Academy material, read `docs/AI-CONTENT-AUTHORING-GUIDE
 
 ## Parallel chat/session contract
 
-Every new concurrent Academy task must use its own session branch:
+Every new concurrent Academy task must use its own session branch created from the current validated `main` branch:
 
 `work/academy/<task>/<session-id>`
 
-Do not reuse another chat's mutable branch. Resume is explicit and should point to the exact branch/PR being continued.
+Do not reuse another chat's mutable branch. Resume is explicit and should point to the exact branch/PR being continued. Until `dev` and `staging` are deliberately reconciled with `main`, they are legacy/quarantined integration branches and must not be used as the starting point or ordinary PR target for new work.
 
 Keep curriculum, assessments, practicals, credentials, evidence, and Academy runtime changes in this canonical repository. Use one PR per session and run the narrow relevant checks first, followed by the repository's required validation/release checks before integration.
 

@@ -1,30 +1,33 @@
 # THC Academy Integration Workflow
 
-This repository uses a controlled landing and promotion path so parallel agents can contribute without bypassing quality gates or creating competing trunks.
+This repository uses a controlled landing workflow so parallel agents can contribute without bypassing quality gates or creating competing trunks.
+
+> **Temporary canonical-branch rule (2026-10-01):** current `main` is the repository source of truth. The historical `dev` and `staging` branches are materially diverged and are quarantined until a deliberate reconciliation is completed. Do not branch from, merge through, or target new ordinary work at those branches while this rule is active.
 
 ## 1. Work channels
 
-Use one short-lived branch per coherent change, created from current `dev` unless a repair/supersession procedure documents otherwise:
+Use one short-lived branch per coherent change, created from current `main`:
 
-- `content/<topic>` for curriculum, references, claims, lessons, objectives, modules, courses, and assessment items.
+- `work/academy/<task>/<session-id>` for concurrent Academy sessions.
+- `content/<topic>` for focused curriculum, references, claims, lessons, objectives, modules, courses, and assessment items when a session branch is not required.
 - `feat/<topic>` for new schemas, scripts, runtime contracts, credentialing features, and substantial tooling.
 - `fix/<topic>` for defects, broken references, CI failures, merge repairs, and regressions.
 - `chore/<topic>` for documentation, maintenance, dependency-free cleanup, and repository governance.
 
-Do not create `-v2`, `-v3`, `-temp`, `-work`, or replacement branches merely because a branch is stale or conflicted. Repair the canonical branch when practical. If old work is too stale to repair safely, compare it against current `dev`, port only unique useful changes onto a clean branch, and mark the original PR/branch as superseded.
+Do not create replacement branches merely because another branch is stale or conflicted. If old work is too stale to repair safely, compare it against current `main`, port only unique useful changes onto a clean branch created from current `main`, and mark the original PR/branch as superseded.
 
 ## 2. Integration branches
 
-The permanent branch lifecycle is:
+The active integration lifecycle is temporarily:
 
-`content/* | feat/* | fix/* | chore/* -> dev -> staging -> main -> explicit production release`
+`short-lived work branch -> main -> explicit production release`
 
-- `dev` is the ordinary integration trunk. Normal feature/content/fix/chore PRs target `dev`.
-- `staging` contains integrated release candidates promoted from `dev`.
-- `main` receives validated promotions from `staging` only in the ordinary lifecycle.
+- `main` is the canonical integration trunk and source of truth.
+- Ordinary feature/content/fix/chore PRs target `main`.
+- `dev` and `staging` are legacy/quarantined until a dedicated reconciliation plan makes them safe again.
 - Merging to `main` does not publish certification content. Production publication remains a separate explicit release operation.
 
-Do not use `dev -> main` as an ordinary shortcut. Urgent exceptions must be explicit, documented, and reconciled back through the lifecycle.
+Do not merge `dev` or `staging` wholesale into `main`, and do not retarget current work to either branch simply to follow older documentation. Reconciliation must preserve unique work selectively and must not reintroduce superseded runtime, curriculum, or release-governance code.
 
 ## 3. Correct landing locations
 
@@ -49,7 +52,7 @@ Source-of-truth material belongs in these paths:
 
 ## 4. Curriculum publication path
 
-Credential-bearing curriculum moves through this content lifecycle independently of Git branch promotion:
+Credential-bearing curriculum moves through this content lifecycle independently of Git branch integration:
 
 `draft -> scientific review -> editorial review -> approved -> published`
 
@@ -59,17 +62,9 @@ Human review records are evidence of approval. Setting a registry boolean or cha
 
 ## 5. Pull-request gates
 
-### Ordinary work -> `dev`
+### Ordinary work -> `main`
 
-Every ordinary change lands through a PR to `dev` and must pass the complete required quality gate for its current head SHA. A failing gate is repaired on the same branch whenever practical. Do not open replacement PRs merely to escape a failed check or conflict.
-
-### `dev` -> `staging`
-
-Promote only an understood, green integration state. The promotion PR must contain integrated work rather than new feature edits. Staging validation must pass before the release-candidate cycle is considered complete.
-
-### `staging` -> `main`
-
-Promote only after staging validation/acceptance for the included scope. The main-target PR must pass current required checks before merge.
+Every ordinary change lands through a PR to `main` and must pass the required quality gate for its current head SHA. A failing gate is repaired on the same branch whenever practical. Do not open replacement PRs merely to escape a failed check or conflict.
 
 The validation suite covers, among other repository-specific checks:
 
@@ -79,11 +74,15 @@ The validation suite covers, among other repository-specific checks:
 - credential eligibility, issuance, and public verification tests;
 - review and item-bank readiness;
 - learner web/runtime/API regression coverage;
-- staging/operational readiness checks.
+- operational readiness checks.
+
+### Legacy branch reconciliation
+
+Any future attempt to restore a `dev -> staging -> main` promotion model must be handled as a dedicated repository-reconciliation project. It must compare branch histories and actual file content, harvest unique useful work, prove current tests remain green, and update this document only after the reconciled branches are demonstrably safe.
 
 ## 6. Post-push and post-merge convergence
 
-A successful push is not completion. After each push, bot-generated commit, conflict-resolution push, merge, or promotion:
+A successful push is not completion. After each push, bot-generated commit, conflict-resolution push, merge, or release-related change:
 
 1. identify the newest SHA;
 2. verify the relevant PR still targets the correct branch;
@@ -91,10 +90,10 @@ A successful push is not completion. After each push, bot-generated commit, conf
 4. inspect failed jobs/steps/logs when applicable;
 5. verify generated-file and dependency-lock stability;
 6. re-check mergeability/review blockers;
-7. after merge, verify the target branch's own push validation;
+7. after merge, verify `main` push validation;
 8. classify the source branch as landed/archival and continue to the next blocker.
 
-Use `skills/github-orchestrator/SKILL.md` and `skills/github-post-push-cleanup/SKILL.md` for repository execution. Use the specialist Actions, branch/PR surgery, and promotion skills when their failure class applies.
+Use `skills/github-orchestrator/SKILL.md` and `skills/github-post-push-cleanup/SKILL.md` for repository execution. Use the specialist Actions and branch/PR surgery skills when their failure class applies.
 
 ## 7. Production release gate
 
@@ -115,9 +114,8 @@ Do not weaken these gates simply to obtain a green release.
 ## 8. Merge and cleanup discipline
 
 - Prefer squash merge for coherent ordinary feature/content/fix/chore PRs.
-- Promotion PRs may use merge commits to preserve exact integration boundaries.
 - After an ordinary PR is merged, its source branch is archival/dead; do not resume it as a trunk.
-- Before reconciling an old branch, compare actual content against current `dev` and verify whether equivalent work already landed through squash or another PR.
+- Before reconciling an old branch, compare actual content against current `main` and verify whether equivalent work already landed through squash or another PR.
 - Never merge stale work merely because it appears ahead by commit count.
 - Close duplicate/superseded PRs with a recorded reason.
 - Delete branches only after confirming they contain no needed unique work and tooling/permissions make deletion safe.
@@ -126,14 +124,15 @@ Do not weaken these gates simply to obtain a green release.
 
 Parallel agents must:
 
-1. start ordinary new work from current `dev`;
-2. use the correct work channel and source-of-truth directory;
-3. target ordinary PRs to `dev`;
-4. use promotion PRs for `dev -> staging -> main`;
-5. avoid changing publication/review/security gates without evidence and an explicit reason;
-6. keep secure runtime data, learner PII, private keys, credentials, and production assessment secrets out of Git;
-7. repair CI failures on the originating branch whenever practical;
-8. run post-push cleanup after every repository write;
-9. merge only after required checks for the current head pass;
-10. treat merged branches as archival, not as trunks;
-11. continue to the next actionable repository blocker instead of stopping after a single successful merge.
+1. start new work from current `main`;
+2. use a unique session branch for concurrent Academy work;
+3. use the correct source-of-truth directory;
+4. target ordinary PRs to `main`;
+5. treat `dev` and `staging` as quarantined until reconciled;
+6. avoid changing publication/review/security gates without evidence and an explicit reason;
+7. keep secure runtime data, learner PII, private keys, credentials, and production assessment secrets out of Git;
+8. repair CI failures on the originating branch whenever practical;
+9. run post-push cleanup after every repository write;
+10. merge only after required checks for the current head pass;
+11. treat merged branches as archival, not as trunks;
+12. continue to the next actionable repository blocker instead of stopping after a single successful merge.
