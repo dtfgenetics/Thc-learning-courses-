@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-001-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-001-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should active holds or unresolved deviations be explicitly transferred during handoff?",
+  "choices": [
+    "So the receiving team does not unknowingly continue normal processing on material whose status is unresolved.",
+    "They should be omitted to reduce confusion.",
+    "Only management needs to know after processing.",
+    "A label color is enough."
+  ],
+  "correct": 0,
+  "rationale": "Open controls and unresolved risk must remain visible at process transitions.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-001",
+    "seedBank": true
+  }
+}

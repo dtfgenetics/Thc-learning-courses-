@@ -44,6 +44,24 @@ The completed draft pathway contains:
 Credential assessment: ASSESS-CRED-PCS-001  
 Capstone: CAPSTONE-CRED-PCS-PROPAGATION-001
 
+### Postharvest Quality Specialist (PHQ)
+
+- Planned canonical courses: 6
+- Canonical course objects present: 1
+- Course-authoring state: draft authoring in progress
+- Release state: not authorized
+- Remaining work: Courses 2-6, exact-version technical/assessment review, accessibility review, instructional visuals, specialist item-bank expansion, practical/capstone authoring and validation, pilot evidence, standard setting, secure operational forms, program validation and release authorization
+
+The drafted pathway currently contains:
+
+1. COURSE-LH-PHQ-001 — Harvest Readiness, Sanitary Handling & Lot Integrity
+
+Credential assessment: ASSESS-CRED-PHQ-001
+
+Capstone: CAPSTONE-CRED-PHQ-QUALITY-001
+
+PHQ Course 1 preserves a strict authority boundary: representative harvest-readiness evidence, sanitation, lot genealogy and deviation records support specialist decisions, but do not authorize final product release, destruction, laboratory disposition or jurisdiction-specific compliance decisions.
+
 ## Evidence boundary for PCS development
 
 PCS should reuse existing Technician I/II propagation, sanitation, plant-health, traceability and evidence-quality material only as controlled prerequisites or source dependencies. Specialist instruction and assessment must remain course-owned and must add depth rather than merely relabel Technician material.
