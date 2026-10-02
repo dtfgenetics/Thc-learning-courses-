@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-004-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is the correct role of a specialist who sees suspected mold but lacks disposition authority?",
+  "choices": [
+    "Control the lot, preserve evidence and escalate with a complete packet and recommendation.",
+    "Release unaffected-looking units independently.",
+    "Destroy material immediately.",
+    "Remove the observation from the record."
+  ],
+  "correct": 0,
+  "rationale": "Specialists protect status and evidence while authorized roles make disposition decisions.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

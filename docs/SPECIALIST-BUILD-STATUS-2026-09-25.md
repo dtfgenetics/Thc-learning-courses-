@@ -47,20 +47,31 @@ Capstone: CAPSTONE-CRED-PCS-PROPAGATION-001
 ### Postharvest Quality Specialist (PHQ)
 
 - Planned canonical courses: 6
-- Canonical course objects present: 1
-- Course-authoring state: draft authoring in progress
+- Canonical course objects present: 6
+- Course-authoring state: draft authoring complete
 - Release state: not authorized
-- Remaining work: Courses 2-6, exact-version technical/assessment review, accessibility review, instructional visuals, specialist item-bank expansion, practical/capstone authoring and validation, pilot evidence, standard setting, secure operational forms, program validation and release authorization
+- Remaining work: exact-version technical/assessment review, accessibility review, instructional visuals, specialist item-bank expansion, practical/capstone authoring and validation, pilot evidence, standard setting, secure operational forms, program validation and release authorization
 
-The drafted pathway currently contains:
+The completed draft pathway contains:
 
 1. COURSE-LH-PHQ-001 — Harvest Readiness, Sanitary Handling & Lot Integrity
+2. COURSE-LH-PHQ-002 — Drying Science, Moisture Migration, Water Activity & Environment
+3. COURSE-LH-PHQ-003 — Curing, Storage, Packaging & Quality Preservation
+4. COURSE-LH-PHQ-004 — Postharvest Defects, Mold Risk & Deviation Investigation
+5. COURSE-LH-PHQ-005 — Sampling, Laboratory/COA Literacy & Quality Records
+6. COURSE-LH-PHQ-006 — Postharvest QA, Traceability & Recall/Disposition Concepts
 
 Credential assessment: ASSESS-CRED-PHQ-001
 
 Capstone: CAPSTONE-CRED-PHQ-QUALITY-001
 
-PHQ Course 1 preserves a strict authority boundary: representative harvest-readiness evidence, sanitation, lot genealogy and deviation records support specialist decisions, but do not authorize final product release, destruction, laboratory disposition or jurisdiction-specific compliance decisions.
+The PHQ pathway preserves a strict authority boundary: harvest-readiness, sanitation, environmental, sampling, laboratory and lot-genealogy evidence support specialist recommendations, but do not authorize final product release, destruction, laboratory disposition, recall execution or jurisdiction-specific compliance decisions.
+
+## Evidence boundary for PHQ development
+
+PHQ reuses Technician and professional-course material only as controlled prerequisites or source dependencies. Its course-owned instruction adds postharvest depth in moisture migration, water activity, packaging systems, sampling, laboratory-quality literacy, deviation investigation, traceability and recall-scope reasoning.
+
+Current controlled anchors include postharvest science literature, ASTM cannabis/hemp standards, NIST CannaQAP materials, ISO/IEC 17025 and existing evidence-reviewed Academy sources. Research conditions, guidance values and example workflows must not be converted into universal facility setpoints, regulatory limits or release authority. Local specifications, validated procedures, laboratory scope and jurisdictional requirements remain controlling.
 
 ## Evidence boundary for PCS development
 

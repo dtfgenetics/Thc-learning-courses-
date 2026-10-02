@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-002-02",
+  "title": "Moisture Content, Water Activity & Measurement Limits",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-002-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Moisture content and water activity answer related but different questions. Neither value is meaningful without sample identity, method context, instrument status and awareness of spatial heterogeneity.",
+    "vocabulary": [
+      {
+        "term": "Moisture content",
+        "definition": "Amount or mass fraction of water in a material under the stated method and basis."
+      },
+      {
+        "term": "Water activity",
+        "definition": "Measure related to the energetic availability of water for microbial and chemical processes."
+      },
+      {
+        "term": "Measurement comparability",
+        "definition": "Degree to which results can be meaningfully compared across methods, laboratories or times."
+      }
+    ],
+    "sections": [
+      {
+        "title": "The measures are not interchangeable",
+        "body": "A moisture-content result describes amount of water under a method; water activity describes water availability. One must not be silently converted into the other.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      },
+      {
+        "title": "Sampling can dominate interpretation",
+        "body": "A precise reading from a convenience sample may not represent a heterogeneous drying lot. Position, material size, equilibration and subsampling should be recorded.",
+        "references": [
+          "REF-NIST-CANNAQAP-2024-001"
+        ]
+      },
+      {
+        "title": "Method and instrument evidence matter",
+        "body": "Valid interpretation requires the named method, units, basis, calibration or verification state and applicable limitations. Laboratory quality standards support competence and consistent operation rather than blind trust in a number.",
+        "references": [
+          "REF-ISO-17025-2017-001",
+          "REF-NIST-CANNAQAP-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A low reading from a dry outer fragment does not resolve whether a denser interior or another rack remains wetter."
+    ],
+    "commonMistakes": [
+      "Using water activity and moisture content as synonyms.",
+      "Omitting the measurement basis or method.",
+      "Treating instrument resolution as proof of lot representativeness."
+    ],
+    "practicalApplication": "Create a measurement record that includes lot, location, sample condition, method, units, instrument check, result and interpretation limit.",
+    "summary": "Product-moisture evidence is defensible only when the measure, method, sample and limitations remain linked."
+  }
+}

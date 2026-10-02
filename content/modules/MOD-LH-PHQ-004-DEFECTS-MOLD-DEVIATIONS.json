@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS",
+  "title": "Postharvest Defects, Mold Risk & Deviation Investigation",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHQ-004-01",
+    "LESSON-LH-PHQ-004-02",
+    "LESSON-LH-PHQ-004-03",
+    "LESSON-LH-PHQ-004-04",
+    "LESSON-LH-PHQ-004-05"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Develops evidence-based defect description, fungal-risk interpretation, sanitary inspection and containment, deviation investigation, CAPA and disposition escalation while preserving diagnostic uncertainty.",
+  "estimatedMinutes": 325,
+  "learningOutcomes": [
+    "Classify postharvest observations as direct evidence, pattern, contextual evidence or unconfirmed causal interpretation.",
+    "Analyze fungal-risk conditions and explain why visual, odor and environmental clues require qualified confirmation and product-specific evaluation.",
+    "Design a sanitary inspection and sampling workflow that maps affected scope without spreading material or losing identity.",
+    "Evaluate a postharvest deviation using timeline, scope, causal evidence, root-cause uncertainty and corrective/preventive action.",
+    "Apply hold and escalation controls while distinguishing evidence collection from authorized release, rework, rejection or destruction decisions."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

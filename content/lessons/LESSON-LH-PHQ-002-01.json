@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-002-01",
+  "title": "Drying as Heat and Mass Transfer",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-002-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-VOLATILES-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Drying is a product process, not merely a room setpoint. Heat and water move through flowers and surrounding air at rates shaped by material structure, load arrangement and environmental distribution.",
+    "vocabulary": [
+      {
+        "term": "Mass transfer",
+        "definition": "Movement of water from wetter material toward drier air or material regions."
+      },
+      {
+        "term": "Boundary layer",
+        "definition": "Air region near a material surface that can influence heat and moisture transfer."
+      },
+      {
+        "term": "Drying gradient",
+        "definition": "Difference in moisture condition across a flower, container, rack or room."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Coupled variables shape drying rate",
+        "body": "Temperature, humidity, airflow, flower geometry and loading interact. Changing one variable can alter both water removal and quality outcomes.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Material is not spatially uniform",
+        "body": "Outer tissue can dry sooner than internal or sheltered material, and dense or poorly exposed zones can follow a different trajectory from the room average.",
+        "references": [
+          "REF-POSTHARVEST-001",
+          "REF-POSTHARVEST-DRY-2025-001"
+        ]
+      },
+      {
+        "title": "Process choices create tradeoffs",
+        "body": "Cannabis and hemp studies show that drying conditions can change duration, volatiles, color, microbial outcomes and cannabinoid chemistry. Treatment-specific findings are evidence of tradeoffs, not universal recipes.",
+        "references": [
+          "REF-POSTHARVEST-DRY-2025-001",
+          "REF-POSTHARVEST-VOLATILES-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two racks share the same room trend but differ in loading and airflow exposure; equal room conditions do not prove equal product condition."
+    ],
+    "commonMistakes": [
+      "Treating room relative humidity as the product endpoint.",
+      "Assuming all flower sizes dry at the same rate.",
+      "Copying a research treatment as a universal facility setpoint."
+    ],
+    "practicalApplication": "Draw the material and airflow path for a drying load and identify where representative product measurements are needed to detect gradients.",
+    "summary": "Drying control requires product evidence across meaningful locations because room conditions, material properties and airflow jointly determine the result."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-003-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-003-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should opening events be recorded for a stored package?",
+  "choices": [
+    "They automatically invalidate the package.",
+    "They replace stability timepoints.",
+    "They matter only for glass containers.",
+    "They can change headspace, oxygen, moisture and handling exposure relevant to later results."
+  ],
+  "correct": 3,
+  "rationale": "Actual package use influences exposure history.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

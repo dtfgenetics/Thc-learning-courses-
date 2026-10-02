@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-PHQ-006-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What makes a QA handoff audit ready?",
+  "choices": [
+    "A verbal summary only.",
+    "Linked genealogy, process records, results, deviations, decisions, approvals, open actions and owners.",
+    "A folder of unindexed documents.",
+    "Only the final disposition."
+  ],
+  "correct": 1,
+  "rationale": "Reconstructability depends on linked evidence and decision history.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

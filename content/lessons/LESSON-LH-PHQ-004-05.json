@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-004-05",
+  "title": "Hold, Escalation & Disposition Boundaries",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-004-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-ASTM-D8556-25",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialists protect product and evidence by controlling status and escalating. They should not convert incomplete evidence into an unauthorized disposition decision.",
+    "vocabulary": [
+      {
+        "term": "Hold",
+        "definition": "Controlled status preventing specified movement or use while evaluation remains open."
+      },
+      {
+        "term": "Disposition",
+        "definition": "Authorized decision governing the allowed next state of material."
+      },
+      {
+        "term": "Escalation trigger",
+        "definition": "Defined condition requiring transfer to a role with additional authority or expertise."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Status must be visible and recorded",
+        "body": "Physical segregation, system status and lot identity should agree so material cannot move inadvertently.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Escalation carries the evidence packet",
+        "body": "The next role needs event facts, scope, samples, results, open questions and interim controls rather than a conclusion without support.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      },
+      {
+        "title": "Disposition authority remains explicit",
+        "body": "Release, rework, rejection and destruction require the applicable authorized role and controlled record; specialists may recommend without self-authorizing.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A specialist documents suspected mold, places connected lots on controlled hold and transfers the evidence for qualified disposition."
+    ],
+    "commonMistakes": [
+      "Calling a hold a rejection.",
+      "Releasing unaffected-looking units without scope review.",
+      "Using an undocumented verbal instruction to change status."
+    ],
+    "practicalApplication": "Create a hold-and-escalation record with lot scope, reason, controls, evidence, decision owner and status-change history.",
+    "summary": "Hold and escalation preserve safety and evidence while disposition remains with the authorized decision process."
+  }
+}

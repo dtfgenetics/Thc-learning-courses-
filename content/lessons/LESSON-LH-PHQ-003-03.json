@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-003-03",
+  "title": "Packaging Barrier, Headspace & Closure Evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-003-03"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-STORAGE-2024-001",
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Packaging is a controlled system made of material, closure, headspace, fill, handling and intended storage. Suitability must be demonstrated for the defined product and objective.",
+    "vocabulary": [
+      {
+        "term": "Barrier property",
+        "definition": "Resistance of a package system to transfer of moisture, gases or light."
+      },
+      {
+        "term": "Container-closure system",
+        "definition": "Combined package and closure components that protect and contain product."
+      },
+      {
+        "term": "Headspace",
+        "definition": "Gas volume remaining inside a closed package around the product."
+      }
+    ],
+    "sections": [
+      {
+        "title": "The package is a system",
+        "body": "Film, jar, seal, liner, closure torque, fill and handling can all affect actual performance.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Modified atmosphere is not universal protection",
+        "body": "Cannabis storage research found attribute-specific outcomes from nitrogen-modified atmosphere packaging, supporting measured validation rather than blanket claims.",
+        "references": [
+          "REF-POSTHARVEST-STORAGE-2024-001"
+        ]
+      },
+      {
+        "title": "Compatibility includes moisture and chemical questions",
+        "body": "A package can limit one exposure while allowing another. Product condition and package permeability should be evaluated together over time.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A package reduces oxygen ingress but has an inconsistent closure; the material specification alone does not establish lot protection."
+    ],
+    "commonMistakes": [
+      "Equating opaque with fully protective.",
+      "Ignoring opening and resealing events.",
+      "Accepting supplier claims without product-specific evidence."
+    ],
+    "practicalApplication": "Create a package-evidence matrix covering intended use, product condition, barrier claims, closure checks, handling and stability observations.",
+    "summary": "Package suitability is an evidence question about the complete container-closure system in its real use."
+  }
+}

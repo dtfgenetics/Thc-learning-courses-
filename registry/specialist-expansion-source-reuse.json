@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "purpose": "Prevent duplicate curriculum during specialist and lead-program expansion by identifying existing canonical courses that may supply reusable objectives, lessons, evidence, assessments or scenarios. A reuse candidate is source material only and does not satisfy a future program requirement until reconciled into the target course and reviewed.",
   "policy": {
     "noAutomaticEquivalence": true,
@@ -524,6 +524,121 @@
           "remainingDepth": [
             "instructional maturity-sampling, sanitary-flow and lot-genealogy visual set",
             "human postharvest, quality-systems and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-002",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-POSTHARVEST-PROCESS-001",
+            "MOD-LH-TECH2-002-VERIFICATION",
+            "MOD-LH-TECH2-006-DEVIATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-006",
+            "COURSE-POSTHARVEST-QA-001"
+          ],
+          "newModule": "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT",
+          "remainingDepth": [
+            "instructional moisture-gradient, water-activity and environmental-trend visual set",
+            "human postharvest-science, quality-systems and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-003",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-POSTHARVEST-PROCESS-001",
+            "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-002",
+            "COURSE-POSTHARVEST-QA-001"
+          ],
+          "newModule": "MOD-LH-PHQ-003-CURING-STORAGE-PACKAGING",
+          "remainingDepth": [
+            "instructional package-system, storage-risk and retained-sample visual set",
+            "human postharvest-science, packaging and quality-systems review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM",
+            "MOD-LH-TECH2-006-DEVIATION",
+            "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-PHQ-002",
+            "COURSE-LH-TECH2-004",
+            "COURSE-LH-TECH2-006"
+          ],
+          "newModule": "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS",
+          "remainingDepth": [
+            "instructional defect-triage, contamination-route and deviation-timeline visual set",
+            "human microbiology, postharvest, quality-systems and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-002-VERIFICATION",
+            "MOD-LH-TECH2-006-DEVIATION",
+            "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-PHQ-002",
+            "COURSE-LH-PHQ-004",
+            "COURSE-POSTHARVEST-QA-001"
+          ],
+          "newModule": "MOD-LH-PHQ-005-SAMPLING-LAB-COA-RECORDS",
+          "remainingDepth": [
+            "instructional sampling-frame, chain-of-custody and COA-interpretation visual set",
+            "human laboratory-quality, sampling and regulatory-boundary review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-006-DEVIATION",
+            "MOD-LH-PHQ-003-CURING-STORAGE-PACKAGING",
+            "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS",
+            "MOD-LH-PHQ-005-SAMPLING-LAB-COA-RECORDS",
+            "MOD-PRO-SOP-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-PHQ-003",
+            "COURSE-LH-PHQ-004",
+            "COURSE-LH-PHQ-005",
+            "COURSE-PRO-SOP-001"
+          ],
+          "newModule": "MOD-LH-PHQ-006-QA-TRACEABILITY-RECALL-DISPOSITION",
+          "remainingDepth": [
+            "instructional genealogy, reconciliation, recall-scope and disposition-authority visual set",
+            "human quality-systems, traceability, recall and jurisdictional review",
             "rendered accessibility review",
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"

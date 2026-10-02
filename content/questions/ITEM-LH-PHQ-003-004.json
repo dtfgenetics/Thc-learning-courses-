@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two retained samples differ after different light and temperature histories. What should the comparison preserve?",
+  "choices": [
+    "Only the newest analytical result.",
+    "Only the cultivar name.",
+    "A single averaged condition.",
+    "Each sample identity, package, elapsed time and storage exposure."
+  ],
+  "correct": 3,
+  "rationale": "Storage history is part of the evidence explaining stability differences.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-POSTHARVEST-VOLATILES-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

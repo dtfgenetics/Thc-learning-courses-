@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-006-02",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is a cultivar nickname insufficient as a lot identifier?",
+  "choices": [
+    "The same name can refer to materials with different source, process, status and history.",
+    "Nicknames are always illegal.",
+    "Only dates may identify lots.",
+    "Cultivar identity never matters."
+  ],
+  "correct": 0,
+  "rationale": "Stable unique IDs prevent unrelated material from being conflated.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

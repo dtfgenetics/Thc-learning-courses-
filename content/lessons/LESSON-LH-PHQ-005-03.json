@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHQ-005-03",
+  "title": "COA Anatomy, Methods, Units & Qualifiers",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-005-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A certificate of analysis is a structured report, not a free-standing truth label. The result must be connected to the correct sample, method, units and reporting conditions.",
+    "vocabulary": [
+      {
+        "term": "Analyte",
+        "definition": "Substance or property measured by an analytical procedure."
+      },
+      {
+        "term": "Reporting limit",
+        "definition": "Method-specific threshold used to report or qualify a result."
+      },
+      {
+        "term": "Measurement basis",
+        "definition": "Condition or denominator, such as mass basis, to which a result refers."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Verify identity and scope first",
+        "body": "Laboratory, report number, sample ID, source lot, receipt and analysis dates, requested panel and authorization should agree.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Method and units shape meaning",
+        "body": "Results using different preparation, method, basis or units may not be directly comparable even when analyte names match.",
+        "references": [
+          "REF-NIST-CANNAQAP-2024-001"
+        ]
+      },
+      {
+        "title": "Qualifiers are part of the result",
+        "body": "Reporting limits, uncertainty, deviations, dilution, matrix interference and amendments should be reviewed rather than stripped from the numeric value.",
+        "references": [
+          "REF-ISO-17025-2017-001",
+          "REF-NIST-CANNAQAP-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two cannabinoid percentages differ, but one is reported on a different basis; unit conversion alone may not resolve method comparability."
+    ],
+    "commonMistakes": [
+      "Reading only the pass/fail column.",
+      "Ignoring amended-report status.",
+      "Comparing numbers without method and basis."
+    ],
+    "practicalApplication": "Annotate a sample COA with identity checks, method, units, basis, qualifiers, limitations and questions requiring laboratory clarification.",
+    "summary": "COA literacy means interpreting the complete report context, not extracting a number from its evidence chain."
+  }
+}

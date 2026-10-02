@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "CERTIFICATION-PILOT-INTAKE-MANIFEST-001",
-  "updated": "2026-09-24",
+  "updated": "2026-10-02",
   "state": "15-of-15-course-intake-anchors-ready-pilot-execution-pending",
   "privacyBoundary": "Participant-level data remain outside the public repository. Only de-identified aggregate evidence may be committed.",
   "inputContract": {
@@ -61,7 +61,7 @@
     },
     {
       "courseId": "COURSE-LH-TECH1-002",
-      "courseVersion": "0.10.0",
+      "courseVersion": "0.12.0",
       "track": "Technician I",
       "ordinal": 2,
       "pilotProtocolPath": "docs/learning-hub/tech1/course-002/pilot/PILOT-PROTOCOL.md",

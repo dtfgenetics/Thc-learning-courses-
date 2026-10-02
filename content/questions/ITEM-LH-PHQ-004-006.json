@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHQ-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is odor insufficient for species identification?",
+  "choices": [
+    "Odor is never recordable.",
+    "Different conditions can produce overlapping sensory cues and qualified diagnostics require stronger evidence.",
+    "Only color identifies species.",
+    "Odor always proves safety."
+  ],
+  "correct": 1,
+  "rationale": "Sensory clues can prompt investigation but are not definitive identification methods.",
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

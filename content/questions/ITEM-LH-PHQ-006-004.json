@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-006-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-006-02",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One drying lot becomes three package lots. What record is essential?",
+  "choices": [
+    "Only the new marketing names.",
+    "Only total package count.",
+    "A new unrelated ID for each child.",
+    "Parent-child genealogy connecting every package lot to the source and relevant process history."
+  ],
+  "correct": 3,
+  "rationale": "Explicit genealogy preserves trace back and affected scope.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-CODEX-TRACEABILITY-CXG-60-2006"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

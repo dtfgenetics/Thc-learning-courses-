@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-005-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A result is reported below a laboratory reporting limit. What is the strongest interpretation?",
+  "choices": [
+    "Use the laboratory qualifier and method context; do not treat it as proof of absolute zero.",
+    "The analyte is impossible to detect anywhere.",
+    "The lot automatically passes every rule.",
+    "Replace the qualifier with zero."
+  ],
+  "correct": 0,
+  "rationale": "Reporting limits describe method reporting capability, not metaphysical absence.",
+  "references": [
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

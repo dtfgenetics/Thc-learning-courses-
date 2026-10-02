@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-005-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What makes a composite sample interpretable?",
+  "choices": [
+    "Mixing any available material.",
+    "One label after collection.",
+    "Documented increment locations, amounts, collection method and relationship to the target lot.",
+    "A larger container alone."
+  ],
+  "correct": 2,
+  "rationale": "Composite design must preserve how included material represents the population.",
+  "references": [
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

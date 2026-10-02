@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-002-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-002-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is restored equipment not enough to close a drying deviation?",
+  "choices": [
+    "Recovery always makes product dry.",
+    "Equipment recovery does not establish what exposure occurred or whether connected product was affected.",
+    "The event no longer needs a timestamp.",
+    "Only maintenance records matter."
+  ],
+  "correct": 1,
+  "rationale": "Product consequence requires exposure and product evidence in addition to equipment status.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "COURSE-LH-PHQ-004",
+  "title": "Postharvest Defects, Mold Risk & Deviation Investigation",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Postharvest Quality Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Postharvest Quality Specialist pathway",
+    "Postharvest and quality personnel responsible for controlled product evidence, traceability and escalation"
+  ],
+  "prerequisites": [
+    "Cultivation Technician II harvest/postharvest foundation or equivalent",
+    "COURSE-LH-PHQ-001 or equivalent controlled harvest/lot-integrity foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses cannabis-specific peer-reviewed postharvest evidence plus authoritative quality, measurement and traceability sources. Research treatments, standards and transferable quality models remain within source scope and do not become universal facility setpoints or jurisdiction-specific legal requirements.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize product release, rejection, destruction, laboratory disposition, recall execution or jurisdiction-specific compliance decisions outside assigned authority.",
+  "description": "Develops evidence-based defect description, fungal-risk interpretation, sanitary inspection and containment, deviation investigation, CAPA and disposition escalation while preserving diagnostic uncertainty.",
+  "modules": [
+    "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-IPM-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHQ-004-FINAL",
+  "learningOutcomes": [
+    "Classify postharvest observations as direct evidence, pattern, contextual evidence or unconfirmed causal interpretation.",
+    "Analyze fungal-risk conditions and explain why visual, odor and environmental clues require qualified confirmation and product-specific evaluation.",
+    "Design a sanitary inspection and sampling workflow that maps affected scope without spreading material or losing identity.",
+    "Evaluate a postharvest deviation using timeline, scope, causal evidence, root-cause uncertainty and corrective/preventive action.",
+    "Apply hold and escalation controls while distinguishing evidence collection from authorized release, rework, rejection or destruction decisions."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-POSTHARVEST-QA-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PHQ-001",
+      "COURSE-LH-PHQ-002",
+      "COURSE-LH-TECH2-004",
+      "COURSE-LH-TECH2-006"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHQ-004-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

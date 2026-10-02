@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-004-03",
+  "title": "Inspection, Mapping, Sampling & Containment",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-004-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-SAFETY-OSHA-001",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Inspection can spread contamination or erase scope if people, tools and samples move without control. The workflow should protect workers, unaffected material and evidence identity.",
+    "vocabulary": [
+      {
+        "term": "Containment",
+        "definition": "Controls that limit movement or processing while evidence is evaluated."
+      },
+      {
+        "term": "Inspection route",
+        "definition": "Planned order of observations that reduces cross-transfer and preserves context."
+      },
+      {
+        "term": "Sample integrity",
+        "definition": "Maintained identity and condition of a sample from collection through analysis."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Plan clean-to-suspect movement",
+        "body": "Defined routes, tools, PPE and sanitation reduce transfer between unaffected and suspect material.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Map units before disturbing them",
+        "body": "Location, container, rack and lot identity should be captured before sampling or movement changes the pattern.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Samples remain linked to source",
+        "body": "Unique IDs, collection details and transfer records preserve what each result can support.",
+        "references": [
+          "REF-CANNABIS-PATHOGENS-2019-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A suspect rack is mapped and contained before individual samples are collected with separate tools and source IDs."
+    ],
+    "commonMistakes": [
+      "Inspecting suspect then unaffected material with the same tool.",
+      "Combining samples before preserving locations.",
+      "Moving units to make inspection easier without updating genealogy."
+    ],
+    "practicalApplication": "Write a clean-to-suspect inspection route with tool control, mapping, sample IDs, PPE and stop/escalation points.",
+    "summary": "Sanitary inspection preserves both material control and the spatial evidence needed for defensible scope."
+  }
+}

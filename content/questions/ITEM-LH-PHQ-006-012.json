@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-006-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "When should a packaging-process change enter routine use?",
+  "choices": [
+    "Immediately during an investigation.",
+    "Whenever one operator prefers it.",
+    "After deleting the old procedure.",
+    "After controlled review, authorization, needed validation/training and implementation evidence."
+  ],
+  "correct": 3,
+  "rationale": "Change control evaluates impacts before routine adoption and preserves history.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

@@ -7,6 +7,8 @@ assert.match(m.privacyBoundary,/Participant-level data remain outside/i);
 for(const c of m.courses){
   assert.ok(c.courseId);
   assert.ok(c.courseVersion);
+  const course=JSON.parse(fs.readFileSync('content/courses/'+c.courseId+'.json','utf8'));
+  assert.equal(String(c.courseVersion),String(course.version),c.courseId+': course version drift');
   assert.ok(fs.existsSync(c.pilotProtocolPath),c.courseId+': pilot protocol missing');
   assert.equal(c.intakeState,'protocol-ready-private-data-not-collected');
 }
