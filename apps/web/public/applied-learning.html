@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>THC Applied Learning Lab</title>
+  <link rel="stylesheet" href="/applied-learning.css">
+</head>
+<body>
+  <main class="lab-shell">
+    <header>
+      <p class="eyebrow">Teaching Healthy Cultivation</p>
+      <h1>Applied Learning Lab</h1>
+      <p>Explore canonical Academy relationships and practice measurement-quality workflows. Draft tools are learning aids, not credential authorization or facility-control instructions.</p>
+    </header>
+
+    <nav aria-label="Applied learning sections">
+      <a href="#knowledge-graph">Knowledge Graph</a>
+      <a href="#measurement-school">Measurement School</a>
+    </nav>
+
+    <section id="knowledge-graph" aria-labelledby="graph-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THC Knowledge Graph</p>
+          <h2 id="graph-title">Canonical concept explorer</h2>
+        </div>
+        <label>Filter nodes <input id="graph-filter" type="search" placeholder="VPD, safety, IPM…"></label>
+      </div>
+      <p id="graph-summary">Loading graph…</p>
+      <div id="graph-stats" class="stats" aria-live="polite"></div>
+      <ul id="graph-nodes" class="node-grid"></ul>
+      <div id="graph-edges" class="edge-list"></div>
+    </section>
+
+    <section id="measurement-school" aria-labelledby="measurement-title">
+      <p class="eyebrow">THC Measurement School</p>
+      <h2 id="measurement-title">Representative canopy sensor placement</h2>
+      <p id="measurement-summary">Loading activity…</p>
+      <ol id="measurement-steps"></ol>
+      <form id="measurement-form">
+        <div id="measurement-fields" class="field-grid"></div>
+        <button type="submit">Review entered evidence</button>
+      </form>
+      <pre id="measurement-output" tabindex="0" aria-live="polite"></pre>
+      <p id="measurement-boundary" class="boundary"></p>
+    </section>
+  </main>
+  <script type="module" src="/applied-learning.js"></script>
+</body>
+</html>

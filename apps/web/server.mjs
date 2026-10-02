@@ -15,6 +15,48 @@ function readDirJson(rel) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((name) => name.endsWith('.json')).sort().map((name) => readJson(path.join(rel, name)));
 }
+
+function findAppliedLearningRecord(directory, id) {
+  return readDirJson(`content/applied-learning/${directory}`).find((record) => record?.id === id) ?? null;
+}
+function safeAppliedLearningGraph(graph) {
+  return {
+    id: graph.id,
+    version: graph.version,
+    status: graph.status,
+    title: graph.title,
+    summary: graph.summary ?? '',
+    nodes: (graph.nodes ?? []).map(({ id, canonicalType, canonicalId, kind, status }) => ({
+      id, canonicalType, canonicalId,
+      ...(kind ? { kind } : {}),
+      ...(status ? { status } : {})
+    })),
+    edges: (graph.edges ?? []).map(({ id, source, target, relationship, evidenceIds }) => ({
+      id, source, target, relationship,
+      ...(Array.isArray(evidenceIds) ? { evidenceIds } : {})
+    }))
+  };
+}
+function safeAppliedLearningMeasurement(activity) {
+  return {
+    id: activity.id,
+    version: activity.version,
+    status: activity.status,
+    title: activity.title,
+    summary: activity.summary,
+    competencyIds: activity.competencyIds ?? [],
+    objectiveIds: activity.objectiveIds ?? [],
+    referenceIds: activity.referenceIds ?? [],
+    canonicalSources: activity.canonicalSources ?? [],
+    steps: (activity.steps ?? []).map(({ id, instruction, evidence }) => ({
+      id, instruction, ...(evidence ? { evidence } : {})
+    })),
+    evidenceFields: (activity.evidenceFields ?? []).map(({ id, label, type, unit, required }) => ({
+      id, label, type, unit: unit ?? null, required: required === true
+    })),
+    safetyBoundary: activity.safetyBoundary
+  };
+}
 function buildPublicReleaseIds({ modules, assessments }) {
   const ids = new Set();
   const releases = readDirJson('content/public-releases').filter((release) => release.publicationState === 'published');
@@ -526,6 +568,18 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
     if (req.method === 'GET' && url.pathname === '/api/build-info') return json(res, 200, buildPublicBuildIdentity(env));
     if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
+    const appliedGraphMatch = url.pathname.match(/^\/api\/applied-learning\/graphs\/(ALGRAPH-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedGraphMatch) {
+      const graph = findAppliedLearningRecord('graphs', appliedGraphMatch[1]);
+      if (!graph || !isVisible(graph, previewDrafts)) return json(res, 404, { error: 'applied-learning-graph-not-found' });
+      return json(res, 200, safeAppliedLearningGraph(graph));
+    }
+    const appliedMeasurementMatch = url.pathname.match(/^\/api\/applied-learning\/measurements\/(ALMEAS-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedMeasurementMatch) {
+      const activity = findAppliedLearningRecord('measurements', appliedMeasurementMatch[1]);
+      if (!activity || !isVisible(activity, previewDrafts)) return json(res, 404, { error: 'applied-learning-measurement-not-found' });
+      return json(res, 200, safeAppliedLearningMeasurement(activity));
+    }
     if (req.method === 'GET' && url.pathname === '/api/downloads') return json(res, 200, buildDownloadCatalog({ previewDrafts }));
     const downloadMetadataMatch = url.pathname.match(/^\/api\/downloads\/(DL-[A-Z0-9-]+)$/);
     if (req.method === 'GET' && downloadMetadataMatch) {
@@ -566,6 +620,9 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
 
     const staticFiles = new Map([
       ['/', ['index.html', 'text/html; charset=utf-8']], ['/academy', ['index.html', 'text/html; charset=utf-8']],
+      ['/applied-learning', ['applied-learning.html', 'text/html; charset=utf-8']],
+      ['/applied-learning.js', ['applied-learning.js', 'text/javascript; charset=utf-8']],
+      ['/applied-learning.css', ['applied-learning.css', 'text/css; charset=utf-8']],
       ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/progress.js', ['progress.js', 'text/javascript; charset=utf-8']],
       ['/completion-documents.js', ['completion-documents.js', 'text/javascript; charset=utf-8']],
       ['/rich-content.js', ['rich-content.js', 'text/javascript; charset=utf-8']],

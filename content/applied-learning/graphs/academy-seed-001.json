@@ -1,0 +1,270 @@
+{
+  "id": "ALGRAPH-ACADEMY-SEED-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "THC Academy Canonical Knowledge Graph Seed",
+  "summary": "Canonical-ID projection for applied-learning exploration. Nodes point to existing Academy objects; this file does not duplicate curriculum text.",
+  "nodes": [
+    {
+      "id": "ALNODE-COMP-BREED-GENOMICS-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-BREED-GENOMICS-001"
+    },
+    {
+      "id": "ALNODE-COMP-BREED-POP-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-BREED-POP-001"
+    },
+    {
+      "id": "ALNODE-COMP-CANOPY-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-CANOPY-001"
+    },
+    {
+      "id": "ALNODE-COMP-CANOPY-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-CANOPY-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-CROP-PLAN-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-CROP-PLAN-001"
+    },
+    {
+      "id": "ALNODE-COMP-CULT-EQUIPMENT-CARE-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-CULT-EQUIPMENT-CARE-001"
+    },
+    {
+      "id": "ALNODE-COMP-CULT-TRACEABILITY-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-CULT-TRACEABILITY-001"
+    },
+    {
+      "id": "ALNODE-COMP-ENV-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-ENV-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-ENV-VPD-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-ENV-VPD-001"
+    },
+    {
+      "id": "ALNODE-COMP-FLOWER-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-FLOWER-001"
+    },
+    {
+      "id": "ALNODE-COMP-FLOWER-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-FLOWER-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-GENETICS-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-GENETICS-001"
+    },
+    {
+      "id": "ALNODE-COMP-HOME-START-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-HOME-START-001"
+    },
+    {
+      "id": "ALNODE-COMP-HOME-WORKFLOW-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-HOME-WORKFLOW-001"
+    },
+    {
+      "id": "ALNODE-COMP-HYDRO-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-HYDRO-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-IPM-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-IPM-001"
+    },
+    {
+      "id": "ALNODE-COMP-IPM-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-IPM-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-IRRIGATION-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-IRRIGATION-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-LIGHT-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-LIGHT-001"
+    },
+    {
+      "id": "ALNODE-COMP-LIGHT-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-LIGHT-ADV-001"
+    },
+    {
+      "id": "ALNODE-COMP-NUTRIENT-DIAG-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-NUTRIENT-DIAG-001"
+    },
+    {
+      "id": "ALNODE-COMP-NUTRITION-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-NUTRITION-001"
+    },
+    {
+      "id": "ALNODE-COMP-OUTDOOR-ESTABLISH-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-OUTDOOR-ESTABLISH-001"
+    },
+    {
+      "id": "ALNODE-COMP-OUTDOOR-MGMT-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-OUTDOOR-MGMT-001"
+    },
+    {
+      "id": "ALNODE-COMP-OUTDOOR-RISK-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-OUTDOOR-RISK-001"
+    },
+    {
+      "id": "ALNODE-COMP-OUTDOOR-SITE-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-OUTDOOR-SITE-001"
+    },
+    {
+      "id": "ALNODE-COMP-PLANT-BIO-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-PLANT-BIO-001"
+    },
+    {
+      "id": "ALNODE-COMP-POSTHARVEST-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-POSTHARVEST-001"
+    },
+    {
+      "id": "ALNODE-COMP-POSTHARVEST-PROCESS-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-POSTHARVEST-PROCESS-001"
+    },
+    {
+      "id": "ALNODE-COMP-POSTHARVEST-QA-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-POSTHARVEST-QA-001"
+    },
+    {
+      "id": "ALNODE-COMP-PRO-QA-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-PRO-QA-001"
+    },
+    {
+      "id": "ALNODE-COMP-PRO-SOP-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-PRO-SOP-001"
+    },
+    {
+      "id": "ALNODE-COMP-PROP-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-PROP-001"
+    },
+    {
+      "id": "ALNODE-COMP-RESPONSIBLE-LEGAL-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-RESPONSIBLE-LEGAL-001"
+    },
+    {
+      "id": "ALNODE-COMP-ROOTZONE-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-ROOTZONE-001"
+    },
+    {
+      "id": "ALNODE-COMP-SAFETY-WORK-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-SAFETY-WORK-001"
+    },
+    {
+      "id": "ALNODE-COMP-SOIL-BIO-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-SOIL-BIO-001"
+    },
+    {
+      "id": "ALNODE-COMP-SPACE-BIOSEC-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-SPACE-BIOSEC-001"
+    },
+    {
+      "id": "ALNODE-COMP-TC-ASEPTIC-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-TC-ASEPTIC-001"
+    },
+    {
+      "id": "ALNODE-COMP-TC-REGEN-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-TC-REGEN-001"
+    },
+    {
+      "id": "ALNODE-COMP-WATER-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-WATER-001"
+    },
+    {
+      "id": "ALNODE-COMP-WATER-QUALITY-ADV-001",
+      "canonicalType": "competency",
+      "canonicalId": "COMP-WATER-QUALITY-ADV-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-CANOPY-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-CANOPY-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-ENV-VPD-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-ENV-VPD-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-GENETICS-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-GENETICS-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-IPM-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-IPM-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-LIGHT-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-LIGHT-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-NUTRITION-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-NUTRITION-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-PLANT-BIO-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-PLANT-BIO-001"
+    },
+    {
+      "id": "ALNODE-CLAIM-POSTHARVEST-001",
+      "canonicalType": "claim",
+      "canonicalId": "CLAIM-POSTHARVEST-001"
+    }
+  ],
+  "edges": [
+    {
+      "id": "ALEDGE-VPD-CLAIM-COMP-001",
+      "source": "ALNODE-CLAIM-ENV-VPD-001",
+      "target": "ALNODE-COMP-ENV-VPD-001",
+      "relationship": "supports-competency",
+      "evidenceIds": [
+        "REF-VPD-002"
+      ]
+    }
+  ]
+}
