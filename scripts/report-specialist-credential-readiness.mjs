@@ -81,6 +81,15 @@ for (const credential of credentials) {
       continue;
     }
 
+    const privateContractOnly =
+      assessment.extensions?.secureOperationalItemBankRequired === true &&
+      assessment.extensions?.publicRepositoryItemsMayBeUsedForOperationalCredentialForms === false;
+    if (privateContractOnly) {
+      assessmentPoolsReady = false;
+      assessmentSummaries.push(`${assessment.id}: private operational pool required; public items intentionally absent`);
+      continue;
+    }
+
     console.error(`ERROR ${credential.id}: assessment ${assessment.id} has neither static items, domain item pools, nor a blueprint`);
     errors++; structural = false; assessmentPoolsReady = false;
   }

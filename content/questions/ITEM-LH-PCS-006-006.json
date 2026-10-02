@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-006-02",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which metric definition is reproducible?",
+  "choices": [
+    "Rooting was good",
+    "Rooted units divided by original eligible cohort at day 14, with documented exclusions",
+    "Most plants passed",
+    "Success after some time"
+  ],
+  "correct": 1,
+  "rationale": "The event, denominator, observation window and exclusions are explicit.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

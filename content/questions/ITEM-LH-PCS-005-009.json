@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-LH-PCS-005-03",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One explant type has poor survival without visible contamination. What is the best next step?",
+  "choices": [
+    "Compare explant condition, handling and genotype records before a controlled test",
+    "Classify every loss as contamination",
+    "Change all variables immediately",
+    "Release the surviving vessels as pathogen free"
+  ],
+  "correct": 0,
+  "rationale": "Noncontamination failure should be separated and investigated with controlled comparisons.",
+  "references": [
+    "REF-PROP-REGEN-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

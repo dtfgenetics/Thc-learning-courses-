@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-LH-PCS-005-03",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What should be recorded before affected vessels are handled under the disposition procedure?",
+  "choices": [
+    "Only the number discarded",
+    "A new universal protocol",
+    "The presumed organism name",
+    "Vessel identity, batch links, timing, appearance and relevant process history"
+  ],
+  "correct": 3,
+  "rationale": "Preserving traceable observations protects evidence for scope and root-cause work.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

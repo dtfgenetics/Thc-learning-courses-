@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-PCS-005-05",
+  "title": "Rooting, Acclimation, Fidelity & Release Evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-TC-REGEN-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-005-05"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-PROP-TC-2025-001",
+    "REF-PROP-REGEN-2025-001",
+    "REF-PROP-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A culture is not production-ready because shoots multiplied or roots appeared. Release evidence must cover functional transition, identity, morphology, passage history and defined quality limits.",
+    "vocabulary": [
+      {
+        "term": "Acclimatization",
+        "definition": "Progressive adaptation from in-vitro conditions to conventional substrate and environment."
+      },
+      {
+        "term": "Passage history",
+        "definition": "The documented sequence and count of culture transfers for a line."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Rooting and acclimation form one transition",
+        "body": "Plantlets leaving culture face a different water, light, airflow and root-function environment. Survival and new growth over time matter more than root presence alone.",
+        "references": [
+          "REF-PROP-TC-2025-001",
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Fidelity uses multiple evidence streams",
+        "body": "Identity records, passage history, morphology, performance and justified molecular or cytometric tests provide complementary evidence. No single check proves complete stability.",
+        "references": [
+          "REF-PROP-TC-2025-001",
+          "REF-PROP-REGEN-2025-001"
+        ]
+      },
+      {
+        "title": "Release criteria must be explicit",
+        "body": "A release packet should identify stage, survival window, growth response, identity continuity, exceptions, reviewer and limitations. Material that misses a criterion follows hold, investigation or disposition rules.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Plantlets with visible roots but repeated collapse after transfer have not met an establishment criterion.",
+      "Normal appearance after many passages does not erase the need to retain passage and route history."
+    ],
+    "commonMistakes": [
+      "Defining success at first visible root.",
+      "Using appearance as the only fidelity check.",
+      "Releasing a partial batch without recording exclusions and denominator changes."
+    ],
+    "practicalApplication": "Build a release packet for a mock line containing identity, passage, rooting, acclimation survival, new-growth, morphology, exceptions and an authorized status decision.",
+    "summary": "Clean-stock release follows the material through functional acclimation and preserves identity, history, quality evidence and decision authority."
+  }
+}

@@ -24,9 +24,15 @@ This status note reconciles specialist-course authoring with the credential-prog
 
 The completed PHIB/EIFS draft course objects must not be counted as production credentials. Their status remains intentionally separate from Technician I/II release scope.
 
-## Next course-authoring block
+### Propagation & Clean Stock Specialist (PCS)
 
-The next unbuilt pathway is **THC Propagation & Clean Stock Specialist (PCS)**:
+- Planned canonical courses: 6
+- Canonical course objects present: 6
+- Course-authoring state: draft authoring complete
+- Release state: not authorized
+- Remaining work: exact-version technical/assessment review, accessibility review, instructional visuals, specialist item-bank expansion, practical/capstone authoring and validation, pilot evidence, standard setting, secure operational forms, program validation and release authorization
+
+The completed draft pathway contains:
 
 1. COURSE-LH-PCS-001 — Seed Biology, Germination & Seedling Establishment
 2. COURSE-LH-PCS-002 — Mother/Donor Plant Management & Plant Identity
@@ -51,11 +57,11 @@ Current evidence anchors suitable for the next build include:
 
 Research-treatment values and cultivar-specific protocols must not be converted into universal operating setpoints. Clean-stock claims must distinguish visual health, tested pathogen status, plant identity and genetic fidelity.
 
-## Next implementation sequence
+## Completed implementation sequence
 
-1. Build PCS Course 1 with course-owned objectives, dedicated module/lessons, formative assessment and specialist final seed bank.
-2. Build PCS Courses 2–4 around donor identity, rooting/acclimation, sanitation/biosecurity and traceability.
-3. Build PCS Course 5 with a strict tissue-culture/clean-stock evidence boundary that distinguishes micropropagation from proven pathogen elimination and distinguishes clonal identity from guaranteed genetic fidelity.
-4. Build PCS Course 6 as the integrated planning/troubleshooting course and connect the PCS capstone.
-5. Expand each specialist final from seed-bank depth to the configured bank target, then run technical, assessment, accessibility and pilot gates.
-6. Keep production credential issuance disabled until the repository's exact-version release dependencies are satisfied.
+1. PCS Course 1 provides course-owned seed biology, germination and seedling-establishment instruction and a specialist final seed bank.
+2. PCS Courses 2–4 cover donor identity, rooting/acclimation, sanitation/biosecurity and traceability.
+3. PCS Course 5 adds the tissue-culture/clean-stock boundary, including identity, testing, aseptic process, genotype response, acclimation and fidelity evidence.
+4. PCS Course 6 adds integrated capacity planning, denominator-controlled metrics, loss-stage analysis, controlled troubleshooting and accountable handoff.
+5. The next machine content block is the PCS performance/capstone package and expansion of each specialist final from seed-bank depth to the configured bank target.
+6. Production credential issuance remains disabled until exact-version human review, accessibility, pilot, calibration, standard-setting, secure-form and release dependencies are satisfied.

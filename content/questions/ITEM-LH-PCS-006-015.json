@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-PCS-006-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "When is a corrective action complete?",
+  "choices": [
+    "When it is assigned",
+    "When the document is printed",
+    "After implementation and follow-up evidence verify the intended effect",
+    "When one batch looks better"
+  ],
+  "correct": 2,
+  "rationale": "Corrective action closure requires verification, not assignment alone.",
+  "references": [
+    "REF-EPA-SOP-QAG6"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

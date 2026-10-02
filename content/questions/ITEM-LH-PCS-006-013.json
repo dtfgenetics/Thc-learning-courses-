@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CULT-TRACEABILITY-001",
+  "objective": "LO-LH-PCS-006-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A partial batch is released. What must the handoff include?",
+  "choices": [
+    "Original cohort, released and held identities, reasons, status and next owner",
+    "Only the released count",
+    "Only a photo",
+    "A verbal estimate of losses"
+  ],
+  "correct": 0,
+  "rationale": "Partial release requires complete reconciliation and exception ownership.",
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

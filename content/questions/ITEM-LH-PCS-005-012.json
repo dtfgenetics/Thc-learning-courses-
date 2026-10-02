@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-LH-PCS-005-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why must regeneration route be retained in the batch record?",
+  "choices": [
+    "It replaces identity records",
+    "It proves every plant is identical",
+    "It determines legal ownership",
+    "It can affect fidelity questions and how later variation is interpreted"
+  ],
+  "correct": 3,
+  "rationale": "Route history is relevant to fidelity and variation risk but is not proof of outcome.",
+  "references": [
+    "REF-PROP-REGEN-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

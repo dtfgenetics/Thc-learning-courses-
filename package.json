@@ -56,6 +56,7 @@
     "credential:public:test": "node scripts/test-public-verification-projection.mjs",
     "credential:specialist:readiness": "node scripts/report-specialist-credential-readiness.mjs",
     "credential:specialist:coverage": "node scripts/report-specialist-final-coverage.mjs --check",
+    "credential:private-boundary:test": "node scripts/test-private-credential-assessment-boundary.mjs",
     "credential:coverage": "node scripts/report-course-credential-coverage.mjs",
     "review:validate": "node scripts/validate-reviews.mjs",
     "review:queue": "node scripts/build-review-queue.mjs",
