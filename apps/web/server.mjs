@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHandler as createApiHandler } from '../api/src/server.mjs';
+import { dliFromPpfd } from '../../packages/domain/applied-learning-calculations.mjs';
 
 const root = process.cwd();
 const webRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'public');
@@ -55,6 +56,44 @@ function safeAppliedLearningMeasurement(activity) {
       id, label, type, unit: unit ?? null, required: required === true
     })),
     safetyBoundary: activity.safetyBoundary
+  };
+}
+
+function safeAppliedLearningCalculator(calculator) {
+  return {
+    id: calculator.id,
+    version: calculator.version,
+    status: calculator.status,
+    title: calculator.title,
+    summary: calculator.summary,
+    calculation: calculator.calculation,
+    competencyIds: calculator.competencyIds ?? [],
+    objectiveIds: calculator.objectiveIds ?? [],
+    referenceIds: calculator.referenceIds ?? [],
+    canonicalSources: calculator.canonicalSources ?? [],
+    inputFields: calculator.inputFields ?? [],
+    output: calculator.output,
+    limitations: calculator.limitations ?? []
+  };
+}
+function safeAppliedLearningDifferential(differential) {
+  return {
+    id: differential.id,
+    version: differential.version,
+    status: differential.status,
+    title: differential.title,
+    summary: differential.summary,
+    observedPattern: differential.observedPattern,
+    competencyIds: differential.competencyIds ?? [],
+    referenceIds: differential.referenceIds ?? [],
+    canonicalSources: differential.canonicalSources ?? [],
+    hypotheses: (differential.hypotheses ?? []).map(({ id, label, whyPlausible, evidenceThatRaisesConfidence, evidenceThatLowersConfidence }) => ({
+      id, label, whyPlausible,
+      evidenceThatRaisesConfidence: evidenceThatRaisesConfidence ?? [],
+      evidenceThatLowersConfidence: evidenceThatLowersConfidence ?? []
+    })),
+    discriminatingEvidence: differential.discriminatingEvidence ?? [],
+    boundary: differential.boundary
   };
 }
 function buildPublicReleaseIds({ modules, assessments }) {
@@ -579,6 +618,41 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       const activity = findAppliedLearningRecord('measurements', appliedMeasurementMatch[1]);
       if (!activity || !isVisible(activity, previewDrafts)) return json(res, 404, { error: 'applied-learning-measurement-not-found' });
       return json(res, 200, safeAppliedLearningMeasurement(activity));
+    }
+
+    const appliedCalculatorMatch = url.pathname.match(/^\/api\/applied-learning\/calculators\/(ALCALC-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedCalculatorMatch) {
+      const calculator = findAppliedLearningRecord('calculators', appliedCalculatorMatch[1]);
+      if (!calculator || !isVisible(calculator, previewDrafts)) return json(res, 404, { error: 'applied-learning-calculator-not-found' });
+      return json(res, 200, safeAppliedLearningCalculator(calculator));
+    }
+    const appliedCalculatorRunMatch = url.pathname.match(/^\/api\/applied-learning\/calculators\/(ALCALC-[A-Z0-9-]+)\/calculate$/);
+    if (req.method === 'POST' && appliedCalculatorRunMatch) {
+      const calculator = findAppliedLearningRecord('calculators', appliedCalculatorRunMatch[1]);
+      if (!calculator || !isVisible(calculator, previewDrafts)) return json(res, 404, { error: 'applied-learning-calculator-not-found' });
+      let body;
+      try { body = await readRequestJson(req); } catch { return json(res, 400, { error: 'invalid-json' }); }
+      if (calculator.calculation !== 'dli-from-ppfd') return json(res, 400, { error: 'unsupported-calculation' });
+      const ppfdUmolM2S = Number(body.ppfdUmolM2S);
+      const photoperiodHours = Number(body.photoperiodHours);
+      try {
+        const value = dliFromPpfd({ ppfdUmolM2S, photoperiodHours });
+        return json(res, 200, {
+          calculatorId: calculator.id,
+          inputs: { ppfdUmolM2S, photoperiodHours },
+          value,
+          unit: calculator.output?.unit ?? 'mol/m²/day',
+          limitations: calculator.limitations ?? []
+        });
+      } catch (error) {
+        return json(res, 400, { error: 'invalid-calculation-input', message: error.message });
+      }
+    }
+    const appliedDifferentialMatch = url.pathname.match(/^\/api\/applied-learning\/differentials\/(ALDIFF-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedDifferentialMatch) {
+      const differential = findAppliedLearningRecord('differentials', appliedDifferentialMatch[1]);
+      if (!differential || !isVisible(differential, previewDrafts)) return json(res, 404, { error: 'applied-learning-differential-not-found' });
+      return json(res, 200, safeAppliedLearningDifferential(differential));
     }
     if (req.method === 'GET' && url.pathname === '/api/downloads') return json(res, 200, buildDownloadCatalog({ previewDrafts }));
     const downloadMetadataMatch = url.pathname.match(/^\/api\/downloads\/(DL-[A-Z0-9-]+)$/);
