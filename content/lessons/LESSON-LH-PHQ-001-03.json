@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-PHQ-001-03",
+  "title": "Lot Creation, Split/Merge Genealogy & Material Identity",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-001-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Postharvest quality decisions require stable lot identity. When material is split across rooms, racks or processes—or later merged—genealogy must preserve the relationship between source crop, harvest event, processing history and samples.",
+    "vocabulary": [
+      {
+        "term": "Lot genealogy",
+        "definition": "Traceable relationships connecting source material, harvest event, splits, merges, process locations and downstream units."
+      },
+      {
+        "term": "Split lot",
+        "definition": "Material from one source lot divided into separately tracked process groups."
+      },
+      {
+        "term": "Merge",
+        "definition": "Controlled combination of material with documented source identities and compatible status."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Create identity at the transition",
+        "body": "Assign and preserve lot/harvest identifiers when material leaves the crop and enters postharvest so process history remains connected.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Splits retain parent linkage",
+        "body": "If one harvest enters two drying rooms or racks, each child lot should remain linked to the same parent plus its own process history.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Do not merge by nickname alone",
+        "body": "Matching cultivar or marketing names do not justify combining distinct lots with different source or status. Merge rules remain controlled and documented.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A harvest split between Dry Room A and B must preserve which packaged or sampled material came from each room if later quality results differ."
+    ],
+    "commonMistakes": [
+      "Using cultivar name as the only lot identifier.",
+      "Relabeling material without preserving prior identity.",
+      "Combining lots before status and history are reconciled."
+    ],
+    "practicalApplication": "Build a genealogy diagram from source crop through harvest, two drying-room splits, samples and final packaged units.",
+    "summary": "Lot integrity makes later quality, deviation and recall decisions possible."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHQ-001-HARVEST-LOT-INTEGRITY",
+  "title": "Harvest Readiness, Sanitary Handling & Lot Integrity",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHQ-001-01",
+    "LESSON-LH-PHQ-001-02",
+    "LESSON-LH-PHQ-001-03",
+    "LESSON-LH-PHQ-001-04",
+    "LESSON-LH-PHQ-001-05"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering representative harvest-readiness evaluation, sanitary handling, lot genealogy, deviation containment and harvest-to-dry handoff.",
+  "estimatedMinutes": 315,
+  "learningOutcomes": [
+    "Evaluate harvest readiness using representative maturity observations, crop objectives, developmental context and sampling limits rather than a single flower, calendar date or universal visual threshold.",
+    "Design a sanitary harvest-handling workflow that protects material identity, minimizes contamination and preserves worker/process safety through cutting, transport and staging.",
+    "Create and maintain lot identity across harvest, splits, transfers, drying-room/rack assignment and later sample relationships without undocumented mixing or relabeling.",
+    "Detect and contain harvest-stage deviations such as sanitation failure, identity uncertainty, damaged material or environmental delay while preserving affected scope and evidence.",
+    "Produce a reconstructable harvest-to-dry handoff record with source identity, time, location, condition, sanitation status, lot genealogy, deviations and next responsible role."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}
