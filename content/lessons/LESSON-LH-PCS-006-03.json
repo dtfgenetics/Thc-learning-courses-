@@ -1,0 +1,66 @@
+{
+  "id": "LESSON-LH-PCS-006-03",
+  "title": "Loss-Stage & Bottleneck Analysis",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-006-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-PROP-001",
+    "REF-PROP-TC-2025-001",
+    "REF-IPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A low final yield is an outcome, not a diagnosis. Loss-stage analysis asks where units failed or waited, what they shared and which next observation can separate competing explanations.",
+    "vocabulary": [
+      {
+        "term": "Bottleneck",
+        "definition": "A stage or resource whose effective capacity limits the output of the larger process."
+      },
+      {
+        "term": "Loss stage",
+        "definition": "The defined process interval in which a unit first failed to meet continuation criteria."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Localize before explaining",
+        "body": "Separate intake rejection, early wilt, rooting failure, contamination, acclimation loss and release hold. Each pattern points to a different evidence set.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Shared factors rank hypotheses",
+        "body": "Donor, genotype, media lot, tray zone, operator period, equipment and environment can create structured patterns. Association narrows the next check but does not prove cause.",
+        "references": [
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "Delay can be the controlling failure",
+        "body": "Material may survive but miss a production window because a stage is variable or review is slow. Track both biological loss and time in state.",
+        "references": [
+          "REF-PROP-TC-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A normal rooting rate with long release holds points toward review or evidence flow rather than root initiation.",
+      "Loss concentrated after acclimation should not be corrected only by changing cutting intake."
+    ],
+    "commonMistakes": [
+      "Using final yield as a root cause.",
+      "Treating correlation as proof.",
+      "Ignoring units delayed in hold status."
+    ],
+    "practicalApplication": "Build a stage-loss waterfall and time-in-state chart for four mock batches, identify the limiting stage and propose the next measurement that best separates the top two hypotheses.",
+    "summary": "Bottleneck analysis locates loss and delay before assigning cause, then uses shared-factor evidence to choose the next discriminating check."
+  }
+}

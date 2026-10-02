@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-PCS-006-01",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A facility needs 600 released plants. What is the strongest planning starting point?",
+  "choices": [
+    "Work backward through stage capacity, timing, yield ranges and release criteria",
+    "Start exactly 600 units",
+    "Use the fastest genotype timeline for all lines",
+    "Add an undocumented buffer"
+  ],
+  "correct": 0,
+  "rationale": "A release plan connects qualified demand to stage-specific assumptions and constraints.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

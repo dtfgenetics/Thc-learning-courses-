@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-PCS-005-FINAL",
+  "title": "Clean Stock & Tissue-Culture Fundamentals - Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-TC-ASEPTIC-001",
+    "COMP-TC-REGEN-001"
+  ],
+  "objectives": [
+    "LO-LH-PCS-005-01",
+    "LO-LH-PCS-005-02",
+    "LO-LH-PCS-005-03",
+    "LO-LH-PCS-005-04",
+    "LO-LH-PCS-005-05"
+  ],
+  "items": [
+    "ITEM-LH-PCS-005-001",
+    "ITEM-LH-PCS-005-002",
+    "ITEM-LH-PCS-005-003",
+    "ITEM-LH-PCS-005-004",
+    "ITEM-LH-PCS-005-005",
+    "ITEM-LH-PCS-005-006",
+    "ITEM-LH-PCS-005-007",
+    "ITEM-LH-PCS-005-008",
+    "ITEM-LH-PCS-005-009",
+    "ITEM-LH-PCS-005-010",
+    "ITEM-LH-PCS-005-011",
+    "ITEM-LH-PCS-005-012",
+    "ITEM-LH-PCS-005-013",
+    "ITEM-LH-PCS-005-014",
+    "ITEM-LH-PCS-005-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Clean-stock identity, evidence state and release control"
+    },
+    {
+      "competency": "COMP-TC-ASEPTIC-001",
+      "items": 6,
+      "cognitiveTarget": "Aseptic workflow, establishment and contamination triage"
+    },
+    {
+      "competency": "COMP-TC-REGEN-001",
+      "items": 6,
+      "cognitiveTarget": "Multiplication, acclimation, fidelity and release evidence"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 3,
+    "targetBankItemsPerCompetency": 25,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PCS-005",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

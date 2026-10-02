@@ -444,6 +444,50 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-TC-ASEPTIC-001",
+            "MOD-TC-REGEN-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-PCS-004",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-005-CLEAN-STOCK-TISSUE-CULTURE",
+          "remainingDepth": [
+            "instructional aseptic-zone, culture-stage, contamination-pattern and release-evidence visual set",
+            "human tissue-culture, plant-pathology and clean-stock review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-005-PERFORMANCE"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-001",
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-PCS-003",
+            "COURSE-LH-PCS-004",
+            "COURSE-LH-PCS-005",
+            "COURSE-LH-TECH2-005"
+          ],
+          "newModule": "MOD-LH-PCS-006-PRODUCTION-PLANNING-TROUBLESHOOTING",
+          "remainingDepth": [
+            "instructional capacity-map, stage-loss, denominator-audit and controlled-test visual set",
+            "human propagation production, quality-systems and operations review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },

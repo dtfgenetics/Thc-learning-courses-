@@ -1,0 +1,65 @@
+{
+  "id": "LESSON-LH-PCS-006-01",
+  "title": "Demand, Capacity & Batch Planning",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-CROP-PLAN-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-006-01"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANNABIS-PROPAGATION-2020-958"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A usable propagation plan works backward from qualified demand and makes assumptions visible. It distinguishes physical capacity from release-ready output and preserves buffers without hiding chronic losses.",
+    "vocabulary": [
+      {
+        "term": "Stage capacity",
+        "definition": "The number of identified units a propagation stage can process under defined space, labor and workflow constraints."
+      },
+      {
+        "term": "Yield assumption",
+        "definition": "An explicit estimate of the proportion expected to reach a defined next-stage criterion."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Work backward from qualified demand",
+        "body": "Start with required handoff quantity and date, then map acclimation, rooting, cutting or establishment stages with their decision points. Calendar days alone do not guarantee readiness.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Capacity is stage specific",
+        "body": "Donor availability, work-area throughput, tray or vessel space, acclimation area and qualified labor can constrain different parts of the system. The smallest effective stage can control total output.",
+        "references": [
+          "REF-CANNABIS-PROPAGATION-2020-958"
+        ]
+      },
+      {
+        "title": "Assumptions need owners and revision points",
+        "body": "Loss, timing and buffer assumptions should identify their source and review date. Large unexplained buffers can conceal poor process capability instead of protecting the crop plan.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A plan for 800 released plants cannot start with 800 cuttings when historical stage losses are material and variable.",
+      "Adding rooting space does not increase output when donor harvest capacity is the actual constraint."
+    ],
+    "commonMistakes": [
+      "Equating starts with release-ready output.",
+      "Using one genotype timeline for every line.",
+      "Adding buffer without investigating repeated loss."
+    ],
+    "practicalApplication": "Create a backward schedule for three genotypes using stated demand, stage capacities, historical yield ranges and hold criteria; identify the bottleneck and the first date the plan must be revised.",
+    "summary": "Propagation planning connects demand to stage-specific capacity, timing, yield assumptions and release evidence while keeping uncertainty visible."
+  }
+}

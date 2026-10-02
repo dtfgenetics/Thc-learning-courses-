@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-REGEN-001",
+  "objective": "LO-LH-PCS-005-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Treatment A produces more shoots but more abnormal morphology than Treatment B. What comparison is strongest?",
+  "choices": [
+    "Shoot count alone",
+    "Usable output plus morphology, rooting and downstream loss",
+    "Whichever treatment was tested first",
+    "A pooled result without genotype"
+  ],
+  "correct": 1,
+  "rationale": "Operational value depends on usable downstream performance, not count alone.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

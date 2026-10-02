@@ -7,7 +7,17 @@ function readDirJson(rel) {
   return fs.readdirSync(dir).filter((n) => n.endsWith('.json')).sort().map((n) => JSON.parse(fs.readFileSync(path.join(dir, n), 'utf8')));
 }
 
-const assessments = readDirJson('content/assessments').filter((a) => a.purpose === 'credential');
+const assessments = readDirJson('content/assessments').filter((assessment) => {
+  if (assessment.purpose !== 'credential') return false;
+  const hasPublicBank =
+    (assessment.items?.length ?? 0) > 0 ||
+    (assessment.itemPools?.length ?? 0) > 0 ||
+    (assessment.blueprint?.length ?? 0) > 0;
+  const privateContractOnly =
+    assessment.extensions?.secureOperationalItemBankRequired === true &&
+    assessment.extensions?.publicRepositoryItemsMayBeUsedForOperationalCredentialForms === false;
+  return hasPublicBank || !privateContractOnly;
+});
 const questionList = readDirJson('content/questions');
 const questions = new Map(questionList.map((q) => [q.id, q]));
 

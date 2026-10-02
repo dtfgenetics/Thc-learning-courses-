@@ -1,0 +1,66 @@
+{
+  "id": "LESSON-LH-PCS-006-04",
+  "title": "Controlled Troubleshooting & Change Evaluation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-006-04"
+  ],
+  "estimatedMinutes": 75,
+  "references": [
+    "REF-PROP-001",
+    "REF-PROP-TC-2025-001",
+    "REF-EPA-SOP-QAG6"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Troubleshooting should reduce uncertainty without creating an uncontrolled new process. The specialist defines the question, protects unaffected production and measures the result against a baseline.",
+    "vocabulary": [
+      {
+        "term": "Baseline",
+        "definition": "The documented comparison condition or recent process performance used to interpret a change."
+      },
+      {
+        "term": "Acceptance criterion",
+        "definition": "A predefined condition used to judge whether a test result supports adoption, rejection or further study."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Change one interpretable factor where practical",
+        "body": "Simultaneous changes can improve a batch while leaving the mechanism unknown. A bounded comparison should keep important conditions recorded and stable enough to interpret.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Protect production and identity",
+        "body": "Define test scope, authorized material, labels, separation, rollback and stop criteria before starting. Experimental material should not silently enter routine production.",
+        "references": [
+          "REF-EPA-SOP-QAG6"
+        ]
+      },
+      {
+        "title": "Judge downstream performance",
+        "body": "A change that improves early rooting but worsens acclimation, labor or identity control is not automatically an improvement. Follow the response through the relevant handoff.",
+        "references": [
+          "REF-PROP-TC-2025-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Testing a new handling interval on one labeled subset preserves a comparison while protecting the rest of the batch.",
+      "A treatment that improves day-10 rooting but increases day-21 acclimation loss fails the broader outcome."
+    ],
+    "commonMistakes": [
+      "Changing multiple variables without a comparison.",
+      "Moving test material into production without status control.",
+      "Ending evaluation at the earliest favorable measure."
+    ],
+    "practicalApplication": "Write a controlled test protocol for one propagation problem, including hypothesis, comparison, scope, labels, measures, stop criteria, downstream window and authorized decision path.",
+    "summary": "Controlled troubleshooting uses bounded comparisons, protected identity and downstream criteria to learn without turning production into an undocumented experiment."
+  }
+}

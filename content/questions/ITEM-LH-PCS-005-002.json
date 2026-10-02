@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-005-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A line tested negative on one dated sample. Which statement is supportable?",
+  "choices": [
+    "The line is permanently pathogen free",
+    "The result applies to the identified sample and test context",
+    "Every future clone inherits the result",
+    "Visual inspection is no longer needed"
+  ],
+  "correct": 1,
+  "rationale": "A test result has a sample, method and time boundary and is not a permanent guarantee.",
+  "references": [
+    "REF-HLVD-REVIEW-2023-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

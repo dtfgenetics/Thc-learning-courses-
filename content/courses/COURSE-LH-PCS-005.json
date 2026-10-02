@@ -1,0 +1,66 @@
+{
+  "id": "COURSE-LH-PCS-005",
+  "title": "Clean Stock & Tissue-Culture Fundamentals",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Propagation & Clean Stock Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Propagation & Clean Stock Specialist pathway",
+    "Propagation personnel responsible for clean-stock, tissue-culture, production-planning or propagation-quality workflows"
+  ],
+  "prerequisites": [
+    "COURSE-LH-PCS-001 through COURSE-LH-PCS-004 or approved equivalents",
+    "Approved tissue-culture laboratory safety and site-specific aseptic-work training where practical work is performed"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Cannabis-specific micropropagation and regeneration studies support genotype-dependent establishment, multiplication, rooting, acclimation and fidelity concerns. Plant-pathology evidence supports testing-aware clean-stock controls. Exact media, plant-growth regulators, disinfection methods, test panels and release criteria remain controlled by validated laboratory procedures, product labels, qualified technical authority and applicable law.",
+  "assessmentPolicy": "The specialist assessment remains development-only until technical, assessment and accessibility review plus pilot evidence are complete. Course completion does not authorize independent laboratory operation, pathogen-free claims, diagnostic release, chemical selection or disposition of controlled material.",
+  "description": "Develops specialist clean-stock reasoning from source identity and aseptic establishment through multiplication, rooting, acclimation, fidelity monitoring and evidence-based material release.",
+  "modules": [
+    "MOD-LH-PCS-005-CLEAN-STOCK-TISSUE-CULTURE"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-TC-ASEPTIC-001",
+    "COMP-TC-REGEN-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PCS-005-FINAL",
+  "learningOutcomes": [
+    "Distinguish identity, observed health, test status and release status when building a clean-stock record and material-status decision.",
+    "Design and execute a traceable aseptic workflow that separates clean and exposed states, detects breaches and preserves batch identity.",
+    "Interpret establishment and contamination patterns by source, explant, vessel, timing and process history, then select an evidence-preserving response.",
+    "Compare multiplication or regeneration treatments using genotype-aware quality measures rather than shoot count alone.",
+    "Evaluate in-vitro material through rooting, ex-vitro acclimation, fidelity monitoring and controlled release using stage-specific evidence."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PROP-CLEAN-STOCK-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PCS-001",
+      "COURSE-LH-PCS-002",
+      "COURSE-LH-PCS-003",
+      "COURSE-LH-PCS-004",
+      "COURSE-LH-TECH2-005",
+      "COURSE-PROP-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PCS-005-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

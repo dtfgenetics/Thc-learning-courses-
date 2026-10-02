@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-LH-PCS-005-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What makes an aseptic breach record most useful for investigation?",
+  "choices": [
+    "Operator opinion only",
+    "Affected batch and vessel IDs, time, step and response",
+    "A general note that the bench looked clean",
+    "Deleting the event after cleanup"
+  ],
+  "correct": 1,
+  "rationale": "Specific traceable details allow patterns and affected scope to be evaluated.",
+  "references": [
+    "REF-PROP-TC-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}
