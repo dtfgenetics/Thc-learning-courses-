@@ -17,6 +17,8 @@
     <nav aria-label="Applied learning sections">
       <a href="#knowledge-graph">Knowledge Graph</a>
       <a href="#measurement-school">Measurement School</a>
+      <a href="#crop-math">Crop Math</a>
+      <a href="#differential-reasoning">Same Symptom</a>
     </nav>
 
     <section id="knowledge-graph" aria-labelledby="graph-title">
@@ -44,6 +46,29 @@
       </form>
       <pre id="measurement-output" tabindex="0" aria-live="polite"></pre>
       <p id="measurement-boundary" class="boundary"></p>
+    </section>
+
+    <section id="crop-math" aria-labelledby="crop-math-title">
+      <p class="eyebrow">THC Crop Math</p>
+      <h2 id="crop-math-title">DLI from PPFD and photoperiod</h2>
+      <p id="crop-math-summary">Loading calculator…</p>
+      <form id="crop-math-form">
+        <div id="crop-math-fields" class="field-grid"></div>
+        <button type="submit">Calculate DLI</button>
+      </form>
+      <div id="crop-math-result" class="result-card" aria-live="polite"></div>
+      <ul id="crop-math-limitations" class="limitation-list"></ul>
+    </section>
+
+    <section id="differential-reasoning" aria-labelledby="differential-title">
+      <p class="eyebrow">Same Symptom, Different Cause</p>
+      <h2 id="differential-title">Build a differential before changing inputs</h2>
+      <p id="differential-summary">Loading differential…</p>
+      <p><strong>Observed pattern:</strong> <span id="differential-pattern"></span></p>
+      <div id="differential-hypotheses" class="hypothesis-grid"></div>
+      <h3>Evidence that separates the possibilities</h3>
+      <ul id="differential-evidence"></ul>
+      <p id="differential-boundary" class="boundary"></p>
     </section>
   </main>
   <script type="module" src="/applied-learning.js"></script>

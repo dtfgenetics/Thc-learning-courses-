@@ -1,0 +1,52 @@
+{
+  "id": "ALCALC-DLI-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "Crop Math: DLI from PPFD and Photoperiod",
+  "summary": "Calculate daily light integral from representative PPFD and the actual photoperiod while keeping intensity, distribution and environmental context visible.",
+  "calculation": "dli-from-ppfd",
+  "competencyIds": [
+    "COMP-LIGHT-001"
+  ],
+  "objectiveIds": [
+    "LO-LIGHT-DLI-003"
+  ],
+  "referenceIds": [
+    "REF-LIGHT-001",
+    "REF-PURDUE-DLI-238"
+  ],
+  "canonicalSources": [
+    "LESSON-LIGHT-DLI-003"
+  ],
+  "inputFields": [
+    {
+      "id": "ppfdUmolM2S",
+      "label": "Representative PPFD",
+      "unit": "µmol/m²/s",
+      "min": 0,
+      "max": 5000
+    },
+    {
+      "id": "photoperiodHours",
+      "label": "Photoperiod",
+      "unit": "hours/day",
+      "min": 0.01,
+      "max": 24
+    }
+  ],
+  "output": {
+    "label": "Daily light integral",
+    "unit": "mol/m²/day"
+  },
+  "limitations": [
+    "The result is a photon-dose calculation, not a universal cultivation target.",
+    "Equal DLI can result from different PPFD/photoperiod combinations and does not prove equal biological response.",
+    "Use representative canopy PPFD rather than an isolated peak reading.",
+    "Interpret the result with spectrum, crop stage, temperature, water status, carbon dioxide and plant response."
+  ],
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

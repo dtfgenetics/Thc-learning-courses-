@@ -67,7 +67,72 @@ async function loadMeasurement(){
   },{once:false});
 }
 
-Promise.all([loadGraph(),loadMeasurement()]).catch(error=>{
+
+
+async function loadCropMath(){
+  const response=await fetch('/api/applied-learning/calculators/ALCALC-DLI-001');
+  if(!response.ok) throw new Error('Crop Math unavailable');
+  const calculator=await response.json();
+  document.querySelector('#crop-math-summary').textContent=calculator.summary;
+  const fields=document.querySelector('#crop-math-fields');
+  fields.replaceChildren(...calculator.inputFields.map(field=>{
+    const label=document.createElement('label');
+    label.textContent=`${field.label} (${field.unit})`;
+    const input=document.createElement('input');
+    input.name=field.id;
+    input.type='number';
+    input.step='any';
+    input.min=String(field.min);
+    input.max=String(field.max);
+    input.required=true;
+    label.append(input);
+    return label;
+  }));
+  document.querySelector('#crop-math-limitations').replaceChildren(...calculator.limitations.map(text=>{
+    const li=document.createElement('li'); li.textContent=text; return li;
+  }));
+  document.querySelector('#crop-math-form').addEventListener('submit',async event=>{
+    event.preventDefault();
+    const values=Object.fromEntries(new FormData(event.currentTarget).entries());
+    const result=await fetch(`/api/applied-learning/calculators/${calculator.id}/calculate`,{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(values)
+    });
+    const payload=await result.json();
+    const target=document.querySelector('#crop-math-result');
+    target.textContent=result.ok
+      ? `${Number(payload.value).toFixed(2)} ${payload.unit}`
+      : (payload.message??'Unable to calculate with those inputs.');
+  });
+}
+
+async function loadDifferential(){
+  const response=await fetch('/api/applied-learning/differentials/ALDIFF-YELLOWING-001');
+  if(!response.ok) throw new Error('Differential activity unavailable');
+  const differential=await response.json();
+  document.querySelector('#differential-summary').textContent=differential.summary;
+  document.querySelector('#differential-pattern').textContent=differential.observedPattern;
+  document.querySelector('#differential-boundary').textContent=differential.boundary;
+  document.querySelector('#differential-evidence').replaceChildren(...differential.discriminatingEvidence.map(text=>{
+    const li=document.createElement('li'); li.textContent=text; return li;
+  }));
+  document.querySelector('#differential-hypotheses').replaceChildren(...differential.hypotheses.map(hypothesis=>{
+    const article=document.createElement('article');
+    const heading=document.createElement('h3'); heading.textContent=hypothesis.label;
+    const why=document.createElement('p'); why.textContent=hypothesis.whyPlausible;
+    const up=document.createElement('p'); up.innerHTML='<strong>Raises confidence</strong>';
+    const upList=document.createElement('ul');
+    upList.replaceChildren(...hypothesis.evidenceThatRaisesConfidence.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+    const down=document.createElement('p'); down.innerHTML='<strong>Lowers confidence</strong>';
+    const downList=document.createElement('ul');
+    downList.replaceChildren(...hypothesis.evidenceThatLowersConfidence.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+    article.append(heading,why,up,upList,down,downList);
+    return article;
+  }));
+}
+
+Promise.all([loadGraph(),loadMeasurement(),loadCropMath(),loadDifferential()]).catch(error=>{
   document.querySelector('#graph-summary').textContent=error.message;
   document.querySelector('#measurement-summary').textContent=error.message;
 });
