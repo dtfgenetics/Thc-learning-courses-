@@ -47,6 +47,14 @@ const mappings = [
 const ajv = new Ajv2020({allErrors: true, strict: false});
 addFormats(ajv);
 
+// Register shared schemas that are referenced by mapped content schemas.
+for (const sharedSchemaPath of ['schemas/applied-learning-event.schema.json']) {
+  const fullSharedSchema = path.join(root, sharedSchemaPath);
+  if (fs.existsSync(fullSharedSchema)) {
+    ajv.addSchema(JSON.parse(fs.readFileSync(fullSharedSchema, 'utf8')));
+  }
+}
+
 const failures = [];
 let validatedFiles = 0;
 
