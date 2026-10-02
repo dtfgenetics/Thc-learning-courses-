@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-004-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What must link a laboratory sample to the inspection?",
+  "choices": [
+    "Unique sample ID, source lot and exact collection location, time, collector and condition.",
+    "Only the cultivar nickname.",
+    "Only the requested test.",
+    "A new lot ID with no parent."
+  ],
+  "correct": 0,
+  "rationale": "Sample results support scope only when source identity and collection context are preserved.",
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

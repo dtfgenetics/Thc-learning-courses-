@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-PHQ-006-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What should happen to open CAPA at handoff?",
+  "choices": [
+    "Omit it until overdue.",
+    "Close it for reporting convenience.",
+    "Transfer owner, due date, interim controls, current evidence and next review explicitly.",
+    "Assign it to an unnamed future shift."
+  ],
+  "correct": 2,
+  "rationale": "Open quality work must retain accountability across roles and shifts.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

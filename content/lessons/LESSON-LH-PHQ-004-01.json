@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-004-01",
+  "title": "Defect Description & Evidence Classification",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-004-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-POSTHARVEST-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A useful defect record describes what was observed, where, when and at what scale before assigning a cause. Similar appearances can arise from different biological, physical or process mechanisms.",
+    "vocabulary": [
+      {
+        "term": "Defect",
+        "definition": "Observed departure from a defined or expected product attribute."
+      },
+      {
+        "term": "Differential",
+        "definition": "Set of plausible explanations retained until evidence distinguishes them."
+      },
+      {
+        "term": "Pattern evidence",
+        "definition": "Distribution across units, locations or time that informs an investigation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Describe before diagnosing",
+        "body": "Record color, texture, odor, location, extent and affected units using neutral language. A visual observation alone may not identify a microorganism or process cause.",
+        "references": [
+          "REF-CANNABIS-PATHOGENS-2019-001"
+        ]
+      },
+      {
+        "title": "Map the pattern",
+        "body": "Clustering by rack, container, handling step or time can guide hypotheses and scope without proving root cause.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Preserve original records and images",
+        "body": "Attributable images, sample IDs and controlled corrections protect investigation integrity.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A white deposit is recorded with location, texture and distribution while contamination, residue and plant material remain in the differential."
+    ],
+    "commonMistakes": [
+      "Naming a pathogen from appearance alone.",
+      "Photographing without lot or scale context.",
+      "Editing the original observation after a later diagnosis."
+    ],
+    "practicalApplication": "Write an objective defect record and evidence table that separates observations from hypotheses.",
+    "summary": "Neutral description and mapped patterns create stronger investigations than immediate visual diagnosis."
+  }
+}

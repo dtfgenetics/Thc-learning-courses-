@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-005-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two COAs list the same analyte but use different methods and reporting bases. What should happen before comparison?",
+  "choices": [
+    "Compare the printed numbers directly.",
+    "Use only the higher value.",
+    "Reconcile method, preparation, units, basis and qualifiers and ask whether results are comparable.",
+    "Ignore both methods."
+  ],
+  "correct": 2,
+  "rationale": "Analyte name alone does not establish measurement equivalence.",
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

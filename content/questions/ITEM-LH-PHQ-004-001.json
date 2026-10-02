@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A white deposit is seen on dried flower. What is the strongest initial record?",
+  "choices": [
+    "Describe appearance, location, extent, lot and pattern while keeping cause unconfirmed.",
+    "Record a specific mold species immediately.",
+    "Discard the lot record.",
+    "Call it harmless residue without evidence."
+  ],
+  "correct": 0,
+  "rationale": "Neutral observation preserves evidence and avoids unsupported visual diagnosis.",
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

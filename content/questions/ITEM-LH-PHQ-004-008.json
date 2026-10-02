@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-004-03",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why map a suspect rack before sampling?",
+  "choices": [
+    "Mapping replaces sample IDs.",
+    "It proves root cause.",
+    "It authorizes destruction.",
+    "Sampling or movement can alter the spatial pattern needed to define affected scope."
+  ],
+  "correct": 3,
+  "rationale": "Original location evidence can be lost once material is disturbed.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

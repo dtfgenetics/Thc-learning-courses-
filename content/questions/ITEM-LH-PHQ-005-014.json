@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-005-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What should a result summary preserve?",
+  "choices": [
+    "Only numeric values.",
+    "Report version, lot/sample linkage, method context, qualifiers, exceptions and decision authority.",
+    "Only pass/fail labels.",
+    "Only the newest amendment without history."
+  ],
+  "correct": 1,
+  "rationale": "Summaries should not detach results from their evidence and status context.",
+  "references": [
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

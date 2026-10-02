@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-006-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-006-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A mock recall starts from a package lot. What is the strongest scope method?",
+  "choices": [
+    "Stop at the immediate parent.",
+    "Trace only visible inventory.",
+    "Trace backward to all sources and forward to every child, sample, retained, held and distributed unit.",
+    "Assume all facility material is affected."
+  ],
+  "correct": 2,
+  "rationale": "Bidirectional tracing defines actual connected scope.",
+  "references": [
+    "REF-CODEX-TRACEABILITY-CXG-60-2006",
+    "REF-GS1-GLOBAL-TRACEABILITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

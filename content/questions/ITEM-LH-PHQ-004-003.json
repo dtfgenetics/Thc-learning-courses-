@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-004-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What makes a defect photograph reconstructable?",
+  "choices": [
+    "A close crop with no context.",
+    "A filename containing only color.",
+    "Lot and location identity, date, scale, orientation and an unaltered original linked to the record.",
+    "Editing the image to emphasize a theory."
+  ],
+  "correct": 2,
+  "rationale": "Context and attributable originals preserve evidence integrity.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-005-05",
+  "title": "Quality-Record Review & Laboratory Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-005-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WHO-DATA-INTEGRITY-2021",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A result becomes operational evidence only when it is reviewed, linked to the correct lot and transferred with its limitations and status. The handoff should not imply authority the reviewer does not possess.",
+    "vocabulary": [
+      {
+        "term": "Technical review",
+        "definition": "Qualified evaluation of analytical report completeness, method context and result validity."
+      },
+      {
+        "term": "Quality review",
+        "definition": "Controlled evaluation of identity, records, specifications, deviations and decision readiness."
+      },
+      {
+        "term": "Audit trail",
+        "definition": "Traceable history of creation, change, review and status actions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Review identity and completeness",
+        "body": "The handoff should show that sample, lot, report version, dates, panel and required qualifiers were checked.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Preserve questions and exceptions",
+        "body": "Missing information, amended reports, sample deviations and unresolved interpretation should remain explicit.",
+        "references": [
+          "REF-WHO-DATA-INTEGRITY-2021"
+        ]
+      },
+      {
+        "title": "Transfer status and authority",
+        "body": "The receiving role needs current lot status, allowed actions, decision owner and next step. Written plus verbal handoff is appropriate when risk is material.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-ASTM-D8556-25"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A specialist completes report review but leaves disposition pending because a sample-identity discrepancy requires authorized quality resolution."
+    ],
+    "commonMistakes": [
+      "Treating receipt of a COA as completed review.",
+      "Removing qualifiers from a summary.",
+      "Marking a lot released without decision authority."
+    ],
+    "practicalApplication": "Build a result-review cover sheet linking lot genealogy, chain of custody, report version, checks, exceptions, status and owner.",
+    "summary": "Laboratory evidence supports decisions only when identity, review, exceptions and authority remain connected."
+  }
+}

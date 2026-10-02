@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-005-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A COA is received but has an unresolved sample-ID discrepancy. What should the handoff status say?",
+  "choices": [
+    "Review incomplete and lot decision pending until the identity discrepancy is resolved by the authorized process.",
+    "Released because the values pass.",
+    "Rejected automatically.",
+    "Complete because a PDF exists."
+  ],
+  "correct": 0,
+  "rationale": "Report receipt is not equivalent to completed identity and quality review.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

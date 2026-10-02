@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-005-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-005-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What should be checked before reading a COA pass/fail field?",
+  "choices": [
+    "Only the logo.",
+    "Only the cultivar.",
+    "Only the final page.",
+    "Laboratory/report identity, sample and lot linkage, dates, panel, method, units, basis, qualifiers and report version."
+  ],
+  "correct": 3,
+  "rationale": "The complete report context determines what a result represents.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

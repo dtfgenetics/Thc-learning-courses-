@@ -1,0 +1,63 @@
+{
+  "id": "COURSE-LH-PHQ-002",
+  "title": "Drying Science, Moisture Migration, Water Activity & Environment",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Postharvest Quality Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Postharvest Quality Specialist pathway",
+    "Postharvest and quality personnel responsible for controlled product evidence, traceability and escalation"
+  ],
+  "prerequisites": [
+    "Cultivation Technician II harvest/postharvest foundation or equivalent",
+    "COURSE-LH-PHQ-001 or equivalent controlled harvest/lot-integrity foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses cannabis-specific peer-reviewed postharvest evidence plus authoritative quality, measurement and traceability sources. Research treatments, standards and transferable quality models remain within source scope and do not become universal facility setpoints or jurisdiction-specific legal requirements.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize product release, rejection, destruction, laboratory disposition, recall execution or jurisdiction-specific compliance decisions outside assigned authority.",
+  "description": "Develops specialist interpretation of drying as a coupled heat-and-mass-transfer process, representative product measurement, dry-room mapping, endpoint evidence and controlled response to nonuniform or interrupted drying.",
+  "modules": [
+    "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHQ-002-FINAL",
+  "learningOutcomes": [
+    "Analyze how product geometry, load density, temperature, humidity and airflow interact to create drying rate and spatial moisture gradients.",
+    "Distinguish moisture content from water activity and evaluate how sampling, equilibration, method and instrument condition limit interpretation.",
+    "Design a dry-room monitoring map that distinguishes sensor readings from product exposure and tests airflow and load-distribution assumptions.",
+    "Evaluate drying endpoint evidence using representative locations, time trends, product objectives and predefined decision authority.",
+    "Construct a drying-deviation response that preserves event facts, affected scope, product evidence, interim controls and accountable handoff."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-POSTHARVEST-QA-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PHQ-001",
+      "COURSE-LH-TECH2-002",
+      "COURSE-LH-TECH2-006",
+      "COURSE-POSTHARVEST-QA-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHQ-002-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

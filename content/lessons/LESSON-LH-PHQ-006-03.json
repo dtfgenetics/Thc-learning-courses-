@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-006-03",
+  "title": "Mock Recall, Trace-Back & Trace-Forward",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-006-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-CODEX-TRACEABILITY-CXG-60-2006",
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-FDA-FOOD-TRACEABILITY-RULE",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A mock recall tests whether records can rapidly identify source, downstream scope, location and accountable contacts. It is an exercise in system capability, not proof of legal compliance for every jurisdiction.",
+    "vocabulary": [
+      {
+        "term": "Mock recall",
+        "definition": "Controlled exercise used to test traceability and response capability without representing a real market action."
+      },
+      {
+        "term": "Mass balance",
+        "definition": "Reconciliation of quantities received, transformed, lost, held and distributed."
+      },
+      {
+        "term": "Effectiveness check",
+        "definition": "Verification that intended contacts, controls or recoveries were achieved."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Start with a defined trigger and scope hypothesis",
+        "body": "The exercise should identify the event, starting record and assumptions while allowing evidence to expand or narrow scope.",
+        "references": [
+          "REF-CODEX-TRACEABILITY-CXG-60-2006"
+        ]
+      },
+      {
+        "title": "Trace in both directions",
+        "body": "Source history and all downstream children, samples, packages and destinations should be identified using event records.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY",
+          "REF-FDA-FOOD-TRACEABILITY-RULE"
+        ]
+      },
+      {
+        "title": "Reconcile and document gaps",
+        "body": "Quantities, locations, response times, contacts and missing records should be measured and assigned corrective action.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A package-lot trigger traces back to two parent lots and forward to retained, held and distributed units; quantities are reconciled rather than inferred."
+    ],
+    "commonMistakes": [
+      "Tracing only to the immediate parent.",
+      "Ignoring destroyed or sampled quantities.",
+      "Calling an exercise successful despite unexplained gaps."
+    ],
+    "practicalApplication": "Run a paper mock recall and record trace-back, trace-forward, mass balance, response time, gaps and improvement actions.",
+    "summary": "Mock recall performance is demonstrated by complete, timely, reconciled and improvable traceability evidence."
+  }
+}

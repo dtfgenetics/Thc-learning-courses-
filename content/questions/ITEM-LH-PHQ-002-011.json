@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-002-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-002-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "When are repeated drying results a defensible trend?",
+  "choices": [
+    "Whenever values decrease.",
+    "Only when one operator collects them.",
+    "When sample context, method, units and handling are comparable or documented differences are evaluated.",
+    "When the final value passes."
+  ],
+  "correct": 2,
+  "rationale": "Trend interpretation depends on comparable measurement context.",
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

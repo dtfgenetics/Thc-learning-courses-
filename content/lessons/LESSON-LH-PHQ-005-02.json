@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-005-02",
+  "title": "Chain of Custody & Sample Integrity",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-005-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-ISO-17025-2017-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Even a competent analytical method cannot repair a broken sample identity or unknown handling history. Each transfer should preserve who held the sample, its condition and any exceptions.",
+    "vocabulary": [
+      {
+        "term": "Chain of custody",
+        "definition": "Documented sequence of sample possession and transfer."
+      },
+      {
+        "term": "Tamper evidence",
+        "definition": "Control capable of revealing unauthorized package access or alteration."
+      },
+      {
+        "term": "Sample condition",
+        "definition": "Recorded physical and environmental state relevant to analytical interpretation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identity follows the sample",
+        "body": "Unique sample ID, source lot and requested analyses should remain consistent across labels, submission records and laboratory reports.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Transfers are attributable and contemporaneous",
+        "body": "Sender, receiver, date, time, condition and exceptions should be recorded at the transfer rather than reconstructed later.",
+        "references": [
+          "REF-WHO-DATA-INTEGRITY-2021"
+        ]
+      },
+      {
+        "title": "Handling can change the measurand",
+        "body": "Temperature, moisture exchange, container, hold time and homogenization may affect results and should follow the applicable method or laboratory instruction.",
+        "references": [
+          "REF-ISO-17025-2017-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A sample arrives with an intact seal but a mismatched ID; seal integrity does not resolve identity and the discrepancy must be controlled."
+    ],
+    "commonMistakes": [
+      "Pre-signing transfer records.",
+      "Relabeling without retaining the original linkage.",
+      "Ignoring a temperature or package deviation during transport."
+    ],
+    "practicalApplication": "Build a chain-of-custody form with source, seal, condition, transfers, receipt acceptance and deviation fields.",
+    "summary": "Sample integrity depends on continuous identity and handling evidence from lot to result."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT",
+  "title": "Drying Science, Moisture Migration, Water Activity & Environment",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHQ-002-01",
+    "LESSON-LH-PHQ-002-02",
+    "LESSON-LH-PHQ-002-03",
+    "LESSON-LH-PHQ-002-04",
+    "LESSON-LH-PHQ-002-05"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001",
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Develops specialist interpretation of drying as a coupled heat-and-mass-transfer process, representative product measurement, dry-room mapping, endpoint evidence and controlled response to nonuniform or interrupted drying.",
+  "estimatedMinutes": 315,
+  "learningOutcomes": [
+    "Analyze how product geometry, load density, temperature, humidity and airflow interact to create drying rate and spatial moisture gradients.",
+    "Distinguish moisture content from water activity and evaluate how sampling, equilibration, method and instrument condition limit interpretation.",
+    "Design a dry-room monitoring map that distinguishes sensor readings from product exposure and tests airflow and load-distribution assumptions.",
+    "Evaluate drying endpoint evidence using representative locations, time trends, product objectives and predefined decision authority.",
+    "Construct a drying-deviation response that preserves event facts, affected scope, product evidence, interim controls and accountable handoff."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

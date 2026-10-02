@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-006-02",
+  "title": "Traceability Genealogy & Data Integrity",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-006-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-GS1-GLOBAL-TRACEABILITY",
+    "REF-CODEX-TRACEABILITY-CXG-60-2006",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Traceability connects source and destination while genealogy explains transformations. Both require stable identifiers, event records and controlled corrections.",
+    "vocabulary": [
+      {
+        "term": "Trace back",
+        "definition": "Following material from a downstream unit toward its sources and process history."
+      },
+      {
+        "term": "Trace forward",
+        "definition": "Following source material toward downstream lots, units, samples or destinations."
+      },
+      {
+        "term": "Genealogy event",
+        "definition": "Recorded split, merge, conversion or association that changes material relationships."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Identifiers anchor events",
+        "body": "Stable lot and unit IDs should persist even when names, packages or locations change.",
+        "references": [
+          "REF-GS1-GLOBAL-TRACEABILITY"
+        ]
+      },
+      {
+        "title": "Transformations need explicit relationships",
+        "body": "Splits, merges, rework and samples should preserve parent-child links so scope can be reconstructed.",
+        "references": [
+          "REF-CODEX-TRACEABILITY-CXG-60-2006"
+        ]
+      },
+      {
+        "title": "Corrections retain history",
+        "body": "Data changes should identify who changed what, when and why without obscuring the original record.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-WHO-DATA-INTEGRITY-2021"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "One drying lot becomes three package lots and two lab samples; every child remains linked to the parent and relevant process history."
+    ],
+    "commonMistakes": [
+      "Using a cultivar nickname as the lot ID.",
+      "Overwriting a parent ID after repackaging.",
+      "Correcting a record without reason or audit trail."
+    ],
+    "practicalApplication": "Create a genealogy diagram and event table for a harvest that splits, merges under an authorized rule, is sampled and is packaged.",
+    "summary": "Traceability is strongest when durable IDs and explicit genealogy events preserve both direction and history."
+  }
+}

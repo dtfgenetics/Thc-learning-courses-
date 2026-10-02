@@ -1,0 +1,62 @@
+{
+  "id": "COURSE-LH-PHQ-005",
+  "title": "Sampling, Laboratory/COA Literacy & Quality Records",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Postharvest Quality Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Postharvest Quality Specialist pathway",
+    "Postharvest and quality personnel responsible for controlled product evidence, traceability and escalation"
+  ],
+  "prerequisites": [
+    "Cultivation Technician II harvest/postharvest foundation or equivalent",
+    "COURSE-LH-PHQ-001 or equivalent controlled harvest/lot-integrity foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses cannabis-specific peer-reviewed postharvest evidence plus authoritative quality, measurement and traceability sources. Research treatments, standards and transferable quality models remain within source scope and do not become universal facility setpoints or jurisdiction-specific legal requirements.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize product release, rejection, destruction, laboratory disposition, recall execution or jurisdiction-specific compliance decisions outside assigned authority.",
+  "description": "Develops specialist control of lot sampling, chain of custody, laboratory and certificate-of-analysis interpretation, result reconciliation, atypical-result handoff and durable quality records.",
+  "modules": [
+    "MOD-LH-PHQ-005-SAMPLING-LAB-COA-RECORDS"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHQ-005-FINAL",
+  "learningOutcomes": [
+    "Evaluate whether a sampling plan represents a defined lot and its meaningful spatial, material and process variation.",
+    "Construct a chain-of-custody and sample-integrity record that preserves identity, condition, transfers and deviations.",
+    "Analyze a certificate of analysis by verifying identity, laboratory, dates, method, units, basis, qualifiers and scope before interpreting values.",
+    "Evaluate analytical results using sampling and method variability, reporting limits, history and controlled retest rules without result shopping.",
+    "Assemble a laboratory-result handoff that links sample, lot, report, review status, open questions and authorized decision owner."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-POSTHARVEST-QA-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-PHQ-001",
+      "COURSE-LH-PHQ-002",
+      "COURSE-LH-PHQ-004",
+      "COURSE-POSTHARVEST-QA-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHQ-005-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

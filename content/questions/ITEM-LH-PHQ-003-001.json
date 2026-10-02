@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A lot enters curing with an unexplained wet zone. What is the strongest action?",
+  "choices": [
+    "Keep the deviation and lot status controlled; curing should not be used to hide or average an unresolved condition.",
+    "Blend the wet zone into the lot.",
+    "Extend cure until the record is unnecessary.",
+    "Release based on aroma."
+  ],
+  "correct": 0,
+  "rationale": "Curing cannot erase unknown process history or unresolved heterogeneity.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-DRY-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

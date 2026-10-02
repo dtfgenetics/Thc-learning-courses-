@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-002-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-002-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A precise reading came from a dry outer fragment of one flower. What limits the conclusion?",
+  "choices": [
+    "Analytical precision does not establish that the sample represents interiors, positions or the full lot.",
+    "The result is invalid because it is precise.",
+    "Only the instrument brand matters.",
+    "No limitation exists if units are shown."
+  ],
+  "correct": 0,
+  "rationale": "Representativeness is a sampling property distinct from instrument precision.",
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

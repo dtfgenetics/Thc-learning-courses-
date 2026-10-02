@@ -1,0 +1,32 @@
+{
+  "id": "MOD-LH-PHQ-005-SAMPLING-LAB-COA-RECORDS",
+  "title": "Sampling, Laboratory/COA Literacy & Quality Records",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHQ-005-01",
+    "LESSON-LH-PHQ-005-02",
+    "LESSON-LH-PHQ-005-03",
+    "LESSON-LH-PHQ-005-04",
+    "LESSON-LH-PHQ-005-05"
+  ],
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Develops specialist control of lot sampling, chain of custody, laboratory and certificate-of-analysis interpretation, result reconciliation, atypical-result handoff and durable quality records.",
+  "estimatedMinutes": 325,
+  "learningOutcomes": [
+    "Evaluate whether a sampling plan represents a defined lot and its meaningful spatial, material and process variation.",
+    "Construct a chain-of-custody and sample-integrity record that preserves identity, condition, transfers and deviations.",
+    "Analyze a certificate of analysis by verifying identity, laboratory, dates, method, units, basis, qualifiers and scope before interpreting values.",
+    "Evaluate analytical results using sampling and method variability, reporting limits, history and controlled retest rules without result shopping.",
+    "Assemble a laboratory-result handoff that links sample, lot, report, review status, open questions and authorized decision owner."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-004-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHQ-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A high-moisture zone is found. What does it establish?",
+  "choices": [
+    "Confirmed contamination of every unit.",
+    "A named fungal species.",
+    "Automatic release after drying.",
+    "A risk condition and sampling priority, not organism identity or automatic disposition."
+  ],
+  "correct": 3,
+  "rationale": "Environmental risk evidence is distinct from diagnostic confirmation and disposition.",
+  "references": [
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-003-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A method changes midway through a stability study. What should happen?",
+  "choices": [
+    "Delete earlier results.",
+    "Assume methods are identical.",
+    "Document the change and evaluate comparability rather than silently combining all values.",
+    "Restart dates without retaining history."
+  ],
+  "correct": 2,
+  "rationale": "Method context affects trend interpretation and should remain visible.",
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

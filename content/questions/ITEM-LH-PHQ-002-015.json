@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-002-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-002-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What must transfer at shift handoff during an open drying investigation?",
+  "choices": [
+    "Only the room setpoint.",
+    "Only a verbal assurance that the issue is fixed.",
+    "Lot status, event timeline, interim controls, missing evidence and the next accountable role.",
+    "A new lot ID without genealogy."
+  ],
+  "correct": 2,
+  "rationale": "Explicit written and verbal transfer prevents unresolved risk from disappearing between roles.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

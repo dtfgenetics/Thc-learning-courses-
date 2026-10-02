@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-005-02",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why record sample temperature or package condition at receipt?",
+  "choices": [
+    "Handling can change the measurand or reveal a deviation relevant to result interpretation.",
+    "It replaces analytical controls.",
+    "It proves the result will fail.",
+    "It matters only for liquids."
+  ],
+  "correct": 0,
+  "rationale": "Sample condition is part of the result context.",
+  "references": [
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}
