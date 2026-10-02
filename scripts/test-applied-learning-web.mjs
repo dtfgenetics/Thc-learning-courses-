@@ -8,6 +8,13 @@ await once(server,'listening');
 try{
   const base=`http://127.0.0.1:${server.address().port}`;
 
+  const shellResponse=await fetch(`${base}/applied-learning`);
+  assert.equal(shellResponse.status,200);
+  const shell=await shellResponse.text();
+  assert.match(shell,/Applied Learning Lab/);
+  assert.match(shell,/Knowledge Graph/);
+  assert.match(shell,/Measurement School/);
+
   const graphResponse=await fetch(`${base}/api/applied-learning/graphs/ALGRAPH-ACADEMY-SEED-001`);
   assert.equal(graphResponse.status,200);
   const graph=await graphResponse.json();
