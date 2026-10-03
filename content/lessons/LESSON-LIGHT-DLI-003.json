@@ -57,7 +57,7 @@
     "workedExamples": [
       "A canopy receiving 600 PPFD for 18 hours accumulates more daily photons than the same PPFD for 12 hours.",
       "Two schedules with similar DLI should still be evaluated for plant response if their intensity and photoperiod differ substantially.",
-      "500 \u00b5mol/m\u00b2/s for 18 hours gives about 32.4 mol/m\u00b2/day; 750 \u00b5mol/m\u00b2/s for 12 hours also gives about 32.4. Equal DLI does not mean identical photoperiod or instantaneous intensity.",
+      "500 µmol/m²/s for 18 hours gives about 32.4 mol/m²/day; 750 µmol/m²/s for 12 hours also gives about 32.4. Equal DLI does not mean identical photoperiod or instantaneous intensity.",
       "A photoperiod is shortened but fixture intensity is unchanged. DLI falls even though every PPFD spot reading is the same."
     ],
     "commonMistakes": [
@@ -73,15 +73,15 @@
       {
         "type": "document",
         "title": "DLI equation",
-        "description": "DLI \u2248 PPFD \u00d7 hours of light \u00d7 3600 \u00f7 1,000,000.",
+        "description": "DLI ≈ PPFD × hours of light × 3600 ÷ 1,000,000.",
         "fields": [
           {
             "label": "Example",
-            "value": "500 \u00d7 18 \u00d7 3600 \u00f7 1,000,000 = 32.4 mol/m\u00b2/day"
+            "value": "500 × 18 × 3600 ÷ 1,000,000 = 32.4 mol/m²/day"
           },
           {
             "label": "Unit check",
-            "value": "\u00b5mol/m\u00b2/s \u00d7 s/day \u2192 \u00b5mol/m\u00b2/day \u2192 mol/m\u00b2/day"
+            "value": "µmol/m²/s × s/day → µmol/m²/day → mol/m²/day"
           }
         ]
       },
@@ -90,11 +90,11 @@
         "title": "Same DLI, different delivery",
         "left": {
           "label": "Schedule A",
-          "body": "500 \u00b5mol/m\u00b2/s for 18 h \u2248 32.4 mol/m\u00b2/day"
+          "body": "500 µmol/m²/s for 18 h ≈ 32.4 mol/m²/day"
         },
         "right": {
           "label": "Schedule B",
-          "body": "750 \u00b5mol/m\u00b2/s for 12 h \u2248 32.4 mol/m\u00b2/day"
+          "body": "750 µmol/m²/s for 12 h ≈ 32.4 mol/m²/day"
         }
       },
       {
@@ -111,7 +111,7 @@
           },
           {
             "title": "Calculate units carefully",
-            "body": "Keep \u00b5mol-to-mol conversion explicit."
+            "body": "Keep µmol-to-mol conversion explicit."
           },
           {
             "title": "Add environmental context",
@@ -148,7 +148,7 @@
           "type": "image",
           "assetId": "VIS-FOUNDATION-LIGHT-DLI-001",
           "title": "Daily Light Integral",
-          "src": "/course3/foundation-dli-equal-total.webp",
+          "src": "/assets/course3/foundation-dli-equal-total.webp",
           "alt": "Comparison of 500 micromoles per square meter per second for 16 hours and 1000 for 8 hours, both producing about 28.8 mole daily light integral, with a warning that equal DLI does not guarantee equal plant response.",
           "caption": "DLI integrates PPFD over time. Equal daily totals can come from different intensity and photoperiod combinations, which may not be biologically equivalent.",
           "references": [
