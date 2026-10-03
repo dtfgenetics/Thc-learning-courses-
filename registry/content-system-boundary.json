@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "id": "THC-CONTENT-SYSTEM-BOUNDARY-001",
-  "updated": "2026-09-22",
+  "updated": "2026-10-03",
   "systems": {
     "encyclopedia": {
       "name": "THC Plant Science Encyclopedia",
@@ -46,7 +46,10 @@
       "encyclopediaMaySatisfyCredentialEligibility": false,
       "testsMayAssessUntaughtMaterial": false,
       "crossCourseTestSubstitutionAllowed": false,
-      "mustRemainIndependent": true
+      "mustRemainIndependent": true,
+      "courseTerminologyRule": "The word course is reserved for certification curriculum/development in the COURSE-LH-* namespace. Preserved historical noncredential COURSE-* objects remain draft migration/reference artifacts and must not be exposed as active public courses.",
+      "productionCourseNamespace": "COURSE-LH-*",
+      "noncredentialCoursePublicationAllowed": false
     },
     "legacy420Catalog": {
       "name": "Historical THC-C001..THC-C420 catalog",
