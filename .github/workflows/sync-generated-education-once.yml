@@ -1,0 +1,35 @@
+name: Sync canonical generated education sources once
+
+on:
+  push:
+    branches:
+      - feat/continuous-lesson-gap-audit-20261003
+    paths:
+      - .github/workflows/sync-generated-education-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: feat/continuous-lesson-gap-audit-20261003
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run course1:publication:sync
+      - run: npm run registry:build
+      - name: Commit canonical generated sources
+        run: |
+          git config user.name "dtf-course-automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/public-releases registry/curriculum.json
+          if git diff --cached --quiet; then echo "Generated sources already current."; exit 0; fi
+          git commit -m "Sync canonical generated education sources [generated-education]"
+          git push origin HEAD:feat/continuous-lesson-gap-audit-20261003
