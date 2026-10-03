@@ -118,7 +118,7 @@ const crosswalk = read('registry/course3-practical-a-crosswalk.json');
 assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, true, 'Course 003 practical crosswalk should reflect the produced learner asset layer');
 
 const visualRegistry = read('visuals/COURSE3-ASSET-REGISTRY.json');
-const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
+const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced' && !String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
 assert.equal(producedAssets.length, 7, 'Course 3 should expose the current seven governed learner assets');
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
