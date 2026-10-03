@@ -1,1 +1,31 @@
-{"id":"ITEM-IPM-011","version":1,"status":"draft","purpose":"summative","competency":"COMP-IPM-001","objective":"LO-IPM-001","bloomLevel":"evaluate","difficulty":"hard","type":"scenario","stem":"A suspected disease and a nutrient/root-zone disorder can produce similar leaf symptoms. What is the strongest next step?","choices":["Compare distribution, root-zone conditions, signs of the causal agent and diagnostic evidence before treatment","Treat both aggressively without diagnosis","Use leaf color alone","Assume disease because symptoms spread visually"],"correct":0,"rationale":"Differential diagnosis reduces the risk of treating look-alike symptoms as the wrong causal problem.","references":["REF-IPM-001","REF-NUTRITION-001"]}
+{
+  "id": "ITEM-IPM-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-IPM-001",
+  "objective": "LO-IPM-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspected disease and a nutrient/root-zone disorder can produce similar leaf symptoms. What is the strongest next step?",
+  "choices": [
+    "Compare distribution, root-zone conditions, signs of the causal agent and diagnostic evidence before treatment",
+    "Treat both aggressively without diagnosis",
+    "Use leaf color alone",
+    "Assume disease because symptoms spread visually"
+  ],
+  "correct": 0,
+  "rationale": "Differential diagnosis reduces the risk of treating look-alike symptoms as the wrong causal problem.",
+  "references": [
+    "REF-IPM-001",
+    "REF-NUTRITION-001"
+  ],
+  "extensions": {
+    "checkpointUse": "shared-foundation-formative",
+    "purposeCorrection": {
+      "date": "2026-10-03",
+      "reason": "Item is used only in a formative shared-foundation module checkpoint and is not referenced by any summative or credential assessment."
+    }
+  }
+}
