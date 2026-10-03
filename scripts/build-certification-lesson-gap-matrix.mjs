@@ -130,6 +130,8 @@ function inspectLesson(courseId,lesson,assessmentContext){
     };
   });
   const unassessedObjectives=objectiveCoverage.filter(row=>row.itemCount===0).map(row=>row.objectiveId);
+  const dedicatedLessonPrefix=courseId.replace(/^COURSE-/,'LESSON-')+'-';
+  const dedicatedCourseLesson=lesson.id.startsWith(dedicatedLessonPrefix);
   const mappedCourseVisuals=courseVisualsByLesson.get(courseId+'|'+lesson.id)??[];
 
   const issues=[];
@@ -144,9 +146,10 @@ function inspectLesson(courseId,lesson,assessmentContext){
   if(workedExamples===0) add('no-worked-examples','Add at least one worked example when the lesson includes a decision, measurement, workflow, or interpretation skill.');
   if(commonMistakes===0) add('no-common-mistakes','Add realistic mistakes, misconceptions, or interpretation traps.');
   if(images.length>imageAltComplete) add('visual-alt-gap','Complete meaningful alt text for every instructional image.');
-  if(unassessedObjectives.length) add('unassessed-objective','Map the lesson into the course assessment teaching map or document why it is practice-only.');
+  if(unassessedObjectives.length&&dedicatedCourseLesson) add('unassessed-objective','Map the dedicated course lesson into the course assessment teaching map or document why it is practice-only.');
 
   const advisories=[];
+  if(unassessedObjectives.length&&!dedicatedCourseLesson) advisories.push('shared-foundation-assessment-mediated-by-course-outcomes');
   if(scenarios===0) advisories.push('scenario-opportunity');
   if(images.length===0&&mappedCourseVisuals.length===0) advisories.push('visual-opportunity');
   if((measurementSignal||calculationSignal)&&images.length===0&&mappedCourseVisuals.length===0) advisories.push('measurement-visual-priority');
@@ -204,6 +207,7 @@ function inspectLesson(courseId,lesson,assessmentContext){
       appliedPractice
     },
     assessmentCoverage:objectiveCoverage,
+    dedicatedCourseLesson,
     unassessedObjectives,
     issues:[...new Set(issues)],
     advisories:[...new Set(advisories)],
@@ -262,7 +266,7 @@ const matrix={
     priorityScore:'Internal production-priority signal only; it is not a credential-validity score or external quality rating.',
     measurementSignal:'Text-pattern indicator used to find measurement-heavy lessons for deeper review.',
     calculationSignal:'Text-pattern indicator used to find calculation/data lessons for deeper review.',
-    assessmentCoverage:'Uses the course final/readiness assessment item membership plus its taughtMaterialMap before falling back to direct lesson-objective item mappings.',
+    assessmentCoverage:'Uses the course final/readiness assessment item membership plus its taughtMaterialMap before falling back to direct lesson-objective item mappings. Only dedicated course lessons create a hard unassessed-objective defect; shared foundation lessons are mediated through course-specific outcomes and are reported as advisories unless the course teaching map itself is incomplete.',
     visualCoverage:'Counts embedded lesson images and approved course-level Technician II visual-plan mappings. Missing per-lesson art is advisory unless another hard accessibility/content defect exists.',
     advisoryBoundary:'Scenario and visual opportunities are improvement signals, not automatic release failures when applied practice and course-level instruction already cover the objective.',
     releaseBoundary:'A row with no detected gaps is not automatically scientifically, accessibility, assessment, or credential approved.'
