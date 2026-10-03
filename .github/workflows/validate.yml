@@ -63,6 +63,10 @@ jobs:
         run: |
           npm run certification:lesson-gaps
           npm run certification:lesson-gaps:write > "$RUNNER_TEMP/certification-lesson-gap-matrix.json"
+      - name: Enforce shared-foundation academic readiness
+        run: npm run foundation:academic-readiness:check
+      - name: Enforce shared-foundation raster visual completion
+        run: npm run foundation:visual-queue:check
       - name: Upload certification lesson gap matrix
         if: always()
         continue-on-error: true
