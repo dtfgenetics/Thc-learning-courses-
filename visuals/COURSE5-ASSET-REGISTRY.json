@@ -29,7 +29,7 @@
   "driveStorage": {
     "folderId": "1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo",
     "folderUrl": "https://drive.google.com/drive/folders/1_eEgzfbQphTKUHu28IS5YZmcNnU7o5Eo",
-    "folderName": "Course 5 — Propagation, Canopy & IPM Learning Boards"
+    "folderName": "Course 5 \u2014 Propagation, Canopy & IPM Learning Boards"
   },
   "assets": [
     {
@@ -729,7 +729,7 @@
     },
     {
       "id": "VIS-FOUNDATION-CLONE-ROOTING-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Cannabis cutting to adventitious-root formation and acclimatization",
       "primaryLessons": [
@@ -740,7 +740,7 @@
         "REF-CANNABIS-CLONAL-ROOTING-2019"
       ],
       "purpose": "Show donor cutting, fresh wound, high-support unrooted stage, adventitious root emergence, rooted cutting and staged acclimatization.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "photorealistic-educational-sequence",
         "requiredFormats": [
@@ -760,7 +760,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course5/foundation-clone-rooting.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-clone-rooting.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-clone-rooting.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Five-stage propagation sequence showing a fresh donor cutting, unrooted support, root initiation, a rooted cutting and gradual acclimatization.",
+      "caption": "A cutting must survive the unrooted phase, form adventitious roots, establish root function and then acclimate gradually as normal transpiration resumes.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 18152,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "734f1daeda04d61c331430abe041a5b45091ea8420fa83a2634ef2000eb786c7",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-CANOPY-ARCH-001",
@@ -799,7 +822,7 @@
     },
     {
       "id": "VIS-FOUNDATION-LST-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Low-stress training and trellis spacing before-and-after",
       "primaryLessons": [
@@ -810,7 +833,7 @@
         "REF-LIGHT-001"
       ],
       "purpose": "Compare an uneven dominant canopy with a gradually repositioned trellised canopy while preserving realistic branch spacing and scouting access.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "photorealistic-comparison",
         "requiredFormats": [
@@ -830,11 +853,34 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course5/foundation-lst-before-after.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-lst-before-after.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-lst-before-after.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Before-and-after canopy diagram comparing a dominant upright plant with gradually repositioned branches distributed across a trellis for more even spacing and scouting access.",
+      "caption": "Low-stress training redistributes branches gradually. Protect plant vigor, sanitation, airflow and access, then verify the canopy response.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 22086,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "98f7d06b27e31389e9d2d81d9741d2f3c99c474fa4d3f05806a71b7572852ca7",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-HST-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Topping, lateral response and recovery timeline",
       "primaryLessons": [
@@ -845,7 +891,7 @@
         "REF-LIGHT-001"
       ],
       "purpose": "Show apical removal, wound site, lateral shoot response and recovery over time while emphasizing plant vigor and recovery cost.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "scientific-sequence",
         "requiredFormats": [
@@ -865,11 +911,34 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course5/foundation-hst-recovery.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-hst-recovery.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-hst-recovery.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Four-stage diagram showing an intact plant apex, a topping cut, lateral growth response and recovery into two leaders.",
+      "caption": "Topping intentionally removes tissue and changes apical dominance. Confirm vigor, sanitation and recovery before stacking additional high-stress work.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 23036,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "5f65e2be766c9cf1bab9a23e9c0c42f1f68259df8873902882613678c9f56ad0",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-IPM-CYCLE-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Integrated pest management decision cycle",
       "primaryLessons": [
@@ -880,7 +949,7 @@
         "REF-PSU-GREENHOUSE-IPM-2026"
       ],
       "purpose": "Teach prevent, scout, identify/diagnose, decide, control and verify as a continuous evidence loop rather than a pesticide-first workflow.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "decision-diagram",
         "requiredFormats": [
@@ -900,7 +969,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course5/foundation-ipm-cycle.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-ipm-cycle.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-ipm-cycle.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Circular integrated pest management loop moving through prevention, scouting, identification, decision, authorized control and verification with evidence and recordkeeping feeding the next cycle.",
+      "caption": "IPM is an evidence loop, not a pesticide-first workflow. Scouting and diagnosis do not by themselves confer pesticide authority.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 23012,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "a3129ce8960ba40825d2781ebf7efbebc1ad55eb0d48f049ae15b1a2f46a13d1",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
   ],
   "ownerReleaseApproval": {

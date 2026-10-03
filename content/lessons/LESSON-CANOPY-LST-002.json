@@ -190,6 +190,28 @@
         "tone": "evidence",
         "body": "Low-stress training works when it improves measured canopy geometry and access with minimal recovery cost."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-LST-001",
+          "title": "Low-stress training",
+          "src": "/course5/foundation-lst-before-after.webp",
+          "alt": "Before-and-after canopy diagram comparing a dominant upright plant with gradually repositioned branches distributed across a trellis for more even spacing and scouting access.",
+          "caption": "Low-stress training redistributes branches gradually. Protect plant vigor, sanitation, airflow and access, then verify the canopy response.",
+          "references": [
+            "REF-CANOPY-001",
+            "REF-LIGHT-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-LST-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
   }
 }

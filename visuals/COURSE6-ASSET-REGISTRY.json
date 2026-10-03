@@ -29,7 +29,7 @@
   "driveStorage": {
     "folderId": "1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq",
     "folderUrl": "https://drive.google.com/drive/folders/1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq",
-    "folderName": "Course 6 — Harvest, Postharvest & Traceability Learning Boards",
+    "folderName": "Course 6 \u2014 Harvest, Postharvest & Traceability Learning Boards",
     "mirrorStatus": "8-of-8-assets-mirrored-verified-2026-09-18",
     "verifiedAt": "2026-09-18"
   },
@@ -590,7 +590,7 @@
     },
     {
       "id": "VIS-FOUNDATION-STORAGE-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Curing, package microenvironment and storage stability",
       "primaryLessons": [
@@ -601,7 +601,7 @@
         "REF-CANNABIS-POSTHARVEST-DRYING-2025"
       ],
       "purpose": "Show moisture redistribution, package headspace, seal/barrier properties, oxygen, light and temperature as storage variables after initial drying.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "scientific-diagram",
         "requiredFormats": [
@@ -621,7 +621,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course6/foundation-storage-stability.webp",
+      "sourcePath": "apps/web/public/assets/course6/foundation-storage-stability.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/foundation-storage-stability.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Postharvest storage diagram showing moisture redistribution and headspace inside a package alongside external variables including temperature, light, barrier and seal performance and time.",
+      "caption": "After initial drying, package microenvironment and storage conditions still matter. Verify with controlled records and applicable quality criteria rather than appearance alone.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 25960,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "9190dfb4cd45b4119394c576787b39ad47d5c90a7d156210b38ec443c523dd37",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
   ],
   "ownerReleaseApproval": {

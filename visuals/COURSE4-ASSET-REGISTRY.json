@@ -29,7 +29,7 @@
   "driveStorage": {
     "folderId": "13su1HkrSjWqhMtssQos3cju9BkgeqGBv",
     "folderUrl": "https://drive.google.com/drive/folders/13su1HkrSjWqhMtssQos3cju9BkgeqGBv",
-    "folderName": "Course 4 — Water, Root Zone & Irrigation Learning Boards"
+    "folderName": "Course 4 \u2014 Water, Root Zone & Irrigation Learning Boards"
   },
   "assets": [
     {
@@ -514,7 +514,7 @@
     },
     {
       "id": "VIS-FOUNDATION-ROOTZONE-AIRWATER-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Root-zone air-water balance after irrigation",
       "primaryLessons": [
@@ -525,7 +525,7 @@
         "REF-CONTAINER-MEDIA-NCSU-2021"
       ],
       "purpose": "Show water-filled and air-filled pore spaces, root position, drainage and the difference between adequate moisture and prolonged saturation.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "scientific-cross-section",
         "requiredFormats": [
@@ -545,11 +545,34 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course4/foundation-rootzone-air-water.webp",
+      "sourcePath": "apps/web/public/assets/course4/foundation-rootzone-air-water.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/foundation-rootzone-air-water.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Three container cross sections showing high water-filled pore space after irrigation, increased air-filled pore space after drainage and lower water content approaching dryback.",
+      "caption": "Container media must supply water and oxygen. Observe drainage and dryback instead of treating constant saturation as adequate irrigation.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 21182,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "fb2bd90fc35330f80c170775ff24343ee694d77e8e1f458b70624e813ca8da4a",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-MEDIA-COMPARE-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Peat, coco and coarse soilless media pore-structure comparison",
       "primaryLessons": [
@@ -560,7 +583,7 @@
         "REF-CONTAINER-MEDIA-NCSU-2021"
       ],
       "purpose": "Compare representative pore structure, water retention, drainage and aeration concepts across media without assigning universal irrigation schedules.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "comparison-diagram",
         "requiredFormats": [
@@ -580,11 +603,34 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course4/foundation-media-comparison.webp",
+      "sourcePath": "apps/web/public/assets/course4/foundation-media-comparison.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/foundation-media-comparison.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Side-by-side media diagrams comparing representative peat-based, coco-based and coarse soilless pore structure, water retention and aeration without assigning universal irrigation schedules.",
+      "caption": "Media architecture changes water retention and aeration. Verify actual container behavior and measured dryback rather than copying a universal schedule.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 27816,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "32a2e464fdd7ade38c6557f51b35e9adb439753eb8e5a295ca4010427f06be5b",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-NUTRITION-MACRO-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Macronutrient function and interaction map",
       "primaryLessons": [
@@ -595,7 +641,7 @@
         "REF-PSU-HYDROPONIC-NUTRITION-2026"
       ],
       "purpose": "Map N, P, K, Ca, Mg and S to major plant functions while showing that cation balance and developmental context matter.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "branded-scientific-chart",
         "requiredFormats": [
@@ -615,7 +661,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course4/foundation-nutrition-macronutrients.webp",
+      "sourcePath": "apps/web/public/assets/course4/foundation-nutrition-macronutrients.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/foundation-nutrition-macronutrients.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Chart mapping nitrogen, phosphorus, potassium, calcium, magnesium and sulfur to major plant functions and mobility context, with a warning that symptoms are not one-to-one diagnoses.",
+      "caption": "Use nutrient functions as diagnostic context, then verify pH, EC, roots, water status, spatial pattern and developmental stage.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 29054,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "cb5d30e17458196263a4b9c563f71503c9b30ef949aa6a75dae18afaf165b445",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-NUTRITION-MICRO-001",
