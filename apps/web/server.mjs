@@ -318,7 +318,10 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       })
     };
   };
-  const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts, publicReleaseIds)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
+  const visibleCourses = [...courses.values()]
+    .filter((course) => isVisible(course, previewDrafts, publicReleaseIds))
+    .filter((course) => previewDrafts || /^COURSE-LH-/.test(String(course.id || '')))
+    .sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
     id: course.id,
     title: course.title,
     version: course.version,
