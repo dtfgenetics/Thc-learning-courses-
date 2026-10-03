@@ -57,7 +57,7 @@
     "workedExamples": [
       "If infrared measurements show leaves several degrees cooler than air, do not assume an air-only VPD chart exactly represents the leaf surface.",
       "If dense interior leaves remain humid despite acceptable room RH, examine local airflow and canopy structure.",
-      "Leaves under high irradiance measure 2 \u00b0C warmer than air while shaded leaves are near air temperature. A single leaf-temperature offset should not be assumed for the whole canopy.",
+      "Leaves under high irradiance measure 2 °C warmer than air while shaded leaves are near air temperature. A single leaf-temperature offset should not be assumed for the whole canopy.",
       "Two rooms have identical air temperature/RH, but one has stronger airflow. Boundary-layer differences can change leaf heat and vapor exchange even when the room-level VPD matches."
     ],
     "commonMistakes": [
@@ -207,7 +207,7 @@
           "type": "image",
           "assetId": "VIS-FOUNDATION-ENV-LEAF-VPD-001",
           "title": "Leaf temperature and vapor exchange",
-          "src": "/course3/foundation-leaf-vpd-context.webp",
+          "src": "/assets/course3/foundation-leaf-vpd-context.webp",
           "alt": "Diagram comparing air and leaf temperature, the leaf boundary layer, airflow and leaf-to-air vapor exchange without prescribing a universal VPD target.",
           "caption": "Leaf temperature, humidity and airflow affect the leaf-to-air vapor-pressure relationship. Verify representative measurements instead of assuming air temperature equals leaf temperature.",
           "references": [
