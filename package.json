@@ -415,7 +415,10 @@
     "assessment:matching-ui:test": "node scripts/test-assessment-matching-ui.mjs",
     "tech1:courses3-6:production-raster:test": "node scripts/test-tech1-courses3-6-production-raster-queue.mjs",
     "tech1:courses3-6:production-briefs:test": "node scripts/test-tech1-courses3-6-production-brief-coverage.mjs",
-    "tech1:courses3-6:production-masters:test": "node scripts/test-tech1-courses3-6-production-master-contract.mjs"
+    "tech1:courses3-6:production-masters:test": "node scripts/test-tech1-courses3-6-production-master-contract.mjs",
+    "certification:lesson-gaps": "node scripts/build-certification-lesson-gap-matrix.mjs",
+    "certification:lesson-gaps:json": "node scripts/build-certification-lesson-gap-matrix.mjs --json",
+    "certification:lesson-gaps:write": "node scripts/build-certification-lesson-gap-matrix.mjs --write"
   },
   "dependencies": {
     "ajv": "8.20.0",
