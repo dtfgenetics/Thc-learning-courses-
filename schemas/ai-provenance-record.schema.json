@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/ai-provenance-record.schema.json",
+  "title": "THC Academy AI Provenance Record",
+  "type": "object",
+  "required": [
+    "id",
+    "objectId",
+    "objectVersion",
+    "contribution",
+    "recordedAt",
+    "humanReviewRequired"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^AIPROV-[A-Z0-9-]+$"
+    },
+    "objectId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "objectVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contribution": {
+      "enum": [
+        "none",
+        "ai-assisted",
+        "ai-generated-draft",
+        "ai-generated-analysis"
+      ]
+    },
+    "system": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "humanReviewRequired": {
+      "const": true
+    },
+    "reviewDomains": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "scientific",
+          "editorial",
+          "assessment",
+          "occupational",
+          "accessibility",
+          "security",
+          "privacy-legal",
+          "governance"
+        ]
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "reviewDomain",
+          "reviewerId",
+          "decision",
+          "decidedAt"
+        ],
+        "properties": {
+          "reviewDomain": {
+            "type": "string"
+          },
+          "reviewerId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision": {
+            "enum": [
+              "approved",
+              "changes-required",
+              "rejected"
+            ]
+          },
+          "decidedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "finalCredentialDecisionMadeByAI": {
+      "const": false
+    }
+  },
+  "additionalProperties": false
+}
