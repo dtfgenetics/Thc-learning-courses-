@@ -162,7 +162,7 @@
       {
         "type": "scenario",
         "title": "Flat does not equal uniform",
-        "setting": "A canopy appears level by eye, but a 3\u00d73 PPFD map ranges from 480 to 910 \u00b5mol/m\u00b2/s.",
+        "setting": "A canopy appears level by eye, but a 3×3 PPFD map ranges from 480 to 910 µmol/m²/s.",
         "prompt": "What is the strongest conclusion?",
         "options": [
           "The canopy is uniform because it looks flat",
@@ -193,7 +193,7 @@
         "type": "callout",
         "title": "Key takeaway",
         "tone": "evidence",
-        "body": "Training is successful when it solves a measured canopy problem with an acceptable recovery cost\u2014not when a plant simply matches a popular shape.",
+        "body": "Training is successful when it solves a measured canopy problem with an acceptable recovery cost—not when a plant simply matches a popular shape.",
         "references": [
           "REF-CANOPY-001"
         ]
@@ -207,7 +207,7 @@
           "title": "Cannabis plant anatomy and developmental growth stages",
           "src": "/assets/course5/plant-anatomy-growth-stages.webp",
           "alt": "Cannabis plant anatomy and developmental-stage illustration showing roots, stems, nodes, internodes, leaves, meristems and reproductive structures across seedling, vegetative, transition and flowering stages.",
-          "caption": "Canopy training acts on real plant structures\u2014nodes, internodes, meristems and branches\u2014and its cost and response depend on developmental stage.",
+          "caption": "Canopy training acts on real plant structures—nodes, internodes, meristems and branches—and its cost and response depend on developmental stage.",
           "references": [
             "REF-CANOPY-001",
             "REF-LIGHT-001"
@@ -223,7 +223,7 @@
           "type": "image",
           "assetId": "VIS-FOUNDATION-CANOPY-ARCH-001",
           "title": "Apical dominance and canopy architecture",
-          "src": "/course5/foundation-canopy-architecture.webp",
+          "src": "/assets/course5/foundation-canopy-architecture.webp",
           "alt": "Scientific plant architecture diagram comparing a dominant central leader with a redistributed canopy, showing lateral branching and differences in light interception across the crop surface.",
           "caption": "Canopy architecture changes where leaves intercept light and how workers access the crop. Training decisions must consider plant vigor, sanitation, airflow and recovery.",
           "references": [
