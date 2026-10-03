@@ -39,7 +39,12 @@ for(let n=2;n<=6;n++){
       assert.equal(asset.nativeRaster.releaseApproved,true,`${asset.id}: owner-approved native raster release required`);
       assert.equal(asset.nativeRaster.format ?? asset.nativeRaster.encoding,'webp',`${asset.id}: native delivery format drift`);
       if (asset.nativeRaster.sourceMasterFormat !== undefined) {
-        assert.equal(asset.nativeRaster.sourceMasterFormat,'png',`${asset.id}: native master format drift`);
+        assert.ok(['png','programmatic-scientific-diagram'].includes(asset.nativeRaster.sourceMasterFormat), `${asset.id}: native master format drift`);
+        if (asset.nativeRaster.sourceMasterFormat === 'programmatic-scientific-diagram') {
+          assert.ok(Number(asset.nativeRaster.pixelWidth) >= 1600, `${asset.id}: programmatic raster width must meet the high-resolution floor`);
+          assert.ok(Number(asset.nativeRaster.pixelHeight) >= 1600, `${asset.id}: programmatic raster height must meet the high-resolution floor`);
+          assert.match(asset.nativeRaster.sha256 ?? '', /^[a-f0-9]{64}$/i, `${asset.id}: programmatic raster SHA-256 required`);
+        }
       } else {
         assert.ok(Array.isArray(asset.nativeRaster.allowedFormats) && asset.nativeRaster.allowedFormats.includes('webp'), `${asset.id}: native raster must explicitly allow WebP delivery`);
         assert.ok(typeof asset.nativeRaster.generatedFrom === 'string' && asset.nativeRaster.generatedFrom.trim(), `${asset.id}: native raster generator provenance required`);
