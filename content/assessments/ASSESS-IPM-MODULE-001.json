@@ -22,5 +22,9 @@
   ],
   "passingScorePercent": 80,
   "maxAttempts": null,
-  "feedbackMode": "immediate"
+  "feedbackMode": "immediate",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
 }

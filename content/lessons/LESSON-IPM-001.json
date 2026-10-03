@@ -203,6 +203,32 @@
           "REF-IPM-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-IPM-CYCLE-001",
+          "title": "Integrated Pest Management",
+          "src": "/assets/course5/foundation-ipm-cycle.webp",
+          "alt": "Circular integrated pest management loop moving through prevention, scouting, identification, decision, authorized control and verification with evidence and recordkeeping feeding the next cycle.",
+          "caption": "IPM is an evidence loop, not a pesticide-first workflow. Scouting and diagnosis do not by themselves confer pesticide authority.",
+          "references": [
+            "REF-IPM-001",
+            "REF-PSU-GREENHOUSE-IPM-2026"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-IPM-CYCLE-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

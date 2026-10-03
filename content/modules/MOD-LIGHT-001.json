@@ -3,7 +3,17 @@
   "title": "Lighting and Photosynthesis Foundations",
   "version": "1.0.0",
   "status": "draft",
-  "lessons": ["LESSON-LIGHT-001", "LESSON-LIGHT-PPFD-002", "LESSON-LIGHT-DLI-003"],
-  "competencies": ["COMP-LIGHT-001"],
-  "assessment": "ASSESS-LIGHT-MODULE-001"
+  "lessons": [
+    "LESSON-LIGHT-001",
+    "LESSON-LIGHT-PPFD-002",
+    "LESSON-LIGHT-DLI-003"
+  ],
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "assessment": "ASSESS-LIGHT-MODULE-001",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
 }

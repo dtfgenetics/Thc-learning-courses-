@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { validateSharedFoundationVisuals } from './lib/validate-shared-foundation-visuals.mjs';
 
 const root = process.cwd();
 const readJson = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -13,18 +14,20 @@ assert.equal(registry.driveStorage?.folderId, '1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq
 assert.equal(registry.driveStorage?.mirrorStatus, '8-of-8-assets-mirrored-verified-2026-09-18');
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-const embedded = produced.filter((asset) => asset.deliveryType === 'embedded-visual');
-const downloads = produced.filter((asset) => asset.deliveryType === 'downloadable-practice');
-assert.equal(produced.length, 8, `Course 6 learner layer requires eight produced assets; found ${produced.length}`);
+const foundationAssets = produced.filter((asset) => String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
+const courseOwnedAssets = produced.filter((asset) => !String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
+const embedded = courseOwnedAssets.filter((asset) => asset.deliveryType === 'embedded-visual');
+const downloads = courseOwnedAssets.filter((asset) => asset.deliveryType === 'downloadable-practice');
+assert.equal(courseOwnedAssets.length, 8, `Course 6 learner layer requires eight produced assets; found ${produced.length}`);
 assert.equal(embedded.length, 5, `Course 6 requires five embedded visuals; found ${embedded.length}`);
 assert.equal(downloads.length, 3, `Course 6 requires three downloadable practice assets; found ${downloads.length}`);
-assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
-assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
+assert.equal(new Set(courseOwnedAssets.map((asset) => asset.id)).size, courseOwnedAssets.length);
+assert.equal(new Set(courseOwnedAssets.map((asset) => asset.learnerPath)).size, courseOwnedAssets.length);
 
-const registryById = new Map(produced.map((asset) => [asset.id, asset]));
+const registryById = new Map(courseOwnedAssets.map((asset) => [asset.id, asset]));
 const usedAssetIds = new Set();
 
-for (const asset of produced) {
+for (const asset of courseOwnedAssets) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-006-[0-9]{3}$/);
   assert.match(asset.learnerPath ?? '', /^\/assets\/course6\/[A-Za-z0-9._-]+\.webp$/i);
   assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course6\/[A-Za-z0-9._-]+\.webp$/i);
@@ -91,12 +94,14 @@ for (const lessonNumber of ['01', '02', '03', '04']) {
   assert.ok(imageCount >= 1, `${lesson.id}: every Course 6 lesson requires at least one embedded teaching visual`);
 }
 
-for (const asset of produced) {
+for (const asset of courseOwnedAssets) {
   assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced asset is not reachable from a canonical Course 6 lesson`);
   for (const lessonId of asset.primaryLessons) {
     assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)), `${asset.id}: primary lesson missing`);
   }
 }
+
+validateSharedFoundationVisuals({ root, assets: foundationAssets, registryPath: 'visuals/COURSE6-ASSET-REGISTRY.json' });
 
 const course = readJson('content/courses/COURSE-LH-TECH1-006.json');
 assert.equal(course.extensions?.learnerAssetLayerBuilt, true);

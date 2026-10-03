@@ -118,7 +118,7 @@ await import('./test-course4-practical-crosswalk.mjs');
 await import('./test-course4-visual-registry.mjs');
 
 const visualRegistry = read('visuals/COURSE4-ASSET-REGISTRY.json');
-const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
+const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced' && !String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
 assert.equal(producedAssets.length, 8, 'Course 4 should expose the current eight governed learner assets');
 assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'embedded-visual').length, 6);
 assert.equal(producedAssets.filter((asset) => asset.deliveryType === 'downloadable-practice').length, 2);

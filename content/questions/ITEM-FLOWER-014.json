@@ -1,1 +1,31 @@
-{"id":"ITEM-FLOWER-014","version":1,"status":"draft","purpose":"summative","competency":"COMP-FLOWER-001","objective":"LO-FLOWER-001","bloomLevel":"evaluate","difficulty":"hard","type":"scenario","stem":"Different canopy positions show different maturity indicators. What harvest-sampling plan is strongest?","choices":["Sample predefined representative positions across plants and canopy zones using the same observation method","Sample only the easiest flower to reach","Use one photograph from the previous crop","Ignore positional variation"],"correct":0,"rationale":"A representative, repeatable sampling plan reduces bias when maturity varies spatially.","references":["REF-FLOWER-001","REF-CANOPY-001"]}
+{
+  "id": "ITEM-FLOWER-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-FLOWER-001",
+  "objective": "LO-FLOWER-001",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Different canopy positions show different maturity indicators. What harvest-sampling plan is strongest?",
+  "choices": [
+    "Sample predefined representative positions across plants and canopy zones using the same observation method",
+    "Sample only the easiest flower to reach",
+    "Use one photograph from the previous crop",
+    "Ignore positional variation"
+  ],
+  "correct": 0,
+  "rationale": "A representative, repeatable sampling plan reduces bias when maturity varies spatially.",
+  "references": [
+    "REF-FLOWER-001",
+    "REF-CANOPY-001"
+  ],
+  "extensions": {
+    "checkpointUse": "shared-foundation-formative",
+    "purposeCorrection": {
+      "date": "2026-10-03",
+      "reason": "Item is used only in a formative shared-foundation module checkpoint and is not referenced by any summative or credential assessment."
+    }
+  }
+}

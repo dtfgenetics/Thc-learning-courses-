@@ -172,8 +172,30 @@
             "releaseState": "owner-approved-production-release",
             "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
           }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-NUTRITION-MICRO-001",
+          "title": "Micronutrient reasoning",
+          "src": "/assets/course4/foundation-micronutrient-context.webp",
+          "alt": "Scientific chart showing selected micronutrient functions, pH-sensitive availability context and the use of young-versus-old tissue symptom location as one part of diagnosis.",
+          "caption": "Micronutrient symptoms can overlap. Use function, pH/EC context, tissue age, root condition and spatial pattern together instead of diagnosing from one photograph.",
+          "references": [
+            "REF-NUTRITION-001",
+            "REF-PSU-HYDROPONIC-NUTRITION-2026"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-NUTRITION-MICRO-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
         }
       ]
     }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

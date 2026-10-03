@@ -218,8 +218,30 @@
             "releaseState": "owner-approved-production-release",
             "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
           }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-CANOPY-ARCH-001",
+          "title": "Apical dominance and canopy architecture",
+          "src": "/assets/course5/foundation-canopy-architecture.webp",
+          "alt": "Scientific plant architecture diagram comparing a dominant central leader with a redistributed canopy, showing lateral branching and differences in light interception across the crop surface.",
+          "caption": "Canopy architecture changes where leaves intercept light and how workers access the crop. Training decisions must consider plant vigor, sanitation, airflow and recovery.",
+          "references": [
+            "REF-CANOPY-001",
+            "REF-LIGHT-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-CANOPY-ARCH-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
         }
       ]
     }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

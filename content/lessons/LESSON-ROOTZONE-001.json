@@ -198,6 +198,32 @@
           "REF-IRRIGATION-001"
         ]
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-ROOTZONE-AIRWATER-001",
+          "title": "Root-zone air–water balance",
+          "src": "/assets/course4/foundation-rootzone-air-water.webp",
+          "alt": "Three container cross sections showing high water-filled pore space after irrigation, increased air-filled pore space after drainage and lower water content approaching dryback.",
+          "caption": "Container media must supply water and oxygen. Observe drainage and dryback instead of treating constant saturation as adequate irrigation.",
+          "references": [
+            "REF-IRRIGATION-001",
+            "REF-CONTAINER-MEDIA-NCSU-2021"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-ROOTZONE-AIRWATER-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE4-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

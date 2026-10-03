@@ -181,6 +181,32 @@
         "tone": "evidence",
         "body": "High-stress training is justified only when a clear architectural benefit outweighs the recovery cost."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-HST-001",
+          "title": "Topping and recovery",
+          "src": "/assets/course5/foundation-hst-recovery.webp",
+          "alt": "Four-stage diagram showing an intact plant apex, a topping cut, lateral growth response and recovery into two leaders.",
+          "caption": "Topping intentionally removes tissue and changes apical dominance. Confirm vigor, sanitation and recovery before stacking additional high-stress work.",
+          "references": [
+            "REF-CANOPY-001",
+            "REF-LIGHT-001"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-HST-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

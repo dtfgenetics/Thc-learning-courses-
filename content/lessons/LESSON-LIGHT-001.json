@@ -330,7 +330,31 @@
           "transcriptRequired": false,
           "nonVisualAlternative": "Provide numeric grids and written spatial coordinates for all light-mapping exercises."
         }
-      }
+      },
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-LIGHT-PHOTOSYNTHESIS-001",
+          "title": "From photons to photosynthesis",
+          "src": "/assets/course3/foundation-light-photosynthesis.webp",
+          "alt": "Scientific flow from measured photon flux to leaf interception, photosystems, carbon assimilation and crop response, emphasizing that PPFD is an input measurement rather than a direct measurement of photosynthesis.",
+          "caption": "PPFD measures incoming photosynthetic photons; spectrum, photoperiod, canopy geometry, leaf temperature, carbon dioxide and water status influence the biological response.",
+          "references": [
+            "REF-LIGHT-001",
+            "REF-PURDUE-DLI-238"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-LIGHT-PHOTOSYNTHESIS-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE3-ASSET-REGISTRY.json"
+          }
+        }
+      ]
     }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

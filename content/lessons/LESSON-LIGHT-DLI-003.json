@@ -141,6 +141,32 @@
         "tone": "evidence",
         "body": "DLI quantifies daily photon dose; it does not replace PPFD distribution, photoperiod biology or environmental context."
       }
-    ]
+    ],
+    "extensions": {
+      "primaryVisuals": [
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-LIGHT-DLI-001",
+          "title": "Daily Light Integral",
+          "src": "/assets/course3/foundation-dli-equal-total.webp",
+          "alt": "Comparison of 500 micromoles per square meter per second for 16 hours and 1000 for 8 hours, both producing about 28.8 mole daily light integral, with a warning that equal DLI does not guarantee equal plant response.",
+          "caption": "DLI integrates PPFD over time. Equal daily totals can come from different intensity and photoperiod combinations, which may not be biologically equivalent.",
+          "references": [
+            "REF-LIGHT-001",
+            "REF-PURDUE-DLI-238"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-LIGHT-DLI-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE3-ASSET-REGISTRY.json"
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }

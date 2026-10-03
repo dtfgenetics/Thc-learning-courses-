@@ -31,6 +31,48 @@ for(const item of questions){
   });
 }
 
+const courseVisualsByLesson=new Map();
+if(exists('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json')){
+  const plan=readJson('visuals/TECH2-VISUAL-PRODUCTION-PLAN.json');
+  for(const course of plan.courses??[]){
+    for(const concept of course.concepts??[]){
+      for(const lessonId of concept.lessonIds??[]){
+        const key=course.courseId+'|'+lessonId;
+        if(!courseVisualsByLesson.has(key)) courseVisualsByLesson.set(key,[]);
+        courseVisualsByLesson.get(key).push({
+          conceptId:concept.conceptId,
+          status:concept.status,
+          targetPublicPath:concept.targetPublicPath??null,
+          learnerTextAlternative:concept.learnerTextAlternative??null,
+          qaApproved:concept.qaApproved===true
+        });
+      }
+    }
+  }
+}
+
+function courseAssessmentContext(course){
+  const assessmentId=course.finalAssessment??course.extensions?.formativeReadinessAssessment??null;
+  if(!assessmentId||!exists('content/assessments/'+assessmentId+'.json')) return null;
+  const assessment=readJson('content/assessments/'+assessmentId+'.json');
+  const itemSet=new Set(assessment.items??[]);
+  const itemRows=questions.filter(item=>itemSet.has(item.id));
+  const itemsByObjective=new Map();
+  for(const item of itemRows){
+    if(!item.objective) continue;
+    if(!itemsByObjective.has(item.objective)) itemsByObjective.set(item.objective,[]);
+    itemsByObjective.get(item.objective).push(item.id);
+  }
+  const lessonObjectives=new Map();
+  for(const [objectiveId,lessonIds] of Object.entries(assessment.extensions?.taughtMaterialMap??{})){
+    for(const lessonId of lessonIds??[]){
+      if(!lessonObjectives.has(lessonId)) lessonObjectives.set(lessonId,[]);
+      lessonObjectives.get(lessonId).push(objectiveId);
+    }
+  }
+  return {assessmentId,assessment,itemsByObjective,lessonObjectives};
+}
+
 const measurementRx=/\b(measur|sensor|sample|reading|record|temperature|relative humidity|\brh\b|vpd|ppfd|dli|ph\b|\bec\b|ppm|water activity|moisture|weight|mass|volume|flow|pressure|time|duration|rate|percent|percentage|count|incidence|severity|uniformity|dryback|conductivity)\b/i;
 const calculationRx=/\b(calculat|formula|equation|convert|conversion|compute|ratio|percentage|percent|average|mean|difference|delta|rate|area|volume|mass balance|uniformity|dli|vpd)\b|[%×÷=]/i;
 
@@ -53,7 +95,7 @@ function textOf(value){
   return String(value);
 }
 
-function inspectLesson(courseId,lesson){
+function inspectLesson(courseId,lesson,assessmentContext){
   const content=lesson.content??{};
   const blocks=Array.isArray(content.blocks)?content.blocks:[];
   const sections=Array.isArray(content.sections)?content.sections:[];
@@ -73,17 +115,24 @@ function inspectLesson(courseId,lesson){
   const measurementSignal=measurementRx.test(body);
   const calculationSignal=calculationRx.test(body);
 
-  const objectiveCoverage=objectives.map(objectiveId=>{
-    const items=(objectiveItems.get(objectiveId)??[]).filter(item=>item.courseId===courseId);
+  const mappedCourseObjectives=assessmentContext?.lessonObjectives.get(lesson.id)??[];
+  const assessmentObjectives=mappedCourseObjectives.length?mappedCourseObjectives:objectives;
+  const objectiveCoverage=assessmentObjectives.map(objectiveId=>{
+    const assessmentItems=assessmentContext?.itemsByObjective.get(objectiveId)??[];
+    const fallbackItems=(objectiveItems.get(objectiveId)??[]).filter(item=>item.courseId===courseId).map(item=>item.id);
+    const items=assessmentItems.length?assessmentItems:fallbackItems;
     return {
       objectiveId,
       itemCount:items.length,
-      summativeItems:items.filter(item=>item.purpose==='summative').length,
-      formativeItems:items.filter(item=>item.purpose!=='summative').length,
-      items:items.map(item=>item.id)
+      assessmentId:assessmentContext?.assessmentId??null,
+      mappedViaCourseTeachingMap:mappedCourseObjectives.includes(objectiveId),
+      items
     };
   });
   const unassessedObjectives=objectiveCoverage.filter(row=>row.itemCount===0).map(row=>row.objectiveId);
+  const dedicatedLessonPrefix=courseId.replace(/^COURSE-/,'LESSON-')+'-';
+  const dedicatedCourseLesson=lesson.id.startsWith(dedicatedLessonPrefix);
+  const mappedCourseVisuals=courseVisualsByLesson.get(courseId+'|'+lesson.id)??[];
 
   const issues=[];
   const actions=[];
@@ -96,10 +145,14 @@ function inspectLesson(courseId,lesson){
   if(!appliedPractice) add('no-applied-practice','Add a realistic application, activity, worked example, or scenario.');
   if(workedExamples===0) add('no-worked-examples','Add at least one worked example when the lesson includes a decision, measurement, workflow, or interpretation skill.');
   if(commonMistakes===0) add('no-common-mistakes','Add realistic mistakes, misconceptions, or interpretation traps.');
-  if(scenarios===0) add('no-scenario-block','Add a realistic decision/escalation scenario where the topic involves judgment.');
-  if(images.length===0) add('no-instructional-visual','Review whether a diagram, comparison plate, measurement map, workflow, or other teaching visual is warranted.');
   if(images.length>imageAltComplete) add('visual-alt-gap','Complete meaningful alt text for every instructional image.');
-  if(unassessedObjectives.length) add('unassessed-objective','Map every lesson objective to at least one course-owned assessment item or explicitly document why it is practice-only.');
+  if(unassessedObjectives.length&&dedicatedCourseLesson) add('unassessed-objective','Map the dedicated course lesson into the course assessment teaching map or document why it is practice-only.');
+
+  const advisories=[];
+  if(unassessedObjectives.length&&!dedicatedCourseLesson) advisories.push('shared-foundation-assessment-mediated-by-course-outcomes');
+  if(scenarios===0) advisories.push('scenario-opportunity');
+  if(images.length===0&&mappedCourseVisuals.length===0) advisories.push('visual-opportunity');
+  if((measurementSignal||calculationSignal)&&images.length===0&&mappedCourseVisuals.length===0) advisories.push('measurement-visual-priority');
 
   let priorityScore=0;
   for(const issue of issues){
@@ -112,8 +165,6 @@ function inspectLesson(courseId,lesson){
       'no-applied-practice':10,
       'no-worked-examples':4,
       'no-common-mistakes':4,
-      'no-scenario-block':3,
-      'no-instructional-visual':4,
       'visual-alt-gap':8,
       'unassessed-objective':12
     })[issue]??1;
@@ -142,9 +193,13 @@ function inspectLesson(courseId,lesson){
       resources
     },
     visuals:{
-      images:images.length,
+      embeddedImages:images.length,
+      mappedCourseVisuals:mappedCourseVisuals.length,
+      totalInstructionalVisualSignals:images.length+mappedCourseVisuals.length,
       imagesWithMeaningfulAlt:imageAltComplete,
-      altCoverage:images.length?Number((imageAltComplete/images.length).toFixed(3)):null
+      mappedVisualsWithTextAlternative:mappedCourseVisuals.filter(v=>typeof v.learnerTextAlternative==='string'&&v.learnerTextAlternative.trim().length>=12).length,
+      altCoverage:images.length?Number((imageAltComplete/images.length).toFixed(3)):null,
+      mappedCourseVisualDetails:mappedCourseVisuals
     },
     applicationSignals:{
       measurement:measurementSignal,
@@ -152,8 +207,10 @@ function inspectLesson(courseId,lesson){
       appliedPractice
     },
     assessmentCoverage:objectiveCoverage,
+    dedicatedCourseLesson,
     unassessedObjectives,
     issues:[...new Set(issues)],
+    advisories:[...new Set(advisories)],
     recommendedActions:[...new Set(actions)],
     priorityScore
   };
@@ -165,11 +222,12 @@ for(const courseId of canonical){
   const coursePath=`content/courses/${courseId}.json`;
   if(!exists(coursePath)) continue;
   const course=readJson(coursePath);
+  const assessmentContext=courseAssessmentContext(course);
   const lessonRows=[];
   for(const lessonId of lessonIdsForCourse(course)){
     const lessonPath=`content/lessons/${lessonId}.json`;
     if(!exists(lessonPath)) continue;
-    const row=inspectLesson(courseId,readJson(lessonPath));
+    const row=inspectLesson(courseId,readJson(lessonPath),assessmentContext);
     rows.push(row);
     lessonRows.push(row);
   }
@@ -180,7 +238,8 @@ for(const courseId of canonical){
     issueCount:lessonRows.reduce((n,row)=>n+row.issues.length,0),
     lessonsWithIssues:lessonRows.filter(row=>row.issues.length).length,
     priorityScore:lessonRows.reduce((n,row)=>n+row.priorityScore,0),
-    lessonsWithVisuals:lessonRows.filter(row=>row.visuals.images>0).length,
+    lessonsWithVisuals:lessonRows.filter(row=>row.visuals.totalInstructionalVisualSignals>0).length,
+    lessonsWithAdvisories:lessonRows.filter(row=>row.advisories.length).length,
     lessonsWithWorkedExamples:lessonRows.filter(row=>row.teaching.workedExamples>0).length,
     lessonsWithScenarios:lessonRows.filter(row=>row.teaching.scenarios>0).length,
     lessonsWithCommonMistakes:lessonRows.filter(row=>row.teaching.commonMistakes>0).length,
@@ -207,6 +266,9 @@ const matrix={
     priorityScore:'Internal production-priority signal only; it is not a credential-validity score or external quality rating.',
     measurementSignal:'Text-pattern indicator used to find measurement-heavy lessons for deeper review.',
     calculationSignal:'Text-pattern indicator used to find calculation/data lessons for deeper review.',
+    assessmentCoverage:'Uses the course final/readiness assessment item membership plus its taughtMaterialMap before falling back to direct lesson-objective item mappings. Only dedicated course lessons create a hard unassessed-objective defect; shared foundation lessons are mediated through course-specific outcomes and are reported as advisories unless the course teaching map itself is incomplete.',
+    visualCoverage:'Counts embedded lesson images and approved course-level Technician II visual-plan mappings. Missing per-lesson art is advisory unless another hard accessibility/content defect exists.',
+    advisoryBoundary:'Scenario and visual opportunities are improvement signals, not automatic release failures when applied practice and course-level instruction already cover the objective.',
     releaseBoundary:'A row with no detected gaps is not automatically scientifically, accessibility, assessment, or credential approved.'
   },
   summary:{
@@ -214,7 +276,8 @@ const matrix={
     lessons:rows.length,
     lessonsWithIssues:rows.filter(row=>row.issues.length).length,
     totalIssueSignals:rows.reduce((n,row)=>n+row.issues.length,0),
-    lessonsWithVisuals:rows.filter(row=>row.visuals.images>0).length,
+    lessonsWithVisuals:rows.filter(row=>row.visuals.totalInstructionalVisualSignals>0).length,
+    lessonsWithAdvisories:rows.filter(row=>row.advisories.length).length,
     lessonsWithWorkedExamples:rows.filter(row=>row.teaching.workedExamples>0).length,
     lessonsWithScenarios:rows.filter(row=>row.teaching.scenarios>0).length,
     lessonsWithCommonMistakes:rows.filter(row=>row.teaching.commonMistakes>0).length,

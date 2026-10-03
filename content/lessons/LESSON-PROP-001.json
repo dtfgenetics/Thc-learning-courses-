@@ -230,8 +230,31 @@
             "releaseState": "owner-approved-production-release",
             "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
           }
+        },
+        {
+          "type": "image",
+          "assetId": "VIS-FOUNDATION-PROP-PROCESS-001",
+          "title": "Propagation pathways compared",
+          "src": "/assets/course5/foundation-propagation-pathways.webp",
+          "alt": "Side-by-side process diagram comparing seed imbibition, embryo activation and radicle emergence with cutting survival, wound response, adventitious rooting and acclimatization.",
+          "caption": "Seed and cutting propagation share the goal of establishment but use different biological pathways. Track identity, sanitation and stage-specific evidence for each.",
+          "references": [
+            "REF-PROP-001",
+            "REF-CANNABIS-SEED-GERMINATION-2021",
+            "REF-CANNABIS-CLONAL-ROOTING-2019"
+          ],
+          "extensions": {
+            "conceptId": "VIS-FOUNDATION-PROP-PROCESS-001",
+            "releaseApproved": true,
+            "releaseState": "owner-approved-production-release",
+            "rasterManifest": "visuals/COURSE5-ASSET-REGISTRY.json"
+          }
         }
       ]
     }
+  },
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
   }
 }
