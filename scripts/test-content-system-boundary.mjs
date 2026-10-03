@@ -62,6 +62,28 @@ if (!courseIds.some((id) => id.startsWith('COURSE-LH-'))) {
   fail('certification curriculum must contain dedicated COURSE-LH-* objects');
 }
 
+const allCourseDocs = fs.readdirSync('content/courses')
+  .filter((name) => name.endsWith('.json'))
+  .map((name) => readJson(`content/courses/${name}`));
+const legacyNoncredential = allCourseDocs.filter((course) =>
+  course?.extensions?.courseFinalProfile === 'public-noncredential-dedicated-bank'
+);
+for (const course of legacyNoncredential) {
+  if (course.status === 'published') fail(`${course.id} is a preserved noncredential draft and may not be published as a course`);
+  if (course.credentialBearing === true) fail(`${course.id} is a preserved noncredential draft and may not become credential-bearing`);
+  if (course.extensions?.certificationUseStatus !== 'not-authorized') {
+    fail(`${course.id} must remain certificationUseStatus=not-authorized while preserved in content/courses`);
+  }
+}
+const publicReleaseDocs = fs.existsSync('content/public-releases')
+  ? fs.readdirSync('content/public-releases').filter((name) => name.endsWith('.json')).map((name) => readJson(`content/public-releases/${name}`))
+  : [];
+for (const release of publicReleaseDocs.filter((release) => release.publicationState === 'published')) {
+  if (legacyNoncredential.some((course) => course.id === release.courseId)) {
+    fail(`${release.id ?? 'published release'} exposes preserved noncredential object ${release.courseId} as a public course`);
+  }
+}
+
 const root = process.cwd();
 const readIfPresent = (rel) => fs.existsSync(rel) ? readJson(rel) : null;
 
@@ -126,4 +148,4 @@ for (const name of courseFiles) {
   }
 }
 
-console.log(`Content-system boundary OK: 420 encyclopedia is separate; ${courseFiles.length} certification courses use dedicated course-owned material/test namespaces.`);
+console.log(`Content-system boundary OK: 420 encyclopedia is separate; ${courseFiles.length} COURSE-LH certification-development objects use dedicated namespaces; ${legacyNoncredential.length} preserved noncredential draft objects are blocked from public course release.`);
