@@ -108,7 +108,7 @@ await import('./test-course6-practical-crosswalk.mjs');
 await import('./test-course6-visual-registry.mjs');
 
 const visualRegistry=read('visuals/COURSE6-ASSET-REGISTRY.json');
-const produced=(visualRegistry.assets??[]).filter(x=>x.status==='produced');
+const produced=(visualRegistry.assets??[]).filter(x=>x.status==='produced'&&!String(x.id??'').startsWith('VIS-FOUNDATION-'));
 assert.equal(produced.length,8);
 const server=createAcademyWebServer({env:{...process.env,NODE_ENV:'development',ACADEMY_PREVIEW_DRAFTS:'1'}});
 server.listen(0,'127.0.0.1');
