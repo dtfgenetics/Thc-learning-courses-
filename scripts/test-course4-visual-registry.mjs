@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { validateSharedFoundationVisuals } from './lib/validate-shared-foundation-visuals.mjs';
 
 const root = process.cwd();
 const readJson = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -12,6 +13,8 @@ assert.equal(registry.policy?.maximumAssetCount, null);
 assert.equal(registry.driveStorage?.folderId, '13su1HkrSjWqhMtssQos3cju9BkgeqGBv');
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
+const foundationAssets = produced.filter((asset) => String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
+const courseOwnedAssets = produced.filter((asset) => !String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
 const embedded = produced.filter((asset) => asset.deliveryType === 'embedded-visual');
 const downloads = produced.filter((asset) => asset.deliveryType === 'downloadable-practice');
 assert.ok(produced.length >= 7, `Course 4 learner layer requires at least seven produced assets; found ${produced.length}`);
@@ -20,11 +23,11 @@ assert.ok(downloads.length >= 2, `Course 4 requires at least two downloadable pr
 assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
 assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
 
-const registryById = new Map(produced.map((asset) => [asset.id, asset]));
+const registryById = new Map(courseOwnedAssets.map((asset) => [asset.id, asset]));
 const usedAssetIds = new Set();
 const imageCountByLesson = new Map();
 
-for (const asset of produced) {
+for (const asset of courseOwnedAssets) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-004-[0-9]{3}$/);
   assert.match(asset.learnerPath ?? '', /^\/assets\/course4\/[A-Za-z0-9._-]+\.webp$/i);
   assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course4\/[A-Za-z0-9._-]+\.webp$/i);
@@ -99,11 +102,13 @@ for (const lessonNumber of ['01', '02', '03', '04']) {
   assert.ok(imageCount >= 1, `${lesson.id}: every Course 4 lesson requires at least one embedded teaching visual`);
 }
 
-for (const asset of produced) {
+for (const asset of courseOwnedAssets) {
   assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced asset is not reachable from a canonical Course 4 lesson`);
   for (const lessonId of asset.primaryLessons) {
     assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)), `${asset.id}: primary lesson missing`);
   }
 }
+
+validateSharedFoundationVisuals({ root, assets: foundationAssets, registryPath: 'visuals/COURSE4-ASSET-REGISTRY.json' });
 
 console.log(`Course 4 learner-asset contract passed with raster-first WebP delivery and native-raster support and preserved legacy provenance.`);
