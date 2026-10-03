@@ -440,7 +440,7 @@
     },
     {
       "id": "VIS-FOUNDATION-ENV-LEAF-VPD-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Leaf temperature, boundary layer and leaf-to-air vapor exchange",
       "primaryLessons": [
@@ -451,7 +451,7 @@
         "REF-MSU-BOUNDARY-LAYER-TRANSPIRATION"
       ],
       "purpose": "Show air temperature versus leaf temperature, the leaf boundary layer, airflow effects and the leaf-to-air vapor-pressure relationship without implying one universal VPD target.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "scientific-diagram",
         "requiredFormats": [
@@ -471,7 +471,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course3/foundation-leaf-vpd-context.webp",
+      "sourcePath": "apps/web/public/assets/course3/foundation-leaf-vpd-context.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course3/foundation-leaf-vpd-context.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Diagram comparing air and leaf temperature, the leaf boundary layer, airflow and leaf-to-air vapor exchange without prescribing a universal VPD target.",
+      "caption": "Leaf temperature, humidity and airflow affect the leaf-to-air vapor-pressure relationship. Verify representative measurements instead of assuming air temperature equals leaf temperature.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 24766,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "38796254f472b72cbbcabc5792228199927596338ee3e72648bfce68e8516c35",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-LIGHT-PHOTOSYNTHESIS-001",

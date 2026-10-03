@@ -656,7 +656,7 @@
     },
     {
       "id": "VIS-FOUNDATION-PROP-PROCESS-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Seed and cutting propagation pathways compared",
       "primaryLessons": [
@@ -668,7 +668,7 @@
         "REF-CANNABIS-CLONAL-ROOTING-2019"
       ],
       "purpose": "Compare the biological pathway from seed imbibition and embryo emergence with cutting survival, wound response, adventitious rooting and acclimatization.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "process-comparison",
         "requiredFormats": [
@@ -688,7 +688,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course5/foundation-propagation-pathways.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-propagation-pathways.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-propagation-pathways.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Side-by-side process diagram comparing seed imbibition, embryo activation and radicle emergence with cutting survival, wound response, adventitious rooting and acclimatization.",
+      "caption": "Seed and cutting propagation share the goal of establishment but use different biological pathways. Track identity, sanitation and stage-specific evidence for each.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 27290,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "281e7ba3f75b62dd1c8e3f7561e30e01eca25bc8ea4c37ef3998956137d13d92",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-SEED-GERMINATION-001",
@@ -787,7 +810,7 @@
     },
     {
       "id": "VIS-FOUNDATION-CANOPY-ARCH-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Apical dominance and canopy architecture response",
       "primaryLessons": [
@@ -798,7 +821,7 @@
         "REF-LIGHT-001"
       ],
       "purpose": "Show how dominant shoot position, lateral branches, leaf distribution and canopy geometry affect spatial light interception.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "scientific-diagram",
         "requiredFormats": [
@@ -818,7 +841,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course5/foundation-canopy-architecture.webp",
+      "sourcePath": "apps/web/public/assets/course5/foundation-canopy-architecture.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course5/foundation-canopy-architecture.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Scientific plant architecture diagram comparing a dominant central leader with a redistributed canopy, showing lateral branching and differences in light interception across the crop surface.",
+      "caption": "Canopy architecture changes where leaves intercept light and how workers access the crop. Training decisions must consider plant vigor, sanitation, airflow and recovery.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 24146,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "71e087de7095c98c80f7309eb23ac061f61aeab9cafc307e6c6cc400ef4fc34d",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-FOUNDATION-LST-001",

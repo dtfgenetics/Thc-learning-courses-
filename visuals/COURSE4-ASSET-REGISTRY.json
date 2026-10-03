@@ -688,7 +688,7 @@
     },
     {
       "id": "VIS-FOUNDATION-NUTRITION-MICRO-001",
-      "status": "planned",
+      "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Micronutrient availability, pH and symptom-location reasoning",
       "primaryLessons": [
@@ -699,7 +699,7 @@
         "REF-PSU-HYDROPONIC-NUTRITION-2026"
       ],
       "purpose": "Show selected micronutrient functions, pH-sensitive availability and how tissue age/pattern contributes to diagnosis without turning the graphic into a one-photo deficiency key.",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "productionSpec": {
         "visualType": "scientific-chart",
         "requiredFormats": [
@@ -719,7 +719,30 @@
           "non-color-dependent meaning"
         ],
         "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
-      }
+      },
+      "learnerPath": "/course4/foundation-micronutrient-context.webp",
+      "sourcePath": "apps/web/public/assets/course4/foundation-micronutrient-context.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course4/foundation-micronutrient-context.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Scientific chart showing selected micronutrient functions, pH-sensitive availability context and the use of young-versus-old tissue symptom location as one part of diagnosis.",
+      "caption": "Micronutrient symptoms can overlap. Use function, pH/EC context, tissue age, root condition and spatial pattern together instead of diagnosing from one photograph.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 33994,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "4121d8abee4383a283a5f450301c02f0ef2e833f9558a900920cb49b0fb1d602",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
   ],
   "ownerReleaseApproval": {
