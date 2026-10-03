@@ -66,8 +66,8 @@
       }
     ],
     "workedExamples": [
-      "A canopy receives an average PPFD of 600 \u00b5mol/m\u00b2/s for 18 hours. DLI = 600 \u00d7 18 \u00d7 3600 \u00f7 1,000,000 = 38.9 mol/m\u00b2/day. The same PPFD over 12 hours would produce a lower DLI because exposure time is shorter.",
-      "A single center reading is 900 \u00b5mol/m\u00b2/s, but edge readings are 520\u2013600. Reporting 900 as the whole-room PPFD hides nonuniformity. A grid map better represents what the canopy experiences.",
+      "A canopy receives an average PPFD of 600 µmol/m²/s for 18 hours. DLI = 600 × 18 × 3600 ÷ 1,000,000 = 38.9 mol/m²/day. The same PPFD over 12 hours would produce a lower DLI because exposure time is shorter.",
+      "A single center reading is 900 µmol/m²/s, but edge readings are 520–600. Reporting 900 as the whole-room PPFD hides nonuniformity. A grid map better represents what the canopy experiences.",
       "Two rooms have the same calculated DLI but use different PPFD and photoperiod combinations. The equal daily photon total does not prove equal plant response because intensity, photoperiod signaling, temperature, CO2, canopy structure and other factors can differ.",
       "A fixture is advertised at high electrical wattage. The learner does not infer canopy PPFD from wattage; they measure photon flux at the actual canopy because distance, optics, layout and losses affect delivery."
     ],
@@ -103,13 +103,13 @@
           [
             "PPFD",
             "Instantaneous photosynthetic photon flux density at a surface",
-            "\u00b5mol/m\u00b2/s",
+            "µmol/m²/s",
             "A snapshot; does not include daily duration"
           ],
           [
             "DLI",
             "Integrated photosynthetic photon exposure over a day",
-            "mol/m\u00b2/day",
+            "mol/m²/day",
             "Does not describe spatial distribution or spectrum"
           ],
           [
@@ -168,11 +168,11 @@
       {
         "type": "document",
         "title": "DLI calculation",
-        "description": "For a constant PPFD approximation: DLI = PPFD \u00d7 photoperiod hours \u00d7 3600 \u00f7 1,000,000.",
+        "description": "For a constant PPFD approximation: DLI = PPFD × photoperiod hours × 3600 ÷ 1,000,000.",
         "fields": [
           {
             "label": "PPFD",
-            "value": "600 \u00b5mol/m\u00b2/s"
+            "value": "600 µmol/m²/s"
           },
           {
             "label": "Photoperiod",
@@ -180,15 +180,15 @@
           },
           {
             "label": "Seconds of light",
-            "value": "18 \u00d7 3600 = 64,800 s"
+            "value": "18 × 3600 = 64,800 s"
           },
           {
             "label": "Daily photons",
-            "value": "600 \u00d7 64,800 = 38,880,000 \u00b5mol/m\u00b2/day"
+            "value": "600 × 64,800 = 38,880,000 µmol/m²/day"
           },
           {
             "label": "Convert to mol",
-            "value": "38.9 mol/m\u00b2/day"
+            "value": "38.9 mol/m²/day"
           }
         ],
         "note": "This simple calculation assumes the entered PPFD reasonably represents the period being integrated."
@@ -196,7 +196,7 @@
       {
         "type": "scenario",
         "title": "The bright center hides the edges",
-        "setting": "A grower records 900 \u00b5mol/m\u00b2/s at the center of a bench and labels the entire bench '900 PPFD.' Edge measurements later show 540\u2013620.",
+        "setting": "A grower records 900 µmol/m²/s at the center of a bench and labels the entire bench '900 PPFD.' Edge measurements later show 540–620.",
         "prompt": "What should be changed?",
         "options": [
           "Keep 900 because the center is the most important location",
@@ -269,7 +269,7 @@
         ],
         "guidedPractice": [
           {
-            "prompt": "Use a 3\u00d73 PPFD grid to calculate average PPFD, identify distribution problems and compute DLI for the supplied photoperiod.",
+            "prompt": "Use a 3×3 PPFD grid to calculate average PPFD, identify distribution problems and compute DLI for the supplied photoperiod.",
             "steps": [
               "Read all nine values.",
               "Calculate average/minimum/maximum.",
@@ -336,7 +336,7 @@
           "type": "image",
           "assetId": "VIS-FOUNDATION-LIGHT-PHOTOSYNTHESIS-001",
           "title": "From photons to photosynthesis",
-          "src": "/course3/foundation-light-photosynthesis.webp",
+          "src": "/assets/course3/foundation-light-photosynthesis.webp",
           "alt": "Scientific flow from measured photon flux to leaf interception, photosystems, carbon assimilation and crop response, emphasizing that PPFD is an input measurement rather than a direct measurement of photosynthesis.",
           "caption": "PPFD measures incoming photosynthetic photons; spectrum, photoperiod, canopy geometry, leaf temperature, carbon dioxide and water status influence the biological response.",
           "references": [
