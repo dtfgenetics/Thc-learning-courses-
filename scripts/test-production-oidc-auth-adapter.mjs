@@ -88,7 +88,9 @@ const adminAllowed = authorize({ headers: { authorization: `Bearer ${adminWithMf
 assert.equal(adminAllowed.ok, true);
 assert.equal(adminAllowed.mfaVerified, true);
 
-const tampered = learnerToken.slice(0, -1) + (learnerToken.endsWith('a') ? 'b' : 'a');
+const tamperedParts = learnerToken.split('.');
+tamperedParts[2] = (tamperedParts[2].startsWith('a') ? 'b' : 'a') + tamperedParts[2].slice(1);
+const tampered = tamperedParts.join('.');
 const tamperedResult = authorize({ headers: { authorization: `Bearer ${tampered}` } }, 'learner:read');
 assert.equal(tamperedResult.ok, false);
 assert.equal(tamperedResult.status, 401);
