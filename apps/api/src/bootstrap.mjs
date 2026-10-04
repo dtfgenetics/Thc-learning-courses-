@@ -78,6 +78,12 @@ export async function loadProductionApiOptions(env = process.env) {
     completionStore
   });
 
+  const secureAssessmentStore = adapters?.secureAssessmentStore;
+  const requiredSecureMethods = ['ping','bankVersion','selectOperationalItems','recordForm','recordExposure','quarantineItem'];
+  if (!secureAssessmentStore || secureAssessmentStore.kind !== 'private-operational-assessment-store' || requiredSecureMethods.some((method) => typeof secureAssessmentStore[method] !== 'function')) {
+    throw new Error('Production persistence adapter must provide a private operational secureAssessmentStore');
+  }
+
   const credentialWriter = adapters.credentialWriter ?? null;
   if (credentialWriter && (typeof credentialWriter.issueCredential !== 'function' || typeof credentialWriter.transitionById !== 'function')) {
     throw new Error('Production credentialWriter must provide issueCredential() and transitionById()');
@@ -100,6 +106,7 @@ export async function loadProductionApiOptions(env = process.env) {
     learnerStore: wrapped.learnerStore,
     practicalEvaluatorStore: wrapped.practicalEvaluatorStore,
     enrollmentCompletionStore: completionStore,
+    secureAssessmentStore,
     requiredSchemaVersion: config.requiredSchemaVersion,
     authorize
   };
