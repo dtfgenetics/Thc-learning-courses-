@@ -41,10 +41,30 @@ export async function createPersistenceAdapters() {
     credentialStore: {
       kind: 'test-persistent',
       async ping() { return true; },
-      async schemaVersion() { return '7'; },
+      async schemaVersion() { return '8'; },
       async getByVerificationId() { return null; },
       async listBySubjectHash() { return []; },
       async count() { return 0; }
+    },
+    secureAssessmentStore: {
+      kind: 'private-operational-assessment-store',
+      securityControls: {
+        accessControlModel: 'least-privilege-rbac',
+        leastPrivilegeAccess: true,
+        privilegedAccessAudited: true,
+        encryptionInTransit: true,
+        encryptionAtRest: true,
+        backupRecoveryDefined: true,
+        keyManagementSeparated: true,
+        environmentSeparated: true,
+        publicRepositoryMaterialExcluded: true
+      },
+      async ping() { return true; },
+      async bankVersion() { return 'test-private-bank-v1'; },
+      async selectOperationalItems() { return []; },
+      async recordForm() { return { formId: 'FORM-TEST', formRevision: '1' }; },
+      async recordExposure() { return { recorded: true }; },
+      async quarantineItem() { return null; }
     },
     credentialWriter: {
       kind: 'test-writer',
