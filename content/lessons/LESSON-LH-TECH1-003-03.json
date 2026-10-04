@@ -1,8 +1,8 @@
 {
   "id": "LESSON-LH-TECH1-003-03",
   "title": "Sensor Placement, Verification and Data-Quality Triage",
-  "version": "1.2.1",
-  "status": "draft",
+  "version": "1.2.0",
+  "status": "published",
   "competencies": [
     "COMP-ENV-VPD-001",
     "COMP-CULT-EQUIPMENT-CARE-001"
@@ -13,8 +13,7 @@
   ],
   "estimatedMinutes": 60,
   "references": [
-    "REF-VPD-002",
-    "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+    "REF-VPD-002"
   ],
   "assessment": null,
   "content": {
@@ -42,22 +41,21 @@
         "title": "Placement can create a valid local reading that is invalid for the question",
         "body": "A sensor close to an intake, dehumidifier outlet, wet surface, lamp, wall or dense canopy may accurately measure that local microclimate but fail to represent the room or crop question. Technician I records the sensor location and compares it with the intended measurement purpose before escalating a reading.",
         "references": [
-          "REF-VPD-002",
-          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+          "REF-VPD-002"
         ]
       },
       {
         "title": "Compare evidence before changing controls",
         "body": "When one sensor disagrees with peers, compare placement, recent trends, calibration or verification status and any obvious equipment or airflow context. A single outlier does not automatically prove the room is wrong or the sensor is wrong; it identifies a condition requiring structured verification.",
         "references": [
-          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+          "REF-VPD-002"
         ]
       },
       {
         "title": "Operator care has a boundary",
         "body": "Technician I may perform explicitly permitted checks such as cleanliness inspection, connection/status review, documented comparison or simple readiness steps. Opening electrical equipment, altering protected calibration settings or repairing HVAC/control systems is outside the role unless separately authorized and trained.",
         "references": [
-          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+          "REF-VPD-002"
         ]
       }
     ],
@@ -110,7 +108,6 @@
           ]
         ],
         "references": [
-          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
           "REF-VPD-002"
         ]
       },
@@ -118,11 +115,10 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-003-003",
         "title": "Sensor placement and representativeness triage",
-        "src": "/assets/course3/sensor-representativeness-triage.svg",
+        "src": "/assets/course3/sensor-representativeness-triage.webp",
         "alt": "Room diagram comparing a canopy-zone sensor, a wall sensor and a sensor near an air outlet, followed by a six-step outlier workflow checking location, peer agreement, verification status, trends, authorized checks and escalation.",
         "caption": "A sensor may accurately describe its local microclimate without representing the crop question. Preserve placement context and verify before control changes.",
         "references": [
-          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
           "REF-VPD-002"
         ]
       },
@@ -130,7 +126,7 @@
         "type": "resource",
         "title": "Downloadable practice: PPFD grid and sensor verification",
         "body": "Use the sensor-verification section of this shared printable worksheet to practice placement review, peer comparison, verification status, trend context, operator-level checks and escalation while preserving the original outlier evidence.",
-        "href": "/assets/course3/ppfd-sensor-verification-practice.svg",
+        "href": "/assets/course3/ppfd-sensor-verification-practice.webp",
         "label": "Open PPFD and sensor-verification practice sheet",
         "extensions": {
           "assetId": "VIS-LH-TECH1-003-006",
@@ -151,7 +147,6 @@
         "answer": "Document placement, compare readings and verification status, then escalate unresolved discrepancy under procedure",
         "feedback": "The outlier may reflect location, instrument bias or a real local condition. Structured verification comes before control redesign.",
         "references": [
-          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
           "REF-VPD-002"
         ]
       }
