@@ -24,6 +24,22 @@ function attemptExpired(attempt,now=new Date().toISOString()){
   if(!attempt?.expiresAt) return false;
   return Date.parse(now)>=Date.parse(attempt.expiresAt);
 }
+function attemptPolicy(assessment,attempts=[],now=new Date().toISOString()){
+  const completed=(attempts??[]).filter((x)=>x?.status==='scored');
+  const maxAttempts=assessment.maxAttempts==null?null:Number(assessment.maxAttempts);
+  if(Number.isInteger(maxAttempts)&&maxAttempts>0&&completed.length>=maxAttempts){
+    return {allowed:false,error:'assessment-max-attempts-reached',attemptsUsed:completed.length,maxAttempts,retryAfter:null};
+  }
+  const cooldownHours=Number(assessment.cooldownHours??0);
+  if(cooldownHours>0&&completed.length){
+    const latest=Math.max(...completed.map((x)=>Date.parse(x.scoredAt??x.submittedAt??x.startedAt??'')).filter(Number.isFinite));
+    if(Number.isFinite(latest)){
+      const retryAt=latest+cooldownHours*3600000;
+      if(Date.parse(now)<retryAt) return {allowed:false,error:'assessment-cooldown-active',attemptsUsed:completed.length,maxAttempts,retryAfter:new Date(retryAt).toISOString()};
+    }
+  }
+  return {allowed:true,attemptsUsed:completed.length,maxAttempts,retryAfter:null};
+}
 function safeDeliveryItem(item,response=null){
   return {
     id:item.secureItemId,
@@ -88,10 +104,15 @@ export async function startSecureCredentialAssessment({
     },assessment:{id:assessment.id,title:assessment.title,totalItems:open.items.length,timeLimitMinutes:Number(assessment.timeLimitMinutes)},
     items:items.map((item,i)=>safeDeliveryItem(item,open.items[i]?.response??null))}};
   }
-  const [profile,applications]=await Promise.all([
+  const [profile,applications,evidence]=await Promise.all([
     learnerStore.getLearnerProfile(subject),
-    learnerStore.listApplications(subject)
+    learnerStore.listApplications(subject),
+    typeof learnerStore.listCourseEvidence==='function'
+      ? learnerStore.listCourseEvidence(subject,{assessmentId:assessment.id})
+      : Promise.resolve({assessmentAttempts:[]})
   ]);
+  const policy=attemptPolicy(assessment,evidence?.assessmentAttempts??[],now);
+  if(!policy.allowed) return {status:409,body:{error:policy.error,attemptsUsed:policy.attemptsUsed,maxAttempts:policy.maxAttempts,retryAfter:policy.retryAfter}};
   if(!profile?.learnerReference||!profile?.certificateName) return {status:409,body:{error:'credential-assessment-identity-profile-incomplete'}};
   const application=(applications??[]).find((x)=>x.programId===program.id&&x.status==='active');
   if(!application?.applicationReference) return {status:409,body:{error:'active-credential-application-required',programId:program.id}};
@@ -180,4 +201,23 @@ export async function submitSecureCredentialAssessment({learnerStore,secureAsses
   return {status:200,body:{assessment:{id:assessment.id,title:assessment.title,passingScorePercent:passing},
     attempt:{id:saved.id??attempt.id,status:'scored',submittedAt:now,scoredAt:now,scorePercent,passed:scorePercent>=passing},
     remediation:scorePercent>=passing?null:{message:'Credential assessment standard not met. Follow the approved retest and remediation policy.'}}};
+}
+
+
+export async function getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject,attemptId,assessment}={}){
+  const attempt=await learnerStore.getAssessmentAttempt(subject,{attemptId});
+  if(!attempt) return {status:404,body:{error:'assessment-attempt-not-found'}};
+  if(attempt.assessmentId!==assessment?.id) return {status:409,body:{error:'credential-assessment-mismatch'}};
+  if(attempt.status==='scored'){
+    return {status:200,body:{assessment:{id:assessment.id,title:assessment.title,passingScorePercent:Number(assessment.passingScorePercent)},
+      attempt:{id:attempt.id,status:'scored',startedAt:attempt.startedAt,expiresAt:attempt.expiresAt,submittedAt:attempt.submittedAt,scoredAt:attempt.scoredAt,scorePercent:Number(attempt.scorePercent),passed:Boolean(attempt.passed)},
+      editable:false}};
+  }
+  const items=await secureAssessmentStore.getOperationalItems({
+    assignments:(attempt.items??[]).map((x)=>({secureItemId:x.itemId,revision:x.itemVersion}))
+  });
+  return {status:200,body:{assessment:{id:assessment.id,title:assessment.title,totalItems:items.length,timeLimitMinutes:Number(assessment.timeLimitMinutes)},
+    attempt:{id:attempt.id,status:attempt.status,startedAt:attempt.startedAt,expiresAt:attempt.expiresAt,submittedAt:attempt.submittedAt,scoredAt:attempt.scoredAt},
+    expired:attemptExpired(attempt),editable:attempt.status==='started'&&!attemptExpired(attempt),
+    items:items.map((item,i)=>safeDeliveryItem(item,attempt.items[i]?.response??null))}};
 }
