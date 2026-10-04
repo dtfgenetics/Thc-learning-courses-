@@ -16,6 +16,7 @@ export async function createSecureAssessmentStore(){
     async ping(){return true;},
     async bankVersion(){return 'test-private-bank-v1';},
     async selectOperationalItems(){return [];},
+    async getOperationalItems(){return [];},
     async recordForm(){return {formId:'FORM-TEST',formRevision:'1'};},
     async recordExposure(){return {recorded:true};},
     async quarantineItem(){return null;}

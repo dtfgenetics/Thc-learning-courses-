@@ -172,6 +172,63 @@ paths:
         '200': { description: Server-scored result with competency-level feedback and no answer key }
         '401': { description: Authentication required }
         '409': { description: Attempt incomplete or not submittable }
+  /me/credentials/{credentialId}/assessment-attempts:
+    post:
+      operationId: startOrResumeSecureCredentialAssessment
+      parameters:
+        - { $ref: '#/components/parameters/CredentialId' }
+      responses:
+        '201': { description: New learner-safe private operational credential assessment form assigned }
+        '200': { description: Existing private operational credential assessment attempt resumed }
+        '401': { description: Authentication required }
+        '409': { description: Credential assessment not authorized, application/profile incomplete, cooldown active, or attempt limit reached }
+        '503': { description: Private operational assessment bank/store unavailable or insufficient }
+  /me/credentials/{credentialId}/assessment-attempts/{attemptId}:
+    get:
+      operationId: getSecureCredentialAssessmentStatus
+      parameters:
+        - { $ref: '#/components/parameters/CredentialId' }
+        - { $ref: '#/components/parameters/AttemptId' }
+      responses:
+        '200': { description: Learner-safe secure credential assessment status; never includes scoring keys or rationales }
+        '401': { description: Authentication required }
+        '404': { description: Attempt or credential not found }
+        '409': { description: Attempt does not belong to the credential assessment }
+  /me/credentials/{credentialId}/assessment-attempts/{attemptId}/responses:
+    put:
+      operationId: saveSecureCredentialAssessmentResponses
+      parameters:
+        - { $ref: '#/components/parameters/CredentialId' }
+        - { $ref: '#/components/parameters/AttemptId' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [responses]
+              properties:
+                responses:
+                  type: array
+                  minItems: 1
+                  items: { $ref: '#/components/schemas/AssessmentResponse' }
+      responses:
+        '200': { description: Private operational assessment responses persisted }
+        '400': { description: Invalid response payload }
+        '401': { description: Authentication required }
+        '409': { description: Attempt is no longer editable or timed out }
+  /me/credentials/{credentialId}/assessment-attempts/{attemptId}/submit:
+    post:
+      operationId: submitSecureCredentialAssessment
+      parameters:
+        - { $ref: '#/components/parameters/CredentialId' }
+        - { $ref: '#/components/parameters/AttemptId' }
+      responses:
+        '200': { description: Server-scored aggregate credential assessment result with no answer material }
+        '401': { description: Authentication required }
+        '409': { description: Attempt incomplete, mismatched, or not submittable }
+
   /me/credentials:
     get:
       operationId: listIssuedLearnerCredentials

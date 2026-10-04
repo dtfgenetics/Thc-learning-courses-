@@ -56,6 +56,7 @@ const store=validateSecureAssessmentStore({
   async ping(){return true;},
   async bankVersion(){return 'private-bank-v1';},
   async selectOperationalItems(input){calls.push(['select',input]);return [];},
+  async getOperationalItems(input){calls.push(['get',input]);return [];},
   async recordForm(input){calls.push(['form',input]);},
   async recordExposure(input){calls.push(['exposure',input]);},
   async quarantineItem(input){calls.push(['quarantine',input]);}
@@ -70,6 +71,7 @@ const methodCompleteStore={
   async ping(){return true;},
   async bankVersion(){return 'v1';},
   async selectOperationalItems(){return [];},
+  async getOperationalItems(){return [];},
   async recordForm(){},
   async recordExposure(){},
   async quarantineItem(){}
@@ -100,13 +102,13 @@ const postgresStore=createPostgresSecureAssessmentStore({
     const sql=String(text);
     sqlCalls.push({sql,params});
     if(sql.includes('select 1 as ok')) return {rows:[{ok:1}]};
-    if(sql.includes('from secure_assessment_banks')) return {rows:[{bank_version:'BANK-TECH1-OP-001'}]};
-    if(sql.includes('from secure_assessment_items')) return {rows:[{
+    if(sql.includes('join secure_assessment_items')||sql.includes('from secure_assessment_items')) return {rows:[{
       secure_item_id:'SECITEM-SAFETY-101',revision:1,bank_version:'BANK-TECH1-OP-001',
       competency_id:'COMP-SAFETY-WORK-001',status:'approved-operational',source_class:'private-operational',
       prompt:'Private operational prompt',choices_json:['A','B','C','D'],scoring_key_json:2,
       rationale:'private',presentation_json:{mode:'single-select'}
     }]};
+    if(sql.includes('from secure_assessment_banks')) return {rows:[{bank_version:'BANK-TECH1-OP-001'}]};
     if(sql.includes('insert into secure_assessment_forms')) return {rowCount:1,rows:[]};
     if(sql.includes('insert into secure_assessment_exposures')) return {rowCount:1,rows:[]};
     if(sql.includes('update secure_assessment_items')) return {rows:[{secure_item_id:'SECITEM-SAFETY-101',revision:1,status:'quarantined'}]};
@@ -124,6 +126,9 @@ const privateItems=await postgresStore.selectOperationalItems({
 assert.equal(privateItems.length,1);
 assert.equal(privateItems[0].secureItemId,'SECITEM-SAFETY-101');
 assert.equal(privateItems[0].scoringKey,2);
+const exactPrivateItems=await postgresStore.getOperationalItems({assignments:[{secureItemId:'SECITEM-SAFETY-101',revision:1}]});
+assert.equal(exactPrivateItems.length,1);
+assert.equal(exactPrivateItems[0].secureItemId,'SECITEM-SAFETY-101');
 await postgresStore.recordForm({privateManifest:{
   formId:'FORM-TECH1-OP-A',formRevision:'1',credentialProgramId:'CREDPROG-CULT-TECH-I-001',
   blueprintVersion:'1.0.0',itemAssignments:[{position:1,secureItemId:'SECITEM-SAFETY-101',revision:'1',competency:'COMP-SAFETY-WORK-001'}]
