@@ -10,6 +10,7 @@ import { createServiceTokenAuthorizer, serviceTokensFromEnvironment } from './se
 import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { startOrResumeCourseAssessment, getCourseAssessmentAttemptStatus, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
+import { startSecureCredentialAssessment, getSecureCredentialAssessmentStatus, saveSecureCredentialAssessmentResponses, submitSecureCredentialAssessment } from './secure-credential-assessment-service.mjs';
 import { loadCourseAcademicCompletionBundle, evaluateCourseAcademicCompletion } from './course-enrollment-completion-service.mjs';
 import {
   getCoursePracticalEvaluation,
@@ -344,6 +345,7 @@ export function createHandler({
   credentialStore = null,
   credentialWriter = null,
   credentialSigner = null,
+  secureAssessmentStore = null,
   learnerStore = null,
   practicalEvaluatorStore = null,
   env = process.env,
@@ -622,6 +624,80 @@ export function createHandler({
         catch (error) { return json(res, 400, { error: error.message, requestId }); }
         const saved = await learnerStore.savePracticalSubmission(auth.subject, { ...key, submission });
         return json(res, 200, learnerPracticalSubmissionView(practical, saved));
+      }
+
+      const credentialAssessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts$/);
+      if (req.method === 'POST' && credentialAssessmentStartMatch) {
+        route = 'POST /api/v1/me/credentials/:credentialId/assessment-attempts';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore) return json(res, 503, { error: 'secure-assessment-store-unavailable', requestId });
+        if (!learnerStore || ['findOpenAssessmentAttempt','getLearnerProfile','listApplications','listCourseEvidence','createAssessmentAttempt'].some((method) => typeof learnerStore[method] !== 'function')) {
+          return json(res, 503, { error: 'learner-assessment-persistence-unavailable', requestId });
+        }
+        const credential = loadCredentialDefinition(credentialAssessmentStartMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        if (!program) return json(res, 409, { error: 'credential-program-not-found', requestId });
+        const assessment = loadAssessmentDefinition(program.assessmentModel?.credentialAssessment);
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await startSecureCredentialAssessment({ learnerStore, secureAssessmentStore, subject: auth.subject, credential, program, assessment });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialAssessmentStatusMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts\/([0-9a-fA-F-]{36})$/);
+      if (req.method === 'GET' && credentialAssessmentStatusMatch) {
+        route = 'GET /api/v1/me/credentials/:credentialId/assessment-attempts/:attemptId';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:read', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore || !learnerStore || typeof learnerStore.getAssessmentAttempt !== 'function') {
+          return json(res, 503, { error: 'secure-credential-assessment-unavailable', requestId });
+        }
+        const credential = loadCredentialDefinition(credentialAssessmentStatusMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        const assessment = program ? loadAssessmentDefinition(program.assessmentModel?.credentialAssessment) : null;
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await getSecureCredentialAssessmentStatus({ learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentStatusMatch[2], assessment });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialAssessmentResponsesMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts\/([0-9a-fA-F-]{36})\/responses$/);
+      if (req.method === 'PUT' && credentialAssessmentResponsesMatch) {
+        route = 'PUT /api/v1/me/credentials/:credentialId/assessment-attempts/:attemptId/responses';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore || !learnerStore || ['getAssessmentAttempt','saveAssessmentResponses'].some((method)=>typeof learnerStore[method]!=='function')) {
+          return json(res, 503, { error: 'secure-credential-assessment-unavailable', requestId });
+        }
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 32 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const credential = loadCredentialDefinition(credentialAssessmentResponsesMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const result = await saveSecureCredentialAssessmentResponses({
+          learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentResponsesMatch[2], responses: body.responses
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const credentialAssessmentSubmitMatch = url.pathname.match(/^\/api\/v1\/me\/credentials\/(CRED-[A-Z0-9-]+)\/assessment-attempts\/([0-9a-fA-F-]{36})\/submit$/);
+      if (req.method === 'POST' && credentialAssessmentSubmitMatch) {
+        route = 'POST /api/v1/me/credentials/:credentialId/assessment-attempts/:attemptId/submit';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'learner:write', res, requestId);
+        if (!auth) return;
+        if (!secureAssessmentStore || !learnerStore || ['getAssessmentAttempt','saveAssessmentScore'].some((method)=>typeof learnerStore[method]!=='function')) {
+          return json(res, 503, { error: 'secure-credential-assessment-unavailable', requestId });
+        }
+        const credential = loadCredentialDefinition(credentialAssessmentSubmitMatch[1]);
+        if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        const assessment = program ? loadAssessmentDefinition(program.assessmentModel?.credentialAssessment) : null;
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
+        const result = await submitSecureCredentialAssessment({
+          learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentSubmitMatch[2], assessment
+        });
+        return json(res, result.status, { ...result.body, requestId });
       }
 
       const courseAssessmentStartMatch = url.pathname.match(/^\/api\/v1\/me\/courses\/(COURSE-[A-Z0-9-]+)\/assessment-attempts$/);
