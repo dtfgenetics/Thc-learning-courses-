@@ -80,7 +80,8 @@ async function loadJwks(env) {
   if (parsedUrl.protocol !== 'https:') throw new Error('THC_AUTH_JWKS_URL must use https');
 
   const response = await fetch(parsedUrl, {
-    headers: { accept: 'application/json', 'user-agent': 'thc-academy-auth-bootstrap/1.0' }
+    headers: { accept: 'application/json', 'user-agent': 'thc-academy-auth-bootstrap/1.0' },
+    signal: AbortSignal.timeout(10_000)
   });
   if (!response.ok) throw new Error(`Unable to load OIDC JWKS: HTTP ${response.status}`);
   return response.json();
@@ -105,6 +106,11 @@ function buildKeyMap(jwks) {
 
 export async function createRequestAuthorizer({ env = process.env } = {}) {
   const issuer = required(env, 'THC_AUTH_ISSUER').replace(/\/$/, '');
+  let issuerUrl;
+  try { issuerUrl = new URL(issuer); }
+  catch { throw new Error('THC_AUTH_ISSUER must be a valid URL'); }
+  if (issuerUrl.protocol !== 'https:') throw new Error('THC_AUTH_ISSUER must use https');
+
   const audience = String(env.THC_AUTH_AUDIENCE ?? '').trim();
   const clockSkewSeconds = Number(env.THC_AUTH_CLOCK_SKEW_SECONDS ?? 60);
   if (!Number.isFinite(clockSkewSeconds) || clockSkewSeconds < 0 || clockSkewSeconds > 300) {
@@ -116,6 +122,7 @@ export async function createRequestAuthorizer({ env = process.env } = {}) {
   return function authorize(req, requiredScope) {
     const token = bearerToken(req);
     if (!token) return { ok: false, status: 401, error: 'authentication-required' };
+    if (token.length > 16_384) return { ok: false, status: 401, error: 'invalid-access-token' };
 
     const parts = token.split('.');
     if (parts.length !== 3) return { ok: false, status: 401, error: 'invalid-access-token' };
