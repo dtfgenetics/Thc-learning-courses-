@@ -82,5 +82,9 @@ await assert.rejects(
   executeSecureAssessmentOperator({args:['unknown'],env,store}),
   /unknown secure assessment operator command/
 );
+await assert.rejects(
+  executeSecureAssessmentOperator({args:['add-item','--bank=BANK-1','--input=package.json'],env,store}),
+  /outside the public repository tree/
+);
 
 console.log('Secure assessment operator CLI contract: PASS');
