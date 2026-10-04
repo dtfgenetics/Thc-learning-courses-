@@ -1,8 +1,8 @@
 {
   "id": "LESSON-LH-TECH1-004-02",
   "title": "Root-Zone Moisture, Dryback and EC Trend Context",
-  "version": "1.1.1",
-  "status": "draft",
+  "version": "1.2.0",
+  "status": "published",
   "competencies": [
     "COMP-ROOTZONE-001",
     "COMP-WATER-001",
@@ -16,11 +16,11 @@
   "references": [
     "REF-IRRIGATION-001",
     "REF-NUTRITION-001",
-    "REF-ROOTZONE-NUTRIENT-002"
+    "REF-VPD-003"
   ],
   "assessment": null,
   "content": {
-    "overview": "Root-zone behavior changes over time. Learners practice describing saturation, drainage, moisture loss, dryback and EC trends using repeated observations rather than elapsed hours or one spot reading. The course keeps interpretation at Technician I scope: document what the root zone is doing, connect it with crop and environmental context, and escalate when evidence suggests a meaningful deviation without prescribing an advanced crop-steering or nutrient strategy.",
+    "overview": "Root-zone behavior changes over time and is coupled to the rest of the soil–plant–atmosphere continuum. Learners practice describing saturation, drainage, moisture loss, dryback and EC trends using repeated comparable observations rather than elapsed hours or one spot reading. The course keeps interpretation at Technician I scope: document what the root zone is doing, relate water supply to crop demand and environmental demand, and escalate meaningful deviations without prescribing an advanced crop-steering, nutrient or irrigation strategy.",
     "vocabulary": [
       {
         "term": "dryback",
@@ -66,7 +66,29 @@
         "body": "Deficiency-like or excess-like plant symptoms can overlap with pH, EC, water status, root health and developmental effects. Root-zone and plant observations should be combined before a qualified person assigns cause. Technician I does not solve every nutrition case by increasing or decreasing fertilizer concentration.",
         "references": [
           "REF-NUTRITION-001",
-          "REF-ROOTZONE-NUTRIENT-002",
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Root-zone supply and atmospheric demand are coupled",
+        "body": "Water loss from leaves creates hydraulic demand that must be supplied through the soil or substrate, roots and xylem. Higher atmospheric drying demand can increase the pull on this pathway, while a drying root zone can reduce hydraulic supply. A technician therefore interprets moisture and EC trends alongside canopy and environmental context rather than treating the root zone as an isolated reservoir.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-VPD-003"
+        ]
+      },
+      {
+        "title": "Persistent saturation changes more than water content",
+        "body": "When pore space remains water-filled, oxygen diffusion to roots can become restricted relative to a well-aerated root zone. That can affect root function and change the meaning of crop symptoms, but saturation alone does not prove root disease. Record duration, extent, drainage behavior, crop response and comparable zones before escalation.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "EC is a bulk conductivity measurement, not an ion-specific diagnosis",
+        "body": "Electrical conductivity summarizes the ability of a solution to carry current and is influenced by the total dissolved ionic environment and the sampling method. It does not identify which individual nutrient ion is high or low. Comparable EC trends are useful operational evidence, but ion-specific conclusions require additional information or analysis.",
+        "references": [
+          "REF-NUTRITION-001",
           "REF-IRRIGATION-001"
         ]
       }
@@ -79,10 +101,13 @@
       "Defining dryback only by hours since irrigation.",
       "Treating one runoff or root-zone reading as a complete diagnosis.",
       "Assuming the same irrigation frequency is correct for the entire crop lifecycle.",
-      "Adding more fertilizer because leaves look deficient even though root-zone EC is already elevated."
+      "Adding more fertilizer because leaves look deficient even though root-zone EC is already elevated.",
+      "Treating EC as though it directly identifies a specific nutrient ion.",
+      "Interpreting root-zone moisture without considering atmospheric demand, canopy size and other drivers of plant water use.",
+      "Calling persistent saturation a confirmed root disease instead of documenting it as an important condition requiring further evaluation."
     ],
     "practicalApplication": "Use the downloadable irrigation/root-zone verification worksheet with a simulated seven-day log containing irrigation times, comparable moisture observations, EC results and crop notes. Identify the meaningful trend, separate measurement evidence from possible explanations, record symptom/stage context where provided, and write an escalation note without prescribing a strategy outside Technician I authority.",
-    "summary": "Root-zone work is trend work. Repeated moisture and EC observations, consistent methods and crop context reveal whether the root zone is changing. Technician I preserves that evidence and avoids converting one reading or leaf pattern into an unsupported diagnosis.",
+    "summary": "Root-zone interpretation is a time-series and whole-plant problem. Repeated moisture and EC observations, consistent sampling, drainage behavior and crop/environment context show whether water supply and demand are changing; Technician I preserves that evidence, recognizes that EC is not ion-specific, and avoids converting one reading or symptom into an unsupported diagnosis.",
     "blocks": [
       {
         "type": "table",
@@ -123,7 +148,7 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-004-002",
         "title": "Root-zone moisture and dryback as a trend",
-        "src": "/assets/course4/root-zone-dryback-trend.svg",
+        "src": "/assets/course4/root-zone-dryback-trend.webp",
         "alt": "Conceptual repeated root-zone moisture curve showing irrigation, drainage and dryback over time, contrasted with a single isolated reading and paired with comparable EC, crop, media and environment context.",
         "caption": "Dryback is a measured trajectory. Compare repeated observations made with a consistent method rather than applying a universal time or moisture target.",
         "references": [
@@ -135,7 +160,7 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-004-003",
         "title": "Nutrition-context differential",
-        "src": "/assets/course4/nutrition-context-differential.svg",
+        "src": "/assets/course4/nutrition-context-differential.webp",
         "alt": "A central plant symptom observation surrounded by developmental stage, symptom pattern, pH and sample method, EC and method, root-zone condition, irrigation history and environmental context before bounded interpretation and escalation.",
         "caption": "A visible symptom is evidence, not a diagnosis. Combine stage, pH/EC method, root-zone, irrigation and environmental context before assigning cause.",
         "references": [
@@ -147,7 +172,7 @@
         "type": "resource",
         "title": "Downloadable practice: irrigation and root-zone verification",
         "body": "Use this printable worksheet to practice representative delivery checks, repeated root-zone trend description, bounded nutrition-context reasoning, deviation handling and handoff without inventing universal targets or unsupported causes.",
-        "href": "/assets/course4/irrigation-verification-practice.svg",
+        "href": "/assets/course4/irrigation-verification-practice.webp",
         "label": "Open irrigation / root-zone verification practice sheet",
         "extensions": {
           "assetId": "VIS-LH-TECH1-004-007",
