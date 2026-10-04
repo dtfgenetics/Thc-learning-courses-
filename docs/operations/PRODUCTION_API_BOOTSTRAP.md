@@ -11,6 +11,10 @@ Set all of the following before starting `apps/api/src/server.mjs` with `NODE_EN
 - `THC_AUTH_ADAPTER_MODULE` — module that exports `createRequestAuthorizer({ env })` for the deployed identity provider.
 - `THC_PUBLIC_BASE_URL` — externally reachable HTTPS base URL for the Academy/API environment.
 - `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `7`.
+- `THC_SECURE_ASSESSMENT_STORE_MODULE` — separate deployment module exporting `createSecureAssessmentStore({ env })`; the repository PostgreSQL provider is `./apps/api/src/postgres-secure-assessment-store.mjs`.
+- `THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE` — when using that provider, a separate pool module/credentials for the isolated secure-assessment database.
+- `THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON` — deployment declaration of the required least-privilege/audit/encryption/backup/key-separation/environment/public-repo-exclusion controls. This declaration is validated by bootstrap but is not itself human security approval evidence.
+- `THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY` — secret key used to HMAC candidate references in secure assessment exposure audit records; store only in the deployment secret manager.
 
 The bootstrap rejects missing configuration, non-HTTPS public URLs, adapter modules without the required factories, persistence stores without readiness/schema/lookup functions, incomplete credential-writer implementations, and authentication adapters that do not return an authorizer function. Credential issuance additionally remains unavailable until a managed signer module is configured through `THC_CREDENTIAL_SIGNER_MODULE`.
 
@@ -81,7 +85,7 @@ The application deliberately does not prescribe a specific identity vendor. A de
 2. Apply `database/schema.sql` through the controlled migration process.
 3. Verify `academy_schema_migrations` contains version `7`.
 4. Verify the `practical_evaluation_assignments` table and its evaluator index exist.
-5. Configure the deployment-specific persistence adapter and database secrets, including the enrollment-completion store.
+5. Configure the deployment-specific persistence adapter and database secrets, including the enrollment-completion store. Configure the secure operational assessment store as a separate provider/database boundary with separate credentials, controls and HMAC key.
 6. Configure the identity-provider authentication adapter and provider secrets/keys through the deployment secret manager.
 7. Set `THC_REQUIRED_SCHEMA_VERSION=7` and the HTTPS public base URL.
 8. Start the API with `NODE_ENV=production`.

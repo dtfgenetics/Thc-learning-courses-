@@ -42,3 +42,25 @@ This implementation supplies the construction/security interface needed to build
 ## Release boundary
 
 The credential release gates `secureOperationalItemBank`, `secureAssessmentStore` and `equivalentSecureForms` remain unresolved until a real private bank/store is populated, reviewed, pilot-supported where required, security/privacy approved and exercised in the deployed environment.
+
+
+## PostgreSQL first-party provider
+
+The repository now includes `apps/api/src/postgres-secure-assessment-store.mjs` and an isolated `database/secure-assessment-schema.sql` for:
+
+- private operational bank/version metadata;
+- `SECITEM-*` operational item revisions and private scoring material;
+- private form manifests;
+- HMAC-pseudonymized candidate exposure audit records;
+- item quarantine state.
+
+No operational item content is seeded from Git. The production database must be populated through an approved private authoring/review process.
+
+Production bootstrap requires a valid separate `secureAssessmentStore`. When using the repository PostgreSQL provider, configure:
+
+- `THC_SECURE_ASSESSMENT_STORE_MODULE=./apps/api/src/postgres-secure-assessment-store.mjs`;
+- `THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE` with a separate pool/credential set from the learner/runtime database;
+- `THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON` with the security-control declaration required by the adapter contract;
+- `THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY` with a secret-manager value used only to pseudonymize candidate exposure references.
+
+Bootstrap validation proves only that the application boundary is configured and fail-closed. It does not substitute for independent security review, access-control testing, backup/restore evidence, human assessment review, pilot evidence, standard setting, or final credential authorization.

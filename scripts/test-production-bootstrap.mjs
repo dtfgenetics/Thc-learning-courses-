@@ -13,7 +13,7 @@ for (const env of [
   { NODE_ENV: 'production' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '3' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com' }
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '7' }
 ]) assert.throws(() => validateProductionEnvironment(env));
 
 const productionEnv = {
@@ -21,7 +21,8 @@ const productionEnv = {
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_REQUIRED_SCHEMA_VERSION: '7'
+  THC_REQUIRED_SCHEMA_VERSION: '7',
+  THC_SECURE_ASSESSMENT_STORE_MODULE: './scripts/fixtures/test-secure-assessment-store-adapter.mjs'
 };
 const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
@@ -44,6 +45,9 @@ for (const method of ['listCourseLearners', 'listCourseReportRows', 'getEvaluati
   assert.equal(typeof options.practicalEvaluatorStore[method], 'function', `production practical evaluator store must provide ${method}()`);
 }
 assert.equal(options.enrollmentCompletionStore.kind, 'test-enrollment-completion');
+assert.equal(options.secureAssessmentStore.kind, 'private-operational-assessment-store');
+assert.equal(await options.secureAssessmentStore.ping(), true);
+assert.equal(await options.secureAssessmentStore.bankVersion(), 'test-private-bank-v1');
 for (const method of ['setEnrollmentAcademicStatus', 'listEnrollmentAcademicHistory']) {
   assert.equal(typeof options.enrollmentCompletionStore[method], 'function', `production enrollment completion store must provide ${method}()`);
 }
