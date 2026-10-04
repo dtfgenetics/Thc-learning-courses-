@@ -1,0 +1,22 @@
+FROM node:24-bookworm-slim
+
+WORKDIR /app
+ENV NODE_ENV=production
+ENV THC_SERVICE=combined
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --ignore-scripts --no-audit --no-fund \
+    && npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund pg@8.23.1
+
+COPY apps ./apps
+COPY content ./content
+COPY packages ./packages
+COPY registry ./registry
+COPY database ./database
+COPY deploy ./deploy
+COPY scripts/start-production-service.mjs ./scripts/start-production-service.mjs
+
+USER node
+EXPOSE 8787
+
+CMD ["node", "scripts/start-production-service.mjs"]
