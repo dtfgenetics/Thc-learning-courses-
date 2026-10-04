@@ -1,4 +1,6 @@
 import crypto from 'node:crypto';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 function required(value,name){
   const text=String(value??'').trim();
@@ -112,7 +114,7 @@ export function createPostgresSecureAssessmentStore({query,securityControls,audi
 
 export async function createSecureAssessmentStore({env=process.env}={}){
   const modulePath=required(env.THC_POSTGRES_POOL_MODULE,'THC_POSTGRES_POOL_MODULE');
-  const provider=await import(modulePath.startsWith('.')||modulePath.startsWith('/')?new URL(modulePath,`file://${process.cwd()}/`).href:modulePath);
+  const provider=await import(modulePath.startsWith('.')||modulePath.startsWith('/')?pathToFileURL(path.resolve(process.cwd(),modulePath)).href:modulePath);
   if(typeof provider.createPostgresPool!=='function') throw new Error('THC_POSTGRES_POOL_MODULE must export createPostgresPool({ env })');
   const pool=await provider.createPostgresPool({env});
   if(!pool||typeof pool.query!=='function') throw new Error('PostgreSQL pool must provide query(text, params)');
