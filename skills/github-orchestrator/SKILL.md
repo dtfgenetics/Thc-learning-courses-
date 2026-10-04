@@ -7,17 +7,20 @@ Use this skill for repository health, branches, pull requests, merges, conflicts
 
 ## Repository lifecycle
 
-Ordinary work follows:
+The current concurrent-work model follows:
 
-`content/* | feat/* | fix/* | chore/* -> dev -> staging -> main -> explicit production release`
+`current validated main -> work/academy/<task>/<session-id> -> PR to main -> explicit production release`
 
 Rules:
-- `dev` is the ordinary integration branch.
-- `staging` is for integrated release candidates.
-- `main` receives staging-approved promotion only.
-- production publication is a separate explicit operation.
-- do not open ordinary feature/content/fix/chore PRs directly to `main`.
-- do not create `-v2`, `-v3`, `-temp`, `-work`, or replacement branches merely because a branch is stale or conflicted.
+- create each new concurrent task branch from the current validated `main` commit;
+- keep one coherent session/task per branch and PR;
+- ordinary current work targets `main` while `dev` and `staging` remain legacy/quarantined;
+- do not base new work on `dev` or `staging`, and do not promote those branches wholesale;
+- selectively harvest unique useful legacy work onto a fresh `main`-based branch after comparison;
+- production publication is always a separate explicit operation;
+- do not create `-v2`, `-v3`, `-temp`, or replacement branches merely because a branch is stale or conflicted.
+
+If a future integration-branch model is deliberately restored, update `AGENTS.md`, this skill, post-push cleanup, CI routing, and repository governance together in one reconciled change.
 
 ## Mission completion standard
 
@@ -89,7 +92,7 @@ Use every available GitHub capability that helps converge the repository. Typica
 - update CI workflow configuration;
 - repair generated-file drift;
 - maintain agent/skill documentation;
-- create promotion PRs `dev -> staging -> main`.
+- create focused current-work PRs from fresh `main`-based session branches, plus explicit reconciliation PRs when selectively harvesting legacy branch work.
 
 ### Admin-limited work
 If rulesets, branch protection, repository settings, environment secrets, Actions permissions, deployment environments, webhooks, or other administrative controls cannot be changed through available tooling, inspect and document the precise needed setting. Continue all non-blocked work instead of stopping the project.
@@ -109,13 +112,13 @@ Every branch gets one status:
 - **DELETE-CANDIDATE** — merged/superseded/empty/abandoned and no unique needed changes.
 - **QUARANTINE** — potentially dangerous, unknown, secret-bearing, or production-affecting branch needing careful review.
 
-Never classify only from commit counts or branch names. Compare actual content against `dev` and relevant merged work.
+Never classify only from commit counts or branch names. Compare actual content against current `main` and relevant merged work. Treat `dev` and `staging` as legacy inputs unless a separate reconciliation change explicitly restores them.
 
 ## Pull-request operating procedure
 
 For every open PR:
 
-1. verify correct base (`dev`, `staging`, or `main`);
+1. verify the base matches the current repository contract: ordinary current work -> `main`; legacy `dev`/`staging` work -> quarantine/selective harvest; explicit release work -> the documented release path;
 2. inspect changed filenames and diff scope;
 3. verify the head is the canonical branch for the task;
 4. inspect mergeability;
@@ -188,7 +191,7 @@ Do not repeatedly rerun deterministic failures without changing the cause.
 
 ## Workflow architecture rules
 
-- CI must cover `dev`, `staging`, and `main` appropriately.
+- CI must protect current `main`-based session PRs and `main`; legacy `dev`/`staging` workflows may remain for history or reconciliation but must not imply those branches are active trunks.
 - production release workflows remain stricter than ordinary validation.
 - avoid workflows that write the same generated file concurrently.
 - generated artifacts should have one clear source of truth.
@@ -212,25 +215,25 @@ For registries, manifests, indexes, lockfiles, generated docs, or similar files:
 
 ## Branch governance and rulesets
 
-The desired server-enforced model is:
-
-### `dev`
-- ordinary PR target;
-- require quality checks before merge;
-- block force pushes/deletion;
-- prefer PR-based changes.
-
-### `staging`
-- accept integrated promotion from `dev`;
-- require quality/staging checks;
-- block direct ordinary feature work;
-- block force pushes/deletion.
+The current desired server-enforced model is:
 
 ### `main`
-- accept promotion from `staging` only by policy;
-- require production-relevant checks/review where practical;
-- block force pushes/deletion;
-- keep release publication separate.
+- require PR-based changes for ordinary work;
+- require the repository quality checks before merge;
+- block force pushes and deletion;
+- keep production publication separate from merge status.
+
+### Session branches
+- branch from the current validated `main`;
+- keep one coherent task/session per branch;
+- merge through a reviewed/validated PR;
+- treat the branch as landed/dead after merge.
+
+### Legacy `dev` and `staging`
+- do not use as ordinary bases or targets while they remain behind/quarantined;
+- block accidental force-push/deletion where practical;
+- compare and selectively harvest unique useful work onto fresh `main`-based branches;
+- never treat branch age, ahead/behind counts, or historical promotion intent as proof that they should be merged wholesale.
 
 If GitHub rulesets/branch protections are absent or cannot be changed with available tools, record this as a governance blocker and continue enforcing the lifecycle operationally through PR routing and CI.
 
@@ -259,32 +262,23 @@ When review feedback exists:
 
 ## Promotion rules
 
-### Ordinary integration
-`feature/content/fix/chore -> dev`
+### Ordinary current integration
+`current main -> work/academy/<task>/<session-id> -> PR to main`
 
 Require:
+- branch created from a current validated `main` base;
 - coherent scope;
 - mergeable state;
 - current required CI green;
 - no unresolved security/privacy/release concern.
 
-### Release candidate
-`dev -> staging`
+### Legacy branch reconciliation
+`dev/staging/other stale branch -> compare against main -> selective harvest onto fresh main-based branch`
 
 Require:
-- green `dev`;
-- understood integration batch;
-- staging validation/smoke plan;
-- no known blocking regression.
-
-### Main promotion
-`staging -> main`
-
-Require:
-- staging acceptance for promoted scope;
-- green checks;
-- release/deployment effect understood;
-- no ordinary feature work sneaked directly into promotion.
+- proof that the harvested work is unique and still desired;
+- no wholesale promotion of stale branch history;
+- current checks on the harvested result.
 
 ### Production release
 `main -> explicit release workflow/tag/artifact`
@@ -317,7 +311,7 @@ After release/deploy:
 Procedure:
 
 1. group by topic/naming family;
-2. compare each branch to `dev` and related merged PRs;
+2. compare each branch to current `main` and related merged PRs;
 3. detect squash-landed equivalents;
 4. preserve unique useful work;
 5. close superseded PRs with explanation;
@@ -406,10 +400,10 @@ Before reporting a major maintenance task complete, re-check:
 ## Healthy repository definition
 
 Healthy means:
-- ordinary PRs target `dev`;
-- `dev` is green and is the active integration trunk;
-- `staging` contains release candidates only;
-- `main` contains approved promotions;
+- ordinary current work branches from validated `main` and PRs target `main`;
+- `dev` and `staging` are not used as active trunks while quarantined/behind;
+- any useful legacy work is selectively harvested rather than wholesale-promoted;
+- `main` stays green and is the current source of truth;
 - release/deploy is explicit and traceable;
 - open PRs are mergeable or have documented repair plans;
 - failed workflows have known causes/actions;
