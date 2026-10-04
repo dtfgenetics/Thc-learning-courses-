@@ -1,0 +1,36 @@
+services:
+  academy:
+    build:
+      context: https://github.com/dtfgenetics/Thc-learning-courses-.git#${ACADEMY_SOURCE_REF:?set ACADEMY_SOURCE_REF to an exact validated commit SHA}
+      dockerfile: deploy/Dockerfile.production
+    restart: unless-stopped
+    ports:
+      - "${ACADEMY_HOST_PORT:-8787}:8787"
+    environment:
+      NODE_ENV: production
+      THC_SERVICE: combined
+      PORT: 8787
+      THC_PUBLIC_BASE_URL: ${THC_PUBLIC_BASE_URL:?set THC_PUBLIC_BASE_URL}
+      THC_REQUIRED_SCHEMA_VERSION: "7"
+      THC_PERSISTENCE_ADAPTER_MODULE: ./apps/api/src/postgres-production-adapter.mjs
+      THC_POSTGRES_POOL_MODULE: ./deploy/postgres-pool-provider.mjs
+      THC_POSTGRES_DATABASE_URL: ${THC_POSTGRES_DATABASE_URL:?set THC_POSTGRES_DATABASE_URL}
+      THC_AUTH_ADAPTER_MODULE: ./deploy/oidc-jwt-auth-adapter.mjs
+      THC_AUTH_ISSUER: ${THC_AUTH_ISSUER:?set THC_AUTH_ISSUER}
+      THC_AUTH_AUDIENCE: ${THC_AUTH_AUDIENCE:-}
+      THC_AUTH_JWKS_URL: ${THC_AUTH_JWKS_URL:?set THC_AUTH_JWKS_URL}
+      THC_SECURE_ASSESSMENT_STORE_MODULE: ./apps/api/src/postgres-secure-assessment-store.mjs
+      THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE: ./deploy/secure-postgres-pool-provider.mjs
+      THC_SECURE_ASSESSMENT_DATABASE_URL: ${THC_SECURE_ASSESSMENT_DATABASE_URL:?set THC_SECURE_ASSESSMENT_DATABASE_URL}
+      THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON: ${THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON:?set THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON}
+      THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY: ${THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY:?set THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY}
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:8787/readyz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
