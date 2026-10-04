@@ -11,6 +11,7 @@ import { isPersistenceUnavailableError } from './persistence-errors.mjs';
 import { loadProductionApiOptions } from './bootstrap.mjs';
 import { startOrResumeCourseAssessment, getCourseAssessmentAttemptStatus, saveCourseAssessmentResponses, submitCourseAssessment } from './course-assessment-service.mjs';
 import { startSecureCredentialAssessment, getSecureCredentialAssessmentStatus, saveSecureCredentialAssessmentResponses, submitSecureCredentialAssessment } from './secure-credential-assessment-service.mjs';
+import { createSecureAssessmentBank, createSecureAssessmentItem, transitionSecureAssessmentItem, getSecureAssessmentBankSummary, activateSecureAssessmentBank } from './secure-assessment-bank-admin-service.mjs';
 import { loadCourseAcademicCompletionBundle, evaluateCourseAcademicCompletion } from './course-enrollment-completion-service.mjs';
 import {
   getCoursePracticalEvaluation,
@@ -803,6 +804,69 @@ export function createHandler({
         if (!/^\d+(?:\.\d+){0,3}$/.test(lessonVersion) || !['not-started', 'in-progress', 'completed'].includes(status)) return json(res, 400, { error: 'invalid-lesson-progress', requestId });
         const progress = await learnerStore.setLessonProgress(auth.subject, { lessonId: lessonProgressMatch[1], lessonVersion, status });
         return json(res, 200, { progress });
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/admin/secure-assessment/banks') {
+        route = 'POST /api/v1/admin/secure-assessment/banks';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 32 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await createSecureAssessmentBank({ store: secureAssessmentStore, actorId: auth.subject, input: body });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureBankMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/banks\/([A-Za-z0-9._-]+)$/);
+      if (req.method === 'GET' && adminSecureBankMatch) {
+        route = 'GET /api/v1/admin/secure-assessment/banks/:bankVersion';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:read', res, requestId);
+        if (!auth) return;
+        const result = await getSecureAssessmentBankSummary({ store: secureAssessmentStore, bankVersion: adminSecureBankMatch[1] });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureBankItemsMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/banks\/([A-Za-z0-9._-]+)\/items$/);
+      if (req.method === 'POST' && adminSecureBankItemsMatch) {
+        route = 'POST /api/v1/admin/secure-assessment/banks/:bankVersion/items';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 64 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await createSecureAssessmentItem({
+          store: secureAssessmentStore, actorId: auth.subject, bankVersion: adminSecureBankItemsMatch[1], input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureItemTransitionMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/items\/(SECITEM-[A-Z0-9-]+)\/(\d+)\/transition$/i);
+      if (req.method === 'POST' && adminSecureItemTransitionMatch) {
+        route = 'POST /api/v1/admin/secure-assessment/items/:secureItemId/:revision/transition';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 16 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await transitionSecureAssessmentItem({
+          store: secureAssessmentStore, actorId: auth.subject,
+          secureItemId: adminSecureItemTransitionMatch[1], revision:Number(adminSecureItemTransitionMatch[2]), input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
+      }
+
+      const adminSecureBankActivateMatch = url.pathname.match(/^\/api\/v1\/admin\/secure-assessment\/banks\/([A-Za-z0-9._-]+)\/activate$/);
+      if (req.method === 'POST' && adminSecureBankActivateMatch) {
+        route = 'POST /api/v1/admin/secure-assessment/banks/:bankVersion/activate';
+        const auth = authorizeRequest(resolvedAuthorize, req, 'admin:write', res, requestId);
+        if (!auth) return;
+        let body;
+        try { body = await readJsonBody(req, { maxBytes: 16 * 1024 }); }
+        catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
+        const result = await activateSecureAssessmentBank({
+          store: secureAssessmentStore, actorId: auth.subject, bankVersion: adminSecureBankActivateMatch[1], input: body
+        });
+        return json(res, result.status, { ...result.body, requestId });
       }
 
       const credentialIssueMatch = url.pathname.match(/^\/api\/v1\/admin\/credentials\/(CRED-[A-Z0-9-]+)\/issue$/);

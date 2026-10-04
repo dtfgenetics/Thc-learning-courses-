@@ -60,3 +60,20 @@ create index if not exists idx_secure_items_bank_status
   on secure_assessment_items(bank_version, status, competency_id);
 create index if not exists idx_secure_exposure_candidate
   on secure_assessment_exposures(candidate_ref_hash, exposed_at desc);
+
+
+create table if not exists secure_assessment_admin_audit (
+  id bigserial primary key,
+  actor_id text not null,
+  event_type text not null,
+  subject_type text not null,
+  subject_id text not null,
+  evidence_ref text,
+  metadata_json jsonb not null default '{}'::jsonb,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists idx_secure_admin_audit_subject
+  on secure_assessment_admin_audit(subject_type, subject_id, created_at desc);
+create index if not exists idx_secure_admin_audit_actor
+  on secure_assessment_admin_audit(actor_id, created_at desc);
