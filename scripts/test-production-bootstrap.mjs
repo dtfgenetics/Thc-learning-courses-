@@ -21,14 +21,14 @@ const productionEnv = {
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_REQUIRED_SCHEMA_VERSION: '7'
+  THC_REQUIRED_SCHEMA_VERSION: '8'
 };
 const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
 assert.equal(await options.credentialStore.ping(), true);
-assert.equal(await options.credentialStore.schemaVersion(), '7');
+assert.equal(await options.credentialStore.schemaVersion(), '8');
 assert.equal(typeof options.credentialStore.listBySubjectHash, 'function', 'production credential store must provide private learner credential lookup');
-assert.equal(options.requiredSchemaVersion, '7');
+assert.equal(options.requiredSchemaVersion, '8');
 assert.equal(options.credentialWriter.kind, 'test-writer');
 assert.equal(typeof options.credentialWriter.issueCredential, 'function');
 assert.equal(typeof options.credentialWriter.transitionById, 'function');
@@ -44,6 +44,9 @@ for (const method of ['listCourseLearners', 'listCourseReportRows', 'getEvaluati
   assert.equal(typeof options.practicalEvaluatorStore[method], 'function', `production practical evaluator store must provide ${method}()`);
 }
 assert.equal(options.enrollmentCompletionStore.kind, 'test-enrollment-completion');
+assert.equal(options.secureAssessmentStore.kind, 'private-operational-assessment-store');
+assert.equal(await options.secureAssessmentStore.ping(), true);
+assert.equal(await options.secureAssessmentStore.bankVersion(), 'test-private-bank-v1');
 for (const method of ['setEnrollmentAcademicStatus', 'listEnrollmentAcademicHistory']) {
   assert.equal(typeof options.enrollmentCompletionStore[method], 'function', `production enrollment completion store must provide ${method}()`);
 }
