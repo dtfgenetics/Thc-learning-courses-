@@ -1,8 +1,8 @@
 {
   "id": "LESSON-LH-TECH1-006-02",
   "title": "Controlled Harvest, Material Protection and Dry-Room Receiving",
-  "version": "1.1.1",
-  "status": "draft",
+  "version": "1.1.0",
+  "status": "published",
   "competencies": [
     "COMP-POSTHARVEST-001",
     "COMP-SPACE-BIOSEC-001",
@@ -16,7 +16,6 @@
   "estimatedMinutes": 65,
   "references": [
     "REF-POSTHARVEST-001",
-    "REF-POSTHARVEST-DRY-2025-001",
     "REF-IPM-001"
   ],
   "assessment": null,
@@ -68,8 +67,7 @@
         "title": "Drying is monitored, not predicted by calendar alone",
         "body": "Drying rate depends on material density, temperature, relative humidity, airflow and load conditions. Technicians record the assigned environmental and product-condition information and escalate meaningful deviations instead of declaring material complete after a universal number of days.",
         "references": [
-          "REF-POSTHARVEST-001",
-          "REF-POSTHARVEST-DRY-2025-001"
+          "REF-POSTHARVEST-001"
         ]
       }
     ],
@@ -105,7 +103,7 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-006-002",
         "title": "Controlled harvest to dry-room receiving workflow",
-        "src": "/assets/course6/harvest-receiving-flow.svg",
+        "src": "/assets/course6/harvest-receiving-flow.webp",
         "alt": "Workflow moving identified harvested material through clean handling, contamination screening, verified receiving and monitored dry-room context, while suspect material is held outside normal flow.",
         "caption": "Normal flow requires verified identity, clean handling and receiving. Suspect material remains identified and held rather than blended into the lot.",
         "references": [
@@ -117,7 +115,7 @@
         "type": "resource",
         "title": "Downloadable practice: dry-room receiving and handoff",
         "body": "Use this printable record to practice receiving identity, destination, quantity, condition, sanitation/hold status, escalation and receiving-shift follow-up.",
-        "href": "/assets/course6/dry-room-handoff-practice.svg",
+        "href": "/assets/course6/dry-room-handoff-practice.webp",
         "label": "Open dry-room receiving and handoff practice sheet",
         "extensions": {
           "assetId": "VIS-LH-TECH1-006-008",

@@ -1,8 +1,8 @@
 {
   "id": "LESSON-LH-TECH1-006-04",
   "title": "Dry-Room Handoff, Holds and Reconstructable Shift Records",
-  "version": "1.1.1",
-  "status": "draft",
+  "version": "1.1.0",
+  "status": "published",
   "competencies": [
     "COMP-POSTHARVEST-001",
     "COMP-CULT-TRACEABILITY-001",
@@ -18,7 +18,6 @@
   "estimatedMinutes": 70,
   "references": [
     "REF-POSTHARVEST-001",
-    "REF-POSTHARVEST-DRY-2025-001",
     "REF-GS1-GLOBAL-TRACEABILITY",
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ],
@@ -55,8 +54,7 @@
         "title": "Postharvest condition is linked to identity and location",
         "body": "Record the dry-room rack or location, supplied environmental information and observed product condition for the correct identified lot. One nonuniform rack or suspect container is documented at its actual scope rather than generalized automatically to the entire room.",
         "references": [
-          "REF-POSTHARVEST-001",
-          "REF-POSTHARVEST-DRY-2025-001"
+          "REF-POSTHARVEST-001"
         ]
       },
       {
@@ -136,7 +134,7 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-006-003",
         "title": "Source-to-output harvest genealogy",
-        "src": "/assets/course6/source-output-genealogy.svg",
+        "src": "/assets/course6/source-output-genealogy.webp",
         "alt": "Source batch linked through a harvest transformation event to multiple identified receiving outputs and destinations, including a held output that remains part of the traceability chain.",
         "caption": "The receiving role should be able to trace every output back to its source transformation, including held material.",
         "references": [
@@ -148,7 +146,7 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-006-004",
         "title": "Quantity reconciliation and discrepancy control",
-        "src": "/assets/course6/reconciliation-discrepancy.svg",
+        "src": "/assets/course6/reconciliation-discrepancy.webp",
         "alt": "Outgoing and receiving quantities remain as separate original records when they differ and are routed into a controlled discrepancy process rather than edited to agree.",
         "caption": "A handoff can remain partially open while a quantity discrepancy is investigated; original evidence stays intact.",
         "references": [
@@ -159,7 +157,7 @@
         "type": "image",
         "assetId": "VIS-LH-TECH1-006-005",
         "title": "Harvest-to-dry-room reconstructable handoff",
-        "src": "/assets/course6/dry-room-handoff.svg",
+        "src": "/assets/course6/dry-room-handoff.webp",
         "alt": "Structured dry-room handoff organizing source and output identity, destination, quantity and reconciliation, condition, sanitation or hold state, deviation, escalation and next action.",
         "caption": "A complete handoff makes both completed work and unresolved conditions reconstructable for the receiving shift.",
         "references": [
@@ -172,7 +170,7 @@
         "type": "resource",
         "title": "Downloadable practice: harvest genealogy and reconciliation",
         "body": "Use this worksheet to map source/output relationships, destinations, holds and outgoing/receiving quantity evidence before closing the handoff.",
-        "href": "/assets/course6/traceability-reconciliation-practice.svg",
+        "href": "/assets/course6/traceability-reconciliation-practice.webp",
         "label": "Open traceability and reconciliation practice sheet",
         "extensions": {
           "assetId": "VIS-LH-TECH1-006-007",
@@ -183,7 +181,7 @@
         "type": "resource",
         "title": "Downloadable practice: dry-room receiving and shift handoff",
         "body": "Use this worksheet to record receiving identity, destination, quantity, condition, hold/deviation state, escalation and next action without guessing root cause or release status.",
-        "href": "/assets/course6/dry-room-handoff-practice.svg",
+        "href": "/assets/course6/dry-room-handoff-practice.webp",
         "label": "Open dry-room receiving and handoff practice sheet",
         "extensions": {
           "assetId": "VIS-LH-TECH1-006-008",
