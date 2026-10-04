@@ -16,7 +16,7 @@ concurrency:
 jobs:
   quality-audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
@@ -111,6 +111,14 @@ jobs:
       - name: Run complete curriculum and credential audit suite with diagnostics
         id: complete_audit
         run: node scripts/run-curriculum-audit-suite.mjs
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Build production container
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: deploy/Dockerfile.production
+          push: false
       - name: Upload curriculum audit diagnostics
         if: always()
         continue-on-error: true
