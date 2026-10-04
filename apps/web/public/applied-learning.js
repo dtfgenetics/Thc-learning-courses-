@@ -132,7 +132,70 @@ async function loadDifferential(){
   }));
 }
 
-Promise.all([loadGraph(),loadMeasurement(),loadCropMath(),loadDifferential()]).catch(error=>{
+
+let systemsTools=[];
+let currentSystemsTool=null;
+
+function makeToolInput(field){
+  const label=document.createElement('label');
+  label.textContent=field.label+(field.unit?` (${field.unit})`:'');
+  let input;
+  if(field.type==='choice'){
+    input=document.createElement('select');
+    input.append(new Option('Select…',''));
+    for(const option of field.options??[]) input.append(new Option(option,option));
+  } else {
+    input=document.createElement('input');
+    input.type=field.type==='number'?'number':field.type==='timestamp'?'datetime-local':'text';
+    if(input.type==='number') input.step='any';
+  }
+  input.name=field.id;
+  input.required=field.required;
+  label.append(input);
+  return label;
+}
+
+function renderSystemsTool(tool){
+  currentSystemsTool=tool;
+  document.querySelector('#systems-tool-title').textContent=tool.title;
+  document.querySelector('#systems-tool-summary').textContent=tool.summary;
+  document.querySelector('#systems-tool-boundary').textContent=tool.boundary;
+  document.querySelector('#systems-tool-output').textContent='';
+  document.querySelector('#systems-tool-steps').replaceChildren(...tool.steps.map(step=>{
+    const li=document.createElement('li'); li.textContent=step.instruction; return li;
+  }));
+  document.querySelector('#systems-tool-fields').replaceChildren(...tool.fields.map(makeToolInput));
+}
+
+async function loadSystemsTools(){
+  const response=await fetch('/api/applied-learning/tools');
+  if(!response.ok) throw new Error('Applied systems tools unavailable');
+  const payload=await response.json();
+  systemsTools=payload.tools??[];
+  const select=document.querySelector('#systems-tool-select');
+  select.replaceChildren(...systemsTools.map(tool=>new Option(tool.title,tool.id)));
+  if(!systemsTools.length){
+    document.querySelector('#systems-tool-title').textContent='No reviewed tools are published in this mode.';
+    return;
+  }
+  renderSystemsTool(systemsTools[0]);
+  select.addEventListener('change',()=>{
+    const tool=systemsTools.find(row=>row.id===select.value);
+    if(tool) renderSystemsTool(tool);
+  });
+  document.querySelector('#systems-tool-form').addEventListener('submit',async event=>{
+    event.preventDefault();
+    if(!currentSystemsTool) return;
+    const values=Object.fromEntries(new FormData(event.currentTarget).entries());
+    const result=await fetch(`/api/applied-learning/tools/${currentSystemsTool.id}/evaluate`,{
+      method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(values)
+    });
+    const body=await result.json();
+    document.querySelector('#systems-tool-output').textContent=JSON.stringify(body,null,2);
+  });
+}
+
+Promise.all([loadGraph(),loadMeasurement(),loadCropMath(),loadDifferential(),loadSystemsTools()]).catch(error=>{
   document.querySelector('#graph-summary').textContent=error.message;
   document.querySelector('#measurement-summary').textContent=error.message;
 });
