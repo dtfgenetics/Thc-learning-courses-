@@ -113,9 +113,9 @@ export function createPostgresSecureAssessmentStore({query,securityControls,audi
 }
 
 export async function createSecureAssessmentStore({env=process.env}={}){
-  const modulePath=required(env.THC_POSTGRES_POOL_MODULE,'THC_POSTGRES_POOL_MODULE');
+  const modulePath=required(env.THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE,'THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE');
   const provider=await import(modulePath.startsWith('.')||modulePath.startsWith('/')?pathToFileURL(path.resolve(process.cwd(),modulePath)).href:modulePath);
-  if(typeof provider.createPostgresPool!=='function') throw new Error('THC_POSTGRES_POOL_MODULE must export createPostgresPool({ env })');
+  if(typeof provider.createPostgresPool!=='function') throw new Error('THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE must export createPostgresPool({ env })');
   const pool=await provider.createPostgresPool({env});
   if(!pool||typeof pool.query!=='function') throw new Error('PostgreSQL pool must provide query(text, params)');
   return createPostgresSecureAssessmentStore({
