@@ -13,7 +13,7 @@ for (const env of [
   { NODE_ENV: 'production' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs' },
   { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'http://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '3' },
-  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com' }
+  { NODE_ENV: 'production', THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs', THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs', THC_PUBLIC_BASE_URL: 'https://academy.example.com', THC_REQUIRED_SCHEMA_VERSION: '7' }
 ]) assert.throws(() => validateProductionEnvironment(env));
 
 const productionEnv = {
@@ -21,14 +21,15 @@ const productionEnv = {
   THC_PERSISTENCE_ADAPTER_MODULE: './scripts/fixtures/test-persistence-adapter-completion.mjs',
   THC_AUTH_ADAPTER_MODULE: './scripts/fixtures/test-auth-adapter.mjs',
   THC_PUBLIC_BASE_URL: 'https://academy.example.com',
-  THC_REQUIRED_SCHEMA_VERSION: '8'
+  THC_REQUIRED_SCHEMA_VERSION: '7',
+  THC_SECURE_ASSESSMENT_STORE_MODULE: './scripts/fixtures/test-secure-assessment-store-adapter.mjs'
 };
 const options = await loadProductionApiOptions(productionEnv);
 assert.equal(options.credentialStore.kind, 'test-persistent');
 assert.equal(await options.credentialStore.ping(), true);
-assert.equal(await options.credentialStore.schemaVersion(), '8');
+assert.equal(await options.credentialStore.schemaVersion(), '7');
 assert.equal(typeof options.credentialStore.listBySubjectHash, 'function', 'production credential store must provide private learner credential lookup');
-assert.equal(options.requiredSchemaVersion, '8');
+assert.equal(options.requiredSchemaVersion, '7');
 assert.equal(options.credentialWriter.kind, 'test-writer');
 assert.equal(typeof options.credentialWriter.issueCredential, 'function');
 assert.equal(typeof options.credentialWriter.transitionById, 'function');
