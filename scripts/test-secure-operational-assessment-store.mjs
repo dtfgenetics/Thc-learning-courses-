@@ -56,6 +56,7 @@ const store=validateSecureAssessmentStore({
   async ping(){return true;},
   async bankVersion(){return 'private-bank-v1';},
   async selectOperationalItems(input){calls.push(['select',input]);return [];},
+  async getOperationalItems(input){calls.push(['get',input]);return [];},
   async recordForm(input){calls.push(['form',input]);},
   async recordExposure(input){calls.push(['exposure',input]);},
   async quarantineItem(input){calls.push(['quarantine',input]);}
@@ -70,6 +71,7 @@ const methodCompleteStore={
   async ping(){return true;},
   async bankVersion(){return 'v1';},
   async selectOperationalItems(){return [];},
+  async getOperationalItems(){return [];},
   async recordForm(){},
   async recordExposure(){},
   async quarantineItem(){}
@@ -124,6 +126,9 @@ const privateItems=await postgresStore.selectOperationalItems({
 assert.equal(privateItems.length,1);
 assert.equal(privateItems[0].secureItemId,'SECITEM-SAFETY-101');
 assert.equal(privateItems[0].scoringKey,2);
+const exactPrivateItems=await postgresStore.getOperationalItems({assignments:[{secureItemId:'SECITEM-SAFETY-101',revision:1}]});
+assert.equal(exactPrivateItems.length,1);
+assert.equal(exactPrivateItems[0].secureItemId,'SECITEM-SAFETY-101');
 await postgresStore.recordForm({privateManifest:{
   formId:'FORM-TECH1-OP-A',formRevision:'1',credentialProgramId:'CREDPROG-CULT-TECH-I-001',
   blueprintVersion:'1.0.0',itemAssignments:[{position:1,secureItemId:'SECITEM-SAFETY-101',revision:'1',competency:'COMP-SAFETY-WORK-001'}]
