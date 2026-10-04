@@ -10,6 +10,7 @@ services:
       NODE_ENV: production
       THC_SERVICE: combined
       PORT: 8787
+      ACADEMY_SOURCE_SHA: ${ACADEMY_SOURCE_REF:?set ACADEMY_SOURCE_REF to an exact validated commit SHA}
       THC_PUBLIC_BASE_URL: ${THC_PUBLIC_BASE_URL:?set THC_PUBLIC_BASE_URL}
       THC_REQUIRED_SCHEMA_VERSION: "7"
       THC_PERSISTENCE_ADAPTER_MODULE: ./apps/api/src/postgres-production-adapter.mjs
