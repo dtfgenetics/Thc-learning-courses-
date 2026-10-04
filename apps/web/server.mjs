@@ -96,6 +96,70 @@ function safeAppliedLearningDifferential(differential) {
     boundary: differential.boundary
   };
 }
+
+function safeAppliedLearningTool(tool) {
+  return {
+    id: tool.id,
+    version: tool.version,
+    status: tool.status,
+    kind: tool.kind,
+    title: tool.title,
+    summary: tool.summary,
+    competencyIds: tool.competencyIds ?? [],
+    objectiveIds: tool.objectiveIds ?? [],
+    referenceIds: tool.referenceIds ?? [],
+    canonicalSources: tool.canonicalSources ?? [],
+    steps: (tool.steps ?? []).map(({ id, instruction, evidence }) => ({
+      id, instruction, ...(evidence ? { evidence } : {})
+    })),
+    fields: (tool.fields ?? []).map(({ id, label, type, required, unit, options }) => ({
+      id, label, type, required: required === true, unit: unit ?? null,
+      ...(Array.isArray(options) ? { options } : {})
+    })),
+    boundary: tool.boundary
+  };
+}
+
+function evaluateAppliedLearningTool(tool, body = {}) {
+  const values = {};
+  for (const field of tool.fields ?? []) {
+    const raw = body[field.id];
+    if (field.required && (raw === undefined || raw === null || String(raw).trim() === '')) {
+      throw new Error(`missing required field ${field.id}`);
+    }
+    if (raw === undefined || raw === null || String(raw).trim() === '') continue;
+    if (field.type === 'number') {
+      const value = Number(raw);
+      if (!Number.isFinite(value)) throw new Error(`${field.id} must be numeric`);
+      values[field.id] = value;
+    } else if (field.type === 'choice') {
+      if (!field.options?.includes(String(raw))) throw new Error(`${field.id} is not an allowed choice`);
+      values[field.id] = String(raw);
+    } else {
+      values[field.id] = String(raw).slice(0, 4000);
+    }
+  }
+
+  if (tool.kind === 'blueprint') {
+    const length = values.roomLengthFt;
+    const width = values.roomWidthFt;
+    if (!(length > 0 && width > 0 && length <= 1000 && width <= 1000)) throw new Error('room dimensions must be positive and within the training range');
+    return { toolId: tool.id, kind: tool.kind, values, result: { floorAreaSqFt: length * width }, note: tool.boundary };
+  }
+  if (tool.kind === 'calibration') {
+    const result = values.verificationResult === 'pass'
+      ? 'measurement-eligible-for-contextual-interpretation'
+      : 'stop-recalibrate-or-service-and-repeat-verification';
+    return { toolId: tool.id, kind: tool.kind, values, result: { decision: result }, note: tool.boundary };
+  }
+  return {
+    toolId: tool.id,
+    kind: tool.kind,
+    status: 'learner-draft-record',
+    values,
+    note: 'Local training record preview only; this endpoint does not create credential evidence or regulated records.'
+  };
+}
 function buildPublicReleaseIds({ modules, assessments }) {
   const ids = new Set();
   const releases = readDirJson('content/public-releases').filter((release) => release.publicationState === 'published');
@@ -656,6 +720,28 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
       const differential = findAppliedLearningRecord('differentials', appliedDifferentialMatch[1]);
       if (!differential || !isVisible(differential, previewDrafts)) return json(res, 404, { error: 'applied-learning-differential-not-found' });
       return json(res, 200, safeAppliedLearningDifferential(differential));
+    }
+    if (req.method === 'GET' && url.pathname === '/api/applied-learning/tools') {
+      const tools = readDirJson('content/applied-learning/tools')
+        .filter((tool) => isVisible(tool, previewDrafts))
+        .map(safeAppliedLearningTool)
+        .sort((a, b) => a.title.localeCompare(b.title));
+      return json(res, 200, { mode: previewDrafts ? 'staging-preview' : 'published-only', tools });
+    }
+    const appliedToolMatch = url.pathname.match(/^\/api\/applied-learning\/tools\/(ALTOOL-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedToolMatch) {
+      const tool = findAppliedLearningRecord('tools', appliedToolMatch[1]);
+      if (!tool || !isVisible(tool, previewDrafts)) return json(res, 404, { error: 'applied-learning-tool-not-found' });
+      return json(res, 200, safeAppliedLearningTool(tool));
+    }
+    const appliedToolRunMatch = url.pathname.match(/^\/api\/applied-learning\/tools\/(ALTOOL-[A-Z0-9-]+)\/evaluate$/);
+    if (req.method === 'POST' && appliedToolRunMatch) {
+      const tool = findAppliedLearningRecord('tools', appliedToolRunMatch[1]);
+      if (!tool || !isVisible(tool, previewDrafts)) return json(res, 404, { error: 'applied-learning-tool-not-found' });
+      let body;
+      try { body = await readRequestJson(req); } catch { return json(res, 400, { error: 'invalid-json' }); }
+      try { return json(res, 200, evaluateAppliedLearningTool(tool, body)); }
+      catch (error) { return json(res, 400, { error: 'invalid-tool-input', message: error.message }); }
     }
     if (req.method === 'GET' && url.pathname === '/api/downloads') return json(res, 200, buildDownloadCatalog({ previewDrafts }));
     const downloadMetadataMatch = url.pathname.match(/^\/api\/downloads\/(DL-[A-Z0-9-]+)$/);

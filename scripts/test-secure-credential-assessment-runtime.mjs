@@ -100,7 +100,7 @@ assert.ok(!JSON.stringify(started.body).includes('scoringKey'));
 assert.ok(!JSON.stringify(started.body).includes('rationale'));
 
 const attemptId=started.body.attempt.id;
-const status=await getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject:'learner-1',attemptId,assessment});
+const status=await getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject:'learner-1',attemptId,assessment,now:'2026-10-04T03:01:00.000Z'});
 assert.equal(status.status,200);
 assert.equal(status.body.editable,true);
 assert.ok(!JSON.stringify(status.body).includes('scoringKey'));
@@ -138,7 +138,7 @@ assert.equal(scored.scorePercent,50);
 assert.equal(scored.items[0].score,1);
 assert.equal(scored.items[1].score,0);
 
-const after=await getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject:'learner-1',attemptId,assessment});
+const after=await getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject:'learner-1',attemptId,assessment,now:'2026-10-04T03:12:00.000Z'});
 assert.equal(after.body.attempt.status,'scored');
 assert.equal(after.body.editable,false);
 assert.equal(after.body.attempt.passed,true);

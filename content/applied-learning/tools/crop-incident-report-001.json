@@ -1,0 +1,93 @@
+{
+  "id": "ALTOOL-CROP-INCIDENT-REPORT-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "kind": "incident-report",
+  "title": "Crop Incident Report",
+  "summary": "Document an unexpected crop, equipment or process event using observable facts, immediate containment, escalation and follow-up fields without inventing a root cause.",
+  "competencyIds": [
+    "COMP-SAFETY-WORK-001"
+  ],
+  "objectiveIds": [],
+  "referenceIds": [
+    "REF-ASTM-D8403-001"
+  ],
+  "canonicalSources": [
+    "LESSON-SAFETY-HAZARDS-001"
+  ],
+  "steps": [
+    {
+      "id": "facts",
+      "instruction": "Record what happened, where and when using observable facts.",
+      "evidence": "incident facts"
+    },
+    {
+      "id": "contain",
+      "instruction": "Record immediate safe containment or stop-work action within assigned authority.",
+      "evidence": "containment"
+    },
+    {
+      "id": "escalate",
+      "instruction": "Record who was notified and what remains unresolved.",
+      "evidence": "escalation"
+    },
+    {
+      "id": "followup",
+      "instruction": "Record corrective-action owner or effectiveness check only when assigned.",
+      "evidence": "follow-up"
+    }
+  ],
+  "fields": [
+    {
+      "id": "timestamp",
+      "label": "Incident time",
+      "type": "timestamp",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "location",
+      "label": "Location/zone",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "facts",
+      "label": "Observed facts",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "containment",
+      "label": "Immediate containment/stop action",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "escalation",
+      "label": "Escalation/handoff",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "followUp",
+      "label": "Assigned follow-up",
+      "type": "text",
+      "required": false,
+      "unit": null
+    }
+  ],
+  "configuration": {
+    "recordType": "incident-corrective-action"
+  },
+  "boundary": "Training documentation only. Emergency response, injury reporting, hazardous-energy control, chemical incidents and regulated events must follow the applicable site procedure and legal requirements.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

@@ -43,7 +43,8 @@ const mappings = [
   ['content/applied-learning/measurements', 'schemas/applied-learning-measurement.schema.json'],
   ['content/applied-learning/scenarios', 'schemas/applied-learning-scenario.schema.json'],
   ['content/applied-learning/calculators', 'schemas/applied-learning-calculator.schema.json'],
-  ['content/applied-learning/differentials', 'schemas/applied-learning-differential.schema.json']
+  ['content/applied-learning/differentials', 'schemas/applied-learning-differential.schema.json'],
+  ['content/applied-learning/tools', 'schemas/applied-learning-tool.schema.json']
 ];
 
 const ajv = new Ajv2020({allErrors: true, strict: false});

@@ -1,0 +1,81 @@
+{
+  "id": "ALTOOL-PLANT-TIMELINE-ATLAS-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "kind": "timeline-atlas",
+  "title": "Plant Timeline Atlas",
+  "summary": "Capture standardized lifecycle observations so stage, time, context and uncertainty remain visible instead of being collapsed into a single diagnosis.",
+  "competencyIds": [
+    "COMP-PLANT-BIO-001"
+  ],
+  "objectiveIds": [],
+  "referenceIds": [
+    "REF-PLANT-BIO-001"
+  ],
+  "canonicalSources": [
+    "LESSON-PLANT-BIO-001"
+  ],
+  "steps": [
+    {
+      "id": "identify",
+      "instruction": "Record subject identifier, observation time and developmental-stage label.",
+      "evidence": "identity and time"
+    },
+    {
+      "id": "observe",
+      "instruction": "Record observable morphology or growth-state evidence without naming an unsupported cause.",
+      "evidence": "direct observation"
+    },
+    {
+      "id": "context",
+      "instruction": "Add environmental or management context and note uncertainty.",
+      "evidence": "context and uncertainty"
+    }
+  ],
+  "fields": [
+    {
+      "id": "subjectId",
+      "label": "Plant/subject ID",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "timestamp",
+      "label": "Observation time",
+      "type": "timestamp",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "stage",
+      "label": "Developmental stage",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "observation",
+      "label": "Direct observation",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "uncertainty",
+      "label": "Uncertainty or next evidence needed",
+      "type": "text",
+      "required": true,
+      "unit": null
+    }
+  ],
+  "configuration": {
+    "recordType": "lifecycle-observation"
+  },
+  "boundary": "The Atlas records observations and stage context; it does not diagnose disease, deficiency or cause from appearance alone.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

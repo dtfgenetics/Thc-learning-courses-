@@ -205,7 +205,7 @@ export async function submitSecureCredentialAssessment({learnerStore,secureAsses
 }
 
 
-export async function getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject,attemptId,assessment}={}){
+export async function getSecureCredentialAssessmentStatus({learnerStore,secureAssessmentStore,subject,attemptId,assessment,now=new Date().toISOString()}={}){
   const attempt=await learnerStore.getAssessmentAttempt(subject,{attemptId});
   if(!attempt) return {status:404,body:{error:'assessment-attempt-not-found'}};
   if(attempt.assessmentId!==assessment?.id) return {status:409,body:{error:'credential-assessment-mismatch'}};
@@ -219,6 +219,6 @@ export async function getSecureCredentialAssessmentStatus({learnerStore,secureAs
   });
   return {status:200,body:{assessment:{id:assessment.id,title:assessment.title,totalItems:items.length,timeLimitMinutes:Number(assessment.timeLimitMinutes)},
     attempt:{id:attempt.id,status:attempt.status,startedAt:attempt.startedAt,expiresAt:attempt.expiresAt,submittedAt:attempt.submittedAt,scoredAt:attempt.scoredAt},
-    expired:attemptExpired(attempt),editable:attempt.status==='started'&&!attemptExpired(attempt),
+    expired:attemptExpired(attempt,now),editable:attempt.status==='started'&&!attemptExpired(attempt,now),
     items:items.map((item,i)=>safeDeliveryItem(item,attempt.items[i]?.response??null))}};
 }
