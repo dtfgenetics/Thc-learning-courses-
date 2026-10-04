@@ -1,0 +1,73 @@
+{
+  "id": "ALTOOL-GROW-ROOM-BLUEPRINT-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "kind": "blueprint",
+  "title": "Grow Room Blueprint Lab",
+  "summary": "Build a simple training-room footprint, calculate floor area, and document where measurements, airflow observations, access paths and equipment zones would need verification before any real design decision.",
+  "competencyIds": [
+    "COMP-ENV-VPD-001"
+  ],
+  "objectiveIds": [
+    "LO-ENV-VPD-001"
+  ],
+  "referenceIds": [
+    "REF-VPD-002"
+  ],
+  "canonicalSources": [
+    "LESSON-ENV-VPD-001"
+  ],
+  "steps": [
+    {
+      "id": "dimensions",
+      "instruction": "Enter the training-room length and width.",
+      "evidence": "room dimensions"
+    },
+    {
+      "id": "zones",
+      "instruction": "Identify a crop zone, access path, environmental measurement zone and equipment influence zone.",
+      "evidence": "zone notes"
+    },
+    {
+      "id": "verify",
+      "instruction": "List the measurements or qualified design inputs still required before a real facility decision.",
+      "evidence": "verification list"
+    }
+  ],
+  "fields": [
+    {
+      "id": "roomLengthFt",
+      "label": "Training-room length",
+      "type": "number",
+      "required": true,
+      "unit": "ft"
+    },
+    {
+      "id": "roomWidthFt",
+      "label": "Training-room width",
+      "type": "number",
+      "required": true,
+      "unit": "ft"
+    },
+    {
+      "id": "accessNotes",
+      "label": "Access and equipment-zone notes",
+      "type": "text",
+      "required": true,
+      "unit": null
+    }
+  ],
+  "configuration": {
+    "calculation": "rectangular-floor-area",
+    "defaultExample": {
+      "roomLengthFt": 10,
+      "roomWidthFt": 10
+    }
+  },
+  "boundary": "Training geometry only. This lab does not size HVAC, electrical, structural, fire/life-safety, compressed-gas, irrigation or code-required systems and is not an engineering design.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

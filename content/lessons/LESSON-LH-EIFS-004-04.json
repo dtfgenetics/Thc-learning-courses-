@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-004-04",
+  "title": "Data Gaps, Flat Lines, Contradictions & Uncertainty",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-004-04"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Missing or contradictory environmental data reduce certainty but do not justify inventing replacements. Specialists preserve the original record, identify the limitation and use independent evidence where possible.",
+    "vocabulary": [
+      {
+        "term": "Data gap",
+        "definition": "A period or interval with missing expected measurements."
+      },
+      {
+        "term": "Flat line",
+        "definition": "An implausibly unchanged signal that may indicate sensor, logging, configuration or communication failure."
+      },
+      {
+        "term": "Uncertainty statement",
+        "definition": "A documented description of what the available evidence cannot support."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Do not silently impute facts",
+        "body": "A gap overlapping a suspected excursion must remain a gap unless an approved reconstruction method exists. Use corroborating evidence without presenting estimates as measurements.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Impossible patterns are evidence too",
+        "body": "Sudden flat lines, step changes or contradictions can indicate device, signal, configuration or logging faults and should trigger verification.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Preserve competing evidence",
+        "body": "Do not delete readings merely because they conflict with a preferred interpretation. Record the conflict and the method used to decide which data are fit for use.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A two-hour data gap covers a suspected humidity spike; the report should state the missing interval and rely on alarms, neighboring verified sensors or equipment logs without fabricating values."
+    ],
+    "commonMistakes": [
+      "Filling gaps with the nearest reading as fact.",
+      "Deleting outliers before investigation.",
+      "Calling one successful spot check proof that intermittent faults are resolved."
+    ],
+    "practicalApplication": "Review a trend containing a gap, flat line and disagreement, then classify each issue and write the uncertainty statement.",
+    "summary": "Data-quality problems should be made visible, not repaired cosmetically."
+  }
+}

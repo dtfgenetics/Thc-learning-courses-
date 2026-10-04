@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-006-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-006-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "No new symptoms are reported for three days. Is that enough to close an outbreak?",
+  "choices": [
+    "Always.",
+    "Only if the monitoring method, biological risk window, sampling coverage and predefined closure criteria make that evidence adequate.",
+    "Never.",
+    "Yes, if the calendar week changed."
+  ],
+  "correct": 1,
+  "rationale": "Elapsed time alone is not a closure criterion unless tied to a defensible monitoring and risk window.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}

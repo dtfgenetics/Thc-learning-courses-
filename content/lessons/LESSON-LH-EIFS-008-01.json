@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-008-01",
+  "title": "Commissioning Plans, Baselines & Acceptance Checks",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-008-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ENV-TEMP-2025-001",
+    "REF-IRRIGATION-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Commissioning demonstrates that a newly installed or materially changed system performs as intended under defined conditions. A commissioning plan should identify system boundaries, sensors, controlled outputs, alarms/interlocks, test states, acceptance criteria and the evidence required before operational release.",
+    "vocabulary": [
+      {
+        "term": "Commissioning",
+        "definition": "Structured verification that a system is installed, configured and performing as intended before routine operational reliance."
+      },
+      {
+        "term": "Baseline",
+        "definition": "The documented pre-test or accepted reference state used for later comparison."
+      },
+      {
+        "term": "Acceptance criterion",
+        "definition": "A predefined requirement that must be satisfied before the tested function is accepted."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Commission functions, not labels",
+        "body": "Verify that the identified sensor, controller output and physical equipment response correspond to the intended zone/function rather than assuming labels or dashboard names are correct.",
+        "references": [
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Test the full command-response chain",
+        "body": "Exercise representative commands and verify equipment state plus measured crop-zone or irrigation response. A software indication alone is insufficient.",
+        "references": [
+          "REF-IRRIGATION-001",
+          "REF-ENV-TEMP-2025-001"
+        ]
+      },
+      {
+        "title": "Record acceptance and exceptions",
+        "body": "Preserve test method, result, deviation, temporary control and approval state so unresolved commissioning issues cannot disappear into routine operation.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A controller output labeled 'Zone 4 irrigation' activates a different valve during commissioning; the mismatch must be corrected and re-tested before acceptance."
+    ],
+    "commonMistakes": [
+      "Accepting a system because every device powers on.",
+      "Testing only normal conditions.",
+      "Fixing a labeling/configuration issue without preserving the failed commissioning evidence."
+    ],
+    "practicalApplication": "Create a commissioning matrix for one environmental and one irrigation control loop with command, expected equipment response, representative measurement, alarm/interlock check and acceptance criterion.",
+    "summary": "Commissioning turns design intent into verified operational evidence."
+  }
+}

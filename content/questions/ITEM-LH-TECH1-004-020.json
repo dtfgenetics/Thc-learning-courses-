@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One irrigation zone repeatedly shows clogged emitters beyond the routine correction allowed by procedure. What should Technician I do?",
   "choices": [
-    "Disassemble protected components without authorization",
-    "Increase pressure beyond the work order",
-    "Stop documenting after the first occurrence",
-    "Document recurrence and affected zone and escalate the unresolved equipment/delivery fault"
+    "Disassemble the protected irrigation components to find the obstruction because the fault is recurring.",
+    "Increase system pressure above the normal work-order setting to clear the emitters.",
+    "Stop recording repeated clogs after the first event because the issue is already known.",
+    "Document the recurrence, affected zone and permitted checks completed, then escalate the unresolved delivery/equipment fault."
   ],
   "correct": 3,
-  "rationale": "Document recurrence and affected zone and escalate the unresolved equipment/delivery fault. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A recurring emitter problem is evidence of an unresolved system condition. Technician I should preserve that pattern and escalate after completing only the authorized checks. Disassembly, pressure changes, or stopping documentation can hide the severity of the problem or exceed role authority.",
   "references": [
     "REF-IRRIGATION-001"
   ],

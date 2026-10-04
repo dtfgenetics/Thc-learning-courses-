@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-005-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-005-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why is repeated retesting until one result passes a weak response to a verified out-of-acceptance condition?",
+  "choices": [
+    "It can hide the original failure and substitutes test shopping for controlled investigation/disposition.",
+    "More tests always make the batch safer.",
+    "Acceptance limits are optional.",
+    "The first result never matters."
+  ],
+  "correct": 0,
+  "rationale": "Repeated testing should not be used to erase or bypass a verified failure.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-ASTM-D8403-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}

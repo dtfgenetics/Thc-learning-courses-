@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-006-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-006-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A physical lot label says released while the system says hold. What should happen?",
+  "choices": [
+    "Stop movement and reconcile the controlled status and audit trail before further use.",
+    "Follow whichever status is convenient.",
+    "Assume the label is newer.",
+    "Create a third status."
+  ],
+  "correct": 0,
+  "rationale": "Conflicting status controls can permit unauthorized material movement.",
+  "references": [
+    "REF-ASTM-D8556-25",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

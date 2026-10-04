@@ -1,0 +1,34 @@
+{
+  "id": "MOD-LH-PCS-005-CLEAN-STOCK-TISSUE-CULTURE",
+  "title": "Clean Stock & Tissue-Culture Fundamentals",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PCS-005-01",
+    "LESSON-LH-PCS-005-02",
+    "LESSON-LH-PCS-005-03",
+    "LESSON-LH-PCS-005-04",
+    "LESSON-LH-PCS-005-05"
+  ],
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-TC-ASEPTIC-001",
+    "COMP-TC-REGEN-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Develops specialist clean-stock reasoning from source identity and aseptic establishment through multiplication, rooting, acclimation, fidelity monitoring and evidence-based material release.",
+  "estimatedMinutes": 350,
+  "learningOutcomes": [
+    "Distinguish identity, observed health, test status and release status when building a clean-stock record and material-status decision.",
+    "Design and execute a traceable aseptic workflow that separates clean and exposed states, detects breaches and preserves batch identity.",
+    "Interpret establishment and contamination patterns by source, explant, vessel, timing and process history, then select an evidence-preserving response.",
+    "Compare multiplication or regeneration treatments using genotype-aware quality measures rather than shoot count alone.",
+    "Evaluate in-vitro material through rooting, ex-vitro acclimation, fidelity monitoring and controlled release using stage-specific evidence."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-09-21",
+  "updated": "2026-10-02",
   "purpose": "Prevent duplicate curriculum during specialist and lead-program expansion by identifying existing canonical courses that may supply reusable objectives, lessons, evidence, assessments or scenarios. A reuse candidate is source material only and does not satisfy a future program requirement until reconciled into the target course and reviewed.",
   "policy": {
     "noAutomaticEquivalence": true,
@@ -82,6 +82,81 @@
             "controlled pilot evidence",
             "item-bank expansion and activation evidence"
           ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-004-DISEASE-BIOSECURITY",
+          "remainingDepth": [
+            "photorealistic disease and HLVd educational visual set",
+            "human plant-pathology/biosecurity review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-005-CONTROLS-RESISTANCE",
+          "remainingDepth": [
+            "photorealistic beneficial-organism and IPM decision visual set",
+            "human IPM/entomology and pesticide-stewardship review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-006-OUTBREAK-CAPA",
+          "remainingDepth": [
+            "photorealistic outbreak-mapping and CAPA visual set",
+            "human plant-health and quality-system review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHIB-007",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-001-DIAGNOSTIC",
+            "MOD-LH-TECH2-004-IPM"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-001",
+            "COURSE-LH-TECH2-004"
+          ],
+          "newModule": "MOD-LH-PHIB-007-DIAGNOSTIC-CASE-LAB",
+          "remainingDepth": [
+            "photorealistic multi-case evidence packets and diagnostic visual set",
+            "human plant-health/biosecurity/quality-system review",
+            "assessor calibration with benchmark performances",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
         }
       ]
     },
@@ -103,6 +178,167 @@
         "irrigation",
         "fertigation",
         "root-zone interpretation"
+      ],
+      "targetCourseReusePlans": [
+        {
+          "targetCourseId": "COURSE-LH-EIFS-001",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001",
+            "MOD-ENV-VPD-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-ENV-LIGHT-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-EIFS-001-PLANT-ENV-MEASUREMENT",
+          "remainingDepth": [
+            "photorealistic sensor-placement, microclimate and crop-response visual set",
+            "human environmental-systems/controlled-environment review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-002",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LIGHT-ADV-001"
+          ],
+          "sourceCourses": [
+            "COURSE-ENV-LIGHT-ADVANCED-001",
+            "COURSE-LH-EIFS-001"
+          ],
+          "newModule": "MOD-LH-EIFS-002-LIGHTING",
+          "remainingDepth": [
+            "photorealistic PPFD mapping and canopy-light distribution visual set",
+            "human lighting/photobiology review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-003",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-EIFS-001"
+          ],
+          "newModule": "MOD-LH-EIFS-003-HVAC-AIRFLOW",
+          "remainingDepth": [
+            "photorealistic HVAC/dehumidification/airflow/CO2 safety visual set",
+            "human environmental-controls and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-EIFS-001",
+            "COURSE-LH-EIFS-003"
+          ],
+          "newModule": "MOD-LH-EIFS-004-SENSORS-CONTROLS",
+          "remainingDepth": [
+            "photorealistic sensor placement/calibration/controller/alarm visual set",
+            "human controls/instrumentation and safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-EIFS-004"
+          ],
+          "newModule": "MOD-LH-EIFS-005-WATER-QUALITY",
+          "remainingDepth": [
+            "photorealistic water-sampling, meter-calibration and batch-preparation visual set",
+            "human water-quality/fertigation and chemical-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-EIFS-005"
+          ],
+          "newModule": "MOD-LH-EIFS-006-IRRIGATION-UNIFORMITY",
+          "remainingDepth": [
+            "photorealistic irrigation hydraulics, catch-test and filtration visual set",
+            "human irrigation/controlled-environment systems review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-007",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH2-003",
+            "COURSE-LH-EIFS-005",
+            "COURSE-LH-EIFS-006"
+          ],
+          "newModule": "MOD-LH-EIFS-007-ROOTZONE-DRYBACK",
+          "remainingDepth": [
+            "photorealistic root-zone sensor, dryback-curve and runoff/return visual set",
+            "human irrigation/root-zone and crop-steering review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-EIFS-008",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-ENV-ADV-001",
+            "MOD-LH-TECH2-003-FERTIGATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-EIFS-004",
+            "COURSE-LH-EIFS-006",
+            "COURSE-LH-EIFS-007"
+          ],
+          "newModule": "MOD-LH-EIFS-008-AUTOMATION-RELIABILITY",
+          "remainingDepth": [
+            "photorealistic commissioning, alarm/interlock and failure-response visual set",
+            "human controls/automation/reliability and safety review",
+            "assessor calibration for commissioning practical",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        }
       ]
     },
     {
@@ -121,6 +357,138 @@
         "donor performance",
         "sanitation",
         "tissue-culture foundations"
+      ],
+      "targetCourseReusePlans": [
+        {
+          "targetCourseId": "COURSE-LH-PCS-001",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-PROP-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-005",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-001-SEED-ESTABLISHMENT",
+          "remainingDepth": [
+            "photorealistic seed anatomy, germination-stage, seedling and root-zone visual set",
+            "human seed-science/propagation review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-002",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-PROP-001",
+            "MOD-LH-TECH2-005-PERFORMANCE"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-001",
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-005",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-002-DONOR-IDENTITY",
+          "remainingDepth": [
+            "photorealistic mother-stock identity, plant-health and quarantine visual set",
+            "human propagation/plant-pathology review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-003",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-PROP-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-001",
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-005",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-003-CLONING-ROOTING-ACCLIMATION",
+          "remainingDepth": [
+            "instructional cutting/root-development/acclimation visual set",
+            "human propagation and controlled-environment review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-SPACE-BIOSEC-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-PCS-003",
+            "COURSE-LH-TECH1-005",
+            "COURSE-LH-TECH2-004",
+            "COURSE-LH-TECH2-005"
+          ],
+          "newModule": "MOD-LH-PCS-004-BIOSECURITY-TRACEABILITY",
+          "remainingDepth": [
+            "instructional propagation biosecurity/pathway/traceability visual set",
+            "human plant-pathology/biosecurity and propagation review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-TC-ASEPTIC-001",
+            "MOD-TC-REGEN-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-PCS-004",
+            "COURSE-PROP-ADVANCED-001"
+          ],
+          "newModule": "MOD-LH-PCS-005-CLEAN-STOCK-TISSUE-CULTURE",
+          "remainingDepth": [
+            "instructional aseptic-zone, culture-stage, contamination-pattern and release-evidence visual set",
+            "human tissue-culture, plant-pathology and clean-stock review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PCS-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-005-PERFORMANCE"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PCS-001",
+            "COURSE-LH-PCS-002",
+            "COURSE-LH-PCS-003",
+            "COURSE-LH-PCS-004",
+            "COURSE-LH-PCS-005",
+            "COURSE-LH-TECH2-005"
+          ],
+          "newModule": "MOD-LH-PCS-006-PRODUCTION-PLANNING-TROUBLESHOOTING",
+          "remainingDepth": [
+            "instructional capacity-map, stage-loss, denominator-audit and controlled-test visual set",
+            "human propagation production, quality-systems and operations review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        }
       ]
     },
     {
@@ -138,6 +506,144 @@
         "deviation investigation",
         "traceability",
         "quality systems"
+      ],
+      "targetCourseReusePlans": [
+        {
+          "targetCourseId": "COURSE-LH-PHQ-001",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-006-DEVIATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-TECH1-006",
+            "COURSE-LH-TECH2-006",
+            "COURSE-POSTHARVEST-QA-001",
+            "COURSE-PRO-SOP-001"
+          ],
+          "newModule": "MOD-LH-PHQ-001-HARVEST-LOT-INTEGRITY",
+          "remainingDepth": [
+            "instructional maturity-sampling, sanitary-flow and lot-genealogy visual set",
+            "human postharvest, quality-systems and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-002",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-POSTHARVEST-PROCESS-001",
+            "MOD-LH-TECH2-002-VERIFICATION",
+            "MOD-LH-TECH2-006-DEVIATION"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-TECH2-002",
+            "COURSE-LH-TECH2-006",
+            "COURSE-POSTHARVEST-QA-001"
+          ],
+          "newModule": "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT",
+          "remainingDepth": [
+            "instructional moisture-gradient, water-activity and environmental-trend visual set",
+            "human postharvest-science, quality-systems and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-003",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-POSTHARVEST-PROCESS-001",
+            "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-002",
+            "COURSE-POSTHARVEST-QA-001"
+          ],
+          "newModule": "MOD-LH-PHQ-003-CURING-STORAGE-PACKAGING",
+          "remainingDepth": [
+            "instructional package-system, storage-risk and retained-sample visual set",
+            "human postharvest-science, packaging and quality-systems review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-004",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-004-IPM",
+            "MOD-LH-TECH2-006-DEVIATION",
+            "MOD-LH-PHQ-002-DRYING-MOISTURE-ENVIRONMENT"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-PHQ-002",
+            "COURSE-LH-TECH2-004",
+            "COURSE-LH-TECH2-006"
+          ],
+          "newModule": "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS",
+          "remainingDepth": [
+            "instructional defect-triage, contamination-route and deviation-timeline visual set",
+            "human microbiology, postharvest, quality-systems and worker-safety review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-005",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-002-VERIFICATION",
+            "MOD-LH-TECH2-006-DEVIATION",
+            "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-PHQ-002",
+            "COURSE-LH-PHQ-004",
+            "COURSE-POSTHARVEST-QA-001"
+          ],
+          "newModule": "MOD-LH-PHQ-005-SAMPLING-LAB-COA-RECORDS",
+          "remainingDepth": [
+            "instructional sampling-frame, chain-of-custody and COA-interpretation visual set",
+            "human laboratory-quality, sampling and regulatory-boundary review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        },
+        {
+          "targetCourseId": "COURSE-LH-PHQ-006",
+          "state": "new-specialist-content-seeded",
+          "reusedModules": [
+            "MOD-LH-TECH2-006-DEVIATION",
+            "MOD-LH-PHQ-003-CURING-STORAGE-PACKAGING",
+            "MOD-LH-PHQ-004-DEFECTS-MOLD-DEVIATIONS",
+            "MOD-LH-PHQ-005-SAMPLING-LAB-COA-RECORDS",
+            "MOD-PRO-SOP-001"
+          ],
+          "sourceCourses": [
+            "COURSE-LH-PHQ-001",
+            "COURSE-LH-PHQ-003",
+            "COURSE-LH-PHQ-004",
+            "COURSE-LH-PHQ-005",
+            "COURSE-PRO-SOP-001"
+          ],
+          "newModule": "MOD-LH-PHQ-006-QA-TRACEABILITY-RECALL-DISPOSITION",
+          "remainingDepth": [
+            "instructional genealogy, reconciliation, recall-scope and disposition-authority visual set",
+            "human quality-systems, traceability, recall and jurisdictional review",
+            "rendered accessibility review",
+            "controlled pilot evidence",
+            "item-bank expansion and activation evidence"
+          ]
+        }
       ]
     },
     {

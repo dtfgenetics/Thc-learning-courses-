@@ -1,0 +1,89 @@
+{
+  "id": "ALTOOL-GROWER-FLIGHT-RECORDER-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "kind": "flight-recorder",
+  "title": "Grower Flight Recorder",
+  "summary": "Create a reconstructable crop-history event with identity, timestamp, event type, observed state and action so later review can distinguish what happened from what was assumed.",
+  "competencyIds": [
+    "COMP-PRO-SOP-001"
+  ],
+  "objectiveIds": [],
+  "referenceIds": [
+    "REF-ASTM-D8403-001"
+  ],
+  "canonicalSources": [
+    "LESSON-LH-TECH1-002-04"
+  ],
+  "steps": [
+    {
+      "id": "identity",
+      "instruction": "Identify the crop/zone and timestamp.",
+      "evidence": "traceable identity"
+    },
+    {
+      "id": "event",
+      "instruction": "Record what was observed or performed using neutral event language.",
+      "evidence": "event record"
+    },
+    {
+      "id": "handoff",
+      "instruction": "Record action, unresolved question and next responsible handoff.",
+      "evidence": "handoff record"
+    }
+  ],
+  "fields": [
+    {
+      "id": "subjectId",
+      "label": "Crop/zone ID",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "timestamp",
+      "label": "Event time",
+      "type": "timestamp",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "eventType",
+      "label": "Event type",
+      "type": "choice",
+      "required": true,
+      "unit": null,
+      "options": [
+        "observation",
+        "measurement",
+        "intervention",
+        "equipment",
+        "handoff",
+        "outcome"
+      ]
+    },
+    {
+      "id": "eventDetail",
+      "label": "Event detail",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "nextAction",
+      "label": "Next action or unresolved question",
+      "type": "text",
+      "required": true,
+      "unit": null
+    }
+  ],
+  "configuration": {
+    "recordType": "grow-event"
+  },
+  "boundary": "This recorder preserves chronology and handoff context. It does not replace controlled facility records, seed-to-sale systems or required regulatory documentation.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

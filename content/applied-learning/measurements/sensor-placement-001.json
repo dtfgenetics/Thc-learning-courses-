@@ -1,0 +1,85 @@
+{
+  "id": "ALMEAS-SENSOR-PLACEMENT-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "Representative Canopy Sensor Placement",
+  "summary": "Use multiple crop-zone readings to distinguish representative environmental evidence from a convenient but potentially biased single sensor location.",
+  "competencyIds": [
+    "COMP-ENV-VPD-001"
+  ],
+  "objectiveIds": [
+    "LO-ENV-VPD-001"
+  ],
+  "referenceIds": [
+    "REF-VPD-002"
+  ],
+  "canonicalSources": [
+    "LESSON-ENV-VPD-001",
+    "CLAIM-ENV-VPD-001"
+  ],
+  "steps": [
+    {
+      "id": "map",
+      "instruction": "Identify at least three crop-zone measurement positions and record why each position is representative or potentially biased.",
+      "evidence": "location notes"
+    },
+    {
+      "id": "measure",
+      "instruction": "Record temperature and relative humidity at each position using the same units and time window.",
+      "evidence": "three paired readings"
+    },
+    {
+      "id": "context",
+      "instruction": "Record sensor identifier, height/zone, timestamp, nearby equipment influence, and whether leaf temperature was measured or assumed.",
+      "evidence": "measurement context"
+    },
+    {
+      "id": "compare",
+      "instruction": "Compare the spatial pattern before making a room-wide interpretation. State what additional plant, airflow, or root-zone evidence would reduce uncertainty.",
+      "evidence": "short interpretation"
+    }
+  ],
+  "evidenceFields": [
+    {
+      "id": "temperatureC",
+      "label": "Air temperature",
+      "type": "number",
+      "unit": "°C",
+      "required": true
+    },
+    {
+      "id": "relativeHumidityPct",
+      "label": "Relative humidity",
+      "type": "number",
+      "unit": "%",
+      "required": true
+    },
+    {
+      "id": "sensorLocation",
+      "label": "Sensor/crop-zone location",
+      "type": "text",
+      "unit": null,
+      "required": true
+    },
+    {
+      "id": "timestamp",
+      "label": "Measurement timestamp",
+      "type": "timestamp",
+      "unit": null,
+      "required": true
+    },
+    {
+      "id": "biasNotes",
+      "label": "Potential local bias or equipment influence",
+      "type": "text",
+      "unit": null,
+      "required": true
+    }
+  ],
+  "safetyBoundary": "This activity teaches measurement quality and interpretation. It does not authorize HVAC, electrical, compressed-gas, pesticide, or other controlled equipment/service work, and it does not define universal cultivation targets.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

@@ -6,6 +6,7 @@ const catalogRoot = document.querySelector('#catalog');
 const pendingSaves = new Set();
 const saveChains = new Map();
 let currentAttempt = null;
+let assessmentTimer = null;
 
 /* COURSE1_PRACTICAL_PUBLIC_DATA_START */
 const COURSE_PRACTICAL_PUBLIC = {
@@ -162,7 +163,7 @@ function updateEvidenceRow(panel, evidence) {
       const detail = row.querySelector('.course-evidence-detail');
       const parts = [];
       if (written.bestScorePercent != null) parts.push(`${Number(written.bestScorePercent).toFixed(0)}% best`);
-      if (written.passingScorePercent != null) parts.push(`current threshold ${Number(written.passingScorePercent).toFixed(0)}%`);
+      if (written.passingScorePercent != null) parts.push(`academic passing target ${Number(written.passingScorePercent).toFixed(0)}%`);
       if (Number(written.attemptCount ?? 0) > 0) parts.push(`${written.attemptCount} attempt${Number(written.attemptCount) === 1 ? '' : 's'}`);
       if (detail) detail.textContent = parts.join(' • ');
     }
@@ -202,7 +203,7 @@ async function enhanceEvidencePanel(panel) {
     const written = result.data?.writtenAssessment ?? {};
     const finalButton = el('button', courseActionLabel(written.outcome), 'course-assessment-launch');
     finalButton.type = 'button';
-    finalButton.addEventListener('click', () => openCourseAssessment(finalButton));
+    finalButton.addEventListener('click', () => launchCourseAssessment(COURSE_ID, finalButton));
     actions.prepend(finalButton);
   }
   panel.append(actions);
@@ -360,10 +361,10 @@ async function renderCoursePractical(evidenceResult) {
     scoreGrid.append(card);
   }
   scoring.append(scoreGrid);
-  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% provisional academic development threshold`, 'course-practical-pass');
+  const pass = el('p', `${Number(practical.passingStandard.minimumPercent).toFixed(0)}% current academic passing target`, 'course-practical-pass');
   if (practical.passingStandard.noCriticalErrors) pass.append(document.createTextNode(' • no critical errors'));
   scoring.append(pass);
-  scoring.append(el('p', 'This threshold remains provisional pending pilot evidence and documented standard setting; it is not a Technician I credential cut score.', 'course-assessment-note'));
+  scoring.append(el('p', 'This academic target supports course feedback. Professional certification uses a separate validation, standard-setting, and release process.', 'course-assessment-note'));
   panel.append(scoring);
 
   const critical = el('section', '', 'course-practical-section course-practical-critical');
@@ -395,16 +396,26 @@ async function renderCoursePractical(evidenceResult) {
   lessonView.focus();
 }
 
-async function openCourseAssessment(sourceButton) {
+export async function launchCourseAssessment(courseId, sourceButton) {
+  if (!courseId || !sourceButton) return;
   sourceButton.disabled = true;
   const original = sourceButton.textContent;
   sourceButton.textContent = 'Opening final…';
   try {
-    const response = await fetch(`/api/v1/me/courses/${COURSE_ID}/assessment-attempts`, {
+    const response = await fetch(`/api/v1/me/courses/${encodeURIComponent(courseId)}/assessment-attempts`, {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
     const body = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(body.error === 'authentication-required' ? 'Sign in to start the official course final.' : body.error || `Assessment unavailable (${response.status}).`);
+    if (!response.ok) {
+      const message = body.error === 'authentication-required'
+        ? 'Sign in to start the official course final.'
+        : body.error === 'certificate-name-required'
+          ? 'Set the name you want printed on your certificate in My Learning Dashboard before starting the final.'
+          : body.error === 'active-credential-application-required'
+            ? 'Create your certification application in My Learning Dashboard before starting the final.'
+            : body.error || `Assessment unavailable (${response.status}).`;
+      throw new Error(message);
+    }
     renderAssessment(body);
   } catch (error) {
     sourceButton.textContent = original;
@@ -423,11 +434,68 @@ function allAnsweredAndSaved(panel) {
   return items.length > 0 && items.every((item) => item.dataset.answered === 'true' && item.dataset.saved === 'true');
 }
 
+function stopAssessmentTimer() {
+  if (assessmentTimer) clearInterval(assessmentTimer);
+  assessmentTimer = null;
+}
+
+function disableAssessmentInputs(panel) {
+  for (const control of panel.querySelectorAll('.course-assessment-form input, .course-assessment-form select, .course-assessment-submit')) control.disabled = true;
+}
+
+function startAssessmentTimer(panel) {
+  stopAssessmentTimer();
+  const timer = panel.querySelector('.course-assessment-timer');
+  const expiresAt = currentAttempt?.attempt?.expiresAt;
+  if (!timer || !expiresAt) {
+    if (timer) timer.textContent = 'Untimed';
+    return;
+  }
+  const tick = async () => {
+    const remainingMs = Date.parse(expiresAt) - Date.now();
+    if (!Number.isFinite(remainingMs)) { timer.textContent = 'Time unavailable'; stopAssessmentTimer(); return; }
+    if (remainingMs <= 0) {
+      timer.textContent = 'Time expired — submitting';
+      timer.classList.add('expired');
+      stopAssessmentTimer();
+      disableAssessmentInputs(panel);
+      await submitAssessment(panel, { force: true, timedOut: true });
+      return;
+    }
+    const totalSeconds = Math.ceil(remainingMs / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    timer.textContent = hours > 0
+      ? `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} remaining`
+      : `${minutes}:${String(seconds).padStart(2, '0')} remaining`;
+    timer.classList.toggle('warning', totalSeconds <= 300);
+  };
+  tick();
+  assessmentTimer = setInterval(tick, 1000);
+}
+
+function updateQuestionNavigator(panel) {
+  const items = [...panel.querySelectorAll('.course-assessment-item')];
+  const buttons = [...panel.querySelectorAll('.course-assessment-nav-button')];
+  buttons.forEach((button, index) => {
+    const item = items[index];
+    if (!item) return;
+    const answered = item.dataset.answered === 'true';
+    const saved = item.dataset.saved === 'true';
+    button.classList.toggle('answered', answered);
+    button.classList.toggle('saved', answered && saved);
+    button.classList.toggle('saving', answered && !saved);
+    button.setAttribute('aria-label', `Question ${index + 1}: ${answered ? (saved ? 'answered and saved' : 'answer saving') : 'not answered'}`);
+  });
+}
+
 function updateAssessmentProgress(panel) {
   const total = panel.querySelectorAll('.course-assessment-item').length;
   const answered = answerCount(panel);
   const progress = panel.querySelector('.course-assessment-progress');
   if (progress) progress.textContent = `${answered}/${total} answered`;
+  updateQuestionNavigator(panel);
   const submit = panel.querySelector('.course-assessment-submit');
   if (submit) submit.disabled = !allAnsweredAndSaved(panel) || pendingSaves.size > 0;
 }
@@ -438,12 +506,24 @@ function responseForFieldset(fieldset, type) {
     const value = fieldset.querySelector('input[type="number"]')?.value;
     return value === '' || value == null ? null : Number(value);
   }
+  if (type === 'ordering') {
+    const selects = [...fieldset.querySelectorAll('select[data-order-position]')];
+    const values = selects.map((select) => select.value === '' ? null : Number(select.value));
+    return values.every((value) => Number.isInteger(value)) && new Set(values).size === values.length ? values : null;
+  }
+  if (type === 'matching') {
+    const selects = [...fieldset.querySelectorAll('select[data-match-prompt]')];
+    const values = selects.map((select) => select.value || null);
+    return values.every((value) => typeof value === 'string' && value.length > 0) ? values : null;
+  }
   const selected = fieldset.querySelector('input[type="radio"]:checked');
   return selected ? Number(selected.value) : null;
 }
 
 function isAnswered(response, type) {
   if (type === 'multiple-response') return Array.isArray(response) && response.length > 0;
+  if (type === 'ordering') return Array.isArray(response) && response.length > 1 && new Set(response).size === response.length;
+  if (type === 'matching') return Array.isArray(response) && response.length > 1 && response.every((value) => typeof value === 'string' && value.length > 0);
   return response !== null && response !== undefined && response !== '';
 }
 
@@ -505,6 +585,62 @@ function multipleChoiceControl(item, choice, index, fieldset, panel) {
   return label;
 }
 
+function orderingControl(item, fieldset, panel) {
+  const wrap = el('div', '', 'course-assessment-ordering');
+  item.choices.forEach((_, position) => {
+    const row = el('label', '', 'course-assessment-order-row');
+    row.append(el('span', `Position ${position + 1}`, 'course-assessment-order-label'));
+    const select = document.createElement('select');
+    select.dataset.orderPosition = String(position);
+    select.className = 'course-assessment-order-select';
+    select.setAttribute('aria-label', `Order position ${position + 1}`);
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Choose item';
+    select.append(placeholder);
+    item.choices.forEach((choice, choiceIndex) => {
+      const option = document.createElement('option');
+      option.value = String(choiceIndex);
+      option.textContent = choice;
+      option.selected = Array.isArray(item.response) && Number(item.response[position]) === choiceIndex;
+      select.append(option);
+    });
+    select.addEventListener('change', () => persistResponse(panel, item, fieldset));
+    row.append(select);
+    wrap.append(row);
+  });
+  wrap.append(el('p', 'Rank every option once. Duplicate selections are not saved.', 'course-assessment-hint'));
+  return wrap;
+}
+
+function matchingControl(item, fieldset, panel) {
+  const wrap = el('div', '', 'course-assessment-matching');
+  item.matchPrompts.forEach((prompt, promptIndex) => {
+    const row = el('label', '', 'course-assessment-match-row');
+    row.append(el('span', prompt.text, 'course-assessment-match-prompt'));
+    const select = document.createElement('select');
+    select.dataset.matchPrompt = prompt.id;
+    select.className = 'course-assessment-match-select';
+    select.setAttribute('aria-label', `Match for ${prompt.text}`);
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Choose match';
+    select.append(placeholder);
+    item.matchOptions.forEach((option) => {
+      const entry = document.createElement('option');
+      entry.value = option.id;
+      entry.textContent = option.text;
+      entry.selected = Array.isArray(item.response) && item.response[promptIndex] === option.id;
+      select.append(entry);
+    });
+    select.addEventListener('change', () => persistResponse(panel, item, fieldset));
+    row.append(select);
+    wrap.append(row);
+  });
+  wrap.append(el('p', 'Choose one match for each prompt.', 'course-assessment-hint'));
+  return wrap;
+}
+
 function renderAssessmentItem(item, index, panel) {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'course-assessment-item';
@@ -530,8 +666,33 @@ function renderAssessmentItem(item, index, panel) {
     input.value = item.response ?? '';
     input.addEventListener('change', () => persistResponse(panel, item, fieldset));
     fieldset.append(input);
+  } else if (item.type === 'ordering') {
+    fieldset.append(orderingControl(item, fieldset, panel));
+  } else if (item.type === 'matching') {
+    fieldset.append(matchingControl(item, fieldset, panel));
+  } else {
+    fieldset.append(el('p', 'This assessment item type is not supported by the current learner runtime.', 'portal-error'));
   }
   return fieldset;
+}
+
+function renderQuestionNavigator(panel, itemCount) {
+  const nav = el('nav', '', 'course-assessment-navigator');
+  nav.setAttribute('aria-label', 'Assessment question navigator');
+  const label = el('strong', 'Questions', 'course-assessment-navigator-label');
+  const list = el('div', '', 'course-assessment-nav-list');
+  for (let index = 0; index < itemCount; index += 1) {
+    const button = el('button', String(index + 1), 'course-assessment-nav-button');
+    button.type = 'button';
+    button.addEventListener('click', () => {
+      const target = panel.querySelectorAll('.course-assessment-item')[index];
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target?.querySelector('input, select')?.focus({ preventScroll: true });
+    });
+    list.append(button);
+  }
+  nav.append(label, list);
+  return nav;
 }
 
 function renderAssessment(payload) {
@@ -540,13 +701,20 @@ function renderAssessment(payload) {
   saveChains.clear();
   setCurriculumTabActive();
   const panel = el('article', '', 'portal-panel course-assessment-panel');
-  panel.append(el('p', 'Course 1 summative assessment', 'eyebrow'));
+  panel.append(el('p', 'Authenticated summative assessment', 'eyebrow'));
   panel.append(el('h2', payload.assessment.title));
-  panel.append(el('p', `This is the public Course 1 final, separate from the Technician I credential examination. Current academic development threshold: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%. This threshold is provisional pending pilot evidence and documented standard setting.`, 'lede'));
+  panel.append(el('p', `This is the graded academic final for ${payload.course?.title ?? 'this course'}. It is recorded to your learner account and remains separate from professional credential issuance. Current academic passing target: ${Number(payload.assessment.passingScorePercent).toFixed(0)}%.`, 'lede'));
   panel.append(el('p', payload.resumed ? 'Your open attempt was resumed. Previously saved responses are restored.' : 'A new attempt has started. Responses save to your learner record as you answer.', 'course-assessment-note'));
+  const identity = el('div', '', 'course-assessment-identity');
+  identity.append(el('span', `Learner: ${payload.learner?.learnerReference ?? 'account linked'}`));
+  identity.append(el('span', `Application: ${payload.learner?.applicationReference ?? 'not linked'}`));
+  identity.append(el('span', `Certificate name: ${payload.learner?.certificateName ?? 'not set'}`));
+  identity.append(el('span', `Attempt: ${payload.attempt.id}`));
+  panel.append(identity);
   const toolbar = el('div', '', 'course-assessment-toolbar');
-  toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('span', 'Responses saved.', 'course-assessment-save-status'));
+  toolbar.append(el('strong', '0/0 answered', 'course-assessment-progress'), el('strong', '', 'course-assessment-timer'), el('span', 'Responses saved.', 'course-assessment-save-status'));
   panel.append(toolbar);
+  panel.append(renderQuestionNavigator(panel, payload.items.length));
   const form = document.createElement('form');
   form.className = 'course-assessment-form';
   form.addEventListener('submit', async (event) => {
@@ -563,22 +731,23 @@ function renderAssessment(payload) {
   lessonView.replaceChildren(panel);
   lessonView.focus();
   updateAssessmentProgress(panel);
+  startAssessmentTimer(panel);
 }
 
-async function submitAssessment(panel) {
+async function submitAssessment(panel, { force = false, timedOut = false } = {}) {
   const submit = panel.querySelector('.course-assessment-submit');
-  if (!submit || submit.disabled) return;
-  submit.disabled = true; submit.textContent = 'Submitting…';
+  if (!submit || (submit.disabled && !force)) return;
+  submit.disabled = true; submit.textContent = timedOut ? 'Time expired — grading…' : 'Submitting…';
   try {
     await Promise.all([...pendingSaves]);
-    if (!allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.');
+    if (!force && !allAnsweredAndSaved(panel)) throw new Error('Every item must have a successfully saved response before submission.');
     const response = await fetch(`/api/v1/me/assessment-attempts/${encodeURIComponent(currentAttempt.attempt.id)}/submit`, {
       method: 'POST', headers: { accept: 'application/json' }, credentials: 'same-origin'
     });
     const body = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(body.error === 'assessment-incomplete' ? 'Every item must have a saved response before submission.' : body.error || `Submission failed (${response.status}).`);
     renderAssessmentResult(body);
-    refreshCourseEvidenceCard();
+    if (body.course?.id === COURSE_ID) refreshCourseEvidenceCard();
   } catch (error) {
     submit.textContent = 'Submit course final';
     updateAssessmentProgress(panel);
@@ -590,13 +759,21 @@ async function submitAssessment(panel) {
 }
 
 function renderAssessmentResult(result) {
+  stopAssessmentTimer();
   const panel = el('article', '', 'portal-panel course-assessment-result');
-  panel.append(el('p', 'Course 1 final result', 'eyebrow'));
+  panel.append(el('p', 'Recorded course-final result', 'eyebrow'));
   panel.append(el('h2', result.attempt.passed ? 'Course final passed under the current academic threshold' : 'Course final not passed under the current academic threshold'));
   const score = el('div', '', `course-assessment-score ${result.attempt.passed ? 'passed' : 'not-passed'}`);
   score.append(el('strong', `${Number(result.attempt.scorePercent).toFixed(0)}%`), el('span', `Current provisional threshold ${Number(result.assessment.passingScorePercent).toFixed(0)}%`));
   panel.append(score);
-  panel.append(el('p', 'This is Course 1 academic knowledge evidence under a provisional development threshold pending pilot evidence and documented standard setting. Practical-performance evidence remains separate, and this is not a Technician I credential decision.', 'course-assessment-note'));
+  const resultRefs = el('div', '', 'course-assessment-identity');
+  resultRefs.append(el('span', `Learner: ${result.learner?.learnerReference ?? 'account linked'}`));
+  resultRefs.append(el('span', `Application: ${result.learner?.applicationReference ?? 'not linked'}`));
+  resultRefs.append(el('span', `Certificate name: ${result.learner?.certificateName ?? 'not set'}`));
+  resultRefs.append(el('span', `Attempt: ${result.attempt.id}`));
+  resultRefs.append(el('span', `Scored: ${result.attempt.scoredAt ? new Date(result.attempt.scoredAt).toLocaleString() : 'pending'}`));
+  panel.append(resultRefs);
+  panel.append(el('p', `This is academic knowledge evidence for ${result.course?.title ?? 'the course'}. Practical/performance evidence and professional credential issuance remain separate decisions.`, 'course-assessment-note'));
   const domains = el('section', '', 'course-assessment-domains');
   domains.append(el('h3', 'Domain results'));
   const list = el('div', '', 'course-assessment-domain-grid');
@@ -614,12 +791,17 @@ function renderAssessmentResult(result) {
     remediation.append(referenceButton); panel.append(remediation);
   }
   const actions = el('div', '', 'course-practical-page-actions');
-  const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary');
-  practicalButton.type = 'button';
-  practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
-  const back = el('button', 'Return to Course 1', 'course-assessment-secondary');
+  if (result.course?.id === COURSE_ID) {
+    const practicalButton = el('button', 'Study course practical', 'course-assessment-secondary');
+    practicalButton.type = 'button';
+    practicalButton.addEventListener('click', async () => renderCoursePractical(await courseEvidence().catch(() => ({ state: 'unavailable' }))));
+    actions.append(practicalButton);
+  }
+  const recordButton = el('button', 'View course record', 'course-assessment-secondary');
+  recordButton.type = 'button'; recordButton.addEventListener('click', () => document.querySelector('#tab-course-record')?.click());
+  const back = el('button', 'Return to course catalog', 'course-assessment-secondary');
   back.type = 'button'; back.addEventListener('click', () => document.querySelector('#tab-catalog')?.click());
-  actions.append(practicalButton, back);
+  actions.append(recordButton, back);
   panel.append(actions);
   lessonView.replaceChildren(panel); lessonView.focus();
 }

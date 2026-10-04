@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-007-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Stunting, leaf discoloration and reduced vigor are present. Which differential is strongest?",
+  "choices": [
+    "One nutrient deficiency only.",
+    "HLVd only because stunting is present.",
+    "A cross-domain differential including nutrient/root-zone, pest/pathogen, environmental/process and other plausible causes.",
+    "No differential until all tests are complete."
+  ],
+  "correct": 2,
+  "rationale": "Overlapping symptoms require a multi-domain differential until discriminating evidence narrows the field.",
+  "references": [
+    "REF-NUTRIENT-DEFICIENCY-001",
+    "REF-CANNABIS-DIAGNOSTICS-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One cultivar appears slower to recover after canopy work, but it was at a different flowering stage than the comparison group. What is the best conclusion?",
   "choices": [
-    "The cultivar is proven genetically intolerant.",
-    "Recovery timing can be ignored.",
-    "The slower group should be removed from the record.",
-    "Stage is a confounder, so genotype causation is not established from this comparison."
+    "Treat the slower recovery as evidence of cultivar sensitivity because both groups received the same canopy work.",
+    "Compare only final canopy appearance because recovery timing becomes irrelevant once both groups return to target structure.",
+    "Exclude the slower group from the comparison because stage mismatch prevents any meaningful inference.",
+    "Treat flowering stage as a confounder and avoid attributing the difference to genotype until stage and other context are adequately controlled."
   ],
   "correct": 3,
-  "rationale": "Stage is a confounder, so genotype causation is not established from this comparison.",
+  "rationale": "Recovery after canopy work can vary with developmental stage, plant vigor, environment, cultivar, and intervention intensity. If the groups were at different flowering stages, the comparison cannot isolate genotype as the cause of slower recovery. The data can still be useful, but the interpretation must acknowledge stage as a confounder and avoid overstating genetic intolerance.",
   "references": [
     "REF-FLOWER-001",
     "REF-CANOPY-DEFOL-2025-001"

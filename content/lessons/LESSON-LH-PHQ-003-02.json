@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHQ-003-02",
+  "title": "Storage Stability: Time, Temperature, Light & Oxygen",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-003-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-CANNABINOID-THERMAL-STABILITY-2022-001",
+    "REF-POSTHARVEST-VOLATILES-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Storage is an active part of product history. Chemical and sensory attributes can change over time, and the direction or magnitude depends on matrix and exposure conditions.",
+    "vocabulary": [
+      {
+        "term": "Stability-indicating attribute",
+        "definition": "Measured property capable of showing relevant product change over time."
+      },
+      {
+        "term": "Oxidative exposure",
+        "definition": "Contact with oxygen that may contribute to chemical change."
+      },
+      {
+        "term": "Storage history",
+        "definition": "Recorded time and environmental exposure associated with a lot."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Time is a process variable",
+        "body": "Results from different dates cannot be compared responsibly without accounting for elapsed time and storage history.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      },
+      {
+        "title": "Temperature and light can accelerate change",
+        "body": "Thermal and light exposure can affect cannabinoid and volatile stability; treatment-specific rates should not be generalized beyond the studied matrix and conditions.",
+        "references": [
+          "REF-CANNABINOID-THERMAL-STABILITY-2022-001",
+          "REF-POSTHARVEST-VOLATILES-2024-001"
+        ]
+      },
+      {
+        "title": "Oxygen effects depend on the system",
+        "body": "Headspace, closure, permeability and opening frequency shape exposure. One packaging claim does not prove preservation of every attribute.",
+        "references": [
+          "REF-POSTHARVEST-STORAGE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two retained samples from one lot diverge after different light and temperature histories; the comparison must preserve those histories."
+    ],
+    "commonMistakes": [
+      "Comparing old and new results as if storage time were irrelevant.",
+      "Treating a cold setpoint as proof of product temperature.",
+      "Assuming one protected attribute means total stability."
+    ],
+    "practicalApplication": "Build a storage-history table linking lot, package, dates, temperature, light, opening events and stability measurements.",
+    "summary": "Storage conclusions require time- and condition-linked evidence for the attributes that matter."
+  }
+}

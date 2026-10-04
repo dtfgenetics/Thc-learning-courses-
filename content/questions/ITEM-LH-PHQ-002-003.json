@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-002-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What evidence best distinguishes a room-control problem from localized product loading?",
+  "choices": [
+    "One sensor at the return.",
+    "A photograph after unloading.",
+    "Mapped room data plus product measurements linked to rack position and load arrangement.",
+    "The operator schedule alone."
+  ],
+  "correct": 2,
+  "rationale": "Location-linked environmental and product evidence can test competing process explanations.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Why are fixed trap IDs useful across rounds?",
   "choices": [
-    "They eliminate the need to record dates.",
-    "They prove absence between traps.",
-    "They support location-specific, comparable time-series evidence.",
-    "They make sample effort irrelevant."
+    "Fixed trap IDs mainly reduce recordkeeping work because the same locations can be reused without documenting dates each round.",
+    "Fixed trap IDs demonstrate that unsampled space between traps remained negative when the same traps stay clear.",
+    "Fixed trap IDs support location-specific time-series comparison because each reading can be tied to the same monitored point across rounds.",
+    "Fixed trap IDs make changes in trap number or sampling effort less important because locations remain constant."
   ],
   "correct": 2,
-  "rationale": "They support location-specific, comparable time-series evidence.",
+  "rationale": "Stable trap identities let reviewers compare the same monitored locations over time and distinguish local persistence, spread, or improvement from changes in trap placement. They do not eliminate the need to record date, effort, trap condition, or other sampling context, and they cannot prove absence between traps. Their main value is preserving spatial identity across repeated observations.",
   "references": [
     "REF-IPM-001"
   ]

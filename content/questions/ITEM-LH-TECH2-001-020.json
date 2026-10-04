@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Unexpected delayed reproductive development is seen across several cultivars in the same room. Which shared factor deserves early verification?",
   "choices": [
-    "A unique genetic defect in every cultivar.",
-    "A different nutrient deficiency in every plant by default.",
-    "Calendar labeling only.",
-    "Photoperiod/light-dark integrity and other shared room conditions."
+    "Investigate cultivar-specific genetics first because different cultivars can share a delayed phenotype when they are grown under the same room conditions.",
+    "Compare nutrient delivery by cultivar because a shared room pattern can still arise from cultivar-specific nutrient demand.",
+    "Recalculate the calendar from the schedule change and use days since transition as the primary test of whether the room is truly delayed.",
+    "Verify photoperiod/light-dark integrity and other shared room conditions because a multi-cultivar pattern raises the value of checking common exposures."
   ],
   "correct": 3,
-  "rationale": "A shared multi-cultivar pattern increases the value of checking shared environmental and photoperiod conditions.",
+  "rationale": "When several cultivars in the same room show a similar developmental delay, a shared exposure becomes more plausible than a separate cultivar-specific cause occurring independently in each line. Photoperiod integrity, light leaks or timing errors, temperature, and other room-wide conditions therefore deserve early verification. Genetics and nutrition can still contribute, but the cohort pattern makes a common environmental factor a high-value first check. Calendar counting alone cannot establish whether morphology is abnormal.",
   "references": [
     "REF-LIGHT-001",
     "REF-FLOWER-MORPH-2023-001"

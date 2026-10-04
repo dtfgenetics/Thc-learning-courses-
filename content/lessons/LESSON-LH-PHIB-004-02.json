@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-004-02",
+  "title": "Cannabis Root, Foliar & Flower Disease Differentials",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-004-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-CANNABIS-PATHOGENS-2019-001",
+    "REF-CANNABIS-DIAGNOSTICS-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Cannabis can be affected by root/crown pathogens, powdery mildew, Botrytis and other disease problems, but similar crop symptoms can also arise from environmental, irrigation or root-zone stress. Specialist diagnosis integrates crop stage, tissue affected, signs, environment and testing.",
+    "vocabulary": [
+      {
+        "term": "Root/crown disease",
+        "definition": "Disease affecting roots or basal stem/crown tissues, often requiring separation from waterlogging, oxygen stress and other root-zone disorders."
+      },
+      {
+        "term": "Powdery mildew",
+        "definition": "A fungal disease characterized by superficial powdery colonies on susceptible plant surfaces; confirmation should use organism evidence rather than leaf discoloration alone."
+      },
+      {
+        "term": "Botrytis",
+        "definition": "A fungal pathogen associated with gray mold/bud rot under favorable host and environmental conditions."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Root and crown cases need root-zone context",
+        "body": "Root browning, poor uptake, wilt and reduced vigor may reflect pathogens such as Fusarium or Pythium-like organisms, but waterlogging, low oxygen and root-zone management can produce overlapping findings. Inspect roots and reconstruct irrigation/environment history.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-CANNABIS-PATHOGENS-2019-001"
+        ]
+      },
+      {
+        "title": "Visible fungal growth can strengthen, not replace, the workup",
+        "body": "Powdery colonies or gray sporulation can provide useful direct evidence, while environmental conditions and crop density help explain risk. Preserve sample identity and escalate uncertain or high-consequence cases.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Management begins with source reduction and environment",
+        "body": "Integrated disease management emphasizes clean stock, sanitation, water/environment management, monitoring and appropriate biological/biorational or other authorized controls. Treatment legality and product selection remain jurisdiction- and label-specific.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A flowering canopy with localized gray mold after prolonged humidity excursions supports a Botrytis workup, but affected tissue should still be documented and handled under the facility's contamination/disposition procedure."
+    ],
+    "commonMistakes": [
+      "Assuming all root browning is infectious.",
+      "Calling nutrient or light stress a disease without pathogen evidence.",
+      "Turning a literature control category into unauthorized pesticide or sanitizer use."
+    ],
+    "practicalApplication": "Build a three-column differential for one root/crown, one foliar and one flower disease scenario: supporting evidence, conflicting evidence and next confirmation step.",
+    "summary": "Cannabis disease differentials combine organism evidence with environmental/root-zone context and do not collapse overlapping symptoms into premature certainty."
+  }
+}

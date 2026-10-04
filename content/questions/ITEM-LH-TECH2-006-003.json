@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which statement about room RH and product water activity is correct?",
   "choices": [
-    "They are interchangeable if measured at the same time.",
-    "Water activity can be inferred exactly from the room display.",
-    "They are different measurements; room RH cannot substitute for product water-activity evidence.",
-    "Room RH is always the stronger product-safety measurement."
+    "Treat room RH and product water activity as interchangeable when both are recorded at equilibrium conditions.",
+    "Use the room RH display to estimate product water activity closely enough for routine disposition decisions.",
+    "Treat them as different measurements; room RH describes the environment while product water activity requires product-specific evidence.",
+    "Prefer room RH because it is continuously monitored and therefore more reliable than an individual product measurement."
   ],
   "correct": 2,
-  "rationale": "They are different measurements; room RH cannot substitute for product water-activity evidence.",
+  "rationale": "Room RH and product water activity are related concepts but they are not interchangeable measurements. Room RH reflects the surrounding air, whereas water activity describes the availability of water within the product and is measured on the product itself. Environmental control can support consistent drying, but it cannot substitute for product-specific evidence when water activity is the decision variable.",
   "references": [
     "REF-POSTHARVEST-STABILITY-2026-001"
   ]

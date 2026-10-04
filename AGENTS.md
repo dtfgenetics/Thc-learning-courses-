@@ -12,7 +12,7 @@ Use specialist GitHub skills when the failure class is clear:
 
 - GitHub Actions failures, missing/stuck checks, logs, reruns, workflow configuration: `skills/github-actions-doctor/SKILL.md`
 - Conflicts, stale branches, wrong PR bases, duplicate/superseded work, difficult merges: `skills/github-branch-pr-surgery/SKILL.md`
-- `dev -> staging -> main` promotion, release gates, deployment verification: `skills/github-release-promotion-manager/SKILL.md`
+- release promotion, release gates, deployment verification: `skills/github-release-promotion-manager/SKILL.md`
 
 After any push, bot-generated commit, conflict-resolution push, merge, or promotion, immediately run the post-push convergence procedure at:
 
@@ -24,4 +24,24 @@ When Academy/product work and repository operations both apply, use the Academy 
 
 The skills are the project workflow sources of truth. Keep this file short; update the skills/resources instead of duplicating detailed instructions here.
 
+## Terminology boundary
+
+The word **course** is reserved for certification curriculum. A course object, course lesson, course assessment, course final, course practical, or course completion record must belong to a certification pathway.
+
+Do not label encyclopedia entries, reference articles, guides, SOPs, glossary entries, tools, calculators, visual explainers, job aids, or other non-credential education as courses. These may support certification instruction, but they remain separate content types and do not become courses merely because they are educational.
+
 Before adding or editing Academy material, read `docs/AI-CONTENT-AUTHORING-GUIDE.md`. It defines the search-before-create sequence, canonical directories, object wiring order, status boundaries, generated files, and minimum deterministic checks. New learner downloads belong in `content/downloads/` with files under `apps/web/public/downloads/`; do not model them as legacy 420-catalog resources.
+
+## Parallel chat/session contract
+
+Every new concurrent Academy task must use its own session branch created from the current validated `main` branch:
+
+`work/academy/<task>/<session-id>`
+
+Do not reuse another chat's mutable branch. Resume is explicit and should point to the exact branch/PR being continued. Until `dev` and `staging` are deliberately reconciled with `main`, they are legacy/quarantined integration branches and must not be used as the starting point or ordinary PR target for new work.
+
+Keep curriculum, assessments, practicals, credentials, evidence, and Academy runtime changes in this canonical repository. Use one PR per session and run the narrow relevant checks first, followed by the repository's required validation/release checks before integration.
+
+Human-review, pilot, calibration, accessibility, security, and credential authorization evidence must remain fail-closed. Parallel work must never fabricate or bypass missing human/operational evidence just to unblock another session.
+
+Production/integration consumers should reference an exact validated commit/version after merge rather than copying mutable Academy source into another repo.

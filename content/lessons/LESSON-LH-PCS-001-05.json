@@ -1,0 +1,55 @@
+{
+  "id": "LESSON-LH-PCS-001-05",
+  "title": "Seed-to-Seedling Batch QA, Records & Troubleshooting",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001",
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-001-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022",
+    "REF-PROP-GERMINATION-H2O2-2021",
+    "REF-PROP-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist propagation decisions should be reconstructable. Batch records connect seed identity, treatment, environment, counts, timing, abnormalities and handoff without overstating causation.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Preserve the denominator through the workflow",
+        "body": "Record seeds started, seeds germinated, normal seedlings established, losses and removals. Reconcile each category rather than reporting only successful plants.",
+        "references": [
+          "REF-HEMP-GERMINATION-TEMP-2022"
+        ]
+      },
+      {
+        "title": "Separate observation from explanation",
+        "body": "Record mold, delayed emergence, abnormal seedlings or uneven trays as observations first. A suspected cause belongs in a separate interpretation field with supporting and conflicting evidence.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Escalate when the lot or process may be compromised",
+        "body": "Identity uncertainty, unusual loss, recurring contamination, suspected disease or a large shift from expected performance warrants hold/escalation under the facility procedure instead of silent relabeling or undocumented protocol changes.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating a research protocol value as a universal production target.",
+      "Reporting successful seedlings without preserving the original denominator.",
+      "Changing multiple variables at once and then claiming one caused the result."
+    ],
+    "practicalApplication": "Complete a batch closeout from a scenario containing delayed emergence, two contaminated cells, one label mismatch and uneven establishment; show what is observation, what is hypothesis and what requires escalation.",
+    "summary": "Use source-controlled evidence, preserve identity and denominators, and keep observations separate from explanations."
+  }
+}

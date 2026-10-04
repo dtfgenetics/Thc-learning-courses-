@@ -5,6 +5,7 @@ import path from 'node:path';
 const sql = fs.readFileSync(path.join(process.cwd(), 'database/rls-policies.sql'), 'utf8');
 const protectedTables = [
   'learners',
+  'academy_applications',
   'enrollments',
   'lesson_progress',
   'assessment_attempts',
@@ -21,6 +22,7 @@ for (const table of protectedTables) {
 
 assert.match(sql, /current_setting\('thc\.learner_id', true\)/i);
 assert.match(sql, /create policy learner_self_read/i);
+assert.match(sql, /create policy academy_application_self_read/i);
 assert.match(sql, /create policy assessment_attempt_item_self_read/i);
 assert.match(sql, /create policy performance_assessment_result_self_read/i);
 assert.match(sql, /create policy portfolio_artifact_self_read/i);

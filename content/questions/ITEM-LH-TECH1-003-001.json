@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A dashboard shows 60% RH in two rooms, but one room is warmer. Which action best preserves useful environmental evidence?",
   "choices": [
-    "Record each room temperature and RH pair and interpret VPD with the supplied method",
-    "Assume the rooms have identical VPD",
-    "Lower RH until the percentages differ",
-    "Ignore temperature because RH is enough"
+    "Record each room's temperature and RH pair and use the supplied method to interpret VPD for each room.",
+    "Treat the rooms as having the same VPD because their RH percentages match.",
+    "Lower RH in the warmer room until the displayed percentages differ enough to show a VPD difference.",
+    "Use RH alone because temperature affects plant growth but not atmospheric drying demand."
   ],
   "correct": 0,
-  "rationale": "Record each room temperature and RH pair and interpret VPD with the supplied method. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "Relative humidity cannot be interpreted independently of temperature when assessing atmospheric drying demand. Two rooms can both read 60% RH yet have different vapor-pressure relationships because the warmer room has a different saturation vapor pressure. The strongest record preserves the paired temperature/RH measurements for each room and then applies the facility's approved interpretation method rather than assuming equal VPD from equal RH.",
   "references": [
     "REF-VPD-002"
   ],

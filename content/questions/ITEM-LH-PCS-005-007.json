@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-005-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-TC-ASEPTIC-001",
+  "objective": "LO-LH-PCS-005-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Contamination appears across genotypes that shared one preparation lot. What is the strongest conclusion?",
+  "choices": [
+    "Every genotype is inherently contaminated",
+    "The operator is proven responsible",
+    "The preparation lot deserves investigation but causation is not yet proved",
+    "The organism is identified"
+  ],
+  "correct": 2,
+  "rationale": "A shared factor supports a hypothesis, not a final causal or organism identification.",
+  "references": [
+    "REF-IPM-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-005",
+    "seedBank": true
+  }
+}

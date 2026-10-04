@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "An alarm was acknowledged and cleared, but the root cause was not established. What should the shift handoff say?",
   "choices": [
-    "Problem fixed",
-    "State the alarm, evidence, checks completed and that cause remains unresolved with required follow-up",
-    "Delete the alarm because it cleared",
-    "Insert the most likely cause as confirmed"
+    "State that the problem was fixed because the alarm cleared after acknowledgement.",
+    "State the alarm, supporting evidence, checks completed, current equipment/environment status, and that the root cause remains unresolved with required follow-up.",
+    "Remove the alarm from the handoff because it is no longer active.",
+    "Record the most likely root cause as confirmed so the next shift has a clear direction."
   ],
   "correct": 1,
-  "rationale": "State the alarm, evidence, checks completed and that cause remains unresolved with required follow-up. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "Alarm clearance shows only that the alarm state changed; it does not prove the underlying condition was corrected. A strong handoff preserves the alarm history, the checks already completed, what is currently known, what remains uncertain, and what follow-up is required. That prevents the next shift from assuming closure that has not actually been established.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ],

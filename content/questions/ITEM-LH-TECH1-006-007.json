@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why is “seven days” not sufficient by itself to determine drying completion?",
   "choices": [
-    "Drying never changes moisture",
-    "Only cultivar name matters",
-    "Drying depends on material and controlled environmental/process conditions, not elapsed time alone",
-    "Time has no relationship to drying"
+    "Because moisture changes are too small after several days to matter.",
+    "Because cultivar identity alone determines when product is dry enough.",
+    "Because drying completion depends on product condition and controlled process/environment evidence, not elapsed time by itself.",
+    "Because elapsed time has no useful relationship to drying and should never be recorded."
   ],
   "correct": 2,
-  "rationale": "Drying depends on material and controlled environmental/process conditions, not elapsed time alone. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Elapsed time is useful context, but it is not direct proof of product condition. Drying rate can vary with material mass, load, airflow, temperature, humidity, rack position, and starting condition. Completion should therefore rely on the facility's controlled process and product evidence rather than a universal day count.",
   "references": [
     "REF-POSTHARVEST-001"
   ],

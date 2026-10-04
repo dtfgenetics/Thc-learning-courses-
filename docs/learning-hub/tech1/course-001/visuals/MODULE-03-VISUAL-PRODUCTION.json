@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "courseId": "COURSE-LH-TECH1-001",
+  "finalFormats": [
+    "png",
+    "webp",
+    "jpeg"
+  ],
+  "svgAllowed": false,
+  "minLongEdgePx": 2200,
+  "styleRule": "Use photorealistic cultivation scenes for recognition tasks and branded scientific diagrams/process visuals for mechanisms. No generic decorative cannabis imagery.",
+  "textRule": "Keep critical labels concise in-image; put detailed explanation in HTML caption/body copy.",
+  "accessibilityRule": "Every asset requires alt text and a nearby instructional caption.",
+  "moduleId": "MOD-LH-TECH1-001-SOPS",
+  "moduleTitle": "SOPs, Work Orders, Authority & Escalation",
+  "visuals": [
+    {
+      "id": "VIS-LH-T1-C1-M3-001",
+      "lesson": "3.1",
+      "title": "SOP versus work order relationship",
+      "type": "comparison-diagram",
+      "placement": "After SOP/work-order distinction",
+      "teachingPurpose": "SOP versus work order relationship",
+      "requiredContent": [
+        "standard method",
+        "specific assignment",
+        "shared identifiers",
+        "conflict escalation"
+      ],
+      "filename": "vis-lh-t1-c1-m3-001-sop-versus-work-order-relationship.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-002",
+      "lesson": "3.1",
+      "title": "Controlled document lifecycle",
+      "type": "process-diagram",
+      "placement": "After current-copy section",
+      "teachingPurpose": "Controlled document lifecycle",
+      "requiredContent": [
+        "draft/review",
+        "approved revision",
+        "distribution/access",
+        "superseded copy",
+        "revision verification"
+      ],
+      "filename": "vis-lh-t1-c1-m3-002-controlled-document-lifecycle.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-003",
+      "lesson": "3.1",
+      "title": "Fixed process versus decision point",
+      "type": "scientific-process-diagram",
+      "placement": "After process-variation foundation",
+      "teachingPurpose": "Fixed process versus decision point",
+      "requiredContent": [
+        "fixed required steps",
+        "measured condition",
+        "branch decision",
+        "acceptance criterion"
+      ],
+      "filename": "vis-lh-t1-c1-m3-003-fixed-process-versus-decision-point.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-004",
+      "lesson": "3.1",
+      "title": "Action versus acceptance criterion",
+      "type": "comparison-plate",
+      "placement": "After acceptance-criteria section",
+      "teachingPurpose": "Action versus acceptance criterion",
+      "requiredContent": [
+        "action examples",
+        "acceptance examples",
+        "why motion alone is not completion"
+      ],
+      "filename": "vis-lh-t1-c1-m3-004-action-versus-acceptance-criterion.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-005",
+      "lesson": "3.2",
+      "title": "Technician authority boundary ladder",
+      "type": "decision-diagram",
+      "placement": "After decision-quality section",
+      "teachingPurpose": "Technician authority boundary ladder",
+      "requiredContent": [
+        "observe",
+        "verify authority",
+        "routine action",
+        "stop/hold",
+        "supervisor",
+        "maintenance",
+        "specialist/regulatory"
+      ],
+      "filename": "vis-lh-t1-c1-m3-005-technician-authority-boundary-ladder.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-006",
+      "lesson": "3.2",
+      "title": "Affected versus authorized role model",
+      "type": "comparison-diagram",
+      "placement": "After OSHA role-boundary section",
+      "teachingPurpose": "Affected versus authorized role model",
+      "requiredContent": [
+        "normal operation",
+        "affected worker",
+        "authorized servicing role",
+        "protected servicing boundary"
+      ],
+      "filename": "vis-lh-t1-c1-m3-006-affected-versus-authorized-role-model.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-007",
+      "lesson": "3.3",
+      "title": "Deviation lifecycle",
+      "type": "process-flow",
+      "placement": "After deviations section",
+      "teachingPurpose": "Deviation lifecycle",
+      "requiredContent": [
+        "detect",
+        "stabilize/stop if needed",
+        "record facts",
+        "notify",
+        "authorized decision",
+        "close or handoff"
+      ],
+      "filename": "vis-lh-t1-c1-m3-007-deviation-lifecycle.png"
+    },
+    {
+      "id": "VIS-LH-T1-C1-M3-008",
+      "lesson": "3.3",
+      "title": "Truthful incomplete-work handoff",
+      "type": "annotated-document-example",
+      "placement": "After worked case",
+      "teachingPurpose": "Truthful incomplete-work handoff",
+      "requiredContent": [
+        "completed",
+        "not completed",
+        "reason",
+        "notification",
+        "next action",
+        "no false completion"
+      ],
+      "filename": "vis-lh-t1-c1-m3-008-truthful-incomplete-work-handoff.png"
+    }
+  ]
+}

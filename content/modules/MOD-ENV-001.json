@@ -3,7 +3,17 @@
   "title": "Environmental Management Foundations",
   "version": "1.0.0",
   "status": "draft",
-  "lessons": ["LESSON-ENV-VPD-001", "LESSON-ENV-SENSORS-002", "LESSON-ENV-LEAF-VPD-003"],
-  "competencies": ["COMP-ENV-VPD-001"],
-  "assessment": "ASSESS-ENV-MODULE-001"
+  "lessons": [
+    "LESSON-ENV-VPD-001",
+    "LESSON-ENV-SENSORS-002",
+    "LESSON-ENV-LEAF-VPD-003"
+  ],
+  "competencies": [
+    "COMP-ENV-VPD-001"
+  ],
+  "assessment": "ASSESS-ENV-MODULE-001",
+  "extensions": {
+    "academicPublicationStatus": "machine-ready-human-review-pending",
+    "professionalCredentialUseAuthorized": false
+  }
 }

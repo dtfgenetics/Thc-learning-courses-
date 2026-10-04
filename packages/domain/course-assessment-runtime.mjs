@@ -68,6 +68,31 @@ function choicePairs(item, formId, randomizeChoices = true) {
   return randomizeChoices ? shuffled(pairs, `${formId}:${item.id}@${item.version}:choices`) : pairs;
 }
 
+const learnerRuntimeTypes = new Set(['multiple-choice', 'scenario', 'case-study', 'multiple-response', 'numeric', 'ordering', 'matching']);
+
+function assertLearnerRuntimeItem(item) {
+  if (!learnerRuntimeTypes.has(item.type)) throw new Error(`Unsupported learner assessment item type ${item.type}`);
+  if (item.type === 'ordering') {
+    if (!Array.isArray(item.choices) || item.choices.length < 2) throw new Error(`Ordering item ${item.id} requires at least two choices`);
+    if (!Array.isArray(item.correct) || item.correct.length !== item.choices.length) throw new Error(`Ordering item ${item.id} requires a complete ordering answer key`);
+    const indexes = item.correct.map(Number);
+    if (indexes.some((value) => !Number.isInteger(value) || value < 0 || value >= item.choices.length) || new Set(indexes).size !== item.choices.length) {
+      throw new Error(`Ordering item ${item.id} answer key must be a permutation of all choice indexes`);
+    }
+  }
+  if (item.type === 'matching') {
+    if (!Array.isArray(item.matchPrompts) || item.matchPrompts.length < 2) throw new Error(`Matching item ${item.id} requires at least two prompts`);
+    if (!Array.isArray(item.matchOptions) || item.matchOptions.length < 2) throw new Error(`Matching item ${item.id} requires at least two options`);
+    const promptIds = item.matchPrompts.map((entry) => String(entry?.id ?? ''));
+    const optionIds = item.matchOptions.map((entry) => String(entry?.id ?? ''));
+    if (promptIds.some((id) => !id) || new Set(promptIds).size !== promptIds.length) throw new Error(`Matching item ${item.id} prompt IDs must be unique`);
+    if (optionIds.some((id) => !id) || new Set(optionIds).size !== optionIds.length) throw new Error(`Matching item ${item.id} option IDs must be unique`);
+    if (!Array.isArray(item.correct) || item.correct.length !== promptIds.length) throw new Error(`Matching item ${item.id} requires one answer per prompt`);
+    const answers = item.correct.map(String);
+    if (answers.some((id) => !optionIds.includes(id))) throw new Error(`Matching item ${item.id} answer key references an unknown option`);
+  }
+}
+
 export function buildCourseAssessmentForm({ assessment, itemBank, seed = crypto.randomUUID() }) {
   if (!assessment?.id || !Array.isArray(assessment.items) || assessment.items.length === 0) throw new Error('assessment items required');
   const byId = new Map(itemBank.map((item) => [item.id, item]));
@@ -75,6 +100,7 @@ export function buildCourseAssessmentForm({ assessment, itemBank, seed = crypto.
     const item = byId.get(id);
     if (!item) throw new Error(`Missing assessment item ${id}`);
     if (item.purpose !== 'summative') throw new Error(`Course assessment item ${id} must be summative`);
+    assertLearnerRuntimeItem(item);
     return { id: item.id, version: item.version, competency: item.competency };
   });
   const ordered = assessment.randomizeItems ? shuffled(selected, `${assessment.id}:${seed}:items`) : selected;
@@ -113,6 +139,27 @@ export function presentCourseAssessmentItem(item, { formId, response = null, ran
     return { ...base, choices: pairs.map((pair) => pair.choice), response: presentedResponse };
   }
   if (item.type === 'numeric') return { ...base, response: response == null ? null : Number(response) };
+  if (item.type === 'ordering') {
+    assertLearnerRuntimeItem(item);
+    const pairs = choicePairs(item, formId, randomizeChoices);
+    const presentedResponse = Array.isArray(response)
+      ? response.map((sourceIndex) => pairs.findIndex((pair) => pair.sourceIndex === Number(sourceIndex))).filter((index) => index >= 0)
+      : [];
+    return { ...base, choices: pairs.map((pair) => pair.choice), response: presentedResponse };
+  }
+  if (item.type === 'matching') {
+    assertLearnerRuntimeItem(item);
+    const options = randomizeChoices
+      ? shuffled(item.matchOptions, `${formId}:${item.id}@${item.version}:matching-options`)
+      : [...item.matchOptions];
+    const safeResponse = Array.isArray(response) ? response.map(String) : [];
+    return {
+      ...base,
+      matchPrompts: item.matchPrompts.map((entry) => ({ id: entry.id, text: entry.text })),
+      matchOptions: options.map((entry) => ({ id: entry.id, text: entry.text })),
+      response: safeResponse
+    };
+  }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
 
@@ -136,6 +183,26 @@ export function normalizePresentedResponse(item, { formId, response, randomizeCh
     if (!Number.isFinite(numeric)) throw new Error(`Response for ${item.id} must be numeric`);
     return numeric;
   }
+  if (item.type === 'ordering') {
+    assertLearnerRuntimeItem(item);
+    if (!Array.isArray(response)) throw new Error(`Response for ${item.id} must be an ordered array`);
+    const pairs = choicePairs(item, formId, randomizeChoices);
+    const indexes = response.map(Number);
+    if (indexes.length !== pairs.length || indexes.some((index) => !Number.isInteger(index) || !pairs[index]) || new Set(indexes).size !== pairs.length) {
+      throw new Error(`Response for ${item.id} must rank every choice exactly once`);
+    }
+    return indexes.map((index) => pairs[index].sourceIndex);
+  }
+  if (item.type === 'matching') {
+    assertLearnerRuntimeItem(item);
+    if (!Array.isArray(response)) throw new Error(`Response for ${item.id} must be an array of option IDs`);
+    const optionIds = new Set(item.matchOptions.map((entry) => String(entry.id)));
+    const answers = response.map(String);
+    if (answers.length !== item.matchPrompts.length || answers.some((id) => !optionIds.has(id))) {
+      throw new Error(`Response for ${item.id} must include one valid option ID per prompt`);
+    }
+    return answers;
+  }
   throw new Error(`Unsupported learner assessment item type ${item.type}`);
 }
 
@@ -154,6 +221,7 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
       formId: attempt.formId,
       status: attempt.status,
       startedAt: attempt.startedAt,
+      expiresAt: attempt.expiresAt ?? null,
       submittedAt: attempt.submittedAt ?? null,
       scoredAt: attempt.scoredAt ?? null
     },
@@ -161,6 +229,7 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
       id: assessment.id,
       title: assessment.title,
       totalItems: items.length,
+      timeLimitMinutes: assessment.timeLimitMinutes == null ? null : Number(assessment.timeLimitMinutes),
       passingScorePercent: Number(assessment.passingScorePercent ?? 0),
       feedbackMode: assessment.feedbackMode ?? null
     },
@@ -168,10 +237,10 @@ export function presentCourseAssessmentAttempt({ assessment, attempt, itemBank }
   };
 }
 
-export function scorePersistedCourseAssessment({ assessment, attempt, itemBank, now = new Date().toISOString() }) {
+export function scorePersistedCourseAssessment({ assessment, attempt, itemBank, now = new Date().toISOString(), allowIncomplete = false }) {
   if (attempt.status !== 'started') throw new Error(`Cannot score attempt in status ${attempt.status}`);
   const unanswered = attempt.items.filter((row) => row.response == null || (Array.isArray(row.response) && row.response.length === 0));
-  if (unanswered.length) throw new Error(`Assessment has ${unanswered.length} unanswered item(s)`);
+  if (unanswered.length && !allowIncomplete) throw new Error(`Assessment has ${unanswered.length} unanswered item(s)`);
   const submitted = { ...attempt, status: 'submitted', submittedAt: now };
   const scored = scoreAttempt(submitted, itemBank, Number(assessment.passingScorePercent ?? 0), now);
   return { attempt: scored, competencyResults: competencyResults(scored) };

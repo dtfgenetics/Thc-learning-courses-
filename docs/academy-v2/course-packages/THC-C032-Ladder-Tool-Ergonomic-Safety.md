@@ -1,3 +1,6 @@
+> **ARCHIVED LEGACY PROTOTYPE — NOT A CERTIFICATION COURSE**  
+> This package predates the dedicated Learning Hub certification model. Preserve it only for source recovery and provenance. Do not count it as a certification course, test, or credential requirement. Any useful material must be migrated into a dedicated `COURSE-LH-*` course and rewritten/aligned to that course's own objectives and tests.
+
 # THC-C032 — Ladder, Tool, and Ergonomic Safety
 
 ## Controlled Academy Course Package

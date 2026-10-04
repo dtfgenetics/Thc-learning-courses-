@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-003-04",
+  "title": "Acclimation & Transition to Production Conditions",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-003-04"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for acclimation & transition to production conditions within controlled clonal-propagation systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Visible roots are not the end of propagation",
+        "body": "A newly rooted cutting still has limited root capacity relative to an established plant. Abruptly increasing atmospheric or light demand can exceed the developing root system's ability to support the shoot.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Acclimation is a staged increase in demand",
+        "body": "Transition should progressively move rooted plants toward the intended production environment while observing turgor, new growth, root development and recovery after each step. The exact schedule belongs to the validated facility process.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Use response criteria instead of calendar alone",
+        "body": "A scheduled transition date is context, not proof of readiness. A batch that repeatedly wilts after a transition step may need verification of root capacity, local environment or process execution before the next step.",
+        "references": [
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Removing protection abruptly because roots are visible.",
+      "Keeping rooted plants indefinitely under propagation conditions without a transition plan.",
+      "Advancing every genotype on the same calendar despite different response evidence."
+    ],
+    "practicalApplication": "Build a staged acclimation decision table using observable response, root-development evidence and hold/escalation criteria rather than inventing universal environmental setpoints.",
+    "summary": "Successful cloning includes a stable transition to production conditions, not root appearance alone."
+  }
+}

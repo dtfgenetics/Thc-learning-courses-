@@ -10,8 +10,23 @@ create table if not exists academy_schema_migrations (
 create table if not exists learners (
   id uuid primary key,
   external_subject text not null unique,
+  learner_reference text unique,
+  display_name text,
+  certificate_name text,
   created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
   disabled_at timestamptz
+);
+
+create table if not exists academy_applications (
+  id uuid primary key,
+  learner_id uuid not null references learners(id),
+  application_ref text not null unique,
+  program_id text not null,
+  status text not null check (status in ('active','completed','withdrawn')),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (learner_id, program_id)
 );
 
 create table if not exists enrollments (
@@ -41,8 +56,10 @@ create table if not exists assessment_attempts (
   assessment_version text not null,
   form_id text not null,
   form_hash text not null,
+  application_id uuid references academy_applications(id),
   status text not null check (status in ('started','submitted','scored','voided')),
   started_at timestamptz not null default now(),
+  expires_at timestamptz,
   submitted_at timestamptz,
   scored_at timestamptz,
   score_percent numeric(5,2),
@@ -169,6 +186,8 @@ create table if not exists audit_events (
   created_at timestamptz not null default now()
 );
 
+create unique index if not exists idx_learners_reference_unique on learners(learner_reference) where learner_reference is not null;
+create index if not exists idx_applications_learner_program on academy_applications(learner_id, program_id, updated_at desc);
 create index if not exists idx_attempts_learner_assessment on assessment_attempts(learner_id, assessment_id, started_at desc);
 create index if not exists idx_performance_learner_assessment on performance_assessment_results(learner_id, assessment_id, updated_at desc);
 create index if not exists idx_practical_assignment_evaluator on practical_evaluation_assignments(course_id, assessment_id, evaluator_id, updated_at desc);
@@ -191,4 +210,29 @@ on conflict (version) do nothing;
 
 insert into academy_schema_migrations (version, description)
 values ('4', 'Learner practical evidence reference submissions')
+on conflict (version) do nothing;
+
+alter table assessment_attempts
+  add column if not exists expires_at timestamptz;
+
+insert into academy_schema_migrations (version, description)
+values ('5', 'Timed assessment attempt expiration')
+on conflict (version) do nothing;
+
+alter table learners add column if not exists learner_reference text;
+alter table learners add column if not exists display_name text;
+alter table learners add column if not exists certificate_name text;
+alter table learners add column if not exists updated_at timestamptz not null default now();
+alter table assessment_attempts add column if not exists application_id uuid references academy_applications(id);
+
+insert into academy_schema_migrations (version, description)
+values ('6', 'Learner profile, application references and assessment linkage')
+on conflict (version) do nothing;
+
+create unique index if not exists idx_credentials_active_subject_definition
+  on credentials(subject_hash, credential_definition_id, credential_definition_version)
+  where status in ('issued','valid');
+
+insert into academy_schema_migrations (version, description)
+values ('7', 'Idempotent active credential issuance uniqueness')
 on conflict (version) do nothing;

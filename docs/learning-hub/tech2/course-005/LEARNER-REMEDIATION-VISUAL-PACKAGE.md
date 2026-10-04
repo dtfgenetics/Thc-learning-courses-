@@ -2,7 +2,7 @@
 
 **Course:** Propagation & Canopy Performance Troubleshooting  
 **Version anchor:** 0.2.0  
-**Status:** authored development support; human review open
+**Status:** published owner-approved academic learner support; human review open
 
 ## Learning loop
 Orient → observe/measure → compare → reason → act within authority → document → reassess in an equivalent context.
@@ -68,12 +68,24 @@ Minimum evidence: priority statement; exact identifiers; source instruction; obs
 ## Visual production
 Produce at least **4 primary visuals**, one per current outcome. No maximum asset count. Visuals must use exact terminology, avoid universal SOP/legal/product claims, preserve authority limits, work at mobile size, include external caption/alt text, and not rely on color alone.
 
+## Current primary-visual production state
+
+Course 5 has **4 owner-approved lossless WebP primary visuals** recorded in `visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json`. Learner lessons use the WebP paths under `/assets/tech2/course5/`. Legacy SVG files remain provenance/source material only and are not the learner-facing production format.
+
+The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
+
 ## Accessibility/manual review
 Keyboard/focus; headings/landmarks; screen-reader order/semantics; 200%/400% zoom/reflow; mobile/tablet/desktop; contrast and non-color cues; form/table labels; assessment instructions/errors; visual text alternatives; print/download readability.
 
 ## Evidence/authority boundary
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-This draft course shell is not credential evidence merely because its structure exists. Dedicated instruction, formative work, course-level summative assessment where applicable, human technical review, accessibility review, and mapped performance evidence must be completed and validated before release.
+This course has dedicated instruction and a course-owned summative bank, but those materials remain separate from professional credential issuance. Every summative objective is mapped to dedicated Course 5 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be scored unless first taught directly in Course 5. The course does not authorize unsupported genotype/contamination conclusions or independent high-risk intervention. Human technical review, accessibility review, mapped performance validation, program validation, standard setting and final release approval remain separate gates.
 
 Mapped performance evidence: `PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW`. Academic course completion alone does not validate or issue Technician II certification.
+
+## Published learner job aid
+
+- **DL-TECH2-PROP-CANOPY-001 — Technician II Propagation and Canopy Performance Troubleshooting Log**
+- Download: `/downloads/tech2-propagation-canopy-troubleshooting.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.

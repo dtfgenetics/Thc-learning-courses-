@@ -1,0 +1,61 @@
+{
+  "id": "COURSE-LH-EIFS-002",
+  "title": "Lighting, PPFD, DLI, Photoperiod & Canopy Uniformity",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "EIFS specialist learners",
+    "Cultivation personnel responsible for canopy-light measurement, mapping, fixture verification and evidence-based lighting handoff"
+  ],
+  "prerequisites": [
+    "Plant-Environment Measurement & Crop Response or equivalent measurement foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Lighting instruction uses controlled university-extension measurement guidance plus governed cannabis/environment material. PPFD, DLI, photoperiod and spectrum relationships are taught as measurement/response concepts; non-cannabis crop values and study-specific cannabis treatments are not universal facility targets.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize electrical work, fixture modification, photoperiod changes or production setpoint changes outside assigned authority.",
+  "description": "Develops specialist measurement and interpretation of canopy light through PPFD mapping, DLI, photoperiod, spectrum, fixture geometry, uniformity, crop architecture and cross-system environmental context.",
+  "modules": [
+    "MOD-LH-EIFS-002-LIGHTING"
+  ],
+  "competencies": [
+    "COMP-LIGHT-001",
+    "COMP-LIGHT-ADV-001",
+    "COMP-ENV-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-002-FINAL",
+  "learningOutcomes": [
+    "Design and execute a repeatable canopy PPFD mapping plan with controlled measurement height, orientation, grid geometry and meter verification.",
+    "Calculate and interpret DLI from representative PPFD and photoperiod while explaining why equal DLI can arise from different intensity-duration combinations.",
+    "Evaluate canopy-light uniformity using distribution, range and spatial pattern rather than relying on a single average or center measurement.",
+    "Interpret photoperiod, spectrum, fixture geometry and canopy architecture as interacting lighting variables without overstating universal crop-response claims.",
+    "Produce a lighting verification report that links measurement quality, canopy distribution, operating state, crop/environment context and authorized next action."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-EIFS-001",
+      "COURSE-ENV-LIGHT-ADVANCED-001"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-002-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

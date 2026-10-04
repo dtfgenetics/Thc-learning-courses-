@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-006-01",
+  "title": "Outbreak Triage: Contain Risk Without Overcalling Cause",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-006-01"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "An outbreak response starts by limiting plausible spread while preserving evidence and uncertainty. Containment can be justified before diagnosis is complete, but containment itself does not prove the suspected cause.",
+    "vocabulary": [
+      {
+        "term": "Outbreak signal",
+        "definition": "A cluster, trend or high-consequence finding that may indicate a spreading pest, pathogen or plant-health problem and warrants coordinated response."
+      },
+      {
+        "term": "Immediate containment",
+        "definition": "Temporary movement or access controls used to reduce potential spread while the problem is investigated."
+      },
+      {
+        "term": "Triage",
+        "definition": "Rapid prioritization of actions based on consequence, spread risk, evidence quality and authority."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Control spread while evidence develops",
+        "body": "If a finding could move through plant material, tools, people, water/root-zone pathways or crop movement, temporary containment may be appropriate before confirmation. The record must still label the cause as suspected until evidence supports more certainty.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      },
+      {
+        "title": "Preserve identity and the original event",
+        "body": "Record who observed what, where and when, affected plant/lot identity, direct evidence, immediate actions and unresolved questions. Do not rewrite the first observation after later evidence changes the diagnosis.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Keep authority boundaries explicit",
+        "body": "A scout or technician may be authorized to isolate, flag or escalate but not to release quarantine, destroy material, select pesticides or make regulated disposition decisions unless current procedure grants that authority.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A suspect HLVd donor group can be held and movement-limited before test confirmation, but the hold must not be documented as a confirmed positive unless testing supports it."
+    ],
+    "commonMistakes": [
+      "Treating containment as diagnosis.",
+      "Moving suspect material to get a better look without preserving pathway controls.",
+      "Discarding the original record after the hypothesis changes."
+    ],
+    "practicalApplication": "Build a first-hour outbreak triage card listing immediate containment, identity preservation, evidence capture, escalation owner and actions that remain outside the responder's authority.",
+    "summary": "Strong outbreak triage reduces spread without overstating certainty and preserves the evidence needed for later diagnosis and CAPA."
+  }
+}

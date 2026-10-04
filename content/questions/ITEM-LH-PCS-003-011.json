@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-003-04",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "What makes a stronger acclimation rule than advancing every tray on a fixed date?",
+  "choices": [
+    "Advance when a single leaf looks dark green",
+    "Use staged transition criteria that combine root-development evidence and plant response under the authorized process",
+    "Advance all genotypes together regardless of response",
+    "Keep all rooted plants permanently under propagation conditions"
+  ],
+  "correct": 1,
+  "rationale": "Response-based staged transition better reflects biological readiness than calendar alone.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

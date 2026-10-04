@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-003-03",
+  "title": "Rooting Progress, Failure Localization & Evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-003-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-PROP-001",
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for rooting progress, failure localization & evidence within controlled clonal-propagation systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Separate survival from root formation",
+        "body": "Turgid leaves show that a cutting has not visibly collapsed, but they do not prove that adventitious roots have formed. Rooting assessment should distinguish early survival, root initiation and usable root development.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Locate the failure stage before changing the protocol",
+        "body": "Loss before root initiation suggests a different problem set from roots that form but fail during later development or transplant. Recording the stage at which loss occurs narrows the next useful checks.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Compare batches without overclaiming cause",
+        "body": "Differences among donors, genotypes, operators, tray positions and dates can reveal patterns, but a pattern is not proof of cause. Strong troubleshooting records preserve plausible alternatives and identify the next discriminating observation or controlled test.",
+        "references": [
+          "REF-CANNABIS-CLONAL-ROOTING-2019"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Calling a cutting rooted based only on leaf appearance.",
+      "Changing multiple variables before locating the failure stage.",
+      "Treating one failed tray as proof of a universal protocol defect."
+    ],
+    "practicalApplication": "Classify a set of propagation failures as pre-root survival, root-initiation, root-development or post-root transition failures and choose the next useful evidence for each.",
+    "summary": "Failure localization turns vague low success into a testable question about where the propagation process is breaking down."
+  }
+}

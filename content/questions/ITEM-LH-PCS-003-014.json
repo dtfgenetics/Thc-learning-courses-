@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which metric set best localizes propagation performance?",
+  "choices": [
+    "Only final rooting percentage",
+    "Started count, survival, rooting timing, failure stage, acclimation loss and final handoff count",
+    "Only room humidity",
+    "Only donor age"
+  ],
+  "correct": 1,
+  "rationale": "Stage-specific counts reveal where performance changes rather than compressing the process into one number.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

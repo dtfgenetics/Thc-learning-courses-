@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-PROCESS-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Room RH stayed on target, but lower rack positions show different product measurements than upper positions. What is the strongest interpretation?",
   "choices": [
-    "The room RH proves every rack is uniform.",
-    "Room conditions alone do not prove uniform product state; the spatial product difference requires process investigation.",
-    "The lower-rack measurements should be excluded as outliers.",
-    "Drying time alone proves completion."
+    "Treat the room RH target as proof that product conditions should be equivalent and investigate only the measurement method.",
+    "Recognize that room RH does not prove uniform product state and investigate the rack-position gradient in airflow, loading, spacing, and product measurements.",
+    "Exclude the lower-rack measurements if room conditions were within target because they conflict with validated environmental control.",
+    "Use elapsed drying time as the primary completion criterion because product position should not matter once room RH is controlled."
   ],
   "correct": 1,
-  "rationale": "Room conditions alone do not prove uniform product state; the spatial product difference requires process investigation.",
+  "rationale": "Room RH describes the surrounding environment, not the exact moisture state of product at every rack position. Airflow, loading density, rack geometry, temperature gradients, and product mass can create spatial differences even when the room display is on target. A repeated lower-versus-upper gradient is therefore process evidence that should be investigated, not averaged away or overridden by room conditions alone.",
   "references": [
     "REF-POSTHARVEST-001"
   ]

@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "courseId": "COURSE-LH-TECH1-006",
   "policy": {
     "expandable": true,
@@ -15,7 +15,7 @@
       "produced",
       "retired"
     ],
-    "publicDelivery": "Existing Course 6 SVG files remain the verified learner-facing compatibility baseline. 8 high-resolution lossless WebP replacements have been produced with source/binary integrity metadata, but remain non-released candidates until factual/copy, accessibility, responsive/manual and public-path cutover review passes.",
+    "publicDelivery": "Owner-approved lossless WebP assets are the production learner-facing delivery format for Course 6. Legacy SVG files remain provenance/reference sources only and are not production instructional assets.",
     "productionInstructionalFormats": [
       "png",
       "webp",
@@ -23,8 +23,8 @@
       "jpg"
     ],
     "svgProductionTarget": false,
-    "legacySvgCompatibilityAllowed": true,
-    "rasterReplacementRequired": true
+    "legacySvgCompatibilityAllowed": false,
+    "rasterReplacementRequired": false
   },
   "driveStorage": {
     "folderId": "1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq",
@@ -39,9 +39,9 @@
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Harvest readiness and stop-work decision flow",
-      "learnerPath": "/assets/course6/harvest-readiness-stop-work.svg",
-      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
+      "learnerPath": "/assets/course6/harvest-readiness-stop-work.webp",
+      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-stop-work.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-01"
       ],
@@ -56,13 +56,10 @@
         "REF-IPM-001"
       ],
       "purpose": "Teach authorization, destination, PPE, pathway, sanitation and receiving readiness plus stop/hold/escalation when conditions change.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "154jcFchE1Et8iIgVXYgkNTCsePRuw5ly",
-      "driveUrl": "https://drive.google.com/file/d/154jcFchE1Et8iIgVXYgkNTCsePRuw5ly/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -85,18 +82,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-stop-work.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "154jcFchE1Et8iIgVXYgkNTCsePRuw5ly",
+        "driveFileUrl": "https://drive.google.com/file/d/154jcFchE1Et8iIgVXYgkNTCsePRuw5ly/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-002",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Controlled harvest to dry-room receiving workflow",
-      "learnerPath": "/assets/course6/harvest-receiving-flow.svg",
-      "sourcePath": "apps/web/public/assets/course6/harvest-receiving-flow.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-receiving-flow.svg",
+      "learnerPath": "/assets/course6/harvest-receiving-flow.webp",
+      "sourcePath": "apps/web/public/assets/course6/harvest-receiving-flow.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-receiving-flow.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-02"
       ],
@@ -110,13 +115,10 @@
         "REF-IPM-001"
       ],
       "purpose": "Show clean handling, lot identity, suspect-material holds, verified receiving and monitored drying context without a universal fixed-day rule.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1wZcalnvR_B49sOwr-tBaS9HiIEibosAD",
-      "driveUrl": "https://drive.google.com/file/d/1wZcalnvR_B49sOwr-tBaS9HiIEibosAD/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -139,18 +141,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/harvest-receiving-flow.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-receiving-flow.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1wZcalnvR_B49sOwr-tBaS9HiIEibosAD",
+        "driveFileUrl": "https://drive.google.com/file/d/1wZcalnvR_B49sOwr-tBaS9HiIEibosAD/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-003",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Source-to-output harvest genealogy",
-      "learnerPath": "/assets/course6/source-output-genealogy.svg",
-      "sourcePath": "apps/web/public/assets/course6/source-output-genealogy.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/source-output-genealogy.svg",
+      "learnerPath": "/assets/course6/source-output-genealogy.webp",
+      "sourcePath": "apps/web/public/assets/course6/source-output-genealogy.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/source-output-genealogy.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-03",
         "LESSON-LH-TECH1-006-04"
@@ -165,13 +175,10 @@
         "REF-POSTHARVEST-001"
       ],
       "purpose": "Teach that new harvest/output identifiers extend source genealogy across transformation, destination, quantity and status rather than replacing source identity.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU",
-      "driveUrl": "https://drive.google.com/file/d/1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -194,18 +201,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/source-output-genealogy.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/source-output-genealogy.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU",
+        "driveFileUrl": "https://drive.google.com/file/d/1e4DSjcxtb6l8UDoXutvkFLIU35Vj79pU/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-004",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Quantity reconciliation and discrepancy control",
-      "learnerPath": "/assets/course6/reconciliation-discrepancy.svg",
-      "sourcePath": "apps/web/public/assets/course6/reconciliation-discrepancy.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/reconciliation-discrepancy.svg",
+      "learnerPath": "/assets/course6/reconciliation-discrepancy.webp",
+      "sourcePath": "apps/web/public/assets/course6/reconciliation-discrepancy.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/reconciliation-discrepancy.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-03",
         "LESSON-LH-TECH1-006-04"
@@ -218,13 +233,10 @@
         "REF-GS1-GLOBAL-TRACEABILITY"
       ],
       "purpose": "Teach preservation of both original outgoing and receiving evidence and controlled discrepancy resolution instead of overwriting or averaging to force agreement.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o",
-      "driveUrl": "https://drive.google.com/file/d/1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -247,18 +259,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/reconciliation-discrepancy.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/reconciliation-discrepancy.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o",
+        "driveFileUrl": "https://drive.google.com/file/d/1cAjbDRHyfcrgmQ-7ihhOYXBtpRuGm01o/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-005",
       "status": "produced",
       "deliveryType": "embedded-visual",
       "title": "Harvest-to-dry-room reconstructable handoff",
-      "learnerPath": "/assets/course6/dry-room-handoff.svg",
-      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff.svg",
+      "learnerPath": "/assets/course6/dry-room-handoff.webp",
+      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-04"
       ],
@@ -274,13 +294,10 @@
         "REF-MHRA-GXP-DATA-INTEGRITY"
       ],
       "purpose": "Integrate identity, destination, quantity, condition, hold/deviation, authorized action, escalation and next action into a receiving-shift handoff.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL",
-      "driveUrl": "https://drive.google.com/file/d/1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -303,18 +320,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/dry-room-handoff.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL",
+        "driveFileUrl": "https://drive.google.com/file/d/1N5cQ9naxvfwSl80WB_6h-3z0oQvZheSL/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-006",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Harvest readiness practice worksheet",
-      "learnerPath": "/assets/course6/harvest-readiness-practice.svg",
-      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-practice.svg",
+      "learnerPath": "/assets/course6/harvest-readiness-practice.webp",
+      "sourcePath": "apps/web/public/assets/course6/harvest-readiness-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-01"
       ],
@@ -329,13 +354,10 @@
         "REF-IPM-001"
       ],
       "purpose": "Provide printable practice for authorization, identity, destination, PPE, pathway, tool/cart sanitation, changed conditions and stop/hold/escalation decisions.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N",
-      "driveUrl": "https://drive.google.com/file/d/1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -358,18 +380,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/harvest-readiness-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/harvest-readiness-practice.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N",
+        "driveFileUrl": "https://drive.google.com/file/d/1LeQGb24zEuC5IxkSZnCeXAIVjx8EAR0N/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-007",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Harvest genealogy and reconciliation practice worksheet",
-      "learnerPath": "/assets/course6/traceability-reconciliation-practice.svg",
-      "sourcePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
+      "learnerPath": "/assets/course6/traceability-reconciliation-practice.webp",
+      "sourcePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/traceability-reconciliation-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-03",
         "LESSON-LH-TECH1-006-04"
@@ -384,13 +414,10 @@
         "REF-MHRA-GXP-DATA-INTEGRITY"
       ],
       "purpose": "Provide printable practice for source/output genealogy, destination and status mapping, outgoing/receiving quantity evidence and controlled discrepancy handling.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1hXULtkclAzM6X3w__F4q6-qi9st9wlST",
-      "driveUrl": "https://drive.google.com/file/d/1hXULtkclAzM6X3w__F4q6-qi9st9wlST/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -413,18 +440,26 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/traceability-reconciliation-practice.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1hXULtkclAzM6X3w__F4q6-qi9st9wlST",
+        "driveFileUrl": "https://drive.google.com/file/d/1hXULtkclAzM6X3w__F4q6-qi9st9wlST/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     },
     {
       "id": "VIS-LH-TECH1-006-008",
       "status": "produced",
       "deliveryType": "downloadable-practice",
       "title": "Dry-room receiving and shift handoff practice worksheet",
-      "learnerPath": "/assets/course6/dry-room-handoff-practice.svg",
-      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff-practice.svg",
-      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff-practice.svg",
+      "learnerPath": "/assets/course6/dry-room-handoff-practice.webp",
+      "sourcePath": "apps/web/public/assets/course6/dry-room-handoff-practice.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff-practice.webp",
       "primaryLessons": [
         "LESSON-LH-TECH1-006-02",
         "LESSON-LH-TECH1-006-04"
@@ -441,13 +476,10 @@
         "REF-MHRA-GXP-DATA-INTEGRITY"
       ],
       "purpose": "Provide printable receiving and handoff practice that keeps normal receiving, partial completion, holds, discrepancies and unresolved follow-up visible.",
-      "driveMirrorStatus": "mirrored-verified",
       "version": "1.0.0",
-      "driveFileId": "1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg",
-      "driveUrl": "https://drive.google.com/file/d/1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg/view?usp=drivesdk",
-      "assetLifecycle": "legacy-svg-compatibility-baseline",
+      "assetLifecycle": "production-raster-active",
       "rasterReplacement": {
-        "status": "candidate-produced-human-qa-required",
+        "status": "owner-approved-production-release",
         "allowedFormats": [
           "png",
           "webp",
@@ -470,9 +502,156 @@
           "shortest side is at least 1600 px",
           "canonical asset, lesson and accessibility mappings retained"
         ],
-        "releaseApproved": false,
-        "releaseGate": "factual-copy-accessibility-responsive-public-path-review"
-      }
+        "releaseApproved": true,
+        "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
+      },
+      "legacySource": {
+        "sourcePath": "apps/web/public/assets/course6/dry-room-handoff-practice.svg",
+        "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/dry-room-handoff-practice.svg",
+        "driveMirrorStatus": "mirrored-verified",
+        "driveFileId": "1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg",
+        "driveFileUrl": "https://drive.google.com/file/d/1hh0OZPfoqSwm_GXtMVsS4rQezFOZQ3Jg/view?usp=drivesdk"
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
+    },
+    {
+      "id": "VIS-FOUNDATION-POSTHARVEST-SYSTEM-001",
+      "status": "retired",
+      "deliveryType": "embedded-visual",
+      "title": "Harvest-to-storage postharvest quality system",
+      "primaryLessons": [
+        "LESSON-POSTHARVEST-001"
+      ],
+      "references": [
+        "REF-POSTHARVEST-001",
+        "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+      ],
+      "purpose": "Show harvest, controlled drying, conditioning/curing, packaging and storage as linked quality-control stages with moisture, temperature, airflow, oxygen and light variables.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "process-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "retiredReason": "Superseded by existing owner-approved production raster VIS-LH-TECH2-006-02, which directly teaches the same foundation concept without requiring duplicate asset production.",
+      "supersededBy": "VIS-LH-TECH2-006-02"
+    },
+    {
+      "id": "VIS-FOUNDATION-DRYING-DYNAMICS-001",
+      "status": "retired",
+      "deliveryType": "embedded-visual",
+      "title": "Cannabis flower drying: internal moisture gradient to surrounding air",
+      "primaryLessons": [
+        "LESSON-POSTHARVEST-DRY-002"
+      ],
+      "references": [
+        "REF-POSTHARVEST-001",
+        "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+      ],
+      "purpose": "Show moisture moving from internal flower tissue to the surface and then to room air, with airflow, temperature, RH and product density labeled as process variables.",
+      "version": "0.1.0",
+      "productionSpec": {
+        "visualType": "scientific-cross-section",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "retiredReason": "Superseded by existing owner-approved production raster VIS-LH-TECH2-006-02, which directly teaches the same foundation concept without requiring duplicate asset production.",
+      "supersededBy": "VIS-LH-TECH2-006-02"
+    },
+    {
+      "id": "VIS-FOUNDATION-STORAGE-001",
+      "status": "produced",
+      "deliveryType": "embedded-visual",
+      "title": "Curing, package microenvironment and storage stability",
+      "primaryLessons": [
+        "LESSON-POSTHARVEST-STORAGE-003"
+      ],
+      "references": [
+        "REF-POSTHARVEST-001",
+        "REF-CANNABIS-POSTHARVEST-DRYING-2025"
+      ],
+      "purpose": "Show moisture redistribution, package headspace, seal/barrier properties, oxygen, light and temperature as storage variables after initial drying.",
+      "version": "1.0.0",
+      "productionSpec": {
+        "visualType": "scientific-diagram",
+        "requiredFormats": [
+          "webp",
+          "png",
+          "jpeg",
+          "jpg"
+        ],
+        "svgAllowed": false,
+        "minimumShortSidePx": 1600,
+        "textPolicy": "Keep embedded text minimal; labels must be scientifically accurate and remain readable on mobile. Put longer explanations in the lesson caption/body.",
+        "style": "Professional scientific cannabis education; photorealistic where anatomy or plant condition is being taught; clean branded scientific diagrams/charts where mechanisms or comparisons are taught.",
+        "accessibilityRequired": [
+          "title",
+          "alt",
+          "caption",
+          "non-color-dependent meaning"
+        ],
+        "releaseRequirement": "Do not wire into learner content until raster asset is produced, QA-reviewed and releaseApproved=true."
+      },
+      "learnerPath": "/assets/course6/foundation-storage-stability.webp",
+      "sourcePath": "apps/web/public/assets/course6/foundation-storage-stability.webp",
+      "publicDownloadUrl": "https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/apps/web/public/assets/course6/foundation-storage-stability.webp",
+      "assetLifecycle": "production-raster-active",
+      "learnerTextAlternative": "Postharvest storage diagram showing moisture redistribution and headspace inside a package alongside external variables including temperature, light, barrier and seal performance and time.",
+      "caption": "After initial drying, package microenvironment and storage conditions still matter. Verify with controlled records and applicable quality criteria rather than appearance alone.",
+      "nativeRaster": {
+        "status": "owner-approved-production-release",
+        "format": "webp",
+        "sourceMasterFormat": "programmatic-scientific-diagram",
+        "bytes": 25960,
+        "pixelWidth": 2400,
+        "pixelHeight": 1600,
+        "sha256": "9190dfb4cd45b4119394c576787b39ad47d5c90a7d156210b38ec443c523dd37",
+        "automatedQa": [
+          "RIFF/WEBP lossless raster generated deterministically",
+          "shortest side is at least 1600 px",
+          "lesson alt text and caption carry required instructional meaning",
+          "source references and lesson mapping retained"
+        ],
+        "releaseApproved": true
+      },
+      "productionRasterDriveMirrorStatus": "not-recorded"
     }
-  ]
+  ],
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "Course 6 governed raster replacements",
+    "note": "Academic publication approval; external validation and professional credential issuance are not implied."
+  }
 }

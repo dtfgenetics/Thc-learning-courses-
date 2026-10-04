@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-002-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-002-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A team wants to copy a fast-drying research treatment as its permanent setpoint. What should the specialist recommend?",
+  "choices": [
+    "Copy it because peer review makes it universal.",
+    "Treat the study as contextual evidence and validate the facility process against its product and quality objectives.",
+    "Ignore all published evidence.",
+    "Use it only when flower size is unknown."
+  ],
+  "correct": 1,
+  "rationale": "Published treatment results show tradeoffs under studied conditions and require facility-specific validation.",
+  "references": [
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-VOLATILES-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "During a workup, a new measurement conflicts with the favored diagnosis. What is the correct record action?",
   "choices": [
-    "Delete it because it is probably noise.",
-    "Change the recorded value to match the trend.",
-    "Preserve the conflicting result, verify its quality, and update the hypothesis ranking if warranted.",
-    "Keep the diagnosis unchanged regardless of verified evidence."
+    "Treat the conflicting value as probable noise and exclude it from the formal record unless the same conflict appears again.",
+    "Repeat the measurement and replace the original value with the repeat if the second result better matches the established trend.",
+    "Preserve the conflicting result, verify its measurement quality, and revise the hypothesis ranking if the verified evidence changes the balance of support.",
+    "Keep the favored diagnosis unchanged until enough additional evidence accumulates to outweigh the original working conclusion."
   ],
   "correct": 2,
-  "rationale": "Data integrity requires preserving and evaluating conflicting evidence, not rewriting it to fit a conclusion.",
+  "rationale": "Conflicting evidence is diagnostically important because it may reveal a bad measurement, a changing condition, an incomplete hypothesis, or a mistaken conclusion. The record should preserve the original result, then document quality checks or repeat measurements without overwriting history. If the conflict survives verification, the hypothesis ranking should change accordingly. Deleting, replacing, or discounting inconvenient data before checking it undermines data integrity and increases confirmation bias.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001"
   ]

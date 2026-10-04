@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two propagation trays lose their labels before movement. What should the technician do?",
   "choices": [
-    "Stop movement and resolve identity through approved records or discrepancy procedure before relabeling",
-    "Guess cultivar from leaf shape",
-    "Combine the trays",
-    "Use the most common cultivar name"
+    "Stop movement and resolve tray identity through approved records or the discrepancy process before relabeling or combining anything.",
+    "Use leaf shape and growth habit to assign the most likely cultivar names so movement can continue.",
+    "Combine the trays and treat them as one lot until their original identity is reconstructed.",
+    "Assign the most common cultivar name in the room and correct the record later if needed."
   ],
   "correct": 0,
-  "rationale": "Stop movement and resolve identity through approved records or discrepancy procedure before relabeling. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "Once labels are lost, the physical trays and the controlled records no longer have a reliable identity link. Guessing from appearance, combining trays, or assigning a likely cultivar creates false traceability. The correct response is to stop movement, preserve both trays separately, and reconcile identity through the approved process before any relabeling or downstream use.",
   "references": [
     "REF-PROP-001",
     "REF-IPM-001"

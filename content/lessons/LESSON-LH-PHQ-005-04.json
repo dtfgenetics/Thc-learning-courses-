@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-PHQ-005-04",
+  "title": "Result Interpretation, Variability & Retest Boundaries",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-005-04"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Differences among results can arise from real lot heterogeneity, sampling, preparation, method and laboratory effects. Investigation should preserve all valid data and follow predefined retest authority.",
+    "vocabulary": [
+      {
+        "term": "Measurement uncertainty",
+        "definition": "Parameter describing dispersion reasonably attributable to a measured value."
+      },
+      {
+        "term": "Atypical result",
+        "definition": "Result or trend that is unexpected and requires controlled evaluation without automatic invalidation."
+      },
+      {
+        "term": "Result shopping",
+        "definition": "Repeated testing or selective reporting intended to obtain a preferred outcome without justified investigation."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Results have multiple variability sources",
+        "body": "Lot heterogeneity and analytical processes both contribute. Precision in the report does not eliminate upstream sampling uncertainty.",
+        "references": [
+          "REF-NIST-CANNAQAP-2024-001"
+        ]
+      },
+      {
+        "title": "Investigate before invalidating",
+        "body": "Original data, sample condition, method performance and laboratory communication should be preserved. A surprising result is not automatically wrong.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY",
+          "REF-WHO-DATA-INTEGRITY-2021"
+        ]
+      },
+      {
+        "title": "Retesting follows controlled rules",
+        "body": "Retest, resample and report-amendment decisions need predefined authority and rationale. New results supplement rather than silently replace valid original results.",
+        "references": [
+          "REF-ISO-17025-2017-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A resample differs from the first result; the investigation reviews lot heterogeneity and both sample histories rather than selecting the preferred value."
+    ],
+    "commonMistakes": [
+      "Rounding away a decision-relevant difference.",
+      "Retesting until a passing result appears.",
+      "Discarding the original report after an amendment."
+    ],
+    "practicalApplication": "Create an atypical-result review that separates lot, sampling, transport, laboratory and reporting hypotheses and records authorized next steps.",
+    "summary": "Responsible result interpretation preserves all evidence and investigates variability under controlled retest rules."
+  }
+}

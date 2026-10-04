@@ -1,0 +1,73 @@
+{
+  "id": "ASSESS-LH-EIFS-005-FINAL",
+  "title": "Water Quality, Alkalinity, pH, EC & Solution Preparation — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-EIFS-005-01",
+    "LO-LH-EIFS-005-02",
+    "LO-LH-EIFS-005-03",
+    "LO-LH-EIFS-005-04",
+    "LO-LH-EIFS-005-05"
+  ],
+  "items": [
+    "ITEM-LH-EIFS-005-001",
+    "ITEM-LH-EIFS-005-002",
+    "ITEM-LH-EIFS-005-003",
+    "ITEM-LH-EIFS-005-004",
+    "ITEM-LH-EIFS-005-005",
+    "ITEM-LH-EIFS-005-006",
+    "ITEM-LH-EIFS-005-007",
+    "ITEM-LH-EIFS-005-008",
+    "ITEM-LH-EIFS-005-009",
+    "ITEM-LH-EIFS-005-010",
+    "ITEM-LH-EIFS-005-011",
+    "ITEM-LH-EIFS-005-012",
+    "ITEM-LH-EIFS-005-013",
+    "ITEM-LH-EIFS-005-014",
+    "ITEM-LH-EIFS-005-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-WATER-QUALITY-ADV-001",
+      "items": 12,
+      "cognitiveTarget": "Water chemistry, source risk, meter quality and controlled solution preparation"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Hold, disposition and reconstructable batch/source-water records"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 6,
+    "targetBankItemsPerCompetency": 20,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-EIFS-005",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

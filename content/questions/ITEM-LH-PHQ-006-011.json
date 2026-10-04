@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-006-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is weak CAPA evidence?",
+  "choices": [
+    "A cause-linked action with follow-up.",
+    "An assigned owner and due date.",
+    "A training task marked complete with no supported cause or effectiveness check.",
+    "A documented verification result."
+  ],
+  "correct": 2,
+  "rationale": "Task completion alone does not demonstrate recurrence control.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

@@ -124,13 +124,20 @@
       ],
       "credentialAssessment": "ASSESS-CRED-PHIB-001",
       "capstone": "CAPSTONE-CRED-PHIB-DIAGNOSTIC-001",
-      "programState": "planned-content-authoring",
-      "canonicalCourseObjectsPresent": 3,
+      "programState": "draft-course-authoring-complete-validation-pending",
+      "canonicalCourseObjectsPresent": 7,
+      "canonicalCourseObjectsPlanned": 7,
+      "courseAuthoringComplete": true,
+      "releaseAuthorized": false,
       "firstCanonicalCourse": "COURSE-LH-PHIB-001",
       "canonicalCoursesSeeded": [
         "COURSE-LH-PHIB-001",
         "COURSE-LH-PHIB-002",
-        "COURSE-LH-PHIB-003"
+        "COURSE-LH-PHIB-003",
+        "COURSE-LH-PHIB-004",
+        "COURSE-LH-PHIB-005",
+        "COURSE-LH-PHIB-006",
+        "COURSE-LH-PHIB-007"
       ]
     },
     {
@@ -176,8 +183,21 @@
       ],
       "credentialAssessment": "ASSESS-CRED-EIFS-001",
       "capstone": "CAPSTONE-CRED-EIFS-SYSTEMS-001",
-      "programState": "planned-content-authoring",
-      "canonicalCourseObjectsPresent": 0
+      "programState": "draft-course-authoring-complete-validation-pending",
+      "canonicalCourseObjectsPresent": 8,
+      "canonicalCourseObjectsPlanned": 8,
+      "courseAuthoringComplete": true,
+      "releaseAuthorized": false,
+      "canonicalCoursesSeeded": [
+        "COURSE-LH-EIFS-001",
+        "COURSE-LH-EIFS-002",
+        "COURSE-LH-EIFS-003",
+        "COURSE-LH-EIFS-004",
+        "COURSE-LH-EIFS-005",
+        "COURSE-LH-EIFS-006",
+        "COURSE-LH-EIFS-007",
+        "COURSE-LH-EIFS-008"
+      ]
     },
     {
       "id": "CREDPROG-PROP-CLEAN-STOCK-001",
@@ -210,8 +230,19 @@
       ],
       "credentialAssessment": "ASSESS-CRED-PCS-001",
       "capstone": "CAPSTONE-CRED-PCS-PROPAGATION-001",
-      "programState": "planned-content-authoring",
-      "canonicalCourseObjectsPresent": 0
+      "programState": "draft-course-authoring-complete-validation-pending",
+      "canonicalCourseObjectsPresent": 6,
+      "canonicalCourseObjectsPlanned": 6,
+      "courseAuthoringComplete": true,
+      "releaseAuthorized": false,
+      "canonicalCoursesSeeded": [
+        "COURSE-LH-PCS-001",
+        "COURSE-LH-PCS-002",
+        "COURSE-LH-PCS-003",
+        "COURSE-LH-PCS-004",
+        "COURSE-LH-PCS-005",
+        "COURSE-LH-PCS-006"
+      ]
     },
     {
       "id": "CREDPROG-POSTHARVEST-QA-001",
@@ -245,7 +276,15 @@
       "credentialAssessment": "ASSESS-CRED-PHQ-001",
       "capstone": "CAPSTONE-CRED-PHQ-QUALITY-001",
       "programState": "planned-content-authoring",
-      "canonicalCourseObjectsPresent": 0
+      "canonicalCourseObjectsPresent": 6,
+      "canonicalCoursesSeeded": [
+        "COURSE-LH-PHQ-001",
+        "COURSE-LH-PHQ-002",
+        "COURSE-LH-PHQ-003",
+        "COURSE-LH-PHQ-004",
+        "COURSE-LH-PHQ-005",
+        "COURSE-LH-PHQ-006"
+      ]
     },
     {
       "id": "CREDPROG-GEN-BREED-PRES-001",
@@ -341,7 +380,7 @@
       "canonicalCourseObjectsPresent": 0
     }
   ],
-  "updated": "2026-09-21",
+  "updated": "2026-10-01",
   "currentReleaseScope": {
     "label": "Technician academic/certification finalization",
     "programIds": [

@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHIB-006-02",
+  "title": "Affected-Scope Reconstruction & Outbreak Mapping",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-006-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Outbreak scope is reconstructed from compatible evidence: plant/lot identity, timestamps, scouting denominators, spatial pattern, movement history, shared tools/water/environment and testing. A convenient observation is not enough to define the whole affected population.",
+    "vocabulary": [
+      {
+        "term": "Affected scope",
+        "definition": "The plants, lots, rooms, materials or processes reasonably included in the event based on evidence."
+      },
+      {
+        "term": "Exposure window",
+        "definition": "The time period during which material or areas may have encountered the suspected source or pathway."
+      },
+      {
+        "term": "Contact network",
+        "definition": "A map of linked plants, tools, people, water systems, rooms or materials that could connect the source to downstream exposure."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Start with identity and time",
+        "body": "Plant/lot genealogy, movement timestamps and task records narrow the population that could plausibly share exposure. Preserve uncertainty when records are incomplete.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Use spatial pattern and denominators",
+        "body": "Clustered, edge-associated, irrigation-zone and room-wide patterns support different pathway hypotheses. Scouting denominator and route are necessary to interpret apparent prevalence.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Test pathway hypotheses against evidence",
+        "body": "Compare movement, environmental, root-zone, propagation and sanitation records with the observed distribution rather than accepting the first plausible story.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If all affected plants came from one donor but share no unique room location, propagation lineage may deserve higher priority than an HVAC-only hypothesis."
+    ],
+    "commonMistakes": [
+      "Defining affected scope as the entire facility without evidence.",
+      "Ignoring clean comparators.",
+      "Using a positive result without preserving sample identity."
+    ],
+    "practicalApplication": "Create an outbreak map with confirmed affected units, possible exposures, unaffected comparators, shared pathways and evidence gaps.",
+    "summary": "Affected scope is an evidence reconstruction problem. Identity, time, distribution and pathways must agree before broad conclusions are justified."
+  }
+}

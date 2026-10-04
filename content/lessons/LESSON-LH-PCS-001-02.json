@@ -1,0 +1,53 @@
+{
+  "id": "LESSON-LH-PCS-001-02",
+  "title": "Viability, Vigor & Germination Evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-001-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022",
+    "REF-PROP-GERMINATION-H2O2-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A propagation specialist must separate whether a seed is alive from how quickly and uniformly it germinates and whether it establishes a normal seedling.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Viability and vigor answer different questions",
+        "body": "Viability concerns whether seed tissue can still produce a living seedling; vigor concerns performance such as speed, uniformity and stress tolerance. A viable lot can still establish unevenly.",
+        "references": [
+          "REF-HEMP-GERMINATION-TEMP-2022"
+        ]
+      },
+      {
+        "title": "Use denominators and time",
+        "body": "A germination result is interpretable only when the number tested, the number germinated and the observation window are preserved. Raw counts without denominators can mislead.",
+        "references": [
+          "REF-HEMP-GERMINATION-TEMP-2022"
+        ]
+      },
+      {
+        "title": "Contamination can confound performance",
+        "body": "Research germination systems may use sterilization or antimicrobial treatments to reduce contamination. Such methods must be documented separately from seed-intrinsic performance.",
+        "references": [
+          "REF-PROP-GERMINATION-H2O2-2021"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating a research protocol value as a universal production target.",
+      "Reporting successful seedlings without preserving the original denominator.",
+      "Changing multiple variables at once and then claiming one caused the result."
+    ],
+    "practicalApplication": "Compare two seed-lot records with equal final germination percentage but different timing and uniformity; identify what additional evidence is needed before calling performance equivalent.",
+    "summary": "Use source-controlled evidence, preserve identity and denominators, and keep observations separate from explanations."
+  }
+}

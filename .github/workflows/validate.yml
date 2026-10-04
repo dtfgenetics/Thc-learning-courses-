@@ -2,9 +2,9 @@ name: Curriculum quality audit
 
 on:
   push:
-    branches: [dev, staging, main]
+    branches: [main]
   pull_request:
-    branches: [dev, staging, main]
+    branches: [main]
 
 permissions:
   contents: read
@@ -57,6 +57,25 @@ jobs:
         run: node scripts/check-course1-visual-concept-coverage.mjs
       - name: Audit Learning Hub assessment item quality
         run: npm run itembank:quality:test
+      - name: Report certification instructional depth
+        run: npm run certification:instructional-depth
+      - name: Build canonical 284-lesson production gap matrix
+        run: |
+          npm run certification:lesson-gaps
+          npm run certification:lesson-gaps:write > "$RUNNER_TEMP/certification-lesson-gap-matrix.json"
+      - name: Enforce shared-foundation academic readiness
+        run: npm run foundation:academic-readiness:check
+      - name: Enforce shared-foundation raster visual completion
+        run: npm run foundation:visual-queue:check
+      - name: Upload certification lesson gap matrix
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: certification-lesson-gap-matrix
+          path: registry/certification-lesson-gap-matrix.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Enforce Course 2 complete learning loop and balanced assessment
         run: node scripts/audit-learning-hub-objective-coverage.mjs --course=COURSE-LH-TECH1-002 --require-complete-learning-loop --require-balanced-assessment
       - name: Enforce Course 2 versioned human-review queue integrity

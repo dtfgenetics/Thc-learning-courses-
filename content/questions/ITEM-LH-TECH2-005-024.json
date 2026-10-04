@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What makes a supervisor handoff decision-ready after a propagation/canopy review?",
   "choices": [
-    "Only the leading diagnosis.",
-    "Only the final percentage.",
-    "A rewritten record containing only evidence that supports the preferred explanation.",
-    "Affected scope, comparable metrics, evidence for and against hypotheses, completed authorized actions, biosecurity status, uncertainty and the next decision required."
+    "Provide the leading diagnosis and the action the technician believes should happen next.",
+    "Provide the final propagation/canopy percentages and leave supporting evidence in the source records for reviewers to retrieve if needed.",
+    "Summarize only evidence supporting the preferred explanation so the supervisor receives one coherent recommendation.",
+    "Provide affected scope, comparable metrics, evidence for and against the leading hypotheses, completed authorized actions, biosecurity status, remaining uncertainty, and the next decision required."
   ],
   "correct": 3,
-  "rationale": "Affected scope, comparable metrics, evidence for and against hypotheses, completed authorized actions, biosecurity status, uncertainty and the next decision required.",
+  "rationale": "A decision-ready handoff should let the supervisor understand the scope, evidence quality, competing explanations, actions already completed, containment status, and what decision remains. A diagnosis or percentage without that context can be misleading, while removing contradictory evidence hides uncertainty that may matter to the decision. The handoff should be concise but reconstructable enough to support an informed next step.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Source-water EC rises before nutrients are added while the same recipe is used. Why is that relevant?",
+  "choices": [
+    "It can never matter.",
+    "It proves concentrate changed.",
+    "It matters only after irrigation.",
+    "It changes the starting dissolved-ion context and can affect the finished batch result."
+  ],
+  "correct": 3,
+  "rationale": "Changed source-water EC changes the baseline contribution to the finished solution.",
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}

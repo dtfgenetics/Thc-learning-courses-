@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-006-05",
+  "title": "Audit-Ready QA Handoff & Improvement Metrics",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-SOP-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-006-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ASTM-D8556-25",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A mature handoff communicates what is complete, what remains open and who owns the next action. Metrics should reveal process performance without hiding denominator, scope or data-quality limits.",
+    "vocabulary": [
+      {
+        "term": "Audit readiness",
+        "definition": "Ability to reconstruct controlled work, evidence, decisions and changes from retained records."
+      },
+      {
+        "term": "Denominator",
+        "definition": "Defined population or opportunity count used to interpret a rate."
+      },
+      {
+        "term": "Leading indicator",
+        "definition": "Measure intended to show control activity or emerging risk before a final outcome."
+      }
+    ],
+    "sections": [
+      {
+        "title": "The packet tells a reconstructable story",
+        "body": "Lot genealogy, process records, results, deviations, dispositions, CAPA and approvals should be linked rather than scattered.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Metrics retain definitions and denominators",
+        "body": "Deviation rate, hold time, traceability completion or repeat-event measures require stable scope and data-quality notes.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Open work transfers explicitly",
+        "body": "Handoff identifies unresolved risks, due dates, owners and interim controls using written plus verbal communication where warranted.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A falling deviation count is interpreted cautiously after production volume and reporting completeness changed; denominator and data quality remain visible."
+    ],
+    "commonMistakes": [
+      "Reporting percentages without denominators.",
+      "Closing a handoff with open CAPA omitted.",
+      "Collecting metrics with no decision or owner."
+    ],
+    "practicalApplication": "Assemble a QA handoff index and metric dictionary for a postharvest lot, including open items and review cadence.",
+    "summary": "Audit-ready handoff joins reconstructable records with honestly defined metrics and accountable next actions."
+  }
+}

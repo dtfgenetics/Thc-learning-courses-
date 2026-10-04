@@ -1,0 +1,109 @@
+{
+  "id": "GROW-030",
+  "title": "Genetics and crop planning — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define genetics intake, crop scheduling, capacity and identity controls while preserving genotype-by-environment uncertainty and lot genealogy.",
+  "sourceIds": [
+    "REF-GENETICS-001",
+    "REF-GENETICS-2026-001",
+    "REF-PLANT-BIO-001",
+    "REF-FLOWER-MORPH-2023-001",
+    "REF-SEX-2026-001",
+    "REF-POSTHARVEST-001"
+  ],
+  "scope": {
+    "included": [
+      "genetic identity",
+      "source records",
+      "crop schedule",
+      "plant-count/capacity planning",
+      "sex-expression risk",
+      "planned-versus-actual records",
+      "lot genealogy"
+    ],
+    "excludedUntilValidated": [
+      "universal cultivar flowering duration",
+      "guarantee that cultivar name predicts phenotype",
+      "silent renaming of genetics",
+      "plant-count decisions that ignore facility/legal capacity",
+      "assumption that one environment expresses every genotype the same way"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-030-C01",
+      "statement": "Cannabis phenotype and production performance emerge from genotype interacting with environment and management, so crop plans should preserve genetic identity without assuming a cultivar name guarantees one fixed outcome.",
+      "sources": [
+        "REF-GENETICS-001",
+        "REF-GENETICS-2026-001"
+      ],
+      "boundary": "Genetic naming alone does not establish authenticity, stability, flowering duration, yield or chemistry."
+    },
+    {
+      "id": "GROW-030-C02",
+      "statement": "Seed, clone and stock-source records should preserve supplier/source, cultivar or line identity, lot/batch, date received and propagation relationship so later performance can be traced to the correct genetics.",
+      "sources": [
+        "REF-GENETICS-001",
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "A label is only useful when identity controls prevent mix-ups and undocumented relabeling."
+    },
+    {
+      "id": "GROW-030-C03",
+      "statement": "Crop scheduling should incorporate biological readiness and observed development rather than treating planned calendar dates as proof that a crop is ready to move stages.",
+      "sources": [
+        "REF-PLANT-BIO-001",
+        "REF-FLOWER-MORPH-2023-001"
+      ],
+      "boundary": "The SOP should not universalize one vegetative or flowering duration across genotypes and environments."
+    },
+    {
+      "id": "GROW-030-C04",
+      "statement": "Unexpected sex expression can occur and may have genetic, developmental and environmental contributors, so flowering plans should include reproductive scouting and an escalation pathway.",
+      "sources": [
+        "REF-SEX-2026-001",
+        "REF-PLANT-BIO-001"
+      ],
+      "boundary": "No single stressor or cultivar label should be presented as a universally predictive cause of intersex expression."
+    },
+    {
+      "id": "GROW-030-C05",
+      "statement": "Planned plant counts, room occupancy and turnover should be reconciled against actual survival, readiness, spacing and facility capacity so schedules do not hide biological or operational variance.",
+      "sources": [
+        "REF-POSTHARVEST-001"
+      ],
+      "boundary": "Facility/legal plant-count limits and occupancy requirements remain locally controlled."
+    },
+    {
+      "id": "GROW-030-C06",
+      "statement": "Crop records should preserve planned versus actual dates, room/zone, genotype, batch genealogy, losses, substitutions and deviations so later review can distinguish genetic, timing and process effects.",
+      "sources": [
+        "REF-POSTHARVEST-001",
+        "REF-GENETICS-2026-001"
+      ],
+      "boundary": "Retrospective schedule changes must not erase the original plan or make the crop appear to have followed it exactly."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "genetics/source intake record",
+    "identity and labeling rules",
+    "plant-count/capacity plan",
+    "biological-readiness checkpoints",
+    "room turnover schedule",
+    "sex-expression monitoring/escalation",
+    "substitution/change-control record",
+    "planned-vs-actual crop schedule",
+    "crop genealogy map",
+    "end-of-cycle planning review"
+  ],
+  "releaseGates": [
+    "genetics/breeding review",
+    "facility/legal plant-count review",
+    "traceability review",
+    "crop-scheduling validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

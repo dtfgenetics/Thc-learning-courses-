@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A sensor cable appears damaged during a routine check. Technician I is not authorized for electrical repair. What is the strongest response?",
   "choices": [
-    "Document the asset/location, follow any out-of-service step in procedure and escalate for qualified repair",
-    "Open the device and repair the wiring",
-    "Tape the cable and continue without documentation",
-    "Delete the reading history"
+    "Document the sensor asset and location, follow any out-of-service or containment step in the procedure, and escalate the damaged cable for qualified repair.",
+    "Open the device and repair the wiring because the damage is visible and easy to locate.",
+    "Wrap the cable with tape and continue using the sensor if the reading still appears reasonable.",
+    "Delete recent readings from that sensor so no questionable data remain in the record."
   ],
   "correct": 0,
-  "rationale": "Document the asset/location, follow any out-of-service step in procedure and escalate for qualified repair. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A visibly damaged sensor cable can affect both safety and measurement reliability. Technician I should preserve the asset/location evidence, follow the procedure for taking the device out of service if required, and escalate to qualified repair. Temporary field repair, opening electronics, or deleting data can exceed authority or destroy useful evidence about when the problem may have started.",
   "references": [
     "REF-VPD-002"
   ],

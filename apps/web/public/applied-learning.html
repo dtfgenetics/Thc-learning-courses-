@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>THC Applied Learning Lab</title>
+  <link rel="stylesheet" href="/applied-learning.css">
+</head>
+<body>
+  <main class="lab-shell">
+    <header>
+      <p class="eyebrow">Teaching Healthy Cultivation</p>
+      <h1>Applied Learning Lab</h1>
+      <p>Explore canonical Academy relationships and practice measurement-quality workflows. Draft tools are learning aids, not credential authorization or facility-control instructions.</p>
+    </header>
+
+    <nav aria-label="Applied learning sections">
+      <a href="#knowledge-graph">Knowledge Graph</a>
+      <a href="#measurement-school">Measurement School</a>
+      <a href="#crop-math">Crop Math</a>
+      <a href="#differential-reasoning">Same Symptom</a>
+      <a href="#systems-tools">Systems Tools</a>
+    </nav>
+
+    <section id="knowledge-graph" aria-labelledby="graph-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THC Knowledge Graph</p>
+          <h2 id="graph-title">Canonical concept explorer</h2>
+        </div>
+        <label>Filter nodes <input id="graph-filter" type="search" placeholder="VPD, safety, IPM…"></label>
+      </div>
+      <p id="graph-summary">Loading graph…</p>
+      <div id="graph-stats" class="stats" aria-live="polite"></div>
+      <ul id="graph-nodes" class="node-grid"></ul>
+      <div id="graph-edges" class="edge-list"></div>
+    </section>
+
+    <section id="measurement-school" aria-labelledby="measurement-title">
+      <p class="eyebrow">THC Measurement School</p>
+      <h2 id="measurement-title">Representative canopy sensor placement</h2>
+      <p id="measurement-summary">Loading activity…</p>
+      <ol id="measurement-steps"></ol>
+      <form id="measurement-form">
+        <div id="measurement-fields" class="field-grid"></div>
+        <button type="submit">Review entered evidence</button>
+      </form>
+      <pre id="measurement-output" tabindex="0" aria-live="polite"></pre>
+      <p id="measurement-boundary" class="boundary"></p>
+    </section>
+
+    <section id="crop-math" aria-labelledby="crop-math-title">
+      <p class="eyebrow">THC Crop Math</p>
+      <h2 id="crop-math-title">DLI from PPFD and photoperiod</h2>
+      <p id="crop-math-summary">Loading calculator…</p>
+      <form id="crop-math-form">
+        <div id="crop-math-fields" class="field-grid"></div>
+        <button type="submit">Calculate DLI</button>
+      </form>
+      <div id="crop-math-result" class="result-card" aria-live="polite"></div>
+      <ul id="crop-math-limitations" class="limitation-list"></ul>
+    </section>
+
+    <section id="differential-reasoning" aria-labelledby="differential-title">
+      <p class="eyebrow">Same Symptom, Different Cause</p>
+      <h2 id="differential-title">Build a differential before changing inputs</h2>
+      <p id="differential-summary">Loading differential…</p>
+      <p><strong>Observed pattern:</strong> <span id="differential-pattern"></span></p>
+      <div id="differential-hypotheses" class="hypothesis-grid"></div>
+      <h3>Evidence that separates the possibilities</h3>
+      <ul id="differential-evidence"></ul>
+      <p id="differential-boundary" class="boundary"></p>
+    </section>
+  
+    <section id="systems-tools" aria-labelledby="systems-tools-title">
+      <p class="eyebrow">Applied Systems Tools</p>
+      <h2 id="systems-tools-title">Blueprint, calibration, timeline, flight recorder, incident and cause-chain labs</h2>
+      <p>Select a draft learning tool. These are training interfaces only and do not replace engineering design, controlled facility records, emergency procedures, diagnostics or credential evidence.</p>
+      <label>Tool
+        <select id="systems-tool-select"></select>
+      </label>
+      <article id="systems-tool-card">
+        <h3 id="systems-tool-title">Loading tools…</h3>
+        <p id="systems-tool-summary"></p>
+        <ol id="systems-tool-steps"></ol>
+        <form id="systems-tool-form">
+          <div id="systems-tool-fields" class="field-grid"></div>
+          <button type="submit">Run / preview record</button>
+        </form>
+        <pre id="systems-tool-output" tabindex="0" aria-live="polite"></pre>
+        <p id="systems-tool-boundary" class="boundary"></p>
+      </article>
+    </section>
+
+  </main>
+  <script type="module" src="/applied-learning.js"></script>
+</body>
+</html>

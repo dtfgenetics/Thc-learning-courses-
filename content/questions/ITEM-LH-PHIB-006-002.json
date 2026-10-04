@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-006-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PHIB-006-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which record best preserves the first outbreak signal?",
+  "choices": [
+    "Only the final diagnosis.",
+    "A rewritten narrative after the cause is known.",
+    "Who observed what, where and when, plant/lot identity, direct evidence, immediate controls and unresolved questions.",
+    "Only the name of the suspected pathogen."
+  ],
+  "correct": 2,
+  "rationale": "Initial observations and actions should remain reconstructable even if the later diagnosis changes.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-006",
+    "seedBank": true
+  }
+}

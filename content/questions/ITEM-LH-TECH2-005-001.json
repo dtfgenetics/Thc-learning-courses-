@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Donor A has 49 rooted of 50 cuttings while Donor B has 31 rooted of 50 at the same validated time point. What is the strongest first interpretation?",
   "choices": [
-    "Performance differs materially by donor group and the donor-linked pattern should be investigated without yet claiming a genetic cause.",
-    "Average the two donors and report 80% facility performance only.",
-    "Donor B is genetically defective.",
-    "Remove Donor B losses from the denominator."
+    "Treat the donor-linked difference as meaningful and investigate donor history, condition, handling, and environment without yet assigning a genetic cause.",
+    "Average the two donor groups into one facility rooting rate because both were produced under the same propagation process.",
+    "Treat Donor B as genetically inferior because the rooting difference is large and appears at the same validated endpoint.",
+    "Exclude unrooted cuttings from the denominator because the comparison should focus on viable propagules."
   ],
   "correct": 0,
-  "rationale": "Performance differs materially by donor group and the donor-linked pattern should be investigated without yet claiming a genetic cause.",
+  "rationale": "A 49/50 versus 31/50 result at the same validated endpoint is a real donor-linked performance difference, but the pattern does not by itself identify why it occurred. Donor condition, cutting quality, handling, sanitation, rooting environment, source-plant history, and genotype may all contribute. The strongest interpretation preserves the donor-group difference and investigates competing explanations rather than averaging it away or declaring genetic failure prematurely.",
   "references": [
     "REF-PROP-001"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-006-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Evidence suggests a held lot is probably acceptable. What may Technician II do?",
   "choices": [
-    "Release the lot independently.",
-    "Provide the evidence and recommendation to the authorized disposition role while maintaining the hold until a valid decision is made.",
-    "Change the status in the record without approval.",
-    "Discard contrary measurements."
+    "Release the lot if the available evidence strongly supports acceptability and document the technical basis afterward.",
+    "Maintain the hold, document the evidence and recommendation, and route disposition to the authorized role that can validly release or reject the lot.",
+    "Change the electronic status to acceptable but keep the physical hold in place until a supervisor reviews the record.",
+    "Remove measurements that conflict with acceptability if they have a plausible sampling or instrument explanation."
   ],
   "correct": 1,
-  "rationale": "Provide the evidence and recommendation to the authorized disposition role while maintaining the hold until a valid decision is made.",
+  "rationale": "Technical evidence can support a disposition recommendation, but it does not create release authority. Technician II should preserve the hold, document the evidence for and against acceptability, and escalate the decision to the role authorized by facility governance. Changing status, releasing independently, or deleting contradictory evidence bypasses the controlled disposition process.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

@@ -1,7 +1,7 @@
 {
   "id": "LESSON-LH-TECH1-001-02",
   "title": "PPE, Chemical Labels and Safety Data Sheets",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "published",
   "competencies": [
     "COMP-SAFETY-WORK-001"
@@ -83,6 +83,30 @@
         "type": "text",
         "title": "Build one decision from several controlled sources",
         "body": "No single document answers every question. The work order says what task is assigned; the employer hazard assessment and SOP define workplace controls; the product label and SDS define product-specific hazards and precautions; treated-area information determines whether entry is allowed; and training/authorization determines whether the worker may perform the task.",
+        "references": [
+          "REF-OSHA-1910-132-PPE",
+          "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-023",
+        "src": "/assets/course1/ppe-task-guide.png",
+        "alt": "Decision model linking the assigned task to the employer hazard assessment, product label and safety data sheet, facility procedure, restrictions and the resulting PPE requirement. It does not present a universal task-to-PPE matrix or imply that respirator clearance, fit testing or authorization is automatic.",
+        "caption": "Read this from left to right: identify the exact task and hazard, verify the controlling documents and restrictions, confirm authorization, then inspect the PPE actually selected for that task.",
+        "references": [
+          "REF-OSHA-1910-132-PPE",
+          "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS",
+          "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
+          "REF-EPA-WPS-REI-2026"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "How to read the PPE decision visual",
+        "body": "The visual is a decision chain, not a PPE shopping chart. Start with the exact task and exposure. Next verify the employer hazard assessment, the current product label and SDS, site procedure, treated-area status, and the worker's authorization. Only after those inputs agree can the PPE requirement be treated as complete. A conflict anywhere upstream means the PPE decision is not yet valid.",
         "references": [
           "REF-OSHA-1910-132-PPE",
           "REF-OSHA-1910-1200-HAZCOM",
@@ -175,6 +199,25 @@
           "REF-EPA-WPS",
           "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
           "REF-EPA-WPS-REI-2026"
+        ]
+      },
+      {
+        "type": "image",
+        "assetId": "VIS-LH-TECH1-001-024",
+        "src": "/assets/course1/sds-anatomy.png",
+        "alt": "Illustrative safety data sheet anatomy showing where a learner may find identification, hazards, first aid, handling and storage, exposure controls and other safety information. Any example product details are fictional training content and do not replace the current manufacturer SDS, label or facility HazCom program.",
+        "caption": "Use the SDS as a navigation map: locate identity first, then hazards, first aid, handling/storage, exposure controls and emergency information. The SDS informs the decision but does not replace labeling, site procedure or authorization.",
+        "references": [
+          "REF-OSHA-1910-1200-HAZCOM"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "What the SDS visual is teaching",
+        "body": "The SDS is standardized so a worker can rapidly locate specific classes of information, but the scientific and operational meaning still depends on the exact product and task. Identification prevents cross-product assumptions; hazard and exposure-control sections describe relevant hazards and controls; first-aid and accidental-release sections support emergency planning; handling and storage sections inform routine precautions. For pesticide work, the product label remains a separate controlling source for labeled use and restrictions.",
+        "references": [
+          "REF-OSHA-1910-1200-HAZCOM",
+          "REF-EPA-WPS"
         ]
       },
       {
@@ -319,34 +362,6 @@
         "references": [
           "REF-OSHA-1910-132-PPE",
           "REF-OSHA-1910-1200-HAZCOM",
-          "REF-EPA-WPS-REI-2026"
-        ]
-      },
-      {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-023",
-        "src": "/assets/course1/ppe-task-guide.png",
-        "alt": "Decision model linking the assigned task to the employer hazard assessment, product label and safety data sheet, facility procedure, restrictions and the resulting PPE requirement. It does not present a universal task-to-PPE matrix or imply that respirator clearance, fit testing or authorization is automatic.",
-        "caption": "PPE selection is controlled by the assigned task, hazard assessment, label/SDS, site procedure and worker authorization.",
-        "references": [
-          "REF-OSHA-1910-132-PPE",
-          "REF-OSHA-1910-1200-HAZCOM",
-          "REF-EPA-WPS",
-          "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
-          "REF-EPA-WPS-REI-2026"
-        ]
-      },
-      {
-        "type": "image",
-        "assetId": "VIS-LH-TECH1-001-024",
-        "src": "/assets/course1/sds-anatomy.png",
-        "alt": "Illustrative safety data sheet anatomy showing where a learner may find identification, hazards, first aid, handling and storage, exposure controls and other safety information. Any example product details are fictional training content and do not replace the current manufacturer SDS, label or facility HazCom program.",
-        "caption": "Training example for locating hazard, first-aid, handling, exposure-control and emergency information in an SDS; use the actual current SDS for the product in use.",
-        "references": [
-          "REF-OSHA-1910-132-PPE",
-          "REF-OSHA-1910-1200-HAZCOM",
-          "REF-EPA-WPS",
-          "REF-EPA-WPS-APPLICATION-RESTRICTIONS",
           "REF-EPA-WPS-REI-2026"
         ]
       }

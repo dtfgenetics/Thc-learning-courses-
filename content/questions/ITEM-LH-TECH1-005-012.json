@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Mild damage is found on 2 plants, then 7, then 15 across three comparable scouting rounds. What is the most important evidence?",
   "choices": [
-    "The first count is the only valid count",
-    "Mild severity means no action is ever needed",
-    "The crop is automatically diagnosed with one pest",
-    "The increasing incidence trend supports escalation even if individual severity remains modest"
+    "Use the first count as the baseline and ignore later increases unless severity also rises.",
+    "Treat mild severity as evidence that escalation is unnecessary even when more plants are becoming affected.",
+    "Name one specific pest because a steadily rising count confirms a single cause.",
+    "Recognize the increasing incidence trend as important evidence and escalate according to procedure even if severity on individual plants remains modest."
   ],
   "correct": 3,
-  "rationale": "The increasing incidence trend supports escalation even if individual severity remains modest. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "An increase from 2 to 7 to 15 affected plants across comparable rounds shows spread in incidence. Severity can remain mild while the affected scope is expanding, so the trend may still justify escalation. The pattern does not by itself identify one pest, but it is operationally significant.",
   "references": [
     "REF-IPM-001"
   ],

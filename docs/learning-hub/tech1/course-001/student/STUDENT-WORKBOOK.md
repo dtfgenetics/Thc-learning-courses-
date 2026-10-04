@@ -10,6 +10,28 @@ Use the [Course 1 Field Reference Index](job-aids/FIELD-REFERENCE-INDEX.md) duri
 
 The references are especially useful during Activities 8–12, where more than one control or competency may apply at the same time.
 
+## How to use this workbook for deliberate practice
+
+For each activity, complete four passes rather than filling the form once:
+
+1. **First decision:** complete the task without looking at the answer rationale.
+2. **Evidence check:** identify the exact observation, instruction, status, measurement, label, record or role boundary that supports each important decision.
+3. **Error check:** name one plausible wrong action and explain why it fails.
+4. **Transfer:** change one condition in the scenario and state whether your original decision still holds.
+
+A strong answer should make the reasoning reconstructable. “I would stop” is weaker than “I would stop the movement because the physical tag and controlled record disagree, and movement would destroy confidence in identity before the discrepancy is resolved.”
+
+### Confidence rating
+
+After each activity, rate your confidence:
+
+- **1 — Recognition only:** I can identify the concept when prompted.
+- **2 — Guided:** I can solve it with the Field Reference or a worked example.
+- **3 — Independent:** I can solve a similar case without prompts.
+- **4 — Transfer:** I can explain why the rule works and adapt it when the conditions change.
+
+Any activity rated 1–2 should be repeated with a changed scenario before the module checkpoint.
+
 ## Activity 1 — Pre-task hazard brief
 Record the task, work area, hazards, controls, required PPE, stop-work conditions, escalation contacts, and any restricted-entry or alarm status. Explain one condition that you can correct routinely and one that requires escalation. Then identify one condition that would require you to reassess the brief after work has already started.
 
@@ -84,6 +106,32 @@ Produce a combined record/handoff exercise that:
 4. requires the outgoing technician to correct the missed read-back;
 5. records the next action, timing, and responsible role where known;
 6. separates what is observed from what remains uncertain.
+
+## Remediation map
+
+Use this map after workbook practice or a formative checkpoint:
+
+| Weak area | Return to | Re-practice |
+|---|---|---|
+| hazard vs risk, control choice, PPE/chemical information | Module 1 Lessons 1.1–1.3 | Activities 1 and 8 |
+| contamination route, sanitation, quarantine/status | Module 2 Lessons 2.1–2.3 | Activities 2 and 9 |
+| current SOP, acceptance criteria, authority, deviation | Module 3 Lessons 3.1–3.3 | Activities 3 and 8 |
+| identity, genealogy, movement, reconciliation, waste | Module 4 Lessons 4.1–4.3 | Activities 4 and 10 |
+| readiness, operator care, observation vs diagnosis | Module 5 Lessons 5.1–5.3 | Activities 5 and 11 |
+| contemporaneous records, corrections, closed-loop handoff | Module 6 Lessons 6.1–6.3 | Activities 6, 7 and 12 |
+| multiple controls at once | Modules 1–6 synthesis | Activities 8–12 and integrated practical |
+
+### What mastery should feel like
+
+You are not ready merely because the vocabulary sounds familiar. You should be able to look at an unfamiliar but comparable cultivation scenario and explain:
+
+- what you observed;
+- what controlled source governs the decision;
+- what action is inside your authority;
+- what action is blocked;
+- what evidence must be recorded;
+- what uncertainty remains;
+- who receives the handoff if you cannot close the issue.
 
 ## Reflection prompts
 

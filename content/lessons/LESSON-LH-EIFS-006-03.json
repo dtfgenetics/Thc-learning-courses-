@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-006-03",
+  "title": "Filtration, Clogging & Irrigation Fault Isolation",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-006-03"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Irrigation faults can originate from filtration, pressure regulation, valves, line damage, emitter blockage, source-water solids or maintenance conditions. Spatial evidence helps distinguish localized from system-wide causes.",
+    "vocabulary": [
+      {
+        "term": "Localized fault",
+        "definition": "A problem affecting one emitter, branch, line or limited area."
+      },
+      {
+        "term": "Zone-level fault",
+        "definition": "A problem affecting much or all of one controlled irrigation zone."
+      },
+      {
+        "term": "Clogging",
+        "definition": "Restriction of water passage caused by physical, chemical or biological material."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use spatial pattern to narrow the fault",
+        "body": "One low emitter under stable pressure points toward a local restriction; many low emitters after a filter differential change suggest a different fault class.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Water chemistry can influence maintenance burden",
+        "body": "Source-water minerals or other constituents can contribute to deposits or system-management needs, but the exact mechanism should be verified rather than assumed from EC alone.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Root-zone consequences strengthen the diagnosis",
+        "body": "Low output followed by faster dryback or localized EC rise creates a stronger causal chain than flow data alone.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A partially clogged filter reduces output across one zone and root-zone EC rises in the same area; investigate delivery-driven concentration before changing the nutrient recipe."
+    ],
+    "commonMistakes": [
+      "Blaming the recipe before checking delivery.",
+      "Treating every low-output point as a facility-wide pressure problem.",
+      "Ignoring filter maintenance history."
+    ],
+    "practicalApplication": "Classify five irrigation fault scenarios as local, zone-level, source/pressure, filtration or unresolved and state the next discriminating measurement.",
+    "summary": "Fault isolation works best when flow, pressure, filtration history and root-zone response converge on the same explanation."
+  }
+}

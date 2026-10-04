@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A cart used for suspect material is needed next for a clean lot. What should happen?",
   "choices": [
-    "Complete the required sanitation or segregation step before clean material contacts it",
-    "Use it immediately if no residue is visible",
-    "Cover it with cardboard",
-    "Skip sanitation because harvest material is already cut"
+    "Complete the required sanitation or segregation step before the cart contacts clean material.",
+    "Use the cart immediately if no visible residue remains from the suspect material.",
+    "Cover the cart with clean cardboard or plastic and treat the cover as sufficient sanitation.",
+    "Skip sanitation because harvested material is no longer attached to living plants."
   ],
   "correct": 0,
-  "rationale": "Complete the required sanitation or segregation step before clean material contacts it. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A cart can carry contamination on wheels, shelves, handles, debris, or contact surfaces even when nothing is visible. Before moving from suspect to clean material, the cart should follow the facility's sanitation or segregation procedure. Harvested material remains vulnerable to cross-contamination after cutting.",
   "references": [
     "REF-IPM-001",
     "REF-POSTHARVEST-001"

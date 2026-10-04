@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-005-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "type": "scenario",
+  "objective": "LO-LH-PHIB-005-01",
+  "competency": "COMP-IPM-ADV-001",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "stem": "A scout finds 12 aphids, but the report does not state how many plants were inspected. What is the most important limitation?",
+  "choices": [
+    "The count cannot be interpreted reliably without the sampling denominator and method.",
+    "Aphids never require monitoring.",
+    "Any count above 10 automatically requires treatment.",
+    "The crop stage is irrelevant."
+  ],
+  "correct": 0,
+  "rationale": "Counts need a denominator, route and method to support comparisons or threshold decisions.",
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-HEMP-IPM-VT-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-005",
+    "seedBank": true
+  }
+}

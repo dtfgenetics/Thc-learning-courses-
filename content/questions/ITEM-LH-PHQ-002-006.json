@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-002-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-002-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which record makes a product-moisture result most interpretable?",
+  "choices": [
+    "Result and operator initials only.",
+    "Lot, sample location and condition, method, units and basis, instrument check, result and limitations.",
+    "Room setpoint and calendar day only.",
+    "A pass/fail label without method."
+  ],
+  "correct": 1,
+  "rationale": "Measurement context is required to understand and compare a result.",
+  "references": [
+    "REF-ISO-17025-2017-001",
+    "REF-NIST-CANNAQAP-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

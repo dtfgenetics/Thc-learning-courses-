@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-005-02",
+  "title": "Source-Water Characterization, Variability & Risk",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-005-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-WATER-RECLAIMED-2026-001",
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Water sources change over time. Wells, municipal systems, surface water and reclaimed sources can differ in alkalinity, salinity, hardness, major ions, microbial risk and trace contaminants, so changes in source or treatment should trigger appropriate re-verification.",
+    "vocabulary": [
+      {
+        "term": "Source characterization",
+        "definition": "Measurement and documentation used to understand the chemical and microbiological properties of a water source."
+      },
+      {
+        "term": "Source change",
+        "definition": "A meaningful change in origin, treatment, blending, seasonal condition or supply that can alter water composition."
+      },
+      {
+        "term": "Risk-based testing",
+        "definition": "Testing selected because a constituent could materially affect crop, worker, process, product or regulatory outcome."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Source identity belongs with the result",
+        "body": "Record source, sample date, treatment state and major changes so future comparisons remain interpretable.",
+        "references": [
+          "REF-WATER-RECLAIMED-2026-001"
+        ]
+      },
+      {
+        "title": "Routine chemistry does not replace contaminant panels",
+        "body": "pH and EC can look acceptable while other chemical or microbiological concerns remain. Use source-specific testing when the risk question extends beyond bulk chemistry.",
+        "references": [
+          "REF-WATER-RECLAIMED-2026-001"
+        ]
+      },
+      {
+        "title": "Retest after meaningful change",
+        "body": "Seasonal drawdown, treatment changes, blending or reclaimed-water process changes can justify re-characterization rather than assuming historical results still apply.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A well source changes after seasonal drawdown; the historical pH result alone is not enough to prove the current source behaves the same."
+    ],
+    "commonMistakes": [
+      "Keeping one old water report indefinitely.",
+      "Testing only pH after source changes.",
+      "Calling reclaimed water safe from general chemistry alone."
+    ],
+    "practicalApplication": "Build a source-water verification schedule with routine measurements and event-triggered retesting conditions.",
+    "summary": "Water-quality confidence depends on source history and repeat verification, not one permanent certificate."
+  }
+}

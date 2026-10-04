@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "CULTIVATION-FOUNDATIONS-ITEM-BANK-READINESS-001",
+  "assessmentId": "ASSESS-CULT-FOUNDATIONS-FINAL-001",
+  "updated": "2026-09-22",
+  "state": "candidate-depth-complete-activation-evidence-pending",
+  "minimumCandidateItemsPerCompetency": 15,
+  "minimumActiveItemsPerCompetency": 15,
+  "targetBankItemsPerCompetency": 30,
+  "candidateDepthComplete": true,
+  "activeDepthComplete": false,
+  "activationRequires": [
+    "version-matched human assessment review approval",
+    "controlled pilot evidence for the exact item version",
+    "documented disposition of pilot/review findings",
+    "approved secure operational assessment-store boundary before credential use"
+  ],
+  "boundary": "Candidate-bank depth is a machine-verifiable construction milestone only. It does not make any item active, validated, secure, or eligible for production credential use."
+}

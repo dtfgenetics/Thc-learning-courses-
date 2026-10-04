@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A rooting-success KPI is defined as successful rooted units divided by eligible starting cuttings. There were 84 successful units from 100 eligible starts. What is the KPI?",
   "choices": [
-    "16%.",
-    "100% after excluding failures.",
-    "84%.",
-    "The KPI cannot be calculated because failures occurred."
+    "16%, because 16 of the 100 eligible starts did not root.",
+    "100%, because the KPI should exclude unsuccessful cuttings once final viability is known.",
+    "84%, because the defined KPI uses 84 successful rooted units divided by 100 eligible starting cuttings.",
+    "The KPI cannot be calculated until the failed cuttings are assigned a cause."
   ],
   "correct": 2,
-  "rationale": "84%. The result follows the stated KPI definition by using the supplied numerator, denominator, eligible population, units, and time window without changing the denominator after seeing the result.",
+  "rationale": "The KPI definition already specifies both numerator and denominator. Eighty-four successful rooted units divided by 100 eligible starting cuttings equals 84%. Failed units remain part of the denominator unless a predefined eligibility rule excludes them independently of outcome. Changing the denominator after observing failures would bias the metric.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

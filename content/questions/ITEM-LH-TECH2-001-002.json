@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One wall sensor shows normal RH while affected plants cluster inside a dense canopy. Which next step has the highest diagnostic value?",
   "choices": [
-    "Average the wall reading with yesterday’s room target.",
-    "Map temperature/RH at representative canopy positions and compare affected with unaffected locations.",
-    "Raise the dehumidifier setpoint immediately.",
-    "Assume the affected plants have a nutrient disorder because room RH is normal."
+    "Average the wall reading with the previous shift's room average to decide whether the controller is broadly representative.",
+    "Map temperature and RH at representative canopy positions, including affected and unaffected areas, and compare those measurements with the wall sensor.",
+    "Adjust the dehumidification target slightly and watch whether the affected cluster improves before spending time on additional measurements.",
+    "Inspect root-zone EC and irrigation timing first because a normal wall RH makes a canopy-scale humidity difference less likely."
   ],
   "correct": 1,
-  "rationale": "Spatial mapping tests whether the controller reading represents the conditions experienced by affected plants.",
+  "rationale": "A single wall sensor can describe conditions at its location without representing the microclimate inside a dense canopy. Mapping temperature and RH across representative canopy positions, especially affected versus unaffected areas, tests whether the controller reading is spatially representative and whether a local environmental pattern tracks the symptoms. Averaging unrelated readings does not resolve spatial bias, changing a setpoint before verifying the pattern confounds the diagnosis, and moving directly to root-zone causes prematurely discounts a plausible canopy microclimate.",
   "references": [
     "REF-VPD-002",
     "REF-ENV-TEMP-2025-001"

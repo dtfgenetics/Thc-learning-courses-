@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-04",
+  "bloomLevel": "create",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which element turns a corrective action into a stronger CAPA plan?",
+  "choices": [
+    "A predefined effectiveness check tied to the failure mode and recovery objective.",
+    "A longer action title.",
+    "A new brand of the same control.",
+    "Closing the record when the task is assigned."
+  ],
+  "correct": 0,
+  "rationale": "CAPA should define how effectiveness will be demonstrated, not merely document implementation.",
+  "references": [
+    "REF-ASTM-D8403-001",
+    "REF-ASTM-E2659-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

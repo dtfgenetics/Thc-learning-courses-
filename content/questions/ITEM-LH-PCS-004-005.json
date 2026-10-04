@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-004-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-SPACE-BIOSEC-001",
+  "objective": "LO-LH-PCS-004-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why should lower-risk work generally precede higher-risk work when the facility SOP uses clean-to-dirty sequencing?",
+  "choices": [
+    "It reduces avoidable cross-zone transfer through people, tools and equipment",
+    "It makes plants grow faster",
+    "It proves the high-risk zone contains a pathogen",
+    "It eliminates the need for sanitation"
+  ],
+  "correct": 0,
+  "rationale": "Movement sequence is one layer that reduces avoidable transfer.",
+  "references": [
+    "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-004",
+    "seedBank": true
+  }
+}

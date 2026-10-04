@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-007-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which final statement best calibrates diagnostic confidence?",
+  "choices": [
+    "Root rot confirmed, because roots looked brown.",
+    "Probable root-zone oxygen stress with unresolved secondary pathogen contribution; confidence would change with targeted pathogen evidence and representative oxygen/root-zone data.",
+    "Everything is uncertain, so no action is possible.",
+    "The first hypothesis remains correct because it was documented first."
+  ],
+  "correct": 1,
+  "rationale": "A calibrated conclusion should state the leading explanation, residual uncertainty and evidence that could change it.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

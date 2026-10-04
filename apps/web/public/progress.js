@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'thc-academy-progress-v1';
 const ADMIN_COURSE_ID = 'COURSE-LH-TECH1-001';
-const ACADEMIC_RECORD_COURSE_ID = 'COURSE-LH-TECH1-001';
+const DEFAULT_ACADEMIC_RECORD_COURSE_ID = 'COURSE-LH-TECH1-001';
 
 export function readProgress(storage = globalThis.localStorage) {
   try {
@@ -287,14 +287,15 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
   const completedLessons = lessons.filter((lesson) => lesson.completed).length;
   const instructionComplete = lessons.length > 0 && completedLessons === lessons.length;
   const written = evidence.writtenAssessment ?? {};
-  const practical = evidence.performanceAssessment ?? {};
+  const practical = evidence.performanceAssessment ?? null;
+  const practicalRequired = Boolean(practical?.assessmentId);
   const writtenPassed = written.outcome === 'passed';
-  const practicalPassed = practical.status === 'passed' && Number(practical.criticalErrorCount ?? 0) === 0;
+  const practicalPassed = !practicalRequired || (practical.status === 'passed' && Number(practical.criticalErrorCount ?? 0) === 0);
   const complete = instructionComplete && writtenPassed && practicalPassed;
   const missingRequirements = [];
   if (!instructionComplete) missingRequirements.push('instruction');
   if (!writtenPassed) missingRequirements.push('course-final');
-  if (!practicalPassed) missingRequirements.push('course-practical');
+  if (practicalRequired && !practicalPassed) missingRequirements.push('course-practical');
   const versionHistory = enrollments.filter((row) => row.courseId === course.id).map((row) => ({
     courseVersion: String(row.courseVersion),
     status: row.status,
@@ -309,9 +310,9 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
     academicCompletion: {
       complete,
       status: complete ? 'complete' : 'in-progress',
-      completionRecordedAt: complete ? latestRecordDate([...lessons.map((lesson) => lesson.completedAt), written.latestScoredAt, practical.evaluatedAt]) : null,
+      completionRecordedAt: complete ? latestRecordDate([...lessons.map((lesson) => lesson.completedAt), written.latestScoredAt, practical?.evaluatedAt]) : null,
       missingRequirements,
-      statement: 'This is an academic Course 1 completion record. It is not a professional credential, license, or certification.'
+      statement: 'This is an academic course completion record. It is not a professional credential, license, certification, or credential-eligibility decision.'
     },
     instruction: { completedLessons, totalLessons: lessons.length, complete: instructionComplete, modules },
     writtenAssessment: {
@@ -325,15 +326,16 @@ export function buildAcademicCourseRecord({ course, progressRows = [], enrollmen
       latestScoredAt: recordIso(written.latestScoredAt)
     },
     performanceAssessment: {
-      assessmentId: practical.assessmentId ?? null,
-      status: practical.status ?? 'not-recorded',
-      scorePercent: practical.scorePercent == null ? null : Number(practical.scorePercent),
-      criticalErrorCount: Number(practical.criticalErrorCount ?? 0),
-      evaluatedAt: recordIso(practical.evaluatedAt),
-      updatedAt: recordIso(practical.updatedAt),
-      followUpStatus: practical.followUpStatus ?? 'none',
-      reassessmentTargetDate: practical.reassessmentTargetDate || null,
-      learnerFeedback: practical.remediationSummary || null
+      required: practicalRequired,
+      assessmentId: practical?.assessmentId ?? null,
+      status: practicalRequired ? (practical?.status ?? 'not-recorded') : 'not-required',
+      scorePercent: practical?.scorePercent == null ? null : Number(practical.scorePercent),
+      criticalErrorCount: Number(practical?.criticalErrorCount ?? 0),
+      evaluatedAt: recordIso(practical?.evaluatedAt),
+      updatedAt: recordIso(practical?.updatedAt),
+      followUpStatus: practical?.followUpStatus ?? 'none',
+      reassessmentTargetDate: practical?.reassessmentTargetDate || null,
+      learnerFeedback: practical?.remediationSummary || null
     },
     academicStatusHistory,
     courseVersionHistory: versionHistory
@@ -376,7 +378,7 @@ function injectTranscriptStyles() {
   const style = document.createElement('style');
   style.id = 'course1-academic-record-styles';
   style.textContent = `
-    .academic-record{max-width:1120px}.record-boundary{padding:.9rem 1rem;border-left:4px solid var(--green);background:var(--green-soft);border-radius:.5rem}.record-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1rem 0}.record-card{display:grid;gap:.25rem;padding:.85rem;border:1px solid var(--line);border-radius:.75rem;background:#fff}.record-card strong{font-size:1.25rem}.record-card span,.record-meta{color:var(--muted)}.record-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.record-button{min-height:44px;border:1px solid var(--green);border-radius:.65rem;padding:.65rem .85rem;background:#fff;color:var(--green);font:inherit;font-weight:800;cursor:pointer}.record-section{margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--line)}.record-module{margin:.7rem 0;border:1px solid var(--line);border-radius:.7rem;background:#fff}.record-module>summary{min-height:44px;padding:.75rem .9rem;cursor:pointer;font-weight:800}.record-lessons{display:grid;gap:.4rem;padding:0 .9rem .9rem}.record-lesson{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.7rem;align-items:center;padding:.6rem 0;border-top:1px solid var(--line)}.record-version-history{overflow-x:auto}.record-table{width:100%;border-collapse:collapse}.record-table th,.record-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.record-table th{background:var(--panel)}.record-warning{padding:.8rem;border:1px solid #d7bf92;border-radius:.7rem;background:#fffaf0}.record-button:focus-visible,.record-module>summary:focus-visible,.record-version-history:focus-visible{outline:3px solid rgba(36,95,61,.22);outline-offset:2px}@media(max-width:620px){.record-lesson{grid-template-columns:1fr}.record-actions{display:grid}.record-button{width:100%}}@media print{#tab-course-record,.record-actions,.site-header,.catalog-panel,.site-footer,.governance-dashboard{display:none!important}.academic-record{max-width:none}.record-module{break-inside:avoid}.record-version-history{overflow:visible}}
+    .academic-record{max-width:1120px}.record-course-picker{display:grid;gap:.35rem;max-width:760px;margin:.8rem 0 1rem;font-weight:800}.record-course-select{min-height:44px;border:1px solid var(--line);border-radius:.65rem;padding:.65rem .75rem;background:#fff;color:var(--ink);font:inherit}.record-course-host{display:block}.record-boundary{padding:.9rem 1rem;border-left:4px solid var(--green);background:var(--green-soft);border-radius:.5rem}.record-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem;margin:1rem 0}.record-card{display:grid;gap:.25rem;padding:.85rem;border:1px solid var(--line);border-radius:.75rem;background:#fff}.record-card strong{font-size:1.25rem}.record-card span,.record-meta{color:var(--muted)}.record-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.record-button{min-height:44px;border:1px solid var(--green);border-radius:.65rem;padding:.65rem .85rem;background:#fff;color:var(--green);font:inherit;font-weight:800;cursor:pointer}.record-section{margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--line)}.record-module{margin:.7rem 0;border:1px solid var(--line);border-radius:.7rem;background:#fff}.record-module>summary{min-height:44px;padding:.75rem .9rem;cursor:pointer;font-weight:800}.record-lessons{display:grid;gap:.4rem;padding:0 .9rem .9rem}.record-lesson{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.7rem;align-items:center;padding:.6rem 0;border-top:1px solid var(--line)}.record-version-history{overflow-x:auto}.record-table{width:100%;border-collapse:collapse}.record-table th,.record-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.record-table th{background:var(--panel)}.record-warning{padding:.8rem;border:1px solid #d7bf92;border-radius:.7rem;background:#fffaf0}.record-button:focus-visible,.record-course-select:focus-visible,.record-module>summary:focus-visible,.record-version-history:focus-visible{outline:3px solid rgba(36,95,61,.22);outline-offset:2px}@media(max-width:620px){.record-lesson{grid-template-columns:1fr}.record-actions{display:grid}.record-button{width:100%}}@media print{#tab-course-record,.record-actions,.site-header,.catalog-panel,.site-footer,.governance-dashboard{display:none!important}.academic-record{max-width:none}.record-module{break-inside:avoid}.record-version-history{overflow:visible}}
   `;
   document.head.append(style);
 }
@@ -388,23 +390,34 @@ function transcriptSummaryCard(label, value, note = '') {
   return card;
 }
 
-async function loadAcademicRecordData() {
-  const requests = [
+async function loadAcademicRecordContext() {
+  const [catalogResponse, progressResponse, enrollmentResponse] = await Promise.all([
     fetch('/api/catalog', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
     fetch('/api/v1/me/progress', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
-    fetch('/api/v1/me/enrollments', { headers: { accept: 'application/json' }, credentials: 'same-origin' }),
-    fetch(`/api/v1/me/courses/${ACADEMIC_RECORD_COURSE_ID}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' })
-  ];
-  const [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse] = await Promise.all(requests);
-  if ([progressResponse, enrollmentResponse, evidenceResponse].some((response) => response.status === 401 || response.status === 403)) throw Object.assign(new Error('Sign in to view your authoritative Course 1 academic record.'), { status: 401 });
-  for (const response of [catalogResponse, progressResponse, enrollmentResponse, evidenceResponse]) if (!response.ok) throw new Error(`Academic record data unavailable (${response.status}).`);
-  const [catalog, progress, enrollment, evidence] = await Promise.all([catalogResponse.json(), progressResponse.json(), enrollmentResponse.json(), evidenceResponse.json()]);
-  const course = (catalog.courses ?? []).find((row) => row.id === ACADEMIC_RECORD_COURSE_ID);
-  if (!course) throw new Error('Course 1 is not available in the published Academy catalog.');
-  return buildAcademicCourseRecord({ course, progressRows: progress.progress ?? [], enrollments: enrollment.enrollments ?? [], evidence });
+    fetch('/api/v1/me/enrollments', { headers: { accept: 'application/json' }, credentials: 'same-origin' })
+  ]);
+  if ([progressResponse, enrollmentResponse].some((response) => response.status === 401 || response.status === 403)) throw Object.assign(new Error('Sign in to view your authoritative academic course records.'), { status: 401 });
+  for (const response of [catalogResponse, progressResponse, enrollmentResponse]) if (!response.ok) throw new Error(`Academic record data unavailable (${response.status}).`);
+  const [catalog, progress, enrollment] = await Promise.all([catalogResponse.json(), progressResponse.json(), enrollmentResponse.json()]);
+  const enrolledIds = new Set((enrollment.enrollments ?? []).map((row) => row.courseId));
+  const courses = (catalog.courses ?? []).filter((row) => row.status === 'published' && row.finalAssessment && enrolledIds.has(row.id));
+  return { catalog, progress, enrollment, courses };
+}
+
+async function loadAcademicRecordData(courseId, context = null) {
+  const loaded = context ?? await loadAcademicRecordContext();
+  const selectedId = courseId ?? loaded.courses[0]?.id ?? DEFAULT_ACADEMIC_RECORD_COURSE_ID;
+  const course = (loaded.catalog.courses ?? []).find((row) => row.id === selectedId);
+  if (!course) throw new Error('The selected course is not available in the published Academy catalog.');
+  const evidenceResponse = await fetch(`/api/v1/me/courses/${encodeURIComponent(selectedId)}/evidence`, { headers: { accept: 'application/json' }, credentials: 'same-origin' });
+  if (evidenceResponse.status === 401 || evidenceResponse.status === 403) throw Object.assign(new Error('Sign in to view your authoritative academic course records.'), { status: 401 });
+  if (!evidenceResponse.ok) throw new Error(`Academic record evidence unavailable (${evidenceResponse.status}).`);
+  const evidence = await evidenceResponse.json();
+  return buildAcademicCourseRecord({ course, progressRows: loaded.progress.progress ?? [], enrollments: loaded.enrollment.enrollments ?? [], evidence });
 }
 
 function renderAcademicRecord(panel, record) {
+  panel.dataset.courseId = record.course.id;
   panel.replaceChildren();
   panel.append(transcriptElement('p', 'Private learner academic record', 'eyebrow'), transcriptElement('h2', record.course.title));
   panel.append(transcriptElement('p', record.academicCompletion.statement, 'record-boundary'));
@@ -413,13 +426,19 @@ function renderAcademicRecord(panel, record) {
     transcriptSummaryCard('Academic course status', transcriptStatusLabel(record.academicCompletion.status), record.academicCompletion.completionRecordedAt ? `Recorded through ${transcriptDate(record.academicCompletion.completionRecordedAt)}` : ''),
     transcriptSummaryCard('Instruction', `${record.instruction.completedLessons}/${record.instruction.totalLessons}`, record.instruction.complete ? 'All canonical lesson IDs completed' : 'Instruction still in progress'),
     transcriptSummaryCard('Course final', transcriptStatusLabel(record.writtenAssessment.outcome), record.writtenAssessment.bestScorePercent == null ? `${record.writtenAssessment.attemptCount} recorded attempts` : `${record.writtenAssessment.bestScorePercent.toFixed(0)}% best • pass ${Number(record.writtenAssessment.passingScorePercent ?? 0).toFixed(0)}%`),
-    transcriptSummaryCard('Course practical', transcriptStatusLabel(record.performanceAssessment.status), record.performanceAssessment.scorePercent == null ? 'No finalized score' : `${record.performanceAssessment.scorePercent.toFixed(0)}% • ${record.performanceAssessment.criticalErrorCount} critical errors`)
+    transcriptSummaryCard(
+      'Course practical',
+      transcriptStatusLabel(record.performanceAssessment.status),
+      record.performanceAssessment.required
+        ? (record.performanceAssessment.scorePercent == null ? 'No finalized score' : `${record.performanceAssessment.scorePercent.toFixed(0)}% • ${record.performanceAssessment.criticalErrorCount} critical errors`)
+        : 'No academic practical required'
+    )
   );
   panel.append(summary);
   if (!record.academicCompletion.complete) {
     const missing = transcriptElement('section', '', 'record-warning');
     missing.append(transcriptElement('strong', 'Academic completion requirements still open'));
-    const labels = { instruction: 'Complete the canonical Course 1 lesson set', 'course-final': 'Pass the public Course 1 final assessment', 'course-practical': 'Pass the Course 1 practical without disqualifying critical errors' };
+    const labels = { instruction: 'Complete the canonical lesson set for this course', 'course-final': 'Pass this course final assessment', 'course-practical': 'Pass the required academic practical without disqualifying critical errors' };
     const list = document.createElement('ul');
     for (const item of record.academicCompletion.missingRequirements) list.append(transcriptElement('li', labels[item] ?? item));
     missing.append(list); panel.append(missing);
@@ -447,9 +466,13 @@ function renderAcademicRecord(panel, record) {
   const writtenText = record.writtenAssessment.bestScorePercent == null ? `${record.writtenAssessment.attemptCount} attempt(s) recorded.` : `Best recorded score ${record.writtenAssessment.bestScorePercent.toFixed(1)}%; passing standard ${Number(record.writtenAssessment.passingScorePercent ?? 0).toFixed(0)}%. Latest scored evidence: ${transcriptDate(record.writtenAssessment.latestScoredAt)}.`;
   assessments.append(transcriptElement('p', `Course final: ${transcriptStatusLabel(record.writtenAssessment.outcome)}. ${writtenText}`));
   const practicalText = [`Course practical: ${transcriptStatusLabel(record.performanceAssessment.status)}.`];
-  if (record.performanceAssessment.scorePercent != null) practicalText.push(`Recorded score ${record.performanceAssessment.scorePercent.toFixed(1)}%.`);
-  practicalText.push(`Critical errors: ${record.performanceAssessment.criticalErrorCount}.`);
-  practicalText.push(`Follow-up: ${transcriptFollowUpLabel(record.performanceAssessment.followUpStatus)}.`);
+  if (record.performanceAssessment.required) {
+    if (record.performanceAssessment.scorePercent != null) practicalText.push(`Recorded score ${record.performanceAssessment.scorePercent.toFixed(1)}%.`);
+    practicalText.push(`Critical errors: ${record.performanceAssessment.criticalErrorCount}.`);
+    practicalText.push(`Follow-up: ${transcriptFollowUpLabel(record.performanceAssessment.followUpStatus)}.`);
+  } else {
+    practicalText.push('No academic practical is required for completion of this course.');
+  }
   if (record.performanceAssessment.reassessmentTargetDate) practicalText.push(`Reassessment target: ${record.performanceAssessment.reassessmentTargetDate}.`);
   assessments.append(transcriptElement('p', practicalText.join(' ')));
   if (record.performanceAssessment.learnerFeedback) {
@@ -458,7 +481,7 @@ function renderAcademicRecord(panel, record) {
   panel.append(assessments);
 
   const transitions = transcriptElement('section', '', 'record-section');
-  transitions.append(transcriptElement('h3', 'Academic completion transition history'), transcriptElement('p', 'This timeline records automatic Course 1 enrollment completion and reopening decisions. It does not change or represent professional credential status.', 'record-meta'));
+  transitions.append(transcriptElement('h3', 'Academic completion transition history'), transcriptElement('p', 'This timeline records automatic enrollment completion and reopening decisions for this course. It does not change or represent professional credential status.', 'record-meta'));
   if (!record.academicStatusHistory.length) {
     transitions.append(transcriptElement('p', 'No automatic academic completion or reopening transitions are recorded yet.', 'record-meta'));
   } else {
@@ -477,7 +500,7 @@ function renderAcademicRecord(panel, record) {
 
   const versions = transcriptElement('section', '', 'record-section'); versions.append(transcriptElement('h3', 'Course-version history'));
   if (!record.courseVersionHistory.length) {
-    versions.append(transcriptElement('p', 'No account enrollment history is recorded for Course 1.', 'record-meta'));
+    versions.append(transcriptElement('p', 'No account enrollment history is recorded for this course.', 'record-meta'));
   } else {
     const wrap = transcriptElement('div', '', 'record-version-history'); wrap.tabIndex = 0; wrap.setAttribute('aria-label', 'Course version enrollment history');
     const table = document.createElement('table'); table.className = 'record-table'; const head = document.createElement('thead'); const hr = document.createElement('tr');
@@ -496,9 +519,60 @@ export async function initializeAcademicCourseRecord() {
   injectTranscriptStyles();
   tab.addEventListener('click', async () => {
     for (const item of document.querySelectorAll('.portal-tab')) { const active = item.id === 'tab-course-record'; item.classList.toggle('active', active); item.setAttribute('aria-pressed', active ? 'true' : 'false'); }
-    const panel = transcriptElement('article', '', 'portal-panel academic-record'); panel.append(transcriptElement('p', 'Private learner academic record', 'eyebrow'), transcriptElement('h2', 'Course 1 Academic Record'), transcriptElement('p', 'Loading authoritative lesson, course-final, practical, and enrollment evidence…', 'status')); lessonView.replaceChildren(panel); lessonView.focus();
-    try { renderAcademicRecord(panel, await loadAcademicRecordData()); }
-    catch (error) { panel.replaceChildren(transcriptElement('p', 'Course 1 academic record', 'eyebrow'), transcriptElement('h2', 'Academic record unavailable'), transcriptElement('p', error.message, 'portal-error')); }
+    const panel = transcriptElement('article', '', 'portal-panel academic-record');
+    panel.append(
+      transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+      transcriptElement('h2', 'Academic Course Records'),
+      transcriptElement('p', 'Loading your enrolled course records, graded finals, academic practical evidence, and completion history…', 'status')
+    );
+    lessonView.replaceChildren(panel);
+    lessonView.focus();
+    try {
+      const context = await loadAcademicRecordContext();
+      if (!context.courses.length) {
+        panel.replaceChildren(
+          transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+          transcriptElement('h2', 'No academic course records yet'),
+          transcriptElement('p', 'Enroll in a published course with a graded final to create an account-linked academic course record.', 'record-meta')
+        );
+        return;
+      }
+      const chooser = transcriptElement('label', '', 'record-course-picker');
+      chooser.append(transcriptElement('span', 'Course record'));
+      const select = document.createElement('select');
+      select.className = 'record-course-select';
+      for (const course of context.courses) {
+        const option = document.createElement('option');
+        option.value = course.id;
+        option.textContent = course.title;
+        select.append(option);
+      }
+      chooser.append(select);
+      panel.replaceChildren(
+        transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+        transcriptElement('h2', 'Academic Course Records'),
+        chooser,
+        transcriptElement('div', '', 'record-course-host')
+      );
+      const host = panel.querySelector('.record-course-host');
+      const renderSelected = async () => {
+        host.replaceChildren(transcriptElement('p', 'Loading authoritative course evidence…', 'status'));
+        try {
+          const record = await loadAcademicRecordData(select.value, context);
+          renderAcademicRecord(host, record);
+        } catch (error) {
+          host.replaceChildren(transcriptElement('h3', 'Academic record unavailable'), transcriptElement('p', error.message, 'portal-error'));
+        }
+      };
+      select.addEventListener('change', renderSelected);
+      await renderSelected();
+    } catch (error) {
+      panel.replaceChildren(
+        transcriptElement('p', 'Private learner academic records', 'eyebrow'),
+        transcriptElement('h2', 'Academic records unavailable'),
+        transcriptElement('p', error.message, 'portal-error')
+      );
+    }
   });
   return true;
 }

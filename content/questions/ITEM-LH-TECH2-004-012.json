@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-012",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A new control product is proposed after poor follow-up results. What is the Technician II responsibility?",
   "choices": [
-    "Select the strongest product available.",
-    "Double the previous treatment concentration.",
-    "Apply a small test dose without authorization.",
-    "Document the evidence and escalate product/treatment selection to the authorized role under law, label and facility procedure."
+    "Recommend the strongest available product to the authorized applicator because poor follow-up results justify escalating treatment intensity.",
+    "Recommend increasing concentration of the previous treatment if the label permits the higher rate and the pest is still present.",
+    "Apply a small area test as a diagnostic step and seek approval only if the response suggests the product is effective.",
+    "Document the evidence and escalate treatment/product selection to the authorized role under label, legal, licensing, and facility controls."
   ],
   "correct": 3,
-  "rationale": "Document the evidence and escalate product/treatment selection to the authorized role under law, label and facility procedure.",
+  "rationale": "Technician II can document the failed or inadequate response and provide diagnostic evidence, but product selection and pesticide application remain separate controlled authorities. Poor follow-up results do not create permission to choose a new product, increase concentration, or conduct an unauthorized trial. The technician's role is to preserve the evidence, describe the problem accurately, and escalate the decision to the authorized role operating under label, law, and facility procedure.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

@@ -1,0 +1,56 @@
+{
+  "id": "COURSE-LH-PHIB-005",
+  "title": "Biological/Cultural Controls, Thresholds & Resistance Management",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Plant Health, IPM & Biosecurity Specialist / advanced specialization development",
+  "intendedAudience": [
+    "Learners progressing through the Plant Health, IPM & Biosecurity Specialist pathway",
+    "Cultivation personnel responsible for IPM program design, biological/cultural control integration, monitoring thresholds and resistance-management handoff"
+  ],
+  "prerequisites": [
+    "Arthropod Pest Biology, Identification & IPM and Plant Disease, HLVd & Biosecurity or equivalent advanced plant-health foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Control-strategy claims are grounded in cannabis-specific integrated disease/IPM literature, university greenhouse IPM guidance and technical resistance-management guidance. Universal cannabis action thresholds, pesticide product recommendations and off-label use are explicitly excluded.",
+  "assessmentPolicy": "The dedicated specialist assessment is development-only until exact-version technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize pesticide selection/application or override label, jurisdiction, licensing or facility controls.",
+  "description": "Develops specialist IPM decision-making across preventive, cultural, mechanical, biological and chemical-control contexts, with emphasis on threshold logic, beneficial-organism compatibility, resistance stewardship, post-intervention verification and documented decision boundaries.",
+  "modules": [
+    "MOD-LH-PHIB-005-CONTROLS-RESISTANCE"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-PHIB-005-FINAL",
+  "learningOutcomes": [
+    "Use representative monitoring, crop impact and facility decision rules to distinguish observation thresholds, action thresholds and treatment authority without inventing universal cannabis pest-count triggers.",
+    "Compare biological, cultural, mechanical and environmental control tactics by target pest/pathogen, life stage, timing, compatibility, expected response and verification needs.",
+    "Evaluate beneficial-organism compatibility with sanitation, environmental conditions and other interventions while recognizing that no single control tactic is universally effective.",
+    "Apply resistance-management principles by distinguishing mode of action from brand identity, avoiding repeated selection pressure and preserving label/local-authority boundaries.",
+    "Build an IPM decision and follow-up record that links evidence, chosen tactic, authorization, compatibility checks, monitoring method, response criteria and escalation/closure decisions."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-PLANT-HEALTH-IPM-BIOSEC-001",
+    "maturity": "new-specialist-content-draft",
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-PHIB-005-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

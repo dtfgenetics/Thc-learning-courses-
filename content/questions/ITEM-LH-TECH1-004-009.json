@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-009",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRITION-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Older leaves show deficiency-like discoloration while root-zone EC is already elevated. What is the strongest interpretation?",
   "choices": [
-    "The symptom requires pH, EC, root-zone, irrigation and stage context before adding more fertilizer or assigning a cause",
-    "The crop definitely needs more nutrients",
-    "The EC proves a specific nutrient is missing",
-    "Leaf color alone confirms deficiency"
+    "Keep the symptom, elevated root-zone EC, pH, irrigation, root-zone moisture, and crop-stage context together before adding fertilizer or assigning a nutrient cause.",
+    "Increase fertilizer because older-leaf discoloration plus high root-zone EC means the plant has used up the available nutrients.",
+    "Use the elevated EC to identify which specific nutrient is missing from the root zone.",
+    "Treat the leaf symptom itself as sufficient confirmation of a deficiency."
   ],
   "correct": 0,
-  "rationale": "The symptom requires pH, EC, root-zone, irrigation and stage context before adding more fertilizer or assigning a cause. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Older-leaf discoloration can be consistent with nutritional stress, but elevated root-zone EC can also reflect concentration, water-balance, pH, availability, or root-function problems. Adding more fertilizer before understanding that context can worsen the condition. Technician I should preserve the symptom and supporting pH/EC/irrigation/root-zone evidence, then escalate interpretation rather than diagnosing from appearance alone.",
   "references": [
     "REF-NUTRITION-001",
     "REF-IRRIGATION-001"

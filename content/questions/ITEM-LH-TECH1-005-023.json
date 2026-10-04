@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A tray count does not reconcile and the identity of two plants is uncertain. What is the strongest record practice?",
   "choices": [
-    "Assign the missing identity from memory",
-    "Delete two plants from the record",
-    "Preserve the physical count and uncertainty, hold or route material as required and use the controlled discrepancy process rather than forcing a match",
-    "Change the starting count"
+    "Assign the uncertain identities from memory so the count can be reconciled.",
+    "Delete two plants from the record so the remaining count matches the known identities.",
+    "Preserve the physical count and identity uncertainty, hold or route the material as required, and use the controlled discrepancy process rather than forcing a match.",
+    "Change the original starting count to match the number of plants whose identity is still certain."
   ],
   "correct": 2,
-  "rationale": "Preserve the physical count and uncertainty, hold or route material as required and use the controlled discrepancy process rather than forcing a match. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A count and identity mismatch should remain visible until it is resolved through evidence. Guessing identities, deleting plants from the record, or rewriting the starting count creates false history. The correct response is to preserve the physical state and uncertainty, control the affected material, and use the discrepancy process.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IPM-001"

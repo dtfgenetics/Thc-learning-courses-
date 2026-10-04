@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-006-04",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Which troubleshooting plan is most interpretable?",
+  "choices": [
+    "Change humidity, media and handling together",
+    "Compare one bounded change with a recorded baseline and downstream criteria",
+    "Apply the change to all production immediately",
+    "Judge success from the first favorable observation"
+  ],
+  "correct": 1,
+  "rationale": "A bounded comparison with baseline and downstream measures can support a defensible decision.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

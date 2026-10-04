@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-005",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician is asked to compare PPFD before and after an authorized fixture-height change. What makes the comparison strongest?",
   "choices": [
-    "Repeat the same canopy grid with consistent measurement height and sensor orientation",
-    "Use only the brightest new point",
-    "Measure from different heights to get more variety",
-    "Compare dimmer percentages instead of canopy measurements"
+    "Repeat the same canopy grid using the same measurement height, sensor orientation, and comparable operating conditions before and after the authorized change.",
+    "Use the brightest post-change point because the goal is to verify that the fixture can now deliver higher intensity.",
+    "Measure at different heights after the change so more of the light field is represented.",
+    "Compare the fixture's dimmer percentage before and after because control setting is a direct substitute for canopy PPFD."
   ],
   "correct": 0,
-  "rationale": "Repeat the same canopy grid with consistent measurement height and sensor orientation. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A before/after PPFD comparison is strongest when the measurement geometry is controlled. Reusing the same grid, canopy height, sensor orientation, and comparable fixture conditions reduces the chance that differences are caused by the measurement method itself. A dimmer setting or one bright point cannot demonstrate how the crop plane changed across the mapped area.",
   "references": [
     "REF-LIGHT-001"
   ],

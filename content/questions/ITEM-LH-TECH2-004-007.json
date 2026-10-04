@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-007",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A later scouting round changes from 25 plants per zone to only the most symptomatic plants. What is the primary data-quality concern?",
   "choices": [
-    "The later round is automatically more accurate.",
-    "Only positive plants should ever be sampled.",
-    "The sampling method changed toward a biased subset, so trend comparability is weakened.",
-    "Sample count does not affect trend interpretation."
+    "Treat the later round as more accurate because symptomatic plants are more likely to reveal the true pressure in the zone.",
+    "Use the symptomatic-only round to estimate severity and compare its raw positive count with prior rounds for trend direction.",
+    "Recognize that selecting only the most symptomatic plants changes the sampling frame toward a biased subset and weakens direct trend comparability.",
+    "Adjust the earlier rounds mathematically to match the symptomatic-only method so the series can be retained as one trend."
   ],
   "correct": 2,
-  "rationale": "The sampling method changed toward a biased subset, so trend comparability is weakened.",
+  "rationale": "Changing from a defined sample per zone to only the most symptomatic plants changes what the sample represents. The later round is enriched for positives and can no longer be compared directly with earlier representative rounds as if the sampling method were unchanged. The data may still be useful for targeted severity or diagnostic work, but the trend interpretation must clearly disclose the sampling change.",
   "references": [
     "REF-IPM-001"
   ]

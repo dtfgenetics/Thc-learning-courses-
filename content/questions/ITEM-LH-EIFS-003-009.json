@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-003-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A persistent humidity hotspot aligns with a dense interior canopy section across several days. What is the strongest next step?",
+  "choices": [
+    "Increase every fan immediately.",
+    "Ignore the hotspot because room average is acceptable.",
+    "Change fertilizer.",
+    "Map local airflow and temperature/RH through operating transitions before changing the whole-room setpoint."
+  ],
+  "correct": 3,
+  "rationale": "Persistent local patterns call for targeted airflow/microclimate verification before broad changes.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

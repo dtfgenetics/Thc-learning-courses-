@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-017",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Rooting underperformance and new foliar symptoms appear in one donor family. Which evidence is most useful before claiming contamination?",
   "choices": [
-    "Traceable scouting, sanitation, donor condition and confirmatory observations or tests consistent with the suspected pathway.",
-    "The fact that symptoms look unusual.",
-    "One technician opinion without records.",
-    "The donor marketing name."
+    "Use traceable scouting, sanitation, donor condition, batch history, and confirmatory observations or tests that fit the suspected contamination pathway before naming contamination as the cause.",
+    "Treat the unusual foliar symptoms plus rooting loss as sufficient evidence of contamination because both outcomes occur in the same donor family.",
+    "Rely on the experienced technician's visual diagnosis if the symptom pattern resembles a prior contaminated batch.",
+    "Use the donor family name and prior reputation as supporting evidence that the problem is likely inherited rather than environmental."
   ],
   "correct": 0,
-  "rationale": "Traceable scouting, sanitation, donor condition and confirmatory observations or tests consistent with the suspected pathway.",
+  "rationale": "Rooting underperformance plus new foliar symptoms creates a meaningful plant-health concern, but the pattern does not by itself prove contamination. The strongest evidence would connect donor condition, sanitation history, scouting findings, batch traceability, and confirmation methods to a plausible contamination pathway. Visual unusualness, technician confidence, or donor reputation cannot substitute for evidence that distinguishes contamination from propagation stress, environment, handling, or genotype-related response.",
   "references": [
     "REF-IPM-001",
     "REF-PROP-001"

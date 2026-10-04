@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A humidity alarm is active, but the local sensor is directly in a dehumidifier discharge path. What should the technician do?",
   "choices": [
-    "Silence the alarm and change the set point immediately",
-    "Move the sensor without documenting original placement",
-    "Preserve the alarm and placement context, perform permitted checks and escalate unresolved condition",
-    "Declare equipment failure as confirmed"
+    "Silence the humidity alarm and change the target because the local reading is likely biased by the dehumidifier.",
+    "Move the sensor to a different location immediately so the alarm clears, then document the new position.",
+    "Preserve the alarm and original placement context, perform only the permitted checks, and escalate if the condition remains unresolved.",
+    "Declare dehumidifier failure because an alarm occurring near the discharge proves the equipment is not controlling humidity correctly."
   ],
   "correct": 2,
-  "rationale": "Preserve the alarm and placement context, perform permitted checks and escalate unresolved condition. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "The alarm and unusual sensor placement are both relevant evidence. Moving the sensor, changing the target, or declaring equipment failure before checking the context can hide whether the issue is placement, equipment response, or another condition. Technician I should preserve the original state, complete only authorized checks, and escalate unresolved interpretation or repair.",
   "references": [
     "REF-VPD-002"
   ],

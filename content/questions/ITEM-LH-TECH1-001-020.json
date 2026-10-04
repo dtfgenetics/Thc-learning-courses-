@@ -1,1 +1,23 @@
-{"id":"ITEM-LH-TECH1-001-020","version":1,"status":"draft","purpose":"summative","competency":"COMP-PRO-SOP-001","objective":"LO-LH-TECH1-001-12","bloomLevel":"apply","difficulty":"moderate","type":"scenario","stem":"An assigned task cannot be completed before shift end because a required part is unavailable. What is the best handoff?","choices":["Mark it complete so the schedule stays on target","Leave without mentioning it","Tell the next shift only that the day was busy","Record the task as incomplete, explain why, state controls/notifications, and identify the next action"],"correct":3,"rationale":"Accurate handoff requires truthful status and enough context for the next worker to act.","references":["REF-MHRA-GXP-DATA-INTEGRITY"]}
+{
+  "id": "ITEM-LH-TECH1-001-020",
+  "version": 2,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-TECH1-001-12",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "An assigned task cannot be completed before shift end because a required part is unavailable. What is the best handoff?",
+  "choices": [
+    "Mark the task complete if most of the work was finished and note the missing part informally.",
+    "Leave the task open without a handoff because the next shift can see it is incomplete in the system.",
+    "Tell the next shift verbally that the day was busy and a part is still needed.",
+    "Record the task as incomplete, explain the missing part and current status, note any controls/notifications, and identify the next action."
+  ],
+  "correct": 3,
+  "rationale": "A good handoff communicates true task status and enough context for the next worker to continue safely and efficiently. Marking incomplete work as finished, relying on memory, or leaving an unexplained open task creates ambiguity. The record should state what stopped the work, what has already been done, and what must happen next.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ]
+}

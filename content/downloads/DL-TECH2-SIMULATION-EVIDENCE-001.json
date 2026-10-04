@@ -2,8 +2,8 @@
   "id": "DL-TECH2-SIMULATION-EVIDENCE-001",
   "title": "Technician II Integrated Simulation Evidence Record",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "worksheet",
   "format": "csv",
   "description": "An integrated evidence record for the Technician II simulation lab, linking scenario observations, data verification, differential reasoning, authorized actions, escalation, handoff, and reflective follow-up.",
@@ -22,5 +22,6 @@
   "limitations": [
     "This worksheet documents learner reasoning and evidence; it is not itself a credential decision or assessor score sheet.",
     "Simulation authorization does not grant permission to perform restricted real-world tasks."
-  ]
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a regulated record, facility SOP, assessor score sheet, or professional credential issuance instrument."
 }

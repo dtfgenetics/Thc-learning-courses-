@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/candidate-governance-approval.schema.json",
+  "title": "THC Academy Candidate Governance Approval",
+  "type": "object",
+  "required": [
+    "id",
+    "controlsId",
+    "controlsVersion",
+    "status",
+    "approvals",
+    "finalAttemptPolicy",
+    "waitingPeriodPolicy",
+    "feePolicy",
+    "retentionSchedule",
+    "authorityId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CANDGOVAPP-[A-Z0-9-]+$"
+    },
+    "controlsId": {
+      "const": "CANDIDATE-GOVERNANCE-CONTROLS-001"
+    },
+    "controlsVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "approval-pending",
+        "approved",
+        "revision-required",
+        "invalidated"
+      ]
+    },
+    "approvals": {
+      "type": "object",
+      "required": [
+        "program",
+        "assessment",
+        "accessibility",
+        "privacyLegal",
+        "security",
+        "organizational"
+      ],
+      "properties": {
+        "program": {
+          "type": "boolean"
+        },
+        "assessment": {
+          "type": "boolean"
+        },
+        "accessibility": {
+          "type": "boolean"
+        },
+        "privacyLegal": {
+          "type": "boolean"
+        },
+        "security": {
+          "type": "boolean"
+        },
+        "organizational": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "finalAttemptPolicy": {
+      "type": "object",
+      "required": [
+        "attemptLimit",
+        "approved"
+      ],
+      "properties": {
+        "attemptLimit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "approved": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "waitingPeriodPolicy": {
+      "type": "object",
+      "required": [
+        "waitingPeriodHours",
+        "approved"
+      ],
+      "properties": {
+        "waitingPeriodHours": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "approved": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "feePolicy": {
+      "type": "object",
+      "required": [
+        "policy",
+        "approved"
+      ],
+      "properties": {
+        "policy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "retentionSchedule": {
+      "type": "object",
+      "required": [
+        "approved",
+        "periods"
+      ],
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        },
+        "periods": {
+          "type": "object",
+          "required": [
+            "failedPracticeAttempts",
+            "readinessAttempts",
+            "credentialAttempts",
+            "evaluatorCalibrationEvidence",
+            "appealAdjudicationRecords",
+            "issuedCredentialVerificationRecords",
+            "revokedExpiredCredentials",
+            "securityLogs"
+          ],
+          "properties": {
+            "failedPracticeAttempts": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "readinessAttempts": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "credentialAttempts": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evaluatorCalibrationEvidence": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "appealAdjudicationRecords": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "issuedCredentialVerificationRecords": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "revokedExpiredCredentials": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "securityLogs": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorityId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

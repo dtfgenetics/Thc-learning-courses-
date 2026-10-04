@@ -21,12 +21,16 @@ function assessmentAttemptRow(row) {
   if (!row) return null;
   return {
     id: row.id ?? null,
+    learnerReference: row.learner_reference ?? null,
+    applicationReference: row.application_ref ?? null,
+    certificateName: row.certificate_name ?? null,
     assessmentId: row.assessment_id,
     assessmentVersion: String(row.assessment_version),
     formId: row.form_id,
     formHash: row.form_hash ?? null,
     status: row.status,
     startedAt: row.started_at ? new Date(row.started_at).toISOString() : null,
+    expiresAt: row.expires_at ? new Date(row.expires_at).toISOString() : null,
     submittedAt: row.submitted_at ? new Date(row.submitted_at).toISOString() : null,
     scoredAt: row.scored_at ? new Date(row.scored_at).toISOString() : null,
     scorePercent: row.score_percent == null ? null : Number(row.score_percent),
@@ -73,13 +77,17 @@ export function createPostgresLearnerStore({ query } = {}) {
   async function ensureLearner(externalSubject) {
     if (!externalSubject) throw new Error('externalSubject required');
     const learnerId = crypto.randomUUID();
+    const learnerReference = `THC-LRN-${crypto.randomBytes(6).toString('hex').toUpperCase()}`;
     const result = await queryOrUnavailable(
       query,
-      `insert into learners (id, external_subject)
-       values ($1, $2)
-       on conflict (external_subject) do update set external_subject = excluded.external_subject
-       returning id, external_subject`,
-      [learnerId, externalSubject]
+      `insert into learners (id, external_subject, learner_reference)
+       values ($1, $2, $3)
+       on conflict (external_subject) do update
+         set external_subject = excluded.external_subject,
+             learner_reference = coalesce(learners.learner_reference, excluded.learner_reference),
+             updated_at = now()
+       returning id, external_subject, learner_reference, display_name, certificate_name`,
+      [learnerId, externalSubject, learnerReference]
     );
     return result.rows?.[0] ?? null;
   }
@@ -109,9 +117,11 @@ export function createPostgresLearnerStore({ query } = {}) {
     const result = await queryOrUnavailable(
       query,
       `select a.id, a.assessment_id, a.assessment_version, a.form_id, a.form_hash, a.status,
-              a.started_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
+              a.started_at, a.expires_at, a.submitted_at, a.scored_at, a.score_percent, a.passed,
+              l.learner_reference, l.certificate_name, app.application_ref
          from learners l
          join assessment_attempts a on a.learner_id = l.id
+         left join academy_applications app on app.id = a.application_id
         where l.external_subject = $1 and a.id = $2
         limit 1`,
       [externalSubject, attemptId]
@@ -123,6 +133,67 @@ export function createPostgresLearnerStore({ query } = {}) {
 
   return {
     kind: 'postgres-learner-runtime',
+    async getLearnerProfile(externalSubject) {
+      const learner = await ensureLearner(externalSubject);
+      return {
+        learnerReference: learner.learner_reference ?? null,
+        displayName: learner.display_name ?? null,
+        certificateName: learner.certificate_name ?? null
+      };
+    },
+    async saveLearnerProfile(externalSubject, { displayName = null, certificateName = null } = {}) {
+      const learner = await ensureLearner(externalSubject);
+      const cleanDisplay = displayName == null ? null : String(displayName).trim();
+      const cleanCertificate = certificateName == null ? null : String(certificateName).trim();
+      if (cleanDisplay && cleanDisplay.length > 120) throw new Error('displayName too long');
+      if (cleanCertificate && cleanCertificate.length > 120) throw new Error('certificateName too long');
+      const result = await queryOrUnavailable(query,
+        `update learners
+            set display_name = $1, certificate_name = $2, updated_at = now()
+          where id = $3
+        returning learner_reference, display_name, certificate_name`,
+        [cleanDisplay || null, cleanCertificate || null, learner.id]);
+      const row = result.rows?.[0] ?? {};
+      return { learnerReference: row.learner_reference ?? null, displayName: row.display_name ?? null, certificateName: row.certificate_name ?? null };
+    },
+    async listApplications(externalSubject) {
+      const learnerId = await learnerIdForSubject(externalSubject);
+      if (!learnerId) return [];
+      const result = await queryOrUnavailable(query,
+        `select application_ref, program_id, status, created_at, updated_at
+           from academy_applications
+          where learner_id = $1
+          order by created_at desc`,
+        [learnerId]);
+      return (result.rows ?? []).map((row) => ({
+        applicationReference: row.application_ref,
+        programId: row.program_id,
+        status: row.status,
+        createdAt: row.created_at ? new Date(row.created_at).toISOString() : null,
+        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+      }));
+    },
+    async createApplication(externalSubject, { programId } = {}) {
+      if (!/^CREDPROG-[A-Z0-9-]+$/.test(String(programId ?? ''))) throw new Error('invalid programId');
+      const learner = await ensureLearner(externalSubject);
+      const id = crypto.randomUUID();
+      const applicationReference = `THC-APP-${crypto.randomBytes(8).toString('hex').toUpperCase()}`;
+      const result = await queryOrUnavailable(query,
+        `insert into academy_applications (id, learner_id, application_ref, program_id, status)
+         values ($1, $2, $3, $4, 'active')
+         on conflict (learner_id, program_id)
+         do update set updated_at = now()
+         returning application_ref, program_id, status, created_at, updated_at`,
+        [id, learner.id, applicationReference, programId]);
+      const row = result.rows?.[0];
+      return {
+        applicationReference: row.application_ref,
+        programId: row.program_id,
+        status: row.status,
+        createdAt: row.created_at ? new Date(row.created_at).toISOString() : null,
+        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null
+      };
+    },
     async listEnrollments(externalSubject) {
       const result = await queryOrUnavailable(
         query,
@@ -199,10 +270,13 @@ export function createPostgresLearnerStore({ query } = {}) {
       if (!learnerId) return null;
       const result = await queryOrUnavailable(
         query,
-        `select id, assessment_id, assessment_version, form_id, form_hash, status,
-                started_at, submitted_at, scored_at, score_percent, passed
-           from assessment_attempts
-          where learner_id = $1 and assessment_id = $2 and status in ('started','submitted')
+        `select a.id, a.assessment_id, a.assessment_version, a.form_id, a.form_hash, a.status,
+                a.started_at, a.expires_at, a.submitted_at, a.scored_at, a.score_percent, a.passed,
+                l.learner_reference, l.certificate_name, app.application_ref
+           from assessment_attempts a
+           join learners l on l.id = a.learner_id
+           left join academy_applications app on app.id = a.application_id
+          where a.learner_id = $1 and a.assessment_id = $2 and a.status in ('started','submitted')
           order by started_at desc
           limit 1`,
         [learnerId, assessmentId]
@@ -215,9 +289,18 @@ export function createPostgresLearnerStore({ query } = {}) {
       if (!attemptId) throw new Error('attemptId required');
       return attemptForSubject(externalSubject, attemptId);
     },
-    async createAssessmentAttempt(externalSubject, { attempt } = {}) {
+    async createAssessmentAttempt(externalSubject, { attempt, programId = null } = {}) {
       if (!attempt?.id || !attempt.assessmentId || !attempt.formId || !Array.isArray(attempt.items) || !attempt.items.length) throw new Error('attempt required');
       const learner = await ensureLearner(externalSubject);
+      let applicationId = null;
+      let applicationReference = null;
+      if (programId) {
+        const appResult = await queryOrUnavailable(query,
+          `select id, application_ref from academy_applications where learner_id = $1 and program_id = $2 and status = 'active' limit 1`,
+          [learner.id, programId]);
+        applicationId = appResult.rows?.[0]?.id ?? null;
+        applicationReference = appResult.rows?.[0]?.application_ref ?? null;
+      }
       if (!learner?.id) throw new Error('learner-resolution-failed');
       const input = attempt.items.map((row) => ({
         position: Number(row.position),
@@ -232,11 +315,11 @@ export function createPostgresLearnerStore({ query } = {}) {
         query,
         `with inserted as (
            insert into assessment_attempts
-             (id, learner_id, assessment_id, assessment_version, form_id, form_hash, status, started_at, submitted_at, scored_at, score_percent, passed)
-           values ($1, $2, $3, $4, $5, $6, 'started', $7, null, null, null, null)
+             (id, learner_id, assessment_id, assessment_version, form_id, form_hash, application_id, status, started_at, expires_at, submitted_at, scored_at, score_percent, passed)
+           values ($1, $2, $3, $4, $5, $6, $7, 'started', $8, $9, null, null, null, null)
            returning id
          ), input as (
-           select * from jsonb_to_recordset($8::jsonb) as x(
+           select * from jsonb_to_recordset($10::jsonb) as x(
              position integer, item_id text, item_version integer, competency_id text,
              response_json jsonb, score numeric, max_score numeric
            )
@@ -247,10 +330,10 @@ export function createPostgresLearnerStore({ query } = {}) {
                 input.response_json, input.score, input.max_score
            from inserted cross join input
          returning attempt_id`,
-        [attempt.id, learner.id, attempt.assessmentId, String(attempt.assessmentVersion), attempt.formId, attempt.formHash, attempt.startedAt, JSON.stringify(input)]
+        [attempt.id, learner.id, attempt.assessmentId, String(attempt.assessmentVersion), attempt.formId, attempt.formHash, applicationId, attempt.startedAt, attempt.expiresAt ?? null, JSON.stringify(input)]
       );
       if ((result.rows ?? []).length !== input.length) throw new Error('assessment-attempt-item-write-mismatch');
-      return { ...attempt, learnerId: externalSubject };
+      return { ...attempt, learnerId: externalSubject, learnerReference: learner.learner_reference ?? null, certificateName: learner.certificate_name ?? null, applicationReference };
     },
     async saveAssessmentResponses(externalSubject, { attemptId, responses } = {}) {
       if (!attemptId || !Array.isArray(responses) || !responses.length) throw new Error('attemptId and responses required');
@@ -321,7 +404,7 @@ export function createPostgresLearnerStore({ query } = {}) {
              from owned
             where a.id = owned.id and (select count(*) from updated_items) = $8
            returning a.id, a.assessment_id, a.assessment_version, a.form_id, a.form_hash, a.status,
-                     a.started_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
+                     a.started_at, a.expires_at, a.submitted_at, a.scored_at, a.score_percent, a.passed
          )
          select * from finalized`,
         [attempt.id, externalSubject, JSON.stringify(input), attempt.submittedAt, attempt.scoredAt, Number(attempt.scorePercent), Boolean(attempt.passed), input.length]
@@ -339,7 +422,7 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       const attemptsResult = await queryOrUnavailable(
         query,
-        `select assessment_id, assessment_version, form_id, status, started_at, submitted_at, scored_at, score_percent, passed
+        `select assessment_id, assessment_version, form_id, status, started_at, expires_at, submitted_at, scored_at, score_percent, passed
            from assessment_attempts
           where learner_id = $1 and assessment_id = $2
           order by started_at desc`,
@@ -403,10 +486,14 @@ export function createPostgresLearnerStore({ query } = {}) {
 
       const attemptsResult = await queryOrUnavailable(
         query,
-        `select assessment_id, assessment_version, form_id, status, started_at, submitted_at, scored_at, score_percent, passed
-           from assessment_attempts
-          where learner_id = $1
-          order by started_at desc`,
+        `select a.assessment_id, a.assessment_version, a.form_id, a.status, a.started_at, a.expires_at,
+                a.submitted_at, a.scored_at, a.score_percent, a.passed,
+                l.learner_reference, l.certificate_name, app.application_ref
+           from assessment_attempts a
+           join learners l on l.id = a.learner_id
+           left join academy_applications app on app.id = a.application_id
+          where a.learner_id = $1
+          order by a.started_at desc`,
         [learnerId]
       );
       const assessmentAttempts = (attemptsResult.rows ?? []).map(assessmentAttemptRow);

@@ -2,7 +2,7 @@
   "version": 2,
   "program": "CREDPROG-CULT-TECH-II-001",
   "updated": "2026-09-22",
-  "purpose": "Fail-closed production registry for primary Technician II learner visuals. Planned concepts are not public assets until a reviewed binary/source exists, accessibility text is complete, canonical lesson placement is mapped, and release QA passes.",
+  "purpose": "Production registry for owner-approved Technician II learner raster visuals. Academic release remains separate from professional credential issuance.",
   "policy": {
     "expandable": true,
     "maximumAssetCount": null,
@@ -27,7 +27,6 @@
       "factual/source alignment",
       "Technician II authority boundary",
       "no universal SOP/legal/product claims",
-      "responsive readability",
       "public path verification"
     ],
     "credentialBoundary": "Academic visuals must not imply secure credential-form approval or professional certification issuance.",
@@ -47,7 +46,7 @@
         "jpeg"
       ],
       "svgReleaseAllowed": false,
-      "rationale": "Technician II production visuals must use reviewed high-resolution raster assets. Existing SVG review candidates remain visible only as legacy internal candidates until replaced; they cannot be promoted to approved or produced."
+      "rationale": "Technician II released visuals use high-resolution raster assets; SVG files remain compatibility/source baselines and are not the released learner target."
     }
   },
   "courses": [
@@ -59,10 +58,10 @@
           "conceptId": "VIS-LH-TECH2-001-01",
           "outcomeIndex": 1,
           "outcome": "Separate direct observation, contextual facts, hypotheses and confirmed causes while preserving conflicting evidence and uncertainty.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course1/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course1/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-01.webp",
           "learnerTextAlternative": "Five-stage diagnostic reasoning model separating direct observation, contextual facts, ranked hypotheses, discriminating evidence and a bounded conclusion. It also shows that conflicting evidence and uncertainty stay in the record, and that evidence does not by itself authorize actions beyond the technician's role.",
           "caption": "Use evidence to narrow uncertainty, not to manufacture certainty. Preserve conflicting findings and separate the diagnostic conclusion from the authority to act.",
           "lessonIds": [
@@ -72,9 +71,9 @@
             "REF-NUTRIENT-DEFICIENCY-001",
             "REF-IPM-GREENHOUSE-2024-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-01.svg",
             "sourceSha256": "15b61cfb0b9a102cfa1737333d58abd0695345c4ce9fcb5279dd1b85008ca6be",
@@ -92,18 +91,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-001-02",
           "outcomeIndex": 2,
           "outcome": "Analyze spatial, temporal, cohort, environmental and developmental patterns and verify whether measurements are representative enough for diagnostic decisions.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course1/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course1/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-02.webp",
           "learnerTextAlternative": "Pattern-analysis model comparing spatial distribution, chronology, cohorts, environmental measurements and developmental stage before deciding whether the available measurements are representative enough for a diagnostic decision.",
           "caption": "A room average or calendar date can hide the pattern that matters. Compare location, time, cohort, environment and developmental stage before treating a measurement as representative.",
           "lessonIds": [
@@ -114,9 +113,9 @@
             "REF-ENV-TEMP-2025-001",
             "REF-FLOWER-MORPH-2023-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-02.svg",
             "sourceSha256": "2635e3abd01734b2813c049880fb198244747861087b6a0c9b843b840efd7457",
@@ -134,18 +133,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-001-03",
           "outcomeIndex": 3,
           "outcome": "Build and rank multi-factor differentials across root-zone, nutrition, environment, pest, disease and developmental causes using discriminating evidence.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course1/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course1/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-03.webp",
           "learnerTextAlternative": "Differential-diagnosis matrix comparing root-zone, nutrition, environment, and biotic or developmental hypothesis families. Each row separates evidence for the hypothesis, evidence against or uncertainty, and the next check most likely to change its ranking.",
           "caption": "Rank multiple plausible mechanisms together. EC, visible symptoms, tissue data, roots, environment and pest or disease findings are evidence streams, not automatic one-to-one diagnoses.",
           "lessonIds": [
@@ -158,9 +157,9 @@
             "REF-CANNABIS-NPK-RSM-2024-001",
             "REF-IPM-GREENHOUSE-2024-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-03.svg",
             "sourceSha256": "082c75eb1f5f8681b5ec9e6c28a753eb4a475982b87c08049173660ca84399ba",
@@ -178,18 +177,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-001-04",
           "outcomeIndex": 4,
           "outcome": "Select safe next tests and authorized actions, escalate high-consequence or unresolved conditions, and produce a reconstructable supervisor-ready diagnostic workup.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course1/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course1/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course1/outcome-04.webp",
           "learnerTextAlternative": "Decision flow beginning with ranked hypotheses, verifying data quality, selecting a discriminating next test, updating the hypothesis ranking from the result, checking whether action is authorized and safe, then routing to either an authorized action or hold, containment and escalation, with a reconstructable handoff record.",
           "caption": "Choose the test that can change the decision. Verify data quality first, act only within authority, and leave unresolved questions visible in the handoff.",
           "lessonIds": [
@@ -200,9 +199,9 @@
             "REF-NUTRIENT-DEFICIENCY-001",
             "REF-VPD-002"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course1/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course1/outcome-04.svg",
             "sourceSha256": "77360accbfe40ea692754d5c5b03ac8c4cb46724e0be8245113a3ef3544aee7a",
@@ -220,8 +219,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -234,10 +233,10 @@
           "conceptId": "VIS-LH-TECH2-002-01",
           "outcomeIndex": 1,
           "outcome": "Verify whether environmental, lighting and equipment measurements are representative and fit for decisions before changing controls.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course2/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course2/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-01.webp",
           "learnerTextAlternative": "Sensor-verification workflow checking device and crop context, colocated comparison with a verified reference, calibration or maintenance history, and a final data-quality decision before any control change.",
           "caption": "Verify representativeness before acting. Preserve questionable data, compare under the same exposure, and separate data-quality decisions from calibration or repair authority.",
           "lessonIds": [
@@ -248,9 +247,9 @@
             "REF-ENV-TEMP-2025-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-01.svg",
             "sourceSha256": "af76be3abafcb9b1425f5e25bb3367f6391c81d9ac7a9ab88ceeb8fad64b704c",
@@ -268,18 +267,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-002-02",
           "outcomeIndex": 2,
           "outcome": "Interpret commands, alarms, spatial maps and time-series response to classify likely sensor, control, equipment or distribution faults without overstating root cause.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course2/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course2/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-02.webp",
           "learnerTextAlternative": "Fault-classification workflow separating controller command, physical response, independent measurement and spatial or time-series pattern before assigning a provisional sensor-data, control-response, equipment-response or distribution-process category.",
           "caption": "A command is not proof of physical response. Combine independent measurement, time-series behavior and spatial pattern to choose the next verification path without overstating root cause.",
           "lessonIds": [
@@ -291,9 +290,9 @@
             "REF-LIGHT-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-02.svg",
             "sourceSha256": "159e2a67e5a896c2c727cb24a87f8f2f9d2ae2d9f527994c361bfd402aba9600",
@@ -311,18 +310,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-002-03",
           "outcomeIndex": 3,
           "outcome": "Verify irrigation/equipment performance using measured output and process evidence while respecting operator-care, servicing and hazardous-energy boundaries.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course2/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course2/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-03.webp",
           "learnerTextAlternative": "Irrigation and equipment verification flow measuring installed output, comparing it with the assigned procedure, checking for protected access, hazardous energy, pressure, disassembly or unassigned servicing, then routing to either an authorized operator action or stop-and-escalate handoff.",
           "caption": "Technician II may verify installed performance deeply, but protected access, hazardous energy, pressure release, disassembly or unassigned servicing are stop-and-escalate cues unless specifically authorized.",
           "lessonIds": [
@@ -333,9 +332,9 @@
             "REF-OSHA-1910-147-LOTO",
             "REF-NIOSH-CANNABIS-HAZARDS-2024"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-03.svg",
             "sourceSha256": "8144a7a15fd4c7946e259105224f0b2793e59cc4f99902c58fa5df73e695db0b",
@@ -353,18 +352,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-002-04",
           "outcomeIndex": 4,
           "outcome": "Produce a reconstructable verification report, safe maintenance handoff and post-action confirmation plan.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course2/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course2/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course2/outcome-04.webp",
           "learnerTextAlternative": "Verification and handoff workflow recording exact asset identity, measurements and method, provisional fault classification, current safe status and authority boundary, receiving role, authorized intervention and a comparable post-action measurement before closure.",
           "caption": "Closure requires reconstructable evidence. Record the boundary cue and receiving owner, preserve original data, and repeat the relevant measurement after authorized work rather than assuming an alarm reset proves restoration.",
           "lessonIds": [
@@ -375,9 +374,9 @@
             "REF-IRRIGATION-001",
             "REF-OSHA-1910-147-LOTO"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course2/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course2/outcome-04.svg",
             "sourceSha256": "882d011189f1c5f29e3b30585b79348d7611d0e45116f8bcf14b2dd8bf09dbbd",
@@ -395,8 +394,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -409,10 +408,10 @@
           "conceptId": "VIS-LH-TECH2-003-01",
           "outcomeIndex": 1,
           "outcome": "Execute approved fertigation batches with verified material identity, calculations, measurement quality and chemical-safety controls without independently redesigning the recipe.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course3/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course3/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-01.webp",
           "learnerTextAlternative": "Pre-batch fertigation readiness workflow verifying the effective recipe, source water, material identity, target volume, calculation inputs, sequence, measuring tools, PPE and authorization before mixing, with any mismatch routed to hold and escalation instead of improvisation.",
           "caption": "Controlled execution starts before mixing. Verify the current instruction, source water, exact materials, calculation inputs, PPE, tools and authority; hold any mismatch rather than improvising.",
           "lessonIds": [
@@ -423,9 +422,9 @@
             "REF-SAFETY-OSHA-001",
             "REF-ASTM-E2659-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-01.svg",
             "sourceSha256": "9653b2d90594fc328e9a1dc6c8523bcbff517c96270edbf62791eff448c57836",
@@ -443,18 +442,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-003-02",
           "outcomeIndex": 2,
           "outcome": "Interpret irrigation delivery, root-zone moisture/dryback, pH and EC as a connected system using crop, media, container, stage and environmental context.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course3/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course3/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-02.webp",
           "learnerTextAlternative": "Final-batch verification flow checking sample identity, measuring-device identity and status, reference or standard verification, probe condition and a repeat verified measurement before comparison with the controlled range and selection of accept, authorized adjustment, hold or escalation.",
           "caption": "Verify the sample and measuring system before changing chemistry. Preserve the original value and use the controlled accept, correction, hold or escalation rule.",
           "lessonIds": [
@@ -464,9 +463,9 @@
             "REF-WATER-ALKALINITY-EXT-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-02.svg",
             "sourceSha256": "eeaea1f9b33e9372475598f8a76f67df7ed180215b7fba578750e512bbc8f92f",
@@ -484,18 +483,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-003-03",
           "outcomeIndex": 3,
           "outcome": "Build ranked fertigation/root-zone differentials and select discriminating verification steps before corrective action.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course3/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course3/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-03.webp",
           "learnerTextAlternative": "Connected root-zone interpretation model linking measured irrigation delivery, media and container context, crop demand and environment, moisture or dryback trends, and pH or EC, emphasizing that no single dryback percentage or EC value is a universal diagnosis.",
           "caption": "Interpret dryback, pH and EC with installed irrigation performance, media/container conditions, crop stage and environmental demand. One number is not a complete diagnosis.",
           "lessonIds": [
@@ -507,9 +506,9 @@
             "REF-ROOTZONE-NUTRIENT-002",
             "REF-NUTRITION-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-03.svg",
             "sourceSha256": "74274ed023616b8d520c50500409d013b11ac562380d4298be8f4672d7bb411e",
@@ -527,18 +526,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-003-04",
           "outcomeIndex": 4,
           "outcome": "Produce reconstructable batch and diagnostic records and escalate chemistry, safety, equipment or crop-risk decisions that exceed Technician II authority.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course3/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course3/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course3/outcome-04.webp",
           "learnerTextAlternative": "Troubleshooting workflow that ranks measurement, irrigation delivery, timing, accumulation, nutrient-supply, root-condition and crop-demand hypotheses, selects a discriminating check, then routes to an authorized correction with post-action verification or to hold and escalation when recipe, chemistry, equipment or safety authority is exceeded.",
           "caption": "Troubleshoot toward the next decision, not a dramatic recipe change. Choose the check that can change the ranking, act only within authority, and preserve post-action evidence and unresolved conditions.",
           "lessonIds": [
@@ -551,9 +550,9 @@
             "REF-SAFETY-OSHA-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course3/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course3/outcome-04.svg",
             "sourceSha256": "a736403089153e989de3760af5075f826312e88fd900f120a402ec18b6d97dd8",
@@ -571,8 +570,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -585,10 +584,10 @@
           "conceptId": "VIS-LH-TECH2-004-01",
           "outcomeIndex": 1,
           "outcome": "Produce comparable scouting datasets and interpret incidence, severity, spatial scope and multi-round trend evidence.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course4/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course4/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-01.webp",
           "learnerTextAlternative": "Scouting-quality diagram linking repeatable routes and zones, sample denominator, fixed trap or location identity, consistent incidence and severity definitions, and preserved method deviations so repeated rounds can be compared without confusing sampling changes for biological trends.",
           "caption": "A scouting trend is only as comparable as its method. Keep route, denominator, trap/location identity and definitions stable—or document the change—so negative findings and trends have meaning.",
           "lessonIds": [
@@ -599,9 +598,9 @@
             "REF-IPM-GREENHOUSE-2024-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-01.svg",
             "sourceSha256": "ed53a610b2f5d7ad8e0411f3bdd05a06882f9a22fca885c147fe9e751f89c6df",
@@ -619,18 +618,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-004-02",
           "outcomeIndex": 2,
           "outcome": "Evaluate authorized IPM intervention follow-up against baseline while identifying confounding, missing evidence and unresolved risk.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course4/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course4/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-02.webp",
           "learnerTextAlternative": "Plant-health trend model comparing mapped scope, incidence, severity, chronology and plausible movement pathways across repeated scouting rounds so a flat total does not hide spread into new zones or worsening severity.",
           "caption": "Map scope across repeated rounds. The same total count can represent one contained cluster or a broader spread, and incidence and severity should not be treated as the same measure.",
           "lessonIds": [
@@ -640,9 +639,9 @@
             "REF-IPM-001",
             "REF-IPM-GREENHOUSE-2024-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-02.svg",
             "sourceSha256": "68b6eefcc268c651a4bd7ab3fb63d3e5ee57466472eb3f4a274d95684dd5b797",
@@ -660,18 +659,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-004-03",
           "outcomeIndex": 3,
           "outcome": "Maintain quarantine, sanitation and movement controls while escalating high-risk or uncertain plant-health findings.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course4/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course4/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-03.webp",
           "learnerTextAlternative": "IPM follow-up workflow defining baseline and intended outcome before intervention, repeating comparable measurements over enough rounds, recording confounders such as sampling changes or overlapping controls, and classifying the result as improving, unchanged, worsening or unresolved.",
           "caption": "An intervention is not proven effective just because it was completed. Compare against a defined baseline, preserve confounders, and allow the result to remain unresolved when the evidence is incomplete.",
           "lessonIds": [
@@ -682,9 +681,9 @@
             "REF-IPM-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-03.svg",
             "sourceSha256": "91b9fd100e94794bda4f2da9a7c04cc2d6bb4a965b1706d97d32859431e63969",
@@ -702,18 +701,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-004-04",
           "outcomeIndex": 4,
           "outcome": "Document scope, data quality, outcome evidence and next-round priorities without altering observations or assuming treatment authority.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course4/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course4/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course4/outcome-04.webp",
           "learnerTextAlternative": "Plant-health decision flow preserving quarantine, sanitation and clean-to-dirty movement controls, checking whether an action is within the technician's role and applicable product or facility authorization, and routing unresolved or regulated treatment decisions to an authorized role with an evidence-rich handoff.",
           "caption": "Strong diagnostic evidence does not create pesticide or regulated-treatment authority. Preserve containment, act only within authorization, and escalate with the measured scope, trend, intervention history and unresolved uncertainty.",
           "lessonIds": [
@@ -724,9 +723,9 @@
             "REF-IPM-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course4/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course4/outcome-04.svg",
             "sourceSha256": "3fbc9cc588c55e0e9fe015df114ae0ae4b96e83a08b9b767a2b606fd9d02e862",
@@ -744,8 +743,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -758,10 +757,10 @@
           "conceptId": "VIS-LH-TECH2-005-01",
           "outcomeIndex": 1,
           "outcome": "Calculate and compare propagation performance using traceable donors, batches, denominators, time points and loss distributions.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course5/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course5/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-01.webp",
           "learnerTextAlternative": "Propagation performance diagram aligning donor or batch identity, eligible starting denominator, rooted and loss counts, observation time point, operator and environment so success percentages are only compared across valid groups and weak donors or trays are not averaged away.",
           "caption": "Propagation percentages only mean something when the denominator, time point and genealogy are comparable. Stratify donors, trays, operators, media and zones before averaging.",
           "lessonIds": [
@@ -771,9 +770,9 @@
             "REF-PROP-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-01.svg",
             "sourceSha256": "ad281d9ebe4206adbef849eefc464c5d24601e78025c9b5a26a79c135b5835e9",
@@ -791,18 +790,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-005-02",
           "outcomeIndex": 2,
           "outcome": "Troubleshoot propagation underperformance using donor, sanitation, environment, handling, timing and plant-health evidence without unsupported contamination or genotype claims.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course5/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course5/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-02.webp",
           "learnerTextAlternative": "Propagation differential matrix comparing donor condition, sanitation, environment, handling, media, timing and plant-health explanations, with evidence for and against each and a discriminating next check instead of unsupported contamination or genotype conclusions.",
           "caption": "A donor-linked or tray-linked pattern directs the investigation; it does not prove genetics or contamination. Rank alternatives and choose the next check that can change the ranking.",
           "lessonIds": [
@@ -813,9 +812,9 @@
             "REF-IPM-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-02.svg",
             "sourceSha256": "fb88fcce4babea5ca7a745aa7697f6a84121283a19f1f5913bc8d4b2aa7b797b",
@@ -833,18 +832,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-005-03",
           "outcomeIndex": 3,
           "outcome": "Evaluate canopy and flowering work using planned-versus-actual scope, spatial uniformity, recovery and cultivar/stage context.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course5/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course5/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-03.webp",
           "learnerTextAlternative": "Canopy review workflow comparing the authorized work order with mapped pre-work conditions, actual work completed, spatial post-work observations and recovery over time, while retaining cultivar and developmental stage as context instead of assuming genotype causation.",
           "caption": "Judge canopy work by the planned-versus-actual response, not the technique name. Use mapped recovery and stage/cultivar context rather than a single center-room impression.",
           "lessonIds": [
@@ -855,9 +854,9 @@
             "REF-CANOPY-DEFOL-2025-001",
             "REF-FLOWER-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-03.svg",
             "sourceSha256": "f9f03443992b9e90122c25c69521d94119b2d722f6ef1bdb071ab60aee1133db",
@@ -875,18 +874,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-005-04",
           "outcomeIndex": 4,
           "outcome": "Produce a reconstructable performance review and supervisor handoff while maintaining sanitation, traceability, role and authorization boundaries.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course5/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course5/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course5/outcome-04.webp",
           "learnerTextAlternative": "Supervisor handoff workflow preserving donor, batch, cultivar and zone identity, comparable performance metrics, leading and alternative explanations, biosecurity status, authorized actions, role boundaries and the next required verification without deleting contrary evidence.",
           "caption": "Make the review decision-ready while preserving sanitation, traceability and role limits. Keep contrary evidence visible and hand off the next verification or high-risk decision to the authorized role.",
           "lessonIds": [
@@ -899,9 +898,9 @@
             "REF-IPM-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course5/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course5/outcome-04.svg",
             "sourceSha256": "f1882d3e612e730ca27365b456b9757bf27a04935468003017f25918412f7280",
@@ -919,8 +918,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -933,10 +932,10 @@
           "conceptId": "VIS-LH-TECH2-006-01",
           "outcomeIndex": 1,
           "outcome": "Contain postharvest deviations and establish a fact/timeline baseline before causal or disposition conclusions.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course6/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course6/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-01.webp",
           "learnerTextAlternative": "Postharvest deviation workflow starting with exact material identity and containment, then preserving the event timeline, product observations, room or process history and current status before hypotheses or disposition decisions are considered.",
           "caption": "Containment protects product and evidence; it does not decide disposition. Establish lot identity, chronology and observed facts before writing a causal story.",
           "lessonIds": [
@@ -946,9 +945,9 @@
             "REF-POSTHARVEST-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-01.svg",
             "sourceSha256": "a8afe5e661ee6da2708c49fc6707acae8569fc8d8da429ace426788ef64bfc1d",
@@ -966,18 +965,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-006-02",
           "outcomeIndex": 2,
           "outcome": "Interpret room/process history together with representative product measurements while distinguishing room RH, moisture content and water activity.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course6/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course6/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-02.webp",
           "learnerTextAlternative": "Drying-process diagram separating room temperature and relative humidity from representative product measurements such as moisture content and water activity, with rack position, loading, airflow and time included so spatial and temporal differences can be evaluated without substituting one measurement for another.",
           "caption": "Room RH is not product water activity, and moisture content and water activity are not interchangeable. Combine room history with representative product measurements by position and time.",
           "lessonIds": [
@@ -988,9 +987,9 @@
             "REF-POSTHARVEST-DRY-2025-001",
             "REF-POSTHARVEST-STABILITY-2026-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-02.svg",
             "sourceSha256": "e47dcda8e316ed230cf1e5b0c76fed106050831ab9039d3ae7e4f5e99b9a027f",
@@ -1008,18 +1007,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-006-03",
           "outcomeIndex": 3,
           "outcome": "Reconstruct lot genealogy and affected scope without unsupported facility-wide expansion or convenient exclusions.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course6/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course6/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-03.webp",
           "learnerTextAlternative": "Lot genealogy flow tracing source harvest identity through racks, rooms, movements and downstream lot identifiers, then using shared exposure, position, timing and product evidence to include or exclude material from affected scope without making the investigation automatically facility-wide or artificially narrow.",
           "caption": "Affected scope follows traceable genealogy and shared exposure. Include and exclude material because the evidence supports it, not because a broader or narrower scope is more convenient.",
           "lessonIds": [
@@ -1030,9 +1029,9 @@
             "REF-MHRA-GXP-DATA-INTEGRITY",
             "REF-POSTHARVEST-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-03.svg",
             "sourceSha256": "8419946887987824bf01b8c449852a363a5dfe1de2634eb701d18f3f9a22fac2",
@@ -1050,18 +1049,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-006-04",
           "outcomeIndex": 4,
           "outcome": "Produce a QA-ready handoff while preserving controlled records, historical SOP versions and product-disposition authority boundaries.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course6/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course6/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course6/outcome-04.webp",
           "learnerTextAlternative": "Deviation review workflow identifying the governing procedure version at the time of the event, preserving planned versus actual execution and original corrections, summarizing facts, genealogy and measurements, and handing unresolved disposition questions to the authorized QA or management role instead of releasing product independently.",
           "caption": "Use the procedure version that governed the event, preserve planned and actual history, and hand final release, rework or destruction decisions to the authorized disposition role.",
           "lessonIds": [
@@ -1072,9 +1071,9 @@
             "REF-MHRA-GXP-DATA-INTEGRITY",
             "REF-GS1-GLOBAL-TRACEABILITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course6/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course6/outcome-04.svg",
             "sourceSha256": "c259bf869816436963442a817dc27bb882320b872870f71e7846f1c542641568",
@@ -1092,8 +1091,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -1106,10 +1105,10 @@
           "conceptId": "VIS-LH-TECH2-007-01",
           "outcomeIndex": 1,
           "outcome": "Reconcile physical and recorded crop/lot identities while preserving genealogy and controlled correction evidence.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course7/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course7/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-01.webp",
           "learnerTextAlternative": "Reconciliation flow comparing physical identity, controlled record identity, current status and location, preserving discrepancies, tracing genealogy through splits and moves, and routing corrections through an authorized process without fabricating transactions or overwriting history.",
           "caption": "A discrepancy is evidence. Reconcile identity and status without inventing transactions, breaking genealogy or overwriting the original controlled record.",
           "lessonIds": [
@@ -1120,9 +1119,9 @@
             "REF-MHRA-GXP-DATA-INTEGRITY",
             "REF-POSTHARVEST-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-01.svg",
             "sourceSha256": "51a717eee31b3197f4d8240dc62819501eb1a017ca4c3a3c6dc854eb3e42c501",
@@ -1140,18 +1139,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-007-02",
           "outcomeIndex": 2,
           "outcome": "Calculate defined production KPIs with the correct denominator, eligible population and time window, then interpret trends without overstating one-cycle changes.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course7/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course7/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-02.webp",
           "learnerTextAlternative": "KPI workflow defining numerator, denominator, eligible population, time window and exclusions before calculation, checking comparability across cycles, and treating one-cycle movement as a signal rather than a confirmed long-term process trend.",
           "caption": "A KPI is only comparable when its numerator, denominator, eligibility rules and time window remain compatible. Do not improve the result by changing the denominator after seeing the number.",
           "lessonIds": [
@@ -1161,9 +1160,9 @@
             "REF-MHRA-GXP-DATA-INTEGRITY",
             "REF-POSTHARVEST-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-02.svg",
             "sourceSha256": "f9722274e6375f5f2376a06fd309a04420e447c69292ac32d77736d9dd008f20",
@@ -1181,18 +1180,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-007-03",
           "outcomeIndex": 3,
           "outcome": "Support peer execution using the current controlled procedure while preserving formal supervisory, approval and record-change authority boundaries.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course7/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course7/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-03.webp",
           "learnerTextAlternative": "Peer-support workflow anchoring coaching to the current controlled procedure, identifying an observable execution difference, demonstrating or clarifying the approved method, verifying the result, and escalating unresolved authority or record-change questions without creating disciplinary or policy authority.",
           "caption": "Peer support should strengthen execution of the current controlled method without turning personal preference into policy or expanding supervisory, approval or record-change authority.",
           "lessonIds": [
@@ -1202,9 +1201,9 @@
             "REF-ASTM-E2659-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-03.svg",
             "sourceSha256": "54811aff6a11200eb920b68c1da63451f70efb04639fb06489fd1d29065d5671",
@@ -1222,18 +1221,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-007-04",
           "outcomeIndex": 4,
           "outcome": "Prioritize unresolved work and produce a decision-ready shift handoff that preserves planned-versus-actual history, dependencies and decision ownership.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course7/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course7/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course7/outcome-04.webp",
           "learnerTextAlternative": "Shift handoff framework ranking unresolved work by safety, quarantine, identity or traceability risk, crop or lot consequence, timing dependency and downstream blocking, while preserving planned-versus-actual history and assigning a next action and decision owner.",
           "caption": "Prioritize by consequence and dependency, not convenience. Preserve planned-versus-actual history and hand off each unresolved issue with the next action, deadline or dependency, and decision owner.",
           "lessonIds": [
@@ -1244,9 +1243,9 @@
             "REF-MHRA-GXP-DATA-INTEGRITY",
             "REF-ASTM-E2659-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course7/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course7/outcome-04.svg",
             "sourceSha256": "5c65919946d3ebe9844d004f367e8c07ba80a509ae85e45674aa39b03a214189",
@@ -1264,8 +1263,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -1278,10 +1277,10 @@
           "conceptId": "VIS-LH-TECH2-008-01",
           "outcomeIndex": 1,
           "outcome": "Prioritize competing Technician II deviations by immediate safety, containment, data-validity, crop or lot consequence, timing dependency and assigned authority before selecting a next action.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-01.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-01.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-01.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-01.webp",
           "learnerTextAlternative": "Priority triage framework ranking competing Technician II deviations by immediate safety, containment, data validity, crop or lot consequence, timing dependency and assigned authority before convenience or optimization work.",
           "caption": "Triage by consequence and dependency before diagnosis. Safety, containment and decision-blocking data problems outrank routine optimization.",
           "lessonIds": [
@@ -1291,9 +1290,9 @@
             "REF-ASTM-E2659-001",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-01.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-01.svg",
             "sourceSha256": "1daff3b7b54b4d5c0a9b82b7a4f98ee76b7f8986971ec135c99ed53be31ca993",
@@ -1311,18 +1310,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-02",
           "outcomeIndex": 2,
           "outcome": "Integrate crop pattern, environmental context and measurement quality into a ranked diagnostic workup that separates verified observations, hypotheses and required next checks.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-02.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-02.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-02.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-02.webp",
           "learnerTextAlternative": "Diagnostic workup flow separating verified observations from context, ranking multiple hypotheses, identifying uncertainty and the next discriminating check, then updating the ranking without converting a plausible explanation into a confirmed cause.",
           "caption": "Keep observations, hypotheses and confirmed causes separate. Choose the next check because it can change the ranking, not because it simply adds more data.",
           "lessonIds": [
@@ -1332,9 +1331,9 @@
             "REF-VPD-002",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-02.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-02.svg",
             "sourceSha256": "1ec03be9f3a0f3dc8814e9a282ea041580f6c87b87445ad87e4f1eaaca4c320c",
@@ -1352,18 +1351,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-03",
           "outcomeIndex": 3,
           "outcome": "Verify sensor and equipment evidence before acting, classify safe operator checks versus authorized maintenance escalation, and reject major corrective action based on data known to be invalid.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-03.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-03.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-03.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-03.webp",
           "learnerTextAlternative": "Sensor and equipment decision flow verifying measurement validity and independent process response before consequential setpoint, irrigation or equipment action, separating safe operator checks from maintenance escalation and rejecting major corrective action based on data known to be invalid.",
           "caption": "Known-invalid data cannot justify a major correction. Verify measurement quality and physical response, then stay inside the assigned operator-care boundary.",
           "lessonIds": [
@@ -1373,9 +1372,9 @@
             "REF-MHRA-GXP-DATA-INTEGRITY",
             "REF-ASTM-E2659-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-03.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-03.svg",
             "sourceSha256": "85adc4abc02b59bd6abb1daad75d25d82169393dcfa6848bb9be806b02e72112",
@@ -1393,18 +1392,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-04",
           "outcomeIndex": 4,
           "outcome": "Integrate approved fertigation execution, water and measurement verification, irrigation delivery, root-zone trend and crop context into a bounded troubleshooting recommendation.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-04.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-04.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-04.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-04.webp",
           "learnerTextAlternative": "Station workflow verifying approved recipe and material identity, measuring-system readiness, irrigation delivery, root-zone trend and crop context before a bounded troubleshooting recommendation, with unauthorized recipe redesign or major chemistry decisions routed to escalation.",
           "caption": "Verify batch identity, measurement quality, delivery and crop context before troubleshooting the root zone. Do not convert diagnostic skill into independent recipe-design authority.",
           "lessonIds": [
@@ -1413,9 +1412,9 @@
           "references": [
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-04.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-04.svg",
             "sourceSha256": "afef13036d2d8a44ae0b8ffef58d3d7631e1cd1b091a08b4d763f3939d9bdacb",
@@ -1433,18 +1432,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-05",
           "outcomeIndex": 5,
           "outcome": "Integrate IPM trend evidence with propagation and canopy performance while protecting biosecurity, treatment-authority limits, cultivar or stage context and uncertainty.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-05.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-05.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-05.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-05.webp",
           "learnerTextAlternative": "Integrated plant-health and performance workflow combining comparable multi-round IPM sampling, biosecurity controls, donor or batch evidence, canopy and flowering context, and uncertainty while keeping regulated treatment decisions and unsupported contamination or genotype claims outside Technician II authority.",
           "caption": "Combine multi-round IPM evidence with donor, sanitation, stage and mapped canopy response. Preserve biosecurity and do not overstate contamination, genotype causation or treatment authority.",
           "lessonIds": [
@@ -1454,9 +1453,9 @@
             "REF-IPM-001",
             "REF-IPM-GREENHOUSE-2024-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-05.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-05.svg",
             "sourceSha256": "1ad13ac38091325b594e076c634103e938f8c265379378d0f68299ed7d622a9d",
@@ -1474,18 +1473,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-06",
           "outcomeIndex": 6,
           "outcome": "Investigate postharvest deviations by preserving product measurements, lot genealogy, affected-scope evidence, holds and product-disposition authority boundaries.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-06.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-06.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-06.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-06.webp",
           "learnerTextAlternative": "Postharvest station workflow separating room history from representative product measurements, containing suspect material, tracing lot genealogy and shared exposure, defining evidence-bounded affected scope, and handing unresolved disposition decisions to the authorized role.",
           "caption": "Product evidence, process history and genealogy define the affected scope. Room RH is not product water activity, and containment does not authorize disposition.",
           "lessonIds": [
@@ -1495,9 +1494,9 @@
             "REF-POSTHARVEST-001",
             "REF-GS1-GLOBAL-TRACEABILITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-06.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-06.svg",
             "sourceSha256": "06daae8cdecea7ca78cd4fb08d3802ccf91ebcb187f19b2ed494ba54f6013769",
@@ -1515,18 +1514,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-07",
           "outcomeIndex": 7,
           "outcome": "Reconcile traceability, planned-versus-actual records and KPI definitions while providing SOP-based peer support and a priority-ranked shift handoff without unauthorized record changes.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-07.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-07.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-07.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-07.webp",
           "learnerTextAlternative": "Integrated records workflow reconciling physical and controlled identities, preserving planned-versus-actual history, calculating KPIs from stable definitions and denominators, supporting peers using the current procedure, then ranking unresolved work and assigning a decision owner without unauthorized record edits or supervisory overreach.",
           "caption": "Reconcile, calculate and hand off without manufacturing a clean record. Preserve discrepancies, stable KPI definitions, planned-versus-actual history and the authorized decision owner.",
           "lessonIds": [
@@ -1536,9 +1535,9 @@
             "REF-GS1-GLOBAL-TRACEABILITY",
             "REF-MHRA-GXP-DATA-INTEGRITY"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-07.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-07.svg",
             "sourceSha256": "2e12e0bb4dc761bf24ed91d2dc375b18e8acbac0fa5e959f2abaa98602f2dd54",
@@ -1556,18 +1555,18 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         },
         {
           "conceptId": "VIS-LH-TECH2-008-08",
           "outcomeIndex": 8,
           "outcome": "Assemble a reconstructable Senior Technician Diagnostic Shift evidence packet that supports evaluator scoring, remediation decisions and supervisor handoff without unresolved critical errors.",
-          "status": "review-candidate",
+          "status": "approved",
           "deliveryType": "instructional-visual",
-          "targetPublicPath": "/assets/tech2/course8/outcome-08.svg",
-          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-08.svg",
+          "targetPublicPath": "/assets/tech2/course8/outcome-08.webp",
+          "sourcePath": "apps/web/public/assets/tech2/course8/outcome-08.webp",
           "learnerTextAlternative": "Capstone evidence model requiring each of seven practicals plus the integrated capstone to independently meet its standard with no critical error, linking evaluator observations to rubric domains and candidate artifacts, and routing failed evidence to remediation and an equivalent reassessment rather than compensatory averaging.",
           "caption": "Practical and capstone evidence is non-compensatory. Failed evidence or a critical error requires remediation and equivalent reassessment; stronger performance elsewhere cannot average it away.",
           "lessonIds": [
@@ -1578,9 +1577,9 @@
             "REF-HSE-SHIFT-HANDOVER",
             "REF-ASTM-E2659-001"
           ],
-          "qaApproved": false,
+          "qaApproved": true,
           "rasterReplacement": {
-            "status": "candidate-produced-human-qa-required",
+            "status": "owner-approved-production-release",
             "candidateSourcePath": "apps/web/public/assets/tech2/course8/outcome-08.webp",
             "generatedFrom": "apps/web/public/assets/tech2/course8/outcome-08.svg",
             "sourceSha256": "cff28e119042dd1a55546825da3eb4eb30c606a6216ef6d8929afd33d7a1c2b1",
@@ -1598,8 +1597,8 @@
               "shortest-side-at-least-1600",
               "sha256-recorded"
             ],
-            "releaseApproved": false,
-            "releaseGate": "canonical-terminology-factual-authority-accessibility-responsive-public-path-review"
+            "releaseApproved": true,
+            "releaseGate": "owner-approved-academic-release-with-machine-integrity-controls"
           }
         }
       ]
@@ -1610,5 +1609,12 @@
     "count": 36,
     "manifest": "visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json",
     "releaseBoundary": "Candidate production does not approve learner cutover. Existing SVG review candidates remain the mapped baseline until each WebP passes human factual, authority-boundary, accessibility, responsive and public-path review."
+  },
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "36 Technician II primary learner raster visuals",
+    "note": "Does not authorize or represent professional credential issuance, accreditation, pilot validation, or third-party review."
   }
 }

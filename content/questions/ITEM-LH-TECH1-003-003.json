@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A VPD value differs from the expected facility range while plants show no obvious change. What should Technician I check first within procedure?",
   "choices": [
-    "Independently redesign the humidity strategy",
-    "Assume the crop is already damaged",
-    "Measurement context such as sensor location, units, data quality and calculation method",
-    "Ignore the reading because plants look normal"
+    "Change the humidity strategy immediately because an out-of-range VPD is itself evidence that the control target is wrong.",
+    "Treat the crop as already damaged because environmental metrics outside the expected range always indicate injury.",
+    "Check the measurement context first, including sensor location, units, data quality, and the calculation method used to produce the VPD value.",
+    "Ignore the value if plants appear normal because visible plant response is more important than instrument data."
   ],
   "correct": 2,
-  "rationale": "Measurement context such as sensor location, units, data quality and calculation method. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "An unexpected VPD value may reflect a real environmental condition, but it can also reflect placement, unit, sensor-quality, or calculation problems. Technician I should first verify that the measurement and calculation are interpretable before recommending or escalating a control change. Normal-looking plants do not invalidate the data, and one out-of-range number does not by itself prove damage.",
   "references": [
     "REF-VPD-002"
   ],

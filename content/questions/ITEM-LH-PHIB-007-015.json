@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-007-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-007-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What makes a case recommendation defensible to another qualified reviewer?",
+  "choices": [
+    "It hides uncertainty and uses confident language.",
+    "It links observations, discriminating evidence, alternatives, controls, limitations and residual risk in a reconstructable reasoning chain.",
+    "It relies on one expert's intuition without records.",
+    "It omits conflicting evidence."
+  ],
+  "correct": 1,
+  "rationale": "Defensibility comes from a transparent evidence-to-decision chain that can be reviewed and challenged.",
+  "references": [
+    "REF-ASTM-E2659-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-007",
+    "seedBank": true
+  }
+}

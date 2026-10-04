@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-NUTRIENT-DIAG-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A tissue result is outside a published range, but sampled leaf position and crop stage were not recorded. What is the strongest conclusion?",
   "choices": [
-    "The crop is definitively deficient.",
-    "The crop is definitively toxic.",
-    "Tissue testing is never useful for cannabis diagnosis.",
-    "The result is potentially useful but cannot be interpreted confidently until sampling context and other evidence are resolved."
+    "Treat the out-of-range result as strong evidence of deficiency because published tissue ranges already account for normal biological variation.",
+    "Treat the result as strong evidence of toxicity because an out-of-range value is more informative than visual symptoms or root-zone measurements.",
+    "Discard the tissue result and repeat the entire diagnostic process without using laboratory data because cannabis tissue ranges are too variable for practical interpretation.",
+    "Use the result as provisional evidence, but resolve crop stage, sampled tissue position, and related field data before deciding what the value means."
   ],
   "correct": 3,
-  "rationale": "Tissue interpretation depends on sampling context, stage and comparison with other evidence.",
+  "rationale": "Tissue concentration data are interpretable only in the context of how and when the sample was collected. Crop stage, tissue position, cultivar, sampling method, and comparison data can materially affect whether a value is expected, concerning, or not directly comparable with a published range. The result should therefore remain part of the evidence set, but its meaning is provisional until sampling context and supporting plant/root-zone observations are reconstructed. Calling deficiency or toxicity from the number alone overstates the evidence, while discarding the laboratory result entirely throws away potentially useful information.",
   "references": [
     "REF-NUTRIENT-DEFICIENCY-001"
   ]

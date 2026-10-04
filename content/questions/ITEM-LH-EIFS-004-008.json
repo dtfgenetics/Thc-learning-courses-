@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why should repeated alarms be reviewed with process state and corroborating measurements?",
+  "choices": [
+    "Alarms always identify root cause.",
+    "Only alarm count matters.",
+    "Alarm meaning depends on device, timing, state and whether the measured process changed as expected.",
+    "Process measurements are unrelated."
+  ],
+  "correct": 2,
+  "rationale": "Alarm context is needed to distinguish sensor, capacity, sequencing and equipment-response problems.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

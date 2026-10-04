@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-002-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-002-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Most endpoint samples agree, but one mapped zone is repeatedly different. What should happen?",
+  "choices": [
+    "Delete it before averaging.",
+    "Preserve the outlier, investigate the zone and apply the controlled endpoint rule.",
+    "Release the lot because most values agree.",
+    "Change the endpoint retrospectively."
+  ],
+  "correct": 1,
+  "rationale": "Repeatable spatial evidence should be investigated rather than averaged away.",
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

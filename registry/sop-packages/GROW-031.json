@@ -1,0 +1,37 @@
+{
+  "id": "GROW-031",
+  "title": "Seed intake, labeling, and storage",
+  "version": "0.1.0",
+  "status": "draft-controlled-package",
+  "releaseState": "blocked",
+  "evidencePlan": "registry/sop-evidence-plans/GROW-031.json",
+  "scientificSop": "docs/sop-packages/GROW-031/SCIENTIFIC-SOP-DRAFT.md",
+  "learnerGuide": "docs/sop-packages/GROW-031/LEARNER-GUIDE-DRAFT.md",
+  "implementationHandoff": "docs/sop-packages/GROW-031/IMPLEMENTATION-HANDOFF.md",
+  "recordsTemplate": "apps/web/public/downloads/sop-packages/grow-031-records-template.csv",
+  "qaReviewState": "not-started",
+  "reusedModules": [
+    "MOD-PROP-001",
+    "MOD-GENETICS-001",
+    "MOD-PRO-QA-001"
+  ],
+  "reusedLessons": [
+    "LESSON-PROP-SEED-002",
+    "LESSON-GENETICS-001",
+    "LESSON-PRO-AUDIT-003",
+    "LESSON-CROP-RECORDS-003"
+  ],
+  "controlledReferences": [
+    "REF-PROP-001",
+    "REF-GENETICS-001",
+    "REF-POSTHARVEST-001"
+  ],
+  "releaseGates": [
+    "seed/propagation review",
+    "traceability review",
+    "facility/legal inventory review",
+    "storage-method validation",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

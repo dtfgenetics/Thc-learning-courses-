@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "TECH2-ASSESSOR-CALIBRATION-PACKETS-001",
+  "updated": "2026-09-24",
+  "state": "8-of-8-packets-prepared-calibration-evidence-pending",
+  "assessments": [
+    {
+      "assessmentId": "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    },
+    {
+      "assessmentId": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+      "assessmentVersion": "1.1.0",
+      "source": "content/performance-assessments/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.json",
+      "packet": "docs/academy-v2/assessor-calibration/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT-CALIBRATION-PACKET.md",
+      "executionState": "packet-ready-evidence-pending"
+    }
+  ],
+  "boundary": "Packet preparation does not establish inter-rater reliability or assessor authorization. Real common-sample paired scoring and human disposition are required."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-003-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-003-05",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Which handoff is strongest for a suspected environmental equipment fault?",
+  "choices": [
+    "A note saying the room is bad.",
+    "A repair instruction written by an unqualified worker.",
+    "Timestamps, affected zones, alarms, commands, equipment state, verified measurements and safety/authority boundaries.",
+    "Only the controller screenshot."
+  ],
+  "correct": 2,
+  "rationale": "Qualified handoff requires reconstructable evidence and role boundaries.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

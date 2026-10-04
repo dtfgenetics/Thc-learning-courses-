@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Three containers are received, one is held and one has an unresolved quantity discrepancy. What is the truthful work status?",
   "choices": [
-    "Mark the entire harvest complete",
-    "Mark the entire harvest failed",
-    "Record the normal receipts separately and show the held/discrepant material as unresolved partial completion",
-    "Remove the exceptions from the record"
+    "Mark the entire harvest complete because most containers were received normally.",
+    "Mark the whole harvest failed because one held and one discrepant container remain unresolved.",
+    "Record the normal receipts separately and show the held and discrepant containers as unresolved partial completion.",
+    "Remove the exception containers from the summary so the status reflects only completed work."
   ],
   "correct": 2,
-  "rationale": "Record the normal receipts separately and show the held/discrepant material as unresolved partial completion. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Truthful status should distinguish completed work from unresolved exceptions. Normal receipts can be closed while the held and quantity-discrepant containers remain open. Collapsing everything into complete or failed hides the actual state and makes the next shift's responsibilities unclear.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-GS1-GLOBAL-TRACEABILITY"

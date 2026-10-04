@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-SOP-001",
+  "objective": "LO-LH-PHQ-006-05",
+  "bloomLevel": "create",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A deviation rate falls while production volume and reporting completeness also fall. What should the metric review do?",
+  "choices": [
+    "Preserve denominator and data-quality changes before concluding performance improved.",
+    "Claim improvement from the percentage alone.",
+    "Remove the denominator.",
+    "Count only severe deviations."
+  ],
+  "correct": 0,
+  "rationale": "Rates are interpretable only with stable definitions, denominators and reporting context.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

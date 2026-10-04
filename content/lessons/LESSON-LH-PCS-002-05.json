@@ -1,0 +1,54 @@
+{
+  "id": "LESSON-LH-PCS-002-05",
+  "title": "Donor Lifecycle, Testing Status & Replacement Decisions",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-002-05"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-HLVD-TRANSMISSION-2025",
+    "REF-PROP-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for donor lifecycle, testing status & replacement decisions in donor/mother plant systems.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Track donor status over time",
+        "body": "Maintain identity, age or establishment date, testing status, major plant-health events, propagation output, performance trend, holds and disposition decisions as a longitudinal record.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      },
+      {
+        "title": "Testing status must be specific",
+        "body": "A negative result is meaningful only with the target, method, sample identity and date. 'Clean' should not be used as an undefined permanent status.",
+        "references": [
+          "REF-HLVD-TRANSMISSION-2025"
+        ]
+      },
+      {
+        "title": "Replacement decisions need documented rationale",
+        "body": "Declining performance, repeated health concerns, identity uncertainty or validated lifecycle policy may support replacement, but the record should preserve why the decision was made and what happened to downstream material.",
+        "references": [
+          "REF-PROP-001"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Treating visual health as proof of clean-stock status.",
+      "Guessing donor identity from appearance.",
+      "Averaging away donor-specific performance differences."
+    ],
+    "practicalApplication": "Review a donor-management scenario, preserve identity and status evidence, and document the strongest supported next action without overstating cause or cleanliness.",
+    "summary": "Donor management depends on traceable identity, plant-health evidence, controlled movement and longitudinal performance records."
+  }
+}

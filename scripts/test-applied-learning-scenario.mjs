@@ -1,0 +1,15 @@
+import fs from 'node:fs'; import assert from 'node:assert/strict'; import Ajv2020 from 'ajv/dist/2020.js'; import addFormats from 'ajv-formats';
+import {learnerScenarioView,applyScenarioAction} from '../packages/domain/applied-learning-scenario.mjs';
+const eventSchema=JSON.parse(fs.readFileSync('schemas/applied-learning-event.schema.json','utf8'));
+const scenarioSchema=JSON.parse(fs.readFileSync('schemas/applied-learning-scenario.schema.json','utf8'));
+const scenario=JSON.parse(fs.readFileSync('content/applied-learning/scenarios/equipment-circulation-001.json','utf8'));
+const ajv=new Ajv2020({allErrors:true,strict:false}); addFormats(ajv); ajv.addSchema(eventSchema); const validate=ajv.compile(scenarioSchema);
+assert.equal(validate(scenario),true,JSON.stringify(validate.errors));
+const view=learnerScenarioView(scenario);
+assert.equal('rules' in view,false); assert.equal('instructor' in view,false);
+assert.equal(view.markers.some((row)=>row.kind==='equipment'),false);
+assert.equal(view.actions.length,3);
+const inspect=applyScenarioAction(scenario,'inspect-circulation'); assert.equal(inspect.outcomeCode,'CIRCULATION_CONFIRMED_FAILED');
+const restore=applyScenarioAction(scenario,'restore-circulation'); assert.equal(restore.score,1); assert.equal(restore.result,'stabilizing');
+assert.throws(()=>applyScenarioAction(scenario,'not-an-action'),/unknown/);
+console.log('Applied-learning scenario runtime OK');

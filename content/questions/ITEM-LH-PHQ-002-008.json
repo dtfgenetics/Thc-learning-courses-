@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-002-008",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-002-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why must lot locations be preserved on a dry-room map?",
+  "choices": [
+    "They replace product IDs.",
+    "They authorize disposition.",
+    "They prove the room has no gradients.",
+    "They connect environmental events and local conditions to the material that may have experienced them."
+  ],
+  "correct": 3,
+  "rationale": "Location-to-lot mapping enables defensible scope and investigation.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

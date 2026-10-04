@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHIB-004-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHIB-004-05",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A grower isolates suspect plants immediately after an abnormal finding. What does that containment action prove?",
+  "choices": [
+    "It proves the suspected pathogen is present.",
+    "It proves the plants are safe.",
+    "It controls potential spread while the cause is investigated; containment itself does not establish diagnosis.",
+    "It replaces the need for documentation."
+  ],
+  "correct": 2,
+  "rationale": "Containment is a risk-control action taken under uncertainty; it should not be misrepresented as diagnostic confirmation.",
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-SPREAD-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

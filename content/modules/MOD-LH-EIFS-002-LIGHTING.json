@@ -1,0 +1,34 @@
+{
+  "id": "MOD-LH-EIFS-002-LIGHTING",
+  "title": "Lighting, PPFD, DLI, Photoperiod & Canopy Uniformity",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-002-01",
+    "LESSON-LH-EIFS-002-02",
+    "LESSON-LH-EIFS-002-03",
+    "LESSON-LH-EIFS-002-04",
+    "LESSON-LH-EIFS-002-05"
+  ],
+  "competencies": [
+    "COMP-LIGHT-001",
+    "COMP-LIGHT-ADV-001",
+    "COMP-ENV-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist lighting module covering measurement geometry, PPFD mapping, DLI, photoperiod, spectrum, fixture/canopy interactions and verification reporting.",
+  "estimatedMinutes": 315,
+  "learningOutcomes": [
+    "Design and execute a repeatable canopy PPFD mapping plan with controlled measurement height, orientation, grid geometry and meter verification.",
+    "Calculate and interpret DLI from representative PPFD and photoperiod while explaining why equal DLI can arise from different intensity-duration combinations.",
+    "Evaluate canopy-light uniformity using distribution, range and spatial pattern rather than relying on a single average or center measurement.",
+    "Interpret photoperiod, spectrum, fixture geometry and canopy architecture as interacting lighting variables without overstating universal crop-response claims.",
+    "Produce a lighting verification report that links measurement quality, canopy distribution, operating state, crop/environment context and authorized next action."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

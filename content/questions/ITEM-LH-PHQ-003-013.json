@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A cooler returns to setpoint after an excursion. What should happen to connected lots?",
+  "choices": [
+    "Maintain controlled status until exposure scope and product evidence support an authorized decision.",
+    "Automatically release them.",
+    "Automatically destroy them.",
+    "Relabel them with a new date."
+  ],
+  "correct": 0,
+  "rationale": "Restored equipment does not decide product consequence.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

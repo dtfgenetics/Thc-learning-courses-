@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-001-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two colocated temperature/RH sensors disagree persistently after equilibration. What should happen next?",
+  "choices": [
+    "Move them to different rooms.",
+    "Average them permanently.",
+    "Compare them with a trusted reference or calibration check before deciding which reading to use.",
+    "Change room targets until both appear acceptable."
+  ],
+  "correct": 2,
+  "rationale": "Colocated disagreement should trigger verification against a known reference to separate sensor offset from environmental variation.",
+  "references": [
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

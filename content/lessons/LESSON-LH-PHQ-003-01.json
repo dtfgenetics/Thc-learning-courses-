@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-003-01",
+  "title": "Curing as Controlled Conditioning",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-003-01"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Curing can change moisture distribution and sensory or chemical attributes, but it is not a universal recipe and cannot erase an uncontrolled drying history or confirmed contamination.",
+    "vocabulary": [
+      {
+        "term": "Conditioning",
+        "definition": "Controlled holding intended to allow defined product changes or equilibration."
+      },
+      {
+        "term": "Equilibration",
+        "definition": "Movement toward a more uniform condition within material or between product and package headspace."
+      },
+      {
+        "term": "Process history",
+        "definition": "Recorded sequence of conditions and handling experienced by a lot."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Curing begins with known input",
+        "body": "The incoming lot should have defined identity, drying history and product condition; curing should not be used to make unknown material appear acceptable.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Moisture can redistribute",
+        "body": "Sealed or semi-closed conditioning can change measured product condition, so representative monitoring and controlled handling remain necessary.",
+        "references": [
+          "REF-POSTHARVEST-DRY-2025-001"
+        ]
+      },
+      {
+        "title": "Outcomes depend on product and process",
+        "body": "Time, temperature, oxygen, container and starting condition interact. Published results support variables to control, not one universal duration or endpoint.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A lot with an unexplained wet zone should remain under investigation rather than being blended into curing to average the condition."
+    ],
+    "commonMistakes": [
+      "Treating curing as a sanitation step.",
+      "Using aroma alone as release evidence.",
+      "Starting cure without preserving drying history."
+    ],
+    "practicalApplication": "Define an intake, monitoring and exception record for a curing lot while keeping endpoint authority explicit.",
+    "summary": "Controlled curing preserves identity and measured condition; it does not erase upstream deviations."
+  }
+}

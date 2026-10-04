@@ -6,6 +6,8 @@ import { presentCourseAssessmentItem } from '../packages/domain/course-assessmen
 
 const attempts=new Map();
 const learnerStore={
+  async getLearnerProfile(subject){return {learnerReference:`THC-LRN-${subject}`,displayName:'Test Learner',certificateName:'Test Learner'};},
+  async listApplications(){return [{applicationReference:'THC-APP-TEST-001',programId:'CREDPROG-CULT-TECH-I-001',status:'active'}];},
   async findOpenAssessmentAttempt(subject,{assessmentId}){
     return [...attempts.values()].find((row)=>row.learnerId===subject&&row.assessmentId===assessmentId&&['started','submitted'].includes(row.status))??null;
   },
@@ -13,8 +15,10 @@ const learnerStore={
     const row=attempts.get(attemptId);
     return row?.learnerId===subject?structuredClone(row):null;
   },
-  async createAssessmentAttempt(subject,{attempt}){
-    const stored=structuredClone({...attempt,learnerId:subject});
+  async createAssessmentAttempt(subject,{attempt,programId}){
+    const profile=await this.getLearnerProfile(subject);
+    const application=(await this.listApplications(subject)).find((row)=>row.programId===programId&&row.status==='active');
+    const stored=structuredClone({...attempt,learnerId:subject,learnerReference:profile.learnerReference,certificateName:profile.certificateName,applicationReference:application?.applicationReference??null});
     attempts.set(attempt.id,stored);
     return structuredClone(stored);
   },
@@ -62,6 +66,7 @@ try{
   assert.equal(body.editable,true);
   assert.equal(body.resumed,true);
   assert.equal(body.attempt.status,'started');
+  assert.equal(body.learner.applicationReference,'THC-APP-TEST-001');
   assert.equal(body.items.length,36);
   let serialized=JSON.stringify(body);
   for(const forbidden of ['"correct"','"rationale"','answerKey','scoringKey']) assert.equal(serialized.includes(forbidden),false,`active status leaked ${forbidden}`);
@@ -70,6 +75,18 @@ try{
     headers:{authorization:'Bearer other-token'}
   });
   assert.equal(response.status,404,'another learner must not be able to read the attempt');
+
+  const originalExpiry=attempts.get(started.attempt.id).expiresAt;
+  attempts.get(started.attempt.id).expiresAt='2000-01-01T00:00:00.000Z';
+  response=await fetch(`${base}/api/v1/me/assessment-attempts/${started.attempt.id}`,{
+    headers:{authorization:'Bearer learner-token',accept:'application/json'}
+  });
+  assert.equal(response.status,200);
+  body=await response.json();
+  assert.equal(body.editable,false,'expired attempt must not be reported as editable');
+  assert.equal(body.expired,true);
+  assert.equal(body.finalizeRequired,true);
+  attempts.get(started.attempt.id).expiresAt=originalExpiry;
 
   const bundle=loadPublishedCourseAssessment('COURSE-LH-TECH1-001');
   const byId=new Map(bundle.itemBank.map((item)=>[item.id,item]));
@@ -98,6 +115,7 @@ try{
   assert.equal(body.attempt.status,'scored');
   assert.equal(body.attempt.scorePercent,100);
   assert.equal(body.attempt.passed,true);
+  assert.equal(body.learner.applicationReference,'THC-APP-TEST-001');
   assert.equal(Object.hasOwn(body,'items'),false,'scored status must not return attempt items');
   serialized=JSON.stringify(body);
   for(const forbidden of ['responses','correct','rationale','answerKey','scoringKey']) assert.equal(serialized.includes(`"${forbidden}"`),false,`scored status leaked ${forbidden}`);

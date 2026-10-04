@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-001",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A technician has two cups: one is source water and one is prepared feed, but the labels were removed. What is the strongest response?",
   "choices": [
-    "Do not measure and assign results until sample identity can be verified under the supplied process",
-    "Measure both and guess which is which from EC",
-    "Use the lower pH cup as source water",
-    "Combine the samples and take one reading"
+    "Hold both samples from final use and verify which cup is source water and which is prepared feed before assigning or acting on any measurement.",
+    "Measure both cups and use the higher EC value as the prepared feed because source water should always be lower.",
+    "Use pH to identify the samples, then label them based on whichever result appears more typical.",
+    "Combine the samples and take one reading so the measurement can still be used without wasting solution."
   ],
   "correct": 0,
-  "rationale": "Do not measure and assign results until sample identity can be verified under the supplied process. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A measurement is only useful when the sample identity is known. Guessing identity from EC or pH can create a false record, while combining the cups destroys the original evidence entirely. The correct response is to preserve the samples and verify identity through the supplied process before results are assigned or used.",
   "references": [
     "REF-IRRIGATION-001"
   ],

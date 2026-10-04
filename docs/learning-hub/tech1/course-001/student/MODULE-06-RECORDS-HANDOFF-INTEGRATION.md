@@ -16,6 +16,16 @@ WHO data-integrity guidance provides a useful quality model for reliable records
 
 A useful cultivation record allows another qualified person to understand **what happened, to what, where, when, by whom, and with what result**. Context matters. “2.1” is not meaningful if the record does not show whether it is pH, EC, another measurement, which sample/location it belongs to, or when it was taken.
 
+### Scientific foundation — records are part of the measurement system
+
+A measurement is not complete when the instrument displays a number. Its meaning depends on identity, units, time, location, instrument status, method and surrounding conditions. If any of those are missing, the operation may not be able to interpret or reproduce what happened.
+
+Think of a valid measurement record as:
+
+**value + unit + object/sample identity + location + time + method/instrument context + operator/system identity**
+
+This is why documentation errors can create scientific errors. A correct number attached to the wrong plant, room or time can lead to a wrong conclusion just as easily as an inaccurate measurement.
+
 WHO’s data-integrity framework uses the ALCOA+ concepts:
 
 - attributable;
@@ -68,6 +78,12 @@ For each issue, explain the data-integrity principle involved.
 ### Handoff is a controlled transfer of responsibility
 
 HSE describes effective shift handover as involving preparation by outgoing personnel, communication between outgoing and incoming personnel, and cross-checking by incoming staff. It also recommends both written and verbal communication for safety-critical handovers.
+
+### Scientific foundation — handoff is a human-factors control
+
+Handoffs are vulnerable to memory limits, assumption, interruption, ambiguous language and information overload. A structured handoff reduces those failure modes by making critical information explicit and allowing the incoming worker to question or repeat back the open items.
+
+The goal is not maximum detail. It is **high signal**: enough information to preserve safety, identity, process state and unfinished work without forcing the next shift to search through irrelevant history.
 
 A cultivation handoff should make unresolved work visible, not bury it underneath a long list of routine completed tasks.
 
@@ -122,6 +138,16 @@ Then role-play a two-way handoff in which the incoming technician asks clarifyin
 Real work arrives as a packet, not a textbook chapter. A technician may face a work order, prior-shift handoff, room restriction, equipment alarm, inventory discrepancy, sanitation requirement and time-sensitive crop task at the same time.
 
 Competence means prioritizing the controls that block downstream work.
+
+### Integrated reasoning — dependencies determine priority
+
+The first task on a schedule is not always the first task that can safely proceed. Cultivation workflows contain dependencies: a room hold can block movement, a sanitation failure can block entry, an identity mismatch can block transfer, and an equipment fault can block irrigation. The technician should identify those dependencies before acting.
+
+A simple decision sequence is:
+
+**What is blocked? → What condition blocks it? → Can I resolve that condition within authority? → If yes, verify and continue. If no, hold and escalate.**
+
+This prevents wasted work and reduces the chance that one uncontrolled action creates multiple downstream errors.
 
 A practical sequence is:
 

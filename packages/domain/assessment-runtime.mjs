@@ -3,6 +3,10 @@ import crypto from 'node:crypto';
 export function createAttempt({ learnerId, assessment, form, now = new Date().toISOString() }) {
   if (!learnerId) throw new Error('learnerId required');
   if (!assessment?.id || !form?.id || !Array.isArray(form.items)) throw new Error('assessment and form required');
+  const startedMs = Date.parse(now);
+  const timeLimitMinutes = assessment.timeLimitMinutes == null ? null : Number(assessment.timeLimitMinutes);
+  if (timeLimitMinutes != null && (!Number.isInteger(timeLimitMinutes) || timeLimitMinutes < 1)) throw new Error('invalid assessment time limit');
+  const expiresAt = timeLimitMinutes == null || !Number.isFinite(startedMs) ? null : new Date(startedMs + (timeLimitMinutes * 60 * 1000)).toISOString();
   return {
     id: crypto.randomUUID(),
     learnerId,
@@ -12,6 +16,7 @@ export function createAttempt({ learnerId, assessment, form, now = new Date().to
     formHash: form.integrityHash,
     status: 'started',
     startedAt: now,
+    expiresAt,
     submittedAt: null,
     scoredAt: null,
     items: form.items.map((item, index) => ({
@@ -33,8 +38,18 @@ export function submitAttempt(attempt, responses, now = new Date().toISOString()
   return { ...attempt, items, status: 'submitted', submittedAt: now };
 }
 
+function numericTolerance(item) {
+  const raw = item?.extensions?.numericTolerance;
+  if (raw == null) return 0;
+  const tolerance = Number(raw);
+  if (!Number.isFinite(tolerance) || tolerance < 0) throw new Error(`Invalid numeric tolerance for ${item.id}`);
+  return tolerance;
+}
+
 export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new Date().toISOString()) {
   if (attempt.status !== 'submitted') throw new Error(`Cannot score attempt in status ${attempt.status}`);
+  const passing = Number(passingScorePercent);
+  if (!Number.isFinite(passing) || passing < 0 || passing > 100) throw new Error('invalid passing score percent');
   const bank = new Map(itemBank.map((item) => [`${item.id}@${item.version}`, item]));
   let earned = 0;
   let possible = 0;
@@ -42,14 +57,29 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
     const item = bank.get(`${row.itemId}@${row.itemVersion}`);
     if (!item) throw new Error(`Missing immutable item version ${row.itemId}@${row.itemVersion}`);
     let score = 0;
-    if (['multiple-choice','scenario','case-study'].includes(item.type)) score = Number(row.response) === Number(item.correct) ? 1 : 0;
+    const unanswered = row.response == null || (Array.isArray(row.response) && row.response.length === 0);
+    if (unanswered) score = 0;
+    else if (['multiple-choice','scenario','case-study'].includes(item.type)) score = Number(row.response) === Number(item.correct) ? 1 : 0;
     else if (item.type === 'multiple-response') {
       const expected = [...item.correct].sort((a,b) => a-b);
       const actual = Array.isArray(row.response) ? [...row.response].sort((a,b) => a-b) : [];
       score = JSON.stringify(expected) === JSON.stringify(actual) ? 1 : 0;
     } else if (item.type === 'numeric') {
       const actual = Number(row.response);
-      score = Number.isFinite(actual) && actual === Number(item.correct) ? 1 : 0;
+      const expected = Number(item.correct);
+      const tolerance = numericTolerance(item);
+      score = Number.isFinite(actual) && Number.isFinite(expected) && Math.abs(actual - expected) <= tolerance ? 1 : 0;
+    } else if (item.type === 'ordering') {
+      const expected = Array.isArray(item.correct) ? item.correct.map(Number) : [];
+      const actual = Array.isArray(row.response) ? row.response.map(Number) : [];
+      const validExpected = expected.length > 1 && expected.every(Number.isInteger) && new Set(expected).size === expected.length;
+      if (!validExpected) throw new Error(`Invalid ordering answer key for ${item.id}`);
+      score = expected.length === actual.length && expected.every((value, index) => value === actual[index]) ? 1 : 0;
+    } else if (item.type === 'matching') {
+      const expected = Array.isArray(item.correct) ? item.correct.map(String) : [];
+      const actual = Array.isArray(row.response) ? row.response.map(String) : [];
+      if (expected.length < 2 || expected.some((value) => !value)) throw new Error(`Invalid matching answer key for ${item.id}`);
+      score = expected.length === actual.length && expected.every((value, index) => value === actual[index]) ? 1 : 0;
     } else throw new Error(`Unsupported production scoring type ${item.type}`);
     earned += score;
     possible += 1;
@@ -62,7 +92,7 @@ export function scoreAttempt(attempt, itemBank, passingScorePercent, now = new D
     status: 'scored',
     scoredAt: now,
     scorePercent,
-    passed: scorePercent >= passingScorePercent
+    passed: scorePercent >= passing
   };
 }
 

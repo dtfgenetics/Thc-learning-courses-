@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-006-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-006-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A filter is replaced during maintenance. What best demonstrates restored function?",
+  "choices": [
+    "Repeat representative pressure/output verification after service.",
+    "The replacement work order alone.",
+    "A new filter label.",
+    "A visual inspection only."
+  ],
+  "correct": 0,
+  "rationale": "Maintenance completion is not the same as effectiveness verification.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-006",
+    "seedBank": true
+  }
+}

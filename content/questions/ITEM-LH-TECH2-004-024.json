@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-024",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which statement best reflects Technician II scope?",
   "choices": [
-    "Independently select any pesticide after diagnosis.",
-    "Apply off-label controls when pressure is high.",
-    "Change treatment concentration based on scouting trend alone.",
-    "Interpret evidence, verify authorized intervention outcomes and escalate treatment decisions that exceed assigned authority."
+    "Technician II may independently select a labeled pesticide after the pest has been confidently identified and documented.",
+    "Technician II may use an off-label control when crop pressure creates an urgent risk and an authorized applicator is unavailable.",
+    "Technician II may change treatment concentration within the label range when scouting shows poor response, then document the adjustment.",
+    "Technician II interprets evidence, verifies authorized intervention outcomes, preserves containment and records, and escalates treatment decisions that exceed assigned authority."
   ],
   "correct": 3,
-  "rationale": "Interpret evidence, verify authorized intervention outcomes and escalate treatment decisions that exceed assigned authority.",
+  "rationale": "Technician II responsibility centers on evidence quality, troubleshooting, verification, containment, and escalation. Diagnosis or poor treatment response does not automatically grant authority to select products, change rates, or apply controls. Those actions remain governed by label, law, licensing, facility procedure, and assigned role. The technician can provide strong evidence for the decision without independently taking authority that has not been granted.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What belongs in a maintenance handoff after a verification stops at an authority boundary?",
   "choices": [
-    "Only the technician’s guess at root cause.",
-    "Only the alarm code.",
-    "Only a note that maintenance was called.",
-    "Exact asset/location, observed condition, evidence, operator actions, boundary cue, current safe status and receiving role."
+    "Document the technician's most likely root cause and the action maintenance should take so the handoff is efficient.",
+    "Record the alarm code and asset number because maintenance can reconstruct the rest of the event from the controller history.",
+    "Record that maintenance was notified and the equipment was left stopped, without adding diagnostic detail that might bias the receiving technician.",
+    "Record the exact asset and location, observed condition, relevant evidence, operator actions already taken, the boundary that stopped further work, current safe status, and the receiving role."
   ],
   "correct": 3,
-  "rationale": "Exact asset/location, observed condition, evidence, operator actions, boundary cue, current safe status and receiving role. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "A strong maintenance handoff must let the receiving person reconstruct what happened without relying on memory or inference. It should identify the exact equipment and location, what was observed, what evidence supports the concern, what operator-level actions were already attempted, why the technician stopped, and what safe state the equipment is currently in. A guessed root cause is less valuable than a precise evidence record, while an alarm code or notification note alone omits important context needed for safe and efficient follow-up.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-OSHA-1910-147-LOTO"

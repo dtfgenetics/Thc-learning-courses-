@@ -1,0 +1,47 @@
+name: Sync curriculum registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "scripts/build-global-registry.mjs"
+      - ".github/workflows/sync-curriculum-registry.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-curriculum-registry-main
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build canonical curriculum registry
+        run: npm run registry:build
+
+      - name: Verify committed registry matches canonical source
+        run: |
+          if git diff --quiet -- registry/curriculum.json; then
+            echo "Curriculum registry matches canonical source."
+            exit 0
+          fi
+          echo "::error::registry/curriculum.json is stale. Run npm run registry:build on the work branch and commit the generated registry before merge."
+          git --no-pager diff -- registry/curriculum.json
+          exit 1

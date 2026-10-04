@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A work order requires a task the technician has not been trained or authorized to perform. What should happen?",
   "choices": [
-    "Perform it carefully anyway",
-    "Ask a coworker for a quick verbal shortcut",
-    "Mark it complete without doing it",
-    "Stop and escalate the authorization/competence gap instead of improvising"
+    "Perform the task carefully if a coworker can explain the steps.",
+    "Ask for a quick verbal shortcut and proceed under informal supervision.",
+    "Mark the task complete so the work order does not remain overdue.",
+    "Stop and escalate the training or authorization gap instead of improvising a task outside assigned competence."
   ],
   "correct": 3,
-  "rationale": "Stop and escalate the authorization/competence gap instead of improvising. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A work order does not grant competence or authority by itself. If the technician has not been trained or authorized for the task, the correct action is to stop and escalate. Informal coaching, guessing, or false completion can create safety, crop, and record-integrity problems.",
   "references": [
     "REF-IPM-001"
   ],

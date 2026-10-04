@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHIB-007-03",
+  "title": "Targeted Confirmation, Sampling & Containment Decisions",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-007-03"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-HLVD-REVIEW-2023-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IPM-GREENHOUSE-2024-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "The next test or observation should be chosen because it can change the decision. Sampling, identity and containment must remain linked to the consequence of a false negative, false positive or delayed response.",
+    "vocabulary": [
+      {
+        "term": "Decision-relevant test",
+        "definition": "A test or observation selected because its result can change the differential, containment, release or next-action decision."
+      },
+      {
+        "term": "Representative sample",
+        "definition": "A sample selected and identified in a way that reasonably supports inference about the target population or decision."
+      },
+      {
+        "term": "Chain of custody",
+        "definition": "Documented control of sample identity and handling from collection through transfer and result."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Ask what decision the test will support",
+        "body": "Testing should answer a defined question: confirm a suspected agent, exclude a high-consequence pathway, evaluate affected scope or verify recovery. Avoid tests that add data but do not change the decision.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Preserve identity and sampling context",
+        "body": "Plant/lot/location, plant part, collection time, collector, handling, method and result should remain linked. A result with broken identity has weaker decision value.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Containment should follow consequence as well as confidence",
+        "body": "A high-consequence plausible pathway can justify temporary movement restrictions before certainty is achieved, especially where transmission can occur through plant material, tools, water/root pathways or propagation.",
+        "references": [
+          "REF-HLVD-SPREAD-2025-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "If the case question is whether a donor group can be released, a sample from an unrelated room cannot answer that release question even if the laboratory method is excellent."
+    ],
+    "commonMistakes": [
+      "Ordering broad testing without a decision question.",
+      "Using a negative result from poorly identified material as universal clearance.",
+      "Waiting for perfect certainty before applying reversible containment."
+    ],
+    "practicalApplication": "For each differential hypothesis, select one next observation or test, define the sample/identity requirements and state how each possible result would change the case.",
+    "summary": "Good diagnostics reduce uncertainty efficiently while preserving identity, safety and decision authority."
+  }
+}

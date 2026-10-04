@@ -17,7 +17,8 @@ assert.deepEqual(state, { completed: 2, total: 3, percent: 67 }, 'courseProgress
 
 assert.match(appSource, /% lesson progress/, 'course cards must label their percentage as lesson progress');
 assert.match(appSource, /aria-label', `\$\{course\.title\} lesson progress`/, 'progressbar accessible name must identify lesson progress');
-assert.match(appSource, /Lesson progress only\. Course and credential completion also depend on the required assessment and practical-performance evidence/, 'credential-bearing course cards must distinguish lesson progress from course completion');
+assert.match(appSource, /Lesson progress only\.[\s\S]*Academic course completion requires the graded final/, 'credential-bearing course cards must distinguish lesson progress from academic course completion');
+assert.match(appSource, /Professional credential issuance remains a separate process/, 'credential-bearing course cards must keep professional issuance separate from academic completion');
 assert.match(appSource, /Lesson completion does not itself satisfy assessment, practical, or credential requirements/, 'account lesson completion copy must not imply course completion');
 assert.match(appSource, /Device lesson progress is separate from official assessment, practical, and credential records/, 'device progress copy must distinguish local lesson state from official evidence');
 assert.doesNotMatch(

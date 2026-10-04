@@ -1,0 +1,77 @@
+{
+  "id": "ALTOOL-CALIBRATION-BENCH-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "kind": "calibration",
+  "title": "THC Calibration Bench",
+  "summary": "Practice the measurement-quality decision that follows a simulated pH-meter verification result before using readings for crop-management decisions.",
+  "competencyIds": [
+    "COMP-WATER-QUALITY-ADV-001"
+  ],
+  "objectiveIds": [
+    "LO-WATER-METER-003"
+  ],
+  "referenceIds": [
+    "REF-WATER-ALKALINITY-EXT-001"
+  ],
+  "canonicalSources": [
+    "LESSON-WATER-METER-003"
+  ],
+  "steps": [
+    {
+      "id": "inspect",
+      "instruction": "Record device identity, probe condition and standard status before interpreting a reading.",
+      "evidence": "pre-check"
+    },
+    {
+      "id": "verify",
+      "instruction": "Choose the simulated verification result.",
+      "evidence": "verification state"
+    },
+    {
+      "id": "decide",
+      "instruction": "Select whether the reading can support a decision or the instrument must be corrected/verified first.",
+      "evidence": "bounded decision"
+    }
+  ],
+  "fields": [
+    {
+      "id": "deviceId",
+      "label": "Simulated meter ID",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "verificationResult",
+      "label": "Verification result",
+      "type": "choice",
+      "required": true,
+      "unit": null,
+      "options": [
+        "pass",
+        "fail"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Probe/standard notes",
+      "type": "text",
+      "required": true,
+      "unit": null
+    }
+  ],
+  "configuration": {
+    "ruleSet": "meter-verification",
+    "outcomes": {
+      "pass": "measurement-eligible-for-contextual-interpretation",
+      "fail": "stop-recalibrate-or-service-and-repeat-verification"
+    }
+  },
+  "boundary": "Simulation only. Follow the effective manufacturer procedure and facility SOP for real calibration, storage, cleaning, service and acceptance limits.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}

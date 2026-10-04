@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-003-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Can one passing timepoint establish shelf life?",
+  "choices": [
+    "Yes, if the laboratory is accredited.",
+    "No; a defined claim requires comparable evidence across planned timepoints and conditions.",
+    "Yes, if the package is sealed.",
+    "Only when aroma is unchanged."
+  ],
+  "correct": 1,
+  "rationale": "Stability is a time-dependent claim requiring a controlled plan.",
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-ISO-17025-2017-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

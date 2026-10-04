@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-004-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-004-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What should an escalation packet include?",
+  "choices": [
+    "Only a suspected diagnosis.",
+    "Only a photograph.",
+    "Event facts, lot scope, observations, samples/results, interim controls, uncertainty and decision owner.",
+    "A release recommendation with no evidence."
+  ],
+  "correct": 2,
+  "rationale": "Qualified decisions require complete evidence and explicit unresolved questions.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

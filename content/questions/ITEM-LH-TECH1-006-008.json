@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-POSTHARVEST-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One receiving rack shows noticeably different product condition than adjacent racks. What is the strongest record?",
   "choices": [
-    "Declare the whole room failed",
-    "Move all lots together",
-    "Ignore the difference until packaging",
-    "Document the identified rack/lot and relevant environmental or product-condition evidence and escalate as required"
+    "Classify the whole dry room as failed because one rack differs from neighboring racks.",
+    "Move the different rack together with adjacent lots so the conditions can equalize.",
+    "Ignore the difference until packaging because postharvest variation is expected.",
+    "Document the identified rack/lot, the observed product-condition difference and relevant environmental/process context, then escalate according to procedure."
   ],
   "correct": 3,
-  "rationale": "Document the identified rack/lot and relevant environmental or product-condition evidence and escalate as required. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "A rack-specific difference is evidence of a localized pattern, not automatic proof that the entire room failed. The technician should preserve the lot/rack identity and relevant context so later review can determine whether the cause is loading, position, environment, product variation, or another factor. Mixing lots or waiting until packaging can destroy useful evidence.",
   "references": [
     "REF-POSTHARVEST-001"
   ],

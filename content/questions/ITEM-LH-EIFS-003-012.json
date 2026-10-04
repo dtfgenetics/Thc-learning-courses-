@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-003-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-04",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Who should service a suspected CO2 regulator or piping fault?",
+  "choices": [
+    "Any crop worker.",
+    "The nearest learner.",
+    "Anyone with a wrench.",
+    "A qualified person following facility compressed-gas procedures."
+  ],
+  "correct": 3,
+  "rationale": "Compressed-gas service requires controlled qualified work.",
+  "references": [
+    "REF-OSHA-CO2-SAFETY-2026",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

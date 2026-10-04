@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-005-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-005-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A resample produces a preferred result. What is the correct record treatment?",
+  "choices": [
+    "Delete the first result.",
+    "Retain both results and investigate lot, sampling, transport and method differences under controlled rules.",
+    "Report only the preferred result.",
+    "Average them without context."
+  ],
+  "correct": 1,
+  "rationale": "New evidence supplements rather than silently replaces valid original evidence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-NIST-CANNAQAP-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

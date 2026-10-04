@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-003-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is the strongest package suitability evidence?",
+  "choices": [
+    "Product-specific stability and closure evidence under defined storage and handling conditions.",
+    "A supplier marketing claim.",
+    "Opacity alone.",
+    "The lowest package cost."
+  ],
+  "correct": 0,
+  "rationale": "Suitability must be demonstrated for the defined product and objective.",
+  "references": [
+    "REF-POSTHARVEST-STORAGE-2024-001",
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

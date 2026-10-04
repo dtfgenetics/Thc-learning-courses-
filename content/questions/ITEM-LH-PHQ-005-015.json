@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-005-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why transfer open laboratory questions explicitly?",
+  "choices": [
+    "Questions automatically invalidate all results.",
+    "Verbal memory is enough.",
+    "The next role needs to know what remains unresolved and which actions are allowed while review continues.",
+    "They should be hidden from auditors."
+  ],
+  "correct": 2,
+  "rationale": "Explicit handoff prevents incomplete review from being mistaken for authorization.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

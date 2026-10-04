@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-EIFS-007-FINAL",
+  "title": "Root-Zone Water Content, Dryback, Runoff & Crop Steering — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-ROOTZONE-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-EIFS-007-01",
+    "LO-LH-EIFS-007-02",
+    "LO-LH-EIFS-007-03",
+    "LO-LH-EIFS-007-04",
+    "LO-LH-EIFS-007-05"
+  ],
+  "items": [
+    "ITEM-LH-EIFS-007-001",
+    "ITEM-LH-EIFS-007-002",
+    "ITEM-LH-EIFS-007-003",
+    "ITEM-LH-EIFS-007-004",
+    "ITEM-LH-EIFS-007-005",
+    "ITEM-LH-EIFS-007-006",
+    "ITEM-LH-EIFS-007-007",
+    "ITEM-LH-EIFS-007-008",
+    "ITEM-LH-EIFS-007-009",
+    "ITEM-LH-EIFS-007-010",
+    "ITEM-LH-EIFS-007-011",
+    "ITEM-LH-EIFS-007-012",
+    "ITEM-LH-EIFS-007-013",
+    "ITEM-LH-EIFS-007-014",
+    "ITEM-LH-EIFS-007-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-IRRIGATION-ADV-001",
+      "items": 9,
+      "cognitiveTarget": "Water-content trajectories, dryback and crop-steering logic"
+    },
+    {
+      "competency": "COMP-ROOTZONE-001",
+      "items": 3,
+      "cognitiveTarget": "Runoff/return and root-zone EC interpretation"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Steering verification, acceptance and escalation records"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 6,
+    "targetBankItemsPerCompetency": 20,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-EIFS-007",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

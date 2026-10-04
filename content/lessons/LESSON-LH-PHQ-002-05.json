@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-002-05",
+  "title": "Drying Deviations, Containment & Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-002-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "When drying departs from plan, the first task is not to invent a disposition. It is to preserve facts, identify connected material, stabilize the process within authority and hand unresolved decisions to the proper role.",
+    "vocabulary": [
+      {
+        "term": "Affected scope",
+        "definition": "Material and process range plausibly connected to an event."
+      },
+      {
+        "term": "Interim control",
+        "definition": "Temporary authorized action that limits risk while evaluation continues."
+      },
+      {
+        "term": "Handoff",
+        "definition": "Transfer of identity, status, evidence gaps and responsibility to the next role or shift."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Capture facts before cause claims",
+        "body": "Record timestamps, alarms, sensor status, room actions, lot locations and observations before drawing conclusions.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Scope with genealogy and exposure",
+        "body": "Lot location, event duration, product measurements and stability knowledge help identify what may be affected without assuming either no impact or room-wide failure.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      },
+      {
+        "title": "Transfer unresolved status",
+        "body": "Written plus verbal handoff should identify holds, temporary controls, missing evidence and the next accountable role.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER",
+          "REF-ASTM-D8556-25"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A fan interruption affects a mapped zone for a known duration; the response preserves that zone and its lots while qualified review evaluates consequence."
+    ],
+    "commonMistakes": [
+      "Deleting anomalous sensor data.",
+      "Moving lots before preserving location history.",
+      "Treating restoration of equipment as proof that product is unaffected."
+    ],
+    "practicalApplication": "Complete a drying deviation packet with timeline, equipment evidence, lot map, product observations, interim controls and decision owner.",
+    "summary": "A strong drying response preserves evidence and scope so authorized disposition can follow defensible facts."
+  }
+}

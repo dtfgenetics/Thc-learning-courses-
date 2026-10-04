@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Required PPE for a batch step is unavailable. What is the correct decision?",
   "choices": [
-    "Do not perform the step until the required control is available or the authorized procedure provides a safe alternative.",
-    "Proceed carefully because the batch is urgent.",
-    "Use any glove available regardless of compatibility.",
-    "Ask another worker to stand nearby and continue."
+    "Do not perform the step until the required PPE/control is available or an authorized procedure specifies a verified safe alternative.",
+    "Proceed using the closest available PPE if the exposure time will be brief and the batch step cannot be delayed.",
+    "Proceed if a second trained worker observes the step and can assist if a splash or exposure occurs.",
+    "Complete only the low-contact portion of the step and defer the remaining handling until the specified PPE is available."
   ],
   "correct": 0,
-  "rationale": "Do not perform the step until the required control is available or the authorized procedure provides a safe alternative.",
+  "rationale": "Required PPE is part of the authorized hazard-control system. If it is unavailable, the technician should not improvise with unverified alternatives or split the task in a way that still creates exposure. The step should be held until the required control is restored or an approved procedure provides an equivalent safe alternative. Production urgency does not override the hazard-control boundary.",
   "references": [
     "REF-SAFETY-OSHA-001"
   ]

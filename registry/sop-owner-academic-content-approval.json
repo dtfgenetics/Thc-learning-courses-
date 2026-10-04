@@ -1,0 +1,143 @@
+{
+  "id": "SOP-ACADEMIC-CONTENT-OWNER-APPROVAL-2026-09-24",
+  "version": "1.0.0",
+  "recordedAt": "2026-09-24",
+  "scope": "repository-native SOP academic content and continued educational-course development",
+  "authorityBasis": "Project owner has explicitly directed that accurate public/academic source-backed instructional information is approved for continued development unless later revised.",
+  "approvedUse": [
+    "continue authoring and improving educational/course materials",
+    "use controlled reviewed academic/government sources for factual instructional claims",
+    "reuse the 17 SOP draft packages for internal curriculum alignment and review preparation",
+    "revise factual content when better or superseding evidence is identified"
+  ],
+  "notAuthorizedByThisApproval": [
+    "operational facility SOP release",
+    "claim of independent scientific SME validation",
+    "claim of rendered WCAG conformance without manual evidence",
+    "substitution for pilot learner results or psychometric evidence",
+    "substitution for assessor calibration or standard-setting evidence",
+    "pesticide, engineering, electrical, laboratory, legal or other role-specific authority",
+    "credential issuance before certification release gates are satisfied"
+  ],
+  "packages": [
+    {
+      "id": "GROW-000",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-000.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-011",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-011.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-020",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-020.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-030",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-030.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-031",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-031.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-032",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-032.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-033",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-033.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-040",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-040.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-080",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-080.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-090",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-090.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-100",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-100.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-110",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-110.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-120",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-120.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-130",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-130.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-140",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-140.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-150",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-150.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    },
+    {
+      "id": "GROW-160",
+      "version": "0.1.0",
+      "manifest": "registry/sop-packages/GROW-160.json",
+      "contentState": "owner-approved-for-source-backed-academic-development",
+      "operationalReleaseState": "blocked"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-003-021",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-WATER-QUALITY-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A repeated out-of-range pH result is obtained with a verified meter and correct sample. What should happen next?",
   "choices": [
-    "Apply the controlled accept/hold/escalate or authorized adjustment procedure; do not invent a chemistry change.",
-    "Keep retesting until an in-range result appears.",
-    "Delete the result and use the target value.",
-    "Change multiple ingredients until pH moves."
+    "Follow the controlled accept, hold, escalate, or authorized-adjustment procedure now that sample identity and meter performance have been verified; do not invent an unapproved chemistry change.",
+    "Repeat the measurement until two readings agree within the target range, because repeated testing is the best way to distinguish a transient outlier.",
+    "Replace the measured result with the recipe target in the batch record and investigate the instrument after production is complete.",
+    "Change more than one ingredient in small increments until pH enters range, then document the total adjustment as a single correction."
   ],
   "correct": 0,
-  "rationale": "Apply the controlled accept/hold/escalate or authorized adjustment procedure; do not invent a chemistry change.",
+  "rationale": "Once the sample and measurement system have been verified, the out-of-range pH should be treated as a real batch condition unless evidence shows otherwise. The next step is governed by the controlled batch procedure: accept, hold, escalate, or make only an explicitly authorized adjustment. Repeated testing cannot be used to shop for an in-range number, and ad hoc multi-ingredient corrections make both chemistry and traceability harder to interpret.",
   "references": [
     "REF-WATER-ALKALINITY-EXT-001",
     "REF-MHRA-GXP-DATA-INTEGRITY"

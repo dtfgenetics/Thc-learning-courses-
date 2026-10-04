@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-SOP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A work order identifies Zone C, but the valve label at the station appears to indicate Zone D. What should the technician do?",
   "choices": [
-    "Pause and resolve the identity/instruction mismatch before executing irrigation",
-    "Open both valves",
-    "Use the previous shift’s memory",
-    "Irrigate Zone D and edit the work order later"
+    "Pause the irrigation task and resolve the Zone C versus Zone D identity conflict before opening a valve or moving solution.",
+    "Open both valves briefly so neither zone misses the event while the records are checked.",
+    "Use the previous shift's memory of which valve normally serves the work order.",
+    "Irrigate Zone D because the physical valve label is more current than the written work order, then edit the record afterward."
   ],
   "correct": 0,
-  "rationale": "Pause and resolve the identity/instruction mismatch before executing irrigation. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A conflict between the work order and physical valve identity creates a risk of irrigating the wrong crop. The technician should stop before execution and reconcile the controlled instruction with the physical system. Guessing, opening both valves, or editing the record after the fact can create both crop and traceability errors.",
   "references": [
     "REF-IRRIGATION-001"
   ],

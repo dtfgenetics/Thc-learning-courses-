@@ -1,0 +1,79 @@
+{
+  "id": "ASSESS-LH-PHIB-004-FINAL",
+  "title": "Plant Disease, HLVd & Biosecurity — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-PHIB-004-01",
+    "LO-LH-PHIB-004-02",
+    "LO-LH-PHIB-004-03",
+    "LO-LH-PHIB-004-04",
+    "LO-LH-PHIB-004-05"
+  ],
+  "items": [
+    "ITEM-LH-PHIB-004-001",
+    "ITEM-LH-PHIB-004-002",
+    "ITEM-LH-PHIB-004-003",
+    "ITEM-LH-PHIB-004-004",
+    "ITEM-LH-PHIB-004-005",
+    "ITEM-LH-PHIB-004-006",
+    "ITEM-LH-PHIB-004-007",
+    "ITEM-LH-PHIB-004-008",
+    "ITEM-LH-PHIB-004-009",
+    "ITEM-LH-PHIB-004-010",
+    "ITEM-LH-PHIB-004-011",
+    "ITEM-LH-PHIB-004-012",
+    "ITEM-LH-PHIB-004-013",
+    "ITEM-LH-PHIB-004-014",
+    "ITEM-LH-PHIB-004-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-IPM-ADV-001",
+      "items": 7,
+      "cognitiveTarget": "Disease evidence, biotic-versus-abiotic differentials, cannabis disease risks and HLVd testing concepts"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 5,
+      "cognitiveTarget": "Clean stock, quarantine, movement pathways, containment and sanitation boundaries"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Testing handoff, chain of custody, controlled corrections and reconstructable disease records"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 6,
+    "targetBankItemsPerCompetency": 20,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PHIB-004",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

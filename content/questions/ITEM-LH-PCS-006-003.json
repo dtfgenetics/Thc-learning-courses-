@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-CROP-PLAN-001",
+  "objective": "LO-LH-PCS-006-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "When should a yield assumption be revised?",
+  "choices": [
+    "Never, because forecasts must be stable",
+    "Only after a total crop loss",
+    "At its defined review point when current batch evidence no longer supports it",
+    "Whenever one worker prefers a different number"
+  ],
+  "correct": 2,
+  "rationale": "Assumptions should have evidence sources and planned revision points.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

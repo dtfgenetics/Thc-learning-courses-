@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-020",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A missing transaction cannot be reconstructed from reliable evidence. What is the defensible action?",
   "choices": [
-    "Estimate a plausible transaction.",
-    "Copy a transaction from another lot.",
-    "Erase the downstream record.",
-    "Document the gap and escalate it rather than inventing the missing transaction."
+    "Create the most plausible transaction using the known downstream state so genealogy remains continuous.",
+    "Copy the closest matching transaction pattern from another lot and flag it as reconstructed.",
+    "Remove the downstream record that depends on the missing event until the transaction can be proven.",
+    "Document the unreconstructable gap, contain downstream ambiguity as needed, and escalate rather than inventing an event that cannot be supported."
   ],
   "correct": 3,
-  "rationale": "Document the gap and escalate it rather than inventing the missing transaction.",
+  "rationale": "When reliable evidence cannot reconstruct a missing transaction, the correct record is the truth that a gap exists. Inventing, copying, or deleting records creates unsupported history and may spread the error into genealogy, counts, or disposition. The gap should be documented and escalated, with operational controls applied if the uncertainty affects downstream decisions.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

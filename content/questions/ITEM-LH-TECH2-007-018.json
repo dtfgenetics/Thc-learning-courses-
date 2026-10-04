@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "What makes a shift handoff decision-ready?",
   "choices": [
-    "A list of every task without ranking.",
-    "Priority, affected identity/scope, current evidence, completed actions, dependencies, unresolved decision, due timing and decision owner.",
-    "Only the leading diagnosis.",
-    "Only completed work."
+    "List every unfinished task so the next shift can decide priority independently.",
+    "State priority, affected identity/scope, current evidence, completed actions, dependencies, unresolved decision, due timing, and the role that owns the next decision.",
+    "Provide only the leading diagnosis or interpretation so the handoff stays concise.",
+    "Report only completed work and leave open issues in the source system."
   ],
   "correct": 1,
-  "rationale": "Priority, affected identity/scope, current evidence, completed actions, dependencies, unresolved decision, due timing and decision owner.",
+  "rationale": "A decision-ready handoff must tell the next shift what matters most, what is affected, what is known, what has already been done, what remains unresolved, and who owns the next decision. A flat task list forces the receiving shift to reconstruct priority, while diagnosis-only or completed-work-only handoffs can hide dependencies and urgent open risks.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

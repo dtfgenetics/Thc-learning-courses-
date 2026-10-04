@@ -45,10 +45,17 @@ const attempt = {
 await store.createAssessmentAttempt('learner-course1', { attempt });
 const createCall = calls.find((call) => call.text.includes('insert into assessment_attempt_items'));
 assert.ok(createCall);
-assert.match(createCall.text, /jsonb_to_recordset\(\$8::jsonb\)/);
+assert.match(createCall.text, /jsonb_to_recordset\(\$10::jsonb\)/);
 assert.equal(createCall.text.includes('ITEM-LH-TECH1-001-001'), false, 'item IDs must be parameters, not SQL interpolation');
 assert.equal(createCall.params[1], learnerId);
 assert.equal(createCall.params[2], 'ASSESS-LH-TECH1-001-FINAL');
+assert.equal(createCall.params[6], null, 'attempt without a credential-program application should persist a null application link');
+assert.equal(createCall.params[7], '2026-09-11T20:00:00.000Z');
+assert.equal(createCall.params[8], null, 'untimed fixture should persist a null expiration');
+assert.equal(typeof createCall.params[9], 'string');
+const persistedAttemptItems = JSON.parse(createCall.params[9]);
+assert.equal(persistedAttemptItems.length, 2);
+assert.equal(persistedAttemptItems[0].item_id, 'ITEM-LH-TECH1-001-001');
 
 const loaded = await store.getAssessmentAttempt('learner-course1', { attemptId });
 assert.equal(loaded.id, attemptId);

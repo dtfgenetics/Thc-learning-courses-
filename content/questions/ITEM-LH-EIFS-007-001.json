@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-001",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-007-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Two containers receive the same irrigation volume but show different water-content patterns. What should be investigated first?",
+  "choices": [
+    "Media/container/root distribution and delivery pattern rather than assuming equal stored water.",
+    "Only cultivar name.",
+    "Only the controller schedule.",
+    "Nothing; equal volume proves equal root-zone state."
+  ],
+  "correct": 0,
+  "rationale": "Equal applied volume does not guarantee equal retained or distributed water.",
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-CANNABIS-SOILLESS-MEDIA-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}

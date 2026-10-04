@@ -1,0 +1,127 @@
+{
+  "id": "GROW-011",
+  "title": "Grow space setup — controlled evidence plan",
+  "version": "0.1.0",
+  "status": "evidence-plan-seeded",
+  "updated": "2026-09-24",
+  "purpose": "Define a grow-space commissioning and readiness workflow that verifies safe access, utilities, drainage, environmental measurement, cleaning access and equipment status without turning cultivation training into engineering or licensed-trade authority.",
+  "sourceIds": [
+    "REF-NIOSH-CANNABIS-HAZARDS-2024",
+    "REF-OSHA-1910-22-WALKING",
+    "REF-OSHA-1910-147-LOTO",
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "scope": {
+    "included": [
+      "space zoning",
+      "safe walking/working surfaces",
+      "water and drainage readiness",
+      "powered-equipment condition",
+      "operator-versus-servicing boundary",
+      "environmental sensor placement/representativeness",
+      "air movement and environmental verification",
+      "cleaning/sanitation access",
+      "alarm/emergency readiness",
+      "commissioning checklist"
+    ],
+    "excludedUntilQualified": [
+      "electrical system design or modification",
+      "HVAC engineering calculations",
+      "bypassing safeguards or alarms",
+      "covered servicing without hazardous-energy authorization",
+      "universal environmental setpoints",
+      "acceptance of a room solely because controller setpoints look correct"
+    ]
+  },
+  "claims": [
+    {
+      "id": "GROW-011-C01",
+      "statement": "Cannabis cultivation work can involve interacting chemical, biological, ergonomic, electrical, equipment and physical hazards, so grow-space setup should begin with a site-specific hazard and workflow assessment rather than only horticultural targets.",
+      "sources": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024"
+      ],
+      "boundary": "A generic course hazard list cannot replace the employer's actual hazard assessment, emergency plan or qualified engineering review."
+    },
+    {
+      "id": "GROW-011-C02",
+      "statement": "Walking and working surfaces should be maintained in a clean, orderly and sufficiently dry condition, making drainage, hose/cable routing and spill control part of cultivation-space readiness.",
+      "sources": [
+        "REF-OSHA-1910-22-WALKING"
+      ],
+      "boundary": "This requirement does not authorize unqualified repair of plumbing, electrical or structural defects discovered during inspection."
+    },
+    {
+      "id": "GROW-011-C03",
+      "statement": "Damaged powered equipment, defeated safeguards or conditions requiring covered servicing should be removed from normal operation and escalated through the authorized energy-control/maintenance process.",
+      "sources": [
+        "REF-OSHA-1910-147-LOTO",
+        "REF-NIOSH-CANNABIS-HAZARDS-2024"
+      ],
+      "boundary": "Taking the cultivation course does not qualify a learner as an authorized electrical, mechanical or lockout/tagout servicing employee."
+    },
+    {
+      "id": "GROW-011-C04",
+      "statement": "Environmental measurements are only useful for commissioning when sensor location and exposure are representative of the crop question being asked; one controller sensor can miss canopy-level spatial gradients.",
+      "sources": [
+        "REF-VPD-002",
+        "REF-ENV-TEMP-2025-001"
+      ],
+      "boundary": "Measured treatment values in research should not be copied into universal room setpoints for all cultivars and stages."
+    },
+    {
+      "id": "GROW-011-C05",
+      "statement": "Temperature and humidity conditions can materially affect cannabis growth, flowering development and metabolite outcomes, supporting verification of actual crop-zone conditions before production begins.",
+      "sources": [
+        "REF-VPD-002",
+        "REF-ENV-TEMP-2025-001"
+      ],
+      "boundary": "Commissioning verifies the space against the approved facility crop plan; it does not define a universal cannabis climate recipe."
+    },
+    {
+      "id": "GROW-011-C06",
+      "statement": "Space layout should support separation of clean and dirty workflows, routine inspection, sanitation access and safe movement of people, plants, tools and materials.",
+      "sources": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024"
+      ],
+      "boundary": "Exact aisle widths, equipment spacing and room geometry must follow applicable code, equipment instructions and facility design requirements."
+    },
+    {
+      "id": "GROW-011-C07",
+      "statement": "A controller command or displayed status is not the same as verified physical delivery, so commissioning should compare intended operation with observable outputs such as airflow, irrigation/drainage, alarms and representative environmental measurements.",
+      "sources": [
+        "REF-VPD-002",
+        "REF-NIOSH-CANNABIS-HAZARDS-2024"
+      ],
+      "boundary": "The cultivation SOP should define verification and escalation, not unauthorized technical adjustment of engineered systems."
+    },
+    {
+      "id": "GROW-011-C08",
+      "statement": "Commissioning records should identify the room/zone, equipment or system checked, date/time, required criterion, observed result, unresolved defect, containment and responsible handoff before the area is released for normal use.",
+      "sources": [
+        "REF-NIOSH-CANNABIS-HAZARDS-2024"
+      ],
+      "boundary": "A checklist completion mark does not override an unresolved safety, engineering, sanitation or legal defect."
+    }
+  ],
+  "requiredNewPackageSections": [
+    "space zoning and intended-use record",
+    "safe-access/pathway inspection",
+    "water/drainage readiness check",
+    "powered-equipment and safeguard status",
+    "environmental sensor/map verification",
+    "airflow/environment delivery verification",
+    "sanitation/cleaning-access review",
+    "alarm/emergency response readiness",
+    "defect/escalation and out-of-service record",
+    "commissioning authorization/release checklist"
+  ],
+  "releaseGates": [
+    "worker-safety review",
+    "electrical/HVAC/plumbing engineering boundary review",
+    "facility-layout/code applicability review",
+    "environmental measurement review",
+    "accessibility review",
+    "independent release approval"
+  ]
+}

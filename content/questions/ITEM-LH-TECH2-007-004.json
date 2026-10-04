@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A KPI improves for one cycle after its denominator definition changed. What is the best interpretation?",
   "choices": [
-    "The process definitely improved.",
-    "The new denominator should replace historical denominators.",
-    "One cycle proves a trend.",
-    "The apparent improvement is not directly comparable until the metric is recalculated under a consistent definition."
+    "Treat the improvement as process evidence because the new denominator better reflects current operating conditions.",
+    "Apply the new denominator definition retrospectively to prior cycles only if doing so improves trend continuity.",
+    "Use the new cycle as the start of a new trend and compare its percentage directly with historical values as a directional signal.",
+    "Do not interpret the percentage change as process improvement until values are recalculated under a consistent denominator definition or clearly treated as a metric-definition break."
   ],
   "correct": 3,
-  "rationale": "The apparent improvement is not directly comparable until the metric is recalculated under a consistent definition.",
+  "rationale": "A KPI can change simply because its denominator definition changes. Before claiming process improvement, the comparison needs the same metric definition across periods or an explicit break in the series. Otherwise the apparent change mixes operational performance with a measurement-definition change and can mislead decision-makers.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

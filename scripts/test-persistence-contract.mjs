@@ -30,6 +30,7 @@ const store = createPostgresCredentialStore({
     calls.push({ text, params });
     if (text === 'select 1 as ok') return { rows: [{ ok: 1 }] };
     if (text.includes('where verification_id = $1')) return { rows: [row] };
+    if (text.includes('where subject_hash = $1')) return { rows: [row] };
     if (text.includes('count(*)')) return { rows: [{ count: 7 }] };
     throw new Error('unexpected query');
   }
@@ -49,6 +50,12 @@ const verificationCall = calls.find((call) => call.text.includes('where verifica
 assert.deepEqual(verificationCall.params, ['VERIFY-POSTGRES-001']);
 assert.equal(verificationCall.text.includes('VERIFY-POSTGRES-001'), false, 'verification id must be parameterized, not interpolated');
 assert.equal(await store.count(), 7);
+const learnerCredentials = await store.listBySubjectHash('private-subject-hash');
+assert.equal(learnerCredentials.length, 1);
+assert.equal(learnerCredentials[0].verificationId, 'VERIFY-POSTGRES-001');
+const subjectLookupCall = calls.find((call) => call.text.includes('where subject_hash = $1'));
+assert.deepEqual(subjectLookupCall.params, ['private-subject-hash']);
+assert.equal(subjectLookupCall.text.includes('private-subject-hash'), false, 'subject hash must be parameterized, not interpolated');
 
 assert.equal(mapCredentialRow(null), null);
 assert.throws(() => createPostgresCredentialStore(), /requires a query/);
@@ -58,6 +65,7 @@ assert.equal(mapCredentialRow(jsonPayloadRow).issuer.name, 'Teaching Healthy Cul
 const failingStore = createPostgresCredentialStore({ query: async () => { throw new Error('private database detail'); } });
 await assert.rejects(() => failingStore.ping(), PersistenceUnavailableError);
 await assert.rejects(() => failingStore.getByVerificationId('VERIFY-FAIL'), PersistenceUnavailableError);
+await assert.rejects(() => failingStore.listBySubjectHash('subject-fail'), PersistenceUnavailableError);
 await assert.rejects(() => failingStore.count(), PersistenceUnavailableError);
 
 console.log('PostgreSQL credential persistence contract and production fail-closed tests passed');

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-002",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Propagation losses cluster in one zone across several donors. Which hypothesis becomes more important?",
   "choices": [
-    "A single genotype effect explains every loss.",
-    "A zone-linked environment, handling or sanitation factor because the pattern crosses donor identities.",
-    "All donor records should be discarded.",
-    "The success denominator should be changed until rates match."
+    "Prioritize donor genetics because losses occurring across several donors indicate that some donor lines are more sensitive than others.",
+    "Increase the priority of zone-linked environment, handling, sanitation, or workflow factors because the pattern crosses donor identities.",
+    "Treat the records as noncomparable because more than one donor is involved in the affected zone.",
+    "Adjust the success denominator by excluding visibly damaged cuttings so zone performance can be compared fairly."
   ],
   "correct": 1,
-  "rationale": "A zone-linked environment, handling or sanitation factor because the pattern crosses donor identities.",
+  "rationale": "When losses cluster in one propagation zone across multiple donor identities, a shared local factor becomes more plausible. Environment, sanitation, handling, equipment, workflow timing, or localized contamination can affect several donors at once. Donor genetics can still influence susceptibility, but the cross-donor spatial pattern makes a zone-linked explanation a higher-value hypothesis to test first.",
   "references": [
     "REF-PROP-001",
     "REF-IPM-001"

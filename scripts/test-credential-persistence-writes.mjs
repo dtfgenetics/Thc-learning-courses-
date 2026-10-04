@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import { createPostgresCredentialWriter } from '../apps/api/src/postgres-credential-writer.mjs';
 
 const row = {
@@ -80,4 +81,75 @@ await assert.rejects(
 );
 assert.equal(conflictQueries, 2);
 
-console.log('Transactional credential state-write contract tests passed');
+const issueCalls = [];
+const issuedRow = {
+  ...row,
+  id: 'a0f797ce-f2fd-4104-9857-08182254db74',
+  verification_id: 'VERIFY-ISSUE-001',
+  subject_hash: 'subject-hash-issued',
+  credential_definition_id: 'CRED-CULT-TECH-I-001',
+  credential_definition_version: '1.0.0',
+  course_id: 'COURSE-LH-TECH1-007',
+  course_version: '0.2.0',
+  status: 'issued',
+  issued_at: '2026-09-25T23:00:00.000Z',
+  payload_json: { issuer: { name: 'Teaching Healthy Cultivation' }, recipient: { certificateName: 'Test Learner' } },
+  payload_hash: 'a'.repeat(64)
+};
+const issueWriter = createPostgresCredentialWriter({
+  withTransaction: async (callback) => callback(async (text, params) => {
+    issueCalls.push({ text, params });
+    if (text.includes('from credentials') && text.includes("status in ('issued','valid')")) return { rows: [] };
+    if (text.startsWith('insert into credentials')) return { rowCount: 1, rows: [issuedRow] };
+    if (text.startsWith('insert into credential_status_events')) return { rowCount: 1, rows: [] };
+    if (text.startsWith('insert into audit_events')) return { rowCount: 1, rows: [] };
+    throw new Error(`unexpected issuance query: ${text}`);
+  })
+});
+const issueResult = await issueWriter.issueCredential({
+  id: issuedRow.id,
+  verificationId: issuedRow.verification_id,
+  subjectHash: issuedRow.subject_hash,
+  credentialDefinitionId: issuedRow.credential_definition_id,
+  credentialDefinitionVersion: issuedRow.credential_definition_version,
+  courseId: issuedRow.course_id,
+  courseVersion: issuedRow.course_version,
+  status: 'issued',
+  issuedAt: issuedRow.issued_at,
+  expiresAt: null,
+  payloadJson: issuedRow.payload_json,
+  payloadHash: issuedRow.payload_hash
+}, { actorId: 'credential-admin' });
+assert.equal(issueResult.created, true);
+assert.equal(issueResult.idempotent, false);
+assert.equal(issueResult.credential.verificationId, 'VERIFY-ISSUE-001');
+assert.equal(issueCalls.length, 4);
+assert.match(issueCalls[0].text, /status in \('issued','valid'\)/);
+assert.match(issueCalls[1].text, /insert into credentials/);
+assert.equal(issueCalls[2].params[1], 'initial-issuance');
+assert.equal(issueCalls[3].params[0], 'credential.issued');
+
+const idempotentWriter = createPostgresCredentialWriter({
+  withTransaction: async (callback) => callback(async (text) => {
+    if (text.includes('from credentials')) return { rows: [issuedRow] };
+    throw new Error('idempotent issuance must not write when an active credential already exists');
+  })
+});
+const repeat = await idempotentWriter.issueCredential({
+  id: crypto.randomUUID?.() ?? issuedRow.id,
+  verificationId: 'DIFFERENT-VERIFY-ID',
+  subjectHash: issuedRow.subject_hash,
+  credentialDefinitionId: issuedRow.credential_definition_id,
+  credentialDefinitionVersion: issuedRow.credential_definition_version,
+  courseId: issuedRow.course_id,
+  courseVersion: issuedRow.course_version,
+  status: 'issued',
+  issuedAt: issuedRow.issued_at,
+  payloadJson: issuedRow.payload_json,
+  payloadHash: issuedRow.payload_hash
+}, { actorId: 'credential-admin' });
+assert.equal(repeat.created, false);
+assert.equal(repeat.idempotent, true);
+assert.equal(repeat.credential.verificationId, 'VERIFY-ISSUE-001');
+
+console.log('Transactional credential state-write and idempotent issuance contracts passed');

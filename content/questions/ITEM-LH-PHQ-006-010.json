@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-006-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A seal problem affects one lot. Which records are distinct but linked?",
+  "choices": [
+    "Only one informal note.",
+    "Material disposition, causal investigation/CAPA and any planned process or equipment change.",
+    "Disposition and cause are the same record.",
+    "Change control is unnecessary after a deviation."
+  ],
+  "correct": 1,
+  "rationale": "Material decisions, recurrence controls and planned changes have different governance purposes.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

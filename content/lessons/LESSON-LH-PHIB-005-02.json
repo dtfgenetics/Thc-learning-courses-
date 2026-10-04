@@ -1,0 +1,72 @@
+{
+  "id": "LESSON-LH-PHIB-005-02",
+  "title": "Biological Control: Predators, Parasitoids & Microbial Agents",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IPM-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-005-02"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-THRIPS-UCIPM-001",
+    "REF-SPIDER-MITE-UCIPM-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Biological control uses living organisms or biological agents to suppress pests or pathogens. Success depends on correct target identification, timing, environmental compatibility, release/establishment strategy and avoiding interventions that destroy the beneficial population.",
+    "vocabulary": [
+      {
+        "term": "Predator",
+        "definition": "A beneficial organism that consumes multiple prey individuals during its life."
+      },
+      {
+        "term": "Parasitoid",
+        "definition": "An organism whose immature stage develops on or in a host and ultimately kills it."
+      },
+      {
+        "term": "Conservation biological control",
+        "definition": "Practices that preserve or support existing natural enemies and beneficial organisms."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Match the agent to target and life stage",
+        "body": "Biocontrol agents differ in prey/host range, preferred life stage and environmental requirements. Identification errors or late deployment can reduce performance.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001",
+          "REF-THRIPS-UCIPM-001"
+        ]
+      },
+      {
+        "title": "Start before populations overwhelm the system",
+        "body": "University greenhouse guidance emphasizes that many biological controls are most effective when established early, before pest populations become high. Monitoring therefore remains central to successful deployment.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Compatibility is part of the control plan",
+        "body": "Some pesticides, disinfectants or environmental changes can harm beneficial organisms. A biological-control program needs compatibility review before adding another intervention.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001",
+          "REF-IPM-GREENHOUSE-2024-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Releasing a predator after a pest outbreak has already exceeded the beneficial's suppression capacity is not equivalent to establishing the predator preventively under low pest pressure."
+    ],
+    "commonMistakes": [
+      "Assuming all beneficials work against all pest stages.",
+      "Ignoring pesticide residual effects on natural enemies.",
+      "Treating biological control as a no-monitoring strategy."
+    ],
+    "practicalApplication": "For a chosen greenhouse pest, build a biological-control decision table covering target life stage, beneficial candidate, environmental compatibility, release timing, monitoring method and failure/escalation criteria.",
+    "summary": "Biological control is a monitored system, not a one-time product. Target fit, timing and compatibility determine whether beneficials can contribute meaningful suppression."
+  }
+}

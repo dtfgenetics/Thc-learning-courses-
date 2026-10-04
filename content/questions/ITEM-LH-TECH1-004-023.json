@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-023",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A required pH reading was missed, but the technician remembers an approximate number. What is the strongest record practice?",
   "choices": [
-    "Backfill the remembered number at the scheduled time",
-    "Use the target pH",
-    "Use the controlled missing-data or late-entry process and do not present a remembered estimate as the original measurement",
-    "Copy the next reading backward"
+    "Backfill the remembered pH at the scheduled time and mark it as approximate.",
+    "Use the target pH because it represents what the solution should have been.",
+    "Use the controlled missing-data or late-entry process and do not present a remembered estimate as if it were the original contemporaneous measurement.",
+    "Copy the next available pH reading backward so the trend has no missing point."
   ],
   "correct": 2,
-  "rationale": "Use the controlled missing-data or late-entry process and do not present a remembered estimate as the original measurement. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "A remembered approximation is not the same as a contemporaneous measurement. Backfilling it as if it were observed at the required time creates false precision and timing. The controlled missing-data or late-entry process preserves the fact that the original reading was missed while allowing any later context to be documented honestly.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY",
     "REF-IRRIGATION-001"

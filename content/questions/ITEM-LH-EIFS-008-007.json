@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-008-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-008-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A CO2 life-safety alarm occurs while enrichment is requested. What is the correct priority?",
+  "choices": [
+    "Follow the life-safety response and keep people out until the qualified process declares the area safe.",
+    "Maintain enrichment because crop targets have priority.",
+    "Silence the alarm and inspect the controller.",
+    "Bypass the interlock."
+  ],
+  "correct": 0,
+  "rationale": "Life-safety systems override crop optimization.",
+  "references": [
+    "REF-OSHA-CO2-SAFETY-2026",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}

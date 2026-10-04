@@ -9,14 +9,16 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const exists = (p) => fs.existsSync(path.join(root, p));
 
 const course = read('content/courses/COURSE-LH-TECH1-003.json');
-assert.equal(course.status, 'draft');
+assert.equal(course.status,'published');
+assert.equal(course.extensions?.academicPublicationStatus,'owner-approved-public-academic-release');
+assert.equal(course.extensions?.professionalCredentialUseAuthorized,false);
 assert.equal(course.finalAssessment, 'ASSESS-LH-TECH1-003-FINAL');
 assert.ok(course.modules.includes('MOD-LH-TECH1-003-MONITORING'));
 assert.equal(course.extensions?.dedicatedCourseAssessmentRequired, false);
 assert.equal(course.extensions?.dedicatedPerformanceValidationRequired, true);
 assert.equal(course.extensions?.dedicatedItemCount, 32);
 assert.equal(course.extensions?.learnerAssetLayerBuilt, true);
-assert.equal(course.extensions?.totalLearnerAssetCount, 6);
+assert.equal(course.extensions?.totalLearnerAssetCount, 7);
 
 const module = read('content/modules/MOD-LH-TECH1-003-MONITORING.json');
 assert.equal(module.lessons.length, 4);
@@ -37,7 +39,7 @@ const formative = read('content/assessments/ASSESS-LH-TECH1-003-M01.json');
 const final = read('content/assessments/ASSESS-LH-TECH1-003-FINAL.json');
 assert.equal(formative.purpose, 'formative');
 assert.equal(formative.items.length, 12);
-assert.equal(final.status, 'draft');
+assert.equal(final.status,'published');
 assert.equal(final.purpose, 'summative');
 assert.equal(final.items.length, 20);
 assert.equal(new Set(final.items).size, 20);
@@ -46,6 +48,21 @@ assert.equal(new Set([...formative.items, ...final.items]).size, 32, 'Course 003
 const expectedObjectives = ['LO-LH-TECH1-003-01','LO-LH-TECH1-003-02','LO-LH-TECH1-003-03','LO-LH-TECH1-003-04','LO-LH-TECH1-003-05'];
 assert.deepEqual(new Set(final.objectives), new Set(expectedObjectives));
 assert.deepEqual(new Set(formative.objectives), new Set(expectedObjectives));
+assert.equal(final.extensions?.courseDerivedAssessment, true, 'Course 3 final must remain explicitly course-derived');
+assert.equal(final.extensions?.encyclopediaSubstitutionAllowed, false, 'Encyclopedia material cannot substitute for Course 3 instruction');
+assert.equal(final.extensions?.untaughtMaterialAllowed, false, 'Course 3 final cannot assess untaught material');
+const taughtMaterialMap = final.extensions?.taughtMaterialMap ?? {};
+for (const objectiveId of expectedObjectives) {
+  assert.ok(Array.isArray(taughtMaterialMap[objectiveId]) && taughtMaterialMap[objectiveId].length > 0, `${objectiveId}: final must map to dedicated taught material`);
+  for (const lessonId of taughtMaterialMap[objectiveId]) {
+    assert.match(lessonId, /^LESSON-LH-TECH1-003-/, `${objectiveId}: test-to-teaching map must stay inside Course 3`);
+    assert.ok(module.lessons.includes(lessonId), `${objectiveId}: mapped teaching lesson must be in the dedicated Course 3 module`);
+    const lesson = read(`content/lessons/${lessonId}.json`);
+    assert.ok((lesson.learningObjectives ?? []).includes(objectiveId), `${objectiveId}: mapped lesson ${lessonId} must actually teach the objective`);
+  }
+}
+assert.ok(exists('docs/learning-hub/tech1/course-003/TEST-TO-TEACHING-MAP.md'), 'Course 3 must retain a human-readable test-to-teaching audit');
+
 
 const summativeCounts = new Map(expectedObjectives.map((id) => [id, 0]));
 const formativeCounts = new Map(expectedObjectives.map((id) => [id, 0]));
@@ -101,8 +118,8 @@ const crosswalk = read('registry/course3-practical-a-crosswalk.json');
 assert.equal(crosswalk.courseSpecificReadiness?.learnerAssetLayerBuilt, true, 'Course 003 practical crosswalk should reflect the produced learner asset layer');
 
 const visualRegistry = read('visuals/COURSE3-ASSET-REGISTRY.json');
-const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced');
-assert.equal(producedAssets.length, 6, 'Course 3 should expose the current six governed learner assets');
+const producedAssets = (visualRegistry.assets ?? []).filter((asset) => asset.status === 'produced' && !String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
+assert.equal(producedAssets.length, 7, 'Course 3 should expose the current seven governed learner assets');
 
 const server = createAcademyWebServer({ env: { ...process.env, NODE_ENV: 'development', ACADEMY_PREVIEW_DRAFTS: '1' } });
 server.listen(0, '127.0.0.1');
@@ -110,22 +127,18 @@ await once(server, 'listening');
 try {
   const base = `http://127.0.0.1:${server.address().port}`;
   for (const asset of producedAssets) {
-    assert.match(asset.learnerPath ?? '', /^\/assets\/course3\/[A-Za-z0-9._-]+\.svg$/, `${asset.id} should use a controlled Course 3 learner path`);
+    assert.match(asset.learnerPath ?? '', /^\/assets\/course3\/[A-Za-z0-9._-]+\.webp$/, `${asset.id} should use the owner-approved Course 3 WebP learner path`);
     const response = await fetch(`${base}${asset.learnerPath}`);
     assert.equal(response.status, 200, `${asset.learnerPath} should be delivered by the Academy runtime`);
-    assert.match(response.headers.get('content-type') ?? '', /^image\/svg\+xml/, `${asset.learnerPath} should use the SVG content type`);
-    const svg = await response.text();
-    assert.match(svg, /<svg[\s>]/, `${asset.learnerPath} should contain SVG markup`);
-    assert.match(svg, /<title[\s>]/, `${asset.learnerPath} should include an accessible title`);
-    assert.match(svg, /<desc[\s>]/, `${asset.learnerPath} should include an accessible description`);
+    assert.match(response.headers.get('content-type') ?? '', /^image\/webp/, `${asset.learnerPath} should use the WebP content type`);
   }
-  const invalidCourseDirectory = await fetch(`${base}/assets/course3x/environment-measurement-context.svg`);
+  const invalidCourseDirectory = await fetch(`${base}/assets/course3x/environment-measurement-context.webp`);
   assert.equal(invalidCourseDirectory.status, 404, 'course asset routing must only accept course<number> directories');
-  const missingAsset = await fetch(`${base}/assets/course3/not-a-real-asset.svg`);
+  const missingAsset = await fetch(`${base}/assets/course3/not-a-real-asset.webp`);
   assert.equal(missingAsset.status, 404, 'course asset routing must return 404 for missing controlled assets');
 } finally {
   server.close();
   await once(server, 'close');
 }
 
-console.log('Course 003 production slice passed: four lessons, five objectives, 12 referenced formative items, 20 balanced summative items, complete package artifacts, Practical A crosswalk, visual registry and all six governed Course 3 learner assets are wired through the Academy runtime while human/release gates remain open.');
+console.log('Course 003 production slice passed: four lessons, five objectives, 12 referenced formative items, 20 balanced summative items, complete package artifacts, Practical A crosswalk, visual registry and all seven governed Course 3 learner assets are wired through the Academy runtime while human/release gates remain open.');

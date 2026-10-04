@@ -1,0 +1,33 @@
+{
+  "id": "MOD-LH-EIFS-007-ROOTZONE-DRYBACK",
+  "title": "Root-Zone Water Content, Dryback, Runoff & Crop Steering",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-EIFS-007-01",
+    "LESSON-LH-EIFS-007-02",
+    "LESSON-LH-EIFS-007-03",
+    "LESSON-LH-EIFS-007-04",
+    "LESSON-LH-EIFS-007-05"
+  ],
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001",
+    "COMP-ROOTZONE-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Specialist module covering root-zone water status, dryback trajectories, runoff/return interpretation, crop-steering logic and controlled root-zone reporting.",
+  "estimatedMinutes": 330,
+  "learningOutcomes": [
+    "Interpret root-zone water content as a spatial and temporal state influenced by substrate/media properties, container geometry, root development, irrigation delivery and environmental demand.",
+    "Calculate and analyze dryback as a trajectory between verified measurements rather than treating elapsed time or one percentage as a universal target.",
+    "Use runoff or return volume and chemistry together with input, root-zone and delivery evidence to distinguish drainage, preferential flow, concentration and sampling effects.",
+    "Evaluate crop-steering adjustments from measured root-zone, environment and crop response while preserving study/system boundaries and avoiding universal recipes.",
+    "Produce a reconstructable root-zone steering report that states baseline, intervention, measured response, uncertainty, acceptance limits and authorized next action."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "visualReferenceSetRequired": true
+  }
+}

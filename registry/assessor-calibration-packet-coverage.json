@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "ASSESSOR-CALIBRATION-PACKET-COVERAGE-001",
+  "updated": "2026-09-24",
+  "state": "15-of-15-performance-assessment-packets-prepared-evidence-pending",
+  "summary": {
+    "technicianI": 7,
+    "technicianII": 8,
+    "total": 15,
+    "evidenceComplete": 0
+  },
+  "assessments": [
+    {
+      "assessmentId": "PRACTICAL-TECH1-A",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH1-A.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH1-A-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-B",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH1-B.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH1-B-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-C",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH1-C.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH1-C-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-D",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH1-D.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH1-D-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-E",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH1-E.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH1-E-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH1-F",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH1-F.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH1-F-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "CAPSTONE-TECH1-SHIFT-001",
+      "assessmentVersion": "1.1.0",
+      "source": "content/performance-assessments/CAPSTONE-TECH1-SHIFT-001.json",
+      "packet": "docs/academy-v2/assessor-calibration/CAPSTONE-TECH1-SHIFT-001-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-B-SENSOR-EQUIPMENT-VERIFICATION-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-C-FERTIGATION-ROOTZONE-TROUBLESHOOTING-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-D-IPM-TREND-TREATMENT-FOLLOWUP-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-E-PROPAGATION-CANOPY-PERFORMANCE-REVIEW-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-F-POSTHARVEST-DEVIATION-LOT-SCOPE-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION",
+      "assessmentVersion": "1.0.0",
+      "source": "content/performance-assessments/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION.json",
+      "packet": "docs/academy-v2/assessor-calibration/PRACTICAL-TECH2-G-TRACEABILITY-METRICS-SHIFT-COORDINATION-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    },
+    {
+      "assessmentId": "CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT",
+      "assessmentVersion": "1.1.0",
+      "source": "content/performance-assessments/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT.json",
+      "packet": "docs/academy-v2/assessor-calibration/CAPSTONE-TECH2-SENIOR-TECHNICIAN-DIAGNOSTIC-SHIFT-CALIBRATION-PACKET.md",
+      "state": "packet-ready-paired-scoring-pending"
+    }
+  ],
+  "boundary": "15/15 packet preparation means assessors have version-pinned calibration instructions. It does not establish inter-rater evidence or authorization."
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-004-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-01",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "One controller sensor disagrees with several verified crop-zone measurements. What is the strongest interpretation?",
+  "choices": [
+    "Controller status automatically makes its reading correct.",
+    "The crop-zone sensors should be deleted.",
+    "All readings should be averaged.",
+    "Representativeness and device quality should be checked before the controller reading drives a major change."
+  ],
+  "correct": 3,
+  "rationale": "Installed authority does not replace measurement verification.",
+  "references": [
+    "REF-VPD-002",
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A KPI moves in the same direction for four cycles, but each cycle used a different time window. What is the main problem?",
   "choices": [
-    "Four values automatically prove a trend.",
-    "The observations are not directly comparable until the time-window definition is standardized.",
-    "Time windows never affect KPI meaning.",
-    "The lowest value should be removed."
+    "Treat four same-direction values as a valid trend because consistency across four cycles outweighs time-window differences.",
+    "Standardize or otherwise reconcile the time-window definition before interpreting the four values as directly comparable trend evidence.",
+    "Ignore time-window differences if the numerator and denominator definitions stayed the same.",
+    "Remove the lowest value and interpret the remaining three because different windows mainly affect extremes."
   ],
   "correct": 1,
-  "rationale": "The observations are not directly comparable until the time-window definition is standardized.",
+  "rationale": "A KPI measured over different time windows may represent different exposure, opportunity, or workload even when the formula is otherwise unchanged. Same-direction movement across incomparable windows can be suggestive, but it is not a clean trend until the observation window is standardized or the difference is explicitly accounted for.",
   "references": [
     "REF-MHRA-GXP-DATA-INTEGRITY"
   ]

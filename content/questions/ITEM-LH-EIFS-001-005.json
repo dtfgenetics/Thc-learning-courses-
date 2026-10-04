@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-001-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-EIFS-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why can a leaf-level vapor-pressure interpretation differ from an air-only VPD value?",
+  "choices": [
+    "Leaves always equal room temperature.",
+    "VPD depends only on root-zone EC.",
+    "Leaf temperature may differ from air temperature because of radiation, airflow and transpiration.",
+    "Leaf temperature affects only color."
+  ],
+  "correct": 2,
+  "rationale": "Leaf temperature changes saturation vapor pressure at the leaf surface.",
+  "references": [
+    "REF-VPD-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

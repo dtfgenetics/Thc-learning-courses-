@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-006-04",
+  "title": "Disposition, CAPA & Change Control",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-006-04"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-ASTM-D8556-25",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Disposition addresses affected material; CAPA addresses causes and recurrence; change control evaluates planned modifications. Combining them into one undocumented action weakens all three.",
+    "vocabulary": [
+      {
+        "term": "Disposition",
+        "definition": "Authorized decision about the allowed next state of material."
+      },
+      {
+        "term": "Change control",
+        "definition": "Structured review, authorization, implementation and verification of a planned change."
+      },
+      {
+        "term": "Effectiveness verification",
+        "definition": "Evidence that an action achieved its intended control without unacceptable new effects."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Disposition follows evidence and authority",
+        "body": "Release, rework, rejection or destruction should reference affected scope, evidence and the authorized decision role.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "CAPA addresses recurrence",
+        "body": "Actions should correspond to supported causes, have owners and due dates, and be checked for effectiveness.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Planned changes are evaluated before routine use",
+        "body": "Procedure, equipment, packaging or specification changes should consider validation, training, records and downstream impacts.",
+        "references": [
+          "REF-WHO-DATA-INTEGRITY-2021"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A packaging seal issue leads to lot disposition, closure-process CAPA and a separately controlled equipment change with verification."
+    ],
+    "commonMistakes": [
+      "Using retraining as the default root-cause action.",
+      "Changing a process during an investigation without documenting it.",
+      "Closing CAPA when implementation is complete but effectiveness is unknown."
+    ],
+    "practicalApplication": "Separate one case into disposition, root-cause/CAPA and change-control records with evidence, owners and authorization.",
+    "summary": "Material decisions, recurrence controls and planned changes are linked but require distinct, traceable governance."
+  }
+}

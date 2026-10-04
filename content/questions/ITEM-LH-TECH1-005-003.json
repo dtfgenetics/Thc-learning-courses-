@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-003",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "One identified cultivar roots more slowly than the others under the supplied procedure. What should Technician I do?",
   "choices": [
-    "Increase treatment concentration for every tray",
-    "Relabel the slow tray",
-    "Record the batch-specific rooting trend and escalate if outside the defined expectation rather than independently redesigning propagation conditions",
-    "Assume the donor genotype is defective"
+    "Increase treatment concentration for every tray so the slow cultivar catches up with the others.",
+    "Relabel the slow tray as a different cultivar because its response does not match expectations.",
+    "Record the batch-specific rooting trend and escalate if it falls outside the defined expectation rather than independently changing propagation conditions.",
+    "Treat the slower rooting as proof that the donor genotype is defective."
   ],
   "correct": 2,
-  "rationale": "Record the batch-specific rooting trend and escalate if outside the defined expectation rather than independently redesigning propagation conditions. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A slower rooting pattern is meaningful evidence, but it does not by itself prove poor genetics or justify changing the propagation recipe. Technician I should preserve the identified batch result, compare it with the defined expectation, and escalate when needed. That keeps observation, interpretation, and authority separate.",
   "references": [
     "REF-PROP-001",
     "REF-IPM-001"

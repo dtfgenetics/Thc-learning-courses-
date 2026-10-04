@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-001-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PRO-QA-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A supervisor asks for the “confirmed cause” while two leading hypotheses remain plausible. What should the technician report?",
   "choices": [
-    "Choose the more familiar diagnosis so the report is decisive.",
-    "Call both causes confirmed.",
-    "Remove the weaker hypothesis from the record without explanation.",
-    "State the leading hypotheses, confidence, evidence for and against each, and the next discriminating check."
+    "Name the more familiar diagnosis as the working cause and mention the alternative only if later evidence contradicts it.",
+    "Report both leading causes as equally likely until one is ruled out, even if the current evidence favors one hypothesis.",
+    "Remove the weaker hypothesis from the formal report but retain it in personal notes so the main record stays concise.",
+    "State the leading hypotheses, the current confidence in each, evidence supporting and weakening each explanation, and the next check most likely to discriminate between them."
   ],
   "correct": 3,
-  "rationale": "Diagnostic reporting should match certainty to evidence and preserve unresolved alternatives.",
+  "rationale": "A diagnostic report should communicate uncertainty rather than hide it. When two explanations remain plausible, the technician should show what is known, what remains unresolved, how strongly the evidence supports each hypothesis, and what next observation or test could separate them. Choosing a familiar diagnosis overstates certainty, calling both causes equally likely can ignore meaningful evidence differences, and deleting an unresolved alternative makes the record less reconstructable and can bias the next decision.",
   "references": [
     "REF-IPM-GREENHOUSE-2024-001"
   ]

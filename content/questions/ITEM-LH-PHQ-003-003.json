@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-003-003",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-003-01",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What is the safest use of a published curing duration?",
+  "choices": [
+    "Treat it as universal for all cultivars.",
+    "Use it without product measurements.",
+    "Use it as study-specific context and validate a product- and process-specific conditioning plan.",
+    "Convert it into a legal release rule."
+  ],
+  "correct": 2,
+  "rationale": "Published durations do not establish universal endpoints across products and systems.",
+  "references": [
+    "REF-POSTHARVEST-DRY-2025-001",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHIB-005-05",
+  "title": "IPM Verification, Compatibility & Program Learning",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-005-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-OSU-GREENHOUSE-IPM-001",
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "An intervention is not complete when it is applied or released; it is complete when its effect is measured, incompatibilities and adverse effects are assessed, records are reconstructable and the next decision follows the evidence.",
+    "vocabulary": [
+      {
+        "term": "Verification",
+        "definition": "Planned follow-up measurement used to determine whether an intervention produced the intended result."
+      },
+      {
+        "term": "Compatibility check",
+        "definition": "Review of whether one intervention could reduce the effectiveness or safety of another tactic, organism, process or crop condition."
+      },
+      {
+        "term": "Recurrence review",
+        "definition": "Evaluation of why a pest/pathogen problem returned and whether prevention, detection, intervention or verification controls need revision."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Use comparable monitoring before and after",
+        "body": "Post-intervention counts or severity observations are only comparable when route, timing, sampled units and method are compatible. A lower count from a smaller sample is not evidence of improvement.",
+        "references": [
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Track unintended effects and compatibility",
+        "body": "Review crop stress, beneficial-organism survival, environmental changes and new hotspots as part of the response. A tactic that suppresses the target but disrupts the larger IPM system may need revision.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-OSU-GREENHOUSE-IPM-001"
+        ]
+      },
+      {
+        "title": "Preserve the decision trail",
+        "body": "Records should show original evidence, intervention, authorization, monitoring method, result, deviations and follow-up. Corrections should preserve rather than overwrite the original history.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A pest count falls after treatment, but the follow-up sample covered only one previously clean bench. The result cannot support room-wide closure."
+    ],
+    "commonMistakes": [
+      "Closing an IPM event immediately after intervention.",
+      "Changing sampling methods without documenting the change.",
+      "Recording only successful outcomes and losing evidence about failures or recurrence."
+    ],
+    "practicalApplication": "Build an intervention verification record with baseline, tactic, authorization, compatibility check, follow-up schedule, comparable metric, failure trigger and closure criteria.",
+    "summary": "IPM improves when every intervention produces usable evidence. Comparable verification and reconstructable records turn control actions into program learning."
+  }
+}

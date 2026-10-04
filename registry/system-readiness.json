@@ -1,15 +1,15 @@
 {
   "system": "THC Academy",
-  "version": "0.1.0",
-  "updatedAt": "2026-09-21",
+  "version": "0.1.7",
+  "updatedAt": "2026-10-04",
   "productionReady": false,
   "areas": {
     "curriculum": {
       "status": "building-and-review",
       "gates": {
         "substantiveContentComplete": false,
-        "scientificReviewComplete": true,
-        "editorialReviewComplete": true,
+        "scientificReviewComplete": false,
+        "editorialReviewComplete": false,
         "stagingContentSliceValidated": true
       },
       "scope": "Repository-wide curriculum construction and lesson-review queue state; does not represent Technician credential release approval."
@@ -21,9 +21,13 @@
         "developmentFormGeneration": true,
         "minimumActivePoolComplete": false,
         "humanAssessmentReviewComplete": false,
-        "pilotStatisticsComplete": false
+        "pilotStatisticsComplete": false,
+        "minimumCandidatePoolComplete": true,
+        "secureOperationalStoreIntegrationCodeReady": true,
+        "secureFormConstructionCodeReady": true,
+        "secureOperationalStoreIntegration": false
       },
-      "scope": "Development and public academic assessment capability; secure operational credential-bank approval is tracked separately and remains fail-closed."
+      "scope": "Development/public academic assessment capability and private-store integration contracts are implemented. Candidate-bank depth is complete; operational item-bank population, active-item depth, human assessment review, pilot statistics, form-equivalence evidence, live secure-store validation and professional release approval remain fail-closed."
     },
     "runtime": {
       "status": "integrated-development",
@@ -37,8 +41,12 @@
         "authorizationIntegrated": true,
         "lessonModuleCourseCompletion": true,
         "assessmentAttemptLifecycle": true,
-        "learnerTranscriptProjection": true
-      }
+        "learnerTranscriptProjection": true,
+        "productionPersistenceAdapterCodeReady": true,
+        "learnerReferenceAndApplicationLinkage": true,
+        "serverEnforcedAssessmentDeadlines": true
+      },
+      "scope": "Repository runtime now includes persisted learner references, certification applications, assessment-to-application linkage, server-enforced assessment deadlines, graded-final launch for published conventional course finals, and transaction-tested production adapter composition. productionPersistenceAdapter remains false until a live PostgreSQL deployment, migrations, secret delivery, failure/retry behavior and operational validation are completed."
     },
     "credentials": {
       "status": "foundation",
@@ -49,9 +57,17 @@
         "privacySafeVerificationProjection": true,
         "productionIssuerIdentity": false,
         "productionSigning": false,
-        "revocationPersistence": false
+        "revocationPersistence": false,
+        "revocationTransactionCodeReady": true,
+        "productionSigningIntegrationCodeReady": true,
+        "printableVerificationCertificate": true,
+        "consentedPublicRecipientNameProjection": true,
+        "transactionalIssuanceCodeReady": true,
+        "idempotentActiveIssuanceConstraintReady": true,
+        "issuanceFailClosedOnReleaseAuthorization": true,
+        "learnerOwnedCertificateRetrieval": true
       },
-      "scope": "Credential runtime foundation only; production issuance remains unavailable until program-specific release evidence and production security/persistence gates close."
+      "scope": "Credential runtime foundation includes deterministic eligibility, fail-closed transactional credential creation, idempotent active-credential uniqueness, managed external signing-provider integration, private learner-owned certificate retrieval, transaction-tested revocation code, privacy-safe public verification, and printable certificates. Production issuer identity, production signing, deployed revocation persistence, secure operational forms, and program release authorization remain false until real infrastructure, validation, key-custody/security evidence, and final release approval exist."
     },
     "api": {
       "status": "integrated-development",
@@ -74,8 +90,11 @@
         "serverSideScoringBoundary": true,
         "adminMfaEnforced": false,
         "rowLevelAuthorization": false,
-        "securityReviewComplete": false
-      }
+        "securityReviewComplete": false,
+        "adminMfaEnforcementCodeReady": true,
+        "rowLevelAuthorizationPolicyCodeReady": true
+      },
+      "scope": "Production bootstrap now requires explicit MFA evidence for admin scopes, and repository RLS policy/migration contracts are executable. adminMfaEnforced, rowLevelAuthorization and securityReviewComplete remain false until deployed identity/database controls and independent validation prove them."
     },
     "accessibility": {
       "status": "design",
@@ -95,9 +114,12 @@
         "productionEnvironment": false,
         "backupRestoreTested": false,
         "incidentResponseRunbook": true,
-        "monitoringAndAlerting": false
+        "monitoringAndAlerting": false,
+        "backupRestoreContractCodeReady": true,
+        "monitoringAlertingContractCodeReady": true,
+        "productionValidationEvidenceContractReady": true
       },
-      "scope": "Repository release controls exist; production operational approval requires deployed environment, persistence, backup/restore, monitoring, and release evidence."
+      "scope": "Repository release controls include executable backup/restore, monitoring/alerting, and production-validation evidence contracts. Live staging/production environments, demonstrated restore drills, deployed monitoring, and other infrastructure-backed gates remain false until referenced evidence exists."
     },
     "learnerExperience": {
       "status": "integrated-development",
@@ -107,13 +129,19 @@
         "consolidatedDashboard": true,
         "privacyBoundedCredentialTranscript": true,
         "practicalEvidenceSubmissionRepositoryImplemented": true,
-        "practicalEvidenceSubmissionWorkflow": false
-      }
+        "practicalEvidenceSubmissionWorkflow": false,
+        "practicalEvidenceSubmissionWorkflowCodeReady": true,
+        "multiCourseAcademicRecords": true,
+        "multiCourseGradedFinalLaunch": true,
+        "certificationApplicationRegistry": true
+      },
+      "scope": "Learner experience now includes course enrollment, multi-course academic records, account-linked certification applications for Technician I/II, persisted certificate display name, and authenticated graded-final launch for published conventional finals. Practical submission code is implemented; live operational practical workflow remains false until deployed end-to-end validation with real identity, persistence and evaluator operations exists."
     }
   },
   "readinessScope": {
     "canonicalAuthority": "Certification repository registries and executable gates",
     "academicPublicationBoundary": "Public academic availability does not imply professional credential approval or issuance readiness.",
-    "credentialReleaseBoundary": "Technician I and Technician II release evidence ledgers remain authoritative for occupational validation, assessment validation, pilot, standard-setting, security/privacy, and final issuance approval."
+    "credentialReleaseBoundary": "The certification evidence reconciler is the authoritative current-version release view for Technician course evidence gates. Technician I/II legacy release-evidence ledgers remain supporting historical/program checklists and must not override exact-version reconciled evidence.",
+    "occupationalProgramValidationBoundary": "Job-task analysis, SME/employer validation, technical curriculum review, assessment-blueprint finalization, and practical/capstone validation require dedicated exact-version occupational program evidence."
   }
 }

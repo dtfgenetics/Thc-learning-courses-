@@ -2,8 +2,8 @@
   "id": "DL-TECH2-FERTIGATION-ROOTZONE-001",
   "title": "Technician II Fertigation and Root-Zone Verification Log",
   "version": "0.1.0",
-  "status": "draft",
-  "releaseStatus": "internal-preview",
+  "status": "published",
+  "releaseStatus": "public",
   "kind": "measurement-log",
   "format": "csv",
   "description": "A traceable record for approved fertigation execution, source-water and batch measurements, irrigation delivery, runoff or drainage, root-zone trends, and escalation decisions.",
@@ -22,5 +22,6 @@
   "limitations": [
     "This template does not provide a universal nutrient recipe, pH target, EC target, dryback target, or irrigation schedule.",
     "Chemical handling, concentrate mixing, sanitation, and equipment work remain subject to the approved site procedure and safety controls."
-  ]
+  ],
+  "publicationNote": "Owner-approved academic learner support. Not a regulated record, facility SOP, assessor score sheet, or professional credential issuance instrument."
 }

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-005-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-WATER-QUALITY-ADV-001",
+  "objective": "LO-LH-EIFS-005-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A suspicious pH result is later found to come from a fouled probe. How should the original record be handled?",
+  "choices": [
+    "Delete it.",
+    "Rewrite the timestamp.",
+    "Replace it with the expected value.",
+    "Preserve it and add a traceable data-quality determination rather than deleting it."
+  ],
+  "correct": 3,
+  "rationale": "Data-integrity practice preserves the original evidence and the reason it was later limited or invalidated.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-005",
+    "seedBank": true
+  }
+}

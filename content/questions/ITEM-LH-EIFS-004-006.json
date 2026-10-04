@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-004-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-004-02",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A sensor passes one spot check but repeatedly shows impossible step changes during operation. What is the strongest conclusion?",
+  "choices": [
+    "The spot check proves all data are valid.",
+    "Delete the step changes and close the issue.",
+    "Increase control aggressiveness.",
+    "The intermittent pattern still requires investigation of signal, logging, placement or device behavior."
+  ],
+  "correct": 3,
+  "rationale": "One successful check does not resolve intermittent failure visible in time-series data.",
+  "references": [
+    "REF-ENV-TEMP-2025-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-004",
+    "seedBank": true
+  }
+}

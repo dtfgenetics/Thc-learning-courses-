@@ -88,9 +88,21 @@ function safeAttemptView(bundle, attempt, { resumed = false } = {}) {
   const view = presentCourseAssessmentAttempt({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank });
   return {
     course: { id: bundle.course.id, title: bundle.course.title, version: bundle.course.version },
+    learner: {
+      learnerReference: attempt.learnerReference ?? null,
+      applicationReference: attempt.applicationReference ?? null,
+      certificateName: attempt.certificateName ?? null
+    },
     resumed,
     ...view
   };
+}
+
+function attemptExpired(attempt, now = new Date().toISOString()) {
+  if (!attempt?.expiresAt) return false;
+  const expires = Date.parse(attempt.expiresAt);
+  const current = Date.parse(now);
+  return Number.isFinite(expires) && Number.isFinite(current) && current >= expires;
 }
 
 function latestCompletedTimestamp(attempts) {
@@ -146,6 +158,22 @@ export async function startOrResumeCourseAssessment({ learnerStore, subject, cou
   if (bundle.error) return { status: bundle.error === 'course-not-found' ? 404 : 409, body: { error: bundle.error } };
   let attempt = await learnerStore.findOpenAssessmentAttempt(subject, { assessmentId: bundle.assessment.id });
   const resumed = Boolean(attempt);
+  if (!attempt && bundle.course.credentialBearing === true && bundle.course.extensions?.credentialPath) {
+    if (typeof learnerStore.getLearnerProfile !== 'function' || typeof learnerStore.listApplications !== 'function') {
+      return { status: 503, body: { error: 'assessment-identity-linkage-unavailable' } };
+    }
+    const [profile, applications] = await Promise.all([
+      learnerStore.getLearnerProfile(subject),
+      learnerStore.listApplications(subject)
+    ]);
+    if (!profile?.certificateName) {
+      return { status: 409, body: { error: 'certificate-name-required', action: 'save-learner-profile' } };
+    }
+    const application = (applications ?? []).find((row) => row.programId === bundle.course.extensions.credentialPath && row.status === 'active');
+    if (!application?.applicationReference) {
+      return { status: 409, body: { error: 'active-credential-application-required', programId: bundle.course.extensions.credentialPath, action: 'create-credential-application' } };
+    }
+  }
   if (!attempt) {
     const needsAttemptHistory = bundle.assessment.maxAttempts != null || Number(bundle.assessment.cooldownHours ?? 0) > 0;
     if (needsAttemptHistory) {
@@ -168,7 +196,8 @@ export async function startOrResumeCourseAssessment({ learnerStore, subject, cou
       }
     }
     attempt = createCourseAssessmentAttempt({ learnerId: subject, assessment: bundle.assessment, itemBank: bundle.itemBank, now, seed: crypto.randomUUID() });
-    await learnerStore.createAssessmentAttempt(subject, { attempt });
+    const created = await learnerStore.createAssessmentAttempt(subject, { attempt, programId: bundle.course.extensions?.credentialPath ?? null });
+    attempt = { ...attempt, ...created };
   }
   return { status: 200, body: safeAttemptView(bundle, attempt, { resumed }) };
 }
@@ -189,10 +218,16 @@ export async function getCourseAssessmentAttemptStatus({ learnerStore, subject, 
       status: 200,
       body: {
         course: { id: bundle.course.id, title: bundle.course.title, version: bundle.course.version },
+        learner: {
+          learnerReference: attempt.learnerReference ?? null,
+          applicationReference: attempt.applicationReference ?? null,
+          certificateName: attempt.certificateName ?? null
+        },
         attempt: {
           id: attempt.id,
           status: attempt.status,
           startedAt: attempt.startedAt ?? null,
+          expiresAt: attempt.expiresAt ?? null,
           submittedAt: attempt.submittedAt ?? null,
           scoredAt: attempt.scoredAt ?? null
         },
@@ -201,13 +236,23 @@ export async function getCourseAssessmentAttemptStatus({ learnerStore, subject, 
       }
     };
   }
-  return { status: 200, body: { ...safeAttemptView(bundle, attempt, { resumed: true }), editable: true } };
+  const expired = attemptExpired(attempt);
+  return {
+    status: 200,
+    body: {
+      ...safeAttemptView(bundle, attempt, { resumed: true }),
+      editable: !expired,
+      expired,
+      finalizeRequired: expired
+    }
+  };
 }
 
-export async function saveCourseAssessmentResponses({ learnerStore, subject, attemptId, responses }) {
+export async function saveCourseAssessmentResponses({ learnerStore, subject, attemptId, responses, now = new Date().toISOString() }) {
   const attempt = await learnerStore.getAssessmentAttempt(subject, { attemptId });
   if (!attempt) return { status: 404, body: { error: 'assessment-attempt-not-found' } };
   if (attempt.status !== 'started') return { status: 409, body: { error: 'assessment-attempt-not-editable', status: attempt.status } };
+  if (attemptExpired(attempt, now)) return { status: 409, body: { error: 'assessment-time-expired', expiresAt: attempt.expiresAt } };
   const assessment = loadById('assessments', attempt.assessmentId);
   if (!assessment?.extensions?.courseId) return { status: 409, body: { error: 'course-assessment-not-released' } };
   const bundle = loadPublishedCourseAssessment(assessment.extensions.courseId);
@@ -241,6 +286,11 @@ export async function saveCourseAssessmentResponses({ learnerStore, subject, att
 function resultView(bundle, attempt, competencyRows) {
   return {
     course: { id: bundle.course.id, title: bundle.course.title },
+    learner: {
+      learnerReference: attempt.learnerReference ?? null,
+      applicationReference: attempt.applicationReference ?? null,
+      certificateName: attempt.certificateName ?? null
+    },
     assessment: {
       id: bundle.assessment.id,
       title: bundle.assessment.title,
@@ -251,6 +301,7 @@ function resultView(bundle, attempt, competencyRows) {
       id: attempt.id,
       status: attempt.status,
       startedAt: attempt.startedAt,
+      expiresAt: attempt.expiresAt ?? null,
       submittedAt: attempt.submittedAt,
       scoredAt: attempt.scoredAt,
       scorePercent: Number(attempt.scorePercent),
@@ -295,8 +346,9 @@ export async function submitCourseAssessment({ learnerStore, subject, attemptId,
   ensureAttemptMatchesPackage(attempt, bundle);
   if (attempt.status === 'scored') return { status: 200, body: resultView(bundle, attempt, competencyRowsFromScoredAttempt(attempt)) };
   if (attempt.status !== 'started') return { status: 409, body: { error: 'assessment-attempt-not-submittable', status: attempt.status } };
+  const expired = attemptExpired(attempt, now);
   try {
-    const scored = scorePersistedCourseAssessment({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank, now });
+    const scored = scorePersistedCourseAssessment({ assessment: bundle.assessment, attempt, itemBank: bundle.itemBank, now, allowIncomplete: expired });
     const saved = await learnerStore.saveAssessmentScore(subject, { attempt: scored.attempt });
     return { status: 200, body: resultView(bundle, saved, scored.competencyResults) };
   } catch (error) {

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-001-005",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-001-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A report says '18 seeds germinated' but omits how many seeds were started. What is missing?",
+  "choices": [
+    "The denominator needed to interpret germination percentage.",
+    "A pesticide record.",
+    "A flowering-stage record.",
+    "A CO2 setpoint."
+  ],
+  "correct": 0,
+  "rationale": "The denominator needed to interpret germination percentage.",
+  "references": [
+    "REF-HEMP-GERMINATION-TEMP-2022"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-001",
+    "seedBank": true
+  }
+}

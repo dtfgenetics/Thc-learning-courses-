@@ -1,0 +1,23 @@
+{
+  "id": "ITEM-POSTHARVEST-020",
+  "version": 1,
+  "status": "draft",
+  "purpose": "formative",
+  "competency": "COMP-POSTHARVEST-001",
+  "objective": "LO-POSTHARVEST-DRY-002",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "One rack loses mass much faster than the others while room-average RH appears stable. What should be investigated?",
+  "choices": [
+    "Local airflow, loading and microclimate at that rack",
+    "Only the harvest date",
+    "Whether all samples have the same name",
+    "Nothing, because the room average is normal"
+  ],
+  "correct": 0,
+  "rationale": "Local airflow and load geometry can create drying differences that a room average does not reveal.",
+  "references": [
+    "REF-POSTHARVEST-001"
+  ]
+}

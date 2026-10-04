@@ -7,6 +7,33 @@ const exists = (rel) => fs.existsSync(path.join(root, rel));
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
 const listDir = (rel) => exists(rel) ? fs.readdirSync(path.join(root, rel)) : [];
 
+const hasCanonicalDeploymentEvidence = ({ courseId, courseNumber }) => {
+  const perCourse = `registry/course${courseNumber}-deployment-evidence.json`;
+  if (exists(perCourse)) {
+    const evidence = readJson(perCourse);
+    return evidence.courseId === courseId &&
+      evidence.publicRouteReadbackVerified === true &&
+      evidence.representativeLessonReadbackVerified === true &&
+      evidence.representativeAssessmentReadbackVerified === true &&
+      evidence.trainingCredentialBoundaryObserved === true &&
+      evidence.machineSurfaceQaVerified === true &&
+      evidence.curriculumSourceShaPinnedByDeployment === true;
+  }
+
+  if (!exists('registry/deployments.json')) return false;
+  const deploymentRegistry = readJson('registry/deployments.json');
+  return (deploymentRegistry.deployments ?? []).some((record) => {
+    const ids = [
+      ...(record.courseId ? [record.courseId] : []),
+      ...(Array.isArray(record.courseIds) ? record.courseIds : [])
+    ];
+    return record.environment === 'production' &&
+      record.result === 'success' &&
+      ids.includes(courseId);
+  });
+};
+
+
 const programId = 'CREDPROG-CULT-TECH-I-001';
 const program = readJson(`content/credential-programs/${programId}.json`);
 
@@ -116,7 +143,8 @@ const categorySpecs = [
     key: 'deploymentEvidence',
     label: 'public deployment/release evidence',
     stage: 'deployment',
-    test: ({ docsDir }) =>
+    test: ({ docsDir, courseId, courseNumber }) =>
+      hasCanonicalDeploymentEvidence({ courseId, courseNumber }) ||
       exists(`${docsDir}/RELEASE-EVIDENCE.md`) ||
       exists(`${docsDir}/PUBLIC-DEPLOYMENT-EVIDENCE.md`) ||
       exists(`${docsDir}/FINAL-RELEASE-REPORT.md`)
@@ -179,7 +207,7 @@ if (args.has('--human')) {
   console.log(`Source packages complete: ${result.summary.sourcePackageComplete}/${result.summary.courses}`);
   console.log(`Deployment evidence verified: ${result.summary.deploymentVerified}/${result.summary.courses}`);
   console.log(`Full machine packages complete: ${result.summary.fullMachinePackageComplete}/${result.summary.courses}`);
-  console.log('Human validation remains open. This report does not grant academic approval or professional credential issuance.');
+  console.log('Human/professional validation remains open. Academic publication status is read independently from course lifecycle; deployment evidence does not authorize professional credential issuance.');
 } else {
   console.log(JSON.stringify(result, null, 2));
 }

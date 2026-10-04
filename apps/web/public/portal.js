@@ -42,9 +42,14 @@ function syncCatalogViewport() {
 function renderWelcome() {
   const card = document.createElement('div');
   card.className = 'welcome-card';
-  card.append(text('p', 'Start here', 'eyebrow'));
-  card.append(text('h2', 'Choose a lesson'));
-  card.append(text('p', 'Select a course and lesson from the catalog. You can also review credential progress, use the learning calculators, or verify an Academy credential.'));
+  card.append(text('p', 'Recommended next step', 'eyebrow'));
+  card.append(text('h2', 'Start with Cultivation Technician I'));
+  card.append(text('p', 'Begin with Course 1 if you are new to the Academy, or continue from the course outline. The pathway builds plant science, practical reasoning and cultivation skill in sequence.'));
+  const start = document.createElement('a');
+  start.className = 'academy-primary-action';
+  start.href = '?course=COURSE-LH-TECH1-001';
+  start.textContent = 'Open Course 1';
+  card.append(start);
   lessonView.replaceChildren(card);
   lessonView.focus();
 }
@@ -171,6 +176,197 @@ function evidenceList(title, rows, idKey) {
   return section;
 }
 
+
+function assessmentBlockerLabel(value) {
+  return String(value ?? 'assessment unavailable').replaceAll('-', ' ');
+}
+
+function secureAssessmentQuestion(item, credentialId, attemptId, statusNode) {
+  const fieldset = document.createElement('fieldset');
+  fieldset.className = 'secure-assessment-item';
+  fieldset.append(text('legend', item.prompt ?? 'Credential assessment question'));
+  if (item.competency) fieldset.append(text('p', item.competency, 'secure-assessment-competency'));
+
+  const mode = String(item.presentation?.mode ?? 'single-select');
+  const current = item.response;
+  const save = async (responseValue) => {
+    statusNode.textContent = 'Saving answer…';
+    const endpoint = '/api/v1/me/credentials/' + encodeURIComponent(credentialId) + '/assessment-attempts/' + encodeURIComponent(attemptId) + '/responses';
+    const response = await fetch(endpoint, {
+      method: 'PUT',
+      headers: { accept: 'application/json', 'content-type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ responses: [{ itemId: item.id, itemVersion: item.revision, response: responseValue }] })
+    });
+    const body = await response.json().catch(() => ({}));
+    statusNode.textContent = response.ok ? 'Answer saved.' : (body.detail || body.error || 'Answer not saved.');
+  };
+
+  if (mode === 'numeric') {
+    const label = document.createElement('label');
+    label.className = 'portal-input-row';
+    label.append(text('span', 'Your answer'));
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.inputMode = 'decimal';
+    input.value = current ?? '';
+    input.addEventListener('change', () => {
+      if (input.value === '') return;
+      save(Number(input.value));
+    });
+    label.append(input);
+    fieldset.append(label);
+    return fieldset;
+  }
+
+  const choices = Array.isArray(item.choices) ? item.choices : [];
+  const selected = mode === 'multiple-select' && Array.isArray(current) ? new Set(current.map(Number)) : null;
+  const group = document.createElement('div');
+  group.className = 'secure-assessment-choices';
+  choices.forEach((choice, index) => {
+    const label = document.createElement('label');
+    label.className = 'secure-assessment-choice';
+    const input = document.createElement('input');
+    input.type = mode === 'multiple-select' ? 'checkbox' : 'radio';
+    input.name = 'secure-' + attemptId + '-' + item.id;
+    input.value = String(index);
+    input.checked = mode === 'multiple-select' ? selected?.has(index) === true : Number(current) === index;
+    input.addEventListener('change', () => {
+      if (mode === 'multiple-select') {
+        const values = [...group.querySelectorAll('input:checked')].map((node) => Number(node.value));
+        save(values);
+      } else if (input.checked) {
+        save(index);
+      }
+    });
+    label.append(input, text('span', choice));
+    group.append(label);
+  });
+  fieldset.append(group);
+  return fieldset;
+}
+
+function renderSecureAssessmentAttempt(host, credentialId, title, payload) {
+  host.replaceChildren();
+  host.append(text('h4', title + ' protected credential assessment'));
+  const attempt = payload.attempt ?? {};
+  const assessment = payload.assessment ?? {};
+  const items = payload.items ?? [];
+  const meta = document.createElement('div');
+  meta.className = 'portal-progress-summary compact';
+  meta.append(
+    summaryCard('Attempt', attempt.status ?? 'started', attempt.id ?? ''),
+    summaryCard('Questions', String(assessment.totalItems ?? items.length), 'Answers are marked independently; grading happens after submission.'),
+    summaryCard('Time limit', String(assessment.timeLimitMinutes ?? '—') + ' min', 'Server-enforced')
+  );
+  host.append(meta);
+
+  const timer = text('p', '', 'secure-assessment-timer');
+  const saveStatus = text('p', '', 'portal-result-note');
+  host.append(timer, saveStatus);
+  let timerId = null;
+  const updateTimer = () => {
+    if (!attempt.expiresAt) {
+      timer.textContent = 'Timer unavailable.';
+      return;
+    }
+    const remaining = Date.parse(attempt.expiresAt) - Date.now();
+    if (remaining <= 0) {
+      timer.textContent = 'Time expired. Submit now to record the timed attempt.';
+      if (timerId) clearInterval(timerId);
+      return;
+    }
+    const totalSeconds = Math.ceil(remaining / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = String(totalSeconds % 60).padStart(2, '0');
+    timer.textContent = 'Time remaining: ' + minutes + ':' + seconds;
+  };
+  updateTimer();
+  timerId = setInterval(updateTimer, 1000);
+
+  const form = document.createElement('form');
+  form.className = 'secure-assessment-form';
+  for (const item of items) form.append(secureAssessmentQuestion(item, credentialId, attempt.id, saveStatus));
+
+  const actions = document.createElement('div');
+  actions.className = 'record-actions';
+  const submit = text('button', 'Submit credential assessment for grading', 'record-button secure-assessment-submit');
+  submit.type = 'button';
+  submit.addEventListener('click', async () => {
+    submit.disabled = true;
+    saveStatus.textContent = 'Submitting for server grading…';
+    const endpoint = '/api/v1/me/credentials/' + encodeURIComponent(credentialId) + '/assessment-attempts/' + encodeURIComponent(attempt.id) + '/submit';
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { accept: 'application/json' },
+      credentials: 'same-origin'
+    });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      saveStatus.textContent = body.error === 'assessment-incomplete'
+        ? 'Assessment incomplete: ' + String(body.unanswered ?? 'some') + ' unanswered question(s).'
+        : (body.error || 'Assessment could not be submitted.');
+      submit.disabled = false;
+      return;
+    }
+    if (timerId) clearInterval(timerId);
+    form.remove();
+    actions.remove();
+    timer.remove();
+    const result = body.attempt ?? {};
+    const score = Number(result.scorePercent ?? 0).toFixed(0);
+    host.append(text('p', result.passed ? 'Passed with ' + score + '%.' : 'Score: ' + score + '%. Standard not yet met.', result.passed ? 'portal-result-note status-passed' : 'portal-result-note'));
+    if (body.remediation?.message) host.append(text('p', body.remediation.message, 'portal-result-note'));
+  });
+  actions.append(submit);
+  form.append(actions);
+  host.append(form);
+}
+
+function buildSecureCredentialAssessmentPanel({ credentialId, title, progress }) {
+  const section = document.createElement('section');
+  section.className = 'credential-assessment-panel';
+  section.setAttribute('aria-label', title + ' protected credential assessment');
+  section.append(text('h4', 'Protected credential assessment'));
+  section.append(text('p', 'Operational questions stay in the private assessment store. Select answers independently; answer keys and rationales are never sent to this browser.', 'portal-result-note'));
+  const status = text('p', '', 'portal-result-note');
+  const launch = text('button', 'Begin or resume credential assessment', 'record-button secure-assessment-launch');
+  launch.type = 'button';
+  launch.addEventListener('click', async () => {
+    launch.disabled = true;
+    status.textContent = 'Checking credential assessment readiness…';
+    const endpoint = '/api/v1/me/credentials/' + encodeURIComponent(credentialId) + '/assessment-attempts';
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { accept: 'application/json' },
+      credentials: 'same-origin'
+    });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const blockers = Array.isArray(body.blockers) ? body.blockers.map(assessmentBlockerLabel) : [];
+      if (response.status === 409 && blockers.length) {
+        status.textContent = 'Not yet authorized: ' + blockers.join(', ') + '.';
+      } else if (body.retryAfter) {
+        status.textContent = assessmentBlockerLabel(body.error) + '. Retry after ' + new Date(body.retryAfter).toLocaleString() + '.';
+      } else {
+        status.textContent = assessmentBlockerLabel(body.error || ('assessment unavailable (' + response.status + ')'));
+      }
+      launch.disabled = false;
+      return;
+    }
+    renderSecureAssessmentAttempt(section, credentialId, title, body);
+  });
+
+  const assessmentAttempts = progress?.assessmentAttempts ?? [];
+  const scored = assessmentAttempts.filter((row) => row.status === 'scored' && row.scorePercent != null);
+  if (scored.length) {
+    const best = scored.reduce((value, row) => Math.max(value, Number(row.scorePercent)), 0);
+    status.textContent = 'Recorded credential assessment best score: ' + best.toFixed(0) + '%.';
+  }
+  section.append(launch, status);
+  return section;
+}
+
 async function renderCredentialProgress() {
   setActive('tab-progress');
   if (compactCatalog?.matches) setCatalogExpanded(false);
@@ -178,18 +374,38 @@ async function renderCredentialProgress() {
   panel.className = 'portal-panel';
   panel.append(text('p', 'Private learner record', 'eyebrow'));
   panel.append(text('h2', 'My Learning Dashboard'));
-  panel.append(text('p', 'Review your academic enrollment, current Course 1 completion, and professional credential evidence in one place. Academic course completion and professional credential issuance remain separate.', 'lede'));
+  panel.append(text('p', 'Review your enrolled academic courses, graded-final progress, certification applications, and professional credential evidence in one place. Academic course completion and professional credential issuance remain separate.', 'lede'));
   panel.append(text('p', 'Loading learner records…', 'status'));
   lessonView.replaceChildren(panel);
   lessonView.focus();
 
   try {
-    const [enrollmentResponse, courseCompletionResponse, progressResponse, transcriptResponse] = await Promise.all([
+    const [profileResponse, applicationsResponse, enrollmentResponse, catalogResponse, issuedCredentialsResponse, tech1ProgressResponse, tech1TranscriptResponse, progressResponse, transcriptResponse] = await Promise.all([
+      fetch('/api/v1/me/profile', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/applications', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
       fetch('/api/v1/me/enrollments', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
       }),
-      fetch(`/api/v1/me/courses/${COURSE1_ID}/completion`, {
+      fetch('/api/catalog', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-I-001/progress', {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      }),
+      fetch('/api/v1/me/credentials/CRED-CULT-TECH-I-001/transcript', {
         headers: { accept: 'application/json' },
         credentials: 'same-origin'
       }),
@@ -202,13 +418,24 @@ async function renderCredentialProgress() {
         credentials: 'same-origin'
       })
     ]);
+    if (!profileResponse.ok || !applicationsResponse.ok) {
+      if ([profileResponse.status, applicationsResponse.status].some((status) => status === 401 || status === 403)) throw new Error('Learner identity and application records are available after learner authentication.');
+      throw new Error('Learner identity/application records are unavailable.');
+    }
     if (!enrollmentResponse.ok) {
       if (enrollmentResponse.status === 401 || enrollmentResponse.status === 403) throw new Error('Learner dashboard is available after learner authentication.');
       throw new Error(`Enrollment status unavailable (${enrollmentResponse.status}).`);
     }
-    if (!courseCompletionResponse.ok) {
-      if (courseCompletionResponse.status === 401 || courseCompletionResponse.status === 403) throw new Error('Course completion is available after learner authentication.');
-      throw new Error(`Course completion unavailable (${courseCompletionResponse.status}).`);
+    if (!catalogResponse.ok) throw new Error(`Course catalog unavailable (${catalogResponse.status}).`);
+    if (!issuedCredentialsResponse.ok) {
+      if (issuedCredentialsResponse.status === 401 || issuedCredentialsResponse.status === 403) throw new Error('Issued certificates are available after learner authentication.');
+      throw new Error(`Issued credential records unavailable (${issuedCredentialsResponse.status}).`);
+    }
+    for (const [response, label] of [[tech1ProgressResponse, 'Technician I credential progress'], [tech1TranscriptResponse, 'Technician I competency transcript']]) {
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403) throw new Error(`${label} is available after learner authentication.`);
+        throw new Error(`${label} unavailable (${response.status}).`);
+      }
     }
     if (!progressResponse.ok) {
       if (progressResponse.status === 401 || progressResponse.status === 403) throw new Error('Account credential progress is available after learner authentication. Local preview completion is not official credential evidence.');
@@ -218,32 +445,236 @@ async function renderCredentialProgress() {
       if (transcriptResponse.status === 401 || transcriptResponse.status === 403) throw new Error('Competency transcript is available after learner authentication.');
       throw new Error(`Competency transcript unavailable (${transcriptResponse.status}).`);
     }
+    const profileData = await profileResponse.json();
+    const applicationsData = await applicationsResponse.json();
     const enrollmentData = await enrollmentResponse.json();
-    const courseCompletion = await courseCompletionResponse.json();
+    const catalogData = await catalogResponse.json();
+    const issuedCredentialsData = await issuedCredentialsResponse.json();
+    const tech1Data = await tech1ProgressResponse.json();
+    const tech1TranscriptData = await tech1TranscriptResponse.json();
     const data = await progressResponse.json();
     const transcriptData = await transcriptResponse.json();
     panel.querySelector('.status')?.remove();
 
-    const courseEnrollment = (enrollmentData.enrollments ?? []).find((row) => row.courseId === COURSE1_ID && String(row.courseVersion) === String(courseCompletion.course?.version));
-    const academicSummary = document.createElement('section');
-    academicSummary.className = 'portal-progress-summary';
-    academicSummary.setAttribute('aria-label', 'Academic course summary');
-    const instruction = courseCompletion.instruction ?? {};
-    const completedModules = (instruction.modules ?? []).filter((row) => row.complete === true).length;
-    academicSummary.append(
-      summaryCard('Course 1 enrollment', courseEnrollment ? statusLabel(courseEnrollment.status) : 'Not enrolled', courseCompletion.course?.title ?? COURSE1_TITLE),
-      summaryCard('Lesson completion', `${instruction.completedLessonCount ?? 0}/${instruction.requiredLessonCount ?? 0}`, `${instruction.completionPercent ?? 0}% of canonical instruction`),
-      summaryCard('Modules complete', `${completedModules}/${(instruction.modules ?? []).length}`, 'Derived from authoritative lesson progress'),
-      summaryCard('Course final', statusLabel(courseCompletion.finalAssessment?.status), 'Academic course assessment'),
-      summaryCard('Course practical', statusLabel(courseCompletion.performanceAssessment?.status), 'Academic practical evidence')
-    );
-    panel.append(text('h3', 'Academic course status'), academicSummary);
-    if (courseCompletion.complete === true) {
-      panel.append(text('p', 'Course 1 academic requirements are complete. This does not by itself issue or authorize a professional credential.', 'portal-result-note'));
-    } else {
-      const remaining = (courseCompletion.missingRequirements ?? []).map(statusLabel);
-      panel.append(text('p', remaining.length ? `Course 1 requirements still open: ${remaining.join(', ')}.` : 'Course 1 academic requirements are still in progress.', 'portal-result-note'));
+    const profile = profileData.profile ?? {};
+    const applications = applicationsData.applications ?? [];
+    const applicationPrograms = [
+      { id: 'CREDPROG-CULT-TECH-I-001', title: 'Technician I' },
+      { id: 'CREDPROG-CULT-TECH-II-001', title: 'Technician II' }
+    ];
+    const activeApplications = new Map(applicationPrograms.map((program) => [
+      program.id,
+      applications.find((row) => row.programId === program.id && row.status === 'active') ?? null
+    ]));
+    const identitySection = document.createElement('section');
+    identitySection.className = 'portal-progress-section learner-identity-section';
+    identitySection.append(text('h3', 'Learner identity & certification application'));
+    const identitySummary = document.createElement('div');
+    identitySummary.className = 'portal-progress-summary';
+    identitySummary.append(summaryCard('Learner reference', profile.learnerReference ?? 'Not assigned', 'Private learner-account reference'));
+    for (const program of applicationPrograms) {
+      const application = activeApplications.get(program.id);
+      identitySummary.append(summaryCard(`${program.title} application`, application?.applicationReference ?? 'Not created', application ? 'Active certification application' : 'Create before beginning credential-bearing finals'));
     }
+    identitySummary.append(summaryCard('Certificate name', profile.certificateName || 'Not set', 'Printed exactly as saved after credential issuance'));
+    identitySection.append(identitySummary);
+    const identityForm = document.createElement('form');
+    identityForm.className = 'learner-identity-form';
+    const nameLabel = document.createElement('label');
+    nameLabel.className = 'portal-input-row';
+    nameLabel.append(text('span', 'Name to print on certificate'));
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.maxLength = 120;
+    nameInput.autocomplete = 'name';
+    nameInput.value = profile.certificateName ?? profile.displayName ?? '';
+    nameLabel.append(nameInput);
+    const identityActions = document.createElement('div');
+    identityActions.className = 'record-actions';
+    const saveName = text('button', 'Save certificate name', 'record-button');
+    saveName.type = 'submit';
+    identityActions.append(saveName);
+    for (const program of applicationPrograms) {
+      if (activeApplications.get(program.id)) continue;
+      const createApplication = text('button', `Create ${program.title} application`, 'record-button');
+      createApplication.type = 'button';
+      createApplication.addEventListener('click', async () => {
+        createApplication.disabled = true;
+        const response = await fetch('/api/v1/me/applications', {
+          method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin',
+          body: JSON.stringify({ programId: program.id })
+        });
+        const body = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          createApplication.disabled = false;
+          createApplication.textContent = body.error || `${program.title} application not created`;
+          return;
+        }
+        activeApplications.set(program.id, body.application);
+        createApplication.textContent = `${program.title}: ${body.application.applicationReference}`;
+        createApplication.disabled = true;
+      });
+      identityActions.append(createApplication);
+    }
+    const identityStatus = text('p', '', 'portal-result-note');
+    identityForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      saveName.disabled = true;
+      identityStatus.textContent = 'Saving…';
+      const response = await fetch('/api/v1/me/profile', {
+        method: 'PUT', headers: { accept: 'application/json', 'content-type': 'application/json' }, credentials: 'same-origin',
+        body: JSON.stringify({ displayName: profile.displayName ?? nameInput.value, certificateName: nameInput.value })
+      });
+      const body = await response.json().catch(() => ({}));
+      if (!response.ok) { identityStatus.textContent = body.error || 'Name not saved.'; saveName.disabled = false; return; }
+      identityStatus.textContent = `Saved for certificate printing as ${body.profile.certificateName}.`;
+      saveName.disabled = false;
+    });
+    identityForm.append(nameLabel, identityActions, identityStatus);
+    identitySection.append(identityForm);
+    panel.append(identitySection);
+
+    const issuedCredentialsSection = document.createElement('section');
+    issuedCredentialsSection.className = 'portal-progress-section learner-issued-credentials';
+    issuedCredentialsSection.append(text('h3', 'Issued certificates'));
+    const issuedRecords = issuedCredentialsData.credentials ?? [];
+    if (!issuedRecords.length) {
+      issuedCredentialsSection.append(text('p', 'No issued professional credential is recorded for this learner account yet.', 'portal-result-note'));
+    } else {
+      const issuedList = document.createElement('div');
+      issuedList.className = 'portal-course-record-list';
+      for (const record of issuedRecords) {
+        const card = document.createElement('article');
+        card.className = 'portal-course-record portal-issued-credential';
+        card.append(text('h4', record.credential?.title ?? record.credential?.id ?? 'THC Academy Credential'));
+        const issuedMeta = document.createElement('div');
+        issuedMeta.className = 'portal-progress-summary compact';
+        issuedMeta.append(
+          summaryCard('Status', statusLabel(record.status), record.verificationId ?? ''),
+          summaryCard('Certificate name', record.recipient?.certificateName ?? 'Not recorded', record.recipient?.learnerReference ?? ''),
+          summaryCard('Issued', record.issuedAt ? new Date(record.issuedAt).toLocaleDateString() : 'Not recorded', record.recipient?.applicationReference ?? '')
+        );
+        card.append(issuedMeta);
+        if (['issued','valid'].includes(record.status)) {
+          const print = text('button', 'Print certificate', 'record-button portal-certificate-print');
+          print.type = 'button';
+          print.addEventListener('click', () => printVerifiedCertificate(record));
+          card.append(print);
+        }
+        issuedList.append(card);
+      }
+      issuedCredentialsSection.append(issuedList);
+    }
+    panel.append(issuedCredentialsSection);
+
+    const enrolledCourseIds = new Set((enrollmentData.enrollments ?? []).map((row) => row.courseId));
+    const academicCourses = (catalogData.courses ?? []).filter((course) =>
+      course.status === 'published' &&
+      course.credentialBearing === true &&
+      enrolledCourseIds.has(course.id)
+    );
+    const completionResults = await Promise.all(academicCourses.map(async (course) => {
+      if (!course.finalAssessment) return { course, integratedPerformance: true };
+      const response = await fetch(`/api/v1/me/courses/${encodeURIComponent(course.id)}/completion`, {
+        headers: { accept: 'application/json' },
+        credentials: 'same-origin'
+      });
+      if (!response.ok) return { course, unavailable: true, status: response.status };
+      return { course, completion: await response.json() };
+    }));
+
+    const academicSection = document.createElement('section');
+    academicSection.className = 'portal-progress-section';
+    academicSection.append(text('h3', 'Academic course status'));
+    if (!completionResults.length) {
+      academicSection.append(text('p', 'No enrolled credential-path academic course is recorded yet.', 'portal-result-note'));
+    } else {
+      const courseList = document.createElement('div');
+      courseList.className = 'portal-course-record-list';
+      for (const result of completionResults) {
+        const row = document.createElement('article');
+        row.className = 'portal-course-record';
+        row.append(text('h4', result.course.title));
+        const enrollment = (enrollmentData.enrollments ?? []).find((item) => item.courseId === result.course.id && String(item.courseVersion) === String(result.course.version));
+        if (result.integratedPerformance) {
+          row.append(text('p', 'Integrated performance lab: this course intentionally has no ordinary final. Completion depends on its mapped practical/capstone evidence and remains separate from professional credential issuance.', 'portal-result-note'));
+          const integratedStats = document.createElement('div');
+          integratedStats.className = 'portal-progress-summary compact';
+          integratedStats.append(
+            summaryCard('Enrollment', enrollment ? statusLabel(enrollment.status) : 'Not enrolled', `Course v${result.course.version}`),
+            summaryCard('Assessment model', 'Integrated performance', 'No redundant conventional final'),
+            summaryCard('Credential issuance', 'Separate', 'Professional release gates remain fail-closed')
+          );
+          row.append(integratedStats);
+          courseList.append(row);
+          continue;
+        }
+        if (result.unavailable) {
+          row.append(text('p', `Completion record unavailable (${result.status}).`, 'portal-result-note'));
+          courseList.append(row);
+          continue;
+        }
+        const completion = result.completion;
+        const instruction = completion.instruction ?? {};
+        const stats = document.createElement('div');
+        stats.className = 'portal-progress-summary compact';
+        stats.append(
+          summaryCard('Enrollment', enrollment ? statusLabel(enrollment.status) : 'Not enrolled', `Course v${completion.course?.version ?? result.course.version}`),
+          summaryCard('Lessons', `${instruction.completedLessonCount ?? 0}/${instruction.requiredLessonCount ?? 0}`, `${instruction.completionPercent ?? 0}% complete`),
+          summaryCard('Final', statusLabel(completion.finalAssessment?.status), 'Server-graded academic assessment'),
+          summaryCard('Academic practical', statusLabel(completion.performanceAssessment?.status), completion.performanceAssessment?.status === 'not-required' ? 'Not required for this course' : 'Separate academic performance evidence')
+        );
+        row.append(stats);
+        if (completion.complete === true) {
+          row.append(text('p', 'Academic requirements complete. This does not by itself issue or authorize a professional credential.', 'portal-result-note'));
+        } else {
+          const remaining = (completion.missingRequirements ?? []).map(statusLabel);
+          row.append(text('p', remaining.length ? `Requirements still open: ${remaining.join(', ')}.` : 'Academic requirements are still in progress.', 'portal-result-note'));
+        }
+        courseList.append(row);
+      }
+      academicSection.append(courseList);
+    }
+    panel.append(academicSection);
+
+    const tech1Summary = document.createElement('section');
+    tech1Summary.className = 'portal-progress-section credential-program-summary';
+    tech1Summary.append(text('h3', 'Technician I professional credential progress'));
+    const tech1Cards = document.createElement('div');
+    tech1Cards.className = 'portal-progress-summary';
+    const tech1Attempts = tech1Data.assessmentAttempts ?? [];
+    const tech1BestScore = tech1Attempts.filter((row) => row.status === 'scored' && row.scorePercent != null).reduce((best, row) => Math.max(best, Number(row.scorePercent)), -1);
+    const tech1CoursesRequired = tech1Data.credential?.requiredCourses ?? [];
+    const tech1MissingCourses = (tech1Data.eligibility?.missingRequirements ?? []).filter((row) => row.type === 'course-completion').length;
+    const tech1CoursesComplete = Math.max(0, tech1CoursesRequired.length - tech1MissingCourses);
+    const tech1PerformancePassed = (tech1Data.performanceAssessments ?? []).filter((row) => row.status === 'passed' && Number(row.criticalErrorCount ?? 0) === 0).length;
+    const tech1Demonstrated = (tech1TranscriptData.competencies ?? []).filter((row) => row.masteryLevel === 'demonstrated').length;
+    const tech1ReleasePending = tech1Data.eligibility?.requirementsSatisfied === true && tech1Data.eligibility?.releaseAuthorized === false;
+    const tech1CredentialStatus = tech1Data.eligibility?.eligible ? 'Eligible' : tech1ReleasePending ? 'Release pending' : 'In progress';
+    tech1Cards.append(
+      summaryCard('Credential status', tech1CredentialStatus, tech1Data.credential?.title ?? 'THC Cultivation Technician I'),
+      summaryCard('Required courses', `${tech1CoursesComplete}/${tech1CoursesRequired.length}`, 'All seven Technician I courses are required'),
+      summaryCard('Credential assessment', tech1BestScore >= 0 ? `${tech1BestScore.toFixed(0)}%` : 'Not attempted', `Current configured threshold ${tech1Data.credential?.minimumPassingScorePercent ?? 80}%`),
+      summaryCard('Practical & capstone evidence', `${tech1PerformancePassed}/${(tech1Data.performanceAssessments ?? []).length}`, 'Practicals A–F plus integrated capstone'),
+      summaryCard('Competencies demonstrated', String(tech1Demonstrated), `${(tech1TranscriptData.competencies ?? []).length} transcript records`)
+    );
+    tech1Summary.append(tech1Cards);
+    if (!(tech1Data.eligibility?.eligible)) {
+      const tech1Blockers = document.createElement('div');
+      tech1Blockers.className = 'portal-blockers';
+      tech1Blockers.append(text('h4', 'Technician I requirements still open'));
+      const tech1List = document.createElement('ul');
+      for (const row of tech1Data.eligibility?.missingRequirements ?? []) {
+        const humanType = row.type === 'assessment' ? 'Credential assessment' : row.type === 'performance-assessment' ? 'Practical/capstone' : row.type === 'course-completion' ? 'Course completion' : 'Portfolio artifact';
+        tech1List.append(text('li', `${humanType}: ${row.id} — ${statusLabel(row.reason)}`));
+      }
+      for (const row of tech1Data.eligibility?.releaseBlockers ?? []) tech1List.append(text('li', `Credential release: ${statusLabel(row.reason)}`));
+      if (!tech1List.children.length) tech1List.append(text('li', 'No unresolved Technician I requirement details are available.'));
+      tech1Blockers.append(tech1List);
+      tech1Summary.append(tech1Blockers);
+    }
+    tech1Summary.append(buildSecureCredentialAssessmentPanel({ credentialId: 'CRED-CULT-TECH-I-001', title: 'Technician I', progress: tech1Data }));
+    panel.append(tech1Summary);
 
     const summary = document.createElement('section');
     summary.className = 'portal-progress-summary';
@@ -264,7 +695,8 @@ async function renderCredentialProgress() {
       summaryCard('Performance evidence', `${performancePassed}/${(data.performanceAssessments ?? []).length}`, '7 practicals + capstone'),
       summaryCard('Portfolio evidence', `${portfolioComplete}/${(data.portfolioArtifacts ?? []).length}`, 'Employment artifacts')
     );
-    panel.append(text('h3', 'Professional credential progress'), summary);
+    panel.append(text('h3', 'Technician II professional credential progress'), summary);
+    panel.append(buildSecureCredentialAssessmentPanel({ credentialId: 'CRED-CULT-TECH-II-001', title: 'Technician II', progress: data }));
 
     if (!(data.eligibility?.eligible)) {
       const blocker = document.createElement('section');
@@ -504,7 +936,91 @@ async function renderDownloads() {
   }
 }
 
-function renderVerify() {
+function credentialVerificationUrl(verificationId) {
+  const url = new URL(window.location.href);
+  url.hash = '';
+  url.search = '';
+  url.searchParams.set('verify', String(verificationId));
+  return url.toString();
+}
+
+function appendCredentialQr(target, verificationId) {
+  const QR = globalThis.QRCode;
+  if (!QR || !verificationId) return null;
+  const wrap = document.createElement('div');
+  wrap.className = 'print-certificate-qr';
+  wrap.setAttribute('aria-label', 'QR code for public credential verification');
+  const code = document.createElement('div');
+  code.className = 'print-certificate-qr-code';
+  const caption = text('span', 'Scan to verify', 'print-certificate-qr-caption');
+  wrap.append(code, caption);
+  target.append(wrap);
+  try {
+    new QR(code, {
+      text: credentialVerificationUrl(verificationId),
+      width: 128,
+      height: 128,
+      correctLevel: QR.CorrectLevel?.M
+    });
+    return wrap;
+  } catch {
+    wrap.remove();
+    return null;
+  }
+}
+
+function printVerifiedCertificate(record) {
+  if (!record?.verificationId || record.valid !== true || !['issued','valid'].includes(record.status)) return;
+  const certificate = document.createElement('section');
+  certificate.className = 'print-certificate';
+  certificate.setAttribute('aria-label', 'Printable THC Academy credential certificate');
+  certificate.append(text('p', 'Teaching Healthy Cultivation', 'print-certificate-brand'));
+  certificate.append(text('p', 'THC Academy', 'print-certificate-academy'));
+  certificate.append(text('h1', 'Certificate of Credential'));
+  certificate.append(text('p', 'This certifies that', 'print-certificate-copy'));
+  certificate.append(text('h2', record.recipientDisplayName || record.recipient?.certificateName || 'Credential holder', 'print-certificate-name'));
+  certificate.append(text('p', 'has been issued the educational credential', 'print-certificate-copy'));
+  certificate.append(text('h3', record.credential?.title ?? 'THC Academy Credential', 'print-certificate-title'));
+  const meta = document.createElement('dl');
+  const fields = [
+    ['Verification ID', record.verificationId],
+    ['Credential ID', record.credential?.id],
+    ['Status', record.status],
+    ['Issued', record.issuedAt ? new Date(record.issuedAt).toLocaleDateString() : null],
+    ['Expires', record.expiresAt ? new Date(record.expiresAt).toLocaleDateString() : 'No expiration recorded'],
+    ['Issuer', record.issuer?.name]
+  ];
+  for (const [label, value] of fields) {
+    if (!value) continue;
+    const row = document.createElement('div');
+    row.append(text('dt', label), text('dd', value));
+    meta.append(row);
+  }
+  certificate.append(meta);
+  const verifyBlock = document.createElement('div');
+  verifyBlock.className = 'print-certificate-verification';
+  appendCredentialQr(verifyBlock, record.verificationId);
+  const verifyCopy = document.createElement('div');
+  verifyCopy.append(
+    text('p', 'Verify this credential using the QR code or verification ID at the THC Academy credential verification page.', 'print-certificate-verify'),
+    text('p', credentialVerificationUrl(record.verificationId), 'print-certificate-verification-url')
+  );
+  verifyBlock.append(verifyCopy);
+  certificate.append(verifyBlock);
+  certificate.append(text('p', record.disclaimer ?? '', 'print-certificate-disclaimer'));
+  document.body.append(certificate);
+  document.body.classList.add('printing-certificate');
+  const cleanup = () => {
+    document.body.classList.remove('printing-certificate');
+    certificate.remove();
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  window.print();
+  setTimeout(() => { if (certificate.isConnected) cleanup(); }, 1500);
+}
+
+function renderVerify(initialVerificationId = '') {
   setActive('tab-verify');
   if (compactCatalog?.matches) setCatalogExpanded(false);
   const panel = document.createElement('div');
@@ -520,6 +1036,7 @@ function renderVerify() {
   input.placeholder = 'Verification ID';
   input.autocomplete = 'off';
   input.setAttribute('aria-label', 'Credential verification ID');
+  if (initialVerificationId) input.value = String(initialVerificationId).trim();
   const button = document.createElement('button');
   button.type = 'submit';
   button.textContent = 'Verify credential';
@@ -540,7 +1057,8 @@ function renderVerify() {
       const record = await response.json();
       const card = document.createElement('section');
       card.className = 'portal-credential-card';
-      card.append(text('p', `Status: ${record.status ?? 'valid'}`, 'portal-credential-status'));
+      const verificationLabel = record.valid === true ? 'Verified active' : 'Not currently valid';
+      card.append(text('p', `${verificationLabel} · Status: ${record.status ?? 'unknown'}`, `portal-credential-status ${record.valid === true ? 'is-valid' : 'is-invalid'}`));
       card.append(text('h3', record.credential?.title ?? 'THC Academy Credential'));
       const dl = document.createElement('dl');
       const fields = [
@@ -559,6 +1077,12 @@ function renderVerify() {
         dl.append(row);
       }
       card.append(dl);
+      if (record.valid === true && ['issued','valid'].includes(record.status)) {
+        const print = text('button', 'Print certificate', 'record-button portal-certificate-print');
+        print.type = 'button';
+        print.addEventListener('click', () => printVerifiedCertificate(record));
+        card.append(print);
+      }
       if (record.evidenceSummary) {
         card.append(text('p', `Verified evidence: ${record.evidenceSummary.writtenAssessments ?? 0} written assessment(s), ${record.evidenceSummary.performanceAssessments ?? 0} performance assessment(s), ${record.evidenceSummary.portfolioArtifacts ?? 0} portfolio artifact(s).`, 'portal-result-note'));
       }
@@ -573,6 +1097,7 @@ function renderVerify() {
   panel.append(form, result);
   lessonView.replaceChildren(panel);
   lessonView.focus();
+  if (initialVerificationId) window.setTimeout(() => form.requestSubmit(), 0);
 }
 
 catalogToggle?.addEventListener('click', () => {
@@ -603,3 +1128,6 @@ document.querySelector('#tab-progress')?.addEventListener('click', renderCredent
 document.querySelector('#tab-tools')?.addEventListener('click', renderTools);
 document.querySelector('#tab-resources')?.addEventListener('click', renderDownloads);
 document.querySelector('#tab-verify')?.addEventListener('click', renderVerify);
+
+const initialVerificationId = new URLSearchParams(window.location.search).get('verify');
+if (initialVerificationId) renderVerify(initialVerificationId);

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PCS-003-05",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Two operators show different rooting outcomes, but each handled different genotypes. What prevents a strong operator-effect conclusion?",
+  "choices": [
+    "The result is too positive",
+    "Operator and genotype are confounded, so the data do not isolate cause",
+    "Rooting percentage can never be measured",
+    "Only final handoff count matters"
+  ],
+  "correct": 1,
+  "rationale": "Confounding prevents attribution until genotype and other process differences are controlled or stratified.",
+  "references": [
+    "REF-CANNABIS-CLONAL-ROOTING-2019"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-007-019",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CROP-PLAN-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Physical count is 48 and the record count is 50. What should happen before any record correction?",
   "choices": [
-    "Change the record to 48 immediately.",
-    "Create two loss events from memory.",
-    "Verify identity, scope and available transaction/movement evidence and document the discrepancy.",
-    "Ignore the physical count."
+    "Change the record to 48 immediately because the physical count is the current true state.",
+    "Create two loss or movement transactions using the most likely explanation so the genealogy balances before work continues.",
+    "Document the discrepancy and verify identity, scope, source, movement, and transaction evidence before any controlled record correction is made.",
+    "Treat the electronic count as authoritative until an audit formally changes it."
   ],
   "correct": 2,
-  "rationale": "Verify identity, scope and available transaction/movement evidence and document the discrepancy.",
+  "rationale": "A 48-versus-50 mismatch establishes a discrepancy, not its cause. The physical count may be right, the record may be right, or an undocumented movement, loss, counting error, or identity problem may exist. The technician should preserve the mismatch, verify the evidence, and only then route a correction. Editing first risks creating a false explanation.",
   "references": [
     "REF-GS1-GLOBAL-TRACEABILITY"
   ]

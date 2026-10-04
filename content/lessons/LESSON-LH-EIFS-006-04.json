@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-EIFS-006-04",
+  "title": "Preventive Maintenance, Sanitation & Service Boundaries",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-IRRIGATION-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-006-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-SAFETY-OSHA-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Preventive irrigation maintenance should preserve delivery reliability without crossing into unqualified pressure-system, pump, electrical or chemical servicing. Maintenance evidence should be scheduled, traceable and verified by post-service performance.",
+    "vocabulary": [
+      {
+        "term": "Preventive maintenance",
+        "definition": "Planned inspection or service intended to reduce likelihood of irrigation failure."
+      },
+      {
+        "term": "Protected servicing",
+        "definition": "Work involving hazardous energy, disassembly, pressure or other conditions restricted to qualified roles."
+      },
+      {
+        "term": "Post-maintenance verification",
+        "definition": "Controlled measurement confirming that service restored the intended system function."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Filter and emitter care should be evidence-based",
+        "body": "Use maintenance intervals and observed pressure/output behavior rather than waiting for severe crop symptoms before checking system performance.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Chemical sanitation requires controlled methods",
+        "body": "Any chemical flushing or sanitation process must follow approved chemistry, compatibility and worker-safety controls rather than improvised concentrations.",
+        "references": [
+          "REF-SAFETY-OSHA-001"
+        ]
+      },
+      {
+        "title": "Verify after maintenance",
+        "body": "Repeat representative output or pressure checks after service so maintenance completion is not mistaken for restored performance.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Replacing a filter is maintenance evidence; a repeated catch test showing restored zone output is effectiveness evidence."
+    ],
+    "commonMistakes": [
+      "Calling maintenance complete without re-verification.",
+      "Opening pumps or pressure systems beyond authorization.",
+      "Using ad hoc acid or sanitizer flushing."
+    ],
+    "practicalApplication": "Create a preventive-maintenance record with trigger, service, role, safety boundary and post-service verification.",
+    "summary": "Maintenance closes the loop only when restored irrigation performance is measured and documented."
+  }
+}

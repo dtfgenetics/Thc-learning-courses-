@@ -2,7 +2,7 @@
 
 **Course:** Advanced Crop Observation & Diagnostic Reasoning  
 **Version anchor:** 0.2.0  
-**Package status:** authored development support; human review remains open
+**Package status:** published owner-approved academic learner support; human review remains open
 
 ## Learner-use model
 
@@ -104,14 +104,15 @@ Every visual must:
 
 ## Current primary-visual production state
 
-Four outcome-aligned SVG source assets now exist as **review candidates**:
+Course 1 has **4 owner-approved lossless WebP primary visuals** recorded in `visuals/TECH2-RASTER-CANDIDATE-MANIFEST.json`. Learner lessons use the WebP paths under `/assets/tech2/course1/`. Legacy SVG files remain provenance/source material only and are not the learner-facing production format.
 
-- `VIS-LH-TECH2-001-01` → `/assets/tech2/course1/outcome-01.svg` → Lesson 1;
-- `VIS-LH-TECH2-001-02` → `/assets/tech2/course1/outcome-02.svg` → Lesson 2;
-- `VIS-LH-TECH2-001-03` → `/assets/tech2/course1/outcome-03.svg` → Lesson 3;
-- `VIS-LH-TECH2-001-04` → `/assets/tech2/course1/outcome-04.svg` → Lesson 4.
+The raster set remains subject to normal responsive/public-runtime QA controls, but it is no longer a missing-production-asset backlog.
 
-Each candidate has a mapped learner caption, meaningful text alternative, canonical lesson placement and evidence-reference list in `visuals/TECH2-VISUAL-PRODUCTION-PLAN.json`. They remain deliberately unapproved until rendered responsive QA and public-path verification are complete. A source file existing in the repository is not by itself release approval.
+## Published learner job aid
+
+- **DL-TECH2-DIAGNOSTIC-WORKUP-001 — Technician II Diagnostic Workup Record**
+- Download: `/downloads/tech2-diagnostic-workup.csv`
+- Use: course-owned academic practice and evidence organization. This file is not a facility SOP, regulated production record, assessor score sheet, or professional credential issuance instrument.
 
 ## Accessibility/manual UX review
 
@@ -131,6 +132,6 @@ Human review remains required for:
 
 Use canonical evidence-backed science and operational references for durable principles. Facility SOPs, labels, equipment manuals, validated sensor procedures, and jurisdiction-specific requirements control when more specific. Reused modules are development dependencies and do not substitute for course-specific occupational review.
 
-Course-specific formative and summative items are separate from the public Technician II credential-development bank. Course completion remains draft/development evidence and does not replace Practical A, private operational credential forms, program validation, standard setting or final release approval.
+Course-specific formative and summative items are separate from the public Technician II credential-development bank. Every summative objective is mapped back to dedicated Course 1 teaching in `TEST-TO-TEACHING-MAP.md`; encyclopedia-only or unrelated-course content may not be introduced as scored material unless it is first taught directly in this course. Academic course completion is published educational evidence but does not replace Practical A, private operational credential forms, program validation, standard setting or final release approval.
 
 Mapped performance evidence: `PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP`. Public course completion does not itself validate or issue the Technician II professional credential.

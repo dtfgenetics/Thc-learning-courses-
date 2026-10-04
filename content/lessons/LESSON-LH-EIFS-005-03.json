@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-005-03",
+  "title": "pH/EC Meter Verification, Calibration & Sample Quality",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-005-03"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A precise digital display is not proof of an accurate measurement. pH and EC decisions depend on suitable standards, probe condition, sample handling, temperature effects and traceable calibration/verification records.",
+    "vocabulary": [
+      {
+        "term": "Standard solution",
+        "definition": "A reference solution with a known value used to verify or calibrate a measurement device."
+      },
+      {
+        "term": "Probe condition",
+        "definition": "Physical and chemical state of the sensing element, including cleanliness, storage and damage."
+      },
+      {
+        "term": "Sample integrity",
+        "definition": "Confidence that the measured sample is correctly identified, representative and handled appropriately."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Consistency is not accuracy",
+        "body": "A meter can repeat the same wrong result. Failed verification against appropriate standards should be resolved before process changes depend on the reading.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Probe and sample condition matter",
+        "body": "Residue, poor storage, temperature differences, contamination or mislabeled samples can create misleading measurements even when the meter was recently calibrated.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Preserve questionable measurements",
+        "body": "Flag and investigate suspect results instead of deleting or rewriting them to match expectation.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two recently calibrated meters disagree substantially on the same sample; verify standards, probe condition, sample identity and temperature context before using either value for correction."
+    ],
+    "commonMistakes": [
+      "Trusting repeatability as proof of accuracy.",
+      "Using expired or contaminated standards.",
+      "Changing chemistry before confirming the measurement system."
+    ],
+    "practicalApplication": "Create a pH/EC meter-control log with device ID, standards, verification result, cleaning, probe condition and response to failure.",
+    "summary": "Water-quality control is only as reliable as the measurement system and sample integrity."
+  }
+}

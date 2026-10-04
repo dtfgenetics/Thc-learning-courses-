@@ -1,19 +1,334 @@
 {
-  "version": "1.0.0",
-  "asOf": "2026-09-20",
+  "version": "1.2.0",
+  "asOf": "2026-09-23",
   "targetCount": 24,
-  "policy": "A controlled SOP package cannot be marked ingested until its source files are present in the repository, reviewed, mapped, and approved for the stated release surface.",
+  "policy": "A controlled SOP package may be provenance-reconciled when its canonical controlled Drive source is located and exact source identities are recorded. It must not be marked release-approved or operationally ingested until its claims, mappings, accessibility, independent review, and stated release gates are complete.",
   "repositoryLearnerPack": {
     "status": "draft-internal-preview",
     "sourceLesson": "LESSON-PRO-SOP-DESIGN-001",
     "sourceReference": "REF-EPA-SOP-QAG6",
-    "downloadIds": ["DL-SOP-AUTHORING-001", "DL-SOP-EXECUTION-001", "DL-SOP-DEVIATION-001", "DL-SOP-TRAINING-001"]
+    "downloadIds": [
+      "DL-SOP-AUTHORING-001",
+      "DL-SOP-EXECUTION-001",
+      "DL-SOP-DEVIATION-001",
+      "DL-SOP-TRAINING-001"
+    ]
   },
   "externalPackages": [
-    {"externalId": "GROW-042", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
-    {"externalId": "GROW-050", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
-    {"externalId": "GROW-060", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"},
-    {"externalId": "GROW-070", "sourceSystem": "controlled-drive-register", "sourceState": "not-present-in-repository", "ingestionStatus": "pending-source"}
+    {
+      "externalId": "GROW-000",
+      "title": "Manual overview, purpose, scope, document control",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-000.json"
+    },
+    {
+      "externalId": "GROW-001",
+      "title": "Safety, legal limits, and responsible use",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "controlled-drive-package-located",
+      "ingestionStatus": "package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveFolderId": "1undmaPZLspnLCBtpFXIOtWqXRGh_AXHN",
+      "driveRegisterStatus": "Existing Sources Consolidated — Current SOP Created — Legal and Safety Review Pending",
+      "nextGate": "Complete jurisdiction-neutral legal review, exact federal source/effective-date verification, safety SME review, forms, user-guide derivative, accessibility, website mapping, and release evidence."
+    },
+    {
+      "externalId": "GROW-010",
+      "title": "Full plant lifecycle workflow",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "controlled-drive-package-located",
+      "ingestionStatus": "binary-recovery-review-pending",
+      "releaseState": "blocked",
+      "driveFolderId": "1669TBoUH63VANPum8dTvQdpVeNaK2iJ2",
+      "driveRegisterStatus": "Full 14-Page SOP and Lifecycle Visual Found — Canonical Package Created — Binary Recovery and Review Pending",
+      "nextGate": "Recover exact DOCX and PNG; verify hashes and editable sources; reconcile lifecycle terminology and claims; build forms; complete visual, accessibility, website, and release review."
+    },
+    {
+      "externalId": "GROW-011",
+      "title": "Grow space setup",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-011.json"
+    },
+    {
+      "externalId": "GROW-020",
+      "title": "Biosecurity and clean workflow",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-020.json"
+    },
+    {
+      "externalId": "GROW-030",
+      "title": "Genetics and crop planning",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-030.json"
+    },
+    {
+      "externalId": "GROW-031",
+      "title": "Seed intake, labeling, and storage",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-031.json"
+    },
+    {
+      "externalId": "GROW-032",
+      "title": "Germination",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-032.json"
+    },
+    {
+      "externalId": "GROW-033",
+      "title": "Seedling establishment",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-033.json"
+    },
+    {
+      "externalId": "GROW-034",
+      "title": "Cloning and vegetative propagation",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "controlled-drive-package-located",
+      "ingestionStatus": "source-transfer-review-pending",
+      "releaseState": "blocked",
+      "driveFolderId": "1iSc70uL1JFBCzJM2euYS-GgxM8fBDT3W",
+      "driveRegisterStatus": "Professional 66-Page Source and Consumer Guide Found — Drive Package Structured — Review Pending",
+      "nextGate": "Transfer exact source binaries; reconcile GitHub modules; extract forms; verify evidence and numerical targets; complete visuals, accessibility, website, and release QA."
+    },
+    {
+      "externalId": "GROW-040",
+      "title": "Growing media selection and preparation",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-040.json"
+    },
+    {
+      "externalId": "GROW-042",
+      "title": "Water Quality, pH, EC, Alkalinity, Sampling, and Meter Control",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled review and implementation planning only",
+      "controlledSourceIds": {
+        "scientificSop": "1IZMWas8wZJ3u2Sa3qZqQrXxc9Ni3rO5DhF8isL6rekI",
+        "learnerGuide": "1DLc2DJqTrvoISEomKGRCar5FCciFTCqMdC0Ezwndvps",
+        "qaReview": "1kTdfJE8S7MR7EKzh5m_fcjQ9Zm2wGIjqQ_OayX0lc54",
+        "handoff": "1VDYJG6_dfga6ILyhUM-UEW744X1NFmmArVZwgrQR7xo",
+        "recordsWorkbook": "1vgo5unrx1kVxeRFqEomdlWt0hHi6DPa_YXqpfmXa_zA"
+      },
+      "qaDisposition": "created-independent-review-blocked",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-050",
+      "title": "Environmental Control, Sensor Placement, Humidity, Leaf Temperature, and VPD",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled internal education, evidence collection, room-mapping design, implementation planning, calculator testing, visual production briefing, and independent review",
+      "controlledSourceIds": {
+        "scientificSop": "1mfXFJY2VChPwJJcOLqVD7ozEAV-kchTUPlGJh7aIQ9c",
+        "learnerGuide": "1yJAJ-6nGExYkO-XLBBsQcUpSdcaBIxNIBOKHzcIln5Q",
+        "qaReview": "1zh34d2XPzgxT3r3IapTMaFmOK_aisMk2-QdEoZO8MCw",
+        "handoff": "14t8TKUYFq4fLeXKhQIRzQv7-kK7C_iIDEb9o8H5zRwI",
+        "recordsWorkbook": "1EWUcLqhXeO_mP5x0l1XfwwQqosihxYzD6WoKdgFQGzE"
+      },
+      "qaDisposition": "hold-technical-inputs-field-validation-independent-review",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-060",
+      "title": "Lighting, PPFD, DLI, Photoperiod, Spectrum, Mapping, and Fixture Control",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled internal education, evidence collection, fixture and sensor inventory, PPFD mapping design, DLI calculation, schedule verification, visual briefing, field validation planning, and independent review",
+      "controlledSourceIds": {
+        "scientificSop": "1Sud7ile_165radF-PUzVo6BLLznkP-FC6EVzjylEVes",
+        "learnerGuide": "1qrspr5_6cB6ACNEdtBlwbO-bHCtfX9WZkIksdbrtxfs",
+        "qaReview": "12X5wA-PMgEBZN4yGZ1zmIWo9TlllqId9yS9EOK9YqyQ",
+        "handoff": "1Rn09BEO7tDzqUjmyBOIegnrD9et-M3XZuOUeRffkAB4",
+        "recordsWorkbook": "1aSaGSsGGBZ9Tcud2R42YzqkGRy76kUj2t9rn8zTkczc"
+      },
+      "qaDisposition": "hold-technical-inputs-field-validation-electrical-safety-review-independent-approval",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-070",
+      "title": "Irrigation and Fertigation: Water Balance, Delivery Uniformity, Root-Zone Moisture, and System Control",
+      "sourceSystem": "controlled-google-drive",
+      "sourceState": "controlled-drive-source-located",
+      "ingestionStatus": "provenance-recorded-review-blocked",
+      "packageVersion": "0.1.0",
+      "releaseState": "blocked",
+      "allowedUse": "controlled editorial, scientific, irrigation-engineering, fertigation-safety, implementation, and visual-production review only",
+      "controlledSourceIds": {
+        "scientificSop": "1ufY9yTZyK7Swgr541GgBuclVGrtr9e1r5NUpH8Tk9B0",
+        "learnerGuide": "1Ii92y1rWE54LY8b-MQ6xq-XMnDJCek-201SLHy2TWsU",
+        "qaReview": "1avZQI6QNwMs2TdQYmhNTnJqwaDV7sutYLCPVHFoUBzk",
+        "handoff": "1vzg18GV_INl9aHAiOdn1isLOwWg1fmW_d0rCEXghbNU",
+        "recordsWorkbook": "1sPREtCxwN0ccpJfPZLcAS_hQYwmUV8t8jmsGfqbnv2s"
+      },
+      "qaDisposition": "created-independent-review-blocked",
+      "provenanceVerifiedAt": "2026-09-23T21:19:00-05:00"
+    },
+    {
+      "externalId": "GROW-080",
+      "title": "Mineral nutrition and deficiency diagnosis",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-080.json"
+    },
+    {
+      "externalId": "GROW-090",
+      "title": "Integrated pest management",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-090.json"
+    },
+    {
+      "externalId": "GROW-100",
+      "title": "Disease and disorder management",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-100.json"
+    },
+    {
+      "externalId": "GROW-110",
+      "title": "Training and canopy management",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-110.json"
+    },
+    {
+      "externalId": "GROW-120",
+      "title": "Flowering stage management",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-120.json"
+    },
+    {
+      "externalId": "GROW-130",
+      "title": "Harvest readiness and harvest workflow",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-130.json"
+    },
+    {
+      "externalId": "GROW-140",
+      "title": "Drying, curing, storage, and water activity",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-140.json"
+    },
+    {
+      "externalId": "GROW-150",
+      "title": "Testing, QA, CAPA, and crop review",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-150.json"
+    },
+    {
+      "externalId": "GROW-160",
+      "title": "Forms, logs, checklists, and training records",
+      "sourceSystem": "controlled-google-drive-master-register",
+      "sourceState": "scope-identified-source-mapped-planned",
+      "ingestionStatus": "repository-draft-package-created-review-blocked",
+      "releaseState": "blocked",
+      "driveRegisterStatus": "Source Mapped / Planned",
+      "nextGate": "Draft full controlled package",
+      "repositoryDraftManifest": "registry/sop-packages/GROW-160.json"
+    }
   ],
-  "remainingUnidentifiedTargets": 20
+  "remainingUnidentifiedTargets": 0,
+  "inventorySource": {
+    "system": "Google Drive",
+    "fileId": "1sHeeKVd4_3PSi8vHQMdgVAznD5pbxrHyjC9uXEDw9jo",
+    "title": "THC Master Deliverable Register v1.0 — CONTROLLED",
+    "sheet": "SOP and User Guides",
+    "reconciledAt": "2026-09-23T21:19:00-05:00"
+  },
+  "summary": {
+    "identifiedTargets": 24,
+    "controlledSourceOrPackageLocated": 7,
+    "provenanceReconciledExactArtifactSets": 4,
+    "packageCreatedOrLocatedPendingAdditionalReview": 3,
+    "sourceMappedPlannedPackages": 0,
+    "releaseApprovedPackages": 0,
+    "repositoryDraftPackagesCreated": 17,
+    "driveRegisterOriginallySourceMappedPlannedTargets": 17,
+    "remainingPackageAuthoringNotStarted": 0
+  }
 }

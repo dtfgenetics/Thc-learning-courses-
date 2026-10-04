@@ -1,0 +1,267 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root=process.cwd();
+const args=process.argv.slice(2);
+const has=x=>args.includes(x);
+const value=n=>{const i=args.indexOf(n);return i>=0?args[i+1]:null;};
+const write=has('--write');
+const asJson=has('--json');
+const outDir=path.resolve(root,value('--out')??'generated/validation-operator-kits');
+
+const read=rel=>JSON.parse(fs.readFileSync(path.join(root,rel),'utf8'));
+const readDir=rel=>{const d=path.join(root,rel);if(!fs.existsSync(d))return[];return fs.readdirSync(d).filter(n=>n.endsWith('.json')).sort().map(n=>read(path.join(rel,n)));};
+
+const registry=read('registry/certification-validation-execution.json');
+const courses=new Map(readDir('content/courses').map(x=>[x.id,x]));
+const programs=readDir('content/credential-programs').filter(x=>x.id);
+const performance=readDir('content/performance-assessments').filter(x=>['practical','capstone'].includes(x.assessmentType));
+const production=read('registry/production-validation-evidence.json');
+const occupationalBaseline=read('registry/public-occupational-source-baseline.json');
+const occupationalInstruments=read('registry/occupational-validation-instruments.json');
+const calibrationCoverage=read('registry/assessor-calibration-packet-coverage.json');
+const pilotIntake=read('registry/certification-pilot-intake-manifest.json');
+const standardSettingCoverage=read('registry/standard-setting-preparation-coverage.json');
+const secureFormCoverage=read('registry/secure-form-preparation-coverage.json');
+const privacyLegalPrep=read('registry/candidate-privacy-legal-review-preparation.json');
+
+const kits=[];
+
+for(const row of registry.courses??[]){
+  const course=courses.get(row.courseId);
+  if(!course) throw new Error('Missing course '+row.courseId);
+  kits.push({
+    kind:'pilot',
+    id:'KIT-PILOT-'+course.id.replace(/^COURSE-/,''),
+    targetId:course.id,
+    targetVersion:String(course.version),
+    owner:'pilot lead',
+    sourceProtocol:row.pilotProtocolPath,
+    pilotIntakeManifest:'registry/certification-pilot-intake-manifest.json',
+    privateIntakeSpec:'docs/assessment/CERTIFICATION-PILOT-PRIVATE-INTAKE-SPEC.md',
+    pilotIntakeLock:pilotIntake.courses.find(x=>x.courseId===course.id)??null,
+    startCommand:'npm run evidence:intake:pilot -- --course '+course.id+' --pilot-id <PILOT-ID> --cohorts <COUNT> --participants <COUNT> --authority <PILOT-LEAD> --write',
+    requiredActions:[
+      'Freeze this exact course version before participant execution.',
+      'Use the course pilot protocol as the execution procedure.',
+      'Collect learner feedback, fairness/accessibility observations and data-quality notes.',
+      'Keep participant-level response data and PII outside the public repository.',
+      'Aggregate item-level evidence only after usable pilot data exists.'
+    ]
+  });
+  kits.push({
+    kind:'accessibility',
+    id:'KIT-A11Y-'+course.id.replace(/^COURSE-/,''),
+    targetId:course.id,
+    targetVersion:String(course.version),
+    owner:'accessibility/UX reviewer',
+    sourceProtocol:'course-specific rendered accessibility review packet',
+    startCommand:'npm run evidence:intake:accessibility -- --course '+course.id+' --build <DEPLOYED-BUILD-ID> --reviewer <REVIEWER-ID> --platform <PLATFORM> --browser <BROWSER> --input <INPUT-MODE> --viewport <VIEWPORT/ZOOM> [--at <ASSISTIVE-TECH>] [--known-failures <N>] --write',
+    requiredActions:[
+      'Review the exact deployed build for this course version.',
+      'Cover keyboard, assistive technology, mobile/responsive behavior, zoom/reflow, visuals, assessments, downloads and progress/completion states.',
+      'Record issue references for every material failure.',
+      'Do not advance to evidence-complete until applicable Level A/AA failures are corrected or formally dispositioned.'
+    ]
+  });
+}
+
+for(const a of performance){
+  kits.push({
+    kind:'calibration',
+    id:'KIT-CAL-'+a.id,
+    targetId:a.id,
+    targetVersion:String(a.version),
+    owner:'assessment operations lead',
+    sourceProtocol:'assessment-specific assessor/calibration packet where available',
+    calibrationPacket:calibrationCoverage.assessments.find(x=>x.assessmentId===a.id&&String(x.assessmentVersion)===String(a.version))?.packet??null,
+    calibrationCoverageRegistry:'registry/assessor-calibration-packet-coverage.json',
+    startCommand:'node scripts/build-practical-calibration-evidence.mjs --input <PRIVATE-PAIRED-RATINGS.json> [--complete] [--write]',
+    privateInputTemplate:{
+      assessmentId:a.id,
+      assessmentVersion:String(a.version),
+      calibrationId:'<CALIBRATION-ID>',
+      analystId:'<ANALYST-ID>',
+      ratings:[
+        {sampleId:'SAMPLE-001',assessorId:'ASSESSOR-A',totalScore:0,criticalError:false,domainScores:{'<DOMAIN>':0}},
+        {sampleId:'SAMPLE-001',assessorId:'ASSESSOR-B',totalScore:0,criticalError:false,domainScores:{'<DOMAIN>':0}}
+      ],
+      completedAt:null,
+      notes:'Use pseudonymous sample and assessor IDs. Do not place candidate PII in this file.',
+      limitations:[]
+    },
+    requiredActions:[
+      'Use common standardized performances scored independently before discussion.',
+      'Use pseudonymous sample and assessor identifiers.',
+      'Include at least two assessors and paired ratings on common samples.',
+      'Resolve critical-error disagreements before treating calibration as complete.',
+      'Commit only the aggregate calibration evidence generated by the repository tool.'
+    ]
+  });
+}
+
+for(const p of programs){
+  if(!['CREDPROG-CULT-TECH-I-001','CREDPROG-CULT-TECH-II-001'].includes(p.id)) continue;
+  const locks=(p.requiredCourses??[]).map(id=>{
+    const c=courses.get(id); if(!c) throw new Error('Missing program course '+id);
+    return {courseId:id,courseVersion:String(c.version)};
+  });
+  kits.push({
+    kind:'occupational-validation',
+    id:'KIT-OCC-'+p.id.replace(/^CREDPROG-/,''),
+    targetId:p.id,
+    targetVersion:String(p.version),
+    owner:'program validation authority',
+    sourceProtocol:'occupational program validation evidence contract',
+    sourceReviewCommand:'npm run certification:sources:review:write',
+    sourceReviewPackets:locks.map(x=>'generated/certification-source-review-packets/'+x.courseId+'.md'),
+    occupationalSourceBaselineCommand:'npm run certification:occupational-source-baseline:write',
+    occupationalSourceBaselinePacket:'generated/occupational-source-baseline/OCCSRC-'+p.id.replace(/^CREDPROG-/,'')+'.md',
+    occupationalSourceBaselineId:occupationalBaseline.id,
+    occupationalSourceBaselineAsOf:occupationalBaseline.asOf,
+    jtaEvidenceCommand:'npm run evidence:build:jta -- --input <PRIVATE-JTA-RATINGS.json> --complete --write',
+    panelInstrument:occupationalInstruments.programs.find(x=>x.programId===p.id)??null,
+    ratingAnalysisCommand:'npm run occupational:ratings:analyze -- <COMPLETED-SME-RATINGS.csv> --json',
+    startCommand:'npm run evidence:intake:occupational -- --program '+p.id+' --authority <PROGRAM-VALIDATION-LEAD> --write',
+    currentCourseLocks:locks,
+    requiredActions:[
+      'Generate and review the exact-version public-source packet for every locked course before completing technical curriculum review.',
+      'Generate and review the public occupational-source baseline before validating the cannabis-specific job-task analysis.',
+      'Treat O*NET/BLS task families as adjacent occupational evidence only; explicitly keep, adapt or reject them during SME/employer review.',
+      'Collect pseudonymous panel ratings and build a current complete structured JTA aggregate before occupational validation completion.',
+      'Complete technical review of every locked current course version, including source scope, freshness, scientific/technical accuracy and role boundaries.',
+      'Do not convert generic extension guidance into cannabis-specific numeric targets, pesticide permissions or product specifications without appropriate evidence.',
+      'Validate target population, job-task analysis, task/domain coverage and currency.',
+      'Obtain SME/employer review of role representativeness, critical tasks and scope boundaries.',
+      'Finalize assessment-blueprint weights and competency/cognitive/critical-content coverage.',
+      'Validate required practical/capstone performance evidence and resolve critical issues.'
+    ]
+  });
+}
+
+kits.push({
+  kind:'candidate-governance',
+  id:'KIT-CANDIDATE-GOVERNANCE-PRIVACY-LEGAL',
+  targetId:privacyLegalPrep.controlsId,
+  targetVersion:String(privacyLegalPrep.controlsVersion),
+  owner:'privacy/legal + program governance authority',
+  sourceProtocol:'docs/CANDIDATE-PRIVACY-LEGAL-REVIEW-PACKET.md',
+  privacyLegalPreparationRegistry:'registry/candidate-privacy-legal-review-preparation.json',
+  standardSettingPreparationRegistry:'registry/standard-setting-preparation-coverage.json',
+  secureFormPreparationRegistry:'registry/secure-form-preparation-coverage.json',
+  startCommand:'Review registry/candidate-privacy-legal-review-preparation.json and record an exact-version candidate-governance approval only after applicable privacy/legal findings are resolved.',
+  requiredActions:[
+    'Review all nine privacy/legal preparation areas against intended operating jurisdictions and vendors/processors.',
+    'Approve or revise the exact candidate-governance controls version and proposed retention schedule.',
+    'Keep operationalUseAuthorized false until the required privacy/legal approval record is complete and applied.',
+    'Confirm public verification, accommodation confidentiality, candidate rights, incident handling and retention/disposal boundaries.'
+  ]
+});
+
+for(const control of production.controls??[]){
+  kits.push({
+    kind:'production-control',
+    id:'KIT-PROD-'+control.id.toUpperCase().replace(/[^A-Z0-9]+/g,'-'),
+    targetId:control.id,
+    targetVersion:String(production.version??'1'),
+    owner:'operational control owner',
+    sourceProtocol:'registry/production-validation-evidence.json',
+    startCommand:'npm run evidence:intake:production -- --control '+control.id+' --environment <staging|production|cross-environment> --authority <CONTROL-OWNER> --evidence-ref <SAFE-EVIDENCE-REF> --write',
+    requiredEvidence:control.requiredEvidence??[],
+    requiredActions:[
+      'Execute the live control in the appropriate environment.',
+      'Capture safe run/build/policy/transaction references rather than secrets or learner data.',
+      'Record findings and their disposition.',
+      'Advance to approved only after the designated authority accepts the deployment-backed evidence.'
+    ]
+  });
+}
+
+function markdown(k){
+  const lines=[
+    '# Validation Operator Kit — '+k.id,'',
+    'Kind: '+k.kind,
+    'Target: '+k.targetId+'@'+k.targetVersion,
+    'Owner: '+k.owner,
+    'Source protocol: '+k.sourceProtocol,'',
+    '## Start command','',
+    '    '+k.startCommand,'',
+    '## Required actions','',
+    ...k.requiredActions.map(x=>'- [ ] '+x)
+  ];
+  if(k.pilotIntakeManifest){
+    lines.push('','## Cross-course pilot intake','',
+      '- Manifest: '+k.pilotIntakeManifest,
+      '- Private intake spec: '+k.privateIntakeSpec,
+      '- Exact lock: '+(k.pilotIntakeLock?k.pilotIntakeLock.courseId+'@'+k.pilotIntakeLock.courseVersion:'missing'));
+  }
+  if(k.calibrationPacket){
+    lines.push('','## Exact assessor calibration packet','', '- '+k.calibrationPacket, '- Coverage registry: '+k.calibrationCoverageRegistry);
+  }
+  if(k.panelInstrument){
+    lines.push('','## Cannabis-specific SME panel instruments','',
+      '- Rating sheet: '+k.panelInstrument.panelCsv,
+      '- Emerging-task sheet: '+k.panelInstrument.emergingTaskCsv,
+      '- Instructions: '+k.panelInstrument.instructions,
+      '',
+      'Analyze completed ratings:','', '    '+k.ratingAnalysisCommand);
+  }
+  if(k.privacyLegalPreparationRegistry){
+    lines.push('','## Candidate-governance execution inputs','',
+      '- Privacy/legal preparation: '+k.privacyLegalPreparationRegistry,
+      '- Standard-setting preparation: '+k.standardSettingPreparationRegistry,
+      '- Secure-form preparation: '+k.secureFormPreparationRegistry);
+  }
+  if(k.currentCourseLocks){
+    lines.push('','## Current course locks','',...k.currentCourseLocks.map(x=>'- '+x.courseId+'@'+x.courseVersion));
+  }
+  if(k.sourceReviewCommand){
+    lines.push('','## Public-source technical review','',
+      'Generate source-review packets:','', '    '+k.sourceReviewCommand,'',
+      ...(k.sourceReviewPackets??[]).map(x=>'- '+x));
+  }
+  if(k.occupationalSourceBaselineCommand){
+    lines.push('','## Public occupational source baseline','',
+      'Generate adjacent-occupation JTA baseline:','', '    '+k.occupationalSourceBaselineCommand,'',
+      '- '+k.occupationalSourceBaselinePacket,
+      '- '+k.occupationalSourceBaselineId+' / '+k.occupationalSourceBaselineAsOf,
+      '',
+      'Build aggregate JTA evidence from private panel ratings:','',
+      '    '+k.jtaEvidenceCommand);
+  }
+  if(k.requiredEvidence){
+    lines.push('','## Required production evidence','',...k.requiredEvidence.map(x=>'- [ ] '+x));
+  }
+  if(k.privateInputTemplate){
+    lines.push('','## Private calibration input template','',
+      'Keep this input outside the public repository. Use pseudonymous IDs only.','',
+      JSON.stringify(k.privateInputTemplate,null,2));
+  }
+  lines.push('','## Submission','',
+    'After the underlying evidence record reaches evidence-complete/approved (or complete for calibration), package it with the consolidated evidence-submission workflow.',
+    '',
+    '## Integrity boundary','',
+    'This kit starts and organizes real validation work. It does not create approval, replace human judgment, or authorize credentials.'
+  );
+  return lines.join('\n')+'\n';
+}
+
+const counts={};
+for(const k of kits) counts[k.kind]=(counts[k.kind]??0)+1;
+
+if(write){
+  fs.mkdirSync(outDir,{recursive:true});
+  for(const k of kits){
+    fs.writeFileSync(path.join(outDir,k.id+'.md'),markdown(k));
+    fs.writeFileSync(path.join(outDir,k.id+'.json'),JSON.stringify(k,null,2)+'\n');
+  }
+  fs.writeFileSync(path.join(outDir,'README.md'),[
+    '# Validation Operator Kits','',
+    'Exact-version execution kits for validation work that can proceed before final credential authorization.','',
+    ...Object.entries(counts).map(([kind,count])=>'- '+kind+': '+count)
+  ].join('\n')+'\n');
+}
+
+const out={kitCount:kits.length,counts,outputDirectory:path.relative(root,outDir),wroteFiles:write,kits:kits.map(k=>({id:k.id,kind:k.kind,targetId:k.targetId,targetVersion:k.targetVersion}))};
+if(asJson) console.log(JSON.stringify(out,null,2));
+else console.log('Validation operator kits: '+kits.length+' total — '+Object.entries(counts).map(([k,v])=>k+'='+v).join(', '));

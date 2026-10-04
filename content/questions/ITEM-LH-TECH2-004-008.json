@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-004-008",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-IPM-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Incidence declines, but severity among remaining affected plants rises. What should the report say?",
   "choices": [
-    "The intervention completely succeeded.",
-    "Severity can be omitted because incidence declined.",
-    "The two measures cancel each other and should be averaged.",
-    "Incidence improved while severity worsened among affected units; both dimensions should be reported."
+    "Report overall improvement because incidence declined, using severity only as a secondary note.",
+    "Omit severity from the trend because fewer plants remain affected and incidence is the primary control metric.",
+    "Combine incidence and severity into a single average score so the intervention has one overall outcome measure.",
+    "Report that incidence declined while severity increased among the remaining affected plants, because the two dimensions describe different aspects of the problem."
   ],
   "correct": 3,
-  "rationale": "Incidence improved while severity worsened among affected units; both dimensions should be reported.",
+  "rationale": "Incidence describes how widely a problem is distributed, while severity describes how intense it is in affected units. A response can improve one dimension while worsening the other, so averaging or suppressing one measure can hide an important pattern. The most informative report preserves both changes and avoids overstating overall success.",
   "references": [
     "REF-IPM-001"
   ]

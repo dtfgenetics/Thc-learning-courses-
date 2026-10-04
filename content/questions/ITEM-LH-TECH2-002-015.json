@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-002-015",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Which condition most clearly signals that routine verification may have crossed into servicing?",
   "choices": [
-    "The task takes more than five minutes.",
-    "The equipment is expensive.",
-    "The task requires protected access, guard removal, disassembly or control of hazardous/stored energy.",
-    "A supervisor is not standing nearby."
+    "Routine verification has likely crossed into servicing when the task becomes prolonged enough to delay normal production.",
+    "Routine verification has likely crossed into servicing when specialized replacement parts are needed, even if access remains external.",
+    "Routine verification has likely crossed into servicing when it requires protected access, guard removal, disassembly, or control of hazardous or stored energy.",
+    "Routine verification has likely crossed into servicing whenever the technician needs a supervisor to confirm the next step."
   ],
   "correct": 2,
-  "rationale": "The task requires protected access, guard removal, disassembly or control of hazardous/stored energy. This preserves the evidence and role boundary required by the referenced verification framework.",
+  "rationale": "The key distinction is not task duration, equipment cost, or who is watching. Servicing boundaries are triggered by the nature of the hazard and the work being performed—especially protected access, guard removal, disassembly, and control of hazardous or stored energy. Those activities can expose the worker to risks that require specific authorization and energy-control procedures. Recognizing that boundary prevents routine verification from drifting into unauthorized servicing.",
   "references": [
     "REF-OSHA-1910-147-LOTO"
   ]

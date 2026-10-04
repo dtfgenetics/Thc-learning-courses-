@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHandler as createApiHandler } from '../api/src/server.mjs';
+import { dliFromPpfd } from '../../packages/domain/applied-learning-calculations.mjs';
 
 const root = process.cwd();
 const webRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'public');
@@ -14,6 +15,150 @@ function readDirJson(rel) {
   const dir = path.join(root, rel);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((name) => name.endsWith('.json')).sort().map((name) => readJson(path.join(rel, name)));
+}
+
+function findAppliedLearningRecord(directory, id) {
+  return readDirJson(`content/applied-learning/${directory}`).find((record) => record?.id === id) ?? null;
+}
+function safeAppliedLearningGraph(graph) {
+  return {
+    id: graph.id,
+    version: graph.version,
+    status: graph.status,
+    title: graph.title,
+    summary: graph.summary ?? '',
+    nodes: (graph.nodes ?? []).map(({ id, canonicalType, canonicalId, kind, status }) => ({
+      id, canonicalType, canonicalId,
+      ...(kind ? { kind } : {}),
+      ...(status ? { status } : {})
+    })),
+    edges: (graph.edges ?? []).map(({ id, source, target, relationship, evidenceIds }) => ({
+      id, source, target, relationship,
+      ...(Array.isArray(evidenceIds) ? { evidenceIds } : {})
+    }))
+  };
+}
+function safeAppliedLearningMeasurement(activity) {
+  return {
+    id: activity.id,
+    version: activity.version,
+    status: activity.status,
+    title: activity.title,
+    summary: activity.summary,
+    competencyIds: activity.competencyIds ?? [],
+    objectiveIds: activity.objectiveIds ?? [],
+    referenceIds: activity.referenceIds ?? [],
+    canonicalSources: activity.canonicalSources ?? [],
+    steps: (activity.steps ?? []).map(({ id, instruction, evidence }) => ({
+      id, instruction, ...(evidence ? { evidence } : {})
+    })),
+    evidenceFields: (activity.evidenceFields ?? []).map(({ id, label, type, unit, required }) => ({
+      id, label, type, unit: unit ?? null, required: required === true
+    })),
+    safetyBoundary: activity.safetyBoundary
+  };
+}
+
+function safeAppliedLearningCalculator(calculator) {
+  return {
+    id: calculator.id,
+    version: calculator.version,
+    status: calculator.status,
+    title: calculator.title,
+    summary: calculator.summary,
+    calculation: calculator.calculation,
+    competencyIds: calculator.competencyIds ?? [],
+    objectiveIds: calculator.objectiveIds ?? [],
+    referenceIds: calculator.referenceIds ?? [],
+    canonicalSources: calculator.canonicalSources ?? [],
+    inputFields: calculator.inputFields ?? [],
+    output: calculator.output,
+    limitations: calculator.limitations ?? []
+  };
+}
+function safeAppliedLearningDifferential(differential) {
+  return {
+    id: differential.id,
+    version: differential.version,
+    status: differential.status,
+    title: differential.title,
+    summary: differential.summary,
+    observedPattern: differential.observedPattern,
+    competencyIds: differential.competencyIds ?? [],
+    referenceIds: differential.referenceIds ?? [],
+    canonicalSources: differential.canonicalSources ?? [],
+    hypotheses: (differential.hypotheses ?? []).map(({ id, label, whyPlausible, evidenceThatRaisesConfidence, evidenceThatLowersConfidence }) => ({
+      id, label, whyPlausible,
+      evidenceThatRaisesConfidence: evidenceThatRaisesConfidence ?? [],
+      evidenceThatLowersConfidence: evidenceThatLowersConfidence ?? []
+    })),
+    discriminatingEvidence: differential.discriminatingEvidence ?? [],
+    boundary: differential.boundary
+  };
+}
+
+function safeAppliedLearningTool(tool) {
+  return {
+    id: tool.id,
+    version: tool.version,
+    status: tool.status,
+    kind: tool.kind,
+    title: tool.title,
+    summary: tool.summary,
+    competencyIds: tool.competencyIds ?? [],
+    objectiveIds: tool.objectiveIds ?? [],
+    referenceIds: tool.referenceIds ?? [],
+    canonicalSources: tool.canonicalSources ?? [],
+    steps: (tool.steps ?? []).map(({ id, instruction, evidence }) => ({
+      id, instruction, ...(evidence ? { evidence } : {})
+    })),
+    fields: (tool.fields ?? []).map(({ id, label, type, required, unit, options }) => ({
+      id, label, type, required: required === true, unit: unit ?? null,
+      ...(Array.isArray(options) ? { options } : {})
+    })),
+    boundary: tool.boundary
+  };
+}
+
+function evaluateAppliedLearningTool(tool, body = {}) {
+  const values = {};
+  for (const field of tool.fields ?? []) {
+    const raw = body[field.id];
+    if (field.required && (raw === undefined || raw === null || String(raw).trim() === '')) {
+      throw new Error(`missing required field ${field.id}`);
+    }
+    if (raw === undefined || raw === null || String(raw).trim() === '') continue;
+    if (field.type === 'number') {
+      const value = Number(raw);
+      if (!Number.isFinite(value)) throw new Error(`${field.id} must be numeric`);
+      values[field.id] = value;
+    } else if (field.type === 'choice') {
+      if (!field.options?.includes(String(raw))) throw new Error(`${field.id} is not an allowed choice`);
+      values[field.id] = String(raw);
+    } else {
+      values[field.id] = String(raw).slice(0, 4000);
+    }
+  }
+
+  if (tool.kind === 'blueprint') {
+    const length = values.roomLengthFt;
+    const width = values.roomWidthFt;
+    if (!(length > 0 && width > 0 && length <= 1000 && width <= 1000)) throw new Error('room dimensions must be positive and within the training range');
+    return { toolId: tool.id, kind: tool.kind, values, result: { floorAreaSqFt: length * width }, note: tool.boundary };
+  }
+  if (tool.kind === 'calibration') {
+    const result = values.verificationResult === 'pass'
+      ? 'measurement-eligible-for-contextual-interpretation'
+      : 'stop-recalibrate-or-service-and-repeat-verification';
+    return { toolId: tool.id, kind: tool.kind, values, result: { decision: result }, note: tool.boundary };
+  }
+  return {
+    toolId: tool.id,
+    kind: tool.kind,
+    status: 'learner-draft-record',
+    values,
+    note: 'Local training record preview only; this endpoint does not create credential evidence or regulated records.'
+  };
 }
 function buildPublicReleaseIds({ modules, assessments }) {
   const ids = new Set();
@@ -58,6 +203,12 @@ function safeLesson(lesson, publicReleaseIds = new Set()) {
     status: publicStatus(lesson, publicReleaseIds),
     competencies: lesson.competencies ?? [],
     learningObjectives: lesson.learningObjectives ?? lesson.objectives ?? [],
+    learningObjectiveStatements: (lesson.learningObjectives ?? lesson.objectives ?? []).map((id) => {
+      const target = path.join(root, 'content/learning-objectives', `${id}.json`);
+      if (!fs.existsSync(target)) return null;
+      const objective = JSON.parse(fs.readFileSync(target, 'utf8'));
+      return typeof objective.statement === 'string' ? objective.statement : null;
+    }).filter(Boolean),
     estimatedMinutes: lesson.estimatedMinutes ?? null,
     references: lesson.references ?? [],
     content: { ...sourceContent, blocks }
@@ -210,6 +361,8 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       passingScorePercent: Number(assessment.passingScorePercent ?? 0),
       feedbackMode: assessment.feedbackMode ?? 'after-submit',
       itemCount: Array.isArray(assessment.items) ? assessment.items.length : 0,
+      academicPracticalRequired: typeof assessment.extensions?.linkedPerformanceAssessment === 'string',
+      linkedAcademicPracticalId: assessment.extensions?.linkedPerformanceAssessment ?? null,
       certificationUseStatus: assessment.extensions?.certificationUseStatus ?? null
     };
   };
@@ -229,7 +382,10 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
       })
     };
   };
-  const visibleCourses = [...courses.values()].filter((course) => isVisible(course, previewDrafts, publicReleaseIds)).sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
+  const visibleCourses = [...courses.values()]
+    .filter((course) => isVisible(course, previewDrafts, publicReleaseIds))
+    .filter((course) => previewDrafts || /^COURSE-LH-/.test(String(course.id || '')))
+    .sort((a, b) => String(a.title).localeCompare(String(b.title))).map((course) => ({
     id: course.id,
     title: course.title,
     version: course.version,
@@ -237,9 +393,17 @@ export function buildAcademyCatalog({ previewDrafts = true } = {}) {
     credentialBearing: Boolean(course.credentialBearing),
     description: course.description ?? course.summary ?? '',
     level: typeof course.level === 'string' ? course.level : null,
+    estimatedMinutes: Number.isFinite(Number(course.estimatedMinutes)) ? Number(course.estimatedMinutes) : null,
+    learningOutcomes: safeStringList(course.learningOutcomes),
     intendedAudience: safeStringList(course.intendedAudience),
     prerequisites: safeStringList(course.prerequisites),
     pathway: safePathway(course),
+    academicPublicationStatus: course.extensions?.academicPublicationStatus ?? null,
+    academicCompletionBlocked: course.extensions?.academicCompletionBlockedWhileOpenDependencies === true && (course.extensions?.openAcademicDependencies?.length ?? 0) > 0,
+    openAcademicDependencies: (course.extensions?.openAcademicDependencies ?? []).map((moduleId) => {
+      const module = modules.get(moduleId);
+      return { id: moduleId, title: module?.title ?? moduleId, status: module?.status ?? 'missing' };
+    }),
     finalAssessment: safeFinalAssessment(course),
     modules: (course.modules ?? []).map((moduleId) => modules.get(moduleId)).filter((module) => module && isVisible(module, previewDrafts, publicReleaseIds)).map((module) => ({
       id: module.id, title: module.title, status: publicStatus(module, publicReleaseIds), assessment: module.assessment ?? null,
@@ -385,8 +549,18 @@ export function loadModuleAssessment(id, { previewDrafts = true, seed = 'module-
   const source = loadModuleAssessmentSource(id, { previewDrafts });
   if (!source) return null;
   const { module, assessment, items, publicReleaseIds } = source;
+  const remediationByObjective = {};
+  for (const lessonId of module.lessons ?? []) {
+    const target = path.join(root, 'content/lessons', `${lessonId}.json`);
+    if (!fs.existsSync(target)) continue;
+    const lesson = JSON.parse(fs.readFileSync(target, 'utf8'));
+    for (const objectiveId of lesson.learningObjectives ?? lesson.objectives ?? []) {
+      remediationByObjective[objectiveId] = { lessonId: lesson.id, lessonTitle: lesson.title };
+    }
+  }
   return {
     module: { id: module.id, title: module.title, version: module.version, status: publicStatus(module, publicReleaseIds) },
+    remediationByObjective,
     assessment: {
       id: assessment.id,
       title: assessment.title,
@@ -500,6 +674,75 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
     if (req.method === 'GET' && url.pathname === '/healthz') return json(res, 200, { ok: true, service: 'thc-academy-web', mode: previewDrafts ? 'staging-preview' : 'published-only' });
     if (req.method === 'GET' && url.pathname === '/api/build-info') return json(res, 200, buildPublicBuildIdentity(env));
     if (req.method === 'GET' && url.pathname === '/api/catalog') return json(res, 200, buildAcademyCatalog({ previewDrafts }));
+    const appliedGraphMatch = url.pathname.match(/^\/api\/applied-learning\/graphs\/(ALGRAPH-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedGraphMatch) {
+      const graph = findAppliedLearningRecord('graphs', appliedGraphMatch[1]);
+      if (!graph || !isVisible(graph, previewDrafts)) return json(res, 404, { error: 'applied-learning-graph-not-found' });
+      return json(res, 200, safeAppliedLearningGraph(graph));
+    }
+    const appliedMeasurementMatch = url.pathname.match(/^\/api\/applied-learning\/measurements\/(ALMEAS-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedMeasurementMatch) {
+      const activity = findAppliedLearningRecord('measurements', appliedMeasurementMatch[1]);
+      if (!activity || !isVisible(activity, previewDrafts)) return json(res, 404, { error: 'applied-learning-measurement-not-found' });
+      return json(res, 200, safeAppliedLearningMeasurement(activity));
+    }
+
+    const appliedCalculatorMatch = url.pathname.match(/^\/api\/applied-learning\/calculators\/(ALCALC-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedCalculatorMatch) {
+      const calculator = findAppliedLearningRecord('calculators', appliedCalculatorMatch[1]);
+      if (!calculator || !isVisible(calculator, previewDrafts)) return json(res, 404, { error: 'applied-learning-calculator-not-found' });
+      return json(res, 200, safeAppliedLearningCalculator(calculator));
+    }
+    const appliedCalculatorRunMatch = url.pathname.match(/^\/api\/applied-learning\/calculators\/(ALCALC-[A-Z0-9-]+)\/calculate$/);
+    if (req.method === 'POST' && appliedCalculatorRunMatch) {
+      const calculator = findAppliedLearningRecord('calculators', appliedCalculatorRunMatch[1]);
+      if (!calculator || !isVisible(calculator, previewDrafts)) return json(res, 404, { error: 'applied-learning-calculator-not-found' });
+      let body;
+      try { body = await readRequestJson(req); } catch { return json(res, 400, { error: 'invalid-json' }); }
+      if (calculator.calculation !== 'dli-from-ppfd') return json(res, 400, { error: 'unsupported-calculation' });
+      const ppfdUmolM2S = Number(body.ppfdUmolM2S);
+      const photoperiodHours = Number(body.photoperiodHours);
+      try {
+        const value = dliFromPpfd({ ppfdUmolM2S, photoperiodHours });
+        return json(res, 200, {
+          calculatorId: calculator.id,
+          inputs: { ppfdUmolM2S, photoperiodHours },
+          value,
+          unit: calculator.output?.unit ?? 'mol/m²/day',
+          limitations: calculator.limitations ?? []
+        });
+      } catch (error) {
+        return json(res, 400, { error: 'invalid-calculation-input', message: error.message });
+      }
+    }
+    const appliedDifferentialMatch = url.pathname.match(/^\/api\/applied-learning\/differentials\/(ALDIFF-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedDifferentialMatch) {
+      const differential = findAppliedLearningRecord('differentials', appliedDifferentialMatch[1]);
+      if (!differential || !isVisible(differential, previewDrafts)) return json(res, 404, { error: 'applied-learning-differential-not-found' });
+      return json(res, 200, safeAppliedLearningDifferential(differential));
+    }
+    if (req.method === 'GET' && url.pathname === '/api/applied-learning/tools') {
+      const tools = readDirJson('content/applied-learning/tools')
+        .filter((tool) => isVisible(tool, previewDrafts))
+        .map(safeAppliedLearningTool)
+        .sort((a, b) => a.title.localeCompare(b.title));
+      return json(res, 200, { mode: previewDrafts ? 'staging-preview' : 'published-only', tools });
+    }
+    const appliedToolMatch = url.pathname.match(/^\/api\/applied-learning\/tools\/(ALTOOL-[A-Z0-9-]+)$/);
+    if (req.method === 'GET' && appliedToolMatch) {
+      const tool = findAppliedLearningRecord('tools', appliedToolMatch[1]);
+      if (!tool || !isVisible(tool, previewDrafts)) return json(res, 404, { error: 'applied-learning-tool-not-found' });
+      return json(res, 200, safeAppliedLearningTool(tool));
+    }
+    const appliedToolRunMatch = url.pathname.match(/^\/api\/applied-learning\/tools\/(ALTOOL-[A-Z0-9-]+)\/evaluate$/);
+    if (req.method === 'POST' && appliedToolRunMatch) {
+      const tool = findAppliedLearningRecord('tools', appliedToolRunMatch[1]);
+      if (!tool || !isVisible(tool, previewDrafts)) return json(res, 404, { error: 'applied-learning-tool-not-found' });
+      let body;
+      try { body = await readRequestJson(req); } catch { return json(res, 400, { error: 'invalid-json' }); }
+      try { return json(res, 200, evaluateAppliedLearningTool(tool, body)); }
+      catch (error) { return json(res, 400, { error: 'invalid-tool-input', message: error.message }); }
+    }
     if (req.method === 'GET' && url.pathname === '/api/downloads') return json(res, 200, buildDownloadCatalog({ previewDrafts }));
     const downloadMetadataMatch = url.pathname.match(/^\/api\/downloads\/(DL-[A-Z0-9-]+)$/);
     if (req.method === 'GET' && downloadMetadataMatch) {
@@ -540,11 +783,15 @@ export function createAcademyHandler({ env = process.env, apiHandler } = {}) {
 
     const staticFiles = new Map([
       ['/', ['index.html', 'text/html; charset=utf-8']], ['/academy', ['index.html', 'text/html; charset=utf-8']],
+      ['/applied-learning', ['applied-learning.html', 'text/html; charset=utf-8']],
+      ['/applied-learning.js', ['applied-learning.js', 'text/javascript; charset=utf-8']],
+      ['/applied-learning.css', ['applied-learning.css', 'text/css; charset=utf-8']],
       ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/progress.js', ['progress.js', 'text/javascript; charset=utf-8']],
       ['/completion-documents.js', ['completion-documents.js', 'text/javascript; charset=utf-8']],
       ['/rich-content.js', ['rich-content.js', 'text/javascript; charset=utf-8']],
       ['/governance.js', ['governance.js', 'text/javascript; charset=utf-8']], ['/portal.js', ['portal.js', 'text/javascript; charset=utf-8']],
       ['/course-assessment.js', ['course-assessment.js', 'text/javascript; charset=utf-8']], ['/assessor.js', ['assessor.js', 'text/javascript; charset=utf-8']],
+      ['/vendor/qrcode.min.js', [path.join('vendor', 'qrcode.min.js'), 'text/javascript; charset=utf-8']],
       ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/rich-content.css', ['rich-content.css', 'text/css; charset=utf-8']],
       ['/governance.css', ['governance.css', 'text/css; charset=utf-8']], ['/portal.css', ['portal.css', 'text/css; charset=utf-8']],
       ['/course-assessment.css', ['course-assessment.css', 'text/css; charset=utf-8']], ['/assessor.css', ['assessor.css', 'text/css; charset=utf-8']]

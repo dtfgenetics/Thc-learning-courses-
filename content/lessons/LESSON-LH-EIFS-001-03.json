@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-001-03",
+  "title": "PPFD, Photoperiod, DLI & Environmental Context",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-LIGHT-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-001-03"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-PURDUE-DLI-GREENHOUSE",
+    "REF-UMN-INDOOR-PLANT-LIGHTING-2026",
+    "REF-VPD-002"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Light measurements should be integrated with time and crop context. PPFD describes photon flux at an instant/location, photoperiod describes light duration, and DLI describes accumulated photosynthetic photons over a day. These metrics are related but not interchangeable.",
+    "vocabulary": [
+      {
+        "term": "PPFD",
+        "definition": "Photosynthetic photon flux density, commonly expressed as micromoles of photons per square meter per second."
+      },
+      {
+        "term": "Photoperiod",
+        "definition": "The duration of the light period within a 24-hour cycle."
+      },
+      {
+        "term": "Daily light integral (DLI)",
+        "definition": "The daily accumulated amount of photosynthetically active photons received per unit area, expressed as moles per square meter per day."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Instantaneous intensity is not daily dose",
+        "body": "A single PPFD measurement cannot describe daily photon exposure without time information. DLI integrates PPFD across the photoperiod and any changing light conditions.",
+        "references": [
+          "REF-PURDUE-DLI-GREENHOUSE",
+          "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+        ]
+      },
+      {
+        "title": "Measure where the crop receives light",
+        "body": "Canopy geometry, fixture spacing, shading and room structure create spatial light differences. Measurement grids are stronger than a single center reading when evaluating uniformity.",
+        "references": [
+          "REF-UMN-INDOOR-PLANT-LIGHTING-2026"
+        ]
+      },
+      {
+        "title": "Light changes environmental load and crop response",
+        "body": "Lighting adds heat and changes plant transpiration and water demand. Evaluate light alongside temperature, humidity, airflow and root-zone response instead of treating it as an isolated variable.",
+        "references": [
+          "REF-VPD-002"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "Two rooms can have the same average PPFD but different DLI if their photoperiods differ; conversely, similar DLI can be delivered through different intensity-duration combinations with different crop/environment implications."
+    ],
+    "commonMistakes": [
+      "Using lux in place of a plant-relevant photon measurement without a justified conversion/context.",
+      "Treating one center-canopy PPFD value as a uniformity map.",
+      "Copying DLI targets from another species or facility as a cannabis universal."
+    ],
+    "practicalApplication": "Create a canopy PPFD grid, compute an illustrative DLI from a stable PPFD and photoperiod, then state the limitations of that calculation when intensity varies through the day.",
+    "summary": "PPFD, photoperiod and DLI answer different light questions. Specialist interpretation requires both measurement geometry and crop/environment context."
+  }
+}

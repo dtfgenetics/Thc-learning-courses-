@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-PHQ-002-013",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-002-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A fan interruption occurred in one mapped zone. What is the strongest first response?",
+  "choices": [
+    "Preserve the timeline and lot map, apply authorized interim control, and collect relevant product evidence.",
+    "Release all other lots immediately.",
+    "Delete data recorded during the interruption.",
+    "Declare the entire room failed."
+  ],
+  "correct": 0,
+  "rationale": "Facts, scope and interim controls should precede disposition.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-POSTHARVEST-STABILITY-2026-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

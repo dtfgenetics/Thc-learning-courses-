@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-022",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-FLOWER-ADV-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Different canopy positions show different flowering response. Which sampling plan is strongest?",
   "choices": [
-    "Sample only the easiest flower to reach.",
-    "Use predefined representative positions and the same observation method across zones and time points.",
-    "Use one previous-cycle photo.",
-    "Ignore positional variation and use a room average."
+    "Sample the easiest flowers to reach in each zone so the method is practical and repeatable.",
+    "Use predefined representative canopy positions and the same observation method across zones and time points.",
+    "Use a prior-cycle photo as the main comparison because current positional variation may be temporary.",
+    "Average observations across the room without retaining position because room-level flowering is the production outcome."
   ],
   "correct": 1,
-  "rationale": "Use predefined representative positions and the same observation method across zones and time points.",
+  "rationale": "When response differs by canopy position, the sampling plan has to preserve position rather than average it away. Predefined representative locations and a consistent observation method make zone-to-zone and time-series comparisons interpretable. Convenience sampling can bias the result toward accessible areas, while historical photos or room averages may miss the spatial pattern that prompted the investigation.",
   "references": [
     "REF-FLOWER-001",
     "REF-CANOPY-001"

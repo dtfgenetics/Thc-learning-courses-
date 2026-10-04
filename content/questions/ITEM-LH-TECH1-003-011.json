@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-011",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-ENV-VPD-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Why can a daily environmental average be insufficient for some troubleshooting tasks?",
   "choices": [
-    "Averages always exaggerate every outlier",
-    "Averages contain no numerical information",
-    "Short transitions, peaks and equipment cycling can disappear inside the average",
-    "Only one instantaneous value is ever valid"
+    "Daily averages exaggerate every short-term peak, so they should be avoided in troubleshooting.",
+    "A daily average contains too little numerical information to support any environmental interpretation.",
+    "Short excursions, transitions, and equipment-cycling patterns can be hidden when many readings are compressed into one average.",
+    "A single instantaneous reading is always more useful than an average because it preserves exact conditions."
   ],
   "correct": 2,
-  "rationale": "Short transitions, peaks and equipment cycling can disappear inside the average. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "Averages are useful for summary, but they can hide when and how strongly conditions moved outside the normal pattern. Short spikes, cycling faults, light-on/light-off transitions, or irrigation-linked changes may disappear inside a daily mean. Troubleshooting often requires both the average and the underlying time-series or event context.",
   "references": [
     "REF-VPD-002"
   ],

@@ -18,15 +18,45 @@ const mappings = [
   ['content/lessons', 'schemas/lesson.schema.json'],
   ['content/modules', 'schemas/module.schema.json'],
   ['content/performance-assessments', 'schemas/performance-assessment.schema.json'],
+  ['content/pilot-evidence', 'schemas/pilot-evidence.schema.json'],
+  ['content/form-psychometric-evidence', 'schemas/form-psychometric-evidence.schema.json'],
+  ['content/calibration-evidence', 'schemas/practical-calibration-evidence.schema.json'],
+  ['content/certification-gate-evidence', 'schemas/certification-gate-evidence.schema.json'],
+  ['content/standard-setting-evidence', 'schemas/standard-setting-evidence.schema.json'],
+  ['content/integrated-performance-standard-setting-evidence', 'schemas/integrated-performance-standard-setting-evidence.schema.json'],
+  ['content/secure-form-equivalence-evidence', 'schemas/secure-form-equivalence-evidence.schema.json'],
+  ['content/credential-authorization-evidence', 'schemas/credential-authorization-evidence.schema.json'],
+  ['content/occupational-program-validation-evidence', 'schemas/occupational-program-validation-evidence.schema.json'],
+  ['content/job-task-analysis-evidence', 'schemas/job-task-analysis-evidence.schema.json'],
+  ['content/production-control-evidence', 'schemas/production-control-evidence.schema.json'],
+  ['content/evidence-submissions', 'schemas/evidence-submission-manifest.schema.json'],
+  ['content/evidence-submission-decisions', 'schemas/evidence-submission-decision.schema.json'],
+  ['content/course-pilot-execution-evidence', 'schemas/course-pilot-execution-evidence.schema.json'],
+  ['content/accessibility-review-evidence', 'schemas/rendered-accessibility-review-evidence.schema.json'],
+  ['content/candidate-governance-approvals', 'schemas/candidate-governance-approval.schema.json'],
   ['content/pilot-plans', 'schemas/pilot-plan.schema.json'],
   ['content/programs', 'schemas/program.schema.json'],
   ['content/questions', 'schemas/question.schema.json'],
   ['content/references', 'schemas/reference.schema.json'],
-  ['content/resources', 'schemas/resource.schema.json']
+  ['content/resources', 'schemas/resource.schema.json'],
+  ['content/applied-learning/graphs', 'schemas/applied-learning-graph.schema.json'],
+  ['content/applied-learning/measurements', 'schemas/applied-learning-measurement.schema.json'],
+  ['content/applied-learning/scenarios', 'schemas/applied-learning-scenario.schema.json'],
+  ['content/applied-learning/calculators', 'schemas/applied-learning-calculator.schema.json'],
+  ['content/applied-learning/differentials', 'schemas/applied-learning-differential.schema.json'],
+  ['content/applied-learning/tools', 'schemas/applied-learning-tool.schema.json']
 ];
 
 const ajv = new Ajv2020({allErrors: true, strict: false});
 addFormats(ajv);
+
+// Register shared schemas that are referenced by mapped content schemas.
+for (const sharedSchemaPath of ['schemas/applied-learning-event.schema.json']) {
+  const fullSharedSchema = path.join(root, sharedSchemaPath);
+  if (fs.existsSync(fullSharedSchema)) {
+    ajv.addSchema(JSON.parse(fs.readFileSync(fullSharedSchema, 'utf8')));
+  }
+}
 
 const failures = [];
 let validatedFiles = 0;

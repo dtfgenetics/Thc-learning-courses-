@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH2-005-013",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A propagation report excludes ten failed cuttings because they were discarded before final scoring, without a documented exclusion rule. What is the problem?",
   "choices": [
-    "The denominator has been changed after the outcome, which can inflate the reported success rate.",
-    "Discarded failures should always be excluded.",
-    "Only successful cuttings belong in performance metrics.",
-    "The denominator is irrelevant when the numerator is known."
+    "The denominator was changed after the outcome by removing known failures, which can inflate the reported rooting success.",
+    "The exclusion is acceptable if discarded cuttings were no longer present at the final observation point.",
+    "Only successful cuttings should remain in the final propagation metric because rooting rate is intended to describe viable output.",
+    "The denominator matters only when comparing batches of different starting size; here the numerator is sufficient."
   ],
   "correct": 0,
-  "rationale": "The denominator has been changed after the outcome, which can inflate the reported success rate.",
+  "rationale": "If failed cuttings were part of the original batch and no predefined exclusion rule applies, removing them after the outcome changes the denominator in a way that makes performance look better. A valid rate needs a controlled denominator established before or independently of the observed success/failure outcome. Post hoc exclusions weaken comparability and can bias performance reporting.",
   "references": [
     "REF-PROP-001"
   ]

@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-PHQ-003-05",
+  "title": "Storage Deviations, Inventory Status & Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-003-05"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-HSE-SHIFT-HANDOVER",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A storage excursion or package failure should trigger evidence preservation and status control. Restoration of conditions does not by itself decide product consequence.",
+    "vocabulary": [
+      {
+        "term": "Status control",
+        "definition": "Visible and recorded designation preventing material from moving outside its authorized state."
+      },
+      {
+        "term": "Excursion",
+        "definition": "Departure from a defined environmental or process condition."
+      },
+      {
+        "term": "Inventory reconciliation",
+        "definition": "Comparison of expected and actual material identity, quantity, location and status."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Preserve the exposure timeline",
+        "body": "Record when the event began, how it was detected, duration, locations, package conditions and actions taken.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Scope lots and units",
+        "body": "Inventory and location records should identify which material shared the exposure without broadening or narrowing scope for convenience.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Handoff status and evidence gaps",
+        "body": "Receiving roles need explicit holds, pending measurements, open decisions and accountable owners.",
+        "references": [
+          "REF-HSE-SHIFT-HANDOVER"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A cooler returns to setpoint after an alarm, but the affected lots remain on hold until exposure and product evidence are reviewed."
+    ],
+    "commonMistakes": [
+      "Closing an event when equipment recovers.",
+      "Moving inventory without preserving original location.",
+      "Relying on label color without a controlled status record."
+    ],
+    "practicalApplication": "Prepare a storage-excursion packet with timeline, inventory scope, package observations, measurements, status and next decision owner.",
+    "summary": "Storage deviations are managed through traceable exposure evidence and lot-status control, not automatic release or rejection."
+  }
+}

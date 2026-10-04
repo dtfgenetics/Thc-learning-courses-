@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-001-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-001-05",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A technician confirms a major environmental-control problem but is not authorized to repair HVAC or controls. What is the correct action?",
+  "choices": [
+    "Document the verified evidence and escalate to the qualified role under procedure.",
+    "Perform the repair anyway.",
+    "Change every setpoint.",
+    "Ignore the problem."
+  ],
+  "correct": 0,
+  "rationale": "Evidence quality does not expand occupational or safety authority.",
+  "references": [
+    "REF-ENV-TEMP-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-001",
+    "seedBank": true
+  }
+}

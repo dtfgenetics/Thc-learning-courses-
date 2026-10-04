@@ -16,6 +16,24 @@ Biosecurity is easier to understand when you ask, “How could material move fro
 
 Penn State specifically warns that clean media can be recontaminated through dirty tools, hose ends, surfaces and materials. This is an important mental model: **clean status is not permanent if the item re-enters a contaminated pathway**.
 
+### Scientific foundation — contamination requires a source, a route and a susceptible target
+
+A useful biosecurity model is a three-part chain:
+
+**source → transfer route → susceptible plant or clean area**
+
+The source can be infected or infested plant material, contaminated media, standing water, plant debris, a dirty tool, a reused container, footwear, gloves, a cart, or another contaminated surface. The route can be direct contact, splash, airflow, irrigation movement, worker movement, tool movement or shared equipment. The target can be a propagation tray, mother stock, a clean bench, fresh media or another plant population.
+
+Interrupting any link can reduce spread. For example, room-specific tools interrupt equipment transfer; hand and glove protocols reduce worker-mediated transfer; removing debris reduces reservoirs; and clean-to-dirty workflow reduces the chance that workers carry material back into a cleaner zone.
+
+This model is more useful than memorizing a list of pests because it still works when the exact organism is unknown.
+
+### Scientific foundation — sanitation is risk reduction, not sterilization
+
+Most cultivation sanitation programs do not create a sterile environment. The operational goal is to reduce contamination pressure and prevent avoidable transfer to a level the facility can control. That distinction matters because “we disinfected it” should never be interpreted as proof that no biological material remains.
+
+Visible cleanliness, microbial load and disease risk are related but not identical. A surface can look clean while still carrying microorganisms; a visibly dirty surface can also shield microorganisms from a disinfectant. This is why process quality—correct cleaning, correct product, correct contact conditions and controlled movement—matters more than appearance alone.
+
 ### Zone names vary; movement logic does not
 
 Facilities may use terms such as clean zone, production, quarantine, isolation, mother room, propagation, hold area or restricted area. Names vary. The operating principle is stable: movement controls reduce the chance that a worker or object carries risk from a higher-risk area into a cleaner or more sensitive area.
@@ -61,6 +79,12 @@ UMass greenhouse guidance distinguishes physical cleaning from disinfection. Cle
 
 Organic debris matters because it can prevent disinfectant contact or reduce efficacy. A bench covered with roots, growing media and leaf debris is not ready for a simple spray-and-walk-away sanitation step.
 
+### Scientific foundation — why cleaning changes disinfectant performance
+
+Disinfection depends on the active ingredient reaching the target surface under the conditions required for that product. Soil, plant sap, organic debris and biofilm-like residues can physically shield microorganisms, consume or inactivate some disinfectants, and create uneven wetting. Cleaning therefore improves the probability that the disinfectant contacts the surface it is intended to treat.
+
+The concept of **contact time** is equally important. A surface that is supposed to remain wet for a defined period may not receive an effective treatment if it dries too quickly or is wiped immediately. Conversely, extending contact or increasing concentration beyond the label is not automatically safer or more effective and may create worker, plant or material-compatibility hazards.
+
 ### Follow the approved product and method
 
 Disinfectants are not interchangeable. Products differ in labeled use, concentration, contact conditions, hazards and material compatibility. Follow the current label and facility SOP. Never strengthen a solution because “more must be better,” mix products unless specifically allowed, or invent an unlabeled use.
@@ -102,6 +126,12 @@ Learners receive sanitation-step cards plus incorrect actions such as “apply o
 Quarantine or hold status protects the operation while an unresolved condition is evaluated. The concern might involve suspected pest/disease risk, incoming material, pesticide entry restrictions, identity uncertainty or another controlled issue. Technician I does not independently release a hold because plants look healthy.
 
 Do not confuse plant-health quarantine with pesticide restricted-entry status. They can coexist, but they come from different control systems.
+
+### Scientific foundation — quarantine changes uncertainty into a controlled state
+
+Quarantine is fundamentally an uncertainty-management tool. It separates material whose risk status is not yet resolved from the general production population. The material may ultimately prove healthy, but separation prevents an unresolved risk from becoming a facility-wide exposure.
+
+A good quarantine system therefore needs more than physical distance. It also needs identity, movement control, dedicated or controlled tools, defined entry/exit rules, observation criteria, release authority and records. Without those controls, a “quarantine room” can still leak risk through people, tools, carts, irrigation equipment or mislabeled material.
 
 ### Stop further spread first
 

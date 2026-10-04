@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-002-007",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-PROCESS-001",
+  "objective": "LO-LH-PHQ-002-03",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A return-air sensor is stable while a sheltered rack dries slowly. What is the best interpretation?",
+  "choices": [
+    "The product measurement must be wrong.",
+    "The return sensor proves uniformity.",
+    "The sensor may accurately describe its location but is insufficient to represent the sheltered product zone.",
+    "The rack should be omitted from the lot."
+  ],
+  "correct": 2,
+  "rationale": "Sensors observe local conditions; product exposure must be mapped independently.",
+  "references": [
+    "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-002",
+    "seedBank": true
+  }
+}

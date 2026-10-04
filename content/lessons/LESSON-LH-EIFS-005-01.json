@@ -1,0 +1,68 @@
+{
+  "id": "LESSON-LH-EIFS-005-01",
+  "title": "pH, Alkalinity, EC & Ion Context",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-WATER-QUALITY-ADV-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-005-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-WATER-ALKALINITY-EXT-001",
+    "REF-WATER-RECLAIMED-2026-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Water pH, alkalinity and EC answer different questions. pH describes current acidity/basicity, alkalinity describes acid-neutralizing capacity, and EC reflects bulk ionic conductivity rather than ion identity.",
+    "vocabulary": [
+      {
+        "term": "pH",
+        "definition": "A logarithmic measure related to hydrogen-ion activity that describes current acidity/basicity."
+      },
+      {
+        "term": "Alkalinity",
+        "definition": "Acid-neutralizing capacity, commonly driven by bicarbonates and carbonates and often expressed as calcium-carbonate equivalents."
+      },
+      {
+        "term": "Electrical conductivity (EC)",
+        "definition": "A bulk measure of ionic conductivity that responds to dissolved ions collectively but does not identify them."
+      }
+    ],
+    "sections": [
+      {
+        "title": "pH is not alkalinity",
+        "body": "Two source waters can have similar pH but different alkalinity and therefore different repeated buffering influence on the root zone.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "EC does not identify the salts",
+        "body": "Similar EC values can arise from different mixtures of sodium, calcium, chloride, bicarbonate or nutrients. Element-specific questions require element-specific analysis.",
+        "references": [
+          "REF-WATER-ALKALINITY-EXT-001"
+        ]
+      },
+      {
+        "title": "Context matters",
+        "body": "Interpret source water with treatment history, source identity, crop use and laboratory context rather than treating a single number as a full specification.",
+        "references": [
+          "REF-WATER-RECLAIMED-2026-001"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A municipal source and a well may share similar pH but differ in alkalinity and mineral composition enough to behave differently over repeated irrigation."
+    ],
+    "commonMistakes": [
+      "Using pH and alkalinity as synonyms.",
+      "Calling EC a nutrient formula.",
+      "Assuming acceptable pH/EC means all contaminants are absent."
+    ],
+    "practicalApplication": "Compare two mock water reports and explain what each pH, alkalinity, EC and major-ion result can and cannot support.",
+    "summary": "Water quality requires multiple measurements because no single value captures chemistry, buffering and contaminant risk."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-002-03",
+  "title": "Dry-Room Environment, Airflow & Load Mapping",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-PROCESS-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-002-03"
+  ],
+  "estimatedMinutes": 60,
+  "references": [
+    "REF-POSTHARVEST-001",
+    "REF-UMASS-GREENHOUSE-ENV-MONITORING-001",
+    "REF-ASTM-D8556-25"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A dry-room average can hide local zones. Sensor placement, airflow paths, rack arrangement, door activity and load density should be mapped against product evidence.",
+    "vocabulary": [
+      {
+        "term": "Microclimate",
+        "definition": "Local environmental condition that differs meaningfully from the room average."
+      },
+      {
+        "term": "Sensor representativeness",
+        "definition": "Extent to which a sensor location reflects the condition relevant to the material or decision."
+      },
+      {
+        "term": "Load map",
+        "definition": "Recorded arrangement of lots, racks, positions and process-relevant equipment within a drying space."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Sensors observe locations",
+        "body": "A sensor reports its local condition, not every product position. Placement and shielding should match the question being asked.",
+        "references": [
+          "REF-UMASS-GREENHOUSE-ENV-MONITORING-001"
+        ]
+      },
+      {
+        "title": "Airflow and loading create zones",
+        "body": "Obstructions, rack spacing, supply and return paths, and unequal loading can create repeatable spatial patterns that should be investigated rather than averaged away.",
+        "references": [
+          "REF-POSTHARVEST-001"
+        ]
+      },
+      {
+        "title": "Maps connect environment to lots",
+        "body": "A quality system should preserve which lot occupied which location during the observed trend so deviations and outcomes can be scoped.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A return-air sensor remains stable while a sheltered rack dries slowly; the sensor is not wrong, but it is insufficient for that product question."
+    ],
+    "commonMistakes": [
+      "Adding sensors without defining decisions they support.",
+      "Moving lots without updating the map.",
+      "Assuming airflow visualization replaces product measurement."
+    ],
+    "practicalApplication": "Build a room map with supply, return, doors, sensors, racks, lots and representative product-sampling locations.",
+    "summary": "Environment data becomes useful when sensor locations and product locations are connected through a controlled load map."
+  }
+}

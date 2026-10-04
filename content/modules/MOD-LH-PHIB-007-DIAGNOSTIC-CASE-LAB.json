@@ -1,0 +1,34 @@
+{
+  "id": "MOD-LH-PHIB-007-DIAGNOSTIC-CASE-LAB",
+  "title": "Diagnostic Case Laboratory",
+  "version": "0.1.0",
+  "status": "draft",
+  "lessons": [
+    "LESSON-LH-PHIB-007-01",
+    "LESSON-LH-PHIB-007-02",
+    "LESSON-LH-PHIB-007-03",
+    "LESSON-LH-PHIB-007-04",
+    "LESSON-LH-PHIB-007-05"
+  ],
+  "competencies": [
+    "COMP-IPM-ADV-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "assessment": null,
+  "description": "Integrative specialist case laboratory covering evidence intake, differential construction, targeted confirmation, control/CAPA design and defensible case handoff.",
+  "estimatedMinutes": 360,
+  "learningOutcomes": [
+    "Convert a mixed plant-health case file into a structured evidence set that separates direct observations, contextual facts, test results, assumptions and missing information.",
+    "Build and revise a differential diagnosis using supporting, conflicting and discriminating evidence across biotic, abiotic, root-zone, environmental and process explanations.",
+    "Select proportionate next observations, samples, tests and containment actions that reduce uncertainty while preserving safety, identity and authority boundaries.",
+    "Integrate IPM, biosecurity and CAPA into a case response that links the likely failure mechanism to controls, recovery metrics and effectiveness checks.",
+    "Defend a final specialist case recommendation through a reconstructable written record and concise handoff that communicates confidence, residual uncertainty and escalation needs."
+  ],
+  "extensions": {
+    "dedicatedAssessmentRequired": true,
+    "practicalCaseRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "assessorCalibrationRequired": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHIB-004-002",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IPM-ADV-001",
+  "objective": "LO-LH-PHIB-004-01",
+  "bloomLevel": "apply",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A scout observes yellowing on three plants but finds no pathogen sign. Which record is most defensible?",
+  "choices": [
+    "Yellowing observed on three identified plants; cause unresolved, with follow-up comparison/testing planned.",
+    "Confirmed fungal disease on three plants.",
+    "Nutrient deficiency confirmed because yellowing is nutritional.",
+    "No record is needed until a diagnosis is known."
+  ],
+  "correct": 0,
+  "rationale": "Observation should be recorded separately from causal interpretation when evidence does not support a confirmed diagnosis.",
+  "references": [
+    "REF-CANNABIS-DIAGNOSTICS-2024-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHIB-004",
+    "seedBank": true
+  }
+}

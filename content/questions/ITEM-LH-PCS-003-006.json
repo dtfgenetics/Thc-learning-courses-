@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-003-006",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-VPD-001",
+  "objective": "LO-LH-PCS-003-02",
+  "bloomLevel": "analyze",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A published media source gives a numeric pH range using a specific extraction method. How should it be used?",
+  "choices": [
+    "As a universal cannabis target regardless of method",
+    "As context that must be matched to analytical method, media and facility process before operational use",
+    "As proof that media moisture is correct",
+    "As a substitute for facility SOPs"
+  ],
+  "correct": 1,
+  "rationale": "Media measurements are method and system dependent; outside numeric guidance should not be copied blindly.",
+  "references": [
+    "REF-PSU-POTTING-MEDIA-PROPAGATION"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-003",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-005-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-005-02",
+  "bloomLevel": "apply",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A sealed sample arrives with an ID that conflicts with the submission form. What should happen?",
+  "choices": [
+    "Assume the seal proves identity.",
+    "Choose the ID that passes.",
+    "Relabel it without history.",
+    "Control the discrepancy and resolve identity before using the result for the lot."
+  ],
+  "correct": 3,
+  "rationale": "Seal integrity does not resolve conflicting identity evidence.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-005",
+    "seedBank": true
+  }
+}

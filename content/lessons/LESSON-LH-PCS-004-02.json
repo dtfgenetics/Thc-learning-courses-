@@ -1,0 +1,55 @@
+{
+  "id": "LESSON-LH-PCS-004-02",
+  "title": "Clean-to-Dirty Workflow, Tools, Surfaces & Personnel Movement",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PCS-004-02"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-IPM-001",
+    "REF-PSU-HIGH-TUNNEL-SANITATION-2025",
+    "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Specialist instruction for clean-to-dirty workflow, tools, surfaces & personnel movement in propagation and clean-stock operations.",
+    "vocabulary": [],
+    "sections": [
+      {
+        "title": "Movement order is a control",
+        "body": "Workflows can reduce avoidable transfer by moving from lower-risk to higher-risk areas and by separating incoming, suspect and cleared material. Production urgency does not erase the contamination pathway.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+        ]
+      },
+      {
+        "title": "Sanitation must follow the validated procedure",
+        "body": "Tools, surfaces and reusable equipment require the facility-approved cleaning/disinfection and release process. A visibly clean surface is not evidence that the applicable sanitation procedure was completed.",
+        "references": [
+          "REF-PSU-HIGH-TUNNEL-SANITATION-2025",
+          "REF-IPM-001"
+        ]
+      },
+      {
+        "title": "People carry workflow state too",
+        "body": "Hands, gloves, clothing, carts and shared implements can bridge zones. A specialist should design observable checkpoints for entry, exit, tool exchange and exception handling rather than rely on memory.",
+        "references": [
+          "REF-PSU-GREENHOUSE-DISEASE-RISK-2025"
+        ]
+      }
+    ],
+    "workedExamples": [],
+    "commonMistakes": [
+      "Wiping a tool casually and treating it as validated sanitation.",
+      "Moving from suspect to clean stock because the task is urgent.",
+      "Relying on worker memory instead of visible workflow checkpoints."
+    ],
+    "practicalApplication": "Design a propagation work sequence for clean, incoming, suspect and held stock that specifies movement order, tool exchange/sanitation checkpoints and stop conditions without naming unvalidated chemical recipes.",
+    "summary": "Clean-to-dirty workflow is a controlled movement system; sanitation chemistry and exact procedures remain facility validated."
+  }
+}

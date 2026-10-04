@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SAFETY-WORK-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "What should be verified before the first harvest movement?",
   "choices": [
-    "Only cultivar name",
-    "Only final weight",
-    "Only shift schedule",
-    "Authorization, identity, destination, PPE, tools, pathways and receiving readiness"
+    "Only the cultivar or strain identity because receiving can verify the rest.",
+    "Only the expected final weight and destination room.",
+    "Only the shift schedule and harvest team assignment.",
+    "Authorization, material identity, destination, required PPE, tools, movement pathway, and receiving readiness."
   ],
   "correct": 3,
-  "rationale": "Authorization, identity, destination, PPE, tools, pathways and receiving readiness. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Safe and traceable harvest movement depends on more than crop identity. The technician should verify that the movement is authorized, the material and destination are correct, required PPE/tools are ready, the path is usable, and the receiving area can accept the material. Those checks prevent safety, identity, and receiving errors before the first transfer.",
   "references": [
     "REF-NIOSH-CANNABIS-HAZARDS-2024",
     "REF-OSHA-1910-22-WALKING"

@@ -27,7 +27,8 @@ const learnerStore = {
       competencies: [
         { competencyId: 'COMP-ENV-ADV-001', curriculumVersion: '1.0.0', masteryLevel: 'demonstrated', updatedAt: '2026-09-01T13:00:00.000Z' },
         { competencyId: 'COMP-WATER-QUALITY-ADV-001', curriculumVersion: '1.0.0', masteryLevel: 'developing', updatedAt: '2026-09-01T13:00:00.000Z' },
-        { competencyId: 'COMP-PLANT-BIO-001', curriculumVersion: '1.0.0', masteryLevel: 'demonstrated', updatedAt: '2026-09-01T13:00:00.000Z' }
+        { competencyId: 'COMP-PLANT-BIO-001', curriculumVersion: '1.0.0', masteryLevel: 'demonstrated', updatedAt: '2026-09-01T13:00:00.000Z' },
+        { competencyId: 'COMP-TC-ASEPTIC-001', curriculumVersion: '1.0.0', masteryLevel: 'demonstrated', updatedAt: '2026-09-01T13:15:00.000Z' }
       ],
       performanceAssessments: [
         { assessmentId: 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP', status: 'passed', scorePercent: 88, criticalErrorCount: 0 }
@@ -70,7 +71,8 @@ try {
   assert.equal(body.credential.role, 'ROLE-CULT-TECH-II-001');
   assert.equal(body.assessmentAttempts.length, 1);
   assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-ENV-ADV-001'), true);
-  assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-PLANT-BIO-001'), false, 'transcript must be scoped to credential course competencies');
+  assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-PLANT-BIO-001'), true, 'Technician II credential explicitly demonstrates plant-biology competency');
+  assert.equal(body.competencies.some((row) => row.competencyId === 'COMP-TC-ASEPTIC-001'), false, 'credential projection must exclude evidence outside competenciesDemonstrated');
   assert.equal(body.performanceAssessments.length, 8);
   assert.equal(body.performanceAssessments.find((row) => row.assessmentId === 'PRACTICAL-TECH2-A-CROP-DIAGNOSTIC-WORKUP').status, 'passed');
   assert.equal(body.performanceAssessments.filter((row) => row.status === 'not-recorded').length, 7);

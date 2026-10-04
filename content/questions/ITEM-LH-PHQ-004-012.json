@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-004-012",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-004-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why separate product consequence from process cause?",
+  "choices": [
+    "Cause never matters.",
+    "Disposition automatically proves cause.",
+    "Both must always be decided by the collector.",
+    "The lot may need an interim decision while the deeper system cause remains under investigation."
+  ],
+  "correct": 3,
+  "rationale": "Material control and causal analysis are related but distinct decisions.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-004",
+    "seedBank": true
+  }
+}

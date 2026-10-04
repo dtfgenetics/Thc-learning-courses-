@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-005-004",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-PROP-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which propagation record best protects traceability?",
   "choices": [
-    "Only total rooted plants",
-    "Only cultivar nickname",
-    "Only the date",
-    "Donor/source identity, tray or lot identity, starting count, losses, usable count and movement/transplant status"
+    "Only the total number that rooted successfully.",
+    "Only the cultivar nickname and propagation date.",
+    "Only the tray date and destination room.",
+    "Donor/source identity, tray or lot identity, starting count, losses, usable count, and current movement or transplant status."
   ],
   "correct": 3,
-  "rationale": "Donor/source identity, tray or lot identity, starting count, losses, usable count and movement/transplant status. This preserves the Course 005 identity, crop-care, scouting, biosecurity, authority or record-quality principle being assessed.",
+  "rationale": "A useful propagation record lets another person reconstruct where the material came from, how much started, what was lost, what remained usable, and where it moved. A success total, nickname, or date alone cannot support complete traceability or reconciliation.",
   "references": [
     "REF-PROP-001",
     "REF-IPM-001"

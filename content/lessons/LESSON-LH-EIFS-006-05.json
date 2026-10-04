@@ -1,0 +1,70 @@
+{
+  "id": "LESSON-LH-EIFS-006-05",
+  "title": "Irrigation Verification Reports & Qualified Handoff",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-EIFS-006-05"
+  ],
+  "estimatedMinutes": 70,
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-IRRIGATION-001",
+    "REF-SAFETY-OSHA-001"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A strong irrigation handoff states what the system was commanded to do, what was actually delivered, where the discrepancy occurred, what root-zone effect followed and where the responder's authority ends.",
+    "vocabulary": [
+      {
+        "term": "Delivery verification",
+        "definition": "Evidence that intended irrigation volume or flow physically reached representative points."
+      },
+      {
+        "term": "Fault boundary",
+        "definition": "The point at which evidence supports a fault class but not the internal mechanical cause."
+      },
+      {
+        "term": "Qualified escalation",
+        "definition": "Transfer of evidence to the role authorized to inspect or repair protected irrigation equipment."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Connect command to physical delivery",
+        "body": "Record zone command/runtime, measured emitter output, pressure observations and affected positions. A controller log alone is insufficient.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Include root-zone consequence",
+        "body": "Dryback, moisture or EC patterns can show whether the delivery fault materially affected crop conditions.",
+        "references": [
+          "REF-IRRIGATION-001"
+        ]
+      },
+      {
+        "title": "Escalate without prescribing protected repair",
+        "body": "Identify the suspected fault class and safe checks completed, then route pump, electrical, pressure-system or protected disassembly work to qualified personnel.",
+        "references": [
+          "REF-SAFETY-OSHA-001",
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A handoff states that Zone 3 far-end emitters averaged 45% less output with lower measured pressure and faster dryback; it does not instruct an unqualified worker to dismantle the pump."
+    ],
+    "commonMistakes": [
+      "Writing only 'irrigation failed.'",
+      "Reporting commands without delivery measurements.",
+      "Giving protected repair instructions from an operational role."
+    ],
+    "practicalApplication": "Write an irrigation fault handoff from a supplied controller log, pressure readings, emitter catches and root-zone trend.",
+    "summary": "Good irrigation escalation translates measurements into a bounded fault class and preserves safe service boundaries."
+  }
+}

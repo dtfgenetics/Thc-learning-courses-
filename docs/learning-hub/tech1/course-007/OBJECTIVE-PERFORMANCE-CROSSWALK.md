@@ -6,6 +6,8 @@
 
 Course 7 is intentionally different from Courses 2–6. Its 12-item assessment is formative readiness evidence. Credential-bearing performance is intended to come from validated Practicals A–F plus the integrated capstone, not from a conventional multiple-choice final.
 
+**Instruction rule:** Course 7 integrates already taught Technician I competencies and directly teaches the integration workflow in four dedicated lab lessons. A readiness item, practical criterion, or capstone score domain may not introduce a new scored requirement that exists only in the 420 Encyclopedia, an external reading, or an untaught blueprint.
+
 | Objective | Integrated instruction | Readiness evidence | Practical evidence | Capstone evidence |
 |---|---|---|---|---|
 | `LO-LH-TECH1-007-01` — prioritize shift work from handoff, hazards, timing and authority | Lesson 01 | `ASSESS-LH-TECH1-007-M01` | all practicals contribute local task evidence | Phase 1 prioritization + dynamic reprioritization + final handoff |
@@ -14,6 +16,13 @@ Course 7 is intentionally different from Courses 2–6. Its 12-item assessment i
 | `LO-LH-TECH1-007-04` — integrate IPM scouting with propagation/canopy while preserving biosecurity and authority limits | Lesson 03 | readiness items | Practicals C, D and E | Phases 4–5 IPM + production execution domains |
 | `LO-LH-TECH1-007-05` — execute authorized harvest-to-postharvest transition with genealogy, reconciliation and receiving | Lesson 04 | readiness items | Practical F | Phase 6 harvest/postharvest/traceability domain |
 | `LO-LH-TECH1-007-06` — respond to dynamic event, preserve evidence, escalate, reconcile and hand off | Lessons 01, 03 and 04 | readiness items | cross-practical records/escalation evidence | Phases 7–8 + documentation/data-integrity + prioritization/escalation/handoff domains |
+
+## Teaching provenance
+
+- Readiness-to-teaching map: `docs/learning-hub/tech1/course-007/READINESS-TO-TEACHING-MAP.md`
+- Performance-to-teaching map: `docs/learning-hub/tech1/course-007/PERFORMANCE-TO-TEACHING-MAP.md`
+
+These records distinguish prerequisite teaching in Courses 1–6 from integration teaching in Course 7. Course 7 is allowed to reuse prior-course competencies because it is the integrated lab, but it must not assess a performance domain that the Technician I pathway never taught.
 
 ## Required evidence layers
 

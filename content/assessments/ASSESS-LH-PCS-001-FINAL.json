@@ -1,0 +1,85 @@
+{
+  "id": "ASSESS-LH-PCS-001-FINAL",
+  "title": "Seed Biology, Germination & Seedling Establishment — Specialist Course Assessment",
+  "version": "0.1.0",
+  "status": "draft",
+  "purpose": "summative",
+  "competencies": [
+    "COMP-PROP-001",
+    "COMP-ROOTZONE-001",
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "objectives": [
+    "LO-LH-PCS-001-01",
+    "LO-LH-PCS-001-02",
+    "LO-LH-PCS-001-03",
+    "LO-LH-PCS-001-04",
+    "LO-LH-PCS-001-05"
+  ],
+  "items": [
+    "ITEM-LH-PCS-001-001",
+    "ITEM-LH-PCS-001-002",
+    "ITEM-LH-PCS-001-003",
+    "ITEM-LH-PCS-001-004",
+    "ITEM-LH-PCS-001-005",
+    "ITEM-LH-PCS-001-006",
+    "ITEM-LH-PCS-001-007",
+    "ITEM-LH-PCS-001-008",
+    "ITEM-LH-PCS-001-009",
+    "ITEM-LH-PCS-001-010",
+    "ITEM-LH-PCS-001-011",
+    "ITEM-LH-PCS-001-012",
+    "ITEM-LH-PCS-001-013",
+    "ITEM-LH-PCS-001-014",
+    "ITEM-LH-PCS-001-015"
+  ],
+  "passingScorePercent": 80,
+  "maxAttempts": null,
+  "cooldownHours": 0,
+  "feedbackMode": "post-attempt-domain-level",
+  "totalItems": 15,
+  "randomizeItems": true,
+  "randomizeChoices": true,
+  "blueprint": [
+    {
+      "competency": "COMP-PROP-001",
+      "items": 9,
+      "cognitiveTarget": "Seed identity, provenance, viability/vigor and evidence-based germination reasoning"
+    },
+    {
+      "competency": "COMP-ROOTZONE-001",
+      "items": 2,
+      "cognitiveTarget": "Seedling establishment and root-zone interpretation"
+    },
+    {
+      "competency": "COMP-SPACE-BIOSEC-001",
+      "items": 1,
+      "cognitiveTarget": "Propagation sanitation and containment boundary"
+    },
+    {
+      "competency": "COMP-PRO-QA-001",
+      "items": 3,
+      "cognitiveTarget": "Batch reconciliation, documentation quality and deviation escalation"
+    }
+  ],
+  "itemSelection": {
+    "minimumActiveItemsPerCompetency": 4,
+    "targetBankItemsPerCompetency": 20,
+    "requireReferenceBackedItems": true,
+    "requireHumanAssessmentReview": true
+  },
+  "accommodations": {
+    "allowExtendedTime": true,
+    "allowAlternativeAccessiblePresentation": true
+  },
+  "extensions": {
+    "courseId": "COURSE-LH-PCS-001",
+    "bankStatus": "development-seed",
+    "bankExpansionTarget": 75,
+    "thresholdStatus": "provisional",
+    "credentialUseAuthorized": false,
+    "humanAssessmentReviewRequired": true,
+    "pilotRequiredBeforeActivation": true
+  }
+}

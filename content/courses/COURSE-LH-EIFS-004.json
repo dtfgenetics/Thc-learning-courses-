@@ -1,0 +1,60 @@
+{
+  "id": "COURSE-LH-EIFS-004",
+  "title": "Sensors, Controllers, Alarms, Calibration & Data Quality",
+  "version": "0.1.0",
+  "status": "draft",
+  "credentialBearing": false,
+  "level": "Environmental, Irrigation & Fertigation Systems Specialist / advanced specialization development",
+  "intendedAudience": [
+    "EIFS specialist learners",
+    "Cultivation personnel responsible for sensor verification, alarm interpretation, controller-response checks and data-quality escalation"
+  ],
+  "prerequisites": [
+    "Plant-Environment Measurement & Crop Response and HVAC/Dehumidification/Airflow concepts or equivalent foundation"
+  ],
+  "deliveryModes": [
+    "self-directed-web",
+    "instructor-facilitated",
+    "supervised-lab",
+    "workplace-equivalent"
+  ],
+  "evidencePolicy": "Course uses governed sensor/data-quality, data-integrity and environmental evidence. Calibration/verification concepts are taught as measurement-quality controls; exact calibration methods, tolerances and protected servicing remain instrument- and facility-specific.",
+  "assessmentPolicy": "Development-only until technical/assessment review, accessibility review and pilot evidence are complete. Course completion does not authorize protected calibration, energized electrical servicing, controller-program changes or bypassing alarms/interlocks.",
+  "description": "Develops specialist sensor and controls reasoning across placement, verification, calibration status, drift, data gaps, alarm logic, command-versus-response, redundancy and evidence-based maintenance handoff.",
+  "modules": [
+    "MOD-LH-EIFS-004-SENSORS-CONTROLS"
+  ],
+  "competencies": [
+    "COMP-ENV-ADV-001",
+    "COMP-PRO-QA-001"
+  ],
+  "finalAssessment": "ASSESS-LH-EIFS-004-FINAL",
+  "learningOutcomes": [
+    "Evaluate sensor representativeness and measurement quality using placement, shielding, verification history, colocated comparison and time-series behavior.",
+    "Distinguish verification, calibration, adjustment and protected servicing, and use only suitable verified references for measurement-quality decisions.",
+    "Interpret controller commands, alarms, interlocks and physical response as separate evidence layers rather than treating displayed status as proof of delivery.",
+    "Analyze missing, flat-lined, intermittent and contradictory data while preserving the original record and explicitly representing uncertainty.",
+    "Produce a maintenance/controls handoff that identifies device, time, command, observed response, affected process, verification already completed and safe authority boundary."
+  ],
+  "extensions": {
+    "plannedCredentialProgram": "CREDPROG-ENV-IRR-FERT-001",
+    "maturity": "new-specialist-content-draft",
+    "developmentDependencies": [
+      "COURSE-LH-EIFS-001",
+      "COURSE-LH-EIFS-003",
+      "COURSE-LH-TECH2-002"
+    ],
+    "dedicatedCourseAssessmentRequired": true,
+    "dedicatedItemBankRequired": true,
+    "visualReferenceSetRequired": true,
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "pilotRequired": true,
+    "credentialBearingActivationBlocked": true,
+    "dedicatedCourseAssessment": "ASSESS-LH-EIFS-004-FINAL",
+    "dedicatedItemCount": 15,
+    "targetSpecialistItemBankCount": 75,
+    "assessmentBankExpansionRequired": true,
+    "assessmentValidationRequired": true
+  }
+}

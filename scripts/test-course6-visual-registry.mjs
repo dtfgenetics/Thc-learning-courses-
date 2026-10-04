@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { validateSharedFoundationVisuals } from './lib/validate-shared-foundation-visuals.mjs';
 
 const root = process.cwd();
 const readJson = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -13,21 +14,23 @@ assert.equal(registry.driveStorage?.folderId, '1XeNnrsbbKU7pCslrxKKXmkxgb3vkF8Wq
 assert.equal(registry.driveStorage?.mirrorStatus, '8-of-8-assets-mirrored-verified-2026-09-18');
 
 const produced = (registry.assets ?? []).filter((asset) => asset.status === 'produced');
-const embedded = produced.filter((asset) => asset.deliveryType === 'embedded-visual');
-const downloads = produced.filter((asset) => asset.deliveryType === 'downloadable-practice');
-assert.equal(produced.length, 8, `Course 6 learner layer requires eight produced assets; found ${produced.length}`);
+const foundationAssets = produced.filter((asset) => String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
+const courseOwnedAssets = produced.filter((asset) => !String(asset.id ?? '').startsWith('VIS-FOUNDATION-'));
+const embedded = courseOwnedAssets.filter((asset) => asset.deliveryType === 'embedded-visual');
+const downloads = courseOwnedAssets.filter((asset) => asset.deliveryType === 'downloadable-practice');
+assert.equal(courseOwnedAssets.length, 8, `Course 6 learner layer requires eight produced assets; found ${produced.length}`);
 assert.equal(embedded.length, 5, `Course 6 requires five embedded visuals; found ${embedded.length}`);
 assert.equal(downloads.length, 3, `Course 6 requires three downloadable practice assets; found ${downloads.length}`);
-assert.equal(new Set(produced.map((asset) => asset.id)).size, produced.length);
-assert.equal(new Set(produced.map((asset) => asset.learnerPath)).size, produced.length);
+assert.equal(new Set(courseOwnedAssets.map((asset) => asset.id)).size, courseOwnedAssets.length);
+assert.equal(new Set(courseOwnedAssets.map((asset) => asset.learnerPath)).size, courseOwnedAssets.length);
 
-const registryById = new Map(produced.map((asset) => [asset.id, asset]));
+const registryById = new Map(courseOwnedAssets.map((asset) => [asset.id, asset]));
 const usedAssetIds = new Set();
 
-for (const asset of produced) {
+for (const asset of courseOwnedAssets) {
   assert.match(asset.id ?? '', /^VIS-LH-TECH1-006-[0-9]{3}$/);
-  assert.match(asset.learnerPath ?? '', /^\/assets\/course6\/[A-Za-z0-9._-]+\.svg$/i);
-  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course6\/[A-Za-z0-9._-]+\.svg$/i);
+  assert.match(asset.learnerPath ?? '', /^\/assets\/course6\/[A-Za-z0-9._-]+\.webp$/i);
+  assert.match(asset.sourcePath ?? '', /^apps\/web\/public\/assets\/course6\/[A-Za-z0-9._-]+\.webp$/i);
   assert.ok(['embedded-visual', 'downloadable-practice'].includes(asset.deliveryType), `${asset.id}: unsupported deliveryType`);
   assert.ok(Array.isArray(asset.primaryLessons) && asset.primaryLessons.length > 0);
   assert.ok(Array.isArray(asset.objectiveIds) && asset.objectiveIds.length > 0);
@@ -35,17 +38,29 @@ for (const asset of produced) {
   assert.ok(typeof asset.title === 'string' && asset.title.trim());
   assert.ok(typeof asset.purpose === 'string' && asset.purpose.trim());
   assert.ok(/^\d+\.\d+\.\d+$/.test(asset.version));
-  assert.equal(asset.driveMirrorStatus, 'mirrored-verified', `${asset.id}: Drive mirror must remain verified`);
-  assert.match(asset.driveFileId ?? '', /^[A-Za-z0-9_-]+$/, `${asset.id}: verified Drive mirror requires a file id`);
-  assert.match(asset.driveUrl ?? '', /^https:\/\/drive\.google\.com\/file\/d\//, `${asset.id}: verified Drive mirror requires a Drive URL`);
+  assert.equal(asset.assetLifecycle, 'production-raster-active');
+  assert.equal(asset.productionRasterDriveMirrorStatus, 'not-recorded');
+  assert.equal(asset.legacySource?.driveMirrorStatus, 'mirrored-verified', `${asset.id}: legacy provenance source must retain verified Drive mirror status`);
+  assert.match(asset.legacySource?.driveFileId ?? '', /^[A-Za-z0-9_-]+$/, `${asset.id}: legacy provenance source requires a Drive file id`);
+  assert.match(asset.legacySource?.driveFileUrl ?? '', /^https:\/\/drive\.google\.com\/file\/d\//, `${asset.id}: legacy provenance source requires a Drive URL`);
 
   const expectedDownload = `https://raw.githubusercontent.com/dtfgenetics/Thc-learning-courses-/main/${asset.sourcePath}`;
   assert.equal(asset.publicDownloadUrl, expectedDownload);
-  assert.equal(asset.learnerPath, `/${asset.sourcePath.replace(/^apps\/web\/public\//, '')}`);
+  assert.equal(asset.rasterReplacement?.releaseApproved, true, `${asset.id}: raster replacement must be owner-approved`);
+  assert.equal(asset.rasterReplacement?.generatedFrom, asset.legacySource?.sourcePath, `${asset.id}: released raster must preserve SVG provenance`);
+  assert.equal(asset.rasterReplacement?.candidateSourcePath, asset.sourcePath, `${asset.id}: candidate raster source must match active production sourcePath`);
+  assert.equal(asset.learnerPath, `/${asset.rasterReplacement.candidateSourcePath.replace(/^apps\/web\/public\//, '')}`);
+  const rasterSource = path.join(root, asset.rasterReplacement.candidateSourcePath);
+  assert.ok(fs.existsSync(rasterSource), `${asset.id}: released WebP learner asset missing`);
+  const rasterHeader = fs.readFileSync(rasterSource).subarray(0, 12);
+  assert.equal(rasterHeader.subarray(0, 4).toString('ascii'), 'RIFF');
+  assert.equal(rasterHeader.subarray(8, 12).toString('ascii'), 'WEBP');
 
   const source = path.join(root, asset.sourcePath);
-  assert.ok(fs.existsSync(source), `${asset.id}: public source asset missing`);
-  const svg = fs.readFileSync(source, 'utf8');
+  assert.ok(fs.existsSync(source), `${asset.id}: production raster asset missing`);
+  const legacySource = path.join(root, asset.legacySource?.sourcePath ?? '');
+  assert.ok(fs.existsSync(legacySource), `${asset.id}: legacy provenance SVG missing`);
+  const svg = fs.readFileSync(legacySource, 'utf8');
   assert.match(svg, /<svg[\s>]/);
   assert.match(svg, /<title[\s>]/);
   assert.match(svg, /<desc[\s>]/);
@@ -79,12 +94,14 @@ for (const lessonNumber of ['01', '02', '03', '04']) {
   assert.ok(imageCount >= 1, `${lesson.id}: every Course 6 lesson requires at least one embedded teaching visual`);
 }
 
-for (const asset of produced) {
+for (const asset of courseOwnedAssets) {
   assert.ok(usedAssetIds.has(asset.id), `${asset.id}: produced asset is not reachable from a canonical Course 6 lesson`);
   for (const lessonId of asset.primaryLessons) {
     assert.ok(fs.existsSync(path.join(root, 'content/lessons', `${lessonId}.json`)), `${asset.id}: primary lesson missing`);
   }
 }
+
+validateSharedFoundationVisuals({ root, assets: foundationAssets, registryPath: 'visuals/COURSE6-ASSET-REGISTRY.json' });
 
 const course = readJson('content/courses/COURSE-LH-TECH1-006.json');
 assert.equal(course.extensions?.learnerAssetLayerBuilt, true);
@@ -94,4 +111,4 @@ assert.equal(course.extensions?.downloadablePracticeAssetCount, 3);
 assert.equal(course.extensions?.totalLearnerAssetCount, 8);
 assert.equal(course.extensions?.independentProductReleaseAuthorityConferred, false);
 
-console.log('Course 6 learner-asset contract passed for eight public, accessible, lesson-reachable assets with eight verified controlled Drive mirrors.');
+console.log('Course 6 learner-asset contract passed for eight raster-first WebP learner assets with preserved verified SVG provenance mirrors.');

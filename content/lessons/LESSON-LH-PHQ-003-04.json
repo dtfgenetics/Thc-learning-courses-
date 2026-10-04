@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHQ-003-04",
+  "title": "Stability Monitoring & Shelf-Life Evidence",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-003-04"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-POSTHARVEST-STABILITY-2026-001",
+    "REF-NIST-CANNAQAP-2024-001",
+    "REF-ISO-17025-2017-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Shelf-life or storage-period claims should be tied to defined product, package, conditions, methods and timepoints. A single passing result is not a stability trend.",
+    "vocabulary": [
+      {
+        "term": "Timepoint",
+        "definition": "Scheduled sampling event in a stability plan."
+      },
+      {
+        "term": "Retained sample",
+        "definition": "Controlled sample kept for future examination under defined conditions."
+      },
+      {
+        "term": "Trend review",
+        "definition": "Evaluation of comparable results across time to detect direction, rate or atypical change."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Define the claim before collecting data",
+        "body": "The plan should state product, package, conditions, attributes, methods and decision roles. Data from another configuration may be contextual but not equivalent.",
+        "references": [
+          "REF-POSTHARVEST-STABILITY-2026-001"
+        ]
+      },
+      {
+        "title": "Preserve comparable measurement context",
+        "body": "Sample identity, handling, method and units must remain consistent or differences must be explained. Laboratory competence and measurement comparability matter.",
+        "references": [
+          "REF-NIST-CANNAQAP-2024-001",
+          "REF-ISO-17025-2017-001"
+        ]
+      },
+      {
+        "title": "Investigate atypical trends without rewriting history",
+        "body": "Unexpected results should retain original data and trigger controlled review rather than deletion, substitution or selective reporting.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A later result changes after a method revision; the trend review documents the method change instead of treating all values as directly equivalent."
+    ],
+    "commonMistakes": [
+      "Calling one timepoint a shelf-life study.",
+      "Changing storage conditions without recording it.",
+      "Dropping inconvenient results from a graph."
+    ],
+    "practicalApplication": "Draft a stability matrix linking lots, package configurations, conditions, timepoints, methods, attributes and exception handling.",
+    "summary": "Defensible stability claims depend on predefined, comparable and traceable evidence over time."
+  }
+}

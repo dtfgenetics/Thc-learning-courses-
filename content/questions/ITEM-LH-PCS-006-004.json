@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PCS-006-004",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PROP-001",
+  "objective": "LO-LH-PCS-006-02",
+  "bloomLevel": "analyze",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "A batch started with 110 units, 15 were removed, and 90 rooted. Which denominator preserves the original cohort for rooting yield?",
+  "choices": [
+    "90",
+    "95",
+    "15",
+    "110"
+  ],
+  "correct": 3,
+  "rationale": "The original eligible cohort denominator prevents removed losses from disappearing.",
+  "references": [
+    "REF-PROP-001"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PCS-006",
+    "seedBank": true
+  }
+}

@@ -1,7 +1,7 @@
 # Course 6 Objective Coverage
 
 **Course:** `COURSE-LH-TECH1-006 — Harvest, Postharvest, Traceability & Shift Handoff`  
-**State:** draft / machine package under construction  
+**State:** draft / machine package aligned; human validation gates open  
 **Date:** 2026-09-16
 
 This crosswalk controls the Course 6 learning loop. Practical F validation, evaluator calibration, product-release authority and professional credential release remain separate states.
@@ -14,6 +14,12 @@ This crosswalk controls the Course 6 learning loop. Practical F validation, eval
 | `LO-LH-TECH1-006-04` — maintain sanitation/contamination boundaries and hold suspect material | Lessons 01 and 02 | dirty-cart/rack and suspect-material hold decisions | M01 formative + final item bank | Practical F — sanitation/clean handling + identity exception handling |
 | `LO-LH-TECH1-006-05` — execute work orders within Technician I authority and resolve conflicts before transition | Lessons 01–04 | unavailable destination, hold/instruction conflict and controlled escalation scenarios | M01 formative + final item bank | Practical F — authorization/scope + harvest workflow execution |
 | `LO-LH-TECH1-006-06` — reconcile quantities without forcing false agreement and create reconstructable handoff | Lessons 03 and 04 | outgoing/receiving discrepancy + integrated handoff worksheets | M01 formative + final item bank | Practical F — quantity reconciliation + records/handoff |
+
+## Test-to-teaching provenance
+
+`docs/learning-hub/tech1/course-006/TEST-TO-TEACHING-MAP.md` records the dedicated Course 6 lessons that teach every assessed objective. The final assessment carries the same map in machine-readable metadata. The 420 Encyclopedia may support deeper study and reference work, but cannot substitute for Course 6 certification instruction.
+
+Current machine inspection confirms **4 summative items per objective** across all six controlled objectives.
 
 ## Machine learning-loop requirements
 

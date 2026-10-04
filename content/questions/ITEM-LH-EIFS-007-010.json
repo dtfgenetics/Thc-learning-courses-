@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-007-010",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-IRRIGATION-ADV-001",
+  "objective": "LO-LH-EIFS-007-04",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Before changing a crop-steering strategy, what is most important?",
+  "choices": [
+    "Establish a measured baseline for root-zone, delivery, input/return chemistry, environment and crop response.",
+    "Copy a vendor chart.",
+    "Change volume and feed strength together immediately.",
+    "Use elapsed time only."
+  ],
+  "correct": 0,
+  "rationale": "A baseline makes the intervention interpretable.",
+  "references": [
+    "REF-IRRIGATION-001",
+    "REF-ROOTZONE-NUTRIENT-002"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-007",
+    "seedBank": true
+  }
+}

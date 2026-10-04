@@ -26,11 +26,16 @@ export function transitionCredential(credential, nextStatus, { actorId, reason =
   };
 }
 
-export function publicCredentialView(credential, definition) {
+export function publicCredentialView(credential, definition, { now = new Date().toISOString() } = {}) {
   if (!definition?.id) throw new Error('credential definition required');
   const payload = credential.payloadJson ?? {};
+  const currentMs = Date.parse(now);
+  const expiresMs = credential.expiresAt == null ? null : Date.parse(credential.expiresAt);
+  const expiredByDate = expiresMs != null && Number.isFinite(expiresMs) && Number.isFinite(currentMs) && currentMs >= expiresMs;
+  const valid = ['test-issued', 'issued', 'valid'].includes(credential.status) && !expiredByDate;
   return {
     verificationId: credential.verificationId,
+    valid,
     status: credential.status,
     credential: {
       id: definition.id,
@@ -44,6 +49,7 @@ export function publicCredentialView(credential, definition) {
       version: credential.courseVersion ?? null
     },
     issuer: credential.issuer ?? payload.issuer ?? null,
+    recipientDisplayName: payload.publicRecipientNameConsent === true && typeof payload.publicRecipientName === 'string' ? payload.publicRecipientName : null,
     issuedAt: credential.issuedAt,
     expiresAt: credential.expiresAt ?? null,
     evidenceSummary: payload.publicEvidenceSummary ?? null,

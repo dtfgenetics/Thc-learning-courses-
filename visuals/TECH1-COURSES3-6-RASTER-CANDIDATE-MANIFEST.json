@@ -8,9 +8,9 @@
     "COURSE-LH-TECH1-005",
     "COURSE-LH-TECH1-006"
   ],
-  "purpose": "Integrity and automated-QA record for the 30 Technician I Courses 3-6 high-resolution lossless WebP candidates rendered from canonical learner-facing SVG compatibility baselines.",
+  "purpose": "Integrity, provenance and automated-QA record for the 30 released Technician I Courses 3-6 high-resolution lossless WebP production assets rendered from retired SVG provenance sources.",
   "productionMethod": {
-    "source": "canonical SVG compatibility baseline",
+    "source": "retired SVG provenance source",
     "format": "lossless WebP",
     "minimumShortSidePx": 1600,
     "contentTransformation": "none; deterministic raster rendering only"
@@ -19,14 +19,16 @@
     "expectedCandidates": 30,
     "producedCandidates": 30,
     "automatedQaPassed": 30,
-    "releasedReplacements": 0,
-    "humanQaPending": 30,
+    "releasedReplacements": 30,
+    "humanQaPending": 0,
     "byCourse": {
       "COURSE-LH-TECH1-003": 6,
       "COURSE-LH-TECH1-004": 7,
       "COURSE-LH-TECH1-005": 9,
       "COURSE-LH-TECH1-006": 8
-    }
+    },
+    "activeProductionRasters": 30,
+    "legacySvgLearnerTargets": 0
   },
   "candidates": [
     {
@@ -43,7 +45,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
@@ -59,7 +62,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
@@ -75,7 +79,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
@@ -91,7 +96,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
@@ -107,7 +113,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-003",
@@ -123,7 +130,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -139,7 +147,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -155,7 +164,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -171,7 +181,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -187,7 +198,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -203,7 +215,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -219,7 +232,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-004",
@@ -235,7 +249,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -251,7 +266,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -267,7 +283,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -283,7 +300,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -299,7 +317,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -315,7 +334,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -331,7 +351,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -347,7 +368,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -363,7 +385,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-005",
@@ -379,7 +402,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -395,7 +419,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -411,7 +436,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -427,7 +453,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -443,7 +470,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -459,7 +487,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -475,7 +504,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -491,7 +521,8 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     },
     {
       "courseId": "COURSE-LH-TECH1-006",
@@ -507,8 +538,16 @@
       },
       "format": "webp",
       "automatedQaStatus": "passed",
-      "releaseStatus": "human-qa-required"
+      "releaseStatus": "owner-approved-production-release",
+      "releaseApproved": true
     }
   ],
-  "releaseBoundary": "Candidate production and automated integrity/resolution QA do not establish factual, accessibility, responsive/manual or public-path approval. SVG baselines remain live until those reviews are recorded and lesson/registry cutover is verified."
+  "releaseBoundary": "Owner-approved academic raster release is active in canonical learner paths for Courses 3-6. Binary existence, automated raster QA, canonical mapping and accessibility text remain required; manual responsive/accessibility review and external/professional validation are not implied.",
+  "ownerReleaseApproval": {
+    "status": "approved",
+    "date": "2026-09-22",
+    "authority": "project owner",
+    "scope": "30 machine-validated Technician I Courses 3-6 raster replacements",
+    "note": "Academic publication approval; external review, accreditation, pilot evidence, and third-party validation are not claimed."
+  }
 }

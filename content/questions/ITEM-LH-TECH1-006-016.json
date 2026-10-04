@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-006-016",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-SPACE-BIOSEC-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "Two cultivars are staged close together with similar-looking cut branches. What control is strongest?",
   "choices": [
-    "Rely on visual appearance",
-    "Remove labels to prevent contamination",
-    "Combine them and separate later",
-    "Maintain verified container/lot labels and physical separation through the movement and receiving process"
+    "Rely on visual branch differences to keep the cultivars separate during movement.",
+    "Remove labels once material is in the same receiving room because room location becomes the new identity.",
+    "Combine the branches temporarily and separate them by appearance before final receiving.",
+    "Maintain verified lot/container labels and physical separation throughout movement and receiving so similar material cannot be mixed."
   ],
   "correct": 3,
-  "rationale": "Maintain verified container/lot labels and physical separation through the movement and receiving process. This preserves the Course 006 safety, postharvest, traceability, contamination-control, authority or record-quality principle being assessed.",
+  "rationale": "Similar-looking cut material is especially vulnerable to identity mix-ups. The strongest control is to preserve verified labels and physical separation from source through receiving. Visual recognition is not a substitute for controlled identity, and temporary mixing can break traceability even if staff believe they can separate the material later.",
   "references": [
     "REF-IPM-001",
     "REF-POSTHARVEST-001"

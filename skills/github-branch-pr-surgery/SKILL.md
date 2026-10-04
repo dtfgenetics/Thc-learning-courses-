@@ -6,11 +6,11 @@ Repair difficult branch and pull-request states while preserving unique work and
 Use for merge conflicts, stale branches, wrong PR bases, duplicate PRs, superseded work, squash-landed branches, large mixed PRs, missing commits, branch divergence, or non-mergeable changes.
 
 ## Operating sequence
-1. Identify canonical target (`dev`, `staging`, or `main`).
+1. Identify the canonical target. Until a documented reconciliation changes policy, ordinary repository work targets `main`; `dev` and `staging` are legacy/quarantined.
 2. Inspect PR metadata, head SHA, base SHA, changed filenames, and diff.
 3. Compare the branch against the current target and relevant merged PRs.
 4. Classify the branch: ACTIVE, READY, REPAIR, SUPERSEDED, LANDED, STALE-REVIEW, DELETE-CANDIDATE, or QUARANTINE.
-5. Retarget ordinary PRs to `dev` when appropriate.
+5. Retarget ordinary PRs to `main` unless a documented exception explicitly requires another target.
 6. Preserve unique useful changes; discard only work proven redundant/obsolete.
 7. Resolve conflicts from source-of-truth intent, not by blindly choosing ours/theirs.
 8. Regenerate derived files instead of manually merging them.
@@ -35,7 +35,7 @@ Commit-count divergence is not proof of unique work. Compare actual file changes
 Split a PR only if it contains genuinely independent deliverables that can be validated separately. Do not split solely to evade conflicts or failing checks.
 
 ## Safety
-Never force-push `dev`, `staging`, or `main` as routine repair. Never delete potentially unique work before comparison. Quarantine suspicious branches until understood.
+Never force-push `main` as routine repair. Treat legacy `dev` and `staging` as quarantined history; do not revive or overwrite them merely to simplify reconciliation. Never delete potentially unique work before comparison. Quarantine suspicious branches until understood.
 
 ## Completion standard
 Branch/PR surgery is complete when the canonical work is on the correct lifecycle path, unique work is preserved, duplicates are explicitly classified, and the active PR is mergeable or has one precise remaining blocker.

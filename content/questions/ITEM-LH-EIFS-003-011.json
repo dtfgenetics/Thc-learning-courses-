@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-003-011",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-ENV-ADV-001",
+  "objective": "LO-LH-EIFS-003-04",
+  "bloomLevel": "understand",
+  "difficulty": "moderate",
+  "type": "scenario",
+  "stem": "Why must occupational CO2 exposure limits not be used as cultivation enrichment targets?",
+  "choices": [
+    "They are lighting values.",
+    "They describe root-zone EC.",
+    "They are worker-safety limits, not crop-performance recommendations.",
+    "They are fertilizer labels."
+  ],
+  "correct": 2,
+  "rationale": "Worker exposure limits are safety boundaries, not crop setpoints.",
+  "references": [
+    "REF-OSHA-CO2-SAFETY-2026"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

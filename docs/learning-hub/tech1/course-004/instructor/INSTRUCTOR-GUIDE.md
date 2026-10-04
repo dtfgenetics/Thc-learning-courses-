@@ -80,7 +80,7 @@ Give a partly completed irrigation event plus a symptom report and suspect measu
 
 ## Learner assets
 
-Use the seven governed assets from `visuals/COURSE4-ASSET-REGISTRY.json` at their mapped lesson points. Five embedded visuals support explanation; two downloadable worksheets support performance practice. Replacement assets must preserve technical meaning, readable units/labels, accessible alternatives, source/claim boundaries and registry/path controls.
+Use the eight governed assets from `visuals/COURSE4-ASSET-REGISTRY.json` at their mapped lesson points. Six embedded visuals support explanation; two downloadable worksheets support performance practice. Replacement assets must preserve technical meaning, readable units/labels, accessible alternatives, source/claim boundaries and registry/path controls.
 
 ## Formative assessment
 
@@ -112,7 +112,7 @@ Use new values, maps, logs and work orders for return-to-practice and reassessme
 
 Before delivery/release candidate review, confirm:
 - course/lesson/objective versions align;
-- all seven asset paths resolve;
+- all eight asset paths resolve;
 - downloadable worksheets are usable;
 - no universal nutrient, pH, EC, dryback or irrigation rule has been added without supporting authority;
 - equipment-specific actions remain tied to procedure/manual context;

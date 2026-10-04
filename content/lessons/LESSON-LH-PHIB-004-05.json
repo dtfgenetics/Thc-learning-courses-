@@ -1,0 +1,71 @@
+{
+  "id": "LESSON-LH-PHIB-004-05",
+  "title": "Disease Containment, Testing Handoff & Reconstructable Records",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-SPACE-BIOSEC-001",
+    "COMP-PRO-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHIB-004-05"
+  ],
+  "estimatedMinutes": 55,
+  "references": [
+    "REF-IPM-GREENHOUSE-2024-001",
+    "REF-HLVD-SPREAD-2025-001",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "A specialist response must preserve both biological containment and information integrity. The record should let a qualified reviewer reconstruct what was observed, what moved, what was held, what was sampled/tested, what decisions were authorized and what remains unresolved.",
+    "vocabulary": [
+      {
+        "term": "Containment action",
+        "definition": "A temporary or ongoing control used to limit spread while diagnosis, testing or disposition is resolved."
+      },
+      {
+        "term": "Chain of custody",
+        "definition": "A documented sequence showing specimen identity, collection, transfer, receipt and handling."
+      },
+      {
+        "term": "Controlled correction",
+        "definition": "A traceable correction that preserves the original record and documents what changed, when and why."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Contain first when spread consequence warrants it",
+        "body": "A suspect disease or HLVd finding may justify limiting movement of plants, tools or personnel while evidence is strengthened. Containment is a risk-control action, not proof of cause.",
+        "references": [
+          "REF-IPM-GREENHOUSE-2024-001",
+          "REF-HLVD-SPREAD-2025-001"
+        ]
+      },
+      {
+        "title": "Testing handoff must preserve identity",
+        "body": "Sample records should tie the specimen to plant/lot/location, collection time, collector, reason for test and laboratory/method result. Uncertain identity or chain-of-custody gaps reduce how confidently a result can support disposition.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Separate facts, interpretation and authority",
+        "body": "Record direct observations, hypotheses, test results, actions taken, authorization source and unresolved follow-up separately. Do not rewrite earlier evidence to make the final diagnosis appear inevitable.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A positive laboratory result tied to a clearly identified donor plant and chain-of-custody record supports a much stronger containment/disposition decision than an unlabeled screenshot of a result."
+    ],
+    "commonMistakes": [
+      "Discarding the original observation after the diagnosis changes.",
+      "Recording containment as if it proves infection.",
+      "Using a test result when sample identity cannot be reconstructed."
+    ],
+    "practicalApplication": "Complete a mock disease incident record from first observation through containment, sample handoff, result, authorized disposition and next-shift follow-up.",
+    "summary": "Disease control depends on both containment and trustworthy evidence. Reconstructable identity, sampling, testing, decisions and corrections are part of biosecurity."
+  }
+}

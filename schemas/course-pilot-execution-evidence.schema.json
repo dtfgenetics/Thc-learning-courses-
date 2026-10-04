@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academy.dtfseeds.com/schemas/course-pilot-execution-evidence.schema.json",
+  "title": "THC Academy Course Pilot Execution Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "courseId",
+    "courseVersion",
+    "status",
+    "pilotId",
+    "cohortCount",
+    "participantCount",
+    "knowledgeEvidence",
+    "performanceEvidence",
+    "fairnessAccessibilityEvidence",
+    "learnerFeedbackCollected",
+    "dataQualityReviewed",
+    "stopCriteriaTriggered",
+    "authorityId",
+    "recordedAt",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^PILOTEXEC-[A-Z0-9-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "pattern": "^COURSE-LH-TECH[12]-[0-9]{3}$"
+    },
+    "courseVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "collecting",
+        "analysis-pending",
+        "evidence-complete",
+        "approved",
+        "revision-required",
+        "invalidated"
+      ]
+    },
+    "pilotId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "cohortCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "participantCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "knowledgeEvidence": {
+      "type": "object",
+      "required": [
+        "required",
+        "itemEvidenceComplete",
+        "currentItemVersionsOnly"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "itemEvidenceComplete": {
+          "type": "boolean"
+        },
+        "currentItemVersionsOnly": {
+          "type": "boolean"
+        },
+        "itemsExpected": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "itemsWithCompleteEvidence": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "performanceEvidence": {
+      "type": "object",
+      "required": [
+        "required",
+        "executionCompleted",
+        "currentAssessmentVersionsOnly"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "executionCompleted": {
+          "type": "boolean"
+        },
+        "currentAssessmentVersionsOnly": {
+          "type": "boolean"
+        },
+        "tasksExpected": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "tasksExecuted": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "fairnessAccessibilityEvidence": {
+      "type": "object",
+      "required": [
+        "reviewed",
+        "materialIssuesResolvedOrDispositioned"
+      ],
+      "properties": {
+        "reviewed": {
+          "type": "boolean"
+        },
+        "materialIssuesResolvedOrDispositioned": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "learnerFeedbackCollected": {
+      "type": "boolean"
+    },
+    "dataQualityReviewed": {
+      "type": "boolean"
+    },
+    "stopCriteriaTriggered": {
+      "type": "boolean"
+    },
+    "stopCriteriaDisposition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authorityId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

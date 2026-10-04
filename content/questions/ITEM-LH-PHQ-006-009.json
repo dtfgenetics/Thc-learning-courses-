@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-006-009",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-POSTHARVEST-QA-001",
+  "objective": "LO-LH-PHQ-006-03",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "A mock recall finds an unexplained quantity. What is the correct outcome?",
+  "choices": [
+    "Record the gap, maintain uncertainty and assign investigation and corrective action.",
+    "Call the exercise complete anyway.",
+    "Invent a destination.",
+    "Delete the source record."
+  ],
+  "correct": 0,
+  "rationale": "Exercises are valuable when gaps remain visible and drive improvement.",
+  "references": [
+    "REF-ASTM-D8556-25"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-006",
+    "seedBank": true
+  }
+}

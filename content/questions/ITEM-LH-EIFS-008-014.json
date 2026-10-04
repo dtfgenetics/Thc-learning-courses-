@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-EIFS-008-014",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-008-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should a commissioning packet preserve failed tests after the issue is corrected?",
+  "choices": [
+    "Failed tests should always be deleted.",
+    "Only passing results matter.",
+    "They document what failed, how it was corrected and why later acceptance is justified.",
+    "Keeping failures creates unnecessary records."
+  ],
+  "correct": 2,
+  "rationale": "Data integrity requires traceable evidence of deviations and corrections.",
+  "references": [
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-008",
+    "seedBank": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "LESSON-LH-PHQ-006-01",
+  "title": "Postharvest QMS & Lot-Status Control",
+  "version": "0.1.0",
+  "status": "draft",
+  "competencies": [
+    "COMP-POSTHARVEST-QA-001"
+  ],
+  "learningObjectives": [
+    "LO-LH-PHQ-006-01"
+  ],
+  "estimatedMinutes": 65,
+  "references": [
+    "REF-ASTM-D8556-25",
+    "REF-MHRA-GXP-DATA-INTEGRITY",
+    "REF-WHO-DATA-INTEGRITY-2021"
+  ],
+  "assessment": null,
+  "content": {
+    "overview": "Quality is not created by one final test. A postharvest quality system links controlled procedures, competent work, equipment, records, deviations and visible material status across the process.",
+    "vocabulary": [
+      {
+        "term": "Quality management system",
+        "definition": "Coordinated controls used to direct and demonstrate consistent quality activities."
+      },
+      {
+        "term": "Lot status",
+        "definition": "Controlled designation such as in process, hold, released or otherwise authorized."
+      },
+      {
+        "term": "Specification",
+        "definition": "Approved criterion and context used by an authorized process to evaluate evidence."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Controls work as a system",
+        "body": "Procedures, training, equipment, monitoring and records should support the same process rather than existing as disconnected documents.",
+        "references": [
+          "REF-ASTM-D8556-25"
+        ]
+      },
+      {
+        "title": "Status prevents unintended use",
+        "body": "Physical labels, locations and electronic records should agree and changes should be attributable to an authorized role.",
+        "references": [
+          "REF-MHRA-GXP-DATA-INTEGRITY"
+        ]
+      },
+      {
+        "title": "Data integrity supports reconstruction",
+        "body": "Records should remain attributable, contemporaneous, complete and available through their lifecycle.",
+        "references": [
+          "REF-WHO-DATA-INTEGRITY-2021"
+        ]
+      }
+    ],
+    "workedExamples": [
+      "A released label on material while the electronic record says hold is a system failure requiring reconciliation before movement."
+    ],
+    "commonMistakes": [
+      "Treating final testing as the entire quality system.",
+      "Allowing informal status changes.",
+      "Keeping procedures that do not match actual work."
+    ],
+    "practicalApplication": "Map one postharvest process step to its procedure, training, equipment check, record, deviation path and lot-status control.",
+    "summary": "A postharvest QMS aligns how work is defined, performed, recorded, reviewed and authorized."
+  }
+}

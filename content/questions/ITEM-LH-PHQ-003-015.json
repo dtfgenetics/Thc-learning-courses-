@@ -1,0 +1,27 @@
+{
+  "id": "ITEM-LH-PHQ-003-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-PHQ-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "What belongs in a storage-deviation handoff?",
+  "choices": [
+    "Only a repaired-equipment note.",
+    "A verbal release instruction.",
+    "Affected lots, exposure timeline, current status, interim controls, evidence gaps and decision owner.",
+    "An unlinked summary without lot IDs."
+  ],
+  "correct": 2,
+  "rationale": "The next role needs status and evidence, not just equipment recovery.",
+  "references": [
+    "REF-HSE-SHIFT-HANDOVER"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-PHQ-003",
+    "seedBank": true
+  }
+}

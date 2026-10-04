@@ -1,0 +1,28 @@
+{
+  "id": "ITEM-LH-EIFS-003-015",
+  "version": 1,
+  "status": "draft",
+  "purpose": "summative",
+  "competency": "COMP-PRO-QA-001",
+  "objective": "LO-LH-EIFS-003-05",
+  "bloomLevel": "evaluate",
+  "difficulty": "hard",
+  "type": "scenario",
+  "stem": "Why should a specialist classify a fault before naming the exact root cause?",
+  "choices": [
+    "The available evidence may support sensor, distribution, capacity or equipment-response categories without proving the internal mechanical failure.",
+    "Root causes are never useful.",
+    "Equipment faults cannot be investigated.",
+    "Only technicians can see trends."
+  ],
+  "correct": 0,
+  "rationale": "Bounded fault classification prevents overstatement while still guiding qualified escalation.",
+  "references": [
+    "REF-VPD-002",
+    "REF-MHRA-GXP-DATA-INTEGRITY"
+  ],
+  "extensions": {
+    "specialistCourse": "COURSE-LH-EIFS-003",
+    "seedBank": true
+  }
+}

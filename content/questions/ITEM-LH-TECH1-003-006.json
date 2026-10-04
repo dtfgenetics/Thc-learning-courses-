@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-003-006",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-LIGHT-001",
@@ -10,13 +10,13 @@
   "type": "scenario",
   "stem": "A nine-point PPFD map has a good average but much brighter center points and dim corners. What should the technician report?",
   "choices": [
-    "Only the average because it summarizes the room",
-    "The distribution and representative grid values, not only the average",
-    "Only the center because it is brightest",
-    "A lighting-design diagnosis without escalation"
+    "Report only the average because the mean summarizes overall room intensity and is easiest to compare with target.",
+    "Report the mapped distribution and representative grid values, noting the bright center and dim corners rather than hiding them inside the average.",
+    "Report only the center values because they show the maximum intensity the canopy receives.",
+    "Conclude that the room has a lighting-design defect and recommend fixture changes without further escalation."
   ],
   "correct": 1,
-  "rationale": "The distribution and representative grid values, not only the average. This preserves the measurement, data-quality, record or role-boundary principle being assessed.",
+  "rationale": "A good average can conceal poor uniformity. If center points are much brighter and corners much dimmer, the distribution is part of the evidence and may matter to crop response. Technician I should preserve the grid pattern and representative values, then escalate interpretation or design decisions that are outside the assigned role.",
   "references": [
     "REF-LIGHT-001"
   ],

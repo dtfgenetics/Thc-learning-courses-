@@ -1,6 +1,6 @@
 {
   "id": "ITEM-LH-TECH1-004-018",
-  "version": 1,
+  "version": 2,
   "status": "draft",
   "purpose": "summative",
   "competency": "COMP-CULT-EQUIPMENT-CARE-001",
@@ -10,13 +10,13 @@
   "type": "multiple-choice",
   "stem": "Which action is most consistent with Technician I operator care?",
   "choices": [
-    "Opening protected electrical controls",
-    "Performing the explicitly permitted cleanliness, readiness or simple delivery checks in the equipment procedure",
-    "Reprogramming irrigation strategy",
-    "Changing calibration coefficients outside procedure"
+    "Opening protected electrical controls to check for loose connections.",
+    "Performing explicitly permitted cleanliness, readiness, visual-condition, or simple delivery checks in the equipment procedure.",
+    "Changing irrigation strategy when repeated delivery problems are observed.",
+    "Changing calibration coefficients so an instrument agrees with nearby values."
   ],
   "correct": 1,
-  "rationale": "Performing the explicitly permitted cleanliness, readiness or simple delivery checks in the equipment procedure. This preserves the Course 004 measurement, root-zone, nutrition, work-order, equipment or record-quality principle being assessed.",
+  "rationale": "Operator care stays within the external and procedural checks the technician is specifically authorized to perform. Opening protected electrical equipment, changing control strategy, or altering calibration parameters crosses into servicing or higher-level control authority unless explicitly assigned.",
   "references": [
     "REF-IRRIGATION-001"
   ],
