@@ -114,6 +114,7 @@ assert.equal(exposures.length,1,'resume must not double-count exposure');
 
 const saved=await saveSecureCredentialAssessmentResponses({
   learnerStore,secureAssessmentStore,subject:'learner-1',attemptId,
+  assessment,
   responses:[
     {itemId:'SECITEM-TEST-A-001',itemVersion:1,response:1},
     {itemId:'SECITEM-TEST-B-001',itemVersion:1,response:1}
