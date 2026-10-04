@@ -102,13 +102,13 @@ const postgresStore=createPostgresSecureAssessmentStore({
     const sql=String(text);
     sqlCalls.push({sql,params});
     if(sql.includes('select 1 as ok')) return {rows:[{ok:1}]};
-    if(sql.includes('from secure_assessment_banks')) return {rows:[{bank_version:'BANK-TECH1-OP-001'}]};
     if(sql.includes('join secure_assessment_items')||sql.includes('from secure_assessment_items')) return {rows:[{
       secure_item_id:'SECITEM-SAFETY-101',revision:1,bank_version:'BANK-TECH1-OP-001',
       competency_id:'COMP-SAFETY-WORK-001',status:'approved-operational',source_class:'private-operational',
       prompt:'Private operational prompt',choices_json:['A','B','C','D'],scoring_key_json:2,
       rationale:'private',presentation_json:{mode:'single-select'}
     }]};
+    if(sql.includes('from secure_assessment_banks')) return {rows:[{bank_version:'BANK-TECH1-OP-001'}]};
     if(sql.includes('insert into secure_assessment_forms')) return {rowCount:1,rows:[]};
     if(sql.includes('insert into secure_assessment_exposures')) return {rowCount:1,rows:[]};
     if(sql.includes('update secure_assessment_items')) return {rows:[{secure_item_id:'SECITEM-SAFETY-101',revision:1,status:'quarantined'}]};
