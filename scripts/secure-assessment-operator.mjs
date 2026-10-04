@@ -1,5 +1,6 @@
 import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { loadSecureAssessmentStore } from '../apps/api/src/secure-assessment-store-adapter.mjs';
 
 function value(args,name,{required=false}={}){
@@ -116,6 +117,6 @@ async function main(){
   }
 }
 
-if(process.argv[1]&&fileURLToPath(import.meta.url)===fileURLToPath(new URL('file://'+process.argv[1]).href)){
+if(process.argv[1]&&fileURLToPath(import.meta.url)===fileURLToPath(pathToFileURL(path.resolve(process.argv[1])))){
   await main();
 }
