@@ -55,6 +55,19 @@ assert.match(portal, /CREDPROG-CULT-TECH-II-001/, 'learner dashboard must suppor
 assert.match(portal, /Create \${program\.title} application/, 'learner dashboard must create program-specific application records rather than a single hard-coded application');
 
 
+assert.match(portal, /Protected credential assessment/, 'dashboard must expose the protected credential-assessment workflow');
+assert.match(portal, /Begin or resume credential assessment/, 'learner must be able to start or resume an authorized credential assessment');
+assert.match(portal, /assessment-attempts/, 'protected assessment UI must call the credential assessment runtime');
+assert.match(portal, /Answers are marked independently; grading happens after submission\./, 'credential assessment UI must preserve independent answer marking and post-submission grading');
+assert.match(portal, /Time remaining:/, 'credential assessment UI must expose a learner-visible countdown tied to the server expiry');
+assert.match(portal, /Submit credential assessment for grading/, 'credential assessment UI must expose explicit submission');
+assert.match(portal, /answer keys and rationales are never sent to this browser/i, 'credential assessment UI must state the private answer-material boundary');
+assert.match(portal, /CRED-CULT-TECH-I-001/, 'protected assessment UI must support Technician I');
+assert.match(portal, /CRED-CULT-TECH-II-001/, 'protected assessment UI must support Technician II');
+assert.match(css, /\.credential-assessment-panel\s*\{/, 'protected credential assessment needs dedicated responsive styling');
+assert.match(css, /\.secure-assessment-choice\s*\{/, 'protected assessment choices need usable touch-target styling');
+
+
 for (const forbidden of [
   /courseComplete/i,
   /credentialEligible/i,

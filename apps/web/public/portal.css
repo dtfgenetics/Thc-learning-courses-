@@ -342,3 +342,65 @@
   .mobile-learning-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .mobile-learning-actions button { width: 100%; }
 }
+
+
+.credential-assessment-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .85rem;
+  background: var(--panel);
+}
+.credential-assessment-panel h4 { margin-top: 0; }
+.secure-assessment-form { display: grid; gap: 1rem; }
+.secure-assessment-item {
+  display: grid;
+  gap: .7rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: #fff;
+}
+.secure-assessment-item legend {
+  padding: 0 .25rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.secure-assessment-competency { margin: 0; color: var(--muted); font-size: .9rem; }
+.secure-assessment-choices { display: grid; gap: .5rem; }
+.secure-assessment-choice {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: .65rem;
+  min-height: 44px;
+  padding: .7rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  background: #fff;
+  cursor: pointer;
+}
+.secure-assessment-choice:has(input:checked) {
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px rgba(36,95,61,.12);
+}
+.secure-assessment-choice input { margin-top: .2rem; }
+.secure-assessment-timer {
+  position: sticky;
+  top: .5rem;
+  z-index: 2;
+  width: fit-content;
+  padding: .55rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 800;
+}
+.secure-assessment-launch,
+.secure-assessment-submit { min-height: 44px; }
+@media (max-width: 620px) {
+  .credential-assessment-panel { padding: .8rem; }
+  .secure-assessment-item { padding: .8rem; }
+  .secure-assessment-choice { grid-template-columns: 24px minmax(0,1fr); }
+}

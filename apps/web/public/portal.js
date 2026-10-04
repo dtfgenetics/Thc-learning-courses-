@@ -176,6 +176,197 @@ function evidenceList(title, rows, idKey) {
   return section;
 }
 
+
+function assessmentBlockerLabel(value) {
+  return String(value ?? 'assessment unavailable').replaceAll('-', ' ');
+}
+
+function secureAssessmentQuestion(item, credentialId, attemptId, statusNode) {
+  const fieldset = document.createElement('fieldset');
+  fieldset.className = 'secure-assessment-item';
+  fieldset.append(text('legend', item.prompt ?? 'Credential assessment question'));
+  if (item.competency) fieldset.append(text('p', item.competency, 'secure-assessment-competency'));
+
+  const mode = String(item.presentation?.mode ?? 'single-select');
+  const current = item.response;
+  const save = async (responseValue) => {
+    statusNode.textContent = 'Saving answer…';
+    const endpoint = '/api/v1/me/credentials/' + encodeURIComponent(credentialId) + '/assessment-attempts/' + encodeURIComponent(attemptId) + '/responses';
+    const response = await fetch(endpoint, {
+      method: 'PUT',
+      headers: { accept: 'application/json', 'content-type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ responses: [{ itemId: item.id, itemVersion: item.revision, response: responseValue }] })
+    });
+    const body = await response.json().catch(() => ({}));
+    statusNode.textContent = response.ok ? 'Answer saved.' : (body.detail || body.error || 'Answer not saved.');
+  };
+
+  if (mode === 'numeric') {
+    const label = document.createElement('label');
+    label.className = 'portal-input-row';
+    label.append(text('span', 'Your answer'));
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.inputMode = 'decimal';
+    input.value = current ?? '';
+    input.addEventListener('change', () => {
+      if (input.value === '') return;
+      save(Number(input.value));
+    });
+    label.append(input);
+    fieldset.append(label);
+    return fieldset;
+  }
+
+  const choices = Array.isArray(item.choices) ? item.choices : [];
+  const selected = mode === 'multiple-select' && Array.isArray(current) ? new Set(current.map(Number)) : null;
+  const group = document.createElement('div');
+  group.className = 'secure-assessment-choices';
+  choices.forEach((choice, index) => {
+    const label = document.createElement('label');
+    label.className = 'secure-assessment-choice';
+    const input = document.createElement('input');
+    input.type = mode === 'multiple-select' ? 'checkbox' : 'radio';
+    input.name = 'secure-' + attemptId + '-' + item.id;
+    input.value = String(index);
+    input.checked = mode === 'multiple-select' ? selected?.has(index) === true : Number(current) === index;
+    input.addEventListener('change', () => {
+      if (mode === 'multiple-select') {
+        const values = [...group.querySelectorAll('input:checked')].map((node) => Number(node.value));
+        save(values);
+      } else if (input.checked) {
+        save(index);
+      }
+    });
+    label.append(input, text('span', choice));
+    group.append(label);
+  });
+  fieldset.append(group);
+  return fieldset;
+}
+
+function renderSecureAssessmentAttempt(host, credentialId, title, payload) {
+  host.replaceChildren();
+  host.append(text('h4', title + ' protected credential assessment'));
+  const attempt = payload.attempt ?? {};
+  const assessment = payload.assessment ?? {};
+  const items = payload.items ?? [];
+  const meta = document.createElement('div');
+  meta.className = 'portal-progress-summary compact';
+  meta.append(
+    summaryCard('Attempt', attempt.status ?? 'started', attempt.id ?? ''),
+    summaryCard('Questions', String(assessment.totalItems ?? items.length), 'Answers are marked independently; grading happens after submission.'),
+    summaryCard('Time limit', String(assessment.timeLimitMinutes ?? '—') + ' min', 'Server-enforced')
+  );
+  host.append(meta);
+
+  const timer = text('p', '', 'secure-assessment-timer');
+  const saveStatus = text('p', '', 'portal-result-note');
+  host.append(timer, saveStatus);
+  let timerId = null;
+  const updateTimer = () => {
+    if (!attempt.expiresAt) {
+      timer.textContent = 'Timer unavailable.';
+      return;
+    }
+    const remaining = Date.parse(attempt.expiresAt) - Date.now();
+    if (remaining <= 0) {
+      timer.textContent = 'Time expired. Submit now to record the timed attempt.';
+      if (timerId) clearInterval(timerId);
+      return;
+    }
+    const totalSeconds = Math.ceil(remaining / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = String(totalSeconds % 60).padStart(2, '0');
+    timer.textContent = 'Time remaining: ' + minutes + ':' + seconds;
+  };
+  updateTimer();
+  timerId = setInterval(updateTimer, 1000);
+
+  const form = document.createElement('form');
+  form.className = 'secure-assessment-form';
+  for (const item of items) form.append(secureAssessmentQuestion(item, credentialId, attempt.id, saveStatus));
+
+  const actions = document.createElement('div');
+  actions.className = 'record-actions';
+  const submit = text('button', 'Submit credential assessment for grading', 'record-button secure-assessment-submit');
+  submit.type = 'button';
+  submit.addEventListener('click', async () => {
+    submit.disabled = true;
+    saveStatus.textContent = 'Submitting for server grading…';
+    const endpoint = '/api/v1/me/credentials/' + encodeURIComponent(credentialId) + '/assessment-attempts/' + encodeURIComponent(attempt.id) + '/submit';
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { accept: 'application/json' },
+      credentials: 'same-origin'
+    });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      saveStatus.textContent = body.error === 'assessment-incomplete'
+        ? 'Assessment incomplete: ' + String(body.unanswered ?? 'some') + ' unanswered question(s).'
+        : (body.error || 'Assessment could not be submitted.');
+      submit.disabled = false;
+      return;
+    }
+    if (timerId) clearInterval(timerId);
+    form.remove();
+    actions.remove();
+    timer.remove();
+    const result = body.attempt ?? {};
+    const score = Number(result.scorePercent ?? 0).toFixed(0);
+    host.append(text('p', result.passed ? 'Passed with ' + score + '%.' : 'Score: ' + score + '%. Standard not yet met.', result.passed ? 'portal-result-note status-passed' : 'portal-result-note'));
+    if (body.remediation?.message) host.append(text('p', body.remediation.message, 'portal-result-note'));
+  });
+  actions.append(submit);
+  form.append(actions);
+  host.append(form);
+}
+
+function buildSecureCredentialAssessmentPanel({ credentialId, title, progress }) {
+  const section = document.createElement('section');
+  section.className = 'credential-assessment-panel';
+  section.setAttribute('aria-label', title + ' protected credential assessment');
+  section.append(text('h4', 'Protected credential assessment'));
+  section.append(text('p', 'Operational questions stay in the private assessment store. Select answers independently; answer keys and rationales are never sent to this browser.', 'portal-result-note'));
+  const status = text('p', '', 'portal-result-note');
+  const launch = text('button', 'Begin or resume credential assessment', 'record-button secure-assessment-launch');
+  launch.type = 'button';
+  launch.addEventListener('click', async () => {
+    launch.disabled = true;
+    status.textContent = 'Checking credential assessment readiness…';
+    const endpoint = '/api/v1/me/credentials/' + encodeURIComponent(credentialId) + '/assessment-attempts';
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { accept: 'application/json' },
+      credentials: 'same-origin'
+    });
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const blockers = Array.isArray(body.blockers) ? body.blockers.map(assessmentBlockerLabel) : [];
+      if (response.status === 409 && blockers.length) {
+        status.textContent = 'Not yet authorized: ' + blockers.join(', ') + '.';
+      } else if (body.retryAfter) {
+        status.textContent = assessmentBlockerLabel(body.error) + '. Retry after ' + new Date(body.retryAfter).toLocaleString() + '.';
+      } else {
+        status.textContent = assessmentBlockerLabel(body.error || ('assessment unavailable (' + response.status + ')'));
+      }
+      launch.disabled = false;
+      return;
+    }
+    renderSecureAssessmentAttempt(section, credentialId, title, body);
+  });
+
+  const assessmentAttempts = progress?.assessmentAttempts ?? [];
+  const scored = assessmentAttempts.filter((row) => row.status === 'scored' && row.scorePercent != null);
+  if (scored.length) {
+    const best = scored.reduce((value, row) => Math.max(value, Number(row.scorePercent)), 0);
+    status.textContent = 'Recorded credential assessment best score: ' + best.toFixed(0) + '%.';
+  }
+  section.append(launch, status);
+  return section;
+}
+
 async function renderCredentialProgress() {
   setActive('tab-progress');
   if (compactCatalog?.matches) setCatalogExpanded(false);
@@ -482,6 +673,7 @@ async function renderCredentialProgress() {
       tech1Blockers.append(tech1List);
       tech1Summary.append(tech1Blockers);
     }
+    tech1Summary.append(buildSecureCredentialAssessmentPanel({ credentialId: 'CRED-CULT-TECH-I-001', title: 'Technician I', progress: tech1Data }));
     panel.append(tech1Summary);
 
     const summary = document.createElement('section');
@@ -504,6 +696,7 @@ async function renderCredentialProgress() {
       summaryCard('Portfolio evidence', `${portfolioComplete}/${(data.portfolioArtifacts ?? []).length}`, 'Employment artifacts')
     );
     panel.append(text('h3', 'Technician II professional credential progress'), summary);
+    panel.append(buildSecureCredentialAssessmentPanel({ credentialId: 'CRED-CULT-TECH-II-001', title: 'Technician II', progress: data }));
 
     if (!(data.eligibility?.eligible)) {
       const blocker = document.createElement('section');
