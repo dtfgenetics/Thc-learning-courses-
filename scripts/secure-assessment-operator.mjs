@@ -28,8 +28,12 @@ async function readPrivateJson(inputPath,stdin=process.stdin){
     if(!text.trim()) throw new Error('private item JSON required on stdin');
     return JSON.parse(text);
   }
-  const resolved=String(inputPath);
+  const resolved=path.resolve(String(inputPath));
   if(!fs.existsSync(resolved)) throw new Error('private item input file not found');
+  const repoRoot=path.resolve(process.cwd());
+  if(resolved===repoRoot||resolved.startsWith(repoRoot+path.sep)){
+    throw new Error('private item input file must be stored outside the public repository tree; use stdin or an external protected path');
+  }
   return JSON.parse(fs.readFileSync(resolved,'utf8'));
 }
 function safeResult(result){
