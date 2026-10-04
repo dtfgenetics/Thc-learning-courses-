@@ -76,6 +76,38 @@ export function createPostgresSecureAssessmentStore({query,securityControls,audi
       const rows=(result?.rows??[]).map(mapItem);
       return itemCount?rows.slice(0,itemCount):rows;
     },
+    async getOperationalItems({assignments=[]}={}){
+      if(!Array.isArray(assignments)||!assignments.length) throw new Error('assignments required');
+      const normalized=assignments.map((row)=>({
+        secureItemId:required(row?.secureItemId,'secureItemId'),
+        revision:Number(row?.revision)
+      }));
+      if(normalized.some((row)=>!/^SECITEM-[A-Z0-9-]+$/i.test(row.secureItemId)||!Number.isInteger(row.revision)||row.revision<1)){
+        throw new Error('invalid secure item assignment');
+      }
+      const result=await query(`
+        with requested as (
+          select * from jsonb_to_recordset($1::jsonb) as x(secure_item_id text, revision integer)
+        )
+        select i.secure_item_id,i.revision,i.bank_version,i.competency_id,i.status,i.source_class,
+               i.prompt,i.choices_json,i.scoring_key_json,i.rationale,i.presentation_json
+          from requested r
+          join secure_assessment_items i
+            on i.secure_item_id=r.secure_item_id and i.revision=r.revision
+          join secure_assessment_banks b on b.bank_version=i.bank_version
+         where b.status='approved-operational'
+           and i.status='approved-operational'
+           and i.source_class='private-operational'`,
+        [JSON.stringify(normalized.map((row)=>({secure_item_id:row.secureItemId,revision:row.revision})))]);
+      const items=(result?.rows??[]).map(mapItem);
+      if(items.length!==normalized.length) throw new Error('secure operational item assignment unavailable');
+      const byKey=new Map(items.map((item)=>[`${item.secureItemId}@${item.revision}`,item]));
+      return normalized.map((row)=>{
+        const item=byKey.get(`${row.secureItemId}@${row.revision}`);
+        if(!item) throw new Error('secure operational item assignment unavailable');
+        return item;
+      });
+    },
     async recordForm({privateManifest}={}){
       if(!privateManifest?.formId||!privateManifest?.formRevision) throw new Error('privateManifest formId/formRevision required');
       const bank=await this.bankVersion();
