@@ -10,7 +10,9 @@ Set all of the following before starting `apps/api/src/server.mjs` with `NODE_EN
 - `THC_POSTGRES_POOL_MODULE` — when using the repository Postgres adapter, deployment module that exports `createPostgresPool({ env })` and returns a pool with `query()` and `connect()`.
 - `THC_AUTH_ADAPTER_MODULE` — module that exports `createRequestAuthorizer({ env })` for the deployed identity provider.
 - `THC_PUBLIC_BASE_URL` — externally reachable HTTPS base URL for the Academy/API environment.
-- `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `8`.
+- `THC_REQUIRED_SCHEMA_VERSION` — database schema version required by this deployment. The current runtime schema records version `7`.
+- `THC_SECURE_ASSESSMENT_STORE_MODULE` — separate deployment module exporting `createSecureAssessmentStore({ env })`; the repository PostgreSQL provider is `./apps/api/src/postgres-secure-assessment-store.mjs`.
+- `THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE` — when using that provider, a separate pool module/credentials for the isolated secure-assessment database.
 - `THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON` — deployment declaration of the required least-privilege/audit/encryption/backup/key-separation/environment/public-repo-exclusion controls. This declaration is validated by bootstrap but is not itself human security approval evidence.
 - `THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY` — secret key used to HMAC candidate references in secure assessment exposure audit records; store only in the deployment secret manager.
 
@@ -53,7 +55,7 @@ export async function createPersistenceAdapters({ env }) {
 
 `credentialStore.ping()` and `credentialStore.schemaVersion()` are used by `/readyz`. Production traffic should not be routed to the service until the database is reachable and its recorded schema version matches `THC_REQUIRED_SCHEMA_VERSION`.
 
-Schema version 8 adds private operational assessment bank/item/form/exposure tables. Operational exam content and scoring keys belong only in that private database boundary and are never seeded from this public repository. Schema version 3 adds `practical_evaluation_assignments`, which keeps evaluator ownership separate from practical score/evidence records. Schema version 4 adds private learner practical evidence-reference submissions. Schema version 5 adds persisted server-enforced assessment expiration timestamps. Schema version 6 adds learner/certificate profile fields, credential-program application references, and assessment-to-application linkage. Schema version 8 adds the partial uniqueness control used for idempotent active credential issuance. The academic enrollment-completion layer uses the existing `enrollments` table for current state and existing `audit_events` for immutable completion/reopen transition history.
+Schema version 3 adds `practical_evaluation_assignments`, which keeps evaluator ownership separate from practical score/evidence records. Schema version 4 adds private learner practical evidence-reference submissions. Schema version 5 adds persisted server-enforced assessment expiration timestamps. Schema version 6 adds learner/certificate profile fields, credential-program application references, and assessment-to-application linkage. Schema version 7 adds the partial uniqueness control used for idempotent active credential issuance. The academic enrollment-completion layer uses the existing `enrollments` table for current state and existing `audit_events` for immutable completion/reopen transition history.
 
 `enrollmentCompletionStore.setEnrollmentAcademicStatus()` must update the current enrollment state and write its audit event atomically. The repository-provided `createPostgresEnrollmentCompletionStore({ query })` does this with one PostgreSQL statement and refuses to automate a `withdrawn` enrollment. `listEnrollmentAcademicHistory()` returns only minimal academic transition metadata; it does not expose assessment responses, private practical evidence, evaluator notes, or credential decisions.
 
@@ -81,11 +83,11 @@ The application deliberately does not prescribe a specific identity vendor. A de
 
 1. Provision PostgreSQL and an application database/user using least privilege.
 2. Apply `database/schema.sql` through the controlled migration process.
-3. Verify `academy_schema_migrations` contains version `8`.
+3. Verify `academy_schema_migrations` contains version `7`.
 4. Verify the `practical_evaluation_assignments` table and its evaluator index exist.
-5. Configure the deployment-specific persistence adapter and database secrets, including the enrollment-completion store and secure operational assessment store controls/HMAC key.
+5. Configure the deployment-specific persistence adapter and database secrets, including the enrollment-completion store. Configure the secure operational assessment store as a separate provider/database boundary with separate credentials, controls and HMAC key.
 6. Configure the identity-provider authentication adapter and provider secrets/keys through the deployment secret manager.
-7. Set `THC_REQUIRED_SCHEMA_VERSION=8` and the HTTPS public base URL.
+7. Set `THC_REQUIRED_SCHEMA_VERSION=7` and the HTTPS public base URL.
 8. Start the API with `NODE_ENV=production`.
 9. Require `/healthz` to return 200 and `/readyz` to return 200 before accepting traffic.
 10. Treat `database-schema-version-mismatch` from `/readyz` as a deployment-blocking migration error.
