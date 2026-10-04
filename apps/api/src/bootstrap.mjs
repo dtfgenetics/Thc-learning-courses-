@@ -2,7 +2,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { addAutomaticEnrollmentCompletion } from './enrollment-completion-adapter.mjs';
 import { loadProductionCredentialSigner } from './credential-signing-adapter.mjs';
-import { validateSecureAssessmentStore } from './secure-assessment-store-adapter.mjs';
+import { loadSecureAssessmentStore } from './secure-assessment-store-adapter.mjs';
 
 function required(env, name) {
   const value = String(env[name] ?? '').trim();
@@ -21,10 +21,11 @@ export function validateProductionEnvironment(env = process.env) {
   const authAdapterModule = required(env, 'THC_AUTH_ADAPTER_MODULE');
   const publicBaseUrl = required(env, 'THC_PUBLIC_BASE_URL');
   const requiredSchemaVersion = required(env, 'THC_REQUIRED_SCHEMA_VERSION');
+  const secureAssessmentStoreModule = required(env, 'THC_SECURE_ASSESSMENT_STORE_MODULE');
   let parsed;
   try { parsed = new URL(publicBaseUrl); } catch { throw new Error('THC_PUBLIC_BASE_URL must be a valid URL'); }
   if (parsed.protocol !== 'https:') throw new Error('Production THC_PUBLIC_BASE_URL must use https');
-  return { mode: 'production', persistenceAdapterModule, authAdapterModule, publicBaseUrl: parsed.toString(), requiredSchemaVersion };
+  return { mode: 'production', persistenceAdapterModule, authAdapterModule, publicBaseUrl: parsed.toString(), requiredSchemaVersion, secureAssessmentStoreModule };
 }
 
 export function enforceProductionAuthAssurance(authorize) {
@@ -79,9 +80,7 @@ export async function loadProductionApiOptions(env = process.env) {
     completionStore
   });
 
-  let secureAssessmentStore;
-  try { secureAssessmentStore = validateSecureAssessmentStore(adapters?.secureAssessmentStore); }
-  catch (error) { throw new Error(`Production persistence adapter secureAssessmentStore invalid: ${error.message}`); }
+  const secureAssessmentStore = await loadSecureAssessmentStore(env);
 
   const credentialWriter = adapters.credentialWriter ?? null;
   if (credentialWriter && (typeof credentialWriter.issueCredential !== 'function' || typeof credentialWriter.transitionById !== 'function')) {
