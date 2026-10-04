@@ -10,7 +10,7 @@ function resolveModuleSpecifier(value){
   if(value.startsWith('.')||value.startsWith('/')) return pathToFileURL(path.resolve(process.cwd(),value)).href;
   return value;
 }
-const requiredMethods=['ping','bankVersion','selectOperationalItems','recordForm','recordExposure','quarantineItem'];
+const requiredMethods=['ping','bankVersion','selectOperationalItems','getOperationalItems','recordForm','recordExposure','quarantineItem'];
 const requiredSecurityControls=[
   'leastPrivilegeAccess',
   'privilegedAccessAudited',
