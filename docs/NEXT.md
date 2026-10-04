@@ -24,9 +24,9 @@ The project is now in a release-readiness phase. Academic publication and profes
 
 Content improvement remains allowed when a current audit finds a factual, instructional, accessibility, assessment-alignment, source, visual, or learner-experience defect. Improvement work must be evidence-driven rather than an automatic reopening of every course.
 
-## Primary technical blocker: private operational assessment system
+## Primary technical focus: deploy and validate the operational certification system
 
-The highest-priority machine/architecture blocker is tracked in issue **#333 — Retire public credential-purpose items from operational use and move secure bank private**.
+Issue **#333 — Retire public credential-purpose items from operational use and move secure bank private** now has the core machine architecture implemented: an isolated PostgreSQL secure-store provider/schema, exact private-item retrieval, fail-closed production bootstrap integration, secure credential assessment start/resume/save/submit/scoring, exposure tracking, item quarantine, and an MFA-gated private-bank administration lifecycle. The remaining work is deployment and real operational evidence, not another public item-bank implementation.
 
 Credential-purpose item material and scoring information have existed in public Git history. Those exposed items must be treated as compromised for high-integrity operational credential decisions even if the current learner client hides answer keys.
 
@@ -34,7 +34,7 @@ Therefore:
 
 1. Never activate or reuse exposed public credential-purpose items as the professional operational bank.
 2. Keep public keyed items only as development/training blueprints where useful.
-3. Create **new protected operational items** in an approved private assessment store/service.
+3. Create **new protected operational items** through the private admin lifecycle in a deployed approved assessment store/service; never seed them from public Git.
 4. Use the private operational namespace and source-class contracts required by the current secure-store adapter.
 5. Keep operational scoring keys, protected variants, candidate attempts, learner identities, signing secrets, and private assessment evidence outside the public repository.
 6. Validate least-privilege access, privileged-access auditing, encryption in transit and at rest, backup/restore, key-management separation, environment separation, incident response, and access-control enforcement on the real deployed provider.
