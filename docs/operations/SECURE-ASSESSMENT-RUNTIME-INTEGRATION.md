@@ -46,7 +46,7 @@ The credential release gates `secureOperationalItemBank`, `secureAssessmentStore
 
 ## PostgreSQL first-party provider
 
-The repository now includes `apps/api/src/postgres-secure-assessment-store.mjs` and schema version 8 tables for:
+The repository now includes `apps/api/src/postgres-secure-assessment-store.mjs` and an isolated `database/secure-assessment-schema.sql` for:
 
 - private operational bank/version metadata;
 - `SECITEM-*` operational item revisions and private scoring material;
@@ -56,8 +56,10 @@ The repository now includes `apps/api/src/postgres-secure-assessment-store.mjs` 
 
 No operational item content is seeded from Git. The production database must be populated through an approved private authoring/review process.
 
-When the repository PostgreSQL persistence adapter is used, production bootstrap requires a valid `secureAssessmentStore`. Configure:
+Production bootstrap requires a valid separate `secureAssessmentStore`. When using the repository PostgreSQL provider, configure:
 
+- `THC_SECURE_ASSESSMENT_STORE_MODULE=./apps/api/src/postgres-secure-assessment-store.mjs`;
+- `THC_SECURE_ASSESSMENT_POSTGRES_POOL_MODULE` with a separate pool/credential set from the learner/runtime database;
 - `THC_SECURE_ASSESSMENT_SECURITY_CONTROLS_JSON` with the security-control declaration required by the adapter contract;
 - `THC_SECURE_ASSESSMENT_AUDIT_HMAC_KEY` with a secret-manager value used only to pseudonymize candidate exposure references.
 
