@@ -1,5 +1,17 @@
 # Certification Remediation Master Plan — 2026-10-03
 
+## 2026-10-04 audit convergence
+
+Repository state has advanced beyond several unchecked items in this plan. The following machine-resolvable work is now present on `main` and must not be rebuilt as though it were missing:
+
+- canonical/public Technician publication and exact-source/build identity controls are implemented for the released academic snapshot;
+- complaint/impartiality governance controls, credential-governance case schema, AI-provenance schema, and continuing-competence/lifecycle controls are implemented as draft fail-closed data contracts;
+- the canonical 284-lesson production gap matrix and deterministic coverage checks exist;
+- the 284-lesson machine-content remediation pass, shared-foundation content/visual remediation, secure assessment runtime/private-bank administration, Applied Learning tool suite, and combined production runtime code have landed;
+- professional credential issuance remains intentionally blocked until real human review, occupational validation, pilot/calibration/standard-setting evidence, privacy/security authorization, and deployed production infrastructure evidence exist.
+
+This audit does **not** convert those external evidence gates into completed work. It only closes stale machine-work checkboxes whose required artifacts now exist.
+
 ## Purpose
 
 This is the execution map for converting the existing THC Academy course and credential codebase into a coherent certification system without mixing it with the separate 420-topic Encyclopedia.
@@ -342,9 +354,9 @@ Release must fail closed for missing:
 
 ### Wave 1 — structural correction
 - [x] Define certificate vs professional-certification governance.
-- [ ] Synchronize public source pins/status to canonical source.
-- [ ] Add complaint/impartiality/AI-provenance/continuing-competence data contracts.
-- [ ] Produce current 284-lesson gap matrix.
+- [x] Synchronize public source pins/status to canonical source.
+- [x] Add complaint/impartiality/AI-provenance/continuing-competence data contracts.
+- [x] Produce current 284-lesson gap matrix.
 
 ### Wave 2 — content normalization
 - [ ] Repair highest-risk lesson gaps.
