@@ -19,6 +19,7 @@
       <a href="#measurement-school">Measurement School</a>
       <a href="#crop-math">Crop Math</a>
       <a href="#differential-reasoning">Same Symptom</a>
+      <a href="#systems-tools">Systems Tools</a>
     </nav>
 
     <section id="knowledge-graph" aria-labelledby="graph-title">
@@ -70,6 +71,27 @@
       <ul id="differential-evidence"></ul>
       <p id="differential-boundary" class="boundary"></p>
     </section>
+  
+    <section id="systems-tools" aria-labelledby="systems-tools-title">
+      <p class="eyebrow">Applied Systems Tools</p>
+      <h2 id="systems-tools-title">Blueprint, calibration, timeline, flight recorder, incident and cause-chain labs</h2>
+      <p>Select a draft learning tool. These are training interfaces only and do not replace engineering design, controlled facility records, emergency procedures, diagnostics or credential evidence.</p>
+      <label>Tool
+        <select id="systems-tool-select"></select>
+      </label>
+      <article id="systems-tool-card">
+        <h3 id="systems-tool-title">Loading tools…</h3>
+        <p id="systems-tool-summary"></p>
+        <ol id="systems-tool-steps"></ol>
+        <form id="systems-tool-form">
+          <div id="systems-tool-fields" class="field-grid"></div>
+          <button type="submit">Run / preview record</button>
+        </form>
+        <pre id="systems-tool-output" tabindex="0" aria-live="polite"></pre>
+        <p id="systems-tool-boundary" class="boundary"></p>
+      </article>
+    </section>
+
   </main>
   <script type="module" src="/applied-learning.js"></script>
 </body>
