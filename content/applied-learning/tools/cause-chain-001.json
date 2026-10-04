@@ -1,0 +1,105 @@
+{
+  "id": "ALTOOL-CAUSE-CHAIN-001",
+  "version": "0.1.0",
+  "status": "draft",
+  "kind": "cause-chain",
+  "title": "THC Cause Chain",
+  "summary": "Map an evidence-bounded reasoning chain from observation through mechanism and hypothesis to intervention and outcome while keeping uncertainty and alternative explanations visible.",
+  "competencyIds": [
+    "COMP-PLANT-BIO-001"
+  ],
+  "objectiveIds": [],
+  "referenceIds": [
+    "REF-PLANT-BIO-001"
+  ],
+  "canonicalSources": [
+    "LESSON-LH-TECH1-002-03"
+  ],
+  "steps": [
+    {
+      "id": "observe",
+      "instruction": "Start with a direct observation or measured event.",
+      "evidence": "observation"
+    },
+    {
+      "id": "mechanism",
+      "instruction": "Add a plausible mechanism supported by canonical evidence.",
+      "evidence": "mechanism link"
+    },
+    {
+      "id": "hypothesis",
+      "instruction": "State a bounded hypothesis and at least one alternative explanation.",
+      "evidence": "hypotheses"
+    },
+    {
+      "id": "test",
+      "instruction": "Name discriminating evidence or an authorized low-risk check.",
+      "evidence": "next evidence"
+    },
+    {
+      "id": "outcome",
+      "instruction": "Record what changed after the intervention without treating temporal order as proof of cause.",
+      "evidence": "outcome"
+    }
+  ],
+  "fields": [
+    {
+      "id": "observation",
+      "label": "Observation",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "mechanism",
+      "label": "Evidence-supported mechanism",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "hypothesis",
+      "label": "Primary hypothesis",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "alternative",
+      "label": "Alternative explanation",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "nextEvidence",
+      "label": "Discriminating evidence needed",
+      "type": "text",
+      "required": true,
+      "unit": null
+    },
+    {
+      "id": "outcome",
+      "label": "Observed outcome",
+      "type": "text",
+      "required": false,
+      "unit": null
+    }
+  ],
+  "configuration": {
+    "graphModel": [
+      "observation",
+      "evidence",
+      "mechanism",
+      "hypothesis",
+      "intervention",
+      "outcome"
+    ]
+  },
+  "boundary": "A cause chain is a reasoning aid, not proof of diagnosis or causation. High-consequence decisions require the appropriate confirmation and authorized escalation.",
+  "review": {
+    "humanTechnicalReviewRequired": true,
+    "accessibilityReviewRequired": true,
+    "credentialUseAuthorized": false
+  }
+}
