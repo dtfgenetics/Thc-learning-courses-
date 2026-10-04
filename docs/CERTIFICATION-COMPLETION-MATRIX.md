@@ -54,7 +54,7 @@ Snapshot: 2026-09-24. This matrix covers **certification materials only**. The s
 2. Keep all 15 dedicated Technician course/test provenance contracts green while continuing instructional-depth improvements and responsive/manual learner QA.
 3. Preserve the current raster cutover: Technician I Course 1 uses reviewed PNG assets, Technician I Courses 2–6 use 44 approved WebPs, and Technician II uses 36/36 approved WebPs; expand visuals only where instruction benefits and never revert SVGs to production status.
 4. Use the exact-version public-source packets during occupational technical review; complete human scientific/editorial/assessment/accessibility/compliance review records, JTA, SME/employer validation, blueprint weights and practical/capstone validation, then collect real pilot/calibration evidence and perform formal standard setting.
-5. Deploy and validate the now-implemented fail-closed credential issuance path with the approved production identity provider, credential-manager authorization/MFA, managed signing/key custody, PostgreSQL schema v7, backup/monitoring and public/private certificate surfaces; only then advance professional credential release gates.
+5. Deploy and validate the now-implemented fail-closed credential issuance path with the approved production identity provider, credential-manager authorization/MFA, managed signing/key custody, PostgreSQL schema v8, backup/monitoring and public/private certificate surfaces; only then advance professional credential release gates.
 
 ## Important boundary
 
