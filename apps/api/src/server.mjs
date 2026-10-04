@@ -675,8 +675,11 @@ export function createHandler({
         catch (error) { return json(res, error.message === 'request-body-too-large' ? 413 : 400, { error: error.message, requestId }); }
         const credential = loadCredentialDefinition(credentialAssessmentResponsesMatch[1]);
         if (!credential) return json(res, 404, { error: 'credential-definition-not-found', requestId });
+        const program = loadCredentialProgramDefinition(credential.credentialProgram);
+        const assessment = program ? loadAssessmentDefinition(program.assessmentModel?.credentialAssessment) : null;
+        if (!assessment) return json(res, 409, { error: 'credential-assessment-definition-not-found', requestId });
         const result = await saveSecureCredentialAssessmentResponses({
-          learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentResponsesMatch[2], responses: body.responses
+          learnerStore, secureAssessmentStore, subject: auth.subject, attemptId: credentialAssessmentResponsesMatch[2], responses: body.responses, assessment
         });
         return json(res, result.status, { ...result.body, requestId });
       }
