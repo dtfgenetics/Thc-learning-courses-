@@ -150,9 +150,10 @@ export async function startSecureCredentialAssessment({
     items:built.deliveryPayload.items.map((x)=>safeDeliveryItem(x,null))}};
 }
 
-export async function saveSecureCredentialAssessmentResponses({learnerStore,secureAssessmentStore,subject,attemptId,responses,now=new Date().toISOString()}={}){
+export async function saveSecureCredentialAssessmentResponses({learnerStore,secureAssessmentStore,subject,attemptId,responses,assessment,now=new Date().toISOString()}={}){
   const attempt=await learnerStore.getAssessmentAttempt(subject,{attemptId});
   if(!attempt) return {status:404,body:{error:'assessment-attempt-not-found'}};
+  if(assessment?.id && attempt.assessmentId!==assessment.id) return {status:409,body:{error:'credential-assessment-mismatch'}};
   if(attempt.status!=='started') return {status:409,body:{error:'assessment-attempt-not-editable',status:attempt.status}};
   if(attemptExpired(attempt,now)) return {status:409,body:{error:'assessment-time-expired',expiresAt:attempt.expiresAt}};
   if(!Array.isArray(responses)||!responses.length) return {status:400,body:{error:'invalid-assessment-responses'}};
